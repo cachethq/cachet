@@ -1,6 +1,6 @@
-# Status
+# Cachet
 
-Status is an open source PHP status page system using the Laravel framework.
+Cachet is an open source PHP status page system using the Laravel framework.
 
 **Currently in development.** Please feel free to contribute!
 
