@@ -1,17 +1,17 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the Closure to execute when that URI is requested.
-|
-*/
+	routesInDirectory();
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+	function routesInDirectory($app = '') {
+		$routeDir = app_path('routes/' . $app . ($app !== '' ? '/' : NULL));
+		$iterator = new RecursiveDirectoryIterator($routeDir);
+		$iterator->setFlags(RecursiveDirectoryIterator::SKIP_DOTS);
+
+		foreach ($iterator as $route) {
+			$isDotFile = strpos($route->getFilename(), '.') === 0;
+
+			if (!$isDotFile && !$route->isDir()) {
+				require $routeDir . $route->getFilename();
+			}
+		}
+	}
