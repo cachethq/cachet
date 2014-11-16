@@ -10,7 +10,7 @@
 	@else
 	@foreach($incidents as $incident)
 	<li>
-		<h2>{{ $incident->name }}</h2>
+		<h2>{{ $incident->name }}, <small>{{ $incident->humanStatus }}</small></h2>
 		<h3><time>{{ $incident->created_at->format('H:i:s A') }}</time></h3>
 		<p>{{ $incident->message }}</p>
 	</li>
