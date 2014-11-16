@@ -1,7 +1,7 @@
 <?php
 
 	class Component extends Eloquent {
-		public function getHumanStatus() {
+		public function getHumanStatusAttribute() {
 			switch ($this->status) {
 				case 1: return 'Operational';
 				case 2: return 'Performance Issues';
