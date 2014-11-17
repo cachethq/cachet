@@ -5,7 +5,7 @@
 		<div class='masthead-container'>
 			<div class='masthead'>
 				<div class='text-container'>
-					<span class='page-name font-largest'><a href='#'>SITE_NAME</a></span>
+					<span class='page-name font-largest'><a href='#'>{{ Setting::get('site_name') }}</a></span>
 				</div>
 			</div>
 		</div>
