@@ -1,5 +1,8 @@
 <?php
 
+	Route::model('incident', 'Incident');
+	Route::model('component', 'Component');
+
 	routesInDirectory();
 
 	function routesInDirectory($app = '') {
