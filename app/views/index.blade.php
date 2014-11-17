@@ -2,6 +2,15 @@
 
 @section('content')
 	<div class='row'>
+		<div class='masthead-container'>
+			<div class='masthead'>
+				<div class='text-container'>
+					<span class='page-name font-largest'><a href='#'>SITE_NAME</a></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class='row'>
 		<div class='alert alert-{{ $systemStatus }}'>{{ $systemMessage }}</div>
 	</div>
 
@@ -22,10 +31,8 @@
 
 	<div class='row'>
 		<h1>Past Incidents</h1>
-		<ul class='list-group'>
 		@for($i=0; $i <= 7; $i++)
-			@include('incident', array('i', $i))
+		@include('incident', array('i', $i))
 		@endfor
-		</ul>
 	</div>
 @stop
