@@ -7,11 +7,11 @@
 						->groupBy('status')
 						->orderBy('status', 'desc');
 
-		if ($incidents->count() === 0 || (int) $incident->first()->status === 4) {
+		if ($incidents->count() === 0 || (int) $incidents->first()->status === 4) {
 			$status = 'success';
 			$message = 'All systems are functional.';
 		} else {
-			$status = 'error';
+			$status = 'danger';
 			$message = 'Some systems are experiencing issues.';
 		}
 
