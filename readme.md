@@ -6,7 +6,7 @@ Cachet is an open source PHP status page system using the Laravel framework.
 
 ## Progress
 
-![Current progress](https://dl.dropboxusercontent.com/s/k9dy8yn4t426lcq/Screenshot%202014-11-16%2023.36.45.png)
+![Current progress](https://dl.dropboxusercontent.com/u/7323096/cachet.png)
 
 ## Goals
 
