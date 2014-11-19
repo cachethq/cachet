@@ -1,7 +1,8 @@
 /bootstrap/compiled.php
 /vendor
 /node_modules
-/public/build/css/application-*
+application-*.css
+rev-manifest.json
 composer.phar
 composer.lock
 .env.*.php
