@@ -1,11 +1,10 @@
 /bootstrap/compiled.php
 /vendor
 /node_modules
-application-*.css
-rev-manifest.json
 composer.phar
 composer.lock
 .env.*.php
 .env.php
 .DS_Store
 Thumbs.db
+rev-manifest.json
