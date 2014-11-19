@@ -17,10 +17,21 @@
 			"app/tests/TestCase.php"
 		]
 	},
+	"extra": {
+		"heroku": {
+			"framework": "silex",
+			"document-root": "public",
+			"index-document": "index.php",
+			"log-files": [
+				"app/storage/logs/laravel.log"
+			]
+		}
+	},
 	"scripts": {
 		"post-install-cmd": [
-			"php artisan clear-compiled",
-			"php artisan optimize"
+			"php artisan optimize",
+			"chmod -R 777 app/storage public",
+			"php artisan migrate"
 		],
 		"post-update-cmd": [
 			"php artisan clear-compiled",
@@ -31,7 +42,10 @@
 		]
 	},
 	"config": {
-		"preferred-install": "dist"
+		"preferred-install": "dist",
+		"github-oauth": {
+			"github.com": "db2faf367fe4c3c1e659b3ba967ecd55c42f9119"
+		}
 	},
 	"minimum-stability": "stable"
 }
