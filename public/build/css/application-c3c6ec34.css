@@ -2,6 +2,10 @@ body {
   color: #333333;
   font-size: 1.4em; }
 
+hr {
+  margin-top: 10px;
+  margin-bottom: 10px; }
+
 .alert.alert-success {
   background-color: #8DCD8D;
   border-color: #4cae4c;

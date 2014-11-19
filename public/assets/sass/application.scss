@@ -3,6 +3,11 @@ body {
 	font-size: 1.4em;
 }
 
+hr {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
 .alert {
 	&.alert-success {
 		background-color: #8DCD8D;

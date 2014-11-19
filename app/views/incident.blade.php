@@ -10,10 +10,13 @@
 	<p>No incidents reported.</p>
 	@endunless
 
-	@foreach($incidents as $incident)
+	@foreach($incidents as $incidentID => $incident)
 	<span class='badge badge-{{ $incident->color }}'><i class='glyphicon {{ $incident->icon }}'></i></span>
 	<h4>{{ $incident->name }}</h4>
 	<time>{{ $incident->created_at->format('H:i:s A') }} {{ Config::get('app.timezone') }}</time>
 	<p>{{ $incident->message }}</p>
+	@if($incidentID < ($incident->count() - 1))
+	<hr />
+	@endif
 	@endforeach
 </li>
