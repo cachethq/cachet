@@ -1,32 +1,21 @@
 @extends('layout.master')
 
 @section('content')
+	<div class='alert alert-{{ $systemStatus }}'>{{ $systemMessage }}</div>
+
 	<div class='page-header'>
-		<div class='alert alert-{{ $systemStatus }}'>{{ $systemMessage }}</div>
+		<ul class='list-group components'>
+			@foreach(Component::get() as $component)
+			<li class='list-group-item component '>
+				<!-- <span class='badge badge-{{ $component->color }}'><i class='glyphicon glyphicon-stop'></i></span> -->
+				<h4>{{ $component->name }} <small class='{{ $component->color }}'>{{ $component->humanStatus }}</small></h4>
+				<p>{{ $component->description }}</p>
+			</li>
+			@endforeach
+		</ul>
 	</div>
 
-	<ul class='list-group'>
-		@foreach(Component::get() as $component)
-		<li class='list-group-item'>
-			<div class='row'>
-				<div class='col-md-8'>
-					<h4>{{ $component->name }}</h4>
-					@if($component->description)
-					<p>{{ $component->description }}</p>
-					@endif
-				</div>
-				<div class='col-md-4'>
-					<p class='text-right'>{{ $component->humanStatus }}</p>
-				</div>
-			</div>
-		</li>
-		@endforeach
-	</ul>
-
-	<h1>Past Incidents</h1>
-	<ul class='list-group'>
 	@for($i=0; $i <= 7; $i++)
 	@include('incident', array('i', $i))
 	@endfor
-	</ul>
 @stop

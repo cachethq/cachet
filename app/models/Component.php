@@ -9,4 +9,13 @@
 				case 4: return 'Major Outage';
 			}
 		}
+
+		public function getColorAttribute() {
+			switch ($this->status) {
+				case 1: return 'text-success';
+				case 2: return 'text-info';
+				case 3: return 'text-alert';
+				case 4: return 'text-danger';
+			}
+		}
 	}

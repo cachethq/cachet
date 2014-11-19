@@ -15,6 +15,7 @@
 				case 1:
 					return 'warning';
 				case 2:
+					return 'alert';
 				case 3:
 					return 'info';
 				case 4:
@@ -27,7 +28,7 @@
 				case 1:
 					return 'glyphicon-flag';
 				case 2:
-					return 'glyphicon-certificate';
+					return 'glyphicon-warning-sign';
 				case 3:
 					return 'glyphicon-eye-open';
 				case 4:
