@@ -8,7 +8,7 @@
 <p>No incidents reported.</p>
 @else
 @foreach($incidents as $incident)
-<h3>{{ $incident->name }}, <span class='label label-info'>{{ $incident->humanStatus }}</span></h3>
+<h3><span class='label {{ $incident->labelColor }}'>{{ $incident->humanStatus }}</span> {{ $incident->name }}</h3>
 <p>{{ $incident->message }}</p>
 <h4><time>{{ $incident->created_at->format('H:i:s A') }} {{ Config::get('app.timezone') }}</time></h4>
 @endforeach
