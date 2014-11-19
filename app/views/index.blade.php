@@ -24,7 +24,9 @@
 	</ul>
 
 	<h1>Past Incidents</h1>
+	<ul class='list-group'>
 	@for($i=0; $i <= 7; $i++)
 	@include('incident', array('i', $i))
 	@endfor
+	</ul>
 @stop

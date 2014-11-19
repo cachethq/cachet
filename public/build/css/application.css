@@ -1,5 +1,6 @@
 body {
-  color: #333333; }
+  color: #333333;
+  font-size: 1.4em; }
 
 .alert.alert-success {
   background-color: #8DCD8D;
@@ -9,23 +10,24 @@ body {
   background: #8CD3E8;
   border-color: #46b8da;
   color: #FFF; }
+.alert.alert-danger {
+  background: #D91E18;
+  border-color: #CF000F;
+  color: #FFF; }
 
 .list-group {
   margin-bottom: 20px;
   padding-left: 0; }
-  .list-group a.list-group-item {
-    color: #030303; }
   .list-group .list-group-item {
-    position: relative;
-    display: block;
     padding: 10px 15px;
-    margin-bottom: -1px;
     background-color: #ffffff;
-    border: 1px solid #95a5a6; }
-    .list-group .list-group-item h4.list-group-item-heading {
-      color: inherit;
-      margin-top: 0px;
+    border: 1px solid #BDC3C7; }
+    .list-group .list-group-item h1.list-group-item-heading, .list-group .list-group-item h2.list-group-item-heading, .list-group .list-group-item h3.list-group-item-heading, .list-group .list-group-item h4.list-group-item-heading {
+      margin-top: 5px;
       margin-bottom: 5px; }
-    .list-group .list-group-item p {
+    .list-group .list-group-item p, .list-group .list-group-item time {
       margin-bottom: 0;
-      line-height: 1.3; }
+      line-height: 1.3em; }
+    .list-group .list-group-item time {
+      color: #6C7A89;
+      font-weight: bold; }

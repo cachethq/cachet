@@ -10,15 +10,28 @@
 			}
 		}
 
-		public function getLabelColorAttribute() {
+		public function getColorAttribute() {
 			switch ($this->status) {
 				case 1:
-					return 'label-warning';
+					return 'warning';
 				case 2:
 				case 3:
-					return 'label-info';
+					return 'info';
 				case 4:
-					return 'label-success';
+					return 'success';
+			}
+		}
+
+		public function getIconAttribute() {
+			switch ($this->status) {
+				case 1:
+					return 'glyphicon-flag';
+				case 2:
+					return 'glyphicon-certificate';
+				case 3:
+					return 'glyphicon-eye-open';
+				case 4:
+					return 'glyphicon-ok';
 			}
 		}
 	}
