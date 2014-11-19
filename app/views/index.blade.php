@@ -1,38 +1,30 @@
 @extends('layout.master')
 
 @section('content')
-	<div class='row'>
-		<div class='masthead-container'>
-			<div class='masthead'>
-				<div class='text-container'>
-					<span class='page-name font-largest'><a href='#'>{{ Setting::get('site_name') }}</a></span>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class='row'>
+	<div class='page-header'>
 		<div class='alert alert-{{ $systemStatus }}'>{{ $systemMessage }}</div>
 	</div>
 
-	<div class='row'>
-		<ul class='list-group'>
-			@foreach(Component::get() as $component)
-			<li class='list-group-item'>
-				{{ $component->name }}
-				@if($component->description)
-				<small>{{ $component->description }}</small>
-				@endif
+	<ul class='list-group'>
+		@foreach(Component::get() as $component)
+		<li class='list-group-item'>
+			<div class='row'>
+				<div class='col-md-8'>
+					<h4>{{ $component->name }}</h4>
+					@if($component->description)
+					<p>{{ $component->description }}</p>
+					@endif
+				</div>
+				<div class='col-md-4'>
+					<p class='text-right'>{{ $component->humanStatus }}</p>
+				</div>
+			</div>
+		</li>
+		@endforeach
+	</ul>
 
-				<span class='pull-right'>{{ $component->humanStatus }}</span>
-			</li>
-			@endforeach
-		</ul>
-	</div>
-
-	<div class='row'>
-		<h1>Past Incidents</h1>
-		@for($i=0; $i <= 7; $i++)
-		@include('incident', array('i', $i))
-		@endfor
-	</div>
+	<h1>Past Incidents</h1>
+	@for($i=0; $i <= 7; $i++)
+	@include('incident', array('i', $i))
+	@endfor
 @stop
