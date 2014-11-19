@@ -2,6 +2,12 @@
 
 	class Setting extends Eloquent {
 		public static function get($settingName) {
-			return self::where('name', $settingName)->first()->value;
+			try {
+				$setting = self::where('name', $settingName)->first()->value;
+			} catch (ErrorException $e) {
+				$setting = null;
+			}
+
+			return $setting;
 		}
 	}
