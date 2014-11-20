@@ -36,7 +36,7 @@ See [INSTALL.md](/INSTALL.md)
 - [ ] Third party integration:
     - [ ] Connect to third-party services and auto report using the API.
     - [ ] Add components via third-party sources.
-- [ ] Heroku Button Support [#5](/jbrooksuk/Cachet/issues/5)
+- [ ] Heroku Button Support [#5](https://github.com/jbrooksuk/Cachet/issues/5)
 
 # License
 
