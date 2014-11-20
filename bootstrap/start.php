@@ -24,11 +24,15 @@ $app = new Illuminate\Foundation\Application;
 |
 */
 
-$env = $app->detectEnvironment(array(
+$env = $app->detectEnvironment(function() {
+	// Take care of Heroku deployment for us.
+	if ($envName = getenv('ENV')) {
+		return $envName;
+	}
 
-	'local' => array('homestead', '*.local', '*.config', 'jbrooksuk'),
-
-));
+	// Always fall back to local.
+	return 'local';
+});
 
 /*
 |--------------------------------------------------------------------------

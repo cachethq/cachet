@@ -1,0 +1,15 @@
+{
+	"name": "Cachet",
+	"description": "Single-site Status Page with Laravel",
+	"website": "http://james-brooks.uk/cachet",
+	"repository": "https://github.com/jbrooksuk/Cachet",
+	"keywords": ["cachet", "laravel", "status", "page"],
+	"addons": ["cleardb"],
+	"env": {
+		"ENV": "heroku",
+		"APP_NAME": "My Status Page"
+	},
+	"scripts": {
+		"postdeploy": "php artisan migrate"
+	}
+}
