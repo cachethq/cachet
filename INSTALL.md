@@ -4,6 +4,11 @@ Cachet is written in PHP and uses SQLite/MySQL for its database. It's really eas
 
 You need at least PHP and the `php-mcrypt` extension installed to run Cachet.
 
+1. [Get a copy!](#get-a-copy)
+2. [Configuring a database!](#configuring-a-database)
+	1. [Running database migrations](#running-database-migrations)
+3. [Apache setup](#apache)
+
 ## Get a copy!
 
 The easiest way is to use Git to pull down the code. You'll need to put it into your web server directory for Apache & Nginx.
@@ -92,7 +97,7 @@ Then we change the `default` value above to use the `mysql` index (which could b
 'default' => 'mysql'
 ```
 
-## Running database migrations
+### Running database migrations
 
 Once we've decided on our database, we now need to run the migrations to create the tables. Again, by default Cachet uses SQLite and the database file can be found at `./app/database/production.sqlite`, however we will first need to create the file:
 
