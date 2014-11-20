@@ -2,6 +2,8 @@
 
 Cachet is an open source PHP status page system using the Laravel framework.
 
+For more information on why I started developing Cachet, check out my [blog post](http://james-brooks.uk/cachet/?utm_source=github&utm_medium=readme&utm_campaign=github-cachet).
+
 **Currently in development.** Please feel free to contribute!
 
 ## Progress
