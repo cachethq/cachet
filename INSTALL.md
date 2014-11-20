@@ -2,7 +2,7 @@
 
 Cachet is written in PHP and uses SQLite/MySQL for its database. It's really easy to get setup and there are various ways you can install.
 
-You need at least PHP and the `php-mcrypt` extension installed to run Cachet.
+You need at least PHP, [Composer](https://getcomposer.org/) and the `php-mcrypt` extension installed to run Cachet.
 
 1. [Get a copy!](#get-a-copy)
 2. [Configuring a database!](#configuring-a-database)
@@ -15,7 +15,9 @@ The easiest way is to use Git to pull down the code. You'll need to put it into 
 
 ```bash
 $ cd /var/www
-$ git clone git@github.com:jbrooksuk/Cachet.git
+$ git clone https://github.com/jbrooksuk/Cachet.git
+$ cd Cachet
+$ composer install
 ```
 
 ## Configuring a database
