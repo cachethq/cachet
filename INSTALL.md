@@ -135,8 +135,8 @@ We simply add the following Virtual Host to our `httpd-vhosts.conf` file:
 <VirtualHost *:80>
 	ServerName cachet.dev # Or whatever you want to use
 	ServerAlias cachet.dev # Make this the same as ServerName
-	DocumentRoot "/var/www//Cachet/public"
-	<Directory "/var/www//Cachet/public">
+	DocumentRoot "/var/www/Cachet/public"
+	<Directory "/var/www/Cachet/public">
 		Require all granted # Used by Apache 2.4
 		Options Indexes FollowSymLinks
 		AllowOverride All
