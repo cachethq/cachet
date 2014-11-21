@@ -32,6 +32,7 @@ See the [INSTALL.md](/INSTALL.md) document for more information. If you'd like t
 - [ ] Incident reporting:
     - [ ] Manual.
     - [ ] Third-party integration to automatically create incidents.
+- [ ] Incident report templates.
 - [ ] RESTful API.
 - [ ] Administration panel:
     - [ ] Create new incidents.
