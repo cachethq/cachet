@@ -18,10 +18,10 @@
 				// If we don't have a setting, check the env (fallback for original version)
 				if ($checkEnv) {
 					if (!($setting = getenv(strtoupper($settingName)))) {
-						self::unknownSettingException($settingName);
+						return $setting;
 					}
 				} else {
-					self::unknownSettingException($settingName);
+					return $setting;
 				}
 			}
 
