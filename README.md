@@ -33,6 +33,7 @@ See the [INSTALL.md](/INSTALL.md) document for more information. If you'd like t
     - [ ] Manual.
     - [ ] Third-party integration to automatically create incidents.
 - [ ] RESTful API.
+- [ ] Web Hooks.
 - [ ] Administration panel:
     - [ ] Create new incidents.
     - [ ] Add components.
