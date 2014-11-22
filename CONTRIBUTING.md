@@ -6,4 +6,15 @@ It's dead simple, use the issue tracker. Be descriptive, remember this is a comm
 
 ## Coding Standards
 
-Please use [PSR-2](http://www.php-fig.org/psr/psr-2/) coding style.
+Please follow existing coding standards:
+
+- Spaces around operators and control blocks:
+    ```php
+    if ($condition) {
+
+    }
+    ```
+- Braces on the same line. The exception to this rule is for long conditions.
+- Line lengths have a soft 80 limit and hard 120 length.
+- PHP constants should be in lowercase; `true`, `false` and `null`.
+- Defined constants should always be in uppercase.
