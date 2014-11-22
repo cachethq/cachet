@@ -1,7 +1,5 @@
 <?php
 
-	use \BadConfigKeyException;
-
 	class Setting extends Eloquent {
 		/**
 		 * Returns a setting from the database.
@@ -31,13 +29,13 @@
 		}
 
 		/**
-		 * Throws an BadConfigKeyException
+		 * Throws an Exception
 		 * @param  string $setting
-		 * @throws BadConfigKeyException
+		 * @throws Exception
 		 * @return void
 		 */
 		public static function unknownSettingException($setting) {
-			throw new BadConfigKeyException(
+			throw new \Exception(
 				sprintf('Unknown setting %s', $settingName)
 			);
 		}
