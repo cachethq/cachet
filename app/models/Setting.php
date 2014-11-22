@@ -36,7 +36,7 @@
 		 */
 		public static function unknownSettingException($setting) {
 			throw new \Exception(
-				sprintf('Unknown setting %s', $settingName)
+				sprintf('Unknown setting %s', $setting)
 			);
 		}
 	}
