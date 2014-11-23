@@ -1,6 +1,10 @@
 <?php
 
 	class Component extends Eloquent {
+		/**
+		 * Looks up the human readable version of the status.
+		 * @return string
+		 */
 		public function getHumanStatusAttribute() {
 			switch ($this->status) {
 				case 1: return 'Operational';
@@ -10,6 +14,10 @@
 			}
 		}
 
+		/**
+		 * Color of the label for each status.
+		 * @return string HTML class name
+		 */
 		public function getColorAttribute() {
 			switch ($this->status) {
 				case 1: return 'text-success';
