@@ -6,7 +6,7 @@ Cachet is an open source PHP status page system using the Laravel framework.
 
 For more information on why I started developing Cachet, check out my [blog post](http://james-brooks.uk/cachet/?utm_source=github&utm_medium=readme&utm_campaign=github-cachet). [A demo, deployed to Heroku](https://cachet.herokuapp.com).
 
-**Currently in development.** Please feel free to contribute!
+**Currently in development. Things may change or break until a solid release has been announced.** Please feel free to contribute!
 
 ## Progress
 
@@ -18,9 +18,11 @@ For more information on why I started developing Cachet, check out my [blog post
 
 See the [INSTALL.md](/INSTALL.md) document for more information. If you'd like to add more documentation, please create a Pull Request, I'd be happy to merge!
 
+[Deploying to Heroku](/INSTALL.md#deploy-to-heroku) requires one-click to get started and no knowledge of PHP or Laravel afterwards.
+
 ## Current Features
 
-- Uses SQLite/MySQL.
+- Uses SQLite/MySQL (ClearDB on Heroku).
 - Report statuses on:
     + Incidents
     + Components
