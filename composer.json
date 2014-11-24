@@ -6,13 +6,15 @@
 	"type": "project",
 	"require": {
 		"laravel/framework": "4.2.*",
-		"guzzlehttp/guzzle": "4.*"
+		"guzzlehttp/guzzle": "4.*",
+		"dingo/api": "~0.6"
 	},
 	"autoload": {
 		"classmap": [
 			"app/commands",
 			"app/controllers",
 			"app/models",
+			"app/transformers",
 			"app/database/migrations",
 			"app/database/seeds",
 			"app/tests/TestCase.php",

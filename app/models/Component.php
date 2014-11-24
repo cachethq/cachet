@@ -1,6 +1,6 @@
 <?php
 
-	class Component extends Eloquent {
+	class Component extends Eloquent implements Dingo\Api\Transformer\TransformableInterface {
 		/**
 		 * Looks up the human readable version of the status.
 		 * @return string
@@ -25,5 +25,15 @@
 				case 3: return 'text-alert';
 				case 4: return 'text-danger';
 			}
+		}
+
+		/**
+		 * Get the transformer instance.
+		 *
+		 * @return mixed
+		 */
+		public function getTransformer()
+		{
+			return new ComponentTransformer();
 		}
 	}
