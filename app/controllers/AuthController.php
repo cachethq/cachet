@@ -3,7 +3,7 @@
 	/**
 	 * Logs users into their account
 	 */
-	class DashboardController extends Controller {
+	class AuthController extends Controller {
 		public function showLogin() {
 			return 'Coming soon...';
 		}
