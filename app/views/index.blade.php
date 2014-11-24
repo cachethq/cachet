@@ -7,7 +7,7 @@
 	<p>You're logged in. This will be a link to the Dashboard.</p>
 	@endif
 
-	@if(count($components) > 0)
+	@if($components->count() > 0)
 	<div class='page-header'>
 		<ul class='list-group components'>
 			@foreach($components as $component)
