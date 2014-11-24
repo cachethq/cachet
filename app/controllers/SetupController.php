@@ -26,7 +26,7 @@
 				$user = new User;
 				$user->username = $userDetails['name'];
 				$user->email = $userDetails['email'];
-				$user->password = $userDetails['password'];
+				$user->password = Hash::make($userDetails['password']);
 				$user->save();
 
 				Auth::login($user);

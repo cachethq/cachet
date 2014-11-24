@@ -10,7 +10,9 @@
 		});
 	});
 
-	Route::get('/auth/login', 'AuthController@showLogin');
+	Route::get('/auth/login', 'AuthController@showLogin')->before('guest');
+	Route::post('/auth/login', 'AuthController@postLogin')->before('guest|csrf');
+
 	Route::group(['before' => 'auth'], function() {
 		// Dashboard/Management Panel etc.
 		Route::get('/dashboard', 'DashboardController@showDashboard');
