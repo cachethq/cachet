@@ -9,6 +9,7 @@ You need at least PHP, [Composer](https://getcomposer.org/) and the `php-mcrypt`
 3. [Configuring a database!](#configuring-a-database)
 	1. [Running database migrations](#running-database-migrations)
 4. [Apache setup](#apache)
+5. [Environment detection](#environment-detection)
 
 ## Get a copy!
 
@@ -158,3 +159,7 @@ Next we add a lookup on our `HOSTS` file (if we're not serving Cachet externally
 ```
 
 Restart Apache and you're done!
+
+## Environment Detection
+
+If you're deploying into production you'll want to create an environmental variable as `ENV=production`. In the instance where the variable isn't defined, Cachet will think that it's `local`.

@@ -14,6 +14,8 @@ See the [INSTALL.md](/INSTALL.md) document for more information. If you'd like t
 
 [Deploying to Heroku](/INSTALL.md#deploy-to-heroku) requires one-click to get started and no knowledge of PHP or Laravel afterwards.
 
+If you're deploying into production you'll want to create an environmental variable as `ENV=production`. In the instance where the variable isn't defined, Cachet will think that it's `local`.
+
 # Looking to contribute?
 
 Are you looking to help out and contribute towards Cachet, awesome! There is a lot to do before the [first milestone](https://github.com/jbrooksuk/Cachet/milestones/First%20Release) is reached, including:
