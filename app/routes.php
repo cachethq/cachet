@@ -2,6 +2,7 @@
 
 	Route::model('incident', 'Incident');
 	Route::model('component', 'Component');
+	Route::model('webhook', 'WebHook');
 
 	routesInDirectory();
 
