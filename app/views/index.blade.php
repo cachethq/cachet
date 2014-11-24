@@ -7,9 +7,10 @@
 	<p>You're logged in. This will be a link to the Dashboard.</p>
 	@endif
 
+	@if(count($components) > 0)
 	<div class='page-header'>
 		<ul class='list-group components'>
-			@foreach(Component::get() as $component)
+			@foreach($components as $component)
 			<li class='list-group-item component '>
 				<h4>{{ $component->name }} <small class='{{ $component->color }}'>{{ $component->humanStatus }}</small></h4>
 				<p>{{ $component->description }}</p>
@@ -17,6 +18,7 @@
 			@endforeach
 		</ul>
 	</div>
+	@endif
 
 	@for($i=0; $i <= 7; $i++)
 	@include('incident', array('i', $i))
