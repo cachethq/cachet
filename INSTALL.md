@@ -5,9 +5,10 @@ Cachet is written in PHP and uses SQLite/MySQL for its database. It's really eas
 You need at least PHP, [Composer](https://getcomposer.org/) and the `php-mcrypt` extension installed to run Cachet.
 
 1. [Get a copy!](#get-a-copy)
-2. [Configuring a database!](#configuring-a-database)
+2. [Deploy to Heroku](#deploy-to-heroku)
+3. [Configuring a database!](#configuring-a-database)
 	1. [Running database migrations](#running-database-migrations)
-3. [Apache setup](#apache)
+4. [Apache setup](#apache)
 
 ## Get a copy!
 
@@ -19,6 +20,10 @@ $ git clone https://github.com/jbrooksuk/Cachet.git
 $ cd Cachet
 $ composer install
 ```
+
+## Deploy to Heroku
+
+When using the **Deploy to Heroku** button you needn't worry about using a database as the install will setup a free instance of ClearDB.
 
 ## Configuring a database
 
