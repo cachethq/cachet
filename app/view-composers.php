@@ -11,10 +11,10 @@
 
 		if ($incidentCount <= 1 || ($incidentCount > 1 && (int) $incidents->first()->status === 4)) {
 			$status = 'success';
-			$message = 'All systems are functional.';
+			$message = Lang::get('overview.good');
 		} else {
 			$status = 'danger';
-			$message = 'Some systems are experiencing issues.';
+			$message = Lang::get('overview.bad');
 		}
 
 		$view->with([
