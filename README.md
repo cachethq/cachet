@@ -24,6 +24,8 @@ Are you looking to help out and contribute towards Cachet, awesome! There is a l
 - **Management Panel** [#11](/issues/11). Currently there is no way to get the incidents and components into the database without a bit of messing around.
 - **API** [#3](/issues/3). All good services need an API and Cachet is no exception. An API will allow third-party integration and vice-versa.
 
+However, if you're not looking to work on anything big then some of our issues will be tagged with the **enjoy** label. Feel free to take a look at these as they should be much easier to deal with.
+
 # License
 
 [MIT license](http://jbrooksuk.mit-license.org)
