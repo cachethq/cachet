@@ -12,6 +12,8 @@ For more information on why I started developing Cachet, check out my [blog post
 
 ![Current progress](https://dl.dropboxusercontent.com/u/7323096/Cachet.png)
 
+[What's next for Cachet?](http://james-brooks.uk/whats-next-for-cachet/)
+
 ## Installation
 
 See the [INSTALL.md](/INSTALL.md) document for more information. If you'd like to add more documentation, please create a Pull Request, I'd be happy to merge!
