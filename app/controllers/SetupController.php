@@ -42,7 +42,7 @@
 				return Redirect::to('/');
 			} else {
 				// No good, let's try that again.
-				return Redirect::back()->with('errors', $v->messages());
+				return Redirect::back()->withInput()->with('errors', $v->messages());
 			}
 		}
 	}

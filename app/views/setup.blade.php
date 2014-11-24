@@ -15,14 +15,14 @@
 						<h3>Status Page Details</h3>
 						<div class='form-group'>
 							<label class='sr-only'>Site Name</label>
-							<input type='text' name='app_name' class='form-control' placeholder='Site Name' required />
+							<input type='text' name='app_name' class='form-control' placeholder='Site Name' value='{{ Input::old('app_name', '') }}' required />
 							@if($errors->has('app_name'))
 							<span class='text-danger'>{{ $errors->first('app_name') }}</span>
 							@endif
 						</div>
 						<div class='form-group'>
 							<label class='sr-only'>Site Domain</label>
-							<input type='text' name='app_domain' class='form-control' placeholder='Site Domain' required />
+							<input type='text' name='app_domain' class='form-control' placeholder='Site Domain' value='{{ Input::old('app_domain', '') }}' required />
 							@if($errors->has('app_domain'))
 							<span class='text-danger'>{{ $errors->first('app_domain') }}</span>
 							@endif
@@ -37,21 +37,21 @@
 						<h3>Administrator Account</h3>
 						<div class='form-group'>
 							<label class='sr-only'>Username</label>
-							<input type='text' name='user[name]' class='form-control' placeholder='Username' required />
+							<input type='text' name='user[name]' class='form-control' placeholder='Username' value='{{ Input::old('user.name', '') }}' required />
 							@if($errors->has('user.name'))
 							<span class='text-danger'>{{ $errors->first('user.name') }}</span>
 							@endif
 						</div>
 						<div class='form-group'>
 							<label class='sr-only'>Email</label>
-							<input type='email' name='user[email]' class='form-control' placeholder='Email' required />
+							<input type='email' name='user[email]' class='form-control' placeholder='Email' value='{{ Input::old('user.email', '') }}' required />
 							@if($errors->has('user.email'))
 							<span class='text-danger'>{{ $errors->first('user.email') }}</span>
 							@endif
 						</div>
 						<div class='form-group'>
 							<label class='sr-only'>Password</label>
-							<input type='password' name='user[password]' class='form-control' placeholder='Password' required />
+							<input type='password' name='user[password]' class='form-control' placeholder='Password' value='{{ Input::old('user.password', '') }}' required />
 							@if($errors->has('user.password'))
 							<span class='text-danger'>{{ $errors->first('user.password') }}</span>
 							@endif
