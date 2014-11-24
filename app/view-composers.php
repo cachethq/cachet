@@ -7,7 +7,9 @@
 						->groupBy('status')
 						->orderBy('status', 'desc');
 
-		if ($incidents->get()->count() <= 1 || ($incidents->get()->count() > 1 && (int) $incidents->first()->status === 4)) {
+		$incidentCount = $incidents->count();
+
+		if ($incidentCount <= 1 || ($incidentCount > 1 && (int) $incidents->first()->status === 4)) {
 			$status = 'success';
 			$message = 'All systems are functional.';
 		} else {
