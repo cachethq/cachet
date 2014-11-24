@@ -5,4 +5,7 @@
 
 	Route::group(['before' => 'no_setup:app_name'], function() {
 		Route::get('/setup', 'SetupController@showSetup');
+		Route::group(['before' => 'csrf'], function() {
+			Route::post('/setup', 'SetupController@setupCachet');
+		});
 	});

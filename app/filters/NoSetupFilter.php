@@ -2,9 +2,12 @@
 
 	class NoSetupFilter {
 		public function filter($route, $request, $settingName) {
-			$setting = Setting::get($settingName);
-			if ($setting === null) {
-				return Response::make('Unauthorized', 401);
+			try {
+				$setting = Setting::where('name', $settingName)->first();
+				if ($setting->value) {
+					return Response::make('Unauthorized', 401);
+				}
+			} catch (Exception $e) {
 			}
 		}
 	}
