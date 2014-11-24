@@ -7,8 +7,7 @@
 	"keywords": ["cachet", "laravel", "status", "page"],
 	"addons": ["cleardb"],
 	"env": {
-		"ENV": "heroku",
-		"APP_NAME": "My Status Page"
+		"ENV": "heroku"
 	},
 	"scripts": {
 		"postdeploy": "php artisan migrate"
