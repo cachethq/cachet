@@ -3,6 +3,10 @@
 @section('content')
 	<div class='alert alert-{{ $systemStatus }}'>{{ $systemMessage }}</div>
 
+	@if(Auth::check())
+	<p>You're logged in. This will be a link to the Dashboard.</p>
+	@endif
+
 	<div class='page-header'>
 		<ul class='list-group components'>
 			@foreach(Component::get() as $component)
