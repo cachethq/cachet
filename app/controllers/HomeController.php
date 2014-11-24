@@ -6,6 +6,6 @@
 		 * @return View
 		 */
 		public function showIndex() {
-			return View::make('index');
+			return View::make('index', ['components' => Component::all()]);
 		}
 	}
