@@ -10,6 +10,11 @@
 		});
 	});
 
+	Route::get('/auth/login', 'AuthController@showLogin');
 	Route::group(['before' => 'auth'], function() {
+		// Dashboard/Management Panel etc.
 		Route::get('/dashboard', 'DashboardController@showDashboard');
+
+		// Authorization stuff.
+		Route::get('/auth/logout', 'AuthController@logoutAction');
 	});
