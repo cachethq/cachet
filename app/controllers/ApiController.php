@@ -7,8 +7,7 @@
 		}
 
 		public function getComponent($id) {
-			$component = Component::find($id);
-			if ($component) {
+			if ($component = Component::find($id)) {
 				return $component;
 			} else {
 				App::abort(404, 'Component not found');
