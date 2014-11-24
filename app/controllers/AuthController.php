@@ -9,7 +9,7 @@
 		}
 
 		public function logoutAction() {
-			Auth::logut();
+			Auth::logout();
 
 			return Redirect::to('/');
 		}
