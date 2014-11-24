@@ -2,6 +2,7 @@
 	"name": "Cachet",
 	"description": "Single-site Status Page with Laravel",
 	"website": "http://james-brooks.uk/cachet",
+	"success_url": "/setup",
 	"repository": "https://github.com/jbrooksuk/Cachet",
 	"keywords": ["cachet", "laravel", "status", "page"],
 	"addons": ["cleardb"],
