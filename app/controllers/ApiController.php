@@ -160,7 +160,7 @@
 		 *
 		 * @return Metric
 		 */
-		public function postIncidents() {
+		public function postMetric() {
 			$metric = new Metric(Input::all());
 			return $this->_saveMetric($metric);
 		}
