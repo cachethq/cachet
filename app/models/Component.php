@@ -1,6 +1,17 @@
 <?php
 
+	use Watson\Validating\ValidatingTrait;
+
 	class Component extends Eloquent implements Dingo\Api\Transformer\TransformableInterface {
+		use ValidatingTrait;
+
+		protected $rules = [
+			'name'   => 'required',
+			'status' => 'required|integer'
+		];
+
+		protected $fillable = ['name', 'description', 'status'];
+
 		/**
 		 * Lookup all of the incidents reported on the component.
 		 * @return Illuminate\Database\Eloquent\Relations

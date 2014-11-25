@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f1b0b35a64f38b74527150925a720e8d",
+    "hash": "582a0ffe83dfc08436525ef3419162a7",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -1874,6 +1874,55 @@
             "description": "Symfony Translation Component",
             "homepage": "http://symfony.com",
             "time": "2014-10-26 07:41:27"
+        },
+        {
+            "name": "watson/validating",
+            "version": "0.10.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dwightwatson/validating.git",
+                "reference": "673b165b4391942a7fae1e85a84f21b5f367f33f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dwightwatson/validating/zipball/673b165b4391942a7fae1e85a84f21b5f367f33f",
+                "reference": "673b165b4391942a7fae1e85a84f21b5f367f33f",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "~4.2.6",
+                "illuminate/events": "~4.2.6",
+                "illuminate/support": "~4.2.6",
+                "illuminate/validation": "~4.2.6",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.9.*",
+                "phpunit/phpunit": "4.1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Watson\\Validating\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dwight Watson",
+                    "email": "dwight@studiousapp.com"
+                }
+            ],
+            "description": "Eloquent model validating trait.",
+            "keywords": [
+                "eloquent",
+                "laravel",
+                "validation"
+            ],
+            "time": "2014-11-20 02:09:08"
         }
     ],
     "packages-dev": [],
