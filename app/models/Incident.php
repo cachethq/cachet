@@ -1,6 +1,6 @@
 <?php
 
-	class Incident extends Eloquent {
+	class Incident extends Eloquent implements Dingo\Api\Transformer\TransformableInterface {
 		/**
 		 * An incident belongs to a component.
 		 * @return Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -28,5 +28,14 @@
 				case 3: return 'glyphicon-eye-open';
 				case 4: return 'glyphicon-ok';
 			}
+		}
+
+		/**
+		 * Get the transformer instance.
+		 *
+		 * @return IncidentTransformer
+		 */
+		public function getTransformer() {
+			return new IncidentTransformer();
 		}
 	}

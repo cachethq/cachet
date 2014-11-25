@@ -8,8 +8,9 @@
 				'description' => $component->description,
 				'status_id' => (int) $component->status,
 				'status' => $component->getHumanStatusAttribute(),
-				'incident_count' => $component->incidents()->count()
+				'incident_count' => $component->incidents()->count(),
+				'created_at' => $component->created_at->timestamp,
+				'updated_at' => $component->updated_at->timestamp,
 			];
 		}
-
 	}
