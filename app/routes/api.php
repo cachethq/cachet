@@ -14,6 +14,7 @@
 			Route::post('components', 'ApiController@postComponents');
 			Route::post('incidents', 'ApiController@postIncidents');
 
+			Route::put('components/{id}', 'ApiController@putComponent');
 			Route::put('incidents/{id}', 'ApiController@putIncident');
 		});
 

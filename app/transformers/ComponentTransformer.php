@@ -7,7 +7,7 @@
 				'name' => $component->name,
 				'description' => $component->description,
 				'status_id' => (int) $component->status,
-				'status' => $component->getHumanStatusAttribute(),
+				'status' => $component->humanStatus,
 				'incident_count' => $component->incidents()->count(),
 				'created_at' => $component->created_at->timestamp,
 				'updated_at' => $component->updated_at->timestamp,
