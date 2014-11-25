@@ -13,8 +13,10 @@
 		Route::group(['protected' => true], function() {
 			Route::post('components', 'ApiController@postComponents');
 			Route::post('incidents', 'ApiController@postIncidents');
+			Route::post('metrics', 'ApiController@postMetrics');
 
 			Route::put('incidents/{id}', 'ApiController@putIncident');
+			Route::put('metrics/{id}', 'ApiController@putMetric');
 		});
 
 	});
