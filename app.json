@@ -10,6 +10,6 @@
 		"ENV": "heroku"
 	},
 	"scripts": {
-		"postdeploy": "php artisan migrate"
+		"postdeploy": "php artisan migrate; php artisan key:generate"
 	}
 }
