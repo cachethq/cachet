@@ -107,6 +107,30 @@
 		}
 
 		/**
+		 * Get all metrics
+		 *
+		 * @return \Illuminate\Database\Eloquent\Collection
+		 */
+		public function getMetrics() {
+			return Metric::all();
+		}
+
+		/**
+		 * Get a single metric
+		 *
+		 * @param int $id
+		 *
+		 * @return Metric
+		 */
+		public function getMetric($id) {
+			if ($metric = Metric::find($id)) {
+				return $metric;
+			} else {
+				App::abort(404, 'Metric not found');
+			}
+		}
+
+		/**
 		 * Function for saving the incident, and returning appropriate error codes
 		 *
 		 * @param Incident $incident
