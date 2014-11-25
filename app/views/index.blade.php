@@ -4,6 +4,7 @@
 	<div class='alert alert-{{ $systemStatus }}'>{{ $systemMessage }}</div>
 
 	@if(Auth::check())
+	<a class="pull-right" href="/auth/logout">Logout</a>
 	<p>You're logged in. This will be a link to the Dashboard.</p>
 	@endif
 
