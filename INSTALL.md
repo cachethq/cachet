@@ -12,7 +12,7 @@ You need at least PHP, [Composer](https://getcomposer.org/) and the `php-mcrypt`
 	1. [Running database migrations](#running-database-migrations)
 4. [Running Cachet](#running-cachet)
 	1. [Apache setup](#apache)
-	1. [nginx setup](#nginx)
+	2. [nginx setup](#nginx)
 5. [Environment detection](#environment-detection)
 
 # Get a copy!
@@ -175,3 +175,7 @@ Restart Apache and you're done!
 # Environment Detection
 
 If you're deploying into production you'll want to create an environmental variable as `ENV=production`. In the instance where the variable isn't defined, Cachet will think that it's `local`.
+
+# Security
+
+After deploying to a server that isn't [Heroku](#heroku) you should run `php artisan key:generate` before setting Cachet up. This changes the application key (found in `/app/config/app.php`) which is used for encryption.
