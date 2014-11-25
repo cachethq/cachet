@@ -6,7 +6,7 @@
 		 * @return Illuminate\Database\Eloquent\Relations
 		 */
 		public function incidents() {
-			return $this->hasMany('Incident', 'component_id', 'id');
+			return $this->hasMany('Incident', 'component', 'id');
 		}
 
 		/**
