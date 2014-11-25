@@ -1,8 +1,8 @@
 <?php
 
-	use Watson\Validating\ValidatingTrait;
+	use \Watson\Validating\ValidatingTrait;
 
-	class Component extends Eloquent implements Dingo\Api\Transformer\TransformableInterface {
+	class Component extends Eloquent implements \Dingo\Api\Transformer\TransformableInterface {
 		use ValidatingTrait;
 
 		protected $rules = [

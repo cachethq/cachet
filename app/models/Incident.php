@@ -1,8 +1,8 @@
 <?php
 
-	use Watson\Validating\ValidatingTrait;
+	use \Watson\Validating\ValidatingTrait;
 
-	class Incident extends Eloquent implements Dingo\Api\Transformer\TransformableInterface {
+	class Incident extends Eloquent implements \Dingo\Api\Transformer\TransformableInterface {
 		use ValidatingTrait;
 		use \Illuminate\Database\Eloquent\SoftDeletingTrait;
 
