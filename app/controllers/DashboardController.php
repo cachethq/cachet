@@ -5,6 +5,6 @@
 	 */
 	class DashboardController extends Controller {
 		public function showDashboard() {
-			return 'Coming soon... <a href="/">Back to Status Page.</a>';
+			return View::make('dashboard.index');
 		}
 	}
