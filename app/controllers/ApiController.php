@@ -45,8 +45,12 @@
 			$component = new Component(Input::all());
 			$component->user_id = $this->auth->user()->id;
 			if ($component->isValid()) {
-				$component->saveOrFail();
-				return $component;
+				try {
+					$component->saveOrFail();
+					return $component;
+				} catch (Exception $e) {
+					App::abort(500, $e->getMessage());
+				}
 			} else {
 				App::abort(404, $component->getErrors()->first());
 			}
@@ -85,8 +89,17 @@
 			$incident = new Incident(Input::all());
 			$incident->user_id = $this->auth->user()->id;
 			if ($incident->isValid()) {
-				$incident->saveOrFail();
-				return $incident;
+				try {
+					$component = $incident->parent;
+					if (!$component) {
+						App::abort(400, 'Invalid component specified');
+					}
+
+					$incident->saveOrFail();
+					return $incident;
+				} catch (Exception $e) {
+					App::abort(500, $e->getMessage());
+				}
 			} else {
 				App::abort(404, $incident->getErrors()->first());
 			}
