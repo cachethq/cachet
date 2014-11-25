@@ -8,4 +8,11 @@
 		Route::get('incidents', 'ApiController@getIncidents');
 		Route::get('incidents/{id}', 'ApiController@getIncident');
 
+		Route::group(['protected' => true], function() {
+			Route::post('components', 'ApiController@postComponents');
+			Route::post('incidents', 'ApiController@postIncidents');
+
+			Route::put('incidents/{id}', 'ApiController@putIncident');
+		});
+
 	});

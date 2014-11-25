@@ -1,6 +1,21 @@
 <?php
 
+	use Watson\Validating\ValidatingTrait;
+
 	class Incident extends Eloquent implements Dingo\Api\Transformer\TransformableInterface {
+		use ValidatingTrait;
+		use \Illuminate\Database\Eloquent\SoftDeletingTrait;
+
+		protected $rules = [
+			'user_id'   => 'required|integer',
+			'component'   => 'required|integer',
+			'name'   => 'required',
+			'status' => 'required|integer',
+			'message' => 'required',
+		];
+
+		protected $fillable = ['component', 'name', 'status', 'message'];
+
 		/**
 		 * An incident belongs to a component.
 		 * @return Illuminate\Database\Eloquent\Relations\BelongsTo
