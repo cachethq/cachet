@@ -8,10 +8,10 @@
 
 		protected $rules = [
 			'user_id'   => 'required|integer',
-			'component'   => 'required|integer',
-			'name'   => 'required',
-			'status' => 'required|integer',
-			'message' => 'required',
+			'component' => 'required|integer',
+			'name'      => 'required',
+			'status'    => 'required|integer',
+			'message'   => 'required',
 		];
 
 		protected $fillable = ['component', 'name', 'status', 'message'];
