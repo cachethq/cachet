@@ -44,23 +44,23 @@
 		public function postComponents() {
 			$component = new Component(Input::all());
 			$component->user_id = $this->auth->user()->id;
-            return $this->_saveComponent($component);
+			return $this->_saveComponent($component);
 		}
 
-        /**
-         * Update an existing component
-         *
-         * @param int $id
-         *
-         * @return Component
-         */
-        public function putComponent($id) {
-            $component = $this->getComponent($id);
+		/**
+		 * Update an existing component
+		 *
+		 * @param int $id
+		 *
+		 * @return Component
+		 */
+		public function putComponent($id) {
+			$component = $this->getComponent($id);
 
-            $component->fill(Input::all());
+			$component->fill(Input::all());
 
-            return $this->_saveComponent($component);
-        }
+			return $this->_saveComponent($component);
+		}
 
 		/**
 		 * Get all incidents
@@ -136,25 +136,25 @@
 			}
 		}
 
-        /**
-         * Function for saving the component, and returning appropriate error codes
-         *
-         * @param Component $component
-         *
-         * @return Component
-         */
-        private function _saveComponent($component) {
-            if ($component->isValid()) {
-                try {
-                    $component->saveOrFail();
-                    return $component;
-                } catch (Exception $e) {
-                    App::abort(500, $e->getMessage());
-                }
-            } else {
-                App::abort(404, $component->getErrors()->first());
-            }
-        }
+		/**
+		 * Function for saving the component, and returning appropriate error codes
+		 *
+		 * @param Component $component
+		 *
+		 * @return Component
+		 */
+		private function _saveComponent($component) {
+			if ($component->isValid()) {
+				try {
+					$component->saveOrFail();
+					return $component;
+				} catch (Exception $e) {
+					App::abort(500, $e->getMessage());
+				}
+			} else {
+				App::abort(404, $component->getErrors()->first());
+			}
+		}
 
 		/**
 		 * Function for saving the incident, and returning appropriate error codes
