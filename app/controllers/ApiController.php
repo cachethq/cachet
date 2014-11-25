@@ -88,7 +88,7 @@
 		public function postIncidents() {
 			$incident = new Incident(Input::all());
 			$incident->user_id = $this->auth->user()->id;
-			return $this->saveIncident($incident);
+			return $this->_saveIncident($incident);
 		}
 
 		/**
@@ -103,7 +103,7 @@
 
 			$incident->fill(Input::all());
 
-			return $this->saveIncident($incident);
+			return $this->_saveIncident($incident);
 		}
 
 		/**
@@ -137,7 +137,7 @@
 		 *
 		 * @return Incident
 		 */
-		private function saveIncident($incident) {
+		private function _saveIncident($incident) {
 			if ($incident->isValid()) {
 				try {
 					$component = $incident->parent;
