@@ -3,7 +3,7 @@
 	class ApiController extends \Dingo\Api\Routing\Controller {
 		protected $auth;
 
-		public function __construct(Dingo\Api\Auth\Shield $auth) {
+		public function __construct(\Dingo\Api\Auth\Shield $auth) {
 			$this->auth = $auth;
 		}
 
