@@ -8,3 +8,4 @@ composer.phar
 Thumbs.db
 rev-manifest.json
 config.codekit
+npm-debug.log

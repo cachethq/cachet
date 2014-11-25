@@ -3,7 +3,7 @@
 	<ul class='list-group components'>
 		@foreach($components as $component)
 		<li class='list-group-item component '>
-			<h4>{{ $component->name }} <small class='{{ $component->color }}'>{{ $component->humanStatus }}</small></h4>
+			<h4>{{ $component->name }} <small class='text-component-{{ $component->status }}'>{{ $component->humanStatus }}</small></h4>
 			<p>{{ $component->description }}</p>
 		</li>
 		@endforeach

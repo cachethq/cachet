@@ -10,14 +10,17 @@ hr {
 h1 {
   margin-bottom: 20px; }
 
-.text-success {
+.text-success, .text-component-1 {
   color: #4cae4c; }
 
-.text-danger {
-  color: #D91E18; }
+.text-info, .text-component-2 {
+  color: #46b8da; }
 
-.text-alert {
+.text-alert, .text-component-3 {
   color: #F9BF3B; }
+
+.text-danger, .text-component-4 {
+  color: #D91E18; }
 
 .container {
   max-width: 960px; }
@@ -47,16 +50,14 @@ h1 {
   padding-bottom: 8px;
   padding-left: 12px;
   padding-right: 12px; }
-  .badge.badge-success {
-    background-color: #4cae4c; }
-  .badge.badge-info {
-    background-color: #46b8da; }
-  .badge.badge-warning {
+  .badge.badge-incident-1 {
     background-color: #F27935; }
-  .badge.badge-alert {
+  .badge.badge-incident-2 {
     background-color: #F9BF3B; }
-  .badge.badge-danger {
-    background-color: #CF000F; }
+  .badge.badge-incident-3 {
+    background-color: #46b8da; }
+  .badge.badge-incident-4 {
+    background-color: #4cae4c; }
 
 .list-group {
   margin-bottom: 20px;
@@ -85,7 +86,7 @@ h1 {
       line-height: 1.3em; }
     .list-group .list-group-item time {
       color: #6C7A89;
-      font-weight: 600;
+      font-weight: 300;
       font-size: 1.1em; }
     .list-group .list-group-item.active {
       background-color: #F2F1EF; }

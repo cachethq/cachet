@@ -23,19 +23,6 @@
 		}
 
 		/**
-		 * Color of the label for each status.
-		 * @return string HTML class name
-		 */
-		public function getColorAttribute() {
-			switch ($this->status) {
-				case 1: return 'text-success';
-				case 2: return 'text-info';
-				case 3: return 'text-alert';
-				case 4: return 'text-danger';
-			}
-		}
-
-		/**
 		 * Get the transformer instance.
 		 *
 		 * @return mixed

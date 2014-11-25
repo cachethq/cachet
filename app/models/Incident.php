@@ -23,19 +23,6 @@
 		}
 
 		/**
-		 * Looks up the class name for the status.
-		 * @return string
-		 */
-		public function getColorAttribute() {
-			switch ($this->status) {
-				case 1: return 'warning';
-				case 2: return 'alert';
-				case 3: return 'info';
-				case 4: return 'success';
-			}
-		}
-
-		/**
 		 * Finds the icon to use for each status.
 		 * @return string
 		 */

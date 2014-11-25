@@ -13,7 +13,7 @@
 
 	@foreach($incidents as $incidentID => $incident)
 	<li class='list-group-item'>
-		<span class='badge badge-{{ $incident->color }}'><i class='glyphicon {{ $incident->icon }}'></i></span>
+		<span class='badge badge-incident-{{ $incident->status }}'><i class='glyphicon {{ $incident->icon }}'></i></span>
 		<h4>{{ $incident->name }} <small><time>{{ $incident->created_at->format('H:i:s A') }}</time></small></h4>
 		{{ $incident->message }}
 		@if($incidentID < ($incident->count() - 1))
