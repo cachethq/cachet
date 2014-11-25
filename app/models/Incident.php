@@ -1,10 +1,10 @@
 <?php
 
-	use \Watson\Validating\ValidatingTrait;
+	use Watson\Validating\ValidatingTrait;
 
 	class Incident extends Eloquent implements \Dingo\Api\Transformer\TransformableInterface {
 		use ValidatingTrait;
-		use \Illuminate\Database\Eloquent\SoftDeletingTrait;
+		use Illuminate\Database\Eloquent\SoftDeletingTrait;
 
 		protected $rules = [
 			'user_id'   => 'required|integer',

@@ -1,7 +1,7 @@
 <?php
 
-	use \Watson\Validating\ValidatingTrait;
-	use \Illuminate\Database\Eloquent\SoftDeletingTrait;
+	use Watson\Validating\ValidatingTrait;
+	use Illuminate\Database\Eloquent\SoftDeletingTrait;
 
 	class Subscriber extends Eloquent {
 		use ValidatingTrait;
