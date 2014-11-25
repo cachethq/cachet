@@ -20,7 +20,7 @@
 		/**
 		 * Get the transformer instance.
 		 *
-		 * @return mixed
+		 * @return ComponentTransformer
 		 */
 		public function getTransformer() {
 			return new ComponentTransformer();

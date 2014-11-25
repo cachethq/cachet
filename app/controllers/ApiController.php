@@ -19,4 +19,16 @@
 			return $component->incidents;
 		}
 
+		public function getIncidents() {
+			return Incident::all();
+		}
+
+		public function getIncident($id) {
+			if ($incident = Incident::find($id)) {
+				return $incident;
+			} else {
+				App::abort(404, 'Incident not found');
+			}
+		}
+
 	}
