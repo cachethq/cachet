@@ -6,7 +6,6 @@ composer.phar
 .env.php
 .DS_Store
 Thumbs.db
-rev-manifest.json
 config.codekit
 npm-debug.log
 public/assets/bower_components
