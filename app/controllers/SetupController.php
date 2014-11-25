@@ -10,9 +10,9 @@
 		public function setupCachet() {
 			$postData = Input::get();
 			$v = Validator::make($postData, [
-				'app_name' => 'required',
-				'app_domain' => 'url|required',
-				'show_support' => 'boolean',
+				'settings.app_name' => 'required',
+				'settings.app_domain' => 'url|required',
+				'settings.show_support' => 'boolean',
 				'user.name'=> 'alpha_dash|required',
 				'user.email' => 'email|required',
 				'user.password' => 'required'
@@ -32,7 +32,7 @@
 				Auth::login($user);
 
 				// Create the settings, boi.
-				foreach ($postData as $settingName => $settingValue) {
+				foreach (array_get($postData, 'settings') as $settingName => $settingValue) {
 					$setting = new Setting;
 					$setting->name = $settingName;
 					$setting->value = $settingValue;

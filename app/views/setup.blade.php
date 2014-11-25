@@ -11,27 +11,27 @@
 			<div class='panel panel-default'>
 				<div class='panel-heading'>Service Details</div>
 				<div class='panel-body'>
-					<form name='SetupForm' class='form-vertical' role='form' method="POST">
+					{{ Form::open(['name' => 'SetupForm', 'class' => 'form-vertical', 'role' => 'form']) }}
 						<h3>Status Page Details</h3>
 						<div class='form-group'>
 							<label class='sr-only'>Site Name</label>
-							<input type='text' name='app_name' class='form-control' placeholder='Site Name' value='{{ Input::old('app_name', '') }}' required />
-							@if($errors->has('app_name'))
-							<span class='text-danger'>{{ $errors->first('app_name') }}</span>
+							<input type='text' name='settings[app_name]' class='form-control' placeholder='Site Name' value='{{ Input::old('settings.app_name', '') }}' required />
+							@if($errors->has('settings.app_name'))
+							<span class='text-danger'>{{ $errors->first('settings.app_name') }}</span>
 							@endif
 						</div>
 						<div class='form-group'>
 							<label class='sr-only'>Site Domain</label>
-							<input type='text' name='app_domain' class='form-control' placeholder='Site Domain' value='{{ Input::old('app_domain', '') }}' required />
-							@if($errors->has('app_domain'))
-							<span class='text-danger'>{{ $errors->first('app_domain') }}</span>
+							<input type='text' name='settings[app_domain]' class='form-control' placeholder='Site Domain' value='{{ Input::old('settings.app_domain', '') }}' required />
+							@if($errors->has('settings.app_domain'))
+							<span class='text-danger'>{{ $errors->first('settings.app_domain') }}</span>
 							@endif
 						</div>
 						<div class='form-group'>
 							<label>
-								<input type='checkbox' name='show_support' value='1' checked />
+								<input type='checkbox' name='settings[show_support]' value='1' checked />
+								Show support for Cachet?
 							</label>
-							Show support for Cachet?
 						</div>
 
 						<h3>Administrator Account</h3>
@@ -61,8 +61,7 @@
 						<div class='form-group'>
 							<button type='submit' class='btn btn-default'>Setup!</button>
 						</div>
-						{{ Form::token() }}
-					</form>
+					{{ Form::close() }}
 				</div>
 			</div>
 		</div>
