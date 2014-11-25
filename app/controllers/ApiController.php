@@ -14,4 +14,9 @@
 			}
 		}
 
+		public function getComponentIncidents($id) {
+			$component = $this->getComponent($id);
+			return $component->incidents;
+		}
+
 	}

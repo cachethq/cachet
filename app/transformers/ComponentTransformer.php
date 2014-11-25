@@ -8,6 +8,7 @@
 				'description' => $component->description,
 				'status_id' => (int) $component->status,
 				'status' => $component->getHumanStatusAttribute(),
+				'incident_count' => $component->incidents()->count()
 			];
 		}
 
