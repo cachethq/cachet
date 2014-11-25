@@ -1,6 +1,6 @@
 <?php
 
-	class ComponentTransformer extends League\Fractal\TransformerAbstract {
+	class ComponentTransformer extends \League\Fractal\TransformerAbstract {
 		public function transform(Component $component) {
 			return [
 				'id' => (int) $component->id,
