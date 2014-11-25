@@ -1,10 +1,11 @@
 @extends('layout.master')
 
 @section('content')
-	<div class='jumbotron'>
-		<h1>Setup Cachet</h1>
-		<p class='lead'>Under construction.</p>
+	<div class='text-header'>
+		<h1>Setup Cachet <small>Under construction.</small></h1>
 	</div>
+
+	<hr />
 
 	<div class='row'>
 		<div class='col-md-8'>
