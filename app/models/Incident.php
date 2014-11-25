@@ -3,7 +3,7 @@
 	class Incident extends Eloquent {
 		/**
 		 * An incident belongs to a component.
-		 * @return Illuminate\Database\Eloquent\Relations
+		 * @return Illuminate\Database\Eloquent\Relations\BelongsTo
 		 */
 		public function parent() {
 			return $this->belongsTo('Component', 'component', 'id');
