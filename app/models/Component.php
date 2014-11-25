@@ -11,7 +11,7 @@
 			'status' => 'required|integer'
 		];
 
-		protected $fillable = ['user_id', 'name', 'description', 'status'];
+		protected $fillable = ['name', 'description', 'status'];
 
 		/**
 		 * Lookup all of the incidents reported on the component.

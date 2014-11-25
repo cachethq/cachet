@@ -88,6 +88,32 @@
 		public function postIncidents() {
 			$incident = new Incident(Input::all());
 			$incident->user_id = $this->auth->user()->id;
+			return $this->saveIncident($incident);
+		}
+
+		/**
+		 * Update an existing incident
+		 *
+		 * @param int $id
+		 *
+		 * @return Incident
+		 */
+		public function putIncident($id) {
+			$incident = $this->getIncident($id);
+
+			$incident->fill(Input::all());
+
+			return $this->saveIncident($incident);
+		}
+
+		/**
+		 * Function for saving the incident, and returning appropriate error codes
+		 *
+		 * @param Incident $incident
+		 *
+		 * @return Incident
+		 */
+		private function saveIncident($incident) {
 			if ($incident->isValid()) {
 				try {
 					$component = $incident->parent;
@@ -104,4 +130,5 @@
 				App::abort(404, $incident->getErrors()->first());
 			}
 		}
+
 	}

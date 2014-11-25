@@ -11,6 +11,8 @@
 		Route::group(['protected' => true], function() {
 			Route::post('components', 'ApiController@postComponents');
 			Route::post('incidents', 'ApiController@postIncidents');
+
+			Route::put('incidents/{id}', 'ApiController@putIncident');
 		});
 
 	});

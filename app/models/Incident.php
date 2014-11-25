@@ -14,7 +14,7 @@
 			'message' => 'required',
 		];
 
-		protected $fillable = ['user_id', 'component', 'name', 'status', 'message'];
+		protected $fillable = ['component', 'name', 'status', 'message'];
 
 		/**
 		 * An incident belongs to a component.
