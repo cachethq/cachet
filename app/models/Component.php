@@ -2,6 +2,14 @@
 
 	class Component extends Eloquent implements Dingo\Api\Transformer\TransformableInterface {
 		/**
+		 * Lookup all of the incidents reported on the component.
+		 * @return Illuminate\Database\Eloquent\Relations
+		 */
+		public function incidents() {
+			return $this->hasMany('Incident', 'component_id', 'id');
+		}
+
+		/**
 		 * Looks up the human readable version of the status.
 		 * @return string
 		 */
@@ -32,8 +40,7 @@
 		 *
 		 * @return mixed
 		 */
-		public function getTransformer()
-		{
+		public function getTransformer() {
 			return new ComponentTransformer();
 		}
 	}
