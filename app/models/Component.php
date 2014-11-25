@@ -6,11 +6,12 @@
 		use ValidatingTrait;
 
 		protected $rules = [
+			'user_id'   => 'required|integer',
 			'name'   => 'required',
 			'status' => 'required|integer'
 		];
 
-		protected $fillable = ['name', 'description', 'status'];
+		protected $fillable = ['user_id', 'name', 'description', 'status'];
 
 		/**
 		 * Lookup all of the incidents reported on the component.

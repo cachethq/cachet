@@ -43,6 +43,7 @@
 		 */
 		public function postComponents() {
 			$component = new Component(Input::all());
+			$component->user_id = $this->auth->user()->id;
 			if ($component->isValid()) {
 				$component->saveOrFail();
 				return $component;
@@ -82,6 +83,7 @@
 		 */
 		public function postIncidents() {
 			$incident = new Incident(Input::all());
+			$incident->user_id = $this->auth->user()->id;
 			if ($incident->isValid()) {
 				$incident->saveOrFail();
 				return $incident;

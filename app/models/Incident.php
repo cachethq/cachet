@@ -7,13 +7,14 @@
 		use \Illuminate\Database\Eloquent\SoftDeletingTrait;
 
 		protected $rules = [
+			'user_id'   => 'required|integer',
 			'component'   => 'required|integer',
 			'name'   => 'required',
 			'status' => 'required|integer',
 			'message' => 'required',
 		];
 
-		protected $fillable = ['component', 'name', 'status', 'message'];
+		protected $fillable = ['user_id', 'component', 'name', 'status', 'message'];
 
 		/**
 		 * An incident belongs to a component.
