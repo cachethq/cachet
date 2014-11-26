@@ -1,8 +1,8 @@
-<?php Controllers\Api;
+<?php namespace CachetHq\Cachet\Controllers\Api;
 
 use Dingo\Api\Routing\Controller as DingoController;
 use Dingo\Api\Auth\Shield;
-use Cachet\Repositories\Component\ComponentRepository;
+use CachetHq\Cachet\Repositories\Component\ComponentRepository;
 
 class ComponentController extends DingoController {
 

@@ -1,4 +1,4 @@
-<?php namespace Cachet\Repositories\Component;
+<?php namespace CachetHq\Cachet\Repositories\Component;
 
 interface ComponentRepository {
 

@@ -1,4 +1,4 @@
-<?php namespace Cachet\Repositories;
+<?php namespace CachetHq\Cachet\Repositories;
 
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 

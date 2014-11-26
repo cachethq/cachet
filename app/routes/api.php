@@ -1,23 +1,23 @@
 <?php
 
-	Route::api(['version' => 'v1', 'prefix' => 'api'], function() {
+	Route::api(['version' => 'v1', 'prefix' => 'api', 'namespace' => 'Cachet\Controllers\Api'], function() {
 
-		Route::get('components', 'ApiController@getComponents');
-		Route::get('components/{id}', 'ApiController@getComponent');
-		Route::get('components/{id}/incidents', 'ApiController@getComponentIncidents');
-		Route::get('incidents', 'ApiController@getIncidents');
-		Route::get('incidents/{id}', 'ApiController@getIncident');
-		Route::get('metrics', 'ApiController@getMetrics');
-		Route::get('metrics/{id}', 'ApiController@getMetric');
+		Route::get('components', 'ComponentController@getComponents');
+		Route::get('components/{id}', 'ComponentController@getComponent');
+		Route::get('components/{id}/incidents', 'ComponentController@getComponentIncidents');
+		Route::get('incidents', 'IncidentController@getIncidents');
+		Route::get('incidents/{id}', 'IncidentController@getIncident');
+		Route::get('metrics', 'IncidentController@getMetrics');
+		Route::get('metrics/{id}', 'IncidentController@getMetric');
 
 		Route::group(['protected' => true], function() {
-			Route::post('components', 'ApiController@postComponents');
-			Route::post('incidents', 'ApiController@postIncidents');
-			Route::post('metrics', 'ApiController@postMetrics');
+			Route::post('components', 'ComponentController@postComponents');
+			Route::post('incidents', 'IncidentController@postIncidents');
+			Route::post('metrics', 'IncidentController@postMetrics');
 
-			Route::put('components/{id}', 'ApiController@putComponent');
-			Route::put('incidents/{id}', 'ApiController@putIncident');
-			Route::put('metrics/{id}', 'ApiController@putMetric');
+			Route::put('components/{id}', 'ComponentController@putComponent');
+			Route::put('incidents/{id}', 'IncidentController@putIncident');
+			Route::put('metrics/{id}', 'IncidentController@putMetric');
 		});
 
 	});
