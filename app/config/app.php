@@ -124,6 +124,8 @@ return array(
 
 		'Dingo\Api\ApiServiceProvider',
 
+		'CachetHq\Cachet\Support\ServiceProviders\RepositoryServiceProvider',
+
 	),
 
 	/*
