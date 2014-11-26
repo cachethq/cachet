@@ -47,7 +47,8 @@
 		public function fire($eventType, $data = null) {
 			$startTime = microtime(true);
 
-			$request = $this->client->createRequest($this->requestMethod, $this->endpoint, [
+			$client = new \GuzzleHttp\Client();
+			$request = $client->createRequest($this->requestMethod, $this->endpoint, [
 				'headers' => [
 					'X-Cachet-Event' => $eventType,
 				],
@@ -55,7 +56,7 @@
 			]);
 
 			try {
-				$response = $this->client->send($request);
+				$response = $client->send($request);
 			} catch (\GuzzleHttp\Exception\ClientException $e) {
 				// Do nothing with the exception, we want it.
 				$response = $e->getResponse();
