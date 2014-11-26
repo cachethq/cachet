@@ -1,12 +1,14 @@
-<?php namespace CachetHq\Cachet\Repositories\Component;
+<?php
 
-interface ComponentRepository {
+	namespace CachetHQ\Cachet\Repositories\Component;
 
-	public function all();
+	interface ComponentRepository {
 
-	public function create($id, array $array);
+		public function all();
 
-	public function findOrFail($id);
+		public function create($id, array $array);
 
-	public function with($id, array $with);
-}
+		public function findOrFail($id);
+
+		public function with($id, array $with);
+	}

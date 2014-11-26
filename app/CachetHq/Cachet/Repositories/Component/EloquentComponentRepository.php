@@ -1,26 +1,28 @@
-<?php namespace CachetHq\Cachet\Repositories\Component;
+<?php
 
-use CachetHq\Cachet\Repositories\EloquentRepository;
-use Component;
-use Exception;
+	namespace CachetHQ\Cachet\Repositories\Component;
 
-class EloquentComponentRepository extends EloquentRepository implements ComponentRepository {
+	use CachetHQ\Cachet\Repositories\EloquentRepository;
+	use Component;
+	use Exception;
 
-	protected $model;
+	class EloquentComponentRepository extends EloquentRepository implements ComponentRepository {
 
-	public function __construct(Component $model) {
-		$this->model = $model;
-	}
+		protected $model;
 
-	public function create($user_id, array $array) {
-		$component = new $this->model($array);
-		$component->user_id = $user_id;
-
-		if ($component->isInvalid()) {
-			throw new Exception('Invalid model validation', $component->getErrors());
+		public function __construct(Component $model) {
+			$this->model = $model;
 		}
 
-		$component->saveOrFail();
-		return $component;
+		public function create($user_id, array $array) {
+			$component = new $this->model($array);
+			$component->user_id = $user_id;
+
+			if ($component->isInvalid()) {
+				throw new Exception('Invalid model validation', $component->getErrors());
+			}
+
+			$component->saveOrFail();
+			return $component;
+		}
 	}
-}
