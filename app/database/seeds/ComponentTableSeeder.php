@@ -15,20 +15,18 @@ class ComponentTableSeeder extends Seeder {
 			[
 				"name" => "API",
 				"description" => "Used by third-parties to connect to us"
-			],
-			[
+			], [
 				"name" => "Payments",
 				"description" => "Backed by Stripe"
-			],
-			[
+			], [
 				"name" => "Website"
 			]
 		];
 
 		Component::truncate();
 
-		foreach($defaultComponents as $setting) {
-			Component::create($setting);
+		foreach($defaultComponents as $component) {
+			Component::create($component);
 		}
 	}
 }
