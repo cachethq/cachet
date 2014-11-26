@@ -20,7 +20,10 @@
 			"app/database/seeds",
 			"app/tests/TestCase.php",
 			"app/filters"
-		]
+		],
+		"psr-4": {
+			"Cachet\\": "app/Cachet"
+		}
 	},
 	"extra": {
 		"heroku": {
