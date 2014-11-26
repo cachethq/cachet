@@ -11,6 +11,7 @@
 
 		/**
 		 * Returns all responses for a WebHook.
+		 *
 		 * @return  Illuminate\Database\Eloquent\Builder
 		 */
 		public function response() {
@@ -19,6 +20,7 @@
 
 		/**
 		 * Returns all active hooks.
+		 *
 		 * @param  Illuminate\Database\Eloquent\Builder $query
 		 * @return Illuminate\Database\Eloquent\Builder
 		 */
@@ -28,6 +30,7 @@
 
 		/**
 		 * Setups a Ping event that is fired upon a web hook.
+		 *
 		 * @return array result of the ping
 		 */
 		public function ping() {
@@ -36,6 +39,7 @@
 
 		/**
 		 * Fires the actual web hook event.
+		 *
 		 * @param string $eventType the event to send X-Cachet-Event
 		 * @param mixed $data Data to send to the Web Hook
 		 * @return object
@@ -75,6 +79,8 @@
 
 		/**
 		 * Returns a human readable request type name.
+		 *
+		 * @throws Exception
 		 * @return string HEAD, GET, POST, DELETE, PATCH, PUT etc
 		 */
 		public function getRequestMethodAttribute() {

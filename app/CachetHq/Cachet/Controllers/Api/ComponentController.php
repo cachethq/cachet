@@ -30,7 +30,7 @@ class ComponentController extends DingoController {
 	 *
 	 * @param int $id
 	 *
-	 * @return Component
+	 * @return \Component
 	 */
 	public function getComponent($id) {
 		return $this->component->findOrFail($id);
@@ -43,7 +43,7 @@ class ComponentController extends DingoController {
 	/**
 	 * Create a new component
 	 *
-	 * @return Component
+	 * @return \Component
 	 */
 	public function postComponents() {
 		return $this->component->create($this->auth->user()->id, Input::all());
