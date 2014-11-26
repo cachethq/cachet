@@ -10,6 +10,9 @@
 		"dingo/api": "~0.6",
 		"watson/validating": "0.10.*"
 	},
+	"require-dev": {
+		"phpunit/phpunit": "~4.3.0"
+	},
 	"autoload": {
 		"classmap": [
 			"app/commands",
