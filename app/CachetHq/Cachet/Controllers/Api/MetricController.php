@@ -2,8 +2,6 @@
 
 use Input, Metric;
 use Dingo\Api\Routing\Controller as DingoController;
-use Dingo\Api\Auth\Shield;
-use CachetHq\Cachet\Repositories\Component\ComponentRepository;
 
 class MetricController extends DingoController {
 
