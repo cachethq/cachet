@@ -1,5 +1,6 @@
 <?php namespace CachetHq\Cachet\Controllers\Api;
 
+use Input;
 use Dingo\Api\Routing\Controller as DingoController;
 use Dingo\Api\Auth\Shield;
 use CachetHq\Cachet\Repositories\Component\ComponentRepository;
@@ -36,7 +37,7 @@ class ComponentController extends DingoController {
 	}
 
 	public function getComponentIncidents($id) {
-		return $this->component->incidents($id);
+		return $this->component->with($id, ['incidents']);
 	}
 
 	/**
@@ -45,17 +46,6 @@ class ComponentController extends DingoController {
 	 * @return Component
 	 */
 	public function postComponents() {
-		$component = new Component(Input::all());
-		$component->user_id = $this->auth->user()->id;
-		if ($component->isValid()) {
-			try {
-				$component->saveOrFail();
-				return $component;
-			} catch (Exception $e) {
-				App::abort(500, $e->getMessage());
-			}
-		} else {
-			App::abort(404, $component->getErrors()->first());
-		}
+		return $this->component->create($this->auth->user()->id, Input::all());
 	}
 }

@@ -1,15 +1,26 @@
 <?php namespace CachetHq\Cachet\Repositories;
 
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Exception;
 
 abstract class EloquentRepository {
 
 	/**
-	 * Creates a model with a given array of items
-	 * @param  array $array
+	 * Returns all models
+	 * @return object
 	 */
-	public function create(array $array) {
-		$this->model->create($array);
+	public function all() {
+		return $this->model->all();
+	}
+
+	/**
+	 * Returns an object with related relationships
+	 * @param  id $id
+	 * @param  array $with Array of model relationships
+	 * @return object|ModelNotFoundException
+	 */
+	public function with($id, array $with = []) {
+		return $this->model->with($with)->findOrFail($id);
 	}
 
 	/**
@@ -30,6 +41,15 @@ abstract class EloquentRepository {
 	 */
 	public function find(int $id) {
 		return $this->model->find($id);
+	}
+
+	/**
+	 * Finds a model by ID
+	 * @param  integer $id
+	 * @return object|ModelNotFoundException
+	 */
+	public function findOrFail($id) {
+		return $this->model->findOrFail($id);
 	}
 
 	/**
