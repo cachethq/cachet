@@ -1,9 +1,11 @@
-<?php namespace CachetHq\Cachet\Controllers\Api;
+<?php
 
-use Input, Metric;
-use Dingo\Api\Routing\Controller as DingoController;
+	namespace CachetHQ\Cachet\Controllers\Api;
 
-class MetricController extends DingoController {
+	use Input, Metric;
+	use Dingo\Api\Routing\Controller as DingoController;
+
+	class MetricController extends DingoController {
 
 		/**
 		 * Get all metrics
@@ -71,4 +73,4 @@ class MetricController extends DingoController {
 				App::abort(404, $metric->getErrors()->first());
 			}
 		}
-}
+	}

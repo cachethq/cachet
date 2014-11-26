@@ -1,12 +1,11 @@
-<?php namespace CachetHq\Cachet\Support\ServiceProviders;
+<?php
 
-use Illuminate\Support\ServiceProvider;
+	namespace CachetHQ\Cachet\Support\ServiceProviders;
 
-class RepositoryServiceProvider extends ServiceProvider {
+	use Illuminate\Support\ServiceProvider;
 
-	public function register()
-	{
-		$this->app->bind('CachetHq\Cachet\Repositories\Component\ComponentRepository', 'CachetHq\Cachet\Repositories\Component\EloquentComponentRepository');
+	class RepositoryServiceProvider extends ServiceProvider {
+		public function register() {
+			$this->app->bind('CachetHQ\Cachet\Repositories\Component\ComponentRepository', 'CachetHQ\Cachet\Repositories\Component\EloquentComponentRepository');
+		}
 	}
-
-}
