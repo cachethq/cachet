@@ -125,7 +125,7 @@ return array(
 		'Dingo\Api\Provider\ApiServiceProvider',
 
 		'CachetHQ\Cachet\Support\ServiceProviders\RepositoryServiceProvider',
-
+		'Thujohn\Rss\RssServiceProvider',
 	),
 
 	/*
@@ -194,7 +194,8 @@ return array(
 		'Validator'         => 'Illuminate\Support\Facades\Validator',
 		'View'              => 'Illuminate\Support\Facades\View',
 
-		'API' => 'Dingo\Api\Facades\API'
+		'API' => 'Dingo\Api\Facades\API',
+		'RSS' => 'Thujohn\Rss\RssFacade',
 
 	),
 

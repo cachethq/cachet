@@ -16,6 +16,8 @@
 
 		protected $fillable = ['component', 'name', 'status', 'message'];
 
+		protected $appends = ['humanStatus'];
+
 		/**
 		 * An incident belongs to a component.
 		 * @return Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -29,7 +31,8 @@
 		 * @return string
 		 */
 		public function getHumanStatusAttribute() {
-			return Lang::get('incident.status' . $this->status);
+			$statuses = Lang::get('incident.status');
+			return $statuses[$this->status];
 		}
 
 		/**
