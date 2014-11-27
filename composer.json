@@ -7,7 +7,7 @@
 	"require": {
 		"laravel/framework": "4.2.*",
 		"guzzlehttp/guzzle": "4.*",
-		"dingo/api": "~0.6",
+		"dingo/api": "0.7.*",
 		"watson/validating": "0.10.*"
 	},
 	"require-dev": {
