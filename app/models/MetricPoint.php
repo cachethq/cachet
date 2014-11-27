@@ -1,5 +1,5 @@
 <?php
 
-	class MetricPoint extends Eloquent {
+class MetricPoint extends Eloquent {
 
-	}
+}
