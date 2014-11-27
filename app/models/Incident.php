@@ -3,7 +3,7 @@
 use Watson\Validating\ValidatingTrait;
 
 class Incident extends Eloquent implements \Dingo\Api\Transformer\TransformableInterface {
-    
+
     use ValidatingTrait;
     use Illuminate\Database\Eloquent\SoftDeletingTrait;
 

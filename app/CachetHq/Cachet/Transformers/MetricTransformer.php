@@ -18,5 +18,5 @@ class MetricTransformer extends TransformerAbstract {
             'updated_at'    => $metric->updated_at->timestamp,
         ];
     }
-    
+
 }
