@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0f6a2d4a8afd20da1db9127e18b3b358",
+    "hash": "62ab8c6b87bf3b5342d449b46df2d76b",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -1962,6 +1962,48 @@
             "time": "2014-10-26 07:41:27"
         },
         {
+            "name": "thujohn/rss",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thujohn/rss-l4.git",
+                "reference": "8c03400062167c3f6b7340a1c964cdb3626a4e4b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thujohn/rss-l4/zipball/8c03400062167c3f6b7340a1c964cdb3626a4e4b",
+                "reference": "8c03400062167c3f6b7340a1c964cdb3626a4e4b",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "4.x",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Thujohn\\Rss": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jonathan Thuau",
+                    "email": "jonathan.thuau@gmail.com"
+                }
+            ],
+            "description": "RSS builder for Laravel 4",
+            "keywords": [
+                "laravel",
+                "laravel4",
+                "rss"
+            ],
+            "time": "2014-04-07 20:15:45"
+        },
+        {
             "name": "watson/validating",
             "version": "0.10.6",
             "source": {
@@ -2758,7 +2800,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "thujohn/rss": 20
+    },
     "prefer-stable": false,
     "platform": [],
     "platform-dev": []

@@ -20,3 +20,5 @@
 		// Authorization stuff.
 		Route::get('/auth/logout', 'AuthController@logoutAction');
 	});
+
+	Route::get('/rss', 'RSSController@feedAction');
