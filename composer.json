@@ -19,7 +19,6 @@
 			"app/commands",
 			"app/controllers",
 			"app/models",
-			"app/transformers",
 			"app/database/migrations",
 			"app/database/seeds",
 			"app/tests/TestCase.php",

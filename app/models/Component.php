@@ -35,6 +35,6 @@ class Component extends Eloquent implements \Dingo\Api\Transformer\Transformable
      * @return ComponentTransformer
      */
     public function getTransformer() {
-        return new ComponentTransformer();
+        return new CachetHQ\Cachet\Transformers\ComponentTransformer();
     }
 }

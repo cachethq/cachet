@@ -1,6 +1,12 @@
 <?php
 
-class ComponentTransformer extends \League\Fractal\TransformerAbstract {
+namespace CachetHQ\Cachet\Transformers;
+
+use Component;
+use League\Fractal\TransformerAbstract;
+
+class ComponentTransformer extends TransformerAbstract {
+
     public function transform(Component $component) {
         return [
             'id'                => (int) $component->id,
@@ -13,4 +19,5 @@ class ComponentTransformer extends \League\Fractal\TransformerAbstract {
             'updated_at'        => $component->updated_at->timestamp,
         ];
     }
+
 }
