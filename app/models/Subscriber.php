@@ -1,7 +1,5 @@
 <?php
 
-namespace CachetHQ\Cachet\Models;
-
 use Watson\Validating\ValidatingTrait;
 use Illuminate\Database\Eloquent\SoftDeletingTrait;
 

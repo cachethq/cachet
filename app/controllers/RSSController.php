@@ -1,7 +1,5 @@
 <?php
 
-namespace CachetHQ\Cachet\Controllers;
-
 class RSSController extends Controller {
     public function feedAction() {
         $feed = RSS::feed('2.0', 'UTF-8');

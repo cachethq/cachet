@@ -1,7 +1,5 @@
 <?php
 
-namespace CachetHQ\Cachet\Controllers;
-
 /**
  * Logs users into their account
  */

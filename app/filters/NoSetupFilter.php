@@ -1,7 +1,5 @@
 <?php
 
-namespace CachetHQ\Cachet\Filters;
-
 class NoSetupFilter {
     public function filter($route, $request, $settingName) {
         try {

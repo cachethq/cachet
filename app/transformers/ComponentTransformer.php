@@ -1,7 +1,5 @@
 <?php
 
-namespace CachetHQ\Cachet\Transformers;
-
 class ComponentTransformer extends \League\Fractal\TransformerAbstract {
     public function transform(Component $component) {
         return [

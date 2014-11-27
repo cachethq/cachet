@@ -1,7 +1,5 @@
 <?php
 
-namespace CachetHQ\Cachet\Models;
-
 class Setting extends Eloquent {
     /**
      * Returns a setting from the database.

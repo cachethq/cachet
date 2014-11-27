@@ -1,7 +1,5 @@
 <?php
 
-namespace CachetHQ\Cachet\Controllers;
-
 class HomeController extends Controller {
     /**
      * Returns the rendered Blade templates.

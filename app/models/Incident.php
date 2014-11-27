@@ -1,7 +1,5 @@
 <?php
 
-namespace CachetHQ\Cachet\Models;
-
 use Watson\Validating\ValidatingTrait;
 
 class Incident extends Eloquent implements \Dingo\Api\Transformer\TransformableInterface {

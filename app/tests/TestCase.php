@@ -1,7 +1,5 @@
 <?php
 
-namespace CachetHQ\Cachet\Tests;
-
 class TestCase extends Illuminate\Foundation\Testing\TestCase {
 
 	/**

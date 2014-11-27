@@ -1,7 +1,5 @@
 <?php
 
-namespace CachetHQ\Cachet\Models;
-
 class WebHook extends Eloquent {
     // Request Methods.
     const HEAD = 0;

@@ -1,7 +1,5 @@
 <?php
 
-namespace CachetHQ\Cachet\Controllers;
-
 /**
  * AKA the Management Panel.
  */
