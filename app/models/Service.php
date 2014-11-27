@@ -1,21 +1,23 @@
 <?php
 
-	use Watson\Validating\ValidatingTrait;
+namespace CachetHQ\Cachet\Models;
 
-	class Service extends Eloquent {
-		use ValidatingTrait;
+use Watson\Validating\ValidatingTrait;
 
-		protected $rules = [
-			'type'       => 'alpha_dash|required',
-			'active'     => 'required|in:0,1',
-			'properties' => ''
-		];
+class Service extends Eloquent {
+    use ValidatingTrait;
 
-		public function getPropertiesAttribute($properties) {
-			return json_decode($properties);
-		}
+    protected $rules = [
+        'type'       => 'alpha_dash|required',
+        'active'     => 'required|in:0,1',
+        'properties' => ''
+    ];
 
-		public function setPropertiesAttribute($properties) {
-			$this->attributes['properties'] = json_encode($properties);
-		}
-	}
+    public function getPropertiesAttribute($properties) {
+        return json_decode($properties);
+    }
+
+    public function setPropertiesAttribute($properties) {
+        $this->attributes['properties'] = json_encode($properties);
+    }
+}

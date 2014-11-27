@@ -1,59 +1,61 @@
 <?php
 
-	use Watson\Validating\ValidatingTrait;
+namespace CachetHQ\Cachet\Models;
 
-	class Incident extends Eloquent implements \Dingo\Api\Transformer\TransformableInterface {
-		use ValidatingTrait;
-		use Illuminate\Database\Eloquent\SoftDeletingTrait;
+use Watson\Validating\ValidatingTrait;
 
-		protected $rules = [
-			'user_id'   => 'required|integer',
-			'component' => 'required|integer',
-			'name'      => 'required',
-			'status'    => 'required|integer',
-			'message'   => 'required',
-		];
+class Incident extends Eloquent implements \Dingo\Api\Transformer\TransformableInterface {
+    use ValidatingTrait;
+    use Illuminate\Database\Eloquent\SoftDeletingTrait;
 
-		protected $fillable = ['component', 'name', 'status', 'message'];
+    protected $rules = [
+        'user_id'   => 'required|integer',
+        'component' => 'required|integer',
+        'name'      => 'required',
+        'status'    => 'required|integer',
+        'message'   => 'required',
+    ];
 
-		protected $appends = ['humanStatus'];
+    protected $fillable = ['component', 'name', 'status', 'message'];
 
-		/**
-		 * An incident belongs to a component.
-		 * @return Illuminate\Database\Eloquent\Relations\BelongsTo
-		 */
-		public function parent() {
-			return $this->belongsTo('Component', 'component', 'id');
-		}
+    protected $appends = ['humanStatus'];
 
-		/**
-		 * Returns a human readable version of the status.
-		 * @return string
-		 */
-		public function getHumanStatusAttribute() {
-			$statuses = Lang::get('incident.status');
-			return $statuses[$this->status];
-		}
+    /**
+     * An incident belongs to a component.
+     * @return Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function parent() {
+        return $this->belongsTo('Component', 'component', 'id');
+    }
 
-		/**
-		 * Finds the icon to use for each status.
-		 * @return string
-		 */
-		public function getIconAttribute() {
-			switch ($this->status) {
-				case 1: return 'glyphicon-flag';
-				case 2: return 'glyphicon-warning-sign';
-				case 3: return 'glyphicon-eye-open';
-				case 4: return 'glyphicon-ok';
-			}
-		}
+    /**
+     * Returns a human readable version of the status.
+     * @return string
+     */
+    public function getHumanStatusAttribute() {
+        $statuses = Lang::get('incident.status');
+        return $statuses[$this->status];
+    }
 
-		/**
-		 * Get the transformer instance.
-		 *
-		 * @return IncidentTransformer
-		 */
-		public function getTransformer() {
-			return new IncidentTransformer();
-		}
-	}
+    /**
+     * Finds the icon to use for each status.
+     * @return string
+     */
+    public function getIconAttribute() {
+        switch ($this->status) {
+            case 1: return 'glyphicon-flag';
+            case 2: return 'glyphicon-warning-sign';
+            case 3: return 'glyphicon-eye-open';
+            case 4: return 'glyphicon-ok';
+        }
+    }
+
+    /**
+     * Get the transformer instance.
+     *
+     * @return IncidentTransformer
+     */
+    public function getTransformer() {
+        return new IncidentTransformer();
+    }
+}

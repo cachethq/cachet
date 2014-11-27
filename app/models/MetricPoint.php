@@ -1,5 +1,7 @@
 <?php
 
-	class MetricPoint extends Eloquent {
+namespace CachetHQ\Cachet\Models;
 
-	}
+class MetricPoint extends Eloquent {
+
+}

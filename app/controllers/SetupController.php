@@ -1,48 +1,50 @@
 <?php
 
-	class SetupController extends Controller {
-		public function showSetup() {
-			return View::make('setup')->with([
-				'pageTitle' => 'Setup'
-			]);
-		}
+namespace CachetHQ\Cachet\Controllers;
 
-		public function setupCachet() {
-			$postData = Input::get();
-			$v = Validator::make($postData, [
-				'settings.app_name' => 'required',
-				'settings.app_domain' => 'url|required',
-				'settings.show_support' => 'boolean',
-				'user.name'=> 'alpha_dash|required',
-				'user.email' => 'email|required',
-				'user.password' => 'required'
-			]);
+class SetupController extends Controller {
+    public function showSetup() {
+        return View::make('setup')->with([
+            'pageTitle' => 'Setup'
+        ]);
+    }
 
-			if ($v->passes()) {
-				// Pull the user details out.
-				$userDetails = array_get($postData, 'user');
-				unset($postData['user']);
+    public function setupCachet() {
+        $postData = Input::get();
+        $v = Validator::make($postData, [
+            'settings.app_name'     => 'required',
+            'settings.app_domain'   => 'url|required',
+            'settings.show_support' => 'boolean',
+            'user.name'             => 'alpha_dash|required',
+            'user.email'            => 'email|required',
+            'user.password'         => 'required'
+        ]);
 
-				$user = new User;
-				$user->username = $userDetails['name'];
-				$user->email = $userDetails['email'];
-				$user->password = Hash::make($userDetails['password']);
-				$user->save();
+        if ($v->passes()) {
+            // Pull the user details out.
+            $userDetails = array_get($postData, 'user');
+            unset($postData['user']);
 
-				Auth::login($user);
+            $user           = new User;
+            $user->username = $userDetails['name'];
+            $user->email    = $userDetails['email'];
+            $user->password = Hash::make($userDetails['password']);
+            $user->save();
 
-				// Create the settings, boi.
-				foreach (array_get($postData, 'settings') as $settingName => $settingValue) {
-					$setting = new Setting;
-					$setting->name = $settingName;
-					$setting->value = $settingValue;
-					$setting->save();
-				}
+            Auth::login($user);
 
-				return Redirect::to('/');
-			} else {
-				// No good, let's try that again.
-				return Redirect::back()->withInput()->with('errors', $v->messages());
-			}
-		}
-	}
+            // Create the settings, boi.
+            foreach (array_get($postData, 'settings') as $settingName => $settingValue) {
+                $setting        = new Setting;
+                $setting->name  = $settingName;
+                $setting->value = $settingValue;
+                $setting->save();
+            }
+
+            return Redirect::to('/');
+        } else {
+            // No good, let's try that again.
+            return Redirect::back()->withInput()->with('errors', $v->messages());
+        }
+    }
+}

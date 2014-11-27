@@ -1,117 +1,119 @@
 <?php
 
-	class WebHook extends Eloquent {
-		// Request Methods.
-		const HEAD = 0;
-		const GET = 1;
-		const POST = 2;
-		const PATCH = 3;
-		const PUT = 4;
-		const DELETE = 5;
+namespace CachetHQ\Cachet\Models;
 
-		/**
-		 * Returns all responses for a WebHook.
-		 *
-		 * @return  Illuminate\Database\Eloquent\Builder
-		 */
-		public function response() {
-			return $this->hasMany('WebHookContent', 'hook_id', 'id');
-		}
+class WebHook extends Eloquent {
+    // Request Methods.
+    const HEAD = 0;
+    const GET = 1;
+    const POST = 2;
+    const PATCH = 3;
+    const PUT = 4;
+    const DELETE = 5;
 
-		/**
-		 * Returns all active hooks.
-		 *
-		 * @param  Illuminate\Database\Eloquent\Builder $query
-		 * @return Illuminate\Database\Eloquent\Builder
-		 */
-		public function scopeActive($query) {
-			return $query->where('active', 1);
-		}
+    /**
+     * Returns all responses for a WebHook.
+     *
+     * @return  Illuminate\Database\Eloquent\Builder
+     */
+    public function response() {
+        return $this->hasMany('WebHookContent', 'hook_id', 'id');
+    }
 
-		/**
-		 * Setups a Ping event that is fired upon a web hook.
-		 *
-		 * @return array result of the ping
-		 */
-		public function ping() {
-			return $this->fire('ping', 'Coming live to you from Cachet.');
-		}
+    /**
+     * Returns all active hooks.
+     *
+     * @param  Illuminate\Database\Eloquent\Builder $query
+     * @return Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeActive($query) {
+        return $query->where('active', 1);
+    }
 
-		/**
-		 * Fires the actual web hook event.
-		 *
-		 * @param string $eventType the event to send X-Cachet-Event
-		 * @param mixed $data Data to send to the Web Hook
-		 * @return object
-		 */
-		public function fire($eventType, $data = null) {
-			$startTime = microtime(true);
+    /**
+     * Setups a Ping event that is fired upon a web hook.
+     *
+     * @return array result of the ping
+     */
+    public function ping() {
+        return $this->fire('ping', 'Coming live to you from Cachet.');
+    }
 
-			$client = new \GuzzleHttp\Client();
-			$request = $client->createRequest($this->requestMethod, $this->endpoint, [
-				'headers' => [
-					'X-Cachet-Event' => $eventType,
-				],
-				'body' => $data
-			]);
+    /**
+     * Fires the actual web hook event.
+     *
+     * @param string $eventType the event to send X-Cachet-Event
+     * @param mixed $data Data to send to the Web Hook
+     * @return object
+     */
+    public function fire($eventType, $data = null) {
+        $startTime = microtime(true);
 
-			try {
-				$response = $client->send($request);
-			} catch (\GuzzleHttp\Exception\ClientException $e) {
-				// Do nothing with the exception, we want it.
-				$response = $e->getResponse();
-			}
+        $client = new \GuzzleHttp\Client();
+        $request = $client->createRequest($this->requestMethod, $this->endpoint, [
+            'headers' => [
+                'X-Cachet-Event' => $eventType,
+            ],
+            'body' => $data
+        ]);
 
-			$timeTaken = microtime(TRUE) - $startTime;
+        try {
+            $response = $client->send($request);
+        } catch (\GuzzleHttp\Exception\ClientException $e) {
+            // Do nothing with the exception, we want it.
+            $response = $e->getResponse();
+        }
 
-			// Store the request
-			$hookResponse = new WebHookResponse;
-			$hookResponse->web_hook_id = $this->id;
-			$hookResponse->response_code = $response->getStatusCode();
-			$hookResponse->sent_headers = json_encode($request->getHeaders());
-			$hookResponse->sent_body = json_encode($data);
-			$hookResponse->recv_headers = json_encode($response->getHeaders());
-			$hookResponse->recv_body = json_encode($response->getBody());
-			$hookResponse->time_taken = $timeTaken;
-			$hookResponse->save();
+        $timeTaken = microtime(TRUE) - $startTime;
 
-			return $hookResponse;
-		}
+        // Store the request
+        $hookResponse                   = new WebHookResponse;
+        $hookResponse->web_hook_id      = $this->id;
+        $hookResponse->response_code    = $response->getStatusCode();
+        $hookResponse->sent_headers     = json_encode($request->getHeaders());
+        $hookResponse->sent_body        = json_encode($data);
+        $hookResponse->recv_headers     = json_encode($response->getHeaders());
+        $hookResponse->recv_body        = json_encode($response->getBody());
+        $hookResponse->time_taken       = $timeTaken;
+        $hookResponse->save();
 
-		/**
-		 * Returns a human readable request type name.
-		 *
-		 * @throws Exception
-		 * @return string HEAD, GET, POST, DELETE, PATCH, PUT etc
-		 */
-		public function getRequestMethodAttribute() {
-			$requestMethod = NULL;
+        return $hookResponse;
+    }
 
-			switch ($this->request_type) {
-				case self::HEAD:
-					$requestMethod = 'HEAD';
-					break;
-				case self::GET:
-					$requestMethod = 'GET';
-					break;
-				case self::POST:
-					$requestMethod = 'POST';
-					break;
-				case self::PATCH:
-					$requestMethod = 'PATCH';
-					break;
-				case self::PUT:
-					$requestMethod = 'PUT';
-					break;
-				case self::DELETE:
-					$requestMethod = 'DELETE';
-					break;
+    /**
+     * Returns a human readable request type name.
+     *
+     * @throws Exception
+     * @return string HEAD, GET, POST, DELETE, PATCH, PUT etc
+     */
+    public function getRequestMethodAttribute() {
+        $requestMethod = NULL;
 
-				default:
-					throw new Exception('Unknown request type value: ' . $this->request_type);
-					break;
-			}
+        switch ($this->request_type) {
+            case self::HEAD:
+                $requestMethod = 'HEAD';
+                break;
+            case self::GET:
+                $requestMethod = 'GET';
+                break;
+            case self::POST:
+                $requestMethod = 'POST';
+                break;
+            case self::PATCH:
+                $requestMethod = 'PATCH';
+                break;
+            case self::PUT:
+                $requestMethod = 'PUT';
+                break;
+            case self::DELETE:
+                $requestMethod = 'DELETE';
+                break;
 
-			return $requestMethod;
-		}
-	}
+            default:
+                throw new Exception('Unknown request type value: ' . $this->request_type);
+                break;
+        }
+
+        return $requestMethod;
+    }
+}

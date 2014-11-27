@@ -1,21 +1,23 @@
 <?php
 
-	use Watson\Validating\ValidatingTrait;
+namespace CachetHQ\Cachet\Models;
 
-	class IncidentTemplate extends Eloquent {
-		use ValidatingTrait;
+use Watson\Validating\ValidatingTrait;
 
-		protected $rules = [
-			'name'     => 'alpha|required',
-			'slug'     => 'alpha_dash|required',
-			'template' => 'required'
-		];
+class IncidentTemplate extends Eloquent {
+    use ValidatingTrait;
 
-		public static function boot() {
-			parent::boot();
+    protected $rules = [
+        'name'     => 'alpha|required',
+        'slug'     => 'alpha_dash|required',
+        'template' => 'required'
+    ];
 
-			self::on('saving', function($template) {
-				$template->slug = Str::slug($template->name);
-			});
-		}
-	}
+    public static function boot() {
+        parent::boot();
+
+        self::on('saving', function($template) {
+            $template->slug = Str::slug($template->name);
+        });
+    }
+}

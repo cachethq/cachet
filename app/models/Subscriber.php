@@ -1,15 +1,17 @@
 <?php
 
-	use Watson\Validating\ValidatingTrait;
-	use Illuminate\Database\Eloquent\SoftDeletingTrait;
+namespace CachetHQ\Cachet\Models;
 
-	class Subscriber extends Eloquent {
-		use ValidatingTrait;
-		use SoftDeletingTrait;
+use Watson\Validating\ValidatingTrait;
+use Illuminate\Database\Eloquent\SoftDeletingTrait;
 
-		protected $rules = [
-			'email' => 'required|email'
-		];
+class Subscriber extends Eloquent {
+    use ValidatingTrait;
+    use SoftDeletingTrait;
 
-		protected $fillable = ['email'];
-	}
+    protected $rules = [
+        'email' => 'required|email'
+    ];
+
+    protected $fillable = ['email'];
+}

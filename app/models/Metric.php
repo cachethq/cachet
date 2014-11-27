@@ -1,32 +1,34 @@
 <?php
 
-	use Watson\Validating\ValidatingTrait;
+namespace CachetHQ\Cachet\Models;
 
-	class Metric extends Eloquent implements \Dingo\Api\Transformer\TransformableInterface {
-		use ValidatingTrait;
+use Watson\Validating\ValidatingTrait;
 
-		protected $rules = [
-			'name'          => 'required',
-			'suffix'        => 'required',
-			'display_chart' => 'boolean',
-		];
+class Metric extends Eloquent implements \Dingo\Api\Transformer\TransformableInterface {
+    use ValidatingTrait;
 
-		protected $fillable = ['name', 'suffix', 'description', 'display_chart'];
+    protected $rules = [
+        'name'          => 'required',
+        'suffix'        => 'required',
+        'display_chart' => 'boolean',
+    ];
 
-		/**
-		 * Determines whether a chart should be shown.
-		 * @return bool
-		 */
-		public function getShouldDisplayAttribute() {
-			return $this->display_chart === 1;
-		}
+    protected $fillable = ['name', 'suffix', 'description', 'display_chart'];
 
-		/**
-		 * Get the transformer instance.
-		 *
-		 * @return ComponentTransformer
-		 */
-		public function getTransformer() {
-			return new MetricTransformer();
-		}
-	}
+    /**
+     * Determines whether a chart should be shown.
+     * @return bool
+     */
+    public function getShouldDisplayAttribute() {
+        return $this->display_chart === 1;
+    }
+
+    /**
+     * Get the transformer instance.
+     *
+     * @return ComponentTransformer
+     */
+    public function getTransformer() {
+        return new MetricTransformer();
+    }
+}

@@ -1,40 +1,42 @@
 <?php
 
-	use Watson\Validating\ValidatingTrait;
+namespace CachetHQ\Cachet\Models;
 
-	class Component extends Eloquent implements \Dingo\Api\Transformer\TransformableInterface {
-		use ValidatingTrait;
+use Watson\Validating\ValidatingTrait;
 
-		protected $rules = [
-			'user_id' => 'required|integer',
-			'name'    => 'required',
-			'status'  => 'required|integer'
-		];
+class Component extends Eloquent implements \Dingo\Api\Transformer\TransformableInterface {
+    use ValidatingTrait;
 
-		protected $fillable = ['name', 'description', 'status'];
+    protected $rules = [
+        'user_id' => 'required|integer',
+        'name'    => 'required',
+        'status'  => 'required|integer'
+    ];
 
-		/**
-		 * Lookup all of the incidents reported on the component.
-		 * @return Illuminate\Database\Eloquent\Relations
-		 */
-		public function incidents() {
-			return $this->hasMany('Incident', 'component', 'id');
-		}
+    protected $fillable = ['name', 'description', 'status'];
 
-		/**
-		 * Looks up the human readable version of the status.
-		 * @return string
-		 */
-		public function getHumanStatusAttribute() {
-			return Lang::get('component.status.' . $this->status);
-		}
+    /**
+     * Lookup all of the incidents reported on the component.
+     * @return Illuminate\Database\Eloquent\Relations
+     */
+    public function incidents() {
+        return $this->hasMany('Incident', 'component', 'id');
+    }
 
-		/**
-		 * Get the transformer instance.
-		 *
-		 * @return ComponentTransformer
-		 */
-		public function getTransformer() {
-			return new ComponentTransformer();
-		}
-	}
+    /**
+     * Looks up the human readable version of the status.
+     * @return string
+     */
+    public function getHumanStatusAttribute() {
+        return Lang::get('component.status.' . $this->status);
+    }
+
+    /**
+     * Get the transformer instance.
+     *
+     * @return ComponentTransformer
+     */
+    public function getTransformer() {
+        return new ComponentTransformer();
+    }
+}
