@@ -18,9 +18,7 @@
 			$component = new $this->model($array);
 			$component->user_id = $user_id;
 
-			if ($component->isInvalid()) {
-				throw new Exception('Invalid model validation', $component->getErrors());
-			}
+			$this->validate($component);
 
 			$component->saveOrFail();
 			return $component;

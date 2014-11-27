@@ -100,4 +100,15 @@
 			$model = $this->model->whereId($id)->first(['id']);
 			$model->update($array);
 		}
+
+		/**
+		 * Validate a given model with Watson validation
+		 * @param  object $model
+		 * @return Exception
+		 */
+		public function validate($model) {
+			if ($model->isInvalid()) {
+				throw new Exception('Invalid model validation');
+			}
+		}
 	}
