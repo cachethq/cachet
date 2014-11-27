@@ -2,7 +2,7 @@
 
 ## Creating issues
 
-It's dead simple, use the issue tracker. Be descriptive, remember this is a community and we're all helping each other, so be respectful.
+It's dead simple, use the issue tracker. Be descriptive, remember this is a community and we're all helping each other, so be respectful towards each other.
 
 ## Coding Standards
 
@@ -21,6 +21,7 @@ class Foo extends Bar {
         }
     }
 }
+
 ```
 
 - Atleast one newline seperating `namespace`, `use`, and `class` declarations
@@ -34,3 +35,7 @@ class Foo extends Bar {
 - Line lengths have a soft 80 limit and hard 120 length.
 - PHP constants should be in lowercase; `true`, `false` and `null`.
 - Defined constants should always be in uppercase.
+- Never leave trailing spaces at the end of a line.
+- Files should end with one blank line.
+
+If you're still unsure, then take a look at existing code.
