@@ -123,9 +123,11 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
 		'Dingo\Api\Provider\ApiServiceProvider',
+		'Thujohn\Rss\RssServiceProvider',
 
 		'CachetHQ\Cachet\Support\ServiceProviders\RepositoryServiceProvider',
-		'Thujohn\Rss\RssServiceProvider',
+		'CachetHQ\Cachet\Support\ServiceProviders\RoutingServiceProvider',
+		
 	),
 
 	/*
