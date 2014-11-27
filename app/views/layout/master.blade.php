@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>{{ isset($pageTitle) ? $pageTitle : Setting::get('app_name') }} | Cachet</title>
+	<title>{{ isset($pageTitle) ?: Setting::get('app_name') }} | Cachet</title>
 	<!-- Set the viewport width to device width for mobile -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="author" content="http://james-brooks.uk">
