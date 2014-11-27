@@ -10,11 +10,11 @@ View::composer('index', function($view) {
     $incidentCount = $incidents->count();
 
     if ($incidentCount <= 1 || ($incidentCount > 1 && (int) $incidents->first()->status === 4)) {
-        $status     = 'success';
-        $message    = Lang::get('overview.good');
+        $status  = 'success';
+        $message = Lang::get('overview.good');
     } else {
-        $status     = 'danger';
-        $message    = Lang::get('overview.bad');
+        $status  = 'danger';
+        $message = Lang::get('overview.bad');
     }
 
     $view->with([
