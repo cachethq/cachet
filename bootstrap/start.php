@@ -25,13 +25,9 @@ $app = new Illuminate\Foundation\Application;
 */
 
 $env = $app->detectEnvironment(function() {
-	// Take care of Heroku deployment for us.
-	if ($envName = getenv('ENV')) {
-		return $envName;
-	}
 
-	// Always fall back to local.
-	return 'local';
+	// Set the environment if set, otherwise it's local
+	return getenv('ENV') ?: 'local';
 });
 
 /*
