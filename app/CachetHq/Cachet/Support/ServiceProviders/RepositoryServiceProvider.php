@@ -6,6 +6,9 @@
 
 	class RepositoryServiceProvider extends ServiceProvider {
 		public function register() {
-			$this->app->bind('CachetHQ\Cachet\Repositories\Component\ComponentRepository', 'CachetHQ\Cachet\Repositories\Component\EloquentComponentRepository');
+			$this->app->bind(
+				'CachetHQ\Cachet\Repositories\Component\ComponentRepository',
+				'CachetHQ\Cachet\Repositories\Component\EloquentComponentRepository'
+			);
 		}
 	}
