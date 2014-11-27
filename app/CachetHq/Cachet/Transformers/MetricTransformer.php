@@ -5,7 +5,7 @@ namespace CachetHQ\Cachet\Transformers;
 use Metric;
 use League\Fractal\TransformerAbstract;
 
-class MetricTransformer extends ransformerAbstract {
+class MetricTransformer extends TransformerAbstract {
 
     public function transform(Metric $metric) {
         return [
