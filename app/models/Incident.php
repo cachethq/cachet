@@ -3,6 +3,7 @@
 use Watson\Validating\ValidatingTrait;
 
 class Incident extends Eloquent implements \Dingo\Api\Transformer\TransformableInterface {
+    
     use ValidatingTrait;
     use Illuminate\Database\Eloquent\SoftDeletingTrait;
 
@@ -54,6 +55,6 @@ class Incident extends Eloquent implements \Dingo\Api\Transformer\TransformableI
      * @return IncidentTransformer
      */
     public function getTransformer() {
-        return new IncidentTransformer();
+        return new CachetHQ\Cachet\Transformers\IncidentTransformer();
     }
 }

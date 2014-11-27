@@ -24,9 +24,9 @@ class Metric extends Eloquent implements \Dingo\Api\Transformer\TransformableInt
     /**
      * Get the transformer instance.
      *
-     * @return ComponentTransformer
+     * @return MetricTransformer
      */
     public function getTransformer() {
-        return new MetricTransformer();
+        return new CachetHQ\Cachet\Transformers\MetricTransformer();
     }
 }
