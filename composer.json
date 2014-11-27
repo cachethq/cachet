@@ -12,7 +12,8 @@
 		"thujohn/rss": "dev-master"
 	},
 	"require-dev": {
-		"phpunit/phpunit": "~4.3.0"
+		"phpunit/phpunit": "~4.3.0",
+		"mockery/mockery": "0.9.*"
 	},
 	"autoload": {
 		"classmap": [
