@@ -32,54 +32,17 @@ $ composer install
 
 When using the **Deploy to Heroku** button you needn't worry about using a database as the install will setup a free instance of ClearDB. Once installed Heroku can direct you to the setup page where you'll configure the site/application information and create an administrator account.
 
-# Configuring a database
+# Configuring a database without Heroku
 
-Cachet relies on a database to store the components and incidents, but by default the configuration is left with SQLite. This is great if you're not pushing the repository to Heroku, Dokku or other virtual containers as the information will be lost each time you push.
+Cachet relies on a database to store the components and incidents, however it needs to be configured for your [environment](https://github.com/cachethq/Cachet/blob/master/INSTALL.md#environment-detection).
 
-There is no administration panel for adding issues, so be sure to pick a database driver which you can manage the database with.
+Our database configuration (`./app/config/database.php`) is setup to require the following environment variables:
 
-Laravel 4 uses a neat configuration setup. To change our database we need to open up `./app/config/database.php`.
-
-By default we'll see this:
-
-```php
-'default' => 'sqlite',
-'connections' => array(
-	'sqlite' => array(
-		'driver'   => 'sqlite',
-		'database' => __DIR__.'/../database/production.sqlite',
-		'prefix'   => '',
-	),
-	'mysql' => array(
-		'driver'    => 'mysql',
-		'host'      => 'localhost',
-		'database'  => 'database',
-		'username'  => 'root',
-		'password'  => '',
-		'charset'   => 'utf8',
-		'collation' => 'utf8_unicode_ci',
-		'prefix'    => '',
-	),
-	'pgsql' => array(
-		'driver'   => 'pgsql',
-		'host'     => 'localhost',
-		'database' => 'database',
-		'username' => 'root',
-		'password' => '',
-		'charset'  => 'utf8',
-		'prefix'   => '',
-		'schema'   => 'public',
-	),
-	'sqlsrv' => array(
-		'driver'   => 'sqlsrv',
-		'host'     => 'localhost',
-		'database' => 'database',
-		'username' => 'root',
-		'password' => '',
-		'prefix'   => '',
-	),
-)
-```
+- DB_DRIVER - `sqlite`, `mysql`, `pgsql` or `sqlsrv`.
+- DB_HOST
+- DB_DATABASE - SQLite file within the `app/database` directory or database name.
+- DB_USERNAME
+- DB_PASSWORD
 
 Laravel uses PDO for its database driver so it should be compatible with:
 
@@ -88,54 +51,37 @@ Laravel uses PDO for its database driver so it should be compatible with:
 - Postgresql
 - MSSQL
 
-However Cachet is untested with only SQLite and MySQL.
+No .sqlite file is included, so be sure to add this into your `app/database` directory.
 
-All we're doing in this file is changing the connection properties of whichever database engine we want to use. For example, if we want to use MySQL, then we'd do this:
+Laravel 4 enables you to [protect your sensitive configuration details](http://laravel.com/docs/4.2/configuration#protecting-sensitive-configuration) with the use of .env files. For your production environment, create a `.env.php` file in the root of your project, or for environment specific create the file named `.env.environment.php`.
 
-```php
-'mysql' => array(
-	'driver'    => 'mysql',
-	'host'      => 'db.domain.com',
-	'database'  => 'cachet',
-	'username'  => 'user',
-	'password'  => 'password',
-	'charset'   => 'utf8',
-	'collation' => 'utf8_unicode_ci',
-	'prefix'    => '',
-),
-```
-
-Then we change the `default` value above to use the `mysql` index (which could be renamed if you wanted to) we've just changed:
+For example, if working locally with MySQL, your `.env.local.php` file would be:
 
 ```php
-'default' => 'mysql'
+<?php
+
+return [	
+	'DB_DRIVER'		=> 'mysql',
+	'DB_HOST'		=> 'localhost',
+	'DB_DATABASE'	=> 'cachet',
+	'DB_USERNAME'  	=> 'root',
+	'DB_PASSWORD'  	=> 'secret',
+];
+
+?>
 ```
+
+> Even though SQLite doesn't require a host, username or password, these still must be set (an empty string will suffice).
 
 ### Running database migrations
 
-Once we've decided on our database, we now need to run the migrations to create the tables. Again, by default Cachet uses SQLite and the database file can be found at `./app/database/production.sqlite`, however we will first need to create the file:
-
-```bash
-$ touch ./app/database/production.sqlite
-```
-
-If you've renamed the database above, then be sure to mimic the change here too.
-
-In our command line we need to run the migrations, from within the root directory:
+Once we've decided on our database, we now need to run the migrations to create the tables.   In our command line we need to run the migrations, from within the root directory:
 
 ```bash
 $ php artisan migrate
 ```
 
-You should should see the following output:
-
-```bash
-$ php artisan migrate
-Migration table created successfully.
-Migrated: 2014_11_16_224719_CreateIncidentsTable
-Migrated: 2014_11_16_224937_CreateComponentsTable
-Migrated: 2014_11_17_144232_CreateSettingsTable
-```
+You should see the output of the current project migration files being migrated to your database.
 
 # Running Cachet
 
