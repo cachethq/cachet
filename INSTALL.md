@@ -51,7 +51,7 @@ Laravel uses PDO for its database driver so it should be compatible with:
 - Postgresql
 - MSSQL
 
-No .sqlite file is included, so be sure to add this into your `app/database` directory.
+No `.sqlite` file is included, so be sure to add this into your `app/database` directory.
 
 Laravel 4 enables you to [protect your sensitive configuration details](http://laravel.com/docs/4.2/configuration#protecting-sensitive-configuration) with the use of .env files. For your production environment, create a `.env.php` file in the root of your project, or for environment specific create the file named `.env.environment.php`.
 
@@ -60,12 +60,12 @@ For example, if working locally with MySQL, your `.env.local.php` file would be:
 ```php
 <?php
 
-return [	
-	'DB_DRIVER'		=> 'mysql',
-	'DB_HOST'		=> 'localhost',
-	'DB_DATABASE'	=> 'cachet',
-	'DB_USERNAME'  	=> 'root',
-	'DB_PASSWORD'  	=> 'secret',
+return [
+	'DB_DRIVER' => 'mysql',
+	'DB_HOST' => 'localhost',
+	'DB_DATABASE' => 'cachet',
+	'DB_USERNAME' => 'root',
+	'DB_PASSWORD' => 'secret',
 ];
 
 ?>
