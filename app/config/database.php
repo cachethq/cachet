@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'default' => 'sqlite',
+	'default' => $_ENV['DB_DRIVER'],
 
 	/*
 	|--------------------------------------------------------------------------
@@ -48,16 +48,16 @@ return array(
 
 		'sqlite' => array(
 			'driver'   => 'sqlite',
-			'database' => __DIR__.'/../database/production.sqlite',
+			'database' => __DIR__.'/../database/'.$_ENV['DB_DATABASE'],
 			'prefix'   => '',
 		),
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
-			'database'  => 'database',
-			'username'  => 'root',
-			'password'  => '',
+			'host'      => $_ENV['DB_HOST'],
+			'database'  => $_ENV['DB_DATABASE'],
+			'username'  => $_ENV['DB_USERNAME'],
+			'password'  => $_ENV['DB_PASSWORD'],
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
@@ -65,10 +65,10 @@ return array(
 
 		'pgsql' => array(
 			'driver'   => 'pgsql',
-			'host'     => 'localhost',
-			'database' => 'database',
-			'username' => 'root',
-			'password' => '',
+			'host'      => $_ENV['DB_HOST'],
+			'database'  => $_ENV['DB_DATABASE'],
+			'username'  => $_ENV['DB_USERNAME'],
+			'password'  => $_ENV['DB_PASSWORD'],
 			'charset'  => 'utf8',
 			'prefix'   => '',
 			'schema'   => 'public',
@@ -76,10 +76,10 @@ return array(
 
 		'sqlsrv' => array(
 			'driver'   => 'sqlsrv',
-			'host'     => 'localhost',
-			'database' => 'database',
-			'username' => 'root',
-			'password' => '',
+			'host'      => $_ENV['DB_HOST'],
+			'database'  => $_ENV['DB_DATABASE'],
+			'username'  => $_ENV['DB_USERNAME'],
+			'password'  => $_ENV['DB_PASSWORD'],
 			'prefix'   => '',
 		),
 
