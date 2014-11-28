@@ -1,4 +1,5 @@
 # Cachet [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+[![Build Status](http://img.shields.io/travis/cachethq/Cachet.svg?style=flat-square)](https://travis-ci.org/cachethq/Cachet)
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/cachethq/Cachet?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 Cachet is an open source PHP status page system using the Laravel framework.
