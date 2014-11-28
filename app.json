@@ -1,23 +1,24 @@
 {
-	"name": "Cachet",
-	"description": "Single-site Status Page with Laravel",
-	"keywords": [
-		"status",
-		"tools",
-		"php",
-		"laravel"
-	],
-	"website": "http://james-brooks.uk/cachet",
-	"logo": "https://raw.githubusercontent.com/cachethq/assets/f7a350ccd2e7dbdb63f4a2e91bc48f02e03f97e4/images/logo/logo-final.png",
-	"success_url": "/setup",
-	"repository": "https://github.com/cachethq/Cachet",
-	"keywords": ["cachet", "laravel", "status", "page"],
-	"addons": ["cleardb"],
-	"env": {
-		"ENV": "heroku",
-		"BUILDPACK_URL": "https://github.com/heroku/heroku-buildpack-php"
-	},
-	"scripts": {
-		"postdeploy": "php artisan migrate; php artisan key:generate"
-	}
+  "name": "Cachet",
+  "description": "Single-site Status Page with Laravel",
+  "keywords": [
+    "cachet",
+    "laravel",
+    "status",
+    "page"
+  ],
+  "website": "http://james-brooks.uk/cachet",
+  "logo": "https://raw.githubusercontent.com/cachethq/assets/f7a350ccd2e7dbdb63f4a2e91bc48f02e03f97e4/images/logo/logo-final.png",
+  "success_url": "/setup",
+  "repository": "https://github.com/cachethq/Cachet",
+  "addons": [
+    "cleardb"
+  ],
+  "env": {
+    "ENV": "heroku",
+    "BUILDPACK_URL": "https://github.com/heroku/heroku-buildpack-php"
+  },
+  "scripts": {
+    "postdeploy": "php artisan migrate; php artisan key:generate"
+  }
 }
