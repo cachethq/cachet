@@ -1,17 +1,21 @@
 <?php
 
 class SetupController extends Controller {
-    public function showSetup() {
+    public function __construct() {
+        $this->beforeFilter('csrf', ['only' => ['postCachet']]);
+    }
+
+    public function getIndex() {
         return View::make('setup')->with([
             'pageTitle' => 'Setup'
         ]);
     }
 
-    public function setupCachet() {
+    public function postIndex() {
         $postData = Input::get();
         $v = Validator::make($postData, [
             'settings.app_name'     => 'required',
-            'settings.app_domain'   => 'url|required',
+            'settings.app_domain'   => 'required',
             'settings.show_support' => 'boolean',
             'user.name'             => 'alpha_dash|required',
             'user.email'            => 'email|required',
@@ -26,7 +30,7 @@ class SetupController extends Controller {
             $user           = new User;
             $user->username = $userDetails['name'];
             $user->email    = $userDetails['email'];
-            $user->password = Hash::make($userDetails['password']);
+            $user->password = $userDetails['password'];
             $user->save();
 
             Auth::login($user);
