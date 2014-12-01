@@ -14,6 +14,14 @@ class Metric extends Eloquent implements \Dingo\Api\Transformer\TransformableInt
     protected $fillable = ['name', 'suffix', 'description', 'display_chart'];
 
     /**
+     * Metrics contain many metric points.
+     * @return Illuminate\Database\Eloquent\Builder
+     */
+    public function points() {
+        return $this->hasMany('MetricPoint', 'metric_id', 'id');
+    }
+
+    /**
      * Determines whether a chart should be shown.
      * @return bool
      */
