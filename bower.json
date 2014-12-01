@@ -1,6 +1,6 @@
 {
 	"name": "Cachet",
 	"dependencies": {
-
+        "Chart.js": "*"
 	}
 }
