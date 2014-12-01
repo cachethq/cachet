@@ -1,11 +1,15 @@
 <?php
 
 class SetupController extends Controller {
+    public function __construct() {
+        $this->beforeFilter('csrf', ['only' => ['postCachet']]);
+    }
+
     /**
      * Returns the setup page.
      * @return \Illuminate\View\View
      */
-    public function showSetup() {
+    public function getIndex() {
         return View::make('setup')->with([
             'pageTitle' => 'Setup'
         ]);
@@ -15,26 +19,25 @@ class SetupController extends Controller {
      * Handles the actual app setup.
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function setupCachet() {
+    public function postIndex() {
         $postData = Input::get();
         $v = Validator::make($postData, [
             'settings.app_name'     => 'required',
-            'settings.app_domain'   => 'url|required',
+            'settings.app_domain'   => 'required',
             'settings.show_support' => 'boolean',
-            'user.name'             => 'alpha_dash|required',
+            'user.username'         => 'alpha_dash|required',
             'user.email'            => 'email|required',
             'user.password'         => 'required'
         ]);
 
         if ($v->passes()) {
             // Pull the user details out.
-            $userDetails = array_get($postData, 'user');
-            unset($postData['user']);
+            $userDetails = array_pull($postData, 'user');
 
             $user           = new User;
-            $user->username = $userDetails['name'];
+            $user->username = $userDetails['username'];
             $user->email    = $userDetails['email'];
-            $user->password = Hash::make($userDetails['password']);
+            $user->password = $userDetails['password'];
             $user->save();
 
             Auth::login($user);
