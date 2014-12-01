@@ -24,8 +24,7 @@ class SetupController extends Controller {
 
         if ($v->passes()) {
             // Pull the user details out.
-            $userDetails = array_get($postData, 'user');
-            unset($postData['user']);
+            $userDetails = array_pull($postData, 'user');
 
             $user           = new User;
             $user->username = $userDetails['name'];
