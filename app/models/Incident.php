@@ -8,11 +8,11 @@ class Incident extends Eloquent implements \Dingo\Api\Transformer\TransformableI
     use Illuminate\Database\Eloquent\SoftDeletingTrait;
 
     protected $rules = [
-        'user_id'   => 'required|integer',
-        'component' => 'required|integer',
-        'name'      => 'required',
-        'status'    => 'required|integer',
-        'message'   => 'required',
+        'user_id'      => 'required|integer',
+        'component_id' => 'required|integer',
+        'name'         => 'required',
+        'status'       => 'required|integer',
+        'message'      => 'required',
     ];
 
     protected $fillable = ['component', 'name', 'status', 'message'];
@@ -23,8 +23,8 @@ class Incident extends Eloquent implements \Dingo\Api\Transformer\TransformableI
      * An incident belongs to a component.
      * @return Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function parent() {
-        return $this->belongsTo('Component', 'component', 'id');
+    public function component() {
+        return $this->belongsTo('Component', 'component_id', 'id');
     }
 
     /**
