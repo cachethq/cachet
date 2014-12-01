@@ -3,18 +3,17 @@
 namespace CachetHQ\Cachet\Controllers\Api;
 
 use Input;
-use Dingo\Api\Routing\Controller as DingoController;
-use Dingo\Api\Auth\Shield;
+use Dingo\Api\Routing\ControllerTrait;
+use Illuminate\Routing\Controller;
 use CachetHQ\Cachet\Repositories\Component\ComponentRepository;
 
-class ComponentController extends DingoController {
+class ComponentController extends Controller {
 
-	protected $auth;
+	use ControllerTrait;
 
 	protected $component;
 
-	public function __construct(Shield $auth, ComponentRepository $component) {
-		$this->auth = $auth;
+	public function __construct(ComponentRepository $component) {
 		$this->component = $component;
 	}
 
@@ -38,6 +37,11 @@ class ComponentController extends DingoController {
 		return $this->component->findOrFail($id);
 	}
 
+	/**
+	 * Return a component with incidents
+	 * @param  [type] $id [description]
+	 * @return [type]     [description]
+	 */
 	public function getComponentIncidents($id) {
 		return $this->component->with($id, ['incidents']);
 	}

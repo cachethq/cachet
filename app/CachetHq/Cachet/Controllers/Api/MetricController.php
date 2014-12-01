@@ -2,18 +2,27 @@
 
 namespace CachetHQ\Cachet\Controllers\Api;
 
-use Input, Metric;
-use Dingo\Api\Routing\Controller as DingoController;
+use Input;
+use Dingo\Api\Routing\ControllerTrait;
+use Illuminate\Routing\Controller;
+use CachetHQ\Cachet\Repositories\Metric\MetricRepository;
 
-class MetricController extends DingoController {
+class MetricController extends Controller {
+    
+    use ControllerTrait;
 
+    protected $metric;
+
+    public function __construct(MetricRepository $metric) {
+        $this->metric = $metric;
+    }
     /**
      * Get all metrics
      *
      * @return \Illuminate\Database\Eloquent\Collection
      */
     public function getMetrics() {
-        return Metric::all();
+        return $this->metric->all();
     }
 
     /**
@@ -24,11 +33,7 @@ class MetricController extends DingoController {
      * @return Metric
      */
     public function getMetric($id) {
-        if ($metric = Metric::find($id)) {
-            return $metric;
-        } else {
-            App::abort(404, 'Metric not found');
-        }
+        return $this->metric->findOrFail($id);
     }
 
     /**
@@ -37,8 +42,7 @@ class MetricController extends DingoController {
      * @return Metric
      */
     public function postMetrics() {
-        $metric = new Metric(Input::all());
-        return $this->_saveMetric($metric);
+        return $this->metric->create(Input::all());
     }
 
     /**
@@ -49,28 +53,6 @@ class MetricController extends DingoController {
      * @return Metric
      */
     public function putMetric($id) {
-        $metric = $this->getMetric($id);
-        $metric->fill(Input::all());
-        return $this->_saveMetric($metric);
-    }
-
-    /**
-     * Function for saving a metric, and returning appropriate error codes
-     *
-     * @param Metric $metric
-     *
-     * @return Metric
-     */
-    private function _saveMetric($metric) {
-        if ($metric->isValid()) {
-            try {
-                $metric->saveOrFail();
-                return $metric;
-            } catch (Exception $e) {
-                App::abort(500, $e->getMessage());
-            }
-        } else {
-            App::abort(404, $metric->getErrors()->first());
-        }
+        return $this->metric->update($id, Input::all());
     }
 }

@@ -92,16 +92,6 @@ abstract class EloquentRepository {
 	}
 
 	/**
-	 * Updates a given model by ID with an array of updates
-	 * @param  inetegr $id
-	 * @param  array  $array Key Value pairs to update
-	 */
-	public function update($id, array $array) {
-		$model = $this->model->whereId($id)->first(['id']);
-		$model->update($array);
-	}
-
-	/**
 	 * Validate a given model with Watson validation
 	 * @param  object $model
 	 * @return Exception
@@ -110,5 +100,21 @@ abstract class EloquentRepository {
 		if ($model->isInvalid()) {
 			throw new Exception('Invalid model validation');
 		}
+
+		return $this;
+	}
+
+	/**
+	 * Validate whether a model has a correct relationship
+	 * @param  object  $model
+	 * @param  string  $relationship Name of the relationship to validate against
+	 * @return Exception
+	 */
+	public function hasRelationship($model, $relationship) {
+		if (! $model->$relationship) {
+			throw new Exception('Invalid relationship exception');
+		}
+
+		return $this;
 	}
 }

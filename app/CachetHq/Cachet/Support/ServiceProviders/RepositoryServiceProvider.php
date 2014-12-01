@@ -10,5 +10,13 @@ class RepositoryServiceProvider extends ServiceProvider {
 			'CachetHQ\Cachet\Repositories\Component\ComponentRepository',
 			'CachetHQ\Cachet\Repositories\Component\EloquentComponentRepository'
 		);
+		$this->app->bind(
+			'CachetHQ\Cachet\Repositories\Incident\IncidentRepository',
+			'CachetHQ\Cachet\Repositories\Incident\EloquentIncidentRepository'
+		);
+		$this->app->bind(
+			'CachetHQ\Cachet\Repositories\Metric\MetricRepository',
+			'CachetHQ\Cachet\Repositories\Metric\EloquentMetricRepository'
+		);
 	}
 }
