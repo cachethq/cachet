@@ -42,7 +42,6 @@ class SetupController extends Controller {
 
             Auth::login($user);
 
-            // Create the settings, boi.
             foreach (array_get($postData, 'settings') as $settingName => $settingValue) {
                 $setting        = new Setting;
                 $setting->name  = $settingName;
