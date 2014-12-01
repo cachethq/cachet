@@ -47,7 +47,7 @@ class SetupController extends Controller {
                 $setting->save();
             }
 
-            return Redirect::to('/');
+            return Redirect::to('dashboard');
         } else {
             // No good, let's try that again.
             return Redirect::back()->withInput()->with('errors', $v->messages());
