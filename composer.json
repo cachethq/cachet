@@ -45,7 +45,6 @@
   "scripts": {
     "post-install-cmd": [
       "php artisan optimize",
-      "chmod -R 777 app/storage public",
       "php artisan migrate"
     ],
     "post-update-cmd": [
