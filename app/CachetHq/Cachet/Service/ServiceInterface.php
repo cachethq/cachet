@@ -6,5 +6,4 @@ interface ServiceInterface {
     public function register();
     public function unregister();
     public function fire($data);
-    public function getService($type);
 }
