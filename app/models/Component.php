@@ -18,7 +18,7 @@ class Component extends Eloquent implements \Dingo\Api\Transformer\Transformable
      * @return Illuminate\Database\Eloquent\Relations
      */
     public function incidents() {
-        return $this->hasMany('Incident', 'component', 'id');
+        return $this->hasMany('Incident', 'component_id', 'id');
     }
 
     /**
