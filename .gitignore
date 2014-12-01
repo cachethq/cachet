@@ -9,5 +9,5 @@ composer.phar
 Thumbs.db
 config.codekit
 npm-debug.log
-public/js
-publics/css
+public/js/
+publics/css/
