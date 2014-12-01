@@ -6,6 +6,7 @@ elixir(function(mix) {
     'bower_components/chartjs/Chart.min.js',
     'bower_components/rivets/dist/riverts.bundle.js',
     'js/**/*.js',
+    'js/start.js',
   ], 'app/assets')
   .styles([
      'bower_components/cachet-ui/dist/cachet.min.css',
