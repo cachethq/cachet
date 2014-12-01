@@ -15,7 +15,7 @@ class Incident extends Eloquent implements \Dingo\Api\Transformer\TransformableI
         'message'      => 'required',
     ];
 
-    protected $fillable = ['component', 'name', 'status', 'message'];
+    protected $fillable = ['component_id', 'name', 'status', 'message'];
 
     protected $appends = ['humanStatus'];
 
