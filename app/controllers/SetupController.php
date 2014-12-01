@@ -1,12 +1,20 @@
 <?php
 
 class SetupController extends Controller {
+    /**
+     * Returns the setup page.
+     * @return \Illuminate\View\View
+     */
     public function showSetup() {
         return View::make('setup')->with([
             'pageTitle' => 'Setup'
         ]);
     }
 
+    /**
+     * Handles the actual app setup.
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function setupCachet() {
         $postData = Input::get();
         $v = Validator::make($postData, [

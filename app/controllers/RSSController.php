@@ -1,6 +1,10 @@
 <?php
 
 class RSSController extends Controller {
+    /**
+     * Generates an RSS feed of all incidents.
+     * @return \Illuminate\Http\Response
+     */
     public function feedAction() {
         $feed = RSS::feed('2.0', 'UTF-8');
         $feed->channel([
