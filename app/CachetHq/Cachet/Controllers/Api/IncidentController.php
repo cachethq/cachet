@@ -74,7 +74,7 @@ class IncidentController extends DingoController {
     private function _saveIncident($incident) {
         if ($incident->isValid()) {
             try {
-                $component = $incident->parent;
+                $component = $incident->component;
                 if (!$component) {
                     App::abort(400, 'Invalid component specified');
                 }
