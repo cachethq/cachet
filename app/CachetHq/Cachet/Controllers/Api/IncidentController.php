@@ -2,16 +2,19 @@
 
 namespace CachetHQ\Cachet\Controllers\Api;
 
-use Input, Incident;
-use Dingo\Api\Routing\Controller as DingoController;
-use Dingo\Api\Auth\Shield;
+use Input;
+use Dingo\Api\Routing\ControllerTrait;
+use Illuminate\Routing\Controller;
+use CachetHQ\Cachet\Repositories\Incident\IncidentRepository;
 
-class IncidentController extends DingoController {
+class IncidentController extends Controller {
 
-    protected $auth;
+    use ControllerTrait;
 
-    public function __construct(Shield $auth) {
-        $this->auth = $auth;
+    protected $incident;
+
+    public function __construct(IncidentRepository $incident) {
+        $this->incident = $incident;
     }
 
     /**
@@ -20,7 +23,7 @@ class IncidentController extends DingoController {
      * @return \Illuminate\Database\Eloquent\Collection
      */
     public function getIncidents() {
-        return Incident::all();
+        return $this->incident->all();
     }
 
     /**
@@ -31,11 +34,7 @@ class IncidentController extends DingoController {
      * @return Incident
      */
     public function getIncident($id) {
-        if ($incident = Incident::find($id)) {
-            return $incident;
-        } else {
-            App::abort(404, 'Incident not found');
-        }
+        return $this->incident->findOrFail($id);
     }
 
     /**
@@ -44,9 +43,7 @@ class IncidentController extends DingoController {
      * @return Incident
      */
     public function postIncidents() {
-        $incident = new Incident(Input::all());
-        $incident->user_id = $this->auth->user()->id;
-        return $this->_saveIncident($incident);
+        return $this->incident->create($this->auth->user()->id, Input::all());
     }
 
     /**
@@ -57,35 +54,6 @@ class IncidentController extends DingoController {
      * @return Incident
      */
     public function putIncident($id) {
-        $incident = $this->getIncident($id);
-
-        $incident->fill(Input::all());
-
-        return $this->_saveIncident($incident);
-    }
-
-    /**
-     * Function for saving the incident, and returning appropriate error codes
-     *
-     * @param Incident $incident
-     *
-     * @return Incident
-     */
-    private function _saveIncident($incident) {
-        if ($incident->isValid()) {
-            try {
-                $component = $incident->component;
-                if (!$component) {
-                    App::abort(400, 'Invalid component specified');
-                }
-
-                $incident->saveOrFail();
-                return $incident;
-            } catch (Exception $e) {
-                App::abort(500, $e->getMessage());
-            }
-        } else {
-            App::abort(404, $incident->getErrors()->first());
-        }
+        return $this->incident->update($id, Input::all());
     }
 }

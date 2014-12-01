@@ -14,7 +14,7 @@ class ComponentControllerTest extends TestCase {
 	public function test_get_components_method() {
 		$this->repo->shouldReceive('all')->once()->andReturn('foo');
 
-		$controller = new CachetHQ\Cachet\Controllers\Api\ComponentController($this->dingo, $this->repo);
+		$controller = new CachetHQ\Cachet\Controllers\Api\ComponentController($this->repo);
 		$response = $controller->getComponents();
 
 		$this->assertEquals('foo', $response);
@@ -23,9 +23,10 @@ class ComponentControllerTest extends TestCase {
 	public function test_get_component_method() {
 		$this->repo->shouldReceive('findOrFail')->with(1)->once()->andReturn('foo');
 
-		$controller = new CachetHQ\Cachet\Controllers\Api\ComponentController($this->dingo, $this->repo);
+		$controller = new CachetHQ\Cachet\Controllers\Api\ComponentController($this->repo);
 		$response = $controller->getComponent(1);
 
 		$this->assertEquals('foo', $response);
 	}
+	
 }

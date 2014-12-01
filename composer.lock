@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "bceebea08594f491daed4b104ec0cbc0",
+    "hash": "6a8ddbabbd2a61cd7be7327e895cd682",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -89,43 +89,45 @@
         },
         {
             "name": "dingo/api",
-            "version": "v0.6.6",
+            "version": "v0.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dingo/api.git",
-                "reference": "87ce1b823941deddf266d2fcbf537145c0530716"
+                "reference": "def08e52a6582d8f60c12ebc509ed7d6e8a7f81b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dingo/api/zipball/87ce1b823941deddf266d2fcbf537145c0530716",
-                "reference": "87ce1b823941deddf266d2fcbf537145c0530716",
+                "url": "https://api.github.com/repos/dingo/api/zipball/def08e52a6582d8f60c12ebc509ed7d6e8a7f81b",
+                "reference": "def08e52a6582d8f60c12ebc509ed7d6e8a7f81b",
                 "shasum": ""
             },
             "require": {
-                "illuminate/support": "~4.1|~5.0",
-                "league/fractal": "0.8.*",
+                "illuminate/support": "~4.1",
+                "league/fractal": "0.10.*",
                 "php": ">=5.4.0"
             },
             "require-dev": {
-                "illuminate/auth": "~4.1",
-                "illuminate/console": "~4.1",
-                "illuminate/database": "~4.1",
-                "illuminate/events": "~4.1",
-                "illuminate/pagination": "~4.1",
-                "illuminate/routing": "~4.1",
-                "lucadegasperi/oauth2-server-laravel": "1.0.*",
+                "illuminate/auth": "4.2.*",
+                "illuminate/console": "4.2.*",
+                "illuminate/database": "4.2.*",
+                "illuminate/events": "4.2.*",
+                "illuminate/filesystem": "4.2.*",
+                "illuminate/pagination": "4.2.*",
+                "illuminate/routing": "4.2.*",
+                "lucadegasperi/oauth2-server-laravel": "3.0.*",
                 "mockery/mockery": "~0.9",
                 "phpunit/phpunit": "~4.0",
-                "squizlabs/php_codesniffer": "1.*"
+                "squizlabs/php_codesniffer": "~1.5",
+                "tymon/jwt-auth": "0.3.*"
             },
             "suggest": {
-                "lucadegasperi/oauth2-server-laravel": "Use the League OAuth 2.0 server to protect your API."
+                "lucadegasperi/oauth2-server-laravel": "Use the League OAuth 2.0 server to protect your API.",
+                "tymon/jwt-auth": "Protect your API with JSON Web Tokens"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.6-dev",
-                    "dev-develop": "0.7-dev"
+                    "dev-master": "0.7-dev"
                 }
             },
             "autoload": {
@@ -150,7 +152,7 @@
                 "laravel",
                 "restful"
             ],
-            "time": "2014-09-29 00:06:33"
+            "time": "2014-12-01 01:04:27"
         },
         {
             "name": "filp/whoops",
@@ -575,16 +577,16 @@
         },
         {
             "name": "league/fractal",
-            "version": "0.8.3",
+            "version": "0.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/fractal.git",
-                "reference": "9985eee7efc42ef472da07856cdd3fd29c57642c"
+                "reference": "557e1803dabe8ce252a4549a29da6d439f62d3c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/fractal/zipball/9985eee7efc42ef472da07856cdd3fd29c57642c",
-                "reference": "9985eee7efc42ef472da07856cdd3fd29c57642c",
+                "url": "https://api.github.com/repos/thephpleague/fractal/zipball/557e1803dabe8ce252a4549a29da6d439f62d3c2",
+                "reference": "557e1803dabe8ce252a4549a29da6d439f62d3c2",
                 "shasum": ""
             },
             "require": {
@@ -602,7 +604,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.8-dev"
+                    "dev-master": "0.10-dev"
                 }
             },
             "autoload": {
@@ -617,8 +619,8 @@
             "authors": [
                 {
                     "name": "Phil Sturgeon",
-                    "email": "email@philsturgeon.co.uk",
-                    "homepage": "http://philsturgeon.co.uk/",
+                    "email": "me@philsturgeon.uk",
+                    "homepage": "http://philsturgeon.uk/",
                     "role": "Developer"
                 }
             ],
@@ -630,7 +632,7 @@
                 "league",
                 "rest"
             ],
-            "time": "2014-06-14 11:11:41"
+            "time": "2014-10-17 17:12:38"
         },
         {
             "name": "monolog/monolog",
