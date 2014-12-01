@@ -12,7 +12,9 @@ class AuthController extends Controller {
         if (Auth::attempt(Input::only(['email', 'password']))) {
             return Redirect::intended('dashboard');
         } else {
-            return Redirect::back()->withInput(Input::except('password'))->with('error', 'Invalid email or password');
+            return Redirect::back()
+                           ->withInput(Input::except('password'))
+                           ->with('error', 'Invalid email or password');
         }
     }
 
