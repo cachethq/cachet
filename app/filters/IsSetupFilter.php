@@ -1,6 +1,6 @@
 <?php
 
-class NoSetupFilter {
+class IsSetupFilter {
     public function filter($route, $request, $settingName) {
         try {
             $setting = Setting::where('name', $settingName)->first();

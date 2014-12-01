@@ -1,6 +1,6 @@
 <?php
 
-Route::filter('no_setup', 'NoSetupFilter');
+Route::filter('is_setup', 'IsSetupFilter');
 Route::filter('cors', 'CORSFilter');
 
 /*
