@@ -4,8 +4,12 @@
     <div class='alert alert-{{ $systemStatus }}'>{{ $systemMessage }}</div>
 
     @if(Auth::check())
-    <a class="pull-right" href="/auth/logout">Logout</a>
-    <p>You're logged in. This will be a link to the Dashboard.</p>
+    <div class='row'>
+        <div class='col-md-12'>
+            <a class="btn btn-primary pull-right" href="/auth/logout">{{ Lang::get('cachet.logout') }}</a>
+            <p>{{ Lang::get('cachet.dashboard_link') }}</p>
+        </div>
+    </div>
     @endif
 
     @include('imports.components')

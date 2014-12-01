@@ -26,7 +26,7 @@ class Component extends Eloquent implements \Dingo\Api\Transformer\Transformable
      * @return string
      */
     public function getHumanStatusAttribute() {
-        return Lang::get('component.status.' . $this->status);
+        return Lang::get('cachet.component.status.' . $this->status);
     }
 
     /**

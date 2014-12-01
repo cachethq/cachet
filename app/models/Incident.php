@@ -32,7 +32,7 @@ class Incident extends Eloquent implements \Dingo\Api\Transformer\TransformableI
      * @return string
      */
     public function getHumanStatusAttribute() {
-        $statuses = Lang::get('incident.status');
+        $statuses = Lang::get('cachet.incident.status');
         return $statuses[$this->status];
     }
 
