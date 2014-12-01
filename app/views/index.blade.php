@@ -10,6 +10,10 @@
 
 	@include('imports.components')
 
+	@if(Setting::get('display_graphs'))
+	@include('imports.graphs')
+	@endif
+
 	@for($i=0; $i <= 7; $i++)
 	@include('imports.incident', array('i', $i))
 	@endfor
