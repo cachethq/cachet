@@ -1,6 +1,9 @@
 {
-	"name": "Cachet",
-	"dependencies": {
-        "Chart.js": "*"
-	}
+  "name": "Cachet",
+  "dependencies": {
+    "cachet-ui": "*",
+    "jquery": "~2.1.1",
+    "chartjs": "0.2.*",
+    "rivets": "0.7.*"
+  }
 }

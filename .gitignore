@@ -1,7 +1,7 @@
 /bootstrap/compiled.php
 /vendor
 /node_modules
-/public/assets/bower_components
+/app/assets/bower_components
 composer.phar
 .env.*.php
 .env.php
@@ -9,3 +9,5 @@ composer.phar
 Thumbs.db
 config.codekit
 npm-debug.log
+public/js
+publics/css
