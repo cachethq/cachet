@@ -12,15 +12,15 @@
     </div>
     @endif
 
-    @include('imports.components')
+    @include('partials.components')
 
     @if(Setting::get('display_graphs'))
-    @include('imports.graphs')
+    @include('partials.graphs')
     @endif
 
     @for($i=0; $i <= 7; $i++)
-    @include('imports.incident', array('i', $i))
+    @include('partials.incident', array('i', $i))
     @endfor
 
-    @include('imports.support-link')
+    @include('partials.support-link')
 @stop
