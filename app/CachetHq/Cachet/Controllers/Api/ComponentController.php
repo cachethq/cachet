@@ -39,8 +39,8 @@ class ComponentController extends Controller {
 
 	/**
 	 * Return a component with incidents
-	 * @param  [type] $id [description]
-	 * @return [type]     [description]
+	 * @param  int $id Component ID
+	 * @return \Component
 	 */
 	public function getComponentIncidents($id) {
 		return $this->component->with($id, ['incidents']);
