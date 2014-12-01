@@ -41,9 +41,9 @@
                             <legend>Administrator Account</legend>
                             <div class='form-group'>
                                 <label class='sr-only'>Username</label>
-                                <input type='text' name='user[name]' class='form-control' placeholder='Username' value='{{ Input::old('user.name', '') }}' required />
-                                @if($errors->has('user.name'))
-                                <span class='text-danger'>{{ $errors->first('user.name') }}</span>
+                                <input type='text' name='user[username]' class='form-control' placeholder='Username' value='{{ Input::old('user.username', '') }}' required />
+                                @if($errors->has('user.username'))
+                                <span class='text-danger'>{{ $errors->first('user.username') }}</span>
                                 @endif
                             </div>
                             <div class='form-group'>
