@@ -53,6 +53,10 @@ App::error(function(Exception $exception, $code)
 	Log::error($exception);
 });
 
+API::error(function (\Illuminate\Database\Eloquent\ModelNotFoundException $exception) {
+	return Response::make(['error' => $exception->getMessage()], 404);
+});
+
 /*
 |--------------------------------------------------------------------------
 | Maintenance Mode Handler
