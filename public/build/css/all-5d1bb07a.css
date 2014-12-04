@@ -10,7 +10,7 @@
 html, body {
   height: 100%; }
 
-body {
+body.dashboard {
   font-family: "Helvetica Neue", Helvetica, "Open Sans", sans-serif;
   font-weight: lighter;
   letter-spacing: 1px;

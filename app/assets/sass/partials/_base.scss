@@ -25,7 +25,7 @@ $screen-md-min: "(min-width: 992px)";
 $screen-md-max: "(max-width: 1199px)";
 $screen-lg-min: "(min-width: 1200px)";
 
-body {		
+body.dashboard {		
 	font-family: $base-font-family;
 	font-weight: $base-font-weight;
 	letter-spacing: $base-letter-spacing;
