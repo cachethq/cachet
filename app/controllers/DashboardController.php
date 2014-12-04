@@ -8,4 +8,10 @@ class DashboardController extends Controller {
     public function showDashboard() {
         return View::make('dashboard.index');
     }
+
+    public function showSettings() {
+        return View::make('dashboard.settings')->with([
+            'pageTitle' => 'Settings - Dashboard'
+        ]);
+    }
 }
