@@ -34,11 +34,11 @@ class SetupController extends Controller {
             // Pull the user details out.
             $userDetails = array_pull($postData, 'user');
 
-            $user           = new User;
-            $user->username = $userDetails['username'];
-            $user->email    = $userDetails['email'];
-            $user->password = $userDetails['password'];
-            $user->save();
+            User::create([
+                'username' => $userDetails['username'],
+                'email' => $userDetails['email'],
+                'password' => $userDetails['password'],
+            ]);
 
             Auth::login($user);
 
