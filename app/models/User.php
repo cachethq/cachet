@@ -25,7 +25,14 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
      * Items which can be mass assigned.
      * @var array
      */
-    protected $fillable = ['username'];
+    protected $fillable = [
+        'username',
+        'password',
+        'email',
+        'remember_token',
+        'active',
+        'level',
+    ];
 
     /**
      * Hash any password being inserted by default
