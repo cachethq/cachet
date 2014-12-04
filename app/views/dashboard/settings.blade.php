@@ -12,11 +12,13 @@
 					<li role='presentation' class='active'><a data-toggle='tab' role='tab' href="#app">App</a></li>
 					<li role='presentation'><a data-toggle='tab' role='tab' href="#server">Server</a></li>
 					<li role='presentation'><a data-toggle='tab' role='tab' href="#mail">Mail</a></li>
+					<li role='presentation'><a data-toggle='tab' role='tab' href="#theme">Theme</a></li>
 				</ul>
 				<div class="tab-content">
 					<div role='tabpanel' class='tab-pane active' id="app">General App settings</div>
 					<div role='tabpanel' class='tab-pane' id="server">Server settings</div>
 					<div role='tabpanel' class='tab-pane' id="mail">Mail setitngs, host, SMTP, user and password.</div>
+					<div role='tabpanel' class='tab-pane' id="theme">Configure theme settings here.</div>
 				</div>
 			</div>
 		</div>
