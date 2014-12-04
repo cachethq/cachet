@@ -1,7 +1,8 @@
 {
   "name": "Cachet",
   "dependencies": {
-    "cachet-ui": "*",
+    "bootstrap": "3.3.*",
+    "fontawesome": "4.2.*",
     "jquery": "~2.1.1",
     "chartjs": "0.2.*",
     "rivets": "0.7.*"
