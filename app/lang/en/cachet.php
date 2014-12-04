@@ -35,6 +35,7 @@ return array(
         'metrics' => 'Metrics',
         'status_page' => 'Status Page',
         'settings' => 'Settings',
-        'toggle_navigation' => 'Toggle Navigation'
-    )
+        'toggle_navigation' => 'Toggle Navigation',
+        'search' => 'Search...',
+    ),
 );
