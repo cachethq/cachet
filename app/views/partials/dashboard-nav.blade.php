@@ -12,7 +12,7 @@
 
         <div class="collapse navbar-collapse" id="menu">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="/"><i class="fa fa-exclamation-circle"></i> Status Page</a></li>
+                <li><a href="/"><i class="fa fa-exclamation-circle"></i> {{ Lang::get('cachet.dashboard.status_page') }}</a></li>
                 <li><a href="/auth/logout"><i class="fa fa-sign-out"></i> {{ Lang::get('cachet.logout') }}</a></li>
             </ul>
         </div>

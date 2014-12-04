@@ -28,4 +28,12 @@ return array(
     'powered_by' => ':app Status Page is powered by <a href="https://cachethq.github.io">Cachet</a>.',
     'logout' => 'Logout',
     'dashboard_link' => 'You\'re logged in.',
+    'dashboard' => array(
+        'dashboard' => 'Dashboard',
+        'components' => 'Components',
+        'incidents' => 'Incidents',
+        'metrics' => 'Metrics',
+        'status_page' => 'Status Page',
+        'settings' => 'Settings'
+    )
 );
