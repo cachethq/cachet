@@ -10,4 +10,5 @@ Thumbs.db
 config.codekit
 npm-debug.log
 public/js/
-publics/css/
+public/css/
+public/build 
