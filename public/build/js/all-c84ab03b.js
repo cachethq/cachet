@@ -51,35 +51,8 @@ k),c.scaleShowGridLines?(b.lineWidth=c.scaleGridLineWidth,b.strokeStyle=c.scaleG
 b.moveTo(g,p);b.lineTo(g,p-d*v(a.datasets[e].data[f],j,k)+c.barStrokeWidth/2);b.lineTo(g+s,p-d*v(a.datasets[e].data[f],j,k)+c.barStrokeWidth/2);b.lineTo(g+s,p);c.barShowStroke&&b.stroke();b.closePath();b.fill()}}},b)},D=window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(a){window.setTimeout(a,1E3/60)},F={}};
 $(function() {
 
-    $('.tabs').tabs({active: 2});
-
     $('#sidebar-toggle').click(function() {
     	$('.wrapper').toggleClass('active');
     });
 
 });
-/**
- * jQuery Tab Plugin
- */
-$.fn.tabs = function(options) {
-    // Default Settings
-    var settings = $.extend({
-        state: "active",
-        active: 1,
-    }, options );
-
-    // Ensure only one given tab is displaying
-    $(this).next().children().not("#tab-" + settings.active).css("display", "none");
-
-    // When an tab andchor is clicked
-    $(this).on("click", "a", function (event) {
-        event.preventDefault();
-        
-        $(this).parent().addClass(settings.state);
-        $(this).parent().siblings().removeClass(settings.state);
-
-        var tab = $(this).attr("href");
-        $('.tab-content').children().not(tab).css("display", "none");
-        $(tab).css("display", "block");
-    });
-};
