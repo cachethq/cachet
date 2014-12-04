@@ -82,6 +82,7 @@ body.dashboard .navbar {
 body.dashboard .sidebar {
   height: 100%;
   position: fixed;
+  z-index: 998;
   width: 250px;
   background: #37474f;
   -webkit-transition: margin 0.2s;

@@ -2,6 +2,7 @@ body.dashboard {
 	.sidebar {
 		height: 100%;
 		position: fixed;
+		z-index: 998;
 		width: $sidebar-normal-width;
 		background: $sidebar-background-color;
 		transition: margin $sidebar-transition-speed;
