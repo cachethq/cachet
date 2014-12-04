@@ -12,8 +12,11 @@
     <link rel="stylesheet" href="{{ elixir('css/all.css') }}">
     <script src="{{ elixir('js/all.js') }}"></script>
 </head>
+
 <body class="dashboard">
     @include('partials.dashboard-nav')
     @include('partials.dashboard-sidebar')
+
+    @yield('content')
 </body>
 </html>
