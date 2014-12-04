@@ -12,8 +12,8 @@
 
         <div class="collapse navbar-collapse" id="menu">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="{{ URL::to('/') }}"><i class="fa fa-exclamation-circle"></i> {{ Lang::get('cachet.dashboard.status_page') }}</a></li>
-                <li><a href="{{ URL::to('auth/logout') }}"><i class="fa fa-sign-out"></i> {{ Lang::get('cachet.logout') }}</a></li>
+                <li><a href="{{ URL::route('status-page') }}"><i class="fa fa-exclamation-circle"></i> {{ Lang::get('cachet.dashboard.status_page') }}</a></li>
+                <li><a href="{{ URL::route('logout') }}"><i class="fa fa-sign-out"></i> {{ Lang::get('cachet.logout') }}</a></li>
             </ul>
         </div>
     </div>

@@ -14,9 +14,9 @@
 </head>
 
 <body class="dashboard">
-    @include('partials.dashboard-nav')
+    @include('partials.dashboard.nav')
     <div class="wrapper active">
-        @include('partials.dashboard-sidebar')
+        @include('partials.dashboard.sidebar')
         <div class="content">
             @yield('content')
         </div>
