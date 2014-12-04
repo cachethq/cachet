@@ -21,6 +21,7 @@ class SetupController extends Controller {
      */
     public function postIndex() {
         $postData = Input::get();
+
         $v = Validator::make($postData, [
             'settings.app_name'     => 'required',
             'settings.app_domain'   => 'required',
@@ -34,7 +35,7 @@ class SetupController extends Controller {
             // Pull the user details out.
             $userDetails = array_pull($postData, 'user');
 
-            User::create([
+            $user = User::create([
                 'username' => $userDetails['username'],
                 'email' => $userDetails['email'],
                 'password' => $userDetails['password'],
