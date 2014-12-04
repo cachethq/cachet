@@ -9,7 +9,7 @@
 
     <title>{{ isset($pageTitle) ? $pageTitle : Setting::get('app_name') }} | Cachet</title>
 
-    <link rel="stylesheet" href="{{ elixir('css/all.css') }}">  
+    <link rel="stylesheet" href="{{ elixir('css/all.css') }}">
     <script src="{{ elixir('js/all.js') }}"></script>
 </head>
 <body class="dashboard">
@@ -37,12 +37,12 @@
         <div class="profile">
             <div class="avatar pull-left">
                 <a href="#">
-                    <img src="https://www.gravatar.com/avatar/215db0deb447d97a916ea780771b8c64?size=200" alt="">
+                    <img src="{{ Auth::user()->gravatar }}" alt="">
                 </a>
             </div>
             <div class="profile pull-left">
-                <div class="username">{{Auth::user()->username }}</div>
-            </div> 
+                <div class="username">{{ Auth::user()->username }}</div>
+            </div>
         </div>
         <ul>
             <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
