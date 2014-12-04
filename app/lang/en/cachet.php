@@ -34,6 +34,7 @@ return array(
         'incidents' => 'Incidents',
         'metrics' => 'Metrics',
         'status_page' => 'Status Page',
-        'settings' => 'Settings'
+        'settings' => 'Settings',
+        'toggle_navigation' => 'Toggle Navigation'
     )
 );
