@@ -1,21 +1,16 @@
 body.dashboard {
 	.sidebar {
-		width: 250px;
 		height: 100%;
+		position: fixed;
+		width: $sidebar-normal-width;
 		background: $sidebar-background-color;
-		margin-top: -69px;
-		padding-top: 69px;
-		transition: margin .2s;
+		transition: margin $sidebar-transition-speed;
 		@media #{$screen-sm-max} {
-			width: 30%;
-			margin-left: -30%;
+			margin-left: -$sidebar-normal-width;
 		}
 		@media #{$screen-xs-max} {
-			width: 75%;
-			margin-left: -75%;
-		}
-		&.active {
-			margin-left: 0;
+			width: $sidebar-phone-width;
+			margin-left: -$sidebar-phone-width;
 		}
 		.profile {
 			padding: 20px;

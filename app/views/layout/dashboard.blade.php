@@ -15,8 +15,11 @@
 
 <body class="dashboard">
     @include('partials.dashboard-nav')
-    @include('partials.dashboard-sidebar')
-
-    @yield('content')
+    <div class="wrapper active">
+        @include('partials.dashboard-sidebar')
+        <div class="content">
+            @yield('content')
+        </div>
+    </div>
 </body>
 </html>

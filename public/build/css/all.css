@@ -16,6 +16,24 @@ body {
   letter-spacing: 1px;
   background: #f5f5f5; }
 
+body.dashboard .wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin-top: 69px; }
+  @media (min-width: 992px) {
+    body.dashboard .wrapper .content {
+      -webkit-transition: margin 0.2s;
+              transition: margin 0.2s;
+      margin-left: 250px; } }
+  body.dashboard .wrapper.active .sidebar {
+    margin-left: 0; }
+  @media (min-width: 550px) {
+    body.dashboard .wrapper.active .content {
+      -webkit-transition: margin 0.2s;
+              transition: margin 0.2s;
+      margin-left: 250px; } }
+
 body.dashboard .navbar {
   z-index: 999;
   border-radius: 0px;
@@ -50,23 +68,19 @@ body.dashboard .navbar {
     line-height: 35px; }
 
 body.dashboard .sidebar {
-  width: 250px;
   height: 100%;
+  position: fixed;
+  width: 250px;
   background: #37474f;
-  margin-top: -69px;
-  padding-top: 69px;
   -webkit-transition: margin 0.2s;
           transition: margin 0.2s; }
   @media (max-width: 991px) {
     body.dashboard .sidebar {
-      width: 30%;
-      margin-left: -30%; } }
+      margin-left: -250px; } }
   @media (max-width: 549px) {
     body.dashboard .sidebar {
       width: 75%;
       margin-left: -75%; } }
-  body.dashboard .sidebar.active {
-    margin-left: 0; }
   body.dashboard .sidebar .profile {
     padding: 20px;
     margin-bottom: 20px; }
@@ -99,3 +113,4 @@ body.dashboard .sidebar {
           padding-right: 10px; }
         body.dashboard .sidebar ul li a:hover {
           text-decoration: none; }
+
