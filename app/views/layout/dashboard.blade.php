@@ -27,8 +27,8 @@
 
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><i class="fa fa-exclamation-circle"></i> Status Page</a></li>
-                    <li><a href="#"><i class="fa fa-sign-out"></i> Logout</a></li>
+                    <li><a href="/"><i class="fa fa-exclamation-circle"></i> Status Page</a></li>
+                    <li><a href="/auth/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
                 </ul>
             </div>
         </div>
