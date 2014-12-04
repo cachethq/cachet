@@ -7,17 +7,17 @@
 	</div>
 	<div class="row">
 		<div class="col-sm-12">
-			<ul class="tabs">
-				<li><a href="#tab-1">Tab 1</a></li>
-				<li><a href="#tab-2">Tab 2</a></li>
-				<li><a href="#tab-3">Tab 3</a></li>
-				<li><a href="#tab-4">Tab 4</a></li>
-			</ul>
-			<div class="tab-content">
-				<div id="tab-1">Tab 1</div>
-				<div id="tab-2">Tab 2</div>
-				<div id="tab-3">Tab 3</div>
-				<div id="tab-4">Tab 4</div>
+			<div role='tabpanel'>
+				<ul class="nav nav-tabs" role='tablist'>
+					<li role='presentation' class='active'><a data-toggle='tab' role='tab' href="#tab-1">Tab 1</a></li>
+					<li role='presentation'><a data-toggle='tab' role='tab' href="#tab-2">Tab 2</a></li>
+					<li role='presentation'><a data-toggle='tab' role='tab' href="#tab-3">Tab 3</a></li>
+				</ul>
+				<div class="tab-content">
+					<div role='tabpanel' class='tab-pane active' id="tab-1">Foo</div>
+					<div role='tabpanel' class='tab-pane' id="tab-2">Bar</div>
+					<div role='tabpanel' class='tab-pane' id="tab-3">Baz</div>
+				</div>
 			</div>
 		</div>
 	</div>
