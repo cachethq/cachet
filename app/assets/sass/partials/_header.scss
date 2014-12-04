@@ -25,8 +25,11 @@ body.dashboard {
 		}
 		a.navbar-brand {
 			padding: 34px 21px;
-			line-height: 0px;
-			font-size: 20px;
+			line-height: 0em;
+			font-size: 1.1em;
+			letter-spacing: 0.04em;
+			font-weight: 600;
+			text-transform: uppercase;
 			@media #{$screen-sm-max} {
 				span {
 					padding-right: 10px;
