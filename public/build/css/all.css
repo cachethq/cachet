@@ -22,8 +22,9 @@ ul.tabs {
       padding: 15px 30px; }
 
 body.dashboard {
-  font-family: "Helvetica Neue", Helvetica, "Open Sans", sans-serif;
-  font-weight: lighter;
+  font-family: "Avenir Next W01", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
   letter-spacing: 1px;
   background: #f5f5f5; }
 
@@ -52,8 +53,8 @@ body.dashboard .navbar {
   z-index: 999;
   border-radius: 0px;
   border: none;
-  border-bottom: 1px solid #182024;
-  background: #263238;
+  border-bottom: 1px solid #00362f;
+  background: #00695C;
   margin: 0; }
   body.dashboard .navbar a, body.dashboard .navbar a:active, body.dashboard .navbar a:visited {
     color: #ffffff; }
@@ -66,7 +67,7 @@ body.dashboard .navbar {
     body.dashboard .navbar .navbar-toggle.collapsed span {
       background-color: #ffffff; }
   body.dashboard .navbar .navbar-collapse {
-    background: #263238; }
+    background: #00695C; }
   body.dashboard .navbar a.navbar-brand {
     padding: 34px 21px;
     line-height: 0px;
@@ -117,7 +118,7 @@ body.dashboard .sidebar {
       body.dashboard .sidebar ul li:last-child {
         border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
       body.dashboard .sidebar ul li.active {
-        background: #263238; }
+        background: #00695C; }
         body.dashboard .sidebar ul li.active a {
           color: #ffffff; }
       body.dashboard .sidebar ul li a {
