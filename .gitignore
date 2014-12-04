@@ -11,4 +11,3 @@ config.codekit
 npm-debug.log
 public/js/
 public/css/
-public/build 
