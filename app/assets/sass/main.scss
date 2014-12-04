@@ -2,6 +2,8 @@ html, body {
 	height: 100%;
 }
 
+@import "modules/tabs";
+
 @import "partials/base";
 @import "partials/wrapper";
 @import "partials/header";

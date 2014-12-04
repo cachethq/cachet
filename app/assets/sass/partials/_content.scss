@@ -1,4 +1,24 @@
 body.dashboard {
 	.content {
+		.row {
+			margin: 10px 0;
+		}
+		.header {
+			background: #ffffff;
+			padding: 14px;
+			width: 100%;
+			height: 50px;
+			font-size: 18px;
+			i {
+				padding-right: 10px;
+			}
+			input, button, .btn {
+				position: relative;
+				top: -4px;
+			}
+			input {
+				width: 20%;
+			}
+		}
 	}
 }

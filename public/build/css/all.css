@@ -10,6 +10,17 @@
 html, body {
   height: 100%; }
 
+ul.tabs {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-bottom: 1px solid #d5d8d7; }
+  ul.tabs li {
+    display: inline; }
+    ul.tabs li a {
+      display: inline-block;
+      padding: 15px 30px; }
+
 body.dashboard {
   font-family: "Helvetica Neue", Helvetica, "Open Sans", sans-serif;
   font-weight: lighter;
@@ -17,6 +28,7 @@ body.dashboard {
   background: #f5f5f5; }
 
 body.dashboard .wrapper {
+  width: 100%;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -114,3 +126,18 @@ body.dashboard .sidebar {
         body.dashboard .sidebar ul li a:hover {
           text-decoration: none; }
 
+body.dashboard .content .row {
+  margin: 10px 0; }
+body.dashboard .content .header {
+  background: #ffffff;
+  padding: 14px;
+  width: 100%;
+  height: 50px;
+  font-size: 18px; }
+  body.dashboard .content .header i {
+    padding-right: 10px; }
+  body.dashboard .content .header input, body.dashboard .content .header button, body.dashboard .content .header .btn {
+    position: relative;
+    top: -4px; }
+  body.dashboard .content .header input {
+    width: 20%; }

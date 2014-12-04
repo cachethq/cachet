@@ -1,0 +1,13 @@
+ul.tabs {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	border-bottom: 1px solid #d5d8d7;
+	li {
+		display: inline;
+		a {
+			display: inline-block;
+			padding: 15px 30px;
+		}
+	}
+}
