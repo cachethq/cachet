@@ -16,6 +16,6 @@ elixir(function(mix) {
        'js/**/*.js',
      ], './app/assets/')
      .version(['public/css/all.css', 'public/js/all.js'], 'public')
-     .publish('bootstrap/dist/fonts', 'public/build/fonts')
-     .publish('fontawesome/fonts', 'public/build/fonts');
+     .copy('app/assets/bower_components/bootstrap/dist/fonts/', 'public/build/fonts')
+     .copy('app/assets/bower_components/fontawesome/fonts/', 'public/build/fonts');
 });

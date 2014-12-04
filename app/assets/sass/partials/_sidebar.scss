@@ -1,0 +1,66 @@
+body.dashboard {
+	.sidebar {
+		width: 250px;
+		height: 100%;
+		background: $sidebar-background-color;
+		margin-top: -69px;
+		padding-top: 69px;
+		transition: margin .2s;
+		@media #{$screen-sm-max} {
+			width: 30%;
+			margin-left: -30%;
+		}
+		@media #{$screen-xs-max} {
+			width: 75%;
+			margin-left: -75%;
+		}
+		&.active {
+			margin-left: 0;
+		}
+		.profile {
+			padding: 20px;
+			margin-bottom: 20px;
+			.avatar {
+				width: 70px;
+				img {
+					border-radius: 50%;
+					width: 60px;
+				}
+			}
+			.profile {
+				color: $sidebar-text-color;
+			}
+		}
+		ul {
+			clear: both;
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			
+			li {
+				font-size: 14px;
+				&:last-child {
+					border-bottom: $sidebar-border-color;
+				}
+				&.active {
+					background: $header-background-color;
+					a {
+						color: $sidebar-text-active-color;
+					}
+				}
+				a {
+					display: block;
+					padding: 15px;
+					border-top: $sidebar-border-color;
+					color: $sidebar-text-color;
+					i {
+						padding-right: 10px;
+					}
+					&:hover {
+						text-decoration: none;
+					}
+				}			
+			}
+		}
+	}
+}

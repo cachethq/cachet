@@ -1,0 +1,45 @@
+body.dashboard {
+	.navbar {
+		z-index: 999;
+		border-radius: 0px;
+		border: none;
+		border-bottom: $header-border-color;
+		background: $header-background-color;
+		margin: 0;
+		a, a:active, a:visited {
+			color: $base-link-color;
+			&:hover {
+				color: $base-link-hover-color;
+			}
+		}
+		.navbar-toggle {
+			margin-top: 15px;
+			background: transparent;
+			border-color: transparent;
+			&.collapsed span {
+				background-color: $base-link-color;
+			}
+		}
+		.navbar-collapse {
+			background: $header-background-color;
+		}
+		a.navbar-brand {
+			padding: 34px 21px;
+			line-height: 0px;
+			font-size: 20px;
+			@media #{$screen-sm-max} {
+				span {
+					padding-right: 10px;
+					&:before {
+						font-family: FontAwesome;
+						content: "\f060";
+					}
+				}
+			}
+		}
+		.nav li a {
+			height: 68px;
+			line-height: 35px;
+		}
+	}
+}
