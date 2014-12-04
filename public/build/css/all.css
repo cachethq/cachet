@@ -117,7 +117,7 @@ body.dashboard .sidebar {
     padding: 0;
     list-style: none; }
     body.dashboard .sidebar ul li {
-      font-size: 14px; }
+      font-size: 0.8em; }
       body.dashboard .sidebar ul li:last-child {
         border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
       body.dashboard .sidebar ul li.active {
