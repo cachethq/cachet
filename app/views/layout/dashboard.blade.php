@@ -18,7 +18,7 @@
     <div class="wrapper active">
         @include('partials.dashboard.sidebar')
         <div class="content">
-            @yield('content')
+        @yield('content')
         </div>
     </div>
 </body>
