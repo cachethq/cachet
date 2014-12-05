@@ -13,7 +13,9 @@
         <div class="collapse navbar-collapse" id="menu">
             <ul class="nav navbar-nav navbar-right">
                 <li><a class='' href="{{ URL::route('status-page') }}"><i class="fa fa-home"></i></a></li>
+                @if(Auth::check())
                 <li><a class='' href="{{ URL::route('logout') }}"><i class="fa fa-sign-out"></i></a></li>
+                @endif
             </ul>
         </div>
     </div>
