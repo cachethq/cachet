@@ -1,14 +1,11 @@
-@extends('layout.master')
+@extends('layout.dashboard')
 
 @section('content')
-    <div class='text-header'>
-        <h1>Setup Cachet <small>Under construction.</small></h1>
+    <div class='header'>
+        <i class='fa fa-cog'></i> {{ Lang::get('cachet.setup') }}
     </div>
-
-    <hr />
-
     <div class='row'>
-        <div class='col-md-8'>
+        <div class='col-sm-12'>
             <div class='panel panel-default'>
                 <div class='panel-heading'>Service Details</div>
                 <div class='panel-body'>
@@ -67,15 +64,6 @@
                             <button type='submit' class='btn btn-default'>Setup!</button>
                         </div>
                     {{ Form::close() }}
-                </div>
-            </div>
-        </div>
-        <div class='col-md-4'>
-            <div class='panel panel-info'>
-                <div class='panel-heading'>Ding!</div>
-                <div class='panel-body'>
-                    <p>You'll be able to reconfigure Cachet later on.</p>
-                    <p>At least when there is a management panel&hellip;</p>
                 </div>
             </div>
         </div>
