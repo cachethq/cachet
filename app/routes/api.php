@@ -1,6 +1,6 @@
 <?php
 
-Route::api(['version' => 'v1', 'prefix' => 'api', 'namespace' => 'CachetHQ\Cachet\Controllers\Api'], function() {
+Route::api(['version' => 'v1', 'namespace' => 'CachetHQ\Cachet\Controllers\Api'], function() {
 
     Route::get('components', 'ComponentController@getComponents');
     Route::get('components/{id}', 'ComponentController@getComponent');
