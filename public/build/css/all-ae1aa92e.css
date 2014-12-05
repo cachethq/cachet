@@ -10,16 +10,21 @@
 html, body {
   height: 100%; }
 
-ul.tabs {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+div[role=tabpanel] ul.nav-tabs {
   border-bottom: 1px solid #d5d8d7; }
-  ul.tabs li {
-    display: inline; }
-    ul.tabs li a {
-      display: inline-block;
-      padding: 15px 30px; }
+  div[role=tabpanel] ul.nav-tabs li a {
+    font-weight: 400;
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 0;
+    font-size: 0.9em; }
+div[role=tabpanel] .tab-content {
+  border-left: 1px solid #d5d8d7;
+  border-bottom: 1px solid #d5d8d7;
+  border-right: 1px solid #d5d8d7;
+  background-color: white; }
+  div[role=tabpanel] .tab-content .tab-pane {
+    padding: 10px; }
 
 body.dashboard {
   font-family: "Avenir Next W01", "Helvetica Neue", "Helvetica", "Arial", sans-serif;

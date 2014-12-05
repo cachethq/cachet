@@ -1,13 +1,26 @@
-ul.tabs {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	border-bottom: 1px solid #d5d8d7;
-	li {
-		display: inline;
-		a {
-			display: inline-block;
-			padding: 15px 30px;
+div[role=tabpanel] {
+	ul.nav-tabs {
+		border-bottom: 1px solid #d5d8d7;
+		li {
+			a {
+				font-weight: 400;
+				display: inline-block;
+				padding: 10px 25px;
+				border-radius: 0;
+				font-size: 0.9em;
+			}
+		}
+	}
+
+	.tab-content {
+		border: {
+			left: 1px solid #d5d8d7;
+			bottom: 1px solid #d5d8d7;
+			right: 1px solid #d5d8d7;
+		}
+		background-color: white;
+		.tab-pane {
+			padding: 10px;
 		}
 	}
 }
