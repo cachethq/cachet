@@ -39,7 +39,7 @@ body.dashboard {
 					border-bottom: $sidebar-border-color;
 				}
 				&.active {
-					background: $sidebar-active-color;
+					background: lighten($sidebar-background-color, 10%);
 					a {
 						color: $sidebar-text-active-color;
 					}

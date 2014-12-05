@@ -118,7 +118,7 @@ body.dashboard .sidebar {
       body.dashboard .sidebar ul li:last-child {
         border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
       body.dashboard .sidebar ul li.active {
-        background: #00695C; }
+        background: #3e5771; }
         body.dashboard .sidebar ul li.active a {
           color: #ffffff; }
       body.dashboard .sidebar ul li a {
