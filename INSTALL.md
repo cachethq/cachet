@@ -39,11 +39,11 @@ Cachet relies on a database to store the components and incidents, however it ne
 
 Our database configuration (`./app/config/database.php`) is setup to require the following environment variables:
 
-- DB_DRIVER - `sqlite`, `mysql`, `pgsql` or `sqlsrv`.
-- DB_HOST
-- DB_DATABASE - SQLite file within the `app/database` directory or database name.
-- DB_USERNAME
-- DB_PASSWORD
+- `DB_DRIVER` - `sqlite`, `mysql`, `pgsql` or `sqlsrv`.
+- `DB_HOST`
+- `DB_DATABASE` - SQLite file within the `app/database` directory or database name.
+- `DB_USERNAME`
+- `DB_PASSWORD`
 
 Laravel uses PDO for its database driver so it should be compatible with:
 
