@@ -10,6 +10,7 @@ You need at least PHP, [Composer](https://getcomposer.org/) and the `php-mcrypt`
 2. [Deploy to Heroku](#deploy-to-heroku)
 3. [Configuring a database!](#configuring-a-database)
 	1. [Running database migrations](#running-database-migrations)
+	2. [Seeding](#seeding)
 4. [Running Cachet](#running-cachet)
 	1. [Apache setup](#apache)
 	2. [nginx setup](#nginx)
@@ -82,6 +83,14 @@ $ php artisan migrate
 ```
 
 You should see the output of the current project migration files being migrated to your database.
+
+### Seeding
+
+If you're getting Cachet setup to develop on, then you may want to seed the database with some example data.
+
+```bash
+$ php artisan db:seed
+```
 
 # Running Cachet
 
