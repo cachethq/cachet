@@ -2,7 +2,12 @@
 
 ## Creating issues
 
-It's dead simple, use the issue tracker. Be descriptive, remember this is a community and we're all helping each other, so be respectful towards each other.
+Issues should be made by using the [issue tracker](https://github.com/cachethq/Cachet/issues).
+
+Things to remember:
+
+- Be descriptive
+- Be respectful of others
 
 ## Coding Standards
 
@@ -25,9 +30,9 @@ class Foo extends Bar {
 ```
 
 - At least one newline seperating `namespace`, `use`, and `class` declarations
-- Spaces around operators and control blocks:
+- Spaces around operators, loop, conditions and control blocks:
     ```php
-    if ($condition) {
+    if ($condition === (10 + 2)) {
 
     }
     ```
@@ -37,10 +42,11 @@ class Foo extends Bar {
 - Defined constants should always be in uppercase.
 - Never leave trailing spaces at the end of a line.
 - Files should end with one blank line.
+- Do not use Bash (`#`) style comments.
 
 If you're still unsure, then take a look at existing code.
 
-## Intro to Git and GitHub
+## Introduction into to Git and GitHub
 
 If you are new to git, GitHub, and the whole open source software community, welcome! Here are some resources for getting started and understanding what it's all about.
 
@@ -54,6 +60,6 @@ If you're not particularly fond of the command line, you can get one of GitHub's
 
 If you're feeling advantageous, you can become a Git & GitHub master with the [Git Path on Code School](https://www.codeschool.com/paths/git).
 
-There is always the Cachet Gitter chat to ask any questions you may have: 
+There is always the Cachet Gitter chat to ask any questions you may have:
 
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/cachethq/Cachet?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
