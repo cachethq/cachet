@@ -11,11 +11,11 @@
 
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,700,300,600' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{ elixir('css/all.css') }}">
+    <link rel="stylesheet" href="/css/application.css">
 
     <script src="{{ elixir('js/all.js') }}"></script>
 </head>
-<body>
+<body class='status-page'>
     <div class='container'>
     @yield('content')
     </div>
