@@ -1,7 +1,7 @@
-@extends('layout.master')
+@extends('layout.dashboard')
 
 @section('content')
-
+    @include('partials.dashboard.nav')
     <div class='row'>
         <div class='col-md-6 col-md-offset-3'>
             {{ Form::open() }}
@@ -24,6 +24,7 @@
                         'class' => 'form-control', 'placeholder' => 'Password', 'required' => 'required'
                     ]) }}
                 </div>
+                <hr />
                 <div class='form-group'>
                     <button type='submit' class='btn btn-default'>Login!</button>
                 </div>

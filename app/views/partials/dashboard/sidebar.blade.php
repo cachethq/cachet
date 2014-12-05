@@ -1,3 +1,4 @@
+@if(Auth::check())
 <div class="sidebar">
     <div class="profile">
         <div class="avatar pull-left">
@@ -42,3 +43,4 @@
         </li>
     </ul>
 </div>
+@endif
