@@ -9,6 +9,40 @@ class DashboardController extends Controller {
         return View::make('dashboard.index');
     }
 
+    /**
+     * Shows the components view.
+     * @return \Illuminate\View\View
+     */
+    public function showComponents() {
+        return View::make('dashboard.components')->with([
+            'pageTitle' => 'Components - Dashboard'
+        ]);
+    }
+
+    /**
+     * Shows the incidents view.
+     * @return \Illuminate\View\View
+     */
+    public function showIncidents() {
+        return View::make('dashboard.incidents')->with([
+            'pageTitle' => 'Incidents - Dashboard'
+        ]);
+    }
+
+    /**
+     * Shows the metrics view.
+     * @return \Illuminate\View\View
+     */
+    public function showMetrics() {
+        return View::make('dashboard.metrics')->with([
+            'pageTitle' => 'Metrics - Dashboard'
+        ]);
+    }
+
+    /**
+     * Shows the settings view.
+     * @return \Illuminate\View\View
+     */
     public function showSettings() {
         return View::make('dashboard.settings')->with([
             'pageTitle' => 'Settings - Dashboard'

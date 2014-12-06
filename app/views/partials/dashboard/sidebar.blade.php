@@ -31,11 +31,11 @@
                 <i class="fa fa-area-chart"></i> {{ Lang::get('cachet.dashboard.metrics') }}
             </a>
         </li>
-        <li class="{{ Request::is('dashboard/status-page') ? 'active' : '' }}">
+        <!-- <li class="{{ Request::is('dashboard/status-page') ? 'active' : '' }}">
             <a href="{{ URL::route('dashboard.status-page') }}">
                 <i class="fa fa-exclamation-circle"></i> {{ Lang::get('cachet.dashboard.status_page') }}
             </a>
-        </li>
+        </li> -->
         <li class="{{ Request::is('dashboard/settings') ? 'active' : '' }}">
             <a href="{{ URL::route('dashboard.settings') }}">
                 <i class="fa fa-cogs"></i> {{ Lang::get('cachet.dashboard.settings') }}
