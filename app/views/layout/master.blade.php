@@ -10,7 +10,7 @@
     <title>{{ isset($pageTitle) ? $pageTitle : Setting::get('app_name') }} | Cachet</title>
 
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,700,300,600' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/css/application.css">
+    <link rel="stylesheet" href="{{ elixir('css/all.css') }}">
 
     <script src="{{ elixir('js/all.js') }}"></script>
 </head>

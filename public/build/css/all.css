@@ -44,21 +44,23 @@ body.dashboard .wrapper {
     body.dashboard .wrapper .content {
       -webkit-transition: margin 0.2s;
               transition: margin 0.2s;
-      margin-left: 250px; } }
+      margin-left: 250px; }
+ }
   body.dashboard .wrapper.active .sidebar {
     margin-left: 0; }
   @media (min-width: 550px) {
     body.dashboard .wrapper.active .content {
       -webkit-transition: margin 0.2s;
               transition: margin 0.2s;
-      margin-left: 250px; } }
+      margin-left: 250px; }
+ }
 
 body.dashboard .navbar {
   z-index: 999;
   border-radius: 0px;
   border: none;
-  border-bottom: 1px solid #00695b;
-  background: #009c87;
+  border-bottom: 1px solid #00695c;
+  background: #009c89;
   margin: 0; }
   body.dashboard .navbar a, body.dashboard .navbar a:active, body.dashboard .navbar a:visited {
     color: #ffffff; }
@@ -71,7 +73,7 @@ body.dashboard .navbar {
     body.dashboard .navbar .navbar-toggle.collapsed span {
       background-color: #ffffff; }
   body.dashboard .navbar .navbar-collapse {
-    background: #009c87; }
+    background: #009c89; }
   body.dashboard .navbar a.navbar-brand {
     padding: 34px 21px;
     line-height: 0em;
@@ -84,7 +86,8 @@ body.dashboard .navbar {
         padding-right: 10px; }
         body.dashboard .navbar a.navbar-brand span:before {
           font-family: FontAwesome;
-          content: "\f060"; } }
+          content: "\f060"; }
+ }
   body.dashboard .navbar .nav li a {
     height: 68px;
     line-height: 35px; }

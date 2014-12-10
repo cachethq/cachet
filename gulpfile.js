@@ -1,7 +1,7 @@
 var elixir = require('laravel-elixir');
 
 elixir(function(mix) {
-  mix.sass('main.scss')
+  mix.sass(['main.scss', 'application.scss'])
      .styles([
         'app/assets/bower_components/bootstrap/dist/css/bootstrap.min.css',
         'app/assets/bower_components/fontawesome/css/font-awesome.min.css',
