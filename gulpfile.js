@@ -10,7 +10,7 @@ elixir(function(mix) {
        'bower_components/jquery/dist/jquery.min.js',
        'bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js',
        'bower_components/chartjs/Chart.min.js',
-       'bower_components/rivets/dist/riverts.bundle.js',
+       'bower_components/rivets/dist/rivets.bundle.js',
        'js/app.js',
        'js/**/*.js',
      ], './app/assets/')
