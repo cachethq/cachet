@@ -1,7 +1,7 @@
 {
   "name": "Cachet",
   "dependencies": {
-    "bootstrap": "3.3.*",
+    "bootstrap-sass-official": "3.3.*",
     "fontawesome": "4.2.*",
     "jquery": "~2.1.1",
     "chartjs": "0.2.*",
