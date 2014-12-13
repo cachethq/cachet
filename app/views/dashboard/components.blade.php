@@ -10,15 +10,13 @@
 			<div role='tabpanel'>
 				<ul class="nav nav-tabs" role='tablist'>
 					<li role='presentation' class='active'><a data-toggle='tab' role='tab' href="#active">Active Components</a></li>
+					<li role='presentation' class=''><a data-toggle='tab' role='tab' href="#create">Create Component</a></li>
 				</ul>
 				<div class="tab-content">
 					<div role='tabpanel' class='tab-pane active' id="active">
 						<div class='row'>
-							<div class='col-md-6'>
+							<div class='col-md-12'>
 								<h3>Components</h3>
-							</div>
-							<div class='col-md-6 text-right'>
-								<a href='javascript: void(0);' class='btn btn-primary'>Add Component</a>
 							</div>
 						</div>
 						<div class='row'>
@@ -39,6 +37,30 @@
 								</li>
 								@endforeach
 							</ul>
+						</div>
+					</div>
+					<div role='tabpanel' class='tab-pane' id="create">
+						<div class='row'>
+							<div class='col-md-12'>
+								<h3>Create a component</h3>
+							</div>
+						</div>
+						<div class='row'>
+							<div class="col-md-12">
+								{{ Form::open(['name' => 'CreateComponentForm', 'class' => 'form-vertical', 'role' => 'form']) }}
+									<fieldset>
+										<div class='form-group'>
+											<label for='incident-name'>Component Name</label>
+											<input type='text' class='form-control' name='component[name]' id='component-name' required />
+										</div>
+										<div class='form-group'>
+											<label>Description</label>
+											<textarea name='component[description]' class='form-control' rows='5'></textarea>
+										</div>
+									</fieldset>
+									<button type="submit" class="btn btn-primary">Submit</button>
+								{{ Form::close() }}
+							</div>
 						</div>
 					</div>
 				</div>
