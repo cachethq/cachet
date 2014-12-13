@@ -1,26 +1,8 @@
 body.dashboard {
 	.wrapper {
 		width: 100%;
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		margin-top: 69px;
-		@media #{$screen-md-min} {
-			.content {
-				transition: margin $sidebar-transition-speed;
-				margin-left: $sidebar-normal-width;
-			}
-		}
-		&.active {
-			.sidebar {
-				margin-left: 0;
-			}
-			@media #{$screen-sm-min} {
-				.content {
-					transition: margin $sidebar-transition-speed;
-					margin-left: $sidebar-normal-width;
-				}
-			}
-		}
+		display: table;
+		height: 100%;
+		table-layout: fixed;
 	}
 }

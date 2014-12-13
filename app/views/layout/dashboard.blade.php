@@ -15,7 +15,7 @@
 
 <body class="dashboard">
     @include('partials.dashboard.nav')
-    <div class="wrapper active">
+    <div class="wrapper">
         @include('partials.dashboard.sidebar')
         <div class="content">
         @yield('content')
