@@ -27,8 +27,11 @@ class DashboardController extends Controller {
      * @return \Illuminate\View\View
      */
     public function showIncidents() {
+        $incidents = Incident::all();
+
         return View::make('dashboard.incidents')->with([
-            'pageTitle' => 'Incidents - Dashboard'
+            'pageTitle' => 'Incidents - Dashboard',
+            'incidents' => $incidents
         ]);
     }
 
