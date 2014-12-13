@@ -4370,6 +4370,8 @@ body.dashboard .content {
       top: -4px; }
     body.dashboard .content .header input {
       width: 20%; }
+    body.dashboard .content .header + .row {
+      margin-top: 23px; }
   body.dashboard .content h3 {
     margin-top: 0; }
 

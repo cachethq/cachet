@@ -24,6 +24,10 @@ body.dashboard {
 			input {
 				width: 20%;
 			}
+
+			+ .row {
+				margin-top: 23px;
+			}
 		}
 
 		h3 {
