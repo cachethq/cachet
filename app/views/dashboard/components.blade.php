@@ -9,14 +9,38 @@
 		<div class="col-sm-12">
 			<div role='tabpanel'>
 				<ul class="nav nav-tabs" role='tablist'>
-					<li role='presentation' class='active'><a data-toggle='tab' role='tab' href="#tab-1">Tab 1</a></li>
-					<li role='presentation'><a data-toggle='tab' role='tab' href="#tab-2">Tab 2</a></li>
-					<li role='presentation'><a data-toggle='tab' role='tab' href="#tab-3">Tab 3</a></li>
+					<li role='presentation' class='active'><a data-toggle='tab' role='tab' href="#active">Active Components</a></li>
 				</ul>
 				<div class="tab-content">
-					<div role='tabpanel' class='tab-pane active' id="tab-1">Foo</div>
-					<div role='tabpanel' class='tab-pane' id="tab-2">Bar</div>
-					<div role='tabpanel' class='tab-pane' id="tab-3">Baz</div>
+					<div role='tabpanel' class='tab-pane active' id="active">
+						<div class='row'>
+							<div class='col-md-6'>
+								<h3>Components</h3>
+							</div>
+							<div class='col-md-6 text-right'>
+								<a href='javascript: void(0);' class='btn btn-primary'>Add Component</a>
+							</div>
+						</div>
+						<div class='row'>
+							<ul class='list-group'>
+								@foreach($components as $component)
+								<li class='list-group-item'>
+									<div class='row'>
+										<div class='col-md-6'>
+											<strong>{{ $component->name }}</strong>
+										</div>
+										<div class='col-md-6'>
+											<ul class='nav nav-pills'>
+												<li role='presentation'><a href='javascript: void(0);'>Edit</a></li>
+												<li role='presentation'><a href='javascript: void(0);'>Delete</a></li>
+											</ul>
+										</div>
+									</div>
+								</li>
+								@endforeach
+							</ul>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

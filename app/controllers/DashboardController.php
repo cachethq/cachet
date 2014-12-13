@@ -14,8 +14,11 @@ class DashboardController extends Controller {
      * @return \Illuminate\View\View
      */
     public function showComponents() {
+        $components = Component::all();
+
         return View::make('dashboard.components')->with([
-            'pageTitle' => 'Components - Dashboard'
+            'pageTitle' => 'Components - Dashboard',
+            'components' => $components
         ]);
     }
 
