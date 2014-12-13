@@ -4259,7 +4259,7 @@ body.dashboard {
   font-weight: 300;
   font-size: 16px;
   letter-spacing: 0.08em;
-  background: #f5f5f5;
+  background: #ffffff;
   display: table;
   width: 100%;
   height: 100%;
@@ -4360,18 +4360,18 @@ body.dashboard .content {
   body.dashboard .content .row {
     margin: 10px 0; }
   body.dashboard .content .header {
-    background: #ffffff;
+    background: #ebebeb;
     padding: 14px;
     width: 100%;
     height: 50px;
-    font-size: 18px; }
-    body.dashboard .content .header i {
-      padding-right: 10px; }
+    font-size: 1.2em; }
     body.dashboard .content .header input, body.dashboard .content .header button, body.dashboard .content .header .btn {
       position: relative;
       top: -4px; }
     body.dashboard .content .header input {
       width: 20%; }
+  body.dashboard .content h3 {
+    margin-top: 0; }
 
 body {
   color: #333333;
