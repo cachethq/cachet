@@ -42,10 +42,10 @@ class Incident extends Eloquent implements \Dingo\Api\Transformer\TransformableI
      */
     public function getIconAttribute() {
         switch ($this->status) {
-            case 1: return 'glyphicon-flag';
-            case 2: return 'glyphicon-warning-sign';
-            case 3: return 'glyphicon-eye-open';
-            case 4: return 'glyphicon-ok';
+            case 1: return 'fa fa-flag';
+            case 2: return 'fa fa-warning';
+            case 3: return 'fa fa-eye';
+            case 4: return 'fa fa-check';
         }
     }
 
