@@ -9,13 +9,13 @@ class Incident extends Eloquent implements \Dingo\Api\Transformer\TransformableI
 
     protected $rules = [
         'user_id'      => 'required|integer',
-        'component_id' => 'required|integer',
+        'component_id' => 'integer',
         'name'         => 'required',
         'status'       => 'required|integer',
         'message'      => 'required',
     ];
 
-    protected $fillable = ['component_id', 'name', 'status', 'message'];
+    protected $fillable = ['user_id', 'component_id', 'name', 'status', 'message'];
 
     protected $appends = ['humanStatus'];
 

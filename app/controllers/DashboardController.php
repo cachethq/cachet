@@ -9,6 +9,15 @@ class DashboardController extends Controller {
         return View::make('dashboard.index');
     }
 
+    public function createIncidentAction() {
+        $_incident = Input::get('incident');
+        $_incident['user_id'] = Auth::user()->id;
+
+        $incident = Incident::create($_incident);
+
+        return Redirect::back()->with('incident', $incident);
+    }
+
     /**
      * Shows the components view.
      * @return \Illuminate\View\View
