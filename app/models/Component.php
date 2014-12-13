@@ -6,12 +6,12 @@ class Component extends Eloquent implements \Dingo\Api\Transformer\Transformable
     use ValidatingTrait;
 
     protected $rules = [
-        'user_id' => 'required|integer',
+        'user_id' => 'integer|required',
         'name'    => 'required',
-        'status'  => 'required|integer'
+        'status'  => 'integer'
     ];
 
-    protected $fillable = ['name', 'description', 'status'];
+    protected $fillable = ['name', 'description', 'status', 'user_id'];
 
     /**
      * Lookup all of the incidents reported on the component.

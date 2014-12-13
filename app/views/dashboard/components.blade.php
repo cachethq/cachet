@@ -10,7 +10,6 @@
 			<div role='tabpanel'>
 				<ul class="nav nav-tabs" role='tablist'>
 					<li role='presentation' class='active'><a data-toggle='tab' role='tab' href="#active">Active Components</a></li>
-					<li role='presentation' class=''><a data-toggle='tab' role='tab' href="#create">Create Component</a></li>
 				</ul>
 				<div class="tab-content">
 					<div role='tabpanel' class='tab-pane active' id="active">
@@ -38,8 +37,7 @@
 								@endforeach
 							</ul>
 						</div>
-					</div>
-					<div role='tabpanel' class='tab-pane' id="create">
+
 						<div class='row'>
 							<div class='col-md-12'>
 								<h3>Create a component</h3>
@@ -47,7 +45,17 @@
 						</div>
 						<div class='row'>
 							<div class="col-md-12">
-								{{ Form::open(['name' => 'CreateComponentForm', 'class' => 'form-vertical', 'role' => 'form']) }}
+							@if($component = Session::get('component'))
+								<div class='alert alert-{{ $component->isValid() ? "success" : "danger" }}'>
+									@if($component->isValid())
+									<strong>Awesome.</strong> Component added.
+									@else
+									<strong>Whoops.</strong> Something went wrong with the component. {{ $component->getErrors() }}
+									@endif
+								</div>
+								@endif
+
+								<form name='CreateComponentForm' class='form-vertical' role='form' action='/dashboard/components/create' method='POST'>
 									<fieldset>
 										<div class='form-group'>
 											<label for='incident-name'>Component Name</label>
@@ -58,8 +66,10 @@
 											<textarea name='component[description]' class='form-control' rows='5'></textarea>
 										</div>
 									</fieldset>
+
 									<button type="submit" class="btn btn-primary">Submit</button>
-								{{ Form::close() }}
+									<input type='hidden' name='component[user_id]' value='{{ Auth::user()->id }}' />
+								</form>
 							</div>
 						</div>
 					</div>

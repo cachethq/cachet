@@ -22,7 +22,7 @@
 						<div class='row'>
 							<div class='col-md-12'>
 								@if($incident = Session::get('incident'))
-								<div class='alert alert-{{ $incident->isValid() ? "success" : "error" }}'>
+								<div class='alert alert-{{ $incident->isValid() ? "success" : "danger" }}'>
 									@if($incident->isValid())
 									<strong>Awesome.</strong> Incident added.
 									@else
@@ -57,7 +57,9 @@
 											<textarea name='incident[message]' class='form-control' rows='5'></textarea>
 										</div>
 									</fieldset>
+
 									<button type="submit" class="btn btn-primary">Submit</button>
+									<input type='hidden' name='component[user_id]' value='{{ Auth::user()->id }}' />
 								{{ Form::close() }}
 							</div>
 						</div>

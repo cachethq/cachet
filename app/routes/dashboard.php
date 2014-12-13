@@ -5,6 +5,8 @@ Route::group(['before' => 'auth', 'prefix' => 'dashboard'], function() {
     Route::post('/', 'DashboardController@createIncidentAction');
 
     Route::get('components', ['as' => 'dashboard.components', 'uses' => 'DashboardController@showComponents']);
+    Route::post('components/create', 'DashboardController@createComponentAction');
+
     Route::get('incidents', ['as' => 'dashboard.incidents', 'uses' => 'DashboardController@showIncidents']);
     Route::get('metrics', ['as' => 'dashboard.metrics', 'uses' => 'DashboardController@showMetrics']);
     Route::get('notifications', ['as' => 'dashboard.notifications', 'uses' => 'DashboardController@showNotifications']);

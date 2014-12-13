@@ -11,8 +11,6 @@ class DashboardController extends Controller {
 
     public function createIncidentAction() {
         $_incident = Input::get('incident');
-        $_incident['user_id'] = Auth::user()->id;
-
         $incident = Incident::create($_incident);
 
         return Redirect::back()->with('incident', $incident);
@@ -29,6 +27,13 @@ class DashboardController extends Controller {
             'pageTitle' => 'Components - Dashboard',
             'components' => $components
         ]);
+    }
+
+    public function createComponentAction() {
+        $_component = Input::get('component');
+        $component = Component::create($_component);
+
+        return Redirect::back()->with('component', $component);
     }
 
     /**
