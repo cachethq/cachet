@@ -23,7 +23,7 @@
 					</div>
 				</li>
 				@empty
-				<li class='list-group-item text-danger'>You should a component.</li>
+				<li class='list-group-item text-danger'>You should add a component.</li>
 				@endforelse
 			</ul>
 
