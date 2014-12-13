@@ -4,6 +4,7 @@ use Watson\Validating\ValidatingTrait;
 
 class Component extends Eloquent implements \Dingo\Api\Transformer\TransformableInterface {
     use ValidatingTrait;
+    use Illuminate\Database\Eloquent\SoftDeletingTrait;
 
     protected $rules = [
         'user_id' => 'integer|required',
