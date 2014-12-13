@@ -11,7 +11,7 @@
 			@if ($incidents->count() === 0)
 			<p><strong>Woah! No incidents, your doing well!</strong></p>
 			@else
-			<p>You have <strong>{{ $incidents->count() }} incidents.</strong></p>
+			<p>You have <strong>{{ $incidents->count() }}</strong> incidents.</p>
 			@endif
 
 			<h3>Incident Templates</h3>
