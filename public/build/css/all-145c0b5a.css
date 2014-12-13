@@ -4259,28 +4259,17 @@ body.dashboard {
   font-weight: 300;
   font-size: 16px;
   letter-spacing: 0.08em;
-  background: #f5f5f5; }
+  background: #f5f5f5;
+  display: table;
+  width: 100%;
+  height: 100%;
+  table-layout: fixed; }
 
 body.dashboard .wrapper {
   width: 100%;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  margin-top: 69px; }
-  @media (min-width: 992px) {
-    body.dashboard .wrapper .content {
-      -webkit-transition: margin 0.2s;
-              transition: margin 0.2s;
-      margin-left: 250px; }
- }
-  body.dashboard .wrapper.active .sidebar {
-    margin-left: 0; }
-  @media (min-width: 550px) {
-    body.dashboard .wrapper.active .content {
-      -webkit-transition: margin 0.2s;
-              transition: margin 0.2s;
-      margin-left: 250px; }
- }
+  display: table;
+  height: 100%;
+  table-layout: fixed; }
 
 body.dashboard .navbar {
   z-index: 999;
@@ -4320,68 +4309,69 @@ body.dashboard .navbar {
     line-height: 35px; }
 
 body.dashboard .sidebar {
-  height: 100%;
-  position: fixed;
-  z-index: 998;
+  display: table-cell;
+  vertical-align: top;
   width: 250px;
   background: #2c3e50;
-  -webkit-transition: margin 0.2s;
-          transition: margin 0.2s; }
-  @media (max-width: 991px) {
-    body.dashboard .sidebar {
-      margin-left: -250px; } }
-  @media (max-width: 549px) {
-    body.dashboard .sidebar {
-      width: 75%;
-      margin-left: -75%; } }
-  body.dashboard .sidebar .profile {
-    padding: 20px;
-    margin-bottom: 20px; }
-    body.dashboard .sidebar .profile .avatar {
-      width: 70px; }
-      body.dashboard .sidebar .profile .avatar img {
-        border-radius: 50%;
-        width: 60px; }
-    body.dashboard .sidebar .profile .profile {
-      color: #d7dadc; }
-  body.dashboard .sidebar ul {
-    clear: both;
-    margin: 0;
-    padding: 0;
-    list-style: none; }
-    body.dashboard .sidebar ul li {
-      font-size: 0.8em; }
-      body.dashboard .sidebar ul li:last-child {
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
-      body.dashboard .sidebar ul li.active {
-        background: #3e5771; }
-        body.dashboard .sidebar ul li.active a {
-          color: #ffffff; }
-      body.dashboard .sidebar ul li a {
-        display: block;
-        padding: 15px;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        color: #d7dadc; }
-        body.dashboard .sidebar ul li a i {
-          padding-right: 10px; }
-        body.dashboard .sidebar ul li a:hover {
-          text-decoration: none; }
-
-body.dashboard .content .row {
-  margin: 10px 0; }
-body.dashboard .content .header {
-  background: #ffffff;
-  padding: 14px;
-  width: 100%;
-  height: 50px;
-  font-size: 18px; }
-  body.dashboard .content .header i {
-    padding-right: 10px; }
-  body.dashboard .content .header input, body.dashboard .content .header button, body.dashboard .content .header .btn {
+  position: relative;
+  z-index: 100; }
+  body.dashboard .sidebar .sidebar-inner {
     position: relative;
-    top: -4px; }
-  body.dashboard .content .header input {
-    width: 20%; }
+    margin-top: 69px; }
+    body.dashboard .sidebar .sidebar-inner .profile {
+      padding: 20px;
+      margin-bottom: 20px; }
+      body.dashboard .sidebar .sidebar-inner .profile .avatar {
+        width: 70px; }
+        body.dashboard .sidebar .sidebar-inner .profile .avatar img {
+          border-radius: 50%;
+          width: 60px; }
+      body.dashboard .sidebar .sidebar-inner .profile .profile {
+        color: #d7dadc; }
+    body.dashboard .sidebar .sidebar-inner ul {
+      clear: both;
+      margin: 0;
+      padding: 0;
+      list-style: none; }
+      body.dashboard .sidebar .sidebar-inner ul li {
+        font-size: 0.8em; }
+        body.dashboard .sidebar .sidebar-inner ul li:last-child {
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+        body.dashboard .sidebar .sidebar-inner ul li.active {
+          background: #3e5771; }
+          body.dashboard .sidebar .sidebar-inner ul li.active a {
+            color: #ffffff; }
+        body.dashboard .sidebar .sidebar-inner ul li a {
+          display: block;
+          padding: 15px;
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+          color: #d7dadc; }
+          body.dashboard .sidebar .sidebar-inner ul li a i {
+            padding-right: 10px; }
+          body.dashboard .sidebar .sidebar-inner ul li a:hover {
+            text-decoration: none; }
+
+body.dashboard .content {
+  padding-top: 69px;
+  position: relative;
+  display: table-cell;
+  vertical-align: top;
+  width: 100%; }
+  body.dashboard .content .row {
+    margin: 10px 0; }
+  body.dashboard .content .header {
+    background: #ffffff;
+    padding: 14px;
+    width: 100%;
+    height: 50px;
+    font-size: 18px; }
+    body.dashboard .content .header i {
+      padding-right: 10px; }
+    body.dashboard .content .header input, body.dashboard .content .header button, body.dashboard .content .header .btn {
+      position: relative;
+      top: -4px; }
+    body.dashboard .content .header input {
+      width: 20%; }
 
 body {
   color: #333333;

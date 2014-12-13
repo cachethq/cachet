@@ -1,5 +1,10 @@
 body.dashboard {
 	.content {
+		padding-top: 69px;
+		position: relative;
+		display: table-cell;
+		vertical-align: top;
+		width: 100%;
 		.row {
 			margin: 10px 0;
 		}
