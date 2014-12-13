@@ -9,6 +9,10 @@ class DashboardController extends Controller {
         return View::make('dashboard.index');
     }
 
+    /**
+     * Creates a new incident.
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function createIncidentAction() {
         $_incident = Input::get('incident');
         $incident = Incident::create($_incident);
@@ -29,11 +33,25 @@ class DashboardController extends Controller {
         ]);
     }
 
+    /**
+     * Creates a new component.
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function createComponentAction() {
         $_component = Input::get('component');
         $component = Component::create($_component);
 
         return Redirect::back()->with('component', $component);
+    }
+
+    /**
+     * Deletes a given component.
+     * @param  Component $component
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function deleteComponentAction(Component $component) {
+        $component->delete();
+        return Redirect::back();
     }
 
     /**
