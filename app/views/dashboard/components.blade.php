@@ -8,7 +8,7 @@
 		<div class="col-sm-12">
 			<h3>Components</h3>
 			<ul class='list-group'>
-				@foreach($components as $component)
+				@forelse($components as $component)
 				<li class='list-group-item'>
 					<div class='row'>
 						<div class='col-md-6'>
@@ -22,7 +22,9 @@
 						</div>
 					</div>
 				</li>
-				@endforeach
+				@empty
+				<li class='list-group-item text-danger'>You should a component.</li>
+				@endforelse
 			</ul>
 
 			<h3>Create a component</h3>
