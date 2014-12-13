@@ -3,7 +3,6 @@
 @section('content')
 	<div class="header">
 		<i class="fa fa-dashboard"></i> {{ Lang::get('cachet.dashboard.dashboard') }}
-		<input type="text" class="form-control input-sm pull-right" placeholder="{{ Lang::get('cachet.dashboard.search') }}">
 	</div>
 	<div class="row">
 		<div class="col-sm-12">
