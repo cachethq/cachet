@@ -8,7 +8,7 @@ use Illuminate\Routing\Controller;
 use CachetHQ\Cachet\Repositories\Metric\MetricRepository;
 
 class MetricController extends Controller {
-    
+
     use ControllerTrait;
 
     protected $metric;
