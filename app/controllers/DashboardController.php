@@ -46,6 +46,16 @@ class DashboardController extends Controller {
     }
 
     /**
+     * Shows the notifications view.
+     * @return \Illuminate\View\View
+     */
+    public function showNotifications() {
+        return View::make('dashboard.notifications')->with([
+            'pageTitle' => 'Notifications - Dashboard'
+        ]);
+    }
+
+    /**
      * Shows the settings view.
      * @return \Illuminate\View\View
      */

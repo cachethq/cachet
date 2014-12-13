@@ -31,6 +31,11 @@
                 <i class="fa fa-area-chart"></i> {{ Lang::get('cachet.dashboard.metrics') }}
             </a>
         </li>
+        <li class="{{ Request::is('dashboard/notifications') ? 'active' : '' }}">
+            <a href="{{ URL::route('dashboard.notifications') }}">
+                <i class="fa fa-envelope"></i> {{ Lang::get('cachet.dashboard.notifications') }}
+            </a>
+        </li>
         <!-- <li class="{{ Request::is('dashboard/status-page') ? 'active' : '' }}">
             <a href="{{ URL::route('dashboard.status-page') }}">
                 <i class="fa fa-exclamation-circle"></i> {{ Lang::get('cachet.dashboard.status_page') }}

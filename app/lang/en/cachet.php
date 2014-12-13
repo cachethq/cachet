@@ -36,6 +36,7 @@ return array(
         'metrics' => 'Metrics',
         'status_page' => 'Status Page',
         'settings' => 'Settings',
+        'notifications' => 'Notifications',
         'toggle_navigation' => 'Toggle Navigation',
         'search' => 'Search...',
     ),
