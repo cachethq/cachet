@@ -6,20 +6,54 @@
 	</div>
 	<div class="row">
 		<div class="col-sm-12">
-			<div role='tabpanel'>
-				<ul class="nav nav-tabs" role='tablist'>
-					<li role='presentation' class='active'><a data-toggle='tab' role='tab' href="#app">App</a></li>
-					<li role='presentation'><a data-toggle='tab' role='tab' href="#server">Server</a></li>
-					<li role='presentation'><a data-toggle='tab' role='tab' href="#mail">Mail</a></li>
-					<li role='presentation'><a data-toggle='tab' role='tab' href="#theme">Theme</a></li>
-				</ul>
-				<div class="tab-content">
-					<div role='tabpanel' class='tab-pane active' id="app">General App settings</div>
-					<div role='tabpanel' class='tab-pane' id="server">Server settings</div>
-					<div role='tabpanel' class='tab-pane' id="mail">Mail setitngs, host, SMTP, user and password.</div>
-					<div role='tabpanel' class='tab-pane' id="theme">Configure theme settings here.</div>
-				</div>
-			</div>
+			<form>
+				<h3>Cachet Settings <i>Not working yet.</i></h3>
+				<fieldset>
+					<div class='form-group'>
+						<label>Site Name</label>
+						<input type='text' class='form-control' value='{{ Setting::get("app_name") }}' required />
+					</div>
+					<div class='form-group'>
+						<label>Site URL</label>
+						<input type='text' class='form-control' value='{{ Setting::get("app_domain") }}' required />
+					</div>
+				</fieldset>
+
+				<h3>Server</h3>
+				<fieldset>
+
+				</fieldset>
+
+				<h3>Mail</h3>
+				<fieldset>
+
+				</fieldset>
+
+				<h3>Theme</h3>
+				<fieldset>
+					<div class='form-group'>
+						<label>Background Colour</label>
+						<input type='text' class='form-control' />
+					</div>
+					<div class='form-group'>
+						<label>Text Colour</label>
+						<input type='text' class='form-control' />
+					</div>
+					<div class='form-group'>
+						<label>Success Warning Colour</label>
+						<input type='text' class='form-control' />
+					</div>
+					<div class='form-group'>
+						<label>Error Warning Colour</label>
+						<input type='text' class='form-control' />
+					</div>
+					<div class='form-group'>
+						<label>Info Warning Colour</label>
+						<input type='text' class='form-control' />
+					</div>
+				</fieldset>
+				<button type="submit" class="btn btn-primary">Submit</button>
+			</form>
 		</div>
 	</div>
 @stop
