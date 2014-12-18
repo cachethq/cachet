@@ -6,6 +6,7 @@ Route::group(['before' => 'has_setting:app_name'], function() {
     Route::get('/incident/{incident}', 'HomeController@showIncident');
 });
 
+// Setup route.
 Route::group(['before' => 'no_setup:app_name'], function() {
     Route::controller('/setup', 'SetupController');
 });
