@@ -18,18 +18,6 @@ See the [INSTALL.md](/INSTALL.md) document for more information. If you'd like t
 
 If you're deploying into production you'll want to create an environmental variable as `ENV=production`. In the instance where the variable isn't defined, Cachet will think that it's `local`.
 
-# Looking to contribute?
-
-Are you looking to help out and contribute towards Cachet, awesome! There is a lot to do before the [first milestone](https://github.com/cachethq/Cachet/milestones/First%20Release%20(v1.0.0)) is reached, including:
-
-- **Revamp the existing design** [#2](https://github.com/cachethq/Cachet/issues/2). Whether you think that we should drop Bootstrap and we use a custom framework or we apply awesome styles, fork Cachet, make your changes and propose them!
-    + A good design for Cachet needs to also support a Setup and Management backend.
-- **Setup Page** [#12](https://github.com/cachethq/Cachet/issues/12). Work has started on this, but there is a lot more that needs to be setup including; users, components, incidents and templates.
-- **Dashboard** [#11](https://github.com/cachethq/Cachet/issues/11). Currently there is no way to get the incidents and components into the database without a bit of messing around.
-- **API** [#3](https://github.com/cachethq/Cachet/issues/3). All good services need an API and Cachet is no exception. An API will allow third-party integration and vice-versa.
-
-However, if you're not looking to work on anything big then some of our issues will be tagged with the **enjoy** label. Feel free to take a look at these as they should be much easier to deal with.
-
 # License
 
-[MIT license](http://jbrooksuk.mit-license.org)
+[MIT](http://jbrooksuk.mit-license.org)
