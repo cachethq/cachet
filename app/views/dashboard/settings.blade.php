@@ -24,6 +24,18 @@
 
 				</fieldset>
 
+				<h3>Security</h3>
+				<fieldset>
+					<div class='form-group'>
+						<label>Allowed Domains <em>Comma Seperated</em></label>
+						<textarea class='form-control' name='settings[security][allowed_domains]' rows='5' placeholder='http://cachet.io, http://cachet.herokuapp.com'>{{ Setting::get('allowed_domains') }}</textarea>
+					</div>
+					<div class='form-group'>
+						<label>Disallowed Domains <em>Comma Seperated</em></label>
+						<textarea class='form-control' name='settings[security][disallowed_domains]' rows='5' placeholder='http://cachetfake.io, http://cachetfake.herokuapp.com'>{{ Setting::get('disallowed_domains') }}</textarea>
+					</div>
+				</fieldset>
+
 				<h3>Mail</h3>
 				<fieldset>
 
