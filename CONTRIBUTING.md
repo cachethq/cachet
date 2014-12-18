@@ -30,7 +30,7 @@ class Foo extends Bar {
 ```
 
 - At least one newline seperating `namespace`, `use`, and `class` declarations
-- Spaces around operators, loop, conditions and control blocks:
+- Spaces around operators, loops, conditions and control blocks:
     ```php
     if ($condition === (10 + 2)) {
 
@@ -58,7 +58,7 @@ If you're not particularly fond of the command line, you can get one of GitHub's
 - [GitHub for Mac](https://github.com/blog/1510-installing-git-from-github-for-mac)
 - [GitHub for Windows](https://github.com/blog/1127-github-for-windows)
 
-If you're feeling advantageous, you can become a Git & GitHub master with the [Git Path on Code School](https://www.codeschool.com/paths/git).
+If you're feeling adventurous, you can become a Git & GitHub master with the [Git Path on Code School](https://www.codeschool.com/paths/git).
 
 There is always the Cachet Gitter chat to ask any questions you may have:
 
