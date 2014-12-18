@@ -1,7 +1,6 @@
 <?php
 
 Route::api(['version' => 'v1', 'namespace' => 'CachetHQ\Cachet\Controllers\Api'], function() {
-
     Route::get('components', 'ComponentController@getComponents');
     Route::get('components/{id}', 'ComponentController@getComponent');
     Route::get('components/{id}/incidents', 'ComponentController@getComponentIncidents');
@@ -21,5 +20,4 @@ Route::api(['version' => 'v1', 'namespace' => 'CachetHQ\Cachet\Controllers\Api']
         Route::put('incidents/{id}', 'IncidentController@putIncident');
         Route::put('metrics/{id}', 'MetricController@putMetric');
     });
-
 });
