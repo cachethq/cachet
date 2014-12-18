@@ -6,8 +6,17 @@
     @if(Auth::check())
     <div class='row'>
         <div class='col-md-12'>
-            <a class="btn btn-primary pull-right" href="/auth/logout">{{ Lang::get('cachet.logout') }}</a>
-            <p>{{ Lang::get('cachet.dashboard_link') }}</p>
+            <div class='row'>
+                <div class='col-md-6'>
+                    <p>{{ Lang::get('cachet.logged_in') }}</p>
+                </div>
+                <div class='col-md-6'>
+                    <div class='btn-group pull-right'>
+                        <a class="btn btn-default" href="{{ URL::route('dashboard') }}">{{ Lang::get('cachet.dashboard.dashboard') }}</a>
+                        <a class="btn btn-danger" href="{{ URL::route('logout') }}">{{ Lang::get('cachet.logout') }}</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     @endif
