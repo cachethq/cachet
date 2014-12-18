@@ -4,6 +4,7 @@ Route::group(['before' => 'auth', 'prefix' => 'dashboard'], function() {
     Route::get('/', ['as' => 'dashboard', 'uses' => 'DashboardController@showDashboard']);
     Route::post('/', 'DashboardController@createIncidentAction');
 
+    // TODO: Switch for Route::controller?
     Route::get('components', ['as' => 'dashboard.components', 'uses' => 'DashboardController@showComponents']);
     Route::post('components/create', 'DashboardController@createComponentAction');
     Route::get('components/{component}/delete', 'DashboardController@deleteComponentAction');
