@@ -21,6 +21,4 @@
     @for($i=0; $i <= 7; $i++)
     @include('partials.incident', array('i', $i))
     @endfor
-
-    @include('partials.support-link')
 @stop

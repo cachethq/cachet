@@ -31,6 +31,7 @@ h1 {
 
 .container {
     max-width: 960px;
+    margin-bottom: 40px;
 }
 
 .page-header {
@@ -149,4 +150,13 @@ h1 {
             color: transparent;
         }
     }
+}
+
+footer.footer {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    color: #777;
+    text-align: center;
+    border-top: 1px solid #e5e5e5;
+    background-color: lighten(#e5e5e5, 5%);
 }

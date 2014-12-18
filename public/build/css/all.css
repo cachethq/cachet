@@ -4400,7 +4400,8 @@ h1 {
   color: #D91E18; }
 
 .container {
-  max-width: 960px; }
+  max-width: 960px;
+  margin-bottom: 40px; }
 
 .page-header {
   margin-top: 10px; }
@@ -4482,3 +4483,11 @@ h1 {
       margin-bottom: 10px; }
     .list-group.components .badge {
       color: transparent; }
+
+footer.footer {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  color: #777;
+  text-align: center;
+  border-top: 1px solid #e5e5e5;
+  background-color: #f2f2f2; }
