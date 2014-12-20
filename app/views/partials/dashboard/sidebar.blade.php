@@ -27,6 +27,11 @@
                     <i class="fa fa-plus"></i> {{ Lang::get('cachet.dashboard.incident-add') }}
                 </a>
             </li>
+            <li class=" sub-nav-item">
+                <a href="#">
+                    <i class="fa fa-plus"></i> {{ Lang::get('cachet.dashboard.incident-create-template') }}
+                </a>
+            </li>
             <li class="{{ Request::is('dashboard/components') ? 'active' : '' }}">
                 <a href="{{ URL::route('dashboard.components') }}">
                     <i class="fa fa-list-ul"></i> {{ Lang::get('cachet.dashboard.components') }}

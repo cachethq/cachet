@@ -35,6 +35,7 @@ return array(
         'component-add' => 'Add Component',
         'incidents' => 'Incidents',
         'incident-add' => 'Add Incident',
+        'incident-create-template' => 'Create Template',
         'metrics' => 'Metrics',
         'status_page' => 'Status Page',
         'settings' => 'Settings',
