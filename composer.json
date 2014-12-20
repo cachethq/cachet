@@ -30,7 +30,7 @@
       "app/filters"
     ],
     "psr-4": {
-      "CachetHQ\\": "app/CachetHq"
+      "CachetHQ\\": "app/CachetHQ"
     }
   },
   "extra": {
