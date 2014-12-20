@@ -34,6 +34,7 @@ return array(
         'components' => 'Components',
         'component-add' => 'Add Component',
         'incidents' => 'Incidents',
+        'incident-add' => 'Add Incident',
         'metrics' => 'Metrics',
         'status_page' => 'Status Page',
         'settings' => 'Settings',

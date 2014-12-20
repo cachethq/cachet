@@ -17,6 +17,16 @@
                     <i class="fa fa-dashboard"></i> {{ Lang::get('cachet.dashboard.dashboard') }}
                 </a>
             </li>
+            <li class="{{ Request::is('dashboard/incidents') ? 'active' : '' }}">
+                <a href="{{ URL::route('dashboard.incidents') }}">
+                    <i class="fa fa-exclamation-triangle"></i> {{ Lang::get('cachet.dashboard.incidents') }}
+                </a>
+            </li>
+            <li class="{{ Request::is('dashboard/incidents/add') ? 'active' : '' }} sub-nav-item">
+                <a href="{{ URL::route('dashboard.incidents.add') }}">
+                    <i class="fa fa-plus"></i> {{ Lang::get('cachet.dashboard.incident-add') }}
+                </a>
+            </li>
             <li class="{{ Request::is('dashboard/components') ? 'active' : '' }}">
                 <a href="{{ URL::route('dashboard.components') }}">
                     <i class="fa fa-list-ul"></i> {{ Lang::get('cachet.dashboard.components') }}
@@ -25,11 +35,6 @@
             <li class="{{ Request::is('dashboard/components/add') ? 'active' : '' }} sub-nav-item">
                 <a href="{{ URL::route('dashboard.components.add') }}">
                     <i class="fa fa-plus"></i> {{ Lang::get('cachet.dashboard.component-add') }}
-                </a>
-            </li>
-            <li class="{{ Request::is('dashboard/incidents') ? 'active' : '' }}">
-                <a href="{{ URL::route('dashboard.incidents') }}">
-                    <i class="fa fa-exclamation-triangle"></i> {{ Lang::get('cachet.dashboard.incidents') }}
                 </a>
             </li>
             <li class="{{ Request::is('dashboard/metrics') ? 'active' : '' }}">
