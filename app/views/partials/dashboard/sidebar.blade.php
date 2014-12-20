@@ -27,7 +27,7 @@
                     <i class="fa fa-plus"></i> {{ Lang::get('cachet.dashboard.incident-add') }}
                 </a>
             </li>
-            <li class=" sub-nav-item">
+            <li class="sub-nav-item">
                 <a href="#">
                     <i class="fa fa-plus"></i> {{ Lang::get('cachet.dashboard.incident-create-template') }}
                 </a>
@@ -45,6 +45,11 @@
             <li class="{{ Request::is('dashboard/metrics') ? 'active' : '' }}">
                 <a href="{{ URL::route('dashboard.metrics') }}">
                     <i class="fa fa-area-chart"></i> {{ Lang::get('cachet.dashboard.metrics') }}
+                </a>
+            </li>
+            <li class="sub-nav-item">
+                <a href="#">
+                    <i class="fa fa-plus"></i> {{ Lang::get('cachet.dashboard.metrics-add') }}
                 </a>
             </li>
             <li class="{{ Request::is('dashboard/notifications') ? 'active' : '' }}">

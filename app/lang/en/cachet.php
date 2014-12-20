@@ -37,6 +37,7 @@ return array(
         'incident-add' => 'Add Incident',
         'incident-create-template' => 'Create Template',
         'metrics' => 'Metrics',
+        'metrics-add' => 'Add Metric Point',
         'status_page' => 'Status Page',
         'settings' => 'Settings',
         'notifications' => 'Notifications',
