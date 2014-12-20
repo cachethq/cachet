@@ -13,6 +13,9 @@
 					<div class='row'>
 						<div class='col-md-6'>
 							<strong>{{ $component->name }}</strong>
+							@if($component->description)
+							<p><small>{{ $component->description }}</small></p>
+							@endif
 						</div>
 						<div class='col-md-6'>
 							<ul class='nav nav-pills'>
