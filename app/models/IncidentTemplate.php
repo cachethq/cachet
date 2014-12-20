@@ -2,7 +2,8 @@
 
 use Watson\Validating\ValidatingTrait;
 
-class IncidentTemplate extends Eloquent {
+class IncidentTemplate extends Eloquent
+{
     use ValidatingTrait;
 
     protected $rules = [
@@ -19,10 +20,11 @@ class IncidentTemplate extends Eloquent {
      * Overrides the models boot method.
      * @return void
      */
-    public static function boot() {
+    public static function boot()
+    {
         parent::boot();
 
-        self::saving(function($template) {
+        self::saving(function ($template) {
             $template->slug = Str::slug($template->name);
         });
     }

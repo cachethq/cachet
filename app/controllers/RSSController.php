@@ -1,11 +1,13 @@
 <?php
 
-class RSSController extends Controller {
+class RSSController extends Controller
+{
     /**
      * Generates an RSS feed of all incidents.
      * @return \Illuminate\Http\Response
      */
-    public function feedAction() {
+    public function feedAction()
+    {
         $feed = RSS::feed('2.0', 'UTF-8');
         $feed->channel([
             'title'         => Setting::get('app_name'),
@@ -13,7 +15,7 @@ class RSSController extends Controller {
             'link'          => Setting::get('app_domain'),
         ]);
 
-        Incident::get()->map(function($incident) use ($feed) {
+        Incident::get()->map(function ($incident) use ($feed) {
             $componentName = null;
             $component = $incident->component;
             if ($component) {
@@ -26,7 +28,7 @@ class RSSController extends Controller {
                 'component'  => $componentName,
                 'status'     => $incident->humanStatus,
                 'created_at' => $incident->created_at,
-                'updated_at' => $incident->updated_at
+                'updated_at' => $incident->updated_at,
             ]);
         });
 

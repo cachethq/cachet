@@ -2,13 +2,14 @@
 
 use Watson\Validating\ValidatingTrait;
 
-class Service extends Eloquent {
+class Service extends Eloquent
+{
     use ValidatingTrait;
 
     protected $rules = [
         'type'       => 'alpha_dash|required',
         'active'     => 'required|in:0,1',
-        'properties' => ''
+        'properties' => '',
     ];
 
     /**
@@ -16,7 +17,8 @@ class Service extends Eloquent {
      * @param  string $properties
      * @return object
      */
-    public function getPropertiesAttribute($properties) {
+    public function getPropertiesAttribute($properties)
+    {
         return json_decode($properties);
     }
 
@@ -24,7 +26,8 @@ class Service extends Eloquent {
      * Sets the properties attribute which auto encodes to a JSON string.
      * @param mixed $properties
      */
-    public function setPropertiesAttribute($properties) {
+    public function setPropertiesAttribute($properties)
+    {
         $this->attributes['properties'] = json_encode($properties);
     }
 }

@@ -3,8 +3,8 @@
 Route::api([
     'version'   => 'v1',
     'namespace' => 'CachetHQ\Cachet\Controllers\Api',
-    'after'     => 'allowed_domains'
-], function() {
+    'after'     => 'allowed_domains',
+], function () {
     Route::get('components', 'ComponentController@getComponents');
     Route::get('components/{id}', 'ComponentController@getComponent');
     Route::get('components/{id}/incidents', 'ComponentController@getComponentIncidents');
@@ -14,7 +14,7 @@ Route::api([
     Route::get('metrics/{id}', 'MetricController@getMetric');
     Route::get('metrics/points/{id}', 'MetricPointController@getMetricPoint');
 
-    Route::group(['protected' => true], function() {
+    Route::group(['protected' => true], function () {
         Route::post('components', 'ComponentController@postComponents');
         Route::post('incidents', 'IncidentController@postIncidents');
         Route::post('metrics', 'MetricController@postMetrics');

@@ -1,7 +1,9 @@
 <?php
 
-class SetupController extends Controller {
-    public function __construct() {
+class SetupController extends Controller
+{
+    public function __construct()
+    {
         $this->beforeFilter('csrf', ['only' => ['postCachet']]);
     }
 
@@ -9,9 +11,10 @@ class SetupController extends Controller {
      * Returns the setup page.
      * @return \Illuminate\View\View
      */
-    public function getIndex() {
+    public function getIndex()
+    {
         return View::make('setup')->with([
-            'pageTitle' => 'Setup'
+            'pageTitle' => 'Setup',
         ]);
     }
 
@@ -19,7 +22,8 @@ class SetupController extends Controller {
      * Handles the actual app setup.
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function postIndex() {
+    public function postIndex()
+    {
         $postData = Input::get();
 
         $v = Validator::make($postData, [
@@ -38,7 +42,7 @@ class SetupController extends Controller {
             // TODO: Do we want to just use Eloquent::unguard() here?
             $user = User::create([
                 'username' => $userDetails['username'],
-                'email' => $userDetails['email'],
+                'email'    => $userDetails['email'],
                 'password' => $userDetails['password'],
             ]);
 
@@ -47,7 +51,7 @@ class SetupController extends Controller {
             $settings = array_get($postData, 'settings');
 
             foreach ($settings as $settingName => $settingValue) {
-                $setting        = new Setting;
+                $setting        = new Setting();
                 $setting->name  = $settingName;
                 $setting->value = $settingValue;
                 $setting->save();

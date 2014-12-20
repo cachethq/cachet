@@ -1,7 +1,9 @@
 <?php
 
-class HasSettingFilter {
-    public function filter($route, $request, $settingName) {
+class HasSettingFilter
+{
+    public function filter($route, $request, $settingName)
+    {
         try {
             $setting = Setting::where('name', $settingName)->first();
             if (!$setting->value) {

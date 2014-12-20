@@ -2,18 +2,20 @@
 
 namespace CachetHQ\Cachet\Controllers\Api;
 
-use Input;
+use CachetHQ\Cachet\Repositories\Metric\MetricRepository;
 use Dingo\Api\Routing\ControllerTrait;
 use Illuminate\Routing\Controller;
-use CachetHQ\Cachet\Repositories\Metric\MetricRepository;
+use Input;
 
-class MetricController extends Controller {
+class MetricController extends Controller
+{
 
     use ControllerTrait;
 
     protected $metric;
 
-    public function __construct(MetricRepository $metric) {
+    public function __construct(MetricRepository $metric)
+    {
         $this->metric = $metric;
     }
     /**
@@ -21,7 +23,8 @@ class MetricController extends Controller {
      *
      * @return \Illuminate\Database\Eloquent\Collection
      */
-    public function getMetrics() {
+    public function getMetrics()
+    {
         return $this->metric->all();
     }
 
@@ -32,7 +35,8 @@ class MetricController extends Controller {
      *
      * @return Metric
      */
-    public function getMetric($id) {
+    public function getMetric($id)
+    {
         return $this->metric->findOrFail($id);
     }
 
@@ -41,7 +45,8 @@ class MetricController extends Controller {
      *
      * @return Metric
      */
-    public function postMetrics() {
+    public function postMetrics()
+    {
         return $this->metric->create(Input::all());
     }
 
@@ -52,7 +57,8 @@ class MetricController extends Controller {
      *
      * @return Metric
      */
-    public function putMetric($id) {
+    public function putMetric($id)
+    {
         return $this->metric->update($id, Input::all());
     }
 }

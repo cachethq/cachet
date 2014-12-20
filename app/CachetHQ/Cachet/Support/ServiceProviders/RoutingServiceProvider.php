@@ -5,31 +5,35 @@ namespace CachetHQ\Cachet\Support\ServiceProviders;
 use Illuminate\Support\ServiceProvider;
 use RecursiveDirectoryIterator;
 
-class RoutingServiceProvider extends ServiceProvider {
+class RoutingServiceProvider extends ServiceProvider
+{
 
-	public function register() {}
+    public function register()
+    {
+    }
 
-	public function boot() {
-		$this->routesInDirectory();
-	}
+    public function boot()
+    {
+        $this->routesInDirectory();
+    }
 
-	/**
-	 * Organise Routes
-	 * @param  string $app
-	 */
-	private function routesInDirectory($app = '') {
-		$routeDir = app_path('routes/' . $app . ($app !== '' ? '/' : null));
+    /**
+     * Organise Routes
+     * @param string $app
+     */
+    private function routesInDirectory($app = '')
+    {
+        $routeDir = app_path('routes/'.$app.($app !== '' ? '/' : null));
 
-		$iterator = new RecursiveDirectoryIterator($routeDir);
-		$iterator->setFlags(RecursiveDirectoryIterator::SKIP_DOTS);
+        $iterator = new RecursiveDirectoryIterator($routeDir);
+        $iterator->setFlags(RecursiveDirectoryIterator::SKIP_DOTS);
 
-		foreach ($iterator as $route) {
-			$isDotFile = strpos($route->getFilename(), '.') === 0;
+        foreach ($iterator as $route) {
+            $isDotFile = strpos($route->getFilename(), '.') === 0;
 
-			if (!$isDotFile && !$route->isDir()) {
-				require $routeDir . $route->getFilename();
-			}
-		}
-	}
-
+            if (!$isDotFile && !$route->isDir()) {
+                require $routeDir.$route->getFilename();
+            }
+        }
+    }
 }

@@ -1,6 +1,7 @@
 <?php
 
-class WebHook extends Eloquent {
+class WebHook extends Eloquent
+{
     // Request Methods.
     const HEAD = 0;
     const GET = 1;
@@ -11,9 +12,10 @@ class WebHook extends Eloquent {
 
     /**
      * Returns all responses for a WebHook.
-     * @return  Illuminate\Database\Eloquent\Builder
+     * @return Illuminate\Database\Eloquent\Builder
      */
-    public function response() {
+    public function response()
+    {
         return $this->hasMany('WebHookContent', 'hook_id', 'id');
     }
 
@@ -22,7 +24,8 @@ class WebHook extends Eloquent {
      * @param  Illuminate\Database\Eloquent\Builder $query
      * @return Illuminate\Database\Eloquent\Builder
      */
-    public function scopeActive($query) {
+    public function scopeActive($query)
+    {
         return $query->where('active', 1);
     }
 
@@ -30,17 +33,19 @@ class WebHook extends Eloquent {
      * Setups a Ping event that is fired upon a web hook.
      * @return array result of the ping
      */
-    public function ping() {
+    public function ping()
+    {
         return $this->fire('ping', 'Coming live to you from Cachet.');
     }
 
     /**
      * Fires the actual web hook event.
-     * @param string $eventType the event to send X-Cachet-Event
-     * @param mixed $data Data to send to the Web Hook
+     * @param  string $eventType the event to send X-Cachet-Event
+     * @param  mixed  $data      Data to send to the Web Hook
      * @return object
      */
-    public function fire($eventType, $data = null) {
+    public function fire($eventType, $data = null)
+    {
         $startTime = microtime(true);
 
         $client = new \GuzzleHttp\Client();
@@ -58,10 +63,10 @@ class WebHook extends Eloquent {
             $response = $e->getResponse();
         }
 
-        $timeTaken = microtime(TRUE) - $startTime;
+        $timeTaken = microtime(true) - $startTime;
 
         // Store the request
-        $hookResponse                   = new WebHookResponse;
+        $hookResponse                   = new WebHookResponse();
         $hookResponse->web_hook_id      = $this->id;
         $hookResponse->response_code    = $response->getStatusCode();
         $hookResponse->sent_headers     = json_encode($request->getHeaders());
@@ -77,10 +82,11 @@ class WebHook extends Eloquent {
     /**
      * Returns a human readable request type name.
      * @throws Exception
-     * @return string HEAD, GET, POST, DELETE, PATCH, PUT etc
+     * @return string    HEAD, GET, POST, DELETE, PATCH, PUT etc
      */
-    public function getRequestMethodAttribute() {
-        $requestMethod = NULL;
+    public function getRequestMethodAttribute()
+    {
+        $requestMethod = null;
 
         switch ($this->request_type) {
             case self::HEAD:
@@ -103,7 +109,7 @@ class WebHook extends Eloquent {
                 break;
 
             default:
-                throw new Exception('Unknown request type value: ' . $this->request_type);
+                throw new Exception('Unknown request type value: '.$this->request_type);
                 break;
         }
 

@@ -2,18 +2,20 @@
 
 namespace CachetHQ\Cachet\Controllers\Api;
 
-use Input;
+use CachetHQ\Cachet\Repositories\Incident\IncidentRepository;
 use Dingo\Api\Routing\ControllerTrait;
 use Illuminate\Routing\Controller;
-use CachetHQ\Cachet\Repositories\Incident\IncidentRepository;
+use Input;
 
-class IncidentController extends Controller {
+class IncidentController extends Controller
+{
 
     use ControllerTrait;
 
     protected $incident;
 
-    public function __construct(IncidentRepository $incident) {
+    public function __construct(IncidentRepository $incident)
+    {
         $this->incident = $incident;
     }
 
@@ -22,7 +24,8 @@ class IncidentController extends Controller {
      *
      * @return \Illuminate\Database\Eloquent\Collection
      */
-    public function getIncidents() {
+    public function getIncidents()
+    {
         return $this->incident->all();
     }
 
@@ -33,7 +36,8 @@ class IncidentController extends Controller {
      *
      * @return Incident
      */
-    public function getIncident($id) {
+    public function getIncident($id)
+    {
         return $this->incident->findOrFail($id);
     }
 
@@ -42,7 +46,8 @@ class IncidentController extends Controller {
      *
      * @return Incident
      */
-    public function postIncidents() {
+    public function postIncidents()
+    {
         return $this->incident->create($this->auth->user()->id, Input::all());
     }
 
@@ -53,7 +58,8 @@ class IncidentController extends Controller {
      *
      * @return Incident
      */
-    public function putIncident($id) {
+    public function putIncident($id)
+    {
         return $this->incident->update($id, Input::all());
     }
 }
