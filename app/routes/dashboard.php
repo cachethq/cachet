@@ -9,6 +9,8 @@ Route::group(['before' => 'auth', 'prefix' => 'dashboard'], function() {
     Route::get('components/add', ['as' => 'dashboard.components.add', 'uses' => 'DashComponentController@showAddComponent']);
     Route::post('components/add', 'DashComponentController@createComponentAction');
     Route::get('components/{component}/delete', 'DashComponentController@deleteComponentAction');
+    Route::get('components/{component}/edit', 'DashComponentController@showEditComponent');
+    Route::post('components/{component}/edit', 'DashComponentController@updateComponentAction');
 
     // Incidents
     Route::get('incidents', ['as' => 'dashboard.incidents', 'uses' => 'DashIncidentController@showIncidents']);

@@ -32,7 +32,6 @@ class Component extends Eloquent implements \Dingo\Api\Transformer\Transformable
 
     /**
      * Get the transformer instance.
-     *
      * @return ComponentTransformer
      */
     public function getTransformer() {

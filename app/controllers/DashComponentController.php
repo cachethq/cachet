@@ -15,6 +15,30 @@ class DashComponentController extends Controller {
 	}
 
 	/**
+	 * Shows the edit component view.
+	 * @param  Component $component
+	 * @return \Illuminate\View\View
+	 */
+	public function showEditComponent(Component $component) {
+
+	    return View::make('dashboard.component-edit')->with([
+	        'pageTitle' => 'Editing "' . $component->name . '" Component - Dashboard',
+	        'component' => $component
+	    ]);
+	}
+
+	/**
+	 * Updates a component.
+	 * @return \Illuminate\Http\RedirectResponse
+	 */
+	public function updateComponentAction(Component $component) {
+	    $_component = Input::get('component');
+	    $component->update($_component);
+
+	    return Redirect::back()->with('savedComponent', $component);
+	}
+
+	/**
 	 * Shows the add component view.
 	 * @return \Illuminate\View\View
 	 */

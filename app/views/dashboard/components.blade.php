@@ -19,7 +19,7 @@
 						</div>
 						<div class='col-md-6'>
 							<ul class='nav nav-pills'>
-								<li role='presentation'><a href='javascript: void(0);'>Edit</a></li>
+								<li role='presentation'><a href='/dashboard/components/{{ $component->id }}/edit'>Edit</a></li>
 								<li role='presentation'><a href='/dashboard/components/{{ $component->id }}/delete'>Delete</a></li>
 							</ul>
 						</div>

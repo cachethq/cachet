@@ -6,7 +6,6 @@ use Illuminate\Auth\Reminders\RemindableTrait;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
 class User extends Eloquent implements UserInterface, RemindableInterface {
-
     use UserTrait, RemindableTrait;
 
     /**
@@ -37,8 +36,17 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         $this->attributes['password'] = Hash::make($password);
     }
 
+    /**
+     * Returns a Gravatar URL for the users email address.
+     * @param  integer $size
+     * @return string
+     */
     public function getGravatarAttribute($size = 200) {
-        return 'https://www.gravatar.com/avatar/' . md5($this->email) . '?size=' . $size;
+        return sprintf(
+            'https://www.gravatar.com/avatar/%s?size=%d',
+            md5($this->email),
+            $size
+        );
     }
 
 }
