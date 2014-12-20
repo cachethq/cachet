@@ -11,6 +11,10 @@ class IncidentTemplate extends Eloquent {
         'template' => 'required'
     ];
 
+    /**
+     * Overrides the models boot method.
+     * @return void
+     */
     public static function boot() {
         parent::boot();
 
