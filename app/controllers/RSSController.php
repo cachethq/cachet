@@ -14,10 +14,16 @@ class RSSController extends Controller {
         ]);
 
         Incident::get()->map(function($incident) use ($feed) {
+            $componentName = null;
+            $component = $incident->component;
+            if ($component) {
+                $componentName = $component->name;
+            }
+
             $feed->item([
                 'title'         => $incident->name,
                 'message'       => $incident->message,
-                'component'     => $incident->component->name,
+                'component'     => $componentName,
                 'status'        => $incident->humanStatus,
                 'created_at'    => $incident->created_at,
                 'updated_at'    => $incident->updated_at
