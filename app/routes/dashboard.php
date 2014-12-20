@@ -17,4 +17,5 @@ Route::group(['before' => 'auth', 'prefix' => 'dashboard'], function() {
     Route::get('notifications', ['as' => 'dashboard.notifications', 'uses' => 'DashboardController@showNotifications']);
     Route::get('status-page', ['as' => 'dashboard.status-page', 'uses' => 'DashboardController@showStatusPage']);
     Route::get('settings', ['as' => 'dashboard.settings', 'uses' => 'DashboardController@showSettings']);
+    Route::post('settings', 'DashboardController@postSettings');
 });

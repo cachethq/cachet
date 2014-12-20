@@ -1,6 +1,8 @@
 <?php
 
 class Setting extends Eloquent {
+    protected $fillable = ['name', 'value'];
+
     /**
      * Returns a setting from the database.
      * @param  string $settingName
