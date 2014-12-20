@@ -27,8 +27,8 @@
                     <i class="fa fa-plus"></i> {{ Lang::get('cachet.dashboard.incident-add') }}
                 </a>
             </li>
-            <li class="sub-nav-item">
-                <a href="#">
+            <li class="{{ Request::is('dashboard/incidents/template') ? 'active' : '' }} sub-nav-item">
+                <a href="{{ URL::route('dashboard.incidents.template') }}">
                     <i class="fa fa-plus"></i> {{ Lang::get('cachet.dashboard.incident-create-template') }}
                 </a>
             </li>
