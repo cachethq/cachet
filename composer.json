@@ -1,9 +1,10 @@
 {
-  "name": "laravel/laravel",
-  "description": "The Laravel Framework.",
+  "name": "cachethq/cachet",
+  "description": "Open Source StatusPage.io alternative written in PHP.",
   "keywords": [
-    "framework",
-    "laravel"
+    "status page",
+    "status",
+    "board"
   ],
   "license": "MIT",
   "type": "project",
@@ -25,7 +26,6 @@
       "app/models",
       "app/database/migrations",
       "app/database/seeds",
-      "app/tests/TestCase.php",
       "app/filters"
     ],
     "psr-4": {
