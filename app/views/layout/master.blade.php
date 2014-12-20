@@ -13,6 +13,8 @@
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,700,300,600' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{ elixir('css/all.css') }}">
 
+    @include('partials.stylesheet')
+
     <script src="{{ elixir('js/all.js') }}"></script>
 </head>
 <body class='status-page'>
