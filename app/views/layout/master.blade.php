@@ -15,6 +15,12 @@
 
     @include('partials.stylesheet')
 
+    @if($stylesheet = Setting::get('stylesheet'))
+    <style type='text/css'>
+    {{ $stylesheet }}
+    </style>
+    @endif
+
     <script src="{{ elixir('js/all.js') }}"></script>
 </head>
 <body class='status-page'>

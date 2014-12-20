@@ -65,6 +65,14 @@
 					</div>
 				</fieldset>
 
+				<h3>Stylesheet</h3>
+				<fieldset>
+					<div class='form-group'>
+						<label>Custom Stylesheet</label>
+						<textarea class='form-control' name='stylesheet' rows='10'>{{ Setting::get('stylesheet') }}</textarea>
+					</div>
+				</fieldset>
+
 				<button type="submit" class="btn btn-primary">Submit</button>
 			</form>
 		</div>
