@@ -1,14 +1,15 @@
 <?php
 
-namespace CachetHQ\Cachet\Repositories\Incident;
+namespace CachetHq\Cachet\Repositories\Incident;
 
-interface IncidentRepository {
+interface IncidentRepository
+{
 
-	public function all();
+    public function all();
 
-	public function create($id, array $array);
+    public function create($id, array $array);
 
-	public function findOrFail($id);
+    public function findOrFail($id);
 
-	public function update($id, array $with);
+    public function update($id, array $with);
 }

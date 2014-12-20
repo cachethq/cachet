@@ -78,7 +78,7 @@ return [
     'auth' => [
         'basic' => function ($app) {
             return new Dingo\Api\Auth\BasicProvider($app['auth']);
-        }
+        },
     ],
 
     /*
@@ -101,15 +101,15 @@ return [
 
         'authenticated' => [
             'limit' => 0,
-            'reset' => 60
+            'reset' => 60,
         ],
 
         'unauthenticated' => [
             'limit' => 0,
-            'reset' => 60
+            'reset' => 60,
         ],
 
-        'exceeded' => 'API rate limit has been exceeded.'
+        'exceeded' => 'API rate limit has been exceeded.',
 
     ],
 
@@ -126,7 +126,7 @@ return [
     */
 
     'transformer' => function ($app) {
-        $fractal = new League\Fractal\Manager;
+        $fractal = new League\Fractal\Manager();
 
         return new Dingo\Api\Transformer\FractalTransformer($fractal);
     },
@@ -146,7 +146,7 @@ return [
 
     'formats' => [
 
-        'json' => new Dingo\Api\Http\ResponseFormat\JsonResponseFormat
+        'json' => new Dingo\Api\Http\ResponseFormat\JsonResponseFormat(),
 
     ]
 

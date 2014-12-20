@@ -1,13 +1,15 @@
 <?php
 
-namespace CachetHQ\Cachet\Transformers;
+namespace CachetHq\Cachet\Transformers;
 
 use Incident;
 use League\Fractal\TransformerAbstract;
 
-class IncidentTransformer extends TransformerAbstract {
+class IncidentTransformer extends TransformerAbstract
+{
 
-    public function transform(Incident $incident) {
+    public function transform(Incident $incident)
+    {
         $component = $incident->component;
         $transformer = $component->getTransformer();
 

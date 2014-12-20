@@ -2,7 +2,8 @@
 
 use Watson\Validating\ValidatingTrait;
 
-class Incident extends Eloquent implements \Dingo\Api\Transformer\TransformableInterface {
+class Incident extends Eloquent implements \Dingo\Api\Transformer\TransformableInterface
+{
     use ValidatingTrait;
     use Illuminate\Database\Eloquent\SoftDeletingTrait;
 
@@ -22,7 +23,8 @@ class Incident extends Eloquent implements \Dingo\Api\Transformer\TransformableI
      * An incident belongs to a component.
      * @return Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function component() {
+    public function component()
+    {
         return $this->belongsTo('Component', 'component_id', 'id');
     }
 
@@ -30,8 +32,10 @@ class Incident extends Eloquent implements \Dingo\Api\Transformer\TransformableI
      * Returns a human readable version of the status.
      * @return string
      */
-    public function getHumanStatusAttribute() {
+    public function getHumanStatusAttribute()
+    {
         $statuses = Lang::get('cachet.incident.status');
+
         return $statuses[$this->status];
     }
 
@@ -39,7 +43,8 @@ class Incident extends Eloquent implements \Dingo\Api\Transformer\TransformableI
      * Finds the icon to use for each status.
      * @return string
      */
-    public function getIconAttribute() {
+    public function getIconAttribute()
+    {
         switch ($this->status) {
             case 1: return 'fa fa-flag';
             case 2: return 'fa fa-warning';
@@ -52,7 +57,8 @@ class Incident extends Eloquent implements \Dingo\Api\Transformer\TransformableI
      * Get the transformer instance.
      * @return CachetHQ\Cachet\Transformers\IncidentTransformer
      */
-    public function getTransformer() {
+    public function getTransformer()
+    {
         return new CachetHQ\Cachet\Transformers\IncidentTransformer();
     }
 }

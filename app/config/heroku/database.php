@@ -3,10 +3,10 @@
 $dbURL = parse_url(getenv('CLEARDB_DATABASE_URL'));
 $dbName = substr($dbURL["path"], 1);
 
-return array(
-    'default' => 'cleardb',
-    'connections' => array(
-        'cleardb' => array(
+return [
+    'default'     => 'cleardb',
+    'connections' => [
+        'cleardb' => [
             'driver'    => 'mysql',
             'host'      => $dbURL['host'],
             'database'  => $dbName,
@@ -15,6 +15,6 @@ return array(
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
-        ),
-    )
-);
+        ],
+    ],
+];

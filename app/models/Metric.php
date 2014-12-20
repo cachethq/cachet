@@ -2,7 +2,8 @@
 
 use Watson\Validating\ValidatingTrait;
 
-class Metric extends Eloquent implements \Dingo\Api\Transformer\TransformableInterface {
+class Metric extends Eloquent implements \Dingo\Api\Transformer\TransformableInterface
+{
     use ValidatingTrait;
 
     protected $rules = [
@@ -17,7 +18,8 @@ class Metric extends Eloquent implements \Dingo\Api\Transformer\TransformableInt
      * Metrics contain many metric points.
      * @return Illuminate\Database\Eloquent\Builder
      */
-    public function points() {
+    public function points()
+    {
         return $this->hasMany('MetricPoint', 'metric_id', 'id');
     }
 
@@ -25,7 +27,8 @@ class Metric extends Eloquent implements \Dingo\Api\Transformer\TransformableInt
      * Determines whether a chart should be shown.
      * @return bool
      */
-    public function getShouldDisplayAttribute() {
+    public function getShouldDisplayAttribute()
+    {
         return $this->display_chart === 1;
     }
 
@@ -33,7 +36,8 @@ class Metric extends Eloquent implements \Dingo\Api\Transformer\TransformableInt
      * Get the transformer instance.
      * @return CachetHQ\Cachet\Transformers\MetricTransformer
      */
-    public function getTransformer() {
+    public function getTransformer()
+    {
         return new CachetHQ\Cachet\Transformers\MetricTransformer();
     }
 }
