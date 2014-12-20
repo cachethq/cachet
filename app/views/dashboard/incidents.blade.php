@@ -13,8 +13,6 @@
 			@else
 			<p>You have <strong>{{ $incidents->count() }}</strong> incidents.</p>
 			@endif
-
-			<h3>Incident Templates</h3>
 		</div>
 	</div>
 @stop
