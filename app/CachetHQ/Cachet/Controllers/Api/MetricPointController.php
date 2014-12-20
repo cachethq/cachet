@@ -2,18 +2,20 @@
 
 namespace CachetHQ\Cachet\Controllers\Api;
 
-use Input;
+use CachetHQ\Cachet\Repositories\MetricPoint\MetricPointRepository;
 use Dingo\Api\Routing\ControllerTrait;
 use Illuminate\Routing\Controller;
-use CachetHQ\Cachet\Repositories\MetricPoint\MetricPointRepository;
+use Input;
 
-class MetricController extends Controller {
+class MetricPointController extends Controller
+{
 
     use ControllerTrait;
 
     protected $metricpoint;
 
-    public function __construct(MetricPointRepository $metricpoint) {
+    public function __construct(MetricPointRepository $metricpoint)
+    {
         $this->metricpoint = $metricpoint;
     }
     /**
@@ -21,7 +23,8 @@ class MetricController extends Controller {
      *
      * @return \Illuminate\Database\Eloquent\Collection
      */
-    public function getMetricPoints() {
+    public function getMetricPoints()
+    {
         return $this->metricpoint->all();
     }
 
@@ -32,7 +35,8 @@ class MetricController extends Controller {
      *
      * @return MetricPoint
      */
-    public function getMetricPoint($id) {
+    public function getMetricPoint($id)
+    {
         return $this->metricpoint->findOrFail($id);
     }
 
@@ -41,7 +45,8 @@ class MetricController extends Controller {
      *
      * @return MetricPoint
      */
-    public function postMetricPoints() {
+    public function postMetricPoints()
+    {
         return $this->metricpoint->create(Input::all());
     }
 }

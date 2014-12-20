@@ -1,15 +1,17 @@
 <?php
 
-class Setting extends Eloquent {
+class Setting extends Eloquent
+{
     protected $fillable = ['name', 'value'];
 
     /**
      * Returns a setting from the database.
      * @param  string $settingName
-     * @param  bool $checkEnv
+     * @param  bool   $checkEnv
      * @return string
      */
-    public static function get($settingName, $checkEnv = true) {
+    public static function get($settingName, $checkEnv = true)
+    {
         // Default setting value.
         $setting = null;
 
@@ -32,11 +34,12 @@ class Setting extends Eloquent {
 
     /**
      * Throws an Exception
-     * @param  string $setting
+     * @param  string    $setting
      * @throws Exception
      * @return void
      */
-    public static function unknownSettingException($setting) {
+    public static function unknownSettingException($setting)
+    {
         throw new \Exception(
             sprintf('Unknown setting %s', $setting)
         );

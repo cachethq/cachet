@@ -1,11 +1,12 @@
 <?php
 
-use Illuminate\Auth\UserTrait;
-use Illuminate\Auth\UserInterface;
-use Illuminate\Auth\Reminders\RemindableTrait;
 use Illuminate\Auth\Reminders\RemindableInterface;
+use Illuminate\Auth\Reminders\RemindableTrait;
+use Illuminate\Auth\UserInterface;
+use Illuminate\Auth\UserTrait;
 
-class User extends Eloquent implements UserInterface, RemindableInterface {
+class User extends Eloquent implements UserInterface, RemindableInterface
+{
     use UserTrait, RemindableTrait;
 
     /**
@@ -32,7 +33,8 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
      * @param string @password
      * @return void
      */
-    public function setPasswordAttribute($password) {
+    public function setPasswordAttribute($password)
+    {
         $this->attributes['password'] = Hash::make($password);
     }
 
@@ -41,12 +43,12 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
      * @param  integer $size
      * @return string
      */
-    public function getGravatarAttribute($size = 200) {
+    public function getGravatarAttribute($size = 200)
+    {
         return sprintf(
             'https://www.gravatar.com/avatar/%s?size=%d',
             md5($this->email),
             $size
         );
     }
-
 }

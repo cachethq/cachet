@@ -1,11 +1,13 @@
 <?php
 
-class DashboardController extends Controller {
+class DashboardController extends Controller
+{
     /**
      * Shows the dashboard view.
      * @return \Illuminate\View\View
      */
-    public function showDashboard() {
+    public function showDashboard()
+    {
         return View::make('dashboard.index');
     }
 
@@ -13,9 +15,10 @@ class DashboardController extends Controller {
      * Shows the metrics view.
      * @return \Illuminate\View\View
      */
-    public function showMetrics() {
+    public function showMetrics()
+    {
         return View::make('dashboard.metrics')->with([
-            'pageTitle' => 'Metrics - Dashboard'
+            'pageTitle' => 'Metrics - Dashboard',
         ]);
     }
 
@@ -23,9 +26,10 @@ class DashboardController extends Controller {
      * Shows the notifications view.
      * @return \Illuminate\View\View
      */
-    public function showNotifications() {
+    public function showNotifications()
+    {
         return View::make('dashboard.notifications')->with([
-            'pageTitle' => 'Notifications - Dashboard'
+            'pageTitle' => 'Notifications - Dashboard',
         ]);
     }
 }

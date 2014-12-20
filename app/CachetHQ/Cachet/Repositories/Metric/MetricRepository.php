@@ -2,13 +2,14 @@
 
 namespace CachetHQ\Cachet\Repositories\Metric;
 
-interface MetricRepository {
+interface MetricRepository
+{
 
-	public function all();
+    public function all();
 
-	public function create(array $array);
+    public function create(array $array);
 
-	public function findOrFail($id);
+    public function findOrFail($id);
 
-	public function update($id, array $with);
+    public function update($id, array $with);
 }

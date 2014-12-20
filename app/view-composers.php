@@ -1,9 +1,9 @@
 <?php
 
-View::composer('index', function($view) {
+View::composer('index', function ($view) {
     $date = date('Y-m-d');
 
-    $incidents = Incident::whereRaw('DATE(created_at) = "' . $date . '"')
+    $incidents = Incident::whereRaw('DATE(created_at) = "'.$date.'"')
                          ->groupBy('status')
                          ->orderBy('status', 'desc');
 
@@ -19,6 +19,6 @@ View::composer('index', function($view) {
 
     $view->with([
         'systemStatus'  => $status,
-        'systemMessage' => $message
+        'systemMessage' => $message,
     ]);
 });

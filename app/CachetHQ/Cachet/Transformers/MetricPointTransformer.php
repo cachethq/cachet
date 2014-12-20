@@ -2,12 +2,14 @@
 
 namespace CachetHQ\Cachet\Transformers;
 
-use MetricPoint;
 use League\Fractal\TransformerAbstract;
+use MetricPoint;
 
-class MetricPointTransformer extends TransformerAbstract {
+class MetricPointTransformer extends TransformerAbstract
+{
 
-    public function transform(MetricPoint $metricPoint) {
+    public function transform(MetricPoint $metricPoint)
+    {
         return [
             'id'         => (int) $metricPoint->id,
             'metric_id'  => $metricPoint->metric_id,
@@ -16,5 +18,4 @@ class MetricPointTransformer extends TransformerAbstract {
             'updated_at' => $metricPoint->updated_at->timestamp,
         ];
     }
-
 }

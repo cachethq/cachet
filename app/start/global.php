@@ -11,16 +11,16 @@
 |
 */
 
-ClassLoader::addDirectories(array(
+ClassLoader::addDirectories([
 
-	app_path().'/commands',
-	app_path().'/controllers',
-	app_path().'/models',
-	app_path().'/transformers',
-	app_path().'/database/seeds',
-	app_path().'/filters',
+    app_path().'/commands',
+    app_path().'/controllers',
+    app_path().'/models',
+    app_path().'/transformers',
+    app_path().'/database/seeds',
+    app_path().'/filters',
 
-));
+]);
 
 /*
 |--------------------------------------------------------------------------
@@ -48,17 +48,16 @@ Log::useFiles(storage_path().'/logs/laravel.log');
 |
 */
 
-App::error(function(Exception $exception, $code)
-{
-	Log::error($exception);
+App::error(function (Exception $exception, $code) {
+    Log::error($exception);
 });
 
 API::error(function (\Illuminate\Database\Eloquent\ModelNotFoundException $exception) {
-	return Response::make(['error' => $exception->getMessage()], 404);
+    return Response::make(['error' => $exception->getMessage()], 404);
 });
 
-App::missing(function($exception) {
-    return Response::view('errors.404', array(), 404);
+App::missing(function ($exception) {
+    return Response::view('errors.404', [], 404);
 });
 
 /*
@@ -72,9 +71,8 @@ App::missing(function($exception) {
 |
 */
 
-App::down(function()
-{
-	return Response::make("Be right back!", 503);
+App::down(function () {
+    return Response::make("Be right back!", 503);
 });
 
 /*

@@ -1,7 +1,9 @@
 <?php
 
-class IsSetupFilter {
-    public function filter($route, $request) {
+class IsSetupFilter
+{
+    public function filter($route, $request)
+    {
         try {
             $setting = Setting::where('name', 'app_name')->first();
             if ($setting->value) {
