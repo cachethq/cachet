@@ -1,6 +1,10 @@
 <?php
 
-Route::api(['version' => 'v1', 'namespace' => 'CachetHQ\Cachet\Controllers\Api'], function() {
+Route::api([
+    'version'   => 'v1',
+    'namespace' => 'CachetHQ\Cachet\Controllers\Api',
+    'after'     => 'allowed_domains'
+], function() {
     Route::get('components', 'ComponentController@getComponents');
     Route::get('components/{id}', 'ComponentController@getComponent');
     Route::get('components/{id}/incidents', 'ComponentController@getComponentIncidents');

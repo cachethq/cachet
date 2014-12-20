@@ -3,6 +3,7 @@
 Route::filter('is_setup', 'IsSetupFilter');
 Route::filter('has_setting', 'HasSettingFilter');
 Route::filter('cors', 'CORSFilter');
+Route::filter('allowed_domains', 'AllowedDomainsFilter');
 
 /*
 |--------------------------------------------------------------------------

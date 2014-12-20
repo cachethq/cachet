@@ -7,7 +7,7 @@ Route::group(['before' => 'has_setting:app_name'], function() {
 });
 
 // Setup route.
-Route::group(['before' => 'no_setup:app_name'], function() {
+Route::group(['before' => 'is_setup'], function() {
     Route::controller('/setup', 'SetupController');
 });
 
