@@ -1,11 +1,11 @@
 <?php
 
 class IsSetupFilter {
-    public function filter($route, $request, $settingName) {
+    public function filter($route, $request) {
         try {
-            $setting = Setting::where('name', $settingName)->first();
+            $setting = Setting::where('name', 'app_name')->first();
             if ($setting->value) {
-                return Response::make('Unauthorized', 401);
+                return Redirect::to('/dashboard');
             }
         } catch (Exception $e) {
         }
