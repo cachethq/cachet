@@ -130,6 +130,10 @@ class DashboardController extends Controller {
                 continue;
             }
 
+            if (strstr($settingName, 'style_')) {
+                $settingValue = str_replace('#', '', $settingValue);
+            }
+
             $setting = Setting::firstOrCreate([
                 'name' => $settingName,
             ])->update([
