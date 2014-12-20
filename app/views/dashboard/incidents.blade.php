@@ -9,9 +9,9 @@
 			<h3>Incidents</h3>
 
 			@if ($incidents->count() === 0)
-			<p><strong>Woah! No incidents, your doing well!</strong></p>
+			<p class='lead'>Woah! No incidents, your doing well!</p>
 			@else
-			<p>You have <strong>{{ $incidents->count() }}</strong> incidents.</p>
+			<p class='lead'>You have <strong>{{ $incidents->count() }}</strong> incidents.</p>
 			@endif
 		</div>
 	</div>
