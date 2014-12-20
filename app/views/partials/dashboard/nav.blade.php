@@ -7,7 +7,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><span id="sidebar-toggle"></span> Cachet</a>
+            <a class="navbar-brand" href="/dashboard"><span id="sidebar-toggle"></span> Cachet</a>
         </div>
 
         <div class="collapse navbar-collapse" id="menu">
