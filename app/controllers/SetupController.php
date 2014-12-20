@@ -44,7 +44,9 @@ class SetupController extends Controller {
 
             Auth::login($user);
 
-            foreach (array_get($postData, 'settings') as $settingName => $settingValue) {
+            $settings = array_get($postData, 'settings');
+
+            foreach ($settings as $settingName => $settingValue) {
                 $setting        = new Setting;
                 $setting->name  = $settingName;
                 $setting->value = $settingValue;
