@@ -22,6 +22,11 @@
                     <i class="fa fa-list-ul"></i> {{ Lang::get('cachet.dashboard.components') }}
                 </a>
             </li>
+            <li class="{{ Request::is('dashboard/components/add') ? 'active' : '' }} sub-nav-item">
+                <a href="{{ URL::route('dashboard.components.add') }}">
+                    <i class="fa fa-plus"></i> {{ Lang::get('cachet.dashboard.component-add') }}
+                </a>
+            </li>
             <li class="{{ Request::is('dashboard/incidents') ? 'active' : '' }}">
                 <a href="{{ URL::route('dashboard.incidents') }}">
                     <i class="fa fa-exclamation-triangle"></i> {{ Lang::get('cachet.dashboard.incidents') }}

@@ -55,6 +55,12 @@ body.dashboard {
 							text-decoration: none;
 						}
 					}
+
+					&.sub-nav-item {
+						a {
+							padding-left: 40px;
+						}
+					}
 				}
 			}
 		}

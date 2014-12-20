@@ -32,6 +32,7 @@ return array(
     'dashboard' => array(
         'dashboard' => 'Dashboard',
         'components' => 'Components',
+        'component-add' => 'Add Component',
         'incidents' => 'Incidents',
         'metrics' => 'Metrics',
         'status_page' => 'Status Page',

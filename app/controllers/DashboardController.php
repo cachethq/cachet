@@ -34,6 +34,16 @@ class DashboardController extends Controller {
     }
 
     /**
+     * Shows the add component view.
+     * @return \Illuminate\View\View
+     */
+    public function showAddComponent() {
+        return View::make('dashboard.component-add')->with([
+            'pageTitle' => 'Add Component - Dashboard',
+        ]);
+    }
+
+    /**
      * Creates a new component.
      * @return \Illuminate\Http\RedirectResponse
      */
