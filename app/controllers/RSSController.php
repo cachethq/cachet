@@ -21,12 +21,12 @@ class RSSController extends Controller {
             }
 
             $feed->item([
-                'title'         => $incident->name,
-                'message'       => $incident->message,
-                'component'     => $componentName,
-                'status'        => $incident->humanStatus,
-                'created_at'    => $incident->created_at,
-                'updated_at'    => $incident->updated_at
+                'title'      => $incident->name,
+                'message'    => $incident->message,
+                'component'  => $componentName,
+                'status'     => $incident->humanStatus,
+                'created_at' => $incident->created_at,
+                'updated_at' => $incident->updated_at
             ]);
         });
 
