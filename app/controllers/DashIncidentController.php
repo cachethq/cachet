@@ -25,6 +25,27 @@ class DashIncidentController extends Controller {
 	}
 
 	/**
+	 * Shows the add incident template view.
+	 * @return \Illuminate\View\View
+	 */
+	public function showAddIncidentTemplate() {
+	    return View::make('dashboard.incident-template')->with([
+	        'pageTitle' => 'Add Incident Template - Dashboard',
+	    ]);
+	}
+
+	/**
+	 * Creates a new incident template.
+	 * @return \Illuminate\Http\RedirectResponse
+	 */
+	public function createIncidentTemplateAction() {
+	    $_template = Input::get('template');
+	    $template = IncidentTemplate::create($_template);
+
+	    return Redirect::back()->with('template', $template);
+	}
+
+	/**
 	 * Creates a new incident.
 	 * @return \Illuminate\Http\RedirectResponse
 	 */

@@ -7,8 +7,12 @@ class IncidentTemplate extends Eloquent {
 
     protected $rules = [
         'name'     => 'alpha|required',
-        'slug'     => 'alpha_dash|required',
-        'template' => 'required'
+        'template' => 'required',
+    ];
+
+    protected $fillable = [
+        'name',
+        'template',
     ];
 
     /**
@@ -18,7 +22,7 @@ class IncidentTemplate extends Eloquent {
     public static function boot() {
         parent::boot();
 
-        self::on('saving', function($template) {
+        self::saving(function($template) {
             $template->slug = Str::slug($template->name);
         });
     }

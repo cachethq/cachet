@@ -16,6 +16,8 @@ Route::group(['before' => 'auth', 'prefix' => 'dashboard'], function() {
     Route::get('incidents', ['as' => 'dashboard.incidents', 'uses' => 'DashIncidentController@showIncidents']);
     Route::get('incidents/add', ['as' => 'dashboard.incidents.add', 'uses' => 'DashIncidentController@showAddIncident']);
     Route::post('incidents/add', 'DashIncidentController@createIncidentAction');
+    Route::get('incidents/template', ['as' => 'dashboard.incident-template', 'uses' => 'DashIncidentController@showAddIncidentTemplate']);
+    Route::post('incidents/template', 'DashIncidentController@createIncidentTemplateAction');
 
     // Metrics
     Route::get('metrics', ['as' => 'dashboard.metrics', 'uses' => 'DashboardController@showMetrics']);
