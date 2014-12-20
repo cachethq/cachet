@@ -3,7 +3,6 @@
 Route::group(['before' => 'auth', 'prefix' => 'dashboard'], function() {
     Route::get('/', ['as' => 'dashboard', 'uses' => 'DashboardController@showDashboard']);
 
-    // TODO: Switch for Route::controller?
     Route::get('components', ['as' => 'dashboard.components', 'uses' => 'DashComponentController@showComponents']);
     Route::get('components/add', ['as' => 'dashboard.components.add', 'uses' => 'DashComponentController@showAddComponent']);
     Route::post('components/add', 'DashComponentController@createComponentAction');
