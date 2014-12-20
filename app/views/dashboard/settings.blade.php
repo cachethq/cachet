@@ -29,6 +29,9 @@
 					<div class='form-group'>
 						<label>Allowed Domains <em>Comma Seperated</em></label>
 						<textarea class='form-control' name='allowed_domains' rows='5' placeholder='http://cachet.io, http://cachet.herokuapp.com'>{{ Setting::get('allowed_domains') }}</textarea>
+						<div class='help-block'>
+							The domain set above is automatically allowed by default.
+						</div>
 					</div>
 				</fieldset>
 
