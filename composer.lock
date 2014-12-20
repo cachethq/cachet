@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "aef1ba4739f50885866f6d46efe82dbb",
+    "hash": "2ae72de35d3545ce3a3be4cda27ba5a8",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -214,16 +214,16 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "5.0.3",
+            "version": "5.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "6c72627de1d66832e4270e36e56acdb0d1d8f282"
+                "reference": "f1085bb4e023766a66b7b051914ec73bdf7202b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/6c72627de1d66832e4270e36e56acdb0d1d8f282",
-                "reference": "6c72627de1d66832e4270e36e56acdb0d1d8f282",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/f1085bb4e023766a66b7b051914ec73bdf7202b5",
+                "reference": "f1085bb4e023766a66b7b051914ec73bdf7202b5",
                 "shasum": ""
             },
             "require": {
@@ -268,20 +268,20 @@
                 "rest",
                 "web service"
             ],
-            "time": "2014-11-04 07:09:15"
+            "time": "2014-12-19 20:27:15"
         },
         {
             "name": "guzzlehttp/ringphp",
-            "version": "1.0.4",
+            "version": "1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/RingPHP.git",
-                "reference": "9187999f80720b9494692d2167d75144acb2ad05"
+                "reference": "a903f51b692427318bc813217c0e6505287e79a4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/RingPHP/zipball/9187999f80720b9494692d2167d75144acb2ad05",
-                "reference": "9187999f80720b9494692d2167d75144acb2ad05",
+                "url": "https://api.github.com/repos/guzzle/RingPHP/zipball/a903f51b692427318bc813217c0e6505287e79a4",
+                "reference": "a903f51b692427318bc813217c0e6505287e79a4",
                 "shasum": ""
             },
             "require": {
@@ -318,7 +318,7 @@
                     "homepage": "https://github.com/mtdowling"
                 }
             ],
-            "time": "2014-12-02 05:01:22"
+            "time": "2014-12-11 05:50:32"
         },
         {
             "name": "guzzlehttp/streams",
@@ -462,16 +462,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v4.2.11",
+            "version": "v4.2.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "e29253c7f29e3b1ca716de7fe309b272e3ddf47d"
+                "reference": "70a60f2ff9b96b3fcd88a68ef5382557733fe671"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/e29253c7f29e3b1ca716de7fe309b272e3ddf47d",
-                "reference": "e29253c7f29e3b1ca716de7fe309b272e3ddf47d",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/70a60f2ff9b96b3fcd88a68ef5382557733fe671",
+                "reference": "70a60f2ff9b96b3fcd88a68ef5382557733fe671",
                 "shasum": ""
             },
             "require": {
@@ -573,7 +573,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2014-10-04 18:48:27"
+            "time": "2014-12-11 17:14:36"
         },
         {
             "name": "league/fractal",
@@ -1964,20 +1964,20 @@
         },
         {
             "name": "thujohn/rss",
-            "version": "dev-master",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thujohn/rss-l4.git",
-                "reference": "3398774f56fe68c803a0f29a290c728df4c91e84"
+                "reference": "8c03400062167c3f6b7340a1c964cdb3626a4e4b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thujohn/rss-l4/zipball/3398774f56fe68c803a0f29a290c728df4c91e84",
-                "reference": "3398774f56fe68c803a0f29a290c728df4c91e84",
+                "url": "https://api.github.com/repos/thujohn/rss-l4/zipball/8c03400062167c3f6b7340a1c964cdb3626a4e4b",
+                "reference": "8c03400062167c3f6b7340a1c964cdb3626a4e4b",
                 "shasum": ""
             },
             "require": {
-                "illuminate/support": "4.*|5.*",
+                "illuminate/support": "4.x",
                 "php": ">=5.3.0"
             },
             "type": "library",
@@ -2002,7 +2002,7 @@
                 "laravel4",
                 "rss"
             ],
-            "time": "2014-12-02 18:01:04"
+            "time": "2014-04-07 20:15:45"
         },
         {
             "name": "watson/validating",
@@ -2867,9 +2867,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "thujohn/rss": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "platform": [],
     "platform-dev": []
