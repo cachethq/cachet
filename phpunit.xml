@@ -7,12 +7,23 @@
          convertNoticesToExceptions="true"
          convertWarningsToExceptions="true"
          processIsolation="false"
+         stopOnError="false"
          stopOnFailure="false"
-         syntaxCheck="false"
+         syntaxCheck="true"
+         strict="true"
+         verbose="true"
 >
     <testsuites>
-        <testsuite name="Application Test Suite">
+        <testsuite name="Cachet Test Suite">
             <directory>./app/tests/</directory>
         </testsuite>
     </testsuites>
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./app/CachetHQ</directory>
+            <directory suffix=".php">./app/controllers</directory>
+            <directory suffix=".php">./app/filters</directory>
+            <directory suffix=".php">./app/models</directory>
+        </whitelist>
+    </filter>
 </phpunit>
