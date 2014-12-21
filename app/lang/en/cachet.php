@@ -43,5 +43,6 @@ return [
         'notifications'            => 'Notifications',
         'toggle_navigation'        => 'Toggle Navigation',
         'search'                   => 'Search...',
+        'user'                     => 'User',
     ],
 ];

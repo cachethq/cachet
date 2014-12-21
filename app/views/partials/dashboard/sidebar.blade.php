@@ -3,7 +3,7 @@
     <div class='sidebar-inner'>
         <div class="profile">
             <div class="avatar pull-left">
-                <a href="{{ URL::to('settings') }}">
+                <a href="{{ URL::to('dashboard/user') }}">
                     <img src="{{ Auth::user()->gravatar }}" alt="">
                 </a>
             </div>

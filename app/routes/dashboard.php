@@ -28,4 +28,8 @@ Route::group(['before' => 'auth', 'prefix' => 'dashboard'], function () {
     // Settings
     Route::get('settings', ['as' => 'dashboard.settings', 'uses' => 'DashSettingsController@showSettings']);
     Route::post('settings', 'DashSettingsController@postSettings');
+
+    // User Settings
+    Route::get('user', ['as' => 'dashboard.user', 'uses' => 'DashUserController@showUser']);
+    Route::post('user', 'DashUserController@postUser');
 });
