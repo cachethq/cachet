@@ -14,7 +14,7 @@ class DashUserController extends Controller
     }
 
     /**
-     * Updates the status page user.
+     * Updates the current user.
      * @return \Illuminate\View\View
      */
     public function postUser()
