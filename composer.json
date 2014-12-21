@@ -11,12 +11,12 @@
   "require": {
     "laravel/framework": "4.2.*",
     "guzzlehttp/guzzle": "~5.0",
-    "dingo/api": "0.7.*",
+    "dingo/api": "0.8.*",
     "watson/validating": "0.10.*",
     "thujohn/rss": "~1.0"
   },
   "require-dev": {
-    "phpunit/phpunit": "~4.3.0",
+    "phpunit/phpunit": "~4.3",
     "mockery/mockery": "0.9.*"
   },
   "autoload": {
@@ -30,7 +30,7 @@
       "app/filters"
     ],
     "psr-4": {
-      "CachetHQ\\": "app/CachetHQ"
+      "CachetHQ\\": "app/CachetHQ/"
     }
   },
   "extra": {
