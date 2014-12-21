@@ -15,7 +15,8 @@
     "cleardb"
   ],
   "env": {
-    "ENV": "heroku"
+    "ENV": "heroku",
+    "BUILDPACK_URL": "https://github.com/heroku/heroku-buildpack-php"
   },
   "scripts": {
     "postdeploy": "php artisan migrate; php artisan key:generate"
