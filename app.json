@@ -19,6 +19,6 @@
     "BUILDPACK_URL": "https://github.com/heroku/heroku-buildpack-php"
   },
   "scripts": {
-    "postdeploy": "php artisan migrate; php artisan key:generate"
+    "postdeploy": "php artisan migrate --env=heroku; php artisan key:generate"
   }
 }
