@@ -3,8 +3,6 @@
 /node_modules
 /app/assets/bower_components
 composer.phar
-.env.*.php
-.env.php
 .DS_Store
 Thumbs.db
 config.codekit
