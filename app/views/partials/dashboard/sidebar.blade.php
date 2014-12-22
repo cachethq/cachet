@@ -42,7 +42,7 @@
                     <i class="fa fa-plus"></i> {{ Lang::get('cachet.dashboard.component-add') }}
                 </a>
             </li>
-            <li class="{{ Request::is('dashboard/metrics') ? 'active' : '' }}">
+            {{-- <li class="{{ Request::is('dashboard/metrics') ? 'active' : '' }}">
                 <a href="{{ URL::route('dashboard.metrics') }}">
                     <i class="fa fa-area-chart"></i> {{ Lang::get('cachet.dashboard.metrics') }}
                 </a>
@@ -51,7 +51,7 @@
                 <a href="#">
                     <i class="fa fa-plus"></i> {{ Lang::get('cachet.dashboard.metrics-add') }}
                 </a>
-            </li>
+            </li> --}}
             <li class="{{ Request::is('dashboard/notifications') ? 'active' : '' }}">
                 <a href="{{ URL::route('dashboard.notifications') }}">
                     <i class="fa fa-envelope"></i> {{ Lang::get('cachet.dashboard.notifications') }}
