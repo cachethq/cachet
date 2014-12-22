@@ -10,6 +10,13 @@ For more information on why I started developing Cachet, check out my [blog post
 
 **Currently in development. Things may change or break until a solid release has been announced.** Please feel free to contribute!
 
+# Features
+
+- Create, edit and delete components.
+- Log incidents.
+- Override status page colors.
+- Apply a custom stylesheet to the status page.
+
 # Installation
 
 See the [INSTALL.md](/INSTALL.md) document for more information. If you'd like to add more documentation, please create a Pull Request, I'd be happy to merge!
