@@ -20,8 +20,16 @@
 		<form name='EditComponentForm' class='form-vertical' role='form' action='/dashboard/components/{{ $component->id }}/edit' method='POST'>
 			<fieldset>
 				<div class='form-group'>
-					<label for='incident-name'>Component Name</label>
+					<label for='incident-name'>Name</label>
 					<input type='text' class='form-control' name='component[name]' id='component-name' required value='{{ $component->name }}' />
+				</div>
+				<div class='form-group'>
+					<label for='component-status'>Status</label>
+					<select name='component[status]' class='form-control'>
+						@foreach(Lang::get('cachet.component.status') as $statusID => $status)
+						<option value='{{ $statusID }}' {{ $statusID === $component->status ? "selected" : "" }}>{{ $status }}</option>
+						@endforeach
+					</select>
 				</div>
 				<div class='form-group'>
 					<label>Description</label>
