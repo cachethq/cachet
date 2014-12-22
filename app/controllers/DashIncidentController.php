@@ -8,7 +8,7 @@ class DashIncidentController extends Controller
      */
     public function showIncidents()
     {
-        $incidents = Incident::all();
+        $incidents = Incident::orderBy('created_at', 'desc')->get();
 
         return View::make('dashboard.incidents')->with([
             'pageTitle' => 'Incidents - Dashboard',
@@ -60,5 +60,17 @@ class DashIncidentController extends Controller
         $incident = Incident::create($_incident);
 
         return Redirect::back()->with('incident', $incident);
+    }
+
+    /**
+     * Deletes a given incident.
+     * @param  Incident                         $incident
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function deleteIncidentAction(Incident $incident)
+    {
+        $incident->delete();
+
+        return Redirect::back();
     }
 }
