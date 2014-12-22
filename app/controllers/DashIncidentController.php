@@ -64,7 +64,7 @@ class DashIncidentController extends Controller
 
     /**
      * Deletes a given incident.
-     * @param  Incident                         $incident
+     * @param  Incident                          $incident
      * @return \Illuminate\Http\RedirectResponse
      */
     public function deleteIncidentAction(Incident $incident)
