@@ -18,9 +18,9 @@
 							@endif
 						</div>
 						<div class='col-md-6'>
-							<ul class='nav nav-pills'>
-								<li role='presentation'><a href='/dashboard/components/{{ $component->id }}/edit'>Edit</a></li>
-								<li role='presentation'><a href='/dashboard/components/{{ $component->id }}/delete'>Delete</a></li>
+							<ul class='nav nav-pills pull-right'>
+								<li role='presentation'><a href='/dashboard/components/{{ $component->id }}/edit' class='btn btn-info'>Edit</a></li>
+								<li role='presentation'><a href='/dashboard/components/{{ $component->id }}/delete' class='btn btn-danger'>Delete</a></li>
 							</ul>
 						</div>
 					</div>
