@@ -52,11 +52,11 @@
                     <i class="fa fa-plus"></i> {{ Lang::get('cachet.dashboard.metrics-add') }}
                 </a>
             </li> --}}
-            <li class="{{ Request::is('dashboard/notifications') ? 'active' : '' }}">
+            {{-- <li class="{{ Request::is('dashboard/notifications') ? 'active' : '' }}">
                 <a href="{{ URL::route('dashboard.notifications') }}">
                     <i class="fa fa-envelope"></i> {{ Lang::get('cachet.dashboard.notifications') }}
                 </a>
-            </li>
+            </li> --}}
             <li class="{{ Request::is('dashboard/settings') ? 'active' : '' }}">
                 <a href="{{ URL::route('dashboard.settings') }}">
                     <i class="fa fa-cogs"></i> {{ Lang::get('cachet.dashboard.settings') }}
