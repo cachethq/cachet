@@ -19,14 +19,10 @@ class DashSettingsController extends Controller
      */
     public function postSettings()
     {
+        // Fetch all of the settings we've been POSTed.
         $settings = Input::all();
 
         foreach ($settings as $settingName => $settingValue) {
-            // Don't save empty settings. Kinda useless...
-            if (!$settingValue) {
-                continue;
-            }
-
             if (strstr($settingName, 'style_')) {
                 $settingValue = str_replace('#', '', $settingValue);
             }
