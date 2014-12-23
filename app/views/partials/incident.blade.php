@@ -8,7 +8,7 @@
     </li>
 
     @unless($incidents->count() > 0)
-    <li class='list-group-item'>No incidents reported.</li>
+    <li class='list-group-item'>{{ Lang::get('cachet.no_incidents') }}</li>
     @endunless
 
     @foreach($incidents as $incidentID => $incident)
