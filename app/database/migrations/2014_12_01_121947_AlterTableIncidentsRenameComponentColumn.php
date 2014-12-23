@@ -14,7 +14,7 @@ class AlterTableIncidentsRenameComponentColumn extends Migration
     public function up()
     {
         Schema::table('incidents', function (Blueprint $table) {
-            DB::statement("ALTER TABLE `incidents` CHANGE `component` `component_id` TINYINT(4)  NOT NULL  DEFAULT '1'");
+            $table->rename('component', 'component_id');
         });
     }
 
@@ -26,7 +26,7 @@ class AlterTableIncidentsRenameComponentColumn extends Migration
     public function down()
     {
         Schema::table('incidents', function (Blueprint $table) {
-            DB::statement("ALTER TABLE `incidents` CHANGE `component_id` `component` TINYINT(4)  NOT NULL  DEFAULT '1'");
+            $table->rename('component_id', 'component');
         });
     }
 }
