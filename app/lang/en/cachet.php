@@ -29,6 +29,7 @@ return [
     'logout'     => 'Logout',
     'logged_in'  => 'You\'re logged in.',
     'setup'      => 'Setup Cachet',
+    'no_incidents' => 'No incidents reported.',
     'dashboard'  => [
         'dashboard'                => 'Dashboard',
         'components'               => 'Components',

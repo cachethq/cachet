@@ -1,16 +1,19 @@
 @extends('layout.master')
 
 @section('content')
-    <div class='alert alert-{{ $systemStatus }}'>{{ $systemMessage }}</div>
-
     @if(Auth::check())
-    <div class='page-header text-right'>
-        <div class='btn-group'>
+    <ul class='nav nav-pills'>
+        <li>
             <a class="btn btn-default" href="{{ URL::route('dashboard') }}">{{ Lang::get('cachet.dashboard.dashboard') }}</a>
+        </li>
+        <li>
             <a class="btn btn-danger" href="{{ URL::route('logout') }}">{{ Lang::get('cachet.logout') }}</a>
-        </div>
-    </div>
+        </li>
+    </ul>
+    <hr />
     @endif
+
+    <div class='alert alert-{{ $systemStatus }}'>{{ $systemMessage }}</div>
 
     @include('partials.components')
 

@@ -4377,119 +4377,109 @@ body.dashboard .content {
   body.dashboard .content h3 {
     margin-top: 0; }
 
-body {
+body.status-page {
+  font-family: 'Lato';
   color: #333333;
   font-size: 1.4em;
   font-weight: 300; }
-
-hr {
-  margin-top: 10px;
-  margin-bottom: 10px; }
-
-h1 {
-  margin-bottom: 20px; }
-
-.text-success, .text-component-1 {
-  color: #4cae4c; }
-
-.text-info, .text-component-2 {
-  color: #46b8da; }
-
-.text-alert, .text-component-3 {
-  color: #F9BF3B; }
-
-.text-danger, .text-component-4 {
-  color: #D91E18; }
-
-.container {
-  max-width: 960px;
-  margin-bottom: 40px; }
-
-.page-header {
-  margin-top: 10px; }
-
-.alert {
-  margin-top: 20px;
-  border-radius: 0;
-  font-size: 1.2em; }
-  .alert.alert-success {
-    background-color: #8DCD8D;
-    border-color: #4cae4c;
-    color: white; }
-  .alert.alert-info {
-    background: #8CD3E8;
-    border-color: #46b8da;
-    color: #FFF; }
-  .alert.alert-danger {
-    background: #D91E18;
-    border-color: #CF000F;
-    color: #FFF; }
-
-.badge {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 12px;
-  padding-right: 12px; }
-  .badge.badge-incident-1 {
-    background-color: #F27935; }
-  .badge.badge-incident-2 {
-    background-color: #F9BF3B; }
-  .badge.badge-incident-3 {
-    background-color: #46b8da; }
-  .badge.badge-incident-4 {
-    background-color: #4cae4c; }
-
-.list-group {
-  margin-bottom: 20px;
-  padding-left: 0;
-  border-radius: 0; }
-  .list-group .list-group-item {
+  body.status-page hr {
+    margin-top: 10px;
+    margin-bottom: 10px; }
+  body.status-page h1, body.status-page h2, body.status-page h3, body.status-page h4, body.status-page h5 {
+    margin-bottom: 20px; }
+  body.status-page .text-success, body.status-page .text-component-1 {
+    color: #2ECC71; }
+  body.status-page .text-info, body.status-page .text-component-2 {
+    color: #3498db; }
+  body.status-page .text-alert, body.status-page .text-component-3 {
+    color: #F7CA18; }
+  body.status-page .text-danger, body.status-page .text-component-4 {
+    color: #ff6f6f; }
+  body.status-page .container {
+    max-width: 960px;
+    margin-bottom: 40px;
+    margin-top: 20px; }
+  body.status-page .page-header {
+    margin-top: 10px; }
+  body.status-page .alert {
     border-radius: 0;
-    background-color: #ffffff;
-    border: 1px solid #BDC3C7;
-    font-size: 1.1em; }
-    .list-group .list-group-item span.badge {
-      position: absolute;
-      top: 0;
-      right: 0;
+    font-size: 1.2em; }
+    body.status-page .alert.alert-success {
+      background-color: #2ECC71;
+      border-color: #25a25a;
+      color: white; }
+    body.status-page .alert.alert-info {
+      background: #3498db;
+      border-color: #217dbb;
+      color: #FFF; }
+    body.status-page .alert.alert-danger {
+      background: #ff6f6f;
+      border-color: #ff3c3c;
+      color: #FFF; }
+  body.status-page .badge {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 12px;
+    padding-right: 12px; }
+    body.status-page .badge.badge-incident-1 {
+      background-color: #E87E04; }
+    body.status-page .badge.badge-incident-2 {
+      background-color: #F7CA18; }
+    body.status-page .badge.badge-incident-3 {
+      background-color: #3498db; }
+    body.status-page .badge.badge-incident-4 {
+      background-color: #2ECC71; }
+  body.status-page .list-group {
+    margin-bottom: 20px;
+    padding-left: 0;
+    border-radius: 0; }
+    body.status-page .list-group .list-group-item {
       border-radius: 0;
-      display: block; }
-    .list-group .list-group-item i.glyphicon {
-      font-size: 1.4em; }
-    .list-group .list-group-item h1, .list-group .list-group-item h2, .list-group .list-group-item h3, .list-group .list-group-item h4 {
-      margin-bottom: 2px; }
-    .list-group .list-group-item h4 {
-      font-weight: 400;
-      max-width: 90%; }
-    .list-group .list-group-item p, .list-group .list-group-item time {
-      margin-bottom: 0;
-      line-height: 1.3em; }
-    .list-group .list-group-item time {
-      color: #6C7A89;
-      font-weight: 300;
+      background-color: #ffffff;
+      border: 1px solid #ecf0f1;
       font-size: 1.1em; }
-    .list-group .list-group-item.active {
-      background-color: #F2F1EF; }
-      .list-group .list-group-item.active h3 {
-        color: #22313F;
-        padding-top: 6px;
-        padding-bottom: 6px;
+      body.status-page .list-group .list-group-item span.badge {
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-radius: 0;
+        display: block; }
+      body.status-page .list-group .list-group-item i.glyphicon {
+        font-size: 1.4em;
+        color: rgba(255, 255, 255, 0.9); }
+      body.status-page .list-group .list-group-item h1, body.status-page .list-group .list-group-item h2, body.status-page .list-group .list-group-item h3, body.status-page .list-group .list-group-item h4 {
+        margin-bottom: 2px; }
+      body.status-page .list-group .list-group-item h4 {
+        font-weight: 400;
+        max-width: 90%; }
+      body.status-page .list-group .list-group-item p, body.status-page .list-group .list-group-item time {
+        margin-bottom: 0;
+        line-height: 1.3em; }
+      body.status-page .list-group .list-group-item time {
+        color: #6C7A89;
         font-weight: 300;
-        font-size: 1.6em; }
-      .list-group .list-group-item.active:hover {
-        color: inherit;
-        border-color: #BDC3C7; }
-  .list-group.components {
-    margin-bottom: 30px; }
-    .list-group.components p {
-      margin-bottom: 10px; }
-    .list-group.components .badge {
-      color: transparent; }
-
-footer.footer {
-  padding-top: 40px;
-  padding-bottom: 40px;
-  color: #777;
-  text-align: center;
-  border-top: 1px solid #e5e5e5;
-  background-color: #f2f2f2; }
+        font-size: 1.1em; }
+      body.status-page .list-group .list-group-item.active {
+        background-color: #F2F1EF; }
+        body.status-page .list-group .list-group-item.active h3 {
+          color: #22313F;
+          padding-top: 2px;
+          padding-bottom: 2px;
+          font-weight: 600;
+          font-size: 1.4em; }
+        body.status-page .list-group .list-group-item.active:hover {
+          color: inherit;
+          border-color: #ecf0f1; }
+    body.status-page .list-group.components {
+      margin-bottom: 30px; }
+      body.status-page .list-group.components p {
+        margin-bottom: 10px; }
+      body.status-page .list-group.components .badge {
+        color: transparent; }
+  body.status-page footer.footer {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    color: #777;
+    text-align: center;
+    border-top: 1px solid #ecf0f1;
+    background-color: #fbfcfc; }
