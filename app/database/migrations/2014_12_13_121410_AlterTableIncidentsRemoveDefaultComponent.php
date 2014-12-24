@@ -14,9 +14,9 @@ class AlterTableIncidentsRemoveDefaultComponent extends Migration
     public function up()
     {
         Schema::table('incidents', function (Blueprint $table) {
-            if (Config::get('database')['default'] === 'mysql'){
+            if (Config::get('database')['default'] === 'mysql') {
                 DB::statement("ALTER TABLE incidents CHANGE component_id component_id TINYINT(4)  NOT NULL  DEFAULT '0';");
-            } else if (Config::get('database')['default'] === 'pgsql'){
+            } else if (Config::get('database')['default'] === 'pgsql') {
                 DB::statement("ALTER TABLE incidents ALTER COLUMN component_id SET DEFAULT '0';");
             }
         });
@@ -30,9 +30,9 @@ class AlterTableIncidentsRemoveDefaultComponent extends Migration
     public function down()
     {
         Schema::table('incidents', function (Blueprint $table) {
-            if (Config::get('database')['default'] === 'mysql'){
+            if (Config::get('database')['default'] === 'mysql') {
                 DB::statement("ALTER TABLE incidents CHANGE component_id component_id TINYINT(4)  NOT NULL  DEFAULT '1';");
-            } else if (Config::get('database')['default'] === 'pgsql'){
+            } else if (Config::get('database')['default'] === 'pgsql') {
                 DB::statement("ALTER TABLE incidents ALTER COLUMN component_id SET DEFAULT '1';");
             }
         });
