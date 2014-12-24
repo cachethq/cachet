@@ -14,7 +14,7 @@ class AlterTableIncidentsRemoveDefaultComponent extends Migration
     public function up()
     {
         Schema::table('incidents', function (Blueprint $table) {
-            DB::statement("ALTER TABLE `incidents` CHANGE `component_id` `component_id` TINYINT(4)  NOT NULL  DEFAULT '0';");
+            DB::statement("ALTER TABLE incidents CHANGE component_id component_id TINYINT(4)  NOT NULL  DEFAULT '0';");
         });
     }
 
@@ -26,7 +26,7 @@ class AlterTableIncidentsRemoveDefaultComponent extends Migration
     public function down()
     {
         Schema::table('incidents', function (Blueprint $table) {
-            DB::statement("ALTER TABLE `incidents` CHANGE `component_id` `component_id` TINYINT(4)  NOT NULL  DEFAULT '1';");
+            DB::statement("ALTER TABLE incidents CHANGE component_id component_id TINYINT(4)  NOT NULL  DEFAULT '1';");
         });
     }
 }
