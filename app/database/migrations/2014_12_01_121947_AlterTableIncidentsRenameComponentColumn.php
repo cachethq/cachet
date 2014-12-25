@@ -14,7 +14,7 @@ class AlterTableIncidentsRenameComponentColumn extends Migration
     public function up()
     {
         Schema::table('incidents', function (Blueprint $table) {
-            $table->rename('component', 'component_id');
+            $table->renameColumn('component', 'component_id');
         });
     }
 
@@ -26,7 +26,7 @@ class AlterTableIncidentsRenameComponentColumn extends Migration
     public function down()
     {
         Schema::table('incidents', function (Blueprint $table) {
-            $table->rename('component_id', 'component');
+            $table->renameColumn('component_id', 'component');
         });
     }
 }
