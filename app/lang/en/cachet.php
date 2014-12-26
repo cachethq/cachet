@@ -1,6 +1,6 @@
 <?php
 
-return [
+return array(
     // Components
     'component' => [
         'status' => [
@@ -46,4 +46,4 @@ return [
         'search'                   => 'Search...',
         'user'                     => 'User',
     ],
-];
+);
