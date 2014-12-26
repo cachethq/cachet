@@ -5,7 +5,6 @@ use Illuminate\Database\Schema\Blueprint;
 
 class AlterTableIncidentsRemoveDefaultComponent extends Migration
 {
-
     /**
      * Run the migrations.
      *
@@ -38,4 +37,3 @@ class AlterTableIncidentsRemoveDefaultComponent extends Migration
         });
     }
 }
-
