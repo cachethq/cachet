@@ -6,27 +6,27 @@
         <div class='col-md-6 col-md-offset-3'>
             {{ Form::open() }}
             <fieldset>
-                <legend>Login</legend>
+                <legend>{{ Lang::get('cachet.login') }}</legend>
 
                 @if(Session::has('error'))
                 <span class='text-danger'>{{ Session::get('error') }}</span>
                 @endif
 
                 <div class='form-group'>
-                    <label class='sr-only'>Email</label>
+                    <label class='sr-only'>{{ Lang::get('cachet.forms.email') }}</label>
                     {{ Form::email('email', Input::old('email'), [
-                        'class' => 'form-control', 'placeholder' => 'Email', 'required' => 'required'
+                        'class' => 'form-control', 'placeholder' => Lang::get('cachet.forms.email'), 'required' => 'required'
                     ]) }}
                 </div>
                 <div class='form-group'>
-                    <label class='sr-only'>Password</label>
+                    <label class='sr-only'>{{ Lang::get('cachet.forms.password') }}</label>
                     {{ Form::password('password', [
-                        'class' => 'form-control', 'placeholder' => 'Password', 'required' => 'required'
+                        'class' => 'form-control', 'placeholder' => Lang::get('cachet.forms.password'), 'required' => 'required'
                     ]) }}
                 </div>
                 <hr />
                 <div class='form-group'>
-                    <button type='submit' class='btn btn-default'>Login</button>
+                    <button type='submit' class='btn btn-default'>{{ Lang::get('cachet.login') }}</button>
                 </div>
             </fieldset>
             {{ Form::close() }}

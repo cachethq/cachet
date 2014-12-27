@@ -26,6 +26,7 @@ return [
     ],
     // Other
     'powered_by'   => ':app Status Page is powered by <a href="https://cachethq.github.io">Cachet</a>.',
+    'login'        => 'Login',
     'logout'       => 'Logout',
     'logged_in'    => 'You\'re logged in.',
     'setup'        => 'Setup Cachet',
@@ -46,4 +47,9 @@ return [
         'search'                   => 'Search...',
         'user'                     => 'User',
     ],
+    // Forms
+    'forms' => [
+        'email' => 'Email',
+        'password' => 'Password',
+    ]
 ];
