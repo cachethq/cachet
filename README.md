@@ -34,6 +34,8 @@ A special thank you to our translators, who have provided us with the chance to 
 - **Pedro Maia** - Portuguese
 - **Salvatore Gentile** - Italian
 
+If you'd like to contribute translations, please check out our [CrowdIn project](https://crowdin.com/project/cachet).
+
 # License
 
 [MIT](http://jbrooksuk.mit-license.org)
