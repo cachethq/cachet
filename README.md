@@ -25,6 +25,15 @@ See the [INSTALL.md](/INSTALL.md) document for more information. If you'd like t
 
 If you're deploying into production you'll want to create an environmental variable as `ENV=production`. In the instance where the variable isn't defined, Cachet will think that it's `local`.
 
+# Translations
+
+A special thank you to our translators, who have provided us with the chance to share Cachet with the world.
+
+- **Andreas Karlsson** - Swedish
+- **Marcin Kurczewski** - Polish
+- **Pedro Maia** - Portuguese
+- **Salvatore Gentile** - Italian
+
 # License
 
 [MIT](http://jbrooksuk.mit-license.org)
