@@ -49,7 +49,18 @@ return [
     ],
     // Forms
     'forms' => [
-        'email' => 'Email',
+        'email'    => 'Email',
         'password' => 'Password',
+        // Setup Form
+        'setup' => [
+            'service_details'   => 'Service Details',
+            'status_page_setup' => 'Status Page Setup',
+            'site_name'         => 'Site Name',
+            'site_domain'       => 'Site Domain',
+            'show_support'      => 'Show support for Cachet?',
+            'admin_account'     => 'Administrator Account',
+            'admin_username'    => 'Username',
+            'finish_setup'      => 'Complete Setup'
+        ]
     ]
 ];
