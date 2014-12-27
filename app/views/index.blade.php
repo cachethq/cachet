@@ -1,18 +1,6 @@
 @extends('layout.master')
 
 @section('content')
-    @if(Auth::check())
-    <ul class='nav nav-pills'>
-        <li>
-            <a class="btn btn-default" href="{{ URL::route('dashboard') }}">{{ Lang::get('cachet.dashboard.dashboard') }}</a>
-        </li>
-        <li>
-            <a class="btn btn-danger" href="{{ URL::route('logout') }}">{{ Lang::get('cachet.logout') }}</a>
-        </li>
-    </ul>
-    <hr />
-    @endif
-
     <div class='alert alert-{{ $systemStatus }}'>{{ $systemMessage }}</div>
 
     @include('partials.components')
