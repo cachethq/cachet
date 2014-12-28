@@ -1,7 +1,8 @@
 @import 'palette';
 
 body.status-page {
-    font-family: 'Lato';
+    font-family: 'Lato', 'Helevetic Neue', Arial, sans-serif;
+    background-color: #F0F3F4;
     color: #333333;
     font-size: 1.4em;
     font-weight: 300;
@@ -63,22 +64,133 @@ body.status-page {
         }
     }
 
-    .badge {
-        padding-top: 8px;
-        padding-bottom: 8px;
-        padding-left: 12px;
-        padding-right: 12px;
-        &.badge-incident-1 {
-            background-color: $orange;
+    .timeline {
+        .content-wrapper {
+            margin-top: 40px;
+            margin-bottom: 40px;
         }
-        &.badge-incident-2 {
-            background-color: $yellow;
+        h3 {
+            margin-top: 30px;
+            margin-bottom: 40px;
+            font-size: 22px;
+            small {
+                margin-left: 15px;
+            }
         }
-        &.badge-incident-3 {
-            background-color: $blue;
+        .moment {
+            width: 100%;
+            padding-bottom: 50px;
+            position: relative;
+            &.first {
+                &:before {
+                    height: 130%;
+                    top: -20px;
+                }
+                &:after {
+                    content: '';
+                    position: absolute;
+                    left: 23px;
+                    top: -20px;
+                    width: 7px;
+                    height: 7px;
+                    background: $grey;
+                    border-radius: 50%;
+                }
+            }
+            &:before {
+                content: '';
+                position: absolute;
+                left: 26px;
+                top: 5px;
+                width: 2px;
+                height: 100%;
+                background: #7266BA;
+            }
+            .icon {
+                background: #fff;
+                width: 35px;
+                height: 35px;
+                border-radius: 50%;
+                border: 1px solid #e8e8e8;
+                position: absolute;
+                left: 25px;
+                top: 14px;
+                .fa {
+                    position: absolute;
+                    &.fa-flag {
+                        top: 10px;
+                        left: 9px;
+                    }
+                    &.fa-warning {
+                        top: 10px;
+                        left: 9px;
+                    }
+                    &.fa-eye {
+                        top: 10px;
+                        left: 9px;
+                    }
+                    &.fa-check {
+                        top: 10px;
+                        left: 9px;
+                    }
+                }
+                &.status-1 {
+                    color: $orange;
+                }
+                &.status-2 {
+                    color: $yellow;
+                }
+                &.status-3 {
+                    color: $blue;
+                }
+                &.status-4 {
+                    color: $green;
+                }
+            }
+            &.last:before {
+                background: #fff;
+            }
+            .panel {
+                margin: 0;
+                border-radius: 2px;
+            }
+            .panel-body {
+                border-top: 1px solid #eee;
+            }
+            .panel-message {
+                border: 1px solid #e8e8e8;
+                .date {
+                    color: #c7c7c7;
+                }
+            }
+            .panel-message:before {
+                position: absolute;
+                top: 16px;
+                left: 1px;
+                display: inline-block;
+                border-top: 15px solid transparent;
+                border-left: 0 solid #e8e8e8;
+                border-right: 15px solid #e8e8e8;
+                border-bottom: 15px solid transparent;
+                content: " ";
+            }
+ 
+            .panel-message:after {
+                position: absolute;
+                top: 17px;
+                left: 2px;
+                display: inline-block;
+                border-top: 14px solid transparent;
+                border-left: 0 solid #fff;
+                border-right: 14px solid #fff;
+                border-bottom: 14px solid transparent;
+                content: " ";
+            }
         }
-        &.badge-incident-4 {
-            background-color: $green;
+    }
+    @media (max-width: 767px) {
+        .timeline .moment .content {
+            width: 100%;
         }
     }
 
@@ -93,24 +205,8 @@ body.status-page {
             border: 1px solid $grey;
             font-size: 1.1em;
 
-            span.badge {
-                position: absolute;
-                top: 0;
-                right: 0;
-                border-radius: 0;
-                display: block;
-            }
-
-            i.glyphicon {
-                font-size: 1.4em;
-                color: rgba(white, 0.9);
-            }
-
-            h1, h2, h3, h4 {
-                margin-bottom: 2px;
-            }
-
             h4 {
+                margin-bottom: 2px;
                 font-weight: 400;
                 max-width: 90%;
             }
@@ -118,29 +214,6 @@ body.status-page {
             p, time {
                 margin-bottom: 0;
                 line-height: 1.3em;
-            }
-
-            time {
-                color: #6C7A89;
-                // letter-spacing: 0.02em;
-                font-weight: 300;
-                font-size: 1.1em;
-            }
-
-            &.active {
-                background-color: #F2F1EF;
-                h3 {
-                    color: #22313F;
-                    padding-top: 2px;
-                    padding-bottom: 2px;
-                    font-weight: 600;
-                    font-size: 1.4em;
-                }
-
-                &:hover {
-                    color: inherit;
-                    border-color: $grey;
-                }
             }
         }
 
