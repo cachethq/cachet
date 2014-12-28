@@ -4428,7 +4428,7 @@ body.status-page {
       margin-left: 15px; }
   body.status-page .timeline .moment {
     width: 100%;
-    padding-bottom: 50px;
+    padding-bottom: 10px;
     position: relative; }
     body.status-page .timeline .moment.first:before {
       height: 130%;
@@ -4488,6 +4488,8 @@ body.status-page {
       border-radius: 2px; }
     body.status-page .timeline .moment .panel-body {
       border-top: 1px solid #eee; }
+      body.status-page .timeline .moment .panel-body p {
+        margin: 0; }
     body.status-page .timeline .moment .panel-message {
       border: 1px solid #e8e8e8; }
       body.status-page .timeline .moment .panel-message .date {

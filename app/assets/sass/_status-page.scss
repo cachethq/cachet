@@ -79,7 +79,7 @@ body.status-page {
         }
         .moment {
             width: 100%;
-            padding-bottom: 50px;
+            padding-bottom: 10px;
             position: relative;
             &.first {
                 &:before {
@@ -156,6 +156,9 @@ body.status-page {
             }
             .panel-body {
                 border-top: 1px solid #eee;
+                p {
+                    margin: 0;
+                }
             }
             .panel-message {
                 border: 1px solid #e8e8e8;
@@ -174,7 +177,6 @@ body.status-page {
                 border-bottom: 15px solid transparent;
                 content: " ";
             }
-
             .panel-message:after {
                 position: absolute;
                 top: 17px;

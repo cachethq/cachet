@@ -31,7 +31,7 @@
             </div>
         </div>
         @empty
-        {{ Lang::get('cachet.incident.none') }}
+        <p>{{ Lang::get('cachet.incident.none') }}</p>
         @endforelse
     </div>
 </div>
