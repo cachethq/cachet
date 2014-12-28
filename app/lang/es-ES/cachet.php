@@ -1,6 +1,6 @@
 <?php
 
-return array(
+return [
     // Components
     'component' => [
         'status' => [
@@ -63,4 +63,4 @@ return array(
             'finish_setup'      => '',
         ],
     ],
-);
+];
