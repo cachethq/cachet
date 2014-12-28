@@ -23,9 +23,7 @@
                         </div>
                         @if($incident->hasMessage())
                         <div class="panel-body">
-                            <p>
-                                {{ $incident->message }}
-                            </p>
+                            <p>{{ $incident->message }}</p>
                         </div>
                         @endif
                     </div>
