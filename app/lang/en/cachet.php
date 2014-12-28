@@ -60,7 +60,7 @@ return [
             'show_support'      => 'Show support for Cachet?',
             'admin_account'     => 'Administrator Account',
             'admin_username'    => 'Username',
-            'finish_setup'      => 'Complete Setup'
-        ]
-    ]
+            'finish_setup'      => 'Complete Setup',
+        ],
+    ],
 ];
