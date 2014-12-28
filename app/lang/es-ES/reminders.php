@@ -1,5 +1,7 @@
 <?php
+
 return [
+
     /*
     |--------------------------------------------------------------------------
     | Password Reminder Language Lines
@@ -10,9 +12,10 @@ return [
     | has failed, such as for an invalid token or invalid new password.
     |
     */
+
     "password" => "Las contraseñas deben tener como minimo 6 cracteres y coincidir con la confirmación.",
-    "user" => "No podemos encontrar ningún usuario con ese correo electrónico",
-    "token" => "El token de restablecimiento de contraseña no es válido.",
-    "sent" => "Recordatorio de contraseña enviado!",
-    "reset" => "La contraseña ha sido reestablecida!",
+    "user"     => "No podemos encontrar ningún usuario con ese correo electrónico",
+    "token"    => "El token de restablecimiento de contraseña no es válido.",
+    "sent"     => "Recordatorio de contraseña enviado!",
+    "reset"    => "La contraseña ha sido reestablecida!",
 ];

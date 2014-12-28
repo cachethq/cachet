@@ -1,5 +1,7 @@
 <?php
+
 return [
+
     /*
     |--------------------------------------------------------------------------
     | Validation Language Lines
@@ -10,6 +12,7 @@ return [
     | as El size rules. Feel free to tweak each of Else messages here.
     |
     */
+
     "accepted"             => "El :attribute debe ser aceptado.",
     "active_url"           => "El :attribute no es un enlace válido.",
     "after"                => "El :attribute debe ser una fecha después de :date.",
@@ -69,6 +72,7 @@ return [
     "unique"               => "El :attribute ya ha sido usado.",
     "url"                  => "El formato :attribute es inválido.",
     "timezone"             => "El :attribute debe ser una zona válida.",
+
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Language Lines
@@ -79,11 +83,13 @@ return [
     | specify a specific custom language line for a given attribute rule.
     |
     */
+
     'custom' => [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
     ],
+
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Attributes
@@ -94,5 +100,6 @@ return [
     | of "email". This simply helps us make messages a little cleaner.
     |
     */
+
     'attributes' => [],
 ];
