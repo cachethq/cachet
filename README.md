@@ -33,7 +33,7 @@ A special thank you to our translators, who have provided us with the chance to 
 - **Marcin Kurczewski** - Polish
 - **Pedro Maia** - Portuguese
 - **Salvatore Gentile** - Italian
-- **Joe Cohens** - Spanish
+- **Joe Cohens, Salvatore Gentile** - Spanish
 
 If you'd like to contribute translations, please check out our [CrowdIn project](https://crowdin.com/project/cachet).
 
