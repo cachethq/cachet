@@ -68,6 +68,6 @@ class Incident extends Eloquent implements \Dingo\Api\Transformer\TransformableI
      */
     public function hasMessage()
     {
-        return ($this->message !== '');
+        return (trim($this->message) !== '');
     }
 }
