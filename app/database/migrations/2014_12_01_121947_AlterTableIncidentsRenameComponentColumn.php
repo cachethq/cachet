@@ -5,7 +5,6 @@ use Illuminate\Database\Schema\Blueprint;
 
 class AlterTableIncidentsRenameComponentColumn extends Migration
 {
-
     /**
      * Run the migrations.
      *

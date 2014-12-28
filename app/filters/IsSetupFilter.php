@@ -10,6 +10,7 @@ class IsSetupFilter
                 return Redirect::to('/dashboard');
             }
         } catch (Exception $e) {
+            // do nothing
         }
     }
 }

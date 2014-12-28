@@ -2,7 +2,6 @@
 
 class SettingsTableSeeder extends Seeder
 {
-
     /**
      * Run the database seeds.
      *

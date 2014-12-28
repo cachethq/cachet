@@ -5,7 +5,6 @@ use Illuminate\Database\Schema\Blueprint;
 
 class AlterTableComponentsAddDeletedAt extends Migration
 {
-
     /**
      * Run the migrations.
      *
@@ -25,5 +24,6 @@ class AlterTableComponentsAddDeletedAt extends Migration
      */
     public function down()
     {
+        //
     }
 }

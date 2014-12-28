@@ -2,7 +2,6 @@
 
 class ComponentTableSeeder extends Seeder
 {
-
     /**
      * Run the database seeds.
      *

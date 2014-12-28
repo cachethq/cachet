@@ -2,7 +2,6 @@
 
 class DatabaseSeeder extends Seeder
 {
-
     /**
      * Run the database seeds.
      *

@@ -2,7 +2,6 @@
 
 class IncidentTableSeeder extends Seeder
 {
-
     /**
      * Run the database seeds.
      *
