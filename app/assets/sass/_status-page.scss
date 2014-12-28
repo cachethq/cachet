@@ -1,7 +1,8 @@
 @import 'palette';
 
 body.status-page {
-    font-family: 'Lato';
+    font-family: 'Lato', 'Helevetic Neue', Arial, sans-serif;
+    background-color: #F0F3F4;
     color: #333333;
     font-size: 1.4em;
     font-weight: 300;
@@ -99,79 +100,96 @@ body.status-page {
             &:before {
                 content: '';
                 position: absolute;
-                left: 25px;
+                left: 26px;
                 top: 5px;
-                width: 3px;
+                width: 2px;
                 height: 100%;
-                background: #eee;
+                background: #7266BA;
             }
             .icon {
-                background: #000;
+                background: #fff;
                 width: 35px;
                 height: 35px;
                 border-radius: 50%;
+                border: 1px solid #e8e8e8;
                 position: absolute;
-                left: 24px;
-                top: 4px;
+                left: 25px;
+                top: 14px;
                 .fa {
-                    color: #fff;
                     position: absolute;
                     &.fa-flag {
                         top: 10px;
-                        left: 11px;
+                        left: 9px;
                     }
                     &.fa-warning {
                         top: 10px;
-                        left: 11px;
+                        left: 9px;
                     }
                     &.fa-eye {
                         top: 10px;
-                        left: 11px;
+                        left: 9px;
                     }
                     &.fa-check {
                         top: 10px;
-                        left: 11px;
+                        left: 9px;
                     }
                 }
                 &.status-1 {
-                    background-color: $orange;
+                    color: $orange;
                 }
                 &.status-2 {
-                    background-color: $yellow;
+                    color: $yellow;
                 }
                 &.status-3 {
-                    background-color: $blue;
+                    color: $blue;
                 }
                 &.status-4 {
-                    background-color: $green;
+                    color: $green;
                 }
             }
             &.last:before {
                 background: #fff;
             }
-            .message .content {
-                float: left;
-                width: 80%;
-                p {
-                    margin-top: 15px;
-                    color: #555;
-                    .date {
-                        display: block;
-                        color: $dark-grey;
-                        margin-bottom: 6px;
-                        font-size: 13px;
-                    }
+            .panel {
+                margin: 0;
+                border-radius: 2px;
+            }
+            .panel-body {
+                border-top: 1px solid #eee;
+            }
+            .panel-message {
+                border: 1px solid #e8e8e8;
+                .date {
+                    color: #c7c7c7;
                 }
+            }
+            .panel-message:before {
+                position: absolute;
+                top: 16px;
+                left: 1px;
+                display: inline-block;
+                border-top: 15px solid transparent;
+                border-left: 0 solid #e8e8e8;
+                border-right: 15px solid #e8e8e8;
+                border-bottom: 15px solid transparent;
+                content: " ";
+            }
+ 
+            .panel-message:after {
+                position: absolute;
+                top: 17px;
+                left: 2px;
+                display: inline-block;
+                border-top: 14px solid transparent;
+                border-left: 0 solid #fff;
+                border-right: 14px solid #fff;
+                border-bottom: 14px solid transparent;
+                content: " ";
             }
         }
     }
-    @media (max-width: 991px) {
-        .timeline .moment .icon {
-            left: 17px;
-        }
-    }
     @media (max-width: 767px) {
-        .timeline .moment .message .content {
+        .timeline .moment .content {
             width: 100%;
         }
     }

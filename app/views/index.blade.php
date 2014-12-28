@@ -9,7 +9,7 @@
     @include('partials.graphs')
     @endif
 
-    @for($i=0; $i <= 7; $i++)
+    @foreach(range(0, 7) as $i => $v)
     @include('partials.incident', array('i', $i))
-    @endfor
+    @endforeach
 @stop

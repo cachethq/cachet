@@ -61,4 +61,13 @@ class Incident extends Eloquent implements \Dingo\Api\Transformer\TransformableI
     {
         return new CachetHQ\Cachet\Transformers\IncidentTransformer();
     }
+
+    /**
+     * Check if Incident has message.
+     * @return boolean
+     */
+    public function hasMessage()
+    {
+        return ($this->message !== '');
+    }
 }

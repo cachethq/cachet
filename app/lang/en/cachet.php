@@ -18,6 +18,7 @@ return [
             3 => 'Watching',
             4 => 'Fixed',
         ],
+        'none' => 'Nothing to report',
     ],
     // Service Status
     'service' => [
