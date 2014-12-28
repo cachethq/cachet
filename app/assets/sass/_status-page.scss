@@ -160,7 +160,7 @@ body.status-page {
             .panel-message {
                 border: 1px solid #e8e8e8;
                 .date {
-                    color: #c7c7c7;
+                    color: darken(#c7c7c7, 20%);
                 }
             }
             .panel-message:before {
@@ -174,7 +174,7 @@ body.status-page {
                 border-bottom: 15px solid transparent;
                 content: " ";
             }
- 
+
             .panel-message:after {
                 position: absolute;
                 top: 17px;

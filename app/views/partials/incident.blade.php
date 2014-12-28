@@ -17,7 +17,7 @@
                 <div class="col-xs-10 col-xs-offset-2 col-sm-11 col-sm-offset-0">
                     <div class="panel panel-message">
                         <div class="panel-heading">
-                            {{ $incident->name }}
+                            <strong>{{ $incident->name }}</strong>
                             <br>
                             <small class='date'>{{ $incident->created_at->diffForHumans() }}</small>
                         </div>

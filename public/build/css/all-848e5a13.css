@@ -4491,7 +4491,7 @@ body.status-page {
     body.status-page .timeline .moment .panel-message {
       border: 1px solid #e8e8e8; }
       body.status-page .timeline .moment .panel-message .date {
-        color: #c7c7c7; }
+        color: #949494; }
     body.status-page .timeline .moment .panel-message:before {
       position: absolute;
       top: 16px;
