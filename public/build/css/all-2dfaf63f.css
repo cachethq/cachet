@@ -4378,7 +4378,8 @@ body.dashboard .content {
     margin-top: 0; }
 
 body.status-page {
-  font-family: 'Lato';
+  font-family: 'Open Sans', sans-serif;
+  background-color: #F0F3F4;
   color: #333333;
   font-size: 1.4em;
   font-weight: 300; }
@@ -4444,61 +4445,75 @@ body.status-page {
     body.status-page .timeline .moment:before {
       content: '';
       position: absolute;
-      left: 25px;
+      left: 26px;
       top: 5px;
-      width: 3px;
+      width: 2px;
       height: 100%;
-      background: #eee; }
+      background: #7266BA; }
     body.status-page .timeline .moment .icon {
-      background: #000;
+      background: #fff;
       width: 35px;
       height: 35px;
       border-radius: 50%;
+      border: 1px solid #e8e8e8;
       position: absolute;
-      left: 24px;
-      top: 4px; }
+      left: 25px;
+      top: 14px; }
       body.status-page .timeline .moment .icon .fa {
-        color: #fff;
         position: absolute; }
         body.status-page .timeline .moment .icon .fa.fa-flag {
           top: 10px;
-          left: 11px; }
+          left: 9px; }
         body.status-page .timeline .moment .icon .fa.fa-warning {
           top: 10px;
-          left: 11px; }
+          left: 9px; }
         body.status-page .timeline .moment .icon .fa.fa-eye {
           top: 10px;
-          left: 11px; }
+          left: 9px; }
         body.status-page .timeline .moment .icon .fa.fa-check {
           top: 10px;
-          left: 11px; }
+          left: 9px; }
       body.status-page .timeline .moment .icon.status-1 {
-        background-color: #E87E04; }
+        color: #FF8800; }
       body.status-page .timeline .moment .icon.status-2 {
-        background-color: #F7CA18; }
+        color: #F7CA18; }
       body.status-page .timeline .moment .icon.status-3 {
-        background-color: #3498db; }
+        color: #3498db; }
       body.status-page .timeline .moment .icon.status-4 {
-        background-color: #2ECC71; }
+        color: #2ECC71; }
     body.status-page .timeline .moment.last:before {
       background: #fff; }
-    body.status-page .timeline .moment .message .content {
-      float: left;
-      width: 80%; }
-      body.status-page .timeline .moment .message .content p {
-        margin-top: 15px;
-        color: #555; }
-        body.status-page .timeline .moment .message .content p .date {
-          display: block;
-          color: #cfd9db;
-          margin-bottom: 6px;
-          font-size: 13px; }
-  @media (max-width: 991px) {
-    body.status-page .timeline .moment .icon {
-      left: 17px; }
- }
+    body.status-page .timeline .moment .panel {
+      margin: 0;
+      border-radius: 2px; }
+    body.status-page .timeline .moment .panel-body {
+      border-top: 1px solid #eee; }
+    body.status-page .timeline .moment .panel-message {
+      border: 1px solid #e8e8e8; }
+      body.status-page .timeline .moment .panel-message .date {
+        color: #c7c7c7; }
+    body.status-page .timeline .moment .panel-message:before {
+      position: absolute;
+      top: 16px;
+      left: 1px;
+      display: inline-block;
+      border-top: 15px solid transparent;
+      border-left: 0 solid #e8e8e8;
+      border-right: 15px solid #e8e8e8;
+      border-bottom: 15px solid transparent;
+      content: " "; }
+    body.status-page .timeline .moment .panel-message:after {
+      position: absolute;
+      top: 17px;
+      left: 2px;
+      display: inline-block;
+      border-top: 14px solid transparent;
+      border-left: 0 solid #fff;
+      border-right: 14px solid #fff;
+      border-bottom: 14px solid transparent;
+      content: " "; }
   @media (max-width: 767px) {
-    body.status-page .timeline .moment .message .content {
+    body.status-page .timeline .moment .content {
       width: 100%; }
  }
   body.status-page .list-group {

@@ -10,7 +10,7 @@
 
     <title>{{ isset($pageTitle) ? $pageTitle : Setting::get('app_name') }} | Cachet</title>
 
-    <link href='http://fonts.googleapis.com/css?family=Raleway:400,700,300,600' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700,300,600' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{ elixir('css/all.css') }}">
 
     @include('partials.stylesheet')
