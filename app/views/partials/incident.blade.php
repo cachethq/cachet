@@ -3,7 +3,7 @@
     $incidents = Incident::whereRaw('DATE(created_at) = "' . $incidentDate->format('Y-m-d') . '"')
         ->orderBy('created_at', 'desc')->get();
 ?>
-<h3>{{ $incidentDate->format('jS M Y') }}</h3>
+<h4>{{ $incidentDate->format('jS F Y') }}</h4>
 <div class='timeline'>
     <div class='content-wrapper'>
         @forelse($incidents as $incidentID => $incident)
