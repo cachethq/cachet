@@ -1,13 +1,20 @@
+# Laravel
 /bootstrap/compiled.php
 /vendor
-/node_modules
-/app/assets/bower_components
-composer.phar
+/workbench
+
+# Configuration
 .env.*.php
 .env.php
-.DS_Store
-Thumbs.db
 config.codekit
-npm-debug.log
-public/js/
+
+# Assets development
+/node_modules
+/app/assets/bower_components
 public/css/
+public/js/
+
+# Packages
+npm-debug.log
+.vagrant/
+tests/_output/*
