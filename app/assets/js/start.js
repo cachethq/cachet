@@ -4,4 +4,6 @@ $(function() {
     	$('.wrapper').toggleClass('active');
     });
 
+    $('[data-toggle="tooltip"]').tooltip();
+
 });

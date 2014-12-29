@@ -4,9 +4,8 @@
 
 <body class="dashboard">
     <div class="wrapper">
-        @include('partials.dashboard.sidebar')
         <div class="content">
-        @yield('content')
+            @yield('content')
         </div>
     </div>
 </body>

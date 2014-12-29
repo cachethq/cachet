@@ -4,13 +4,12 @@ body.dashboard {
 		vertical-align: top;
 		width: $sidebar-normal-width;
 		background: $sidebar-background-color;
+        @include box-shadow($sidebar-border-shadow);
 		position: relative;
-		z-index: 100;
+		z-index: 999;
 
 		.sidebar-inner {
 			position: relative;
-
-			margin-top: 69px;
 
 			.profile {
 				padding: 20px;
@@ -26,6 +25,10 @@ body.dashboard {
 					color: $sidebar-text-color;
 				}
 			}
+            .quick-add-incident {
+                @extend text-center;
+                padding: 10px;
+            }
 			ul {
 				clear: both;
 				margin: 0;
@@ -33,7 +36,7 @@ body.dashboard {
 				list-style: none;
 
 				li {
-					font-size: 0.8em;
+                    font-size: $sidebar-text-size;
 					&:last-child {
 						border-bottom: $sidebar-border-color;
 					}
@@ -49,7 +52,11 @@ body.dashboard {
 						border-top: $sidebar-border-color;
 						color: $sidebar-text-color;
 						i {
-							padding-right: 10px;
+                            font-size: 18px;
+                            min-width: 17px;
+                            text-align: center;
+                            position: relative;
+                            top: 1px;
 						}
 						&:hover {
 							text-decoration: none;
@@ -64,5 +71,25 @@ body.dashboard {
 				}
 			}
 		}
+        .bottom-menu-sidebar {
+            position: fixed;
+            bottom: 0;
+            width: 230px;
+            z-index: 999;
+            ul > li {
+                float: left;
+                display: block;
+                width: 33.333%;
+                border-right: 1px solid #ddd;
+                border-top: 1px solid #ddd;
+                a {
+                    display: block;
+                    position: relative;
+                    text-align: center;
+                    padding: 6px 0;
+                    background: #fff;
+                }
+            }
+        }
 	}
 }
