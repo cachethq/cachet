@@ -35,7 +35,7 @@
                         </div>
                     </fieldset>
 
-                    <button type="submit" class="btn btn-primary">Update profile</button>
+                    <button type="submit" class="btn btn-success">Update profile</button>
                 </form>
             </div>
         </div>
