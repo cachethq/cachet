@@ -59,6 +59,23 @@
                 </a>
             </li>
         </ul>
+        <div class="bottom-menu-sidebar">
+            <div class="text-center">
+                <img width="165" src="{{ url('img/cachet-logo.svg') }}" alt="Cachet"/>
+            </div>
+            <br/>
+            <ul>
+                <li data-toggle="tooltip" data-placement="top" title="{{ Lang::get('cachet.dashboard.help') }}">
+                    <a href="https://cachethq.github.io" target="_blank"><i class="icon ion-help"></i></a>
+                </li>
+                <li data-toggle="tooltip" data-placement="top" title="{{ Lang::get('cachet.dashboard.status_page') }}">
+                    <a href="{{ URL::route('status-page') }}"><i class="icon ion-monitor"></i></a>
+                </li>
+                <li data-toggle="tooltip" data-placement="top" title="{{ Lang::get('cachet.logout') }}">
+                    <a href="{{ URL::route('logout') }}"><i class="icon ion-log-out"></i></a>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
 @endif

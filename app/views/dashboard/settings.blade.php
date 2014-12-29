@@ -90,7 +90,7 @@
                         </div>
                     </fieldset>
 
-                    <button type="submit" class="btn btn-success">Save</button>
+                    <button type="submit" class="btn btn-success">Save settings</button>
                 </form>
             </div>
         </div>

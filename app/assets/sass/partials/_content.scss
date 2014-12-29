@@ -52,5 +52,13 @@ body.dashboard {
             font-weight: 300;
             text-transform: uppercase;
         }
+
+        .striped-list {
+
+            .striped-list-item {
+                border-bottom: 1px solid #f0f0f0;
+                padding: 8px 0;
+            }
+        }
 	}
 }

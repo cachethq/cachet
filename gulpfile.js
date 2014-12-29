@@ -11,7 +11,6 @@ elixir(function (mix) {
             'bower_components/jquery/dist/jquery.min.js',
             'bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js',
             'bower_components/chartjs/Chart.min.js',
-            'bower_components/rivets/dist/rivets.min.js',
             'js/app.js',
             'js/**/*.js',
         ], './app/assets/')

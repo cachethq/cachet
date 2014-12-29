@@ -6,7 +6,7 @@ body.dashboard {
 		background: $sidebar-background-color;
         @include box-shadow($sidebar-border-shadow);
 		position: relative;
-		z-index: 100;
+		z-index: 999;
 
 		.sidebar-inner {
 			position: relative;
@@ -71,5 +71,25 @@ body.dashboard {
 				}
 			}
 		}
+        .bottom-menu-sidebar {
+            position: fixed;
+            bottom: 0;
+            width: 230px;
+            z-index: 999;
+            ul > li {
+                float: left;
+                display: block;
+                width: 33.333%;
+                border-right: 1px solid #D1DFEC;
+                border-top: 1px solid #D1DFEC;
+                a {
+                    display: block;
+                    position: relative;
+                    text-align: center;
+                    padding: 6px 0;
+                    background: #E8EFF6;
+                }
+            }
+        }
 	}
 }

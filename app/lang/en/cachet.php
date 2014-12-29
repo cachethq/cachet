@@ -48,6 +48,7 @@ return [
         'toggle_navigation'        => 'Toggle Navigation',
         'search'                   => 'Search...',
         'user'                     => 'User',
+        'help'                     => 'Help',
     ],
     // Forms
     'forms' => [
