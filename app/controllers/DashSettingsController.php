@@ -23,10 +23,6 @@ class DashSettingsController extends Controller
         $settings = Input::all();
 
         foreach ($settings as $settingName => $settingValue) {
-            if (strstr($settingName, 'style_')) {
-                $settingValue = str_replace('#', '', $settingValue);
-            }
-
             $setting = Setting::firstOrCreate([
                 'name' => $settingName,
             ])->update([
