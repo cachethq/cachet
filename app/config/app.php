@@ -123,6 +123,7 @@ return [
         'Illuminate\Workbench\WorkbenchServiceProvider',
 
         'Dingo\Api\Provider\ApiServiceProvider',
+        'GrahamCampbell\Throttle\ThrottleServiceProvider',
         'Thujohn\Rss\RssServiceProvider',
 
         'CachetHQ\Cachet\Support\ServiceProviders\RepositoryServiceProvider',
@@ -196,8 +197,9 @@ return [
         'Validator'         => 'Illuminate\Support\Facades\Validator',
         'View'              => 'Illuminate\Support\Facades\View',
 
-        'API' => 'Dingo\Api\Facade\API',
-        'RSS' => 'Thujohn\Rss\RssFacade',
+        'API'      => 'Dingo\Api\Facade\API',
+        'Throttle' => 'GrahamCampbell\Throttle\Facades\Throttle',
+        'RSS'      => 'Thujohn\Rss\RssFacade',
 
     ],
 
