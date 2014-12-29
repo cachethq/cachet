@@ -12,11 +12,11 @@
   "success_url": "/setup",
   "repository": "https://github.com/cachethq/Cachet",
   "addons": [
-    "cleardb"
+    "heroku-postgresql"
   ],
   "env": {
-    "ENV": "heroku",
-    "BUILDPACK_URL": "https://github.com/heroku/heroku-buildpack-php"
+    "ENV": { "value": "heroku", "description": "Do not modify this value to work on Heroku" },
+    "BUILDPACK_URL": { "value": "https://github.com/heroku/heroku-buildpack-php", "description": "Do not modify this value to work on Heroku" }
   },
   "scripts": {
     "postdeploy": "php artisan migrate --env=heroku; php artisan key:generate"
