@@ -2,6 +2,11 @@
 
 class SetupController extends Controller
 {
+    /**
+     * Create a new setup controller instance.
+     *
+     * @return void
+     */
     public function __construct()
     {
         $this->beforeFilter('csrf', ['only' => ['postCachet']]);
@@ -9,6 +14,7 @@ class SetupController extends Controller
 
     /**
      * Returns the setup page.
+     *
      * @return \Illuminate\View\View
      */
     public function getIndex()
@@ -20,6 +26,7 @@ class SetupController extends Controller
 
     /**
      * Handles the actual app setup.
+     *
      * @return \Illuminate\Http\RedirectResponse
      */
     public function postIndex()
