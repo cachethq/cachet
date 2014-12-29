@@ -4397,14 +4397,14 @@ body.dashboard .sidebar {
       float: left;
       display: block;
       width: 33.333%;
-      border-right: 1px solid #D1DFEC;
-      border-top: 1px solid #D1DFEC; }
+      border-right: 1px solid #ddd;
+      border-top: 1px solid #ddd; }
       body.dashboard .sidebar .bottom-menu-sidebar ul > li a {
         display: block;
         position: relative;
         text-align: center;
         padding: 6px 0;
-        background: #E8EFF6; }
+        background: #fff; }
 
 body.dashboard .content {
   position: relative;
