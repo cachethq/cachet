@@ -8,6 +8,7 @@ class DashboardController extends Controller
      */
     public function showDashboard()
     {
+        // TODO: Find steps needed to complete setup.
         return View::make('dashboard.index');
     }
 
