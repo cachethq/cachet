@@ -12,11 +12,13 @@ $header-background-color: lighten(#00695C, 10%);
 $header-border-color: 1px solid darken($header-background-color, 10%);
 
 $sidebar-transition-speed: .2s;
-$sidebar-background-color: #2c3e50;
+$sidebar-background-color: #F0F3F4;
 $sidebar-border-color: 1px solid rgba(255, 255, 255, .1);
-$sidebar-text-color: #d7dadc;
-$sidebar-text-active-color: #ffffff;
-$sidebar-normal-width: 250px;
+$sidebar-border-shadow: inset 0px -2px 3px rgba(0,0,0,0.25);
+$sidebar-text-size: 0.9em;
+$sidebar-text-color: #333;
+$sidebar-text-active-color: #333;
+$sidebar-normal-width: 230px;
 $sidebar-phone-width: 75%;
 $sidebar-active-color: #00695C;
 

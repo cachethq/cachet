@@ -1,6 +1,5 @@
 body.dashboard {
 	.content {
-		padding-top: 69px;
 		position: relative;
 		display: table-cell;
 		vertical-align: top;
@@ -9,11 +8,21 @@ body.dashboard {
 			margin: 10px 0;
 		}
 		.header {
-			background: #fff;
-			padding: 14px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #333;
+            background-color: #fff;
+			padding: 22px 14px;
 			width: 100%;
-			height: 50px;
+			height: 70px;
 			font-size: 1.2em;
+            border-bottom: 1px solid #eee;
+            z-index: 99;
+            &.fixed {
+                position: fixed;
+                padding-left: 250px;
+            }
 			i {
 				// padding-right: 10px;
 			}
@@ -28,10 +37,20 @@ body.dashboard {
 			+ .row {
 				margin-top: 23px;
 			}
-		}
 
-		h3 {
-			margin-top: 0;
+            h3 {
+                color: #444;
+                margin-top: 0;
+                text-transform: uppercase;
+            }
 		}
+        .content-wrapper {
+            margin-top: 80px;
+        }
+
+        .sub-header {
+            font-weight: 300;
+            text-transform: uppercase;
+        }
 	}
 }

@@ -5,6 +5,7 @@
     "fontawesome": "4.2.*",
     "jquery": "~2.1.1",
     "chartjs": "0.2.*",
-    "rivets": "0.7.*"
+    "rivets": "0.7.*",
+    "ionicons": "~2.0.0"
   }
 }

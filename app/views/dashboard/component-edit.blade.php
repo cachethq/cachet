@@ -2,11 +2,10 @@
 
 @section('content')
 <div class="header">
-	<i class="fa fa-list-ul"></i> {{ Lang::get('cachet.dashboard.components') }}
+	<i class="fa fa-list-ul"></i> {{ Lang::get('cachet.dashboard.components') }} > <small>Edit component</small>
 </div>
 <div class="row">
 	<div class="col-sm-12">
-		<h3>Edit component</h3>
 		@if($savedComponent = Session::get('savedComponent'))
 		<div class='alert alert-{{ $savedComponent->isValid() ? "success" : "danger" }}'>
 			@if($savedComponent->isValid())

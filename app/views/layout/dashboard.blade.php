@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
-@include('layout._head')
+@include('partials.dashboard.head')
 
 <body class="dashboard">
-    @include('partials.dashboard.nav')
     <div class="wrapper">
         @include('partials.dashboard.sidebar')
         <div class="content">
