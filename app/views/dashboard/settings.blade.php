@@ -47,38 +47,23 @@
                     <fieldset>
                         <div class='form-group'>
                             <label>Background Color</label>
-                            <div class='input-group'>
-                                <div class='input-group-addon'>#</div>
-                                <input type='text' pattern="^+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" class='form-control' maxlength="6" name='style.background_color' value='{{ Setting::get("style_background_color") }}' />
+                            <input type='text' class='form-control color-code' name='style.background_color' value='{{ Setting::get("style_background_color") }}' />
                             </div>
-                        </div>
                         <div class='form-group'>
                             <label>Text Color</label>
-                            <div class='input-group'>
-                                <div class='input-group-addon'>#</div>
-                                <input type='text' pattern="^+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" class='form-control' maxlength="6" name='style.text_color' value='{{ Setting::get("style_text_color") }}' />
+                            <input type='text' class='form-control color-code' name='style.text_color' value='{{ Setting::get("style_text_color") }}' />
                             </div>
-                        </div>
                         <div class='form-group'>
                             <label>Success Warning Color</label>
-                            <div class='input-group'>
-                                <div class='input-group-addon'>#</div>
-                                <input type='text' pattern="^+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" class='form-control' maxlength="6" name='style.success_warning_color' value='{{ Setting::get("style_success_warning_color") }}' />
-                            </div>
+                            <input type='text' class='form-control color-code' name='style.success_warning_color' value='{{ Setting::get("style_success_warning_color") }}' />
                         </div>
                         <div class='form-group'>
                             <label>Error Warning Color</label>
-                            <div class='input-group'>
-                                <div class='input-group-addon'>#</div>
-                                <input type='text' pattern="^+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" class='form-control' maxlength="6" name='style.error_warning_color' value='{{ Setting::get("style_error_warning_color") }}' />
-                            </div>
+                            <input type='text' class='form-control color-code' name='style.error_warning_color' value='{{ Setting::get("style_error_warning_color") }}' />
                         </div>
                         <div class='form-group'>
                             <label>Info Warning Color</label>
-                            <div class='input-group'>
-                                <div class='input-group-addon'>#</div>
-                                <input type='text' class='form-control' name='style.info_warning_color' value='{{ Setting::get("style_info_warning_color") }}' />
-                            </div>
+                            <input type='text' class='form-control color-code' name='style.style_info_warning_color' value='{{ Setting::get("style_info_warning_color") }}' />
                         </div>
                     </fieldset>
 
