@@ -77,6 +77,15 @@ body.status-page {
                 margin-left: 15px;
             }
         }
+
+        .panel {
+            .panel-body {
+                p {
+                    margin: 0;
+                }
+            }
+        }
+
         .moment {
             width: 100%;
             padding-bottom: 10px;
@@ -153,42 +162,46 @@ body.status-page {
             .panel {
                 margin: 0;
                 border-radius: 2px;
-            }
-            .panel-body {
-                border-top: 1px solid #eee;
-                p {
-                    margin: 0;
-                    font-size: 1em;
-                    // font-weight: normal;
+
+                &.panel-message {
+                    border: 1px solid #e8e8e8;
+                    .date {
+                        color: darken(#c7c7c7, 20%);
+                    }
+
+                    &:before {
+                        position: absolute;
+                        top: 16px;
+                        left: 1px;
+                        display: inline-block;
+                        border-top: 15px solid transparent;
+                        border-left: 0 solid #e8e8e8;
+                        border-right: 15px solid #e8e8e8;
+                        border-bottom: 15px solid transparent;
+                        content: " ";
+                    }
+
+                    &:after {
+                        position: absolute;
+                        top: 17px;
+                        left: 2px;
+                        display: inline-block;
+                        border-top: 14px solid transparent;
+                        border-left: 0 solid #fff;
+                        border-right: 14px solid #fff;
+                        border-bottom: 14px solid transparent;
+                        content: " ";
+                    }
                 }
-            }
-            .panel-message {
-                border: 1px solid #e8e8e8;
-                .date {
-                    color: darken(#c7c7c7, 20%);
+
+                .panel-body {
+                    border-top: 1px solid #eee;
+                    p {
+                        margin: 0;
+                        font-size: 1em;
+                        // font-weight: normal;
+                    }
                 }
-            }
-            .panel-message:before {
-                position: absolute;
-                top: 16px;
-                left: 1px;
-                display: inline-block;
-                border-top: 15px solid transparent;
-                border-left: 0 solid #e8e8e8;
-                border-right: 15px solid #e8e8e8;
-                border-bottom: 15px solid transparent;
-                content: " ";
-            }
-            .panel-message:after {
-                position: absolute;
-                top: 17px;
-                left: 2px;
-                display: inline-block;
-                border-top: 14px solid transparent;
-                border-left: 0 solid #fff;
-                border-right: 14px solid #fff;
-                border-bottom: 14px solid transparent;
-                content: " ";
             }
         }
     }

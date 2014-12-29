@@ -33,7 +33,11 @@
             </div>
         </div>
         @empty
-        <p>{{ Lang::get('cachet.incident.none') }}</p>
+        <div class='panel panel-message'>
+            <div class='panel-body'>
+                <p>{{ Lang::get('cachet.incident.none') }}</p>
+            </div>
+        </div>
         @endforelse
     </div>
 </div>
