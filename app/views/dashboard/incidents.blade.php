@@ -16,7 +16,7 @@
                 @if ($incidents->count() === 0)
                 <div class="list-group-item">Woah! No incidents, your doing well!</div>
                 @else
-                <p>You have <strong>{{ $incidents->count() }}</strong> incidents.</p>
+                <p class='lead'>You have <strong>{{ $incidents->count() }}</strong> logged incidents.</p>
                 @endif
 
                 <div class="striped-list">
