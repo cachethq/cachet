@@ -22,10 +22,8 @@
                         </div>
                     </fieldset>
 
-                    <h4 class="sub-header">Server</h4>
-                    <fieldset>
-
-                    </fieldset>
+                    <!-- <h4 class="sub-header">Server</h4>
+                    <fieldset></fieldset> -->
 
                     <h4 class="sub-header">Security</h4>
                     <fieldset>
@@ -38,10 +36,8 @@
                         </div>
                     </fieldset>
 
-                    <h4>Mail</h4>
-                    <fieldset>
-
-                    </fieldset>
+                    <!-- <h4 class='sub-header'>Mail</h4>
+                    <fieldset></fieldset> -->
 
                     <h4 class="sub-header">Theme</h4>
                     <fieldset>
