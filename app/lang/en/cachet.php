@@ -26,13 +26,14 @@ return [
         'bad'  => 'Some systems are experiencing issues.',
     ],
     // Other
-    'powered_by'   => ':app Status Page is powered by <a href="https://cachethq.github.io">Cachet</a>.',
-    'login'        => 'Login',
-    'logout'       => 'Logout',
-    'logged_in'    => 'You\'re logged in.',
-    'setup'        => 'Setup Cachet',
-    'no_incidents' => 'No incidents reported.',
-    'dashboard'    => [
+    'powered_by'     => ':app Status Page is powered by <a href="https://cachethq.github.io">Cachet</a>.',
+    'login_message'  => 'Welcome Back!',
+    'login'          => 'Login',
+    'logout'         => 'Logout',
+    'logged_in'      => 'You\'re logged in.',
+    'setup'          => 'Setup Cachet',
+    'no_incidents'   => 'No incidents reported.',
+    'dashboard'      => [
         'dashboard'                => 'Dashboard',
         'components'               => 'Components',
         'component-add'            => 'Add Component',

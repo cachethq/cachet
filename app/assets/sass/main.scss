@@ -6,13 +6,19 @@ html, body {
 	height: 100%;
 }
 
+// Module overrides
 @import "modules/tabs";
+@import "modules/forms";
 
+// Styles for partials
 @import "partials/base";
 @import "partials/wrapper";
 @import "partials/navbar";
 @import "partials/sidebar";
 @import "partials/content";
+
+// Styles for specific page
+@import "pages/login";
 
 // Status Page will need to override certain styles.
 @import "status-page";

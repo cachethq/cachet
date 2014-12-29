@@ -1,12 +1,14 @@
-@extends('layout.dashboard')
+@extends('layout.clean')
 
 @section('content')
-    @include('partials.dashboard.nav')
-    <div class='row'>
-        <div class='col-md-6 col-md-offset-3'>
+    <div class='login row'>
+        <div class='col-xs-12 col-xs-offset-0 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 text-center'>
+            <div class="welcome-logo">
+                <img class="logo" height="50" src="{{ url('img/cachet-logo.svg') }}" alt="Cachet"/>
+            </div>
             {{ Form::open() }}
             <fieldset>
-                <legend>{{ Lang::get('cachet.login') }}</legend>
+                <legend>{{ Lang::get('cachet.login_message') }}</legend>
 
                 @if(Session::has('error'))
                 <span class='text-danger'>{{ Session::get('error') }}</span>
@@ -26,7 +28,7 @@
                 </div>
                 <hr />
                 <div class='form-group'>
-                    <button type='submit' class='btn btn-default'>{{ Lang::get('cachet.login') }}</button>
+                    <button type='submit' class='btn btn-lg btn-block btn-success'>{{ Lang::get('cachet.login') }}</button>
                 </div>
             </fieldset>
             {{ Form::close() }}

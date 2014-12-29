@@ -1,0 +1,15 @@
+.form-control {
+    @include box-shadow(none);
+}
+
+input.form-control {
+    padding: 2px 8px;
+    height: 40px;
+}
+
+.form-control:focus {
+    padding: 2px 8px;
+    border: 1px solid #999;
+    outline: 0;
+    @include box-shadow(none);
+}
