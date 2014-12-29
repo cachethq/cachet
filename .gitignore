@@ -7,6 +7,7 @@
 .env.*.php
 .env.php
 config.codekit
+!.env.heroku.php
 
 # Assets development
 /node_modules
@@ -18,6 +19,3 @@ public/js/
 npm-debug.log
 .vagrant/
 tests/_output/*
-
-# Heroku
-!.env.heroku.php
