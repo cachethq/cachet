@@ -10,10 +10,7 @@ class DashboardController extends Controller
     public function showDashboard()
     {
         // TODO: Find steps needed to complete setup.
-        $components = Component::all();
-        return View::make('dashboard.index')->with([
-            'components' => $components,
-        ]);
+        return View::make('dashboard.index')->withComponents(Component::all());
     }
 
     /**
@@ -23,9 +20,7 @@ class DashboardController extends Controller
      */
     public function showMetrics()
     {
-        return View::make('dashboard.metrics')->with([
-            'pageTitle' => 'Metrics - Dashboard',
-        ]);
+        return View::make('dashboard.metrics')->withPageTitle('Metrics - Dashboard');
     }
 
     /**
@@ -35,8 +30,6 @@ class DashboardController extends Controller
      */
     public function showNotifications()
     {
-        return View::make('dashboard.notifications')->with([
-            'pageTitle' => 'Notifications - Dashboard',
-        ]);
+        return View::make('dashboard.notifications')->withPageTitle('Notifications - Dashboard');
     }
 }
