@@ -2,13 +2,19 @@
 <div class="sidebar">
     <div class='sidebar-inner'>
         <div class="profile">
-            <div class="avatar pull-left">
-                <a href="{{ URL::to('dashboard/user') }}">
-                    <img src="{{ Auth::user()->gravatar }}" alt="">
-                </a>
-            </div>
-            <div class="profile pull-left">
-                <div class="username">{{ Auth::user()->username }}</div>
+            <div class='row'>
+                <div class='col-xs-3'>
+                    <div class="avatar">
+                        <a href="{{ URL::to('dashboard/user') }}">
+                            <img src="{{ Auth::user()->gravatar }}" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class='col-xs-9'>
+                    <div class="profile pull-left">
+                        <div class="username">{{ Auth::user()->username }}</div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="clearfix"></div>

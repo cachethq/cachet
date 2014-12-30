@@ -13,17 +13,20 @@ body.dashboard {
 
 			.profile {
 				padding: 20px;
-				margin-bottom: 20px;
-				.avatar {
-					width: 70px;
-					img {
-						border-radius: 50%;
-						width: 60px;
-					}
-				}
-				.profile {
-					color: $sidebar-text-color;
-				}
+                margin-bottom: 0;
+                .avatar {
+                    width: 70px;
+                    img {
+                        border-radius: 50%;
+                        width: 60px;
+                    }
+                }
+                .profile {
+                    &.username {
+                        word-break: break-all;
+                        color: $sidebar-text-color;
+    				}
+                }
 			}
             .quick-add-incident {
                 @extend text-center;
