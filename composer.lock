@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2b05058fab4b2fa831e500985b506c1f",
+    "hash": "def3f0fcb615467e21e9eccf44a39a73",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -767,6 +767,59 @@
                 "zf2"
             ],
             "time": "2014-10-26 09:05:09"
+        },
+        {
+            "name": "graham-campbell/throttle",
+            "version": "v2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/GrahamCampbell/Laravel-Throttle.git",
+                "reference": "0c75b729efa7dea6ec8e4182bf3f5ebe0cb9f003"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Throttle/zipball/0c75b729efa7dea6ec8e4182bf3f5ebe0cb9f003",
+                "reference": "0c75b729efa7dea6ec8e4182bf3f5ebe0cb9f003",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/cache": "~4.1",
+                "illuminate/http": "~4.1",
+                "illuminate/support": "~4.1",
+                "php": ">=5.4.7"
+            },
+            "require-dev": {
+                "graham-campbell/testbench": "~1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "GrahamCampbell\\Throttle\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Graham Campbell",
+                    "email": "graham@mineuk.com"
+                }
+            ],
+            "description": "Throttle Is A Rate Limiter For Laravel 4.1/4.2",
+            "keywords": [
+                "Graham Campbell",
+                "GrahamCampbell",
+                "Laravel Throttle",
+                "Laravel-Throttle",
+                "framework",
+                "laravel",
+                "rate limit",
+                "throttle",
+                "throttling"
+            ],
+            "time": "2014-10-30 13:45:51"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -3477,6 +3530,7 @@
     "minimum-stability": "stable",
     "stability-flags": [],
     "prefer-stable": false,
+    "prefer-lowest": false,
     "platform": {
         "php": ">=5.4"
     },

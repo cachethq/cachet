@@ -4,6 +4,7 @@ class DashComponentController extends Controller
 {
     /**
      * Shows the components view.
+     *
      * @return \Illuminate\View\View
      */
     public function showComponents()
@@ -18,7 +19,9 @@ class DashComponentController extends Controller
 
     /**
      * Shows the edit component view.
-     * @param  Component             $component
+     *
+     * @param \Component $component
+     *
      * @return \Illuminate\View\View
      */
     public function showEditComponent(Component $component)
@@ -31,6 +34,9 @@ class DashComponentController extends Controller
 
     /**
      * Updates a component.
+     *
+     * @param \Component $component
+     *
      * @return \Illuminate\Http\RedirectResponse
      */
     public function updateComponentAction(Component $component)
@@ -43,6 +49,7 @@ class DashComponentController extends Controller
 
     /**
      * Shows the add component view.
+     *
      * @return \Illuminate\View\View
      */
     public function showAddComponent()
@@ -54,6 +61,7 @@ class DashComponentController extends Controller
 
     /**
      * Creates a new component.
+     *
      * @return \Illuminate\Http\RedirectResponse
      */
     public function createComponentAction()
@@ -66,7 +74,9 @@ class DashComponentController extends Controller
 
     /**
      * Deletes a given component.
-     * @param  Component                         $component
+     *
+     * @param \Component $component
+     *
      * @return \Illuminate\Http\RedirectResponse
      */
     public function deleteComponentAction(Component $component)

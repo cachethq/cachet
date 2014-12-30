@@ -4,6 +4,7 @@ class DashSettingsController extends Controller
 {
     /**
      * Shows the settings view.
+     *
      * @return \Illuminate\View\View
      */
     public function showSettings()
@@ -15,6 +16,7 @@ class DashSettingsController extends Controller
 
     /**
      * Updates the statsu page settings.
+     *
      * @return \Illuminate\View\View
      */
     public function postSettings()

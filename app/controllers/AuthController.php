@@ -1,12 +1,13 @@
 <?php
 
 /**
- * Logs users into their account
+ * Logs users into their account.
  */
 class AuthController extends Controller
 {
     /**
      * Shows the login view.
+     *
      * @return \Illuminate\View\View
      */
     public function showLogin()
@@ -16,6 +17,7 @@ class AuthController extends Controller
 
     /**
      * Logs the user in.
+     *
      * @return \Illuminate\Http\RedirectResponse
      */
     public function postLogin()
@@ -23,6 +25,8 @@ class AuthController extends Controller
         if (Auth::attempt(Input::only(['email', 'password']))) {
             return Redirect::intended('dashboard');
         } else {
+            Throttle::hit(Request::instance(), 10, 10);
+
             return Redirect::back()
                            ->withInput(Input::except('password'))
                            ->with('error', 'Invalid email or password');
@@ -31,6 +35,7 @@ class AuthController extends Controller
 
     /**
      * Logs the user out, deleting their session etc.
+     *
      * @return \Illuminate\Http\RedirectResponse
      */
     public function logoutAction()

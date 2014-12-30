@@ -4,6 +4,7 @@ class DashUserController extends Controller
 {
     /**
      * Shows the user view.
+     *
      * @return \Illuminate\View\View
      */
     public function showUser()
@@ -15,6 +16,7 @@ class DashUserController extends Controller
 
     /**
      * Updates the current user.
+     *
      * @return \Illuminate\View\View
      */
     public function postUser()

@@ -3,10 +3,19 @@
 class HomeController extends Controller
 {
     /**
-     * @var Component $component
+     * The component instance.
+     *
+     * @var \Component $component
      */
     protected $component;
 
+    /**
+     * Create a new home controller instance.
+     *
+     * @param \Component $component
+     *
+     * @return void
+     */
     public function __construct(Component $component)
     {
         $this->component = $component;
@@ -14,6 +23,7 @@ class HomeController extends Controller
 
     /**
      * Returns the rendered Blade templates.
+     *
      * @return \Illuminate\View\View
      */
     public function showIndex()

@@ -4,6 +4,7 @@ class DashIncidentController extends Controller
 {
     /**
      * Shows the incidents view.
+     *
      * @return \Illuminate\View\View
      */
     public function showIncidents()
@@ -18,6 +19,7 @@ class DashIncidentController extends Controller
 
     /**
      * Shows the add incident view.
+     *
      * @return \Illuminate\View\View
      */
     public function showAddIncident()
@@ -29,6 +31,7 @@ class DashIncidentController extends Controller
 
     /**
      * Shows the add incident template view.
+     *
      * @return \Illuminate\View\View
      */
     public function showAddIncidentTemplate()
@@ -40,6 +43,7 @@ class DashIncidentController extends Controller
 
     /**
      * Creates a new incident template.
+     *
      * @return \Illuminate\Http\RedirectResponse
      */
     public function createIncidentTemplateAction()
@@ -52,6 +56,7 @@ class DashIncidentController extends Controller
 
     /**
      * Creates a new incident.
+     *
      * @return \Illuminate\Http\RedirectResponse
      */
     public function createIncidentAction()
@@ -64,7 +69,9 @@ class DashIncidentController extends Controller
 
     /**
      * Deletes a given incident.
-     * @param  Incident                          $incident
+     *
+     * @param \Incident $incident
+     *
      * @return \Illuminate\Http\RedirectResponse
      */
     public function deleteIncidentAction(Incident $incident)

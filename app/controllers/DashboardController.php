@@ -4,6 +4,7 @@ class DashboardController extends Controller
 {
     /**
      * Shows the dashboard view.
+     *
      * @return \Illuminate\View\View
      */
     public function showDashboard()
@@ -14,6 +15,7 @@ class DashboardController extends Controller
 
     /**
      * Shows the metrics view.
+     *
      * @return \Illuminate\View\View
      */
     public function showMetrics()
@@ -25,6 +27,7 @@ class DashboardController extends Controller
 
     /**
      * Shows the notifications view.
+     *
      * @return \Illuminate\View\View
      */
     public function showNotifications()

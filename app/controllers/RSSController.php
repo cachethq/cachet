@@ -4,22 +4,23 @@ class RSSController extends Controller
 {
     /**
      * Generates an RSS feed of all incidents.
+     *
      * @return \Illuminate\Http\Response
      */
     public function feedAction()
     {
         $feed = RSS::feed('2.0', 'UTF-8');
         $feed->channel([
-            'title'         => Setting::get('app_name'),
-            'description'   => 'Status Feed',
-            'link'          => Setting::get('app_domain'),
+            'title'       => Setting::get('app_name'),
+            'description' => 'Status Feed',
+            'link'        => Setting::get('app_domain'),
         ]);
 
         Incident::get()->map(function ($incident) use ($feed) {
-            $componentName = null;
-            $component = $incident->component;
-            if ($component) {
-                $componentName = $component->name;
+            if ($incident->component) {
+                $componentName = $incident->component->name;
+            } else {
+                $componentName = null;
             }
 
             $feed->item([
@@ -32,8 +33,6 @@ class RSSController extends Controller
             ]);
         });
 
-        return Response::make($feed, 200, [
-            'Content-Type' => 'text/xml'
-        ]);
+        return Response::make($feed, 200, ['Content-Type' => 'text/xml']);
     }
 }
