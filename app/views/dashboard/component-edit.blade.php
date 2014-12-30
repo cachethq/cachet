@@ -38,6 +38,16 @@
                             <label>Description</label>
                             <textarea name='component[description]' class='form-control' rows='5'>{{ $component->description }}</textarea>
                         </div>
+                        <hr />
+                        <div class='form-group'>
+                            <label>Link</label>
+                            <input type='text' name='component[link]' class='form-control' value='{{ $component->link }}' />
+                        </div>
+                        <div class='form-group'>
+                            <label>Tags</label>
+                            <textarea name='component[tags]' class='form-control' rows='2'>{{ $component->tags }}</textarea>
+                            <span class='help-block'>Comma separated.</span>
+                        </div>
                     </fieldset>
 
                     <button type="submit" class="btn btn-success">Save Component</button>

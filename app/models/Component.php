@@ -11,9 +11,17 @@ class Component extends Eloquent implements \Dingo\Api\Transformer\Transformable
         'user_id' => 'integer|required',
         'name'    => 'required',
         'status'  => 'integer',
+        'link'    => 'url'
     ];
 
-    protected $fillable = ['name', 'description', 'status', 'user_id'];
+    protected $fillable = [
+        'name',
+        'description',
+        'status',
+        'user_id',
+        'tags',
+        'link'
+    ];
 
     /**
      * Lookup all of the incidents reported on the component.
