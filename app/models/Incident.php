@@ -46,10 +46,10 @@ class Incident extends Eloquent implements \Dingo\Api\Transformer\TransformableI
     public function getIconAttribute()
     {
         switch ($this->status) {
-            case 1: return 'fa fa-flag';
-            case 2: return 'fa fa-warning';
-            case 3: return 'fa fa-eye';
-            case 4: return 'fa fa-check';
+            case 1: return 'ion ion-flag';
+            case 2: return 'ion ion-alert';
+            case 3: return 'ion ion-eye';
+            case 4: return 'ion ion-checkmark';
         }
     }
 

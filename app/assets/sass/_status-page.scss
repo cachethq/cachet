@@ -124,23 +124,23 @@ body.status-page {
                 position: absolute;
                 left: 25px;
                 top: 14px;
-                .fa {
+                .ion {
                     position: absolute;
-                    &.fa-flag {
+                    &.ion-flag {
                         top: 10px;
-                        left: 9px;
+                        left: 13px;
                     }
-                    &.fa-warning {
+                    &.ion-alert {
                         top: 10px;
-                        left: 9px;
+                        left: 15px;
                     }
-                    &.fa-eye {
+                    &.ion-eye {
                         top: 10px;
-                        left: 9px;
+                        left: 10px;
                     }
-                    &.fa-check {
+                    &.ion-checkmark {
                         top: 10px;
-                        left: 9px;
+                        left: 11px;
                     }
                 }
                 &.status-1 {

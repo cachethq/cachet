@@ -4823,20 +4823,20 @@ body.status-page {
       position: absolute;
       left: 25px;
       top: 14px; }
-      body.status-page .timeline .moment .icon .fa {
+      body.status-page .timeline .moment .icon .ion {
         position: absolute; }
-        body.status-page .timeline .moment .icon .fa.fa-flag {
+        body.status-page .timeline .moment .icon .ion.ion-flag {
           top: 10px;
-          left: 9px; }
-        body.status-page .timeline .moment .icon .fa.fa-warning {
+          left: 13px; }
+        body.status-page .timeline .moment .icon .ion.ion-alert {
           top: 10px;
-          left: 9px; }
-        body.status-page .timeline .moment .icon .fa.fa-eye {
+          left: 15px; }
+        body.status-page .timeline .moment .icon .ion.ion-eye {
           top: 10px;
-          left: 9px; }
-        body.status-page .timeline .moment .icon .fa.fa-check {
+          left: 10px; }
+        body.status-page .timeline .moment .icon .ion.ion-checkmark {
           top: 10px;
-          left: 9px; }
+          left: 11px; }
       body.status-page .timeline .moment .icon.status-1 {
         color: #FF8800; }
       body.status-page .timeline .moment .icon.status-2 {
