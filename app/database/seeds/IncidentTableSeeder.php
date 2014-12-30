@@ -45,6 +45,7 @@ class IncidentTableSeeder extends Seeder
 
         foreach ($defaultIncidents as $incident) {
             Incident::create($incident);
+            usleep(1000);
         }
     }
 }
