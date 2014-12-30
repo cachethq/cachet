@@ -2,7 +2,6 @@
 
 class ComponentControllerTest extends TestCase
 {
-
     public function setUp()
     {
         $this->repo = Mockery::mock('CachetHQ\Cachet\Repositories\Component\ComponentRepository');

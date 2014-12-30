@@ -16,6 +16,7 @@ class Metric extends Eloquent implements \Dingo\Api\Transformer\TransformableInt
 
     /**
      * Metrics contain many metric points.
+     *
      * @return Illuminate\Database\Eloquent\Builder
      */
     public function points()
@@ -25,6 +26,7 @@ class Metric extends Eloquent implements \Dingo\Api\Transformer\TransformableInt
 
     /**
      * Determines whether a chart should be shown.
+     *
      * @return bool
      */
     public function getShouldDisplayAttribute()
@@ -34,6 +36,7 @@ class Metric extends Eloquent implements \Dingo\Api\Transformer\TransformableInt
 
     /**
      * Get the transformer instance.
+     *
      * @return CachetHQ\Cachet\Transformers\MetricTransformer
      */
     public function getTransformer()

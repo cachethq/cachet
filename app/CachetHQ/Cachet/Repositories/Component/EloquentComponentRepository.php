@@ -7,7 +7,6 @@ use Component;
 
 class EloquentComponentRepository extends EloquentRepository implements ComponentRepository
 {
-
     protected $model;
 
     public function __construct(Component $model)

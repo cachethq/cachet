@@ -36,7 +36,7 @@ Route::group(['before' => 'auth', 'prefix' => 'dashboard'], function () {
 
     // Internal API.
     // This should only be used for making requests within the dashboard.
-    Route::group(['prefix' => 'api'], function() {
+    Route::group(['prefix' => 'api'], function () {
         Route::post('components/{component}', 'DashAPIController@postUpdateComponent');
     });
 });

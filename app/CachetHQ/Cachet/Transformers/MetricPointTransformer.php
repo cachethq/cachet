@@ -7,7 +7,6 @@ use MetricPoint;
 
 class MetricPointTransformer extends TransformerAbstract
 {
-
     public function transform(MetricPoint $metricPoint)
     {
         return [

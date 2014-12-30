@@ -12,6 +12,7 @@ class WebHook extends Eloquent
 
     /**
      * Returns all responses for a WebHook.
+     *
      * @return Illuminate\Database\Eloquent\Builder
      */
     public function response()
@@ -21,7 +22,9 @@ class WebHook extends Eloquent
 
     /**
      * Returns all active hooks.
-     * @param  Illuminate\Database\Eloquent\Builder $query
+     *
+     * @param Illuminate\Database\Eloquent\Builder $query
+     *
      * @return Illuminate\Database\Eloquent\Builder
      */
     public function scopeActive($query)
@@ -31,6 +34,7 @@ class WebHook extends Eloquent
 
     /**
      * Setups a Ping event that is fired upon a web hook.
+     *
      * @return array result of the ping
      */
     public function ping()
@@ -40,8 +44,10 @@ class WebHook extends Eloquent
 
     /**
      * Fires the actual web hook event.
-     * @param  string $eventType the event to send X-Cachet-Event
-     * @param  mixed  $data      Data to send to the Web Hook
+     *
+     * @param string $eventType the event to send X-Cachet-Event
+     * @param mixed  $data      Data to send to the Web Hook
+     *
      * @return object
      */
     public function fire($eventType, $data = null)
@@ -81,8 +87,10 @@ class WebHook extends Eloquent
 
     /**
      * Returns a human readable request type name.
+     *
      * @throws Exception
-     * @return string    HEAD, GET, POST, DELETE, PATCH, PUT etc
+     *
+     * @return string HEAD, GET, POST, DELETE, PATCH, PUT etc
      */
     public function getRequestMethodAttribute()
     {

@@ -9,7 +9,6 @@ use Input;
 
 class IncidentController extends Controller
 {
-
     use ControllerTrait;
 
     protected $incident;
@@ -20,7 +19,7 @@ class IncidentController extends Controller
     }
 
     /**
-     * Get all incidents
+     * Get all incidents.
      *
      * @return \Illuminate\Database\Eloquent\Collection
      */
@@ -30,7 +29,7 @@ class IncidentController extends Controller
     }
 
     /**
-     * Get a single incident
+     * Get a single incident.
      *
      * @param int $id
      *
@@ -42,7 +41,7 @@ class IncidentController extends Controller
     }
 
     /**
-     * Create a new incident
+     * Create a new incident.
      *
      * @return Incident
      */
@@ -52,7 +51,7 @@ class IncidentController extends Controller
     }
 
     /**
-     * Update an existing incident
+     * Update an existing incident.
      *
      * @param int $id
      *

@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 abstract class EloquentRepository
 {
-
     /**
-     * Returns all models
+     * Returns all models.
+     *
      * @return object
      */
     public function all()
@@ -18,9 +18,11 @@ abstract class EloquentRepository
     }
 
     /**
-     * Returns an object with related relationships
-     * @param  id                            $id
-     * @param  array                         $with Array of model relationships
+     * Returns an object with related relationships.
+     *
+     * @param id    $id
+     * @param array $with Array of model relationships
+     *
      * @return object|ModelNotFoundException
      */
     public function with($id, array $with = [])
@@ -29,9 +31,11 @@ abstract class EloquentRepository
     }
 
     /**
-     * Sets the model to query against a user id
-     * @param  integer $id
-     * @param  string  $column
+     * Sets the model to query against a user id.
+     *
+     * @param int    $id
+     * @param string $column
+     *
      * @return $this
      */
     public function withAuth($id, $column = 'user_id')
@@ -42,8 +46,10 @@ abstract class EloquentRepository
     }
 
     /**
-     * Finds a model by ID
-     * @param  int    $id
+     * Finds a model by ID.
+     *
+     * @param int $id
+     *
      * @return object
      */
     public function find(int $id)
@@ -52,8 +58,10 @@ abstract class EloquentRepository
     }
 
     /**
-     * Finds a model by ID
-     * @param  integer                       $id
+     * Finds a model by ID.
+     *
+     * @param int $id
+     *
      * @return object|ModelNotFoundException
      */
     public function findOrFail($id)
@@ -62,10 +70,12 @@ abstract class EloquentRepository
     }
 
     /**
-     * Finds a model by type
-     * @param  string                        $key
-     * @param  string                        $value
-     * @param  array                         $columns
+     * Finds a model by type.
+     *
+     * @param string $key
+     * @param string $value
+     * @param array  $columns
+     *
      * @return object|ModelNotFoundException
      */
     public function findByOrFail($key, $value, $columns = ['*'])
@@ -78,10 +88,12 @@ abstract class EloquentRepository
     }
 
     /**
-     * Counts the number of rows returned
-     * @param  string  $key
-     * @param  string  $value
-     * @return integer
+     * Counts the number of rows returned.
+     *
+     * @param string $key
+     * @param string $value
+     *
+     * @return int
      */
     public function count($key = null, $value = null)
     {
@@ -93,7 +105,8 @@ abstract class EloquentRepository
     }
 
     /**
-     * Deletes a model by ID
+     * Deletes a model by ID.
+     *
      * @param inetegr $id
      */
     public function destroy($id)
@@ -102,8 +115,10 @@ abstract class EloquentRepository
     }
 
     /**
-     * Validate a given model with Watson validation
-     * @param  object    $model
+     * Validate a given model with Watson validation.
+     *
+     * @param object $model
+     *
      * @return Exception
      */
     public function validate($model)
@@ -116,9 +131,11 @@ abstract class EloquentRepository
     }
 
     /**
-     * Validate whether a model has a correct relationship
-     * @param  object    $model
-     * @param  string    $relationship Name of the relationship to validate against
+     * Validate whether a model has a correct relationship.
+     *
+     * @param object $model
+     * @param string $relationship Name of the relationship to validate against
+     *
      * @return Exception
      */
     public function hasRelationship($model, $relationship)

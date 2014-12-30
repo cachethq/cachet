@@ -6,8 +6,10 @@ class Setting extends Eloquent
 
     /**
      * Returns a setting from the database.
-     * @param  string $settingName
-     * @param  bool   $checkEnv
+     *
+     * @param string $settingName
+     * @param bool   $checkEnv
+     *
      * @return string
      */
     public static function get($settingName, $checkEnv = true)
@@ -33,9 +35,12 @@ class Setting extends Eloquent
     }
 
     /**
-     * Throws an Exception
-     * @param  string    $setting
+     * Throws an Exception.
+     *
+     * @param string $setting
+     *
      * @throws Exception
+     *
      * @return void
      */
     public static function unknownSettingException($setting)

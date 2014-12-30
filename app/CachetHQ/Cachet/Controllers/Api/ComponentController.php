@@ -9,7 +9,6 @@ use Input;
 
 class ComponentController extends Controller
 {
-
     use ControllerTrait;
 
     protected $component;
@@ -20,7 +19,7 @@ class ComponentController extends Controller
     }
 
     /**
-     * Get all components
+     * Get all components.
      *
      * @return \Illuminate\Database\Eloquent\Collection
      */
@@ -30,7 +29,7 @@ class ComponentController extends Controller
     }
 
     /**
-     * Get a single component
+     * Get a single component.
      *
      * @param int $id
      *
@@ -42,8 +41,10 @@ class ComponentController extends Controller
     }
 
     /**
-     * Return a component with incidents
-     * @param  int        $id Component ID
+     * Return a component with incidents.
+     *
+     * @param int $id Component ID
+     *
      * @return \Component
      */
     public function getComponentIncidents($id)
@@ -52,7 +53,7 @@ class ComponentController extends Controller
     }
 
     /**
-     * Create a new component
+     * Create a new component.
      *
      * @return \Component
      */

@@ -7,7 +7,6 @@ use RecursiveDirectoryIterator;
 
 class RoutingServiceProvider extends ServiceProvider
 {
-
     public function register()
     {
     }
@@ -18,7 +17,8 @@ class RoutingServiceProvider extends ServiceProvider
     }
 
     /**
-     * Organise Routes
+     * Organise Routes.
+     *
      * @param string $app
      */
     private function routesInDirectory($app = '')

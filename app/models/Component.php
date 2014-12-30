@@ -11,7 +11,7 @@ class Component extends Eloquent implements \Dingo\Api\Transformer\Transformable
         'user_id' => 'integer|required',
         'name'    => 'required',
         'status'  => 'integer',
-        'link'    => 'url'
+        'link'    => 'url',
     ];
 
     protected $fillable = [
@@ -20,11 +20,12 @@ class Component extends Eloquent implements \Dingo\Api\Transformer\Transformable
         'status',
         'user_id',
         'tags',
-        'link'
+        'link',
     ];
 
     /**
      * Lookup all of the incidents reported on the component.
+     *
      * @return Illuminate\Database\Eloquent\Relations
      */
     public function incidents()
@@ -34,6 +35,7 @@ class Component extends Eloquent implements \Dingo\Api\Transformer\Transformable
 
     /**
      * Looks up the human readable version of the status.
+     *
      * @return string
      */
     public function getHumanStatusAttribute()
@@ -43,6 +45,7 @@ class Component extends Eloquent implements \Dingo\Api\Transformer\Transformable
 
     /**
      * Get the transformer instance.
+     *
      * @return ComponentTransformer
      */
     public function getTransformer()
