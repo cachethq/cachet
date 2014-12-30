@@ -4648,7 +4648,9 @@ body.dashboard .sidebar {
         body.dashboard .sidebar .sidebar-inner ul li:last-child {
           border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
         body.dashboard .sidebar .sidebar-inner ul li.active {
-          background: white; }
+          background: #f6f8f8;
+          border-top: 1px solid #BED3EA;
+          border-bottom: 1px solid #BED3EA; }
           body.dashboard .sidebar .sidebar-inner ul li.active a {
             color: #333; }
         body.dashboard .sidebar .sidebar-inner ul li a {
@@ -4683,6 +4685,42 @@ body.dashboard .sidebar {
         text-align: center;
         padding: 6px 0;
         background: #fff; }
+body.dashboard .sub-sidebar {
+  left: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  width: 22%;
+  background: #fcfcfc;
+  border-right: 1px solid #E8ECF1; }
+  body.dashboard .sub-sidebar h3 {
+    margin: 0;
+    text-align: center;
+    font-size: 19px;
+    padding: 22px 0; }
+  body.dashboard .sub-sidebar ul.menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; }
+    body.dashboard .sub-sidebar ul.menu li a {
+      color: #666;
+      display: block;
+      padding: 13px 30px;
+      font-size: 15px;
+      -webkit-transition: all 0.2s linear;
+              transition: all 0.2s linear;
+      text-decoration: none; }
+      body.dashboard .sub-sidebar ul.menu li a.active {
+        color: #6787DA; }
+      body.dashboard .sub-sidebar ul.menu li a:hover {
+        color: #6787DA; }
+body.dashboard .content-panel {
+  top: 0;
+  position: relative;
+  width: 78%;
+  margin-left: 22%;
+  padding: 24px 50px;
+  padding-bottom: 80px; }
 
 body.dashboard .content {
   position: relative;

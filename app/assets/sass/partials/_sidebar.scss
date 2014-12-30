@@ -1,18 +1,18 @@
 body.dashboard {
-	.sidebar {
-		display: table-cell;
-		vertical-align: top;
-		width: $sidebar-normal-width;
-		background: $sidebar-background-color;
+    .sidebar {
+        display: table-cell;
+        vertical-align: top;
+        width: $sidebar-normal-width;
+        background: $sidebar-background-color;
         @include box-shadow($sidebar-border-shadow);
-		position: relative;
-		z-index: 999;
+        position: relative;
+        z-index: 999;
 
-		.sidebar-inner {
-			position: relative;
+        .sidebar-inner {
+            position: relative;
 
-			.profile {
-				padding: 20px;
+            .profile {
+                padding: 20px;
                 margin-bottom: 0;
                 .avatar {
                     width: 70px;
@@ -25,55 +25,57 @@ body.dashboard {
                     &.username {
                         word-break: break-all;
                         color: $sidebar-text-color;
-    				}
+                    }
                 }
-			}
+            }
             .quick-add-incident {
                 @extend text-center;
                 padding: 10px;
             }
-			ul {
-				clear: both;
-				margin: 0;
-				padding: 0;
-				list-style: none;
+            ul {
+                clear: both;
+                margin: 0;
+                padding: 0;
+                list-style: none;
 
-				li {
+                li {
                     font-size: $sidebar-text-size;
-					&:last-child {
-						border-bottom: $sidebar-border-color;
-					}
-					&.active {
-						background: lighten($sidebar-background-color, 10%);
-						a {
-							color: $sidebar-text-active-color;
-						}
-					}
-					a {
-						display: block;
-						padding: 15px;
-						border-top: $sidebar-border-color;
-						color: $sidebar-text-color;
-						i {
+                    &:last-child {
+                        border-bottom: $sidebar-border-color;
+                    }
+                    &.active {
+                        background: lighten($sidebar-background-color, 2%);
+                        border-top: 1px solid #BED3EA;
+                        border-bottom: 1px solid #BED3EA;
+                        a {
+                            color: $sidebar-text-active-color;
+                        }
+                    }
+                    a {
+                        display: block;
+                        padding: 15px;
+                        border-top: $sidebar-border-color;
+                        color: $sidebar-text-color;
+                        i {
                             font-size: 18px;
                             min-width: 17px;
                             text-align: center;
                             position: relative;
                             top: 1px;
-						}
-						&:hover {
-							text-decoration: none;
-						}
-					}
+                        }
+                        &:hover {
+                            text-decoration: none;
+                        }
+                    }
 
-					&.sub-nav-item {
-						a {
-							padding-left: 40px;
-						}
-					}
-				}
-			}
-		}
+                    &.sub-nav-item {
+                        a {
+                            padding-left: 40px;
+                        }
+                    }
+                }
+            }
+        }
         .bottom-menu-sidebar {
             position: fixed;
             bottom: 0;
@@ -94,5 +96,56 @@ body.dashboard {
                 }
             }
         }
-	}
+    }
+
+    .sub-sidebar {
+        left: 0;
+        top: 0;
+        bottom: 0;
+        position: absolute;
+        width: 22%;
+        background: #fcfcfc;
+        border-right: 1px solid #E8ECF1;
+
+        h3 {
+            margin: 0;
+            text-align: center;
+            font-size: 19px;
+            padding: 22px 0;
+        }
+
+        ul.menu {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                a {
+                    color: #666;
+                    display: block;
+                    padding: 13px 30px;
+                    font-size: 15px;
+                    transition: all 0.2s linear;
+                    text-decoration: none;
+
+                    &.active {
+                        color: #6787DA;
+                    }
+
+                    &:hover {
+                        color: #6787DA;
+                    }
+                }
+            }
+        }
+    }
+
+    .content-panel {
+        top: 0;
+        position: relative;
+        width: 78%;
+        margin-left: 22%;
+        padding: 24px 50px;
+        padding-bottom: 80px;
+    }
 }
