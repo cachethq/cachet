@@ -54,6 +54,17 @@ class Incident extends Eloquent implements \Dingo\Api\Transformer\TransformableI
     }
 
     /**
+     * Returns a Markdown formatted version of the status.
+     * @return string
+     */
+    public function getFormattedMessageAttribute()
+    {
+        $parseDown = new ParsedownExtra();
+
+        return $parseDown->text($this->message);
+    }
+
+    /**
      * Get the transformer instance.
      * @return CachetHQ\Cachet\Transformers\IncidentTransformer
      */

@@ -52,6 +52,7 @@
                         <div class="form-group">
                             <label>Message</label>
                             <textarea name="incident[message]" class="form-control" rows="5"></textarea>
+                            <span class='help-block'>You may also use Markdown.</span>
                         </div>
                     </fieldset>
 
