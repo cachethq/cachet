@@ -11,12 +11,9 @@ class DashAPIController extends Controller
     {
         $componentData = Input::all();
         unset($componentData['_token']);
-        if ($component->update($componentData))
-        {
+        if ($component->update($componentData)) {
             return $component;
-        }
-        else
-        {
+        } else {
             App::abort(500);
         }
     }
