@@ -30,7 +30,7 @@ class HomeController extends Controller
     {
         return View::make('index', [
             'components' => $this->component->all(),
-            'pageTitle' => Setting::get('app_name')
+            'pageTitle'  => Setting::get('app_name')
         ]);
     }
 }
