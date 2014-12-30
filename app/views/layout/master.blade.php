@@ -16,7 +16,7 @@
     <!-- Mobile IE allows us to activate ClearType technology for smoothing fonts for easy reading -->
     <meta http-equiv="cleartype" content="on">
 
-    <title>{{ isset($pageTitle) ? $pageTitle : Setting::get('app_name') }} | Cachet</title>
+    <title>{{ isset($pageTitle) ? $pageTitle : Setting::get('app_name') }}</title>
 
     <link href='//fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{ elixir('css/all.css') }}">
