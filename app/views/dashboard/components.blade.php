@@ -16,7 +16,7 @@
                 @forelse($components as $component)
                 <div class='row striped-list-item'>
                     <div class='col-md-8'>
-                        <strong>{{ $component->name }}</strong>
+                        <strong>{{ $component->name }}</strong> <small>{{ $component->humanStatus }}</small>
                         @if($component->description)
                         <p><small>{{ $component->description }}</small></p>
                         @endif
