@@ -10,7 +10,5 @@ class LoginThrottlingFilter
             return Redirect::back()
                 ->with('error', 'You have made too many login requests.');
         }
-
-        return $response;
     }
 }
