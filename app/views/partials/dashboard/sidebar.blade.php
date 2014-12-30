@@ -46,7 +46,7 @@
             </li>
             {{-- <li class="{{ Request::is('dashboard/metrics') ? 'active' : '' }}">
                 <a href="{{ URL::route('dashboard.metrics') }}">
-                    <i class="fa fa-area-chart"></i> {{ Lang::get('cachet.dashboard.metrics') }}
+                    <i class="ion ion-stats-bats"></i> {{ Lang::get('cachet.dashboard.metrics') }}
                 </a>
             </li>
             <li class="sub-nav-item">
@@ -56,7 +56,7 @@
             </li> --}}
             {{-- <li class="{{ Request::is('dashboard/notifications') ? 'active' : '' }}">
                 <a href="{{ URL::route('dashboard.notifications') }}">
-                    <i class="fa fa-envelope"></i> {{ Lang::get('cachet.dashboard.notifications') }}
+                    <i class="ion ion-email"></i> {{ Lang::get('cachet.dashboard.notifications') }}
                 </a>
             </li> --}}
             <li class="{{ Request::is('dashboard/settings') ? 'active' : '' }}">

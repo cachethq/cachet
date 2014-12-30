@@ -3,7 +3,7 @@
 @section('content')
 	<div class="header">
         <span class="uppercase">
-		    <i class="fa fa-dashboard"></i> {{ Lang::get('cachet.dashboard.incident-add') }}
+		    <i class="icon ion-plus"></i> {{ Lang::get('cachet.dashboard.incident-add') }}
         </span>
         > <small>Create an Incident Template</small>
 	</div>
