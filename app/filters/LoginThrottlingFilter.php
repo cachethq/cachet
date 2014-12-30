@@ -2,7 +2,7 @@
 
 class LoginThrottlingFilter
 {
-    public function filter($route, $request, $response)
+    public function filter($route, $request)
     {
         // check if we've reached the rate limit, but don't hit the throttle yet
         // we can hit the throttle later on in the if validation passes
