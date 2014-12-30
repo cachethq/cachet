@@ -23,7 +23,7 @@
                     @foreach($incidents as $incident)
                     <div class="row striped-list-item">
                         <div class="col-md-6">
-                            <strong>{{ $incident->name }}</strong>
+                            <i class='{{ $incident->icon }}'></i> <strong>{{ $incident->name }}</strong>
                             @if($incident->message)
                             <p><small>{{ Str::words($incident->message, 5) }}</small></p>
                             @endif
