@@ -33,7 +33,8 @@ return [
     'logged_in'      => 'You\'re logged in.',
     'setup'          => 'Setup Cachet',
     'no_incidents'   => 'No incidents reported.',
-    'dashboard'      => [
+    // Dashboard
+    'dashboard' => [
         'dashboard'                => 'Dashboard',
         'components'               => 'Components',
         'component-add'            => 'Add Component',
@@ -49,6 +50,7 @@ return [
         'search'                   => 'Search...',
         'user'                     => 'User',
         'help'                     => 'Help',
+        'logged_incidents'         => '{0} There are no incidents, good work.|You have logged one incident.|You have reported <strong>:count</strong> incidents.',
     ],
     // Forms
     'forms' => [

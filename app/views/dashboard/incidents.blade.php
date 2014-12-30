@@ -13,11 +13,7 @@
     <div class="content-wrapper">
         <div class="row">
             <div class="col-sm-12">
-                @if ($incidents->count() === 0)
-                <div class="list-group-item">Woah! No incidents, your doing well!</div>
-                @else
-                <p class='lead'>You have <strong>{{ $incidents->count() }}</strong> logged incidents.</p>
-                @endif
+                <p class='lead'>{{ Lang::choice('cachet.dashboard.logged_incidents', $incidents->count(), ['count' => $incidents->count()]) }}</p>
 
                 <div class="striped-list">
                     @foreach($incidents as $incident)
