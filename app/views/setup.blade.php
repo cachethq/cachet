@@ -3,7 +3,7 @@
 @section('content')
     <div class="header">
         <span class="uppercase">
-            <i class='fa fa-cog'></i> {{ Lang::get('cachet.setup') }}
+            <i class='ion-gear-a'></i> {{ Lang::get('cachet.setup') }}
         </span>
     </div>
     <div class="content-wrapper">
