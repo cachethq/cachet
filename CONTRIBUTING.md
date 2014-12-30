@@ -20,9 +20,12 @@ namespace Foo\Bar\Controller;
 
 use Foo\Bar\Bar;
 
-class Foo extends Bar {
-    public function baz() {
-        if ($condition) {
+class Foo extends Bar
+{
+    public function baz()
+    {
+        if ($condition)
+        {
         }
     }
 }
@@ -32,11 +35,12 @@ class Foo extends Bar {
 - At least one newline seperating `namespace`, `use`, and `class` declarations
 - Spaces around operators, loops, conditions and control blocks:
     ```php
-    if ($condition === (10 + 2)) {
+    if ($condition === (10 + 2))
+    {
 
     }
     ```
-- Braces on the same line. The exception to this rule is for long conditions.
+- Braces on a new line.
 - Line lengths have a soft 80 limit and hard 120 length.
 - PHP constants should be in lowercase; `true`, `false` and `null`.
 - Defined constants should always be in uppercase.
