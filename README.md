@@ -16,6 +16,15 @@ For more information on why I started developing Cachet, check out my [blog post
 - Apply a custom stylesheet to the status page.
 - Markdown support for incident messages.
 
+# Requirements
+
+- PHP 5.4 or newer
+- Composer
+- Node.js
+    + Bower
+    + Gulp
+- mcrypt extension
+
 # Installation
 
 See the [INSTALL.md](/INSTALL.md) document for more information. If you'd like to add more documentation, please create a Pull Request, I'd be happy to merge!
