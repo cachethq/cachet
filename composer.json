@@ -17,7 +17,8 @@
         "graham-campbell/markdown": "~2.0",
         "watson/validating": "0.10.*",
         "thujohn/rss": "~1.0",
-        "doctrine/dbal": "2.5.*"
+        "doctrine/dbal": "2.5.*",
+        "ext-mcrypt": "*"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.3",
