@@ -17,8 +17,7 @@
         "graham-campbell/markdown": "~2.0",
         "watson/validating": "0.10.*",
         "thujohn/rss": "~1.0",
-        "doctrine/dbal": "2.5.*",
-        "erusev/parsedown-extra": "~0.1"
+        "doctrine/dbal": "2.5.*"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.3",
