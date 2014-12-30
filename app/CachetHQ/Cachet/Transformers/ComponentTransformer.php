@@ -7,7 +7,6 @@ use League\Fractal\TransformerAbstract;
 
 class ComponentTransformer extends TransformerAbstract
 {
-
     public function transform(Component $component)
     {
         return [

@@ -18,6 +18,7 @@ class IncidentTemplate extends Eloquent
 
     /**
      * Overrides the models boot method.
+     *
      * @return void
      */
     public static function boot()

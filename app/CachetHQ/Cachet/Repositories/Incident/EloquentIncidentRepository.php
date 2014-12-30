@@ -7,7 +7,6 @@ use Incident;
 
 class EloquentIncidentRepository extends EloquentRepository implements IncidentRepository
 {
-
     protected $model;
 
     public function __construct(Incident $model)

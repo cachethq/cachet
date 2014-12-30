@@ -4,7 +4,9 @@ class DashAPIController extends Controller
 {
     /**
      * Updates a component with the entered info.
-     * @param  Component $component
+     *
+     * @param Component $component
+     *
      * @return array
      */
     public function postUpdateComponent(Component $component)

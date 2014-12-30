@@ -14,7 +14,9 @@ class Service extends Eloquent
 
     /**
      * Returns a decoded properties object for the service.
-     * @param  string $properties
+     *
+     * @param string $properties
+     *
      * @return object
      */
     public function getPropertiesAttribute($properties)
@@ -24,6 +26,7 @@ class Service extends Eloquent
 
     /**
      * Sets the properties attribute which auto encodes to a JSON string.
+     *
      * @param mixed $properties
      */
     public function setPropertiesAttribute($properties)

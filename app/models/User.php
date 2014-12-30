@@ -11,26 +11,30 @@ class User extends Eloquent implements UserInterface, RemindableInterface
 
     /**
      * The database table used by the model.
+     *
      * @var string
      */
     protected $table = 'users';
 
     /**
      * The attributes excluded from the model's JSON form.
+     *
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
 
     /**
      * Items which cannot be mass assigned.
+     *
      * @var array
      */
     protected $guarded = [];
 
     /**
-     * Hash any password being inserted by default
+     * Hash any password being inserted by default.
      *
      * @param string @password
+     *
      * @return void
      */
     public function setPasswordAttribute($password)
@@ -40,7 +44,9 @@ class User extends Eloquent implements UserInterface, RemindableInterface
 
     /**
      * Returns a Gravatar URL for the users email address.
-     * @param  integer $size
+     *
+     * @param int $size
+     *
      * @return string
      */
     public function getGravatarAttribute($size = 200)

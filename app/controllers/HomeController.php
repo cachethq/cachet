@@ -5,7 +5,7 @@ class HomeController extends Controller
     /**
      * The component instance.
      *
-     * @var \Component $component
+     * @var \Component
      */
     protected $component;
 

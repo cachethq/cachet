@@ -4,7 +4,6 @@ namespace CachetHQ\Cachet\Repositories\MetricPoint;
 
 interface MetricPointRepository
 {
-
     public function all();
 
     public function create(array $array);

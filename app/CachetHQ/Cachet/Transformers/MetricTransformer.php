@@ -7,7 +7,6 @@ use Metric;
 
 class MetricTransformer extends TransformerAbstract
 {
-
     public function transform(Metric $metric)
     {
         return [

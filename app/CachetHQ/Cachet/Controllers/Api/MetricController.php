@@ -9,7 +9,6 @@ use Input;
 
 class MetricController extends Controller
 {
-
     use ControllerTrait;
 
     protected $metric;
@@ -19,7 +18,7 @@ class MetricController extends Controller
         $this->metric = $metric;
     }
     /**
-     * Get all metrics
+     * Get all metrics.
      *
      * @return \Illuminate\Database\Eloquent\Collection
      */
@@ -29,7 +28,7 @@ class MetricController extends Controller
     }
 
     /**
-     * Get a single metric
+     * Get a single metric.
      *
      * @param int $id
      *
@@ -41,7 +40,7 @@ class MetricController extends Controller
     }
 
     /**
-     * Create a new metric
+     * Create a new metric.
      *
      * @return Metric
      */
@@ -51,7 +50,7 @@ class MetricController extends Controller
     }
 
     /**
-     * Update an existing metric
+     * Update an existing metric.
      *
      * @param int $id
      *

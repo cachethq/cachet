@@ -7,7 +7,6 @@ use MetricPoint;
 
 class EloquentMetricPointRepository extends EloquentRepository implements MetricRepository
 {
-
     protected $model;
 
     public function __construct(MetricPoint $model)

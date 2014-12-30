@@ -9,7 +9,6 @@ use Input;
 
 class MetricPointController extends Controller
 {
-
     use ControllerTrait;
 
     protected $metricpoint;
@@ -19,7 +18,7 @@ class MetricPointController extends Controller
         $this->metricpoint = $metricpoint;
     }
     /**
-     * Get all metric points
+     * Get all metric points.
      *
      * @return \Illuminate\Database\Eloquent\Collection
      */
@@ -29,7 +28,7 @@ class MetricPointController extends Controller
     }
 
     /**
-     * Get a single metric point
+     * Get a single metric point.
      *
      * @param int $id
      *
@@ -41,7 +40,7 @@ class MetricPointController extends Controller
     }
 
     /**
-     * Create a new metric point
+     * Create a new metric point.
      *
      * @return MetricPoint
      */
