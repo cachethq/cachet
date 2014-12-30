@@ -33,4 +33,10 @@ Route::group(['before' => 'auth', 'prefix' => 'dashboard'], function () {
     // User Settings
     Route::get('user', ['as' => 'dashboard.user', 'uses' => 'DashUserController@showUser']);
     Route::post('user', 'DashUserController@postUser');
+
+    // Internal API.
+    // This should only be used for making requests within the dashboard.
+    Route::group(['prefix' => 'api'], function() {
+        Route::post('components/{component}', 'DashAPIController@postUpdateComponent');
+    });
 });

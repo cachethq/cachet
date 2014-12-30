@@ -38,6 +38,7 @@ elixir(function (mix) {
             'bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js',
             // 'bower_components/chartjs/Chart.min.js',
             'bower_components/jquery-minicolors/jquery.minicolors.js',
+            'bower_components/jquery-serialize-object/jquery.serialize-object.js',
             'js/app.js',
             'js/**/*.js',
         ], './app/assets/')

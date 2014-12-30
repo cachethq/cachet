@@ -6,6 +6,7 @@
     "chartjs": "0.2.*",
     "rivets": "0.7.*",
     "ionicons": "~2.0.0",
-    "jquery-minicolors": "2.1.10"
+    "jquery-minicolors": "2.1.10",
+    "jquery-serialize-object": "2.4.3"
   }
 }
