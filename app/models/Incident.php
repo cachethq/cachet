@@ -1,11 +1,12 @@
 <?php
 
+use Dingo\Api\Transformer\TransformableInterface;
+use Illuminate\Database\Eloquent\SoftDeletingTrait;
 use Watson\Validating\ValidatingTrait;
 
-class Incident extends Eloquent implements \Dingo\Api\Transformer\TransformableInterface
+class Incident extends Eloquent implements TransformableInterface
 {
-    use ValidatingTrait;
-    use Illuminate\Database\Eloquent\SoftDeletingTrait;
+    use SoftDeletingTrait, ValidatingTrait;
 
     protected $rules = [
         'user_id'      => 'required|integer',
@@ -21,7 +22,8 @@ class Incident extends Eloquent implements \Dingo\Api\Transformer\TransformableI
 
     /**
      * An incident belongs to a component.
-     * @return Illuminate\Database\Eloquent\Relations\BelongsTo
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function component()
     {
@@ -30,6 +32,7 @@ class Incident extends Eloquent implements \Dingo\Api\Transformer\TransformableI
 
     /**
      * Returns a human readable version of the status.
+     *
      * @return string
      */
     public function getHumanStatusAttribute()
@@ -41,6 +44,7 @@ class Incident extends Eloquent implements \Dingo\Api\Transformer\TransformableI
 
     /**
      * Finds the icon to use for each status.
+     *
      * @return string
      */
     public function getIconAttribute()
@@ -55,18 +59,18 @@ class Incident extends Eloquent implements \Dingo\Api\Transformer\TransformableI
 
     /**
      * Returns a Markdown formatted version of the status.
+     *
      * @return string
      */
     public function getFormattedMessageAttribute()
     {
-        $parseDown = new ParsedownExtra();
-
-        return $parseDown->text($this->message);
+        return Markdown::render($this->message);
     }
 
     /**
      * Get the transformer instance.
-     * @return CachetHQ\Cachet\Transformers\IncidentTransformer
+     *
+     * @return \CachetHQ\Cachet\Transformers\IncidentTransformer
      */
     public function getTransformer()
     {
@@ -75,7 +79,8 @@ class Incident extends Eloquent implements \Dingo\Api\Transformer\TransformableI
 
     /**
      * Check if Incident has message.
-     * @return boolean
+     *
+     * @return bool
      */
     public function hasMessage()
     {

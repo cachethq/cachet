@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "def3f0fcb615467e21e9eccf44a39a73",
+    "hash": "4cbce9aaf02d3c94bd12d972d20f00be",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -767,6 +767,63 @@
                 "zf2"
             ],
             "time": "2014-10-26 09:05:09"
+        },
+        {
+            "name": "graham-campbell/markdown",
+            "version": "v2.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/GrahamCampbell/Laravel-Markdown.git",
+                "reference": "d316f586fcaf59ecdf9d2f60f26da277cd6c8e8d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Markdown/zipball/d316f586fcaf59ecdf9d2f60f26da277cd6c8e8d",
+                "reference": "d316f586fcaf59ecdf9d2f60f26da277cd6c8e8d",
+                "shasum": ""
+            },
+            "require": {
+                "erusev/parsedown": "~1.1",
+                "erusev/parsedown-extra": "~0.2.2",
+                "illuminate/support": "~4.1",
+                "illuminate/view": "~4.1",
+                "php": ">=5.4.7"
+            },
+            "require-dev": {
+                "graham-campbell/testbench": "~1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "GrahamCampbell\\Markdown\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Graham Campbell",
+                    "email": "graham@mineuk.com"
+                }
+            ],
+            "description": "Markdown Is A Parsedown Extra Wrapper For Laravel 4.1/4.2",
+            "keywords": [
+                "Graham Campbell",
+                "GrahamCampbell",
+                "Laravel Markdown",
+                "Laravel-Markdown",
+                "Parsedown Extra",
+                "framework",
+                "laravel",
+                "markdown",
+                "markdown wrapper",
+                "parsedown",
+                "parsedown extra wrapper",
+                "parsedown wrapper"
+            ],
+            "time": "2014-10-05 14:49:46"
         },
         {
             "name": "graham-campbell/throttle",
