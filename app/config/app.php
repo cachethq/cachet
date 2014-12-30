@@ -124,6 +124,7 @@ return [
 
         'Dingo\Api\Provider\ApiServiceProvider',
         'GrahamCampbell\Throttle\ThrottleServiceProvider',
+        'GrahamCampbell\Markdown\MarkdownServiceProvider',
         'Thujohn\Rss\RssServiceProvider',
 
         'CachetHQ\Cachet\Support\ServiceProviders\RepositoryServiceProvider',
@@ -199,6 +200,7 @@ return [
 
         'API'      => 'Dingo\Api\Facade\API',
         'Throttle' => 'GrahamCampbell\Throttle\Facades\Throttle',
+        'Markdown' => 'GrahamCampbell\Markdown\Facades\Markdown',
         'RSS'      => 'Thujohn\Rss\RssFacade',
 
     ],
