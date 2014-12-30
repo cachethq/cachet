@@ -28,6 +28,9 @@ class HomeController extends Controller
      */
     public function showIndex()
     {
-        return View::make('index', ['components' => $this->component->all()]);
+        return View::make('index', [
+            'components' => $this->component->all(),
+            'pageTitle' => Setting::get('app_name')
+        ]);
     }
 }

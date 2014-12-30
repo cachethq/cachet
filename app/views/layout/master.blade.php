@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- RSS Feed -->
-    <link rel="alternate" type="application/rss+xml" href="/rss" />
+    <link rel="alternate" type="application/rss+xml" href="/rss" title="{{ $pageTitle ?: Setting::get('app_name') }} Status - RSS Feed" />
 
     <!-- Mobile friendliness -->
     <meta name="HandheldFriendly" content="True">
@@ -16,7 +16,7 @@
     <!-- Mobile IE allows us to activate ClearType technology for smoothing fonts for easy reading -->
     <meta http-equiv="cleartype" content="on">
 
-    <title>{{ isset($pageTitle) ? $pageTitle : Setting::get('app_name') }}</title>
+    <title>{{ $pageTitle ?: Setting::get('app_name') }} Status</title>
 
     <link href='//fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{ elixir('css/all.css') }}">
