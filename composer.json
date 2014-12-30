@@ -10,6 +10,8 @@
     "type": "project",
     "require": {
         "php": ">=5.4",
+        "ext-mcrypt": "*",
+        "ext-openssl": "*",
         "laravel/framework": "4.2.*",
         "guzzlehttp/guzzle": "~5.0",
         "dingo/api": "0.8.*",
@@ -17,8 +19,7 @@
         "graham-campbell/markdown": "~2.0",
         "watson/validating": "0.10.*",
         "thujohn/rss": "~1.0",
-        "doctrine/dbal": "2.5.*",
-        "ext-mcrypt": "*"
+        "doctrine/dbal": "2.5.*"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.3",
