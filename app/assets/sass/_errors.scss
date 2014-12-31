@@ -1,0 +1,24 @@
+body.error-page {
+    background-color: #f3f3f4;
+
+    .middle-box {
+        height: 400px;
+        width: 400px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -250px;
+        margin-left: -200px;
+        z-index: 100;
+
+        h1 {
+            font-size: 9em;
+        }
+    }
+
+    h3 {
+        &.font-bold {
+            font-weight: 600;
+        }
+    }
+}

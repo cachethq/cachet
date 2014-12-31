@@ -25,3 +25,6 @@ html, body {
 
 // Status Page will need to override certain styles.
 @import "status-page";
+
+// Error pages can have their own overrides.
+@import "errors";

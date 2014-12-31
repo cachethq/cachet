@@ -4964,3 +4964,19 @@ body.status-page {
     text-align: center;
     border-top: 1px solid #ecf0f1;
     background-color: #fbfcfc; }
+
+body.error-page {
+  background-color: #f3f3f4; }
+  body.error-page .middle-box {
+    height: 400px;
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -250px;
+    margin-left: -200px;
+    z-index: 100; }
+    body.error-page .middle-box h1 {
+      font-size: 9em; }
+  body.error-page h3.font-bold {
+    font-weight: 600; }
