@@ -57,7 +57,9 @@ API::error(function (\Illuminate\Database\Eloquent\ModelNotFoundException $excep
 });
 
 App::missing(function ($exception) {
-    return Response::view('errors.404', [], 404);
+    return Response::view('errors.404', [
+        'pageTitle' => 'That page went missing!'
+    ], 404);
 });
 
 /*
