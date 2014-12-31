@@ -16,6 +16,13 @@ body.status-page {
         margin-bottom: 20px;
     }
 
+    .tooltip {
+        .tooltip-inner {
+            padding: 8px 12px;
+            font-size: 14px;
+        }
+    }
+
     .text-success, .text-component-1 {
         color: $green;
     }
@@ -221,9 +228,10 @@ body.status-page {
             background-color: #ffffff;
             border: 1px solid $grey;
             font-size: 1.1em;
+            padding: 15px 15px;
 
             h4 {
-                margin-bottom: 2px;
+                margin: 0;
                 font-weight: 400;
                 max-width: 90%;
             }
