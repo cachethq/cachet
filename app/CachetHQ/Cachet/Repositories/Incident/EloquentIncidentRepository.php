@@ -21,7 +21,7 @@ class EloquentIncidentRepository extends EloquentRepository implements IncidentR
         $this->validate($incident);
 
         if (isset($array['component_id'])) {
-            $incident->hasRelationship($incident, 'component');
+            $this->hasRelationship($incident, 'component');
         }
 
         $incident->saveOrFail();
@@ -36,7 +36,7 @@ class EloquentIncidentRepository extends EloquentRepository implements IncidentR
         $this->validate($incident);
 
         if (isset($array['component_id'])) {
-            $incident->hasRelationship($incident, 'component');
+            $this->hasRelationship($incident, 'component');
         }
 
         $incident->update($array);
