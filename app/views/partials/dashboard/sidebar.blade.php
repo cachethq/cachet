@@ -53,13 +53,13 @@
                 <a href="#">
                     <i class="fa fa-plus"></i> {{ Lang::get('cachet.dashboard.metrics-add') }}
                 </a>
-            </li> --}}
-            {{-- <li class="{{ Request::is('dashboard/notifications') ? 'active' : '' }}">
+            </li>
+            <li class="{{ Request::is('dashboard/notifications') ? 'active' : '' }}">
                 <a href="{{ URL::route('dashboard.notifications') }}">
                     <i class="ion ion-email"></i> {{ Lang::get('cachet.dashboard.notifications') }}
                 </a>
             </li> --}}
-            <li class="{{ Request::is('dashboard/settings/setup') ? 'active' : '' }}">
+            <li class="{{ preg_match('/dashboard\/settings\/.*/i', Request::path()) ? 'active' : '' }}">
                 <a href="{{ URL::route('dashboard.settings.setup') }}">
                     <i class="icon ion-gear-a"></i> {{ Lang::get('cachet.dashboard.settings') }}
                 </a>
