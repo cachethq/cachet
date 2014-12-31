@@ -129,11 +129,11 @@ body.dashboard {
                     text-decoration: none;
 
                     &.active {
-                        color: #6787DA;
+                        color: $cachet-secondary;
                     }
 
                     &:hover {
-                        color: #6787DA;
+                        color: $cachet-secondary;
                     }
                 }
             }

@@ -1,23 +1,41 @@
-$green: #2ECC71;
-$dark-green: darken($green, 10%);
+// Theme colours.
+$cachet-base-light: #fff;
+$cachet-base-medium: #f0f3f4;
+$cachet-base-dark: #333;
 
-$blue: #3498db;
-$dark-blue: darken($blue, 10%);
+$cachet-primary: #7ED321;
+$cachet-secondary: #6DB81C;
 
-$red: #ff6f6f;
-$dark-red: darken($red, 10%);
+$cachet-link: #7ed321;
+$cachet-link-hover: #01579b;
 
-$teal: #0dccc0;
-$dark-teal: darken($teal, 10%);
+$cachet-gray-light: #e8e8e8;
+$cachet-gray: #999;
+$cachet-gray-darker: #666;
 
-$yellow: #F7CA18;
-$dark-yellow: darken($yellow, 10%);
+$cachet-icons: #5e5e5e;
 
-$pink: #b23f73;
-$dark-pink: darken($pink, 10%);
+// Statuses
+$cachet-green: $cachet-primary;
+$cachet-dark-green: darken($cachet-green, 10%);
 
-$grey: #ecf0f1;
-$dark-grey: darken($grey, 10%);
+$cachet-blue: #3498db;
+$cachet-dark-blue: darken($cachet-blue, 10%);
 
-$orange: #FF8800;
-$dark-orange: darken($orange, 10%);
+$cachet-red: #ff6f6f;
+$cachet-dark-red: darken($cachet-red, 10%);
+
+$cachet-teal: #0dccc0;
+$cachet-dark-teal: darken($cachet-teal, 10%);
+
+$cachet-yellow: #F7CA18;
+$cachet-dark-yellow: darken($cachet-yellow, 10%);
+
+$cachet-pink: #b23f73;
+$cachet-dark-pink: darken($cachet-pink, 10%);
+
+$cachet-grey: #ecf0f1;
+$cachet-dark-grey: darken($cachet-grey, 10%);
+
+$cachet-orange: #FF8800;
+$dark-orange: darken($cachet-orange, 10%);
