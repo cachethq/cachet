@@ -9,7 +9,7 @@ The API is accessible from `http://<cachet-url>/api/endpoint`
 ### /components
 List and create components
 
-See [Component API documentation](components) for more information
+See [Component API documentation](components.md) for more information
 
 ### /incidents
 List and create incidents

@@ -18,8 +18,8 @@ Example URL: `http://localhost/api/components`
         "incident_count": 0,
         "status": "Operational",
         "status_id": 1,
-        "description": "SelfServe automation tool for project publishes, resets and Operations tasks",
-        "name": "SelfServe",
+        "description": "This is an example component",
+        "name": "Example Component",
         "id": 5
         },
         {
