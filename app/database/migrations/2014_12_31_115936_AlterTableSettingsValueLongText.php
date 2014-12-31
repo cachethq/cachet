@@ -11,7 +11,11 @@ class AlterTableSettingsValueLongText extends Migration
      */
     public function up()
     {
-        DB::statement("ALTER TABLE settings CHANGE `value` `value` LONGTEXT;");
+        if (Config::get('database')['default'] === 'mysql') {
+            DB::statement("ALTER TABLE settings CHANGE `value` `value` LONGTEXT;");
+        } elseif (Config::get('database')['default'] === 'pgsql') {
+            DB::statement("ALTER TABLE settings CHANGE `value` `value` TEXT;");
+        }
     }
 
     /**
@@ -21,6 +25,10 @@ class AlterTableSettingsValueLongText extends Migration
      */
     public function down()
     {
-        DB::statement("ALTER TABLE settings CHANGE `value` `value` TEXT;");
+        if (Config::get('database')['default'] === 'mysql') {
+            DB::statement("ALTER TABLE settings CHANGE `value` `value` TEXT;");
+        } elseif (Config::get('database')['default'] === 'pgsql') {
+            DB::statement("ALTER TABLE settings CHANGE `value` `value` TEXT;");
+        }
     }
 }
