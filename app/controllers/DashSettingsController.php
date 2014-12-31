@@ -5,7 +5,8 @@ class DashSettingsController extends Controller
     protected $subMenu = [];
     protected $subTitle = 'Settings';
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->subMenu = [
             'setup' => [
                 'title'  => 'Application Setup',
@@ -30,7 +31,7 @@ class DashSettingsController extends Controller
                 'url'    => '/dashboard/settings/stylesheet',
                 'icon'   => 'ion-paintbucket',
                 'active' => false,
-            ]
+            ],
         ];
 
         View::share('subTitle', $this->subTitle);
@@ -48,7 +49,7 @@ class DashSettingsController extends Controller
 
         return View::make('dashboard.settings-app-setup')->with([
             'pageTitle' => 'Application Setup - Dashboard',
-            'subMenu'   => $this->subMenu
+            'subMenu'   => $this->subMenu,
         ]);
     }
 
@@ -63,7 +64,7 @@ class DashSettingsController extends Controller
 
         return View::make('dashboard.settings-theme')->with([
             'pageTitle' => 'Theme - Dashboard',
-            'subMenu'   => $this->subMenu
+            'subMenu'   => $this->subMenu,
         ]);
     }
 
@@ -78,7 +79,7 @@ class DashSettingsController extends Controller
 
         return View::make('dashboard.settings-security')->with([
             'pageTitle' => 'Security - Dashboard',
-            'subMenu'   => $this->subMenu
+            'subMenu'   => $this->subMenu,
         ]);
     }
 
@@ -93,7 +94,7 @@ class DashSettingsController extends Controller
 
         return View::make('dashboard.settings-stylesheet')->with([
             'pageTitle' => 'Stylesheet - Dashboard',
-            'subMenu'   => $this->subMenu
+            'subMenu'   => $this->subMenu,
         ]);
     }
 
