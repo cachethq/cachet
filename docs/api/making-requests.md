@@ -14,7 +14,7 @@ In order to create incidents, you must send the a json string with the required 
 
 Here's a simple example:
 
-`curl -u username@example.com -H "Content-Type: application/json" -d '{"name":"API","description":"An example description","status":1}' http://status.cachethq.io/api/components
+`curl -u username@example.com -H "Content-Type: application/json" -d '{"name":"API","description":"An example description","status":1}' http://status.cachethq.io/api/components`
 
 
 # Endpoints
@@ -27,12 +27,12 @@ See [Component API documentation](components.md) for more information
 ## `/incidents`
 List and create incidents
 
-See [Incidents API docuementation](incidents) for more information
+See [Incidents API documentation](incidents.md) for more information
 
 ## `/metrics`
 List and add metrics
 
-See [Incidents API documentation](metrics) for more information
+See [Incidents API documentation](metrics.md) for more information
 
 # Authorization
 
