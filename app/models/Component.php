@@ -34,6 +34,32 @@ class Component extends Eloquent implements \Dingo\Api\Transformer\Transformable
     }
 
     /**
+     * Finds all components by status.
+     *
+     * @param Illuminate\Database\Eloquent\Builder $query
+     * @param int                                  $status
+     *
+     * @return Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeStatus($query, $status)
+    {
+        return $query->where('status', $status);
+    }
+
+    /**
+     * Finds all components which don't have the given status.
+     *
+     * @param Illuminate\Database\Eloquent\Builder $query
+     * @param int                                  $status
+     *
+     * @return Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeNotStatus($query, $status)
+    {
+        return $query->where('status', '<>', $status);
+    }
+
+    /**
      * Looks up the human readable version of the status.
      *
      * @return string
