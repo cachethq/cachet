@@ -99,7 +99,7 @@ class DashSettingsController extends Controller
     }
 
     /**
-     * Updates the statsu page settings.
+     * Updates the status page settings.
      *
      * @return \Illuminate\View\View
      */
@@ -107,6 +107,37 @@ class DashSettingsController extends Controller
     {
         // Fetch all of the settings we've been POSTed.
         $settings = Input::all();
+
+        if (Input::hasFile('app_banner')) {
+            $file = Input::file('app_banner');
+
+            // Image Validation.
+            // Image size in bytes.
+            $maxSize = $file->getMaxFilesize();
+            if ($file->getSize() > $maxSize) {
+                return Redirect::back()->withErrorMessage('You need to upload an image that is less than '.$maxSize.'.');
+            } elseif (!$file->isValid() || $file->getError()) {
+                return Redirect::back()->withErrorMessage($file->getErrorMessage());
+            } elseif (strpos($file->getMimeType(), 'image/') !== 0) {
+                return Redirect::back()->withErrorMessage('Only images may be uploaded.');
+            }
+
+            // Store the banner.
+            Setting::firstOrCreate([
+                'name' => 'app_banner'
+            ])->update([
+                'value' => base64_encode(file_get_contents($file->getRealPath()))
+            ]);
+
+            // Store the banner type
+            Setting::firstOrCreate([
+                'name' => 'app_banner_type'
+            ])->update([
+                'value' => $file->getMimeType()
+            ]);
+        }
+
+        unset($settings['app_banner']);
 
         try {
             foreach ($settings as $settingName => $settingValue) {

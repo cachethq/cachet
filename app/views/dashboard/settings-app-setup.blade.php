@@ -13,13 +13,13 @@
         <div class="content-wrapper">
             <div class="row">
                 <div class="col-sm-12">
-                    <form name='SettingsForm' class='form-vertical' role='form' action='/dashboard/settings' method='POST'>
+                    <form name='SettingsForm' class='form-vertical' role='form' action='/dashboard/settings' method='POST' enctype="multipart/form-data">
                         <h4 class="sub-header" id='application-setup'>Application Setup</h4>
 
-                        @if($saved = Session::get('saved'))
+                        @if(($saved = Session::get('saved')))
                         <div class='alert alert-success'><strong>{{ Lang::get('cachet.dashboard.settings_saved') }}</strong></div>
-                        @elseif(Session::has('saved'))
-                        <div class='alert alert-danger'><strong>{{ Lang::get('cachet.dashboard.settings_not_saved') }}</strong></div>
+                        @elseif(Session::has('error_message'))
+                        <div class='alert alert-danger'><strong>{{ Session::get('error_message') }}</strong></div>
                         @endif
 
                         <fieldset>
@@ -36,6 +36,20 @@
                                     <div class='form-group'>
                                         <label>Site URL</label>
                                         <input type='text' class='form-control' name='app_domain' value='{{ Setting::get("app_domain") }}' required />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='row'>
+                                <div class='col-xs-12'>
+                                    <div class='form-group'>
+                                        <label>Banner Image</label>
+                                        @if($banner = Setting::get('app_banner'))
+                                        <div class='well'>
+                                            <img src='data:{{ Setting::get("app_banner_type") }};base64,{{ $banner }}' style='max-width: ' />
+                                        </div>
+                                        @endif
+                                        <input type='file' name='app_banner' class='form-control' />
+                                        <span class='help-block'>It's recommended that you upload files no bigger than 930px wide.</span>
                                     </div>
                                 </div>
                             </div>
