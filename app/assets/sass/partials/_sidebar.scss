@@ -138,14 +138,14 @@ body.dashboard {
                 }
             }
         }
-    }
 
-    .content-panel {
-        top: 0;
-        position: relative;
-        width: 78%;
-        margin-left: 22%;
-        padding: 24px 50px;
-        padding-bottom: 80px;
+        + .content-panel {
+            top: 0;
+            position: relative;
+            width: 78%;
+            margin-left: 22%;
+            padding: 24px 50px;
+            padding-bottom: 80px;
+        }
     }
 }

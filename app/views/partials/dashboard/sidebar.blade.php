@@ -59,8 +59,8 @@
                     <i class="ion ion-email"></i> {{ Lang::get('cachet.dashboard.notifications') }}
                 </a>
             </li> --}}
-            <li class="{{ Request::is('dashboard/settings') ? 'active' : '' }}">
-                <a href="{{ URL::route('dashboard.settings') }}">
+            <li class="{{ Request::is('dashboard/settings/setup') ? 'active' : '' }}">
+                <a href="{{ URL::route('dashboard.settings.setup') }}">
                     <i class="icon ion-gear-a"></i> {{ Lang::get('cachet.dashboard.settings') }}
                 </a>
             </li>

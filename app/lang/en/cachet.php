@@ -51,6 +51,8 @@ return [
         'user'                     => 'User',
         'help'                     => 'Help',
         'logged_incidents'         => '{0} There are no incidents, good work.|You have logged one incident.|You have reported <strong>:count</strong> incidents.',
+        'settings_saved'           => 'Settings saved.',
+        'settings_not_saved'       => 'Settings could not be saved.',
     ],
     // Forms
     'forms' => [

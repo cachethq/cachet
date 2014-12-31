@@ -4718,13 +4718,13 @@ body.dashboard .sub-sidebar {
         color: #6787DA; }
       body.dashboard .sub-sidebar ul.menu li a:hover {
         color: #6787DA; }
-body.dashboard .content-panel {
-  top: 0;
-  position: relative;
-  width: 78%;
-  margin-left: 22%;
-  padding: 24px 50px;
-  padding-bottom: 80px; }
+  body.dashboard .sub-sidebar + .content-panel {
+    top: 0;
+    position: relative;
+    width: 78%;
+    margin-left: 22%;
+    padding: 24px 50px;
+    padding-bottom: 80px; }
 
 body.dashboard .content {
   position: relative;

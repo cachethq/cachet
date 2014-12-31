@@ -27,7 +27,10 @@ Route::group(['before' => 'auth', 'prefix' => 'dashboard'], function () {
     Route::get('notifications', ['as' => 'dashboard.notifications', 'uses' => 'DashboardController@showNotifications']);
 
     // Settings
-    Route::get('settings', ['as' => 'dashboard.settings', 'uses' => 'DashSettingsController@showSettings']);
+    Route::get('settings/setup', ['as' => 'dashboard.settings.setup', 'uses' => 'DashSettingsController@showSetupView']);
+    Route::get('settings/security', ['as' => 'dashboard.settings.security', 'uses' => 'DashSettingsController@showSecurityView']);
+    Route::get('settings/theme', ['as' => 'dashboard.settings.theme', 'uses' => 'DashSettingsController@showThemeView']);
+    Route::get('settings/stylesheet', ['as' => 'dashboard.settings.stylesheet', 'uses' => 'DashSettingsController@showStylesheetView']);
     Route::post('settings', 'DashSettingsController@postSettings');
 
     // User Settings
