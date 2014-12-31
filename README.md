@@ -10,7 +10,7 @@ For more information on why I started developing Cachet, check out my [blog post
 
 # Features
 
-- Create, edit and delete components.
+- List your services components.
 - Log incidents.
 - Override status page colors.
 - Apply a custom stylesheet to the status page.
