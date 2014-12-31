@@ -10,6 +10,7 @@ You need at least PHP >= 5.4, [Composer](https://getcomposer.org/) and the follo
   - `php-xml`
   - `php-pdo`
   - A database driver for your DB, such as `php-mysql`
+  - `OpenSSL`
 
 # Table of contents
 
