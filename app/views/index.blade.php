@@ -14,9 +14,9 @@
 
     @include('partials.components')
 
-    @if(Setting::get('display_graphs'))
+    {{-- @if(Setting::get('display_graphs'))
     @include('partials.graphs')
-    @endif
+    @endif --}}
 
     @foreach(range(0, 7) as $i => $v)
     @include('partials.incident', array('i', $i))
