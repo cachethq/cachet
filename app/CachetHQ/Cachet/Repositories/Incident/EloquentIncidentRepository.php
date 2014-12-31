@@ -18,8 +18,11 @@ class EloquentIncidentRepository extends EloquentRepository implements IncidentR
     {
         $incident = new $this->model($array);
         $incident->user_id = $user_id;
+        $this->validate($incident);
 
-        $this->validate($incident)->hasRelationship($incident, 'component');
+        if (isset($array['component_id'])) {
+            $incident->hasRelationship($incident, 'component');
+        }
 
         $incident->saveOrFail();
 
@@ -30,8 +33,11 @@ class EloquentIncidentRepository extends EloquentRepository implements IncidentR
     {
         $incident = $this->model->findOrFail($id);
         $incident->fill($array);
+        $this->validate($incident);
 
-        $this->validate($incident)->hasRelationship($incident, 'component');
+        if (isset($array['component_id'])) {
+            $incident->hasRelationship($incident, 'component');
+        }
 
         $incident->update($array);
 
