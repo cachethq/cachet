@@ -4564,6 +4564,9 @@ label {
   .form-control:focus {
     border-color: #66afe9; }
 
+.well {
+  border-radius: 0; }
+
 body.dashboard {
   font-family: "Lato", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-weight: 400;
