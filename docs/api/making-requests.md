@@ -25,7 +25,7 @@ List and create components
 See [Component API documentation](components.md) for more information
 
 ## `/incidents`
-List and create incidents
+List and create and update incidents
 
 See [Incidents API documentation](incidents.md) for more information
 
