@@ -15,14 +15,14 @@ class IncidentTransformer extends TransformerAbstract
         }
 
         return [
-            'id'         => (int) $incident->id,
-            'name'       => $incident->name,
-            'message'    => $incident->message,
-            'status_id'  => (int) $incident->status,
-            'status'     => $incident->humanStatus,
-            'component'  => isset($transformer) ? $transformer->transform($component) : null,
-            'created_at' => $incident->created_at->timestamp,
-            'updated_at' => $incident->updated_at->timestamp,
+            'id'           => (int) $incident->id,
+            'name'         => $incident->name,
+            'message'      => $incident->message,
+            'status'       => (int) $incident->status,
+            'human_status' => $incident->humanStatus,
+            'component'    => isset($transformer) ? $transformer->transform($component) : null,
+            'created_at'   => $incident->created_at->timestamp,
+            'updated_at'   => $incident->updated_at->timestamp,
         ];
     }
 }
