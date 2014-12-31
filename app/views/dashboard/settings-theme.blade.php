@@ -37,6 +37,7 @@
                                     </div>
                                 </div>
                             </div>
+                            {{--
                             <div class='row'>
                                 <div class='col-xs-4'>
                                     <div class='form-group'>
@@ -57,6 +58,7 @@
                                     </div>
                                 </div>
                             </div>
+                            --}}
                         </fieldset>
 
                         <div class='row'>
