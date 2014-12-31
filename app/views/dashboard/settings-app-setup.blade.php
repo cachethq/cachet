@@ -45,7 +45,7 @@
                                         <label>Banner Image</label>
                                         @if($banner = Setting::get('app_banner'))
                                         <div class='well'>
-                                            <img src='data:{{ Setting::get("app_banner_type") }};base64,{{ $banner }}' style='max-width: ' />
+                                            <img src='data:{{ Setting::get("app_banner_type") }};base64,{{ $banner }}' style='max-width: 100%' />
                                         </div>
                                         @endif
                                         <input type='file' name='app_banner' class='form-control' />
