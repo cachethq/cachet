@@ -124,16 +124,16 @@ class DashSettingsController extends Controller
 
             // Store the banner.
             Setting::firstOrCreate([
-                'name' => 'app_banner'
+                'name' => 'app_banner',
             ])->update([
-                'value' => base64_encode(file_get_contents($file->getRealPath()))
+                'value' => base64_encode(file_get_contents($file->getRealPath())),
             ]);
 
             // Store the banner type
             Setting::firstOrCreate([
-                'name' => 'app_banner_type'
+                'name' => 'app_banner_type',
             ])->update([
-                'value' => $file->getMimeType()
+                'value' => $file->getMimeType(),
             ]);
         }
 
