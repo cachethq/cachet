@@ -2,7 +2,14 @@
 
 Cachet is an open source replacement to [StatusPage.io](https://statuspage.io) written in PHP and the [Laravel](http://laravel.com) framework.
 
-You need at least PHP, [Composer](https://getcomposer.org/) and the `php-mcrypt` extension installed to run Cachet.
+You need at least PHP > 5.3, [Composer](https://getcomposer.org/) and the following PHP extensions installed to run Cachet:
+
+  - `php-mcrypt`
+  - `php-mbstring`
+  - `php-apc`
+  - `php-xml`
+  - `php-pdo`
+  - A database driver for your DB, such as `php-mysql`
 
 # Table of contents
 
