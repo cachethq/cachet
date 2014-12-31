@@ -2,9 +2,9 @@
 
 ## `/components`
 
-Interacte with components
+Interact with components
 
-Example URL: `http://localhost/api/components`
+Example URL: `http://status.cachethq.io/api/components`
 
 * `GET`: returns a list of the current components and their status
   - success: 200:
@@ -52,6 +52,8 @@ Example URL: `http://localhost/api/components`
 ## `/components/:id`
 
 Show a single component
+
+Example URL: `http://status.cachethq.io/api/components/1`
 
 * `GET`: Return a single component and its status
   - success: 200:
