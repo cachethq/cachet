@@ -1,4 +1,4 @@
-# API Components
+# API Incidents
 
 ## `/incidents`
 
