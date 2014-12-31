@@ -1,5 +1,3 @@
-@import 'palette';
-
 body.status-page {
     font-family: 'Lato', 'Helevetic Neue', Arial, sans-serif;
     background-color: #F0F3F4;
@@ -24,19 +22,19 @@ body.status-page {
     }
 
     .text-success, .text-component-1 {
-        color: $green;
+        color: $cachet_green;
     }
 
     .text-info, .text-component-2 {
-        color: $blue;
+        color: $cachet_blue;
     }
 
     .text-alert, .text-component-3 {
-        color: $yellow;
+        color: $cachet_yellow;
     }
 
     .text-danger, .text-component-4 {
-        color: $red;
+        color: $cachet_red;
     }
 
     .container {
@@ -61,20 +59,20 @@ body.status-page {
         border-radius: 0;
         font-size: 1.2em;
         &.alert-success {
-            background-color: $green;
-            border-color: $dark-green;
+            background-color: $cachet_green;
+            border-color: $cachet_dark-green;
             color: white;
         }
 
         &.alert-info {
-            background: $blue;
-            border-color: $dark-blue;
+            background: $cachet_blue;
+            border-color: $cachet_dark-blue;
             color: #FFF;
         }
 
         &.alert-danger {
-            background: $red;
-            border-color: $dark-red;
+            background: $cachet_red;
+            border-color: $cachet_dark-red;
             color: #FFF;
         }
     }
@@ -117,7 +115,7 @@ body.status-page {
                     top: -20px;
                     width: 7px;
                     height: 7px;
-                    background: $grey;
+                    background: $cachet_gray_light;
                     border-radius: 50%;
                 }
             }
@@ -159,16 +157,16 @@ body.status-page {
                     }
                 }
                 &.status-1 {
-                    color: $orange;
+                    color: $cachet_orange;
                 }
                 &.status-2 {
-                    color: $yellow;
+                    color: $cachet_yellow;
                 }
                 &.status-3 {
-                    color: $blue;
+                    color: $cachet_blue;
                 }
                 &.status-4 {
-                    color: $green;
+                    color: $cachet_green;
                 }
             }
             &.last:before {
@@ -234,7 +232,7 @@ body.status-page {
         .list-group-item {
             border-radius: 0;
             background-color: #ffffff;
-            border: 1px solid $grey;
+            border: 1px solid $cachet_gray_light;
             font-size: 1.1em;
             padding: 15px 15px;
 
@@ -266,8 +264,8 @@ body.status-page {
         padding-bottom: 40px;
         color: #777;
         text-align: center;
-        border-top: 1px solid $grey;
-        background-color: lighten($grey, 5%);
+        border-top: 1px solid $cachet_gray_light;
+        background-color: lighten($cachet_gray_light, 5%);
     }
 }
 
