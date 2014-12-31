@@ -1,6 +1,6 @@
 # Installing on CentOS 6
 
-The main issue with installing Cachet on CentOS 6 is the old PHP version. Laravel and Composer expect a version of PHP greater than 5.3, which is the default that ships with CentOS. You also need the same version of the required extensions.
+The main issue with installing Cachet on CentOS 6 is the old PHP version. Laravel and Composer expect a version of PHP of greater than 5.4, which is the default that ships with CentOS. You also need the same version of the required extensions.
 
 ## Remi Repo
 
