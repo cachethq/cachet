@@ -10,7 +10,9 @@ class IncidentTransformer extends TransformerAbstract
     public function transform(Incident $incident)
     {
         $component = $incident->component;
-        $transformer = $component->getTransformer();
+        if ($component) {
+            $transformer = $component->getTransformer();
+        }
 
         return [
             'id'         => (int) $incident->id,
@@ -18,7 +20,7 @@ class IncidentTransformer extends TransformerAbstract
             'message'    => $incident->message,
             'status_id'  => (int) $incident->status,
             'status'     => $incident->getHumanStatusAttribute(),
-            'component'  => $transformer->transform($component),
+            'component'  => isset($transformer) ? $transformer->transform($component) : null,
             'created_at' => $incident->created_at->timestamp,
             'updated_at' => $incident->updated_at->timestamp,
         ];
