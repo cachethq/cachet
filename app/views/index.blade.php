@@ -12,12 +12,20 @@
 
     <div class='alert alert-{{ $systemStatus }}'>{{ $systemMessage }}</div>
 
+    @if($aboutApp = Setting::get('app_about'))
+    <div class='about-app'>
+        <h1>{{ Lang::get('cachet.about_this_site') }}</h1>
+        <p>{{ $aboutApp }}</p>
+    </div>
+    @endif
+
     @include('partials.components')
 
     {{-- @if(Setting::get('display_graphs'))
     @include('partials.graphs')
     @endif --}}
 
+    <h1>{{ Lang::get('cachet.past_incidents') }}</h1>
     @foreach(range(0, 7) as $i => $v)
     @include('partials.incident', array('i', $i))
     @endforeach

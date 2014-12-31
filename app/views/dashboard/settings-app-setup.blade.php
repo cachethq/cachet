@@ -42,6 +42,14 @@
                             <div class='row'>
                                 <div class='col-xs-12'>
                                     <div class='form-group'>
+                                        <label>About this page</label>
+                                        <textarea name='app_about' class='form-control' rows='4'>{{ Setting::get("app_about") }}</textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='row'>
+                                <div class='col-xs-12'>
+                                    <div class='form-group'>
                                         <label>Banner Image</label>
                                         @if($banner = Setting::get('app_banner'))
                                         <div class='well'>

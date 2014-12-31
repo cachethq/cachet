@@ -4815,6 +4815,11 @@ body.status-page {
     margin-top: 20px; }
   body.status-page .page-header {
     margin-top: 10px; }
+  body.status-page .about-app {
+    margin-top: 40px;
+    margin-bottom: 40px; }
+    body.status-page .about-app p {
+      font-size: 1.2em; }
   body.status-page .alert {
     border-radius: 0;
     font-size: 1.2em; }
