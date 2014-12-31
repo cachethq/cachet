@@ -69,17 +69,7 @@ Example URL: `http://status.cachethq.io/api/components/1`
         "status_id": 1,
         "description": "SelfServe automation tool for project publishes, resets and Operations tasks",
         "name": "SelfServe",
-        "id": 5
-        },
-        {
-        "updated_at": 1420037024,
-        "created_at": 1420037024,
-        "incident_count": 0,
-        "status": "Major Outage",
-        "status_id": 4,
-        "description": "This is a second example component",
-         "name": "Second Example Components",
-        "id": 2
+        "id": 1
         }
       ]
     }
