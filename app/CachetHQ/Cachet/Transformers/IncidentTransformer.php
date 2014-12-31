@@ -19,7 +19,7 @@ class IncidentTransformer extends TransformerAbstract
             'name'       => $incident->name,
             'message'    => $incident->message,
             'status_id'  => (int) $incident->status,
-            'status'     => $incident->getHumanStatusAttribute(),
+            'status'     => $incident->humanStatus,
             'component'  => isset($transformer) ? $transformer->transform($component) : null,
             'created_at' => $incident->created_at->timestamp,
             'updated_at' => $incident->updated_at->timestamp,
