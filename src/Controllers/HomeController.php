@@ -33,10 +33,10 @@ class HomeController extends Controller
         }
 
         return View::make('index', [
-            'components'    => $components,
-            'allIncidents'  => $allIncidents,
-            'pageTitle'     => Setting::get('app_name'),
-            'aboutApp'      => Markdown::render(Setting::get('app_about')),
+            'components'   => $components,
+            'allIncidents' => $allIncidents,
+            'pageTitle'    => Setting::get('app_name'),
+            'aboutApp'     => Markdown::render(Setting::get('app_about')),
         ]);
     }
 }
