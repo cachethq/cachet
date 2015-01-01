@@ -29,7 +29,7 @@ if (! function_exists('set_active')) {
     /**
      * Set active class if request is in path.
      *
-     * @param $path
+     * @param string $path
      * @param array  $classes
      * @param string $active
      *
