@@ -13,7 +13,7 @@
         <div class="content-wrapper">
             <div class="row">
                 <div class="col-sm-12">
-                    <form name='SettingsForm' class='form-vertical' role='form' action='/dashboard/settings' method='POST' enctype="multipart/form-data">
+                    <form id="settings-form" name='SettingsForm' class='form-vertical' role='form' action='/dashboard/settings' method='POST' enctype="multipart/form-data">
                         <h4 class="sub-header" id='application-setup'>Application Setup</h4>
 
                         @if(($saved = Session::get('saved')))
@@ -52,8 +52,10 @@
                                     <div class='form-group'>
                                         <label>Banner Image</label>
                                         @if($banner = Setting::get('app_banner'))
-                                        <div class='well'>
+                                        <div id="banner-view" class='well'>
                                             <img src='data:{{ Setting::get("app_banner_type") }};base64,{{ $banner }}' style='max-width: 100%' />
+                                            <br /><br />
+                                            <button id="remove-banner" class="btn btn-danger">Remove</button>
                                         </div>
                                         @endif
                                         <input type='file' name='app_banner' class='form-control' />
@@ -70,6 +72,8 @@
                                 </div>
                             </div>
                         </div>
+
+                        <input type="hidden" name="remove_banner" value="" />
                     </form>
                 </div>
             </div>
