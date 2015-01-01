@@ -13,9 +13,17 @@ class SettingsTableSeeder extends Seeder
 
         $defaultSettings = [
             [
-                "name"  => "site_name",
+                "name"  => "app_name",
                 "value" => "Test",
             ],
+            [
+                "name" => "app_domain",
+                "value" => "cachet.dev"
+            ],
+            [
+                "name" => "show_support",
+                "value" => "1"
+            ]
         ];
 
         Setting::truncate();
