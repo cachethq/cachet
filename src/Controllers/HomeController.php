@@ -3,6 +3,7 @@
 namespace CachetHQ\Cachet\Controllers;
 
 use Component;
+use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\View;
 use Setting;
@@ -20,7 +21,8 @@ class HomeController extends Controller
 
         return View::make('index', [
             'components' => $components,
-            'pageTitle'  => Setting::get('app_name')
+            'pageTitle'  => Setting::get('app_name'),
+            'aboutApp'   => Markdown::render(Setting::get('app_about')),
         ]);
     }
 }

@@ -12,7 +12,7 @@
 
     <div class='alert alert-{{ $systemStatus }}'>{{ $systemMessage }}</div>
 
-    @if($aboutApp = Setting::get('app_about'))
+    @if($aboutApp)
     <div class='about-app'>
         <h1>{{ Lang::get('cachet.about_this_site') }}</h1>
         <p>{{ $aboutApp }}</p>
