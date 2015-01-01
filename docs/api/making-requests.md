@@ -8,7 +8,7 @@ The API is accessible from `http://<cachet-url>/api/<endpoint>`
 
 You can use curl to interact with the API. There is no authentication required for `GET` requests:
 
-`curl -XGET curl -XGET http://status.cachethq.io/api/components`
+`curl -XGET http://status.cachethq.io/api/components`
 
 In order to create incidents, you must send the a json string with the required payload and authenticate. More information can be found in the Endpoints documentation listed below.
 
