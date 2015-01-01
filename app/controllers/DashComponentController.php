@@ -9,7 +9,7 @@ class DashComponentController extends Controller
      */
     public function showComponents()
     {
-        $components = Component::all();
+        $components = Component::orderBy('order')->orderBy('created_at')->get();
 
         return View::make('dashboard.components.index')->with([
             'pageTitle'  => 'Components - Dashboard',

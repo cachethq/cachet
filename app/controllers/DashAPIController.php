@@ -19,4 +19,24 @@ class DashAPIController extends Controller
             App::abort(500);
         }
     }
+
+    /**
+     * Updates a components ordering.
+     *
+     * @return array
+     */
+    public function postUpdateComponentOrder()
+    {
+        $componentData = Input::all();
+        unset($componentData['component'][0]); // Remove random 0 index.
+
+        foreach ($componentData['component'] as $componentId => $order) {
+            $component = Component::find($componentId);
+            $component->update([
+                'order' => $order,
+            ]);
+        }
+
+        return $componentData;
+    }
 }

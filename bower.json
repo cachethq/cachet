@@ -1,6 +1,7 @@
 {
   "name": "Cachet",
   "dependencies": {
+    "Sortable": "1.0.0",
     "bootstrap-sass-official": "3.3.*",
     "jquery": "~2.1.1",
     "chartjs": "0.2.*",

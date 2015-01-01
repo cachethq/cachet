@@ -21,6 +21,7 @@ class Component extends Eloquent implements \Dingo\Api\Transformer\Transformable
         'user_id',
         'tags',
         'link',
+        'order',
     ];
 
     /**
