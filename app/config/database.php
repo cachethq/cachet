@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'default' => $_ENV['DB_DRIVER'],
+    'default' => getenv('DB_DRIVER') ?: 'sqlite',
 
     /*
     |--------------------------------------------------------------------------
@@ -48,16 +48,18 @@ return [
 
         'sqlite' => [
             'driver'   => 'sqlite',
-            'database' => __DIR__.'/../database/'.$_ENV['DB_DATABASE'],
+            'database' => getenv('DB_DATABASE') ?
+                __DIR__.'/../database/'.getenv('DB_DATABASE') :
+                __DIR__.'/../database/cachet.sqlite',
             'prefix'   => '',
         ],
 
         'mysql' => [
             'driver'    => 'mysql',
-            'host'      => $_ENV['DB_HOST'],
-            'database'  => $_ENV['DB_DATABASE'],
-            'username'  => $_ENV['DB_USERNAME'],
-            'password'  => $_ENV['DB_PASSWORD'],
+            'host'      => getenv('DB_HOST') ?: 'localhost',
+            'database'  => getenv('DB_DATABASE') ?: 'cachet',
+            'username'  => getenv('DB_USERNAME') ?: 'homestead',
+            'password'  => getenv('DB_PASSWORD') ?: 'secret',
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
@@ -65,10 +67,10 @@ return [
 
         'pgsql' => [
             'driver'    => 'pgsql',
-            'host'      => $_ENV['DB_HOST'],
-            'database'  => $_ENV['DB_DATABASE'],
-            'username'  => $_ENV['DB_USERNAME'],
-            'password'  => $_ENV['DB_PASSWORD'],
+            'host'      => getenv('DB_HOST') ?: 'localhost',
+            'database'  => getenv('DB_DATABASE') ?: 'cachet',
+            'username'  => getenv('DB_USERNAME') ?: 'homestead',
+            'password'  => getenv('DB_PASSWORD') ?: 'secret',
             'charset'   => 'utf8',
             'prefix'    => '',
             'schema'    => 'public',
@@ -76,10 +78,10 @@ return [
 
         'sqlsrv' => [
             'driver'    => 'sqlsrv',
-            'host'      => $_ENV['DB_HOST'],
-            'database'  => $_ENV['DB_DATABASE'],
-            'username'  => $_ENV['DB_USERNAME'],
-            'password'  => $_ENV['DB_PASSWORD'],
+            'host'      => getenv('DB_HOST') ?: 'localhost',
+            'database'  => getenv('DB_DATABASE') ?: 'cachet',
+            'username'  => getenv('DB_USERNAME') ?: 'homestead',
+            'password'  => getenv('DB_PASSWORD') ?: 'secret',
             'prefix'    => '',
         ],
 
