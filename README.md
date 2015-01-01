@@ -1,6 +1,9 @@
-# Cachet [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-[![Build Status](http://img.shields.io/travis/cachethq/Cachet.svg?style=flat-square)](https://travis-ci.org/cachethq/Cachet)
-[![Code Climate](http://img.shields.io/codeclimate/github/cachethq/Cachet.svg?style=flat-square)](https://codeclimate.com/github/cachethq/Cachet)
+# Cachet
+
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+[![Build Status](https://img.shields.io/travis/cachethq/Cachet.svg?style=flat-square)](https://travis-ci.org/cachethq/Cachet)
+[![Quality Score](https://img.shields.io/scrutinizer/g/cachethq/Cachet.svg?style=flat-square)](https://scrutinizer-ci.com/g/cachethq/Cachet)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/cachethq/Cachet?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 ![Current progress](https://dl.dropboxusercontent.com/u/7323096/Cachet.png)
@@ -47,4 +50,4 @@ If you'd like to contribute translations, please check out our [CrowdIn project]
 
 # License
 
-[MIT](http://jbrooksuk.mit-license.org)
+[MIT](LICENSE)
