@@ -127,7 +127,7 @@ class DashSettingsController extends Controller
             $maxSize = $file->getMaxFilesize();
 
             if ($file->getSize() > $maxSize) {
-                return Redirect::back()->withErrorMessage('You need to upload an image that is less than '.$maxSize.'.');
+                return Redirect::back()->withErrorMessage("You need to upload an image that is less than $maxSize.");
             }
 
             if (!$file->isValid() || $file->getError()) {
@@ -155,7 +155,7 @@ class DashSettingsController extends Controller
 
         try {
             foreach (Input::except(['app_banner', 'remove_banner']) as $settingName => $settingValue) {
-                $setting = Setting::firstOrCreate([
+                Setting::firstOrCreate([
                     'name' => $settingName,
                 ])->update([
                     'value' => $settingValue,
