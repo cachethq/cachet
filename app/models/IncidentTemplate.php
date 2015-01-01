@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Str;
 use Watson\Validating\ValidatingTrait;
 
 class IncidentTemplate extends Model

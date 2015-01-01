@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\View;
+
 View::composer('index', function ($view) {
     $date = date('Y-m-d');
 
