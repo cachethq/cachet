@@ -6,7 +6,7 @@ use Illuminate\Database\Seeder;
 class SettingsTableSeeder extends Seeder
 {
     /**
-     * Run the database seeds.
+     * Run the database seeding.
      *
      * @return void
      */

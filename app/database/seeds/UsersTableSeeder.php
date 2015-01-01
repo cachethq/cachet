@@ -1,15 +1,18 @@
 <?php
 
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Seeder;
+
 class UsersTableSeeder extends Seeder
 {
     /**
-     * Run the database seeds.
+     * Run the database seeding.
      *
      * @return void
      */
     public function run()
     {
-        Eloquent::unguard();
+        Model::unguard();
 
         $users = [
             [
