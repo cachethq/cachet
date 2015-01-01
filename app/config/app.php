@@ -163,14 +163,12 @@ return [
         'Form'     => 'Illuminate\Support\Facades\Form',
         'HTML'     => 'Illuminate\Support\Facades\HTML',
         'Input'    => 'Illuminate\Support\Facades\Input',
-        'Log'      => 'Illuminate\Support\Facades\Log',
         'Redirect' => 'Illuminate\Support\Facades\Redirect',
         'Request'  => 'Illuminate\Support\Facades\Request',
         'Response' => 'Illuminate\Support\Facades\Response',
         'Route'    => 'Illuminate\Support\Facades\Route',
         'Session'  => 'Illuminate\Support\Facades\Session',
         'Str'      => 'Illuminate\Support\Str',
-        'URL'      => 'Illuminate\Support\Facades\URL',
 
     ],
 
