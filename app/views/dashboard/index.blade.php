@@ -14,7 +14,7 @@
                     <div class='list-group'>
                         @forelse($components as $component)
                         <div class='list-group-item'>
-                            {{ Form::open(['class' => 'component-inline']) }}
+                            {{ Form::open(['class' => 'component-inline', 'data-messenger' => 'Component updated.']) }}
                             <div class='row striped-list-item'>
                                 <div class='col-lg-2 col-xs-12'>
                                     <strong>{{ $component->name }}</strong>
@@ -37,13 +37,6 @@
                         <div class='list-group-item text-danger'>You should add a component.</div>
                         @endforelse
                     </div>
-                </div>
-
-                <div class='alert alert-success alert-dismissable hide fade in out' role='alert'>
-                    <button type='button' class='close'>
-                        <span aria-hidden='true'>×</span>
-                    </button>
-                    Component updated.
                 </div>
             </div>
         </div>

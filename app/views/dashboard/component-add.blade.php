@@ -50,7 +50,8 @@
                         </div>
                     </fieldset>
 
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                    <a class="btn btn-default" href="{{ URL::route('dashboard.components') }}">Cancel</a>
                     <input type='hidden' name='component[user_id]' value='{{ Auth::user()->id }}' />
                 </form>
             </div>
