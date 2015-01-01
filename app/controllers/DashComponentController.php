@@ -11,7 +11,7 @@ class DashComponentController extends Controller
     {
         $components = Component::all();
 
-        return View::make('dashboard.components')->with([
+        return View::make('dashboard.components.index')->with([
             'pageTitle'  => 'Components - Dashboard',
             'components' => $components,
         ]);
@@ -26,7 +26,7 @@ class DashComponentController extends Controller
      */
     public function showEditComponent(Component $component)
     {
-        return View::make('dashboard.component-edit')->with([
+        return View::make('dashboard.components.edit')->with([
             'pageTitle' => 'Editing "'.$component->name.'" Component - Dashboard',
             'component' => $component,
         ]);
@@ -54,7 +54,7 @@ class DashComponentController extends Controller
      */
     public function showAddComponent()
     {
-        return View::make('dashboard.component-add')->with([
+        return View::make('dashboard.components.add')->with([
             'pageTitle' => 'Add Component - Dashboard',
         ]);
     }

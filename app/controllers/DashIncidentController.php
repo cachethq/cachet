@@ -11,7 +11,7 @@ class DashIncidentController extends Controller
     {
         $incidents = Incident::orderBy('created_at', 'desc')->get();
 
-        return View::make('dashboard.incidents')->with([
+        return View::make('dashboard.incidents.index')->with([
             'pageTitle' => 'Incidents - Dashboard',
             'incidents' => $incidents,
         ]);
@@ -24,7 +24,7 @@ class DashIncidentController extends Controller
      */
     public function showAddIncident()
     {
-        return View::make('dashboard.incident-add')->with([
+        return View::make('dashboard.incidents.add')->with([
             'pageTitle' => 'Add Incident - Dashboard',
         ]);
     }
@@ -36,7 +36,7 @@ class DashIncidentController extends Controller
      */
     public function showAddIncidentTemplate()
     {
-        return View::make('dashboard.incident-template')->with([
+        return View::make('dashboard.incidents.incident-template')->with([
             'pageTitle' => 'Add Incident Template - Dashboard',
         ]);
     }

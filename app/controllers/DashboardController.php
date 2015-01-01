@@ -24,7 +24,7 @@ class DashboardController extends Controller
      */
     public function showMetrics()
     {
-        return View::make('dashboard.metrics')->with([
+        return View::make('dashboard.metrics.index')->with([
             'pageTitle' => 'Metrics - Dashboard',
         ]);
     }
@@ -36,7 +36,7 @@ class DashboardController extends Controller
      */
     public function showNotifications()
     {
-        return View::make('dashboard.notifications')->with([
+        return View::make('dashboard.notifications.index')->with([
             'pageTitle' => 'Notifications - Dashboard',
         ]);
     }
