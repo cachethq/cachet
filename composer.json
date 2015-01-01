@@ -39,8 +39,7 @@
         }
     },
     "extra": {
-        "heroku": {
-            "framework": "silex",
+        "paas": {
             "document-root": "public",
             "index-document": "index.php",
             "log-files": [

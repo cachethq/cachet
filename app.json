@@ -16,7 +16,7 @@
   ],
   "env": {
     "ENV": { "value": "heroku", "description": "Do not modify this value to work on Heroku" },
-    "BUILDPACK_URL": { "value": "https://github.com/heroku/heroku-buildpack-php", "description": "Do not modify this value to work on Heroku" }
+    "BUILDPACK_URL": { "value": "https://github.com/Scalingo/appsdeck-buildpack-php", "description": "Do not modify this value to work on Heroku" }
   },
   "scripts": {
     "postdeploy": "php artisan migrate --env=heroku; php artisan key:generate"
