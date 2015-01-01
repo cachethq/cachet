@@ -3,38 +3,30 @@
 namespace CachetHQ\Cachet\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use RecursiveDirectoryIterator;
 
 class RoutingServiceProvider extends ServiceProvider
 {
-    public function register()
-    {
-        //
-    }
-
+    /**
+     * Boot the service provider.
+     *
+     * @return void
+     */
     public function boot()
     {
-        $this->routesInDirectory();
+        $files = glob(app_path('routes').'/*.php');
+
+        foreach ($files as $file) {
+            require $file;
+        }
     }
 
     /**
-     * Organise Routes.
+     * Register the service provider.
      *
-     * @param string $app
+     * @return void
      */
-    private function routesInDirectory($app = '')
+    public function register()
     {
-        $routeDir = app_path('routes/'.$app.($app !== '' ? '/' : null));
-
-        $iterator = new RecursiveDirectoryIterator($routeDir);
-        $iterator->setFlags(RecursiveDirectoryIterator::SKIP_DOTS);
-
-        foreach ($iterator as $route) {
-            $isDotFile = strpos($route->getFilename(), '.') === 0;
-
-            if (!$isDotFile && !$route->isDir()) {
-                require $routeDir.$route->getFilename();
-            }
-        }
+        //
     }
 }
