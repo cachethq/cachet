@@ -34,7 +34,7 @@ class HomeController extends Controller
 
         return View::make('index', [
             'components'    => $components,
-            'allIncidents' => $allIncidents,
+            'allIncidents'  => $allIncidents,
             'pageTitle'     => Setting::get('app_name'),
             'aboutApp'      => Markdown::render(Setting::get('app_about')),
         ]);
