@@ -133,7 +133,51 @@ Restart Apache and you're done!
 
 ## nginx
 
-**TODO.**
+Create a new vhost such as `/etc/nginx/sites-enabled/cachet.conf`
+
+```
+server {
+  listen   80;
+  server_name cachet.dev ; # Or whatever you want to use
+  access_log /var/log/nginx/cachet.dev.access.log timed_combined;
+  error_log /var/log/nginx/cachet.dev.error.log;
+  proxy_read_timeout 300s;
+
+  location / {
+    root   /var/www/cachet.dev;
+      }
+}
+```
+
+In production environments it would be wise to enable SSL:
+
+```
+server {
+	server_name  cachet.mycompany.com;
+	listen 80 default;
+	rewrite ^(.*) https://cachet.mycompany.com$1 permanent;
+}
+
+server {
+	listen 443;
+	server_name cachet.mycompany.com;
+
+        root /var/www/cachet.mycompany.com;
+        index index.htm index.html index.php;
+
+	ssl on;
+	ssl_certificate /etc/ssl/private/cachet.mycompany.com.pem;
+	ssl_certificate_key /etc/ssl/private/cachet.mycompany.com.pem;
+
+	ssl_session_timeout 5m;
+
+  	# Best practice as at March 2014
+  	ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+  	ssl_prefer_server_ciphers on;
+  	ssl_ciphers "EECDH+ECDSA+AESGCM EECDH+aRSA+AESGCM EECDH+ECDSA+SHA384 EECDH+ECDSA+SHA256 EECDH+aRSA+SHA384 EECDH+aRSA+SHA256 EECDH+aRSA+RC4 EECDH EDH+aRSA RC4 !aNULL !eNULL !LOW !3DES !MD5 !EXP !PSK !SRP !DSS";
+  	ssl_buffer_size 1400;
+}
+```
 
 # Environment Detection
 
