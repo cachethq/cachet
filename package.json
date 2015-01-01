@@ -2,6 +2,8 @@
   "devDependencies": {
     "gulp": "^3.8.8",
     "gulp-changed": "1.1.0",
+    "gulp-jshint": "1.9.0",
+    "jshint-stylish": "1.0.0",
     "laravel-elixir": "*"
   }
 }
