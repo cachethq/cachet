@@ -1,5 +1,7 @@
 <?php
 
+use GrahamCampbell\Throttle\Facades\Throttle;
+
 class LoginThrottlingFilter
 {
     public function filter($route, $request)
