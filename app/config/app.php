@@ -127,6 +127,7 @@ return [
 
         'CachetHQ\Cachet\Providers\RepositoryServiceProvider',
         'CachetHQ\Cachet\Providers\RoutingServiceProvider',
+        'CachetHQ\Cachet\Providers\ConsoleServiceProvider',
 
     ],
 

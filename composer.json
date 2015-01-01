@@ -54,7 +54,7 @@
         "post-install-cmd": [
             "php artisan optimize",
             "chmod -R 755 app/storage",
-            "php artisan migrate"
+            "php artisan cachet:one-click-deploy"
         ],
         "post-update-cmd": [
             "php artisan clear-compiled",
