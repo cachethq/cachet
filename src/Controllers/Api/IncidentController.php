@@ -11,8 +11,20 @@ class IncidentController extends Controller
 {
     use ControllerTrait;
 
+    /**
+     * The incident repository instance.
+     *
+     * @var \CachetHQ\Cachet\Repositories\Incident\IncidentRepository
+     */
     protected $incident;
 
+    /**
+     * Create a new incident controller instance.
+     *
+     * @param \CachetHQ\Cachet\Repositories\Incident\IncidentRepository $incident
+     *
+     * @return void
+     */
     public function __construct(IncidentRepository $incident)
     {
         $this->incident = $incident;
@@ -33,7 +45,7 @@ class IncidentController extends Controller
      *
      * @param int $id
      *
-     * @return Incident
+     * @return \Incident
      */
     public function getIncident($id)
     {
@@ -43,7 +55,7 @@ class IncidentController extends Controller
     /**
      * Create a new incident.
      *
-     * @return Incident
+     * @return \Incident
      */
     public function postIncidents()
     {
@@ -55,7 +67,7 @@ class IncidentController extends Controller
      *
      * @param int $id
      *
-     * @return Incident
+     * @return \Incident
      */
     public function putIncident($id)
     {

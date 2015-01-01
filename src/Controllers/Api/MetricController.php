@@ -11,8 +11,20 @@ class MetricController extends Controller
 {
     use ControllerTrait;
 
+    /**
+     * The metric repository instance.
+     *
+     * @var \CachetHQ\Cachet\Repositories\Metric\MetricRepository
+     */
     protected $metric;
 
+    /**
+     * Create a new metric controller instance.
+     *
+     * @param \CachetHQ\Cachet\Repositories\Metric\MetricRepository $metric
+     *
+     * @return void
+     */
     public function __construct(MetricRepository $metric)
     {
         $this->metric = $metric;
@@ -32,7 +44,7 @@ class MetricController extends Controller
      *
      * @param int $id
      *
-     * @return Metric
+     * @return \Metric
      */
     public function getMetric($id)
     {
@@ -42,7 +54,7 @@ class MetricController extends Controller
     /**
      * Create a new metric.
      *
-     * @return Metric
+     * @return \Metric
      */
     public function postMetrics()
     {
@@ -54,7 +66,7 @@ class MetricController extends Controller
      *
      * @param int $id
      *
-     * @return Metric
+     * @return \Metric
      */
     public function putMetric($id)
     {

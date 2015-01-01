@@ -11,11 +11,23 @@ class MetricPointController extends Controller
 {
     use ControllerTrait;
 
-    protected $metricpoint;
+    /**
+     * The metric point repository instance.
+     *
+     * @var \CachetHQ\Cachet\Repositories\MetricPoint\MetricPointRepository
+     */
+    protected $metricPoint;
 
-    public function __construct(MetricPointRepository $metricpoint)
+    /**
+     * Create a new metric point controller instance.
+     *
+     * @param \CachetHQ\Cachet\Repositories\MetricPoint\MetricPointRepository $metricPoint
+     *
+     * @return void
+     */
+    public function __construct(MetricPointRepository $metricPoint)
     {
-        $this->metricpoint = $metricpoint;
+        $this->metricPoint = $metricPoint;
     }
     /**
      * Get all metric points.
@@ -24,7 +36,7 @@ class MetricPointController extends Controller
      */
     public function getMetricPoints()
     {
-        return $this->metricpoint->all();
+        return $this->metricPoint->all();
     }
 
     /**
@@ -32,20 +44,20 @@ class MetricPointController extends Controller
      *
      * @param int $id
      *
-     * @return MetricPoint
+     * @return \MetricPoint
      */
     public function getMetricPoint($id)
     {
-        return $this->metricpoint->findOrFail($id);
+        return $this->metricPoint->findOrFail($id);
     }
 
     /**
      * Create a new metric point.
      *
-     * @return MetricPoint
+     * @return \MetricPoint
      */
     public function postMetricPoints()
     {
-        return $this->metricpoint->create(Input::all());
+        return $this->metricPoint->create(Input::all());
     }
 }
