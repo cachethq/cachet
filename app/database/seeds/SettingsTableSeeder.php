@@ -17,11 +17,11 @@ class SettingsTableSeeder extends Seeder
                 "value" => "Test",
             ],
             [
-                "name" => "app_domain",
+                "name"  => "app_domain",
                 "value" => "cachet.dev"
             ],
             [
-                "name" => "show_support",
+                "name"  => "show_support",
                 "value" => "1"
             ]
         ];

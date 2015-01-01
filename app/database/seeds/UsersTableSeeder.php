@@ -15,13 +15,13 @@ class UsersTableSeeder extends Seeder
             [
                 "username" => "admin",
                 "password" => "admin",
-                "email" => "admin@example.com",
-                "level" => "1"
+                "email"    => "admin@example.com",
+                "level"    => "1"
             ],
             [
                 "username" => "user",
                 "password" => "user",
-                "email" => "user@example.com"
+                "email"    => "user@example.com"
             ],
         ];
 
