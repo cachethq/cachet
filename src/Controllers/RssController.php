@@ -19,9 +19,9 @@ class RssController extends Controller
     {
         $feed = RssFacade::feed('2.0', 'UTF-8');
         $feed->channel([
-            'title' => Setting::get('app_name'),
+            'title'       => Setting::get('app_name'),
             'description' => 'Status Feed',
-            'link' => Setting::get('app_domain'),
+            'link'        => Setting::get('app_domain'),
         ]);
 
         Incident::get()->map(function ($incident) use ($feed) {
