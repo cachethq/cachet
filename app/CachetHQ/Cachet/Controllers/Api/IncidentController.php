@@ -5,7 +5,7 @@ namespace CachetHQ\Cachet\Controllers\Api;
 use CachetHQ\Cachet\Repositories\Incident\IncidentRepository;
 use Dingo\Api\Routing\ControllerTrait;
 use Illuminate\Routing\Controller;
-use Input;
+use Illuminate\Support\Facades\Input;
 
 class IncidentController extends Controller
 {
