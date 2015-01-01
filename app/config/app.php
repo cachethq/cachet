@@ -113,22 +113,20 @@ return [
         'Illuminate\Pagination\PaginationServiceProvider',
         'Illuminate\Queue\QueueServiceProvider',
         'Illuminate\Redis\RedisServiceProvider',
-        'Illuminate\Remote\RemoteServiceProvider',
         'Illuminate\Auth\Reminders\ReminderServiceProvider',
         'Illuminate\Database\SeedServiceProvider',
         'Illuminate\Session\SessionServiceProvider',
         'Illuminate\Translation\TranslationServiceProvider',
         'Illuminate\Validation\ValidationServiceProvider',
         'Illuminate\View\ViewServiceProvider',
-        'Illuminate\Workbench\WorkbenchServiceProvider',
 
         'Dingo\Api\Provider\ApiServiceProvider',
         'GrahamCampbell\Throttle\ThrottleServiceProvider',
         'GrahamCampbell\Markdown\MarkdownServiceProvider',
         'Thujohn\Rss\RssServiceProvider',
 
-        'CachetHQ\Cachet\Support\ServiceProviders\RepositoryServiceProvider',
-        'CachetHQ\Cachet\Support\ServiceProviders\RoutingServiceProvider',
+        'CachetHQ\Cachet\Providers\RepositoryServiceProvider',
+        'CachetHQ\Cachet\Providers\RoutingServiceProvider',
 
     ],
 
@@ -158,19 +156,16 @@ return [
 
     'aliases' => [
 
+        'API'               => 'Dingo\Api\Facade\API',
         'App'               => 'Illuminate\Support\Facades\App',
         'Artisan'           => 'Illuminate\Support\Facades\Artisan',
         'Auth'              => 'Illuminate\Support\Facades\Auth',
         'Blade'             => 'Illuminate\Support\Facades\Blade',
         'Cache'             => 'Illuminate\Support\Facades\Cache',
-        'Carbon'            => 'Carbon\Carbon',
-        'ClassLoader'       => 'Illuminate\Support\ClassLoader',
         'Config'            => 'Illuminate\Support\Facades\Config',
-        'Controller'        => 'Illuminate\Routing\Controller',
         'Cookie'            => 'Illuminate\Support\Facades\Cookie',
         'Crypt'             => 'Illuminate\Support\Facades\Crypt',
         'DB'                => 'Illuminate\Support\Facades\DB',
-        'Eloquent'          => 'Illuminate\Database\Eloquent\Model',
         'Event'             => 'Illuminate\Support\Facades\Event',
         'File'              => 'Illuminate\Support\Facades\File',
         'Form'              => 'Illuminate\Support\Facades\Form',
@@ -189,19 +184,11 @@ return [
         'Response'          => 'Illuminate\Support\Facades\Response',
         'Route'             => 'Illuminate\Support\Facades\Route',
         'Schema'            => 'Illuminate\Support\Facades\Schema',
-        'Seeder'            => 'Illuminate\Database\Seeder',
         'Session'           => 'Illuminate\Support\Facades\Session',
-        'SoftDeletingTrait' => 'Illuminate\Database\Eloquent\SoftDeletingTrait',
-        'SSH'               => 'Illuminate\Support\Facades\SSH',
         'Str'               => 'Illuminate\Support\Str',
         'URL'               => 'Illuminate\Support\Facades\URL',
         'Validator'         => 'Illuminate\Support\Facades\Validator',
         'View'              => 'Illuminate\Support\Facades\View',
-
-        'API'      => 'Dingo\Api\Facade\API',
-        'Throttle' => 'GrahamCampbell\Throttle\Facades\Throttle',
-        'Markdown' => 'GrahamCampbell\Markdown\Facades\Markdown',
-        'RSS'      => 'Thujohn\Rss\RssFacade',
 
     ],
 

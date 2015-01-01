@@ -1,7 +1,6 @@
 # Laravel
 /bootstrap/compiled.php
 /vendor
-/workbench
 
 # Configuration
 .env.*.php

@@ -1,5 +1,5 @@
 <?php
-    $incidentDate = Carbon::now()->subDays($i);
+    $incidentDate = Carbon\Carbon::now()->subDays($i);
     $incidents = Incident::whereBetween('created_at', [
         $incidentDate->format('Y-m-d') . ' 00:00:00',
         $incidentDate->format('Y-m-d') . ' 23:59:59',

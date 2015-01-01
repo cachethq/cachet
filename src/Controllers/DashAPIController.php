@@ -1,23 +1,30 @@
 <?php
 
+namespace CachetHQ\Cachet\Controllers;
+
+use Component;
+use Exception;
+use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Input;
+
 class DashAPIController extends Controller
 {
     /**
      * Updates a component with the entered info.
      *
-     * @param Component $component
+     * @param \Component $component
      *
-     * @return array
+     * @throws \Exception
+     *
+     * @return \Component
      */
     public function postUpdateComponent(Component $component)
     {
-        $componentData = Input::all();
-        unset($componentData['_token']);
-        if ($component->update($componentData)) {
-            return $component;
-        } else {
-            App::abort(500);
+        if (!$component->update(Input::except(['_token']))) {
+            throw new Exception('Failed to update the component.');
         }
+
+        return $component;
     }
 
     /**
@@ -32,9 +39,7 @@ class DashAPIController extends Controller
 
         foreach ($componentData['component'] as $componentId => $order) {
             $component = Component::find($componentId);
-            $component->update([
-                'order' => $order,
-            ]);
+            $component->update(['order' => $order]);
         }
 
         return $componentData;

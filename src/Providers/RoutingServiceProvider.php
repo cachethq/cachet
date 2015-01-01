@@ -1,6 +1,6 @@
 <?php
 
-namespace CachetHQ\Cachet\Support\ServiceProviders;
+namespace CachetHQ\Cachet\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use RecursiveDirectoryIterator;

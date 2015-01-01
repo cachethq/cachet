@@ -1,5 +1,11 @@
 <?php
 
+namespace CachetHQ\Cachet\Controllers;
+
+use Component;
+use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\View;
+
 class DashboardController extends Controller
 {
     /**

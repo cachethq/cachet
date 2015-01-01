@@ -1,5 +1,16 @@
 <?php
 
+namespace CachetHQ\Cachet\Controllers;
+
+use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\View;
+use Setting;
+use User;
+
 class SetupController extends Controller
 {
     /**
@@ -46,7 +57,7 @@ class SetupController extends Controller
             // Pull the user details out.
             $userDetails = array_pull($postData, 'user');
 
-            // TODO: Do we want to just use Eloquent::unguard() here?
+            // TODO: Do we want to just use Model::unguard() here?
             $user = User::create([
                 'username' => $userDetails['username'],
                 'email'    => $userDetails['email'],
@@ -59,8 +70,8 @@ class SetupController extends Controller
             $settings = array_get($postData, 'settings');
 
             foreach ($settings as $settingName => $settingValue) {
-                $setting        = new Setting();
-                $setting->name  = $settingName;
+                $setting = new Setting();
+                $setting->name = $settingName;
                 $setting->value = $settingValue;
                 $setting->save();
             }

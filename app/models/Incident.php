@@ -2,6 +2,7 @@
 
 use CachetHQ\Cachet\Transformers\IncidentTransformer;
 use Dingo\Api\Transformer\TransformableInterface;
+use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletingTrait;
 use Watson\Validating\ValidatingTrait;
