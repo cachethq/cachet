@@ -3,7 +3,8 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AlterTableComponentsAddOrderColumn extends Migration {
+class AlterTableComponentsAddOrderColumn extends Migration
+{
 
 	/**
 	 * Run the migrations.
@@ -12,8 +13,7 @@ class AlterTableComponentsAddOrderColumn extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('components', function(Blueprint $table)
-		{
+		Schema::table('components', function(Blueprint $table) {
 			$table->tinyInteger('order')->default(0)->after('status');
 		});
 	}
@@ -25,8 +25,7 @@ class AlterTableComponentsAddOrderColumn extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('components', function(Blueprint $table)
-		{
+		Schema::table('components', function(Blueprint $table) {
 			$table->dropColumn('order');
 		});
 	}

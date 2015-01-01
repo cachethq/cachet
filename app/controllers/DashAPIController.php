@@ -20,6 +20,11 @@ class DashAPIController extends Controller
         }
     }
 
+    /**
+     * Updates a components ordering.
+     *
+     * @return array
+     */
     public function postUpdateComponentOrder()
     {
         $componentData = Input::all();
@@ -28,7 +33,7 @@ class DashAPIController extends Controller
         foreach ($componentData['component'] as $componentId => $order) {
             $component = Component::find($componentId);
             $component->update([
-                'order' => $order
+                'order' => $order,
             ]);
         }
 
