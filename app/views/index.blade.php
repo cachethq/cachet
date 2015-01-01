@@ -26,7 +26,51 @@
     @endif --}}
 
     <h1>{{ Lang::get('cachet.past_incidents') }}</h1>
+
+    <?php
+        $today = Carbon::now();
+        $startDate = Carbon::now();
+
+        // Check if we have another starting point
+        if (Input::has('start_date')) {
+            try {
+                // If date provided is valido
+                $oldDate = Carbon::createFromFormat('Y-m-d', Input::get('start_date'));
+                // If trying to get a future date fallback to today
+                if ($today->gt($oldDate)) {
+                      $startDate = $oldDate;
+                }
+            } catch (Exception $e) {
+                // Fallback to today
+            }
+        }
+    ?>
+
     @foreach(range(0, 7) as $i => $v)
-    @include('partials.incident', array('i', $i))
+        <?php
+            // Get incidents from selected dayte
+            $incidentDate = $startDate->copy()->subDays($i);
+            $incidents = Incident::whereBetween('created_at', [
+                $incidentDate->format('Y-m-d') . ' 00:00:00',
+                $incidentDate->format('Y-m-d') . ' 23:59:59',
+            ])->orderBy('created_at', 'desc')->get();
+        ?>
+        <h4>{{ $incidentDate->format('jS F Y') }}</h4>
+    @include('partials.incident', array('incidents', $incidents))
     @endforeach
+    <hr/>
+    <nav>
+        <ul class="pager">
+            <li class="previous">
+                <a href="{{ URL::route('status-page') }}?start_date={{ $startDate->copy()->subWeek()->subDay()->toDateString() }}">
+                    <span aria-hidden="true">&larr;</span> {{ Lang::get('cachet.previous_week') }}
+                </a>
+            </li>
+            <li class="next @if( ! $today->gt($startDate)) disabled @endif">
+                <a @if($today->gt($startDate)) href="{{ URL::route('status-page') }}?start_date={{ $startDate->copy()->addWeek()->addDay()->toDateString() }}" @endif>
+                    {{ Lang::get('cachet.next_week') }} <span aria-hidden="true">&rarr;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 @stop

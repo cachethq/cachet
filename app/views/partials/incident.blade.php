@@ -1,11 +1,3 @@
-<?php
-    $incidentDate = Carbon::now()->subDays($i);
-    $incidents = Incident::whereBetween('created_at', [
-        $incidentDate->format('Y-m-d') . ' 00:00:00',
-        $incidentDate->format('Y-m-d') . ' 23:59:59',
-    ])->orderBy('created_at', 'desc')->get();
-?>
-<h4>{{ $incidentDate->format('jS F Y') }}</h4>
 <div class='timeline'>
     <div class='content-wrapper'>
         @forelse($incidents as $incidentID => $incident)
