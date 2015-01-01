@@ -5,7 +5,7 @@ namespace CachetHQ\Cachet\Repositories\MetricPoint;
 use CachetHQ\Cachet\Repositories\EloquentRepository;
 use MetricPoint;
 
-class EloquentMetricPointRepository extends EloquentRepository implements MetricRepository
+class EloquentMetricPointRepository extends EloquentRepository implements MetricPointRepository
 {
     protected $model;
 
