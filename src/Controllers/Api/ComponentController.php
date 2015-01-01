@@ -11,8 +11,20 @@ class ComponentController extends Controller
 {
     use ControllerTrait;
 
+    /**
+     * The component repository instance.
+     *
+     * @var \CachetHQ\Cachet\Repositories\Component\ComponentRepository
+     */
     protected $component;
 
+    /**
+     * Create a new component controller instance.
+     *
+     * @param \CachetHQ\Cachet\Repositories\Component\ComponentRepository $component
+     *
+     * @return void
+     */
     public function __construct(ComponentRepository $component)
     {
         $this->component = $component;

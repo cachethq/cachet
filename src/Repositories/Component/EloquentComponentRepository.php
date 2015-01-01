@@ -8,13 +8,6 @@ use Component;
 class EloquentComponentRepository extends EloquentRepository implements ComponentRepository
 {
     /**
-     * The eloquent model instance.
-     *
-     * @var \Component
-     */
-    protected $model;
-
-    /**
      * Create a new eloquent component repository instance.
      *
      * @param \Component $model
