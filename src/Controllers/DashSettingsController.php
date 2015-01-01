@@ -5,6 +5,7 @@ namespace CachetHQ\Cachet\Controllers;
 use Exception;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 use Setting;
 
