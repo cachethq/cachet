@@ -7,6 +7,7 @@
 .env.php
 config.codekit
 !.env.heroku.php
+!.env.example.php
 
 # Assets development
 /node_modules
