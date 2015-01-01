@@ -59,7 +59,7 @@ API::error(function (\Illuminate\Database\Eloquent\ModelNotFoundException $excep
 App::missing(function ($exception) {
     if (Request::is('dashboard*') or Request::is('api*')) {
         return Response::view('errors.404', [
-            'pageTitle' => 'That page went missing!',
+            'pageTitle' => Lang::get('cachet.dashboard.not_found_title'),
         ], 404);
     }
 

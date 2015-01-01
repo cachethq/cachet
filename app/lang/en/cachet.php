@@ -56,6 +56,7 @@ return [
         'settings_saved'           => 'Settings saved.',
         'settings_not_saved'       => 'Settings could not be saved.',
         'not_found'                => 'Page Not Found',
+        'not_found_title'          => 'That page went missing!',
         'not_found_message'        => 'Sorry, but the page you are looking for has not been found. Check the URL for errors and try again.',
         'not_found_link'           => 'Return to homepage',
     ],
