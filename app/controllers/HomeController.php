@@ -28,8 +28,10 @@ class HomeController extends Controller
      */
     public function showIndex()
     {
+        $components = Component::orderBy('order')->orderBy('created_at')->get();
+
         return View::make('index', [
-            'components' => $this->component->all(),
+            'components' => $components,
             'pageTitle'  => Setting::get('app_name')
         ]);
     }

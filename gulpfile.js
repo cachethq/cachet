@@ -39,6 +39,7 @@ elixir(function (mix) {
             'bower_components/lodash/dist/lodash.js',
             'bower_components/messenger/build/js/messenger.js',
             // 'bower_components/chartjs/Chart.min.js',
+            'bower_components/Sortable/Sortable.js',
             'bower_components/jquery-minicolors/jquery.minicolors.js',
             'bower_components/jquery-serialize-object/jquery.serialize-object.js',
             'js/app.js',
