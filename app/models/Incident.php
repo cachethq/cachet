@@ -11,6 +11,11 @@ class Incident extends Model implements TransformableInterface
 {
     use SoftDeletingTrait, ValidatingTrait;
 
+    /**
+     * The validation rules.
+     *
+     * @var string[]
+     */
     protected $rules = [
         'user_id'      => 'required|integer',
         'component_id' => 'integer',
@@ -19,8 +24,18 @@ class Incident extends Model implements TransformableInterface
         'message'      => 'required',
     ];
 
+    /**
+     * The fillable properties.
+     *
+     * @var string[]
+     */
     protected $fillable = ['user_id', 'component_id', 'name', 'status', 'message'];
 
+    /**
+     * The accessors to append to the model's serialized form.
+     *
+     * @var string[]
+     */
     protected $appends = ['humanStatus'];
 
     /**
@@ -53,10 +68,14 @@ class Incident extends Model implements TransformableInterface
     public function getIconAttribute()
     {
         switch ($this->status) {
-            case 1: return 'ion ion-flag';
-            case 2: return 'ion ion-alert';
-            case 3: return 'ion ion-eye';
-            case 4: return 'ion ion-checkmark';
+            case 1:
+                return 'ion ion-flag';
+            case 2:
+                return 'ion ion-alert';
+            case 3:
+                return 'ion ion-eye';
+            case 4:
+                return 'ion ion-checkmark';
         }
     }
 

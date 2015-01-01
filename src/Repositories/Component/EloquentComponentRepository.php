@@ -7,17 +7,37 @@ use Component;
 
 class EloquentComponentRepository extends EloquentRepository implements ComponentRepository
 {
+    /**
+     * The eloquent model instance.
+     *
+     * @var \Component
+     */
     protected $model;
 
+    /**
+     * Create a new eloquent component repository instance.
+     *
+     * @param \Component $model
+     *
+     * @return void
+     */
     public function __construct(Component $model)
     {
         $this->model = $model;
     }
 
-    public function create($user_id, array $array)
+    /**
+     * Create a new model.
+     *
+     * @param int   $userId
+     * @param array $data
+     *
+     * @return \Illuminate\Database\Eloquent\Model
+     */
+    public function create($userId, array $data)
     {
-        $component = new $this->model($array);
-        $component->user_id = $user_id;
+        $component = new $this->model($data);
+        $component->user_id = $userId;
 
         $this->validate($component);
 

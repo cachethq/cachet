@@ -7,6 +7,11 @@ class Service extends Model
 {
     use ValidatingTrait;
 
+    /**
+     * The validation rules.
+     *
+     * @var string[]
+     */
     protected $rules = [
         'type'       => 'alpha_dash|required',
         'active'     => 'required|in:0,1',

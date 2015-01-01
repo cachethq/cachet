@@ -19,14 +19,16 @@ class User extends Model implements UserInterface, RemindableInterface
     protected $table = 'users';
 
     /**
-     * The attributes excluded from the model's JSON form.
+     * The hidden properties.
+     *
+     * These are excluded when we are serializing the model.
      *
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
 
     /**
-     * Items which cannot be mass assigned.
+     * The properties that cannot be mass assigned.
      *
      * @var array
      */
@@ -37,11 +39,13 @@ class User extends Model implements UserInterface, RemindableInterface
      *
      * @param string $password
      *
-     * @return void
+     * @return $this
      */
     public function setPasswordAttribute($password)
     {
         $this->attributes['password'] = Hash::make($password);
+
+        return $this;
     }
 
     /**

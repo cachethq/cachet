@@ -2,7 +2,7 @@
 
 namespace CachetHQ\Cachet\Repositories;
 
-use Exception;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 abstract class EloquentRepository
@@ -10,7 +10,7 @@ abstract class EloquentRepository
     /**
      * Returns all models.
      *
-     * @return object
+     * @return \Illuminate\Database\Eloquent\Collection
      */
     public function all()
     {
@@ -20,10 +20,12 @@ abstract class EloquentRepository
     /**
      * Returns an object with related relationships.
      *
-     * @param id    $id
-     * @param array $with Array of model relationships
+     * @param int      $id
+     * @param string[] $with
      *
-     * @return object|ModelNotFoundException
+     * @throws \Illuminate\Database\Eloquent\ModelNotFoundException
+     *
+     * @return \Illuminate\Database\Eloquent\Model
      */
     public function with($id, array $with = [])
     {
@@ -50,7 +52,7 @@ abstract class EloquentRepository
      *
      * @param int $id
      *
-     * @return object
+     * @return \Illuminate\Database\Eloquent\Model
      */
     public function find($id)
     {
@@ -58,11 +60,13 @@ abstract class EloquentRepository
     }
 
     /**
-     * Finds a model by ID.
+     * Finds a model by id.
      *
      * @param int $id
      *
-     * @return object|ModelNotFoundException
+     * @throws \Illuminate\Database\Eloquent\ModelNotFoundException
+     *
+     * @return \Illuminate\Database\Eloquent\Model
      */
     public function findOrFail($id)
     {
@@ -76,38 +80,44 @@ abstract class EloquentRepository
      * @param string $value
      * @param array  $columns
      *
-     * @return object|ModelNotFoundException
+     * @throws \Illuminate\Database\Eloquent\ModelNotFoundException
+     *
+     * @return \Illuminate\Database\Eloquent\Model
      */
     public function findByOrFail($key, $value, $columns = ['*'])
     {
-        if (! is_null($item = $this->model->where($key, $value)->first($columns))) {
-            return $item;
+        $model = $this->model->where($key, $value)->first($columns);
+
+        if ($model === null) {
+            throw new ModelNotFoundException();
         }
 
-        throw new ModelNotFoundException();
+        return $model;
     }
 
     /**
      * Counts the number of rows returned.
      *
-     * @param string $key
-     * @param string $value
+     * @param string|null $key
+     * @param string|null $value
      *
      * @return int
      */
     public function count($key = null, $value = null)
     {
-        if (is_null($key) || is_null($value)) {
-            return $this->model->where($key, $value)->count();
+        if ($key === null || $value === null) {
+            return $this->model->count();
         }
 
-        return $this->model->count();
+        return $this->model->where($key, $value)->count();
     }
 
     /**
-     * Deletes a model by ID.
+     * Deletes a model by id.
      *
-     * @param inetegr $id
+     * @param int $id
+     *
+     * @return void
      */
     public function destroy($id)
     {
@@ -117,14 +127,16 @@ abstract class EloquentRepository
     /**
      * Validate a given model with Watson validation.
      *
-     * @param object $model
+     * @param \Illuminate\Database\Eloquent\Model $model
      *
-     * @return Exception
+     * @throws \CachetHQ\Cachet\Repositories\InvalidModelValidationException
+     *
+     * @return $this
      */
-    public function validate($model)
+    public function validate(Model $model)
     {
         if ($model->isInvalid()) {
-            throw new Exception('Invalid model validation');
+            throw new InvalidModelValidationException('Validation failed on the model.');
         }
 
         return $this;
@@ -133,15 +145,17 @@ abstract class EloquentRepository
     /**
      * Validate whether a model has a correct relationship.
      *
-     * @param object $model
-     * @param string $relationship Name of the relationship to validate against
+     * @param \Illuminate\Database\Eloquent\Model $model
+     * @param string                              $relationship
      *
-     * @return Exception
+     * @throws \CachetHQ\Cachet\Repositories\InvalidRelationshipException
+     *
+     * @return $this
      */
-    public function hasRelationship($model, $relationship)
+    public function hasRelationship(Model $model, $relationship)
     {
-        if (! $model->$relationship) {
-            throw new Exception('Invalid relationship exception');
+        if ($model->$relationship === null) {
+            throw new InvalidRelationshipException('The relationship was not valid.');
         }
 
         return $this;

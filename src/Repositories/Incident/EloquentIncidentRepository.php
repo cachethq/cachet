@@ -7,20 +7,40 @@ use Incident;
 
 class EloquentIncidentRepository extends EloquentRepository implements IncidentRepository
 {
+    /**
+     * The eloquent model instance.
+     *
+     * @var \Incident
+     */
     protected $model;
 
+    /**
+     * Create a new eloquent incident repository instance.
+     *
+     * @param \Incident $model
+     *
+     * @return void
+     */
     public function __construct(Incident $model)
     {
         $this->model = $model;
     }
 
-    public function create($user_id, array $array)
+    /**
+     * Create a new model.
+     *
+     * @param int   $userId
+     * @param array $data
+     *
+     * @return \Illuminate\Database\Eloquent\Model
+     */
+    public function create($userId, array $data)
     {
-        $incident = new $this->model($array);
-        $incident->user_id = $user_id;
+        $incident = new $this->model($data);
+        $incident->user_id = $userId;
         $this->validate($incident);
 
-        if (isset($array['component_id'])) {
+        if (isset($data['component_id'])) {
             $this->hasRelationship($incident, 'component');
         }
 
@@ -29,17 +49,25 @@ class EloquentIncidentRepository extends EloquentRepository implements IncidentR
         return $incident;
     }
 
-    public function update($id, array $array)
+    /**
+     * Update a model by id.
+     *
+     * @param int   $id
+     * @param array $data
+     *
+     * @return \Illuminate\Database\Eloquent\Model
+     */
+    public function update($id, array $data)
     {
         $incident = $this->model->findOrFail($id);
-        $incident->fill($array);
+        $incident->fill($data);
         $this->validate($incident);
 
-        if (isset($array['component_id'])) {
+        if (isset($data['component_id'])) {
             $this->hasRelationship($incident, 'component');
         }
 
-        $incident->update($array);
+        $incident->update($data);
 
         return $incident;
     }

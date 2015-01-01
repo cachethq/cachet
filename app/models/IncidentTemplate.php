@@ -7,11 +7,21 @@ class IncidentTemplate extends Model
 {
     use ValidatingTrait;
 
+    /**
+     * The validation rules.
+     *
+     * @var string[]
+     */
     protected $rules = [
         'name'     => 'alpha|required',
         'template' => 'required',
     ];
 
+    /**
+     * The fillable properties.
+     *
+     * @var string[]
+     */
     protected $fillable = ['name', 'template'];
 
     /**

@@ -7,16 +7,35 @@ use Metric;
 
 class EloquentMetricRepository extends EloquentRepository implements MetricRepository
 {
+    /**
+     * The eloquent model instance.
+     *
+     * @var \Metric
+     */
     protected $model;
 
+    /**
+     * Create a new eloquent metric repository instance.
+     *
+     * @param \Metric $model
+     *
+     * @return void
+     */
     public function __construct(Metric $model)
     {
         $this->model = $model;
     }
 
-    public function create(array $array)
+    /**
+     * Create a new model.
+     *
+     * @param array $data
+     *
+     * @return \Illuminate\Database\Eloquent\Model
+     */
+    public function create(array $data)
     {
-        $metric = new $this->model($array);
+        $metric = new $this->model($data);
 
         $this->validate($metric);
 
@@ -25,14 +44,22 @@ class EloquentMetricRepository extends EloquentRepository implements MetricRepos
         return $metric;
     }
 
-    public function update($id, array $array)
+    /**
+     * Update a model by id.
+     *
+     * @param int   $id
+     * @param array $data
+     *
+     * @return \Illuminate\Database\Eloquent\Model
+     */
+    public function update($id, array $data)
     {
         $metric = $this->model->findOrFail($id);
-        $metric->fill($array);
+        $metric->fill($data);
 
         $this->validate($metric);
 
-        $metric->update($array);
+        $metric->update($data);
 
         return $metric;
     }
