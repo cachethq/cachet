@@ -8,13 +8,16 @@ class EmailService implements ServiceInterface
 
     public function register()
     {
+        //
     }
 
     public function unregister()
     {
+        //
     }
 
     public function fire($data)
     {
+        //
     }
 }
