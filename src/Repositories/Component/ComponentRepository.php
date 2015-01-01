@@ -35,12 +35,12 @@ interface ComponentRepository
     /**
      * Returns an object with related relationships.
      *
-     * @param int   $id
-     * @param array $with
+     * @param int      $id
+     * @param string[] $with
      *
      * @throws \Illuminate\Database\Eloquent\ModelNotFoundException
      *
      * @return \Illuminate\Database\Eloquent\Model
      */
-    public function with($id, array $with);
+    public function with($id, array $with = []);
 }

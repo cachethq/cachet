@@ -20,8 +20,8 @@ abstract class EloquentRepository
     /**
      * Returns an object with related relationships.
      *
-     * @param int   $id
-     * @param array $with
+     * @param int      $id
+     * @param string[] $with
      *
      * @throws \Illuminate\Database\Eloquent\ModelNotFoundException
      *
