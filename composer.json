@@ -27,15 +27,19 @@
     },
     "autoload": {
         "classmap": [
-            "app/models",
             "app/database/migrations",
             "app/database/seeds",
-            "app/tests/TestCase.php",
-            "app/filters"
+            "app/filters",
+            "app/models"
         ],
         "psr-4": {
             "CachetHQ\\Cachet\\": "src/"
         }
+    },
+    "autoload-dev": {
+        "classmap": [
+            "app/tests/TestCase.php",
+        ]
     },
     "extra": {
         "paas": {
