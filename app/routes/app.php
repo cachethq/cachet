@@ -7,8 +7,10 @@ Route::group(['before' => 'has_setting:app_name', 'namespace' => 'CachetHQ\Cache
 });
 
 // Setup route.
-Route::group(['before' => 'is_setup'], function () {
+Route::group(['before' => 'is_setup', 'namespace' => 'CachetHQ\Cachet\Controllers'], function () {
     Route::controller('/setup', 'SetupController');
 });
 
-Route::get('/rss', 'RssController@feedAction');
+Route::group(['namespace' => 'CachetHQ\Cachet\Controllers'], function () {
+    Route::get('/rss', 'RssController@feedAction');
+});

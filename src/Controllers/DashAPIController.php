@@ -1,9 +1,9 @@
 <?php
 
-namespace CachetHQ\Cachet\Controllers
+namespace CachetHQ\Cachet\Controllers;
 
-use Exception;
 use Component;
+use Exception;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Input;
 

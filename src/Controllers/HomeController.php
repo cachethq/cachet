@@ -1,10 +1,10 @@
 <?php
 
-namespace CachetHQ\Cachet\Controllers
+namespace CachetHQ\Cachet\Controllers;
 
 use Component;
-use Illuminate\Support\Facades\View;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\View;
 use Setting;
 
 class HomeController extends Controller

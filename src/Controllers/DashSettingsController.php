@@ -1,11 +1,11 @@
 <?php
 
-namespace CachetHQ\Cachet\Controllers
+namespace CachetHQ\Cachet\Controllers;
 
 use Exception;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\View;
-use Illuminate\Routing\Controller;
 use Setting;
 
 class DashSettingsController extends Controller

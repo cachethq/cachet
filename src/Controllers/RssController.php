@@ -1,9 +1,9 @@
 <?php
 
-namespace CachetHQ\Cachet\Controllers
+namespace CachetHQ\Cachet\Controllers;
 
-use Illuminate\Support\Facades\Response;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Response;
 use Incident;
 use Setting;
 use Thujohn\Rss\RssFacade;

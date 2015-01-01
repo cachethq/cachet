@@ -1,6 +1,6 @@
 <?php
 
-namespace CachetHQ\Cachet\Controllers
+namespace CachetHQ\Cachet\Controllers;
 
 use Component;
 use Illuminate\Routing\Controller;
