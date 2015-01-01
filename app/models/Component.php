@@ -5,7 +5,6 @@ use Dingo\Api\Transformer\TransformableInterface;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletingTrait;
-use Illuminate\Support\Facades\Lang;
 use Watson\Validating\ValidatingTrait;
 
 class Component extends Model implements TransformableInterface
@@ -74,7 +73,7 @@ class Component extends Model implements TransformableInterface
      */
     public function getHumanStatusAttribute()
     {
-        return Lang::get('cachet.component.status.'.$this->status);
+        return trans('cachet.component.status.'.$this->status);
     }
 
     /**

@@ -163,7 +163,6 @@ return [
         'Form'     => 'Illuminate\Support\Facades\Form',
         'HTML'     => 'Illuminate\Support\Facades\HTML',
         'Input'    => 'Illuminate\Support\Facades\Input',
-        'Lang'     => 'Illuminate\Support\Facades\Lang',
         'Log'      => 'Illuminate\Support\Facades\Log',
         'Redirect' => 'Illuminate\Support\Facades\Redirect',
         'Request'  => 'Illuminate\Support\Facades\Request',

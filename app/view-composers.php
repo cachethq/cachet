@@ -13,15 +13,15 @@ View::composer('index', function ($view) {
         $incidentCount = $incidents->count();
 
         if ($incidentCount === 0 || ($incidentCount >= 1 && (int) $incidents->first()->status === 4)) {
-            $status  = 'success';
-            $message = Lang::get('cachet.service.good');
+            $status = 'success';
+            $message = trans('cachet.service.good');
         } else {
-            $status  = 'danger';
-            $message = Lang::get('cachet.service.bad');
+            $status = 'danger';
+            $message = trans('cachet.service.bad');
         }
     } else {
         $status  = 'danger';
-        $message = Lang::get('cachet.service.bad');
+        $message = trans('cachet.service.bad');
     }
 
     $view->with([
