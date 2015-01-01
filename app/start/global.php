@@ -57,9 +57,13 @@ API::error(function (\Illuminate\Database\Eloquent\ModelNotFoundException $excep
 });
 
 App::missing(function ($exception) {
-    return Response::view('errors.404', [
-        'pageTitle' => 'That page went missing!'
-    ], 404);
+    if (Request::is('dashboard*') or Request::is('api*')) {
+        return Response::view('errors.404', [
+            'pageTitle' => 'That page went missing!',
+        ], 404);
+    }
+
+    return Redirect::route('status-page');
 });
 
 /*
