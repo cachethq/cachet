@@ -113,7 +113,6 @@ return [
         'Illuminate\Pagination\PaginationServiceProvider',
         'Illuminate\Queue\QueueServiceProvider',
         'Illuminate\Redis\RedisServiceProvider',
-        'Illuminate\Remote\RemoteServiceProvider',
         'Illuminate\Auth\Reminders\ReminderServiceProvider',
         'Illuminate\Database\SeedServiceProvider',
         'Illuminate\Session\SessionServiceProvider',
@@ -127,8 +126,8 @@ return [
         'GrahamCampbell\Markdown\MarkdownServiceProvider',
         'Thujohn\Rss\RssServiceProvider',
 
-        'CachetHQ\Cachet\Support\ServiceProviders\RepositoryServiceProvider',
-        'CachetHQ\Cachet\Support\ServiceProviders\RoutingServiceProvider',
+        'CachetHQ\Cachet\Providers\RepositoryServiceProvider',
+        'CachetHQ\Cachet\Providers\RoutingServiceProvider',
 
     ],
 
@@ -192,7 +191,6 @@ return [
         'Seeder'            => 'Illuminate\Database\Seeder',
         'Session'           => 'Illuminate\Support\Facades\Session',
         'SoftDeletingTrait' => 'Illuminate\Database\Eloquent\SoftDeletingTrait',
-        'SSH'               => 'Illuminate\Support\Facades\SSH',
         'Str'               => 'Illuminate\Support\Str',
         'URL'               => 'Illuminate\Support\Facades\URL',
         'Validator'         => 'Illuminate\Support\Facades\Validator',
