@@ -153,7 +153,7 @@ class DashSettingsController extends Controller
         }
 
         try {
-            foreach (Input::except(['app_banner', 'remove-banner']) as $settingName => $settingValue) {
+            foreach (Input::except(['app_banner', 'remove_banner']) as $settingName => $settingValue) {
                 $setting = Setting::firstOrCreate([
                     'name' => $settingName,
                 ])->update([
