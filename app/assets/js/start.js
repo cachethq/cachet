@@ -32,14 +32,14 @@ $(function() {
     Messenger.options = {
         extraClasses: 'messenger-fixed messenger-on-top',
         theme: 'air'
-    }
+    };
 
     // App setup
     window.CachetHQ = {};
 
-    CachetHQ.Notifier = function () {
+    window.CachetHQ.Notifier = function () {
         this.notify = function (message, type, options) {
-            type = (typeof type === 'undefined' || type == 'error') ? 'error' : type;
+            type = (typeof type === 'undefined' || type === 'error') ? 'error' : type;
 
             var defaultOptions = {
                 message: message,
@@ -47,7 +47,7 @@ $(function() {
                 showCloseButton: true
             };
 
-            var options = _.extend(defaultOptions, options);
+            options = _.extend(defaultOptions, options);
 
             Messenger().post(options);
         };
@@ -90,7 +90,7 @@ $(function() {
                     type: 'POST',
                     data: $('form[name=componentList]').serializeObject(),
                     success: function() {
-                        (new CachetHQ.Notifier).notify('Components updated.', 'success');
+                        (new CachetHQ.Notifier()).notify('Components updated.', 'success');
                     }
                 });
             }
@@ -104,14 +104,14 @@ $(function() {
 
         $.ajax({
             async: true,
-            url: '/dashboard/api/components/' + formData['component_id'],
+            url: '/dashboard/api/components/' + formData.component_id,
             type: 'POST',
             data: formData,
             success: function(component) {
-                (new CachetHQ.Notifier).notify($form.data('messenger'), 'success');
+                (new CachetHQ.Notifier()).notify($form.data('messenger'), 'success');
             },
             error: function(a, b, c) {
-                (new CachetHQ.Notifier).notify('Something went wrong updating the component.');
+                (new CachetHQ.Notifier()).notify('Something went wrong updating the component.');
             }
         });
     });
