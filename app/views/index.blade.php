@@ -22,11 +22,11 @@
     @include('partials.components')
 
     {{-- @if(Setting::get('display_graphs'))
-    @include('partials.graphs')
+        @include('partials.graphs')
     @endif --}}
 
     <h1>{{ trans('cachet.past_incidents') }}</h1>
-    @foreach(range(0, 7) as $i => $v)
-    @include('partials.incident', array('i', $i))
+    @foreach($allIncidents as $incidents)
+        @include('partials.incidents', $incidents)
     @endforeach
 @stop
