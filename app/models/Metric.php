@@ -9,18 +9,28 @@ class Metric extends Model implements TransformableInterface
 {
     use ValidatingTrait;
 
+    /**
+     * The validation rules.
+     *
+     * @var string[]
+     */
     protected $rules = [
         'name'          => 'required',
         'suffix'        => 'required',
         'display_chart' => 'boolean',
     ];
 
+    /**
+     * The fillable properties.
+     *
+     * @var string[]
+     */
     protected $fillable = ['name', 'suffix', 'description', 'display_chart'];
 
     /**
      * Metrics contain many metric points.
      *
-     * @return \Illuminate\Database\Eloquent\Builder
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function points()
     {

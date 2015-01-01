@@ -2,14 +2,21 @@
 
 use CachetHQ\Cachet\Transformers\ComponentTransformer;
 use Dingo\Api\Transformer\TransformableInterface;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletingTrait;
+use Illuminate\Support\Facades\Lang;
 use Watson\Validating\ValidatingTrait;
 
 class Component extends Model implements TransformableInterface
 {
     use SoftDeletingTrait, ValidatingTrait;
 
+    /**
+     * The validation rules.
+     *
+     * @var string[]
+     */
     protected $rules = [
         'user_id' => 'integer|required',
         'name'    => 'required',
@@ -17,12 +24,17 @@ class Component extends Model implements TransformableInterface
         'link'    => 'url',
     ];
 
+    /**
+     * The fillable properties.
+     *
+     * @var string[]
+     */
     protected $fillable = ['name', 'description', 'status', 'user_id', 'tags', 'link', 'order'];
 
     /**
      * Lookup all of the incidents reported on the component.
      *
-     * @return \Illuminate\Database\Eloquent\Relations
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function incidents()
     {
@@ -37,7 +49,7 @@ class Component extends Model implements TransformableInterface
      *
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function scopeStatus($query, $status)
+    public function scopeStatus(Builder $query, $status)
     {
         return $query->where('status', $status);
     }
@@ -50,7 +62,7 @@ class Component extends Model implements TransformableInterface
      *
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function scopeNotStatus($query, $status)
+    public function scopeNotStatus(Builder $query, $status)
     {
         return $query->where('status', '<>', $status);
     }

@@ -2,11 +2,11 @@
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 class WebHook extends Model
 {
-    // Request Methods.
     const HEAD = 0;
     const GET = 1;
     const POST = 2;
@@ -31,7 +31,7 @@ class WebHook extends Model
      *
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function scopeActive($query)
+    public function scopeActive(Builder $query)
     {
         return $query->where('active', 1);
     }
@@ -94,7 +94,7 @@ class WebHook extends Model
      *
      * @throws \Exception
      *
-     * @return string HEAD, GET, POST, DELETE, PATCH, PUT etc
+     * @return string
      */
     public function getRequestMethodAttribute()
     {
