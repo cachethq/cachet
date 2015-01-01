@@ -3,17 +3,17 @@
 @section('content')
 	<div class="header fixed">
         <span class="uppercase">
-		    <i class="icon icon ion-android-alert"></i> {{ Lang::get('cachet.dashboard.incidents') }}
+		    <i class="icon icon ion-android-alert"></i> {{ trans('cachet.dashboard.incidents') }}
         </span>
-        <a class="btn btn-sm btn-success pull-right" href="{{ URL::route('dashboard.incidents.add') }}">
-            {{ Lang::get('cachet.dashboard.incident-add') }}
+        <a class="btn btn-sm btn-success pull-right" href="{{ route('dashboard.incidents.add') }}">
+            {{ trans('cachet.dashboard.incident-add') }}
         </a>
         <div class="clearfix"></div>
 	</div>
     <div class="content-wrapper">
         <div class="row">
             <div class="col-sm-12">
-                <p class='lead'>{{ Lang::choice('cachet.dashboard.logged_incidents', $incidents->count(), ['count' => $incidents->count()]) }}</p>
+                <p class='lead'>{{ trans_choice('cachet.dashboard.logged_incidents', $incidents->count(), ['count' => $incidents->count()]) }}</p>
 
                 <div class="striped-list">
                     @foreach($incidents as $incident)

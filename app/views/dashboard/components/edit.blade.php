@@ -3,7 +3,7 @@
 @section('content')
     <div class="header">
         <span class="uppercase">
-            <i class="icons ion-ios-keypad"></i> {{ Lang::get('cachet.dashboard.components') }}
+            <i class="icons ion-ios-keypad"></i> {{ trans('cachet.dashboard.components') }}
         </span>
         > <small>Edit component</small>
     </div>
@@ -29,7 +29,7 @@
                         <div class='form-group'>
                             <label for='component-status'>Status</label>
                             <select name='component[status]' class='form-control'>
-                                @foreach(Lang::get('cachet.component.status') as $statusID => $status)
+                                @foreach(trans('cachet.component.status') as $statusID => $status)
                                 <option value='{{ $statusID }}' {{ $statusID === $component->status ? "selected" : "" }}>{{ $status }}</option>
                                 @endforeach
                             </select>
@@ -51,7 +51,7 @@
                     </fieldset>
 
                     <button type="submit" class="btn btn-success">Save Component</button>
-                    <a class="btn btn-default" href="{{ URL::route('dashboard.components') }}">Cancel</a>
+                    <a class="btn btn-default" href="{{ route('dashboard.components') }}">Cancel</a>
                     <input type='hidden' name='component[user_id]' value='{{ $component->agent_id || Auth::user()->id }}' />
                 </form>
             </div>

@@ -35,7 +35,7 @@
         @empty
         <div class='panel panel-message'>
             <div class='panel-body'>
-                <p>{{ Lang::get('cachet.incident.none') }}</p>
+                <p>{{ trans('cachet.incident.none') }}</p>
             </div>
         </div>
         @endforelse

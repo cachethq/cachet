@@ -7,7 +7,7 @@
     <div class='content-panel'>
         <div class="header">
             <span class="uppercase">
-                <i class="icon ion-gear-a"></i> {{ Lang::get('cachet.dashboard.settings') }}
+                <i class="icon ion-gear-a"></i> {{ trans('cachet.dashboard.settings') }}
             </span>
         </div>
         <div class="content-wrapper">
@@ -17,7 +17,7 @@
                         <h4 class="sub-header" id='application-setup'>Application Setup</h4>
 
                         @if(($saved = Session::get('saved')))
-                        <div class='alert alert-success'><strong>{{ Lang::get('cachet.dashboard.settings_saved') }}</strong></div>
+                        <div class='alert alert-success'><strong>{{ trans('cachet.dashboard.settings_saved') }}</strong></div>
                         @elseif(Session::has('error_message'))
                         <div class='alert alert-danger'><strong>{{ Session::get('error_message') }}</strong></div>
                         @endif
