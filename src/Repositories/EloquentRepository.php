@@ -8,13 +8,6 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 abstract class EloquentRepository
 {
     /**
-     * The eloquent model instance.
-     *
-     * @var \Illuminate\Database\Eloquent\Model
-     */
-    protected $model;
-
-    /**
      * Returns all models.
      *
      * @return \Illuminate\Database\Eloquent\Collection
