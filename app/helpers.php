@@ -23,3 +23,26 @@ if (! function_exists('elixir')) {
         throw new InvalidArgumentException("File {$file} not defined in asset manifest.");
     }
 }
+
+if (! function_exists('set_active')) {
+
+    /**
+     * Set active class if request is in path.
+     *
+     * @param $path
+     * @param array  $classes
+     * @param string $active
+     *
+     * @return string
+     */
+    function set_active($path, $classes = [], $active = 'active')
+    {
+        if (Request::is($path)) {
+            $classes[] = $active;
+        }
+
+        $class = implode(' ', $classes);
+
+        return empty($classes) ? '' : "class=\"{$class}\"";
+    }
+}

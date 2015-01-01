@@ -9,7 +9,7 @@ class DashUserController extends Controller
      */
     public function showUser()
     {
-        return View::make('dashboard.user')->with([
+        return View::make('dashboard.user.index')->with([
             'pageTitle' => 'User - Dashboard',
         ]);
     }

@@ -47,7 +47,7 @@ class DashSettingsController extends Controller
     {
         $this->subMenu['setup']['active'] = true;
 
-        return View::make('dashboard.settings-app-setup')->with([
+        return View::make('dashboard.settings.app-setup')->with([
             'pageTitle' => 'Application Setup - Dashboard',
             'subMenu'   => $this->subMenu,
         ]);
@@ -62,7 +62,7 @@ class DashSettingsController extends Controller
     {
         $this->subMenu['theme']['active'] = true;
 
-        return View::make('dashboard.settings-theme')->with([
+        return View::make('dashboard.settings.theme')->with([
             'pageTitle' => 'Theme - Dashboard',
             'subMenu'   => $this->subMenu,
         ]);
@@ -77,7 +77,7 @@ class DashSettingsController extends Controller
     {
         $this->subMenu['security']['active'] = true;
 
-        return View::make('dashboard.settings-security')->with([
+        return View::make('dashboard.settings.security')->with([
             'pageTitle' => 'Security - Dashboard',
             'subMenu'   => $this->subMenu,
         ]);
@@ -92,7 +92,7 @@ class DashSettingsController extends Controller
     {
         $this->subMenu['stylesheet']['active'] = true;
 
-        return View::make('dashboard.settings-stylesheet')->with([
+        return View::make('dashboard.settings.stylesheet')->with([
             'pageTitle' => 'Stylesheet - Dashboard',
             'subMenu'   => $this->subMenu,
         ]);

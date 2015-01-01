@@ -24,42 +24,37 @@
             </a>
         </div>
         <ul>
-            <li class="{{ Request::is('dashboard') ? 'active' : '' }}">
+            <li {{ set_active('dashboard') }}>
                 <a href="{{ URL::route('dashboard') }}">
                     <i class="icon ion-speedometer"></i> {{ Lang::get('cachet.dashboard.dashboard') }}
                 </a>
             </li>
-            <li class="{{ Request::is('dashboard/incidents') ? 'active' : '' }}">
+            <li  {{ set_active('dashboard/incidents*') }}>
                 <a href="{{ URL::route('dashboard.incidents') }}">
                     <i class="icon ion-android-alert"></i> {{ Lang::get('cachet.dashboard.incidents') }}
                 </a>
             </li>
-            {{-- <li class="{{ Request::is('dashboard/incidents/template') ? 'active' : '' }} sub-nav-item">
+            {{-- <li {{ set_active('dashboard/incidents/templates') }}>
                 <a href="{{ URL::route('dashboard.incidents.template') }}">
                     <i class="fa fa-plus"></i> {{ Lang::get('cachet.dashboard.incident-create-template') }}
                 </a>
             </li> --}}
-            <li class="{{ Request::is('dashboard/components') ? 'active' : '' }}">
+            <li  {{ set_active('dashboard/components*') }}>
                 <a href="{{ URL::route('dashboard.components') }}">
                     <i class="icons ion-ios-keypad"></i> {{ Lang::get('cachet.dashboard.components') }}
                 </a>
             </li>
-            {{-- <li class="{{ Request::is('dashboard/metrics') ? 'active' : '' }}">
+            {{-- <li {{ set_active('dashboard/metrics') }}>
                 <a href="{{ URL::route('dashboard.metrics') }}">
                     <i class="ion ion-stats-bats"></i> {{ Lang::get('cachet.dashboard.metrics') }}
                 </a>
             </li>
-            <li class="sub-nav-item">
-                <a href="#">
-                    <i class="fa fa-plus"></i> {{ Lang::get('cachet.dashboard.metrics-add') }}
-                </a>
-            </li>
-            <li class="{{ Request::is('dashboard/notifications') ? 'active' : '' }}">
+            <li {{ set_active('dashboard/notifications') }}>
                 <a href="{{ URL::route('dashboard.notifications') }}">
                     <i class="ion ion-email"></i> {{ Lang::get('cachet.dashboard.notifications') }}
                 </a>
             </li> --}}
-            <li class="{{ preg_match('/dashboard\/settings\/.*/i', Request::path()) ? 'active' : '' }}">
+            <li {{ set_active('dashboard/settings*') }}>
                 <a href="{{ URL::route('dashboard.settings.setup') }}">
                     <i class="icon ion-gear-a"></i> {{ Lang::get('cachet.dashboard.settings') }}
                 </a>
