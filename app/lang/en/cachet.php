@@ -55,6 +55,9 @@ return [
         'logged_incidents'         => '{0} There are no incidents, good work.|You have logged one incident.|You have reported <strong>:count</strong> incidents.',
         'settings_saved'           => 'Settings saved.',
         'settings_not_saved'       => 'Settings could not be saved.',
+        'not_found'                => 'Page Not Found',
+        'not_found_message'        => 'Sorry, but the page you are looking for has not been found. Check the URL for errors and try again.',
+        'not_found_link'           => 'Return to homepage',
     ],
     // Forms
     'forms' => [
