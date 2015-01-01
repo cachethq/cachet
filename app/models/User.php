@@ -4,8 +4,10 @@ use Illuminate\Auth\Reminders\RemindableInterface;
 use Illuminate\Auth\Reminders\RemindableTrait;
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\UserTrait;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Hash;
 
-class User extends Eloquent implements UserInterface, RemindableInterface
+class User extends Model implements UserInterface, RemindableInterface
 {
     use UserTrait, RemindableTrait;
 
@@ -33,7 +35,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface
     /**
      * Hash any password being inserted by default.
      *
-     * @param string @password
+     * @param string $password
      *
      * @return void
      */
@@ -51,10 +53,6 @@ class User extends Eloquent implements UserInterface, RemindableInterface
      */
     public function getGravatarAttribute($size = 200)
     {
-        return sprintf(
-            'https://www.gravatar.com/avatar/%s?size=%d',
-            md5($this->email),
-            $size
-        );
+        return sprintf('https://www.gravatar.com/avatar/%s?size=%d', md5($this->email), $size);
     }
 }

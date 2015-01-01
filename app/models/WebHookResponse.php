@@ -1,11 +1,13 @@
 <?php
 
-class WebHookResponse extends Eloquent
+use Illuminate\Database\Eloquent\Model;
+
+class WebHookResponse extends Model
 {
     /**
      * Returns the hook that a response belongs to.
      *
-     * @return Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function hook()
     {

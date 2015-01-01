@@ -10,6 +10,7 @@ class IncidentTransformer extends TransformerAbstract
     public function transform(Incident $incident)
     {
         $component = $incident->component;
+
         if ($component) {
             $transformer = $component->getTransformer();
         }

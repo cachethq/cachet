@@ -1,6 +1,8 @@
 <?php
 
-class MetricPoint extends Eloquent
+use Illuminate\Database\Eloquent\Model;
+
+class MetricPoint extends Model
 {
     /**
      * A metric point belongs to a metric unit.

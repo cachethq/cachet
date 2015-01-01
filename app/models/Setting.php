@@ -1,6 +1,8 @@
 <?php
 
-class Setting extends Eloquent
+use Illuminate\Database\Eloquent\Model;
+
+class Setting extends Model
 {
     protected $fillable = ['name', 'value'];
 
@@ -20,7 +22,7 @@ class Setting extends Eloquent
         // First try finding the setting in the database.
         try {
             $setting = self::whereName($settingName)->first()->value;
-        } catch (\ErrorException $e) {
+        } catch (ErrorException $e) {
             // If we don't have a setting, check the env (fallback for original version)
             if ($checkEnv) {
                 if (!($setting = getenv(strtoupper($settingName)))) {
@@ -39,14 +41,12 @@ class Setting extends Eloquent
      *
      * @param string $setting
      *
-     * @throws Exception
+     * @throws \Exception
      *
      * @return void
      */
     public static function unknownSettingException($setting)
     {
-        throw new \Exception(
-            sprintf('Unknown setting %s', $setting)
-        );
+        throw new Exception(sprintf('Unknown setting %s', $setting));
     }
 }

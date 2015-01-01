@@ -1,8 +1,11 @@
 <?php
 
+use CachetHQ\Cachet\Transformers\MetricTransformer;
+use Dingo\Api\Transformer\TransformableInterface;
+use Illuminate\Database\Eloquent\Model;
 use Watson\Validating\ValidatingTrait;
 
-class Metric extends Eloquent implements \Dingo\Api\Transformer\TransformableInterface
+class Metric extends Model implements TransformableInterface
 {
     use ValidatingTrait;
 
@@ -17,7 +20,7 @@ class Metric extends Eloquent implements \Dingo\Api\Transformer\TransformableInt
     /**
      * Metrics contain many metric points.
      *
-     * @return Illuminate\Database\Eloquent\Builder
+     * @return \Illuminate\Database\Eloquent\Builder
      */
     public function points()
     {
@@ -37,10 +40,10 @@ class Metric extends Eloquent implements \Dingo\Api\Transformer\TransformableInt
     /**
      * Get the transformer instance.
      *
-     * @return CachetHQ\Cachet\Transformers\MetricTransformer
+     * @return \CachetHQ\Cachet\Transformers\MetricTransformer
      */
     public function getTransformer()
     {
-        return new CachetHQ\Cachet\Transformers\MetricTransformer();
+        return new MetricTransformer();
     }
 }

@@ -9,6 +9,7 @@ class RoutingServiceProvider extends ServiceProvider
 {
     public function register()
     {
+        //
     }
 
     public function boot()
