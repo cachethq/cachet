@@ -38,7 +38,7 @@ $(function() {
     // Banner removal JS
     $('#remove-banner').click(function(){
         $('#banner-view').remove();
-        $('input[name=remove_banner]').val('yes');
+        $('input[name=remove_banner]').val('1');
         $('#settings-form').submit();
     });
 });

@@ -108,7 +108,7 @@ class DashSettingsController extends Controller
         // Fetch all of the settings we've been POSTed.
         $settings = Input::all();
 
-        if ($settings['remove_banner'] == "yes") {
+        if ($settings['remove_banner'] == "1") {
             $setting = Setting::where('name', 'app_banner');
             $setting->delete();
         }
