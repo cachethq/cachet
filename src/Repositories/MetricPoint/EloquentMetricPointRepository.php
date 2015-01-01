@@ -8,13 +8,6 @@ use MetricPoint;
 class EloquentMetricPointRepository extends EloquentRepository implements MetricPointRepository
 {
     /**
-     * The eloquent model instance.
-     *
-     * @var \MetricPoint
-     */
-    protected $model;
-
-    /**
      * Create a new eloquent metric point repository instance.
      *
      * @param \MetricPoint $model

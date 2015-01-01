@@ -8,13 +8,6 @@ use Incident;
 class EloquentIncidentRepository extends EloquentRepository implements IncidentRepository
 {
     /**
-     * The eloquent model instance.
-     *
-     * @var \Incident
-     */
-    protected $model;
-
-    /**
      * Create a new eloquent incident repository instance.
      *
      * @param \Incident $model

@@ -8,13 +8,6 @@ use Metric;
 class EloquentMetricRepository extends EloquentRepository implements MetricRepository
 {
     /**
-     * The eloquent model instance.
-     *
-     * @var \Metric
-     */
-    protected $model;
-
-    /**
      * Create a new eloquent metric repository instance.
      *
      * @param \Metric $model
