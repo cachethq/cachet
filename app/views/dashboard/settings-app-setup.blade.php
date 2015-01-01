@@ -79,12 +79,4 @@
             </div>
         </div>
     </div>
-
-    <script>
-        $('#remove-banner').click(function(){
-            $('#banner-view').remove();
-            $('input[name=remove_banner]').val('yes');
-            $('#settings-form').submit();
-        });
-    </script>
 @stop
