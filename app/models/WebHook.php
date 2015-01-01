@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Database\Eloquent\Model;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
+use Illuminate\Database\Eloquent\Model;
 
 class WebHook extends Model
 {
