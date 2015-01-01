@@ -16,7 +16,7 @@ class UsersTableSeeder extends Seeder
                 "username" => "admin",
                 "password" => "admin",
                 "email"    => "admin@example.com",
-                "level"    => "1"
+                "level"    => "1",
             ],
             [
                 "username" => "user",

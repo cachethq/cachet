@@ -23,7 +23,7 @@ class SettingsTableSeeder extends Seeder
             [
                 "name"  => "show_support",
                 "value" => "1"
-            ]
+            ],
         ];
 
         Setting::truncate();
