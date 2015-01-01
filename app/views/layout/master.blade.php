@@ -4,6 +4,9 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
+    <meta name="env" content="{{ app('env') }}">
+    <meta name="token" content="{{ csrf_token() }}">
+
     <!-- RSS Feed -->
     <link rel="alternate" type="application/rss+xml" href="/rss" title="{{ $pageTitle ?: Setting::get('app_name') }} Status - RSS Feed" />
 

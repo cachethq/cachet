@@ -4,6 +4,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
 
+    <meta name="env" content="{{ app('env') }}">
+    <meta name="token" content="{{ csrf_token() }}">
+
     <link rel="icon" type="image/png" href="{{ URL::to('img/favicon.ico') }}">
     <link rel="shortcut icon" href="{{ URL::to('img/favicon.png') }}" type="image/x-icon" />
 
