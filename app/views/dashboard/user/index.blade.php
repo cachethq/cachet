@@ -3,7 +3,7 @@
 @section('content')
     <div class="header">
         <span class='uppercase'>
-            <i class="ion ion-person"></i> {{ Lang::get('cachet.dashboard.user') }}
+            <i class="ion ion-person"></i> {{ trans('cachet.dashboard.user') }}
         </span>
     </div>
     <div class='content-wrapper'>

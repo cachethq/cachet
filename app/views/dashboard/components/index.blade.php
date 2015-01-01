@@ -3,10 +3,10 @@
 @section('content')
 	<div class="header fixed">
         <span class="uppercase">
-		    <i class="icons ion-ios-keypad"></i> {{ Lang::get('cachet.dashboard.components') }}
+		    <i class="icons ion-ios-keypad"></i> {{ trans('cachet.dashboard.components') }}
         </span>
-        <a class="btn btn-sm btn-success pull-right" href="{{ URL::route('dashboard.components.add') }}">
-            {{ Lang::get('cachet.dashboard.component-add') }}
+        <a class="btn btn-sm btn-success pull-right" href="{{ route('dashboard.components.add') }}">
+            {{ trans('cachet.dashboard.component-add') }}
         </a>
         <div class="clearfix"></div>
 	</div>

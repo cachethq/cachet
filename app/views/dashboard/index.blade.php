@@ -3,7 +3,7 @@
 @section('content')
 	<div class="header">
 		<span class="uppercase">
-            <i class="icon ion-speedometer"></i> {{ Lang::get('cachet.dashboard.dashboard') }}
+            <i class="icon ion-speedometer"></i> {{ trans('cachet.dashboard.dashboard') }}
         </span>
 	</div>
     <div class="content-wrapper">
@@ -20,7 +20,7 @@
                                     <strong>{{ $component->name }}</strong>
                                 </div>
                                 <div class='col-lg-10 col-xs-12 text-right'>
-                                    @foreach(Lang::get('cachet.component.status') as $statusID => $status)
+                                    @foreach(trans('cachet.component.status') as $statusID => $status)
                                     <div class='radio-inline'>
                                         <label>
                                             <input type='radio' name='status' value='{{ $statusID }}' {{ $component->status === $statusID ? "checked" : null }} />
