@@ -1,6 +1,5 @@
-# Cachet
+# Cachet [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 [![Build Status](https://img.shields.io/travis/cachethq/Cachet.svg?style=flat-square)](https://travis-ci.org/cachethq/Cachet)
 [![Quality Score](https://img.shields.io/scrutinizer/g/cachethq/Cachet.svg?style=flat-square)](https://scrutinizer-ci.com/g/cachethq/Cachet)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
@@ -12,7 +11,7 @@ For more information on why I started developing Cachet, check out my [blog post
 
 **Currently in development. Things may change or break until a solid release has been announced.**
 
-# Features
+## Features
 
 - List your services components.
 - Log incidents.
@@ -21,7 +20,7 @@ For more information on why I started developing Cachet, check out my [blog post
 - Markdown support for incident messages.
 - RESTful API.
 
-# Requirements
+## Requirements
 
 - PHP 5.4 or newer
 - Composer
@@ -30,13 +29,13 @@ For more information on why I started developing Cachet, check out my [blog post
     + Gulp
 - mcrypt extension
 
-# Installation
+## Installation
 
 See the [INSTALL.md](/INSTALL.md) document for more information. If you'd like to add more documentation, please create a Pull Request, I'd be happy to merge!
 
 [Deploying to Heroku](/INSTALL.md#deploy-to-heroku) requires one-click to get started and no knowledge of PHP or Laravel afterwards.
 
-# Translations
+## Translations
 
 A special thank you to our translators, who have provided us with the chance to share Cachet with the world.
 
@@ -48,6 +47,6 @@ A special thank you to our translators, who have provided us with the chance to 
 
 If you'd like to contribute translations, please check out our [CrowdIn project](https://crowdin.com/project/cachet).
 
-# License
+## License
 
-[MIT](LICENSE)
+Cachet is licensed under [The MIT License (MIT)](LICENSE).
