@@ -86,7 +86,7 @@ abstract class EloquentRepository
      */
     public function findByOrFail($key, $value, $columns = ['*'])
     {
-        $model = $this->model->where($key, $value)->first($columns)
+        $model = $this->model->where($key, $value)->first($columns);
 
         if ($model === null) {
             throw new ModelNotFoundException();
