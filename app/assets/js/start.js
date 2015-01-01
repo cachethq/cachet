@@ -71,29 +71,31 @@ $(function() {
 
     // Sortable components.
     var componentList = document.getElementById("component-list");
-    new Sortable(componentList, {
-        group: "omega",
-        handle: ".drag-handle",
-        onUpdate: function() {
-            // Loop each component, setting the order input to the new order.
-            var $components = $('#component-list .striped-list-item');
-            $.each($components, function(id) {
-                // Order should start from 1 now.
-                $(this).find('input[rel=order]').val(id + 1);
-            });
+    if (componentList) {
+        new Sortable(componentList, {
+            group: "omega",
+            handle: ".drag-handle",
+            onUpdate: function() {
+                // Loop each component, setting the order input to the new order.
+                var $components = $('#component-list .striped-list-item');
+                $.each($components, function(id) {
+                    // Order should start from 1 now.
+                    $(this).find('input[rel=order]').val(id + 1);
+                });
 
-            // Now POST the form to the internal API.
-            $.ajax({
-                async: true,
-                url: '/dashboard/api/components/order',
-                type: 'POST',
-                data: $('form[name=componentList]').serializeObject(),
-                success: function() {
-                    (new CachetHQ.Notifier).notify('Components updated.', 'success');
-                }
-            });
-        }
-    });
+                // Now POST the form to the internal API.
+                $.ajax({
+                    async: true,
+                    url: '/dashboard/api/components/order',
+                    type: 'POST',
+                    data: $('form[name=componentList]').serializeObject(),
+                    success: function() {
+                        (new CachetHQ.Notifier).notify('Components updated.', 'success');
+                    }
+                });
+            }
+        });
+    }
 
     // Toggle inline component statuses.
     $('form.component-inline').on('click', 'input[type=radio]', function() {
