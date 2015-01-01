@@ -1,5 +1,13 @@
 <?php
 
+namespace CachetHQ\Cachet\Controllers
+
+use Exception;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\View;
+use Illuminate\Routing\Controller;
+use Setting;
+
 class DashSettingsController extends Controller
 {
     protected $subMenu = [];
@@ -105,15 +113,10 @@ class DashSettingsController extends Controller
      */
     public function postSettings()
     {
-        // Fetch all of the settings we've been POSTed.
-        $settings = Input::all();
-
-        if ($settings['remove_banner'] == "1") {
+        if (Input::get('remove_banner') == "1") {
             $setting = Setting::where('name', 'app_banner');
             $setting->delete();
         }
-
-        unset($settings['remove-banner']);
 
         if (Input::hasFile('app_banner')) {
             $file = Input::file('app_banner');
@@ -121,11 +124,16 @@ class DashSettingsController extends Controller
             // Image Validation.
             // Image size in bytes.
             $maxSize = $file->getMaxFilesize();
+
             if ($file->getSize() > $maxSize) {
                 return Redirect::back()->withErrorMessage('You need to upload an image that is less than '.$maxSize.'.');
-            } elseif (!$file->isValid() || $file->getError()) {
+            }
+
+            if (!$file->isValid() || $file->getError()) {
                 return Redirect::back()->withErrorMessage($file->getErrorMessage());
-            } elseif (strpos($file->getMimeType(), 'image/') !== 0) {
+            }
+
+            if (strpos($file->getMimeType(), 'image/') !== 0) {
                 return Redirect::back()->withErrorMessage('Only images may be uploaded.');
             }
 
@@ -144,10 +152,8 @@ class DashSettingsController extends Controller
             ]);
         }
 
-        unset($settings['app_banner']);
-
         try {
-            foreach ($settings as $settingName => $settingValue) {
+            foreach (Input::except(['app_banner', 'remove-banner']) as $settingName => $settingValue) {
                 $setting = Setting::firstOrCreate([
                     'name' => $settingName,
                 ])->update([

@@ -1,26 +1,14 @@
 <?php
 
+namespace CachetHQ\Cachet\Controllers
+
+use Component;
+use Illuminate\Support\Facades\View;
+use Illuminate\Routing\Controller;
+use Setting;
+
 class HomeController extends Controller
 {
-    /**
-     * The component instance.
-     *
-     * @var \Component
-     */
-    protected $component;
-
-    /**
-     * Create a new home controller instance.
-     *
-     * @param \Component $component
-     *
-     * @return void
-     */
-    public function __construct(Component $component)
-    {
-        $this->component = $component;
-    }
-
     /**
      * Returns the rendered Blade templates.
      *

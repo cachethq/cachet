@@ -1,6 +1,6 @@
 <?php
 
-Route::group(['before' => 'auth', 'prefix' => 'dashboard'], function () {
+Route::group(['before' => 'auth', 'prefix' => 'dashboard', 'namespace' => 'CachetHQ\Cachet\Controllers'], function () {
     // Dashboard
     Route::get('/', ['as' => 'dashboard', 'uses' => 'DashboardController@showDashboard']);
 

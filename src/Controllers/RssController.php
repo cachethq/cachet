@@ -1,6 +1,14 @@
 <?php
 
-class RSSController extends Controller
+namespace CachetHQ\Cachet\Controllers
+
+use Illuminate\Support\Facades\Response;
+use Illuminate\Routing\Controller;
+use Incident;
+use Setting;
+use Thujohn\Rss\RssFacade;
+
+class RssController extends Controller
 {
     /**
      * Generates an RSS feed of all incidents.
@@ -9,11 +17,11 @@ class RSSController extends Controller
      */
     public function feedAction()
     {
-        $feed = RSS::feed('2.0', 'UTF-8');
+        $feed = RssFacade::feed('2.0', 'UTF-8');
         $feed->channel([
-            'title'       => Setting::get('app_name'),
+            'title' => Setting::get('app_name'),
             'description' => 'Status Feed',
-            'link'        => Setting::get('app_domain'),
+            'link' => Setting::get('app_domain'),
         ]);
 
         Incident::get()->map(function ($incident) use ($feed) {
