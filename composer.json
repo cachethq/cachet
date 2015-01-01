@@ -35,7 +35,7 @@
             "app/filters"
         ],
         "psr-4": {
-            "CachetHQ\\": "app/CachetHQ/"
+            "CachetHQ\\Cachet\\": "src/"
         }
     },
     "extra": {
