@@ -35,6 +35,8 @@ return [
     'setup'           => 'Setup Cachet',
     'no_incidents'    => 'No incidents reported.',
     'past_incidents'  => 'Past incidents',
+    'previous_week'   => 'Previous week',
+    'next_week'       => 'Next week',
     // Dashboard
     'dashboard' => [
         'dashboard'                => 'Dashboard',
