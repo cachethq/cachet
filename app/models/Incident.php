@@ -55,7 +55,7 @@ class Incident extends Model implements TransformableInterface
      */
     public function getHumanStatusAttribute()
     {
-        $statuses = Lang::get('cachet.incident.status');
+        $statuses = trans('cachet.incident.status');
 
         return $statuses[$this->status];
     }
