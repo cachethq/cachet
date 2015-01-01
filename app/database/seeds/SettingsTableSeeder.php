@@ -1,5 +1,8 @@
 <?php
 
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Seeder;
+
 class SettingsTableSeeder extends Seeder
 {
     /**
@@ -9,7 +12,7 @@ class SettingsTableSeeder extends Seeder
      */
     public function run()
     {
-        Eloquent::unguard();
+        Model::unguard();
 
         $defaultSettings = [
             [
