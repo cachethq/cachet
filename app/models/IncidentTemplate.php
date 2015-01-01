@@ -1,8 +1,9 @@
 <?php
 
+use Illuminate\Database\Eloquent\Model;
 use Watson\Validating\ValidatingTrait;
 
-class IncidentTemplate extends Eloquent
+class IncidentTemplate extends Model
 {
     use ValidatingTrait;
 
@@ -11,10 +12,7 @@ class IncidentTemplate extends Eloquent
         'template' => 'required',
     ];
 
-    protected $fillable = [
-        'name',
-        'template',
-    ];
+    protected $fillable = ['name', 'template'];
 
     /**
      * Overrides the models boot method.

@@ -1,6 +1,10 @@
 <?php
 
-class WebHook extends Eloquent
+use Illuminate\Database\Eloquent\Model;
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\ClientException;
+
+class WebHook extends Model
 {
     // Request Methods.
     const HEAD = 0;
@@ -13,7 +17,7 @@ class WebHook extends Eloquent
     /**
      * Returns all responses for a WebHook.
      *
-     * @return Illuminate\Database\Eloquent\Builder
+     * @return \Illuminate\Database\Eloquent\Builder
      */
     public function response()
     {
@@ -23,9 +27,9 @@ class WebHook extends Eloquent
     /**
      * Returns all active hooks.
      *
-     * @param Illuminate\Database\Eloquent\Builder $query
+     * @param \Illuminate\Database\Eloquent\Builder $query
      *
-     * @return Illuminate\Database\Eloquent\Builder
+     * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeActive($query)
     {
@@ -35,7 +39,7 @@ class WebHook extends Eloquent
     /**
      * Setups a Ping event that is fired upon a web hook.
      *
-     * @return array result of the ping
+     * @return object
      */
     public function ping()
     {
@@ -54,7 +58,7 @@ class WebHook extends Eloquent
     {
         $startTime = microtime(true);
 
-        $client = new \GuzzleHttp\Client();
+        $client = new Client();
         $request = $client->createRequest($this->requestMethod, $this->endpoint, [
             'headers' => [
                 'X-Cachet-Event' => $eventType,
@@ -64,7 +68,7 @@ class WebHook extends Eloquent
 
         try {
             $response = $client->send($request);
-        } catch (\GuzzleHttp\Exception\ClientException $e) {
+        } catch (ClientException $e) {
             // Do nothing with the exception, we want it.
             $response = $e->getResponse();
         }
@@ -72,14 +76,14 @@ class WebHook extends Eloquent
         $timeTaken = microtime(true) - $startTime;
 
         // Store the request
-        $hookResponse                   = new WebHookResponse();
-        $hookResponse->web_hook_id      = $this->id;
-        $hookResponse->response_code    = $response->getStatusCode();
-        $hookResponse->sent_headers     = json_encode($request->getHeaders());
-        $hookResponse->sent_body        = json_encode($data);
-        $hookResponse->recv_headers     = json_encode($response->getHeaders());
-        $hookResponse->recv_body        = json_encode($response->getBody());
-        $hookResponse->time_taken       = $timeTaken;
+        $hookResponse = new WebHookResponse();
+        $hookResponse->web_hook_id = $this->id;
+        $hookResponse->response_code = $response->getStatusCode();
+        $hookResponse->sent_headers = json_encode($request->getHeaders());
+        $hookResponse->sent_body = json_encode($data);
+        $hookResponse->recv_headers = json_encode($response->getHeaders());
+        $hookResponse->recv_body = json_encode($response->getBody());
+        $hookResponse->time_taken = $timeTaken;
         $hookResponse->save();
 
         return $hookResponse;
@@ -88,7 +92,7 @@ class WebHook extends Eloquent
     /**
      * Returns a human readable request type name.
      *
-     * @throws Exception
+     * @throws \Exception
      *
      * @return string HEAD, GET, POST, DELETE, PATCH, PUT etc
      */
@@ -98,29 +102,19 @@ class WebHook extends Eloquent
 
         switch ($this->request_type) {
             case self::HEAD:
-                $requestMethod = 'HEAD';
-                break;
+                return 'HEAD';
             case self::GET:
-                $requestMethod = 'GET';
-                break;
+                return 'GET';
             case self::POST:
-                $requestMethod = 'POST';
-                break;
+                return 'POST';
             case self::PATCH:
-                $requestMethod = 'PATCH';
-                break;
+                return 'PATCH';
             case self::PUT:
-                $requestMethod = 'PUT';
-                break;
+                return 'PUT';
             case self::DELETE:
-                $requestMethod = 'DELETE';
-                break;
-
+                return 'DELETE';
             default:
                 throw new Exception('Unknown request type value: '.$this->request_type);
-                break;
         }
-
-        return $requestMethod;
     }
 }

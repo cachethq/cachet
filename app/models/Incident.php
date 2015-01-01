@@ -1,10 +1,12 @@
 <?php
 
+use CachetHQ\Cachet\Transformers\IncidentTransformer;
 use Dingo\Api\Transformer\TransformableInterface;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletingTrait;
 use Watson\Validating\ValidatingTrait;
 
-class Incident extends Eloquent implements TransformableInterface
+class Incident extends Model implements TransformableInterface
 {
     use SoftDeletingTrait, ValidatingTrait;
 
@@ -74,7 +76,7 @@ class Incident extends Eloquent implements TransformableInterface
      */
     public function getTransformer()
     {
-        return new CachetHQ\Cachet\Transformers\IncidentTransformer();
+        return new IncidentTransformer();
     }
 
     /**

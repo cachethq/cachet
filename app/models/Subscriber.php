@@ -1,12 +1,12 @@
 <?php
 
 use Illuminate\Database\Eloquent\SoftDeletingTrait;
+use Illuminate\Database\Eloquent\Model;
 use Watson\Validating\ValidatingTrait;
 
-class Subscriber extends Eloquent
+class Subscriber extends Model
 {
-    use ValidatingTrait;
-    use SoftDeletingTrait;
+    use SoftDeletingTrait, ValidatingTrait;
 
     protected $rules = [
         'email' => 'required|email',

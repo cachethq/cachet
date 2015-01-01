@@ -1,8 +1,9 @@
 <?php
 
+use Illuminate\Database\Eloquent\Model;
 use Watson\Validating\ValidatingTrait;
 
-class Service extends Eloquent
+class Service extends Model
 {
     use ValidatingTrait;
 
