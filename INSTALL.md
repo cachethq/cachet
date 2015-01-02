@@ -102,6 +102,14 @@ $ php artisan db:seed
 
 # Running Cachet
 
+## PHP builtin server
+
+The easiest way to run Cachet for test or development purpose, it's to run it from the PHP builtin server. To achieve that:   
+```
+cd Cachet/
+php artisan serve
+```
+
 ## Apache
 
 Apache is one of the easier installations. We simply need to create a new Virtual Host and add it to our `HOSTS` file.
