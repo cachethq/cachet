@@ -16,6 +16,7 @@ use Watson\Validating\ValidatingTrait;
  * @property string $name
  * @property int    $status
  * @property string $message
+ * @property string $humanStatus
  */
 class Incident extends Model implements TransformableInterface
 {
