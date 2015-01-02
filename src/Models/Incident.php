@@ -9,6 +9,13 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletingTrait;
 use Watson\Validating\ValidatingTrait;
 
+/**
+ * @property int    $component_id
+ * @property int    $user_id
+ * @property string $name
+ * @property int    $status
+ * @property string $message
+ */
 class Incident extends Model implements TransformableInterface
 {
     use SoftDeletingTrait, ValidatingTrait;
