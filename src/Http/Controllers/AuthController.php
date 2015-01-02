@@ -2,8 +2,8 @@
 
 namespace CachetHQ\Cachet\Http\Controllers;
 
-use GrahamCampbell\Throttle\Facades\Throttle;
 use GrahamCampbell\Binput\Facades\Binput;
+use GrahamCampbell\Throttle\Facades\Throttle;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
