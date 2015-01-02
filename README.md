@@ -19,6 +19,7 @@ For more information on why I started developing Cachet, check out my [blog post
 - Apply a custom stylesheet to the status page.
 - Markdown support for incident messages.
 - RESTful API.
+- Multilingual.
 
 ## Requirements
 
