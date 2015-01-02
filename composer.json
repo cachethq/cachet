@@ -19,6 +19,7 @@
         "graham-campbell/markdown": "~2.0",
         "graham-campbell/throttle": "~2.0",
         "guzzlehttp/guzzle": "~5.0",
+        "roumen/feed": "~2.8",
         "thujohn/rss": "~1.0",
         "watson/validating": "0.10.*"
     },
