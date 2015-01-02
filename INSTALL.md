@@ -32,7 +32,7 @@ The easiest way is to use Git to pull down the code. You'll need to put it into 
 
 ```bash
 $ cd /var/www
-$ git clone https://github.com/jbrooksuk/Cachet.git
+$ git clone https://github.com/cachethq/Cachet.git
 $ cd Cachet
 $ composer install --no-dev -o
 ```
