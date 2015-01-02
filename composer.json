@@ -19,9 +19,9 @@
         "graham-campbell/markdown": "~2.0",
         "graham-campbell/throttle": "~2.0",
         "guzzlehttp/guzzle": "~5.0",
+        "roumen/feed": "~2.8",
         "thujohn/rss": "~1.0",
-        "watson/validating": "0.10.*",
-        "roumen/feed": "~2.8"
+        "watson/validating": "0.10.*"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.3",
