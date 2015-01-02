@@ -8,6 +8,13 @@ use GuzzleHttp\Exception\ClientException;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @property string $name
+ * @property string $endpoint
+ * @property int $hook_type
+ * @property int $request_type
+ * @property int $active
+ */
 class WebHook extends Model
 {
     const HEAD = 0;
