@@ -7,7 +7,7 @@
     <meta name="env" content="{{ app('env') }}">
     <meta name="token" content="{{ csrf_token() }}">
 
-    <!-- RSS Feed -->
+    <link rel="alternate" type="application/atom+xml" href="/atom" title="{{ $pageTitle ?: Setting::get('app_name') }} Status - Atom Feed">
     <link rel="alternate" type="application/rss+xml" href="/rss" title="{{ $pageTitle ?: Setting::get('app_name') }} Status - RSS Feed">
 
     <link rel="icon" type="image/png" href="/favicon.ico">
