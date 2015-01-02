@@ -98,6 +98,57 @@ body.dashboard {
         }
     }
 
+    // Sidebar media queries
+    @media (max-width: $screen-sm-max) {
+        .sidebar {
+            width: 80px;
+            .sidebar-inner {
+                .profile .avatar img {
+                    width: 40px;
+                }
+                .profile .username {
+                    @extend .hidden-xs;
+                    @extend .hidden-sm;
+                }
+                .quick-add-incident {
+                    .btn {
+                        padding: 3px 6px;
+                    }
+                    i {
+                        @extend .visible-xs;
+                        @extend .visible-sm;
+                        font-size: 20px;
+                    }
+                    span {
+                        @extend .hidden-xs;
+                        @extend .hidden-sm;
+                    }
+                }
+                & > ul > li > a {
+                    text-align: center;
+                    & > i {
+                        font-size: 25px;
+                    }
+                    & > span {
+                        @extend .hidden-xs;
+                        @extend .hidden-sm;
+                    }
+                }
+            }
+            .bottom-menu-sidebar {
+                @extend .hidden-xs;
+                @extend .hidden-sm;
+            }
+        }
+    }
+
+    // Sidebar media queries
+    @media (max-width: $screen-sm-max) {
+        .sidebar {
+            @extend .hidden-xs;
+        }
+    }
+
     .sub-sidebar {
         left: 0;
         top: 0;
@@ -146,6 +197,10 @@ body.dashboard {
             margin-left: 22%;
             padding: 24px 50px;
             padding-bottom: 80px;
+        }
+
+        @media (max-width: $screen-sm-max) {
+
         }
     }
 }
