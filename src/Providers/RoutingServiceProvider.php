@@ -22,7 +22,6 @@ class RoutingServiceProvider extends ServiceProvider
     {
         // Laravel's before filters
         $this->app->router->filter('auth', 'CachetHQ\Cachet\Http\Before\AuthFilter');
-        $this->app->router->filter('auth.basic', 'CachetHQ\Cachet\Http\Before\AuthBasicFilter');
         $this->app->router->filter('guest', 'CachetHQ\Cachet\Http\Before\GuestFilter');
         $this->app->router->filter('csrf', 'CachetHQ\Cachet\Http\Before\CsrfFilter');
 
