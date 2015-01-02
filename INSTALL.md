@@ -133,51 +133,59 @@ Restart Apache and you're done!
 
 ## nginx
 
-Create a new vhost such as `/etc/nginx/sites-enabled/cachet.conf`
+- Install php5-fpm
+- Generate your SSL key+certificate
+- Create a new vhost such as `/etc/nginx/sites-enabled/cachet.conf`:
 
 ```
-server {
-  listen   80;
-  server_name cachet.dev ; # Or whatever you want to use
-  access_log /var/log/nginx/cachet.dev.access.log timed_combined;
-  error_log /var/log/nginx/cachet.dev.error.log;
-  proxy_read_timeout 300s;
-
-  location / {
-    root   /var/www/cachet.dev;
-      }
-}
-```
-
-In production environments it would be wise to enable SSL:
-
-```
-server {
-	server_name  cachet.mycompany.com;
-	listen 80 default;
-	rewrite ^(.*) https://cachet.mycompany.com$1 permanent;
+# Upstream to abstract backend connection(s) for php
+upstream php {
+    server unix:/tmp/php-cgi.socket;
+    server 127.0.0.1:9000;
 }
 
 server {
-	listen 443;
-	server_name cachet.mycompany.com;
+    server_name  cachet.mycompany.com; # Or whatever you want to use
+    listen 80 default;
+    rewrite ^(.*) https://cachet.mycompany.com$1 permanent;
+}
 
-        root /var/www/cachet.mycompany.com;
-        index index.htm index.html index.php;
+# HTTPS server
 
-	ssl on;
-	ssl_certificate /etc/ssl/private/cachet.mycompany.com.pem;
-	ssl_certificate_key /etc/ssl/private/cachet.mycompany.com.pem;
+server {
+    listen 443;
+    server_name cachet.mycompany.com;
 
-	ssl_session_timeout 5m;
+    root /var/vhost/cachet.mycompany.com/public;
+    index index.php;
 
-  	# Best practice as at March 2014
-  	ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
-  	ssl_prefer_server_ciphers on;
-  	ssl_ciphers "EECDH+ECDSA+AESGCM EECDH+aRSA+AESGCM EECDH+ECDSA+SHA384 EECDH+ECDSA+SHA256 EECDH+aRSA+SHA384 EECDH+aRSA+SHA256 EECDH+aRSA+RC4 EECDH EDH+aRSA RC4 !aNULL !eNULL !LOW !3DES !MD5 !EXP !PSK !SRP !DSS";
-  	ssl_buffer_size 1400;
+    ssl on;
+    ssl_certificate /etc/ssl/crt/cachet.mycompany.com.crt; # Or wherever your crt is
+    ssl_certificate_key /etc/ssl/key/cachet.mycompany.com.key; # Or wherever your key is
+    ssl_session_timeout 5m;
+
+    # Best practice as at March 2014
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+    ssl_prefer_server_ciphers on;
+    ssl_ciphers "ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA";
+    ssl_buffer_size 1400; # 1400 bytes, within MTU - because we generally have small responses. Could increase to 4k, but default 16k is too big
+
+    location / {
+        add_header Strict-Transport-Security max-age=15768000;
+        try_files $uri /index.php$is_args$args;
+    }
+
+    location ~ \.php$ {
+                include fastcgi_params;
+    fastcgi_pass unix:/var/run/php5-fpm.sock;
+                fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+                fastcgi_index index.php;
+                fastcgi_keep_conn on;
+                add_header Strict-Transport-Security max-age=15768000;
+    }
 }
 ```
+Start php5-fpm and nginx and you're done!
 
 # Environment Detection
 
