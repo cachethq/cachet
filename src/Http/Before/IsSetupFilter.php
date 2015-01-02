@@ -18,7 +18,6 @@ class IsSetupFilter
      *
      * @param \Illuminate\Routing\Route $route
      * @param \Illuminate\Http\Request  $request
-     * @param string                    $settingName
      *
      * @return \Illuminate\Http\Response|null
      */

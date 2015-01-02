@@ -59,7 +59,7 @@ class OneClickDeployCommand extends Command
     /**
      * Run the migrations.
      *
-     * @return int|null
+     * @return int
      */
     protected function runMigrations()
     {
