@@ -9,6 +9,15 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletingTrait;
 use Watson\Validating\ValidatingTrait;
 
+/**
+ * @property int    $user_id
+ * @property string $name
+ * @property string $description
+ * @property int    $status
+ * @property string $link
+ * @property string $tags
+ * @property int    $order
+ */
 class Component extends Model implements TransformableInterface
 {
     use SoftDeletingTrait, ValidatingTrait;
