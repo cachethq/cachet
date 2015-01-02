@@ -89,4 +89,34 @@ class DashIncidentController extends Controller
 
         return Redirect::back();
     }
+
+    /**
+     * Shows the edit incident view.
+     *
+     * @param \CachetHQ\Cachet\Models\Incident $incident
+     *
+     * @return \Illuminate\View\View
+     */
+    public function showEditIncidentAction(Incident $incident)
+    {
+        return View::make('dashboard.incidents.edit')->with([
+            'pageTitle' => 'Edit Incident - Dashboard',
+            'incident' => $incident
+        ]);
+    }
+
+    /**
+     * Edit an incident.
+     *
+     * @param \CachetHQ\Cachet\Models\Incident $incident
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function editIncidentAction(Incident $incident)
+    {
+        $_incident = Binput::get('incident');
+        $incident->update($_incident);
+
+        return Redirect::to('dashboard/incidents');
+    }
 }

@@ -17,6 +17,8 @@ Route::group(['before' => 'auth', 'prefix' => 'dashboard', 'namespace' => 'Cache
     Route::get('incidents/add', ['as' => 'dashboard.incidents.add', 'uses' => 'DashIncidentController@showAddIncident']);
     Route::post('incidents/add', 'DashIncidentController@createIncidentAction');
     Route::get('incidents/{incident}/delete', 'DashIncidentController@deleteIncidentAction');
+    Route::get('incidents/{incident}/edit', 'DashIncidentController@showEditIncidentAction');
+    Route::post('incidents/{incident}/edit', 'DashIncidentController@editIncidentAction');
     Route::get('incidents/template', ['as' => 'dashboard.incidents.template', 'uses' => 'DashIncidentController@showAddIncidentTemplate']);
     Route::post('incidents/template', 'DashIncidentController@createIncidentTemplateAction');
 
