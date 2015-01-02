@@ -2,8 +2,9 @@
 
 namespace CachetHQ\Cachet\Http\Before;
 
+use Illuminate\Http\Request;
+use Illuminate\Routing\Route;
 use Illuminate\Session\TokenMismatchException;
-use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
 
 class CsrfFilter
@@ -15,13 +16,16 @@ class CsrfFilter
      * our csrf token in the session does not match the one given sent to us in
      * this request, then we'll bail.
      *
+     * @param \Illuminate\Routing\Route $route
+     * @param \Illuminate\Http\Request  $request
+     *
      * @throws \Illuminate\Session\TokenMismatchException
      *
      * @return void
      */
-    public function filter()
+    public function filter(Route $route, Request $request)
     {
-        if (Session::token() !== Input::get('_token')) {
+        if (Session::token() !== $request->input('_token')) {
             throw new TokenMismatchException();
         }
     }
