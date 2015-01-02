@@ -29,22 +29,22 @@
                         <div class="form-group">
                             <label for="incident-name">Incident Status</label><br />
                             <label class="radio-inline">
-                                <input type="radio" name="incident[status]" value="1" />
+                                <input type="radio" name="incident[status]" value="1">
                                 <i class="icon ion-flag"></i>
                                 {{ trans('cachet.incident.status')[1] }}
                             </label>
                             <label class="radio-inline">
-                                <input type="radio" name="incident[status]" value="2" />
+                                <input type="radio" name="incident[status]" value="2">
                                 <i class="icon ion-alert-circled"></i>
                                 {{ trans('cachet.incident.status')[2] }}
                             </label>
                             <label class="radio-inline">
-                                <input type="radio" name="incident[status]" value="3" />
+                                <input type="radio" name="incident[status]" value="3">
                                 <i class="icon ion-eye"></i>
                                 {{ trans('cachet.incident.status')[3] }}
                             </label>
                             <label class="radio-inline">
-                                <input type="radio" name="incident[status]" value="4" />
+                                <input type="radio" name="incident[status]" value="4">
                                 <i class="icon ion-checkmark"></i>
                                 {{ trans('cachet.incident.status')[4] }}
                             </label>
@@ -56,7 +56,7 @@
                         </div>
                     </fieldset>
 
-                    <input type="hidden" name="incident[user_id]" value="{{ Auth::user()->id }}" />
+                    <input type="hidden" name="incident[user_id]" value="{{ Auth::user()->id }}">
                     <button type="submit" class="btn btn-success">Create</button>
                     <a class="btn btn-default" href="{{ route('dashboard.incidents') }}">Cancel</a>
                 {{ Form::close() }}
