@@ -2,22 +2,22 @@
 
 namespace CachetHQ\Cachet\Repositories\Metric;
 
+use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Repositories\EloquentRepository;
-use Metric;
 
 class EloquentMetricRepository extends EloquentRepository implements MetricRepository
 {
     /**
      * The eloquent model instance.
      *
-     * @var \Metric
+     * @var \CachetHQ\Cachet\Models\Metric
      */
     protected $model;
 
     /**
      * Create a new eloquent metric repository instance.
      *
-     * @param \Metric $model
+     * @param \CachetHQ\Cachet\Models\Metric $model
      *
      * @return void
      */

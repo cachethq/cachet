@@ -2,22 +2,22 @@
 
 namespace CachetHQ\Cachet\Repositories\MetricPoint;
 
+use CachetHQ\Cachet\Models\MetricPoint;
 use CachetHQ\Cachet\Repositories\EloquentRepository;
-use MetricPoint;
 
 class EloquentMetricPointRepository extends EloquentRepository implements MetricPointRepository
 {
     /**
      * The eloquent model instance.
      *
-     * @var \MetricPoint
+     * @var \CachetHQ\Cachet\Models\MetricPoint
      */
     protected $model;
 
     /**
      * Create a new eloquent metric point repository instance.
      *
-     * @param \MetricPoint $model
+     * @param \CachetHQ\Cachet\Models\MetricPoint $model
      *
      * @return void
      */

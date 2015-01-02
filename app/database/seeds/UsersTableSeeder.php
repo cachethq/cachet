@@ -1,5 +1,6 @@
 <?php
 
+use CachetHQ\Cachet\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
 

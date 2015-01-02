@@ -2,11 +2,18 @@
 
 namespace CachetHQ\Cachet\Transformers;
 
-use Incident;
+use CachetHQ\Cachet\Models\Incident;
 use League\Fractal\TransformerAbstract;
 
 class IncidentTransformer extends TransformerAbstract
 {
+    /**
+     * Transform an incident model into an array.
+     *
+     * @param \CachetHQ\Cachet\Models\Incident $incident
+     *
+     * @return array
+     */
     public function transform(Incident $incident)
     {
         $component = $incident->component;
