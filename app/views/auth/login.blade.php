@@ -11,7 +11,7 @@
                 <legend>{{ trans('cachet.login_message') }}</legend>
 
                 @if(Session::has('error'))
-                <span class='text-danger'>{{ Session::get('error') }}</span>
+                <p class='text-danger'>{{ Session::get('error') }}</p>
                 @endif
 
                 <div class='form-group'>
