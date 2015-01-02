@@ -57,7 +57,8 @@
         "post-install-cmd": [
             "php artisan optimize",
             "chmod -R 755 app/storage",
-            "php artisan cachet:one-click-deploy"
+            "php artisan cachet:one-click-deploy",
+            "$(npm bin -q)/gulp"
         ],
         "post-update-cmd": [
             "php artisan clear-compiled",

@@ -19,6 +19,6 @@
     "BUILDPACK_URL": { "value": "https://github.com/Scalingo/appsdeck-buildpack-php", "description": "Do not modify this value to work on Heroku" }
   },
   "scripts": {
-    "postdeploy": "php artisan migrate --env=heroku; php artisan key:generate"
+    "postdeploy": "php artisan migrate --env=heroku; php artisan key:generate;"
   }
 }
