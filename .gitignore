@@ -10,6 +10,7 @@ config.codekit
 !.env.example.php
 
 # Assets development
+app/assets/bower_components
 node_modules
 public/css/
 public/js/
