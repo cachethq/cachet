@@ -126,6 +126,7 @@ return [
         'GrahamCampbell\Throttle\ThrottleServiceProvider',
         'GrahamCampbell\Markdown\MarkdownServiceProvider',
         'Thujohn\Rss\RssServiceProvider',
+        'Roumen\Feed\FeedServiceProvider',
 
         'CachetHQ\Cachet\Providers\RepositoryServiceProvider',
         'CachetHQ\Cachet\Providers\RoutingServiceProvider',

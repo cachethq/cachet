@@ -13,4 +13,5 @@ Route::group(['before' => 'is_setup', 'namespace' => 'CachetHQ\Cachet\Http\Contr
 
 Route::group(['namespace' => 'CachetHQ\Cachet\Http\Controllers'], function () {
     Route::get('/rss', 'RssController@feedAction');
+    Route::get('/atom', 'AtomController@feedAction');
 });

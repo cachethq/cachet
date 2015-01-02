@@ -20,7 +20,8 @@
         "graham-campbell/throttle": "~2.0",
         "guzzlehttp/guzzle": "~5.0",
         "thujohn/rss": "~1.0",
-        "watson/validating": "0.10.*"
+        "watson/validating": "0.10.*",
+        "roumen/feed": "~2.8"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.3",
