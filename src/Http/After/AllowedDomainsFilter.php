@@ -9,6 +9,15 @@ use Symfony\Component\HttpFoundation\Response;
 
 class AllowedDomainsFilter
 {
+    /**
+     * Run the allowed domains filter.
+     *
+     * @param \Illuminate\Routing\Route                  $route
+     * @param \Illuminate\Http\Request                   $request
+     * @param \Symfony\Component\HttpFoundation\Response $response
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function filter(Route $route, Request $request, Response $response)
     {
         // Always allow our own domain.
