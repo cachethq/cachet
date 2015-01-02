@@ -1,4 +1,5 @@
 {
   "assetsDir": "app/assets/",
-  "bowerDir": "app/assets/bower_components"
+  "bowerDir": "app/assets/bower_components",
+  "production": true
 }
