@@ -1,0 +1,13 @@
+@import "../../bower_components/animate-sass/animate";
+
+body {
+	-webkit-backface-visibility: hidden; // Addresses a small issue in webkit: http://bit.ly/NEdoDq
+}
+.animated {
+	@include animate-prefixer(animation-duration, $base-duration);
+	@include animate-prefixer(animation-fill-mode, both);
+
+	&.hinge {
+		@include animate-prefixer(animation-duration, $base-duration * 2);
+	}
+}
