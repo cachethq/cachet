@@ -10,17 +10,17 @@ use Illuminate\Database\Eloquent\SoftDeletingTrait;
 use Watson\Validating\ValidatingTrait;
 
 /**
- * @property int           $id
- * @property int           $user_id
- * @property string        $name
- * @property string        $description
- * @property int           $status
- * @property string        $link
- * @property string        $tags
- * @property int           $order
- * @property Carbon\Carbon $created_at
- * @property Carbon\Carbon $updated_at
- * @property Carbon\Carbon $deleted_at
+ * @property int            $id
+ * @property int            $user_id
+ * @property string         $name
+ * @property string         $description
+ * @property int            $status
+ * @property string         $link
+ * @property string         $tags
+ * @property int            $order
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @property \Carbon\Carbon $deleted_at
  */
 class Component extends Model implements TransformableInterface
 {
