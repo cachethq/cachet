@@ -42,7 +42,7 @@ class SetupController extends Controller
      */
     public function postIndex()
     {
-        $postData = Binput::get();
+        $postData = Binput::all();
 
         $v = Validator::make($postData, [
             'settings.app_name'     => 'required',
