@@ -140,8 +140,8 @@ Restart Apache and you're done!
 ```
 # Upstream to abstract backend connection(s) for php
 upstream php {
-        server unix:/tmp/php-cgi.socket;
-        server 127.0.0.1:9000;
+    server unix:/tmp/php-cgi.socket;
+    server 127.0.0.1:9000;
 }
 
 server {
@@ -153,8 +153,8 @@ server {
 # HTTPS server
 
 server {
-  listen 443;
-  server_name cachet.mycompany.com;
+    listen 443;
+    server_name cachet.mycompany.com;
 
     root /var/vhost/cachet.mycompany.com/public;
     index index.php;
@@ -172,6 +172,7 @@ server {
 
     location / {
         add_header Strict-Transport-Security max-age=15768000;
+        try_files $uri /index.php$is_args$args;
     }
 
     location ~ \.php$ {
@@ -181,7 +182,7 @@ server {
                 fastcgi_index index.php;
                 fastcgi_keep_conn on;
                 add_header Strict-Transport-Security max-age=15768000;
-        }
+    }
 }
 ```
 Start php5-fpm and nginx and you're done!
