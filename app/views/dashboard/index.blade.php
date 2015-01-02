@@ -1,11 +1,11 @@
 @extends('layout.dashboard')
 
 @section('content')
-	<div class="header">
-		<span class="uppercase">
+    <div class="header">
+        <span class="uppercase">
             <i class="icon ion-speedometer"></i> {{ trans('cachet.dashboard.dashboard') }}
         </span>
-	</div>
+    </div>
     <div class="content-wrapper">
         <div class="row">
             <div class="col-md-12">

@@ -10,7 +10,7 @@ Example URL: `http://status.cachethq.io/api/metrics`
 
 * `GET`: returns a list of the current metrics
   - success: 200:
-  
+
     ~~~json
     To be confirmed
     ~~~

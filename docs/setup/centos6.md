@@ -4,7 +4,7 @@ The main issue with installing Cachet on CentOS 6 is the old PHP version. Larave
 
 ## Remi Repo
 
-To solve this problem, the 3rd party [http://rpms.famillecollet.com/](Remi Repo) can be used, which provides newer versions of PHP. 
+To solve this problem, the 3rd party [http://rpms.famillecollet.com/](Remi Repo) can be used, which provides newer versions of PHP.
 
 NOTE: This will upgrade existing versions of PHP on your system, so if you already have a PHP 5.3 requirement, you'll need to consider using [RedHat's Software Collections](https://access.redhat.com/documentation/en-US/Red_Hat_Developer_Toolset/1/html-single/Software_Collections_Guide/) which allows you to install PHP 5.4 alongside the systems PHP 5.3. You'll need to compile some of the extensions yourself though
 

@@ -8,7 +8,7 @@ Example URL: `http://status.cachethq.io/api/incidents`
 
 * `GET`: returns a list of the current incidents and their status
   - success: 200:
-  
+
     ~~~json
   {
   "data": [

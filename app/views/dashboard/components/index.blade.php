@@ -1,15 +1,15 @@
 @extends('layout.dashboard')
 
 @section('content')
-	<div class="header fixed">
+    <div class="header fixed">
         <span class="uppercase">
-		    <i class="icons ion-ios-keypad"></i> {{ trans('cachet.dashboard.components') }}
+            <i class="icons ion-ios-keypad"></i> {{ trans('cachet.dashboard.components') }}
         </span>
         <a class="btn btn-sm btn-success pull-right" href="{{ route('dashboard.components.add') }}">
             {{ trans('cachet.dashboard.component-add') }}
         </a>
         <div class="clearfix"></div>
-	</div>
+    </div>
     <div class="content-wrapper">
         <div class="row">
             <form name='componentList'>

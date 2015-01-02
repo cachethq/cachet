@@ -17,11 +17,11 @@ You need at least PHP >= 5.4, [Composer](https://getcomposer.org/) and the follo
 1. [Get a copy!](#get-a-copy)
 2. [Deploy to Heroku](#deploy-to-heroku)
 3. [Configuring a database!](#configuring-a-database)
-	1. [Running database migrations](#running-database-migrations)
-	2. [Seeding](#seeding)
+    1. [Running database migrations](#running-database-migrations)
+    2. [Seeding](#seeding)
 4. [Running Cachet](#running-cachet)
-	1. [Apache setup](#apache)
-	2. [nginx setup](#nginx)
+    1. [Apache setup](#apache)
+    2. [nginx setup](#nginx)
 5. [Environment detection](#environment-detection)
 
 # Get a copy!
@@ -70,11 +70,11 @@ For example, if working locally with MySQL, your `.env.local.php` file would be:
 <?php
 
 return [
-	'DB_DRIVER' => 'mysql',
-	'DB_HOST' => 'localhost',
-	'DB_DATABASE' => 'cachet',
-	'DB_USERNAME' => 'root',
-	'DB_PASSWORD' => 'secret',
+    'DB_DRIVER'   => 'mysql',
+    'DB_HOST'     => 'localhost',
+    'DB_DATABASE' => 'cachet',
+    'DB_USERNAME' => 'root',
+    'DB_PASSWORD' => 'secret',
 ];
 
 ?>
@@ -84,7 +84,7 @@ return [
 
 ### Running database migrations
 
-Once we've decided on our database, we now need to run the migrations to create the tables.   In our command line we need to run the migrations, from within the root directory:
+Once we've decided on our database, we now need to run the migrations to create the tables. In our command line we need to run the migrations, from within the root directory:
 
 ```bash
 $ php artisan migrate
@@ -110,16 +110,16 @@ We simply add the following Virtual Host to our `httpd-vhosts.conf` file:
 
 ```
 <VirtualHost *:80>
-	ServerName cachet.dev # Or whatever you want to use
-	ServerAlias cachet.dev # Make this the same as ServerName
-	DocumentRoot "/var/www/Cachet/public"
-	<Directory "/var/www/Cachet/public">
-		Require all granted # Used by Apache 2.4
-		Options Indexes FollowSymLinks
-		AllowOverride All
-		Order allow,deny
-		Allow from all
-	</Directory>
+    ServerName cachet.dev # Or whatever you want to use
+    ServerAlias cachet.dev # Make this the same as ServerName
+    DocumentRoot "/var/www/Cachet/public"
+    <Directory "/var/www/Cachet/public">
+        Require all granted # Used by Apache 2.4
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
 </VirtualHost>
 ```
 
