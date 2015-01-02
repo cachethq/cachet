@@ -121,6 +121,8 @@ return [
         'Illuminate\View\ViewServiceProvider',
 
         'Dingo\Api\Provider\ApiServiceProvider',
+        'GrahamCampbell\Security\SecurityServiceProvider',
+        'GrahamCampbell\Binput\BinputServiceProvider',
         'GrahamCampbell\Throttle\ThrottleServiceProvider',
         'GrahamCampbell\Markdown\MarkdownServiceProvider',
         'Thujohn\Rss\RssServiceProvider',

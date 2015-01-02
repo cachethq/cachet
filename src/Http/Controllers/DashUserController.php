@@ -2,9 +2,9 @@
 
 namespace CachetHQ\Cachet\Http\Controllers;
 
+use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 
@@ -29,7 +29,7 @@ class DashUserController extends Controller
      */
     public function postUser()
     {
-        $items = Input::all();
+        $items = Binput::all();
 
         $updated = Auth::user()->update($items);
 

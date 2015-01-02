@@ -4,8 +4,8 @@ namespace CachetHQ\Cachet\Http\Controllers;
 
 use CachetHQ\Cachet\Models\Setting;
 use Exception;
+use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
-use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 
@@ -114,13 +114,13 @@ class DashSettingsController extends Controller
      */
     public function postSettings()
     {
-        if (Input::get('remove_banner') == "1") {
+        if (Binput::get('remove_banner') == "1") {
             $setting = Setting::where('name', 'app_banner');
             $setting->delete();
         }
 
-        if (Input::hasFile('app_banner')) {
-            $file = Input::file('app_banner');
+        if (Binput::hasFile('app_banner')) {
+            $file = Binput::file('app_banner');
 
             // Image Validation.
             // Image size in bytes.
@@ -154,7 +154,7 @@ class DashSettingsController extends Controller
         }
 
         try {
-            foreach (Input::except(['app_banner', 'remove_banner']) as $settingName => $settingValue) {
+            foreach (Binput::except(['app_banner', 'remove_banner']) as $settingName => $settingValue) {
                 Setting::firstOrCreate([
                     'name' => $settingName,
                 ])->update([

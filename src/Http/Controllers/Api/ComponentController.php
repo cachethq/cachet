@@ -4,8 +4,8 @@ namespace CachetHQ\Cachet\Http\Controllers\Api;
 
 use CachetHQ\Cachet\Repositories\Component\ComponentRepository;
 use Dingo\Api\Routing\ControllerTrait;
+use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
-use Illuminate\Support\Facades\Input;
 
 class ComponentController extends Controller
 {
@@ -71,6 +71,6 @@ class ComponentController extends Controller
      */
     public function postComponents()
     {
-        return $this->component->create($this->auth->user()->id, Input::all());
+        return $this->component->create($this->auth->user()->id, Binput::all());
     }
 }

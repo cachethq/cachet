@@ -4,8 +4,8 @@ namespace CachetHQ\Cachet\Http\Controllers\Api;
 
 use CachetHQ\Cachet\Repositories\Incident\IncidentRepository;
 use Dingo\Api\Routing\ControllerTrait;
+use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
-use Illuminate\Support\Facades\Input;
 
 class IncidentController extends Controller
 {
@@ -59,7 +59,7 @@ class IncidentController extends Controller
      */
     public function postIncidents()
     {
-        return $this->incident->create($this->auth->user()->id, Input::all());
+        return $this->incident->create($this->auth->user()->id, Binput::all());
     }
 
     /**
@@ -71,6 +71,6 @@ class IncidentController extends Controller
      */
     public function putIncident($id)
     {
-        return $this->incident->update($id, Input::all());
+        return $this->incident->update($id, Binput::all());
     }
 }

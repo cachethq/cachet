@@ -13,13 +13,14 @@
         "ext-mcrypt": "*",
         "ext-openssl": "*",
         "laravel/framework": "4.2.*",
-        "guzzlehttp/guzzle": "~5.0",
         "dingo/api": "0.8.*",
-        "graham-campbell/throttle": "~2.0",
+        "doctrine/dbal": "2.5.*",
+        "graham-campbell/binput": "~2.1",
         "graham-campbell/markdown": "~2.0",
-        "watson/validating": "0.10.*",
+        "graham-campbell/throttle": "~2.0",
+        "guzzlehttp/guzzle": "~5.0",
         "thujohn/rss": "~1.0",
-        "doctrine/dbal": "2.5.*"
+        "watson/validating": "0.10.*"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.3",
