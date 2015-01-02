@@ -1,6 +1,6 @@
 # Laravel
-/bootstrap/compiled.php
-/vendor
+bootstrap/compiled.php
+vendor
 
 # Configuration
 .env.*.php
@@ -10,12 +10,10 @@ config.codekit
 !.env.example.php
 
 # Assets development
-/node_modules
-/app/assets/bower_components
+node_modules
 public/css/
 public/js/
 
 # Packages
 npm-debug.log
-.vagrant/
-tests/_output/*
+.vagrant
