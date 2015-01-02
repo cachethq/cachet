@@ -157,17 +157,16 @@ return [
 
     'aliases' => [
 
-        'API'      => 'Dingo\Api\Facade\API',
         'App'      => 'Illuminate\Support\Facades\App',
         'Auth'     => 'Illuminate\Support\Facades\Auth',
         'Form'     => 'Illuminate\Support\Facades\Form',
-        'HTML'     => 'Illuminate\Support\Facades\HTML',
         'Input'    => 'Illuminate\Support\Facades\Input',
         'Redirect' => 'Illuminate\Support\Facades\Redirect',
         'Request'  => 'Illuminate\Support\Facades\Request',
         'Response' => 'Illuminate\Support\Facades\Response',
         'Route'    => 'Illuminate\Support\Facades\Route',
         'Session'  => 'Illuminate\Support\Facades\Session',
+        'Setting'  => 'CachetHQ\Cachet\Models\Setting',
         'Str'      => 'Illuminate\Support\Str',
 
     ],

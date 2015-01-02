@@ -2,22 +2,22 @@
 
 namespace CachetHQ\Cachet\Repositories\Incident;
 
+use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Repositories\EloquentRepository;
-use Incident;
 
 class EloquentIncidentRepository extends EloquentRepository implements IncidentRepository
 {
     /**
      * The eloquent model instance.
      *
-     * @var \Incident
+     * @var \CachetHQ\Cachet\Models\Incident
      */
     protected $model;
 
     /**
      * Create a new eloquent incident repository instance.
      *
-     * @param \Incident $model
+     * @param \CachetHQ\Cachet\Models\Incident $model
      *
      * @return void
      */

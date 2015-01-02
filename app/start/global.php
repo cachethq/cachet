@@ -1,5 +1,6 @@
 <?php
 
+use Dingo\Api\Facade\API;
 use Illuminate\Support\Facades\Log;
 
 /*
@@ -63,15 +64,11 @@ App::down(function () {
 
 /*
 |--------------------------------------------------------------------------
-| Require The Filters File
+| View Composers
 |--------------------------------------------------------------------------
 |
-| Next we will load the filters file for the application. This gives us
-| a nice separate location to store our route and application filter
-| definitions instead of putting them all in the main routes file.
+| Register Cachet's view composers.
 |
 */
 
-require app_path().'/filters.php';
-require app_path().'/view-composers.php';
-require app_path().'/helpers.php';
+require app_path('view-composers.php');

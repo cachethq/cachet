@@ -15,14 +15,12 @@
 >
     <testsuites>
         <testsuite name="Cachet Test Suite">
-            <directory>./app/tests/</directory>
+            <directory>./tests</directory>
         </testsuite>
     </testsuites>
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">./src</directory>
-            <directory suffix=".php">./app/filters</directory>
-            <directory suffix=".php">./app/models</directory>
         </whitelist>
     </filter>
 </phpunit>

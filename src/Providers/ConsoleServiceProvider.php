@@ -2,7 +2,7 @@
 
 namespace CachetHQ\Cachet\Providers;
 
-use CachetHQ\Cachet\Commands\OneClickDeployCommand;
+use CachetHQ\Cachet\Console\Commands\OneClickDeployCommand;
 use Illuminate\Support\ServiceProvider;
 
 class ConsoleServiceProvider extends ServiceProvider
@@ -14,7 +14,7 @@ class ConsoleServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->commands('CachetHQ\Cachet\Commands\OneClickDeployCommand');
+        $this->commands('CachetHQ\Cachet\Console\Commands\OneClickDeployCommand');
     }
 
     /**
@@ -24,7 +24,7 @@ class ConsoleServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('CachetHQ\Cachet\Commands\OneClickDeployCommand', function ($app) {
+        $this->app->singleton('CachetHQ\Cachet\Console\Commands\OneClickDeployCommand', function ($app) {
             return new OneClickDeployCommand($app->environment('heroku'));
         });
     }

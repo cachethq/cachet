@@ -2,11 +2,18 @@
 
 namespace CachetHQ\Cachet\Transformers;
 
+use CachetHQ\Cachet\Models\MetricPoint;
 use League\Fractal\TransformerAbstract;
-use MetricPoint;
 
 class MetricPointTransformer extends TransformerAbstract
 {
+    /**
+     * Transform a metric point model into an array.
+     *
+     * @param \CachetHQ\Cachet\Models\MetricPoint $metricPoint
+     *
+     * @return array
+     */
     public function transform(MetricPoint $metricPoint)
     {
         return [

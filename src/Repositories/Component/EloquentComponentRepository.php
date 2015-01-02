@@ -2,22 +2,22 @@
 
 namespace CachetHQ\Cachet\Repositories\Component;
 
+use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Repositories\EloquentRepository;
-use Component;
 
 class EloquentComponentRepository extends EloquentRepository implements ComponentRepository
 {
     /**
      * The eloquent model instance.
      *
-     * @var \Component
+     * @var \CachetHQ\Cachet\Models\Component
      */
     protected $model;
 
     /**
      * Create a new eloquent component repository instance.
      *
-     * @param \Component $model
+     * @param \CachetHQ\Cachet\Models\Component $model
      *
      * @return void
      */

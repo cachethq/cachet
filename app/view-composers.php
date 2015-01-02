@@ -1,5 +1,7 @@
 <?php
 
+use CachetHQ\Cachet\Models\Component;
+use CachetHQ\Cachet\Models\Incident;
 use Illuminate\Support\Facades\View;
 
 View::composer('index', function ($view) {
