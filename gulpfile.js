@@ -42,7 +42,6 @@ elixir.extend('jshint', function() {
 elixir(function (mix) {
     mix.sass('app/assets/sass/main.scss')
         .styles([
-            'app/assets/bower_components/fontawesome/css/font-awesome.min.css',
             'app/assets/bower_components/ionicons/css/ionicons.min.css',
             'app/assets/bower_components/jquery-minicolors/jquery.minicolors.css',
             'public/css/main.css',
