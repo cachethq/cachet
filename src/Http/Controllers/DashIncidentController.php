@@ -4,8 +4,8 @@ namespace CachetHQ\Cachet\Http\Controllers;
 
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentTemplate;
+use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
-use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 
@@ -57,7 +57,7 @@ class DashIncidentController extends Controller
      */
     public function createIncidentTemplateAction()
     {
-        $_template = Input::get('template');
+        $_template = Binput::get('template');
         $template = IncidentTemplate::create($_template);
 
         return Redirect::back()->with('template', $template);
@@ -70,7 +70,7 @@ class DashIncidentController extends Controller
      */
     public function createIncidentAction()
     {
-        $_incident = Input::get('incident');
+        $_incident = Binput::get('incident');
         $incident = Incident::create($_incident);
 
         return Redirect::back()->with('incident', $incident);

@@ -4,8 +4,8 @@ namespace CachetHQ\Cachet\Http\Controllers\Api;
 
 use CachetHQ\Cachet\Repositories\Metric\MetricRepository;
 use Dingo\Api\Routing\ControllerTrait;
+use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
-use Illuminate\Support\Facades\Input;
 
 class MetricController extends Controller
 {
@@ -58,7 +58,7 @@ class MetricController extends Controller
      */
     public function postMetrics()
     {
-        return $this->metric->create(Input::all());
+        return $this->metric->create(Binput::all());
     }
 
     /**
@@ -70,6 +70,6 @@ class MetricController extends Controller
      */
     public function putMetric($id)
     {
-        return $this->metric->update($id, Input::all());
+        return $this->metric->update($id, Binput::all());
     }
 }

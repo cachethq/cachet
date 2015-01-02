@@ -2,10 +2,10 @@
 
 namespace CachetHQ\Cachet\Http\Controllers;
 
+use GrahamCampbell\Binput\Facades\Binput;
 use GrahamCampbell\Throttle\Facades\Throttle;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\View;
@@ -32,14 +32,14 @@ class AuthController extends Controller
      */
     public function postLogin()
     {
-        if (Auth::attempt(Input::only(['email', 'password']))) {
+        if (Auth::attempt(Binput::only(['email', 'password']))) {
             return Redirect::intended('dashboard');
         }
 
         Throttle::hit(Request::instance(), 10, 10);
 
         return Redirect::back()
-            ->withInput(Input::except('password'))
+            ->withInput(Binput::except('password'))
             ->with('error', 'Invalid email or password');
     }
 

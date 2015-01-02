@@ -4,8 +4,8 @@ namespace CachetHQ\Cachet\Http\Controllers\Api;
 
 use CachetHQ\Cachet\Repositories\MetricPoint\MetricPointRepository;
 use Dingo\Api\Routing\ControllerTrait;
+use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
-use Illuminate\Support\Facades\Input;
 
 class MetricPointController extends Controller
 {
@@ -58,6 +58,6 @@ class MetricPointController extends Controller
      */
     public function postMetricPoints()
     {
-        return $this->metricPoint->create(Input::all());
+        return $this->metricPoint->create(Binput::all());
     }
 }

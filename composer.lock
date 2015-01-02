@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "bb692ec0057ca30fa36edd005963b3cb",
+    "hash": "10cd158111365c98b217fc244a6c3a6e",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -769,6 +769,61 @@
             "time": "2014-10-26 09:05:09"
         },
         {
+            "name": "graham-campbell/binput",
+            "version": "v2.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/GrahamCampbell/Laravel-Binput.git",
+                "reference": "43dcec3dcabace1018e2fa009fc11165199f3889"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Binput/zipball/43dcec3dcabace1018e2fa009fc11165199f3889",
+                "reference": "43dcec3dcabace1018e2fa009fc11165199f3889",
+                "shasum": ""
+            },
+            "require": {
+                "graham-campbell/security": "~2.0",
+                "illuminate/http": "~4.1",
+                "illuminate/support": "~4.1",
+                "php": ">=5.4.7"
+            },
+            "require-dev": {
+                "graham-campbell/testbench": "~1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "GrahamCampbell\\Binput\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Graham Campbell",
+                    "email": "graham@mineuk.com"
+                }
+            ],
+            "description": "Binput Is An Input Protector For Laravel 4.1/4.2",
+            "keywords": [
+                "Binput",
+                "Graham Campbell",
+                "GrahamCampbell",
+                "Laravel Binput",
+                "Laravel-Binput",
+                "better",
+                "better input",
+                "framework",
+                "input",
+                "laravel",
+                "security"
+            ],
+            "time": "2014-10-05 15:29:30"
+        },
+        {
             "name": "graham-campbell/markdown",
             "version": "v2.0.5",
             "source": {
@@ -824,6 +879,56 @@
                 "parsedown wrapper"
             ],
             "time": "2014-10-05 14:49:46"
+        },
+        {
+            "name": "graham-campbell/security",
+            "version": "v2.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/GrahamCampbell/Laravel-Security.git",
+                "reference": "51b822b6cfcba80a3d8ec1ac6a5e7af9b8d17907"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Security/zipball/51b822b6cfcba80a3d8ec1ac6a5e7af9b8d17907",
+                "reference": "51b822b6cfcba80a3d8ec1ac6a5e7af9b8d17907",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~4.1",
+                "php": ">=5.4.7"
+            },
+            "require-dev": {
+                "graham-campbell/testbench": "~1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "GrahamCampbell\\Security\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Graham Campbell",
+                    "email": "graham@mineuk.com"
+                }
+            ],
+            "description": "Security Is A Port Of The Security Class From Codeigniter 2.2 For Laravel 4.1/4.2",
+            "keywords": [
+                "Graham Campbell",
+                "GrahamCampbell",
+                "Laravel Security",
+                "Laravel-Security",
+                "codeigniter",
+                "framework",
+                "laravel",
+                "security"
+            ],
+            "time": "2014-11-27 23:04:50"
         },
         {
             "name": "graham-campbell/throttle",

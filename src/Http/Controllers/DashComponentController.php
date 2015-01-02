@@ -3,8 +3,8 @@
 namespace CachetHQ\Cachet\Http\Controllers;
 
 use CachetHQ\Cachet\Models\Component;
+use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
-use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 
@@ -49,7 +49,7 @@ class DashComponentController extends Controller
      */
     public function updateComponentAction(Component $component)
     {
-        $_component = Input::get('component');
+        $_component = Binput::get('component');
         $component->update($_component);
 
         return Redirect::back()->with('savedComponent', $component);
@@ -74,7 +74,7 @@ class DashComponentController extends Controller
      */
     public function createComponentAction()
     {
-        $_component = Input::get('component');
+        $_component = Binput::get('component');
         $component = Component::create($_component);
 
         return Redirect::back()->with('component', $component);
