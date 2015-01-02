@@ -34,7 +34,7 @@ The easiest way is to use Git to pull down the code. You'll need to put it into 
 $ cd /var/www
 $ git clone https://github.com/jbrooksuk/Cachet.git
 $ cd Cachet
-$ composer install
+$ composer install --no-dev -o
 ```
 
 # Deploy to Heroku
