@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\SoftDeletingTrait;
 use Watson\Validating\ValidatingTrait;
 
 /**
+ * @property int    $id
  * @property int    $component_id
  * @property int    $user_id
  * @property string $name

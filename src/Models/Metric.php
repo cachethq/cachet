@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use Watson\Validating\ValidatingTrait;
 
 /**
+ * @property int    $id
  * @property string $name
  * @property string $suffix
  * @property string $description

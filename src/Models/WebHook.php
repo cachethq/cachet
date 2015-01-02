@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
+ * @property int    $id
  * @property string $name
  * @property string $endpoint
  * @property int $hook_type

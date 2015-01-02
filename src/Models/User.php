@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Hash;
 
 /**
+ * @property int    $id
  * @property string $username
  * @property string $password
  * @property string $remember_token
