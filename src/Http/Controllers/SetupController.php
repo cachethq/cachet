@@ -70,10 +70,10 @@ class SetupController extends Controller
             $settings = array_get($postData, 'settings');
 
             foreach ($settings as $settingName => $settingValue) {
-                $setting = new Setting();
-                $setting->name = $settingName;
-                $setting->value = $settingValue;
-                $setting->save();
+                Setting::create([
+                    'name'  => $settingName,
+                    'value' => $settingValue,
+                ]);
             }
 
             return Redirect::to('dashboard');
