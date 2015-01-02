@@ -101,8 +101,6 @@ class WebHook extends Model
      */
     public function getRequestMethodAttribute()
     {
-        $requestMethod = null;
-
         switch ($this->request_type) {
             case self::HEAD:
                 return 'HEAD';
