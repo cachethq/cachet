@@ -17,8 +17,8 @@ use Illuminate\Support\Facades\Hash;
  * @property string        $email
  * @property int           $active
  * @property int           $level
- * @property Carbon\Carbon $created_at
- * @property Carbon\Carbon $updated_at
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
  */
 class User extends Model implements UserInterface, RemindableInterface
 {

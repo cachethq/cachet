@@ -9,9 +9,9 @@ use Watson\Validating\ValidatingTrait;
 /**
  * @property int           $id
  * @property string        $email
- * @property Carbon\Carbon $created_at
- * @property Carbon\Carbon $updated_at
- * @property Carbon\Carbon $deleted_at
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @property \Carbon\Carbon $deleted_at
  */
 class Subscriber extends Model
 {

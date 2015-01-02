@@ -13,8 +13,8 @@ use Watson\Validating\ValidatingTrait;
  * @property string        $suffix
  * @property string        $description
  * @property int           $display_chart
- * @property Carbon\Carbon $created_at
- * @property Carbon\Carbon $updated_at
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
  */
 class Metric extends Model implements TransformableInterface
 {

@@ -10,9 +10,9 @@ use Watson\Validating\ValidatingTrait;
  * @property string        $type
  * @property int           $active
  * @property string        $properties
- * @property Carbon\Carbon $created_at
- * @property Carbon\Carbon $updated_at
- * @property Carbon\Carbon $deleted_at
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @property \Carbon\Carbon $deleted_at
  */
 class Service extends Model
 {
