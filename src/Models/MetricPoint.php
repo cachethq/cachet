@@ -5,9 +5,11 @@ namespace CachetHQ\Cachet\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * @property int $id
- * @property int $metric_id
- * @property int $value
+ * @property int           $id
+ * @property int           $metric_id
+ * @property int           $value
+ * @property Carbon\Carbon $created_at
+ * @property Carbon\Carbon $updated_at
  */
 class MetricPoint extends Model
 {

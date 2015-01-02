@@ -8,11 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 use Watson\Validating\ValidatingTrait;
 
 /**
- * @property int    $id
- * @property string $name
- * @property string $suffix
- * @property string $description
- * @property int    $display_chart
+ * @property int           $id
+ * @property string        $name
+ * @property string        $suffix
+ * @property string        $description
+ * @property int           $display_chart
+ * @property Carbon\Carbon $created_at
+ * @property Carbon\Carbon $updated_at
  */
 class Metric extends Model implements TransformableInterface
 {
