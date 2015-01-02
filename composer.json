@@ -38,11 +38,6 @@
             "CachetHQ\\Cachet\\": "src/"
         }
     },
-    "autoload-dev": {
-        "classmap": [
-            "tests/TestCase.php"
-        ]
-    },
     "extra": {
         "paas": {
             "document-root": "public",
