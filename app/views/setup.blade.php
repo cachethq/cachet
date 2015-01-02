@@ -64,6 +64,7 @@
 
                             <hr />
                             <div class='form-group'>
+                                <input type='hidden' name='settings[app_incident_days]' value='7' />
                                 <button type='submit' class='btn btn-success'>{{ trans("cachet.forms.setup.finish_setup") }}</button>
                             </div>
                         {{ Form::close() }}

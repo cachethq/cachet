@@ -50,6 +50,14 @@
                             <div class='row'>
                                 <div class='col-xs-12'>
                                     <div class='form-group'>
+                                        <label>How many days of incidents to show?</label>
+                                        <input type='number' min='1' max='100' name='app_incident_days' class='form-control' value='{{ Setting::get("app_incident_days") ?: 7 }}' />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='row'>
+                                <div class='col-xs-12'>
+                                    <div class='form-group'>
                                         <label>Banner Image</label>
                                         @if($banner = Setting::get('app_banner'))
                                         <div id="banner-view" class='well'>

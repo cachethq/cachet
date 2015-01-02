@@ -23,7 +23,9 @@ class HomeController extends Controller
 
         $allIncidents = [];
 
-        foreach (range(0, 7) as $i) {
+        $incidentDays = Setting::get('app_incident_days') ?: 7;
+
+        foreach (range(0, $incidentDays) as $i) {
             $date = Carbon::now()->subDays($i);
             $incidents = Incident::whereBetween('created_at', [
                 $date->format('Y-m-d').' 00:00:00',
