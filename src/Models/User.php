@@ -10,15 +10,15 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Hash;
 
 /**
- * @property int           $id
- * @property string        $username
- * @property string        $password
- * @property string        $remember_token
- * @property string        $email
- * @property int           $active
- * @property int           $level
- * @property Carbon\Carbon $created_at
- * @property Carbon\Carbon $updated_at
+ * @property int            $id
+ * @property string         $username
+ * @property string         $password
+ * @property string         $remember_token
+ * @property string         $email
+ * @property int            $active
+ * @property int            $level
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
  */
 class User extends Model implements UserInterface, RemindableInterface
 {

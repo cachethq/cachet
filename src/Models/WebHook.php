@@ -9,15 +9,15 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * @property int    $id
- * @property string $name
- * @property string $endpoint
- * @property int    $hook_type
- * @property int    $request_type
- * @property int    $active
- * @property Carbon\Carbon $created_at
- * @property Carbon\Carbon $updated_at
- * @property Carbon\Carbon $deleted_at
+ * @property int            $id
+ * @property string         $name
+ * @property string         $endpoint
+ * @property int            $hook_type
+ * @property int            $request_type
+ * @property int            $active
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @property \Carbon\Carbon $deleted_at
  */
 class WebHook extends Model
 {
