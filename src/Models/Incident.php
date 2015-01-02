@@ -78,6 +78,8 @@ class Incident extends Model implements TransformableInterface
                 return 'ion ion-eye';
             case 4:
                 return 'ion ion-checkmark';
+            default:
+                return '';
         }
     }
 

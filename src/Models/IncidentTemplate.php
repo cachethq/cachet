@@ -3,7 +3,7 @@
 namespace CachetHQ\Cachet\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Str;
+use Illuminate\Support\Str;
 use Watson\Validating\ValidatingTrait;
 
 class IncidentTemplate extends Model

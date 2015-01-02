@@ -2,6 +2,7 @@
 
 namespace CachetHQ\Cachet\Models;
 
+use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use Illuminate\Database\Eloquent\Builder;
@@ -52,11 +53,11 @@ class WebHook extends Model
      * Fires the actual web hook event.
      *
      * @param string $eventType The event to send X-Cachet-Event
-     * @param mixed  $data      Data to send to the Web Hook
+     * @param string $data      Data to send to the Web Hook
      *
      * @return \CachetHQ\Cachet\Models\WebHookResponse
      */
-    public function fire($eventType, $data = null)
+    public function fire($eventType, $data)
     {
         $startTime = microtime(true);
 

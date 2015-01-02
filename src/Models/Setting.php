@@ -2,6 +2,7 @@
 
 namespace CachetHQ\Cachet\Models;
 
+use ErrorException;
 use Illuminate\Database\Eloquent\Model;
 
 class Setting extends Model

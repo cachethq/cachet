@@ -71,4 +71,4 @@ App::down(function () {
 |
 */
 
-require app_path('view-composers.php');
+require app_path('composers.php');
