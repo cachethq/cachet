@@ -7,6 +7,12 @@ use Dingo\Api\Transformer\TransformableInterface;
 use Illuminate\Database\Eloquent\Model;
 use Watson\Validating\ValidatingTrait;
 
+/**
+ * @property string $name
+ * @property string $suffix
+ * @property string $description
+ * @property int    $display_chart
+ */
 class Metric extends Model implements TransformableInterface
 {
     use ValidatingTrait;
