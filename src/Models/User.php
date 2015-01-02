@@ -9,6 +9,14 @@ use Illuminate\Auth\UserTrait;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Hash;
 
+/**
+ * @property string $username
+ * @property string $password
+ * @property string $remember_token
+ * @property string $email
+ * @property int    $active
+ * @property int    $level
+ */
 class User extends Model implements UserInterface, RemindableInterface
 {
     use UserTrait, RemindableTrait;
