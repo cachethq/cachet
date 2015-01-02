@@ -1,12 +1,12 @@
 @extends('layout.dashboard')
 
 @section('content')
-	<div class="header">
+    <div class="header">
         <span class="uppercase">
-		    <i class="icon ion-plus"></i> {{ trans('cachet.dashboard.incident-add') }}
+            <i class="icon ion-plus"></i> {{ trans('cachet.dashboard.incident-add') }}
         </span>
         > <small>Create an Incident Template</small>
-	</div>
+    </div>
     <div class="content-wrapper">
         <div class="row">
             <div class="col-md-12">

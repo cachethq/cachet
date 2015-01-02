@@ -1,49 +1,49 @@
 body.dashboard {
-	.content {
-		position: relative;
-		display: table-cell;
-		vertical-align: top;
-		width: 100%;
-		.row {
-			margin: 10px 0;
-		}
-		.header {
+    .content {
+        position: relative;
+        display: table-cell;
+        vertical-align: top;
+        width: 100%;
+        .row {
+            margin: 10px 0;
+        }
+        .header {
             position: absolute;
             top: 0;
             left: 0;
             color: #333;
             background-color: #fff;
-			padding: 22px 14px;
-			width: 100%;
-			height: 70px;
-			font-size: 1.2em;
+            padding: 22px 14px;
+            width: 100%;
+            height: 70px;
+            font-size: 1.2em;
             border-bottom: 1px solid #eee;
             z-index: 99;
             &.fixed {
                 position: fixed;
                 padding-left: 250px;
             }
-			i {
-				// padding-right: 10px;
-			}
-			input, button, .btn {
-				position: relative;
-				top: -4px;
-			}
-			input {
-				width: 20%;
-			}
+            i {
+                // padding-right: 10px;
+            }
+            input, button, .btn {
+                position: relative;
+                top: -4px;
+            }
+            input {
+                width: 20%;
+            }
 
-			+ .row {
-				margin-top: 23px;
-			}
+            + .row {
+                margin-top: 23px;
+            }
 
             h3 {
                 color: #444;
                 margin-top: 0;
                 text-transform: uppercase;
             }
-		}
+        }
         .content-wrapper {
             margin-top: 80px;
         }
@@ -60,5 +60,5 @@ body.dashboard {
                 padding: 8px 0;
             }
         }
-	}
+    }
 }

@@ -8,7 +8,7 @@ Example URL: `http://status.cachethq.io/api/components`
 
 * `GET`: returns a list of the current components and their status
   - success: 200:
-  
+
     ~~~json
     {
       "data": [

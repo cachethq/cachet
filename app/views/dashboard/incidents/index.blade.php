@@ -1,15 +1,15 @@
 @extends('layout.dashboard')
 
 @section('content')
-	<div class="header fixed">
+    <div class="header fixed">
         <span class="uppercase">
-		    <i class="icon icon ion-android-alert"></i> {{ trans('cachet.dashboard.incidents') }}
+            <i class="icon icon ion-android-alert"></i> {{ trans('cachet.dashboard.incidents') }}
         </span>
         <a class="btn btn-sm btn-success pull-right" href="{{ route('dashboard.incidents.add') }}">
             {{ trans('cachet.dashboard.incident-add') }}
         </a>
         <div class="clearfix"></div>
-	</div>
+    </div>
     <div class="content-wrapper">
         <div class="row">
             <div class="col-sm-12">
