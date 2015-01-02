@@ -1,16 +1,17 @@
 {
-  "name": "Cachet",
-  "dependencies": {
-    "bootstrap-sass-official": "3.3.*",
-    "chartjs": "0.2.*",
-    "humane-js": "~3.2.2",
-    "ionicons": "~2.0.0",
-    "jquery": "~2.1.1",
-    "jquery-minicolors": "2.1.10",
-    "jquery-serialize-object": "2.4.3",
-    "lodash": "~2.4.1",
-    "messenger": "~1.4.1",
-    "rivets": "0.7.*",
-    "Sortable": "1.0.0"
-  }
+    "name": "Cachet",
+    "dependencies": {
+        "bootstrap-sass-official": "3.3.*",
+        "chartjs": "0.2.*",
+        "humane-js": "~3.2.2",
+        "ionicons": "~2.0.0",
+        "jquery": "~2.1.1",
+        "jquery-minicolors": "2.1.10",
+        "jquery-serialize-object": "2.4.3",
+        "lodash": "~2.4.1",
+        "messenger": "~1.4.1",
+        "rivets": "0.7.*",
+        "Sortable": "1.0.0",
+        "animate-sass": "~0.6.2"
+    }
 }

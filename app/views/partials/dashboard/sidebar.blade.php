@@ -20,18 +20,21 @@
         <div class="clearfix"></div>
         <div class="quick-add-incident">
             <a class="btn btn-block btn-default uppercase" href="{{ route('dashboard.incidents.add') }}">
-                {{ trans('cachet.dashboard.incident-add') }}
+                <i class="icon ion-android-checkmark-circle visible-sm"></i>
+                <span class="hidden-sm">{{ trans('cachet.dashboard.incident-add') }}</span>
             </a>
         </div>
         <ul>
             <li {{ set_active('dashboard') }}>
                 <a href="{{ route('dashboard') }}">
-                    <i class="icon ion-speedometer"></i> {{ trans('cachet.dashboard.dashboard') }}
+                    <i class="icon ion-speedometer"></i>
+                    <span>{{ trans('cachet.dashboard.dashboard') }}</span>
                 </a>
             </li>
             <li {{ set_active('dashboard/incidents*') }}>
                 <a href="{{ route('dashboard.incidents') }}">
-                    <i class="icon ion-android-alert"></i> {{ trans('cachet.dashboard.incidents') }}
+                    <i class="icon ion-android-alert"></i>
+                    <span>{{ trans('cachet.dashboard.incidents') }}</span>
                 </a>
             </li>
             {{-- <li {{ set_active('dashboard/incidents/templates') }}>
@@ -41,7 +44,8 @@
             </li> --}}
             <li {{ set_active('dashboard/components*') }}>
                 <a href="{{ route('dashboard.components') }}">
-                    <i class="icons ion-ios-keypad"></i> {{ trans('cachet.dashboard.components') }}
+                    <i class="icons ion-ios-keypad"></i>
+                    <span>{{ trans('cachet.dashboard.components') }}</span>
                 </a>
             </li>
             {{-- <li {{ set_active('dashboard/metrics') }}>
@@ -56,7 +60,10 @@
             </li> --}}
             <li {{ set_active('dashboard/settings*') }}>
                 <a href="{{ route('dashboard.settings.setup') }}">
-                    <i class="icon ion-gear-a"></i> {{ trans('cachet.dashboard.settings') }}
+                    <i class="icon ion-gear-a"></i>
+                    <span>
+                        {{ trans('cachet.dashboard.settings') }}
+                    </span>
                 </a>
             </li>
         </ul>

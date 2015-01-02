@@ -25,6 +25,7 @@ html, body {
 
 // Styles for plugins
 @import "plugins/messenger";
+@import "plugins/animate";
 
 // Status Page will need to override certain styles.
 @import "status-page";
