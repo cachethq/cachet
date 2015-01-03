@@ -1,8 +1,8 @@
 {
-  "dependencies": {
+  "devDependencies": {
     "gulp": "^3.8.8",
-    "gulp-rimraf": "~0.1.1",
-    "laravel-elixir": "~0.9.1",
-    "laravel-elixir-jshint": "~0.1.6"
+    "gulp-rimraf": "0.1.1",
+    "laravel-elixir": "*",
+    "laravel-elixir-jshint": "0.1.6"
   }
 }

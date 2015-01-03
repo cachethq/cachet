@@ -37,8 +37,6 @@ $ cd Cachet
 $ composer install --no-dev -o
 ```
 
-If you don't want to compile the assets yet, you may want to run composer with the `--no-scripts` flag.
-
 # Deploy to Heroku
 
 When using the **Deploy to Heroku** button you needn't worry about using a database as the install will setup a free instance of ClearDB. Once installed Heroku can direct you to the setup page where you'll configure the site/application information and create an administrator account.
@@ -78,6 +76,8 @@ return [
     'DB_USERNAME' => 'root',
     'DB_PASSWORD' => 'secret',
 ];
+
+?>
 ```
 
 > Even though SQLite doesn't require a host, username or password, these still must be set (an empty string will suffice).
