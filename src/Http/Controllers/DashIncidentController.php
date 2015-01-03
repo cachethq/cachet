@@ -101,7 +101,7 @@ class DashIncidentController extends Controller
     {
         return View::make('dashboard.incidents.edit')->with([
             'pageTitle' => 'Edit Incident - Dashboard',
-            'incident' => $incident,
+            'incident'  => $incident,
         ]);
     }
 
