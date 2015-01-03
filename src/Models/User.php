@@ -7,6 +7,7 @@ use Illuminate\Auth\Reminders\RemindableTrait;
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\UserTrait;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Hash;
 
 /**
@@ -48,6 +49,20 @@ class User extends Model implements UserInterface, RemindableInterface
     protected $guarded = [];
 
     /**
+     * Overrides the models boot method.
+     *
+     * @return void
+     */
+    public static function boot()
+    {
+        parent::boot();
+
+        self::creating(function ($user) {
+            $user->api_key = self::generateApiKey();
+        });
+    }
+
+    /**
      * Hash any password being inserted by default.
      *
      * @param string $password
@@ -71,5 +86,36 @@ class User extends Model implements UserInterface, RemindableInterface
     public function getGravatarAttribute($size = 200)
     {
         return sprintf('https://www.gravatar.com/avatar/%s?size=%d', md5($this->email), $size);
+    }
+
+    /**
+     * Find by api_key, or throw an exception.
+     *
+     * @param string   $api_key
+     * @param string[] $columns
+     *
+     * @throws \Illuminate\Database\Eloquent\ModelNotFoundException
+     *
+     * @return \CachetHQ\Cachet\Models\User
+     */
+    public static function findByApiKey($api_key, $columns = ['*'])
+    {
+        $user = static::where('api_key', $api_key)->first($columns);
+
+        if (!$user) {
+            throw new ModelNotFoundException();
+        }
+
+        return $user;
+    }
+
+    /**
+     * Returns an API key.
+     *
+     * @return string
+     */
+    public static function generateApiKey()
+    {
+        return str_random(20);
     }
 }

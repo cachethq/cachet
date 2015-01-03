@@ -76,9 +76,15 @@ return [
     */
 
     'auth' => [
+
         'basic' => function ($app) {
             return new Dingo\Api\Auth\BasicProvider($app['auth']);
         },
+
+        'api_key' => function ($app) {
+            return new CachetHQ\Cachet\Auth\ApiKeyAuthenticator();
+        },
+
     ],
 
     /*

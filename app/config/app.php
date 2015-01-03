@@ -128,9 +128,10 @@ return [
         'Roumen\Feed\FeedServiceProvider',
         'Thujohn\Rss\RssServiceProvider',
 
+        'CachetHQ\Cachet\Providers\AuthServiceProvider',
+        'CachetHQ\Cachet\Providers\ConsoleServiceProvider',
         'CachetHQ\Cachet\Providers\RepositoryServiceProvider',
         'CachetHQ\Cachet\Providers\RoutingServiceProvider',
-        'CachetHQ\Cachet\Providers\ConsoleServiceProvider',
 
     ],
 
