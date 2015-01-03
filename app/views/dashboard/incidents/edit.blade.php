@@ -48,7 +48,7 @@
 
             <input type="hidden" name="incident[user_id]" value="{{ Auth::user()->id }}" />
             <input type="hidden" name="incident[id]" value={{$incident->id}} />
-            <button type="submit" class="btn btn-success">Edit</button>
+            <button type="submit" class="btn btn-success">Save Incident</button>
             <a class="btn btn-default" href="{{ route('dashboard.incidents') }}">Cancel</a>
             {{ Form::close() }}
         </div>
