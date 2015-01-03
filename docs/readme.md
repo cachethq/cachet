@@ -11,6 +11,7 @@ Cachet is an open source alternative to StatusPage.io written in PHP 5 with the 
 ### Setup
 
 - [Setting up Cachet](/docs/setup/readme.md)
+- [Install](/docs/setup/install.md)
 
 ### Dashboard
 

@@ -32,9 +32,9 @@ For more information on why I started developing Cachet, check out my [blog post
 
 ## Installation
 
-See the [INSTALL.md](/INSTALL.md) document for more information. If you'd like to add more documentation, please create a Pull Request, I'd be happy to merge!
+See the [INSTALL.md](/docs/setup/install.md) document for more information. If you'd like to add more documentation, please create a Pull Request, I'd be happy to merge!
 
-[Deploying to Heroku](/INSTALL.md#deploy-to-heroku) requires one-click to get started and no knowledge of PHP or Laravel afterwards.
+[Deploying to Heroku](/docs/setup/install.md#deploy-to-heroku) requires one-click to get started and no knowledge of PHP or Laravel afterwards.
 
 ## Translations
 
