@@ -9,11 +9,12 @@ config.codekit
 !.env.heroku.php
 !.env.example.php
 
-# Assets development
+# Assets
 app/assets/bower_components
 node_modules
-public/css/
-public/js/
+public/build
+public/css
+public/js
 
 # Packages
 npm-debug.log
