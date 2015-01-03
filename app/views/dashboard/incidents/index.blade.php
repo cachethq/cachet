@@ -25,6 +25,7 @@
                             @endif
                         </div>
                         <div class="col-md-6 text-right">
+                            <a href="/dashboard/incidents/{{ $incident->id }}/edit" class="btn btn-warning">Edit</a>
                             <a href="/dashboard/incidents/{{ $incident->id }}/delete" class="btn btn-danger">Delete</a>
                         </div>
                     </div>
