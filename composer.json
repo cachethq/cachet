@@ -50,13 +50,17 @@
             "index-document": "index.php",
             "log-files": [
                 "app/storage/logs/laravel.log"
+            ],
+            "compile": [
+                "bower install",
+                "gulp"
             ]
         }
     },
     "scripts": {
         "post-install-cmd": [
             "php artisan optimize",
-            "chmod -R 755 app/storage",
+            "chmod -R 777 app/storage public",
             "php artisan cachet:one-click-deploy"
         ],
         "post-update-cmd": [

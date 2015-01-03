@@ -8,7 +8,9 @@ php:
 
 sudo: false
 
-install: travis_retry composer install --no-interaction --prefer-source
+install: travis_retry composer install --no-interaction --no-scripts --prefer-source
+
+before_script: php artisan cachet:one-click-deploy
 
 script:
   - bash -c 'if [ "$TRAVIS_PHP_VERSION" == "hhvm" ]; then vendor/bin/phpunit; fi;'
