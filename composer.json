@@ -58,16 +58,12 @@
             "php artisan optimize",
             "chmod -R 755 app/storage",
             "php artisan cachet:one-click-deploy",
-            "bower install",
-            "npm install",
-            "gulp"
+            "$(npm bin -q)/gulp"
         ],
         "post-update-cmd": [
             "php artisan clear-compiled",
             "php artisan optimize",
-            "bower install",
-            "npm install",
-            "gulp"
+            "$(npm bin -q)/gulp"
         ],
         "post-create-project-cmd": [
             "php artisan key:generate"
