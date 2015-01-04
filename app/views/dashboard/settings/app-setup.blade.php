@@ -1,18 +1,10 @@
 @extends('layout.dashboard')
 
 @section('content')
-    @if(isset($subMenu))
-    @include('partials.dashboard.sub-sidebar')
-    @endif
     <div class='content-panel'>
-        <div class="header">
-            <div class="sidebar-toggler visible-xs">
-                <i class="icon ion-navicon"></i>
-            </div>
-            <span class="uppercase">
-                <i class="icon ion-gear-a"></i> {{ trans('cachet.dashboard.settings') }}
-            </span>
-        </div>
+        @if(isset($subMenu))
+            @include('partials.dashboard.sub-sidebar')
+        @endif
         <div class="content-wrapper">
             <div class="row">
                 <div class="col-sm-12">

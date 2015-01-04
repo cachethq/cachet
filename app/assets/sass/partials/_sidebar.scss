@@ -109,6 +109,7 @@ body.dashboard {
         }
     }
 
+    // Sidebar media queries
     @media (min-width: $screen-xs-max) {
         .sidebar {
             width: $sidebar-normal-width;
@@ -119,7 +120,6 @@ body.dashboard {
         }
     }
 
-    // Sidebar media queries
     @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
         .sidebar {
             width: 80px;
@@ -161,17 +161,25 @@ body.dashboard {
         }
     }
 
-//    @media (max-width: $screen-sm-max) {
-//        .sidebar {
-//            @extend .hidden-xs;
-//        }
-//    }
+    .sidebar-toggler {
+        float: left;
+        padding: 10px;
+        position: relative;
+        top: -15px;
+        left: -5px;
+        margin-right: 10px;
+        cursor: pointer;
+        i {
+            font-size: 25px;
+        }
+    }
 
     .sub-sidebar {
         left: 0;
         top: 0;
         bottom: 0;
         position: absolute;
+        margin-left: 228px;
         width: 22%;
         background: #fcfcfc;
         border-right: 1px solid #E8ECF1;
@@ -180,7 +188,7 @@ body.dashboard {
             margin: 0;
             text-align: center;
             font-size: 19px;
-            padding: 22px 0;
+            padding: 30px 0;
         }
 
         ul.menu {
@@ -208,17 +216,43 @@ body.dashboard {
             }
         }
 
-        + .content-panel {
+        .sidebar-toggler {
+            position: absolute;
+            top: 3px;
+            left: 20px;
+            font-size: 36px;
+            cursor: pointer;
+        }
+
+        + .content-wrapper {
             top: 0;
             position: relative;
             width: 78%;
-            margin-left: 22%;
+            margin-left: 25%;
             padding: 24px 50px;
             padding-bottom: 80px;
         }
 
-        @media (max-width: $screen-sm-max) {
+    }
 
+    // Sub-sidebar media queries
+    @media (max-width: $screen-xs-max) {
+        .sub-sidebar {
+            position: relative;
+            margin-left: 0;
+            width: 100%;
+            + .content-wrapper {
+                margin-left: 0;
+                width: 100%;
+            }
+        }
+
+    }
+
+    @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+        .sub-sidebar {
+            margin-left: 80px;
+            width: 25%;
         }
     }
 }
