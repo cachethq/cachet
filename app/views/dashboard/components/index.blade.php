@@ -17,7 +17,12 @@
                     @forelse($components as $component)
                     <div class='row striped-list-item'>
                         <div class='col-md-8'>
-                            <h4><span class='drag-handle'><i class='ion-drag'></i></span> {{ $component->name }} <small>{{ $component->humanStatus }}</small></h4>
+                            <h4>
+                                @if($components->count() > 1)
+                                <span class='drag-handle'><i class='ion-drag'></i></span>
+                                @endif
+                                {{ $component->name }} <small>{{ $component->humanStatus }}</small>
+                            </h4>
                             @if($component->description)
                             <p><small>{{ $component->description }}</small></p>
                             @endif
