@@ -25,6 +25,6 @@ class WebHookResponse extends Model
      */
     public function hook()
     {
-        return $this->belongsTo('WebHook', 'id', 'hook_id');
+        return $this->belongsTo('CachetHQ\Cachet\Models\WebHook', 'id', 'hook_id');
     }
 }

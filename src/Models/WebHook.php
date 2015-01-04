@@ -35,7 +35,7 @@ class WebHook extends Model
      */
     public function response()
     {
-        return $this->hasMany('WebHookContent', 'hook_id', 'id');
+        return $this->hasMany('CachetHQ\Cachet\Models\WebHookContent', 'hook_id', 'id');
     }
 
     /**

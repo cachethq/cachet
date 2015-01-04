@@ -26,18 +26,11 @@ class User extends Model implements UserInterface, RemindableInterface
     use UserTrait, RemindableTrait;
 
     /**
-     * The database table used by the model.
-     *
-     * @var string
-     */
-    protected $table = 'users';
-
-    /**
      * The hidden properties.
      *
      * These are excluded when we are serializing the model.
      *
-     * @var array
+     * @var string[]
      */
     protected $hidden = ['password', 'remember_token'];
 
