@@ -14,7 +14,7 @@ class AlterTableUsersAddApiKey extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('api_key')->after('email');
+            $table->string('api_key')->nullable()->default(null)->after('email');
         });
     }
 
