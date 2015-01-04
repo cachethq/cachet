@@ -37,7 +37,13 @@ $ cd Cachet
 $ composer install --no-dev -o
 ```
 
-If you don't want to compile the assets yet, you may want to run composer with the `--no-scripts` flag.
+You will also need to build the assets.
+
+```bash
+$ npm install
+$ bower install
+$ gulp
+```
 
 # Deploy to Heroku
 
