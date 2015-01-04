@@ -43,7 +43,26 @@ class Component extends Model implements TransformableInterface
      *
      * @var string[]
      */
-    protected $fillable = ['name', 'description', 'status', 'user_id', 'tags', 'link', 'order'];
+    protected $fillable = [
+        'name',
+        'description',
+        'status',
+        'user_id',
+        'tags',
+        'link',
+        'order',
+        'group_id',
+    ];
+
+    /**
+     * Components can belong to a group.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function group()
+    {
+        return $this->belongsTo('CachetHQ\Cachet\Models\ComponentGroup', 'group_id', 'id');
+    }
 
     /**
      * Lookup all of the incidents reported on the component.

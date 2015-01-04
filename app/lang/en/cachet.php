@@ -42,6 +42,8 @@ return [
         'dashboard'                => 'Dashboard',
         'components'               => 'Components',
         'component-add'            => 'Add Component',
+        'component-groups'         => 'Component Groups',
+        'component-groups-add'     => 'Create Group',
         'incidents'                => 'Incidents',
         'incident-add'             => 'Add Incident',
         'incident-create-template' => 'Create Template',
