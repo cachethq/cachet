@@ -36,7 +36,7 @@ class AtomController extends Controller
                 Setting::get('app_name'),
                 Setting::get('app_domain'),
                 $incident->created_at,
-                ($componentName === null ? $incident->humanStatus : $componentName." ".$incident->humanStatus),
+                ($componentName === null ? $incident->humanStatus : $componentName.' '.$incident->humanStatus),
                 $incident->message
             );
         });
