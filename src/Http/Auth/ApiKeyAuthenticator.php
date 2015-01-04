@@ -1,6 +1,6 @@
 <?php
 
-namespace CachetHQ\Cachet\Auth;
+namespace CachetHQ\Cachet\Http\Auth;
 
 use CachetHQ\Cachet\Models\User;
 use Dingo\Api\Auth\AuthorizationProvider;
