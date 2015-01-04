@@ -13,5 +13,8 @@
         "rivets": "0.7.*",
         "Sortable": "1.0.0",
         "animate-sass": "~0.6.2"
+    },
+    "resolutions": {
+        "jquery": "~2.1.1"
     }
 }
