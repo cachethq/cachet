@@ -6,6 +6,9 @@
     @endif
     <div class='content-panel'>
         <div class="header">
+            <div class="sidebar-toggler visible-xs">
+                <i class="icon ion-navicon"></i>
+            </div>
             <span class="uppercase">
                 <i class="icon ion-gear-a"></i> {{ trans('cachet.dashboard.settings') }}
             </span>

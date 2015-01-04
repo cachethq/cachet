@@ -53,6 +53,11 @@ $(function() {
         };
     };
 
+    $(".sidebar-toggler").click(function(e) {
+        e.preventDefault();
+        $(".wrapper").toggleClass("toggled");
+    });
+
     $('.color-code').minicolors({
         control: 'hue',
         defaultValue: $(this).val() || '',

@@ -10,7 +10,7 @@
                         </a>
                     </div>
                 </div>
-                <div class='col-xs-9'>
+                <div class='col-xs-9 username-wrapper'>
                     <div class="profile pull-left">
                         <div class="username">{{ Auth::user()->username }}</div>
                     </div>
