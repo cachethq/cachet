@@ -33,7 +33,7 @@ return [
     ],
 
     'api' => [
-        'regenerate' => 'Regenerate API Key'
+        'regenerate' => 'Regenerate API Key',
     ],
 
     // Other
