@@ -21,3 +21,15 @@ label {
         border-color: #66afe9;
     }
 }
+
+.component-inline {
+    @media (max-width: $screen-xs-max) {
+        .radio-items {
+            text-align: left;
+            .radio-inline {
+                margin-left: 0;
+                width: 100%;
+            }
+        }
+    }
+}
