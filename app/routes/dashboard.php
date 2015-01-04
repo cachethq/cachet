@@ -28,6 +28,13 @@ Route::group(['before' => 'auth', 'prefix' => 'dashboard', 'namespace' => 'Cache
     // Notifications
     Route::get('notifications', ['as' => 'dashboard.notifications', 'uses' => 'DashboardController@showNotifications']);
 
+    // Team Members
+    Route::get('team', ['as' => 'dashboard.team', 'uses' => 'DashboardController@showTeamView']);
+    Route::get('team/add', ['as' => 'dashboard.team.add', 'uses' => 'DashboardController@showAddTeamMemberView']);
+    Route::get('team/{user}', 'DashboardController@showTeamMemberView');
+    Route::post('team/add', 'DashboardController@postAddUser');
+    Route::post('team/{user}', 'DashboardController@postUpdateUser');
+
     // Settings
     Route::get('settings/setup', ['as' => 'dashboard.settings.setup', 'uses' => 'DashSettingsController@showSetupView']);
     Route::get('settings/security', ['as' => 'dashboard.settings.security', 'uses' => 'DashSettingsController@showSecurityView']);
@@ -37,7 +44,7 @@ Route::group(['before' => 'auth', 'prefix' => 'dashboard', 'namespace' => 'Cache
 
     // User Settings
     Route::get('user', ['as' => 'dashboard.user', 'uses' => 'DashUserController@showUser']);
-    Route::get('/user/{user}/api/regen', 'DashUserController@regenerateApiKey');
+    Route::get('user/{user}/api/regen', 'DashUserController@regenerateApiKey');
     Route::post('user', 'DashUserController@postUser');
 
     // Internal API.
