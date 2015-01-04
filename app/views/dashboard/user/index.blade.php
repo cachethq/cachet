@@ -41,8 +41,8 @@
                         </div>
                     </fieldset>
 
-                    <button type="submit" class="btn btn-success">Update profile</button>
-                    <a href='/dashboard/user/{{ Auth::user()->id }}/api/regen' class='btn btn-warning'>Regenerate API Key</a>
+                    <button type="submit" class="btn btn-success">{{ trans('forms.save') }}</button>
+                    <a href='/dashboard/user/{{ Auth::user()->id }}/api/regen' class='btn btn-warning'>{{ trans('cachet.api.regenerate') }}</a>
                 </form>
             </div>
         </div>
