@@ -12,12 +12,12 @@ return [
         'add'                      => [
             'title'   => 'Add Incident',
             'success' => 'Incident added.',
-            'failure' => 'Something went wrong with the incident.'
+            'failure' => 'Something went wrong with the incident.',
         ],
         'edit'                     => [
             'title'   => 'Edit an Incident',
             'success' => 'Incident updated.',
-            'failure' => 'Something went wrong with the incident.'
+            'failure' => 'Something went wrong with the incident.',
         ],
 
         // Incident templates
@@ -25,9 +25,9 @@ return [
             'add' => [
                 'title'   => 'Create an Incident Template',
                 'success' => 'Template added.',
-                'failure' => 'Something went wrong with the incident template.'
-            ]
-        ]
+                'failure' => 'Something went wrong with the incident template.',
+            ],
+        ],
     ],
 
     // Components
@@ -38,42 +38,42 @@ return [
             'title'   => 'Add component',
             'message' => 'You should add a component.',
             'success' => 'Component added.',
-            'failure' => 'Something went wrong with the component.'
+            'failure' => 'Something went wrong with the component.',
         ],
         'edit'               => [
             'title'   => 'Edit component',
             'success' => 'Component updated.',
-            'failure' => 'Something went wrong with the component.'
-        ]
+            'failure' => 'Something went wrong with the component.',
+        ],
     ],
 
     // Metrics
     'metrics'           => [
         'metrics' => 'Metrics',
         'add'     => [
-            'title' => 'Add Metric Point'
-        ]
+            'title' => 'Add Metric Point',
+        ],
     ],
 
     // Settings
     'settings'          => [
         'settings'   => 'Settings',
         'app-setup'  => [
-            'app-setup' => 'Application Setup'
+            'app-setup' => 'Application Setup',
         ],
         'security'   => [
-            'security' => 'Security'
+            'security' => 'Security',
         ],
         'stylesheet' => [
-            'stylesheet' => 'Stylesheet'
+            'stylesheet' => 'Stylesheet',
         ],
         'theme'      => [
-            'theme' => 'Theme'
+            'theme' => 'Theme',
         ],
         'edit'       => [
             'success' => 'Settings saved.',
-            'failure' => 'Settings could not be saved.'
-        ]
+            'failure' => 'Settings could not be saved.',
+        ],
     ],
 
     // User profile
@@ -81,8 +81,8 @@ return [
         'user' => 'User',
         'edit' => [
             'success' => 'Profile updated.',
-            'failure' => 'Something went wrong when updating.'
-        ]
+            'failure' => 'Something went wrong when updating.',
+        ],
     ],
 
     // Login
@@ -101,7 +101,7 @@ return [
     'notifications'     => [
         'notifications' => 'Notifications',
         'awesome'       => 'Awesome.',
-        'whoops'        => 'Whoops.'
+        'whoops'        => 'Whoops.',
     ],
 
     // ?

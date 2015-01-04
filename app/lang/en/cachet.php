@@ -13,12 +13,12 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'   => 'No incidents reported.',
-        'past' => 'Past incidents',
+        'none'           => 'No incidents reported.',
+        'past'           => 'Past incidents',
         'previous_week'  => 'Previous week',
         'next_week'      => 'Next week',
-        'none' => 'Nothing to report',
-        'status' => [
+        'none'           => 'Nothing to report',
+        'status'         => [
             1 => 'Investigating',
             2 => 'Identified',
             3 => 'Watching',
@@ -35,7 +35,7 @@ return [
     // Other
     'powered_by'      => ':app Status Page is powered by <a href="https://cachethq.github.io">Cachet</a>.',
     'about_this_site' => 'About this site',
-    'rss-feed' => 'RSS Feed',
-    'atom-feed' => 'Atom Feed'
+    'rss-feed'        => 'RSS Feed',
+    'atom-feed'       => 'Atom Feed'
 
 ];
