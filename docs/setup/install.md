@@ -45,7 +45,7 @@ When using the **Deploy to Heroku** button you needn't worry about using a datab
 
 # Configuring a database without Heroku
 
-Cachet relies on a database to store the components and incidents, however it needs to be configured for your [environment](https://github.com/cachethq/Cachet/blob/master/INSTALL.md#environment-detection).
+Cachet relies on a database to store the components and incidents, however it needs to be configured for your [environment](https://github.com/cachethq/Cachet/blob/master/docs/setup/install.md#environment-detection).
 
 Our database configuration (`./app/config/database.php`) is setup to require the following environment variables:
 
