@@ -8,7 +8,7 @@ return [
         'username'    => 'Username',
         'password'    => 'Password',
         'site_name'   => 'Site Name',
-        'site_domain' => 'Site Domain'
+        'site_domain' => 'Site Domain',
     ],
 
     // Login form fields
@@ -19,61 +19,61 @@ return [
 
     // Incidents form fields
     'incidents' => [
-        'name' => 'Incident Name',
-        'status' => 'Incident Status',
-        'message' => 'Message',
+        'name'         => 'Incident Name',
+        'status'       => 'Incident Status',
+        'message'      => 'Message',
         'message-help' => 'You may also use Markdown.',
 
         'templates' => [
-            'name' => 'Template Name',
-            'template' => 'Template'
-        ]
+            'name'     => 'Template Name',
+            'template' => 'Template',
+        ],
     ],
 
     // Components form fields
     'components' => [
-        'name' => 'Name',
-        'status' => 'Status',
+        'name'        => 'Name',
+        'status'      => 'Status',
         'description' => 'Description',
-        'link' => 'Link',
-        'tags' => 'Tags',
-        'tag-help' => 'Comma separated.'
+        'link'        => 'Link',
+        'tags'        => 'Tags',
+        'tag-help'    => 'Comma separated.',
     ],
 
     // Settings
     'settings' => [
         /// Application setup
         'app-setup' => [
-            'site-name' => 'Site Name',
-            'site-url' => 'Site URL',
-            'about-this-page' => 'About this page',
+            'site-name'         => 'Site Name',
+            'site-url'          => 'Site URL',
+            'about-this-page'   => 'About this page',
             'days-of-incidents' => 'How many days of incidents to show?',
-            'banner' => 'Banner Image',
-            'banner-help' => "It's recommended that you upload files no bigger than 930px wide ."
+            'banner'            => 'Banner Image',
+            'banner-help'       => "It's recommended that you upload files no bigger than 930px wide .",
         ],
         'security' => [
-            'allowed-domains' => 'Allowed Domains <em>Comma Seperated</em>',
-            'allowed-domains-help' => 'The domain set above is automatically allowed by default.'
+            'allowed-domains'      => 'Allowed Domains <em>Comma Seperated</em>',
+            'allowed-domains-help' => 'The domain set above is automatically allowed by default.',
         ],
         'stylesheet' => [
-            'custom-css' => 'Custom Stylesheet'
+            'custom-css' => 'Custom Stylesheet',
         ],
         'theme' => [
             'background-color' => 'Background Color',
-            'text-color' => 'Text Color'
-        ]
+            'text-color'       => 'Text Color',
+        ],
     ],
 
     'user' => [
         'username' => 'Username',
         'email'    => 'Email',
-        'password' => 'Password'
+        'password' => 'Password',
     ],
 
     // Buttons
-    'save' => 'Save',
+    'save'   => 'Save',
     'create' => 'Create',
-    'edit' => 'Edit',
+    'edit'   => 'Edit',
     'delete' => 'Delete',
     'submit' => 'Submit',
     'cancel' => 'Cancel',
