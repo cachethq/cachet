@@ -2,6 +2,9 @@
 
 @section('content')
     <div class="header fixed">
+        <div class="sidebar-toggler visible-xs">
+            <i class="icon ion-navicon"></i>
+        </div>
         <span class="uppercase">
             <i class="icons ion-ios-keypad"></i> {{ trans('cachet.dashboard.components') }}
         </span>
@@ -10,7 +13,7 @@
         </a>
         <div class="clearfix"></div>
     </div>
-    <div class="content-wrapper">
+    <div class="content-wrapper header-fixed">
         <div class="row">
             <form name='componentList'>
                 <div class="col-sm-12 striped-list" id='component-list'>

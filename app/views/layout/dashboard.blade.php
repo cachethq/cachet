@@ -5,7 +5,7 @@
 <body class="dashboard">
     <div class="wrapper">
         @include('partials.dashboard.sidebar')
-        <div class="content">
+        <div class="page-content">
             @yield('content')
         </div>
     </div>
