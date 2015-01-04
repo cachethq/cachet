@@ -69,7 +69,7 @@ class Incident extends Model implements TransformableInterface
      */
     public function getHumanStatusAttribute()
     {
-        $statuses = trans('cachet.incident.status');
+        $statuses = trans('cachet.incidents.status');
 
         return $statuses[$this->status];
     }
