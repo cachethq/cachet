@@ -88,7 +88,7 @@ class Component extends Model implements TransformableInterface
      */
     public function getHumanStatusAttribute()
     {
-        return trans('cachet.component.status.'.$this->status);
+        return trans('cachet.components.status.'.$this->status);
     }
 
     /**

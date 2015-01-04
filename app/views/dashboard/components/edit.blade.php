@@ -3,9 +3,9 @@
 @section('content')
     <div class="header">
         <span class="uppercase">
-            <i class="icons ion-ios-keypad"></i> {{ trans('cachet.dashboard.components') }}
+            <i class="icons ion-ios-keypad"></i> {{ trans_choice('dashboard.components.components', 2) }}
         </span>
-        > <small>Edit component</small>
+        > <small>{{ trans('dashboard.components.edit.title') }}</small>
     </div>
     <div class="content-wrapper">
         <div class="row">
@@ -13,9 +13,9 @@
                 @if($savedComponent = Session::get('savedComponent'))
                 <div class="alert alert-{{ $savedComponent->isValid() ? "success" : "danger" }}">
                     @if($savedComponent->isValid())
-                    <strong>Awesome.</strong> Component updated.
+                        {{ sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.awesome'), trans('dashboard.components.edit.success')) }}
                     @else
-                    <strong>Whoops.</strong> Something went wrong with the component. {{ $savedComponent->getErrors() }}
+                        {{ sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.whoops'), trans('dashboard.components.edit.failure').' '.$component->getErrors()) }}
                     @endif
                 </div>
                 @endif
@@ -29,7 +29,7 @@
                         <div class='form-group'>
                             <label for='component-status'>Status</label>
                             <select name='component[status]' class='form-control'>
-                                @foreach(trans('cachet.component.status') as $statusID => $status)
+                                @foreach(trans('cachet.components.status') as $statusID => $status)
                                 <option value='{{ $statusID }}' {{ $statusID === $component->status ? "selected" : "" }}>{{ $status }}</option>
                                 @endforeach
                             </select>
@@ -50,8 +50,8 @@
                         </div>
                     </fieldset>
 
-                    <button type="submit" class="btn btn-success">Save Component</button>
-                    <a class="btn btn-default" href="{{ route('dashboard.components') }}">Cancel</a>
+                    <button type="submit" class="btn btn-success">{{ trans('forms.save') }}</button>
+                    <a class="btn btn-default" href="{{ route('dashboard.components') }}">{{ trans('forms.cancel') }}</a>
                     <input type='hidden' name='component[user_id]' value='{{ $component->agent_id || Auth::user()->id }}' />
                 </form>
             </div>
