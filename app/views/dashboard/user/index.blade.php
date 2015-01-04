@@ -33,9 +33,16 @@
                             <label>Password</label>
                             <input type='password' class='form-control' name='password' value='' />
                         </div>
+                        <hr />
+                        <div class='form-group'>
+                            <label>API Key</label>
+                            <input type='text' class='form-control' name='api_key' disabled value='{{ Auth::user()->api_key }}' />
+                            <span class='help-block'>Regenerating your API key will revoke all existing applications.</span>
+                        </div>
                     </fieldset>
 
                     <button type="submit" class="btn btn-success">Update profile</button>
+                    <a href='/dashboard/user/{{ Auth::user()->id }}/api/regen' class='btn btn-warning'>Regenerate API Key</a>
                 </form>
             </div>
         </div>

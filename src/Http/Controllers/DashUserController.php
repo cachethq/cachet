@@ -2,6 +2,7 @@
 
 namespace CachetHQ\Cachet\Http\Controllers;
 
+use CachetHQ\Cachet\Models\User;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -34,5 +35,18 @@ class DashUserController extends Controller
         $updated = Auth::user()->update($items);
 
         return Redirect::back()->with('updated', $updated);
+    }
+
+    /**
+     * Regenerates the users API key.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function regenerateApiKey(User $user)
+    {
+        $user->api_key = User::generateApiKey();
+        $user->save();
+
+        return Redirect::back();
     }
 }

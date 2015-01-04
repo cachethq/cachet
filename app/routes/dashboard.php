@@ -37,6 +37,7 @@ Route::group(['before' => 'auth', 'prefix' => 'dashboard', 'namespace' => 'Cache
 
     // User Settings
     Route::get('user', ['as' => 'dashboard.user', 'uses' => 'DashUserController@showUser']);
+    Route::get('/user/{user}/api/regen', 'DashUserController@regenerateApiKey');
     Route::post('user', 'DashUserController@postUser');
 
     // Internal API.
