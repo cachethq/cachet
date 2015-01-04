@@ -58,8 +58,8 @@ class HomeController extends Controller
             'pageTitle'      => Setting::get('app_name'),
             'aboutApp'       => Markdown::render(Setting::get('app_about')),
             'canPageForward' => (bool) $today->gt($startDate),
-            'previousDate'   => $startDate->copy()->subWeek()->subDay()->toDateString(),
-            'nextDate'       => $startDate->copy()->addWeek()->addDay()->toDateString(),
+            'previousDate'   => $startDate->copy()->subDays($incidentDays + 1)->toDateString(),
+            'nextDate'       => $startDate->copy()->addDays($incidentDays + 1)->toDateString(),
         ]);
     }
 }
