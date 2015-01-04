@@ -82,7 +82,7 @@ return [
         },
 
         'api_key' => function ($app) {
-            return new CachetHQ\Cachet\Auth\ApiKeyAuthenticator();
+            return new CachetHQ\Cachet\Http\Auth\ApiKeyAuthenticator();
         },
 
     ],
