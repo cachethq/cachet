@@ -8,10 +8,10 @@ use Watson\Validating\ValidatingTrait;
 
 /**
  * @property int            $id
- * @property int            $component_id
- * @property int            $group_id
+ * @property string         $name
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
+ * @property \Carbon\Carbon $deleted_at
  */
 class ComponentGroup extends Model
 {
