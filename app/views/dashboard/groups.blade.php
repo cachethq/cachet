@@ -5,15 +5,15 @@
 @include('partials.dashboard.sub-sidebar')
 @endif
 <div class='content-panel'>
-	<div class="header">
+    <div class="header">
         <span class="uppercase">
-		    <i class="icons ion-ios-keypad"></i> {{ trans('cachet.dashboard.component-groups') }}
+            <i class="icons ion-ios-keypad"></i> {{ trans('cachet.dashboard.component-groups') }}
         </span>
         <a class="btn btn-sm btn-success pull-right" href="{{ route('dashboard.components.groups.add') }}">
             {{ trans('cachet.dashboard.component-groups-add') }}
         </a>
         <div class="clearfix"></div>
-	</div>
+    </div>
     <div class="content-wrapper">
         <div class="row">
             <div class="col-sm-12 striped-list">
