@@ -1,7 +1,11 @@
 @extends('layout.dashboard')
 
 @section('content')
-    <div class="header fixed">
+@if(isset($subMenu))
+@include('partials.dashboard.sub-sidebar')
+@endif
+<div class='content-panel'>
+	<div class="header">
         <span class="uppercase">
             <i class="icons ion-ios-keypad"></i> {{ trans('cachet.dashboard.components') }}
         </span>
@@ -40,4 +44,5 @@
             </form>
         </div>
     </div>
+</div>
 @stop

@@ -38,6 +38,15 @@
                             <label>Description</label>
                             <textarea name='component[description]' class='form-control' rows='5'>{{ $component->description }}</textarea>
                         </div>
+                        <div class='form-group'>
+                            <label>Group</label>
+                            <select name='component[group_id]' class='form-control'>
+                                <option {{ $component->group_id === null ? "selected" : null }}></option>
+                                @foreach($groups as $group)
+                                <option value='{{ $group->id }}' {{ $component->group_id === $group->id ? "selected" : null }}>{{ $group->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
                         <hr />
                         <div class='form-group'>
                             <label>Link</label>

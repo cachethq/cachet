@@ -8,6 +8,9 @@ Route::group(['before' => 'auth', 'prefix' => 'dashboard', 'namespace' => 'Cache
     Route::get('components', ['as' => 'dashboard.components', 'uses' => 'DashComponentController@showComponents']);
     Route::get('components/add', ['as' => 'dashboard.components.add', 'uses' => 'DashComponentController@showAddComponent']);
     Route::post('components/add', 'DashComponentController@createComponentAction');
+    Route::get('components/groups', ['as' => 'dashboard.components.groups', 'uses' => 'DashComponentController@showComponentGroups']);
+    Route::get('components/groups/add', ['as' => 'dashboard.components.groups.add', 'uses' => 'DashComponentController@showAddComponentGroup']);
+    Route::post('components/groups/add', 'DashComponentController@postAddComponentGroup');
     Route::get('components/{component}/delete', 'DashComponentController@deleteComponentAction');
     Route::get('components/{component}/edit', 'DashComponentController@showEditComponent');
     Route::post('components/{component}/edit', 'DashComponentController@updateComponentAction');
