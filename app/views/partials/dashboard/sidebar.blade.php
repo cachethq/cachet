@@ -48,6 +48,11 @@
                     <span>{{ trans('cachet.dashboard.components') }}</span>
                 </a>
             </li>
+            <li {{ set_active('dashboard/team*') }}>
+                <a href="{{ route('dashboard.team') }}">
+                    <i class="icons ion-ios-people"></i> {{ trans('cachet.dashboard.team') }}
+                </a>
+            </li>
             {{-- <li {{ set_active('dashboard/metrics') }}>
                 <a href="{{ route('dashboard.metrics') }}">
                     <i class="ion ion-stats-bats"></i> {{ trans('cachet.dashboard.metrics') }}

@@ -59,5 +59,24 @@ body.dashboard {
                 padding: 8px 0;
             }
         }
+
+        .user-grid {
+            .user {
+                img {
+                    border-radius: 5px;
+                    margin-bottom: 15px;
+                    border: 0;
+                }
+
+                .name {
+                    font-weight: 600;
+                }
+
+                .email {
+                    color: #444;
+                    margin-top: 4px;
+                }
+            }
+        }
     }
 }

@@ -49,6 +49,8 @@ return [
         'metrics-add'              => 'Add Metric Point',
         'status_page'              => 'Status Page',
         'settings'                 => 'Settings',
+        'team'                     => 'Team Members',
+        'team-add'                 => 'Add Team Member',
         'notifications'            => 'Notifications',
         'toggle_navigation'        => 'Toggle Navigation',
         'search'                   => 'Search...',

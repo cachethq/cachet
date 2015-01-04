@@ -9,6 +9,7 @@ use Illuminate\Auth\UserTrait;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Hash;
+use Watson\Validating\ValidatingTrait;
 
 /**
  * @property int            $id
@@ -23,7 +24,18 @@ use Illuminate\Support\Facades\Hash;
  */
 class User extends Model implements UserInterface, RemindableInterface
 {
-    use UserTrait, RemindableTrait;
+    use RemindableTrait, UserTrait, ValidatingTrait;
+
+    /**
+     * The validation rules.
+     *
+     * @var string[]
+     */
+    protected $rules = [
+        'username' => 'required|alpha|unique:users',
+        'email'    => 'required|email|unique:users',
+        'password' => 'required',
+    ];
 
     /**
      * The hidden properties.
@@ -37,7 +49,7 @@ class User extends Model implements UserInterface, RemindableInterface
     /**
      * The properties that cannot be mass assigned.
      *
-     * @var array
+     * @var string[]
      */
     protected $guarded = [];
 
@@ -110,5 +122,15 @@ class User extends Model implements UserInterface, RemindableInterface
     public static function generateApiKey()
     {
         return str_random(20);
+    }
+
+    /**
+     * Returns whether a user is at admin level.
+     *
+     * @return bool
+     */
+    public function getIsAdminAttribute()
+    {
+        return (bool) $this->level;
     }
 }
