@@ -26,7 +26,7 @@ return [
         'bad'  => 'Some systems are experiencing issues.',
     ],
     // Other
-    'powered_by'      => ':app Status Page is powered by <a href="https://cachethq.github.io">Cachet</a>.',
+    'powered_by'      => ':app Status Page is powered by <a href="http://cachethq.io">Cachet</a>.',
     'about_this_site' => 'About this site',
     'login_message'   => 'Welcome Back!',
     'login'           => 'Login',
