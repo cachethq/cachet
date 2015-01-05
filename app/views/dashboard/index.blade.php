@@ -2,6 +2,9 @@
 
 @section('content')
     <div class="header">
+        <div class="sidebar-toggler visible-xs">
+            <i class="icon ion-navicon"></i>
+        </div>
         <span class="uppercase">
             <i class="icon ion-speedometer"></i> {{ trans('cachet.dashboard.dashboard') }}
         </span>
@@ -17,7 +20,7 @@
                             {{ Form::open(['class' => 'component-inline form-horizontal', 'data-messenger' => 'Component updated.']) }}
                             <div class='row striped-list-item'>
                                 <div class='col-lg-4 col-sm-12'>
-                                    <strong>{{ $component->name }}</strong>
+                                    <h4>{{ $component->name }}</h4>
                                 </div>
                                 <div class='col-lg-8 col-sm-12 radio-items'>
                                     @foreach(trans('cachet.component.status') as $statusID => $status)

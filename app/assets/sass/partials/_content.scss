@@ -1,30 +1,33 @@
 body.dashboard {
-    .content {
-        position: relative;
-        display: table-cell;
-        vertical-align: top;
+    .page-content {
         width: 100%;
-        .row {
-            margin: 10px 0;
+        .content-wrapper {
+            padding-top: 20px;
+            padding-left: 40px;
+            padding-right: 40px;
+            &.header-fixed {
+                margin-top: 60px;
+            }
         }
         .header {
-            position: absolute;
+            position: relative;
             top: 0;
             left: 0;
             color: #333;
             background-color: #fff;
-            padding: 22px 14px;
+            padding: 22px 40px;
             width: 100%;
             height: 70px;
             font-size: 1.2em;
             border-bottom: 1px solid #eee;
             z-index: 99;
+            &.sub-header {
+                padding: 8px 2px;
+                height: 50px;
+            }
             &.fixed {
                 position: fixed;
-                padding-left: 250px;
-            }
-            i {
-                // padding-right: 10px;
+                padding-left: 270px;
             }
             input, button, .btn {
                 position: relative;
@@ -43,9 +46,6 @@ body.dashboard {
                 margin-top: 0;
                 text-transform: uppercase;
             }
-        }
-        .content-wrapper {
-            margin-top: 80px;
         }
 
         .sub-header {
@@ -79,4 +79,31 @@ body.dashboard {
             }
         }
     }
+
+    // Header media queries
+    @media (max-width: $screen-xs-max) {
+        .page-content {
+            .content-wrapper {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            .header {
+                padding-left: 20px;
+                padding-right: 20px;
+                &.fixed {
+                    padding-left: 20px;
+                    padding-right: 20px;
+                }
+            }
+        }
+    }
+
+    @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+        .page-content {
+            .header.fixed {
+                padding-left: 120px;
+            }
+        }
+    }
+
 }

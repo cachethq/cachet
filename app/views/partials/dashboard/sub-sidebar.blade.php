@@ -1,4 +1,7 @@
 <div class='sub-sidebar'>
+    <div class="sidebar-toggler visible-xs">
+        <i class="icon ion-navicon"></i>
+    </div>
     <h3>{{ $subTitle }}</h3>
     <ul class='menu'>
         @foreach($subMenu as $key => $item)

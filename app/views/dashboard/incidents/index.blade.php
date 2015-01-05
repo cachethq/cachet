@@ -2,6 +2,9 @@
 
 @section('content')
     <div class="header fixed">
+        <div class="sidebar-toggler visible-xs">
+            <i class="icon ion-navicon"></i>
+        </div>
         <span class="uppercase">
             <i class="icon icon ion-android-alert"></i> {{ trans('cachet.dashboard.incidents') }}
         </span>
@@ -10,7 +13,7 @@
         </a>
         <div class="clearfix"></div>
     </div>
-    <div class="content-wrapper">
+    <div class="content-wrapper header-fixed">
         <div class="row">
             <div class="col-sm-12">
                 <p class='lead'>{{ trans_choice('cachet.dashboard.logged_incidents', $incidents->count(), ['count' => $incidents->count()]) }}</p>

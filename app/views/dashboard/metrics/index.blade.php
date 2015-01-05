@@ -2,6 +2,9 @@
 
 @section('content')
     <div class="header">
+        <div class="sidebar-toggler visible-xs">
+            <i class="icon ion-navicon"></i>
+        </div>
         <i class="ion ion-stats-bars"></i> {{ trans('cachet.dashboard.metrics') }}
     </div>
     <div class="row">
