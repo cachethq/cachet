@@ -34,7 +34,6 @@ The easiest way is to use Git to pull down the code. You'll need to put it into 
 $ cd /var/www
 $ git clone https://github.com/cachethq/Cachet.git
 $ cd Cachet
-$ composer install --no-dev -o
 ```
 
 You will also need to build the assets.
@@ -44,10 +43,6 @@ $ npm install
 $ bower install
 $ gulp
 ```
-
-# Deploy to Heroku
-
-When using the **Deploy to Heroku** button you needn't worry about using a database as the install will setup a free instance of ClearDB. Once installed Heroku can direct you to the setup page where you'll configure the site/application information and create an administrator account.
 
 # Configuring a database without Heroku
 
@@ -87,6 +82,18 @@ return [
 ```
 
 > Even though SQLite doesn't require a host, username or password, these still must be set (an empty string will suffice).
+
+# Install dependencies
+
+Now we need to install of the dependencies that Cachet requires:
+
+```bash
+$ composer install --no-dev -o
+```
+
+# Deploy to Heroku
+
+When using the **Deploy to Heroku** button you needn't worry about using a database as the install will setup a free instance of ClearDB. Once installed Heroku can direct you to the setup page where you'll configure the site/application information and create an administrator account.
 
 ### Running database migrations
 
