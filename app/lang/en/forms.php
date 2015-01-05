@@ -32,16 +32,16 @@ return [
 
     // Components form fields
     'components' => [
-        'name'        => 'Name',
-        'status'      => 'Status',
-        'group'       => 'Group',
-        'description' => 'Description',
-        'link'        => 'Link',
-        'tags'        => 'Tags',
+        'name'         => 'Name',
+        'status'       => 'Status',
+        'group'        => 'Group',
+        'description'  => 'Description',
+        'link'         => 'Link',
+        'tags'         => 'Tags',
         'tags-help'    => 'Comma separated.',
 
         'groups' => [
-            'name' => 'Name'
+            'name' => 'Name',
         ],
     ],
 
@@ -70,10 +70,10 @@ return [
     ],
 
     'user' => [
-        'username' => 'Username',
-        'email'    => 'Email',
-        'password' => 'Password',
-        'api-key'  => 'API Key',
+        'username'     => 'Username',
+        'email'        => 'Email',
+        'password'     => 'Password',
+        'api-key'      => 'API Key',
         'api-key-help' => 'Regenerating your API key will revoke all existing applications.',
     ],
 

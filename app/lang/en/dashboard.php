@@ -49,8 +49,8 @@ return [
         // Component groups
         'groups' => [
             'groups' => 'Component group|Component groups',
-            'add' => [
-                'title' => 'Add a component group',
+            'add'    => [
+                'title'   => 'Add a component group',
                 'success' => 'Component group added.',
                 'failure' => 'Something went wrong with the component group.',
             ],
@@ -61,7 +61,7 @@ return [
     'metrics'           => [
         'metrics' => 'Metrics',
         'add'     => [
-            'title' => 'Create a metric point',
+            'title'   => 'Create a metric point',
             'success' => 'Metric point created.',
             'failure' => 'Something went wrong with the metric point.',
         ],
@@ -69,11 +69,11 @@ return [
 
     // Team
     'team' => [
-        'team' => 'Team',
-        'member' => 'Member',
-        'profile' => 'Profile',
+        'team'        => 'Team',
+        'member'      => 'Member',
+        'profile'     => 'Profile',
         'description' => 'Team Members will be able to add, modify &amp; edit components and incidents.',
-        'add' => [
+        'add'         => [
             'title'   => 'Add a new team member',
             'success' => 'Team member added.',
             'failure' => 'Something went wrong with the component.',

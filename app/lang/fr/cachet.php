@@ -34,7 +34,7 @@ return [
 
     'api' => [
         'regenerate' => 'Regénérer une clé API',
-        'revoke' => 'Révoquer cette clé API'
+        'revoke'     => 'Révoquer cette clé API',
     ],
 
     // Other

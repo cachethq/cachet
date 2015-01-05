@@ -64,7 +64,7 @@ class DashComponentController extends Controller
         $this->subMenu['groups']['active'] = true;
 
         return View::make('dashboard.components.groups.index')->with([
-            'pageTitle' => trans_choice( 'dashboard.components.groups.groups', 2 ) . ' - ' . trans( 'dashboard.dashboard' ),
+            'pageTitle' => trans_choice('dashboard.components.groups.groups', 2).' - '.trans('dashboard.dashboard'),
             'groups'    => ComponentGroup::all(),
             'subMenu'   => $this->subMenu,
         ]);
@@ -153,7 +153,7 @@ class DashComponentController extends Controller
     public function showAddComponentGroup()
     {
         return View::make('dashboard.components.add-group')->with([
-            'pageTitle' => trans( 'dashboard.components.groups.add.title' ) . ' - ' . trans( 'dashboard.dashboard' ),
+            'pageTitle' => trans('dashboard.components.groups.add.title').' - '.trans('dashboard.dashboard'),
         ]);
     }
 

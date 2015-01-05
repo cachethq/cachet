@@ -49,8 +49,8 @@ return [
         // Component groups
         'groups' => [
             'groups' => 'Groupe de composants|Groupes de composants',
-            'add' => [
-                'title' => 'Ajouter un group de composants',
+            'add'    => [
+                'title'   => 'Ajouter un group de composants',
                 'success' => 'Groupe de composants ajouté.',
                 'failure' => 'Il s\'est passé quelque chose avec ce composantgroupe de composants.',
             ],
@@ -61,7 +61,7 @@ return [
     'metrics'           => [
         'metrics' => 'Point de mesure',
         'add'     => [
-            'title' => 'Créer un point de mesure',
+            'title'   => 'Créer un point de mesure',
             'success' => 'Point de mesure créé.',
             'failure' => 'Il s\'est passé quelque chose avec ce point de mesure.',
         ],
@@ -69,11 +69,11 @@ return [
 
     // Team
     'team' => [
-        'team' => 'Équipe',
-        'member' => 'Membre',
-        'profile' => 'Profil',
+        'team'        => 'Équipe',
+        'member'      => 'Membre',
+        'profile'     => 'Profil',
         'description' => 'Les membres de l\'équipe pourrons ajouter, modifier &amp; éditer les composants et incidents.',
-        'add' => [
+        'add'         => [
             'title'   => 'Ajouter un membre à l\'équipe',
             'success' => 'Membre ajouté.',
             'failure' => 'Il s\'est passé quelque chose avec ce membre.',
