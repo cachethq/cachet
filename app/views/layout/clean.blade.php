@@ -3,10 +3,8 @@
 @include('partials.dashboard.head')
 
 <body class="dashboard">
-    <div class="wrapper">
-        <div class="content">
-            @yield('content')
-        </div>
+    <div class="content">
+        @yield('content')
     </div>
 </body>
 </html>
