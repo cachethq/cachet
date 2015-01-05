@@ -26,7 +26,7 @@ class AlterTableUsersAddApiKey extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn();
+            $table->dropColumn('api_key');
         });
     }
 }

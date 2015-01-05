@@ -28,6 +28,7 @@ class UserIdColumnForComponents extends Migration
     public function down()
     {
         Schema::table('components', function (Blueprint $table) {
+            $table->dropForeign('components_user_id_foreign');
             $table->dropColumn('user_id');
         });
     }
