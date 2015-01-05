@@ -9,4 +9,46 @@ body.dashboard {
     table-layout: fixed;
     -webkit-font-smoothing: antialiased;
     line-height: $base-line-height;
+
+    .wrapper {
+        padding-left: 0;
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+    }
+
+    .wrapper.toggled {
+        padding-left: $sidebar-normal-width;;
+    }
+
+    .wrapper.toggled .sidebar {
+        width: $sidebar-normal-width;;
+    }
+
+    .wrapper.toggled .page-content {
+        position: absolute;
+        margin-right: -$sidebar-normal-width;;
+    }
+
+    @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+        .wrapper {
+            padding-left: 80px;
+        }
+    }
+
+    @media(min-width: $screen-sm-max) {
+        .wrapper {
+            padding-left: $sidebar-normal-width;
+        }
+
+        .wrapper.toggled {
+            padding-left: 0;
+        }
+
+        .wrapper.toggled .page-content {
+            position: relative;
+            margin-right: 0;
+        }
+    }
 }

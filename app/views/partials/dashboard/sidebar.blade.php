@@ -10,7 +10,7 @@
                         </a>
                     </div>
                 </div>
-                <div class='col-xs-9'>
+                <div class='col-xs-9 username-wrapper'>
                     <div class="profile pull-left">
                         <div class="username">{{ Auth::user()->username }}</div>
                     </div>
@@ -50,7 +50,8 @@
             </li>
             <li {{ set_active('dashboard/team*') }}>
                 <a href="{{ route('dashboard.team') }}">
-                    <i class="icons ion-ios-people"></i> {{ trans('cachet.dashboard.team') }}
+                    <i class="icons ion-ios-people"></i>
+                    <span>{{ trans('cachet.dashboard.team') }}</span>
                 </a>
             </li>
             {{-- <li {{ set_active('dashboard/metrics') }}>

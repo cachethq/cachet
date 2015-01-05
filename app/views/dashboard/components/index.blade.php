@@ -1,48 +1,48 @@
 @extends('layout.dashboard')
 
 @section('content')
-@if(isset($subMenu))
-@include('partials.dashboard.sub-sidebar')
-@endif
-<div class='content-panel'>
-    <div class="header">
-        <span class="uppercase">
-            <i class="icons ion-ios-keypad"></i> {{ trans('cachet.dashboard.components') }}
-        </span>
-        <a class="btn btn-sm btn-success pull-right" href="{{ route('dashboard.components.add') }}">
-            {{ trans('cachet.dashboard.component-add') }}
-        </a>
-        <div class="clearfix"></div>
-    </div>
-    <div class="content-wrapper">
-        <div class="row">
-            <form name='componentList'>
-                <div class="col-sm-12 striped-list" id='component-list'>
-                    @forelse($components as $component)
-                    <div class='row striped-list-item'>
-                        <div class='col-md-8'>
-                            <h4>
-                                @if($components->count() > 1)
-                                <span class='drag-handle'><i class='ion-drag'></i></span>
+    <div class='content-panel'>
+        @if(isset($subMenu))
+        @include('partials.dashboard.sub-sidebar')
+        @endif
+        <div class="content-wrapper">
+            <div class="header sub-header">
+                <span class="uppercase">
+                    <i class="icons ion-ios-keypad"></i> {{ trans('cachet.dashboard.components') }}
+                </span>
+                <a class="btn btn-sm btn-success pull-right" href="{{ route('dashboard.components.add') }}">
+                    {{ trans('cachet.dashboard.component-add') }}
+                </a>
+                <div class="clearfix"></div>
+            </div>
+            <div class="row">
+                <form name='componentList'>
+                    <div class="col-sm-12 striped-list" id='component-list'>
+                        @forelse($components as $component)
+                        <div class='row striped-list-item'>
+                            <div class='col-md-8'>
+                                <h4>
+                                    @if($components->count() > 1)
+                                    <span class='drag-handle'><i class='ion-drag'></i></span>
+                                    @endif
+                                    {{ $component->name }} <small>{{ $component->humanStatus }}</small>
+                                </h4>
+                                @if($component->description)
+                                <p><small>{{ $component->description }}</small></p>
                                 @endif
-                                {{ $component->name }} <small>{{ $component->humanStatus }}</small>
-                            </h4>
-                            @if($component->description)
-                            <p><small>{{ $component->description }}</small></p>
-                            @endif
+                            </div>
+                            <div class='col-md-4 text-right'>
+                                <a href='/dashboard/components/{{ $component->id }}/edit' class='btn btn-default'>Edit</a>
+                                <a href='/dashboard/components/{{ $component->id }}/delete' class='btn btn-danger'>Delete</a>
+                            </div>
+                            <input type='hidden' rel='order' name='component[{{ $component->id }}]' value='{{ $component->order }}' />
                         </div>
-                        <div class='col-md-4 text-right'>
-                            <a href='/dashboard/components/{{ $component->id }}/edit' class='btn btn-default'>Edit</a>
-                            <a href='/dashboard/components/{{ $component->id }}/delete' class='btn btn-danger'>Delete</a>
-                        </div>
-                        <input type='hidden' rel='order' name='component[{{ $component->id }}]' value='{{ $component->order }}' />
+                        @empty
+                        <div class='list-group-item text-danger'>You should add a component.</div>
+                        @endforelse
                     </div>
-                    @empty
-                    <div class='list-group-item text-danger'>You should add a component.</div>
-                    @endforelse
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     </div>
-</div>
 @stop

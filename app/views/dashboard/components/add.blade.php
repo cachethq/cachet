@@ -2,6 +2,9 @@
 
 @section('content')
     <div class="header">
+        <div class="sidebar-toggler visible-xs">
+            <i class="icon ion-navicon"></i>
+        </div>
         <span class="uppercase">
             <i class="icons ion-ios-keypad"></i> {{ trans('cachet.dashboard.components') }}
         </span>
