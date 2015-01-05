@@ -56,6 +56,16 @@ class Component extends Model implements TransformableInterface
     ];
 
     /**
+     * List of attributes that have default values.
+     *
+     * @var array
+     */
+    protected $attributes = [
+        'order'    => 0,
+        'group_id' => 0,
+    ];
+
+    /**
      * Components can belong to a group.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
