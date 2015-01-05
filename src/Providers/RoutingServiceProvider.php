@@ -38,6 +38,7 @@ class RoutingServiceProvider extends ServiceProvider
     protected function registerBindings()
     {
         $this->app->router->model('component', 'CachetHQ\Cachet\Models\Component');
+        $this->app->router->model('component_group', 'CachetHQ\Cachet\Models\ComponentGroup');
         $this->app->router->model('incident', 'CachetHQ\Cachet\Models\Incident');
         $this->app->router->model('incident_template', 'CachetHQ\Cachet\Models\IncidentTemplate');
         $this->app->router->model('setting', 'CachetHQ\Cachet\Models\Setting');

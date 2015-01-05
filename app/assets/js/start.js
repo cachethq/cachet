@@ -1,5 +1,4 @@
 $(function() {
-
     // Ajax Setup
     $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
         var token;
@@ -27,6 +26,20 @@ $(function() {
         var $form = $(this);
         $form.find(':submit').prop('disabled', true);
     });
+
+    // Mock the DELETE form requests.
+    $('[data-method]').not(".disabled").append(function() {
+        var methodForm = "\n";
+        methodForm    += "<form action='" + $(this).attr('href') + "' method='POST' style='display:none'>\n";
+        methodForm    += " <input type='hidden' name='_method' value='" + $(this).attr('data-method') + "'>\n";
+        if ($(this).attr('data-token')) {
+            methodForm += "<input type='hidden' name='_token' value='" + $(this).attr('data-token') + "'>\n";
+        }
+        methodForm += "</form>\n";
+        return methodForm;
+    })
+        .removeAttr('href')
+        .attr('onclick', ' if ($(this).hasClass(\'confirm-action\')) { if(confirm("Are you sure you want to do this?")) { $(this).find("form").submit(); } } else { $(this).find("form").submit(); }');
 
     // Messenger config
     Messenger.options = {
