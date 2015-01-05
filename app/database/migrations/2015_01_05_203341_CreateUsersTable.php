@@ -15,9 +15,9 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('username')->unique();
+            $table->string('username');
             $table->string('password');
-            $table->string('remember_token')->nullable()->default(null)->unique();
+            $table->rememberToken();
             $table->string('email');
             $table->string('api_key');
             $table->boolean('active')->default(1);
@@ -26,6 +26,7 @@ class CreateUsersTable extends Migration
 
             $table->index('remember_token');
             $table->index('active');
+            $table->unique('username');
             $table->unique('api_key');
             $table->unique('email');
         });
