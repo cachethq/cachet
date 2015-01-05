@@ -1,12 +1,11 @@
+var del    = require('del');
 var elixir = require('laravel-elixir');
 var gulp   = require('gulp');
 var jshint = require('laravel-elixir-jshint');
-var rimraf = require('gulp-rimraf');
 
 elixir.extend('rm', function(source) {
-    gulp.task('rm', function() {
-        gulp.src(source, { read: false })
-            .pipe(rimraf());
+    gulp.task('rm', function(callback) {
+        del(source, callback);
     });
 
     return this.queueTask('rm');
