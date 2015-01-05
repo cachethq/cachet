@@ -151,7 +151,7 @@ class DashComponentController extends Controller
      */
     public function showAddComponentGroup()
     {
-        return View::make('dashboard.components.add-group')->with([
+        return View::make('dashboard.components.groups.add')->with([
             'pageTitle' => trans('dashboard.components.groups.add.title').' - '.trans('dashboard.dashboard'),
         ]);
     }
