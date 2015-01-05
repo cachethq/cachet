@@ -2,10 +2,10 @@
 
 return [
 
-    'dashboard'         => 'Tableau de bord',
+    'dashboard' => 'Tableau de bord',
 
     // Incidents
-    'incidents'         => [
+    'incidents' => [
         'incidents'                => 'Incidents',
         'logged'                   => '{0} Il n\'y a aucun incident, bien joué !|Vous avez reporté un incident.|Vous avez reporté <strong>:count</strong> incidents.',
         'incident-create-template' => 'Créer un modèle',
@@ -14,14 +14,14 @@ return [
             'success' => 'Incident ajouté.',
             'failure' => 'Il s\'est passé quelque chose avec cet incident.',
         ],
-        'edit'                     => [
+        'edit' => [
             'title'   => 'Éditer un incident',
             'success' => 'Incident mis-à-jour.',
             'failure' => 'Il s\'est passé quelque chose avec cet incident.',
         ],
 
         // Incident templates
-        'templates'                => [
+        'templates' => [
             'add' => [
                 'title'   => 'Créer un modèle d\'incident',
                 'success' => 'Modèle créé.',
@@ -31,7 +31,7 @@ return [
     ],
 
     // Components
-    'components'        => [
+    'components' => [
         'components'         => 'Composant|Composants',
         'component_statuses' => 'Statut des composants',
         'add'                => [
@@ -40,7 +40,7 @@ return [
             'success' => 'Composant créé.',
             'failure' => 'Il s\'est passé quelque chose avec ce composant.',
         ],
-        'edit'               => [
+        'edit' => [
             'title'   => 'Éditer un composant',
             'success' => 'Composant mis-à-jour.',
             'failure' => 'Il s\'est passé quelque chose avec ce composant.',
@@ -58,7 +58,7 @@ return [
     ],
 
     // Metrics
-    'metrics'           => [
+    'metrics' => [
         'metrics' => 'Point de mesure',
         'add'     => [
             'title'   => 'Créer un point de mesure',
@@ -78,7 +78,7 @@ return [
             'success' => 'Membre ajouté.',
             'failure' => 'Il s\'est passé quelque chose avec ce membre.',
         ],
-        'edit' => [
+        'edit'        => [
             'title'   => 'Mettre à jour le profil',
             'success' => 'Profil mis-à-jour.',
             'failure' => 'Il s\'est passé quelque chose en mettant à jour le profil.',
@@ -86,37 +86,37 @@ return [
     ],
 
     // Settings
-    'settings'          => [
+    'settings' => [
         'settings'   => 'Réglages',
         'app-setup'  => [
             'app-setup' => 'Configuration',
         ],
-        'security'   => [
+        'security' => [
             'security' => 'Sécurité',
         ],
         'stylesheet' => [
             'stylesheet' => 'Feuille de style',
         ],
-        'theme'      => [
+        'theme' => [
             'theme' => 'Thème',
         ],
-        'edit'       => [
+        'edit' => [
             'success' => 'Réglages sauvegardés.',
             'failure' => 'Les réglages n\'ont pas pu être sauvegardés.',
         ],
     ],
 
     // Login
-    'login'             => [
+    'login' => [
         'login'     => 'Connexion',
         'logged_in' => "Vous êtes connecté.",
         'welcome'   => 'Re-bonjour !',
     ],
 
     // Sidebar footer
-    'help'              => 'Aide',
-    'status_page'       => 'Statut des services',
-    'logout'            => 'Déconnexion',
+    'help'        => 'Aide',
+    'status_page' => 'Statut des services',
+    'logout'      => 'Déconnexion',
 
     // Notifications
     'notifications'     => [
@@ -124,9 +124,5 @@ return [
         'awesome'       => 'Cool.',
         'whoops'        => 'Oups.',
     ],
-
-    // ?
-    'toggle_navigation' => 'Activer/Désactiver la navigation',
-    'search'            => 'Rechercher...',
 
 ];

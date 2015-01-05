@@ -32,13 +32,13 @@ return [
 
     // Components form fields
     'components' => [
-        'name'         => 'Nom',
-        'status'       => 'Statut',
-        'group'        => 'Groupe',
-        'description'  => 'Description',
-        'link'         => 'Lien',
-        'tags'         => 'Tags',
-        'tags-help'    => 'Séparé par une virgule.',
+        'name'        => 'Nom',
+        'status'      => 'Statut',
+        'group'       => 'Groupe',
+        'description' => 'Description',
+        'link'        => 'Lien',
+        'tags'        => 'Tags',
+        'tags-help'   => 'Séparé par une virgule.',
 
         'groups' => [
             'name' => 'Nom',

@@ -13,12 +13,12 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'           => 'Aucun incident reporté.',
-        'past'           => 'Incidents précédents',
-        'previous_week'  => 'Semaine précédente',
-        'next_week'      => 'Semaine suivante',
-        'none'           => 'Rien à reporter',
-        'status'         => [
+        'none'          => 'Aucun incident reporté.',
+        'past'          => 'Incidents précédents',
+        'previous_week' => 'Semaine précédente',
+        'next_week'     => 'Semaine suivante',
+        'none'          => 'Rien à reporter',
+        'status'        => [
             1 => 'Enquête en cours',
             2 => 'Identifié',
             3 => 'Analyse en cours',
@@ -42,5 +42,6 @@ return [
     'about_this_site' => 'À propos de ce site',
     'rss-feed'        => 'Flux RSS',
     'atom-feed'       => 'Flux Atom',
-    'feed'            => 'Flux des statuts'
+    'feed'            => 'Flux des statuts',
+
 ];

@@ -2,10 +2,10 @@
 
 return [
 
-    'dashboard'         => 'Dashboard',
+    'dashboard' => 'Dashboard',
 
     // Incidents
-    'incidents'         => [
+    'incidents' => [
         'incidents'                => 'Incidents',
         'logged'                   => '{0} There are no incidents, good work.|You have logged one incident.|You have reported <strong>:count</strong> incidents.',
         'incident-create-template' => 'Create Template',
@@ -14,14 +14,14 @@ return [
             'success' => 'Incident added.',
             'failure' => 'Something went wrong with the incident.',
         ],
-        'edit'                     => [
+        'edit' => [
             'title'   => 'Edit an incident',
             'success' => 'Incident updated.',
             'failure' => 'Something went wrong with the incident.',
         ],
 
         // Incident templates
-        'templates'                => [
+        'templates' => [
             'add' => [
                 'title'   => 'Create an incident template',
                 'success' => 'Template created.',
@@ -31,7 +31,7 @@ return [
     ],
 
     // Components
-    'components'        => [
+    'components' => [
         'components'         => 'Component|Components',
         'component_statuses' => 'Component Statuses',
         'add'                => [
@@ -40,7 +40,7 @@ return [
             'success' => 'Component created.',
             'failure' => 'Something went wrong with the component.',
         ],
-        'edit'               => [
+        'edit' => [
             'title'   => 'Edit a component',
             'success' => 'Component updated.',
             'failure' => 'Something went wrong with the component.',
@@ -58,7 +58,7 @@ return [
     ],
 
     // Metrics
-    'metrics'           => [
+    'metrics' => [
         'metrics' => 'Metrics',
         'add'     => [
             'title'   => 'Create a metric point',
@@ -78,7 +78,7 @@ return [
             'success' => 'Team member added.',
             'failure' => 'Something went wrong with the component.',
         ],
-        'edit' => [
+        'edit'        => [
             'title'   => 'Update profile',
             'success' => 'Profile updated.',
             'failure' => 'Something went wrong when updating.',
@@ -86,37 +86,37 @@ return [
     ],
 
     // Settings
-    'settings'          => [
-        'settings'   => 'Settings',
-        'app-setup'  => [
+    'settings' => [
+        'settings'  => 'Settings',
+        'app-setup' => [
             'app-setup' => 'Application Setup',
         ],
-        'security'   => [
+        'security' => [
             'security' => 'Security',
         ],
         'stylesheet' => [
             'stylesheet' => 'Stylesheet',
         ],
-        'theme'      => [
+        'theme' => [
             'theme' => 'Theme',
         ],
-        'edit'       => [
+        'edit' => [
             'success' => 'Settings saved.',
             'failure' => 'Settings could not be saved.',
         ],
     ],
 
     // Login
-    'login'             => [
+    'login' => [
         'login'     => 'Login',
         'logged_in' => "You're logged in.",
         'welcome'   => 'Welcome Back!',
     ],
 
     // Sidebar footer
-    'help'              => 'Help',
-    'status_page'       => 'Status Page',
-    'logout'            => 'Logout',
+    'help'        => 'Help',
+    'status_page' => 'Status Page',
+    'logout'      => 'Logout',
 
     // Notifications
     'notifications'     => [
@@ -124,9 +124,5 @@ return [
         'awesome'       => 'Awesome.',
         'whoops'        => 'Whoops.',
     ],
-
-    // ?
-    'toggle_navigation' => 'Toggle Navigation',
-    'search'            => 'Search...',
 
 ];

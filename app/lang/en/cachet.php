@@ -13,12 +13,12 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'           => 'No incidents reported.',
-        'past'           => 'Past incidents',
-        'previous_week'  => 'Previous week',
-        'next_week'      => 'Next week',
-        'none'           => 'Nothing to report',
-        'status'         => [
+        'none'          => 'No incidents reported.',
+        'past'          => 'Past incidents',
+        'previous_week' => 'Previous week',
+        'next_week'     => 'Next week',
+        'none'          => 'Nothing to report',
+        'status'        => [
             1 => 'Investigating',
             2 => 'Identified',
             3 => 'Watching',
