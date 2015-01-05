@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AlterTableIncidentsRenameComponentColumn extends Migration
+class CreateSettingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,11 @@ class AlterTableIncidentsRenameComponentColumn extends Migration
      */
     public function up()
     {
-        Schema::table('incidents', function (Blueprint $table) {
-            $table->renameColumn('component', 'component_id');
+        Schema::create('settings', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->longText('value');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +28,6 @@ class AlterTableIncidentsRenameComponentColumn extends Migration
      */
     public function down()
     {
-        Schema::table('incidents', function (Blueprint $table) {
-            $table->renameColumn('component_id', 'component');
-        });
+        Schema::drop('settings');
     }
 }
