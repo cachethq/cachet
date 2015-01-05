@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSubscribersTable extends Migration
+class CreateMetricsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,15 @@ class CreateSubscribersTable extends Migration
      */
     public function up()
     {
-        Schema::create('subscribers', function (Blueprint $table) {
+        Schema::create('metrics', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('email')->nullable(false);
+            $table->string('name');
+            $table->string('suffix');
+            $table->text('description')->default('');
+            $table->boolean('display_chart')->default(1);
             $table->timestamps();
-            $table->softDeletes();
+
+            $table->index('display_chart');
         });
     }
 
@@ -28,6 +32,6 @@ class CreateSubscribersTable extends Migration
      */
     public function down()
     {
-        Schema::drop('subscribers');
+        Schema::drop('metrics');
     }
 }

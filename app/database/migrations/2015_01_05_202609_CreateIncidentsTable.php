@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateComponentsTable extends Migration
+class CreateIncidentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,19 @@ class CreateComponentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('components', function (Blueprint $table) {
+        Schema::create('incidents', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('component_id')->default(0);
             $table->string('name');
-            $table->string('description')->nullable()->default(null);
-            $table->tinyInteger('status')->default(1);
+            $table->integer('status');
+            $table->longText('message')->default('');
+            $table->integer('user_id');
             $table->timestamps();
+            $table->softDeletes();
 
+            $table->index('component_id');
             $table->index('status');
+            $table->index('user_id');
         });
     }
 
@@ -31,6 +36,6 @@ class CreateComponentsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('components');
+        Schema::drop('incidents');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AlterTableComponentsAddGroupIdColumn extends Migration
+class CreateSubscriptionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,11 @@ class AlterTableComponentsAddGroupIdColumn extends Migration
      */
     public function up()
     {
-        Schema::table('components', function (Blueprint $table) {
-            $table->integer('group_id')->nullable()->default(null)->after('order');
+        Schema::create('subscriptions', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('email');
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -25,8 +28,6 @@ class AlterTableComponentsAddGroupIdColumn extends Migration
      */
     public function down()
     {
-        Schema::table('components', function (Blueprint $table) {
-            $table->dropColumn('group_id');
-        });
+        Schema::drop('subscriptions');
     }
 }

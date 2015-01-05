@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSettingsTable extends Migration
+class CreateMetricPointsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreateSettingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('settings', function (Blueprint $table) {
+        Schema::create('metric_points', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->text('value')->nullable()->default(null);
+            $table->integer('metric_id');
+            $table->integer('value');
             $table->timestamps();
+
+            $table->index('metric_id');
         });
     }
 
@@ -28,6 +30,6 @@ class CreateSettingsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('settings');
+        Schema::drop('metric_points');
     }
 }
