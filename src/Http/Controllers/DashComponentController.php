@@ -30,10 +30,11 @@ class DashComponentController extends Controller
                 'active' => false,
             ],
         ];
-        $this->subTitle = trans_choice('dashboard.components.components', 2);
 
-        View::share('subTitle', $this->subTitle);
-        View::share('subMenu', $this->subMenu);
+        $subTitle = trans_choice('dashboard.components.components', 2);
+
+        View::share('subTitle', $subTitle);
+        View::share('subMenu', $subMenu);
     }
 
     /**
