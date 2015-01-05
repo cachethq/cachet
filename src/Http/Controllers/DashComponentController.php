@@ -7,7 +7,6 @@ use CachetHQ\Cachet\Models\ComponentGroup;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\View;
 
 class DashComponentController extends Controller
@@ -19,13 +18,13 @@ class DashComponentController extends Controller
         $this->subMenu = [
             'components' => [
                 'title'  => trans_choice('dashboard.components.components', 2),
-                'url'    => URL::route('dashboard.components'),
+                'url'    => route('dashboard.components'),
                 'icon'   => 'ion-ios-keypad',
                 'active' => false,
             ],
             'groups' => [
                 'title'  => trans_choice('dashboard.components.groups.groups', 2),
-                'url'    => URL::route('dashboard.components.groups'),
+                'url'    => route('dashboard.components.groups'),
                 'icon'   => 'ion-folder',
                 'active' => false,
             ],
