@@ -1,10 +1,10 @@
 {
     "name": "cachethq/cachet",
-    "description": "Open Source StatusPage.io alternative written in PHP.",
+    "description": "An open source status page system written in PHP",
     "keywords": [
-        "status page",
         "status",
-        "board"
+        "page",
+        "updates"
     ],
     "license": "MIT",
     "type": "project",
