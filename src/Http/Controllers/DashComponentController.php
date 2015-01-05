@@ -166,7 +166,7 @@ class DashComponentController extends Controller
         $_group = Binput::get('group');
 
         if (!isset($_group['group_id'])) {
-            $_group = null;
+            $_group['group_id'] = 0;
         }
 
         $group = ComponentGroup::create($_group);
