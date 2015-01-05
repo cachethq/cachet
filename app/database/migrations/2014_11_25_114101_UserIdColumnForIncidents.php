@@ -28,6 +28,7 @@ class UserIdColumnForIncidents extends Migration
     public function down()
     {
         Schema::table('incidents', function (Blueprint $table) {
+            $table->dropForeign('incidents_user_id_foreign');
             $table->dropColumn('user_id');
         });
     }
