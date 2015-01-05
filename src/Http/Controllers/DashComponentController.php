@@ -156,6 +156,11 @@ class DashComponentController extends Controller
         ]);
     }
 
+    /**
+     * Creates a new component.
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function postAddComponentGroup()
     {
         $_group = Binput::get('group');
