@@ -41,6 +41,7 @@
                             <label>{{ trans('forms.components.group') }}</label>
                             <textarea name='component[description]' class='form-control' rows='5'>{{ $component->description }}</textarea>
                         </div>
+                        @if($groups->count() > 0)
                         <div class='form-group'>
                             <label>Group</label>
                             <select name='component[group_id]' class='form-control'>
@@ -50,6 +51,7 @@
                                 @endforeach
                             </select>
                         </div>
+                        @endif
                         <hr />
                         <div class='form-group'>
                             <label>{{ trans('forms.components.link') }}</label>
