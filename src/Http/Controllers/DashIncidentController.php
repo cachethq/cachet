@@ -21,7 +21,7 @@ class DashIncidentController extends Controller
         $incidents = Incident::orderBy('created_at', 'desc')->get();
 
         return View::make('dashboard.incidents.index')->with([
-            'pageTitle' => 'Incidents - Dashboard',
+            'pageTitle' => trans('dashboard.incidents.incidents').' - '.trans('dashboard.dashboard'),
             'incidents' => $incidents,
         ]);
     }
@@ -34,7 +34,7 @@ class DashIncidentController extends Controller
     public function showAddIncident()
     {
         return View::make('dashboard.incidents.add')->with([
-            'pageTitle' => 'Add Incident - Dashboard',
+            'pageTitle' => trans('dashboard.incidents.add.title').' - '.trans('dashboard.dashboard'),
         ]);
     }
 
@@ -45,8 +45,8 @@ class DashIncidentController extends Controller
      */
     public function showAddIncidentTemplate()
     {
-        return View::make('dashboard.incidents.incident-template')->with([
-            'pageTitle' => 'Add Incident Template - Dashboard',
+        return View::make('dashboard.incidents.templates.add')->with([
+            'pageTitle' => trans('dashboard.incidents.templates.add.title').' - '.trans('dashboard.dashboard'),
         ]);
     }
 
@@ -100,7 +100,7 @@ class DashIncidentController extends Controller
     public function showEditIncidentAction(Incident $incident)
     {
         return View::make('dashboard.incidents.edit')->with([
-            'pageTitle' => 'Edit Incident - Dashboard',
+            'pageTitle' => trans('dashboard.incidents.edit.title').' - '.trans('dashboard.dashboard'),
             'incident'  => $incident,
         ]);
     }

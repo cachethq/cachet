@@ -18,25 +18,25 @@ class DashSettingsController extends Controller
     {
         $this->subMenu = [
             'setup' => [
-                'title'  => 'Application Setup',
+                'title'  => trans('dashboard.settings.app-setup.app-setup'),
                 'url'    => '/dashboard/settings/setup',
                 'icon'   => 'ion-gear-b',
                 'active' => false,
             ],
             'security' => [
-                'title'  => 'Security',
+                'title'  => trans('dashboard.settings.security.security'),
                 'url'    => '/dashboard/settings/security',
                 'icon'   => 'ion-lock-combination',
                 'active' => false,
             ],
             'theme' => [
-                'title'  => 'Theme',
+                'title'  => trans('dashboard.settings.theme.theme'),
                 'url'    => '/dashboard/settings/theme',
                 'icon'   => 'ion-paintbrush',
                 'active' => false,
             ],
             'stylesheet' => [
-                'title'  => 'Stylesheet',
+                'title'  => trans('dashboard.settings.stylesheet.stylesheet'),
                 'url'    => '/dashboard/settings/stylesheet',
                 'icon'   => 'ion-paintbucket',
                 'active' => false,

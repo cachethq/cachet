@@ -25,7 +25,7 @@
         @include('partials.graphs')
     @endif --}}
 
-    <h1>{{ trans('cachet.past_incidents') }}</h1>
+    <h1>{{ trans('cachet.incidents.past') }}</h1>
     @foreach($allIncidents as $incidents)
         @include('partials.incidents', $incidents)
     @endforeach
@@ -35,12 +35,12 @@
         <ul class="pager">
             <li class="previous">
                 <a href="{{ route('status-page') }}?start_date={{ $previousDate }}">
-                    <span aria-hidden="true">&larr;</span> {{ trans('cachet.previous_week') }}
+                    <span aria-hidden="true">&larr;</span> {{ trans('cachet.incidents.previous_week') }}
                 </a>
             </li>
             <li class="next @if( ! $canPageForward) disabled @endif">
                 <a @if($canPageForward) href="{{ route('status-page') }}?start_date={{ $nextDate }}" @endif>
-                    {{ trans('cachet.next_week') }} <span aria-hidden="true">&rarr;</span>
+                    {{ trans('cachet.incidents.next_week') }} <span aria-hidden="true">&rarr;</span>
                 </a>
             </li>
         </ul>

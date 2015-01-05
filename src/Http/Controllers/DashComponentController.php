@@ -13,24 +13,24 @@ use Illuminate\Support\Facades\View;
 class DashComponentController extends Controller
 {
     protected $subMenu = [];
-    protected $subTitle = 'Components';
 
     public function __construct()
     {
         $this->subMenu = [
             'components' => [
-                'title'  => 'Components',
+                'title'  => trans_choice('dashboard.components.components', 2),
                 'url'    => URL::route('dashboard.components'),
                 'icon'   => 'ion-ios-keypad',
                 'active' => false,
             ],
             'groups' => [
-                'title'  => 'Component Groups',
+                'title'  => trans_choice('dashboard.components.groups.groups', 2),
                 'url'    => URL::route('dashboard.components.groups'),
                 'icon'   => 'ion-folder',
                 'active' => false,
             ],
         ];
+        $this->subTitle = trans_choice('dashboard.components.components', 2);
 
         View::share('subTitle', $this->subTitle);
         View::share('subMenu', $this->subMenu);
@@ -48,7 +48,7 @@ class DashComponentController extends Controller
         $this->subMenu['components']['active'] = true;
 
         return View::make('dashboard.components.index')->with([
-            'pageTitle'  => 'Components - Dashboard',
+            'pageTitle'  => trans_choice('dashboard.components.components', 2).' - '.trans('dashboard.dashboard'),
             'components' => $components,
             'subMenu'    => $this->subMenu,
         ]);
@@ -63,8 +63,8 @@ class DashComponentController extends Controller
     {
         $this->subMenu['groups']['active'] = true;
 
-        return View::make('dashboard.groups')->with([
-            'pageTitle' => 'Component Groups - Dashboard',
+        return View::make('dashboard.components.groups.index')->with([
+            'pageTitle' => trans_choice('dashboard.components.groups.groups', 2).' - '.trans('dashboard.dashboard'),
             'groups'    => ComponentGroup::all(),
             'subMenu'   => $this->subMenu,
         ]);
@@ -82,7 +82,7 @@ class DashComponentController extends Controller
         $groups = ComponentGroup::all();
 
         return View::make('dashboard.components.edit')->with([
-            'pageTitle' => 'Editing "'.$component->name.'" Component - Dashboard',
+            'pageTitle' => '"'.$component->name.'" - '.trans('dashboard.components.edit.title').' - '.trans('dashboard.dashboard'),
             'component' => $component,
             'groups'    => $groups,
         ]);
@@ -113,7 +113,7 @@ class DashComponentController extends Controller
         $groups = ComponentGroup::all();
 
         return View::make('dashboard.components.add')->with([
-            'pageTitle' => 'Add Component - Dashboard',
+            'pageTitle' => trans('dashboard.components.add.title').' - '.trans('dashboard.dashboard'),
             'groups'    => $groups,
         ]);
     }
@@ -153,7 +153,7 @@ class DashComponentController extends Controller
     public function showAddComponentGroup()
     {
         return View::make('dashboard.components.add-group')->with([
-            'pageTitle' => 'Create Component Group',
+            'pageTitle' => trans('dashboard.components.groups.add.title').' - '.trans('dashboard.dashboard'),
         ]);
     }
 

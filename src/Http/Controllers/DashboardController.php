@@ -36,7 +36,7 @@ class DashboardController extends Controller
         $team = User::all();
 
         return View::make('dashboard.team.index')->with([
-            'pageTitle'   => 'Team Members - Dashboard',
+            'pageTitle'   => trans('dashboard.team.team').' - '.trans('dashboard.dashboard'),
             'teamMembers' => $team,
         ]);
     }
@@ -49,7 +49,7 @@ class DashboardController extends Controller
     public function showTeamMemberView(User $user)
     {
         return View::make('dashboard.team.edit')->with([
-            'pageTitle' => 'Edit User - Dashboard',
+            'pageTitle' => trans('dashboard.team.edit.title').' - '.trans('dashboard.dashboard'),
             'user'      => $user,
         ]);
     }
@@ -61,8 +61,8 @@ class DashboardController extends Controller
      */
     public function showAddTeamMemberView()
     {
-        return View::make('dashboard.team.new')->with([
-            'pageTitle' => 'Add User - Dashboard',
+        return View::make('dashboard.team.add')->with([
+            'pageTitle' => trans('dashboard.team.add.title').' - '.trans('dashboard.dashboard'),
         ]);
     }
 
@@ -108,7 +108,7 @@ class DashboardController extends Controller
     public function showMetrics()
     {
         return View::make('dashboard.metrics.index')->with([
-            'pageTitle' => 'Metrics - Dashboard',
+            'pageTitle' => trans('dashboard.metrics.metrics').' - '.trans('dashboard.dashboard'),
         ]);
     }
 
@@ -120,7 +120,7 @@ class DashboardController extends Controller
     public function showNotifications()
     {
         return View::make('dashboard.notifications.index')->with([
-            'pageTitle' => 'Notifications - Dashboard',
+            'pageTitle' => trans('dashboard.notifications.notifications').' - '.trans('dashboard.dashboard'),
         ]);
     }
 }
