@@ -160,6 +160,10 @@ class DashComponentController extends Controller
     {
         $_group = Binput::get('group');
 
+        if (!isset($_group['group_id'])) {
+            $_group = null;
+        }
+
         $group = ComponentGroup::create($_group);
 
         return Redirect::back()->withGroup($group);
