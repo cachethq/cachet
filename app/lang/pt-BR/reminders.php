@@ -13,10 +13,10 @@ return [
     |
     */
 
-    "password" => "A senha deverá conter pelo menos seis carateres e ser igual à confirmação.",
-    "user"     => "Não conseguimos encontrar nenhum usuário com o endereço de email indicado.",
-    "token"    => "Este código de recuperação de senha é inválido.",
-    "sent"     => "O lembrete da senha foi enviado!",
-    "reset"    => "A senha foi redefinida!",
+    'password' => 'A senha deverá conter pelo menos seis carateres e ser igual à confirmação.',
+    'user'     => 'Não conseguimos encontrar nenhum usuário com o endereço de email indicado.',
+    'token'    => 'Este código de recuperação de senha é inválido.',
+    'sent'     => 'O lembrete da senha foi enviado!',
+    'reset'    => 'A senha foi redefinida!',
 
 ];

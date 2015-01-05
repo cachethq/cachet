@@ -5,7 +5,7 @@
 @include('partials.dashboard.sub-sidebar')
 @endif
 <div class='content-panel'>
-	<div class="header">
+    <div class="header">
         <span class="uppercase">
             <i class="icons ion-ios-keypad"></i> {{ trans('cachet.dashboard.components') }}
         </span>
