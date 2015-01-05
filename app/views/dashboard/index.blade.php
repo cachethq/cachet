@@ -6,24 +6,24 @@
             <i class="icon ion-navicon"></i>
         </div>
         <span class="uppercase">
-            <i class="icon ion-speedometer"></i> {{ trans('cachet.dashboard.dashboard') }}
+            <i class="icon ion-speedometer"></i> {{ trans('dashboard.dashboard') }}
         </span>
     </div>
     <div class="content-wrapper">
         <div class="row">
             <div class="col-md-12">
-                <h4 class='sub-header'>Component Statuses</h4>
+                <h4 class='sub-header'>{{ trans('dashboard.components.component_statuses') }}</h4>
                 <div class='panel panel-default'>
                     <div class='list-group'>
                         @forelse($components as $component)
                         <div class='list-group-item'>
-                            {{ Form::open(['class' => 'component-inline form-horizontal', 'data-messenger' => 'Component updated.']) }}
+                            {{ Form::open(['class' => 'component-inline form-horizontal', 'data-messenger' => trans('dashboard.components.edit.success')]) }}
                             <div class='row striped-list-item'>
                                 <div class='col-lg-4 col-sm-12'>
                                     <h4>{{ $component->name }}</h4>
                                 </div>
                                 <div class='col-lg-8 col-sm-12 radio-items'>
-                                    @foreach(trans('cachet.component.status') as $statusID => $status)
+                                    @foreach(trans('cachet.components.status') as $statusID => $status)
                                     <div class='radio-inline'>
                                         <label>
                                             <input type='radio' name='status' value='{{ $statusID }}' {{ $component->status === $statusID ? "checked" : null }} />
@@ -37,7 +37,7 @@
                             {{ Form::close() }}
                         </div>
                         @empty
-                        <div class='list-group-item text-danger'>You should add a component.</div>
+                        <div class='list-group-item text-danger'>{{ trans('dashboard.components.add.message') }}</div>
                         @endforelse
                     </div>
                 </div>

@@ -19,7 +19,7 @@ class AtomController extends Controller
     {
         $feed = Feed::make();
         $feed->title = Setting::get('app_name');
-        $feed->description = 'Status Feed';
+        $feed->description = trans('cachet.feed');
         $feed->link = Setting::get('app_domain');
 
         $feed->setDateFormat('datetime');

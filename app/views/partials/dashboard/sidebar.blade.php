@@ -21,20 +21,20 @@
         <div class="quick-add-incident">
             <a class="btn btn-block btn-default uppercase" href="{{ route('dashboard.incidents.add') }}">
                 <i class="icon ion-android-checkmark-circle visible-sm"></i>
-                <span class="hidden-sm">{{ trans('cachet.dashboard.incident-add') }}</span>
+                <span class="hidden-sm">{{ trans('dashboard.incidents.add.title') }}</span>
             </a>
         </div>
         <ul>
             <li {{ set_active('dashboard') }}>
                 <a href="{{ route('dashboard') }}">
                     <i class="icon ion-speedometer"></i>
-                    <span>{{ trans('cachet.dashboard.dashboard') }}</span>
+                    <span>{{ trans('dashboard.dashboard') }}</span>
                 </a>
             </li>
             <li {{ set_active('dashboard/incidents*') }}>
                 <a href="{{ route('dashboard.incidents') }}">
                     <i class="icon ion-android-alert"></i>
-                    <span>{{ trans('cachet.dashboard.incidents') }}</span>
+                    <span>{{ trans('dashboard.incidents.incidents') }}</span>
                 </a>
             </li>
             {{-- <li {{ set_active('dashboard/incidents/templates') }}>
@@ -45,13 +45,13 @@
             <li {{ set_active('dashboard/components*') }}>
                 <a href="{{ route('dashboard.components') }}">
                     <i class="icons ion-ios-keypad"></i>
-                    <span>{{ trans('cachet.dashboard.components') }}</span>
+                    <span>{{ trans_choice('dashboard.components.components', 2) }}</span>
                 </a>
             </li>
             <li {{ set_active('dashboard/team*') }}>
                 <a href="{{ route('dashboard.team') }}">
                     <i class="icons ion-ios-people"></i>
-                    <span>{{ trans('cachet.dashboard.team') }}</span>
+                    <span>{{ trans('dashboard.team.team') }}</span>
                 </a>
             </li>
             {{-- <li {{ set_active('dashboard/metrics') }}>
@@ -68,7 +68,7 @@
                 <a href="{{ route('dashboard.settings.setup') }}">
                     <i class="icon ion-gear-a"></i>
                     <span>
-                        {{ trans('cachet.dashboard.settings') }}
+                        {{ trans('dashboard.settings.settings') }}
                     </span>
                 </a>
             </li>
@@ -79,13 +79,13 @@
             </div>
             <br/>
             <ul>
-                <li data-toggle="tooltip" data-placement="top" title="{{ trans('cachet.dashboard.help') }}">
+                <li data-toggle="tooltip" data-placement="top" title="{{ trans('dashboard.help') }}">
                     <a href="https://cachethq.io" target="_blank"><i class="icon ion-help"></i></a>
                 </li>
-                <li data-toggle="tooltip" data-placement="top" title="{{ trans('cachet.dashboard.status_page') }}">
+                <li data-toggle="tooltip" data-placement="top" title="{{ trans('dashboard.status_page') }}">
                     <a href="{{ route('status-page') }}"><i class="icon ion-monitor"></i></a>
                 </li>
-                <li data-toggle="tooltip" data-placement="top" title="{{ trans('cachet.logout') }}">
+                <li data-toggle="tooltip" data-placement="top" title="{{ trans('dashboard.logout') }}">
                     <a href="{{ route('logout') }}"><i class="icon ion-log-out"></i></a>
                 </li>
             </ul>

@@ -6,9 +6,9 @@
             <i class="icon ion-navicon"></i>
         </div>
         <span class="uppercase">
-            <i class="icons ion-ios-keypad"></i> {{ trans('cachet.dashboard.components') }}
+            <i class="icons ion-ios-keypad"></i> {{ trans_choice('dashboard.components.groups.groups', 2) }}
         </span>
-        > <small>Create a component group</small>
+        > <small>{{ trans('dashboard.components.groups.add.title') }}</small>
     </div>
     <div class="content-wrapper">
         <div class="row">
@@ -16,9 +16,9 @@
                 @if($group = Session::get('group'))
                 <div class='alert alert-{{ $group->isValid() ? "success" : "danger" }}'>
                     @if($group->isValid())
-                    <strong>Awesome.</strong> Component group created.
+                        {{ sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.awesome'), trans('dashboard.components.groups.add.success')) }}
                     @else
-                    <strong>Whoops.</strong> Something went wrong with the group. {{ $group->getErrors() }}
+                        {{ sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.whoops'), trans('dashboard.components.groups.add.failure').' '.$group->getErrors()) }}
                     @endif
                 </div>
                 @endif
@@ -26,13 +26,13 @@
                 <form name='CreateComponentGroupForm' class='form-vertical' role='form' action='/dashboard/components/groups/add' method='POST'>
                     <fieldset>
                         <div class='form-group'>
-                            <label for='incident-name'>Name</label>
+                            <label for='incident-name'>{{ trans('forms.components.groups.name') }}</label>
                             <input type='text' class='form-control' name='group[name]' id='group-name' required />
                         </div>
                     </fieldset>
 
-                    <button type="submit" class="btn btn-success">Submit</button>
-                    <a class="btn btn-default" href="{{ route('dashboard.components.groups') }}">Cancel</a>
+                    <button type="submit" class="btn btn-success">{{ trans('forms.add') }}</button>
+                    <a class="btn btn-default" href="{{ route('dashboard.components.groups') }}">{{ trans('forms.cancel') }}</a>
                 </form>
             </div>
         </div>

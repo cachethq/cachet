@@ -31,7 +31,7 @@ class SetupController extends Controller
     public function getIndex()
     {
         return View::make('setup')->with([
-            'pageTitle' => 'Setup',
+            'pageTitle' => trans('setup.setup'),
         ]);
     }
 

@@ -8,10 +8,10 @@
         <div class="content-wrapper">
             <div class="header sub-header">
                 <span class="uppercase">
-                    <i class="icons ion-ios-keypad"></i> {{ trans('cachet.dashboard.components') }}
+                    <i class="icons ion-ios-keypad"></i> {{ trans_choice('dashboard.components.components', 2) }}
                 </span>
                 <a class="btn btn-sm btn-success pull-right" href="{{ route('dashboard.components.add') }}">
-                    {{ trans('cachet.dashboard.component-add') }}
+                    {{ trans('dashboard.components.add.title') }}
                 </a>
                 <div class="clearfix"></div>
             </div>
@@ -32,13 +32,13 @@
                                 @endif
                             </div>
                             <div class='col-md-4 text-right'>
-                                <a href='/dashboard/components/{{ $component->id }}/edit' class='btn btn-default'>Edit</a>
-                                <a href='/dashboard/components/{{ $component->id }}/delete' class='btn btn-danger'>Delete</a>
+                                <a href='/dashboard/components/{{ $component->id }}/edit' class='btn btn-default'>{{ trans('forms.edit') }}</a>
+                                <a href='/dashboard/components/{{ $component->id }}/delete' class='btn btn-danger'>{{ trans('forms.delete') }}</a>
                             </div>
                             <input type='hidden' rel='order' name='component[{{ $component->id }}]' value='{{ $component->order }}' />
                         </div>
                         @empty
-                        <div class='list-group-item text-danger'>You should add a component.</div>
+                        <div class='list-group-item text-danger'>{{ trans('dashboard.components.add.message') }}</div>
                         @endforelse
                     </div>
                 </form>

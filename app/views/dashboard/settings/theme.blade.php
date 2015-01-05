@@ -9,25 +9,25 @@
             <div class="row">
                 <div class="col-sm-12">
                     <form name='SettingsForm' class='form-vertical' role='form' action='/dashboard/settings' method='POST'>
-                        <h4 class="sub-header" id='theme'>Theme</h4>
+                        <h4 class="sub-header" id='theme'>{{ trans('dashboard.settings.theme.theme') }}</h4>
 
                         @if($saved = Session::get('saved'))
-                        <div class='alert alert-success'><strong>{{ trans('cachet.dashboard.settings_saved') }}</strong></div>
+                        <div class='alert alert-success'><strong>{{ trans('dashboard.settings.edit.success') }}</strong></div>
                         @elseif(Session::has('saved'))
-                        <div class='alert alert-danger'><strong>{{ trans('cachet.dashboard.settings_not_saved') }}</strong></div>
+                        <div class='alert alert-danger'><strong>{{ trans('dashboard.settings.edit.failure') }}</strong></div>
                         @endif
 
                         <fieldset>
                             <div class='row'>
                                 <div class='col-xs-6'>
                                     <div class='form-group'>
-                                        <label>Background Color</label>
+                                        <label>{{ trans('forms.settings.theme.background-color') }}</label>
                                         <input type='text' class='form-control color-code' name='style.background_color' value='{{ Setting::get("style_background_color") }}' />
                                     </div>
                                 </div>
                                 <div class='col-xs-6'>
                                     <div class='form-group'>
-                                        <label>Text Color</label>
+                                        <label>{{ trans('forms.settings.theme.text-color') }}</label>
                                         <input type='text' class='form-control color-code' name='style.text_color' value='{{ Setting::get("style_text_color") }}' />
                                     </div>
                                 </div>
@@ -59,7 +59,7 @@
                         <div class='row'>
                             <div class='col-xs-12'>
                                 <div class='form-group'>
-                                    <button type="submit" class="btn btn-success">Save settings</button>
+                                    <button type="submit" class="btn btn-success">{{ trans('forms.save') }}</button>
                                 </div>
                             </div>
                         </div>

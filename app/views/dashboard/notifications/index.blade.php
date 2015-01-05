@@ -5,11 +5,11 @@
         <div class="sidebar-toggler visible-xs">
             <i class="icon ion-navicon"></i>
         </div>
-        <i class="ion ion-email"></i> {{ trans('cachet.dashboard.notifications') }}
+        <i class="ion ion-email"></i> {{ trans('dashboard.notifications.notifications') }}
     </div>
     <div class="row">
         <div class="col-sm-12">
-            <h3>Notifications</h3>
+            <h3>{{ trans('dashboard.notifications.notifications') }}</h3>
         </div>
     </div>
 @stop

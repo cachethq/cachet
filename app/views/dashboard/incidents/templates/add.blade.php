@@ -6,9 +6,9 @@
             <i class="icon ion-navicon"></i>
         </div>
         <span class="uppercase">
-            <i class="icon ion-plus"></i> {{ trans('cachet.dashboard.incident-add') }}
+            <i class="icon ion-plus"></i> {{ trans('dashboard.incidents.incidents') }}
         </span>
-        > <small>Create an Incident Template</small>
+        > <small>{{ trans('dashboard.incidents.templates.add.title') }}</small>
     </div>
     <div class="content-wrapper">
         <div class="row">
@@ -16,9 +16,9 @@
                 @if($template = Session::get('template'))
                 <div class='alert alert-{{ $template->isValid() ? "success" : "danger" }}'>
                     @if($template->isValid())
-                    <strong>Awesome.</strong> Template added.
+                        {{ sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.awesome'), trans('dashboard.incidents.templates.add.success')) }}
                     @else
-                    <strong>Whoops.</strong> Something went wrong with the template.
+                        {{ sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.whoops'), trans('dashboard.incidents.templates.add.failure').' '.$template->getErrors()) }}
                     @endif
                 </div>
                 @endif
@@ -26,16 +26,16 @@
                 {{ Form::open(['name' => 'IncidentTemplateForm', 'class' => 'form-vertical', 'role' => 'form']) }}
                     <fieldset>
                         <div class='form-group'>
-                            <label for='template-name'>Template Name</label>
+                            <label for='template-name'>{{ trans('forms.incidents.templates.name') }}</label>
                             <input type='text' class='form-control' name='template[name]' id='template-name' required />
                         </div>
                         <div class='form-group'>
-                            <label>Template</label>
+                            <label>{{ trans('forms.incidents.templates.template') }}</label>
                             <textarea name='template[template]' class='form-control' rows='5' required></textarea>
                         </div>
                     </fieldset>
 
-                    <button type="submit" class="btn btn-success">Create</button>
+                    <button type="submit" class="btn btn-success">{{ trans('forms.create') }}</button>
                 {{ Form::close() }}
             </div>
         </div>

@@ -8,10 +8,10 @@
         <div class="content-wrapper">
             <div class="header sub-header">
                 <span class="uppercase">
-                    <i class="icons ion-ios-keypad"></i> {{ trans('cachet.dashboard.component-groups') }}
+                    <i class="icons ion-ios-keypad"></i> {{ trans_choice('dashboard.components.groups.groups', 2) }}
                 </span>
                 <a class="btn btn-sm btn-success pull-right" href="{{ route('dashboard.components.groups.add') }}">
-                    {{ trans('cachet.dashboard.component-groups-add') }}
+                    {{ trans('dashboard.components.groups.add.title') }}
                 </a>
                 <div class="clearfix"></div>
             </div>
@@ -23,12 +23,12 @@
                             <strong>{{ $group->name }}</strong>
                         </div>
                         <div class='col-md-4 text-right'>
-                            <a href='#' class='btn btn-default'>Edit</a>
-                            <a href='#' class='btn btn-danger'>Delete</a>
+                            <a href='#' class='btn btn-default'>{{ trans('forms.edit') }}</a>
+                            <a href='#' class='btn btn-danger'>{{ trans('forms.delete') }}</a>
                         </div>
                     </div>
                     @empty
-                    <div class='list-group-item text-danger'>You should add a component.</div>
+                    <div class='list-group-item text-danger'>{{ trans('dashboard.components.add.message') }}</div>
                     @endforelse
                 </div>
             </div>

@@ -9,22 +9,22 @@
             <div class="row">
                 <div class="col-sm-12">
                     <form name='SettingsForm' class='form-vertical' role='form' action='/dashboard/settings' method='POST'>
-                        <h4 class="sub-header" id='security'>Security</h4>
+                        <h4 class="sub-header" id='security'>{{ trans('dashboard.settings.security.security') }}</h4>
 
                         @if($saved = Session::get('saved'))
-                        <div class='alert alert-success'><strong>{{ trans('cachet.dashboard.settings_saved') }}</strong></div>
+                        <div class='alert alert-success'><strong>{{ trans('dashboard.settings.edit.success') }}</strong></div>
                         @elseif(Session::has('saved'))
-                        <div class='alert alert-danger'><strong>{{ trans('cachet.dashboard.settings_not_saved') }}</strong></div>
+                        <div class='alert alert-danger'><strong>{{ trans('dashboard.settings.edit.failure') }}</strong></div>
                         @endif
 
                         <fieldset>
                             <div class='row'>
                                 <div class='col-xs-12'>
                                     <div class='form-group'>
-                                        <label>Allowed Domains <em>Comma Seperated</em></label>
+                                        <label>{{ trans('forms.settings.security.allowed-domains') }}</label>
                                         <textarea class='form-control' name='allowed_domains' rows='5' placeholder='http://cachet.io, http://cachet.herokuapp.com'>{{ Setting::get('allowed_domains') }}</textarea>
                                         <div class='help-block'>
-                                            The domain set above is automatically allowed by default.
+                                            {{ trans('forms.settings.security.allowed-domains-help') }}
                                         </div>
                                     </div>
                                 </div>
@@ -34,7 +34,7 @@
                         <div class='row'>
                             <div class='col-xs-12'>
                                 <div class='form-group'>
-                                    <button type="submit" class="btn btn-success">Save settings</button>
+                                    <button type="submit" class="btn btn-success">{{ trans('forms.save') }}</button>
                                 </div>
                             </div>
                         </div>

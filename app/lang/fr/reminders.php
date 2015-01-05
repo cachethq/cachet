@@ -13,10 +13,10 @@ return [
     |
     */
 
-    'password' => 'A senha deverá conter pelo menos seis carateres e ser igual à confirmação.',
-    'user'     => 'Não conseguimos encontrar nenhum usuário com o endereço de email indicado.',
-    'token'    => 'Este código de recuperação de senha é inválido.',
-    'sent'     => 'O lembrete da senha foi enviado!',
-    'reset'    => 'A senha foi redefinida!',
+    'password' => 'Les mots de passe doivent contenir 6 caractères minimum et être identique à la confirmation.',
+    'user'     => 'Nous ne trouvons aucun utilisateur avec cette adresse email.',
+    'token'    => 'Ce jeton de réinitialisation de mot de passe est invalide.',
+    'sent'     => 'Rappel de mot de passe envoyé !',
+    'reset'    => 'Votre mot de passe à été réinitialisé !',
 
 ];

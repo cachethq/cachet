@@ -28,7 +28,7 @@
         @empty
         <div class='panel panel-message'>
             <div class='panel-body'>
-                <p>{{ trans('cachet.incident.none') }}</p>
+                <p>{{ trans('cachet.incidents.none') }}</p>
             </div>
         </div>
         @endforelse
