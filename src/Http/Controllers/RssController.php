@@ -20,7 +20,7 @@ class RssController extends Controller
         $feed = RssFacade::feed('2.0', 'UTF-8');
         $feed->channel([
             'title'       => Setting::get('app_name'),
-            'description' => 'Status Feed',
+            'description' => trans('cachet.feed'),
             'link'        => Setting::get('app_domain'),
         ]);
 

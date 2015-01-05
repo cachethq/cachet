@@ -39,7 +39,7 @@
                             <textarea name='component[description]' class='form-control' rows='5'></textarea>
                         </div>
                         <div class='form-group'>
-                            <label>Group</label>
+                            <label>{{ trans('forms.components.group') }}</label>
                             <select name='component[group_id]' class='form-control'>
                                 <option selected></option>
                                 @foreach($groups as $group)
@@ -55,7 +55,7 @@
                         <div class='form-group'>
                             <label>{{ trans('forms.components.tags') }}</label>
                             <textarea name='component[tags]' class='form-control' rows='2'></textarea>
-                            <span class='help-block'>{{ trans('forms.components.tag-help') }}</span>
+                            <span class='help-block'>{{ trans('forms.components.tags-help') }}</span>
                         </div>
                     </fieldset>
 

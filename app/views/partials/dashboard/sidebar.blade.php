@@ -50,7 +50,7 @@
             </li>
             <li {{ set_active('dashboard/team*') }}>
                 <a href="{{ route('dashboard.team') }}">
-                    <i class="icons ion-ios-people"></i> {{ trans('cachet.dashboard.team') }}
+                    <i class="icons ion-ios-people"></i> {{ trans('dashboard.team.team') }}
                 </a>
             </li>
             {{-- <li {{ set_active('dashboard/metrics') }}>

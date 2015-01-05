@@ -38,7 +38,7 @@
                         <input type='hidden' rel='order' name='component[{{ $component->id }}]' value='{{ $component->order }}' />
                     </div>
                     @empty
-                    <div class='list-group-item text-danger'>{{ trans('dashboard.components.add-message') }}</div>
+                    <div class='list-group-item text-danger'>{{ trans('dashboard.components.add.message') }}</div>
                     @endforelse
                 </div>
             </form>

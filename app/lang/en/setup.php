@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'setup'             => 'Setup',
     'title'             => 'Setup Cachet',
     'service_details'   => 'Service Details',
     'status_page_setup' => 'Status Page Setup',

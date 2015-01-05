@@ -19,13 +19,13 @@ return [
 
     // Incidents form fields
     'incidents' => [
-        'name'         => 'Incident Name',
-        'status'       => 'Incident Status',
+        'name'         => 'Name',
+        'status'       => 'Status',
         'message'      => 'Message',
         'message-help' => 'You may also use Markdown.',
 
         'templates' => [
-            'name'     => 'Template Name',
+            'name'     => 'Name',
             'template' => 'Template',
         ],
     ],
@@ -34,10 +34,15 @@ return [
     'components' => [
         'name'        => 'Name',
         'status'      => 'Status',
+        'group'       => 'Group',
         'description' => 'Description',
         'link'        => 'Link',
         'tags'        => 'Tags',
-        'tag-help'    => 'Comma separated.',
+        'tags-help'    => 'Comma separated.',
+
+        'groups' => [
+            'name' => 'Name'
+        ],
     ],
 
     // Settings
@@ -52,8 +57,8 @@ return [
             'banner-help'       => "It's recommended that you upload files no bigger than 930px wide .",
         ],
         'security' => [
-            'allowed-domains'      => 'Allowed Domains <em>Comma Seperated</em>',
-            'allowed-domains-help' => 'The domain set above is automatically allowed by default.',
+            'allowed-domains'      => 'Allowed domains',
+            'allowed-domains-help' => 'Comma separated. The domain set above is automatically allowed by default.',
         ],
         'stylesheet' => [
             'custom-css' => 'Custom Stylesheet',
@@ -68,10 +73,14 @@ return [
         'username' => 'Username',
         'email'    => 'Email',
         'password' => 'Password',
+        'api-key'  => 'API Key',
+        'api-key-help' => 'Regenerating your API key will revoke all existing applications.',
     ],
 
     // Buttons
+    'add'    => 'Add',
     'save'   => 'Save',
+    'update' => 'Update',
     'create' => 'Create',
     'edit'   => 'Edit',
     'delete' => 'Delete',

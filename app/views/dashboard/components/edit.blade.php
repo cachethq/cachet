@@ -23,11 +23,11 @@
                 <form name='EditComponentForm' class='form-vertical' role='form' action='/dashboard/components/{{ $component->id }}/edit' method='POST'>
                     <fieldset>
                         <div class='form-group'>
-                            <label for='incident-name'>Name</label>
+                            <label for='incident-name'>{{ trans('forms.components.name') }}</label>
                             <input type='text' class='form-control' name='component[name]' id='component-name' required value='{{ $component->name }}' />
                         </div>
                         <div class='form-group'>
-                            <label for='component-status'>Status</label>
+                            <label for='component-status'>{{ trans('forms.components.status') }}</label>
                             <select name='component[status]' class='form-control'>
                                 @foreach(trans('cachet.components.status') as $statusID => $status)
                                 <option value='{{ $statusID }}' {{ $statusID === $component->status ? "selected" : "" }}>{{ $status }}</option>
@@ -35,7 +35,7 @@
                             </select>
                         </div>
                         <div class='form-group'>
-                            <label>Description</label>
+                            <label>{{ trans('forms.components.group') }}</label>
                             <textarea name='component[description]' class='form-control' rows='5'>{{ $component->description }}</textarea>
                         </div>
                         <div class='form-group'>
@@ -49,17 +49,17 @@
                         </div>
                         <hr />
                         <div class='form-group'>
-                            <label>Link</label>
+                            <label>{{ trans('forms.components.link') }}</label>
                             <input type='text' name='component[link]' class='form-control' value='{{ $component->link }}' />
                         </div>
                         <div class='form-group'>
-                            <label>Tags</label>
+                            <label>{{ trans('forms.components.tags') }}</label>
                             <textarea name='component[tags]' class='form-control' rows='2'>{{ $component->tags }}</textarea>
-                            <span class='help-block'>Comma separated.</span>
+                            <span class='help-block'>{{ trans('forms.components.tags-help') }}</span>
                         </div>
                     </fieldset>
 
-                    <button type="submit" class="btn btn-success">{{ trans('forms.save') }}</button>
+                    <button type="submit" class="btn btn-success">{{ trans('forms.update') }}</button>
                     <a class="btn btn-default" href="{{ route('dashboard.components') }}">{{ trans('forms.cancel') }}</a>
                     <input type='hidden' name='component[user_id]' value='{{ $component->agent_id || Auth::user()->id }}' />
                 </form>

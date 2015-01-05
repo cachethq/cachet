@@ -3,17 +3,17 @@
 @section('content')
     <div class="header fixed">
         <span class="uppercase">
-            <i class="icon icon ion-android-alert"></i> {{ trans('cachet.dashboard.team') }}
+            <i class="icon icon ion-android-alert"></i> {{ trans('dashboard.team.team') }}
         </span>
         <a class="btn btn-sm btn-success pull-right" href="{{ route('dashboard.team.add') }}">
-            {{ trans('cachet.dashboard.team-add') }}
+            {{ trans('dashboard.team.add.title') }}
         </a>
         <div class="clearfix"></div>
     </div>
     <div class="content-wrapper">
         <div class="row">
             <div class="col-sm-12">
-                <p class='lead'>Team Members will be able to add, modify &amp; edit components and incidents.</p>
+                <p class='lead'>{{ trans('dashboard.team.description') }}</p>
 
                 <div class='user-grid'>
                     @foreach($teamMembers as $member)
