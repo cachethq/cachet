@@ -53,6 +53,15 @@
                             <div class='row'>
                                 <div class='col-xs-12'>
                                     <div class='form-group'>
+                                        <label>{{ trans('setup.show_support') }}</label>
+                                        <input type='hidden' value='0' name='show_support' />
+                                        <input type='checkbox' value='1' name='show_support' class='form-control' {{ Setting::get("show_support") ? "checked" : null }} />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='row'>
+                                <div class='col-xs-12'>
+                                    <div class='form-group'>
                                         <label>{{ trans('forms.settings.app-setup.banner') }}</label>
                                         @if($banner = Setting::get('app_banner'))
                                         <div id="banner-view" class='well'>
