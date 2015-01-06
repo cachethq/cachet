@@ -126,4 +126,50 @@ $(function() {
         $('#banner-view').remove();
         $('input[name=remove_banner]').val('1');
     });
+
+    // Setup wizard
+    $('.wizard-next').on('click', function () {
+        var $form   = $('#setup-form'),
+            $btn    = $(this),
+            current = $btn.data('currentBlock'),
+            next    = $btn.data('nextBlock');
+
+        $btn.button('loading');
+
+        // Only validate going forward. If current group is invalid, do not go further
+        if (next > current) {
+            var url = '/setup/step' + current;
+            $.post(url, $form.serializeObject())
+                .done(function(response) {
+                    goForward(current, next);
+                })
+                .fail(function(response) {
+                    var errors = _.toArray(response.responseJSON.errors);
+                    _.each(errors, function(error) {
+                        (new CachetHQ.Notifier()).notify(error);
+                    });
+                })
+                .always(function() {
+                    $btn.button('reset');
+                });
+
+            return false;
+        }
+    });
+
+    function goForward(current, next) {
+        // validation was ok. We can go on next step.
+        $('.block-' + current)
+          .removeClass('show')
+          .addClass('hidden');
+
+        $('.block-' + next)
+          .removeClass('hidden')
+          .addClass('show');
+
+        $('.steps .step')
+            .removeClass("active")
+            .filter(":lt(" + (next) + ")")
+            .addClass("active");
+    }
 });

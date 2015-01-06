@@ -8,6 +8,8 @@ use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\View;
 
@@ -36,11 +38,34 @@ class SetupController extends Controller
     }
 
     /**
+     * Handles validation on step one of setup form.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function postStep1()
+    {
+        $postData = Binput::all();
+
+        $v = Validator::make($postData, [
+            'settings.app_name'     => 'required',
+            'settings.app_domain'   => 'required',
+            'settings.show_support' => 'boolean',
+        ]);
+
+        if ($v->passes()) {
+            return Response::json(['status' => 1]);
+        } else {
+            // No good, let's try that again.
+            return Response::json(['errors' => $v->messages()], 400);
+        }
+    }
+
+    /**
      * Handles the actual app setup.
      *
-     * @return \Illuminate\Http\RedirectResponse
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
-    public function postIndex()
+    public function postStep2()
     {
         $postData = Binput::all();
 
@@ -76,9 +101,17 @@ class SetupController extends Controller
                 ]);
             }
 
+            if (Request::ajax()) {
+                return Response::json(['status' => 1]);
+            }
+
             return Redirect::to('dashboard');
         } else {
             // No good, let's try that again.
+            if (Request::ajax()) {
+                return Response::json(['errors' => $v->messages()], 400);
+            }
+
             return Redirect::back()->withInput()->with('errors', $v->messages());
         }
     }
