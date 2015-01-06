@@ -8,6 +8,12 @@
     ],
     "license": "MIT",
     "type": "project",
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/Sjimi/slack"
+        }
+    ],
     "require": {
         "php": ">=5.4",
         "ext-mcrypt": "*",
@@ -22,7 +28,9 @@
         "roumen/feed": "~2.8",
         "thujohn/rss": "~1.0",
         "watson/validating": "0.10.*",
-        "jenssegers/date": "~2.0"
+        "jenssegers/date": "~2.0",
+        "maknz/slack": "dev-master",
+        "twilio/sdk": "dev-master"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.3",
