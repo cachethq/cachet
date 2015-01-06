@@ -10,7 +10,7 @@ class NotifierAbstract
     private $message;
 
     /**
-     * Set the Notifier
+     * Set the Notifier.
      *
      * @param NotifierInterface $notifier
      *
@@ -24,7 +24,7 @@ class NotifierAbstract
     }
 
     /**
-     * Set Params to the notifier
+     * Set Params to the notifier.
      *
      * @param $params
      *
@@ -38,7 +38,7 @@ class NotifierAbstract
     }
 
     /**
-     * Send the notification
+     * Send the notification.
      *
      * @return $this
      */
@@ -50,7 +50,7 @@ class NotifierAbstract
     }
 
     /**
-     * This function is used to prepare the message
+     * This function is used to prepare the message.
      *
      * @param Model $model
      *

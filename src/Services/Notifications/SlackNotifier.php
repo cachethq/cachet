@@ -2,14 +2,13 @@
 
 namespace CachetHQ\Cachet\Services\Notifications;
 
-use Maknz\Slack\Client;
 use Illuminate\Database\Eloquent\Model;
+use Maknz\Slack\Client;
 
 class SlackNotifier implements NotifierInterface
 {
     protected $client = null;
     private $message;
-
 
     /**
      * Sender of notification.
@@ -52,7 +51,7 @@ class SlackNotifier implements NotifierInterface
     }
 
     /**
-     * Set params in order to construct the request
+     * Set params in order to construct the request.
      *
      * @param array $params . $params comes from properties' field.
      *
@@ -69,7 +68,7 @@ class SlackNotifier implements NotifierInterface
     }
 
     /**
-     * You can edit the message
+     * You can edit the message.
      *
      * @param Model $model
      *

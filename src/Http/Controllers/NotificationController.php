@@ -36,7 +36,7 @@ class NotificationController extends Controller
     }
 
     /**
-     * Show Slack's configuration
+     * Show Slack's configuration.
      *
      * @return View
      */
@@ -52,12 +52,12 @@ class NotificationController extends Controller
             'subMenu'    => $this->subMenu,
             'partial'    => 'slack',
             'properties' => $slackProperties,
-            'active'     => $slackConfiguration->active
+            'active'     => $slackConfiguration->active,
             ]);
     }
 
     /**
-     * Show Twilio's configuration
+     * Show Twilio's configuration.
      *
      * @return View
      */
@@ -73,18 +73,17 @@ class NotificationController extends Controller
             'subMenu'    => $this->subMenu,
             'partial'    => 'twilio',
             'properties' => $twilioProperties,
-            'active'     => $twilioConfiguration->active
+            'active'     => $twilioConfiguration->active,
         ]);
     }
 
     /**
-     * Edit Slack configuration
+     * Edit Slack configuration.
      *
      * @return Redirect
      */
     public function editSlack()
     {
-
         $slackConfiguration = Service::where('type', 'slack')->first();
         $properties = [
             'endpoint'     => Binput::get('endpoint'),
@@ -97,24 +96,24 @@ class NotificationController extends Controller
         $slackConfiguration->active = (Binput::get('active') == 1) ? 1 : 0;
 
         $slackConfiguration->save();
+
         return Redirect::back();
     }
 
-     /**
-     * Edit Twilio configuration
+    /**
+     * Edit Twilio configuration.
      *
      * @return Redirect
      */
     public function editTwilio()
     {
-
         $twilioConfiguration = Service::where('type', 'twilio')->first();
         $properties = [
-            'token'     => Binput::get('token'),
-            'from'      => Binput::get('from'),
-            'to'     => Binput::get('to'),
-            'account_id' => Binput::get('account_id'),
-            'token'   => Binput::get('token'),
+            'token'        => Binput::get('token'),
+            'from'         => Binput::get('from'),
+            'to'           => Binput::get('to'),
+            'account_id'   => Binput::get('account_id'),
+            'token'        => Binput::get('token'),
             'notifierName' => 'TwilioNotifier',
         ];
 
@@ -122,6 +121,7 @@ class NotificationController extends Controller
         $twilioConfiguration->active = (Binput::get('active') == 1) ? 1 : 0;
 
         $twilioConfiguration->save();
+
         return Redirect::back();
     }
 }
