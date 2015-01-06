@@ -9,6 +9,12 @@ Things to remember:
 - Be descriptive
 - Be respectful of others
 
+## Languages
+
+You **must not** write plain-English into the code, rather into the `app/lang/en/` language files (where appropriate). We can then push out the changes to our translators.
+
+The only place where it is advisable to write English text into the code (as opposed to the language file) is for the API.
+
 ## Coding Standards
 
 Please follow existing coding standards:
