@@ -22,6 +22,15 @@ class Setting extends Model
     protected $fillable = ['name', 'value'];
 
     /**
+     * List of attributes that have default values.
+     *
+     * @var array
+     */
+    protected $attributes = [
+        'value' => '',
+    ];
+
+    /**
      * Returns a setting from the database.
      *
      * @param string $settingName
