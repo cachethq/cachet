@@ -3,15 +3,13 @@
 namespace CachetHQ\Cachet\Services\Notifications;
 
 use Illuminate\Database\Eloquent\Model;
-use Services_Twilio AS Twilio;
+use Services_Twilio as Twilio;
 
 class TwilioNotifier implements NotifierInterface
 {
-
     protected $twilio, $to, $from;
 
     private $message;
-
 
     /**
      * Recipient of notification.
@@ -59,7 +57,7 @@ class TwilioNotifier implements NotifierInterface
     }
 
     /**
-     * Set params in order to construct the request
+     * Set params in order to construct the request.
      *
      * @param array $params . $params comes from properties' field.
      *
@@ -75,7 +73,7 @@ class TwilioNotifier implements NotifierInterface
     }
 
     /**
-     * You can edit the message
+     * You can edit the message.
      *
      * @param Model $model
      *

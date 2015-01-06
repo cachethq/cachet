@@ -8,7 +8,7 @@ use CachetHQ\Cachet\Services\Notifications\NotifierAbstract;
 class IncidentObserver
 {
     /**
-     * When an Incident is saved (created or updated) this event is triggered
+     * When an Incident is saved (created or updated) this event is triggered.
      *
      * @param \Illuminate\Database\Eloquent\Model $model
      *

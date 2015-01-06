@@ -2,6 +2,7 @@
 namespace CachetHQ\Cachet\Services\Notifications;
 
 use Illuminate\Database\Eloquent\Model;
+
 interface NotifierInterface
 {
     /**
