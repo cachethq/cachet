@@ -154,7 +154,7 @@ $(function() {
             var url = '/setup/step' + current;
             $.post(url, $form.serializeObject())
                 .done(function(response) {
-                    goForward(current, next);
+                    goToStep(current, next);
                 })
                 .fail(function(response) {
                     var errors = _.toArray(response.responseJSON.errors);
@@ -167,10 +167,13 @@ $(function() {
                 });
 
             return false;
+        } else {
+            goToStep(current, next);
+            $btn.button('reset');
         }
     });
 
-    function goForward(current, next) {
+    function goToStep(current, next) {
         // validation was ok. We can go on next step.
         $('.block-' + current)
           .removeClass('show')

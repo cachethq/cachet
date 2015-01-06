@@ -1,16 +1,16 @@
 @if(Auth::check())
 <div class="sidebar">
-    <div class='sidebar-inner'>
+    <div class="sidebar-inner">
         <div class="profile">
-            <div class='row'>
-                <div class='col-xs-3'>
+            <div class="row">
+                <div class="col-xs-3">
                     <div class="avatar">
                         <a href="{{ url('dashboard/user') }}">
                             <img src="{{ Auth::user()->gravatar }}" alt="">
                         </a>
                     </div>
                 </div>
-                <div class='col-xs-9 username-wrapper'>
+                <div class="col-xs-9 username-wrapper">
                     <div class="profile pull-left">
                         <div class="username">{{ Auth::user()->username }}</div>
                     </div>

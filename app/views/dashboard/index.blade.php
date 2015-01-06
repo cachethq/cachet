@@ -12,32 +12,32 @@
     <div class="content-wrapper">
         <div class="row">
             <div class="col-md-12">
-                <h4 class='sub-header'>{{ trans('dashboard.components.component_statuses') }}</h4>
-                <div class='panel panel-default'>
-                    <div class='list-group'>
+                <h4 class="sub-header">{{ trans('dashboard.components.component_statuses') }}</h4>
+                <div class="panel panel-default">
+                    <div class="list-group">
                         @forelse($components as $component)
-                        <div class='list-group-item'>
+                        <div class="list-group-item">
                             {{ Form::open(['class' => 'component-inline form-horizontal', 'data-messenger' => trans('dashboard.components.edit.success')]) }}
-                            <div class='row striped-list-item'>
-                                <div class='col-lg-4 col-sm-12'>
+                            <div class="row striped-list-item">
+                                <div class="col-lg-4 col-sm-12">
                                     <h4>{{ $component->name }}</h4>
                                 </div>
-                                <div class='col-lg-8 col-sm-12 radio-items'>
+                                <div class="col-lg-8 col-sm-12 radio-items">
                                     @foreach(trans('cachet.components.status') as $statusID => $status)
-                                    <div class='radio-inline'>
+                                    <div class="radio-inline">
                                         <label>
-                                            <input type='radio' name='status' value='{{ $statusID }}' {{ $component->status === $statusID ? "checked" : null }} />
+                                            <input type="radio" name="status" value="{{ $statusID }}" {{ $component->status === $statusID ? 'checked' : null }} />
                                             {{ $status }}
                                         </label>
                                     </div>
                                     @endforeach
                                 </div>
                             </div>
-                            <input type='hidden' name='component_id' value='{{ $component->id }}' />
+                            <input type="hidden" name="component_id" value="{{ $component->id }}" />
                             {{ Form::close() }}
                         </div>
                         @empty
-                        <div class='list-group-item text-danger'>{{ trans('dashboard.components.add.message') }}</div>
+                        <div class="list-group-item text-danger">{{ trans('dashboard.components.add.message') }}</div>
                         @endforelse
                     </div>
                 </div>

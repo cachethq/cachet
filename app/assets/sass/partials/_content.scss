@@ -51,6 +51,9 @@ body.dashboard {
         .sub-header {
             font-weight: 300;
             text-transform: uppercase;
+            a {
+               text-transform: none;
+            }
         }
 
         .striped-list {

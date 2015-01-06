@@ -14,7 +14,7 @@
         <div class="row">
             <div class="col-md-12">
                 @if($incident = Session::get('incident'))
-                <div class="alert alert-{{ $incident->isValid() ? "success" : "danger" }}">
+                <div class="alert alert-{{ $incident->isValid() ? 'success' : 'danger' }}">
                     @if($incident->isValid())
                         {{ sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.awesome'), trans('dashboard.incidents.add.success')) }}
                     @else
@@ -27,7 +27,7 @@
                     <fieldset>
                         <div class="form-group">
                             <label for="incident-name">{{ trans('forms.incidents.name') }}</label>
-                            <input type="text" class='form-control' name='incident[name]' id='incident-name' required />
+                            <input type="text" class="form-control" name="incident[name]" id="incident-name" required />
                         </div>
                         <div class="form-group">
                             <label for="incident-name">{{ trans('forms.incidents.status') }}</label><br />
@@ -55,7 +55,7 @@
                         <div class="form-group">
                             <label>{{ trans('forms.incidents.message') }}</label>
                             <textarea name="incident[message]" class="form-control" rows="5"></textarea>
-                            <span class='help-block'>{{ trans('forms.incidents.message-help') }}</span>
+                            <span class="help-block">{{ trans('forms.incidents.message-help') }}</span>
                         </div>
                     </fieldset>
 

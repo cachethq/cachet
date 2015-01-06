@@ -7,7 +7,7 @@
             <h4>{{ trans('setup.title') }}</h4>
             <br>
         </div>
-        <div class='col-xs-12 col-xs-offset-0 col-sm-8 col-sm-offset-2'>
+        <div class="col-xs-12 col-xs-offset-0 col-sm-8 col-sm-offset-2">
             <div class="steps">
                 <div class="step active">
                     {{ trans('setup.status_page_setup') }}
@@ -26,23 +26,23 @@
             {{ Form::open(['name' => 'SetupForm', 'class' => 'form-vertical', 'id' => 'setup-form', 'role' => 'form', 'method' => 'POST']) }}
                 <div class="step block-1 show">
                     <fieldset>
-                        <div class='form-group'>
-                            <label class='sr-only'>{{ trans('forms.site_name') }}</label>
-                            <input type='text' name='settings[app_name]' class='form-control' placeholder='{{ trans("forms.setup.site_name") }}' value='{{ Input::old("settings.app_name", "") }}' required />
+                        <div class="form-group">
+                            <label class="sr-only">{{ trans('forms.site_name') }}</label>
+                            <input type="text" name="settings[app_name]" class="form-control" placeholder="{{ trans('forms.setup.site_name') }}" value="{{ Input::old('settings.app_name', '') }}" required />
                             @if($errors->has('settings.app_name'))
-                            <span class='text-danger'>{{ $errors->first('settings.app_name') }}</span>
+                            <span class="text-danger">{{ $errors->first('settings.app_name') }}</span>
                             @endif
                         </div>
-                        <div class='form-group'>
-                            <label class='sr-only'>{{ trans('forms.site_domain') }}</label>
-                            <input type='text' name='settings[app_domain]' class='form-control' placeholder='{{ trans("forms.setup.site_domain") }}' value='{{ Input::old("settings.app_domain", "") }}' required />
+                        <div class="form-group">
+                            <label class="sr-only">{{ trans('forms.site_domain') }}</label>
+                            <input type="text" name="settings[app_domain]" class="form-control" placeholder="{{ trans('forms.setup.site_domain') }}" value="{{ Input::old('settings.app_domain', '') }}" required />
                             @if($errors->has('settings.app_domain'))
-                            <span class='text-danger'>{{ $errors->first('settings.app_domain') }}</span>
+                            <span class="text-danger">{{ $errors->first('settings.app_domain') }}</span>
                             @endif
                         </div>
-                        <div class='form-group'>
+                        <div class="form-group">
                             <label>
-                                <input type='checkbox' name='settings[show_support]' value='1' checked />
+                                <input type="checkbox" name="settings[show_support]" value="1" checked />
                                 {{ trans("setup.show_support") }}
                             </label>
                             <hr/>
@@ -54,31 +54,31 @@
                 </div>
                 <div class="step block-2 hidden">
                     <fieldset>
-                        <div class='form-group'>
-                            <label class='sr-only'>{{ trans("forms.username") }}</label>
-                            <input type='text' name='user[username]' class='form-control' placeholder='{{ trans("forms.setup.username") }}' value='{{ Input::old("user.username", "") }}' required />
+                        <div class="form-group">
+                            <label class="sr-only">{{ trans("forms.username") }}</label>
+                            <input type="text" name="user[username]" class="form-control" placeholder="{{ trans('forms.setup.username') }}" value="{{ Input::old('user.username', '') }}" required />
                             @if($errors->has('user.username'))
-                            <span class='text-danger'>{{ $errors->first('user.username') }}</span>
+                            <span class="text-danger">{{ $errors->first('user.username') }}</span>
                             @endif
                         </div>
-                        <div class='form-group'>
-                            <label class='sr-only'>{{ trans("forms.email") }}</label>
-                            <input type='text' name='user[email]' class='form-control' placeholder='{{ trans("forms.setup.email") }}' value='{{ Input::old("user.email", "") }}' required />
+                        <div class="form-group">
+                            <label class="sr-only">{{ trans("forms.email") }}</label>
+                            <input type="text" name="user[email]" class="form-control" placeholder="{{ trans('forms.setup.email') }}" value="{{ Input::old('user.email', '') }}" required />
                             @if($errors->has('user.email'))
-                            <span class='text-danger'>{{ $errors->first('user.email') }}</span>
+                            <span class="text-danger">{{ $errors->first('user.email') }}</span>
                             @endif
                         </div>
-                        <div class='form-group'>
-                            <label class='sr-only'>{{ trans("forms.password") }}</label>
-                            <input type='password' name='user[password]' class='form-control' placeholder='{{ trans("forms.setup.password") }}' value='{{ Input::old("user.password", "") }}' required />
+                        <div class="form-group">
+                            <label class="sr-only">{{ trans("forms.password") }}</label>
+                            <input type="password" name="user[password]" class="form-control" placeholder="{{ trans('forms.setup.password') }}" value="{{ Input::old('user.password', '') }}" required />
                             @if($errors->has('user.password'))
-                            <span class='text-danger'>{{ $errors->first('user.password') }}</span>
+                            <span class="text-danger">{{ $errors->first('user.password') }}</span>
                             @endif
                         </div>
                     </fieldset>
                     <hr />
-                    <div class='form-group'>
-                        <input type='hidden' name='settings[app_incident_days]' value='7' />
+                    <div class="form-group">
+                        <input type="hidden" name="settings[app_incident_days]" value="7" />
                         <span class="wizard-next btn btn-info" data-current-block="2" data-next-block="1">
                             {{ trans('pagination.previous') }}
                         </span>

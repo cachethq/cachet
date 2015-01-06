@@ -1,4 +1,4 @@
-<style type='text/css'>
+<style type="text/css">
 body.status-page {
     @if($styleBackgroundColor = Setting::get('style_background_color'))
     background-color: {{ $styleBackgroundColor }};
