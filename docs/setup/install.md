@@ -46,7 +46,6 @@ npm install -g gulp
 curl -sS https://getcomposer.org/installer | php  #always be careful when piping from the internet!
 ```
 
-
 ## Build the assets.
 
 ```bash
