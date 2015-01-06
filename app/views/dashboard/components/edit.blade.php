@@ -38,7 +38,7 @@
                             </select>
                         </div>
                         <div class='form-group'>
-                            <label>{{ trans('forms.components.group') }}</label>
+                            <label>{{ trans('forms.components.description') }}</label>
                             <textarea name='component[description]' class='form-control' rows='5'>{{ $component->description }}</textarea>
                         </div>
                         @if($groups->count() > 0)
