@@ -42,6 +42,20 @@ $ git fetch origin
 $ git reset --hard origin/master
 ```
 
+## Change the buildpack
+
+You'll only need to do this if your `BUILDPACK_URL` env var is different to `https://github.com/cachethq/cachet-buildpack`. You can check this by running:
+
+```bash
+$ heroku config:get BUILDPACK_URL
+```
+
+If you're buildpack does not match the above, you need to run:
+
+```bash
+$ heroku config:set BUILDPACK_URL=https://github.com/cachethq/cachet-buildpack
+```
+
 ## Push the changes
 
 Our app will now be running the latest version of Cachet, we just need to push it back to Heroku.
