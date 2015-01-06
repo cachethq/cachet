@@ -43,7 +43,7 @@
                         </div>
                         @if($groups->count() > 0)
                         <div class='form-group'>
-                            <label>Group</label>
+                            <label>{{ trans('forms.components.group') }}</label>
                             <select name='component[group_id]' class='form-control'>
                                 <option {{ $component->group_id === null ? "selected" : null }}></option>
                                 @foreach($groups as $group)
