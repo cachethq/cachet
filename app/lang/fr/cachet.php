@@ -4,8 +4,8 @@ return [
     // Components
     'components' => [
         'status' => [
-            1 => 'Opérationel',
-            2 => 'Problèmes de performances',
+            1 => 'Opérationnel',
+            2 => 'Problème de performances',
             3 => 'Panne partielle',
             4 => 'Panne majeure',
         ],
@@ -28,13 +28,13 @@ return [
 
     // Service Status
     'service' => [
-        'good' => 'Tous les systèmes sont fonctionnels.',
-        'bad'  => 'Certains systèmes rencontrent des problèmes.',
+        'good' => 'Tous les services sont fonctionnels.',
+        'bad'  => 'Certains services rencontrent des problèmes.',
     ],
 
     'api' => [
-        'regenerate' => 'Regénérer une clé API',
-        'revoke'     => 'Révoquer cette clé API',
+        'regenerate' => 'Regénérer une clé d\'API',
+        'revoke'     => 'Révoquer cette clé d\'API',
     ],
 
     // Other
