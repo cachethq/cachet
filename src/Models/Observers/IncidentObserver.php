@@ -16,10 +16,10 @@ class IncidentObserver
 
             $notifier = new NotifierAbstract();
             $classname = 'CachetHQ\\Cachet\\Services\\Notifications\\'.$properties->notifierName;
-            $notifier = $notifier->setNotifier(new $classname());
-            $notifier->setParamsToNotifier($properties);
-            $message = $notifier->prepareMessage($model);
-            $notifier->send($message);
+            $notifier->setNotifier(new $classname())
+                     ->setParamsToNotifier($properties)
+                     ->prepareMessage($model)
+                     ->send();
         }
     }
 }

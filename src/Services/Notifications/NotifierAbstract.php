@@ -2,14 +2,12 @@
 
 namespace CachetHQ\Cachet\Services\Notifications;
 
+use Illuminate\Database\Eloquent\Model;
+
 class NotifierAbstract
 {
     private $notifier;
-    private $params = [];
-
-    public function __construct()
-    {
-    }
+    private $message;
 
     public function setNotifier(NotifierInterface $notifier)
     {
@@ -25,15 +23,17 @@ class NotifierAbstract
         return $this;
     }
 
-    public function send($message)
+    public function send()
     {
-        $this->notifier->send($message);
+        $this->notifier->send($this->message);
 
         return $this;
     }
 
-    public function prepareMessage(\Illuminate\Database\Eloquent\Model $model)
+    public function prepareMessage(Model $model)
     {
-        return $this->notifier->prepareMessage($model);
+        $this->message = $this->notifier->prepareMessage($model);
+
+        return $this;
     }
 }

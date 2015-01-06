@@ -3,10 +3,12 @@
 namespace CachetHQ\Cachet\Services\Notifications;
 
 use Maknz\Slack\Client;
+use Illuminate\Database\Eloquent\Model;
 
 class SlackNotifier implements NotifierInterface
 {
     protected $client = null;
+    private $message;
 
     public function __construct()
     {
@@ -26,9 +28,9 @@ class SlackNotifier implements NotifierInterface
         return $this;
     }
 
-    public function send($message)
+    public function send()
     {
-        $this->client->send($message);
+        $this->client->send($this->message);
 
         return $this;
     }
@@ -42,11 +44,11 @@ class SlackNotifier implements NotifierInterface
 
         return $this;
     }
-    //$model = incident
-    public function prepareMessage(\Illuminate\Database\Eloquent\Model $model)
-    {
-        $message = 'Status : '.$model->status.' '.$model->name.$model->message;
 
-        return $message;
+    public function prepareMessage(Model $model)
+    {
+        $this->message = 'Status : '.$model->status.' '.$model->name.$model->message;
+
+        return $this;
     }
 }

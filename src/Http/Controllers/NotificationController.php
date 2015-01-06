@@ -3,15 +3,16 @@
 namespace CachetHQ\Cachet\Http\Controllers;
 
 use CachetHQ\Cachet\Models\Service;
-use CachetHQ\Cachet\Services\Notifications\SlackNotifier;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 
 class NotificationController extends Controller
 {
-    public function __construct()
-    {
-    }
+
+    /**
+     *
+     *
+     */
     public function slack()
     {
         $properties = [
@@ -25,5 +26,26 @@ class NotificationController extends Controller
         $slack->type = "slack";
         $slack->active = 1;
         $slack->save();
+    }
+
+    /**
+     *
+     *
+     */
+    public function twilio()
+    {
+        $properties = [
+            'token'        => Binput::get('twilio_token'),
+            'account_id'   => Binput::get('twilio_sid'),
+            'from'         => Binput::get('twilio_from'),
+            'to'           => Binput::get('twilio_to'),
+            'notifierName' => 'TwilioNotifier'
+        ];
+
+        $twilio = new Service();
+        $twilio->properties = $properties;
+        $twilio->type= 'Twilio';
+        $twilio->active = 1;
+        $twilio->save();
     }
 }

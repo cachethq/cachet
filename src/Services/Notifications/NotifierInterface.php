@@ -1,6 +1,7 @@
 <?php
 namespace CachetHQ\Cachet\Services\Notifications;
 
+use Illuminate\Database\Eloquent\Model;
 interface NotifierInterface
 {
     /**
@@ -22,13 +23,12 @@ interface NotifierInterface
     /**
      * Send notification.
      *
-     * @param string $message Notification content
      *
      * @return void
      */
-    public function send($message);
+    public function send();
 
     public function setParams($params);
 
-    public function prepareMessage(\Illuminate\Database\Eloquent\Model $model);
+    public function prepareMessage(Model $model);
 }

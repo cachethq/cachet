@@ -12,8 +12,8 @@
             <h3>{{ trans('dashboard.notifications.notifications') }}</h3>
 
             @include('partials.dashboard.notifications.slack')
+            @include('partials.dashboard.notifications.twilio')
         </div>
-
-
     </div>
+
 @stop
