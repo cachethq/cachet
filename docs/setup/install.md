@@ -36,7 +36,18 @@ $ git clone https://github.com/cachethq/Cachet.git
 $ cd Cachet
 ```
 
-You will also need to build the assets.
+## Install requirements
+
+You need to have a modern version of node.js installed (with NPM) - see https://github.com/nodesource/distributions
+```bash
+apt-get install nodejs
+npm install -g bower
+npm install -g gulp
+curl -sS https://getcomposer.org/installer | php  #always be careful when piping from the internet!
+```
+
+
+## Build the assets.
 
 ```bash
 $ npm install

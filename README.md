@@ -28,6 +28,7 @@ For more information on why I started developing Cachet, check out my [blog post
 - Node.js
     + Bower
     + Gulp
+- Composer
 - mcrypt extension
 
 ## Installation
