@@ -69,6 +69,7 @@ Route::group(['before' => 'auth', 'prefix' => 'dashboard', 'namespace' => 'Cache
         ]);
     });
 
+    Route::post('notifications/slack', 'NotificationController@slack');
     // Team Members
     Route::group(['prefix' => 'team'], function () {
         Route::get('/', [
