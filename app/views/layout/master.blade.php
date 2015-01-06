@@ -53,6 +53,6 @@
     @yield('content')
     </div>
 
-    @include('partials.support-link')
+    @include('partials.footer')
 </body>
 </html>
