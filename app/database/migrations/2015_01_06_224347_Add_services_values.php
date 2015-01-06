@@ -1,8 +1,11 @@
 <?php
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 use CachetHQ\Cachet\Models\Service;
+
+
 class AddServicesValues extends Migration {
 
 	/**
@@ -35,7 +38,12 @@ class AddServicesValues extends Migration {
                 ]
             ]
         ];
-	}
+        Model::unguard();
+        foreach($services as $service)
+        {
+            Service::create($service);
+        }
+    }
 
 	/**
 	 * Reverse the migrations.
