@@ -98,5 +98,8 @@ return [
     'delete' => 'Löschen',
     'submit' => 'Speichern',
     'cancel' => 'Abbrechen',
-    'remove' => 'Entfernen'
+    'remove' => 'Entfernen',
+
+    // Other
+    'optional' => '* Optional',
 ];
