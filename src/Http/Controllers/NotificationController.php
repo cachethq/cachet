@@ -34,9 +34,11 @@ class NotificationController extends Controller
         View::share('subTitle', $this->subTitle);
         View::share('subMenu', $this->subMenu);
     }
+
     /**
+     * Show Slack's configuration
      *
-     *
+     * @return View
      */
     public function showSlack()
     {
@@ -44,6 +46,7 @@ class NotificationController extends Controller
         $slackProperties = $slackConfiguration->properties;
 
         $this->subMenu['slack']['active'] = true;
+
         return View::make('dashboard.notifications.index')->with([
             'pageTitle'  => trans('Notification configuration - Dashboard'),
             'subMenu'    => $this->subMenu,
@@ -51,13 +54,12 @@ class NotificationController extends Controller
             'properties' => $slackProperties,
             'active'     => $slackConfiguration->active
             ]);
-
-
     }
 
     /**
+     * Show Twilio's configuration
      *
-     *
+     * @return View
      */
     public function showTwilio()
     {
@@ -73,21 +75,13 @@ class NotificationController extends Controller
             'properties' => $twilioProperties,
             'active'     => $twilioConfiguration->active
         ]);
-        $properties = [
-            'token'        => Binput::get('twilio_token'),
-            'account_id'   => Binput::get('twilio_sid'),
-            'from'         => Binput::get('twilio_from'),
-            'to'           => Binput::get('twilio_to'),
-            'notifierName' => 'TwilioNotifier'
-        ];
-
-        $twilio = new Service();
-        $twilio->properties = $properties;
-        $twilio->type= 'Twilio';
-        $twilio->active = 1;
-        $twilio->save();
     }
 
+    /**
+     * Edit Slack configuration
+     *
+     * @return Redirect
+     */
     public function editSlack()
     {
 
@@ -106,6 +100,11 @@ class NotificationController extends Controller
         return Redirect::back();
     }
 
+     /**
+     * Edit Twilio configuration
+     *
+     * @return Redirect
+     */
     public function editTwilio()
     {
 
