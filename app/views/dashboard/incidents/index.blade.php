@@ -16,13 +16,13 @@
     <div class="content-wrapper header-fixed">
         <div class="row">
             <div class="col-sm-12">
-                <p class='lead'>{{ trans_choice('dashboard.incidents.logged', $incidents->count(), ['count' => $incidents->count()]) }}</p>
+                <p class="lead">{{ trans_choice('dashboard.incidents.logged', $incidents->count(), ['count' => $incidents->count()]) }}</p>
 
                 <div class="striped-list">
                     @foreach($incidents as $incident)
                     <div class="row striped-list-item">
                         <div class="col-md-6">
-                            <i class='{{ $incident->icon }}'></i> <strong>{{ $incident->name }}</strong>
+                            <i class="{{ $incident->icon }}"></i> <strong>{{ $incident->name }}</strong>
                             @if($incident->message)
                             <p><small>{{ Str::words($incident->message, 5) }}</small></p>
                             @endif

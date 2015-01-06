@@ -1,8 +1,8 @@
 <h4>{{ $date }}</h4>
-<div class='timeline'>
-    <div class='content-wrapper'>
+<div class="timeline">
+    <div class="content-wrapper">
         @forelse($incidents as $incidentID => $incident)
-        <div class="moment {{ $incidentID === 0 ? "first" : null }}">
+        <div class="moment {{ $incidentID === 0 ? 'first' : null }}">
             <div class="row event clearfix">
                 <div class="col-sm-1">
                     <div class="icon status-{{ $incident->status }}">
@@ -14,7 +14,7 @@
                         <div class="panel-heading">
                             <strong>{{ $incident->name }}</strong>
                             <br>
-                            <small class='date'>{{ $incident->created_at->diffForHumans() }}</small>
+                            <small class="date">{{ $incident->created_at->diffForHumans() }}</small>
                         </div>
                         @if($incident->hasMessage())
                         <div class="panel-body">
@@ -26,8 +26,8 @@
             </div>
         </div>
         @empty
-        <div class='panel panel-message'>
-            <div class='panel-body'>
+        <div class="panel panel-message">
+            <div class="panel-body">
                 <p>{{ trans('cachet.incidents.none') }}</p>
             </div>
         </div>

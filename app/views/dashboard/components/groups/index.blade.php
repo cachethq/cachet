@@ -1,7 +1,7 @@
 @extends('layout.dashboard')
 
 @section('content')
-    <div class='content-panel'>
+    <div class="content-panel">
         @if(isset($subMenu))
         @include('partials.dashboard.sub-sidebar')
         @endif
@@ -18,16 +18,16 @@
             <div class="row">
                 <div class="col-sm-12 striped-list">
                     @forelse($groups as $group)
-                    <div class='row striped-list-item'>
-                        <div class='col-md-8'>
+                    <div class="row striped-list-item">
+                        <div class="col-md-8">
                             <strong>{{ $group->name }}</strong>
                         </div>
-                        <div class='col-md-4 text-right'>
-                            <a href='/dashboard/components/groups/{{ $group->id }}/delete' class='btn btn-danger confirm-action' data-method='DELETE'>{{ trans('forms.delete') }}</a>
+                        <div class="col-md-4 text-right">
+                            <a href="/dashboard/components/groups/{{ $group->id }}/delete" class="btn btn-danger confirm-action" data-method="DELETE">{{ trans('forms.delete') }}</a>
                         </div>
                     </div>
                     @empty
-                    <div class='list-group-item text-danger'>{{ trans('dashboard.components.add.message') }}</div>
+                    <div class="list-group-item text-danger">{{ trans('dashboard.components.add.message') }}</div>
                     @endforelse
                 </div>
             </div>

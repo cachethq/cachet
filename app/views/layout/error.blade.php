@@ -21,21 +21,21 @@
 
     <title>{{ $pageTitle ?: Setting::get('app_name') }} Status</title>
 
-    <link href='//fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <link href="//fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="{{ elixir('css/all.css') }}">
 
     @include('partials.stylesheet')
 
     @if($stylesheet = Setting::get('stylesheet'))
-    <style type='text/css'>
+    <style type="text/css">
     {{ $stylesheet }}
     </style>
     @endif
 
     <script src="{{ elixir('js/all.js') }}"></script>
 </head>
-<body class='error-page'>
-    <div class='container'>
+<body class="error-page">
+    <div class="container">
     @yield('content')
     </div>
 </body>

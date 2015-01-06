@@ -2,18 +2,18 @@
 
 @section('content')
     @if($bannerImage = Setting::get('app_banner'))
-    <div class='row app-banner'>
-        <div class='col-md-12 text-center'>
+    <div class="row app-banner">
+        <div class="col-md-12 text-center">
             <?php $bannerType = Setting::get('app_banner_type') ?>
-            <img src='data:{{ $bannerType }};base64, {{ $bannerImage}}' class='banner-image img-responsive' />
+            <img src="data:{{ $bannerType }};base64, {{ $bannerImage}}" class="banner-image img-responsive" />
         </div>
     </div>
     @endif
 
-    <div class='alert alert-{{ $systemStatus }}'>{{ $systemMessage }}</div>
+    <div class="alert alert-{{ $systemStatus }}">{{ $systemMessage }}</div>
 
     @if($aboutApp)
-    <div class='about-app'>
+    <div class="about-app">
         <h1>{{ trans('cachet.about_this_site') }}</h1>
         <p>{{ $aboutApp }}</p>
     </div>

@@ -14,7 +14,7 @@
         <div class="row">
             <div class="col-sm-12">
                 @if($group = Session::get('group'))
-                <div class='alert alert-{{ $group->isValid() ? "success" : "danger" }}'>
+                <div class="alert alert-{{ $group->isValid() ? 'success' : 'danger' }}">
                     @if($group->isValid())
                         {{ sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.awesome'), trans('dashboard.components.groups.add.success')) }}
                     @else
@@ -23,11 +23,11 @@
                 </div>
                 @endif
 
-                <form name='CreateComponentGroupForm' class='form-vertical' role='form' action='/dashboard/components/groups/add' method='POST'>
+                <form name="CreateComponentGroupForm" class="form-vertical" role="form" action="/dashboard/components/groups/add" method="POST">
                     <fieldset>
-                        <div class='form-group'>
-                            <label for='incident-name'>{{ trans('forms.components.groups.name') }}</label>
-                            <input type='text' class='form-control' name='group[name]' id='group-name' required />
+                        <div class="form-group">
+                            <label for="incident-name">{{ trans('forms.components.groups.name') }}</label>
+                            <input type="text" class="form-control" name="group[name]" id="group-name" required />
                         </div>
                     </fieldset>
 

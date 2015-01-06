@@ -12,7 +12,7 @@
             <p>{{ trans('errors.not-found.message') }}</p>
             <br/>
             <p>
-                <a href='/' class='btn btn-default btn-lg'>{{ trans('errors.not-found.link') }}</a>
+                <a href="/" class="btn btn-default btn-lg">{{ trans('errors.not-found.link') }}</a>
             </p>
         </div>
     </div>

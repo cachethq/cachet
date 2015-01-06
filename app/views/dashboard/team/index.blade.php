@@ -16,16 +16,16 @@
     <div class="content-wrapper header-fixed">
         <div class="row">
             <div class="col-sm-12">
-                <p class='lead'>{{ trans('dashboard.team.description') }}</p>
+                <p class="lead">{{ trans('dashboard.team.description') }}</p>
 
-                <div class='user-grid'>
+                <div class="user-grid">
                     @foreach($teamMembers as $member)
-                    <div class='user col-sm-3 col-xs-6'>
-                        <a href='/dashboard/team/{{ $member->id }}'>
-                            <img src='{{ $member->gravatar }}' />
+                    <div class="user col-sm-3 col-xs-6">
+                        <a href="/dashboard/team/{{ $member->id }}">
+                            <img src="{{ $member->gravatar }}" />
                         </a>
-                        <div class='name'>{{ $member->username }}</div>
-                        <div class='email'>{{ $member->email }}</div>
+                        <div class="name">{{ $member->username }}</div>
+                        <div class="email">{{ $member->email }}</div>
                     </div>
                     @endforeach
                 </div>
