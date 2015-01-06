@@ -123,6 +123,22 @@ return [
         'notifications' => 'Notifications',
         'awesome'       => 'Awesome.',
         'whoops'        => 'Whoops.',
+        'active'        => 'Active',
+        'slack'         => [
+            'slack_configuration' => 'Slack Configuration',
+            'slack_endpoint'      => 'Slack Endpoint',
+            'slack_channel'       => 'Channel',
+            'slack_botname'       => 'Bot Name',
+            'title'               => 'Slack',
+        ],
+        'twilio'       => [
+            'twilio_configuration'  => 'Twilio Configuration',
+            'title'                 => 'Twilio',
+            'account_id'            => 'Account SID',
+            'token'                 => 'Auth Token',
+            'from'                  => 'From',
+            'to'                    => 'To',
+        ],
     ],
 
 ];
