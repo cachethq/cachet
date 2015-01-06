@@ -42,6 +42,6 @@ return [
     'about_this_site' => 'À propos de ce site',
     'rss-feed'        => 'Flux RSS',
     'atom-feed'       => 'Flux Atom',
-    'feed'            => 'Flux des statuts',
+    'feed'            => 'Flux des services',
 
 ];
