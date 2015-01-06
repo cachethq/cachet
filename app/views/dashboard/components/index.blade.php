@@ -33,7 +33,7 @@
                             </div>
                             <div class='col-md-4 text-right'>
                                 <a href='/dashboard/components/{{ $component->id }}/edit' class='btn btn-default'>{{ trans('forms.edit') }}</a>
-                                <a href='/dashboard/components/{{ $component->id }}/delete' class='btn btn-danger'>{{ trans('forms.delete') }}</a>
+                                <a href='/dashboard/components/{{ $component->id }}/delete' class='btn btn-danger confirm-action' data-method='DELETE'>{{ trans('forms.delete') }}</a>
                             </div>
                             <input type='hidden' rel='order' name='component[{{ $component->id }}]' value='{{ $component->order }}' />
                         </div>

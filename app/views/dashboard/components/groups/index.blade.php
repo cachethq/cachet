@@ -23,8 +23,7 @@
                             <strong>{{ $group->name }}</strong>
                         </div>
                         <div class='col-md-4 text-right'>
-                            <a href='#' class='btn btn-default'>{{ trans('forms.edit') }}</a>
-                            <a href='#' class='btn btn-danger'>{{ trans('forms.delete') }}</a>
+                            <a href='/dashboard/components/groups/{{ $group->id }}/delete' class='btn btn-danger confirm-action' data-method='DELETE'>{{ trans('forms.delete') }}</a>
                         </div>
                     </div>
                     @empty

@@ -145,6 +145,20 @@ class DashComponentController extends Controller
     }
 
     /**
+     * Deletes a given component group.
+     *
+     * @param \CachetHQ\Cachet\Models\ComponentGroup $group
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function deleteComponentGroupAction(ComponentGroup $group)
+    {
+        $group->delete();
+
+        return Redirect::back();
+    }
+
+    /**
      * Shows the add component group view.
      *
      * @return \Illuminate\View\View

@@ -26,8 +26,9 @@ Route::group(['before' => 'auth', 'prefix' => 'dashboard', 'namespace' => 'Cache
             'as'   => 'dashboard.components.groups.add',
             'uses' => 'DashComponentController@showAddComponentGroup',
         ]);
+        Route::delete('groups/{component_group}/delete', 'DashComponentController@deleteComponentGroupAction');
         Route::post('groups/add', 'DashComponentController@postAddComponentGroup');
-        Route::get('{component}/delete', 'DashComponentController@deleteComponentAction');
+        Route::delete('{component}/delete', 'DashComponentController@deleteComponentAction');
         Route::get('{component}/edit', 'DashComponentController@showEditComponent');
         Route::post('{component}/edit', 'DashComponentController@updateComponentAction');
     });
@@ -43,7 +44,7 @@ Route::group(['before' => 'auth', 'prefix' => 'dashboard', 'namespace' => 'Cache
             'uses' => 'DashIncidentController@showAddIncident',
         ]);
         Route::post('add', 'DashIncidentController@createIncidentAction');
-        Route::get('{incident}/delete', 'DashIncidentController@deleteIncidentAction');
+        Route::delete('{incident}/delete', 'DashIncidentController@deleteIncidentAction');
         Route::get('{incident}/edit', 'DashIncidentController@showEditIncidentAction');
         Route::post('{incident}/edit', 'DashIncidentController@editIncidentAction');
         Route::get('template', [
