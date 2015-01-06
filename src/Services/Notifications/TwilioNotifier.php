@@ -2,28 +2,16 @@
 
 namespace CachetHQ\Cachet\Services\Notifications;
 
-use Maknz\Slack\Client;
 use Illuminate\Database\Eloquent\Model;
+use Services_Twilio AS Twilio;
 
-class SlackNotifier implements NotifierInterface
+class TwilioNotifier implements NotifierInterface
 {
-    protected $client = null;
+
+    protected $twilio, $to, $from;
+
     private $message;
 
-
-    /**
-     * Sender of notification.
-     *
-     * @param string $from The sender
-     *
-     * @return \CachetHQ\Cachet\Services\Notifications\NotifierInterface $this  Return self for chainability
-     */
-    public function from($username)
-    {
-        $this->client->from($username);
-
-        return $this;
-    }
 
     /**
      * Recipient of notification.
@@ -32,9 +20,23 @@ class SlackNotifier implements NotifierInterface
      *
      * @return \CachetHQ\Cachet\Services\Notifications\NotifierInterface $this  Return self for chainability
      */
-    public function to($channel)
+    public function to($to)
     {
-        $this->client->to($channel);
+        $this->to = $to;
+
+        return $this;
+    }
+
+    /**
+     * Sender of notification.
+     *
+     * @param string $from The sender
+     *
+     * @return \CachetHQ\Cachet\Services\Notifications\NotifierInterface $this  Return self for chainability
+     */
+    public function from($from)
+    {
+        $this->from = $from;
 
         return $this;
     }
@@ -46,9 +48,14 @@ class SlackNotifier implements NotifierInterface
      */
     public function send()
     {
-        $this->client->send($this->message);
-
-        return $this;
+        $sms = $this->twilio
+            ->account
+            ->sms_messages
+            ->create(
+                $this->from,
+                $this->to,
+                $this->message
+            );
     }
 
     /**
@@ -60,10 +67,9 @@ class SlackNotifier implements NotifierInterface
      */
     public function setParams($params)
     {
-        $this->client = new Client($params);
-        $this->client->setEndpoint($params->endpoint);
-        $this->from($params->username);
-        $this->to($params->channel);
+        $this->twilio = new Twilio($params->account_id, $params->token);
+        $this->from($params->from);
+        $this->to($params->to);
 
         return $this;
     }

@@ -4,20 +4,26 @@
         <div class='row'>
             <div class='col-xs-12'>
                 <div class='form-group'>
-                    <label>{{ trans('dashboard.notifications.slack.slack_webhookurl') }}</label>
-                    <input type='text' class='form-control' name='slack_webhookurl' value='' required />
+                    <label>{{ trans('dashboard.notifications.slack.slack_endpoint') }}</label>
+                    <input type='text' class='form-control' name='endpoint' value={{$properties->endpoint }} required />
                 </div>
             </div>
             <div class='col-xs-12'>
                 <div class='form-group'>
                     <label>{{ trans('dashboard.notifications.slack.slack_channel') }}</label>
-                    <input type='text' class='form-control' name='slack_channel' value='' required />
+                    <input type='text' class='form-control' name='channel' value={{$properties->channel }}  required />
                 </div>
             </div>
             <div class='col-xs-12'>
                 <div class='form-group'>
                     <label>{{ trans('dashboard.notifications.slack.slack_botname') }}</label>
-                    <input type='text' class='form-control' name='slack_botname' value='' required />
+                    <input type='text' class='form-control' name='username' value={{$properties->username }}  required />
+                </div>
+            </div>
+            <div class='col-xs-12'>
+                <div class='form-group'>
+                    <input type='checkbox' class='' name='active' value="1"
+                    {{ ($active == 1) ? "checked" : "" }} /> {{ trans('dashboard.notifications.active') }}
                 </div>
             </div>
         </div>

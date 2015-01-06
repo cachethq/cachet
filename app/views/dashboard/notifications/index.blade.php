@@ -1,19 +1,18 @@
 @extends('layout.dashboard')
 
 @section('content')
-    <div class="header">
-        <div class="sidebar-toggler visible-xs">
-            <i class="icon ion-navicon"></i>
+<div class='content-panel'>
+    @if(isset($subMenu))
+    @include('partials.dashboard.sub-sidebar')
+    @endif
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-sm-12">
+
+            @include('partials.dashboard.notifications.'.$partial)
+
+
         </div>
-        <i class="ion ion-email"></i> {{ trans('dashboard.notifications.notifications') }}
     </div>
-    <div class="row">
-        <div class="col-sm-12">
-            <h3>{{ trans('dashboard.notifications.notifications') }}</h3>
-
-            @include('partials.dashboard.notifications.slack')
-        </div>
-
-
-    </div>
+</div>
 @stop
