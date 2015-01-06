@@ -121,8 +121,24 @@ return [
     // Notifications
     'notifications'     => [
         'notifications' => 'Notifications',
-        'awesome'       => 'Cool.',
-        'whoops'        => 'Oups.',
+        'awesome'       => 'Génial',
+        'whoops'        => 'Oupss',
+        'active'        => 'Actif',
+        'slack'         => [
+            'slack_configuration' => 'Configuration de Slack',
+            'slack_endpoint'      => 'Endpoint de Slack',
+            'slack_channel'       => 'Channel',
+            'slack_botname'       => 'Nom du Robot',
+            'title'               => 'Slack',
+        ],
+        'twilio'       => [
+            'twilio_configuration'  => 'Configuration de Twilio',
+            'title'                 => 'Twilio',
+            'account_id'            => 'Account SID',
+            'token'                 => 'Auth Token',
+            'from'                  => 'De',
+            'to'                    => 'À',
+        ],
     ],
 
 ];
