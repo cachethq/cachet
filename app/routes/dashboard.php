@@ -8,7 +8,7 @@ Route::group(['before' => 'auth', 'prefix' => 'dashboard', 'namespace' => 'Cache
     ]);
 
     // Components
-    Route::group(['prefix' => 'components'], function() {
+    Route::group(['prefix' => 'components'], function () {
         Route::get('/', [
             'as'   => 'dashboard.components',
             'uses' => 'DashComponentController@showComponents',
@@ -33,7 +33,7 @@ Route::group(['before' => 'auth', 'prefix' => 'dashboard', 'namespace' => 'Cache
     });
 
     // Incidents
-    Route::group(['prefix' => 'incidents'], function() {
+    Route::group(['prefix' => 'incidents'], function () {
         Route::get('/', [
             'as'   => 'dashboard.incidents',
             'uses' => 'DashIncidentController@showIncidents',
@@ -54,7 +54,7 @@ Route::group(['before' => 'auth', 'prefix' => 'dashboard', 'namespace' => 'Cache
     });
 
     // Metrics
-    Route::group(['prefix' => 'metrics'], function() {
+    Route::group(['prefix' => 'metrics'], function () {
         Route::get('/', [
             'as'   => 'dashboard.metrics',
             'uses' => 'DashboardController@showMetrics',
@@ -62,7 +62,7 @@ Route::group(['before' => 'auth', 'prefix' => 'dashboard', 'namespace' => 'Cache
     });
 
     // Notifications
-    Route::group(['prefix' => 'notifications'], function() {
+    Route::group(['prefix' => 'notifications'], function () {
         Route::get('/', [
             'as'   => 'dashboard.notifications',
             'uses' => 'DashboardController@showNotifications',
@@ -70,7 +70,7 @@ Route::group(['before' => 'auth', 'prefix' => 'dashboard', 'namespace' => 'Cache
     });
 
     // Team Members
-    Route::group(['prefix' => 'team'], function() {
+    Route::group(['prefix' => 'team'], function () {
         Route::get('/', [
             'as'   => 'dashboard.team',
             'uses' => 'DashboardController@showTeamView',
@@ -85,7 +85,7 @@ Route::group(['before' => 'auth', 'prefix' => 'dashboard', 'namespace' => 'Cache
     });
 
     // Settings
-    Route::group(['prefix' => 'settings'], function() {
+    Route::group(['prefix' => 'settings'], function () {
         Route::get('setup', [
             'as'   => 'dashboard.settings.setup',
             'uses' => 'DashSettingsController@showSetupView',
@@ -106,7 +106,7 @@ Route::group(['before' => 'auth', 'prefix' => 'dashboard', 'namespace' => 'Cache
     });
 
     // User Settings
-    Route::group(['prefix' => 'user'], function() {
+    Route::group(['prefix' => 'user'], function () {
         Route::get('/', [
             'as'   => 'dashboard.user',
             'uses' => 'DashUserController@showUser',
