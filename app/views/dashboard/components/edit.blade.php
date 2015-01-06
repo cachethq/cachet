@@ -38,12 +38,12 @@
                             </select>
                         </div>
                         <div class='form-group'>
-                            <label>{{ trans('forms.components.group') }}</label>
+                            <label>{{ trans('forms.components.description') }}</label>
                             <textarea name='component[description]' class='form-control' rows='5'>{{ $component->description }}</textarea>
                         </div>
                         @if($groups->count() > 0)
                         <div class='form-group'>
-                            <label>Group</label>
+                            <label>{{ trans('forms.components.group') }}</label>
                             <select name='component[group_id]' class='form-control'>
                                 <option {{ $component->group_id === null ? "selected" : null }}></option>
                                 @foreach($groups as $group)
