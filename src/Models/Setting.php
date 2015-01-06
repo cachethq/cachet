@@ -24,11 +24,9 @@ class Setting extends Model
     /**
      * List of attributes that have default values.
      *
-     * @var array
+     * @var string[]
      */
-    protected $attributes = [
-        'value' => '',
-    ];
+    protected $attributes = ['value' => ''];
 
     /**
      * Returns a setting from the database.
