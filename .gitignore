@@ -19,4 +19,3 @@ public/js
 # Packages
 npm-debug.log
 .vagrant
-composer.lock

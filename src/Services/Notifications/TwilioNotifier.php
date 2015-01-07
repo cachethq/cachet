@@ -7,16 +7,17 @@ use Services_Twilio as Twilio;
 
 class TwilioNotifier implements NotifierInterface
 {
-    protected $twilio, $to, $from;
-
-    private $message;
+    protected $twilio
+    protected $to,
+    protected $from;
+    protected $message;
 
     /**
      * Recipient of notification.
      *
      * @param string $to The recipient
      *
-     * @return \CachetHQ\Cachet\Services\Notifications\NotifierInterface $this  Return self for chainability
+     * @return $this
      */
     public function to($to)
     {
@@ -28,9 +29,9 @@ class TwilioNotifier implements NotifierInterface
     /**
      * Sender of notification.
      *
-     * @param string $from The sender
+     * @param string $from
      *
-     * @return \CachetHQ\Cachet\Services\Notifications\NotifierInterface $this  Return self for chainability
+     * @return $this
      */
     public function from($from)
     {
@@ -59,11 +60,11 @@ class TwilioNotifier implements NotifierInterface
     /**
      * Set params in order to construct the request.
      *
-     * @param array $params . $params comes from properties' field.
+     * @param array $params
      *
-     * @return \CachetHQ\Cachet\Services\Notifications\NotifierInterface $this  Return self for chainability
+     * @return $this
      */
-    public function setParams($params)
+    public function setParams(array $params)
     {
         $this->twilio = new Twilio($params->account_id, $params->token);
         $this->from($params->from);
@@ -75,9 +76,9 @@ class TwilioNotifier implements NotifierInterface
     /**
      * You can edit the message.
      *
-     * @param Model $model
+     * @param \Illuminate\Database\Eloquent\Model $model
      *
-     * @return \CachetHQ\Cachet\Services\Notifications\NotifierInterface $this  Return self for chainability
+     * @return $this
      */
     public function prepareMessage(Model $model)
     {

@@ -9,20 +9,22 @@ use Illuminate\Support\ServiceProvider;
 class NotificationServiceProvider extends ServiceProvider
 {
     /**
-     * Register the service provider.
-     *
-     * @return void
-     */
-    public function register()
-    {
-    }
-    /**
-     * Add the observer to the Incident Model.
+     * Boot the service provider.
      *
      * @return void
      */
     public function boot()
     {
         Incident::observe(new IncidentObserver());
+    }
+
+    /**
+     * Register the service provider.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        //
     }
 }

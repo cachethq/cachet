@@ -12,21 +12,19 @@ class IncidentObserver
      *
      * @param \Illuminate\Database\Eloquent\Model $model
      *
-     * return void
+     * @return void
      */
     public function saved($model)
     {
         $services = Service::where('active', 1)->get();
 
         foreach ($services as $service) {
-            $properties = $service->properties;
-
             $notifier = new NotifierAbstract();
-            $classname = 'CachetHQ\\Cachet\\Services\\Notifications\\'.$properties->notifierName;
+            $classname = 'CachetHQ\\Cachet\\Services\\Notifications\\'.$service->properties->notifierName;
             $notifier->setNotifier(new $classname())
-                     ->setParamsToNotifier($properties)
-                     ->prepareMessage($model)
-                     ->send();
+                ->setParamsToNotifier($service->properties)
+                ->prepareMessage($model)
+                ->send();
         }
     }
 }
