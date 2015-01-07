@@ -6,30 +6,45 @@ use Illuminate\Database\Eloquent\Model;
 interface NotifierInterface
 {
     /**
-     * Recipients of notification.
+     * Recipient of notification.
      *
      * @param string $to The recipient
      *
-     * @return CachetHQ\Cachet\Services\Notifications $this  Return self for chainability
+     * @return $this
      */
     public function to($to);
+
     /**
      * Sender of notification.
      *
-     * @param string $from The sender
+     * @param string $from
      *
-     * @return CachetHQ\Cachet\Services\Notifications $this  Return self for chainability
+     * @return $this
      */
     public function from($from);
+
     /**
      * Send notification.
-     *
      *
      * @return void
      */
     public function send();
 
-    public function setParams($params);
+    /**
+     * Set params in order to construct the request.
+     *
+     * @param array $params
+     *
+     * @return $this
+     */
+    public function setParams(array $params)
 
-    public function prepareMessage(Model $model);
+    /**
+     * You can edit the message.
+     *
+     * @param \Illuminate\Database\Eloquent\Model $model
+     *
+     * @return $this
+     */
+    public function prepareMessage(Model $model)
 }

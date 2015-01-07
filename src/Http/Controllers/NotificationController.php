@@ -11,11 +11,9 @@ use Illuminate\Support\Facades\View;
 class NotificationController extends Controller
 {
     protected $subMenu = [];
-    protected $subTitle;
 
     public function __construct()
     {
-        $this->subTitle = trans('dashboard.notifications.notifications');
         $this->subMenu = [
             'slack' => [
                 'title'  => trans('dashboard.notifications.slack.title'),
@@ -31,14 +29,15 @@ class NotificationController extends Controller
             ],
         ];
 
-        View::share('subTitle', $this->subTitle);
         View::share('subMenu', $this->subMenu);
+
+        View::share('subTitle', trans('dashboard.notifications.notifications'));
     }
 
     /**
      * Show Slack's configuration.
      *
-     * @return View
+     * @return \Illuminate\View\View
      */
     public function showSlack()
     {
@@ -53,13 +52,13 @@ class NotificationController extends Controller
             'partial'    => 'slack',
             'properties' => $slackProperties,
             'active'     => $slackConfiguration->active,
-            ]);
+        ]);
     }
 
     /**
      * Show Twilio's configuration.
      *
-     * @return View
+     * @return \Illuminate\View\View
      */
     public function showTwilio()
     {
@@ -80,7 +79,7 @@ class NotificationController extends Controller
     /**
      * Edit Slack configuration.
      *
-     * @return Redirect
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function editSlack()
     {
@@ -103,7 +102,7 @@ class NotificationController extends Controller
     /**
      * Edit Twilio configuration.
      *
-     * @return Redirect
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function editTwilio()
     {

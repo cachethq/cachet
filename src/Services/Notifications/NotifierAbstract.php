@@ -6,13 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class NotifierAbstract
 {
-    private $notifier;
-    private $message;
+    protected $notifier;
+    protected $message;
 
     /**
-     * Set the Notifier.
+     * Set the notifier.
      *
-     * @param NotifierInterface $notifier
+     * @param \CachetHQ\Cachet\Services\Notifications\NotifierInterface $notifier
      *
      * @return $this
      */
@@ -24,13 +24,13 @@ class NotifierAbstract
     }
 
     /**
-     * Set Params to the notifier.
+     * Set params to the notifier.
      *
-     * @param $params
+     * @param array $params
      *
      * @return $this
      */
-    public function setParamsToNotifier($params)
+    public function setParamsToNotifier(array $params)
     {
         $this->notifier->setParams($params);
 
@@ -52,7 +52,7 @@ class NotifierAbstract
     /**
      * This function is used to prepare the message.
      *
-     * @param Model $model
+     * @param \Illuminate\Database\Eloquent\Model $model
      *
      * @return $this
      */

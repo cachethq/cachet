@@ -7,33 +7,33 @@ use Maknz\Slack\Client;
 
 class SlackNotifier implements NotifierInterface
 {
-    protected $client = null;
-    private $message;
+    protected $client;
+    protected $message;
 
     /**
-     * Sender of notification.
+     * Recipients of notification.
      *
-     * @param string $from The sender
+     * @param string $to The recipient
      *
-     * @return \CachetHQ\Cachet\Services\Notifications\NotifierInterface $this  Return self for chainability
+     * @return $this
      */
-    public function from($username)
+    public function to($channel)
     {
-        $this->client->from($username);
+        $this->client->to($channel);
 
         return $this;
     }
 
     /**
-     * Recipient of notification.
+     * Sender of notification.
      *
-     * @param string $to The recipient
+     * @param string $from
      *
-     * @return \CachetHQ\Cachet\Services\Notifications\NotifierInterface $this  Return self for chainability
+     * @return $this
      */
-    public function to($channel)
+    public function from($username)
     {
-        $this->client->to($channel);
+        $this->client->from($username);
 
         return $this;
     }
@@ -53,11 +53,11 @@ class SlackNotifier implements NotifierInterface
     /**
      * Set params in order to construct the request.
      *
-     * @param array $params . $params comes from properties' field.
+     * @param array $params
      *
-     * @return \CachetHQ\Cachet\Services\Notifications\NotifierInterface $this  Return self for chainability
+     * @return $this
      */
-    public function setParams($params)
+    public function setParams(array $params)
     {
         $this->client = new Client($params);
         $this->client->setEndpoint($params->endpoint);
@@ -70,9 +70,9 @@ class SlackNotifier implements NotifierInterface
     /**
      * You can edit the message.
      *
-     * @param Model $model
+     * @param \Illuminate\Database\Eloquent\Model $model
      *
-     * @return \CachetHQ\Cachet\Services\Notifications\NotifierInterface $this  Return self for chainability
+     * @return $this
      */
     public function prepareMessage(Model $model)
     {

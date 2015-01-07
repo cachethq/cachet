@@ -1,7 +1,6 @@
 <?php
 
 use CachetHQ\Cachet\Models\Service;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Migrations\Migration;
 
 class AddServicesValues extends Migration
@@ -36,7 +35,7 @@ class AddServicesValues extends Migration
                 ]
             ],
         ];
-        Model::unguard();
+
         foreach ($services as $service) {
             Service::create($service);
         }
@@ -49,6 +48,6 @@ class AddServicesValues extends Migration
      */
     public function down()
     {
-        //
+        // TODO: add a reverse migration
     }
 }

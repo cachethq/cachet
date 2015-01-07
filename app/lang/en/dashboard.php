@@ -119,7 +119,7 @@ return [
     'logout'      => 'Logout',
 
     // Notifications
-    'notifications'     => [
+    'notifications' => [
         'notifications' => 'Notifications',
         'awesome'       => 'Awesome.',
         'whoops'        => 'Whoops.',
@@ -131,13 +131,13 @@ return [
             'slack_botname'       => 'Bot Name',
             'title'               => 'Slack',
         ],
-        'twilio'       => [
-            'twilio_configuration'  => 'Twilio Configuration',
-            'title'                 => 'Twilio',
-            'account_id'            => 'Account SID',
-            'token'                 => 'Auth Token',
-            'from'                  => 'From',
-            'to'                    => 'To',
+        'twilio' => [
+            'twilio_configuration' => 'Twilio Configuration',
+            'title'                => 'Twilio',
+            'account_id'           => 'Account SID',
+            'token'                => 'Auth Token',
+            'from'                 => 'From',
+            'to'                   => 'To',
         ],
     ],
 
