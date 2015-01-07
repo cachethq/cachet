@@ -35,7 +35,7 @@
                         </div>
                         <div class="form-group">
                             <label class="sr-only">{{ trans('forms.site_domain') }}</label>
-                            <input type="text" name="settings[app_domain]" class="form-control" placeholder="{{ trans('forms.setup.site_domain') }}" value="{{ Input::old('settings.app_domain', '') }}" required />
+                            <input type="text" name="settings[app_domain]" class="form-control" placeholder="{{ trans('forms.setup.site_domain') }}" value="{{ Input::old('settings.app_domain', url()) }}" required />
                             @if($errors->has('settings.app_domain'))
                             <span class="text-danger">{{ $errors->first('settings.app_domain') }}</span>
                             @endif
