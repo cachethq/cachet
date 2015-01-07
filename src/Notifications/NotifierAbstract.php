@@ -3,6 +3,7 @@
 namespace CachetHQ\Cachet\Notifications;
 
 use Illuminate\Database\Eloquent\Model;
+use stdClass as stdClass;
 
 class NotifierAbstract
 {
@@ -26,11 +27,11 @@ class NotifierAbstract
     /**
      * Set params to the notifier.
      *
-     * @param array $params
+     * @param \stdClass $params
      *
      * @return \CachetHQ\Cachet\Notifications\NotifierAbstract
      */
-    public function setParamsToNotifier(array $params)
+    public function setParamsToNotifier(stdClass $params)
     {
         $this->notifier->setParams($params);
 

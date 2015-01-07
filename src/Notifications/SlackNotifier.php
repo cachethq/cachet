@@ -4,6 +4,7 @@ namespace CachetHQ\Cachet\Notifications;
 
 use Illuminate\Database\Eloquent\Model;
 use Maknz\Slack\Client;
+use stdClass as stdClass;
 
 class SlackNotifier implements NotifierInterface
 {
@@ -53,11 +54,11 @@ class SlackNotifier implements NotifierInterface
     /**
      * Set params in order to construct the request.
      *
-     * @param array $params
+     * @param \stdClass $params
      *
      * @return \CachetHQ\Cachet\Notifications\NotifierInterface
      */
-    public function setParams(array $params)
+    public function setParams(stdClass $params)
     {
         $this->client = new Client($params);
         $this->client->setEndpoint($params->endpoint);
@@ -76,7 +77,13 @@ class SlackNotifier implements NotifierInterface
      */
     public function prepareMessage(Model $model)
     {
-        $this->message = 'Status : '.$model->status.' '.$model->name.$model->message;
+        $this->message = trans('dashboard.notifications.message',
+            [
+                'name'    => $model->name,
+                'message' => $model->message,
+                'status'  => $model->status
+            ]
+        );
 
         return $this;
     }
