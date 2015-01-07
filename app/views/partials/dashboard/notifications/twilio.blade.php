@@ -12,25 +12,25 @@
                     <div class="col-xs-12">
                         <div class="form-group">
                             <label>{{ trans('dashboard.notifications.twilio.account_id') }}</label>
-                            <input type="text" class="form-control" name="account_id" value={{$properties->account_id}} required />
+                            <input type="text" class="form-control" name="account_id" value={{ $properties->account_id }} required />
                         </div>
                     </div>
                     <div class="col-xs-12">
                         <div class="form-group">
                             <label>{{ trans('dashboard.notifications.twilio.token') }}</label>
-                            <input type="text" class="form-control" name="token" value={{$properties->token}} required />
+                            <input type="text" class="form-control" name="token" value={{ $properties->token }} required />
                         </div>
                     </div>
                     <div class="col-xs-12">
                         <div class="form-group">
                             <label>{{ trans('dashboard.notifications.twilio.from') }}</label>
-                            <input type="text" class="form-control" name="from" value={{$properties->from }} required />
+                            <input type="text" class="form-control" name="from" value={{ $properties->from }} required />
                         </div>
                     </div>
                     <div class="col-xs-12">
                         <div class="form-group">
                             <label>{{ trans('dashboard.notifications.twilio.to') }}</label>
-                            <input type="text" class="form-control" name="to" value={{$properties->to }} required />
+                            <input type="text" class="form-control" name="to" value={{ $properties->to }} required />
                         </div>
                     </div>
                     <div class="col-xs-12">

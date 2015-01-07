@@ -12,19 +12,19 @@
                     <div class="col-xs-12">
                         <div class="form-group">
                             <label>{{ trans('dashboard.notifications.slack.slack_endpoint') }}</label>
-                            <input type="text" class="form-control" name="endpoint" value={{$properties->endpoint }} required />
+                            <input type="text" class="form-control" name="endpoint" value={{ $properties->endpoint }} required />
                         </div>
                     </div>
                     <div class="col-xs-12">
                         <div class="form-group">
                             <label>{{ trans('dashboard.notifications.slack.slack_channel') }}</label>
-                            <input type="text" class="form-control" name="channel" value={{$properties->channel }}  required />
+                            <input type="text" class="form-control" name="channel" value={{ $properties->channel }}  required />
                         </div>
                     </div>
                     <div class="col-xs-12">
                         <div class="form-group">
                             <label>{{ trans('dashboard.notifications.slack.slack_botname') }}</label>
-                            <input type="text" class="form-control" name="username" value={{$properties->username }}  required />
+                            <input type="text" class="form-control" name="username" value={{ $properties->username }}  required />
                         </div>
                     </div>
                     <div class="col-xs-12">
