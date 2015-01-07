@@ -8,7 +8,7 @@ use Services_Twilio as Twilio;
 class TwilioNotifier implements NotifierInterface
 {
     protected $twilio;
-    protected $to,
+    protected $to;
     protected $from;
     protected $message;
 
