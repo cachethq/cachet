@@ -3,7 +3,7 @@
 namespace CachetHQ\Cachet\Models\Observers;
 
 use CachetHQ\Cachet\Models\Service;
-use CachetHQ\Cachet\Services\Notifications\NotifierAbstract;
+use CachetHQ\Cachet\Notifications\NotifierAbstract;
 
 class IncidentObserver
 {
@@ -20,7 +20,7 @@ class IncidentObserver
 
         foreach ($services as $service) {
             $notifier = new NotifierAbstract();
-            $classname = 'CachetHQ\\Cachet\\Services\\Notifications\\'.$service->properties->notifierName;
+            $classname = 'CachetHQ\\Cachet\\Notifications\\'.$service->properties->notifierName;
             $notifier->setNotifier(new $classname())
                 ->setParamsToNotifier($service->properties)
                 ->prepareMessage($model)

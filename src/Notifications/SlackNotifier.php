@@ -1,6 +1,6 @@
 <?php
 
-namespace CachetHQ\Cachet\Services\Notifications;
+namespace CachetHQ\Cachet\Notifications;
 
 use Illuminate\Database\Eloquent\Model;
 use Maknz\Slack\Client;
@@ -15,7 +15,7 @@ class SlackNotifier implements NotifierInterface
      *
      * @param string $to The recipient
      *
-     * @return $this
+     * @return \CachetHQ\Cachet\Notifications\NotifierInterface
      */
     public function to($channel)
     {
@@ -29,7 +29,7 @@ class SlackNotifier implements NotifierInterface
      *
      * @param string $from
      *
-     * @return $this
+     * @return \CachetHQ\Cachet\Notifications\NotifierInterface
      */
     public function from($username)
     {
@@ -41,7 +41,7 @@ class SlackNotifier implements NotifierInterface
     /**
      * Send notification.
      *
-     * @return void
+     * @return \CachetHQ\Cachet\Notifications\NotifierInterface
      */
     public function send()
     {
@@ -55,7 +55,7 @@ class SlackNotifier implements NotifierInterface
      *
      * @param array $params
      *
-     * @return $this
+     * @return \CachetHQ\Cachet\Notifications\NotifierInterface
      */
     public function setParams(array $params)
     {
@@ -72,7 +72,7 @@ class SlackNotifier implements NotifierInterface
      *
      * @param \Illuminate\Database\Eloquent\Model $model
      *
-     * @return $this
+     * @return \CachetHQ\Cachet\Notifications\NotifierInterface
      */
     public function prepareMessage(Model $model)
     {

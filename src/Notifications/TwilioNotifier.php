@@ -1,6 +1,6 @@
 <?php
 
-namespace CachetHQ\Cachet\Services\Notifications;
+namespace CachetHQ\Cachet\Notifications;
 
 use Illuminate\Database\Eloquent\Model;
 use Services_Twilio as Twilio;
@@ -17,7 +17,7 @@ class TwilioNotifier implements NotifierInterface
      *
      * @param string $to The recipient
      *
-     * @return $this
+     * @return \CachetHQ\Cachet\Notifications\NotifierInterface
      */
     public function to($to)
     {
@@ -31,7 +31,7 @@ class TwilioNotifier implements NotifierInterface
      *
      * @param string $from
      *
-     * @return $this
+     * @return \CachetHQ\Cachet\Notifications\NotifierInterface
      */
     public function from($from)
     {
@@ -43,18 +43,13 @@ class TwilioNotifier implements NotifierInterface
     /**
      * Send notification.
      *
-     * @return void
+     * @return \CachetHQ\Cachet\Notifications\NotifierInterface
      */
     public function send()
     {
-        $sms = $this->twilio
-            ->account
-            ->sms_messages
-            ->create(
-                $this->from,
-                $this->to,
-                $this->message
-            );
+        $this->twilio->account->sms_messages->create($this->from, $this->to, $this->message);
+
+        return £this
     }
 
     /**
@@ -62,7 +57,7 @@ class TwilioNotifier implements NotifierInterface
      *
      * @param array $params
      *
-     * @return $this
+     * @return \CachetHQ\Cachet\Notifications\NotifierInterface
      */
     public function setParams(array $params)
     {
@@ -78,7 +73,7 @@ class TwilioNotifier implements NotifierInterface
      *
      * @param \Illuminate\Database\Eloquent\Model $model
      *
-     * @return $this
+     * @return \CachetHQ\Cachet\Notifications\NotifierInterface
      */
     public function prepareMessage(Model $model)
     {

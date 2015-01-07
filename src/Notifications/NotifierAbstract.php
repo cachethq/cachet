@@ -1,6 +1,6 @@
 <?php
 
-namespace CachetHQ\Cachet\Services\Notifications;
+namespace CachetHQ\Cachet\Notifications;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -12,9 +12,9 @@ class NotifierAbstract
     /**
      * Set the notifier.
      *
-     * @param \CachetHQ\Cachet\Services\Notifications\NotifierInterface $notifier
+     * @param \CachetHQ\Cachet\Notifications\NotifierInterface $notifier
      *
-     * @return $this
+     * @return \CachetHQ\Cachet\Notifications\NotifierAbstract
      */
     public function setNotifier(NotifierInterface $notifier)
     {
@@ -28,7 +28,7 @@ class NotifierAbstract
      *
      * @param array $params
      *
-     * @return $this
+     * @return \CachetHQ\Cachet\Notifications\NotifierAbstract
      */
     public function setParamsToNotifier(array $params)
     {
@@ -40,7 +40,7 @@ class NotifierAbstract
     /**
      * Send the notification.
      *
-     * @return $this
+     * @return \CachetHQ\Cachet\Notifications\NotifierAbstract
      */
     public function send()
     {
@@ -54,7 +54,7 @@ class NotifierAbstract
      *
      * @param \Illuminate\Database\Eloquent\Model $model
      *
-     * @return $this
+     * @return \CachetHQ\Cachet\Notifications\NotifierAbstract
      */
     public function prepareMessage(Model $model)
     {

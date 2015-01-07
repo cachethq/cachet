@@ -1,5 +1,5 @@
 <?php
-namespace CachetHQ\Cachet\Services\Notifications;
+namespace CachetHQ\Cachet\Notifications;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -10,7 +10,7 @@ interface NotifierInterface
      *
      * @param string $to The recipient
      *
-     * @return $this
+     * @return \CachetHQ\Cachet\Notifications\NotifierInterface
      */
     public function to($to);
 
@@ -19,14 +19,14 @@ interface NotifierInterface
      *
      * @param string $from
      *
-     * @return $this
+     * @return \CachetHQ\Cachet\Notifications\NotifierInterface
      */
     public function from($from);
 
     /**
      * Send notification.
      *
-     * @return void
+     * @return \CachetHQ\Cachet\Notifications\NotifierInterface
      */
     public function send();
 
@@ -35,16 +35,16 @@ interface NotifierInterface
      *
      * @param array $params
      *
-     * @return $this
+     * @return \CachetHQ\Cachet\Notifications\NotifierInterface
      */
-    public function setParams(array $params)
+    public function setParams(array $params);
 
     /**
      * You can edit the message.
      *
      * @param \Illuminate\Database\Eloquent\Model $model
      *
-     * @return $this
+     * @return \CachetHQ\Cachet\Notifications\NotifierInterface
      */
-    public function prepareMessage(Model $model)
+    public function prepareMessage(Model $model);
 }
