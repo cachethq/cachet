@@ -18,6 +18,21 @@ class RoutingServiceProvider extends ServiceProvider
         $this->registerRoutes();
     }
 
+    /**
+     * Register the service provider.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        //
+    }
+
+    /**
+     * Register filters.
+     *
+     * @return void
+     */
     protected function registerFilters()
     {
         // Laravel's before filters
@@ -35,6 +50,11 @@ class RoutingServiceProvider extends ServiceProvider
         $this->app->router->filter('cors', 'CachetHQ\Cachet\Http\After\CorsFilter');
     }
 
+    /**
+     * Register model bindings.
+     *
+     * @return void
+     */
     protected function registerBindings()
     {
         $this->app->router->model('component', 'CachetHQ\Cachet\Models\Component');
@@ -45,6 +65,11 @@ class RoutingServiceProvider extends ServiceProvider
         $this->app->router->model('user', 'CachetHQ\Cachet\Models\User');
     }
 
+    /**
+     * Register all route files.
+     *
+     * @return void
+     */
     protected function registerRoutes()
     {
         $files = glob(app_path('routes').'/*.php');
@@ -52,15 +77,5 @@ class RoutingServiceProvider extends ServiceProvider
         foreach ($files as $file) {
             require $file;
         }
-    }
-
-    /**
-     * Register the service provider.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        //
     }
 }
