@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f529ce7217176f2b01770bc984daf22c",
+    "hash": "c7d0c0e1e1b460b8727ac3674b7efe47",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -1410,6 +1410,54 @@
                 "rest"
             ],
             "time": "2014-12-10 16:59:07"
+        },
+        {
+            "name": "maknz/slack",
+            "version": "0.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/maknz/slack.git",
+                "reference": "0345ab89387ebf76945d84c6cf9b8e4f64982e7f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/maknz/slack/zipball/0345ab89387ebf76945d84c6cf9b8e4f64982e7f",
+                "reference": "0345ab89387ebf76945d84c6cf9b8e4f64982e7f",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "guzzlehttp/guzzle": "~5.0|~4.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.2.*"
+            },
+            "suggest": {
+                "illuminate/support": "Required for Laravel support"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Maknz\\Slack\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "maknz",
+                    "email": "github@mak.geek.nz"
+                }
+            ],
+            "description": "A simple PHP package for sending messages to Slack, with Laravel 4 support",
+            "keywords": [
+                "laravel",
+                "slack"
+            ],
+            "time": "2015-01-06 23:46:12"
         },
         {
             "name": "monolog/monolog",
@@ -2833,6 +2881,56 @@
                 "rss"
             ],
             "time": "2014-12-22 21:07:19"
+        },
+        {
+            "name": "twilio/sdk",
+            "version": "3.12.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twilio/twilio-php.git",
+                "reference": "9d8bb7dad58dc52fc4cbc1f0e905950ad839ca73"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twilio/twilio-php/zipball/9d8bb7dad58dc52fc4cbc1f0e905950ad839ca73",
+                "reference": "9d8bb7dad58dc52fc4cbc1f0e905950ad839ca73",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.1"
+            },
+            "require-dev": {
+                "mockery/mockery": ">=0.7.2",
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Services_Twilio": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kevin Burke",
+                    "email": "kevin@twilio.com"
+                },
+                {
+                    "name": "Kyle Conroy",
+                    "email": "kyle+pear@twilio.com"
+                }
+            ],
+            "description": "A PHP wrapper for Twilio's API",
+            "homepage": "http://github.com/twilio/twilio-php",
+            "keywords": [
+                "api",
+                "sms",
+                "twilio"
+            ],
+            "time": "2014-12-04 19:17:59"
         },
         {
             "name": "watson/validating",

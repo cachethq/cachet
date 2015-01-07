@@ -8,12 +8,6 @@
     ],
     "license": "MIT",
     "type": "project",
-    "repositories": [
-        {
-            "type": "git",
-            "url": "https://github.com/Sjimi/slack"
-        }
-    ],
     "require": {
         "php": ">=5.4",
         "ext-mcrypt": "*",
@@ -21,15 +15,15 @@
         "laravel/framework": "4.2.*",
         "dingo/api": "0.8.*",
         "doctrine/dbal": "2.5.*",
-        "graham-campbell/binput": "~2.1",
-        "graham-campbell/markdown": "~2.0",
-        "graham-campbell/throttle": "~2.0",
-        "guzzlehttp/guzzle": "~5.0",
-        "roumen/feed": "~2.8",
-        "thujohn/rss": "~1.0",
-        "watson/validating": "0.10.*",
-        "maknz/slack":"dev-master",
-        "twilio/sdk": "dev-master"
+        "graham-campbell/binput": "2.1.*",
+        "graham-campbell/markdown": "2.0.*",
+        "graham-campbell/throttle": "2.0.*",
+        "guzzlehttp/guzzle": "5.1.*",
+        "maknz/slack":"0.3.*",
+        "roumen/feed": "2.8.*",
+        "thujohn/rss": "1.0.*",
+        "twilio/sdk": "3.12.*",
+        "watson/validating": "0.10.*"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.3",
