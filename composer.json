@@ -8,12 +8,6 @@
     ],
     "license": "MIT",
     "type": "project",
-    "repositories": [
-        {
-            "type": "git",
-            "url": "https://github.com/Sjimi/slack"
-        }
-    ],
     "require": {
         "php": ">=5.4",
         "ext-mcrypt": "*",
