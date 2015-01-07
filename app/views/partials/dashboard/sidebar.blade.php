@@ -61,7 +61,7 @@
             </li> --}}
             <li {{ set_active('dashboard/notifications') }}>
                 <a href="{{ route('dashboard.notifications') }}">
-                    <i class="ion ion-email"></i> {{ trans('dashboard.notifications.notifications') }}
+                    <i class="ion ion-flash"></i> {{ trans('dashboard.notifications.notifications') }}
                 </a>
             </li>
             <li {{ set_active('dashboard/settings*') }}>
