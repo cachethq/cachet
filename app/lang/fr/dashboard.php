@@ -124,6 +124,7 @@ return [
         'awesome'       => 'Génial',
         'whoops'        => 'Oupss',
         'active'        => 'Actif',
+        'message'       => 'Un incident vient d\'être créé. Voici quelques informations : Nom :name : Message :message : Statut : :status',
         'slack'         => [
             'slack_configuration' => 'Configuration de Slack',
             'slack_endpoint'      => 'Endpoint de Slack',
