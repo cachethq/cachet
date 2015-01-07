@@ -41,6 +41,38 @@
                             @endif
                         </div>
                         <div class="form-group">
+                            <label class="sr-only">{{ trans('forms.site_timezone') }}</label>
+                            <select name="settings[app_timezone]" class="form-control" required>
+                                <option value="">Select Timezone</option>
+                                @foreach($timezones as $region => $list)
+                                <optgroup label="{{ $region }}">
+                                @foreach($list as $timezone => $name)
+                                <option value="{{ $timezone }}" @if(Input::old('settins.app_timezone') == $timezone) selected @endif>
+                                    {{ $name }}
+                                </option>
+                                @endforeach
+                                </optgroup>
+                                @endforeach
+                            </select>
+                            @if($errors->has('settings.app_timezone'))
+                            <span class="text-danger">{{ $errors->first('settings.app_timezone') }}</span>
+                            @endif
+                        </div>
+                        <div class="form-group">
+                            <label class="sr-only">{{ trans('forms.site_locale') }}</label>
+                            <select name="settings[app_locale]" class="form-control" required>
+                                <option value="">Select Language</option>
+                                @foreach($langs as $lang => $name)
+                                <option value="{{ $lang }}" @if(Input::old('settins.app_locale') == $timezone) selected @endif>
+                                    {{ $name }}
+                                </option>
+                                @endforeach
+                            </select>
+                            @if($errors->has('settings.app_locale'))
+                            <span class="text-danger">{{ $errors->first('settings.app_locale') }}</span>
+                            @endif
+                        </div>
+                        <div class="form-group">
                             <label>
                                 <input type="checkbox" name="settings[show_support]" value="1" checked />
                                 {{ trans("setup.show_support") }}

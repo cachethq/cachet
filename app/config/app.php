@@ -127,6 +127,7 @@ return [
         'GrahamCampbell\Markdown\MarkdownServiceProvider',
         'Roumen\Feed\FeedServiceProvider',
         'Thujohn\Rss\RssServiceProvider',
+        'Jenssegers\Date\DateServiceProvider',
 
         'CachetHQ\Cachet\Providers\AuthServiceProvider',
         'CachetHQ\Cachet\Providers\ConsoleServiceProvider',

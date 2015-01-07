@@ -45,6 +45,40 @@
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="form-group">
+                                        <label>{{ trans('forms.settings.app-setup.site-timezone') }}</label>
+                                        <select name="app_timezone" class="form-control" required>
+                                            <option value="">Select Timezone</option>
+                                            @foreach($timezones as $region => $list)
+                                            <optgroup label="{{ $region }}">
+                                            @foreach($list as $timezone => $name)
+                                            <option value="{{ $timezone }}" @if(Setting::get('app_timezone') == $timezone) selected @endif>
+                                                {{ $name }}
+                                            </option>
+                                            @endforeach
+                                            </optgroup>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="form-group">
+                                        <label>{{ trans('forms.settings.app-setup.site-locale') }}</label>
+                                        <select name="app_locale" class="form-control" required>
+                                            <option value="">Select Language</option>
+                                            @foreach($langs as $lang => $name)
+                                            <option value="{{ $lang }}" @if(Setting::get('app_locale') == $lang) selected @endif>
+                                                {{ $name }}
+                                            </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="form-group">
                                         <label>{{ trans('forms.settings.app-setup.days-of-incidents') }}</label>
                                         <input type="number" min="1" max="100" name="app_incident_days" class="form-control" value="{{ Setting::get('app_incident_days') ?: 7 }}" />
                                     </div>
