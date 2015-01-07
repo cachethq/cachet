@@ -7,7 +7,7 @@ use Services_Twilio as Twilio;
 
 class TwilioNotifier implements NotifierInterface
 {
-    protected $twilio
+    protected $twilio;
     protected $to,
     protected $from;
     protected $message;
@@ -49,7 +49,7 @@ class TwilioNotifier implements NotifierInterface
     {
         $this->twilio->account->sms_messages->create($this->from, $this->to, $this->message);
 
-        return £this
+        return $this;
     }
 
     /**
