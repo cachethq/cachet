@@ -3,11 +3,13 @@
 return [
     // Setup form fields
     'setup' => [
-        'email'       => 'Email',
-        'username'    => 'Usuário',
-        'password'    => 'Senha',
-        'site_name'   => 'Nome do site',
-        'site_domain' => 'Domínio do site',
+        'email'          => 'Email',
+        'username'       => 'Usuário',
+        'password'       => 'Senha',
+        'site_name'      => 'Nome do site',
+        'site_domain'    => 'Domínio do site',
+        'site_timezone'  => 'Select your timezone',
+        'site_locale'    => 'Select your language',
     ],
 
     // Login form fields
@@ -50,6 +52,8 @@ return [
         'app-setup' => [
             'site-name'         => 'Nome do site',
             'site-url'          => 'URL do site',
+            'site-timezone'     => 'Site Timezone',
+            'site-locale'       => 'Site Language',
             'about-this-page'   => 'Sobre esta página',
             'days-of-incidents' => 'Quantos dias de incidentes para mostrar?',
             'banner'            => 'Imagem do banner',

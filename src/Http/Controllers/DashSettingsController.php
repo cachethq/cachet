@@ -3,6 +3,8 @@
 namespace CachetHQ\Cachet\Http\Controllers;
 
 use CachetHQ\Cachet\Models\Setting;
+use DateTime;
+use DateTimeZone;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
@@ -54,11 +56,47 @@ class DashSettingsController extends Controller
      */
     public function showSetupView()
     {
+        $langs = [
+            'en'    => 'English',
+            'fr'    => 'Français',
+            'pt-BR' => 'Portuguese, Brazilian',
+        ];
+
+        $regions = [
+            'Africa'     => DateTimeZone::AFRICA,
+            'America'    => DateTimeZone::AMERICA,
+            'Antarctica' => DateTimeZone::ANTARCTICA,
+            'Asia'       => DateTimeZone::ASIA,
+            'Atlantic'   => DateTimeZone::ATLANTIC,
+            'Europe'     => DateTimeZone::EUROPE,
+            'Indian'     => DateTimeZone::INDIAN,
+            'Pacific'    => DateTimeZone::PACIFIC,
+        ];
+
+        $timezones = [];
+
+        foreach ($regions as $name => $mask) {
+            $zones = DateTimeZone::listIdentifiers($mask);
+
+            foreach ($zones as $timezone) {
+                // Lets sample the time there right now
+                $time = new DateTime(null, new DateTimeZone($timezone));
+
+                // Us dumb Americans can't handle millitary time
+                $ampm = $time->format('H') > 12 ? ' ('.$time->format('g:i a').')' : '';
+
+                // Remove region name and add a sample time
+                $timezones[$name][$timezone] = substr($timezone, strlen($name) + 1).' - '.$time->format('H:i').$ampm;
+            }
+        }
+
         $this->subMenu['setup']['active'] = true;
 
         return View::make('dashboard.settings.app-setup')->with([
             'pageTitle' => 'Application Setup - Dashboard',
             'subMenu'   => $this->subMenu,
+            'timezones' => $timezones,
+            'langs'     => $langs,
         ]);
     }
 

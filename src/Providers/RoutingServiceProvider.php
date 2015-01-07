@@ -41,6 +41,7 @@ class RoutingServiceProvider extends ServiceProvider
         $this->app->router->filter('csrf', 'CachetHQ\Cachet\Http\Before\CsrfFilter');
 
         // Cachet's before filters
+        $this->app->router->before('CachetHQ\Cachet\Http\Before\LoadConfigFilter');
         $this->app->router->filter('is_setup', 'CachetHQ\Cachet\Http\Before\IsSetupFilter');
         $this->app->router->filter('has_setting', 'CachetHQ\Cachet\Http\Before\HasSettingFilter');
         $this->app->router->filter('login_throttling', 'CachetHQ\Cachet\Http\Before\LoginThrottlingFilter');

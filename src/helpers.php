@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Request;
 
 if (!function_exists('elixir')) {
@@ -23,6 +24,35 @@ if (!function_exists('elixir')) {
         }
 
         throw new InvalidArgumentException("File {$file} not defined in asset manifest.");
+    }
+}
+
+if (!function_exists('config')) {
+    /**
+     * Get / set the specified configuration value.
+     *
+     * If an array is passed as the key, we will assume you want to set an array of values.
+     *
+     * @param array|string $key
+     * @param mixed        $default
+     *
+     * @return mixed
+     */
+    function config($key = null, $default = null)
+    {
+        if (is_null($key)) {
+            return Config::getItems();
+        }
+
+        if (is_array($key)) {
+            foreach ($key as $innerKey => $innerValue) {
+                Config::set($innerKey, $innerValue);
+            }
+
+            return;
+        }
+
+        return Config::get($key, $default);
     }
 }
 

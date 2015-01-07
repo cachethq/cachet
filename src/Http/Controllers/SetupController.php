@@ -4,6 +4,8 @@ namespace CachetHQ\Cachet\Http\Controllers;
 
 use CachetHQ\Cachet\Models\Setting;
 use CachetHQ\Cachet\Models\User;
+use DateTime;
+use DateTimeZone;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -32,8 +34,44 @@ class SetupController extends Controller
      */
     public function getIndex()
     {
+        $langs = [
+            'en'    => 'English',
+            'fr'    => 'Français',
+            'pt-BR' => 'Portuguese, Brazilian',
+        ];
+
+        $regions = [
+            'Africa'     => DateTimeZone::AFRICA,
+            'America'    => DateTimeZone::AMERICA,
+            'Antarctica' => DateTimeZone::ANTARCTICA,
+            'Asia'       => DateTimeZone::ASIA,
+            'Atlantic'   => DateTimeZone::ATLANTIC,
+            'Europe'     => DateTimeZone::EUROPE,
+            'Indian'     => DateTimeZone::INDIAN,
+            'Pacific'    => DateTimeZone::PACIFIC,
+        ];
+
+        $timezones = [];
+
+        foreach ($regions as $name => $mask) {
+            $zones = DateTimeZone::listIdentifiers($mask);
+
+            foreach ($zones as $timezone) {
+                // Lets sample the time there right now
+                $time = new DateTime(null, new DateTimeZone($timezone));
+
+                // Us dumb Americans can't handle millitary time
+                $ampm = $time->format('H') > 12 ? ' ('.$time->format('g:i a').')' : '';
+
+                // Remove region name and add a sample time
+                $timezones[$name][$timezone] = substr($timezone, strlen($name) + 1).' - '.$time->format('H:i').$ampm;
+            }
+        }
+
         return View::make('setup')->with([
             'pageTitle' => trans('setup.setup'),
+            'timezones' => $timezones,
+            'langs'     => $langs,
         ]);
     }
 
@@ -49,6 +87,8 @@ class SetupController extends Controller
         $v = Validator::make($postData, [
             'settings.app_name'     => 'required',
             'settings.app_domain'   => 'required',
+            'settings.app_timezone' => 'required',
+            'settings.app_locale'   => 'required',
             'settings.show_support' => 'boolean',
         ]);
 
@@ -72,6 +112,8 @@ class SetupController extends Controller
         $v = Validator::make($postData, [
             'settings.app_name'     => 'required',
             'settings.app_domain'   => 'required',
+            'settings.app_timezone' => 'required',
+            'settings.app_locale'   => 'required',
             'settings.show_support' => 'boolean',
             'user.username'         => 'alpha_dash|required',
             'user.email'            => 'email|required',
