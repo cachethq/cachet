@@ -39,8 +39,9 @@ $ cd Cachet
 ## Install requirements
 
 You need to have a modern version of node.js installed (with NPM) - see https://github.com/nodesource/distributions
+
 ```bash
-apt-get install nodejs
+apt-get install nodejs npm
 npm install -g bower
 npm install -g gulp
 curl -sS https://getcomposer.org/installer | php  #always be careful when piping from the internet!
