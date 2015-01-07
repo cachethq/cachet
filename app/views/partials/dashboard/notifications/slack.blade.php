@@ -28,9 +28,10 @@
                         </div>
                     </div>
                     <div class="col-xs-12">
-                        <div class="form-group">
-                            <input type="checkbox" class="" name="active" value="1"
-                            {{ ($active == 1) ? "checked" : "" }} /> {{ trans('dashboard.notifications.active') }}
+                        <div class='form-group'>
+                            <label class='checkbox-inline'>
+                                <input type="checkbox" name="active" value="1" {{ ($active == 1) ? "checked" : "" }} /> {{ trans('dashboard.notifications.active') }}
+                            </label>
                         </div>
                     </div>
                 </div>
