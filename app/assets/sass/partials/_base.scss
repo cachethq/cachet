@@ -7,8 +7,8 @@ body.dashboard {
     width: 100%;
     height: 100%;
     table-layout: fixed;
-    -webkit-font-smoothing: antialiased;
     line-height: $base-line-height;
+    -webkit-font-smoothing: antialiased;
 
     .wrapper {
         padding-left: 0;

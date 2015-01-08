@@ -3,7 +3,8 @@ body.status-page {
     background-color: #F0F3F4;
     color: #333333;
     font-size: 1.4em;
-    font-weight: 300;
+    font-weight: $base-font-weight;
+    -webkit-font-smoothing: antialiased;
 
     hr {
         margin-top: 10px;
