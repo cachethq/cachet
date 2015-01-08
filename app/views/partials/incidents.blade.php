@@ -14,7 +14,10 @@
                         <div class="panel-heading">
                             <strong>{{ $incident->name }}</strong>
                             <br>
-                            <small class="date">{{ $incident->created_at->diffForHumans() }}</small>
+                            <small class="date">
+                                <abbr class="timeago" tabindex="{{ $incidentID }}" data-container="body" data-toggle="popover" data-placement="right" data-trigger="focus" data-content="{{ $incident->created_at_formated }}" data-timeago="{{ $incident->created_at_iso }}">
+                                </abbr>
+                            </small>
                         </div>
                         @if($incident->hasMessage())
                         <div class="panel-body">

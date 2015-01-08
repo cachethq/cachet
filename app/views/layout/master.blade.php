@@ -46,6 +46,10 @@
     </style>
     @endif
 
+    <script type="text/javascript">
+        var Global = {};
+        Global.locale = '{{ Setting::get('app_locale') }}';
+    </script>
     <script src="{{ elixir('js/all.js') }}"></script>
 </head>
 <body class="status-page">

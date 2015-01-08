@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "50862b080034db5b187b78c30807c1d5",
+    "hash": "b561fa017bd12ef775f7765fe28d8839",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -1457,6 +1457,60 @@
                 "rest"
             ],
             "time": "2014-12-10 16:59:07"
+        },
+        {
+            "name": "mccool/laravel-auto-presenter",
+            "version": "2.2.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ShawnMcCool/laravel-auto-presenter.git",
+                "reference": "79e1eab2528262e325419e9441967bd390c4b667"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ShawnMcCool/laravel-auto-presenter/zipball/79e1eab2528262e325419e9441967bd390c4b667",
+                "reference": "79e1eab2528262e325419e9441967bd390c4b667",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/events": "4.2.*",
+                "illuminate/pagination": "4.2.*",
+                "illuminate/support": "4.2.*",
+                "illuminate/view": "4.2.*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.8",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "McCool\\LaravelAutoPresenter": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Graham Campbell",
+                    "email": "graham@mineuk.com"
+                },
+                {
+                    "name": "Shawn McCool",
+                    "email": "shawn@heybigname.com"
+                }
+            ],
+            "description": "A system for auto-decorating models with presenter objects.",
+            "keywords": [
+                "eloquent",
+                "laravel",
+                "lpm",
+                "presenter"
+            ],
+            "time": "2015-01-07 21:55:43"
         },
         {
             "name": "monolog/monolog",
@@ -3792,7 +3846,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "mccool/laravel-auto-presenter": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
