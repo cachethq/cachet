@@ -22,7 +22,9 @@
         "roumen/feed": "~2.8",
         "thujohn/rss": "~1.0",
         "watson/validating": "0.10.*",
-        "jenssegers/date": "~2.0"
+        "jenssegers/date": "~2.0",
+        "maknz/slack": "dev-master",
+        "twilio/sdk": "dev-master"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.3",

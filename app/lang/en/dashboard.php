@@ -119,10 +119,27 @@ return [
     'logout'      => 'Logout',
 
     // Notifications
-    'notifications'     => [
+    'notifications' => [
         'notifications' => 'Notifications',
         'awesome'       => 'Awesome.',
         'whoops'        => 'Whoops.',
+        'active'        => 'Active',
+        'message'       => 'An incident was just created. Here is some information : Name :name : Message :message : Status : :status',
+        'slack'         => [
+            'slack_configuration' => 'Slack Configuration',
+            'slack_endpoint'      => 'Slack Endpoint',
+            'slack_channel'       => 'Channel',
+            'slack_botname'       => 'Bot Name',
+            'title'               => 'Slack',
+        ],
+        'twilio' => [
+            'twilio_configuration' => 'Twilio Configuration',
+            'title'                => 'Twilio',
+            'account_id'           => 'Account SID',
+            'token'                => 'Auth Token',
+            'from'                 => 'From',
+            'to'                   => 'To',
+        ],
     ],
 
 ];

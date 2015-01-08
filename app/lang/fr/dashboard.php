@@ -119,10 +119,27 @@ return [
     'logout'      => 'Déconnexion',
 
     // Notifications
-    'notifications'     => [
+    'notifications' => [
         'notifications' => 'Notifications',
-        'awesome'       => 'Cool.',
-        'whoops'        => 'Oups.',
+        'awesome'       => 'Génial',
+        'whoops'        => 'Oupss',
+        'active'        => 'Actif',
+        'message'       => 'Un incident vient d\'être créé. Voici quelques informations : Nom :name : Message :message : Statut : :status',
+        'slack'         => [
+            'slack_configuration' => 'Configuration de Slack',
+            'slack_endpoint'      => 'Endpoint de Slack',
+            'slack_channel'       => 'Channel',
+            'slack_botname'       => 'Nom du Robot',
+            'title'               => 'Slack',
+        ],
+        'twilio' => [
+            'twilio_configuration' => 'Configuration de Twilio',
+            'title'                => 'Twilio',
+            'account_id'           => 'Account SID',
+            'token'                => 'Auth Token',
+            'from'                 => 'De',
+            'to'                   => 'À',
+        ],
     ],
 
 ];
