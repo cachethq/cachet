@@ -95,6 +95,9 @@ return [
 
     'providers' => [
 
+        /*
+         * Laravel Framework Service Providers...
+         */
         'Illuminate\Foundation\Providers\ArtisanServiceProvider',
         'Illuminate\Auth\AuthServiceProvider',
         'Illuminate\Cache\CacheServiceProvider',
@@ -120,6 +123,9 @@ return [
         'Illuminate\Validation\ValidationServiceProvider',
         'Illuminate\View\ViewServiceProvider',
 
+        /*
+         * Packages Service Providers...
+         */
         'Dingo\Api\Provider\ApiServiceProvider',
         'GrahamCampbell\Security\SecurityServiceProvider',
         'GrahamCampbell\Binput\BinputServiceProvider',
@@ -128,7 +134,11 @@ return [
         'Roumen\Feed\FeedServiceProvider',
         'Thujohn\Rss\RssServiceProvider',
         'Jenssegers\Date\DateServiceProvider',
+        'McCool\LaravelAutoPresenter\LaravelAutoPresenterServiceProvider',
 
+        /*
+         * Application Service Providers...
+         */
         'CachetHQ\Cachet\Providers\AuthServiceProvider',
         'CachetHQ\Cachet\Providers\ConsoleServiceProvider',
         'CachetHQ\Cachet\Providers\RepositoryServiceProvider',

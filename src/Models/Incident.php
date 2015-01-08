@@ -7,6 +7,7 @@ use Dingo\Api\Transformer\TransformableInterface;
 use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletingTrait;
+use McCool\LaravelAutoPresenter\PresenterInterface;
 use Watson\Validating\ValidatingTrait;
 
 /**
@@ -21,7 +22,7 @@ use Watson\Validating\ValidatingTrait;
  * @property \Carbon\Carbon $updated_at
  * @property \Carbon\Carbon $deleted_at
  */
-class Incident extends Model implements TransformableInterface
+class Incident extends Model implements TransformableInterface, PresenterInterface
 {
     use SoftDeletingTrait, ValidatingTrait;
 
@@ -51,6 +52,16 @@ class Incident extends Model implements TransformableInterface
      * @var string[]
      */
     protected $appends = ['humanStatus'];
+
+    /**
+     * Get presenter class.
+     *
+     * @return string
+     */
+    public function getPresenter()
+    {
+        return 'CachetHQ\Cachet\Presenters\IncidentPresenter';
+    }
 
     /**
      * An incident belongs to a component.

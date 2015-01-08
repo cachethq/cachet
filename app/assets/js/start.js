@@ -50,6 +50,15 @@ $(function() {
     // App setup
     window.CachetHQ = {};
 
+    moment.locale(Global.locale);
+
+    $('abbr.timeago').each(function () {
+        var $el = $(this);
+        $el
+            .livestamp($el.data('timeago'))
+            .popover();
+    });
+
     window.CachetHQ.Notifier = function () {
         this.notify = function (message, type, options) {
             type = (typeof type === 'undefined' || type === 'error') ? 'error' : type;
