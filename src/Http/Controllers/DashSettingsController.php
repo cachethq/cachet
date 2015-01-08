@@ -87,6 +87,8 @@ class DashSettingsController extends Controller
 
                 // Remove region name and add a sample time
                 $timezones[$name][$timezone] = substr($timezone, strlen($name) + 1).' - '.$time->format('H:i').$ampm;
+
+                $timezones[$name] = str_replace('_', ' ', $timezones[$name]);
             }
         }
 

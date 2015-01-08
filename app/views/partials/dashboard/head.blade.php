@@ -22,6 +22,11 @@
 
     <link href="//fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="{{ elixir('css/all.css') }}">
+
+    <script type="text/javascript">
+        var Global = {};
+        Global.locale = '{{ Setting::get('app_locale') }}';
+    </script>
     <script src="{{ elixir('js/all.js') }}"></script>
 
 </head>
