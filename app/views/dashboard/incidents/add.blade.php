@@ -27,7 +27,8 @@
                     <fieldset>
                         <div class="form-group">
                             <label for="incident-name">{{ trans('forms.incidents.name') }}</label>
-                            <input type="text" class="form-control" name="incident[name]" id="incident-name" required />
+                            <input type="text" class="form-control" name="incident[name]" id="incident-name" required
+                                   value="{{ (isset($incident) && $incident->name != '') ? $incident->name : '' }}"/>
                         </div>
                         <div class="form-group">
                             <label for="incident-name">{{ trans('forms.incidents.status') }}</label><br />
@@ -54,7 +55,7 @@
                         </div>
                         <div class="form-group">
                             <label>{{ trans('forms.incidents.message') }}</label>
-                            <textarea name="incident[message]" class="form-control" rows="5"></textarea>
+                            <textarea name="incident[message]" class="form-control" rows="5" required>{{ (isset($incident) && $incident->message != '') ? $incident->message : '' }}</textarea>
                             <span class="help-block">{{ trans('forms.incidents.message-help') }}</span>
                         </div>
                     </fieldset>
