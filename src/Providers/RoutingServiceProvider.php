@@ -49,6 +49,7 @@ class RoutingServiceProvider extends ServiceProvider
         // Cachet's after filters
         $this->app->router->filter('allowed_domains', 'CachetHQ\Cachet\Http\After\AllowedDomainsFilter');
         $this->app->router->filter('cors', 'CachetHQ\Cachet\Http\After\CorsFilter');
+        $this->app->router->filter('sslfix', 'CachetHQ\Cachet\Http\After\SslFixFilter');
     }
 
     /**

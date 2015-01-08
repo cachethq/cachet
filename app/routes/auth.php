@@ -4,6 +4,7 @@ Route::group(['before' => 'has_setting:app_name', 'namespace' => 'CachetHQ\Cache
     // Login routes
     Route::get('/auth/login', [
         'before' => 'guest',
+        'after'  => 'sslfix',
         'as'     => 'login',
         'uses'   => 'AuthController@showLogin',
     ]);
