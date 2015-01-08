@@ -17,7 +17,7 @@ class CreateMetricsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('suffix');
-            $table->text('description')->default('');
+            $table->text('description');
             $table->boolean('display_chart')->default(1);
             $table->timestamps();
 
