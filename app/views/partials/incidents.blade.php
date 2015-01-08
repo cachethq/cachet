@@ -15,7 +15,7 @@
                             <strong>{{ $incident->name }}</strong>
                             <br>
                             <small class="date">
-                                <abbr class="timeago" tabindex="{{ $incidentID }}" data-container="body" data-toggle="popover" data-placement="right" data-trigger="focus" data-content="{{ $incident->created_at_formated }}" data-timeago="{{ $incident->created_at_iso }}">
+                                <abbr class="timeago" data-toggle="tooltip" data-placement="right" title="{{ $incident->created_at_formated }}" data-timeago="{{ $incident->created_at_iso }}">
                                 </abbr>
                             </small>
                         </div>

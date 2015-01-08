@@ -56,7 +56,7 @@ $(function() {
         var $el = $(this);
         $el
             .livestamp($el.data('timeago'))
-            .popover();
+            .tooltip();
     });
 
     window.CachetHQ.Notifier = function () {
