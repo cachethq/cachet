@@ -18,7 +18,7 @@ class CreateIncidentsTable extends Migration
             $table->integer('component_id')->default(0);
             $table->string('name');
             $table->integer('status');
-            $table->longText('message')->default('');
+            $table->longText('message');
             $table->integer('user_id');
             $table->timestamps();
             $table->softDeletes();

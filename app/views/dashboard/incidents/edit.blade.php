@@ -44,7 +44,7 @@
                     </div>
                     <div class="form-group">
                         <label>{{ trans('forms.incidents.message') }}</label>
-                        <textarea name="incident[message]" class="form-control" rows="5">{{ $incident->message }}</textarea>
+                        <textarea name="incident[message]" class="form-control" rows="5" required>{{ $incident->message }}</textarea>
                         <span class="help-block">{{ trans('forms.incidents.message-help') }}</span>
                     </div>
                 </fieldset>
