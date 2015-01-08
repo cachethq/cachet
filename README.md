@@ -38,15 +38,7 @@ See the [INSTALL.md](/docs/setup/install.md) document for more information. If y
 
 ## Translations
 
-A special thank you to our translators, who have provided us with the chance to share Cachet with the world.
-
-- **Andreas Karlsson** - Swedish
-- **Marcin Kurczewski** - Polish
-- **Pedro Maia** - Portuguese
-- **Salvatore Gentile** - Italian
-- **Joe Cohens, Salvatore Gentile** - Spanish
-
-If you'd like to contribute translations, please check out our [CrowdIn project](https://crowdin.com/project/cachet).
+A special thank you to our [translators](https://crowdin.com/project/cachet/activity_stream), who have allowed us to share Cachet with the world. If you'd like to contribute translations, please check out our [CrowdIn project](https://crowdin.com/project/cachet).
 
 ## License
 
