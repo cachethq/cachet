@@ -24,7 +24,7 @@ class IncidentTemplate extends Model
      * @var string[]
      */
     protected $rules = [
-        'name'     => 'alpha|required',
+        'name'     => 'required',
         'template' => 'required',
     ];
 

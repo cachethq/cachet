@@ -3,8 +3,10 @@
 namespace CachetHQ\Cachet\Http\Controllers;
 
 use CachetHQ\Cachet\Models\Component;
+use CachetHQ\Cachet\Models\IncidentTemplate;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Routing\Controller;
 
 class DashAPIController extends Controller
@@ -43,5 +45,18 @@ class DashAPIController extends Controller
         }
 
         return $componentData;
+    }
+
+    public function getIncidentTemplate()
+    {
+        $templateSlug = Binput::get('slug');
+
+        $template = IncidentTemplate::where('slug', $templateSlug)->first();
+
+        if ($template) {
+            return $template;
+        }
+
+        throw new ModelNotFoundException('Incident template for '.$templateSlug.' could not be found.');
     }
 }
