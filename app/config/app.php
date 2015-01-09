@@ -173,17 +173,17 @@ return [
 
     'aliases' => [
 
-        'App'       => 'Illuminate\Support\Facades\App',
-        'Auth'      => 'Illuminate\Support\Facades\Auth',
-        'Form'      => 'Illuminate\Support\Facades\Form',
-        'Input'     => 'Illuminate\Support\Facades\Input',
-        'Redirect'  => 'Illuminate\Support\Facades\Redirect',
-        'Request'   => 'Illuminate\Support\Facades\Request',
-        'Response'  => 'Illuminate\Support\Facades\Response',
-        'Route'     => 'Illuminate\Support\Facades\Route',
-        'Session'   => 'Illuminate\Support\Facades\Session',
-        'Setting'   => 'CachetHQ\Cachet\Models\Setting',
-        'Str'       => 'Illuminate\Support\Str',
+        'App'      => 'Illuminate\Support\Facades\App',
+        'Auth'     => 'Illuminate\Support\Facades\Auth',
+        'Form'     => 'Illuminate\Support\Facades\Form',
+        'Input'    => 'Illuminate\Support\Facades\Input',
+        'Redirect' => 'Illuminate\Support\Facades\Redirect',
+        'Request'  => 'Illuminate\Support\Facades\Request',
+        'Response' => 'Illuminate\Support\Facades\Response',
+        'Route'    => 'Illuminate\Support\Facades\Route',
+        'Session'  => 'Illuminate\Support\Facades\Session',
+        'Setting'  => 'CachetHQ\Cachet\Models\Setting',
+        'Str'      => 'Illuminate\Support\Str',
 
     ],
 

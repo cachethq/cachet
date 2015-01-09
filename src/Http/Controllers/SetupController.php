@@ -127,10 +127,10 @@ class SetupController extends Controller
             $userDetails = array_pull($postData, 'user');
 
             $user = User::create([
-                'username'          => $userDetails['username'],
-                'email'             => $userDetails['email'],
-                'password'          => $userDetails['password'],
-                'level'             => 1,
+                'username' => $userDetails['username'],
+                'email'    => $userDetails['email'],
+                'password' => $userDetails['password'],
+                'level'    => 1,
             ]);
 
             Auth::login($user);

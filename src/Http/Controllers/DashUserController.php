@@ -33,11 +33,19 @@ class DashUserController extends Controller
     {
         $items = Binput::all();
 
+        $passwordChange = array_get($items, 'password');
         $enable2FA = (bool) array_pull($items, 'google2fa');
 
         // Let's enable/disable auth
-        $authSecret = $enable2FA && ! Auth::user()->hasEnabled2FA ? Google2FA::generateSecretKey() : '';
-        $items['google_2fa_secret'] = $authSecret;
+        if ($enable2FA && ! Auth::user()->hasTwoFactor) {
+            $items['google_2fa_secret'] = Google2FA::generateSecretKey();
+        } elseif (! $enable2FA) {
+            $items['google_2fa_secret'] = '';
+        }
+
+        if (trim($passwordChange) === '') {
+            unset($items['password']);
+        }
 
         $updated = Auth::user()->update($items);
 

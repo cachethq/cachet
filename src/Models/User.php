@@ -139,8 +139,8 @@ class User extends Model implements UserInterface, RemindableInterface
      *
      * @return bool
      */
-    public function getHasEnabled2FAAttribute()
+    public function getHasTwoFactorAttribute()
     {
-        return (bool) (trim($this->google_2fa_secret) !== '');
+        return trim($this->google_2fa_secret) !== '';
     }
 }

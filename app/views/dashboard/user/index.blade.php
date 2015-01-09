@@ -46,11 +46,11 @@
                         <div class="form-group">
                             <label class="checkbox-inline">
                                 <input type="hidden" name="google2fa" value="0" />
-                                <input type='checkbox' name="google2fa" value="1" {{ Auth::user()->hasEnabled2FA ? "checked" : "" }} />
+                                <input type='checkbox' name="google2fa" value="1" {{ Auth::user()->hasTwoFactor ? "checked" : "" }} />
                                 {{ trans('forms.setup.enable_google2fa') }}
                             </label>
                         </div>
-                        @if(Auth::user()->hasEnabled2FA)
+                        @if(Auth::user()->hasTwoFactor)
                         <div class="form-group">
                             <?php
                             $google2fa_url = PragmaRX\Google2FA\Vendor\Laravel\Facade::getQRCodeGoogleUrl(

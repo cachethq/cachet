@@ -40,7 +40,7 @@ class AuthController extends Controller
             // Log the user in for one request.
             Auth::once($loginData);
             // Do we have Two Factor Auth enabled?
-            if (Auth::user()->hasEnabled2FA) {
+            if (Auth::user()->hasTwoFactor) {
                 // Temporarily store the user.
                 Session::put('2fa_id', Auth::user()->id);
 

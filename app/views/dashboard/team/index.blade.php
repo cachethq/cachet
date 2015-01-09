@@ -21,7 +21,7 @@
                 <div class="user-grid">
                     @foreach($teamMembers as $member)
                     <div class="user col-sm-3 col-xs-6">
-                        <a href="@if(Auth::user()->id == $member->id) {{ url('dashboard/user') }} @else /dashboard/team/{{ $member->id }}  @endif">
+                        <a href="@if(Auth::user()->id == $member->id) {{ url('dashboard/user') }} @else /dashboard/team/{{ $member->id }} @endif">
                             <img src="{{ $member->gravatar }}" />
                         </a>
                         <div class="name">{{ $member->username }}</div>
