@@ -16,7 +16,7 @@
 
                 <div class="form-group">
                     <label class="sr-only">{{ trans('forms.login.email') }}</label>
-                    {{ Form::email('email', Binput::old('email'), [
+                    {{ Form::email('email', Input::old('email'), [
                         'class' => 'form-control', 'placeholder' => trans('forms.login.email'), 'required' => 'required'
                     ]) }}
                 </div>
