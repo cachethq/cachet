@@ -126,12 +126,11 @@ class SetupController extends Controller
             // Pull the user details out.
             $userDetails = array_pull($postData, 'user');
 
-            // TODO: Do we want to just use Model::unguard() here?
             $user = User::create([
-                'username' => $userDetails['username'],
-                'email'    => $userDetails['email'],
-                'password' => $userDetails['password'],
-                'level'    => 1,
+                'username'          => $userDetails['username'],
+                'email'             => $userDetails['email'],
+                'password'          => $userDetails['password'],
+                'level'             => 1,
             ]);
 
             Auth::login($user);

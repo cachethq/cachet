@@ -8,6 +8,7 @@ use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
+use PragmaRX\Google2FA\Vendor\Laravel\Facade as Google2FA;
 
 class DashUserController extends Controller
 {
@@ -31,6 +32,12 @@ class DashUserController extends Controller
     public function postUser()
     {
         $items = Binput::all();
+
+        $enable2FA = (bool) array_pull($items, 'google2fa');
+
+        // Let's enable/disable auth
+        $authSecret = $enable2FA && ! Auth::user()->hasEnabled2FA ? Google2FA::generateSecretKey() : '';
+        $items['google_2fa_secret'] = $authSecret;
 
         $updated = Auth::user()->update($items);
 

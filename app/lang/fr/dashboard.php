@@ -108,9 +108,10 @@ return [
 
     // Login
     'login' => [
-        'login'     => 'Connexion',
-        'logged_in' => "Vous êtes connecté.",
-        'welcome'   => 'Re-bonjour !',
+        'login'      => 'Connexion',
+        'logged_in'  => "Vous êtes connecté.",
+        'welcome'    => 'Re-bonjour !',
+        'two-factor' => 'Please enter your token.',
     ],
 
     // Sidebar footer
