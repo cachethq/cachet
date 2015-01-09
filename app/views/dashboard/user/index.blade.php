@@ -46,7 +46,7 @@
                         <div class="form-group">
                             <label class="checkbox-inline">
                                 <input type="hidden" name="google2fa" value="0" />
-                                <input type='checkbox' name="google2fa" value="1" {{ !empty(Auth::user()->google_2fa_secret) ? "checked" : "" }} />
+                                <input type='checkbox' name="google2fa" value="1" {{ Auth::user()->hasEnabled2FA ? "checked" : "" }} />
                                 {{ trans('forms.setup.enable_google2fa') }}
                             </label>
                         </div>
