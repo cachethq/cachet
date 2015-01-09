@@ -107,9 +107,6 @@
                             <span class="text-danger">{{ $errors->first('user.password') }}</span>
                             @endif
                         </div>
-                        <div class="form-group">
-                            <i>{{ trans('forms.setup.enable_google2fa') }}</i>
-                        </div>
                     </fieldset>
                     <hr />
                     <div class="form-group">
