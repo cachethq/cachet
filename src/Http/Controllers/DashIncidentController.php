@@ -70,10 +70,9 @@ class DashIncidentController extends Controller
      */
     public function createIncidentAction()
     {
-        $_incident = Binput::get('incident');
-        $incident = Incident::create($_incident);
+        $incident = Incident::create(Binput::get('incident'));
 
-        return Redirect::back()->with('incident', $incident);
+        return Redirect::back()->withInput(Binput::all())->with('incident', $incident);
     }
 
     /**

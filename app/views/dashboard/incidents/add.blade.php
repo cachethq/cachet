@@ -16,9 +16,9 @@
                 @if($incident = Session::get('incident'))
                 <div class="alert alert-{{ $incident->isValid() ? 'success' : 'danger' }}">
                     @if($incident->isValid())
-                        {{ sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.awesome'), trans('dashboard.incidents.add.success')) }}
+                    {{ sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.awesome'), trans('dashboard.incidents.add.success')) }}
                     @else
-                        {{ sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.whoops'), trans('dashboard.incidents.add.failure').' '.$incident->getErrors()) }}
+                    {{ sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.whoops'), trans('dashboard.incidents.add.failure').' '.$incident->getErrors()) }}
                     @endif
                 </div>
                 @endif
@@ -27,7 +27,7 @@
                     <fieldset>
                         <div class="form-group">
                             <label for="incident-name">{{ trans('forms.incidents.name') }}</label>
-                            <input type="text" class="form-control" name="incident[name]" id="incident-name" required />
+                            <input type="text" class="form-control" name="incident[name]" id="incident-name" required value="{{ Input::old('incident.name') }}" />
                         </div>
                         <div class="form-group">
                             <label for="incident-name">{{ trans('forms.incidents.status') }}</label><br />
@@ -54,7 +54,7 @@
                         </div>
                         <div class="form-group">
                             <label>{{ trans('forms.incidents.message') }}</label>
-                            <textarea name="incident[message]" class="form-control" rows="5" required></textarea>
+                            <textarea name="incident[message]" class="form-control" rows="5" required>{{ Input::old('incident.message') }}</textarea>
                             <span class="help-block">{{ trans('forms.incidents.message-help') }}</span>
                         </div>
                     </fieldset>
