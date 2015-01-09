@@ -6,7 +6,7 @@
             <div class="welcome-logo">
                 <img class="logo" height="50" src="{{ url('img/cachet-logo.svg') }}" alt="Cachet"/>
             </div>
-            {{ Form::open() }}
+            {{ Form::open(['url' => '/auth/login']) }}
             <fieldset>
                 <legend>{{ trans('dashboard.login.welcome') }}</legend>
 
