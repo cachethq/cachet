@@ -26,11 +26,11 @@
                     <fieldset>
                         <div class="form-group">
                             <label>{{ trans('forms.user.username') }}</label>
-                            <input type="text" class="form-control" name="username" value="{{ Input::old('username') }}" required />
+                            <input type="text" class="form-control" name="username" value="{{ Binput::old('username') }}" required />
                         </div>
                         <div class="form-group">
                             <label>{{ trans('forms.user.email') }}</label>
-                            <input type="email" class="form-control" name="email" value="{{ Input::old('email') }}" required />
+                            <input type="email" class="form-control" name="email" value="{{ Binput::old('email') }}" required />
                         </div>
                         <div class="form-group">
                             <label>{{ trans('forms.user.password') }}</label>
