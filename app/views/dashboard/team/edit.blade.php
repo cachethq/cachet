@@ -6,7 +6,7 @@
             <i class="icon ion-navicon"></i>
         </div>
         <span class="uppercase">
-            <i class="ion ion-person"></i> {{ trans('dashboard.user.user') }}
+            <i class="ion ion-person"></i> {{ trans('dashboard.team.member') }}
         </span>
     </div>
     <div class="content-wrapper">
@@ -15,9 +15,9 @@
                 @if($updated = Session::get('updated'))
                 <div class="alert alert-{{ $updated ? 'success' : 'danger' }}">
                     @if($updated)
-                        {{ sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.awesome'), trans('dashboard.user.edit.success')) }}
+                        {{ sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.awesome'), trans('dashboard.team.edit.success')) }}
                     @else
-                        {{ sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.whoops'), trans('dashboard.user.edit.failure')) }}
+                        {{ sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.whoops'), trans('dashboard.team.edit.failure')) }}
                     @endif
                 </div>
                 @endif

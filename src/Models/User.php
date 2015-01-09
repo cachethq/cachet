@@ -44,7 +44,7 @@ class User extends Model implements UserInterface, RemindableInterface
      *
      * @var string[]
      */
-    protected $hidden = ['password', 'remember_token'];
+    protected $hidden = ['password', 'remember_token', 'google_2fa_secret'];
 
     /**
      * The properties that cannot be mass assigned.
@@ -132,5 +132,15 @@ class User extends Model implements UserInterface, RemindableInterface
     public function getIsAdminAttribute()
     {
         return (bool) $this->level;
+    }
+
+    /**
+     * Returns if a user has enabled two factor authentication.
+     *
+     * @return bool
+     */
+    public function getHasTwoFactorAttribute()
+    {
+        return trim($this->google_2fa_secret) !== '';
     }
 }

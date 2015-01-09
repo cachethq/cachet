@@ -108,9 +108,10 @@ return [
 
     // Login
     'login' => [
-        'login'     => 'Login',
-        'logged_in' => "You're logged in.",
-        'welcome'   => 'Welcome Back!',
+        'login'      => 'Login',
+        'logged_in'  => 'You\'re logged in.',
+        'welcome'    => 'Welcome Back!',
+        'two-factor' => 'Please enter your token.',
     ],
 
     // Sidebar footer

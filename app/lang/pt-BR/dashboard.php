@@ -1,6 +1,7 @@
 <?php
 
 return [
+
     'dashboard' => 'Dashboard',
 
     // Incidents
@@ -97,7 +98,7 @@ return [
             'stylesheet' => 'Folha de estilo',
         ],
         'theme' => [
-            'theme' => ' Tema',
+            'theme' => 'Tema',
         ],
         'edit' => [
             'success' => 'Configurações salvas.',
@@ -107,9 +108,10 @@ return [
 
     // Login
     'login' => [
-        'login'     => 'Login',
-        'logged_in' => "Você está logado.",
-        'welcome'   => 'Bem-vindo de volta!',
+        'login'      => 'Login',
+        'logged_in'  => "Você está logado.",
+        'welcome'    => 'Bem-vindo de volta!',
+        'two-factor' => 'Please enter your token.',
     ],
 
     // Sidebar footer
