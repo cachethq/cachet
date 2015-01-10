@@ -13,16 +13,7 @@
     <div class="content-wrapper">
         <div class="row">
             <div class="col-md-12">
-                @if($incident = Session::get('incident'))
-                <div class="alert alert-{{ $incident->isValid() ? 'success' : 'danger' }}">
-                    @if($incident->isValid())
-                    {{ sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.awesome'), trans('dashboard.incidents.add.success')) }}
-                    @else
-                    {{ sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.whoops'), trans('dashboard.incidents.add.failure').' '.$incident->getErrors()) }}
-                    @endif
-                </div>
-                @endif
-
+                @include('partials.dashboard.errors')
                 {{ Form::open(['name' => 'IncidentForm', 'class' => 'form-vertical', 'role' => 'form']) }}
                     <fieldset>
                         <div class="form-group">

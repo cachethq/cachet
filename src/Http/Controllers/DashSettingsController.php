@@ -46,6 +46,7 @@ class DashSettingsController extends Controller
         ];
 
         View::share('subTitle', $this->subTitle);
+
         View::share('subMenu', $this->subMenu);
     }
 
@@ -167,15 +168,15 @@ class DashSettingsController extends Controller
             $maxSize = $file->getMaxFilesize();
 
             if ($file->getSize() > $maxSize) {
-                return Redirect::back()->withErrorMessage("You need to upload an image that is less than $maxSize.");
+                return Redirect::back()->withErrors("You need to upload an image that is less than $maxSize.");
             }
 
             if (!$file->isValid() || $file->getError()) {
-                return Redirect::back()->withErrorMessage($file->getErrorMessage());
+                return Redirect::back()->withErrors($file->getErrorMessage());
             }
 
             if (strpos($file->getMimeType(), 'image/') !== 0) {
-                return Redirect::back()->withErrorMessage('Only images may be uploaded.');
+                return Redirect::back()->withErrors('Only images may be uploaded.');
             }
 
             // Store the banner.
@@ -202,9 +203,9 @@ class DashSettingsController extends Controller
                 ]);
             }
         } catch (Exception $e) {
-            return Redirect::back()->withSaved(false);
+            return Redirect::back()->with('errors', trans('dashboard.settings.edit.failure'));
         }
 
-        return Redirect::back()->withSaved(true);
+        return Redirect::back()->with('success', trans('dashboard.settings.edit.success'));
     }
 }
