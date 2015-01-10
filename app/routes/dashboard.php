@@ -74,15 +74,15 @@ Route::group(['before' => 'auth', 'prefix' => 'dashboard', 'namespace' => 'Cache
     Route::group(['prefix' => 'team'], function () {
         Route::get('/', [
             'as'   => 'dashboard.team',
-            'uses' => 'DashboardController@showTeamView',
+            'uses' => 'DashTeamController@showTeamView',
         ]);
         Route::get('add', [
             'as'   => 'dashboard.team.add',
-            'uses' => 'DashboardController@showAddTeamMemberView'
+            'uses' => 'DashTeamController@showAddTeamMemberView'
         ]);
-        Route::get('{user}', 'DashboardController@showTeamMemberView');
-        Route::post('add', 'DashboardController@postAddUser');
-        Route::post('{user}', 'DashboardController@postUpdateUser');
+        Route::get('{user}', 'DashTeamController@showTeamMemberView');
+        Route::post('add', 'DashTeamController@postAddUser');
+        Route::post('{user}', 'DashTeamController@postUpdateUser');
     });
 
     // Settings
