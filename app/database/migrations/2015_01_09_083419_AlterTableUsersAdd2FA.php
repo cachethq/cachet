@@ -14,7 +14,7 @@ class AlterTableUsersAdd2FA extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('google_2fa_secret')->after('remember_token');
+            $table->string('google_2fa_secret')->nullable()->after('remember_token');
         });
     }
 
