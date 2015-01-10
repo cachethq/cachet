@@ -13,16 +13,7 @@
     <div class="content-wrapper">
         <div class="row">
             <div class="col-sm-12">
-                @if($savedComponent = Session::get('savedComponent'))
-                <div class="alert alert-{{ $savedComponent->isValid() ? 'success' : 'danger' }}">
-                    @if($savedComponent->isValid())
-                        {{ sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.awesome'), trans('dashboard.components.edit.success')) }}
-                    @else
-                        {{ sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.whoops'), trans('dashboard.components.edit.failure').' '.$component->getErrors()) }}
-                    @endif
-                </div>
-                @endif
-
+                @include('partials.dashboard.errors')
                 <form name="EditComponentForm" class="form-vertical" role="form" action="/dashboard/components/{{ $component->id }}/edit" method="POST">
                     <fieldset>
                         <div class="form-group">

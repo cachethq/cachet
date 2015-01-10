@@ -99,7 +99,13 @@ class DashComponentController extends Controller
         $_component = Binput::get('component');
         $component->update($_component);
 
-        return Redirect::back()->with('savedComponent', $component);
+        if (! $component->isValid()) {
+            return Redirect::back()->withInput(Binput::all())
+                ->with('title', sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.whoops'), trans('dashboard.components.edit.failure')))
+                ->with('errors', $component->getErrors());
+        }
+
+        return Redirect::back()->with('success', sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.awesome'), trans('dashboard.components.edit.success')));
     }
 
     /**
@@ -127,7 +133,13 @@ class DashComponentController extends Controller
         $_component = Binput::get('component');
         $component = Component::create($_component);
 
-        return Redirect::back()->with('component', $component);
+        if (! $component->isValid()) {
+            return Redirect::back()->withInput(Binput::all())
+                ->with('title', sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.whoops'), trans('dashboard.components.add.failure')))
+                ->with('errors', $component->getErrors());
+        }
+
+        return Redirect::back()->with('success', sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.awesome'), trans('dashboard.components.add.success')));
     }
 
     /**
@@ -179,6 +191,12 @@ class DashComponentController extends Controller
     {
         $group = ComponentGroup::create(Binput::get('group'));
 
-        return Redirect::back()->withGroup($group);
+        if (! $group->isValid()) {
+            return Redirect::back()->withInput(Binput::all())
+                ->with('title', sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.whoops'), trans('dashboard.components.groups.add.failure')))
+                ->with('errors', $group->getErrors());
+        }
+
+        return Redirect::back()->with('success', sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.awesome'), trans('dashboard.components.groups.add.success')));
     }
 }

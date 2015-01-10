@@ -13,6 +13,7 @@
     <div class="content-wrapper">
         <div class="row">
             <div class="col-md-12">
+                @include('partials.dashboard.errors')
                 {{ Form::open(['name' => 'IncidentForm', 'class' => 'form-vertical', 'role' => 'form']) }}
                 <fieldset>
                     <div class="form-group">

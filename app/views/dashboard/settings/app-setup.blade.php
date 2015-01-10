@@ -10,13 +10,7 @@
                 <div class="col-sm-12">
                     <form id="settings-form" name="SettingsForm" class="form-vertical" role="form" action="/dashboard/settings" method="POST" enctype="multipart/form-data">
                         <h4 class="sub-header" id="application-setup">{{ trans('dashboard.settings.app-setup.app-setup') }}</h4>
-
-                        @if(($saved = Session::get('saved')))
-                        <div class="alert alert-success"><strong>{{ trans('dashboard.settings.edit.success') }}</strong></div>
-                        @elseif(Session::has('error_message'))
-                        <div class="alert alert-danger"><strong>{{ Session::get('error_message') }}</strong></div>
-                        @endif
-
+                        @include('partials.dashboard.errors')
                         <fieldset>
                             <div class="row">
                                 <div class="col-xs-12">

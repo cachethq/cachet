@@ -12,16 +12,7 @@
     <div class="content-wrapper">
         <div class="row">
             <div class="col-sm-12">
-                @if($created = Session::get('created'))
-                <div class="alert alert-success">
-                {{ sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.awesome'), trans('dashboard.team.add.success')) }}
-                </div>
-                @elseif($errors = Session::get('errors'))
-                <div class="alert alert-danger">
-                {{ sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.whoops'), trans('dashboard.team.add.failure')) }}
-                </div>
-                @endif
-
+                @include('partials.dashboard.errors')
                 <form name="UserForm" class="form-vertical" role="form" action="/dashboard/team/add" method="POST">
                     <fieldset>
                         <div class="form-group">

@@ -13,16 +13,7 @@
     <div class="content-wrapper">
         <div class="row">
             <div class="col-sm-12">
-                @if($component = Session::get('component'))
-                <div class="alert alert-{{ $component->isValid() ? 'success' : 'danger' }}">
-                    @if($component->isValid())
-                        {{ sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.awesome'), trans('dashboard.components.add.success')) }}
-                    @else
-                        {{ sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.whoops'), trans('dashboard.components.add.failure').' '.$component->getErrors()) }}
-                    @endif
-                </div>
-                @endif
-
+                @include('partials.dashboard.errors')
                 <form name="CreateComponentForm" class="form-vertical" role="form" action="/dashboard/components/add" method="POST">
                     <fieldset>
                         <div class="form-group">
