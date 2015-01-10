@@ -36,6 +36,13 @@ See the [INSTALL.md](/docs/setup/install.md) document for more information. If y
 
 [Deploying to Heroku](/docs/setup/install.md#deploy-to-heroku) requires one-click to get started and no knowledge of PHP or Laravel afterwards.
 
+## Running via Docker
+
+    docker run --name mysql -e MYSQL_ROOT_PASSWORD=tumblr -e MYSQL_USER=cachet -e MYSQL_PASSWORD=cachet -e MYSQL_DATABASE=cachet -d mysql
+    docker run --link mysql:mysql byxorna/cachet:test php artisan migrate
+    docker run --link mysql:mysql -p 80:80 byxorna/cachet:test 
+    curl localhost/
+
 ## Translations
 
 A special thank you to our [translators](https://crowdin.com/project/cachet/activity_stream), who have allowed us to share Cachet with the world. If you'd like to contribute translations, please check out our [CrowdIn project](https://crowdin.com/project/cachet).
