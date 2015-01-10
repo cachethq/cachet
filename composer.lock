@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "54919d71db11cf852620b58cd12a982b",
+    "hash": "17e49b071003f48bf48a5d636ef0991d",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -1460,7 +1460,7 @@
         },
         {
             "name": "mccool/laravel-auto-presenter",
-            "version": "2.2.x-dev",
+            "version": "2.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ShawnMcCool/laravel-auto-presenter.git",
@@ -3137,7 +3137,7 @@
             ],
             "authors": [
                 {
-                    "name": "Pádraic Brady",
+                    "name": "Padraic Brady",
                     "email": "padraic.brady@gmail.com",
                     "homepage": "http://blog.astrumfutura.com"
                 },
@@ -3903,9 +3903,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "mccool/laravel-auto-presenter": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
