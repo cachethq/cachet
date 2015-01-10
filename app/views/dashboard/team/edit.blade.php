@@ -15,9 +15,9 @@
                 @if($updated = Session::get('updated'))
                 <div class="alert alert-{{ $updated ? 'success' : 'danger' }}">
                     @if($updated)
-                        {{ sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.awesome'), trans('dashboard.team.edit.success')) }}
+                    {{ sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.awesome'), trans('dashboard.team.edit.success')) }}
                     @else
-                        {{ sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.whoops'), trans('dashboard.team.edit.failure')) }}
+                    {{ sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.whoops'), trans('dashboard.team.edit.failure')) }}
                     @endif
                 </div>
                 @endif
@@ -34,7 +34,7 @@
                         </div>
                         <div class="form-group">
                             <label>{{ trans('forms.user.password') }}</label>
-                            <input type="password" class="form-control" name="password" value="" />
+                            <input type="password" class="form-control" name="password" value="" {{ !Auth::user()->isAdmin ? "disabled": "" }} />
                         </div>
                     </fieldset>
 
