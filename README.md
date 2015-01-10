@@ -38,14 +38,22 @@ See the [INSTALL.md](/docs/setup/install.md) document for more information. If y
 
 ## Running via Docker
 
+Run a DB container:
+
     export DB_USERNAME=cachet
     export DB_PASSWORD=cachet
     export DB_DATABASE=cachet
     docker run --name mysql -e MYSQL_USER=$DB_USERNAME -e MYSQL_PASSWORD=$DB_PASSWORD -e MYSQL_DATABASE=$DB_DATABASE -d mysql
+
+Initialize the DB if you havent yet:
+
     docker run --link mysql:mysql -e DB_HOST=mysql -e DB_DATABASE=$DB_DATABASE -e DB_USERNAME=$DB_USERNAME -e DB_PASSWORD=$DB_PASSWORD byxorna/cachet:test php artisan migrate
+
+Run Cachet:
+
     docker run -d --link mysql:mysql -p 80:80 -e DB_HOST=mysql -e DB_DATABASE=$DB_DATABASE -e DB_USERNAME=$DB_USERNAME -e DB_PASSWORD=$DB_PASSWORD byxorna/cachet:test 
 
-Now go to http://localhost/setup
+Now go to http://localhost/setup and type things
 
 ## Translations
 
