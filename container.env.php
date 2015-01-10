@@ -1,9 +1,0 @@
-<?php
-
-return [
-    'DB_DRIVER'   => $_ENV['DB_DRIVER'],
-    'DB_HOST'     => $_ENV['MYSQL_PORT_3306_TCP_ADDR'],
-    'DB_DATABASE' => $_ENV['MYSQL_ENV_MYSQL_DATABASE'],
-    'DB_USERNAME' => $_ENV['MYSQL_ENV_MYSQL_USER'],
-    'DB_PASSWORD' => $_ENV['MYSQL_ENV_MYSQL_PASSWORD'],
-];

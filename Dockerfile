@@ -5,12 +5,24 @@ FROM php:5.4-apache
 # run node_modules/.bin/bower install
 # run node_modules/.bin/gulp
 
-RUN apt-get update && apt-get install -y libmcrypt-dev zlib1g-dev git sqlite libsqlite3-dev --no-install-recommends && rm -r /var/lib/apt/lists/*
+RUN apt-get update && \
+  apt-get install -y curl libmcrypt-dev zlib1g-dev \
+  git sqlite libsqlite3-dev --no-install-recommends && \
+  rm -r /var/lib/apt/lists/*
 COPY . /var/www/html/
 WORKDIR /var/www/html/
+
+RUN sed -i -e 's/^DocumentRoot .*/DocumentRoot \/var\/www\/html\/public/' /etc/apache2/apache2.conf
+RUN sed -i -e '/^DirectoryIndex disabled/ d' /etc/apache2/apache2.conf
+# public/.htaccess needs to use rewrite to let laravel do its thang
+RUN a2enmod rewrite
+# nodejs setup
+#RUN curl -sL https://deb.nodesource.com/setup | bash -
+#RUN apt-get install -y nodejs build-essential && rm -r /var/lib/apt/lists/*
+#RUN npm install -g gulp && npm install && bower install && gulp
+
 RUN docker-php-ext-install mcrypt
 RUN docker-php-ext-install zip
-#RUN docker-php-ext-install pdo_sqlite
 RUN docker-php-ext-install pdo_mysql
 RUN curl http://pecl.php.net/get/APC-3.1.13.tgz -o /usr/src/php/ext/apc.tar.gz && \
   tar xzvf /usr/src/php/ext/apc.tar.gz -C /usr/src/php/ext && \
@@ -19,18 +31,7 @@ RUN curl http://pecl.php.net/get/APC-3.1.13.tgz -o /usr/src/php/ext/apc.tar.gz &
 RUN curl -sS https://getcomposer.org/installer | php
 RUN php composer.phar install --no-dev -o
 
-#ENV DB_DRIVER=mysql DB_DATABASE=cachet DB_HOST=192.168.59.103 DB_USERNAME=cachet DB_PASSWORD=cachet
-#ENV DB_DRIVER=sqlite DB_DATABASE='' DB_HOST='' DB_USERNAME='' DB_PASSWORD=''
-ENV DB_DRIVER=mysql ENV=production
-COPY ./container.env.php /var/www/html/.env.php
-    #DB_DATABASE=$MYSQL_ENV_MYSQL_DATABASE \
-    #DB_HOST=$MYSQL_PORT_3306_TCP_ADDR \
-    #DB_USERNAME=$MYSQL_ENV_MYSQL_USER \
-    #DB_PASSWORD=$MYSQL_ENV_MYSQL_PASSWORD \
-# WTF. none of these work
-COPY ./php.ini /usr/local/lib/
-COPY ./php.ini /usr/local/etc/
-COPY ./php.ini /usr/local/etc/php/conf.d/
+ENV DRIVER=mysql ENV=production
+RUN echo -e "error_log = /var/log/apache2/php_error.log\nlog_errors = 1\n" > /usr/local/etc/php/php.ini
 
-#RUN php artisan migrate
 RUN php artisan key:generate
