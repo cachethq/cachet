@@ -21,12 +21,12 @@ RUN php composer.phar install --no-dev -o
 
 #ENV DB_DRIVER=mysql DB_DATABASE=cachet DB_HOST=192.168.59.103 DB_USERNAME=cachet DB_PASSWORD=cachet
 #ENV DB_DRIVER=sqlite DB_DATABASE='' DB_HOST='' DB_USERNAME='' DB_PASSWORD=''
-ENV DB_DRIVER=mysql \
-    DB_DATABASE=$MYSQL_ENV_MYSQL_DATABASE \
-    DB_HOST=$MYSQL_PORT_3306_TCP_ADDR \
-    DB_USERNAME=$MYSQL_ENV_MYSQL_USER \
-    DB_PASSWORD=$MYSQL_ENV_MYSQL_PASSWORD \
-    ENV=production
+ENV DB_DRIVER=mysql ENV=production
+COPY ./container.env.php /var/www/html/.env.php
+    #DB_DATABASE=$MYSQL_ENV_MYSQL_DATABASE \
+    #DB_HOST=$MYSQL_PORT_3306_TCP_ADDR \
+    #DB_USERNAME=$MYSQL_ENV_MYSQL_USER \
+    #DB_PASSWORD=$MYSQL_ENV_MYSQL_PASSWORD \
 # WTF. none of these work
 COPY ./php.ini /usr/local/lib/
 COPY ./php.ini /usr/local/etc/

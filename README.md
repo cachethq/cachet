@@ -38,8 +38,11 @@ See the [INSTALL.md](/docs/setup/install.md) document for more information. If y
 
 ## Running via Docker
 
-    docker run --name mysql -e MYSQL_ROOT_PASSWORD=tumblr -e MYSQL_USER=cachet -e MYSQL_PASSWORD=cachet -e MYSQL_DATABASE=cachet -d mysql
-    docker run --link mysql:mysql byxorna/cachet:test php artisan migrate
+    DB_USERNAME=cachet
+    DB_PASSWORD=cachet
+    DB_DATABASE=cachet
+    docker run --name mysql -e MYSQL_ROOT_PASSWORD=tumblr -e MYSQL_USER=$DB_USERNAME -e MYSQL_PASSWORD=$DB_PASSWORD -e MYSQL_DATABASE=$DB_DATABASE -d mysql
+    docker run --link mysql:mysql -e DB_DATABASE=$DB_DATABASE -e DB_USERNAME=$DB_USERNAME -e DB_PASSWORD=$DB_PASSWORD byxorna/cachet:test php artisan migrate
     docker run --link mysql:mysql -p 80:80 byxorna/cachet:test 
     curl localhost/
 
