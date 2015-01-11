@@ -61,6 +61,7 @@ return [
             'days-of-incidents' => 'Nombre de jours à afficher ?',
             'banner'            => 'Bannière',
             'banner-help'       => "Il est recommandé de télécharger des fichiers de moins de 930 pixels de large.",
+            'google-analytics'  => "Google Analytics code",
         ],
         'security' => [
             'allowed-domains'      => 'Domaines autorisés. <small class="help-block"></small>',
