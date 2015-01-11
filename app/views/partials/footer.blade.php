@@ -9,3 +9,5 @@
     </p>
     @endif
 </footer>
+
+@include("partials.analytics")

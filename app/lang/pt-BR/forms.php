@@ -60,6 +60,7 @@ return [
             'days-of-incidents' => 'Quantos dias de incidentes para mostrar?',
             'banner'            => 'Imagem do banner',
             'banner-help'       => "É recomendável que você fazer upload de arquivos menores que 930px.",
+            'google-analytics'  => "Google Analytics code",
         ],
         'security' => [
             'allowed-domains'      => 'Domínios permitidos',
