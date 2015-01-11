@@ -631,16 +631,16 @@
         },
         {
             "name": "erusev/parsedown",
-            "version": "1.1.4",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/erusev/parsedown.git",
-                "reference": "495e7ac73bb5fde6b857b88ff2bb1b5e79a4263a"
+                "reference": "098f18855283f337a7377189719430d60b16f166"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/erusev/parsedown/zipball/495e7ac73bb5fde6b857b88ff2bb1b5e79a4263a",
-                "reference": "495e7ac73bb5fde6b857b88ff2bb1b5e79a4263a",
+                "url": "https://api.github.com/repos/erusev/parsedown/zipball/098f18855283f337a7377189719430d60b16f166",
+                "reference": "098f18855283f337a7377189719430d60b16f166",
                 "shasum": ""
             },
             "type": "library",
@@ -666,24 +666,24 @@
                 "markdown",
                 "parser"
             ],
-            "time": "2014-11-29 02:29:14"
+            "time": "2015-01-10 12:53:08"
         },
         {
             "name": "erusev/parsedown-extra",
-            "version": "0.2.6",
+            "version": "0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/erusev/parsedown-extra.git",
-                "reference": "77f604b65b08550f229c2e79c0427c84c0c0979e"
+                "reference": "f70d23c8d0b0dab5be005202b69956b5d5658a76"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/erusev/parsedown-extra/zipball/77f604b65b08550f229c2e79c0427c84c0c0979e",
-                "reference": "77f604b65b08550f229c2e79c0427c84c0c0979e",
+                "url": "https://api.github.com/repos/erusev/parsedown-extra/zipball/f70d23c8d0b0dab5be005202b69956b5d5658a76",
+                "reference": "f70d23c8d0b0dab5be005202b69956b5d5658a76",
                 "shasum": ""
             },
             "require": {
-                "erusev/parsedown": "~1.1"
+                "erusev/parsedown": "~1.2"
             },
             "type": "library",
             "autoload": {
@@ -710,7 +710,7 @@
                 "parsedown",
                 "parser"
             ],
-            "time": "2014-11-20 20:21:03"
+            "time": "2015-01-10 13:53:42"
         },
         {
             "name": "filp/whoops",
@@ -827,21 +827,20 @@
         },
         {
             "name": "graham-campbell/markdown",
-            "version": "v2.0.6",
+            "version": "v2.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Markdown.git",
-                "reference": "9b79f2ace1772281284f570ca64931d550421786"
+                "reference": "c85535e0c53efd44a6d3e9c09754a194c31edb41"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Markdown/zipball/9b79f2ace1772281284f570ca64931d550421786",
-                "reference": "9b79f2ace1772281284f570ca64931d550421786",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Markdown/zipball/c85535e0c53efd44a6d3e9c09754a194c31edb41",
+                "reference": "c85535e0c53efd44a6d3e9c09754a194c31edb41",
                 "shasum": ""
             },
             "require": {
-                "erusev/parsedown": "~1.1",
-                "erusev/parsedown-extra": "~0.2.6",
+                "erusev/parsedown-extra": "0.3.*",
                 "illuminate/support": "~4.1",
                 "illuminate/view": "~4.1",
                 "php": ">=5.4.7"
@@ -880,7 +879,7 @@
                 "parsedown extra wrapper",
                 "parsedown wrapper"
             ],
-            "time": "2015-01-04 22:11:30"
+            "time": "2015-01-10 14:13:23"
         },
         {
             "name": "graham-campbell/security",
@@ -1677,16 +1676,16 @@
         },
         {
             "name": "patchwork/utf8",
-            "version": "v1.1.26",
+            "version": "v1.1.27",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tchwork/utf8.git",
-                "reference": "6b8e46603b49ee87ad6bceb314da94cc04ffcdce"
+                "reference": "f26cc98847add84cb27c5d77e2e0dff715944ac6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tchwork/utf8/zipball/6b8e46603b49ee87ad6bceb314da94cc04ffcdce",
-                "reference": "6b8e46603b49ee87ad6bceb314da94cc04ffcdce",
+                "url": "https://api.github.com/repos/tchwork/utf8/zipball/f26cc98847add84cb27c5d77e2e0dff715944ac6",
+                "reference": "f26cc98847add84cb27c5d77e2e0dff715944ac6",
                 "shasum": ""
             },
             "require": {
@@ -1699,11 +1698,6 @@
                 "ext-mbstring": "Use Mbstring for best performance"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.1-dev"
-                }
-            },
             "autoload": {
                 "psr-0": {
                     "Patchwork": "class/",
@@ -1729,7 +1723,7 @@
                 "utf-8",
                 "utf8"
             ],
-            "time": "2014-11-08 10:13:25"
+            "time": "2015-01-11 12:41:11"
         },
         {
             "name": "phpseclib/phpseclib",
