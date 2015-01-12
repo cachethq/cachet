@@ -32,7 +32,7 @@ class ApiKeyAuthenticator extends AuthorizationProvider
         try {
             return User::findByApiKey($api_key);
         } catch (ModelNotFoundException $e) {
-            throw new UnauthorizedHttpException(null, 'The API key you provided was not correct.');
+            throw new UnauthorizedHttpException(null, 'You need to be authenticated to perform this action.');
         }
     }
 
