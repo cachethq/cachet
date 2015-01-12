@@ -35,7 +35,7 @@ return [
         'components'         => 'Component|Components',
         'component_statuses' => 'Component Statuses',
         'add'                => [
-            'title'   => 'Create a component',
+            'title'   => 'Add a component',
             'message' => 'You should add a component.',
             'success' => 'Component created.',
             'failure' => 'Something went wrong with the component.',
