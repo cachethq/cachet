@@ -11,9 +11,7 @@ Things to remember:
 
 ## Languages
 
-You **must not** write plain-English into the code, rather into the `app/lang/en/` language files (where appropriate). We can then push out the changes to our translators.
-
-The only place where it is advisable to write English text into the code (as opposed to the language file) is for the API.
+When needing to add labels, placeholders or general text, you **must not** write directly into the source file, rather make use of the `./app/lang/` directory. Always provide the English translation and copy your English string to all other languages - making sure that the indentation and alignment of the arrays are updated.
 
 ## Coding Standards
 
@@ -30,35 +28,42 @@ class Foo extends Bar
 {
     public function baz()
     {
-        if ($condition)
-        {
+        if ($condition) {
         }
     }
 }
 
 ```
 
-- At least one newline seperating `namespace`, `use`, and `class` declarations
+- At least one newline separating `namespace`, `use`, `function` and `class` declarations.
 - Spaces around operators, loops, conditions and control blocks:
     ```php
-    if ($condition === (10 + 2))
-    {
+    <?php
+    use \Exception;
 
+    if ($condition === (10 + 2)) {
+        try {
+            throw Exception("Something went wrong...");
+        } catch (Exception $e) {
+            // Do something here.
+        }
     }
     ```
-- Braces on a new line.
+- Braces on a new line following: `namespace`, `use`, `function` and `class`.
 - Line lengths have a soft 80 limit and hard 120 length.
 - PHP constants should be in lowercase; `true`, `false` and `null`.
 - Defined constants should always be in uppercase.
 - Never leave trailing spaces at the end of a line.
 - Files should end with one blank line.
-- Do not use Bash (`#`) style comments.
+- Do not use `# Bash` style comments.
+- Always add or update Docblocs to functions.
+- If your pull request consists of more than two commits, you **must** squash them into one.
 
 If you're still unsure, then take a look at existing code.
 
 ## Introduction into to Git and GitHub
 
-If you are new to git, GitHub, and the whole open source software community, welcome! Here are some resources for getting started and understanding what it's all about.
+If you are new to Git, GitHub and the whole open source software community, welcome! Here are some resources for getting started and understanding what it's all about.
 
 - [Try Git](https://try.github.io/levels/1/challenges/1) by Code School
 - [GitHub Help](https://help.github.com)
