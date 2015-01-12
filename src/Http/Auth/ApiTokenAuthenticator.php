@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
 
-class ApiKeyAuthenticator extends AuthorizationProvider
+class ApiTokenAuthenticator extends AuthorizationProvider
 {
     /**
      * Authenticate the request and return the authenticated user instance.
@@ -23,17 +23,15 @@ class ApiKeyAuthenticator extends AuthorizationProvider
      */
     public function authenticate(Request $request, Route $route)
     {
-        $api_key = $request->input('api_key', false);
-
-        if ($api_key === false) {
-            throw new UnauthorizedHttpException(null, 'You did not provide an API key.');
+        if ($apiToken = $request->header('X-Cachet-Token')) {
+            try {
+                return User::findByApiToken($apiToken);
+            } catch (ModelNotFoundException $e) {
+                throw new UnauthorizedHttpException(null, 'The API key you provided was not correct.');
+            }
         }
 
-        try {
-            return User::findByApiKey($api_key);
-        } catch (ModelNotFoundException $e) {
-            throw new UnauthorizedHttpException(null, 'You need to be authenticated to perform this action.');
-        }
+        throw new UnauthorizedHttpException(null, 'You are not authorized to view this content.');
     }
 
     /**
@@ -43,6 +41,6 @@ class ApiKeyAuthenticator extends AuthorizationProvider
      */
     public function getAuthorizationMethod()
     {
-        return 'api_key';
+        return 'api_token';
     }
 }

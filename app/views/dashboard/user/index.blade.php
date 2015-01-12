@@ -29,9 +29,9 @@
                         </div>
                         <hr />
                         <div class="form-group">
-                            <label>{{ trans('forms.user.api-key') }}</label>
+                            <label>{{ trans('forms.user.api-token') }}</label>
                             <input type="text" class="form-control" name="api_key" disabled value="{{ Auth::user()->api_key }}" />
-                            <span class="help-block">{{ trans('forms.user.api-key-help') }}</span>
+                            <span class="help-block">{{ trans('forms.user.api-token-help') }}</span>
                         </div>
                         <hr />
                         <div class="form-group">

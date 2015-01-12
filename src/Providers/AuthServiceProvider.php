@@ -2,7 +2,7 @@
 
 namespace CachetHQ\Cachet\Providers;
 
-use CachetHQ\Cachet\Http\Auth\ApiKeyAuthenticator;
+use CachetHQ\Cachet\Http\Auth\ApiTokenAuthenticator;
 use Illuminate\Support\ServiceProvider;
 
 class AuthServiceProvider extends ServiceProvider
@@ -24,8 +24,8 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bindShared('CachetHQ\Cachet\Http\Auth\ApiKeyAuthenticator', function () {
-            return new ApiKeyAuthenticator();
+        $this->app->bindShared('CachetHQ\Cachet\Http\Auth\ApiTokenAuthenticator', function () {
+            return new ApiTokenAuthenticator();
         });
     }
 }

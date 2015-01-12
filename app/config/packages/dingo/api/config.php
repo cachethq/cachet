@@ -81,8 +81,8 @@ return [
             return new Dingo\Api\Auth\BasicProvider($app['auth']);
         },
 
-        'api_key' => function ($app) {
-            return new CachetHQ\Cachet\Http\Auth\ApiKeyAuthenticator();
+        'api_token' => function ($app) {
+            return new CachetHQ\Cachet\Http\Auth\ApiTokenAuthenticator();
         },
 
     ],
