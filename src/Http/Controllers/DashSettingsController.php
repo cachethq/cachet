@@ -58,6 +58,7 @@ class DashSettingsController extends Controller
     public function showSetupView()
     {
         $langs = [
+            'de'    => 'Deutsch',
             'en'    => 'English',
             'fr'    => 'Français',
             'pt-BR' => 'Portuguese, Brazilian',

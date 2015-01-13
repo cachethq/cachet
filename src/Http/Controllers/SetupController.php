@@ -35,6 +35,7 @@ class SetupController extends Controller
     public function getIndex()
     {
         $langs = [
+            'de'    => 'Deutsch',
             'en'    => 'English',
             'fr'    => 'Français',
             'pt-BR' => 'Portuguese, Brazilian',
