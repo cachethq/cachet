@@ -15,6 +15,4 @@ return [
 
     'debug' => true,
 
-    'url' => 'http://cachet.io.dev',
-
 ];
