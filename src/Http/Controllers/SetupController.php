@@ -34,12 +34,13 @@ class SetupController extends Controller
      */
     public function getIndex()
     {
-        $langs = [
-            'de'    => 'Deutsch',
-            'en'    => 'English',
-            'fr'    => 'Français',
-            'pt-BR' => 'Portuguese, Brazilian',
-        ];
+        $langs = array_map(function ($lang) {
+            $locale = basename($lang);
+
+            return [$locale => ucwords(locale_get_display_name($locale, $locale))];
+        }, glob(app_path('lang').'/*'));
+
+        $langs = call_user_func_array('array_merge', $langs);
 
         $regions = [
             'Africa'     => DateTimeZone::AFRICA,
