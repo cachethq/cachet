@@ -90,8 +90,8 @@ return [
         'settings'  => 'Einstellungen',
         'app-setup' => [
             'app-setup'   => 'Setup',
-            'images-only' => 'Only images may be uploaded.',
-            'too-big'     => 'The file you uploaded is too big. Upload an image smaller than :size',
+            'images-only' => 'Es dürfen nur Bild-Dateien hochgeladen werden.',
+            'too-big'     => 'Die Datei die Sie hochgeladen haben ist zu groß. Die Datei muss kleiner als :size sein.',
         ],
         'security' => [
             'security' => 'Sicherheit',

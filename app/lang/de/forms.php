@@ -19,8 +19,8 @@ return [
         'email'         => 'Email',
         'password'      => 'Passwort',
         '2fauth'        => 'Authentifikations-Code',
-        'invalid'       => 'Invalid email or password',
-        'invalid-token' => 'Invalid token',
+        'invalid'       => 'Falsche E-Mail-Adresse oder falsches Passwort',
+        'invalid-token' => 'Token nicht korrekt',
     ],
 
     // Incidents form fields
