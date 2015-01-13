@@ -16,9 +16,11 @@ return [
 
     // Login form fields
     'login' => [
-        'email'    => 'Email',
-        'password' => 'Passwort',
-        '2fauth'   => 'Authentifikations-Code',
+        'email'         => 'Email',
+        'password'      => 'Passwort',
+        '2fauth'        => 'Authentifikations-Code',
+        'invalid'       => 'Invalid email or password',
+        'invalid-token' => 'Invalid token',
     ],
 
     // Incidents form fields

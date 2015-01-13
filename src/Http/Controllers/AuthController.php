@@ -57,7 +57,7 @@ class AuthController extends Controller
 
         return Redirect::back()
             ->withInput(Binput::except('password'))
-            ->with('error', 'Invalid email or password');
+            ->with('error', trans('forms.login.invalid'));
     }
 
     /**
@@ -94,11 +94,11 @@ class AuthController extends Controller
                 // Failed login, log back out.
                 Auth::logout();
 
-                return Redirect::route('login')->with('error', 'Invalid token');
+                return Redirect::route('login')->with('error', trans('forms.login.invalid-token'));
             }
         }
 
-        return Redirect::route('login')->with('error', 'Invalid token');
+        return Redirect::route('login')->with('error', trans('forms.login.invalid-token'));
     }
 
     /**

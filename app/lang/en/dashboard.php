@@ -89,7 +89,9 @@ return [
     'settings' => [
         'settings'  => 'Settings',
         'app-setup' => [
-            'app-setup' => 'Application Setup',
+            'app-setup'   => 'Application Setup',
+            'images-only' => 'Only images may be uploaded.',
+            'too-big'     => 'The file you uploaded is too big. Upload an image smaller than :size',
         ],
         'security' => [
             'security' => 'Security',
