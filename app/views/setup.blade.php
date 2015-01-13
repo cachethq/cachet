@@ -77,7 +77,9 @@
                                 <input type="checkbox" name="settings[show_support]" value="1" checked />
                                 {{ trans("setup.show_support") }}
                             </label>
-                            <hr/>
+                        </div>
+                        <hr/>
+                        <div class="form-group text-center">
                             <span class="wizard-next btn btn-success" data-current-block="1" data-next-block="2" data-loading-text="<i class='icon ion-load-c'></i>">
                                 {{ trans('pagination.next') }}
                             </span>
@@ -109,7 +111,7 @@
                         </div>
                     </fieldset>
                     <hr />
-                    <div class="form-group">
+                    <div class="form-group text-center">
                         <input type="hidden" name="settings[app_incident_days]" value="7" />
                         <span class="wizard-next btn btn-info" data-current-block="2" data-next-block="1">
                             {{ trans('pagination.previous') }}
