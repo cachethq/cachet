@@ -6,24 +6,24 @@ return [
 
     // Incidents
     'incidents' => [
-        'incidents'                => 'Ereignisse',
-        'logged'                   => '{0} Es gibt keine Ereignisse, gute Arbeit.|Sie haben ein Ereignis eingetragen.|Es gibt <strong>:count</strong> Ereignisse.',
+        'incidents'                => 'Vorfälle',
+        'logged'                   => '{0} Es gibt keine Vorfälle, gute Arbeit.|Sie haben ein Vorfall eingetragen.|Es gibt <strong>:count</strong> Vorfälle.',
         'incident-create-template' => 'Template anlegen',
         'add'                      => [
-            'title'   => 'Ereignis hinzufügen',
-            'success' => 'Ereignis hinzugefügt.',
-            'failure' => 'Es ist ein Fehler bei dem Erstellen eines Ereignisses aufgetreten.',
+            'title'   => 'Vorfall hinzufügen',
+            'success' => 'Vorfall hinzugefügt.',
+            'failure' => 'Es ist ein Fehler bei dem Erstellen eines Vorfälles aufgetreten.',
         ],
         'edit' => [
-            'title'   => 'Ereignis aktualisieren',
-            'success' => 'Ereignis aktualisiert.',
-            'failure' => 'Es ist ein Fehler bei der Aktualisierung des Ereignisses aufgetreten.',
+            'title'   => 'Vorfall aktualisieren',
+            'success' => 'Vorfall aktualisiert.',
+            'failure' => 'Es ist ein Fehler bei der Aktualisierung des Vorfälles aufgetreten.',
         ],
 
         // Incident templates
         'templates' => [
             'add' => [
-                'title'   => 'Ereignis-Template anlegen',
+                'title'   => 'Vorfall-Template anlegen',
                 'success' => 'Template angelegt.',
                 'failure' => 'Es ist ein Fehler bei der Erstellung eines Templates aufgetreten.',
             ],
@@ -72,11 +72,11 @@ return [
         'team'        => 'Team',
         'member'      => 'Mitglied',
         'profile'     => 'Profil',
-        'description' => 'Team-Mitgleider können Komponenten und Ereignisse hinzufügen und modifizieren.',
+        'description' => 'Team-Mitgleider können Komponenten und Vorfälle hinzufügen und modifizieren.',
         'add'         => [
             'title'   => 'Team-Mitglied hinzufügen',
             'success' => 'Team-Mitglied hinzugefügt.',
-            'failure' => 'Es ist ein Fehler bei der Erstellung eines neuen Team-Motglieds aufgetreten.',
+            'failure' => 'Es ist ein Fehler bei der Erstellung eines neuen Team-Mitglieds aufgetreten.',
         ],
         'edit'        => [
             'title'   => 'Profil aktualisieren',

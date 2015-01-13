@@ -42,7 +42,7 @@ return [
         'description' => 'Beschreibung',
         'link'        => 'Link',
         'tags'        => 'Tags',
-        'tags-help'   => 'Komma-separiert.',
+        'tags-help'   => 'Bitte als Komma-separierte Liste angeben.',
 
         'groups' => [
             'name' => 'Name',

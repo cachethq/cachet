@@ -4,7 +4,7 @@ return [
     // Components
     'components' => [
         'status' => [
-            1 => 'Operational',
+            1 => 'Funktionsfähig',
             2 => 'Performance Probleme',
             3 => 'Teilweise Ausfall',
             4 => 'größerer Ausfall',
@@ -13,15 +13,15 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => 'keine Ereignisse.',
-        'past'          => 'vergangene Ereignisse',
+        'none'          => 'keine Vorfälle.',
+        'past'          => 'vergangene Vorfälle',
         'previous_week' => 'letzte Woche',
         'next_week'     => 'nächste Woche',
-        'none'          => 'keine Ereignisse',
+        'none'          => 'keine Vorfälle',
         'status'        => [
-            1 => 'in Untersuchung',
-            2 => 'identifiziert',
-            3 => 'unter Beobachtung',
+            1 => 'Untersuchung läuft',
+            2 => 'Problem identifiziert',
+            3 => 'Problem unter Beobachtung',
             4 => 'Problem behoben',
         ],
     ],
