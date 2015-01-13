@@ -28,17 +28,15 @@ Cachet is currently unable to build assets under CentOS 6 and Debian Wheezy. Thi
 ## Requirements
 
 - PHP 5.4 or newer
+- mcrypt extension
 - Composer
 - Node.js
     + Bower
     + Gulp
-- mcrypt extension
 
-## Installation
+## Installation & Documentation
 
-See the [INSTALL.md](/docs/setup/install.md) document for more information. If you'd like to add more documentation, please create a Pull Request, I'd be happy to merge!
-
-[Deploying to Heroku](/docs/setup/install.md#deploy-to-heroku) requires one-click to get started and no knowledge of PHP or Laravel afterwards.
+You can now find our documentation at [https://docs.cachethq.io](https://docs.cachethq.io) or, directly at [http://cachet.readme.io](http://cachet.readme.io).
 
 ## Translations
 
