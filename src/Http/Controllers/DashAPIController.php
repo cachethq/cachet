@@ -21,7 +21,7 @@ class DashAPIController extends Controller
     public function postUpdateComponent(Component $component)
     {
         if (!$component->update(Binput::except(['_token']))) {
-            throw new Exception('Failed to update the component.');
+            throw new Exception(trans('dashboard.components.edit.failure'));
         }
 
         return $component;

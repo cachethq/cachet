@@ -169,7 +169,7 @@ class DashSettingsController extends Controller
             $maxSize = $file->getMaxFilesize();
 
             if ($file->getSize() > $maxSize) {
-                return Redirect::back()->withErrors("You need to upload an image that is less than $maxSize.");
+                return Redirect::back()->withErrors(trans('dashboard.settings.app-setup.too-big', ['size' => $maxSize]));
             }
 
             if (!$file->isValid() || $file->getError()) {
@@ -177,7 +177,7 @@ class DashSettingsController extends Controller
             }
 
             if (strpos($file->getMimeType(), 'image/') !== 0) {
-                return Redirect::back()->withErrors('Only images may be uploaded.');
+                return Redirect::back()->withErrors(trans('dashboard.settings.app-setup.images-only'));
             }
 
             // Store the banner.
