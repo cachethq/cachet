@@ -17,6 +17,7 @@ use Watson\Validating\ValidatingTrait;
  * @property string         $password
  * @property string         $remember_token
  * @property string         $email
+ * @property string         $api_key
  * @property int            $active
  * @property int            $level
  * @property \Carbon\Carbon $created_at
