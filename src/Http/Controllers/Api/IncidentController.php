@@ -73,4 +73,18 @@ class IncidentController extends Controller
     {
         return $this->incident->update($id, Binput::all());
     }
+
+    /**
+     * Delete an existing incident.
+     *
+     * @param int $id
+     *
+     * @return \Dingo\Api\Http\Response
+     */
+    public function deleteIncident($id)
+    {
+        $this->incident->destroy($id);
+
+        return $this->response->noContent();
+    }
 }

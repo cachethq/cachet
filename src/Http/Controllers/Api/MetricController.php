@@ -72,4 +72,18 @@ class MetricController extends Controller
     {
         return $this->metric->update($id, Binput::all());
     }
+
+    /**
+     * Delete an existing metric.
+     *
+     * @param int $id
+     *
+     * @return \Dingo\Api\Http\Response
+     */
+    public function deleteMetric($id)
+    {
+        $this->metric->destroy($id);
+
+        return $this->response->noContent();
+    }
 }
