@@ -1,4 +1,4 @@
-FROM php:5.4-apache
+FROM php:5.6-apache
 
 # before building
 # run npm install
@@ -40,10 +40,10 @@ RUN docker-php-ext-install zip && \
     docker-php-ext-install mcrypt && \
     docker-php-ext-install mbstring && \
     docker-php-ext-install pdo_mysql
-RUN curl http://pecl.php.net/get/APC-3.1.13.tgz -o /usr/src/php/ext/apc.tar.gz && \
-    tar xzvf /usr/src/php/ext/apc.tar.gz -C /usr/src/php/ext && \
-    mv /usr/src/php/ext/APC-3.1.13 /usr/src/php/ext/apc && \
-    docker-php-ext-install apc
+RUN curl http://pecl.php.net/get/apcu-4.0.7.tgz -o /usr/src/php/ext/apcu.tar.gz && \
+    tar xzvf /usr/src/php/ext/apcu.tar.gz -C /usr/src/php/ext && \
+    mv /usr/src/php/ext/apcu-4.0.7 /usr/src/php/ext/apcu && \
+    docker-php-ext-install apcu
 RUN curl -sS https://getcomposer.org/installer | php
 RUN php composer.phar install --no-dev -o
 
