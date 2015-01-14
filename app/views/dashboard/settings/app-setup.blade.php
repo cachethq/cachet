@@ -67,7 +67,7 @@
                                 <div class="col-xs-12">
                                     <div class="form-group">
                                         <label>{{ trans('forms.settings.app-setup.date-format') }}</label>
-                                        <input type="text" class="form-control" name="date_format" value="{{ Setting::get('date_format') ?: 'jS F Y' }}" required />
+                                        <input type="text" class="form-control" name="date_format" value="{{ Setting::get('date_format') ?: 'jS F Y' }}" />
                                     </div>
                                 </div>
                             </div>
