@@ -4,6 +4,7 @@ namespace CachetHQ\Cachet\Composers;
 
 use DateTime;
 use DateTimeZone;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\View;
 
 class TimezoneLocaleComposer
@@ -17,10 +18,12 @@ class TimezoneLocaleComposer
      */
     public function compose(\Illuminate\View\View $view)
     {
-        $langs = array_map(function ($lang) {
+        $enabledLangs = Config::get('langs');
+
+        $langs = array_map(function ($lang) use ($enabledLangs) {
             $locale = basename($lang);
 
-            return [$locale => ucwords(locale_get_display_name($locale, $locale))];
+            return [$locale => $enabledLangs[$locale]];
         }, glob(app_path('lang').'/*'));
 
         $langs = call_user_func_array('array_merge', $langs);

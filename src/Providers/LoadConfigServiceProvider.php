@@ -3,9 +3,6 @@
 namespace CachetHQ\Cachet\Providers;
 
 use CachetHQ\Cachet\Models\Setting;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\ServiceProvider;
 
 class LoadConfigServiceProvider extends ServiceProvider
@@ -17,15 +14,18 @@ class LoadConfigServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        // Get app custom configuration.
         $appDomain = Setting::get('app_domain');
         $appTimezone = Setting::get('app_timezone');
         $appLocale = Setting::get('app_locale');
 
-        Config::set('app.url', $appDomain ?: Config::get('app.url'));
-        Config::set('app.timezone', $appTimezone ?: Config::get('app.timezone'));
-        Config::set('app.locale', $appLocale ?: Config::get('app.locale'));
-        Lang::setLocale($appLocale);
+        // Override default app values.
+        $this->app->config->set('app.url', $appDomain ?: $this->app->config->get('app.url'));
+        $this->app->config->set('app.timezone', $appTimezone ?: $this->app->config->get('app.timezone'));
+        $this->app->config->set('app.locale', $appLocale ?: $this->app->config->get('app.locale'));
+
+        // Set custom lang.
+        $this->app->translator->setLocale($appLocale);
     }
 
     /**
