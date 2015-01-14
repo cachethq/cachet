@@ -49,11 +49,21 @@ class DashIncidentController extends Controller
 
         if (! $incident->isValid()) {
             return Redirect::back()->withInput(Binput::all())
-                ->with('title', sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.whoops'), trans('dashboard.incidents.add.failure')))
+                ->with('title', sprintf(
+                    "<strong>%s</strong> %s",
+                    trans('dashboard.notifications.whoops'),
+                    trans('dashboard.incidents.add.failure')
+                ))
                 ->with('errors', $incident->getErrors());
         }
 
-        return Redirect::back()->with('success', sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.awesome'), trans('dashboard.incidents.add.success')));
+        $successMsg = sprintf(
+            "<strong>%s</strong> %s",
+            trans('dashboard.notifications.awesome'),
+            trans('dashboard.incidents.add.success')
+        );
+
+        return Redirect::back()->with('success', $successMsg);
     }
 
     /**
@@ -80,11 +90,21 @@ class DashIncidentController extends Controller
 
         if (! $template->isValid()) {
             return Redirect::back()->withInput(Binput::all())
-                ->with('title', sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.awesome'), trans('dashboard.incidents.templates.add.failure')))
+                ->with('title', sprintf(
+                    "<strong>%s</strong> %s",
+                    trans('dashboard.notifications.awesome'),
+                    trans('dashboard.incidents.templates.add.failure')
+                ))
                 ->with('errors', $template->getErrors());
         }
 
-        return Redirect::back()->with('success', sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.awesome'), trans('dashboard.incidents.templates.add.success')));
+        $successMsg = sprintf(
+            "<strong>%s</strong> %s",
+            trans('dashboard.notifications.awesome'),
+            trans('dashboard.incidents.templates.add.success')
+        );
+
+        return Redirect::back()->with('success', $successMsg);
     }
 
     /**
@@ -130,10 +150,20 @@ class DashIncidentController extends Controller
 
         if (! $incident->isValid()) {
             return Redirect::back()->withInput(Binput::all())
-                ->with('title', sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.awesome'), trans('dashboard.incidents.templates.edit.failure')))
+                ->with('title', sprintf(
+                    "<strong>%s</strong> %s",
+                    trans('dashboard.notifications.awesome'),
+                    trans('dashboard.incidents.templates.edit.failure')
+                ))
                 ->with('errors', $incident->getErrors());
         }
 
-        return Redirect::to('dashboard/incidents')->with('success', sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.awesome'), trans('dashboard.incidents.edit.success')));
+        $successMsg = sprintf(
+            "<strong>%s</strong> %s",
+            trans('dashboard.notifications.awesome'),
+            trans('dashboard.incidents.edit.success')
+        );
+
+        return Redirect::to('dashboard/incidents')->with('success', $successMsg);
     }
 }
