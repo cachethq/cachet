@@ -6,6 +6,7 @@ use CachetHQ\Cachet\Models\Setting;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 
@@ -167,6 +168,8 @@ class DashSettingsController extends Controller
         } catch (Exception $e) {
             return Redirect::back()->with('errors', trans('dashboard.settings.edit.failure'));
         }
+
+        Lang::setLocale(Binput::get('app_locale'));
 
         return Redirect::back()->with('success', trans('dashboard.settings.edit.success'));
     }
