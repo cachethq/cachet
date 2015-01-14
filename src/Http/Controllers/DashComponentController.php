@@ -109,7 +109,7 @@ class DashComponentController extends Controller
         if (! $component->isValid()) {
             return Redirect::back()->withInput(Binput::all())
                 ->with('title', sprintf(
-                    "<strong>%s</strong> %s",
+                    '<strong>%s</strong> %s',
                     trans('dashboard.notifications.whoops'),
                     trans('dashboard.components.edit.failure')
                 ))
@@ -117,7 +117,7 @@ class DashComponentController extends Controller
         }
 
         $successMsg = sprintf(
-            "<strong>%s</strong> %s",
+            '<strong>%s</strong> %s',
             trans('dashboard.notifications.awesome'),
             trans('dashboard.components.edit.success')
         );
@@ -153,7 +153,7 @@ class DashComponentController extends Controller
         if (! $component->isValid()) {
             return Redirect::back()->withInput(Binput::all())
                 ->with('title', sprintf(
-                    "<strong>%s</strong> %s",
+                    '<strong>%s</strong> %s',
                     trans('dashboard.notifications.whoops'),
                     trans('dashboard.components.add.failure')
                 ))
@@ -161,7 +161,7 @@ class DashComponentController extends Controller
         }
 
         $successMsg = sprintf(
-            "<strong>%s</strong> %s",
+            '<strong>%s</strong> %s',
             trans('dashboard.notifications.awesome'),
             trans('dashboard.components.add.success')
         );
@@ -221,7 +221,7 @@ class DashComponentController extends Controller
         if (! $group->isValid()) {
             return Redirect::back()->withInput(Binput::all())
                 ->with('title', sprintf(
-                    "<strong>%s</strong> %s",
+                    '<strong>%s</strong> %s',
                     trans('dashboard.notifications.whoops'),
                     trans('dashboard.components.groups.add.failure')
                 ))
@@ -229,7 +229,7 @@ class DashComponentController extends Controller
         }
 
         $successMsg = sprintf(
-            "<strong>%s</strong> %s",
+            '<strong>%s</strong> %s',
             trans('dashboard.notifications.awesome'),
             trans('dashboard.components.groups.add.success')
         );
