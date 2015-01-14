@@ -73,4 +73,18 @@ class ComponentController extends Controller
     {
         return $this->component->create($this->auth->user()->id, Binput::all());
     }
+
+    /**
+     * Delete an existing component.
+     *
+     * @param int $id
+     *
+     * @return \Dingo\Api\Http\Response
+     */
+    public function deleteComponent($id)
+    {
+        $this->component->destroy($id);
+
+        return $this->response->noContent();
+    }
 }

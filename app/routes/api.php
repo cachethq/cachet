@@ -25,5 +25,9 @@ Route::api(['after' => 'allowed_domains', 'namespace' => 'CachetHQ\Cachet\Http\C
         Route::put('components/{id}', 'ComponentController@putComponent');
         Route::put('incidents/{id}', 'IncidentController@putIncident');
         Route::put('metrics/{id}', 'MetricController@putMetric');
+
+        Route::delete('components/{id}', 'ComponentController@deleteComponent');
+        Route::delete('incidents/{id}', 'IncidentController@deleteIncident');
+        Route::delete('metrics/{id}', 'MetricController@deleteMetric');
     });
 });

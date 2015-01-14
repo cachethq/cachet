@@ -121,7 +121,7 @@ abstract class EloquentRepository
      */
     public function destroy($id)
     {
-        $this->model->delete($id);
+        $this->model->destroy($id);
     }
 
     /**
