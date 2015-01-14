@@ -16,6 +16,7 @@ use Watson\Validating\ValidatingTrait;
  * @property string         $username
  * @property string         $password
  * @property string         $remember_token
+ * @property string         $google_2fa_secret
  * @property string         $email
  * @property string         $api_key
  * @property int            $active
