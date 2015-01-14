@@ -59,6 +59,7 @@ return [
             'site-url'          => 'URL der Seite',
             'site-timezone'     => 'Wählen Sie Ihre Zeitzone',
             'site-locale'       => 'Wählen Sie Ihre Sprache',
+            'date-format'       => 'Datumsformat',
             'about-this-page'   => 'Über diese Seite',
             'days-of-incidents' => 'Wie viele (vergangene) Tage sollen angezeigt werden?',
             'banner'            => 'Banner-Bild',

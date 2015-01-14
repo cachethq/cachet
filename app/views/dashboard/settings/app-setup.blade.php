@@ -66,6 +66,14 @@
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="form-group">
+                                        <label>{{ trans('forms.settings.app-setup.date-format') }}</label>
+                                        <input type="text" class="form-control" name="date_format" value="{{ Setting::get('date_format') ?: 'jS F Y' }}" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="form-group">
                                         <label>{{ trans('forms.settings.app-setup.site-locale') }}</label>
                                         <select name="app_locale" class="form-control" required>
                                             <option value="">Select Language</option>

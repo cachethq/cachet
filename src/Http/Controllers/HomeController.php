@@ -5,12 +5,12 @@ namespace CachetHQ\Cachet\Http\Controllers;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\Setting;
-use Carbon\Carbon;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
 use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\View;
+use Jenssegers\Date\Date;
 
 class HomeController extends Controller
 {
@@ -27,14 +27,16 @@ class HomeController extends Controller
 
         $incidentDays = Setting::get('app_incident_days') ?: 7;
 
-        $today = Carbon::now();
-        $startDate = Carbon::now();
+        $today = Date::now();
+        $startDate = Date::now();
+
+        $dateFormat = Setting::get('date_format') ?: 'jS F Y';
 
         // Check if we have another starting date
         if (Binput::has('start_date')) {
             try {
                 // If date provided is valid
-                $oldDate = Carbon::createFromFormat('Y-m-d', Binput::get('start_date'));
+                $oldDate = Date::createFromFormat('Y-m-d', Binput::get('start_date'));
                 // If trying to get a future date fallback to today
                 if ($today->gt($oldDate)) {
                     $startDate = $oldDate;
@@ -50,7 +52,7 @@ class HomeController extends Controller
                 $date->format('Y-m-d').' 00:00:00',
                 $date->format('Y-m-d').' 23:59:59',
             ])->orderBy('created_at', 'desc')->get();
-            $allIncidents[] = ['date' => $date->format('jS F Y'), 'incidents' => $incidents];
+            $allIncidents[] = ['date' => $date->format($dateFormat), 'incidents' => $incidents];
         }
 
         return View::make('index', [
