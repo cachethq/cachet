@@ -61,14 +61,3 @@ App::missing(function ($exception) {
 App::down(function () {
     return Response::make("Be right back!", 503);
 });
-
-/*
-|--------------------------------------------------------------------------
-| View Composers
-|--------------------------------------------------------------------------
-|
-| Register Cachet's view composers.
-|
-*/
-
-require app_path('composers.php');
