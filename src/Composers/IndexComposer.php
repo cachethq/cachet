@@ -17,6 +17,12 @@ class IndexComposer
      */
     public function compose(\Illuminate\View\View $view)
     {
+        // Default data
+        $withData = [
+            'systemStatus'  => 'danger',
+            'systemMessage' => trans('cachet.service.bad'),
+        ];
+
         $components = Component::notStatus(1);
 
         if (Component::all()->count() === 0 || $components->count() === 0) {
@@ -25,20 +31,13 @@ class IndexComposer
             $incidentCount = $incidents->count();
 
             if ($incidentCount === 0 || ($incidentCount >= 1 && (int) $incidents->first()->status === 4)) {
-                $status = 'success';
-                $message = trans('cachet.service.good');
-            } else {
-                $status = 'danger';
-                $message = trans('cachet.service.bad');
+                $withData = [
+                    'systemStatus'  => 'success',
+                    'systemMessage' => trans('cachet.service.good'),
+                ];
             }
-        } else {
-            $status  = 'danger';
-            $message = trans('cachet.service.bad');
         }
 
-        $view->with([
-            'systemStatus'  => $status,
-            'systemMessage' => $message,
-        ]);
+        $view->with($withData);
     }
 }
