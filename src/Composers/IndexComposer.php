@@ -23,9 +23,7 @@ class IndexComposer
             'systemMessage' => trans('cachet.service.bad'),
         ];
 
-        $components = Component::notStatus(1);
-
-        if (Component::all()->count() === 0 || $components->count() === 0) {
+        if (Component::notStatus(1)->count() === 0) {
             // If all our components are ok, do we have any non-fixed incidents?
             $incidents = Incident::orderBy('created_at', 'desc')->get();
             $incidentCount = $incidents->count();
