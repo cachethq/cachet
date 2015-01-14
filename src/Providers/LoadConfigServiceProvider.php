@@ -1,24 +1,23 @@
 <?php
 
-namespace CachetHQ\Cachet\Http\Before;
+namespace CachetHQ\Cachet\Providers;
 
 use CachetHQ\Cachet\Models\Setting;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Lang;
+use Illuminate\Support\ServiceProvider;
 
-class LoadConfigFilter
+class LoadConfigServiceProvider extends ServiceProvider
 {
     /**
-     * Load confit to override values filter.
+     * Boot the service provider.
      *
-     * @param \Illuminate\Http\Request $request
-     *
-     * @return null
+     * @return void
      */
-    public function filter(Request $request)
+    public function boot()
     {
-        // Always allow our own domain.
+        //
         $appDomain = Setting::get('app_domain');
         $appTimezone = Setting::get('app_timezone');
         $appLocale = Setting::get('app_locale');
@@ -27,5 +26,15 @@ class LoadConfigFilter
         Config::set('app.timezone', $appTimezone ?: Config::get('app.timezone'));
         Config::set('app.locale', $appLocale ?: Config::get('app.locale'));
         Lang::setLocale($appLocale);
+    }
+
+    /**
+     * Register the service provider.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        //
     }
 }
