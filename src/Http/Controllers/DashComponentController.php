@@ -80,8 +80,15 @@ class DashComponentController extends Controller
     {
         $groups = ComponentGroup::all();
 
+        $pageTitle = sprintf(
+            '"%s" - %s - %s',
+            $component->name,
+            trans('dashboard.components.edit.title'),
+            trans('dashboard.dashboard')
+        );
+
         return View::make('dashboard.components.edit')->with([
-            'pageTitle' => '"'.$component->name.'" - '.trans('dashboard.components.edit.title').' - '.trans('dashboard.dashboard'),
+            'pageTitle' => $pageTitle,
             'component' => $component,
             'groups'    => $groups,
         ]);
@@ -101,11 +108,21 @@ class DashComponentController extends Controller
 
         if (! $component->isValid()) {
             return Redirect::back()->withInput(Binput::all())
-                ->with('title', sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.whoops'), trans('dashboard.components.edit.failure')))
+                ->with('title', sprintf(
+                    "<strong>%s</strong> %s",
+                    trans('dashboard.notifications.whoops'),
+                    trans('dashboard.components.edit.failure')
+                ))
                 ->with('errors', $component->getErrors());
         }
 
-        return Redirect::back()->with('success', sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.awesome'), trans('dashboard.components.edit.success')));
+        $successMsg = sprintf(
+            "<strong>%s</strong> %s",
+            trans('dashboard.notifications.awesome'),
+            trans('dashboard.components.edit.success')
+        );
+
+        return Redirect::back()->with('success', $successMsg);
     }
 
     /**
@@ -135,11 +152,21 @@ class DashComponentController extends Controller
 
         if (! $component->isValid()) {
             return Redirect::back()->withInput(Binput::all())
-                ->with('title', sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.whoops'), trans('dashboard.components.add.failure')))
+                ->with('title', sprintf(
+                    "<strong>%s</strong> %s",
+                    trans('dashboard.notifications.whoops'),
+                    trans('dashboard.components.add.failure')
+                ))
                 ->with('errors', $component->getErrors());
         }
 
-        return Redirect::back()->with('success', sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.awesome'), trans('dashboard.components.add.success')));
+        $successMsg = sprintf(
+            "<strong>%s</strong> %s",
+            trans('dashboard.notifications.awesome'),
+            trans('dashboard.components.add.success')
+        );
+
+        return Redirect::back()->with('success', $successMsg);
     }
 
     /**
@@ -193,10 +220,20 @@ class DashComponentController extends Controller
 
         if (! $group->isValid()) {
             return Redirect::back()->withInput(Binput::all())
-                ->with('title', sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.whoops'), trans('dashboard.components.groups.add.failure')))
+                ->with('title', sprintf(
+                    "<strong>%s</strong> %s",
+                    trans('dashboard.notifications.whoops'),
+                    trans('dashboard.components.groups.add.failure')
+                ))
                 ->with('errors', $group->getErrors());
         }
 
-        return Redirect::back()->with('success', sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.awesome'), trans('dashboard.components.groups.add.success')));
+        $successMsg = sprintf(
+            "<strong>%s</strong> %s",
+            trans('dashboard.notifications.awesome'),
+            trans('dashboard.components.groups.add.success')
+        );
+
+        return Redirect::back()->with('success', $successMsg);
     }
 }
