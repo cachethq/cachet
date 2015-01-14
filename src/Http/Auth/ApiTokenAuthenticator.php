@@ -27,7 +27,7 @@ class ApiTokenAuthenticator extends AuthorizationProvider
             try {
                 return User::findByApiToken($apiToken);
             } catch (ModelNotFoundException $e) {
-                throw new UnauthorizedHttpException(null, 'The API key you provided was not correct.');
+                throw new UnauthorizedHttpException(null, 'The API token you provided was not correct.');
             }
         }
 
