@@ -48,6 +48,7 @@ class SetupController extends Controller
             'Antarctica' => DateTimeZone::ANTARCTICA,
             'Asia'       => DateTimeZone::ASIA,
             'Atlantic'   => DateTimeZone::ATLANTIC,
+            'Australia'  => DateTimeZone::AUSTRALIA,
             'Europe'     => DateTimeZone::EUROPE,
             'Indian'     => DateTimeZone::INDIAN,
             'Pacific'    => DateTimeZone::PACIFIC,
