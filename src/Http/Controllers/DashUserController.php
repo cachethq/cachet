@@ -52,11 +52,21 @@ class DashUserController extends Controller
 
         if (! $user->isValid()) {
             return Redirect::back()->withInput(Binput::except('password'))
-                ->with('title', sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.whoops'), trans('dashboard.team.edit.failure')))
+                ->with('title', sprintf(
+                    '<strong>%s</strong> %s',
+                    trans('dashboard.notifications.whoops'),
+                    trans('dashboard.team.edit.failure')
+                ))
                 ->with('errors', $user->getErrors());
         }
 
-        return Redirect::back()->with('success', sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.awesome'), trans('dashboard.team.edit.success')));
+        $successMsg = sprintf(
+            '<strong>%s</strong> %s',
+            trans('dashboard.notifications.awesome'),
+            trans('dashboard.team.edit.success')
+        );
+
+        return Redirect::back()->with('success', $successMsg);
     }
 
     /**
