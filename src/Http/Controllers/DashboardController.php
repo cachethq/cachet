@@ -15,7 +15,6 @@ class DashboardController extends Controller
      */
     public function showDashboard()
     {
-        // TODO: Find steps needed to complete setup.
         $components = Component::all();
 
         return View::make('dashboard.index')->with([
