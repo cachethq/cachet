@@ -60,6 +60,7 @@ return [
             'site-url'          => 'Site URL',
             'site-timezone'     => 'Site Timezone',
             'site-locale'       => 'Site Language',
+            'date-format'       => 'Date Format',
             'about-this-page'   => 'About this page',
             'days-of-incidents' => 'How many days of incidents to show?',
             'banner'            => 'Banner Image',

@@ -59,6 +59,7 @@ return [
             'site-url'          => 'URL du site',
             'site-timezone'     => 'Fuseau horaire du site',
             'site-locale'       => 'Langue du site',
+            'date-format'       => 'Format de date',
             'about-this-page'   => 'À propos de cette page',
             'days-of-incidents' => 'Nombre de jours à afficher ?',
             'banner'            => 'Bannière',
