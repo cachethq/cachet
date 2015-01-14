@@ -147,6 +147,7 @@ return [
         'CachetHQ\Cachet\Providers\RoutingServiceProvider',
         'CachetHQ\Cachet\Providers\ViewComposerServiceProvider',
         'CachetHQ\Cachet\Providers\LoadConfigServiceProvider',
+        'CachetHQ\Cachet\Providers\SettingsServiceProvider',
 
     ],
 
@@ -185,7 +186,7 @@ return [
         'Response' => 'Illuminate\Support\Facades\Response',
         'Route'    => 'Illuminate\Support\Facades\Route',
         'Session'  => 'Illuminate\Support\Facades\Session',
-        'Setting'  => 'CachetHQ\Cachet\Models\Setting',
+        'Setting'  => 'CachetHQ\Cachet\Facades\Setting',
         'Str'      => 'Illuminate\Support\Str',
 
     ],
