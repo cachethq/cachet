@@ -24,5 +24,9 @@ class ViewComposerServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->view->composer('index', 'CachetHQ\Cachet\Composers\IndexComposer');
+        $this->app->view->composer([
+            'setup',
+            'dashboard.settings.app-setup',
+        ], 'CachetHQ\Cachet\Composers\TimezoneLocaleComposer');
     }
 }

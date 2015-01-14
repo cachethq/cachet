@@ -4,8 +4,6 @@ namespace CachetHQ\Cachet\Http\Controllers;
 
 use CachetHQ\Cachet\Models\Setting;
 use CachetHQ\Cachet\Models\User;
-use DateTime;
-use DateTimeZone;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -34,49 +32,8 @@ class SetupController extends Controller
      */
     public function getIndex()
     {
-        $langs = array_map(function ($lang) {
-            $locale = basename($lang);
-
-            return [$locale => ucwords(locale_get_display_name($locale, $locale))];
-        }, glob(app_path('lang').'/*'));
-
-        $langs = call_user_func_array('array_merge', $langs);
-
-        $regions = [
-            'Africa'     => DateTimeZone::AFRICA,
-            'America'    => DateTimeZone::AMERICA,
-            'Antarctica' => DateTimeZone::ANTARCTICA,
-            'Asia'       => DateTimeZone::ASIA,
-            'Atlantic'   => DateTimeZone::ATLANTIC,
-            'Australia'  => DateTimeZone::AUSTRALIA,
-            'Europe'     => DateTimeZone::EUROPE,
-            'Indian'     => DateTimeZone::INDIAN,
-            'Pacific'    => DateTimeZone::PACIFIC,
-        ];
-
-        $timezones = [];
-
-        foreach ($regions as $name => $mask) {
-            $zones = DateTimeZone::listIdentifiers($mask);
-
-            foreach ($zones as $timezone) {
-                // Lets sample the time there right now
-                $time = new DateTime(null, new DateTimeZone($timezone));
-
-                // Us dumb Americans can't handle millitary time
-                $ampm = $time->format('H') > 12 ? ' ('.$time->format('g:i a').')' : '';
-
-                // Remove region name and add a sample time
-                $timezones[$name][$timezone] = substr($timezone, strlen($name) + 1).' - '.$time->format('H:i').$ampm;
-
-                $timezones[$name] = str_replace('_', ' ', $timezones[$name]);
-            }
-        }
-
-        return View::make('setup')->with([
+         return View::make('setup')->with([
             'pageTitle' => trans('setup.setup'),
-            'timezones' => $timezones,
-            'langs'     => $langs,
         ]);
     }
 
