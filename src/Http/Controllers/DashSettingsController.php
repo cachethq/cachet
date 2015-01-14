@@ -128,7 +128,9 @@ class DashSettingsController extends Controller
             $maxSize = $file->getMaxFilesize();
 
             if ($file->getSize() > $maxSize) {
-                return Redirect::back()->withErrors(trans('dashboard.settings.app-setup.too-big', ['size' => $maxSize]));
+                return Redirect::back()->withErrors(trans('dashboard.settings.app-setup.too-big', [
+                    'size' => $maxSize,
+                ]));
             }
 
             if (!$file->isValid() || $file->getError()) {
