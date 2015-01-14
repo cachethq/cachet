@@ -5,12 +5,12 @@ namespace CachetHQ\Cachet\Http\Controllers;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\Setting;
-use Jenssegers\Date\Date;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
 use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\View;
+use Jenssegers\Date\Date;
 
 class HomeController extends Controller
 {
