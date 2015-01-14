@@ -9,6 +9,7 @@ return [
         'incidents'                => 'Incidents',
         'logged'                   => '{0} Il n\'y a aucun incident, bien joué !|Vous avez reporté un incident.|Vous avez reporté <strong>:count</strong> incidents.',
         'incident-create-template' => 'Créer un modèle',
+        'incident-templates'       => 'Modèles d\'incident',
         'add'                      => [
             'title'   => 'Ajouter un incident',
             'success' => 'Incident ajouté.',
@@ -26,6 +27,11 @@ return [
                 'title'   => 'Créer un modèle d\'incident',
                 'success' => 'Modèle créé.',
                 'failure' => 'Il s\'est passé quelque chose avec ce modèle d\'incident.',
+            ],
+            'edit' => [
+                'title'   => 'Modifier un modèle',
+                'success' => 'Modèle mis à jour.',
+                'failure' => 'Une erreur s\'est produite lors de la mise à jour du modèle.',
             ],
         ],
     ],

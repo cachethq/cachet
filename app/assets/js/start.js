@@ -156,6 +156,32 @@ $(function() {
         });
     });
 
+    // Incident management
+    $('select[name=template]').on('change', function() {
+        var $this = $(this).find('option:selected'),
+            slug   = $this.val();
+
+        // Only fetch the template if we've picked one.
+        if (slug) {
+            $.ajax({
+                async: true,
+                dataType: 'json',
+                data: {
+                    slug: slug
+                },
+                url: '/dashboard/api/incidents/templates',
+                success: function(tpl) {
+                    var $form = $('form[name=IncidentForm]');
+                    $form.find('input[name=incident\\[name\\]]').val(tpl.name);
+                    $form.find('textarea[name=incident\\[message\\]]').val(tpl.template);
+                },
+                error: function() {
+                    (new CachetHQ.Notifier()).notify('There was an error finding that template.');
+                }
+            });
+        }
+    });
+
     // Banner removal JS
     $('#remove-banner').click(function(){
         $('#banner-view').remove();

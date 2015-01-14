@@ -37,11 +37,11 @@
                     <span>{{ trans('dashboard.incidents.incidents') }}</span>
                 </a>
             </li>
-            {{-- <li {{ set_active('dashboard/incidents/templates') }}>
-                <a href="{{ route('dashboard.incidents.template') }}">
-                    <i class="fa fa-plus"></i> {{ trans('cachet.dashboard.incident-create-template') }}
+            <li {{ set_active('dashboard/templates*') }}>
+                <a href="{{ route('dashboard.templates') }}">
+                    <i class="icons ion-document-text"></i> {{ trans('dashboard.incidents.incident-templates') }}
                 </a>
-            </li> --}}
+            </li>
             <li {{ set_active('dashboard/components*') }}>
                 <a href="{{ route('dashboard.components') }}">
                     <i class="icons ion-ios-keypad"></i>

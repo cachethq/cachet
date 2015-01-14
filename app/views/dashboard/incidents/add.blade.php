@@ -17,6 +17,15 @@
                 {{ Form::open(['name' => 'IncidentForm', 'class' => 'form-vertical', 'role' => 'form']) }}
                     <fieldset>
                         <div class="form-group">
+                            <label for="incident-template">{{ trans('forms.incidents.templates.template') }}</label>
+                            <select class="form-control" name="template">
+                                <option selected></option>
+                                @foreach($incidentTemplates as $tpl)
+                                <option value="{{ $tpl->slug }}">{{ $tpl->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <label for="incident-name">{{ trans('forms.incidents.name') }}</label>
                             <input type="text" class="form-control" name="incident[name]" id="incident-name" required value="{{ Input::old('incident.name') }}" />
                         </div>
