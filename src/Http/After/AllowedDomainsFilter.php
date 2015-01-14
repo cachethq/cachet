@@ -25,8 +25,8 @@ class AllowedDomainsFilter
         $response->headers->set('Access-Control-Allow-Origin', $ourDomain);
 
         // Should we allow anyone else?
-        if ($setting = Setting::get('allowed_domains')) {
-            $domains = explode(',', $setting);
+        if ($allowedDomains = Setting::get('allowed_domains')) {
+            $domains = explode(',', $allowedDomains);
             foreach ($domains as $domain) {
                 $response->headers->set('Access-Control-Allow-Origin', $domain);
             }
