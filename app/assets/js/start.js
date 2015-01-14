@@ -96,6 +96,19 @@ $(function() {
         $(this).parents('div.alert').addClass('hide');
     });
 
+    $('form[name=IncidentForm] select[name=incident\\[component_id\\]]').on('change', function() {
+        var $option = $(this).find('option:selected');
+        var $componentStatus = $('#component-status');
+
+        if ($option.val() !== '') {
+            if ($componentStatus.hasClass('hidden')) {
+                $componentStatus.removeClass('hidden');
+            } else {
+                $componentStatus.addClass('hidden');
+            }
+        }
+    });
+
     // Sortable components.
     var componentList = document.getElementById("component-list");
     if (componentList) {

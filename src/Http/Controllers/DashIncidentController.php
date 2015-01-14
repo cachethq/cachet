@@ -2,6 +2,7 @@
 
 namespace CachetHQ\Cachet\Http\Controllers;
 
+use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentTemplate;
 use GrahamCampbell\Binput\Facades\Binput;
@@ -34,7 +35,8 @@ class DashIncidentController extends Controller
     public function showAddIncident()
     {
         return View::make('dashboard.incidents.add')->with([
-            'pageTitle' => trans('dashboard.incidents.add.title').' - '.trans('dashboard.dashboard'),
+            'pageTitle'  => trans('dashboard.incidents.add.title').' - '.trans('dashboard.dashboard'),
+            'components' => Component::all(),
         ]);
     }
 
@@ -45,7 +47,9 @@ class DashIncidentController extends Controller
      */
     public function createIncidentAction()
     {
-        $incident = Incident::create(Binput::get('incident'));
+        $incidentData = Binput::get('incident');
+        $componentStatus = array_pull($incidentData, 'component_status');
+        $incident = Incident::create($incidentData);
 
         if (! $incident->isValid()) {
             return Redirect::back()->withInput(Binput::all())
@@ -55,6 +59,13 @@ class DashIncidentController extends Controller
                     trans('dashboard.incidents.add.failure')
                 ))
                 ->with('errors', $incident->getErrors());
+        }
+
+        // Update the component.
+        if ((int) $incidentData['component_id'] > 0) {
+            Component::find($incidentData['component_id'])->update([
+                'status' => $componentStatus,
+            ]);
         }
 
         $successMsg = sprintf(
@@ -131,8 +142,9 @@ class DashIncidentController extends Controller
     public function showEditIncidentAction(Incident $incident)
     {
         return View::make('dashboard.incidents.edit')->with([
-            'pageTitle' => trans('dashboard.incidents.edit.title').' - '.trans('dashboard.dashboard'),
-            'incident'  => $incident,
+            'pageTitle'  => trans('dashboard.incidents.edit.title').' - '.trans('dashboard.dashboard'),
+            'incident'   => $incident,
+            'components' => Component::all(),
         ]);
     }
 

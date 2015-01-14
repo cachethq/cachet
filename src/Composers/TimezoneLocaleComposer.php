@@ -2,8 +2,6 @@
 
 namespace CachetHQ\Cachet\Composers;
 
-use CachetHQ\Cachet\Models\Component;
-use CachetHQ\Cachet\Models\Incident;
 use DateTime;
 use DateTimeZone;
 use Illuminate\Support\Facades\View;
