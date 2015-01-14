@@ -144,6 +144,7 @@ return [
         'CachetHQ\Cachet\Providers\ConsoleServiceProvider',
         'CachetHQ\Cachet\Providers\RepositoryServiceProvider',
         'CachetHQ\Cachet\Providers\RoutingServiceProvider',
+        'CachetHQ\Cachet\Providers\ViewComposerServiceProvider',
 
     ],
 
