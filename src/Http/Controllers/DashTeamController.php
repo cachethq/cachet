@@ -61,11 +61,11 @@ class DashTeamController extends Controller
 
         if (! $user->isValid()) {
             return Redirect::back()->withInput(Binput::except('password'))
-                ->with('title', sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.whoops'), trans('dashboard.team.add.failure')))
+                ->with('title', sprintf('<strong>%s</strong> %s', trans('dashboard.notifications.whoops'), trans('dashboard.team.add.failure')))
                 ->with('errors', $user->getErrors());
         }
 
-        return Redirect::back()->with('success', sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.awesome'), trans('dashboard.team.add.success')));
+        return Redirect::back()->with('success', sprintf('<strong>%s</strong> %s', trans('dashboard.notifications.awesome'), trans('dashboard.team.add.success')));
     }
 
     /**
@@ -89,10 +89,10 @@ class DashTeamController extends Controller
 
         if (! $user->isValid()) {
             return Redirect::back()->withInput(Binput::except('password'))
-                ->with('title', sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.whoops'), trans('dashboard.team.edit.failure')))
+                ->with('title', sprintf('<strong>%s</strong> %s', trans('dashboard.notifications.whoops'), trans('dashboard.team.edit.failure')))
                 ->with('errors', $user->getErrors());
         }
 
-        return Redirect::back()->with('success', sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.awesome'), trans('dashboard.team.edit.success')));
+        return Redirect::back()->with('success', sprintf('<strong>%s</strong> %s', trans('dashboard.notifications.awesome'), trans('dashboard.team.edit.success')));
     }
 }
