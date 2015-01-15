@@ -79,13 +79,18 @@
                         <div class="form-group">
                             <label>{{ trans('forms.incidents.message') }}</label>
                             <textarea name="incident[message]" class="form-control" rows="5" required>{{ Input::old('incident.message') }}</textarea>
-                            <span class="help-block">{{ trans('forms.incidents.message-help') }}</span>
+                            <span class="help-block"><i class='icons ion-social-markdown'></i> {{ trans('forms.incidents.message-help') }}</span>
                         </div>
                     </fieldset>
 
                     <input type="hidden" name="incident[user_id]" value="{{ Auth::user()->id }}">
-                    <button type="submit" class="btn btn-success">{{ trans('forms.add') }}</button>
-                    <a class="btn btn-default" href="{{ route('dashboard.incidents') }}">{{ trans('forms.cancel') }}</a>
+
+                    <div class='form-group'>
+                        <div class='btn-group'>
+                            <button type="submit" class="btn btn-success">{{ trans('forms.add') }}</button>
+                            <a class="btn btn-default" href="{{ route('dashboard.incidents') }}">{{ trans('forms.cancel') }}</a>
+                        </div>
+                    </div>
                 {{ Form::close() }}
             </div>
         </div>
