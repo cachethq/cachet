@@ -38,6 +38,31 @@ Cachet is currently unable to build assets under CentOS 6 and Debian Wheezy. Thi
 
 You can now find our documentation at [https://docs.cachethq.io](https://docs.cachethq.io) or, directly at [http://cachet.readme.io](http://cachet.readme.io).
 
+## Quickstart with Docker
+
+Run a DB container (you can either pass in environment variables for the DB, or mount a config with ```-v /my/database.php:/var/www/html/app/config/database.php```):
+
+```
+export DB_USERNAME=cachet
+export DB_PASSWORD=cachet
+export DB_DATABASE=cachet
+docker run --name mysql -e MYSQL_USER=$DB_USERNAME -e MYSQL_PASSWORD=$DB_PASSWORD -e MYSQL_DATABASE=$DB_DATABASE -d mysql
+```
+
+Initialize the DB if you havent yet:
+
+```
+docker run --link mysql:mysql -e DB_HOST=mysql -e DB_DATABASE=$DB_DATABASE -e DB_USERNAME=$DB_USERNAME -e DB_PASSWORD=$DB_PASSWORD byxorna/cachet:test php artisan migrate
+```
+
+Run Cachet:
+
+```
+docker run -d --link mysql:mysql -p 80:80 -e DB_HOST=mysql -e DB_DATABASE=$DB_DATABASE -e DB_USERNAME=$DB_USERNAME -e DB_PASSWORD=$DB_PASSWORD byxorna/cachet:test
+```
+
+Now go to ```http://<ipdockerisboundto>/setup``` and have fun!
+
 ## Translations
 
 A special thank you to our [translators](https://crowdin.com/project/cachet/activity_stream), who have allowed us to share Cachet with the world. If you'd like to contribute translations, please check out our [CrowdIn project](https://crowdin.com/project/cachet).
