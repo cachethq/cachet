@@ -26,7 +26,7 @@
                                     @foreach(trans('cachet.components.status') as $statusID => $status)
                                     <div class="radio-inline">
                                         <label>
-                                            <input type="radio" name="status" value="{{ $statusID }}" {{ $component->status === $statusID ? 'checked' : null }} />
+                                            <input type="radio" name="status" value="{{ $statusID }}" {{ (int) $component->status === $statusID ? 'checked' : null }} />
                                             {{ $status }}
                                         </label>
                                     </div>
