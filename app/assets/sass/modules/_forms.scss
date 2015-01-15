@@ -2,6 +2,11 @@ label {
     font-size: 14px;
 }
 
+textarea {
+    resize: none;
+    overflow: auto;
+}
+
 .form-control {
     display: block;
     width: 100%;
@@ -13,7 +18,6 @@ label {
     background-color: #fff;
     background-image: none;
     border: 1px solid #ccc;
-    border-radius: 4px;
     @include box-shadow(none !important);
     @include transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s);
 
