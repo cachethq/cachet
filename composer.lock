@@ -439,16 +439,16 @@
         },
         {
             "name": "doctrine/dbal",
-            "version": "v2.5.0",
+            "version": "v2.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "71140662c0a954602e81271667b6e03d9f53ea34"
+                "reference": "628c2256b646ae2417d44e063bce8aec5199d48d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/71140662c0a954602e81271667b6e03d9f53ea34",
-                "reference": "71140662c0a954602e81271667b6e03d9f53ea34",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/628c2256b646ae2417d44e063bce8aec5199d48d",
+                "reference": "628c2256b646ae2417d44e063bce8aec5199d48d",
                 "shasum": ""
             },
             "require": {
@@ -506,7 +506,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2014-12-04 21:57:15"
+            "time": "2015-01-12 21:52:47"
         },
         {
             "name": "doctrine/inflector",
@@ -631,16 +631,16 @@
         },
         {
             "name": "erusev/parsedown",
-            "version": "1.2.0",
+            "version": "1.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/erusev/parsedown.git",
-                "reference": "098f18855283f337a7377189719430d60b16f166"
+                "reference": "f08d017bcb452e5a82cc2069cca705d9e6e75da0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/erusev/parsedown/zipball/098f18855283f337a7377189719430d60b16f166",
-                "reference": "098f18855283f337a7377189719430d60b16f166",
+                "url": "https://api.github.com/repos/erusev/parsedown/zipball/f08d017bcb452e5a82cc2069cca705d9e6e75da0",
+                "reference": "f08d017bcb452e5a82cc2069cca705d9e6e75da0",
                 "shasum": ""
             },
             "type": "library",
@@ -666,7 +666,7 @@
                 "markdown",
                 "parser"
             ],
-            "time": "2015-01-10 12:53:08"
+            "time": "2015-01-15 00:45:45"
         },
         {
             "name": "erusev/parsedown-extra",
@@ -1186,16 +1186,16 @@
         },
         {
             "name": "jenssegers/date",
-            "version": "v2.0.10",
+            "version": "v2.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jenssegers/laravel-date.git",
-                "reference": "7ac5efaf4b829356d7feda21cace52097c8a1377"
+                "reference": "907b5282fe5215be32fdb961834912bb7aadb32f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jenssegers/laravel-date/zipball/7ac5efaf4b829356d7feda21cace52097c8a1377",
-                "reference": "7ac5efaf4b829356d7feda21cace52097c8a1377",
+                "url": "https://api.github.com/repos/jenssegers/laravel-date/zipball/907b5282fe5215be32fdb961834912bb7aadb32f",
+                "reference": "907b5282fe5215be32fdb961834912bb7aadb32f",
                 "shasum": ""
             },
             "require": {
@@ -1229,20 +1229,20 @@
                 "laravel",
                 "time"
             ],
-            "time": "2015-01-01 22:46:48"
+            "time": "2015-01-12 15:39:33"
         },
         {
             "name": "jeremeamia/SuperClosure",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jeremeamia/super_closure.git",
-                "reference": "d05400085f7d4ae6f20ba30d36550836c0d061e8"
+                "reference": "4d89ca74994feab128ea46d5b3add92e6cb84554"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jeremeamia/super_closure/zipball/d05400085f7d4ae6f20ba30d36550836c0d061e8",
-                "reference": "d05400085f7d4ae6f20ba30d36550836c0d061e8",
+                "url": "https://api.github.com/repos/jeremeamia/super_closure/zipball/4d89ca74994feab128ea46d5b3add92e6cb84554",
+                "reference": "4d89ca74994feab128ea46d5b3add92e6cb84554",
                 "shasum": ""
             },
             "require": {
@@ -1277,7 +1277,7 @@
                 "serialize",
                 "tokenizer"
             ],
-            "time": "2013-10-09 04:20:00"
+            "time": "2015-01-10 01:09:28"
         },
         {
             "name": "laravel/framework",
@@ -1676,16 +1676,16 @@
         },
         {
             "name": "patchwork/utf8",
-            "version": "v1.1.27",
+            "version": "v1.1.28",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tchwork/utf8.git",
-                "reference": "f26cc98847add84cb27c5d77e2e0dff715944ac6"
+                "reference": "ffa082111aa3cb23cf2479a17e6785ace91da982"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tchwork/utf8/zipball/f26cc98847add84cb27c5d77e2e0dff715944ac6",
-                "reference": "f26cc98847add84cb27c5d77e2e0dff715944ac6",
+                "url": "https://api.github.com/repos/tchwork/utf8/zipball/ffa082111aa3cb23cf2479a17e6785ace91da982",
+                "reference": "ffa082111aa3cb23cf2479a17e6785ace91da982",
                 "shasum": ""
             },
             "require": {
@@ -1723,7 +1723,7 @@
                 "utf-8",
                 "utf8"
             ],
-            "time": "2015-01-11 12:41:11"
+            "time": "2015-01-12 08:05:15"
         },
         {
             "name": "phpseclib/phpseclib",
@@ -3131,7 +3131,7 @@
             ],
             "authors": [
                 {
-                    "name": "Padraic Brady",
+                    "name": "Pádraic Brady",
                     "email": "padraic.brady@gmail.com",
                     "homepage": "http://blog.astrumfutura.com"
                 },
