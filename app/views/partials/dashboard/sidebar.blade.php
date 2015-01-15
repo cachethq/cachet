@@ -39,7 +39,8 @@
             </li>
             <li {{ set_active('dashboard/templates*') }}>
                 <a href="{{ route('dashboard.templates') }}">
-                    <i class="icons ion-document-text"></i> {{ trans('dashboard.incidents.incident-templates') }}
+                    <i class="icons ion-document-text"></i>
+                    <span>{{ trans('dashboard.incidents.incident-templates') }}</span>
                 </a>
             </li>
             <li {{ set_active('dashboard/components*') }}>
