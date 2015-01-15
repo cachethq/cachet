@@ -14,6 +14,10 @@ ENV DB_DRIVER=mysql \
 COPY . /var/www/html/
 WORKDIR /var/www/html/
 
+RUN curl http://nodejs.org/dist/v0.10.35/node-v0.10.35-linux-x64.tar.gz -o /tmp/nodejs.tar.gz && \
+    tar xzf /tmp/nodejs.tar.gz -C /tmp && export PATH=/tmp/node-v0.10.35-linux-x64/bin:$PATH && \
+    npm install && node_modules/.bin/bower install --allow-root && node_modules/.bin/gulp && \
+    rm -rf /tmp/* node_modules/
 # ensure the assets have been compiled
 RUN for d in public/{build,css,js} ; do test ! -d public/build && \
   echo "Run 'gulp' before building container" >&2 && exit 1 || : ; done
