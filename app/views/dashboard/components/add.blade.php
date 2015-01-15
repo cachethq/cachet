@@ -55,9 +55,12 @@
                         </div>
                     </fieldset>
 
+                    <input type="hidden" name="component[user_id]" value="{{ Auth::user()->id }}" />
+                    <input type="hidden" name="component[order]" value="0" />
+                    <input type="hidden" name="component[group_id]" value="0" />
+
                     <button type="submit" class="btn btn-success">{{ trans('forms.create') }}</button>
                     <a class="btn btn-default" href="{{ route('dashboard.components') }}">{{ trans('forms.cancel') }}</a>
-                    <input type="hidden" name="component[user_id]" value="{{ Auth::user()->id }}" />
                 </form>
             </div>
         </div>
