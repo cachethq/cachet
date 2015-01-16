@@ -66,7 +66,10 @@
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="form-group">
-                                        <label>{{ trans('forms.settings.app-setup.date-format') }}</label>
+                                        <label>
+                                            {{ trans('forms.settings.app-setup.date-format') }}
+                                            <a href="http://php.net/manual/en/function.date.php"><i class="icon ion-help-circled"></i></a>
+                                        </label>
                                         <input type="text" class="form-control" name="date_format" value="{{ Setting::get('date_format') ?: 'jS F Y' }}" />
                                     </div>
                                 </div>
