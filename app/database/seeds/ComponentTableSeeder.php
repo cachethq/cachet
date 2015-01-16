@@ -23,6 +23,7 @@ class ComponentTableSeeder extends Seeder
                 "user_id"     => 1,
                 "order"       => 0,
                 "group_id"    => 0,
+                "link"        => "",
             ], [
                 "name"        => "Payments",
                 "description" => "Backed by Stripe",
@@ -30,12 +31,14 @@ class ComponentTableSeeder extends Seeder
                 "user_id"     => 1,
                 "order"       => 0,
                 "group_id"    => 0,
+                "link"        => "",
             ], [
                 "name"        => "Website",
                 "status"      => 1,
                 "user_id"     => 1,
                 "order"       => 0,
                 "group_id"    => 0,
+                "link"        => "",
             ],
         ];
 
