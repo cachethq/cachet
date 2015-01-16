@@ -119,8 +119,7 @@ class DashComponentController extends Controller
         }
 
         // The component was added successfully, so now let's deal with the tags.
-        $tags = str_replace(', ', ',', $tags); // Clean up.
-        $tags = explode(',', $tags);
+        $tags = preg_split('/ ?, ?/', $tags);
 
         // For every tag, do we need to create it?
         $componentTags = array_map(function ($taggable) use ($component) {
@@ -179,8 +178,7 @@ class DashComponentController extends Controller
         }
 
         // The component was added successfully, so now let's deal with the tags.
-        $tags = str_replace(', ', ',', $tags); // Clean up.
-        $tags = explode(',', $tags);
+        $tags = preg_split('/ ?, ?/', $tags);
 
         // For every tag, do we need to create it?
         $componentTags = array_map(function ($taggable) use ($component) {
