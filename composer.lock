@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "17e49b071003f48bf48a5d636ef0991d",
+    "hash": "7f388e67b62f93a2298f701f263b461c",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -711,6 +711,53 @@
                 "parser"
             ],
             "time": "2015-01-10 13:53:42"
+        },
+        {
+            "name": "fideloper/proxy",
+            "version": "2.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fideloper/TrustedProxy.git",
+                "reference": "a0ec0f35c82dceecc0d8975f29e6e8e85acbd419"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fideloper/TrustedProxy/zipball/a0ec0f35c82dceecc0d8975f29e6e8e85acbd419",
+                "reference": "a0ec0f35c82dceecc0d8975f29e6e8e85acbd419",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~4.0|~5.0",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Fideloper\\Proxy": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Fidao",
+                    "email": "fideloper@gmail.com"
+                }
+            ],
+            "description": "Set trusted proxies for Laravel",
+            "keywords": [
+                "load balancing",
+                "proxy",
+                "trusted proxy"
+            ],
+            "time": "2014-11-20 02:20:43"
         },
         {
             "name": "filp/whoops",

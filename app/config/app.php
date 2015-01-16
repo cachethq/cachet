@@ -136,6 +136,7 @@ return [
         'Jenssegers\Date\DateServiceProvider',
         'McCool\LaravelAutoPresenter\LaravelAutoPresenterServiceProvider',
         'PragmaRX\Google2FA\Vendor\Laravel\ServiceProvider',
+        'Fideloper\Proxy\ProxyServiceProvider',
 
         /*
          * Application Service Providers...
