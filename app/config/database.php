@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'default' => $_ENV['DB_DRIVER'],
+    'default' => getenv('DB_DRIVER') ?: 'sqlite',
 
     /*
     |--------------------------------------------------------------------------
@@ -48,16 +48,16 @@ return [
 
         'sqlite' => [
             'driver'   => 'sqlite',
-            'database' => __DIR__.'/../database/'.$_ENV['DB_DATABASE'],
+            'database' => app_path('database').'/'.getenv('DB_DATABASE') ?: null,
             'prefix'   => '',
         ],
 
         'mysql' => [
             'driver'    => 'mysql',
-            'host'      => $_ENV['DB_HOST'],
-            'database'  => $_ENV['DB_DATABASE'],
-            'username'  => $_ENV['DB_USERNAME'],
-            'password'  => $_ENV['DB_PASSWORD'],
+            'host'      => getenv('DB_HOST') ?: null,
+            'database'  => getenv('DB_DATABASE') ?: null,
+            'username'  => getenv('DB_USERNAME') ?: null,
+            'password'  => getenv('DB_PASSWORD') ?: null,
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
@@ -65,10 +65,10 @@ return [
 
         'pgsql' => [
             'driver'    => 'pgsql',
-            'host'      => $_ENV['DB_HOST'],
-            'database'  => $_ENV['DB_DATABASE'],
-            'username'  => $_ENV['DB_USERNAME'],
-            'password'  => $_ENV['DB_PASSWORD'],
+            'host'      => getenv('DB_HOST') ?: null,
+            'database'  => getenv('DB_DATABASE') ?: null,
+            'username'  => getenv('DB_USERNAME') ?: null,
+            'password'  => getenv('DB_PASSWORD') ?: null,
             'charset'   => 'utf8',
             'prefix'    => '',
             'schema'    => 'public',
@@ -76,10 +76,10 @@ return [
 
         'sqlsrv' => [
             'driver'    => 'sqlsrv',
-            'host'      => $_ENV['DB_HOST'],
-            'database'  => $_ENV['DB_DATABASE'],
-            'username'  => $_ENV['DB_USERNAME'],
-            'password'  => $_ENV['DB_PASSWORD'],
+            'host'      => getenv('DB_HOST') ?: null,
+            'database'  => getenv('DB_DATABASE') ?: null,
+            'username'  => getenv('DB_USERNAME') ?: null,
+            'password'  => getenv('DB_PASSWORD') ?: null,
             'prefix'    => '',
         ],
 
