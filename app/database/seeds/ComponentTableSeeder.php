@@ -36,6 +36,7 @@ class ComponentTableSeeder extends Seeder
                 "tags"        => "",
             ], [
                 "name"        => "Website",
+                "description" => "",
                 "status"      => 1,
                 "user_id"     => 1,
                 "order"       => 0,
