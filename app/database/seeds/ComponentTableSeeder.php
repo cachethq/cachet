@@ -21,15 +21,21 @@ class ComponentTableSeeder extends Seeder
                 "description" => "Used by third-parties to connect to us",
                 "status"      => 1,
                 "user_id"     => 1,
+                "order"       => 0,
+                "group_id"    => 0,
             ], [
                 "name"        => "Payments",
                 "description" => "Backed by Stripe",
                 "status"      => 1,
-                "user_id"     => 1
+                "user_id"     => 1,
+                "order"       => 0,
+                "group_id"    => 0,
             ], [
-                "name"    => "Website",
-                "status"  => 1,
-                "user_id" => 1
+                "name"        => "Website",
+                "status"      => 1,
+                "user_id"     => 1,
+                "order"       => 0,
+                "group_id"    => 0,
             ],
         ];
 

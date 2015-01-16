@@ -20,8 +20,11 @@ class UsersTableSeeder extends Seeder
                 "username" => "test",
                 "password" => "test123",
                 "email"    => "test@test.com",
+                "level"    => 1,
             ]
         ];
+
+        User::truncate();
 
         foreach ($users as $user) {
             User::create($user);
