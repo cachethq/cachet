@@ -50,7 +50,7 @@
                         </div>
                         <div class="form-group">
                             <label>{{ trans('forms.components.tags') }}</label>
-                            <textarea name="component[tags]" class="form-control" rows="2">{{ $component->tags }}</textarea>
+                            <input name="component[tags]" class="form-control" value="{{ $component->tagsList }}" />
                             <span class="help-block">{{ trans('forms.components.tags-help') }}</span>
                         </div>
                     </fieldset>

@@ -4,6 +4,7 @@ namespace CachetHQ\Cachet\Http\Controllers;
 
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
+use CachetHQ\Cachet\Models\Tag;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Redirect;
@@ -104,6 +105,7 @@ class DashComponentController extends Controller
     public function updateComponentAction(Component $component)
     {
         $_component = Binput::get('component');
+        $tags = array_pull($_component, 'tags');
         $component->update($_component);
 
         if (! $component->isValid()) {
@@ -115,6 +117,19 @@ class DashComponentController extends Controller
                 ))
                 ->with('errors', $component->getErrors());
         }
+
+        // The component was added successfully, so now let's deal with the tags.
+        $tags = str_replace(', ', ',', $tags); // Clean up.
+        $tags = explode(',', $tags);
+
+        // For every tag, do we need to create it?
+        $componentTags = array_map(function ($taggable) use ($component) {
+            return Tag::firstOrCreate([
+                'name' => $taggable,
+            ])->id;
+        }, $tags);
+
+        $component->tags()->sync($componentTags);
 
         $successMsg = sprintf(
             '<strong>%s</strong> %s',
@@ -148,6 +163,9 @@ class DashComponentController extends Controller
     public function createComponentAction()
     {
         $_component = Binput::get('component');
+        // We deal with tags separately.
+        $tags = array_pull($_component, 'tags');
+
         $component = Component::create($_component);
 
         if (! $component->isValid()) {
@@ -159,6 +177,19 @@ class DashComponentController extends Controller
                 ))
                 ->with('errors', $component->getErrors());
         }
+
+        // The component was added successfully, so now let's deal with the tags.
+        $tags = str_replace(', ', ',', $tags); // Clean up.
+        $tags = explode(',', $tags);
+
+        // For every tag, do we need to create it?
+        $componentTags = array_map(function ($taggable) use ($component) {
+            return Tag::firstOrCreate([
+                'name' => $taggable,
+            ])->id;
+        }, $tags);
+
+        $component->tags()->sync($componentTags);
 
         $successMsg = sprintf(
             '<strong>%s</strong> %s',
