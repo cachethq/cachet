@@ -2,8 +2,8 @@
 
 namespace CachetHQ\Cachet\Providers;
 
+use CachetHQ\Cachet\Config\Repository;
 use CachetHQ\Cachet\Models\Setting as SettingModel;
-use CachetHQ\Cachet\Services\SettingsService;
 use Illuminate\Support\ServiceProvider;
 
 class SettingsServiceProvider extends ServiceProvider
@@ -26,7 +26,7 @@ class SettingsServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bindShared('setting', function ($app) {
-            return new SettingsService(new SettingModel());
+            return new Repository(new SettingModel());
         });
     }
 }

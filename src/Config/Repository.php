@@ -1,10 +1,10 @@
 <?php
 
-namespace CachetHQ\Cachet\Services;
+namespace CachetHQ\Cachet\Config;
 
 use Illuminate\Database\Eloquent\Model;
 
-class SettingsService
+class Repository
 {
     /**
      * The eloquent model instance.
