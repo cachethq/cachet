@@ -74,7 +74,7 @@ class User extends Model implements UserInterface, RemindableInterface
      *
      * @param string $password
      *
-     * @return $this
+     * @return \CachetHQ\Cachet\Models\User
      */
     public function setPasswordAttribute($password)
     {
