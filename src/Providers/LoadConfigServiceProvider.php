@@ -2,7 +2,7 @@
 
 namespace CachetHQ\Cachet\Providers;
 
-use CachetHQ\Cachet\Models\Setting;
+use CachetHQ\Cachet\Facades\Setting;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\ServiceProvider;
 
