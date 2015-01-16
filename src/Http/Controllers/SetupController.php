@@ -77,7 +77,7 @@ class SetupController extends Controller
             'settings.app_timezone' => 'required',
             'settings.app_locale'   => 'required',
             'settings.show_support' => 'boolean',
-            'user.username'         => 'alpha_dash|required',
+            'user.username'         => 'alpha_num|required',
             'user.email'            => 'email|required',
             'user.password'         => 'required'
         ]);

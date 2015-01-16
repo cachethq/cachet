@@ -34,7 +34,7 @@ class User extends Model implements UserInterface, RemindableInterface
      * @var string[]
      */
     protected $rules = [
-        'username' => 'required|alpha|unique:users',
+        'username' => 'required|alpha_num|unique:users',
         'email'    => 'required|email|unique:users',
         'password' => 'required',
     ];
