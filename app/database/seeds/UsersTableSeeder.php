@@ -17,16 +17,10 @@ class UsersTableSeeder extends Seeder
 
         $users = [
             [
-                "username" => "admin",
-                "password" => "admin",
-                "email"    => "admin@example.com",
-                "level"    => "1",
-            ],
-            [
-                "username" => "user",
-                "password" => "user",
-                "email"    => "user@example.com"
-            ],
+                "username" => "test",
+                "password" => "test123",
+                "email"    => "test@test.com",
+            ]
         ];
 
         foreach ($users as $user) {
