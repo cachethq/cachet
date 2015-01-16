@@ -49,7 +49,6 @@ class TimezoneLocaleComposer
                 // Lets sample the time there right now
                 $time = new DateTime(null, new DateTimeZone($timezone));
 
-                // Us dumb Americans can't handle millitary time
                 $ampm = $time->format('H') > 12 ? ' ('.$time->format('g:i a').')' : '';
 
                 // Remove region name and add a sample time
