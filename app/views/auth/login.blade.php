@@ -26,7 +26,7 @@
                         'class' => 'form-control', 'placeholder' => trans('forms.login.password'), 'required' => 'required'
                     ]) }}
                 </div>
-                <hr >
+                <hr>
                 <div class="form-group">
                     <button type="submit" class="btn btn-lg btn-block btn-success">{{ trans('dashboard.login.login') }}</button>
                 </div>
