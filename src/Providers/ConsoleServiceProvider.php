@@ -32,12 +32,7 @@ class ConsoleServiceProvider extends ServiceProvider
             $databasePath = $app->config->get('database.connections.sqlite.database');
             $databaseDefault = $app->config->get('database.default');
 
-            return new FixPermissionsCommand(
-                $storageDirectory,
-                $databaseDirectory,
-                $databasePath,
-                $databaseDefault
-            );
+            return new FixPermissionsCommand($storageDirectory, $databaseDirectory, $databasePath, $databaseDefault);
         });
 
         $this->app->singleton('CachetHQ\Cachet\Console\Commands\OneClickDeployCommand', function ($app) {
