@@ -31,7 +31,9 @@
                         </div>
                         <div class="form-group">
                             <label>{{ trans('forms.incidents.templates.template') }}</label>
-                            <textarea name="template[template]" class="form-control" rows="5" required>{{ $template->template }}</textarea>
+                            <div class='markdown-control'>
+                                <textarea name="template[template]" class="form-control" rows="5" required>{{ $template->template }}</textarea>
+                            </div>
                         </div>
                     </fieldset>
 

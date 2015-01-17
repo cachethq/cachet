@@ -78,8 +78,9 @@
                         </div>
                         <div class="form-group">
                             <label>{{ trans('forms.incidents.message') }}</label>
-                            <textarea name="incident[message]" class="form-control" rows="5" required>{{ Input::old('incident.message') }}</textarea>
-                            <span class="help-block"><i class='icons ion-social-markdown'></i> {{ trans('forms.incidents.message-help') }}</span>
+                            <div class='markdown-control'>
+                                <textarea name="incident[message]" class="form-control" rows="5" required>{{ Input::old('incident.message') }}</textarea>
+                            </div>
                         </div>
                     </fieldset>
 

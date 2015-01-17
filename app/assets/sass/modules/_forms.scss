@@ -7,6 +7,22 @@ textarea {
     overflow: auto;
 }
 
+.markdown-control {
+    position: relative;
+
+    &:before {
+        position:absolute;
+        display:block;
+        right:0%;
+        bottom:0%;
+        width:40px;
+        height:40px;
+        font-size: 2em;
+        font-family: "Ionicons";
+        content: "\f4e6";
+    }
+}
+
 .form-control {
     display: block;
     width: 100%;

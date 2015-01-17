@@ -32,7 +32,9 @@
                                 <div class="col-xs-12">
                                     <div class="form-group">
                                         <label>{{ trans('forms.settings.app-setup.about-this-page') }}</label>
-                                        <textarea name="app_about" class="form-control" rows="4">{{ Setting::get('app_about') }}</textarea>
+                                        <div class='markdown-control'>
+                                            <textarea name="app_about" class="form-control" rows="4">{{ Setting::get('app_about') }}</textarea>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
