@@ -18,7 +18,6 @@ class CreateComponentsTable extends Migration
             $table->string('name');
             $table->text('description');
             $table->text('link');
-            $table->text('tags');
             $table->integer('status');
             $table->integer('order');
             $table->integer('group_id');

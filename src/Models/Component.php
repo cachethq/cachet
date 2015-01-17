@@ -86,6 +86,16 @@ class Component extends Model implements TransformableInterface
     }
 
     /**
+     * Components can have many tags.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function tags()
+    {
+        return $this->belongsToMany('CachetHQ\Cachet\Models\Tag');
+    }
+
+    /**
      * Finds all components by status.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
@@ -119,6 +129,20 @@ class Component extends Model implements TransformableInterface
     public function getHumanStatusAttribute()
     {
         return trans('cachet.components.status.'.$this->status);
+    }
+
+    /**
+     * Returns all of the tags on this component.
+     *
+     * @return string
+     */
+    public function getTagsListAttribute()
+    {
+        $tags = $this->tags->map(function ($tag) {
+            return $tag->name;
+        });
+
+        return implode(', ', $tags->toArray());
     }
 
     /**
