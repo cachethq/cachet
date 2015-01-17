@@ -16,7 +16,7 @@
                                 <div class="col-xs-12">
                                     <div class="form-group">
                                         <label>{{ trans('forms.settings.app-setup.site-name') }}</label>
-                                        <input type="text" class="form-control" name="app_name" value="{{ Setting::get('app_name') }}" required />
+                                        <input type="text" class="form-control" name="app_name" value="{{ Setting::get('app_name') }}" required>
                                     </div>
                                 </div>
                             </div>
@@ -24,7 +24,7 @@
                                 <div class="col-xs-12">
                                     <div class="form-group">
                                         <label>{{ trans('forms.settings.app-setup.site-url') }}</label>
-                                        <input type="text" class="form-control" name="app_domain" value="{{ Setting::get('app_domain') }}" required />
+                                        <input type="text" class="form-control" name="app_domain" value="{{ Setting::get('app_domain') }}" required>
                                     </div>
                                 </div>
                             </div>
@@ -40,7 +40,7 @@
                                 <div class="col-xs-12">
                                     <div class="form-group">
                                         <label>{{ trans('forms.settings.app-setup.google-analytics') }}</label>
-                                        <input type="text" name="app_analytics" class="form-control" value="{{ Setting::get('app_analytics') }}" placeholder="UA-12345-12" />
+                                        <input type="text" name="app_analytics" class="form-control" value="{{ Setting::get('app_analytics') }}" placeholder="UA-12345-12">
                                     </div>
                                 </div>
                             </div>
@@ -70,7 +70,7 @@
                                             {{ trans('forms.settings.app-setup.date-format') }}
                                             <a href="http://php.net/manual/en/function.date.php"><i class="icon ion-help-circled"></i></a>
                                         </label>
-                                        <input type="text" class="form-control" name="date_format" value="{{ Setting::get('date_format') ?: 'jS F Y' }}" />
+                                        <input type="text" class="form-control" name="date_format" value="{{ Setting::get('date_format') ?: 'jS F Y' }}">
                                     </div>
                                 </div>
                             </div>
@@ -93,7 +93,7 @@
                                 <div class="col-xs-12">
                                     <div class="form-group">
                                         <label>{{ trans('forms.settings.app-setup.days-of-incidents') }}</label>
-                                        <input type="number" min="1" max="100" name="app_incident_days" class="form-control" value="{{ Setting::get('app_incident_days') ?: 7 }}" />
+                                        <input type="number" min="1" max="100" name="app_incident_days" class="form-control" value="{{ Setting::get('app_incident_days') ?: 7 }}">
                                     </div>
                                 </div>
                             </div>
@@ -101,8 +101,8 @@
                                 <div class="col-xs-12">
                                     <div class="form-group">
                                         <label>{{ trans('setup.show_support') }}</label>
-                                        <input type="hidden" value="0" name="show_support" />
-                                        <input type="checkbox" value="1" name="show_support" class="form-control" {{ Setting::get('show_support') ? 'checked' : null }} />
+                                        <input type="hidden" value="0" name="show_support">
+                                        <input type="checkbox" value="1" name="show_support" class="form-control" {{ Setting::get('show_support') ? 'checked' : null }}>
                                     </div>
                                 </div>
                             </div>
@@ -112,12 +112,12 @@
                                         <label>{{ trans('forms.settings.app-setup.banner') }}</label>
                                         @if($banner = Setting::get('app_banner'))
                                         <div id="banner-view" class="well">
-                                            <img src="data:{{ Setting::get('app_banner_type') }};base64,{{ $banner }}" style="max-width: 100%" />
-                                            <br /><br />
+                                            <img src="data:{{ Setting::get('app_banner_type') }};base64,{{ $banner }}" style="max-width: 100%">
+                                            <br><br>
                                             <button id="remove-banner" class="btn btn-danger">{{ trans('forms.remove') }}</button>
                                         </div>
                                         @endif
-                                        <input type="file" name="app_banner" class="form-control" />
+                                        <input type="file" name="app_banner" class="form-control">
                                         <span class="help-block">{{ trans('forms.settings.app-setup.banner-help') }}</span>
                                     </div>
                                 </div>

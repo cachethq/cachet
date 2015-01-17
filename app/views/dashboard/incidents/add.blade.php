@@ -27,27 +27,27 @@
                         </div>
                         <div class="form-group">
                             <label for="incident-name">{{ trans('forms.incidents.name') }}</label>
-                            <input type="text" class="form-control" name="incident[name]" id="incident-name" required value="{{ Input::old('incident.name') }}" />
+                            <input type="text" class="form-control" name="incident[name]" id="incident-name" required value="{{ Input::old('incident.name') }}">
                         </div>
                         <div class="form-group">
-                            <label for="incident-name">{{ trans('forms.incidents.status') }}</label><br />
+                            <label for="incident-name">{{ trans('forms.incidents.status') }}</label><br>
                             <label class="radio-inline">
-                                <input type="radio" name="incident[status]" value="1" />
+                                <input type="radio" name="incident[status]" value="1">
                                 <i class="icon ion-flag"></i>
                                 {{ trans('cachet.incidents.status')[1] }}
                             </label>
                             <label class="radio-inline">
-                                <input type="radio" name="incident[status]" value="2" />
+                                <input type="radio" name="incident[status]" value="2">
                                 <i class="icon ion-alert-circled"></i>
                                 {{ trans('cachet.incidents.status')[2] }}
                             </label>
                             <label class="radio-inline">
-                                <input type="radio" name="incident[status]" value="3" />
+                                <input type="radio" name="incident[status]" value="3">
                                 <i class="icon ion-eye"></i>
                                 {{ trans('cachet.incidents.status')[3] }}
                             </label>
                             <label class="radio-inline">
-                                <input type="radio" name="incident[status]" value="4" />
+                                <input type="radio" name="incident[status]" value="4">
                                 <i class="icon ion-checkmark"></i>
                                 {{ trans('cachet.incidents.status')[4] }}
                             </label>
@@ -68,7 +68,7 @@
                                     @foreach(trans('cachet.components.status') as $statusID => $status)
                                     <div class="radio-inline">
                                         <label>
-                                            <input type="radio" name="incident[component_status]" value="{{ $statusID }}"  />
+                                            <input type="radio" name="incident[component_status]" value="{{ $statusID }}" >
                                             {{ $status }}
                                         </label>
                                     </div>

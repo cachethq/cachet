@@ -35,7 +35,7 @@
                                 <a href="/dashboard/components/{{ $component->id }}/edit" class="btn btn-default">{{ trans('forms.edit') }}</a>
                                 <a href="/dashboard/components/{{ $component->id }}/delete" class="btn btn-danger confirm-action" data-method="DELETE">{{ trans('forms.delete') }}</a>
                             </div>
-                            <input type="hidden" rel="order" name="component[{{ $component->id }}]" value="{{ $component->order }}" />
+                            <input type="hidden" rel="order" name="component[{{ $component->id }}]" value="{{ $component->order }}">
                         </div>
                         @empty
                         <div class="list-group-item text-danger">{{ trans('dashboard.components.add.message') }}</div>

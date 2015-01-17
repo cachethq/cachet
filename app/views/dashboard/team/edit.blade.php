@@ -17,15 +17,15 @@
                     <fieldset>
                         <div class="form-group">
                             <label>{{ trans('forms.user.username') }}</label>
-                            <input type="text" class="form-control" name="username" value="{{ $user->username }}" required />
+                            <input type="text" class="form-control" name="username" value="{{ $user->username }}" required>
                         </div>
                         <div class="form-group">
                             <label>{{ trans('forms.user.email') }}</label>
-                            <input type="email" class="form-control" name="email" value="{{ $user->email }}" required />
+                            <input type="email" class="form-control" name="email" value="{{ $user->email }}" required>
                         </div>
                         <div class="form-group">
                             <label>{{ trans('forms.user.password') }}</label>
-                            <input type="password" class="form-control" name="password" value="" {{ !Auth::user()->isAdmin ? "disabled": "" }} />
+                            <input type="password" class="form-control" name="password" value="" {{ !Auth::user()->isAdmin ? "disabled": "" }}>
                         </div>
                     </fieldset>
 

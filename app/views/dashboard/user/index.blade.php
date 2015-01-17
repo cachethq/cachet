@@ -17,27 +17,27 @@
                     <fieldset>
                         <div class="form-group">
                             <label>{{ trans('forms.user.username') }}</label>
-                            <input type="text" class="form-control" name="username" value="{{ Auth::user()->username }}" required />
+                            <input type="text" class="form-control" name="username" value="{{ Auth::user()->username }}" required>
                         </div>
                         <div class="form-group">
                             <label>{{ trans('forms.user.email') }}</label>
-                            <input type="email" class="form-control" name="email" value="{{ Auth::user()->email }}" required />
+                            <input type="email" class="form-control" name="email" value="{{ Auth::user()->email }}" required>
                         </div>
                         <div class="form-group">
                             <label>{{ trans('forms.user.password') }}</label>
-                            <input type="password" class="form-control" name="password" value="" />
+                            <input type="password" class="form-control" name="password" value="">
                         </div>
-                        <hr />
+                        <hr>
                         <div class="form-group">
                             <label>{{ trans('forms.user.api-token') }}</label>
-                            <input type="text" class="form-control" name="api_key" disabled value="{{ Auth::user()->api_key }}" />
+                            <input type="text" class="form-control" name="api_key" disabled value="{{ Auth::user()->api_key }}">
                             <span class="help-block">{{ trans('forms.user.api-token-help') }}</span>
                         </div>
-                        <hr />
+                        <hr>
                         <div class="form-group">
                             <label class="checkbox-inline">
-                                <input type="hidden" name="google2fa" value="0" />
-                                <input type='checkbox' name="google2fa" value="1" {{ Auth::user()->hasTwoFactor ? "checked" : "" }} />
+                                <input type="hidden" name="google2fa" value="0">
+                                <input type='checkbox' name="google2fa" value="1" {{ Auth::user()->hasTwoFactor ? "checked" : "" }}>
                                 {{ trans('forms.setup.enable_google2fa') }}
                             </label>
                         </div>
@@ -50,7 +50,7 @@
                                 Auth::user()->google_2fa_secret
                             );
                             ?>
-                            <img src="{{ $google2fa_url }}" class="img-responsive" />
+                            <img src="{{ $google2fa_url }}" class="img-responsive">
                             <span class='help-block'>{{ trans('forms.user.2fa.help') }}</span>
                         </div>
                         @endif

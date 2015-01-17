@@ -16,13 +16,13 @@
                                 <div class="col-xs-6">
                                     <div class="form-group">
                                         <label>{{ trans('forms.settings.theme.background-color') }}</label>
-                                        <input type="text" class="form-control color-code" name="style.background_color" value="{{ Setting::get('style_background_color') }}" />
+                                        <input type="text" class="form-control color-code" name="style.background_color" value="{{ Setting::get('style_background_color') }}">
                                     </div>
                                 </div>
                                 <div class="col-xs-6">
                                     <div class="form-group">
                                         <label>{{ trans('forms.settings.theme.text-color') }}</label>
-                                        <input type="text" class="form-control color-code" name="style.text_color" value="{{ Setting::get('style_text_color') }}" />
+                                        <input type="text" class="form-control color-code" name="style.text_color" value="{{ Setting::get('style_text_color') }}">
                                     </div>
                                 </div>
                             </div>
@@ -31,19 +31,19 @@
                                 <div class="col-xs-4">
                                     <div class="form-group">
                                         <label>Success Warning Color</label>
-                                        <input type="text" class="form-control color-code" name="style.success_warning_color" value="{{ Setting::get('style_success_warning_color') }}" />
+                                        <input type="text" class="form-control color-code" name="style.success_warning_color" value="{{ Setting::get('style_success_warning_color') }}">
                                     </div>
                                 </div>
                                 <div class="col-xs-4">
                                     <div class="form-group">
                                         <label>Error Warning Color</label>
-                                        <input type="text" class="form-control color-code" name="style.error_warning_color" value="{{ Setting::get('style_error_warning_color') }}" />
+                                        <input type="text" class="form-control color-code" name="style.error_warning_color" value="{{ Setting::get('style_error_warning_color') }}">
                                     </div>
                                 </div>
                                 <div class="col-xs-4">
                                     <div class="form-group">
                                         <label>Info Warning Color</label>
-                                        <input type="text" class="form-control color-code" name="style.style_info_warning_color" value="{{ Setting::get('style_info_warning_color') }}" />
+                                        <input type="text" class="form-control color-code" name="style.style_info_warning_color" value="{{ Setting::get('style_info_warning_color') }}">
                                     </div>
                                 </div>
                             </div>

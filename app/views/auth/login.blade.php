@@ -4,7 +4,7 @@
     <div class="login">
         <div class="col-xs-12 col-xs-offset-0 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 text-center">
             <div class="welcome-logo">
-                <img class="logo" height="50" src="/img/cachet-logo.svg" alt="Cachet"/>
+                <img class="logo" height="50" src="/img/cachet-logo.svg" alt="Cachet">
             </div>
             {{ Form::open(['url' => '/auth/login']) }}
             <fieldset>
@@ -26,7 +26,7 @@
                         'class' => 'form-control', 'placeholder' => trans('forms.login.password'), 'required' => 'required'
                     ]) }}
                 </div>
-                <hr />
+                <hr >
                 <div class="form-group">
                     <button type="submit" class="btn btn-lg btn-block btn-success">{{ trans('dashboard.login.login') }}</button>
                 </div>

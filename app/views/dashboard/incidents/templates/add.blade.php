@@ -18,7 +18,7 @@
                     <fieldset>
                         <div class="form-group">
                             <label for="template-name">{{ trans('forms.incidents.templates.name') }}</label>
-                            <input type="text" class="form-control" name="template[name]" id="template-name" required />
+                            <input type="text" class="form-control" name="template[name]" id="template-name" required>
                         </div>
                         <div class="form-group">
                             <label>{{ trans('forms.incidents.templates.template') }}</label>

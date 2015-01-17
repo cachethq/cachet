@@ -18,7 +18,7 @@
                     <fieldset>
                         <div class="form-group">
                             <label for="incident-name">{{ trans('forms.components.name') }}</label>
-                            <input type="text" class="form-control" name="component[name]" id="component-name" required value="{{ $component->name }}" />
+                            <input type="text" class="form-control" name="component[name]" id="component-name" required value="{{ $component->name }}">
                         </div>
                         <div class="form-group">
                             <label for="component-status">{{ trans('forms.components.status') }}</label>
@@ -43,21 +43,21 @@
                             </select>
                         </div>
                         @endif
-                        <hr />
+                        <hr>
                         <div class="form-group">
                             <label>{{ trans('forms.components.link') }}</label>
-                            <input type="text" name="component[link]" class="form-control" value="{{ $component->link }}" />
+                            <input type="text" name="component[link]" class="form-control" value="{{ $component->link }}">
                         </div>
                         <div class="form-group">
                             <label>{{ trans('forms.components.tags') }}</label>
-                            <input name="component[tags]" class="form-control" value="{{ $component->tagsList }}" />
+                            <input name="component[tags]" class="form-control" value="{{ $component->tagsList }}">
                             <span class="help-block">{{ trans('forms.components.tags-help') }}</span>
                         </div>
                     </fieldset>
 
-                    <input type="hidden" name="component[user_id]" value="{{ $component->agent_id || Auth::user()->id }}" />
-                    <input type="hidden" name="component[order]" value="{{ $component->order or 0 }}" />
-                    <input type="hidden" name="component[group_id]" value="{{ $component->group_id or 0  }}" />
+                    <input type="hidden" name="component[user_id]" value="{{ $component->agent_id || Auth::user()->id }}">
+                    <input type="hidden" name="component[order]" value="{{ $component->order or 0 }}">
+                    <input type="hidden" name="component[group_id]" value="{{ $component->group_id or 0  }}">
 
                     <button type="submit" class="btn btn-success">{{ trans('forms.update') }}</button>
                     <a class="btn btn-default" href="{{ route('dashboard.components') }}">{{ trans('forms.cancel') }}</a>

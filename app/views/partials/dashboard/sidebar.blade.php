@@ -76,9 +76,9 @@
         </ul>
         <div class="bottom-menu-sidebar">
             <div class="text-center">
-                <img width="165" src="{{ url('img/cachet-logo.svg') }}" alt="Cachet"/>
+                <img width="165" src="{{ url('img/cachet-logo.svg') }}" alt="Cachet">
             </div>
-            <br/>
+            <br>
             <ul>
                 <li data-toggle="tooltip" data-placement="top" title="{{ trans('dashboard.help') }}">
                     <a href="https://cachethq.io" target="_blank"><i class="icon ion-help"></i></a>
