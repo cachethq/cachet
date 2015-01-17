@@ -64,7 +64,7 @@
     "scripts": {
         "post-install-cmd": [
             "php artisan optimize",
-            "chmod -R 777 app/storage public",
+            "php artisan cachet:chmod",
             "php artisan cachet:one-click-deploy"
         ],
         "post-update-cmd": [
