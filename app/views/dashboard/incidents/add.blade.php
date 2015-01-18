@@ -54,6 +54,7 @@
                                 {{ trans('cachet.incidents.status')[4] }}
                             </label>
                         </div>
+                        @if($components->count() > 0)
                         <div class="form-group">
                             <label>{{ trans('forms.incidents.component') }}</label>
                             <select name='incident[component_id]' class='form-control'>
@@ -64,6 +65,7 @@
                             </select>
                             <span class='help-block'>{{ trans('forms.optional') }}</span>
                         </div>
+                        @endif
                         <div class="form-group hidden" id='component-status'>
                             <div class="well">
                                 <div class="radio-items">
