@@ -16,6 +16,7 @@
                 @include('partials.dashboard.errors')
                 {{ Form::open(['name' => 'IncidentForm', 'class' => 'form-vertical', 'role' => 'form']) }}
                     <fieldset>
+                        @if($incidentTemplates->count() > 0)
                         <div class="form-group">
                             <label for="incident-template">{{ trans('forms.incidents.templates.template') }}</label>
                             <select class="form-control" name="template">
@@ -25,6 +26,7 @@
                                 @endforeach
                             </select>
                         </div>
+                        @endif
                         <div class="form-group">
                             <label for="incident-name">{{ trans('forms.incidents.name') }}</label>
                             <input type="text" class="form-control" name="incident[name]" id="incident-name" required value="{{ Input::old('incident.name') }}">
