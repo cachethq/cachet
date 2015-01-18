@@ -72,10 +72,10 @@ class Repository
      * @param string $name
      * @param string $value
      *
-     * @return \CachetHQ\Cachet\Models\Setting
+     * @return void
      */
     public function set($name, $value)
     {
-        return $this->model->updateOrCreate(compact('name'), compact('value'));
+        $this->model->updateOrCreate(compact('name'), compact('value'));
     }
 }
