@@ -35,12 +35,12 @@ class Repository
     /**
      * Returns a setting from the database.
      *
-     * @param string $settingName
+     * @param string $name
      * @param bool   $checkEnv
      *
      * @return string|null
      */
-    public function get($settingName, $checkEnv = true)
+    public function get($name, $checkEnv = true)
     {
         $setting = null;
 
@@ -49,12 +49,12 @@ class Repository
                 $this->settings = $this->model->all()->lists('value', 'name');
             }
 
-            if (array_key_exists($settingName, $this->settings)) {
-                return $this->settings[$settingName];
+            if (array_key_exists($name, $this->settings)) {
+                return $this->settings[$name];
             }
         } catch (ErrorException $e) {
             if ($checkEnv) {
-                $env = getenv(strtoupper($settingName));
+                $env = getenv(strtoupper($name));
                 if (!$env) {
                     return $env;
                 }
@@ -64,5 +64,18 @@ class Repository
         }
 
         return $setting;
+    }
+
+    /**
+     * Creates or updates a setting value.
+     *
+     * @param string $name
+     * @param string $value
+     *
+     * @return \CachetHQ\Cachet\Models\Setting
+     */
+    public function set($name, $value)
+    {
+        return $this->model->updateOrCreate(compact('name'), compact('value'));
     }
 }
