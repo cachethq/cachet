@@ -44,4 +44,12 @@
             </div>
         </div>
     </div>
+    @if(Session::get('setup.done'))
+    @include('partials.dashboard.welcome-modal')
+    <script>
+        $(function() {
+            $('#welcome-modal').modal('show');
+        });
+    </script>
+    @endif
 @stop

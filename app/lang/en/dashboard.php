@@ -135,4 +135,19 @@ return [
         'whoops'        => 'Whoops.',
     ],
 
+    // Welcome modal
+    'welcome' => [
+        'welcome' => 'Welcome to Cachet',
+        'message' => 'Your status page is almost ready! You might want to configure these extra settings',
+        'close'   => 'Just go straight to my dashboard',
+        'steps'   => [
+            'component'  => 'Create components',
+            'incident'   => 'Create incidents',
+            'customize'  => 'Customize your Cachet Status Page.',
+            'team'       => 'Add users to your team.',
+            'api'        => 'Generate API token.',
+            'two-factor' => 'Enable Two Factor Authetication.',
+        ],
+    ],
+
 ];
