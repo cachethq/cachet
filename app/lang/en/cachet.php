@@ -26,6 +26,11 @@ return [
         ],
     ],
 
+    // Scheduled
+    'schedule' => [
+        'scheduled' => 'Scheduled Maintenance',
+    ],
+
     // Service Status
     'service' => [
         'good' => 'All systems are functional.',

@@ -8,11 +8,13 @@ elixir(function (mix) {
         .styles([
             'app/assets/bower_components/ionicons/css/ionicons.css',
             'app/assets/bower_components/jquery-minicolors/jquery.minicolors.css',
+            'app/assets/bower_components/bootstrap-datepicker/css/datepicker3.css',
             'public/dist/css/main.css'
         ], 'public/dist/css/all.css', './')
         .scripts([
             'bower_components/jquery/dist/jquery.js',
             'bower_components/bootstrap-sass/assets/javascripts/bootstrap.js',
+            'bower_components/bootstrap-datepicker/js/**/*.js',
             'bower_components/lodash/dist/lodash.js',
             'bower_components/messenger/build/js/messenger.js',
             'bower_components/Sortable/Sortable.js',
@@ -20,7 +22,6 @@ elixir(function (mix) {
             'bower_components/livestampjs/livestamp.js',
             'bower_components/jquery-minicolors/jquery.minicolors.js',
             'bower_components/jquery-serialize-object/jquery.serialize-object.js',
-            'bower_components/chartjs/Chart.js',
             'js/app.js',
             'js/**/*.js'
         ], 'public/dist/js/all.js', './app/assets/')

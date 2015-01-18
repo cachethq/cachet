@@ -6,16 +6,15 @@
             <i class="icon ion-navicon"></i>
         </div>
         <span class="uppercase">
-            <i class="icon ion-android-alert"></i> {{ trans('dashboard.incidents.incidents') }}
+            <i class="icon icon ion-android-alert"></i> {{ trans('dashboard.incidents.incidents') }}
         </span>
-        &gt; <small>{{ trans('dashboard.incidents.add.title') }}</small>
+        > <small>{{ trans('dashboard.incidents.add.title') }}</small>
     </div>
     <div class="content-wrapper">
         <div class="row">
             <div class="col-md-12">
                 @include('partials.dashboard.errors')
-                <form class='form-vertical' name='IncidentForm' role='form' method='POST'>
-                    {{ Form::token() }}
+                {{ Form::open(['name' => 'IncidentForm', 'class' => 'form-horizontal', 'role' => 'form']) }}
                     <fieldset>
                         @if($incidentTemplates->count() > 0)
                         <div class="form-group">
@@ -55,37 +54,15 @@
                                 {{ trans('cachet.incidents.status')[4] }}
                             </label>
                         </div>
-                        @if($components->count() > 0)
-                        <div class="form-group">
-                            <label>{{ trans('forms.incidents.component') }}</label>
-                            <select name='incident[component_id]' class='form-control'>
-                                <option value='0' selected></option>
-                                @foreach($components as $component)
-                                <option value='{{ $component->id }}'>{{ $component->name }}</option>
-                                @endforeach
-                            </select>
-                            <span class='help-block'>{{ trans('forms.optional') }}</span>
-                        </div>
-                        @endif
-                        <div class="form-group hidden" id='component-status'>
-                            <div class="well">
-                                <div class="radio-items">
-                                    @foreach(trans('cachet.components.status') as $statusID => $status)
-                                    <div class="radio-inline">
-                                        <label>
-                                            <input type="radio" name="incident[component_status]" value="{{ $statusID }}" >
-                                            {{ $status }}
-                                        </label>
-                                    </div>
-                                    @endforeach
-                                </div>
-                            </div>
-                        </div>
                         <div class="form-group">
                             <label>{{ trans('forms.incidents.message') }}</label>
                             <div class="markdown-control">
                                 <textarea name="incident[message]" class="form-control" rows="5" required>{{ Input::old('incident.message') }}</textarea>
                             </div>
+                        </div>
+                        <div class="form-group">
+                            <label>{{ trans('forms.incidents.scheduled') }}</label>
+                            <input type="text" rel="date" class="form-control" name="incident[published_date]" data-date-start-date="{{ date('d/m/Y') }}" required>
                         </div>
                     </fieldset>
 
@@ -97,7 +74,7 @@
                             <a class="btn btn-default" href="{{ route('dashboard.incidents') }}">{{ trans('forms.cancel') }}</a>
                         </div>
                     </div>
-                </form>
+                {{ Form::close() }}
             </div>
         </div>
     </div>

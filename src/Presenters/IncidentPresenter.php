@@ -73,23 +73,12 @@ class IncidentPresenter extends BasePresenter
     }
 
     /**
-     * Present the status with an icon.
+     * Present formated published date time.
      *
      * @return string
      */
-    public function icon()
+    public function published_at_iso()
     {
-        switch ($this->resource->status) {
-            case 1:
-                return 'icon ion-flag';
-            case 2:
-                return 'icon ion-alert';
-            case 3:
-                return 'icon ion-eye';
-            case 4:
-                return 'icon ion-checkmark';
-            default:
-                return '';
-        }
+        return $this->resource->published_at->toISO8601String();
     }
 }

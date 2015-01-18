@@ -27,6 +27,12 @@ $(function() {
         $form.find(':submit').prop('disabled', true);
     });
 
+    // Datepicker
+    $('input[rel=date]').datepicker({
+        format: "dd/mm/yyyy",
+        autoclose: true
+    });
+
     // Mock the DELETE form requests.
     $('[data-method]').not(".disabled").append(function() {
         var methodForm = "\n";
@@ -39,7 +45,7 @@ $(function() {
         return methodForm;
     })
         .removeAttr('href')
-        .attr('onclick', ' if ($(this).hasClass(\'confirm-action\')) { if(confirm("Are you sure you want to do this?")) { $(this).find("form").submit(); } } else { $(this).find("form").submit(); }');
+        .attr('onclick', 'if ($(this).hasClass(\'confirm-action\')) { if(confirm("Are you sure you want to do this?")) { $(this).find("form").submit(); } } else { $(this).find("form").submit(); }');
 
     // Messenger config
     Messenger.options = {

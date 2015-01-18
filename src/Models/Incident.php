@@ -43,7 +43,21 @@ class Incident extends Model implements TransformableInterface, PresenterInterfa
      *
      * @var string[]
      */
-    protected $fillable = ['user_id', 'component_id', 'name', 'status', 'message'];
+    protected $fillable = [
+        'user_id',
+        'component_id',
+        'name',
+        'status',
+        'message',
+        'published_at',
+    ];
+
+    /**
+     * The attributes that should be mutated to dates.
+     *
+     * @var string[]
+     */
+    protected $dates = ['published_at'];
 
     /**
      * The accessors to append to the model's serialized form.
@@ -51,6 +65,30 @@ class Incident extends Model implements TransformableInterface, PresenterInterfa
      * @var string[]
      */
     protected $appends = ['humanStatus'];
+
+    /**
+     * Returns only scheduled incidents.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeScheduled($query)
+    {
+        return $query->whereRaw('published_at != "0000-00-00 00:00:00"');
+    }
+
+    /**
+     * Returns only scheduled incidents.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeUnscheduled($query)
+    {
+        return $query->whereRaw('published_at = "0000-00-00 00:00:00"');
+    }
 
     /**
      * Get presenter class.
@@ -82,6 +120,47 @@ class Incident extends Model implements TransformableInterface, PresenterInterfa
         $statuses = trans('cachet.incidents.status');
 
         return $statuses[$this->status];
+    }
+
+    /**
+     * Finds the icon to use for each status.
+     *
+     * @return string
+     */
+    public function getIconAttribute()
+    {
+        switch ($this->status) {
+            case 1:
+                return 'icon ion-flag';
+            case 2:
+                return 'icon ion-alert';
+            case 3:
+                return 'icon ion-eye';
+            case 4:
+                return 'icon ion-checkmark';
+            default:
+                return '';
+        }
+    }
+
+    /**
+     * Determines if the incident is scheduled or not.
+     *
+     * @return bool
+     */
+    public function getIsScheduledAttribute()
+    {
+        return $this->published_at != $this->created_at;
+    }
+
+    /**
+     * Returns a Markdown formatted version of the status.
+     *
+     * @return string
+     */
+    public function getFormattedMessageAttribute()
+    {
+        return Markdown::render($this->message);
     }
 
     /**
