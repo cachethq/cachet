@@ -7,6 +7,12 @@ Route::group(['before' => 'auth', 'prefix' => 'dashboard', 'namespace' => 'Cache
         'uses' => 'DashboardController@showDashboard',
     ]);
 
+    // Configuration
+    Route::get('configuration', [
+        'as'   => 'configuration',
+        'uses' => 'DashboardController@showConfiguration',
+    ]);
+
     // Components
     Route::group(['prefix' => 'components'], function () {
         Route::get('/', [

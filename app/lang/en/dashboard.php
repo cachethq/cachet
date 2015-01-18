@@ -135,4 +135,21 @@ return [
         'whoops'        => 'Whoops.',
     ],
 
+    // Configuration
+    'configure' => [
+        'configure' => 'Your Status Page is almost ready!',
+        'steps'     => [
+            'setup'             => 'Setup your Cachet Status Page',
+            'setup-button'      => 'Setup Cachet',
+            'login'             => 'Login to your dashboard',
+            'login-button'      => 'Login dashboard',
+            'component'         => 'Create and configure components for your Status Page',
+            'component-button'  => 'Add component',
+            'incident'          => 'Create your first incident',
+            'incident-button'   => 'Add incident',
+            'customize'         => 'Customize your Cachet Status Page with theme settings.',
+            'customize-button'  => 'Customize',
+        ],
+    ],
+
 ];
