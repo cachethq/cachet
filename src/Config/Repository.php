@@ -2,7 +2,7 @@
 
 namespace CachetHQ\Cachet\Config;
 
-use Illuminate\Database\Eloquent\Model;
+use CachetHQ\Cachet\Models\Setting;
 
 class Repository
 {
@@ -16,9 +16,9 @@ class Repository
     /**
      * Cache of the settings.
      *
-     * @var null|array
+     * @var array|null
      */
-    protected $settings = null;
+    protected $settings;
 
     /**
      * Create a new settings service instance.
@@ -27,7 +27,7 @@ class Repository
      *
      * @return void
      */
-    public function __construct(Model $model)
+    public function __construct(Setting $model)
     {
         $this->model = $model;
     }
@@ -42,28 +42,20 @@ class Repository
      */
     public function get($name, $checkEnv = true)
     {
-        $setting = null;
-
-        try {
-            if (! $this->settings) {
-                $this->settings = $this->model->all()->lists('value', 'name');
-            }
-
-            if (array_key_exists($name, $this->settings)) {
-                return $this->settings[$name];
-            }
-        } catch (ErrorException $e) {
-            if ($checkEnv) {
-                $env = getenv(strtoupper($name));
-                if (!$env) {
-                    return $env;
-                }
-            }
-
-            return $setting;
+        // if we've not loaded the settings, load them now
+        if (!$this->settings) {
+            $this->settings = $this->model->all()->lists('value', 'name');
         }
 
-        return $setting;
+        // if the setting exists, return it
+        if (isset($this->settings[$name])) {
+            return $this->settings[$name];
+        }
+
+        // fallback to getenv if allowed to
+        if ($checkEnv) {
+            return $this->settings[$name] = getenv(strtoupper($name));
+        }
     }
 
     /**
@@ -76,6 +68,12 @@ class Repository
      */
     public function set($name, $value)
     {
+        // save the change to the db
         $this->model->updateOrCreate(compact('name'), compact('value'));
+
+        // if we've loaded the settings, persist this change
+        if ($this->settings) {
+            $this->settings[$name] = $value;
+        }
     }
 }
