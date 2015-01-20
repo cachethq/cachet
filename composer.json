@@ -10,6 +10,7 @@
     "type": "project",
     "require": {
         "php": ">=5.4",
+        "ext-mbstring": "*",
         "ext-mcrypt": "*",
         "ext-openssl": "*",
         "laravel/framework": "4.2.*",
