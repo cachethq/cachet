@@ -70,7 +70,8 @@
         ],
         "post-update-cmd": [
             "php artisan clear-compiled",
-            "php artisan optimize"
+            "php artisan optimize",
+            "php artisan cachet:chmod"
         ],
         "post-create-project-cmd": [
             "php artisan key:generate"
