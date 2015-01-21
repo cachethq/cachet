@@ -31,6 +31,7 @@ gulp.task('default', function() {
                 'bower_components/livestampjs/livestamp.js',
                 'bower_components/jquery-minicolors/jquery.minicolors.js',
                 'bower_components/jquery-serialize-object/jquery.serialize-object.js',
+                'bower_components/chartjs/Chart.js',
                 'js/app.js',
                 'js/**/*.js',
             ], './app/assets/')

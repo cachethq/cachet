@@ -55,12 +55,13 @@
                     <span>{{ trans('dashboard.team.team') }}</span>
                 </a>
             </li>
-            {{-- <li {{ set_active('dashboard/metrics') }}>
+            <li {{ set_active('dashboard/metrics*') }}>
                 <a href="{{ route('dashboard.metrics') }}">
-                    <i class="ion ion-stats-bats"></i> {{ trans('cachet.dashboard.metrics') }}
+                    <i class="icon ion-stats-bars"></i>
+                    <span>{{ trans('dashboard.metrics.metrics') }}</span>
                 </a>
             </li>
-            <li {{ set_active('dashboard/notifications') }}>
+            {{-- <li {{ set_active('dashboard/notifications') }}>
                 <a href="{{ route('dashboard.notifications') }}">
                     <i class="ion ion-email"></i> {{ trans('cachet.dashboard.notifications') }}
                 </a>
