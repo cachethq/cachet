@@ -52,6 +52,20 @@ return [
         ],
     ],
 
+    // Metric form fields
+    'metrics' => [
+        'name'             => 'Name',
+        'suffix'           => 'Suffix',
+        'description'      => 'Description',
+        'description-help' => 'You may also use Markdown.',
+        'display-chart'    => 'Display chart on status page?',
+        'default-value'    => 'Default value',
+
+        'points' => [
+            'value' => 'Value',
+        ],
+    ],
+
     // Settings
     'settings' => [
         /// Application setup
@@ -61,6 +75,7 @@ return [
             'site-timezone'     => 'Site Timezone',
             'site-locale'       => 'Site Language',
             'date-format'       => 'Date Format',
+            'display-graphs'    => 'Display graphs on status page?',
             'about-this-page'   => 'About this page',
             'days-of-incidents' => 'How many days of incidents to show?',
             'banner'            => 'Banner Image',

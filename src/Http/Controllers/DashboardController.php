@@ -23,18 +23,6 @@ class DashboardController extends Controller
     }
 
     /**
-     * Shows the metrics view.
-     *
-     * @return \Illuminate\View\View
-     */
-    public function showMetrics()
-    {
-        return View::make('dashboard.metrics.index')->with([
-            'pageTitle' => trans('dashboard.metrics.metrics').' - '.trans('dashboard.dashboard'),
-        ]);
-    }
-
-    /**
      * Shows the notifications view.
      *
      * @return \Illuminate\View\View

@@ -52,6 +52,19 @@ return [
         ],
     ],
 
+    // Metric form fields
+    'metrics' => [
+        'name'             => 'Nombre',
+        'suffix'           => 'Sufijo',
+        'description'      => 'Descripción',
+        'description-help' => 'Puedes usar también Markdown.',
+        'display-chart'    => '¿Vizualizar gráfica en la página de estado?',
+
+        'points' => [
+            'value' => 'Valor',
+        ],
+    ],
+
     // Settings
     'settings' => [
         /// Application setup
@@ -61,6 +74,7 @@ return [
             'site-timezone'     => 'Zona horaria del sitio',
             'site-locale'       => 'Idioma del sitio',
             'date-format'       => 'Formato de la fecha',
+            'display-graphs'    => '¿Visualizar gráficas en la página de estado?',
             'about-this-page'   => 'Sobre esta página',
             'days-of-incidents' => '¿Cuántos días de incidentes mostrar?',
             'banner'            => 'Imagen de inicio',

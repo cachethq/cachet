@@ -3,6 +3,7 @@
 namespace CachetHQ\Cachet\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Watson\Validating\ValidatingTrait;
 
 /**
  * @property int            $id
@@ -13,6 +14,24 @@ use Illuminate\Database\Eloquent\Model;
  */
 class MetricPoint extends Model
 {
+    use ValidatingTrait;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['metric_id', 'value'];
+
+    /**
+     * The validation rules.
+     *
+     * @var string[]
+     */
+    protected $rules = [
+        'value' => 'integer|required',
+    ];
+
     /**
      * A metric point belongs to a metric unit.
      *

@@ -5,6 +5,7 @@ namespace CachetHQ\Cachet\Models;
 use CachetHQ\Cachet\Transformers\MetricTransformer;
 use Dingo\Api\Transformer\TransformableInterface;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 use Watson\Validating\ValidatingTrait;
 
 /**
@@ -19,6 +20,15 @@ use Watson\Validating\ValidatingTrait;
 class Metric extends Model implements TransformableInterface
 {
     use ValidatingTrait;
+
+    /**
+     * The model's attributes.
+     *
+     * @var array
+     */
+    protected $attributes = [
+        'default_value' => 0,
+    ];
 
     /**
      * The validation rules.
@@ -46,6 +56,24 @@ class Metric extends Model implements TransformableInterface
     public function points()
     {
         return $this->hasMany('CachetHQ\Cachet\Models\MetricPoint', 'metric_id', 'id');
+    }
+
+    /**
+     * Returns the sum of all values a metric has.
+     *
+     * @param int $hour
+     *
+     * @return int
+     */
+    public function getValues($hour)
+    {
+        $value = (int) $this->points()->whereRaw('DATE_FORMAT(created_at, "%Y%c%e%H") = DATE_FORMAT(DATE_SUB(NOW(), INTERVAL '.$hour.' HOUR), "%Y%c%e%H")')->whereRaw('HOUR(created_at) = HOUR(DATE_SUB(NOW(), INTERVAL '.$hour.' HOUR))')->groupBy(DB::raw('HOUR(created_at)'))->sum('value');
+
+        if ($value === 0 && $this->default_value != $value) {
+            return $this->default_value;
+        }
+
+        return $value;
     }
 
     /**
