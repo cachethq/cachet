@@ -23,7 +23,7 @@
                 </div>
             </div>
             <div class="clearfix"></div>
-            {{ Form::open(['name' => 'SetupForm', 'class' => 'form-vertical', 'id' => 'setup-form', 'role' => 'form', 'method' => 'POST']) }}
+            {{ Form::open(['name' => 'SetupForm', 'class' => 'form-horizontal', 'id' => 'setup-form', 'role' => 'form', 'method' => 'POST']) }}
                 <div class="step block-1 show">
                     <fieldset>
                         <div class="form-group">

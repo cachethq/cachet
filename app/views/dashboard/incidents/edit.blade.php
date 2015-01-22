@@ -14,7 +14,7 @@
         <div class="row">
             <div class="col-md-12">
                 @include('partials.dashboard.errors')
-                {{ Form::open(['name' => 'IncidentForm', 'class' => 'form-vertical', 'role' => 'form']) }}
+                {{ Form::open(['name' => 'IncidentForm', 'class' => 'form-horizontal', 'role' => 'form']) }}
                     <fieldset>
                         <div class="form-group">
                             <label for="incident-name">{{ trans('forms.incidents.name') }}</label>
@@ -78,8 +78,8 @@
                     <input type="hidden" name="incident[user_id]" value="{{ Auth::user()->id }}">
                     <input type="hidden" name="incident[id]" value={{$incident->id}}>
 
-                    <div class='form-group'>
-                        <div class='btn-group'>
+                    <div class="form-group">
+                        <div class="btn-group">
                             <button type="submit" class="btn btn-success">{{ trans('forms.update') }}</button>
                             <a class="btn btn-default" href="{{ route('dashboard.incidents') }}">{{ trans('forms.cancel') }}</a>
                         </div>

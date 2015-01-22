@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col-sm-12">
                 @include('partials.dashboard.errors')
-                <form name="UserForm" class="form-vertical" role="form" action="/dashboard/team/add" method="POST">
+                <form name="UserForm" class="form-horizontal" role="form" action="/dashboard/team/add" method="POST">
                     <fieldset>
                         <div class="form-group">
                             <label>{{ trans('forms.user.username') }}</label>
@@ -29,7 +29,9 @@
                         </div>
                     </fieldset>
 
-                    <button type="submit" class="btn btn-success">{{ trans('forms.add') }}</button>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success">{{ trans('forms.add') }}</button>
+                    </div>
                 </form>
             </div>
         </div>

@@ -14,7 +14,7 @@
         <div class="row">
             <div class="col-md-12">
                 @include('partials.dashboard.errors')
-                {{ Form::open(['name' => 'IncidentForm', 'class' => 'form-vertical', 'role' => 'form']) }}
+                {{ Form::open(['name' => 'IncidentForm', 'class' => 'form-horizontal', 'role' => 'form']) }}
                     <fieldset>
                         @if($incidentTemplates->count() > 0)
                         <div class="form-group">
@@ -90,8 +90,8 @@
 
                     <input type="hidden" name="incident[user_id]" value="{{ Auth::user()->id }}">
 
-                    <div class='form-group'>
-                        <div class='btn-group'>
+                    <div class="form-group">
+                        <div class="btn-group">
                             <button type="submit" class="btn btn-success">{{ trans('forms.add') }}</button>
                             <a class="btn btn-default" href="{{ route('dashboard.incidents') }}">{{ trans('forms.cancel') }}</a>
                         </div>

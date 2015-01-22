@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col-sm-12">
                 @include('partials.dashboard.errors')
-                <form name="UserForm" class="form-vertical" role="form" action="/dashboard/user" method="POST">
+                <form name="UserForm" class="form-horizontal" role="form" action="/dashboard/user" method="POST">
                     <fieldset>
                         <div class="form-group">
                             <label>{{ trans('forms.user.username') }}</label>
@@ -56,8 +56,10 @@
                         @endif
                     </fieldset>
 
-                    <button type="submit" class="btn btn-success">{{ trans('forms.update') }}</button>
-                    <a href="/dashboard/user/{{ Auth::user()->id }}/api/regen" class="btn btn-warning">{{ trans('cachet.api.regenerate') }}</a>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success">{{ trans('forms.update') }}</button>
+                        <a href="/dashboard/user/{{ Auth::user()->id }}/api/regen" class="btn btn-warning">{{ trans('cachet.api.regenerate') }}</a>
+                    </div>
                 </form>
             </div>
         </div>

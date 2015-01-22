@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col-sm-12">
                 @include('partials.dashboard.errors')
-                <form name="UserForm" class="form-vertical" role="form" action="/dashboard/team/{{ $user->id }}" method="POST">
+                <form name="UserForm" class="form-horizontal" role="form" action="/dashboard/team/{{ $user->id }}" method="POST">
                     <fieldset>
                         <div class="form-group">
                             <label>{{ trans('forms.user.username') }}</label>
@@ -29,10 +29,12 @@
                         </div>
                     </fieldset>
 
-                    <button type="submit" class="btn btn-success">{{ trans('forms.update') }}</button>
-                    @if(Auth::user()->isAdmin)
-                    <a class="btn btn-danger" href="/dashboard/user/{{ $user->id }}/api/regen">{{ trans('cachet.api.revoke') }}</a>
-                    @endif
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success">{{ trans('forms.update') }}</button>
+                        @if(Auth::user()->isAdmin)
+                        <a class="btn btn-danger" href="/dashboard/user/{{ $user->id }}/api/regen">{{ trans('cachet.api.revoke') }}</a>
+                        @endif
+                    </div>
                 </form>
             </div>
         </div>

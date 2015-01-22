@@ -14,7 +14,7 @@
         <div class="row">
             <div class="col-sm-12">
                 @include('partials.dashboard.errors')
-                <form name="EditComponentForm" class="form-vertical" role="form" action="/dashboard/components/{{ $component->id }}/edit" method="POST">
+                <form name="EditComponentForm" class="form-horizontal" role="form" action="/dashboard/components/{{ $component->id }}/edit" method="POST">
                     <fieldset>
                         <div class="form-group">
                             <label for="incident-name">{{ trans('forms.components.name') }}</label>
@@ -59,8 +59,10 @@
                     <input type="hidden" name="component[order]" value="{{ $component->order or 0 }}">
                     <input type="hidden" name="component[group_id]" value="{{ $component->group_id or 0  }}">
 
-                    <button type="submit" class="btn btn-success">{{ trans('forms.update') }}</button>
-                    <a class="btn btn-default" href="{{ route('dashboard.components') }}">{{ trans('forms.cancel') }}</a>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success">{{ trans('forms.update') }}</button>
+                        <a class="btn btn-default" href="{{ route('dashboard.components') }}">{{ trans('forms.cancel') }}</a>
+                    </div>
                 </form>
             </div>
         </div>
