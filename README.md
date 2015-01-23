@@ -38,6 +38,14 @@ Cachet is currently unable to build assets under CentOS 6 and Debian Wheezy. Thi
 
 You can now find our documentation at [https://docs.cachethq.io](https://docs.cachethq.io) or, directly at [http://cachet.readme.io](http://cachet.readme.io).
 
+## What Cachet is not
+
+Here is a list of things that Cachet is not or does not do:
+
+1. It does not monitor your services. It works only as a way to display the status of your services. *However, Cachet is able to recieve updates from third-party services via its API.*
+2. It does not work on a plugin system. There are no monitoring services to extend.
+3. It's not a Twitter clone.
+
 ## Quickstart with Docker
 
 Run a DB container (you can either pass in environment variables for the DB, or mount a config with ```-v /my/database.php:/var/www/html/app/config/database.php```):
