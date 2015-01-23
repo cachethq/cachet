@@ -76,7 +76,7 @@ class DashIncidentController extends Controller
         }
 
         // Update the component.
-        if ((int) $incidentData['component_id'] > 0) {
+        if (isset($incidentData['component_id']) && (int) $incidentData['component_id'] > 0) {
             Component::find($incidentData['component_id'])->update([
                 'status' => $componentStatus,
             ]);
