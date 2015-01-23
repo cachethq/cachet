@@ -25,6 +25,10 @@ class LoadConfigServiceProvider extends ServiceProvider
             // Don't throw any errors, we may not be setup yet.
         }
 
+        // Set the Segment.com settings.
+        $segmentRepository = $this->app->make('CachetHQ\Cachet\Segment\RepositoryInterface');
+        $this->app->config->set('cachethq/segment::write_key', $segmentRepository->fetch());
+
         // Override default app values.
         $this->app->config->set('app.url', $appDomain ?: $this->app->config->get('app.url'));
         $this->app->config->set('app.locale', $appLocale ?: $this->app->config->get('app.locale'));

@@ -47,6 +47,10 @@ class SetupController extends Controller
     {
         $postData = Binput::all();
 
+        segment_track('Setup', [
+            'step' => '1',
+        ]);
+
         $v = Validator::make($postData, [
             'settings.app_name'     => 'required',
             'settings.app_domain'   => 'required',
@@ -71,6 +75,10 @@ class SetupController extends Controller
     public function postStep2()
     {
         $postData = Binput::all();
+
+        segment_track('Setup', [
+            'step' => '2',
+        ]);
 
         $v = Validator::make($postData, [
             'settings.app_name'     => 'required',

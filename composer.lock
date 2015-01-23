@@ -4,8 +4,63 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3752fec41d40201f38e46974caa27d62",
+    "hash": "b32031bb1053f393308be4f68d1d0c94",
     "packages": [
+        {
+            "name": "cachethq/segment",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cachethq/Laravel-Segment.git",
+                "reference": "39121d7953cb91197f0474b9cf43ae198fca1e26"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cachethq/Laravel-Segment/zipball/39121d7953cb91197f0474b9cf43ae198fca1e26",
+                "reference": "39121d7953cb91197f0474b9cf43ae198fca1e26",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/config": "~4.1",
+                "illuminate/support": "~4.1",
+                "php": ">=5.4.7",
+                "segmentio/analytics-php": "~1.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "CachetHQ\\Segment\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "James Brooks",
+                    "email": "james@cachethq.io"
+                }
+            ],
+            "description": "Segment.com wrapper written for Laravel 4",
+            "keywords": [
+                "CachetHQ",
+                "Laravel Segment",
+                "api",
+                "cachet",
+                "framework",
+                "laravel",
+                "segment",
+                "segment.com",
+                "segment.io"
+            ],
+            "time": "2015-01-23 22:49:00"
+        },
         {
             "name": "classpreloader/classpreloader",
             "version": "1.0.2",
@@ -2109,6 +2164,51 @@
             "time": "2014-12-09 14:53:34"
         },
         {
+            "name": "segmentio/analytics-php",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/segmentio/analytics-php.git",
+                "reference": "db24fa9a2e1110570c338fea7a6f46bbb7ef105c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/segmentio/analytics-php/zipball/db24fa9a2e1110570c338fea7a6f46bbb7ef105c",
+                "reference": "db24fa9a2e1110570c338fea7a6f46bbb7ef105c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "lib/Segment.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Segment.io <friends@segment.io>",
+                    "homepage": "https://segment.io/"
+                }
+            ],
+            "description": "Segmentio Analytics PHP Library",
+            "homepage": "https://segment.io/libraries/php",
+            "keywords": [
+                "analytics",
+                "analytics.js",
+                "segmentio"
+            ],
+            "time": "2015-01-07 07:11:38"
+        },
+        {
             "name": "stack/builder",
             "version": "v1.0.3",
             "source": {
@@ -3997,7 +4097,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "cachethq/segment": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

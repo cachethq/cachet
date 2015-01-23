@@ -10,4 +10,5 @@ return [
     'complete_setup'    => 'Terminer l\'installation',
     'completed'         => 'Cachet a été configuré avec succès !',
     'finish_setup'      => 'Aller au tableau de bord',
+    'allow_tracking'    => 'Allow anonymous usage tracking?',
 ];

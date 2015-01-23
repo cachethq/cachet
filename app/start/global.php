@@ -61,3 +61,14 @@ App::missing(function ($exception) {
 App::down(function () {
     return Response::make("Be right back!", 503);
 });
+
+/*
+|--------------------------------------------------------------------------
+| Analytics
+|--------------------------------------------------------------------------
+|
+| We handle all Segment.com tracking here. The function call will only do
+| something if tracking is enabled.
+|
+*/
+segment_identify();

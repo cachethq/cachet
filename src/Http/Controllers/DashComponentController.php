@@ -109,6 +109,11 @@ class DashComponentController extends Controller
         $component->update($_component);
 
         if (! $component->isValid()) {
+            segment_track('Dashboard', [
+                'event'   => 'Edit Component',
+                'success' => false,
+            ]);
+
             return Redirect::back()->withInput(Binput::all())
                 ->with('title', sprintf(
                     '<strong>%s</strong> %s',
@@ -117,6 +122,11 @@ class DashComponentController extends Controller
                 ))
                 ->with('errors', $component->getErrors());
         }
+
+        segment_track('Dashboard', [
+            'event'   => 'Edit Component',
+            'success' => true,
+        ]);
 
         // The component was added successfully, so now let's deal with the tags.
         $tags = preg_split('/ ?, ?/', $tags);
@@ -168,6 +178,11 @@ class DashComponentController extends Controller
         $component = Component::create($_component);
 
         if (! $component->isValid()) {
+            segment_track('Dashboard', [
+                'event'   => 'Created Component',
+                'success' => false,
+            ]);
+
             return Redirect::back()->withInput(Binput::all())
                 ->with('title', sprintf(
                     '<strong>%s</strong> %s',
@@ -176,6 +191,11 @@ class DashComponentController extends Controller
                 ))
                 ->with('errors', $component->getErrors());
         }
+
+        segment_track('Dashboard', [
+            'event'   => 'Created Component',
+            'success' => true,
+        ]);
 
         // The component was added successfully, so now let's deal with the tags.
         $tags = preg_split('/ ?, ?/', $tags);
@@ -207,6 +227,10 @@ class DashComponentController extends Controller
      */
     public function deleteComponentAction(Component $component)
     {
+        segment_track('Dashboard', [
+            'event' => 'Deleted Component',
+        ]);
+
         $component->delete();
 
         return Redirect::back();
@@ -221,6 +245,10 @@ class DashComponentController extends Controller
      */
     public function deleteComponentGroupAction(ComponentGroup $group)
     {
+        segment_track('Dashboard', [
+            'event' => 'Deleted Component Group',
+        ]);
+
         $group->delete();
 
         return Redirect::back();
@@ -248,6 +276,11 @@ class DashComponentController extends Controller
         $group = ComponentGroup::create(Binput::get('group'));
 
         if (! $group->isValid()) {
+            segment_track('Dashboard', [
+                'event'   => 'Created Component Group',
+                'success' => false,
+            ]);
+
             return Redirect::back()->withInput(Binput::all())
                 ->with('title', sprintf(
                     '<strong>%s</strong> %s',
@@ -256,6 +289,11 @@ class DashComponentController extends Controller
                 ))
                 ->with('errors', $group->getErrors());
         }
+
+        segment_track('Dashboard', [
+            'event'   => 'Created Component Group',
+            'success' => true,
+        ]);
 
         $successMsg = sprintf(
             '<strong>%s</strong> %s',
