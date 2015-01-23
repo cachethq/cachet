@@ -50,23 +50,23 @@ Here is a list of things that Cachet is not or does not do:
 
 Run a DB container (you can either pass in environment variables for the DB, or mount a config with `-v /my/database.php:/var/www/html/app/config/database.php`):
 
-```
-export DB_USERNAME=cachet
-export DB_PASSWORD=cachet
-export DB_DATABASE=cachet
-docker run --name mysql -e MYSQL_USER=$DB_USERNAME -e MYSQL_PASSWORD=$DB_PASSWORD -e MYSQL_DATABASE=$DB_DATABASE -d mysql
+```bash
+$ export DB_USERNAME=cachet
+$ export DB_PASSWORD=cachet
+$ export DB_DATABASE=cachet
+$ docker run --name mysql -e MYSQL_USER=$DB_USERNAME -e MYSQL_PASSWORD=$DB_PASSWORD -e MYSQL_DATABASE=$DB_DATABASE -d mysql
 ```
 
 Initialize the DB if you havent yet:
 
-```
-docker run --link mysql:mysql -e DB_HOST=mysql -e DB_DATABASE=$DB_DATABASE -e DB_USERNAME=$DB_USERNAME -e DB_PASSWORD=$DB_PASSWORD cachethq/cachet:latest php artisan migrate
+```bash
+$ docker run --link mysql:mysql -e DB_HOST=mysql -e DB_DATABASE=$DB_DATABASE -e DB_USERNAME=$DB_USERNAME -e DB_PASSWORD=$DB_PASSWORD cachethq/cachet:latest php artisan migrate
 ```
 
 Run Cachet:
 
-```
-docker run -d --name cachet --link mysql:mysql -p 80:80 -e DB_HOST=mysql -e DB_DATABASE=$DB_DATABASE -e DB_USERNAME=$DB_USERNAME -e DB_PASSWORD=$DB_PASSWORD cachethq/cachet:latest
+```bash
+$ docker run -d --name cachet --link mysql:mysql -p 80:80 -e DB_HOST=mysql -e DB_DATABASE=$DB_DATABASE -e DB_USERNAME=$DB_USERNAME -e DB_PASSWORD=$DB_PASSWORD cachethq/cachet:latest
 ```
 
 Now go to `http://<ipdockerisboundto>/setup` and have fun!
