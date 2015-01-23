@@ -36,12 +36,12 @@ class RoutingServiceProvider extends ServiceProvider
     protected function registerFilters()
     {
         // Laravel's before filters
-        $this->app->router->filter('admin', 'CachetHQ\Cachet\Http\Before\AdminFilter');
         $this->app->router->filter('auth', 'CachetHQ\Cachet\Http\Before\AuthFilter');
         $this->app->router->filter('guest', 'CachetHQ\Cachet\Http\Before\GuestFilter');
         $this->app->router->filter('csrf', 'CachetHQ\Cachet\Http\Before\CsrfFilter');
 
         // Cachet's before filters
+        $this->app->router->filter('admin', 'CachetHQ\Cachet\Http\Before\AdminFilter');
         $this->app->router->filter('is_setup', 'CachetHQ\Cachet\Http\Before\IsSetupFilter');
         $this->app->router->filter('has_setting', 'CachetHQ\Cachet\Http\Before\HasSettingFilter');
         $this->app->router->filter('login_throttling', 'CachetHQ\Cachet\Http\Before\LoginThrottlingFilter');
