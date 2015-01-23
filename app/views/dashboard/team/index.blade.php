@@ -8,9 +8,11 @@
         <span class="uppercase">
             <i class="icon icon ion-android-alert"></i> {{ trans('dashboard.team.team') }}
         </span>
+        @if(Auth::user()->isAdmin)
         <a class="btn btn-sm btn-success pull-right" href="{{ route('dashboard.team.add') }}">
             {{ trans('dashboard.team.add.title') }}
         </a>
+        @endif
         <div class="clearfix"></div>
     </div>
     <div class="content-wrapper header-fixed">
