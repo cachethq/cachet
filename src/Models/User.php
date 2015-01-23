@@ -133,7 +133,7 @@ class User extends Model implements UserInterface, RemindableInterface
      */
     public function getIsAdminAttribute()
     {
-        return (bool) $this->level;
+        return $this->level == 1;
     }
 
     /**

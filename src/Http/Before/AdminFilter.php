@@ -22,7 +22,7 @@ class AdminFilter
     public function filter(Route $route, Request $request)
     {
         if (!Auth::check() || (Auth::check() && !Auth::user()->isAdmin)) {
-            return Response::make('Unauthorized', 401);
+            return Response::view('errors.401', ['pageTitle' => trans('errors.unauthorized.title')], 401);
         }
     }
 }
