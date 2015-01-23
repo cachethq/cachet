@@ -48,7 +48,7 @@ Here is a list of things that Cachet is not or does not do:
 
 ## Quickstart with Docker
 
-Run a DB container (you can either pass in environment variables for the DB, or mount a config with ```-v /my/database.php:/var/www/html/app/config/database.php```):
+Run a DB container (you can either pass in environment variables for the DB, or mount a config with `-v /my/database.php:/var/www/html/app/config/database.php`):
 
 ```
 export DB_USERNAME=cachet
@@ -69,7 +69,7 @@ Run Cachet:
 docker run -d --name cachet --link mysql:mysql -p 80:80 -e DB_HOST=mysql -e DB_DATABASE=$DB_DATABASE -e DB_USERNAME=$DB_USERNAME -e DB_PASSWORD=$DB_PASSWORD cachethq/cachet:latest
 ```
 
-Now go to ```http://<ipdockerisboundto>/setup``` and have fun!
+Now go to `http://<ipdockerisboundto>/setup` and have fun!
 
 ## Translations
 
