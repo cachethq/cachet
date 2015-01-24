@@ -78,3 +78,5 @@ If you're feeling adventurous, you can become a Git & GitHub master with the [Gi
 There is always the Cachet Gitter chat to ask any questions you may have:
 
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/cachethq/Cachet?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+
+You should also make use of the [.editorconfig](/.editorconfig) file found within the root of the repository. It'll make sure that your editor is setup with the same file settings.
