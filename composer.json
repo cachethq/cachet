@@ -65,13 +65,13 @@
     "scripts": {
         "post-install-cmd": [
             "php artisan optimize",
-            "chmod -R 777 app/storage",
+            "chmod -R 755 app/storage",
             "php artisan cachet:one-click-deploy"
         ],
         "post-update-cmd": [
             "php artisan clear-compiled",
             "php artisan optimize",
-            "chmod -R 777 app/storage"
+            "chmod -R 755 app/storage"
         ],
         "post-create-project-cmd": [
             "php artisan key:generate"
