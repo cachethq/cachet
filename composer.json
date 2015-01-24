@@ -1,83 +1,83 @@
 {
-  "name": "cachethq/cachet",
-  "description": "An open source status page system written in PHP",
-  "keywords": [
-    "status",
-    "page",
-    "updates"
-  ],
-  "license": "MIT",
-  "type": "project",
-  "require": {
-    "php": ">=5.4",
-    "ext-mbstring": "*",
-    "ext-mcrypt": "*",
-    "ext-openssl": "*",
-    "laravel/framework": "4.2.*",
-    "dingo/api": "0.8.*",
-    "doctrine/dbal": "2.5.*",
-    "graham-campbell/binput": "2.1.*",
-    "graham-campbell/markdown": "2.0.*",
-    "graham-campbell/throttle": "2.0.*",
-    "guzzlehttp/guzzle": "5.1.*",
-    "jenssegers/date": "2.0.*",
-    "mccool/laravel-auto-presenter": "2.2.*",
-    "pragmarx/google2fa": "0.1.*",
-    "roumen/feed": "2.8.*",
-    "thujohn/rss": "1.0.*",
-    "watson/validating": "0.10.*",
-    "fideloper/proxy": "~2.0"
-  },
-  "require-dev": {
-    "phpunit/phpunit": "~4.3",
-    "mockery/mockery": "0.9.*"
-  },
-  "autoload": {
-    "classmap": [
-      "app/database/migrations",
-      "app/database/seeds"
+    "name": "cachethq/cachet",
+    "description": "An open source status page system written in PHP",
+    "keywords": [
+        "status",
+        "page",
+        "updates"
     ],
-    "files": [
-      "src/helpers.php"
-    ],
-    "psr-4": {
-      "CachetHQ\\Cachet\\": "src/"
+    "license": "MIT",
+    "type": "project",
+    "require": {
+        "php": ">=5.4",
+        "ext-mbstring": "*",
+        "ext-mcrypt": "*",
+        "ext-openssl": "*",
+        "laravel/framework": "4.2.*",
+        "dingo/api": "0.8.*",
+        "doctrine/dbal": "2.5.*",
+        "graham-campbell/binput": "2.1.*",
+        "graham-campbell/markdown": "2.0.*",
+        "graham-campbell/throttle": "2.0.*",
+        "guzzlehttp/guzzle": "5.1.*",
+        "jenssegers/date": "2.0.*",
+        "mccool/laravel-auto-presenter": "2.2.*",
+        "pragmarx/google2fa": "0.1.*",
+        "roumen/feed": "2.8.*",
+        "thujohn/rss": "1.0.*",
+        "watson/validating": "0.10.*",
+        "fideloper/proxy": "~2.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.3",
+        "mockery/mockery": "0.9.*"
+    },
+    "autoload": {
+        "classmap": [
+            "app/database/migrations",
+            "app/database/seeds"
+        ],
+        "files": [
+            "src/helpers.php"
+        ],
+        "psr-4": {
+            "CachetHQ\\Cachet\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/TestCase.php"
+        ]
+    },
+    "extra": {
+        "paas": {
+            "document-root": "public",
+            "index-document": "index.php",
+            "log-files": [
+                "app/storage/logs/laravel.log"
+            ],
+            "compile": [
+                "bower install",
+                "gulp"
+            ]
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "php artisan optimize",
+            "chmod -R 755 app/storage",
+            "php artisan cachet:one-click-deploy"
+        ],
+        "post-update-cmd": [
+            "php artisan clear-compiled",
+            "php artisan optimize",
+            "chmod -R 755 app/storage"
+        ],
+        "post-create-project-cmd": [
+            "php artisan key:generate"
+        ]
+    },
+    "config": {
+        "preferred-install": "dist"
     }
-  },
-  "autoload-dev": {
-    "classmap": [
-      "tests/TestCase.php"
-    ]
-  },
-  "extra": {
-    "paas": {
-      "document-root": "public",
-      "index-document": "index.php",
-      "log-files": [
-        "app/storage/logs/laravel.log"
-      ],
-      "compile": [
-        "bower install",
-        "gulp"
-      ]
-    }
-  },
-  "scripts": {
-    "post-install-cmd": [
-      "php artisan optimize",
-      "chmod -R 755 app/storage",
-      "php artisan cachet:one-click-deploy"
-    ],
-    "post-update-cmd": [
-      "php artisan clear-compiled",
-      "php artisan optimize",
-      "chmod -R 755 app/storage"
-    ],
-    "post-create-project-cmd": [
-      "php artisan key:generate"
-    ]
-  },
-  "config": {
-    "preferred-install": "dist"
-  }
 }

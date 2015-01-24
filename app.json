@@ -1,24 +1,24 @@
 {
-  "name": "Cachet",
-  "description": "Single-site Status Page with Laravel",
-  "keywords": [
-    "cachet",
-    "laravel",
-    "status",
-    "page"
-  ],
-  "website": "http://james-brooks.uk/cachet",
-  "logo": "https://raw.githubusercontent.com/cachethq/assets/79336a33c24b28c470a89742671e0e291813d004/images/icon/Cachet-Icon.png",
-  "success_url": "/setup",
-  "repository": "https://github.com/cachethq/Cachet",
-  "addons": [
-    "heroku-postgresql"
-  ],
-  "env": {
-    "ENV": { "value": "heroku", "description": "Do not modify this value to work on Heroku" },
-    "BUILDPACK_URL": { "value": "https://github.com/cachethq/cachet-buildpack", "description": "Do not modify this value to work on Heroku" }
-  },
-  "scripts": {
-    "postdeploy": "php artisan migrate --env=heroku; php artisan key:generate;"
-  }
+    "name": "Cachet",
+    "description": "Single-site Status Page with Laravel",
+    "keywords": [
+        "cachet",
+        "laravel",
+        "status",
+        "page"
+    ],
+    "website": "http://james-brooks.uk/cachet",
+    "logo": "https://raw.githubusercontent.com/cachethq/assets/79336a33c24b28c470a89742671e0e291813d004/images/icon/Cachet-Icon.png",
+    "success_url": "/setup",
+    "repository": "https://github.com/cachethq/Cachet",
+    "addons": [
+        "heroku-postgresql"
+    ],
+    "env": {
+        "ENV": { "value": "heroku", "description": "Do not modify this value to work on Heroku" },
+        "BUILDPACK_URL": { "value": "https://github.com/cachethq/cachet-buildpack", "description": "Do not modify this value to work on Heroku" }
+    },
+    "scripts": {
+        "postdeploy": "php artisan migrate --env=heroku; php artisan key:generate;"
+    }
 }
