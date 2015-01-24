@@ -19,3 +19,6 @@ public/js
 # Packages
 npm-debug.log
 .vagrant
+
+# PHPUnit
+phpunit.xml
