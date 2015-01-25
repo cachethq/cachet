@@ -43,6 +43,7 @@
                                 {{ trans('cachet.incidents.status')[4] }}
                             </label>
                         </div>
+                        @if($components->count() > 0)
                         <div class='form-group'>
                             <label>{{ trans('forms.incidents.component') }}</label>
                             <select name='incident[component_id]' class='form-control'>
@@ -67,6 +68,7 @@
                                 </div>
                             </div>
                         </div>
+                        @endif
                         <div class="form-group">
                             <label>{{ trans('forms.incidents.message') }}</label>
                             <div class='markdown-control'>
