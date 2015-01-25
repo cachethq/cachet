@@ -28,17 +28,17 @@
                                 {{ trans('cachet.incidents.status')[1] }}
                             </label>
                             <label class="radio-inline">
-                                <input type="radio" name="incident[status]" value="2" {{ ($incident->status == 2) ? "checked=checked" : "" }>
+                                <input type="radio" name="incident[status]" value="2" {{ ($incident->status == 2) ? "checked=checked" : "" }}>
                                 <i class="icon ion-alert-circled"></i>
                                 {{ trans('cachet.incidents.status')[2] }}
                             </label>
                             <label class="radio-inline">
-                                <input type="radio" name="incident[status]" value="3" {{ ($incident->status == 3) ? "checked=checked" : "" }>
+                                <input type="radio" name="incident[status]" value="3" {{ ($incident->status == 3) ? "checked=checked" : "" }}>
                                 <i class="icon ion-eye"></i>
                                 {{ trans('cachet.incidents.status')[3] }}
                             </label>
                             <label class="radio-inline">
-                                <input type="radio" name="incident[status]" value="4" {{ ($incident->status == 4) ? "checked=checked" : "" }>
+                                <input type="radio" name="incident[status]" value="4" {{ ($incident->status == 4) ? "checked=checked" : "" }}>
                                 <i class="icon ion-checkmark"></i>
                                 {{ trans('cachet.incidents.status')[4] }}
                             </label>
