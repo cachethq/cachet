@@ -18,7 +18,7 @@
                     <fieldset>
                         <div class="form-group">
                             <label for="incident-name">{{ trans('forms.incidents.name') }}</label>
-                            <input type="text" class="form-control" name="incident[name]" id="incident-name" required value={{$incident->name}}>
+                            <input type="text" class="form-control" name="incident[name]" id="incident-name" required value="{{$incident->name}}">
                         </div>
                         <div class="form-group">
                             <label for="incident-name">{{ trans('forms.incidents.status') }}</label><br>
