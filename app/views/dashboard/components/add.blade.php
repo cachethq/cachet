@@ -32,6 +32,7 @@
                             <label>{{ trans('forms.components.description') }}</label>
                             <textarea name="component[description]" class="form-control" rows="5"></textarea>
                         </div>
+                        <input type="hidden" name="component[group_id]" value="0">
                         @if($groups->count() > 0)
                         <div class="form-group">
                             <label>{{ trans('forms.components.group') }}</label>
@@ -57,7 +58,6 @@
 
                     <input type="hidden" name="component[user_id]" value="{{ Auth::user()->id }}">
                     <input type="hidden" name="component[order]" value="0">
-                    <input type="hidden" name="component[group_id]" value="0">
 
                     <div class="form-group">
                         <button type="submit" class="btn btn-success">{{ trans('forms.create') }}</button>
