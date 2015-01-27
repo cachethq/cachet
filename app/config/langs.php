@@ -2,9 +2,9 @@
 
 return [
     // Enabled langs
+    'en-UD' => 'CrowdIn - InContext Localization',
     'de'    => 'Deutsch',
     'en'    => 'English',
-    'en-UD' => 'CrowdIn - InContext Localization',
     'fr'    => 'Français',
     'pt-BR' => 'Portuguese, Brazilian',
 ];
