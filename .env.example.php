@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'APP_DEBUG'   => getenv('APP_DEBUG') ?: false,
     'DB_DRIVER'   => 'mysql',
     'DB_HOST'     => 'localhost',
     'DB_DATABASE' => 'cachet',
