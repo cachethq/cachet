@@ -5,6 +5,7 @@ namespace CachetHQ\Cachet\Http\Controllers;
 use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
+use Carbon\Carbon;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
 use GrahamCampbell\Markdown\Facades\Markdown;
@@ -27,8 +28,8 @@ class HomeController extends Controller
 
         $incidentDays = Setting::get('app_incident_days') ?: 7;
 
-        $today = Date::now();
-        $startDate = Date::now();
+        $today = Carbon::now();
+        $startDate = Carbon::now();
 
         $dateFormat = Setting::get('date_format') ?: 'jS F Y';
 
@@ -48,11 +49,16 @@ class HomeController extends Controller
 
         foreach (range(0, $incidentDays) as $i) {
             $date = $startDate->copy()->subDays($i);
+
             $incidents = Incident::whereBetween('created_at', [
                 $date->format('Y-m-d').' 00:00:00',
                 $date->format('Y-m-d').' 23:59:59',
             ])->orderBy('created_at', 'desc')->get();
-            $allIncidents[] = ['date' => $date->format($dateFormat), 'incidents' => $incidents];
+
+            $allIncidents[] = [
+                'date'      => (new Date($date->toDateTimeString()))->format($dateFormat),
+                'incidents' => $incidents,
+            ];
         }
 
         return View::make('index', [

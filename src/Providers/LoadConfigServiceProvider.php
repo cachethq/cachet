@@ -20,7 +20,6 @@ class LoadConfigServiceProvider extends ServiceProvider
         try {
             // Get app custom configuration.
             $appDomain = Setting::get('app_domain');
-            $appTimezone = Setting::get('app_timezone');
             $appLocale = Setting::get('app_locale');
         } catch (QueryException $e) {
             // Don't throw any errors, we may not be setup yet.
@@ -28,7 +27,6 @@ class LoadConfigServiceProvider extends ServiceProvider
 
         // Override default app values.
         $this->app->config->set('app.url', $appDomain ?: $this->app->config->get('app.url'));
-        $this->app->config->set('app.timezone', $appTimezone ?: $this->app->config->get('app.timezone'));
         $this->app->config->set('app.locale', $appLocale ?: $this->app->config->get('app.locale'));
 
         // Set custom lang.
