@@ -18,7 +18,7 @@ class DashComponentController extends Controller
     {
         $this->subMenu = [
             'components' => [
-                'title'  => trans_choice('dashboard.components.components', 2),
+                'title'  => trans('dashboard.components.components'),
                 'url'    => route('dashboard.components'),
                 'icon'   => 'ion-outlet',
                 'active' => false,
