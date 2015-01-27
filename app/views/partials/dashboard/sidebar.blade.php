@@ -45,7 +45,7 @@
             </li>
             <li {{ set_active('dashboard/components*') }}>
                 <a href="{{ route('dashboard.components') }}">
-                    <i class="icons ion-ios-keypad"></i>
+                    <i class="icons ion-outlet"></i>
                     <span>{{ trans_choice('dashboard.components.components', 2) }}</span>
                 </a>
             </li>

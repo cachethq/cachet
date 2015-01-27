@@ -6,7 +6,7 @@
             <i class="icon ion-navicon"></i>
         </div>
         <span class="uppercase">
-            <i class="icons ion-ios-keypad"></i> {{ trans_choice('dashboard.components.components', 2) }}
+            <i class="icons ion-outlet"></i> {{ trans_choice('dashboard.components.components', 2) }}
         </span>
         > <small>{{ trans('dashboard.components.add.title') }}</small>
     </div>

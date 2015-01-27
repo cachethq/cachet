@@ -8,7 +8,7 @@
         <div class="content-wrapper">
             <div class="header sub-header">
                 <span class="uppercase">
-                    <i class="icons ion-ios-keypad"></i> {{ trans_choice('dashboard.components.components', 2) }}
+                    <i class="icons ion-outlet"></i> {{ trans_choice('dashboard.components.components', 2) }}
                 </span>
                 <a class="btn btn-sm btn-success pull-right" href="{{ route('dashboard.components.add') }}">
                     {{ trans('dashboard.components.add.title') }}
