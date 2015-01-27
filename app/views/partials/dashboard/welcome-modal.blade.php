@@ -17,7 +17,7 @@
                 <div class="get-started">
                     <div class="row">
                         <div class="col-md-4 animated fadeInDown">
-                            <i class="icon ion-ios-keypad"></i>
+                            <i class="icon ion-outlet"></i>
                             <a href="{{ route('dashboard.components.add') }}">
                                 {{ trans('dashboard.welcome.steps.component') }}
                             </a>
