@@ -46,7 +46,7 @@
             <li {{ set_active('dashboard/components*') }}>
                 <a href="{{ route('dashboard.components') }}">
                     <i class="icons ion-outlet"></i>
-                    <span>{{ trans_choice('dashboard.components.components', 2) }}</span>
+                    <span>{{ trans('dashboard.components.components') }}</span>
                 </a>
             </li>
             <li {{ set_active('dashboard/team*') }}>

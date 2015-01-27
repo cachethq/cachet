@@ -20,7 +20,7 @@ class DashComponentController extends Controller
             'components' => [
                 'title'  => trans_choice('dashboard.components.components', 2),
                 'url'    => route('dashboard.components'),
-                'icon'   => 'ion-ios-keypad',
+                'icon'   => 'ion-outlet',
                 'active' => false,
             ],
             'groups' => [
