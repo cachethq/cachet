@@ -32,6 +32,8 @@
     </style>
     @endif
 
+    @include('partials.crowdin')
+
     <script src="{{ elixir('js/all.js') }}"></script>
 </head>
 <body class="error-page">
