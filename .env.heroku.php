@@ -4,6 +4,7 @@ $dbURL = parse_url(getenv('DATABASE_URL'));
 $dbName = substr($dbURL["path"], 1);
 
 return [
+    'APP_DEBUG'   => getenv('APP_DEBUG') ?: false,
     'DB_HOST'     => $dbURL['host'],
     'DB_DATABASE' => $dbName,
     'DB_USERNAME' => $dbURL['user'],
