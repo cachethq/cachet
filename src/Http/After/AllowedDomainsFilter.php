@@ -2,7 +2,7 @@
 
 namespace CachetHQ\Cachet\Http\After;
 
-use CachetHQ\Cachet\Models\Setting;
+use CachetHQ\Cachet\Facades\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Route;
 use Symfony\Component\HttpFoundation\Response;
