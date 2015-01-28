@@ -7,11 +7,11 @@
     "jquery": "~2.1.1",
     "jquery-minicolors": "~2.1.10",
     "jquery-serialize-object": "~2.4.3",
-    "lodash": "~2.4.1",
+    "lodash": "~2.4",
     "messenger": "~1.4.1",
     "Sortable": "~1.0.0",
     "animate-sass": "~0.6.2",
-    "moment": "~2.8.4",
+    "moment": "~2.9",
     "livestampjs": "~1.1.2"
   },
   "resolutions": {
