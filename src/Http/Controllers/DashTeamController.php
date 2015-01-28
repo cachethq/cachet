@@ -60,6 +60,11 @@ class DashTeamController extends Controller
         $user = User::create(Binput::all());
 
         if (! $user->isValid()) {
+            segment_track('Dashboard', [
+                'event'   => 'Added User',
+                'success' => false,
+            ]);
+
             return Redirect::back()->withInput(Binput::except('password'))
                 ->with('title', sprintf(
                     '<strong>%s</strong> %s',
@@ -68,6 +73,11 @@ class DashTeamController extends Controller
                 ))
                 ->with('errors', $user->getErrors());
         }
+
+        segment_track('Dashboard', [
+            'event'   => 'Added User',
+            'success' => true,
+        ]);
 
         $successMsg = sprintf(
             '<strong>%s</strong> %s',
@@ -98,6 +108,11 @@ class DashTeamController extends Controller
         $user->update($items);
 
         if (! $user->isValid()) {
+            segment_track('Dashboard', [
+                'event'   => 'Updated User',
+                'success' => false,
+            ]);
+
             return Redirect::back()->withInput(Binput::except('password'))
                 ->with('title', sprintf(
                     '<strong>%s</strong> %s',
@@ -106,6 +121,11 @@ class DashTeamController extends Controller
                 ))
                 ->with('errors', $user->getErrors());
         }
+
+        segment_track('Dashboard', [
+            'event'   => 'Updated User',
+            'success' => true,
+        ]);
 
         $successMsg = sprintf(
             '<strong>%s</strong> %s',

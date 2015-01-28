@@ -66,6 +66,11 @@ class DashIncidentController extends Controller
         $incident = Incident::create($incidentData);
 
         if (! $incident->isValid()) {
+            segment_track('Dashboard', [
+                'event'   => 'Created Incident',
+                'success' => false,
+            ]);
+
             return Redirect::back()->withInput(Binput::all())
                 ->with('title', sprintf(
                     '<strong>%s</strong> %s',
@@ -81,6 +86,11 @@ class DashIncidentController extends Controller
                 'status' => $componentStatus,
             ]);
         }
+
+        segment_track('Dashboard', [
+            'event'   => 'Created Incident',
+            'success' => true,
+        ]);
 
         $successMsg = sprintf(
             '<strong>%s</strong> %s',
@@ -127,6 +137,10 @@ class DashIncidentController extends Controller
      */
     public function deleteTemplateAction(IncidentTemplate $template)
     {
+        segment_track('Dashboard', [
+            'event' => 'Deleted Incident Template',
+        ]);
+
         $template->delete();
 
         return Redirect::back();
@@ -143,6 +157,11 @@ class DashIncidentController extends Controller
         $template = IncidentTemplate::create($_template);
 
         if (! $template->isValid()) {
+            segment_track('Dashboard', [
+                'event'   => 'Created Incident Template',
+                'success' => false,
+            ]);
+
             return Redirect::back()->withInput(Binput::all())
                 ->with('title', sprintf(
                     '<strong>%s</strong> %s',
@@ -151,6 +170,11 @@ class DashIncidentController extends Controller
                 ))
                 ->with('errors', $template->getErrors());
         }
+
+        segment_track('Dashboard', [
+            'event'   => 'Created Incident Template',
+            'success' => true,
+        ]);
 
         $successMsg = sprintf(
             '<strong>%s</strong> %s',
@@ -170,6 +194,10 @@ class DashIncidentController extends Controller
      */
     public function deleteIncidentAction(Incident $incident)
     {
+        segment_track('Dashboard', [
+            'event' => 'Deleted Incident',
+        ]);
+
         $incident->delete();
 
         return Redirect::back();
@@ -204,6 +232,11 @@ class DashIncidentController extends Controller
         $incident->update($_incident);
 
         if (! $incident->isValid()) {
+            segment_track('Dashboard', [
+                'event'   => 'Edited Incident',
+                'success' => false,
+            ]);
+
             return Redirect::back()->withInput(Binput::all())
                 ->with('title', sprintf(
                     '<strong>%s</strong> %s',
@@ -212,6 +245,11 @@ class DashIncidentController extends Controller
                 ))
                 ->with('errors', $incident->getErrors());
         }
+
+        segment_track('Dashboard', [
+            'event'   => 'Edited Incident',
+            'success' => true,
+        ]);
 
         $successMsg = sprintf(
             '<strong>%s</strong> %s',
@@ -231,6 +269,10 @@ class DashIncidentController extends Controller
      */
     public function editTemplateAction(IncidentTemplate $template)
     {
+        segment_track('Dashboard', [
+            'event' => 'Edited Incident Template',
+        ]);
+
         $template->update(Binput::get('template'));
 
         return Redirect::back()->with('updatedTemplate', $template);

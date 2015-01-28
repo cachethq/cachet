@@ -50,7 +50,13 @@ class OneClickDeployCommand extends Command
     public function fire()
     {
         if ($this->migrate) {
-            return $this->runMigrations();
+            $migrations = $this->runMigrations();
+
+            segment_track('Installation', [
+                'event' => 'Heroku Deployment',
+            ]);
+
+            return $migrations;
         }
 
         $this->info('Please run "php artisan migrate" to finish the installation.');

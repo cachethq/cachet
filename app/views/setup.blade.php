@@ -78,6 +78,12 @@
                                 {{ trans("setup.show_support") }}
                             </label>
                         </div>
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" name="settings[app_track]" value="1" checked >
+                                {{ trans("setup.allow_tracking") }}
+                            </label>
+                        </div>
                         <hr>
                         <div class="form-group text-center">
                             <span class="wizard-next btn btn-success" data-current-block="1" data-next-block="2" data-loading-text="<i class='icon ion-load-c'></i>">
