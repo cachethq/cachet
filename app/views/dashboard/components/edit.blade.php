@@ -56,7 +56,7 @@
                         </div>
                     </fieldset>
 
-                    <input type="hidden" name="component[user_id]" value="{{ $component->agent_id || Auth::user()->id }}">
+                    <input type="hidden" name="component[user_id]" value="{{ $component->agent_id || $loggedUser->id }}">
                     <input type="hidden" name="component[order]" value="{{ $component->order or 0 }}">
 
                     <div class="form-group">

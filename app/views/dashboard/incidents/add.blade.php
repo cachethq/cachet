@@ -88,7 +88,7 @@
                         </div>
                     </fieldset>
 
-                    <input type="hidden" name="incident[user_id]" value="{{ Auth::user()->id }}">
+                    <input type="hidden" name="incident[user_id]" value="{{ $loggedUser->id }}">
 
                     <div class="form-group">
                         <div class="btn-group">

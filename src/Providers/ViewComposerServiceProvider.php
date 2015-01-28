@@ -23,6 +23,7 @@ class ViewComposerServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->app->view->composer('*', 'CachetHQ\Cachet\Composers\LoggedUserComposer');
         $this->app->view->composer('index', 'CachetHQ\Cachet\Composers\IndexComposer');
         $this->app->view->composer([
             'setup',

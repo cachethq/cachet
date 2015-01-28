@@ -1,4 +1,4 @@
-@if(Auth::check())
+@if($loggedUser)
 <div class="sidebar">
     <div class="sidebar-inner">
         <div class="profile">
@@ -6,13 +6,13 @@
                 <div class="col-xs-3">
                     <div class="avatar">
                         <a href="{{ url('dashboard/user') }}">
-                            <img src="{{ Auth::user()->gravatar }}" alt="">
+                            <img src="{{ $loggedUser->gravatar }}" alt="">
                         </a>
                     </div>
                 </div>
                 <div class="col-xs-9 username-wrapper">
                     <div class="profile pull-left">
-                        <div class="username">{{ Auth::user()->username }}</div>
+                        <div class="username">{{ $loggedUser->username }}</div>
                     </div>
                 </div>
             </div>

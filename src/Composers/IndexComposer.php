@@ -4,7 +4,7 @@ namespace CachetHQ\Cachet\Composers;
 
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
-use Illuminate\Support\Facades\View;
+use Illuminate\View\View;
 
 class IndexComposer
 {
@@ -15,7 +15,7 @@ class IndexComposer
      *
      * @return void
      */
-    public function compose(\Illuminate\View\View $view)
+    public function compose(View $view)
     {
         // Default data
         $withData = [
