@@ -5,7 +5,7 @@
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 [![PHP Dependency Status](https://www.versioneye.com/user/projects/54c8e0336c63108f50000180/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/54c8e0336c63108f50000180)
 [![JavaScript Dependency Status](https://www.versioneye.com/user/projects/54c8e04b6c63108f50000234/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/54c8e04b6c63108f50000234)
-[![Node.js Dependency Status](https://www.versioneye.com/user/projects/54c8e0356c63105469000243#dialog_dependency_badge/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/54c8e0356c63105469000243#dialog_dependency_badge)
+[![Node.js Dependency Status](https://www.versioneye.com/user/projects/54c8e0356c63105469000243/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/54c8e0356c63105469000243)
 [![Gitter](https://img.shields.io/badge/gitter-join%20chat-brightgreen.svg?style=flat-square)](https://gitter.im/cachethq/Cachet?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 ![Current progress](https://dl.dropboxusercontent.com/u/7323096/Cachet.png)
