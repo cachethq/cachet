@@ -56,7 +56,7 @@ class HomeController extends Controller
             ])->orderBy('created_at', 'desc')->get();
 
             $allIncidents[] = [
-                'date'      => (new Date($date->toDateTimeString()))->format($dateFormat),
+                'date'      => (new Date($date->toDateString()))->format($dateFormat),
                 'incidents' => $incidents,
             ];
         }
