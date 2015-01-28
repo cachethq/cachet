@@ -39,7 +39,7 @@ return [
 
     // Components
     'components' => [
-        'components'         => 'Componente|Componentes',
+        'components'         => 'Componentes',
         'component_statuses' => 'Estatus de los componentes',
         'add'                => [
             'title'   => 'Agregar un componente',
