@@ -8,7 +8,7 @@
         <span class="uppercase">
             <i class="icon icon ion-android-alert"></i> {{ trans('dashboard.team.team') }}
         </span>
-        @if(Auth::user()->isAdmin)
+        @if($loggedUser->isAdmin)
         <a class="btn btn-sm btn-success pull-right" href="{{ route('dashboard.team.add') }}">
             {{ trans('dashboard.team.add.title') }}
         </a>
@@ -23,7 +23,7 @@
                 <div class="user-grid">
                     @foreach($teamMembers as $member)
                     <div class="user col-sm-3 col-xs-6">
-                        <a href="@if(Auth::user()->id == $member->id) {{ url('dashboard/user') }} @else /dashboard/team/{{ $member->id }} @endif">
+                        <a href="@if($loggedUser->id == $member->id) {{ url('dashboard/user') }} @else /dashboard/team/{{ $member->id }} @endif">
                             <img src="{{ $member->gravatar }}">
                         </a>
                         <div class="name">{{ $member->username }}</div>

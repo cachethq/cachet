@@ -17,11 +17,11 @@
                     <fieldset>
                         <div class="form-group">
                             <label>{{ trans('forms.user.username') }}</label>
-                            <input type="text" class="form-control" name="username" value="{{ Auth::user()->username }}" required>
+                            <input type="text" class="form-control" name="username" value="{{ $loggedUser->username }}" required>
                         </div>
                         <div class="form-group">
                             <label>{{ trans('forms.user.email') }}</label>
-                            <input type="email" class="form-control" name="email" value="{{ Auth::user()->email }}" required>
+                            <input type="email" class="form-control" name="email" value="{{ $loggedUser->email }}" required>
                         </div>
                         <div class="form-group">
                             <label>{{ trans('forms.user.password') }}</label>
@@ -30,24 +30,24 @@
                         <hr>
                         <div class="form-group">
                             <label>{{ trans('forms.user.api-token') }}</label>
-                            <input type="text" class="form-control" name="api_key" disabled value="{{ Auth::user()->api_key }}">
+                            <input type="text" class="form-control" name="api_key" disabled value="{{ $loggedUser->api_key }}">
                             <span class="help-block">{{ trans('forms.user.api-token-help') }}</span>
                         </div>
                         <hr>
                         <div class="form-group">
                             <label class="checkbox-inline">
                                 <input type="hidden" name="google2fa" value="0">
-                                <input type='checkbox' name="google2fa" value="1" {{ Auth::user()->hasTwoFactor ? "checked" : "" }}>
+                                <input type='checkbox' name="google2fa" value="1" {{ $loggedUser->hasTwoFactor ? "checked" : "" }}>
                                 {{ trans('forms.setup.enable_google2fa') }}
                             </label>
                         </div>
-                        @if(Auth::user()->hasTwoFactor)
+                        @if($loggedUser->hasTwoFactor)
                         <div class="form-group">
                             <?php
                             $google2fa_url = PragmaRX\Google2FA\Vendor\Laravel\Facade::getQRCodeGoogleUrl(
                                 'CachetHQ',
-                                Auth::user()->email,
-                                Auth::user()->google_2fa_secret
+                                $loggedUser->email,
+                                $loggedUser->google_2fa_secret
                             );
                             ?>
                             <img src="{{ $google2fa_url }}" class="img-responsive">
@@ -58,7 +58,7 @@
 
                     <div class="form-group">
                         <button type="submit" class="btn btn-success">{{ trans('forms.update') }}</button>
-                        <a href="/dashboard/user/{{ Auth::user()->id }}/api/regen" class="btn btn-warning">{{ trans('cachet.api.regenerate') }}</a>
+                        <a href="/dashboard/user/{{ $loggedUser->id }}/api/regen" class="btn btn-warning">{{ trans('cachet.api.regenerate') }}</a>
                     </div>
                 </form>
             </div>

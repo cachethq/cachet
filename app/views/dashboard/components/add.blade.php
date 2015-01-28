@@ -56,7 +56,7 @@
                         </div>
                     </fieldset>
 
-                    <input type="hidden" name="component[user_id]" value="{{ Auth::user()->id }}">
+                    <input type="hidden" name="component[user_id]" value="{{ $loggedUser->id }}">
                     <input type="hidden" name="component[order]" value="0">
 
                     <div class="form-group">

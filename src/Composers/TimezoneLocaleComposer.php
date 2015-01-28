@@ -5,7 +5,7 @@ namespace CachetHQ\Cachet\Composers;
 use DateTime;
 use DateTimeZone;
 use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Facades\View;
+use Illuminate\View\View;
 
 class TimezoneLocaleComposer
 {
@@ -16,7 +16,7 @@ class TimezoneLocaleComposer
      *
      * @return void
      */
-    public function compose(\Illuminate\View\View $view)
+    public function compose(View $view)
     {
         $enabledLangs = Config::get('langs');
 
