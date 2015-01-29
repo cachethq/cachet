@@ -10,14 +10,14 @@ use Illuminate\Database\QueryException;
 class CacheRepository implements RepositoryInterface
 {
     /**
-     * @var \CachetHQ\Cachet\Segment\HttpRepository
+     * @var \CachetHQ\Cachet\Segment\RepositoryInterface
      */
     protected $repository;
 
     /**
      * Instantiates a new instance of the Cache Repository.
      *
-     * @param \CachetHQ\Cachet\Segment\HttpRepository $repository
+     * @param \CachetHQ\Cachet\Segment\RepositoryInterface $repository
      */
     public function __construct(RepositoryInterface $repository)
     {
