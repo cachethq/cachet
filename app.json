@@ -17,7 +17,7 @@
     "env": {
         "ENV": { "value": "heroku", "description": "Do not modify this value as it's required to work on Heroku." },
         "BUILDPACK_URL": { "value": "https://github.com/cachethq/cachet-buildpack", "description": "Do not modify this value as it's required to work on Heroku." },
-        "APP_DEBUG": { "value": false, "description": "Toggle Cachet debugging." }
+        "APP_DEBUG": { "value": "false", "description": "Toggle Cachet debugging." }
     },
     "scripts": {
         "postdeploy": "php artisan migrate --env=heroku; php artisan key:generate;"
