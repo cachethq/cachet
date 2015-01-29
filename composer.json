@@ -6,7 +6,7 @@
         "page",
         "updates"
     ],
-    "license": "The BSD 3-Clause License",
+    "license": "BSD-3-Clause",
     "type": "project",
     "require": {
         "php": ">=5.4",
