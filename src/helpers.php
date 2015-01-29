@@ -2,6 +2,7 @@
 
 use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Segment\Facades\Segment;
+use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Request;
 
@@ -89,15 +90,19 @@ if (!function_exists('segment_identify')) {
      */
     function segment_identify()
     {
-        if (Setting::get('app_track')) {
-            return Segment::identify([
-                'anonymousId' => Config::get('app.key'),
-                'context'     => [
-                    'locale'   => Config::get('app.locale'),
-                    'timezone' => Setting::get('app_timezone'),
-                ],
-            ]);
-        } else {
+        try {
+            if (Setting::get('app_track')) {
+                return Segment::identify([
+                    'anonymousId' => Config::get('app.key'),
+                    'context'     => [
+                        'locale'   => Config::get('app.locale'),
+                        'timezone' => Setting::get('app_timezone'),
+                    ],
+                ]);
+            } else {
+                return false;
+            }
+        } catch (QueryException $e) {
             return false;
         }
     }
@@ -114,17 +119,21 @@ if (!function_exists('segment_track')) {
      */
     function segment_track($event, array $properties)
     {
-        if (Setting::get('app_track')) {
-            return Segment::track([
-                'anonymousId' => Config::get('app.key'),
-                'event'       => $event,
-                'properties'  => $properties,
-                'context'     => [
-                    'locale'   => Config::get('app.locale'),
-                    'timezone' => Setting::get('app_timezone'),
-                ],
-            ]);
-        } else {
+        try {
+            if (Setting::get('app_track')) {
+                return Segment::track([
+                    'anonymousId' => Config::get('app.key'),
+                    'event'       => $event,
+                    'properties'  => $properties,
+                    'context'     => [
+                        'locale'   => Config::get('app.locale'),
+                        'timezone' => Setting::get('app_timezone'),
+                    ],
+                ]);
+            } else {
+                return false;
+            }
+        } catch (QueryException $e) {
             return false;
         }
     }
@@ -140,16 +149,20 @@ if (!function_exists('segment_page')) {
      */
     function segment_page($page)
     {
-        if (Setting::get('app_track')) {
-            return Segment::page([
-                'anonymousId' => Config::get('app.key'),
-                'page'        => $page,
-                'context'     => [
-                    'locale'   => Config::get('app.locale'),
-                    'timezone' => Setting::get('app_timezone'),
-                ],
-            ]);
-        } else {
+        try {
+            if (Setting::get('app_track')) {
+                return Segment::page([
+                    'anonymousId' => Config::get('app.key'),
+                    'page'        => $page,
+                    'context'     => [
+                        'locale'   => Config::get('app.locale'),
+                        'timezone' => Setting::get('app_timezone'),
+                    ],
+                ]);
+            } else {
+                return false;
+            }
+        } catch (QueryException $e) {
             return false;
         }
     }
