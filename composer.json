@@ -6,7 +6,7 @@
         "page",
         "updates"
     ],
-    "license": "MIT",
+    "license": "The BSD 3-Clause License",
     "type": "project",
     "require": {
         "php": ">=5.4",
