@@ -77,7 +77,3 @@ Now go to `http://<ipdockerisboundto>/setup` and have fun!
 ## Translations
 
 A special thank you to our [translators](https://crowdin.com/project/cachet/activity_stream), who have allowed us to share Cachet with the world. If you'd like to contribute translations, please check out our [CrowdIn project](https://crowdin.com/project/cachet).
-
-## License
-
-Cachet is licensed under [The MIT License (MIT)](LICENSE).
