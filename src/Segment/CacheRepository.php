@@ -5,6 +5,7 @@ namespace CachetHQ\Cachet\Segment;
 use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Cachet\Models\Setting as SettingModel;
 use Carbon\Carbon;
+use Illuminate\Database\QueryException;
 
 class CacheRepository implements RepositoryInterface
 {
@@ -30,24 +31,32 @@ class CacheRepository implements RepositoryInterface
      */
     public function fetch()
     {
-        // Firstly, does the setting exist?
-        if (false === ($writeKey = Setting::get('segment_write_key'))) {
-            // No, let's go fetch it.
-            $writeKey = $this->repository->fetch();
-            Setting::set('segment_write_key', $writeKey);
-        } else {
-            // It does, but how old is it?
-            $setting = SettingModel::where('name', 'segment_write_key')->first();
+        $writeKey = null;
 
-            // It's older than an hour, let's refresh
-            if ($setting->updated_at->lt(Carbon::now()->subHour())) {
+        // We might not be setup yet.
+        try {
+            // Firstly, does the setting exist?
+            if (false === ($writeKey = Setting::get('segment_write_key'))) {
+                // No, let's go fetch it.
                 $writeKey = $this->repository->fetch();
+                Setting::set('segment_write_key', $writeKey);
+            } else {
+                // It does, but how old is it?
+                $setting = SettingModel::where('name', 'segment_write_key')->first();
 
-                // Update the setting. This is done manual to make sure updated_at is overwritten.
-                $setting->value = $writeKey;
-                $setting->updated_at = Carbon::now();
-                $setting->save();
+                // It's older than an hour, let's refresh
+                if ($setting->updated_at->lt(Carbon::now()->subHour())) {
+                    $writeKey = $this->repository->fetch();
+
+                    // Update the setting. This is done manual to make sure updated_at is overwritten.
+                    $setting->value = $writeKey;
+                    $setting->updated_at = Carbon::now();
+                    $setting->save();
+                }
             }
+        } catch (QueryException $e) {
+            // Just return it until we're setup.
+            $writeKey = $this->repository->fetch();
         }
 
         return $writeKey;
