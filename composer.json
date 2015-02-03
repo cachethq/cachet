@@ -18,7 +18,7 @@
         "dingo/api": "0.8.*",
         "doctrine/dbal": "2.5.*",
         "graham-campbell/binput": "2.1.*",
-        "graham-campbell/markdown": "2.0.*",
+        "graham-campbell/markdown": "~2.0.7",
         "graham-campbell/throttle": "2.0.*",
         "guzzlehttp/guzzle": "5.1.*",
         "jenssegers/date": "2.0.*",
