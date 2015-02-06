@@ -8,7 +8,7 @@
         <span class="uppercase">
             <i class="icons ion-outlet"></i> {{ trans('dashboard.components.components') }}
         </span>
-        > <small>{{ trans('dashboard.components.edit.title') }}</small>
+        &gt; <small>{{ trans('dashboard.components.edit.title') }}</small>
     </div>
     <div class="content-wrapper">
         <div class="row">
