@@ -6,32 +6,33 @@
             <div class="welcome-logo">
                 <img class="logo" height="50" src="/img/cachet-logo.svg" alt="Cachet">
             </div>
-            {{ Form::open(['url' => '/auth/login']) }}
-            <fieldset>
-                <legend>{{ trans('dashboard.login.welcome') }}</legend>
+            <form method="POST" action="/auth/login" accept-charset="UTF-8">
+                {{ Form::token() }}
+                <fieldset>
+                    <legend>{{ trans('dashboard.login.welcome') }}</legend>
 
-                @if(Session::has('error'))
-                <p class="text-danger">{{ Session::get('error') }}</p>
-                @endif
+                    @if(Session::has('error'))
+                    <p class="text-danger">{{ Session::get('error') }}</p>
+                    @endif
 
-                <div class="form-group">
-                    <label class="sr-only">{{ trans('forms.login.email') }}</label>
-                    {{ Form::email('email', Input::old('email'), [
-                        'class' => 'form-control', 'placeholder' => trans('forms.login.email'), 'required' => 'required'
-                    ]) }}
-                </div>
-                <div class="form-group">
-                    <label class="sr-only">{{ trans('forms.login.password') }}</label>
-                    {{ Form::password('password', [
-                        'class' => 'form-control', 'placeholder' => trans('forms.login.password'), 'required' => 'required'
-                    ]) }}
-                </div>
-                <hr>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-lg btn-block btn-success">{{ trans('dashboard.login.login') }}</button>
-                </div>
-            </fieldset>
-            {{ Form::close() }}
+                    <div class="form-group">
+                        <label class="sr-only">{{ trans('forms.login.email') }}</label>
+                        {{ Form::email('email', Input::old('email'), [
+                            'class' => 'form-control', 'placeholder' => trans('forms.login.email'), 'required' => 'required'
+                        ]) }}
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only">{{ trans('forms.login.password') }}</label>
+                        {{ Form::password('password', [
+                            'class' => 'form-control', 'placeholder' => trans('forms.login.password'), 'required' => 'required'
+                        ]) }}
+                    </div>
+                    <hr>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-lg btn-block btn-success">{{ trans('dashboard.login.login') }}</button>
+                    </div>
+                </fieldset>
+            </form>
         </div>
     </div>
 @stop
