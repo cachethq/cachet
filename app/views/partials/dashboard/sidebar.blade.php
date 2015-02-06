@@ -76,7 +76,7 @@
         </ul>
         <div class="bottom-menu-sidebar">
             <div class="text-center">
-                <img width="165" src="{{ url('img/cachet-logo.svg') }}" alt="Cachet">
+                <img width="166" src="/img/cachet-sidebar-logo.png" alt="Cachet">
             </div>
             <br>
             <ul>
