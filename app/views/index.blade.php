@@ -38,11 +38,13 @@
                     <span aria-hidden="true">&larr;</span> {{ trans('cachet.incidents.previous_week') }}
                 </a>
             </li>
-            <li class="next @if( ! $canPageForward) disabled @endif">
-                <a @if($canPageForward) href="{{ route('status-page') }}?start_date={{ $nextDate }}" @endif>
+            @if($canPageForward)
+            <li class="next">
+                <a href="{{ route('status-page') }}?start_date={{ $nextDate }}">
                     {{ trans('cachet.incidents.next_week') }} <span aria-hidden="true">&rarr;</span>
                 </a>
             </li>
+            @endif
         </ul>
     </nav>
 @stop
