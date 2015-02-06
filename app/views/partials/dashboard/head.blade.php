@@ -20,7 +20,7 @@
 
     <title>{{ isset($pageTitle) ? $pageTitle : Setting::get('app_name') }} | Cachet</title>
 
-    <link href="//fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="{{ elixir('css/all.css') }}">
 
     @include('partials.crowdin')
