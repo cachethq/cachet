@@ -8,7 +8,7 @@
         <span class="uppercase">
             <i class="icons ion-ios-keypad"></i> {{ trans_choice('dashboard.components.groups.groups', 2) }}
         </span>
-        > <small>{{ trans('dashboard.components.groups.add.title') }}</small>
+        &gt; <small>{{ trans('dashboard.components.groups.add.title') }}</small>
     </div>
     <div class="content-wrapper">
         <div class="row">

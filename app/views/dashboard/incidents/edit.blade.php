@@ -8,7 +8,7 @@
         <span class="uppercase">
             <i class="icon icon ion-android-alert"></i> {{ trans('dashboard.incidents.incidents') }}
         </span>
-        > <small>{{ trans('dashboard.incidents.edit.title') }}</small>
+        &gt; <small>{{ trans('dashboard.incidents.edit.title') }}</small>
     </div>
     <div class="content-wrapper">
         <div class="row">

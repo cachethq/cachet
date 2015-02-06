@@ -8,7 +8,7 @@
         <span class="uppercase">
             <i class="icon ion-plus"></i> {{ trans('dashboard.incidents.templates.title') }}
         </span>
-        > <small>{{ trans('dashboard.incidents.templates.add.title') }}</small>
+        &gt; <small>{{ trans('dashboard.incidents.templates.add.title') }}</small>
     </div>
     <div class="content-wrapper">
         <div class="row">
