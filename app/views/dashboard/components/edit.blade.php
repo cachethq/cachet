@@ -15,6 +15,7 @@
             <div class="col-sm-12">
                 @include('partials.dashboard.errors')
                 <form name="EditComponentForm" class="form-horizontal" role="form" action="/dashboard/components/{{ $component->id }}/edit" method="POST">
+                    {{ Form::token() }}
                     <fieldset>
                         <div class="form-group">
                             <label for="incident-name">{{ trans('forms.components.name') }}</label>

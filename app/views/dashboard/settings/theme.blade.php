@@ -9,6 +9,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <form name="SettingsForm" class="form-horizontal" role="form" action="/dashboard/settings" method="POST">
+                        {{ Form::token() }}
                         <h4 class="sub-header" id="theme">{{ trans('dashboard.settings.theme.theme') }}</h4>
                         @include('partials.dashboard.errors')
                         <fieldset>

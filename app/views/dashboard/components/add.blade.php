@@ -15,6 +15,7 @@
             <div class="col-sm-12">
                 @include('partials.dashboard.errors')
                 <form name="CreateComponentForm" class="form-horizontal" role="form" action="/dashboard/components/add" method="POST">
+                    {{ Form::token() }}
                     <fieldset>
                         <div class="form-group">
                             <label for="component-name">{{ trans('forms.components.name') }}</label>

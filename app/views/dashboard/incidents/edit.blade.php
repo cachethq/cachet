@@ -14,7 +14,8 @@
         <div class="row">
             <div class="col-md-12">
                 @include('partials.dashboard.errors')
-                {{ Form::open(['name' => 'IncidentForm', 'class' => 'form-horizontal', 'role' => 'form']) }}
+                <form class='form-horizontal' name='IncidentForm' role='form' method='POST'>
+                    {{ Form::token() }}
                     <fieldset>
                         <div class="form-group">
                             <label for="incident-name">{{ trans('forms.incidents.name') }}</label>
@@ -86,7 +87,7 @@
                             <a class="btn btn-default" href="{{ route('dashboard.incidents') }}">{{ trans('forms.cancel') }}</a>
                         </div>
                     </div>
-                {{ Form::close() }}
+                </form>
             </div>
         </div>
     </div>
