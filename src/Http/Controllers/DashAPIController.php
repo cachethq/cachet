@@ -47,6 +47,13 @@ class DashAPIController extends Controller
         return $componentData;
     }
 
+    /**
+     * Returns a template by slug.
+     *
+     * @throws \Illuminate\Database\Eloquent\ModelNotFoundException
+     *
+     * @return \CachetHQ\Cachet\Models\IncidentTemplate
+     */
     public function getIncidentTemplate()
     {
         $templateSlug = Binput::get('slug');
