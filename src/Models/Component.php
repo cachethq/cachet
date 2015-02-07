@@ -88,7 +88,7 @@ class Component extends Model implements TransformableInterface
     /**
      * Components can have many tags.
      *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function tags()
     {
