@@ -143,7 +143,7 @@ if (!function_exists('segment_page')) {
     /**
      * Tracks pages in Segment.com.
      *
-     * @param string $name
+     * @param string $page
      *
      * @return bool
      */
