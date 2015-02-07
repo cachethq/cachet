@@ -16,7 +16,6 @@ use Watson\Validating\ValidatingTrait;
  * @property string         $description
  * @property int            $status
  * @property string         $link
- * @property string         $tags
  * @property int            $order
  * @property int            $group_id
  * @property \Carbon\Carbon $created_at
