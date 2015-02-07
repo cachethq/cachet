@@ -25,7 +25,7 @@ class SettingsServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bindShared('setting', function ($app) {
+        $this->app->bindShared('setting', function () {
             return new Repository(new SettingModel());
         });
     }
