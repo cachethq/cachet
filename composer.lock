@@ -4,20 +4,20 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2a00342fbb1c896b36d23fa61881557a",
+    "hash": "115dc40e8f7f9cf3d5b3e29dd66a7bf5",
     "packages": [
         {
             "name": "cachethq/segment",
-            "version": "dev-master",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cachethq/Laravel-Segment.git",
-                "reference": "290820790a8788c5cbe6f1f754a53bcd5b7bf82c"
+                "reference": "448db53e90b1d14e078beb74c545169085cb9a96"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cachethq/Laravel-Segment/zipball/290820790a8788c5cbe6f1f754a53bcd5b7bf82c",
-                "reference": "290820790a8788c5cbe6f1f754a53bcd5b7bf82c",
+                "url": "https://api.github.com/repos/cachethq/Laravel-Segment/zipball/448db53e90b1d14e078beb74c545169085cb9a96",
+                "reference": "448db53e90b1d14e078beb74c545169085cb9a96",
                 "shasum": ""
             },
             "require": {
@@ -27,11 +27,6 @@
                 "segmentio/analytics-php": "~1.1.0"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "CachetHQ\\Segment\\": "src/"
@@ -59,7 +54,7 @@
                 "segment.com",
                 "segment.io"
             ],
-            "time": "2015-01-29 10:35:57"
+            "time": "2015-02-09 14:40:15"
         },
         {
             "name": "classpreloader/classpreloader",
@@ -4208,9 +4203,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "cachethq/segment": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
