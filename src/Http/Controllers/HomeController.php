@@ -5,6 +5,7 @@ namespace CachetHQ\Cachet\Http\Controllers;
 use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
+use CachetHQ\Cachet\Models\Metric;
 use Carbon\Carbon;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
@@ -66,6 +67,8 @@ class HomeController extends Controller
             }
         }
 
+        $metrics = Metric::where('display_chart', '=', true)->get();
+
         foreach (range(0, $incidentDays) as $i) {
             $date = $startDate->copy()->subDays($i);
 
@@ -82,6 +85,7 @@ class HomeController extends Controller
 
         return View::make('index', [
             'components'     => $components,
+            'metrics'        => $metrics,
             'allIncidents'   => $allIncidents,
             'pageTitle'      => Setting::get('app_name'),
             'aboutApp'       => Markdown::render(Setting::get('app_about')),

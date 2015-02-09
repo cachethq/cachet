@@ -65,6 +65,11 @@ return [
             'success' => 'Metrik-Punkt angelegt.',
             'failure' => 'Es ist ein Fehler bei der Erstellung eines Metrik-Punktes aufgetreten.',
         ],
+        'edit' => [
+            'title'   => 'Edit a metric',
+            'success' => 'Metric updated.',
+            'failure' => 'Something went wrong with the metric.',
+        ],
     ],
 
     // Team
