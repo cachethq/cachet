@@ -37,7 +37,7 @@ body.dashboard {
         }
     }
 
-    @media(min-width: $screen-sm-max) {
+    @media (min-width: $screen-sm-max) {
         .wrapper {
             padding-left: $sidebar-normal-width;
         }
