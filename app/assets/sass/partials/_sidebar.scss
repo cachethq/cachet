@@ -178,7 +178,7 @@ body.dashboard {
         left: 0;
         top: 0;
         bottom: 0;
-        position: absolute;
+        position: fixed;
         margin-left: 228px;
         width: 22%;
         background: #fcfcfc;
@@ -227,8 +227,8 @@ body.dashboard {
         + .content-wrapper {
             top: 0;
             position: relative;
-            margin-left: 25%;
-            padding-right: 20px !important;
+            margin-left: 26%;
+            padding-right: 40px !important;
         }
 
     }
@@ -241,6 +241,7 @@ body.dashboard {
             width: 100%;
             + .content-wrapper {
                 margin-left: 0;
+                padding-left: 40px !important;
                 width: 100%;
             }
         }
@@ -251,6 +252,9 @@ body.dashboard {
         .sub-sidebar {
             margin-left: 80px;
             width: 25%;
+            + .content-wrapper {
+                padding-left: 45px !important;
+            }
         }
     }
 }

@@ -6,11 +6,15 @@
         @include('partials.dashboard.sub-sidebar')
         @endif
         <div class="content-wrapper">
+            <div class="header sub-header" id="application-setup">
+                <span class="uppercase">
+                    {{ trans('dashboard.settings.app-setup.app-setup') }}
+                </span>
+            </div>
             <div class="row">
                 <div class="col-sm-12">
                     <form id="settings-form" name="SettingsForm" class="form-horizontal" role="form" action="/dashboard/settings" method="POST" enctype="multipart/form-data">
                         {{ Form::token() }}
-                        <h4 class="sub-header" id="application-setup">{{ trans('dashboard.settings.app-setup.app-setup') }}</h4>
                         @include('partials.dashboard.errors')
                         <fieldset>
                             <div class="row">

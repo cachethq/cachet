@@ -6,11 +6,15 @@
         @include('partials.dashboard.sub-sidebar')
         @endif
         <div class="content-wrapper">
+            <div class="header sub-header" id="security">
+                <span class="uppercase">
+                    {{ trans('dashboard.settings.security.security') }}
+                </span>
+            </div>
             <div class="row">
                 <div class="col-sm-12">
                     <form name="SettingsForm" class="form-horizontal" role="form" action="/dashboard/settings" method="POST">
                         {{ Form::token() }}
-                        <h4 class="sub-header" id="security">{{ trans('dashboard.settings.security.security') }}</h4>
                         @include('partials.dashboard.errors')
                         <fieldset>
                             <div class="row">
