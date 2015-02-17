@@ -81,7 +81,7 @@
             <br>
             <ul>
                 <li data-toggle="tooltip" data-placement="top" title="{{ trans('dashboard.help') }}">
-                    <a href="https://cachethq.io" target="_blank"><i class="icon ion-help"></i></a>
+                    <a href="https://docs.cachethq.io" target="_blank"><i class="icon ion-help"></i></a>
                 </li>
                 <li data-toggle="tooltip" data-placement="top" title="{{ trans('dashboard.status_page') }}">
                     <a href="{{ route('status-page') }}"><i class="icon ion-monitor"></i></a>
