@@ -1,55 +1,64 @@
-#welcome-modal .modal-dialog {
-    margin-top: 65px;
-}
+#welcome-modal {
+    .modal-dialog {
+        margin-top: 65px;
+    }
 
-#welcome-modal .modal-content .modal-header {
-    border-bottom: 0;
-}
+    .modal-content {
+        .modal-header {
+            border-bottom: 0;
+        }
 
-#welcome-modal .modal-content .modal-body {
-    padding-bottom: 50px;
-}
+        .modal-body {
+            padding-bottom: 50px;
 
-#welcome-modal .modal-content .modal-body header {
-    text-align: center;
-    font-weight: 600;
-    font-size: 22px;
-    color: #444;
-    margin-bottom: 23px;
-}
+            header {
+                text-align: center;
+                font-weight: 600;
+                font-size: 22px;
+                color: #444;
+                margin-bottom: 23px;
+            }
 
-#welcome-modal .modal-content .modal-body p {
-    font-size: 13px;
-    color: #555;
-    margin: 0 auto;
-    width: 80%;
-    text-align: center;
-    line-height: 20px;
-}
+            p {
+                font-size: 13px;
+                color: #555;
+                margin: 0 auto;
+                width: 80%;
+                text-align: center;
+                line-height: 20px;
+            }
 
-#welcome-modal .modal-content .modal-body .get-started {
-    margin-top: 40px;
-}
+            .go-dashboard {
+                text-align: center;
+                display: block;
+                margin-top: 10px;
+            }
 
-#welcome-modal .modal-content .modal-body .get-started .col-md-4 {
-    text-align: center;
-    padding-bottom: 50px;
-}
+            .get-started {
+                margin-top: 40px;
 
-#welcome-modal .modal-content .modal-body .get-started .col-md-4 i {
-    font-size: 38px;
-    color: $cachet-gray-darker;
-}
+                .col-md-4 {
+                    text-align: center;
+                    padding-bottom: 50px;
+                    a {
+                        i {
+                            font-size: 38px;
+                            color: $cachet-secondary;
+                            display: block;
+                        }
 
-#welcome-modal .modal-content .modal-body .get-started .col-md-4 a {
-    color: $cachet-gray-darker;
-    display: block;
-    margin-top: 12px;
-    font-size: 13px;
-}
+                        color: $cachet-gray-darker;
+                        display: block;
+                        margin-top: 12px;
+                        font-size: 13px;
 
-#welcome-modal .modal-content .modal-body .go-dashboard {
-    text-align: center;
-    display: block;
-    margin-top: 10px;
+                        &:hover {
+                            text-decoration: none;
+                            color: $cachet-gray;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

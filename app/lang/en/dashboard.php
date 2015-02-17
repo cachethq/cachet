@@ -143,10 +143,10 @@ return [
         'steps'   => [
             'component'  => 'Create components',
             'incident'   => 'Create incidents',
-            'customize'  => 'Customize your Cachet Status Page.',
-            'team'       => 'Add users to your team.',
-            'api'        => 'Generate API token.',
-            'two-factor' => 'Enable Two Factor Authetication.',
+            'customize'  => 'Customize',
+            'team'       => 'Add users',
+            'api'        => 'Generate API token',
+            'two-factor' => 'Two Factor Authetication',
         ],
     ],
 
