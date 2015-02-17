@@ -3,6 +3,7 @@
 namespace CachetHQ\Cachet\Http\Controllers\Api;
 
 use CachetHQ\Cachet\Repositories\Incident\IncidentRepository;
+use CachetHQ\Cachet\Transformers\IncidentTransformer;
 use Dingo\Api\Routing\ControllerTrait;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
@@ -37,7 +38,9 @@ class IncidentController extends Controller
      */
     public function getIncidents()
     {
-        return $this->incident->all();
+        $incidents = $this->incident->paginate(Binput::get('per_page', 20));
+
+        return $this->response->paginator($incidents, new IncidentTransformer());
     }
 
     /**

@@ -18,6 +18,18 @@ abstract class EloquentRepository
     }
 
     /**
+     * Returns paginated result.
+     *
+     * @param int $perPage
+     *
+     * @return \Illuminate\Pagination\Paginator
+     */
+    public function paginate($perPage = 20)
+    {
+        return $this->model->paginate($perPage);
+    }
+
+    /**
      * Returns an object with related relationships.
      *
      * @param int      $id

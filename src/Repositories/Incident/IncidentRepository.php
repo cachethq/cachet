@@ -12,6 +12,15 @@ interface IncidentRepository
     public function all();
 
     /**
+     * Returns paginated result.
+     *
+     * @param int $perPage
+     *
+     * @return \Illuminate\Pagination\Paginator
+     */
+    public function paginate($perPage = 20);
+
+    /**
      * Create a new model.
      *
      * @param int   $userId
