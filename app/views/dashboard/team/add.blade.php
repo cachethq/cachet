@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col-sm-12">
                 @include('partials.dashboard.errors')
-                <form name="UserForm" class="form-horizontal" role="form" action="/dashboard/team/add" method="POST">
+                <form name="UserForm" class="form-vertical" role="form" action="/dashboard/team/add" method="POST">
                     {{ Form::token() }}
                     <fieldset>
                         <div class="form-group">

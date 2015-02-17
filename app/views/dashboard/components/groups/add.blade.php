@@ -14,7 +14,7 @@
         <div class="row">
             <div class="col-sm-12">
                 @include('partials.dashboard.errors')
-                <form name="CreateComponentGroupForm" class="form-horizontal" role="form" action="/dashboard/components/groups/add" method="POST">
+                <form name="CreateComponentGroupForm" class="form-vertical" role="form" action="/dashboard/components/groups/add" method="POST">
                     {{ Form::token() }}
                     <fieldset>
                         <div class="form-group">

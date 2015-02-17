@@ -17,7 +17,7 @@
                     <div class="list-group">
                         @forelse($components as $component)
                         <div class="list-group-item">
-                            <form class='component-inline form-horizontal' data-messenger={{trans('dashboard.components.edit.success')}}>
+                            <form class='component-inline form-vertical' data-messenger={{trans('dashboard.components.edit.success')}}>
                                 <div class="row striped-list-item">
                                     <div class="col-lg-4 col-sm-12">
                                         <h4>{{ $component->name }}</h4>

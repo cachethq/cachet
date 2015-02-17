@@ -14,7 +14,7 @@
         <div class="row">
             <div class="col-md-12">
                 @include('partials.dashboard.errors')
-                <form class='form-horizontal' name='IncidentForm' role='form' method='POST'>
+                <form class='form-vertical' name='IncidentForm' role='form' method='POST'>
                     {{ Form::token() }}
                     <fieldset>
                         <div class="form-group">
