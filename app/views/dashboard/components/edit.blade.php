@@ -60,8 +60,8 @@
                     <input type="hidden" name="component[user_id]" value="{{ $component->agent_id || $loggedUser->id }}">
                     <input type="hidden" name="component[order]" value="{{ $component->order or 0 }}">
 
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-success">{{ trans('forms.update') }}</button>
+                    <div class="btn-group">
+                        <button type="submit" class="btn btn-success">{{ trans('forms.save') }}</button>
                         <a class="btn btn-default" href="{{ route('dashboard.components') }}">{{ trans('forms.cancel') }}</a>
                     </div>
                 </form>

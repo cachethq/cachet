@@ -30,7 +30,10 @@
                         <hr>
                         <div class="form-group">
                             <label>{{ trans('forms.user.api-token') }}</label>
-                            <input type="text" class="form-control" name="api_key" disabled value="{{ $loggedUser->api_key }}">
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="api_key" disabled value="{{ $loggedUser->api_key }}">
+                                <a href="/dashboard/user/{{ $loggedUser->id }}/api/regen" class="input-group-addon btn btn-danger">{{ trans('cachet.api.regenerate') }}</a>
+                            </div>
                             <span class="help-block">{{ trans('forms.user.api-token-help') }}</span>
                         </div>
                         <hr>
@@ -56,10 +59,7 @@
                         @endif
                     </fieldset>
 
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-success">{{ trans('forms.update') }}</button>
-                        <a href="/dashboard/user/{{ $loggedUser->id }}/api/regen" class="btn btn-warning">{{ trans('cachet.api.regenerate') }}</a>
-                    </div>
+                    <button type="submit" class="btn btn-success">{{ trans('forms.update') }}</button>
                 </form>
             </div>
         </div>
