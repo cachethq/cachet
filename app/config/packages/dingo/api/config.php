@@ -154,6 +154,6 @@ return [
 
         'json' => new Dingo\Api\Http\ResponseFormat\JsonResponseFormat(),
 
-    ]
+    ],
 
 ];
