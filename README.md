@@ -53,14 +53,15 @@ Run a DB container (you can either pass in environment variables for the DB, or 
 ```bash
 $ export DB_USERNAME=cachet
 $ export DB_PASSWORD=cachet
+$ export DB_ROOT_PASSWORD=cachet
 $ export DB_DATABASE=cachet
-$ docker run --name mysql -e MYSQL_USER=$DB_USERNAME -e MYSQL_PASSWORD=$DB_PASSWORD -e MYSQL_DATABASE=$DB_DATABASE -d mysql
+$ docker run --name mysql -e MYSQL_USER=$DB_USERNAME -e MYSQL_PASSWORD=$DB_PASSWORD  -e MYSQL_ROOT_PASSWORD=$DB_ROOT_PASSWORD -e MYSQL_DATABASE=$DB_DATABASE -d mysql
 ```
 
 Initialize the DB if you havent yet:
 
 ```bash
-$ docker run --link mysql:mysql -e DB_HOST=mysql -e DB_DATABASE=$DB_DATABASE -e DB_USERNAME=$DB_USERNAME -e DB_PASSWORD=$DB_PASSWORD cachethq/cachet:latest php artisan migrate
+$ docker run --link mysql:mysql -e DB_HOST=mysql -e DB_DATABASE=$DB_DATABASE -e DB_USERNAME=$DB_USERNAME -e DB_PASSWORD=$DB_PASSWORD cachethq/cachet:latest php artisan migrate --force
 ```
 
 Run Cachet:
