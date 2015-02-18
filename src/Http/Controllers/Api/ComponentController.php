@@ -2,6 +2,7 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Api;
 
+use CachetHQ\Cachet\Models\Tag;
 use CachetHQ\Cachet\Repositories\Component\ComponentRepository;
 use Dingo\Api\Routing\ControllerTrait;
 use GrahamCampbell\Binput\Facades\Binput;
@@ -71,7 +72,26 @@ class ComponentController extends Controller
      */
     public function postComponents()
     {
-        return $this->component->create($this->auth->user()->id, Binput::all());
+        $component = $this->component->create(
+            $this->auth->user()->id,
+            Binput::except('tags')
+        );
+
+        if (Binput::has('tags')) {
+            // The component was added successfully, so now let's deal with the tags.
+            $tags = preg_split('/ ?, ?/', Binput::get('tags'));
+
+            // For every tag, do we need to create it?
+            $componentTags = array_map(function ($taggable) use ($component) {
+                return Tag::firstOrCreate([
+                    'name' => $taggable,
+                ])->id;
+            }, $tags);
+
+            $component->tags()->sync($componentTags);
+        }
+
+        return $component;
     }
 
     /**

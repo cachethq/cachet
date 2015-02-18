@@ -88,7 +88,7 @@ class SetupController extends Controller
             'settings.show_support' => 'boolean',
             'user.username'         => 'alpha_num|required',
             'user.email'            => 'email|required',
-            'user.password'         => 'required'
+            'user.password'         => 'required',
         ]);
 
         if ($v->passes()) {
