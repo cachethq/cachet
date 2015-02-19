@@ -10,7 +10,7 @@ ENV DB_DRIVER=mysql \
 COPY . /var/www/html/
 WORKDIR /var/www/html/
 
-#using nodesource and debian jessie packages instead of compiling from scratch
+# Using nodesource and debian jessie packages instead of compiling from scratch
 RUN DEBIAN_FRONTEND=noninteractive  \
     echo "APT::Install-Recommends \"0\";" >> /etc/apt/apt.conf.d/02recommends && \
     echo "APT::Install-Suggests \"0\";" >> /etc/apt/apt.conf.d/02recommends && \
@@ -28,11 +28,11 @@ RUN DEBIAN_FRONTEND=noninteractive  \
     rm -r /var/lib/apt/lists/* && \
     chown -R www-data /var/www/html
 
-# ensure the assets have been compiled
+# Ensure the assets have been compiled
 RUN for d in public/{build,css,js} ; do test ! -d public/build && \
   echo "Run 'gulp' before building container" >&2 && exit 1 || : ; done
 
-# hardcode the Illuminate key in app/config/app.php. If you want security, feel free
+# Hardcode the Illuminate key in app/config/app.php. If you want security, feel free
 # to override the key in your own container with a 'php artisan key:generate' :)
 RUN sed -i "s/'key' => '\w.*/'key' => 'f20d3e5ae02125a94bd60203a4edfbde',/" app/config/app.php && \
     grep key app/config/app.php
