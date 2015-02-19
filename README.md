@@ -72,6 +72,10 @@ $ docker run -d --name cachet --link mysql:mysql -p 80:80 -e DB_HOST=mysql -e DB
 
 Now go to `http://<ipdockerisboundto>/setup` and have fun!
 
+Note: When running in production you should ensure that you enable SSL.
+This is commonly achieved by running Nginx with your certificates on your Docker host, service or load balancers infront of the running container, or by adding your custom SSL certificates and configuration to the supplied Nginx configuration.
+
+
 ## Translations
 
 A special thank you to our [translators](https://crowdin.com/project/cachet/activity_stream), who have allowed us to share Cachet with the world. If you'd like to contribute translations, please check out our [CrowdIn project](https://crowdin.com/project/cachet).
