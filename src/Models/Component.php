@@ -34,7 +34,7 @@ class Component extends Model implements TransformableInterface
     protected $rules = [
         'user_id' => 'integer|required',
         'name'    => 'required',
-        'status'  => 'integer',
+        'status'  => 'integer|required',
         'link'    => 'url',
     ];
 

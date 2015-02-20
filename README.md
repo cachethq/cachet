@@ -1,5 +1,6 @@
 # Cachet [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
+[![StyleCI](https://styleci.io/repos/26730195/shield)](https://styleci.io/repos/26730195/)
 [![Build Status](https://img.shields.io/travis/cachethq/Cachet.svg?style=flat-square)](https://travis-ci.org/cachethq/Cachet)
 [![Quality Score](https://img.shields.io/scrutinizer/g/cachethq/Cachet.svg?style=flat-square)](https://scrutinizer-ci.com/g/cachethq/Cachet)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
@@ -53,14 +54,15 @@ Run a DB container (you can either pass in environment variables for the DB, or 
 ```bash
 $ export DB_USERNAME=cachet
 $ export DB_PASSWORD=cachet
+$ export DB_ROOT_PASSWORD=cachet
 $ export DB_DATABASE=cachet
-$ docker run --name mysql -e MYSQL_USER=$DB_USERNAME -e MYSQL_PASSWORD=$DB_PASSWORD -e MYSQL_DATABASE=$DB_DATABASE -d mysql
+$ docker run --name mysql -e MYSQL_USER=$DB_USERNAME -e MYSQL_PASSWORD=$DB_PASSWORD  -e MYSQL_ROOT_PASSWORD=$DB_ROOT_PASSWORD -e MYSQL_DATABASE=$DB_DATABASE -d mysql
 ```
 
 Initialize the DB if you havent yet:
 
 ```bash
-$ docker run --link mysql:mysql -e DB_HOST=mysql -e DB_DATABASE=$DB_DATABASE -e DB_USERNAME=$DB_USERNAME -e DB_PASSWORD=$DB_PASSWORD cachethq/cachet:latest php artisan migrate
+$ docker run --link mysql:mysql -e DB_HOST=mysql -e DB_DATABASE=$DB_DATABASE -e DB_USERNAME=$DB_USERNAME -e DB_PASSWORD=$DB_PASSWORD cachethq/cachet:latest php artisan migrate --force
 ```
 
 Run Cachet:
@@ -70,6 +72,10 @@ $ docker run -d --name cachet --link mysql:mysql -p 80:80 -e DB_HOST=mysql -e DB
 ```
 
 Now go to `http://<ipdockerisboundto>/setup` and have fun!
+
+Note: When running in production you should ensure that you enable SSL.
+This is commonly achieved by running Nginx with your certificates on your Docker host, service or load balancers infront of the running container, or by adding your custom SSL certificates and configuration to the supplied Nginx configuration.
+
 
 ## Translations
 

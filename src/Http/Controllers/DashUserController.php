@@ -87,7 +87,7 @@ class DashUserController extends Controller
     public function regenerateApiKey(User $user)
     {
         segment_track('User Management', [
-            'event' => 'regenrated_api_token'
+            'event' => 'regenrated_api_token',
         ]);
 
         $user->api_key = User::generateApiKey();
