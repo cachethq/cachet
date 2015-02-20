@@ -8,5 +8,6 @@
         "gulp": "~3.8.11",
         "laravel-elixir": "~0.9.1",
         "laravel-elixir-jshint": "^0.1.6"
-    }
+    },
+    "preferGlobal": true
 }
