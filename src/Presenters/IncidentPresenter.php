@@ -4,6 +4,7 @@ namespace CachetHQ\Cachet\Presenters;
 
 use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Cachet\Models\Incident;
+use GrahamCampbell\Markdown\Facades\Markdown;
 use Jenssegers\Date\Date;
 use McCool\LaravelAutoPresenter\BasePresenter;
 
@@ -25,6 +26,16 @@ class IncidentPresenter extends BasePresenter
     {
         $this->resource = $incident;
         $this->tz = Setting::get('app_timezone');
+    }
+
+    /**
+     * Renders the message from Markdown into HTML.
+     *
+     * @return string
+     */
+    public function formattedMessage()
+    {
+        return Markdown::render($this->resource->message);
     }
 
     /**

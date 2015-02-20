@@ -4,7 +4,6 @@ namespace CachetHQ\Cachet\Models;
 
 use CachetHQ\Cachet\Transformers\IncidentTransformer;
 use Dingo\Api\Transformer\TransformableInterface;
-use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletingTrait;
 use McCool\LaravelAutoPresenter\PresenterInterface;
@@ -104,16 +103,6 @@ class Incident extends Model implements TransformableInterface, PresenterInterfa
             default:
                 return '';
         }
-    }
-
-    /**
-     * Returns a Markdown formatted version of the status.
-     *
-     * @return string
-     */
-    public function getFormattedMessageAttribute()
-    {
-        return Markdown::render($this->message);
     }
 
     /**
