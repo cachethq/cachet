@@ -60,8 +60,10 @@ class Component extends Model implements TransformableInterface
      * @var array
      */
     protected $attributes = [
-        'order'    => 0,
-        'group_id' => 0,
+        'order'       => 0,
+        'group_id'    => 0,
+        'description' => '',
+        'link'        => '',
     ];
 
     /**
