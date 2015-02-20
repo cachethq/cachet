@@ -6,5 +6,5 @@
         "laravel-elixir": "~0.10.0",
         "array-union": "~1.0.1",
         "laravel-elixir-jshint": "^0.1.6"
-    },
+    }
 }
