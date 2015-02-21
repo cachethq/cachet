@@ -18,6 +18,10 @@
         "ENV": {
             "value": "heroku",
             "description": "Do not modify this value as it's required to work on Heroku."
+        },
+        "BUILDPACK_URL": {
+            "value": "https://github.com/heroku/heroku-buildpack-php",
+            "description": "Do not modify this value as it's required to work on Heroku."
         }
     },
     "scripts": {
