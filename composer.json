@@ -51,7 +51,7 @@
         ]
     },
     "extra": {
-        "paas": {
+        "heroku": {
             "document-root": "public",
             "index-document": "index.php",
             "log-files": [
