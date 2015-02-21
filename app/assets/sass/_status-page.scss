@@ -133,7 +133,7 @@ body.status-page {
                 height: 100%;
                 background: #7266BA;
             }
-            .icon {
+            .status-icon {
                 background: #fff;
                 width: 35px;
                 height: 35px;
@@ -142,7 +142,7 @@ body.status-page {
                 position: absolute;
                 left: 25px;
                 top: 14px;
-                .ion {
+                .icon {
                     position: absolute;
                     &.ion-flag {
                         top: 10px;
@@ -273,4 +273,3 @@ body.status-page {
         background-color: lighten($cachet_gray_light, 5%);
     }
 }
-

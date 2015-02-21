@@ -1,0 +1,8 @@
+.componet-inline-update {
+    @extend .text-right;
+    padding-top: 8px;
+    label {
+        display: initial;
+        font-weight: normal;
+    }
+}

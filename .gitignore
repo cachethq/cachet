@@ -12,7 +12,6 @@ config.codekit
 # Assets
 app/assets/bower_components
 node_modules
-public/build
 public/css
 public/js
 

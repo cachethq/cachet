@@ -93,13 +93,13 @@ class Incident extends Model implements TransformableInterface, PresenterInterfa
     {
         switch ($this->status) {
             case 1:
-                return 'ion ion-flag';
+                return 'icon ion-flag';
             case 2:
-                return 'ion ion-alert';
+                return 'icon ion-alert';
             case 3:
-                return 'ion ion-eye';
+                return 'icon ion-eye';
             case 4:
-                return 'ion ion-checkmark';
+                return 'icon ion-checkmark';
             default:
                 return '';
         }
