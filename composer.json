@@ -57,7 +57,8 @@
             "index-document": "index.php",
             "log-files": [
                 "app/storage/logs/laravel.log"
-            ]
+            ],
+            "nginx-includes": ["nginx.conf"]
         }
     },
     "scripts": {
