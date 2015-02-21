@@ -56,10 +56,6 @@
             "index-document": "index.php",
             "log-files": [
                 "app/storage/logs/laravel.log"
-            ],
-            "compile": [
-                "bower install",
-                "gulp"
             ]
         }
     },
