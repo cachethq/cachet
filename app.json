@@ -7,7 +7,7 @@
         "status",
         "page"
     ],
-    "website": "http://james-brooks.uk/cachet",
+    "website": "https://cachethq.io",
     "logo": "https://raw.githubusercontent.com/cachethq/assets/79336a33c24b28c470a89742671e0e291813d004/images/icon/Cachet-Icon.png",
     "success_url": "/setup",
     "repository": "https://github.com/cachethq/Cachet",
