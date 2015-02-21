@@ -1,6 +1,6 @@
 {
     "name": "Cachet",
-    "description": "Single-site Status Page with Laravel",
+    "description": "An open source status page system.",
     "keywords": [
         "cachet",
         "laravel",
@@ -15,7 +15,10 @@
         "heroku-postgresql"
     ],
     "env": {
-        "ENV": { "value": "heroku", "description": "Do not modify this value as it's required to work on Heroku." }
+        "ENV": {
+            "value": "heroku",
+            "description": "Do not modify this value as it's required to work on Heroku."
+        }
     },
     "scripts": {
         "postdeploy": "php artisan migrate --env=heroku; php artisan key:generate;"
