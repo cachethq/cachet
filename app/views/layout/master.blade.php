@@ -33,7 +33,7 @@
     <title>{{ $pageTitle ?: Setting::get('app_name') }} Status</title>
 
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="{{ elixir('css/all.css') }}">
+    <link rel="stylesheet" href="{{ elixir('dist/css/all.css') }}">
 
     @include('partials.stylesheet')
 
@@ -49,7 +49,7 @@
         var Global = {};
         Global.locale = '{{ Setting::get('app_locale') }}';
     </script>
-    <script src="{{ elixir('js/all.js') }}"></script>
+    <script src="{{ elixir('dist/js/all.js') }}"></script>
 </head>
 <body class="status-page">
     <div class="container">

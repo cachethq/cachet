@@ -1,5 +1,8 @@
 @import "palette";
 
+$ionicons-font-path: "../../../fonts" !default;
+@import "../bower_components/ionicons/scss/ionicons";
+
 @import "modules/bootstrap";
 
 html, body {
@@ -24,6 +27,7 @@ html, body {
 // Styles for specific page
 @import "pages/login";
 @import "pages/setup";
+@import "pages/dashboard";
 
 // Styles for plugins
 @import "plugins/messenger";

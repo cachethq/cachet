@@ -5,7 +5,7 @@
         <div class="moment {{ $incidentID === 0 ? 'first' : null }}">
             <div class="row event clearfix">
                 <div class="col-sm-1">
-                    <div class="icon status-{{ $incident->status }}" data-toggle="tooltip" title="{{ $incident->humanStatus }}" data-placement="left">
+                    <div class="status-icon status-{{ $incident->status }}" data-toggle="tooltip" title="{{ $incident->humanStatus }}" data-placement="left">
                         <i class="{{ $incident->icon }}"></i>
                     </div>
                 </div>
