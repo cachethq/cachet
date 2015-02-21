@@ -30,7 +30,7 @@ return [
         'component'    => 'Component',
         'message'      => 'Message',
         'message-help' => 'You may also use Markdown.',
-        'scheduled'    => 'Schedule for a date?',
+        'scheduled'    => 'When should this be posted?',
         'templates'    => [
             'name'     => 'Name',
             'template' => 'Template',
