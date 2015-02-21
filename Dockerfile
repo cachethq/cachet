@@ -40,12 +40,12 @@ RUN sed -i "s/'key' => '\w.*/'key' => 'f20d3e5ae02125a94bd60203a4edfbde',/" app/
 # copy the various nginx and supervisor conf (to handle both fpm and nginx)
 RUN sed -i -e "s/;daemonize\s*=\s*yes/daemonize = no/g" /etc/php5/fpm/php-fpm.conf ;\
     echo "daemon off;" >> /etc/nginx/nginx.conf ;\
-    ln -sf /var/www/html/php-fpm-pool.conf /etc/php5/fpm/pool.d/www.conf ;\
-    rm -f /etc/nginx/sites-enabled/* && rm -f /etc/nginx/conf.d/* && ln -sf /var/www/html/nginx-site.conf /etc/nginx/conf.d/default.conf
+    mv /var/www/html/docker/php-fpm-pool.conf /etc/php5/fpm/pool.d/www.conf ;\
+    rm -f /etc/nginx/sites-enabled/* && rm -f /etc/nginx/conf.d/* && mv /var/www/html/docker/nginx-site.conf /etc/nginx/conf.d/default.conf
 
 RUN curl -sS https://getcomposer.org/installer | php && php composer.phar install --no-dev -o
 
-COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY docker/supervisord.conf /etc/supervisor/supervisord.conf
 
 EXPOSE 8000
 
