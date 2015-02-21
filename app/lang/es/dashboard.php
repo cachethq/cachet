@@ -61,6 +61,11 @@ return [
                 'success' => 'Grupo componente agregado.',
                 'failure' => 'Algo salió mal con el grupo del componente.',
             ],
+            'edit' => [
+                'title'   => 'Edit a component group',
+                'success' => 'Component group updated.',
+                'failure' => 'Something went wrong with the component group.',
+            ],
         ],
     ],
 

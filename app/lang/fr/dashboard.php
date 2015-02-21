@@ -60,6 +60,11 @@ return [
                 'success' => 'Groupe de composants ajouté.',
                 'failure' => 'Il s\'est passé quelque chose avec ce composantgroupe de composants.',
             ],
+            'edit' => [
+                'title'   => 'Edit a component group',
+                'success' => 'Component group updated.',
+                'failure' => 'Something went wrong with the component group.',
+            ],
         ],
     ],
 

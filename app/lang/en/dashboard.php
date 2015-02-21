@@ -61,6 +61,11 @@ return [
                 'success' => 'Component group added.',
                 'failure' => 'Something went wrong with the component group.',
             ],
+            'edit' => [
+                'title'   => 'Edit a component group',
+                'success' => 'Component group updated.',
+                'failure' => 'Something went wrong with the component group.',
+            ],
         ],
     ],
 
