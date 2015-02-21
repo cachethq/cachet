@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "be1834e0113a0c714857dadbe14a5503",
+    "hash": "aa66851e963b6a867ebb7bef58c27015",
     "packages": [
         {
             "name": "cachethq/segment",
@@ -4217,7 +4217,8 @@
         "php": ">=5.4",
         "ext-mbstring": "*",
         "ext-mcrypt": "*",
-        "ext-openssl": "*"
+        "ext-openssl": "*",
+        "ext-apcu": "*"
     },
     "platform-dev": []
 }
