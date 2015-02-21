@@ -22,7 +22,7 @@
     <title>{{ $pageTitle ?: Setting::get('app_name') }} Status</title>
 
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="{{ elixir('css/all.css') }}">
+    <link rel="stylesheet" href="{{ elixir('dist/css/all.css') }}">
 
     @include('partials.stylesheet')
 
@@ -34,7 +34,7 @@
 
     @include('partials.crowdin')
 
-    <script src="{{ elixir('js/all.js') }}"></script>
+    <script src="{{ elixir('dist/js/all.js') }}"></script>
 </head>
 <body class="error-page">
     <div class="container">
