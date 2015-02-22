@@ -267,6 +267,21 @@ class DashComponentController extends Controller
     }
 
     /**
+     * Shows the edit component group view.
+     *
+     * @param \CachetHQ\Cachet\Models\ComponentGroup $group
+     *
+     * @return \Illuminate\View\View
+     */
+    public function showEditComponentGroup(ComponentGroup $group)
+    {
+        return View::make('dashboard.components.groups.edit')->with([
+            'pageTitle' => trans('dashboard.components.groups.edit.title').' - '.trans('dashboard.dashboard'),
+            'group'     => $group,
+        ]);
+    }
+
+    /**
      * Creates a new component.
      *
      * @return \Illuminate\Http\RedirectResponse
@@ -299,6 +314,47 @@ class DashComponentController extends Controller
             '<strong>%s</strong> %s',
             trans('dashboard.notifications.awesome'),
             trans('dashboard.components.groups.add.success')
+        );
+
+        return Redirect::back()->with('success', $successMsg);
+    }
+
+    /**
+     * Updates a component group.
+     *
+     * @param \CachetHQ\Cachet\Models\ComponentGroup $group
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function updateComponentGroupAction(ComponentGroup $group)
+    {
+        $groupData = Binput::get('group');
+        $group->update($groupData);
+
+        if (! $group->isValid()) {
+            segment_track('Dashboard', [
+                'event'   => 'Edit Component Group',
+                'success' => false,
+            ]);
+
+            return Redirect::back()->withInput(Binput::all())
+                ->with('title', sprintf(
+                    '<strong>%s</strong> %s',
+                    trans('dashboard.notifications.whoops'),
+                    trans('dashboard.components.groups.edit.failure')
+                ))
+                ->with('errors', $group->getErrors());
+        }
+
+        segment_track('Dashboard', [
+            'event'   => 'Edit Component Group',
+            'success' => true,
+        ]);
+
+        $successMsg = sprintf(
+            '<strong>%s</strong> %s',
+            trans('dashboard.notifications.awesome'),
+            trans('dashboard.components.groups.edit.success')
         );
 
         return Redirect::back()->with('success', $successMsg);

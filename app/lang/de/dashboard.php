@@ -54,6 +54,11 @@ return [
                 'success' => 'Komponenten-Gruppe hinzugefügt.',
                 'failure' => 'Es ist ein Fehler bei der Erstellung einer Komponenten-Gruppe aufgetreten.',
             ],
+            'edit' => [
+                'title'   => 'Edit a component group',
+                'success' => 'Component group updated.',
+                'failure' => 'Something went wrong with the component group.',
+            ],
         ],
     ],
 
