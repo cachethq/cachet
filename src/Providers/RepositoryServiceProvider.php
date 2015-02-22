@@ -35,5 +35,9 @@ class RepositoryServiceProvider extends ServiceProvider
             'CachetHQ\Cachet\Repositories\Metric\MetricRepository',
             'CachetHQ\Cachet\Repositories\Metric\EloquentMetricRepository'
         );
+        $this->app->bind(
+            'CachetHQ\Cachet\Repositories\MetricPoint\MetricPointRepository',
+            'CachetHQ\Cachet\Repositories\MetricPoint\EloquentMetricPointRepository'
+        );
     }
 }

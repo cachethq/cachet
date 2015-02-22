@@ -6,7 +6,7 @@
             <i class="icon ion-navicon"></i>
         </div>
         <span class="uppercase">
-            <i class="icon icon ion-android-alert"></i> {{ trans('dashboard.incidents.incidents') }}
+            <i class="icon ion-android-alert"></i> {{ trans('dashboard.incidents.incidents') }}
         </span>
         &gt; <small>{{ trans('dashboard.incidents.edit.title') }}</small>
     </div>

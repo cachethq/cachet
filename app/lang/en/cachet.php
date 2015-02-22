@@ -37,6 +37,15 @@ return [
         'revoke'     => 'Revoke API Key',
     ],
 
+    // Metrics
+    'metrics' => [
+        'filter' => [
+            'hourly'  => 'Hourly',
+            'daily'   => 'Daily',
+            'monthly' => 'Monthly',
+        ],
+    ],
+
     // Other
     'powered_by'      => ':app Status Page is powered by <a href="https://cachethq.io">Cachet</a>.',
     'about_this_site' => 'About this site',

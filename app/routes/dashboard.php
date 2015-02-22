@@ -77,8 +77,17 @@ Route::group(['before' => 'auth', 'prefix' => 'dashboard', 'namespace' => 'Cache
     Route::group(['prefix' => 'metrics'], function () {
         Route::get('/', [
             'as'   => 'dashboard.metrics',
-            'uses' => 'DashboardController@showMetrics',
+            'uses' => 'DashMetricController@showMetrics',
         ]);
+
+        Route::get('add', [
+            'as'   => 'dashboard.metrics.add',
+            'uses' => 'DashMetricController@showAddMetric',
+        ]);
+        Route::post('add', 'DashMetricController@createMetricAction');
+        Route::delete('{metric}/delete', 'DashMetricController@deleteMetricAction');
+        Route::get('{metric}/edit', 'DashMetricController@showEditMetricAction');
+        Route::post('{metric}/edit', 'DashMetricController@editMetricAction');
     });
 
     // Notifications

@@ -62,6 +62,8 @@ class RoutingServiceProvider extends ServiceProvider
         $this->app->router->model('component_group', 'CachetHQ\Cachet\Models\ComponentGroup');
         $this->app->router->model('incident', 'CachetHQ\Cachet\Models\Incident');
         $this->app->router->model('incident_template', 'CachetHQ\Cachet\Models\IncidentTemplate');
+        $this->app->router->model('metric', 'CachetHQ\Cachet\Models\Metric');
+        $this->app->router->model('metric_point', 'CachetHQ\Cachet\Models\MetricPoint');
         $this->app->router->model('setting', 'CachetHQ\Cachet\Models\Setting');
         $this->app->router->model('user', 'CachetHQ\Cachet\Models\User');
     }

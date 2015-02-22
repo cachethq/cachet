@@ -76,6 +76,11 @@ return [
             'success' => 'Point de mesure créé.',
             'failure' => 'Il s\'est passé quelque chose avec ce point de mesure.',
         ],
+        'edit' => [
+            'title'   => 'Edit a metric',
+            'success' => 'Metric updated.',
+            'failure' => 'Something went wrong with the metric.',
+        ],
     ],
 
     // Team

@@ -73,9 +73,14 @@ return [
     'metrics' => [
         'metrics' => 'Metrics',
         'add'     => [
-            'title'   => 'Create a metric point',
-            'success' => 'Metric point created.',
-            'failure' => 'Something went wrong with the metric point.',
+            'title'   => 'Create a metric',
+            'success' => 'Metric created.',
+            'failure' => 'Something went wrong with the metric.',
+        ],
+        'edit' => [
+            'title'   => 'Edit a metric',
+            'success' => 'Metric updated.',
+            'failure' => 'Something went wrong with the metric.',
         ],
     ],
 

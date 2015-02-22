@@ -21,13 +21,13 @@
 
     @include('partials.components')
 
-    {{-- @if(Setting::get('display_graphs'))
-        @include('partials.graphs')
-    @endif --}}
+    @if($displayMetrics && Setting::get('display_graphs'))
+    @include('partials.graphs')
+    @endif
 
     <h1>{{ trans('cachet.incidents.past') }}</h1>
     @foreach($allIncidents as $incidents)
-        @include('partials.incidents', $incidents)
+    @include('partials.incidents', $incidents)
     @endforeach
     <hr>
 
