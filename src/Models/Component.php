@@ -57,7 +57,7 @@ class Component extends Model implements TransformableInterface
     /**
      * List of attributes that have default values.
      *
-     * @var array
+     * @var mixed[]
      */
     protected $attributes = [
         'order'       => 0,

@@ -24,10 +24,12 @@ class Metric extends Model implements TransformableInterface
     /**
      * The model's attributes.
      *
-     * @var array
+     * @var string[]
      */
     protected $attributes = [
+        'name'          => '',
         'default_value' => 0,
+        'display_chart' => 1,
     ];
 
     /**
