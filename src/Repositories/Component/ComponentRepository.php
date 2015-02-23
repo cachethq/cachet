@@ -22,6 +22,16 @@ interface ComponentRepository
     public function create($userId, array $data);
 
     /**
+     * Update a model by id.
+     *
+     * @param int   $id
+     * @param array $data
+     *
+     * @return \Illuminate\Database\Eloquent\Model
+     */
+    public function update($id, array $data);
+
+    /**
      * Finds a model by id.
      *
      * @param int $id

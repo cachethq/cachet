@@ -95,6 +95,33 @@ class ComponentController extends Controller
     }
 
     /**
+     * Update an existing component.
+     *
+     * @param int $id
+     *
+     * @return \CachetHQ\Cachet\Models\Component
+     */
+    public function putComponent($id)
+    {
+        $component = $this->component->update($id, Binput::except('tags'));
+
+        if (Binput::has('tags')) {
+            $tags = preg_split('/ ?, ?/', Binput::get('tags'));
+
+            // For every tag, do we need to create it?
+            $componentTags = array_map(function ($taggable) use ($component) {
+                return Tag::firstOrCreate([
+                    'name' => $taggable,
+                ])->id;
+            }, $tags);
+
+            $component->tags()->sync($componentTags);
+        }
+
+        return $component;
+    }
+
+    /**
      * Delete an existing component.
      *
      * @param int $id
