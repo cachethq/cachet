@@ -38,7 +38,7 @@
                         <div class="form-group">
                             <label>{{ trans('forms.metrics.display-chart') }}</label>
                             <input type="hidden" value="0" name="metric[display_chart]">
-                            <input type="checkbox" value="1" name="metric[display_chart]" class="form-control" {{ Input::old('display_chart') ? 'checked' : null }}>
+                            <input type="checkbox" value="1" name="metric[display_chart]" class="form-control" checked>
                         </div>
                     </fieldset>
                     <div class='form-group'>
