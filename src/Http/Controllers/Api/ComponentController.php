@@ -54,18 +54,6 @@ class ComponentController extends Controller
     }
 
     /**
-     * Return a component with incidents.
-     *
-     * @param int $id
-     *
-     * @return \CachetHQ\Cachet\Models\Component
-     */
-    public function getComponentIncidents($id)
-    {
-        return $this->component->with($id, ['incidents']);
-    }
-
-    /**
      * Create a new component.
      *
      * @return \CachetHQ\Cachet\Models\Component
