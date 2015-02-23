@@ -3,16 +3,20 @@
     <div class="sidebar-inner">
         <div class="profile">
             <div class="row">
-                <div class="col-xs-3">
-                    <div class="avatar">
-                        <a href="{{ url('dashboard/user') }}">
-                            <img src="{{ $loggedUser->gravatar }}" alt="">
+                <div class="col-xs-12">
+                    <div class="dropdown">
+                        <a class="dropdown-toggle" href="#" id="profile-dropdown" data-toggle="dropdown" aria-expanded="true">
+                            <span class="avatar"><img src="{{ $loggedUser->gravatar }}"></span> <span class="username">{{ $loggedUser->username }}</span>
+                            <span class="caret"></span>
                         </a>
-                    </div>
-                </div>
-                <div class="col-xs-9 username-wrapper">
-                    <div class="profile pull-left">
-                        <div class="username">{{ $loggedUser->username }}</div>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="profile-dropdown">
+                            <li role="presentation">
+                                <a role="menuitem" tabindex="-1" href="{{ url('dashboard/user') }}">{{ trans('dashboard.team.profile') }}</a>
+                            </li>
+                            <li role="presentation">
+                                <a role="menuitem" tabindex="-1" href="{{ route('logout') }}">{{ trans('dashboard.logout') }}</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
