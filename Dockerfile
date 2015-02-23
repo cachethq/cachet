@@ -15,22 +15,13 @@ RUN DEBIAN_FRONTEND=noninteractive  \
     echo "APT::Install-Recommends \"0\";" >> /etc/apt/apt.conf.d/02recommends && \
     echo "APT::Install-Suggests \"0\";" >> /etc/apt/apt.conf.d/02recommends && \
     apt-get -qq update && \
-    apt-get -qq install ca-certificates apt-transport-https && \
-    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 68576280 && \
-    echo 'deb https://deb.nodesource.com/node jessie main' > /etc/apt/sources.list.d/nodesource.list && \
-    apt-get -qq update && \
     apt-get -qq install \
-    nginx php5-fpm=5.* php5-curl php5-readline php5-mcrypt php5-mysql php5-apcu php5-cli \
-    git sqlite libsqlite3-dev nodejs curl supervisor && \
-    npm install && node_modules/.bin/bower install --allow-root && node_modules/.bin/gulp && \
-    rm -rf /tmp/* node_modules/ && \
+    ca-certificates nginx php5-fpm=5.* php5-curl php5-readline php5-mcrypt php5-mysql php5-apcu php5-cli \
+    git sqlite libsqlite3-dev curl supervisor && \
     apt-get clean && \
     rm -r /var/lib/apt/lists/* && \
     chown -R www-data /var/www/html
 
-# Ensure the assets have been compiled
-RUN for d in public/{build,css,js} ; do test ! -d public/build && \
-  echo "Run 'gulp' before building container" >&2 && exit 1 || : ; done
 
 # Hardcode the Illuminate key in app/config/app.php. If you want security, feel free
 # to override the key in your own container with a 'php artisan key:generate' :)
