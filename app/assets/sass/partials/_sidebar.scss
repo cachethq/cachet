@@ -23,13 +23,20 @@ body.dashboard {
             list-style: none;
 
             .profile {
-                padding: 20px;
+                padding: 20px 10px;
                 margin-bottom: 0;
+                .dropdown-toggle {
+                    text-decoration: none;
+                }
+                .dropdown-menu {
+                    top: 108%;
+                }
                 .avatar {
-                    width: 70px;
+                    width: 60px;
+                    margin-right: 10px;
                     img {
                         border-radius: 50%;
-                        width: 60px;
+                        width: 50px;
                     }
                 }
                 .profile {
@@ -56,9 +63,11 @@ body.dashboard {
                     }
                     &.active {
                         background: lighten($sidebar-background-color, 2%);
-                        border-top: 1px solid #BED3EA;
-                        border-bottom: 1px solid #BED3EA;
                         a {
+                            padding-top: 14px;
+                            padding-bottom: 14px;
+                            border-top: 1px solid #BED3EA;
+                            border-bottom: 1px solid #BED3EA;
                             color: $sidebar-text-active-color;
                         }
                     }
