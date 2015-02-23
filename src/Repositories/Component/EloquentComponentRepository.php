@@ -45,4 +45,23 @@ class EloquentComponentRepository extends EloquentRepository implements Componen
 
         return $component;
     }
+
+    /**
+     * Update a model by id.
+     *
+     * @param int   $id
+     * @param array $data
+     *
+     * @return \Illuminate\Database\Eloquent\Model
+     */
+    public function update($id, array $data)
+    {
+        $component = $this->model->findOrFail($id);
+        $component->fill($data);
+        $this->validate($component);
+
+        $component->update($data);
+
+        return $component;
+    }
 }

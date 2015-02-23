@@ -54,18 +54,6 @@ class ComponentController extends Controller
     }
 
     /**
-     * Return a component with incidents.
-     *
-     * @param int $id
-     *
-     * @return \CachetHQ\Cachet\Models\Component
-     */
-    public function getComponentIncidents($id)
-    {
-        return $this->component->with($id, ['incidents']);
-    }
-
-    /**
      * Create a new component.
      *
      * @return \CachetHQ\Cachet\Models\Component
@@ -79,6 +67,33 @@ class ComponentController extends Controller
 
         if (Binput::has('tags')) {
             // The component was added successfully, so now let's deal with the tags.
+            $tags = preg_split('/ ?, ?/', Binput::get('tags'));
+
+            // For every tag, do we need to create it?
+            $componentTags = array_map(function ($taggable) use ($component) {
+                return Tag::firstOrCreate([
+                    'name' => $taggable,
+                ])->id;
+            }, $tags);
+
+            $component->tags()->sync($componentTags);
+        }
+
+        return $component;
+    }
+
+    /**
+     * Update an existing component.
+     *
+     * @param int $id
+     *
+     * @return \CachetHQ\Cachet\Models\Component
+     */
+    public function putComponent($id)
+    {
+        $component = $this->component->update($id, Binput::except('tags'));
+
+        if (Binput::has('tags')) {
             $tags = preg_split('/ ?, ?/', Binput::get('tags'));
 
             // For every tag, do we need to create it?

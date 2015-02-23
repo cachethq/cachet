@@ -4,7 +4,6 @@ Route::api(['after' => 'allowed_domains', 'namespace' => 'CachetHQ\Cachet\Http\C
     // Components
     Route::get('components', 'ComponentController@getComponents');
     Route::get('components/{id}', 'ComponentController@getComponent');
-    Route::get('components/{id}/incidents', 'ComponentController@getComponentIncidents');
 
     // Incidents
     Route::get('incidents', 'IncidentController@getIncidents');
