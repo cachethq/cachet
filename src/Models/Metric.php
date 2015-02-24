@@ -3,8 +3,8 @@
 namespace CachetHQ\Cachet\Models;
 
 use CachetHQ\Cachet\Transformers\MetricTransformer;
-use DateTime;
 use DateInterval;
+use DateTime;
 use Dingo\Api\Transformer\TransformableInterface;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
