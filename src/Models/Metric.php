@@ -3,6 +3,8 @@
 namespace CachetHQ\Cachet\Models;
 
 use CachetHQ\Cachet\Transformers\MetricTransformer;
+use DateTime;
+use DateInterval;
 use Dingo\Api\Transformer\TransformableInterface;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
@@ -28,7 +30,6 @@ class Metric extends Model implements TransformableInterface
      */
     protected $attributes = [
         'name'          => '',
-        'default_value' => 0,
         'display_chart' => 1,
     ];
 
@@ -41,6 +42,7 @@ class Metric extends Model implements TransformableInterface
         'name'          => 'required',
         'suffix'        => 'required',
         'display_chart' => 'boolean',
+        'default_value' => 'integer|required',
     ];
 
     /**
@@ -48,7 +50,7 @@ class Metric extends Model implements TransformableInterface
      *
      * @var string[]
      */
-    protected $fillable = ['name', 'suffix', 'description', 'display_chart'];
+    protected $fillable = ['name', 'suffix', 'description', 'display_chart', 'default_value'];
 
     /**
      * Metrics contain many metric points.
@@ -69,7 +71,10 @@ class Metric extends Model implements TransformableInterface
      */
     public function getValues($hour)
     {
-        $value = (int) $this->points()->whereRaw('DATE_FORMAT(created_at, "%Y%c%e%H") = DATE_FORMAT(DATE_SUB(NOW(), INTERVAL '.$hour.' HOUR), "%Y%c%e%H")')->whereRaw('HOUR(created_at) = HOUR(DATE_SUB(NOW(), INTERVAL '.$hour.' HOUR))')->groupBy(DB::raw('HOUR(created_at)'))->sum('value');
+        $dateTime = new DateTime();
+        $dateTime->sub(new DateInterval('PT'.$hour.'H'));
+
+        $value = (int) $this->points()->whereRaw('DATE_FORMAT(created_at, "%Y%c%e%H") = '.$dateTime->format('YmdH'))->whereRaw('HOUR(created_at) = HOUR(DATE_SUB(NOW(), INTERVAL '.$hour.' HOUR))')->groupBy(DB::raw('HOUR(created_at)'))->sum('value');
 
         if ($value === 0 && $this->default_value != $value) {
             return $this->default_value;
