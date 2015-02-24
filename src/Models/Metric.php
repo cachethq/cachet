@@ -7,6 +7,7 @@ use DateInterval;
 use DateTime;
 use Dingo\Api\Transformer\TransformableInterface;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 use Watson\Validating\ValidatingTrait;
 
@@ -74,7 +75,11 @@ class Metric extends Model implements TransformableInterface
         $dateTime = new DateTime();
         $dateTime->sub(new DateInterval('PT'.$hour.'H'));
 
-        $value = (int) $this->points()->whereRaw('DATE_FORMAT(created_at, "%Y%c%e%H") = '.$dateTime->format('YmdH'))->whereRaw('HOUR(created_at) = HOUR(DATE_SUB(NOW(), INTERVAL '.$hour.' HOUR))')->groupBy(DB::raw('HOUR(created_at)'))->sum('value');
+        if (Config::get('database.default') === 'mysql') {
+            $value = (int) $this->points()->whereRaw('DATE_FORMAT(created_at, "%Y%c%e%H") = '.$dateTime->format('YmdH'))->whereRaw('HOUR(created_at) = HOUR(DATE_SUB(NOW(), INTERVAL '.$hour.' HOUR))')->groupBy(DB::raw('HOUR(created_at)'))->sum('value');
+        } else {
+            $value = (int) $this->points()->whereRaw('to_char(created_at, "YYYYMMDDHH") = '.$dateTime->format('YmdH'))->whereRaw('DATE_PART("hour", created_at) = DATE_PART("hour", NOW() - INTERVAL "'.$hour.' hour")')->groupBy(DB::raw('HOUR(created_at)'))->sum('value');
+        }
 
         if ($value === 0 && $this->default_value != $value) {
             return $this->default_value;
