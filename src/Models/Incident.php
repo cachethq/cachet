@@ -85,27 +85,6 @@ class Incident extends Model implements TransformableInterface, PresenterInterfa
     }
 
     /**
-     * Finds the icon to use for each status.
-     *
-     * @return string
-     */
-    public function getIconAttribute()
-    {
-        switch ($this->status) {
-            case 1:
-                return 'icon ion-flag';
-            case 2:
-                return 'icon ion-alert';
-            case 3:
-                return 'icon ion-eye';
-            case 4:
-                return 'icon ion-checkmark';
-            default:
-                return '';
-        }
-    }
-
-    /**
      * Get the transformer instance.
      *
      * @return \CachetHQ\Cachet\Transformers\IncidentTransformer
