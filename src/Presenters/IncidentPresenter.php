@@ -71,4 +71,25 @@ class IncidentPresenter extends BasePresenter
     {
         return $this->resource->created_at->setTimezone($this->tz)->toISO8601String();
     }
+
+    /**
+     * Present the status with an icon.
+     *
+     * @return string
+     */
+    public function icon()
+    {
+        switch ($this->resource->status) {
+            case 1:
+                return 'icon ion-flag';
+            case 2:
+                return 'icon ion-alert';
+            case 3:
+                return 'icon ion-eye';
+            case 4:
+                return 'icon ion-checkmark';
+            default:
+                return '';
+        }
+    }
 }
