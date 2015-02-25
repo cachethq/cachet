@@ -12,10 +12,6 @@ For more information on why I started developing Cachet, check out my [blog post
 
 **Currently in development. Things may change or break until a solid release has been announced.**
 
-## Incompatibility
-
-Cachet is currently unable to build assets under CentOS 6 and Debian Wheezy. This problem lies within the dependencies of our build setup, not Cachet itself. For more information see [this issue](https://github.com/cachethq/Cachet/issues/275).
-
 ## Features
 
 - List your services components.
@@ -31,6 +27,11 @@ Cachet is currently unable to build assets under CentOS 6 and Debian Wheezy. Thi
 - PHP 5.4 or newer
 - mcrypt extension
 - Composer
+
+## Development Requirements
+
+The following extra dependencies are required to develop Cachet.
+
 - Node.js
     + Bower
     + Gulp
