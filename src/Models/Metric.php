@@ -78,7 +78,11 @@ class Metric extends Model implements TransformableInterface
         if (Config::get('database.default') === 'mysql') {
             $value = (int) $this->points()->whereRaw('DATE_FORMAT(created_at, "%Y%c%e%H") = '.$dateTime->format('YmdH'))->whereRaw('HOUR(created_at) = HOUR(DATE_SUB(NOW(), INTERVAL '.$hour.' HOUR))')->groupBy(DB::raw('HOUR(created_at)'))->sum('value');
         } else {
-            $value = (int) $this->points()->whereRaw('to_char(created_at, "YYYYMMDDHH") = "'.$dateTime->format('YmdH').'"')->whereRaw('DATE_PART("hour", created_at) = DATE_PART("hour", NOW() - INTERVAL "'.$hour.' hour")')->groupBy(DB::raw('DATE_PART("hour", created_at)'))->sum('value');
+            if ($hour === 0) {
+                $value = (int) $this->points()->whereRaw('to_char(created_at, "YYYYMMDDHH") = "'.$dateTime->format('ymdh').'"')->whereRaw('date_part("hour", created_at) = date_part("hour", now())')->groupBy(DB::raw('date_part("hour", created_at)'))->sum('value');
+            } else {
+                $value = (int) $this->points()->whereRaw('to_char(created_at, "YYYYMMDDHH") = "'.$dateTime->format('ymdh').'"')->whereRaw('date_part("hour", created_at) = date_part("hour", now() - interval "'.$hour.' hour")')->groupBy(DB::raw('date_part("hour", created_at)'))->sum('value');
+            }
         }
 
         if ($value === 0 && $this->default_value != $value) {
