@@ -154,16 +154,6 @@ class Incident extends Model implements TransformableInterface, PresenterInterfa
     }
 
     /**
-     * Returns a Markdown formatted version of the status.
-     *
-     * @return string
-     */
-    public function getFormattedMessageAttribute()
-    {
-        return Markdown::render($this->message);
-    }
-
-    /**
      * Get the transformer instance.
      *
      * @return \CachetHQ\Cachet\Transformers\IncidentTransformer

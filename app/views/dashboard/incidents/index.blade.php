@@ -28,7 +28,7 @@
                                     {{ $incident->name }}
                                 </strong>
                                 @if($incident->message)
-                                <p><small>{{ Str::words($incident->message, 5) }}</small></p>
+                                <p><small>{{ Str::words($incident->formattedMessage, 5) }}</small></p>
                                 @endif
                             </div>
                             <div class="col-md-6 text-right">
