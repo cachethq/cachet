@@ -5,23 +5,22 @@ ENV DB_DRIVER=mysql \
     DB_DATABASE=cachet \
     DB_HOST= \
     DB_USERNAME= \
-    DB_PASSWORD=
+    DB_PASSWORD= \
+    DEBIAN_FRONTEND=noninteractive
 
 COPY . /var/www/html/
 WORKDIR /var/www/html/
 
 # Using nodesource and debian jessie packages instead of compiling from scratch
-RUN DEBIAN_FRONTEND=noninteractive  \
-    echo "APT::Install-Recommends \"0\";" >> /etc/apt/apt.conf.d/02recommends && \
+RUN echo "APT::Install-Recommends \"0\";" >> /etc/apt/apt.conf.d/02recommends && \
     echo "APT::Install-Suggests \"0\";" >> /etc/apt/apt.conf.d/02recommends && \
     apt-get -qq update && \
     apt-get -qq install \
     ca-certificates nginx php5-fpm=5.* php5-curl php5-readline php5-mcrypt php5-mysql php5-apcu php5-cli \
     git sqlite libsqlite3-dev curl supervisor && \
-    apt-get clean && \
-    rm -r /var/lib/apt/lists/* && \
+    apt-get clean && apt-get autoremove -qq \
+    rm -rf /var/lib/apt/lists/* /usr/share/doc /usr/share/man /var/log/* /tmp/* && \
     chown -R www-data /var/www/html
-
 
 # Hardcode the Illuminate key in app/config/app.php. If you want security, feel free
 # to override the key in your own container with a 'php artisan key:generate' :)
