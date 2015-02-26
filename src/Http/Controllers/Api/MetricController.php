@@ -2,6 +2,7 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Api;
 
+use CachetHQ\Cachet\Repositories\InvalidModelValidationException;
 use CachetHQ\Cachet\Repositories\Metric\MetricRepository;
 use Dingo\Api\Routing\ControllerTrait;
 use GrahamCampbell\Binput\Facades\Binput;
@@ -58,7 +59,11 @@ class MetricController extends Controller
      */
     public function postMetrics()
     {
-        return $this->metric->create(Binput::all());
+        try {
+            return $this->metric->create(Binput::all());
+        } catch (InvalidModelValidationException $e) {
+            return $this->response->errorBadRequest();
+        }
     }
 
     /**
@@ -70,7 +75,11 @@ class MetricController extends Controller
      */
     public function putMetric($id)
     {
-        return $this->metric->update($id, Binput::all());
+        try {
+            $this->metric->update($id, Binput::all());
+        } catch (InvalidModelValidationException $e) {
+            return $this->response->errorBadRequest();
+        }
     }
 
     /**
