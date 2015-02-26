@@ -3,8 +3,8 @@
 namespace CachetHQ\Cachet\Http\Controllers\Api;
 
 use CachetHQ\Cachet\Models\Tag;
-use CachetHQ\Cachet\Repositories\InvalidModelValidationException;
 use CachetHQ\Cachet\Repositories\Component\ComponentRepository;
+use CachetHQ\Cachet\Repositories\InvalidModelValidationException;
 use Dingo\Api\Routing\ControllerTrait;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;

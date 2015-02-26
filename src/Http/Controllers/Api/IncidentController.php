@@ -2,8 +2,8 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Api;
 
-use CachetHQ\Cachet\Repositories\InvalidModelValidationException;
 use CachetHQ\Cachet\Repositories\Incident\IncidentRepository;
+use CachetHQ\Cachet\Repositories\InvalidModelValidationException;
 use CachetHQ\Cachet\Transformers\IncidentTransformer;
 use Dingo\Api\Routing\ControllerTrait;
 use GrahamCampbell\Binput\Facades\Binput;
