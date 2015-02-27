@@ -2,6 +2,7 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Api;
 
+use CachetHQ\Cachet\Repositories\InvalidModelValidationException;
 use CachetHQ\Cachet\Repositories\MetricPoint\MetricPointRepository;
 use Dingo\Api\Routing\ControllerTrait;
 use GrahamCampbell\Binput\Facades\Binput;
@@ -58,6 +59,10 @@ class MetricPointController extends Controller
      */
     public function postMetricPoints()
     {
-        return $this->metricPoint->create(Binput::all());
+        try {
+            return $this->metricPoint->create(Binput::only(['id', 'value']));
+        } catch (InvalidModelValidationException $e) {
+            return $this->response->errorBadRequest();
+        }
     }
 }

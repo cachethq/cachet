@@ -3,6 +3,7 @@
 namespace CachetHQ\Cachet\Http\Controllers\Api;
 
 use CachetHQ\Cachet\Repositories\Incident\IncidentRepository;
+use CachetHQ\Cachet\Repositories\InvalidModelValidationException;
 use CachetHQ\Cachet\Transformers\IncidentTransformer;
 use Dingo\Api\Routing\ControllerTrait;
 use GrahamCampbell\Binput\Facades\Binput;
@@ -62,7 +63,11 @@ class IncidentController extends Controller
      */
     public function postIncidents()
     {
-        return $this->incident->create($this->auth->user()->id, Binput::all());
+        try {
+            return $this->incident->create($this->auth->user()->id, Binput::all());
+        } catch (InvalidModelValidationException $e) {
+            return $this->response->errorBadRequest();
+        }
     }
 
     /**
@@ -74,7 +79,11 @@ class IncidentController extends Controller
      */
     public function putIncident($id)
     {
-        return $this->incident->update($id, Binput::all());
+        try {
+            return $this->incident->update($id, Binput::all());
+        } catch (InvalidModelValidationException $e) {
+            return $this->response->errorBadRequest();
+        }
     }
 
     /**
