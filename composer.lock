@@ -61,12 +61,12 @@
             "version": "1.0.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/mtdowling/ClassPreloader.git",
+                "url": "https://github.com/ClassPreloader/ClassPreloader.git",
                 "reference": "2c9f3bcbab329570c57339895bd11b5dd3b00877"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mtdowling/ClassPreloader/zipball/2c9f3bcbab329570c57339895bd11b5dd3b00877",
+                "url": "https://api.github.com/repos/ClassPreloader/ClassPreloader/zipball/2c9f3bcbab329570c57339895bd11b5dd3b00877",
                 "reference": "2c9f3bcbab329570c57339895bd11b5dd3b00877",
                 "shasum": ""
             },
@@ -105,25 +105,23 @@
         },
         {
             "name": "d11wtq/boris",
-            "version": "v1.0.8",
+            "version": "v1.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/d11wtq/boris.git",
-                "reference": "125dd4e5752639af7678a22ea597115646d89c6e"
+                "reference": "fabd509f0a96669e98f38bc7afcf7b1465e183f1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/d11wtq/boris/zipball/125dd4e5752639af7678a22ea597115646d89c6e",
-                "reference": "125dd4e5752639af7678a22ea597115646d89c6e",
+                "url": "https://api.github.com/repos/d11wtq/boris/zipball/fabd509f0a96669e98f38bc7afcf7b1465e183f1",
+                "reference": "fabd509f0a96669e98f38bc7afcf7b1465e183f1",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0"
-            },
-            "suggest": {
                 "ext-pcntl": "*",
                 "ext-posix": "*",
-                "ext-readline": "*"
+                "ext-readline": "*",
+                "php": ">=5.3.0"
             },
             "bin": [
                 "bin/boris"
@@ -135,7 +133,11 @@
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
-            "time": "2014-01-17 12:21:18"
+            "license": [
+                "MIT"
+            ],
+            "description": "A tiny, but robust REPL (Read-Evaluate-Print-Loop) for PHP.",
+            "time": "2015-02-26 06:56:57"
         },
         {
             "name": "dingo/api",
@@ -682,16 +684,16 @@
         },
         {
             "name": "erusev/parsedown",
-            "version": "1.5.1",
+            "version": "1.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/erusev/parsedown.git",
-                "reference": "9da19c1108c39df9b42adc42e39b8371070652d0"
+                "reference": "495e7ac73bb5fde6b857b88ff2bb1b5e79a4263a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/erusev/parsedown/zipball/9da19c1108c39df9b42adc42e39b8371070652d0",
-                "reference": "9da19c1108c39df9b42adc42e39b8371070652d0",
+                "url": "https://api.github.com/repos/erusev/parsedown/zipball/495e7ac73bb5fde6b857b88ff2bb1b5e79a4263a",
+                "reference": "495e7ac73bb5fde6b857b88ff2bb1b5e79a4263a",
                 "shasum": ""
             },
             "type": "library",
@@ -717,24 +719,24 @@
                 "markdown",
                 "parser"
             ],
-            "time": "2015-01-24 13:01:47"
+            "time": "2014-11-29 02:29:14"
         },
         {
             "name": "erusev/parsedown-extra",
-            "version": "0.6.1",
+            "version": "0.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/erusev/parsedown-extra.git",
-                "reference": "a2b8418b2ae272eb59ef8767bf45df80ab02f29c"
+                "reference": "77f604b65b08550f229c2e79c0427c84c0c0979e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/erusev/parsedown-extra/zipball/a2b8418b2ae272eb59ef8767bf45df80ab02f29c",
-                "reference": "a2b8418b2ae272eb59ef8767bf45df80ab02f29c",
+                "url": "https://api.github.com/repos/erusev/parsedown-extra/zipball/77f604b65b08550f229c2e79c0427c84c0c0979e",
+                "reference": "77f604b65b08550f229c2e79c0427c84c0c0979e",
                 "shasum": ""
             },
             "require": {
-                "erusev/parsedown": "~1.4"
+                "erusev/parsedown": "~1.1"
             },
             "type": "library",
             "autoload": {
@@ -761,7 +763,7 @@
                 "parsedown",
                 "parser"
             ],
-            "time": "2015-01-22 13:11:06"
+            "time": "2014-11-20 20:21:03"
         },
         {
             "name": "fideloper/proxy",
@@ -925,20 +927,21 @@
         },
         {
             "name": "graham-campbell/markdown",
-            "version": "v2.0.8",
+            "version": "v2.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Markdown.git",
-                "reference": "9e74dff2d33a4c75bcd97e9529de498ed9af7c9c"
+                "reference": "7c659621747cf291c344149b20383205f041f259"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Markdown/zipball/9e74dff2d33a4c75bcd97e9529de498ed9af7c9c",
-                "reference": "9e74dff2d33a4c75bcd97e9529de498ed9af7c9c",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Markdown/zipball/7c659621747cf291c344149b20383205f041f259",
+                "reference": "7c659621747cf291c344149b20383205f041f259",
                 "shasum": ""
             },
             "require": {
-                "erusev/parsedown-extra": "0.6.*",
+                "erusev/parsedown": "~1.1.4",
+                "erusev/parsedown-extra": "~0.2.6",
                 "illuminate/support": "~4.1",
                 "illuminate/view": "~4.1",
                 "php": ">=5.4.7"
@@ -977,7 +980,7 @@
                 "parsedown extra wrapper",
                 "parsedown wrapper"
             ],
-            "time": "2015-01-22 20:41:15"
+            "time": "2015-02-02 15:35:24"
         },
         {
             "name": "graham-campbell/security",
@@ -1142,16 +1145,16 @@
         },
         {
             "name": "guzzlehttp/ringphp",
-            "version": "1.0.5",
+            "version": "1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/RingPHP.git",
-                "reference": "a903f51b692427318bc813217c0e6505287e79a4"
+                "reference": "f43ab34aad69ca0ba04172cf2c3cd5c12fc0e5a4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/RingPHP/zipball/a903f51b692427318bc813217c0e6505287e79a4",
-                "reference": "a903f51b692427318bc813217c0e6505287e79a4",
+                "url": "https://api.github.com/repos/guzzle/RingPHP/zipball/f43ab34aad69ca0ba04172cf2c3cd5c12fc0e5a4",
+                "reference": "f43ab34aad69ca0ba04172cf2c3cd5c12fc0e5a4",
                 "shasum": ""
             },
             "require": {
@@ -1188,7 +1191,8 @@
                     "homepage": "https://github.com/mtdowling"
                 }
             ],
-            "time": "2014-12-11 05:50:32"
+            "description": "Provides a simple API and specification that abstracts away the details of HTTP into a single PHP function.",
+            "time": "2015-02-26 20:43:09"
         },
         {
             "name": "guzzlehttp/streams",
@@ -1284,16 +1288,16 @@
         },
         {
             "name": "jenssegers/date",
-            "version": "v2.0.16",
+            "version": "v2.0.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jenssegers/laravel-date.git",
-                "reference": "8bc16cfe63e17641c1de231a25b46523ff316179"
+                "reference": "d30ab1b3aeb42eba124f31efd6ad15e411433958"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jenssegers/laravel-date/zipball/8bc16cfe63e17641c1de231a25b46523ff316179",
-                "reference": "8bc16cfe63e17641c1de231a25b46523ff316179",
+                "url": "https://api.github.com/repos/jenssegers/laravel-date/zipball/d30ab1b3aeb42eba124f31efd6ad15e411433958",
+                "reference": "d30ab1b3aeb42eba124f31efd6ad15e411433958",
                 "shasum": ""
             },
             "require": {
@@ -1302,6 +1306,7 @@
                 "symfony/translation": "*"
             },
             "require-dev": {
+                "phpunit/phpunit": "*",
                 "satooshi/php-coveralls": "*"
             },
             "type": "library",
@@ -1327,7 +1332,7 @@
                 "laravel",
                 "time"
             ],
-            "time": "2015-02-22 10:11:55"
+            "time": "2015-02-25 12:41:21"
         },
         {
             "name": "jeremeamia/SuperClosure",
