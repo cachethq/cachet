@@ -37,6 +37,10 @@ API::error(function (\Illuminate\Database\Eloquent\ModelNotFoundException $excep
     return Response::make(['error' => $exception->getMessage()], 404);
 });
 
+API::error(function (\CachetHQ\Cachet\Repositories\InvalidModelValidationException $exception) {
+    return Response::make(['status_code' => 400, 'message' => 'Bad Request'], 400);
+});
+
 App::missing(function ($exception) {
     if (Request::is('dashboard*') or Request::is('api*')) {
         return Response::view('errors.404', [
