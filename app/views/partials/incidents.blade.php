@@ -19,11 +19,9 @@
                                 </abbr>
                             </small>
                         </div>
-                        @if($incident->hasMessage())
                         <div class="panel-body">
                             <p>{{ $incident->formattedMessage }}</p>
                         </div>
-                        @endif
                     </div>
                 </div>
             </div>

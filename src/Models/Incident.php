@@ -93,14 +93,4 @@ class Incident extends Model implements TransformableInterface, PresenterInterfa
     {
         return new IncidentTransformer();
     }
-
-    /**
-     * Check if Incident has message.
-     *
-     * @return bool
-     */
-    public function hasMessage()
-    {
-        return (trim($this->message) !== '');
-    }
 }
