@@ -13,13 +13,46 @@ use Illuminate\Support\Facades\View;
 class DashIncidentController extends Controller
 {
     /**
+     * Stores the sub-sidebar tree list.
+     *
+     * @var array
+     */
+    protected $subMenu = [];
+
+    /**
+     * Creates a new DashIncidentController instance.
+     *
+     * @return \CachetHQ\Cachet\Http\Controllers\DashScheduleController
+     */
+    public function __construct()
+    {
+        $this->subMenu = [
+            'incidents' => [
+                'title'  => trans('dashboard.incidents.incidents'),
+                'url'    => route('dashboard.incidents'),
+                'icon'   => 'ion-android-checkmark-circle',
+                'active' => true,
+            ],
+            'schedule'  => [
+                'title'  => trans('dashboard.schedule.schedule'),
+                'url'    => route('dashboard.schedule'),
+                'icon'   => 'ion-android-calendar',
+                'active' => false,
+            ],
+        ];
+
+        View::share('subMenu', $this->subMenu);
+        View::share('subTitle', trans('dashboard.incidents.title'));
+    }
+
+    /**
      * Shows the incidents view.
      *
      * @return \Illuminate\View\View
      */
     public function showIncidents()
     {
-        $incidents = Incident::orderBy('created_at', 'desc')->get();
+        $incidents = Incident::notScheduled()->orderBy('created_at', 'desc')->get();
 
         return View::make('dashboard.incidents.index')->with([
             'pageTitle' => trans('dashboard.incidents.incidents').' - '.trans('dashboard.dashboard'),

@@ -13,7 +13,8 @@
         "animate-sass": "~0.6.2",
         "moment": "~2.9",
         "livestampjs": "~1.1.2",
-        "chartjs": "~1.0.1"
+        "chartjs": "~1.0.1",
+        "eonasdan-bootstrap-datetimepicker": "~4.0.0"
     },
     "resolutions": {
         "jquery": "~2.1.1"

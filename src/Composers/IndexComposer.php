@@ -25,7 +25,7 @@ class IndexComposer
 
         if (Component::notStatus(1)->count() === 0) {
             // If all our components are ok, do we have any non-fixed incidents?
-            $incidents = Incident::orderBy('created_at', 'desc')->get();
+            $incidents = Incident::notScheduled()->orderBy('created_at', 'desc')->get();
             $incidentCount = $incidents->count();
 
             if ($incidentCount === 0 || ($incidentCount >= 1 && (int) $incidents->first()->status === 4)) {

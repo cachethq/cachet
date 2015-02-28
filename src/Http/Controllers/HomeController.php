@@ -73,10 +73,12 @@ class HomeController extends Controller
             $metrics = Metric::where('display_chart', 1)->get();
         }
 
+        $scheduledMaintenance = Incident::scheduled()->orderBy('scheduled_at')->get();
+
         foreach (range(0, $incidentDays) as $i) {
             $date = $startDate->copy()->subDays($i);
 
-            $incidents = Incident::whereBetween('created_at', [
+            $incidents = Incident::notScheduled()->whereBetween('created_at', [
                 $date->format('Y-m-d').' 00:00:00',
                 $date->format('Y-m-d').' 23:59:59',
             ])->orderBy('created_at', 'desc')->get();
@@ -88,15 +90,16 @@ class HomeController extends Controller
         }
 
         return View::make('index', [
-            'components'     => $components,
-            'displayMetrics' => $displayMetrics,
-            'metrics'        => $metrics,
-            'allIncidents'   => $allIncidents,
-            'pageTitle'      => Setting::get('app_name'),
-            'aboutApp'       => Markdown::render(Setting::get('app_about')),
-            'canPageForward' => (bool) $today->gt($startDate),
-            'previousDate'   => $startDate->copy()->subWeek()->subDay()->toDateString(),
-            'nextDate'       => $startDate->copy()->addWeek()->addDay()->toDateString(),
+            'components'           => $components,
+            'displayMetrics'       => $displayMetrics,
+            'metrics'              => $metrics,
+            'allIncidents'         => $allIncidents,
+            'scheduledMaintenance' => $scheduledMaintenance,
+            'pageTitle'            => Setting::get('app_name'),
+            'aboutApp'             => Markdown::render(Setting::get('app_about')),
+            'canPageForward'       => (bool) $today->gt($startDate),
+            'previousDate'         => $startDate->copy()->subWeek()->subDay()->toDateString(),
+            'nextDate'             => $startDate->copy()->addWeek()->addDay()->toDateString(),
         ]);
     }
 }

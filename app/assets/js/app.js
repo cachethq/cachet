@@ -109,6 +109,23 @@ $(function() {
         }
     });
 
+    // Date picker.
+    $('input[rel=datepicker]').datetimepicker({
+        format: "DD/MM/YYYY HH:mm",
+        minDate: new Date(), // Don't allow dates before today.
+        sideBySide: true,
+        icons: {
+            time: 'ion-clock',
+            date: 'ion-android-calendar',
+            up: 'ion-ios-arrow-up',
+            down: 'ion-ios-arrow-down',
+            previous: 'ion-ios-arrow-left',
+            next: 'ion-ios-arrow-right',
+            today: 'ion-android-home',
+            clear: 'ion-trash-a',
+        }
+    });
+
     // Sortable components.
     var componentList = document.getElementById("component-list");
     if (componentList) {
@@ -171,7 +188,7 @@ $(function() {
                 },
                 url: '/dashboard/api/incidents/templates',
                 success: function(tpl) {
-                    var $form = $('form[name=IncidentForm]');
+                    var $form = $('form[role=form]');
                     $form.find('input[name=incident\\[name\\]]').val(tpl.name);
                     $form.find('textarea[name=incident\\[message\\]]').val(tpl.template);
                 },
