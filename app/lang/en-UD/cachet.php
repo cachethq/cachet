@@ -13,12 +13,15 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => 'crwdns266:0crwdne266:0',
+        'none'          => 'crwdns430:0crwdne430:0',
         'past'          => 'crwdns296:0crwdne296:0',
         'previous_week' => 'crwdns297:0crwdne297:0',
         'next_week'     => 'crwdns298:0crwdne298:0',
-        'none'          => 'crwdns266:0crwdne266:0',
+        'none'          => 'crwdns430:0crwdne430:0',
+        'scheduled'     => 'crwdns438:0crwdne438:0',
+        'scheduled_at'  => 'crwdns439:0crwdne439:0',
         'status'        => [
+            0 => 'crwdns440:0crwdne440:0', // TODO: Hopefully remove this.
             1 => 'crwdns299:0crwdne299:0',
             2 => 'crwdns300:0crwdne300:0',
             3 => 'crwdns301:0crwdne301:0',
@@ -35,6 +38,15 @@ return [
     'api' => [
         'regenerate' => 'crwdns271:0crwdne271:0',
         'revoke'     => 'crwdns304:0crwdne304:0',
+    ],
+
+    // Metrics
+    'metrics' => [
+        'filter' => [
+            'hourly'  => 'crwdns441:0crwdne441:0',
+            'daily'   => 'crwdns442:0crwdne442:0',
+            'monthly' => 'crwdns443:0crwdne443:0',
+        ],
     ],
 
     // Other

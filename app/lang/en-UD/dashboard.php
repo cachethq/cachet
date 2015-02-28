@@ -6,6 +6,7 @@ return [
 
     // Incidents
     'incidents' => [
+        'title'                    => 'crwdns444:0crwdne444:0',
         'incidents'                => 'crwdns153:0crwdne153:0',
         'logged'                   => 'crwdns305:0{0}crwdne305:0',
         'incident-create-template' => 'crwdns306:0crwdne306:0',
@@ -37,9 +38,29 @@ return [
         ],
     ],
 
+    // Incident Maintenance
+    'schedule' => [
+        'schedule'     => 'crwdns445:0crwdne445:0',
+        'scheduled_at' => 'crwdns446:0crwdne446:0',
+        'add'          => [
+            'title'   => 'crwdns447:0crwdne447:0',
+            'success' => 'crwdns448:0crwdne448:0',
+            'failure' => 'crwdns449:0crwdne449:0',
+        ],
+        'edit' => [
+            'title'   => 'crwdns450:0crwdne450:0',
+            'success' => 'crwdns451:0crwdne451:0',
+            'failure' => 'crwdns452:0crwdne452:0',
+        ],
+        'delete' => [
+            'success' => 'crwdns453:0crwdne453:0',
+            'failure' => 'crwdns454:0crwdne454:0',
+        ],
+    ],
+
     // Components
     'components' => [
-        'components'         => 'crwdns165:0crwdne165:0',
+        'components'         => 'crwdns431:0crwdne431:0',
         'component_statuses' => 'crwdns321:0crwdne321:0',
         'add'                => [
             'title'   => 'crwdns322:0crwdne322:0',
@@ -61,6 +82,11 @@ return [
                 'success' => 'crwdns331:0crwdne331:0',
                 'failure' => 'crwdns332:0crwdne332:0',
             ],
+            'edit' => [
+                'title'   => 'crwdns455:0crwdne455:0',
+                'success' => 'crwdns456:0crwdne456:0',
+                'failure' => 'crwdns457:0crwdne457:0',
+            ],
         ],
     ],
 
@@ -68,9 +94,14 @@ return [
     'metrics' => [
         'metrics' => 'crwdns178:0crwdne178:0',
         'add'     => [
-            'title'   => 'crwdns333:0crwdne333:0',
-            'success' => 'crwdns334:0crwdne334:0',
-            'failure' => 'crwdns335:0crwdne335:0',
+            'title'   => 'crwdns458:0crwdne458:0',
+            'success' => 'crwdns459:0crwdne459:0',
+            'failure' => 'crwdns460:0crwdne460:0',
+        ],
+        'edit' => [
+            'title'   => 'crwdns461:0crwdne461:0',
+            'success' => 'crwdns462:0crwdne462:0',
+            'failure' => 'crwdns463:0crwdne463:0',
         ],
     ],
 
@@ -143,10 +174,10 @@ return [
         'steps'   => [
             'component'  => 'crwdns361:0crwdne361:0',
             'incident'   => 'crwdns362:0crwdne362:0',
-            'customize'  => 'crwdns363:0crwdne363:0',
-            'team'       => 'crwdns364:0crwdne364:0',
-            'api'        => 'crwdns365:0crwdne365:0',
-            'two-factor' => 'crwdns366:0crwdne366:0',
+            'customize'  => 'crwdns432:0crwdne432:0',
+            'team'       => 'crwdns433:0crwdne433:0',
+            'api'        => 'crwdns434:0crwdne434:0',
+            'two-factor' => 'crwdns435:0crwdne435:0',
         ],
     ],
 

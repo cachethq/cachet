@@ -30,6 +30,7 @@ return [
         'component'    => 'crwdns386:0crwdne386:0',
         'message'      => 'crwdns387:0crwdne387:0',
         'message-help' => 'crwdns388:0crwdne388:0',
+        'scheduled_at' => 'crwdns464:0crwdne464:0',
 
         'templates' => [
             'name'     => 'crwdns389:0crwdne389:0',
@@ -52,6 +53,20 @@ return [
         ],
     ],
 
+    // Metric form fields
+    'metrics' => [
+        'name'             => 'crwdns465:0crwdne465:0',
+        'suffix'           => 'crwdns466:0crwdne466:0',
+        'description'      => 'crwdns467:0crwdne467:0',
+        'description-help' => 'crwdns468:0crwdne468:0',
+        'display-chart'    => 'crwdns469:0crwdne469:0',
+        'default-value'    => 'crwdns470:0crwdne470:0',
+
+        'points' => [
+            'value' => 'crwdns471:0crwdne471:0',
+        ],
+    ],
+
     // Settings
     'settings' => [
         /// Application setup
@@ -61,6 +76,7 @@ return [
             'site-timezone'     => 'crwdns399:0crwdne399:0',
             'site-locale'       => 'crwdns400:0crwdne400:0',
             'date-format'       => 'crwdns401:0crwdne401:0',
+            'display-graphs'    => 'crwdns472:0crwdne472:0',
             'about-this-page'   => 'crwdns402:0crwdne402:0',
             'days-of-incidents' => 'crwdns403:0crwdne403:0',
             'banner'            => 'crwdns404:0crwdne404:0',
@@ -85,7 +101,7 @@ return [
         'email'          => 'crwdns412:0crwdne412:0',
         'password'       => 'crwdns413:0crwdne413:0',
         'api-token'      => 'crwdns414:0crwdne414:0',
-        'api-token-help' => 'crwdns415:0crwdne415:0',
+        'api-token-help' => 'crwdns436:0crwdne436:0',
         '2fa'            => [
             'help' => 'crwdns416:0crwdne416:0',
         ],
