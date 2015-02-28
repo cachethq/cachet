@@ -30,6 +30,7 @@ return [
         'component'    => 'Component',
         'message'      => 'Message',
         'message-help' => 'You may also use Markdown.',
+        'scheduled_at' => 'When to schedule the maintenance for?',
 
         'templates' => [
             'name'     => 'Name',

@@ -144,8 +144,12 @@ body.status-page {
                 top: 14px;
                 .icon {
                     position: absolute;
+                    &.ion-android-calendar {
+                        top: 7px;
+                        left: 11px;
+                    }
                     &.ion-flag {
-                        top: 10px;
+                        top: 7px;
                         left: 13px;
                     }
                     &.ion-alert {
@@ -157,9 +161,12 @@ body.status-page {
                         left: 10px;
                     }
                     &.ion-checkmark {
-                        top: 10px;
+                        top: 7px;
                         left: 11px;
                     }
+                }
+                &.status-0 {
+                    color: $cachet_pink;
                 }
                 &.status-1 {
                     color: $cachet_orange;

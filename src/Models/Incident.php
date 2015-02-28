@@ -43,7 +43,7 @@ class Incident extends Model implements TransformableInterface, PresenterInterfa
      *
      * @var string[]
      */
-    protected $fillable = ['user_id', 'component_id', 'name', 'status', 'message'];
+    protected $fillable = ['user_id', 'component_id', 'name', 'status', 'message', 'scheduled_at'];
 
     /**
      * The accessors to append to the model's serialized form.
@@ -51,6 +51,39 @@ class Incident extends Model implements TransformableInterface, PresenterInterfa
      * @var string[]
      */
     protected $appends = ['humanStatus'];
+
+    /**
+     * The attributes that should be mutated to dates.
+     *
+     * @var string[]
+     */
+    protected $dates = ['scheduled_at', 'deleted_at'];
+
+    /**
+     * Finds all scheduled incidents (maintenance).
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeScheduled($query)
+    {
+        return $query->where('status', 0)->whereRaw('scheduled_at >= NOW()');
+    }
+
+    /**
+     * Finds all non-scheduled incidents.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeNotScheduled($query)
+    {
+        return $query->where(function ($query) {
+            return $query->where('scheduled_at', '0000-00-00 00:00:00')->orWhereRaw('scheduled_at <= NOW()');
+        });
+    }
 
     /**
      * Get presenter class.
@@ -82,6 +115,16 @@ class Incident extends Model implements TransformableInterface, PresenterInterfa
         $statuses = trans('cachet.incidents.status');
 
         return $statuses[$this->status];
+    }
+
+    /**
+     * Returns whether the "incident" is scheduled or not.
+     *
+     * @return bool
+     */
+    public function getIsScheduledAttribute()
+    {
+        return $this->getOriginal('scheduled_at') != '0000-00-00 00:00:00';
     }
 
     /**

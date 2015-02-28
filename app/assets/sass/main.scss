@@ -32,6 +32,7 @@ html, body {
 // Styles for plugins
 @import "plugins/messenger";
 @import "plugins/animate";
+@import "plugins/bootstrap-datetimepicker/bootstrap-datetimepicker";
 
 // Status Page will need to override certain styles.
 @import "status-page";

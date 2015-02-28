@@ -6,6 +6,7 @@ return [
 
     // Incidents
     'incidents' => [
+        'title'                    => 'Incidents &amp; Schedule',
         'incidents'                => 'Incidents',
         'logged'                   => '{0} There are no incidents, good work.|You have logged one incident.|You have reported <strong>:count</strong> incidents.',
         'incident-create-template' => 'Create Template',
@@ -34,6 +35,26 @@ return [
                 'success' => 'Template has been updated!',
                 'failure' => 'Something went wrong updating the incident template',
             ],
+        ],
+    ],
+
+    // Incident Maintenance
+    'schedule' => [
+        'schedule'     => 'Scheduled Maintenance',
+        'scheduled_at' => 'Scheduled at :timestamp',
+        'add'          => [
+            'title'   => 'Add Scheduled Maintenance',
+            'success' => 'Schedule added.',
+            'failure' => 'Something went wrong adding the schedule.',
+        ],
+        'edit' => [
+            'title'   => 'Edit Scheduled Maintenance',
+            'success' => 'Schedule has been updated!',
+            'failure' => 'Something went wrong editing the schedule.',
+        ],
+        'delete' => [
+            'success' => 'The schedule has been deleted and will not show on your status page.',
+            'failure' => 'The schedule could not be deleted. Please try again.',
         ],
     ],
 

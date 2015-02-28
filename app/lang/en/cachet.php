@@ -18,7 +18,10 @@ return [
         'previous_week' => 'Previous week',
         'next_week'     => 'Next week',
         'none'          => 'Nothing to report',
+        'scheduled'     => 'Scheduled Maintenance',
+        'scheduled_at'  => ', scheduled :timestamp',
         'status'        => [
+            0 => 'Scheduled', // TODO: Hopefully remove this.
             1 => 'Investigating',
             2 => 'Identified',
             3 => 'Watching',

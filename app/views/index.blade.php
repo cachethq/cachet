@@ -25,6 +25,10 @@
     @include('partials.graphs')
     @endif
 
+    @if(!$scheduledMaintenance->isEmpty())
+    @include('partials.schedule')
+    @endif
+
     <h1>{{ trans('cachet.incidents.past') }}</h1>
     @foreach($allIncidents as $incidents)
     @include('partials.incidents', $incidents)

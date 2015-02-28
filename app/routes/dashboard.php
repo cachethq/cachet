@@ -1,6 +1,10 @@
 <?php
 
-Route::group(['before' => 'auth', 'prefix' => 'dashboard', 'namespace' => 'CachetHQ\Cachet\Http\Controllers'], function () {
+Route::group([
+    'before'    => 'auth',
+    'prefix'    => 'dashboard',
+    'namespace' => 'CachetHQ\Cachet\Http\Controllers',
+], function () {
     // Dashboard
     Route::get('/', [
         'as'   => 'dashboard',
@@ -53,6 +57,28 @@ Route::group(['before' => 'auth', 'prefix' => 'dashboard', 'namespace' => 'Cache
         Route::delete('{incident}/delete', 'DashIncidentController@deleteIncidentAction');
         Route::get('{incident}/edit', 'DashIncidentController@showEditIncidentAction');
         Route::post('{incident}/edit', 'DashIncidentController@editIncidentAction');
+    });
+
+    // Scheduled Maintenance
+    Route::group(['prefix' => 'schedule'], function () {
+        Route::get('/', ['as' => 'dashboard.schedule', 'uses' => 'DashScheduleController@showIndex']);
+
+        Route::get('add', [
+            'as'   => 'dashboard.schedule.add',
+            'uses' => 'DashScheduleController@showAddSchedule',
+        ]);
+        Route::post('add', 'DashScheduleController@addScheduleAction');
+
+        Route::get('{incident}/edit', [
+            'as'   => 'dashboard.schedule.edit',
+            'uses' => 'DashScheduleController@showEditSchedule',
+        ]);
+        Route::post('{incident}/edit', 'DashScheduleController@editScheduleAction');
+
+        Route::delete('{incident}/delete', [
+            'as'   => 'dashboard.schedule.delete',
+            'uses' => 'DashScheduleController@deleteScheduleAction',
+        ]);
     });
 
     // Incident Templates
