@@ -35,7 +35,7 @@
                     <span>{{ trans('dashboard.dashboard') }}</span>
                 </a>
             </li>
-            <li {{ set_active('dashboard/incidents*') }}>
+            <li {{ set_active('dashboard/incidents*') }} {{ set_active('dashboard/schedule*') }}>
                 <a href="{{ route('dashboard.incidents') }}">
                     <i class="icon ion-android-alert"></i>
                     <span>{{ trans('dashboard.incidents.incidents') }}</span>

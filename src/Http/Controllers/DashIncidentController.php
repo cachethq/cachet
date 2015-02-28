@@ -2,9 +2,11 @@
 
 namespace CachetHQ\Cachet\Http\Controllers;
 
+use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentTemplate;
+use Carbon\Carbon;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Redirect;
@@ -12,6 +14,30 @@ use Illuminate\Support\Facades\View;
 
 class DashIncidentController extends Controller
 {
+    protected $subMenu = [];
+    protected $subTitle = 'Incident Management';
+
+    public function __construct()
+    {
+        $this->subMenu = [
+            'incidents' => [
+                'title'  => trans('dashboard.incidents.incidents'),
+                'url'    => '/dashboard/incidents',
+                'icon'   => 'ion-android-alert',
+                'active' => false,
+            ],
+            'schedules' => [
+                'title'  => trans('dashboard.incidents.schedule.title'),
+                'url'    => '/dashboard/schedule',
+                'icon'   => 'ion-clock',
+                'active' => false,
+            ],
+        ];
+
+        View::share('subTitle', $this->subTitle);
+        View::share('subMenu', $this->subMenu);
+    }
+
     /**
      * Shows the incidents view.
      *
@@ -19,11 +45,14 @@ class DashIncidentController extends Controller
      */
     public function showIncidents()
     {
-        $incidents = Incident::orderBy('created_at', 'desc')->get();
+        $incidents = Incident::unscheduled()->orderBy('created_at', 'desc')->get();
+        $this->subMenu['incidents']['active'] = true;
 
         return View::make('dashboard.incidents.index')->with([
-            'pageTitle' => trans('dashboard.incidents.incidents').' - '.trans('dashboard.dashboard'),
-            'incidents' => $incidents,
+            'pageTitle'  => trans('dashboard.incidents.incidents').' - '.trans('dashboard.dashboard'),
+            'incidents'  => $incidents,
+            'dateFormat' => Setting::get('date_format') ?: 'jS M Y',
+            'subMenu'    => $this->subMenu,
         ]);
     }
 
@@ -37,6 +66,37 @@ class DashIncidentController extends Controller
         return View::make('dashboard.incidents.add')->with([
             'pageTitle'         => trans('dashboard.incidents.add.title').' - '.trans('dashboard.dashboard'),
             'components'        => Component::all(),
+            'incidentTemplates' => IncidentTemplate::all(),
+        ]);
+    }
+
+    /**
+     * Shows the scheduled maintenance view.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function showSchedule()
+    {
+        $incidents = Incident::scheduled()->orderBy('created_at', 'desc')->get();
+        $this->subMenu['schedules']['active'] = true;
+
+        return View::make('dashboard.incidents.schedule.index')->with([
+            'pageTitle'  => trans('dashboard.incidents.schedule.title').' - '.trans('dashboard.dashboard'),
+            'incidents'  => $incidents,
+            'dateFormat' => Setting::get('date_format') ?: 'jS M Y',
+            'subMenu'    => $this->subMenu,
+        ]);
+    }
+
+    /**
+     * Shows the add scheduled incident page.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function showAddSchedule()
+    {
+        return View::make('dashboard.incidents.schedule.add')->with([
+            'pageTitle'         => trans('dashboard.incidents.schedule.add.title').' - '.trans('dashboard.dashboard'),
             'incidentTemplates' => IncidentTemplate::all(),
         ]);
     }
@@ -63,6 +123,15 @@ class DashIncidentController extends Controller
     {
         $incidentData = Binput::get('incident');
         $componentStatus = array_pull($incidentData, 'component_status');
+        $publishDate = array_pull($incidentData, 'published_date');
+
+        if ($publishDate !== '') {
+            $publishDate = Carbon::createFromFormat('d/m/Y', $publishDate);
+        } else {
+            $publishDate = Carbon::now();
+        }
+
+        $incidentData['published_at'] = $publishDate;
         $incident = Incident::create($incidentData);
 
         if (! $incident->isValid()) {

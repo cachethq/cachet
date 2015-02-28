@@ -25,6 +25,12 @@
     @include('partials.graphs')
     @endif
 
+    @if($scheduled->count() > 0)
+    <h1>{{ trans('cachet.schedule.scheduled') }}</h1>
+    @include('partials.schedule', $scheduled)
+    <hr>
+    @endif
+
     <h1>{{ trans('cachet.incidents.past') }}</h1>
     @foreach($allIncidents as $incidents)
     @include('partials.incidents', $incidents)

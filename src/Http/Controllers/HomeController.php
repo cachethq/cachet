@@ -5,7 +5,6 @@ namespace CachetHQ\Cachet\Http\Controllers;
 use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
-use CachetHQ\Cachet\Models\Metric;
 use Carbon\Carbon;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
@@ -67,11 +66,7 @@ class HomeController extends Controller
             }
         }
 
-        $metrics = null;
-
-        if ($displayMetrics = Setting::get('display_graphs')) {
-            $metrics = Metric::where('display_chart', 1)->get();
-        }
+        $scheduled = Incident::whereRaw('published_at > CURDATE()')->get();
 
         foreach (range(0, $incidentDays) as $i) {
             $date = $startDate->copy()->subDays($i);
@@ -79,7 +74,7 @@ class HomeController extends Controller
             $incidents = Incident::whereBetween('created_at', [
                 $date->format('Y-m-d').' 00:00:00',
                 $date->format('Y-m-d').' 23:59:59',
-            ])->orderBy('created_at', 'desc')->get();
+            ])->whereRaw('published_at <= CURDATE()')->orderBy('created_at', 'desc')->get();
 
             $allIncidents[] = [
                 'date'      => (new Date($date->toDateString()))->format($dateFormat),
@@ -89,14 +84,13 @@ class HomeController extends Controller
 
         return View::make('index', [
             'components'     => $components,
-            'displayMetrics' => $displayMetrics,
-            'metrics'        => $metrics,
             'allIncidents'   => $allIncidents,
             'pageTitle'      => Setting::get('app_name'),
             'aboutApp'       => Markdown::render(Setting::get('app_about')),
             'canPageForward' => (bool) $today->gt($startDate),
             'previousDate'   => $startDate->copy()->subWeek()->subDay()->toDateString(),
             'nextDate'       => $startDate->copy()->addWeek()->addDay()->toDateString(),
+            'scheduled'      => $scheduled,
         ]);
     }
 }

@@ -8,17 +8,17 @@
         <div class="content-wrapper">
             <div class="header sub-header">
                 <span class="uppercase">
-                    <i class="icons ion-android-alert"></i> {{ trans('dashboard.incidents.incidents') }}
+                    <i class="icons ion-clock"></i> {{ trans('dashboard.incidents.schedule.title') }}
                 </span>
-                <a class="btn btn-sm btn-success pull-right" href="{{ route('dashboard.incidents.add') }}">
-                    {{ trans('dashboard.incidents.add.title') }}
+                <a class="btn btn-sm btn-success pull-right" href="{{ route('dashboard.schedule.add') }}">
+                    {{ trans('dashboard.incidents.schedule.add.title') }}
                 </a>
                 <div class="clearfix"></div>
             </div>
-            @include('partials.dashboard.errors')
-            <p class="lead">{{ trans_choice('dashboard.incidents.logged', $incidents->count(), ['count' => $incidents->count()]) }}</p>
             <div class="row">
                 <div class="col-sm-12">
+                    @include('partials.dashboard.errors')
+
                     <div class="striped-list">
                         @foreach($incidents as $incident)
                         <div class="row striped-list-item">
@@ -28,7 +28,7 @@
                                     {{ $incident->name }}
                                 </strong>
                                 @if($incident->message)
-                                <p><small>{{ Str::words($incident->formattedMessage, 5) }}</small></p>
+                                <p><small>{{ Str::words($incident->message, 5) }}</small></p>
                                 @endif
                             </div>
                             <div class="col-md-6 text-right">
