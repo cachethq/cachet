@@ -20,7 +20,6 @@ class CreateIncidentsTable extends Migration
             $table->integer('status');
             $table->longText('message');
             $table->integer('user_id');
-            $table->timestamp('scheduled_at');
             $table->timestamps();
             $table->softDeletes();
 

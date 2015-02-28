@@ -81,7 +81,7 @@ class Incident extends Model implements TransformableInterface, PresenterInterfa
     public function scopeNotScheduled($query)
     {
         return $query->where(function ($query) {
-            return $query->where('scheduled_at', '0000-00-00 00:00:00')->orWhereRaw('scheduled_at <= NOW()');
+            return $query->whereNull('scheduled_at')->orWhereRaw('scheduled_at <= NOW()');
         });
     }
 
@@ -124,7 +124,7 @@ class Incident extends Model implements TransformableInterface, PresenterInterfa
      */
     public function getIsScheduledAttribute()
     {
-        return $this->getOriginal('scheduled_at') != '0000-00-00 00:00:00';
+        return $this->getOriginal('scheduled_at');
     }
 
     /**
