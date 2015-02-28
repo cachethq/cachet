@@ -22,6 +22,7 @@ class IncidentTableSeeder extends Seeder
                 "status"       => 4,
                 "component_id" => 0,
                 "user_id"      => 1,
+                "scheduled_at" => "0000-00-00 00:00:00",
             ],
             [
                 "name"         => "Monitoring the fix",
@@ -29,6 +30,7 @@ class IncidentTableSeeder extends Seeder
                 "status"       => 3,
                 "component_id" => 0,
                 "user_id"      => 1,
+                "scheduled_at" => "0000-00-00 00:00:00",
             ],
             [
                 "name"         => "Update",
@@ -36,12 +38,14 @@ class IncidentTableSeeder extends Seeder
                 "status"       => 2,
                 "component_id" => 0,
                 "user_id"      => 1,
+                "scheduled_at" => "0000-00-00 00:00:00",
             ],
             [
                 "name"         => "Test Incident",
                 "message"      => "Something went wrong, oh noes.",
                 "component_id" => 0,
                 "user_id"      => 1,
+                "scheduled_at" => "0000-00-00 00:00:00",
             ],
         ];
 
