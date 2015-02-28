@@ -51,11 +51,11 @@ class IncidentPresenter extends BasePresenter
     }
 
     /**
-     * Present formated date time.
+     * Present formatted date time.
      *
      * @return string
      */
-    public function created_at_formated()
+    public function created_at_formatted()
     {
         return ucfirst((new Date($this->resource->created_at))
             ->setTimezone($this->tz)
@@ -63,7 +63,7 @@ class IncidentPresenter extends BasePresenter
     }
 
     /**
-     * Present formated date time.
+     * Present formatted date time.
      *
      * @return string
      */
