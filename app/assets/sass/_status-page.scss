@@ -144,25 +144,11 @@ body.status-page {
                 top: 14px;
                 .icon {
                     position: absolute;
-                    &.ion-android-calendar {
-                        top: 7px;
-                        left: 11px;
-                    }
-                    &.ion-flag {
-                        top: 7px;
-                        left: 13px;
-                    }
+                    top: 7px;
+                    left: 11px;
+
                     &.ion-alert {
-                        top: 10px;
                         left: 15px;
-                    }
-                    &.ion-eye {
-                        top: 10px;
-                        left: 10px;
-                    }
-                    &.ion-checkmark {
-                        top: 7px;
-                        left: 11px;
                     }
                 }
                 &.status-0 {
