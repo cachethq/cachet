@@ -2,10 +2,12 @@
 
 namespace CachetHQ\Cachet\Models;
 
+use CachetHQ\Cachet\Facades\Setting as SettingFacade;
 use CachetHQ\Cachet\Transformers\IncidentTransformer;
 use Dingo\Api\Transformer\TransformableInterface;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletingTrait;
+use Jenssegers\Date\Date;
 use McCool\LaravelAutoPresenter\PresenterInterface;
 use Watson\Validating\ValidatingTrait;
 
@@ -68,7 +70,9 @@ class Incident extends Model implements TransformableInterface, PresenterInterfa
      */
     public function scopeScheduled($query)
     {
-        return $query->where('status', 0)->whereRaw('scheduled_at >= NOW()');
+        $timestamp = (new Date())->setTimezone(SettingFacade::get('app_timezone'))->format('Y-m-d H:i:s');
+
+        return $query->where('status', 0)->whereRaw('scheduled_at >= "'.$timestamp.'"');
     }
 
     /**
@@ -81,7 +85,9 @@ class Incident extends Model implements TransformableInterface, PresenterInterfa
     public function scopeNotScheduled($query)
     {
         return $query->where(function ($query) {
-            return $query->whereNull('scheduled_at')->orWhereRaw('scheduled_at <= NOW()');
+            $timestamp = (new Date())->setTimezone(SettingFacade::get('app_timezone'))->format('Y-m-d H:i:s');
+
+            return $query->whereNull('scheduled_at')->orWhereRaw('scheduled_at <= "'.$timestamp.'"');
         });
     }
 
