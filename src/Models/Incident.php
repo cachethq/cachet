@@ -72,7 +72,7 @@ class Incident extends Model implements TransformableInterface, PresenterInterfa
     {
         $timestamp = (new Date())->setTimezone(SettingFacade::get('app_timezone'))->format('Y-m-d H:i:s');
 
-        return $query->where('status', 0)->whereRaw('scheduled_at >= "'.$timestamp.'"');
+        return $query->where('status', 0)->where('scheduled_at', '>=', $timestamp);
     }
 
     /**
@@ -87,7 +87,7 @@ class Incident extends Model implements TransformableInterface, PresenterInterfa
         return $query->where(function ($query) {
             $timestamp = (new Date())->setTimezone(SettingFacade::get('app_timezone'))->format('Y-m-d H:i:s');
 
-            return $query->whereNull('scheduled_at')->orWhereRaw('scheduled_at <= "'.$timestamp.'"');
+            return $query->whereNull('scheduled_at')->orWhere('scheduled_at', '<=', $timestamp);
         });
     }
 
