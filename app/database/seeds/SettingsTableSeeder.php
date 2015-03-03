@@ -22,7 +22,7 @@ class SettingsTableSeeder extends Seeder
             ],
             [
                 "name"  => "app_domain",
-                "value" => "https://status.cachethq.io",
+                "value" => "https://demo.cachethq.io",
             ],
             [
                 "name"  => "show_support",
@@ -35,6 +35,14 @@ class SettingsTableSeeder extends Seeder
             [
                 "name"  => "app_timezone",
                 "value" => "Europe/London",
+            ],
+            [
+                "name" => "app_track",
+                "value" => "1",
+            ],
+            [
+                "name" => "app_incident_days",
+                "value" => "7",
             ],
         ];
 
