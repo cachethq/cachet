@@ -37,11 +37,11 @@ class SettingsTableSeeder extends Seeder
                 "value" => "Europe/London",
             ],
             [
-                "name" => "app_track",
+                "name"  => "app_track",
                 "value" => "1",
             ],
             [
-                "name" => "app_incident_days",
+                "name"  => "app_incident_days",
                 "value" => "7",
             ],
         ];
