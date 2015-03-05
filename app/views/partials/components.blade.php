@@ -7,7 +7,7 @@
                 <h4>
                     {{ $component->name }}
                     @if($component->description)
-                    <i class="ion ion-ios-help-outline" data-toggle="tooltip" data-title="{{ $component->description }}"></i>
+                    <i class="ion-ios-help-outline help-icon" data-toggle="tooltip" data-title="{{ $component->description }}"></i>
                     @endif
                     <small class="text-component-{{ $component->status }}">{{ $component->humanStatus }}</small>
                 </h4>

@@ -22,6 +22,10 @@ body.status-page {
         }
     }
 
+    .help-icon {
+        cursor: help;
+    }
+
     .text-success, .text-component-1 {
         color: $cachet_green;
     }
