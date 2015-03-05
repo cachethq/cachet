@@ -39,6 +39,7 @@
                 <a href="{{ route('dashboard.incidents') }}">
                     <i class="icon ion-android-alert"></i>
                     <span>{{ trans('dashboard.incidents.incidents') }}</span>
+                    <span class="label label-info">{{ $incidentCount }}</span>
                 </a>
             </li>
             <li {{ set_active('dashboard/templates*') }}>
@@ -51,6 +52,7 @@
                 <a href="{{ route('dashboard.components') }}">
                     <i class="icons ion-outlet"></i>
                     <span>{{ trans('dashboard.components.components') }}</span>
+                    <span class="label label-info">{{ $componentCount }}</span>
                 </a>
             </li>
             <li {{ set_active('dashboard/team*') }}>

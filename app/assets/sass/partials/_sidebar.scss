@@ -85,6 +85,16 @@ body.dashboard {
                         &:hover {
                             text-decoration: none;
                         }
+
+                        span {
+                            &.label {
+                                float: right;
+                                margin: 6px 0;
+                                &.label-info {
+                                    background-color: $cachet-primary;
+                                }
+                            }
+                        }
                     }
 
                     &.sub-nav-item {
