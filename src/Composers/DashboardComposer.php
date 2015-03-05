@@ -4,7 +4,6 @@ namespace CachetHQ\Cachet\Composers;
 
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\Component;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
 class DashboardComposer
