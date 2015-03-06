@@ -8,7 +8,7 @@
         <div class="content-wrapper">
             <div class="header sub-header">
                 <span class="uppercase">
-                    <i class="icon ion-android-alert"></i> {{ trans('dashboard.schedule.schedule') }}
+                    <i class="icon ion-android-calendar"></i> {{ trans('dashboard.schedule.schedule') }}
                 </span>
                 <a class="btn btn-sm btn-success pull-right" href="{{ route('dashboard.schedule.add') }}">
                     {{ trans('dashboard.schedule.add.title') }}
