@@ -2,8 +2,8 @@
 
 namespace CachetHQ\Cachet\Composers;
 
-use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\Component;
+use CachetHQ\Cachet\Models\Incident;
 use Illuminate\View\View;
 
 class DashboardComposer
