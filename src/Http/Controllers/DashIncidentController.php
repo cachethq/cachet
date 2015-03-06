@@ -7,6 +7,7 @@ use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentTemplate;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 
@@ -95,7 +96,9 @@ class DashIncidentController extends Controller
     public function createIncidentAction()
     {
         $incidentData = Binput::get('incident');
+        $incidentData['user_id'] = Auth::user()->id;
         $componentStatus = array_pull($incidentData, 'component_status');
+
         $incident = Incident::create($incidentData);
 
         if (! $incident->isValid()) {
@@ -261,8 +264,9 @@ class DashIncidentController extends Controller
      */
     public function editIncidentAction(Incident $incident)
     {
-        $_incident = Binput::get('incident');
-        $incident->update($_incident);
+        $incidentData = Binput::get('incident');
+        $incidentData['user_id'] = Auth::user()->id;
+        $incident->update($incidentData);
 
         if (! $incident->isValid()) {
             segment_track('Dashboard', [

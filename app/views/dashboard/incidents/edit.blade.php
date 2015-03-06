@@ -78,7 +78,6 @@
                         </div>
                     </fieldset>
 
-                    <input type="hidden" name="incident[user_id]" value="{{ $loggedUser->id }}">
                     <input type="hidden" name="incident[id]" value={{$incident->id}}>
 
                     <div class="form-group">
