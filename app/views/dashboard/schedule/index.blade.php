@@ -31,8 +31,8 @@
                                 @endif
                             </div>
                             <div class="col-md-6 text-right">
-                                <a href="{{ route('dashboard.schedule.edit', [$incident->id]) }}" class="btn btn-default">{{ trans('forms.edit') }}</a>
-                                <a href="{{ route('dashboard.schedule.delete', [$incident->id]) }}" class="btn btn-danger confirm-action" data-method='DELETE'>{{ trans('forms.delete') }}</a>
+                                <a href="/dashboard/schedule/{{ $incident->id }}/edit" class="btn btn-default">{{ trans('forms.edit') }}</a>
+                                <a href="/dashboard/schedule/{{ $incident->id }}/delete" class="btn btn-danger confirm-action" data-method='DELETE'>{{ trans('forms.delete') }}</a>
                             </div>
                         </div>
                         @endforeach
