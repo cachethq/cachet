@@ -211,13 +211,11 @@ class DashScheduleController extends Controller
      */
     public function deleteScheduleAction(Incident $schedule)
     {
-        if ($schedule->delete()) {
-            return Redirect::back()->with('success', sprintf(
-                '<strong>%s</strong> %s',
-                trans('dashboard.notifications.awesome'),
-                trans('dashboard.schedule.delete.success')
-            ));
-        }
+        segment_track('Dashboard', [
+            'event' => 'Deleted Schedule',
+        ]);
+
+        $schedule->delete();
 
         return Redirect::back()->with('warning', sprintf(
             '<strong>%s</strong> %s',
