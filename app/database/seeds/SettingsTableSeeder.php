@@ -43,7 +43,7 @@ class SettingsTableSeeder extends Seeder
             [
                 "name"  => "app_incident_days",
                 "value" => "7",
-            ],,
+            ],
             [
                 "name"  => "app_analytics",
                 "value" => "UA-58442674-3",
