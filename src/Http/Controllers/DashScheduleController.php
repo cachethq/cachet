@@ -157,7 +157,7 @@ class DashScheduleController extends Controller
     public function editScheduleAction(Incident $schedule)
     {
         $scheduleData = Binput::get('incident');
-        $scheduleData['user_id'] = Auth::user()->id
+        $scheduleData['user_id'] = Auth::user()->id;
         // Parse the schedule date.
         $scheduledAt = Carbon::createFromFormat('d/m/Y H:i', $scheduleData['scheduled_at']);
 
