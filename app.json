@@ -22,6 +22,10 @@
         "BUILDPACK_URL": {
             "value": "https://github.com/heroku/heroku-buildpack-php",
             "description": "Warning: Do not modify this value on Heroku deployments."
+        },
+        "CACHE_DRIVER": {
+            "value": "apc",
+            "description": "Warning: Do not modify this value on Heroku deployments."
         }
     },
     "scripts": {
