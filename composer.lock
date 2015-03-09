@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d2ac0b89f83386d9d2ec43cb4e488318",
+    "hash": "32ae95519d83e0da62194e265c422473",
     "packages": [
         {
             "name": "cachethq/segment",
@@ -105,16 +105,16 @@
         },
         {
             "name": "d11wtq/boris",
-            "version": "v1.0.9",
+            "version": "v1.0.10",
             "source": {
                 "type": "git",
-                "url": "https://github.com/d11wtq/boris.git",
-                "reference": "fabd509f0a96669e98f38bc7afcf7b1465e183f1"
+                "url": "https://github.com/borisrepl/boris.git",
+                "reference": "31055b15e2d3fe47f31f6aa8e277f8f3fc7eb483"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/d11wtq/boris/zipball/fabd509f0a96669e98f38bc7afcf7b1465e183f1",
-                "reference": "fabd509f0a96669e98f38bc7afcf7b1465e183f1",
+                "url": "https://api.github.com/repos/borisrepl/boris/zipball/31055b15e2d3fe47f31f6aa8e277f8f3fc7eb483",
+                "reference": "31055b15e2d3fe47f31f6aa8e277f8f3fc7eb483",
                 "shasum": ""
             },
             "require": {
@@ -137,7 +137,7 @@
                 "MIT"
             ],
             "description": "A tiny, but robust REPL (Read-Evaluate-Print-Loop) for PHP.",
-            "time": "2015-02-26 06:56:57"
+            "time": "2015-03-01 08:05:19"
         },
         {
             "name": "dingo/api",
@@ -1288,16 +1288,16 @@
         },
         {
             "name": "jenssegers/date",
-            "version": "v2.0.17",
+            "version": "v2.0.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jenssegers/laravel-date.git",
-                "reference": "d30ab1b3aeb42eba124f31efd6ad15e411433958"
+                "reference": "c94babb5cf417151d6b54dfd4fd78d62f38cf5c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jenssegers/laravel-date/zipball/d30ab1b3aeb42eba124f31efd6ad15e411433958",
-                "reference": "d30ab1b3aeb42eba124f31efd6ad15e411433958",
+                "url": "https://api.github.com/repos/jenssegers/laravel-date/zipball/c94babb5cf417151d6b54dfd4fd78d62f38cf5c1",
+                "reference": "c94babb5cf417151d6b54dfd4fd78d62f38cf5c1",
                 "shasum": ""
             },
             "require": {
@@ -1332,7 +1332,7 @@
                 "laravel",
                 "time"
             ],
-            "time": "2015-02-25 12:41:21"
+            "time": "2015-03-02 18:19:30"
         },
         {
             "name": "jeremeamia/SuperClosure",
@@ -1616,16 +1616,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "1.12.0",
+            "version": "1.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "1fbe8c2641f2b163addf49cc5e18f144bec6b19f"
+                "reference": "c41c218e239b50446fd883acb1ecfd4b770caeae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/1fbe8c2641f2b163addf49cc5e18f144bec6b19f",
-                "reference": "1fbe8c2641f2b163addf49cc5e18f144bec6b19f",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/c41c218e239b50446fd883acb1ecfd4b770caeae",
+                "reference": "c41c218e239b50446fd883acb1ecfd4b770caeae",
                 "shasum": ""
             },
             "require": {
@@ -1642,6 +1642,7 @@
                 "phpunit/phpunit": "~4.0",
                 "raven/raven": "~0.5",
                 "ruflin/elastica": "0.90.*",
+                "swiftmailer/swiftmailer": "~5.3",
                 "videlalvaro/php-amqplib": "~2.4"
             },
             "suggest": {
@@ -1658,7 +1659,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.12.x-dev"
+                    "dev-master": "1.13.x-dev"
                 }
             },
             "autoload": {
@@ -1684,20 +1685,20 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2014-12-29 21:29:35"
+            "time": "2015-03-05 01:12:12"
         },
         {
             "name": "nesbot/carbon",
-            "version": "1.14.0",
+            "version": "1.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "bb87460c995d97fe55b39e65f6ffb7f64b0a941e"
+                "reference": "9b7665041754eaa9bb2622349bc9adbc1cf61cb8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/bb87460c995d97fe55b39e65f6ffb7f64b0a941e",
-                "reference": "bb87460c995d97fe55b39e65f6ffb7f64b0a941e",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/9b7665041754eaa9bb2622349bc9adbc1cf61cb8",
+                "reference": "9b7665041754eaa9bb2622349bc9adbc1cf61cb8",
                 "shasum": ""
             },
             "require": {
@@ -1724,13 +1725,13 @@
                 }
             ],
             "description": "A simple API extension for DateTime.",
-            "homepage": "https://github.com/briannesbitt/Carbon",
+            "homepage": "http://carbon.nesbot.com",
             "keywords": [
                 "date",
                 "datetime",
                 "time"
             ],
-            "time": "2015-02-06 05:07:29"
+            "time": "2015-03-04 04:50:11"
         },
         {
             "name": "nikic/php-parser",
@@ -2171,16 +2172,16 @@
         },
         {
             "name": "segmentio/analytics-php",
-            "version": "1.1.1",
+            "version": "1.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/segmentio/analytics-php.git",
-                "reference": "e1cfe339ceb2181de6f4a1c6c4b0c5d7d77d883c"
+                "reference": "be9bda98e56848fc1e1a498e4724103dbba2fd13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/segmentio/analytics-php/zipball/e1cfe339ceb2181de6f4a1c6c4b0c5d7d77d883c",
-                "reference": "e1cfe339ceb2181de6f4a1c6c4b0c5d7d77d883c",
+                "url": "https://api.github.com/repos/segmentio/analytics-php/zipball/be9bda98e56848fc1e1a498e4724103dbba2fd13",
+                "reference": "be9bda98e56848fc1e1a498e4724103dbba2fd13",
                 "shasum": ""
             },
             "require": {
@@ -2212,7 +2213,7 @@
                 "analytics.js",
                 "segmentio"
             ],
-            "time": "2015-02-11 13:46:03"
+            "time": "2015-03-03 11:51:21"
         },
         {
             "name": "stack/builder",
