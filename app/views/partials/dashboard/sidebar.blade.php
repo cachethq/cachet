@@ -2,23 +2,19 @@
 <div class="sidebar">
     <div class="sidebar-inner">
         <div class="profile">
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="dropdown">
-                        <a class="dropdown-toggle" href="#" id="profile-dropdown" data-toggle="dropdown" aria-expanded="true">
-                            <span class="avatar"><img src="{{ $loggedUser->gravatar }}"></span> <span class="username">{{ $loggedUser->username }}</span>
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="profile-dropdown">
-                            <li role="presentation">
-                                <a role="menuitem" tabindex="-1" href="{{ url('dashboard/user') }}">{{ trans('dashboard.team.profile') }}</a>
-                            </li>
-                            <li role="presentation">
-                                <a role="menuitem" tabindex="-1" href="{{ route('logout') }}">{{ trans('dashboard.logout') }}</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="dropdown">
+                <a class="dropdown-toggle" href="#" id="profile-dropdown" data-toggle="dropdown" aria-expanded="true">
+                    <span class="avatar"><img src="{{ $loggedUser->gravatar }}"></span> <span class="username">{{ $loggedUser->username }}</span>
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="profile-dropdown">
+                    <li role="presentation">
+                        <a role="menuitem" tabindex="-1" href="{{ url('dashboard/user') }}">{{ trans('dashboard.team.profile') }}</a>
+                    </li>
+                    <li role="presentation">
+                        <a role="menuitem" tabindex="-1" href="{{ route('logout') }}">{{ trans('dashboard.logout') }}</a>
+                    </li>
+                </ul>
             </div>
         </div>
         <div class="clearfix"></div>
