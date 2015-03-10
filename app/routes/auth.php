@@ -1,6 +1,9 @@
 <?php
 
-Route::group(['prefix'     => 'auth', 'namespace' => 'CachetHQ\Cachet\Http\Controllers'], function () {
+Route::group([
+    'prefix'    => 'auth',
+    'namespace' => 'CachetHQ\Cachet\Http\Controllers'
+], function () {
     Route::group(['before' => 'has_setting:app_name'], function () {
         // Login routes
         Route::get('login', [
