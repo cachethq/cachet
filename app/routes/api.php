@@ -23,7 +23,7 @@ Route::api([
         Route::post('components', 'ComponentController@postComponents');
         Route::post('incidents', 'IncidentController@postIncidents');
         Route::post('metrics', 'MetricController@postMetrics');
-        Route::post('metrics/points', 'MetricPointController@postMetricPoints');
+        Route::post('metrics/{id}/points', 'MetricPointController@postMetricPoints');
 
         Route::put('components/{id}', 'ComponentController@putComponent');
         Route::put('incidents/{id}', 'IncidentController@putIncident');
