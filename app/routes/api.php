@@ -16,7 +16,7 @@ Route::api([
     // Metrics
     Route::get('metrics', 'MetricController@getMetrics');
     Route::get('metrics/{id}', 'MetricController@getMetric');
-    Route::get('metrics/{id}/points', 'MetricPointController@getMetricPoint');
+    Route::get('metrics/{id}/points', 'MetricController@getMetricPoints');
 
     // Api protected
     Route::group(['protected' => true], function () {

@@ -29,15 +29,6 @@ class MetricPointController extends Controller
     {
         $this->metricPoint = $metricPoint;
     }
-    /**
-     * Get all metric points.
-     *
-     * @return \Illuminate\Database\Eloquent\Collection
-     */
-    public function getMetricPoints()
-    {
-        return $this->metricPoint->all();
-    }
 
     /**
      * Get a single metric point.
@@ -46,7 +37,7 @@ class MetricPointController extends Controller
      *
      * @return \CachetHQ\Cachet\Models\MetricPoint
      */
-    public function getMetricPoint($id)
+    public function getMetricPoints($id)
     {
         return $this->metricPoint->findOrFail($id);
     }

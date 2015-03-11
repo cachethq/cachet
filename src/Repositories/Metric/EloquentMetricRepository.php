@@ -63,4 +63,18 @@ class EloquentMetricRepository extends EloquentRepository implements MetricRepos
 
         return $metric;
     }
+
+    /**
+     * Returns all metric point models.
+     *
+     * @param int $id
+     *
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+    public function points($id)
+    {
+        $metric = $this->model->findOrFail($id);
+
+        return $metric->points;
+    }
 }

@@ -29,6 +29,7 @@ class MetricController extends Controller
     {
         $this->metric = $metric;
     }
+
     /**
      * Get all metrics.
      *
@@ -49,6 +50,18 @@ class MetricController extends Controller
     public function getMetric($id)
     {
         return $this->metric->findOrFail($id);
+    }
+
+    /**
+     * Get all metric points.
+     *
+     * @param int $id
+     *
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+    public function getMetricPoints($id)
+    {
+        return $this->metric->points($id);
     }
 
     /**

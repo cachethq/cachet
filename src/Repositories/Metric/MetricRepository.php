@@ -12,6 +12,15 @@ interface MetricRepository
     public function all();
 
     /**
+     * Returns all metric point models.
+     *
+     * @param int $id
+     *
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+    public function points($id);
+
+    /**
      * Create a new model.
      *
      * @param array $data
