@@ -33,5 +33,6 @@ Route::api([
         Route::delete('components/{id}', 'ComponentController@deleteComponent');
         Route::delete('incidents/{id}', 'IncidentController@deleteIncident');
         Route::delete('metrics/{id}', 'MetricController@deleteMetric');
+        Route::delete('metrics/{id}/points/{metric_id}', 'MetricPointController@deleteMetricPoint');
     });
 });

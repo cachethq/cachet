@@ -69,4 +69,19 @@ class MetricPointController extends Controller
 
         return $metricPoint;
     }
+
+    /**
+     * Destroys a metric point.
+     *
+     * @param int $metricId
+     * @param int $pointId
+     *
+     * @return \Dingo\Api\Http\Response
+     */
+    public function deleteMetricPoint($metricId, $pointId)
+    {
+        $this->metricPoint->destroy($pointId);
+
+        return $this->response->noContent();
+    }
 }
