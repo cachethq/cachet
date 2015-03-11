@@ -28,6 +28,7 @@ Route::api([
         Route::put('components/{id}', 'ComponentController@putComponent');
         Route::put('incidents/{id}', 'IncidentController@putIncident');
         Route::put('metrics/{id}', 'MetricController@putMetric');
+        Route::put('metrics/{id}/points/{metric_id}', 'MetricPointController@putMetricPoint');
 
         Route::delete('components/{id}', 'ComponentController@deleteComponent');
         Route::delete('incidents/{id}', 'IncidentController@deleteIncident');

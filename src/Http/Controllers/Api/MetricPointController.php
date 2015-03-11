@@ -53,4 +53,20 @@ class MetricPointController extends Controller
     {
         return $this->metricPoint->create($id, Binput::all());
     }
+
+    /**
+     * Updates a metric point
+     *
+     * @param int $metricId
+     * @param int $pointId
+     *
+     * @return \CachetHQ\Cachet\Models\MetricPoint
+     */
+    public function putMetricPoint($metricId, $pointId)
+    {
+        $metricPoint = $this->metricPoint->findOrFail($pointId);
+        $metricPoint->update(Binput::all());
+
+        return $metricPoint;
+    }
 }
