@@ -29,12 +29,14 @@ class EloquentMetricPointRepository extends EloquentRepository implements Metric
     /**
      * Create a new model.
      *
+     * @param int   $id
      * @param array $data
      *
      * @return \Illuminate\Database\Eloquent\Model
      */
-    public function create(array $data)
+    public function create($id, array $data)
     {
+        $data['metric_id'] = $id;
         $metric = new $this->model($data);
 
         $this->validate($metric);

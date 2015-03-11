@@ -14,11 +14,12 @@ interface MetricPointRepository
     /**
      * Create a new model.
      *
+     * @param int   $id
      * @param array $data
      *
      * @return \Illuminate\Database\Eloquent\Model
      */
-    public function create(array $data);
+    public function create($id, array $data);
 
     /**
      * Finds a model by id.
