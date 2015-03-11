@@ -4,13 +4,16 @@ namespace CachetHQ\Cachet\Http\Controllers;
 
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentTemplate;
+use CachetHQ\Cachet\Facades\Setting;
 use Carbon\Carbon;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\MessageBag;
+use Jenssegers\Date\Date;
 
 class DashScheduleController extends Controller
 {
@@ -84,7 +87,8 @@ class DashScheduleController extends Controller
         $scheduleData = Binput::get('incident');
         $scheduleData['user_id'] = Auth::user()->id;
         // Parse the schedule date.
-        $scheduledAt = Carbon::createFromFormat('d/m/Y H:i', $scheduleData['scheduled_at']);
+        $scheduledAt = Date::createFromFormat('d/m/Y H:i', $scheduleData['scheduled_at'], Setting::get('app_timezone'))
+            ->setTimezone(Config::get('app.timezone'));
 
         if ($scheduledAt->isPast()) {
             $messageBag = new MessageBag();
@@ -159,7 +163,8 @@ class DashScheduleController extends Controller
         $scheduleData = Binput::get('incident');
         $scheduleData['user_id'] = Auth::user()->id;
         // Parse the schedule date.
-        $scheduledAt = Carbon::createFromFormat('d/m/Y H:i', $scheduleData['scheduled_at']);
+        $scheduledAt = Date::createFromFormat('d/m/Y H:i', $scheduleData['scheduled_at'], Setting::get('app_timezone'))
+            ->setTimezone(Config::get('app.timezone'));
 
         if ($scheduledAt->isPast()) {
             $messageBag = new MessageBag();
