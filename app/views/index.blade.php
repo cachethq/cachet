@@ -5,7 +5,11 @@
     <div class="row app-banner">
         <div class="col-md-12 text-center">
             <?php $bannerType = Setting::get('app_banner_type') ?>
+            @if($appUrl = Setting::get('app_domain'))
+            <a href="{{ $appUrl }}"><img src="data:{{ $bannerType }};base64, {{ $bannerImage}}" class="banner-image img-responsive"></a>
+            @else
             <img src="data:{{ $bannerType }};base64, {{ $bannerImage}}" class="banner-image img-responsive">
+            @endif
         </div>
     </div>
     @endif
