@@ -83,8 +83,6 @@ class MetricController extends Controller
      */
     public function putMetric($id)
     {
-        dd($id);
-
         return $this->metric->update($id, Binput::all());
     }
 
