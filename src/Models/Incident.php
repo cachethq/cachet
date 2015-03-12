@@ -2,12 +2,11 @@
 
 namespace CachetHQ\Cachet\Models;
 
-use Carbon\Carbon;
 use CachetHQ\Cachet\Transformers\IncidentTransformer;
+use Carbon\Carbon;
 use Dingo\Api\Transformer\TransformableInterface;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletingTrait;
-use Jenssegers\Date\Date;
 use McCool\LaravelAutoPresenter\PresenterInterface;
 use Watson\Validating\ValidatingTrait;
 

@@ -55,7 +55,7 @@ class MetricPointController extends Controller
     }
 
     /**
-     * Updates a metric point
+     * Updates a metric point.
      *
      * @param int $metricId
      * @param int $pointId
