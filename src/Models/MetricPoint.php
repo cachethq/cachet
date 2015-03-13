@@ -29,7 +29,7 @@ class MetricPoint extends Model
      * @var string[]
      */
     protected $rules = [
-        'value' => 'integer|required',
+        'value' => 'numeric|required',
     ];
 
     /**

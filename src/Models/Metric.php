@@ -43,7 +43,7 @@ class Metric extends Model implements TransformableInterface
         'name'          => 'required',
         'suffix'        => 'required',
         'display_chart' => 'boolean',
-        'default_value' => 'integer|required',
+        'default_value' => 'numeric|required',
     ];
 
     /**
