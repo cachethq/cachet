@@ -16,7 +16,7 @@ class CreateMetricPointsTable extends Migration
         Schema::create('metric_points', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('metric_id');
-            $table->integer('value');
+            $table->decimal('value', 10, 3);
             $table->timestamps();
 
             $table->index('metric_id');
