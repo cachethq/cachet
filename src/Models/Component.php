@@ -31,11 +31,15 @@ class Component extends Model implements TransformableInterface
      *
      * @var string[]
      */
-    protected $rules = [
-        'user_id' => 'integer|required',
-        'name'    => 'required',
-        'status'  => 'integer|required',
-        'link'    => 'url',
+    protected $rulesets = [
+        [
+            'creating' => [
+                'user_id' => 'integer|required',
+                'name'    => 'required',
+                'status'  => 'integer|required',
+                'link'    => 'url',
+            ],
+        ],
     ];
 
     /**
