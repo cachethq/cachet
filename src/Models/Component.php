@@ -40,6 +40,12 @@ class Component extends Model implements TransformableInterface
                 'link'    => 'url',
             ],
         ],
+        [
+            'updating' => [
+                'status'  => 'integer',
+                'link'    => 'url',
+            ],
+        ],
     ];
 
     /**
