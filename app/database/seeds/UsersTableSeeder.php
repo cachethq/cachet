@@ -21,6 +21,7 @@ class UsersTableSeeder extends Seeder
                 "password" => "test123",
                 "email"    => "test@test.com",
                 "level"    => 1,
+                "api_key"  => "9yMHsdioQosnyVK4iCVR",
             ],
         ];
 

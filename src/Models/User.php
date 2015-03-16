@@ -65,7 +65,9 @@ class User extends Model implements UserInterface, RemindableInterface
         parent::boot();
 
         self::creating(function ($user) {
-            $user->api_key = self::generateApiKey();
+            if (! $user->api_key) {
+                $user->api_key = self::generateApiKey();
+            }
         });
     }
 
