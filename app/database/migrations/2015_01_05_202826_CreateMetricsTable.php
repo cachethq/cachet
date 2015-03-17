@@ -19,6 +19,7 @@ class CreateMetricsTable extends Migration
             $table->string('suffix');
             $table->text('description');
             $table->decimal('default_value', 10, 3);
+            $table->tinyInteger('calc_type');
             $table->boolean('display_chart')->default(1);
             $table->timestamps();
 

@@ -32,6 +32,13 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            <label>{{ trans('forms.metrics.calc_type') }}</label>
+                            <select name="metric[calc_type]" class="form-control" required>
+                                <option value="0" {{ $metric->calc_type === 0 ? "selected" : null }}>{{ trans('forms.metrics.type_sum') }}</option>
+                                <option value="1" {{ $metric->calc_type === 1 ? "selected" : null }}>{{ trans('forms.metrics.type_avg') }}</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <label for="metric-default_value">{{ trans('forms.metrics.default-value') }}</label>
                             <input type="number" class="form-control" name="metric[default_value]" id="metric-default_value" value="{{ $metric->default_value }}">
                         </div>

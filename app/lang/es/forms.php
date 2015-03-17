@@ -59,6 +59,9 @@ return [
         'description'      => 'Descripción',
         'description-help' => 'Puedes usar también Markdown.',
         'display-chart'    => '¿Vizualizar gráfica en la página de estado?',
+        'calc_type'        => 'Calculation of metrics',
+        'type_sum'         => 'Sum',
+        'type_avg'         => 'Average',
 
         'points' => [
             'value' => 'Valor',

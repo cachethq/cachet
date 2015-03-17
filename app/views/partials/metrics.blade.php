@@ -31,37 +31,36 @@
             </div>
         </div>
         <script>
-            var hourList = [];
-            var date = new Date();
+            (function () {
+                var hourList = [], date = new Date();
 
-            for (var i = 10; i >= 1; i--) {
-                hourList.push(moment(date).subtract(i, 'hours').seconds(0).format('HH:ss'));
-            }
+                for (var i = 10; i >= 1; i--) {
+                    hourList.push(moment(date).subtract(i, 'hours').seconds(0).format('HH:ss'));
+                }
 
-            hourList.push(moment(date).seconds(0).format('HH:ss'));
+                hourList.push(moment(date).seconds(0).format('HH:ss'));
 
-            var data = {
-                showTooltips: false,
-                labels: hourList,
-                datasets: [{
-                    fillColor: "rgba(220,220,220,0.2)",
-                    strokeColor: "rgba(220,220,220,1)",
-                    pointColor: "rgba(220,220,220,1)",
-                    pointStrokeColor: "#fff",
-                    pointHighlightFill: "#fff",
-                    pointHighlightStroke: "rgba(220,220,220,1)",
-                    data: [{{ implode(',', $points) }}]
-                }]
-            };
+                var data = {
+                    showTooltips: false,
+                    labels: hourList,
+                    datasets: [{
+                        fillColor: "rgba(220,220,220,0.2)",
+                        strokeColor: "rgba(220,220,220,1)",
+                        pointColor: "rgba(220,220,220,1)",
+                        pointStrokeColor: "#fff",
+                        pointHighlightFill: "#fff",
+                        pointHighlightStroke: "rgba(220,220,220,1)",
+                        data: [{{ implode(',', $points) }}]
+                    }]
+                };
 
-            window.onload = function() {
                 var ctx = document.getElementById("metric-{{ $metric->id }}").getContext("2d");
-                window.myLine = new Chart(ctx).Line(data, {
+                new Chart(ctx).Line(data, {
                     scaleShowVerticalLines: true,
                     pointDot: false,
                     responsive: true
                 });
-            };
+            }());
         </script>
     </li>
     @endforeach
