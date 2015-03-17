@@ -26,7 +26,7 @@
     @include('partials.components')
 
     @if($displayMetrics && Setting::get('display_graphs'))
-    @include('partials.graphs')
+    @include('partials.metrics')
     @endif
 
     @if(!$scheduledMaintenance->isEmpty())
