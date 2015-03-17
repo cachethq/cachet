@@ -58,6 +58,9 @@ return [
         'description'      => 'Description',
         'description-help' => 'You may also use Markdown.',
         'display-chart'    => 'Display chart on status page?',
+        'calc_type'        => 'Calculation of metrics',
+        'type_sum'         => 'Sum',
+        'type_avg'         => 'Average',
 
         'points' => [
             'value' => 'Value',

@@ -61,6 +61,9 @@ return [
         'description-help' => '',
         'display-chart'    => '',
         'default-value'    => '',
+        'calc_type'        => 'Calculation of metrics',
+        'type_sum'         => 'Sum',
+        'type_avg'         => 'Average',
 
         'points' => [
             'value' => '',

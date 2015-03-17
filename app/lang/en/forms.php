@@ -61,6 +61,9 @@ return [
         'description-help' => 'You may also use Markdown.',
         'display-chart'    => 'Display chart on status page?',
         'default-value'    => 'Default value',
+        'calc_type'        => 'Calculation of metrics',
+        'type_sum'         => 'Sum',
+        'type_avg'         => 'Average',
 
         'points' => [
             'value' => 'Value',
