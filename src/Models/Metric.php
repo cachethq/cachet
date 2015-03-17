@@ -76,7 +76,7 @@ class Metric extends Model implements TransformableInterface
         $dateTime->sub(new DateInterval('PT'.$hour.'H'));
 
         if (Config::get('database.default') === 'mysql') {
-            $value = (int) $this->points()->whereRaw('DATE_FORMAT(created_at, "%Y%c%e%H") = '.$dateTime->format('YmdH'))->whereRaw('HOUR(created_at) = HOUR(DATE_SUB(NOW(), INTERVAL '.$hour.' HOUR))')->groupBy(DB::raw('HOUR(created_at)'))->sum('value');
+            $value = (int) $this->points()->whereRaw('DATE_FORMAT(created_at, "%Y%m%e%H") = '.$dateTime->format('YmdH'))->whereRaw('HOUR(created_at) = HOUR(DATE_SUB(NOW(), INTERVAL '.$hour.' HOUR))')->groupBy(DB::raw('HOUR(created_at)'))->sum('value');
         } else {
             $query = DB::select("select sum(metric_points.value) as aggregate FROM metrics JOIN metric_points ON metric_points.metric_id = metrics.id WHERE to_char(metric_points.created_at, 'YYYYMMDDHH') = :timestamp AND to_char(metric_points.created_at, 'H') = to_char(now() - interval '{$hour} hour', 'H') GROUP BY to_char(metric_points.created_at, 'H')", [
                 'timestamp' => $dateTime->format('YmdH'),
