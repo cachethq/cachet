@@ -19,19 +19,19 @@ class ComponentTableSeeder extends Seeder
             [
                 "name"        => "API",
                 "description" => "Used by third-parties to connect to us",
-                "status"      => 1,
+                "status"      => 2,
                 "user_id"     => 1,
                 "order"       => 0,
                 "group_id"    => 0,
                 "link"        => "",
             ], [
-                "name"        => "Payments",
-                "description" => "Backed by Stripe",
+                "name"        => "Documentation",
+                "description" => "Kindly powered by Readme.io",
                 "status"      => 1,
                 "user_id"     => 1,
                 "order"       => 0,
                 "group_id"    => 0,
-                "link"        => "",
+                "link"        => "https://docs.cachethq.io",
             ], [
                 "name"        => "Website",
                 "description" => "",
@@ -39,7 +39,15 @@ class ComponentTableSeeder extends Seeder
                 "user_id"     => 1,
                 "order"       => 0,
                 "group_id"    => 0,
-                "link"        => "",
+                "link"        => "https://cachethq.io",
+            ], [
+                "name"        => "Blog",
+                "description" => "The Cachet HQ blog.",
+                "status"      => 1,
+                "user_id"     => 1,
+                "order"       => 0,
+                "group_id"    => 0,
+                "link"        => "https://blog.cachethq.io",
             ],
         ];
 
