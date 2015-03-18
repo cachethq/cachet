@@ -21,7 +21,7 @@ class MetricPoint extends Model
      *
      * @var string[]
      */
-    protected $fillable = ['metric_id', 'value'];
+    protected $fillable = ['metric_id', 'value', 'created_at', 'updated_at'];
 
     /**
      * The validation rules.

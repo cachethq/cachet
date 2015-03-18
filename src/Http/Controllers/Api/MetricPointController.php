@@ -51,7 +51,20 @@ class MetricPointController extends Controller
      */
     public function postMetricPoints($id)
     {
-        return $this->metricPoint->create($id, Binput::all());
+        $pointData = Binput::except('timestamp');
+
+        if ($metric = $this->metricPoint->create($id, $pointData)) {
+            if ($tstamp = Binput::get('timestamp')) {
+                $timestamp = date('Y-m-d H:i:s', $tstamp);
+
+                $metric->update([
+                    'created_at' => $timestamp,
+                    'updated_at' => $timestamp,
+                ]);
+            }
+        }
+
+        return $metric;
     }
 
     /**
