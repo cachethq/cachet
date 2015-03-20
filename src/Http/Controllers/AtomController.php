@@ -24,7 +24,7 @@ class AtomController extends Controller
 
         $feed->setDateFormat('datetime');
 
-        Incident::get()->map(function ($incident) use ($feed) {
+        Incident::all()->map(function ($incident) use ($feed) {
             if ($incident->component) {
                 $componentName = $incident->component->name;
             } else {
