@@ -27,7 +27,11 @@ class LoadConfigServiceProvider extends ServiceProvider
 
         // Set the Segment.com settings.
         $segmentRepository = $this->app->make('CachetHQ\Cachet\Segment\RepositoryInterface');
-        $this->app->config->set('cachethq/segment::write_key', $segmentRepository->fetch());
+        try {
+            $this->app->config->set('cachethq/segment::write_key', $segmentRepository->fetch());
+        } catch (\GuzzleHttp\Exception\ConnectException $e) {
+            // We may not have any connection. Let's not cry about it.
+        }
 
         // Override default app values.
         $this->app->config->set('app.url', $appDomain ?: $this->app->config->get('app.url'));
