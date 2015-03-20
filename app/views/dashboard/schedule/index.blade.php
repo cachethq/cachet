@@ -22,7 +22,7 @@
                     <div class="striped-list">
                         @foreach($schedule as $incident)
                         <div class="row striped-list-item">
-                            <div class="col-md-6">
+                            <div class="col-xs-6">
                                 <strong>{{ $incident->name }}</strong>
                                 <br>
                                 {{ trans('dashboard.schedule.scheduled_at', ['timestamp' => $incident->scheduled_at_iso]) }}
@@ -30,7 +30,7 @@
                                 <p><small>{{ Str::words($incident->message, 5) }}</small></p>
                                 @endif
                             </div>
-                            <div class="col-md-6 text-right">
+                            <div class="col-xs-6 text-right">
                                 <a href="/dashboard/schedule/{{ $incident->id }}/edit" class="btn btn-default">{{ trans('forms.edit') }}</a>
                                 <a href="/dashboard/schedule/{{ $incident->id }}/delete" class="btn btn-danger confirm-action" data-method='DELETE'>{{ trans('forms.delete') }}</a>
                             </div>

@@ -18,11 +18,11 @@
                 <div class="striped-list">
                     @foreach($incidentTemplates as $template)
                     <div class="row striped-list-item">
-                        <div class="col-md-6">
+                        <div class="col-xs-6">
                             <strong>{{ $template->name }}</strong>
                             <p><small>{{ $template->template }}</small></p>
                         </div>
-                        <div class="col-md-6 text-right">
+                        <div class="col-xs-6 text-right">
                             <a href="/dashboard/templates/{{ $template->id }}/edit" class="btn btn-default">{{ trans('forms.edit') }}</a>
                             <a href="/dashboard/templates/{{ $template->id }}/delete" class="btn btn-danger confirm-action" data-method='DELETE'>{{ trans('forms.delete') }}</a>
                         </div>

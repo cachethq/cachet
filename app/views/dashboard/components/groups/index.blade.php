@@ -19,10 +19,10 @@
                 <div class="col-sm-12 striped-list">
                     @forelse($groups as $group)
                     <div class="row striped-list-item">
-                        <div class="col-md-8">
+                        <div class="col-xs-6">
                             <strong>{{ $group->name }}</strong> <span class="label label-info">{{ $group->components->count() }}</span>
                         </div>
-                        <div class="col-md-4 text-right">
+                        <div class="col-xs-6 text-right">
                             <a href="{{ route('dashboard.components.groups.edit', [$group->id]) }}" class="btn btn-default">{{ trans('forms.edit') }}</a>
                             <a href="/dashboard/components/groups/{{ $group->id }}/delete" class="btn btn-danger confirm-action" data-method="DELETE">{{ trans('forms.delete') }}</a>
                         </div>

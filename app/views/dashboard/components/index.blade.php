@@ -20,7 +20,7 @@
                     <div class="col-sm-12 striped-list" id="component-list">
                         @forelse($components as $component)
                         <div class="row striped-list-item">
-                            <div class="col-md-8">
+                            <div class="col-xs-6">
                                 <h4>
                                     @if($components->count() > 1)
                                     <span class="drag-handle"><i class="ion-drag"></i></span>
@@ -34,7 +34,7 @@
                                 <p>{{ $component->description }}</p>
                                 @endif
                             </div>
-                            <div class="col-md-4 text-right">
+                            <div class="col-xs-6 text-right">
                                 <a href="/dashboard/components/{{ $component->id }}/edit" class="btn btn-default">{{ trans('forms.edit') }}</a>
                                 <a href="/dashboard/components/{{ $component->id }}/delete" class="btn btn-danger confirm-action" data-method="DELETE">{{ trans('forms.delete') }}</a>
                             </div>
