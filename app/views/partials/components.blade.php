@@ -1,22 +1,21 @@
-@if($components->count() > 0)
 <ul class="list-group components">
-    @foreach($components as $component)
-    <li class="list-group-item component">
-        <strong>
-            @if($component->link)
-            <a href="{{ $component->link }}" target="_blank">{{ $component->name }}</a>
-            @else
-            {{ $component->name }}
-            @endif
+    @if($componentGroups->count() > 0)
+    @foreach($componentGroups as $componentGroup)
+    @if($componentGroup->components->count() > 0)
+    <li class="list-group-item group-name"><strong>{{ $componentGroup->name }}</strong></li>
 
-            @if($component->description)
-            <i class="ion-ios-help-outline help-icon" data-toggle="tooltip" data-title="{{ $component->description }}"></i>
-            @endif
-        </strong>
-        <div class="pull-right">
-            <small class="text-component-{{ $component->status }}">{{ $component->humanStatus }}</small>
-        </div>
-    </li>
+    @foreach($componentGroup->components as $component)
+    @include('partials.component', compact($component))
     @endforeach
+    @endif
+    @endforeach
+    @endif
+
+    <li class="list-group-item break"></li>
+
+    @if($ungroupedComponents->count() > 0)
+    @foreach($ungroupedComponents as $component)
+    @include('partials.component', compact($component))
+    @endforeach
+    @endif
 </ul>
-@endif

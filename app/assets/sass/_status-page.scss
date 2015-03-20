@@ -263,6 +263,10 @@ body.status-page {
             font-size: 1.1em;
             padding: 15px 15px;
 
+            a {
+                font-weight: 400;
+            }
+
             h4 {
                 margin: 0;
                 font-weight: 400;
@@ -272,6 +276,28 @@ body.status-page {
             p, time {
                 margin-bottom: 0;
                 line-height: 1.3em;
+            }
+
+            &.group-name {
+                font-size: 1.2em;
+                background-color: $cachet_gray_light;
+                padding: {
+                    top: 0.6em;
+                    bottom: 0.6em;
+                }
+            }
+
+            &.sub-component {
+                &:before {
+                    @extend .ion;
+                    content: $ionicon-var-ios-plus-outline;
+                    margin-right: 10px;
+                }
+            }
+
+            &.break {
+                padding: 1px;
+                background-color: $cachet_gray_light;
             }
         }
 

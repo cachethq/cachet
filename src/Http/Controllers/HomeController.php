@@ -4,6 +4,7 @@ namespace CachetHQ\Cachet\Http\Controllers;
 
 use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Cachet\Models\Component;
+use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\Metric;
 use Carbon\Carbon;
@@ -23,20 +24,12 @@ class HomeController extends Controller
      */
     public function showIndex()
     {
-        segment_track('Status Page', [
-            'event' => 'Landed',
-        ]);
-
-        $components = Component::orderBy('order')->orderBy('created_at')->get();
-
-        $allIncidents = [];
-
-        $incidentDays = Setting::get('app_incident_days') ?: 7;
-
         $today = Carbon::now();
         $startDate = Carbon::now();
 
-        $dateFormat = Setting::get('date_format') ?: 'jS F Y';
+        segment_track('Status Page', [
+            'event' => 'Landed',
+        ]);
 
         // Check if we have another starting date
         if (Binput::has('start_date')) {
@@ -73,9 +66,12 @@ class HomeController extends Controller
             $metrics = Metric::where('display_chart', 1)->get();
         }
 
-        $scheduledMaintenance = Incident::scheduled()->orderBy('scheduled_at')->get();
+        $allIncidents = [];
+        $daysToShow = Setting::get('app_incident_days') ?: 7;
+        $incidentDays = range(0, $daysToShow);
+        $dateFormat = Setting::get('date_format') ?: 'jS F Y';
 
-        foreach (range(0, $incidentDays) as $i) {
+        foreach ($incidentDays as $i) {
             $date = $startDate->copy()->subDays($i);
 
             $incidents = Incident::notScheduled()->whereBetween('created_at', [
@@ -89,8 +85,17 @@ class HomeController extends Controller
             ];
         }
 
+        // Scheduled maintenance code.
+        $scheduledMaintenance = Incident::scheduled()->orderBy('scheduled_at')->get();
+
+        // Component & Component Group lists.
+        $usedComponentGroups = Component::where('group_id', '>', 0)->groupBy('group_id')->lists('group_id');
+        $componentGroups = ComponentGroup::whereIn('id', $usedComponentGroups)->get();
+        $ungroupedComponents = Component::where('group_id', 0)->orderBy('order')->orderBy('created_at')->get();
+
         return View::make('index', [
-            'components'           => $components,
+            'componentGroups'      => $componentGroups,
+            'ungroupedComponents'  => $ungroupedComponents,
             'displayMetrics'       => $displayMetrics,
             'metrics'              => $metrics,
             'allIncidents'         => $allIncidents,
