@@ -28,7 +28,7 @@
                         <div class="form-group">
                             <label>{{ trans('forms.metrics.description') }}</label>
                             <div class='markdown-control'>
-                                <textarea name="metric[description]" class="form-control" rows="5" required>{{ $metric->description }}</textarea>
+                                <textarea name="metric[description]" class="form-control" rows="5">{{ $metric->description }}</textarea>
                             </div>
                         </div>
                         <div class="form-group">
