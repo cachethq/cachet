@@ -9,11 +9,12 @@
     @endforeach
     @endif
     @endforeach
+    @if($ungroupedComponents->count() > 0)
+    <li class="list-group-item break"></li>
+    @endif
     @endif
 
     @if($ungroupedComponents->count() > 0)
-    <li class="list-group-item break"></li>
-
     @foreach($ungroupedComponents as $component)
     @include('partials.component', compact($component))
     @endforeach
