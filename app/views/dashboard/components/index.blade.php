@@ -27,8 +27,11 @@
                                     @endif
                                     {{ $component->name }} <small>{{ $component->humanStatus }}</small>
                                 </h4>
+                                @if($component->group)
+                                <p><small>{{ trans('dashboard.components.listed_group', ['name' => $component->group->name]) }}</small></p>
+                                @endif
                                 @if($component->description)
-                                <p><small>{{ $component->description }}</small></p>
+                                <p>{{ $component->description }}</p>
                                 @endif
                             </div>
                             <div class="col-md-4 text-right">

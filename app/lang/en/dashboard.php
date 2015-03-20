@@ -62,6 +62,7 @@ return [
     'components' => [
         'components'         => 'Components',
         'component_statuses' => 'Component Statuses',
+        'listed_group'       => 'Grouped under :name',
         'add'                => [
             'title'   => 'Add a component',
             'message' => 'You should add a component.',
