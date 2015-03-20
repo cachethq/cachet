@@ -3,6 +3,7 @@
 namespace CachetHQ\Cachet\Http\Controllers;
 
 use CachetHQ\Cachet\Models\Setting;
+use CachetHQ\Cachet\Models\User;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
@@ -88,9 +89,12 @@ class DashSettingsController extends Controller
     {
         $this->subMenu['security']['active'] = true;
 
+        $unsecureUsers = User::whereNull('google_2fa_secret')->orWhere('google_2fa_secret', '')->get();
+
         return View::make('dashboard.settings.security')->with([
-            'pageTitle' => 'Security - Dashboard',
-            'subMenu'   => $this->subMenu,
+            'pageTitle'     => 'Security - Dashboard',
+            'subMenu'       => $this->subMenu,
+            'unsecureUsers' => $unsecureUsers,
         ]);
     }
 
