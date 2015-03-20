@@ -39,6 +39,8 @@
                         </div>
 
                         @if(! $unsecureUsers->isEmpty())
+                        <hr>
+
                         <div class="panel panel-danger">
                             <div class="panel-heading">{{ trans('dashboard.settings.security.two-factor') }}</div>
                             <div class="list-group">
