@@ -253,6 +253,12 @@ class DashComponentController extends Controller
             'event' => 'Deleted Component Group',
         ]);
 
+        $group->components->map(function ($component) {
+            $component->update([
+                'group_id' => 0,
+            ]);
+        });
+
         $group->delete();
 
         return Redirect::back();
