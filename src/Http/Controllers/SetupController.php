@@ -60,9 +60,20 @@ class SetupController extends Controller
         ]);
 
         if ($v->passes()) {
+            segment_track('Setup', [
+                'event'   => 'Step 1',
+                'success' => true,
+            ]);
+
             return Response::json(['status' => 1]);
         } else {
             // No good, let's try that again.
+
+            segment_track('Setup', [
+                'event'   => 'Step 1',
+                'success' => false,
+            ]);
+
             return Response::json(['errors' => $v->messages()], 400);
         }
     }
@@ -115,12 +126,22 @@ class SetupController extends Controller
 
             Session::flash('setup.done', true);
 
+            segment_track('Setup', [
+                'event'   => 'Step 2',
+                'success' => true,
+            ]);
+
             if (Request::ajax()) {
                 return Response::json(['status' => 1]);
             }
 
             return Redirect::to('dashboard');
         } else {
+            segment_track('Setup', [
+                'event'   => 'Step 2',
+                'success' => false,
+            ]);
+
             // No good, let's try that again.
             if (Request::ajax()) {
                 return Response::json(['errors' => $v->messages()], 400);
