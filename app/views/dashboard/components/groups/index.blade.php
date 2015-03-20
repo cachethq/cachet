@@ -20,7 +20,7 @@
                     @forelse($groups as $group)
                     <div class="row striped-list-item">
                         <div class="col-md-8">
-                            <strong>{{ $group->name }}</strong>
+                            <strong>{{ $group->name }}</strong> <span class="label label-info">{{ $group->components->count() }}</span>
                         </div>
                         <div class="col-md-4 text-right">
                             <a href="{{ route('dashboard.components.groups.edit', [$group->id]) }}" class="btn btn-default">{{ trans('forms.edit') }}</a>
