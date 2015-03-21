@@ -2,16 +2,16 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Admin;
 
+use CachetHQ\Cachet\Http\Controllers\AbstractController;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Tag;
 use GrahamCampbell\Binput\Facades\Binput;
-use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 
-class ComponentController extends Controller
+class ComponentController extends AbstractController
 {
     protected $subMenu = [];
 

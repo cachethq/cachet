@@ -3,10 +3,10 @@
 namespace CachetHQ\Cachet\Http\Controllers\Admin;
 
 use CachetHQ\Cachet\Facades\Setting;
+use CachetHQ\Cachet\Http\Controllers\AbstractController;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentTemplate;
 use GrahamCampbell\Binput\Facades\Binput;
-use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Redirect;
@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\View;
 use Illuminate\Support\MessageBag;
 use Jenssegers\Date\Date;
 
-class ScheduleController extends Controller
+class ScheduleController extends AbstractController
 {
     /**
      * Stores the sub-sidebar tree list.

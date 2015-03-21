@@ -4,11 +4,10 @@ namespace CachetHQ\Cachet\Http\Controllers;
 
 use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Cachet\Models\Incident;
-use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Response;
 use Roumen\Feed\Facades\Feed;
 
-class RssController extends Controller
+class RssController extends AbstractController
 {
     /**
      * Generates an RSS feed of all incidents.

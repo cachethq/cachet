@@ -2,15 +2,15 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Admin;
 
+use CachetHQ\Cachet\Http\Controllers\AbstractController;
 use CachetHQ\Cachet\Models\User;
 use GrahamCampbell\Binput\Facades\Binput;
-use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 use PragmaRX\Google2FA\Vendor\Laravel\Facade as Google2FA;
 
-class UserController extends Controller
+class UserController extends AbstractController
 {
     /**
      * Shows the user view.
