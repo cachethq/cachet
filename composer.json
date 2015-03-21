@@ -16,7 +16,7 @@
         "ext-apcu": "*",
 		"laravel/framework": "5.0.*",
         "doctrine/dbal": "2.5.*",
-        "cachethq/segment": "2.0.*@dev",
+        "cachethq/segment": "~2.0",
         "graham-campbell/binput": "~3.0",
         "graham-campbell/markdown": "~3.0",
         "graham-campbell/throttle": "~3.0",

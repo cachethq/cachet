@@ -4,20 +4,20 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b5898e1c212d98551d71e6763a852a99",
+    "hash": "03ef1db3076588abcfb5b45dd69d7fa9",
     "packages": [
         {
             "name": "cachethq/segment",
-            "version": "2.0.x-dev",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cachethq/Laravel-Segment.git",
-                "reference": "48c3e1095472b233c2340c3cab64a2d4e0ba3774"
+                "reference": "c3d5ec412237a081bfac0fffb63c92cd9feb9776"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cachethq/Laravel-Segment/zipball/48c3e1095472b233c2340c3cab64a2d4e0ba3774",
-                "reference": "48c3e1095472b233c2340c3cab64a2d4e0ba3774",
+                "url": "https://api.github.com/repos/cachethq/Laravel-Segment/zipball/c3d5ec412237a081bfac0fffb63c92cd9feb9776",
+                "reference": "c3d5ec412237a081bfac0fffb63c92cd9feb9776",
                 "shasum": ""
             },
             "require": {
@@ -66,7 +66,7 @@
                 "segment.com",
                 "segment.io"
             ],
-            "time": "2015-03-20 20:43:22"
+            "time": "2015-03-21 08:11:08"
         },
         {
             "name": "classpreloader/classpreloader",
@@ -4153,9 +4153,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "cachethq/segment": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
