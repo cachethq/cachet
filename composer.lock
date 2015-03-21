@@ -4,8 +4,70 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "907484a92eebc58f9791c3425fad8467",
+    "hash": "b5898e1c212d98551d71e6763a852a99",
     "packages": [
+        {
+            "name": "cachethq/segment",
+            "version": "2.0.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cachethq/Laravel-Segment.git",
+                "reference": "48c3e1095472b233c2340c3cab64a2d4e0ba3774"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cachethq/Laravel-Segment/zipball/48c3e1095472b233c2340c3cab64a2d4e0ba3774",
+                "reference": "48c3e1095472b233c2340c3cab64a2d4e0ba3774",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/config": "~5.0",
+                "illuminate/support": "~5.0",
+                "php": ">=5.4",
+                "segmentio/analytics-php": "~1.1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "CachetHQ\\Segment\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "James Brooks",
+                    "email": "james@cachethq.io"
+                },
+                {
+                    "name": "Joseph Cohen",
+                    "email": "joe@cachethq.io"
+                }
+            ],
+            "description": "Segment.com wrapper written for Laravel",
+            "keywords": [
+                "CachetHQ",
+                "Laravel Segment",
+                "api",
+                "cachet",
+                "framework",
+                "laravel",
+                "segment",
+                "segment.com",
+                "segment.io"
+            ],
+            "time": "2015-03-20 20:43:22"
+        },
         {
             "name": "classpreloader/classpreloader",
             "version": "1.2.0",
@@ -2152,6 +2214,51 @@
             "time": "2015-02-26 12:28:26"
         },
         {
+            "name": "segmentio/analytics-php",
+            "version": "1.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/segmentio/analytics-php.git",
+                "reference": "be9bda98e56848fc1e1a498e4724103dbba2fd13"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/segmentio/analytics-php/zipball/be9bda98e56848fc1e1a498e4724103dbba2fd13",
+                "reference": "be9bda98e56848fc1e1a498e4724103dbba2fd13",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "lib/Segment.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Segment.io <friends@segment.io>",
+                    "homepage": "https://segment.io/"
+                }
+            ],
+            "description": "Segmentio Analytics PHP Library",
+            "homepage": "https://segment.io/libraries/php",
+            "keywords": [
+                "analytics",
+                "analytics.js",
+                "segmentio"
+            ],
+            "time": "2015-03-03 11:51:21"
+        },
+        {
             "name": "swiftmailer/swiftmailer",
             "version": "v5.4.0",
             "source": {
@@ -4046,7 +4153,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "cachethq/segment": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
