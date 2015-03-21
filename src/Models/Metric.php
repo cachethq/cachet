@@ -92,6 +92,8 @@ class Metric extends Model implements TransformableInterface
                 $queryType = "sum(metric_points.value)";
             } elseif ($this->calc_type === self::CALC_AVG) {
                 $queryType = "avg(metric_points.value)";
+            } else {
+                $queryType = "sum(metric_points.value)";
             }
 
             $query = DB::select("select {$queryType} as aggregate FROM metrics JOIN metric_points ON metric_points.metric_id = metrics.id WHERE to_char(metric_points.created_at, 'YYYYMMDDHH') = :timestamp AND to_char(metric_points.created_at, 'H') = to_char(now() - interval '{$hour} hour', 'H') GROUP BY to_char(metric_points.created_at, 'H')", [
