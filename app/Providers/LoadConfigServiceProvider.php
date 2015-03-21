@@ -3,7 +3,7 @@
 namespace CachetHQ\Cachet\Providers;
 
 use CachetHQ\Cachet\Facades\Setting;
-use Illuminate\Database\QueryException;
+use Exception;
 use Illuminate\Support\ServiceProvider;
 
 class LoadConfigServiceProvider extends ServiceProvider
@@ -21,16 +21,16 @@ class LoadConfigServiceProvider extends ServiceProvider
             // Get app custom configuration.
             $appDomain = Setting::get('app_domain');
             $appLocale = Setting::get('app_locale');
-        } catch (QueryException $e) {
+        } catch (Exception $e) {
             // Don't throw any errors, we may not be setup yet.
         }
 
         // Set the Segment.com settings.
-        $segmentRepository = $this->app->make('CachetHQ\Cachet\Segment\RepositoryInterface');
         try {
+            $segmentRepository = $this->app->make('CachetHQ\Cachet\Segment\RepositoryInterface');
             $this->app->config->set('segment.write_key', $segmentRepository->fetch());
-        } catch (\GuzzleHttp\Exception\ConnectException $e) {
-            // We may not have any connection. Let's not cry about it.
+        } catch (Exception $e) {
+
         }
 
         // Override default app values.
