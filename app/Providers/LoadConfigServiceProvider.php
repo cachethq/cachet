@@ -30,7 +30,7 @@ class LoadConfigServiceProvider extends ServiceProvider
             $segmentRepository = $this->app->make('CachetHQ\Cachet\Segment\RepositoryInterface');
             $this->app->config->set('segment.write_key', $segmentRepository->fetch());
         } catch (Exception $e) {
-
+            // Don't throw any errors, we may not be able to fetch.
         }
 
         // Override default app values.
