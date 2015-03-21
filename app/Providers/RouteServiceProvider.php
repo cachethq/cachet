@@ -1,4 +1,6 @@
-<?php namespace CachetHQ\Cachet\Providers;
+<?php
+
+namespace CachetHQ\Cachet\Providers;
 
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Routing\Router;

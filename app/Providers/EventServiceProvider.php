@@ -1,4 +1,6 @@
-<?php namespace CachetHQ\Cachet\Providers;
+<?php
+
+namespace CachetHQ\Cachet\Providers;
 
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;

@@ -1,4 +1,6 @@
-<?php namespace CachetHQ\Cachet\Providers;
+<?php
+
+namespace CachetHQ\Cachet\Providers;
 
 use Illuminate\Bus\Dispatcher;
 use Illuminate\Support\ServiceProvider;
