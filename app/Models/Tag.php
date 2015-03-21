@@ -4,7 +4,6 @@ namespace CachetHQ\Cachet\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
-use Watson\Validating\ValidatingTrait;
 
 /**
  * @property int            $id
@@ -15,8 +14,6 @@ use Watson\Validating\ValidatingTrait;
  */
 class Tag extends Model
 {
-    use ValidatingTrait;
-
     /**
      * The fillable properties.
      *

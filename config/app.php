@@ -164,6 +164,7 @@ return [
         'CachetHQ\Cachet\Providers\SegmentApiServiceProvider',
         'CachetHQ\Cachet\Providers\ViewComposerServiceProvider',
         'CachetHQ\Cachet\Providers\LoadConfigServiceProvider',
+        'CachetHQ\Segment\SegmentServiceProvider',
 
     ],
 
