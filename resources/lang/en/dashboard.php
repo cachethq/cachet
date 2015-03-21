@@ -133,7 +133,7 @@ return [
             'too-big'     => 'The file you uploaded is too big. Upload an image smaller than :size',
         ],
         'security' => [
-            'security' => 'Security',
+            'security'   => 'Security',
             'two-factor' => 'Users without two-factor authentication',
         ],
         'stylesheet' => [
