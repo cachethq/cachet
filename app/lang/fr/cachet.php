@@ -19,6 +19,7 @@ return [
         'next_week'     => 'Semaine suivante',
         'none'          => 'Rien à reporter',
         'status'        => [
+            0 => '',
             1 => 'Enquête en cours',
             2 => 'Identifié',
             3 => 'Analyse en cours',
