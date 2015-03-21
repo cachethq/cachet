@@ -4,11 +4,11 @@ require('laravel-elixir-jshint');
 
 elixir(function (mix) {
     mix
-        .sass('app/assets/sass/main.scss')
-        .jshint('app/assets/js/*.js')
+        .sass('main.scss')
+        .jshint('resources/assets/js/*.js')
         .styles([
-            'app/assets/bower_components/ionicons/css/ionicons.css',
-            'app/assets/bower_components/jquery-minicolors/jquery.minicolors.css',
+            'bower_components/ionicons/css/ionicons.css',
+            'bower_components/jquery-minicolors/jquery.minicolors.css',
             'public/dist/css/main.css'
         ], 'public/dist/css/all.css', './')
         .scripts([
@@ -23,9 +23,9 @@ elixir(function (mix) {
             'bower_components/jquery-minicolors/jquery.minicolors.js',
             'bower_components/jquery-serialize-object/jquery.serialize-object.js',
             'bower_components/chartjs/Chart.js',
-            'js/app.js',
-            'js/**/*.js'
-        ], 'public/dist/js/all.js', './app/assets/')
+            'resources/assets/js/app.js',
+            'resources/assets/js/**/*.js'
+        ], 'public/dist/js/all.js', './')
         .version(['public/dist/css/all.css', 'public/dist/js/all.js'])
-        .copy('app/assets/bower_components/ionicons/fonts', 'public/fonts');
+        .copy('bower_components/ionicons/fonts/', 'public/fonts/');
 });

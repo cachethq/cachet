@@ -1,16 +1,12 @@
 # Laravel
-bootstrap/compiled.php
 vendor
 
 # Configuration
-.env.*.php
-.env.php
+.env
 config.codekit
-!.env.heroku.php
-!.env.example.php
 
 # Assets
-app/assets/bower_components
+bower_components
 node_modules
 public/dist
 public/css

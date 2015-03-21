@@ -1,11 +1,9 @@
 {
-    "name": "cachet",
-    "author": "James Brooks <jbrooksuk@me.com>",
     "dependencies": {
         "bower": "~1.3.12",
         "gulp": "~3.8.8",
         "laravel-elixir": "~0.10.7",
-        "laravel-elixir-jshint": "^0.1.6"
+        "laravel-elixir-jshint": "~0.1.6"
     },
-    "preferGlobal": true
+    "private": true
 }
