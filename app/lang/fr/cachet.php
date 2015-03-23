@@ -22,7 +22,7 @@ return [
             0 => '',
             1 => 'Enquête en cours',
             2 => 'Identifié',
-            3 => 'Analyse en cours',
+            3 => 'Sous surveillance',
             4 => 'Corrigé',
         ],
     ],
