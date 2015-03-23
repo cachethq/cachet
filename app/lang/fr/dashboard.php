@@ -129,7 +129,7 @@ return [
         'login'      => 'Connexion',
         'logged_in'  => "Vous êtes connecté.",
         'welcome'    => 'Re-bonjour !',
-        'two-factor' => 'Please enter your token.',
+        'two-factor' => 'Entrez votre jeton d\'identification.',
     ],
 
     // Sidebar footer
@@ -140,22 +140,22 @@ return [
     // Notifications
     'notifications'     => [
         'notifications' => 'Notifications',
-        'awesome'       => 'Cool.',
+        'awesome'       => 'Super.',
         'whoops'        => 'Oups.',
     ],
 
     // Welcome modal
     'welcome' => [
-        'welcome' => 'Welcome to Cachet',
-        'message' => 'Your status page is almost ready! You might want to configure these extra settings',
-        'close'   => 'Just go straight to my dashboard',
+        'welcome' => 'Bienvenue dans Cachet',
+        'message' => 'Votre page d\'état est presque prête! Vous voudrez probablement configurer ces réglages supplémentaires',
+        'close'   => 'Aller directement au tableau de bord',
         'steps'   => [
-            'component'  => 'Create components',
-            'incident'   => 'Create incidents',
-            'customize'  => 'Customize your Cachet Status Page.',
-            'team'       => 'Add users to your team.',
-            'api'        => 'Generate API token.',
-            'two-factor' => 'Enable Two Factor Authetication.',
+            'component'  => 'Créer une composante',
+            'incident'   => 'Créer un incident',
+            'customize'  => 'Configurer votre Cachet.',
+            'team'       => 'Ajouter des utilisateurs à votre équipe.',
+            'api'        => 'Générer un jeton d\'identification API.',
+            'two-factor' => 'Activer l\'identification à deux étapes.',
         ],
     ],
 
