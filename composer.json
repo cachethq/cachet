@@ -8,13 +8,10 @@
     ],
     "license": "BSD-3-Clause",
     "type": "project",
-	"require": {
-        "php": ">=5.4",
-        "ext-mbstring": "*",
-        "ext-mcrypt": "*",
-        "ext-openssl": "*",
+    "require": {
+        "php": ">=5.4.0",
         "ext-apcu": "*",
-		"laravel/framework": "5.0.*",
+        "laravel/framework": "5.0.*",
         "doctrine/dbal": "2.5.*",
         "cachethq/segment": "~2.0",
         "graham-campbell/binput": "~3.0",
@@ -28,45 +25,45 @@
         "roumen/feed": "~2.9",
         "watson/validating": "~1.0",
         "fideloper/proxy": "~3.0"
-	},
-	"require-dev": {
+    },
+    "require-dev": {
         "phpunit/phpunit": "~4.3",
         "mockery/mockery": "0.9.*"
-	},
-	"autoload": {
-		"classmap": [
-			"database"
-		],
+    },
+        "autoload": {
+        "classmap": [
+            "database"
+        ],
         "files": [
             "app/Http/helpers.php"
         ],
-		"psr-4": {
-			"CachetHQ\\Cachet\\": "app/"
-		}
-	},
-	"autoload-dev": {
-		"classmap": [
-			"tests/TestCase.php"
-		]
-	},
-	"scripts": {
-		"post-install-cmd": [
-			"php artisan clear-compiled",
-			"php artisan optimize",
+        "psr-4": {
+            "CachetHQ\\Cachet\\": "app/"
+        }
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/TestCase.php"
+        ]
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "php artisan clear-compiled",
+            "php artisan optimize",
             "chmod -R 755 storage",
             "php artisan cachet:one-click-deploy"
-		],
-		"post-update-cmd": [
-			"php artisan clear-compiled",
-			"php artisan optimize",
+        ],
+        "post-update-cmd": [
+            "php artisan clear-compiled",
+            "php artisan optimize",
             "chmod -R 755 storage"
-		],
-		"post-create-project-cmd": [
-			"php -r \"copy('.env.example', '.env');\"",
-			"php artisan key:generate"
-		]
-	},
-	"config": {
-		"preferred-install": "dist"
-	}
+        ],
+        "post-create-project-cmd": [
+            "php -r \"copy('.env.example', '.env');\"",
+            "php artisan key:generate"
+        ]
+    },
+    "config": {
+        "preferred-install": "dist"
+    }
 }
