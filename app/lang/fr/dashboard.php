@@ -13,12 +13,12 @@ return [
         'add'                      => [
             'title'   => 'Ajouter un incident',
             'success' => 'Incident ajouté.',
-            'failure' => 'Il s\'est passé quelque chose avec cet incident.',
+            'failure' => 'Une erreur s\'est produite lors de l\'ajout de cet incident.',
         ],
         'edit' => [
             'title'   => 'Éditer un incident',
             'success' => 'Incident mis-à-jour.',
-            'failure' => 'Il s\'est passé quelque chose avec cet incident.',
+            'failure' => 'Une erreur s\'est produite lors de la mise à jour de cet incident.',
         ],
 
         // Incident templates
@@ -26,7 +26,7 @@ return [
             'add' => [
                 'title'   => 'Créer un modèle d\'incident',
                 'success' => 'Modèle créé.',
-                'failure' => 'Il s\'est passé quelque chose avec ce modèle d\'incident.',
+                'failure' => 'Une erreur s\'est produite lors de l\'ajout de ce modèle d\'incident.',
             ],
             'edit' => [
                 'title'   => 'Modifier un modèle',
@@ -38,32 +38,32 @@ return [
 
     // Components
     'components' => [
-        'components'         => 'Composant|Composants',
-        'component_statuses' => 'Statut des composants',
+        'components'         => 'Composantes',
+        'component_statuses' => 'Statut des composantes',
         'add'                => [
-            'title'   => 'Créer un composant',
-            'message' => 'Commencez par ajouter un composant.',
-            'success' => 'Composant créé.',
-            'failure' => 'Il s\'est passé quelque chose avec ce composant.',
+            'title'   => 'Créer une composante',
+            'message' => 'Commencez par ajouter une composante.',
+            'success' => 'Composante créée.',
+            'failure' => 'Une erreur s\'est produite lors de l\'ajout de cette composante.',
         ],
         'edit' => [
-            'title'   => 'Éditer un composant',
+            'title'   => 'Éditer une composante',
             'success' => 'Composant mis-à-jour.',
-            'failure' => 'Il s\'est passé quelque chose avec ce composant.',
+            'failure' => 'Une erreur s\'est produite lors de la mise à jour de cette composante.',
         ],
 
         // Component groups
         'groups' => [
-            'groups' => 'Groupe de composants|Groupes de composants',
+            'groups' => 'Groupe de composantes',
             'add'    => [
-                'title'   => 'Ajouter un group de composants',
-                'success' => 'Groupe de composants ajouté.',
-                'failure' => 'Il s\'est passé quelque chose avec ce composantgroupe de composants.',
+                'title'   => 'Ajouter un group de composantes',
+                'success' => 'Groupe de composantes ajouté.',
+                'failure' => 'Une erreur s\'est produite lors de l\'ajout de ce groupe de composantes.',
             ],
             'edit' => [
-                'title'   => 'Edit a component group',
-                'success' => 'Component group updated.',
-                'failure' => 'Something went wrong with the component group.',
+                'title'   => 'Éditer un groupe de composantes',
+                'success' => 'Groupe de composantes mis-à-jour.',
+                'failure' => 'Une erreur s\'est produite lors de la mise à jour de ce groupe de composantes.',
             ],
         ],
     ],
@@ -77,9 +77,9 @@ return [
             'failure' => 'Il s\'est passé quelque chose avec ce point de mesure.',
         ],
         'edit' => [
-            'title'   => 'Edit a metric',
-            'success' => 'Metric updated.',
-            'failure' => 'Something went wrong with the metric.',
+            'title'   => 'Éditer un point de mesure',
+            'success' => 'Point de mesure mis-à-jour.',
+            'failure' => 'Il s\'est passé quelque chose avec ce point de mesure.',
         ],
     ],
 
@@ -88,16 +88,16 @@ return [
         'team'        => 'Équipe',
         'member'      => 'Membre',
         'profile'     => 'Profil',
-        'description' => 'Les membres de l\'équipe pourrons ajouter, modifier &amp; éditer les composants et incidents.',
+        'description' => 'Les membres de l\'équipe pourrons ajouter, modifier &amp; éditer les composantes et incidents.',
         'add'         => [
             'title'   => 'Ajouter un membre à l\'équipe',
             'success' => 'Membre ajouté.',
-            'failure' => 'Il s\'est passé quelque chose avec ce membre.',
+            'failure' => 'Une erreur s\'est produite lors de l\'ajout de ce membre.',
         ],
         'edit'        => [
             'title'   => 'Mettre à jour le profil',
             'success' => 'Profil mis-à-jour.',
-            'failure' => 'Il s\'est passé quelque chose en mettant à jour le profil.',
+            'failure' => 'Une erreur s\'est produite lors de la mise à jour du le profil.',
         ],
     ],
 
