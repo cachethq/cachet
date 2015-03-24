@@ -3,7 +3,6 @@
 namespace CachetHQ\Cachet\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletingTrait;
 use Watson\Validating\ValidatingTrait;
 
 /**
@@ -11,11 +10,10 @@ use Watson\Validating\ValidatingTrait;
  * @property string         $name
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
- * @property \Carbon\Carbon $deleted_at
  */
 class ComponentGroup extends Model
 {
-    use SoftDeletingTrait, ValidatingTrait;
+    use ValidatingTrait;
 
     /**
      * The validation rules.
