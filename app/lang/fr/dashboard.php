@@ -36,6 +36,26 @@ return [
         ],
     ],
 
+    // Incident Maintenance
+    'schedule' => [
+        'schedule'     => 'Maintenance planifiée',
+        'scheduled_at' => 'Prévue à :timestamp',
+        'add'          => [
+            'title'   => 'Ajouter une maintenance planifiée',
+            'success' => 'Maintenance ajoutée.',
+            'failure' => 'Une erreur s\'est produite lors de l\'ajout de la maintenance.',
+        ],
+        'edit' => [
+            'title'   => 'Éditer la maintenance',
+            'success' => 'Maintenance mise à jour!',
+            'failure' => 'Une erreur s\'est produite lors de la modification de la maintenance.',
+        ],
+        'delete' => [
+            'success' => 'La maintenance a été effacée et ne s\'affihera plus..',
+            'failure' => 'La maintenance n\'a pu être effacée. Veuillez essayez de nouveau.',
+        ],
+    ],
+
     // Components
     'components' => [
         'components'         => 'Composantes',
