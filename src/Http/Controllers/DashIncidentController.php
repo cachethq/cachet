@@ -3,6 +3,7 @@
 namespace CachetHQ\Cachet\Http\Controllers;
 
 use CachetHQ\Cachet\Models\Component;
+use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentTemplate;
 use GrahamCampbell\Binput\Facades\Binput;
@@ -68,10 +69,14 @@ class DashIncidentController extends Controller
      */
     public function showAddIncident()
     {
+        $componentsInGroups = ComponentGroup::with('components')->get();
+        $componentsOutGroups = Component::where('group_id', 0)->get();
+
         return View::make('dashboard.incidents.add')->with([
-            'pageTitle'         => trans('dashboard.incidents.add.title').' - '.trans('dashboard.dashboard'),
-            'components'        => Component::all(),
-            'incidentTemplates' => IncidentTemplate::all(),
+            'pageTitle'           => trans('dashboard.incidents.add.title').' - '.trans('dashboard.dashboard'),
+            'componentsInGroups'  => $componentsInGroups,
+            'componentsOutGroups' => $componentsOutGroups,
+            'incidentTemplates'   => IncidentTemplate::all(),
         ]);
     }
 
@@ -248,10 +253,14 @@ class DashIncidentController extends Controller
      */
     public function showEditIncidentAction(Incident $incident)
     {
+        $componentsInGroups = ComponentGroup::with('components')->get();
+        $componentsOutGroups = Component::where('group_id', 0)->get();
+
         return View::make('dashboard.incidents.edit')->with([
-            'pageTitle'  => trans('dashboard.incidents.edit.title').' - '.trans('dashboard.dashboard'),
-            'incident'   => $incident,
-            'components' => Component::all(),
+            'pageTitle'           => trans('dashboard.incidents.edit.title').' - '.trans('dashboard.dashboard'),
+            'incident'            => $incident,
+            'componentsInGroups'  => $componentsInGroups,
+            'componentsOutGroups' => $componentsOutGroups,
         ]);
     }
 

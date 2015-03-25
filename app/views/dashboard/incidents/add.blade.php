@@ -55,12 +55,19 @@
                                 {{ trans('cachet.incidents.status')[4] }}
                             </label>
                         </div>
-                        @if($components->count() > 0)
+                        @if(!$componentsInGroups->isEmpty() || !$componentsOutGroups->isEmpty())
                         <div class="form-group">
                             <label>{{ trans('forms.incidents.component') }}</label>
                             <select name='incident[component_id]' class='form-control'>
                                 <option value='0' selected></option>
-                                @foreach($components as $component)
+                                @foreach($componentsInGroups as $group)
+                                <optgroup label="{{ $group->name }}">
+                                    @foreach($group->components as $component)
+                                    <option value='{{ $component->id }}'>{{ $component->name }}</option>
+                                    @endforeach
+                                </optgroup>
+                                @endforeach
+                                @foreach($componentsOutGroups as $component)
                                 <option value='{{ $component->id }}'>{{ $component->name }}</option>
                                 @endforeach
                             </select>
