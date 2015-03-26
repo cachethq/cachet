@@ -25,19 +25,11 @@ class RssController extends Controller
         ]);
 
         Incident::get()->map(function ($incident) use ($feed) {
-            if ($incident->component) {
-                $componentName = $incident->component->name;
-            } else {
-                $componentName = null;
-            }
-
             $feed->item([
-                'title'      => $incident->name,
-                'message'    => $incident->message,
-                'component'  => $componentName,
-                'status'     => $incident->humanStatus,
-                'created_at' => $incident->created_at,
-                'updated_at' => $incident->updated_at,
+                'title'       => $incident->name,
+                'description' => $incident->message,
+                'status'      => $incident->humanStatus,
+                'pubDate'     => $incident->created_at->toRssString(),
             ]);
         });
 
