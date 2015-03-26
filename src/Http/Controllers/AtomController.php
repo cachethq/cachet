@@ -25,18 +25,11 @@ class AtomController extends Controller
         $feed->setDateFormat('datetime');
 
         Incident::all()->map(function ($incident) use ($feed) {
-            if ($incident->component) {
-                $componentName = $incident->component->name;
-            } else {
-                $componentName = null;
-            }
-
             $feed->add(
                 $incident->name,
                 Setting::get('app_name'),
                 Setting::get('app_domain'),
-                $incident->created_at,
-                ($componentName === null ? $incident->humanStatus : $componentName.' '.$incident->humanStatus),
+                $incident->created_at->toAtomString(),
                 $incident->message
             );
         });
