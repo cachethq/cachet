@@ -29,12 +29,12 @@ class AtomController extends Controller
 
         if ($group) {
             $group->components->map(function ($component) use ($feed) {
-                $component->incidents->map(function ($incident) use ($feed) {
+                $component->incidents->orderBy('created_at', 'desc')->map(function ($incident) use ($feed) {
                     $this->feedAddItem($feed, $incident);
                 });
             });
         } else {
-            Incident::get()->map(function ($incident) use ($feed) {
+            Incident::orderBy('created_at', 'desc')->get()->map(function ($incident) use ($feed) {
                 $this->feedAddItem($feed, $incident);
             });
         }
