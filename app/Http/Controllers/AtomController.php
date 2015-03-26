@@ -48,7 +48,7 @@ class AtomController extends AbstractController
      *
      * @return void
      */
-    private function feedAddItem(& $feed, $incident)
+    private function feedAddItem(&$feed, $incident)
     {
         $feed->add(
             $incident->name,
