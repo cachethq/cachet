@@ -77,6 +77,10 @@ Now go to `http://<ipdockerisboundto>/setup` and have fun!
 Note: When running in production you should ensure that you enable SSL.
 This is commonly achieved by running Nginx with your certificates on your Docker host, service or load balancers in-front of the running container, or by adding your custom SSL certificates and configuration to the supplied Nginx configuration.
 
+## Addons
+
+- [cachet-monitor](https://github.com/castawaylabs/cachet-monitor) - For url monitoring. Automatic incident updates
+
 ## Read more about Cachet
 
 For more information on why I started developing Cachet, check out my [Cachet articles on my blog](https://james-brooks.uk/tag/cachet/?utm_source=github&utm_medium=readme&utm_campaign=github-cachet).

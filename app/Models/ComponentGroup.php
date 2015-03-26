@@ -3,7 +3,6 @@
 namespace CachetHQ\Cachet\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Watson\Validating\ValidatingTrait;
 
 /**
@@ -15,7 +14,7 @@ use Watson\Validating\ValidatingTrait;
  */
 class ComponentGroup extends Model
 {
-    use SoftDeletes, ValidatingTrait;
+    use ValidatingTrait;
 
     /**
      * The validation rules.
@@ -32,13 +31,6 @@ class ComponentGroup extends Model
      * @var string[]
      */
     protected $fillable = ['name'];
-
-    /**
-     * The attributes that should be mutated to dates.
-     *
-     * @var array
-     */
-    protected $dates = ['deleted_at'];
 
     /**
      * A group can have many components.

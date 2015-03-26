@@ -19,6 +19,7 @@ return [
         'next_week'     => 'nächste Woche',
         'none'          => 'keine Vorfälle',
         'status'        => [
+            0 => '',
             1 => 'Untersuchung läuft',
             2 => 'Problem identifiziert',
             3 => 'Problem unter Beobachtung',

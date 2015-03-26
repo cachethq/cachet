@@ -21,8 +21,8 @@ class StatusPageRoutes
                 'as'   => 'status-page',
                 'uses' => 'HomeController@showIndex',
             ]);
-            $router->get('/atom', 'AtomController@feedAction');
-            $router->get('/rss', 'RssController@feedAction');
+            $router->get('/atom/{component_group?}', 'AtomController@feedAction');
+            $router->get('/rss/{component_group?}', 'RssController@feedAction');
         });
     }
 }

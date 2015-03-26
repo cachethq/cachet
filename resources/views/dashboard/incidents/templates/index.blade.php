@@ -20,7 +20,6 @@
                     <div class="row striped-list-item">
                         <div class="col-xs-6">
                             <strong>{{ $template->name }}</strong>
-                            <p><small>{{ $template->template }}</small></p>
                         </div>
                         <div class="col-xs-6 text-right">
                             <a href="/dashboard/templates/{{ $template->id }}/edit" class="btn btn-default">{{ trans('forms.edit') }}</a>

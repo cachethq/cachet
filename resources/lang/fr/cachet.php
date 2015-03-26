@@ -18,10 +18,13 @@ return [
         'previous_week' => 'Semaine précédente',
         'next_week'     => 'Semaine suivante',
         'none'          => 'Rien à reporter',
+        'scheduled'     => 'Maintenance planifiée',
+        'scheduled_at'  => ', prévue à :timestamp',
         'status'        => [
+            0 => '',
             1 => 'Enquête en cours',
             2 => 'Identifié',
-            3 => 'Analyse en cours',
+            3 => 'Sous surveillance',
             4 => 'Corrigé',
         ],
     ],
@@ -35,6 +38,15 @@ return [
     'api' => [
         'regenerate' => 'Regénérer une clé d\'API',
         'revoke'     => 'Révoquer cette clé d\'API',
+    ],
+
+    // Metrics
+    'metrics' => [
+        'filter' => [
+            'hourly'  => 'Par heure',
+            'daily'   => 'Par jour',
+            'monthly' => 'Par mois',
+        ],
     ],
 
     // Other

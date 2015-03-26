@@ -19,6 +19,7 @@ return [
         'next_week'     => 'Siguiente semana',
         'none'          => 'No hay ninguna incidencia reportada.',
         'status'        => [
+            0 => '',
             1 => 'Investigando',
             2 => 'Identificado',
             3 => 'Observando',
