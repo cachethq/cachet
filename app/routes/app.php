@@ -10,6 +10,6 @@ Route::group(['before' => 'has_setting:app_name', 'namespace' => 'CachetHQ\Cache
 });
 
 Route::group(['namespace' => 'CachetHQ\Cachet\Http\Controllers'], function () {
-    Route::get('/atom', 'AtomController@feedAction');
-    Route::get('/rss', 'RssController@feedAction');
+    Route::get('/atom/{component_group?}', 'AtomController@feedAction');
+    Route::get('/rss/{component_group?}', 'RssController@feedAction');
 });

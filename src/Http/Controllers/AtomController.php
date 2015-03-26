@@ -3,6 +3,7 @@
 namespace CachetHQ\Cachet\Http\Controllers;
 
 use CachetHQ\Cachet\Facades\Setting;
+use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Incident;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Response;
@@ -13,9 +14,11 @@ class AtomController extends Controller
     /**
      * Generates an Atom feed of all incidents.
      *
+     * @param \CachetHQ\Cachet\Models\ComponentGroup|null $group
+     *
      * @return \Illuminate\Http\Response
      */
-    public function feedAction()
+    public function feedAction(ComponentGroup $group = null)
     {
         $feed = Feed::make();
         $feed->title = Setting::get('app_name');
@@ -24,16 +27,37 @@ class AtomController extends Controller
 
         $feed->setDateFormat('datetime');
 
-        Incident::all()->map(function ($incident) use ($feed) {
-            $feed->add(
-                $incident->name,
-                Setting::get('app_name'),
-                Setting::get('app_domain'),
-                $incident->created_at->toAtomString(),
-                $incident->message
-            );
-        });
+        if ($group) {
+            $group->components->map(function ($component) use ($feed) {
+                $component->incidents->map(function ($incident) use ($feed) {
+                    $this->feedAddItem($feed, $incident);
+                });
+            });
+        } else {
+            Incident::get()->map(function ($incident) use ($feed) {
+                $this->feedAddItem($feed, $incident);
+            });
+        }
 
         return $feed->render('atom');
+    }
+
+    /**
+     * Adds an item to the feed.
+     *
+     * @param \Thujohn\Rss\Rss                 $feed
+     * @param \CachetHQ\Cachet\Models\Incident $incident
+     *
+     * @return void
+     */
+    private function feedAddItem(& $feed, $incident)
+    {
+        $feed->add(
+            $incident->name,
+            Setting::get('app_name'),
+            Setting::get('app_domain'),
+            $incident->created_at->toAtomString(),
+            $incident->message
+        );
     }
 }
