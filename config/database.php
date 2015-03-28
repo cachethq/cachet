@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'default' => 'mysql',
+    'default' => env('DB_DRIVER', 'sqlite'),
 
     /*
     |--------------------------------------------------------------------------
@@ -54,10 +54,10 @@ return [
 
         'mysql' => [
             'driver'    => 'mysql',
-            'host'      => env('DB_HOST', 'localhost'),
-            'database'  => env('DB_DATABASE', 'forge'),
-            'username'  => env('DB_USERNAME', 'forge'),
-            'password'  => env('DB_PASSWORD', ''),
+            'host'      => env('DB_HOST', null),
+            'database'  => env('DB_DATABASE', null),
+            'username'  => env('DB_USERNAME', null),
+            'password'  => env('DB_PASSWORD', null),
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
@@ -66,10 +66,10 @@ return [
 
         'pgsql' => [
             'driver'   => 'pgsql',
-            'host'     => env('DB_HOST', 'localhost'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'host'     => env('DB_HOST', null),
+            'database' => env('DB_DATABASE', null),
+            'username' => env('DB_USERNAME', null),
+            'password' => env('DB_PASSWORD', null),
             'charset'  => 'utf8',
             'prefix'   => '',
             'schema'   => 'public',
@@ -77,10 +77,10 @@ return [
 
         'sqlsrv' => [
             'driver'   => 'sqlsrv',
-            'host'     => env('DB_HOST', 'localhost'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'host'     => env('DB_HOST', null),
+            'database' => env('DB_DATABASE', null),
+            'username' => env('DB_USERNAME', null),
+            'password' => env('DB_PASSWORD', null),
             'prefix'   => '',
         ],
 
