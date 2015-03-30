@@ -19,6 +19,7 @@
         "graham-campbell/binput": "^3.0",
         "graham-campbell/markdown": "^3.0",
         "graham-campbell/throttle": "^3.0",
+        "graham-campbell/exceptions": "^1.0",
         "guzzlehttp/guzzle": "^5.0",
         "jenssegers/date": "^2.0",
         "mccool/laravel-auto-presenter": "^3.0",

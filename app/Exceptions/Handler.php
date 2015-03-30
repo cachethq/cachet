@@ -1,7 +1,7 @@
 <?php namespace CachetHQ\Cachet\Exceptions;
 
 use Exception;
-use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use GrahamCampbell\Exceptions\ExceptionHandler as ExceptionHandler;
 use Illuminate\Support\Facades\Response;
 
 class Handler extends ExceptionHandler

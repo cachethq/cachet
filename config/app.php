@@ -142,6 +142,7 @@ return [
          */
         'Fideloper\Proxy\TrustedProxyServiceProvider',
         'GrahamCampbell\Binput\BinputServiceProvider',
+        'GrahamCampbell\Exceptions\ExceptionsServiceProvider',
         'GrahamCampbell\Markdown\MarkdownServiceProvider',
         'GrahamCampbell\Security\SecurityServiceProvider',
         'GrahamCampbell\Throttle\ThrottleServiceProvider',
