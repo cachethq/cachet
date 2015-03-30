@@ -1,7 +1,9 @@
 <?php namespace CachetHQ\Cachet\Exceptions;
 
+use CachetHQ\Cachet\Repositories\InvalidModelValidationException;
 use Exception;
 use GrahamCampbell\Exceptions\ExceptionHandler as ExceptionHandler;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Response;
 
 class Handler extends ExceptionHandler
@@ -16,20 +18,6 @@ class Handler extends ExceptionHandler
     ];
 
     /**
-     * Report or log an exception.
-     *
-     * This is a great spot to send exceptions to Sentry, Bugsnag, etc.
-     *
-     * @param \Exception $e
-     *
-     * @return void
-     */
-    public function report(Exception $e)
-    {
-        return parent::report($e);
-    }
-
-    /**
      * Render an exception into an HTTP response.
      *
      * @param \Illuminate\Http\Request $request
@@ -40,11 +28,11 @@ class Handler extends ExceptionHandler
     public function render($request, Exception $e)
     {
         if ($request->is('api*')) {
-            if ($e instanceof \CachetHQ\Cachet\Repositories\InvalidModelValidationException) {
+            if ($e instanceof InvalidModelValidationException) {
                 return Response::make(['status_code' => 400, 'message' => 'Bad Request'], 400);
             }
 
-            if ($e instanceof \Illuminate\Database\Eloquent\ModelNotFoundException) {
+            if ($e instanceof ModelNotFoundException) {
                 return Response::make(['status_code' => 404, 'error' => 'Resource not found'], 404);
             }
         }
