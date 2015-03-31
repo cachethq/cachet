@@ -14,6 +14,7 @@ cd $OPENSHIFT_REPO_DIR
 cp $OPENSHIFT_REPO_DIR/env.local.php $OPENSHIFT_REPO_DIR/.env.local.php
 php $OPENSHIFT_DATA_DIR/composer.phar install --no-dev -o
 ln -s $OPENSHIFT_REPO_DIR/public $OPENSHIFT_REPO_DIR/php
+php artisan migrate
 
 #/usr/bin/php $OPENSHIFT_REPO_DIR/php/app/console cache:clear --env=dev
 
