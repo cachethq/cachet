@@ -83,16 +83,16 @@ class Metric extends Model implements TransformableInterface
         $dateTime->sub(new DateInterval('PT'.$hour.'H'));
 
         if (Config::get('database.default') === 'mysql') {
-            if (! isset($this->calc_type) || $this->calc_type === self::CALC_SUM) {
+            if (! isset($this->calc_type) || $this->calc_type == self::CALC_SUM) {
                 $value = (int) $this->points()->whereRaw('DATE_FORMAT(created_at, "%Y%m%e%H") = '.$dateTime->format('YmdH'))->whereRaw('HOUR(created_at) = HOUR(DATE_SUB(NOW(), INTERVAL '.$hour.' HOUR))')->groupBy(DB::raw('HOUR(created_at)'))->sum('value');
-            } elseif ($this->calc_type === self::CALC_AVG) {
+            } elseif ($this->calc_type == self::CALC_AVG) {
                 $value = (int) $this->points()->whereRaw('DATE_FORMAT(created_at, "%Y%m%e%H") = '.$dateTime->format('YmdH'))->whereRaw('HOUR(created_at) = HOUR(DATE_SUB(NOW(), INTERVAL '.$hour.' HOUR))')->groupBy(DB::raw('HOUR(created_at)'))->avg('value');
             }
         } else {
             // Default metrics calculations.
-            if (! isset($this->calc_type) || $this->calc_type === self::CALC_SUM) {
+            if (! isset($this->calc_type) || $this->calc_type == self::CALC_SUM) {
                 $queryType = "sum(metric_points.value)";
-            } elseif ($this->calc_type === self::CALC_AVG) {
+            } elseif ($this->calc_type == self::CALC_AVG) {
                 $queryType = "avg(metric_points.value)";
             } else {
                 $queryType = "sum(metric_points.value)";
