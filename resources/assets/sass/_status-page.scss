@@ -139,7 +139,8 @@ body.status-page {
             position: relative;
             &.first {
                 &:before {
-                    height: 130%;
+                    min-height: 110%;
+                    max-height: 130%;
                     top: -20px;
                 }
                 &:after {
