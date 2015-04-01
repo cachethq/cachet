@@ -18,7 +18,7 @@
 - Markdown support for incident messages.
 - RESTful API.
 - Translated into several languages.
-- Easy Heroku deployment.
+- Easy OpenShift deployment.
 - Metrics.
 - Cross-database support: MySQL, PostgreSQL and SQLite.
 
