@@ -4223,7 +4223,7 @@
         "ext-mbstring": "*",
         "ext-mcrypt": "*",
         "ext-openssl": "*",
-        "ext-apcu": "*"
+        "ext-apc": "*"
     },
     "platform-dev": []
 }

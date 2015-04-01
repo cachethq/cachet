@@ -1,0 +1,23 @@
+#!/bin/bash
+
+export COMPOSER_HOME="$OPENSHIFT_DATA_DIR/.composer"
+source ${OPENSHIFT_PHP_DIR}usr/lib/php_config
+ 
+if [ ! -f "$OPENSHIFT_DATA_DIR/composer.phar" ]; then
+    curl -s https://getcomposer.org/installer | php -- --install-dir=$OPENSHIFT_DATA_DIR
+else
+    php $OPENSHIFT_DATA_DIR/composer.phar self-update
+fi
+ 
+unset GIT_DIR 
+cd $OPENSHIFT_REPO_DIR
+cp $OPENSHIFT_REPO_DIR/env.local.php $OPENSHIFT_REPO_DIR/.env.local.php
+php $OPENSHIFT_DATA_DIR/composer.phar install --no-dev -o
+php artisan migrate
+if [ ! -L "$OPENSHIFT_REPO_DIR/php"]; then
+	ln -s $OPENSHIFT_REPO_DIR/public $OPENSHIFT_REPO_DIR/php
+fi
+#/usr/bin/php $OPENSHIFT_REPO_DIR/php/app/console cache:clear --env=dev
+
+#chmod -R 0777 $OPENSHIFT_REPO_DIR/php/app/cache
+#chmod -R 0777 $OPENSHIFT_REPO_DIR/php/app/logs
