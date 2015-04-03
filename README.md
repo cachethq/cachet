@@ -1,4 +1,4 @@
-# Cachet [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+# Cachet
 
 [![StyleCI](https://styleci.io/repos/26730195/shield)](https://styleci.io/repos/26730195/)
 [![Build Status](https://img.shields.io/travis/cachethq/Cachet.svg?style=flat-square)](https://travis-ci.org/cachethq/Cachet)
@@ -18,7 +18,6 @@
 - Markdown support for incident messages.
 - RESTful API.
 - Translated into several languages.
-- Easy Heroku deployment.
 - Metrics.
 - Cross-database support: MySQL, PostgreSQL and SQLite.
 

@@ -3,7 +3,6 @@
 namespace CachetHQ\Cachet\Providers;
 
 use CachetHQ\Cachet\Console\Commands\FixPermissionsCommand;
-use CachetHQ\Cachet\Console\Commands\OneClickDeployCommand;
 use Illuminate\Support\ServiceProvider;
 
 class ConsoleServiceProvider extends ServiceProvider
@@ -32,10 +31,6 @@ class ConsoleServiceProvider extends ServiceProvider
             $databaseDefault = $app->config->get('database.default');
 
             return new FixPermissionsCommand($storageDirectory, $databaseDirectory, $databasePath, $databaseDefault);
-        });
-
-        $this->app->singleton('CachetHQ\Cachet\Console\Commands\OneClickDeployCommand', function ($app) {
-            return new OneClickDeployCommand($app->environment('heroku'));
         });
     }
 }
