@@ -14,7 +14,6 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         'CachetHQ\Cachet\Console\Commands\FixPermissionsCommand',
-        'CachetHQ\Cachet\Console\Commands\OneClickDeployCommand',
     ];
 
     /**
