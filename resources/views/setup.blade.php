@@ -74,13 +74,13 @@
                         </div>
                         <div class="form-group">
                             <label>
-                                <input type="checkbox" name="settings[show_support]" value="1" checked >
-                                {!! trans("setup.show_support") !!}
+                                <input type="checkbox" name="settings[show_support]" value="1" checked>
+                                {{ trans("setup.show_support") }}
                             </label>
                         </div>
                         <div class="form-group">
                             <label>
-                                <input type="checkbox" name="settings[app_track]" value="1" checked >
+                                <input type="checkbox" name="settings[app_track]" value="1" checked>
                                 {{ trans("setup.allow_tracking") }}
                             </label>
                         </div>
