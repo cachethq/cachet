@@ -18,7 +18,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     @include('partials.dashboard.errors')
-                    <p class="lead">{{ trans_choice('dashboard.incidents.logged', $incidents->count(), ['count' => $incidents->count()]) }}</p>
+                    <p class="lead">{!! trans_choice('dashboard.incidents.logged', $incidents->count(), ['count' => $incidents->count()]) !!}</p>
 
                     <div class="striped-list">
                         @foreach($incidents as $incident)
