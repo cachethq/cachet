@@ -43,7 +43,7 @@ class AtomController extends AbstractController
     /**
      * Adds an item to the feed.
      *
-     * @param \Thujohn\Rss\Rss                 $feed
+     * @param Roumen\Feed\Facades\Feed         $feed
      * @param \CachetHQ\Cachet\Models\Incident $incident
      *
      * @return void
