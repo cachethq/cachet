@@ -160,8 +160,13 @@ body.status-page {
                 left: 26px;
                 top: 5px;
                 width: 2px;
-                height: 100%;
+                height: 130%;
                 background: #7266BA;
+            }
+            &:last-child {
+                &:before {
+                    height: 100%;
+                }
             }
             .status-icon {
                 background: #fff;
