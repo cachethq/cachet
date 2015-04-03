@@ -55,8 +55,8 @@ class RssController extends Controller
         $feed->item([
             'title'       => $incident->name,
             'description' => $incident->message,
-            'status'      => $incident->humanStatus,
             'pubDate'     => $incident->created_at->toRssString(),
+            'guid'        => $incident->id,
         ]);
     }
 }
