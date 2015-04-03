@@ -80,8 +80,8 @@ return [
             'about-this-page'   => 'crwdns402:0crwdne402:0',
             'days-of-incidents' => 'crwdns403:0crwdne403:0',
             'banner'            => 'crwdns404:0crwdne404:0',
-            'banner-help'       => "crwdns405:0crwdne405:0",
-            'google-analytics'  => "crwdns406:0crwdne406:0",
+            'banner-help'       => 'crwdns405:0crwdne405:0',
+            'analytics_google'  => 'crwdns406:0crwdne406:0',
         ],
         'security' => [
             'allowed-domains'      => 'crwdns407:0crwdne407:0',

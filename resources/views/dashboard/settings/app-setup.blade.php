@@ -46,8 +46,16 @@
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="form-group">
-                                        <label>{{ trans('forms.settings.app-setup.google-analytics') }}</label>
+                                        <label>{{ trans('forms.settings.app-setup.analytics_google') }}</label>
                                         <input type="text" name="app_analytics" class="form-control" value="{{ Setting::get('app_analytics') }}" placeholder="UA-12345-12">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="form-group">
+                                        <label>{{ trans('forms.settings.app-setup.analytics_gosquared') }}</label>
+                                        <input type="text" name="app_analytics_gs" class="form-control" value="{{ Setting::get('app_analytics_gs') }}" placeholder="GSN-12345-A">
                                     </div>
                                 </div>
                             </div>
