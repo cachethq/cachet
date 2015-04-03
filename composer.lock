@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e498b782b018084158f8eba6570a322f",
+    "hash": "3f3ab385fbc40d0d67da0de8ee0f87ee",
     "packages": [
         {
             "name": "cachethq/segment",
