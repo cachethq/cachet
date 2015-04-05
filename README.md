@@ -37,7 +37,16 @@ The following extra dependencies are required to develop Cachet.
 
 ## Installation & Documentation
 
-You can now find our documentation at [https://docs.cachethq.io](https://docs.cachethq.io) or, directly at [http://cachet.readme.io](http://cachet.readme.io) if the first link fails to load. [Cachet Demo](https://demo.cachethq.io)
+You can now find our documentation at [https://docs.cachethq.io](https://docs.cachethq.io) or, directly at [http://cachet.readme.io](http://cachet.readme.io) if the first link fails to load. [Cachet Demo](https://demo.cachethq.io).
+
+### Demo Account
+
+To test out the demo, you may login to the [Dashboard](https://demo.cachethq.io/dashboard) with the following:
+
+- **Username:** test@test.com
+- **Password:** test123
+
+The demo is reset every half past the hour.
 
 ## What Cachet is not
 
