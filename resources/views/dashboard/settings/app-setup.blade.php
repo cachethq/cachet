@@ -38,7 +38,7 @@
                                     <div class="form-group">
                                         <label>{{ trans('forms.settings.app-setup.about-this-page') }}</label>
                                         <div class='markdown-control'>
-                                            <textarea name="app_about" class="form-control" rows="4">{{ Setting::get('app_about') }}</textarea>
+                                            <textarea name="app_about" class="form-control autosize" rows="4">{{ Setting::get('app_about') }}</textarea>
                                         </div>
                                     </div>
                                 </div>

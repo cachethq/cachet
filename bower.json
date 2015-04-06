@@ -1,6 +1,7 @@
 {
     "name": "Cachet",
     "dependencies": {
+        "autosize": "~2.0.0",
         "bootstrap-sass": "~3.3.3",
         "humane-js": "~3.2.2",
         "ionicons": "~2.0.0",

@@ -80,7 +80,7 @@
                         <div class="form-group">
                             <label>{{ trans('forms.incidents.message') }}</label>
                             <div class='markdown-control'>
-                                <textarea name="incident[message]" class="form-control" rows="5" required>{{ $incident->message }}</textarea>
+                                <textarea name="incident[message]" class="form-control autosize" rows="5" required>{{ $incident->message }}</textarea>
                             </div>
                         </div>
                     </fieldset>
