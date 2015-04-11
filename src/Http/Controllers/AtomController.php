@@ -6,7 +6,6 @@ use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Incident;
 use Illuminate\Routing\Controller;
-use Illuminate\Support\Facades\Response;
 use Roumen\Feed\Facades\Feed;
 
 class AtomController extends Controller

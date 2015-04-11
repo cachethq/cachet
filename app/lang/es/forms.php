@@ -81,8 +81,8 @@ return [
             'about-this-page'   => 'Sobre esta página',
             'days-of-incidents' => '¿Cuántos días de incidentes mostrar?',
             'banner'            => 'Imagen de inicio',
-            'banner-help'       => "Se recomienda subir una imagen no más grande de 930px de ancho .",
-            'google-analytics'  => "Código de Google Analytics",
+            'banner-help'       => 'Se recomienda subir una imagen no más grande de 930px de ancho .',
+            'google-analytics'  => 'Código de Google Analytics',
         ],
         'security' => [
             'allowed-domains'      => 'Dominios permitidos',

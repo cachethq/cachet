@@ -80,8 +80,8 @@ return [
             'about-this-page'   => 'Über diese Seite',
             'days-of-incidents' => 'Wie viele (vergangene) Tage sollen angezeigt werden?',
             'banner'            => 'Banner-Bild',
-            'banner-help'       => "Wählen Sie möglichst ein Bild mit 930 px Breite.",
-            'google-analytics'  => "Google Analytics Code",
+            'banner-help'       => 'Wählen Sie möglichst ein Bild mit 930 px Breite.',
+            'google-analytics'  => 'Google Analytics Code',
         ],
         'security' => [
             'allowed-domains'      => 'Erlaubte Domains',

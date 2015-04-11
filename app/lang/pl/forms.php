@@ -83,8 +83,8 @@ return [
             'about-this-page'   => 'O tej stronie',
             'days-of-incidents' => 'Ile dni incydentów pokazywać?',
             'banner'            => 'Obrazek z logo',
-            'banner-help'       => "Zaleca się wrzuać pliki nie szersze niż 930px.",
-            'google-analytics'  => "Kod Google Analytics",
+            'banner-help'       => 'Zaleca się wrzuać pliki nie szersze niż 930px.',
+            'google-analytics'  => 'Kod Google Analytics',
         ],
         'security' => [
             'allowed-domains'      => 'Dozwolone domenyw',

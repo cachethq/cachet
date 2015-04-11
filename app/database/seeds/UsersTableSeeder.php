@@ -17,11 +17,11 @@ class UsersTableSeeder extends Seeder
 
         $users = [
             [
-                "username" => "test",
-                "password" => "test123",
-                "email"    => "test@test.com",
-                "level"    => 1,
-                "api_key"  => "9yMHsdioQosnyVK4iCVR",
+                'username' => 'test',
+                'password' => 'test123',
+                'email'    => 'test@test.com',
+                'level'    => 1,
+                'api_key'  => '9yMHsdioQosnyVK4iCVR',
             ],
         ];
 

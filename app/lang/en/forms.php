@@ -84,7 +84,7 @@ return [
             'days-of-incidents' => 'How many days of incidents to show?',
             'banner'            => 'Banner Image',
             'banner-help'       => "It's recommended that you upload files no bigger than 930px wide .",
-            'google-analytics'  => "Google Analytics code",
+            'google-analytics'  => 'Google Analytics code',
         ],
         'security' => [
             'allowed-domains'      => 'Allowed domains',

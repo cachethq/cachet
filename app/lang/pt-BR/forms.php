@@ -83,8 +83,8 @@ return [
             'about-this-page'   => 'Sobre esta página',
             'days-of-incidents' => 'Quantos dias de incidentes para mostrar?',
             'banner'            => 'Imagem do banner',
-            'banner-help'       => "É recomendável que você faça upload de arquivos menores que 930px .",
-            'google-analytics'  => "Código do Google Analytics",
+            'banner-help'       => 'É recomendável que você faça upload de arquivos menores que 930px .',
+            'google-analytics'  => 'Código do Google Analytics',
         ],
         'security' => [
             'allowed-domains'      => 'Domínios permitidos',
