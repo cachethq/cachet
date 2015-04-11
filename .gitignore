@@ -6,8 +6,8 @@ vendor
 .env.*.php
 .env.php
 config.codekit
-!.env.heroku.php
 !.env.example.php
+!.env.openshift.php
 
 # Assets
 app/assets/bower_components

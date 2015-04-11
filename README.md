@@ -1,4 +1,4 @@
-# Cachet [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+# Cachet [![OpenShift](https://raw.githubusercontent.com/pcon/sticky-notes-quickstart/master/public/openshiftDeploy.png)](https://openshift.redhat.com/app/console/application_types/custom?name=cachethq&initial_git_url=https://github.com/cachethq/Cachet.git&cartridges[]=php-5.4&cartridges[]=mysql-5.5)
 
 [![StyleCI](https://styleci.io/repos/26730195/shield)](https://styleci.io/repos/26730195/)
 [![Build Status](https://img.shields.io/travis/cachethq/Cachet.svg?style=flat-square)](https://travis-ci.org/cachethq/Cachet)
@@ -18,7 +18,7 @@
 - Markdown support for incident messages.
 - RESTful API.
 - Translated into several languages.
-- Easy Heroku deployment.
+- Easy OpenShift deployment.
 - Metrics.
 - Cross-database support: MySQL, PostgreSQL and SQLite.
 
