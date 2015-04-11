@@ -83,7 +83,6 @@ class Metric extends Model implements TransformableInterface
         $dateTime->sub(new DateInterval('PT'.$hour.'H'));
 
         if (Config::get('database.default') === 'mysql') {
-
             if (! isset($this->calc_type) || $this->calc_type == self::CALC_SUM) {
                 $value = (int) $this->points()->whereRaw('DATE_FORMAT(created_at, "%Y%m%e%H") = '.$dateTime->sub(new DateInterval('PT'.$hour.'H'))->format('YmdH'))->groupBy(DB::raw('HOUR(created_at)'))->sum('value');
             } elseif ($this->calc_type == self::CALC_AVG) {
