@@ -8,7 +8,7 @@ return [
     'pl'      => 'Polski',
     'es'      => 'Español',
     'fr'      => 'Français',
-	'nl'      => 'Nederlands',
+    'nl'      => 'Nederlands',
     'pt-BR'   => 'Portuguese, Brazilian',
     'zh-Hant' => 'Chinese (Traditional)',
     'zh-Hans' => 'Chinese (Simplified)',
