@@ -2,7 +2,7 @@
 <ul class="list-group metrics">
     @foreach($metrics as $metric)
     <?php
-        $points = range(0, 10);
+        $points = range(1, 11);
         foreach($points as $hour) {
             $points[$hour] = $metric->getValues($hour);
         }
