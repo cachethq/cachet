@@ -83,7 +83,7 @@ return [
             'about-this-page'   => 'Over deze pagina',
             'days-of-incidents' => 'Hoeveel dagen van incidenten tonen?',
             'banner'            => 'Bannerafbeelding',
-            'banner-help'       => "Het wordt aangeraden om geen bestanden groter dan 930px breed te uploaden.",
+            'banner-help'       => 'Het wordt aangeraden om geen bestanden groter dan 930px breed te uploaden.',
             'google-analytics'  => 'Google Analytics-code',
         ],
         'security' => [
