@@ -17,36 +17,36 @@ class SettingsTableSeeder extends Seeder
 
         $defaultSettings = [
             [
-                "name"  => "app_name",
-                "value" => "Cachet Demo",
+                'name'  => 'app_name',
+                'value' => 'Cachet Demo',
             ],
             [
-                "name"  => "app_domain",
-                "value" => "https://demo.cachethq.io",
+                'name'  => 'app_domain',
+                'value' => 'https://demo.cachethq.io',
             ],
             [
-                "name"  => "show_support",
-                "value" => "1",
+                'name'  => 'show_support',
+                'value' => '1',
             ],
             [
-                "name"  => "app_locale",
-                "value" => "en",
+                'name'  => 'app_locale',
+                'value' => 'en',
             ],
             [
-                "name"  => "app_timezone",
-                "value" => "Europe/London",
+                'name'  => 'app_timezone',
+                'value' => 'Europe/London',
             ],
             [
-                "name"  => "app_track",
-                "value" => "1",
+                'name'  => 'app_track',
+                'value' => '1',
             ],
             [
-                "name"  => "app_incident_days",
-                "value" => "7",
+                'name'  => 'app_incident_days',
+                'value' => '7',
             ],
             [
-                "name"  => "app_analytics",
-                "value" => "UA-58442674-3",
+                'name'  => 'app_analytics',
+                'value' => 'UA-58442674-3',
             ],
         ];
 

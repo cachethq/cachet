@@ -10,6 +10,6 @@ return [
     'fr'      => 'Français',
     'nl'      => 'Nederlands',
     'pt-BR'   => 'Portuguese, Brazilian',
-    'zh-Hant' => 'Chinese (Traditional)',
-    'zh-Hans' => 'Chinese (Simplified)',
+    'zh-CN'   => '简体中文',
+    'zh-TW'   => '繁體中文',
 ];
