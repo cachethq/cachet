@@ -147,7 +147,7 @@ return [
     // Login
     'login' => [
         'login'      => 'Connexion',
-        'logged_in'  => "Vous êtes connecté.",
+        'logged_in'  => 'Vous êtes connecté.',
         'welcome'    => 'Re-bonjour !',
         'two-factor' => 'Entrez votre jeton d\'identification.',
     ],

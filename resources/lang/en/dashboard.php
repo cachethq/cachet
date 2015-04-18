@@ -179,7 +179,7 @@ return [
             'customize'  => 'Customize',
             'team'       => 'Add users',
             'api'        => 'Generate API token',
-            'two-factor' => 'Two Factor Authetication',
+            'two-factor' => 'Two Factor Authentication',
         ],
     ],
 

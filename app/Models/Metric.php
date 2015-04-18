@@ -96,7 +96,7 @@ class Metric extends Model
                 $queryType = "sum(metric_points.value)";
             }
 
-            $query = DB::select("select {$queryType} as aggregate FROM metrics JOIN metric_points ON metric_points.metric_id = metrics.id WHERE to_char(metric_points.created_at, 'YYYYMMDDHH') = :timestamp AND to_char(metric_points.created_at, 'H') = to_char(now() - interval '{$hour} hour', 'H') GROUP BY to_char(metric_points.created_at, 'H')", [
+            $query = DB::select("select {$queryType} as aggregate FROM metrics JOIN metric_points ON metric_points.metric_id = metrics.id WHERE metric_points.metric_id = {$this->id} AND to_char(metric_points.created_at, 'YYYYMMDDHH24') = :timestamp AND to_char(metric_points.created_at, 'H') = to_char(now() - interval '{$hour} hour', 'H') GROUP BY to_char(metric_points.created_at, 'H')", [
                 'timestamp' => $dateTime->format('YmdH'),
             ]);
 
