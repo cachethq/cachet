@@ -1,4 +1,6 @@
-<?php namespace CachetHQ\Cachet\Services;
+<?php
+
+namespace CachetHQ\Cachet\Services;
 
 use CachetHQ\Cachet\User;
 use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
