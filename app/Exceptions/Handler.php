@@ -1,4 +1,6 @@
-<?php namespace CachetHQ\Cachet\Exceptions;
+<?php
+
+namespace CachetHQ\Cachet\Exceptions;
 
 use CachetHQ\Cachet\Repositories\InvalidModelValidationException;
 use Exception;

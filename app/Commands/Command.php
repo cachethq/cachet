@@ -1,4 +1,6 @@
-<?php namespace CachetHQ\Cachet\Commands;
+<?php
+
+namespace CachetHQ\Cachet\Commands;
 
 abstract class Command
 {

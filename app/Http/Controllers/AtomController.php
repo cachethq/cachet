@@ -4,7 +4,6 @@ namespace CachetHQ\Cachet\Http\Controllers;
 
 use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Cachet\Models\Incident;
-use Illuminate\Support\Facades\Response;
 use Roumen\Feed\Facades\Feed;
 
 class AtomController extends AbstractController
