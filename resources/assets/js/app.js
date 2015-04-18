@@ -21,8 +21,6 @@ $(function() {
         }
     });
 
-    autosize($('textarea.autosize'));
-
     // Prevent double form submission
     $('form').submit(function() {
         var $form = $(this);

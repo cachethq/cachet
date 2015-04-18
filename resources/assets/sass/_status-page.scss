@@ -1,5 +1,5 @@
 body.status-page {
-    font-family: 'Open Sans', 'Helevetic Neue', Arial, sans-serif;
+    font-family: $base-font-family;
     background-color: #F0F3F4;
     color: #333333;
     font-size: 1.4em;
@@ -128,7 +128,7 @@ body.status-page {
                     font-size: 1.2em;
                 }
                 p {
-                    margin-top: 8px;
+                    margin: 0;
                 }
             }
         }
@@ -139,8 +139,7 @@ body.status-page {
             position: relative;
             &.first {
                 &:before {
-                    min-height: 110%;
-                    max-height: 130%;
+                    height: 130%;
                     top: -20px;
                 }
                 &:after {
@@ -160,13 +159,8 @@ body.status-page {
                 left: 26px;
                 top: 5px;
                 width: 2px;
-                height: 130%;
+                height: 100%;
                 background: #7266BA;
-            }
-            &:last-child {
-                &:before {
-                    height: 100%;
-                }
             }
             .status-icon {
                 background: #fff;
