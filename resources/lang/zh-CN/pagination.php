@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'previous' => '&laquo; 前一页',
-    'next'     => '后一页 &raquo;',
+    'previous' => '&laquo; 上一个',
+    'next'     => '下一个 &raquo;',
 
 ];
