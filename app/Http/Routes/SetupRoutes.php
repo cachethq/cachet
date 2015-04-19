@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of Cachet.
+ *
+ * (c) James Brooks <james@cachethq.io>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace CachetHQ\Cachet\Http\Routes;
 
 use Illuminate\Contracts\Routing\Registrar;
@@ -10,8 +19,6 @@ class SetupRoutes
      * Define the setup routes.
      *
      * @param \Illuminate\Contracts\Routing\Registrar $router
-     *
-     * @return void
      */
     public function map(Registrar $router)
     {

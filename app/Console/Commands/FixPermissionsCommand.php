@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of Cachet.
+ *
+ * (c) James Brooks <james@cachethq.io>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace CachetHQ\Cachet\Console\Commands;
 
 use DirectoryIterator;
@@ -56,8 +65,6 @@ class FixPermissionsCommand extends Command
      * @param string $databaseDirectory
      * @param string $databasePath
      * @param string $databaseDefault
-     *
-     * @return void
      */
     public function __construct($storageDirectory, $databaseDirectory, $databasePath, $databaseDefault)
     {
@@ -71,8 +78,6 @@ class FixPermissionsCommand extends Command
 
     /**
      * Execute the console command.
-     *
-     * @return void
      */
     public function fire()
     {
@@ -89,8 +94,6 @@ class FixPermissionsCommand extends Command
      *
      * @param string $path
      * @param string $mode
-     *
-     * @return void
      */
     protected function recursiveChmod($path, $mode = '0755')
     {

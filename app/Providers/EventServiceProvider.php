@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of Cachet.
+ *
+ * (c) James Brooks <james@cachethq.io>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace CachetHQ\Cachet\Providers;
 
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
@@ -22,8 +31,6 @@ class EventServiceProvider extends ServiceProvider
      * Register any other events for your application.
      *
      * @param \Illuminate\Contracts\Events\Dispatcher $events
-     *
-     * @return void
      */
     public function boot(DispatcherContract $events)
     {

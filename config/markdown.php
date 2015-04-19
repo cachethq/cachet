@@ -1,9 +1,9 @@
 <?php
 
 /*
- * This file is part of Laravel Markdown.
+ * This file is part of Cachet.
  *
- * (c) Graham Campbell <graham@mineuk.com>
+ * (c) James Brooks <james@cachethq.io>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.

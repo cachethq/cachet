@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of Cachet.
+ *
+ * (c) James Brooks <james@cachethq.io>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace CachetHQ\Cachet\Http\Controllers\Admin;
 
 use CachetHQ\Cachet\Http\Controllers\AbstractController;
@@ -59,7 +68,7 @@ class TeamController extends AbstractController
     {
         $user = User::create(Binput::all());
 
-        if (! $user->isValid()) {
+        if (!$user->isValid()) {
             segment_track('Dashboard', [
                 'event'   => 'Added User',
                 'success' => false,
@@ -107,7 +116,7 @@ class TeamController extends AbstractController
 
         $user->update($items);
 
-        if (! $user->isValid()) {
+        if (!$user->isValid()) {
             segment_track('Dashboard', [
                 'event'   => 'Updated User',
                 'success' => false,

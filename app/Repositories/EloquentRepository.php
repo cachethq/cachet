@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of Cachet.
+ *
+ * (c) James Brooks <james@cachethq.io>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace CachetHQ\Cachet\Repositories;
 
 use Illuminate\Database\Eloquent\Model;
@@ -128,8 +137,6 @@ abstract class EloquentRepository
      * Deletes a model by id.
      *
      * @param int $id
-     *
-     * @return void
      */
     public function destroy($id)
     {

@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of Cachet.
+ *
+ * (c) James Brooks <james@cachethq.io>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace CachetHQ\Cachet\Http\Controllers\Api;
 
 use CachetHQ\Cachet\Http\Controllers\AbstractController as BaseController;
@@ -145,7 +154,7 @@ abstract class AbstractApiController extends BaseController
      */
     protected function respond()
     {
-        if (! empty($this->meta)) {
+        if (!empty($this->meta)) {
             $response['meta'] = $this->meta;
         }
 

@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of Cachet.
+ *
+ * (c) James Brooks <james@cachethq.io>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace CachetHQ\Cachet\Models;
 
 use Illuminate\Auth\Authenticatable;
@@ -57,15 +66,13 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
     /**
      * Overrides the models boot method.
-     *
-     * @return void
      */
     public static function boot()
     {
         parent::boot();
 
         self::creating(function ($user) {
-            if (! $user->api_key) {
+            if (!$user->api_key) {
                 $user->api_key = self::generateApiKey();
             }
         });

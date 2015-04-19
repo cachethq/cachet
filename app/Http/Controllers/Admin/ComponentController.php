@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of Cachet.
+ *
+ * (c) James Brooks <james@cachethq.io>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace CachetHQ\Cachet\Http\Controllers\Admin;
 
 use CachetHQ\Cachet\Http\Controllers\AbstractController;
@@ -112,7 +121,7 @@ class ComponentController extends AbstractController
 
         $component->update($_component);
 
-        if (! $component->isValid()) {
+        if (!$component->isValid()) {
             segment_track('Dashboard', [
                 'event'   => 'Edit Component',
                 'success' => false,
@@ -182,7 +191,7 @@ class ComponentController extends AbstractController
 
         $component = Component::create($_component);
 
-        if (! $component->isValid()) {
+        if (!$component->isValid()) {
             segment_track('Dashboard', [
                 'event'   => 'Created Component',
                 'success' => false,
@@ -301,7 +310,7 @@ class ComponentController extends AbstractController
     {
         $group = ComponentGroup::create(Binput::get('group'));
 
-        if (! $group->isValid()) {
+        if (!$group->isValid()) {
             segment_track('Dashboard', [
                 'event'   => 'Created Component Group',
                 'success' => false,
@@ -342,7 +351,7 @@ class ComponentController extends AbstractController
         $groupData = Binput::get('group');
         $group->update($groupData);
 
-        if (! $group->isValid()) {
+        if (!$group->isValid()) {
             segment_track('Dashboard', [
                 'event'   => 'Edit Component Group',
                 'success' => false,

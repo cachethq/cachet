@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of Cachet.
+ *
+ * (c) James Brooks <james@cachethq.io>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 use CachetHQ\Cachet\Models\Component;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
@@ -8,8 +17,6 @@ class ComponentTableSeeder extends Seeder
 {
     /**
      * Run the database seeding.
-     *
-     * @return void
      */
     public function run()
     {

@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of Cachet.
+ *
+ * (c) James Brooks <james@cachethq.io>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace CachetHQ\Cachet\Http\Controllers\Admin;
 
 use CachetHQ\Cachet\Facades\Setting;
@@ -104,7 +113,7 @@ class ScheduleController extends AbstractController
 
         $incident = Incident::create($scheduleData);
 
-        if (! $incident->isValid()) {
+        if (!$incident->isValid()) {
             segment_track('Dashboard', [
                 'event'   => 'Created Scheduled Maintenance',
                 'success' => false,
@@ -180,7 +189,7 @@ class ScheduleController extends AbstractController
 
         $schedule->update($scheduleData);
 
-        if (! $schedule->isValid()) {
+        if (!$schedule->isValid()) {
             segment_track('Dashboard', [
                 'event'   => 'Edited Schedule',
                 'success' => false,

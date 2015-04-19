@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of Cachet.
+ *
+ * (c) James Brooks <james@cachethq.io>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace CachetHQ\Cachet\Http\Controllers\Api;
 
 use CachetHQ\Cachet\Repositories\Metric\MetricRepository;
@@ -19,8 +28,6 @@ class MetricController extends AbstractApiController
      * Create a new metric controller instance.
      *
      * @param \CachetHQ\Cachet\Repositories\Metric\MetricRepository $metric
-     *
-     * @return void
      */
     public function __construct(MetricRepository $metric)
     {

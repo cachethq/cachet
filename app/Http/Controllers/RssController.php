@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of Cachet.
+ *
+ * (c) James Brooks <james@cachethq.io>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace CachetHQ\Cachet\Http\Controllers;
 
 use CachetHQ\Cachet\Facades\Setting;
@@ -45,8 +54,6 @@ class RssController extends AbstractController
      *
      * @param Roumen\Feed\Facades\Feed         $feed
      * @param \CachetHQ\Cachet\Models\Incident $incident
-     *
-     * @return void
      */
     private function feedAddItem(&$feed, $incident)
     {

@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of Cachet.
+ *
+ * (c) James Brooks <james@cachethq.io>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace CachetHQ\Cachet\Providers;
 
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
@@ -20,8 +29,6 @@ class RouteServiceProvider extends ServiceProvider
      * Define your route model bindings, pattern filters, etc.
      *
      * @param \Illuminate\Routing\Router $router
-     *
-     * @return void
      */
     public function boot(Router $router)
     {
@@ -32,8 +39,6 @@ class RouteServiceProvider extends ServiceProvider
 
     /**
      * Register model bindings.
-     *
-     * @return void
      */
     protected function registerBindings()
     {
@@ -51,8 +56,6 @@ class RouteServiceProvider extends ServiceProvider
      * Define the routes for the application.
      *
      * @param \Illuminate\Routing\Router $router
-     *
-     * @return void
      */
     public function map(Router $router)
     {

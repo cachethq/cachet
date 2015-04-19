@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of Cachet.
+ *
+ * (c) James Brooks <james@cachethq.io>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace CachetHQ\Cachet\Models;
 
 use DateInterval;
@@ -81,14 +90,14 @@ class Metric extends Model
         $dateTime->sub(new DateInterval('PT'.$hour.'H'));
 
         if (Config::get('database.default') === 'mysql') {
-            if (! isset($this->calc_type) || $this->calc_type == self::CALC_SUM) {
+            if (!isset($this->calc_type) || $this->calc_type == self::CALC_SUM) {
                 $value = (int) $this->points()->whereRaw('DATE_FORMAT(created_at, "%Y%m%e%H") = '.$dateTime->sub(new DateInterval('PT'.$hour.'H'))->format('YmdH'))->groupBy(DB::raw('HOUR(created_at)'))->sum('value');
             } elseif ($this->calc_type == self::CALC_AVG) {
                 $value = (int) $this->points()->whereRaw('DATE_FORMAT(created_at, "%Y%m%e%H") = '.$dateTime->sub(new DateInterval('PT'.$hour.'H'))->format('YmdH'))->groupBy(DB::raw('HOUR(created_at)'))->avg('value');
             }
         } else {
             // Default metrics calculations.
-            if (! isset($this->calc_type) || $this->calc_type == self::CALC_SUM) {
+            if (!isset($this->calc_type) || $this->calc_type == self::CALC_SUM) {
                 $queryType = 'sum(metric_points.value)';
             } elseif ($this->calc_type == self::CALC_AVG) {
                 $queryType = 'avg(metric_points.value)';

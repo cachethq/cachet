@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of Cachet.
+ *
+ * (c) James Brooks <james@cachethq.io>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace CachetHQ\Cachet\Repositories\Metric;
 
 use CachetHQ\Cachet\Models\Metric;
@@ -18,8 +27,6 @@ class EloquentMetricRepository extends EloquentRepository implements MetricRepos
      * Create a new eloquent metric repository instance.
      *
      * @param \CachetHQ\Cachet\Models\Metric $model
-     *
-     * @return void
      */
     public function __construct(Metric $model)
     {

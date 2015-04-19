@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of Cachet.
+ *
+ * (c) James Brooks <james@cachethq.io>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace CachetHQ\Cachet\Providers;
 
 use Illuminate\Bus\Dispatcher;
@@ -11,8 +20,6 @@ class BusServiceProvider extends ServiceProvider
      * Bootstrap any application services.
      *
      * @param \Illuminate\Bus\Dispatcher $dispatcher
-     *
-     * @return void
      */
     public function boot(Dispatcher $dispatcher)
     {
@@ -25,8 +32,6 @@ class BusServiceProvider extends ServiceProvider
 
     /**
      * Register any application services.
-     *
-     * @return void
      */
     public function register()
     {

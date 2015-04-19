@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of Cachet.
+ *
+ * (c) James Brooks <james@cachethq.io>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace CachetHQ\Cachet\Http\Controllers\Api;
 
 use CachetHQ\Cachet\Models\Tag;
@@ -20,8 +29,6 @@ class ComponentController extends AbstractApiController
      * Create a new component controller instance.
      *
      * @param \CachetHQ\Cachet\Repositories\Component\ComponentRepository $component
-     *
-     * @return void
      */
     public function __construct(ComponentRepository $component)
     {

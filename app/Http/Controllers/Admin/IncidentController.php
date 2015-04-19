@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of Cachet.
+ *
+ * (c) James Brooks <james@cachethq.io>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace CachetHQ\Cachet\Http\Controllers\Admin;
 
 use CachetHQ\Cachet\Http\Controllers\AbstractController;
@@ -106,7 +115,7 @@ class IncidentController extends AbstractController
 
         $incident = Incident::create($incidentData);
 
-        if (! $incident->isValid()) {
+        if (!$incident->isValid()) {
             segment_track('Dashboard', [
                 'event'   => 'Created Incident',
                 'success' => false,
@@ -197,7 +206,7 @@ class IncidentController extends AbstractController
         $_template = Binput::get('template');
         $template = IncidentTemplate::create($_template);
 
-        if (! $template->isValid()) {
+        if (!$template->isValid()) {
             segment_track('Dashboard', [
                 'event'   => 'Created Incident Template',
                 'success' => false,
@@ -277,7 +286,7 @@ class IncidentController extends AbstractController
         $incidentData['user_id'] = Auth::user()->id;
         $incident->update($incidentData);
 
-        if (! $incident->isValid()) {
+        if (!$incident->isValid()) {
             segment_track('Dashboard', [
                 'event'   => 'Edited Incident',
                 'success' => false,

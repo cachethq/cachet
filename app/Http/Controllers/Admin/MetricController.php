@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of Cachet.
+ *
+ * (c) James Brooks <james@cachethq.io>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace CachetHQ\Cachet\Http\Controllers\Admin;
 
 use CachetHQ\Cachet\Http\Controllers\AbstractController;
@@ -62,7 +71,7 @@ class MetricController extends AbstractController
         $metricData = Binput::get('metric');
         $metric = Metric::create($metricData);
 
-        if (! $metric->isValid()) {
+        if (!$metric->isValid()) {
             segment_track('Dashboard', [
                 'event'   => 'Created Metric',
                 'success' => false,
@@ -113,7 +122,7 @@ class MetricController extends AbstractController
         $_point = Binput::get('point');
         $point = MetricPoint::create($_point);
 
-        if (! $point->isValid()) {
+        if (!$point->isValid()) {
             return Redirect::back()->withInput(Binput::all())
                 ->with('title', sprintf(
                     '<strong>%s</strong> %s',
@@ -173,7 +182,7 @@ class MetricController extends AbstractController
         $_metric = Binput::get('metric');
         $metric->update($_metric);
 
-        if (! $metric->isValid()) {
+        if (!$metric->isValid()) {
             segment_track('Dashboard', [
                 'event'   => 'Edited Metric',
                 'success' => false,

@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of Cachet.
+ *
+ * (c) James Brooks <james@cachethq.io>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace CachetHQ\Cachet\Http\Controllers\Admin;
 
 use CachetHQ\Cachet\Http\Controllers\AbstractController;
@@ -37,14 +46,14 @@ class UserController extends AbstractController
         $enable2FA = (bool) array_pull($items, 'google2fa');
 
         // Let's enable/disable auth
-        if ($enable2FA && ! Auth::user()->hasTwoFactor) {
+        if ($enable2FA && !Auth::user()->hasTwoFactor) {
             $items['google_2fa_secret'] = Google2FA::generateSecretKey();
 
             segment_track('User Management', [
                 'event' => 'enabled_two_factor',
                 'value' => true,
             ]);
-        } elseif (! $enable2FA) {
+        } elseif (!$enable2FA) {
             $items['google_2fa_secret'] = '';
 
             segment_track('User Management', [
@@ -60,7 +69,7 @@ class UserController extends AbstractController
         $user = Auth::user();
         $user->update($items);
 
-        if (! $user->isValid()) {
+        if (!$user->isValid()) {
             return Redirect::back()->withInput(Binput::except('password'))
                 ->with('title', sprintf(
                     '<strong>%s</strong> %s',
