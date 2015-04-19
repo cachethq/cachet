@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3f3ab385fbc40d0d67da0de8ee0f87ee",
+    "hash": "252d2a69c35e100d6eccfd4766be4aa2",
     "packages": [
         {
             "name": "cachethq/segment",
@@ -918,6 +918,69 @@
                 "whoops"
             ],
             "time": "2015-02-04 20:18:59"
+        },
+        {
+            "name": "graham-campbell/htmlmin",
+            "version": "v3.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/GrahamCampbell/Laravel-HTMLMin.git",
+                "reference": "de12b55cb2449824e102a5dd165289e34a9147e1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-HTMLMin/zipball/de12b55cb2449824e102a5dd165289e34a9147e1",
+                "reference": "de12b55cb2449824e102a5dd165289e34a9147e1",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "5.0.*",
+                "illuminate/filesystem": "5.0.*",
+                "illuminate/http": "5.0.*",
+                "illuminate/routing": "5.0.*",
+                "illuminate/support": "5.0.*",
+                "illuminate/view": "5.0.*",
+                "mrclay/minify": "~2.2",
+                "php": ">=5.4.7"
+            },
+            "require-dev": {
+                "graham-campbell/testbench": "~2.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GrahamCampbell\\HTMLMin\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Graham Campbell",
+                    "email": "graham@mineuk.com"
+                }
+            ],
+            "description": "HTMLMin Is A Simple HTML Minifier For Laravel 5",
+            "keywords": [
+                "Graham Campbell",
+                "GrahamCampbell",
+                "Laravel HTMLMin",
+                "Laravel-HTMLMin",
+                "framework",
+                "html",
+                "html minifier",
+                "htmlmin",
+                "laravel",
+                "minifier"
+            ],
+            "time": "2015-03-10 19:45:07"
         },
         {
             "name": "graham-campbell/markdown",
@@ -1933,6 +1996,51 @@
                 "psr-3"
             ],
             "time": "2015-03-09 09:58:04"
+        },
+        {
+            "name": "mrclay/minify",
+            "version": "2.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mrclay/minify.git",
+                "reference": "3c11ba8232a2155a1a29552aafc528be5fb0a662"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mrclay/minify/zipball/3c11ba8232a2155a1a29552aafc528be5fb0a662",
+                "reference": "3c11ba8232a2155a1a29552aafc528be5fb0a662",
+                "shasum": ""
+            },
+            "require": {
+                "ext-pcre": "*",
+                "php": ">=5.2.1"
+            },
+            "require-dev": {
+                "tubalmartin/cssmin": "~2.4.8"
+            },
+            "suggest": {
+                "tubalmartin/cssmin": "Support minify with CSSMin (YUI PHP port)"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "min/lib/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Stephen Clay",
+                    "email": "steve@mrclay.org",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Minify is a PHP5 app that helps you follow several rules for client-side performance. It combines multiple CSS or Javascript files, removes unnecessary whitespace and comments, and serves them with gzip encoding and optimal client-side cache headers",
+            "homepage": "http://code.google.com/p/minify/",
+            "time": "2014-10-30 22:58:02"
         },
         {
             "name": "mtdowling/cron-expression",
