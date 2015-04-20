@@ -22,10 +22,10 @@ RUN echo "APT::Install-Recommends \"0\";" >> /etc/apt/apt.conf.d/02recommends &&
     rm -rf /var/lib/apt/lists/* /usr/share/doc /usr/share/man /tmp/* && \
     chown -R www-data /var/www/html
 
-# Hardcode the Illuminate key in app/config/app.php. If you want security, feel free
+# Hardcode the Illuminate key in config/app.php. If you want security, feel free
 # to override the key in your own container with a 'php artisan key:generate' :)
-RUN sed -i "s/'key' => '\w.*/'key' => 'f20d3e5ae02125a94bd60203a4edfbde',/" app/config/app.php && \
-    grep key app/config/app.php
+RUN sed -i "s/'key' => '\w.*/'key' => 'f20d3e5ae02125a94bd60203a4edfbde',/" config/app.php && \
+    grep key config/app.php
 
 # copy the various nginx and supervisor conf (to handle both fpm and nginx)
 RUN sed -i -e "s/;daemonize\s*=\s*yes/daemonize = no/g" /etc/php5/fpm/php-fpm.conf ;\
