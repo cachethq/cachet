@@ -87,7 +87,8 @@ This is commonly achieved by running Nginx with your certificates on your Docker
 
 ## Addons
 
-- [cachet-monitor](https://github.com/castawaylabs/cachet-monitor) - For url monitoring. Automatic incident updates
+- [cachet-monitor](https://github.com/castawaylabs/cachet-monitor) - For URL monitoring. Automatic incident updates.
+- [sensu-cachet](https://github.com/bimlendu/sensu-cachethq) - Sensu handler for updating CachetHQ.
 
 ## Read more about Cachet
 
