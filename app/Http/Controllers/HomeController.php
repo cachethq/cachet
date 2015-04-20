@@ -81,12 +81,12 @@ class HomeController extends AbstractController
         $allIncidents = Incident::notScheduled()->whereBetween('created_at', [
             $startDate->copy()->subDays($daysToShow)->format('Y-m-d').' 00:00:00',
             $startDate->format('Y-m-d').' 23:59:59',
-        ])->orderBy('created_at', 'desc')->get()->groupBy(function(Incident $incident) use ($dateFormat) {
+        ])->orderBy('created_at', 'desc')->get()->groupBy(function (Incident $incident) use ($dateFormat) {
             return $incident->created_at->format($dateFormat);
         });
 
         // Add in days that have no incidents
-        foreach($incidentDays as $i) {
+        foreach ($incidentDays as $i) {
             $date = $startDate->copy()->subDays($i);
 
             if (!isset($allIncidents[$date->format($dateFormat)])) {
