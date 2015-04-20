@@ -74,23 +74,24 @@ class HomeController extends AbstractController
             $metrics = Metric::where('display_chart', 1)->get();
         }
 
-        $allIncidents = [];
         $daysToShow = Setting::get('app_incident_days') ?: 7;
         $incidentDays = range(0, $daysToShow);
         $dateFormat = Setting::get('date_format') ?: 'jS F Y';
 
-        foreach ($incidentDays as $i) {
+        $allIncidents = Incident::notScheduled()->whereBetween('created_at', [
+            $startDate->copy()->subDays($daysToShow)->format('Y-m-d').' 00:00:00',
+            $startDate->format('Y-m-d').' 23:59:59',
+        ])->orderBy('created_at', 'desc')->get()->groupBy(function(Incident $incident) use ($dateFormat) {
+            return $incident->created_at->format($dateFormat);
+        });
+
+        // Add in days that have no incidents
+        foreach($incidentDays as $i) {
             $date = $startDate->copy()->subDays($i);
 
-            $incidents = Incident::notScheduled()->whereBetween('created_at', [
-                $date->format('Y-m-d').' 00:00:00',
-                $date->format('Y-m-d').' 23:59:59',
-            ])->orderBy('created_at', 'desc')->get();
-
-            $allIncidents[] = [
-                'date'      => (new Date($date->toDateString()))->format($dateFormat),
-                'incidents' => $incidents,
-            ];
+            if (!isset($allIncidents[$date->format($dateFormat)])) {
+                $allIncidents[$date->format($dateFormat)] = [];
+            }
         }
 
         // Scheduled maintenance code.
