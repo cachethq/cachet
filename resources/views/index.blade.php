@@ -34,8 +34,8 @@
     @endif
 
     <h1>{{ trans('cachet.incidents.past') }}</h1>
-    @foreach($allIncidents as $date => $incidents)
-    @include('partials.incidents', compact('date', 'incidents'))
+    @foreach($allIncidents as $incidents)
+    @include('partials.incidents', $incidents)
     @endforeach
     <hr>
 
