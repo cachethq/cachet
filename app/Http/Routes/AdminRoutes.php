@@ -198,9 +198,9 @@ class AdminRoutes
             // Internal API.
             // This should only be used for making requests within the dashboard.
             $router->group(['prefix' => 'api'], function ($router) {
-                $router->get('incidents/templates', 'APIController@getIncidentTemplate');
-                $router->post('components/order', 'APIController@postUpdateComponentOrder');
-                $router->post('components/{component}', 'APIController@postUpdateComponent');
+                $router->get('incidents/templates', 'ApiController@getIncidentTemplate');
+                $router->post('components/order', 'ApiController@postUpdateComponentOrder');
+                $router->post('components/{component}', 'ApiController@postUpdateComponent');
             });
         });
     }
