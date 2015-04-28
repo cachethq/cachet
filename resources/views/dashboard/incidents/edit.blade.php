@@ -44,39 +44,6 @@
                                 {{ trans('cachet.incidents.status')[4] }}
                             </label>
                         </div>
-                        @if(!$componentsInGroups->isEmpty() || !$componentsOutGroups->isEmpty())
-                        <div class="form-group">
-                           <label>{{ trans('forms.incidents.component') }}</label>
-                           <select name='incident[component_id]' class='form-control'>
-                               <option value='0' selected></option>
-                               @foreach($componentsInGroups as $group)
-                               <optgroup label="{{ $group->name }}">
-                                   @foreach($group->components as $component)
-                                   <option value='{{ $component->id }}'>{{ $component->name }}</option>
-                                   @endforeach
-                               </optgroup>
-                               @endforeach
-                               @foreach($componentsOutGroups as $component)
-                               <option value='{{ $component->id }}'>{{ $component->name }}</option>
-                               @endforeach
-                           </select>
-                           <span class='help-block'>{{ trans('forms.optional') }}</span>
-                        </div>
-                        <div class="form-group {{ $incident->component_id === 0 ? 'hidden' : null }}" id='component-status'>
-                            <div class="well">
-                                <div class="radio-items">
-                                    @foreach(trans('cachet.components.status') as $statusID => $status)
-                                    <div class="radio-inline">
-                                        <label>
-                                            <input type="radio" name="incident[component_status]" value="{{ $statusID }}" {{ $incident->component_id > 0 && $incident->component->status === $statusID ? 'checked' : null }}>
-                                            {{ $status }}
-                                        </label>
-                                    </div>
-                                    @endforeach
-                                </div>
-                            </div>
-                        </div>
-                        @endif
                         <div class="form-group">
                             <label>{{ trans('forms.incidents.message') }}</label>
                             <div class='markdown-control'>
