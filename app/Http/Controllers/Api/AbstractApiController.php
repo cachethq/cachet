@@ -95,9 +95,9 @@ abstract class AbstractApiController extends BaseController
      *
      * @return $this
      */
-    protected function setStatusCode($satusCode)
+    protected function setStatusCode($statusCode)
     {
-        $this->satusCode = $satusCode;
+        $this->statusCode = $statusCode;
 
         return $this;
     }
