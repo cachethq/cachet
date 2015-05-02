@@ -91,9 +91,9 @@ class Metric extends Model
 
         if (Config::get('database.default') === 'mysql') {
             if (!isset($this->calc_type) || $this->calc_type == self::CALC_SUM) {
-                $value = (int) $this->points()->whereRaw('DATE_FORMAT(created_at, "%Y%m%e%H") = '.$dateTime->sub(new DateInterval('PT'.$hour.'H'))->format('YmdH'))->groupBy(DB::raw('HOUR(created_at)'))->sum('value');
+                $value = (int) $this->points()->whereRaw('DATE_FORMAT(created_at, "%Y%m%d%H") = '.$dateTime->sub(new DateInterval('PT'.$hour.'H'))->format('YmdH'))->groupBy(DB::raw('HOUR(created_at)'))->sum('value');
             } elseif ($this->calc_type == self::CALC_AVG) {
-                $value = (int) $this->points()->whereRaw('DATE_FORMAT(created_at, "%Y%m%e%H") = '.$dateTime->sub(new DateInterval('PT'.$hour.'H'))->format('YmdH'))->groupBy(DB::raw('HOUR(created_at)'))->avg('value');
+                $value = (int) $this->points()->whereRaw('DATE_FORMAT(created_at, "%Y%m%d%H") = '.$dateTime->sub(new DateInterval('PT'.$hour.'H'))->format('YmdH'))->groupBy(DB::raw('HOUR(created_at)'))->avg('value');
             }
         } else {
             // Default metrics calculations.
