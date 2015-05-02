@@ -6,26 +6,24 @@
             <div class="welcome-logo">
                 <img class="logo" height="50" src="{{ url('img/cachet-logo.svg') }}" alt="Cachet">
             </div>
-            {{ Form::open() }}
-            <fieldset>
-                <legend>{{ trans('dashboard.login.two-factor') }}</legend>
+            <form method="POST" action="/auth/2fa" accept-charset="UTF-8">
+                <fieldset>
+                    <legend>{{ trans('dashboard.login.two-factor') }}</legend>
 
-                @if(Session::has('error'))
-                <p class="text-danger">{{ Session::get('error') }}</p>
-                @endif
+                    @if(Session::has('error'))
+                    <p class="text-danger">{{ Session::get('error') }}</p>
+                    @endif
 
-                <div class="form-group">
-                    <label class="sr-only">{{ trans('forms.login.2fauth') }}</label>
-                    {{ Form::text('code', null, [
-                        'class' => 'form-control', 'placeholder' => trans('forms.login.2fauth'), 'required' => 'required'
-                    ]) }}
-                </div>
-                <hr />
-                <div class="form-group">
-                    <button type="submit" class="btn btn-lg btn-block btn-success">{{ trans('dashboard.login.login') }}</button>
-                </div>
-            </fieldset>
-            {{ Form::close() }}
+                    <div class="form-group">
+                        <label class="sr-only">{{ trans('forms.login.2fauth') }}</label>
+                        <input type="text" name="code" class="form-control" placeholder="{{ trans('forms.login.2fauth') }}" required>
+                    </div>
+                    <hr>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-lg btn-block btn-success">{{ trans('dashboard.login.login') }}</button>
+                    </div>
+                </fieldset>
+            </form>
         </div>
     </div>
 @stop
