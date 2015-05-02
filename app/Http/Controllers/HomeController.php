@@ -96,7 +96,7 @@ class HomeController extends AbstractController
 
         // Sort the array so it takes into account the added days
         $allIncidents->sortBy(function ($value, $key) {
-            return $key;
+            return strtotime($key);
         }, SORT_REGULAR, true);
 
         // Scheduled maintenance code.
