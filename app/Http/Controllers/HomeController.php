@@ -75,7 +75,7 @@ class HomeController extends AbstractController
         }
 
         $daysToShow = Setting::get('app_incident_days') ?: 7;
-        $incidentDays = range(0, $daysToShow);
+        $incidentDays = range(0, $daysToShow - 1);
         $dateFormat = Setting::get('date_format') ?: 'jS F Y';
 
         $allIncidents = Incident::notScheduled()->whereBetween('created_at', [
@@ -117,8 +117,8 @@ class HomeController extends AbstractController
             'pageTitle'            => Setting::get('app_name'),
             'aboutApp'             => Markdown::convertToHtml(Setting::get('app_about')),
             'canPageForward'       => (bool) $today->gt($startDate),
-            'previousDate'         => $startDate->copy()->subWeek()->subDay()->toDateString(),
-            'nextDate'             => $startDate->copy()->addWeek()->addDay()->toDateString(),
+            'previousDate'         => $startDate->copy()->subDays($daysToShow)->toDateString(),
+            'nextDate'             => $startDate->copy()->addDays($daysToShow)->toDateString(),
         ]);
     }
 }
