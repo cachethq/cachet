@@ -28,18 +28,14 @@ class LoadConfigServiceProvider extends ServiceProvider
             // Get app custom configuration.
             $appDomain = Setting::get('app_domain');
             $appLocale = Setting::get('app_locale');
-        } catch (Exception $e) {
-            // Don't throw any errors, we may not be setup yet.
-        }
 
-        // Set the Segment.com settings.
-        if (Setting::get('app_track')) {
-            try {
+            // Set the Segment.com settings.
+            if (Setting::get('app_track')) {
                 $segmentRepository = $this->app->make('CachetHQ\Cachet\Segment\RepositoryInterface');
                 $this->app->config->set('segment.write_key', $segmentRepository->fetch());
-            } catch (Exception $e) {
-                // Don't throw any errors, we may not be able to fetch.
             }
+        } catch (Exception $e) {
+            // Don't throw any errors, we may not be setup yet.
         }
 
         // Override default app values.
