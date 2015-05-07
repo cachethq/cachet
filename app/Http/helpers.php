@@ -140,9 +140,8 @@ if (!function_exists('formatted_date')) {
      */
     function formatted_date($date)
     {
-        $dateTimeZone = Setting::get('app_timezone');
         $dateFormat = Setting::get('date_format') ?: 'jS F Y';
 
-        return (new Date($date))->setTimeZone($dateTimeZone)->format($dateFormat);
+        return (new Date($date))->format($dateFormat);
     }
 }
