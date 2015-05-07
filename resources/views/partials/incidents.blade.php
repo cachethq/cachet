@@ -1,4 +1,4 @@
-<h4>{{ $date }}</h4>
+<h4>{{ formatted_date($date) }}</h4>
 <div class="timeline">
     <div class="content-wrapper">
         @forelse($incidents as $incidentID => $incident)

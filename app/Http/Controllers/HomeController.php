@@ -76,21 +76,22 @@ class HomeController extends AbstractController
 
         $daysToShow = Setting::get('app_incident_days') ?: 7;
         $incidentDays = range(0, $daysToShow - 1);
-        $dateFormat = Setting::get('date_format') ?: 'jS F Y';
+        $dateTimeZone = Setting::get('app_timezone');
 
         $allIncidents = Incident::notScheduled()->whereBetween('created_at', [
             $startDate->copy()->subDays($daysToShow)->format('Y-m-d').' 00:00:00',
             $startDate->format('Y-m-d').' 23:59:59',
-        ])->orderBy('created_at', 'desc')->get()->groupBy(function (Incident $incident) use ($dateFormat) {
-            return $incident->created_at->format($dateFormat);
+        ])->orderBy('created_at', 'desc')->get()->groupBy(function (Incident $incident) use ($dateTimeZone) {
+            return (new Date($incident->created_at))
+                ->setTimezone($dateTimeZone)->toDateString();
         });
 
         // Add in days that have no incidents
         foreach ($incidentDays as $i) {
-            $date = $startDate->copy()->subDays($i);
+            $date = (new Date($startDate))->setTimezone($dateTimeZone)->subDays($i);
 
-            if (!isset($allIncidents[$date->format($dateFormat)])) {
-                $allIncidents[$date->format($dateFormat)] = [];
+            if (!isset($allIncidents[$date->toDateString()])) {
+                $allIncidents[$date->toDateString()] = [];
             }
         }
 

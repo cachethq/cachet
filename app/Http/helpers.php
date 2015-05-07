@@ -13,6 +13,7 @@ use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Segment\Facades\Segment;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Request;
+use Jenssegers\Date\Date;
 
 if (!function_exists('set_active')) {
 
@@ -126,5 +127,22 @@ if (!function_exists('segment_page')) {
                 return false;
             }
         }
+    }
+}
+
+if (!function_exists('formatted_date')) {
+    /**
+     * Formats a date with the user timezone and the selected format.
+     *
+     * @param string $date
+     *
+     * @return \Jenssegers\Date\Date
+     */
+    function formatted_date($date)
+    {
+        $dateTimeZone = Setting::get('app_timezone');
+        $dateFormat = Setting::get('date_format') ?: 'jS F Y';
+
+        return (new Date($date))->setTimeZone($dateTimeZone)->format($dateFormat);
     }
 }
