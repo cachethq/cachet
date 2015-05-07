@@ -133,19 +133,17 @@ $(function() {
             group: "omega",
             handle: ".drag-handle",
             onUpdate: function() {
-                // Loop each component, setting the order input to the new order.
-                var $components = $('#component-list .striped-list-item');
-                $.each($components, function(id) {
-                    // Order should start from 1 now.
-                    $(this).find('input[rel=order]').val(id + 1);
-                });
-
-                // Now POST the form to the internal API.
+                var orderedComponentIds = $.map(
+                    $('#component-list .striped-list-item'),
+                    function(elem) {
+                        return $(elem).data('component-id');
+                    }
+                );
                 $.ajax({
                     async: true,
                     url: '/dashboard/api/components/order',
                     type: 'POST',
-                    data: $('form[name=componentList]').serializeObject(),
+                    data: {ids: orderedComponentIds},
                     success: function() {
                         (new CachetHQ.Notifier()).notify('Components updated.', 'success');
                     }

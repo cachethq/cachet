@@ -46,11 +46,9 @@ class ApiController extends AbstractController
     public function postUpdateComponentOrder()
     {
         $componentData = Binput::all();
-        unset($componentData['component'][0]); // Remove random 0 index.
-
-        foreach ($componentData['component'] as $componentId => $order) {
+        foreach ($componentData['ids'] as $order => $componentId) {
             $component = Component::find($componentId);
-            $component->update(['order' => $order]);
+            $component->update(['order' => $order + 1]); // Ordering should be 1-based, data comes in 0-based
         }
 
         return $componentData;
