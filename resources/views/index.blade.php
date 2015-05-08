@@ -41,11 +41,13 @@
 
     <nav>
         <ul class="pager">
+            @if($canPageBackward)
             <li class="previous">
                 <a href="{{ route('status-page') }}?start_date={{ $previousDate }}">
                     <span aria-hidden="true">&larr;</span> {{ trans('cachet.incidents.previous_week') }}
                 </a>
             </li>
+            @endif
             @if($canPageForward)
             <li class="next">
                 <a href="{{ route('status-page') }}?start_date={{ $nextDate }}">

@@ -108,6 +108,8 @@ class HomeController extends AbstractController
         $componentGroups = ComponentGroup::whereIn('id', $usedComponentGroups)->get();
         $ungroupedComponents = Component::where('group_id', 0)->orderBy('order')->orderBy('created_at')->get();
 
+        $canPageBackward = Incident::notScheduled()->where('created_at', '<', $startDate->format('Y-m-d'))->count() != 0;
+
         return View::make('index', [
             'componentGroups'      => $componentGroups,
             'ungroupedComponents'  => $ungroupedComponents,
@@ -118,6 +120,7 @@ class HomeController extends AbstractController
             'pageTitle'            => Setting::get('app_name'),
             'aboutApp'             => Markdown::convertToHtml(Setting::get('app_about')),
             'canPageForward'       => (bool) $today->gt($startDate),
+            'canPageBackward'      => $canPageBackward,
             'previousDate'         => $startDate->copy()->subDays($daysToShow)->toDateString(),
             'nextDate'             => $startDate->copy()->addDays($daysToShow)->toDateString(),
         ]);
