@@ -30,6 +30,7 @@ return [
         '2fauth'        => '双因素验证代码',
         'invalid'       => '无效的电子邮件或密码。',
         'invalid-token' => '无效的令牌。',
+        'cookies'       => 'You must enable cookies to login.',
     ],
 
     // Incidents form fields

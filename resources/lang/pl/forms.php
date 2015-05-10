@@ -30,6 +30,7 @@ return [
         '2fauth'        => 'Kod autentykacji',
         'invalid'       => 'Nieprawidłowy email lub hasło',
         'invalid-token' => 'Nieprawidłowy kod',
+        'cookies'       => 'You must enable cookies to login.',
     ],
 
     // Incidents form fields

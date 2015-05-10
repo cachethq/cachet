@@ -30,6 +30,7 @@ return [
         '2fauth'        => '驗證碼',
         'invalid'       => '錯誤的電郵地址或密碼',
         'invalid-token' => '錯誤的驗證碼',
+        'cookies'       => 'You must enable cookies to login.',
     ],
 
     // Incidents form fields

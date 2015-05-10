@@ -27,6 +27,9 @@
                             'class' => 'form-control', 'placeholder' => trans('forms.login.password'), 'required' => 'required'
                         ]) !!}
                     </div>
+                    <div class="form-group">
+                        <div class="alert alert-info">{{ trans('forms.login.cookies') }}</div>
+                    </div>
                     <hr>
                     <div class="form-group">
                         <button type="submit" class="btn btn-lg btn-block btn-success">{{ trans('dashboard.login.login') }}</button>

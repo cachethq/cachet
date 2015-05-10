@@ -30,6 +30,7 @@ return [
         '2fauth'        => 'Authenticatiecode',
         'invalid'       => 'Ongeldig e-mailadres of wachtwoord',
         'invalid-token' => 'Ongeldige token',
+        'cookies'       => 'You must enable cookies to login.',
     ],
 
     // Incidents form fields

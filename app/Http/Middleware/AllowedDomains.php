@@ -38,6 +38,8 @@ class AllowedDomains
             foreach ($domains as $domain) {
                 $response->headers->set('Access-Control-Allow-Origin', $domain);
             }
+        } else {
+            $response->headers->set('Access-Control-Allow-Origin', getenv('APP_URL'));
         }
 
         return $response;
