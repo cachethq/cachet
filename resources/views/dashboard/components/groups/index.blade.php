@@ -28,7 +28,7 @@
                         </div>
                     </div>
                     @empty
-                    <div class="list-group-item text-danger">{{ trans('dashboard.components.add.message') }}</div>
+                    <div class="list-group-item text-danger">{{ trans('dashboard.components.groups.no_components') }}</div>
                     @endforelse
                 </div>
             </div>

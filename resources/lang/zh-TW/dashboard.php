@@ -86,8 +86,9 @@ return [
 
         // Component groups
         'groups' => [
-            'groups' => '組件組|組件組',
-            'add'    => [
+            'groups'        => '組件組|組件組',
+            'no_components' => 'You should add a component group.',
+            'add'           => [
                 'title'   => '新增組件組',
                 'success' => '組件組新增成功。',
                 'failure' => '新增組件組時遇到一些問題。',

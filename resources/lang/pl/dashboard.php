@@ -86,8 +86,9 @@ return [
 
         // Component groups
         'groups' => [
-            'groups' => 'Grupa komponenów|Grupy komponentów',
-            'add'    => [
+            'groups'        => 'Grupa komponenów|Grupy komponentów',
+            'no_components' => 'You should add a component group.',
+            'add'           => [
                 'title'   => 'Dodaj grupę komponentów',
                 'success' => 'Grupa komponentów utworzona.',
                 'failure' => 'Coś poszło nie tak przy tworzeniu grupy.',
