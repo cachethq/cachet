@@ -20,14 +20,15 @@ use Watson\Validating\ValidatingTrait;
 /**
  * @property int            $id
  * @property int            $component_id
- * @property int            $user_id
  * @property string         $name
  * @property int            $status
  * @property string         $message
- * @property string         $humanStatus
+ * @property int            $user_id
+ * @property \Carbon\Carbon $scheduled_at
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
  * @property \Carbon\Carbon $deleted_at
+ * @property string         $humanStatus
  */
 class Incident extends Model implements HasPresenter
 {
