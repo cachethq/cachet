@@ -35,12 +35,13 @@ return [
 
     // Incidents form fields
     'incidents' => [
-        'name'         => 'Name',
-        'status'       => 'Status',
-        'component'    => 'Component',
-        'message'      => 'Message',
-        'message-help' => 'You may also use Markdown.',
-        'scheduled_at' => 'When to schedule the maintenance for?',
+        'name'          => 'Name',
+        'status'        => 'Status',
+        'component'     => 'Component',
+        'message'       => 'Message',
+        'message-help'  => 'You may also use Markdown.',
+        'scheduled_at'  => 'When to schedule the maintenance for?',
+        'incident_time' => 'If this incident was in the past, when did it occur?',
 
         'templates' => [
             'name'     => 'Name',
