@@ -126,6 +126,21 @@ $(function() {
         }
     });
 
+    $('input[rel=datepicker-any]').datetimepicker({
+        format: "DD/MM/YYYY HH:mm",
+        sideBySide: true,
+        icons: {
+            time: 'ion-clock',
+            date: 'ion-android-calendar',
+            up: 'ion-ios-arrow-up',
+            down: 'ion-ios-arrow-down',
+            previous: 'ion-ios-arrow-left',
+            next: 'ion-ios-arrow-right',
+            today: 'ion-android-home',
+            clear: 'ion-trash-a',
+        }
+    });
+
     // Sortable components.
     var componentList = document.getElementById("component-list");
     if (componentList) {
