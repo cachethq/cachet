@@ -17,6 +17,7 @@ return [
     'pl'      => 'Polski',
     'es'      => 'Español',
     'fr'      => 'Français',
+    'id'      => 'Indonesian',
     'nl'      => 'Nederlands',
     'pt-BR'   => 'Portuguese, Brazilian',
     'zh-CN'   => '简体中文',
