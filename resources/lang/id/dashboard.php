@@ -88,7 +88,7 @@ return [
         'groups' => [
             'groups'        => 'Grup komponen|Grup komponen',
             'no_components' => 'Anda perlu menambahkan grup komponen.',
-            'add'            => [
+            'add'           => [
                 'title'   => 'Tambahkan grup komponen',
                 'success' => 'Grup komponen sudah ditambahkan.',
                 'failure' => 'Ada masalah dengan grup komponen ini.',
