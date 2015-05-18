@@ -52,7 +52,7 @@ class Incident extends Model implements HasPresenter
      *
      * @var string[]
      */
-    protected $fillable = ['user_id', 'component_id', 'name', 'status', 'message', 'scheduled_at'];
+    protected $fillable = ['user_id', 'component_id', 'name', 'status', 'message', 'scheduled_at', 'created_at', 'updated_at'];
 
     /**
      * The accessors to append to the model's serialized form.
