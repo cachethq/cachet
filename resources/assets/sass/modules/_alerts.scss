@@ -1,0 +1,20 @@
+.alert {
+    border-radius: 4px;
+    &.alert-success {
+        background-color: $cachet_green;
+        border: solid 2px $cachet_dark-green;
+        color: white;
+    }
+
+    &.alert-info {
+        background: $cachet_blue;
+        border: solid 2px $cachet_dark-blue;
+        color: #FFF;
+    }
+
+    &.alert-danger {
+        background: $cachet_red;
+        border: solid 2px $cachet_dark-red;
+        color: #FFF;
+    }
+}
