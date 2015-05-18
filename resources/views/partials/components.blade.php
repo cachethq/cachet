@@ -2,11 +2,16 @@
     @if($componentGroups->count() > 0)
     @foreach($componentGroups as $componentGroup)
     @if($componentGroup->components->count() > 0)
-    <li class="list-group-item group-name"><strong>{{ $componentGroup->name }}</strong></li>
+    <li class="list-group-item group-name">
+        <i class="ion-ios-minus-outline group-toggle"></i>
+        <strong>{{ $componentGroup->name }}</strong>
+    </li>
 
+    <div class="group-items">
     @foreach($componentGroup->components as $component)
     @include('partials.component', compact($component))
     @endforeach
+    </div>
     @endif
     @endforeach
     @if($ungroupedComponents->count() > 0)

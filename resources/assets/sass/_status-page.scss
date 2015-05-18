@@ -268,14 +268,13 @@ body.status-page {
                     top: 0.6em;
                     bottom: 0.6em;
                 }
-            }
-
-            &.sub-component {
-                &:before {
-                    @extend .ion;
-                    content: $ionicon-var-ios-plus-outline;
-                    margin-right: 10px;
-                }
+                cursor: pointer;
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
             }
 
             &.break {
