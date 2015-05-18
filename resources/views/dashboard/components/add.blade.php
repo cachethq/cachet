@@ -38,7 +38,7 @@
                         <div class="form-group">
                             <label>{{ trans('forms.components.group') }}</label>
                             <select name="component[group_id]" class="form-control">
-                                <option selected></option>
+                                <option value="0" selected></option>
                                 @foreach($groups as $group)
                                 <option value="{{ $group->id }}">{{ $group->name }}</option>
                                 @endforeach

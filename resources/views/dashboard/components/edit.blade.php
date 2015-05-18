@@ -38,7 +38,7 @@
                         <div class="form-group">
                             <label>{{ trans('forms.components.group') }}</label>
                             <select name="component[group_id]" class="form-control">
-                                <option {{ $component->group_id === null ? 'selected' : null }}></option>
+                                <option value="0" {{ $component->group_id === null ? 'selected' : null }}></option>
                                 @foreach($groups as $group)
                                 <option value="{{ $group->id }}" {{ $component->group_id === $group->id ? 'selected' : null }}>{{ $group->name }}</option>
                                 @endforeach
