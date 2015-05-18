@@ -1,0 +1,15 @@
+.panel-danger {
+  @include panel-variant($cachet_dark-red, white, $cachet-red, $cachet_dark-red);
+}
+
+.panel-success {
+  @include panel-variant($cachet_dark-green, white, $cachet-green, $cachet_dark-green);
+}
+
+.panel-info {
+  @include panel-variant($cachet_dark-blue, white, $cachet-blue, $cachet_dark-blue);
+}
+
+.panel-warning {
+  @include panel-variant($cachet_dark-yellow, $panel-warning-text, $cachet-yellow, $cachet_dark-yellow);
+}
