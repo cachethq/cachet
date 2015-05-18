@@ -1,4 +1,9 @@
 {
+<<<<<<< HEAD
   "dist/css/all.css": "dist/css/all-9e808a49.css",
   "dist/js/all.js": "dist/js/all-a65e8f6d.js"
+=======
+  "dist/css/all.css": "dist/css/all-019f86e2.css",
+  "dist/js/all.js": "dist/js/all-381acbd0.js"
+>>>>>>> 34796ea3a357c990b6f7b2cbde5a74fe7e696c85
 }

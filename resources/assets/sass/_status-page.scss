@@ -65,25 +65,8 @@ body.status-page {
     }
 
     .alert {
-        border-radius: 0;
         font-size: 1.2em;
-        &.alert-success {
-            background-color: $cachet_green;
-            border-color: $cachet_dark-green;
-            color: white;
-        }
-
-        &.alert-info {
-            background: $cachet_blue;
-            border-color: $cachet_dark-blue;
-            color: #FFF;
-        }
-
-        &.alert-danger {
-            background: $cachet_red;
-            border-color: $cachet_dark-red;
-            color: #FFF;
-        }
+        font-weight: 600;
     }
 
     .timeline {

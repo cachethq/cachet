@@ -123,7 +123,6 @@ class IncidentController extends AbstractController
             $incidentData['updated_at'] = $createdAt;
         }
 
-
         $incident = Incident::create($incidentData);
 
         if (!$incident->isValid()) {
