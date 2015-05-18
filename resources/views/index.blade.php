@@ -19,7 +19,7 @@
     @if($aboutApp)
     <div class="about-app">
         <h1>{{ trans('cachet.about_this_site') }}</h1>
-        <p>{{ $aboutApp }}</p>
+        <p>{!! $aboutApp !!}</p>
     </div>
     @endif
 
