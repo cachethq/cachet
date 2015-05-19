@@ -50,6 +50,11 @@
                                 <textarea name="incident[message]" class="form-control autosize" rows="5" required>{{ $incident->message }}</textarea>
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label>{{ trans('forms.incidents.incident_time') }}</label>
+                            <input type="text" name="incident[created_at]" class="form-control" rel="datepicker-any" value="{{ $incident->created_at_datetimepicker }}">
+                            <span class="help-block">{{ trans('forms.optional') }}</span>
+                        </div>
                     </fieldset>
 
                     <input type="hidden" name="incident[id]" value={{$incident->id}}>

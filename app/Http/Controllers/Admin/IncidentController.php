@@ -13,6 +13,7 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Admin;
 
+use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Cachet\Http\Controllers\AbstractController;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
@@ -20,8 +21,10 @@ use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentTemplate;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
+use Jenssegers\Date\Date;
 
 class IncidentController extends AbstractController
 {
@@ -114,6 +117,12 @@ class IncidentController extends AbstractController
         $incidentData = Binput::get('incident');
         $incidentData['user_id'] = Auth::user()->id;
         $componentStatus = array_pull($incidentData, 'component_status');
+
+        if (array_has($incidentData, 'created_at')) {
+            $incidentDate = Date::createFromFormat('d/m/Y H:i', $incidentData['created_at'], Setting::get('app_timezone'))->setTimezone(Config::get('app.timezone'));
+            $incidentData['created_at'] = $incidentDate;
+            $incidentData['updated_at'] = $incidentDate;
+        }
 
         $incident = Incident::create($incidentData);
 
@@ -286,6 +295,13 @@ class IncidentController extends AbstractController
     {
         $incidentData = Binput::get('incident');
         $incidentData['user_id'] = Auth::user()->id;
+
+        if (array_has($incidentData, 'created_at')) {
+            $incidentDate = Date::createFromFormat('d/m/Y H:i', $incidentData['created_at'], Setting::get('app_timezone'))->setTimezone(Config::get('app.timezone'));
+            $incidentData['created_at'] = $incidentDate;
+            $incidentData['updated_at'] = $incidentDate;
+        }
+
         $incident->update($incidentData);
 
         if (!$incident->isValid()) {
