@@ -75,6 +75,16 @@ class IncidentPresenter extends BasePresenter
     }
 
     /**
+     * Formats the created_at time ready to be used by bootstrap-datetimepicker.
+     *
+     * @return string
+     */
+    public function created_at_datetimepicker()
+    {
+        return $this->wrappedObject->created_at->setTimezone($this->tz)->format('d/m/Y H:i');
+    }
+
+    /**
      * Present formatted date time.
      *
      * @return string
