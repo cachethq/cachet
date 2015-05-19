@@ -107,7 +107,7 @@ class HomeController extends AbstractController
 
         // Component & Component Group lists.
         $usedComponentGroups = Component::where('group_id', '>', 0)->groupBy('group_id')->lists('group_id');
-        $componentGroups = ComponentGroup::whereIn('id', $usedComponentGroups)->get();
+        $componentGroups = ComponentGroup::whereIn('id', $usedComponentGroups)->orderBy('order')->get();
         $ungroupedComponents = Component::where('group_id', 0)->orderBy('order')->orderBy('created_at')->get();
 
         $canPageBackward = Incident::notScheduled()->where('created_at', '<', $startDate->format('Y-m-d'))->count() != 0;

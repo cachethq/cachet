@@ -15,6 +15,7 @@ namespace CachetHQ\Cachet\Http\Controllers\Admin;
 
 use CachetHQ\Cachet\Http\Controllers\AbstractController;
 use CachetHQ\Cachet\Models\Component;
+use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\IncidentTemplate;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
@@ -54,6 +55,23 @@ class ApiController extends AbstractController
         }
 
         return $componentData;
+    }
+
+    /**
+     * Updates the order of component groups.
+     *
+     * @return array
+     */
+    public function postUpdateComponentGroupOrder()
+    {
+        $groupData = Binput::all();
+        foreach ($groupData['ids'] as $order => $groupId) {
+            ComponentGroup::find($groupId)->update([
+                'order' => $order + 1,
+            ]);
+        }
+
+        return $groupData;
     }
 
     /**

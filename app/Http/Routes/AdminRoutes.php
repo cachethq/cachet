@@ -201,6 +201,7 @@ class AdminRoutes
             // This should only be used for making requests within the dashboard.
             $router->group(['prefix' => 'api'], function ($router) {
                 $router->get('incidents/templates', 'ApiController@getIncidentTemplate');
+                $router->post('components/groups/order', 'ApiController@postUpdateComponentGroupOrder');
                 $router->post('components/order', 'ApiController@postUpdateComponentOrder');
                 $router->post('components/{component}', 'ApiController@postUpdateComponent');
             });

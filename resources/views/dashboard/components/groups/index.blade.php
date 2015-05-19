@@ -16,11 +16,17 @@
                 <div class="clearfix"></div>
             </div>
             <div class="row">
-                <div class="col-sm-12 striped-list">
+                <div class="col-sm-12 striped-list" id="component-group-list">
                     @forelse($groups as $group)
-                    <div class="row striped-list-item">
+                    <div class="row striped-list-item" data-group-id="{{ $group->id }}">
                         <div class="col-xs-6">
-                            <strong>{{ $group->name }}</strong> <span class="label label-info">{{ $group->components->count() }}</span>
+                            <h4>
+                                @if($groups->count() > 1)
+                                <span class="drag-handle"><i class="ion-drag"></i></span>
+                                @endif
+                                {{ $group->name }}
+                                <span class="label label-info">{{ $group->components->count() }}</span>
+                            </h4>
                         </div>
                         <div class="col-xs-6 text-right">
                             <a href="{{ route('dashboard.components.groups.edit', [$group->id]) }}" class="btn btn-default">{{ trans('forms.edit') }}</a>
