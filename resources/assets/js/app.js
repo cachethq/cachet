@@ -203,6 +203,14 @@ $(function() {
         $('input[name=remove_banner]').val('1');
     });
 
+    $('.group-name').on('click', function () {
+        var $this = $(this);
+
+        $this.find('.group-toggle').toggleClass('ion-ios-minus-outline').toggleClass('ion-ios-plus-outline');
+
+        $this.next('.group-items').toggleClass('hide');
+    });
+
     // Setup wizard
     $('.wizard-next').on('click', function () {
         var $form   = $('#setup-form'),
