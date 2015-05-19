@@ -36,6 +36,22 @@ class LoadConfigServiceProvider extends ServiceProvider
                 $segmentRepository = $this->app->make('CachetHQ\Cachet\Segment\RepositoryInterface');
                 $this->app->config->set('segment.write_key', $segmentRepository->fetch());
             }
+
+            // Setup Cors.
+            $allowedOrigins = $this->app->config->get('cors.defaults.allowedOrigins');
+            $allowedOrigins[] = Setting::get('app_domain');
+
+            // Add our allowed domains too.
+            if ($allowedDomains = Setting::get('allowed_domains')) {
+                $domains = explode(',', $allowedDomains);
+                foreach ($domains as $domain) {
+                    $allowedOrigins[] = $domain;
+                }
+            } else {
+                $allowedOrigins[] = getenv('APP_URL');
+            }
+
+            $this->app->config->set('cors.paths.api/v1/*.allowedOrigins', $allowedOrigins);
         } catch (Exception $e) {
             // Don't throw any errors, we may not be setup yet.
         }

@@ -46,7 +46,6 @@ class Kernel extends HttpKernel
         'login.throttling'   => 'CachetHQ\Cachet\Http\Middleware\LoginThrottling',
         'app.isSetup'        => 'CachetHQ\Cachet\Http\Middleware\AppIsSetup',
         'app.hasSetting'     => 'CachetHQ\Cachet\Http\Middleware\HasSetting',
-        'allowedDomains'     => 'CachetHQ\Cachet\Http\Middleware\AllowedDomains',
         'cors'               => 'CachetHQ\Cachet\Http\Middleware\Cors',
     ];
 }

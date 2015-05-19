@@ -25,7 +25,8 @@
         "mccool/laravel-auto-presenter": "^3.0",
         "pragmarx/google2fa": "^0.1",
         "roumen/feed": "^2.9",
-        "watson/validating": "^1.0"
+        "watson/validating": "^1.0",
+        "barryvdh/laravel-cors": "0.5.x@dev"
     },
     "require-dev": {
         "phpunit/phpunit": "^4.4",
