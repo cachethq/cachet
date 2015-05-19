@@ -57,6 +57,7 @@
                 var ctx = document.getElementById("metric-{{ $metric->id }}").getContext("2d");
                 new Chart(ctx).Line(data, {
                     scaleShowVerticalLines: true,
+                    scaleShowLabels: false,
                     pointDot: false,
                     responsive: true
                 });
