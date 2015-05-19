@@ -35,9 +35,11 @@ The following extra dependencies are required to develop Cachet.
     + Bower
     + Gulp
 
-## Installation & Documentation
+## Installation, Upgrades and Documentation
 
 You can now find our documentation at [https://docs.cachethq.io](https://docs.cachethq.io) or, directly at [http://cachet.readme.io](http://cachet.readme.io) if the first link fails to load. [Cachet Demo](https://demo.cachethq.io).
+
+If you're upgrading from an earlier version of Cachet, which uses Laravel 4 then you'll need to follow the upgrade instructions [found here](https://docs.cachethq.io/v1.0/docs/upgrading-from-laravel-4).
 
 ### Demo Account
 
