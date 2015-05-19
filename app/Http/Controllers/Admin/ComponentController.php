@@ -78,7 +78,7 @@ class ComponentController extends AbstractController
 
         return View::make('dashboard.components.groups.index')->with([
             'pageTitle' => trans_choice('dashboard.components.groups.groups', 2).' - '.trans('dashboard.dashboard'),
-            'groups'    => ComponentGroup::all(),
+            'groups'    => ComponentGroup::orderBy('order')->get(),
             'subMenu'   => $this->subMenu,
         ]);
     }

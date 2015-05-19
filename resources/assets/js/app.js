@@ -167,6 +167,32 @@ $(function() {
         });
     }
 
+    // Sortable Component Groups
+    var componentGroupList = document.getElementById("component-group-list");
+    if (componentGroupList) {
+        new Sortable(componentGroupList, {
+            group: "omega",
+            handle: ".drag-handle",
+            onUpdate: function() {
+                var orderedComponentGroupsIds = $.map(
+                    $('#component-group-list .striped-list-item'),
+                    function(elem) {
+                        return $(elem).data('group-id');
+                    }
+                );
+                $.ajax({
+                    async: true,
+                    url: '/dashboard/api/components/groups/order',
+                    type: 'POST',
+                    data: {ids: orderedComponentGroupsIds},
+                    success: function() {
+                        (new CachetHQ.Notifier()).notify('Component groups order has been updated.', 'success');
+                    }
+                });
+            }
+        });
+    }
+
     // Toggle inline component statuses.
     $('form.component-inline').on('click', 'input[type=radio]', function() {
         var $form = $(this).parents('form');
