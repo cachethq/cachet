@@ -89,11 +89,17 @@ class Metric extends Model
         $dateTime = new DateTime();
         $dateTime->sub(new DateInterval('PT'.$hour.'H'));
 
+        $hourInterval = $dateTime->sub(new DateInterval('PT'.$hour.'H'))->format('YmdH');
+
         if (Config::get('database.default') === 'mysql') {
             if (!isset($this->calc_type) || $this->calc_type == self::CALC_SUM) {
-                $value = (int) $this->points()->whereRaw('DATE_FORMAT(created_at, "%Y%m%d%H") = '.$dateTime->sub(new DateInterval('PT'.$hour.'H'))->format('YmdH'))->groupBy(DB::raw('HOUR(created_at)'))->sum('value');
+                $value = (int) $this->points()
+                                    ->whereRaw('DATE_FORMAT(created_at, "%Y%m%d%H") = '.$hourInterval)
+                                    ->groupBy(DB::raw('HOUR(created_at)'))->sum('value');
             } elseif ($this->calc_type == self::CALC_AVG) {
-                $value = (int) $this->points()->whereRaw('DATE_FORMAT(created_at, "%Y%m%d%H") = '.$dateTime->sub(new DateInterval('PT'.$hour.'H'))->format('YmdH'))->groupBy(DB::raw('HOUR(created_at)'))->avg('value');
+                $value = (int) $this->points()
+                                    ->whereRaw('DATE_FORMAT(created_at, "%Y%m%d%H") = '.$hourInterval)
+                                    ->groupBy(DB::raw('HOUR(created_at)'))->avg('value');
             }
         } else {
             // Default metrics calculations.
@@ -106,7 +112,7 @@ class Metric extends Model
             }
 
             $query = DB::select("select {$queryType} as aggregate FROM metrics JOIN metric_points ON metric_points.metric_id = metrics.id WHERE metric_points.metric_id = {$this->id} AND to_char(metric_points.created_at, 'YYYYMMDDHH24') = :timestamp GROUP BY to_char(metric_points.created_at, 'H')", [
-                'timestamp' => $dateTime->sub(new DateInterval('PT'.$hour.'H'))->format('YmdH'),
+                'timestamp' => $hourInterval,
             ]);
 
             if (isset($query[0])) {
