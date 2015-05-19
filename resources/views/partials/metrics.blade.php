@@ -26,7 +26,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div>
-                    <canvas id="metric-{{ $metric->id }}" height="150" width="600"></canvas>
+                    <canvas id="metric-{{ $metric->id }}" height="125" width="600"></canvas>
                 </div>
             </div>
         </div>
@@ -44,8 +44,8 @@
                     showTooltips: false,
                     labels: hourList,
                     datasets: [{
-                        fillColor: "rgba(220,220,220,0.2)",
-                        strokeColor: "rgba(220,220,220,1)",
+                        fillColor: "rgba(220,220,220,0.1)",
+                        strokeColor: "rgba(52,152,219,0.6)",
                         pointColor: "rgba(220,220,220,1)",
                         pointStrokeColor: "#fff",
                         pointHighlightFill: "#fff",
