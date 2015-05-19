@@ -38,6 +38,7 @@ class IncidentPresenter extends BasePresenter
         parent::__construct($resource);
 
         $this->tz = Setting::get('app_timezone');
+        $this->format = Setting::get('incident_date_format') ?: 'l jS F Y H:i:s';
     }
 
     /**
@@ -71,7 +72,7 @@ class IncidentPresenter extends BasePresenter
     {
         return ucfirst((new Date($this->wrappedObject->created_at))
             ->setTimezone($this->tz)
-            ->format('l jS F Y H:i:s'));
+            ->format($this->format));
     }
 
     /**
@@ -105,7 +106,7 @@ class IncidentPresenter extends BasePresenter
     {
         return ucfirst((new Date($this->wrappedObject->scheduled_at))
             ->setTimezone($this->tz)
-            ->format('l jS F Y H:i:s'));
+            ->format($this->format));
     }
 
     /**
