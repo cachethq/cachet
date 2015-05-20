@@ -13,7 +13,7 @@
 
 namespace CachetHQ\Cachet\Models;
 
-use CachetHQ\Cachet\Facades\Setting;
+use CachetHQ\Cachet\Facades\Setting as SettingFacade;
 use DateInterval;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Config;
@@ -90,7 +90,7 @@ class Metric extends Model implements HasPresenter
      */
     public function getValues($hour)
     {
-        $dateTimeZone = Setting::get('app_timezone');
+        $dateTimeZone = SettingFacade::get('app_timezone');
         $dateTime = (new Date())->setTimezone($dateTimeZone)->sub(new DateInterval('PT'.$hour.'H'));
 
         $hourInterval = $dateTime->sub(new DateInterval('PT'.$hour.'H'))->format('YmdH');
