@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Redirect;
 class LoginThrottling
 {
     /**
-     *  Run the login throttling middleware.
+     * Run the login throttling middleware.
      *
      * We're verifying that the user is not attempting to brute force Cachet's
      * login system. If the user has reached the rate limit, then we're sending
