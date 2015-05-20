@@ -45,7 +45,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      * @var string[]
      */
     protected $rules = [
-        'username' => 'required|alpha_num|unique:users',
+        'username' => ['required', 'regex:/\A(?!.*[:;]-\))[ -~]+\z/', 'unique:users'],
         'email'    => 'required|email|unique:users',
         'password' => 'required',
     ];
