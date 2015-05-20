@@ -45,8 +45,10 @@ return [
         'scheduled_at'       => 'When to schedule the maintenance for?',
         'incident_time'      => 'When did this incident occur?',
         'notify_subscribers' => 'Notify subscribers',
-
-        'templates' => [
+        'visibility'         => 'Incident Visibility',
+        'public'             => 'Viewable by public',
+        'logged_in_only'     => 'Only visible logged in users',
+        'templates'          => [
             'name'     => 'Name',
             'template' => 'Template',
         ],

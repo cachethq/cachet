@@ -24,13 +24,16 @@ class IncidentController extends AbstractApiController
      * Get all incidents.
      *
      * @param \Symfony\Component\HttpFoundation\Request $request
-     * @param \CachetHQ\Cachet\Models\Incident          $incident
+     * @param \Illuminate\Contracts\Auth\Guard          $auth
      *
      * @return \Illuminate\Database\Eloquent\Collection
      */
-    public function getIncidents(Request $request)
+    public function getIncidents(Request $request, Guard $auth)
     {
-        $incidents = Incident::paginate(Binput::get('per_page', 20));
+        $incidentVisiblity = $auth->check() ? 0 : 1;
+
+        $incidents = Incident::where('visible', '>=', $incidentVisiblity)
+            ->paginate(Binput::get('per_page', 20));
 
         return $this->paginator($incidents, $request);
     }
