@@ -13,11 +13,13 @@
 
 namespace CachetHQ\Cachet\Models;
 
+use CachetHQ\Cachet\Facades\Setting;
 use DateInterval;
-use DateTime;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
+use Jenssegers\Date\Date;
+use McCool\LaravelAutoPresenter\HasPresenter;
 use Watson\Validating\ValidatingTrait;
 
 /**
@@ -31,7 +33,7 @@ use Watson\Validating\ValidatingTrait;
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
  */
-class Metric extends Model
+class Metric extends Model implements HasPresenter
 {
     use ValidatingTrait;
 
@@ -88,8 +90,8 @@ class Metric extends Model
      */
     public function getValues($hour)
     {
-        $dateTime = new DateTime();
-        $dateTime->sub(new DateInterval('PT'.$hour.'H'));
+        $dateTimeZone = Setting::get('app_timezone');
+        $dateTime = (new Date())->setTimezone($dateTimeZone)->sub(new DateInterval('PT'.$hour.'H'));
 
         $hourInterval = $dateTime->sub(new DateInterval('PT'.$hour.'H'))->format('YmdH');
 
@@ -139,5 +141,15 @@ class Metric extends Model
     public function getShouldDisplayAttribute()
     {
         return $this->display_chart === 1;
+    }
+
+    /**
+     * Get the presenter class.
+     *
+     * @return string
+     */
+    public function getPresenterClass()
+    {
+        return 'CachetHQ\Cachet\Presenters\MetricPresenter';
     }
 }

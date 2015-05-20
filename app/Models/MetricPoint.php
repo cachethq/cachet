@@ -14,6 +14,7 @@
 namespace CachetHQ\Cachet\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use McCool\LaravelAutoPresenter\HasPresenter;
 use Watson\Validating\ValidatingTrait;
 
 /**
@@ -23,7 +24,7 @@ use Watson\Validating\ValidatingTrait;
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
  */
-class MetricPoint extends Model
+class MetricPoint extends Model implements HasPresenter
 {
     use ValidatingTrait;
 
@@ -51,5 +52,15 @@ class MetricPoint extends Model
     public function metric()
     {
         return $this->belongsTo('CachetHQ\Cachet\Models\Metric', 'id', 'metric_id');
+    }
+
+    /**
+     * Get the presenter class.
+     *
+     * @return string
+     */
+    public function getPresenterClass()
+    {
+        return 'CachetHQ\Cachet\Presenters\MetricPointPresenter';
     }
 }

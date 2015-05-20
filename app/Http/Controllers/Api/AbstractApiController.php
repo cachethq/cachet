@@ -15,8 +15,11 @@ namespace CachetHQ\Cachet\Http\Controllers\Api;
 
 use CachetHQ\Cachet\Http\Controllers\AbstractController as BaseController;
 use Illuminate\Contracts\Pagination\Paginator;
+use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Response;
+use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
 
 abstract class AbstractApiController extends BaseController
 {
@@ -37,9 +40,9 @@ abstract class AbstractApiController extends BaseController
     /**
      * The HTTP response data.
      *
-     * @var array
+     * @var mixed
      */
-    protected $data = [];
+    protected $data = null;
 
     /**
      * The HTTP response status code.
@@ -83,7 +86,7 @@ abstract class AbstractApiController extends BaseController
      *
      * @return $this
      */
-    protected function setData(array $data)
+    protected function setData($data)
     {
         $this->data = $data;
 
@@ -102,6 +105,30 @@ abstract class AbstractApiController extends BaseController
         $this->statusCode = $statusCode;
 
         return $this;
+    }
+
+    /**
+     * Respond with an item response.
+     *
+     * @param mixed
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function item($item)
+    {
+        return $this->setData(AutoPresenter::decorate($item))->respond();
+    }
+
+    /**
+     * Respond with a collection response.
+     *
+     * @param \Illuminate\Support\Collection $collection
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function collection(Collection $collection)
+    {
+        return $this->setData(AutoPresenter::decorate($collection))->respond();
     }
 
     /**
@@ -134,7 +161,7 @@ abstract class AbstractApiController extends BaseController
             ],
         ];
 
-        return $this->setMetaData($pagination)->setData($paginator->items())->respond();
+        return $this->setMetaData($pagination)->setData(AutoPresenter::decorate($paginator->getCollection()))->respond();
     }
 
     /**

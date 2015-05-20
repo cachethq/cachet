@@ -16,6 +16,7 @@ namespace CachetHQ\Cachet\Http\Controllers\Api;
 use CachetHQ\Cachet\Models\Tag;
 use CachetHQ\Cachet\Repositories\Component\ComponentRepository;
 use GrahamCampbell\Binput\Facades\Binput;
+use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Http\Request;
 
 class ComponentController extends AbstractApiController
@@ -58,18 +59,20 @@ class ComponentController extends AbstractApiController
      */
     public function getComponent($id)
     {
-        return $this->component->findOrFail($id);
+        return $this->item($this->component->findOrFail($id));
     }
 
     /**
      * Create a new component.
      *
+     * @param \Illuminate\Contracts\Auth\Guard $auth
+     *
      * @return \CachetHQ\Cachet\Models\Component
      */
-    public function postComponents()
+    public function postComponents(Guard $auth)
     {
         $component = $this->component->create(
-            $this->auth->user()->id,
+            $auth->user()->id,
             Binput::except('tags')
         );
 
@@ -87,7 +90,7 @@ class ComponentController extends AbstractApiController
             $component->tags()->sync($componentTags);
         }
 
-        return $component;
+        return $this->item($component);
     }
 
     /**
@@ -114,7 +117,7 @@ class ComponentController extends AbstractApiController
             $component->tags()->sync($componentTags);
         }
 
-        return $component;
+        return $this->item($component);
     }
 
     /**

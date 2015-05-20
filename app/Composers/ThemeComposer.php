@@ -25,8 +25,8 @@ class ThemeComposer
      */
     public function compose(View $view)
     {
-        $view->with('themeBackgroundColor', Setting::get('style_background_color') ?: null);
-        $view->with('themeTextColor', Setting::get('style_text_color') ?: null);
+        $view->with('themeBackgroundColor', Setting::get('style_background_color'));
+        $view->with('themeTextColor', Setting::get('style_text_color'));
 
         $viewData = $view->getData();
         $themeView = array_only($viewData, preg_grep('/^theme/', array_keys($viewData)));

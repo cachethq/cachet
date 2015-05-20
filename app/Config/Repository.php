@@ -44,12 +44,13 @@ class Repository
     /**
      * Returns a setting from the database.
      *
-     * @param string $name
-     * @param bool   $checkEnv
+     * @param string      $name
+     * @param string|null $default
+     * @param bool        $checkEnv
      *
      * @return string|null
      */
-    public function get($name, $checkEnv = true)
+    public function get($name, $default = null, $checkEnv = true)
     {
         // if we've not loaded the settings, load them now
         if (!$this->settings) {
@@ -65,6 +66,8 @@ class Repository
         if ($checkEnv) {
             return $this->settings[$name] = env(strtoupper($name));
         }
+
+        return $default;
     }
 
     /**

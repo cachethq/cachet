@@ -15,6 +15,7 @@ namespace CachetHQ\Cachet\Http\Controllers\Api;
 
 use CachetHQ\Cachet\Repositories\Incident\IncidentRepository;
 use GrahamCampbell\Binput\Facades\Binput;
+use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Http\Request;
 
 class IncidentController extends AbstractApiController
@@ -57,17 +58,19 @@ class IncidentController extends AbstractApiController
      */
     public function getIncident($id)
     {
-        return $this->incident->findOrFail($id);
+        return $this->item($this->incident->findOrFail($id));
     }
 
     /**
      * Create a new incident.
      *
+     * @param \Illuminate\Contracts\Auth\Guard $auth
+     *
      * @return \CachetHQ\Cachet\Models\Incident
      */
-    public function postIncidents()
+    public function postIncidents(Guard $auth)
     {
-        return $this->incident->create($this->auth->user()->id, Binput::all());
+        return $this->item($this->incident->create($auth->user()->id, Binput::all()));
     }
 
     /**
@@ -79,7 +82,7 @@ class IncidentController extends AbstractApiController
      */
     public function putIncident($id)
     {
-        return $this->incident->update($id, Binput::all());
+        return $this->item($this->incident->update($id, Binput::all()));
     }
 
     /**
