@@ -142,7 +142,7 @@ if (!function_exists('formatted_date')) {
      */
     function formatted_date($date)
     {
-        $dateFormat = Setting::get('date_format') ?: 'jS F Y';
+        $dateFormat = Setting::get('date_format', 'jS F Y');
 
         return (new Date($date))->format($dateFormat);
     }
