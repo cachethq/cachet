@@ -118,10 +118,12 @@ class IncidentController extends AbstractController
         $incidentData['user_id'] = Auth::user()->id;
         $componentStatus = array_pull($incidentData, 'component_status');
 
-        if (array_has($incidentData, 'created_at')) {
+        if (array_has($incidentData, 'created_at') && $incidentData['created_at']) {
             $incidentDate = Date::createFromFormat('d/m/Y H:i', $incidentData['created_at'], Setting::get('app_timezone'))->setTimezone(Config::get('app.timezone'));
             $incidentData['created_at'] = $incidentDate;
             $incidentData['updated_at'] = $incidentDate;
+        } else {
+            unset($incidentData['created_at']);
         }
 
         $incident = Incident::create($incidentData);
@@ -296,10 +298,12 @@ class IncidentController extends AbstractController
         $incidentData = Binput::get('incident');
         $incidentData['user_id'] = Auth::user()->id;
 
-        if (array_has($incidentData, 'created_at')) {
+        if (array_has($incidentData, 'created_at') && $incidentData['created_at']) {
             $incidentDate = Date::createFromFormat('d/m/Y H:i', $incidentData['created_at'], Setting::get('app_timezone'))->setTimezone(Config::get('app.timezone'));
             $incidentData['created_at'] = $incidentDate;
             $incidentData['updated_at'] = $incidentDate;
+        } else {
+            unset($incidentData['created_at']);
         }
 
         $incident->update($incidentData);
