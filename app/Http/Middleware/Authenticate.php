@@ -21,14 +21,14 @@ class Authenticate
     /**
      * The Guard implementation.
      *
-     * @var Guard
+     * @var \Illuminate\Contracts\Auth\Guard
      */
     protected $auth;
 
     /**
      * Create a new filter instance.
      *
-     * @param Guard $auth
+     * @param \Illuminate\Contracts\Auth\Guard $auth
      */
     public function __construct(Guard $auth)
     {

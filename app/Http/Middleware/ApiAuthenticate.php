@@ -15,10 +15,28 @@ namespace CachetHQ\Cachet\Http\Middleware;
 
 use CachetHQ\Cachet\Models\User;
 use Closure;
+use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class ApiAuthenticate
 {
+    /**
+     * The Guard implementation.
+     *
+     * @var \Illuminate\Contracts\Auth\Guard
+     */
+    protected $auth;
+
+    /**
+     * Create a new filter instance.
+     *
+     * @param \Illuminate\Contracts\Auth\Guard $auth
+     */
+    public function __construct(Guard $auth)
+    {
+        $this->auth = $auth;
+    }
+
     /**
      * Handle an incoming request.
      *
@@ -31,7 +49,9 @@ class ApiAuthenticate
     {
         if ($apiToken = $request->header('X-Cachet-Token')) {
             try {
-                User::findByApiToken($apiToken);
+                $user = User::findByApiToken($apiToken);
+
+                $this->auth->onceUsingId($user->id);
             } catch (ModelNotFoundException $e) {
                 return response()->json([
                     'message'     => 'The API token you provided was not correct.',
