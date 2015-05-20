@@ -79,7 +79,7 @@ class MetricController extends AbstractApiController
      */
     public function postMetrics()
     {
-        return $this->metric->create(Binput::all());
+        return $this->item($this->metric->create(Binput::all()));
     }
 
     /**
@@ -91,7 +91,7 @@ class MetricController extends AbstractApiController
      */
     public function putMetric($id)
     {
-        return $this->metric->update($id, Binput::all());
+        return $this->item($this->metric->update($id, Binput::all()));
     }
 
     /**

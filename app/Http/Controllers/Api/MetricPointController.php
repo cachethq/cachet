@@ -44,7 +44,7 @@ class MetricPointController extends AbstractApiController
      */
     public function getMetricPoints($id)
     {
-        return $this->metricPoint->findOrFail($id);
+        return $this->item($this->metricPoint->findOrFail($id));
     }
 
     /**
@@ -56,7 +56,7 @@ class MetricPointController extends AbstractApiController
      */
     public function postMetricPoints($id)
     {
-        return $this->metricPoint->create($id, Binput::all());
+        return $this->item($this->metricPoint->create($id, Binput::all()));
     }
 
     /**
@@ -72,7 +72,7 @@ class MetricPointController extends AbstractApiController
         $metricPoint = $this->metricPoint->findOrFail($pointId);
         $metricPoint->update(Binput::all());
 
-        return $metricPoint;
+        return $this->item($metricPoint);
     }
 
     /**

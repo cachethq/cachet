@@ -15,7 +15,7 @@ namespace CachetHQ\Cachet\Presenters;
 
 use CachetHQ\Cachet\Presenters\Traits\TimestampsTrait;
 
-class MetricPointPresenter extends AbstractPresenter
+class ComponentPresenter extends AbstractPresenter
 {
     use TimestampsTrait;
 

@@ -16,6 +16,7 @@ namespace CachetHQ\Cachet\Models;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use McCool\LaravelAutoPresenter\HasPresenter;
 use Watson\Validating\ValidatingTrait;
 
 /**
@@ -31,7 +32,7 @@ use Watson\Validating\ValidatingTrait;
  * @property \Carbon\Carbon $updated_at
  * @property \Carbon\Carbon $deleted_at
  */
-class Component extends Model
+class Component extends Model implements HasPresenter
 {
     use SoftDeletes, ValidatingTrait;
 
@@ -160,5 +161,15 @@ class Component extends Model
         });
 
         return implode(', ', $tags->toArray());
+    }
+
+    /**
+     * Get the presenter class.
+     *
+     * @return string
+     */
+    public function getPresenterClass()
+    {
+        return 'CachetHQ\Cachet\Presenters\ComponentPresenter';
     }
 }

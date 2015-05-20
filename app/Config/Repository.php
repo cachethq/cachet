@@ -44,9 +44,9 @@ class Repository
     /**
      * Returns a setting from the database.
      *
-     * @param string $name
-     * @param string $default
-     * @param bool   $checkEnv
+     * @param string      $name
+     * @param string|null $default
+     * @param bool        $checkEnv
      *
      * @return string|null
      */
