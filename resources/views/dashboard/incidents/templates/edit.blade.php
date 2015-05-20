@@ -16,9 +16,9 @@
                 @if($updatedTemplate = Session::get('updatedTemplate'))
                 <div class="alert alert-{{ $updatedTemplate->isValid() ? 'success' : 'danger' }}">
                     @if($updatedTemplate->isValid())
-                    {{ sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.awesome'), trans('dashboard.incidents.templates.edit.success')) }}
+                    {{ sprintf("%s - %s", trans('dashboard.notifications.awesome'), trans('dashboard.incidents.templates.edit.success')) }}
                     @else
-                    {{ sprintf("<strong>%s</strong> %s", trans('dashboard.notifications.whoops'), trans('dashboard.incidents.templates.edit.failure').' '.$updatedTemplate->getErrors()) }}
+                    {{ sprintf("%s - %s", trans('dashboard.notifications.whoops'), trans('dashboard.incidents.templates.edit.failure').' '.$updatedTemplate->getErrors()) }}
                     @endif
                 </div>
                 @endif

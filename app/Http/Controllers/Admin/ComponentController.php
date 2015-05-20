@@ -131,7 +131,7 @@ class ComponentController extends AbstractController
 
             return Redirect::back()->withInput(Binput::all())
                 ->with('title', sprintf(
-                    '<strong>%s</strong> %s',
+                    '%s - %s',
                     trans('dashboard.notifications.whoops'),
                     trans('dashboard.components.edit.failure')
                 ))
@@ -156,7 +156,7 @@ class ComponentController extends AbstractController
         $component->tags()->sync($componentTags);
 
         $successMsg = sprintf(
-            '<strong>%s</strong> %s',
+            '%s - %s',
             trans('dashboard.notifications.awesome'),
             trans('dashboard.components.edit.success')
         );
@@ -201,7 +201,7 @@ class ComponentController extends AbstractController
 
             return Redirect::back()->withInput(Binput::all())
                 ->with('title', sprintf(
-                    '<strong>%s</strong> %s',
+                    '%s - %s',
                     trans('dashboard.notifications.whoops'),
                     trans('dashboard.components.add.failure')
                 ))
@@ -226,7 +226,7 @@ class ComponentController extends AbstractController
         $component->tags()->sync($componentTags);
 
         $successMsg = sprintf(
-            '<strong>%s</strong> %s',
+            '%s - %s',
             trans('dashboard.notifications.awesome'),
             trans('dashboard.components.add.success')
         );
@@ -320,7 +320,7 @@ class ComponentController extends AbstractController
 
             return Redirect::back()->withInput(Binput::all())
                 ->with('title', sprintf(
-                    '<strong>%s</strong> %s',
+                    '%s - %s',
                     trans('dashboard.notifications.whoops'),
                     trans('dashboard.components.groups.add.failure')
                 ))
@@ -333,7 +333,7 @@ class ComponentController extends AbstractController
         ]);
 
         $successMsg = sprintf(
-            '<strong>%s</strong> %s',
+            '%s - %s',
             trans('dashboard.notifications.awesome'),
             trans('dashboard.components.groups.add.success')
         );
@@ -361,7 +361,7 @@ class ComponentController extends AbstractController
 
             return Redirect::back()->withInput(Binput::all())
                 ->with('title', sprintf(
-                    '<strong>%s</strong> %s',
+                    '%s - %s',
                     trans('dashboard.notifications.whoops'),
                     trans('dashboard.components.groups.edit.failure')
                 ))
@@ -374,7 +374,7 @@ class ComponentController extends AbstractController
         ]);
 
         $successMsg = sprintf(
-            '<strong>%s</strong> %s',
+            '%s - %s',
             trans('dashboard.notifications.awesome'),
             trans('dashboard.components.groups.edit.success')
         );
