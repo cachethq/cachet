@@ -17,7 +17,7 @@ return [
      */
     'defaults' => [
         'supportsCredentials' => true,
-        'allowedOrigins'      => [],
+        'allowedOrigins'      => ['*'],
         'allowedHeaders'      => [],
         'allowedMethods'      => [],
         'exposedHeaders'      => [],
