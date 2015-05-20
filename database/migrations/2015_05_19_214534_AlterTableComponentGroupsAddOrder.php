@@ -25,7 +25,7 @@ class AlterTableComponentGroupsAddOrder extends Migration
     public function up()
     {
         Schema::table('component_groups', function (Blueprint $table) {
-            $table->integer('order')->after('name');
+            $table->integer('order')->after('name')->default(0);
             $table->index('order');
         });
     }
