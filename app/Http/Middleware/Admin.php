@@ -37,8 +37,6 @@ class Admin
     }
 
     /**
-     * Run the cors middleware.
-     *
      * We're verifying that the current user is logged in to Cachet and is an admin level.
      *
      * @param \Illuminate\Http\Request $request
