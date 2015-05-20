@@ -48,7 +48,7 @@ class LoadConfigServiceProvider extends ServiceProvider
                     $allowedOrigins[] = $domain;
                 }
             } else {
-                $allowedOrigins[] = getenv('APP_URL');
+                $allowedOrigins[] = env('APP_URL');
             }
 
             $this->app->config->set('cors.paths.api/v1/*.allowedOrigins', $allowedOrigins);

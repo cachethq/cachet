@@ -63,7 +63,7 @@ class Repository
 
         // fallback to getenv if allowed to
         if ($checkEnv) {
-            return $this->settings[$name] = getenv(strtoupper($name));
+            return $this->settings[$name] = env(strtoupper($name));
         }
     }
 
