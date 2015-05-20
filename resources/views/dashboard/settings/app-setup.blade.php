@@ -85,7 +85,7 @@
                                             {{ trans('forms.settings.app-setup.date-format') }}
                                             <a href="http://php.net/manual/en/function.date.php" target="_blank"><i class="icon ion-help-circled"></i></a>
                                         </label>
-                                        <input type="text" class="form-control" name="date_format" value="{{ Setting::get('date_format') ?: 'l jS F Y H:i:s' }}">
+                                        <input type="text" class="form-control" name="date_format" value="{{ Setting::get('date_format') ?: 'l jS F Y' }}">
                                     </div>
                                 </div>
                             </div>
