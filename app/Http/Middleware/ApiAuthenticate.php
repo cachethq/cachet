@@ -53,20 +53,29 @@ class ApiAuthenticate
 
                 $this->auth->onceUsingId($user->id);
             } catch (ModelNotFoundException $e) {
-                return response()->json([
-                    'message'     => 'The API token you provided was not correct.',
-                    'status_code' => 401,
-                ], 401);
+                return $this->handleError();
             }
         } elseif ($user = $request->getUser()) {
-            $this->auth->onceBasic();
+            if ($this->auth->onceBasic() !== null) {
+                return $this->handleError();
+            }
         } else {
-            return response()->json([
-                'message'     => 'You are not authorized to view this content.',
-                'status_code' => 401,
-            ], 401);
+            return $this->handleError();
         }
 
         return $next($request);
+    }
+
+    /**
+     * Common method for returning an unauthorized error.
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    protected function handleError()
+    {
+        return response()->json([
+            'message'     => 'You are not authorized to view this content.',
+            'status_code' => 401,
+        ], 401);
     }
 }
