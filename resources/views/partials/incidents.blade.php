@@ -20,7 +20,7 @@
                             </small>
                         </div>
                         <div class="panel-body">
-                            <p>{!! $incident->formattedMessage !!}</p>
+                            {!! $incident->formattedMessage !!}
                         </div>
                     </div>
                 </div>
