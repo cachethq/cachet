@@ -57,6 +57,10 @@ class SettingsTableSeeder extends Seeder
                 'name'  => 'app_analytics',
                 'value' => 'UA-58442674-3',
             ],
+            [
+                'name'  => 'app_analytics_gs',
+                'value' => 'GSN-712462-P',
+            ],
         ];
 
         Setting::truncate();
