@@ -73,6 +73,7 @@ return [
     'components' => [
         'components'         => 'crwdns431:0crwdne431:0',
         'component_statuses' => 'crwdns321:0crwdne321:0',
+        'listed_group'       => 'crwdns473:0crwdne473:0',
         'add'                => [
             'title'   => 'crwdns322:0crwdne322:0',
             'message' => 'crwdns323:0crwdne323:0',
@@ -87,8 +88,9 @@ return [
 
         // Component groups
         'groups' => [
-            'groups' => 'crwdns329:0crwdne329:0',
-            'add'    => [
+            'groups'        => 'crwdns329:0crwdne329:0',
+            'no_components' => 'crwdns478:0crwdne478:0',
+            'add'           => [
                 'title'   => 'crwdns330:0crwdne330:0',
                 'success' => 'crwdns331:0crwdne331:0',
                 'failure' => 'crwdns332:0crwdne332:0',
@@ -143,7 +145,8 @@ return [
             'too-big'     => 'crwdns347:0crwdne347:0',
         ],
         'security' => [
-            'security' => 'crwdns348:0crwdne348:0',
+            'security'   => 'crwdns348:0crwdne348:0',
+            'two-factor' => 'crwdns474:0crwdne474:0',
         ],
         'stylesheet' => [
             'stylesheet' => 'crwdns349:0crwdne349:0',
@@ -188,7 +191,7 @@ return [
             'customize'  => 'crwdns432:0crwdne432:0',
             'team'       => 'crwdns433:0crwdne433:0',
             'api'        => 'crwdns434:0crwdne434:0',
-            'two-factor' => 'crwdns435:0crwdne435:0',
+            'two-factor' => 'crwdns479:0crwdne479:0',
         ],
     ],
 
