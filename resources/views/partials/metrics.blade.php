@@ -2,8 +2,8 @@
 <ul class="list-group metrics">
     @foreach($metrics as $metric)
     <?php
-        $points = range(1, 11);
-        foreach ($points as $hour) {
+        $points = [];
+        foreach (range(1, 11) as $hour) {
             $points[$hour] = $metric->getValues($hour);
         }
         $points = array_reverse($points);
