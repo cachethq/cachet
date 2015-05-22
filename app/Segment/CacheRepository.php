@@ -47,7 +47,7 @@ class CacheRepository implements RepositoryInterface
         // We might not be setup yet.
         try {
             // Firstly, does the setting exist?
-            if (false === ($writeKey = Setting::get('segment_write_key'))) {
+            if (null === ($writeKey = Setting::get('segment_write_key'))) {
                 // No, let's go fetch it.
                 $writeKey = $this->repository->fetch();
                 Setting::set('segment_write_key', $writeKey);
