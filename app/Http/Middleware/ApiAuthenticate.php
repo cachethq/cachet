@@ -58,6 +58,8 @@ class ApiAuthenticate
                     'status_code' => 401,
                 ], 401);
             }
+        } elseif ($user = $request->getUser()) {
+            $this->auth->onceBasic();
         } else {
             return response()->json([
                 'message'     => 'You are not authorized to view this content.',
