@@ -93,7 +93,7 @@ class Metric extends Model implements HasPresenter
         $dateTimeZone = SettingFacade::get('app_timezone');
         $dateTime = (new Date())->setTimezone($dateTimeZone)->sub(new DateInterval('PT'.$hour.'H'));
 
-        $hourInterval = $dateTime->sub(new DateInterval('PT'.$hour.'H'))->format('YmdH');
+        $hourInterval = $dateTime->format('YmdH');
 
         if (Config::get('database.default') === 'mysql') {
             if (!isset($this->calc_type) || $this->calc_type == self::CALC_SUM) {

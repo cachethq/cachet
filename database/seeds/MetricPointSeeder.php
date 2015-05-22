@@ -11,10 +11,11 @@
  * file that was distributed with this source code.
  */
 
+use CachetHQ\Cachet\Models\MetricPoint;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class MetricPointSeeder extends Seeder
 {
     /**
      * Run the database seeding.
@@ -23,10 +24,11 @@ class DatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        $this->call('UsersTableSeeder');
-        $this->call('SettingsTableSeeder');
-        $this->call('IncidentTableSeeder');
-        $this->call('ComponentTableSeeder');
-        $this->call('MetricTableSeeder');
+        $metric = [
+            'metric_id' => 1,
+            'value'     => rand(1, 100),
+        ];
+
+        MetricPoint::create($metric);
     }
 }

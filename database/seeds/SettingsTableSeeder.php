@@ -61,6 +61,10 @@ class SettingsTableSeeder extends Seeder
                 'name'  => 'app_analytics_gs',
                 'value' => 'GSN-712462-P',
             ],
+            [
+                'name'  => 'display_graphs',
+                'value' => '1',
+            ],
         ];
 
         Setting::truncate();
