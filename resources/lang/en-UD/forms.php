@@ -32,18 +32,22 @@ return [
         '2fauth'        => 'crwdns382:0crwdne382:0',
         'invalid'       => 'crwdns383:0crwdne383:0',
         'invalid-token' => 'crwdns384:0crwdne384:0',
+        'cookies'       => 'crwdns480:0crwdne480:0',
     ],
 
     // Incidents form fields
     'incidents' => [
-        'name'         => 'crwdns219:0crwdne219:0',
-        'status'       => 'crwdns385:0crwdne385:0',
-        'component'    => 'crwdns386:0crwdne386:0',
-        'message'      => 'crwdns387:0crwdne387:0',
-        'message-help' => 'crwdns388:0crwdne388:0',
-        'scheduled_at' => 'crwdns464:0crwdne464:0',
-
-        'templates' => [
+        'name'           => 'crwdns219:0crwdne219:0',
+        'status'         => 'crwdns385:0crwdne385:0',
+        'component'      => 'crwdns386:0crwdne386:0',
+        'message'        => 'crwdns387:0crwdne387:0',
+        'message-help'   => 'crwdns388:0crwdne388:0',
+        'scheduled_at'   => 'crwdns464:0crwdne464:0',
+        'incident_time'  => 'crwdns481:0crwdne481:0',
+        'visibility'     => 'crwdns482:0crwdne482:0',
+        'public'         => 'crwdns483:0crwdne483:0',
+        'logged_in_only' => 'crwdns484:0crwdne484:0',
+        'templates'      => [
             'name'     => 'crwdns389:0crwdne389:0',
             'template' => 'crwdns390:0crwdne390:0',
         ],
@@ -72,6 +76,9 @@ return [
         'description-help' => 'crwdns468:0crwdne468:0',
         'display-chart'    => 'crwdns469:0crwdne469:0',
         'default-value'    => 'crwdns470:0crwdne470:0',
+        'calc_type'        => 'crwdns475:0crwdne475:0',
+        'type_sum'         => 'crwdns476:0crwdne476:0',
+        'type_avg'         => 'crwdns477:0crwdne477:0',
 
         'points' => [
             'value' => 'crwdns471:0crwdne471:0',
@@ -82,17 +89,19 @@ return [
     'settings' => [
         /// Application setup
         'app-setup' => [
-            'site-name'         => 'crwdns233:0crwdne233:0',
-            'site-url'          => 'crwdns398:0crwdne398:0',
-            'site-timezone'     => 'crwdns399:0crwdne399:0',
-            'site-locale'       => 'crwdns400:0crwdne400:0',
-            'date-format'       => 'crwdns401:0crwdne401:0',
-            'display-graphs'    => 'crwdns472:0crwdne472:0',
-            'about-this-page'   => 'crwdns402:0crwdne402:0',
-            'days-of-incidents' => 'crwdns403:0crwdne403:0',
-            'banner'            => 'crwdns404:0crwdne404:0',
-            'banner-help'       => 'crwdns405:0crwdne405:0',
-            'google-analytics'  => 'crwdns406:0crwdne406:0',
+            'site-name'            => 'crwdns233:0crwdne233:0',
+            'site-url'             => 'crwdns398:0crwdne398:0',
+            'site-timezone'        => 'crwdns399:0crwdne399:0',
+            'site-locale'          => 'crwdns400:0crwdne400:0',
+            'date-format'          => 'crwdns401:0crwdne401:0',
+            'incident-date-format' => 'crwdns485:0crwdne485:0',
+            'display-graphs'       => 'crwdns472:0crwdne472:0',
+            'about-this-page'      => 'crwdns402:0crwdne402:0',
+            'days-of-incidents'    => 'crwdns403:0crwdne403:0',
+            'banner'               => 'crwdns404:0crwdne404:0',
+            'banner-help'          => 'crwdns405:0crwdne405:0',
+            'analytics_google'     => 'crwdns486:0crwdne486:0',
+            'analytics_gosquared'  => 'crwdns487:0crwdne487:0',
         ],
         'security' => [
             'allowed-domains'      => 'crwdns407:0crwdne407:0',
