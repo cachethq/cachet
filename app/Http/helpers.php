@@ -116,7 +116,7 @@ if (!function_exists('segment_page')) {
                 if (Setting::get('app_track')) {
                     return Segment::page([
                         'anonymousId' => Config::get('app.key'),
-                        'page'        => $page,
+                        'name'        => $page,
                         'context'     => [
                             'locale'   => Config::get('app.locale'),
                             'timezone' => Setting::get('app_timezone'),
