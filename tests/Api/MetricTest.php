@@ -20,14 +20,18 @@ class MetricTest extends AbstractTestCase
 
     public function testGetMetrics()
     {
+        $metrics = factory('CachetHQ\Cachet\Models\Metric', 3)->create();
+
         $this->get('/api/v1/metrics');
-        $this->seeJson(['data' => []]);
+        $this->seeJson(['id' => (string) $metrics[0]->id]);
+        $this->seeJson(['id' => (string) $metrics[1]->id]);
+        $this->seeJson(['id' => (string) $metrics[2]->id]);
         $this->assertResponseOk();
     }
 
     public function testGetInvalidMetric()
     {
-        $this->get('/api/v1/metrics/1');
+        $this->get('/api/v1/metrics/0');
         $this->assertResponseStatus(404);
     }
 

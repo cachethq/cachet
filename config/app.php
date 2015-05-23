@@ -89,7 +89,7 @@ return [
 
     'key' => env('APP_KEY', 'SomeRandomString'),
 
-    'cipher' => 'AES-256-CBC',
+    'cipher' => 'rijndael-256',
 
     /*
     |--------------------------------------------------------------------------
@@ -170,7 +170,6 @@ return [
         'CachetHQ\Cachet\Providers\ConfigServiceProvider',
         'CachetHQ\Cachet\Providers\ConsoleServiceProvider',
         'CachetHQ\Cachet\Providers\EventServiceProvider',
-        'CachetHQ\Cachet\Providers\RepositoryServiceProvider',
         'CachetHQ\Cachet\Providers\RouteServiceProvider',
         'CachetHQ\Cachet\Providers\SegmentServiceProvider',
         'CachetHQ\Segment\SegmentServiceProvider',

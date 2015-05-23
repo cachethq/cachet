@@ -18,10 +18,26 @@ class MetricPointTest extends AbstractTestCase
 {
     use DatabaseMigrations;
 
+    public function testGetMetricPoint()
+    {
+        $metric = factory('CachetHQ\Cachet\Models\Metric')->create();
+        $metricPoint = factory('CachetHQ\Cachet\Models\MetricPoint', 3)->create([
+            'metric_id' => $metric->id,
+        ]);
+
+        $this->get("/api/v1/metrics/{$metric->id}/points");
+        $this->seeJson(['id' => (string) $metricPoint[0]->id]);
+        $this->seeJson(['id' => (string) $metricPoint[1]->id]);
+        $this->seeJson(['id' => (string) $metricPoint[2]->id]);
+    }
+
     public function testPostMetricPointUnauthorized()
     {
-        $metricPoint = factory('CachetHQ\Cachet\Models\MetricPoint')->create();
-        $this->post('/api/v1/metrics/1/points');
+        $metric = factory('CachetHQ\Cachet\Models\Metric')->create();
+        $metricPoint = factory('CachetHQ\Cachet\Models\MetricPoint')->create([
+            'metric_id' => $metric->id,
+        ]);
+        $this->post("/api/v1/metrics/{$metric->id}/points");
 
         $this->assertResponseStatus(401);
         $this->seeJson(['message' => 'You are not authorized to view this content.', 'status_code' => 401]);
@@ -30,17 +46,24 @@ class MetricPointTest extends AbstractTestCase
     public function testPostMetricPoint()
     {
         $this->beUser();
-        $metricPoint = factory('CachetHQ\Cachet\Models\MetricPoint')->create();
 
-        $this->post('/api/v1/metrics/1/points', $metricPoint->toArray());
+        $metric = factory('CachetHQ\Cachet\Models\Metric')->create();
+        $metricPoint = factory('CachetHQ\Cachet\Models\MetricPoint')->make([
+            'metric_id' => $metric->id,
+        ]);
+
+        $this->post("/api/v1/metrics/{$metric->id}/points", $metricPoint->toArray());
         $this->seeJson(['value' => (string) $metricPoint->value]);
     }
 
     public function testPutMetricPoint()
     {
         $this->beUser();
-        $metricPoint = factory('CachetHQ\Cachet\Models\MetricPoint')->create();
-        $this->put('/api/v1/metrics/1/points/1', [
+        $metric = factory('CachetHQ\Cachet\Models\Metric')->create();
+        $metricPoint = factory('CachetHQ\Cachet\Models\MetricPoint')->create([
+            'metric_id' => $metric->id,
+        ]);
+        $this->put("/api/v1/metrics/{$metric->id}/points/{$metricPoint->id}", [
             'value' => 999,
         ]);
         $this->seeJson(['value' => '999']);
@@ -49,8 +72,11 @@ class MetricPointTest extends AbstractTestCase
     public function testDeleteMetricPoint()
     {
         $this->beUser();
-        $metricPoint = factory('CachetHQ\Cachet\Models\MetricPoint')->create();
-        $this->delete('/api/v1/metrics/1/points/1');
+        $metric = factory('CachetHQ\Cachet\Models\Metric')->create();
+        $metricPoint = factory('CachetHQ\Cachet\Models\MetricPoint')->create([
+            'metric_id' => $metric->id,
+        ]);
+        $this->delete("/api/v1/metrics/{$metric->id}/points/{$metricPoint->id}");
         $this->assertResponseStatus(204);
     }
 }
