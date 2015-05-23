@@ -54,7 +54,7 @@
                             );
                             ?>
                             <img src="{{ $google2fa_url }}" class="img-responsive">
-                            <span class='help-block'>{{ trans('forms.user.2fa.help') }}</span>
+                            <span class='help-block'>{!! trans('forms.user.2fa.help') !!}</span>
                         </div>
                         @endif
                     </fieldset>
