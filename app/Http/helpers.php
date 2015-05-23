@@ -90,8 +90,11 @@ if (!function_exists('segment_track')) {
                         'event'       => $event,
                         'properties'  => $properties,
                         'context'     => [
-                            'locale'   => Config::get('app.locale'),
-                            'timezone' => Setting::get('app_timezone'),
+                            'locale'         => Config::get('app.locale'),
+                            'timezone'       => Setting::get('app_timezone'),
+                            'DB_DRIVER'      => getenv('DB_DRIVER'),
+                            'CACHE_DRIVER'   => getenv('CACHE_DRIVER'),
+                            'SESSION_DRIVER' => getenv('SESSION_DRIVER'),
                         ],
                     ]);
                 } else {
@@ -121,8 +124,11 @@ if (!function_exists('segment_page')) {
                         'anonymousId' => Config::get('app.key'),
                         'name'        => $page,
                         'context'     => [
-                            'locale'   => Config::get('app.locale'),
-                            'timezone' => Setting::get('app_timezone'),
+                            'locale'         => Config::get('app.locale'),
+                            'timezone'       => Setting::get('app_timezone'),
+                            'DB_DRIVER'      => getenv('DB_DRIVER'),
+                            'CACHE_DRIVER'   => getenv('CACHE_DRIVER'),
+                            'SESSION_DRIVER' => getenv('SESSION_DRIVER'),
                         ],
                     ]);
                 } else {
