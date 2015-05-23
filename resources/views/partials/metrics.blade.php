@@ -32,6 +32,8 @@
         </div>
         <script>
             (function () {
+                Chart.defaults.global.pointHitDetectionRadius = 1;
+
                 var hourList = [], date = new Date();
 
                 for (var i = 10; i >= 1; i--) {
@@ -50,15 +52,15 @@
                         pointStrokeColor: "#fff",
                         pointHighlightFill: "#fff",
                         pointHighlightStroke: "rgba(220,220,220,1)",
-                        data: [{{ implode(',', $points) }}]
-                    }]
+                        data: [{{ implode(',', $points) }}],
+                    }],
                 };
 
                 var ctx = document.getElementById("metric-{{ $metric->id }}").getContext("2d");
                 new Chart(ctx).Line(data, {
+                    tooltipTemplate: "{{ $metric->name }}: <%= value %>{{ $metric->suffix }}",
                     scaleShowVerticalLines: true,
                     scaleShowLabels: false,
-                    pointDot: false,
                     responsive: true
                 });
             }());
