@@ -3,7 +3,7 @@
 @section('content')
     <div class="setup-page">
         <div class="text-center">
-            <img class="logo" height="50" src="{{ url('img/cachet-logo.svg') }}" alt="Cachet">
+            <img class="logo" height="50" src="/img/cachet-logo.svg" alt="Cachet">
             <h4>{{ trans('setup.title') }}</h4>
             <br>
         </div>
