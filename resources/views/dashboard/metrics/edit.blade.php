@@ -19,7 +19,7 @@
                     <fieldset>
                         <div class="form-group">
                             <label for="metric-name">{{ trans('forms.metrics.name') }}</label>
-                            <input type="text" class="form-control" name="metric[name]" id="metric-name" required value={{ $metric->name }}>
+                            <input type="text" class="form-control" name="metric[name]" id="metric-name" required value="{{ $metric->name }}">
                         </div>
                         <div class="form-group">
                             <label for="metric-suffix">{{ trans('forms.metrics.suffix') }}</label>
