@@ -7,6 +7,20 @@
         "updates"
     ],
     "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "James Brooks",
+            "email": "james@cachethq.io"
+        },
+        {
+            "name": "Graham Campbell",
+            "email": "graham@cachethq.io"
+        },
+        {
+            "name": "Joseph Cohen",
+            "email": "joseph.cohen@dinkbit.com"
+        }
+    ],
     "type": "project",
     "require": {
         "php": ">=5.4.0",
