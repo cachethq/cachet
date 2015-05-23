@@ -35,7 +35,7 @@
         "graham-campbell/throttle": "^3.0",
         "graham-campbell/exceptions": "^1.0",
         "guzzlehttp/guzzle": "^5.0",
-        "jenssegers/date": "^2.0",
+        "jenssegers/date": "^2.0.21",
         "mccool/laravel-auto-presenter": "^3.0",
         "pragmarx/google2fa": "^0.1",
         "roumen/feed": "^2.9",
