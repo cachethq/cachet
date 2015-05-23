@@ -17,7 +17,6 @@ use CachetHQ\Cachet\Http\Controllers\AbstractController;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\MetricPoint;
 use GrahamCampbell\Binput\Facades\Binput;
-use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 
