@@ -21,6 +21,8 @@ return [
         'site_timezone'    => 'Select your timezone',
         'site_locale'      => 'Select your language',
         'enable_google2fa' => 'Enable Google Two Factor Authentication',
+        'cache_driver'     => 'Cache Driver',
+        'session_driver'   => 'Session Driver',
     ],
 
     // Login form fields
