@@ -17,6 +17,7 @@ use CachetHQ\Cachet\Http\Controllers\AbstractController;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\MetricPoint;
 use GrahamCampbell\Binput\Facades\Binput;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 
@@ -121,7 +122,7 @@ class MetricController extends AbstractController
      */
     public function createMetricPointAction()
     {
-        $_point = Binput::get('point');
+        $_point = Binput::get('point', null, false);
         $point = MetricPoint::create($_point);
 
         if (!$point->isValid()) {
@@ -181,8 +182,8 @@ class MetricController extends AbstractController
      */
     public function editMetricAction(Metric $metric)
     {
-        $_metric = Binput::get('metric');
-        $metric->update($_metric);
+        $metricData = Binput::get('metric', null, false);
+        $metric->update($metricData);
 
         if (!$metric->isValid()) {
             segment_track('Dashboard', [
