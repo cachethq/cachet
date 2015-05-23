@@ -54,8 +54,11 @@ if (!function_exists('segment_identify')) {
                     return Segment::identify([
                         'anonymousId' => Config::get('app.key'),
                         'context'     => [
-                            'locale'   => Config::get('app.locale'),
-                            'timezone' => Setting::get('app_timezone'),
+                            'locale'         => Config::get('app.locale'),
+                            'timezone'       => Setting::get('app_timezone'),
+                            'DB_DRIVER'      => getenv('DB_DRIVER'),
+                            'CACHE_DRIVER'   => getenv('CACHE_DRIVER'),
+                            'SESSION_DRIVER' => getenv('SESSION_DRIVER'),
                         ],
                     ]);
                 } else {

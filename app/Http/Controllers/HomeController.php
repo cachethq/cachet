@@ -37,9 +37,7 @@ class HomeController extends AbstractController
         $today = Carbon::now();
         $startDate = Carbon::now();
 
-        segment_track('Status Page', [
-            'event' => 'Landed',
-        ]);
+        segment_page('Status Page');
 
         // Check if we have another starting date
         if (Binput::has('start_date')) {

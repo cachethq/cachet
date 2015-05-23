@@ -41,6 +41,8 @@ class SetupController extends AbstractController
      */
     public function getIndex()
     {
+        segment_page('Setup');
+
         return View::make('setup')->with([
             'pageTitle' => trans('setup.setup'),
         ]);

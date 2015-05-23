@@ -28,6 +28,8 @@ class DashboardController extends AbstractController
     {
         $components = Component::all();
 
+        segment_page('Dashboard');
+
         return View::make('dashboard.index')->with([
             'components' => $components,
         ]);
