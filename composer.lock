@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "df9a3c00e4cbd84bfd177128b2d5d5cb",
+    "hash": "a40dafeadb9a0d7a58cfaf9b7ce4cedf",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1626,16 +1626,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.0.31",
+            "version": "5.0.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "db0a7400465df159ba8c6eaa954f97f50bc19687"
+                "reference": "5fa1e3e699abebd28383383c8b6bbc2f2609196c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/db0a7400465df159ba8c6eaa954f97f50bc19687",
-                "reference": "db0a7400465df159ba8c6eaa954f97f50bc19687",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/5fa1e3e699abebd28383383c8b6bbc2f2609196c",
+                "reference": "5fa1e3e699abebd28383383c8b6bbc2f2609196c",
                 "shasum": ""
             },
             "require": {
@@ -1748,7 +1748,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2015-05-11 22:15:00"
+            "time": "2015-05-22 20:40:49"
         },
         {
             "name": "league/commonmark",
@@ -4406,11 +4406,11 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": {
         "barryvdh/laravel-cors": 20
     },
-    "prefer-stable": false,
+    "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": ">=5.4.0",

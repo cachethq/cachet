@@ -11,7 +11,7 @@
     "require": {
         "php": ">=5.4.0",
         "ext-apcu": "*",
-        "laravel/framework": "5.0.*",
+        "laravel/framework": "~5.0.32",
         "illuminate/html": "5.0.*",
         "cachethq/segment": "^2.0",
         "doctrine/dbal": "^2.5",
@@ -65,6 +65,8 @@
         ]
     },
     "config": {
-        "preferred-install": "dist"
-    }
+        "preferred-install": "dev"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
