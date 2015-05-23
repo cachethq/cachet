@@ -80,7 +80,7 @@ if (!function_exists('segment_track')) {
      *
      * @return bool
      */
-    function segment_track($event, array $properties)
+    function segment_track($event, array $properties = [])
     {
         if (Config::get('segment.write_key')) {
             try {
