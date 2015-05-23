@@ -889,32 +889,32 @@
         },
         {
             "name": "graham-campbell/binput",
-            "version": "v3.0.0",
+            "version": "v3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Binput.git",
-                "reference": "b63ff5e9eab92958a9a9d3316e29db7d01455cd4"
+                "reference": "1f4bf545f40ae5b37401f7a8d6d811d9a626f498"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Binput/zipball/b63ff5e9eab92958a9a9d3316e29db7d01455cd4",
-                "reference": "b63ff5e9eab92958a9a9d3316e29db7d01455cd4",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Binput/zipball/1f4bf545f40ae5b37401f7a8d6d811d9a626f498",
+                "reference": "1f4bf545f40ae5b37401f7a8d6d811d9a626f498",
                 "shasum": ""
             },
             "require": {
-                "graham-campbell/security": "3.0.*",
-                "illuminate/contracts": "5.0.*",
-                "illuminate/http": "5.0.*",
-                "illuminate/support": "5.0.*",
-                "php": ">=5.4.7"
+                "graham-campbell/security": "~3.1",
+                "illuminate/contracts": "5.0.*|5.1.*",
+                "illuminate/http": "5.0.*|5.1.*",
+                "illuminate/support": "5.0.*|5.1.*",
+                "php": ">=5.5.9"
             },
             "require-dev": {
-                "graham-campbell/testbench": "~2.0"
+                "graham-campbell/testbench": "~2.1"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0-dev"
+                    "dev-master": "3.1-dev"
                 }
             },
             "autoload": {
@@ -946,7 +946,7 @@
                 "laravel",
                 "security"
             ],
-            "time": "2015-02-05 20:08:25"
+            "time": "2015-05-20 23:26:52"
         },
         {
             "name": "graham-campbell/exceptions",
@@ -1013,32 +1013,32 @@
         },
         {
             "name": "graham-campbell/markdown",
-            "version": "v3.0.2",
+            "version": "v3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Markdown.git",
-                "reference": "32ba7796fe6a3ee78b40b8083e290bc166b612bd"
+                "reference": "f57d81dadbb92fc1ccfc18ae772ee25059ef2a57"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Markdown/zipball/32ba7796fe6a3ee78b40b8083e290bc166b612bd",
-                "reference": "32ba7796fe6a3ee78b40b8083e290bc166b612bd",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Markdown/zipball/f57d81dadbb92fc1ccfc18ae772ee25059ef2a57",
+                "reference": "f57d81dadbb92fc1ccfc18ae772ee25059ef2a57",
                 "shasum": ""
             },
             "require": {
-                "illuminate/contracts": "5.0.*",
-                "illuminate/support": "5.0.*",
-                "illuminate/view": "5.0.*",
+                "illuminate/contracts": "5.0.*|5.1.*",
+                "illuminate/support": "5.0.*|5.1.*",
+                "illuminate/view": "5.0.*|5.1.*",
                 "league/commonmark": "0.8.*",
-                "php": ">=5.4.7"
+                "php": ">=5.5.9"
             },
             "require-dev": {
-                "graham-campbell/testbench": "~2.0"
+                "graham-campbell/testbench": "~2.1"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0-dev"
+                    "dev-master": "3.1-dev"
                 }
             },
             "autoload": {
@@ -1068,34 +1068,34 @@
                 "laravel",
                 "markdown"
             ],
-            "time": "2015-05-07 13:59:12"
+            "time": "2015-05-20 22:50:07"
         },
         {
             "name": "graham-campbell/security",
-            "version": "v3.0.0",
+            "version": "v3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Security.git",
-                "reference": "c4be38d187ec49efdd9b18b00395a0f29bc33b46"
+                "reference": "9f573002070cfe49f32bf49ca91a415d3220d86e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Security/zipball/c4be38d187ec49efdd9b18b00395a0f29bc33b46",
-                "reference": "c4be38d187ec49efdd9b18b00395a0f29bc33b46",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Security/zipball/9f573002070cfe49f32bf49ca91a415d3220d86e",
+                "reference": "9f573002070cfe49f32bf49ca91a415d3220d86e",
                 "shasum": ""
             },
             "require": {
-                "illuminate/contracts": "5.0.*",
-                "illuminate/support": "5.0.*",
-                "php": ">=5.4.7"
+                "illuminate/contracts": "5.0.*|5.1.*",
+                "illuminate/support": "5.0.*|5.1.*",
+                "php": ">=5.5.9"
             },
             "require-dev": {
-                "graham-campbell/testbench": "~2.0"
+                "graham-campbell/testbench": "~2.1"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0-dev"
+                    "dev-master": "3.1-dev"
                 }
             },
             "autoload": {
@@ -1124,7 +1124,7 @@
                 "laravel",
                 "security"
             ],
-            "time": "2015-02-05 19:54:29"
+            "time": "2015-05-20 23:18:09"
         },
         {
             "name": "graham-campbell/throttle",
@@ -1187,26 +1187,26 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "5.2.0",
+            "version": "5.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "475b29ccd411f2fa8a408e64576418728c032cfa"
+                "reference": "f3c8c22471cb55475105c14769644a49c3262b93"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/475b29ccd411f2fa8a408e64576418728c032cfa",
-                "reference": "475b29ccd411f2fa8a408e64576418728c032cfa",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/f3c8c22471cb55475105c14769644a49c3262b93",
+                "reference": "f3c8c22471cb55475105c14769644a49c3262b93",
                 "shasum": ""
             },
             "require": {
-                "guzzlehttp/ringphp": "~1.0",
+                "guzzlehttp/ringphp": "^1.1",
                 "php": ">=5.4.0"
             },
             "require-dev": {
                 "ext-curl": "*",
-                "phpunit/phpunit": "~4.0",
-                "psr/log": "~1.0"
+                "phpunit/phpunit": "^4.0",
+                "psr/log": "^1.0"
             },
             "type": "library",
             "extra": {
@@ -1241,20 +1241,20 @@
                 "rest",
                 "web service"
             ],
-            "time": "2015-01-28 01:03:29"
+            "time": "2015-05-20 03:47:55"
         },
         {
             "name": "guzzlehttp/ringphp",
-            "version": "1.0.7",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/RingPHP.git",
-                "reference": "52d868f13570a9a56e5fce6614e0ec75d0f13ac2"
+                "reference": "dbbb91d7f6c191e5e405e900e3102ac7f261bc0b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/RingPHP/zipball/52d868f13570a9a56e5fce6614e0ec75d0f13ac2",
-                "reference": "52d868f13570a9a56e5fce6614e0ec75d0f13ac2",
+                "url": "https://api.github.com/repos/guzzle/RingPHP/zipball/dbbb91d7f6c191e5e405e900e3102ac7f261bc0b",
+                "reference": "dbbb91d7f6c191e5e405e900e3102ac7f261bc0b",
                 "shasum": ""
             },
             "require": {
@@ -1272,7 +1272,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0-dev"
+                    "dev-master": "1.1-dev"
                 }
             },
             "autoload": {
@@ -1292,7 +1292,7 @@
                 }
             ],
             "description": "Provides a simple API and specification that abstracts away the details of HTTP into a single PHP function.",
-            "time": "2015-03-30 01:43:20"
+            "time": "2015-05-20 03:37:09"
         },
         {
             "name": "guzzlehttp/streams",
@@ -1896,16 +1896,16 @@
         },
         {
             "name": "mccool/laravel-auto-presenter",
-            "version": "3.0.0",
+            "version": "3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-auto-presenter/laravel-auto-presenter.git",
-                "reference": "fbde239dd9b3c9145e5f281fd585623181013b80"
+                "reference": "846eee0565bf84d911c1d2cad81e707ec9ac2e9c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-auto-presenter/laravel-auto-presenter/zipball/fbde239dd9b3c9145e5f281fd585623181013b80",
-                "reference": "fbde239dd9b3c9145e5f281fd585623181013b80",
+                "url": "https://api.github.com/repos/laravel-auto-presenter/laravel-auto-presenter/zipball/846eee0565bf84d911c1d2cad81e707ec9ac2e9c",
+                "reference": "846eee0565bf84d911c1d2cad81e707ec9ac2e9c",
                 "shasum": ""
             },
             "require": {
@@ -1918,7 +1918,6 @@
                 "php": ">=5.5.0"
             },
             "require-dev": {
-                "fabpot/php-cs-fixer": "~1.2",
                 "graham-campbell/testbench": "~2.0"
             },
             "type": "library",
@@ -1953,7 +1952,7 @@
                 "lpm",
                 "presenter"
             ],
-            "time": "2015-02-04 19:20:36"
+            "time": "2015-05-18 10:21:57"
         },
         {
             "name": "monolog/monolog",
@@ -3283,29 +3282,29 @@
         },
         {
             "name": "watson/validating",
-            "version": "1.0.0",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dwightwatson/validating.git",
-                "reference": "9066ffd9342d1bf8a571d157df047e200a24e64a"
+                "reference": "47320813a45cc35384e72364484d54fe44dcd3fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dwightwatson/validating/zipball/9066ffd9342d1bf8a571d157df047e200a24e64a",
-                "reference": "9066ffd9342d1bf8a571d157df047e200a24e64a",
+                "url": "https://api.github.com/repos/dwightwatson/validating/zipball/47320813a45cc35384e72364484d54fe44dcd3fb",
+                "reference": "47320813a45cc35384e72364484d54fe44dcd3fb",
                 "shasum": ""
             },
             "require": {
-                "illuminate/contracts": "~5.0",
-                "illuminate/database": "~5.0",
-                "illuminate/events": "~5.0",
-                "illuminate/support": "~5.0",
-                "illuminate/validation": "~5.0",
+                "illuminate/contracts": "5.0.*|5.1.*",
+                "illuminate/database": "5.0.*|5.1.*",
+                "illuminate/events": "5.0.*|5.1.*",
+                "illuminate/support": "5.0.*|5.1.*",
+                "illuminate/validation": "5.0.*|5.1.*",
                 "php": ">=5.4.0"
             },
             "require-dev": {
                 "mockery/mockery": "0.9.*",
-                "phpunit/phpunit": "4.2.*"
+                "phpunit/phpunit": "~4.0"
             },
             "type": "library",
             "extra": {
@@ -3334,7 +3333,7 @@
                 "laravel",
                 "validation"
             ],
-            "time": "2015-03-17 10:52:36"
+            "time": "2015-05-23 00:03:54"
         }
     ],
     "packages-dev": [
