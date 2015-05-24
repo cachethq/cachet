@@ -32,6 +32,6 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        //
+        $schedule->command('queue:work --sleep=3 --tries=3')->everyMinute();
     }
 }

@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Admin;
 
+use CachetHQ\Cachet\Events\MaintenanceHasScheduledEvent;
 use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Cachet\Http\Controllers\AbstractController;
 use CachetHQ\Cachet\Models\Incident;
@@ -138,6 +139,10 @@ class ScheduleController extends AbstractController
             trans('dashboard.notifications.awesome'),
             trans('dashboard.schedule.add.success')
         );
+
+        if (array_get($scheduleData, 'notify')) {
+            event(new MaintenanceHasScheduledEvent($incident));
+        }
 
         return Redirect::back()->with('success', $successMsg);
     }

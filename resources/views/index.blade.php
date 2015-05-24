@@ -1,6 +1,14 @@
 @extends('layout.master')
 
 @section('content')
+    <div class="pull-right">
+        <p><a class="btn btn-success btn-outline" href="{{ route('subscribe') }}">{{ trans('cachet.subscriber.button') }}</a></p>
+    </div>
+
+    <div class="clearfix"></div>
+
+    @include('partials.dashboard.errors')
+
     @if($bannerImage = Setting::get('app_banner'))
     <div class="row app-banner">
         <div class="col-md-12 text-center">
