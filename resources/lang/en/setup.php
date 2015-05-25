@@ -13,6 +13,7 @@ return [
     'setup'             => 'Setup',
     'title'             => 'Setup Cachet',
     'service_details'   => 'Service Details',
+    'env_setup'         => 'Environment Setup',
     'status_page_setup' => 'Status Page Setup',
     'show_support'      => 'Show support for Cachet?',
     'admin_account'     => 'Administrator Account',
