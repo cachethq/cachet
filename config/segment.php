@@ -10,6 +10,7 @@
  */
 
 return [
+
     /*
      * Whether to enable Segment or not.
      */
@@ -27,4 +28,5 @@ return [
     'debug'         => false,
     'ssl'           => true,
     'error_handler' => null,
+
 ];
