@@ -100,16 +100,16 @@
         },
         {
             "name": "cachethq/segment",
-            "version": "2.1.0",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cachethq/Laravel-Segment.git",
-                "reference": "a78b2e76f9cf535abbf3cedcbcbfa2b7050325c9"
+                "reference": "cbc9c61c9c9483e91b88d681f46485f7d97fc88a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cachethq/Laravel-Segment/zipball/a78b2e76f9cf535abbf3cedcbcbfa2b7050325c9",
-                "reference": "a78b2e76f9cf535abbf3cedcbcbfa2b7050325c9",
+                "url": "https://api.github.com/repos/cachethq/Laravel-Segment/zipball/cbc9c61c9c9483e91b88d681f46485f7d97fc88a",
+                "reference": "cbc9c61c9c9483e91b88d681f46485f7d97fc88a",
                 "shasum": ""
             },
             "require": {
@@ -163,7 +163,7 @@
                 "segment.com",
                 "segment.io"
             ],
-            "time": "2015-05-25 18:50:59"
+            "time": "2015-05-25 22:41:20"
         },
         {
             "name": "classpreloader/classpreloader",
