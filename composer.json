@@ -22,7 +22,7 @@
         "php": ">=5.5.9",
         "ext-apcu": "*",
         "laravel/framework": "~5.0.32",
-        "cachethq/segment": "^2.0",
+        "cachethq/segment": "^2.1",
         "doctrine/dbal": "^2.5",
         "fideloper/proxy": "^3.0",
         "graham-campbell/binput": "^3.0",

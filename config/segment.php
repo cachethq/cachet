@@ -12,21 +12,29 @@
 return [
 
     /*
-     * Whether to enable Segment or not.
-     */
+    |--------------------------------------------------------------------------
+    | Enable Laravel Segment
+    |--------------------------------------------------------------------------
+    |
+    | This option specifies if Segment tracking is enabled.
+    |
+    | Default: true
+    |
+    */
+
     'enabled' => true,
 
     /*
-     * The key which enables you to write to the Segment.com API.
-     */
-    'write_key' => '',
+    |--------------------------------------------------------------------------
+    | Segment Write Key
+    |--------------------------------------------------------------------------
+    |
+    | This option specifies key which enables you to write to Segment's API.
+    |
+    | Default: true
+    |
+    */
 
-    /*
-     * Other configurations. Currently unused.
-     */
-    'consumer'      => 'socket',
-    'debug'         => false,
-    'ssl'           => true,
-    'error_handler' => null,
+    'write_key' => '',
 
 ];

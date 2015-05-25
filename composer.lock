@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4ba73e822b18d8204512ede891d95d36",
+    "hash": "5df75070dd0d8fd0c65522680dd5614a",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -100,23 +100,23 @@
         },
         {
             "name": "cachethq/segment",
-            "version": "2.0.0",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cachethq/Laravel-Segment.git",
-                "reference": "c3d5ec412237a081bfac0fffb63c92cd9feb9776"
+                "reference": "a78b2e76f9cf535abbf3cedcbcbfa2b7050325c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cachethq/Laravel-Segment/zipball/c3d5ec412237a081bfac0fffb63c92cd9feb9776",
-                "reference": "c3d5ec412237a081bfac0fffb63c92cd9feb9776",
+                "url": "https://api.github.com/repos/cachethq/Laravel-Segment/zipball/a78b2e76f9cf535abbf3cedcbcbfa2b7050325c9",
+                "reference": "a78b2e76f9cf535abbf3cedcbcbfa2b7050325c9",
                 "shasum": ""
             },
             "require": {
-                "illuminate/config": "~5.0",
-                "illuminate/support": "~5.0",
-                "php": ">=5.4",
-                "segmentio/analytics-php": "~1.1.0"
+                "illuminate/config": "5.0.*|5.1.*",
+                "illuminate/support": "5.0.*|5.1.*",
+                "php": ">=5.5.9",
+                "segmentio/analytics-php": "1.1.*"
             },
             "require-dev": {
                 "phpunit/phpunit": "~4.4"
@@ -124,7 +124,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.0-dev"
+                    "dev-master": "2.1-dev"
                 }
             },
             "autoload": {
@@ -144,10 +144,15 @@
                 {
                     "name": "Joseph Cohen",
                     "email": "joe@cachethq.io"
+                },
+                {
+                    "name": "Graham Campbell",
+                    "email": "graham@cachethq.io"
                 }
             ],
             "description": "Segment.com wrapper written for Laravel",
             "keywords": [
+                "Cachet HQ",
                 "CachetHQ",
                 "Laravel Segment",
                 "api",
@@ -158,7 +163,7 @@
                 "segment.com",
                 "segment.io"
             ],
-            "time": "2015-03-21 08:11:08"
+            "time": "2015-05-25 18:50:59"
         },
         {
             "name": "classpreloader/classpreloader",
