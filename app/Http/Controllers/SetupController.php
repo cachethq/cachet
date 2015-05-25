@@ -14,8 +14,8 @@ namespace CachetHQ\Cachet\Http\Controllers;
 use CachetHQ\Cachet\Models\Setting;
 use CachetHQ\Cachet\Models\User;
 use GrahamCampbell\Binput\Facades\Binput;
-use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Response;
@@ -55,7 +55,7 @@ class SetupController extends AbstractController
 
         // If we've copied the .env.example file, then we should try and reset it ready for Segment to kick in.
         if (getenv('APP_KEY') === 'SomeRandomString') {
-            Artisan::call('key:generate');
+            $this->keyGenerate();
         }
 
         return View::make('setup')->with([
@@ -232,5 +232,23 @@ class SetupController extends AbstractController
                 getenv(strtoupper($key)), $value, file_get_contents($path)
             ));
         }
+    }
+
+    /**
+     * Generate the app.key value.
+     *
+     * @return void
+     */
+    protected function keyGenerate()
+    {
+        $key = str_random(42);
+
+        $path = base_path('.env');
+
+        file_put_contents($path, str_replace(
+            Config::get('app.key'), $key, file_get_contents($path)
+        ));
+
+        Config::set('app.key', $key);
     }
 }
