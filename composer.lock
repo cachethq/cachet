@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5df75070dd0d8fd0c65522680dd5614a",
+    "hash": "e9aed955b875697ff5c3c5314ab2cd2e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -955,34 +955,34 @@
         },
         {
             "name": "graham-campbell/exceptions",
-            "version": "v1.0.0",
+            "version": "v2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Exceptions.git",
-                "reference": "ac5412d5aca9a2d4dafebf5f85dcb5abcc6d4e25"
+                "reference": "c114242ab593a6693ff96e72aeeb44ce76e27d9b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Exceptions/zipball/ac5412d5aca9a2d4dafebf5f85dcb5abcc6d4e25",
-                "reference": "ac5412d5aca9a2d4dafebf5f85dcb5abcc6d4e25",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Exceptions/zipball/c114242ab593a6693ff96e72aeeb44ce76e27d9b",
+                "reference": "c114242ab593a6693ff96e72aeeb44ce76e27d9b",
                 "shasum": ""
             },
             "require": {
                 "filp/whoops": "1.1.*",
-                "illuminate/contracts": "5.0.*",
-                "illuminate/support": "5.0.*",
-                "php": ">=5.5.0",
+                "illuminate/contracts": "5.0.*|5.1.*",
+                "illuminate/support": "5.0.*|5.1.*",
+                "php": ">=5.5.9",
                 "psr/log": "~1.0",
-                "symfony/debug": "2.6.*",
-                "symfony/http-foundation": "2.6.*"
+                "symfony/debug": "2.6.*|2.7.*",
+                "symfony/http-foundation": "2.6.*|2.7.*"
             },
             "require-dev": {
-                "graham-campbell/testbench": "~2.0"
+                "graham-campbell/testbench": "~2.1"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0-dev"
+                    "dev-master": "2.0-dev"
                 }
             },
             "autoload": {
@@ -1014,7 +1014,7 @@
                 "laravel",
                 "whoops"
             ],
-            "time": "2015-02-04 20:18:59"
+            "time": "2015-05-21 19:37:10"
         },
         {
             "name": "graham-campbell/markdown",
