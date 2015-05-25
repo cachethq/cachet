@@ -30,7 +30,7 @@ body.dashboard {
             letter-spacing: 0.04em;
             font-weight: 600;
             text-transform: uppercase;
-            @media #{$screen-sm-max} {
+            @media (min-width: $screen-sm-max) {
                 span {
                     padding-right: 10px;
                     &:before {
