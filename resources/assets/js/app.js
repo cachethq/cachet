@@ -1,13 +1,22 @@
 $(function() {
     // Ajax Setup
     $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
+        if (! options.beforeSend) {
+            options.beforeSend = function(xhr) {
+                jqXHR.setRequestHeader('Accept', 'application/json; charset=utf-8');
+                jqXHR.setRequestHeader('Content-Type', 'application/json');
+            };
+        }
+
         var token;
         if (! options.crossDomain) {
             token = $('meta[name="token"]').attr('content');
             if (token) {
-                return jqXHR.setRequestHeader('X-CSRF-Token', token);
+                jqXHR.setRequestHeader('X-CSRF-Token', token);
             }
         }
+
+        return jqXHR;
     });
 
     $.ajaxSetup({
