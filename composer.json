@@ -22,7 +22,6 @@
         "php": ">=5.5.9",
         "ext-apcu": "*",
         "laravel/framework": "~5.0.32",
-        "illuminate/html": "~5.0.0",
         "cachethq/segment": "^2.0",
         "doctrine/dbal": "^2.5",
         "fideloper/proxy": "^3.0",
