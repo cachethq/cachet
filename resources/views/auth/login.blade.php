@@ -17,15 +17,11 @@
 
                     <div class="form-group">
                         <label class="sr-only">{{ trans('forms.login.email') }}</label>
-                        {!! Form::email('email', Input::old('email'), [
-                            'class' => 'form-control', 'placeholder' => trans('forms.login.email'), 'required' => 'required'
-                        ]) !!}
+                        <input class="form-control" placeholder="{{ trans('forms.login.email') }}" required="required" name="email" type="email">
                     </div>
                     <div class="form-group">
                         <label class="sr-only">{{ trans('forms.login.password') }}</label>
-                        {!! Form::password('password', [
-                            'class' => 'form-control', 'placeholder' => trans('forms.login.password'), 'required' => 'required'
-                        ]) !!}
+                        <input class="form-control" placeholder="{{ trans('forms.login.password') }}" required="required" name="password" type="password" value="">
                     </div>
                     <div class="form-group">
                         <div class="alert alert-info">{{ trans('forms.login.cookies') }}</div>
