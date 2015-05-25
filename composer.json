@@ -1,11 +1,8 @@
 {
     "name": "cachethq/cachet",
     "description": "An open source status page system written in PHP",
-    "keywords": [
-        "status",
-        "page",
-        "updates"
-    ],
+    "keywords": ["status", "page", "updates", "cachet", "Cachet", "Cachet HQ", "CachetHQ"],
+    "type": "project",
     "license": "BSD-3-Clause",
     "authors": [
         {
@@ -21,9 +18,8 @@
             "email": "joe@cachethq.io"
         }
     ],
-    "type": "project",
     "require": {
-        "php": ">=5.4.0",
+        "php": ">=5.5.9",
         "ext-apcu": "*",
         "laravel/framework": "~5.0.32",
         "illuminate/html": "~5.0.0",
