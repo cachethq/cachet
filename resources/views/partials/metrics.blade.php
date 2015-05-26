@@ -61,7 +61,8 @@
                     tooltipTemplate: "{{ $metric->name }}: <%= value %>{{ $metric->suffix }}",
                     scaleShowVerticalLines: true,
                     scaleShowLabels: false,
-                    responsive: true
+                    responsive: true,
+                    maintainAspectRatio: false
                 });
             }());
         </script>
