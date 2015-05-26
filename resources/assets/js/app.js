@@ -1,13 +1,6 @@
 $(function() {
     // Ajax Setup
     $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
-        if (! options.beforeSend) {
-            options.beforeSend = function(xhr) {
-                jqXHR.setRequestHeader('Accept', 'application/json; charset=utf-8');
-                jqXHR.setRequestHeader('Content-Type', 'application/json');
-            };
-        }
-
         var token;
         if (! options.crossDomain) {
             token = $('meta[name="token"]').attr('content');
@@ -20,6 +13,10 @@ $(function() {
     });
 
     $.ajaxSetup({
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader('Accept', 'application/json');
+            // xhr.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
+        },
         statusCode: {
             401: function () {
                 window.location.href = '/';
@@ -157,19 +154,22 @@ $(function() {
             group: "omega",
             handle: ".drag-handle",
             onUpdate: function() {
-                var orderedComponentIds = $.map(
-                    $('#component-list .striped-list-item'),
-                    function(elem) {
-                        return $(elem).data('component-id');
-                    }
-                );
+                var orderedComponentIds = $.map($('#component-list .striped-list-item'), function(elem) {
+                    return $(elem).data('component-id');
+                });
+
                 $.ajax({
                     async: true,
                     url: '/dashboard/api/components/order',
                     type: 'POST',
-                    data: {ids: orderedComponentIds},
+                    data: {
+                        ids: orderedComponentIds
+                    },
                     success: function() {
-                        (new CachetHQ.Notifier()).notify('Components updated.', 'success');
+                        (new CachetHQ.Notifier()).notify('Component orders updated.', 'success');
+                    },
+                    error: function() {
+                        (new CachetHQ.Notifier()).notify('Component orders not updated.', 'error');
                     }
                 });
             }
@@ -196,6 +196,9 @@ $(function() {
                     data: {ids: orderedComponentGroupsIds},
                     success: function() {
                         (new CachetHQ.Notifier()).notify('Component groups order has been updated.', 'success');
+                    },
+                    error: function() {
+                        (new CachetHQ.Notifier()).notify('Component groups order could not be updated.', 'error');
                     }
                 });
             }
@@ -230,7 +233,6 @@ $(function() {
         if (slug) {
             $.ajax({
                 async: true,
-                dataType: 'json',
                 data: {
                     slug: slug
                 },
