@@ -1,11 +1,3 @@
 * text=auto
 *.css linguist-vendored
 *.less linguist-vendored
-
-/tests export-ignore
-/.gitattributes export-ignore
-/.gitignore export-ignore
-/phpunit.xml export-ignore
-/CONTRIBUTING.md export-ignore
-/INSTALL.md export-ignore
-/README.md export-ignore
