@@ -47,7 +47,7 @@ class ApiController extends AbstractController
     public function postUpdateComponentOrder()
     {
         $componentData = Binput::get('ids');
-        return $componentData;
+
         foreach ($componentData as $order => $componentId) {
             // Ordering should be 1-based, data comes in 0-based
             Component::find($componentId)->update(['order' => $order + 1]);
@@ -64,6 +64,7 @@ class ApiController extends AbstractController
     public function postUpdateComponentGroupOrder()
     {
         $groupData = Binput::get('ids');
+
         foreach ($groupData as $order => $groupId) {
             ComponentGroup::find($groupId)->update([
                 'order' => $order + 1,
