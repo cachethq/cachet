@@ -47,16 +47,6 @@ class HomeController extends AbstractController
                     'start_date' => $oldDate->format('Y-m-d'),
                 ]);
 
-                if (Setting::get('app_tracking')) {
-                    Segment::track([
-                        'userId'     => Config::get('app.key'),
-                        'event'      => 'Home Page',
-                        'properties' => [
-                            'start_date' => $oldDate,
-                        ],
-                    ]);
-                }
-
                 // If trying to get a future date fallback to today
                 if ($today->gt($oldDate)) {
                     $startDate = $oldDate;
