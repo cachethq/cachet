@@ -28,7 +28,7 @@ class FixPermissionsCommand extends Command
      *
      * @var string
      */
-    protected $description = 'Fixes file and directory permissions. Ensures SQLite database is writeable.';
+    protected $description = 'Fixes file and directory permissions. Ensures SQLite database is writable.';
 
     /**
      * Path to the storage directory.
