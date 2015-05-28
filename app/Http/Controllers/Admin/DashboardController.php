@@ -24,7 +24,7 @@ class DashboardController extends AbstractController
      */
     public function showDashboard()
     {
-        $components = Component::all();
+        $components = Component::orderBy('order')->get();
 
         segment_page('Dashboard');
 
