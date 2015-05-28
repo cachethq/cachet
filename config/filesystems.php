@@ -62,6 +62,7 @@ return [
             'host'     => 'ftp.example.com',
             'username' => 'your-username',
             'password' => 'your-password',
+        ],
 
         's3' => [
             'driver' => 's3',
