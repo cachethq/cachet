@@ -65,6 +65,8 @@ class FixPermissionsCommand extends Command
      * @param string $databaseDirectory
      * @param string $databasePath
      * @param string $databaseDefault
+     *
+     * @return void
      */
     public function __construct($storageDirectory, $databaseDirectory, $databasePath, $databaseDefault)
     {
