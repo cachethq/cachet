@@ -109,6 +109,7 @@ class HomeController extends AbstractController
             'canPageBackward'      => $canPageBackward,
             'previousDate'         => $startDate->copy()->subDays($daysToShow)->toDateString(),
             'nextDate'             => $startDate->copy()->addDays($daysToShow)->toDateString(),
+            'pageTitle'            => Setting::get('app_name').' Status',
         ]);
     }
 }

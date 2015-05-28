@@ -29,7 +29,6 @@ class IndexComposer
         $withData = [
             'systemStatus'  => 'danger',
             'systemMessage' => trans('cachet.service.bad'),
-            'pageTitle'     => Setting::get('app_name'),
         ];
 
         if (Component::notStatus(1)->count() === 0) {
