@@ -8,7 +8,7 @@
     </li>
 
     <div class="group-items">
-    @foreach($componentGroup->components as $component)
+    @foreach($componentGroup->components->sortBy('order') as $component)
     @include('partials.component', compact($component))
     @endforeach
     </div>
