@@ -14,8 +14,8 @@ namespace CachetHQ\Cachet\Providers;
 use CachetHQ\Cachet\Composers\DashboardComposer;
 use CachetHQ\Cachet\Composers\IndexComposer;
 use CachetHQ\Cachet\Composers\LoggedUserComposer;
-use CachetHQ\Cachet\Composers\TimezoneLocaleComposer;
 use CachetHQ\Cachet\Composers\ThemeComposer;
+use CachetHQ\Cachet\Composers\TimezoneLocaleComposer;
 use Illuminate\Support\ServiceProvider;
 
 class ComposerServiceProvider extends ServiceProvider
