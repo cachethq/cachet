@@ -19,14 +19,18 @@ use Illuminate\Database\QueryException;
 class CacheRepository implements RepositoryInterface
 {
     /**
+     * The underlying segment repository instance.
+     *
      * @var \CachetHQ\Cachet\Segment\RepositoryInterface
      */
     protected $repository;
 
     /**
-     * Instantiates a new instance of the Cache Repository.
+     * Create a new segment cache repository instance.
      *
      * @param \CachetHQ\Cachet\Segment\RepositoryInterface $repository
+     *
+     * @return void
      */
     public function __construct(RepositoryInterface $repository)
     {
@@ -34,14 +38,12 @@ class CacheRepository implements RepositoryInterface
     }
 
     /**
-     * Determines whether to use the segment_write_key setting or to fetch a new.
+     * Returns the segment write key.
      *
      * @return string
      */
     public function fetch()
     {
-        $writeKey = null;
-
         // We might not be setup yet.
         try {
             // Firstly, does the setting exist?

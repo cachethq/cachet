@@ -14,7 +14,7 @@ namespace CachetHQ\Cachet\Segment;
 interface RepositoryInterface
 {
     /**
-     * Returns the segment_write_key.
+     * Returns the segment write key.
      *
      * @return string
      */

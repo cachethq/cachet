@@ -16,20 +16,24 @@ use GuzzleHttp\ClientInterface;
 class HttpRepository implements RepositoryInterface
 {
     /**
-     * @var \Guzzle\GuzzleClient
+     * The guzzle client instance.
+     *
+     * @var \GuzzleHttp\ClientInterface
      */
     protected $client;
 
     /**
+     * The url to use.
+     *
      * @var string
      */
     protected $url;
 
     /**
-     * Instantiates a new instance of the SegmentApi class.
+     * Create a new segment http repository instance.
      *
-     * @param \Guzzle\GuzzleClient $client
-     * @param string               $url
+     * @param \GuzzleHttp\ClientInterface $client
+     * @param string                      $url
      */
     public function __construct(ClientInterface $client, $url)
     {
@@ -38,12 +42,16 @@ class HttpRepository implements RepositoryInterface
     }
 
     /**
-     * Fetches the segment_write_key from the given url.
+     * Returns the segment write key.
      *
      * @return string
      */
     public function fetch()
     {
-        return $this->client->get($this->url)->json()['segment_write_key'];
+        $response = $this->client->get($this->url);
+
+        $body = json_decode($response->getBody());
+
+        return $body['segment_write_key'];
     }
 }
