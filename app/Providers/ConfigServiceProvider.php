@@ -26,6 +26,8 @@ class ConfigServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $appDomain = $appLocale = null;
+
         try {
             // Get app custom configuration.
             $appDomain = Setting::get('app_domain');
