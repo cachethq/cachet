@@ -20,27 +20,24 @@
     ],
     "require": {
         "php": ">=5.5.9",
-        "ext-apcu": "*",
-        "laravel/framework": "~5.0.32",
+        "laravel/framework": "5.1.*",
         "cachethq/segment": "^2.1",
         "doctrine/dbal": "^2.5",
         "fideloper/proxy": "^3.0",
-        "graham-campbell/binput": "^3.0",
-        "graham-campbell/markdown": "^3.0",
-        "graham-campbell/throttle": "^3.0",
-        "graham-campbell/exceptions": "^2.0",
-        "guzzlehttp/guzzle": "^5.0",
-        "jenssegers/date": "^2.0.21",
+        "graham-campbell/binput": "^3.1",
+        "graham-campbell/markdown": "^3.1",
+        "graham-campbell/throttle": "^4.0",
+        "graham-campbell/exceptions": "^3.0",
+        "guzzlehttp/guzzle": "^6.0",
+        "jenssegers/date": "^3.0",
         "mccool/laravel-auto-presenter": "^3.0",
-        "pragmarx/google2fa": "^0.1",
+        "pragmarx/google2fa": "^0.5",
         "roumen/feed": "^2.9",
         "watson/validating": "^1.0",
         "barryvdh/laravel-cors": "^0.5"
     },
     "require-dev": {
-        "graham-campbell/testbench": "^2.1",
-        "phpunit/phpunit": "^4.4",
-        "mockery/mockery": "^0.9"
+        "graham-campbell/testbench": "^2.1"
     },
     "autoload": {
         "classmap": [
