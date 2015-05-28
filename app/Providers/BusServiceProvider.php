@@ -17,21 +17,23 @@ use Illuminate\Support\ServiceProvider;
 class BusServiceProvider extends ServiceProvider
 {
     /**
-     * Bootstrap any application services.
+     * Boot the service provider.
      *
      * @param \Illuminate\Bus\Dispatcher $dispatcher
+     *
+     * @return void
      */
     public function boot(Dispatcher $dispatcher)
     {
         $dispatcher->mapUsing(function ($command) {
-            return Dispatcher::simpleMapping(
-                $command, 'CachetHQ\Cachet\Commands', 'CachetHQ\Cachet\Handlers\Commands'
-            );
+            return Dispatcher::simpleMapping($command, 'CachetHQ\Cachet\Commands', 'CachetHQ\Cachet\Handlers\Commands');
         });
     }
 
     /**
-     * Register any application services.
+     * Register the service provider.
+     *
+     * @return void
      */
     public function register()
     {

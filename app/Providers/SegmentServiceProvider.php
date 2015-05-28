@@ -16,18 +16,12 @@ use CachetHQ\Cachet\Segment\HttpRepository;
 use GuzzleHttp\Client;
 use Illuminate\Support\ServiceProvider;
 
-class SegmentApiServiceProvider extends ServiceProvider
+class SegmentServiceProvider extends ServiceProvider
 {
     /**
-     * Boot the service provider.
-     */
-    public function boot()
-    {
-        //
-    }
-
-    /**
      * Register the service provider.
+     *
+     * @return void
      */
     public function register()
     {
