@@ -78,6 +78,7 @@ return [
         'string'  => ':attribute 必须是 :size 个字符',
         'array'   => ':attribute 必须包含 :size 个',
     ],
+    'string'               => 'The :attribute must be a string.',
     'unique'               => ':attribute 已经被占用',
     'url'                  => ':attribute 的格式无效',
     'timezone'             => ':attribute 必须是个有效的区域。',

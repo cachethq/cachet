@@ -69,6 +69,7 @@ return [
         'string'  => 'crwdns428:0crwdne428:0',
         'array'   => 'crwdns429:0crwdne429:0',
     ],
+    'string'               => 'The :attribute must be a string.',
     'unique'               => 'crwdns144:0crwdne144:0',
     'url'                  => 'crwdns145:0crwdne145:0',
     'timezone'             => 'crwdns146:0crwdne146:0',

@@ -78,6 +78,7 @@ return [
         'string'  => '<em>:attribute</em> muss :size Zeichen lang sein.',
         'array'   => '<em>:attribute</em> muss :size Werte enthalten.',
     ],
+    'string'               => 'The :attribute must be a string.',
     'unique'               => '<em>:attribute</em> wurde beirets gewählt.',
     'url'                  => 'Das Format von <em>:attribute</em> ist nicht korrekt.',
     'timezone'             => '<em>:attribute</em> muss eine valide Zeitzone sein.',

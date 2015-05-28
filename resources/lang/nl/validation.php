@@ -78,6 +78,7 @@ return [
         'string'  => 'The :attribute must be :size characters.',
         'array'   => 'The :attribute must contain :size items.',
     ],
+    'string'               => 'The :attribute must be a string.',
     'unique'               => 'The :attribute has already been taken.',
     'url'                  => 'Het :attribute-formaat is ongeldig.',
     'timezone'             => 'The :attribute must be a valid zone.',

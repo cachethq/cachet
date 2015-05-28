@@ -77,6 +77,7 @@ return [
         'string'  => 'Le nombre de caractères du champ :attribute doit être de :size caractères.',
         'array'   => 'Le champ :attribute doit contenir :size objets.',
     ],
+    'string'               => 'The :attribute must be a string.',
     'unique'               => 'Le champ :attribute est déjà utilisé.',
     'url'                  => 'Le format du champ :attribute est invalide.',
 
