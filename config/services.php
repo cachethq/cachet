@@ -39,7 +39,8 @@ return [
     ],
 
     'stripe' => [
-        'model'  => 'User',
+        'model'  => 'CachetHQ\Cachet\Models\User',
+        'key'    => '',
         'secret' => '',
     ],
 
