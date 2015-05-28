@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Cachet\Composers;
 
+use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
 use Illuminate\View\View;
@@ -28,6 +29,7 @@ class IndexComposer
         $withData = [
             'systemStatus'  => 'danger',
             'systemMessage' => trans('cachet.service.bad'),
+            'pageTitle'     => Setting::get('app_name'),
         ];
 
         if (Component::notStatus(1)->count() === 0) {

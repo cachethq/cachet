@@ -104,7 +104,6 @@ class HomeController extends AbstractController
             'metrics'              => $metrics,
             'allIncidents'         => $allIncidents,
             'scheduledMaintenance' => $scheduledMaintenance,
-            'pageTitle'            => Setting::get('app_name'),
             'aboutApp'             => Markdown::convertToHtml(Setting::get('app_about')),
             'canPageForward'       => (bool) $today->gt($startDate),
             'canPageBackward'      => $canPageBackward,
