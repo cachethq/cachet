@@ -44,7 +44,8 @@ class CacheRepository implements RepositoryInterface
      */
     public function fetch()
     {
-        // We might not be setup yet.
+        $writeKey = null;
+
         try {
             // Firstly, does the setting exist?
             if (null === ($writeKey = Setting::get('segment_write_key'))) {
