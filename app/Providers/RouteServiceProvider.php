@@ -26,9 +26,11 @@ class RouteServiceProvider extends ServiceProvider
     protected $namespace = 'CachetHQ\Cachet\Http\Controllers';
 
     /**
-     * Define your route model bindings, pattern filters, etc.
+     * Define the route model bindings, pattern filters, etc.
      *
      * @param \Illuminate\Routing\Router $router
+     *
+     * @return void
      */
     public function boot(Router $router)
     {
@@ -39,6 +41,8 @@ class RouteServiceProvider extends ServiceProvider
 
     /**
      * Register model bindings.
+     *
+     * @return void
      */
     protected function registerBindings()
     {
@@ -56,6 +60,8 @@ class RouteServiceProvider extends ServiceProvider
      * Define the routes for the application.
      *
      * @param \Illuminate\Routing\Router $router
+     *
+     * @return void
      */
     public function map(Router $router)
     {

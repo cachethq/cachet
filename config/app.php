@@ -165,15 +165,13 @@ return [
          */
         'CachetHQ\Cachet\Providers\AppServiceProvider',
         'CachetHQ\Cachet\Providers\BusServiceProvider',
+        'CachetHQ\Cachet\Providers\ComposerServiceProvider',
         'CachetHQ\Cachet\Providers\ConfigServiceProvider',
         'CachetHQ\Cachet\Providers\ConsoleServiceProvider',
         'CachetHQ\Cachet\Providers\EventServiceProvider',
         'CachetHQ\Cachet\Providers\RepositoryServiceProvider',
         'CachetHQ\Cachet\Providers\RouteServiceProvider',
-        'CachetHQ\Cachet\Providers\SettingsServiceProvider',
-        'CachetHQ\Cachet\Providers\SegmentApiServiceProvider',
-        'CachetHQ\Cachet\Providers\ViewComposerServiceProvider',
-        'CachetHQ\Cachet\Providers\LoadConfigServiceProvider',
+        'CachetHQ\Cachet\Providers\SegmentServiceProvider',
         'CachetHQ\Segment\SegmentServiceProvider',
 
     ],
