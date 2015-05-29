@@ -56,7 +56,7 @@ class Repository
         }
 
         // if the setting exists, return it
-        if (isset($this->settings[$name])) {
+        if (isset($this->settings[$name]) && $this->settings[$name]) {
             return $this->settings[$name];
         }
 
