@@ -955,26 +955,26 @@
         },
         {
             "name": "graham-campbell/exceptions",
-            "version": "dev-master",
+            "version": "v3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Exceptions.git",
-                "reference": "b4693e591bda8096a3e4255adf3940fc26fe4d0d"
+                "reference": "f081b83c74f59c6422498c2e0c794b7b81633ec7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Exceptions/zipball/b4693e591bda8096a3e4255adf3940fc26fe4d0d",
-                "reference": "b4693e591bda8096a3e4255adf3940fc26fe4d0d",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Exceptions/zipball/f081b83c74f59c6422498c2e0c794b7b81633ec7",
+                "reference": "f081b83c74f59c6422498c2e0c794b7b81633ec7",
                 "shasum": ""
             },
             "require": {
                 "filp/whoops": "1.1.*",
-                "illuminate/contracts": "5.0.*|5.1.*",
-                "illuminate/support": "5.0.*|5.1.*",
+                "illuminate/contracts": "5.1.*",
+                "illuminate/support": "5.1.*",
                 "php": ">=5.5.9",
                 "psr/log": "~1.0",
-                "symfony/debug": "2.6.*|2.7.*",
-                "symfony/http-foundation": "2.6.*|2.7.*"
+                "symfony/debug": "2.7.*",
+                "symfony/http-foundation": "2.7.*"
             },
             "require-dev": {
                 "graham-campbell/testbench": "~2.1"
@@ -1014,7 +1014,7 @@
                 "laravel",
                 "whoops"
             ],
-            "time": "2015-05-28 12:14:29"
+            "time": "2015-05-28 22:51:39"
         },
         {
             "name": "graham-campbell/markdown",
@@ -1609,12 +1609,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "dfda76cf9c6ce1bc1d8767218fb81d9c427e291c"
+                "reference": "b67854a2a4e16b4406995a9a16d23a3f1b13f01d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/dfda76cf9c6ce1bc1d8767218fb81d9c427e291c",
-                "reference": "dfda76cf9c6ce1bc1d8767218fb81d9c427e291c",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/b67854a2a4e16b4406995a9a16d23a3f1b13f01d",
+                "reference": "b67854a2a4e16b4406995a9a16d23a3f1b13f01d",
                 "shasum": ""
             },
             "require": {
@@ -1690,7 +1690,7 @@
                 "aws/aws-sdk-php": "Required to use the SQS queue driver and SES mail driver (~2.4).",
                 "doctrine/dbal": "Required to rename columns and drop SQLite columns (~2.4).",
                 "fzaninotto/faker": "Required to use the eloquent factory builder (~1.4).",
-                "guzzlehttp/guzzle": "Required to use the Mailgun and Mandrill mail drivers (~6.0).",
+                "guzzlehttp/guzzle": "Required to use the Mailgun and Mandrill mail drivers (~5.3|~6.0).",
                 "iron-io/iron_mq": "Required to use the iron queue driver (~2.0).",
                 "league/flysystem-aws-s3-v2": "Required to use the Flysystem S3 driver (~1.0).",
                 "league/flysystem-rackspace": "Required to use the Flysystem Rackspace driver (~1.0).",
@@ -1732,7 +1732,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2015-05-28 19:44:31"
+            "time": "2015-05-29 01:36:40"
         },
         {
             "name": "league/commonmark",
@@ -4118,16 +4118,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.6.8",
+            "version": "4.6.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "a6cd74b523ef7bad7a23a94e4045d72968e8165b"
+                "reference": "816d12536a7a032adc3b68737f82cfbbf98b79c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/a6cd74b523ef7bad7a23a94e4045d72968e8165b",
-                "reference": "a6cd74b523ef7bad7a23a94e4045d72968e8165b",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/816d12536a7a032adc3b68737f82cfbbf98b79c1",
+                "reference": "816d12536a7a032adc3b68737f82cfbbf98b79c1",
                 "shasum": ""
             },
             "require": {
@@ -4186,20 +4186,20 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-05-28 09:54:11"
+            "time": "2015-05-29 06:00:03"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
-            "version": "2.3.2",
+            "version": "2.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
-                "reference": "787e06820578ca103b21e323e27f0e2eb0712ae5"
+                "reference": "253c005852591fd547fc18cd5b7b43a1ec82d8f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/787e06820578ca103b21e323e27f0e2eb0712ae5",
-                "reference": "787e06820578ca103b21e323e27f0e2eb0712ae5",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/253c005852591fd547fc18cd5b7b43a1ec82d8f7",
+                "reference": "253c005852591fd547fc18cd5b7b43a1ec82d8f7",
                 "shasum": ""
             },
             "require": {
@@ -4241,7 +4241,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2015-05-28 09:50:37"
+            "time": "2015-05-29 05:19:18"
         },
         {
             "name": "sebastian/comparator",
