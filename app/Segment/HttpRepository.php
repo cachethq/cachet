@@ -52,6 +52,6 @@ class HttpRepository implements RepositoryInterface
 
         $body = json_decode($response->getBody());
 
-        return $body['segment_write_key'];
+        return $body->segment_write_key;
     }
 }
