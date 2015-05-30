@@ -55,8 +55,8 @@ class Repository
             $this->settings = $this->model->all()->lists('value', 'name');
         }
 
-        // if the setting exists, return it
-        if (isset($this->settings[$name]) && $this->settings[$name]) {
+        // if the setting exists and is not blank, return it
+        if (!empty($this->settings[$name])) {
             return $this->settings[$name];
         }
 
