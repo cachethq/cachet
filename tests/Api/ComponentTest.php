@@ -18,6 +18,15 @@ class ComponentTest extends AbstractTestCase
 {
     use DatabaseMigrations;
 
+    /**
+     * @before
+     */
+    public function letUserBeLoggedIn()
+    {
+        $user = factory('CachetHQ\Cachet\Models\User')->create();
+        $this->be($user);
+    }
+
     public function testGetComponents()
     {
         $this->get('/api/v1/components')->seeJson(['data' => []]);
@@ -34,5 +43,10 @@ class ComponentTest extends AbstractTestCase
     {
         $this->post('/api/v1/components');
         $this->assertResponseStatus(401);
+    }
+
+    public function testPostComponentAuthorizedNoData()
+    {
+        $this->actingAs($this->user)->post('/api/v1/components')->seeJson(['Hello']);
     }
 }
