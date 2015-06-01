@@ -23,9 +23,11 @@ class ComponentTest extends AbstractTestCase
         $this->get('/api/v1/components')->seeJson(['data' => []]);
     }
 
+    /**
+     * @expectedException \Illuminate\Database\Eloquent\ModelNotFoundException
+     */
     public function testGetInvalidComponent()
     {
-        $this->setExpectedException('Illuminate\Database\Eloquent\ModelNotFoundException');
         $this->get('/api/v1/components/1');
     }
 
