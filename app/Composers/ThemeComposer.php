@@ -12,14 +12,14 @@
 namespace CachetHQ\Cachet\Composers;
 
 use CachetHQ\Cachet\Facades\Setting;
-use Illuminate\View\View;
+use Illuminate\Contracts\View\View;
 
 class ThemeComposer
 {
     /**
      * Bind data to the view.
      *
-     * @param \Illuminate\View\View $view
+     * @param \Illuminate\Contracts\View\View $view
      */
     public function compose(View $view)
     {

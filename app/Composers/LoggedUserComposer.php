@@ -11,15 +11,15 @@
 
 namespace CachetHQ\Cachet\Composers;
 
+use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\View\View;
 
 class LoggedUserComposer
 {
     /**
      * Bind data to the view.
      *
-     * @param \Illuminate\View\View $view
+     * @param \Illuminate\Contracts\View\View $view
      */
     public function compose(View $view)
     {

@@ -13,15 +13,15 @@ namespace CachetHQ\Cachet\Composers;
 
 use DateTime;
 use DateTimeZone;
+use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Config;
-use Illuminate\View\View;
 
 class TimezoneLocaleComposer
 {
     /**
      * Timezones and Locales composer.
      *
-     * @param \Illuminate\View\View $view
+     * @param \Illuminate\Contracts\View\View $view
      */
     public function compose(View $view)
     {

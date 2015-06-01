@@ -13,14 +13,14 @@ namespace CachetHQ\Cachet\Composers;
 
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
-use Illuminate\View\View;
+use Illuminate\Contracts\View\View;
 
 class DashboardComposer
 {
     /**
      * Bind data to the view.
      *
-     * @param \Illuminate\View\View $view
+     * @param \Illuminate\Contracts\View\View $view
      */
     public function compose(View $view)
     {
