@@ -21,18 +21,18 @@ class ComponentTest extends AbstractTestCase
     public function testGetComponents()
     {
         $this->get('/api/v1/components')->seeJson(['data' => []]);
+        $this->assertResponseOk();
     }
 
-    /**
-     * @expectedException \Illuminate\Database\Eloquent\ModelNotFoundException
-     */
     public function testGetInvalidComponent()
     {
         $this->get('/api/v1/components/1');
+        $this->assertResponseStatus(404);
     }
 
-    /*public function testPostComponentUnauthorized()
+    public function testPostComponentUnauthorized()
     {
-        $this->post('/api/v1/components')->seeJson(['data']);
-    }*/
+        $this->post('/api/v1/components');
+        $this->assertResponseStatus(401);
+    }
 }

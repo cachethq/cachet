@@ -37,8 +37,8 @@
         "barryvdh/laravel-cors": "^0.5"
     },
     "require-dev": {
-        "graham-campbell/testbench": "^2.1",
-        "fzaninotto/faker": "^1.4"
+        "phpunit/phpunit": "^4.6",
+        "fzaninotto/faker": "^1.5"
     },
     "autoload": {
         "classmap": [
