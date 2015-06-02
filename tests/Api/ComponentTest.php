@@ -62,16 +62,16 @@ class ComponentTest extends AbstractTestCase
 
     public function testGetNewComponent()
     {
-        $incident = factory('CachetHQ\Cachet\Models\Component')->create();
+        $component = factory('CachetHQ\Cachet\Models\Component')->create();
 
         $this->get('/api/v1/components/1');
-        $this->seeJson(['name' => $incident->name]);
+        $this->seeJson(['name' => $component->name]);
     }
 
     public function testPutComponent()
     {
         $this->beUser();
-        $incident = factory('CachetHQ\Cachet\Models\Component')->create();
+        $component = factory('CachetHQ\Cachet\Models\Component')->create();
 
         $this->put('/api/v1/components/1', [
             'name' => 'Foo',
@@ -82,7 +82,7 @@ class ComponentTest extends AbstractTestCase
     public function testDeleteComponent()
     {
         $this->beUser();
-        $incident = factory('CachetHQ\Cachet\Models\Component')->create();
+        $component = factory('CachetHQ\Cachet\Models\Component')->create();
 
         $this->delete('/api/v1/components/1');
         $this->assertResponseStatus(204);
