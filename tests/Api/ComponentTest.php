@@ -60,11 +60,11 @@ class ComponentTest extends AbstractTestCase
         $this->seeJson(['name' => 'Foo']);
     }
 
-    public function testGetNewComponent()
+    /*public function testGetNewComponent()
     {
         $this->beUser();
 
         $this->get('/api/v1/components/1');
         $this->seeJson(['name' => 'Foo']);
-    }
+    }*/
 }
