@@ -45,20 +45,22 @@ class ApiAuthenticate
      */
     public function handle($request, Closure $next)
     {
-        if ($apiToken = $request->header('X-Cachet-Token')) {
-            try {
-                $user = User::findByApiToken($apiToken);
+        if ($this->auth->guest()) {
+            if ($apiToken = $request->header('X-Cachet-Token')) {
+                try {
+                    $user = User::findByApiToken($apiToken);
 
-                $this->auth->onceUsingId($user->id);
-            } catch (ModelNotFoundException $e) {
+                    $this->auth->onceUsingId($user->id);
+                } catch (ModelNotFoundException $e) {
+                    return $this->handleError();
+                }
+            } elseif ($user = $request->getUser()) {
+                if ($this->auth->onceBasic() !== null) {
+                    return $this->handleError();
+                }
+            } else {
                 return $this->handleError();
             }
-        } elseif ($user = $request->getUser()) {
-            if ($this->auth->onceBasic() !== null) {
-                return $this->handleError();
-            }
-        } else {
-            return $this->handleError();
         }
 
         return $next($request);
