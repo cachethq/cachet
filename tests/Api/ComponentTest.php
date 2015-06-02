@@ -20,7 +20,8 @@ class ComponentTest extends AbstractTestCase
 
     public function testGetComponents()
     {
-        $this->get('/api/v1/components')->seeJson(['data' => []]);
+        $this->get('/api/v1/components');
+        $this->seeJson(['data' => []]);
         $this->assertResponseOk();
     }
 
@@ -38,8 +39,7 @@ class ComponentTest extends AbstractTestCase
 
     public function testPostComponentNoData()
     {
-        $this->user = factory('CachetHQ\Cachet\Models\User')->create();
-        $this->be($this->user);
+        $this->beUser();
 
         $this->post('/api/v1/components');
         $this->assertResponseStatus(400);
@@ -47,8 +47,7 @@ class ComponentTest extends AbstractTestCase
 
     public function testPostComponent()
     {
-        $this->user = factory('CachetHQ\Cachet\Models\User')->create();
-        $this->be($this->user);
+        $this->beUser();
 
         $this->post('/api/v1/components', [
             'name'        => 'Foo',
@@ -57,14 +56,21 @@ class ComponentTest extends AbstractTestCase
             'link'        => 'http://example.com',
             'order'       => 1,
             'group_id'    => 1,
-        ])->seeJson(['name' => 'Foo']);
+        ]);
+        $this->seeJson(['name' => 'Foo']);
     }
 
     public function testGetNewComponent()
     {
+        $this->beUser();
+
+        $this->get('/api/v1/components/1');
+        $this->seeJson(['name' => 'Foo']);
+    }
+
+    protected function beUser()
+    {
         $this->user = factory('CachetHQ\Cachet\Models\User')->create();
         $this->be($this->user);
-
-        $this->get('/api/v1/components/1')->seeJson(['name' => 'Foo']);
     }
 }
