@@ -18,15 +18,6 @@ class ComponentTest extends AbstractTestCase
 {
     use DatabaseMigrations;
 
-    /**
-     * @before
-     */
-    public function letUserBeLoggedIn()
-    {
-        $user = factory('CachetHQ\Cachet\Models\User')->create();
-        $this->be($user);
-    }
-
     public function testGetComponents()
     {
         $this->get('/api/v1/components')->seeJson(['data' => []]);
@@ -45,8 +36,35 @@ class ComponentTest extends AbstractTestCase
         $this->assertResponseStatus(401);
     }
 
-    public function testPostComponentAuthorizedNoData()
+    public function testPostComponentNoData()
     {
-        $this->actingAs($this->user)->post('/api/v1/components')->seeJson(['Hello']);
+        $this->user = factory('CachetHQ\Cachet\Models\User')->create();
+        $this->be($this->user);
+
+        $this->post('/api/v1/components');
+        $this->assertResponseStatus(400);
+    }
+
+    public function testPostComponent()
+    {
+        $this->user = factory('CachetHQ\Cachet\Models\User')->create();
+        $this->be($this->user);
+
+        $this->post('/api/v1/components', [
+            'name'        => 'Foo',
+            'description' => 'Bar',
+            'status'      => 1,
+            'link'        => 'http://example.com',
+            'order'       => 1,
+            'group_id'    => 1,
+        ])->seeJson(['name' => 'Foo']);
+    }
+
+    public function testGetNewComponent()
+    {
+        $this->user = factory('CachetHQ\Cachet\Models\User')->create();
+        $this->be($this->user);
+
+        $this->get('/api/v1/components/1')->seeJson(['name' => 'Foo']);
     }
 }
