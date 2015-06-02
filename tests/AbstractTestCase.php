@@ -35,4 +35,15 @@ abstract class AbstractTestCase extends TestCase
 
         return $app;
     }
+
+    /**
+     * Becomes a user.
+     *
+     * @return void
+     */
+    protected function beUser()
+    {
+        $this->user = factory('CachetHQ\Cachet\Models\User')->create();
+        $this->be($this->user);
+    }
 }

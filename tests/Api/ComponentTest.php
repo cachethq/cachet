@@ -67,10 +67,4 @@ class ComponentTest extends AbstractTestCase
         $this->get('/api/v1/components/1');
         $this->seeJson(['name' => 'Foo']);
     }
-
-    protected function beUser()
-    {
-        $this->user = factory('CachetHQ\Cachet\Models\User')->create();
-        $this->be($this->user);
-    }
 }
