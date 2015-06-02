@@ -48,9 +48,9 @@ class IncidentTest extends AbstractTestCase
         $this->beUser();
 
         $this->post('/api/v1/incidents', [
-            'name'         => 'Foo',
-            'message'      => 'Lorem ipsum dolor sit amet',
-            'status'       => 1,
+            'name'    => 'Foo',
+            'message' => 'Lorem ipsum dolor sit amet',
+            'status'  => 1,
         ]);
         $this->seeJson(['name' => 'Foo']);
     }
