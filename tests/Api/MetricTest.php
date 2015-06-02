@@ -33,6 +33,7 @@ class MetricTest extends AbstractTestCase
     {
         $this->post('/api/v1/metrics');
         $this->assertResponseStatus(401);
+        $this->seeJson(['message' => 'You are not authorized to view this content.', 'status_code' => 401]);
     }
 
     public function testPostMetricNoData()
@@ -55,5 +56,33 @@ class MetricTest extends AbstractTestCase
             'display_chart' => 1,
         ]);
         $this->seeJson(['name' => 'Foo']);
+    }
+
+    public function testGetNewMetric()
+    {
+        $incident = factory('CachetHQ\Cachet\Models\Metric')->create();
+
+        $this->get('/api/v1/metrics/1');
+        $this->seeJson(['name' => $incident->name]);
+    }
+
+    public function testPutMetric()
+    {
+        $this->beUser();
+        $metric = factory('CachetHQ\Cachet\Models\Metric')->create();
+
+        $this->put('/api/v1/metrics/1', [
+            'name' => 'Foo',
+        ]);
+        $this->seeJson(['name' => 'Foo']);
+    }
+
+    public function testDeleteMetric()
+    {
+        $this->beUser();
+        $metric = factory('CachetHQ\Cachet\Models\Metric')->create();
+
+        $this->delete('/api/v1/metrics/1');
+        $this->assertResponseStatus(204);
     }
 }

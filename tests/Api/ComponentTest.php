@@ -35,6 +35,7 @@ class ComponentTest extends AbstractTestCase
     {
         $this->post('/api/v1/components');
         $this->assertResponseStatus(401);
+        $this->seeJson(['message' => 'You are not authorized to view this content.', 'status_code' => 401]);
     }
 
     public function testPostComponentNoData()
