@@ -54,4 +54,32 @@ class IncidentTest extends AbstractTestCase
         ]);
         $this->seeJson(['name' => 'Foo']);
     }
+
+    public function testGetNewIncident()
+    {
+        $incident = factory('CachetHQ\Cachet\Models\Incident')->create();
+
+        $this->get('/api/v1/incidents/1');
+        $this->seeJson(['name' => $incident->name]);
+    }
+
+    public function testPutIncident()
+    {
+        $this->beUser();
+        $component = factory('CachetHQ\Cachet\Models\Incident')->create();
+
+        $this->put('/api/v1/incidents/1', [
+            'name' => 'Foo',
+        ]);
+        $this->seeJson(['name' => 'Foo']);
+    }
+
+    public function testDeleteIncident()
+    {
+        $this->beUser();
+        $component = factory('CachetHQ\Cachet\Models\Incident')->create();
+
+        $this->delete('/api/v1/incidents/1');
+        $this->assertResponseStatus(204);
+    }
 }
