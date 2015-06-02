@@ -22,4 +22,38 @@ class MetricTest extends AbstractTestCase
     {
         $this->get('/api/v1/metrics')->seeJson(['data' => []]);
     }
+
+    public function testGetInvalidMetric()
+    {
+        $this->get('/api/v1/metrics/1');
+        $this->assertResponseStatus(404);
+    }
+
+    public function testPostMetricUnauthorized()
+    {
+        $this->post('/api/v1/metrics');
+        $this->assertResponseStatus(401);
+    }
+
+    public function testPostMetricNoData()
+    {
+        $this->beUser();
+
+        $this->post('/api/v1/metrics');
+        $this->assertResponseStatus(400);
+    }
+
+    public function testPostMetric()
+    {
+        $this->beUser();
+
+        $this->post('/api/v1/metrics', [
+            'name'          => 'Foo',
+            'suffix'        => 'foo\'s per second',
+            'description'   => 'Lorem ipsum dolor',
+            'default_value' => 1,
+            'display_chart' => 1,
+        ]);
+        $this->seeJson(['name' => 'Foo']);
+    }
 }
