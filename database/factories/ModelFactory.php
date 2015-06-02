@@ -20,3 +20,14 @@ $factory->define('CachetHQ\Cachet\Models\User', function ($faker) {
         'level'          => 1,
     ];
 });
+
+$factory->define('CachetHQ\Cachet\Models\Component', function ($faker) {
+    return [
+        'name'        => $faker->sentence(),
+        'description' => $faker->paragraph(),
+        'link'        => $faker->url(),
+        'status'      => 1,
+        'order'       => 0,
+        'user_id'     => 1,
+    ];
+});

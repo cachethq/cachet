@@ -60,11 +60,31 @@ class ComponentTest extends AbstractTestCase
         $this->seeJson(['name' => 'Foo']);
     }
 
-    /*public function testGetNewComponent()
+    public function testGetNewComponent()
     {
-        $this->beUser();
+        $incident = factory('CachetHQ\Cachet\Models\Component')->create();
 
         $this->get('/api/v1/components/1');
+        $this->seeJson(['name' => $incident->name]);
+    }
+
+    public function testPutComponent()
+    {
+        $this->beUser();
+        $incident = factory('CachetHQ\Cachet\Models\Component')->create();
+
+        $this->put('/api/v1/components/1', [
+            'name' => 'Foo',
+        ]);
         $this->seeJson(['name' => 'Foo']);
-    }*/
+    }
+
+    public function testDeleteComponent()
+    {
+        $this->beUser();
+        $incident = factory('CachetHQ\Cachet\Models\Component')->create();
+
+        $this->delete('/api/v1/components/1');
+        $this->assertResponseStatus(204);
+    }
 }
