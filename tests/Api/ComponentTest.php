@@ -59,6 +59,7 @@ class ComponentTest extends AbstractTestCase
             'group_id'    => 1,
         ]);
         $this->seeJson(['name' => 'Foo']);
+        $this->assertResponseOk();
     }
 
     public function testGetNewComponent()
@@ -67,6 +68,7 @@ class ComponentTest extends AbstractTestCase
 
         $this->get('/api/v1/components/1');
         $this->seeJson(['name' => $component->name]);
+        $this->assertResponseOk();
     }
 
     public function testPutComponent()
@@ -78,6 +80,7 @@ class ComponentTest extends AbstractTestCase
             'name' => 'Foo',
         ]);
         $this->seeJson(['name' => 'Foo']);
+        $this->assertResponseOk();
     }
 
     public function testDeleteComponent()

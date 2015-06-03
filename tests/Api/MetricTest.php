@@ -20,7 +20,9 @@ class MetricTest extends AbstractTestCase
 
     public function testGetMetrics()
     {
-        $this->get('/api/v1/metrics')->seeJson(['data' => []]);
+        $this->get('/api/v1/metrics');
+        $this->seeJson(['data' => []]);
+        $this->assertResponseOk();
     }
 
     public function testGetInvalidMetric()
@@ -56,6 +58,7 @@ class MetricTest extends AbstractTestCase
             'display_chart' => 1,
         ]);
         $this->seeJson(['name' => 'Foo']);
+        $this->assertResponseOk();
     }
 
     public function testGetNewMetric()
@@ -64,6 +67,7 @@ class MetricTest extends AbstractTestCase
 
         $this->get('/api/v1/metrics/1');
         $this->seeJson(['name' => $incident->name]);
+        $this->assertResponseOk();
     }
 
     public function testPutMetric()
@@ -75,6 +79,7 @@ class MetricTest extends AbstractTestCase
             'name' => 'Foo',
         ]);
         $this->seeJson(['name' => 'Foo']);
+        $this->assertResponseOk();
     }
 
     public function testDeleteMetric()

@@ -20,7 +20,9 @@ class IncidentTest extends AbstractTestCase
 
     public function testGetIncidents()
     {
-        $this->get('/api/v1/incidents')->seeJson(['data' => []]);
+        $this->get('/api/v1/incidents');
+        $this->seeJson(['data' => []]);
+        $this->assertResponseOk();
     }
 
     public function testGetInvalidIncident()
@@ -54,6 +56,7 @@ class IncidentTest extends AbstractTestCase
             'status'  => 1,
         ]);
         $this->seeJson(['name' => 'Foo']);
+        $this->assertResponseOk();
     }
 
     public function testGetNewIncident()
@@ -62,6 +65,7 @@ class IncidentTest extends AbstractTestCase
 
         $this->get('/api/v1/incidents/1');
         $this->seeJson(['name' => $incident->name]);
+        $this->assertResponseOk();
     }
 
     public function testPutIncident()
@@ -73,6 +77,7 @@ class IncidentTest extends AbstractTestCase
             'name' => 'Foo',
         ]);
         $this->seeJson(['name' => 'Foo']);
+        $this->assertResponseOk();
     }
 
     public function testDeleteIncident()
