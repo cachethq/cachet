@@ -26,6 +26,9 @@ class ApiRoutes
             'namespace'  => 'Api',
             'prefix'     => 'api/v1',
         ], function ($router) {
+            // General
+            $router->get('ping', 'GeneralController@ping');
+
             // Components
             $router->get('components', 'ComponentController@getComponents');
             $router->get('components/{id}', 'ComponentController@getComponent');
