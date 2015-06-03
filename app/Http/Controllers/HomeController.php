@@ -91,7 +91,7 @@ class HomeController extends AbstractController
         $scheduledMaintenance = Incident::scheduled()->orderBy('scheduled_at')->get();
 
         // Component & Component Group lists.
-        $usedComponentGroups = Component::where('group_id', '>', 0)->groupBy('group_id')->lists('group_id');
+        $usedComponentGroups = Component::where('group_id', '>', 0)->groupBy('group_id')->lists('group_id')->all();
         $componentGroups = ComponentGroup::whereIn('id', $usedComponentGroups)->orderBy('order')->get();
         $ungroupedComponents = Component::where('group_id', 0)->orderBy('order')->orderBy('created_at')->get();
 

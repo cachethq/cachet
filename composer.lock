@@ -1567,12 +1567,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "cb1faa5495c2f80ad38944c64bc8bfb67d4c74a7"
+                "reference": "3c1d7672ec207fbd51f3757182a552f4ddd3836e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/cb1faa5495c2f80ad38944c64bc8bfb67d4c74a7",
-                "reference": "cb1faa5495c2f80ad38944c64bc8bfb67d4c74a7",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/3c1d7672ec207fbd51f3757182a552f4ddd3836e",
+                "reference": "3c1d7672ec207fbd51f3757182a552f4ddd3836e",
                 "shasum": ""
             },
             "require": {
@@ -1689,7 +1689,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2015-06-01 17:05:16"
+            "time": "2015-06-02 21:56:35"
         },
         {
             "name": "league/commonmark",
@@ -3327,16 +3327,16 @@
         },
         {
             "name": "watson/validating",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dwightwatson/validating.git",
-                "reference": "47320813a45cc35384e72364484d54fe44dcd3fb"
+                "reference": "c32912f760b456c043657951683ed6c468ab83e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dwightwatson/validating/zipball/47320813a45cc35384e72364484d54fe44dcd3fb",
-                "reference": "47320813a45cc35384e72364484d54fe44dcd3fb",
+                "url": "https://api.github.com/repos/dwightwatson/validating/zipball/c32912f760b456c043657951683ed6c468ab83e7",
+                "reference": "c32912f760b456c043657951683ed6c468ab83e7",
                 "shasum": ""
             },
             "require": {
@@ -3378,7 +3378,7 @@
                 "laravel",
                 "validation"
             ],
-            "time": "2015-05-23 00:03:54"
+            "time": "2015-06-03 02:25:38"
         }
     ],
     "packages-dev": [
@@ -3599,16 +3599,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "2.1.2",
+            "version": "2.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "6b7d2094ca2a685a2cad846cb7cd7a30e8b9470f"
+                "reference": "28a6b34e91d789b2608072ab3c82eaae7cdb973c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/6b7d2094ca2a685a2cad846cb7cd7a30e8b9470f",
-                "reference": "6b7d2094ca2a685a2cad846cb7cd7a30e8b9470f",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/28a6b34e91d789b2608072ab3c82eaae7cdb973c",
+                "reference": "28a6b34e91d789b2608072ab3c82eaae7cdb973c",
                 "shasum": ""
             },
             "require": {
@@ -3657,7 +3657,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-06-01 07:35:26"
+            "time": "2015-06-03 07:01:01"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -3845,16 +3845,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.6.9",
+            "version": "4.6.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "816d12536a7a032adc3b68737f82cfbbf98b79c1"
+                "reference": "7b5fe98b28302a8b25693b2298bca74463336975"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/816d12536a7a032adc3b68737f82cfbbf98b79c1",
-                "reference": "816d12536a7a032adc3b68737f82cfbbf98b79c1",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/7b5fe98b28302a8b25693b2298bca74463336975",
+                "reference": "7b5fe98b28302a8b25693b2298bca74463336975",
                 "shasum": ""
             },
             "require": {
@@ -3913,7 +3913,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-05-29 06:00:03"
+            "time": "2015-06-03 05:03:30"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
