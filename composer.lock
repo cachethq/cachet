@@ -1567,12 +1567,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "c8ade4de42e8cdb83c3cbffb307a6c4f81e81994"
+                "reference": "2d3b48101b3e683a2845fa399aca43af22754aba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/c8ade4de42e8cdb83c3cbffb307a6c4f81e81994",
-                "reference": "c8ade4de42e8cdb83c3cbffb307a6c4f81e81994",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/2d3b48101b3e683a2845fa399aca43af22754aba",
+                "reference": "2d3b48101b3e683a2845fa399aca43af22754aba",
                 "shasum": ""
             },
             "require": {
@@ -1687,7 +1687,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2015-06-04 21:23:09"
+            "time": "2015-06-05 19:24:41"
         },
         {
             "name": "league/commonmark",
@@ -3780,16 +3780,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.6.10",
+            "version": "4.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "7b5fe98b28302a8b25693b2298bca74463336975"
+                "reference": "bdd15c9ec6e16a307398d5385b3445673608e805"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/7b5fe98b28302a8b25693b2298bca74463336975",
-                "reference": "7b5fe98b28302a8b25693b2298bca74463336975",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/bdd15c9ec6e16a307398d5385b3445673608e805",
+                "reference": "bdd15c9ec6e16a307398d5385b3445673608e805",
                 "shasum": ""
             },
             "require": {
@@ -3800,7 +3800,7 @@
                 "ext-spl": "*",
                 "php": ">=5.3.3",
                 "phpspec/prophecy": "~1.3,>=1.3.1",
-                "phpunit/php-code-coverage": "~2.0,>=2.0.11",
+                "phpunit/php-code-coverage": "~2.1",
                 "phpunit/php-file-iterator": "~1.4",
                 "phpunit/php-text-template": "~1.2",
                 "phpunit/php-timer": "~1.0",
@@ -3822,7 +3822,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.6.x-dev"
+                    "dev-master": "4.7.x-dev"
                 }
             },
             "autoload": {
@@ -3848,7 +3848,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-06-03 05:03:30"
+            "time": "2015-06-05 13:25:13"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
