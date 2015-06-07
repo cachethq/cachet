@@ -1567,12 +1567,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "3eca81c7e1c74618c119f974b887ffc54c63d6b0"
+                "reference": "6ab37e4e49e0ea29f87c3ed8ff48189e24cec47f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/3eca81c7e1c74618c119f974b887ffc54c63d6b0",
-                "reference": "3eca81c7e1c74618c119f974b887ffc54c63d6b0",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/6ab37e4e49e0ea29f87c3ed8ff48189e24cec47f",
+                "reference": "6ab37e4e49e0ea29f87c3ed8ff48189e24cec47f",
                 "shasum": ""
             },
             "require": {
@@ -1687,7 +1687,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2015-06-06 19:23:32"
+            "time": "2015-06-06 22:14:10"
         },
         {
             "name": "league/commonmark",
