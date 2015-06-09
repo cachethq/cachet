@@ -20,8 +20,12 @@ class ComponentTest extends AbstractTestCase
 
     public function testGetComponents()
     {
+        $components = factory('CachetHQ\Cachet\Models\Component', 3)->create();
+
         $this->get('/api/v1/components');
-        $this->seeJson(['data' => []]);
+        $this->seeJson(['id' => (string) $components[0]->id]);
+        $this->seeJson(['id' => (string) $components[1]->id]);
+        $this->seeJson(['id' => (string) $components[2]->id]);
         $this->assertResponseOk();
     }
 

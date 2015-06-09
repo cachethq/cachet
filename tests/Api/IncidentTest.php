@@ -20,14 +20,18 @@ class IncidentTest extends AbstractTestCase
 
     public function testGetIncidents()
     {
+        $incidents = factory('CachetHQ\Cachet\Models\Incident', 3)->create();
+
         $this->get('/api/v1/incidents');
-        $this->seeJson(['data' => []]);
+        $this->seeJson(['id' => (string) $incidents[0]->id]);
+        $this->seeJson(['id' => (string) $incidents[1]->id]);
+        $this->seeJson(['id' => (string) $incidents[2]->id]);
         $this->assertResponseOk();
     }
 
     public function testGetInvalidIncident()
     {
-        $this->get('/api/v1/incidents/1');
+        $this->get('/api/v1/incidents/0');
         $this->assertResponseStatus(404);
     }
 

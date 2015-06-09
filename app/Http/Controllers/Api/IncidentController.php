@@ -11,38 +11,26 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Api;
 
-use CachetHQ\Cachet\Repositories\Incident\IncidentRepository;
+use CachetHQ\Cachet\Models\Incident;
+use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 class IncidentController extends AbstractApiController
 {
     /**
-     * The incident repository instance.
-     *
-     * @var \CachetHQ\Cachet\Repositories\Incident\IncidentRepository
-     */
-    protected $incident;
-
-    /**
-     * Create a new incident controller instance.
-     *
-     * @param \CachetHQ\Cachet\Repositories\Incident\IncidentRepository $incident
-     */
-    public function __construct(IncidentRepository $incident)
-    {
-        $this->incident = $incident;
-    }
-
-    /**
      * Get all incidents.
+     *
+     * @param \Symfony\Component\HttpFoundation\Request $request
+     * @param \CachetHQ\Cachet\Models\Incident          $incident
      *
      * @return \Illuminate\Database\Eloquent\Collection
      */
     public function getIncidents(Request $request)
     {
-        $incidents = $this->incident->paginate(Binput::get('per_page', 20));
+        $incidents = Incident::paginate(Binput::get('per_page', 20));
 
         return $this->paginator($incidents, $request);
     }
@@ -50,13 +38,13 @@ class IncidentController extends AbstractApiController
     /**
      * Get a single incident.
      *
-     * @param int $id
+     * @param \CachetHQ\Cachet\Models\Incident $incident
      *
      * @return \CachetHQ\Cachet\Models\Incident
      */
-    public function getIncident($id)
+    public function getIncident(Incident $incident)
     {
-        return $this->item($this->incident->findOrFail($id));
+        return $this->item($incident);
     }
 
     /**
@@ -68,31 +56,50 @@ class IncidentController extends AbstractApiController
      */
     public function postIncidents(Guard $auth)
     {
-        return $this->item($this->incident->create($auth->user()->id, Binput::all()));
+        $incidentData = Binput::all();
+        $incidentData['user_id'] = $auth->user()->id;
+
+        try {
+            $incident = Incident::create($incidentData);
+        } catch (Exception $e) {
+            throw new BadRequestHttpException();
+        }
+
+        if ($incident->isValid()) {
+            return $this->item($incident);
+        }
+
+        throw new BadRequestHttpException();
     }
 
     /**
      * Update an existing incident.
      *
-     * @param int $id
+     * @param \CachetHQ\Cachet\Models\Inicdent $incident
      *
      * @return \CachetHQ\Cachet\Models\Incident
      */
-    public function putIncident($id)
+    public function putIncident(Incident $incident)
     {
-        return $this->item($this->incident->update($id, Binput::all()));
+        $incident->update(Binput::all());
+
+        if ($incident->isValid('updating')) {
+            return $this->item($incident);
+        }
+
+        throw new BadRequestHttpException();
     }
 
     /**
      * Delete an existing incident.
      *
-     * @param int $id
+     * @param \CachetHQ\Cachet\Models\Inicdent $incident
      *
-     * @return \Dingo\Api\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function deleteIncident($id)
+    public function deleteIncident(Incident $incident)
     {
-        $this->incident->destroy($id);
+        $incident->delete();
 
         return $this->noContent();
     }
