@@ -26,7 +26,7 @@ class ComponentTableSeeder extends Seeder
             [
                 'name'        => 'API',
                 'description' => 'Used by third-parties to connect to us',
-                'status'      => 2,
+                'status'      => 1,
                 'user_id'     => 1,
                 'order'       => 0,
                 'group_id'    => 0,
