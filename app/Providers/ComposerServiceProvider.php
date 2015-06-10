@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Cachet\Providers;
 
+use CachetHQ\Cachet\Composers\AppComposer;
 use CachetHQ\Cachet\Composers\DashboardComposer;
 use CachetHQ\Cachet\Composers\IndexComposer;
 use CachetHQ\Cachet\Composers\LoggedUserComposer;
@@ -27,6 +28,7 @@ class ComposerServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->app->view->composer('*', AppComposer::class);
         $this->app->view->composer('*', LoggedUserComposer::class);
         $this->app->view->composer(['index', 'subscribe'], IndexComposer::class);
         $this->app->view->composer(['index', 'subscribe'], ThemeComposer::class);

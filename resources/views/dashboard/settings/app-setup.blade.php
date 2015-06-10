@@ -126,6 +126,15 @@
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="form-group">
+                                        <label>{{ trans('forms.settings.app-setup.subscribers') }}</label>
+                                        <input type="hidden" value="0" name="enable_subscribers">
+                                        <input type="checkbox" value="1" name="enable_subscribers" class="form-control" {{ Setting::get('enable_subscribers') ? 'checked' : null }}>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="form-group">
                                         <label>{{ trans('forms.settings.app-setup.display-graphs') }}</label>
                                         <input type="hidden" value="0" name="display_graphs">
                                         <input type="checkbox" value="1" name="display_graphs" class="form-control" {{ Setting::get('display_graphs') ? 'checked' : null }}>

@@ -35,14 +35,15 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'auth'               => 'CachetHQ\Cachet\Http\Middleware\Authenticate',
-        'auth.api'           => 'CachetHQ\Cachet\Http\Middleware\ApiAuthenticate',
-        'auth.basic'         => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
-        'guest'              => 'CachetHQ\Cachet\Http\Middleware\RedirectIfAuthenticated',
-        'csrf'               => 'Illuminate\Foundation\Http\Middleware\VerifyCsrfToken',
-        'admin'              => 'CachetHQ\Cachet\Http\Middleware\Admin',
-        'login.throttling'   => 'CachetHQ\Cachet\Http\Middleware\LoginThrottling',
-        'app.isSetup'        => 'CachetHQ\Cachet\Http\Middleware\AppIsSetup',
-        'app.hasSetting'     => 'CachetHQ\Cachet\Http\Middleware\HasSetting',
+        'auth'             => 'CachetHQ\Cachet\Http\Middleware\Authenticate',
+        'auth.api'         => 'CachetHQ\Cachet\Http\Middleware\ApiAuthenticate',
+        'auth.basic'       => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
+        'guest'            => 'CachetHQ\Cachet\Http\Middleware\RedirectIfAuthenticated',
+        'csrf'             => 'Illuminate\Foundation\Http\Middleware\VerifyCsrfToken',
+        'admin'            => 'CachetHQ\Cachet\Http\Middleware\Admin',
+        'login.throttling' => 'CachetHQ\Cachet\Http\Middleware\LoginThrottling',
+        'app.isSetup'      => 'CachetHQ\Cachet\Http\Middleware\AppIsSetup',
+        'app.hasSetting'   => 'CachetHQ\Cachet\Http\Middleware\HasSetting',
+        'app.subscribers'  => 'CachetHQ\Cachet\Http\Middleware\SubscribersConfigured',
     ];
 }

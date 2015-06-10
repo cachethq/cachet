@@ -28,24 +28,28 @@ class StatusPageRoutes
                 'as'   => 'status-page',
                 'uses' => 'HomeController@showIndex',
             ]);
-            $router->get('subscribe', [
-                'as'   => 'subscribe-page',
-                'uses' => 'SubscribeController@showSubscribe',
-            ]);
-            $router->post('subscribe', [
-                'as'   => 'subscribe',
-                'uses' => 'SubscribeController@postSubscribe',
-            ]);
-            $router->get('subscribe/verify/{code}', [
-                'as'   => 'subscribe-verify',
-                'uses' => 'SubscribeController@getVerify',
-            ]);
-            $router->get('unsubscribe/{code}', [
-                'as'   => 'unsubscribe',
-                'uses' => 'SubscribeController@getUnsubscribe',
-            ]);
+
             $router->get('/atom/{component_group?}', 'AtomController@feedAction');
             $router->get('/rss/{component_group?}', 'RssController@feedAction');
+
+            $router->group(['middleware' => 'app.subscribers'], function ($router) {
+                $router->get('subscribe', [
+                    'as'   => 'subscribe-page',
+                    'uses' => 'SubscribeController@showSubscribe',
+                ]);
+                $router->post('subscribe', [
+                    'as'   => 'subscribe',
+                    'uses' => 'SubscribeController@postSubscribe',
+                ]);
+                $router->get('subscribe/verify/{code}', [
+                    'as'   => 'subscribe-verify',
+                    'uses' => 'SubscribeController@getVerify',
+                ]);
+                $router->get('unsubscribe/{code}', [
+                    'as'   => 'unsubscribe',
+                    'uses' => 'SubscribeController@getUnsubscribe',
+                ]);
+            });
         });
     }
 }
