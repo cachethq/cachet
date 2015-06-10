@@ -90,8 +90,8 @@ return [
     // Other
     'powered_by'      => ':app Status Page is powered by <a href="https://cachethq.io">Cachet</a>.',
     'about_this_site' => 'About this site',
-    'rss-feed'        => 'RSS Feed',
-    'atom-feed'       => 'Atom Feed',
+    'rss-feed'        => 'RSS',
+    'atom-feed'       => 'Atom',
     'feed'            => 'Status Feed',
 
 ];

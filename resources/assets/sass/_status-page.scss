@@ -294,12 +294,45 @@ body.status-page {
         }
     }
 
-    footer.footer {
-        padding-top: 40px;
-        padding-bottom: 40px;
-        color: #777;
-        text-align: center;
+    footer {
+        margin-top: 40px;
+        padding: 40px 0;
         border-top: 1px solid $cachet_gray_light;
         background-color: lighten($cachet_gray_light, 5%);
+        color: $cachet-gray-darker;
+        line-height: 30px;
+        text-align: center;
+
+        .icons {
+            a.icon-link {
+                display: inline-block;
+                min-width: 30px;
+                height: 30px;
+                border-radius: 3px;
+                background-color: $cachet-gray-darker;
+                text-align: center;
+                color: $cachet_gray_light;
+                transition: all 0.15s;
+                padding: 0 10px 0 10px;
+
+                &.rss {
+                    background-color: $cachet-orange;
+                }
+
+                &:hover {
+                    text-decoration: none;
+                    background-color: darken($cachet-gray-darker, 10%);
+                }
+            }
+        }
+
+        @media (min-width: 768px) {
+            text-align: left;
+
+            .icons {
+                margin-top: 0;
+                text-align: right;
+            }
+        }
     }
 }
