@@ -28,7 +28,6 @@ $factory->define('CachetHQ\Cachet\Models\Component', function ($faker) {
         'link'        => $faker->url(),
         'status'      => 1,
         'order'       => 0,
-        'user_id'     => 1,
     ];
 });
 
@@ -37,7 +36,6 @@ $factory->define('CachetHQ\Cachet\Models\Incident', function ($faker) {
         'name'    => $faker->sentence(),
         'message' => $faker->paragraph(),
         'status'  => 1,
-        'user_id' => 1,
     ];
 });
 

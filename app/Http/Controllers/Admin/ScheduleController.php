@@ -16,7 +16,6 @@ use CachetHQ\Cachet\Http\Controllers\AbstractController;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentTemplate;
 use GrahamCampbell\Binput\Facades\Binput;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
@@ -93,7 +92,6 @@ class ScheduleController extends AbstractController
     public function addScheduleAction()
     {
         $scheduleData = Binput::get('incident');
-        $scheduleData['user_id'] = Auth::user()->id;
         // Parse the schedule date.
         $scheduledAt = Date::createFromFormat('d/m/Y H:i', $scheduleData['scheduled_at'], Setting::get('app_timezone'))
             ->setTimezone(Config::get('app.timezone'));
@@ -169,7 +167,6 @@ class ScheduleController extends AbstractController
     public function editScheduleAction(Incident $schedule)
     {
         $scheduleData = Binput::get('incident');
-        $scheduleData['user_id'] = Auth::user()->id;
         // Parse the schedule date.
         $scheduledAt = Date::createFromFormat('d/m/Y H:i', $scheduleData['scheduled_at'], Setting::get('app_timezone'))
             ->setTimezone(Config::get('app.timezone'));

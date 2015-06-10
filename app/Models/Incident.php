@@ -23,7 +23,6 @@ use Watson\Validating\ValidatingTrait;
  * @property string         $name
  * @property int            $status
  * @property string         $message
- * @property int            $user_id
  * @property \Carbon\Carbon $scheduled_at
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
@@ -40,7 +39,6 @@ class Incident extends Model implements HasPresenter
      * @var string[]
      */
     protected $rules = [
-        'user_id'      => 'required|integer',
         'component_id' => 'integer',
         'name'         => 'required',
         'status'       => 'required|integer',
@@ -53,7 +51,6 @@ class Incident extends Model implements HasPresenter
      * @var string[]
      */
     protected $fillable = [
-        'user_id',
         'component_id',
         'name',
         'status',

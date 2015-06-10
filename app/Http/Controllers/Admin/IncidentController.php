@@ -18,7 +18,6 @@ use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentTemplate;
 use GrahamCampbell\Binput\Facades\Binput;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
@@ -113,7 +112,6 @@ class IncidentController extends AbstractController
     public function createIncidentAction()
     {
         $incidentData = Binput::get('incident');
-        $incidentData['user_id'] = Auth::user()->id;
         $componentStatus = array_pull($incidentData, 'component_status');
 
         if (array_has($incidentData, 'created_at') && $incidentData['created_at']) {
@@ -294,7 +292,6 @@ class IncidentController extends AbstractController
     public function editIncidentAction(Incident $incident)
     {
         $incidentData = Binput::get('incident');
-        $incidentData['user_id'] = Auth::user()->id;
 
         if (array_has($incidentData, 'created_at') && $incidentData['created_at']) {
             $incidentDate = Date::createFromFormat('d/m/Y H:i', $incidentData['created_at'], Setting::get('app_timezone'))->setTimezone(Config::get('app.timezone'));

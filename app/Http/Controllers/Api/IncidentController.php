@@ -57,7 +57,6 @@ class IncidentController extends AbstractApiController
     public function postIncidents(Guard $auth)
     {
         $incidentData = Binput::all();
-        $incidentData['user_id'] = $auth->user()->id;
 
         try {
             $incident = Incident::create($incidentData);

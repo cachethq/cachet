@@ -19,7 +19,6 @@ use Watson\Validating\ValidatingTrait;
 
 /**
  * @property int            $id
- * @property int            $user_id
  * @property string         $name
  * @property string         $description
  * @property int            $status
@@ -40,7 +39,6 @@ class Component extends Model implements HasPresenter
      * @var string[]
      */
     protected $rules = [
-        'user_id' => 'integer|required',
         'name'    => 'required|string',
         'status'  => 'integer|required',
         'link'    => 'url',
@@ -55,7 +53,6 @@ class Component extends Model implements HasPresenter
         'name',
         'description',
         'status',
-        'user_id',
         'tags',
         'link',
         'order',
