@@ -57,7 +57,6 @@ class ComponentController extends AbstractApiController
     public function postComponents(Guard $auth)
     {
         $componentData = Binput::except('tags');
-        $componentData['user_id'] = $auth->user()->id;
 
         try {
             $component = Component::create($componentData);

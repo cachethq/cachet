@@ -16,7 +16,6 @@ use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Tag;
 use GrahamCampbell\Binput\Facades\Binput;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 
@@ -116,7 +115,6 @@ class ComponentController extends AbstractController
     public function updateComponentAction(Component $component)
     {
         $_component = Binput::get('component');
-        $_component['user_id'] = Auth::user()->id;
         $tags = array_pull($_component, 'tags');
 
         $component->update($_component);
@@ -185,7 +183,6 @@ class ComponentController extends AbstractController
     public function createComponentAction()
     {
         $_component = Binput::get('component');
-        $_component['user_id'] = Auth::user()->id;
         // We deal with tags separately.
         $tags = array_pull($_component, 'tags');
 
