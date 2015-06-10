@@ -1,9 +1,11 @@
 @extends('layout.master')
 
 @section('content')
+    @if($subscribersEnabled)
     <div class="pull-right">
         <p><a class="btn btn-success btn-outline" href="{{ route('subscribe') }}">{{ trans('cachet.subscriber.button') }}</a></p>
     </div>
+    @endif
 
     <div class="clearfix"></div>
 
