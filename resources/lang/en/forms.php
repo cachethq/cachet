@@ -101,6 +101,7 @@ return [
             'banner-help'          => "It's recommended that you upload files no bigger than 930px wide .",
             'analytics_google'     => 'Google Analytics code',
             'analytics_gosquared'  => 'GoSquared Analytics code',
+            'subscribers'          => 'Allow people to signup to email notifications?',
         ],
         'security' => [
             'allowed-domains'      => 'Allowed domains',
