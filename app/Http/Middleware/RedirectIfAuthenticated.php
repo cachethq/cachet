@@ -18,16 +18,18 @@ use Illuminate\Http\RedirectResponse;
 class RedirectIfAuthenticated
 {
     /**
-     * The Guard implementation.
+     * The authentication guard instance.
      *
-     * @var Guard
+     * @var \Illuminate\Contracts\Auth\Guard
      */
     protected $auth;
 
     /**
-     * Create a new filter instance.
+     * Create a new redirect if authenticated middleware instance.
      *
-     * @param Guard $auth
+     * @param \Illuminate\Contracts\Auth\Guard $auth
+     *
+     * @return void
      */
     public function __construct(Guard $auth)
     {

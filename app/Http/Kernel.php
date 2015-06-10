@@ -39,7 +39,7 @@ class Kernel extends HttpKernel
         'auth.api'           => 'CachetHQ\Cachet\Http\Middleware\ApiAuthenticate',
         'auth.basic'         => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
         'guest'              => 'CachetHQ\Cachet\Http\Middleware\RedirectIfAuthenticated',
-        'csrf'               => 'CachetHQ\Cachet\Http\Middleware\VerifyCsrfToken',
+        'csrf'               => 'Illuminate\Foundation\Http\Middleware\VerifyCsrfToken',
         'admin'              => 'CachetHQ\Cachet\Http\Middleware\Admin',
         'login.throttling'   => 'CachetHQ\Cachet\Http\Middleware\LoginThrottling',
         'app.isSetup'        => 'CachetHQ\Cachet\Http\Middleware\AppIsSetup',
