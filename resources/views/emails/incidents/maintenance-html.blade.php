@@ -19,6 +19,6 @@
     <p>{!! trans('cachet.powered_by', ['app' => Setting::get('app_name')]) !!}</p>
     @endif
     <p>
-        <small><a href="{{ route('unsubscribe', $token) }}">{!! trans('cachet.subscriber.email.unsuscribe') !!}</a></small>
+        <small><a href="{{ $unsubscribeLink }}">{!! trans('cachet.subscriber.email.unsuscribe') !!}</a></small>
     </p>
 @stop

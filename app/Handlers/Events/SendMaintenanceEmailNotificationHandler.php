@@ -69,12 +69,13 @@ class SendMaintenanceEmailNotificationHandler
 
         foreach ($this->subscriber->all() as $subscriber) {
             $mail = [
-                'email'       => $subscriber->email,
-                'subject'     => 'Scheduled maintenance.',
-                'status'      => $data->humanStatus,
-                'htmlContent' => $data->formattedMessage,
-                'textContent' => $data->message,
-                'token'       => $subscriber->token,
+                'email'           => $subscriber->email,
+                'subject'         => 'Scheduled maintenance.',
+                'status'          => $data->humanStatus,
+                'htmlContent'     => $data->formattedMessage,
+                'textContent'     => $data->message,
+                'token'           => $subscriber->token,
+                'unsubscribeLink' => route('unsubscribe', $subscriber->token),
             ];
 
             $this->mailer->queue([

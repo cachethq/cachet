@@ -69,12 +69,13 @@ class SendIncidentEmailNotificationHandler
 
         foreach ($this->subscriber->all() as $subscriber) {
             $mail = [
-                'email'       => $subscriber->email,
-                'subject'     => 'New incident reported.',
-                'status'      => $data->humanStatus,
-                'htmlContent' => $data->formattedMessage,
-                'textContent' => $data->message,
-                'token'       => $subscriber->token,
+                'email'           => $subscriber->email,
+                'subject'         => 'New incident reported.',
+                'status'          => $data->humanStatus,
+                'htmlContent'     => $data->formattedMessage,
+                'textContent'     => $data->message,
+                'token'           => $subscriber->token,
+                'unsubscribeLink' => route('unsubscribe', $subscriber->token),
             ];
 
             $this->mailer->queue([
