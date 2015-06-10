@@ -58,6 +58,35 @@ return [
         ],
     ],
 
+    // Subscriber
+    'subscriber' => [
+        'subscribe' => 'Subscribe to get the most recent updates.',
+        'button'    => 'Subscribe',
+        'email'     => [
+            'subscribe'    => 'Subscribe to email updates.',
+            'subscribed'   => 'You\'ve been subscribed to email notifications, please check your email to confirm your subscription.',
+            'verified'     => 'Your email subscription has been confirmed. Thank you!',
+            'unsubscribe'  => 'Unsuscribe from email updates.',
+            'unsubscribed' => 'Your email subscription has been cancelled.',
+            'failure'      => 'Something went wrong with the subscription.',
+            'verify'       => [
+                'text'           => "Please confirm your email subscription to :app_name status updates.\n:link\nThank you, :app_name",
+                'html-preheader' => 'Please confirm your email subscription to :app_name status updates.',
+                'html'           => '<p>Please confirm your email subscription to :app_name status updates.</p><p>:link</p><p>Thank you, :app_name</p>',
+            ],
+            'maintenance'  => [
+                'text'           => "New maintenance has been scheduled on :app_name.\nThank you, :app_name",
+                'html-preheader' => 'New maintenance has been scheduled on :app_name.',
+                'html'           => '<p>New maintenance has been scheduled on :app_name.</p><p>Thank you, :app_name</p>',
+            ],
+            'incident'     => [
+                'text'           => "New incident has been reported on :app_name.\nThank you, :app_name",
+                'html-preheader' => 'New incident has been reported on :app_name.',
+                'html'           => '<p>New incident has been reported on :app_name.</p><p>Thank you, :app_name</p>',
+            ],
+        ],
+    ],
+
     // Other
     'powered_by'      => ':app Esta Status Page é fornecida por <a href="https://cachethq.github.io">Cachet</a>.',
     'about_this_site' => 'Sobre este site',

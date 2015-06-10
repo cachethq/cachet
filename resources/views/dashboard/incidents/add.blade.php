@@ -99,6 +99,11 @@
                             <input type="text" name="incident[created_at]" class="form-control" rel="datepicker-any">
                             <span class="help-block">{{ trans('forms.optional') }}</span>
                         </div>
+                        <div class="form-group">
+                            <label>{{ trans('forms.incidents.notify_subscribers') }}</label>
+                            <input type="checkbox" name="incident[notify]" value="1" checked="{{ Input::old('incident.message', 'checked') }}">
+                            <span class="help-block">{{ trans('forms.optional') }}</span>
+                        </div>
                     </fieldset>
 
                     <div class="form-group">

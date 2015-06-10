@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Admin;
 
+use CachetHQ\Cachet\Events\IncidentHasReportedEvent;
 use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Cachet\Http\Controllers\AbstractController;
 use CachetHQ\Cachet\Models\Component;
@@ -156,6 +157,10 @@ class IncidentController extends AbstractController
             trans('dashboard.notifications.awesome'),
             trans('dashboard.incidents.add.success')
         );
+
+        if (array_get($incidentData, 'notify')) {
+            event(new IncidentHasReportedEvent($incident));
+        }
 
         return Redirect::back()->with('success', $successMsg);
     }

@@ -28,8 +28,8 @@ class ComposerServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->view->composer('*', LoggedUserComposer::class);
-        $this->app->view->composer('index', IndexComposer::class);
-        $this->app->view->composer('index', ThemeComposer::class);
+        $this->app->view->composer(['index', 'subscribe'], IndexComposer::class);
+        $this->app->view->composer(['index', 'subscribe'], ThemeComposer::class);
         $this->app->view->composer('dashboard.*', DashboardComposer::class);
         $this->app->view->composer(['setup', 'dashboard.settings.app-setup'], TimezoneLocaleComposer::class);
     }
