@@ -75,7 +75,7 @@ class SendMaintenanceEmailNotificationHandler
                 'htmlContent'     => $data->formattedMessage,
                 'textContent'     => $data->message,
                 'token'           => $subscriber->token,
-                'unsubscribeLink' => route('unsubscribe', $subscriber->token),
+                'unsubscribeLink' => route('unsubscribe', ['code' => $subscriber->token]),
             ];
 
             $this->mailer->queue([
