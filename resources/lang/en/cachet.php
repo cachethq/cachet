@@ -74,12 +74,12 @@ return [
                 'html-preheader' => 'Please confirm your email subscription to :app_name status updates.',
                 'html'           => '<p>Please confirm your email subscription to :app_name status updates.</p><p>:link</p><p>Thank you, :app_name</p>',
             ],
-            'maintenance'  => [
+            'maintenance' => [
                 'text'           => "New maintenance has been scheduled on :app_name.\nThank you, :app_name",
                 'html-preheader' => 'New maintenance has been scheduled on :app_name.',
                 'html'           => '<p>New maintenance has been scheduled on :app_name.</p><p>Thank you, :app_name</p>',
             ],
-            'incident'     => [
+            'incident' => [
                 'text'           => "New incident has been reported on :app_name.\nThank you, :app_name",
                 'html-preheader' => 'New incident has been reported on :app_name.',
                 'html'           => '<p>New incident has been reported on :app_name.</p><p>Thank you, :app_name</p>',
