@@ -42,6 +42,7 @@ class Incident extends Model implements HasPresenter
         'component_id' => 'integer',
         'name'         => 'required',
         'status'       => 'required|integer',
+        'visible'      => 'required|boolean',
         'message'      => 'required',
     ];
 
@@ -54,6 +55,7 @@ class Incident extends Model implements HasPresenter
         'component_id',
         'name',
         'status',
+        'visible',
         'message',
         'scheduled_at',
         'created_at',
@@ -73,6 +75,18 @@ class Incident extends Model implements HasPresenter
      * @var string[]
      */
     protected $dates = ['scheduled_at', 'deleted_at'];
+
+    /**
+     * Finds all visible incidents.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeVisible($query)
+    {
+        return $query->where('visible', 1);
+    }
 
     /**
      * Finds all scheduled incidents (maintenance).

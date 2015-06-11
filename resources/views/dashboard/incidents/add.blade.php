@@ -55,6 +55,13 @@
                                 {{ trans('cachet.incidents.status')[4] }}
                             </label>
                         </div>
+                        <div class="form-group">
+                            <label for="incident-name">{{ trans('forms.incidents.visibility') }}</label>
+                            <select name='incident[visible]' class="form-control">
+                                <option value='1' selected>{{ trans('forms.incidents.public') }}</option>
+                                <option value='0'>{{ trans('forms.incidents.logged_in_only') }}</option>
+                            </select>
+                        </div>
                         @if(!$componentsInGroups->isEmpty() || !$componentsOutGroups->isEmpty())
                         <div class="form-group">
                             <label>{{ trans('forms.incidents.component') }}</label>

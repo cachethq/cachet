@@ -36,6 +36,7 @@ $factory->define('CachetHQ\Cachet\Models\Incident', function ($faker) {
         'name'    => $faker->sentence(),
         'message' => $faker->paragraph(),
         'status'  => 1,
+        'visible' => 1,
     ];
 });
 

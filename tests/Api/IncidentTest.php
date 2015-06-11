@@ -58,6 +58,7 @@ class IncidentTest extends AbstractTestCase
             'name'    => 'Foo',
             'message' => 'Lorem ipsum dolor sit amet',
             'status'  => 1,
+            'visible' => 1,
         ]);
         $this->seeJson(['name' => 'Foo']);
         $this->assertResponseOk();

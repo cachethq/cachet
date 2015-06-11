@@ -19,6 +19,7 @@ use CachetHQ\Cachet\Models\Metric;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
 use GrahamCampbell\Markdown\Facades\Markdown;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
 use Jenssegers\Date\Date;
 
@@ -65,7 +66,9 @@ class HomeController extends AbstractController
         $incidentDays = range(0, $daysToShow - 1);
         $dateTimeZone = Setting::get('app_timezone');
 
-        $allIncidents = Incident::notScheduled()->whereBetween('created_at', [
+        $incidentVisiblity = Auth::check() ? 0 : 1;
+
+        $allIncidents = Incident::notScheduled()->where('visible', '>=', $incidentVisiblity)->whereBetween('created_at', [
             $startDate->copy()->subDays($daysToShow)->format('Y-m-d').' 00:00:00',
             $startDate->format('Y-m-d').' 23:59:59',
         ])->orderBy('created_at', 'desc')->get()->groupBy(function (Incident $incident) use ($dateTimeZone) {
