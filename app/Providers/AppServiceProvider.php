@@ -29,7 +29,7 @@ class AppServiceProvider extends ServiceProvider
         $dispatcher->mapUsing(function ($command) {
             return Dispatcher::simpleMapping($command, 'CachetHQ\Cachet\Commands', 'CachetHQ\Cachet\Handlers\Commands');
         });
-        
+
         Str::macro('canonicalize', function ($url) {
             return preg_replace('/([^\/])$/', '$1/', $url);
         });
