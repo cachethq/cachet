@@ -60,7 +60,7 @@ class AtomController extends AbstractController
         $feed->add(
             $incident->name,
             Setting::get('app_name'),
-            $this->canonicalizeUrl(Setting::get('app_domain')),
+            $this->canonicalizeUrl(Setting::get('app_domain')).'#'.$incident->id,
             $incident->created_at->toAtomString(),
             $incident->message
         );
