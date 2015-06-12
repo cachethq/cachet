@@ -14,6 +14,7 @@ namespace CachetHQ\Cachet\Http\Controllers;
 use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Incident;
+use Illuminate\Support\Str;
 use Roumen\Feed\Facades\Feed;
 
 class RssController extends AbstractController
@@ -30,7 +31,7 @@ class RssController extends AbstractController
         $feed = Feed::make();
         $feed->title = Setting::get('app_name');
         $feed->description = trans('cachet.feed');
-        $feed->link = $this->canonicalizeUrl(Setting::get('app_domain'));
+        $feed->link = Str::canonicalize(Setting::get('app_domain'));
 
         $feed->setDateFormat('datetime');
 
@@ -54,6 +55,8 @@ class RssController extends AbstractController
      *
      * @param Roumen\Feed\Facades\Feed         $feed
      * @param \CachetHQ\Cachet\Models\Incident $incident
+     *
+     * @return void
      */
     private function feedAddItem(&$feed, $incident)
     {
@@ -64,15 +67,5 @@ class RssController extends AbstractController
             $incident->created_at->toRssString(),
             $incident->message
         );
-    }
-
-    /**
-     * Add a / at the end of an URL to in order to be W3C compliant
-     *
-     * @param string $url
-     */
-    private function canonicalizeUrl($url)
-    {
-        return preg_replace('/([^\/])$/', '$1/', $url);
     }
 }
