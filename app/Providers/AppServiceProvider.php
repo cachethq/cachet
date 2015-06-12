@@ -16,6 +16,20 @@ use Illuminate\Support\ServiceProvider;
 class AppServiceProvider extends ServiceProvider
 {
     /**
+     * Boot the service provider.
+     *
+     * @param \Illuminate\Bus\Dispatcher $dispatcher
+     *
+     * @return void
+     */
+    public function boot(Dispatcher $dispatcher)
+    {
+        $dispatcher->mapUsing(function ($command) {
+            return Dispatcher::simpleMapping($command, 'CachetHQ\Cachet\Commands', 'CachetHQ\Cachet\Handlers\Commands');
+        });
+    }
+
+    /**
      * Register the service provider.
      *
      * @return void
