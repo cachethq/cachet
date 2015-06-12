@@ -34,7 +34,7 @@ class AtomController extends AbstractController
 
         $feed->setDateFormat('datetime');
 
-        if ($group) {
+        if ($group->exists) {
             $group->components->map(function ($component) use ($feed) {
                 $component->incidents()->orderBy('created_at', 'desc')->get()->map(function ($incident) use ($feed) {
                     $this->feedAddItem($feed, $incident);
