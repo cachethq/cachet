@@ -165,7 +165,6 @@ return [
          * Application Service Providers...
          */
         'CachetHQ\Cachet\Providers\AppServiceProvider',
-        'CachetHQ\Cachet\Providers\BusServiceProvider',
         'CachetHQ\Cachet\Providers\ComposerServiceProvider',
         'CachetHQ\Cachet\Providers\ConfigServiceProvider',
         'CachetHQ\Cachet\Providers\ConsoleServiceProvider',
