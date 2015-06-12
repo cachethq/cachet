@@ -67,23 +67,27 @@ class SendIncidentEmailNotificationHandler
     {
         $data = $this->presenter->decorate($event->incident);
 
-        foreach ($this->subscriber->all() as $subscriber) {
-            $mail = [
-                'email'           => $subscriber->email,
-                'subject'         => 'New incident reported.',
-                'status'          => $data->humanStatus,
-                'htmlContent'     => $data->formattedMessage,
-                'textContent'     => $data->message,
-                'token'           => $subscriber->token,
-                'unsubscribeLink' => route('unsubscribe', ['code' => $subscriber->token]),
-            ];
+        // Only send emails for public incidents.
+        if ($event->incident->visible === 1) {
+            foreach ($this->subscriber->all() as $subscriber) {
+                $mail = [
+                    'email'           => $subscriber->email,
+                    'subject'         => 'New incident reported.',
+                    'status'          => $data->humanStatus,
+                    'htmlContent'     => $data->formattedMessage,
+                    'textContent'     => $data->message,
+                    'token'           => $subscriber->token,
+                    'unsubscribeLink' => route('unsubscribe', ['code' => $subscriber->token]),
+                    'appUrl'          => env('APP_URL'),
+                ];
 
-            $this->mailer->queue([
-                'html' => 'emails.incidents.new-html',
-                'text' => 'emails.incidents.new-text',
-            ], $mail, function (Message $message) use ($mail) {
-                $message->to($mail['email'])->subject($mail['subject']);
-            });
+                $this->mailer->queue([
+                    'html' => 'emails.incidents.new-html',
+                    'text' => 'emails.incidents.new-text',
+                ], $mail, function (Message $message) use ($mail) {
+                    $message->to($mail['email'])->subject($mail['subject']);
+                });
+            }
         }
     }
 }
