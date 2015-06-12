@@ -17,10 +17,28 @@ use CachetHQ\Cachet\Composers\IndexComposer;
 use CachetHQ\Cachet\Composers\LoggedUserComposer;
 use CachetHQ\Cachet\Composers\ThemeComposer;
 use CachetHQ\Cachet\Composers\TimezoneLocaleComposer;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Support\ServiceProvider;
 
 class ComposerServiceProvider extends ServiceProvider
 {
+    /**
+     * Boot the service provider.
+     *
+     * @param \Illuminate\Contracts\View\Factory $factory
+     *
+     * @return void
+     */
+    public function boot(Factory $factory)
+    {
+        $factory->composer('*', AppComposer::class);
+        $factory->composer('*', LoggedUserComposer::class);
+        $factory->composer(['index', 'subscribe'], IndexComposer::class);
+        $factory->composer(['index', 'subscribe'], ThemeComposer::class);
+        $factory->composer('dashboard.*', DashboardComposer::class);
+        $factory->composer(['setup', 'dashboard.settings.app-setup'], TimezoneLocaleComposer::class);
+    }
+
     /**
      * Register the service provider.
      *
@@ -28,11 +46,6 @@ class ComposerServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->view->composer('*', AppComposer::class);
-        $this->app->view->composer('*', LoggedUserComposer::class);
-        $this->app->view->composer(['index', 'subscribe'], IndexComposer::class);
-        $this->app->view->composer(['index', 'subscribe'], ThemeComposer::class);
-        $this->app->view->composer('dashboard.*', DashboardComposer::class);
-        $this->app->view->composer(['setup', 'dashboard.settings.app-setup'], TimezoneLocaleComposer::class);
+        //
     }
 }
