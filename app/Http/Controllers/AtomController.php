@@ -30,7 +30,7 @@ class AtomController extends AbstractController
         $feed = Feed::make();
         $feed->title = Setting::get('app_name');
         $feed->description = trans('cachet.feed');
-        $feed->link = Setting::get('app_domain');
+        $feed->link = $this->canonicalizeUrl(Setting::get('app_domain'));
 
         $feed->setDateFormat('datetime');
 
@@ -60,9 +60,19 @@ class AtomController extends AbstractController
         $feed->add(
             $incident->name,
             Setting::get('app_name'),
-            Setting::get('app_domain'),
+            $this->canonicalizeUrl(Setting::get('app_domain')),
             $incident->created_at->toAtomString(),
             $incident->message
         );
+    }
+
+    /**
+     * Add a / at the end of an URL to in order to be W3C compliant
+     *
+     * @param string $url
+     */
+    private function canonicalizeUrl($url)
+    {
+        return preg_replace('/([^\/])$/', '$1/', $url);
     }
 }
