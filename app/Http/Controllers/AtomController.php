@@ -36,12 +36,12 @@ class AtomController extends AbstractController
 
         if ($group->exists) {
             $group->components->map(function ($component) use ($feed) {
-                $component->incidents()->orderBy('created_at', 'desc')->get()->map(function ($incident) use ($feed) {
+                $component->incidents()->visible()->orderBy('created_at', 'desc')->get()->map(function ($incident) use ($feed) {
                     $this->feedAddItem($feed, $incident);
                 });
             });
         } else {
-            Incident::orderBy('created_at', 'desc')->get()->map(function ($incident) use ($feed) {
+            Incident::visible()->orderBy('created_at', 'desc')->get()->map(function ($incident) use ($feed) {
                 $this->feedAddItem($feed, $incident);
             });
         }
