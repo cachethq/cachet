@@ -53,7 +53,7 @@ class RssController extends AbstractController
     /**
      * Adds an item to the feed.
      *
-     * @param Roumen\Feed\Facades\Feed         $feed
+     * @param \Roumen\Feed\Facades\Feed        $feed
      * @param \CachetHQ\Cachet\Models\Incident $incident
      *
      * @return void
@@ -63,7 +63,7 @@ class RssController extends AbstractController
         $feed->add(
             $incident->name,
             Setting::get('app_name'),
-            $this->canonicalizeUrl(Setting::get('app_domain')).'#'.$incident->id,
+            Str::canonicalize(Setting::get('app_domain')).'#'.$incident->id,
             $incident->created_at->toRssString(),
             $incident->message
         );
