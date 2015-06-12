@@ -13,6 +13,7 @@ namespace CachetHQ\Cachet\Providers;
 
 use Illuminate\Bus\Dispatcher;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Str;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -27,6 +28,10 @@ class AppServiceProvider extends ServiceProvider
     {
         $dispatcher->mapUsing(function ($command) {
             return Dispatcher::simpleMapping($command, 'CachetHQ\Cachet\Commands', 'CachetHQ\Cachet\Handlers\Commands');
+        });
+        
+        Str::macro('canonicalize', function ($url) {
+            return preg_replace('/([^\/])$/', '$1/', $url);
         });
     }
 
