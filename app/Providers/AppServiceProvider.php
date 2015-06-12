@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Cachet\Providers;
 
+use Illuminate\Bus\Dispatcher;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
