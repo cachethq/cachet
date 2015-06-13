@@ -30,6 +30,7 @@ class RssController extends AbstractController
     {
         $feed = Feed::make();
         $feed->title = Setting::get('app_name');
+        $feed->lang = Setting::get('app_locale');
         $feed->description = trans('cachet.feed');
         $feed->link = Str::canonicalize(Setting::get('app_domain'));
 
