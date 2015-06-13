@@ -14,6 +14,7 @@ namespace CachetHQ\Cachet\Http\Controllers;
 use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Incident;
+use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Support\Str;
 use Roumen\Feed\Facades\Feed;
 
@@ -65,7 +66,7 @@ class AtomController extends AbstractController
             Setting::get('app_name'),
             Str::canonicalize(Setting::get('app_domain')).'#'.$incident->id,
             $incident->created_at->toAtomString(),
-            $incident->message
+            Markdown::convertToHtml($incident->message)
         );
     }
 }
