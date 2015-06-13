@@ -14,9 +14,9 @@ namespace CachetHQ\Cachet\Http\Controllers;
 use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Incident;
+use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Support\Str;
 use Roumen\Feed\Facades\Feed;
-use GrahamCampbell\Markdown\Facades\Markdown;
 
 class AtomController extends AbstractController
 {
