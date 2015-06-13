@@ -16,6 +16,7 @@ use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Incident;
 use Illuminate\Support\Str;
 use Roumen\Feed\Facades\Feed;
+use GrahamCampbell\Markdown\Facades\Markdown;
 
 class AtomController extends AbstractController
 {
@@ -65,7 +66,7 @@ class AtomController extends AbstractController
             Setting::get('app_name'),
             Str::canonicalize(Setting::get('app_domain')).'#'.$incident->id,
             $incident->created_at->toAtomString(),
-            $incident->message
+            Markdown::convertToHtml($incident->message)
         );
     }
 }
