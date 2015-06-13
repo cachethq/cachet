@@ -32,7 +32,9 @@ class AuthController extends AbstractController
      */
     public function showLogin()
     {
-        return View::make('auth.login');
+        return View::make('auth.login')->with([
+            'pageTitle' => trans('dashboard.login.login'),
+        ]);
     }
 
     /**
