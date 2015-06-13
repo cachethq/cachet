@@ -5,8 +5,9 @@ $ionicons-font-path: "../../../fonts" !default;
 
 @import "modules/bootstrap";
 
-html, body {
+html {
     height: 100%;
+    -webkit-font-smoothing: antialiased;
 }
 
 @import "helpers";
