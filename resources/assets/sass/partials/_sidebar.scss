@@ -131,6 +131,9 @@ body.dashboard {
     @media (min-width: $screen-xs-max) {
         .sidebar {
             width: $sidebar-normal-width;
+            .bottom-menu-sidebar {
+                @extend .hidden-xs;
+            }
         }
 
         .wrapper.toggled .sidebar {
