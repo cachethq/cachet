@@ -200,7 +200,7 @@ class ScheduleController extends AbstractController
             return Redirect::back()->withInput(Binput::all())
                 ->with('title', sprintf(
                     '%s - %s',
-                    trans('dashboard.notifications.awesome'),
+                    trans('dashboard.notifications.whoops'),
                     trans('dashboard.schedule.edit.failure')
                 ))
                 ->with('errors', $schedule->getErrors());
