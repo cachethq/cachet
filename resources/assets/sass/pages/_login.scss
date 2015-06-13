@@ -1,23 +1,45 @@
-.login {
-    padding-top: 90px;
-}
+body.login {
+    background: $cachet-dark-blue;
 
-.login .logo {
-    display: block;
-    margin: 0 auto 30px;
-}
+    .form-bg {
+        padding:20px;
+        border-radius:10px;
+        position: absolute;
+        margin: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 320px;
+        height: 280px;
+    }
 
-.login legend {
-    border: 0;
-    padding: 0;
-    width: 100%;
-    font-size: 24px;
-    font-weight: 500;
-    text-align: center;
-    margin: 0 0 30px 0;
-}
+    .logo {
+        margin-bottom: 10px;
+    }
 
-.login .alert {
-    font-size: $base-font-size;
-    letter-spacing: $base-letter-spacing;
+    p {
+        color: white;
+        text-align: center;
+        font-weight: 600;
+        font-size: 18px;
+    }
+
+    .btn {
+        &.btn-white {
+            background-color: white;
+            transition: background-color 0.5s ease;
+
+            &.btn-trans {
+                background-color: transparent;
+                border: 1px solid white;
+                color: white;
+
+                &:hover {
+                    background-color: white;
+                    color: $cachet-dark-blue;
+                }
+            }
+        }
+    }
 }
