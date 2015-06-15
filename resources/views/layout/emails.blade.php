@@ -128,7 +128,7 @@
                                             @if($bannerImage = Setting::get('app_banner'))
                                             <tr>
                                                <td bgcolor="#F0F3F4" style="padding: 40px; font-family: sans-serif; font-size: 20px; line-height: 27px; color: #666666; text-align: center;">
-                                                   <a href="{{ $appUrl }}"><img src="data:{{ $bannerType }};base64, {{ $bannerImage}}" class="banner-image img-responsive"></a>
+                                                   <a href="{{ $appUrl }}"><img src="data:{{ Setting::get('app_banner_type') }};base64, {{ $bannerImage}}" class="banner-image img-responsive"></a>
                                                </td>
                                             </tr>
                                             @endif
