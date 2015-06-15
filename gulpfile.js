@@ -2,14 +2,16 @@ var elixir = require('laravel-elixir');
 
 require('laravel-elixir-jshint');
 
+elixir.config.sourcemaps = false;
+
 elixir(function (mix) {
     mix
-        .sass('main.scss')
+        .sass('app.scss')
         .jshint('resources/assets/js/*.js')
         .styles([
             'bower_components/ionicons/css/ionicons.css',
             'bower_components/jquery-minicolors/jquery.minicolors.css',
-            'public/dist/css/main.css'
+            'public/dist/css/app.css'
         ], 'public/dist/css/all.css', './')
         .scripts([
             'bower_components/jquery/dist/jquery.js',

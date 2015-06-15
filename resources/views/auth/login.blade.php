@@ -20,7 +20,9 @@
                     </svg>
                 </div>
 
-                <form method="POST" action="/auth/login" accept-charset="UTF-8" autocomplete="off" name="{{ str_random(10) }}">
+                <br>
+
+                <form method="POST" action="{{ route('login') }}" accept-charset="UTF-8" autocomplete="off" name="{{ str_random(10) }}">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                     @if(Session::has('error'))
@@ -29,16 +31,26 @@
 
                     <div class="form-group">
                         <label class="sr-only">{{ trans('forms.login.email') }}</label>
-                        <input autocomplete="off" class="form-control" placeholder="{{ trans('forms.login.email') }}" required="required" name="email" type="email">
+                        <input autocomplete="off" class="form-control login-input" placeholder="{{ trans('forms.login.email') }}" required="required" name="email" type="email">
                     </div>
                     <div class="form-group">
                         <label class="sr-only">{{ trans('forms.login.password') }}</label>
-                        <input autocomplete="off" class="form-control" placeholder="{{ trans('forms.login.password') }}" required="required" name="password" type="password" value="">
+                        <input autocomplete="off" class="form-control login-input" placeholder="{{ trans('forms.login.password') }}" required="required" name="password" type="password" value="">
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-lg btn-block btn-white btn-trans">{{ trans('dashboard.login.login') }}</button>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <a class="btn btn-white btn-trans" href="{{ route('status-page') }}">
+                                    <span class="text-center">
+                                        <i class="ion-home"></i>
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="col-md-10">
+                                <button type="submit" class="btn btn-lg btn-block btn-white btn-trans">{{ trans('dashboard.login.login') }}</button>
+                            </div>
+                        </div>
                     </div>
-                    <h1 class="text-center"><a href="/" style="color: white;"><i class="ion-home"></i></a></h1>
                 </form>
             </div>
         </div>

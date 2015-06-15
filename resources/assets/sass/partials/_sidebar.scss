@@ -39,16 +39,23 @@ body.dashboard {
                         width: 50px;
                     }
                 }
-                .profile {
-                    &.username {
-                        word-break: break-all;
-                        color: $sidebar-text-color;
-                    }
+                .username-wrapper {
+                    @extend .hidden-sm;
+                }
+                &.username {
+                    word-break: break-all;
+                    color: $sidebar-text-color;
                 }
             }
             .quick-add-incident {
                 @extend .text-center;
                 padding: 10px;
+                i {
+                    @extend .visible-sm;
+                }
+                span {
+                    @extend .hidden-sm;
+                }
             }
             ul {
                 clear: both;
@@ -104,8 +111,14 @@ body.dashboard {
                     }
                 }
             }
+            & > ul > li > a {
+                & > span {
+                    @extend .hidden-sm;
+                }
+            }
         }
         .bottom-menu-sidebar {
+            @extend .hidden-sm;
             position: fixed;
             bottom: 0;
             width: 230px;
@@ -131,9 +144,6 @@ body.dashboard {
     @media (min-width: $screen-xs-max) {
         .sidebar {
             width: $sidebar-normal-width;
-            .bottom-menu-sidebar {
-                @extend .hidden-xs;
-            }
         }
 
         .wrapper.toggled .sidebar {
@@ -151,19 +161,12 @@ body.dashboard {
                 .profile .avatar img {
                     width: 40px;
                 }
-                .profile .username-wrapper {
-                    @extend .hidden-sm;
-                }
                 .quick-add-incident {
                     .btn {
                         padding: 3px 6px;
                     }
                     i {
-                        @extend .visible-sm;
                         font-size: 20px;
-                    }
-                    span {
-                        @extend .hidden-sm;
                     }
                 }
                 & > ul > li > a {
@@ -171,13 +174,7 @@ body.dashboard {
                     & > i {
                         font-size: 25px;
                     }
-                    & > span {
-                        @extend .hidden-sm;
-                    }
                 }
-            }
-            .bottom-menu-sidebar {
-                @extend .hidden-sm;
             }
         }
     }
