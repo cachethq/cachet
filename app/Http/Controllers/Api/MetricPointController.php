@@ -13,6 +13,7 @@ namespace CachetHQ\Cachet\Http\Controllers\Api;
 
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\MetricPoint;
+use Carbon\Carbon;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
 
@@ -43,6 +44,11 @@ class MetricPointController extends AbstractApiController
         $metricPointData = Binput::all();
         $metricPointData['metric_id'] = $metric->id;
 
+        if ($timestamp = array_pull($metricPointData, 'timestamp')) {
+            $pointTimestamp = Carbon::createFromFormat('U', $timestamp);
+            $metricPointData['created_at'] = $pointTimestamp->format('Y-m-d H:i:s');
+        }
+
         try {
             $metricPoint = MetricPoint::create($metricPointData);
         } catch (Exception $e) {
@@ -62,7 +68,15 @@ class MetricPointController extends AbstractApiController
      */
     public function putMetricPoint(Metric $metric, MetricPoint $metricPoint)
     {
-        $metricPoint->update(Binput::all());
+        $metricPointData = Binput::all();
+        $metricPointData['metric_id'] = $metric->id;
+
+        if ($timestamp = array_pull($metricPointData, 'timestamp')) {
+            $pointTimestamp = Carbon::createFromFormat('U', $timestamp);
+            $metricPointData['created_at'] = $pointTimestamp->format('Y-m-d H:i:s');
+        }
+
+        $metricPoint->update($metricPointData);
 
         return $this->item($metricPoint);
     }

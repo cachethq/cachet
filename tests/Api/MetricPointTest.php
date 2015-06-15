@@ -56,6 +56,23 @@ class MetricPointTest extends AbstractTestCase
         $this->seeJson(['value' => (string) $metricPoint->value]);
     }
 
+    public function testPostMetricPointTimestamp()
+    {
+        $this->beUser();
+
+        $metric = factory('CachetHQ\Cachet\Models\Metric')->create();
+        $timestamp = 1434369116;
+        $datetime = '2015-06-15 11:51:56';
+        $metricPoint = factory('CachetHQ\Cachet\Models\MetricPoint')->make([
+            'metric_id' => $metric->id,
+        ]);
+        $postData = $metricPoint->toArray();
+        $postData['timestamp'] = $timestamp;
+
+        $this->post("/api/v1/metrics/{$metric->id}/points", $postData);
+        $this->seeJson(['value' => (string) $metricPoint->value, 'created_at' => $datetime]);
+    }
+
     public function testPutMetricPoint()
     {
         $this->beUser();
