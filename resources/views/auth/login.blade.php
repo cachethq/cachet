@@ -38,6 +38,7 @@
                     <div class="form-group">
                         <button type="submit" class="btn btn-lg btn-block btn-white btn-trans">{{ trans('dashboard.login.login') }}</button>
                     </div>
+                    <h1 class="text-center"><a href="/" style="color: white;"><i class="ion-home"></i></a></h1>
                 </form>
             </div>
         </div>
