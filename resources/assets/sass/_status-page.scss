@@ -121,8 +121,8 @@ body.status-page {
             position: relative;
             &.first {
                 &:before {
-                    height: 130%;
-                    top: -20px;
+                    // height: 130%;
+                    top: -5px;
                 }
                 &:after {
                     content: '';
@@ -139,7 +139,7 @@ body.status-page {
                 content: '';
                 position: absolute;
                 left: 26px;
-                top: 5px;
+                top: -5px;
                 width: 2px;
                 height: 100%;
                 background: #7266BA;
