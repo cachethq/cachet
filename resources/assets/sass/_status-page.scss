@@ -1,4 +1,5 @@
 body.status-page {
+    padding-top: 40px;
     font-family: $base-font-family;
     background-color: #F0F3F4;
     color: #333333;
@@ -44,8 +45,6 @@ body.status-page {
 
     .container {
         max-width: 960px;
-        margin-bottom: 40px;
-        margin-top: 20px;
     }
 
     .page-header {
@@ -295,8 +294,11 @@ body.status-page {
     }
 
     footer {
-        margin-top: 40px;
-        padding: 40px 0;
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        height: 60px;
+        padding: 40px 0 60px 0;
         border-top: 1px solid $cachet_gray_light;
         background-color: lighten($cachet_gray_light, 5%);
         color: $cachet-gray-darker;

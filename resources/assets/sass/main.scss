@@ -6,8 +6,14 @@ $ionicons-font-path: "../../../fonts" !default;
 @import "modules/bootstrap";
 
 html {
-    height: 100%;
+    position: relative;
+    min-height: 100%;
     -webkit-font-smoothing: antialiased;
+}
+
+body {
+    margin-bottom: 60px;
+    padding-bottom: 60px;
 }
 
 @import "helpers";
