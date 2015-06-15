@@ -2,11 +2,11 @@
 <ul class="list-group metrics">
     @foreach($metrics as $metric)
     <?php
-        $points = [];
+        $hourPoints = [];
         foreach (range(1, 11) as $hour) {
-            $points[$hour] = $metric->getValues($hour);
+            $hourPoints[$hour] = $metric->getValuesByHour($hour);
         }
-        $points = array_reverse($points);
+        $hourPoints = array_reverse($hourPoints);
     ?>
     <li class="list-group-item metric">
         <div class="row">
@@ -42,6 +42,8 @@
 
                 hourList.push(moment(date).seconds(0).format('HH:ss'));
 
+                var hourPoints = [{{ implode(',', $hourPoints) }}];
+
                 var data = {
                     showTooltips: false,
                     labels: hourList,
@@ -52,7 +54,7 @@
                         pointStrokeColor: "#fff",
                         pointHighlightFill: "#fff",
                         pointHighlightStroke: "rgba(220,220,220,1)",
-                        data: [{{ implode(',', $points) }}],
+                        data: hourPoints
                     }],
                 };
 

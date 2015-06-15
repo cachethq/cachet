@@ -80,13 +80,13 @@ class Metric extends Model implements HasPresenter
     }
 
     /**
-     * Returns the sum of all values a metric has.
+     * Returns the sum of all values a metric has by the hour.
      *
      * @param int $hour
      *
      * @return int
      */
-    public function getValues($hour)
+    public function getValuesByHour($hour)
     {
         $dateTimeZone = SettingFacade::get('app_timezone');
         $dateTime = (new Date())->setTimezone($dateTimeZone)->sub(new DateInterval('PT'.$hour.'H'));
