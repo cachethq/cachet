@@ -323,6 +323,13 @@ class IncidentController extends AbstractController
                 ->with('errors', $incident->getErrors());
         }
 
+        $componentStatus = array_pull($incidentData, 'component_status');
+        if ($incident->component) {
+            $incident->component->update([
+                'status' => $componentStatus,
+            ]);
+        }
+
         segment_track('Dashboard', [
             'event'   => 'Edited Incident',
             'success' => true,

@@ -51,6 +51,23 @@
                                 <option value='0' {{ $incident->visible === 0 ? 'selected' : null }}>{{ trans('forms.incidents.logged_in_only') }}</option>
                             </select>
                         </div>
+                        @if($incident->component)
+                        <div class="form-group" id='component-status'>
+                            <div class="well">
+                                <strong>{{ $incident->component->name }}</strong>
+                                <div class="radio-items">
+                                    @foreach(trans('cachet.components.status') as $statusID => $status)
+                                    <div class="radio-inline">
+                                        <label>
+                                            <input type="radio" name="incident[component_status]" value="{{ $statusID }}" {{ $incident->component->status == $statusID ? "checked='checked'" : "" }}>
+                                            {{ $status }}
+                                        </label>
+                                    </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                        @endif
                         <div class="form-group">
                             <label>{{ trans('forms.incidents.message') }}</label>
                             <div class='markdown-control'>
