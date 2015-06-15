@@ -2,7 +2,7 @@
 
 <div class="timeline schedule">
     @foreach($scheduledMaintenance as $schedule)
-    <div class="panel panel-default">
+    <div class="panel panel-info">
         <div class="panel-heading">
             <strong>{{ $schedule->name }}</strong>, <small class="date"><abbr class="timeago" data-toggle="tooltip" data-placement="right" title="{{ $schedule->scheduled_at_formatted }}" data-timeago="{{ $schedule->scheduled_at_iso }}"></abbr></small>
         </div>
