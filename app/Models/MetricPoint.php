@@ -31,7 +31,7 @@ class MetricPoint extends Model implements HasPresenter
      *
      * @var string[]
      */
-    protected $fillable = ['metric_id', 'value'];
+    protected $fillable = ['metric_id', 'value', 'created_at'];
 
     /**
      * The validation rules.
