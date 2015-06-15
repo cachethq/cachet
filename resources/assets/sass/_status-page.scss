@@ -236,7 +236,7 @@ body.status-page {
     .list-group {
         // margin-bottom: 20px;
         padding-left: 0;
-        border-radius: 0;
+        // border-radius: 0;
 
         .list-group-item {
             border-radius: 0;
@@ -284,11 +284,20 @@ body.status-page {
 
         &.components {
             margin-bottom: 30px;
+
             p {
                 margin-bottom: 10px;
             }
             .badge {
                 color: transparent;
+            }
+
+            a {
+                color: $cachet-base-dark !important;
+            }
+
+            .component:nth-child(2n) {
+                background-color: $cachet-base-medium;
             }
         }
     }
