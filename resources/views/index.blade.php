@@ -9,7 +9,9 @@
 
     <div class="clearfix"></div>
 
-    @include('partials.dashboard.errors')
+    <div class="section-messages">
+        @include('partials.dashboard.errors')
+    </div>
 
     @if($bannerImage = Setting::get('app_banner'))
     <div class="row app-banner">
@@ -24,7 +26,9 @@
     </div>
     @endif
 
-    <div class="alert alert-{{ $systemStatus }}">{{ $systemMessage }}</div>
+    <div class="section-status">
+        <div class="alert alert-{{ $systemStatus }}">{{ $systemMessage }}</div>
+    </div>
 
     @if($aboutApp)
     <div class="about-app">
@@ -33,21 +37,28 @@
     </div>
     @endif
 
-    @include('partials.components')
+    <div class="section-components">
+        @include('partials.components')
+    </div>
 
     @if($displayMetrics && Setting::get('display_graphs'))
-    @include('partials.metrics')
+    <div class="section-metrics">
+        @include('partials.metrics')
+    </div>
     @endif
 
     @if(!$scheduledMaintenance->isEmpty())
-    @include('partials.schedule')
+    <div class="section-scheduled">
+        @include('partials.schedule')
+    </div>
     @endif
 
-    <h1>{{ trans('cachet.incidents.past') }}</h1>
-    @foreach($allIncidents as $date => $incidents)
-    @include('partials.incidents', [compact($date), compact($incidents)])
-    @endforeach
-    <hr>
+    <div class="section-timeline">
+        <h1>{{ trans('cachet.incidents.past') }}</h1>
+        @foreach($allIncidents as $date => $incidents)
+        @include('partials.incidents', [compact($date), compact($incidents)])
+        @endforeach
+    </div>
 
     <nav>
         <ul class="pager">

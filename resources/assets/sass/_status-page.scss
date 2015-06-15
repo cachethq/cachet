@@ -346,4 +346,9 @@ body.status-page {
             }
         }
     }
+
+    // Individual section styling.
+    .section-timeline, .section-components, .section-metrics, .section-scheduled {
+        margin-top: 40px;
+    }
 }

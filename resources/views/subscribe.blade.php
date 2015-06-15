@@ -5,6 +5,8 @@
         <p><a class="btn btn-success btn-outline" href="/"><i class="ion-home"></i></a></p>
     </div>
 
+    <div class="clearfix"></div>
+
     @if($bannerImage = Setting::get('app_banner'))
     <div class="row app-banner">
         <div class="col-md-12 text-center">
