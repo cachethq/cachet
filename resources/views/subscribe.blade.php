@@ -1,6 +1,10 @@
 @extends('layout.master')
 
 @section('content')
+    <div class="pull-right">
+        <p><a class="btn btn-success btn-outline" href="/"><i class="ion-home"></i></a></p>
+    </div>
+
     @if($bannerImage = Setting::get('app_banner'))
     <div class="row app-banner">
         <div class="col-md-12 text-center">
