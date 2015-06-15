@@ -120,7 +120,7 @@ class ScheduleController extends AbstractController
 
             return Redirect::back()->withInput(Binput::all())
                 ->with('success', sprintf(
-                    '%s - %s',
+                    '%s %s',
                     trans('dashboard.notifications.whoops'),
                     trans('dashboard.schedule.add.failure')
                 ))
@@ -133,7 +133,7 @@ class ScheduleController extends AbstractController
         ]);
 
         $successMsg = sprintf(
-            '%s - %s',
+            '%s %s',
             trans('dashboard.notifications.awesome'),
             trans('dashboard.schedule.add.success')
         );
@@ -199,7 +199,7 @@ class ScheduleController extends AbstractController
 
             return Redirect::back()->withInput(Binput::all())
                 ->with('title', sprintf(
-                    '%s - %s',
+                    '%s %s',
                     trans('dashboard.notifications.whoops'),
                     trans('dashboard.schedule.edit.failure')
                 ))
@@ -212,7 +212,7 @@ class ScheduleController extends AbstractController
         ]);
 
         $successMsg = sprintf(
-            '%s - %s',
+            '%s %s',
             trans('dashboard.notifications.awesome'),
             trans('dashboard.schedule.edit.success')
         );
@@ -236,7 +236,7 @@ class ScheduleController extends AbstractController
         $schedule->delete();
 
         return Redirect::back()->with('warning', sprintf(
-            '%s - %s',
+            '%s %s',
             trans('dashboard.notifications.whoops'),
             trans('dashboard.schedule.delete.failure')
         ));

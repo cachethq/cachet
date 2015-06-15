@@ -72,7 +72,7 @@ class UserController extends AbstractController
         if (!$user->isValid()) {
             return Redirect::back()->withInput(Binput::except('password'))
                 ->with('title', sprintf(
-                    '%s - %s',
+                    '%s %s',
                     trans('dashboard.notifications.whoops'),
                     trans('dashboard.team.edit.failure')
                 ))
@@ -80,7 +80,7 @@ class UserController extends AbstractController
         }
 
         $successMsg = sprintf(
-            '%s - %s',
+            '%s %s',
             trans('dashboard.notifications.awesome'),
             trans('dashboard.team.edit.success')
         );

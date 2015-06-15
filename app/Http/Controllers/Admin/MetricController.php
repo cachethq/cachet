@@ -79,7 +79,7 @@ class MetricController extends AbstractController
 
             return Redirect::back()->withInput(Binput::all())
                 ->with('title', sprintf(
-                    '%s - %s',
+                    '%s %s',
                     trans('dashboard.notifications.whoops'),
                     trans('dashboard.metrics.add.failure')
                 ))
@@ -92,7 +92,7 @@ class MetricController extends AbstractController
         ]);
 
         $successMsg = sprintf(
-            '%s - %s',
+            '%s %s',
             trans('dashboard.notifications.awesome'),
             trans('dashboard.metrics.add.success')
         );
@@ -125,7 +125,7 @@ class MetricController extends AbstractController
         if (!$point->isValid()) {
             return Redirect::back()->withInput(Binput::all())
                 ->with('title', sprintf(
-                    '%s - %s',
+                    '%s %s',
                     trans('dashboard.notifications.awesome'),
                     trans('dashboard.metrics.points.add.failure')
                 ))
@@ -133,7 +133,7 @@ class MetricController extends AbstractController
         }
 
         $successMsg = sprintf(
-            '%s - %s',
+            '%s %s',
             trans('dashboard.notifications.awesome'),
             trans('dashboard.metrics.points.add.success')
         );
@@ -202,7 +202,7 @@ class MetricController extends AbstractController
         ]);
 
         $successMsg = sprintf(
-            '%s - %s',
+            '%s %s',
             trans('dashboard.notifications.awesome'),
             trans('dashboard.metrics.edit.success')
         );

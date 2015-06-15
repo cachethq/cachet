@@ -76,7 +76,7 @@ class TeamController extends AbstractController
 
             return Redirect::back()->withInput(Binput::except('password'))
                 ->with('title', sprintf(
-                    '%s - %s',
+                    '%s %s',
                     trans('dashboard.notifications.whoops'),
                     trans('dashboard.team.add.failure')
                 ))
@@ -89,7 +89,7 @@ class TeamController extends AbstractController
         ]);
 
         $successMsg = sprintf(
-            '%s - %s',
+            '%s %s',
             trans('dashboard.notifications.awesome'),
             trans('dashboard.team.add.success')
         );
@@ -124,7 +124,7 @@ class TeamController extends AbstractController
 
             return Redirect::back()->withInput(Binput::except('password'))
                 ->with('title', sprintf(
-                    '%s - %s',
+                    '%s %s',
                     trans('dashboard.notifications.whoops'),
                     trans('dashboard.team.edit.failure')
                 ))
@@ -137,7 +137,7 @@ class TeamController extends AbstractController
         ]);
 
         $successMsg = sprintf(
-            '%s - %s',
+            '%s %s',
             trans('dashboard.notifications.awesome'),
             trans('dashboard.team.edit.success')
         );

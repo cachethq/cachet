@@ -133,7 +133,7 @@ class IncidentController extends AbstractController
 
             return Redirect::back()->withInput(Binput::all())
                 ->with('title', sprintf(
-                    '%s - %s',
+                    '%s %s',
                     trans('dashboard.notifications.whoops'),
                     trans('dashboard.incidents.add.failure')
                 ))
@@ -153,7 +153,7 @@ class IncidentController extends AbstractController
         ]);
 
         $successMsg = sprintf(
-            '%s - %s',
+            '%s %s',
             trans('dashboard.notifications.awesome'),
             trans('dashboard.incidents.add.success')
         );
@@ -228,7 +228,7 @@ class IncidentController extends AbstractController
 
             return Redirect::back()->withInput(Binput::all())
                 ->with('title', sprintf(
-                    '%s - %s',
+                    '%s %s',
                     trans('dashboard.notifications.awesome'),
                     trans('dashboard.incidents.templates.add.failure')
                 ))
@@ -241,7 +241,7 @@ class IncidentController extends AbstractController
         ]);
 
         $successMsg = sprintf(
-            '%s - %s',
+            '%s %s',
             trans('dashboard.notifications.awesome'),
             trans('dashboard.incidents.templates.add.success')
         );
@@ -316,7 +316,7 @@ class IncidentController extends AbstractController
 
             return Redirect::back()->withInput(Binput::all())
                 ->with('title', sprintf(
-                    '%s - %s',
+                    '%s %s',
                     trans('dashboard.notifications.awesome'),
                     trans('dashboard.incidents.templates.edit.failure')
                 ))
@@ -336,7 +336,7 @@ class IncidentController extends AbstractController
         ]);
 
         $successMsg = sprintf(
-            '%s - %s',
+            '%s %s',
             trans('dashboard.notifications.awesome'),
             trans('dashboard.incidents.edit.success')
         );
