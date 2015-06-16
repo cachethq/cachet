@@ -15,7 +15,7 @@
         "moment": "~2.9",
         "livestampjs": "~1.1.2",
         "chartjs": "~1.0.1",
-        "eonasdan-bootstrap-datetimepicker": "~4.7.14"
+        "eonasdan-bootstrap-datetimepicker": "~4.14.30"
     },
     "resolutions": {
         "jquery": "~2.1.1"
