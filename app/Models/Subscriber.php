@@ -15,15 +15,6 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Watson\Validating\ValidatingTrait;
 
-/**
- * @property int            $id
- * @property string         $email
- * @property string         $verify_code
- * @property \Carbon\Carbon $verified_at
- * @property \Carbon\Carbon $created_at
- * @property \Carbon\Carbon $updated_at
- * @property \Carbon\Carbon $deleted_at
- */
 class Subscriber extends Model
 {
     use SoftDeletes, ValidatingTrait;

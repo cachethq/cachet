@@ -15,14 +15,6 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 use Watson\Validating\ValidatingTrait;
 
-/**
- * @property int            $id
- * @property string         $name
- * @property string         $slug
- * @property string         $template
- * @property \Carbon\Carbon $created_at
- * @property \Carbon\Carbon $updated_at
- */
 class IncidentTemplate extends Model
 {
     use ValidatingTrait;

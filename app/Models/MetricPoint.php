@@ -15,13 +15,6 @@ use Illuminate\Database\Eloquent\Model;
 use McCool\LaravelAutoPresenter\HasPresenter;
 use Watson\Validating\ValidatingTrait;
 
-/**
- * @property int            $id
- * @property int            $metric_id
- * @property int            $value
- * @property \Carbon\Carbon $created_at
- * @property \Carbon\Carbon $updated_at
- */
 class MetricPoint extends Model implements HasPresenter
 {
     use ValidatingTrait;

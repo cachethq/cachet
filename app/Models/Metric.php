@@ -20,17 +20,6 @@ use Jenssegers\Date\Date;
 use McCool\LaravelAutoPresenter\HasPresenter;
 use Watson\Validating\ValidatingTrait;
 
-/**
- * @property int            $id
- * @property string         $name
- * @property string         $suffix
- * @property string         $description
- * @property float          $default_value
- * @property int            $calc_type
- * @property int            $display_chart
- * @property \Carbon\Carbon $created_at
- * @property \Carbon\Carbon $updated_at
- */
 class Metric extends Model implements HasPresenter
 {
     use ValidatingTrait;

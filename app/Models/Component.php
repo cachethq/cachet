@@ -17,18 +17,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use McCool\LaravelAutoPresenter\HasPresenter;
 use Watson\Validating\ValidatingTrait;
 
-/**
- * @property int            $id
- * @property string         $name
- * @property string         $description
- * @property int            $status
- * @property string         $link
- * @property int            $order
- * @property int            $group_id
- * @property \Carbon\Carbon $created_at
- * @property \Carbon\Carbon $updated_at
- * @property \Carbon\Carbon $deleted_at
- */
 class Component extends Model implements HasPresenter
 {
     use SoftDeletes, ValidatingTrait;

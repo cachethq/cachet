@@ -20,19 +20,6 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Hash;
 use Watson\Validating\ValidatingTrait;
 
-/**
- * @property int            $id
- * @property string         $username
- * @property string         $password
- * @property string         $remember_token
- * @property string         $google_2fa_secret
- * @property string         $email
- * @property string         $api_key
- * @property int            $active
- * @property int            $level
- * @property \Carbon\Carbon $created_at
- * @property \Carbon\Carbon $updated_at
- */
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract
 {
     use Authenticatable, CanResetPassword, ValidatingTrait;
