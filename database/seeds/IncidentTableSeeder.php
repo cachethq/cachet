@@ -20,8 +20,6 @@ class IncidentTableSeeder extends Seeder
      */
     public function run()
     {
-        Model::unguard();
-
         $defaultIncidents = [
             [
                 'name'         => 'Awesome',
@@ -29,6 +27,7 @@ class IncidentTableSeeder extends Seeder
                 'status'       => 4,
                 'component_id' => 0,
                 'scheduled_at' => null,
+                'visible'      => 1,
             ],
             [
                 'name'         => 'Monitoring the fix',
@@ -36,6 +35,7 @@ class IncidentTableSeeder extends Seeder
                 'status'       => 3,
                 'component_id' => 0,
                 'scheduled_at' => null,
+                'visible'      => 1,
             ],
             [
                 'name'         => 'Update',
@@ -43,12 +43,14 @@ class IncidentTableSeeder extends Seeder
                 'status'       => 2,
                 'component_id' => 0,
                 'scheduled_at' => null,
+                'visible'      => 1,
             ],
             [
                 'name'         => 'Test Incident',
                 'message'      => 'Something went wrong, oh noes.',
                 'component_id' => 0,
                 'scheduled_at' => null,
+                'visible'      => 1,
             ],
         ];
 
