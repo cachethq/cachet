@@ -24,7 +24,6 @@
 ## Requirements
 
 - PHP 5.4 or newer
-- mcrypt extension
 - [Composer](https://getcomposer.org)
 
 ### Development Requirements
