@@ -7,7 +7,7 @@
         <div class="row">
             <div class="form-bg">
                 <div class="logo">
-                    <svg viewBox="0 0 1512 296" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+                    <svg viewBox="0 0 1512 296" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
                         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
                             <g id="Cachet" sketch:type="MSArtboardGroup">
                                 <g id="Icon" sketch:type="MSLayerGroup" transform="translate(8.000000, 10.000000)">
@@ -22,7 +22,7 @@
 
                 <br>
 
-                <form method="POST" action="{{ route('login') }}" accept-charset="UTF-8" autocomplete="off" name="{{ str_random(10) }}">
+                <form method="POST" action="{{ route('login', [], false) }}" accept-charset="UTF-8" autocomplete="off" name="{{ str_random(10) }}">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                     @if(Session::has('error'))
