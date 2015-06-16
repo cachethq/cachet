@@ -216,12 +216,19 @@ body.status-page {
                     }
                 }
 
+                .panel-heading {
+                    strong {
+                        font-size: 1.1em;
+                    }
+                }
+
                 .panel-body {
                     border-top: 1px solid #eee;
                     p {
-                        margin: 0;
-                        font-size: 1em;
-                        // font-weight: normal;
+                        &:not(:last-child) {
+                            margin-bottom: 10px;
+                        }
+                        font-size: 1.1em;
                     }
                 }
             }
