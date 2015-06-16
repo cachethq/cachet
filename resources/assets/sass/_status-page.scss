@@ -278,11 +278,13 @@ body.status-page {
 
             &.break {
                 padding: 1px;
-                background-color: $cachet_gray_light;
+                background-color: $cachet-teal;
             }
         }
 
         &.components {
+            @extend .panel;
+            border-color: $cachet_gray_light;
             margin-bottom: 30px;
 
             p {
@@ -296,9 +298,6 @@ body.status-page {
                 color: $cachet-base-dark !important;
             }
 
-            .component:nth-child(2n) {
-                background-color: $cachet-base-medium;
-            }
         }
     }
 
