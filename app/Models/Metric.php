@@ -12,6 +12,7 @@
 namespace CachetHQ\Cachet\Models;
 
 use CachetHQ\Cachet\Facades\Setting as SettingFacade;
+use CachetHQ\Cachet\Presenters\MetricPresenter;
 use DateInterval;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Config;
@@ -65,7 +66,7 @@ class Metric extends Model implements HasPresenter
      */
     public function points()
     {
-        return $this->hasMany('CachetHQ\Cachet\Models\MetricPoint', 'metric_id', 'id');
+        return $this->hasMany(MetricPoint::class, 'metric_id', 'id');
     }
 
     /**
@@ -137,6 +138,6 @@ class Metric extends Model implements HasPresenter
      */
     public function getPresenterClass()
     {
-        return 'CachetHQ\Cachet\Presenters\MetricPresenter';
+        return MetricPresenter::class;
     }
 }

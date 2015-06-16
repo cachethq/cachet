@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Cachet\Models;
 
+use CachetHQ\Cachet\Presenters\IncidentPresenter;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -109,7 +110,7 @@ class Incident extends Model implements HasPresenter
      */
     public function component()
     {
-        return $this->belongsTo('CachetHQ\Cachet\Models\Component', 'component_id', 'id');
+        return $this->belongsTo(Component::class, 'component_id', 'id');
     }
 
     /**
@@ -141,6 +142,6 @@ class Incident extends Model implements HasPresenter
      */
     public function getPresenterClass()
     {
-        return 'CachetHQ\Cachet\Presenters\IncidentPresenter';
+        return IncidentPresenter::class;
     }
 }

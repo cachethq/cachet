@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Cachet\Models;
 
+use CachetHQ\Cachet\Presenters\MetricPointPresenter;
 use Illuminate\Database\Eloquent\Model;
 use McCool\LaravelAutoPresenter\HasPresenter;
 use Watson\Validating\ValidatingTrait;
@@ -42,7 +43,7 @@ class MetricPoint extends Model implements HasPresenter
      */
     public function metric()
     {
-        return $this->belongsTo('CachetHQ\Cachet\Models\Metric', 'id', 'metric_id');
+        return $this->belongsTo(Metric::class, 'id', 'metric_id');
     }
 
     /**
@@ -52,6 +53,6 @@ class MetricPoint extends Model implements HasPresenter
      */
     public function getPresenterClass()
     {
-        return 'CachetHQ\Cachet\Presenters\MetricPointPresenter';
+        return MetricPointPresenter::class;
     }
 }

@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Cachet\Models;
 
+use CachetHQ\Cachet\Presenters\ComponentPresenter;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -73,7 +74,7 @@ class Component extends Model implements HasPresenter
      */
     public function group()
     {
-        return $this->belongsTo('CachetHQ\Cachet\Models\ComponentGroup', 'group_id', 'id');
+        return $this->belongsTo(ComponentGroup::class, 'group_id', 'id');
     }
 
     /**
@@ -83,7 +84,7 @@ class Component extends Model implements HasPresenter
      */
     public function incidents()
     {
-        return $this->hasMany('CachetHQ\Cachet\Models\Incident', 'component_id', 'id');
+        return $this->hasMany(Incident::class, 'component_id', 'id');
     }
 
     /**
@@ -93,7 +94,7 @@ class Component extends Model implements HasPresenter
      */
     public function tags()
     {
-        return $this->belongsToMany('CachetHQ\Cachet\Models\Tag');
+        return $this->belongsToMany(Tag::class);
     }
 
     /**
@@ -153,6 +154,6 @@ class Component extends Model implements HasPresenter
      */
     public function getPresenterClass()
     {
-        return 'CachetHQ\Cachet\Presenters\ComponentPresenter';
+        return ComponentPresenter::class;
     }
 }

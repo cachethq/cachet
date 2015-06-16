@@ -42,6 +42,6 @@ class Tag extends Model
      */
     public function components()
     {
-        return $this->belongsToMany('CachetHQ\Cachet\Models\Component');
+        return $this->belongsToMany(Component::class);
     }
 }

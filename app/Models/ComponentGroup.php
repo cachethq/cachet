@@ -41,6 +41,6 @@ class ComponentGroup extends Model
      */
     public function components()
     {
-        return $this->hasMany('CachetHQ\Cachet\Models\Component', 'group_id', 'id');
+        return $this->hasMany(Component::class, 'group_id', 'id');
     }
 }
