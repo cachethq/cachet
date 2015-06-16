@@ -127,7 +127,7 @@ return [
             'success' => 'Team member added.',
             'failure' => 'Something went wrong with the component.',
         ],
-        'edit'        => [
+        'edit' => [
             'title'   => 'Update profile',
             'success' => 'Profile updated.',
             'failure' => 'Something went wrong when updating.',
@@ -172,7 +172,7 @@ return [
     'logout'      => 'Logout',
 
     // Notifications
-    'notifications'     => [
+    'notifications' => [
         'notifications' => 'Notifications',
         'awesome'       => 'Awesome.',
         'whoops'        => 'Whoops.',

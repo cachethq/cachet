@@ -43,8 +43,8 @@ class MetricController extends AbstractController
     public function showAddMetric()
     {
         return View::make('dashboard.metrics.add')->with([
-            'pageTitle'            => trans('dashboard.metrics.add.title').' - '.trans('dashboard.dashboard'),
-            'metricMetricPoints'   => MetricPoint::all(),
+            'pageTitle'          => trans('dashboard.metrics.add.title').' - '.trans('dashboard.dashboard'),
+            'metricMetricPoints' => MetricPoint::all(),
         ]);
     }
 
@@ -165,8 +165,8 @@ class MetricController extends AbstractController
     public function showEditMetricAction(Metric $metric)
     {
         return View::make('dashboard.metrics.edit')->with([
-            'pageTitle'  => trans('dashboard.metrics.edit.title').' - '.trans('dashboard.dashboard'),
-            'metric'     => $metric,
+            'pageTitle' => trans('dashboard.metrics.edit.title').' - '.trans('dashboard.dashboard'),
+            'metric'    => $metric,
         ]);
     }
 

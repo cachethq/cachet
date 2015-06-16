@@ -127,7 +127,7 @@ return [
             'success' => 'Dodano członka zespołu.',
             'failure' => 'Coś poszło nie tak z dodawaniem do zespołu.',
         ],
-        'edit'        => [
+        'edit' => [
             'title'   => 'Aktualizuj profil',
             'success' => 'Profil zaktualizowany.',
             'failure' => 'Coś poszło nie tak przy aktualizacji.',
@@ -172,7 +172,7 @@ return [
     'logout'      => 'Wyloguj',
 
     // Notifications
-    'notifications'     => [
+    'notifications' => [
         'notifications' => 'Powiadomienia',
         'awesome'       => 'Super.',
         'whoops'        => 'Ojej.',

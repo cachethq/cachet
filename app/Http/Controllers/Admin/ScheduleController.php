@@ -47,7 +47,7 @@ class ScheduleController extends AbstractController
                 'icon'   => 'ion-android-checkmark-circle',
                 'active' => false,
             ],
-            'schedule'  => [
+            'schedule' => [
                 'title'  => trans('dashboard.schedule.schedule'),
                 'url'    => route('dashboard.schedule'),
                 'icon'   => 'ion-android-calendar',

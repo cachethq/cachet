@@ -38,8 +38,6 @@ abstract class AbstractTestCase extends TestCase
 
     /**
      * Becomes a user.
-     *
-     * @return void
      */
     protected function beUser()
     {

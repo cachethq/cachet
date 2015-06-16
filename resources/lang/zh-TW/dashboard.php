@@ -87,7 +87,7 @@ return [
         // Component groups
         'groups' => [
             'groups'        => '組件組|組件組',
-            'no_components' => 'You should add a component group.',
+            'no_components' => '',
             'add'           => [
                 'title'   => '新增組件組',
                 'success' => '組件組新增成功。',
@@ -103,7 +103,7 @@ return [
 
     // Metrics
     'metrics' => [
-        'metrics' => '指標',
+        'metrics' => '效能度量',
         'add'     => [
             'title'   => '新增指標',
             'success' => '指標新增成功。',
@@ -127,7 +127,7 @@ return [
             'success' => '成功新增團隊成員。',
             'failure' => '新增團隊成員時遇到一些問題。',
         ],
-        'edit'        => [
+        'edit' => [
             'title'   => '修改個人檔案',
             'success' => '成功修改個人檔案。',
             'failure' => '更新時遇到一些問題。',
@@ -160,7 +160,7 @@ return [
 
     // Login
     'login' => [
-        'login'      => '登錄',
+        'login'      => '登入',
         'logged_in'  => '你已經登錄。',
         'welcome'    => '歡迎回來！',
         'two-factor' => '請輸入驗證碼。',
@@ -172,7 +172,7 @@ return [
     'logout'      => '登出',
 
     // Notifications
-    'notifications'     => [
+    'notifications' => [
         'notifications' => '通知',
         'awesome'       => '太好了。',
         'whoops'        => '唉呀。',
@@ -189,7 +189,7 @@ return [
             'customize'  => '定制化',
             'team'       => '新增用戶',
             'api'        => '生成 API 密鑰',
-            'two-factor' => '兩步驗證',
+            'two-factor' => '',
         ],
     ],
 

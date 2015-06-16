@@ -26,8 +26,6 @@ class ComposerServiceProvider extends ServiceProvider
      * Boot the service provider.
      *
      * @param \Illuminate\Contracts\View\Factory $factory
-     *
-     * @return void
      */
     public function boot(Factory $factory)
     {
@@ -41,8 +39,6 @@ class ComposerServiceProvider extends ServiceProvider
 
     /**
      * Register the service provider.
-     *
-     * @return void
      */
     public function register()
     {

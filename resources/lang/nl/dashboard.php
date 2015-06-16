@@ -127,7 +127,7 @@ return [
             'success' => 'Teamlid toegevoegd.',
             'failure' => 'Er ging iets mis met de component.',
         ],
-        'edit'        => [
+        'edit' => [
             'title'   => 'Profiel bijwerken',
             'success' => 'Profiel bijgewerkt.',
             'failure' => 'Er ging iets mis met het bijwerken.',
@@ -172,7 +172,7 @@ return [
     'logout'      => 'Uitloggen',
 
     // Notifications
-    'notifications'     => [
+    'notifications' => [
         'notifications' => 'Meldingen',
         'awesome'       => 'Geweldig.',
         'whoops'        => 'Oeps.',

@@ -21,8 +21,6 @@ class AppServiceProvider extends ServiceProvider
      * Boot the service provider.
      *
      * @param \Illuminate\Bus\Dispatcher $dispatcher
-     *
-     * @return void
      */
     public function boot(Dispatcher $dispatcher)
     {
@@ -37,8 +35,6 @@ class AppServiceProvider extends ServiceProvider
 
     /**
      * Register the service provider.
-     *
-     * @return void
      */
     public function register()
     {

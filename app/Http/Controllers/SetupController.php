@@ -219,8 +219,6 @@ class SetupController extends AbstractController
      *
      * @param string $key
      * @param mixed  $value
-     *
-     * @return void
      */
     protected function writeEnv($key, $value)
     {
@@ -236,8 +234,6 @@ class SetupController extends AbstractController
 
     /**
      * Generate the app.key value.
-     *
-     * @return void
      */
     protected function keyGenerate()
     {

@@ -87,7 +87,7 @@ return [
         // Component groups
         'groups' => [
             'groups'        => '部件分组|部件分组',
-            'no_components' => 'You should add a component group.',
+            'no_components' => '您应添加一个组件分组。',
             'add'           => [
                 'title'   => '添加一个分组。',
                 'success' => '部件分组已添加。',
@@ -127,7 +127,7 @@ return [
             'success' => '团队成员已添加。',
             'failure' => '添加组件失败。',
         ],
-        'edit'        => [
+        'edit' => [
             'title'   => '更新配置文件',
             'success' => '配置文件已更新。',
             'failure' => '资料更新失败。',
@@ -172,7 +172,7 @@ return [
     'logout'      => '注销',
 
     // Notifications
-    'notifications'     => [
+    'notifications' => [
         'notifications' => '通知',
         'awesome'       => '太棒了！',
         'whoops'        => '哎呦！',
@@ -189,7 +189,7 @@ return [
             'customize'  => '自定义',
             'team'       => '添加用户',
             'api'        => '生成 API 令牌。',
-            'two-factor' => '双因素认证',
+            'two-factor' => '双因素身份验证',
         ],
     ],
 

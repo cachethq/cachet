@@ -17,8 +17,6 @@ class AlterTableComponentGroupsAddOrder extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
     public function up()
     {
@@ -30,8 +28,6 @@ class AlterTableComponentGroupsAddOrder extends Migration
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
     public function down()
     {

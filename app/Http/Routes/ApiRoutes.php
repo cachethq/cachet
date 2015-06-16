@@ -23,8 +23,8 @@ class ApiRoutes
     public function map(Registrar $router)
     {
         $router->group([
-            'namespace'  => 'Api',
-            'prefix'     => 'api/v1',
+            'namespace' => 'Api',
+            'prefix'    => 'api/v1',
         ], function ($router) {
             // General
             $router->get('ping', 'GeneralController@ping');

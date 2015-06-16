@@ -29,8 +29,6 @@ class CacheRepository implements RepositoryInterface
      * Create a new segment cache repository instance.
      *
      * @param \CachetHQ\Cachet\Segment\RepositoryInterface $repository
-     *
-     * @return void
      */
     public function __construct(RepositoryInterface $repository)
     {

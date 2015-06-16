@@ -28,8 +28,6 @@ class Admin
      * Create a new admin middleware instance.
      *
      * @param \Illuminate\Contracts\Auth\Guard $auth
-     *
-     * @return void
      */
     public function __construct(Guard $auth)
     {

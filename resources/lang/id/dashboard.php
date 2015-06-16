@@ -127,7 +127,7 @@ return [
             'success' => 'Anggota Tim sudah ditambahkan.',
             'failure' => 'Ada masalah dengan komponen ini.',
         ],
-        'edit'        => [
+        'edit' => [
             'title'   => 'Perbarui profil',
             'success' => 'Profil sudah diperbarui.',
             'failure' => 'Ada masalah saat memperbarui.',
@@ -172,7 +172,7 @@ return [
     'logout'      => 'Logout',
 
     // Notifications
-    'notifications'     => [
+    'notifications' => [
         'notifications' => 'Notifikasi',
         'awesome'       => 'Keren.',
         'whoops'        => 'Waduh.',

@@ -17,8 +17,6 @@ class AlterTableIncidentsDropUserIdColumn extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
     public function up()
     {
@@ -29,8 +27,6 @@ class AlterTableIncidentsDropUserIdColumn extends Migration
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
     public function down()
     {

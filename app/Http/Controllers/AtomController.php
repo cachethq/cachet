@@ -56,8 +56,6 @@ class AtomController extends AbstractController
      *
      * @param \Roumen\Feed\Facades\Feed        $feed
      * @param \CachetHQ\Cachet\Models\Incident $incident
-     *
-     * @return void
      */
     private function feedAddItem(&$feed, $incident)
     {

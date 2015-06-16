@@ -46,8 +46,6 @@ class SendMaintenanceEmailNotificationHandler
      * @param \Illuminate\Contracts\Mail\Mailer               $mailer
      * @param \CachetHQ\Cachet\Models\Subscriber              $subscriber
      * @param \McCool\LaravelAutoPresenter\PresenterDecorator $presenter
-     *
-     * @return void
      */
     public function __construct(MailQueue $mailer, Subscriber $subscriber, PresenterDecorator $presenter)
     {
@@ -60,8 +58,6 @@ class SendMaintenanceEmailNotificationHandler
      * Handle the event.
      *
      * @param \CachetHQ\Cachet\Events\MaintenanceHasScheduledEvent $event
-     *
-     * @return void
      */
     public function handle(MaintenanceHasScheduledEvent $event)
     {

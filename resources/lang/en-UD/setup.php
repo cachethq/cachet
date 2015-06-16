@@ -13,6 +13,7 @@ return [
     'setup'             => 'crwdns258:0crwdne258:0',
     'title'             => 'crwdns259:0crwdne259:0',
     'service_details'   => 'crwdns260:0crwdne260:0',
+    'env_setup'         => 'crwdns514:0crwdne514:0',
     'status_page_setup' => 'crwdns261:0crwdne261:0',
     'show_support'      => 'crwdns488:0crwdne488:0',
     'admin_account'     => 'crwdns263:0crwdne263:0',

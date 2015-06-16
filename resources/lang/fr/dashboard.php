@@ -124,7 +124,7 @@ return [
             'success' => 'Membre ajouté.',
             'failure' => 'Une erreur s\'est produite lors de l\'ajout de ce membre.',
         ],
-        'edit'        => [
+        'edit' => [
             'title'   => 'Mettre à jour le profil',
             'success' => 'Profil mis-à-jour.',
             'failure' => 'Une erreur s\'est produite lors de la mise à jour du le profil.',
@@ -133,8 +133,8 @@ return [
 
     // Settings
     'settings' => [
-        'settings'   => 'Réglages',
-        'app-setup'  => [
+        'settings'  => 'Réglages',
+        'app-setup' => [
             'app-setup'   => 'Configuration',
             'images-only' => 'Only images may be uploaded.',
             'too-big'     => 'The file you uploaded is too big. Upload an image smaller than :size',
@@ -168,7 +168,7 @@ return [
     'logout'      => 'Déconnexion',
 
     // Notifications
-    'notifications'     => [
+    'notifications' => [
         'notifications' => 'Notifications',
         'awesome'       => 'Super.',
         'whoops'        => 'Oups.',

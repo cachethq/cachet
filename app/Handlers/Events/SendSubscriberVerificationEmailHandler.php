@@ -28,8 +28,6 @@ class SendSubscriberVerificationEmailHandler
      * Create a new send subscriber verification email handler.
      *
      * @param \Illuminate\Contracts\Mail\Mailer $mailer
-     *
-     * @return void
      */
     public function __construct(MailQueue $mailer)
     {
@@ -40,8 +38,6 @@ class SendSubscriberVerificationEmailHandler
      * Handle the event.
      *
      * @param \CachetHQ\Cachet\Events\CustomerHasSubscribedEvent $event
-     *
-     * @return void
      */
     public function handle(CustomerHasSubscribedEvent $event)
     {

@@ -98,7 +98,7 @@ return [
             'success' => 'Team-Mitglied hinzugefügt.',
             'failure' => 'Es ist ein Fehler bei der Erstellung eines neuen Team-Mitglieds aufgetreten.',
         ],
-        'edit'        => [
+        'edit' => [
             'title'   => 'Profil aktualisieren',
             'success' => 'Profile aktualisiert.',
             'failure' => 'Es ist ein Fehler bei der Aktualisierung des Profils aufgetreten.',
@@ -142,7 +142,7 @@ return [
     'logout'      => 'Logout',
 
     // Notifications
-    'notifications'     => [
+    'notifications' => [
         'notifications' => 'Benachrichtigungen',
         'awesome'       => 'Großartig.',
         'whoops'        => 'Oops.',

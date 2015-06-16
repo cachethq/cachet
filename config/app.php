@@ -221,8 +221,8 @@ return [
         'Validator' => 'Illuminate\Support\Facades\Validator',
         'View'      => 'Illuminate\Support\Facades\View',
 
-        'Setting'   => 'CachetHQ\Cachet\Facades\Setting',
-        'Str'       => 'Illuminate\Support\Str',
+        'Setting' => 'CachetHQ\Cachet\Facades\Setting',
+        'Str'     => 'Illuminate\Support\Str',
 
     ],
 

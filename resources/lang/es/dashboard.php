@@ -100,7 +100,7 @@ return [
             'success' => 'Miembro del equipo agregado.',
             'failure' => 'Algo salió mal con el componente.',
         ],
-        'edit'        => [
+        'edit' => [
             'title'   => 'Actualizar perfil',
             'success' => 'Perfil actualizado.',
             'failure' => 'Algo salió mal al actualizar.',
@@ -144,7 +144,7 @@ return [
     'logout'      => 'Salir',
 
     // Notifications
-    'notifications'     => [
+    'notifications' => [
         'notifications' => 'Notificaciones',
         'awesome'       => 'Excelente.',
         'whoops'        => 'Whoops.',

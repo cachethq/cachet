@@ -60,29 +60,29 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe' => 'Subscribe to get the most recent updates.',
-        'button'    => 'Subscribe',
+        'subscribe' => '',
+        'button'    => '',
         'email'     => [
-            'subscribe'    => 'Subscribe to email updates.',
-            'subscribed'   => 'You\'ve been subscribed to email notifications, please check your email to confirm your subscription.',
-            'verified'     => 'Your email subscription has been confirmed. Thank you!',
-            'unsubscribe'  => 'Unsuscribe from email updates.',
-            'unsubscribed' => 'Your email subscription has been cancelled.',
-            'failure'      => 'Something went wrong with the subscription.',
+            'subscribe'    => '',
+            'subscribed'   => '',
+            'verified'     => '',
+            'unsubscribe'  => '',
+            'unsubscribed' => '',
+            'failure'      => '',
             'verify'       => [
-                'text'           => "Please confirm your email subscription to :app_name status updates.\n:link\nThank you, :app_name",
-                'html-preheader' => 'Please confirm your email subscription to :app_name status updates.',
-                'html'           => '<p>Please confirm your email subscription to :app_name status updates.</p><p>:link</p><p>Thank you, :app_name</p>',
+                'text'           => '',
+                'html-preheader' => '',
+                'html'           => '',
             ],
-            'maintenance'  => [
-                'text'           => "New maintenance has been scheduled on :app_name.\nThank you, :app_name",
-                'html-preheader' => 'New maintenance has been scheduled on :app_name.',
-                'html'           => '<p>New maintenance has been scheduled on :app_name.</p><p>Thank you, :app_name</p>',
+            'maintenance' => [
+                'text'           => '',
+                'html-preheader' => '',
+                'html'           => '',
             ],
-            'incident'     => [
-                'text'           => "New incident has been reported on :app_name.\nThank you, :app_name",
-                'html-preheader' => 'New incident has been reported on :app_name.',
-                'html'           => '<p>New incident has been reported on :app_name.</p><p>Thank you, :app_name</p>',
+            'incident' => [
+                'text'           => '',
+                'html-preheader' => '',
+                'html'           => '',
             ],
         ],
     ],
@@ -90,8 +90,8 @@ return [
     // Other
     'powered_by'      => ':app 应用状态页面由 <a href="https://cachethq.io">Cachet</a>提供支持。',
     'about_this_site' => '关于此站点',
-    'rss-feed'        => 'RSS 源',
-    'atom-feed'       => 'Atom 源',
+    'rss-feed'        => '',
+    'atom-feed'       => '',
     'feed'            => '状态源',
 
 ];

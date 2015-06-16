@@ -127,7 +127,7 @@ return [
             'success' => 'crwdns340:0crwdne340:0',
             'failure' => 'crwdns341:0crwdne341:0',
         ],
-        'edit'        => [
+        'edit' => [
             'title'   => 'crwdns342:0crwdne342:0',
             'success' => 'crwdns343:0crwdne343:0',
             'failure' => 'crwdns344:0crwdne344:0',
@@ -172,7 +172,7 @@ return [
     'logout'      => 'crwdns204:0crwdne204:0',
 
     // Notifications
-    'notifications'     => [
+    'notifications' => [
         'notifications' => 'crwdns205:0crwdne205:0',
         'awesome'       => 'crwdns356:0crwdne356:0',
         'whoops'        => 'crwdns357:0crwdne357:0',

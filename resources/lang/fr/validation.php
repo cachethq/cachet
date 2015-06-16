@@ -22,40 +22,40 @@ return [
     |
     */
 
-    'accepted'             => 'Le champ :attribute doit être accepté.',
-    'active_url'           => "Le champ :attribute n'est pas une URL valide.",
-    'after'                => 'Le champ :attribute doit être une date postérieure à :date.',
-    'alpha'                => 'Le champ :attribute ne peut contenir que des lettres.',
-    'alpha_dash'           => 'Le champ :attribute ne peut contenir que des lettres, chiffres et tirets.',
-    'alpha_num'            => 'Le champ :attribute ne peut contenir que des lettres ou des chiffres.',
-    'array'                => 'Le champ :attribute doit être un tableau.',
-    'before'               => 'Le champ :attribute doit être une date antérieure à :date.',
-    'between'              => [
+    'accepted'   => 'Le champ :attribute doit être accepté.',
+    'active_url' => "Le champ :attribute n'est pas une URL valide.",
+    'after'      => 'Le champ :attribute doit être une date postérieure à :date.',
+    'alpha'      => 'Le champ :attribute ne peut contenir que des lettres.',
+    'alpha_dash' => 'Le champ :attribute ne peut contenir que des lettres, chiffres et tirets.',
+    'alpha_num'  => 'Le champ :attribute ne peut contenir que des lettres ou des chiffres.',
+    'array'      => 'Le champ :attribute doit être un tableau.',
+    'before'     => 'Le champ :attribute doit être une date antérieure à :date.',
+    'between'    => [
         'numeric' => 'Le champ :attribute doit être entre :min et :max.',
         'file'    => 'Le champ :attribute doit être entre :min et :max kilobytes.',
         'string'  => 'Le champ :attribute doit contenir entre :min et :max caractères.',
         'array'   => 'Le champ :attribute doit avoir entre :min et :max objets.',
     ],
-    'confirmed'            => 'Le champ :attribute confirmation ne correspond pas.',
-    'date'                 => "Le champ :attribute n'est pas une date valide.",
-    'date_format'          => 'Le champ :attribute ne correspond pas au format :format.',
-    'different'            => 'Le champ :attribute et :other doivent être différents.',
-    'digits'               => 'Le champ :attribute doit être composé de :digits chiffres.',
-    'digits_between'       => "Le champ :attribute doit être composé de :min jusqu'à :max chiffres.",
-    'email'                => 'Le champ :attribute doit être une adresse email valide.',
-    'exists'               => 'Le champ selected :attribute est invalide.',
-    'image'                => 'Le champ :attribute doit être une image.',
-    'in'                   => 'Le champ selected :attribute est invalide.',
-    'integer'              => 'Le champ :attribute doit être un entier.',
-    'ip'                   => 'Le champ :attribute doit être une adresse IP valide.',
-    'max'                  => [
+    'confirmed'      => 'Le champ :attribute confirmation ne correspond pas.',
+    'date'           => "Le champ :attribute n'est pas une date valide.",
+    'date_format'    => 'Le champ :attribute ne correspond pas au format :format.',
+    'different'      => 'Le champ :attribute et :other doivent être différents.',
+    'digits'         => 'Le champ :attribute doit être composé de :digits chiffres.',
+    'digits_between' => "Le champ :attribute doit être composé de :min jusqu'à :max chiffres.",
+    'email'          => 'Le champ :attribute doit être une adresse email valide.',
+    'exists'         => 'Le champ selected :attribute est invalide.',
+    'image'          => 'Le champ :attribute doit être une image.',
+    'in'             => 'Le champ selected :attribute est invalide.',
+    'integer'        => 'Le champ :attribute doit être un entier.',
+    'ip'             => 'Le champ :attribute doit être une adresse IP valide.',
+    'max'            => [
         'numeric' => 'Le champ :attribute ne doit pas être supérieure à :max.',
         'file'    => 'Le champ :attribute ne doit pas être supérieure à :max kilobytes.',
         'string'  => 'Le champ :attribute ne doit pas être supérieure à :max caractères.',
         'array'   => 'Le champ :attribute ne doit pas avoir plus de :max objets.',
     ],
-    'mimes'                => 'Le champ :attribute doit être un fichier de type : :values.',
-    'min'                  => [
+    'mimes' => 'Le champ :attribute doit être un fichier de type : :values.',
+    'min'   => [
         'numeric' => 'Le champ :attribute doit être supérieur à :min.',
         'file'    => 'Le champ :attribute  doit être supérieur à :min kilobytes.',
         'string'  => 'Le champ :attribute  doit être supérieur à :min caractères.',
@@ -77,9 +77,9 @@ return [
         'string'  => 'Le nombre de caractères du champ :attribute doit être de :size caractères.',
         'array'   => 'Le champ :attribute doit contenir :size objets.',
     ],
-    'string'               => 'The :attribute must be a string.',
-    'unique'               => 'Le champ :attribute est déjà utilisé.',
-    'url'                  => 'Le format du champ :attribute est invalide.',
+    'string' => 'The :attribute must be a string.',
+    'unique' => 'Le champ :attribute est déjà utilisé.',
+    'url'    => 'Le format du champ :attribute est invalide.',
 
     /*
     |--------------------------------------------------------------------------
@@ -92,7 +92,7 @@ return [
     |
     */
 
-    'custom'               => [
+    'custom' => [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
@@ -109,6 +109,6 @@ return [
     |
     */
 
-    'attributes'           => [],
+    'attributes' => [],
 
 ];

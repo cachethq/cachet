@@ -46,8 +46,6 @@ class SendIncidentEmailNotificationHandler
      * @param \Illuminate\Contracts\Mail\Mailer               $mailer
      * @param \CachetHQ\Cachet\Models\Subscriber              $subscriber
      * @param \McCool\LaravelAutoPresenter\PresenterDecorator $presenter
-     *
-     * @return void
      */
     public function __construct(MailQueue $mailer, Subscriber $subscriber, PresenterDecorator $presenter)
     {
@@ -60,8 +58,6 @@ class SendIncidentEmailNotificationHandler
      * Handle the event.
      *
      * @param \CachetHQ\Cachet\Events\IncidentHasReportedEvent $event
-     *
-     * @return void
      */
     public function handle(IncidentHasReportedEvent $event)
     {

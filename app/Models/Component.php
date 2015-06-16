@@ -27,9 +27,9 @@ class Component extends Model implements HasPresenter
      * @var string[]
      */
     protected $rules = [
-        'name'    => 'required|string',
-        'status'  => 'integer|required',
-        'link'    => 'url',
+        'name'   => 'required|string',
+        'status' => 'integer|required',
+        'link'   => 'url',
     ];
 
     /**
