@@ -82,15 +82,19 @@
                         </div>
                         @endif
                         <div class="form-group hidden" id="component-status">
-                            <div class="radio-items">
-                                @foreach(trans('cachet.components.status') as $statusID => $status)
-                                <div class="radio-inline">
-                                    <label>
-                                        <input type="radio" name="incident[component_status]" value="{{ $statusID }}">
-                                        {{ $status }}
-                                    </label>
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div class="radio-items">
+                                        @foreach(trans('cachet.components.status') as $statusID => $status)
+                                        <div class="radio-inline">
+                                            <label>
+                                                <input type="radio" name="incident[component_status]" value="{{ $statusID }}">
+                                                {{ $status }}
+                                            </label>
+                                        </div>
+                                        @endforeach
+                                    </div>
                                 </div>
-                                @endforeach
                             </div>
                         </div>
                         <div class="form-group">
