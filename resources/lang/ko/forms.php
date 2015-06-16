@@ -100,7 +100,7 @@ return [
             'about-this-page'        => '이 페이지에 대하여',
             'days-of-incidents'      => '몇 일 동안 사건을 표시하시겠습니까?',
             'banner'                 => '배너 이미지',
-            'banner-help'            => "가로가 930 픽셀보다 작은 이미지를 업로드 하는 것을 권장합니다.",
+            'banner-help'            => '가로가 930 픽셀보다 작은 이미지를 업로드 하는 것을 권장합니다.',
             'analytics_google'       => 'Google Analytics 코드',
             'analytics_gosquared'    => 'GoSquared Analytics 코드',
             'analytics_piwik_url'    => 'Piwik 인스턴스의 URL ( "http(s)://" 제외 )',
