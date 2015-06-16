@@ -8,7 +8,7 @@ mysql:
 cachet:
   image: cachethq/cachet:latest
   ports:
-    - 8000:8000
+    - 80:8000
   links:
     - mysql:mysql
   environment:
