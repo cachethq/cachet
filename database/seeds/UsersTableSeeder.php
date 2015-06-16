@@ -10,7 +10,6 @@
  */
 
 use CachetHQ\Cachet\Models\User;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
 
 class UsersTableSeeder extends Seeder
@@ -20,8 +19,6 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        Model::unguard();
-
         $users = [
             [
                 'username' => 'test',

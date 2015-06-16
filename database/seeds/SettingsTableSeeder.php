@@ -10,7 +10,6 @@
  */
 
 use CachetHQ\Cachet\Models\Setting;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
 
 class SettingsTableSeeder extends Seeder
@@ -20,8 +19,6 @@ class SettingsTableSeeder extends Seeder
      */
     public function run()
     {
-        Model::unguard();
-
         $defaultSettings = [
             [
                 'name'  => 'app_name',

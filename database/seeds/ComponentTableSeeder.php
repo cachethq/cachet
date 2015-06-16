@@ -10,7 +10,6 @@
  */
 
 use CachetHQ\Cachet\Models\Component;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
 
 class ComponentTableSeeder extends Seeder
@@ -20,8 +19,6 @@ class ComponentTableSeeder extends Seeder
      */
     public function run()
     {
-        Model::unguard();
-
         $defaultComponents = [
             [
                 'name'        => 'API',

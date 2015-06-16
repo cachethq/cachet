@@ -10,7 +10,6 @@
  */
 
 use CachetHQ\Cachet\Models\MetricPoint;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
 
 class MetricPointSeeder extends Seeder
@@ -20,8 +19,6 @@ class MetricPointSeeder extends Seeder
      */
     public function run()
     {
-        Model::unguard();
-
         $metric = [
             'metric_id' => 1,
             'value'     => rand(1, 100),

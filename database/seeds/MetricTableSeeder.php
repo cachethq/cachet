@@ -10,7 +10,6 @@
  */
 
 use CachetHQ\Cachet\Models\Metric;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
 
 class MetricTableSeeder extends Seeder
@@ -20,8 +19,6 @@ class MetricTableSeeder extends Seeder
      */
     public function run()
     {
-        Model::unguard();
-
         $defaultMetrics = [
             [
                 'name'          => 'Demo Metric',
