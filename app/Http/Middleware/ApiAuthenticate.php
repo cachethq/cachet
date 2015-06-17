@@ -55,10 +55,10 @@ class ApiAuthenticate
                 }
             } elseif ($request->getUser()) {
                 if ($this->auth->onceBasic() !== null) {
-                    throw new AccessDeniedHttpException();
+                    throw new UnauthorizedHttpException();
                 }
             } else {
-                throw new AccessDeniedHttpException();
+                throw new UnauthorizedHttpException();
             }
         }
 
