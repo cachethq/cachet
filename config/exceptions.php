@@ -48,6 +48,7 @@ return [
         'GrahamCampbell\Exceptions\Filters\VerboseFilter',
         'GrahamCampbell\Exceptions\Filters\CanDisplayFilter',
         'GrahamCampbell\Exceptions\Filters\ContentTypeFilter',
+        'CachetHQ\Cachet\Exceptions\Filters\ApiFilter',
     ],
 
 ];
