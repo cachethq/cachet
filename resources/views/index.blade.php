@@ -37,9 +37,11 @@
     </div>
     @endif
 
+    @if(!$componentGroups->isEmpty() || !$ungroupedComponents->isEmpty())
     <div class="section-components">
         @include('partials.components')
     </div>
+    @endif
 
     @if($displayMetrics && Setting::get('display_graphs'))
     <div class="section-metrics">
