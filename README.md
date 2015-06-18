@@ -86,6 +86,23 @@ Now go to `http://<ipdockerisboundto>/setup` and have fun!
 Note: When running in production you should ensure that you enable SSL.
 This is commonly achieved by running Nginx with your certificates on your Docker host, service or load balancers in-front of the running container, or by adding your custom SSL certificates and configuration to the supplied Nginx configuration.
 
+### docker-compose
+Quickly launch Cachet and MySQL docker images with [docker-compose](https://docs.docker.com/compose/)
+
+```bash
+git clone https://github.com/cachethq/Cachet.git
+cd Cachet
+docker-compose build
+docker-compose up
+```
+
+To initialize the database, utilize [docker exec](https://docs.docker.com/reference/commandline/cli/#exec):
+```bash
+docker exec -it cachet_cachet_1 php artisan migrate --force
+```
+
+Continue to `http://<ipdockerisboundto>/setup` to configure Cachet.
+
 ## Addons
 
 - [cachet-monitor](https://github.com/castawaylabs/cachet-monitor) - For URL monitoring. Automatic incident updates.
