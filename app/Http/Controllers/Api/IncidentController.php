@@ -11,6 +11,8 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Api;
 
+use CachetHQ\Cachet\Events\IncidentHasReportedEvent;
+use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Cachet\Models\Incident;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
@@ -65,6 +67,15 @@ class IncidentController extends AbstractApiController
             $incident = Incident::create($incidentData);
         } catch (Exception $e) {
             throw new BadRequestHttpException();
+        }
+
+        $isEnabled = (bool) Setting::get('enable_subscribers', false);
+        $mailAddress = env('MAIL_ADDRESS', false);
+        $mailFrom = env('MAIL_NAME', false);
+        $subscribersEnabled = $isEnabled && $mailAddress && $mailFrom;
+
+        if (array_get($incidentData, 'notify') && $subscribersEnabled) {
+            event(new IncidentHasReportedEvent($incident));
         }
 
         if ($incident->isValid()) {

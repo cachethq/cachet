@@ -138,7 +138,12 @@ class ScheduleController extends AbstractController
             trans('dashboard.schedule.add.success')
         );
 
-        if (array_get($scheduleData, 'notify')) {
+        $isEnabled = (bool) Setting::get('enable_subscribers', false);
+        $mailAddress = env('MAIL_ADDRESS', false);
+        $mailFrom = env('MAIL_NAME', false);
+        $subscribersEnabled = $isEnabled && $mailAddress && $mailFrom;
+
+        if (array_get($scheduleData, 'notify') && $subscribersEnabled) {
             event(new MaintenanceHasScheduledEvent($incident));
         }
 

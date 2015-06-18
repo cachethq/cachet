@@ -158,7 +158,12 @@ class IncidentController extends AbstractController
             trans('dashboard.incidents.add.success')
         );
 
-        if (array_get($incidentData, 'notify')) {
+        $isEnabled = (bool) Setting::get('enable_subscribers', false);
+        $mailAddress = env('MAIL_ADDRESS', false);
+        $mailFrom = env('MAIL_NAME', false);
+        $subscribersEnabled = $isEnabled && $mailAddress && $mailFrom;
+
+        if (array_get($incidentData, 'notify') && $subscribersEnabled) {
             event(new IncidentHasReportedEvent($incident));
         }
 
