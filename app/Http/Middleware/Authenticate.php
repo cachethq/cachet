@@ -13,7 +13,7 @@ namespace CachetHQ\Cachet\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
-use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class Authenticate
 {
@@ -45,7 +45,7 @@ class Authenticate
     public function handle($request, Closure $next)
     {
         if ($this->auth->guest()) {
-            throw new UnauthorizedHttpException();
+            throw new HttpException(401);
         }
 
         return $next($request);

@@ -15,7 +15,7 @@ use CachetHQ\Cachet\Models\User;
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
-use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class ApiAuthenticate
 {
@@ -51,14 +51,14 @@ class ApiAuthenticate
                 try {
                     $this->auth->onceUsingId(User::findByApiToken($apiToken)->id);
                 } catch (ModelNotFoundException $e) {
-                    throw new UnauthorizedHttpException();
+                    throw new HttpException(401);
                 }
             } elseif ($request->getUser()) {
                 if ($this->auth->onceBasic() !== null) {
-                    throw new UnauthorizedHttpException();
+                    throw new HttpException(401);
                 }
             } else {
-                throw new UnauthorizedHttpException();
+                throw new HttpException(401);
             }
         }
 
