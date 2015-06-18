@@ -40,7 +40,6 @@ class MetricPointTest extends AbstractTestCase
         $this->post("/api/v1/metrics/{$metric->id}/points");
 
         $this->assertResponseStatus(401);
-        $this->seeJson(['message' => 'You are not authorized to view this content.', 'status_code' => 401]);
     }
 
     public function testPostMetricPoint()
