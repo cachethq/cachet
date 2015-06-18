@@ -66,6 +66,15 @@ class Incident extends Model implements HasPresenter
     protected $dates = ['scheduled_at', 'deleted_at'];
 
     /**
+     * The attributes that should be casted to native types.
+     *
+     * @var string[]
+     */
+    protected $casts = [
+        'visible' => 'integer',
+    ];
+
+    /**
      * Finds all visible incidents.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
