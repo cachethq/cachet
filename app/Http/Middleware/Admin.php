@@ -13,7 +13,7 @@ namespace CachetHQ\Cachet\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
-use Illuminate\Support\Facades\Response;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class Admin
 {
@@ -45,9 +45,7 @@ class Admin
     public function handle($request, Closure $next)
     {
         if (!$this->auth->check() || ($this->auth->check() && !$this->auth->user()->isAdmin)) {
-            return Response::view('errors.401', [
-                'pageTitle' => trans('errors.unauthorized.title'),
-            ], 401);
+            throw new HttpException(401);
         }
 
         return $next($request);

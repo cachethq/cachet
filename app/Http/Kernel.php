@@ -45,5 +45,6 @@ class Kernel extends HttpKernel
         'app.isSetup'      => 'CachetHQ\Cachet\Http\Middleware\AppIsSetup',
         'app.hasSetting'   => 'CachetHQ\Cachet\Http\Middleware\HasSetting',
         'app.subscribers'  => 'CachetHQ\Cachet\Http\Middleware\SubscribersConfigured',
+        'accept'           => 'CachetHQ\Cachet\Http\Middleware\Acceptable',
     ];
 }

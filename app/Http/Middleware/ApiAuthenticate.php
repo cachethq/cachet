@@ -15,6 +15,7 @@ use CachetHQ\Cachet\Models\User;
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class ApiAuthenticate
 {
@@ -48,34 +49,19 @@ class ApiAuthenticate
         if ($this->auth->guest()) {
             if ($apiToken = $request->header('X-Cachet-Token')) {
                 try {
-                    $user = User::findByApiToken($apiToken);
-
-                    $this->auth->onceUsingId($user->id);
+                    $this->auth->onceUsingId(User::findByApiToken($apiToken)->id);
                 } catch (ModelNotFoundException $e) {
-                    return $this->handleError();
+                    throw new HttpException(401);
                 }
-            } elseif ($user = $request->getUser()) {
+            } elseif ($request->getUser()) {
                 if ($this->auth->onceBasic() !== null) {
-                    return $this->handleError();
+                    throw new HttpException(401);
                 }
             } else {
-                return $this->handleError();
+                throw new HttpException(401);
             }
         }
 
         return $next($request);
-    }
-
-    /**
-     * Common method for returning an unauthorized error.
-     *
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
-    protected function handleError()
-    {
-        return response()->json([
-            'message'     => 'You are not authorized to view this content.',
-            'status_code' => 401,
-        ], 401);
     }
 }
