@@ -41,7 +41,7 @@
 
     @if($stylesheet = Setting::get('stylesheet'))
     <style type="text/css">
-    {{ $stylesheet }}
+    {!! $stylesheet !!}
     </style>
     @endif
 
