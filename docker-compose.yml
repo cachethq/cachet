@@ -6,7 +6,7 @@ mysql:
     - MYSQL_USER=cachet
     - MYSQL_PASSWORD=cachet
 cachet:
-  build: . 
+  build: .
   ports:
     - 80:8000
   links:
