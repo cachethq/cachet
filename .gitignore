@@ -1,20 +1,4 @@
-# Laravel
-vendor
-
-# Configuration
 .env
-config.codekit
-
-# Assets
-bower_components
 node_modules
-public/dist
-public/css
-public/js
-
-# Packages
-npm-debug.log
-.vagrant
-
-# PHPUnit
 phpunit.xml
+vendor
