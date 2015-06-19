@@ -8,18 +8,18 @@
 
 ![Screenshot](https://cachethq.io/img/main-interface.jpg)
 
-**Currently in development. Things may change or break until a solid release has been announced.**
-
 ## Features
 
-- List your services components.
-- Log incidents.
-- Apply a custom stylesheet to the status page.
-- Markdown support for incident messages.
-- RESTful API.
-- Translated into several languages.
-- Metrics.
-- Cross-database support: MySQL, PostgreSQL and SQLite.
+- List your services components
+- Log incidents
+- Apply custom CSS to the status page
+- Markdown support for incident messages
+- JSON API
+- Translated into eleven languages
+- Metrics
+- Cross-database support: MySQL, PostgreSQL and SQLite
+- Subscriber notifications via Email
+- Two factor authentication, with Google Authenticator
 
 ## Requirements
 
@@ -28,17 +28,15 @@
 
 ### Development Requirements
 
-The following extra dependencies are required to develop Cachet.
+The following extra dependencies are required to develop Cachet:
 
 - Node.js
-    + Bower
-    + Gulp
+- Bower
+- Gulp
 
 ## Installation, Upgrades and Documentation
 
-You can now find our documentation at [https://docs.cachethq.io](https://docs.cachethq.io) or, directly at [http://cachet.readme.io](http://cachet.readme.io) if the first link fails to load. [Cachet Demo](https://demo.cachethq.io).
-
-If you're upgrading from an earlier version of Cachet, which uses Laravel 4 then you'll need to follow the upgrade instructions [found here](https://docs.cachethq.io/v1.0/docs/upgrading-from-laravel-4).
+You can now find our documentation at [https://docs.cachethq.io](https://docs.cachethq.io).
 
 ### Demo Account
 
@@ -47,7 +45,7 @@ To test out the demo, you may login to the [Dashboard](https://demo.cachethq.io/
 - **Username:** test@test.com
 - **Password:** test123
 
-The demo is reset every half past the hour.
+The demo is reset every half hour.
 
 ## What Cachet is not
 
@@ -87,6 +85,7 @@ Note: When running in production you should ensure that you enable SSL.
 This is commonly achieved by running Nginx with your certificates on your Docker host, service or load balancers in-front of the running container, or by adding your custom SSL certificates and configuration to the supplied Nginx configuration.
 
 ### docker-compose
+
 Quickly launch Cachet and MySQL docker images with [docker-compose](https://docs.docker.com/compose/)
 
 ```bash
