@@ -64,7 +64,7 @@ class SendIncidentEmailNotificationHandler
         $data = $this->presenter->decorate($event->incident);
 
         // Only send emails for public incidents.
-        if ($event->incident->visible === 1) {
+        if ($event->incident->visible == 1) {
             foreach ($this->subscriber->all() as $subscriber) {
                 $mail = [
                     'email'           => $subscriber->email,
