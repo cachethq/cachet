@@ -19,11 +19,18 @@ class MetricPointSeeder extends Seeder
      */
     public function run()
     {
-        $metric = [
-            'metric_id' => 1,
-            'value'     => rand(1, 100),
-        ];
+        MetricPoint::truncate();
 
-        MetricPoint::create($metric);
+        // Generate 11 hours of metric points
+        for ($i=0; $i < 11; $i++) {
+            $metricTime = (new DateTime())->sub(new DateInterval('PT'.$i.'H'));
+
+            $pointFactory = factory('CachetHQ\Cachet\Models\MetricPoint');
+            $point = $pointFactory->create();
+
+            $point->update([
+                'created_at' => $metricTime,
+            ]);
+        }
     }
 }
