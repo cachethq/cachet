@@ -22,7 +22,7 @@ class MetricPointSeeder extends Seeder
         MetricPoint::truncate();
 
         // Generate 11 hours of metric points
-        for ($i=0; $i < 11; $i++) {
+        for ($i = 0; $i < 11; $i++) {
             $metricTime = (new DateTime())->sub(new DateInterval('PT'.$i.'H'));
 
             $point = MetricPoint::create([
