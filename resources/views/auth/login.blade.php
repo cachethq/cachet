@@ -39,14 +39,14 @@
                     </div>
                     <div class="form-group">
                         <div class="row">
-                            <div class="col-md-2">
+                            <div class="col-xs-2">
                                 <a class="btn btn-white btn-trans" href="{{ route('status-page') }}">
                                     <span class="text-center">
                                         <i class="ion-home"></i>
                                     </span>
                                 </a>
                             </div>
-                            <div class="col-md-10">
+                            <div class="col-xs-10">
                                 <button type="submit" class="btn btn-lg btn-block btn-white btn-trans">{{ trans('dashboard.login.login') }}</button>
                             </div>
                         </div>
