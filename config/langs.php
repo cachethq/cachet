@@ -21,6 +21,7 @@ return [
     'ko'    => '한글',
     'nl'    => 'Nederlands',
     'pt-BR' => 'Portuguese, Brazilian',
+    'ru'   => 'Русский',
     'zh-CN' => '简体中文',
     'zh-TW' => '繁體中文',
 ];
