@@ -100,7 +100,7 @@ return [
             'about-this-page'        => 'Об этой странице',
             'days-of-incidents'      => 'Сколько дней показывать инциденты?',
             'banner'                 => 'Картинка-баннер',
-            'banner-help'            => "Рекомендуется загружать картинки не больше 930 пикс. в ширину.",
+            'banner-help'            => 'Рекомендуется загружать картинки не больше 930 пикс. в ширину.',
             'analytics_google'       => 'Код Google Analytics',
             'analytics_gosquared'    => 'Код GoSquared Analytics',
             'analytics_piwik_url'    => 'URL установки Piwik (без http(s)://)',
