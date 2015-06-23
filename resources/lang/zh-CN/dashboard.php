@@ -127,7 +127,7 @@ return [
             'success' => '团队成员已添加。',
             'failure' => '添加组件失败。',
         ],
-        'edit'        => [
+        'edit' => [
             'title'   => '更新配置文件',
             'success' => '配置文件已更新。',
             'failure' => '资料更新失败。',
@@ -172,7 +172,7 @@ return [
     'logout'      => '注销',
 
     // Notifications
-    'notifications'     => [
+    'notifications' => [
         'notifications' => '通知',
         'awesome'       => '太棒了！',
         'whoops'        => '哎呦！',

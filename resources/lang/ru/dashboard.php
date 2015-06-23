@@ -172,7 +172,7 @@ return [
     'logout'      => 'Выйти',
 
     // Notifications
-    'notifications'     => [
+    'notifications' => [
         'notifications' => 'Уведомления',
         'awesome'       => 'Отлично!',
         'whoops'        => 'Ой-ой!',
