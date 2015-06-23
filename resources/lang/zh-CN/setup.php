@@ -13,7 +13,7 @@ return [
     'setup'             => '设置',
     'title'             => '安装 Cachet',
     'service_details'   => '服务细节',
-    'env_setup'         => '',
+    'env_setup'         => '环境设置',
     'status_page_setup' => '状态页面设置',
     'show_support'      => '您想支持Cachet么?',
     'admin_account'     => '管理员帐户',

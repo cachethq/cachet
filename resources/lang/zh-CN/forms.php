@@ -21,8 +21,8 @@ return [
         'site_timezone'    => '选择您的时区',
         'site_locale'      => '选择您的语言',
         'enable_google2fa' => '启用谷歌双因素身份验证',
-        'cache_driver'     => '',
-        'session_driver'   => '',
+        'cache_driver'     => '缓存驱动',
+        'session_driver'   => '会话驱动',
     ],
 
     // Login form fields
@@ -44,7 +44,7 @@ return [
         'message-help'       => '您可以使用Markdown语言。',
         'scheduled_at'       => '什么时间安排维护？',
         'incident_time'      => '这次事件是什么时候发生的？',
-        'notify_subscribers' => '',
+        'notify_subscribers' => '通知订阅者',
         'visibility'         => '事件的可见性',
         'public'             => '公共可见',
         'logged_in_only'     => '仅登录用户可见',
@@ -103,9 +103,9 @@ return [
             'banner-help'            => '建议上传文件宽度不大于930像素。',
             'analytics_google'       => 'Google Analytics 代码',
             'analytics_gosquared'    => 'GoSquared Analytics 代码',
-            'analytics_piwik_url'    => '',
-            'analytics_piwik_siteid' => '',
-            'subscribers'            => '',
+            'analytics_piwik_url'    => '输入Piwik实例的URL(不含http(s)://)',
+            'analytics_piwik_siteid' => 'Piwik 的站点 id',
+            'subscribers'            => '允许用户订阅邮件通知吗?',
         ],
         'security' => [
             'allowed-domains'      => '允许的域',

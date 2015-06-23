@@ -60,29 +60,29 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe' => '',
-        'button'    => '',
+        'subscribe' => '订阅最新的更新。',
+        'button'    => '订阅',
         'email'     => [
-            'subscribe'    => '',
-            'subscribed'   => '',
-            'verified'     => '',
-            'unsubscribe'  => '',
-            'unsubscribed' => '',
-            'failure'      => '',
+            'subscribe'    => '订阅电子邮件更新。',
+            'subscribed'   => '你已经订阅电子邮件通知，请检查您的电子邮件，确认您的订阅。',
+            'verified'     => '您的电子邮件订阅已确认。谢谢！',
+            'unsubscribe'  => '取消电子邮件订阅。',
+            'unsubscribed' => '您的电子邮件订阅已被取消。',
+            'failure'      => '邮件订阅失败。',
             'verify'       => [
-                'text'           => '',
-                'html-preheader' => '',
-                'html'           => '',
+                'text'           => '请确认您的 :app_name 电子邮件订阅。\\n:link\\n此致，:app_name',
+                'html-preheader' => '请确认您的 :app_name 状态更新邮件订阅。',
+                'html'           => '<p>请确认您的 :app_name 电子邮件订阅。</p><p>:link</p><p>此致，:app_name</p>',
             ],
             'maintenance' => [
-                'text'           => '',
-                'html-preheader' => '',
-                'html'           => '',
+                'text'           => '新的维护计划已被安排在 :app_name 上。\\n此致，:app_name',
+                'html-preheader' => '新的维护计划已被安排在 :app_name 上。',
+                'html'           => '<p>新的维护计划已被安排在 :app_name 上。</p><p>此致，:app_name</p>',
             ],
             'incident' => [
-                'text'           => '',
-                'html-preheader' => '',
-                'html'           => '',
+                'text'           => ':app_name 有新事件报告。\\n此致，:app_name',
+                'html-preheader' => ':app_name 有新事件报告。',
+                'html'           => '<p>:app_name 有新事件报告。</p><p>此致，:app_name</p>',
             ],
         ],
     ],
@@ -90,8 +90,8 @@ return [
     // Other
     'powered_by'      => ':app 应用状态页面由 <a href="https://cachethq.io">Cachet</a>提供支持。',
     'about_this_site' => '关于此站点',
-    'rss-feed'        => '',
-    'atom-feed'       => '',
+    'rss-feed'        => 'RSS 订阅',
+    'atom-feed'       => 'Atom 订阅',
     'feed'            => '状态源',
 
 ];
