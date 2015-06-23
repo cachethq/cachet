@@ -172,6 +172,10 @@ class SettingsController extends AbstractController
 
         try {
             foreach (Binput::except(['app_banner', 'remove_banner']) as $settingName => $settingValue) {
+                if ($settingName === 'app_analytics_pi_url') {
+                    $settingValue = rtrim($settingValue, '/');
+                }
+
                 Setting::firstOrCreate([
                     'name' => $settingName,
                 ])->update([

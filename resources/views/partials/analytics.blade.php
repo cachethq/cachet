@@ -18,7 +18,7 @@
   _gs('{{ $gosquaredTracking }}');
 </script>
 @endif
-@if($piwikTracking = rtrim(Setting::get('app_analytics_pi_url'), '/'))
+@if($piwikTracking = Setting::get('app_analytics_pi_url'))
 <!-- Piwik -->
 <script type="text/javascript">
   var _paq = _paq || [];
