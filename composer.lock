@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a607150d1c719dfffda8733171dbdf30",
+    "hash": "31fcfd48eb1116bca8b64ee5ae921ab9",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1202,27 +1202,27 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "6.0.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "f992b7b487a816c957d317442bed4966409873e0"
+                "reference": "811c11a4e8a4aa25b8cba4a611f6d3b8fca6b665"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/f992b7b487a816c957d317442bed4966409873e0",
-                "reference": "f992b7b487a816c957d317442bed4966409873e0",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/811c11a4e8a4aa25b8cba4a611f6d3b8fca6b665",
+                "reference": "811c11a4e8a4aa25b8cba4a611f6d3b8fca6b665",
                 "shasum": ""
             },
             "require": {
-                "guzzlehttp/promises": "^1.0.0",
-                "guzzlehttp/psr7": "^1.0.0",
+                "guzzlehttp/promises": "~1.0",
+                "guzzlehttp/psr7": "~1.1",
                 "php": ">=5.5.0"
             },
             "require-dev": {
                 "ext-curl": "*",
-                "phpunit/phpunit": "^4.0",
-                "psr/log": "^1.0"
+                "phpunit/phpunit": "~4.0",
+                "psr/log": "~1.0"
             },
             "type": "library",
             "extra": {
@@ -1260,7 +1260,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2015-05-27 16:57:51"
+            "time": "2015-06-24 20:06:42"
         },
         {
             "name": "guzzlehttp/promises",
@@ -1315,27 +1315,27 @@
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "19e510056d8d671d9d9e25dc16937b3dd3802ae6"
+                "reference": "af0e1758de355eb113917ad79c3c0e3604bce4bd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/19e510056d8d671d9d9e25dc16937b3dd3802ae6",
-                "reference": "19e510056d8d671d9d9e25dc16937b3dd3802ae6",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/af0e1758de355eb113917ad79c3c0e3604bce4bd",
+                "reference": "af0e1758de355eb113917ad79c3c0e3604bce4bd",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.4.0",
-                "psr/http-message": "^1.0"
+                "psr/http-message": "~1.0"
             },
             "provide": {
                 "psr/http-message-implementation": "1.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^4.0"
+                "phpunit/phpunit": "~4.0"
             },
             "type": "library",
             "extra": {
@@ -1369,7 +1369,7 @@
                 "stream",
                 "uri"
             ],
-            "time": "2015-05-19 17:58:45"
+            "time": "2015-06-24 19:55:15"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -1574,16 +1574,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "5.1.x-dev",
+            "version": "v5.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "36d50ba04f268fda5ed648320ecbf8f5b4f654de"
+                "reference": "a7ebd043ca178c05cc7946ece03d3a268a5a3f84"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/36d50ba04f268fda5ed648320ecbf8f5b4f654de",
-                "reference": "36d50ba04f268fda5ed648320ecbf8f5b4f654de",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/a7ebd043ca178c05cc7946ece03d3a268a5a3f84",
+                "reference": "a7ebd043ca178c05cc7946ece03d3a268a5a3f84",
                 "shasum": ""
             },
             "require": {
@@ -1698,7 +1698,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2015-06-23 17:13:07"
+            "time": "2015-06-24 19:38:07"
         },
         {
             "name": "league/commonmark",
