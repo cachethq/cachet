@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f721d6c74ddfb615d5eb8732cee8f415",
+    "hash": "a607150d1c719dfffda8733171dbdf30",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -894,32 +894,34 @@
         },
         {
             "name": "graham-campbell/binput",
-            "version": "v3.1.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Binput.git",
-                "reference": "1f4bf545f40ae5b37401f7a8d6d811d9a626f498"
+                "reference": "a723d4bd010a9f5bd13b866398fb7dc68944183c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Binput/zipball/1f4bf545f40ae5b37401f7a8d6d811d9a626f498",
-                "reference": "1f4bf545f40ae5b37401f7a8d6d811d9a626f498",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Binput/zipball/a723d4bd010a9f5bd13b866398fb7dc68944183c",
+                "reference": "a723d4bd010a9f5bd13b866398fb7dc68944183c",
                 "shasum": ""
             },
             "require": {
-                "graham-campbell/security": "~3.1",
+                "graham-campbell/security": "~3.2",
                 "illuminate/contracts": "5.0.*|5.1.*",
                 "illuminate/http": "5.0.*|5.1.*",
                 "illuminate/support": "5.0.*|5.1.*",
                 "php": ">=5.5.9"
             },
             "require-dev": {
-                "graham-campbell/testbench": "~2.1"
+                "graham-campbell/testbench": "~3.0",
+                "mockery/mockery": "^0.9.4",
+                "phpunit/phpunit": "^4.7.6"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.1-dev"
+                    "dev-master": "3.2-dev"
                 }
             },
             "autoload": {
@@ -934,7 +936,7 @@
             "authors": [
                 {
                     "name": "Graham Campbell",
-                    "email": "graham@mineuk.com"
+                    "email": "graham@cachethq.io"
                 }
             ],
             "description": "Binput Is An Input Protector For Laravel 5",
@@ -951,20 +953,20 @@
                 "laravel",
                 "security"
             ],
-            "time": "2015-05-20 23:26:52"
+            "time": "2015-06-24 11:15:15"
         },
         {
             "name": "graham-campbell/exceptions",
-            "version": "v3.0.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Exceptions.git",
-                "reference": "32ab48e7fda7721e20952f0d7676d888389a21ef"
+                "reference": "f9281dde88080a238823d2a1fc93dc054f9fba43"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Exceptions/zipball/32ab48e7fda7721e20952f0d7676d888389a21ef",
-                "reference": "32ab48e7fda7721e20952f0d7676d888389a21ef",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Exceptions/zipball/f9281dde88080a238823d2a1fc93dc054f9fba43",
+                "reference": "f9281dde88080a238823d2a1fc93dc054f9fba43",
                 "shasum": ""
             },
             "require": {
@@ -977,12 +979,14 @@
                 "symfony/http-foundation": "2.7.*"
             },
             "require-dev": {
-                "graham-campbell/testbench": "~2.1"
+                "graham-campbell/testbench": "~3.0",
+                "mockery/mockery": "^0.9.4",
+                "phpunit/phpunit": "^4.7.6"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0-dev"
+                    "dev-master": "3.1-dev"
                 }
             },
             "autoload": {
@@ -1014,20 +1018,20 @@
                 "laravel",
                 "whoops"
             ],
-            "time": "2015-06-01 21:52:11"
+            "time": "2015-06-24 10:54:02"
         },
         {
             "name": "graham-campbell/markdown",
-            "version": "v3.1.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Markdown.git",
-                "reference": "b08e2610cccdeb160d7127a83d78607f2022624f"
+                "reference": "0cbb2d3279aadcc7539e4f50d368649eb86fcdc9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Markdown/zipball/b08e2610cccdeb160d7127a83d78607f2022624f",
-                "reference": "b08e2610cccdeb160d7127a83d78607f2022624f",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Markdown/zipball/0cbb2d3279aadcc7539e4f50d368649eb86fcdc9",
+                "reference": "0cbb2d3279aadcc7539e4f50d368649eb86fcdc9",
                 "shasum": ""
             },
             "require": {
@@ -1038,12 +1042,14 @@
                 "php": ">=5.5.9"
             },
             "require-dev": {
-                "graham-campbell/testbench": "~2.1"
+                "graham-campbell/testbench": "~3.0",
+                "mockery/mockery": "^0.9.4",
+                "phpunit/phpunit": "^4.7.6"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.1-dev"
+                    "dev-master": "3.2-dev"
                 }
             },
             "autoload": {
@@ -1073,20 +1079,20 @@
                 "laravel",
                 "markdown"
             ],
-            "time": "2015-06-19 08:37:44"
+            "time": "2015-06-24 10:54:43"
         },
         {
             "name": "graham-campbell/security",
-            "version": "v3.1.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Security.git",
-                "reference": "9f573002070cfe49f32bf49ca91a415d3220d86e"
+                "reference": "0ec6d584c5f9f8bdd1597368136e669169844764"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Security/zipball/9f573002070cfe49f32bf49ca91a415d3220d86e",
-                "reference": "9f573002070cfe49f32bf49ca91a415d3220d86e",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Security/zipball/0ec6d584c5f9f8bdd1597368136e669169844764",
+                "reference": "0ec6d584c5f9f8bdd1597368136e669169844764",
                 "shasum": ""
             },
             "require": {
@@ -1095,12 +1101,14 @@
                 "php": ">=5.5.9"
             },
             "require-dev": {
-                "graham-campbell/testbench": "~2.1"
+                "graham-campbell/testbench": "~3.0",
+                "mockery/mockery": "^0.9.4",
+                "phpunit/phpunit": "^4.7.6"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.1-dev"
+                    "dev-master": "3.2-dev"
                 }
             },
             "autoload": {
@@ -1115,7 +1123,7 @@
             "authors": [
                 {
                     "name": "Graham Campbell",
-                    "email": "graham@mineuk.com"
+                    "email": "graham@cachethq.io"
                 }
             ],
             "description": "Security Is A Port Of The Security Class From Codeigniter 3 For Laravel 5",
@@ -1129,20 +1137,20 @@
                 "laravel",
                 "security"
             ],
-            "time": "2015-05-20 23:18:09"
+            "time": "2015-06-24 11:06:19"
         },
         {
             "name": "graham-campbell/throttle",
-            "version": "v4.0.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Throttle.git",
-                "reference": "ce37cd97d82a6e494dcd9ab9da11280730d931ef"
+                "reference": "8da2a93e5d3945a61c27e544ead762962488227b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Throttle/zipball/ce37cd97d82a6e494dcd9ab9da11280730d931ef",
-                "reference": "ce37cd97d82a6e494dcd9ab9da11280730d931ef",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Throttle/zipball/8da2a93e5d3945a61c27e544ead762962488227b",
+                "reference": "8da2a93e5d3945a61c27e544ead762962488227b",
                 "shasum": ""
             },
             "require": {
@@ -1153,12 +1161,14 @@
                 "php": ">=5.5.9"
             },
             "require-dev": {
-                "graham-campbell/testbench": "~2.1"
+                "graham-campbell/testbench": "~3.0",
+                "mockery/mockery": "^0.9.4",
+                "phpunit/phpunit": "^4.7.6"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.0-dev"
+                    "dev-master": "4.1-dev"
                 }
             },
             "autoload": {
@@ -1173,7 +1183,7 @@
             "authors": [
                 {
                     "name": "Graham Campbell",
-                    "email": "graham@mineuk.com"
+                    "email": "graham@cachethq.io"
                 }
             ],
             "description": "Throttle Is A Rate Limiter For Laravel 5",
@@ -1188,7 +1198,7 @@
                 "throttle",
                 "throttling"
             ],
-            "time": "2015-05-20 22:51:19"
+            "time": "2015-06-24 12:02:36"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -3428,6 +3438,66 @@
             "time": "2015-05-29 06:29:14"
         },
         {
+            "name": "graham-campbell/testbench-core",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/GrahamCampbell/Laravel-TestBench-Core.git",
+                "reference": "1279c7057ddc585191c421bd92c7c8be50720739"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-TestBench-Core/zipball/1279c7057ddc585191c421bd92c7c8be50720739",
+                "reference": "1279c7057ddc585191c421bd92c7c8be50720739",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.7.6"
+            },
+            "suggest": {
+                "illuminate/support": "Required to use the laravel trait.",
+                "mockery/mockery": "Required to use the mockery trait.",
+                "phpunit/phpunit": "Required to use the most of the features."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GrahamCampbell\\TestBenchCore\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Graham Campbell",
+                    "email": "graham@cachethq.io"
+                }
+            ],
+            "description": "TestBench Core Provides Some Testing Functionality For Laravel 5",
+            "keywords": [
+                "Graham Campbell",
+                "GrahamCampbell",
+                "Laravel TestBench Core",
+                "Laravel-TestBench-Core",
+                "TestBench",
+                "framework",
+                "laravel",
+                "testbench-core",
+                "testing"
+            ],
+            "time": "2015-06-24 16:33:34"
+        },
+        {
             "name": "phpdocumentor/reflection-docblock",
             "version": "2.0.4",
             "source": {
@@ -3778,16 +3848,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.7.5",
+            "version": "4.8.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "f6701ef3faea759acd1910a7751d8d102a7fd5bc"
+                "reference": "893f3ce946f2b65920b173d831d769ab2f35097e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/f6701ef3faea759acd1910a7751d8d102a7fd5bc",
-                "reference": "f6701ef3faea759acd1910a7751d8d102a7fd5bc",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/893f3ce946f2b65920b173d831d769ab2f35097e",
+                "reference": "893f3ce946f2b65920b173d831d769ab2f35097e",
                 "shasum": ""
             },
             "require": {
@@ -3820,7 +3890,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.7.x-dev"
+                    "dev-master": "4.8.x-dev"
                 }
             },
             "autoload": {
@@ -3846,7 +3916,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-06-21 07:23:36"
+            "time": "2015-06-23 14:43:58"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
