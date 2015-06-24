@@ -11,6 +11,8 @@
 
 namespace CachetHQ\Tests\Cachet;
 
+use CachetHQ\Cachet\Models\User;
+use Illuminate\Contracts\Console\Kernel;
 use Illuminate\Foundation\Testing\TestCase;
 
 abstract class AbstractTestCase extends TestCase
@@ -31,17 +33,20 @@ abstract class AbstractTestCase extends TestCase
     {
         $app = require __DIR__.'/../bootstrap/app.php';
 
-        $app->make('Illuminate\Contracts\Console\Kernel')->bootstrap();
+        $app->make(Kernel::class)->bootstrap();
 
         return $app;
     }
 
     /**
-     * Becomes a user.
+     * Become a user.
+     *
+     * @return void
      */
     protected function beUser()
     {
-        $this->user = factory('CachetHQ\Cachet\Models\User')->create();
+        $this->user = factory(User::class)->create();
+
         $this->be($this->user);
     }
 }

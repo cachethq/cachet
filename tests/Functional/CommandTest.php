@@ -12,16 +12,12 @@
 namespace CachetHQ\Tests\Cachet\Functional;
 
 use CachetHQ\Tests\Cachet\AbstractTestCase;
+use Illuminate\Contracts\Console\Kernel;
 
 class CommandTest extends AbstractTestCase
 {
     public function testMigrations()
     {
-        $this->assertSame(0, $this->getKernel()->call('migrate', ['--force' => true]));
-    }
-
-    protected function getKernel()
-    {
-        return $this->app->make('Illuminate\Contracts\Console\Kernel');
+        $this->assertSame(0, $this->app->make(Kernel::class)->call('migrate', ['--force' => true]));
     }
 }
