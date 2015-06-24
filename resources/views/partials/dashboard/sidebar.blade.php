@@ -79,7 +79,7 @@
         </ul>
         <div class="bottom-menu-sidebar">
             <div class="text-center">
-                <img width="166" src="/img/cachet-sidebar-logo.png" alt="Cachet">
+                <img width="166" src="/img/cachet-logo.svg" alt="Cachet">
             </div>
             <br>
             <ul>
