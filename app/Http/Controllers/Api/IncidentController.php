@@ -63,6 +63,10 @@ class IncidentController extends AbstractApiController
     {
         $incidentData = Binput::all();
 
+        if (!array_has($incidentData, 'visible')) {
+            $incidentData['visible'] = 1;
+        }
+
         try {
             $incident = Incident::create($incidentData);
         } catch (Exception $e) {
