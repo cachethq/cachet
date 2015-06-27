@@ -19,8 +19,13 @@
     <!-- Mobile IE allows us to activate ClearType technology for smoothing fonts for easy reading -->
     <meta http-equiv="cleartype" content="on">
 
-    <link rel="icon" type="image/png" href="/img/favicon.ico">
-    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+    @if (isset($favicon))
+        <link rel="icon" type="image/png" href="/img/{{ $favicon }}.ico">
+        <link rel="shortcut icon" href="/img/{{ $favicon }}.png" type="image/x-icon">
+    @else
+        <link rel="icon" type="image/png" href="/img/favicon.ico">
+        <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+    @endif
 
     <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="57x57" href="/img/apple-touch-icon-57x57.png">
