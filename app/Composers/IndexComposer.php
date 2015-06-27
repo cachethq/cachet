@@ -28,7 +28,7 @@ class IndexComposer
         $withData = [
             'systemStatus'  => 'danger',
             'systemMessage' => trans('cachet.service.bad'),
-            'favicon'       => 'favicon',
+            'favicon'       => 'favicon-high-alert',
         ];
 
         if (Component::notStatus(1)->count() === 0) {
@@ -40,15 +40,13 @@ class IndexComposer
                 $withData = [
                     'systemStatus'  => 'success',
                     'systemMessage' => trans('cachet.service.good'),
+                    'favicon'       => 'favicon',
                 ];
             }
-        }
-
-        // Determine favicon to use
-        if (Component::where('status', 4)->count() > 0 || Incident::where('status', 2)->count() > 0) {
-            $withData['favicon'] = 'favicon-high-alert';
-        } elseif (Component::whereIn('status', [2, 3])->count() > 0 || Incident::whereIn('status', [1, 3])->count() > 0) {
-            $withData['favicon'] = 'favicon-medium-alert';
+        } else {
+            if (Component::whereIn('status', [2, 3])->count() > 0) {
+                $withData['favicon'] = 'favicon-medium-alert';
+            }
         }
 
         $view->with($withData);
