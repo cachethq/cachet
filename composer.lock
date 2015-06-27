@@ -100,16 +100,16 @@
         },
         {
             "name": "cachethq/segment",
-            "version": "2.1.1",
+            "version": "2.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cachethq/Laravel-Segment.git",
-                "reference": "cbc9c61c9c9483e91b88d681f46485f7d97fc88a"
+                "reference": "d2643d346f2dca470de9dccd90d178215203067b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cachethq/Laravel-Segment/zipball/cbc9c61c9c9483e91b88d681f46485f7d97fc88a",
-                "reference": "cbc9c61c9c9483e91b88d681f46485f7d97fc88a",
+                "url": "https://api.github.com/repos/cachethq/Laravel-Segment/zipball/d2643d346f2dca470de9dccd90d178215203067b",
+                "reference": "d2643d346f2dca470de9dccd90d178215203067b",
                 "shasum": ""
             },
             "require": {
@@ -139,15 +139,15 @@
             "authors": [
                 {
                     "name": "James Brooks",
-                    "email": "james@cachethq.io"
-                },
-                {
-                    "name": "Joseph Cohen",
-                    "email": "joe@cachethq.io"
+                    "email": "james@alt-three.com"
                 },
                 {
                     "name": "Graham Campbell",
-                    "email": "graham@cachethq.io"
+                    "email": "graham@alt-three.com"
+                },
+                {
+                    "name": "Joseph Cohen",
+                    "email": "joe@alt-three.com"
                 }
             ],
             "description": "Segment.com wrapper written for Laravel",
@@ -163,7 +163,7 @@
                 "segment.com",
                 "segment.io"
             ],
-            "time": "2015-05-25 22:41:20"
+            "time": "2015-06-27 13:39:51"
         },
         {
             "name": "classpreloader/classpreloader",
