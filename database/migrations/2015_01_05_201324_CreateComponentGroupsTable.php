@@ -22,7 +22,7 @@ class CreateComponentGroupsTable extends Migration
     {
         Schema::create('component_groups', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            
+
             $table->increments('id');
             $table->string('name');
             $table->timestamps();

@@ -22,7 +22,7 @@ class CreateComponentsTable extends Migration
     {
         Schema::create('components', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            
+
             $table->increments('id');
             $table->string('name');
             $table->text('description');

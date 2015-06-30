@@ -22,7 +22,7 @@ class CreateIncidentsTable extends Migration
     {
         Schema::create('incidents', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            
+
             $table->increments('id');
             $table->integer('component_id')->default(0);
             $table->string('name');

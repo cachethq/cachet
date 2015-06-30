@@ -22,7 +22,7 @@ class CreateComponentTagTable extends Migration
     {
         Schema::create('component_tag', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            
+
             $table->increments('id');
             $table->integer('component_id');
             $table->integer('tag_id');
