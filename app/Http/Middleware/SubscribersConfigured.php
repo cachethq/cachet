@@ -11,7 +11,6 @@
 
 namespace CachetHQ\Cachet\Http\Middleware;
 
-use CachetHQ\Cachet\Facades\Setting;
 use Closure;
 use Illuminate\Support\Facades\Redirect;
 
@@ -27,11 +26,7 @@ class SubscribersConfigured
      */
     public function handle($request, Closure $next)
     {
-        $isEnabled = Setting::get('enable_subscribers', false);
-        $mailAddress = env('MAIL_ADDRESS', false);
-        $mailFrom = env('MAIL_NAME', false);
-
-        if (!($isEnabled && $mailAddress && $mailFrom)) {
+        if (!subscribers_enabled()) {
             return Redirect::route('status-page');
         }
 

@@ -121,6 +121,22 @@ class AdminRoutes
                 $router->delete('{incident_template}/delete', 'IncidentController@deleteTemplateAction');
             });
 
+            // Subscribers
+            $router->group(['prefix' => 'subscribers'], function ($router) {
+                $router->get('/', [
+                    'as'   => 'dashboard.subscribers',
+                    'uses' => 'SubscriberController@showSubscribers',
+                ]);
+
+                $router->get('add', [
+                    'as'   => 'dashboard.subscribers.add',
+                    'uses' => 'SubscriberController@showAddSubscriber',
+                ]);
+                $router->post('add', 'SubscriberController@createSubscriberAction');
+
+                $router->delete('{subscriber}/delete', 'SubscriberController@deleteSubscriberAction');
+            });
+
             // Metrics
             $router->group(['prefix' => 'metrics'], function ($router) {
                 $router->get('/', [

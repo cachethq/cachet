@@ -115,6 +115,23 @@ return [
             'failure' => 'Something went wrong with the metric.',
         ],
     ],
+    // Subscribers
+    'subscribers' => [
+        'subscribers'  => 'Subscribers',
+        'description'  => 'Subscribers will receive email updates when incidents are created.',
+        'verified'     => 'Verified',
+        'not_verified' => 'Not Verified',
+        'add'          => [
+            'title'   => 'Add a new subscriber',
+            'success' => 'Subscriber added.',
+            'failure' => 'Something went wrong with the component.',
+        ],
+        'edit' => [
+            'title'   => 'Update subscriber',
+            'success' => 'Subscriber updated.',
+            'failure' => 'Something went wrong when updating.',
+        ],
+    ],
 
     // Team
     'team' => [
