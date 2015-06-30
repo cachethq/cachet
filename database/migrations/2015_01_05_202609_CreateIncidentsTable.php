@@ -21,6 +21,8 @@ class CreateIncidentsTable extends Migration
     public function up()
     {
         Schema::create('incidents', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+            
             $table->increments('id');
             $table->integer('component_id')->default(0);
             $table->string('name');

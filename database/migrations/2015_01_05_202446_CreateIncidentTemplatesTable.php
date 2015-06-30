@@ -21,6 +21,8 @@ class CreateIncidentTemplatesTable extends Migration
     public function up()
     {
         Schema::create('incident_templates', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+            
             $table->increments('id');
             $table->string('name');
             $table->string('slug');

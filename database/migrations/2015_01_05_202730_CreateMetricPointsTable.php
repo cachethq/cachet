@@ -21,6 +21,8 @@ class CreateMetricPointsTable extends Migration
     public function up()
     {
         Schema::create('metric_points', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+            
             $table->increments('id');
             $table->integer('metric_id');
             $table->decimal('value', 10, 3);

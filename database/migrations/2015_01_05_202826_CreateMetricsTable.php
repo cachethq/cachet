@@ -21,6 +21,8 @@ class CreateMetricsTable extends Migration
     public function up()
     {
         Schema::create('metrics', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+            
             $table->increments('id');
             $table->string('name');
             $table->string('suffix');
