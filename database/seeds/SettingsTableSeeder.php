@@ -57,14 +57,6 @@ class SettingsTableSeeder extends Seeder
                 'value' => 'GSN-712462-P',
             ],
             [
-                'name'  => 'app_analytics_pi_url',
-                'value' => 'piwik.example.org',
-            ],
-            [
-                'name'  => 'app_analytics_pi_siteid',
-                'value' => '1',
-            ],
-            [
                 'name'  => 'display_graphs',
                 'value' => '1',
             ],
