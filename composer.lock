@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "687f3b651fc7e102f31fd6cc34bd2020",
+    "hash": "52170701af5a0e6e40fbc59832487b3e",
     "packages": [
         {
             "name": "alt-three/segment",
@@ -3436,6 +3436,47 @@
             "time": "2015-06-26 16:35:19"
         },
         {
+	    "name": "laravel/homestead",
+	    "version": "dev-master",
+	    "source": {
+		"type": "git",
+		"url": "https://github.com/laravel/homestead.git",
+		"reference": "835d8f223a95fd763f6fc7c4ee119692893af3a1"
+	    },
+	    "dist": {
+		"type": "zip",
+		"url": "https://api.github.com/repos/laravel/homestead/zipball/835d8f223a95fd763f6fc7c4ee119692893af3a1",
+		"reference": "835d8f223a95fd763f6fc7c4ee119692893af3a1",
+		"shasum": ""
+	    },
+	    "require": {
+		"php": ">=5.4",
+		"symfony/console": "~2.0",
+		"symfony/process": "~2.0"
+	    },
+	    "bin": [
+		"homestead"
+	    ],
+	    "type": "library",
+	    "autoload": {
+		"psr-4": {
+		    "Laravel\\Homestead\\": "src/"
+		}
+	    },
+	    "notification-url": "https://packagist.org/downloads/",
+	    "license": [
+		"MIT"
+	    ],
+	    "authors": [
+		{
+		    "name": "Taylor Otwell",
+		    "email": "taylorotwell@gmail.com"
+		}
+	    ],
+	    "description": "A virtual machine for web artisans.",
+	    "time": "2015-06-29 21:00:49"
+	},
+	{
             "name": "phpdocumentor/reflection-docblock",
             "version": "2.0.4",
             "source": {
@@ -4334,7 +4375,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+	"laravel/homestead": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
