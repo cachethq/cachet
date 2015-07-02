@@ -41,7 +41,7 @@ class DashboardController extends AbstractController
     public function showNotifications()
     {
         return View::make('dashboard.notifications.index')->with([
-            'pageTitle' => trans('dashboard.notifications.notifications').' '.trans('dashboard.dashboard'),
+            'page_title' => trans('dashboard.notifications.notifications').' '.trans('dashboard.dashboard'),
         ]);
     }
 }

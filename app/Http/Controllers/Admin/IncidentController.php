@@ -69,7 +69,7 @@ class IncidentController extends AbstractController
         $incidents = Incident::notScheduled()->orderBy('created_at', 'desc')->get();
 
         return View::make('dashboard.incidents.index')->with([
-            'pageTitle' => trans('dashboard.incidents.incidents').' - '.trans('dashboard.dashboard'),
+            'page_title' => trans('dashboard.incidents.incidents').' - '.trans('dashboard.dashboard'),
             'incidents' => $incidents,
         ]);
     }
@@ -85,7 +85,7 @@ class IncidentController extends AbstractController
         $componentsOutGroups = Component::where('group_id', 0)->get();
 
         return View::make('dashboard.incidents.add')->with([
-            'pageTitle'           => trans('dashboard.incidents.add.title').' - '.trans('dashboard.dashboard'),
+            'page_title'           => trans('dashboard.incidents.add.title').' - '.trans('dashboard.dashboard'),
             'componentsInGroups'  => $componentsInGroups,
             'componentsOutGroups' => $componentsOutGroups,
             'incidentTemplates'   => IncidentTemplate::all(),
@@ -100,7 +100,7 @@ class IncidentController extends AbstractController
     public function showTemplates()
     {
         return View::make('dashboard.incidents.templates.index')->with([
-            'pageTitle'         => trans('dashboard.incidents.templates.title').' - '.trans('dashboard.dashboard'),
+            'page_title'         => trans('dashboard.incidents.templates.title').' - '.trans('dashboard.dashboard'),
             'incidentTemplates' => IncidentTemplate::all(),
         ]);
     }
@@ -178,7 +178,7 @@ class IncidentController extends AbstractController
     public function showAddIncidentTemplate()
     {
         return View::make('dashboard.incidents.templates.add')->with([
-            'pageTitle' => trans('dashboard.incidents.templates.add.title').' - '.trans('dashboard.dashboard'),
+            'page_title' => trans('dashboard.incidents.templates.add.title').' - '.trans('dashboard.dashboard'),
         ]);
     }
 
@@ -192,7 +192,7 @@ class IncidentController extends AbstractController
     public function showEditTemplateAction(IncidentTemplate $template)
     {
         return View::make('dashboard.incidents.templates.edit')->with([
-            'pageTitle' => trans('dashboard.incidents.templates.edit.title').' - '.trans('dashboard.dashboard'),
+            'page_title' => trans('dashboard.incidents.templates.edit.title').' - '.trans('dashboard.dashboard'),
             'template'  => $template,
         ]);
     }
@@ -285,7 +285,7 @@ class IncidentController extends AbstractController
         $componentsOutGroups = Component::where('group_id', 0)->get();
 
         return View::make('dashboard.incidents.edit')->with([
-            'pageTitle'           => trans('dashboard.incidents.edit.title').' - '.trans('dashboard.dashboard'),
+            'page_title'           => trans('dashboard.incidents.edit.title').' - '.trans('dashboard.dashboard'),
             'incident'            => $incident,
             'componentsInGroups'  => $componentsInGroups,
             'componentsOutGroups' => $componentsOutGroups,

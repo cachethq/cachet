@@ -59,7 +59,7 @@ class SetupController extends AbstractController
         }
 
         return View::make('setup')->with([
-            'pageTitle'    => trans('setup.setup'),
+            'page_title'    => trans('setup.setup'),
             'cacheDrivers' => $this->cacheDrivers,
             'appUrl'       => Request::root(),
         ]);

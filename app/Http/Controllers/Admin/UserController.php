@@ -29,7 +29,7 @@ class UserController extends AbstractController
     public function showUser()
     {
         return View::make('dashboard.user.index')->with([
-            'pageTitle' => trans('dashboard.team.profile').' - '.trans('dashboard.dashboard'),
+            'page_title' => trans('dashboard.team.profile').' - '.trans('dashboard.dashboard'),
         ]);
     }
 

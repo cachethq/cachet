@@ -58,7 +58,7 @@ class ComponentController extends AbstractController
         $this->subMenu['components']['active'] = true;
 
         return View::make('dashboard.components.index')->with([
-            'pageTitle'  => trans_choice('dashboard.components.components', 2).' - '.trans('dashboard.dashboard'),
+            'page_title'  => trans_choice('dashboard.components.components', 2).' - '.trans('dashboard.dashboard'),
             'components' => $components,
             'sub_menu'    => $this->subMenu,
         ]);
@@ -74,7 +74,7 @@ class ComponentController extends AbstractController
         $this->subMenu['groups']['active'] = true;
 
         return View::make('dashboard.components.groups.index')->with([
-            'pageTitle' => trans_choice('dashboard.components.groups.groups', 2).' - '.trans('dashboard.dashboard'),
+            'page_title' => trans_choice('dashboard.components.groups.groups', 2).' - '.trans('dashboard.dashboard'),
             'groups'    => ComponentGroup::orderBy('order')->get(),
             'sub_menu'   => $this->subMenu,
         ]);
@@ -99,7 +99,7 @@ class ComponentController extends AbstractController
         );
 
         return View::make('dashboard.components.edit')->with([
-            'pageTitle' => $pageTitle,
+            'page_title' => $pageTitle,
             'component' => $component,
             'groups'    => $groups,
         ]);
@@ -170,7 +170,7 @@ class ComponentController extends AbstractController
         $groups = ComponentGroup::all();
 
         return View::make('dashboard.components.add')->with([
-            'pageTitle' => trans('dashboard.components.add.title').' - '.trans('dashboard.dashboard'),
+            'page_title' => trans('dashboard.components.add.title').' - '.trans('dashboard.dashboard'),
             'groups'    => $groups,
         ]);
     }
@@ -279,7 +279,7 @@ class ComponentController extends AbstractController
     public function showAddComponentGroup()
     {
         return View::make('dashboard.components.groups.add')->with([
-            'pageTitle' => trans('dashboard.components.groups.add.title').' - '.trans('dashboard.dashboard'),
+            'page_title' => trans('dashboard.components.groups.add.title').' - '.trans('dashboard.dashboard'),
         ]);
     }
 
@@ -293,7 +293,7 @@ class ComponentController extends AbstractController
     public function showEditComponentGroup(ComponentGroup $group)
     {
         return View::make('dashboard.components.groups.edit')->with([
-            'pageTitle' => trans('dashboard.components.groups.edit.title').' - '.trans('dashboard.dashboard'),
+            'page_title' => trans('dashboard.components.groups.edit.title').' - '.trans('dashboard.dashboard'),
             'group'     => $group,
         ]);
     }

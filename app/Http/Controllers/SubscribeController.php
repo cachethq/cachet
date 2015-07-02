@@ -31,7 +31,7 @@ class SubscribeController extends AbstractController
     public function showSubscribe()
     {
         return View::make('subscribe', [
-            'pageTitle' => Setting::get('app_name'),
+            'page_title' => Setting::get('app_name'),
             'aboutApp'  => Markdown::convertToHtml(Setting::get('app_about')),
         ]);
     }

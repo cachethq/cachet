@@ -69,7 +69,7 @@ class SettingsController extends AbstractController
         $this->subMenu['setup']['active'] = true;
 
         return View::make('dashboard.settings.app-setup')->with([
-            'pageTitle' => 'Application Setup - Dashboard',
+            'page_title' => 'Application Setup - Dashboard',
             'sub_menu'   => $this->subMenu,
         ]);
     }
@@ -84,7 +84,7 @@ class SettingsController extends AbstractController
         $this->subMenu['theme']['active'] = true;
 
         return View::make('dashboard.settings.theme')->with([
-            'pageTitle' => 'Theme - Dashboard',
+            'page_title' => 'Theme - Dashboard',
             'sub_menu'   => $this->subMenu,
         ]);
     }
@@ -101,7 +101,7 @@ class SettingsController extends AbstractController
         $unsecureUsers = User::whereNull('google_2fa_secret')->orWhere('google_2fa_secret', '')->get();
 
         return View::make('dashboard.settings.security')->with([
-            'pageTitle'     => 'Security - Dashboard',
+            'page_title'     => 'Security - Dashboard',
             'sub_menu'       => $this->subMenu,
             'unsecureUsers' => $unsecureUsers,
         ]);
@@ -117,7 +117,7 @@ class SettingsController extends AbstractController
         $this->subMenu['stylesheet']['active'] = true;
 
         return View::make('dashboard.settings.stylesheet')->with([
-            'pageTitle' => 'Stylesheet - Dashboard',
+            'page_title' => 'Stylesheet - Dashboard',
             'sub_menu'   => $this->subMenu,
         ]);
     }
