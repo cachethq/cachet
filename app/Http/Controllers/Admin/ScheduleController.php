@@ -55,8 +55,8 @@ class ScheduleController extends AbstractController
             ],
         ];
 
-        View::share('subMenu', $this->subMenu);
-        View::share('subTitle', trans('dashboard.incidents.title'));
+        View::share('sub_menu', $this->subMenu);
+        View::share('sub_title', trans('dashboard.incidents.title'));
     }
 
     /**

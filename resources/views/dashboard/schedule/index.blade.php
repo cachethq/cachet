@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="content-panel">
-        @if(isset($subMenu))
+        @if(isset($sub_menu))
         @include('partials.dashboard.sub-sidebar')
         @endif
         <div class="content-wrapper">

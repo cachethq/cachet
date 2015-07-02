@@ -54,9 +54,9 @@ class SettingsController extends AbstractController
             ],
         ];
 
-        View::share('subTitle', $this->subTitle);
+        View::share('sub_title', $this->subTitle);
 
-        View::share('subMenu', $this->subMenu);
+        View::share('sub_menu', $this->subMenu);
     }
 
     /**
@@ -70,7 +70,7 @@ class SettingsController extends AbstractController
 
         return View::make('dashboard.settings.app-setup')->with([
             'pageTitle' => 'Application Setup - Dashboard',
-            'subMenu'   => $this->subMenu,
+            'sub_menu'   => $this->subMenu,
         ]);
     }
 
@@ -85,7 +85,7 @@ class SettingsController extends AbstractController
 
         return View::make('dashboard.settings.theme')->with([
             'pageTitle' => 'Theme - Dashboard',
-            'subMenu'   => $this->subMenu,
+            'sub_menu'   => $this->subMenu,
         ]);
     }
 
@@ -102,7 +102,7 @@ class SettingsController extends AbstractController
 
         return View::make('dashboard.settings.security')->with([
             'pageTitle'     => 'Security - Dashboard',
-            'subMenu'       => $this->subMenu,
+            'sub_menu'       => $this->subMenu,
             'unsecureUsers' => $unsecureUsers,
         ]);
     }
@@ -118,7 +118,7 @@ class SettingsController extends AbstractController
 
         return View::make('dashboard.settings.stylesheet')->with([
             'pageTitle' => 'Stylesheet - Dashboard',
-            'subMenu'   => $this->subMenu,
+            'sub_menu'   => $this->subMenu,
         ]);
     }
 

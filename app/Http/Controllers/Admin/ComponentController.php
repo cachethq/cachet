@@ -41,8 +41,8 @@ class ComponentController extends AbstractController
         ];
 
         View::share([
-            'subMenu'  => $this->subMenu,
-            'subTitle' => trans_choice('dashboard.components.components', 2),
+            'sub_menu'  => $this->subMenu,
+            'sub_title' => trans_choice('dashboard.components.components', 2),
         ]);
     }
 
@@ -60,7 +60,7 @@ class ComponentController extends AbstractController
         return View::make('dashboard.components.index')->with([
             'pageTitle'  => trans_choice('dashboard.components.components', 2).' - '.trans('dashboard.dashboard'),
             'components' => $components,
-            'subMenu'    => $this->subMenu,
+            'sub_menu'    => $this->subMenu,
         ]);
     }
 
@@ -76,7 +76,7 @@ class ComponentController extends AbstractController
         return View::make('dashboard.components.groups.index')->with([
             'pageTitle' => trans_choice('dashboard.components.groups.groups', 2).' - '.trans('dashboard.dashboard'),
             'groups'    => ComponentGroup::orderBy('order')->get(),
-            'subMenu'   => $this->subMenu,
+            'sub_menu'   => $this->subMenu,
         ]);
     }
 
