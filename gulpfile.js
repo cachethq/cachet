@@ -9,7 +9,6 @@ elixir(function (mix) {
         .sass('app.scss')
         .jshint('resources/assets/js/*.js')
         .styles([
-            'vendor/bower_components/ionicons/css/ionicons.css',
             'vendor/bower_components/jquery-minicolors/jquery.minicolors.css',
             'public/dist/css/app.css'
         ], 'public/dist/css/all.css', './')
