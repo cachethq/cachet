@@ -33,7 +33,7 @@ if (!function_exists('set_active')) {
 
         $class = implode(' ', $classes);
 
-        return empty($classes) ? '' : "class={$class}";
+	return empty($classes) ? '' : "class=\"{$class}\"";
     }
 }
 
