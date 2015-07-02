@@ -29,7 +29,7 @@ class TeamController extends AbstractController
         $team = User::all();
 
         return View::make('dashboard.team.index')->with([
-            'page_title'   => trans('dashboard.team.team').' - '.trans('dashboard.dashboard'),
+            'page_title'  => trans('dashboard.team.team').' - '.trans('dashboard.dashboard'),
             'teamMembers' => $team,
         ]);
     }
@@ -43,7 +43,7 @@ class TeamController extends AbstractController
     {
         return View::make('dashboard.team.edit')->with([
             'page_title' => trans('dashboard.team.edit.title').' - '.trans('dashboard.dashboard'),
-            'user'      => $user,
+            'user'       => $user,
         ]);
     }
 

@@ -58,9 +58,9 @@ class ComponentController extends AbstractController
         $this->subMenu['components']['active'] = true;
 
         return View::make('dashboard.components.index')->with([
-            'page_title'  => trans_choice('dashboard.components.components', 2).' - '.trans('dashboard.dashboard'),
+            'page_title' => trans_choice('dashboard.components.components', 2).' - '.trans('dashboard.dashboard'),
             'components' => $components,
-            'sub_menu'    => $this->subMenu,
+            'sub_menu'   => $this->subMenu,
         ]);
     }
 
@@ -75,7 +75,7 @@ class ComponentController extends AbstractController
 
         return View::make('dashboard.components.groups.index')->with([
             'page_title' => trans_choice('dashboard.components.groups.groups', 2).' - '.trans('dashboard.dashboard'),
-            'groups'    => ComponentGroup::orderBy('order')->get(),
+            'groups'     => ComponentGroup::orderBy('order')->get(),
             'sub_menu'   => $this->subMenu,
         ]);
     }
@@ -100,8 +100,8 @@ class ComponentController extends AbstractController
 
         return View::make('dashboard.components.edit')->with([
             'page_title' => $pageTitle,
-            'component' => $component,
-            'groups'    => $groups,
+            'component'  => $component,
+            'groups'     => $groups,
         ]);
     }
 
@@ -171,7 +171,7 @@ class ComponentController extends AbstractController
 
         return View::make('dashboard.components.add')->with([
             'page_title' => trans('dashboard.components.add.title').' - '.trans('dashboard.dashboard'),
-            'groups'    => $groups,
+            'groups'     => $groups,
         ]);
     }
 
@@ -294,7 +294,7 @@ class ComponentController extends AbstractController
     {
         return View::make('dashboard.components.groups.edit')->with([
             'page_title' => trans('dashboard.components.groups.edit.title').' - '.trans('dashboard.dashboard'),
-            'group'     => $group,
+            'group'      => $group,
         ]);
     }
 

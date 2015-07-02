@@ -31,7 +31,7 @@ class MetricController extends AbstractController
 
         return View::make('dashboard.metrics.index')->with([
             'page_title' => trans('dashboard.metrics.metrics').' - '.trans('dashboard.dashboard'),
-            'metrics'   => $metrics,
+            'metrics'    => $metrics,
         ]);
     }
 
@@ -43,7 +43,7 @@ class MetricController extends AbstractController
     public function showAddMetric()
     {
         return View::make('dashboard.metrics.add')->with([
-            'page_title'          => trans('dashboard.metrics.add.title').' - '.trans('dashboard.dashboard'),
+            'page_title'         => trans('dashboard.metrics.add.title').' - '.trans('dashboard.dashboard'),
             'metricMetricPoints' => MetricPoint::all(),
         ]);
     }
@@ -56,7 +56,7 @@ class MetricController extends AbstractController
     public function showMetricPoints()
     {
         return View::make('dashboard.metrics.points.index')->with([
-            'page_title'          => trans('dashboard.metrics.points.title').' - '.trans('dashboard.dashboard'),
+            'page_title'         => trans('dashboard.metrics.points.title').' - '.trans('dashboard.dashboard'),
             'metricMetricPoints' => MetricPoint::all(),
         ]);
     }
@@ -166,7 +166,7 @@ class MetricController extends AbstractController
     {
         return View::make('dashboard.metrics.edit')->with([
             'page_title' => trans('dashboard.metrics.edit.title').' - '.trans('dashboard.dashboard'),
-            'metric'    => $metric,
+            'metric'     => $metric,
         ]);
     }
 

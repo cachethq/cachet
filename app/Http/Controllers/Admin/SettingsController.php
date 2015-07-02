@@ -101,8 +101,8 @@ class SettingsController extends AbstractController
         $unsecureUsers = User::whereNull('google_2fa_secret')->orWhere('google_2fa_secret', '')->get();
 
         return View::make('dashboard.settings.security')->with([
-            'page_title'     => 'Security - Dashboard',
-            'sub_menu'       => $this->subMenu,
+            'page_title'    => 'Security - Dashboard',
+            'sub_menu'      => $this->subMenu,
             'unsecureUsers' => $unsecureUsers,
         ]);
     }

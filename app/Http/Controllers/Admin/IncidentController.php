@@ -70,7 +70,7 @@ class IncidentController extends AbstractController
 
         return View::make('dashboard.incidents.index')->with([
             'page_title' => trans('dashboard.incidents.incidents').' - '.trans('dashboard.dashboard'),
-            'incidents' => $incidents,
+            'incidents'  => $incidents,
         ]);
     }
 
@@ -85,7 +85,7 @@ class IncidentController extends AbstractController
         $componentsOutGroups = Component::where('group_id', 0)->get();
 
         return View::make('dashboard.incidents.add')->with([
-            'page_title'           => trans('dashboard.incidents.add.title').' - '.trans('dashboard.dashboard'),
+            'page_title'          => trans('dashboard.incidents.add.title').' - '.trans('dashboard.dashboard'),
             'componentsInGroups'  => $componentsInGroups,
             'componentsOutGroups' => $componentsOutGroups,
             'incidentTemplates'   => IncidentTemplate::all(),
@@ -100,7 +100,7 @@ class IncidentController extends AbstractController
     public function showTemplates()
     {
         return View::make('dashboard.incidents.templates.index')->with([
-            'page_title'         => trans('dashboard.incidents.templates.title').' - '.trans('dashboard.dashboard'),
+            'page_title'        => trans('dashboard.incidents.templates.title').' - '.trans('dashboard.dashboard'),
             'incidentTemplates' => IncidentTemplate::all(),
         ]);
     }
@@ -193,7 +193,7 @@ class IncidentController extends AbstractController
     {
         return View::make('dashboard.incidents.templates.edit')->with([
             'page_title' => trans('dashboard.incidents.templates.edit.title').' - '.trans('dashboard.dashboard'),
-            'template'  => $template,
+            'template'   => $template,
         ]);
     }
 
@@ -285,7 +285,7 @@ class IncidentController extends AbstractController
         $componentsOutGroups = Component::where('group_id', 0)->get();
 
         return View::make('dashboard.incidents.edit')->with([
-            'page_title'           => trans('dashboard.incidents.edit.title').' - '.trans('dashboard.dashboard'),
+            'page_title'          => trans('dashboard.incidents.edit.title').' - '.trans('dashboard.dashboard'),
             'incident'            => $incident,
             'componentsInGroups'  => $componentsInGroups,
             'componentsOutGroups' => $componentsOutGroups,
