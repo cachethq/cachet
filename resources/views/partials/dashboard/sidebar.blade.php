@@ -63,11 +63,6 @@
                     <span>{{ trans('dashboard.metrics.metrics') }}</span>
                 </a>
             </li>
-            {{-- <li {{ set_active('dashboard/notifications') }}>
-                <a href="{{ route('dashboard.notifications') }}">
-                    <i class="ion ion-email"></i> {{ trans('cachet.dashboard.notifications') }}
-                </a>
-            </li> --}}
             <li {{ set_active('dashboard/settings*') }}>
                 <a href="{{ route('dashboard.settings.setup') }}">
                     <i class="icon ion-gear-a"></i>
