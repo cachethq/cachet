@@ -32,6 +32,7 @@ class SetupController extends AbstractController
      */
     protected $cacheDrivers = [
         'apc'      => 'APC(u)',
+        'array'    => 'Array',
         'file'     => 'File',
         'database' => 'Database',
     ];
