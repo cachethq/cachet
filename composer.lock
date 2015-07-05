@@ -4,8 +4,72 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3af6d8565449cdbb5163ebd1b19d867e",
+    "hash": "cdcde2f28caf5069f680a5e91360d069",
     "packages": [
+        {
+            "name": "alt-three/segment",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AltThree/Segment.git",
+                "reference": "f9a027dfc7c533982852e57eacf26d5267927006"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/AltThree/Segment/zipball/f9a027dfc7c533982852e57eacf26d5267927006",
+                "reference": "f9a027dfc7c533982852e57eacf26d5267927006",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/config": "5.1.*",
+                "illuminate/support": "5.1.*",
+                "php": ">=5.5.9",
+                "segmentio/analytics-php": "1.1.*"
+            },
+            "require-dev": {
+                "graham-campbell/testbench": "~3.0",
+                "phpunit/phpunit": "^4.7.6"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "AltThree\\Segment\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "James Brooks",
+                    "email": "james@alt-three.com"
+                },
+                {
+                    "name": "Graham Campbell",
+                    "email": "graham@alt-three.com"
+                },
+                {
+                    "name": "Joseph Cohen",
+                    "email": "joe@alt-three.com"
+                }
+            ],
+            "description": "A Segment Bridge For Laravel 5",
+            "keywords": [
+                "Alt Three",
+                "Bridge",
+                "api",
+                "segment",
+                "segment.com",
+                "segment.io"
+            ],
+            "time": "2015-06-26 18:45:09"
+        },
         {
             "name": "asm89/stack-cors",
             "version": "0.2.1",
@@ -97,73 +161,6 @@
                 "laravel"
             ],
             "time": "2015-05-25 13:45:30"
-        },
-        {
-            "name": "cachethq/segment",
-            "version": "2.1.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/cachethq/Laravel-Segment.git",
-                "reference": "d2643d346f2dca470de9dccd90d178215203067b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/cachethq/Laravel-Segment/zipball/d2643d346f2dca470de9dccd90d178215203067b",
-                "reference": "d2643d346f2dca470de9dccd90d178215203067b",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/config": "5.0.*|5.1.*",
-                "illuminate/support": "5.0.*|5.1.*",
-                "php": ">=5.5.9",
-                "segmentio/analytics-php": "1.1.*"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.4"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.1-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "CachetHQ\\Segment\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "James Brooks",
-                    "email": "james@alt-three.com"
-                },
-                {
-                    "name": "Graham Campbell",
-                    "email": "graham@alt-three.com"
-                },
-                {
-                    "name": "Joseph Cohen",
-                    "email": "joe@alt-three.com"
-                }
-            ],
-            "description": "Segment.com wrapper written for Laravel",
-            "keywords": [
-                "Cachet HQ",
-                "CachetHQ",
-                "Laravel Segment",
-                "api",
-                "cachet",
-                "framework",
-                "laravel",
-                "segment",
-                "segment.com",
-                "segment.io"
-            ],
-            "time": "2015-06-27 13:39:51"
         },
         {
             "name": "classpreloader/classpreloader",

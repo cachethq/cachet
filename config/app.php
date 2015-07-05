@@ -149,6 +149,8 @@ return [
         /*
          * Packages Service Providers...
          */
+        'AltThree\Segment\SegmentServiceProvider',
+        'Barryvdh\Cors\CorsServiceProvider',
         'Fideloper\Proxy\TrustedProxyServiceProvider',
         'GrahamCampbell\Binput\BinputServiceProvider',
         'GrahamCampbell\Exceptions\ExceptionsServiceProvider',
@@ -171,7 +173,6 @@ return [
         'CachetHQ\Cachet\Providers\EventServiceProvider',
         'CachetHQ\Cachet\Providers\RouteServiceProvider',
         'CachetHQ\Cachet\Providers\SegmentServiceProvider',
-        'CachetHQ\Segment\SegmentServiceProvider',
 
     ],
 
