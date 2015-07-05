@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9ae9126623e7688037f5a36bb37e3bdb",
+    "hash": "3af6d8565449cdbb5163ebd1b19d867e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1195,16 +1195,16 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "dev-master",
+            "version": "6.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "66737d2024d49c06bd294f33d60eb369f18b20f2"
+                "reference": "a8dfeff00eb84616a17fea7a4d72af35e750410f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/66737d2024d49c06bd294f33d60eb369f18b20f2",
-                "reference": "66737d2024d49c06bd294f33d60eb369f18b20f2",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/a8dfeff00eb84616a17fea7a4d72af35e750410f",
+                "reference": "a8dfeff00eb84616a17fea7a4d72af35e750410f",
                 "shasum": ""
             },
             "require": {
@@ -1253,7 +1253,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2015-06-30 20:37:09"
+            "time": "2015-07-04 20:09:24"
         },
         {
             "name": "guzzlehttp/promises",
@@ -1453,16 +1453,16 @@
         },
         {
             "name": "jenssegers/date",
-            "version": "v3.0.5",
+            "version": "v3.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jenssegers/laravel-date.git",
-                "reference": "4d23b2000e156dd94be7c404cf3cdee5539e91b3"
+                "reference": "22861b75f140b6f245e22c983b269b722c239748"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jenssegers/laravel-date/zipball/4d23b2000e156dd94be7c404cf3cdee5539e91b3",
-                "reference": "4d23b2000e156dd94be7c404cf3cdee5539e91b3",
+                "url": "https://api.github.com/repos/jenssegers/laravel-date/zipball/22861b75f140b6f245e22c983b269b722c239748",
+                "reference": "22861b75f140b6f245e22c983b269b722c239748",
                 "shasum": ""
             },
             "require": {
@@ -1505,7 +1505,7 @@
                 "time",
                 "translation"
             ],
-            "time": "2015-06-04 09:21:04"
+            "time": "2015-06-13 13:51:58"
         },
         {
             "name": "jeremeamia/SuperClosure",
@@ -1567,16 +1567,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.1.5",
+            "version": "v5.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "25d872ec1945b30083f3e348039c380307b42d5e"
+                "reference": "356418f315e4f6bf55d2f4bd451606e45a7595df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/25d872ec1945b30083f3e348039c380307b42d5e",
-                "reference": "25d872ec1945b30083f3e348039c380307b42d5e",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/356418f315e4f6bf55d2f4bd451606e45a7595df",
+                "reference": "356418f315e4f6bf55d2f4bd451606e45a7595df",
                 "shasum": ""
             },
             "require": {
@@ -1691,7 +1691,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2015-07-02 02:28:22"
+            "time": "2015-07-03 13:48:44"
         },
         {
             "name": "league/commonmark",
@@ -3864,16 +3864,16 @@
         },
         {
             "name": "phpunit/phpunit-mock-objects",
-            "version": "2.3.4",
+            "version": "2.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
-                "reference": "92408bb1968a81b3217a6fdf6c1a198da83caa35"
+                "reference": "1c330b1b6e1ea8fd15f2fbea46770576e366855c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/92408bb1968a81b3217a6fdf6c1a198da83caa35",
-                "reference": "92408bb1968a81b3217a6fdf6c1a198da83caa35",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/1c330b1b6e1ea8fd15f2fbea46770576e366855c",
+                "reference": "1c330b1b6e1ea8fd15f2fbea46770576e366855c",
                 "shasum": ""
             },
             "require": {
@@ -3915,7 +3915,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2015-06-11 15:55:48"
+            "time": "2015-07-04 05:41:32"
         },
         {
             "name": "sebastian/comparator",
