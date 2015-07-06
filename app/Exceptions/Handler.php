@@ -12,7 +12,7 @@
 namespace CachetHQ\Cachet\Exceptions;
 
 use GrahamCampbell\Exceptions\ExceptionHandler;
-use Symfony\Component\HttpKernel\Exception\HttpNotFoundException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class Handler extends ExceptionHandler
 {
@@ -22,6 +22,6 @@ class Handler extends ExceptionHandler
      * @var string[]
      */
     protected $dontReport = [
-        HttpNotFoundException::class,
+        NotFoundHttpException::class,
     ];
 }
