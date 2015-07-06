@@ -11,10 +11,7 @@
 
 namespace CachetHQ\Cachet\Exceptions;
 
-use Exception;
 use GrahamCampbell\Exceptions\ExceptionHandler;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
-use Illuminate\Support\Facades\Response;
 use Symfony\Component\HttpKernel\Exception\HttpNotFoundException;
 
 class Handler extends ExceptionHandler
@@ -27,21 +24,4 @@ class Handler extends ExceptionHandler
     protected $dontReport = [
         HttpNotFoundException::class,
     ];
-
-    /**
-     * Render an exception into an HTTP response.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param \Exception               $e
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function render($request, Exception $e)
-    {
-        if ($e instanceof ModelNotFoundException) {
-            $e = new HttpNotFoundException('Resource not found');
-        }
-
-        return parent::render($request, $e);
-    }
 }
