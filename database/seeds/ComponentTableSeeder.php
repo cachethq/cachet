@@ -43,7 +43,7 @@ class ComponentTableSeeder extends Seeder
                 'link'        => 'https://cachethq.io',
             ], [
                 'name'        => 'Blog',
-                'description' => 'The Cachet HQ blog.',
+                'description' => 'The Cachet Blog.',
                 'status'      => 1,
                 'order'       => 0,
                 'group_id'    => 0,
