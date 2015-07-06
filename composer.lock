@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/AltThree/Segment.git",
-                "reference": "f9a027dfc7c533982852e57eacf26d5267927006"
+                "reference": "1e0c01aa2bd13240247f76f32b953e08ecef13c3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/AltThree/Segment/zipball/f9a027dfc7c533982852e57eacf26d5267927006",
-                "reference": "f9a027dfc7c533982852e57eacf26d5267927006",
+                "url": "https://api.github.com/repos/AltThree/Segment/zipball/1e0c01aa2bd13240247f76f32b953e08ecef13c3",
+                "reference": "1e0c01aa2bd13240247f76f32b953e08ecef13c3",
                 "shasum": ""
             },
             "require": {
@@ -68,7 +68,7 @@
                 "segment.com",
                 "segment.io"
             ],
-            "time": "2015-06-26 18:45:09"
+            "time": "2015-07-06 16:42:12"
         },
         {
             "name": "asm89/stack-cors",
@@ -948,16 +948,16 @@
         },
         {
             "name": "graham-campbell/exceptions",
-            "version": "v3.1.0",
+            "version": "v3.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Exceptions.git",
-                "reference": "c50a0378be628d6b7cfea18d0316fa841fec6676"
+                "reference": "9362bf621e13b543694964a6adad728d57e9201b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Exceptions/zipball/c50a0378be628d6b7cfea18d0316fa841fec6676",
-                "reference": "c50a0378be628d6b7cfea18d0316fa841fec6676",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Exceptions/zipball/9362bf621e13b543694964a6adad728d57e9201b",
+                "reference": "9362bf621e13b543694964a6adad728d57e9201b",
                 "shasum": ""
             },
             "require": {
@@ -977,7 +977,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.1-dev"
+                    "dev-master": "3.2-dev"
                 }
             },
             "autoload": {
@@ -1009,7 +1009,7 @@
                 "laravel",
                 "whoops"
             ],
-            "time": "2015-06-26 17:05:53"
+            "time": "2015-07-06 14:52:42"
         },
         {
             "name": "graham-campbell/markdown",
