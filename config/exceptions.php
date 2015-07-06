@@ -27,7 +27,7 @@ return [
 
     'transformers' => [
         'GrahamCampbell\Exceptions\Transformers\CsrfTransformer',
-        'CachetHQ\Cachet\Exceptions\Transformers\ModelNotFoundTransformer'
+        'CachetHQ\Cachet\Exceptions\Transformers\ModelNotFoundTransformer',
     ],
 
     /*
