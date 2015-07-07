@@ -65,8 +65,7 @@
             "php artisan optimize --force",
             "php artisan config:cache",
             "php artisan route:cache",
-            "chmod -R 755 storage",
-            "php artisan queue:restart"
+            "chmod -R 755 storage"
         ],
         "pre-update-cmd": [
             "rm -f compiled.php config.php routes.php services.json"
@@ -75,8 +74,7 @@
             "php artisan optimize --force",
             "php artisan config:cache",
             "php artisan route:cache",
-            "chmod -R 755 storage",
-            "php artisan queue:restart"
+            "chmod -R 755 storage"
         ],
         "post-create-project-cmd": [
             "php -r \"copy('.env.example', '.env');\"",
