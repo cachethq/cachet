@@ -58,19 +58,25 @@
         }
     },
     "scripts": {
+        "pre-install-cmd": [
+            "rm -f compiled.php config.php routes.php services.json"
+        ],
         "post-install-cmd": [
-            "php artisan clear-compiled",
             "php artisan optimize --force",
             "php artisan config:cache",
-            "chmod -R 755 storage"
+            "php artisan route:cache",
+            "chmod -R 755 storage",
+            "php artisan queue:restart"
         ],
         "pre-update-cmd": [
-            "php artisan clear-compiled"
+            "rm -f compiled.php config.php routes.php services.json"
         ],
         "post-update-cmd": [
             "php artisan optimize --force",
             "php artisan config:cache",
-            "chmod -R 755 storage"
+            "php artisan route:cache",
+            "chmod -R 755 storage",
+            "php artisan queue:restart"
         ],
         "post-create-project-cmd": [
             "php -r \"copy('.env.example', '.env');\"",
