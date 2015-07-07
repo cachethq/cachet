@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "cdcde2f28caf5069f680a5e91360d069",
+    "hash": "4946bbb223aab1e07939738a93f65c31",
     "packages": [
         {
             "name": "alt-three/segment",
