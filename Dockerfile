@@ -1,42 +1,33 @@
 FROM debian:jessie
 
-ENV DB_DRIVER=mysql \
-    ENV=production \
-    DB_DATABASE=cachet \
-    DB_HOST= \
-    DB_USERNAME= \
-    DB_PASSWORD= \
-    DEBIAN_FRONTEND=noninteractive
-
-COPY . /var/www/html/
-WORKDIR /var/www/html/
-
 # Using nodesource and debian jessie packages instead of compiling from scratch
-RUN echo "APT::Install-Recommends \"0\";" >> /etc/apt/apt.conf.d/02recommends && \
+RUN DEBIAN_FRONTEND=noninteractive \
+    echo "APT::Install-Recommends \"0\";" >> /etc/apt/apt.conf.d/02recommends && \
     echo "APT::Install-Suggests \"0\";" >> /etc/apt/apt.conf.d/02recommends && \
     apt-get -qq update && \
     apt-get -qq install \
     ca-certificates nginx php5-fpm=5.* php5-curl php5-readline php5-mcrypt php5-mysql php5-apcu php5-cli \
     git sqlite libsqlite3-dev curl supervisor php5-pgsql && \
     apt-get clean && apt-get autoremove -qq && \
-    rm -rf /var/lib/apt/lists/* /usr/share/doc /usr/share/man /tmp/* && \
-    chown -R www-data /var/www/html
+    rm -rf /var/lib/apt/lists/* /usr/share/doc /usr/share/man /tmp/*
 
-# Hardcode the Illuminate key in config/app.php. If you want security, feel free
-# to override the key in your own container with a 'php artisan key:generate' :)
-RUN sed -i "s/'key' => '\w.*/'key' => 'f20d3e5ae02125a94bd60203a4edfbde',/" config/app.php && \
-    grep key config/app.php
+COPY docker/supervisord.conf /etc/supervisor/supervisord.conf
+COPY docker/entrypoint.sh /sbin/entrypoint.sh
+COPY . /var/www/html/
+WORKDIR /var/www/html/
 
 # copy the various nginx and supervisor conf (to handle both fpm and nginx)
 RUN sed -i -e "s/;daemonize\s*=\s*yes/daemonize = no/g" /etc/php5/fpm/php-fpm.conf ;\
     echo "daemon off;" >> /etc/nginx/nginx.conf ;\
     mv /var/www/html/docker/php-fpm-pool.conf /etc/php5/fpm/pool.d/www.conf ;\
-    rm -f /etc/nginx/sites-enabled/* && rm -f /etc/nginx/conf.d/* && mv /var/www/html/docker/nginx-site.conf /etc/nginx/conf.d/default.conf
-
-RUN curl -sS https://getcomposer.org/installer | php && php composer.phar install --no-dev -o
-
-COPY docker/supervisord.conf /etc/supervisor/supervisord.conf
+    rm -f /etc/nginx/sites-enabled/* ;\
+    rm -f /etc/nginx/conf.d/* ;\
+    mv /var/www/html/docker/nginx-site.conf /etc/nginx/conf.d/default.conf ;\
+    mv /var/www/html/docker/.env.docker /var/www/html/.env ;\
+    rm -r /var/www/html/docker ;\
+    chown -R www-data /var/www/html ;\
+    curl -sS https://getcomposer.org/installer | php && php composer.phar install --no-dev -o
 
 EXPOSE 8000
 
-CMD ["/usr/bin/supervisord"]
+CMD ["/sbin/entrypoint.sh"]
