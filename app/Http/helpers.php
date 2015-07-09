@@ -31,9 +31,9 @@ if (!function_exists('set_active')) {
             $classes[] = $active;
         }
 
-        $class = implode(' ', $classes);
+        $class = e(implode(' ', $classes));
 
-	return empty($classes) ? '' : "class=\"{$class}\"";
+        return empty($classes) ? '' : "class=\"{$class}\"";
     }
 }
 
