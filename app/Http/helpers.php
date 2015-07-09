@@ -153,3 +153,19 @@ if (!function_exists('formatted_date')) {
         return (new Date($date))->format($dateFormat);
     }
 }
+
+if (!function_exists('subscribers_enabled')) {
+    /**
+     * Is the subscriber functionality enabled and configured.
+     *
+     * @return bool
+     */
+    function subscribers_enabled()
+    {
+        $isEnabled = Setting::get('enable_subscribers', false);
+        $mailAddress = env('MAIL_ADDRESS', false);
+        $mailFrom = env('MAIL_NAME', false);
+
+        return $isEnabled && $mailAddress && $mailFrom;
+    }
+}
