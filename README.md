@@ -55,6 +55,39 @@ Here is a list of things that Cachet is not or does not do:
 2. It does not work on a plugin system. There are no monitoring services to extend.
 3. It's not a Twitter clone.
 
+## Quickstart with Vagrant
+
+If you would like to utilize [laravel homestead](http://laravel.com/docs/5.1/homestead), we have a per-project installation available to use for development purposes.
+
+First, modify Homestead.yaml to map your Cachet directory to the Vagrant VM properly. It looks like this by default:
+
+```yaml
+folders:
+    - map: "/srv/www/Cachet"
+      to: "/home/vagrant/Cachet"
+```
+
+Change the map key to the location of your Cachet installation and follow the instructions below.
+
+```bash
+# Copy over your environment variables
+$ cp .env.example .env
+
+# Initiate VM
+$ vagrant up
+
+# Generate application key
+$ php artisan key:generate
+
+# SSH into your machine
+$ vagrant ssh
+
+# Run migrations
+$ cd Cachet && php artisan migrate
+```
+
+Navigate to http://192.168.10.10 and begin using Cachet!
+
 ## Quickstart with Docker
 
 Run a DB container (you can either pass in environment variables for the DB, or mount a config with `-v /my/database.php:/var/www/html/app/config/database.php`):
