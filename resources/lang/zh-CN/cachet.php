@@ -72,7 +72,7 @@ return [
             'verify'       => [
                 'text'           => '请确认您的 :app_name 电子邮件订阅。\\n:link\\n此致，:app_name',
                 'html-preheader' => '请确认您的 :app_name 状态更新邮件订阅。',
-                'html'           => '<p>请确认您的 :app_name 电子邮件订阅。</p><p>:link</p><p>此致，:app_name</p>',
+                'html'           => '<p>请确认您的 :app_name 电子邮件订阅。</p><p><a href=":link">:link</a></p><p>此致，:app_name</p>',
             ],
             'maintenance' => [
                 'text'           => '新的维护计划已被安排在 :app_name 上。\\n此致，:app_name',
