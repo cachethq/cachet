@@ -26,7 +26,7 @@
     <php>
         <env name="APP_ENV" value="testing"/>
         <env name="APP_URL" value="http://localhost"/>
-        <env name="APP_KEY" value="AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+        <env name="APP_KEY" value="GCvcgDKMRIN498g52zfVEd9CxDs6PR7q"/>
         <env name="DB_DRIVER" value="sqlite"/>
         <env name="DB_HOST" value=":memory:"/>
         <env name="CACHE_DRIVER" value="array"/>

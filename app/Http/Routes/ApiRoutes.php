@@ -45,10 +45,13 @@ class ApiRoutes
 
             // Api protected
             $router->group(['middleware' => 'auth.api'], function ($router) {
+                $router->get('subscribers', 'SubscriberController@getSubscribers');
+
                 $router->post('components', 'ComponentController@postComponents');
                 $router->post('incidents', 'IncidentController@postIncidents');
                 $router->post('metrics', 'MetricController@postMetrics');
                 $router->post('metrics/{metric}/points', 'MetricPointController@postMetricPoints');
+                $router->post('subscribers', 'SubscriberController@postSubscribers');
 
                 $router->put('components/{component}', 'ComponentController@putComponent');
                 $router->put('incidents/{incident}', 'IncidentController@putIncident');
@@ -59,6 +62,7 @@ class ApiRoutes
                 $router->delete('incidents/{incident}', 'IncidentController@deleteIncident');
                 $router->delete('metrics/{metric}', 'MetricController@deleteMetric');
                 $router->delete('metrics/{metric}/points/{metric_point}', 'MetricPointController@deleteMetricPoint');
+                $router->delete('subscribers/{subscriber}', 'SubscriberController@deleteSubscriber');
             });
         });
     }

@@ -9,6 +9,8 @@
  * file that was distributed with this source code.
  */
 
+use Carbon\Carbon;
+
 $factory->define('CachetHQ\Cachet\Models\User', function ($faker) {
     return [
         'username'       => $faker->userName,
@@ -55,5 +57,13 @@ $factory->define('CachetHQ\Cachet\Models\MetricPoint', function ($faker) {
     return [
         'metric_id' => 1,
         'value'     => rand(1, 100),
+    ];
+});
+
+$factory->define('CachetHQ\Cachet\Models\Subscriber', function ($faker) {
+    return [
+        'email'       => $faker->email,
+        'verify_code' => 'Mqr80r2wJtxHCW5Ep4azkldFfIwHhw98M9HF04dn0z',
+        'verified_at' => Carbon::now(),
     ];
 });
