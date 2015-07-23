@@ -10,7 +10,6 @@
  */
 
 use CachetHQ\Cachet\Facades\Setting;
-use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Request;
 use Jenssegers\Date\Date;
 
@@ -61,7 +60,7 @@ if (!function_exists('segment_identify')) {
                 } else {
                     return false;
                 }
-            } catch (QueryException $e) {
+            } catch (Exception $e) {
                 return false;
             }
         }
@@ -97,7 +96,7 @@ if (!function_exists('segment_track')) {
                 } else {
                     return false;
                 }
-            } catch (QueryException $e) {
+            } catch (Exception $e) {
                 return false;
             }
         }
@@ -131,7 +130,7 @@ if (!function_exists('segment_page')) {
                 } else {
                     return false;
                 }
-            } catch (QueryException $e) {
+            } catch (Exception $e) {
                 return false;
             }
         }
