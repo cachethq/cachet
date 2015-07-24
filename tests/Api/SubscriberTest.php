@@ -13,7 +13,6 @@ namespace CachetHQ\Tests\Cachet\Api;
 
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-// use Illuminate\Foundation\Testing\WithoutEvents;
 
 class SubscriberTest extends AbstractTestCase
 {
