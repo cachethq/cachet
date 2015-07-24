@@ -38,7 +38,6 @@
     },
     "require-dev": {
         "fzaninotto/faker": "^1.5",
-        "graham-campbell/testbench-core": "^1.0",
         "phpunit/phpunit": "^4.7.6",
         "laravel/homestead": "^2.1"
     },

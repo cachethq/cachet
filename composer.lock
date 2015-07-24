@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "45a20a4b89f37bf01807fcafc77d12ba",
+    "hash": "94c9c02a89e02e83d24580aa8ac901bf",
     "packages": [
         {
             "name": "alt-three/segment",
@@ -1546,7 +1546,7 @@
                     "name": "Jeremy Lindblom",
                     "email": "jeremeamia@gmail.com",
                     "homepage": "https://github.com/jeremeamia",
-                    "role": "Developer"
+                    "role": "developer"
                 }
             ],
             "description": "Serialize Closure objects, including their context and binding",
@@ -3375,66 +3375,6 @@
                 "fixtures"
             ],
             "time": "2015-05-29 06:29:14"
-        },
-        {
-            "name": "graham-campbell/testbench-core",
-            "version": "v1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/GrahamCampbell/Laravel-TestBench-Core.git",
-                "reference": "caa22f1bfdd2197443d1f74b2a607c117daa1d23"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-TestBench-Core/zipball/caa22f1bfdd2197443d1f74b2a607c117daa1d23",
-                "reference": "caa22f1bfdd2197443d1f74b2a607c117daa1d23",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.5.9"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.7.6"
-            },
-            "suggest": {
-                "illuminate/support": "Required to use the laravel trait.",
-                "mockery/mockery": "Required to use the mockery trait.",
-                "phpunit/phpunit": "Required to use the most of the features."
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "GrahamCampbell\\TestBenchCore\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Graham Campbell",
-                    "email": "graham@alt-three.com"
-                }
-            ],
-            "description": "TestBench Core Provides Some Testing Functionality For Laravel 5",
-            "keywords": [
-                "Graham Campbell",
-                "GrahamCampbell",
-                "Laravel TestBench Core",
-                "Laravel-TestBench-Core",
-                "TestBench",
-                "framework",
-                "laravel",
-                "testbench-core",
-                "testing"
-            ],
-            "time": "2015-06-26 16:35:19"
         },
         {
             "name": "laravel/homestead",
