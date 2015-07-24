@@ -59,7 +59,7 @@ Here is a list of things that Cachet is not or does not do:
 
 If you would like to utilize [laravel homestead](http://laravel.com/docs/5.1/homestead), we have a per-project installation available to use for development purposes.
 
-First, modify Homestead.yaml to map your Cachet directory to the Vagrant VM properly. It looks like this by default:
+First, install dependencies by `composer install` and modify Homestead.yaml to map your Cachet directory to the Vagrant VM properly. It looks like this by default:
 
 ```yaml
 folders:
