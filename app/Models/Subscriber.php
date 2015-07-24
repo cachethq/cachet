@@ -11,11 +11,13 @@
 
 namespace CachetHQ\Cachet\Models;
 
+use CachetHQ\Cachet\Presenters\SubscriberPresenter;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use McCool\LaravelAutoPresenter\HasPresenter;
 use Watson\Validating\ValidatingTrait;
 
-class Subscriber extends Model
+class Subscriber extends Model implements HasPresenter
 {
     use SoftDeletes, ValidatingTrait;
 
@@ -74,5 +76,15 @@ class Subscriber extends Model
     public static function generateVerifyCode()
     {
         return str_random(42);
+    }
+
+    /**
+     * Get the presenter class.
+     *
+     * @return string
+     */
+    public function getPresenterClass()
+    {
+        return SubscriberPresenter::class;
     }
 }
