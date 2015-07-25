@@ -26,7 +26,7 @@
         "doctrine/dbal": "^2.5",
         "fideloper/proxy": "^3.0",
         "graham-campbell/binput": "^3.2",
-        "graham-campbell/markdown": "^3.2",
+        "graham-campbell/markdown": "^4.0",
         "graham-campbell/throttle": "^4.1",
         "graham-campbell/exceptions": "^4.0",
         "guzzlehttp/guzzle": "^6.0.2",

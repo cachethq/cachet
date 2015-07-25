@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d7be87f8d59e3c43a6f9b56a6d5fe2d2",
+    "hash": "60a7169952b419047afd05a1e5d66ef5",
     "packages": [
         {
             "name": "alt-three/segment",
@@ -1013,23 +1013,23 @@
         },
         {
             "name": "graham-campbell/markdown",
-            "version": "v3.2.0",
+            "version": "v4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Markdown.git",
-                "reference": "6120fbeff05767616a0436635f67f7ee964f4f40"
+                "reference": "6e9a967e23f6c8480ad04d217ecfabda1aea4b09"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Markdown/zipball/6120fbeff05767616a0436635f67f7ee964f4f40",
-                "reference": "6120fbeff05767616a0436635f67f7ee964f4f40",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Markdown/zipball/6e9a967e23f6c8480ad04d217ecfabda1aea4b09",
+                "reference": "6e9a967e23f6c8480ad04d217ecfabda1aea4b09",
                 "shasum": ""
             },
             "require": {
                 "illuminate/contracts": "5.0.*|5.1.*",
                 "illuminate/support": "5.0.*|5.1.*",
                 "illuminate/view": "5.0.*|5.1.*",
-                "league/commonmark": "0.9.*",
+                "league/commonmark": "0.10.*",
                 "php": ">=5.5.9"
             },
             "require-dev": {
@@ -1040,7 +1040,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.2-dev"
+                    "dev-master": "4.0-dev"
                 }
             },
             "autoload": {
@@ -1070,7 +1070,7 @@
                 "laravel",
                 "markdown"
             ],
-            "time": "2015-06-26 17:23:07"
+            "time": "2015-07-25 14:48:25"
         },
         {
             "name": "graham-campbell/security",
@@ -1692,16 +1692,16 @@
         },
         {
             "name": "league/commonmark",
-            "version": "0.9.0",
+            "version": "0.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/commonmark.git",
-                "reference": "8b681a57233f00578195573d7d251c2f143c1a5d"
+                "reference": "984455f72d4f07669c1f5c545768f60c4e871585"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/8b681a57233f00578195573d7d251c2f143c1a5d",
-                "reference": "8b681a57233f00578195573d7d251c2f143c1a5d",
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/984455f72d4f07669c1f5c545768f60c4e871585",
+                "reference": "984455f72d4f07669c1f5c545768f60c4e871585",
                 "shasum": ""
             },
             "require": {
@@ -1713,7 +1713,8 @@
             },
             "require-dev": {
                 "erusev/parsedown": "~1.0",
-                "jgm/commonmark": "0.20",
+                "jgm/commonmark": "0.21",
+                "jgm/smartpunct": "0.21",
                 "michelf/php-markdown": "~1.4",
                 "phpunit/phpunit": "~4.3",
                 "phpunit/phpunit-mock-objects": "2.3.0",
@@ -1722,7 +1723,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.9-dev"
+                    "dev-master": "0.11-dev"
                 }
             },
             "autoload": {
@@ -1749,7 +1750,7 @@
                 "markdown",
                 "parser"
             ],
-            "time": "2015-06-19 00:39:51"
+            "time": "2015-07-25 14:37:05"
         },
         {
             "name": "league/flysystem",
