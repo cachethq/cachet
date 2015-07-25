@@ -37,11 +37,12 @@ class ApiFilter
      * Filter and return the displayers.
      *
      * @param \GrahamCampbell\Exceptions\Displayers\DisplayerInterface[] $displayers
-     * @param \Exception                                                 $exception
+     * @param \Exception                                                 $original
+     * @param \Exception                                                 $transformed
      *
      * @return \GrahamCampbell\Exceptions\Displayers\DisplayerInterface[]
      */
-    public function filter(array $displayers, Exception $exception)
+    public function filter(array $displayers, Exception $original, Exception $transformed)
     {
         if ($this->request->is('api*')) {
             foreach ($displayers as $index => $displayer) {

@@ -72,4 +72,38 @@ return [
         'CachetHQ\Cachet\Exceptions\Filters\ApiFilter',
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Default Displayer
+    |--------------------------------------------------------------------------
+    |
+    | Here you may define the default displayer for your application.
+    |
+    | This displayer will be used if your filters have filtered out all the
+    | displayers, otherwise leaving us unable to displayer the exception.
+    |
+    */
+
+    'default' => 'GrahamCampbell\Exceptions\Displayers\HtmlDisplayer',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Exception Levels
+    |--------------------------------------------------------------------------
+    |
+    | Here are each of the log levels for the each exception.
+    |
+    | If an exception passes an instance of test for each key, then the log
+    | level used is the value associated with each key.
+    |
+    */
+
+    'levels' => [
+        'Illuminate\Session\TokenMismatchException'                     => 'notice',
+        'Illuminate\Database\Eloquent\ModelNotFoundException'           => 'warning',
+        'Symfony\Component\HttpKernel\Exception\HttpExceptionInterface' => 'warning',
+        'Symfony\Component\Debug\Exception\FatalErrorException'         => 'critical',
+        'Exception'                                                     => 'error',
+    ],
+
 ];
