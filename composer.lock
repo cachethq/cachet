@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8535c80a786ed3bcac0a4d7d77421697",
+    "hash": "d7be87f8d59e3c43a6f9b56a6d5fe2d2",
     "packages": [
         {
             "name": "alt-three/segment",
@@ -948,16 +948,16 @@
         },
         {
             "name": "graham-campbell/exceptions",
-            "version": "v3.2.0",
+            "version": "v4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Exceptions.git",
-                "reference": "9362bf621e13b543694964a6adad728d57e9201b"
+                "reference": "4a722d06c47dda498bc79edf67b04e285285dd5e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Exceptions/zipball/9362bf621e13b543694964a6adad728d57e9201b",
-                "reference": "9362bf621e13b543694964a6adad728d57e9201b",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Exceptions/zipball/4a722d06c47dda498bc79edf67b04e285285dd5e",
+                "reference": "4a722d06c47dda498bc79edf67b04e285285dd5e",
                 "shasum": ""
             },
             "require": {
@@ -977,7 +977,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.2-dev"
+                    "dev-master": "4.0-dev"
                 }
             },
             "autoload": {
@@ -1009,7 +1009,7 @@
                 "laravel",
                 "whoops"
             ],
-            "time": "2015-07-06 14:52:42"
+            "time": "2015-07-25 10:39:01"
         },
         {
             "name": "graham-campbell/markdown",
@@ -1546,7 +1546,7 @@
                     "name": "Jeremy Lindblom",
                     "email": "jeremeamia@gmail.com",
                     "homepage": "https://github.com/jeremeamia",
-                    "role": "Developer"
+                    "role": "developer"
                 }
             ],
             "description": "Serialize Closure objects, including their context and binding",
