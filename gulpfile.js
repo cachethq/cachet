@@ -1,13 +1,10 @@
 var elixir = require('laravel-elixir');
 
-require('laravel-elixir-jshint');
-
 elixir.config.sourcemaps = false;
 
 elixir(function (mix) {
     mix
-        .sass('app.scss')
-        .jshint('resources/assets/js/*.js')
+        .sass('app.scss', 'public/dist/css/app.css')
         .styles([
             'vendor/bower_components/jquery-minicolors/jquery.minicolors.css',
             'public/dist/css/app.css'
