@@ -29,11 +29,6 @@ class GeneralTest extends AbstractTestCase
 
         $this->assertResponseStatus(404);
         $this->seeHeader('Content-Type', 'application/json');
-        $this->seeJson(['errors' => [[
-            'status' => 404,
-            'title'  => 'Not Found',
-            'detail' => 'The requested resource could not be found but may be available again in the future.',
-        ]]]);
     }
 
     public function testNotAcceptableContentType()
