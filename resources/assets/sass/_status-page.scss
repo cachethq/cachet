@@ -231,6 +231,17 @@ body.status-page {
                         font-size: 1.1em;
                     }
                 }
+
+                img {
+                    box-sizing: border-box;
+
+                    &.emoji {
+                        height: 20px;
+                        width: 20px;
+                        vertical-align: middle;
+                        max-width: none;
+                    }
+                }
             }
         }
     }
