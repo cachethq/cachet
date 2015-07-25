@@ -4,8 +4,69 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "60a7169952b419047afd05a1e5d66ef5",
+    "hash": "e822be45c22bbf130920756cd1c46e76",
     "packages": [
+        {
+            "name": "alt-three/emoji",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AltThree/Emoji.git",
+                "reference": "2c46fde1d5993ea4a040259e5efc0682c33a5f90"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/AltThree/Emoji/zipball/2c46fde1d5993ea4a040259e5efc0682c33a5f90",
+                "reference": "2c46fde1d5993ea4a040259e5efc0682c33a5f90",
+                "shasum": ""
+            },
+            "require": {
+                "graham-campbell/markdown": "~4.0",
+                "guzzlehttp/guzzle": "~5.3|~6.0",
+                "illuminate/support": "5.1.*",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "graham-campbell/testbench": "~3.0",
+                "phpunit/phpunit": "^4.7.6"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "AltThree\\Emoji\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "James Brooks",
+                    "email": "james@alt-three.com"
+                },
+                {
+                    "name": "Graham Campbell",
+                    "email": "graham@alt-three.com"
+                },
+                {
+                    "name": "Joseph Cohen",
+                    "email": "joe@alt-three.com"
+                }
+            ],
+            "description": "An Emoji Parser For Laravel 5",
+            "keywords": [
+                "Alt Three",
+                "emoji",
+                "parser"
+            ],
+            "time": "2015-07-25 14:20:46"
+        },
         {
             "name": "alt-three/segment",
             "version": "v1.0.0",
