@@ -60,7 +60,7 @@
 
                 var ctx = document.getElementById("metric-{{ $metric->id }}").getContext("2d");
                 new Chart(ctx).Line(data, {
-                    tooltipTemplate: "{{ $metric->name }}: <%= value %>{{ $metric->suffix }}",
+                    tooltipTemplate: "{{ $metric->name }}: <%= value %>{!! $metric->suffix !!}",
                     scaleShowVerticalLines: true,
                     scaleShowLabels: false,
                     responsive: true,
