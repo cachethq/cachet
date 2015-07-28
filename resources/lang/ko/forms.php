@@ -117,6 +117,7 @@ return [
         'theme' => [
             'background-color' => '배경색',
             'text-color'       => '글자색',
+            'dashboard-login'  => 'Show dashboard button in the footer?',
         ],
     ],
 

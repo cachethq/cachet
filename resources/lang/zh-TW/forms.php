@@ -117,6 +117,7 @@ return [
         'theme' => [
             'background-color' => '背景顏色',
             'text-color'       => '文字顏色',
+            'dashboard-login'  => 'Show dashboard button in the footer?',
         ],
     ],
 

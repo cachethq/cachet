@@ -31,6 +31,14 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>{{ trans('forms.settings.theme.dashboard-login') }}</label>
+                                        <input type="checkbox" value="1" name="dashboard_login_link" class="form-control" {{ Setting::get('dashboard_login_link') ? 'checked' : null }}>
+                                    </div>
+                                </div>
+                            </div>
                             {{--
                             <div class="row">
                                 <div class="col-xs-4">

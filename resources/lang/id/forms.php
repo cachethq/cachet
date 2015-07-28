@@ -109,6 +109,7 @@ return [
         'theme' => [
             'background-color' => 'Warna Latar',
             'text-color'       => 'Warna Teks',
+            'dashboard-login'  => 'Show dashboard button in the footer?',
         ],
     ],
 

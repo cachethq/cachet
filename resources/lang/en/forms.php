@@ -117,6 +117,7 @@ return [
         'theme' => [
             'background-color' => 'Background Color',
             'text-color'       => 'Text Color',
+            'dashboard-login'  => 'Show dashboard button in the footer?',
         ],
     ],
 

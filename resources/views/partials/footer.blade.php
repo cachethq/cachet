@@ -8,7 +8,9 @@
             </div>
             <div class="col-sm-6">
                 <div class="icons">
+                    @if($loggedUser || Setting::get('dashboard_login_link'))
                     <a href="/dashboard" class="icon-link"><i class="ion-levels"></i> {{ trans('dashboard.dashboard') }}</a>
+                    @endif
                     @if($loggedUser)
                     <a href="/auth/logout" class="icon-link"><i class="ion-android-exit"></i> {{ trans('dashboard.logout') }}</a>
                     @endif
