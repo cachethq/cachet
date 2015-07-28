@@ -27,7 +27,7 @@
                     <p>{{ $subscriber->email }}</p>
                 </div>
                 <div class="col-xs-3">
-                    <p>{{ $subscriber->created_at->format('Y-m-d H:i:s') }}</p>
+                    <p>{{ $subscriber->created_at }}</p>
                 </div>
                 <div class="col-xs-3">
                     @if(is_null($subscriber->verified_at))
