@@ -24,6 +24,10 @@ MAIL_PASSWORD=${MAIL_PASSWORD:-null}
 MAIL_ADDRESS=${MAIL_ADDRESS:-null}
 MAIL_NAME=${MAIL_NAME:-null}
 
+REDIS_HOST=${REDIS_HOST:-nil}
+REDIS_DATABASE=${REDIS_DATABASE:-nil}
+REDIS_PORT=${REDIS_PORT:-nil}
+
 # configure env file
 
 sed 's,{{APP_ENV}},'"${APP_ENV}"',g' -i /var/www/html/.env
@@ -48,6 +52,10 @@ sed 's,{{MAIL_USERNAME}},'"${MAIL_USERNAME}"',g' -i /var/www/html/.env
 sed 's,{{MAIL_PASSWORD}},'"${MAIL_PASSWORD}"',g' -i /var/www/html/.env
 sed 's,{{MAIL_ADDRESS}},'"${MAIL_ADDRESS}"',g' -i /var/www/html/.env
 sed 's,{{MAIL_NAME}},'"${MAIL_NAME}"',g' -i /var/www/html/.env
+
+sed 's,{{REDIS_HOST}},'"${REDIS_HOST}"',g' -i /var/www/html/.env
+sed 's,{{REDIS_DATABASE}},'"${REDIS_DATABASE}"',g' -i /var/www/html/.env
+sed 's,{{REDIS_PORT}},'"${REDIS_PORT}"',g' -i /var/www/html/.env
 
 #Clear cache
 /usr/bin/php composer.phar install --no-dev -o
