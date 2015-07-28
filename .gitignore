@@ -1,5 +1,3 @@
-.idea
-*.iml
 .env
 node_modules
 phpunit.xml
