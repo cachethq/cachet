@@ -47,7 +47,7 @@ if (!function_exists('segment_identify')) {
         if (Config::get('segment.write_key')) {
             try {
                 if (Setting::get('app_track')) {
-                    return app('segment')->identify([
+                    return Segment::identify([
                         'anonymousId' => Config::get('app.key'),
                         'context'     => [
                             'locale'         => Config::get('app.locale'),
@@ -81,7 +81,7 @@ if (!function_exists('segment_track')) {
         if (Config::get('segment.write_key')) {
             try {
                 if (Setting::get('app_track')) {
-                    return app('segment')->track([
+                    return Segment::track([
                         'anonymousId' => Config::get('app.key'),
                         'event'       => $event,
                         'properties'  => $properties,
@@ -116,7 +116,7 @@ if (!function_exists('segment_page')) {
         if (Config::get('segment.write_key')) {
             try {
                 if (Setting::get('app_track')) {
-                    return app('segment')->page([
+                    return Segment::page([
                         'anonymousId' => Config::get('app.key'),
                         'name'        => $page,
                         'context'     => [
