@@ -19,5 +19,4 @@ return [
     'complete_setup'    => 'Configuração completa',
     'completed'         => 'Cachet foi configurado com sucesso!',
     'finish_setup'      => 'Ir para o painel de controle',
-    'allow_tracking'    => 'Permite rastreamento de uso anônimo?',
 ];

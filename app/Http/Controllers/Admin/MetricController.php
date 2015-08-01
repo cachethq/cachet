@@ -72,11 +72,6 @@ class MetricController extends AbstractController
         $metric = Metric::create($metricData);
 
         if (!$metric->isValid()) {
-            segment_track('Dashboard', [
-                'event'   => 'Created Metric',
-                'success' => false,
-            ]);
-
             return Redirect::back()->withInput(Binput::all())
                 ->with('title', sprintf(
                     '%s %s',
@@ -85,11 +80,6 @@ class MetricController extends AbstractController
                 ))
                 ->with('errors', $metric->getErrors());
         }
-
-        segment_track('Dashboard', [
-            'event'   => 'Created Metric',
-            'success' => true,
-        ]);
 
         $successMsg = sprintf(
             '%s %s',
@@ -183,11 +173,6 @@ class MetricController extends AbstractController
         $metric->update($metricData);
 
         if (!$metric->isValid()) {
-            segment_track('Dashboard', [
-                'event'   => 'Edited Metric',
-                'success' => false,
-            ]);
-
             return Redirect::back()->withInput(Binput::all())
                 ->with('title', sprintf(
                     '<strong>%s</strong>',
@@ -195,11 +180,6 @@ class MetricController extends AbstractController
                 ))
                 ->with('errors', $metric->getErrors());
         }
-
-        segment_track('Dashboard', [
-            'event'   => 'Edited Metric',
-            'success' => true,
-        ]);
 
         $successMsg = sprintf(
             '%s %s',

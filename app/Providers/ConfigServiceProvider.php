@@ -31,12 +31,6 @@ class ConfigServiceProvider extends ServiceProvider
             $appDomain = Setting::get('app_domain');
             $appLocale = Setting::get('app_locale');
 
-            // Set the Segment.com settings.
-            if (Setting::get('app_track')) {
-                $segmentRepository = $this->app->make('CachetHQ\Cachet\Segment\RepositoryInterface');
-                $this->app->config->set('segment.write_key', $segmentRepository->fetch());
-            }
-
             // Setup Cors.
             $allowedOrigins = $this->app->config->get('cors.defaults.allowedOrigins');
             $allowedOrigins[] = Setting::get('app_domain');

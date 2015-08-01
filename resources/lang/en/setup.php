@@ -20,5 +20,4 @@ return [
     'complete_setup'    => 'Complete Setup',
     'completed'         => 'Cachet has been configured successfully!',
     'finish_setup'      => 'Go to dashboard',
-    'allow_tracking'    => 'Allow anonymous usage tracking?',
 ];

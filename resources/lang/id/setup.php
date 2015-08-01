@@ -19,5 +19,4 @@ return [
     'complete_setup'    => 'Selesaikan Instalasi',
     'completed'         => 'Cachet berhasil dikonfigurasi!',
     'finish_setup'      => 'Ke dashboard',
-    'allow_tracking'    => 'Aktifkan tracking penggunaan anonim?',
 ];

@@ -126,11 +126,6 @@ class IncidentController extends AbstractController
         $incident = Incident::create($incidentData);
 
         if (!$incident->isValid()) {
-            segment_track('Dashboard', [
-                'event'   => 'Created Incident',
-                'success' => false,
-            ]);
-
             return Redirect::back()->withInput(Binput::all())
                 ->with('title', sprintf(
                     '%s %s',
@@ -146,11 +141,6 @@ class IncidentController extends AbstractController
                 'status' => $componentStatus,
             ]);
         }
-
-        segment_track('Dashboard', [
-            'event'   => 'Created Incident',
-            'success' => true,
-        ]);
 
         $successMsg = sprintf(
             '%s %s',
@@ -206,10 +196,6 @@ class IncidentController extends AbstractController
      */
     public function deleteTemplateAction(IncidentTemplate $template)
     {
-        segment_track('Dashboard', [
-            'event' => 'Deleted Incident Template',
-        ]);
-
         $template->delete();
 
         return Redirect::back();
@@ -226,11 +212,6 @@ class IncidentController extends AbstractController
         $template = IncidentTemplate::create($_template);
 
         if (!$template->isValid()) {
-            segment_track('Dashboard', [
-                'event'   => 'Created Incident Template',
-                'success' => false,
-            ]);
-
             return Redirect::back()->withInput(Binput::all())
                 ->with('title', sprintf(
                     '%s %s',
@@ -239,11 +220,6 @@ class IncidentController extends AbstractController
                 ))
                 ->with('errors', $template->getErrors());
         }
-
-        segment_track('Dashboard', [
-            'event'   => 'Created Incident Template',
-            'success' => true,
-        ]);
 
         $successMsg = sprintf(
             '%s %s',
@@ -263,10 +239,6 @@ class IncidentController extends AbstractController
      */
     public function deleteIncidentAction(Incident $incident)
     {
-        segment_track('Dashboard', [
-            'event' => 'Deleted Incident',
-        ]);
-
         $incident->delete();
 
         return Redirect::back();
@@ -314,11 +286,6 @@ class IncidentController extends AbstractController
         $incident->update($incidentData);
 
         if (!$incident->isValid()) {
-            segment_track('Dashboard', [
-                'event'   => 'Edited Incident',
-                'success' => false,
-            ]);
-
             return Redirect::back()->withInput(Binput::all())
                 ->with('title', sprintf(
                     '%s %s',
@@ -334,11 +301,6 @@ class IncidentController extends AbstractController
                 'status' => $componentStatus,
             ]);
         }
-
-        segment_track('Dashboard', [
-            'event'   => 'Edited Incident',
-            'success' => true,
-        ]);
 
         $successMsg = sprintf(
             '%s %s',
@@ -358,10 +320,6 @@ class IncidentController extends AbstractController
      */
     public function editTemplateAction(IncidentTemplate $template)
     {
-        segment_track('Dashboard', [
-            'event' => 'Edited Incident Template',
-        ]);
-
         $template->update(Binput::get('template'));
 
         return Redirect::back()->with('updatedTemplate', $template);

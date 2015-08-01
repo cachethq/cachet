@@ -19,5 +19,4 @@ return [
     'complete_setup'    => 'Setup abschließen',
     'completed'         => 'Cachet wurde erfolgreich eingerichtet!',
     'finish_setup'      => 'Zum Dashboard',
-    'allow_tracking'    => 'Allow anonymous usage tracking?',
 ];

@@ -35,17 +35,11 @@ class HomeController extends AbstractController
         $today = Date::now();
         $startDate = Date::now();
 
-        segment_page('Status Page');
-
         // Check if we have another starting date
         if (Binput::has('start_date')) {
             try {
                 // If date provided is valid
                 $oldDate = Date::createFromFormat('Y-m-d', Binput::get('start_date'));
-
-                segment_track('Status Page', [
-                    'start_date' => $oldDate->format('Y-m-d'),
-                ]);
 
                 // If trying to get a future date fallback to today
                 if ($today->gt($oldDate)) {
