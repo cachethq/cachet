@@ -62,7 +62,7 @@ class Metric extends Model implements HasPresenter
     /**
      * The relations to eager load on every query.
      *
-     * @var array
+     * @var string[]
      */
     protected $with = ['points'];
 
