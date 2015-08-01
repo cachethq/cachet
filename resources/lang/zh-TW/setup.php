@@ -20,5 +20,4 @@ return [
     'complete_setup'    => '完成安裝',
     'completed'         => '成功安裝 Cachet ！',
     'finish_setup'      => '前往儀表板',
-    'allow_tracking'    => '允許匿名統計？',
 ];

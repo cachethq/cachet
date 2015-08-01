@@ -46,11 +46,6 @@ class SubscribeController extends AbstractController
         $subscriber = Subscriber::create(['email' => Binput::get('email')]);
 
         if (!$subscriber->isValid()) {
-            segment_track('Subscribers', [
-                'event'   => 'Customer Subscribed',
-                'success' => false,
-            ]);
-
             return Redirect::back()->withInput(Binput::all())
                 ->with('title', sprintf(
                     '<strong>%s</strong> %s',
@@ -59,11 +54,6 @@ class SubscribeController extends AbstractController
                 ))
                 ->with('errors', $subscriber->getErrors());
         }
-
-        segment_track('Subscribers', [
-            'event'   => 'Customer Subscribed',
-            'success' => true,
-        ]);
 
         $successMsg = sprintf(
             '<strong>%s</strong> %s',
@@ -98,11 +88,6 @@ class SubscribeController extends AbstractController
         $subscriber->verified_at = Carbon::now();
         $subscriber->save();
 
-        segment_track('Subscribers', [
-            'event'   => 'Customer Email Verified',
-            'success' => true,
-        ]);
-
         $successMsg = sprintf(
             '<strong>%s</strong> %s',
             trans('dashboard.notifications.awesome'),
@@ -132,11 +117,6 @@ class SubscribeController extends AbstractController
         }
 
         $subscriber->delete();
-
-        segment_track('Subscribers', [
-            'event'   => 'Customer Unsubscribed',
-            'success' => true,
-        ]);
 
         $successMsg = sprintf(
             '<strong>%s</strong> %s',

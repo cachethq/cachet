@@ -169,15 +169,6 @@
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="form-group">
-                                        <label>{{ trans('setup.allow_tracking') }}</label>
-                                        <input type="hidden" value="0" name="app_track">
-                                        <input type="checkbox" value="1" name="app_track" class="form-control" {{ Setting::get('app_track') ? 'checked' : null }}>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <div class="form-group">
                                         <label>{{ trans('forms.settings.app-setup.banner') }}</label>
                                         @if($banner = Setting::get('app_banner'))
                                         <div id="banner-view" class="well">

@@ -120,11 +120,6 @@ class ComponentController extends AbstractController
         $component->update($_component);
 
         if (!$component->isValid()) {
-            segment_track('Dashboard', [
-                'event'   => 'Edit Component',
-                'success' => false,
-            ]);
-
             return Redirect::back()->withInput(Binput::all())
                 ->with('title', sprintf(
                     '%s %s',
@@ -133,11 +128,6 @@ class ComponentController extends AbstractController
                 ))
                 ->with('errors', $component->getErrors());
         }
-
-        segment_track('Dashboard', [
-            'event'   => 'Edit Component',
-            'success' => true,
-        ]);
 
         // The component was added successfully, so now let's deal with the tags.
         $tags = preg_split('/ ?, ?/', $tags);
@@ -189,11 +179,6 @@ class ComponentController extends AbstractController
         $component = Component::create($_component);
 
         if (!$component->isValid()) {
-            segment_track('Dashboard', [
-                'event'   => 'Created Component',
-                'success' => false,
-            ]);
-
             return Redirect::back()->withInput(Binput::all())
                 ->with('title', sprintf(
                     '%s %s',
@@ -202,11 +187,6 @@ class ComponentController extends AbstractController
                 ))
                 ->with('errors', $component->getErrors());
         }
-
-        segment_track('Dashboard', [
-            'event'   => 'Created Component',
-            'success' => true,
-        ]);
 
         // The component was added successfully, so now let's deal with the tags.
         $tags = preg_split('/ ?, ?/', $tags);
@@ -238,10 +218,6 @@ class ComponentController extends AbstractController
      */
     public function deleteComponentAction(Component $component)
     {
-        segment_track('Dashboard', [
-            'event' => 'Deleted Component',
-        ]);
-
         $component->delete();
 
         return Redirect::back();
@@ -256,10 +232,6 @@ class ComponentController extends AbstractController
      */
     public function deleteComponentGroupAction(ComponentGroup $group)
     {
-        segment_track('Dashboard', [
-            'event' => 'Deleted Component Group',
-        ]);
-
         $group->components->map(function ($component) {
             $component->update([
                 'group_id' => 0,
@@ -308,11 +280,6 @@ class ComponentController extends AbstractController
         $group = ComponentGroup::create(Binput::get('group'));
 
         if (!$group->isValid()) {
-            segment_track('Dashboard', [
-                'event'   => 'Created Component Group',
-                'success' => false,
-            ]);
-
             return Redirect::back()->withInput(Binput::all())
                 ->with('title', sprintf(
                     '%s %s',
@@ -321,11 +288,6 @@ class ComponentController extends AbstractController
                 ))
                 ->with('errors', $group->getErrors());
         }
-
-        segment_track('Dashboard', [
-            'event'   => 'Created Component Group',
-            'success' => true,
-        ]);
 
         $successMsg = sprintf(
             '%s %s',
@@ -349,11 +311,6 @@ class ComponentController extends AbstractController
         $group->update($groupData);
 
         if (!$group->isValid()) {
-            segment_track('Dashboard', [
-                'event'   => 'Edit Component Group',
-                'success' => false,
-            ]);
-
             return Redirect::back()->withInput(Binput::all())
                 ->with('title', sprintf(
                     '%s %s',
@@ -362,11 +319,6 @@ class ComponentController extends AbstractController
                 ))
                 ->with('errors', $group->getErrors());
         }
-
-        segment_track('Dashboard', [
-            'event'   => 'Edit Component Group',
-            'success' => true,
-        ]);
 
         $successMsg = sprintf(
             '%s %s',

@@ -19,5 +19,4 @@ return [
     'complete_setup'    => 'Installatie voltooien',
     'completed'         => 'Cachet is met succes geconfigureerd!',
     'finish_setup'      => 'Ga naar dashboard',
-    'allow_tracking'    => 'Anoniem gebruik tracken toestaan?',
 ];

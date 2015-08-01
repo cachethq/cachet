@@ -57,10 +57,8 @@ class AuthController extends AbstractController
                 return Redirect::route('two-factor');
             }
 
-            // We probably wan't to add support for "Remember me" here.
+            // We probably want to add support for "Remember me" here.
             Auth::attempt(Binput::only(['email', 'password']));
-
-            segment_track('Logged In');
 
             return Redirect::intended('dashboard');
         }
@@ -121,8 +119,6 @@ class AuthController extends AbstractController
     public function logoutAction()
     {
         Auth::logout();
-
-        segment_track('Logged Out');
 
         return Redirect::to('/');
     }

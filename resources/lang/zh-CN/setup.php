@@ -20,5 +20,4 @@ return [
     'complete_setup'    => '设置完成',
     'completed'         => 'Cachet已成功配置！',
     'finish_setup'      => '前往控制面板',
-    'allow_tracking'    => '允许匿名用量跟踪吗？',
 ];

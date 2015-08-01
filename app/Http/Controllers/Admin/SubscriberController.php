@@ -64,11 +64,6 @@ class SubscriberController extends AbstractController
         ]);
 
         if (!$subscriber->isValid()) {
-            segment_track('Dashboard', [
-                'event'   => 'Created Subscriber',
-                'success' => false,
-            ]);
-
             return Redirect::back()
                 ->withInput(Binput::all())
                 ->with('title', sprintf(
@@ -78,11 +73,6 @@ class SubscriberController extends AbstractController
                 ))
                 ->with('errors', $subscriber->getErrors());
         }
-
-        segment_track('Dashboard', [
-            'event'   => 'Created Subscriber',
-            'success' => true,
-        ]);
 
         $successMsg = sprintf(
             '%s %s',
@@ -107,10 +97,6 @@ class SubscriberController extends AbstractController
      */
     public function deleteSubscriberAction(Subscriber $subscriber)
     {
-        segment_track('Dashboard', [
-            'event' => 'Deleted Subscriber',
-        ]);
-
         $subscriber->delete();
 
         return Redirect::back();

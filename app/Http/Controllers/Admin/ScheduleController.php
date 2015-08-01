@@ -113,11 +113,6 @@ class ScheduleController extends AbstractController
         $incident = Incident::create($scheduleData);
 
         if (!$incident->isValid()) {
-            segment_track('Dashboard', [
-                'event'   => 'Created Scheduled Maintenance',
-                'success' => false,
-            ]);
-
             return Redirect::back()->withInput(Binput::all())
                 ->with('success', sprintf(
                     '%s %s',
@@ -126,11 +121,6 @@ class ScheduleController extends AbstractController
                 ))
                 ->with('errors', $incident->getErrors());
         }
-
-        segment_track('Dashboard', [
-            'event'   => 'Created Scheduled Maintenance',
-            'success' => true,
-        ]);
 
         $successMsg = sprintf(
             '%s %s',
@@ -197,11 +187,6 @@ class ScheduleController extends AbstractController
         $schedule->update($scheduleData);
 
         if (!$schedule->isValid()) {
-            segment_track('Dashboard', [
-                'event'   => 'Edited Schedule',
-                'success' => false,
-            ]);
-
             return Redirect::back()->withInput(Binput::all())
                 ->with('title', sprintf(
                     '%s %s',
@@ -210,11 +195,6 @@ class ScheduleController extends AbstractController
                 ))
                 ->with('errors', $schedule->getErrors());
         }
-
-        segment_track('Dashboard', [
-            'event'   => 'Edited Schedule',
-            'success' => true,
-        ]);
 
         $successMsg = sprintf(
             '%s %s',
@@ -234,10 +214,6 @@ class ScheduleController extends AbstractController
      */
     public function deleteScheduleAction(Incident $schedule)
     {
-        segment_track('Dashboard', [
-            'event' => 'Deleted Schedule',
-        ]);
-
         $schedule->delete();
 
         return Redirect::back()->with('warning', sprintf(

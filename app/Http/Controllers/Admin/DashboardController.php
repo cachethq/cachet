@@ -26,8 +26,6 @@ class DashboardController extends AbstractController
     {
         $components = Component::orderBy('order')->get();
 
-        segment_page('Dashboard');
-
         return View::make('dashboard.index')->with([
             'components' => $components,
         ]);

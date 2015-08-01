@@ -48,18 +48,8 @@ class UserController extends AbstractController
         // Let's enable/disable auth
         if ($enable2FA && !Auth::user()->hasTwoFactor) {
             $items['google_2fa_secret'] = Google2FA::generateSecretKey();
-
-            segment_track('User Management', [
-                'event' => 'enabled_two_factor',
-                'value' => true,
-            ]);
         } elseif (!$enable2FA) {
             $items['google_2fa_secret'] = '';
-
-            segment_track('User Management', [
-                'event' => 'enabled_two_factor',
-                'value' => false,
-            ]);
         }
 
         if (trim($passwordChange) === '') {
@@ -95,10 +85,6 @@ class UserController extends AbstractController
      */
     public function regenerateApiKey(User $user)
     {
-        segment_track('User Management', [
-            'event' => 'regenrated_api_token',
-        ]);
-
         $user->api_key = User::generateApiKey();
         $user->save();
 

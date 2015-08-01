@@ -150,7 +150,6 @@ return [
          * Packages Service Providers...
          */
         'AltThree\Emoji\EmojiServiceProvider',
-        'AltThree\Segment\SegmentServiceProvider',
         'Barryvdh\Cors\CorsServiceProvider',
         'Fideloper\Proxy\TrustedProxyServiceProvider',
         'GrahamCampbell\Binput\BinputServiceProvider',
@@ -173,7 +172,6 @@ return [
         'CachetHQ\Cachet\Providers\ConsoleServiceProvider',
         'CachetHQ\Cachet\Providers\EventServiceProvider',
         'CachetHQ\Cachet\Providers\RouteServiceProvider',
-        'CachetHQ\Cachet\Providers\SegmentServiceProvider',
 
     ],
 

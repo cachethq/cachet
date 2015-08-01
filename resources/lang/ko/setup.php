@@ -20,5 +20,4 @@ return [
     'complete_setup'    => '설치 완료',
     'completed'         => 'Cachet 이 성공적으로 설정되었습니다.',
     'finish_setup'      => '대시보드로 이동',
-    'allow_tracking'    => '익명 사용 추적 허용',
 ];
