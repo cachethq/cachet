@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e822be45c22bbf130920756cd1c46e76",
+    "hash": "cb9ed2382887d7107bf177cef493b109",
     "packages": [
         {
             "name": "alt-three/emoji",
@@ -66,70 +66,6 @@
                 "parser"
             ],
             "time": "2015-07-25 14:20:46"
-        },
-        {
-            "name": "alt-three/segment",
-            "version": "v1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/AltThree/Segment.git",
-                "reference": "0d845e33f4c629235f51078048bc3d653c69a496"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/AltThree/Segment/zipball/0d845e33f4c629235f51078048bc3d653c69a496",
-                "reference": "0d845e33f4c629235f51078048bc3d653c69a496",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/config": "5.1.*",
-                "illuminate/support": "5.1.*",
-                "php": ">=5.5.9",
-                "segmentio/analytics-php": "1.1.*"
-            },
-            "require-dev": {
-                "graham-campbell/testbench": "~3.0",
-                "phpunit/phpunit": "^4.7.6"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "AltThree\\Segment\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "James Brooks",
-                    "email": "james@alt-three.com"
-                },
-                {
-                    "name": "Graham Campbell",
-                    "email": "graham@alt-three.com"
-                },
-                {
-                    "name": "Joseph Cohen",
-                    "email": "joe@alt-three.com"
-                }
-            ],
-            "description": "A Segment Bridge For Laravel 5",
-            "keywords": [
-                "Alt Three",
-                "Bridge",
-                "api",
-                "segment",
-                "segment.com",
-                "segment.io"
-            ],
-            "time": "2015-07-24 12:19:38"
         },
         {
             "name": "asm89/stack-cors",
@@ -2427,51 +2363,6 @@
                 "rss"
             ],
             "time": "2015-06-12 15:24:49"
-        },
-        {
-            "name": "segmentio/analytics-php",
-            "version": "1.1.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/segmentio/analytics-php.git",
-                "reference": "be9bda98e56848fc1e1a498e4724103dbba2fd13"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/segmentio/analytics-php/zipball/be9bda98e56848fc1e1a498e4724103dbba2fd13",
-                "reference": "be9bda98e56848fc1e1a498e4724103dbba2fd13",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.0"
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "lib/Segment.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Segment.io <friends@segment.io>",
-                    "homepage": "https://segment.io/"
-                }
-            ],
-            "description": "Segmentio Analytics PHP Library",
-            "homepage": "https://segment.io/libraries/php",
-            "keywords": [
-                "analytics",
-                "analytics.js",
-                "segmentio"
-            ],
-            "time": "2015-03-03 11:51:21"
         },
         {
             "name": "swiftmailer/swiftmailer",
