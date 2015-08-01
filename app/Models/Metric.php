@@ -60,6 +60,13 @@ class Metric extends Model implements HasPresenter
     protected $fillable = ['name', 'suffix', 'description', 'display_chart', 'default_value', 'calc_type'];
 
     /**
+     * The relations to eager load on every query.
+     *
+     * @var string[]
+     */
+    protected $with = ['points'];
+
+    /**
      * Metrics contain many metric points.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
