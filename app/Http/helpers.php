@@ -36,7 +36,6 @@ if (!function_exists('set_active')) {
     }
 }
 
-
 if (!function_exists('formatted_date')) {
     /**
      * Formats a date with the user timezone and the selected format.
