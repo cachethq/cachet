@@ -28,6 +28,9 @@ REDIS_HOST=${REDIS_HOST:-null}
 REDIS_DATABASE=${REDIS_DATABASE:-null}
 REDIS_PORT=${REDIS_PORT:-null}
 
+LOGGING_MODE=${LOGGING_MODE:-daily}
+APP_LOCALE=${APP_LOCALE:-en}
+
 # configure env file
 
 sed 's,{{APP_ENV}},'"${APP_ENV}"',g' -i /var/www/html/.env
@@ -56,6 +59,9 @@ sed 's,{{MAIL_NAME}},'"${MAIL_NAME}"',g' -i /var/www/html/.env
 sed 's,{{REDIS_HOST}},'"${REDIS_HOST}"',g' -i /var/www/html/.env
 sed 's,{{REDIS_DATABASE}},'"${REDIS_DATABASE}"',g' -i /var/www/html/.env
 sed 's,{{REDIS_PORT}},'"${REDIS_PORT}"',g' -i /var/www/html/.env
+
+sed 's,{{LOGGING_MODE}},'"${LOGGING_MODE}"',g' -i /var/www/html/.env
+sed 's,{{APP_LOCALE}},'"${APP_LOCALE}"',g' -i /var/www/html/.env
 
 #Clear cache
 /usr/bin/php composer.phar install --no-dev -o
