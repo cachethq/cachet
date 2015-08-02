@@ -12,13 +12,8 @@
 namespace CachetHQ\Cachet\Models;
 
 use AltThree\Validator\ValidatingTrait;
-use CachetHQ\Cachet\Facades\Setting as SettingFacade;
 use CachetHQ\Cachet\Presenters\MetricPresenter;
-use DateInterval;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Facades\DB;
-use Jenssegers\Date\Date;
 use McCool\LaravelAutoPresenter\HasPresenter;
 
 class Metric extends Model implements HasPresenter
@@ -84,58 +79,6 @@ class Metric extends Model implements HasPresenter
     public function points()
     {
         return $this->hasMany(MetricPoint::class, 'metric_id', 'id');
-    }
-
-    /**
-     * Returns the sum of all values a metric has by the hour.
-     *
-     * @param int $hour
-     *
-     * @return int
-     */
-    public function getValuesByHour($hour)
-    {
-        $dateTimeZone = SettingFacade::get('app_timezone');
-        $dateTime = (new Date())->setTimezone($dateTimeZone)->sub(new DateInterval('PT'.$hour.'H'));
-
-        $hourInterval = $dateTime->format('YmdH');
-
-        if (Config::get('database.default') === 'mysql') {
-            if (!isset($this->calc_type) || $this->calc_type == self::CALC_SUM) {
-                $value = $this->points()
-                                    ->whereRaw('DATE_FORMAT(created_at, "%Y%m%d%H") = '.$hourInterval)
-                                    ->groupBy(DB::raw('HOUR(created_at)'))->sum('value');
-            } elseif ($this->calc_type == self::CALC_AVG) {
-                $value = $this->points()
-                                    ->whereRaw('DATE_FORMAT(created_at, "%Y%m%d%H") = '.$hourInterval)
-                                    ->groupBy(DB::raw('HOUR(created_at)'))->avg('value');
-            }
-        } else {
-            // Default metrics calculations.
-            if (!isset($this->calc_type) || $this->calc_type == self::CALC_SUM) {
-                $queryType = 'sum(metric_points.value)';
-            } elseif ($this->calc_type == self::CALC_AVG) {
-                $queryType = 'avg(metric_points.value)';
-            } else {
-                $queryType = 'sum(metric_points.value)';
-            }
-
-            $query = DB::select("select {$queryType} as aggregate FROM metrics JOIN metric_points ON metric_points.metric_id = metrics.id WHERE metric_points.metric_id = {$this->id} AND to_char(metric_points.created_at, 'YYYYMMDDHH24') = :timestamp GROUP BY to_char(metric_points.created_at, 'H')", [
-                'timestamp' => $hourInterval,
-            ]);
-
-            if (isset($query[0])) {
-                $value = $query[0]->aggregate;
-            } else {
-                $value = 0;
-            }
-        }
-
-        if ($value === 0 && $this->default_value != $value) {
-            return $this->default_value;
-        }
-
-        return round($value, $this->places);
     }
 
     /**
