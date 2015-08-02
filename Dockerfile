@@ -30,4 +30,8 @@ RUN sed -i -e "s/;daemonize\s*=\s*yes/daemonize = no/g" /etc/php5/fpm/php-fpm.co
 
 EXPOSE 8000
 
+COPY crontab /etc/cron.d/artisan-schedule
+RUN chmod 0644 /etc/cron.d/artisan-schedule
+RUN touch /var/log/cron.log
+
 CMD ["/sbin/entrypoint.sh"]
