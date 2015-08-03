@@ -42,7 +42,7 @@ class Subscriber extends Model implements HasPresenter
      *
      * @var array
      */
-    protected $dates = ['deleted_at', 'verified_at'];
+    protected $dates = ['verified_at'];
 
     /**
      * Overrides the models boot method.
