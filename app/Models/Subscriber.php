@@ -13,13 +13,12 @@ namespace CachetHQ\Cachet\Models;
 
 use CachetHQ\Cachet\Presenters\SubscriberPresenter;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use McCool\LaravelAutoPresenter\HasPresenter;
 use Watson\Validating\ValidatingTrait;
 
 class Subscriber extends Model implements HasPresenter
 {
-    use SoftDeletes, ValidatingTrait;
+    use ValidatingTrait;
 
     /**
      * The validation rules.

@@ -28,6 +28,15 @@
                             <label>{{ trans('forms.user.password') }}</label>
                             <input type="password" class="form-control" name="password" value="">
                         </div>
+                        @if($loggedUser->isAdmin)
+                        <div class="form-group">
+                            <label>{{ trans('forms.user.user_level') }}</label>
+                            <select name="level" class="form-control">
+                                <option value="2" selected>{{ trans('forms.user.levels.user') }}</option>
+                                <option value="1">{{ trans('forms.user.levels.admin') }}</option>
+                            </select>
+                        </div>
+                        @endif
                     </fieldset>
 
                     <div class="form-group">
