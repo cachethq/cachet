@@ -112,9 +112,7 @@ Run Cachet:
 $ docker run -d --name cachet --link mysql:mysql -p 80:8000 -e DB_HOST=mysql -e DB_DATABASE=$DB_DATABASE -e DB_USERNAME=$DB_USERNAME -e DB_PASSWORD=$DB_PASSWORD cachethq/cachet:latest
 ```
 
-Install Redis client library for PHP (optional step)
-
-If you set `CACHE_DRIVER`, `SESSION_DRIVER` or `QUEUE_DRIVER` to `redis`:
+You can optionally install predis to enable usage of the various redis drivers:
 
 ```bash
 $ docker exec -i cachet php composer.phar require predis/predis
