@@ -105,13 +105,16 @@ Initialize the DB if you haven't yet:
 ```bash
 $ docker run --rm --link mysql:mysql -e DB_HOST=mysql -e DB_DATABASE=$DB_DATABASE -e DB_USERNAME=$DB_USERNAME -e DB_PASSWORD=$DB_PASSWORD cachethq/cachet:latest php artisan migrate --force
 ```
+
 Run Cachet:
 
 ```bash
 $ docker run -d --name cachet --link mysql:mysql -p 80:8000 -e DB_HOST=mysql -e DB_DATABASE=$DB_DATABASE -e DB_USERNAME=$DB_USERNAME -e DB_PASSWORD=$DB_PASSWORD cachethq/cachet:latest
 ```
 
-Optional step (if you set `CACHE_DRIVER`, `SESSION_DRIVER` or `QUEUE_DRIVER` to `redis` ): install Redis client library for PHP
+Install Redis client library for PHP (optional step)
+
+If you set `CACHE_DRIVER`, `SESSION_DRIVER` or `QUEUE_DRIVER` to `redis`:
 
 ```bash
 $ docker exec -i cachet php composer.phar require predis/predis
