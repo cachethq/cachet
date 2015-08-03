@@ -44,6 +44,16 @@ class Subscriber extends Model implements HasPresenter
     protected $dates = ['verified_at'];
 
     /**
+     * The attributes that should be casted to native types.
+     *
+     * @var string[]
+     */
+    protected $casts = [
+        'email'       => 'string',
+        'verify_code' => 'string',
+    ];
+
+    /**
      * Overrides the models boot method.
      */
     public static function boot()
