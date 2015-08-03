@@ -1,10 +1,10 @@
-@if($loggedUser)
+@if($current_user)
 <div class="sidebar">
     <div class="sidebar-inner">
         <div class="profile">
             <div class="dropdown">
                 <a class="dropdown-toggle" href="#" id="profile-dropdown" data-toggle="dropdown" aria-expanded="true">
-                    <span class="avatar"><img src="{{ $loggedUser->gravatar }}"></span> <span class="username">{{ $loggedUser->username }}</span>
+                    <span class="avatar"><img src="{{ $current_user->gravatar }}"></span> <span class="username">{{ $current_user->username }}</span>
                     <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu" role="menu" aria-labelledby="profile-dropdown">
@@ -35,7 +35,7 @@
                 <a href="{{ route('dashboard.incidents') }}">
                     <i class="icon ion-android-alert"></i>
                     <span>{{ trans('dashboard.incidents.incidents') }}</span>
-                    <span class="label label-info">{{ $incidentCount }}</span>
+                    <span class="label label-info">{{ $incident_count }}</span>
                 </a>
             </li>
             <li {!! set_active('dashboard/templates*') !!}>
@@ -48,7 +48,7 @@
                 <a href="{{ route('dashboard.components') }}">
                     <i class="icons ion-outlet"></i>
                     <span>{{ trans('dashboard.components.components') }}</span>
-                    <span class="label label-info">{{ $componentCount }}</span>
+                    <span class="label label-info">{{ $component_count }}</span>
                 </a>
             </li>
             <li {!! set_active('dashboard/team*') !!}>

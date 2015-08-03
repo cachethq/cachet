@@ -26,9 +26,8 @@ class DashboardController extends AbstractController
     {
         $components = Component::orderBy('order')->get();
 
-        return View::make('dashboard.index')->with([
-            'components' => $components,
-        ]);
+        return View::make('dashboard.index')
+            ->withComponents($components);
     }
 
     /**
@@ -38,8 +37,7 @@ class DashboardController extends AbstractController
      */
     public function showNotifications()
     {
-        return View::make('dashboard.notifications.index')->with([
-            'page_title' => trans('dashboard.notifications.notifications').' '.trans('dashboard.dashboard'),
-        ]);
+        return View::make('dashboard.notifications.index')
+            ->withPageTitle(trans('dashboard.notifications.notifications').' '.trans('dashboard.dashboard'));
     }
 }

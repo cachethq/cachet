@@ -28,7 +28,7 @@
                             <label>{{ trans('forms.user.password') }}</label>
                             <input type="password" class="form-control" name="password" value="">
                         </div>
-                        @if($loggedUser->isAdmin)
+                        @if($current_user->isAdmin)
                         <div class="form-group">
                             <label>{{ trans('forms.user.user_level') }}</label>
                             <select name="level" class="form-control">

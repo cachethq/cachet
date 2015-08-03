@@ -8,10 +8,10 @@
             </div>
             <div class="col-sm-6">
                 <div class="icons">
-                    @if($loggedUser || Setting::get('dashboard_login_link'))
+                    @if($current_user || Setting::get('dashboard_login_link'))
                     <a href="/dashboard" class="icon-link"><i class="ion-levels"></i> {{ trans('dashboard.dashboard') }}</a>
                     @endif
-                    @if($loggedUser)
+                    @if($current_user)
                     <a href="/auth/logout" class="icon-link"><i class="ion-android-exit"></i> {{ trans('dashboard.logout') }}</a>
                     @endif
                     <a href="/rss" class="icon-link rss"><i class="ion-social-rss"></i> {{ trans('cachet.rss-feed') }}</a>

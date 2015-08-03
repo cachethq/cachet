@@ -12,7 +12,6 @@
 namespace CachetHQ\Cachet\Http\Controllers\Api;
 
 use CachetHQ\Cachet\Events\IncidentHasReportedEvent;
-use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Cachet\Models\Incident;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
@@ -34,8 +33,7 @@ class IncidentController extends AbstractApiController
     {
         $incidentVisiblity = $auth->check() ? 0 : 1;
 
-        $incidents = Incident::where('visible', '>=', $incidentVisiblity)
-            ->paginate(Binput::get('per_page', 20));
+        $incidents = Incident::where('visible', '>=', $incidentVisiblity)->paginate(Binput::get('per_page', 20));
 
         return $this->paginator($incidents, $request);
     }
@@ -73,20 +71,11 @@ class IncidentController extends AbstractApiController
             throw new BadRequestHttpException();
         }
 
-        $isEnabled = (bool) Setting::get('enable_subscribers', false);
-        $mailAddress = env('MAIL_ADDRESS', false);
-        $mailFrom = env('MAIL_NAME', false);
-        $subscribersEnabled = $isEnabled && $mailAddress && $mailFrom;
-
-        if (array_get($incidentData, 'notify') && $subscribersEnabled) {
+        if (array_get($incidentData, 'notify') && subscribers_enabled()) {
             event(new IncidentHasReportedEvent($incident));
         }
 
-        if ($incident->isValid()) {
-            return $this->item($incident);
-        }
-
-        throw new BadRequestHttpException();
+        return $this->item($incident);
     }
 
     /**
@@ -98,13 +87,13 @@ class IncidentController extends AbstractApiController
      */
     public function putIncident(Incident $incident)
     {
-        $incident->update(Binput::all());
-
-        if ($incident->isValid('updating')) {
-            return $this->item($incident);
+        try {
+            $incident->update(Binput::all());
+        } catch (Exception $e) {
+            throw new BadRequestHttpException();
         }
 
-        throw new BadRequestHttpException();
+        return $this->item($incident);
     }
 
     /**

@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Admin;
 
+use AltThree\Validator\ValidationException;
 use CachetHQ\Cachet\Http\Controllers\AbstractController;
 use CachetHQ\Cachet\Models\User;
 use GrahamCampbell\Binput\Facades\Binput;
@@ -28,9 +29,8 @@ class UserController extends AbstractController
      */
     public function showUser()
     {
-        return View::make('dashboard.user.index')->with([
-            'page_title' => trans('dashboard.team.profile').' - '.trans('dashboard.dashboard'),
-        ]);
+        return View::make('dashboard.user.index')
+            ->withPageTitle(trans('dashboard.team.profile').' - '.trans('dashboard.dashboard'));
     }
 
     /**
@@ -56,26 +56,17 @@ class UserController extends AbstractController
             unset($items['password']);
         }
 
-        $user = Auth::user();
-        $user->update($items);
-
-        if (!$user->isValid()) {
-            return Redirect::back()->withInput(Binput::except('password'))
-                ->with('title', sprintf(
-                    '%s %s',
-                    trans('dashboard.notifications.whoops'),
-                    trans('dashboard.team.edit.failure')
-                ))
-                ->with('errors', $user->getErrors());
+        try {
+            Auth::user()->update($items);
+        } catch (ValidationException $e) {
+            return Redirect::back()
+                ->withInput(Binput::except('password'))
+                ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.team.edit.failure')))
+                ->withErrors($e->getMessageBag());
         }
 
-        $successMsg = sprintf(
-            '%s %s',
-            trans('dashboard.notifications.awesome'),
-            trans('dashboard.team.edit.success')
-        );
-
-        return Redirect::back()->with('success', $successMsg);
+        return Redirect::back()
+            ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.team.edit.success')));
     }
 
     /**

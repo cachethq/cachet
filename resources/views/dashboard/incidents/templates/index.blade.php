@@ -16,7 +16,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="striped-list">
-                    @foreach($incidentTemplates as $template)
+                    @foreach($incident_templates as $template)
                     <div class="row striped-list-item">
                         <div class="col-xs-6">
                             <strong>{{ $template->name }}</strong>

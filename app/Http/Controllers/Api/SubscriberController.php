@@ -49,16 +49,12 @@ class SubscriberController extends AbstractApiController
             throw new BadRequestHttpException();
         }
 
-        if ($subscriber->isValid()) {
-            // If we're auto-verifying the subscriber, don't bother with this event.
-            if (!(Binput::get('verify'))) {
-                event(new CustomerHasSubscribedEvent($subscriber));
-            }
-
-            return $this->item($subscriber);
+        // If we're auto-verifying the subscriber, don't bother with this event.
+        if (!(Binput::get('verify'))) {
+            event(new CustomerHasSubscribedEvent($subscriber));
         }
 
-        throw new BadRequestHttpException();
+        return $this->item($subscriber);
     }
 
     /**

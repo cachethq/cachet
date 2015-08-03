@@ -17,12 +17,12 @@
                 <form class="form-vertical" name="IncidentForm" role="form" method="POST" autocomplete="off">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <fieldset>
-                        @if($incidentTemplates->count() > 0)
+                        @if($incident_templates->count() > 0)
                         <div class="form-group">
                             <label for="incident-template">{{ trans('forms.incidents.templates.template') }}</label>
                             <select class="form-control" name="template">
                                 <option selected></option>
-                                @foreach($incidentTemplates as $tpl)
+                                @foreach($incident_templates as $tpl)
                                 <option value="{{ $tpl->slug }}">{{ $tpl->name }}</option>
                                 @endforeach
                             </select>
@@ -62,19 +62,19 @@
                                 <option value='0'>{{ trans('forms.incidents.logged_in_only') }}</option>
                             </select>
                         </div>
-                        @if(!$componentsInGroups->isEmpty() || !$componentsOutGroups->isEmpty())
+                        @if(!$components_in_groups->isEmpty() || !$components_out_groups->isEmpty())
                         <div class="form-group">
                             <label>{{ trans('forms.incidents.component') }}</label>
                             <select name='incident[component_id]' class='form-control'>
                                 <option value='0' selected></option>
-                                @foreach($componentsInGroups as $group)
+                                @foreach($components_in_groups as $group)
                                 <optgroup label="{{ $group->name }}">
                                     @foreach($group->components as $component)
                                     <option value='{{ $component->id }}'>{{ $component->name }}</option>
                                     @endforeach
                                 </optgroup>
                                 @endforeach
-                                @foreach($componentsOutGroups as $component)
+                                @foreach($components_out_groups as $component)
                                 <option value='{{ $component->id }}'>{{ $component->name }}</option>
                                 @endforeach
                             </select>

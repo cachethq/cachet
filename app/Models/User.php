@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Cachet\Models;
 
+use AltThree\Validator\ValidatingTrait;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
@@ -18,7 +19,6 @@ use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Hash;
-use Watson\Validating\ValidatingTrait;
 
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract
 {
@@ -29,9 +29,9 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      *
      * @var string[]
      */
-    protected $rules = [
-        'username' => ['required', 'regex:/\A(?!.*[:;]-\))[ -~]+\z/', 'unique:users'],
-        'email'    => 'required|email|unique:users',
+    public $rules = [
+        'username' => ['required', 'regex:/\A(?!.*[:;]-\))[ -~]+\z/'],
+        'email'    => 'required|email',
         'password' => 'required',
     ];
 

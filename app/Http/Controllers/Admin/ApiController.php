@@ -66,9 +66,7 @@ class ApiController extends AbstractController
         $groupData = Binput::get('ids');
 
         foreach ($groupData as $order => $groupId) {
-            ComponentGroup::find($groupId)->update([
-                'order' => $order + 1,
-            ]);
+            ComponentGroup::find($groupId)->update(['order' => $order + 1]);
         }
 
         return $groupData;
@@ -85,12 +83,10 @@ class ApiController extends AbstractController
     {
         $templateSlug = Binput::get('slug');
 
-        $template = IncidentTemplate::where('slug', $templateSlug)->first();
-
-        if ($template) {
+        if ($template = IncidentTemplate::where('slug', $templateSlug)->first()) {
             return $template;
         }
 
-        throw new ModelNotFoundException('Incident template for '.$templateSlug.' could not be found.');
+        throw new ModelNotFoundException("Incident template for $templateSlug could not be found.");
     }
 }

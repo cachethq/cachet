@@ -92,21 +92,18 @@ class HomeController extends AbstractController
         $componentGroups = ComponentGroup::whereIn('id', $usedComponentGroups)->orderBy('order')->get();
         $ungroupedComponents = Component::where('group_id', 0)->orderBy('order')->orderBy('created_at')->get();
 
-        $canPageBackward = Incident::notScheduled()->where('created_at', '<', $startDate->format('Y-m-d'))->count() != 0;
-
-        return View::make('index', [
-            'componentGroups'      => $componentGroups,
-            'ungroupedComponents'  => $ungroupedComponents,
-            'displayMetrics'       => $displayMetrics,
-            'metrics'              => $metrics,
-            'allIncidents'         => $allIncidents,
-            'scheduledMaintenance' => $scheduledMaintenance,
-            'aboutApp'             => Markdown::convertToHtml(Setting::get('app_about')),
-            'canPageForward'       => (bool) $today->gt($startDate),
-            'canPageBackward'      => $canPageBackward,
-            'previousDate'         => $startDate->copy()->subDays($daysToShow)->toDateString(),
-            'nextDate'             => $startDate->copy()->addDays($daysToShow)->toDateString(),
-            'page_title'           => Setting::get('app_name'),
-        ]);
+        return View::make('index')
+            ->withComponentGroups($componentGroups)
+            ->withUngroupedComponents($ungroupedComponents)
+            ->withDisplayMetrics($displayMetrics)
+            ->withMetrics($metrics)
+            ->withAllIncidents($allIncidents)
+            ->withScheduledMaintenance($scheduledMaintenance)
+            ->withAboutApp(Markdown::convertToHtml(Setting::get('app_about')))
+            ->withCanPageForward((bool) $today->gt($startDate))
+            ->withCanPageBackward(Incident::notScheduled()->where('created_at', '<', $startDate->format('Y-m-d'))->count() > 0)
+            ->withPreviousDate($startDate->copy()->subDays($daysToShow)->toDateString())
+            ->withNextDate($startDate->copy()->addDays($daysToShow)->toDateString())
+            ->withPageTitle(Setting::get('app_name'));
     }
 }
