@@ -116,7 +116,7 @@ class MetricController extends AbstractController
             return Redirect::back()->withInput(Binput::all())
                 ->with('title', sprintf(
                     '%s %s',
-                    trans('dashboard.notifications.awesome'),
+                    trans('dashboard.notifications.whoops'),
                     trans('dashboard.metrics.points.add.failure')
                 ))
                 ->with('errors', $point->getErrors());
@@ -176,7 +176,7 @@ class MetricController extends AbstractController
             return Redirect::back()->withInput(Binput::all())
                 ->with('title', sprintf(
                     '<strong>%s</strong>',
-                    trans('dashboard.notifications.awesome')
+                    trans('dashboard.notifications.whoops')
                 ))
                 ->with('errors', $metric->getErrors());
         }
