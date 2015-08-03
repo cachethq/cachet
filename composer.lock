@@ -1128,16 +1128,16 @@
         },
         {
             "name": "graham-campbell/throttle",
-            "version": "v4.1.0",
+            "version": "v4.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Throttle.git",
-                "reference": "d708acbea68a560c66fcd4657dba1a42f4b3ce9d"
+                "reference": "35ca0b1e90f7eaf20251cc6005b93462413e2858"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Throttle/zipball/d708acbea68a560c66fcd4657dba1a42f4b3ce9d",
-                "reference": "d708acbea68a560c66fcd4657dba1a42f4b3ce9d",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Throttle/zipball/35ca0b1e90f7eaf20251cc6005b93462413e2858",
+                "reference": "35ca0b1e90f7eaf20251cc6005b93462413e2858",
                 "shasum": ""
             },
             "require": {
@@ -1185,7 +1185,7 @@
                 "throttle",
                 "throttling"
             ],
-            "time": "2015-06-26 17:35:00"
+            "time": "2015-08-03 13:40:11"
         },
         {
             "name": "guzzlehttp/guzzle",
