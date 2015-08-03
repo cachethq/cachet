@@ -161,7 +161,6 @@ return [
         'McCool\LaravelAutoPresenter\LaravelAutoPresenterServiceProvider',
         'PragmaRX\Google2FA\Vendor\Laravel\ServiceProvider',
         'Roumen\Feed\FeedServiceProvider',
-        'Barryvdh\Cors\CorsServiceProvider',
 
         /*
          * Application Service Providers...
