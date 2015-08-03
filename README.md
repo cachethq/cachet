@@ -112,6 +112,12 @@ Run Cachet:
 $ docker run -d --name cachet --link mysql:mysql -p 80:8000 -e DB_HOST=mysql -e DB_DATABASE=$DB_DATABASE -e DB_USERNAME=$DB_USERNAME -e DB_PASSWORD=$DB_PASSWORD cachethq/cachet:latest
 ```
 
+You can optionally install predis to enable usage of the various redis drivers:
+
+```bash
+$ docker exec -i cachet php composer.phar require predis/predis
+```
+
 Now go to `http://<ipdockerisboundto>/setup` and have fun!
 
 Note: When running in production you should ensure that you enable SSL.
