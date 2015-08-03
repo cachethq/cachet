@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Admin;
 
+use AltThree\Validator\ValidationException;
 use CachetHQ\Cachet\Http\Controllers\AbstractController;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
@@ -57,11 +58,10 @@ class ComponentController extends AbstractController
 
         $this->subMenu['components']['active'] = true;
 
-        return View::make('dashboard.components.index')->with([
-            'page_title' => trans_choice('dashboard.components.components', 2).' - '.trans('dashboard.dashboard'),
-            'components' => $components,
-            'sub_menu'   => $this->subMenu,
-        ]);
+        return View::make('dashboard.components.index')
+            ->withPageTitle(trans_choice('dashboard.components.components', 2).' - '.trans('dashboard.dashboard'))
+            ->withComponents($components)
+            ->withSubMenu($this->subMenu);
     }
 
     /**
@@ -73,11 +73,10 @@ class ComponentController extends AbstractController
     {
         $this->subMenu['groups']['active'] = true;
 
-        return View::make('dashboard.components.groups.index')->with([
-            'page_title' => trans_choice('dashboard.components.groups.groups', 2).' - '.trans('dashboard.dashboard'),
-            'groups'     => ComponentGroup::orderBy('order')->get(),
-            'sub_menu'   => $this->subMenu,
-        ]);
+        return View::make('dashboard.components.groups.index')
+            ->withPageTitle(trans_choice('dashboard.components.groups.groups', 2).' - '.trans('dashboard.dashboard'))
+            ->withGroups(ComponentGroup::orderBy('order')->get())
+            ->withSubMenu($this->subMenu);
     }
 
     /**
@@ -91,18 +90,12 @@ class ComponentController extends AbstractController
     {
         $groups = ComponentGroup::all();
 
-        $pageTitle = sprintf(
-            '"%s" - %s - %s',
-            $component->name,
-            trans('dashboard.components.edit.title'),
-            trans('dashboard.dashboard')
-        );
+        $pageTitle = sprintf('"%s" - %s - %s', $component->name, trans('dashboard.components.edit.title'), trans('dashboard.dashboard'));
 
-        return View::make('dashboard.components.edit')->with([
-            'page_title' => $pageTitle,
-            'component'  => $component,
-            'groups'     => $groups,
-        ]);
+        return View::make('dashboard.components.edit')
+            ->withPageTitle($pageTitle)
+            ->withComponent($component)
+            ->withGroups($groups);
     }
 
     /**
@@ -117,16 +110,13 @@ class ComponentController extends AbstractController
         $_component = Binput::get('component');
         $tags = array_pull($_component, 'tags');
 
-        $component->update($_component);
-
-        if (!$component->isValid()) {
-            return Redirect::back()->withInput(Binput::all())
-                ->with('title', sprintf(
-                    '%s %s',
-                    trans('dashboard.notifications.whoops'),
-                    trans('dashboard.components.edit.failure')
-                ))
-                ->with('errors', $component->getErrors());
+        try {
+            $component->update($_component);
+        } catch (ValidationException $e) {
+            return Redirect::back()
+                ->withInput(Binput::all())
+                ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.components.edit.failure')))
+                ->withErrors($e->getMessageBag());
         }
 
         // The component was added successfully, so now let's deal with the tags.
@@ -134,20 +124,13 @@ class ComponentController extends AbstractController
 
         // For every tag, do we need to create it?
         $componentTags = array_map(function ($taggable) use ($component) {
-            return Tag::firstOrCreate([
-                'name' => $taggable,
-            ])->id;
+            return Tag::firstOrCreate(['name' => $taggable])->id;
         }, $tags);
 
         $component->tags()->sync($componentTags);
 
-        $successMsg = sprintf(
-            '%s %s',
-            trans('dashboard.notifications.awesome'),
-            trans('dashboard.components.edit.success')
-        );
-
-        return Redirect::back()->with('success', $successMsg);
+        return Redirect::back()
+            ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.components.edit.success')));
     }
 
     /**
@@ -157,12 +140,9 @@ class ComponentController extends AbstractController
      */
     public function showAddComponent()
     {
-        $groups = ComponentGroup::all();
-
-        return View::make('dashboard.components.add')->with([
-            'page_title' => trans('dashboard.components.add.title').' - '.trans('dashboard.dashboard'),
-            'groups'     => $groups,
-        ]);
+        return View::make('dashboard.components.add')
+            ->withPageTitle(trans('dashboard.components.add.title').' - '.trans('dashboard.dashboard'))
+            ->withGroups(ComponentGroup::all());
     }
 
     /**
@@ -176,16 +156,13 @@ class ComponentController extends AbstractController
         // We deal with tags separately.
         $tags = array_pull($_component, 'tags');
 
-        $component = Component::create($_component);
-
-        if (!$component->isValid()) {
-            return Redirect::back()->withInput(Binput::all())
-                ->with('title', sprintf(
-                    '%s %s',
-                    trans('dashboard.notifications.whoops'),
-                    trans('dashboard.components.add.failure')
-                ))
-                ->with('errors', $component->getErrors());
+        try {
+            $component = Component::create($_component);
+        } catch (ValidationException $e) {
+            return Redirect::back()
+                ->withInput(Binput::all())
+                ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.components.add.failure')))
+                ->withErrors($e->getMessageBag());
         }
 
         // The component was added successfully, so now let's deal with the tags.
@@ -193,20 +170,13 @@ class ComponentController extends AbstractController
 
         // For every tag, do we need to create it?
         $componentTags = array_map(function ($taggable) use ($component) {
-            return Tag::firstOrCreate([
-                'name' => $taggable,
-            ])->id;
+            return Tag::firstOrCreate(['name' => $taggable])->id;
         }, $tags);
 
         $component->tags()->sync($componentTags);
 
-        $successMsg = sprintf(
-            '%s %s',
-            trans('dashboard.notifications.awesome'),
-            trans('dashboard.components.add.success')
-        );
-
-        return Redirect::back()->with('success', $successMsg);
+        return Redirect::back()
+            ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.components.add.success')));
     }
 
     /**
@@ -233,9 +203,7 @@ class ComponentController extends AbstractController
     public function deleteComponentGroupAction(ComponentGroup $group)
     {
         $group->components->map(function ($component) {
-            $component->update([
-                'group_id' => 0,
-            ]);
+            $component->update(['group_id' => 0]);
         });
 
         $group->delete();
@@ -250,9 +218,8 @@ class ComponentController extends AbstractController
      */
     public function showAddComponentGroup()
     {
-        return View::make('dashboard.components.groups.add')->with([
-            'page_title' => trans('dashboard.components.groups.add.title').' - '.trans('dashboard.dashboard'),
-        ]);
+        return View::make('dashboard.components.groups.add')
+            ->withPageTitle(trans('dashboard.components.groups.add.title').' - '.trans('dashboard.dashboard'));
     }
 
     /**
@@ -264,10 +231,9 @@ class ComponentController extends AbstractController
      */
     public function showEditComponentGroup(ComponentGroup $group)
     {
-        return View::make('dashboard.components.groups.edit')->with([
-            'page_title' => trans('dashboard.components.groups.edit.title').' - '.trans('dashboard.dashboard'),
-            'group'      => $group,
-        ]);
+        return View::make('dashboard.components.groups.edit')
+            ->withPageTitle(trans('dashboard.components.groups.edit.title').' - '.trans('dashboard.dashboard'))
+            ->withGroup($group);
     }
 
     /**
@@ -277,25 +243,17 @@ class ComponentController extends AbstractController
      */
     public function postAddComponentGroup()
     {
-        $group = ComponentGroup::create(Binput::get('group'));
-
-        if (!$group->isValid()) {
-            return Redirect::back()->withInput(Binput::all())
-                ->with('title', sprintf(
-                    '%s %s',
-                    trans('dashboard.notifications.whoops'),
-                    trans('dashboard.components.groups.add.failure')
-                ))
-                ->with('errors', $group->getErrors());
+        try {
+            $group = ComponentGroup::create(Binput::get('group'));
+        } catch (ValidationException $e) {
+            return Redirect::back()
+                ->withInput(Binput::all())
+                ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.components.groups.add.failure')))
+                ->withErrors($e->getMessageBag());
         }
 
-        $successMsg = sprintf(
-            '%s %s',
-            trans('dashboard.notifications.awesome'),
-            trans('dashboard.components.groups.add.success')
-        );
-
-        return Redirect::back()->with('success', $successMsg);
+        return Redirect::back()
+            ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.components.groups.add.success')));
     }
 
     /**
@@ -308,24 +266,17 @@ class ComponentController extends AbstractController
     public function updateComponentGroupAction(ComponentGroup $group)
     {
         $groupData = Binput::get('group');
-        $group->update($groupData);
 
-        if (!$group->isValid()) {
-            return Redirect::back()->withInput(Binput::all())
-                ->with('title', sprintf(
-                    '%s %s',
-                    trans('dashboard.notifications.whoops'),
-                    trans('dashboard.components.groups.edit.failure')
-                ))
-                ->with('errors', $group->getErrors());
+        try {
+            $group->update($groupData);
+        } catch (ValidationException $e) {
+            return Redirect::back()
+                ->withInput(Binput::all())
+                ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.components.groups.edit.failure')))
+                ->withErrors($e->getMessageBag());
         }
 
-        $successMsg = sprintf(
-            '%s %s',
-            trans('dashboard.notifications.awesome'),
-            trans('dashboard.components.groups.edit.success')
-        );
-
-        return Redirect::back()->with('success', $successMsg);
+        return Redirect::back()
+            ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.components.groups.edit.success')));
     }
 }

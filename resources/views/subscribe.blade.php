@@ -11,8 +11,8 @@
     <div class="row app-banner">
         <div class="col-md-12 text-center">
             <?php $bannerType = Setting::get('app_banner_type') ?>
-            @if($appUrl = Setting::get('app_domain'))
-            <a href="{{ $appUrl }}"><img src="data:{{ $bannerType }};base64, {{ $bannerImage}}" class="banner-image img-responsive"></a>
+            @if($app_url = Setting::get('app_domain'))
+            <a href="{{ $app_url }}"><img src="data:{{ $bannerType }};base64, {{ $bannerImage}}" class="banner-image img-responsive"></a>
             @else
             <img src="data:{{ $bannerType }};base64, {{ $bannerImage}}" class="banner-image img-responsive">
             @endif
@@ -20,10 +20,10 @@
     </div>
     @endif
 
-    @if($aboutApp)
+    @if($about_app)
     <div class="about-app">
         <h1>{{ trans('cachet.about_this_site') }}</h1>
-        <p>{!! $aboutApp !!}</p>
+        <p>{!! $about_app !!}</p>
     </div>
     @endif
 

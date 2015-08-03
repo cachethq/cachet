@@ -64,10 +64,6 @@ class ComponentController extends AbstractApiController
             throw new BadRequestHttpException();
         }
 
-        if (!$component->isValid()) {
-            throw new BadRequestHttpException();
-        }
-
         if (Binput::has('tags')) {
             // The component was added successfully, so now let's deal with the tags.
             $tags = preg_split('/ ?, ?/', Binput::get('tags'));
@@ -94,9 +90,9 @@ class ComponentController extends AbstractApiController
      */
     public function putComponent(Component $component)
     {
-        $component->update(Binput::except('tags'));
-
-        if (!$component->isValid('updating')) {
+        try {
+            $component->update(Binput::except('tags'));
+        } catch (Exception $e) {
             throw new BadRequestHttpException();
         }
 
@@ -105,9 +101,7 @@ class ComponentController extends AbstractApiController
 
             // For every tag, do we need to create it?
             $componentTags = array_map(function ($taggable) use ($component) {
-                return Tag::firstOrCreate([
-                    'name' => $taggable,
-                ])->id;
+                return Tag::firstOrCreate(['name' => $taggable])->id;
             }, $tags);
 
             $component->tags()->sync($componentTags);

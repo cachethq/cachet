@@ -41,6 +41,8 @@ class SetupController extends AbstractController
 
     /**
      * Create a new setup controller instance.
+     *
+     * @return void
      */
     public function __construct()
     {
@@ -59,11 +61,10 @@ class SetupController extends AbstractController
             $this->keyGenerate();
         }
 
-        return View::make('setup')->with([
-            'page_title'   => trans('setup.setup'),
-            'cacheDrivers' => $this->cacheDrivers,
-            'appUrl'       => Request::root(),
-        ]);
+        return View::make('setup')
+            ->withPageTitle(trans('setup.setup'))
+            ->withCacheDrivers($this->cacheDrivers)
+            ->withAppUrl(Request::root());
     }
 
     /**
@@ -82,9 +83,9 @@ class SetupController extends AbstractController
 
         if ($v->passes()) {
             return Response::json(['status' => 1]);
-        } else {
-            return Response::json(['errors' => $v->messages()], 400);
         }
+
+        return Response::json(['errors' => $v->getMessageBag()], 400);
     }
 
     /**
@@ -108,9 +109,9 @@ class SetupController extends AbstractController
 
         if ($v->passes()) {
             return Response::json(['status' => 1]);
-        } else {
-            return Response::json(['errors' => $v->messages()], 400);
         }
+
+        return Response::json(['errors' => $v->getMessageBag()], 400);
     }
 
     /**
@@ -171,13 +172,13 @@ class SetupController extends AbstractController
             }
 
             return Redirect::to('dashboard');
-        } else {
-            if (Request::ajax()) {
-                return Response::json(['errors' => $v->messages()], 400);
-            }
-
-            return Redirect::back()->withInput()->with('errors', $v->messages());
         }
+
+        if (Request::ajax()) {
+            return Response::json(['errors' => $v->getMessageBag()], 400);
+        }
+
+        return Redirect::back()->withInput()->withErrors($v->getMessageBag());
     }
 
     /**
@@ -185,6 +186,8 @@ class SetupController extends AbstractController
      *
      * @param string $key
      * @param mixed  $value
+     *
+     * @return void
      */
     protected function writeEnv($key, $value)
     {
@@ -200,6 +203,8 @@ class SetupController extends AbstractController
 
     /**
      * Generate the app.key value.
+     *
+     * @return void
      */
     protected function keyGenerate()
     {

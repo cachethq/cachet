@@ -17,11 +17,11 @@
                     <fieldset>
                         <div class="form-group">
                             <label>{{ trans('forms.user.username') }}</label>
-                            <input type="text" class="form-control" name="username" value="{{ $loggedUser->username }}" required>
+                            <input type="text" class="form-control" name="username" value="{{ $current_user->username }}" required>
                         </div>
                         <div class="form-group">
                             <label>{{ trans('forms.user.email') }}</label>
-                            <input type="email" class="form-control" name="email" value="{{ $loggedUser->email }}" required>
+                            <input type="email" class="form-control" name="email" value="{{ $current_user->email }}" required>
                         </div>
                         <div class="form-group">
                             <label>{{ trans('forms.user.password') }}</label>
@@ -31,8 +31,8 @@
                         <div class="form-group">
                             <label>{{ trans('forms.user.api-token') }}</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" name="api_key" disabled value="{{ $loggedUser->api_key }}">
-                                <a href="/dashboard/user/{{ $loggedUser->id }}/api/regen" class="input-group-addon btn btn-danger">{{ trans('cachet.api.regenerate') }}</a>
+                                <input type="text" class="form-control" name="api_key" disabled value="{{ $current_user->api_key }}">
+                                <a href="/dashboard/user/{{ $current_user->id }}/api/regen" class="input-group-addon btn btn-danger">{{ trans('cachet.api.regenerate') }}</a>
                             </div>
                             <span class="help-block">{{ trans('forms.user.api-token-help') }}</span>
                         </div>
@@ -40,17 +40,17 @@
                         <div class="form-group">
                             <label class="checkbox-inline">
                                 <input type="hidden" name="google2fa" value="0">
-                                <input type='checkbox' name="google2fa" value="1" {{ $loggedUser->hasTwoFactor ? "checked" : "" }}>
+                                <input type='checkbox' name="google2fa" value="1" {{ $current_user->hasTwoFactor ? "checked" : "" }}>
                                 {{ trans('forms.setup.enable_google2fa') }}
                             </label>
                         </div>
-                        @if($loggedUser->hasTwoFactor)
+                        @if($current_user->hasTwoFactor)
                         <div class="form-group">
                             <?php
                             $google2fa_url = PragmaRX\Google2FA\Vendor\Laravel\Facade::getQRCodeGoogleUrl(
                                 'CachetHQ',
-                                $loggedUser->email,
-                                $loggedUser->google_2fa_secret
+                                $current_user->email,
+                                $current_user->google_2fa_secret
                             );
                             ?>
                             <img src="{{ $google2fa_url }}" class="img-responsive">

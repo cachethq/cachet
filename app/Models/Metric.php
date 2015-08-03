@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Cachet\Models;
 
+use AltThree\Validator\ValidatingTrait;
 use CachetHQ\Cachet\Facades\Setting as SettingFacade;
 use CachetHQ\Cachet\Presenters\MetricPresenter;
 use DateInterval;
@@ -19,7 +20,6 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 use Jenssegers\Date\Date;
 use McCool\LaravelAutoPresenter\HasPresenter;
-use Watson\Validating\ValidatingTrait;
 
 class Metric extends Model implements HasPresenter
 {
@@ -45,7 +45,7 @@ class Metric extends Model implements HasPresenter
      *
      * @var string[]
      */
-    protected $rules = [
+    public $rules = [
         'name'          => 'required',
         'suffix'        => 'required',
         'display_chart' => 'boolean',

@@ -26,13 +26,13 @@
                         </div>
                         <div class="form-group">
                             <label>{{ trans('forms.user.password') }}</label>
-                            <input type="password" class="form-control" name="password" value="" {{ !$loggedUser->isAdmin ? "disabled": "" }}>
+                            <input type="password" class="form-control" name="password" value="" {{ !$current_user->isAdmin ? "disabled": "" }}>
                         </div>
                     </fieldset>
 
                     <div class="form-group">
                         <button type="submit" class="btn btn-success">{{ trans('forms.update') }}</button>
-                        @if($loggedUser->isAdmin)
+                        @if($current_user->isAdmin)
                         <a class="btn btn-danger" href="/dashboard/user/{{ $user->id }}/api/regen">{{ trans('cachet.api.revoke') }}</a>
                         @endif
                     </div>

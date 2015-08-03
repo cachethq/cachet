@@ -17,8 +17,8 @@
     <div class="row app-banner">
         <div class="col-md-12 text-center">
             <?php $bannerType = Setting::get('app_banner_type') ?>
-            @if($appUrl = Setting::get('app_domain'))
-            <a href="{{ $appUrl }}"><img src="data:{{ $bannerType }};base64, {{ $bannerImage}}" class="banner-image img-responsive"></a>
+            @if($app_url = Setting::get('app_domain'))
+            <a href="{{ $app_url }}"><img src="data:{{ $bannerType }};base64, {{ $bannerImage}}" class="banner-image img-responsive"></a>
             @else
             <img src="data:{{ $bannerType }};base64, {{ $bannerImage}}" class="banner-image img-responsive">
             @endif
@@ -30,26 +30,26 @@
         <div class="alert alert-{{ $systemStatus }}">{{ $systemMessage }}</div>
     </div>
 
-    @if($aboutApp)
+    @if($about_app)
     <div class="about-app">
         <h1>{{ trans('cachet.about_this_site') }}</h1>
-        <p>{!! $aboutApp !!}</p>
+        <p>{!! $about_app !!}</p>
     </div>
     @endif
 
-    @if(!$componentGroups->isEmpty() || !$ungroupedComponents->isEmpty())
+    @if(!$component_groups->isEmpty() || !$ungrouped_components->isEmpty())
     <div class="section-components">
         @include('partials.components')
     </div>
     @endif
 
-    @if($displayMetrics && Setting::get('display_graphs'))
+    @if($display_metrics && Setting::get('display_graphs'))
     <div class="section-metrics">
         @include('partials.metrics')
     </div>
     @endif
 
-    @if(!$scheduledMaintenance->isEmpty())
+    @if(!$scheduled_maintenance->isEmpty())
     <div class="section-scheduled">
         @include('partials.schedule')
     </div>
@@ -57,23 +57,23 @@
 
     <div class="section-timeline">
         <h1>{{ trans('cachet.incidents.past') }}</h1>
-        @foreach($allIncidents as $date => $incidents)
+        @foreach($all_incidents as $date => $incidents)
         @include('partials.incidents', [compact($date), compact($incidents)])
         @endforeach
     </div>
 
     <nav>
         <ul class="pager">
-            @if($canPageBackward)
+            @if($can_page_backward)
             <li class="previous">
-                <a href="{{ route('status-page') }}?start_date={{ $previousDate }}">
+                <a href="{{ route('status-page') }}?start_date={{ $previous_date }}">
                     <span aria-hidden="true">&larr;</span> {{ trans('cachet.incidents.previous_week') }}
                 </a>
             </li>
             @endif
-            @if($canPageForward)
+            @if($can_page_forward)
             <li class="next">
-                <a href="{{ route('status-page') }}?start_date={{ $nextDate }}">
+                <a href="{{ route('status-page') }}?start_date={{ $next_date }}">
                     {{ trans('cachet.incidents.next_week') }} <span aria-hidden="true">&rarr;</span>
                 </a>
             </li>

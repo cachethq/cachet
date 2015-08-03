@@ -19,9 +19,6 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\View;
 use PragmaRX\Google2FA\Vendor\Laravel\Facade as Google2FA;
 
-/**
- * Logs users into their account.
- */
 class AuthController extends AbstractController
 {
     /**
@@ -31,9 +28,8 @@ class AuthController extends AbstractController
      */
     public function showLogin()
     {
-        return View::make('auth.login')->with([
-            'page_title' => trans('dashboard.login.login'),
-        ]);
+        return View::make('auth.login')
+            ->withPageTitle(trans('dashboard.login.login'));
     }
 
     /**
@@ -64,7 +60,7 @@ class AuthController extends AbstractController
 
         return Redirect::back()
             ->withInput(Binput::except('password'))
-            ->with('error', trans('forms.login.invalid'));
+            ->withError(trans('forms.login.invalid'));
     }
 
     /**
@@ -101,11 +97,11 @@ class AuthController extends AbstractController
                 // Failed login, log back out.
                 Auth::logout();
 
-                return Redirect::route('login')->with('error', trans('forms.login.invalid-token'));
+                return Redirect::route('login')->withError(trans('forms.login.invalid-token'));
             }
         }
 
-        return Redirect::route('login')->with('error', trans('forms.login.invalid-token'));
+        return Redirect::route('login')->withError(trans('forms.login.invalid-token'));
     }
 
     /**

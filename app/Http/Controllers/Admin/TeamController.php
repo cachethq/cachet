@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Admin;
 
+use AltThree\Validator\ValidationException;
 use CachetHQ\Cachet\Http\Controllers\AbstractController;
 use CachetHQ\Cachet\Models\User;
 use GrahamCampbell\Binput\Facades\Binput;
@@ -28,10 +29,9 @@ class TeamController extends AbstractController
     {
         $team = User::all();
 
-        return View::make('dashboard.team.index')->with([
-            'page_title'  => trans('dashboard.team.team').' - '.trans('dashboard.dashboard'),
-            'teamMembers' => $team,
-        ]);
+        return View::make('dashboard.team.index')
+            ->withPageTitle(trans('dashboard.team.team').' - '.trans('dashboard.dashboard'))
+            ->withTeamMembers($team);
     }
 
     /**
@@ -41,10 +41,9 @@ class TeamController extends AbstractController
      */
     public function showTeamMemberView(User $user)
     {
-        return View::make('dashboard.team.edit')->with([
-            'page_title' => trans('dashboard.team.edit.title').' - '.trans('dashboard.dashboard'),
-            'user'       => $user,
-        ]);
+        return View::make('dashboard.team.edit')
+            ->withPageTitle(trans('dashboard.team.edit.title').' - '.trans('dashboard.dashboard'))
+            ->withUser($user);
     }
 
     /**
@@ -54,9 +53,8 @@ class TeamController extends AbstractController
      */
     public function showAddTeamMemberView()
     {
-        return View::make('dashboard.team.add')->with([
-            'page_title' => trans('dashboard.team.add.title').' - '.trans('dashboard.dashboard'),
-        ]);
+        return View::make('dashboard.team.add')
+            ->withPageTitle(trans('dashboard.team.add.title').' - '.trans('dashboard.dashboard'));
     }
 
     /**
@@ -66,25 +64,17 @@ class TeamController extends AbstractController
      */
     public function postAddUser()
     {
-        $user = User::create(Binput::all());
-
-        if (!$user->isValid()) {
-            return Redirect::back()->withInput(Binput::except('password'))
-                ->with('title', sprintf(
-                    '%s %s',
-                    trans('dashboard.notifications.whoops'),
-                    trans('dashboard.team.add.failure')
-                ))
-                ->with('errors', $user->getErrors());
+        try {
+            User::create(Binput::all());
+        } catch (ValidationException $e) {
+            return Redirect::back()
+                ->withInput(Binput::except('password'))
+                ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.team.add.failure')))
+                ->withErrors($e->getMessageBag());
         }
 
-        $successMsg = sprintf(
-            '%s %s',
-            trans('dashboard.notifications.awesome'),
-            trans('dashboard.team.add.success')
-        );
-
-        return Redirect::back()->with('success', $successMsg);
+        return Redirect::back()
+            ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.team.add.success')));
     }
 
     /**
@@ -104,24 +94,16 @@ class TeamController extends AbstractController
             unset($items['password']);
         }
 
-        $user->update($items);
-
-        if (!$user->isValid()) {
-            return Redirect::back()->withInput(Binput::except('password'))
-                ->with('title', sprintf(
-                    '%s %s',
-                    trans('dashboard.notifications.whoops'),
-                    trans('dashboard.team.edit.failure')
-                ))
-                ->with('errors', $user->getErrors());
+        try {
+            $user->update($items);
+        } catch (ValidationException $e) {
+            return Redirect::back()
+                ->withInput(Binput::except('password'))
+                ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.team.edit.failure')))
+                ->withErrors($e->getMessageBag());
         }
 
-        $successMsg = sprintf(
-            '%s %s',
-            trans('dashboard.notifications.awesome'),
-            trans('dashboard.team.edit.success')
-        );
-
-        return Redirect::back()->with('success', $successMsg);
+        return Redirect::back()
+            ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.team.edit.success')));
     }
 }

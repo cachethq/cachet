@@ -38,13 +38,13 @@
                             </div>
                         </div>
 
-                        @if(! $unsecureUsers->isEmpty())
+                        @if(!$unsecure_users->isEmpty())
                         <hr>
 
                         <div class="panel panel-danger">
                             <div class="panel-heading">{{ trans('dashboard.settings.security.two-factor') }}</div>
                             <div class="list-group">
-                                @foreach($unsecureUsers as $user)
+                                @foreach($unsecure_users as $user)
                                 <div class="list-group-item">
                                     <strong>{{ $user->username }}</strong>
                                     <span class="label label-danger pull-right"><i class="ion-ios-unlocked"></i></span>

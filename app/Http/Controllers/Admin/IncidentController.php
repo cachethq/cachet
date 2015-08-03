@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Admin;
 
+use AltThree\Validator\ValidationException;
 use CachetHQ\Cachet\Events\IncidentHasReportedEvent;
 use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Cachet\Http\Controllers\AbstractController;
@@ -68,10 +69,9 @@ class IncidentController extends AbstractController
     {
         $incidents = Incident::notScheduled()->orderBy('created_at', 'desc')->get();
 
-        return View::make('dashboard.incidents.index')->with([
-            'page_title' => trans('dashboard.incidents.incidents').' - '.trans('dashboard.dashboard'),
-            'incidents'  => $incidents,
-        ]);
+        return View::make('dashboard.incidents.index')
+            ->withPageTitle(trans('dashboard.incidents.incidents').' - '.trans('dashboard.dashboard'))
+            ->withIncidents($incidents);
     }
 
     /**
@@ -81,15 +81,11 @@ class IncidentController extends AbstractController
      */
     public function showAddIncident()
     {
-        $componentsInGroups = ComponentGroup::with('components')->get();
-        $componentsOutGroups = Component::where('group_id', 0)->get();
-
-        return View::make('dashboard.incidents.add')->with([
-            'page_title'          => trans('dashboard.incidents.add.title').' - '.trans('dashboard.dashboard'),
-            'componentsInGroups'  => $componentsInGroups,
-            'componentsOutGroups' => $componentsOutGroups,
-            'incidentTemplates'   => IncidentTemplate::all(),
-        ]);
+        return View::make('dashboard.incidents.add')
+            ->withPageTitle(trans('dashboard.incidents.add.title').' - '.trans('dashboard.dashboard'))
+            ->withComponentsInGroups(ComponentGroup::with('components')->get())
+            ->withComponentsOutGroups(Component::where('group_id', 0)->get())
+            ->withIncidentTemplates(IncidentTemplate::all());
     }
 
     /**
@@ -99,10 +95,9 @@ class IncidentController extends AbstractController
      */
     public function showTemplates()
     {
-        return View::make('dashboard.incidents.templates.index')->with([
-            'page_title'        => trans('dashboard.incidents.templates.title').' - '.trans('dashboard.dashboard'),
-            'incidentTemplates' => IncidentTemplate::all(),
-        ]);
+        return View::make('dashboard.incidents.templates.index')
+            ->withPageTitle(trans('dashboard.incidents.templates.title').' - '.trans('dashboard.dashboard'))
+            ->withIncidentTemplates(IncidentTemplate::all());
     }
 
     /**
@@ -123,41 +118,26 @@ class IncidentController extends AbstractController
             unset($incidentData['created_at']);
         }
 
-        $incident = Incident::create($incidentData);
-
-        if (!$incident->isValid()) {
-            return Redirect::back()->withInput(Binput::all())
-                ->with('title', sprintf(
-                    '%s %s',
-                    trans('dashboard.notifications.whoops'),
-                    trans('dashboard.incidents.add.failure')
-                ))
-                ->with('errors', $incident->getErrors());
+        try {
+            $incident = Incident::create($incidentData);
+        } catch (ValidationException $e) {
+            return Redirect::back()
+                ->withInput(Binput::all())
+                ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.incidents.add.failure')))
+                ->withErrors($e->getMessageBag());
         }
 
         // Update the component.
         if (isset($incidentData['component_id']) && (int) $incidentData['component_id'] > 0) {
-            Component::find($incidentData['component_id'])->update([
-                'status' => $componentStatus,
-            ]);
+            Component::find($incidentData['component_id'])->update(['status' => $componentStatus]);
         }
 
-        $successMsg = sprintf(
-            '%s %s',
-            trans('dashboard.notifications.awesome'),
-            trans('dashboard.incidents.add.success')
-        );
-
-        $isEnabled = (bool) Setting::get('enable_subscribers', false);
-        $mailAddress = env('MAIL_ADDRESS', false);
-        $mailFrom = env('MAIL_NAME', false);
-        $subscribersEnabled = $isEnabled && $mailAddress && $mailFrom;
-
-        if (array_get($incidentData, 'notify') && $subscribersEnabled) {
+        if (array_get($incidentData, 'notify') && subscribers_enabled()) {
             event(new IncidentHasReportedEvent($incident));
         }
 
-        return Redirect::back()->with('success', $successMsg);
+        return Redirect::back()
+            ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.incidents.add.success')));
     }
 
     /**
@@ -167,9 +147,8 @@ class IncidentController extends AbstractController
      */
     public function showAddIncidentTemplate()
     {
-        return View::make('dashboard.incidents.templates.add')->with([
-            'page_title' => trans('dashboard.incidents.templates.add.title').' - '.trans('dashboard.dashboard'),
-        ]);
+        return View::make('dashboard.incidents.templates.add')
+            ->withPageTitle(trans('dashboard.incidents.templates.add.title').' - '.trans('dashboard.dashboard'));
     }
 
     /**
@@ -181,10 +160,9 @@ class IncidentController extends AbstractController
      */
     public function showEditTemplateAction(IncidentTemplate $template)
     {
-        return View::make('dashboard.incidents.templates.edit')->with([
-            'page_title' => trans('dashboard.incidents.templates.edit.title').' - '.trans('dashboard.dashboard'),
-            'template'   => $template,
-        ]);
+        return View::make('dashboard.incidents.templates.edit')
+            ->withPageTitle(trans('dashboard.incidents.templates.edit.title').' - '.trans('dashboard.dashboard'))
+            ->withTemplate($template);
     }
 
     /**
@@ -208,26 +186,17 @@ class IncidentController extends AbstractController
      */
     public function createIncidentTemplateAction()
     {
-        $_template = Binput::get('template');
-        $template = IncidentTemplate::create($_template);
-
-        if (!$template->isValid()) {
-            return Redirect::back()->withInput(Binput::all())
-                ->with('title', sprintf(
-                    '%s %s',
-                    trans('dashboard.notifications.whoops'),
-                    trans('dashboard.incidents.templates.add.failure')
-                ))
-                ->with('errors', $template->getErrors());
+        try {
+            IncidentTemplate::create(Binput::get('template'));
+        } catch (ValidationException $e) {
+            return Redirect::back()
+                ->withInput(Binput::all())
+                ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.incidents.templates.add.failure')))
+                ->withErrors($e->getMessageBag());
         }
 
-        $successMsg = sprintf(
-            '%s %s',
-            trans('dashboard.notifications.awesome'),
-            trans('dashboard.incidents.templates.add.success')
-        );
-
-        return Redirect::back()->with('success', $successMsg);
+        return Redirect::back()
+            ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.incidents.templates.add.success')));
     }
 
     /**
@@ -253,15 +222,11 @@ class IncidentController extends AbstractController
      */
     public function showEditIncidentAction(Incident $incident)
     {
-        $componentsInGroups = ComponentGroup::with('components')->get();
-        $componentsOutGroups = Component::where('group_id', 0)->get();
-
-        return View::make('dashboard.incidents.edit')->with([
-            'page_title'          => trans('dashboard.incidents.edit.title').' - '.trans('dashboard.dashboard'),
-            'incident'            => $incident,
-            'componentsInGroups'  => $componentsInGroups,
-            'componentsOutGroups' => $componentsOutGroups,
-        ]);
+        return View::make('dashboard.incidents.edit')
+            ->withPageTitle(trans('dashboard.incidents.edit.title').' - '.trans('dashboard.dashboard'))
+            ->withIncident($incident)
+            ->withComponentsInGroups(ComponentGroup::with('components')->get())
+            ->withComponentsOutGroups(Component::where('group_id', 0)->get());
     }
 
     /**
@@ -283,32 +248,23 @@ class IncidentController extends AbstractController
             unset($incidentData['created_at']);
         }
 
-        $incident->update($incidentData);
-
-        if (!$incident->isValid()) {
-            return Redirect::back()->withInput(Binput::all())
-                ->with('title', sprintf(
-                    '%s %s',
-                    trans('dashboard.notifications.whoops'),
-                    trans('dashboard.incidents.templates.edit.failure')
-                ))
-                ->with('errors', $incident->getErrors());
+        try {
+            $incident->update($incidentData);
+        } catch (ValidationException $e) {
+            return Redirect::back()
+                ->withInput(Binput::all())
+                ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.incidents.templates.edit.failure')))
+                ->withErrors($e->getMessageBag());
         }
 
         $componentStatus = array_pull($incidentData, 'component_status');
+
         if ($incident->component) {
-            $incident->component->update([
-                'status' => $componentStatus,
-            ]);
+            $incident->component->update(['status' => $componentStatus]);
         }
 
-        $successMsg = sprintf(
-            '%s %s',
-            trans('dashboard.notifications.awesome'),
-            trans('dashboard.incidents.edit.success')
-        );
-
-        return Redirect::to('dashboard/incidents')->with('success', $successMsg);
+        return Redirect::to('dashboard/incidents')
+            ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.incidents.edit.success')));
     }
 
     /**
@@ -320,8 +276,15 @@ class IncidentController extends AbstractController
      */
     public function editTemplateAction(IncidentTemplate $template)
     {
-        $template->update(Binput::get('template'));
+        try {
+            $template->update(Binput::get('template'));
+        } catch (ValidationException $e) {
+            return Redirect::back()
+                ->withUpdatedTemplate($template)
+                ->withTemplateErrors($e->getMessageBag()->getErrors());
+        }
 
-        return Redirect::back()->with('updatedTemplate', $template);
+        return Redirect::back()
+            ->withUpdatedTemplate($template);
     }
 }

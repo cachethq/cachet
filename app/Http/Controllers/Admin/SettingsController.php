@@ -68,10 +68,9 @@ class SettingsController extends AbstractController
     {
         $this->subMenu['setup']['active'] = true;
 
-        return View::make('dashboard.settings.app-setup')->with([
-            'page_title' => 'Application Setup - Dashboard',
-            'sub_menu'   => $this->subMenu,
-        ]);
+        return View::make('dashboard.settings.app-setup')
+            ->withPageTitle('Application Setup - Dashboard')
+            ->withSubMenu($this->subMenu);
     }
 
     /**
@@ -83,10 +82,9 @@ class SettingsController extends AbstractController
     {
         $this->subMenu['theme']['active'] = true;
 
-        return View::make('dashboard.settings.theme')->with([
-            'page_title' => 'Theme - Dashboard',
-            'sub_menu'   => $this->subMenu,
-        ]);
+        return View::make('dashboard.settings.theme')
+            ->withPageTitle('Theme - Dashboard')
+            ->withSubMenu($this->subMenu);
     }
 
     /**
@@ -100,11 +98,10 @@ class SettingsController extends AbstractController
 
         $unsecureUsers = User::whereNull('google_2fa_secret')->orWhere('google_2fa_secret', '')->get();
 
-        return View::make('dashboard.settings.security')->with([
-            'page_title'    => 'Security - Dashboard',
-            'sub_menu'      => $this->subMenu,
-            'unsecureUsers' => $unsecureUsers,
-        ]);
+        return View::make('dashboard.settings.security')
+            ->withPageTitle('Security - Dashboard')
+            ->withSubMenu($this->subMenu)
+            ->withUnsecureUsers($unsecureUsers);
     }
 
     /**
@@ -116,10 +113,9 @@ class SettingsController extends AbstractController
     {
         $this->subMenu['stylesheet']['active'] = true;
 
-        return View::make('dashboard.settings.stylesheet')->with([
-            'page_title' => 'Stylesheet - Dashboard',
-            'sub_menu'   => $this->subMenu,
-        ]);
+        return View::make('dashboard.settings.stylesheet')
+            ->withPageTitle('Stylesheet - Dashboard')
+            ->withSubMenu($this->subMenu);
     }
 
     /**
@@ -142,9 +138,7 @@ class SettingsController extends AbstractController
             $maxSize = $file->getMaxFilesize();
 
             if ($file->getSize() > $maxSize) {
-                return Redirect::back()->withErrors(trans('dashboard.settings.app-setup.too-big', [
-                    'size' => $maxSize,
-                ]));
+                return Redirect::back()->withErrors(trans('dashboard.settings.app-setup.too-big', ['size' => $maxSize]));
             }
 
             if (!$file->isValid() || $file->getError()) {
@@ -156,18 +150,10 @@ class SettingsController extends AbstractController
             }
 
             // Store the banner.
-            Setting::firstOrCreate([
-                'name' => 'app_banner',
-            ])->update([
-                'value' => base64_encode(file_get_contents($file->getRealPath())),
-            ]);
+            Setting::firstOrCreate(['name' => 'app_banner'])->update(['value' => base64_encode(file_get_contents($file->getRealPath()))]);
 
             // Store the banner type
-            Setting::firstOrCreate([
-                'name' => 'app_banner_type',
-            ])->update([
-                'value' => $file->getMimeType(),
-            ]);
+            Setting::firstOrCreate(['name' => 'app_banner_type'])->update(['value' => $file->getMimeType()]);
         }
 
         try {
@@ -176,18 +162,15 @@ class SettingsController extends AbstractController
                     $settingValue = rtrim($settingValue, '/');
                 }
 
-                Setting::firstOrCreate([
-                    'name' => $settingName,
-                ])->update([
-                    'value' => $settingValue,
-                ]);
+                Setting::firstOrCreate(['name' => $settingName])->update(['value' => $settingValue]);
             }
         } catch (Exception $e) {
-            return Redirect::back()->with('errors', trans('dashboard.settings.edit.failure'));
+            return Redirect::back()->withErrors(trans('dashboard.settings.edit.failure'));
         }
 
         Lang::setLocale(Binput::get('app_locale'));
 
-        return Redirect::back()->with('success', trans('dashboard.settings.edit.success'));
+        return Redirect::back()
+            ->withSuccess(trans('dashboard.settings.edit.success'));
     }
 }

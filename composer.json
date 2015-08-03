@@ -22,6 +22,7 @@
         "php": "^5.5.9",
         "laravel/framework": "~5.1.6",
         "alt-three/emoji": "^1.0",
+        "alt-three/validator": "^1.2",
         "barryvdh/laravel-cors": "^0.5",
         "doctrine/dbal": "^2.5",
         "fideloper/proxy": "^3.0",
@@ -33,8 +34,7 @@
         "jenssegers/date": "^3.0",
         "mccool/laravel-auto-presenter": "^3.1",
         "pragmarx/google2fa": "^0.5",
-        "roumen/feed": "^2.9",
-        "watson/validating": "^1.0"
+        "roumen/feed": "^2.9"
     },
     "require-dev": {
         "fzaninotto/faker": "^1.5",

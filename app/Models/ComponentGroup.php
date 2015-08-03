@@ -11,8 +11,8 @@
 
 namespace CachetHQ\Cachet\Models;
 
+use AltThree\Validator\ValidatingTrait;
 use Illuminate\Database\Eloquent\Model;
-use Watson\Validating\ValidatingTrait;
 
 class ComponentGroup extends Model
 {
@@ -23,8 +23,8 @@ class ComponentGroup extends Model
      *
      * @var string[]
      */
-    protected $rules = [
-        'name' => 'required|unique:component_groups',
+    public $rules = [
+        'name' => 'required',
     ];
 
     /**
