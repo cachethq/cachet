@@ -12,7 +12,6 @@
 namespace CachetHQ\Cachet\Http\Controllers;
 
 use GrahamCampbell\Binput\Facades\Binput;
-use GrahamCampbell\Throttle\Facades\Throttle;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Request;
@@ -62,8 +61,6 @@ class AuthController extends AbstractController
 
             return Redirect::intended('dashboard');
         }
-
-        Throttle::hit(Request::instance(), 10, 10);
 
         return Redirect::back()
             ->withInput(Binput::except('password'))

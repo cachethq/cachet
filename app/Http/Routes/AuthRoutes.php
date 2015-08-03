@@ -32,7 +32,7 @@ class AuthRoutes
                 ]);
 
                 $router->post('login', [
-                    'middleware' => ['guest', 'csrf', 'login.throttling'],
+                    'middleware' => ['guest', 'csrf', 'throttling:10,10'],
                     'as'         => 'logout',
                     'uses'       => 'AuthController@postLogin',
                 ]);
