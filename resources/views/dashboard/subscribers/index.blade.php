@@ -30,7 +30,7 @@
                     <p>{{ $subscriber->created_at }}</p>
                 </div>
                 <div class="col-xs-3">
-                    @if(is_null($subscriber->verified_at))
+                    @if(is_null($subscriber->getOriginal('verified_at')))
                     <b class="text-danger">{{ trans('dashboard.subscribers.not_verified') }}</b>
                     @else
                     <b class="text-success">{{ trans('dashboard.subscribers.verified') }}</b>
