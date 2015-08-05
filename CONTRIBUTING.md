@@ -2,16 +2,15 @@
 
 ## Creating issues
 
-Issues should be made by using the [issue tracker](https://github.com/cachethq/Cachet/issues).
+Feature requests and bug reports should be made by using the [issue tracker](https://github.com/cachethq/Cachet/issues). Support questions should be directed to our support email; [support@alt-three.com](mailto:support@alt-three.com?subject=Cachet Support).
 
-Things to remember:
-
-- Be descriptive
-- Be respectful of others
+**Always be respectful.** Organization members reserve the right to lock topics if they feel necessary.
 
 ## Languages
 
-When needing to add labels, placeholders or general text, you **must not** write directly into the source file, rather make use of the `./app/lang/` directory. Always provide the English translation and copy your English string to all other languages - making sure that the indentation and alignment of the arrays are updated.
+When needing to add labels, placeholders or general text, you **must not** write directly into the source file, rather make use of the `./resources/lang/` directory.
+
+Always provide the English translation and copy your English string to all other languages - making sure that the indentation and alignment of the arrays are updated.
 
 ## Coding Standards
 
@@ -20,9 +19,9 @@ Please follow existing coding standards:
 ```php
 <?php
 
-namespace Foo\Bar\Controller;
+namespace CachetHQ\Cachet\Controller;
 
-use Foo\Bar\Bar;
+use CachetHQ\Cachet\Bar;
 
 class Foo extends Bar
 {
@@ -50,14 +49,13 @@ class Foo extends Bar
     }
     ```
 - Braces on a new line following: `namespace`, `use`, `function` and `class`.
-- Line lengths have a soft 80 limit and hard 120 length.
 - PHP constants should be in lowercase; `true`, `false` and `null`.
 - Defined constants should always be in uppercase.
 - Never leave trailing spaces at the end of a line.
 - Files should end with one blank line.
 - Do not use `# Bash` style comments.
 - Always add or update Docblocs to functions.
-- If your pull request consists of more than two commits, you **must** squash them into one.
+- We use [StyleCI](https://styleci.io) to automatically check code standards in Pull Requests. If your PR fails the CI check, then apply the supplied patch and re-push.
 
 If you're still unsure, then take a look at existing code.
 
@@ -75,8 +73,6 @@ If you're not particularly fond of the command line, you can get one of GitHub's
 
 If you're feeling adventurous, you can become a Git & GitHub master with the [Git Path on Code School](https://www.codeschool.com/paths/git).
 
-There is always the Cachet Gitter chat to ask any questions you may have:
-
-[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/cachethq/Cachet?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+## .editorconfig
 
 You should also make use of the [.editorconfig](/.editorconfig) file found within the root of the repository. It'll make sure that your editor is setup with the same file settings.
