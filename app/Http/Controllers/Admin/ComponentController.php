@@ -12,15 +12,15 @@
 namespace CachetHQ\Cachet\Http\Controllers\Admin;
 
 use AltThree\Validator\ValidationException;
-use CachetHQ\Cachet\Http\Controllers\AbstractController;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Tag;
 use GrahamCampbell\Binput\Facades\Binput;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 
-class ComponentController extends AbstractController
+class ComponentController extends Controller
 {
     protected $subMenu = [];
 

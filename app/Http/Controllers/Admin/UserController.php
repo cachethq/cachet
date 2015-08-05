@@ -12,15 +12,15 @@
 namespace CachetHQ\Cachet\Http\Controllers\Admin;
 
 use AltThree\Validator\ValidationException;
-use CachetHQ\Cachet\Http\Controllers\AbstractController;
 use CachetHQ\Cachet\Models\User;
 use GrahamCampbell\Binput\Facades\Binput;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 use PragmaRX\Google2FA\Vendor\Laravel\Facade as Google2FA;
 
-class UserController extends AbstractController
+class UserController extends Controller
 {
     /**
      * Shows the user view.

@@ -11,15 +11,15 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Admin;
 
-use CachetHQ\Cachet\Http\Controllers\AbstractController;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\IncidentTemplate;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Routing\Controller;
 
-class ApiController extends AbstractController
+class ApiController extends Controller
 {
     /**
      * Updates a component with the entered info.
