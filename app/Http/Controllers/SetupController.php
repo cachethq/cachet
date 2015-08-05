@@ -14,6 +14,7 @@ namespace CachetHQ\Cachet\Http\Controllers;
 use CachetHQ\Cachet\Models\Setting;
 use CachetHQ\Cachet\Models\User;
 use GrahamCampbell\Binput\Facades\Binput;
+use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Redirect;
@@ -23,7 +24,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\View;
 
-class SetupController extends AbstractController
+class SetupController extends BaseController
 {
     /**
      * Array of cache drivers.

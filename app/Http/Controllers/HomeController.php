@@ -19,11 +19,12 @@ use CachetHQ\Cachet\Models\Metric;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
 use GrahamCampbell\Markdown\Facades\Markdown;
+use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
 use Jenssegers\Date\Date;
 
-class HomeController extends AbstractController
+class HomeController extends BaseController
 {
     /**
      * Returns the rendered Blade templates.
