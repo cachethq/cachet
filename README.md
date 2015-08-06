@@ -28,7 +28,7 @@
 
 ### Development Requirements
 
-The following extra dependencies are required to develop Cachet:
+Theses extra dependencies are required to develop Cachet:
 
 - Node.js
 - Bower
@@ -55,100 +55,18 @@ Here is a list of things that Cachet is not or does not do:
 2. It does not work on a plugin system. There are no monitoring services to extend.
 3. It's not a Twitter clone.
 
-## Quickstart with Vagrant
+## Installation Support
 
-If you would like to utilize [laravel homestead](http://laravel.com/docs/5.1/homestead), we have a per-project installation available to use for development purposes.
+We've moved our installation guides for Apache, Nginx, Docker and Vagrant to our documentation page.
 
-First, install dependencies by `composer install` and modify Homestead.yaml to map your Cachet directory to the Vagrant VM properly. It looks like this by default:
-
-```yaml
-folders:
-    - map: "/srv/www/Cachet"
-      to: "/home/vagrant/Cachet"
-```
-
-Change the map key to the location of your Cachet installation and follow the instructions below.
-
-```bash
-# Copy over your environment variables
-$ cp .env.example .env
-
-# Initiate VM
-$ vagrant up
-
-# Generate application key
-$ php artisan key:generate
-
-# SSH into your machine
-$ vagrant ssh
-
-# Run migrations
-$ cd Cachet && php artisan migrate
-```
-
-Navigate to http://192.168.10.10 and begin using Cachet!
-
-## Quickstart with Docker
-
-Run a DB container (you can either pass in environment variables for the DB, or mount a config with `-v /my/database.php:/var/www/html/app/config/database.php`):
-
-```bash
-$ export DB_USERNAME=cachet
-$ export DB_PASSWORD=cachet
-$ export DB_ROOT_PASSWORD=cachet
-$ export DB_DATABASE=cachet
-$ docker run --name mysql -e MYSQL_USER=$DB_USERNAME -e MYSQL_PASSWORD=$DB_PASSWORD  -e MYSQL_ROOT_PASSWORD=$DB_ROOT_PASSWORD -e MYSQL_DATABASE=$DB_DATABASE -d mysql
-```
-
-Initialize the DB if you haven't yet:
-
-```bash
-$ docker run --rm --link mysql:mysql -e DB_HOST=mysql -e DB_DATABASE=$DB_DATABASE -e DB_USERNAME=$DB_USERNAME -e DB_PASSWORD=$DB_PASSWORD cachethq/cachet:latest php artisan migrate --force
-```
-
-Run Cachet:
-
-```bash
-$ docker run -d --name cachet --link mysql:mysql -p 80:8000 -e DB_HOST=mysql -e DB_DATABASE=$DB_DATABASE -e DB_USERNAME=$DB_USERNAME -e DB_PASSWORD=$DB_PASSWORD cachethq/cachet:latest
-```
-
-You can optionally install predis to enable usage of the various redis drivers:
-
-```bash
-$ docker exec -i cachet php composer.phar require predis/predis
-```
-
-Now go to `http://<ipdockerisboundto>/setup` and have fun!
-
-Note: When running in production you should ensure that you enable SSL.
-This is commonly achieved by running Nginx with your certificates on your Docker host, service or load balancers in-front of the running container, or by adding your custom SSL certificates and configuration to the supplied Nginx configuration.
-
-### docker-compose
-
-Quickly launch Cachet and MySQL docker images with [docker-compose](https://docs.docker.com/compose/)
-
-```bash
-git clone https://github.com/cachethq/Cachet.git
-cd Cachet
-docker-compose build
-docker-compose up
-```
-
-To initialize the database, utilize [docker exec](https://docs.docker.com/reference/commandline/cli/#exec):
-```bash
-docker exec -it cachet_cachet_1 php artisan migrate --force
-```
-
-Continue to `http://<ipdockerisboundto>/setup` to configure Cachet.
+- [Installing Cachet](https://docs.cachethq.io/docs/installing-cachet)
+- [Getting started with Docker](https://docs.cachethq.io/docs/get-started-with-docker)
+- [Getting started with Vagrant](https://docs.cachethq.io/docs/get-started-with-vagrant)
 
 ## Addons
 
 - [cachet-monitor](https://github.com/castawaylabs/cachet-monitor) - For URL monitoring. Automatic incident updates.
 - [sensu-cachet](https://github.com/bimlendu/sensu-cachethq) - Sensu handler for updating CachetHQ.
-
-## Read more about Cachet
-
-For more information on why I started developing Cachet, check out my [Cachet articles on my blog](https://james-brooks.uk/tag/cachet/?utm_source=github&utm_medium=readme&utm_campaign=github-cachet).
 
 ## Translations
 
