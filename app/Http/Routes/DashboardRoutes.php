@@ -13,7 +13,7 @@ namespace CachetHQ\Cachet\Http\Routes;
 
 use Illuminate\Contracts\Routing\Registrar;
 
-class AdminRoutes
+class DashboardRoutes
 {
     /**
      * Define the dashboard routes.
