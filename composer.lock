@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "alt-three/emoji",
-            "version": "dev-master",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/AltThree/Emoji.git",
-                "reference": "f087472401a522a4c516ebaefbf9de6c400d90c7"
+                "reference": "cbd5b86fa71a3332eae9d06345d7efc9c1fada17"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/AltThree/Emoji/zipball/f087472401a522a4c516ebaefbf9de6c400d90c7",
-                "reference": "f087472401a522a4c516ebaefbf9de6c400d90c7",
+                "url": "https://api.github.com/repos/AltThree/Emoji/zipball/cbd5b86fa71a3332eae9d06345d7efc9c1fada17",
+                "reference": "cbd5b86fa71a3332eae9d06345d7efc9c1fada17",
                 "shasum": ""
             },
             "require": {
@@ -65,7 +65,7 @@
                 "emoji",
                 "parser"
             ],
-            "time": "2015-08-06 17:39:50"
+            "time": "2015-08-06 18:42:28"
         },
         {
             "name": "alt-three/validator",
