@@ -106,4 +106,19 @@ class TeamController extends Controller
         return Redirect::back()
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.team.edit.success')));
     }
+
+    /**
+     * Delete a user.
+     *
+     * @param \CachetHQ\Cachet\Models\User $user
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function deleteUser(User $user)
+    {
+        $user->delete();
+
+        return Redirect::route('dashboard.team')
+            ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.team.delete.success')));
+    }
 }
