@@ -14,18 +14,18 @@ namespace CachetHQ\Cachet\Http\Controllers\Admin;
 use AltThree\Validator\ValidationException;
 use CachetHQ\Cachet\Events\IncidentHasReportedEvent;
 use CachetHQ\Cachet\Facades\Setting;
-use CachetHQ\Cachet\Http\Controllers\AbstractController;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentTemplate;
 use GrahamCampbell\Binput\Facades\Binput;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 use Jenssegers\Date\Date;
 
-class IncidentController extends AbstractController
+class IncidentController extends Controller
 {
     /**
      * Stores the sub-sidebar tree list.

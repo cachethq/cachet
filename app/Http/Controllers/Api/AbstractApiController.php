@@ -14,12 +14,12 @@ namespace CachetHQ\Cachet\Http\Controllers\Api;
 use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Response;
 use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
 
-abstract class AbstractApiController extends BaseController
+abstract class AbstractApiController extends Controller
 {
     /**
      * The HTTP response headers.

@@ -12,7 +12,7 @@
 namespace CachetHQ\Cachet\Http\Controllers;
 
 use GrahamCampbell\Binput\Facades\Binput;
-use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Request;
@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\View;
 use PragmaRX\Google2FA\Vendor\Laravel\Facade as Google2FA;
 
-class AuthController extends BaseController
+class AuthController extends Controller
 {
     /**
      * Shows the login view.

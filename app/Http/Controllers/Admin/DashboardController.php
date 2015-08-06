@@ -11,11 +11,11 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Admin;
 
-use CachetHQ\Cachet\Http\Controllers\AbstractController;
 use CachetHQ\Cachet\Models\Component;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\View;
 
-class DashboardController extends AbstractController
+class DashboardController extends Controller
 {
     /**
      * Shows the dashboard view.

@@ -15,11 +15,11 @@ use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Incident;
 use GrahamCampbell\Markdown\Facades\Markdown;
-use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Str;
 use Roumen\Feed\Facades\Feed;
 
-class AtomController extends BaseController
+class AtomController extends Controller
 {
     /**
      * Generates an Atom feed of all incidents.

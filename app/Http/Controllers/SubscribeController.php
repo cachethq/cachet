@@ -18,12 +18,12 @@ use CachetHQ\Cachet\Models\Subscriber;
 use Carbon\Carbon;
 use GrahamCampbell\Binput\Facades\Binput;
 use GrahamCampbell\Markdown\Facades\Markdown;
-use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
-class SubscribeController extends BaseController
+class SubscribeController extends Controller
 {
     /**
      * Show the subscribe by email page.

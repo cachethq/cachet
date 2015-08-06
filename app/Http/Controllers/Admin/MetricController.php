@@ -12,14 +12,14 @@
 namespace CachetHQ\Cachet\Http\Controllers\Admin;
 
 use AltThree\Validator\ValidationException;
-use CachetHQ\Cachet\Http\Controllers\AbstractController;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\MetricPoint;
 use GrahamCampbell\Binput\Facades\Binput;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 
-class MetricController extends AbstractController
+class MetricController extends Controller
 {
     /**
      * Shows the metrics view.
