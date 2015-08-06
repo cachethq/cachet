@@ -177,6 +177,7 @@ class AdminRoutes
                     $router->get('{user}', 'TeamController@showTeamMemberView');
                     $router->post('add', 'TeamController@postAddUser');
                     $router->post('{user}', 'TeamController@postUpdateUser');
+                    $router->delete('{user}/delete', 'TeamController@deleteUser');
                 });
             });
 

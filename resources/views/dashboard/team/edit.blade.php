@@ -33,7 +33,10 @@
                     <div class="form-group">
                         <button type="submit" class="btn btn-success">{{ trans('forms.update') }}</button>
                         @if($current_user->isAdmin)
-                        <a class="btn btn-danger" href="/dashboard/user/{{ $user->id }}/api/regen">{{ trans('cachet.api.revoke') }}</a>
+                        <a class="btn btn-info" href="/dashboard/user/{{ $user->id }}/api/regen">{{ trans('cachet.api.revoke') }}</a>
+                        @if($current_user->id != $user->id)
+                        <a class="btn btn-danger confirm-action" href="/dashboard/team/{{ $user->id }}/delete" data-method="DELETE">{{ trans('forms.delete') }}</a>
+                        @endif
                         @endif
                     </div>
                 </form>
