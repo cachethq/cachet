@@ -63,11 +63,6 @@ We've moved our installation guides for Apache, Nginx, Docker and Vagrant to our
 - [Getting started with Docker](https://docs.cachethq.io/docs/get-started-with-docker)
 - [Getting started with Vagrant](https://docs.cachethq.io/docs/get-started-with-vagrant)
 
-## Addons
-
-- [cachet-monitor](https://github.com/castawaylabs/cachet-monitor) - For URL monitoring. Automatic incident updates.
-- [sensu-cachet](https://github.com/bimlendu/sensu-cachethq) - Sensu handler for updating CachetHQ.
-
 ## Translations
 
 A special thank you to our [translators](https://crowdin.com/project/cachet/activity_stream), who have allowed us to share Cachet with the world. If you'd like to contribute translations, please check out our [CrowdIn project](https://crowdin.com/project/cachet).
