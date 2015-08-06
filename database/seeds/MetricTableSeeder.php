@@ -21,9 +21,9 @@ class MetricTableSeeder extends Seeder
     {
         $defaultMetrics = [
             [
-                'name'          => 'Demo Metric',
-                'suffix'        => 'rnd',
-                'description'   => 'Random data points.',
+                'name'          => 'Cups of coffee',
+                'suffix'        => 'Cups',
+                'description'   => 'How many cups of coffee we\'ve drank.',
                 'default_value' => 0,
                 'calc_type'     => 1,
                 'display_chart' => 1,
