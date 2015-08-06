@@ -27,7 +27,7 @@ class IncidentController extends AbstractApiController
      * @param \Symfony\Component\HttpFoundation\Request $request
      * @param \Illuminate\Contracts\Auth\Guard          $auth
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Http\JsonResponse
      */
     public function getIncidents(Request $request, Guard $auth)
     {
@@ -43,7 +43,7 @@ class IncidentController extends AbstractApiController
      *
      * @param \CachetHQ\Cachet\Models\Incident $incident
      *
-     * @return \CachetHQ\Cachet\Models\Incident
+     * @return \Illuminate\Http\JsonResponse
      */
     public function getIncident(Incident $incident)
     {
@@ -55,7 +55,7 @@ class IncidentController extends AbstractApiController
      *
      * @param \Illuminate\Contracts\Auth\Guard $auth
      *
-     * @return \CachetHQ\Cachet\Models\Incident
+     * @return \Illuminate\Http\JsonResponse
      */
     public function postIncidents(Guard $auth)
     {
@@ -83,7 +83,7 @@ class IncidentController extends AbstractApiController
      *
      * @param \CachetHQ\Cachet\Models\Inicdent $incident
      *
-     * @return \CachetHQ\Cachet\Models\Incident
+     * @return \Illuminate\Http\JsonResponse
      */
     public function putIncident(Incident $incident)
     {

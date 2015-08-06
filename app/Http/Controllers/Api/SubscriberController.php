@@ -25,7 +25,7 @@ class SubscriberController extends AbstractApiController
      *
      * @param \Symfony\Component\HttpFoundation\Request $request
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Http\JsonResponse
      */
     public function getSubscribers(Request $request)
     {
@@ -37,7 +37,7 @@ class SubscriberController extends AbstractApiController
     /**
      * Create a new subscriber.
      *
-     * @return \CachetHQ\Cachet\Models\Subscriber
+     * @return \Illuminate\Http\JsonResponse
      */
     public function postSubscribers()
     {

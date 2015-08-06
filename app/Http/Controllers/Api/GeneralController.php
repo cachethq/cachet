@@ -13,6 +13,11 @@ namespace CachetHQ\Cachet\Http\Controllers\Api;
 
 class GeneralController extends AbstractApiController
 {
+    /**
+     * Ping endpoint allows API consumers to check the version.
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function ping()
     {
         return $this->item('Pong!');

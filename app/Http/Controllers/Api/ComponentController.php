@@ -26,7 +26,7 @@ class ComponentController extends AbstractApiController
      *
      * @param \Symfony\Component\HttpFoundation\Request $request
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Http\JsonResponse
      */
     public function getComponents(Request $request)
     {
@@ -40,7 +40,7 @@ class ComponentController extends AbstractApiController
      *
      * @param \CachetHQ\Cachet\Models\Component $component
      *
-     * @return \CachetHQ\Cachet\Models\Component
+     * @return \Illuminate\Http\JsonResponse
      */
     public function getComponent(Component $component)
     {
@@ -52,7 +52,7 @@ class ComponentController extends AbstractApiController
      *
      * @param \Illuminate\Contracts\Auth\Guard $auth
      *
-     * @return \CachetHQ\Cachet\Models\Component
+     * @return \Illuminate\Http\JsonResponse
      */
     public function postComponents(Guard $auth)
     {
@@ -86,7 +86,7 @@ class ComponentController extends AbstractApiController
      *
      * @param \CachetHQ\Cachet\Models\Componet $component
      *
-     * @return \CachetHQ\Cachet\Models\Component
+     * @return \Illuminate\Http\JsonResponse
      */
     public function putComponent(Component $component)
     {

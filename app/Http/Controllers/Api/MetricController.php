@@ -38,7 +38,7 @@ class MetricController extends AbstractApiController
      *
      * @param \CachetHQ\Cachet\Models\Metric $metric
      *
-     * @return \CachetHQ\Cachet\Models\Metric
+     * @return \Illuminate\Http\JsonResponse
      */
     public function getMetric(Metric $metric)
     {
@@ -60,7 +60,7 @@ class MetricController extends AbstractApiController
     /**
      * Create a new metric.
      *
-     * @return \CachetHQ\Cachet\Models\Metric
+     * @return \Illuminate\Http\JsonResponse
      */
     public function postMetrics()
     {
@@ -78,7 +78,7 @@ class MetricController extends AbstractApiController
      *
      * @param \CachetHQ\Cachet\Models\Metric $metric
      *
-     * @return \CachetHQ\Cachet\Models\Metric
+     * @return \Illuminate\Http\JsonResponse
      */
     public function putMetric(Metric $metric)
     {
