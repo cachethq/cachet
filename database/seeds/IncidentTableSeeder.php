@@ -22,7 +22,7 @@ class IncidentTableSeeder extends Seeder
         $defaultIncidents = [
             [
                 'name'         => 'Awesome',
-                'message'      => 'We totally nailed the fix.',
+                'message'      => 'We totally nailed the fix :smile:',
                 'status'       => 4,
                 'component_id' => 0,
                 'scheduled_at' => null,

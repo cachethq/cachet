@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b875f1d2eed19b89b2c784345ca2d200",
+    "hash": "a26b8d7a6a81b2e14fb39040c76263d6",
     "packages": [
         {
             "name": "alt-three/emoji",
-            "version": "v1.0.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/AltThree/Emoji.git",
-                "reference": "2c46fde1d5993ea4a040259e5efc0682c33a5f90"
+                "reference": "f087472401a522a4c516ebaefbf9de6c400d90c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/AltThree/Emoji/zipball/2c46fde1d5993ea4a040259e5efc0682c33a5f90",
-                "reference": "2c46fde1d5993ea4a040259e5efc0682c33a5f90",
+                "url": "https://api.github.com/repos/AltThree/Emoji/zipball/f087472401a522a4c516ebaefbf9de6c400d90c7",
+                "reference": "f087472401a522a4c516ebaefbf9de6c400d90c7",
                 "shasum": ""
             },
             "require": {
@@ -33,7 +33,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0-dev"
+                    "dev-master": "1.1-dev"
                 }
             },
             "autoload": {
@@ -65,7 +65,7 @@
                 "emoji",
                 "parser"
             ],
-            "time": "2015-07-25 14:20:46"
+            "time": "2015-08-06 17:39:50"
         },
         {
             "name": "alt-three/validator",
@@ -1603,7 +1603,7 @@
                     "name": "Jeremy Lindblom",
                     "email": "jeremeamia@gmail.com",
                     "homepage": "https://github.com/jeremeamia",
-                    "role": "Developer"
+                    "role": "developer"
                 }
             ],
             "description": "Serialize Closure objects, including their context and binding",
