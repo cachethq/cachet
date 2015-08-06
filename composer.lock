@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a26b8d7a6a81b2e14fb39040c76263d6",
+    "hash": "6e3712236cbfc4e7c2dce2c8740a72bf",
     "packages": [
         {
             "name": "alt-three/emoji",
@@ -1002,6 +1002,66 @@
                 "security"
             ],
             "time": "2015-06-26 17:33:45"
+        },
+        {
+            "name": "graham-campbell/core",
+            "version": "v4.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/GrahamCampbell/Laravel-Core.git",
+                "reference": "5ca2ff7049be5058a1cbcf027f5f70b31892ab18"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Core/zipball/5ca2ff7049be5058a1cbcf027f5f70b31892ab18",
+                "reference": "5ca2ff7049be5058a1cbcf027f5f70b31892ab18",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "5.0.*|5.1.*",
+                "illuminate/contracts": "5.0.*|5.1.*",
+                "illuminate/support": "5.0.*|5.1.*",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "graham-campbell/testbench": "~3.0",
+                "mockery/mockery": "^0.9.4",
+                "phpunit/phpunit": "^4.7.6"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GrahamCampbell\\Core\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Graham Campbell",
+                    "email": "graham@alt-three.com"
+                }
+            ],
+            "description": "Core Provides Some Extra Functionality For Laravel 5",
+            "keywords": [
+                "Graham Campbell",
+                "GrahamCampbell",
+                "Laravel Core",
+                "Laravel-Core",
+                "base",
+                "core",
+                "framework",
+                "laravel",
+                "starter"
+            ],
+            "time": "2015-06-26 16:44:58"
         },
         {
             "name": "graham-campbell/exceptions",
