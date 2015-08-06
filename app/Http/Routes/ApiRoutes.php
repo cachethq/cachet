@@ -43,7 +43,7 @@ class ApiRoutes
             $router->get('metrics/{metric}', 'MetricController@getMetric');
             $router->get('metrics/{metric}/points', 'MetricController@getMetricPoints');
 
-            // Api protected
+            // Authorization Required
             $router->group(['middleware' => 'auth.api'], function ($router) {
                 $router->get('subscribers', 'SubscriberController@getSubscribers');
 
