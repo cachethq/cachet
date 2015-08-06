@@ -100,16 +100,16 @@ $ export DB_DATABASE=cachet
 $ docker run --name mysql -e MYSQL_USER=$DB_USERNAME -e MYSQL_PASSWORD=$DB_PASSWORD  -e MYSQL_ROOT_PASSWORD=$DB_ROOT_PASSWORD -e MYSQL_DATABASE=$DB_DATABASE -d mysql
 ```
 
-Initialize the DB if you haven't yet:
-
-```bash
-$ docker run --rm --link mysql:mysql -e DB_HOST=mysql -e DB_DATABASE=$DB_DATABASE -e DB_USERNAME=$DB_USERNAME -e DB_PASSWORD=$DB_PASSWORD cachethq/cachet:latest php artisan migrate --force
-```
-
 Run Cachet:
 
 ```bash
 $ docker run -d --name cachet --link mysql:mysql -p 80:8000 -e DB_HOST=mysql -e DB_DATABASE=$DB_DATABASE -e DB_USERNAME=$DB_USERNAME -e DB_PASSWORD=$DB_PASSWORD cachethq/cachet:latest
+```
+
+Initialize the DB if you haven't yet:
+
+```bash
+$ docker exec -it cachet php artisan migrate --force
 ```
 
 You can optionally install predis to enable usage of the various redis drivers:
