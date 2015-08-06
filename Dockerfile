@@ -1,4 +1,5 @@
 FROM debian:jessie
+MAINTAINER Alt Three <support@alt-three.com>
 
 # Using nodesource and debian jessie packages instead of compiling from scratch
 RUN DEBIAN_FRONTEND=noninteractive \
