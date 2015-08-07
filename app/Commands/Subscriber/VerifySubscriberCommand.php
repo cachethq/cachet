@@ -11,24 +11,26 @@
 
 namespace CachetHQ\Cachet\Commands\Subscriber;
 
-class SubscribeCustomerCommand
+use CachetHQ\Cachet\Models\Subscriber;
+
+class VerifySubscriberCommand
 {
     /**
-     * The customer email.
+     * The subscriber to verify.
      *
      * @var string
      */
-    public $email;
+    public $subscriber;
 
     /**
-     * Create a new subscribe customer command instance.
+     * Create a verify subscriber command instance.
      *
-     * @param string $email
+     * @param string $subscriber
      *
      * @return void
      */
-    public function __construct($email)
+    public function __construct(Subscriber $subscriber)
     {
-        $this->email = $email;
+        $this->subscriber = $subscriber;
     }
 }

@@ -12,15 +12,19 @@
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
 use AltThree\Validator\ValidationException;
-use CachetHQ\Cachet\Events\CustomerHasSubscribedEvent;
+use CachetHQ\Cachet\Commands\Subscriber\SubscribeSubscriberCommand;
+use CachetHQ\Cachet\Commands\Subscriber\UnsubscribeSubscriberCommand;
 use CachetHQ\Cachet\Models\Subscriber;
 use GrahamCampbell\Binput\Facades\Binput;
+use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 
 class SubscriberController extends Controller
 {
+    use DispatchesJobs;
+
     /**
      * Shows the subscribers view.
      *
@@ -56,7 +60,7 @@ class SubscriberController extends Controller
         $email = Binput::get('email');
 
         try {
-            $subscriber = Subscriber::create(['email' => $email]);
+            $this->dispatch(new SubscribeSubscriberCommand($email));
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.subscribers.add')
                 ->withInput(Binput::all())
@@ -81,7 +85,7 @@ class SubscriberController extends Controller
      */
     public function deleteSubscriberAction(Subscriber $subscriber)
     {
-        $subscriber->delete();
+        $this->dispatch(new UnsubscribeSubscriberCommand($subscriber));
 
         return Redirect::route('dashboard.subscribers.index');
     }

@@ -11,7 +11,7 @@
 
 namespace CachetHQ\Cachet\Handlers\Commands\User;
 
-use CachetHQ\Cachet\Commands\GenerateApiTokenCommand;
+use CachetHQ\Cachet\Commands\User\GenerateApiTokenCommand;
 use CachetHQ\Cachet\Models\User;
 
 class GenerateApiTokenCommandHandler
@@ -19,7 +19,7 @@ class GenerateApiTokenCommandHandler
     /**
      * Handle the generate api key command.
      *
-     * @param \CachetHQ\Cachet\Commands\GenerateApiTokenCommand $command
+     * @param \CachetHQ\Cachet\Commands\User\GenerateApiTokenCommand $command
      *
      * @return void
      */

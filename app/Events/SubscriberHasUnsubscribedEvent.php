@@ -13,19 +13,17 @@ namespace CachetHQ\Cachet\Events;
 
 use CachetHQ\Cachet\Models\Subscriber;
 
-class CustomerHasSubscribedEvent
+class SubscriberHasUnsubscribedEvent
 {
     /**
-     * The customer who has subscribed.
+     * The subscriber who has unsubscribed.
      *
      * @var \CachetHQ\Cachet\Models\Subscriber
      */
     public $subscriber;
 
     /**
-     * Create a new customer has subscribed event instance.
-     *
-     * @return void
+     * Create a new subscriber has unsubscribed event instance.
      */
     public function __construct(Subscriber $subscriber)
     {
