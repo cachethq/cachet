@@ -40,7 +40,7 @@ class SubscriberTest extends AbstractTestCase
     {
         $this->beUser();
 
-        $this->expectsEvents('CachetHQ\Cachet\Events\CustomerHasSubscribedEvent');
+        $this->expectsEvents('CachetHQ\Cachet\Events\SubscriberHasSubscribedEvent');
 
         $this->post('/api/v1/subscribers', [
             'email' => 'james@cachethq.io',
