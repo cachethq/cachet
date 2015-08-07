@@ -44,6 +44,8 @@ class DemoSeederCommand extends Command
 
     /**
      * Execute the console command.
+     *
+     * @return void
      */
     public function fire()
     {
