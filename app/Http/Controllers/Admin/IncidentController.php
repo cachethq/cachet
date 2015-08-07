@@ -44,13 +44,13 @@ class IncidentController extends Controller
         $this->subMenu = [
             'incidents' => [
                 'title'  => trans('dashboard.incidents.incidents'),
-                'url'    => route('dashboard.incidents'),
+                'url'    => route('dashboard.incidents.index'),
                 'icon'   => 'ion-android-checkmark-circle',
                 'active' => true,
             ],
             'schedule' => [
                 'title'  => trans('dashboard.schedule.schedule'),
-                'url'    => route('dashboard.schedule'),
+                'url'    => route('dashboard.schedule.index'),
                 'icon'   => 'ion-android-calendar',
                 'active' => false,
             ],
