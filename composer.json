@@ -39,7 +39,6 @@
     },
     "require-dev": {
         "fzaninotto/faker": "^1.5",
-        "laravel/homestead": "^2.1.5",
         "mockery/mockery": "^0.9.4",
         "phpunit/phpunit": "^4.7.6"
     },
