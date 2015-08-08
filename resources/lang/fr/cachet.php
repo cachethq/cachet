@@ -75,12 +75,12 @@ return [
                 'html'           => '',
             ],
             'maintenance' => [
-                'text'           => "Une nouvelle maintenance a été planifiée pour :app_name.\\nMerci, :app_name",
+                'text'           => 'Une nouvelle maintenance a été planifiée pour :app_name.\\nMerci, :app_name',
                 'html-preheader' => 'Une nouvelle maintenance a été planifiée pour :app_name.',
                 'html'           => '',
             ],
             'incident' => [
-                'text'           => "Un nouvel incident a été signalé sur : app_name.\\nMerci, :app_name",
+                'text'           => 'Un nouvel incident a été signalé sur : app_name.\\nMerci, :app_name',
                 'html-preheader' => 'Un nouvel incident a été signalé sur : app_name.',
                 'html'           => '<p>Un nouvel incident a été signalé sur : app_name. </p><p>Merci, : app_name</p>',
             ],

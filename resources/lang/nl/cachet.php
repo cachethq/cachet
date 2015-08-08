@@ -70,17 +70,17 @@ return [
             'unsubscribed' => 'Uw e-mail abonnement is opgezegd.',
             'failure'      => 'Er ging ging iets fout tijdens het aanmelden.',
             'verify'       => [
-                'text'           => "Bevestig uw e-mail abonnement op :app_name status updates.\\n:link\\nBedankt, :app_name",
+                'text'           => 'Bevestig uw e-mail abonnement op :app_name status updates.\\n:link\\nBedankt, :app_name',
                 'html-preheader' => 'Bevestig uw e-mail abonnement op :app_name status updates.',
                 'html'           => '',
             ],
             'maintenance' => [
-                'text'           => "Nieuwe onderhoud is gepland voor :app_name.\\nBedankt, :app_name",
+                'text'           => 'Nieuwe onderhoud is gepland voor :app_name.\\nBedankt, :app_name',
                 'html-preheader' => 'Nieuw onderhoud is gepland voor :app_name.',
                 'html'           => '',
             ],
             'incident' => [
-                'text'           => "Nieuw incident is aangemeld op :app_name.\\nBedankt, :app_name",
+                'text'           => 'Nieuw incident is aangemeld op :app_name.\\nBedankt, :app_name',
                 'html-preheader' => 'Nieuw incident aangemeld op :app_name.',
                 'html'           => '<p>Nieuw incident aangemeld op :app_name.</p><p>Bedankt, :app_name</p>',
             ],

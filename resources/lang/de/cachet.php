@@ -70,17 +70,17 @@ return [
             'unsubscribed' => 'Ihre e-Mail-Abonnement wurde gekündigt.',
             'failure'      => 'Etwas ist mit dem Abonnement schief gelaufen.',
             'verify'       => [
-                'text'           => "Bitte bestätigen Sie Ihre e-Mail-Abonnement zu  :app_name Status-Aktualisierungen.\\n:link\\nDanke, :app_name",
+                'text'           => 'Bitte bestätigen Sie Ihre e-Mail-Abonnement zu  :app_name Status-Aktualisierungen.\\n:link\\nDanke, :app_name',
                 'html-preheader' => 'Bitte bestätigen Sie Ihre e-Mail-Abonnement zu  :app_name Status-Aktualisierungen.',
                 'html'           => '',
             ],
             'maintenance' => [
-                'text'           => "Neue Wartung wurde für :app_name geplant.\\nDanke, :app_name",
+                'text'           => 'Neue Wartung wurde für :app_name geplant.\\nDanke, :app_name',
                 'html-preheader' => 'Neue Wartung wurde für :app_name geplant.',
                 'html'           => '',
             ],
             'incident' => [
-                'text'           => "Ein neuer Vorfall wurde auf :app_name berichtet.\\nDanke, :app_name",
+                'text'           => 'Ein neuer Vorfall wurde auf :app_name berichtet.\\nDanke, :app_name',
                 'html-preheader' => 'Ein neuer Vorfall wurde über :app_name berichtet.',
                 'html'           => '<p>Ein neuer Vorfall wurde über :app_name berichtet.</p> <p>Danke, :app_name</p>',
             ],
