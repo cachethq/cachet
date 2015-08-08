@@ -84,7 +84,7 @@ class ComponentController extends AbstractApiController
     /**
      * Update an existing component.
      *
-     * @param \CachetHQ\Cachet\Models\Componet $component
+     * @param \CachetHQ\Cachet\Models\Component $component
      *
      * @return \Illuminate\Http\JsonResponse
      */
