@@ -72,12 +72,12 @@ return [
             'verify'       => [
                 'text'           => 'crwdns497:0crwdne497:0',
                 'html-preheader' => 'crwdns498:0crwdne498:0',
-                'html'           => 'crwdns499:0crwdne499:0',
+                'html'           => 'crwdns520:0crwdne520:0',
             ],
             'maintenance' => [
                 'text'           => 'crwdns500:0crwdne500:0',
                 'html-preheader' => 'crwdns501:0crwdne501:0',
-                'html'           => 'crwdns502:0crwdne502:0',
+                'html'           => 'crwdns521:0crwdne521:0',
             ],
             'incident' => [
                 'text'           => 'crwdns503:0crwdne503:0',
