@@ -15,32 +15,34 @@ return [
 
     // Incidents
     'incidents' => [
+        'title'                    => 'Incidents &amp; Planification',
         'incidents'                => 'Incidents',
-        'logged'                   => '{0} Il n\'y a aucun incident, bien joué !|Vous avez reporté un incident.|Vous avez reporté <strong>:count</strong> incidents.',
+        'logged'                   => '{0} Aucun incident, bon travail.|Vous avez un incident signalé.|Vous avez  <strong>:count</strong> incidents signalés.',
         'incident-create-template' => 'Créer un modèle',
         'incident-templates'       => 'Modèles d\'incident',
         'add'                      => [
             'title'   => 'Ajouter un incident',
             'success' => 'Incident ajouté.',
-            'failure' => 'Une erreur s\'est produite lors de l\'ajout de cet incident.',
+            'failure' => 'Quelque chose n\'allait pas avec l\'incident.',
         ],
         'edit' => [
-            'title'   => 'Éditer un incident',
-            'success' => 'Incident mis-à-jour.',
-            'failure' => 'Une erreur s\'est produite lors de la mise à jour de cet incident.',
+            'title'   => 'Modifier un incident',
+            'success' => 'Incident mis à jour.',
+            'failure' => 'Une erreur est survenue avec l\'incident.',
         ],
 
         // Incident templates
         'templates' => [
-            'add' => [
+            'title' => 'Modèles d\'incident',
+            'add'   => [
                 'title'   => 'Créer un modèle d\'incident',
                 'success' => 'Modèle créé.',
-                'failure' => 'Une erreur s\'est produite lors de l\'ajout de ce modèle d\'incident.',
+                'failure' => 'Une erreur est survenue avec le modèle d\'incident.',
             ],
             'edit' => [
-                'title'   => 'Modifier un modèle',
-                'success' => 'Modèle mis à jour.',
-                'failure' => 'Une erreur s\'est produite lors de la mise à jour du modèle.',
+                'title'   => 'Editer le Template',
+                'success' => 'Le modèle a été mis à jour !',
+                'failure' => 'Une erreur est survenue avec la mise à jour le modèle d\'incident',
             ],
         ],
     ],
@@ -48,144 +50,167 @@ return [
     // Incident Maintenance
     'schedule' => [
         'schedule'     => 'Maintenance planifiée',
-        'scheduled_at' => 'Prévue à :timestamp',
+        'scheduled_at' => 'Planifiée à :timestamp',
         'add'          => [
             'title'   => 'Ajouter une maintenance planifiée',
-            'success' => 'Maintenance ajoutée.',
-            'failure' => 'Une erreur s\'est produite lors de l\'ajout de la maintenance.',
+            'success' => 'Planification ajoutée.',
+            'failure' => 'Une erreur est survenue lors de l\'ajout de la planification.',
         ],
         'edit' => [
-            'title'   => 'Éditer la maintenance',
-            'success' => 'Maintenance mise à jour!',
-            'failure' => 'Une erreur s\'est produite lors de la modification de la maintenance.',
+            'title'   => 'Modifier la maintenance planifiée',
+            'success' => 'La planification a été mise à jour !',
+            'failure' => 'Une erreur est survenue lors de l\'édition de la planification.',
         ],
         'delete' => [
-            'success' => 'La maintenance a été effacée et ne s\'affihera plus..',
-            'failure' => 'La maintenance n\'a pu être effacée. Veuillez essayez de nouveau.',
+            'success' => 'Cette planification a été supprimée et ne sera pas affichée sur votre page de statut.',
+            'failure' => 'Cette planification n\'a pas pu être supprimée. Veuillez réessayer.',
         ],
     ],
 
     // Components
     'components' => [
-        'components'         => 'Composantes',
-        'component_statuses' => 'Statut des composantes',
+        'components'         => 'Composants',
+        'component_statuses' => 'Statuts des composant',
+        'listed_group'       => 'Groupés dans : nom',
         'add'                => [
-            'title'   => 'Créer une composante',
-            'message' => 'Commencez par ajouter une composante.',
-            'success' => 'Composante créée.',
-            'failure' => 'Une erreur s\'est produite lors de l\'ajout de cette composante.',
+            'title'   => 'Ajouter un composant',
+            'message' => 'Vous devez ajouter un composant.',
+            'success' => 'Composant créé.',
+            'failure' => 'Une erreur est survenue avec le composant.',
         ],
         'edit' => [
-            'title'   => 'Éditer une composante',
-            'success' => 'Composant mis-à-jour.',
-            'failure' => 'Une erreur s\'est produite lors de la mise à jour de cette composante.',
+            'title'   => 'Modifier un composant',
+            'success' => 'Composant mis à jour.',
+            'failure' => 'Une erreur est survenue avec le composant.',
         ],
 
         // Component groups
         'groups' => [
-            'groups'        => 'Groupe de composantes',
-            'no_components' => 'You should add a component group.',
+            'groups'        => 'Groupes de composants',
+            'no_components' => 'Vous devez ajouter un groupe de composants.',
             'add'           => [
-                'title'   => 'Ajouter un group de composantes',
-                'success' => 'Groupe de composantes ajouté.',
-                'failure' => 'Une erreur s\'est produite lors de l\'ajout de ce groupe de composantes.',
+                'title'   => 'Ajouter un groupe de composants',
+                'success' => 'Groupe composant ajouté.',
+                'failure' => 'Une erreur est survenue avec le groupe de composants.',
             ],
             'edit' => [
-                'title'   => 'Éditer un groupe de composantes',
-                'success' => 'Groupe de composantes mis-à-jour.',
-                'failure' => 'Une erreur s\'est produite lors de la mise à jour de ce groupe de composantes.',
+                'title'   => 'Modifier un groupe de composants',
+                'success' => 'Groupe de composants mis à jour.',
+                'failure' => 'Un problème est survenu avec le groupe de composants.',
             ],
         ],
     ],
 
     // Metrics
     'metrics' => [
-        'metrics' => 'Point de mesure',
+        'metrics' => 'Métriques',
         'add'     => [
-            'title'   => 'Créer un point de mesure',
-            'success' => 'Point de mesure créé.',
-            'failure' => 'Il s\'est passé quelque chose avec ce point de mesure.',
+            'title'   => 'Créer un indicateur',
+            'success' => 'Métrique créé.',
+            'failure' => 'Un problème est survenu avec cet indicateur.',
         ],
         'edit' => [
-            'title'   => 'Éditer un point de mesure',
-            'success' => 'Point de mesure mis-à-jour.',
-            'failure' => 'Il s\'est passé quelque chose avec ce point de mesure.',
+            'title'   => 'Modifier un indicateur',
+            'success' => 'Indicateur mise à jour.',
+            'failure' => 'Un problème est survenu avec cet indicateur.',
+        ],
+    ],
+    // Subscribers
+    'subscribers' => [
+        'subscribers'  => '',
+        'description'  => '',
+        'verified'     => '',
+        'not_verified' => '',
+        'add'          => [
+            'title'   => '',
+            'success' => '',
+            'failure' => '',
+        ],
+        'edit' => [
+            'title'   => '',
+            'success' => '',
+            'failure' => '',
         ],
     ],
 
     // Team
     'team' => [
-        'team'        => 'Équipe',
-        'member'      => 'Membre',
-        'profile'     => 'Profil',
-        'description' => 'Les membres de l\'équipe pourrons ajouter, modifier &amp; éditer les composantes et incidents.',
+        'team'        => 'Equipe',
+        'member'      => 'Utilisateur',
+        'profile'     => 'Profil utilisateur',
+        'description' => 'Membres de l\'équipe sera en mesure d\'ajouter, de modifier et de modifier les composants et les incidents.',
         'add'         => [
-            'title'   => 'Ajouter un membre à l\'équipe',
-            'success' => 'Membre ajouté.',
-            'failure' => 'Une erreur s\'est produite lors de l\'ajout de ce membre.',
+            'title'   => 'Ajouter un nouveau membre de l\'équipe',
+            'success' => 'Membre de l\'équipe a ajouté.',
+            'failure' => 'Une erreur est survenue avec le composant.',
         ],
         'edit' => [
-            'title'   => 'Mettre à jour le profil',
-            'success' => 'Profil mis-à-jour.',
-            'failure' => 'Une erreur s\'est produite lors de la mise à jour du le profil.',
+            'title'   => 'Mettre le Profil à Jour',
+            'success' => 'Profil mis à jour.',
+            'failure' => 'Une erreur est survenue lors de l\'actualisation.',
+        ],
+        'delete' => [
+            'success' => '',
+            'failure' => '',
         ],
     ],
 
     // Settings
     'settings' => [
-        'settings'  => 'Réglages',
+        'settings'  => 'Paramètres',
         'app-setup' => [
-            'app-setup'   => 'Configuration',
-            'images-only' => 'Only images may be uploaded.',
-            'too-big'     => 'The file you uploaded is too big. Upload an image smaller than :size',
+            'app-setup'   => 'Configuration de l\'application',
+            'images-only' => 'Seules les images peuvent être déposées.',
+            'too-big'     => 'Le fichier déposé est trop grand. Déposer une image d\'une taille inférieur à :size',
         ],
         'security' => [
-            'security' => 'Sécurité',
+            'security'   => 'Sécurité',
+            'two-factor' => 'Utilisateurs sans authentification à deux facteurs',
         ],
         'stylesheet' => [
             'stylesheet' => 'Feuille de style',
         ],
         'theme' => [
-            'theme' => 'Thème',
+            'theme' => ' Thème',
         ],
         'edit' => [
-            'success' => 'Réglages sauvegardés.',
-            'failure' => 'Les réglages n\'ont pas pu être sauvegardés.',
+            'success' => 'Paramètres sauvegardés.',
+            'failure' => 'Les paramètres ne peuvent pas être sauvegardés.',
         ],
     ],
 
     // Login
     'login' => [
-        'login'      => 'Connexion',
+        'login'      => 'Identifiez-vous',
         'logged_in'  => 'Vous êtes connecté.',
         'welcome'    => 'Re-bonjour !',
-        'two-factor' => 'Entrez votre jeton d\'identification.',
+        'two-factor' => 'Entrez votre jeton, s\'il vous plait.',
     ],
 
     // Sidebar footer
     'help'        => 'Aide',
-    'status_page' => 'Statut des services',
-    'logout'      => 'Déconnexion',
+    'status_page' => 'État des services',
+    'logout'      => 'Se déconnecter',
 
     // Notifications
     'notifications' => [
         'notifications' => 'Notifications',
-        'awesome'       => 'Super.',
+        'awesome'       => 'Fantastique.',
         'whoops'        => 'Oups.',
     ],
 
     // Welcome modal
     'welcome' => [
-        'welcome' => 'Bienvenue dans Cachet',
-        'message' => 'Votre page d\'état est presque prête! Vous voudrez probablement configurer ces réglages supplémentaires',
-        'close'   => 'Aller directement au tableau de bord',
+        'welcome' => 'Bienvenue sur Cachet',
+        'message' => 'Votre page de statut est presque prêt ! Vous pouvez configurer ces paramètres supplémentaires',
+        'close'   => 'Il suffit d\'aller directement à mon tableau de bord',
         'steps'   => [
-            'component'  => 'Créer une composante',
-            'incident'   => 'Créer un incident',
-            'customize'  => 'Configurer votre Cachet.',
-            'team'       => 'Ajouter des utilisateurs à votre équipe.',
-            'api'        => 'Générer un jeton d\'identification API.',
-            'two-factor' => 'Activer l\'identification à deux étapes.',
+            'component'  => 'Créer des composants',
+            'incident'   => 'Créer des incidents',
+            'customize'  => 'Personnaliser',
+            'team'       => 'Ajouter des utilisateurs',
+            'api'        => 'Générer un jeton pour l\'API',
+            'two-factor' => 'Authentification à deux facteurs',
         ],
     ],
 

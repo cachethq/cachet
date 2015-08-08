@@ -26,7 +26,7 @@ return [
         'past'          => 'Insiden sebelumnya',
         'previous_week' => 'Pekan sebelumnya',
         'next_week'     => 'Pekan selanjutnya',
-        'none'          => 'Tidak ada yang bisa dilaporkan',
+        'none'          => 'Tidak ada insiden.',
         'scheduled'     => 'Jadwal Pemeliharaan',
         'scheduled_at'  => ', dijadwalkan pada :timestamp',
         'status'        => [
@@ -60,29 +60,30 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe' => 'Subscribe to get the most recent updates.',
-        'button'    => 'Subscribe',
+        'subscribe' => 'Ikuti newsletter untuk mendapat update terbaru.',
+        'button'    => 'Daftar',
         'email'     => [
-            'subscribe'    => 'Subscribe to email updates.',
-            'subscribed'   => 'You\'ve been subscribed to email notifications, please check your email to confirm your subscription.',
-            'verified'     => 'Your email subscription has been confirmed. Thank you!',
-            'unsubscribe'  => 'Unsuscribe from email updates.',
-            'unsubscribed' => 'Your email subscription has been cancelled.',
-            'failure'      => 'Something went wrong with the subscription.',
+            'subscribe'    => 'Langganan update email.',
+            'subscribed'   => 'Anda berhasil terdaftar pada notifikasi email, mohon periksa email anda untuk mengkonfirmasi pendaftaran ini.',
+            'verified'     => 'Pendaftaran newsletter anda berhasil dikonfirmasi. Terima kasih!',
+            'unsubscribe'  => 'Hapus saya dari update email.',
+            'unsubscribed' => 'Langganan email anda sudah dihentikan.',
+            'failure'      => 'Ada yang salah dengan sistem langganan email.',
             'verify'       => [
-                'text'           => "Please confirm your email subscription to :app_name status updates.\n:link\nThank you, :app_name",
-                'html-preheader' => 'Please confirm your email subscription to :app_name status updates.',
-                'html'           => '<p>Please confirm your email subscription to :app_name status updates.</p><p><a href=":link">:link</a></p><p>Thank you, :app_name</p>',
+                'text'           => "Mohon konfirmasi langganan email update status :app_name.\\n:link\\nTerima kasih,
+:app_name",
+                'html-preheader' => 'Mohon konfirmasi langganan email update status :app_name.',
+                'html'           => '',
             ],
             'maintenance' => [
-                'text'           => "New maintenance has been scheduled on :app_name.\nThank you, :app_name",
-                'html-preheader' => 'New maintenance has been scheduled on :app_name.',
-                'html'           => '<p>New maintenance has been scheduled on :app_name.</p><p>Thank you, :app_name</p>',
+                'text'           => "Jadwal pemeliharaan baru sudah dibuat di :app_name.\\nTerima kasih, :app_name",
+                'html-preheader' => 'Jadwal pemeliharaan baru sudah dibuat di :app_name.',
+                'html'           => '',
             ],
             'incident' => [
-                'text'           => "New incident has been reported on :app_name.\nThank you, :app_name",
-                'html-preheader' => 'New incident has been reported on :app_name.',
-                'html'           => '<p>New incident has been reported on :app_name.</p><p>Thank you, :app_name</p>',
+                'text'           => "Ada insiden baru yang dilaporkan di :app_name.\\n Terima kasih, :app_name",
+                'html-preheader' => 'Ada insiden baru yang dilaporkan di :app_name.',
+                'html'           => '<p>Ada insiden baru yang dilaporkan di :app_name.</p><p> Terima kasih, :app_name</p>',
             ],
         ],
     ],
@@ -90,8 +91,8 @@ return [
     // Other
     'powered_by'      => 'Halaman Status :app dibuat dengan <a href="https://cachethq.io">Cachet</a>.',
     'about_this_site' => 'Tentang situs ini',
-    'rss-feed'        => 'Pasokan RSS',
-    'atom-feed'       => 'Pasokan Atom',
+    'rss-feed'        => 'RSS',
+    'atom-feed'       => 'Atom',
     'feed'            => 'Pasokan Status',
 
 ];

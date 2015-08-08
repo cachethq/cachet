@@ -17,32 +17,32 @@ return [
     'incidents' => [
         'title'                    => 'Incidenten &amp; planning',
         'incidents'                => 'Incidenten',
-        'logged'                   => '{0} Er zijn geen incidenten, goed werk.|Je hebt één incident gemeld.|Je hebt <strong>:count</strong> incidenten gemeld.',
-        'incident-create-template' => 'Sjabloon aanmaken',
-        'incident-templates'       => 'Incidentsjablonen',
+        'logged'                   => '{0} Proficiat, er zijn geen incidenten.|Er heeft zich één incident voorgedaan.|Er zijn <strong>:count</strong> incidenten gerapporteerd.',
+        'incident-create-template' => 'Maak template',
+        'incident-templates'       => 'Incident Sjablonen',
         'add'                      => [
             'title'   => 'Incident toevoegen',
             'success' => 'Incident toegevoegd.',
             'failure' => 'Er ging iets mis met het incident.',
         ],
         'edit' => [
-            'title'   => 'Incident bewerken',
-            'success' => 'Incident bijwerken.',
+            'title'   => 'Wijzig een incident',
+            'success' => 'Incident bijgewerkt.',
             'failure' => 'Er ging iets mis met het incident.',
         ],
 
         // Incident templates
         'templates' => [
-            'title' => 'Incidentsjablonen',
+            'title' => 'Incident Sjablonen',
             'add'   => [
-                'title'   => 'Incidentsjabloon aanmaken',
+                'title'   => 'Een incident sjabloon maken',
                 'success' => 'Sjabloon aangemaakt.',
-                'failure' => 'Er ging iets mis met het incidentsjabloon.',
+                'failure' => 'Er ging iets mis met het incident sjabloon.',
             ],
             'edit' => [
-                'title'   => 'Sjabloon bewerken',
+                'title'   => 'Bewerk sjabloon',
                 'success' => 'Sjabloon is bijgewerkt!',
-                'failure' => 'Er ging iets mis bij het bijwerken van het incidentsjabloon.',
+                'failure' => 'Er ging iets mis bij het bijwerken van het sjabloon',
             ],
         ],
     ],
@@ -70,28 +70,28 @@ return [
     // Components
     'components' => [
         'components'         => 'Componenten',
-        'component_statuses' => 'Componentstatussen',
+        'component_statuses' => 'Onderdeel statussen',
         'listed_group'       => 'Gegroepeerd onder :name',
         'add'                => [
-            'title'   => 'Component toevoegen',
-            'message' => 'Je moet een component toevoegen.',
-            'success' => 'Component aangemaakt.',
-            'failure' => 'Er ging iets mis met de component.',
+            'title'   => 'Voeg een onderdeel toe',
+            'message' => 'Gelieve een onderdeel toe te voegen.',
+            'success' => 'Onderdeel aangemaakt.',
+            'failure' => 'Er ging iets mis met het onderdeel.',
         ],
         'edit' => [
-            'title'   => 'Component bewerken',
-            'success' => 'Component bijgewerkt.',
-            'failure' => 'Er ging iets mis met de component.',
+            'title'   => 'Een onderdeel bewerken',
+            'success' => 'Onderdeel bijgewerkt.',
+            'failure' => 'Er ging iets mis met het onderdeel.',
         ],
 
         // Component groups
         'groups' => [
-            'groups'        => 'Componentgroep|Componentgroepen',
-            'no_components' => 'You should add a component group.',
+            'groups'        => 'Onderdeel groep|Onderdeel groepen',
+            'no_components' => 'U moet een componentgroep toevoegen.',
             'add'           => [
                 'title'   => 'Componentgroep toevoegen',
-                'success' => 'Componentgroep toegevoegd.',
-                'failure' => 'Er ging iets mis met de componentgroep.',
+                'success' => 'Onderdeel groep toegevoegd.',
+                'failure' => 'Er ging iets mis met de onderdeel groep.',
             ],
             'edit' => [
                 'title'   => 'Componentgroep bewerken',
@@ -103,7 +103,7 @@ return [
 
     // Metrics
     'metrics' => [
-        'metrics' => 'Metingen',
+        'metrics' => 'Statistieken',
         'add'     => [
             'title'   => 'Meting aanmaken',
             'success' => 'Meting aangemaakt.',
@@ -115,22 +115,43 @@ return [
             'failure' => 'Er ging iets mis met de meting.',
         ],
     ],
+    // Subscribers
+    'subscribers' => [
+        'subscribers'  => '',
+        'description'  => '',
+        'verified'     => '',
+        'not_verified' => '',
+        'add'          => [
+            'title'   => '',
+            'success' => '',
+            'failure' => '',
+        ],
+        'edit' => [
+            'title'   => '',
+            'success' => '',
+            'failure' => '',
+        ],
+    ],
 
     // Team
     'team' => [
         'team'        => 'Team',
         'member'      => 'Lid',
         'profile'     => 'Profiel',
-        'description' => 'Teamleden hebben de mogelijkheid om componenten en incidenten toe te voegen, aan te passen en te bewerken.',
+        'description' => 'Teamleden zullen onderdelen en incidenten kunnen aanpassen &amp; toevoegen.',
         'add'         => [
-            'title'   => 'Nieuw teamlid toevoegen',
+            'title'   => 'Voeg een nieuw teamlid toe',
             'success' => 'Teamlid toegevoegd.',
-            'failure' => 'Er ging iets mis met de component.',
+            'failure' => 'Er ging iets mis met het onderdeel.',
         ],
         'edit' => [
             'title'   => 'Profiel bijwerken',
             'success' => 'Profiel bijgewerkt.',
-            'failure' => 'Er ging iets mis met het bijwerken.',
+            'failure' => 'Er ging iets mis tijdens het bijwerken.',
+        ],
+        'delete' => [
+            'success' => '',
+            'failure' => '',
         ],
     ],
 
@@ -138,9 +159,9 @@ return [
     'settings' => [
         'settings'  => 'Instellingen',
         'app-setup' => [
-            'app-setup'   => 'Installatie applicatie',
-            'images-only' => 'Alleen afbeeldingen mogen worden geüpload.',
-            'too-big'     => 'Het bestand dat je hebt geüpload is te groot. Upload een afbeelding kleinder dan :size',
+            'app-setup'   => 'Applicatie Installatie',
+            'images-only' => 'Alleen afbeeldingen kunnen worden geüpload.',
+            'too-big'     => 'Het bestand dat u heeft geüpload is te groot. Upload een afbeelding kleiner dan :size',
         ],
         'security' => [
             'security'   => 'Beveiliging',
@@ -153,38 +174,38 @@ return [
             'theme' => 'Thema',
         ],
         'edit' => [
-            'success' => 'Instellingen opgeslagen.',
-            'failure' => 'Instellingen konden niet worden opgeslagen.',
+            'success' => 'Instellingen bewaard.',
+            'failure' => 'Instellingen kunnen niet worden opgeslagen.',
         ],
     ],
 
     // Login
     'login' => [
-        'login'      => 'Inloggen',
-        'logged_in'  => 'Je bent ingelogd.',
-        'welcome'    => 'Welkom terug!',
-        'two-factor' => 'Vul je token in.',
+        'login'      => 'Login',
+        'logged_in'  => 'U bent ingelogd.',
+        'welcome'    => 'Welkom Terug!',
+        'two-factor' => 'Voer uw token in.',
     ],
 
     // Sidebar footer
     'help'        => 'Help',
-    'status_page' => 'Statuspagina',
+    'status_page' => 'Status Pagina',
     'logout'      => 'Uitloggen',
 
     // Notifications
     'notifications' => [
-        'notifications' => 'Meldingen',
+        'notifications' => 'Notificaties',
         'awesome'       => 'Geweldig.',
-        'whoops'        => 'Oeps.',
+        'whoops'        => 'Oepsie.',
     ],
 
     // Welcome modal
     'welcome' => [
         'welcome' => 'Welkom bij Cachet',
-        'message' => 'Je statuspagina is bijna klaar! Je wilt misschien deze extra instellingen configureren',
+        'message' => 'Uw statuspagina is bijna klaar! U kunt deze extra instellingen configureren',
         'close'   => 'Ga direct naar mijn dashboard',
         'steps'   => [
-            'component'  => 'Componenten aanmaken',
+            'component'  => 'Onderdelen maken',
             'incident'   => 'Incidenten aanmaken',
             'customize'  => 'Aanpassen',
             'team'       => 'Gebruikers toevoegen',

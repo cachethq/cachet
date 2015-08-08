@@ -14,7 +14,7 @@ return [
     'components' => [
         'status' => [
             1 => 'Opérationnel',
-            2 => 'Problème de performances',
+            2 => 'Problèmes de performances',
             3 => 'Panne partielle',
             4 => 'Panne majeure',
         ],
@@ -22,76 +22,76 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => 'Aucun incident reporté.',
-        'past'          => 'Incidents précédents',
+        'none'          => 'Aucun incident signalé.',
+        'past'          => 'Incidents antérieurs',
         'previous_week' => 'Semaine précédente',
         'next_week'     => 'Semaine suivante',
-        'none'          => 'Rien à reporter',
-        'scheduled'     => 'Maintenance planifiée',
-        'scheduled_at'  => ', prévue à :timestamp',
+        'none'          => 'Aucun incident signalé.',
+        'scheduled'     => 'Maintenance Planifiée',
+        'scheduled_at'  => ', planifiée :timestamp',
         'status'        => [
-            0 => '',
+            0 => 'Planifié', // TODO: Hopefully remove this.
             1 => 'Enquête en cours',
             2 => 'Identifié',
-            3 => 'Sous surveillance',
+            3 => 'Analyse en cours',
             4 => 'Corrigé',
         ],
     ],
 
     // Service Status
     'service' => [
-        'good' => 'Tous les services sont fonctionnels.',
-        'bad'  => 'Certains services rencontrent des problèmes.',
+        'good' => 'Tous les systèmes sont fonctionnels.',
+        'bad'  => 'Certains systèmes rencontrent des problèmes.',
     ],
 
     'api' => [
-        'regenerate' => 'Regénérer une clé d\'API',
-        'revoke'     => 'Révoquer cette clé d\'API',
+        'regenerate' => 'Régénérer la clé API',
+        'revoke'     => 'Révoquer la clé API',
     ],
 
     // Metrics
     'metrics' => [
         'filter' => [
-            'hourly'  => 'Par heure',
-            'daily'   => 'Par jour',
-            'monthly' => 'Par mois',
+            'hourly'  => 'Toutes les heures',
+            'daily'   => 'Tous les jours',
+            'monthly' => 'Mensuel',
         ],
     ],
 
     // Subscriber
     'subscriber' => [
-        'subscribe' => 'Subscribe to get the most recent updates.',
-        'button'    => 'Subscribe',
+        'subscribe' => 'Abonnez-vous pour obtenir les dernières mises à jour.',
+        'button'    => 'S\'abonner',
         'email'     => [
-            'subscribe'    => 'Subscribe to email updates.',
-            'subscribed'   => 'You\'ve been subscribed to email notifications, please check your email to confirm your subscription.',
-            'verified'     => 'Your email subscription has been confirmed. Thank you!',
-            'unsubscribe'  => 'Unsuscribe from email updates.',
-            'unsubscribed' => 'Your email subscription has been cancelled.',
-            'failure'      => 'Something went wrong with the subscription.',
+            'subscribe'    => 'S\'abonner aux mises à jour par courriel.',
+            'subscribed'   => 'Vous êtes abonné aux notifications par courriel, veuillez vérifier votre messagerie pour confirmer votre abonnement.',
+            'verified'     => 'Votre abonnement par courriel a été confirmé. Merci !',
+            'unsubscribe'  => 'Désinscription des mises à jour par courriel.',
+            'unsubscribed' => 'Votre abonnement par courriel a été annulé.',
+            'failure'      => 'Quelque chose s\'est mal passé avec l\'abonnement.',
             'verify'       => [
-                'text'           => "Please confirm your email subscription to :app_name status updates.\n:link\nThank you, :app_name",
-                'html-preheader' => 'Please confirm your email subscription to :app_name status updates.',
-                'html'           => '<p>Please confirm your email subscription to :app_name status updates.</p><p><a href=":link">:link</a></p><p>Thank you, :app_name</p>',
+                'text'           => "Veuillez confirmer votre abonnement par courriel aux mises à jour d'état de :app_name.\\n:link\\nMerci, :app_name",
+                'html-preheader' => 'Veuillez confirmer votre abonnement par courriel aux mises à jour de :app_name.',
+                'html'           => '',
             ],
             'maintenance' => [
-                'text'           => "New maintenance has been scheduled on :app_name.\nThank you, :app_name",
-                'html-preheader' => 'New maintenance has been scheduled on :app_name.',
-                'html'           => '<p>New maintenance has been scheduled on :app_name.</p><p>Thank you, :app_name</p>',
+                'text'           => "Une nouvelle maintenance a été planifiée pour :app_name.\\nMerci, :app_name",
+                'html-preheader' => 'Une nouvelle maintenance a été planifiée pour :app_name.',
+                'html'           => '',
             ],
             'incident' => [
-                'text'           => "New incident has been reported on :app_name.\nThank you, :app_name",
-                'html-preheader' => 'New incident has been reported on :app_name.',
-                'html'           => '<p>New incident has been reported on :app_name.</p><p>Thank you, :app_name</p>',
+                'text'           => "Un nouvel incident a été signalé sur : app_name.\\nMerci, :app_name",
+                'html-preheader' => 'Un nouvel incident a été signalé sur : app_name.',
+                'html'           => '<p>Un nouvel incident a été signalé sur : app_name. </p><p>Merci, : app_name</p>',
             ],
         ],
     ],
 
     // Other
     'powered_by'      => ':app Status Page est propulsé par <a href="https://cachethq.github.io">Cachet</a>.',
-    'about_this_site' => 'À propos de ce site',
-    'rss-feed'        => 'Flux RSS',
-    'atom-feed'       => 'Flux Atom',
-    'feed'            => 'Flux des services',
+    'about_this_site' => 'À propos du site',
+    'rss-feed'        => 'RSS',
+    'atom-feed'       => 'Atom',
+    'feed'            => 'Flux des statuts',
 
 ];
