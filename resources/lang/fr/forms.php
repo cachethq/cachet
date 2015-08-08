@@ -100,7 +100,7 @@ return [
             'about-this-page'        => 'À propos de cette page',
             'days-of-incidents'      => 'Combien de jours d\'incidents à montrer?',
             'banner'                 => 'Image de la bannière',
-            'banner-help'            => "Il est recommandé que vous téléchargez des fichiers ne dépassant pas les 930px large .",
+            'banner-help'            => 'Il est recommandé que vous téléchargez des fichiers ne dépassant pas les 930px large .',
             'analytics_google'       => 'Code de Google Analytics',
             'analytics_gosquared'    => 'Code de GoSquared Analytics',
             'analytics_piwik_url'    => 'URL de votre instance de Piwik (sans http(s)://)',

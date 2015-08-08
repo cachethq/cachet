@@ -100,7 +100,7 @@ return [
             'about-this-page'        => 'Über diese Seite',
             'days-of-incidents'      => 'Wie viele Tage mit Vorfällen sollen gezeigt werden?',
             'banner'                 => 'Banner',
-            'banner-help'            => "Es wird empfohlen, dass Sie keine Dateien die breiter als 930 Pixel sind hochladen .",
+            'banner-help'            => 'Es wird empfohlen, dass Sie keine Dateien die breiter als 930 Pixel sind hochladen .',
             'analytics_google'       => 'Google Analytics Code',
             'analytics_gosquared'    => 'GoSquared Analytics Code',
             'analytics_piwik_url'    => 'URL der Piwik-Instanz (ohne http(s)://)',

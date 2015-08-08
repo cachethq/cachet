@@ -100,7 +100,7 @@ return [
             'about-this-page'        => 'Over deze pagina',
             'days-of-incidents'      => 'Hoeveel dagen moeten incidenten getoond worden?',
             'banner'                 => 'Banner afbeelding',
-            'banner-help'            => "Het wordt aanbevolen dat u geen bestanden upload die breeder zijn dan 930px.",
+            'banner-help'            => 'Het wordt aanbevolen dat u geen bestanden upload die breeder zijn dan 930px.',
             'analytics_google'       => 'Google Analytics-code',
             'analytics_gosquared'    => 'GoSquared Analytics-code',
             'analytics_piwik_url'    => 'URL van uw Piwik exemplaar (zonder http(s)://)',

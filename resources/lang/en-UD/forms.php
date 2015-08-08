@@ -100,7 +100,7 @@ return [
             'about-this-page'        => 'crwdns402:0crwdne402:0',
             'days-of-incidents'      => 'crwdns403:0crwdne403:0',
             'banner'                 => 'crwdns404:0crwdne404:0',
-            'banner-help'            => "crwdns405:0crwdne405:0",
+            'banner-help'            => 'crwdns405:0crwdne405:0',
             'analytics_google'       => 'crwdns486:0crwdne486:0',
             'analytics_gosquared'    => 'crwdns487:0crwdne487:0',
             'analytics_piwik_url'    => 'crwdns511:0crwdne511:0',

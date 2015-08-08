@@ -70,18 +70,18 @@ return [
             'unsubscribed' => 'Langganan email anda sudah dihentikan.',
             'failure'      => 'Ada yang salah dengan sistem langganan email.',
             'verify'       => [
-                'text'           => "Mohon konfirmasi langganan email update status :app_name.\\n:link\\nTerima kasih,
-:app_name",
+                'text'           => 'Mohon konfirmasi langganan email update status :app_name.\\n:link\\nTerima kasih,
+:app_name',
                 'html-preheader' => 'Mohon konfirmasi langganan email update status :app_name.',
                 'html'           => '',
             ],
             'maintenance' => [
-                'text'           => "Jadwal pemeliharaan baru sudah dibuat di :app_name.\\nTerima kasih, :app_name",
+                'text'           => 'Jadwal pemeliharaan baru sudah dibuat di :app_name.\\nTerima kasih, :app_name',
                 'html-preheader' => 'Jadwal pemeliharaan baru sudah dibuat di :app_name.',
                 'html'           => '',
             ],
             'incident' => [
-                'text'           => "Ada insiden baru yang dilaporkan di :app_name.\\n Terima kasih, :app_name",
+                'text'           => 'Ada insiden baru yang dilaporkan di :app_name.\\n Terima kasih, :app_name',
                 'html-preheader' => 'Ada insiden baru yang dilaporkan di :app_name.',
                 'html'           => '<p>Ada insiden baru yang dilaporkan di :app_name.</p><p> Terima kasih, :app_name</p>',
             ],
