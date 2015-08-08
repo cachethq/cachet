@@ -62,7 +62,6 @@
                 new Chart(ctx).Line(data, {
                     tooltipTemplate: "{!! $metric->name !!}: <%= value %>{!! $metric->suffix !!}",
                     scaleShowVerticalLines: true,
-                    scaleShowLabels: false,
                     responsive: true,
                     maintainAspectRatio: false
                 });
