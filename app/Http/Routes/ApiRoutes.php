@@ -32,6 +32,8 @@ class ApiRoutes
 
             // Components
             $router->get('components', 'ComponentController@getComponents');
+            $router->get('components/groups', 'ComponentGroupController@getGroups');
+            $router->get('components/groups/{component_group}', 'ComponentGroupController@getGroup');
             $router->get('components/{component}', 'ComponentController@getComponent');
 
             // Incidents
@@ -48,16 +50,19 @@ class ApiRoutes
                 $router->get('subscribers', 'SubscriberController@getSubscribers');
 
                 $router->post('components', 'ComponentController@postComponents');
+                $router->post('components/groups', 'ComponentGroupController@postGroups');
                 $router->post('incidents', 'IncidentController@postIncidents');
                 $router->post('metrics', 'MetricController@postMetrics');
                 $router->post('metrics/{metric}/points', 'MetricPointController@postMetricPoints');
                 $router->post('subscribers', 'SubscriberController@postSubscribers');
 
+                $router->put('components/groups/{component_group}', 'ComponentGroupController@putGroup');
                 $router->put('components/{component}', 'ComponentController@putComponent');
                 $router->put('incidents/{incident}', 'IncidentController@putIncident');
                 $router->put('metrics/{metric}', 'MetricController@putMetric');
                 $router->put('metrics/{metric}/points/{metric_point}', 'MetricPointController@putMetricPoint');
 
+                $router->delete('components/groups/{component_group}', 'ComponentGroupController@deleteGroup');
                 $router->delete('components/{component}', 'ComponentController@deleteComponent');
                 $router->delete('incidents/{incident}', 'IncidentController@deleteIncident');
                 $router->delete('metrics/{metric}', 'MetricController@deleteMetric');

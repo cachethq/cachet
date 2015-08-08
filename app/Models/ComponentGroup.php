@@ -19,12 +19,13 @@ class ComponentGroup extends Model
     use ValidatingTrait;
 
     /**
-     * The validation rules.
+     * The attributes that should be casted to native types.
      *
      * @var string[]
      */
-    public $rules = [
-        'name' => 'required',
+    protected $casts = [
+        'name'  => 'string',
+        'order' => 'integer',
     ];
 
     /**
@@ -33,6 +34,16 @@ class ComponentGroup extends Model
      * @var string[]
      */
     protected $fillable = ['name', 'order'];
+
+    /**
+     * The validation rules.
+     *
+     * @var string[]
+     */
+    public $rules = [
+        'name'  => 'required',
+        'order' => 'integer',
+    ];
 
     /**
      * A group can have many components.
