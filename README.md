@@ -38,6 +38,10 @@ Theses extra dependencies are required to develop Cachet:
 
 You can now find our documentation at [https://docs.cachethq.io](https://docs.cachethq.io).
 
+- [Installing Cachet](https://docs.cachethq.io/docs/installing-cachet)
+- [Getting started with Docker](https://docs.cachethq.io/docs/get-started-with-docker)
+- [Getting started with Vagrant](https://docs.cachethq.io/docs/get-started-with-vagrant)
+
 ### Demo Account
 
 To test out the demo, you may login to the [Dashboard](https://demo.cachethq.io/dashboard) with the following:
@@ -46,22 +50,6 @@ To test out the demo, you may login to the [Dashboard](https://demo.cachethq.io/
 - **Password:** test123
 
 The demo is reset every half hour.
-
-## What Cachet is not
-
-Here is a list of things that Cachet is not or does not do:
-
-1. It does not monitor your services. It works only as a way to display the status of your services. *However, Cachet is able to receive updates from third-party services via its API.*
-2. It does not work on a plugin system. There are no monitoring services to extend.
-3. It's not a Twitter clone.
-
-## Installation Support
-
-We've moved our installation guides for Apache, Nginx, Docker and Vagrant to our documentation page.
-
-- [Installing Cachet](https://docs.cachethq.io/docs/installing-cachet)
-- [Getting started with Docker](https://docs.cachethq.io/docs/get-started-with-docker)
-- [Getting started with Vagrant](https://docs.cachethq.io/docs/get-started-with-vagrant)
 
 ## Translations
 
