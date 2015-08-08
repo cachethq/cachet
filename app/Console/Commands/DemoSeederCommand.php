@@ -165,7 +165,7 @@ class DemoSeederCommand extends Command
         for ($i = 0; $i < 11; $i++) {
             $metricTime = (new DateTime())->sub(new DateInterval('PT'.$i.'H'));
 
-            $point = MetricPoint::create([
+            MetricPoint::create([
                 'metric_id'  => 1,
                 'value'      => rand(1, 10),
                 'created_at' => $metricTime,
