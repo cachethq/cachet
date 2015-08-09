@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "alt-three/emoji",
-            "version": "v1.1.0",
+            "version": "v1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/AltThree/Emoji.git",
-                "reference": "cbd5b86fa71a3332eae9d06345d7efc9c1fada17"
+                "reference": "f0d2783b4760e4fa2cf176cc356cf523a06d8c57"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/AltThree/Emoji/zipball/cbd5b86fa71a3332eae9d06345d7efc9c1fada17",
-                "reference": "cbd5b86fa71a3332eae9d06345d7efc9c1fada17",
+                "url": "https://api.github.com/repos/AltThree/Emoji/zipball/f0d2783b4760e4fa2cf176cc356cf523a06d8c57",
+                "reference": "f0d2783b4760e4fa2cf176cc356cf523a06d8c57",
                 "shasum": ""
             },
             "require": {
@@ -65,7 +65,7 @@
                 "emoji",
                 "parser"
             ],
-            "time": "2015-08-06 18:42:28"
+            "time": "2015-08-09 18:14:49"
         },
         {
             "name": "alt-three/validator",
@@ -2012,16 +2012,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "1.15.0",
+            "version": "1.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "dc5150cc608f2334c72c3b6a553ec9668a4156b0"
+                "reference": "c0c0b4bee3aabce7182876b0d912ef2595563db7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/dc5150cc608f2334c72c3b6a553ec9668a4156b0",
-                "reference": "dc5150cc608f2334c72c3b6a553ec9668a4156b0",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/c0c0b4bee3aabce7182876b0d912ef2595563db7",
+                "reference": "c0c0b4bee3aabce7182876b0d912ef2595563db7",
                 "shasum": ""
             },
             "require": {
@@ -2058,7 +2058,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.15.x-dev"
+                    "dev-master": "1.16.x-dev"
                 }
             },
             "autoload": {
@@ -2084,7 +2084,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2015-07-12 13:54:09"
+            "time": "2015-08-09 17:44:44"
         },
         {
             "name": "mtdowling/cron-expression",
