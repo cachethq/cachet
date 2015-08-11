@@ -13,6 +13,11 @@ namespace CachetHQ\Cachet\Http\Routes;
 
 use Illuminate\Contracts\Routing\Registrar;
 
+/**
+ * This is the api routes class.
+ *
+ * @author James Brooks <james@alt-three.com>
+ */
 class ApiRoutes
 {
     /**

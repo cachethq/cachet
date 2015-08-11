@@ -50,7 +50,7 @@ class AuthController extends Controller
                 // Temporarily store the user.
                 Session::put('2fa_id', Auth::user()->id);
 
-                return Redirect::route('two-factor');
+                return Redirect::route('auth.two-factor');
             }
 
             // We probably want to add support for "Remember me" here.
@@ -98,11 +98,11 @@ class AuthController extends Controller
                 // Failed login, log back out.
                 Auth::logout();
 
-                return Redirect::route('login')->withError(trans('forms.login.invalid-token'));
+                return Redirect::route('auth.login')->withError(trans('forms.login.invalid-token'));
             }
         }
 
-        return Redirect::route('login')->withError(trans('forms.login.invalid-token'));
+        return Redirect::route('auth.login')->withError(trans('forms.login.invalid-token'));
     }
 
     /**

@@ -13,6 +13,11 @@ namespace CachetHQ\Cachet\Http\Routes;
 
 use Illuminate\Contracts\Routing\Registrar;
 
+/**
+ * This is the feed routes class.
+ *
+ * @author James Brooks <james@alt-three.com>
+ */
 class FeedRoutes
 {
     /**
@@ -24,8 +29,14 @@ class FeedRoutes
     {
         // Prevent access until the app is setup.
         $router->group(['middleware' => 'app.hasSetting', 'setting' => 'app_name'], function ($router) {
-            $router->get('/atom/{component_group?}', 'AtomController@feedAction');
-            $router->get('/rss/{component_group?}', 'RssController@feedAction');
+            $router->get('/atom/{component_group?}', [
+                'as'   => 'feed.atom',
+                'uses' => 'AtomController@feedAction',
+            ]);
+            $router->get('/rss/{component_group?}', [
+                'as'   => 'feed.rss',
+                'uses' => 'RssController@feedAction',
+            ]);
         });
     }
 }

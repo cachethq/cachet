@@ -29,7 +29,7 @@ class ComponentController extends Controller
         $this->subMenu = [
             'components' => [
                 'title'  => trans('dashboard.components.components'),
-                'url'    => route('dashboard.components'),
+                'url'    => route('dashboard.components.index'),
                 'icon'   => 'ion-outlet',
                 'active' => false,
             ],

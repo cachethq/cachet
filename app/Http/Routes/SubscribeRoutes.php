@@ -13,6 +13,11 @@ namespace CachetHQ\Cachet\Http\Routes;
 
 use Illuminate\Contracts\Routing\Registrar;
 
+/**
+ * This is the subscriber routes class.
+ *
+ * @author James Brooks <james@alt-three.com>
+ */
 class SubscribeRoutes
 {
     /**
@@ -22,7 +27,10 @@ class SubscribeRoutes
      */
     public function map(Registrar $router)
     {
-        $router->group(['middleware'     => 'app.hasSetting', 'setting' => 'app_name'], function ($router) {
+        $router->group([
+            'middleware' => 'app.hasSetting',
+            'setting'    => 'app_name',
+        ], function ($router) {
             $router->group(['middleware' => 'app.subscribers'], function ($router) {
                 $router->get('subscribe', [
                     'as'   => 'subscribe-page',

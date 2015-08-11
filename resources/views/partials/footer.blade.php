@@ -14,8 +14,8 @@
                     @if($current_user)
                     <a href="/auth/logout" class="icon-link"><i class="ion-android-exit"></i> {{ trans('dashboard.logout') }}</a>
                     @endif
-                    <a href="/rss" class="icon-link rss"><i class="ion-social-rss"></i> {{ trans('cachet.rss-feed') }}</a>
-                    <a href="/atom" class="icon-link rss"><i class="ion-social-rss"></i> {{ trans('cachet.atom-feed') }}</a>
+                    <a href="{{ route('feed.rss') }}" class="icon-link rss"><i class="ion-social-rss"></i> {{ trans('cachet.rss-feed') }}</a>
+                    <a href="{{ route('feed.atom') }}" class="icon-link rss"><i class="ion-social-rss"></i> {{ trans('cachet.atom-feed') }}</a>
                 </div>
             </div>
         </div>
