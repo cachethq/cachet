@@ -13,7 +13,7 @@
     <div class="content-wrapper">
         <div class="row">
             <div class="col-md-12">
-                @include('partials.dashboard.errors')
+                @include('dashboard.partials.errors')
                 <form class='form-vertical' name='MetricsForm' role='form' method='POST'>
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <fieldset>

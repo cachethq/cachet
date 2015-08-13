@@ -3,7 +3,7 @@
 @section('content')
     <div class="content-panel">
         @if(isset($sub_menu))
-        @include('partials.dashboard.sub-sidebar')
+        @include('dashboard.partials.sub-sidebar')
         @endif
         <div class="content-wrapper">
             <div class="header sub-header" id="security">
@@ -15,7 +15,7 @@
                 <div class="col-sm-12">
                     <form name="SettingsForm" class="form-vertical" role="form" action="/dashboard/settings" method="POST">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        @include('partials.dashboard.errors')
+                        @include('dashboard.partials.errors')
                         <fieldset>
                             <div class="row">
                                 <div class="col-xs-12">

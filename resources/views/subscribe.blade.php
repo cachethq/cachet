@@ -27,7 +27,7 @@
     </div>
     @endif
 
-    @include('partials.dashboard.errors')
+    @include('dashboard.partials.errors')
 
     <h1>{{ trans('cachet.subscriber.subscribe') }}</h1>
     <form action="{{ route('subscribe', [], false) }}" method="post">
