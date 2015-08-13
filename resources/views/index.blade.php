@@ -10,7 +10,7 @@
     <div class="clearfix"></div>
 
     <div class="section-messages">
-        @include('partials.dashboard.errors')
+        @include('dashboard.partials.errors')
     </div>
 
     @if($bannerImage = Setting::get('app_banner'))

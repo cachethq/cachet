@@ -13,7 +13,7 @@
     <div class="content-wrapper">
         <div class="row">
             <div class="col-sm-12">
-                @include('partials.dashboard.errors')
+                @include('dashboard.partials.errors')
                 <form name="EditComponentForm" class="form-vertical" role="form" action="/dashboard/components/{{ $component->id }}/edit" method="POST">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <fieldset>
