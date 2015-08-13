@@ -58,7 +58,7 @@ class SubscriberController extends Controller
         try {
             $subscriber = Subscriber::create(['email' => $email]);
         } catch (ValidationException $e) {
-            return Redirect::back()
+            return Redirect::route('dashboard.subscribers.add')
                 ->withInput(Binput::all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.subscribers.add.failure')))
                 ->withErrors($e->getMessageBag());
@@ -66,7 +66,7 @@ class SubscriberController extends Controller
 
         event(new CustomerHasSubscribedEvent($subscriber));
 
-        return Redirect::back()
+        return Redirect::route('dashboard.subscribers.add')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.subscribers.add.success')));
     }
 
@@ -83,6 +83,6 @@ class SubscriberController extends Controller
     {
         $subscriber->delete();
 
-        return Redirect::back();
+        return Redirect::route('dashboard.subscribers.index');
     }
 }

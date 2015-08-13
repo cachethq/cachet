@@ -90,7 +90,10 @@ class DashboardRoutes
                     'uses' => 'IncidentController@showAddIncident',
                 ]);
                 $router->post('add', 'IncidentController@createIncidentAction');
-                $router->delete('{incident}/delete', 'IncidentController@deleteIncidentAction');
+                $router->delete('{incident}/delete', [
+                    'as'   => 'delete',
+                    'uses' => 'IncidentController@deleteIncidentAction',
+                ]);
                 $router->get('{incident}/edit', [
                     'as'   => 'edit',
                     'uses' => 'IncidentController@showEditIncidentAction',

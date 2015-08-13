@@ -73,7 +73,7 @@ class SendIncidentEmailNotificationHandler
                     'htmlContent'     => $data->formattedMessage,
                     'textContent'     => $data->message,
                     'token'           => $subscriber->token,
-                    'unsubscribeLink' => route('unsubscribe', ['code' => $subscriber->verify_code]),
+                    'unsubscribeLink' => route('subscribe.unsubscribe', ['code' => $subscriber->verify_code]),
                     'appUrl'          => env('APP_URL'),
                 ];
 

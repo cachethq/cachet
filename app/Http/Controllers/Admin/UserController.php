@@ -59,13 +59,13 @@ class UserController extends Controller
         try {
             Auth::user()->update($items);
         } catch (ValidationException $e) {
-            return Redirect::back()
+            return Redirect::route('dashboard.user')
                 ->withInput(Binput::except('password'))
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.team.edit.failure')))
                 ->withErrors($e->getMessageBag());
         }
 
-        return Redirect::back()
+        return Redirect::route('dashboard.user')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.team.edit.success')));
     }
 
@@ -79,6 +79,6 @@ class UserController extends Controller
         $user->api_key = User::generateApiKey();
         $user->save();
 
-        return Redirect::back();
+        return Redirect::route('dashboard.user');
     }
 }

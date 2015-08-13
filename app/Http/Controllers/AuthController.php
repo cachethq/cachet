@@ -59,7 +59,7 @@ class AuthController extends Controller
             return Redirect::intended('dashboard');
         }
 
-        return Redirect::back()
+        return Redirect::route('auth.login')
             ->withInput(Binput::except('password'))
             ->withError(trans('forms.login.invalid'));
     }

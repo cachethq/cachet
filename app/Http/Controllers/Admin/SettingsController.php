@@ -138,15 +138,15 @@ class SettingsController extends Controller
             $maxSize = $file->getMaxFilesize();
 
             if ($file->getSize() > $maxSize) {
-                return Redirect::back()->withErrors(trans('dashboard.settings.app-setup.too-big', ['size' => $maxSize]));
+                return Redirect::route('dashboard.settings.setup')->withErrors(trans('dashboard.settings.app-setup.too-big', ['size' => $maxSize]));
             }
 
             if (!$file->isValid() || $file->getError()) {
-                return Redirect::back()->withErrors($file->getErrorMessage());
+                return Redirect::route('dashboard.settings.setup')->withErrors($file->getErrorMessage());
             }
 
             if (strpos($file->getMimeType(), 'image/') !== 0) {
-                return Redirect::back()->withErrors(trans('dashboard.settings.app-setup.images-only'));
+                return Redirect::route('dashboard.settings.setup')->withErrors(trans('dashboard.settings.app-setup.images-only'));
             }
 
             // Store the banner.
@@ -165,12 +165,12 @@ class SettingsController extends Controller
                 Setting::firstOrCreate(['name' => $settingName])->update(['value' => $settingValue]);
             }
         } catch (Exception $e) {
-            return Redirect::back()->withErrors(trans('dashboard.settings.edit.failure'));
+            return Redirect::route('dashboard.settings.setup')->withErrors(trans('dashboard.settings.edit.failure'));
         }
 
         Lang::setLocale(Binput::get('app_locale'));
 
-        return Redirect::back()
+        return Redirect::route('dashboard.settings.setup')
             ->withSuccess(trans('dashboard.settings.edit.success'));
     }
 }
