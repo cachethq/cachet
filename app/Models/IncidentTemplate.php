@@ -11,9 +11,9 @@
 
 namespace CachetHQ\Cachet\Models;
 
+use AltThree\Validator\ValidatingTrait;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
-use Watson\Validating\ValidatingTrait;
 
 class IncidentTemplate extends Model
 {
@@ -24,7 +24,7 @@ class IncidentTemplate extends Model
      *
      * @var string[]
      */
-    protected $rules = [
+    public $rules = [
         'name'     => 'required',
         'template' => 'required',
     ];

@@ -8,7 +8,7 @@
         <span class="uppercase">
             <i class="icon icon ion-android-alert"></i> {{ trans('dashboard.subscribers.subscribers') }}
         </span>
-        @if($loggedUser->isAdmin)
+        @if($current_user->isAdmin)
         <a class="btn btn-sm btn-success pull-right" href="{{ route('dashboard.subscribers.add') }}">
             {{ trans('dashboard.subscribers.add.title') }}
         </a>

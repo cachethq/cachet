@@ -11,14 +11,15 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Admin;
 
-use CachetHQ\Cachet\Http\Controllers\AbstractController;
+use AltThree\Validator\ValidationException;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\MetricPoint;
 use GrahamCampbell\Binput\Facades\Binput;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 
-class MetricController extends AbstractController
+class MetricController extends Controller
 {
     /**
      * Shows the metrics view.
@@ -29,10 +30,9 @@ class MetricController extends AbstractController
     {
         $metrics = Metric::orderBy('created_at', 'desc')->get();
 
-        return View::make('dashboard.metrics.index')->with([
-            'page_title' => trans('dashboard.metrics.metrics').' - '.trans('dashboard.dashboard'),
-            'metrics'    => $metrics,
-        ]);
+        return View::make('dashboard.metrics.index')
+            ->withPageTitle(trans('dashboard.metrics.metrics').' - '.trans('dashboard.dashboard'))
+            ->withMetrics($metrics);
     }
 
     /**
@@ -42,10 +42,8 @@ class MetricController extends AbstractController
      */
     public function showAddMetric()
     {
-        return View::make('dashboard.metrics.add')->with([
-            'page_title'         => trans('dashboard.metrics.add.title').' - '.trans('dashboard.dashboard'),
-            'metricMetricPoints' => MetricPoint::all(),
-        ]);
+        return View::make('dashboard.metrics.add')
+            ->withPageTitle(trans('dashboard.metrics.add.title').' - '.trans('dashboard.dashboard'));
     }
 
     /**
@@ -55,10 +53,9 @@ class MetricController extends AbstractController
      */
     public function showMetricPoints()
     {
-        return View::make('dashboard.metrics.points.index')->with([
-            'page_title'         => trans('dashboard.metrics.points.title').' - '.trans('dashboard.dashboard'),
-            'metricMetricPoints' => MetricPoint::all(),
-        ]);
+        return View::make('dashboard.metrics.points.index')
+            ->withPageTitle(trans('dashboard.metrics.points.title').' - '.trans('dashboard.dashboard'))
+            ->withMetrics(MetricPoint::all());
     }
 
     /**
@@ -68,26 +65,17 @@ class MetricController extends AbstractController
      */
     public function createMetricAction()
     {
-        $metricData = Binput::get('metric');
-        $metric = Metric::create($metricData);
-
-        if (!$metric->isValid()) {
-            return Redirect::back()->withInput(Binput::all())
-                ->with('title', sprintf(
-                    '%s %s',
-                    trans('dashboard.notifications.whoops'),
-                    trans('dashboard.metrics.add.failure')
-                ))
-                ->with('errors', $metric->getErrors());
+        try {
+            Metric::create(Binput::get('metric'));
+        } catch (ValidationException $e) {
+            return Redirect::route('dashboard.metrics.add')
+                ->withInput(Binput::all())
+                ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.metrics.add.failure')))
+                ->withErrors($e->getMessageBag());
         }
 
-        $successMsg = sprintf(
-            '%s %s',
-            trans('dashboard.notifications.awesome'),
-            trans('dashboard.metrics.add.success')
-        );
-
-        return Redirect::back()->with('success', $successMsg);
+        return Redirect::route('dashboard.metrics.add')
+            ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.metrics.add.success')));
     }
 
     /**
@@ -97,38 +85,8 @@ class MetricController extends AbstractController
      */
     public function showAddMetricPoint()
     {
-        return View::make('dashboard.metrics.points.add')->with([
-            'page_title' => trans('dashboard.metrics.points.add.title').' - '.trans('dashboard.dashboard'),
-        ]);
-    }
-
-    /**
-     * Creates a new metric point.
-     *
-     * @return \Illuminate\Http\RedirectResponse
-     */
-    public function createMetricPointAction()
-    {
-        $_point = Binput::get('point', null, false);
-        $point = MetricPoint::create($_point);
-
-        if (!$point->isValid()) {
-            return Redirect::back()->withInput(Binput::all())
-                ->with('title', sprintf(
-                    '%s %s',
-                    trans('dashboard.notifications.awesome'),
-                    trans('dashboard.metrics.points.add.failure')
-                ))
-                ->with('errors', $point->getErrors());
-        }
-
-        $successMsg = sprintf(
-            '%s %s',
-            trans('dashboard.notifications.awesome'),
-            trans('dashboard.metrics.points.add.success')
-        );
-
-        return Redirect::back()->with('success', $successMsg);
+        return View::make('dashboard.metrics.points.add')
+            ->withPageTitle(trans('dashboard.metrics.points.add.title').' - '.trans('dashboard.dashboard'));
     }
 
     /**
@@ -142,7 +100,7 @@ class MetricController extends AbstractController
     {
         $metric->delete();
 
-        return Redirect::back();
+        return Redirect::route('dashboard.metrics.index');
     }
 
     /**
@@ -154,10 +112,9 @@ class MetricController extends AbstractController
      */
     public function showEditMetricAction(Metric $metric)
     {
-        return View::make('dashboard.metrics.edit')->with([
-            'page_title' => trans('dashboard.metrics.edit.title').' - '.trans('dashboard.dashboard'),
-            'metric'     => $metric,
-        ]);
+        return View::make('dashboard.metrics.edit')
+            ->withPageTitle(trans('dashboard.metrics.edit.title').' - '.trans('dashboard.dashboard'))
+            ->withMetric($metric);
     }
 
     /**
@@ -169,24 +126,16 @@ class MetricController extends AbstractController
      */
     public function editMetricAction(Metric $metric)
     {
-        $metricData = Binput::get('metric', null, false);
-        $metric->update($metricData);
-
-        if (!$metric->isValid()) {
-            return Redirect::back()->withInput(Binput::all())
-                ->with('title', sprintf(
-                    '<strong>%s</strong>',
-                    trans('dashboard.notifications.awesome')
-                ))
-                ->with('errors', $metric->getErrors());
+        try {
+            $metric->update(Binput::get('metric', null, false));
+        } catch (ValidationException $e) {
+            return Redirect::route('dashboard.metrics.edit', ['id' => $metric->id])
+                ->withInput(Binput::all())
+                ->withTitle(sprintf('<strong>%s</strong>', trans('dashboard.notifications.whoops')))
+                ->withErrors($e->getMessageBag());
         }
 
-        $successMsg = sprintf(
-            '%s %s',
-            trans('dashboard.notifications.awesome'),
-            trans('dashboard.metrics.edit.success')
-        );
-
-        return Redirect::to('dashboard/metrics')->with('success', $successMsg);
+        return Redirect::route('dashboard.metrics.edit', ['id' => $metric->id])
+            ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.metrics.edit.success')));
     }
 }

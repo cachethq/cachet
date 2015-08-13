@@ -65,9 +65,7 @@ class TimezoneLocaleComposer
             }
         }
 
-        $view->with([
-            'timezones' => $timezones,
-            'langs'     => $langs,
-        ]);
+        $view->withTimezones($timezones);
+        $view->withLangs($langs);
     }
 }

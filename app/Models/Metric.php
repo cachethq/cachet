@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Cachet\Models;
 
+use AltThree\Validator\ValidatingTrait;
 use CachetHQ\Cachet\Facades\Setting as SettingFacade;
 use CachetHQ\Cachet\Presenters\MetricPresenter;
 use DateInterval;
@@ -19,7 +20,6 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 use Jenssegers\Date\Date;
 use McCool\LaravelAutoPresenter\HasPresenter;
-use Watson\Validating\ValidatingTrait;
 
 class Metric extends Model implements HasPresenter
 {
@@ -38,6 +38,7 @@ class Metric extends Model implements HasPresenter
         'display_chart' => 1,
         'default_value' => 0,
         'calc_type'     => 0,
+        'places'        => 2,
     ];
 
     /**
@@ -45,11 +46,12 @@ class Metric extends Model implements HasPresenter
      *
      * @var string[]
      */
-    protected $rules = [
+    public $rules = [
         'name'          => 'required',
         'suffix'        => 'required',
         'display_chart' => 'boolean',
         'default_value' => 'numeric',
+        'places'        => 'numeric|min:0|max:4',
     ];
 
     /**
@@ -57,7 +59,15 @@ class Metric extends Model implements HasPresenter
      *
      * @var string[]
      */
-    protected $fillable = ['name', 'suffix', 'description', 'display_chart', 'default_value', 'calc_type'];
+    protected $fillable = [
+        'name',
+        'suffix',
+        'description',
+        'display_chart',
+        'default_value',
+        'calc_type',
+        'places',
+    ];
 
     /**
      * The relations to eager load on every query.
@@ -92,11 +102,11 @@ class Metric extends Model implements HasPresenter
 
         if (Config::get('database.default') === 'mysql') {
             if (!isset($this->calc_type) || $this->calc_type == self::CALC_SUM) {
-                $value = (int) $this->points()
+                $value = $this->points()
                                     ->whereRaw('DATE_FORMAT(created_at, "%Y%m%d%H") = '.$hourInterval)
                                     ->groupBy(DB::raw('HOUR(created_at)'))->sum('value');
             } elseif ($this->calc_type == self::CALC_AVG) {
-                $value = (int) $this->points()
+                $value = $this->points()
                                     ->whereRaw('DATE_FORMAT(created_at, "%Y%m%d%H") = '.$hourInterval)
                                     ->groupBy(DB::raw('HOUR(created_at)'))->avg('value');
             }
@@ -125,7 +135,7 @@ class Metric extends Model implements HasPresenter
             return $this->default_value;
         }
 
-        return $value;
+        return round($value, $this->places);
     }
 
     /**

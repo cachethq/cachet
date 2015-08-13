@@ -22,7 +22,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        'CachetHQ\Cachet\Console\Commands\FixPermissionsCommand',
+        'CachetHQ\Cachet\Console\Commands\DemoSeederCommand',
     ];
 
     /**

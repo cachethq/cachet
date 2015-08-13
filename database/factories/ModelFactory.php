@@ -33,6 +33,13 @@ $factory->define('CachetHQ\Cachet\Models\Component', function ($faker) {
     ];
 });
 
+$factory->define('CachetHQ\Cachet\Models\ComponentGroup', function ($faker) {
+    return [
+        'name'  => $faker->words(2, true),
+        'order' => 0,
+    ];
+});
+
 $factory->define('CachetHQ\Cachet\Models\Incident', function ($faker) {
     return [
         'name'    => $faker->sentence(),

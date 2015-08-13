@@ -69,11 +69,12 @@ class SendIncidentEmailNotificationHandler
                 $mail = [
                     'email'           => $subscriber->email,
                     'subject'         => 'New incident reported.',
+                    'incident'        => $event->incident,
                     'status'          => $data->humanStatus,
                     'htmlContent'     => $data->formattedMessage,
                     'textContent'     => $data->message,
                     'token'           => $subscriber->token,
-                    'unsubscribeLink' => route('unsubscribe', ['code' => $subscriber->verify_code]),
+                    'unsubscribeLink' => route('subscribe.unsubscribe', ['code' => $subscriber->verify_code]),
                     'appUrl'          => env('APP_URL'),
                 ];
 

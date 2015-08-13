@@ -23,8 +23,8 @@ class ThemeComposer
      */
     public function compose(View $view)
     {
-        $view->with('themeBackgroundColor', Setting::get('style_background_color'));
-        $view->with('themeTextColor', Setting::get('style_text_color'));
+        $view->withThemeBackgroundColor(Setting::get('style_background_color'));
+        $view->withThemeTextColor(Setting::get('style_text_color'));
 
         $viewData = $view->getData();
         $themeView = array_only($viewData, preg_grep('/^theme/', array_keys($viewData)));
@@ -32,6 +32,6 @@ class ThemeComposer
             return $data != null;
         });
 
-        $view->with('themeSetup', !empty($hasThemeSettings));
+        $view->withThemeSetup(!empty($hasThemeSettings));
     }
 }

@@ -15,10 +15,11 @@ use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Incident;
 use GrahamCampbell\Markdown\Facades\Markdown;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Str;
 use Roumen\Feed\Facades\Feed;
 
-class AtomController extends AbstractController
+class AtomController extends Controller
 {
     /**
      * Generates an Atom feed of all incidents.
@@ -56,6 +57,8 @@ class AtomController extends AbstractController
      *
      * @param \Roumen\Feed\Facades\Feed        $feed
      * @param \CachetHQ\Cachet\Models\Incident $incident
+     *
+     * @return void
      */
     private function feedAddItem(&$feed, $incident)
     {

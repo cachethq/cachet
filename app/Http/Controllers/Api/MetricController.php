@@ -38,7 +38,7 @@ class MetricController extends AbstractApiController
      *
      * @param \CachetHQ\Cachet\Models\Metric $metric
      *
-     * @return \CachetHQ\Cachet\Models\Metric
+     * @return \Illuminate\Http\JsonResponse
      */
     public function getMetric(Metric $metric)
     {
@@ -60,7 +60,7 @@ class MetricController extends AbstractApiController
     /**
      * Create a new metric.
      *
-     * @return \CachetHQ\Cachet\Models\Metric
+     * @return \Illuminate\Http\JsonResponse
      */
     public function postMetrics()
     {
@@ -70,11 +70,7 @@ class MetricController extends AbstractApiController
             throw new BadRequestHttpException();
         }
 
-        if ($metric->isValid()) {
-            return $this->item($metric);
-        }
-
-        throw new BadRequestHttpException();
+        return $this->item($metric);
     }
 
     /**
@@ -82,17 +78,17 @@ class MetricController extends AbstractApiController
      *
      * @param \CachetHQ\Cachet\Models\Metric $metric
      *
-     * @return \CachetHQ\Cachet\Models\Metric
+     * @return \Illuminate\Http\JsonResponse
      */
     public function putMetric(Metric $metric)
     {
-        $metric->update(Binput::all());
-
-        if ($metric->isValid('updating')) {
-            return $this->item($metric);
+        try {
+            $metric->update(Binput::all());
+        } catch (Exception $e) {
+            throw new BadRequestHttpException();
         }
 
-        throw new BadRequestHttpException();
+        return $this->item($metric);
     }
 
     /**

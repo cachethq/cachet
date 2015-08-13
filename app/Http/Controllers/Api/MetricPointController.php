@@ -25,7 +25,7 @@ class MetricPointController extends AbstractApiController
      * @param \CachetHQ\Cachet\Models\Metric      $metric
      * @param \CachetHQ\Cachet\Models\MetricPoint $metricPoint
      *
-     * @return \CachetHQ\Cachet\Models\MetricPoint
+     * @return \Illuminate\Http\JsonResponse
      */
     public function getMetricPoints(Metric $metric, MetricPoint $metricPoint)
     {
@@ -37,7 +37,7 @@ class MetricPointController extends AbstractApiController
      *
      * @param \CachetHQ\Cachet\Models\Metric $metric
      *
-     * @return \CachetHQ\Cachet\Models\MetricPoint
+     * @return \Illuminate\Http\JsonResponse
      */
     public function postMetricPoints(Metric $metric)
     {
@@ -64,7 +64,7 @@ class MetricPointController extends AbstractApiController
      * @param \CachetHQ\Cachet\Models\Metric      $metric
      * @param \CachetHQ\Cachet\Models\MetircPoint $metricPoint
      *
-     * @return \CachetHQ\Cachet\Models\MetricPoint
+     * @return \Illuminate\Http\JsonResponse
      */
     public function putMetricPoint(Metric $metric, MetricPoint $metricPoint)
     {
@@ -87,7 +87,7 @@ class MetricPointController extends AbstractApiController
      * @param \CachetHQ\Cachet\Models\Metric      $metric
      * @param \CachetHQ\Cachet\Models\MetricPoint $metricPoint
      *
-     * @return \Dingo\Api\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function deleteMetricPoint(Metric $metric, MetricPoint $metricPoint)
     {

@@ -9,6 +9,9 @@
 
     <p>
         {!! $status !!}
+        @if($incident->component)
+        ({{ $incident->component->name }})
+        @endif
     </p>
 
     <p>

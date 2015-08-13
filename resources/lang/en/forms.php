@@ -80,6 +80,7 @@ return [
         'calc_type'        => 'Calculation of metrics',
         'type_sum'         => 'Sum',
         'type_avg'         => 'Average',
+        'places'           => 'Decimal Places',
 
         'points' => [
             'value' => 'Value',

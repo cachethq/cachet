@@ -26,7 +26,7 @@ class ComponentController extends AbstractApiController
      *
      * @param \Symfony\Component\HttpFoundation\Request $request
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Http\JsonResponse
      */
     public function getComponents(Request $request)
     {
@@ -40,7 +40,7 @@ class ComponentController extends AbstractApiController
      *
      * @param \CachetHQ\Cachet\Models\Component $component
      *
-     * @return \CachetHQ\Cachet\Models\Component
+     * @return \Illuminate\Http\JsonResponse
      */
     public function getComponent(Component $component)
     {
@@ -52,7 +52,7 @@ class ComponentController extends AbstractApiController
      *
      * @param \Illuminate\Contracts\Auth\Guard $auth
      *
-     * @return \CachetHQ\Cachet\Models\Component
+     * @return \Illuminate\Http\JsonResponse
      */
     public function postComponents(Guard $auth)
     {
@@ -61,10 +61,6 @@ class ComponentController extends AbstractApiController
         try {
             $component = Component::create($componentData);
         } catch (Exception $e) {
-            throw new BadRequestHttpException();
-        }
-
-        if (!$component->isValid()) {
             throw new BadRequestHttpException();
         }
 
@@ -88,15 +84,15 @@ class ComponentController extends AbstractApiController
     /**
      * Update an existing component.
      *
-     * @param \CachetHQ\Cachet\Models\Componet $component
+     * @param \CachetHQ\Cachet\Models\Component $component
      *
-     * @return \CachetHQ\Cachet\Models\Component
+     * @return \Illuminate\Http\JsonResponse
      */
     public function putComponent(Component $component)
     {
-        $component->update(Binput::except('tags'));
-
-        if (!$component->isValid('updating')) {
+        try {
+            $component->update(Binput::except('tags'));
+        } catch (Exception $e) {
             throw new BadRequestHttpException();
         }
 
@@ -105,9 +101,7 @@ class ComponentController extends AbstractApiController
 
             // For every tag, do we need to create it?
             $componentTags = array_map(function ($taggable) use ($component) {
-                return Tag::firstOrCreate([
-                    'name' => $taggable,
-                ])->id;
+                return Tag::firstOrCreate(['name' => $taggable])->id;
             }, $tags);
 
             $component->tags()->sync($componentTags);

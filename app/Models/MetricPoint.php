@@ -11,10 +11,10 @@
 
 namespace CachetHQ\Cachet\Models;
 
+use AltThree\Validator\ValidatingTrait;
 use CachetHQ\Cachet\Presenters\MetricPointPresenter;
 use Illuminate\Database\Eloquent\Model;
 use McCool\LaravelAutoPresenter\HasPresenter;
-use Watson\Validating\ValidatingTrait;
 
 class MetricPoint extends Model implements HasPresenter
 {
@@ -32,7 +32,7 @@ class MetricPoint extends Model implements HasPresenter
      *
      * @var string[]
      */
-    protected $rules = [
+    public $rules = [
         'value' => 'numeric|required',
     ];
 

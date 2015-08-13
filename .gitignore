@@ -2,4 +2,3 @@
 node_modules
 phpunit.xml
 vendor
-.vagrant

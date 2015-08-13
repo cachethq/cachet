@@ -1,11 +1,11 @@
-@if($themeSetup)
+@if($theme_setup)
 <style type="text/css">
 body.status-page {
-    @if($themeBackgroundColor)
-    background-color: {{ $themeBackgroundColor }};
+    @if($theme_background_color)
+    background-color: {{ $theme_background_color }};
     @endif
-    @if($themeTextColor)
-    color: {{ $themeTextColor }};
+    @if($theme_text_color)
+    color: {{ $theme_text_color }};
     @endif
 }
 </style>

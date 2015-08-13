@@ -11,14 +11,15 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Admin;
 
+use AltThree\Validator\ValidationException;
 use CachetHQ\Cachet\Events\CustomerHasSubscribedEvent;
-use CachetHQ\Cachet\Http\Controllers\AbstractController;
 use CachetHQ\Cachet\Models\Subscriber;
 use GrahamCampbell\Binput\Facades\Binput;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 
-class SubscriberController extends AbstractController
+class SubscriberController extends Controller
 {
     /**
      * Shows the subscribers view.
@@ -30,10 +31,8 @@ class SubscriberController extends AbstractController
         $subscribers = Subscriber::all();
 
         return View::make('dashboard.subscribers.index')
-            ->with([
-                'page_title'  => trans('dashboard.subscribers.subscribers').' - '.trans('dashboard.dashboard'),
-                'subscribers' => $subscribers,
-            ]);
+            ->withPageTitle(trans('dashboard.subscribers.subscribers').' - '.trans('dashboard.dashboard'))
+            ->withSubscribers(Subscriber::all());
     }
 
     /**
@@ -44,10 +43,7 @@ class SubscriberController extends AbstractController
     public function showAddSubscriber()
     {
         return View::make('dashboard.subscribers.add')
-            ->with([
-                'page_title'        => trans('dashboard.subscribers.add.title').' - '.trans('dashboard.dashboard'),
-                'incidentTemplates' => Subscriber::all(),
-            ]);
+            ->withPageTitle(trans('dashboard.subscribers.add.title').' - '.trans('dashboard.dashboard'));
     }
 
     /**
@@ -59,31 +55,19 @@ class SubscriberController extends AbstractController
     {
         $email = Binput::get('email');
 
-        $subscriber = Subscriber::create([
-            'email' => $email,
-        ]);
-
-        if (!$subscriber->isValid()) {
-            return Redirect::back()
+        try {
+            $subscriber = Subscriber::create(['email' => $email]);
+        } catch (ValidationException $e) {
+            return Redirect::route('dashboard.subscribers.add')
                 ->withInput(Binput::all())
-                ->with('title', sprintf(
-                    '%s %s',
-                    trans('dashboard.notifications.whoops'),
-                    trans('dashboard.subscribers.add.failure')
-                ))
-                ->with('errors', $subscriber->getErrors());
+                ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.subscribers.add.failure')))
+                ->withErrors($e->getMessageBag());
         }
-
-        $successMsg = sprintf(
-            '%s %s',
-            trans('dashboard.notifications.awesome'),
-            trans('dashboard.subscribers.add.success')
-        );
 
         event(new CustomerHasSubscribedEvent($subscriber));
 
-        return Redirect::back()
-            ->with('success', $successMsg);
+        return Redirect::route('dashboard.subscribers.add')
+            ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.subscribers.add.success')));
     }
 
     /**
@@ -99,6 +83,6 @@ class SubscriberController extends AbstractController
     {
         $subscriber->delete();
 
-        return Redirect::back();
+        return Redirect::route('dashboard.subscribers.index');
     }
 }

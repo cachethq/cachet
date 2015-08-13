@@ -11,10 +11,10 @@
 
 namespace CachetHQ\Cachet\Models;
 
+use AltThree\Validator\ValidatingTrait;
 use CachetHQ\Cachet\Presenters\SubscriberPresenter;
 use Illuminate\Database\Eloquent\Model;
 use McCool\LaravelAutoPresenter\HasPresenter;
-use Watson\Validating\ValidatingTrait;
 
 class Subscriber extends Model implements HasPresenter
 {
@@ -25,8 +25,8 @@ class Subscriber extends Model implements HasPresenter
      *
      * @var string[]
      */
-    protected $rules = [
-        'email' => 'required|email|unique:subscribers',
+    public $rules = [
+        'email' => 'required|email',
     ];
 
     /**

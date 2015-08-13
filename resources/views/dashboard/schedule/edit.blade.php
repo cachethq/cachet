@@ -13,17 +13,17 @@
     <div class="content-wrapper">
         <div class="row">
             <div class="col-md-12">
-                @include('partials.dashboard.errors')
+                @include('dashboard.partials.errors')
                 <form class='form-vertical' name='ScheduleForm' role='form' method='POST' autocomplete="off">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <input type="hidden" name="incident[visible]" value="1">
                     <fieldset>
-                        @if($incidentTemplates->count() > 0)
+                        @if($incident_templates->count() > 0)
                         <div class="form-group">
                             <label for="incident-template">{{ trans('forms.incidents.templates.template') }}</label>
                             <select class="form-control" name="template">
                                 <option selected></option>
-                                @foreach($incidentTemplates as $tpl)
+                                @foreach($incident_templates as $tpl)
                                 <option value="{{ $tpl->slug }}">{{ $tpl->name }}</option>
                                 @endforeach
                             </select>
@@ -48,7 +48,7 @@
                     <div class="form-group">
                         <div class="btn-group">
                             <button type="submit" class="btn btn-success">{{ trans('forms.save') }}</button>
-                            <a class="btn btn-default" href="{{ route('dashboard.schedule') }}">{{ trans('forms.cancel') }}</a>
+                            <a class="btn btn-default" href="{{ route('dashboard.schedule.index') }}">{{ trans('forms.cancel') }}</a>
                         </div>
                     </div>
                 </form>

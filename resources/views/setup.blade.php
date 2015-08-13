@@ -34,7 +34,7 @@
                             <label>{{ trans('forms.setup.cache_driver') }}</label>
                             <select name="env[cache_driver]" class="form-control" required>
                                 <option disabled>{{ trans('forms.setup.cache_driver') }}</option>
-                                @foreach($cacheDrivers as $driver => $driverName)
+                                @foreach($cache_drivers as $driver => $driverName)
                                 <option value="{{ $driver }}" {{ Input::old('env.cache_driver') == $driver ? "selected" : null }}>{{ $driverName }}</option>
                                 @endforeach
                             </select>
@@ -46,7 +46,7 @@
                             <label>{{ trans('forms.setup.session_driver') }}</label>
                             <select name="env[session_driver]" class="form-control" required>
                                 <option disabled>{{ trans('forms.setup.session_driver') }}</option>
-                                @foreach($cacheDrivers as $driver => $driverName)
+                                @foreach($cache_drivers as $driver => $driverName)
                                 <option value="{{ $driver }}" {{ Input::old('env.session_driver') == $driver ? "selected" : null }}>{{ $driverName }}</option>
                                 @endforeach
                             </select>

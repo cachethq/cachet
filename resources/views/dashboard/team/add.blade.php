@@ -12,7 +12,7 @@
     <div class="content-wrapper">
         <div class="row">
             <div class="col-sm-12">
-                @include('partials.dashboard.errors')
+                @include('dashboard.partials.errors')
                 <form name="UserForm" class="form-vertical" role="form" action="/dashboard/team/add" method="POST">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <fieldset>
@@ -28,7 +28,7 @@
                             <label>{{ trans('forms.user.password') }}</label>
                             <input type="password" class="form-control" name="password" value="">
                         </div>
-                        @if($loggedUser->isAdmin)
+                        @if($current_user->isAdmin)
                         <div class="form-group">
                             <label>{{ trans('forms.user.user_level') }}</label>
                             <select name="level" class="form-control">
