@@ -1,5 +1,7 @@
 {!! trans('cachet.subscriber.email.maintenance.text', ['app_name' => Setting::get('app_name')]) !!}
 
+{{ $scheduled_at }}
+
 {!! $status !!}
 
 {!! $textContent !!}

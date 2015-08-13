@@ -7,6 +7,8 @@
 @section('content')
     {!! trans('cachet.subscriber.email.maintenance.html', ['app_name' => Setting::get('app_name')]) !!}
 
+    <p>{{ $scheduled_at }}</p>
+
     <p>
         {!! $status !!}
     </p>
