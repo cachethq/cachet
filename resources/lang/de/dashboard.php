@@ -15,75 +15,121 @@ return [
 
     // Incidents
     'incidents' => [
+        'title'                    => 'Ereignisse &amp; Termine',
         'incidents'                => 'Vorfälle',
-        'logged'                   => '{0} Es gibt keine Vorfälle, gute Arbeit.|Sie haben ein Vorfall eingetragen.|Es gibt <strong>:count</strong> Vorfälle.',
-        'incident-create-template' => 'Template anlegen',
+        'logged'                   => '{0} Es gibt keine Vorfälle, gute Arbeit.|Du hast einen Vorfall gemeldet.|Du hast <strong>:count</strong> Vorfälle gemeldet.',
+        'incident-create-template' => 'Vorlage erstellen',
+        'incident-templates'       => 'Vorfall Vorlagen',
         'add'                      => [
             'title'   => 'Vorfall hinzufügen',
             'success' => 'Vorfall hinzugefügt.',
-            'failure' => 'Es ist ein Fehler bei dem Erstellen eines Vorfälles aufgetreten.',
+            'failure' => 'Etwas ist mit dem Vorfall schiefgelaufen.',
         ],
         'edit' => [
-            'title'   => 'Vorfall aktualisieren',
+            'title'   => 'Vorfall bearbeiten',
             'success' => 'Vorfall aktualisiert.',
-            'failure' => 'Es ist ein Fehler bei der Aktualisierung des Vorfälles aufgetreten.',
+            'failure' => 'Etwas ist mit dem Vorfall schiefgelaufen.',
         ],
 
         // Incident templates
         'templates' => [
-            'add' => [
-                'title'   => 'Vorfall-Template anlegen',
-                'success' => 'Template angelegt.',
-                'failure' => 'Es ist ein Fehler bei der Erstellung eines Templates aufgetreten.',
+            'title' => 'Vorfall Vorlagen',
+            'add'   => [
+                'title'   => 'Vorfallvorlage erstellen',
+                'success' => 'Vorlage erstellt.',
+                'failure' => 'Etwas ist mit der Vorfallvorlage schiefgelaufen.',
             ],
+            'edit' => [
+                'title'   => 'Vorlage bearbeiten',
+                'success' => 'Vorlage aktualisiert!',
+                'failure' => 'Etwas ist mit dem Updaten der Vorfallvorlage schiefgelaufen',
+            ],
+        ],
+    ],
+
+    // Incident Maintenance
+    'schedule' => [
+        'schedule'     => 'Planmäßige Wartung',
+        'scheduled_at' => 'Geplant am :timestamp',
+        'add'          => [
+            'title'   => 'Planmäßige Wartung hinzufügen',
+            'success' => 'Zeitplan hinzugefügt.',
+            'failure' => 'Etwas ist mit dem hinzufügen des Zeitplanes schiefgelaufen.',
+        ],
+        'edit' => [
+            'title'   => 'Planmäßige Wartung bearbeiten',
+            'success' => 'Zeitplan wurde aktualisiert!',
+            'failure' => 'Etwas ist mit dem Bearbeiten des Zeitplanes schiefgelaufen.',
+        ],
+        'delete' => [
+            'success' => 'Der Zeitplan wurde gelöscht und wird nicht auf Ihrer Statusseite angezeigt.',
+            'failure' => 'Der Zeitplan konnte nicht gelöscht werden. Bitte versuchen Sie es erneut.',
         ],
     ],
 
     // Components
     'components' => [
-        'components'         => 'Komponente|Komponenten',
-        'component_statuses' => 'Komponenten-Statuus', # this is not a typo (statuus=plural)
+        'components'         => 'Komponenten',
+        'component_statuses' => 'Komponentenstatus',
+        'listed_group'       => 'Gruppiert unter :name',
         'add'                => [
             'title'   => 'Komponente hinzufügen',
-            'message' => 'Sie sollten eine Komponente hinzufügen.',
-            'success' => 'Komponente hinzugefügt.',
-            'failure' => 'Es ist ein Fehler bei der Erstellung der Komponente aufgetreten.',
+            'message' => 'Sie sollten eine Komponente erstellen.',
+            'success' => 'Komponente erstellt.',
+            'failure' => 'Mit der Komponente ist etwas schiefgegangen.',
         ],
         'edit' => [
-            'title'   => 'Komponente aktualisieren',
+            'title'   => 'Komponente bearbeiten',
             'success' => 'Komponente aktualisiert.',
-            'failure' => 'Es ist ein Fehler bei der Aktualisierung der Komponente aufgetreten.',
+            'failure' => 'Mit der Komponente ist etwas schiefgegangen.',
         ],
 
         // Component groups
         'groups' => [
-            'groups'        => 'Komponenten-Gruppe|Komponenten-Gruppen',
-            'no_components' => 'You should add a component group.',
+            'groups'        => 'Komponentgruppe|Komponentgruppen',
+            'no_components' => 'Sie sollten eine Komponentengruppe hinzufügen.',
             'add'           => [
-                'title'   => 'Komponenten-Gruppe hinzufügen',
-                'success' => 'Komponenten-Gruppe hinzugefügt.',
-                'failure' => 'Es ist ein Fehler bei der Erstellung einer Komponenten-Gruppe aufgetreten.',
+                'title'   => 'Eine Komponentengruppe hinzufügen',
+                'success' => 'Komponentengruppe hinzugefügt.',
+                'failure' => 'Mit der Komponentengruppe ist etwas schiefgegangen.',
             ],
             'edit' => [
-                'title'   => 'Edit a component group',
-                'success' => 'Component group updated.',
-                'failure' => 'Something went wrong with the component group.',
+                'title'   => 'Komponentengruppe bearbeiten',
+                'success' => 'Komponentengruppe aktualisiert.',
+                'failure' => 'Mit der Komponentengruppe ist etwas schiefgegangen.',
             ],
         ],
     ],
 
     // Metrics
     'metrics' => [
-        'metrics' => 'Metrics',
+        'metrics' => 'Metriken',
         'add'     => [
-            'title'   => 'Einen Metrik-Punkt anlegen',
-            'success' => 'Metrik-Punkt angelegt.',
-            'failure' => 'Es ist ein Fehler bei der Erstellung eines Metrik-Punktes aufgetreten.',
+            'title'   => 'Metrik erstellen',
+            'success' => 'Metrik erstellt.',
+            'failure' => 'Mit der Metrik ist etwas schiefgegangen.',
         ],
         'edit' => [
-            'title'   => 'Edit a metric',
-            'success' => 'Metric updated.',
-            'failure' => 'Something went wrong with the metric.',
+            'title'   => 'Metrik bearbeiten',
+            'success' => 'Metrik aktualisiert.',
+            'failure' => 'Mit der Metrik ist etwas schiefgegangen.',
+        ],
+    ],
+    // Subscribers
+    'subscribers' => [
+        'subscribers'  => 'Abonnenten',
+        'description'  => 'Abonnenten erhalten e-Mail-Updates, wenn Vorfälle erstellt werden.',
+        'verified'     => 'Verifiziert',
+        'not_verified' => 'Nicht verifiziert',
+        'add'          => [
+            'title'   => 'Einen neuen Abonnenten hinzufügen',
+            'success' => 'Abonnent hinzugefügt.',
+            'failure' => 'Mit der Komponente ist etwas schiefgegangen.',
+        ],
+        'edit' => [
+            'title'   => 'Abonnent aktualisieren',
+            'success' => 'Abonnent aktualisiert.',
+            'failure' => 'Bei der Aktualisierung ging etwas schief.',
         ],
     ],
 
@@ -92,16 +138,20 @@ return [
         'team'        => 'Team',
         'member'      => 'Mitglied',
         'profile'     => 'Profil',
-        'description' => 'Team-Mitgleider können Komponenten und Vorfälle hinzufügen und modifizieren.',
+        'description' => 'Teammitglieder werden die M&ouml;glichkeit haben, Komponente sowie Vorf&auml;lle hinzuzuf&uuml;gen und zu ver&auml;ndern.',
         'add'         => [
-            'title'   => 'Team-Mitglied hinzufügen',
-            'success' => 'Team-Mitglied hinzugefügt.',
-            'failure' => 'Es ist ein Fehler bei der Erstellung eines neuen Team-Mitglieds aufgetreten.',
+            'title'   => 'Neues Teammitglied hinzufügen',
+            'success' => 'Teammitglied hinzugefügt.',
+            'failure' => 'Mit der Komponente ist etwas schiefgegangen.',
         ],
         'edit' => [
             'title'   => 'Profil aktualisieren',
-            'success' => 'Profile aktualisiert.',
-            'failure' => 'Es ist ein Fehler bei der Aktualisierung des Profils aufgetreten.',
+            'success' => 'Profil aktualisiert.',
+            'failure' => 'Bei der Aktualisierung ging etwas schief.',
+        ],
+        'delete' => [
+            'success' => 'Benutzer aktualisiert.',
+            'failure' => 'Bei dem Löschen dieses Benutzers ging etwas ging schief.',
         ],
     ],
 
@@ -109,12 +159,13 @@ return [
     'settings' => [
         'settings'  => 'Einstellungen',
         'app-setup' => [
-            'app-setup'   => 'Setup',
-            'images-only' => 'Es dürfen nur Bild-Dateien hochgeladen werden.',
-            'too-big'     => 'Die Datei die Sie hochgeladen haben ist zu groß. Die Datei muss kleiner als :size sein.',
+            'app-setup'   => 'Anwendungsinstallation',
+            'images-only' => 'Nur Bilder können hochgeladen werden.',
+            'too-big'     => 'Die von die Ihnen hochgeladene Datei ist zu groß. Laden Sie ein Bild welches kleiner als :size ist hoch',
         ],
         'security' => [
-            'security' => 'Sicherheit',
+            'security'   => 'Sicherheit',
+            'two-factor' => 'Nutzer ohne Zwei-Faktor-Authentifizierung',
         ],
         'stylesheet' => [
             'stylesheet' => 'Stylesheet',
@@ -131,35 +182,35 @@ return [
     // Login
     'login' => [
         'login'      => 'Login',
-        'logged_in'  => 'Sie sind angemeldet.',
+        'logged_in'  => 'Sie sind eingeloggt.',
         'welcome'    => 'Willkommen zurück!',
-        'two-factor' => 'Bitte geben Sie den Wert Ihres Authentifikations-Tokens ein.',
+        'two-factor' => 'Bitte geben Sie Ihr Token ein.',
     ],
 
     // Sidebar footer
     'help'        => 'Hilfe',
-    'status_page' => 'Status-Seite',
-    'logout'      => 'Logout',
+    'status_page' => 'Statusseite',
+    'logout'      => 'Abmelden',
 
     // Notifications
     'notifications' => [
         'notifications' => 'Benachrichtigungen',
         'awesome'       => 'Großartig.',
-        'whoops'        => 'Oops.',
+        'whoops'        => 'Hoppla.',
     ],
 
     // Welcome modal
     'welcome' => [
-        'welcome' => 'Welcome to Cachet',
-        'message' => 'Your status page is almost ready! You might want to configure these extra settings',
-        'close'   => 'Just go straight to my dashboard',
+        'welcome' => 'Willkommen zu Cachet',
+        'message' => 'Ihre Statusseite ist fast fertig! Vielleicht möchten Sie diese zusätzlichen Einstellungen konfigurieren',
+        'close'   => 'Gehe einfach direkt zu meinem Dashboard',
         'steps'   => [
-            'component'  => 'Create components',
-            'incident'   => 'Create incidents',
-            'customize'  => 'Customize your Cachet Status Page.',
-            'team'       => 'Add users to your team.',
-            'api'        => 'Generate API token.',
-            'two-factor' => 'Enable Two Factor Authetication.',
+            'component'  => 'Komponenten erstellen',
+            'incident'   => 'Vorfälle erstellen',
+            'customize'  => 'Personalisieren',
+            'team'       => 'Benutzer hinzufügen',
+            'api'        => 'API Token generieren',
+            'two-factor' => 'Zwei-Faktor-Authentifizierung',
         ],
     ],
 

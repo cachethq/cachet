@@ -14,82 +14,84 @@ return [
     'components' => [
         'status' => [
             1 => 'Funktionsfähig',
-            2 => 'Performance Probleme',
-            3 => 'Teilweise Ausfall',
-            4 => 'größerer Ausfall',
+            2 => 'Leistungsprobleme',
+            3 => 'Teilweiser Ausfall',
+            4 => 'Schwerer Ausfall',
         ],
     ],
 
     // Incidents
     'incidents' => [
-        'none'          => 'keine Vorfälle.',
-        'past'          => 'vergangene Vorfälle',
-        'previous_week' => 'letzte Woche',
-        'next_week'     => 'nächste Woche',
-        'none'          => 'keine Vorfälle',
+        'none'          => 'Keine Vorfälle berichtet.',
+        'past'          => 'Vergangene Vorfälle',
+        'previous_week' => 'Vorherige Woche',
+        'next_week'     => 'Nächste Woche',
+        'none'          => 'Keine Vorfälle berichtet.',
+        'scheduled'     => 'Geplante Wartungen',
+        'scheduled_at'  => ', geplant :timestamp',
         'status'        => [
-            0 => '',
-            1 => 'Untersuchung läuft',
-            2 => 'Problem identifiziert',
-            3 => 'Problem unter Beobachtung',
-            4 => 'Problem behoben',
+            0 => 'Geplant', // TODO: Hopefully remove this.
+            1 => 'Untersuchungen laufen',
+            2 => 'Identifiziert',
+            3 => 'Unter Beobachtung',
+            4 => 'Behoben',
         ],
     ],
 
     // Service Status
     'service' => [
-        'good' => 'Alle Systeme laufen.',
-        'bad'  => 'Bei einigen System sind Fehler aufgetreten.',
+        'good' => 'Alle Systeme sind funktionsfähig.',
+        'bad'  => 'Einige Dienste arbeiten nicht ordnungsgemäß.',
     ],
 
     'api' => [
-        'regenerate' => 'API-Schlüssel generieren',
-        'revoke'     => 'API-Schlüssel löschen',
+        'regenerate' => 'API-Schlüssel neu generieren',
+        'revoke'     => 'API-Schlüssel widerrufen',
     ],
 
     // Metrics
     'metrics' => [
         'filter' => [
-            'hourly'  => 'Hourly',
-            'daily'   => 'Daily',
-            'monthly' => 'Monthly',
+            'hourly'  => 'Stündlich',
+            'daily'   => 'Täglich',
+            'monthly' => 'Monatlich',
         ],
     ],
 
     // Subscriber
     'subscriber' => [
-        'subscribe' => 'Subscribe to get the most recent updates.',
-        'button'    => 'Subscribe',
+        'subscribe' => 'Abonnieren Sie um die neuesten Updates zu erhalten.',
+        'button'    => 'Abonnieren',
         'email'     => [
-            'subscribe'    => 'Subscribe to email updates.',
-            'subscribed'   => 'You\'ve been subscribed to email notifications, please check your email to confirm your subscription.',
-            'verified'     => 'Your email subscription has been confirmed. Thank you!',
-            'unsubscribe'  => 'Unsuscribe from email updates.',
-            'unsubscribed' => 'Your email subscription has been cancelled.',
-            'failure'      => 'Something went wrong with the subscription.',
+            'subscribe'    => 'Aktualisierungen per e-Mail abonnieren.',
+            'subscribed'   => 'Sie haben e-Mail-Benachrichtigungen abonniert, überprüfen Sie bitte Ihre e-Mail, um Ihr Abonnement zu bestätigen.',
+            'verified'     => 'Ihre e-Mail-Abonnement ist bestätigt worden. Danke!',
+            'unsubscribe'  => 'Von e-Mail-Updates deabonnieren.',
+            'unsubscribed' => 'Ihre e-Mail-Abonnement wurde gekündigt.',
+            'failure'      => 'Etwas ist mit dem Abonnement schief gelaufen.',
             'verify'       => [
-                'text'           => "Please confirm your email subscription to :app_name status updates.\n:link\nThank you, :app_name",
-                'html-preheader' => 'Please confirm your email subscription to :app_name status updates.',
-                'html'           => '<p>Please confirm your email subscription to :app_name status updates.</p><p><a href=":link">:link</a></p><p>Thank you, :app_name</p>',
+                'text'           => 'Bitte bestätigen Sie Ihre e-Mail-Abonnement zu  :app_name Status-Aktualisierungen.\\n:link\\nDanke, :app_name',
+                'html-preheader' => 'Bitte bestätigen Sie Ihre e-Mail-Abonnement zu  :app_name Status-Aktualisierungen.',
+                'html'           => '<p>Bestätigen Sie bitte Ihr e-Mail-Abonnement für :app_name Statusaktualisierungen.</p><p><a href=":link">:link</a></p><p>Danke, :app_name</p>',
             ],
             'maintenance' => [
-                'text'           => "New maintenance has been scheduled on :app_name.\nThank you, :app_name",
-                'html-preheader' => 'New maintenance has been scheduled on :app_name.',
-                'html'           => '<p>New maintenance has been scheduled on :app_name.</p><p>Thank you, :app_name</p>',
+                'text'           => 'Neue Wartung wurde für :app_name geplant.\\nDanke, :app_name',
+                'html-preheader' => 'Neue Wartung wurde für :app_name geplant.',
+                'html'           => '<p>Neue Wartung wurde für :app_name geplant.</p>',
             ],
             'incident' => [
-                'text'           => "New incident has been reported on :app_name.\nThank you, :app_name",
-                'html-preheader' => 'New incident has been reported on :app_name.',
-                'html'           => '<p>New incident has been reported on :app_name.</p><p>Thank you, :app_name</p>',
+                'text'           => 'Ein neuer Vorfall wurde auf :app_name berichtet.\\nDanke, :app_name',
+                'html-preheader' => 'Ein neuer Vorfall wurde über :app_name berichtet.',
+                'html'           => '<p>Ein neuer Vorfall wurde über :app_name berichtet.</p> <p>Danke, :app_name</p>',
             ],
         ],
     ],
 
     // Other
-    'powered_by'      => ':app Status-Seite via <a href="https://cachethq.io">Cachet</a>.',
+    'powered_by'      => ':app Status-Seite betrieben mit <a href="https://cachethq.io">Cachet</a>.',
     'about_this_site' => 'Über diese Seite',
-    'rss-feed'        => 'RSS Feed',
-    'atom-feed'       => 'Atom Feed',
-    'feed'            => 'Status Feed',
+    'rss-feed'        => 'RSS',
+    'atom-feed'       => 'Atom',
+    'feed'            => 'Status-Feed',
 
 ];
