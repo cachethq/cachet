@@ -68,13 +68,13 @@ class MetricController extends Controller
         try {
             Metric::create(Binput::get('metric'));
         } catch (ValidationException $e) {
-            return Redirect::back()
+            return Redirect::route('dashboard.metrics.add')
                 ->withInput(Binput::all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.metrics.add.failure')))
                 ->withErrors($e->getMessageBag());
         }
 
-        return Redirect::back()
+        return Redirect::route('dashboard.metrics.add')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.metrics.add.success')));
     }
 
@@ -90,26 +90,6 @@ class MetricController extends Controller
     }
 
     /**
-     * Creates a new metric point.
-     *
-     * @return \Illuminate\Http\RedirectResponse
-     */
-    public function createMetricPointAction()
-    {
-        try {
-            MetricPoint::create(Binput::get('point', null, false));
-        } catch (ValidationException $e) {
-            return Redirect::back()
-                ->withInput(Binput::all())
-                ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.metrics.points.add.failure')))
-                ->withErrors($e->getMessageBag());
-        }
-
-        return Redirect::back()
-            ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.metrics.points.add.success')));
-    }
-
-    /**
      * Deletes a given metric.
      *
      * @param \CachetHQ\Cachet\Models\Metric $metric
@@ -120,7 +100,7 @@ class MetricController extends Controller
     {
         $metric->delete();
 
-        return Redirect::back();
+        return Redirect::route('dashboard.metrics.index');
     }
 
     /**
@@ -149,13 +129,13 @@ class MetricController extends Controller
         try {
             $metric->update(Binput::get('metric', null, false));
         } catch (ValidationException $e) {
-            return Redirect::back()
+            return Redirect::route('dashboard.metrics.edit', ['id' => $metric->id])
                 ->withInput(Binput::all())
                 ->withTitle(sprintf('<strong>%s</strong>', trans('dashboard.notifications.whoops')))
                 ->withErrors($e->getMessageBag());
         }
 
-        return Redirect::to('dashboard/metrics')
+        return Redirect::route('dashboard.metrics.edit', ['id' => $metric->id])
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.metrics.edit.success')));
     }
 }

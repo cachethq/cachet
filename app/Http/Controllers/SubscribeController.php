@@ -47,7 +47,7 @@ class SubscribeController extends Controller
         try {
             $subscriber = Subscriber::create(['email' => Binput::get('email')]);
         } catch (ValidationException $e) {
-            return Redirect::back()
+            return Redirect::route('subscribe.subscribe')
                 ->withInput(Binput::all())
                 ->withTitle(sprintf('<strong>%s</strong> %s', trans('dashboard.notifications.whoops'), trans('cachet.subscriber.email.failure')))
                 ->withErrors($e->getMessageBag());

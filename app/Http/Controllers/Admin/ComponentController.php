@@ -113,7 +113,7 @@ class ComponentController extends Controller
         try {
             $component->update($_component);
         } catch (ValidationException $e) {
-            return Redirect::back()
+            return Redirect::route('dashboard.components.edit', ['id' => $component->id])
                 ->withInput(Binput::all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.components.edit.failure')))
                 ->withErrors($e->getMessageBag());
@@ -129,7 +129,7 @@ class ComponentController extends Controller
 
         $component->tags()->sync($componentTags);
 
-        return Redirect::back()
+        return Redirect::route('dashboard.components.edit', ['id' => $component->id])
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.components.edit.success')));
     }
 
@@ -159,7 +159,7 @@ class ComponentController extends Controller
         try {
             $component = Component::create($_component);
         } catch (ValidationException $e) {
-            return Redirect::back()
+            return Redirect::route('dashboard.components.add')
                 ->withInput(Binput::all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.components.add.failure')))
                 ->withErrors($e->getMessageBag());
@@ -175,7 +175,7 @@ class ComponentController extends Controller
 
         $component->tags()->sync($componentTags);
 
-        return Redirect::back()
+        return Redirect::route('dashboard.components.add')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.components.add.success')));
     }
 
@@ -190,7 +190,7 @@ class ComponentController extends Controller
     {
         $component->delete();
 
-        return Redirect::back();
+        return Redirect::route('dashboard.components.index');
     }
 
     /**
@@ -208,7 +208,7 @@ class ComponentController extends Controller
 
         $group->delete();
 
-        return Redirect::back();
+        return Redirect::route('dashboard.components.index');
     }
 
     /**
@@ -246,13 +246,13 @@ class ComponentController extends Controller
         try {
             $group = ComponentGroup::create(Binput::get('group'));
         } catch (ValidationException $e) {
-            return Redirect::back()
+            return Redirect::route('dashboard.components.groups.add')
                 ->withInput(Binput::all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.components.groups.add.failure')))
                 ->withErrors($e->getMessageBag());
         }
 
-        return Redirect::back()
+        return Redirect::route('dashboard.components.groups.add')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.components.groups.add.success')));
     }
 
@@ -270,13 +270,13 @@ class ComponentController extends Controller
         try {
             $group->update($groupData);
         } catch (ValidationException $e) {
-            return Redirect::back()
+            return Redirect::route('dashboard.components.group.edit', ['id' => $group->id])
                 ->withInput(Binput::all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.components.groups.edit.failure')))
                 ->withErrors($e->getMessageBag());
         }
 
-        return Redirect::back()
+        return Redirect::route('dashboard.components.group.edit', ['id' => $group->id])
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.components.groups.edit.success')));
     }
 }

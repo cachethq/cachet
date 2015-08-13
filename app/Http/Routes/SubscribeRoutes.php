@@ -30,20 +30,20 @@ class SubscribeRoutes
         $router->group([
             'middleware' => 'app.hasSetting',
             'setting'    => 'app_name',
+            'as'         => 'subscribe.',
         ], function ($router) {
             $router->group(['middleware' => 'app.subscribers'], function ($router) {
                 $router->get('subscribe', [
-                    'as'   => 'subscribe-page',
+                    'as'   => 'subscribe',
                     'uses' => 'SubscribeController@showSubscribe',
                 ]);
 
                 $router->post('subscribe', [
-                    'as'   => 'subscribe',
                     'uses' => 'SubscribeController@postSubscribe',
                 ]);
 
                 $router->get('subscribe/verify/{code}', [
-                    'as'   => 'subscribe-verify',
+                    'as'   => 'verify',
                     'uses' => 'SubscribeController@getVerify',
                 ]);
 

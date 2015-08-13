@@ -179,7 +179,7 @@ class SetupController extends Controller
             return Response::json(['errors' => $v->getMessageBag()], 400);
         }
 
-        return Redirect::back()->withInput()->withErrors($v->getMessageBag());
+        return Redirect::route('setup.index')->withInput()->withErrors($v->getMessageBag());
     }
 
     /**

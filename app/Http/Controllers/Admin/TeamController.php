@@ -67,13 +67,13 @@ class TeamController extends Controller
         try {
             User::create(Binput::all());
         } catch (ValidationException $e) {
-            return Redirect::back()
+            return Redirect::route('dashboard.team.add')
                 ->withInput(Binput::except('password'))
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.team.add.failure')))
                 ->withErrors($e->getMessageBag());
         }
 
-        return Redirect::back()
+        return Redirect::route('dashboard.team.add')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.team.add.success')));
     }
 
@@ -97,13 +97,13 @@ class TeamController extends Controller
         try {
             $user->update($items);
         } catch (ValidationException $e) {
-            return Redirect::back()
+            return Redirect::route('dashboard.team.edit', ['id' => $user->id])
                 ->withInput(Binput::except('password'))
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.team.edit.failure')))
                 ->withErrors($e->getMessageBag());
         }
 
-        return Redirect::back()
+        return Redirect::route('dashboard.team.edit', ['id' => $user->id])
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.team.edit.success')));
     }
 
@@ -118,7 +118,7 @@ class TeamController extends Controller
     {
         $user->delete();
 
-        return Redirect::route('dashboard.team')
+        return Redirect::route('dashboard.team.index')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.team.delete.success')));
     }
 }
