@@ -16,6 +16,7 @@ use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\Metric;
+use CachetHQ\Cachet\Repositories\MetricRepository;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
 use GrahamCampbell\Markdown\Facades\Markdown;
@@ -27,7 +28,24 @@ use Jenssegers\Date\Date;
 class HomeController extends Controller
 {
     /**
-     * Returns the rendered Blade templates.
+     * @var \CachetHQ\Cachet\Repositories\MetricRepository
+     */
+    protected $metricRepository;
+
+    /**
+     * Construct a new home controller instance.
+     *
+     * @param \CachetHQ\Cachet\Repositories\MetricRepository $metricRepository
+     *
+     * @return void
+     */
+    public function __construct(MetricRepository $metricRepository)
+    {
+        $this->metricRepository = $metricRepository;
+    }
+
+    /**
+     * Displays the status page.
      *
      * @return \Illuminate\View\View
      */
@@ -52,9 +70,17 @@ class HomeController extends Controller
         }
 
         $metrics = null;
-
+        $metricData = [];
         if ($displayMetrics = Setting::get('display_graphs')) {
             $metrics = Metric::where('display_chart', 1)->get();
+
+            $metrics->map(function ($metric) use (&$metricData) {
+                $metricData[$metric->id] = [
+                    'today' => $this->metricRepository->listPointsToday($metric),
+                    'week'  => $this->metricRepository->listPointsForWeek($metric),
+                    'month' => $this->metricRepository->listPointsForMonth($metric),
+                ];
+            });
         }
 
         $daysToShow = Setting::get('app_incident_days') ?: 7;
@@ -98,6 +124,7 @@ class HomeController extends Controller
             ->withUngroupedComponents($ungroupedComponents)
             ->withDisplayMetrics($displayMetrics)
             ->withMetrics($metrics)
+            ->withMetricData($metricData)
             ->withAllIncidents($allIncidents)
             ->withScheduledMaintenance($scheduledMaintenance)
             ->withAboutApp(Markdown::convertToHtml(Setting::get('app_about')))

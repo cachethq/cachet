@@ -52,9 +52,9 @@ return [
     // Metrics
     'metrics' => [
         'filter' => [
-            'hourly'  => 'Toutes les heures',
-            'daily'   => 'Tous les jours',
-            'monthly' => 'Mensuel',
+            'hourly'  => 'Last 12 Hours',
+            'weekly'  => 'Week',
+            'monthly' => 'Month',
         ],
     ],
 

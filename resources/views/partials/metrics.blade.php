@@ -1,14 +1,7 @@
 @if($metrics->count() > 0)
 <ul class="list-group metrics">
     @foreach($metrics as $metric)
-    <?php
-        $hourPoints = [];
-        foreach (range(1, 11) as $hour) {
-            $hourPoints[$hour] = $metric->getValuesByHour($hour);
-        }
-        $hourPoints = array_reverse($hourPoints);
-    ?>
-    <li class="list-group-item metric">
+    <li class="list-group-item metric" data-metric-id="{{ $metric->id }}">
         <div class="row">
             <div class="col-xs-10">
                 <h4>
@@ -19,55 +12,94 @@
                 </h4>
             </div>
             <div class="col-xs-2 text-right">
-                <small>{{ trans('cachet.metrics.filter.hourly') }}</small>
+                <div class="dropdown">
+                    <a href="javascript: void(0);" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class='filter'>{{ trans('cachet.metrics.filter.hourly') }}</span> <span class="caret"></span></a>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li><a href="#" data-filter-type="today">{{ trans('cachet.metrics.filter.hourly') }}</a></li>
+                        <li><a href="#" data-filter-type="week">{{ trans('cachet.metrics.filter.weekly') }}</a></li>
+                        <li><a href="#" data-filter-type="month">{{ trans('cachet.metrics.filter.monthly') }}</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
         <hr>
         <div class="row">
             <div class="col-md-12">
                 <div>
-                    <canvas id="metric-{{ $metric->id }}" height="125" width="600"></canvas>
+                    <canvas id="metric-{{ $metric->id }}" data-metric-id="{{ $metric->id }}" data-metric-group="today" height="125" width="600"></canvas>
                 </div>
             </div>
         </div>
-        <script>
-            (function () {
-                Chart.defaults.global.pointHitDetectionRadius = 1;
-
-                var hourList = [], date = new Date();
-
-                for (var i = 10; i >= 1; i--) {
-                    hourList.push(moment(date).subtract(i, 'hours').seconds(0).format('HH:ss'));
-                }
-
-                hourList.push(moment(date).seconds(0).format('HH:ss'));
-
-                var hourPoints = [{{ implode(',', $hourPoints) }}];
-
-                var data = {
-                    showTooltips: false,
-                    labels: hourList,
-                    datasets: [{
-                        fillColor: "rgba(220,220,220,0.1)",
-                        strokeColor: "rgba(52,152,219,0.6)",
-                        pointColor: "rgba(220,220,220,1)",
-                        pointStrokeColor: "#fff",
-                        pointHighlightFill: "#fff",
-                        pointHighlightStroke: "rgba(220,220,220,1)",
-                        data: hourPoints
-                    }],
-                };
-
-                var ctx = document.getElementById("metric-{{ $metric->id }}").getContext("2d");
-                new Chart(ctx).Line(data, {
-                    tooltipTemplate: "{!! $metric->name !!}: <%= value %> {!! $metric->suffix !!}",
-                    scaleShowVerticalLines: true,
-                    responsive: true,
-                    maintainAspectRatio: false
-                });
-            }());
-        </script>
     </li>
     @endforeach
 </ul>
+<script type="text/json" id="metricData">
+{!! json_encode($metric_data) !!}
+</script>
+<script>
+(function () {
+    Chart.defaults.global.pointHitDetectionRadius = 1;
+
+    var charts = JSON.parse(document.getElementById('metricData').innerText);
+
+    var defaultData = {
+        showTooltips: false,
+        labels: [],
+        datasets: [{
+            fillColor: "rgba(220,220,220,0.1)",
+            strokeColor: "rgba(52,152,219,0.6)",
+            pointColor: "rgba(220,220,220,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(220,220,220,1)",
+            data: []
+        }],
+    };
+
+    $('a[data-filter-type]').on('click', function(e) {
+        e.preventDefault();
+
+        var $this = $(this);
+
+        // Change the selected view.
+        var $li = $this.parents('li')
+        $li.find('a[data-toggle=dropdown] span.filter').text($this.text());
+
+        var $canvas = $li.find('canvas');
+
+        $canvas.data('metric-group', $this.data('filter-type'));
+        drawChart($canvas);
+    });
+
+    $('canvas[data-metric-id]').each(function() {
+        var $this = $(this);
+        drawChart($this);
+    });
+
+    function drawChart($el) {
+        var metricId = $el.data('metric-id');
+        var metricGroup = $el.data('metric-group');
+
+        charts[metricId].context = document.getElementById("metric-"+metricId).getContext("2d");
+
+        if (typeof charts[metricId].chart !== 'undefined') {
+            charts[metricId].chart.destroy();
+        }
+
+        var chartConfig = defaultData;
+        var charter = charts[metricId][metricGroup];
+
+        chartConfig.labels = _.keys(charter);
+        chartConfig.datasets[0].data = _.values(charter);
+
+        charts[metricId].chart = new Chart(charts[metricId].context).Line(chartConfig, {
+            tooltipTemplate: "{!! $metric->name !!}: <%= value %> {!! $metric->suffix !!}",
+            scaleShowVerticalLines: true,
+            scaleShowLabels: false,
+            responsive: true,
+            maintainAspectRatio: false
+        });
+    }
+}());
+</script>
 @endif
