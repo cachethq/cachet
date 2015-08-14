@@ -160,7 +160,7 @@ class IncidentPresenter extends AbstractPresenter
     public function toArray()
     {
         return array_merge($this->wrappedObject->toArray(), [
-            'scheduled_at' => $this->created_at(),
+            'scheduled_at' => $this->scheduled_at(),
             'created_at'   => $this->created_at(),
             'updated_at'   => $this->updated_at(),
         ]);

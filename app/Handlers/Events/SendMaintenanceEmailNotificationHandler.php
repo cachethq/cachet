@@ -70,6 +70,7 @@ class SendMaintenanceEmailNotificationHandler
                 'status'          => $data->humanStatus,
                 'htmlContent'     => $data->formattedMessage,
                 'textContent'     => $data->message,
+                'scheduled_at'    => $data->scheduled_at_formatted,
                 'token'           => $subscriber->token,
                 'unsubscribeLink' => route('subscribe.unsubscribe', ['code' => $subscriber->verify_code]),
                 'appUrl'          => env('APP_URL'),
