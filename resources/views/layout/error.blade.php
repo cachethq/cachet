@@ -21,7 +21,7 @@
 
     <title>{{ isset($page_title) ?: Setting::get('app_name') }}</title>
 
-    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="{{ elixir('dist/css/all.css') }}">
 
     @include('partials.stylesheet')
