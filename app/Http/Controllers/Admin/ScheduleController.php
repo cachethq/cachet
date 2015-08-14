@@ -109,7 +109,7 @@ class ScheduleController extends Controller
         $scheduleData['status'] = 0;
 
         try {
-            Incident::create($scheduleData);
+            $incident = Incident::create($scheduleData);
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.schedule.add')
                 ->withInput(Binput::all())
