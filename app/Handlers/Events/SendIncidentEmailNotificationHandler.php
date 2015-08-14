@@ -69,7 +69,7 @@ class SendIncidentEmailNotificationHandler
                 $mail = [
                     'email'           => $subscriber->email,
                     'subject'         => 'New incident reported.',
-                    'incident'        => $event->incident,
+                    'component_name'  => $event->incident->component->name,
                     'status'          => $data->humanStatus,
                     'htmlContent'     => $data->formattedMessage,
                     'textContent'     => $data->message,

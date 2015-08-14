@@ -9,7 +9,7 @@
 
     <p>
         {!! $status !!}
-        @if($incident->component)
+        @if(isset($incident->component))
         ({{ $incident->component->name }})
         @endif
     </p>
