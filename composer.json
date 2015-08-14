@@ -20,8 +20,8 @@
     ],
     "require": {
         "php": "^5.5.9",
-        "laravel/framework": "~5.1.6",
-        "alt-three/emoji": "^1.1",
+        "laravel/framework": "~5.1.10",
+        "alt-three/emoji": "^1.2",
         "barryvdh/laravel-cors": "^0.5",
         "doctrine/dbal": "^2.5",
         "fideloper/proxy": "^3.0",
