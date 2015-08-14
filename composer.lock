@@ -4,25 +4,26 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5f9d14ef22256813bf57d232d1813f98",
+    "hash": "8ad05f265a7f13a963a021a55b21f451",
     "packages": [
         {
             "name": "alt-three/emoji",
-            "version": "v1.1.1",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/AltThree/Emoji.git",
-                "reference": "f0d2783b4760e4fa2cf176cc356cf523a06d8c57"
+                "reference": "92f01cb2bce289f199dee31e197660d6f6f572de"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/AltThree/Emoji/zipball/f0d2783b4760e4fa2cf176cc356cf523a06d8c57",
-                "reference": "f0d2783b4760e4fa2cf176cc356cf523a06d8c57",
+                "url": "https://api.github.com/repos/AltThree/Emoji/zipball/92f01cb2bce289f199dee31e197660d6f6f572de",
+                "reference": "92f01cb2bce289f199dee31e197660d6f6f572de",
                 "shasum": ""
             },
             "require": {
                 "graham-campbell/markdown": "~4.0",
                 "guzzlehttp/guzzle": "~5.3|~6.0",
+                "illuminate/contracts": "5.1.*",
                 "illuminate/support": "5.1.*",
                 "php": ">=5.5.9"
             },
@@ -33,7 +34,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1-dev"
+                    "dev-master": "1.2-dev"
                 }
             },
             "autoload": {
@@ -65,7 +66,7 @@
                 "emoji",
                 "parser"
             ],
-            "time": "2015-08-09 18:14:49"
+            "time": "2015-08-14 22:18:26"
         },
         {
             "name": "asm89/stack-cors",
