@@ -84,4 +84,16 @@ class StatusPageController extends Controller
             ->withPreviousDate($startDate->copy()->subDays($daysToShow)->toDateString())
             ->withNextDate($startDate->copy()->addDays($daysToShow)->toDateString());
     }
+
+    /**
+     * Shows an incident in more detail.
+     *
+     * @param \CachetHQ\Cachet\Models\Incident $incident
+     *
+     * @return \Illuminate\View\View
+     */
+    public function showIncident(Incident $incident)
+    {
+
+    }
 }
