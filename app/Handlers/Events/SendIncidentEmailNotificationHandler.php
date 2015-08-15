@@ -61,7 +61,8 @@ class SendIncidentEmailNotificationHandler
      */
     public function handle(IncidentHasReportedEvent $event)
     {
-        $data = $this->presenter->decorate($event->incident);
+        $incident = $this->presenter->decorate($event->incident);
+        $component = $this->presenter->decorate($event->incident->component);
 
         // Only send emails for public incidents.
         if ($event->incident->visible === 1) {
@@ -69,9 +70,11 @@ class SendIncidentEmailNotificationHandler
                 $mail = [
                     'email'           => $subscriber->email,
                     'subject'         => 'New incident reported.',
-                    'status'          => $data->humanStatus,
-                    'htmlContent'     => $data->formattedMessage,
-                    'textContent'     => $data->message,
+                    'hasComponent'    => ($event->incident->component) ? true : false,
+                    'componentName'   => $component->name,
+                    'status'          => $incident->humanStatus,
+                    'htmlContent'     => $incident->formattedMessage,
+                    'textContent'     => $incident->message,
                     'token'           => $subscriber->token,
                     'unsubscribeLink' => route('subscribe.unsubscribe', ['code' => $subscriber->verify_code]),
                     'appUrl'          => env('APP_URL'),

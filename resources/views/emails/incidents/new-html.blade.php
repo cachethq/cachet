@@ -9,6 +9,9 @@
 
     <p>
         {!! $status !!}
+        @if($hasComponent)
+        ({{ $componentName }})
+        @endif
     </p>
 
     <p>
