@@ -9,8 +9,8 @@
 
     <p>
         {!! $status !!}
-        @if(isset($incident->component))
-        ({{ $incident->component->name }})
+        @if($hasComponent)
+        ({{ $componentName }})
         @endif
     </p>
 

@@ -1,8 +1,8 @@
 {!! trans('cachet.subscriber.email.incident.text', ['app_name' => Setting::get('app_name')]) !!}
 
 {!! $status !!}
-@if($component_name)
-({{ $component_name }})
+@if($hasComponent)
+({{ $componentName }})
 @endif
 
 {!! $textContent !!}
