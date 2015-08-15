@@ -12,6 +12,7 @@
 namespace CachetHQ\Cachet\Console\Commands;
 
 use CachetHQ\Cachet\Models\Component;
+use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\MetricPoint;
@@ -49,12 +50,34 @@ class DemoSeederCommand extends Command
      */
     public function fire()
     {
+        $this->seedComponentGroups();
         $this->seedComponents();
         $this->seedIncidents();
         $this->seedMetricPoints();
         $this->seedMetrics();
         $this->seedSettings();
         $this->seedUsers();
+    }
+
+    /**
+     * Seed the component groups table.
+     *
+     * @return void
+     */
+    protected function seedComponentGroups()
+    {
+        $defaultGroups = [
+            [
+                'name'  => 'Websites',
+                'order' => 1,
+            ],
+        ];
+
+        ComponentGroup::truncate();
+
+        foreach ($defaultGroups as $group) {
+            ComponentGroup::create($group);
+        }
     }
 
     /**
@@ -77,21 +100,21 @@ class DemoSeederCommand extends Command
                 'description' => 'Kindly powered by Readme.io',
                 'status'      => 1,
                 'order'       => 0,
-                'group_id'    => 0,
+                'group_id'    => 1,
                 'link'        => 'https://docs.cachethq.io',
             ], [
                 'name'        => 'Website',
                 'description' => '',
                 'status'      => 1,
                 'order'       => 0,
-                'group_id'    => 0,
+                'group_id'    => 1,
                 'link'        => 'https://cachethq.io',
             ], [
                 'name'        => 'Blog',
                 'description' => 'The Cachet Blog.',
                 'status'      => 1,
                 'order'       => 0,
-                'group_id'    => 0,
+                'group_id'    => 1,
                 'link'        => 'https://blog.cachethq.io',
             ],
         ];
@@ -113,7 +136,7 @@ class DemoSeederCommand extends Command
         $defaultIncidents = [
             [
                 'name'         => 'Awesome',
-                'message'      => 'We totally nailed the fix :smile:',
+                'message'      => ':+1: We totally nailed the fix.',
                 'status'       => 4,
                 'component_id' => 0,
                 'scheduled_at' => null,
@@ -121,7 +144,7 @@ class DemoSeederCommand extends Command
             ],
             [
                 'name'         => 'Monitoring the fix',
-                'message'      => "We're checking that our fix will first work.",
+                'message'      => ":ship: We've deployed a fix.",
                 'status'       => 3,
                 'component_id' => 0,
                 'scheduled_at' => null,
@@ -129,7 +152,7 @@ class DemoSeederCommand extends Command
             ],
             [
                 'name'         => 'Update',
-                'message'      => "We've found the problem, so we're looking at it.",
+                'message'      => "We've identified the problem. Our engineers are currently looking at it.",
                 'status'       => 2,
                 'component_id' => 0,
                 'scheduled_at' => null,
@@ -137,9 +160,17 @@ class DemoSeederCommand extends Command
             ],
             [
                 'name'         => 'Test Incident',
-                'message'      => 'Something went wrong, oh noes.',
+                'message'      => 'Something went wrong, with something or another.',
                 'status'       => 1,
                 'component_id' => 0,
+                'scheduled_at' => null,
+                'visible'      => 1,
+            ],
+            [
+                'name'         => 'Investigating the API',
+                'message'      => ':zap: We\'ve seen high response times from our API. It looks to be fixing itself as time goes on.',
+                'status'       => 1,
+                'component_id' => 1,
                 'scheduled_at' => null,
                 'visible'      => 1,
             ],
