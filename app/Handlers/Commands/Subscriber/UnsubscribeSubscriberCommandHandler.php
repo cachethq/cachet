@@ -12,7 +12,7 @@
 namespace CachetHQ\Cachet\Handlers\Commands\Subscriber;
 
 use CachetHQ\Cachet\Commands\Subscriber\UnsubscribeSubscriberCommand;
-use CachetHQ\Cachet\Events\SubscriberHasUnsubscribedEvent;
+use CachetHQ\Cachet\Events\Subscriber\SubscriberHasUnsubscribedEvent;
 use CachetHQ\Cachet\Models\Subscriber;
 
 class UnsubscribeSubscriberCommandHandler

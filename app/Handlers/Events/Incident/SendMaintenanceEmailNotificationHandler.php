@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Handlers\Events;
+namespace CachetHQ\Cachet\Handlers\Events\Incident;
 
 use CachetHQ\Cachet\Events\MaintenanceHasScheduledEvent;
 use CachetHQ\Cachet\Models\Subscriber;

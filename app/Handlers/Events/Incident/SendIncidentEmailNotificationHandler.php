@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Handlers\Events;
+namespace CachetHQ\Cachet\Handlers\Events\Incident;
 
-use CachetHQ\Cachet\Events\IncidentHasReportedEvent;
+use CachetHQ\Cachet\Events\Incident\HasReportedEvent;
 use CachetHQ\Cachet\Models\Subscriber;
 use Illuminate\Contracts\Mail\MailQueue;
 use Illuminate\Mail\Message;
@@ -59,7 +59,7 @@ class SendIncidentEmailNotificationHandler
     /**
      * Handle the event.
      *
-     * @param \CachetHQ\Cachet\Events\IncidentHasReportedEvent $event
+     * @param \CachetHQ\Cachet\Events\Incident\IncidentHasReportedEvent $event
      *
      * @return void
      */

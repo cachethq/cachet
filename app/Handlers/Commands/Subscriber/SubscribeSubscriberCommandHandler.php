@@ -13,7 +13,7 @@ namespace CachetHQ\Cachet\Handlers\Commands\Subscriber;
 
 use CachetHQ\Cachet\Commands\Subscriber\SubscribeSubscriberCommand;
 use CachetHQ\Cachet\Commands\Subscriber\VerifySubscriberCommand;
-use CachetHQ\Cachet\Events\SubscriberHasSubscribedEvent;
+use CachetHQ\Cachet\Events\Subscriber\SubscriberHasSubscribedEvent;
 use CachetHQ\Cachet\Models\Subscriber;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 

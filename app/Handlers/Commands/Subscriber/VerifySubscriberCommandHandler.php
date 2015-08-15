@@ -12,7 +12,7 @@
 namespace CachetHQ\Cachet\Handlers\Commands\Subscriber;
 
 use CachetHQ\Cachet\Commands\Subscriber\VerifySubscriberCommand;
-use CachetHQ\Cachet\Events\SubscriberHasVerifiedEvent;
+use CachetHQ\Cachet\Events\Subscriber\SubscriberHasVerifiedEvent;
 use CachetHQ\Cachet\Models\Subscriber;
 use Carbon\Carbon;
 

@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Handlers\Events;
+namespace CachetHQ\Cachet\Handlers\Events\Subscriber;
 
 use CachetHQ\Cachet\Events\SubscriberHasSubscribedEvent;
 use Illuminate\Contracts\Mail\MailQueue;
