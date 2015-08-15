@@ -94,6 +94,7 @@ class StatusPageController extends Controller
      */
     public function showIncident(Incident $incident)
     {
-
+        return View::make('incident')
+            ->withIncident($incident);
     }
 }

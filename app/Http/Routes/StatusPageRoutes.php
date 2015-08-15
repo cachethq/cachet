@@ -33,12 +33,12 @@ class StatusPageRoutes
         ], function ($router) {
             $router->get('/', [
                 'as'   => 'status-page',
-                'uses' => 'HomeController@showIndex',
+                'uses' => 'StatusPageController@showIndex',
             ]);
 
             $router->get('incident/{incident}', [
                 'as'   => 'incident',
-                'uses' => 'HomeController@showIncident',
+                'uses' => 'StatusPageController@showIncident',
             ]);
         });
     }
