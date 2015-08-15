@@ -31,7 +31,7 @@ class StatusPageRoutes
             'middleware' => 'app.hasSetting',
             'setting'    => 'app_name',
             'as'         => 'status-page',
-            'uses'       => 'HomeController@showIndex',
+            'uses'       => 'StatusPageController@showIndex',
         ]);
     }
 }

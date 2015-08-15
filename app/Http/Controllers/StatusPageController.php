@@ -12,11 +12,7 @@
 namespace CachetHQ\Cachet\Http\Controllers;
 
 use CachetHQ\Cachet\Facades\Setting;
-use CachetHQ\Cachet\Models\Component;
-use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Incident;
-use CachetHQ\Cachet\Models\Metric;
-use CachetHQ\Cachet\Repositories\MetricRepository;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
 use GrahamCampbell\Markdown\Facades\Markdown;
@@ -25,25 +21,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
 use Jenssegers\Date\Date;
 
-class HomeController extends Controller
+class StatusPageController extends Controller
 {
-    /**
-     * @var \CachetHQ\Cachet\Repositories\MetricRepository
-     */
-    protected $metricRepository;
-
-    /**
-     * Construct a new home controller instance.
-     *
-     * @param \CachetHQ\Cachet\Repositories\MetricRepository $metricRepository
-     *
-     * @return void
-     */
-    public function __construct(MetricRepository $metricRepository)
-    {
-        $this->metricRepository = $metricRepository;
-    }
-
     /**
      * Displays the status page.
      *
@@ -67,20 +46,6 @@ class HomeController extends Controller
             } catch (Exception $e) {
                 // Fallback to today
             }
-        }
-
-        $metrics = null;
-        $metricData = [];
-        if ($displayMetrics = Setting::get('display_graphs')) {
-            $metrics = Metric::where('display_chart', 1)->get();
-
-            $metrics->map(function ($metric) use (&$metricData) {
-                $metricData[$metric->id] = [
-                    'today' => $this->metricRepository->listPointsToday($metric),
-                    'week'  => $this->metricRepository->listPointsForWeek($metric),
-                    'month' => $this->metricRepository->listPointsForMonth($metric),
-                ];
-            });
         }
 
         $daysToShow = Setting::get('app_incident_days') ?: 7;
@@ -111,27 +76,12 @@ class HomeController extends Controller
             return strtotime($key);
         }, SORT_REGULAR, true)->all();
 
-        // Scheduled maintenance code.
-        $scheduledMaintenance = Incident::scheduled()->orderBy('scheduled_at')->get();
-
-        // Component & Component Group lists.
-        $usedComponentGroups = Component::where('group_id', '>', 0)->groupBy('group_id')->lists('group_id');
-        $componentGroups = ComponentGroup::whereIn('id', $usedComponentGroups)->orderBy('order')->get();
-        $ungroupedComponents = Component::where('group_id', 0)->orderBy('order')->orderBy('created_at')->get();
-
         return View::make('index')
-            ->withComponentGroups($componentGroups)
-            ->withUngroupedComponents($ungroupedComponents)
-            ->withDisplayMetrics($displayMetrics)
-            ->withMetrics($metrics)
-            ->withMetricData($metricData)
             ->withAllIncidents($allIncidents)
-            ->withScheduledMaintenance($scheduledMaintenance)
             ->withAboutApp(Markdown::convertToHtml(Setting::get('app_about')))
             ->withCanPageForward((bool) $today->gt($startDate))
             ->withCanPageBackward(Incident::notScheduled()->where('created_at', '<', $startDate->format('Y-m-d'))->count() > 0)
             ->withPreviousDate($startDate->copy()->subDays($daysToShow)->toDateString())
-            ->withNextDate($startDate->copy()->addDays($daysToShow)->toDateString())
-            ->withPageTitle(Setting::get('app_name'));
+            ->withNextDate($startDate->copy()->addDays($daysToShow)->toDateString());
     }
 }

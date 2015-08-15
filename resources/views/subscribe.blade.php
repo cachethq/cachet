@@ -20,24 +20,20 @@
     </div>
     @endif
 
-    @if($about_app)
-    <div class="about-app">
-        <h1>{{ trans('cachet.about_this_site') }}</h1>
-        <p>{!! $about_app !!}</p>
-    </div>
-    @endif
-
     @include('dashboard.partials.errors')
 
-    <h1>{{ trans('cachet.subscriber.subscribe') }}</h1>
-    <form action="{{ route('subscribe.subscribe', [], false) }}" method="post">
-        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-        <div class="form-group">
-            <label for="email">{{ trans('cachet.subscriber.email.subscribe') }}</label>
-            <input class="form-control" type="text" name="email">
+    <div class="panel panel-meassage">
+        <div class="panel-heading">
+            <strong>{{ trans('cachet.subscriber.subscribe') }}</strong>
         </div>
-        <div class="form-group">
-            <input class="btn btn-success btn-outline" type="submit" value="{{ trans('cachet.subscriber.button') }}">
+        <div class="panel-body">
+            <form action="{{ route('subscribe.subscribe', [], false) }}" method="post" class="form">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <div class="form-group">
+                    <input class="form-control" type="email" name="email">
+                </div>
+                <button type="submit" class="btn btn-success">{{ trans('cachet.subscriber.button') }}</button>
+            </form>
         </div>
-    </form>
+    </div>
 @stop
