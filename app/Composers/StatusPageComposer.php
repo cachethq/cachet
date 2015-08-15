@@ -11,11 +11,13 @@
 
 namespace CachetHQ\Cachet\Composers;
 
+use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Cachet\Models\Component;
+use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Incident;
 use Illuminate\Contracts\View\View;
 
-class IndexComposer
+class StatusPageComposer
 {
     /**
      * Index page view composer.
@@ -49,6 +51,18 @@ class IndexComposer
             }
         }
 
-        $view->with($withData);
+        // Scheduled maintenance code.
+        $scheduledMaintenance = Incident::scheduled()->orderBy('scheduled_at')->get();
+
+        // Component & Component Group lists.
+        $usedComponentGroups = Component::where('group_id', '>', 0)->groupBy('group_id')->lists('group_id');
+        $componentGroups = ComponentGroup::whereIn('id', $usedComponentGroups)->orderBy('order')->get();
+        $ungroupedComponents = Component::where('group_id', 0)->orderBy('order')->orderBy('created_at')->get();
+
+        $view->with($withData)
+            ->withComponentGroups($componentGroups)
+            ->withUngroupedComponents($ungroupedComponents)
+            ->withScheduledMaintenance($scheduledMaintenance)
+            ->withPageTitle(Setting::get('app_name'));
     }
 }

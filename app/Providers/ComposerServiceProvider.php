@@ -14,7 +14,8 @@ namespace CachetHQ\Cachet\Providers;
 use CachetHQ\Cachet\Composers\AppComposer;
 use CachetHQ\Cachet\Composers\CurrentUserComposer;
 use CachetHQ\Cachet\Composers\DashboardComposer;
-use CachetHQ\Cachet\Composers\IndexComposer;
+use CachetHQ\Cachet\Composers\MetricsComposer;
+use CachetHQ\Cachet\Composers\StatusPageComposer;
 use CachetHQ\Cachet\Composers\ThemeComposer;
 use CachetHQ\Cachet\Composers\TimezoneLocaleComposer;
 use Illuminate\Contracts\View\Factory;
@@ -31,7 +32,8 @@ class ComposerServiceProvider extends ServiceProvider
     {
         $factory->composer('*', AppComposer::class);
         $factory->composer('*', CurrentUserComposer::class);
-        $factory->composer(['index', 'subscribe'], IndexComposer::class);
+        $factory->composer(['index'], MetricsComposer::class);
+        $factory->composer(['index', 'subscribe'], StatusPageComposer::class);
         $factory->composer(['index', 'subscribe'], ThemeComposer::class);
         $factory->composer('dashboard.*', DashboardComposer::class);
         $factory->composer(['setup', 'dashboard.settings.app-setup'], TimezoneLocaleComposer::class);
