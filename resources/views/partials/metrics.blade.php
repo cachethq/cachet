@@ -25,7 +25,7 @@
         <div class="row">
             <div class="col-xs-12">
                 <div>
-                    <canvas id="metric-{{ $metric->id }}" data-metric-id="{{ $metric->id }}" data-metric-group="today" height="160" width="600"></canvas>
+                    <canvas id="metric-{{ $metric->id }}" data-metric-name="{{ $metric->name }}" data-metric-suffix="{{ $metric->suffix }}" data-metric-id="{{ $metric->id }}" data-metric-group="today" height="160" width="600"></canvas>
                 </div>
             </div>
         </div>
@@ -92,7 +92,7 @@
         chartConfig.datasets[0].data = _.values(charter);
 
         charts[metricId].chart = new Chart(charts[metricId].context).Line(chartConfig, {
-            tooltipTemplate: "{!! $metric->name !!}: <%= value %> {!! $metric->suffix !!}",
+            tooltipTemplate: $el.data('metric-name') + ": <%= value %> " + $el.data('metric-suffix'),
             scaleShowVerticalLines: true,
             scaleShowLabels: false,
             responsive: true,
