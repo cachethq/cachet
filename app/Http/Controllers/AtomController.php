@@ -65,7 +65,7 @@ class AtomController extends Controller
         $feed->add(
             $incident->name,
             Setting::get('app_name'),
-            Str::canonicalize(Setting::get('app_domain')).'#'.$incident->id,
+            Str::canonicalize(route('incident', ['id' => $incident->id])),
             $incident->created_at->toAtomString(),
             Markdown::convertToHtml($incident->message)
         );
