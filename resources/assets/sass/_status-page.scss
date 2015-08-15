@@ -16,6 +16,17 @@ body.status-page {
         margin-bottom: 20px;
     }
 
+    img {
+        box-sizing: border-box;
+
+        &.emoji {
+            height: 20px;
+            width: 20px;
+            vertical-align: middle;
+            max-width: none;
+        }
+    }
+
     .tooltip {
         .tooltip-inner {
             padding: 8px 12px;
@@ -229,17 +240,6 @@ body.status-page {
                             margin-bottom: 10px;
                         }
                         font-size: 1.1em;
-                    }
-                }
-
-                img {
-                    box-sizing: border-box;
-
-                    &.emoji {
-                        height: 20px;
-                        width: 20px;
-                        vertical-align: middle;
-                        max-width: none;
                     }
                 }
             }
