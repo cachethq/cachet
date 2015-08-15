@@ -11,8 +11,8 @@
                     @endif
                 </h4>
             </div>
-            <div class="col-xs-2 text-right">
-                <div class="dropdown">
+            <div class="col-xs-2">
+                <div class="dropdown pull-right">
                     <a href="javascript: void(0);" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class='filter'>{{ trans('cachet.metrics.filter.hourly') }}</span> <span class="caret"></span></a>
                     <ul class="dropdown-menu dropdown-menu-right">
                         <li><a href="#" data-filter-type="today">{{ trans('cachet.metrics.filter.hourly') }}</a></li>
@@ -22,11 +22,10 @@
                 </div>
             </div>
         </div>
-        <hr>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-xs-12">
                 <div>
-                    <canvas id="metric-{{ $metric->id }}" data-metric-id="{{ $metric->id }}" data-metric-group="today" height="125" width="600"></canvas>
+                    <canvas id="metric-{{ $metric->id }}" data-metric-id="{{ $metric->id }}" data-metric-group="today" height="160" width="600"></canvas>
                 </div>
             </div>
         </div>
