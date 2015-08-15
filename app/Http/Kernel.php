@@ -45,6 +45,7 @@ class Kernel extends HttpKernel
         'auth.basic'      => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
         'csrf'            => 'Illuminate\Foundation\Http\Middleware\VerifyCsrfToken',
         'guest'           => 'CachetHQ\Cachet\Http\Middleware\RedirectIfAuthenticated',
+        'localize'        => 'CachetHQ\Cachet\Http\Middleware\Localize',
         'throttling'      => 'GrahamCampbell\Throttle\Http\Middleware\ThrottleMiddleware',
     ];
 }

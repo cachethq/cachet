@@ -28,7 +28,7 @@ class StatusPageRoutes
     public function map(Registrar $router)
     {
         $router->get('/', [
-            'middleware' => 'app.hasSetting',
+            'middleware' => ['app.hasSetting', 'localize'],
             'setting'    => 'app_name',
             'as'         => 'status-page',
             'uses'       => 'HomeController@showIndex',
