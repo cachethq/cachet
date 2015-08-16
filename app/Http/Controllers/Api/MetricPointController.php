@@ -11,14 +11,20 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Api;
 
+use CachetHQ\Cachet\Commands\Metric\AddMetricPointCommand;
+use CachetHQ\Cachet\Commands\Metric\RemoveMetricPointCommand;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\MetricPoint;
 use Carbon\Carbon;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
+use Illuminate\Foundation\Bus\DispatchesJobs;
+use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 class MetricPointController extends AbstractApiController
 {
+    use DispatchesJobs;
+
     /**
      * Get a single metric point.
      *
@@ -41,16 +47,8 @@ class MetricPointController extends AbstractApiController
      */
     public function postMetricPoints(Metric $metric)
     {
-        $metricPointData = Binput::all();
-        $metricPointData['metric_id'] = $metric->id;
-
-        if ($timestamp = array_pull($metricPointData, 'timestamp')) {
-            $pointTimestamp = Carbon::createFromFormat('U', $timestamp);
-            $metricPointData['created_at'] = $pointTimestamp->format('Y-m-d H:i:s');
-        }
-
         try {
-            $metricPoint = MetricPoint::create($metricPointData);
+            $metricPoint = $this->dispatch(new AddMetricPointCommand($metric, Binput::get('value'), Binput::get('timestamp')));
         } catch (Exception $e) {
             throw new BadRequestHttpException();
         }
@@ -91,7 +89,7 @@ class MetricPointController extends AbstractApiController
      */
     public function deleteMetricPoint(Metric $metric, MetricPoint $metricPoint)
     {
-        $metricPoint->delete();
+        $this->dispatch(new RemoveMetricPointCommand($metricPoint));
 
         return $this->noContent();
     }

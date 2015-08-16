@@ -59,6 +59,7 @@ class MetricTest extends AbstractTestCase
             'description'   => 'Lorem ipsum dolor',
             'default_value' => 1,
             'display_chart' => 1,
+            'places'        => 0,
         ]);
         $this->seeJson(['name' => 'Foo']);
         $this->assertResponseOk();

@@ -12,15 +12,20 @@
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
 use AltThree\Validator\ValidationException;
+use CachetHQ\Cachet\Commands\Metric\AddMetricCommand;
+use CachetHQ\Cachet\Commands\Metric\RemoveMetricCommand;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\MetricPoint;
 use GrahamCampbell\Binput\Facades\Binput;
+use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 
 class MetricController extends Controller
 {
+    use DispatchesJobs;
+
     /**
      * Shows the metrics view.
      *
@@ -66,7 +71,7 @@ class MetricController extends Controller
     public function createMetricAction()
     {
         try {
-            Metric::create(Binput::get('metric'));
+            $this->dispatchFromArray(AddMetricCommand::class, Binput::get('metric'));
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.metrics.add')
                 ->withInput(Binput::all())
@@ -98,7 +103,7 @@ class MetricController extends Controller
      */
     public function deleteMetricAction(Metric $metric)
     {
-        $metric->delete();
+        $this->dispatch(new RemoveMetricCommand($metric));
 
         return Redirect::route('dashboard.metrics.index');
     }
