@@ -11,10 +11,10 @@
 
 namespace CachetHQ\Cachet\Handlers\Commands\Metric;
 
-use Carbon\Carbon;
 use CachetHQ\Cachet\Commands\Metric\AddMetricPointCommand;
 use CachetHQ\Cachet\Events\Metric\MetricPointWasAddedEvent;
 use CachetHQ\Cachet\Models\MetricPoint;
+use Carbon\Carbon;
 
 class AddMetricPointCommandHandler
 {
