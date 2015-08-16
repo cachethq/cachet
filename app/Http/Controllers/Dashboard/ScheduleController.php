@@ -12,7 +12,7 @@
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
 use AltThree\Validator\ValidationException;
-use CachetHQ\Cachet\Events\MaintenanceHasScheduledEvent;
+use CachetHQ\Cachet\Events\MaintenanceWasScheduledEvent;
 use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentTemplate;
@@ -118,7 +118,7 @@ class ScheduleController extends Controller
         }
 
         if (array_get($scheduleData, 'notify') && subscribers_enabled()) {
-            event(new MaintenanceHasScheduledEvent($incident));
+            event(new MaintenanceWasScheduledEvent($incident));
         }
 
         return Redirect::route('dashboard.schedule.add')

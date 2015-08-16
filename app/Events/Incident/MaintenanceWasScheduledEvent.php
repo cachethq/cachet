@@ -13,7 +13,7 @@ namespace CachetHQ\Cachet\Events;
 
 use CachetHQ\Cachet\Models\Incident;
 
-class IncidentHasReportedEvent
+class MaintenanceWasScheduledEvent
 {
     /**
      * The incident that has been reported.
@@ -23,7 +23,7 @@ class IncidentHasReportedEvent
     public $incident;
 
     /**
-     * Create a new incident has reported event instance.
+     * Create a new maintenance has scheduled event instance.
      *
      * @return void
      */

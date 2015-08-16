@@ -24,10 +24,10 @@ class EventServiceProvider extends ServiceProvider
         'CachetHQ\Cachet\Events\Subscriber\SubscriberHasSubscribedEvent' => [
             'CachetHQ\Cachet\Handlers\Events\SendSubscriberVerificationEmailHandler',
         ],
-        'CachetHQ\Cachet\Events\Incident\IncidentHasReportedEvent' => [
+        'CachetHQ\Cachet\Events\Incident\IncidentWasReportedEvent' => [
             'CachetHQ\Cachet\Handlers\Events\Incident\SendIncidentEmailNotificationHandler',
         ],
-        'CachetHQ\Cachet\Events\Incident\MaintenanceHasScheduledEvent' => [
+        'CachetHQ\Cachet\Events\Incident\MaintenanceWasScheduledEvent' => [
             'CachetHQ\Cachet\Handlers\Events\Incident\SendMaintenanceEmailNotificationHandler',
         ],
     ];

@@ -11,7 +11,7 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Api;
 
-use CachetHQ\Cachet\Events\Incident\IncidentHasReportedEvent;
+use CachetHQ\Cachet\Events\Incident\IncidentWasReportedEvent;
 use CachetHQ\Cachet\Models\Incident;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
@@ -80,7 +80,7 @@ class IncidentController extends AbstractApiController
         }
 
         if (array_get($incidentData, 'notify') && subscribers_enabled()) {
-            event(new IncidentHasReportedEvent($incident));
+            event(new IncidentWasReportedEvent($incident));
         }
 
         return $this->item($incident);

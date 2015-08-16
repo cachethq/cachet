@@ -63,7 +63,7 @@ class SendIncidentEmailNotificationHandler
      *
      * @return void
      */
-    public function handle(IncidentHasReportedEvent $event)
+    public function handle(IncidentWasReportedEvent $event)
     {
         $incident = $this->presenter->decorate($event->incident);
         $component = $this->presenter->decorate($event->incident->component);

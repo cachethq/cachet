@@ -11,7 +11,7 @@
 
 namespace CachetHQ\Cachet\Handlers\Events\Incident;
 
-use CachetHQ\Cachet\Events\MaintenanceHasScheduledEvent;
+use CachetHQ\Cachet\Events\MaintenanceWasScheduledEvent;
 use CachetHQ\Cachet\Models\Subscriber;
 use Illuminate\Contracts\Mail\MailQueue;
 use Illuminate\Mail\Message;
@@ -59,11 +59,15 @@ class SendMaintenanceEmailNotificationHandler
     /**
      * Handle the event.
      *
+<<<<<<< cc10f8f42347c5fdfe7e464bedd3a388059ebc4b
      * @param \CachetHQ\Cachet\Events\MaintenanceHasScheduledEvent $event
      *
      * @return void
+=======
+     * @param \CachetHQ\Cachet\Events\MaintenanceWasScheduledEvent $event
+>>>>>>> Rename incident events and fixes
      */
-    public function handle(MaintenanceHasScheduledEvent $event)
+    public function handle(MaintenanceWasScheduledEvent $event)
     {
         $data = $this->presenter->decorate($event->incident);
 

@@ -57,18 +57,14 @@ class SubscriberController extends Controller
      */
     public function createSubscriberAction()
     {
-        $email = Binput::get('email');
-
         try {
-            $this->dispatch(new SubscribeSubscriberCommand($email));
+            $this->dispatch(new SubscribeSubscriberCommand(Binput::get('email')));
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.subscribers.add')
                 ->withInput(Binput::all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.subscribers.add.failure')))
                 ->withErrors($e->getMessageBag());
         }
-
-        event(new CustomerHasSubscribedEvent($subscriber));
 
         return Redirect::route('dashboard.subscribers.add')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.subscribers.add.success')));

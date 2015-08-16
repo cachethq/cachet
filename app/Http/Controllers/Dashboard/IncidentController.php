@@ -12,7 +12,7 @@
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
 use AltThree\Validator\ValidationException;
-use CachetHQ\Cachet\Events\Incident\IncidentHasReportedEvent;
+use CachetHQ\Cachet\Events\Incident\IncidentWasReportedEvent;
 use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
@@ -133,7 +133,7 @@ class IncidentController extends Controller
         }
 
         if (array_get($incidentData, 'notify') && subscribers_enabled()) {
-            event(new IncidentHasReportedEvent($incident));
+            event(new IncidentWasReportedEvent($incident));
         }
 
         return Redirect::route('dashboard.incidents.add')
