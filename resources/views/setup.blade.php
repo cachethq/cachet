@@ -168,7 +168,7 @@
                         <h3>
                             {{ trans("setup.completed") }}
                         </h3>
-                        <a href="{{ route('dashboard') }}" class="btn btn-default">
+                        <a href="{{ route('dashboard.index') }}" class="btn btn-default">
                             <span>{{ trans("setup.finish_setup") }}</span>
                         </a>
                     </div>
