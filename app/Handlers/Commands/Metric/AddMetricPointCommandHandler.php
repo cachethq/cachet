@@ -31,8 +31,8 @@ class AddMetricPointCommandHandler
         $createdAt = $command->createdAt;
 
         $data = [
-            'metric_id'  => $metric->id,
-            'value'      => $command->value,
+            'metric_id' => $metric->id,
+            'value'     => $command->value,
         ];
 
         if ($createdAt) {
