@@ -68,16 +68,16 @@ class SendIncidentEmailNotificationHandler
         if ($event->incident->visible === 1) {
             foreach ($this->subscriber->all() as $subscriber) {
                 $mail = [
-                    'email'           => $subscriber->email,
-                    'subject'         => 'New incident reported.',
-                    'hasComponent'    => ($event->incident->component) ? true : false,
-                    'componentName'   => $component->name,
-                    'status'          => $incident->humanStatus,
-                    'htmlContent'     => $incident->formattedMessage,
-                    'textContent'     => $incident->message,
-                    'token'           => $subscriber->token,
-                    'unsubscribeLink' => route('subscribe.unsubscribe', ['code' => $subscriber->verify_code]),
-                    'appUrl'          => env('APP_URL'),
+                    'email'            => $subscriber->email,
+                    'subject'          => 'New incident reported.',
+                    'has_component'    => ($event->incident->component) ? true : false,
+                    'component_name'   => $component->name,
+                    'status'           => $incident->humanStatus,
+                    'html_content'     => $incident->formattedMessage,
+                    'text_content'     => $incident->message,
+                    'token'            => $subscriber->token,
+                    'unsubscribe_link' => route('subscribe.unsubscribe', ['code' => $subscriber->verify_code]),
+                    'app_url'          => env('APP_URL'),
                 ];
 
                 $this->mailer->queue([
