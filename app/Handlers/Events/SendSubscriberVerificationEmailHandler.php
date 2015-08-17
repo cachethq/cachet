@@ -42,10 +42,10 @@ class SendSubscriberVerificationEmailHandler
     public function handle(CustomerHasSubscribedEvent $event)
     {
         $mail = [
-            'email'   => $event->subscriber->email,
-            'subject' => 'Confirm your subscription.',
-            'link'    => route('subscribe.verify', ['code' => $event->subscriber->verify_code]),
-            'appUrl'  => env('APP_URL'),
+            'email'    => $event->subscriber->email,
+            'subject'  => 'Confirm your subscription.',
+            'link'     => route('subscribe.verify', ['code' => $event->subscriber->verify_code]),
+            'app_url'  => env('APP_URL'),
         ];
 
         $this->mailer->queue([
