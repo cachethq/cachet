@@ -1252,16 +1252,16 @@
         },
         {
             "name": "guzzlehttp/promises",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/promises.git",
-                "reference": "2ee5bc7f1a92efecc90da7f6711a53a7be26b5b7"
+                "reference": "97fe7210def29451ec74923b27e552238defd75a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/promises/zipball/2ee5bc7f1a92efecc90da7f6711a53a7be26b5b7",
-                "reference": "2ee5bc7f1a92efecc90da7f6711a53a7be26b5b7",
+                "url": "https://api.github.com/repos/guzzle/promises/zipball/97fe7210def29451ec74923b27e552238defd75a",
+                "reference": "97fe7210def29451ec74923b27e552238defd75a",
                 "shasum": ""
             },
             "require": {
@@ -1281,7 +1281,7 @@
                     "GuzzleHttp\\Promise\\": "src/"
                 },
                 "files": [
-                    "src/functions.php"
+                    "src/functions_include.php"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1299,20 +1299,20 @@
             "keywords": [
                 "promise"
             ],
-            "time": "2015-06-24 16:16:25"
+            "time": "2015-08-15 19:37:21"
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "1.1.0",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "af0e1758de355eb113917ad79c3c0e3604bce4bd"
+                "reference": "4ef919b0cf3b1989523138b60163bbcb7ba1ff7e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/af0e1758de355eb113917ad79c3c0e3604bce4bd",
-                "reference": "af0e1758de355eb113917ad79c3c0e3604bce4bd",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/4ef919b0cf3b1989523138b60163bbcb7ba1ff7e",
+                "reference": "4ef919b0cf3b1989523138b60163bbcb7ba1ff7e",
                 "shasum": ""
             },
             "require": {
@@ -1336,7 +1336,7 @@
                     "GuzzleHttp\\Psr7\\": "src/"
                 },
                 "files": [
-                    "src/functions.php"
+                    "src/functions_include.php"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1357,7 +1357,7 @@
                 "stream",
                 "uri"
             ],
-            "time": "2015-06-24 19:55:15"
+            "time": "2015-08-15 19:32:36"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -1448,16 +1448,16 @@
         },
         {
             "name": "jenssegers/date",
-            "version": "v3.0.7",
+            "version": "v3.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jenssegers/laravel-date.git",
-                "reference": "7933306f067f1ce230e31fee91783320627f7326"
+                "reference": "4a5ecdc2e622ccf426e058a28449f06cc5d9200b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jenssegers/laravel-date/zipball/7933306f067f1ce230e31fee91783320627f7326",
-                "reference": "7933306f067f1ce230e31fee91783320627f7326",
+                "url": "https://api.github.com/repos/jenssegers/laravel-date/zipball/4a5ecdc2e622ccf426e058a28449f06cc5d9200b",
+                "reference": "4a5ecdc2e622ccf426e058a28449f06cc5d9200b",
                 "shasum": ""
             },
             "require": {
@@ -1500,7 +1500,7 @@
                 "time",
                 "translation"
             ],
-            "time": "2015-07-25 18:06:01"
+            "time": "2015-08-10 11:19:08"
         },
         {
             "name": "jeremeamia/SuperClosure",
@@ -3742,16 +3742,16 @@
         },
         {
             "name": "phpunit/php-token-stream",
-            "version": "1.4.5",
+            "version": "1.4.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-token-stream.git",
-                "reference": "09fc125d65c344c53a7c7ad8f261e3f3af9f76c5"
+                "reference": "3ab72c62e550370a6cd5dc873e1a04ab57562f5b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/09fc125d65c344c53a7c7ad8f261e3f3af9f76c5",
-                "reference": "09fc125d65c344c53a7c7ad8f261e3f3af9f76c5",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/3ab72c62e550370a6cd5dc873e1a04ab57562f5b",
+                "reference": "3ab72c62e550370a6cd5dc873e1a04ab57562f5b",
                 "shasum": ""
             },
             "require": {
@@ -3787,20 +3787,20 @@
             "keywords": [
                 "tokenizer"
             ],
-            "time": "2015-08-13 14:23:08"
+            "time": "2015-08-16 08:51:00"
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.8.3",
+            "version": "4.8.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "fd3050e26e3105f416d74c4d33aea659b406c59d"
+                "reference": "55bf1d6092b0e13a1f26bd5eaffeef3d8ad85ea7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/fd3050e26e3105f416d74c4d33aea659b406c59d",
-                "reference": "fd3050e26e3105f416d74c4d33aea659b406c59d",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/55bf1d6092b0e13a1f26bd5eaffeef3d8ad85ea7",
+                "reference": "55bf1d6092b0e13a1f26bd5eaffeef3d8ad85ea7",
                 "shasum": ""
             },
             "require": {
@@ -3859,7 +3859,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-08-10 09:16:56"
+            "time": "2015-08-15 04:21:23"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
