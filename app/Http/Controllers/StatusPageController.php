@@ -48,8 +48,13 @@ class StatusPageController extends Controller
             }
         }
 
-        $daysToShow = Setting::get('app_incident_days') ?: 7;
-        $incidentDays = range(0, $daysToShow - 1);
+        $daysToShow = Setting::get('app_incident_days', 0) - 1;
+        if ($daysToShow < 0) {
+            $daysToShow = 0;
+            $incidentDays = [];
+        } else {
+            $incidentDays = range(0, $daysToShow);
+        }
         $dateTimeZone = Setting::get('app_timezone');
 
         $incidentVisiblity = Auth::check() ? 0 : 1;
@@ -77,6 +82,7 @@ class StatusPageController extends Controller
         }, SORT_REGULAR, true)->all();
 
         return View::make('index')
+            ->withDaysToShow($daysToShow)
             ->withAllIncidents($allIncidents)
             ->withAboutApp(Markdown::convertToHtml(Setting::get('app_about')))
             ->withCanPageForward((bool) $today->gt($startDate))

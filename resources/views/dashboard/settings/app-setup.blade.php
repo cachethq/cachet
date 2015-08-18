@@ -135,7 +135,7 @@
                                 <div class="col-xs-12">
                                     <div class="form-group">
                                         <label>{{ trans('forms.settings.app-setup.days-of-incidents') }}</label>
-                                        <input type="number" min="1" max="100" name="app_incident_days" class="form-control" value="{{ Setting::get('app_incident_days') ?: 7 }}">
+                                        <input type="number" max="100" name="app_incident_days" class="form-control" value="{{ Setting::get('app_incident_days', 7) }}">
                                     </div>
                                 </div>
                             </div>

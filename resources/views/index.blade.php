@@ -55,6 +55,7 @@
     </div>
     @endif
 
+    @if($days_to_show > 0)
     <div class="section-timeline">
         <h1>{{ trans('cachet.incidents.past') }}</h1>
         @foreach($all_incidents as $date => $incidents)
@@ -80,4 +81,5 @@
             @endif
         </ul>
     </nav>
+    @endif
 @stop
