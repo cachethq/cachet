@@ -11,14 +11,24 @@
 
 namespace CachetHQ\Cachet\Models;
 
+use AltThree\Validator\ValidatingTrait;
 use CachetHQ\Cachet\Presenters\MetricPointPresenter;
 use Illuminate\Database\Eloquent\Model;
 use McCool\LaravelAutoPresenter\HasPresenter;
-use Watson\Validating\ValidatingTrait;
 
 class MetricPoint extends Model implements HasPresenter
 {
     use ValidatingTrait;
+
+    /**
+     * The attributes that should be casted to native types.
+     *
+     * @var string[]
+     */
+    protected $casts = [
+        'metric_id' => 'integer',
+        'value'     => 'integer',
+    ];
 
     /**
      * The attributes that are mass assignable.
@@ -32,7 +42,7 @@ class MetricPoint extends Model implements HasPresenter
      *
      * @var string[]
      */
-    protected $rules = [
+    public $rules = [
         'value' => 'numeric|required',
     ];
 

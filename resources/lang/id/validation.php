@@ -78,7 +78,7 @@ return [
         'string'  => ':attribute harus :size karakter.',
         'array'   => ':attribute harus berisi :size item.',
     ],
-    'string'   => 'The :attribute must be a string.',
+    'string'   => ':attribute harus berupa string.',
     'unique'   => ':attribute sudah ada.',
     'url'      => 'Format :attribute tidak benar.',
     'timezone' => ':attribute harus merupakan zona yang benar.',

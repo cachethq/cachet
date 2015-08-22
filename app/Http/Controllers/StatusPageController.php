@@ -12,21 +12,19 @@
 namespace CachetHQ\Cachet\Http\Controllers;
 
 use CachetHQ\Cachet\Facades\Setting;
-use CachetHQ\Cachet\Models\Component;
-use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Incident;
-use CachetHQ\Cachet\Models\Metric;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
 use GrahamCampbell\Markdown\Facades\Markdown;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
 use Jenssegers\Date\Date;
 
-class HomeController extends AbstractController
+class StatusPageController extends Controller
 {
     /**
-     * Returns the rendered Blade templates.
+     * Displays the status page.
      *
      * @return \Illuminate\View\View
      */
@@ -50,14 +48,13 @@ class HomeController extends AbstractController
             }
         }
 
-        $metrics = null;
-
-        if ($displayMetrics = Setting::get('display_graphs')) {
-            $metrics = Metric::where('display_chart', 1)->get();
+        $daysToShow = Setting::get('app_incident_days', 0) - 1;
+        if ($daysToShow < 0) {
+            $daysToShow = 0;
+            $incidentDays = [];
+        } else {
+            $incidentDays = range(0, $daysToShow);
         }
-
-        $daysToShow = Setting::get('app_incident_days') ?: 7;
-        $incidentDays = range(0, $daysToShow - 1);
         $dateTimeZone = Setting::get('app_timezone');
 
         $incidentVisiblity = Auth::check() ? 0 : 1;
@@ -84,29 +81,26 @@ class HomeController extends AbstractController
             return strtotime($key);
         }, SORT_REGULAR, true)->all();
 
-        // Scheduled maintenance code.
-        $scheduledMaintenance = Incident::scheduled()->orderBy('scheduled_at')->get();
+        return View::make('index')
+            ->withDaysToShow($daysToShow)
+            ->withAllIncidents($allIncidents)
+            ->withAboutApp(Markdown::convertToHtml(Setting::get('app_about')))
+            ->withCanPageForward((bool) $today->gt($startDate))
+            ->withCanPageBackward(Incident::notScheduled()->where('created_at', '<', $startDate->format('Y-m-d'))->count() > 0)
+            ->withPreviousDate($startDate->copy()->subDays($daysToShow)->toDateString())
+            ->withNextDate($startDate->copy()->addDays($daysToShow)->toDateString());
+    }
 
-        // Component & Component Group lists.
-        $usedComponentGroups = Component::where('group_id', '>', 0)->groupBy('group_id')->lists('group_id');
-        $componentGroups = ComponentGroup::whereIn('id', $usedComponentGroups)->orderBy('order')->get();
-        $ungroupedComponents = Component::where('group_id', 0)->orderBy('order')->orderBy('created_at')->get();
-
-        $canPageBackward = Incident::notScheduled()->where('created_at', '<', $startDate->format('Y-m-d'))->count() != 0;
-
-        return View::make('index', [
-            'componentGroups'      => $componentGroups,
-            'ungroupedComponents'  => $ungroupedComponents,
-            'displayMetrics'       => $displayMetrics,
-            'metrics'              => $metrics,
-            'allIncidents'         => $allIncidents,
-            'scheduledMaintenance' => $scheduledMaintenance,
-            'aboutApp'             => Markdown::convertToHtml(Setting::get('app_about')),
-            'canPageForward'       => (bool) $today->gt($startDate),
-            'canPageBackward'      => $canPageBackward,
-            'previousDate'         => $startDate->copy()->subDays($daysToShow)->toDateString(),
-            'nextDate'             => $startDate->copy()->addDays($daysToShow)->toDateString(),
-            'page_title'           => Setting::get('app_name'),
-        ]);
+    /**
+     * Shows an incident in more detail.
+     *
+     * @param \CachetHQ\Cachet\Models\Incident $incident
+     *
+     * @return \Illuminate\View\View
+     */
+    public function showIncident(Incident $incident)
+    {
+        return View::make('incident')
+            ->withIncident($incident);
     }
 }

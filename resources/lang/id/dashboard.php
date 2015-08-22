@@ -115,6 +115,23 @@ return [
             'failure' => 'Ada masalah dengan metrik ini.',
         ],
     ],
+    // Subscribers
+    'subscribers' => [
+        'subscribers'  => '',
+        'description'  => '',
+        'verified'     => '',
+        'not_verified' => '',
+        'add'          => [
+            'title'   => '',
+            'success' => '',
+            'failure' => '',
+        ],
+        'edit' => [
+            'title'   => '',
+            'success' => '',
+            'failure' => '',
+        ],
+    ],
 
     // Team
     'team' => [
@@ -131,6 +148,10 @@ return [
             'title'   => 'Perbarui profil',
             'success' => 'Profil sudah diperbarui.',
             'failure' => 'Ada masalah saat memperbarui.',
+        ],
+        'delete' => [
+            'success' => '',
+            'failure' => '',
         ],
     ],
 
@@ -160,7 +181,7 @@ return [
 
     // Login
     'login' => [
-        'login'      => 'Login',
+        'login'      => 'Masuk',
         'logged_in'  => 'Anda sudah login.',
         'welcome'    => 'Halo!',
         'two-factor' => 'Silakan masukkan token anda.',
@@ -169,7 +190,7 @@ return [
     // Sidebar footer
     'help'        => 'Panduan',
     'status_page' => 'Halaman Status',
-    'logout'      => 'Logout',
+    'logout'      => 'Keluar',
 
     // Notifications
     'notifications' => [

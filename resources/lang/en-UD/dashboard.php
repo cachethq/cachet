@@ -115,6 +115,23 @@ return [
             'failure' => 'crwdns463:0crwdne463:0',
         ],
     ],
+    // Subscribers
+    'subscribers' => [
+        'subscribers'  => 'crwdns522:0crwdne522:0',
+        'description'  => 'crwdns523:0crwdne523:0',
+        'verified'     => 'crwdns524:0crwdne524:0',
+        'not_verified' => 'crwdns525:0crwdne525:0',
+        'add'          => [
+            'title'   => 'crwdns526:0crwdne526:0',
+            'success' => 'crwdns527:0crwdne527:0',
+            'failure' => 'crwdns528:0crwdne528:0',
+        ],
+        'edit' => [
+            'title'   => 'crwdns529:0crwdne529:0',
+            'success' => 'crwdns530:0crwdne530:0',
+            'failure' => 'crwdns531:0crwdne531:0',
+        ],
+    ],
 
     // Team
     'team' => [
@@ -131,6 +148,10 @@ return [
             'title'   => 'crwdns342:0crwdne342:0',
             'success' => 'crwdns343:0crwdne343:0',
             'failure' => 'crwdns344:0crwdne344:0',
+        ],
+        'delete' => [
+            'success' => 'crwdns532:0crwdne532:0',
+            'failure' => 'crwdns533:0crwdne533:0',
         ],
     ],
 

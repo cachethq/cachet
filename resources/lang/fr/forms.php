@@ -14,47 +14,55 @@ return [
     // Setup form fields
     'setup' => [
         'email'            => 'Adresse email',
-        'username'         => 'Identifiant',
-        'password'         => 'Mot de passe',
+        'username'         => 'Nom d\'utilisateur',
+        'password'         => 'Mot de passe ',
         'site_name'        => 'Nom du site',
-        'site_domain'      => 'Domaine du site',
-        'site_timezone'    => 'Sélectionnez votre fuseau horaire',
-        'site_locale'      => 'Sélectionnez votre langue',
-        'enable_google2fa' => 'Enable Google Two Factor Authentication',
+        'site_domain'      => 'Nom de domaine du site',
+        'site_timezone'    => 'Choisissez un fuseau horaire',
+        'site_locale'      => 'Choisir la langue',
+        'enable_google2fa' => 'Activez l\'authentification à deux facteurs Google',
+        'cache_driver'     => 'Pilote de cache',
+        'session_driver'   => 'Pilote de session',
     ],
 
     // Login form fields
     'login' => [
-        'email'         => 'Adresse email',
-        'password'      => 'Mot de passe',
-        '2fauth'        => 'Authentication Code',
-        'invalid'       => 'Invalid email or password',
-        'invalid-token' => 'Invalid token',
-        'cookies'       => 'You must enable cookies to login.',
+        'email'         => 'Email',
+        'password'      => 'Mot de passe ',
+        '2fauth'        => 'Code d\'authentification',
+        'invalid'       => 'E-mail ou mot de passe non valide',
+        'invalid-token' => 'Jeton non valide',
+        'cookies'       => 'Vous devez activer les cookies pour vous identifier.',
     ],
 
     // Incidents form fields
     'incidents' => [
-        'name'         => 'Nom',
-        'status'       => 'Statut',
-        'message'      => 'Message',
-        'message-help' => 'Vous pouvez aussi utiliser du Markdown.',
-
-        'templates' => [
+        'name'               => 'Nom',
+        'status'             => 'Etat',
+        'component'          => 'Composant',
+        'message'            => 'Message ',
+        'message-help'       => 'Vous pouvez également utiliser Markdown.',
+        'scheduled_at'       => 'Pour quand planifier la maintenance ?',
+        'incident_time'      => 'Quand s\'est produit cet incident ?',
+        'notify_subscribers' => 'Aviser les abonnés',
+        'visibility'         => 'Visibilité de l\'incident',
+        'public'             => 'Visibles par le public',
+        'logged_in_only'     => 'Uniquement visible des utilisateurs enregistrés',
+        'templates'          => [
             'name'     => 'Nom',
-            'template' => 'Modèle',
+            'template' => 'Modéle',
         ],
     ],
 
     // Components form fields
     'components' => [
         'name'        => 'Nom',
-        'status'      => 'Statut',
-        'group'       => 'Groupe',
+        'status'      => 'Etat',
+        'group'       => 'Groupes',
         'description' => 'Description',
         'link'        => 'Lien',
-        'tags'        => 'Tags',
-        'tags-help'   => 'Séparé par une virgule.',
+        'tags'        => 'Mots clés',
+        'tags-help'   => 'séparé par des virgules.',
 
         'groups' => [
             'name' => 'Nom',
@@ -63,17 +71,18 @@ return [
 
     // Metric form fields
     'metrics' => [
-        'name'             => 'Name',
-        'suffix'           => 'Suffix',
+        'name'             => 'Nom',
+        'suffix'           => 'Suffixe',
         'description'      => 'Description',
-        'description-help' => 'You may also use Markdown.',
-        'display-chart'    => 'Display chart on status page?',
-        'calc_type'        => 'Calculation of metrics',
-        'type_sum'         => 'Sum',
-        'type_avg'         => 'Average',
+        'description-help' => 'Vous pouvez également utiliser le format Markdown.',
+        'display-chart'    => 'Afficher le graphique sur la page de statut ?',
+        'default-value'    => 'Valeur par défaut',
+        'calc_type'        => 'Calcul des données',
+        'type_sum'         => 'Somme',
+        'type_avg'         => 'Moyenne',
 
         'points' => [
-            'value' => 'Value',
+            'value' => 'Valeur',
         ],
     ],
 
@@ -82,56 +91,57 @@ return [
         /// Application setup
         'app-setup' => [
             'site-name'              => 'Nom du site',
-            'site-url'               => 'URL du site',
+            'site-url'               => 'Url du site',
             'site-timezone'          => 'Fuseau horaire du site',
-            'site-locale'            => 'Langue du site',
-            'date-format'            => 'Format de date',
-            'display-graphs'         => 'Display graphs on status page?',
+            'site-locale'            => 'Langage du site',
+            'date-format'            => 'Format Date',
+            'incident-date-format'   => 'Format de la date de l\'incident',
+            'display-graphs'         => 'Afficher les graphiques sur la page de status ?',
             'about-this-page'        => 'À propos de cette page',
-            'days-of-incidents'      => 'Nombre de jours à afficher ?',
-            'banner'                 => 'Bannière',
-            'banner-help'            => 'Il est recommandé de télécharger des fichiers de moins de 930 pixels de large.',
-            'analytics_google'       => 'Code Google Analytics',
-            'analytics_gosquared'    => 'Code GoSquared Analytics',
+            'days-of-incidents'      => 'Combien de jours d\'incidents à montrer?',
+            'banner'                 => 'Image de la bannière',
+            'banner-help'            => 'Il est recommandé que vous téléchargez des fichiers ne dépassant pas les 930px large .',
+            'analytics_google'       => 'Code de Google Analytics',
+            'analytics_gosquared'    => 'Code de GoSquared Analytics',
             'analytics_piwik_url'    => 'URL de votre instance de Piwik (sans http(s)://)',
-            'analytics_piwik_siteid' => 'Identifiant du site dans Piwik (site id)',
+            'analytics_piwik_siteid' => 'Id de site de Piwik',
+            'subscribers'            => 'Permettre aux gens de s\'inscrire aux notifications par courrier électronique ?',
         ],
         'security' => [
-            'allowed-domains'      => 'Domaines autorisés. <small class="help-block"></small>',
-            'allowed-domains-help' => 'Séparés par une virgule. Les domaines enregistrés ci-dessus seront automatiquement autorisés par défaut.',
+            'allowed-domains'      => 'Domaines autorisés',
+            'allowed-domains-help' => 'Séparés par des virgules. Le domaine défini ci-dessus est automatiquement autorisé par défaut.',
         ],
         'stylesheet' => [
             'custom-css' => 'Feuille de style personnalisée',
         ],
         'theme' => [
-            'background-color' => 'Couleur d\'arrière plan',
-            'text-color'       => 'Couleur du texte',
-            'dashboard-login'  => 'Show dashboard button in the footer?',
+            'background-color' => 'Couleur de fond',
+            'text-color'       => 'Couleur Texte',
         ],
     ],
 
     'user' => [
-        'username'       => 'Identifiant',
-        'email'          => 'Adresse email',
-        'password'       => 'Mot de passe',
-        'api-token'      => 'Jeton API',
-        'api-token-help' => 'Regénérer votre jeton API révoquera toutes les applications existantes.',
+        'username'       => 'Nom d\'utilisateur',
+        'email'          => 'Email',
+        'password'       => 'Mot de passe ',
+        'api-token'      => 'Jeton de l\'API',
+        'api-token-help' => 'Régénérer votre jeton API permettra d\'éviter les applications existantes d\'accéder à Cachet.',
         '2fa'            => [
-            'help' => 'Enabling two factor authentication increases security of your account. You will need to download <a href="https://support.google.com/accounts/answer/1066447?hl=en">Google Authenticator</a> or a similar app on to your mobile device. When you login you will be asked to provide a token generated by the app.',
+            'help' => 'Habilitante authentification à deux facteurs augmente la sécurité de votre compte. Vous aurez besoin de télécharger <a href="https://support.google.com/accounts/answer/1066447?hl=en"> Google Authenticator</a> ou une application similaire sur votre appareil mobile. Lorsque vous vous connectez vous sera demandé de fournir un jeton généré par l\'application.',
         ],
     ],
 
     // Buttons
-    'add'    => 'Ajouter',
-    'save'   => 'Sauvegarder',
-    'update' => 'Mettre à jour',
-    'create' => 'Créer',
-    'edit'   => 'Éditer',
-    'delete' => 'Effacer',
-    'submit' => 'Envoyer',
+    'add'    => 'Ajouter catégorie',
+    'save'   => 'Enregistrer',
+    'update' => 'mettre à jour',
+    'create' => 'Nouveau',
+    'edit'   => 'Modifier',
+    'delete' => 'Supprimer',
+    'submit' => 'ENVOYER',
     'cancel' => 'Annuler',
-    'remove' => 'Supprimer',
+    'remove' => 'Enlever',
 
     // Other
-    'optional' => '* Optional',
+    'optional' => '* En option',
 ];

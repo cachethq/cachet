@@ -13,7 +13,7 @@
     <div class="content-wrapper">
         <div class="row">
             <div class="col-md-12">
-                @include('partials.dashboard.errors')
+                @include('dashboard.partials.errors')
                 <form class="form-vertical" name="IncidentForm" role="form" method="POST" autocomplete="off">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <fieldset>
@@ -88,7 +88,7 @@
                     <div class="form-group">
                         <div class="btn-group">
                             <button type="submit" class="btn btn-success">{{ trans('forms.update') }}</button>
-                            <a class="btn btn-default" href="{{ route('dashboard.incidents') }}">{{ trans('forms.cancel') }}</a>
+                            <a class="btn btn-default" href="{{ route('dashboard.incidents.index') }}">{{ trans('forms.cancel') }}</a>
                         </div>
                     </div>
                 </form>

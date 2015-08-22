@@ -149,6 +149,10 @@ return [
             'success' => 'Profile updated.',
             'failure' => 'Something went wrong when updating.',
         ],
+        'delete' => [
+            'success' => 'User updated.',
+            'failure' => 'Something went wrong when deleting this user.',
+        ],
     ],
 
     // Settings

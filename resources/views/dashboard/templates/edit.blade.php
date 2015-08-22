@@ -13,12 +13,12 @@
     <div class="content-wrapper">
         <div class="row">
             <div class="col-md-12">
-                @if($updatedTemplate = Session::get('updatedTemplate'))
-                <div class="alert alert-{{ $updatedTemplate->isValid() ? 'success' : 'danger' }}">
-                    @if($updatedTemplate->isValid())
-                    {{ sprintf("%s - %s", trans('dashboard.notifications.awesome'), trans('dashboard.incidents.templates.edit.success')) }}
+                @if($updated_template = Session::get('updated_template'))
+                <div class="alert alert-{{ ($template_errors = Session::get('template_errors')) ? 'danger' : 'success' }}">
+                    @if($template_errors)
+                    {{ sprintf("%s - %s", trans('dashboard.notifications.whoops'), trans('dashboard.incidents.templates.edit.failure').' '.$template_errors) }}
                     @else
-                    {{ sprintf("%s - %s", trans('dashboard.notifications.whoops'), trans('dashboard.incidents.templates.edit.failure').' '.$updatedTemplate->getErrors()) }}
+                    {{ sprintf("%s - %s", trans('dashboard.notifications.awesome'), trans('dashboard.incidents.templates.edit.success')) }}
                     @endif
                 </div>
                 @endif

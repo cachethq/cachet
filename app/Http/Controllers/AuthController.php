@@ -12,6 +12,7 @@
 namespace CachetHQ\Cachet\Http\Controllers;
 
 use GrahamCampbell\Binput\Facades\Binput;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Request;
@@ -19,10 +20,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\View;
 use PragmaRX\Google2FA\Vendor\Laravel\Facade as Google2FA;
 
-/**
- * Logs users into their account.
- */
-class AuthController extends AbstractController
+class AuthController extends Controller
 {
     /**
      * Shows the login view.
@@ -31,9 +29,8 @@ class AuthController extends AbstractController
      */
     public function showLogin()
     {
-        return View::make('auth.login')->with([
-            'page_title' => trans('dashboard.login.login'),
-        ]);
+        return View::make('auth.login')
+            ->withPageTitle(trans('dashboard.login.login'));
     }
 
     /**
@@ -53,7 +50,7 @@ class AuthController extends AbstractController
                 // Temporarily store the user.
                 Session::put('2fa_id', Auth::user()->id);
 
-                return Redirect::route('two-factor');
+                return Redirect::route('auth.two-factor');
             }
 
             // We probably want to add support for "Remember me" here.
@@ -62,9 +59,9 @@ class AuthController extends AbstractController
             return Redirect::intended('dashboard');
         }
 
-        return Redirect::back()
+        return Redirect::route('auth.login')
             ->withInput(Binput::except('password'))
-            ->with('error', trans('forms.login.invalid'));
+            ->withError(trans('forms.login.invalid'));
     }
 
     /**
@@ -101,11 +98,11 @@ class AuthController extends AbstractController
                 // Failed login, log back out.
                 Auth::logout();
 
-                return Redirect::route('login')->with('error', trans('forms.login.invalid-token'));
+                return Redirect::route('auth.login')->withError(trans('forms.login.invalid-token'));
             }
         }
 
-        return Redirect::route('login')->with('error', trans('forms.login.invalid-token'));
+        return Redirect::route('auth.login')->withError(trans('forms.login.invalid-token'));
     }
 
     /**

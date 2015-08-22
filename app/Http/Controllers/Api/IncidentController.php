@@ -12,7 +12,6 @@
 namespace CachetHQ\Cachet\Http\Controllers\Api;
 
 use CachetHQ\Cachet\Events\IncidentHasReportedEvent;
-use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Cachet\Models\Incident;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
@@ -28,14 +27,13 @@ class IncidentController extends AbstractApiController
      * @param \Symfony\Component\HttpFoundation\Request $request
      * @param \Illuminate\Contracts\Auth\Guard          $auth
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Http\JsonResponse
      */
     public function getIncidents(Request $request, Guard $auth)
     {
         $incidentVisiblity = $auth->check() ? 0 : 1;
 
-        $incidents = Incident::where('visible', '>=', $incidentVisiblity)
-            ->paginate(Binput::get('per_page', 20));
+        $incidents = Incident::where('visible', '>=', $incidentVisiblity)->paginate(Binput::get('per_page', 20));
 
         return $this->paginator($incidents, $request);
     }
@@ -45,7 +43,7 @@ class IncidentController extends AbstractApiController
      *
      * @param \CachetHQ\Cachet\Models\Incident $incident
      *
-     * @return \CachetHQ\Cachet\Models\Incident
+     * @return \Illuminate\Http\JsonResponse
      */
     public function getIncident(Incident $incident)
     {
@@ -57,7 +55,7 @@ class IncidentController extends AbstractApiController
      *
      * @param \Illuminate\Contracts\Auth\Guard $auth
      *
-     * @return \CachetHQ\Cachet\Models\Incident
+     * @return \Illuminate\Http\JsonResponse
      */
     public function postIncidents(Guard $auth)
     {
@@ -73,20 +71,11 @@ class IncidentController extends AbstractApiController
             throw new BadRequestHttpException();
         }
 
-        $isEnabled = (bool) Setting::get('enable_subscribers', false);
-        $mailAddress = env('MAIL_ADDRESS', false);
-        $mailFrom = env('MAIL_NAME', false);
-        $subscribersEnabled = $isEnabled && $mailAddress && $mailFrom;
-
-        if (array_get($incidentData, 'notify') && $subscribersEnabled) {
+        if (array_get($incidentData, 'notify') && subscribers_enabled()) {
             event(new IncidentHasReportedEvent($incident));
         }
 
-        if ($incident->isValid()) {
-            return $this->item($incident);
-        }
-
-        throw new BadRequestHttpException();
+        return $this->item($incident);
     }
 
     /**
@@ -94,17 +83,17 @@ class IncidentController extends AbstractApiController
      *
      * @param \CachetHQ\Cachet\Models\Inicdent $incident
      *
-     * @return \CachetHQ\Cachet\Models\Incident
+     * @return \Illuminate\Http\JsonResponse
      */
     public function putIncident(Incident $incident)
     {
-        $incident->update(Binput::all());
-
-        if ($incident->isValid('updating')) {
-            return $this->item($incident);
+        try {
+            $incident->update(Binput::all());
+        } catch (Exception $e) {
+            throw new BadRequestHttpException();
         }
 
-        throw new BadRequestHttpException();
+        return $this->item($incident);
     }
 
     /**

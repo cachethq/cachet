@@ -31,6 +31,17 @@ trait TimestampsTrait
      *
      * @return string
      */
+    public function scheduled_at()
+    {
+        return (new Date($this->wrappedObject->scheduled_at))
+            ->setTimezone($this->setting->get('app_timezone'))->toDateTimeString();
+    }
+
+    /**
+     * Present formatted date time.
+     *
+     * @return string
+     */
     public function updated_at()
     {
         return (new Date($this->wrappedObject->updated_at))

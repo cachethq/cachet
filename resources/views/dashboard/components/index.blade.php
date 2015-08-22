@@ -3,7 +3,7 @@
 @section('content')
     <div class="content-panel">
         @if(isset($sub_menu))
-        @include('partials.dashboard.sub-sidebar')
+        @include('dashboard.partials.sub-sidebar')
         @endif
         <div class="content-wrapper">
             <div class="header sub-header">

@@ -25,7 +25,7 @@ class SubscriberController extends AbstractApiController
      *
      * @param \Symfony\Component\HttpFoundation\Request $request
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Http\JsonResponse
      */
     public function getSubscribers(Request $request)
     {
@@ -37,7 +37,7 @@ class SubscriberController extends AbstractApiController
     /**
      * Create a new subscriber.
      *
-     * @return \CachetHQ\Cachet\Models\Subscriber
+     * @return \Illuminate\Http\JsonResponse
      */
     public function postSubscribers()
     {
@@ -49,16 +49,12 @@ class SubscriberController extends AbstractApiController
             throw new BadRequestHttpException();
         }
 
-        if ($subscriber->isValid()) {
-            // If we're auto-verifying the subscriber, don't bother with this event.
-            if (!(Binput::get('verify'))) {
-                event(new CustomerHasSubscribedEvent($subscriber));
-            }
-
-            return $this->item($subscriber);
+        // If we're auto-verifying the subscriber, don't bother with this event.
+        if (!(Binput::get('verify'))) {
+            event(new CustomerHasSubscribedEvent($subscriber));
         }
 
-        throw new BadRequestHttpException();
+        return $this->item($subscriber);
     }
 
     /**

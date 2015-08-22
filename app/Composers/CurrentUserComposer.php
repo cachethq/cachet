@@ -14,7 +14,7 @@ namespace CachetHQ\Cachet\Composers;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Auth;
 
-class LoggedUserComposer
+class CurrentUserComposer
 {
     /**
      * Bind data to the view.
@@ -23,6 +23,6 @@ class LoggedUserComposer
      */
     public function compose(View $view)
     {
-        $view->with('loggedUser', Auth::user());
+        $view->withCurrentUser(Auth::user());
     }
 }

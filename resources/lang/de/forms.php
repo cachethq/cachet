@@ -13,36 +13,44 @@ return [
 
     // Setup form fields
     'setup' => [
-        'email'            => 'E-Mail-Adresse',
-        'username'         => 'Username',
+        'email'            => 'E-Mail',
+        'username'         => 'Benutzername',
         'password'         => 'Passwort',
-        'site_name'        => 'Name der Seite',
-        'site_domain'      => 'Domain der Seite',
+        'site_name'        => 'Seitenname',
+        'site_domain'      => 'Domain ihrer Seite',
         'site_timezone'    => 'Wählen Sie Ihre Zeitzone',
         'site_locale'      => 'Wählen Sie Ihre Sprache',
-        'enable_google2fa' => 'Aktivieren Sie Google Two Factor Authentication',
+        'enable_google2fa' => 'Google Zwei-Faktor-Authentifizierung aktivieren',
+        'cache_driver'     => 'Cache-Treiber',
+        'session_driver'   => 'Sitzungs-Treiber',
     ],
 
     // Login form fields
     'login' => [
-        'email'         => 'Email',
+        'email'         => 'E-Mail',
         'password'      => 'Passwort',
-        '2fauth'        => 'Authentifikations-Code',
-        'invalid'       => 'Falsche E-Mail-Adresse oder falsches Passwort',
-        'invalid-token' => 'Token nicht korrekt',
-        'cookies'       => 'You must enable cookies to login.',
+        '2fauth'        => 'Authentifizierungscode',
+        'invalid'       => 'E-Mail-Adresse oder Passwort ungültig',
+        'invalid-token' => 'Token ungültig',
+        'cookies'       => 'Sie müssen Cookies aktivieren um sich anzumelden.',
     ],
 
     // Incidents form fields
     'incidents' => [
-        'name'         => 'Name',
-        'status'       => 'Status',
-        'message'      => 'Nachricht',
-        'message-help' => 'Sie können auch Markdown benutzen.',
-
-        'templates' => [
+        'name'               => 'Name',
+        'status'             => 'Status',
+        'component'          => 'Komponente',
+        'message'            => 'Nachricht',
+        'message-help'       => 'Sie können auch Markdown verwenden.',
+        'scheduled_at'       => 'Für wann ist die Wartung geplant?',
+        'incident_time'      => 'Wann ist dieser Vorfall aufgetreten?',
+        'notify_subscribers' => 'Abonnenten benachrichtigen',
+        'visibility'         => 'Vorfall Sichtbarkeit',
+        'public'             => 'Öffentlich sichtbar',
+        'logged_in_only'     => 'Nur für angemeldete Benutzer sichtbar',
+        'templates'          => [
             'name'     => 'Name',
-            'template' => 'Template',
+            'template' => 'Vorlage',
         ],
     ],
 
@@ -53,8 +61,8 @@ return [
         'group'       => 'Gruppe',
         'description' => 'Beschreibung',
         'link'        => 'Link',
-        'tags'        => 'Tags',
-        'tags-help'   => 'Bitte als Komma-separierte Liste angeben.',
+        'tags'        => 'Schlagwörter',
+        'tags-help'   => 'Durch Kommata trennen.',
 
         'groups' => [
             'name' => 'Name',
@@ -65,15 +73,16 @@ return [
     'metrics' => [
         'name'             => 'Name',
         'suffix'           => 'Suffix',
-        'description'      => 'Description',
-        'description-help' => 'You may also use Markdown.',
-        'display-chart'    => 'Display chart on status page?',
-        'calc_type'        => 'Calculation of metrics',
-        'type_sum'         => 'Sum',
-        'type_avg'         => 'Average',
+        'description'      => 'Beschreibung',
+        'description-help' => 'Sie können auch Markdown benutzen.',
+        'display-chart'    => 'Diagramm auf der Statusseite anzeigen?',
+        'default-value'    => 'Standardwert',
+        'calc_type'        => 'Berechnung der Metrik',
+        'type_sum'         => 'Summe',
+        'type_avg'         => 'Durchschnitt',
 
         'points' => [
-            'value' => 'Value',
+            'value' => 'Wert',
         ],
     ],
 
@@ -81,54 +90,55 @@ return [
     'settings' => [
         /// Application setup
         'app-setup' => [
-            'site-name'              => 'Name der Seite',
-            'site-url'               => 'URL der Seite',
-            'site-timezone'          => 'Wählen Sie Ihre Zeitzone',
-            'site-locale'            => 'Wählen Sie Ihre Sprache',
+            'site-name'              => 'Seitenname',
+            'site-url'               => 'URL ihrer Seite',
+            'site-timezone'          => 'Zeitzone ihrer Seite',
+            'site-locale'            => 'Sprache ihrer Seite',
             'date-format'            => 'Datumsformat',
-            'display-graphs'         => 'Display graphs on status page?',
+            'incident-date-format'   => 'Vorfall Zeitstempel-Format',
+            'display-graphs'         => 'Graphen auf der Statusseite anzeigen?',
             'about-this-page'        => 'Über diese Seite',
-            'days-of-incidents'      => 'Wie viele (vergangene) Tage sollen angezeigt werden?',
-            'banner'                 => 'Banner-Bild',
-            'banner-help'            => 'Wählen Sie möglichst ein Bild mit 930 px Breite.',
-            'analytics_google'       => 'Google Analytics code',
-            'analytics_gosquared'    => 'GoSquared Analytics code',
-            'analytics_piwik_url'    => 'URL of your Piwik instance (without http(s)://)',
-            'analytics_piwik_siteid' => 'Piwik\'s site id',
+            'days-of-incidents'      => 'Wie viele Tage mit Vorfällen sollen gezeigt werden?',
+            'banner'                 => 'Banner',
+            'banner-help'            => 'Es wird empfohlen, dass Sie keine Dateien die breiter als 930 Pixel sind hochladen .',
+            'analytics_google'       => 'Google Analytics Code',
+            'analytics_gosquared'    => 'GoSquared Analytics Code',
+            'analytics_piwik_url'    => 'URL der Piwik-Instanz (ohne http(s)://)',
+            'analytics_piwik_siteid' => 'Piwik\'s Seiten-ID',
+            'subscribers'            => 'Personen die Anmeldung für e-Mail-Benachrichtigung erlauben?',
         ],
         'security' => [
             'allowed-domains'      => 'Erlaubte Domains',
-            'allowed-domains-help' => 'Komma-Separiert. Die Domain die oben gesetzt ist, ist per Default erlaubt.',
+            'allowed-domains-help' => 'Durch Kommata trennen. Die oben genannte Domain ist standardmäßig erlaubt.',
         ],
         'stylesheet' => [
-            'custom-css' => 'Eigenes Stylesheet',
+            'custom-css' => 'Benutzerdefiniertes Stylesheet',
         ],
         'theme' => [
-            'background-color' => 'Hintergrund-Farbe',
-            'text-color'       => 'Text-Farbe',
-            'dashboard-login'  => 'Show dashboard button in the footer?',
+            'background-color' => 'Hintergrundfarbe',
+            'text-color'       => 'Schriftfarbe',
         ],
     ],
 
     'user' => [
-        'username'     => 'Username',
-        'email'        => 'E-Mail-Adresse',
-        'password'     => 'Passwort',
-        'api-key'      => 'API-Schlüssel',
-        'api-key-help' => 'Eine Regenerierung Ihres API-Schlüssels verhindert den Zugriff für alle vorhandenen Anwendungen.',
-        '2fa'          => [
-            'help' => 'Zwei-Faktor-Authentifikation erhöht die Sicherheit Ihres Accounts. Sie müssen <a href="https://support.google.com/accounts/answer/1066447?hl=en">Google Authenticator</a>, <a href="https://fedorahosted.org/freeotp/" alt="OpenSource-Alternative">FreeOTP</a> oder andere OTP-Programme installieren. Wenn sie sich anschließend anmelden müssen Sie den in der App angezeigten Code eingeben.',
+        'username'       => 'Benutzername',
+        'email'          => 'E-Mail',
+        'password'       => 'Passwort',
+        'api-token'      => 'API Token',
+        'api-token-help' => 'Wenn sie ihren API-Token neu generieren, können bestehende Anwendungen nicht mehr auf Cachet zugreifen.',
+        '2fa'            => [
+            'help' => 'Die Zwei-Faktor-Authentifizierung erhöht die Sicherheit Ihres Kontos. Sie benötigen <a href="https://support.google.com/accounts/answer/1066447?hl=en">Google Authenticator</a> oder eine ähnliche App auf Ihrem Mobilgerät. Beim Anmelden werden sie aufgefordert, einen Token einzugeben, der von der App generiert wird.',
         ],
     ],
 
     // Buttons
     'add'    => 'Hinzufügen',
     'save'   => 'Speichern',
-    'update' => 'Aktualsieren',
+    'update' => 'Aktualisieren',
     'create' => 'Erstellen',
-    'edit'   => 'Editieren',
+    'edit'   => 'Bearbeiten',
     'delete' => 'Löschen',
-    'submit' => 'Speichern',
+    'submit' => 'Abschicken',
     'cancel' => 'Abbrechen',
     'remove' => 'Entfernen',
 

@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Cachet\Models;
 
+use AltThree\Validator\ValidatingTrait;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
@@ -18,22 +19,31 @@ use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Hash;
-use Watson\Validating\ValidatingTrait;
 
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract
 {
     use Authenticatable, CanResetPassword, ValidatingTrait;
 
     /**
-     * The validation rules.
+     * The attributes that should be casted to native types.
      *
      * @var string[]
      */
-    protected $rules = [
-        'username' => ['required', 'regex:/\A(?!.*[:;]-\))[ -~]+\z/', 'unique:users'],
-        'email'    => 'required|email|unique:users',
-        'password' => 'required',
+    protected $casts = [
+        'username'          => 'string',
+        'email'             => 'string',
+        'google_2fa_secret' => 'string',
+        'api_key'           => 'string',
+        'active'            => 'boolean',
+        'level'             => 'integer',
     ];
+
+    /**
+     * The properties that cannot be mass assigned.
+     *
+     * @var string[]
+     */
+    protected $guarded = [];
 
     /**
      * The hidden properties.
@@ -45,11 +55,15 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     protected $hidden = ['password', 'remember_token', 'google_2fa_secret'];
 
     /**
-     * The properties that cannot be mass assigned.
+     * The validation rules.
      *
      * @var string[]
      */
-    protected $guarded = [];
+    public $rules = [
+        'username' => ['required', 'regex:/\A(?!.*[:;]-\))[ -~]+\z/'],
+        'email'    => 'required|email',
+        'password' => 'required',
+    ];
 
     /**
      * Overrides the models boot method.

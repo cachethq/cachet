@@ -11,19 +11,20 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Admin;
 
+use AltThree\Validator\ValidationException;
 use CachetHQ\Cachet\Events\MaintenanceHasScheduledEvent;
 use CachetHQ\Cachet\Facades\Setting;
-use CachetHQ\Cachet\Http\Controllers\AbstractController;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentTemplate;
 use GrahamCampbell\Binput\Facades\Binput;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\MessageBag;
 use Jenssegers\Date\Date;
 
-class ScheduleController extends AbstractController
+class ScheduleController extends Controller
 {
     /**
      * Stores the sub-sidebar tree list.
@@ -43,13 +44,13 @@ class ScheduleController extends AbstractController
         $this->subMenu = [
             'incidents' => [
                 'title'  => trans('dashboard.incidents.incidents'),
-                'url'    => route('dashboard.incidents'),
+                'url'    => route('dashboard.incidents.index'),
                 'icon'   => 'ion-android-checkmark-circle',
                 'active' => false,
             ],
             'schedule' => [
                 'title'  => trans('dashboard.schedule.schedule'),
-                'url'    => route('dashboard.schedule'),
+                'url'    => route('dashboard.schedule.index'),
                 'icon'   => 'ion-android-calendar',
                 'active' => true,
             ],
@@ -80,9 +81,8 @@ class ScheduleController extends AbstractController
     {
         $incidentTemplates = IncidentTemplate::all();
 
-        return View::make('dashboard.schedule.add')->with([
-            'incidentTemplates' => $incidentTemplates,
-        ]);
+        return View::make('dashboard.schedule.add')
+            ->withIncidentTemplates($incidentTemplates);
     }
 
     /**
@@ -99,45 +99,30 @@ class ScheduleController extends AbstractController
 
         if ($scheduledAt->isPast()) {
             $messageBag = new MessageBag();
-            $messageBag->add('scheduled_at', trans('validation.date', [
-                'attribute' => 'scheduled time you supplied',
-            ]));
+            $messageBag->add('scheduled_at', trans('validation.date', ['attribute' => 'scheduled time you supplied']));
 
-            return Redirect::back()->withErrors($messageBag);
+            return Redirect::route('dashboard.schedule.add')->withErrors($messageBag);
         }
 
         $scheduleData['scheduled_at'] = $scheduledAt;
         // Bypass the incident.status field.
         $scheduleData['status'] = 0;
 
-        $incident = Incident::create($scheduleData);
-
-        if (!$incident->isValid()) {
-            return Redirect::back()->withInput(Binput::all())
-                ->with('success', sprintf(
-                    '%s %s',
-                    trans('dashboard.notifications.whoops'),
-                    trans('dashboard.schedule.add.failure')
-                ))
-                ->with('errors', $incident->getErrors());
+        try {
+            $incident = Incident::create($scheduleData);
+        } catch (ValidationException $e) {
+            return Redirect::route('dashboard.schedule.add')
+                ->withInput(Binput::all())
+                ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.schedule.add.failure')))
+                ->withErrors($e->getMessageBag());
         }
 
-        $successMsg = sprintf(
-            '%s %s',
-            trans('dashboard.notifications.awesome'),
-            trans('dashboard.schedule.add.success')
-        );
-
-        $isEnabled = (bool) Setting::get('enable_subscribers', false);
-        $mailAddress = env('MAIL_ADDRESS', false);
-        $mailFrom = env('MAIL_NAME', false);
-        $subscribersEnabled = $isEnabled && $mailAddress && $mailFrom;
-
-        if (array_get($scheduleData, 'notify') && $subscribersEnabled) {
+        if (array_get($scheduleData, 'notify') && subscribers_enabled()) {
             event(new MaintenanceHasScheduledEvent($incident));
         }
 
-        return Redirect::back()->with('success', $successMsg);
+        return Redirect::route('dashboard.schedule.add')
+            ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.schedule.add.success')));
     }
 
     /**
@@ -151,10 +136,9 @@ class ScheduleController extends AbstractController
     {
         $incidentTemplates = IncidentTemplate::all();
 
-        return View::make('dashboard.schedule.edit')->with([
-            'incidentTemplates' => $incidentTemplates,
-            'schedule'          => $schedule,
-        ]);
+        return View::make('dashboard.schedule.edit')
+            ->withIncidentTemplates($incidentTemplates)
+            ->withSchedule($schedule);
     }
 
     /**
@@ -173,36 +157,26 @@ class ScheduleController extends AbstractController
 
         if ($scheduledAt->isPast()) {
             $messageBag = new MessageBag();
-            $messageBag->add('scheduled_at', trans('validation.date', [
-                'attribute' => 'scheduled time you supplied',
-            ]));
+            $messageBag->add('scheduled_at', trans('validation.date', ['attribute' => 'scheduled time you supplied']));
 
-            return Redirect::back()->withErrors($messageBag);
+            return Redirect::route('dashboard.schedule.edit', ['id' => $schedule->id])->withErrors($messageBag);
         }
 
         $scheduleData['scheduled_at'] = $scheduledAt;
         // Bypass the incident.status field.
         $scheduleData['status'] = 0;
 
-        $schedule->update($scheduleData);
-
-        if (!$schedule->isValid()) {
-            return Redirect::back()->withInput(Binput::all())
-                ->with('title', sprintf(
-                    '%s %s',
-                    trans('dashboard.notifications.whoops'),
-                    trans('dashboard.schedule.edit.failure')
-                ))
-                ->with('errors', $schedule->getErrors());
+        try {
+            $schedule->update($scheduleData);
+        } catch (ValidationException $e) {
+            return Redirect::route('dashboard.schedule.edit', ['id' => $schedule->id])
+                ->withInput(Binput::all())
+                ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.schedule.edit.failure')))
+                ->withErrors($e->getMessageBag());
         }
 
-        $successMsg = sprintf(
-            '%s %s',
-            trans('dashboard.notifications.awesome'),
-            trans('dashboard.schedule.edit.success')
-        );
-
-        return Redirect::to('dashboard/schedule')->with('success', $successMsg);
+        return Redirect::route('dashboard.schedule.edit', ['id' => $schedule->id])
+            ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.schedule.edit.success')));
     }
 
     /**
@@ -216,10 +190,7 @@ class ScheduleController extends AbstractController
     {
         $schedule->delete();
 
-        return Redirect::back()->with('warning', sprintf(
-            '%s %s',
-            trans('dashboard.notifications.whoops'),
-            trans('dashboard.schedule.delete.failure')
-        ));
+        return Redirect::route('dashboard.schedule.index')
+            ->withWarning(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.schedule.delete.failure')));
     }
 }

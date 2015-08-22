@@ -11,37 +11,14 @@
 
 namespace CachetHQ\Cachet\Models;
 
+use AltThree\Validator\ValidatingTrait;
 use CachetHQ\Cachet\Presenters\SubscriberPresenter;
 use Illuminate\Database\Eloquent\Model;
 use McCool\LaravelAutoPresenter\HasPresenter;
-use Watson\Validating\ValidatingTrait;
 
 class Subscriber extends Model implements HasPresenter
 {
     use ValidatingTrait;
-
-    /**
-     * The validation rules.
-     *
-     * @var string[]
-     */
-    protected $rules = [
-        'email' => 'required|email|unique:subscribers',
-    ];
-
-    /**
-     * The fillable properties.
-     *
-     * @var string[]
-     */
-    protected $fillable = ['email'];
-
-    /**
-     * The attributes that should be mutated to dates.
-     *
-     * @var array
-     */
-    protected $dates = ['verified_at'];
 
     /**
      * The attributes that should be casted to native types.
@@ -51,6 +28,29 @@ class Subscriber extends Model implements HasPresenter
     protected $casts = [
         'email'       => 'string',
         'verify_code' => 'string',
+    ];
+
+    /**
+     * The attributes that should be mutated to dates.
+     *
+     * @var array
+     */
+    protected $dates = ['verified_at'];
+
+    /**
+     * The fillable properties.
+     *
+     * @var string[]
+     */
+    protected $fillable = ['email'];
+
+    /**
+     * The validation rules.
+     *
+     * @var string[]
+     */
+    public $rules = [
+        'email' => 'required|email',
     ];
 
     /**
