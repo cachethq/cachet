@@ -21,6 +21,16 @@ class MetricPoint extends Model implements HasPresenter
     use ValidatingTrait;
 
     /**
+     * The attributes that should be casted to native types.
+     *
+     * @var string[]
+     */
+    protected $casts = [
+        'metric_id' => 'integer',
+        'value'     => 'integer',
+    ];
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var string[]
