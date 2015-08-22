@@ -59,8 +59,16 @@ class IncidentController extends AbstractApiController
      */
     public function postIncidents(Guard $auth)
     {
-        $incidentData = Binput::all();
+        $incidentData = array_filter(Binput::only([
+            'name',
+            'message',
+            'status',
+            'component_id',
+            'notify',
+            'visible',
+        ]));
 
+        // Default visibility is 1.
         if (!array_has($incidentData, 'visible')) {
             $incidentData['visible'] = 1;
         }
@@ -87,8 +95,17 @@ class IncidentController extends AbstractApiController
      */
     public function putIncident(Incident $incident)
     {
+        $incidentData = array_filter(Binput::only([
+            'name',
+            'message',
+            'status',
+            'component_id',
+            'notify',
+            'visible',
+        ]));
+
         try {
-            $incident->update(Binput::all());
+            $incident->update($incidentData);
         } catch (Exception $e) {
             throw new BadRequestHttpException();
         }
