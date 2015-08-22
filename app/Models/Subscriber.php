@@ -21,20 +21,15 @@ class Subscriber extends Model implements HasPresenter
     use ValidatingTrait;
 
     /**
-     * The validation rules.
+     * The attributes that should be casted to native types.
      *
      * @var string[]
      */
-    public $rules = [
-        'email' => 'required|email',
+    protected $casts = [
+        'id'          => 'int',
+        'email'       => 'string',
+        'verify_code' => 'string',
     ];
-
-    /**
-     * The fillable properties.
-     *
-     * @var string[]
-     */
-    protected $fillable = ['email'];
 
     /**
      * The attributes that should be mutated to dates.
@@ -44,13 +39,19 @@ class Subscriber extends Model implements HasPresenter
     protected $dates = ['verified_at'];
 
     /**
-     * The attributes that should be casted to native types.
+     * The fillable properties.
      *
      * @var string[]
      */
-    protected $casts = [
-        'email'       => 'string',
-        'verify_code' => 'string',
+    protected $fillable = ['email'];
+
+    /**
+     * The validation rules.
+     *
+     * @var string[]
+     */
+    public $rules = [
+        'email' => 'required|email',
     ];
 
     /**

@@ -37,16 +37,17 @@ class Metric extends Model implements HasPresenter
     ];
 
     /**
-     * The validation rules.
+     * The attributes that should be casted to native types.
      *
      * @var string[]
      */
-    public $rules = [
-        'name'          => 'required',
-        'suffix'        => 'required',
-        'display_chart' => 'boolean',
-        'default_value' => 'numeric',
-        'places'        => 'numeric|min:0|max:4',
+    protected $casts = [
+        'id'            => 'int',
+        'name'          => 'string',
+        'display_chart' => 'bool',
+        'default_value' => 'int',
+        'calc_type'     => 'int',
+        'places'        => 'int',
     ];
 
     /**
@@ -62,6 +63,19 @@ class Metric extends Model implements HasPresenter
         'default_value',
         'calc_type',
         'places',
+    ];
+
+    /**
+     * The validation rules.
+     *
+     * @var string[]
+     */
+    public $rules = [
+        'name'          => 'required',
+        'suffix'        => 'required',
+        'display_chart' => 'boolean',
+        'default_value' => 'numeric',
+        'places'        => 'numeric|min:0|max:4',
     ];
 
     /**

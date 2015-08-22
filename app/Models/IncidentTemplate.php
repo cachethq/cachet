@@ -20,13 +20,14 @@ class IncidentTemplate extends Model
     use ValidatingTrait;
 
     /**
-     * The validation rules.
+     * The attributes that should be casted to native types.
      *
      * @var string[]
      */
-    public $rules = [
-        'name'     => 'required',
-        'template' => 'required',
+    protected $casts = [
+        'id'       => 'int',
+        'name'     => 'string',
+        'template' => 'string',
     ];
 
     /**
@@ -35,6 +36,16 @@ class IncidentTemplate extends Model
      * @var string[]
      */
     protected $fillable = ['name', 'template'];
+
+    /**
+     * The validation rules.
+     *
+     * @var string[]
+     */
+    public $rules = [
+        'name'     => 'required',
+        'template' => 'required',
+    ];
 
     /**
      * Overrides the models boot method.

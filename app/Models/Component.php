@@ -23,15 +23,36 @@ class Component extends Model implements HasPresenter
     use SoftDeletes, ValidatingTrait;
 
     /**
-     * The validation rules.
+     * List of attributes that have default values.
+     *
+     * @var mixed[]
+     */
+    protected $attributes = [
+        'order'       => 0,
+        'group_id'    => 0,
+        'description' => '',
+        'link'        => '',
+    ];
+
+    /**
+     * The attributes that should be casted to native types.
      *
      * @var string[]
      */
-    public $rules = [
-        'name'   => 'required|string',
-        'status' => 'integer|required',
-        'link'   => 'url',
+    protected $casts = [
+        'id'          => 'int',
+        'order'       => 'int',
+        'group_id'    => 'int',
+        'description' => 'string',
+        'link'        => 'string',
     ];
+
+    /**
+     * The attributes that should be mutated to dates.
+     *
+     * @var array
+     */
+    protected $dates = ['deleted_at'];
 
     /**
      * The fillable properties.
@@ -49,23 +70,15 @@ class Component extends Model implements HasPresenter
     ];
 
     /**
-     * List of attributes that have default values.
+     * The validation rules.
      *
-     * @var mixed[]
+     * @var string[]
      */
-    protected $attributes = [
-        'order'       => 0,
-        'group_id'    => 0,
-        'description' => '',
-        'link'        => '',
+    public $rules = [
+        'name'   => 'required|string',
+        'status' => 'integer|required',
+        'link'   => 'url',
     ];
-
-    /**
-     * The attributes that should be mutated to dates.
-     *
-     * @var array
-     */
-    protected $dates = ['deleted_at'];
 
     /**
      * Components can belong to a group.

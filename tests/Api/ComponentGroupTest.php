@@ -23,9 +23,9 @@ class ComponentGroupTest extends AbstractTestCase
         $groups = factory('CachetHQ\Cachet\Models\ComponentGroup', 3)->create();
 
         $this->get('/api/v1/components/groups');
-        $this->seeJson(['id' => (string) $groups[0]->id]);
-        $this->seeJson(['id' => (string) $groups[1]->id]);
-        $this->seeJson(['id' => (string) $groups[2]->id]);
+        $this->seeJson(['id' => $groups[0]->id]);
+        $this->seeJson(['id' => $groups[1]->id]);
+        $this->seeJson(['id' => $groups[2]->id]);
         $this->assertResponseOk();
     }
 

@@ -24,8 +24,9 @@ class ComponentGroup extends Model
      * @var string[]
      */
     protected $casts = [
+        'id'    => 'int',
         'name'  => 'string',
-        'order' => 'integer',
+        'order' => 'int',
     ];
 
     /**

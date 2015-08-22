@@ -23,9 +23,9 @@ class IncidentTest extends AbstractTestCase
         $incidents = factory('CachetHQ\Cachet\Models\Incident', 3)->create();
 
         $this->get('/api/v1/incidents');
-        $this->seeJson(['id' => (string) $incidents[0]->id]);
-        $this->seeJson(['id' => (string) $incidents[1]->id]);
-        $this->seeJson(['id' => (string) $incidents[2]->id]);
+        $this->seeJson(['id' => $incidents[0]->id]);
+        $this->seeJson(['id' => $incidents[1]->id]);
+        $this->seeJson(['id' => $incidents[2]->id]);
         $this->assertResponseOk();
     }
 
