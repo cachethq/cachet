@@ -11,9 +11,9 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
+use AltThree\Validator\ValidationException;
 use CachetHQ\Cachet\Commands\Component\AddComponentCommand;
 use CachetHQ\Cachet\Commands\Component\RemoveComponentCommand;
-use AltThree\Validator\ValidationException;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Tag;
