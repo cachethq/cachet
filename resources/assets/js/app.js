@@ -296,6 +296,42 @@ $(function() {
         }
     });
 
+    // Sparkline
+    if ($.fn.sparkline) {
+        var sparkLine = function () {
+            $('.sparkline').each(function () {
+                var data = $(this).data();
+                data.valueSpots = {
+                    '0:': data.spotColor
+                };
+
+                $(this).sparkline(data.data, data);
+                var composite = data.compositedata;
+
+                if (composite) {
+                    var stlColor = $(this).attr("data-stack-line-color"),
+                        stfColor = $(this).attr("data-stack-fill-color"),
+                        sptColor = $(this).attr("data-stack-spot-color"),
+                        sptRadius = $(this).attr("data-stack-spot-radius");
+
+                    $(this).sparkline(composite, {
+                        composite: true,
+                        lineColor: stlColor,
+                        fillColor: stfColor,
+                        spotColor: sptColor,
+                        highlightSpotColor: sptColor,
+                        spotRadius: sptRadius,
+                        valueSpots: {
+                            '0:': sptColor
+                        }
+                    });
+                };
+            });
+        };
+
+        sparkLine(false);
+    }
+
     function goToStep(current, next) {
         // validation was ok. We can go on next step.
         $('.block-' + current)
