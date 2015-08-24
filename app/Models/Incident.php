@@ -23,17 +23,28 @@ class Incident extends Model implements HasPresenter
     use SoftDeletes, ValidatingTrait;
 
     /**
-     * The validation rules.
+     * The accessors to append to the model's serialized form.
      *
      * @var string[]
      */
-    public $rules = [
-        'component_id' => 'integer',
-        'name'         => 'required',
-        'status'       => 'required|integer',
-        'visible'      => 'required|boolean',
-        'message'      => 'required',
+    protected $appends = ['human_status'];
+
+    /**
+     * The attributes that should be casted to native types.
+     *
+     * @var string[]
+     */
+    protected $casts = [
+        'id'      => 'int',
+        'visible' => 'integer',
     ];
+
+    /**
+     * The attributes that should be mutated to dates.
+     *
+     * @var string[]
+     */
+    protected $dates = ['scheduled_at', 'deleted_at'];
 
     /**
      * The fillable properties.
@@ -52,26 +63,16 @@ class Incident extends Model implements HasPresenter
     ];
 
     /**
-     * The accessors to append to the model's serialized form.
+     * The validation rules.
      *
      * @var string[]
      */
-    protected $appends = ['human_status'];
-
-    /**
-     * The attributes that should be mutated to dates.
-     *
-     * @var string[]
-     */
-    protected $dates = ['scheduled_at', 'deleted_at'];
-
-    /**
-     * The attributes that should be casted to native types.
-     *
-     * @var string[]
-     */
-    protected $casts = [
-        'visible' => 'integer',
+    public $rules = [
+        'component_id' => 'integer',
+        'name'         => 'required',
+        'status'       => 'required|integer',
+        'visible'      => 'required|boolean',
+        'message'      => 'required',
     ];
 
     /**

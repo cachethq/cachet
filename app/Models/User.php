@@ -25,15 +25,26 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     use Authenticatable, CanResetPassword, ValidatingTrait;
 
     /**
-     * The validation rules.
+     * The attributes that should be casted to native types.
      *
      * @var string[]
      */
-    public $rules = [
-        'username' => ['required', 'regex:/\A(?!.*[:;]-\))[ -~]+\z/'],
-        'email'    => 'required|email',
-        'password' => 'required',
+    protected $casts = [
+        'id'                => 'int',
+        'username'          => 'string',
+        'email'             => 'string',
+        'google_2fa_secret' => 'string',
+        'api_key'           => 'string',
+        'active'            => 'bool',
+        'level'             => 'int',
     ];
+
+    /**
+     * The properties that cannot be mass assigned.
+     *
+     * @var string[]
+     */
+    protected $guarded = [];
 
     /**
      * The hidden properties.
@@ -45,11 +56,15 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     protected $hidden = ['password', 'remember_token', 'google_2fa_secret'];
 
     /**
-     * The properties that cannot be mass assigned.
+     * The validation rules.
      *
      * @var string[]
      */
-    protected $guarded = [];
+    public $rules = [
+        'username' => ['required', 'regex:/\A(?!.*[:;]-\))[ -~]+\z/'],
+        'email'    => 'required|email',
+        'password' => 'required',
+    ];
 
     /**
      * Overrides the models boot method.

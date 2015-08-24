@@ -23,9 +23,9 @@ class MetricTest extends AbstractTestCase
         $metrics = factory('CachetHQ\Cachet\Models\Metric', 3)->create();
 
         $this->get('/api/v1/metrics');
-        $this->seeJson(['id' => (string) $metrics[0]->id]);
-        $this->seeJson(['id' => (string) $metrics[1]->id]);
-        $this->seeJson(['id' => (string) $metrics[2]->id]);
+        $this->seeJson(['id' => $metrics[0]->id]);
+        $this->seeJson(['id' => $metrics[1]->id]);
+        $this->seeJson(['id' => $metrics[2]->id]);
         $this->assertResponseOk();
     }
 
