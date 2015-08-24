@@ -15,7 +15,7 @@ use CachetHQ\Cachet\Commands\Component\AddComponentCommand;
 use CachetHQ\Cachet\Events\Component\ComponentWasAddedEvent;
 use CachetHQ\Cachet\Models\Component;
 
-class AddComponentHandler
+class AddComponentCommandHandler
 {
     /**
      * Handle the add component command.

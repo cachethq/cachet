@@ -9,21 +9,23 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Events\Component;
+namespace CachetHQ\Cachet\Commands\Component;
 
 use CachetHQ\Cachet\Models\Component;
 
-class ComponentWasAddedEvent
+class RemoveComponentCommand
 {
     /**
-     * The component that was added.
+     * The component to remove.
      *
      * @var \CachetHQ\Cachet\Models\Component
      */
     public $component;
 
     /**
-     * Create a new component was added event instance.
+     * Create a new remove component command instance.
+     *
+     * @param \CachetHQ\Cachet\Models\Component $component
      *
      * @return void
      */

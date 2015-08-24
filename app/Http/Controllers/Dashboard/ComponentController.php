@@ -11,17 +11,22 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
+use CachetHQ\Cachet\Commands\Component\AddComponentCommand;
+use CachetHQ\Cachet\Commands\Component\RemoveComponentCommand;
 use AltThree\Validator\ValidationException;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Tag;
 use GrahamCampbell\Binput\Facades\Binput;
+use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 
 class ComponentController extends Controller
 {
+    use DispatchesJobs;
+
     protected $subMenu = [];
 
     public function __construct()
@@ -157,7 +162,7 @@ class ComponentController extends Controller
         $tags = array_pull($_component, 'tags');
 
         try {
-            $component = Component::create($_component);
+            $component = $this->dispatchFromArray(AddComponentCommand::class, Binput::get('component'));
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.components.add')
                 ->withInput(Binput::all())
@@ -188,7 +193,7 @@ class ComponentController extends Controller
      */
     public function deleteComponentAction(Component $component)
     {
-        $component->delete();
+        $this->dispatch(new RemoveComponentCommand($component));
 
         return Redirect::route('dashboard.components.index');
     }

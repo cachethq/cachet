@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Events\Metric;
+namespace CachetHQ\Cachet\Events\Component;
 
 use CachetHQ\Cachet\Models\Component;
 
