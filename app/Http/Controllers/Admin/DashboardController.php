@@ -11,15 +11,13 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Admin;
 
+use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\Subscriber;
-use CachetHQ\Cachet\Facades\Setting;
 use Illuminate\Routing\Controller;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\View;
 use Jenssegers\Date\Date;
-use stdClass;
 
 class DashboardController extends Controller
 {
