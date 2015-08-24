@@ -22,6 +22,7 @@ elixir(function (mix) {
             'vendor/bower_components/jquery-minicolors/jquery.minicolors.js',
             'vendor/bower_components/jquery-serialize-object/jquery.serialize-object.js',
             'vendor/bower_components/chartjs/Chart.js',
+            'vendor/bower_components/jquery-sparkline/dist/jquery.sparkline.js',
             'resources/assets/js/app.js',
             'resources/assets/js/**/*.js'
         ], 'public/dist/js/all.js', './')

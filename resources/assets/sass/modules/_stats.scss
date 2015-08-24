@@ -1,0 +1,70 @@
+.stats-widget {
+    text-align: center;
+    margin-bottom: 30px;
+    background-color: #fff;
+    border: #eee 1px solid;
+
+    &.full-stats-block {
+        .stats-bottom {
+            border-top: 0 !important;
+            color: #fff;
+            position: relative;
+            margin-top: -1px;
+            z-index: 1000;
+        }
+    }
+
+    .stats-top {
+        padding: 20px;
+
+        > span {
+            display: block;
+            text-align: center;
+
+            &.stats-value {
+                font-size: 24px;
+                font-weight: 400;
+            }
+
+            &.stats-label {
+                padding-top: 5px;
+                font-size: 14px;
+                font-weight: 300;
+                color: #777;
+            }
+        }
+    }
+
+    .stats-chart {
+        margin-top: -20px;
+        padding-top: 10px;
+    }
+
+    .stats-bottom {
+        border-top: #eee 1px solid;
+        color: #777;
+        padding: 12px 10px;
+        text-align: center;
+        background-color: #f9f9f9;
+
+        &.bg-green {
+            background-color: $cachet-green;
+            color: white;
+        }
+
+        &.bg-blue {
+            background-color: $cachet-blue;
+            color: white;
+        }
+
+        &.bg-red {
+            background-color: $cachet-red;
+            color: white;
+        }
+
+        &.bg-teal {
+            background-color: $cachet-teal;
+            color: white;
+        }
+    }
+}
