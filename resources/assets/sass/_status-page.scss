@@ -27,6 +27,10 @@ body.status-page {
         }
     }
 
+    p, strong {
+        color: $cachet-base-dark;
+    }
+
     .tooltip {
         .tooltip-inner {
             padding: 8px 12px;
@@ -269,7 +273,6 @@ body.status-page {
             }
 
             &.group-name {
-                font-size: 1.2em;
                 background-color: $cachet_gray_light;
                 padding: {
                     top: 0.6em;
