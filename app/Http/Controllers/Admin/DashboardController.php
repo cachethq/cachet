@@ -13,13 +13,41 @@ namespace CachetHQ\Cachet\Http\Controllers\Admin;
 
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
+use CachetHQ\Cachet\Models\Subscriber;
+use CachetHQ\Cachet\Facades\Setting;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\View;
+use Jenssegers\Date\Date;
 use stdClass;
 
 class DashboardController extends Controller
 {
+    /**
+     * Start date.
+     *
+     * @var \Jenssegers\Date\Date
+     */
+    protected $startDate;
+
+    /**
+     * The timezone the status page is running in.
+     *
+     * @var string
+     */
+    protected $timeZone;
+
+    /**
+     * Creates a new dashboard controller.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->startDate = new Date();
+        $this->dateTimeZone = Setting::get('app_timezone');
+    }
+
     /**
      * Shows the dashboard view.
      *
@@ -29,10 +57,12 @@ class DashboardController extends Controller
     {
         $components = Component::orderBy('order')->get();
         $incidents = $this->getIncidents();
+        $subscribers = $this->getSubscribers();
 
         return View::make('dashboard.index')
             ->withComponents($components)
-            ->withIncidents($incidents);
+            ->withIncidents($incidents)
+            ->withSubscribers($subscribers);
     }
 
     /**
@@ -53,16 +83,60 @@ class DashboardController extends Controller
      */
     protected function getIncidents()
     {
-        $incidents = Incident::select(DB::raw('COUNT(id) AS counter'))->groupBy(DB::raw('DATE_FORMAT(created_at, "%d%m%y")'))->get();
-        $range = (30 - $incidents->count()) - 1;
+        $allIncidents = Incident::notScheduled()->whereBetween('created_at', [
+            $this->startDate->copy()->subDays(30)->format('Y-m-d').' 00:00:00',
+            $this->startDate->format('Y-m-d').' 23:59:59',
+        ])->orderBy('created_at', 'desc')->get()->groupBy(function (Incident $incident) {
+            return (new Date($incident->created_at))
+                ->setTimezone($this->dateTimeZone)->toDateString();
+        });
 
-        $fake = new stdClass();
-        $fake->counter = 0;
+        // Add in days that have no incidents
+        foreach (range(0, 30) as $i) {
+            $date = (new Date($this->startDate))->setTimezone($this->dateTimeZone)->subDays($i);
 
-        foreach (range(1, $range) as $key) {
-            $incidents->prepend($fake);
+            if (!isset($allIncidents[$date->toDateString()])) {
+                $allIncidents[$date->toDateString()] = [];
+            }
         }
 
-        return $incidents;
+        // Sort the array so it takes into account the added days
+        $allIncidents = $allIncidents->sortBy(function ($value, $key) {
+            return strtotime($key);
+        }, SORT_REGULAR, false);
+
+        return $allIncidents;
+    }
+
+    /**
+     * Fetches all of the subscribers over the last 30 days.
+     *
+     * @return \Illuminate\Support\Collection
+     */
+    protected function getSubscribers()
+    {
+        $allSubscribers = Subscriber::whereBetween('created_at', [
+            $this->startDate->copy()->subDays(30)->format('Y-m-d').' 00:00:00',
+            $this->startDate->format('Y-m-d').' 23:59:59',
+        ])->orderBy('created_at', 'desc')->get()->groupBy(function (Subscriber $incident) {
+            return (new Date($incident->created_at))
+                ->setTimezone($this->dateTimeZone)->toDateString();
+        });
+
+        // Add in days that have no incidents
+        foreach (range(0, 30) as $i) {
+            $date = (new Date($this->startDate))->setTimezone($this->dateTimeZone)->subDays($i);
+
+            if (!isset($allSubscribers[$date->toDateString()])) {
+                $allSubscribers[$date->toDateString()] = [];
+            }
+        }
+
+        // Sort the array so it takes into account the added days
+        $allSubscribers = $allSubscribers->sortBy(function ($value, $key) {
+            return strtotime($key);
+        }, SORT_REGULAR, false);
+
+        return $allSubscribers;
     }
 }
