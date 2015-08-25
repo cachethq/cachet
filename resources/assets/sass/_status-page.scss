@@ -135,16 +135,6 @@ body.status-page {
                     // height: 130%;
                     top: -5px;
                 }
-                &:after {
-                    content: '';
-                    position: absolute;
-                    left: 23px;
-                    top: -20px;
-                    width: 7px;
-                    height: 7px;
-                    background: $cachet_gray_light;
-                    border-radius: 50%;
-                }
             }
             &:before {
                 content: '';
