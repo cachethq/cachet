@@ -12,14 +12,18 @@
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
 use AltThree\Validator\ValidationException;
+use CachetHQ\Cachet\Commands\User\RemoveUserCommand;
 use CachetHQ\Cachet\Models\User;
 use GrahamCampbell\Binput\Facades\Binput;
+use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 
 class TeamController extends Controller
 {
+    use DispatchesJobs;
+
     /**
      * Shows the team members view.
      *
@@ -116,7 +120,7 @@ class TeamController extends Controller
      */
     public function deleteUser(User $user)
     {
-        $user->delete();
+        $this->dispatch(new RemoveUserCommand($user));
 
         return Redirect::route('dashboard.team.index')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.team.delete.success')));
