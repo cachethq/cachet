@@ -11,14 +11,18 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Api;
 
+use CachetHQ\Cachet\Commands\ComponentGroup\RemoveComponentGroupCommand;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
+use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 class ComponentGroupController extends AbstractApiController
 {
+    use DispatchesJobs;
+
     /**
      * Get all groups.
      *
@@ -93,7 +97,7 @@ class ComponentGroupController extends AbstractApiController
      */
     public function deleteGroup(ComponentGroup $group)
     {
-        $group->delete();
+        $this->dispatch(new RemoveComponentGroupCommand($group));
 
         return $this->noContent();
     }

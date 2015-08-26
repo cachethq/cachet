@@ -14,6 +14,7 @@ namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 use AltThree\Validator\ValidationException;
 use CachetHQ\Cachet\Commands\Component\AddComponentCommand;
 use CachetHQ\Cachet\Commands\Component\RemoveComponentCommand;
+use CachetHQ\Cachet\Commands\ComponentGroup\RemoveComponentGroupCommand;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Tag;
@@ -207,11 +208,7 @@ class ComponentController extends Controller
      */
     public function deleteComponentGroupAction(ComponentGroup $group)
     {
-        $group->components->map(function ($component) {
-            $component->update(['group_id' => 0]);
-        });
-
-        $group->delete();
+        $this->dispatch(new RemoveComponentGroupCommand($group));
 
         return Redirect::route('dashboard.components.index');
     }
