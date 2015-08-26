@@ -13,7 +13,6 @@ namespace CachetHQ\Cachet\Handlers\Commands\Incident;
 
 use CachetHQ\Cachet\Commands\Incident\RemoveIncidentCommand;
 use CachetHQ\Cachet\Events\Incident\IncidentWasRemovedEvent;
-use CachetHQ\Cachet\Models\Incident;
 
 class RemoveIncidentCommandHandler
 {

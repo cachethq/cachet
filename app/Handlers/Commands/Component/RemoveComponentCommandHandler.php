@@ -13,7 +13,6 @@ namespace CachetHQ\Cachet\Handlers\Commands\Component;
 
 use CachetHQ\Cachet\Commands\Component\RemoveComponentCommand;
 use CachetHQ\Cachet\Events\Component\ComponentWasRemovedEvent;
-use CachetHQ\Cachet\Models\Component;
 
 class RemoveComponentCommandHandler
 {

@@ -13,7 +13,6 @@ namespace CachetHQ\Cachet\Handlers\Commands\ComponentGroup;
 
 use CachetHQ\Cachet\Commands\ComponentGroup\RemoveComponentGroupCommand;
 use CachetHQ\Cachet\Events\ComponentGroup\ComponentGroupWasRemovedEvent;
-use CachetHQ\Cachet\Models\ComponentGroup;
 
 class RemoveComponentGroupCommandHandler
 {
