@@ -11,16 +11,20 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Api;
 
+use CachetHQ\Cachet\Commands\Incident\RemoveIncidentCommand;
 use CachetHQ\Cachet\Events\Incident\IncidentWasReportedEvent;
 use CachetHQ\Cachet\Models\Incident;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Contracts\Auth\Guard;
+use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 class IncidentController extends AbstractApiController
 {
+    use DispatchesJobs;
+
     /**
      * Get all incidents.
      *
@@ -122,7 +126,7 @@ class IncidentController extends AbstractApiController
      */
     public function deleteIncident(Incident $incident)
     {
-        $incident->delete();
+        $this->dispatch(new RemoveIncidentCommand($incident));
 
         return $this->noContent();
     }
