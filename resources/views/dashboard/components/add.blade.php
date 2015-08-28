@@ -62,7 +62,7 @@
 
                     <div class="btn-group">
                         <button type="submit" class="btn btn-success">{{ trans('forms.create') }}</button>
-                        <a class="btn btn-default" href="{{ route('dashboard.components') }}">{{ trans('forms.cancel') }}</a>
+                        <a class="btn btn-default" href="{{ route('dashboard.components.index') }}">{{ trans('forms.cancel') }}</a>
                     </div>
                 </form>
             </div>
