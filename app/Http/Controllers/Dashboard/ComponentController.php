@@ -14,6 +14,7 @@ namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 use AltThree\Validator\ValidationException;
 use CachetHQ\Cachet\Commands\Component\AddComponentCommand;
 use CachetHQ\Cachet\Commands\Component\RemoveComponentCommand;
+use CachetHQ\Cachet\Commands\ComponentGroup\AddComponentGroupCommand;
 use CachetHQ\Cachet\Commands\ComponentGroup\RemoveComponentGroupCommand;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
@@ -246,7 +247,10 @@ class ComponentController extends Controller
     public function postAddComponentGroup()
     {
         try {
-            $group = ComponentGroup::create(Binput::get('group'));
+            $group = $this->dispatch(new AddComponentGroupCommand(
+                Binput::get('name'),
+                Binput::get('order', 0)
+            ));
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.components.groups.add')
                 ->withInput(Binput::all())

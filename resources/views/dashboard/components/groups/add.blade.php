@@ -19,7 +19,7 @@
                     <fieldset>
                         <div class="form-group">
                             <label for="incident-name">{{ trans('forms.components.groups.name') }}</label>
-                            <input type="text" class="form-control" name="group[name]" id="group-name" required>
+                            <input type="text" class="form-control" name="name" id="group-name" required>
                         </div>
                     </fieldset>
 
