@@ -67,7 +67,7 @@ class AddComponentCommand
     ];
 
     /**
-     * Create a new add metric command instance.
+     * Create a new add component command instance.
      *
      * @param string $name
      * @param string $description
