@@ -39,6 +39,8 @@ class MetricsComposer
      * Metrics view composer.
      *
      * @param \Illuminate\Contracts\View\View $view
+     *
+     * @return void
      */
     public function compose(View $view)
     {

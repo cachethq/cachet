@@ -24,6 +24,8 @@ class MaintenanceHasScheduledEvent
 
     /**
      * Create a new maintenance has scheduled event instance.
+     *
+     * @return void
      */
     public function __construct(Incident $incident)
     {

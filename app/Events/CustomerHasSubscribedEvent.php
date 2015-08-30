@@ -24,6 +24,8 @@ class CustomerHasSubscribedEvent
 
     /**
      * Create a new customer has subscribed event instance.
+     *
+     * @return void
      */
     public function __construct(Subscriber $subscriber)
     {

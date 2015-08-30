@@ -24,6 +24,8 @@ class IncidentHasReportedEvent
 
     /**
      * Create a new incident has reported event instance.
+     *
+     * @return void
      */
     public function __construct(Incident $incident)
     {
