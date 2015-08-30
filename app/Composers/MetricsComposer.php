@@ -13,20 +13,20 @@ namespace CachetHQ\Cachet\Composers;
 
 use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Cachet\Models\Metric;
-use CachetHQ\Cachet\Repositories\MetricRepository;
+use CachetHQ\Cachet\Repositories\Metric\MetricRepository;
 use Illuminate\Contracts\View\View;
 
 class MetricsComposer
 {
     /**
-     * @var \CachetHQ\Cachet\Repositories\MetricRepository
+     * @var \CachetHQ\Cachet\Repositories\Metric\MetricRepository
      */
     protected $metricRepository;
 
     /**
      * Construct a new home controller instance.
      *
-     * @param \CachetHQ\Cachet\Repositories\MetricRepository $metricRepository
+     * @param \CachetHQ\Cachet\Repositories\Metric\MetricRepository $metricRepository
      *
      * @return void
      */
