@@ -11,7 +11,7 @@
 
 namespace CachetHQ\Cachet\Handlers\Events\Incident;
 
-use CachetHQ\Cachet\Events\MaintenanceWasScheduledEvent;
+use CachetHQ\Cachet\Events\Incident\MaintenanceWasScheduledEvent;
 use CachetHQ\Cachet\Models\Subscriber;
 use Illuminate\Contracts\Mail\MailQueue;
 use Illuminate\Mail\Message;

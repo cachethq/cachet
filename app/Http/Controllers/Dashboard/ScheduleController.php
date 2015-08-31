@@ -12,11 +12,12 @@
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
 use AltThree\Validator\ValidationException;
-use CachetHQ\Cachet\Events\MaintenanceWasScheduledEvent;
+use CachetHQ\Cachet\Commands\Incident\ReportMaintenanceCommand;
 use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentTemplate;
 use GrahamCampbell\Binput\Facades\Binput;
+use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Redirect;
@@ -26,6 +27,8 @@ use Jenssegers\Date\Date;
 
 class ScheduleController extends Controller
 {
+    use DispatchesJobs;
+
     /**
      * Stores the sub-sidebar tree list.
      *
@@ -92,33 +95,18 @@ class ScheduleController extends Controller
      */
     public function addScheduleAction()
     {
-        $scheduleData = Binput::get('incident');
-        // Parse the schedule date.
-        $scheduledAt = Date::createFromFormat('d/m/Y H:i', $scheduleData['scheduled_at'], Setting::get('app_timezone'))
-            ->setTimezone(Config::get('app.timezone'));
-
-        if ($scheduledAt->isPast()) {
-            $messageBag = new MessageBag();
-            $messageBag->add('scheduled_at', trans('validation.date', ['attribute' => 'scheduled time you supplied']));
-
-            return Redirect::route('dashboard.schedule.add')->withErrors($messageBag);
-        }
-
-        $scheduleData['scheduled_at'] = $scheduledAt;
-        // Bypass the incident.status field.
-        $scheduleData['status'] = 0;
-
         try {
-            $incident = Incident::create($scheduleData);
+            $incident = $this->dispatch(new ReportMaintenanceCommand(
+                Binput::get('incident.name'),
+                Binput::get('incident.message'),
+                Binput::get('incident.notify'),
+                Binput::get('incident.scheduled_at')
+            ));
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.schedule.add')
                 ->withInput(Binput::all())
                 ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.schedule.add.failure')))
                 ->withErrors($e->getMessageBag());
-        }
-
-        if (array_get($scheduleData, 'notify') && subscribers_enabled()) {
-            event(new MaintenanceWasScheduledEvent($incident));
         }
 
         return Redirect::route('dashboard.schedule.add')
