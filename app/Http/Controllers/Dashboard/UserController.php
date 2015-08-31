@@ -40,27 +40,27 @@ class UserController extends Controller
      */
     public function postUser()
     {
-        $items = Binput::all();
+        $userData = array_filter(Binput::only([
+            'username',
+            'email',
+            'password',
+            'google2fa',
+        ]));
 
-        $passwordChange = array_get($items, 'password');
-        $enable2FA = (bool) array_pull($items, 'google2fa');
+        $enable2FA = (bool) array_pull($userData, 'google2fa');
 
         // Let's enable/disable auth
         if ($enable2FA && !Auth::user()->hasTwoFactor) {
-            $items['google_2fa_secret'] = Google2FA::generateSecretKey();
+            $userData['google_2fa_secret'] = Google2FA::generateSecretKey();
         } elseif (!$enable2FA) {
-            $items['google_2fa_secret'] = '';
-        }
-
-        if (trim($passwordChange) === '') {
-            unset($items['password']);
+            $userData['google_2fa_secret'] = '';
         }
 
         try {
-            Auth::user()->update($items);
+            Auth::user()->update($userData);
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.user')
-                ->withInput(Binput::except('password'))
+                ->withInput($userData)
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.team.edit.failure')))
                 ->withErrors($e->getMessageBag());
         }

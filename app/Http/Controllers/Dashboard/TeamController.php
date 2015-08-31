@@ -96,19 +96,18 @@ class TeamController extends Controller
      */
     public function postUpdateUser(User $user)
     {
-        $items = Binput::all();
-
-        $passwordChange = array_get($items, 'password');
-
-        if (trim($passwordChange) === '') {
-            unset($items['password']);
-        }
+        $userData = array_filter(Binput::only([
+            'username',
+            'email',
+            'password',
+            'level',
+        ]));
 
         try {
-            $user->update($items);
+            $user->update($userData);
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.team.edit', ['id' => $user->id])
-                ->withInput(Binput::except('password'))
+                ->withInput($userData)
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.team.edit.failure')))
                 ->withErrors($e->getMessageBag());
         }
