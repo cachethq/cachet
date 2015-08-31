@@ -23,7 +23,7 @@ class ReportIncidentCommandHandler
      *
      * @param \CachetHQ\Cachet\Commands\Incident\ReportIncidentCommand $command
      *
-     * @return void
+     * @return \CachetHQ\Cachet\Models\Incident
      */
     public function handle(ReportIncidentCommand $command)
     {

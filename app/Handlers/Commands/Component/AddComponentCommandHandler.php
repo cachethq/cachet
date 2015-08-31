@@ -22,7 +22,7 @@ class AddComponentCommandHandler
      *
      * @param \CachetHQ\Cachet\Commands\Component\AddComponentCommand $command
      *
-     * @return void
+     * @return \CachetHQ\Cachet\Models\Component
      */
     public function handle(AddComponentCommand $command)
     {

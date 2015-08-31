@@ -23,7 +23,7 @@ class AddMetricPointCommandHandler
      *
      * @param \CachetHQ\Cachet\Commands\Metric\AddMetricPointCommand $command
      *
-     * @return void
+     * @return \CachetHQ\Cachet\Models\MetricPoint
      */
     public function handle(AddMetricPointCommand $command)
     {

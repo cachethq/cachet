@@ -22,7 +22,7 @@ class AddTeamMemberCommandHandler
      *
      * @param \CachetHQ\Cachet\Commands\User\AddTeamMemberCommand $command
      *
-     * @return void
+     * @return \CachetHQ\Cachet\Models\User
      */
     public function handle(AddTeamMemberCommand $command)
     {
