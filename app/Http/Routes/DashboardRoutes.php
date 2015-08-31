@@ -30,7 +30,7 @@ class DashboardRoutes
         $router->group([
             'middleware' => 'auth',
             'prefix'     => 'dashboard',
-            'namespace'  => 'Admin',
+            'namespace'  => 'Dashboard',
             'as'         => 'dashboard.',
         ], function ($router) {
             // Dashboard

@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Http\Controllers\Admin;
+namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
 use CachetHQ\Cachet\Models\Setting;
 use CachetHQ\Cachet\Models\User;
