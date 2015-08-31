@@ -12,7 +12,7 @@
 namespace CachetHQ\Cachet\Http\Controllers\Api;
 
 use CachetHQ\Cachet\Commands\Incident\RemoveIncidentCommand;
-use CachetHQ\Cachet\Events\Incident\IncidentWasReportedEvent;
+use CachetHQ\Cachet\Commands\Incident\ReportIncidentCommand;
 use CachetHQ\Cachet\Models\Incident;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
@@ -63,28 +63,18 @@ class IncidentController extends AbstractApiController
      */
     public function postIncidents(Guard $auth)
     {
-        $incidentData = array_filter(Binput::only([
-            'name',
-            'message',
-            'status',
-            'component_id',
-            'notify',
-            'visible',
-        ]));
-
-        // Default visibility is 1.
-        if (!array_has($incidentData, 'visible')) {
-            $incidentData['visible'] = 1;
-        }
-
         try {
-            $incident = Incident::create($incidentData);
+            $incident = $this->dispatch(new ReportIncidentCommand(
+                Binput::get('name'),
+                Binput::get('status'),
+                Binput::get('message'),
+                Binput::get('visible', true),
+                Binput::get('component_id'),
+                Binput::get('component_status'),
+                Binput::get('notify', true)
+            ));
         } catch (Exception $e) {
             throw new BadRequestHttpException();
-        }
-
-        if (array_get($incidentData, 'notify') && subscribers_enabled()) {
-            event(new IncidentWasReportedEvent($incident));
         }
 
         return $this->item($incident);

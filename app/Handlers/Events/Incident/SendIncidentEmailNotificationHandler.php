@@ -75,7 +75,7 @@ class SendIncidentEmailNotificationHandler
                     'email'            => $subscriber->email,
                     'subject'          => 'New incident reported.',
                     'has_component'    => ($event->incident->component) ? true : false,
-                    'component_name'   => $component->name,
+                    'component_name'   => $component ? $component->name : null,
                     'status'           => $incident->humanStatus,
                     'html_content'     => $incident->formattedMessage,
                     'text_content'     => $incident->message,

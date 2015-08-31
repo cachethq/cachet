@@ -46,7 +46,21 @@ class ReportIncidentCommand
      *
      * @var int
      */
-    public $component;
+    public $component_id;
+
+    /**
+     * The component status.
+     *
+     * @var int
+     */
+    public $component_status;
+
+    /**
+     * Whether to notify about the incident or not.
+     *
+     * @var bool
+     */
+    public $notify;
 
     /**
      * Create a new report incident command instance.
@@ -55,16 +69,20 @@ class ReportIncidentCommand
      * @param int    $status
      * @param string $message
      * @param int    $visible
-     * @param int    $component
+     * @param int    $component_id
+     * @param int    $component_status
+     * @param bool   $notify
      *
      * @return void
      */
-    public function __construct($name, $status, $message, $visible, $component)
+    public function __construct($name, $status, $message, $visible, $component_id, $component_status, $notify)
     {
         $this->name = $name;
         $this->status = $status;
         $this->message = $message;
         $this->visible = $visible;
-        $this->component = $component;
+        $this->component_id = $component_id;
+        $this->component_status = $component_status;
+        $this->notify = $notify;
     }
 }
