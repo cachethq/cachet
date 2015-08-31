@@ -59,13 +59,9 @@ class SendMaintenanceEmailNotificationHandler
     /**
      * Handle the event.
      *
-<<<<<<< cc10f8f42347c5fdfe7e464bedd3a388059ebc4b
      * @param \CachetHQ\Cachet\Events\MaintenanceHasScheduledEvent $event
      *
      * @return void
-=======
-     * @param \CachetHQ\Cachet\Events\MaintenanceWasScheduledEvent $event
->>>>>>> Rename incident events and fixes
      */
     public function handle(MaintenanceWasScheduledEvent $event)
     {
