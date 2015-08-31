@@ -12,6 +12,7 @@
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
 use AltThree\Validator\ValidationException;
+use CachetHQ\Cachet\Commands\User\AddTeamMemberCommand;
 use CachetHQ\Cachet\Commands\User\RemoveUserCommand;
 use CachetHQ\Cachet\Models\User;
 use GrahamCampbell\Binput\Facades\Binput;
@@ -69,7 +70,12 @@ class TeamController extends Controller
     public function postAddUser()
     {
         try {
-            User::create(Binput::all());
+            $this->dispatch(new AddTeamMemberCommand(
+                Binput::get('username'),
+                Binput::get('password'),
+                Binput::get('email'),
+                Binput::get('level')
+            ));
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.team.add')
                 ->withInput(Binput::except('password'))
