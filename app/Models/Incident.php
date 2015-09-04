@@ -141,7 +141,7 @@ class Incident extends Model implements HasPresenter
      */
     public function getIsScheduledAttribute()
     {
-        return $this->getOriginal('scheduled_at');
+        return $this->getOriginal('scheduled_at') !== null;
     }
 
     /**
