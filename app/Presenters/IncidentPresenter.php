@@ -130,6 +130,34 @@ class IncidentPresenter extends AbstractPresenter
     }
 
     /**
+     * Returns a formatted timestamp for use within the timeline.
+     *
+     * @return string
+     */
+    public function timestamp_formatted()
+    {
+        if ($this->wrappedObject->is_scheduled) {
+            return $this->scheduled_at_formatted;
+        } else {
+            return $this->created_at_formatted;
+        }
+    }
+
+    /**
+     * Return the iso timestamp for use within the timeline.
+     *
+     * @return string
+     */
+    public function timestamp_iso()
+    {
+        if ($this->wrappedObject->is_scheduled) {
+            return $this->scheduled_at_iso;
+        } else {
+            return $this->created_at_iso;
+        }
+    }
+
+    /**
      * Present the status with an icon.
      *
      * @return string
