@@ -15,7 +15,7 @@
             </div>
         </div>
         @empty
-        <div class="panel panel-message">
+        <div class="panel panel-message incident">
             <div class="panel-body">
                 <p>{{ trans('cachet.incidents.none') }}</p>
             </div>

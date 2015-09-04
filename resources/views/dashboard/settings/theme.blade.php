@@ -81,6 +81,12 @@
                                         <input type="text" class="form-control color-code" name="style.links" value="{{ $theme_links }}">
                                     </div>
                                 </div>
+                                <div class="col-xs-6">
+                                    <div class="form-group">
+                                        <label>{{ trans('forms.settings.theme.background-fills') }}</label>
+                                        <input type="text" class="form-control color-code" name="style.background_fills" value="{{ $theme_background_fills }}">
+                                    </div>
+                                </div>
                             </div>
                             <hr>
                             <div class="row">

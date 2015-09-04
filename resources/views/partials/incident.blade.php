@@ -1,4 +1,4 @@
-<div class="panel panel-message">
+<div class="panel panel-message incident">
     <div class="panel-heading">
         @if($current_user)
         <div class="pull-right btn-group">

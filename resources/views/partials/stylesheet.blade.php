@@ -58,4 +58,31 @@ body.status-page {
 .btn.btn-danger.links {
     color: {{ color_darken($theme_reds, -0.3) }} !important
 }
+
+/**
+ * Background fills Overrides
+ */
+.component {
+    background-color: {{ $theme_background_fills }} !important;
+    border-color: {{ color_darken($theme_background_fills, -0.1) }} !important;
+}
+.sub-component {
+    background-color: {{ $theme_background_fills }} !important;
+    border-color: {{ color_darken($theme_background_fills, -0.1) }} !important;
+}
+.incident {
+    background-color: {{ $theme_background_fills }} !important;
+    border-color: {{ color_darken($theme_background_fills, -0.1) }} !important;
+}
+.status-icon {
+    background-color: {{ $theme_background_fills }} !important;
+    border-color: {{ color_darken($theme_background_fills, -0.1) }} !important;
+}
+.panel.panel-message:after {
+    border-left-color: {{ $theme_background_fills }} !important;
+    border-right-color: {{ $theme_background_fills }} !important;
+}
+.footer {
+    background-color: {{ $theme_background_fills }} !important;
+}
 </style>
