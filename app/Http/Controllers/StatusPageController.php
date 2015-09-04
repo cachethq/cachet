@@ -62,7 +62,13 @@ class StatusPageController extends Controller
         $allIncidents = Incident::notScheduled()->where('visible', '>=', $incidentVisiblity)->whereBetween('created_at', [
             $startDate->copy()->subDays($daysToShow)->format('Y-m-d').' 00:00:00',
             $startDate->format('Y-m-d').' 23:59:59',
-        ])->orderBy('created_at', 'desc')->get()->groupBy(function (Incident $incident) use ($dateTimeZone) {
+        ])->orderBy('scheduled_at', 'desc')->orderBy('created_at', 'desc')->get()->groupBy(function (Incident $incident) use ($dateTimeZone) {
+            // If it's scheduled, get the scheduled at date.
+            if ($incident->is_scheduled) {
+                return (new Date($incident->scheduled_at))
+                    ->setTimezone($dateTimeZone)->toDateString();
+            }
+
             return (new Date($incident->created_at))
                 ->setTimezone($dateTimeZone)->toDateString();
         });

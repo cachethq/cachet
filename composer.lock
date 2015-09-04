@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "70ca29984807ed324db890c91c3a1492",
+    "hash": "05f03078291036582d00ac77cb0c77e2",
     "packages": [
         {
             "name": "alt-three/emoji",

@@ -13,9 +13,9 @@
         <br>
         <small class="date">
             @if($with_link)
-            <a href="{{ route('incident', ['id' => $incident->id]) }}"><abbr class="timeago" data-toggle="tooltip" data-placement="right" title="{{ $incident->created_at_formatted }}" data-timeago="{{ $incident->created_at_iso }}"></abbr></a>
+            <a href="{{ route('incident', ['id' => $incident->id]) }}"><abbr class="timeago" data-toggle="tooltip" data-placement="right" title="{{ $incident->timestamp_formatted }}" data-timeago="{{ $incident->timestamp_iso }}"></abbr></a>
             @else
-            <abbr class="timeago" data-toggle="tooltip" data-placement="right" title="{{ $incident->created_at_formatted }}" data-timeago="{{ $incident->created_at_iso }}"></abbr>
+            <abbr class="timeago" data-toggle="tooltip" data-placement="right" title="{{ $incident->timestamp_formatted }}" data-timeago="{{ $incident->timestamp_iso }}"></abbr>
             @endif
         </small>
     </div>
