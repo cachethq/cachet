@@ -12,14 +12,19 @@
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
 use AltThree\Validator\ValidationException;
+use CachetHQ\Cachet\Commands\User\AddTeamMemberCommand;
+use CachetHQ\Cachet\Commands\User\RemoveUserCommand;
 use CachetHQ\Cachet\Models\User;
 use GrahamCampbell\Binput\Facades\Binput;
+use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 
 class TeamController extends Controller
 {
+    use DispatchesJobs;
+
     /**
      * Shows the team members view.
      *
@@ -65,7 +70,12 @@ class TeamController extends Controller
     public function postAddUser()
     {
         try {
-            User::create(Binput::all());
+            $this->dispatch(new AddTeamMemberCommand(
+                Binput::get('username'),
+                Binput::get('password'),
+                Binput::get('email'),
+                Binput::get('level')
+            ));
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.team.add')
                 ->withInput(Binput::except('password'))
@@ -86,19 +96,18 @@ class TeamController extends Controller
      */
     public function postUpdateUser(User $user)
     {
-        $items = Binput::all();
-
-        $passwordChange = array_get($items, 'password');
-
-        if (trim($passwordChange) === '') {
-            unset($items['password']);
-        }
+        $userData = array_filter(Binput::only([
+            'username',
+            'email',
+            'password',
+            'level',
+        ]));
 
         try {
-            $user->update($items);
+            $user->update($userData);
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.team.edit', ['id' => $user->id])
-                ->withInput(Binput::except('password'))
+                ->withInput($userData)
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.team.edit.failure')))
                 ->withErrors($e->getMessageBag());
         }
@@ -116,7 +125,7 @@ class TeamController extends Controller
      */
     public function deleteUser(User $user)
     {
-        $user->delete();
+        $this->dispatch(new RemoveUserCommand($user));
 
         return Redirect::route('dashboard.team.index')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.team.delete.success')));

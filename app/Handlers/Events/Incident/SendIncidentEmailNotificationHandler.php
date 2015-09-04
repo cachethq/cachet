@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Handlers\Events;
+namespace CachetHQ\Cachet\Handlers\Events\Incident;
 
-use CachetHQ\Cachet\Events\IncidentHasReportedEvent;
+use CachetHQ\Cachet\Events\Incident\IncidentWasReportedEvent;
 use CachetHQ\Cachet\Models\Subscriber;
 use Illuminate\Contracts\Mail\MailQueue;
 use Illuminate\Mail\Message;
@@ -59,11 +59,11 @@ class SendIncidentEmailNotificationHandler
     /**
      * Handle the event.
      *
-     * @param \CachetHQ\Cachet\Events\IncidentHasReportedEvent $event
+     * @param \CachetHQ\Cachet\Events\Incident\IncidentHasReportedEvent $event
      *
      * @return void
      */
-    public function handle(IncidentHasReportedEvent $event)
+    public function handle(IncidentWasReportedEvent $event)
     {
         $incident = $this->presenter->decorate($event->incident);
         $component = $this->presenter->decorate($event->incident->component);
@@ -75,7 +75,7 @@ class SendIncidentEmailNotificationHandler
                     'email'            => $subscriber->email,
                     'subject'          => 'New incident reported.',
                     'has_component'    => ($event->incident->component) ? true : false,
-                    'component_name'   => $component->name,
+                    'component_name'   => $component ? $component->name : null,
                     'status'           => $incident->humanStatus,
                     'html_content'     => $incident->formattedMessage,
                     'text_content'     => $incident->message,

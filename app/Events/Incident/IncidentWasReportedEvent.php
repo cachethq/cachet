@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Events;
+namespace CachetHQ\Cachet\Events\Incident;
 
 use CachetHQ\Cachet\Models\Incident;
 
-class MaintenanceHasScheduledEvent
+class IncidentWasReportedEvent
 {
     /**
      * The incident that has been reported.
@@ -23,7 +23,7 @@ class MaintenanceHasScheduledEvent
     public $incident;
 
     /**
-     * Create a new maintenance has scheduled event instance.
+     * Create a new incident has reported event instance.
      *
      * @return void
      */

@@ -21,14 +21,14 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'CachetHQ\Cachet\Events\CustomerHasSubscribedEvent' => [
+        'CachetHQ\Cachet\Events\Subscriber\SubscriberHasSubscribedEvent' => [
             'CachetHQ\Cachet\Handlers\Events\SendSubscriberVerificationEmailHandler',
         ],
-        'CachetHQ\Cachet\Events\IncidentHasReportedEvent' => [
-            'CachetHQ\Cachet\Handlers\Events\SendIncidentEmailNotificationHandler',
+        'CachetHQ\Cachet\Events\Incident\IncidentWasReportedEvent' => [
+            'CachetHQ\Cachet\Handlers\Events\Incident\SendIncidentEmailNotificationHandler',
         ],
-        'CachetHQ\Cachet\Events\MaintenanceHasScheduledEvent' => [
-            'CachetHQ\Cachet\Handlers\Events\SendMaintenanceEmailNotificationHandler',
+        'CachetHQ\Cachet\Events\Incident\MaintenanceWasScheduledEvent' => [
+            'CachetHQ\Cachet\Handlers\Events\Incident\SendMaintenanceEmailNotificationHandler',
         ],
     ];
 }

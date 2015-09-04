@@ -11,16 +11,21 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Api;
 
+use CachetHQ\Cachet\Commands\Component\AddComponentCommand;
+use CachetHQ\Cachet\Commands\Component\RemoveComponentCommand;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Tag;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Contracts\Auth\Guard;
+use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 class ComponentController extends AbstractApiController
 {
+    use DispatchesJobs;
+
     /**
      * Get all components.
      *
@@ -56,10 +61,15 @@ class ComponentController extends AbstractApiController
      */
     public function postComponents(Guard $auth)
     {
-        $componentData = Binput::except('tags');
-
         try {
-            $component = Component::create($componentData);
+            $component = $this->dispatch(new AddComponentCommand(
+                Binput::get('name'),
+                Binput::get('description'),
+                Binput::get('status'),
+                Binput::get('link'),
+                Binput::get('order'),
+                Binput::get('group_id')
+            ));
         } catch (Exception $e) {
             throw new BadRequestHttpException();
         }
@@ -119,7 +129,7 @@ class ComponentController extends AbstractApiController
      */
     public function deleteComponent(Component $component)
     {
-        $component->delete();
+        $this->dispatch(new RemoveComponentCommand($component));
 
         return $this->noContent();
     }

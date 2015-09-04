@@ -12,16 +12,23 @@
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
 use AltThree\Validator\ValidationException;
+use CachetHQ\Cachet\Commands\Component\AddComponentCommand;
+use CachetHQ\Cachet\Commands\Component\RemoveComponentCommand;
+use CachetHQ\Cachet\Commands\ComponentGroup\AddComponentGroupCommand;
+use CachetHQ\Cachet\Commands\ComponentGroup\RemoveComponentGroupCommand;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Tag;
 use GrahamCampbell\Binput\Facades\Binput;
+use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 
 class ComponentController extends Controller
 {
+    use DispatchesJobs;
+
     protected $subMenu = [];
 
     public function __construct()
@@ -157,7 +164,7 @@ class ComponentController extends Controller
         $tags = array_pull($_component, 'tags');
 
         try {
-            $component = Component::create($_component);
+            $component = $this->dispatchFromArray(AddComponentCommand::class, Binput::get('component'));
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.components.add')
                 ->withInput(Binput::all())
@@ -188,7 +195,7 @@ class ComponentController extends Controller
      */
     public function deleteComponentAction(Component $component)
     {
-        $component->delete();
+        $this->dispatch(new RemoveComponentCommand($component));
 
         return Redirect::route('dashboard.components.index');
     }
@@ -202,11 +209,7 @@ class ComponentController extends Controller
      */
     public function deleteComponentGroupAction(ComponentGroup $group)
     {
-        $group->components->map(function ($component) {
-            $component->update(['group_id' => 0]);
-        });
-
-        $group->delete();
+        $this->dispatch(new RemoveComponentGroupCommand($group));
 
         return Redirect::route('dashboard.components.index');
     }
@@ -244,7 +247,10 @@ class ComponentController extends Controller
     public function postAddComponentGroup()
     {
         try {
-            $group = ComponentGroup::create(Binput::get('group'));
+            $group = $this->dispatch(new AddComponentGroupCommand(
+                Binput::get('name'),
+                Binput::get('order', 0)
+            ));
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.components.groups.add')
                 ->withInput(Binput::all())

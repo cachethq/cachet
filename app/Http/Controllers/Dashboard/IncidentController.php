@@ -12,13 +12,15 @@
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
 use AltThree\Validator\ValidationException;
-use CachetHQ\Cachet\Events\IncidentHasReportedEvent;
+use CachetHQ\Cachet\Commands\Incident\RemoveIncidentCommand;
+use CachetHQ\Cachet\Commands\Incident\ReportIncidentCommand;
 use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentTemplate;
 use GrahamCampbell\Binput\Facades\Binput;
+use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Redirect;
@@ -27,6 +29,8 @@ use Jenssegers\Date\Date;
 
 class IncidentController extends Controller
 {
+    use DispatchesJobs;
+
     /**
      * Stores the sub-sidebar tree list.
      *
@@ -107,33 +111,30 @@ class IncidentController extends Controller
      */
     public function createIncidentAction()
     {
-        $incidentData = Binput::get('incident');
-        $componentStatus = array_pull($incidentData, 'component_status');
-
-        if (array_has($incidentData, 'created_at') && $incidentData['created_at']) {
-            $incidentDate = Date::createFromFormat('d/m/Y H:i', $incidentData['created_at'], Setting::get('app_timezone'))->setTimezone(Config::get('app.timezone'));
-            $incidentData['created_at'] = $incidentDate;
-            $incidentData['updated_at'] = $incidentDate;
-        } else {
-            unset($incidentData['created_at']);
+        if ($createdAt = Binput::get('created_at')) {
+            $incidentDate = Date::createFromFormat('d/m/Y H:i', $createdAt, Setting::get('app_timezone'))->setTimezone(Config::get('app.timezone'));
         }
 
         try {
-            $incident = Incident::create($incidentData);
+            $incident = $this->dispatch(new ReportIncidentCommand(
+                Binput::get('name'),
+                Binput::get('status'),
+                Binput::get('message'),
+                Binput::get('visible', true),
+                Binput::get('component_id'),
+                Binput::get('component_status'),
+                Binput::get('notify', true)
+            ));
+
+            $incident->update([
+                'created_at' => $incidentDate,
+                'updated_at' => $incidentDate,
+            ]);
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.incidents.add')
                 ->withInput(Binput::all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.incidents.add.failure')))
                 ->withErrors($e->getMessageBag());
-        }
-
-        // Update the component.
-        if (isset($incidentData['component_id']) && (int) $incidentData['component_id'] > 0) {
-            Component::find($incidentData['component_id'])->update(['status' => $componentStatus]);
-        }
-
-        if (array_get($incidentData, 'notify') && subscribers_enabled()) {
-            event(new IncidentHasReportedEvent($incident));
         }
 
         return Redirect::route('dashboard.incidents.add')
@@ -208,7 +209,7 @@ class IncidentController extends Controller
      */
     public function deleteIncidentAction(Incident $incident)
     {
-        $incident->delete();
+        $this->dispatch(new RemoveIncidentCommand($incident));
 
         return Redirect::route('dashboard.incidents.index');
     }

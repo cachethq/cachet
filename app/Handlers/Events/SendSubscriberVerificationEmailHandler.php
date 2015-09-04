@@ -11,7 +11,7 @@
 
 namespace CachetHQ\Cachet\Handlers\Events;
 
-use CachetHQ\Cachet\Events\CustomerHasSubscribedEvent;
+use CachetHQ\Cachet\Events\SubscriberHasSubscribedEvent;
 use Illuminate\Contracts\Mail\MailQueue;
 use Illuminate\Mail\Message;
 
@@ -43,7 +43,7 @@ class SendSubscriberVerificationEmailHandler
      *
      * @return void
      */
-    public function handle(CustomerHasSubscribedEvent $event)
+    public function handle(SubscriberHasSubscribedEvent $event)
     {
         $mail = [
             'email'    => $event->subscriber->email,

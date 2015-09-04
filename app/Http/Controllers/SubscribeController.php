@@ -12,19 +12,24 @@
 namespace CachetHQ\Cachet\Http\Controllers;
 
 use AltThree\Validator\ValidationException;
-use CachetHQ\Cachet\Events\CustomerHasSubscribedEvent;
+use CachetHQ\Cachet\Commands\Subscriber\SubscribeSubscriberCommand;
+use CachetHQ\Cachet\Commands\Subscriber\UnsubscribeSubscriberCommand;
+use CachetHQ\Cachet\Commands\Subscriber\VerifySubscriberCommand;
 use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Cachet\Models\Subscriber;
-use Carbon\Carbon;
 use GrahamCampbell\Binput\Facades\Binput;
 use GrahamCampbell\Markdown\Facades\Markdown;
+use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
+use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class SubscribeController extends Controller
 {
+    use DispatchesJobs;
+
     /**
      * Show the subscribe by email page.
      *
@@ -45,15 +50,13 @@ class SubscribeController extends Controller
     public function postSubscribe()
     {
         try {
-            $subscriber = Subscriber::create(['email' => Binput::get('email')]);
+            $this->dispatch(new SubscribeSubscriberCommand(Binput::get('email')));
         } catch (ValidationException $e) {
             return Redirect::route('subscribe.subscribe')
                 ->withInput(Binput::all())
                 ->withTitle(sprintf('<strong>%s</strong> %s', trans('dashboard.notifications.whoops'), trans('cachet.subscriber.email.failure')))
                 ->withErrors($e->getMessageBag());
         }
-
-        event(new CustomerHasSubscribedEvent($subscriber));
 
         return Redirect::route('status-page')
             ->withSuccess(sprintf('<strong>%s</strong> %s', trans('dashboard.notifications.awesome'), trans('cachet.subscriber.email.subscribed')));
@@ -75,11 +78,10 @@ class SubscribeController extends Controller
         $subscriber = Subscriber::where('verify_code', '=', $code)->first();
 
         if (!$subscriber || $subscriber->verified()) {
-            return Redirect::route('status-page');
+            throw new BadRequestHttpException();
         }
 
-        $subscriber->verified_at = Carbon::now();
-        $subscriber->save();
+        $this->dispatch(new VerifySubscriberCommand($subscriber));
 
         return Redirect::route('status-page')
             ->withSuccess(sprintf('<strong>%s</strong> %s', trans('dashboard.notifications.awesome'), trans('cachet.subscriber.email.verified')));
@@ -101,10 +103,10 @@ class SubscribeController extends Controller
         $subscriber = Subscriber::where('verify_code', '=', $code)->first();
 
         if (!$subscriber || !$subscriber->verified()) {
-            return Redirect::route('status-page');
+            throw new BadRequestHttpException();
         }
 
-        $subscriber->delete();
+        $this->dispatch(new UnsubscribeSubscriberCommand($subscriber));
 
         return Redirect::route('status-page')
             ->withSuccess(sprintf('<strong>%s</strong> %s', trans('dashboard.notifications.awesome'), trans('cachet.subscriber.email.unsuscribed')));

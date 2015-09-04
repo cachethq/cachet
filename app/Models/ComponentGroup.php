@@ -42,7 +42,7 @@ class ComponentGroup extends Model
      * @var string[]
      */
     public $rules = [
-        'name'  => 'required',
+        'name'  => 'required|string',
         'order' => 'integer',
     ];
 

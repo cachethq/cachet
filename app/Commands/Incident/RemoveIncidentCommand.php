@@ -9,21 +9,23 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Events;
+namespace CachetHQ\Cachet\Commands\Incident;
 
 use CachetHQ\Cachet\Models\Incident;
 
-class IncidentHasReportedEvent
+class RemoveIncidentCommand
 {
     /**
-     * The incident that has been reported.
+     * The incident to remove.
      *
      * @var \CachetHQ\Cachet\Models\Incident
      */
     public $incident;
 
     /**
-     * Create a new incident has reported event instance.
+     * Create a new remove incident command instance.
+     *
+     * @param \CachetHQ\Cachet\Models\Incident $incident
      *
      * @return void
      */

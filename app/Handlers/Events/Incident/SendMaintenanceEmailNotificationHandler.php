@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Handlers\Events;
+namespace CachetHQ\Cachet\Handlers\Events\Incident;
 
-use CachetHQ\Cachet\Events\MaintenanceHasScheduledEvent;
+use CachetHQ\Cachet\Events\Incident\MaintenanceWasScheduledEvent;
 use CachetHQ\Cachet\Models\Subscriber;
 use Illuminate\Contracts\Mail\MailQueue;
 use Illuminate\Mail\Message;
@@ -63,7 +63,7 @@ class SendMaintenanceEmailNotificationHandler
      *
      * @return void
      */
-    public function handle(MaintenanceHasScheduledEvent $event)
+    public function handle(MaintenanceWasScheduledEvent $event)
     {
         $data = $this->presenter->decorate($event->incident);
 
