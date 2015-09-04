@@ -18,6 +18,23 @@ class ComponentPresenter extends AbstractPresenter
     use TimestampsTrait;
 
     /**
+     * Returns the override class name for theming.
+     *
+     * @return string
+     */
+    public function status_color()
+    {
+        $newStatus = '';
+
+        switch ($this->wrappedObject->status) {
+            case 1: return 'greens';
+            case 2: return 'blues';
+            case 3: return 'yellows';
+            case 4: return 'reds';
+        }
+    }
+
+    /**
      * Convert the presenter instance to an array.
      *
      * @return string[]

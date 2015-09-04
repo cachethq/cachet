@@ -1,15 +1,15 @@
 @if($metrics->count() > 0)
-<ul class="list-group metrics">
+<ul class="list-group">
     @foreach($metrics as $metric)
     <li class="list-group-item metric" data-metric-id="{{ $metric->id }}">
         <div class="row">
             <div class="col-xs-10">
-                <h4>
+                <strong>
                     {{ $metric->name }}
                     @if($metric->description)
                     <i class="ion ion-ios-help-outline" data-toggle="tooltip" data-title="{{ $metric->description }}"></i>
                     @endif
-                </h4>
+                </strong>
             </div>
             <div class="col-xs-2">
                 <div class="dropdown pull-right">
@@ -45,12 +45,13 @@
         showTooltips: false,
         labels: [],
         datasets: [{
-            fillColor: "rgba(220,220,220,0.1)",
-            strokeColor: "rgba(52,152,219,0.6)",
-            pointColor: "rgba(220,220,220,1)",
-            pointStrokeColor: "#fff",
-            pointHighlightFill: "#fff",
-            pointHighlightStroke: "rgba(220,220,220,1)",
+            // fillColor: "rgba(220,220,220,0.1)",
+            fillColor: "{{$theme_metrics}}",
+            // strokeColor: "{{ $theme_metrics }}",
+            pointColor: "{{ color_darken($theme_metrics, -0.1) }}",
+            pointStrokeColor: "{{ color_darken($theme_metrics, -0.1) }}",
+            pointHighlightFill: "{{ color_darken($theme_metrics, -0.2) }}",
+            pointHighlightStroke: "{{ color_darken($theme_metrics, -0.2) }}",
             data: []
         }],
     };

@@ -29,10 +29,6 @@ class AppComposer
         $mailAddress = env('MAIL_ADDRESS', false);
         $mailFrom = env('MAIL_NAME', false);
 
-        $withData = [
-            'subscribersEnabled' => $isEnabled && $mailAddress && $mailFrom,
-        ];
-
-        $view->with($withData);
+        $view->withSubscribersEnabled($isEnabled && $mailAddress && $mailFrom);
     }
 }

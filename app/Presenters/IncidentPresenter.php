@@ -168,13 +168,13 @@ class IncidentPresenter extends AbstractPresenter
             case 0: // Scheduled
                 return 'icon ion-android-calendar';
             case 1: // Investigating
-                return 'icon ion-flag';
+                return 'icon ion-flag oranges';
             case 2: // Identified
-                return 'icon ion-alert';
+                return 'icon ion-alert yellows';
             case 3: // Watching
-                return 'icon ion-eye';
+                return 'icon ion-eye blues';
             case 4: // Fixed
-                return 'icon ion-checkmark';
+                return 'icon ion-checkmark greens';
             default: // Something actually broke, this shouldn't happen.
                 return '';
         }

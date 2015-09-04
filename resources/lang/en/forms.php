@@ -117,8 +117,16 @@ return [
         ],
         'theme' => [
             'background-color' => 'Background Color',
+            'background-fills' => 'Background Fills (Components, Incidents, Footer)',
             'text-color'       => 'Text Color',
             'dashboard-login'  => 'Show dashboard button in the footer?',
+            'reds'             => 'Red (Used for errors)',
+            'blues'            => 'Blue (Used for information)',
+            'greens'           => 'Green (Used for success)',
+            'yellows'          => 'Yellow (Used for alerts)',
+            'oranges'          => 'Orange (Used for notices)',
+            'metrics'          => 'Metrics Fill',
+            'links'            => 'Links',
         ],
     ],
 
