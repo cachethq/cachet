@@ -39,7 +39,7 @@
 (function () {
     Chart.defaults.global.pointHitDetectionRadius = 1;
 
-    var charts = JSON.parse(document.getElementById('metricData').innerText);
+    var charts = JSON.parse(document.getElementById('metricData').text);
 
     var defaultData = {
         showTooltips: false,
