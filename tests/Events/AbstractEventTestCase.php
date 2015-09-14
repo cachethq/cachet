@@ -27,6 +27,11 @@ abstract class AbstractEventTestCase extends AbstractAnemicTestCase
         return false;
     }
 
+    protected function objectHasHandlers()
+    {
+        return true;
+    }
+
     public function testEventImplementsTheCorrectInterfaces()
     {
         $event = $this->getObjectAndParams()['object'];
@@ -36,7 +41,7 @@ abstract class AbstractEventTestCase extends AbstractAnemicTestCase
         }
     }
 
-    /*public function testEventHasRegisteredHandlers()
+    public function testEventHasRegisteredHandlers()
     {
         $property = (new ReflectionClass(EventServiceProvider::class))->getProperty('listen');
         $property->setAccessible(true);
@@ -45,10 +50,15 @@ abstract class AbstractEventTestCase extends AbstractAnemicTestCase
         $mappings = $property->getValue(new EventServiceProvider($this->app));
 
         $this->assertTrue(isset($mappings[$class]));
-        $this->assertGreaterThan(0, count($mappings[$class]));
+
+        if ($this->objectHasHandlers()) {
+            $this->assertGreaterThan(0, count($mappings[$class]));
+        } else {
+            $this->assertSame(0, count($mappings[$class]));
+        }
 
         foreach ($mappings[$class] as $handler) {
             $this->assertInstanceOf($handler, $this->app->make($handler));
         }
-    }*/
+    }
 }

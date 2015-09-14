@@ -16,6 +16,11 @@ use CachetHQ\Cachet\Models\User;
 
 class UserWasAddedEventTest extends AbstractUserEventTestCase
 {
+    protected function objectHasHandlers()
+    {
+        return false;
+    }
+
     protected function getObjectAndParams()
     {
         $params = ['user' => new User()];
