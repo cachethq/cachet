@@ -13,7 +13,7 @@ namespace CachetHQ\Cachet\Events\User;
 
 use CachetHQ\Cachet\Models\User;
 
-class UserWasRemovedEvent
+final class UserWasRemovedEvent implements UserEventInterface
 {
     /**
      * The user that has been removed.
@@ -24,6 +24,8 @@ class UserWasRemovedEvent
 
     /**
      * Create a new user was removed event instance.
+     *
+     * @return void
      */
     public function __construct(User $user)
     {

@@ -13,7 +13,7 @@ namespace CachetHQ\Cachet\Events\User;
 
 use CachetHQ\Cachet\Models\User;
 
-class UserWasAddedEvent
+final class UserWasAddedEvent implements UserEventInterface
 {
     /**
      * The user that has been added.
@@ -24,6 +24,8 @@ class UserWasAddedEvent
 
     /**
      * Create a new user was added event instance.
+     *
+     * @return void
      */
     public function __construct(User $user)
     {
