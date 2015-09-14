@@ -24,6 +24,8 @@ class SubscriberHasUnsubscribedEvent
 
     /**
      * Create a new subscriber has unsubscribed event instance.
+     *
+     * @return void
      */
     public function __construct(Subscriber $subscriber)
     {

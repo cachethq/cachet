@@ -11,7 +11,7 @@
 
 namespace CachetHQ\Cachet\Handlers\Events\Subscriber;
 
-use CachetHQ\Cachet\Events\SubscriberHasSubscribedEvent;
+use CachetHQ\Cachet\Events\Subscriber\SubscriberHasSubscribedEvent;
 use Illuminate\Contracts\Mail\MailQueue;
 use Illuminate\Mail\Message;
 
@@ -39,7 +39,7 @@ class SendSubscriberVerificationEmailHandler
     /**
      * Handle the event.
      *
-     * @param \CachetHQ\Cachet\Events\CustomerHasSubscribedEvent $event
+     * @param \CachetHQ\Cachet\Events\SubscriberHasSubscribedEvent $event
      *
      * @return void
      */
