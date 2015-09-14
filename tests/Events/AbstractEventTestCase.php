@@ -11,9 +11,9 @@
 
 namespace CachetHQ\Tests\Cachet\Events;
 
-use ReflectionClass;
 use CachetHQ\Cachet\Providers\EventServiceProvider;
 use CachetHQ\Tests\Cachet\AbstractAnemicTestCase;
+use ReflectionClass;
 
 /**
  * This is the abstract event test case class.
