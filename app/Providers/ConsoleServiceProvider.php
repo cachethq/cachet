@@ -11,7 +11,6 @@
 
 namespace CachetHQ\Cachet\Providers;
 
-use CachetHQ\Cachet\Console\Commands\FixPermissionsCommand;
 use Illuminate\Support\ServiceProvider;
 
 class ConsoleServiceProvider extends ServiceProvider
