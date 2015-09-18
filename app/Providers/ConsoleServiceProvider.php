@@ -23,13 +23,6 @@ class ConsoleServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('CachetHQ\Cachet\Console\Commands\FixPermissionsCommand', function ($app) {
-            $storageDirectory = storage_path();
-            $databaseDirectory = base_path('database');
-            $databasePath = $app->config->get('database.connections.sqlite.database');
-            $databaseDefault = $app->config->get('database.default');
-
-            return new FixPermissionsCommand($storageDirectory, $databaseDirectory, $databasePath, $databaseDefault);
-        });
+        //
     }
 }
