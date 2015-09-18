@@ -17,6 +17,7 @@ use CachetHQ\Cachet\Commands\Component\RemoveComponentCommand;
 use CachetHQ\Cachet\Commands\Component\UpdateComponentCommand;
 use CachetHQ\Cachet\Commands\ComponentGroup\AddComponentGroupCommand;
 use CachetHQ\Cachet\Commands\ComponentGroup\RemoveComponentGroupCommand;
+use CachetHQ\Cachet\Commands\ComponentGroup\UpdateComponentGroupCommand;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Tag;
@@ -272,18 +273,20 @@ class ComponentController extends Controller
      */
     public function updateComponentGroupAction(ComponentGroup $group)
     {
-        $groupData = Binput::get('group');
-
         try {
-            $group->update($groupData);
+            $group = $this->dispatch(new UpdateComponentGroupCommand(
+                $group,
+                Binput::get('name'),
+                Binput::get('order', 0)
+            ));
         } catch (ValidationException $e) {
-            return Redirect::route('dashboard.components.group.edit', ['id' => $group->id])
+            return Redirect::route('dashboard.components.groups.edit', ['id' => $group->id])
                 ->withInput(Binput::all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.components.groups.edit.failure')))
                 ->withErrors($e->getMessageBag());
         }
 
-        return Redirect::route('dashboard.components.group.edit', ['id' => $group->id])
+        return Redirect::route('dashboard.components.groups.edit', ['id' => $group->id])
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.components.groups.edit.success')));
     }
 }

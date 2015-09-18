@@ -13,6 +13,7 @@ namespace CachetHQ\Cachet\Http\Controllers\Api;
 
 use CachetHQ\Cachet\Commands\ComponentGroup\AddComponentGroupCommand;
 use CachetHQ\Cachet\Commands\ComponentGroup\RemoveComponentGroupCommand;
+use CachetHQ\Cachet\Commands\ComponentGroup\UpdateComponentGroupCommand;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
@@ -81,7 +82,11 @@ class ComponentGroupController extends AbstractApiController
         $groupData = array_filter(Binput::only(['name', 'order']));
 
         try {
-            $group->update($groupData);
+            $group = $this->dispatch(new UpdateComponentGroupCommand(
+                $group,
+                Binput::get('name'),
+                Binput::get('order', 0)
+            ));
         } catch (Exception $e) {
             throw new BadRequestHttpException();
         }
