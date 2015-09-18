@@ -14,6 +14,7 @@ namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 use AltThree\Validator\ValidationException;
 use CachetHQ\Cachet\Commands\Component\AddComponentCommand;
 use CachetHQ\Cachet\Commands\Component\RemoveComponentCommand;
+use CachetHQ\Cachet\Commands\Component\UpdateComponentCommand;
 use CachetHQ\Cachet\Commands\ComponentGroup\AddComponentGroupCommand;
 use CachetHQ\Cachet\Commands\ComponentGroup\RemoveComponentGroupCommand;
 use CachetHQ\Cachet\Models\Component;
@@ -114,11 +115,12 @@ class ComponentController extends Controller
      */
     public function updateComponentAction(Component $component)
     {
-        $_component = Binput::get('component');
-        $tags = array_pull($_component, 'tags');
+        $componentData = Binput::get('component');
+        $tags = array_pull($componentData, 'tags');
 
         try {
-            $component->update($_component);
+            $componentData['component'] = $component;
+            $component = $this->dispatchFromArray(AddComponentCommand::class, $componentData);
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.components.edit', ['id' => $component->id])
                 ->withInput(Binput::all())
@@ -159,12 +161,11 @@ class ComponentController extends Controller
      */
     public function createComponentAction()
     {
-        $_component = Binput::get('component');
-        // We deal with tags separately.
-        $tags = array_pull($_component, 'tags');
+        $componentData = Binput::get('component');
+        $tags = array_pull($componentData, 'tags');
 
         try {
-            $component = $this->dispatchFromArray(AddComponentCommand::class, Binput::get('component'));
+            $component = $this->dispatchFromArray(AddComponentCommand::class, $componentData);
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.components.add')
                 ->withInput(Binput::all())
