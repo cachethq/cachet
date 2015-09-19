@@ -27,6 +27,8 @@ class ApiFilter
      * Create a new api filter instance.
      *
      * @param \Illuminate\Http\Request $request
+     *
+     * @return void
      */
     public function __construct(Request $request)
     {

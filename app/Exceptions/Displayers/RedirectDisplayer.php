@@ -29,6 +29,8 @@ class RedirectDisplayer implements DisplayerInterface
      * Create a new redirect displayer instance.
      *
      * @param \Illuminate\Http\Request $request
+     *
+     * @return void
      */
     public function __construct(Request $request)
     {
