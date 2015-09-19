@@ -11,7 +11,7 @@
 
 namespace CachetHQ\Cachet\Http\Middleware;
 
-use CachetHQ\Cachet\Models\Setting;
+use CachetHQ\Cachet\Facades\Setting;
 use Closure;
 use Exception;
 use Illuminate\Support\Facades\Redirect;
@@ -31,13 +31,8 @@ class AppIsSetup
      */
     public function handle($request, Closure $next)
     {
-        try {
-            $setting = Setting::where('name', 'app_name')->first();
-            if ($setting && $setting->value) {
-                return Redirect::route('dashboard');
-            }
-        } catch (Exception $e) {
-            // do nothing
+        if (Setting::get('app_name')) {
+            return Redirect::to('dashboard');
         }
 
         return $next($request);
