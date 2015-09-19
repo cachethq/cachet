@@ -13,7 +13,6 @@ namespace CachetHQ\Cachet\Http\Middleware;
 
 use CachetHQ\Cachet\Facades\Setting;
 use Closure;
-use Exception;
 use Illuminate\Support\Facades\Redirect;
 
 class AppIsSetup
