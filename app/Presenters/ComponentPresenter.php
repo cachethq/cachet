@@ -24,8 +24,6 @@ class ComponentPresenter extends AbstractPresenter
      */
     public function status_color()
     {
-        $newStatus = '';
-
         switch ($this->wrappedObject->status) {
             case 1: return 'greens';
             case 2: return 'blues';
