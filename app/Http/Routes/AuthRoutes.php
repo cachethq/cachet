@@ -29,9 +29,8 @@ class AuthRoutes
     {
         $router->group([
             'as'         => 'auth.',
-            'middleware' => 'app.hasSetting',
+            'middleware' => 'app.isSetup',
             'prefix'     => 'auth',
-            'setting'    => 'app_name',
         ], function ($router) {
             $router->get('login', [
                 'middleware' => 'guest',
