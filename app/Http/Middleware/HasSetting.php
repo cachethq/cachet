@@ -11,7 +11,7 @@
 
 namespace CachetHQ\Cachet\Http\Middleware;
 
-use CachetHQ\Cachet\Models\Setting;
+use CachetHQ\Cachet\Facades\Setting;
 use Closure;
 use Exception;
 use Illuminate\Support\Facades\Redirect;
@@ -35,8 +35,7 @@ class HasSetting
         $settingName = $this->getSettingName($request);
 
         try {
-            $setting = Setting::where('name', $settingName)->first();
-            if (!$setting || !$setting->value) {
+            if (!Setting::get($settingName)) {
                 return Redirect::to('setup');
             }
         } catch (Exception $e) {
