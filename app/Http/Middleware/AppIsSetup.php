@@ -19,10 +19,10 @@ use Illuminate\Support\Facades\Redirect;
 class AppIsSetup
 {
     /**
-     * Run the is setup filter.
+     * Run the app is setup middleware.
      *
-     * We're verifying that Cachet is correctly setup. If it is, they we're
-     * sending the user to the dashboard so they can use Cachet.
+     * We're verifying that Cachet is correctly setup. If it is, then we're
+     * redirecting the user to the dashboard so they can use Cachet.
      *
      * @param \Illuminate\Routing\Route $route
      * @param \Closure                  $next
