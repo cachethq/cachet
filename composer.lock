@@ -5,6 +5,7 @@
         "This file is @generated automatically"
     ],
     "hash": "635e95ea6eb2fbd64b78102d26f9d4e9",
+    "content-hash": "f723198068d969ce796c37cbe2808aa1",
     "packages": [
         {
             "name": "alt-three/emoji",
