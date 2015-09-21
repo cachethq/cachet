@@ -28,7 +28,8 @@ class StatusPageRoutes
     public function map(Registrar $router)
     {
         $router->group([
-            'middleware' => 'app.isSetup',
+            'middleware' => 'app.hasSetting',
+            'setting'    => 'app_name',
         ], function ($router) {
             $router->get('/', [
                 'as'   => 'status-page',

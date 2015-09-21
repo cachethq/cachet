@@ -28,7 +28,10 @@ class FeedRoutes
     public function map(Registrar $router)
     {
         // Prevent access until the app is setup.
-        $router->group(['middleware' => 'app.isSetup'], function ($router) {
+        $router->group([
+            'middleware' => 'app.hasSetting',
+            'setting'    => 'app_name'
+        ], function ($router) {
             $router->get('/atom/{component_group?}', [
                 'as'   => 'feed.atom',
                 'uses' => 'AtomController@feedAction',
