@@ -14,7 +14,6 @@ namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 use AltThree\Validator\ValidationException;
 use CachetHQ\Cachet\Commands\Component\AddComponentCommand;
 use CachetHQ\Cachet\Commands\Component\RemoveComponentCommand;
-use CachetHQ\Cachet\Commands\Component\UpdateComponentCommand;
 use CachetHQ\Cachet\Commands\ComponentGroup\AddComponentGroupCommand;
 use CachetHQ\Cachet\Commands\ComponentGroup\RemoveComponentGroupCommand;
 use CachetHQ\Cachet\Commands\ComponentGroup\UpdateComponentGroupCommand;

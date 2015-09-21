@@ -13,7 +13,6 @@ namespace CachetHQ\Cachet\Handlers\Commands\ComponentGroup;
 
 use CachetHQ\Cachet\Commands\ComponentGroup\UpdateComponentGroupCommand;
 use CachetHQ\Cachet\Events\ComponentGroup\ComponentGroupWasUpdatedEvent;
-use CachetHQ\Cachet\Models\ComponentGroup;
 
 class UpdateComponentGroupCommandHandler
 {
