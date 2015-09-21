@@ -126,10 +126,12 @@ class IncidentController extends Controller
                 Binput::get('notify', true)
             ));
 
-            $incident->update([
-                'created_at' => $incidentDate,
-                'updated_at' => $incidentDate,
-            ]);
+            if (isset($incidentDate)) {
+                $incident->update([
+                    'created_at' => $incidentDate,
+                    'updated_at' => $incidentDate,
+                ]);
+            }
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.incidents.add')
                 ->withInput(Binput::all())
