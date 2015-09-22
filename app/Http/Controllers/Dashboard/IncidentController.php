@@ -14,6 +14,7 @@ namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 use AltThree\Validator\ValidationException;
 use CachetHQ\Cachet\Commands\Incident\RemoveIncidentCommand;
 use CachetHQ\Cachet\Commands\Incident\ReportIncidentCommand;
+use CachetHQ\Cachet\Commands\Incident\UpdateIncidentCommand;
 use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
@@ -241,18 +242,28 @@ class IncidentController extends Controller
      */
     public function editIncidentAction(Incident $incident)
     {
-        $incidentData = Binput::get('incident');
-
-        if (array_has($incidentData, 'created_at') && $incidentData['created_at']) {
-            $incidentDate = Date::createFromFormat('d/m/Y H:i', $incidentData['created_at'], Setting::get('app_timezone'))->setTimezone(Config::get('app.timezone'));
-            $incidentData['created_at'] = $incidentDate;
-            $incidentData['updated_at'] = $incidentDate;
-        } else {
-            unset($incidentData['created_at']);
+        if ($createdAt = Binput::get('created_at')) {
+            $incidentDate = Date::createFromFormat('d/m/Y H:i', $createdAt, Setting::get('app_timezone'))->setTimezone(Config::get('app.timezone'));
         }
 
         try {
-            $incident->update($incidentData);
+            $incident = $this->dispatch(new UpdateIncidentCommand(
+                $incident,
+                Binput::get('name'),
+                Binput::get('status'),
+                Binput::get('message'),
+                Binput::get('visible', true),
+                Binput::get('component_id'),
+                Binput::get('component_status'),
+                Binput::get('notify', true)
+            ));
+
+            if (isset($incidentDate)) {
+                $incident->update([
+                    'created_at' => $incidentDate,
+                    'updated_at' => $incidentDate,
+                ]);
+            }
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.incidents.edit', ['id' => $incident->id])
                 ->withInput(Binput::all())

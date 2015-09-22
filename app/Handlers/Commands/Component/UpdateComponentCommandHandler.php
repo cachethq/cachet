@@ -34,6 +34,13 @@ class UpdateComponentCommandHandler
         return $component;
     }
 
+    /**
+     * Filter the command data.
+     *
+     * @param \CachetHQ\Cachet\Commands\Component\UpdateComponentCommand $command
+     *
+     * @return array
+     */
     protected function filterComponentData($command)
     {
         return array_filter([
