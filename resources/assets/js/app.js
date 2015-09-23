@@ -33,6 +33,9 @@ $(function() {
         $form.find(':submit').prop('disabled', true);
     });
 
+    // Autosizing of textareas.
+    autosize($('textarea.autosize'));
+
     // Mock the DELETE form requests.
     $('[data-method]').not(".disabled").append(function() {
         var methodForm = "\n";
