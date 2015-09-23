@@ -13,7 +13,6 @@ namespace CachetHQ\Cachet\Handlers\Commands\Metric;
 
 use CachetHQ\Cachet\Commands\Metric\UpdateMetricPointCommand;
 use CachetHQ\Cachet\Events\Metric\MetricPointWasUpdatedEvent;
-use CachetHQ\Cachet\Models\MetricPoint;
 use Carbon\Carbon;
 
 class UpdateMetricPointCommandHandler
