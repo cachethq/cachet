@@ -28,7 +28,7 @@ class AddMetricPointCommandHandler
     public function handle(AddMetricPointCommand $command)
     {
         $metric = $command->metric;
-        $createdAt = $command->createdAt;
+        $createdAt = $command->created_at;
 
         $data = [
             'metric_id' => $metric->id,
