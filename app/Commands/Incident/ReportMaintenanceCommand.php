@@ -42,6 +42,18 @@ class ReportMaintenanceCommand
     public $timestamp;
 
     /**
+     * The validation rules.
+     *
+     * @var string[]
+     */
+    public $rules = [
+        'name'      => 'required|string',
+        'message'   => 'string',
+        'notify'    => 'boolean',
+        'timestamp' => 'string',
+    ];
+
+    /**
      * Create a new report maintenance command instance.
      *
      * @param string $name

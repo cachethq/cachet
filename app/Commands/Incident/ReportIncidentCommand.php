@@ -63,6 +63,21 @@ class ReportIncidentCommand
     public $notify;
 
     /**
+     * The validation rules.
+     *
+     * @var string[]
+     */
+    public $rules = [
+        'name'             => 'required|string',
+        'status'           => 'required|integer',
+        'message'          => 'string',
+        'visible'          => 'boolean',
+        'component_id'     => 'integer',
+        'component_status' => 'integer',
+        'notify'           => 'boolean',
+    ];
+
+    /**
      * Create a new report incident command instance.
      *
      * @param string $name

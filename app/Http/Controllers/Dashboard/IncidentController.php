@@ -112,6 +112,8 @@ class IncidentController extends Controller
      */
     public function createIncidentAction()
     {
+        $incidentDate = null;
+
         if ($createdAt = Binput::get('created_at')) {
             $incidentDate = Date::createFromFormat('d/m/Y H:i', $createdAt, Setting::get('app_timezone'))->setTimezone(Config::get('app.timezone'));
         }
@@ -124,15 +126,9 @@ class IncidentController extends Controller
                 Binput::get('visible', true),
                 Binput::get('component_id'),
                 Binput::get('component_status'),
-                Binput::get('notify', true)
+                Binput::get('notify', true),
+                $incidentDate
             ));
-
-            if (isset($incidentDate)) {
-                $incident->update([
-                    'created_at' => $incidentDate,
-                    'updated_at' => $incidentDate,
-                ]);
-            }
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.incidents.add')
                 ->withInput(Binput::all())

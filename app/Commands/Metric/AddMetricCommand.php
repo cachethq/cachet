@@ -68,13 +68,16 @@ class AddMetricCommand
      * @var string[]
      */
     public $rules = [
-        'name'          => 'required',
-        'suffix'        => 'required',
+        'name'          => 'required|string',
+        'suffix'        => 'required|string',
+        'description'   => 'string',
         'display_chart' => 'boolean',
         'default_value' => 'numeric',
+        'calc_type'     => 'integer',
+        'display_chart' => 'integer',
         'places'        => 'numeric|min:0|max:4',
     ];
-
+    
     /**
      * Create a new add metric command instance.
      *

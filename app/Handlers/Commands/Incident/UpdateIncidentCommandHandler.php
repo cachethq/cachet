@@ -30,6 +30,13 @@ class UpdateIncidentCommandHandler
         $incident = $command->incident;
         $incident->update($this->filterIncidentData($command));
 
+        if ($incidentDate = $command->incident_date) {
+            $incident->update([
+                'created_at' => $incidentDate,
+                'updated_at' => $incidentDate,
+            ]);
+        }
+
         // Update the component.
         if ($command->component_id) {
             Component::find($command->component_id)->update([

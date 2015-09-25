@@ -28,7 +28,7 @@ class UpdateMetricPointCommandHandler
     {
         $point = $command->point;
         $metric = $command->metric;
-        $createdAt = $command->createdAt;
+        $createdAt = $command->created_at;
 
         $data = [
             'metric_id' => $metric->id,

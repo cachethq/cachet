@@ -16,7 +16,7 @@ use CachetHQ\Cachet\Models\Incident;
 class UpdateIncidentCommand
 {
     /**
-     * The incident.
+     * The incident to update.
      *
      * @var \CachetHQ\Cachet\Models\Incident
      */
@@ -72,6 +72,21 @@ class UpdateIncidentCommand
     public $notify;
 
     /**
+     * The validation rules.
+     *
+     * @var string[]
+     */
+    public $rules = [
+        'name'             => 'string',
+        'status'           => 'integer',
+        'message'          => 'string',
+        'visible'          => 'boolean',
+        'component_id'     => 'integer',
+        'component_status' => 'integer',
+        'notify'           => 'boolean',
+    ];
+
+    /**
      * Create a new update incident command instance.
      *
      * @param \CachetHQ\Cachet\Models\Incident $name
@@ -82,10 +97,11 @@ class UpdateIncidentCommand
      * @param int                              $component_id
      * @param int                              $component_status
      * @param bool                             $notify
+     * @param string|null                      $incidentDate
      *
      * @return void
      */
-    public function __construct(Incident $incident, $name, $status, $message, $visible, $component_id, $component_status, $notify)
+    public function __construct(Incident $incident, $name, $status, $message, $visible, $component_id, $component_status, $notify, $incident_date = null)
     {
         $this->incident = $incident;
         $this->name = $name;
@@ -95,5 +111,6 @@ class UpdateIncidentCommand
         $this->component_id = $component_id;
         $this->component_status = $component_status;
         $this->notify = $notify;
+        $this->incident_date = $incident_date;
     }
 }

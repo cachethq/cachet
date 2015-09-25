@@ -61,9 +61,12 @@ class AddComponentCommand
      * @var string[]
      */
     public $rules = [
-        'name'   => 'required|string',
-        'status' => 'required|integer',
-        'link'   => 'url',
+        'name'        => 'required|string',
+        'description' => 'string',
+        'status'      => 'required|integer',
+        'link'        => 'url',
+        'order'       => 'integer',
+        'group_id'    => 'integer',
     ];
 
     /**

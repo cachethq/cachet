@@ -16,7 +16,7 @@ use CachetHQ\Cachet\Models\Component;
 class UpdateComponentCommand
 {
     /**
-     * The component.
+     * The component to update.
      *
      * @var \CachetHQ\Cachet\Models\Component
      */
@@ -70,9 +70,12 @@ class UpdateComponentCommand
      * @var string[]
      */
     public $rules = [
-        'name'   => 'string',
-        'status' => 'integer',
-        'link'   => 'url',
+        'name'        => 'string',
+        'description' => 'string',
+        'status'      => 'integer',
+        'link'        => 'url',
+        'order'       => 'integer',
+        'group_id'    => 'integer',
     ];
 
     /**

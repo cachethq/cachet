@@ -34,21 +34,31 @@ class AddMetricPointCommand
      *
      * @var string
      */
-    public $createdAt;
+    public $created_at;
+
+    /**
+     * The validation rules.
+     *
+     * @var string[]
+     */
+    public $rules = [
+        'value'      => 'integer',
+        'created_at' => 'string',
+    ];
 
     /**
      * Create a new add metric point command instance.
      *
      * @param \CachetHQ\Cachet\Models\Metric $metric
      * @param int                            $value
-     * @param string                         $createdAt
+     * @param string                         $created_at
      *
      * @return void
      */
-    public function __construct(Metric $metric, $value, $createdAt)
+    public function __construct(Metric $metric, $value, $created_at)
     {
         $this->metric = $metric;
         $this->value = $value;
-        $this->createdAt = $createdAt;
+        $this->created_at = $created_at;
     }
 }

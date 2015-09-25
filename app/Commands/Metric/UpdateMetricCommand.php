@@ -79,8 +79,11 @@ class UpdateMetricCommand
     public $rules = [
         'name'          => 'string',
         'suffix'        => 'string',
+        'description'   => 'string',
         'display_chart' => 'boolean',
         'default_value' => 'numeric',
+        'calc_type'     => 'integer',
+        'display_chart' => 'integer',
         'places'        => 'numeric|min:0|max:4',
     ];
 
