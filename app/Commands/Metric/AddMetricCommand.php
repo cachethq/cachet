@@ -77,7 +77,7 @@ class AddMetricCommand
         'display_chart' => 'integer',
         'places'        => 'numeric|min:0|max:4',
     ];
-    
+
     /**
      * Create a new add metric command instance.
      *
