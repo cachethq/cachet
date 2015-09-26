@@ -82,7 +82,7 @@ class UpdateMetricCommand
         'description'   => 'string',
         'display_chart' => 'boolean',
         'default_value' => 'numeric',
-        'calc_type'     => 'integer',
+        'calc_type'     => 'integer|in:0,1',
         'display_chart' => 'integer',
         'places'        => 'numeric|min:0|max:4',
     ];
