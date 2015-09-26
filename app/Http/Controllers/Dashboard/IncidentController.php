@@ -15,7 +15,6 @@ use AltThree\Validator\ValidationException;
 use CachetHQ\Cachet\Commands\Incident\RemoveIncidentCommand;
 use CachetHQ\Cachet\Commands\Incident\ReportIncidentCommand;
 use CachetHQ\Cachet\Commands\Incident\UpdateIncidentCommand;
-use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Incident;
@@ -23,10 +22,8 @@ use CachetHQ\Cachet\Models\IncidentTemplate;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller;
-use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
-use Jenssegers\Date\Date;
 
 class IncidentController extends Controller
 {
@@ -112,12 +109,6 @@ class IncidentController extends Controller
      */
     public function createIncidentAction()
     {
-        $incidentDate = null;
-
-        if ($createdAt = Binput::get('created_at')) {
-            $incidentDate = Date::createFromFormat('d/m/Y H:i', $createdAt, Setting::get('app_timezone'))->setTimezone(Config::get('app.timezone'));
-        }
-
         try {
             $incident = $this->dispatch(new ReportIncidentCommand(
                 Binput::get('name'),
@@ -127,7 +118,7 @@ class IncidentController extends Controller
                 Binput::get('component_id'),
                 Binput::get('component_status'),
                 Binput::get('notify', true),
-                $incidentDate
+                Binput::get('created_at')
             ));
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.incidents.add')
@@ -238,10 +229,6 @@ class IncidentController extends Controller
      */
     public function editIncidentAction(Incident $incident)
     {
-        if ($createdAt = Binput::get('created_at')) {
-            $incidentDate = Date::createFromFormat('d/m/Y H:i', $createdAt, Setting::get('app_timezone'))->setTimezone(Config::get('app.timezone'));
-        }
-
         try {
             $incident = $this->dispatch(new UpdateIncidentCommand(
                 $incident,
@@ -251,15 +238,9 @@ class IncidentController extends Controller
                 Binput::get('visible', true),
                 Binput::get('component_id'),
                 Binput::get('component_status'),
-                Binput::get('notify', true)
+                Binput::get('notify', true),
+                Binput::get('created_at')
             ));
-
-            if (isset($incidentDate)) {
-                $incident->update([
-                    'created_at' => $incidentDate,
-                    'updated_at' => $incidentDate,
-                ]);
-            }
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.incidents.edit', ['id' => $incident->id])
                 ->withInput(Binput::all())

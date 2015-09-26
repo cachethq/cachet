@@ -63,6 +63,13 @@ class ReportIncidentCommand
     public $notify;
 
     /**
+     * The date at which the incident occurred.
+     *
+     * @var string|null
+     */
+    public $incident_date;
+
+    /**
      * The validation rules.
      *
      * @var string[]
@@ -75,22 +82,24 @@ class ReportIncidentCommand
         'component_id'     => 'integer',
         'component_status' => 'integer',
         'notify'           => 'boolean',
+        'incident_date'    => 'string',
     ];
 
     /**
      * Create a new report incident command instance.
      *
-     * @param string $name
-     * @param int    $status
-     * @param string $message
-     * @param int    $visible
-     * @param int    $component_id
-     * @param int    $component_status
-     * @param bool   $notify
+     * @param string      $name
+     * @param int         $status
+     * @param string      $message
+     * @param int         $visible
+     * @param int         $component_id
+     * @param int         $component_status
+     * @param bool        $notify
+     * @param string|null $incident_date
      *
      * @return void
      */
-    public function __construct($name, $status, $message, $visible, $component_id, $component_status, $notify)
+    public function __construct($name, $status, $message, $visible, $component_id, $component_status, $notify, $incident_date)
     {
         $this->name = $name;
         $this->status = $status;
@@ -99,5 +108,6 @@ class ReportIncidentCommand
         $this->component_id = $component_id;
         $this->component_status = $component_status;
         $this->notify = $notify;
+        $this->incident_date = $incident_date;
     }
 }

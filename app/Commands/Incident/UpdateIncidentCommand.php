@@ -72,6 +72,13 @@ class UpdateIncidentCommand
     public $notify;
 
     /**
+     * The date that the incident occurred on.
+     *
+     * @var string
+     */
+    public $incident_date;
+
+    /**
      * The validation rules.
      *
      * @var string[]
@@ -97,7 +104,7 @@ class UpdateIncidentCommand
      * @param int                              $component_id
      * @param int                              $component_status
      * @param bool                             $notify
-     * @param string|null                      $incidentDate
+     * @param string|null                      $incident_date
      *
      * @return void
      */

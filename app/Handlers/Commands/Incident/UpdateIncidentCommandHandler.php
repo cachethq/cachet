@@ -13,8 +13,11 @@ namespace CachetHQ\Cachet\Handlers\Commands\Incident;
 
 use CachetHQ\Cachet\Commands\Incident\UpdateIncidentCommand;
 use CachetHQ\Cachet\Events\Incident\IncidentWasUpdatedEvent;
+use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
+use Illuminate\Support\Facades\Config;
+use Jenssegers\Date\Date;
 
 class UpdateIncidentCommandHandler
 {
@@ -30,7 +33,10 @@ class UpdateIncidentCommandHandler
         $incident = $command->incident;
         $incident->update($this->filterIncidentData($command));
 
-        if ($incidentDate = $command->incident_date) {
+        // The incident occurred at a different time.
+        if ($command->incident_date) {
+            $incidentDate = Date::createFromFormat('d/m/Y H:i', $command->incident_date, Setting::get('app_timezone'))->setTimezone(Config::get('app.timezone'));
+
             $incident->update([
                 'created_at' => $incidentDate,
                 'updated_at' => $incidentDate,
