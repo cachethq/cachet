@@ -54,7 +54,7 @@ class AuthController extends Controller
             }
 
             // We probably want to add support for "Remember me" here.
-            Auth::attempt(Binput::only(['email', 'password']));
+            Auth::attempt($loginData);
 
             return Redirect::intended('dashboard');
         }
