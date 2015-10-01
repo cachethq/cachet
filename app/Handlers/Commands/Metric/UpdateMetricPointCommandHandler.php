@@ -11,22 +11,22 @@
 
 namespace CachetHQ\Cachet\Handlers\Commands\Metric;
 
-use CachetHQ\Cachet\Commands\Metric\AddMetricPointCommand;
-use CachetHQ\Cachet\Events\Metric\MetricPointWasAddedEvent;
-use CachetHQ\Cachet\Models\MetricPoint;
+use CachetHQ\Cachet\Commands\Metric\UpdateMetricPointCommand;
+use CachetHQ\Cachet\Events\Metric\MetricPointWasUpdatedEvent;
 use Carbon\Carbon;
 
-class AddMetricPointCommandHandler
+class UpdateMetricPointCommandHandler
 {
     /**
-     * Handle the add metric point command.
+     * Handle the update metric point command.
      *
-     * @param \CachetHQ\Cachet\Commands\Metric\AddMetricPointCommand $command
+     * @param \CachetHQ\Cachet\Commands\Metric\UpdateMetricPointCommand $command
      *
      * @return \CachetHQ\Cachet\Models\MetricPoint
      */
-    public function handle(AddMetricPointCommand $command)
+    public function handle(UpdateMetricPointCommand $command)
     {
+        $point = $command->point;
         $metric = $command->metric;
         $createdAt = $command->created_at;
 
@@ -39,10 +39,10 @@ class AddMetricPointCommandHandler
             $data['created_at'] = Carbon::createFromFormat('U', $createdAt)->format('Y-m-d H:i:s');
         }
 
-        $metricPoint = MetricPoint::create($data);
+        $point->update($data);
 
-        event(new MetricPointWasAddedEvent($metricPoint));
+        event(new MetricPointWasUpdatedEvent($point));
 
-        return $metricPoint;
+        return $point;
     }
 }

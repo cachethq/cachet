@@ -13,6 +13,7 @@ namespace CachetHQ\Cachet\Http\Controllers\Api;
 
 use CachetHQ\Cachet\Commands\Component\AddComponentCommand;
 use CachetHQ\Cachet\Commands\Component\RemoveComponentCommand;
+use CachetHQ\Cachet\Commands\Component\UpdateComponentCommand;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Tag;
 use Exception;
@@ -101,7 +102,15 @@ class ComponentController extends AbstractApiController
     public function putComponent(Component $component)
     {
         try {
-            $component->update(Binput::except('tags'));
+            $this->dispatch(new UpdateComponentCommand(
+                $component,
+                Binput::get('name'),
+                Binput::get('description'),
+                Binput::get('status'),
+                Binput::get('link'),
+                Binput::get('order'),
+                Binput::get('group_id')
+            ));
         } catch (Exception $e) {
             throw new BadRequestHttpException();
         }

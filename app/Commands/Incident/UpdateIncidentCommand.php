@@ -11,8 +11,17 @@
 
 namespace CachetHQ\Cachet\Commands\Incident;
 
-class ReportIncidentCommand
+use CachetHQ\Cachet\Models\Incident;
+
+class UpdateIncidentCommand
 {
+    /**
+     * The incident to update.
+     *
+     * @var \CachetHQ\Cachet\Models\Incident
+     */
+    public $incident;
+
     /**
      * The incident name.
      *
@@ -63,9 +72,9 @@ class ReportIncidentCommand
     public $notify;
 
     /**
-     * The date at which the incident occurred.
+     * The date that the incident occurred on.
      *
-     * @var string|null
+     * @var string
      */
     public $incident_date;
 
@@ -75,32 +84,33 @@ class ReportIncidentCommand
      * @var string[]
      */
     public $rules = [
-        'name'             => 'required|string',
-        'status'           => 'required|integer',
+        'name'             => 'string',
+        'status'           => 'integer',
         'message'          => 'string',
         'visible'          => 'boolean',
         'component_id'     => 'integer',
         'component_status' => 'integer',
         'notify'           => 'boolean',
-        'incident_date'    => 'string',
     ];
 
     /**
-     * Create a new report incident command instance.
+     * Create a new update incident command instance.
      *
-     * @param string      $name
-     * @param int         $status
-     * @param string      $message
-     * @param int         $visible
-     * @param int         $component_id
-     * @param int         $component_status
-     * @param bool        $notify
-     * @param string|null $incident_date
+     * @param \CachetHQ\Cachet\Models\Incident $name
+     * @param string                           $name
+     * @param int                              $status
+     * @param string                           $message
+     * @param int                              $visible
+     * @param int                              $component_id
+     * @param int                              $component_status
+     * @param bool                             $notify
+     * @param string|null                      $incident_date
      *
      * @return void
      */
-    public function __construct($name, $status, $message, $visible, $component_id, $component_status, $notify, $incident_date)
+    public function __construct(Incident $incident, $name, $status, $message, $visible, $component_id, $component_status, $notify, $incident_date = null)
     {
+        $this->incident = $incident;
         $this->name = $name;
         $this->status = $status;
         $this->message = $message;

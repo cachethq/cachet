@@ -11,8 +11,17 @@
 
 namespace CachetHQ\Cachet\Commands\Metric;
 
-class AddMetricCommand
+use CachetHQ\Cachet\Models\Metric;
+
+class UpdateMetricCommand
 {
+    /**
+     * The metric.
+     *
+     * @var \CachetHQ\Cachet\Models\Metric
+     */
+    public $metric;
+
     /**
      * The metric name.
      *
@@ -68,31 +77,33 @@ class AddMetricCommand
      * @var string[]
      */
     public $rules = [
-        'name'          => 'required|string',
-        'suffix'        => 'required|string',
+        'name'          => 'string',
+        'suffix'        => 'string',
         'description'   => 'string',
         'display_chart' => 'boolean',
-        'default_value' => 'integer',
-        'calc_type'     => 'integer',
+        'default_value' => 'numeric',
+        'calc_type'     => 'integer|in:0,1',
         'display_chart' => 'integer',
-        'places'        => 'integer|between:0,4',
+        'places'        => 'numeric|min:0|max:4',
     ];
 
     /**
-     * Create a new add metric command instance.
+     * Create a new update metric command instance.
      *
-     * @param string $name
-     * @param string $suffix
-     * @param string $description
-     * @param float  $default_value
-     * @param int    $calc_type
-     * @param int    $display_chart
-     * @param int    $places
+     * @param \CachetHQ\Cachet\Models\Metric $metric
+     * @param string                         $name
+     * @param string                         $suffix
+     * @param string                         $description
+     * @param float                          $default_value
+     * @param int                            $calc_type
+     * @param int                            $display_chart
+     * @param int                            $places
      *
      * @return void
      */
-    public function __construct($name, $suffix, $description, $default_value, $calc_type, $display_chart, $places)
+    public function __construct(Metric $metric, $name, $suffix, $description, $default_value, $calc_type, $display_chart, $places)
     {
+        $this->metric = $metric;
         $this->name = $name;
         $this->suffix = $suffix;
         $this->description = $description;

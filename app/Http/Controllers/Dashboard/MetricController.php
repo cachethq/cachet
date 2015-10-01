@@ -14,6 +14,7 @@ namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 use AltThree\Validator\ValidationException;
 use CachetHQ\Cachet\Commands\Metric\AddMetricCommand;
 use CachetHQ\Cachet\Commands\Metric\RemoveMetricCommand;
+use CachetHQ\Cachet\Commands\Metric\UpdateMetricCommand;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\MetricPoint;
 use GrahamCampbell\Binput\Facades\Binput;
@@ -132,7 +133,16 @@ class MetricController extends Controller
     public function editMetricAction(Metric $metric)
     {
         try {
-            $metric->update(Binput::get('metric', null, false));
+            $this->dispatch(new UpdateMetricCommand(
+                $metric,
+                Binput::get('metric.name', null, false),
+                Binput::get('metric.suffix', null, false),
+                Binput::get('metric.description', null, false),
+                Binput::get('metric.default_value', null, false),
+                Binput::get('metric.calc_type', null, false),
+                Binput::get('metric.display_chart', null, false),
+                Binput::get('metric.places', null, false)
+            ));
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.metrics.edit', ['id' => $metric->id])
                 ->withInput(Binput::all())

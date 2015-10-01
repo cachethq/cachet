@@ -11,8 +11,17 @@
 
 namespace CachetHQ\Cachet\Commands\Component;
 
-class AddComponentCommand
+use CachetHQ\Cachet\Models\Component;
+
+class UpdateComponentCommand
 {
+    /**
+     * The component to update.
+     *
+     * @var \CachetHQ\Cachet\Models\Component
+     */
+    public $component;
+
     /**
      * The component name.
      *
@@ -61,28 +70,30 @@ class AddComponentCommand
      * @var string[]
      */
     public $rules = [
-        'name'        => 'required|string',
+        'name'        => 'string',
         'description' => 'string',
-        'status'      => 'required|integer',
+        'status'      => 'integer',
         'link'        => 'url',
         'order'       => 'integer',
         'group_id'    => 'integer',
     ];
 
     /**
-     * Create a new add component command instance.
+     * Create a new update component command instance.
      *
-     * @param string $name
-     * @param string $description
-     * @param int    $status
-     * @param string $link
-     * @param int    $order
-     * @param int    $group_id
+     * @param \CachetHQ\Cachet\Models\Component $component
+     * @param string                            $name
+     * @param string                            $description
+     * @param int                               $status
+     * @param string                            $link
+     * @param int                               $order
+     * @param int                               $group_id
      *
      * @return void
      */
-    public function __construct($name, $description, $status, $link, $order, $group_id)
+    public function __construct(Component $component, $name, $description, $status, $link, $order, $group_id)
     {
+        $this->component = $component;
         $this->name = $name;
         $this->description = $description;
         $this->status = (int) $status;

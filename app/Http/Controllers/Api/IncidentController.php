@@ -13,6 +13,7 @@ namespace CachetHQ\Cachet\Http\Controllers\Api;
 
 use CachetHQ\Cachet\Commands\Incident\RemoveIncidentCommand;
 use CachetHQ\Cachet\Commands\Incident\ReportIncidentCommand;
+use CachetHQ\Cachet\Commands\Incident\UpdateIncidentCommand;
 use CachetHQ\Cachet\Models\Incident;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
@@ -71,7 +72,8 @@ class IncidentController extends AbstractApiController
                 Binput::get('visible', true),
                 Binput::get('component_id'),
                 Binput::get('component_status'),
-                Binput::get('notify', true)
+                Binput::get('notify', true),
+                Binput::get('created_at')
             ));
         } catch (Exception $e) {
             throw new BadRequestHttpException();
@@ -89,17 +91,18 @@ class IncidentController extends AbstractApiController
      */
     public function putIncident(Incident $incident)
     {
-        $incidentData = array_filter(Binput::only([
-            'name',
-            'message',
-            'status',
-            'component_id',
-            'notify',
-            'visible',
-        ]));
-
         try {
-            $incident->update($incidentData);
+            $incident = $this->dispatch(new UpdateIncidentCommand(
+                $incident,
+                Binput::get('name'),
+                Binput::get('status'),
+                Binput::get('message'),
+                Binput::get('visible', true),
+                Binput::get('component_id'),
+                Binput::get('component_status'),
+                Binput::get('notify', true),
+                Binput::get('created_at')
+            ));
         } catch (Exception $e) {
             throw new BadRequestHttpException();
         }

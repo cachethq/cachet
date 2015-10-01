@@ -13,6 +13,7 @@ namespace CachetHQ\Cachet\Http\Controllers\Api;
 
 use CachetHQ\Cachet\Commands\Metric\AddMetricCommand;
 use CachetHQ\Cachet\Commands\Metric\RemoveMetricCommand;
+use CachetHQ\Cachet\Commands\Metric\UpdateMetricCommand;
 use CachetHQ\Cachet\Models\Metric;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
@@ -96,7 +97,16 @@ class MetricController extends AbstractApiController
     public function putMetric(Metric $metric)
     {
         try {
-            $metric->update(Binput::all());
+            $metric = $this->dispatch(new UpdateMetricCommand(
+                $metric,
+                Binput::get('name'),
+                Binput::get('suffix'),
+                Binput::get('description'),
+                Binput::get('default_value'),
+                Binput::get('calc_type', 0),
+                Binput::get('display_chart'),
+                Binput::get('places')
+            ));
         } catch (Exception $e) {
             throw new BadRequestHttpException();
         }

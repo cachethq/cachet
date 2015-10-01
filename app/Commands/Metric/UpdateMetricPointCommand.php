@@ -12,11 +12,19 @@
 namespace CachetHQ\Cachet\Commands\Metric;
 
 use CachetHQ\Cachet\Models\Metric;
+use CachetHQ\Cachet\Models\MetricPoint;
 
-class AddMetricPointCommand
+class UpdateMetricPointCommand
 {
     /**
-     * The metric to add.
+     * The metric point.
+     *
+     * @var \CachetHQ\Cachet\Models\MetricPoint
+     */
+    public $point;
+
+    /**
+     * The metric.
      *
      * @var \CachetHQ\Cachet\Models\Metric
      */
@@ -47,16 +55,18 @@ class AddMetricPointCommand
     ];
 
     /**
-     * Create a new add metric point command instance.
+     * Create a new update metric point command instance.
      *
-     * @param \CachetHQ\Cachet\Models\Metric $metric
-     * @param int                            $value
-     * @param string                         $created_at
+     * @param \CachetHQ\Cachet\Models\MetricPoint $point
+     * @param \CachetHQ\Cachet\Models\Metric      $metric
+     * @param int                                 $value
+     * @param string                              $created_at
      *
      * @return void
      */
-    public function __construct(Metric $metric, $value, $created_at)
+    public function __construct(MetricPoint $point, Metric $metric, $value, $created_at)
     {
+        $this->point = $point;
         $this->metric = $metric;
         $this->value = $value;
         $this->created_at = $created_at;
