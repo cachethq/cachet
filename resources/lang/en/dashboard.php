@@ -150,7 +150,7 @@ return [
             'failure' => 'Something went wrong when updating.',
         ],
         'delete' => [
-            'success' => 'User updated.',
+            'success' => 'User deleted.',
             'failure' => 'Something went wrong when deleting this user.',
         ],
     ],
