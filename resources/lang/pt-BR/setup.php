@@ -13,6 +13,7 @@ return [
     'setup'             => 'Configuração',
     'title'             => 'Configurar o Cachet',
     'service_details'   => 'Detalhes do serviço',
+    'env_setup'         => 'Configuração do Ambiente',
     'status_page_setup' => 'Configuração da página de status',
     'show_support'      => 'Mostrar apoio ao Cachet?',
     'admin_account'     => 'Conta de administrador',
