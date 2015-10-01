@@ -21,6 +21,10 @@
 - Subscriber notifications via Email
 - Two factor authentication, with Google Authenticator
 
+## Usage in production
+
+The `master` branch of this repository is a development branch and **should not** be used in production. Instead, please check out the latest tag release.
+
 ## Requirements
 
 - PHP 5.5.9+ or newer
