@@ -58,3 +58,7 @@ The demo is reset every half hour.
 ## Translations
 
 A special thank you to our [translators](https://crowdin.com/project/cachet/activity_stream), who have allowed us to share Cachet with the world. If you'd like to contribute translations, please check out our [CrowdIn project](https://crowdin.com/project/cachet).
+
+## Security Vulnerabilities
+
+If you discover a security vulnerability within Cachet, please send an e-mail us at support@alt-three.com. All security vulnerabilities will be promptly addressed.
