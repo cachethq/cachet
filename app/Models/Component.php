@@ -45,14 +45,8 @@ class Component extends Model implements HasPresenter
         'group_id'    => 'int',
         'description' => 'string',
         'link'        => 'string',
+        'deleted_at'  => 'date',
     ];
-
-    /**
-     * The attributes that should be mutated to dates.
-     *
-     * @var array
-     */
-    protected $dates = ['deleted_at'];
 
     /**
      * The fillable properties.

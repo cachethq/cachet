@@ -35,16 +35,11 @@ class Incident extends Model implements HasPresenter
      * @var string[]
      */
     protected $casts = [
-        'id'      => 'int',
-        'visible' => 'integer',
+        'id'           => 'int',
+        'visible'      => 'int',
+        'scheduled_at' => 'date',
+        'deleted_at'   => 'date',
     ];
-
-    /**
-     * The attributes that should be mutated to dates.
-     *
-     * @var string[]
-     */
-    protected $dates = ['scheduled_at', 'deleted_at'];
 
     /**
      * The fillable properties.

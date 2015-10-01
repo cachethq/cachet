@@ -29,14 +29,8 @@ class Subscriber extends Model implements HasPresenter
         'id'          => 'int',
         'email'       => 'string',
         'verify_code' => 'string',
+        'verified_at' => 'date',
     ];
-
-    /**
-     * The attributes that should be mutated to dates.
-     *
-     * @var array
-     */
-    protected $dates = ['verified_at'];
 
     /**
      * The fillable properties.
