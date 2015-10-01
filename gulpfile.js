@@ -7,6 +7,7 @@ elixir(function (mix) {
         .sass('app.scss', 'public/dist/css/app.css')
         .styles([
             'vendor/bower_components/jquery-minicolors/jquery.minicolors.css',
+            'vendor/bower_components/sweetalert/dist/sweetalert.css',
             'public/dist/css/app.css'
         ], 'public/dist/css/all.css', './')
         .scripts([
@@ -23,6 +24,7 @@ elixir(function (mix) {
             'vendor/bower_components/jquery-serialize-object/jquery.serialize-object.js',
             'vendor/bower_components/chartjs/Chart.js',
             'vendor/bower_components/jquery-sparkline/dist/jquery.sparkline.js',
+            'vendor/bower_components/sweetalert/dist/sweetalert.min.js',
             'resources/assets/js/app.js',
             'resources/assets/js/**/*.js'
         ], 'public/dist/js/all.js', './')
