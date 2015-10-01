@@ -48,7 +48,17 @@ $(function() {
         return methodForm;
     })
         .removeAttr('href')
-        .attr('onclick', ' if ($(this).hasClass(\'confirm-action\')) { if(confirm("Are you sure you want to do this?")) { $(this).find("form").submit(); } } else { $(this).find("form").submit(); }');
+        .on('click', function() {
+            var button = $(this);
+
+            if (button.hasClass('confirm-action')) {
+                askConfirmation(function() {
+                    button.find("form").submit();
+                });
+            } else {
+                button.find("form").submit();
+            }
+        });
 
     // Messenger config
     Messenger.options = {
@@ -351,3 +361,16 @@ $(function() {
             .addClass("active");
     }
 });
+
+function askConfirmation(callback) {
+    swal({
+        type: "warning",
+        title: "Confirm your action",
+        text: "Are you sure you want to do this ?",
+        confirmButtonText: "Yes",
+        confirmButtonColor: "#FF6F6F",
+        showCancelButton: true
+    }, function() {
+        callback();
+    });
+}
