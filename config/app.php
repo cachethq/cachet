@@ -117,7 +117,7 @@ return [
     |
     */
 
-    'providers' => [
+    'providers' => array_filter([
 
         /*
          * Laravel Framework Service Providers...
@@ -149,7 +149,7 @@ return [
         /*
          * Packages Service Providers...
          */
-        'AltThree\Emoji\EmojiServiceProvider',
+        env('CACHET_EMOJI', false) ? 'AltThree\Emoji\EmojiServiceProvider' : null,
         'Barryvdh\Cors\CorsServiceProvider',
         'Fideloper\Proxy\TrustedProxyServiceProvider',
         'GrahamCampbell\Binput\BinputServiceProvider',
@@ -173,7 +173,7 @@ return [
         'CachetHQ\Cachet\Providers\RepositoryServiceProvider',
         'CachetHQ\Cachet\Providers\RouteServiceProvider',
 
-    ],
+    ]),
 
     /*
     |--------------------------------------------------------------------------
@@ -221,8 +221,8 @@ return [
         'Validator' => 'Illuminate\Support\Facades\Validator',
         'View'      => 'Illuminate\Support\Facades\View',
 
-        'Setting' => 'CachetHQ\Cachet\Facades\Setting',
-        'Str'     => 'Illuminate\Support\Str',
+        'Setting'   => 'CachetHQ\Cachet\Facades\Setting',
+        'Str'       => 'Illuminate\Support\Str',
 
     ],
 
