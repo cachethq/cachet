@@ -72,9 +72,9 @@ return [
                 'failure' => 'Algo salió mal con el grupo del componente.',
             ],
             'edit' => [
-                'title'   => 'Edit a component group',
-                'success' => 'Component group updated.',
-                'failure' => 'Something went wrong with the component group.',
+                'title'   => 'Editar un grupo de componentes',
+                'success' => 'Grupo de componentes actualizado.',
+                'failure' => 'Algo ha ido mal con el grupo de componentes.',
             ],
         ],
     ],
@@ -147,7 +147,7 @@ return [
     'notifications' => [
         'notifications' => 'Notificaciones',
         'awesome'       => 'Excelente.',
-        'whoops'        => 'Whoops.',
+        'whoops'        => 'Ups.',
     ],
 
     // Welcome modal
