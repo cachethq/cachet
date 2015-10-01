@@ -37,18 +37,18 @@ return [
 
     // Incidents form fields
     'incidents' => [
-        'name'         => 'Nome',
-        'status'       => 'Status',
-        'component'    => 'Componente',
-        'message'      => 'Mensagem',
-        'message-help' => 'Você também pode usar o Markdown.',
-        'scheduled_at' => 'Agendado em :timestamp',
+        'name'               => 'Nome',
+        'status'             => 'Status',
+        'component'          => 'Componente',
+        'message'            => 'Mensagem',
+        'message-help'       => 'Você também pode usar o Markdown.',
+        'scheduled_at'       => 'Agendado em :timestamp',
         'incident_time'      => 'Quando o incidente ocorreu?',
         'notify_subscribers' => 'Notificar asssinantes',
         'visibility'         => 'Visível',
         'public'             => 'Visível pelo público',
         'logged_in_only'     => 'Visível apenas para usuários logados',
-        'templates' => [
+        'templates'          => [
             'name'     => 'Nome',
             'template' => 'Template',
         ],
