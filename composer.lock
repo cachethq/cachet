@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "635e95ea6eb2fbd64b78102d26f9d4e9",
-    "content-hash": "f723198068d969ce796c37cbe2808aa1",
+    "hash": "5fcb1ee71470887bd1dca3ef98e61bc5",
+    "content-hash": "d73310d7327fc68c212b2fb76f30ee7d",
     "packages": [
         {
             "name": "alt-three/emoji",
@@ -1665,7 +1665,7 @@
                     "name": "Jeremy Lindblom",
                     "email": "jeremeamia@gmail.com",
                     "homepage": "https://github.com/jeremeamia",
-                    "role": "developer"
+                    "role": "Developer"
                 }
             ],
             "description": "Serialize Closure objects, including their context and binding",
