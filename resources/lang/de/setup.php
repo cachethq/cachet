@@ -16,7 +16,7 @@ return [
     'env_setup'         => 'Einrichtung der Systemumgebung',
     'status_page_setup' => 'Statusseite einrichten',
     'show_support'      => 'Möchten Sie Cachet unterstützen?',
-    'admin_account'     => 'Administrator Konto',
+    'admin_account'     => 'Administratorkonto',
     'complete_setup'    => 'Installation abschließen',
     'completed'         => 'Cachet wurde erfolgreich konfiguriert!',
     'finish_setup'      => 'Zum Dashboard wechseln',

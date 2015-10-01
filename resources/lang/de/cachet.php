@@ -52,9 +52,9 @@ return [
     // Metrics
     'metrics' => [
         'filter' => [
-            'hourly'  => 'Last 12 Hours',
-            'weekly'  => 'Week',
-            'monthly' => 'Month',
+            'hourly'  => 'Letzte 12 Stunden',
+            'weekly'  => 'Wöchentlich',
+            'monthly' => 'Monatlich',
         ],
     ],
 
@@ -70,8 +70,8 @@ return [
             'unsubscribed' => 'Ihre e-Mail-Abonnement wurde gekündigt.',
             'failure'      => 'Etwas ist mit dem Abonnement schief gelaufen.',
             'verify'       => [
-                'text'           => 'Bitte bestätigen Sie Ihre e-Mail-Abonnement zu  :app_name Status-Aktualisierungen.\\n:link\\nDanke, :app_name',
-                'html-preheader' => 'Bitte bestätigen Sie Ihre e-Mail-Abonnement zu  :app_name Status-Aktualisierungen.',
+                'text'           => 'Bitte bestätigen Sie Ihre e-Mail-Abonnement zu :app_name Status-Aktualisierungen.\\n:link\\nDanke, :app_name',
+                'html-preheader' => 'Bitte bestätigen Sie Ihre e-Mail-Abonnement zu :app_name Status-Aktualisierungen.',
                 'html'           => '<p>Bestätigen Sie bitte Ihr e-Mail-Abonnement für :app_name Statusaktualisierungen.</p><p><a href=":link">:link</a></p><p>Danke, :app_name</p>',
             ],
             'maintenance' => [
