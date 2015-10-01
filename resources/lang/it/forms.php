@@ -100,7 +100,7 @@ return [
             'about-this-page'        => 'Su questa pagina',
             'days-of-incidents'      => 'Quanti giorni di incidenti mostrare',
             'banner'                 => 'Immagine Banner',
-            'banner-help'            => "Si consiglia di caricare file non più grandi di 930px di larghezza.",
+            'banner-help'            => 'Si consiglia di caricare file non più grandi di 930px di larghezza.',
             'analytics_google'       => 'Codice Google Analytics',
             'analytics_gosquared'    => 'Codice GoSquared Analytics',
             'analytics_piwik_url'    => 'URL della tua istanza Piwik (senza http(s)://)',
