@@ -31,7 +31,7 @@ return [
         'password'      => 'Passwort',
         '2fauth'        => 'Authentifizierungscode',
         'invalid'       => 'E-Mail-Adresse oder Passwort ungültig',
-        'invalid-token' => 'Token ungültig',
+        'invalid-token' => 'Token ist ungültig',
         'cookies'       => 'Sie müssen Cookies aktivieren um sich anzumelden.',
     ],
 
@@ -143,5 +143,5 @@ return [
     'remove' => 'Entfernen',
 
     // Other
-    'optional' => '* Optional',
+    'optional' => '* optional',
 ];
