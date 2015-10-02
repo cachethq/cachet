@@ -47,7 +47,7 @@ return [
         'notify_subscribers' => 'Notify subscribers',
         'visibility'         => 'Incident Visibility',
         'public'             => 'Viewable by public',
-        'logged_in_only'     => 'Only visible logged in users',
+        'logged_in_only'     => 'Only visible to logged in users',
         'templates'          => [
             'name'     => 'Name',
             'template' => 'Template',
