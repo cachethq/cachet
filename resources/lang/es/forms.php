@@ -30,7 +30,7 @@ return [
         '2fauth'        => 'Código de Autenticación',
         'invalid'       => 'Dirección de correo o contraseña incorrectos',
         'invalid-token' => 'Token inválido',
-        'cookies'       => 'Debe activar las cookies para porder entrar.',
+        'cookies'       => 'Debes activar las cookies para poder entrar.',
     ],
 
     // Incidents form fields
@@ -91,7 +91,7 @@ return [
             'about-this-page'        => 'Sobre esta página',
             'days-of-incidents'      => '¿Cuántos días de incidentes mostrar?',
             'banner'                 => 'Imagen de inicio',
-            'banner-help'            => 'Se recomienda subir una imagen no más grande de 930px de ancho .',
+            'banner-help'            => 'Se recomienda subir una imagen no más grande de 930px de ancho.',
             'analytics_google'       => 'Código de Google Analytics',
             'analytics_gosquared'    => 'Código de GoSquared Analytics',
             'analytics_piwik_url'    => 'URL de tu instancia Piwik (sin http(s)://)',
@@ -116,9 +116,9 @@ return [
         'email'          => 'Correo electrónico',
         'password'       => 'Contraseña',
         'api-token'      => 'API Token',
-        'api-token-help' => 'Al regenerar su API key revocara todas las aplicaciones existentes.',
+        'api-token-help' => 'Al regenerar tu API key revocarás todas las aplicaciones existentes.',
         '2fa'            => [
-            'help' => 'Habilitar autenticación de dos pasos aumenta la seguridad de tu cuenta. Necesitarás descargar <a href="https://support.google.com/accounts/answer/1066447?hl=en"> Google Authenticator</a> o una aplicación similar a su dispositivo móvil. Al iniciar sesión, te pedirá proporcionar un token generado por la aplicación.',
+            'help' => 'Habilitar autenticación de dos pasos aumenta la seguridad de tu cuenta. Necesitarás descargar <a href="https://support.google.com/accounts/answer/1066447?hl=en"> Google Authenticator</a> o una aplicación similar en tu dispositivo móvil. Al iniciar sesión te pedirá proporcionar un token generado por la aplicación.',
         ],
     ],
 

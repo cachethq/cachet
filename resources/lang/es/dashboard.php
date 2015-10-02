@@ -16,7 +16,7 @@ return [
     // Incidents
     'incidents' => [
         'incidents'                => 'Incidentes',
-        'logged'                   => '{0} No hay incidencias, ¡buen trabajo!|Has registrado una incidencia.|Has reportado <strong>:count</strong> incidencias.',
+        'logged'                   => '{0} No hay incidentes, ¡buen trabajo!|Has registrado un incidente.|Has reportado <strong>:count</strong> incidentes.',
         'incident-create-template' => 'Crear plantilla',
         'incident-templates'       => 'Plantillas de incidente',
         'add'                      => [
@@ -65,7 +65,7 @@ return [
         // Component groups
         'groups' => [
             'groups'        => 'Grupo de componente|Grupos de componente',
-            'no_components' => 'You should add a component group.',
+            'no_components' => 'Deberías añadir un grupo de componentes.',
             'add'           => [
                 'title'   => 'Agregar un grupo',
                 'success' => 'Grupo componente agregado.',
@@ -74,7 +74,7 @@ return [
             'edit' => [
                 'title'   => 'Editar un grupo de componentes',
                 'success' => 'Grupo de componentes actualizado.',
-                'failure' => 'Algo ha ido mal con el grupo de componentes.',
+                'failure' => 'Algo salió mal con el grupo de componentes.',
             ],
         ],
     ],
@@ -153,7 +153,7 @@ return [
     // Welcome modal
     'welcome' => [
         'welcome' => 'Bienvenido a Cachet',
-        'message' => 'La página de estado está casi lista! Tal vez quieras configurar estos ajustes adicionales',
+        'message' => '¡La página de estado está casi lista! Tal vez quieras configurar estos ajustes adicionales',
         'close'   => 'Ir directo al Panel de Control',
         'steps'   => [
             'component'  => 'Crear componentes',
