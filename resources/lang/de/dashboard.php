@@ -76,7 +76,7 @@ return [
             'title'   => 'Komponente hinzufügen',
             'message' => 'Sie sollten eine Komponente erstellen.',
             'success' => 'Komponente erstellt.',
-            'failure' => 'Mit der Komponente ist etwas schiefgegangen.',
+            'failure' => 'Beim Erstellen der Komponente ist etwas schiefgegangen.',
         ],
         'edit' => [
             'title'   => 'Komponente bearbeiten',
@@ -118,7 +118,7 @@ return [
     // Subscribers
     'subscribers' => [
         'subscribers'  => 'Abonnenten',
-        'description'  => 'Abonnenten erhalten e-Mail-Updates, wenn Vorfälle erstellt werden.',
+        'description'  => 'Abonnenten erhalten E-Mail Updates wenn Vorfälle erstellt werden.',
         'verified'     => 'Verifiziert',
         'not_verified' => 'Nicht verifiziert',
         'add'          => [
@@ -129,7 +129,7 @@ return [
         'edit' => [
             'title'   => 'Abonnent aktualisieren',
             'success' => 'Abonnent aktualisiert.',
-            'failure' => 'Bei der Aktualisierung ging etwas schief.',
+            'failure' => 'Bei der Aktualisierung ist etwas schiefgegangen.',
         ],
     ],
 
@@ -151,7 +151,7 @@ return [
         ],
         'delete' => [
             'success' => 'Benutzer aktualisiert.',
-            'failure' => 'Bei dem Löschen dieses Benutzers ging etwas ging schief.',
+            'failure' => 'Bei dem Löschen dieses Benutzers ging etwas schief.',
         ],
     ],
 
@@ -160,8 +160,8 @@ return [
         'settings'  => 'Einstellungen',
         'app-setup' => [
             'app-setup'   => 'Anwendungsinstallation',
-            'images-only' => 'Nur Bilder können hochgeladen werden.',
-            'too-big'     => 'Die von die Ihnen hochgeladene Datei ist zu groß. Laden Sie ein Bild welches kleiner als :size ist hoch',
+            'images-only' => 'Es können nur Bilder hochgeladen werden.',
+            'too-big'     => 'Die von Ihnen hochgeladene Datei ist zu groß. Laden Sie ein Bild welches kleiner als :size ist hoch',
         ],
         'security' => [
             'security'   => 'Sicherheit',
@@ -181,10 +181,10 @@ return [
 
     // Login
     'login' => [
-        'login'      => 'Login',
-        'logged_in'  => 'Sie sind eingeloggt.',
+        'login'      => 'Anmelden',
+        'logged_in'  => 'Sie sind angemeldet.',
         'welcome'    => 'Willkommen zurück!',
-        'two-factor' => 'Bitte geben Sie Ihr Token ein.',
+        'two-factor' => 'Bitte geben Sie Ihren Token ein.',
     ],
 
     // Sidebar footer
