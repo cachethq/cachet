@@ -191,7 +191,7 @@ return [
     // Notifications
     'notifications' => [
         'notifications' => 'Notifiche',
-        'awesome'       => 'Eccezionale.',
+        'awesome'       => 'Fantastico.',
         'whoops'        => 'Whoops.',
     ],
 
@@ -199,7 +199,7 @@ return [
     'welcome' => [
         'welcome' => 'Benvenuto in Cachet',
         'message' => 'La tua Status Page è quasi pronta! Potresti voler configurare queste impostazioni aggiuntive',
-        'close'   => 'Vai direttamente alla mia dashboard',
+        'close'   => 'Vai alla dashboard',
         'steps'   => [
             'component'  => 'Crea componenti',
             'incident'   => 'Crea incidenti',
