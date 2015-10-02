@@ -21,6 +21,8 @@ use CachetHQ\Cachet\Models\User;
 use DateInterval;
 use DateTime;
 use Illuminate\Console\Command;
+use Illuminate\Console\ConfirmableTrait;
+use Symfony\Component\Console\Input\InputOption;
 
 /**
  * This is the demo seeder command.
@@ -29,6 +31,8 @@ use Illuminate\Console\Command;
  */
 class DemoSeederCommand extends Command
 {
+    use ConfirmableTrait;
+
     /**
      * The console command name.
      *
@@ -50,6 +54,10 @@ class DemoSeederCommand extends Command
      */
     public function fire()
     {
+        if (!$this->confirmToProceed()) {
+            return;
+        }
+
         $this->seedComponentGroups();
         $this->seedComponents();
         $this->seedIncidents();
@@ -57,6 +65,8 @@ class DemoSeederCommand extends Command
         $this->seedMetrics();
         $this->seedSettings();
         $this->seedUsers();
+
+        $this->info('Database seeded with demo data successfully!');
     }
 
     /**
@@ -305,5 +315,17 @@ class DemoSeederCommand extends Command
         foreach ($users as $user) {
             User::create($user);
         }
+    }
+
+    /**
+     * Get the console command options.
+     *
+     * @return array
+     */
+    protected function getOptions()
+    {
+        return [
+            ['force', null, InputOption::VALUE_NONE, 'Force the operation to run when in production.'],
+        ];
     }
 }
