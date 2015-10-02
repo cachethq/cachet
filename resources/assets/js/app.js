@@ -366,7 +366,7 @@ function askConfirmation(callback) {
     swal({
         type: "warning",
         title: "Confirm your action",
-        text: "Are you sure you want to do this ?",
+        text: "Are you sure you want to do this?",
         confirmButtonText: "Yes",
         confirmButtonColor: "#FF6F6F",
         showCancelButton: true
