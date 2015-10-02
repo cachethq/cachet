@@ -350,4 +350,7 @@ $(function() {
             .filter(":lt(" + (next) + ")")
             .addClass("active");
     }
+
+    // Password strength
+    $('.password-strength').strengthify();
 });
