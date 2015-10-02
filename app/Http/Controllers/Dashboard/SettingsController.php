@@ -168,7 +168,9 @@ class SettingsController extends Controller
             return Redirect::route('dashboard.settings.setup')->withErrors(trans('dashboard.settings.edit.failure'));
         }
 
-        Lang::setLocale(Binput::get('app_locale'));
+        if (Binput::has('app_locale')) {
+            Lang::setLocale(Binput::get('app_locale'));
+        }
 
         return Redirect::route('dashboard.settings.setup')
             ->withSuccess(trans('dashboard.settings.edit.success'));
