@@ -23,3 +23,4 @@
 </footer>
 
 @include("partials.analytics")
+@include("partials.javascript-translations")

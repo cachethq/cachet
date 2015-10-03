@@ -9,5 +9,6 @@
             @yield('content')
         </div>
     </div>
+    @include("partials.javascript-translations")
 </body>
 </html>
