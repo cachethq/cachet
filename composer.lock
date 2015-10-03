@@ -4,8 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4b5a5184752be8d270d8be97d85d26fd",
-    "content-hash": "dc1e35be9fd2c68b8409f2512d3daed6",
+    "hash": "5a44b272be0c5152624d2abaf17a761d",
     "packages": [
         {
             "name": "alt-three/emoji",
@@ -3503,6 +3502,49 @@
                 "testing"
             ],
             "time": "2015-04-02 19:54:00"
+        },
+        {
+            "name": "philo/laravel-translate",
+            "version": "v2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PhiloNL/laravel-translate.git",
+                "reference": "62fa20ccb2657a43df4c2426752083a4045419ba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PhiloNL/laravel-translate/zipball/62fa20ccb2657a43df4c2426752083a4045419ba",
+                "reference": "62fa20ccb2657a43df4c2426752083a4045419ba",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.*",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Philo\\Translate\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Philo Hermans",
+                    "email": "me@philohermans.com"
+                }
+            ],
+            "description": "Translation manager for Laravel 5",
+            "keywords": [
+                "laravel",
+                "manager",
+                "translate",
+                "translation"
+            ],
+            "time": "2015-02-02 21:00:32"
         },
         {
             "name": "phpdocumentor/reflection-docblock",
