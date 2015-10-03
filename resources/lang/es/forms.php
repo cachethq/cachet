@@ -30,7 +30,7 @@ return [
         '2fauth'        => 'Código de Autenticación',
         'invalid'       => 'Dirección de correo o contraseña incorrectos',
         'invalid-token' => 'Token inválido',
-        'cookies'       => 'You must enable cookies to login.',
+        'cookies'       => 'Debes activar las cookies para poder entrar.',
     ],
 
     // Incidents form fields
@@ -69,9 +69,9 @@ return [
         'description'      => 'Descripción',
         'description-help' => 'Puedes usar también Markdown.',
         'display-chart'    => '¿Vizualizar gráfica en la página de estado?',
-        'calc_type'        => 'Calculation of metrics',
-        'type_sum'         => 'Sum',
-        'type_avg'         => 'Average',
+        'calc_type'        => 'Cálculo de métricas',
+        'type_sum'         => 'Suma',
+        'type_avg'         => 'Media',
 
         'points' => [
             'value' => 'Valor',
@@ -91,11 +91,11 @@ return [
             'about-this-page'        => 'Sobre esta página',
             'days-of-incidents'      => '¿Cuántos días de incidentes mostrar?',
             'banner'                 => 'Imagen de inicio',
-            'banner-help'            => 'Se recomienda subir una imagen no más grande de 930px de ancho .',
-            'analytics_google'       => 'Google Analytics code',
-            'analytics_gosquared'    => 'GoSquared Analytics code',
-            'analytics_piwik_url'    => 'URL of your Piwik instance (without http(s)://)',
-            'analytics_piwik_siteid' => 'Piwik\'s site id',
+            'banner-help'            => 'Se recomienda subir una imagen no más grande de 930px de ancho.',
+            'analytics_google'       => 'Código de Google Analytics',
+            'analytics_gosquared'    => 'Código de GoSquared Analytics',
+            'analytics_piwik_url'    => 'URL de tu instancia Piwik (sin http(s)://)',
+            'analytics_piwik_siteid' => 'Id sitio Piwik',
         ],
         'security' => [
             'allowed-domains'      => 'Dominios permitidos',
@@ -107,7 +107,7 @@ return [
         'theme' => [
             'background-color' => 'Color de fondo',
             'text-color'       => 'Color de Texto',
-            'dashboard-login'  => 'Show dashboard button in the footer?',
+            'dashboard-login'  => '¿Mostrar botón del panel en el pie?',
         ],
     ],
 
@@ -116,9 +116,9 @@ return [
         'email'          => 'Correo electrónico',
         'password'       => 'Contraseña',
         'api-token'      => 'API Token',
-        'api-token-help' => 'Al regenerar su API key revocara todas las aplicaciones existentes.',
+        'api-token-help' => 'Al regenerar tu API key revocarás todas las aplicaciones existentes.',
         '2fa'            => [
-            'help' => 'Habilitar autenticación de dos pasos aumenta la seguridad de tu cuenta. Necesitarás descargar <a href="https://support.google.com/accounts/answer/1066447?hl=en"> Google Authenticator</a> o una aplicación similar a su dispositivo móvil. Al iniciar sesión, te pedirá proporcionar un token generado por la aplicación.',
+            'help' => 'Habilitar autenticación de dos pasos aumenta la seguridad de tu cuenta. Necesitarás descargar <a href="https://support.google.com/accounts/answer/1066447?hl=en"> Google Authenticator</a> o una aplicación similar en tu dispositivo móvil. Al iniciar sesión te pedirá proporcionar un token generado por la aplicación.',
         ],
     ],
 

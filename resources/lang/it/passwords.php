@@ -22,10 +22,10 @@ return [
     |
     */
 
-    'password' => 'Passwords must be at least six characters and match the confirmation.',
-    'user'     => 'We can\'t find a user with that e-mail address.',
-    'token'    => 'This password reset token is invalid.',
-    'sent'     => 'Password reminder sent!',
-    'reset'    => 'Password has been reset!',
+    'password' => 'Le password devono essere di almeno 6 caratteri e devono coincidere.',
+    'reset'    => 'La password è stata reimpostata!',
+    'sent'     => 'Promemoria della password inviato!',
+    'token'    => 'Questo token per la reimpostazione della password non è valido.',
+    'user'     => 'Non esiste un utente associato a questo indirizzo e-mail.',
 
 ];

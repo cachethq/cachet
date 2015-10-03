@@ -52,9 +52,9 @@ return [
     // Metrics
     'metrics' => [
         'filter' => [
-            'hourly'  => 'Last 12 Hours',
-            'weekly'  => 'Week',
-            'monthly' => 'Month',
+            'hourly'  => 'Letzte 12 Stunden',
+            'weekly'  => 'Wöchentlich',
+            'monthly' => 'Monatlich',
         ],
     ],
 
@@ -63,16 +63,16 @@ return [
         'subscribe' => 'Abonnieren Sie um die neuesten Updates zu erhalten.',
         'button'    => 'Abonnieren',
         'email'     => [
-            'subscribe'    => 'Aktualisierungen per e-Mail abonnieren.',
-            'subscribed'   => 'Sie haben e-Mail-Benachrichtigungen abonniert, überprüfen Sie bitte Ihre e-Mail, um Ihr Abonnement zu bestätigen.',
-            'verified'     => 'Ihre e-Mail-Abonnement ist bestätigt worden. Danke!',
-            'unsubscribe'  => 'Von e-Mail-Updates deabonnieren.',
-            'unsubscribed' => 'Ihre e-Mail-Abonnement wurde gekündigt.',
+            'subscribe'    => 'Aktualisierungen per E-Mail abonnieren.',
+            'subscribed'   => 'Sie haben E-Mail-Benachrichtigungen abonniert, überprüfen Sie bitte Ihre E-Mail, um Ihr Abonnement zu bestätigen.',
+            'verified'     => 'Ihre E-Mail-Abonnement ist bestätigt worden. Danke!',
+            'unsubscribe'  => 'Von E-Mail-Updates deabonnieren.',
+            'unsubscribed' => 'Ihre E-Mail-Abonnement wurde gekündigt.',
             'failure'      => 'Etwas ist mit dem Abonnement schief gelaufen.',
             'verify'       => [
-                'text'           => 'Bitte bestätigen Sie Ihre e-Mail-Abonnement zu  :app_name Status-Aktualisierungen.\\n:link\\nDanke, :app_name',
-                'html-preheader' => 'Bitte bestätigen Sie Ihre e-Mail-Abonnement zu  :app_name Status-Aktualisierungen.',
-                'html'           => '<p>Bestätigen Sie bitte Ihr e-Mail-Abonnement für :app_name Statusaktualisierungen.</p><p><a href=":link">:link</a></p><p>Danke, :app_name</p>',
+                'text'           => 'Bitte bestätigen Sie Ihre E-Mail-Abonnement zu :app_name Status-Aktualisierungen.\\n:link\\nDanke, :app_name',
+                'html-preheader' => 'Bitte bestätigen Sie Ihre E-Mail-Abonnement zu :app_name Status-Aktualisierungen.',
+                'html'           => '<p>Bestätigen Sie bitte Ihr E-Mail-Abonnement für :app_name Statusaktualisierungen.</p><p><a href=":link">:link</a></p><p>Danke, :app_name</p>',
             ],
             'maintenance' => [
                 'text'           => 'Neue Wartung wurde für :app_name geplant.\\nDanke, :app_name',

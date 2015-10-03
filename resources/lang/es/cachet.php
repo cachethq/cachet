@@ -22,11 +22,11 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => 'No hay ninguna incidencia reportada.',
+        'none'          => 'No hay ningún incidente reportado.',
         'past'          => 'Incidentes anteriores',
         'previous_week' => 'Semana anterior',
         'next_week'     => 'Siguiente semana',
-        'none'          => 'No hay ninguna incidencia reportada.',
+        'none'          => 'No hay ningún incidente reportado.',
         'status'        => [
             0 => '',
             1 => 'Investigando',
@@ -50,37 +50,37 @@ return [
     // Metrics
     'metrics' => [
         'filter' => [
-            'hourly'  => 'Last 12 Hours',
-            'weekly'  => 'Week',
-            'monthly' => 'Month',
+            'hourly'  => 'Últimas 12 horas',
+            'weekly'  => 'Semana',
+            'monthly' => 'Mes',
         ],
     ],
 
     // Subscriber
     'subscriber' => [
-        'subscribe' => 'Subscribe to get the most recent updates.',
-        'button'    => 'Subscribe',
+        'subscribe' => 'Suscríbete para recibir las actualizaciones más recientes.',
+        'button'    => 'Suscribirse',
         'email'     => [
-            'subscribe'    => 'Subscribe to email updates.',
-            'subscribed'   => 'You\'ve been subscribed to email notifications, please check your email to confirm your subscription.',
-            'verified'     => 'Your email subscription has been confirmed. Thank you!',
-            'unsubscribe'  => 'Unsuscribe from email updates.',
-            'unsubscribed' => 'Your email subscription has been cancelled.',
-            'failure'      => 'Something went wrong with the subscription.',
+            'subscribe'    => 'Suscríbete a las actualizaciones por correo electrónico.',
+            'subscribed'   => 'Se te ha suscrito a la la lista de notificaciones por correo electónico, por favor comprueba tu email para confirmar la suscripción.',
+            'verified'     => 'Tu suscripción a la lista de notificaciones por correo electrónico ha sido confirmada. ¡Gracias!',
+            'unsubscribe'  => 'Desuscribirse de la lista de notificaciones por correo electrónico.',
+            'unsubscribed' => 'Tu suscripción a la lista de notificaciones por correo electrónico has sido cancelada.',
+            'failure'      => 'Algo salió mal con la suscripción.',
             'verify'       => [
-                'text'           => "Please confirm your email subscription to :app_name status updates.\n:link\nThank you, :app_name",
-                'html-preheader' => 'Please confirm your email subscription to :app_name status updates.',
-                'html'           => '<p>Please confirm your email subscription to :app_name status updates.</p><p><a href=":link">:link</a></p><p>Thank you, :app_name</p>',
+                'text'           => "Por favor confirma tu suscripción por correo electrónico a las actualizaciones de estado de :app_name.\n:link\nGracias, :app_name",
+                'html-preheader' => 'Por favor confirma tu suscripción por correo electrónico a las actualizaciones de estado de :app_name.',
+                'html'           => '<p>Por favor confirma tu suscripción por correo electrónico a las actualizaciones de estado de :app_name.</p><p><a href=":link">:link</a></p><p>Gracias, :app_name</p>',
             ],
             'maintenance' => [
-                'text'           => "New maintenance has been scheduled on :app_name.\nThank you, :app_name",
-                'html-preheader' => 'New maintenance has been scheduled on :app_name.',
-                'html'           => '<p>New maintenance has been scheduled on :app_name.</p><p>Thank you, :app_name</p>',
+                'text'           => "Se ha programado una tarea de mantenimiento en :app_name.\nGracias, :app_name",
+                'html-preheader' => 'Se ha programado una tarea de mantenimiento en :app_name.',
+                'html'           => '<p>Se ha programado una tarea de mantenimiento en :app_name.</p><p>Gracias, :app_name</p>',
             ],
             'incident' => [
-                'text'           => "New incident has been reported on :app_name.\nThank you, :app_name",
-                'html-preheader' => 'New incident has been reported on :app_name.',
-                'html'           => '<p>New incident has been reported on :app_name.</p><p>Thank you, :app_name</p>',
+                'text'           => "Se ha informado de un nuevo incidente en :app_name.\nGracias, :app_name",
+                'html-preheader' => 'Se ha informado de un nuevo incidente en :app_name.',
+                'html'           => '<p>Se ha informado de un nuevo incidente en :app_name.</p><p>Gracias, :app_name</p>',
             ],
         ],
     ],

@@ -26,7 +26,8 @@
                         </div>
                         <div class="form-group">
                             <label>{{ trans('forms.user.password') }}</label>
-                            <input type="password" class="form-control" name="password" value="" {{ !$current_user->isAdmin ? "disabled": "" }}>
+                            <input type="password" class="form-control password-strength" name="password" value="" {{ !$current_user->isAdmin ? "disabled": "" }}>
+                            <div class="strengthify-wrapper"></div>
                         </div>
                     </fieldset>
 

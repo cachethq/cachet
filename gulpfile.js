@@ -25,6 +25,7 @@ elixir(function (mix) {
             'vendor/bower_components/chartjs/Chart.js',
             'vendor/bower_components/jquery-sparkline/dist/jquery.sparkline.js',
             'vendor/bower_components/sweetalert/dist/sweetalert.min.js',
+            'resources/assets/js/password-strength.js',
             'resources/assets/js/app.js',
             'resources/assets/js/**/*.js'
         ], 'public/dist/js/all.js', './')

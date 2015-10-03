@@ -31,7 +31,7 @@ return [
         'password'      => 'Passwort',
         '2fauth'        => 'Authentifizierungscode',
         'invalid'       => 'E-Mail-Adresse oder Passwort ungültig',
-        'invalid-token' => 'Token ungültig',
+        'invalid-token' => 'Token ist ungültig',
         'cookies'       => 'Sie müssen Cookies aktivieren um sich anzumelden.',
     ],
 
@@ -105,7 +105,7 @@ return [
             'analytics_gosquared'    => 'GoSquared Analytics Code',
             'analytics_piwik_url'    => 'URL der Piwik-Instanz (ohne http(s)://)',
             'analytics_piwik_siteid' => 'Piwik\'s Seiten-ID',
-            'subscribers'            => 'Personen die Anmeldung für e-Mail-Benachrichtigung erlauben?',
+            'subscribers'            => 'Personen die Anmeldung für E-Mail-Benachrichtigung erlauben?',
         ],
         'security' => [
             'allowed-domains'      => 'Erlaubte Domains',
@@ -143,5 +143,5 @@ return [
     'remove' => 'Entfernen',
 
     // Other
-    'optional' => '* Optional',
+    'optional' => '* optional',
 ];

@@ -26,7 +26,8 @@
                         </div>
                         <div class="form-group">
                             <label>{{ trans('forms.user.password') }}</label>
-                            <input type="password" class="form-control" name="password" value="">
+                            <input type="password" class="form-control password-strength" name="password" value="">
+                            <div class="strengthify-wrapper"></div>
                         </div>
                         @if($current_user->isAdmin)
                         <div class="form-group">
