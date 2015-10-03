@@ -13,7 +13,7 @@ namespace CachetHQ\Cachet\Commands\Metric;
 
 use CachetHQ\Cachet\Models\Metric;
 
-class AddMetricPointCommand
+final class AddMetricPointCommand
 {
     /**
      * The metric to add.

@@ -13,7 +13,7 @@ namespace CachetHQ\Cachet\Commands\ComponentGroup;
 
 use CachetHQ\Cachet\Models\ComponentGroup;
 
-class UpdateComponentGroupCommand
+final class UpdateComponentGroupCommand
 {
     /**
      * The component group.

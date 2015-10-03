@@ -13,7 +13,7 @@ namespace CachetHQ\Cachet\Commands\User;
 
 use CachetHQ\Cachet\Models\User;
 
-class RemoveUserCommand
+final class RemoveUserCommand
 {
     /**
      * The user to remove.

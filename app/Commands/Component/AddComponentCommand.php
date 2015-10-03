@@ -11,7 +11,7 @@
 
 namespace CachetHQ\Cachet\Commands\Component;
 
-class AddComponentCommand
+final class AddComponentCommand
 {
     /**
      * The component name.

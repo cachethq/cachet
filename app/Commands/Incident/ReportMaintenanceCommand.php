@@ -11,7 +11,7 @@
 
 namespace CachetHQ\Cachet\Commands\Incident;
 
-class ReportMaintenanceCommand
+final class ReportMaintenanceCommand
 {
     /**
      * The maintenance name.

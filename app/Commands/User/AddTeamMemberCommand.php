@@ -11,7 +11,7 @@
 
 namespace CachetHQ\Cachet\Commands\User;
 
-class AddTeamMemberCommand
+final class AddTeamMemberCommand
 {
     /**
      * The user username.
@@ -40,6 +40,17 @@ class AddTeamMemberCommand
      * @var int
      */
     public $level;
+
+    /**
+     * The validation rules.
+     *
+     * @var string[]
+     */
+    public $rules = [
+        'name'     => 'required|string',
+        'password' => 'string',
+        'level'    => 'integer',
+    ];
 
     /**
      * Create a new add team member command instance.
