@@ -13,7 +13,7 @@ namespace CachetHQ\Cachet\Commands\Incident;
 
 use CachetHQ\Cachet\Models\Incident;
 
-class UpdateIncidentCommand
+final class UpdateIncidentCommand
 {
     /**
      * The incident to update.

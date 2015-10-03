@@ -13,12 +13,12 @@ namespace CachetHQ\Cachet\Commands\Subscriber;
 
 use CachetHQ\Cachet\Models\Subscriber;
 
-class VerifySubscriberCommand
+final class VerifySubscriberCommand
 {
     /**
      * The subscriber to verify.
      *
-     * @var string
+     * @var \CachetHQ\Cachet\Models\Subscriber
      */
     public $subscriber;
 

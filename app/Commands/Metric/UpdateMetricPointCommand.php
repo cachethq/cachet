@@ -14,7 +14,7 @@ namespace CachetHQ\Cachet\Commands\Metric;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\MetricPoint;
 
-class UpdateMetricPointCommand
+final class UpdateMetricPointCommand
 {
     /**
      * The metric point.
