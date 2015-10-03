@@ -1,196 +1,166 @@
 <?php
 
-/*
- * This file is part of Cachet.
- *
- * (c) Alt Three Services Limited
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
+# modified at 03-10-2015 06:38
 
-return [
-
-    'dashboard' => 'Panel sterowania',
-
-    // Incidents
-    'incidents' => [
-        'title'                    => 'Incydenty i kalendarz',
-        'incidents'                => 'Incydenty',
-        'logged'                   => '{0} Brak incydentów, gratulacje.| Zapisałeś jeden incydent.|Zapisałeś <strong>:count</strong> incydentów.',
-        'incident-create-template' => 'Utwórz szablon',
-        'incident-templates'       => 'Szablony incydentów',
-        'add'                      => [
-            'title'   => 'Dodaj incydent',
-            'success' => 'Incydent dodany.',
-            'failure' => 'Coś poszło nie tak z incydentem.',
-        ],
-        'edit' => [
-            'title'   => 'Aktualizuj incydent',
-            'success' => 'Incydent zaktualizowany.',
-            'failure' => 'Coś poszło nie tak z incydentem.',
-        ],
-
-        // Incident templates
-        'templates' => [
-            'title' => 'Szablony incydentów',
-            'add'   => [
-                'title'   => 'Stwórz szablon incydentu.',
-                'success' => 'Szablon utworzony.',
-                'failure' => 'Coś poszło nie tak z szablonem incydentu.',
-            ],
-            'edit' => [
-                'title'   => 'Edytuj szablon',
-                'success' => 'Szablon został zaktualizowany!',
-                'failure' => 'Coś poszło nie tak przy aktualizacji szablonu.',
-            ],
-        ],
-    ],
-
-    // Incident Maintenance
-    'schedule' => [
-        'schedule'     => 'Zaplanowana przerwa',
-        'scheduled_at' => 'Zaplanowana data :timestamp',
-        'add'          => [
-            'title'   => 'Dodaj planową przerwę',
-            'success' => 'Zaplanowana przerwa dodana.',
-            'failure' => 'Coś poszło nie tak przy dodawaniu przerwy.',
-        ],
-        'edit' => [
-            'title'   => 'Aktualizuj zaplanowaną przerwę',
-            'success' => 'Przerwa zaktualizowana!',
-            'failure' => 'Coś poszło nie tak przy aktualizacji przerwy.',
-        ],
-        'delete' => [
-            'success' => 'Przerwa została skasowana i nie będzie pokazywana na stronie statusowej.',
-            'failure' => 'Nie można było skasować przerwy. Spróbuj ponownie.',
-        ],
-    ],
-
-    // Components
-    'components' => [
-        'components'         => 'Komponenty',
-        'component_statuses' => 'Statusy komponentów',
-        'listed_group'       => 'Zgrupowane pod :name',
-        'add'                => [
-            'title'   => 'Dodaj komponent',
-            'message' => 'Powinieneś doddać komponent.',
-            'success' => 'Komponent utworzony.',
-            'failure' => 'Coś poszło nie tak przy tworzeniu komponentu.',
-        ],
-        'edit' => [
-            'title'   => 'Edytuj komponent',
-            'success' => 'Komponent zaktualizowany.',
-            'failure' => 'Coś poszło nie tak przy aktualizacji komponent.',
-        ],
-
-        // Component groups
-        'groups' => [
-            'groups'        => 'Grupa komponenów|Grupy komponentów',
-            'no_components' => 'You should add a component group.',
-            'add'           => [
-                'title'   => 'Dodaj grupę komponentów',
-                'success' => 'Grupa komponentów utworzona.',
-                'failure' => 'Coś poszło nie tak przy tworzeniu grupy.',
-            ],
-            'edit' => [
-                'title'   => 'Edytuj grupę komponentów',
-                'success' => 'Grupa komponentów zaktualizaowana.',
-                'failure' => 'Coś poszło nie tak przy aktualizacji grupy.',
-            ],
-        ],
-    ],
-
-    // Metrics
-    'metrics' => [
-        'metrics' => 'Metryki',
-        'add'     => [
-            'title'   => 'Utwórz metrykę',
-            'success' => 'Metryka utworzona.',
-            'failure' => 'Coś poszło nie tak z tworzeniem metryki.',
-        ],
-        'edit' => [
-            'title'   => 'Edytuj metrykę',
-            'success' => 'Metryka zaktualizowana.',
-            'failure' => 'Coś poszło nie tak przy aktualizacji metryki.',
-        ],
-    ],
-
-    // Team
-    'team' => [
-        'team'        => 'Zespół',
-        'member'      => 'Członek',
-        'profile'     => 'Profil',
-        'description' => 'Członkowie zespołu będą mogli dodawać i modyfikować komponenty i incydenty.',
-        'add'         => [
-            'title'   => 'Dodaj nowego członka zespołu',
-            'success' => 'Dodano członka zespołu.',
-            'failure' => 'Coś poszło nie tak z dodawaniem do zespołu.',
-        ],
-        'edit' => [
-            'title'   => 'Aktualizuj profil',
-            'success' => 'Profil zaktualizowany.',
-            'failure' => 'Coś poszło nie tak przy aktualizacji.',
-        ],
-    ],
-
-    // Settings
-    'settings' => [
-        'settings'  => 'Ustawienia',
-        'app-setup' => [
-            'app-setup'   => 'Ustawienia aplikacji',
-            'images-only' => 'Można wgrywać tylko pliki graficzne.',
-            'too-big'     => 'Wgrany plik jest zbyt duży. Wgraj plik mnijeszy niż :size',
-        ],
-        'security' => [
-            'security'   => 'Bezpieczeństwo',
-            'two-factor' => 'Użytkownicy bez autentykacji dwuetapowej',
-        ],
-        'stylesheet' => [
-            'stylesheet' => 'Stylesheet',
-        ],
-        'theme' => [
-            'theme' => 'Skórka',
-        ],
-        'edit' => [
-            'success' => 'Ustawienia zapisane.',
-            'failure' => 'Ustawienia nie mogły być zapisane.',
-        ],
-    ],
-
-    // Login
-    'login' => [
-        'login'      => 'Zaloguj',
-        'logged_in'  => 'Jesteś zalogowany.',
-        'welcome'    => 'Witam ponownie!',
-        'two-factor' => 'Wpisz swój kod.',
-    ],
-
-    // Sidebar footer
-    'help'        => 'Pomoc',
-    'status_page' => 'Strona statusu',
-    'logout'      => 'Wyloguj',
-
-    // Notifications
-    'notifications' => [
-        'notifications' => 'Powiadomienia',
-        'awesome'       => 'Super.',
-        'whoops'        => 'Ojej.',
-    ],
-
-    // Welcome modal
-    'welcome' => [
-        'welcome' => 'Witamy w Cachet',
-        'message' => 'Twoja strona statusowa jest już prawie gotowa! Możesz skonfigurować dodatkowe ustawienia',
-        'close'   => 'Przejdź do mojego panelu',
-        'steps'   => [
-            'component'  => 'Utwórz komponenty',
-            'incident'   => 'Utwórz incydenty',
-            'customize'  => 'Personalizacja',
-            'team'       => 'Dodaj użytkowników',
-            'api'        => 'Wygeneruj token API',
-            'two-factor' => 'Autentykacja dwuetapowa',
-        ],
-    ],
-
-];
+return  array(
+	'components'      =>  array(
+		'add'                  =>  array(
+			'failure'              => 'Coś poszło nie tak przy tworzeniu komponentu.',
+			'message'              => 'Powinieneś doddać komponent.',
+			'success'              => 'Komponent utworzony.',
+			'title'                => 'Dodaj komponent',
+		),
+		'component_statuses'   => 'Statusy komponentów',
+		'components'           => 'Komponenty',
+		'edit'                 =>  array(
+			'failure'              => 'Coś poszło nie tak przy aktualizacji komponent.',
+			'success'              => 'Komponent zaktualizowany.',
+			'title'                => 'Edytuj komponent',
+		),
+		'groups'               =>  array(
+			'add'                  =>  array(
+				'failure'              => 'Coś poszło nie tak przy tworzeniu grupy.',
+				'success'              => 'Grupa komponentów utworzona.',
+				'title'                => 'Dodaj grupę komponentów',
+			),
+			'edit'                 =>  array(
+				'failure'              => 'Coś poszło nie tak przy aktualizacji grupy.',
+				'success'              => 'Grupa komponentów zaktualizaowana.',
+				'title'                => 'Edytuj grupę komponentów',
+			),
+			'groups'               => 'Grupa komponenów|Grupy komponentów',
+			'no_components'        => 'You should add a component group.',
+		),
+		'listed_group'         => 'Zgrupowane pod :name',
+		'order'                =>  array(
+			'success'              => 'Component orders updated.',
+		),
+	),
+	'dashboard'       => 'Panel sterowania',
+	'help'            => 'Pomoc',
+	'incidents'       =>  array(
+		'add'                        =>  array(
+			'failure'                    => 'Coś poszło nie tak z incydentem.',
+			'success'                    => 'Incydent dodany.',
+			'title'                      => 'Dodaj incydent',
+		),
+		'edit'                       =>  array(
+			'failure'                    => 'Coś poszło nie tak z incydentem.',
+			'success'                    => 'Incydent zaktualizowany.',
+			'title'                      => 'Aktualizuj incydent',
+		),
+		'incident-create-template'   => 'Utwórz szablon',
+		'incident-templates'         => 'Szablony incydentów',
+		'incidents'                  => 'Incydenty',
+		'logged'                     => '{0} Brak incydentów, gratulacje.| Zapisałeś jeden incydent.|Zapisałeś <strong>:count</strong> incydentów.',
+		'templates'                  =>  array(
+			'add'                        =>  array(
+				'failure'                    => 'Coś poszło nie tak z szablonem incydentu.',
+				'success'                    => 'Szablon utworzony.',
+				'title'                      => 'Stwórz szablon incydentu.',
+			),
+			'edit'                       =>  array(
+				'failure'                    => 'Coś poszło nie tak przy aktualizacji szablonu.',
+				'success'                    => 'Szablon został zaktualizowany!',
+				'title'                      => 'Edytuj szablon',
+			),
+			'title'                      => 'Szablony incydentów',
+		),
+		'title'                      => 'Incydenty i kalendarz',
+	),
+	'login'           =>  array(
+		'logged_in'       => 'Jesteś zalogowany.',
+		'login'           => 'Zaloguj',
+		'two-factor'      => 'Wpisz swój kod.',
+		'welcome'         => 'Witam ponownie!',
+	),
+	'logout'          => 'Wyloguj',
+	'metrics'         =>  array(
+		'add'             =>  array(
+			'failure'         => 'Coś poszło nie tak z tworzeniem metryki.',
+			'success'         => 'Metryka utworzona.',
+			'title'           => 'Utwórz metrykę',
+		),
+		'edit'            =>  array(
+			'failure'         => 'Coś poszło nie tak przy aktualizacji metryki.',
+			'success'         => 'Metryka zaktualizowana.',
+			'title'           => 'Edytuj metrykę',
+		),
+		'metrics'         => 'Metryki',
+	),
+	'notifications'   =>  array(
+		'awesome'         => 'Super.',
+		'notifications'   => 'Powiadomienia',
+		'whoops'          => 'Ojej.',
+	),
+	'schedule'        =>  array(
+		'add'             =>  array(
+			'failure'         => 'Coś poszło nie tak przy dodawaniu przerwy.',
+			'success'         => 'Zaplanowana przerwa dodana.',
+			'title'           => 'Dodaj planową przerwę',
+		),
+		'delete'          =>  array(
+			'failure'         => 'Nie można było skasować przerwy. Spróbuj ponownie.',
+			'success'         => 'Przerwa została skasowana i nie będzie pokazywana na stronie statusowej.',
+		),
+		'edit'            =>  array(
+			'failure'         => 'Coś poszło nie tak przy aktualizacji przerwy.',
+			'success'         => 'Przerwa zaktualizowana!',
+			'title'           => 'Aktualizuj zaplanowaną przerwę',
+		),
+		'schedule'        => 'Zaplanowana przerwa',
+		'scheduled_at'    => 'Zaplanowana data :timestamp',
+	),
+	'settings'        =>  array(
+		'app-setup'       =>  array(
+			'app-setup'       => 'Ustawienia aplikacji',
+			'images-only'     => 'Można wgrywać tylko pliki graficzne.',
+			'too-big'         => 'Wgrany plik jest zbyt duży. Wgraj plik mnijeszy niż :size',
+		),
+		'edit'            =>  array(
+			'failure'         => 'Ustawienia nie mogły być zapisane.',
+			'success'         => 'Ustawienia zapisane.',
+		),
+		'security'        =>  array(
+			'security'        => 'Bezpieczeństwo',
+			'two-factor'      => 'Użytkownicy bez autentykacji dwuetapowej',
+		),
+		'settings'        => 'Ustawienia',
+		'stylesheet'      =>  array(
+			'stylesheet'      => 'Stylesheet',
+		),
+		'theme'           =>  array(
+			'theme'           => 'Skórka',
+		),
+	),
+	'status_page'     => 'Strona statusu',
+	'team'            =>  array(
+		'add'             =>  array(
+			'failure'         => 'Coś poszło nie tak z dodawaniem do zespołu.',
+			'success'         => 'Dodano członka zespołu.',
+			'title'           => 'Dodaj nowego członka zespołu',
+		),
+		'description'     => 'Członkowie zespołu będą mogli dodawać i modyfikować komponenty i incydenty.',
+		'edit'            =>  array(
+			'failure'         => 'Coś poszło nie tak przy aktualizacji.',
+			'success'         => 'Profil zaktualizowany.',
+			'title'           => 'Aktualizuj profil',
+		),
+		'member'          => 'Członek',
+		'profile'         => 'Profil',
+		'team'            => 'Zespół',
+	),
+	'welcome'         =>  array(
+		'close'           => 'Przejdź do mojego panelu',
+		'message'         => 'Twoja strona statusowa jest już prawie gotowa! Możesz skonfigurować dodatkowe ustawienia',
+		'steps'           =>  array(
+			'api'             => 'Wygeneruj token API',
+			'component'       => 'Utwórz komponenty',
+			'customize'       => 'Personalizacja',
+			'incident'        => 'Utwórz incydenty',
+			'team'            => 'Dodaj użytkowników',
+			'two-factor'      => 'Autentykacja dwuetapowa',
+		),
+		'welcome'         => 'Witamy w Cachet',
+	),
+);

@@ -169,7 +169,7 @@ $(function() {
                         ids: orderedComponentIds
                     },
                     success: function() {
-                        (new CachetHQ.Notifier()).notify('Component orders updated.', 'success');
+                        (new CachetHQ.Notifier()).notify(trans('dashboard', 'components.order.success'), 'success');
                     },
                     error: function() {
                         (new CachetHQ.Notifier()).notify('Component orders not updated.', 'error');
@@ -349,5 +349,15 @@ $(function() {
             .removeClass("active")
             .filter(":lt(" + (next) + ")")
             .addClass("active");
+    }
+
+    function trans(component, key) {
+        var component = Global.translations[component];
+        var res = component;
+        var properties = key.split('.');
+        for (var i = 0; i < properties.length; i++) {
+            res = res[properties[i]];
+        }
+        return res;
     }
 });

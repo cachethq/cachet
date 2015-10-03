@@ -1,217 +1,186 @@
 <?php
 
-/*
- * This file is part of Cachet.
- *
- * (c) Alt Three Services Limited
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
+# modified at 03-10-2015 06:38
 
-return [
-
-    'dashboard' => 'Dashboard',
-
-    // Incidents
-    'incidents' => [
-        'title'                    => 'Insiden &amp; Penjadwalan',
-        'incidents'                => 'Insiden',
-        'logged'                   => '{0} Tidak ada insiden, bagus.|Anda mencatat satu insiden.|Anda sudah melaporkan <strong>:count</strong> insiden.',
-        'incident-create-template' => 'Buat Template',
-        'incident-templates'       => 'Template Insiden',
-        'add'                      => [
-            'title'   => 'Tambahkan Insiden',
-            'success' => 'Insiden sudah ditambahkan.',
-            'failure' => 'Ada masalah dengan insiden ini.',
-        ],
-        'edit' => [
-            'title'   => 'Edit insiden',
-            'success' => 'Insiden sudah diperbarui.',
-            'failure' => 'Ada masalah dengan insiden ini.',
-        ],
-
-        // Incident templates
-        'templates' => [
-            'title' => 'Template Insiden',
-            'add'   => [
-                'title'   => 'Buat template insiden',
-                'success' => 'Template sudah dibuat.',
-                'failure' => 'Ada masalah dengan template insiden ini.',
-            ],
-            'edit' => [
-                'title'   => 'Edit Template',
-                'success' => 'Template sudah diperbarui!',
-                'failure' => 'Ada masalah dengan template insiden ini',
-            ],
-        ],
-    ],
-
-    // Incident Maintenance
-    'schedule' => [
-        'schedule'     => 'Jadwal Pemeliharaan',
-        'scheduled_at' => 'Dijadwalkan pada :timestamp',
-        'add'          => [
-            'title'   => 'Tambahkan Jadwal Pemeliharaan',
-            'success' => 'Jadwal sudah ditambahkan.',
-            'failure' => 'Ada masalah saat membuat jadwal.',
-        ],
-        'edit' => [
-            'title'   => 'Edit Jadwal Pemeliharaan',
-            'success' => 'Jadwal sudah diperbarui!',
-            'failure' => 'Ada masalah saat mengedit jadwal.',
-        ],
-        'delete' => [
-            'success' => 'Jadwal ini sudah dihapus dan tidak akan ditampilkan di halaman status anda.',
-            'failure' => 'Jadwal tidak bisa dihapus. Silakan coba lagi.',
-        ],
-    ],
-
-    // Components
-    'components' => [
-        'components'         => 'Komponen',
-        'component_statuses' => 'Status Komponen',
-        'listed_group'       => 'Dikelompokkan dalam :name',
-        'add'                => [
-            'title'   => 'Tambahkan Komponen',
-            'message' => 'Anda perlu menambahkan komponen.',
-            'success' => 'Komponen sudah dibuat.',
-            'failure' => 'Ada masalah dengan komponen ini.',
-        ],
-        'edit' => [
-            'title'   => 'Edit komponen',
-            'success' => 'Komponen sudah diperbarui.',
-            'failure' => 'Ada masalah dengan komponen ini.',
-        ],
-
-        // Component groups
-        'groups' => [
-            'groups'        => 'Grup komponen|Grup komponen',
-            'no_components' => 'Anda perlu menambahkan grup komponen.',
-            'add'           => [
-                'title'   => 'Tambahkan grup komponen',
-                'success' => 'Grup komponen sudah ditambahkan.',
-                'failure' => 'Ada masalah dengan grup komponen ini.',
-            ],
-            'edit' => [
-                'title'   => 'Edit grup komponen',
-                'success' => 'Grup komponen sudah diperbarui.',
-                'failure' => 'Ada masalah dengan grup komponen ini.',
-            ],
-        ],
-    ],
-
-    // Metrics
-    'metrics' => [
-        'metrics' => 'Metrik',
-        'add'     => [
-            'title'   => 'Buat metrik',
-            'success' => 'Metrik sudah dibuat.',
-            'failure' => 'Ada masalah dengan metrik ini.',
-        ],
-        'edit' => [
-            'title'   => 'Edit metrik',
-            'success' => 'Metrik sudah diperbarui.',
-            'failure' => 'Ada masalah dengan metrik ini.',
-        ],
-    ],
-    // Subscribers
-    'subscribers' => [
-        'subscribers'  => '',
-        'description'  => '',
-        'verified'     => '',
-        'not_verified' => '',
-        'add'          => [
-            'title'   => '',
-            'success' => '',
-            'failure' => '',
-        ],
-        'edit' => [
-            'title'   => '',
-            'success' => '',
-            'failure' => '',
-        ],
-    ],
-
-    // Team
-    'team' => [
-        'team'        => 'Tim',
-        'member'      => 'Anggota',
-        'profile'     => 'Profil',
-        'description' => 'Anggota Tim akan bisa menambahkan, mengubah &amp; mengedit komponen dan insiden.',
-        'add'         => [
-            'title'   => 'Tambahkan Anggota Tim',
-            'success' => 'Anggota Tim sudah ditambahkan.',
-            'failure' => 'Ada masalah dengan komponen ini.',
-        ],
-        'edit' => [
-            'title'   => 'Perbarui profil',
-            'success' => 'Profil sudah diperbarui.',
-            'failure' => 'Ada masalah saat memperbarui.',
-        ],
-        'delete' => [
-            'success' => '',
-            'failure' => '',
-        ],
-    ],
-
-    // Settings
-    'settings' => [
-        'settings'  => 'Pengaturan',
-        'app-setup' => [
-            'app-setup'   => 'Pengaturan Aplikasi',
-            'images-only' => 'Hanya gambar yang bisa diunggah.',
-            'too-big'     => 'Berkas yang anda unggah terlalu besar. Mohon unggah gambar dengan ukuran tidak lebih dari :size',
-        ],
-        'security' => [
-            'security'   => 'Keamanan',
-            'two-factor' => 'User tanpa otentikasi dua-faktor',
-        ],
-        'stylesheet' => [
-            'stylesheet' => 'Stylesheet',
-        ],
-        'theme' => [
-            'theme' => 'Theme',
-        ],
-        'edit' => [
-            'success' => 'Pengaturan sudah disimpan.',
-            'failure' => 'Pengaturan tidak bisa disimpan.',
-        ],
-    ],
-
-    // Login
-    'login' => [
-        'login'      => 'Masuk',
-        'logged_in'  => 'Anda sudah login.',
-        'welcome'    => 'Halo!',
-        'two-factor' => 'Silakan masukkan token anda.',
-    ],
-
-    // Sidebar footer
-    'help'        => 'Panduan',
-    'status_page' => 'Halaman Status',
-    'logout'      => 'Keluar',
-
-    // Notifications
-    'notifications' => [
-        'notifications' => 'Notifikasi',
-        'awesome'       => 'Keren.',
-        'whoops'        => 'Waduh.',
-    ],
-
-    // Welcome modal
-    'welcome' => [
-        'welcome' => 'Selamat Datang di Cachet',
-        'message' => 'Halaman status anda hampir siap! Anda masih perlu mengkonfigurasi beberapa pengaturan',
-        'close'   => 'Langsung ke dashboard saja',
-        'steps'   => [
-            'component'  => 'Buat komponen',
-            'incident'   => 'Buat insiden',
-            'customize'  => 'Kustomisasi',
-            'team'       => 'Tambah user',
-            'api'        => 'Buat token API',
-            'two-factor' => 'Otentikasi Dua Faktor',
-        ],
-    ],
-
-];
+return  array(
+	'components'      =>  array(
+		'add'                  =>  array(
+			'failure'              => 'Ada masalah dengan komponen ini.',
+			'message'              => 'Anda perlu menambahkan komponen.',
+			'success'              => 'Komponen sudah dibuat.',
+			'title'                => 'Tambahkan Komponen',
+		),
+		'component_statuses'   => 'Status Komponen',
+		'components'           => 'Komponen',
+		'edit'                 =>  array(
+			'failure'              => 'Ada masalah dengan komponen ini.',
+			'success'              => 'Komponen sudah diperbarui.',
+			'title'                => 'Edit komponen',
+		),
+		'groups'               =>  array(
+			'add'                  =>  array(
+				'failure'              => 'Ada masalah dengan grup komponen ini.',
+				'success'              => 'Grup komponen sudah ditambahkan.',
+				'title'                => 'Tambahkan grup komponen',
+			),
+			'edit'                 =>  array(
+				'failure'              => 'Ada masalah dengan grup komponen ini.',
+				'success'              => 'Grup komponen sudah diperbarui.',
+				'title'                => 'Edit grup komponen',
+			),
+			'groups'               => 'Grup komponen|Grup komponen',
+			'no_components'        => 'Anda perlu menambahkan grup komponen.',
+		),
+		'listed_group'         => 'Dikelompokkan dalam :name',
+		'order'                =>  array(
+			'success'              => 'Component orders updated.',
+		),
+	),
+	'dashboard'       => 'Dashboard',
+	'help'            => 'Panduan',
+	'incidents'       =>  array(
+		'add'                        =>  array(
+			'failure'                    => 'Ada masalah dengan insiden ini.',
+			'success'                    => 'Insiden sudah ditambahkan.',
+			'title'                      => 'Tambahkan Insiden',
+		),
+		'edit'                       =>  array(
+			'failure'                    => 'Ada masalah dengan insiden ini.',
+			'success'                    => 'Insiden sudah diperbarui.',
+			'title'                      => 'Edit insiden',
+		),
+		'incident-create-template'   => 'Buat Template',
+		'incident-templates'         => 'Template Insiden',
+		'incidents'                  => 'Insiden',
+		'logged'                     => '{0} Tidak ada insiden, bagus.|Anda mencatat satu insiden.|Anda sudah melaporkan <strong>:count</strong> insiden.',
+		'templates'                  =>  array(
+			'add'                        =>  array(
+				'failure'                    => 'Ada masalah dengan template insiden ini.',
+				'success'                    => 'Template sudah dibuat.',
+				'title'                      => 'Buat template insiden',
+			),
+			'edit'                       =>  array(
+				'failure'                    => 'Ada masalah dengan template insiden ini',
+				'success'                    => 'Template sudah diperbarui!',
+				'title'                      => 'Edit Template',
+			),
+			'title'                      => 'Template Insiden',
+		),
+		'title'                      => 'Insiden &amp; Penjadwalan',
+	),
+	'login'           =>  array(
+		'logged_in'       => 'Anda sudah login.',
+		'login'           => 'Masuk',
+		'two-factor'      => 'Silakan masukkan token anda.',
+		'welcome'         => 'Halo!',
+	),
+	'logout'          => 'Keluar',
+	'metrics'         =>  array(
+		'add'             =>  array(
+			'failure'         => 'Ada masalah dengan metrik ini.',
+			'success'         => 'Metrik sudah dibuat.',
+			'title'           => 'Buat metrik',
+		),
+		'edit'            =>  array(
+			'failure'         => 'Ada masalah dengan metrik ini.',
+			'success'         => 'Metrik sudah diperbarui.',
+			'title'           => 'Edit metrik',
+		),
+		'metrics'         => 'Metrik',
+	),
+	'notifications'   =>  array(
+		'awesome'         => 'Keren.',
+		'notifications'   => 'Notifikasi',
+		'whoops'          => 'Waduh.',
+	),
+	'schedule'        =>  array(
+		'add'             =>  array(
+			'failure'         => 'Ada masalah saat membuat jadwal.',
+			'success'         => 'Jadwal sudah ditambahkan.',
+			'title'           => 'Tambahkan Jadwal Pemeliharaan',
+		),
+		'delete'          =>  array(
+			'failure'         => 'Jadwal tidak bisa dihapus. Silakan coba lagi.',
+			'success'         => 'Jadwal ini sudah dihapus dan tidak akan ditampilkan di halaman status anda.',
+		),
+		'edit'            =>  array(
+			'failure'         => 'Ada masalah saat mengedit jadwal.',
+			'success'         => 'Jadwal sudah diperbarui!',
+			'title'           => 'Edit Jadwal Pemeliharaan',
+		),
+		'schedule'        => 'Jadwal Pemeliharaan',
+		'scheduled_at'    => 'Dijadwalkan pada :timestamp',
+	),
+	'settings'        =>  array(
+		'app-setup'       =>  array(
+			'app-setup'       => 'Pengaturan Aplikasi',
+			'images-only'     => 'Hanya gambar yang bisa diunggah.',
+			'too-big'         => 'Berkas yang anda unggah terlalu besar. Mohon unggah gambar dengan ukuran tidak lebih dari :size',
+		),
+		'edit'            =>  array(
+			'failure'         => 'Pengaturan tidak bisa disimpan.',
+			'success'         => 'Pengaturan sudah disimpan.',
+		),
+		'security'        =>  array(
+			'security'        => 'Keamanan',
+			'two-factor'      => 'User tanpa otentikasi dua-faktor',
+		),
+		'settings'        => 'Pengaturan',
+		'stylesheet'      =>  array(
+			'stylesheet'      => 'Stylesheet',
+		),
+		'theme'           =>  array(
+			'theme'           => 'Theme',
+		),
+	),
+	'status_page'     => 'Halaman Status',
+	'subscribers'     =>  array(
+		'add'             =>  array(
+			'failure'         => '',
+			'success'         => '',
+			'title'           => '',
+		),
+		'description'     => '',
+		'edit'            =>  array(
+			'failure'         => '',
+			'success'         => '',
+			'title'           => '',
+		),
+		'not_verified'    => '',
+		'subscribers'     => '',
+		'verified'        => '',
+	),
+	'team'            =>  array(
+		'add'             =>  array(
+			'failure'         => 'Ada masalah dengan komponen ini.',
+			'success'         => 'Anggota Tim sudah ditambahkan.',
+			'title'           => 'Tambahkan Anggota Tim',
+		),
+		'delete'          =>  array(
+			'failure'         => '',
+			'success'         => '',
+		),
+		'description'     => 'Anggota Tim akan bisa menambahkan, mengubah &amp; mengedit komponen dan insiden.',
+		'edit'            =>  array(
+			'failure'         => 'Ada masalah saat memperbarui.',
+			'success'         => 'Profil sudah diperbarui.',
+			'title'           => 'Perbarui profil',
+		),
+		'member'          => 'Anggota',
+		'profile'         => 'Profil',
+		'team'            => 'Tim',
+	),
+	'welcome'         =>  array(
+		'close'           => 'Langsung ke dashboard saja',
+		'message'         => 'Halaman status anda hampir siap! Anda masih perlu mengkonfigurasi beberapa pengaturan',
+		'steps'           =>  array(
+			'api'             => 'Buat token API',
+			'component'       => 'Buat komponen',
+			'customize'       => 'Kustomisasi',
+			'incident'        => 'Buat insiden',
+			'team'            => 'Tambah user',
+			'two-factor'      => 'Otentikasi Dua Faktor',
+		),
+		'welcome'         => 'Selamat Datang di Cachet',
+	),
+);
