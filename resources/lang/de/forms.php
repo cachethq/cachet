@@ -105,7 +105,7 @@ return [
             'analytics_gosquared'    => 'GoSquared Analytics Code',
             'analytics_piwik_url'    => 'URL der Piwik-Instanz (ohne http(s)://)',
             'analytics_piwik_siteid' => 'Piwik\'s Seiten-ID',
-            'subscribers'            => 'Personen die Anmeldung für e-Mail-Benachrichtigung erlauben?',
+            'subscribers'            => 'Personen die Anmeldung für E-Mail-Benachrichtigung erlauben?',
         ],
         'security' => [
             'allowed-domains'      => 'Erlaubte Domains',
