@@ -30,25 +30,25 @@ class SettingsController extends Controller
         $this->subMenu = [
             'setup' => [
                 'title'  => trans('dashboard.settings.app-setup.app-setup'),
-                'url'    => '/dashboard/settings/setup',
+                'url'    => route('dashboard.settings.setup'),
                 'icon'   => 'ion-gear-b',
                 'active' => false,
             ],
             'security' => [
                 'title'  => trans('dashboard.settings.security.security'),
-                'url'    => '/dashboard/settings/security',
+                'url'    => route('dashboard.settings.security'),
                 'icon'   => 'ion-lock-combination',
                 'active' => false,
             ],
             'theme' => [
                 'title'  => trans('dashboard.settings.theme.theme'),
-                'url'    => '/dashboard/settings/theme',
+                'url'    => route('dashboard.settings.theme'),
                 'icon'   => 'ion-paintbrush',
                 'active' => false,
             ],
             'stylesheet' => [
                 'title'  => trans('dashboard.settings.stylesheet.stylesheet'),
-                'url'    => '/dashboard/settings/stylesheet',
+                'url'    => route('dashboard.settings.stylesheet'),
                 'icon'   => 'ion-paintbucket',
                 'active' => false,
             ],
@@ -145,8 +145,8 @@ class SettingsController extends Controller
                 return Redirect::route('dashboard.settings.setup')->withErrors($file->getErrorMessage());
             }
 
-            if (strpos($file->getMimeType(), 'image/') !== 0) {
-                return Redirect::route('dashboard.settings.setup')->withErrors(trans('dashboard.settings.app-setup.images-only'));
+            if (!starts_with($file->getMimeType(), 'image/')) {
+                return Redirect::back()->withErrors(trans('dashboard.settings.app-setup.images-only'));
             }
 
             // Store the banner.
@@ -165,14 +165,13 @@ class SettingsController extends Controller
                 Setting::firstOrCreate(['name' => $settingName])->update(['value' => $settingValue]);
             }
         } catch (Exception $e) {
-            return Redirect::route('dashboard.settings.setup')->withErrors(trans('dashboard.settings.edit.failure'));
+            return Redirect::back()->withErrors(trans('dashboard.settings.edit.failure'));
         }
 
         if (Binput::has('app_locale')) {
             Lang::setLocale(Binput::get('app_locale'));
         }
 
-        return Redirect::route('dashboard.settings.setup')
-            ->withSuccess(trans('dashboard.settings.edit.success'));
+        return Redirect::back()->withSuccess(trans('dashboard.settings.edit.success'));
     }
 }
