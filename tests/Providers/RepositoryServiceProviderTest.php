@@ -25,9 +25,4 @@ class RepositoryServiceProviderTest extends AbstractTestCase
     {
         return RepositoryServiceProvider::class;
     }
-
-    public function testMetricRepositoryIsInjectable()
-    {
-        $this->assertIsInjectable(MetricRepository::class);
-    }
 }
