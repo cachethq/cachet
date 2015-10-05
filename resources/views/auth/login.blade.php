@@ -31,7 +31,7 @@
 
                     <div class="form-group">
                         <label class="sr-only">{{ trans('forms.login.email') }}</label>
-                        <input autocomplete="off" class="form-control login-input" placeholder="{{ trans('forms.login.email') }}" required="required" name="email" type="email">
+                        <input autocomplete="off" class="form-control login-input" placeholder="{{ trans('forms.login.email') }}" required="required" name="email" type="email" autofocus>
                     </div>
                     <div class="form-group">
                         <label class="sr-only">{{ trans('forms.login.password') }}</label>
