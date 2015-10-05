@@ -12,7 +12,6 @@
 namespace CachetHQ\Tests\Cachet\Providers;
 
 use CachetHQ\Cachet\Providers\RepositoryServiceProvider;
-use CachetHQ\Cachet\Repositories\Metric\MetricRepository;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 use GrahamCampbell\TestBenchCore\LaravelTrait;
 use GrahamCampbell\TestBenchCore\ServiceProviderTrait;
