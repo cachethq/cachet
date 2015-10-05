@@ -12,6 +12,7 @@
 return [
     // Enabled langs
     'en-UD' => 'CrowdIn - InContext Localization',
+    'da'    => 'Danish',
     'de'    => 'Deutsch',
     'en'    => 'English',
     'pl'    => 'Polski',
