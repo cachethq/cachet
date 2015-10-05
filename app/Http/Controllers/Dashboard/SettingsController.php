@@ -17,8 +17,9 @@ use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Lang;
-use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Redirect;
 
 class SettingsController extends Controller
 {
@@ -68,7 +69,7 @@ class SettingsController extends Controller
     {
         $this->subMenu['setup']['active'] = true;
 
-        session()->flash('redirect_to', $this->subMenu['setup']['url']);
+        Session::flash('redirect_to', $this->subMenu['setup']['url']);
 
         return View::make('dashboard.settings.app-setup')
             ->withPageTitle('Application Setup - Dashboard')
@@ -84,7 +85,7 @@ class SettingsController extends Controller
     {
         $this->subMenu['theme']['active'] = true;
 
-        session()->flash('redirect_to', $this->subMenu['theme']['url']);
+        Session::flash('redirect_to', $this->subMenu['theme']['url']);
 
         return View::make('dashboard.settings.theme')
             ->withPageTitle('Theme - Dashboard')
@@ -102,7 +103,7 @@ class SettingsController extends Controller
 
         $unsecureUsers = User::whereNull('google_2fa_secret')->orWhere('google_2fa_secret', '')->get();
 
-        session()->flash('redirect_to', $this->subMenu['security']['url']);
+        Session::flash('redirect_to', $this->subMenu['security']['url']);
 
         return View::make('dashboard.settings.security')
             ->withPageTitle('Security - Dashboard')
@@ -119,7 +120,7 @@ class SettingsController extends Controller
     {
         $this->subMenu['stylesheet']['active'] = true;
 
-        session()->flash('redirect_to', $this->subMenu['stylesheet']['url']);
+        Session::flash('redirect_to', $this->subMenu['stylesheet']['url']);
 
         return View::make('dashboard.settings.stylesheet')
             ->withPageTitle('Stylesheet - Dashboard')
@@ -133,7 +134,7 @@ class SettingsController extends Controller
      */
     public function postSettings()
     {
-        $redirectUrl = session('redirect_to', route('dashboard.settings.setup'));
+        $redirectUrl = Session::get('redirect_to', route('dashboard.settings.setup'));
 
         if (Binput::get('remove_banner') === '1') {
             $setting = Setting::where('name', 'app_banner');
