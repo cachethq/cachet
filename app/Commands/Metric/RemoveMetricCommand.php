@@ -13,7 +13,7 @@ namespace CachetHQ\Cachet\Commands\Metric;
 
 use CachetHQ\Cachet\Models\Metric;
 
-class RemoveMetricCommand
+final class RemoveMetricCommand
 {
     /**
      * The metric to remove.

@@ -13,12 +13,12 @@ namespace CachetHQ\Cachet\Commands\Subscriber;
 
 use CachetHQ\Cachet\Models\Subscriber;
 
-class UnsubscribeSubscriberCommand
+final class UnsubscribeSubscriberCommand
 {
     /**
      * The subscriber to unsubscribe.
      *
-     * @var string
+     * @var \CachetHQ\Cachet\Models\Subscriber
      */
     public $subscriber;
 

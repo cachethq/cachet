@@ -11,7 +11,7 @@
 
 namespace CachetHQ\Cachet\Commands\User;
 
-class GenerateApiTokenCommand
+final class GenerateApiTokenCommand
 {
     /**
      * The user to generate the token.

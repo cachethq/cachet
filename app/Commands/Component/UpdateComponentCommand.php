@@ -13,7 +13,7 @@ namespace CachetHQ\Cachet\Commands\Component;
 
 use CachetHQ\Cachet\Models\Component;
 
-class UpdateComponentCommand
+final class UpdateComponentCommand
 {
     /**
      * The component to update.

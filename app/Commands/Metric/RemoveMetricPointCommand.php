@@ -13,7 +13,7 @@ namespace CachetHQ\Cachet\Commands\Metric;
 
 use CachetHQ\Cachet\Models\MetricPoint;
 
-class RemoveMetricPointCommand
+final class RemoveMetricPointCommand
 {
     /**
      * The metric point to remove.

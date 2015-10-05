@@ -11,7 +11,7 @@
 
 namespace CachetHQ\Cachet\Commands\Subscriber;
 
-class SubscribeSubscriberCommand
+final class SubscribeSubscriberCommand
 {
     /**
      * The subscriber email.
@@ -23,7 +23,7 @@ class SubscribeSubscriberCommand
     /**
      * The subscriber auto verification.
      *
-     * @var string
+     * @var bool
      */
     public $verified;
 

@@ -13,7 +13,7 @@ namespace CachetHQ\Cachet\Commands\ComponentGroup;
 
 use CachetHQ\Cachet\Models\ComponentGroup;
 
-class RemoveComponentGroupCommand
+final class RemoveComponentGroupCommand
 {
     /**
      * The component group to remove.

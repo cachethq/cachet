@@ -11,7 +11,7 @@
 
 namespace CachetHQ\Cachet\Commands\ComponentGroup;
 
-class AddComponentGroupCommand
+final class AddComponentGroupCommand
 {
     /**
      * The component group name.

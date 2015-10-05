@@ -13,7 +13,7 @@ namespace CachetHQ\Cachet\Commands\Component;
 
 use CachetHQ\Cachet\Models\Component;
 
-class RemoveComponentCommand
+final class RemoveComponentCommand
 {
     /**
      * The component to remove.

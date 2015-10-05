@@ -13,7 +13,7 @@ namespace CachetHQ\Cachet\Commands\Incident;
 
 use CachetHQ\Cachet\Models\Incident;
 
-class RemoveIncidentCommand
+final class RemoveIncidentCommand
 {
     /**
      * The incident to remove.

@@ -11,7 +11,7 @@
 
 namespace CachetHQ\Cachet\Commands\Metric;
 
-class AddMetricCommand
+final class AddMetricCommand
 {
     /**
      * The metric name.
