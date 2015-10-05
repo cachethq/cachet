@@ -101,7 +101,7 @@ return [
             'about-this-page'        => 'Om',
             'days-of-incidents'      => 'Hvor mange dage skal der vises hændelser for?',
             'banner'                 => 'Bannerbillede',
-            'banner-help'            => "Det anbefales ikke at uploade billeder bredere end 930px.",
+            'banner-help'            => 'Det anbefales ikke at uploade billeder bredere end 930px.',
             'analytics_google'       => 'Google Analytics kode',
             'analytics_gosquared'    => 'GoSquared Analytics kode',
             'analytics_piwik_url'    => 'URL til Piwik installation (uden http(s)://)',

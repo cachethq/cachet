@@ -26,6 +26,6 @@ return [
     'reset'    => 'Dit kodeord er blevet nulstillet!',
     'sent'     => 'Vi har sendt dig en mail med link til at generere et nyt kodeord!',
     'token'    => 'Denne nøgler er ikke gyldig til generering af nyt kodeord.',
-    'user'     => "Vi kan ikke finde nogen bruger med den pågældende email-adresse.",
+    'user'     => 'Vi kan ikke finde nogen bruger med den pågældende email-adresse.',
 
 ];
