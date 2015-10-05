@@ -43,7 +43,7 @@ class EventServiceProviderTest extends AbstractTestCase
         $this->assertGreaterThan(0, count($map));
     }
 
-    /**
+   /**
     * @depends testListenerMapIsAnArray
     */
    public function testListenerMapEventsExist()
@@ -65,12 +65,13 @@ class EventServiceProviderTest extends AbstractTestCase
        $this->assertSame($events, array_keys($map));
    }
 
-   protected function getListenerMap()
-   {
-       $class = $this->getServiceProviderClass($this->app);
-       $reflection = new ReflectionClass($class);
-       $property = $reflection->getProperty('listen');
-       $property->setAccessible(true);
-       return $property->getValue(new $class($this->app));
-   }
+    protected function getListenerMap()
+    {
+        $class = $this->getServiceProviderClass($this->app);
+        $reflection = new ReflectionClass($class);
+        $property = $reflection->getProperty('listen');
+        $property->setAccessible(true);
+
+        return $property->getValue(new $class($this->app));
+    }
 }
