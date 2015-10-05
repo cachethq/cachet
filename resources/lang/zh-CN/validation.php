@@ -3,7 +3,7 @@
 /*
  * This file is part of Cachet.
  *
- * (c) Cachet HQ <support@cachethq.io>
+ * (c) Alt Three Services Limited
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -78,7 +78,7 @@ return [
         'string'  => ':attribute 必须是 :size 个字符',
         'array'   => ':attribute 必须包含 :size 个',
     ],
-    'string'   => '',
+    'string'   => ':attribute必须是一个字符串。',
     'unique'   => ':attribute 已经被占用',
     'url'      => ':attribute 的格式无效',
     'timezone' => ':attribute 必须是个有效的区域。',

@@ -3,7 +3,7 @@
 /*
  * This file is part of Cachet.
  *
- * (c) Cachet HQ <support@cachethq.io>
+ * (c) Alt Three Services Limited
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -22,6 +22,8 @@ class TimezoneLocaleComposer
      * Timezones and Locales composer.
      *
      * @param \Illuminate\Contracts\View\View $view
+     *
+     * @return void
      */
     public function compose(View $view)
     {
@@ -45,6 +47,7 @@ class TimezoneLocaleComposer
             'Europe'     => DateTimeZone::EUROPE,
             'Indian'     => DateTimeZone::INDIAN,
             'Pacific'    => DateTimeZone::PACIFIC,
+            'UTC'        => DateTimeZone::UTC,
         ];
 
         $timezones = [];
@@ -65,9 +68,7 @@ class TimezoneLocaleComposer
             }
         }
 
-        $view->with([
-            'timezones' => $timezones,
-            'langs'     => $langs,
-        ]);
+        $view->withTimezones($timezones);
+        $view->withLangs($langs);
     }
 }

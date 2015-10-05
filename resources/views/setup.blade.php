@@ -34,7 +34,7 @@
                             <label>{{ trans('forms.setup.cache_driver') }}</label>
                             <select name="env[cache_driver]" class="form-control" required>
                                 <option disabled>{{ trans('forms.setup.cache_driver') }}</option>
-                                @foreach($cacheDrivers as $driver => $driverName)
+                                @foreach($cache_drivers as $driver => $driverName)
                                 <option value="{{ $driver }}" {{ Input::old('env.cache_driver') == $driver ? "selected" : null }}>{{ $driverName }}</option>
                                 @endforeach
                             </select>
@@ -46,7 +46,7 @@
                             <label>{{ trans('forms.setup.session_driver') }}</label>
                             <select name="env[session_driver]" class="form-control" required>
                                 <option disabled>{{ trans('forms.setup.session_driver') }}</option>
-                                @foreach($cacheDrivers as $driver => $driverName)
+                                @foreach($cache_drivers as $driver => $driverName)
                                 <option value="{{ $driver }}" {{ Input::old('env.session_driver') == $driver ? "selected" : null }}>{{ $driverName }}</option>
                                 @endforeach
                             </select>
@@ -116,12 +116,6 @@
                                 {{ trans("setup.show_support") }}
                             </label>
                         </div>
-                        <div class="form-group">
-                            <label>
-                                <input type="checkbox" name="settings[app_track]" value="1" checked>
-                                {{ trans("setup.allow_tracking") }}
-                            </label>
-                        </div>
                         <hr>
                         <div class="form-group text-center">
                             <span class="wizard-next btn btn-info" data-current-block="2" data-next-block="1">
@@ -151,7 +145,8 @@
                         </div>
                         <div class="form-group">
                             <label>{{ trans("forms.setup.password") }}</label>
-                            <input type="password" name="user[password]" class="form-control" placeholder="{{ trans('forms.setup.password') }}" value="{{ Input::old('user.password', '') }}" required>
+                            <input type="password" name="user[password]" class="form-control password-strength" placeholder="{{ trans('forms.setup.password') }}" value="{{ Input::old('user.password', '') }}" required>
+                            <div class="strengthify-wrapper"></div>
                             @if($errors->has('user.password'))
                             <span class="text-danger">{{ $errors->first('user.password') }}</span>
                             @endif
@@ -174,7 +169,7 @@
                         <h3>
                             {{ trans("setup.completed") }}
                         </h3>
-                        <a href="{{ route('dashboard') }}" class="btn btn-default">
+                        <a href="{{ route('dashboard.index') }}" class="btn btn-default">
                             <span>{{ trans("setup.finish_setup") }}</span>
                         </a>
                     </div>

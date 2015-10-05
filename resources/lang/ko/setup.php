@@ -3,7 +3,7 @@
 /*
  * This file is part of Cachet.
  *
- * (c) Cachet HQ <support@cachethq.io>
+ * (c) Alt Three Services Limited
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -20,5 +20,4 @@ return [
     'complete_setup'    => '설치 완료',
     'completed'         => 'Cachet 이 성공적으로 설정되었습니다.',
     'finish_setup'      => '대시보드로 이동',
-    'allow_tracking'    => '익명 사용 추적 허용',
 ];

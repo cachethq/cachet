@@ -13,13 +13,13 @@
     <div class="content-wrapper">
         <div class="row">
             <div class="col-sm-12">
-                @include('partials.dashboard.errors')
+                @include('dashboard.partials.errors')
                 <form name="EditComponentGroupForm" class="form-vertical" role="form" method="POST">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <fieldset>
                         <div class="form-group">
                             <label for="incident-name">{{ trans('forms.components.groups.name') }}</label>
-                            <input type="text" class="form-control" name="group[name]" id="group-name" value="{{ $group->name }}" required>
+                            <input type="text" class="form-control" name="name" id="group-name" value="{{ $group->name }}" required>
                         </div>
                     </fieldset>
 

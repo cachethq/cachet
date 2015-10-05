@@ -3,7 +3,7 @@
 /*
  * This file is part of Cachet.
  *
- * (c) Cachet HQ <support@cachethq.io>
+ * (c) Alt Three Services Limited
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -20,5 +20,4 @@ return [
     'complete_setup'    => 'crwdns264:0crwdne264:0',
     'completed'         => 'crwdns291:0crwdne291:0',
     'finish_setup'      => 'crwdns292:0crwdne292:0',
-    'allow_tracking'    => 'crwdns437:0crwdne437:0',
 ];

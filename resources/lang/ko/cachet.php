@@ -3,7 +3,7 @@
 /*
  * This file is part of Cachet.
  *
- * (c) Cachet HQ <support@cachethq.io>
+ * (c) Alt Three Services Limited
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -52,9 +52,9 @@ return [
     // Metrics
     'metrics' => [
         'filter' => [
-            'hourly'  => '시간별',
-            'daily'   => '일별',
-            'monthly' => '월별',
+            'hourly'  => 'Last 12 Hours',
+            'weekly'  => 'Week',
+            'monthly' => 'Month',
         ],
     ],
 
@@ -72,7 +72,7 @@ return [
             'verify'       => [
                 'text'           => ":app_name 의 상태 업데이트에 대한 이메일 구독을 확인해주세요.\n:link\n감사합니다, :app_name",
                 'html-preheader' => ':app_name 의 상태 업데이트에 대한 이메일 구독을 확인해주세요.',
-                'html'           => '<p>:app_name 의 상태 업데이트에 대한 이메일 구독을 확인해주세요.</p><p>:link</p> <p>감사 합니다, :app_name</p>',
+                'html'           => '<p>:app_name 의 상태 업데이트에 대한 이메일 구독을 확인해주세요.</p><p><a href=":link">:link</a></p> <p>감사 합니다, :app_name</p>',
             ],
             'maintenance' => [
                 'text'           => ":app_name 에 새로운 유지 보수에 예정 되었습니다.\n감사합니다, :app_name",

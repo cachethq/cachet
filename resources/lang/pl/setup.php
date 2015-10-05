@@ -3,7 +3,7 @@
 /*
  * This file is part of Cachet.
  *
- * (c) Cachet HQ <support@cachethq.io>
+ * (c) Alt Three Services Limited
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -19,5 +19,4 @@ return [
     'complete_setup'    => 'Konfiguracja zakończona',
     'completed'         => 'Cachet został skonfigurowany pomyślnie!',
     'finish_setup'      => 'Przejdź do panelu',
-    'allow_tracking'    => 'Zezwolić na anonimowe śledzenie wykorzystania?',
 ];

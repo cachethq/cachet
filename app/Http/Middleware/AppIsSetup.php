@@ -3,7 +3,7 @@
 /*
  * This file is part of Cachet.
  *
- * (c) Cachet HQ <support@cachethq.io>
+ * (c) Alt Three Services Limited
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -11,18 +11,17 @@
 
 namespace CachetHQ\Cachet\Http\Middleware;
 
-use CachetHQ\Cachet\Models\Setting;
+use CachetHQ\Cachet\Facades\Setting;
 use Closure;
-use Exception;
 use Illuminate\Support\Facades\Redirect;
 
 class AppIsSetup
 {
     /**
-     * Run the is setup filter.
+     * Run the app is setup middleware.
      *
-     * We're verifying that Cachet is correctly setup. If it is, they we're
-     * sending the user to the dashboard so they can use Cachet.
+     * We're verifying that Cachet is correctly setup. If it is, then we're
+     * redirecting the user to the dashboard so they can use Cachet.
      *
      * @param \Illuminate\Routing\Route $route
      * @param \Closure                  $next
@@ -31,13 +30,8 @@ class AppIsSetup
      */
     public function handle($request, Closure $next)
     {
-        try {
-            $setting = Setting::where('name', 'app_name')->first();
-            if ($setting && $setting->value) {
-                return Redirect::route('dashboard');
-            }
-        } catch (Exception $e) {
-            // do nothing
+        if (Setting::get('app_name')) {
+            return Redirect::to('dashboard');
         }
 
         return $next($request);

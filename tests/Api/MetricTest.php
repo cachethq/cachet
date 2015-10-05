@@ -3,7 +3,7 @@
 /*
  * This file is part of Cachet.
  *
- * (c) Cachet HQ <support@cachethq.io>
+ * (c) Alt Three Services Limited
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -23,9 +23,9 @@ class MetricTest extends AbstractTestCase
         $metrics = factory('CachetHQ\Cachet\Models\Metric', 3)->create();
 
         $this->get('/api/v1/metrics');
-        $this->seeJson(['id' => (string) $metrics[0]->id]);
-        $this->seeJson(['id' => (string) $metrics[1]->id]);
-        $this->seeJson(['id' => (string) $metrics[2]->id]);
+        $this->seeJson(['id' => $metrics[0]->id]);
+        $this->seeJson(['id' => $metrics[1]->id]);
+        $this->seeJson(['id' => $metrics[2]->id]);
         $this->assertResponseOk();
     }
 
@@ -59,6 +59,7 @@ class MetricTest extends AbstractTestCase
             'description'   => 'Lorem ipsum dolor',
             'default_value' => 1,
             'display_chart' => 1,
+            'places'        => 0,
         ]);
         $this->seeJson(['name' => 'Foo']);
         $this->assertResponseOk();

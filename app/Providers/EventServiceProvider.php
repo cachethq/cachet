@@ -3,7 +3,7 @@
 /*
  * This file is part of Cachet.
  *
- * (c) Cachet HQ <support@cachethq.io>
+ * (c) Alt Three Services Limited
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -21,14 +21,17 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'CachetHQ\Cachet\Events\CustomerHasSubscribedEvent' => [
-            'CachetHQ\Cachet\Handlers\Events\SendSubscriberVerificationEmailHandler',
+        'CachetHQ\Cachet\Events\Incident\IncidentWasReportedEvent' => [
+            'CachetHQ\Cachet\Handlers\Events\Incident\SendIncidentEmailNotificationHandler',
         ],
-        'CachetHQ\Cachet\Events\IncidentHasReportedEvent' => [
-            'CachetHQ\Cachet\Handlers\Events\SendIncidentEmailNotificationHandler',
+        'CachetHQ\Cachet\Events\Incident\MaintenanceWasScheduledEvent' => [
+            'CachetHQ\Cachet\Handlers\Events\Incident\SendMaintenanceEmailNotificationHandler',
         ],
-        'CachetHQ\Cachet\Events\MaintenanceHasScheduledEvent' => [
-            'CachetHQ\Cachet\Handlers\Events\SendMaintenanceEmailNotificationHandler',
+        'CachetHQ\Cachet\Events\Subscriber\SubscriberHasSubscribedEvent' => [
+            'CachetHQ\Cachet\Handlers\Events\Subscriber\SendSubscriberVerificationEmailHandler',
+        ],
+        'CachetHQ\Cachet\Events\User\UserWasAddedEvent' => [
+            //
         ],
     ];
 }

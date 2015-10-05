@@ -3,7 +3,7 @@
 /*
  * This file is part of Cachet.
  *
- * (c) Cachet HQ <support@cachethq.io>
+ * (c) Alt Three Services Limited
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -18,9 +18,11 @@ return [
     'es'    => 'Español',
     'fr'    => 'Français',
     'id'    => 'Indonesian',
+    'it'    => 'Italiano',
     'ko'    => '한글',
     'nl'    => 'Nederlands',
     'pt-BR' => 'Portuguese, Brazilian',
+    'ru'    => 'Русский',
     'zh-CN' => '简体中文',
     'zh-TW' => '繁體中文',
 ];

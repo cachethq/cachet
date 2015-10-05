@@ -3,7 +3,7 @@
 /*
  * This file is part of Cachet.
  *
- * (c) Cachet HQ <support@cachethq.io>
+ * (c) Alt Three Services Limited
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -78,7 +78,7 @@ return [
         'string'  => ':attribute harus :size karakter.',
         'array'   => ':attribute harus berisi :size item.',
     ],
-    'string'   => 'The :attribute must be a string.',
+    'string'   => ':attribute harus berupa string.',
     'unique'   => ':attribute sudah ada.',
     'url'      => 'Format :attribute tidak benar.',
     'timezone' => ':attribute harus merupakan zona yang benar.',

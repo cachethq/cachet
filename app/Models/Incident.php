@@ -3,7 +3,7 @@
 /*
  * This file is part of Cachet.
  *
- * (c) Cachet HQ <support@cachethq.io>
+ * (c) Alt Three Services Limited
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -11,28 +11,34 @@
 
 namespace CachetHQ\Cachet\Models;
 
+use AltThree\Validator\ValidatingTrait;
 use CachetHQ\Cachet\Presenters\IncidentPresenter;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use McCool\LaravelAutoPresenter\HasPresenter;
-use Watson\Validating\ValidatingTrait;
 
 class Incident extends Model implements HasPresenter
 {
     use SoftDeletes, ValidatingTrait;
 
     /**
-     * The validation rules.
+     * The accessors to append to the model's serialized form.
      *
      * @var string[]
      */
-    protected $rules = [
-        'component_id' => 'integer',
-        'name'         => 'required',
-        'status'       => 'required|integer',
-        'visible'      => 'required|boolean',
-        'message'      => 'required',
+    protected $appends = ['human_status'];
+
+    /**
+     * The attributes that should be casted to native types.
+     *
+     * @var string[]
+     */
+    protected $casts = [
+        'id'           => 'int',
+        'visible'      => 'int',
+        'scheduled_at' => 'date',
+        'deleted_at'   => 'date',
     ];
 
     /**
@@ -52,26 +58,16 @@ class Incident extends Model implements HasPresenter
     ];
 
     /**
-     * The accessors to append to the model's serialized form.
+     * The validation rules.
      *
      * @var string[]
      */
-    protected $appends = ['human_status'];
-
-    /**
-     * The attributes that should be mutated to dates.
-     *
-     * @var string[]
-     */
-    protected $dates = ['scheduled_at', 'deleted_at'];
-
-    /**
-     * The attributes that should be casted to native types.
-     *
-     * @var string[]
-     */
-    protected $casts = [
-        'visible' => 'integer',
+    public $rules = [
+        'component_id' => 'integer',
+        'name'         => 'required',
+        'status'       => 'required|integer',
+        'visible'      => 'required|boolean',
+        'message'      => 'required',
     ];
 
     /**
@@ -141,7 +137,7 @@ class Incident extends Model implements HasPresenter
      */
     public function getIsScheduledAttribute()
     {
-        return $this->getOriginal('scheduled_at');
+        return $this->getOriginal('scheduled_at') !== null;
     }
 
     /**

@@ -3,7 +3,7 @@
 /*
  * This file is part of Cachet.
  *
- * (c) Cachet HQ <support@cachethq.io>
+ * (c) Alt Three Services Limited
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -11,7 +11,7 @@
 
 namespace CachetHQ\Cachet\Http\Middleware;
 
-use CachetHQ\Cachet\Models\Setting;
+use CachetHQ\Cachet\Facades\Setting;
 use Closure;
 use Exception;
 use Illuminate\Support\Facades\Redirect;
@@ -35,8 +35,7 @@ class HasSetting
         $settingName = $this->getSettingName($request);
 
         try {
-            $setting = Setting::where('name', $settingName)->first();
-            if (!$setting || !$setting->value) {
+            if (!Setting::get($settingName)) {
                 return Redirect::to('setup');
             }
         } catch (Exception $e) {

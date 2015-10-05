@@ -33,6 +33,9 @@ $(function() {
         $form.find(':submit').prop('disabled', true);
     });
 
+    // Autosizing of textareas.
+    autosize($('textarea.autosize'));
+
     // Mock the DELETE form requests.
     $('[data-method]').not(".disabled").append(function() {
         var methodForm = "\n";
@@ -45,7 +48,17 @@ $(function() {
         return methodForm;
     })
         .removeAttr('href')
-        .attr('onclick', ' if ($(this).hasClass(\'confirm-action\')) { if(confirm("Are you sure you want to do this?")) { $(this).find("form").submit(); } } else { $(this).find("form").submit(); }');
+        .on('click', function() {
+            var button = $(this);
+
+            if (button.hasClass('confirm-action')) {
+                askConfirmation(function() {
+                    button.find("form").submit();
+                });
+            } else {
+                button.find("form").submit();
+            }
+        });
 
     // Messenger config
     Messenger.options = {
@@ -296,6 +309,42 @@ $(function() {
         }
     });
 
+    // Sparkline
+    if ($.fn.sparkline) {
+        var sparkLine = function () {
+            $('.sparkline').each(function () {
+                var data = $(this).data();
+                data.valueSpots = {
+                    '0:': data.spotColor
+                };
+
+                $(this).sparkline(data.data, data);
+                var composite = data.compositedata;
+
+                if (composite) {
+                    var stlColor = $(this).attr("data-stack-line-color"),
+                        stfColor = $(this).attr("data-stack-fill-color"),
+                        sptColor = $(this).attr("data-stack-spot-color"),
+                        sptRadius = $(this).attr("data-stack-spot-radius");
+
+                    $(this).sparkline(composite, {
+                        composite: true,
+                        lineColor: stlColor,
+                        fillColor: stfColor,
+                        spotColor: sptColor,
+                        highlightSpotColor: sptColor,
+                        spotRadius: sptRadius,
+                        valueSpots: {
+                            '0:': sptColor
+                        }
+                    });
+                };
+            });
+        };
+
+        sparkLine(false);
+    }
+
     function goToStep(current, next) {
         // validation was ok. We can go on next step.
         $('.block-' + current)
@@ -311,4 +360,20 @@ $(function() {
             .filter(":lt(" + (next) + ")")
             .addClass("active");
     }
+
+    // Password strength
+    $('.password-strength').strengthify();
 });
+
+function askConfirmation(callback) {
+    swal({
+        type: "warning",
+        title: "Confirm your action",
+        text: "Are you sure you want to do this?",
+        confirmButtonText: "Yes",
+        confirmButtonColor: "#FF6F6F",
+        showCancelButton: true
+    }, function() {
+        callback();
+    });
+}

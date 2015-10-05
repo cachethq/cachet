@@ -3,7 +3,7 @@
 /*
  * This file is part of Cachet.
  *
- * (c) Cachet HQ <support@cachethq.io>
+ * (c) Alt Three Services Limited
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -11,26 +11,41 @@
 
 namespace CachetHQ\Cachet\Models;
 
+use AltThree\Validator\ValidatingTrait;
 use CachetHQ\Cachet\Presenters\ComponentPresenter;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use McCool\LaravelAutoPresenter\HasPresenter;
-use Watson\Validating\ValidatingTrait;
 
 class Component extends Model implements HasPresenter
 {
     use SoftDeletes, ValidatingTrait;
 
     /**
-     * The validation rules.
+     * List of attributes that have default values.
+     *
+     * @var mixed[]
+     */
+    protected $attributes = [
+        'order'       => 0,
+        'group_id'    => 0,
+        'description' => '',
+        'link'        => '',
+    ];
+
+    /**
+     * The attributes that should be casted to native types.
      *
      * @var string[]
      */
-    protected $rules = [
-        'name'   => 'required|string',
-        'status' => 'integer|required',
-        'link'   => 'url',
+    protected $casts = [
+        'id'          => 'int',
+        'order'       => 'int',
+        'group_id'    => 'int',
+        'description' => 'string',
+        'link'        => 'string',
+        'deleted_at'  => 'date',
     ];
 
     /**
@@ -49,23 +64,15 @@ class Component extends Model implements HasPresenter
     ];
 
     /**
-     * List of attributes that have default values.
+     * The validation rules.
      *
-     * @var mixed[]
+     * @var string[]
      */
-    protected $attributes = [
-        'order'       => 0,
-        'group_id'    => 0,
-        'description' => '',
-        'link'        => '',
+    public $rules = [
+        'name'   => 'required|string',
+        'status' => 'integer|required',
+        'link'   => 'url',
     ];
-
-    /**
-     * The attributes that should be mutated to dates.
-     *
-     * @var array
-     */
-    protected $dates = ['deleted_at'];
 
     /**
      * Components can belong to a group.

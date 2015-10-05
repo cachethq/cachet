@@ -2,8 +2,8 @@
 
 @section('content')
     <div class="content-panel">
-        @if(isset($subMenu))
-        @include('partials.dashboard.sub-sidebar')
+        @if(isset($sub_menu))
+        @include('dashboard.partials.sub-sidebar')
         @endif
         <div class="content-wrapper">
             <div class="header sub-header">
@@ -17,7 +17,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-12">
-                    @include('partials.dashboard.errors')
+                    @include('dashboard.partials.errors')
                     <p class="lead">{!! trans_choice('dashboard.incidents.logged', $incidents->count(), ['count' => $incidents->count()]) !!}</p>
 
                     <div class="striped-list">

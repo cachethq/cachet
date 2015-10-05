@@ -3,7 +3,7 @@
 /*
  * This file is part of Cachet.
  *
- * (c) Cachet HQ <support@cachethq.io>
+ * (c) Alt Three Services Limited
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -33,6 +33,8 @@ class Repository
      * Create a new settings service instance.
      *
      * @param \CachetHQ\Cachet\Models\Setting $model
+     *
+     * @return void
      */
     public function __construct(Setting $model)
     {
@@ -75,6 +77,8 @@ class Repository
      *
      * @param string $name
      * @param string $value
+     *
+     * @return void
      */
     public function set($name, $value)
     {

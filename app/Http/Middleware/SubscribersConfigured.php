@@ -3,7 +3,7 @@
 /*
  * This file is part of Cachet.
  *
- * (c) Cachet HQ <support@cachethq.io>
+ * (c) Alt Three Services Limited
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -11,7 +11,6 @@
 
 namespace CachetHQ\Cachet\Http\Middleware;
 
-use CachetHQ\Cachet\Facades\Setting;
 use Closure;
 use Illuminate\Support\Facades\Redirect;
 
@@ -27,11 +26,7 @@ class SubscribersConfigured
      */
     public function handle($request, Closure $next)
     {
-        $isEnabled = Setting::get('enable_subscribers', false);
-        $mailAddress = env('MAIL_ADDRESS', false);
-        $mailFrom = env('MAIL_NAME', false);
-
-        if (!($isEnabled && $mailAddress && $mailFrom)) {
+        if (!subscribers_enabled()) {
             return Redirect::route('status-page');
         }
 

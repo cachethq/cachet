@@ -3,7 +3,7 @@
 /*
  * This file is part of Cachet.
  *
- * (c) Cachet HQ <support@cachethq.io>
+ * (c) Alt Three Services Limited
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -15,10 +15,11 @@ use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Incident;
 use GrahamCampbell\Markdown\Facades\Markdown;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Str;
 use Roumen\Feed\Facades\Feed;
 
-class AtomController extends AbstractController
+class AtomController extends Controller
 {
     /**
      * Generates an Atom feed of all incidents.
@@ -56,13 +57,15 @@ class AtomController extends AbstractController
      *
      * @param \Roumen\Feed\Facades\Feed        $feed
      * @param \CachetHQ\Cachet\Models\Incident $incident
+     *
+     * @return void
      */
     private function feedAddItem(&$feed, $incident)
     {
         $feed->add(
             $incident->name,
             Setting::get('app_name'),
-            Str::canonicalize(Setting::get('app_domain')).'#'.$incident->id,
+            Str::canonicalize(route('incident', ['id' => $incident->id])),
             $incident->created_at->toAtomString(),
             Markdown::convertToHtml($incident->message)
         );

@@ -3,7 +3,7 @@
 /*
  * This file is part of Cachet.
  *
- * (c) Cachet HQ <support@cachethq.io>
+ * (c) Alt Three Services Limited
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -22,10 +22,10 @@ return [
     |
     */
 
-    'password' => 'Passwörter müssen mindestens <em>6</em> Zeichen lang sein; beide Eingaben müssen übereinstimmen.',
-    'user'     => 'Es wurde kein Benutzer mit dieser E-Mail-Adresse gefunden.',
-    'token'    => 'Dieser Passwort-Reset-Token ist nicht valide.',
-    'sent'     => 'E-Mail zum Rücksetzen des Passworts verschickt!',
+    'password' => 'Passwörter müssen mindestens sechs Zeichen lang sein und equivalent zu der Bestätigung sein.',
+    'user'     => 'Es konnte kein Benutzer mit dieser E-Mail Adresse gefunden werden.',
+    'token'    => 'Dieser Passwort-Reset-Token ist ungültig.',
+    'sent'     => 'Passworterinnerung gesendet!',
     'reset'    => 'Passwort wurde zurückgesetzt!',
 
 ];

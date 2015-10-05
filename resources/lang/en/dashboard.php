@@ -3,7 +3,7 @@
 /*
  * This file is part of Cachet.
  *
- * (c) Cachet HQ <support@cachethq.io>
+ * (c) Alt Three Services Limited
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -115,6 +115,23 @@ return [
             'failure' => 'Something went wrong with the metric.',
         ],
     ],
+    // Subscribers
+    'subscribers' => [
+        'subscribers'  => 'Subscribers',
+        'description'  => 'Subscribers will receive email updates when incidents are created.',
+        'verified'     => 'Verified',
+        'not_verified' => 'Not Verified',
+        'add'          => [
+            'title'   => 'Add a new subscriber',
+            'success' => 'Subscriber added.',
+            'failure' => 'Something went wrong with the component.',
+        ],
+        'edit' => [
+            'title'   => 'Update subscriber',
+            'success' => 'Subscriber updated.',
+            'failure' => 'Something went wrong when updating.',
+        ],
+    ],
 
     // Team
     'team' => [
@@ -131,6 +148,10 @@ return [
             'title'   => 'Update profile',
             'success' => 'Profile updated.',
             'failure' => 'Something went wrong when updating.',
+        ],
+        'delete' => [
+            'success' => 'User deleted.',
+            'failure' => 'Something went wrong when deleting this user.',
         ],
     ],
 

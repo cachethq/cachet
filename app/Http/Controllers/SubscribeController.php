@@ -3,7 +3,7 @@
 /*
  * This file is part of Cachet.
  *
- * (c) Cachet HQ <support@cachethq.io>
+ * (c) Alt Three Services Limited
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -11,18 +11,25 @@
 
 namespace CachetHQ\Cachet\Http\Controllers;
 
-use CachetHQ\Cachet\Events\CustomerHasSubscribedEvent;
+use AltThree\Validator\ValidationException;
+use CachetHQ\Cachet\Commands\Subscriber\SubscribeSubscriberCommand;
+use CachetHQ\Cachet\Commands\Subscriber\UnsubscribeSubscriberCommand;
+use CachetHQ\Cachet\Commands\Subscriber\VerifySubscriberCommand;
 use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Cachet\Models\Subscriber;
-use Carbon\Carbon;
 use GrahamCampbell\Binput\Facades\Binput;
 use GrahamCampbell\Markdown\Facades\Markdown;
+use Illuminate\Foundation\Bus\DispatchesJobs;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
+use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
-class SubscribeController extends AbstractController
+class SubscribeController extends Controller
 {
+    use DispatchesJobs;
+
     /**
      * Show the subscribe by email page.
      *
@@ -30,10 +37,9 @@ class SubscribeController extends AbstractController
      */
     public function showSubscribe()
     {
-        return View::make('subscribe', [
-            'pageTitle' => Setting::get('app_name'),
-            'aboutApp'  => Markdown::convertToHtml(Setting::get('app_about')),
-        ]);
+        return View::make('subscribe')
+            ->withPageTitle(Setting::get('app_name'))
+            ->withAboutApp(Markdown::convertToHtml(Setting::get('app_about')));
     }
 
     /**
@@ -43,43 +49,23 @@ class SubscribeController extends AbstractController
      */
     public function postSubscribe()
     {
-        $subscriber = Subscriber::create(['email' => Binput::get('email')]);
-
-        if (!$subscriber->isValid()) {
-            segment_track('Subscribers', [
-                'event'   => 'Customer Subscribed',
-                'success' => false,
-            ]);
-
-            return Redirect::back()->withInput(Binput::all())
-                ->with('title', sprintf(
-                    '<strong>%s</strong> %s',
-                    trans('dashboard.notifications.whoops'),
-                    trans('cachet.subscriber.email.failure')
-                ))
-                ->with('errors', $subscriber->getErrors());
+        try {
+            $this->dispatch(new SubscribeSubscriberCommand(Binput::get('email')));
+        } catch (ValidationException $e) {
+            return Redirect::route('subscribe.subscribe')
+                ->withInput(Binput::all())
+                ->withTitle(sprintf('<strong>%s</strong> %s', trans('dashboard.notifications.whoops'), trans('cachet.subscriber.email.failure')))
+                ->withErrors($e->getMessageBag());
         }
 
-        segment_track('Subscribers', [
-            'event'   => 'Customer Subscribed',
-            'success' => true,
-        ]);
-
-        $successMsg = sprintf(
-            '<strong>%s</strong> %s',
-            trans('dashboard.notifications.awesome'),
-            trans('cachet.subscriber.email.subscribed')
-        );
-
-        event(new CustomerHasSubscribedEvent($subscriber));
-
-        return Redirect::route('status-page')->with('success', $successMsg);
+        return Redirect::route('status-page')
+            ->withSuccess(sprintf('<strong>%s</strong> %s', trans('dashboard.notifications.awesome'), trans('cachet.subscriber.email.subscribed')));
     }
 
     /**
      * Handle the verify subscriber email.
      *
-     * @param string $code
+     * @param string|null $code
      *
      * @return \Illuminate\View\View
      */
@@ -92,30 +78,19 @@ class SubscribeController extends AbstractController
         $subscriber = Subscriber::where('verify_code', '=', $code)->first();
 
         if (!$subscriber || $subscriber->verified()) {
-            return Redirect::route('status-page');
+            throw new BadRequestHttpException();
         }
 
-        $subscriber->verified_at = Carbon::now();
-        $subscriber->save();
+        $this->dispatch(new VerifySubscriberCommand($subscriber));
 
-        segment_track('Subscribers', [
-            'event'   => 'Customer Email Verified',
-            'success' => true,
-        ]);
-
-        $successMsg = sprintf(
-            '<strong>%s</strong> %s',
-            trans('dashboard.notifications.awesome'),
-            trans('cachet.subscriber.email.verified')
-        );
-
-        return Redirect::route('status-page')->with('success', $successMsg);
+        return Redirect::route('status-page')
+            ->withSuccess(sprintf('<strong>%s</strong> %s', trans('dashboard.notifications.awesome'), trans('cachet.subscriber.email.verified')));
     }
 
     /**
      * Handle the unsubscribe.
      *
-     * @param string $code
+     * @param string|null $code
      *
      * @return \Illuminate\View\View
      */
@@ -128,22 +103,12 @@ class SubscribeController extends AbstractController
         $subscriber = Subscriber::where('verify_code', '=', $code)->first();
 
         if (!$subscriber || !$subscriber->verified()) {
-            return Redirect::route('status-page');
+            throw new BadRequestHttpException();
         }
 
-        $subscriber->delete();
+        $this->dispatch(new UnsubscribeSubscriberCommand($subscriber));
 
-        segment_track('Subscribers', [
-            'event'   => 'Customer Unsubscribed',
-            'success' => true,
-        ]);
-
-        $successMsg = sprintf(
-            '<strong>%s</strong> %s',
-            trans('dashboard.notifications.awesome'),
-            trans('cachet.subscriber.email.unsuscribed')
-        );
-
-        return Redirect::route('status-page')->with('success', $successMsg);
+        return Redirect::route('status-page')
+            ->withSuccess(sprintf('<strong>%s</strong> %s', trans('dashboard.notifications.awesome'), trans('cachet.subscriber.email.unsuscribed')));
     }
 }

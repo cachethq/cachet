@@ -3,7 +3,7 @@
 /*
  * This file is part of Cachet.
  *
- * (c) Cachet HQ <support@cachethq.io>
+ * (c) Alt Three Services Limited
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -23,9 +23,9 @@ class IncidentTest extends AbstractTestCase
         $incidents = factory('CachetHQ\Cachet\Models\Incident', 3)->create();
 
         $this->get('/api/v1/incidents');
-        $this->seeJson(['id' => (string) $incidents[0]->id]);
-        $this->seeJson(['id' => (string) $incidents[1]->id]);
-        $this->seeJson(['id' => (string) $incidents[2]->id]);
+        $this->seeJson(['id' => $incidents[0]->id]);
+        $this->seeJson(['id' => $incidents[1]->id]);
+        $this->seeJson(['id' => $incidents[2]->id]);
         $this->assertResponseOk();
     }
 

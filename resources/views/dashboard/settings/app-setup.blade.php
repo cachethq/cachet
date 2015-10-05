@@ -2,8 +2,8 @@
 
 @section('content')
     <div class="content-panel">
-        @if(isset($subMenu))
-        @include('partials.dashboard.sub-sidebar')
+        @if(isset($sub_menu))
+        @include('dashboard.partials.sub-sidebar')
         @endif
         <div class="content-wrapper">
             <div class="header sub-header" id="application-setup">
@@ -15,7 +15,7 @@
                 <div class="col-sm-12">
                     <form id="settings-form" name="SettingsForm" class="form-vertical" role="form" action="/dashboard/settings" method="POST" enctype="multipart/form-data">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        @include('partials.dashboard.errors')
+                        @include('dashboard.partials.errors')
                         <fieldset>
                             <div class="row">
                                 <div class="col-xs-12">
@@ -135,7 +135,7 @@
                                 <div class="col-xs-12">
                                     <div class="form-group">
                                         <label>{{ trans('forms.settings.app-setup.days-of-incidents') }}</label>
-                                        <input type="number" min="1" max="100" name="app_incident_days" class="form-control" value="{{ Setting::get('app_incident_days') ?: 7 }}">
+                                        <input type="number" max="100" name="app_incident_days" class="form-control" value="{{ Setting::get('app_incident_days', 7) }}">
                                     </div>
                                 </div>
                             </div>
@@ -163,15 +163,6 @@
                                         <label>{{ trans('setup.show_support') }}</label>
                                         <input type="hidden" value="0" name="show_support">
                                         <input type="checkbox" value="1" name="show_support" class="form-control" {{ Setting::get('show_support') ? 'checked' : null }}>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <div class="form-group">
-                                        <label>{{ trans('setup.allow_tracking') }}</label>
-                                        <input type="hidden" value="0" name="app_track">
-                                        <input type="checkbox" value="1" name="app_track" class="form-control" {{ Setting::get('app_track') ? 'checked' : null }}>
                                     </div>
                                 </div>
                             </div>

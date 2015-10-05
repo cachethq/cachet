@@ -3,7 +3,7 @@
 /*
  * This file is part of Cachet.
  *
- * (c) Cachet HQ <support@cachethq.io>
+ * (c) Alt Three Services Limited
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -11,6 +11,8 @@
 
 namespace CachetHQ\Tests\Cachet;
 
+use CachetHQ\Cachet\Models\User;
+use Illuminate\Contracts\Console\Kernel;
 use Illuminate\Foundation\Testing\TestCase;
 
 abstract class AbstractTestCase extends TestCase
@@ -31,17 +33,18 @@ abstract class AbstractTestCase extends TestCase
     {
         $app = require __DIR__.'/../bootstrap/app.php';
 
-        $app->make('Illuminate\Contracts\Console\Kernel')->bootstrap();
+        $app->make(Kernel::class)->bootstrap();
 
         return $app;
     }
 
     /**
-     * Becomes a user.
+     * Become a user.
      */
     protected function beUser()
     {
-        $this->user = factory('CachetHQ\Cachet\Models\User')->create();
+        $this->user = factory(User::class)->create();
+
         $this->be($this->user);
     }
 }

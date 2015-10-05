@@ -3,7 +3,7 @@
 /*
  * This file is part of Cachet.
  *
- * (c) Cachet HQ <support@cachethq.io>
+ * (c) Alt Three Services Limited
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,10 +14,11 @@ namespace CachetHQ\Cachet\Http\Controllers;
 use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Incident;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Str;
 use Roumen\Feed\Facades\Feed;
 
-class RssController extends AbstractController
+class RssController extends Controller
 {
     /**
      * Generates an Atom feed of all incidents.
@@ -62,7 +63,7 @@ class RssController extends AbstractController
         $feed->add(
             $incident->name,
             Setting::get('app_name'),
-            Str::canonicalize(Setting::get('app_domain')).'#'.$incident->id,
+            Str::canonicalize(route('incident', ['id' => $incident->id])),
             $incident->created_at->toRssString(),
             $incident->message
         );

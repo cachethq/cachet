@@ -3,7 +3,7 @@
 /*
  * This file is part of Cachet.
  *
- * (c) Cachet HQ <support@cachethq.io>
+ * (c) Alt Three Services Limited
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -28,6 +28,8 @@ class RedirectIfAuthenticated
      * Create a new redirect if authenticated middleware instance.
      *
      * @param \Illuminate\Contracts\Auth\Guard $auth
+     *
+     * @return void
      */
     public function __construct(Guard $auth)
     {

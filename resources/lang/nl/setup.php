@@ -3,7 +3,7 @@
 /*
  * This file is part of Cachet.
  *
- * (c) Cachet HQ <support@cachethq.io>
+ * (c) Alt Three Services Limited
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -11,13 +11,13 @@
 
 return [
     'setup'             => 'Installatie',
-    'title'             => 'Installatie Cachet',
-    'service_details'   => 'Servicedetails',
+    'title'             => 'Installeer Cachet',
+    'service_details'   => 'Service Details',
+    'env_setup'         => 'Omgevingsconfiguratie',
     'status_page_setup' => 'Installatie statuspagina',
     'show_support'      => 'Steun voor Cachet tonen?',
     'admin_account'     => 'Beheerdersaccount',
-    'complete_setup'    => 'Installatie voltooien',
-    'completed'         => 'Cachet is met succes geconfigureerd!',
-    'finish_setup'      => 'Ga naar dashboard',
-    'allow_tracking'    => 'Anoniem gebruik tracken toestaan?',
+    'complete_setup'    => 'Voltooi Installatie',
+    'completed'         => 'Cachet is succesvol geconfigureerd!',
+    'finish_setup'      => 'Ga naar het dashboard',
 ];

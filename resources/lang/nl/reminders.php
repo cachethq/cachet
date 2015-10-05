@@ -3,7 +3,7 @@
 /*
  * This file is part of Cachet.
  *
- * (c) Cachet HQ <support@cachethq.io>
+ * (c) Alt Three Services Limited
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -22,10 +22,10 @@ return [
     |
     */
 
-    'password' => 'Wachtwoord moeten minimaal 6 tekens bevatten en overeenkomen met de bevestiging.',
-    'user'     => 'We kunnen geen gebruiker vinden met dat e-mailadres.',
+    'password' => 'Paswoorden moeten minstens zes karakters lang zijn en overeenkomen met de bevestiging.',
+    'user'     => 'We kunnen geen gebruiker met dit e-mailadres terugvinden.',
     'token'    => 'Dit wachtwoord-herstel-token is ongeldig.',
-    'sent'     => 'Wachtwoordherinnering verstuurd!',
-    'reset'    => 'Wachtwoord is hersteld!',
+    'sent'     => 'Wachtwoord herinnering verstuurd!',
+    'reset'    => 'Wachtwoord is opnieuw ingesteld!',
 
 ];

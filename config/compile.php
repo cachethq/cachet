@@ -3,7 +3,7 @@
 /*
  * This file is part of Cachet.
  *
- * (c) Cachet HQ <support@cachethq.io>
+ * (c) Alt Three Services Limited
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -22,15 +22,7 @@ return [
     |
     */
 
-    'files' => [
-
-        realpath(__DIR__.'/../app/Providers/AppServiceProvider.php'),
-        realpath(__DIR__.'/../app/Providers/BusServiceProvider.php'),
-        realpath(__DIR__.'/../app/Providers/ConfigServiceProvider.php'),
-        realpath(__DIR__.'/../app/Providers/EventServiceProvider.php'),
-        realpath(__DIR__.'/../app/Providers/RouteServiceProvider.php'),
-
-    ],
+    'files' => [],
 
     /*
     |--------------------------------------------------------------------------
@@ -43,8 +35,6 @@ return [
     |
     */
 
-    'providers' => [
-        //
-    ],
+    'providers' => [],
 
 ];

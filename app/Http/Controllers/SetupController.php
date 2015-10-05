@@ -3,7 +3,7 @@
 /*
  * This file is part of Cachet.
  *
- * (c) Cachet HQ <support@cachethq.io>
+ * (c) Alt Three Services Limited
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,6 +14,7 @@ namespace CachetHQ\Cachet\Http\Controllers;
 use CachetHQ\Cachet\Models\Setting;
 use CachetHQ\Cachet\Models\User;
 use GrahamCampbell\Binput\Facades\Binput;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Redirect;
@@ -23,7 +24,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\View;
 
-class SetupController extends AbstractController
+class SetupController extends Controller
 {
     /**
      * Array of cache drivers.
@@ -31,13 +32,18 @@ class SetupController extends AbstractController
      * @var string[]
      */
     protected $cacheDrivers = [
-        'apc'      => 'APC(u)',
-        'file'     => 'File',
-        'database' => 'Database',
+        'apc'       => 'APC(u)',
+        'array'     => 'Array',
+        'file'      => 'File',
+        'database'  => 'Database',
+        'memcached' => 'Memcached',
+        'redis'     => 'Redis',
     ];
 
     /**
      * Create a new setup controller instance.
+     *
+     * @return void
      */
     public function __construct()
     {
@@ -51,18 +57,15 @@ class SetupController extends AbstractController
      */
     public function getIndex()
     {
-        segment_page('Setup');
-
-        // If we've copied the .env.example file, then we should try and reset it ready for Segment to kick in.
+        // If we've copied the .env.example file, then we should try and reset it.
         if (getenv('APP_KEY') === 'SomeRandomString') {
             $this->keyGenerate();
         }
 
-        return View::make('setup')->with([
-            'pageTitle'    => trans('setup.setup'),
-            'cacheDrivers' => $this->cacheDrivers,
-            'appUrl'       => Request::root(),
-        ]);
+        return View::make('setup')
+            ->withPageTitle(trans('setup.setup'))
+            ->withCacheDrivers($this->cacheDrivers)
+            ->withAppUrl(Request::root());
     }
 
     /**
@@ -80,21 +83,10 @@ class SetupController extends AbstractController
         ]);
 
         if ($v->passes()) {
-            segment_track('Setup', [
-                'event'   => 'Step 1',
-                'success' => true,
-            ]);
-
             return Response::json(['status' => 1]);
-        } else {
-            // No good, let's try that again.
-            segment_track('Setup', [
-                'event'   => 'Step 1',
-                'success' => false,
-            ]);
-
-            return Response::json(['errors' => $v->messages()], 400);
         }
+
+        return Response::json(['errors' => $v->getMessageBag()], 400);
     }
 
     /**
@@ -117,21 +109,10 @@ class SetupController extends AbstractController
         ]);
 
         if ($v->passes()) {
-            segment_track('Setup', [
-                'event'   => 'Step 2',
-                'success' => true,
-            ]);
-
             return Response::json(['status' => 1]);
-        } else {
-            // No good, let's try that again.
-            segment_track('Setup', [
-                'event'   => 'Step 2',
-                'success' => false,
-            ]);
-
-            return Response::json(['errors' => $v->messages()], 400);
         }
+
+        return Response::json(['errors' => $v->getMessageBag()], 400);
     }
 
     /**
@@ -187,31 +168,18 @@ class SetupController extends AbstractController
 
             Session::flash('setup.done', true);
 
-            segment_track('Setup', [
-                'event'          => 'Step 3',
-                'success'        => true,
-                'cache_driver'   => $envData['cache_driver'],
-                'session_driver' => $envData['session_driver'],
-            ]);
-
             if (Request::ajax()) {
                 return Response::json(['status' => 1]);
             }
 
             return Redirect::to('dashboard');
-        } else {
-            segment_track('Setup', [
-                'event'   => 'Step 3',
-                'success' => false,
-            ]);
-
-            // No good, let's try that again.
-            if (Request::ajax()) {
-                return Response::json(['errors' => $v->messages()], 400);
-            }
-
-            return Redirect::back()->withInput()->with('errors', $v->messages());
         }
+
+        if (Request::ajax()) {
+            return Response::json(['errors' => $v->getMessageBag()], 400);
+        }
+
+        return Redirect::route('setup.index')->withInput()->withErrors($v->getMessageBag());
     }
 
     /**
@@ -219,6 +187,8 @@ class SetupController extends AbstractController
      *
      * @param string $key
      * @param mixed  $value
+     *
+     * @return void
      */
     protected function writeEnv($key, $value)
     {
@@ -234,6 +204,8 @@ class SetupController extends AbstractController
 
     /**
      * Generate the app.key value.
+     *
+     * @return void
      */
     protected function keyGenerate()
     {

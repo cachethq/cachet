@@ -3,7 +3,7 @@
 /*
  * This file is part of Cachet.
  *
- * (c) Cachet HQ <support@cachethq.io>
+ * (c) Alt Three Services Limited
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -29,6 +29,8 @@ class RedirectDisplayer implements DisplayerInterface
      * Create a new redirect displayer instance.
      *
      * @param \Illuminate\Http\Request $request
+     *
+     * @return void
      */
     public function __construct(Request $request)
     {
@@ -39,12 +41,13 @@ class RedirectDisplayer implements DisplayerInterface
      * Get the error response associated with the given exception.
      *
      * @param \Exception $exception
+     * @param string     $id
      * @param int        $code
      * @param string[]   $headers
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function display(Exception $exception, $code, array $headers)
+    public function display(Exception $exception, $id, $code, array $headers)
     {
         return redirect()->guest('auth/login');
     }
@@ -62,13 +65,14 @@ class RedirectDisplayer implements DisplayerInterface
     /**
      * Can we display the exception?
      *
-     * @param \Exception $exception
+     * @param \Exception $original
+     * @param \Exception $transformed
      *
      * @return bool
      */
-    public function canDisplay(Exception $exception)
+    public function canDisplay(Exception $original, Exception $transformed)
     {
-        $redirect = $exception instanceof HttpExceptionInterface && $exception->getStatusCode() === 401;
+        $redirect = $transformed instanceof HttpExceptionInterface && $transformed->getStatusCode() === 401;
 
         return $redirect && !$this->request->is('api*');
     }

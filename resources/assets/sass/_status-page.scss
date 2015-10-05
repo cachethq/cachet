@@ -16,6 +16,21 @@ body.status-page {
         margin-bottom: 20px;
     }
 
+    img {
+        box-sizing: border-box;
+
+        &.emoji {
+            height: 20px;
+            width: 20px;
+            vertical-align: middle;
+            max-width: none;
+        }
+    }
+
+    p, strong {
+        color: $cachet-base-dark;
+    }
+
     .tooltip {
         .tooltip-inner {
             padding: 8px 12px;
@@ -123,16 +138,6 @@ body.status-page {
                 &:before {
                     // height: 130%;
                     top: -5px;
-                }
-                &:after {
-                    content: '';
-                    position: absolute;
-                    left: 23px;
-                    top: -20px;
-                    width: 7px;
-                    height: 7px;
-                    background: $cachet_gray_light;
-                    border-radius: 50%;
                 }
             }
             &:before {
@@ -268,7 +273,6 @@ body.status-page {
             }
 
             &.group-name {
-                font-size: 1.2em;
                 background-color: $cachet_gray_light;
                 padding: {
                     top: 0.6em;
@@ -285,7 +289,7 @@ body.status-page {
 
             &.break {
                 padding: 1px;
-                background-color: $cachet-teal;
+                background-color: $cachet-base-medium;
             }
         }
 

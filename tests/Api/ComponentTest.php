@@ -3,7 +3,7 @@
 /*
  * This file is part of Cachet.
  *
- * (c) Cachet HQ <support@cachethq.io>
+ * (c) Alt Three Services Limited
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -23,9 +23,9 @@ class ComponentTest extends AbstractTestCase
         $components = factory('CachetHQ\Cachet\Models\Component', 3)->create();
 
         $this->get('/api/v1/components');
-        $this->seeJson(['id' => (string) $components[0]->id]);
-        $this->seeJson(['id' => (string) $components[1]->id]);
-        $this->seeJson(['id' => (string) $components[2]->id]);
+        $this->seeJson(['id' => $components[0]->id]);
+        $this->seeJson(['id' => $components[1]->id]);
+        $this->seeJson(['id' => $components[2]->id]);
         $this->assertResponseOk();
     }
 
