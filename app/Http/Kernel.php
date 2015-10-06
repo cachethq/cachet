@@ -21,12 +21,12 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $middleware = [
-        'Fideloper\Proxy\TrustProxies',
-        'Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode',
-        'Illuminate\Cookie\Middleware\EncryptCookies',
-        'Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse',
-        'Illuminate\Session\Middleware\StartSession',
-        'Illuminate\View\Middleware\ShareErrorsFromSession',
+        \Fideloper\Proxy\TrustProxies::class,
+        \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
+        \Illuminate\Cookie\Middleware\EncryptCookies::class,
+        \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
+        \Illuminate\Session\Middleware\StartSession::class,
+        \Illuminate\View\Middleware\ShareErrorsFromSession::class,
     ];
 
     /**
@@ -35,17 +35,17 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'accept'          => 'CachetHQ\Cachet\Http\Middleware\Acceptable',
-        'admin'           => 'CachetHQ\Cachet\Http\Middleware\Admin',
-        'app.hasSetting'  => 'CachetHQ\Cachet\Http\Middleware\HasSetting',
-        'app.isSetup'     => 'CachetHQ\Cachet\Http\Middleware\AppIsSetup',
-        'app.subscribers' => 'CachetHQ\Cachet\Http\Middleware\SubscribersConfigured',
-        'auth'            => 'CachetHQ\Cachet\Http\Middleware\Authenticate',
-        'auth.api'        => 'CachetHQ\Cachet\Http\Middleware\ApiAuthenticate',
-        'auth.basic'      => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
-        'csrf'            => 'Illuminate\Foundation\Http\Middleware\VerifyCsrfToken',
-        'guest'           => 'CachetHQ\Cachet\Http\Middleware\RedirectIfAuthenticated',
-        'localize'        => 'CachetHQ\Cachet\Http\Middleware\Localize',
-        'throttling'      => 'GrahamCampbell\Throttle\Http\Middleware\ThrottleMiddleware',
+        'accept'          => \CachetHQ\Cachet\Http\Middleware\Acceptable::class,
+        'admin'           => \CachetHQ\Cachet\Http\Middleware\Admin::class,
+        'app.hasSetting'  => \CachetHQ\Cachet\Http\Middleware\HasSetting::class,
+        'app.isSetup'     => \CachetHQ\Cachet\Http\Middleware\AppIsSetup::class,
+        'app.subscribers' => \CachetHQ\Cachet\Http\Middleware\SubscribersConfigured::class,
+        'auth'            => \CachetHQ\Cachet\Http\Middleware\Authenticate::class,
+        'auth.api'        => \CachetHQ\Cachet\Http\Middleware\ApiAuthenticate::class,
+        'auth.basic'      => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
+        'csrf'            => \Illuminate\Foundation\Http\Middleware\VerifyCsrfToken::class,
+        'guest'           => \CachetHQ\Cachet\Http\Middleware\RedirectIfAuthenticated::class,
+        'localize'        => \CachetHQ\Cachet\Http\Middleware\Localize::class,
+        'throttling'      => \GrahamCampbell\Throttle\Http\Middleware\ThrottleMiddleware::class,
     ];
 }

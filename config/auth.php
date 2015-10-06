@@ -37,7 +37,7 @@ return [
     |
     */
 
-    'model' => 'CachetHQ\Cachet\Models\User',
+    'model' => CachetHQ\Cachet\Models\User::class,
 
     /*
     |--------------------------------------------------------------------------

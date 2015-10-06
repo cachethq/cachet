@@ -39,7 +39,7 @@ return [
     ],
 
     'stripe' => [
-        'model'  => 'CachetHQ\Cachet\Models\User',
+        'model'  => CachetHQ\Cachet\Models\User::class,
         'key'    => '',
         'secret' => '',
     ],

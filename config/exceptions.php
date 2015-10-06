@@ -26,8 +26,8 @@ return [
     */
 
     'transformers' => [
-        'GrahamCampbell\Exceptions\Transformers\CsrfTransformer',
-        'CachetHQ\Cachet\Exceptions\Transformers\ModelNotFoundTransformer',
+        GrahamCampbell\Exceptions\Transformers\CsrfTransformer::class,
+        CachetHQ\Cachet\Exceptions\Transformers\ModelNotFoundTransformer::class,
     ],
 
     /*
@@ -45,11 +45,11 @@ return [
     */
 
     'displayers' => [
-        'CachetHQ\Cachet\Exceptions\Displayers\RedirectDisplayer',
-        'GrahamCampbell\Exceptions\Displayers\DebugDisplayer',
-        'GrahamCampbell\Exceptions\Displayers\HtmlDisplayer',
-        'GrahamCampbell\Exceptions\Displayers\JsonDisplayer',
-        'GrahamCampbell\Exceptions\Displayers\JsonApiDisplayer',
+        CachetHQ\Cachet\Exceptions\Displayers\RedirectDisplayer::class,
+        GrahamCampbell\Exceptions\Displayers\DebugDisplayer::class,
+        GrahamCampbell\Exceptions\Displayers\HtmlDisplayer::class,
+        GrahamCampbell\Exceptions\Displayers\JsonDisplayer::class,
+        GrahamCampbell\Exceptions\Displayers\JsonApiDisplayer::class,
     ],
 
     /*
@@ -66,10 +66,10 @@ return [
     */
 
     'filters' => [
-        'GrahamCampbell\Exceptions\Filters\VerboseFilter',
-        'GrahamCampbell\Exceptions\Filters\CanDisplayFilter',
-        'GrahamCampbell\Exceptions\Filters\ContentTypeFilter',
-        'CachetHQ\Cachet\Exceptions\Filters\ApiFilter',
+        GrahamCampbell\Exceptions\Filters\VerboseFilter::class,
+        GrahamCampbell\Exceptions\Filters\CanDisplayFilter::class,
+        GrahamCampbell\Exceptions\Filters\ContentTypeFilter::class,
+        CachetHQ\Cachet\Exceptions\Filters\ApiFilter::class,
     ],
 
     /*
@@ -84,7 +84,7 @@ return [
     |
     */
 
-    'default' => 'GrahamCampbell\Exceptions\Displayers\HtmlDisplayer',
+    'default' => GrahamCampbell\Exceptions\Displayers\HtmlDisplayer::class,
 
     /*
     |--------------------------------------------------------------------------
@@ -99,11 +99,11 @@ return [
     */
 
     'levels' => [
-        'Illuminate\Session\TokenMismatchException'                     => 'notice',
-        'Illuminate\Database\Eloquent\ModelNotFoundException'           => 'warning',
-        'Symfony\Component\HttpKernel\Exception\HttpExceptionInterface' => 'warning',
-        'Symfony\Component\Debug\Exception\FatalErrorException'         => 'critical',
-        'Exception'                                                     => 'error',
+        Illuminate\Session\TokenMismatchException::class                     => 'notice',
+        Illuminate\Database\Eloquent\ModelNotFoundException::class           => 'warning',
+        Symfony\Component\HttpKernel\Exception\HttpExceptionInterface::class => 'warning',
+        Symfony\Component\Debug\Exception\FatalErrorException::class         => 'critical',
+        Exception::class                                                     => 'error',
     ],
 
 ];
