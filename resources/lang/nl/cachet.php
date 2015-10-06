@@ -15,8 +15,8 @@ return [
         'status' => [
             1 => 'Operationeel',
             2 => 'Prestatieproblemen',
-            3 => 'Gedeeltelijke Storing',
-            4 => 'Grote Storing',
+            3 => 'Gedeeltelijke storing',
+            4 => 'Grote storing',
         ],
     ],
 
@@ -46,15 +46,15 @@ return [
 
     'api' => [
         'regenerate' => 'Hergenereer API-sleutel',
-        'revoke'     => 'API-sleutel Intrekken',
+        'revoke'     => 'API-sleutel intrekken',
     ],
 
     // Metrics
     'metrics' => [
         'filter' => [
-            'hourly'  => 'Last 12 Hours',
+            'hourly'  => 'Laatste 12 uren',
             'weekly'  => 'Week',
-            'monthly' => 'Month',
+            'monthly' => 'Maand',
         ],
     ],
 
@@ -68,7 +68,7 @@ return [
             'verified'     => 'Uw e-mail abonnement is bevestigd. Bedankt!',
             'unsubscribe'  => 'Afmelden voor e-mail updates.',
             'unsubscribed' => 'Uw e-mail abonnement is opgezegd.',
-            'failure'      => 'Er ging ging iets fout tijdens het aanmelden.',
+            'failure'      => 'Er ging iets fout tijdens het aanmelden.',
             'verify'       => [
                 'text'           => 'Bevestig uw e-mail abonnement op :app_name status updates.\\n:link\\nBedankt, :app_name',
                 'html-preheader' => 'Bevestig uw e-mail abonnement op :app_name status updates.',
