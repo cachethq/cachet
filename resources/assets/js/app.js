@@ -115,7 +115,7 @@ $(function() {
         $(this).parents('div.alert').addClass('hide');
     });
 
-    $('form[name=IncidentForm] select[name=incident\\[component_id\\]]').on('change', function() {
+    $('form[name=IncidentForm] select[name=component_id]').on('change', function() {
         var $option = $(this).find('option:selected');
         var $componentStatus = $('#component-status');
 
