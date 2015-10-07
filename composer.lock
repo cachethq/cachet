@@ -71,16 +71,16 @@
         },
         {
             "name": "alt-three/validator",
-            "version": "v1.2.0",
+            "version": "v1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/AltThree/Validator.git",
-                "reference": "01fc9ab865df38254d03c749f6a266529a2df392"
+                "reference": "58445d8ecde58b781df65add69d7fec432c89738"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/AltThree/Validator/zipball/01fc9ab865df38254d03c749f6a266529a2df392",
-                "reference": "01fc9ab865df38254d03c749f6a266529a2df392",
+                "url": "https://api.github.com/repos/AltThree/Validator/zipball/58445d8ecde58b781df65add69d7fec432c89738",
+                "reference": "58445d8ecde58b781df65add69d7fec432c89738",
                 "shasum": ""
             },
             "require": {
@@ -127,7 +127,7 @@
                 "logging",
                 "validator"
             ],
-            "time": "2015-07-28 23:55:40"
+            "time": "2015-10-06 18:08:56"
         },
         {
             "name": "asm89/stack-cors",
@@ -944,20 +944,20 @@
         },
         {
             "name": "graham-campbell/binput",
-            "version": "v3.2.0",
+            "version": "v3.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Binput.git",
-                "reference": "fa3c6306a903932b0e82738ab2788e73fdf9f9c7"
+                "reference": "d0053d670ed0e71868ce8784f2fffa96f8007bf7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Binput/zipball/fa3c6306a903932b0e82738ab2788e73fdf9f9c7",
-                "reference": "fa3c6306a903932b0e82738ab2788e73fdf9f9c7",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Binput/zipball/d0053d670ed0e71868ce8784f2fffa96f8007bf7",
+                "reference": "d0053d670ed0e71868ce8784f2fffa96f8007bf7",
                 "shasum": ""
             },
             "require": {
-                "graham-campbell/security": "~3.2",
+                "graham-campbell/security": "~3.3",
                 "illuminate/contracts": "5.0.*|5.1.*",
                 "illuminate/http": "5.0.*|5.1.*",
                 "illuminate/support": "5.0.*|5.1.*",
@@ -966,7 +966,7 @@
             "require-dev": {
                 "graham-campbell/testbench": "~3.0",
                 "mockery/mockery": "^0.9.4",
-                "phpunit/phpunit": "^4.7.6"
+                "phpunit/phpunit": "~4.8|~5.0"
             },
             "type": "library",
             "extra": {
@@ -1003,20 +1003,20 @@
                 "laravel",
                 "security"
             ],
-            "time": "2015-06-26 17:33:45"
+            "time": "2015-10-06 16:43:02"
         },
         {
             "name": "graham-campbell/core",
-            "version": "v4.1.0",
+            "version": "v4.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Core.git",
-                "reference": "5ca2ff7049be5058a1cbcf027f5f70b31892ab18"
+                "reference": "8a399ac87aa90b064859cfa56e80e874fb910c85"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Core/zipball/5ca2ff7049be5058a1cbcf027f5f70b31892ab18",
-                "reference": "5ca2ff7049be5058a1cbcf027f5f70b31892ab18",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Core/zipball/8a399ac87aa90b064859cfa56e80e874fb910c85",
+                "reference": "8a399ac87aa90b064859cfa56e80e874fb910c85",
                 "shasum": ""
             },
             "require": {
@@ -1028,7 +1028,7 @@
             "require-dev": {
                 "graham-campbell/testbench": "~3.0",
                 "mockery/mockery": "^0.9.4",
-                "phpunit/phpunit": "^4.7.6"
+                "phpunit/phpunit": "~4.8|~5.0"
             },
             "type": "library",
             "extra": {
@@ -1063,7 +1063,7 @@
                 "laravel",
                 "starter"
             ],
-            "time": "2015-06-26 16:44:58"
+            "time": "2015-10-06 16:45:46"
         },
         {
             "name": "graham-campbell/exceptions",
@@ -1193,16 +1193,16 @@
         },
         {
             "name": "graham-campbell/security",
-            "version": "v3.2.0",
+            "version": "v3.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Security.git",
-                "reference": "e3c0409218ced4bb4dc88a4d85fb58b670679141"
+                "reference": "3211aec137362c61dbd28ae8b01920c6d3da82fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Security/zipball/e3c0409218ced4bb4dc88a4d85fb58b670679141",
-                "reference": "e3c0409218ced4bb4dc88a4d85fb58b670679141",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Security/zipball/3211aec137362c61dbd28ae8b01920c6d3da82fd",
+                "reference": "3211aec137362c61dbd28ae8b01920c6d3da82fd",
                 "shasum": ""
             },
             "require": {
@@ -1212,12 +1212,12 @@
             },
             "require-dev": {
                 "graham-campbell/testbench": "~3.0",
-                "phpunit/phpunit": "^4.7.6"
+                "phpunit/phpunit": "~4.8|~5.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.2-dev"
+                    "dev-master": "3.3-dev"
                 }
             },
             "autoload": {
@@ -1246,7 +1246,7 @@
                 "laravel",
                 "security"
             ],
-            "time": "2015-06-26 17:29:42"
+            "time": "2015-10-06 16:55:49"
         },
         {
             "name": "graham-campbell/throttle",
@@ -3396,23 +3396,23 @@
         },
         {
             "name": "graham-campbell/testbench-core",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-TestBench-Core.git",
-                "reference": "caa22f1bfdd2197443d1f74b2a607c117daa1d23"
+                "reference": "ef25bf4c8f71713a7c072aafe951b6a8d643702c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-TestBench-Core/zipball/caa22f1bfdd2197443d1f74b2a607c117daa1d23",
-                "reference": "caa22f1bfdd2197443d1f74b2a607c117daa1d23",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-TestBench-Core/zipball/ef25bf4c8f71713a7c072aafe951b6a8d643702c",
+                "reference": "ef25bf4c8f71713a7c072aafe951b6a8d643702c",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.5.9"
             },
             "require-dev": {
-                "phpunit/phpunit": "^4.7.6"
+                "phpunit/phpunit": "~4.8|~5.0"
             },
             "suggest": {
                 "illuminate/support": "Required to use the laravel trait.",
@@ -3452,7 +3452,7 @@
                 "testbench-core",
                 "testing"
             ],
-            "time": "2015-06-26 16:35:19"
+            "time": "2015-10-06 16:56:21"
         },
         {
             "name": "hamcrest/hamcrest-php",
@@ -3675,16 +3675,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "2.2.3",
+            "version": "2.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "ef1ca6835468857944d5c3b48fa503d5554cff2f"
+                "reference": "eabf68b476ac7d0f73793aada060f1c1a9bf8979"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/ef1ca6835468857944d5c3b48fa503d5554cff2f",
-                "reference": "ef1ca6835468857944d5c3b48fa503d5554cff2f",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/eabf68b476ac7d0f73793aada060f1c1a9bf8979",
+                "reference": "eabf68b476ac7d0f73793aada060f1c1a9bf8979",
                 "shasum": ""
             },
             "require": {
@@ -3733,7 +3733,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-09-14 06:51:16"
+            "time": "2015-10-06 15:47:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -3915,16 +3915,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.8.10",
+            "version": "4.8.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "463163747474815c5ccd4ae12b5b355ec12158e8"
+                "reference": "bdd199472410fd7e32751f9c814c7e06f2c21bd5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/463163747474815c5ccd4ae12b5b355ec12158e8",
-                "reference": "463163747474815c5ccd4ae12b5b355ec12158e8",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/bdd199472410fd7e32751f9c814c7e06f2c21bd5",
+                "reference": "bdd199472410fd7e32751f9c814c7e06f2c21bd5",
                 "shasum": ""
             },
             "require": {
@@ -3983,7 +3983,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-10-01 09:14:30"
+            "time": "2015-10-07 10:39:46"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
