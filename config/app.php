@@ -159,7 +159,7 @@ return [
         'GrahamCampbell\Security\SecurityServiceProvider',
         'GrahamCampbell\Throttle\ThrottleServiceProvider',
         'Jenssegers\Date\DateServiceProvider',
-        'McCool\LaravelAutoPresenter\LaravelAutoPresenterServiceProvider',
+        'McCool\LaravelAutoPresenter\AutoPresenterServiceProvider',
         'PragmaRX\Google2FA\Vendor\Laravel\ServiceProvider',
         'Roumen\Feed\FeedServiceProvider',
 

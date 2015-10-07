@@ -15,7 +15,7 @@ use CachetHQ\Cachet\Events\Incident\MaintenanceWasScheduledEvent;
 use CachetHQ\Cachet\Models\Subscriber;
 use Illuminate\Contracts\Mail\MailQueue;
 use Illuminate\Mail\Message;
-use McCool\LaravelAutoPresenter\PresenterDecorator;
+use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
 
 class SendMaintenanceEmailNotificationHandler
 {
@@ -34,26 +34,17 @@ class SendMaintenanceEmailNotificationHandler
     protected $subscriber;
 
     /**
-     * The presenter instance.
-     *
-     * @var \McCool\LaravelAutoPresenter\PresenterDecorator
-     */
-    protected $presenter;
-
-    /**
      * Create a new send maintenance email notification handler.
      *
-     * @param \Illuminate\Contracts\Mail\Mailer               $mailer
-     * @param \CachetHQ\Cachet\Models\Subscriber              $subscriber
-     * @param \McCool\LaravelAutoPresenter\PresenterDecorator $presenter
+     * @param \Illuminate\Contracts\Mail\Mailer  $mailer
+     * @param \CachetHQ\Cachet\Models\Subscriber $subscriber
      *
      * @return void
      */
-    public function __construct(MailQueue $mailer, Subscriber $subscriber, PresenterDecorator $presenter)
+    public function __construct(MailQueue $mailer, Subscriber $subscriber)
     {
         $this->mailer = $mailer;
         $this->subscriber = $subscriber;
-        $this->presenter = $presenter;
     }
 
     /**
@@ -65,7 +56,7 @@ class SendMaintenanceEmailNotificationHandler
      */
     public function handle(MaintenanceWasScheduledEvent $event)
     {
-        $data = $this->presenter->decorate($event->incident);
+        $data = AutoPresenter::decorate($event->incident);
 
         foreach ($this->subscriber->all() as $subscriber) {
             $mail = [

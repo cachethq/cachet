@@ -33,7 +33,7 @@
         "graham-campbell/exceptions": "^5.0",
         "guzzlehttp/guzzle": "^6.1",
         "jenssegers/date": "^3.0",
-        "mccool/laravel-auto-presenter": "^3.1",
+        "mccool/laravel-auto-presenter": "^4.1",
         "pragmarx/google2fa": "^0.5",
         "roumen/feed": "^2.9"
     },

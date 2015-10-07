@@ -15,7 +15,7 @@ use CachetHQ\Cachet\Events\Incident\IncidentWasReportedEvent;
 use CachetHQ\Cachet\Models\Subscriber;
 use Illuminate\Contracts\Mail\MailQueue;
 use Illuminate\Mail\Message;
-use McCool\LaravelAutoPresenter\PresenterDecorator;
+use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
 
 class SendIncidentEmailNotificationHandler
 {
@@ -34,26 +34,17 @@ class SendIncidentEmailNotificationHandler
     protected $subscriber;
 
     /**
-     * The presenter instance.
-     *
-     * @var \McCool\LaravelAutoPresenter\PresenterDecorator
-     */
-    protected $presenter;
-
-    /**
      * Create a new send incident email notification handler.
      *
-     * @param \Illuminate\Contracts\Mail\Mailer               $mailer
-     * @param \CachetHQ\Cachet\Models\Subscriber              $subscriber
-     * @param \McCool\LaravelAutoPresenter\PresenterDecorator $presenter
+     * @param \Illuminate\Contracts\Mail\Mailer  $mailer
+     * @param \CachetHQ\Cachet\Models\Subscriber $subscriber
      *
      * @return void
      */
-    public function __construct(MailQueue $mailer, Subscriber $subscriber, PresenterDecorator $presenter)
+    public function __construct(MailQueue $mailer, Subscriber $subscriber)
     {
         $this->mailer = $mailer;
         $this->subscriber = $subscriber;
-        $this->presenter = $presenter;
     }
 
     /**
@@ -65,8 +56,8 @@ class SendIncidentEmailNotificationHandler
      */
     public function handle(IncidentWasReportedEvent $event)
     {
-        $incident = $this->presenter->decorate($event->incident);
-        $component = $this->presenter->decorate($event->incident->component);
+        $incident = AutoPresenter::decorate($event->incident);
+        $component = AutoPresenter::decorate($event->incident->component);
 
         // Only send emails for public incidents.
         if ($event->incident->visible === 1) {
