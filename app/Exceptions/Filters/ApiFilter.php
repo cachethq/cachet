@@ -41,10 +41,11 @@ class ApiFilter
      * @param \GrahamCampbell\Exceptions\Displayers\DisplayerInterface[] $displayers
      * @param \Exception                                                 $original
      * @param \Exception                                                 $transformed
+     * @param int                                                        $code
      *
      * @return \GrahamCampbell\Exceptions\Displayers\DisplayerInterface[]
      */
-    public function filter(array $displayers, Exception $original, Exception $transformed)
+    public function filter(array $displayers, Exception $original, Exception $transformed, $code)
     {
         if ($this->request->is('api*')) {
             foreach ($displayers as $index => $displayer) {

@@ -4,25 +4,25 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fc32fe7d00a5482612de93c45587ed46",
-    "content-hash": "b614724a941f8e64a4293befaa0852f3",
+    "hash": "58acc2efec4edb917a4a9fd95e72f4e5",
+    "content-hash": "62a58832c59c8d3e85df5d66eecea81b",
     "packages": [
         {
             "name": "alt-three/emoji",
-            "version": "v1.2.0",
+            "version": "v2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/AltThree/Emoji.git",
-                "reference": "92f01cb2bce289f199dee31e197660d6f6f572de"
+                "reference": "75ce4b4d09479a96a1a087598f8c8322d88bbeac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/AltThree/Emoji/zipball/92f01cb2bce289f199dee31e197660d6f6f572de",
-                "reference": "92f01cb2bce289f199dee31e197660d6f6f572de",
+                "url": "https://api.github.com/repos/AltThree/Emoji/zipball/75ce4b4d09479a96a1a087598f8c8322d88bbeac",
+                "reference": "75ce4b4d09479a96a1a087598f8c8322d88bbeac",
                 "shasum": ""
             },
             "require": {
-                "graham-campbell/markdown": "~4.0",
+                "graham-campbell/markdown": "~5.1",
                 "guzzlehttp/guzzle": "~5.3|~6.0",
                 "illuminate/contracts": "5.1.*",
                 "illuminate/support": "5.1.*",
@@ -35,7 +35,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.2-dev"
+                    "dev-master": "2.0-dev"
                 }
             },
             "autoload": {
@@ -67,7 +67,7 @@
                 "emoji",
                 "parser"
             ],
-            "time": "2015-08-14 22:18:26"
+            "time": "2015-10-06 18:42:23"
         },
         {
             "name": "alt-three/validator",
@@ -1067,16 +1067,16 @@
         },
         {
             "name": "graham-campbell/exceptions",
-            "version": "v4.0.0",
+            "version": "v5.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Exceptions.git",
-                "reference": "4a722d06c47dda498bc79edf67b04e285285dd5e"
+                "reference": "a62d5d189032f71e1cd97914ebb59c9a7f4b4767"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Exceptions/zipball/4a722d06c47dda498bc79edf67b04e285285dd5e",
-                "reference": "4a722d06c47dda498bc79edf67b04e285285dd5e",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Exceptions/zipball/a62d5d189032f71e1cd97914ebb59c9a7f4b4767",
+                "reference": "a62d5d189032f71e1cd97914ebb59c9a7f4b4767",
                 "shasum": ""
             },
             "require": {
@@ -1091,12 +1091,12 @@
             "require-dev": {
                 "graham-campbell/testbench": "~3.0",
                 "mockery/mockery": "^0.9.4",
-                "phpunit/phpunit": "^4.7.6"
+                "phpunit/phpunit": "~4.8|~5.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.0-dev"
+                    "dev-master": "5.0-dev"
                 }
             },
             "autoload": {
@@ -1128,38 +1128,38 @@
                 "laravel",
                 "whoops"
             ],
-            "time": "2015-07-25 10:39:01"
+            "time": "2015-10-06 16:49:41"
         },
         {
             "name": "graham-campbell/markdown",
-            "version": "v4.0.0",
+            "version": "v5.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Markdown.git",
-                "reference": "6e9a967e23f6c8480ad04d217ecfabda1aea4b09"
+                "reference": "990e9ef977376331ba1ed50fe36adfbe7e34677f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Markdown/zipball/6e9a967e23f6c8480ad04d217ecfabda1aea4b09",
-                "reference": "6e9a967e23f6c8480ad04d217ecfabda1aea4b09",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Markdown/zipball/990e9ef977376331ba1ed50fe36adfbe7e34677f",
+                "reference": "990e9ef977376331ba1ed50fe36adfbe7e34677f",
                 "shasum": ""
             },
             "require": {
                 "illuminate/contracts": "5.0.*|5.1.*",
                 "illuminate/support": "5.0.*|5.1.*",
                 "illuminate/view": "5.0.*|5.1.*",
-                "league/commonmark": "0.10.*",
+                "league/commonmark": "0.11.*",
                 "php": ">=5.5.9"
             },
             "require-dev": {
                 "graham-campbell/testbench": "~3.0",
                 "mockery/mockery": "^0.9.4",
-                "phpunit/phpunit": "^4.7.6"
+                "phpunit/phpunit": "~4.8|~5.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.0-dev"
+                    "dev-master": "5.1-dev"
                 }
             },
             "autoload": {
@@ -1189,7 +1189,7 @@
                 "laravel",
                 "markdown"
             ],
-            "time": "2015-07-25 14:48:25"
+            "time": "2015-10-06 16:53:34"
         },
         {
             "name": "graham-campbell/security",
@@ -1250,16 +1250,16 @@
         },
         {
             "name": "graham-campbell/throttle",
-            "version": "v4.1.1",
+            "version": "v5.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Throttle.git",
-                "reference": "35ca0b1e90f7eaf20251cc6005b93462413e2858"
+                "reference": "7c5a10d252732be491a6dd8306bb6969b5bc963b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Throttle/zipball/35ca0b1e90f7eaf20251cc6005b93462413e2858",
-                "reference": "35ca0b1e90f7eaf20251cc6005b93462413e2858",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Throttle/zipball/7c5a10d252732be491a6dd8306bb6969b5bc963b",
+                "reference": "7c5a10d252732be491a6dd8306bb6969b5bc963b",
                 "shasum": ""
             },
             "require": {
@@ -1272,12 +1272,12 @@
             "require-dev": {
                 "graham-campbell/testbench": "~3.0",
                 "mockery/mockery": "^0.9.4",
-                "phpunit/phpunit": "^4.7.6"
+                "phpunit/phpunit": "~4.8|~5.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.1-dev"
+                    "dev-master": "5.0-dev"
                 }
             },
             "autoload": {
@@ -1307,7 +1307,7 @@
                 "throttle",
                 "throttling"
             ],
-            "time": "2015-08-03 13:40:11"
+            "time": "2015-10-06 16:56:39"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -1811,16 +1811,16 @@
         },
         {
             "name": "league/commonmark",
-            "version": "0.10.0",
+            "version": "0.11.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/commonmark.git",
-                "reference": "984455f72d4f07669c1f5c545768f60c4e871585"
+                "reference": "d22d6a6a4b049faccc2f8e491cce6076eeb165c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/984455f72d4f07669c1f5c545768f60c4e871585",
-                "reference": "984455f72d4f07669c1f5c545768f60c4e871585",
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/d22d6a6a4b049faccc2f8e491cce6076eeb165c7",
+                "reference": "d22d6a6a4b049faccc2f8e491cce6076eeb165c7",
                 "shasum": ""
             },
             "require": {
@@ -1832,17 +1832,21 @@
             },
             "require-dev": {
                 "erusev/parsedown": "~1.0",
-                "jgm/commonmark": "0.21",
-                "jgm/smartpunct": "0.21",
+                "jgm/commonmark": "0.22",
+                "jgm/smartpunct": "0.22",
                 "michelf/php-markdown": "~1.4",
+                "mikehaertl/php-shellcommand": "~1.1.0",
                 "phpunit/phpunit": "~4.3",
                 "phpunit/phpunit-mock-objects": "2.3.0",
                 "symfony/finder": "~2.3"
             },
+            "bin": [
+                "bin/commonmark"
+            ],
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.11-dev"
+                    "dev-master": "0.12-dev"
                 }
             },
             "autoload": {
@@ -1869,7 +1873,7 @@
                 "markdown",
                 "parser"
             ],
-            "time": "2015-07-25 14:37:05"
+            "time": "2015-09-25 12:40:32"
         },
         {
             "name": "league/flysystem",
