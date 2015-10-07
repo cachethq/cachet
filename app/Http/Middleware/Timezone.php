@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Cachet\Http\Middleware;
 
+use CachetHQ\Cachet\Facades\Setting;
 use Closure;
 
 class Timezone
@@ -28,6 +29,7 @@ class Timezone
     {
         if ($tz = $request->header('Time-Zone')) {
             app('config')->set('app.timezone', $tz);
+            Setting::set('app_timezone', $tz);
         }
 
         return $next($request);
