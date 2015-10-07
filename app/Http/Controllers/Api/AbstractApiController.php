@@ -167,7 +167,7 @@ abstract class AbstractApiController extends Controller
             $items = $items->sortBy($sortBy, SORT_REGULAR, $direction);
         }
 
-        return $this->setMetaData($pagination)->setData(AutoPresenter::decorate($items->values()->all()))->respond();
+        return $this->setMetaData($pagination)->setData(AutoPresenter::decorate($items->values()))->respond();
     }
 
     /**
