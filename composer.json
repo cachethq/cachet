@@ -31,7 +31,7 @@
         "graham-campbell/markdown": "^4.0",
         "graham-campbell/throttle": "^4.1",
         "graham-campbell/exceptions": "^4.0",
-        "guzzlehttp/guzzle": "^6.0.2",
+        "guzzlehttp/guzzle": "^6.1",
         "jenssegers/date": "^3.0",
         "mccool/laravel-auto-presenter": "^3.1",
         "pragmarx/google2fa": "^0.5",
