@@ -29,7 +29,7 @@
         "graham-campbell/binput": "^3.2",
         "graham-campbell/core": "^4.1",
         "graham-campbell/markdown": "^5.1",
-        "graham-campbell/throttle": "^4.1",
+        "graham-campbell/throttle": "^5.0",
         "graham-campbell/exceptions": "^5.0",
         "guzzlehttp/guzzle": "^6.1",
         "jenssegers/date": "^3.0",
