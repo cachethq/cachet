@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "58acc2efec4edb917a4a9fd95e72f4e5",
-    "content-hash": "62a58832c59c8d3e85df5d66eecea81b",
+    "hash": "0274bcccebdc8a85ed2cd0a6ed741d82",
+    "content-hash": "970ad112175be43dd50ecc5f022b6772",
     "packages": [
         {
             "name": "alt-three/emoji",
@@ -1961,34 +1961,36 @@
         },
         {
             "name": "mccool/laravel-auto-presenter",
-            "version": "3.1.1",
+            "version": "4.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-auto-presenter/laravel-auto-presenter.git",
-                "reference": "0f77299f7e4e5e017da175583c85bf24fa85c118"
+                "reference": "3f1c9d3ef8a1cc5d78dea2654058145c2920f25e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-auto-presenter/laravel-auto-presenter/zipball/0f77299f7e4e5e017da175583c85bf24fa85c118",
-                "reference": "0f77299f7e4e5e017da175583c85bf24fa85c118",
+                "url": "https://api.github.com/repos/laravel-auto-presenter/laravel-auto-presenter/zipball/3f1c9d3ef8a1cc5d78dea2654058145c2920f25e",
+                "reference": "3f1c9d3ef8a1cc5d78dea2654058145c2920f25e",
                 "shasum": ""
             },
             "require": {
-                "illuminate/container": "~5.0",
-                "illuminate/contracts": "~5.0",
-                "illuminate/events": "~5.0",
-                "illuminate/pagination": "~5.0",
-                "illuminate/support": "~5.0",
-                "illuminate/view": "~5.0",
-                "php": ">=5.5.0"
+                "illuminate/container": "5.1.*",
+                "illuminate/contracts": "5.1.*",
+                "illuminate/events": "5.1.*",
+                "illuminate/pagination": "5.1.*",
+                "illuminate/support": "5.1.*",
+                "illuminate/view": "5.1.*",
+                "php": ">=5.5.9"
             },
             "require-dev": {
-                "graham-campbell/testbench": "~2.0"
+                "graham-campbell/testbench": "~3.0",
+                "mockery/mockery": "^0.9.4",
+                "phpunit/phpunit": "~4.8|~5.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.1-dev"
+                    "dev-master": "4.1-dev"
                 }
             },
             "autoload": {
@@ -2017,7 +2019,7 @@
                 "lpm",
                 "presenter"
             ],
-            "time": "2015-06-26 09:15:40"
+            "time": "2015-10-04 11:19:41"
         },
         {
             "name": "monolog/monolog",
