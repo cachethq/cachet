@@ -30,7 +30,7 @@ class ApiRoutes
         $router->group([
             'namespace'  => 'Api',
             'prefix'     => 'api/v1',
-            'middleware' => 'accept:application/json',
+            'middleware' => ['accept:application/json', 'timezone'],
         ], function ($router) {
             // General
             $router->get('ping', 'GeneralController@ping');
