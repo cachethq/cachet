@@ -140,7 +140,7 @@ class ScheduleController extends Controller
     {
         $scheduleData = Binput::get('incident');
         // Parse the schedule date.
-        $scheduledAt = Date::createFromFormat('d/m/Y H:i', $scheduleData['scheduled_at'], Setting::get('app_timezone'))
+        $scheduledAt = Date::createFromFormat('d/m/Y H:i', $scheduleData['scheduled_at'], config('cachet.timezone'))
             ->setTimezone(Config::get('app.timezone'));
 
         if ($scheduledAt->isPast()) {

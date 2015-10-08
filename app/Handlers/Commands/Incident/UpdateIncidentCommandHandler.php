@@ -35,7 +35,7 @@ class UpdateIncidentCommandHandler
 
         // The incident occurred at a different time.
         if ($command->incident_date) {
-            $incidentDate = Date::createFromFormat('d/m/Y H:i', $command->incident_date, Setting::get('app_timezone'))->setTimezone(Config::get('app.timezone'));
+            $incidentDate = Date::createFromFormat('d/m/Y H:i', $command->incident_date, config('cachet.timezone'))->setTimezone(Config::get('app.timezone'));
 
             $incident->update([
                 'created_at' => $incidentDate,

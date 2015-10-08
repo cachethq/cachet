@@ -30,7 +30,7 @@ class ReportMaintenanceCommandHandler
     public function handle(ReportMaintenanceCommand $command)
     {
         // TODO: Add validation to scheduledAt
-        $scheduledAt = Date::createFromFormat('d/m/Y H:i', $command->timestamp, Setting::get('app_timezone'))
+        $scheduledAt = Date::createFromFormat('d/m/Y H:i', $command->timestamp, config('cachet.timezone'))
             ->setTimezone(Config::get('app.timezone'));
 
         $maintenanceEvent = Incident::create([

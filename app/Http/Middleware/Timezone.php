@@ -28,8 +28,7 @@ class Timezone
     public function handle($request, Closure $next)
     {
         if ($tz = $request->header('Time-Zone')) {
-            app('config')->set('app.timezone', $tz);
-            Setting::set('app_timezone', $tz);
+            app('config')->set('cachet.timezone', $tz);
         }
 
         return $next($request);
