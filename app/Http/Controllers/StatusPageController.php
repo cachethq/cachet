@@ -55,7 +55,7 @@ class StatusPageController extends Controller
         } else {
             $incidentDays = range(0, $daysToShow);
         }
-        $dateTimeZone = config('cachet.timezone');
+        $dateTimeZone = Setting::get('app_timezone');
 
         $incidentVisiblity = Auth::check() ? 0 : 1;
 
