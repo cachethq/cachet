@@ -26,7 +26,7 @@ class ConfigServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $appDomain = $appLocale = null;
+        $appDomain = $appLocale = $appTimezone = null;
 
         try {
             // Get app custom configuration.
