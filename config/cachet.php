@@ -21,5 +21,5 @@ return [
     */
 
     'timezone' => 'UTC',
-    
+
 ];
