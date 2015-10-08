@@ -13,7 +13,6 @@ namespace CachetHQ\Cachet\Handlers\Commands\Incident;
 
 use CachetHQ\Cachet\Commands\Incident\UpdateIncidentCommand;
 use CachetHQ\Cachet\Events\Incident\IncidentWasUpdatedEvent;
-use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
 use Illuminate\Support\Facades\Config;

@@ -11,7 +11,6 @@
 
 namespace CachetHQ\Cachet\Http\Middleware;
 
-use CachetHQ\Cachet\Facades\Setting;
 use Closure;
 
 class Timezone
