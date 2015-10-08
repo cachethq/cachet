@@ -3,13 +3,13 @@ body.status-page {
     background-color: {{ $theme_background_color }};
     color: {{ $theme_text_color }};
 }
-.reds { color: {{ $theme_reds }}; }
-.blues { color: {{ $theme_blues }}; }
-.greens { color: {{ $theme_greens }}; }
-.yellows { color: {{ $theme_yellows }}; }
-.oranges { color: {{ $theme_oranges }}; }
-.metrics { color: {{ $theme_metrics }}; }
-.links { color: {{ $theme_links }}; }
+.reds { color: {{ $theme_reds }} !important; }
+.blues { color: {{ $theme_blues }} !important; }
+.greens { color: {{ $theme_greens }} !important; }
+.yellows { color: {{ $theme_yellows }} !important; }
+.oranges { color: {{ $theme_oranges }} !important; }
+.metrics { color: {{ $theme_metrics }} !important; }
+.links { color: {{ $theme_links }} !important; }
 
 /**
  * Alert overrides.
