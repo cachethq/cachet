@@ -95,3 +95,23 @@ if (!function_exists('color_darken')) {
         return $new_hex;
     }
 }
+
+if (!function_exists('color_contrast')) {
+    /**
+     * Calculates colour contrast.
+     *
+     * https://24ways.org/2010/calculating-color-contrast/
+     *
+     * @param string $hexcolor
+     *
+     * @return string
+     */
+    function color_contrast($hexcolor) {
+        $r = hexdec(substr($hexcolor, 0, 2));
+        $g = hexdec(substr($hexcolor, 2, 2));
+        $b = hexdec(substr($hexcolor, 4, 2));
+        $yiq = (($r * 100) + ($g * 400) + ($b * 114)) / 1000;
+
+        return ($yiq >= 128) ? 'black' : 'white';
+    }
+}
