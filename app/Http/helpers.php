@@ -106,7 +106,8 @@ if (!function_exists('color_contrast')) {
      *
      * @return string
      */
-    function color_contrast($hexcolor) {
+    function color_contrast($hexcolor)
+    {
         $r = hexdec(substr($hexcolor, 0, 2));
         $g = hexdec(substr($hexcolor, 2, 2));
         $b = hexdec(substr($hexcolor, 4, 2));
