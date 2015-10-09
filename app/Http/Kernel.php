@@ -46,6 +46,7 @@ class Kernel extends HttpKernel
         'csrf'            => 'Illuminate\Foundation\Http\Middleware\VerifyCsrfToken',
         'guest'           => 'CachetHQ\Cachet\Http\Middleware\RedirectIfAuthenticated',
         'localize'        => 'CachetHQ\Cachet\Http\Middleware\Localize',
+        'timezone'        => 'CachetHQ\Cachet\Http\Middleware\Timezone',
         'throttling'      => 'GrahamCampbell\Throttle\Http\Middleware\ThrottleMiddleware',
     ];
 }

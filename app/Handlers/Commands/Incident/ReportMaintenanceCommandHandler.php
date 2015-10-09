@@ -13,7 +13,6 @@ namespace CachetHQ\Cachet\Handlers\Commands\Incident;
 
 use CachetHQ\Cachet\Commands\Incident\ReportMaintenanceCommand;
 use CachetHQ\Cachet\Events\Incident\MaintenanceWasScheduledEvent;
-use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Cachet\Models\Incident;
 use Illuminate\Support\Facades\Config;
 use Jenssegers\Date\Date;
@@ -30,7 +29,7 @@ class ReportMaintenanceCommandHandler
     public function handle(ReportMaintenanceCommand $command)
     {
         // TODO: Add validation to scheduledAt
-        $scheduledAt = Date::createFromFormat('d/m/Y H:i', $command->timestamp, Setting::get('app_timezone'))
+        $scheduledAt = Date::createFromFormat('d/m/Y H:i', $command->timestamp, config('cachet.timezone'))
             ->setTimezone(Config::get('app.timezone'));
 
         $maintenanceEvent = Incident::create([

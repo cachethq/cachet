@@ -13,7 +13,6 @@ namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
 use AltThree\Validator\ValidationException;
 use CachetHQ\Cachet\Commands\Incident\ReportMaintenanceCommand;
-use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentTemplate;
 use GrahamCampbell\Binput\Facades\Binput;
@@ -140,7 +139,7 @@ class ScheduleController extends Controller
     {
         $scheduleData = Binput::get('incident');
         // Parse the schedule date.
-        $scheduledAt = Date::createFromFormat('d/m/Y H:i', $scheduleData['scheduled_at'], Setting::get('app_timezone'))
+        $scheduledAt = Date::createFromFormat('d/m/Y H:i', $scheduleData['scheduled_at'], config('cachet.timezone'))
             ->setTimezone(Config::get('app.timezone'));
 
         if ($scheduledAt->isPast()) {
