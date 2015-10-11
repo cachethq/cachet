@@ -30,7 +30,7 @@ class StatusPageComposer
     {
         // Default data
         $withData = [
-            'systemStatus'  => 'warning',
+            'systemStatus'  => 'info',
             'systemMessage' => trans('cachet.service.bad'),
             'favicon'       => 'favicon-high-alert',
         ];
