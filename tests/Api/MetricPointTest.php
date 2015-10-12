@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Tests\Cachet\Api;
 
+use Carbon\Carbon;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
@@ -69,6 +70,24 @@ class MetricPointTest extends AbstractTestCase
         $postData['timestamp'] = $timestamp;
 
         $this->post("/api/v1/metrics/{$metric->id}/points", $postData);
+        $this->seeJson(['value' => $metricPoint->value, 'created_at' => $datetime]);
+    }
+
+    public function testPostMetricPointTimestampTimezone()
+    {
+        $this->beUser();
+
+        $timezone = 'America/Mexico_City';
+        $metric = factory('CachetHQ\Cachet\Models\Metric')->create();
+        $timestamp = Carbon::now()->timezone($timezone)->timestamp;
+        $datetime = Carbon::now()->toDateTimeString();
+        $metricPoint = factory('CachetHQ\Cachet\Models\MetricPoint')->make([
+            'metric_id' => $metric->id,
+        ]);
+        $postData = $metricPoint->toArray();
+        $postData['timestamp'] = $timestamp;
+
+        $this->post("/api/v1/metrics/{$metric->id}/points", $postData, ['Time-Zone' => $timezone]);
         $this->seeJson(['value' => $metricPoint->value, 'created_at' => $datetime]);
     }
 
