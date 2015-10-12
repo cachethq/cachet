@@ -36,7 +36,7 @@ class UpdateMetricPointCommandHandler
         ];
 
         if ($createdAt) {
-            $data['created_at'] = Carbon::createFromFormat('U', $createdAt)->format('Y-m-d H:i:s');
+            $data['created_at'] = Carbon::createFromFormat('U', $createdAt, config('cachet.timezone'))->format('Y-m-d H:i:s');
         }
 
         $point->update($data);
