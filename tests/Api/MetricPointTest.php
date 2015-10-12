@@ -11,8 +11,8 @@
 
 namespace CachetHQ\Tests\Cachet\Api;
 
-use Carbon\Carbon;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
+use Carbon\Carbon;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class MetricPointTest extends AbstractTestCase
