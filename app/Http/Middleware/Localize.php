@@ -13,6 +13,7 @@ namespace CachetHQ\Cachet\Http\Middleware;
 
 use Closure;
 use Illuminate\Config\Repository;
+use Jenssegers\Date\Date;
 
 class Localize
 {
@@ -66,6 +67,7 @@ class Localize
         }
 
         app('translator')->setLocale($userLanguage);
+        Date::setLocale($userLanguage);
 
         return $next($request);
     }
