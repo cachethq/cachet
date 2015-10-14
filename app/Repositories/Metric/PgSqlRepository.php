@@ -89,23 +89,19 @@ class PgSqlRepository implements MetricInterface
         $dateTime = (new Date())->setTimezone($this->dateTimeZone);
         $dateTime->sub(new DateInterval('P'.$day.'D'));
 
-        // Default metrics calculations.
+        $points = $metric->points()
+                    ->whereRaw('created_at BETWEEN (created_at - interval \'1 week\') AND now()')
+                    ->whereRaw('to_char(created_at, \'YYYYMMDD\') = \''.$dateTime->format('Ymd').'\'')
+                    ->groupBy(DB::raw('to_char(created_at, \'YYYYMMDD\')'));
+
         if (!isset($metric->calc_type) || $metric->calc_type == Metric::CALC_SUM) {
-            $queryType = 'sum(metric_points.value)';
+            $value = $points->sum('value');
         } elseif ($metric->calc_type == Metric::CALC_AVG) {
-            $queryType = 'avg(metric_points.value)';
-        } else {
-            $queryType = 'sum(metric_points.value)';
+            $value = $points->avg('value');
         }
 
-        $query = DB::select("select {$queryType} as aggregate FROM metrics JOIN metric_points ON metric_points.metric_id = metrics.id WHERE metric_points.metric_id = {$metric->id} AND to_char(metric_points.created_at, 'YYYYMMDD') = :timestamp GROUP BY to_char(metric_points.created_at, 'YYYYMMDD')", [
-            'timestamp' => $hourInterval,
-        ]);
-
-        if (isset($query[0])) {
-            $value = $query[0]->aggregate;
-        } else {
-            $value = 0;
+        if ($value === 0 && $metric->default_value != $value) {
+            return $metric->default_value;
         }
 
         return round($value, $metric->places);
