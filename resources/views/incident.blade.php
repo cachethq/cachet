@@ -1,28 +1,11 @@
 @extends('layout.master')
 
 @section('content')
-<div class="btn-group pull-right">
-    <a href="/" class="btn btn-info"><i class="ion-home"></i></a>
-</div>
-
-<div class="clearfix"></div>
-
 <div class="section-messages">
     @include('dashboard.partials.errors')
 </div>
 
-@if($bannerImage = Setting::get('app_banner'))
-<div class="row app-banner">
-    <div class="col-md-12 text-center">
-        <?php $bannerType = Setting::get('app_banner_type') ?>
-        @if($app_url = Setting::get('app_domain'))
-        <a href="{{ $app_url }}" class="links"><img src="data:{{ $bannerType }};base64, {{ $bannerImage}}" class="banner-image img-responsive"></a>
-        @else
-        <img src="data:{{ $bannerType }};base64, {{ $bannerImage}}" class="banner-image img-responsive">
-        @endif
-    </div>
-</div>
-@endif
+@include('partials.about-app')
 
 <h4>{{ formatted_date($incident->created_at) }}</h4>
 

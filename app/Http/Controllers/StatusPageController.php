@@ -15,7 +15,6 @@ use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Cachet\Models\Incident;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
-use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
@@ -90,7 +89,6 @@ class StatusPageController extends Controller
         return View::make('index')
             ->withDaysToShow($daysToShow)
             ->withAllIncidents($allIncidents)
-            ->withAboutApp(Markdown::convertToHtml(Setting::get('app_about')))
             ->withCanPageForward((bool) $today->gt($startDate))
             ->withCanPageBackward(Incident::notScheduled()->where('created_at', '<', $startDate->format('Y-m-d'))->count() > 0)
             ->withPreviousDate($startDate->copy()->subDays($daysToShow)->toDateString())

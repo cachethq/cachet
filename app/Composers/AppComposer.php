@@ -12,6 +12,7 @@
 namespace CachetHQ\Cachet\Composers;
 
 use CachetHQ\Cachet\Facades\Setting;
+use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Contracts\View\View;
 
 class AppComposer
@@ -30,5 +31,6 @@ class AppComposer
         $mailFrom = env('MAIL_NAME', false);
 
         $view->withSubscribersEnabled($isEnabled && $mailAddress && $mailFrom);
+        $view->withAboutApp(Markdown::convertToHtml(Setting::get('app_about')));
     }
 }
