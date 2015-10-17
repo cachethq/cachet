@@ -1,14 +1,6 @@
 @extends('layout.master')
 
 @section('content')
-@if($subscribers_enabled)
-<div class="pull-right">
-    <p><a class="btn btn-success btn-outline" href="{{ route('subscribe.subscribe') }}">{{ trans('cachet.subscriber.button') }}</a></p>
-</div>
-@endif
-
-<div class="clearfix"></div>
-
 <div class="section-messages">
     @include('dashboard.partials.errors')
 </div>
@@ -26,16 +18,16 @@
 </div>
 @endif
 
-<div class="section-status">
-    <div class="alert alert-{{ $systemStatus }}">{{ $systemMessage }}</div>
-</div>
-
 @if($about_app)
 <div class="about-app">
     <h1>{{ trans('cachet.about_this_site') }}</h1>
     <p>{!! $about_app !!}</p>
 </div>
 @endif
+
+<div class="section-status">
+    <div class="alert alert-{{ $systemStatus }}">{{ $systemMessage }}</div>
+</div>
 
 @if(!$component_groups->isEmpty() || !$ungrouped_components->isEmpty())
 <div class="section-components">

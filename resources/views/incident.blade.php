@@ -1,11 +1,8 @@
 @extends('layout.master')
 
 @section('content')
-<div class="pull-right">
-    @if($subscribers_enabled)
-    <p><a class="btn btn-success btn-outline links" href="{{ route('subscribe.subscribe') }}">{{ trans('cachet.subscriber.button') }}</a></p>
-    @endif
-    <p><a class="btn btn-success btn-outline links" href="/"><i class="ion-home"></i></a></p>
+<div class="btn-group pull-right">
+    <a href="/" class="btn btn-info"><i class="ion-home"></i></a>
 </div>
 
 <div class="clearfix"></div>
