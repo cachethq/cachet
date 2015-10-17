@@ -26,14 +26,14 @@ class AddComponentCommandHandler
      */
     public function handle(AddComponentCommand $command)
     {
-        $component = Component::create([
+        $component = Component::create(array_filter([
             'name'        => $command->name,
             'description' => $command->description,
             'link'        => $command->link,
             'status'      => $command->status,
             'order'       => $command->order,
             'group_id'    => $command->group_id,
-        ]);
+        ]));
 
         event(new ComponentWasAddedEvent($component));
 
