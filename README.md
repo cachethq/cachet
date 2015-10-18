@@ -32,7 +32,7 @@ The `master` branch of this repository is a development branch and **should not*
 
 ### Development Requirements
 
-Theses extra dependencies are required to develop Cachet:
+These extra dependencies are required to develop Cachet:
 
 - Node.js
 - Bower
@@ -61,4 +61,4 @@ A special thank you to our [translators](https://crowdin.com/project/cachet/acti
 
 ## Security Vulnerabilities
 
-If you discover a security vulnerability within Cachet, please send an e-mail us at support@alt-three.com. All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within Cachet, please send an e-mail to us at support@alt-three.com. All security vulnerabilities will be promptly addressed.
