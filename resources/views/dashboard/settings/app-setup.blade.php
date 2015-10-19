@@ -46,94 +46,6 @@
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="form-group">
-                                        <label>{{ trans('forms.settings.app-setup.analytics_google') }}</label>
-                                        <input type="text" name="app_analytics" class="form-control" value="{{ Setting::get('app_analytics') }}" placeholder="UA-12345-12">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <div class="form-group">
-                                        <label>{{ trans('forms.settings.app-setup.analytics_gosquared') }}</label>
-                                        <input type="text" name="app_analytics_gs" class="form-control" value="{{ Setting::get('app_analytics_gs') }}" placeholder="GSN-12345-A">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <div class="form-group">
-                                        <label>{{ trans('forms.settings.app-setup.analytics_piwik_url') }}</label>
-                                        <input type="text" name="app_analytics_pi_url" class="form-control" value="{{ Setting::get('app_analytics_pi_url') }}" placeholder="piwik.example.org">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <div class="form-group">
-                                        <label>{{ trans('forms.settings.app-setup.analytics_piwik_siteid') }}</label>
-                                        <input type="number" min="1" max="100" name="app_analytics_pi_siteid" class="form-control" value="{{ Setting::get('app_analytics_pi_siteid') ?: 1 }}">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <div class="form-group">
-                                        <label>{{ trans('forms.settings.app-setup.site-timezone') }}</label>
-                                        <select name="app_timezone" class="form-control" required>
-                                            <option value="">Select Timezone</option>
-                                            @foreach($timezones as $region => $list)
-                                            <optgroup label="{{ $region }}">
-                                            @foreach($list as $timezone => $name)
-                                            <option value="{{ $timezone }}" @if(Setting::get('app_timezone') == $timezone) selected @endif>
-                                                {{ $name }}
-                                            </option>
-                                            @endforeach
-                                            </optgroup>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <div class="form-group">
-                                        <label>
-                                            {{ trans('forms.settings.app-setup.date-format') }}
-                                            <a href="http://php.net/manual/en/function.date.php" target="_blank"><i class="icon ion-help-circled"></i></a>
-                                        </label>
-                                        <input type="text" class="form-control" name="date_format" value="{{ Setting::get('date_format') ?: 'l jS F Y' }}">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <div class="form-group">
-                                        <label>
-                                            {{ trans('forms.settings.app-setup.incident-date-format') }}
-                                            <a href="http://php.net/manual/en/function.date.php" target="_blank"><i class="icon ion-help-circled"></i></a>
-                                        </label>
-                                        <input type="text" class="form-control" name="incident_date_format" value="{{ Setting::get('incident_date_format') ?: 'l jS F Y H:i:s' }}">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <div class="form-group">
-                                        <label>{{ trans('forms.settings.app-setup.site-locale') }}</label>
-                                        <select name="app_locale" class="form-control" required>
-                                            <option value="">Select Language</option>
-                                            @foreach($langs as $lang => $name)
-                                            <option value="{{ $lang }}" @if(Setting::get('app_locale') == $lang) selected @endif>
-                                                {{ $name }}
-                                            </option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <div class="form-group">
                                         <label>{{ trans('forms.settings.app-setup.days-of-incidents') }}</label>
                                         <input type="number" max="100" name="app_incident_days" class="form-control" value="{{ Setting::get('app_incident_days', 7) }}">
                                     </div>
@@ -141,28 +53,34 @@
                             </div>
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <div class="form-group">
-                                        <label>{{ trans('forms.settings.app-setup.subscribers') }}</label>
-                                        <input type="hidden" value="0" name="enable_subscribers">
-                                        <input type="checkbox" value="1" name="enable_subscribers" class="form-control" {{ Setting::get('enable_subscribers') ? 'checked' : null }}>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="hidden" value="0" name="enable_subscribers">
+                                            <input type="checkbox" value="1" name="enable_subscribers" {{ Setting::get('enable_subscribers') ? 'checked' : null }}>
+                                            {{ trans('forms.settings.app-setup.subscribers') }}
+                                        </label>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <div class="form-group">
-                                        <label>{{ trans('forms.settings.app-setup.display-graphs') }}</label>
-                                        <input type="hidden" value="0" name="display_graphs">
-                                        <input type="checkbox" value="1" name="display_graphs" class="form-control" {{ Setting::get('display_graphs') ? 'checked' : null }}>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="hidden" value="0" name="display_graphs">
+                                            <input type="checkbox" value="1" name="display_graphs" {{ Setting::get('display_graphs') ? 'checked' : null }}>
+                                            {{ trans('forms.settings.app-setup.display-graphs') }}
+                                        </label>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <div class="form-group">
-                                        <label>{{ trans('setup.show_support') }}</label>
-                                        <input type="hidden" value="0" name="show_support">
-                                        <input type="checkbox" value="1" name="show_support" class="form-control" {{ Setting::get('show_support') ? 'checked' : null }}>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="hidden" value="0" name="show_support">
+                                            <input type="checkbox" value="1" name="show_support" {{ Setting::get('show_support') ? 'checked' : null }}>
+                                            {{ trans('setup.show_support') }}
+                                        </label>
                                     </div>
                                 </div>
                             </div>

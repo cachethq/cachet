@@ -35,6 +35,18 @@ class SettingsController extends Controller
                 'icon'   => 'ion-gear-b',
                 'active' => false,
             ],
+            'analytics' => [
+                'title'  => trans('dashboard.settings.analytics.analytics'),
+                'url'    => route('dashboard.settings.analytics'),
+                'icon'   => 'ion-stats-bars',
+                'active' => false,
+            ],
+            'localization' => [
+                'title'  => trans('dashboard.settings.localization.localization'),
+                'url'    => route('dashboard.settings.localization'),
+                'icon'   => 'ion-earth',
+                'active' => false,
+            ],
             'security' => [
                 'title'  => trans('dashboard.settings.security.security'),
                 'url'    => route('dashboard.settings.security'),
@@ -73,6 +85,38 @@ class SettingsController extends Controller
 
         return View::make('dashboard.settings.app-setup')
             ->withPageTitle('Application Setup - Dashboard')
+            ->withSubMenu($this->subMenu);
+    }
+
+    /**
+     * Shows the settings analytics view.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function showAnalyticsView()
+    {
+        $this->subMenu['analytics']['active'] = true;
+
+        Session::flash('redirect_to', $this->subMenu['analytics']['url']);
+
+        return View::make('dashboard.settings.analytics')
+            ->withPageTitle('Analytics - Dashboard')
+            ->withSubMenu($this->subMenu);
+    }
+
+    /**
+     * Shows the settings localization view.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function showLocalizationView()
+    {
+        $this->subMenu['localization']['active'] = true;
+
+        Session::flash('redirect_to', $this->subMenu['localization']['url']);
+
+        return View::make('dashboard.settings.localization')
+            ->withPageTitle('Localization - Dashboard')
             ->withSubMenu($this->subMenu);
     }
 
