@@ -66,7 +66,7 @@ class Incident extends Model implements HasPresenter
         'component_id' => 'int',
         'name'         => 'required',
         'status'       => 'required|int',
-        'visible'      => 'required|boolean',
+        'visible'      => 'required|bool',
         'message'      => 'required',
     ];
 

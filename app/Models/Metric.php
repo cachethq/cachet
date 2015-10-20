@@ -73,7 +73,7 @@ class Metric extends Model implements HasPresenter
     public $rules = [
         'name'          => 'required',
         'suffix'        => 'required',
-        'display_chart' => 'boolean',
+        'display_chart' => 'bool',
         'default_value' => 'numeric',
         'places'        => 'numeric|min:0|max:4',
     ];

@@ -71,7 +71,7 @@ final class AddMetricCommand
         'name'          => 'required|string',
         'suffix'        => 'required|string',
         'description'   => 'string',
-        'display_chart' => 'boolean',
+        'display_chart' => 'bool',
         'default_value' => 'int',
         'calc_type'     => 'int',
         'display_chart' => 'int',

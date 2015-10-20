@@ -105,7 +105,7 @@ class SetupController extends Controller
             'settings.app_domain'   => 'required',
             'settings.app_timezone' => 'required',
             'settings.app_locale'   => 'required',
-            'settings.show_support' => 'boolean',
+            'settings.show_support' => 'bool',
         ]);
 
         if ($v->passes()) {
@@ -131,7 +131,7 @@ class SetupController extends Controller
             'settings.app_domain'   => 'required',
             'settings.app_timezone' => 'required',
             'settings.app_locale'   => 'required',
-            'settings.show_support' => 'boolean',
+            'settings.show_support' => 'bool',
             'user.username'         => ['required', 'regex:/\A(?!.*[:;]-\))[ -~]+\z/'],
             'user.email'            => 'email|required',
             'user.password'         => 'required',

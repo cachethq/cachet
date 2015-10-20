@@ -87,10 +87,10 @@ final class UpdateIncidentCommand
         'name'             => 'string',
         'status'           => 'int',
         'message'          => 'string',
-        'visible'          => 'boolean',
+        'visible'          => 'bool',
         'component_id'     => 'int',
         'component_status' => 'int',
-        'notify'           => 'boolean',
+        'notify'           => 'bool',
     ];
 
     /**

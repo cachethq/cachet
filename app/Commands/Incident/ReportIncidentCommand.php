@@ -78,10 +78,10 @@ final class ReportIncidentCommand
         'name'             => 'required|string',
         'status'           => 'required|int',
         'message'          => 'string',
-        'visible'          => 'boolean',
+        'visible'          => 'bool',
         'component_id'     => 'int',
         'component_status' => 'int',
-        'notify'           => 'boolean',
+        'notify'           => 'bool',
         'incident_date'    => 'string',
     ];
 

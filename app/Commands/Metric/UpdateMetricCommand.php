@@ -80,7 +80,7 @@ final class UpdateMetricCommand
         'name'          => 'string',
         'suffix'        => 'string',
         'description'   => 'string',
-        'display_chart' => 'boolean',
+        'display_chart' => 'bool',
         'default_value' => 'numeric',
         'calc_type'     => 'int|in:0,1',
         'display_chart' => 'int',
