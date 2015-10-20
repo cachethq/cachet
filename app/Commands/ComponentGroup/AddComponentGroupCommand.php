@@ -34,7 +34,7 @@ final class AddComponentGroupCommand
      */
     public $rules = [
         'name'  => 'required|string',
-        'order' => 'integer',
+        'order' => 'int',
     ];
 
     /**

@@ -70,7 +70,7 @@ class Component extends Model implements HasPresenter
      */
     public $rules = [
         'name'   => 'required|string',
-        'status' => 'integer|required',
+        'status' => 'int|required',
         'link'   => 'url',
     ];
 

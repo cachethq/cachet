@@ -72,10 +72,10 @@ final class AddMetricCommand
         'suffix'        => 'required|string',
         'description'   => 'string',
         'display_chart' => 'boolean',
-        'default_value' => 'integer',
-        'calc_type'     => 'integer',
-        'display_chart' => 'integer',
-        'places'        => 'integer|between:0,4',
+        'default_value' => 'int',
+        'calc_type'     => 'int',
+        'display_chart' => 'int',
+        'places'        => 'int|between:0,4',
     ];
 
     /**

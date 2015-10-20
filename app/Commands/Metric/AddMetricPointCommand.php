@@ -42,7 +42,7 @@ final class AddMetricPointCommand
      * @var string[]
      */
     public $rules = [
-        'value'      => 'integer',
+        'value'      => 'int',
         'created_at' => 'string',
     ];
 

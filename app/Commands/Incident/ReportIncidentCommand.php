@@ -76,11 +76,11 @@ final class ReportIncidentCommand
      */
     public $rules = [
         'name'             => 'required|string',
-        'status'           => 'required|integer',
+        'status'           => 'required|int',
         'message'          => 'string',
         'visible'          => 'boolean',
-        'component_id'     => 'integer',
-        'component_status' => 'integer',
+        'component_id'     => 'int',
+        'component_status' => 'int',
         'notify'           => 'boolean',
         'incident_date'    => 'string',
     ];

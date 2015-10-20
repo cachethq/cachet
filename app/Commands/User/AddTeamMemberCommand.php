@@ -49,7 +49,7 @@ final class AddTeamMemberCommand
     public $rules = [
         'name'     => 'required|string',
         'password' => 'string',
-        'level'    => 'integer',
+        'level'    => 'int',
     ];
 
     /**

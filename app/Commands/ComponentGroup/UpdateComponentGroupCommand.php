@@ -43,7 +43,7 @@ final class UpdateComponentGroupCommand
      */
     public $rules = [
         'name'  => 'string',
-        'order' => 'integer',
+        'order' => 'int',
     ];
 
     /**
