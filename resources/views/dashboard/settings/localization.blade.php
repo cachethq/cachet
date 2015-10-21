@@ -20,7 +20,7 @@
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="form-group">
-                                        <label>{{ trans('forms.settings.app-setup.site-timezone') }}</label>
+                                        <label>{{ trans('forms.settings.localization.site-timezone') }}</label>
                                         <select name="app_timezone" class="form-control" required>
                                             <option value="">Select Timezone</option>
                                             @foreach($timezones as $region => $list)
@@ -40,7 +40,7 @@
                                 <div class="col-xs-12">
                                     <div class="form-group">
                                         <label>
-                                            {{ trans('forms.settings.app-setup.date-format') }}
+                                            {{ trans('forms.settings.localization.date-format') }}
                                             <a href="http://php.net/manual/en/function.date.php" target="_blank"><i class="icon ion-help-circled"></i></a>
                                         </label>
                                         <input type="text" class="form-control" name="date_format" value="{{ Setting::get('date_format') ?: 'l jS F Y' }}">
@@ -51,7 +51,7 @@
                                 <div class="col-xs-12">
                                     <div class="form-group">
                                         <label>
-                                            {{ trans('forms.settings.app-setup.incident-date-format') }}
+                                            {{ trans('forms.settings.localization.incident-date-format') }}
                                             <a href="http://php.net/manual/en/function.date.php" target="_blank"><i class="icon ion-help-circled"></i></a>
                                         </label>
                                         <input type="text" class="form-control" name="incident_date_format" value="{{ Setting::get('incident_date_format') ?: 'l jS F Y H:i:s' }}">
@@ -61,7 +61,7 @@
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="form-group">
-                                        <label>{{ trans('forms.settings.app-setup.site-locale') }}</label>
+                                        <label>{{ trans('forms.settings.localization.site-locale') }}</label>
                                         <select name="app_locale" class="form-control" required>
                                             <option value="">Select Language</option>
                                             @foreach($langs as $lang => $name)

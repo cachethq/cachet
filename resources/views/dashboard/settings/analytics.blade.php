@@ -8,7 +8,7 @@
         <div class="content-wrapper">
             <div class="header sub-header" id="application-setup">
                 <span class="uppercase">
-                    {{ trans('dashboard.settings.localization.localization') }}
+                    {{ trans('dashboard.settings.analytics.analytics') }}
                 </span>
             </div>
             <div class="row">
@@ -20,7 +20,7 @@
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="form-group">
-                                        <label>{{ trans('forms.settings.app-setup.analytics_google') }}</label>
+                                        <label>{{ trans('forms.settings.analytics.analytics_google') }}</label>
                                         <input type="text" name="app_analytics" class="form-control" value="{{ Setting::get('app_analytics') }}" placeholder="UA-12345-12">
                                     </div>
                                 </div>
@@ -28,7 +28,7 @@
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="form-group">
-                                        <label>{{ trans('forms.settings.app-setup.analytics_gosquared') }}</label>
+                                        <label>{{ trans('forms.settings.analytics.analytics_gosquared') }}</label>
                                         <input type="text" name="app_analytics_gs" class="form-control" value="{{ Setting::get('app_analytics_gs') }}" placeholder="GSN-12345-A">
                                     </div>
                                 </div>
@@ -36,7 +36,7 @@
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="form-group">
-                                        <label>{{ trans('forms.settings.app-setup.analytics_piwik_url') }}</label>
+                                        <label>{{ trans('forms.settings.analytics.analytics_piwik_url') }}</label>
                                         <input type="text" name="app_analytics_pi_url" class="form-control" value="{{ Setting::get('app_analytics_pi_url') }}" placeholder="piwik.example.org">
                                     </div>
                                 </div>
@@ -44,7 +44,7 @@
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="form-group">
-                                        <label>{{ trans('forms.settings.app-setup.analytics_piwik_siteid') }}</label>
+                                        <label>{{ trans('forms.settings.analytics.analytics_piwik_siteid') }}</label>
                                         <input type="number" min="1" max="100" name="app_analytics_pi_siteid" class="form-control" value="{{ Setting::get('app_analytics_pi_siteid') ?: 1 }}">
                                     </div>
                                 </div>
