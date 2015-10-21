@@ -164,10 +164,10 @@ return [
             'too-big'     => 'Filen du prøvede at uploade er for stort, billet skal være mindre end :size',
         ],
         'analytics' => [
-            'analytics' => 'Analytics'
+            'analytics' => 'Analytics',
         ],
         'localization' => [
-            'localization' => 'Localization'
+            'localization' => 'Localization',
         ],
         'security' => [
             'security'   => 'Sikkerhed',

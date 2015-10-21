@@ -116,10 +116,10 @@ return [
             'too-big'     => 'El archivo subido es demasiado grande. Sube una imagen con tamaño menor a: tamaño',
         ],
         'analytics' => [
-            'analytics' => 'Analytics'
+            'analytics' => 'Analytics',
         ],
         'localization' => [
-            'localization' => 'Localization'
+            'localization' => 'Localization',
         ],
         'security' => [
             'security' => 'Seguridad',

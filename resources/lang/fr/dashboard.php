@@ -164,10 +164,10 @@ return [
             'too-big'     => 'Le fichier déposé est trop grand. Déposer une image d\'une taille inférieur à :size',
         ],
         'analytics' => [
-            'analytics' => 'Analytics'
+            'analytics' => 'Analytics',
         ],
         'localization' => [
-            'localization' => 'Localization'
+            'localization' => 'Localization',
         ],
         'security' => [
             'security'   => 'Sécurité',

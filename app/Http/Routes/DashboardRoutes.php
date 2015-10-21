@@ -219,11 +219,11 @@ class DashboardRoutes
                     'uses' => 'SettingsController@showSetupView',
                 ]);
                 $router->get('analytics', [
-                    'as' => 'analytics',
+                    'as'   => 'analytics',
                     'uses' => 'SettingsController@showAnalyticsView',
                 ]);
                 $router->get('localization', [
-                    'as' => 'localization',
+                    'as'   => 'localization',
                     'uses' => 'SettingsController@showLocalizationView',
                 ]);
                 $router->get('security', [

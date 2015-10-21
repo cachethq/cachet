@@ -143,10 +143,10 @@ return [
             'too-big'     => '업로드 한 파일이 너무 큽니다. :size 보다 작은 이미지를 올려주세요.',
         ],
         'analytics' => [
-            'analytics' => 'Analytics'
+            'analytics' => 'Analytics',
         ],
         'localization' => [
-            'localization' => 'Localization'
+            'localization' => 'Localization',
         ],
         'security' => [
             'security'   => '보안',

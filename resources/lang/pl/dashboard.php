@@ -143,10 +143,10 @@ return [
             'too-big'     => 'Wgrany plik jest zbyt duży. Wgraj plik mnijeszy niż :size',
         ],
         'analytics' => [
-            'analytics' => 'Analytics'
+            'analytics' => 'Analytics',
         ],
         'localization' => [
-            'localization' => 'Localization'
+            'localization' => 'Localization',
         ],
         'security' => [
             'security'   => 'Bezpieczeństwo',

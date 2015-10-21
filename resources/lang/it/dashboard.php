@@ -160,10 +160,10 @@ return [
             'too-big'     => 'Il file che hai caricato è troppo grande. Carica un\'immagine più piccola di :size',
         ],
         'analytics' => [
-            'analytics' => 'Analytics'
+            'analytics' => 'Analytics',
         ],
         'localization' => [
-            'localization' => 'Localization'
+            'localization' => 'Localization',
         ],
         'security' => [
             'security'   => 'Sicurezza',

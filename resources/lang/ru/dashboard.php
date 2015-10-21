@@ -143,10 +143,10 @@ return [
             'too-big'     => 'Загруженный вами файл слишком большой. Загрузите картинку меньше чем :size',
         ],
         'analytics' => [
-            'analytics' => 'Analytics'
+            'analytics' => 'Analytics',
         ],
         'localization' => [
-            'localization' => 'Localization'
+            'localization' => 'Localization',
         ],
         'security' => [
             'security'   => 'Безопасность',

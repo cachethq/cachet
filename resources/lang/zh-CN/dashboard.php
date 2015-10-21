@@ -143,10 +143,10 @@ return [
             'too-big'     => '你上传的文件太大了。上传的图像大小应小于:size',
         ],
         'analytics' => [
-            'analytics' => 'Analytics'
+            'analytics' => 'Analytics',
         ],
         'localization' => [
-            'localization' => 'Localization'
+            'localization' => 'Localization',
         ],
         'security' => [
             'security'   => '安全',

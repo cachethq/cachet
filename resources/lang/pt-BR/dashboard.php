@@ -164,10 +164,10 @@ return [
             'too-big'     => 'O arquivo que você carregou é muito grande. Envie uma imagem inferior à :size',
         ],
         'analytics' => [
-            'analytics' => 'Analytics'
+            'analytics' => 'Analytics',
         ],
         'localization' => [
-            'localization' => 'Localization'
+            'localization' => 'Localization',
         ],
         'security' => [
             'security' => 'Segurança',

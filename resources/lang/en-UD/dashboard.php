@@ -164,10 +164,10 @@ return [
             'too-big'     => 'crwdns347:0crwdne347:0',
         ],
         'analytics' => [
-            'analytics' => 'Analytics'
+            'analytics' => 'Analytics',
         ],
         'localization' => [
-            'localization' => 'Localization'
+            'localization' => 'Localization',
         ],
         'security' => [
             'security'   => 'crwdns348:0crwdne348:0',
