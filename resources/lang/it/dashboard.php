@@ -159,6 +159,12 @@ return [
             'images-only' => 'Possono essere caricate solo immagini.',
             'too-big'     => 'Il file che hai caricato è troppo grande. Carica un\'immagine più piccola di :size',
         ],
+        'analytics' => [
+            'analytics' => 'Analytics',
+        ],
+        'localization' => [
+            'localization' => 'Localization',
+        ],
         'security' => [
             'security'   => 'Sicurezza',
             'two-factor' => 'Utenti senza verifica in 2 passaggi',

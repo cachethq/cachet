@@ -46,10 +46,12 @@
                             <label for="metric-places">{{ trans('forms.metrics.places') }}</label>
                             <input type="number" min="0" max="4" class="form-control" name="metric[places]" id="metric-places" required value="{{ Input::old('metric.places') }}">
                         </div>
-                        <div class="form-group">
-                            <label>{{ trans('forms.metrics.display-chart') }}</label>
-                            <input type="hidden" value="0" name="metric[display_chart]">
-                            <input type="checkbox" value="1" name="metric[display_chart]" class="form-control" checked>
+                        <div class="checkbox">
+                            <label>
+                                <input type="hidden" value="0" name="metric[display_chart]">
+                                <input type="checkbox" value="1" name="metric[display_chart]" checked>
+                                {{ trans('forms.metrics.display-chart') }}
+                            </label>
                         </div>
                     </fieldset>
                     <div class='form-group'>

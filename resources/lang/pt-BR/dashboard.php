@@ -163,6 +163,12 @@ return [
             'images-only' => 'Somente imagens podem ser carregadas.',
             'too-big'     => 'O arquivo que você carregou é muito grande. Envie uma imagem inferior à :size',
         ],
+        'analytics' => [
+            'analytics' => 'Analytics',
+        ],
+        'localization' => [
+            'localization' => 'Localization',
+        ],
         'security' => [
             'security' => 'Segurança',
         ],

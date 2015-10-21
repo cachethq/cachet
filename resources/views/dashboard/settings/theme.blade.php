@@ -91,9 +91,11 @@
                             <hr>
                             <div class="row">
                                 <div class="col-sm-12">
-                                    <div class="form-group">
-                                        <label>{{ trans('forms.settings.theme.dashboard-login') }}</label>
-                                        <input type="checkbox" value="1" name="dashboard_login_link" class="form-control" {{ Setting::get('dashboard_login_link') ? 'checked' : null }}>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" value="1" name="dashboard_login_link" {{ Setting::get('dashboard_login_link') ? 'checked' : null }}>
+                                            {{ trans('forms.settings.theme.dashboard-login') }}
+                                        </label>
                                     </div>
                                 </div>
                             </div>

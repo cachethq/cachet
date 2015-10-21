@@ -86,18 +86,23 @@ return [
         'app-setup' => [
             'site-name'              => 'Nazwa strony',
             'site-url'               => 'Adres URL strony',
-            'site-timezone'          => 'Strefa czasowa',
-            'site-locale'            => 'Język',
-            'date-format'            => 'Format daty',
             'display-graphs'         => 'Wyświetlać wykresy na panelu głównym?',
             'about-this-page'        => 'O tej stronie',
             'days-of-incidents'      => 'Ile dni incydentów pokazywać?',
             'banner'                 => 'Obrazek z logo',
             'banner-help'            => 'Zaleca się wrzuać pliki nie szersze niż 930px.',
+        ],
+        'analytics' => [
             'analytics_google'       => 'Google Analytics code',
             'analytics_gosquared'    => 'GoSquared Analytics code',
             'analytics_piwik_url'    => 'URL of your Piwik instance (without http(s)://)',
             'analytics_piwik_siteid' => 'Piwik\'s site id',
+        ],
+        'localization' => [
+            'site-timezone'          => 'Strefa czasowa',
+            'site-locale'            => 'Język',
+            'date-format'            => 'Format daty',
+            'incident-date-format'   => 'Incident Timestamp Format',
         ],
         'security' => [
             'allowed-domains'      => 'Dozwolone domenyw',

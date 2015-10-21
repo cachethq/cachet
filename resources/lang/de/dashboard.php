@@ -163,6 +163,12 @@ return [
             'images-only' => 'Es können nur Bilder hochgeladen werden.',
             'too-big'     => 'Die von Ihnen hochgeladene Datei ist zu groß. Laden Sie ein Bild welches kleiner als :size ist hoch',
         ],
+        'analytics' => [
+            'analytics' => 'Analytics',
+        ],
+        'localization' => [
+            'localization' => 'Localization',
+        ],
         'security' => [
             'security'   => 'Sicherheit',
             'two-factor' => 'Nutzer ohne Zwei-Faktor-Authentifizierung',

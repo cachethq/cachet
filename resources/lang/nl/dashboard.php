@@ -163,6 +163,12 @@ return [
             'images-only' => 'Alleen afbeeldingen kunnen worden geüpload.',
             'too-big'     => 'Het bestand dat u heeft geüpload is te groot. Upload een afbeelding kleiner dan :size',
         ],
+        'analytics' => [
+            'analytics' => 'Analytics',
+        ],
+        'localization' => [
+            'localization' => 'Localization',
+        ],
         'security' => [
             'security'   => 'Beveiliging',
             'two-factor' => 'Gebruikers zonder authenticatie in twee stappen',

@@ -163,6 +163,12 @@ return [
             'images-only' => 'Kun billeder kan uploades.',
             'too-big'     => 'Filen du prøvede at uploade er for stort, billet skal være mindre end :size',
         ],
+        'analytics' => [
+            'analytics' => 'Analytics',
+        ],
+        'localization' => [
+            'localization' => 'Localization',
+        ],
         'security' => [
             'security'   => 'Sikkerhed',
             'two-factor' => 'Brugere uden two-factor login',
