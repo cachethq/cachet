@@ -118,6 +118,9 @@ return [
         'theme' => [
             'background-color' => 'Baggrundsfarve',
             'background-fills' => 'Baggrundsfyld (Komponenter, hændelser og footer)',
+            'banner-background-color' => 'Banner Background Color',
+            'banner-padding' => 'Banner Padding',
+            'fullwidth-banner' => 'Enable fullwidth banner?',
             'text-color'       => 'Tekstfarve',
             'dashboard-login'  => 'Vis oversigtsside ikon i bunden af siden?',
             'reds'             => 'Rød (Brugt til fejl)',

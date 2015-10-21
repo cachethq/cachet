@@ -118,6 +118,9 @@ return [
             'background-color' => 'Colore di sfondo',
             'text-color'       => 'Colore del testo',
             'dashboard-login'  => 'Visualizzare il pulsante Dashboard nel footer?',
+            'banner-background-color' => 'Banner Background Color',
+            'banner-padding' => 'Banner Padding',
+            'fullwidth-banner' => 'Enable fullwidth banner?',
         ],
     ],
 

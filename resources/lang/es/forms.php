@@ -108,6 +108,9 @@ return [
             'background-color' => 'Color de fondo',
             'text-color'       => 'Color de Texto',
             'dashboard-login'  => '¿Mostrar botón del panel en el pie?',
+            'banner-background-color' => 'Banner Background Color',
+            'banner-padding' => 'Banner Padding',
+            'fullwidth-banner' => 'Enable fullwidth banner?',
         ],
     ],
 

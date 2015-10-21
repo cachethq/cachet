@@ -118,6 +118,9 @@ return [
         'theme' => [
             'background-color' => 'Background Color',
             'background-fills' => 'Background Fills (Components, Incidents, Footer)',
+            'banner-background-color' => 'Banner Background Color',
+            'banner-padding' => 'Banner Padding',
+            'fullwidth-banner' => 'Enable fullwidth banner?',
             'text-color'       => 'Text Color',
             'dashboard-login'  => 'Show dashboard button in the footer?',
             'reds'             => 'Red (Used for errors)',

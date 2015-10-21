@@ -35,15 +35,13 @@
                             <div class="row">
                                 <div class="col-xs-6">
                                     <div class="form-group">
-                                        {{--<label>{{ trans('forms.settings.theme.background-color') }}</label>--}}
-                                        <label>Banner Background Color</label>
+                                        <label>{{ trans('forms.settings.theme.banner-background-color') }}</label>
                                         <input type="text" class="form-control color-code" name="style.banner_background_color" value="{{ $theme_banner_background_color }}">
                                     </div>
                                 </div>
                                 <div class="col-xs-6">
                                     <div class="form-group">
-                                        {{--<label>{{ trans('forms.settings.theme.background-color') }}</label>--}}
-                                        <label>Banner Padding</label>
+                                        <label>{{ trans('forms.settings.theme.banner-padding') }}</label>
                                         <input type="text" class="form-control" name="style.banner_padding" value="{{ $theme_banner_padding }}">
                                     </div>
                                 </div>
@@ -52,8 +50,7 @@
                                         <label>
                                             <input type="checkbox" value="0" name="style.fullwidth_header">
                                             <input type="checkbox" value="1" name="style.fullwidth_header" {{ Setting::get('style_fullwidth_header') ? 'checked' : null }}>
-                                            Enable fullwidth banner?
-                                            {{--{{ trans('forms.settings.theme.text-color') }}--}}
+                                            {{ trans('forms.settings.theme.fullwidth-banner') }}
                                         </label>
                                     </div>
                                 </div>
