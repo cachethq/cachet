@@ -104,14 +104,14 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label>{{ trans('forms.incidents.incident_time') }}</label>
+                            <label>{{ trans('forms.incidents.incident_time') }}</label> <small class="text-muted">{{ trans('forms.optional') }}</small>
                             <input type="text" name="created_at" class="form-control" rel="datepicker-any">
-                            <span class="help-block">{{ trans('forms.optional') }}</span>
                         </div>
-                        <div class="form-group">
-                            <label>{{ trans('forms.incidents.notify_subscribers') }}</label>
-                            <input type="checkbox" name="notify" value="1" checked="{{ Input::old('incident.message', 'checked') }}">
-                            <span class="help-block">{{ trans('forms.optional') }}</span>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="notify" value="1" checked="{{ Input::old('incident.message', 'checked') }}">
+                                {{ trans('forms.incidents.notify_subscribers') }}
+                            </label>
                         </div>
                     </fieldset>
 

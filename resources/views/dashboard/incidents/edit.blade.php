@@ -77,9 +77,8 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label>{{ trans('forms.incidents.incident_time') }}</label>
+                            <label>{{ trans('forms.incidents.incident_time') }}</label> <small class="text-muted">{{ trans('forms.optional') }}</small>
                             <input type="text" name="created_at" class="form-control" rel="datepicker-any" value="{{ $incident->created_at_datetimepicker }}">
-                            <span class="help-block">{{ trans('forms.optional') }}</span>
                         </div>
                     </fieldset>
 
