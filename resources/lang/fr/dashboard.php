@@ -163,6 +163,12 @@ return [
             'images-only' => 'Seules les images peuvent être déposées.',
             'too-big'     => 'Le fichier déposé est trop grand. Déposer une image d\'une taille inférieur à :size',
         ],
+        'analytics' => [
+            'analytics' => 'Analytics'
+        ],
+        'localization' => [
+            'localization' => 'Localization'
+        ],
         'security' => [
             'security'   => 'Sécurité',
             'two-factor' => 'Utilisateurs sans authentification à deux facteurs',

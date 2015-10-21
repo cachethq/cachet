@@ -142,6 +142,12 @@ return [
             'images-only' => 'Można wgrywać tylko pliki graficzne.',
             'too-big'     => 'Wgrany plik jest zbyt duży. Wgraj plik mnijeszy niż :size',
         ],
+        'analytics' => [
+            'analytics' => 'Analytics'
+        ],
+        'localization' => [
+            'localization' => 'Localization'
+        ],
         'security' => [
             'security'   => 'Bezpieczeństwo',
             'two-factor' => 'Użytkownicy bez autentykacji dwuetapowej',

@@ -142,6 +142,12 @@ return [
             'images-only' => 'Могут быть загружены только изображения.',
             'too-big'     => 'Загруженный вами файл слишком большой. Загрузите картинку меньше чем :size',
         ],
+        'analytics' => [
+            'analytics' => 'Analytics'
+        ],
+        'localization' => [
+            'localization' => 'Localization'
+        ],
         'security' => [
             'security'   => 'Безопасность',
             'two-factor' => 'Пользователи без двухфакторной аутентификации',

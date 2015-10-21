@@ -115,6 +115,12 @@ return [
             'images-only' => 'Sólo puedes subir imágenes.',
             'too-big'     => 'El archivo subido es demasiado grande. Sube una imagen con tamaño menor a: tamaño',
         ],
+        'analytics' => [
+            'analytics' => 'Analytics'
+        ],
+        'localization' => [
+            'localization' => 'Localization'
+        ],
         'security' => [
             'security' => 'Seguridad',
         ],

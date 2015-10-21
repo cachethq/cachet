@@ -163,6 +163,12 @@ return [
             'images-only' => 'crwdns346:0crwdne346:0',
             'too-big'     => 'crwdns347:0crwdne347:0',
         ],
+        'analytics' => [
+            'analytics' => 'Analytics'
+        ],
+        'localization' => [
+            'localization' => 'Localization'
+        ],
         'security' => [
             'security'   => 'crwdns348:0crwdne348:0',
             'two-factor' => 'crwdns474:0crwdne474:0',

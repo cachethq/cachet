@@ -142,6 +142,12 @@ return [
             'images-only' => '只能上传图像。',
             'too-big'     => '你上传的文件太大了。上传的图像大小应小于:size',
         ],
+        'analytics' => [
+            'analytics' => 'Analytics'
+        ],
+        'localization' => [
+            'localization' => 'Localization'
+        ],
         'security' => [
             'security'   => '安全',
             'two-factor' => '没有启用双因素身份验证的用户',
