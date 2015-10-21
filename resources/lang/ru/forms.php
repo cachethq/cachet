@@ -115,12 +115,12 @@ return [
             'custom-css' => 'Пользовательские таблицы стилей',
         ],
         'theme' => [
-            'background-color' => 'Цвет фона',
-            'text-color'       => 'Цвет текста',
-            'dashboard-login'  => 'Show dashboard button in the footer?',
+            'background-color'        => 'Цвет фона',
+            'text-color'              => 'Цвет текста',
+            'dashboard-login'         => 'Show dashboard button in the footer?',
             'banner-background-color' => 'Banner Background Color',
-            'banner-padding' => 'Banner Padding',
-            'fullwidth-banner' => 'Enable fullwidth banner?',
+            'banner-padding'          => 'Banner Padding',
+            'fullwidth-banner'        => 'Enable fullwidth banner?',
         ],
     ],
 

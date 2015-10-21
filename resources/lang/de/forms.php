@@ -115,11 +115,11 @@ return [
             'custom-css' => 'Benutzerdefiniertes Stylesheet',
         ],
         'theme' => [
-            'background-color' => 'Hintergrundfarbe',
-            'text-color'       => 'Schriftfarbe',
+            'background-color'        => 'Hintergrundfarbe',
+            'text-color'              => 'Schriftfarbe',
             'banner-background-color' => 'Banner Background Color',
-            'banner-padding' => 'Banner Padding',
-            'fullwidth-banner' => 'Enable fullwidth banner?',
+            'banner-padding'          => 'Banner Padding',
+            'fullwidth-banner'        => 'Enable fullwidth banner?',
         ],
     ],
 

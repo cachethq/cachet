@@ -107,12 +107,12 @@ return [
             'custom-css' => 'Własny Stylesheet',
         ],
         'theme' => [
-            'background-color' => 'Kolor tła',
-            'text-color'       => 'Kolor tekstu',
-            'dashboard-login'  => 'Show dashboard button in the footer?',
+            'background-color'        => 'Kolor tła',
+            'text-color'              => 'Kolor tekstu',
+            'dashboard-login'         => 'Show dashboard button in the footer?',
             'banner-background-color' => 'Banner Background Color',
-            'banner-padding' => 'Banner Padding',
-            'fullwidth-banner' => 'Enable fullwidth banner?',
+            'banner-padding'          => 'Banner Padding',
+            'fullwidth-banner'        => 'Enable fullwidth banner?',
         ],
     ],
 

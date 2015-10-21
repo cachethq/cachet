@@ -115,12 +115,12 @@ return [
             'custom-css' => '사용자 정의 스타일시트',
         ],
         'theme' => [
-            'background-color' => '배경색',
-            'text-color'       => '글자색',
-            'dashboard-login'  => 'Show dashboard button in the footer?',
+            'background-color'        => '배경색',
+            'text-color'              => '글자색',
+            'dashboard-login'         => 'Show dashboard button in the footer?',
             'banner-background-color' => 'Banner Background Color',
-            'banner-padding' => 'Banner Padding',
-            'fullwidth-banner' => 'Enable fullwidth banner?',
+            'banner-padding'          => 'Banner Padding',
+            'fullwidth-banner'        => 'Enable fullwidth banner?',
         ],
     ],
 

@@ -115,12 +115,12 @@ return [
             'custom-css' => '自定义样式表',
         ],
         'theme' => [
-            'background-color' => '背景色',
-            'text-color'       => '文字颜色',
-            'dashboard-login'  => 'Show dashboard button in the footer?',
+            'background-color'        => '背景色',
+            'text-color'              => '文字颜色',
+            'dashboard-login'         => 'Show dashboard button in the footer?',
             'banner-background-color' => 'Banner Background Color',
-            'banner-padding' => 'Banner Padding',
-            'fullwidth-banner' => 'Enable fullwidth banner?',
+            'banner-padding'          => 'Banner Padding',
+            'fullwidth-banner'        => 'Enable fullwidth banner?',
         ],
     ],
 

@@ -115,12 +115,12 @@ return [
             'custom-css' => 'Foglio di stile personalizzato',
         ],
         'theme' => [
-            'background-color' => 'Colore di sfondo',
-            'text-color'       => 'Colore del testo',
-            'dashboard-login'  => 'Visualizzare il pulsante Dashboard nel footer?',
+            'background-color'        => 'Colore di sfondo',
+            'text-color'              => 'Colore del testo',
+            'dashboard-login'         => 'Visualizzare il pulsante Dashboard nel footer?',
             'banner-background-color' => 'Banner Background Color',
-            'banner-padding' => 'Banner Padding',
-            'fullwidth-banner' => 'Enable fullwidth banner?',
+            'banner-padding'          => 'Banner Padding',
+            'fullwidth-banner'        => 'Enable fullwidth banner?',
         ],
     ],
 

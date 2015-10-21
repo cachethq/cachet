@@ -115,11 +115,11 @@ return [
             'custom-css' => 'Custom Stylesheet',
         ],
         'theme' => [
-            'background-color' => 'Achtergrondkleur',
-            'text-color'       => 'Tekstkleur',
+            'background-color'        => 'Achtergrondkleur',
+            'text-color'              => 'Tekstkleur',
             'banner-background-color' => 'Banner Background Color',
-            'banner-padding' => 'Banner Padding',
-            'fullwidth-banner' => 'Enable fullwidth banner?',
+            'banner-padding'          => 'Banner Padding',
+            'fullwidth-banner'        => 'Enable fullwidth banner?',
         ],
     ],
 
