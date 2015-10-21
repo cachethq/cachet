@@ -43,10 +43,11 @@
                             <label>{{ trans('forms.incidents.scheduled_at') }}</label>
                             <input type="text" name="incident[scheduled_at]" class="form-control" rel="datepicker" required>
                         </div>
-                        <div class="form-group">
-                            <label>{{ trans('forms.incidents.notify_subscribers') }}</label>
-                            <input type="checkbox" name="incident[notify]" value="1" checked="{{ Input::old('incident.message', 'checked') }}">
-                            <span class="help-block">{{ trans('forms.optional') }}</span>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="incident[notify]" value="1" checked="{{ Input::old('incident.message', 'checked') }}">
+                                {{ trans('forms.incidents.notify_subscribers') }}
+                            </label>
                         </div>
                     </fieldset>
 
