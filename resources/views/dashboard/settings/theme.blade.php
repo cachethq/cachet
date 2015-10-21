@@ -35,6 +35,33 @@
                             <div class="row">
                                 <div class="col-xs-6">
                                     <div class="form-group">
+                                        {{--<label>{{ trans('forms.settings.theme.background-color') }}</label>--}}
+                                        <label>Banner Background Color</label>
+                                        <input type="text" class="form-control color-code" name="style.banner_background_color" value="{{ $theme_banner_background_color }}">
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="form-group">
+                                        {{--<label>{{ trans('forms.settings.theme.background-color') }}</label>--}}
+                                        <label>Banner Padding</label>
+                                        <input type="text" class="form-control" name="style.banner_padding" value="{{ $theme_banner_padding }}">
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" value="0" name="style.fullwidth_header">
+                                            <input type="checkbox" value="1" name="style.fullwidth_header" {{ Setting::get('style_fullwidth_header') ? 'checked' : null }}>
+                                            Enable fullwidth banner?
+                                            {{--{{ trans('forms.settings.theme.text-color') }}--}}
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <div class="form-group">
                                         <label>{{ trans('forms.settings.theme.reds') }}</label>
                                         <input type="text" class="form-control color-code" name="style.reds" value="{{ $theme_reds }}">
                                     </div>

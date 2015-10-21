@@ -57,7 +57,12 @@
     <script src="{{ elixir('dist/js/all.js') }}"></script>
 </head>
 <body class="status-page">
+    @if(Setting::get('style_fullwidth_header'))
+    <div class="container-fluid">
+    @else
     <div class="container">
+    @endif
+
     @yield('content')
     </div>
 

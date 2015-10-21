@@ -7,6 +7,11 @@
 
 @include('partials.about-app')
 
+@if(Setting::get('style_fullwidth_header'))
+</div>
+<div class="container">
+@endif
+
 <div class="section-status">
     <div class="alert alert-{{ $systemStatus }}">{{ $systemMessage }}</div>
 </div>

@@ -17,3 +17,4 @@
     <p>{!! $about_app !!}</p>
 </div>
 @endif
+
