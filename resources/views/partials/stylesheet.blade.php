@@ -19,6 +19,9 @@ body.status-page {
  */
 .app-banner {
     background-color: {{ $theme_banner_background_color }} !important;
+}
+
+.app-banner-padding {
     padding: {{ $theme_banner_padding }} !important;
 }
 
