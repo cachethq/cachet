@@ -119,8 +119,11 @@ return [
             'custom-css' => 'crwdns409:0crwdne409:0',
         ],
         'theme' => [
-            'background-color' => 'crwdns410:0crwdne410:0',
-            'text-color'       => 'crwdns411:0crwdne411:0',
+            'background-color'        => 'crwdns410:0crwdne410:0',
+            'text-color'              => 'crwdns411:0crwdne411:0',
+            'banner-background-color' => 'Banner Background Color',
+            'banner-padding'          => 'Banner Padding',
+            'fullwidth-banner'        => 'Enable fullwidth banner?',
         ],
     ],
 

@@ -119,8 +119,11 @@ return [
             'custom-css' => 'Stylesheet Kustom',
         ],
         'theme' => [
-            'background-color' => 'Warna Latar',
-            'text-color'       => 'Warna Teks',
+            'background-color'        => 'Warna Latar',
+            'text-color'              => 'Warna Teks',
+            'banner-background-color' => 'Banner Background Color',
+            'banner-padding'          => 'Banner Padding',
+            'fullwidth-banner'        => 'Enable fullwidth banner?',
         ],
     ],
 

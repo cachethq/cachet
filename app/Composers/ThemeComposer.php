@@ -28,6 +28,8 @@ class ThemeComposer
         // Theme colors.
         $view->withThemeBackgroundColor(Setting::get('style_background_color', '#F0F3F4'));
         $view->withThemeBackgroundFills(Setting::get('style_background_fills', '#FFFFFF'));
+        $view->withThemeBannerBackgroundColor(Setting::get('style_banner_background_color', ''));
+        $view->withThemeBannerPadding(Setting::get('style_banner_padding', '40px 0'));
         $view->withThemeTextColor(Setting::get('style_text_color', '#333333'));
         $view->withThemeReds(Setting::get('style_reds', '#ff6f6f'));
         $view->withThemeBlues(Setting::get('style_blues', '#3498db'));

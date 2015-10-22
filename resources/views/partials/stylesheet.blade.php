@@ -2,6 +2,9 @@
 body.status-page {
     background-color: {{ $theme_background_color }};
     color: {{ $theme_text_color }};
+    @if(Setting::get('app_banner'))
+    padding-top: 0;
+    @endif
 }
 .reds { color: {{ $theme_reds }} !important; }
 .blues { color: {{ $theme_blues }} !important; }
@@ -10,6 +13,17 @@ body.status-page {
 .oranges { color: {{ $theme_oranges }} !important; }
 .metrics { color: {{ $theme_metrics }} !important; }
 .links { color: {{ $theme_links }} !important; }
+
+/**
+ * Banner background
+ */
+.app-banner {
+    background-color: {{ $theme_banner_background_color }} !important;
+}
+
+.app-banner-padding {
+    padding: {{ $theme_banner_padding }} !important;
+}
 
 /**
  * Alert overrides.

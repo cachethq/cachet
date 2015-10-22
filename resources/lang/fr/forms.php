@@ -119,8 +119,11 @@ return [
             'custom-css' => 'Feuille de style personnalisée',
         ],
         'theme' => [
-            'background-color' => 'Couleur de fond',
-            'text-color'       => 'Couleur Texte',
+            'background-color'        => 'Couleur de fond',
+            'text-color'              => 'Couleur Texte',
+            'banner-background-color' => 'Banner Background Color',
+            'banner-padding'          => 'Banner Padding',
+            'fullwidth-banner'        => 'Enable fullwidth banner?',
         ],
     ],
 
