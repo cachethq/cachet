@@ -109,6 +109,6 @@ class SubscribeController extends Controller
         $this->dispatch(new UnsubscribeSubscriberCommand($subscriber));
 
         return Redirect::route('status-page')
-            ->withSuccess(sprintf('<strong>%s</strong> %s', trans('dashboard.notifications.awesome'), trans('cachet.subscriber.email.unsuscribed')));
+            ->withSuccess(sprintf('<strong>%s</strong> %s', trans('dashboard.notifications.awesome'), trans('cachet.subscriber.email.unsubscribed')));
     }
 }
