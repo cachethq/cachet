@@ -41,17 +41,17 @@ class SubscribeRoutes
                 $router->post('subscribe', [
                     'uses' => 'SubscribeController@postSubscribe',
                 ]);
-
-                $router->get('subscribe/verify/{code}', [
-                    'as'   => 'verify',
-                    'uses' => 'SubscribeController@getVerify',
-                ]);
-
-                $router->get('unsubscribe/{code}', [
-                    'as'   => 'unsubscribe',
-                    'uses' => 'SubscribeController@getUnsubscribe',
-                ]);
             });
+
+            $router->get('subscribe/verify/{code}', [
+                'as'   => 'verify',
+                'uses' => 'SubscribeController@getVerify',
+            ]);
+
+            $router->get('unsubscribe/{code}', [
+                'as'   => 'unsubscribe',
+                'uses' => 'SubscribeController@getUnsubscribe',
+            ]);
         });
     }
 }
