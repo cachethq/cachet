@@ -103,7 +103,7 @@ body.status-page {
     border-left-color: {{ $theme_background_fills }};
     border-right-color: {{ $theme_background_fills }};
 }
-.footer {
-    background-color: {{ $theme_background_fills }};
+.footer a {
+    color: {{ $theme_text_color }};
 }
 </style>
