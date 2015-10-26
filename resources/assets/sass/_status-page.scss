@@ -351,8 +351,19 @@ body.status-page {
             }
         }
 
+        .list-inline > li {
+            padding-right: 0;
+        }
+
         @media (min-width: 768px) {
             text-align: left;
+
+            .list-inline {
+                text-align: right;
+                > li {
+                    padding-right: 0;
+                }
+            }
 
             .icons {
                 margin-top: 0;
