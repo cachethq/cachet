@@ -63,6 +63,17 @@ body.status-page {
 .btn.btn-success.links {
     color: {{ color_darken($theme_greens, -0.3) }};
 }
+.btn.btn-success.btn-outline {
+    background-color: transparent;
+    border-color: {{ $theme_greens }};
+    color: {{ $theme_greens }};
+    font-weight: bold;
+}
+.btn.btn-success.btn-outline:hover {
+    background-color: {{ $theme_greens }};
+    border-color: {{ color_darken($theme_greens, -0.1) }};
+    color: {{ color_contrast($theme_greens) }};
+}
 .btn.btn-info {
     background-color: {{ $theme_blues }};
     border-color: {{ color_darken($theme_blues, -0.1) }};
