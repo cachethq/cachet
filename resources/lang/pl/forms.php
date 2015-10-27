@@ -127,6 +127,7 @@ return [
         'password'       => 'Hasło',
         'api-token'      => 'Klucz API',
         'api-token-help' => 'Zregenerowanie twojego klucza API uniemożliwi dostęp istniejących aplikacji do Cachet.',
+        'gravatar'       => 'Change your profile picture at Gravatar.',
         '2fa'            => [
             'help' => 'Aktywacja dwuetapowej autentykacji zwiększą bezpieczeństwo twojego konta. Musisz ściągnąć <a href="https://support.google.com/accounts/answer/1066447?hl=en">Google Authenticator</a> lub podobną aplikację na swój telefon. Przy logowaniu będziesz proszony o podanie kodu wygenerowanego przez tą aplikację.',
         ],

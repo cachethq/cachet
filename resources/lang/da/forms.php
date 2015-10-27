@@ -143,6 +143,7 @@ return [
         'password'       => 'Kodeord',
         'api-token'      => 'API nøgle',
         'api-token-help' => 'Hvis du regenerere din API nøgle vil eksisterende applikationer ikke kunne tilgå API\'et.',
+        'gravatar'       => 'Change your profile picture at Gravatar.',
         'user_level'     => 'Brugertype',
         'levels'         => [
             'admin' => 'Administrator',

@@ -143,6 +143,7 @@ return [
         'password'       => 'Password',
         'api-token'      => 'API Token',
         'api-token-help' => 'Regenerating your API token will prevent existing applications from accessing Cachet.',
+        'gravatar'       => 'Change your profile picture at Gravatar.',
         'user_level'     => 'User Level',
         'levels'         => [
             'admin' => 'Admin',

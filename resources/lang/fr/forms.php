@@ -133,6 +133,7 @@ return [
         'password'       => 'Mot de passe ',
         'api-token'      => 'Jeton de l\'API',
         'api-token-help' => 'Régénérer votre jeton API permettra d\'éviter les applications existantes d\'accéder à Cachet.',
+        'gravatar'       => 'Change your profile picture at Gravatar.',
         '2fa'            => [
             'help' => 'Habilitante authentification à deux facteurs augmente la sécurité de votre compte. Vous aurez besoin de télécharger <a href="https://support.google.com/accounts/answer/1066447?hl=en"> Google Authenticator</a> ou une application similaire sur votre appareil mobile. Lorsque vous vous connectez vous sera demandé de fournir un jeton généré par l\'application.',
         ],

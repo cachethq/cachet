@@ -133,6 +133,7 @@ return [
         'password'       => 'Password',
         'api-token'      => 'Token API',
         'api-token-help' => 'Pembuatan ulang token API akan bermasalah jika sudah ada aplikasi lain yang mengakses Cachet.',
+        'gravatar'       => 'Change your profile picture at Gravatar.',
         '2fa'            => [
             'help' => 'Mengaktifkan otentikasi dua faktor akan memperkuat keamanan akun anda. Anda perlu mengunduh <a href="https://support.google.com/accounts/answer/1066447?hl=en">Google Authenticator</a> atau app sejenis di gadget anda. Saat login anda akan ditanyakan untuk mengisi token yang dibuat oleh app tersebut.',
         ],

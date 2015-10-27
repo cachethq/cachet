@@ -134,6 +134,7 @@ return [
         'password'       => '密码',
         'api-token'      => 'API 令牌',
         'api-token-help' => '重新生成您的 API 令牌将阻止现有的应用程序访问Cachet。',
+        'gravatar'       => 'Change your profile picture at Gravatar.',
         '2fa'            => [
             'help' => '启用双因素身份验证会增加您的帐户安全。您将需要下载 <a href="https://support.google.com/accounts/answer/1066447?hl=en">Google Authenticator</a> 或类似的应用到您的移动设备。当您登录时将会要求您提供由应用程序生成的一个短码。',
         ],

@@ -143,6 +143,7 @@ return [
         'password'       => 'Senha',
         'api-token'      => 'Token da API',
         'api-token-help' => 'Gerar nova chave da API impedirá que aplicativos existentes acessem o Cachet.',
+        'gravatar'       => 'Change your profile picture at Gravatar.',
         'user_level'     => 'Nível de Usuário',
         'levels'         => [
             'admin' => 'Administrador',

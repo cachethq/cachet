@@ -133,6 +133,7 @@ return [
         'password'       => 'crwdns413:0crwdne413:0',
         'api-token'      => 'crwdns414:0crwdne414:0',
         'api-token-help' => 'crwdns436:0crwdne436:0',
+        'gravatar'       => 'Change your profile picture at Gravatar.',
         '2fa'            => [
             'help' => 'crwdns416:0crwdne416:0',
         ],
