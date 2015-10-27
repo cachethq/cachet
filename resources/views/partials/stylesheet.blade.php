@@ -67,7 +67,6 @@ body.status-page {
     background-color: transparent;
     border-color: {{ $theme_greens }};
     color: {{ $theme_greens }};
-    font-weight: bold;
 }
 .btn.btn-success.btn-outline:hover {
     background-color: {{ $theme_greens }};
