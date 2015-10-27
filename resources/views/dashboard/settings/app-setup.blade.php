@@ -13,7 +13,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-12">
-                    <form id="settings-form" name="SettingsForm" class="form-vertical" role="form" action="/dashboard/settings" method="POST" enctype="multipart/form-data">
+                    <form id="settings-form" name="SettingsForm" class="form-vertical" role="form" action="/dashboard/settings" method="POST">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         @include('dashboard.partials.errors')
                         <fieldset>
@@ -81,22 +81,6 @@
                                             <input type="checkbox" value="1" name="show_support" {{ Setting::get('show_support') ? 'checked' : null }}>
                                             {{ trans('setup.show_support') }}
                                         </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <div class="form-group">
-                                        <label>{{ trans('forms.settings.app-setup.banner') }}</label>
-                                        @if($banner = Setting::get('app_banner'))
-                                        <div id="banner-view" class="well">
-                                            <img src="data:{{ Setting::get('app_banner_type') }};base64,{{ $banner }}" style="max-width: 100%">
-                                            <br><br>
-                                            <button id="remove-banner" class="btn btn-danger">{{ trans('forms.remove') }}</button>
-                                        </div>
-                                        @endif
-                                        <input type="file" name="app_banner" class="form-control">
-                                        <span class="help-block">{{ trans('forms.settings.app-setup.banner-help') }}</span>
                                     </div>
                                 </div>
                             </div>
