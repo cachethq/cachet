@@ -1,4 +1,5 @@
 <?php
+
 /*
  * This file is part of Cachet.
  *
@@ -7,7 +8,9 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+ 
 return [
+    
     /*
     |--------------------------------------------------------------------------
     | Authentication Language Lines
@@ -18,6 +21,8 @@ return [
     | these language lines according to your application's requirements.
     |
     */
+    
     'failed'   => 'Diese Zugnangsdaten stimmen nicht mit unseren überien.',
     'throttle' => 'Zu viele Login-versuche bitte versuche es in :seconds Sekunden erneut.',
+    
 ];
