@@ -30,11 +30,11 @@ class ReportIncidentCommandHandler
     public function handle(ReportIncidentCommand $command)
     {
         $incident = Incident::create([
-            'name'      => $command->name,
-            'status'    => $command->status,
-            'message'   => $command->message,
-            'visible'   => $command->visible,
-            'component' => $command->component_id,
+            'name'         => $command->name,
+            'status'       => $command->status,
+            'message'      => $command->message,
+            'visible'      => $command->visible,
+            'component_id' => $command->component_id,
         ]);
 
         // The incident occurred at a different time.
