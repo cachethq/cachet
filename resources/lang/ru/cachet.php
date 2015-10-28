@@ -26,7 +26,6 @@ return [
         'past'          => 'Прошлые инциденты',
         'previous_week' => 'Прошлая неделя',
         'next_week'     => 'Следующая неделя',
-        'none'          => 'Инцидентов не происходило.',
         'scheduled'     => 'Запланированное обслуживание',
         'scheduled_at'  => ', запланировано :timestamp',
         'status'        => [
@@ -46,15 +45,15 @@ return [
 
     'api' => [
         'regenerate' => 'Сгенерировать ключ API',
-        'revoke'     => 'Отозвать API ключ',
+        'revoke'     => 'Отозвать ключ API',
     ],
 
     // Metrics
     'metrics' => [
         'filter' => [
-            'hourly'  => 'Last 12 Hours',
-            'weekly'  => 'Week',
-            'monthly' => 'Month',
+            'hourly'  => 'Последние 12 часов',
+            'weekly'  => 'Неделя',
+            'monthly' => 'Месяц',
         ],
     ],
 
@@ -64,7 +63,7 @@ return [
         'button'    => 'Подписаться',
         'email'     => [
             'subscribe'    => 'Подписка на рассылку об изменениях.',
-            'subscribed'   => 'Вы подписались на рассылку email уведомлений. Проверьте вашу почту, чтобы подтвердить подписку.',
+            'subscribed'   => 'Вы подписались на рассылку уведомлений по эл. почте. Проверьте ваш почтовый ящик, чтобы подтвердить подписку.',
             'verified'     => 'Ваша подписка подтверждена. Спасибо!',
             'unsubscribe'  => 'Отписаться от рассылки.',
             'unsubscribed' => 'Ваша подписка отменена.',
@@ -88,10 +87,10 @@ return [
     ],
 
     // Other
-    'powered_by'      => ':app Статусная страница работает на  <a href="https://cachethq.io">Cachet</a>.',
+    'powered_by'      => ':app Статусная страница работает на <a href="https://cachethq.io">Cachet</a>.',
     'about_this_site' => 'Об этом сайте',
-    'rss-feed'        => 'RSS фид',
-    'atom-feed'       => 'Atom фид',
-    'feed'            => 'Статус фид',
+    'rss-feed'        => 'RSS-лента',
+    'atom-feed'       => 'Atom-лента',
+    'feed'            => 'Лента статуса',
 
 ];
