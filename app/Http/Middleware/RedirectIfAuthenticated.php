@@ -28,6 +28,8 @@ class RedirectIfAuthenticated
      * Create a new redirect if authenticated middleware instance.
      *
      * @param \Illuminate\Contracts\Auth\Guard $auth
+     *
+     * @return void
      */
     public function __construct(Guard $auth)
     {

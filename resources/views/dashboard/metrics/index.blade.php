@@ -16,7 +16,7 @@
     <div class="content-wrapper header-fixed">
         <div class="row">
             <div class="col-sm-12">
-                @include('partials.dashboard.errors')
+                @include('dashboard.partials.errors')
                 <div class="striped-list">
                     @foreach($metrics as $metric)
                     <div class="row striped-list-item">

@@ -16,6 +16,17 @@ use Illuminate\Database\Eloquent\Model;
 class Setting extends Model
 {
     /**
+     * The attributes that should be casted to native types.
+     *
+     * @var string[]
+     */
+    protected $casts = [
+        'id'    => 'int',
+        'name'  => 'string',
+        'value' => 'string',
+    ];
+
+    /**
      * The fillable properties.
      *
      * @var string[]

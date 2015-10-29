@@ -10,29 +10,12 @@
                     </div>
                 </div>
                 <div class="col-xs-10 col-xs-offset-2 col-sm-11 col-sm-offset-0">
-                    <div class="panel panel-message">
-                        <div class="panel-heading">
-                            @if($loggedUser)
-                            <div class="pull-right btn-group">
-                                <a href="/dashboard/incidents/{{ $incident->id }}/edit" class="btn btn-default">{{ trans('forms.edit') }}</a>
-                                <a href="/dashboard/incidents/{{ $incident->id }}/delete" class="btn btn-danger confirm-action" data-method='DELETE'>{{ trans('forms.delete') }}</a>
-                            </div>
-                            @endif
-                            <strong>{{ $incident->name }}</strong>{{ $incident->isScheduled ? trans("cachet.incidents.scheduled_at", ["timestamp" => $incident->scheduled_at_diff]) : null }}
-                            <br>
-                            <small class="date">
-                                <abbr class="timeago" data-toggle="tooltip" data-placement="right" title="{{ $incident->timestamp_formatted }}" data-timeago="{{ $incident->timestamp_iso }}"></abbr>
-                            </small>
-                        </div>
-                        <div class="panel-body">
-                            {!! $incident->formattedMessage !!}
-                        </div>
-                    </div>
+                    @include('partials.incident', ['incident' => $incident, 'with_link' => true])
                 </div>
             </div>
         </div>
         @empty
-        <div class="panel panel-message">
+        <div class="panel panel-message incident">
             <div class="panel-body">
                 <p>{{ trans('cachet.incidents.none') }}</p>
             </div>

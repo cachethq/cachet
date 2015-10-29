@@ -92,20 +92,24 @@ return [
         'app-setup' => [
             'site-name'              => '사이트 이름',
             'site-url'               => '사이트 URL',
-            'site-timezone'          => '사이트 시간대',
-            'site-locale'            => '사이트 언어',
-            'date-format'            => '날짜 형식',
-            'incident-date-format'   => '문제 Timestamp 형식',
             'display-graphs'         => '상태 페이지에 그래프 보이기',
             'about-this-page'        => '이 페이지에 대하여',
             'days-of-incidents'      => '몇 일 동안 사건을 표시하시겠습니까?',
             'banner'                 => '배너 이미지',
             'banner-help'            => '가로가 930 픽셀보다 작은 이미지를 업로드 하는 것을 권장합니다.',
+            'subscribers'            => '이메일 알림을 받기 위한 회원가입 허용',
+        ],
+        'analytics' => [
             'analytics_google'       => 'Google Analytics 코드',
             'analytics_gosquared'    => 'GoSquared Analytics 코드',
             'analytics_piwik_url'    => 'Piwik 인스턴스의 URL ( "http(s)://" 제외 )',
             'analytics_piwik_siteid' => 'Piwik 사이트 id',
-            'subscribers'            => '이메일 알림을 받기 위한 회원가입 허용',
+        ],
+        'localization' => [
+            'site-timezone'          => '사이트 시간대',
+            'site-locale'            => '사이트 언어',
+            'date-format'            => '날짜 형식',
+            'incident-date-format'   => '문제 Timestamp 형식',
         ],
         'security' => [
             'allowed-domains'      => '허용된 도메인',
@@ -115,9 +119,12 @@ return [
             'custom-css' => '사용자 정의 스타일시트',
         ],
         'theme' => [
-            'background-color' => '배경색',
-            'text-color'       => '글자색',
-            'dashboard-login'  => 'Show dashboard button in the footer?',
+            'background-color'        => '배경색',
+            'text-color'              => '글자색',
+            'dashboard-login'         => 'Show dashboard button in the footer?',
+            'banner-background-color' => 'Banner Background Color',
+            'banner-padding'          => 'Banner Padding',
+            'fullwidth-banner'        => 'Enable fullwidth banner?',
         ],
     ],
 
@@ -127,6 +134,7 @@ return [
         'password'       => '비밀번호',
         'api-token'      => 'API 토큰',
         'api-token-help' => '기존의 프로그램이 Cachet에 접근하는 것을 막기 위해, API token 을 재성성합니다.',
+        'gravatar'       => 'Change your profile picture at Gravatar.',
         '2fa'            => [
             'help' => '2단계 인증을 활성화하면 계정 보안이 강화됩니다. <a href="https://support.google.com/accounts/answer/1066447?hl=en">Google Authenticator</a> 또는 유사한 앱을 모바일 기기에 다운로드 받아야 합니다. 로그인 할 때, 해당 앱에서 생성된 토큰을 입력해야합니다.',
         ],

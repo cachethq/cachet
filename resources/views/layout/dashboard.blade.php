@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-@include('partials.dashboard.head')
+@include('dashboard.partials.head')
 
 <body class="dashboard">
     <div class="wrapper">
-        @include('partials.dashboard.sidebar')
+        @include('dashboard.partials.sidebar')
         <div class="page-content">
             @yield('content')
         </div>

@@ -12,12 +12,14 @@
 return [
     // Enabled langs
     'en-UD' => 'CrowdIn - InContext Localization',
+    'da'    => 'Danish',
     'de'    => 'Deutsch',
     'en'    => 'English',
     'pl'    => 'Polski',
     'es'    => 'Español',
     'fr'    => 'Français',
     'id'    => 'Indonesian',
+    'it'    => 'Italiano',
     'ko'    => '한글',
     'nl'    => 'Nederlands',
     'pt-BR' => 'Portuguese, Brazilian',

@@ -149,6 +149,10 @@ return [
             'success' => 'Profile updated.',
             'failure' => 'Something went wrong when updating.',
         ],
+        'delete' => [
+            'success' => 'User deleted.',
+            'failure' => 'Something went wrong when deleting this user.',
+        ],
     ],
 
     // Settings
@@ -158,6 +162,12 @@ return [
             'app-setup'   => 'Application Setup',
             'images-only' => 'Only images may be uploaded.',
             'too-big'     => 'The file you uploaded is too big. Upload an image smaller than :size',
+        ],
+        'analytics' => [
+            'analytics' => 'Analytics',
+        ],
+        'localization' => [
+            'localization' => 'Localization',
         ],
         'security' => [
             'security'   => 'Security',

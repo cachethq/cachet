@@ -117,7 +117,7 @@ return [
     |
     */
 
-    'providers' => [
+    'providers' => array_filter([
 
         /*
          * Laravel Framework Service Providers...
@@ -149,16 +149,17 @@ return [
         /*
          * Packages Service Providers...
          */
-        'AltThree\Emoji\EmojiServiceProvider',
+        env('CACHET_EMOJI', false) ? 'AltThree\Emoji\EmojiServiceProvider' : null,
         'Barryvdh\Cors\CorsServiceProvider',
         'Fideloper\Proxy\TrustedProxyServiceProvider',
         'GrahamCampbell\Binput\BinputServiceProvider',
         'GrahamCampbell\Exceptions\ExceptionsServiceProvider',
+        'GrahamCampbell\Core\CoreServiceProvider',
         'GrahamCampbell\Markdown\MarkdownServiceProvider',
         'GrahamCampbell\Security\SecurityServiceProvider',
         'GrahamCampbell\Throttle\ThrottleServiceProvider',
         'Jenssegers\Date\DateServiceProvider',
-        'McCool\LaravelAutoPresenter\LaravelAutoPresenterServiceProvider',
+        'McCool\LaravelAutoPresenter\AutoPresenterServiceProvider',
         'PragmaRX\Google2FA\Vendor\Laravel\ServiceProvider',
         'Roumen\Feed\FeedServiceProvider',
 
@@ -168,11 +169,11 @@ return [
         'CachetHQ\Cachet\Providers\AppServiceProvider',
         'CachetHQ\Cachet\Providers\ComposerServiceProvider',
         'CachetHQ\Cachet\Providers\ConfigServiceProvider',
-        'CachetHQ\Cachet\Providers\ConsoleServiceProvider',
         'CachetHQ\Cachet\Providers\EventServiceProvider',
+        'CachetHQ\Cachet\Providers\RepositoryServiceProvider',
         'CachetHQ\Cachet\Providers\RouteServiceProvider',
 
-    ],
+    ]),
 
     /*
     |--------------------------------------------------------------------------
@@ -220,8 +221,8 @@ return [
         'Validator' => 'Illuminate\Support\Facades\Validator',
         'View'      => 'Illuminate\Support\Facades\View',
 
-        'Setting' => 'CachetHQ\Cachet\Facades\Setting',
-        'Str'     => 'Illuminate\Support\Str',
+        'Setting'   => 'CachetHQ\Cachet\Facades\Setting',
+        'Str'       => 'Illuminate\Support\Str',
 
     ],
 

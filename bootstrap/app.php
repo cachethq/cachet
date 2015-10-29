@@ -36,7 +36,7 @@ $app->singleton(
 
 $app->singleton(
     'Illuminate\Contracts\Debug\ExceptionHandler',
-    'CachetHQ\Cachet\Exceptions\Handler'
+    'GrahamCampbell\Exceptions\ExceptionHandler'
 );
 
 /*

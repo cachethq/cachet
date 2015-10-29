@@ -11,21 +11,25 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Api;
 
-use CachetHQ\Cachet\Events\CustomerHasSubscribedEvent;
+use CachetHQ\Cachet\Commands\Subscriber\SubscribeSubscriberCommand;
+use CachetHQ\Cachet\Commands\Subscriber\UnsubscribeSubscriberCommand;
 use CachetHQ\Cachet\Models\Subscriber;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
+use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 class SubscriberController extends AbstractApiController
 {
+    use DispatchesJobs;
+
     /**
      * Get all subscribers.
      *
      * @param \Symfony\Component\HttpFoundation\Request $request
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Http\JsonResponse
      */
     public function getSubscribers(Request $request)
     {
@@ -37,28 +41,17 @@ class SubscriberController extends AbstractApiController
     /**
      * Create a new subscriber.
      *
-     * @return \CachetHQ\Cachet\Models\Subscriber
+     * @return \Illuminate\Http\JsonResponse
      */
     public function postSubscribers()
     {
-        $subscriberData = Binput::except('verify');
-
         try {
-            $subscriber = Subscriber::create($subscriberData);
+            $subscriber = $this->dispatch(new SubscribeSubscriberCommand(Binput::get('email'), Binput::get('verify', false)));
         } catch (Exception $e) {
             throw new BadRequestHttpException();
         }
 
-        if ($subscriber->isValid()) {
-            // If we're auto-verifying the subscriber, don't bother with this event.
-            if (!(Binput::get('verify'))) {
-                event(new CustomerHasSubscribedEvent($subscriber));
-            }
-
-            return $this->item($subscriber);
-        }
-
-        throw new BadRequestHttpException();
+        return $this->item($subscriber);
     }
 
     /**
@@ -70,7 +63,7 @@ class SubscriberController extends AbstractApiController
      */
     public function deleteSubscriber(Subscriber $subscriber)
     {
-        $subscriber->delete();
+        $this->dispatch(new UnsubscribeSubscriberCommand($subscriber));
 
         return $this->noContent();
     }

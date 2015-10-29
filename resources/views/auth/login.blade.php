@@ -22,7 +22,7 @@
 
                 <br>
 
-                <form method="POST" action="{{ route('login', [], false) }}" accept-charset="UTF-8" autocomplete="off" name="{{ str_random(10) }}">
+                <form method="POST" action="{{ route('auth.login', [], false) }}" accept-charset="UTF-8" autocomplete="off" name="{{ str_random(10) }}">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                     @if(Session::has('error'))
@@ -31,7 +31,7 @@
 
                     <div class="form-group">
                         <label class="sr-only">{{ trans('forms.login.email') }}</label>
-                        <input autocomplete="off" class="form-control login-input" placeholder="{{ trans('forms.login.email') }}" required="required" name="email" type="email">
+                        <input autocomplete="off" class="form-control login-input" placeholder="{{ trans('forms.login.email') }}" required="required" name="email" type="email" autofocus>
                     </div>
                     <div class="form-group">
                         <label class="sr-only">{{ trans('forms.login.password') }}</label>

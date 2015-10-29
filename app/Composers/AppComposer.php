@@ -12,6 +12,7 @@
 namespace CachetHQ\Cachet\Composers;
 
 use CachetHQ\Cachet\Facades\Setting;
+use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Contracts\View\View;
 
 class AppComposer
@@ -20,6 +21,8 @@ class AppComposer
      * Index page view composer.
      *
      * @param \Illuminate\Contracts\View\View $view
+     *
+     * @return void
      */
     public function compose(View $view)
     {
@@ -27,10 +30,7 @@ class AppComposer
         $mailAddress = env('MAIL_ADDRESS', false);
         $mailFrom = env('MAIL_NAME', false);
 
-        $withData = [
-            'subscribersEnabled' => $isEnabled && $mailAddress && $mailFrom,
-        ];
-
-        $view->with($withData);
+        $view->withSubscribersEnabled($isEnabled && $mailAddress && $mailFrom);
+        $view->withAboutApp(Markdown::convertToHtml(Setting::get('app_about')));
     }
 }

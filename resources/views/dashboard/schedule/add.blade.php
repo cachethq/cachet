@@ -13,17 +13,17 @@
     <div class="content-wrapper">
         <div class="row">
             <div class="col-md-12">
-                @include('partials.dashboard.errors')
+                @include('dashboard.partials.errors')
                 <form class='form-vertical' name='ScheduleForm' role='form' method='POST' autocomplete="off">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <input type="hidden" name="incident[visible]" value="1">
                     <fieldset>
-                        @if($incidentTemplates->count() > 0)
+                        @if($incident_templates->count() > 0)
                         <div class="form-group">
                             <label for="incident-template">{{ trans('forms.incidents.templates.template') }}</label>
                             <select class="form-control" name="template">
                                 <option selected></option>
-                                @foreach($incidentTemplates as $tpl)
+                                @foreach($incident_templates as $tpl)
                                 <option value="{{ $tpl->slug }}">{{ $tpl->name }}</option>
                                 @endforeach
                             </select>
@@ -43,17 +43,18 @@
                             <label>{{ trans('forms.incidents.scheduled_at') }}</label>
                             <input type="text" name="incident[scheduled_at]" class="form-control" rel="datepicker" required>
                         </div>
-                        <div class="form-group">
-                            <label>{{ trans('forms.incidents.notify_subscribers') }}</label>
-                            <input type="checkbox" name="incident[notify]" value="1" checked="{{ Input::old('incident.message', 'checked') }}">
-                            <span class="help-block">{{ trans('forms.optional') }}</span>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="incident[notify]" value="1" checked="{{ Input::old('incident.message', 'checked') }}">
+                                {{ trans('forms.incidents.notify_subscribers') }}
+                            </label>
                         </div>
                     </fieldset>
 
                     <div class="form-group">
                         <div class="btn-group">
                             <button type="submit" class="btn btn-success">{{ trans('forms.add') }}</button>
-                            <a class="btn btn-default" href="{{ route('dashboard.schedule') }}">{{ trans('forms.cancel') }}</a>
+                            <a class="btn btn-default" href="{{ route('dashboard.schedule.index') }}">{{ trans('forms.cancel') }}</a>
                         </div>
                     </div>
                 </form>

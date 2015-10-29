@@ -29,6 +29,8 @@ class RedirectDisplayer implements DisplayerInterface
      * Create a new redirect displayer instance.
      *
      * @param \Illuminate\Http\Request $request
+     *
+     * @return void
      */
     public function __construct(Request $request)
     {
@@ -65,10 +67,11 @@ class RedirectDisplayer implements DisplayerInterface
      *
      * @param \Exception $original
      * @param \Exception $transformed
+     * @param int        $code
      *
      * @return bool
      */
-    public function canDisplay(Exception $original, Exception $transformed)
+    public function canDisplay(Exception $original, Exception $transformed, $code)
     {
         $redirect = $transformed instanceof HttpExceptionInterface && $transformed->getStatusCode() === 401;
 

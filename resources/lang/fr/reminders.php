@@ -22,10 +22,10 @@ return [
     |
     */
 
-    'password' => 'Les mots de passe doivent contenir 6 caractères minimum et être identique à la confirmation.',
-    'user'     => 'Nous ne trouvons aucun utilisateur avec cette adresse email.',
-    'token'    => 'Ce jeton de réinitialisation de mot de passe est invalide.',
+    'password' => 'Le mot de passe doit être d\'au moins 6 caractères et correspondre à la confirmation.',
+    'user'     => 'Nous n\'avons pas trouvé d\'utilisateur avec cette adresse électronique.',
+    'token'    => 'Le jeton de réinitialisation de mot de passe est invalide.',
     'sent'     => 'Rappel de mot de passe envoyé !',
-    'reset'    => 'Votre mot de passe à été réinitialisé !',
+    'reset'    => 'Le mot de passe a été réinitialisé !',
 
 ];

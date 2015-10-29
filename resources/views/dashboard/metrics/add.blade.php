@@ -13,7 +13,7 @@
     <div class="content-wrapper">
         <div class="row">
             <div class="col-md-12">
-                @include('partials.dashboard.errors')
+                @include('dashboard.partials.errors')
                 <form class='form-vertical' name='MetricsForm' role='form' method='POST'>
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <fieldset>
@@ -43,15 +43,21 @@
                             <input type="number" class="form-control" name="metric[default_value]" id="metric-default_value" value="{{ Input::old('metric.default_value') }}">
                         </div>
                         <div class="form-group">
-                            <label>{{ trans('forms.metrics.display-chart') }}</label>
-                            <input type="hidden" value="0" name="metric[display_chart]">
-                            <input type="checkbox" value="1" name="metric[display_chart]" class="form-control" checked>
+                            <label for="metric-places">{{ trans('forms.metrics.places') }}</label>
+                            <input type="number" min="0" max="4" class="form-control" name="metric[places]" id="metric-places" required value="{{ Input::old('metric.places') }}">
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="hidden" value="0" name="metric[display_chart]">
+                                <input type="checkbox" value="1" name="metric[display_chart]" checked>
+                                {{ trans('forms.metrics.display-chart') }}
+                            </label>
                         </div>
                     </fieldset>
                     <div class='form-group'>
                         <div class='btn-group'>
                             <button type="submit" class="btn btn-success">{{ trans('forms.add') }}</button>
-                            <a class="btn btn-default" href="{{ route('dashboard.metrics') }}">{{ trans('forms.cancel') }}</a>
+                            <a class="btn btn-default" href="{{ route('dashboard.metrics.index') }}">{{ trans('forms.cancel') }}</a>
                         </div>
                     </div>
                 </form>

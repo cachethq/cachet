@@ -11,14 +11,20 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Api;
 
+use CachetHQ\Cachet\Commands\Metric\AddMetricCommand;
+use CachetHQ\Cachet\Commands\Metric\RemoveMetricCommand;
+use CachetHQ\Cachet\Commands\Metric\UpdateMetricCommand;
 use CachetHQ\Cachet\Models\Metric;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
+use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 class MetricController extends AbstractApiController
 {
+    use DispatchesJobs;
+
     /**
      * Get all metrics.
      *
@@ -38,7 +44,7 @@ class MetricController extends AbstractApiController
      *
      * @param \CachetHQ\Cachet\Models\Metric $metric
      *
-     * @return \CachetHQ\Cachet\Models\Metric
+     * @return \Illuminate\Http\JsonResponse
      */
     public function getMetric(Metric $metric)
     {
@@ -60,21 +66,25 @@ class MetricController extends AbstractApiController
     /**
      * Create a new metric.
      *
-     * @return \CachetHQ\Cachet\Models\Metric
+     * @return \Illuminate\Http\JsonResponse
      */
     public function postMetrics()
     {
         try {
-            $metric = Metric::create(Binput::all());
+            $metric = $this->dispatch(new AddMetricCommand(
+                Binput::get('name'),
+                Binput::get('suffix'),
+                Binput::get('description'),
+                Binput::get('default_value'),
+                Binput::get('calc_type', 0),
+                Binput::get('display_chart'),
+                Binput::get('places')
+            ));
         } catch (Exception $e) {
             throw new BadRequestHttpException();
         }
 
-        if ($metric->isValid()) {
-            return $this->item($metric);
-        }
-
-        throw new BadRequestHttpException();
+        return $this->item($metric);
     }
 
     /**
@@ -82,17 +92,26 @@ class MetricController extends AbstractApiController
      *
      * @param \CachetHQ\Cachet\Models\Metric $metric
      *
-     * @return \CachetHQ\Cachet\Models\Metric
+     * @return \Illuminate\Http\JsonResponse
      */
     public function putMetric(Metric $metric)
     {
-        $metric->update(Binput::all());
-
-        if ($metric->isValid('updating')) {
-            return $this->item($metric);
+        try {
+            $metric = $this->dispatch(new UpdateMetricCommand(
+                $metric,
+                Binput::get('name'),
+                Binput::get('suffix'),
+                Binput::get('description'),
+                Binput::get('default_value'),
+                Binput::get('calc_type', 0),
+                Binput::get('display_chart'),
+                Binput::get('places')
+            ));
+        } catch (Exception $e) {
+            throw new BadRequestHttpException();
         }
 
-        throw new BadRequestHttpException();
+        return $this->item($metric);
     }
 
     /**
@@ -104,7 +123,7 @@ class MetricController extends AbstractApiController
      */
     public function deleteMetric(Metric $metric)
     {
-        $metric->delete();
+        $this->dispatch(new RemoveMetricCommand($metric));
 
         return $this->noContent();
     }

@@ -1,6 +1,0 @@
-{
-    "bowerDir": "vendor/bower_components",
-    "cssOutput": "public/dist/css",
-    "jsOutput": "public/dist/js",
-    "production": true
-}

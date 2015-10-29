@@ -25,7 +25,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot(Dispatcher $dispatcher)
     {
         $dispatcher->mapUsing(function ($command) {
-            return Dispatcher::simpleMapping($command, 'CachetHQ\Cachet\Commands', 'CachetHQ\Cachet\Handlers\Commands');
+            return Dispatcher::simpleMapping($command, 'CachetHQ\Cachet', 'CachetHQ\Cachet\Handlers');
         });
 
         Str::macro('canonicalize', function ($url) {
@@ -35,9 +35,11 @@ class AppServiceProvider extends ServiceProvider
 
     /**
      * Register the service provider.
+     *
+     * @return void
      */
     public function register()
     {
-        $this->app->bind('Illuminate\Contracts\Auth\Registrar', 'CachetHQ\Cachet\Services\Registrar');
+        //
     }
 }

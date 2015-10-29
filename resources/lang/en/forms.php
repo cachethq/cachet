@@ -47,7 +47,7 @@ return [
         'notify_subscribers' => 'Notify subscribers',
         'visibility'         => 'Incident Visibility',
         'public'             => 'Viewable by public',
-        'logged_in_only'     => 'Only visible logged in users',
+        'logged_in_only'     => 'Only visible to logged in users',
         'templates'          => [
             'name'     => 'Name',
             'template' => 'Template',
@@ -80,6 +80,7 @@ return [
         'calc_type'        => 'Calculation of metrics',
         'type_sum'         => 'Sum',
         'type_avg'         => 'Average',
+        'places'           => 'Decimal Places',
 
         'points' => [
             'value' => 'Value',
@@ -92,20 +93,24 @@ return [
         'app-setup' => [
             'site-name'              => 'Site Name',
             'site-url'               => 'Site URL',
-            'site-timezone'          => 'Site Timezone',
-            'site-locale'            => 'Site Language',
-            'date-format'            => 'Date Format',
-            'incident-date-format'   => 'Incident Timestamp Format',
             'display-graphs'         => 'Display graphs on status page?',
             'about-this-page'        => 'About this page',
             'days-of-incidents'      => 'How many days of incidents to show?',
             'banner'                 => 'Banner Image',
             'banner-help'            => "It's recommended that you upload files no bigger than 930px wide .",
+            'subscribers'            => 'Allow people to signup to email notifications?',
+        ],
+        'analytics' => [
             'analytics_google'       => 'Google Analytics code',
             'analytics_gosquared'    => 'GoSquared Analytics code',
             'analytics_piwik_url'    => 'URL of your Piwik instance (without http(s)://)',
             'analytics_piwik_siteid' => 'Piwik\'s site id',
-            'subscribers'            => 'Allow people to signup to email notifications?',
+        ],
+        'localization' => [
+            'site-timezone'          => 'Site Timezone',
+            'site-locale'            => 'Site Language',
+            'date-format'            => 'Date Format',
+            'incident-date-format'   => 'Incident Timestamp Format',
         ],
         'security' => [
             'allowed-domains'      => 'Allowed domains',
@@ -115,9 +120,20 @@ return [
             'custom-css' => 'Custom Stylesheet',
         ],
         'theme' => [
-            'background-color' => 'Background Color',
-            'text-color'       => 'Text Color',
-            'dashboard-login'  => 'Show dashboard button in the footer?',
+            'background-color'        => 'Background Color',
+            'background-fills'        => 'Background Fills (Components, Incidents, Footer)',
+            'banner-background-color' => 'Banner Background Color',
+            'banner-padding'          => 'Banner Padding',
+            'fullwidth-banner'        => 'Enable fullwidth banner?',
+            'text-color'              => 'Text Color',
+            'dashboard-login'         => 'Show dashboard button in the footer?',
+            'reds'                    => 'Red (Used for errors)',
+            'blues'                   => 'Blue (Used for information)',
+            'greens'                  => 'Green (Used for success)',
+            'yellows'                 => 'Yellow (Used for alerts)',
+            'oranges'                 => 'Orange (Used for notices)',
+            'metrics'                 => 'Metrics Fill',
+            'links'                   => 'Links',
         ],
     ],
 
@@ -127,6 +143,7 @@ return [
         'password'       => 'Password',
         'api-token'      => 'API Token',
         'api-token-help' => 'Regenerating your API token will prevent existing applications from accessing Cachet.',
+        'gravatar'       => 'Change your profile picture at Gravatar.',
         'user_level'     => 'User Level',
         'levels'         => [
             'admin' => 'Admin',

@@ -92,20 +92,24 @@ return [
         'app-setup' => [
             'site-name'              => '站点名称',
             'site-url'               => '站点URL',
-            'site-timezone'          => '站点时区',
-            'site-locale'            => '站点语言',
-            'date-format'            => '日期格式',
-            'incident-date-format'   => '事件的时间戳格式',
             'display-graphs'         => '是否在状态页上显示图表',
             'about-this-page'        => '关于这个页面',
             'days-of-incidents'      => '显示多少天的事件？',
             'banner'                 => '横幅图像',
             'banner-help'            => '建议上传文件宽度不大于930像素。',
+            'subscribers'            => '允许用户订阅邮件通知吗?',
+        ],
+        'analytics' => [
             'analytics_google'       => 'Google Analytics 代码',
             'analytics_gosquared'    => 'GoSquared Analytics 代码',
             'analytics_piwik_url'    => '输入Piwik实例的URL(不含http(s)://)',
             'analytics_piwik_siteid' => 'Piwik 的站点 id',
-            'subscribers'            => '允许用户订阅邮件通知吗?',
+        ],
+        'localization' => [
+            'site-timezone'          => '站点时区',
+            'site-locale'            => '站点语言',
+            'date-format'            => '日期格式',
+            'incident-date-format'   => '事件的时间戳格式',
         ],
         'security' => [
             'allowed-domains'      => '允许的域',
@@ -115,9 +119,12 @@ return [
             'custom-css' => '自定义样式表',
         ],
         'theme' => [
-            'background-color' => '背景色',
-            'text-color'       => '文字颜色',
-            'dashboard-login'  => 'Show dashboard button in the footer?',
+            'background-color'        => '背景色',
+            'text-color'              => '文字颜色',
+            'dashboard-login'         => 'Show dashboard button in the footer?',
+            'banner-background-color' => 'Banner Background Color',
+            'banner-padding'          => 'Banner Padding',
+            'fullwidth-banner'        => 'Enable fullwidth banner?',
         ],
     ],
 
@@ -127,6 +134,7 @@ return [
         'password'       => '密码',
         'api-token'      => 'API 令牌',
         'api-token-help' => '重新生成您的 API 令牌将阻止现有的应用程序访问Cachet。',
+        'gravatar'       => 'Change your profile picture at Gravatar.',
         '2fa'            => [
             'help' => '启用双因素身份验证会增加您的帐户安全。您将需要下载 <a href="https://support.google.com/accounts/answer/1066447?hl=en">Google Authenticator</a> 或类似的应用到您的移动设备。当您登录时将会要求您提供由应用程序生成的一个短码。',
         ],

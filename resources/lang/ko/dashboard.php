@@ -142,6 +142,12 @@ return [
             'images-only' => '이미지만 업로드 할 수 있습니다.',
             'too-big'     => '업로드 한 파일이 너무 큽니다. :size 보다 작은 이미지를 올려주세요.',
         ],
+        'analytics' => [
+            'analytics' => 'Analytics',
+        ],
+        'localization' => [
+            'localization' => 'Localization',
+        ],
         'security' => [
             'security'   => '보안',
             'two-factor' => '2단계 인증을 사용하지 않는 사용자',

@@ -22,6 +22,8 @@ class TimezoneLocaleComposer
      * Timezones and Locales composer.
      *
      * @param \Illuminate\Contracts\View\View $view
+     *
+     * @return void
      */
     public function compose(View $view)
     {
@@ -45,6 +47,7 @@ class TimezoneLocaleComposer
             'Europe'     => DateTimeZone::EUROPE,
             'Indian'     => DateTimeZone::INDIAN,
             'Pacific'    => DateTimeZone::PACIFIC,
+            'UTC'        => DateTimeZone::UTC,
         ];
 
         $timezones = [];
@@ -65,9 +68,7 @@ class TimezoneLocaleComposer
             }
         }
 
-        $view->with([
-            'timezones' => $timezones,
-            'langs'     => $langs,
-        ]);
+        $view->withTimezones($timezones);
+        $view->withLangs($langs);
     }
 }

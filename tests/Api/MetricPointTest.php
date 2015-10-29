@@ -26,9 +26,9 @@ class MetricPointTest extends AbstractTestCase
         ]);
 
         $this->get("/api/v1/metrics/{$metric->id}/points");
-        $this->seeJson(['id' => (string) $metricPoint[0]->id]);
-        $this->seeJson(['id' => (string) $metricPoint[1]->id]);
-        $this->seeJson(['id' => (string) $metricPoint[2]->id]);
+        $this->seeJson(['id' => $metricPoint[0]->id]);
+        $this->seeJson(['id' => $metricPoint[1]->id]);
+        $this->seeJson(['id' => $metricPoint[2]->id]);
     }
 
     public function testPostMetricPointUnauthorized()
@@ -52,7 +52,7 @@ class MetricPointTest extends AbstractTestCase
         ]);
 
         $this->post("/api/v1/metrics/{$metric->id}/points", $metricPoint->toArray());
-        $this->seeJson(['value' => (string) $metricPoint->value]);
+        $this->seeJson(['value' => $metricPoint->value]);
     }
 
     public function testPostMetricPointTimestamp()
@@ -69,7 +69,7 @@ class MetricPointTest extends AbstractTestCase
         $postData['timestamp'] = $timestamp;
 
         $this->post("/api/v1/metrics/{$metric->id}/points", $postData);
-        $this->seeJson(['value' => (string) $metricPoint->value, 'created_at' => $datetime]);
+        $this->seeJson(['value' => $metricPoint->value, 'created_at' => $datetime]);
     }
 
     public function testPutMetricPoint()
@@ -82,7 +82,7 @@ class MetricPointTest extends AbstractTestCase
         $this->put("/api/v1/metrics/{$metric->id}/points/{$metricPoint->id}", [
             'value' => 999,
         ]);
-        $this->seeJson(['value' => '999']);
+        $this->seeJson(['value' => 999]);
     }
 
     public function testDeleteMetricPoint()

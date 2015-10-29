@@ -11,8 +11,8 @@
     <div class="row app-banner">
         <div class="col-md-12 text-center">
             <?php $bannerType = Setting::get('app_banner_type') ?>
-            @if($appUrl = Setting::get('app_domain'))
-            <a href="{{ $appUrl }}"><img src="data:{{ $bannerType }};base64, {{ $bannerImage}}" class="banner-image img-responsive"></a>
+            @if($app_url = Setting::get('app_domain'))
+            <a href="{{ $app_url }}"><img src="data:{{ $bannerType }};base64, {{ $bannerImage}}" class="banner-image img-responsive"></a>
             @else
             <img src="data:{{ $bannerType }};base64, {{ $bannerImage}}" class="banner-image img-responsive">
             @endif
@@ -20,24 +20,20 @@
     </div>
     @endif
 
-    @if($aboutApp)
-    <div class="about-app">
-        <h1>{{ trans('cachet.about_this_site') }}</h1>
-        <p>{!! $aboutApp !!}</p>
+    @include('dashboard.partials.errors')
+
+    <div class="panel panel-meassage">
+        <div class="panel-heading">
+            <strong>{{ trans('cachet.subscriber.subscribe') }}</strong>
+        </div>
+        <div class="panel-body">
+            <form action="{{ route('subscribe.subscribe', [], false) }}" method="post" class="form">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <div class="form-group">
+                    <input class="form-control" type="email" name="email">
+                </div>
+                <button type="submit" class="btn btn-success">{{ trans('cachet.subscriber.button') }}</button>
+            </form>
+        </div>
     </div>
-    @endif
-
-    @include('partials.dashboard.errors')
-
-    <h1>{{ trans('cachet.subscriber.subscribe') }}</h1>
-    <form action="{{ route('subscribe', [], false) }}" method="post">
-        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-        <div class="form-group">
-            <label for="email">{{ trans('cachet.subscriber.email.subscribe') }}</label>
-            <input class="form-control" type="text" name="email">
-        </div>
-        <div class="form-group">
-            <input class="btn btn-success btn-outline" type="submit" value="{{ trans('cachet.subscriber.button') }}">
-        </div>
-    </form>
 @stop

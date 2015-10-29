@@ -86,18 +86,23 @@ return [
         'app-setup' => [
             'site-name'              => 'Nazwa strony',
             'site-url'               => 'Adres URL strony',
-            'site-timezone'          => 'Strefa czasowa',
-            'site-locale'            => 'Język',
-            'date-format'            => 'Format daty',
             'display-graphs'         => 'Wyświetlać wykresy na panelu głównym?',
             'about-this-page'        => 'O tej stronie',
             'days-of-incidents'      => 'Ile dni incydentów pokazywać?',
             'banner'                 => 'Obrazek z logo',
             'banner-help'            => 'Zaleca się wrzuać pliki nie szersze niż 930px.',
+        ],
+        'analytics' => [
             'analytics_google'       => 'Google Analytics code',
             'analytics_gosquared'    => 'GoSquared Analytics code',
             'analytics_piwik_url'    => 'URL of your Piwik instance (without http(s)://)',
             'analytics_piwik_siteid' => 'Piwik\'s site id',
+        ],
+        'localization' => [
+            'site-timezone'          => 'Strefa czasowa',
+            'site-locale'            => 'Język',
+            'date-format'            => 'Format daty',
+            'incident-date-format'   => 'Incident Timestamp Format',
         ],
         'security' => [
             'allowed-domains'      => 'Dozwolone domenyw',
@@ -107,9 +112,12 @@ return [
             'custom-css' => 'Własny Stylesheet',
         ],
         'theme' => [
-            'background-color' => 'Kolor tła',
-            'text-color'       => 'Kolor tekstu',
-            'dashboard-login'  => 'Show dashboard button in the footer?',
+            'background-color'        => 'Kolor tła',
+            'text-color'              => 'Kolor tekstu',
+            'dashboard-login'         => 'Show dashboard button in the footer?',
+            'banner-background-color' => 'Banner Background Color',
+            'banner-padding'          => 'Banner Padding',
+            'fullwidth-banner'        => 'Enable fullwidth banner?',
         ],
     ],
 
@@ -119,6 +127,7 @@ return [
         'password'       => 'Hasło',
         'api-token'      => 'Klucz API',
         'api-token-help' => 'Zregenerowanie twojego klucza API uniemożliwi dostęp istniejących aplikacji do Cachet.',
+        'gravatar'       => 'Change your profile picture at Gravatar.',
         '2fa'            => [
             'help' => 'Aktywacja dwuetapowej autentykacji zwiększą bezpieczeństwo twojego konta. Musisz ściągnąć <a href="https://support.google.com/accounts/answer/1066447?hl=en">Google Authenticator</a> lub podobną aplikację na swój telefon. Przy logowaniu będziesz proszony o podanie kodu wygenerowanego przez tą aplikację.',
         ],

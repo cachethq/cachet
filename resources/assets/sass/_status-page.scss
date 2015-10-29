@@ -16,6 +16,21 @@ body.status-page {
         margin-bottom: 20px;
     }
 
+    img {
+        box-sizing: border-box;
+
+        &.emoji {
+            height: 20px;
+            width: 20px;
+            vertical-align: middle;
+            max-width: none;
+        }
+    }
+
+    p, strong {
+        color: $cachet-base-dark;
+    }
+
     .tooltip {
         .tooltip-inner {
             padding: 8px 12px;
@@ -56,7 +71,6 @@ body.status-page {
     }
 
     .about-app {
-        margin-top: 40px;
         margin-bottom: 40px;
         p {
             font-size: 1.2em;
@@ -123,16 +137,6 @@ body.status-page {
                 &:before {
                     // height: 130%;
                     top: -5px;
-                }
-                &:after {
-                    content: '';
-                    position: absolute;
-                    left: 23px;
-                    top: -20px;
-                    width: 7px;
-                    height: 7px;
-                    background: $cachet_gray_light;
-                    border-radius: 50%;
                 }
             }
             &:before {
@@ -231,17 +235,6 @@ body.status-page {
                         font-size: 1.1em;
                     }
                 }
-
-                img {
-                    box-sizing: border-box;
-
-                    &.emoji {
-                        height: 20px;
-                        width: 20px;
-                        vertical-align: middle;
-                        max-width: none;
-                    }
-                }
             }
         }
     }
@@ -279,7 +272,6 @@ body.status-page {
             }
 
             &.group-name {
-                font-size: 1.2em;
                 background-color: $cachet_gray_light;
                 padding: {
                     top: 0.6em;
@@ -324,12 +316,17 @@ body.status-page {
         width: 100%;
         bottom: 0;
         height: 60px;
-        padding: 40px 0 60px 0;
+        padding: 30px 0 60px 0;
         border-top: 1px solid $cachet_gray_light;
-        background-color: lighten($cachet_gray_light, 5%);
         color: $cachet-gray-darker;
+        font-size: 13px;
         line-height: 30px;
         text-align: center;
+        text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+
+        .btn {
+            text-shadow: none;
+        }
 
         .icons {
             a.icon-link {
@@ -354,8 +351,19 @@ body.status-page {
             }
         }
 
+        .list-inline > li {
+            padding-right: 0;
+        }
+
         @media (min-width: 768px) {
             text-align: left;
+
+            .list-inline {
+                text-align: right;
+                > li {
+                    padding-right: 0;
+                }
+            }
 
             .icons {
                 margin-top: 0;

@@ -21,6 +21,10 @@
 - Subscriber notifications via Email
 - Two factor authentication, with Google Authenticator
 
+## Usage in production
+
+The `master` branch of this repository is a development branch and **should not** be used in production. Instead, please check out the latest tag release.
+
 ## Requirements
 
 - PHP 5.5.9+ or newer
@@ -28,7 +32,7 @@
 
 ### Development Requirements
 
-Theses extra dependencies are required to develop Cachet:
+These extra dependencies are required to develop Cachet:
 
 - Node.js
 - Bower
@@ -54,3 +58,7 @@ The demo is reset every half hour.
 ## Translations
 
 A special thank you to our [translators](https://crowdin.com/project/cachet/activity_stream), who have allowed us to share Cachet with the world. If you'd like to contribute translations, please check out our [CrowdIn project](https://crowdin.com/project/cachet).
+
+## Security Vulnerabilities
+
+If you discover a security vulnerability within Cachet, please send an e-mail to us at support@alt-three.com. All security vulnerabilities will be promptly addressed.

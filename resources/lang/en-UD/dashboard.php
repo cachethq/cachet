@@ -115,6 +115,23 @@ return [
             'failure' => 'crwdns463:0crwdne463:0',
         ],
     ],
+    // Subscribers
+    'subscribers' => [
+        'subscribers'  => 'crwdns522:0crwdne522:0',
+        'description'  => 'crwdns523:0crwdne523:0',
+        'verified'     => 'crwdns524:0crwdne524:0',
+        'not_verified' => 'crwdns525:0crwdne525:0',
+        'add'          => [
+            'title'   => 'crwdns526:0crwdne526:0',
+            'success' => 'crwdns527:0crwdne527:0',
+            'failure' => 'crwdns528:0crwdne528:0',
+        ],
+        'edit' => [
+            'title'   => 'crwdns529:0crwdne529:0',
+            'success' => 'crwdns530:0crwdne530:0',
+            'failure' => 'crwdns531:0crwdne531:0',
+        ],
+    ],
 
     // Team
     'team' => [
@@ -132,6 +149,10 @@ return [
             'success' => 'crwdns343:0crwdne343:0',
             'failure' => 'crwdns344:0crwdne344:0',
         ],
+        'delete' => [
+            'success' => 'crwdns532:0crwdne532:0',
+            'failure' => 'crwdns533:0crwdne533:0',
+        ],
     ],
 
     // Settings
@@ -141,6 +162,12 @@ return [
             'app-setup'   => 'crwdns345:0crwdne345:0',
             'images-only' => 'crwdns346:0crwdne346:0',
             'too-big'     => 'crwdns347:0crwdne347:0',
+        ],
+        'analytics' => [
+            'analytics' => 'Analytics',
+        ],
+        'localization' => [
+            'localization' => 'Localization',
         ],
         'security' => [
             'security'   => 'crwdns348:0crwdne348:0',

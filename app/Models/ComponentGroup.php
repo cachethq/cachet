@@ -11,20 +11,22 @@
 
 namespace CachetHQ\Cachet\Models;
 
+use AltThree\Validator\ValidatingTrait;
 use Illuminate\Database\Eloquent\Model;
-use Watson\Validating\ValidatingTrait;
 
 class ComponentGroup extends Model
 {
     use ValidatingTrait;
 
     /**
-     * The validation rules.
+     * The attributes that should be casted to native types.
      *
      * @var string[]
      */
-    protected $rules = [
-        'name' => 'required|unique:component_groups',
+    protected $casts = [
+        'id'    => 'int',
+        'name'  => 'string',
+        'order' => 'int',
     ];
 
     /**
@@ -33,6 +35,16 @@ class ComponentGroup extends Model
      * @var string[]
      */
     protected $fillable = ['name', 'order'];
+
+    /**
+     * The validation rules.
+     *
+     * @var string[]
+     */
+    public $rules = [
+        'name'  => 'required|string',
+        'order' => 'int',
+    ];
 
     /**
      * A group can have many components.

@@ -3,7 +3,7 @@
 @section('content')
     <div class="content-panel">
         @if(isset($sub_menu))
-        @include('partials.dashboard.sub-sidebar')
+        @include('dashboard.partials.sub-sidebar')
         @endif
         <div class="content-wrapper">
             <div class="header sub-header" id="security">
@@ -15,7 +15,7 @@
                 <div class="col-sm-12">
                     <form name="SettingsForm" class="form-vertical" role="form" action="/dashboard/settings" method="POST">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        @include('partials.dashboard.errors')
+                        @include('dashboard.partials.errors')
                         <fieldset>
                             <div class="row">
                                 <div class="col-xs-12">
@@ -38,13 +38,13 @@
                             </div>
                         </div>
 
-                        @if(! $unsecureUsers->isEmpty())
+                        @if(!$unsecure_users->isEmpty())
                         <hr>
 
                         <div class="panel panel-danger">
                             <div class="panel-heading">{{ trans('dashboard.settings.security.two-factor') }}</div>
                             <div class="list-group">
-                                @foreach($unsecureUsers as $user)
+                                @foreach($unsecure_users as $user)
                                 <div class="list-group-item">
                                     <strong>{{ $user->username }}</strong>
                                     <span class="label label-danger pull-right"><i class="ion-ios-unlocked"></i></span>

@@ -59,7 +59,7 @@ class Foo extends Bar
 
 If you're still unsure, then take a look at existing code.
 
-## Introduction into to Git and GitHub
+## Introduction into Git and GitHub
 
 If you are new to Git, GitHub and the whole open source software community, welcome! Here are some resources for getting started and understanding what it's all about.
 

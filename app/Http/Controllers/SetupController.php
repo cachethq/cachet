@@ -14,6 +14,7 @@ namespace CachetHQ\Cachet\Http\Controllers;
 use CachetHQ\Cachet\Models\Setting;
 use CachetHQ\Cachet\Models\User;
 use GrahamCampbell\Binput\Facades\Binput;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Redirect;
@@ -23,7 +24,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\View;
 
-class SetupController extends AbstractController
+class SetupController extends Controller
 {
     /**
      * Array of cache drivers.
@@ -41,6 +42,8 @@ class SetupController extends AbstractController
 
     /**
      * Create a new setup controller instance.
+     *
+     * @return void
      */
     public function __construct()
     {
@@ -59,11 +62,10 @@ class SetupController extends AbstractController
             $this->keyGenerate();
         }
 
-        return View::make('setup')->with([
-            'page_title'   => trans('setup.setup'),
-            'cacheDrivers' => $this->cacheDrivers,
-            'appUrl'       => Request::root(),
-        ]);
+        return View::make('setup')
+            ->withPageTitle(trans('setup.setup'))
+            ->withCacheDrivers($this->cacheDrivers)
+            ->withAppUrl(Request::root());
     }
 
     /**
@@ -82,9 +84,9 @@ class SetupController extends AbstractController
 
         if ($v->passes()) {
             return Response::json(['status' => 1]);
-        } else {
-            return Response::json(['errors' => $v->messages()], 400);
         }
+
+        return Response::json(['errors' => $v->getMessageBag()], 400);
     }
 
     /**
@@ -103,14 +105,14 @@ class SetupController extends AbstractController
             'settings.app_domain'   => 'required',
             'settings.app_timezone' => 'required',
             'settings.app_locale'   => 'required',
-            'settings.show_support' => 'boolean',
+            'settings.show_support' => 'bool',
         ]);
 
         if ($v->passes()) {
             return Response::json(['status' => 1]);
-        } else {
-            return Response::json(['errors' => $v->messages()], 400);
         }
+
+        return Response::json(['errors' => $v->getMessageBag()], 400);
     }
 
     /**
@@ -129,7 +131,7 @@ class SetupController extends AbstractController
             'settings.app_domain'   => 'required',
             'settings.app_timezone' => 'required',
             'settings.app_locale'   => 'required',
-            'settings.show_support' => 'boolean',
+            'settings.show_support' => 'bool',
             'user.username'         => ['required', 'regex:/\A(?!.*[:;]-\))[ -~]+\z/'],
             'user.email'            => 'email|required',
             'user.password'         => 'required',
@@ -171,13 +173,13 @@ class SetupController extends AbstractController
             }
 
             return Redirect::to('dashboard');
-        } else {
-            if (Request::ajax()) {
-                return Response::json(['errors' => $v->messages()], 400);
-            }
-
-            return Redirect::back()->withInput()->with('errors', $v->messages());
         }
+
+        if (Request::ajax()) {
+            return Response::json(['errors' => $v->getMessageBag()], 400);
+        }
+
+        return Redirect::route('setup.index')->withInput()->withErrors($v->getMessageBag());
     }
 
     /**
@@ -185,6 +187,8 @@ class SetupController extends AbstractController
      *
      * @param string $key
      * @param mixed  $value
+     *
+     * @return void
      */
     protected function writeEnv($key, $value)
     {
@@ -200,6 +204,8 @@ class SetupController extends AbstractController
 
     /**
      * Generate the app.key value.
+     *
+     * @return void
      */
     protected function keyGenerate()
     {

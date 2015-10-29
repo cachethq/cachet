@@ -11,7 +11,6 @@
 
 namespace CachetHQ\Cachet\Presenters;
 
-use CachetHQ\Cachet\Facades\Setting;
 use Illuminate\Contracts\Support\Arrayable;
 use McCool\LaravelAutoPresenter\BasePresenter as BaseLaravelAutoPresenter;
 
@@ -27,7 +26,9 @@ abstract class AbstractPresenter extends BaseLaravelAutoPresenter implements Arr
     /**
      * Create a incident presenter instance.
      *
-     * @param object $resource
+     * @param \Illuminate\Database\Eloquent\Model $resource
+     *
+     * @return void
      */
     public function __construct($resource)
     {

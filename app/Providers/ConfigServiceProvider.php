@@ -21,15 +21,18 @@ class ConfigServiceProvider extends ServiceProvider
 {
     /**
      * Boot the service provider.
+     *
+     * @return void
      */
     public function boot()
     {
-        $appDomain = $appLocale = null;
+        $appDomain = $appLocale = $appTimezone = null;
 
         try {
             // Get app custom configuration.
             $appDomain = Setting::get('app_domain');
             $appLocale = Setting::get('app_locale');
+            $appTimezone = Setting::get('app_timezone');
 
             // Setup Cors.
             $allowedOrigins = $this->app->config->get('cors.defaults.allowedOrigins');
@@ -53,6 +56,7 @@ class ConfigServiceProvider extends ServiceProvider
         // Override default app values.
         $this->app->config->set('app.url', $appDomain ?: $this->app->config->get('app.url'));
         $this->app->config->set('app.locale', $appLocale ?: $this->app->config->get('app.locale'));
+        $this->app->config->set('cachet.timezone', $appTimezone ?: $this->app->config->get('cachet.timezone'));
 
         // Set custom lang.
         $this->app->translator->setLocale($appLocale);
@@ -60,6 +64,8 @@ class ConfigServiceProvider extends ServiceProvider
 
     /**
      * Register the service provider.
+     *
+     * @return void
      */
     public function register()
     {

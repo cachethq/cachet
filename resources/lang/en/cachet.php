@@ -22,11 +22,11 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => 'No incidents reported.',
+        'none'          => 'No Incidents Reported.',
         'past'          => 'Past incidents',
-        'previous_week' => 'Previous week',
-        'next_week'     => 'Next week',
-        'none'          => 'Nothing to report',
+        'previous_week' => 'Previous Week',
+        'next_week'     => 'Next Week',
+        'none'          => 'Nothing to report.',
         'scheduled'     => 'Scheduled Maintenance',
         'scheduled_at'  => ', scheduled :timestamp',
         'status'        => [
@@ -40,8 +40,8 @@ return [
 
     // Service Status
     'service' => [
-        'good' => 'All systems are functional.',
-        'bad'  => 'Some systems are experiencing issues.',
+        'good' => 'All Systems Are Functional',
+        'bad'  => 'Some Systems Are Experiencing Issues',
     ],
 
     'api' => [
@@ -52,21 +52,21 @@ return [
     // Metrics
     'metrics' => [
         'filter' => [
-            'hourly'  => 'Hourly',
-            'daily'   => 'Daily',
-            'monthly' => 'Monthly',
+            'hourly'  => 'Last 12 Hours',
+            'weekly'  => 'Week',
+            'monthly' => 'Month',
         ],
     ],
 
     // Subscriber
     'subscriber' => [
-        'subscribe' => 'Subscribe to get the most recent updates.',
+        'subscribe' => 'Subscribe to Get the Most Recent Updates',
         'button'    => 'Subscribe',
         'email'     => [
             'subscribe'    => 'Subscribe to email updates.',
             'subscribed'   => 'You\'ve been subscribed to email notifications, please check your email to confirm your subscription.',
             'verified'     => 'Your email subscription has been confirmed. Thank you!',
-            'unsubscribe'  => 'Unsuscribe from email updates.',
+            'unsubscribe'  => 'Unsubscribe from email updates.',
             'unsubscribed' => 'Your email subscription has been cancelled.',
             'failure'      => 'Something went wrong with the subscription.',
             'verify'       => [
@@ -88,8 +88,8 @@ return [
     ],
 
     // Other
-    'powered_by'      => ':app Status Page is powered by <a href="https://cachethq.io">Cachet</a>.',
-    'about_this_site' => 'About this site',
+    'powered_by'      => ':app Status Page is powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
+    'about_this_site' => 'About This Site',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',
     'feed'            => 'Status Feed',
