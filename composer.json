@@ -1,7 +1,7 @@
 {
     "name": "cachethq/cachet",
-    "description": "An open source status page system written in PHP",
-    "keywords": ["status", "page", "updates", "cachet", "Cachet", "Cachet HQ", "CachetHQ"],
+    "description": "An open source status page system, for everyone.",
+    "keywords": ["laravel", "cachet", "alt-three", "status", "page"],
     "type": "project",
     "license": "BSD-3-Clause",
     "authors": [
