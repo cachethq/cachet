@@ -3,7 +3,7 @@
 /*
  * This file is part of Cachet.
  *
- * (c) Alt Three Services Limited.
+ * (c) Alt Three Services Limited
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -23,7 +23,7 @@ return [
     // Incidents
     'incidents' => [
         'none'          => 'No Incidents Reported.',
-        'past'          => 'Past incidents',
+        'past'          => 'Past Incidents',
         'previous_week' => 'Previous Week',
         'next_week'     => 'Next Week',
         'none'          => 'Nothing to report.',
