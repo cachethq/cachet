@@ -23,7 +23,7 @@ return [
     // Incidents
     'incidents' => [
         'none'          => 'No Incidents Reported.',
-        'past'          => 'Past incidents',
+        'past'          => 'Past Incidents',
         'previous_week' => 'Previous Week',
         'next_week'     => 'Next Week',
         'none'          => 'Nothing to report.',

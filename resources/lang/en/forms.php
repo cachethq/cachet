@@ -44,7 +44,7 @@ return [
         'message-help'       => 'You may also use Markdown.',
         'scheduled_at'       => 'When to schedule the maintenance for?',
         'incident_time'      => 'When did this incident occur?',
-        'notify_subscribers' => 'Notify subscribers',
+        'notify_subscribers' => 'Notify Subscribers?',
         'visibility'         => 'Incident Visibility',
         'public'             => 'Viewable by public',
         'logged_in_only'     => 'Only visible to logged in users',
@@ -76,8 +76,8 @@ return [
         'description'      => 'Description',
         'description-help' => 'You may also use Markdown.',
         'display-chart'    => 'Display chart on status page?',
-        'default-value'    => 'Default value',
-        'calc_type'        => 'Calculation of metrics',
+        'default-value'    => 'Default Value',
+        'calc_type'        => 'Calculation of Metrics',
         'type_sum'         => 'Sum',
         'type_avg'         => 'Average',
         'places'           => 'Decimal Places',
@@ -113,7 +113,7 @@ return [
             'incident-date-format'   => 'Incident Timestamp Format',
         ],
         'security' => [
-            'allowed-domains'      => 'Allowed domains',
+            'allowed-domains'      => 'Allowed Domains',
             'allowed-domains-help' => 'Comma separated. The domain set above is automatically allowed by default.',
         ],
         'stylesheet' => [

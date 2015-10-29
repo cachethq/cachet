@@ -21,12 +21,12 @@ return [
         'incident-create-template' => 'Create Template',
         'incident-templates'       => 'Incident Templates',
         'add'                      => [
-            'title'   => 'Add an incident',
+            'title'   => 'Add an Incident',
             'success' => 'Incident added.',
             'failure' => 'Something went wrong with the incident.',
         ],
         'edit' => [
-            'title'   => 'Edit an incident',
+            'title'   => 'Edit an Incident',
             'success' => 'Incident updated.',
             'failure' => 'Something went wrong with the incident.',
         ],
@@ -35,12 +35,12 @@ return [
         'templates' => [
             'title' => 'Incident Templates',
             'add'   => [
-                'title'   => 'Create an incident template',
+                'title'   => 'Create an Incident Template',
                 'success' => 'Template created.',
                 'failure' => 'Something went wrong with the incident template.',
             ],
             'edit' => [
-                'title'   => 'Edit template',
+                'title'   => 'Edit Template',
                 'success' => 'Template has been updated!',
                 'failure' => 'Something went wrong updating the incident template',
             ],
@@ -73,13 +73,13 @@ return [
         'component_statuses' => 'Component Statuses',
         'listed_group'       => 'Grouped under :name',
         'add'                => [
-            'title'   => 'Add a component',
+            'title'   => 'Add a Component',
             'message' => 'You should add a component.',
             'success' => 'Component created.',
             'failure' => 'Something went wrong with the component.',
         ],
         'edit' => [
-            'title'   => 'Edit a component',
+            'title'   => 'Edit a Component',
             'success' => 'Component updated.',
             'failure' => 'Something went wrong with the component.',
         ],
@@ -89,12 +89,12 @@ return [
             'groups'        => 'Component group|Component groups',
             'no_components' => 'You should add a component group.',
             'add'           => [
-                'title'   => 'Add a component group',
+                'title'   => 'Add a Component Group',
                 'success' => 'Component group added.',
                 'failure' => 'Something went wrong with the component group.',
             ],
             'edit' => [
-                'title'   => 'Edit a component group',
+                'title'   => 'Edit a Component Group',
                 'success' => 'Component group updated.',
                 'failure' => 'Something went wrong with the component group.',
             ],
@@ -105,12 +105,12 @@ return [
     'metrics' => [
         'metrics' => 'Metrics',
         'add'     => [
-            'title'   => 'Create a metric',
+            'title'   => 'Create a Metric',
             'success' => 'Metric created.',
             'failure' => 'Something went wrong with the metric.',
         ],
         'edit' => [
-            'title'   => 'Edit a metric',
+            'title'   => 'Edit a Metric',
             'success' => 'Metric updated.',
             'failure' => 'Something went wrong with the metric.',
         ],
@@ -122,12 +122,12 @@ return [
         'verified'     => 'Verified',
         'not_verified' => 'Not Verified',
         'add'          => [
-            'title'   => 'Add a new subscriber',
+            'title'   => 'Add a New Subscriber',
             'success' => 'Subscriber added.',
             'failure' => 'Something went wrong with the component.',
         ],
         'edit' => [
-            'title'   => 'Update subscriber',
+            'title'   => 'Update Subscriber',
             'success' => 'Subscriber updated.',
             'failure' => 'Something went wrong when updating.',
         ],
@@ -140,12 +140,12 @@ return [
         'profile'     => 'Profile',
         'description' => 'Team Members will be able to add, modify &amp; edit components and incidents.',
         'add'         => [
-            'title'   => 'Add a new team member',
+            'title'   => 'Add a New Team Member',
             'success' => 'Team member added.',
             'failure' => 'Something went wrong with the component.',
         ],
         'edit' => [
-            'title'   => 'Update profile',
+            'title'   => 'Update Profile',
             'success' => 'Profile updated.',
             'failure' => 'Something went wrong when updating.',
         ],
