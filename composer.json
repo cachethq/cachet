@@ -1,7 +1,7 @@
 {
     "name": "cachethq/cachet",
-    "description": "An open source status page system written in PHP",
-    "keywords": ["status", "page", "updates", "cachet", "Cachet", "Cachet HQ", "CachetHQ"],
+    "description": "An open source status page system, for everyone.",
+    "keywords": ["laravel", "cachet", "alt-three", "status", "page"],
     "type": "project",
     "license": "BSD-3-Clause",
     "authors": [
@@ -20,7 +20,7 @@
     ],
     "require": {
         "php": ">=5.5.9",
-        "laravel/framework": "~5.1.21",
+        "laravel/framework": "~5.1.22",
         "alt-three/emoji": "^2.0",
         "alt-three/validator": "^1.3",
         "barryvdh/laravel-cors": "^0.5",
@@ -41,8 +41,7 @@
         "fzaninotto/faker": "^1.5",
         "graham-campbell/testbench-core": "^1.0",
         "mockery/mockery": "^0.9.4",
-        "phpunit/phpunit": "^4.8",
-        "laravel/homestead": "dev-master"
+        "phpunit/phpunit": "^4.8"
     },
     "autoload": {
         "classmap": [

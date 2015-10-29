@@ -22,11 +22,11 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => 'No incidents reported.',
+        'none'          => 'No Incidents Reported.',
         'past'          => 'Past incidents',
-        'previous_week' => 'Previous week',
-        'next_week'     => 'Next week',
-        'none'          => 'Nothing to report',
+        'previous_week' => 'Previous Week',
+        'next_week'     => 'Next Week',
+        'none'          => 'Nothing to report.',
         'scheduled'     => 'Scheduled Maintenance',
         'scheduled_at'  => ', scheduled :timestamp',
         'status'        => [
@@ -40,8 +40,8 @@ return [
 
     // Service Status
     'service' => [
-        'good' => 'All systems are functional.',
-        'bad'  => 'Some systems are experiencing issues.',
+        'good' => 'All Systems Are Functional',
+        'bad'  => 'Some Systems Are Experiencing Issues',
     ],
 
     'api' => [
@@ -60,7 +60,7 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe' => 'Subscribe to get the most recent updates.',
+        'subscribe' => 'Subscribe to Get the Most Recent Updates',
         'button'    => 'Subscribe',
         'email'     => [
             'subscribe'    => 'Subscribe to email updates.',
@@ -89,7 +89,7 @@ return [
 
     // Other
     'powered_by'      => ':app Status Page is powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
-    'about_this_site' => 'About this site',
+    'about_this_site' => 'About This Site',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',
     'feed'            => 'Status Feed',

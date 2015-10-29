@@ -30,9 +30,9 @@ return [
         'email'         => 'Эл. почта',
         'password'      => 'Пароль',
         '2fauth'        => 'Код аутентификации',
-        'invalid'       => 'Неправильный E-mail или пароль',
+        'invalid'       => 'Неправильный адрес эл. почты или пароль',
         'invalid-token' => 'Неправильный токен',
-        'cookies'       => 'Необходимо включить cookies для входа.',
+        'cookies'       => 'Необходимо включить куки для входа.',
     ],
 
     // Incidents form fields
@@ -121,10 +121,10 @@ return [
         'theme' => [
             'background-color'        => 'Цвет фона',
             'text-color'              => 'Цвет текста',
-            'dashboard-login'         => 'Show dashboard button in the footer?',
-            'banner-background-color' => 'Banner Background Color',
-            'banner-padding'          => 'Banner Padding',
-            'fullwidth-banner'        => 'Enable fullwidth banner?',
+            'dashboard-login'         => 'Показывать кнопку панели управления внизу страницы?',
+            'banner-background-color' => 'Фоновый цвет баннера',
+            'banner-padding'          => 'Поля вокруг баннера',
+            'fullwidth-banner'        => 'Включить баннер в полную ширину?',
         ],
     ],
 
@@ -134,9 +134,9 @@ return [
         'password'       => 'Пароль',
         'api-token'      => 'API токен',
         'api-token-help' => 'Обновление вашего API токена заблокирует существующим приложениям доступ в Cachet. Вам будет необходимо прописать в них новый токен.',
-        'gravatar'       => 'Change your profile picture at Gravatar.',
+        'gravatar'       => 'Измените вашу картинку профиля в Gravatar.',
         '2fa'            => [
-            'help' => 'Включение двухфакторной аутентификации увеличивает безопасность вашей учетной записи. Вам понадобится скачать <a href="https://support.google.com/accounts/answer/1066447?hl=en">Google Authenticator</a> или аналогичное приложение на свой смартфон. Когда в следующий раз вы войдете в панель управления, вам понадобится токен, выданный этим приложением.',
+            'help' => 'Включение двухфакторной аутентификации увеличивает безопасность вашей учетной записи. Вам понадобится скачать <a href="https://support.google.com/accounts/answer/1066447?hl=ru">Google Authenticator</a> или аналогичное приложение на свой смартфон. Когда в следующий раз вы войдете в панель управления, вам понадобится токен, выданный этим приложением.',
         ],
     ],
 

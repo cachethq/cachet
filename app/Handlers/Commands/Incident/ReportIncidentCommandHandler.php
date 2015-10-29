@@ -29,23 +29,28 @@ class ReportIncidentCommandHandler
      */
     public function handle(ReportIncidentCommand $command)
     {
-        $incident = Incident::create([
-            'name'         => $command->name,
-            'status'       => $command->status,
-            'message'      => $command->message,
-            'visible'      => $command->visible,
-            'component_id' => $command->component_id,
-        ]);
+        $data = [
+            'name'    => $command->name,
+            'status'  => $command->status,
+            'message' => $command->message,
+            'visible' => $command->visible,
+        ];
+
+        // Link with the component.
+        if ($command->component_id) {
+            $data['component_id'] = $command->component_id;
+        }
 
         // The incident occurred at a different time.
         if ($command->incident_date) {
             $incidentDate = Date::createFromFormat('d/m/Y H:i', $command->incident_date, config('cachet.timezone'))->setTimezone(Config::get('app.timezone'));
 
-            $incident->update([
-                'created_at' => $incidentDate,
-                'updated_at' => $incidentDate,
-            ]);
+            $data['created_at'] = $incidentDate;
+            $data['updated_at'] = $incidentDate;
         }
+
+        // Create the incident
+        $incident = Incident::create($data);
 
         // Update the component.
         if ($command->component_id) {
