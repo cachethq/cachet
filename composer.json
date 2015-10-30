@@ -20,8 +20,8 @@
     ],
     "require": {
         "php": "^5.5.9",
-        "laravel/framework": "~5.1.6",
-        "alt-three/emoji": "^1.0",
+        "laravel/framework": "~5.1.16",
+        "alt-three/emoji": "^1.2",
         "barryvdh/laravel-cors": "^0.5",
         "doctrine/dbal": "^2.5",
         "fideloper/proxy": "^3.0",
@@ -38,7 +38,6 @@
     },
     "require-dev": {
         "fzaninotto/faker": "^1.5",
-        "laravel/homestead": "^2.1.5",
         "mockery/mockery": "^0.9.4",
         "phpunit/phpunit": "^4.7.6"
     },
@@ -87,7 +86,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.1-dev"
+            "dev-master": "1.2-dev"
         }
     },
     "minimum-stability": "dev",

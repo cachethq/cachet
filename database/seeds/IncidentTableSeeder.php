@@ -47,6 +47,7 @@ class IncidentTableSeeder extends Seeder
             [
                 'name'         => 'Test Incident',
                 'message'      => 'Something went wrong, oh noes.',
+                'status'       => 1,
                 'component_id' => 0,
                 'scheduled_at' => null,
                 'visible'      => 1,

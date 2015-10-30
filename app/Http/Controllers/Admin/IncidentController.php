@@ -215,7 +215,7 @@ class IncidentController extends AbstractController
             return Redirect::back()->withInput(Binput::all())
                 ->with('title', sprintf(
                     '%s %s',
-                    trans('dashboard.notifications.awesome'),
+                    trans('dashboard.notifications.whoops'),
                     trans('dashboard.incidents.templates.add.failure')
                 ))
                 ->with('errors', $template->getErrors());
@@ -289,7 +289,7 @@ class IncidentController extends AbstractController
             return Redirect::back()->withInput(Binput::all())
                 ->with('title', sprintf(
                     '%s %s',
-                    trans('dashboard.notifications.awesome'),
+                    trans('dashboard.notifications.whoops'),
                     trans('dashboard.incidents.templates.edit.failure')
                 ))
                 ->with('errors', $incident->getErrors());
