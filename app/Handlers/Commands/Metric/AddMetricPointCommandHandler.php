@@ -15,9 +15,29 @@ use CachetHQ\Cachet\Commands\Metric\AddMetricPointCommand;
 use CachetHQ\Cachet\Events\Metric\MetricPointWasAddedEvent;
 use CachetHQ\Cachet\Models\MetricPoint;
 use Carbon\Carbon;
+use Illuminate\Contracts\Config\Repository as Config;
 
 class AddMetricPointCommandHandler
 {
+    /**
+     * The illuminate config repository instance.
+     *
+     * @return \Illuminate\Contracts\Config\Repository
+     */
+    protected $config;
+
+    /**
+     * Create a new add metric point command handler instance.
+     *
+     * @param \Illuminate\Contracts\Config\Repository $config;
+     *
+     * @return void
+     */
+    public function __construct(Config $config)
+    {
+        $this->config = $config;
+    }
+
     /**
      * Handle the add metric point command.
      *
@@ -36,7 +56,7 @@ class AddMetricPointCommandHandler
         ];
 
         if ($createdAt) {
-            $data['created_at'] = Carbon::createFromFormat('U', $createdAt, config('cachet.timezone'))->format('Y-m-d H:i:s');
+            $data['created_at'] = Carbon::createFromFormat('U', $createdAt, $this->config->get('cachet.timezone'))->format('Y-m-d H:i:s');
         }
 
         $metricPoint = MetricPoint::create($data);
