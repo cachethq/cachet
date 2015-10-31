@@ -202,8 +202,13 @@ class DashboardRoutes
                         'as'   => 'add',
                         'uses' => 'TeamController@showAddTeamMemberView',
                     ]);
+                    $router->get('invite', [
+                        'as'   => 'invite',
+                        'uses' => 'TeamController@showInviteTeamMemberView',
+                    ]);
                     $router->get('{user}', 'TeamController@showTeamMemberView');
                     $router->post('add', 'TeamController@postAddUser');
+                    $router->post('invite', 'TeamController@postInviteUser');
                     $router->post('{user}', 'TeamController@postUpdateUser');
                     $router->delete('{user}/delete', 'TeamController@deleteUser');
                 });
