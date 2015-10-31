@@ -12,7 +12,6 @@
 namespace CachetHQ\Cachet\Handlers\Commands\User;
 
 use CachetHQ\Cachet\Commands\User\InviteTeamMemberCommand;
-use CachetHQ\Cachet\Events\User\UserWasAddedEvent;
 use CachetHQ\Cachet\Models\Invite;
 
 class InviteTeamMemberCommandHandler
