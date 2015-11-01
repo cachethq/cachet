@@ -32,7 +32,7 @@ return [
         '2fauth'        => 'Código de autenticação',
         'invalid'       => 'E-mail ou senha inválidos',
         'invalid-token' => 'Token inválido',
-        'cookies'       => 'You must enable cookies to login.',
+        'cookies'       => 'Você precisa habilitar os cookies para acessar.',
     ],
 
     // Incidents form fields
@@ -79,7 +79,7 @@ return [
         'default-value'    => 'Valor padrão',
         'calc_type'        => 'Cálculo de métricas',
         'type_sum'         => 'Soma',
-        'type_avg'         => 'média',
+        'type_avg'         => 'Média',
         'places'           => 'Casas decimais',
 
         'points' => [
@@ -143,7 +143,7 @@ return [
         'password'       => 'Senha',
         'api-token'      => 'Token da API',
         'api-token-help' => 'Gerar nova chave da API impedirá que aplicativos existentes acessem o Cachet.',
-        'gravatar'       => 'Change your profile picture at Gravatar.',
+        'gravatar'       => 'Alterar sua foto do perfil no Gravatar.',
         'user_level'     => 'Nível de Usuário',
         'levels'         => [
             'admin' => 'Administrador',
