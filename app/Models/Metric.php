@@ -79,13 +79,6 @@ class Metric extends Model implements HasPresenter
     ];
 
     /**
-     * The relations to eager load on every query.
-     *
-     * @var string[]
-     */
-    protected $with = ['points'];
-
-    /**
      * Metrics contain many metric points.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
