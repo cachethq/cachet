@@ -61,8 +61,42 @@ class ComponentTest extends AbstractTestCase
             'link'        => 'http://example.com',
             'order'       => 1,
             'group_id'    => 1,
+            'enabled'     => true,
         ]);
         $this->seeJson(['name' => 'Foo']);
+        $this->assertResponseOk();
+    }
+
+    public function testPostComponentWithoutEnabledField()
+    {
+        $this->beUser();
+
+        $this->post('/api/v1/components', [
+            'name'        => 'Foo',
+            'description' => 'Bar',
+            'status'      => 1,
+            'link'        => 'http://example.com',
+            'order'       => 1,
+            'group_id'    => 1,
+        ]);
+        $this->seeJson(['name' => 'Foo', 'enabled' => true]);
+        $this->assertResponseOk();
+    }
+
+    public function testPostDisabledComponent()
+    {
+        $this->beUser();
+
+        $this->post('/api/v1/components', [
+            'name'        => 'Foo',
+            'description' => 'Bar',
+            'status'      => 1,
+            'link'        => 'http://example.com',
+            'order'       => 1,
+            'group_id'    => 1,
+            'enabled'     => 0,
+        ]);
+        $this->seeJson(['name' => 'Foo', 'enabled' => false]);
         $this->assertResponseOk();
     }
 
