@@ -27,14 +27,18 @@ class UpdateComponentCommandHandler
     public function handle(UpdateComponentCommand $command)
     {
         $component = $command->component;
-        $component->update(array_filter([
+        $componentData = array_filter([
             'name'        => $command->name,
             'description' => $command->description,
             'link'        => $command->link,
             'status'      => $command->status,
             'order'       => $command->order,
             'group_id'    => $command->group_id,
-        ]));
+        ]);
+
+        $componentData['enabled'] = $command->enabled;
+
+        $component->update($componentData);
 
         event(new ComponentWasUpdatedEvent($component));
 

@@ -69,7 +69,8 @@ class ComponentController extends AbstractApiController
                 Binput::get('status'),
                 Binput::get('link'),
                 Binput::get('order'),
-                Binput::get('group_id')
+                Binput::get('group_id'),
+                (bool) Binput::get('enabled', true)
             ));
         } catch (Exception $e) {
             throw new BadRequestHttpException();
@@ -109,7 +110,8 @@ class ComponentController extends AbstractApiController
                 Binput::get('status'),
                 Binput::get('link'),
                 Binput::get('order'),
-                Binput::get('group_id')
+                Binput::get('group_id'),
+                (bool) Binput::get('enabled')
             ));
         } catch (Exception $e) {
             throw new BadRequestHttpException();

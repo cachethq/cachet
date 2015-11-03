@@ -32,6 +32,7 @@ class Component extends Model implements HasPresenter
         'group_id'    => 0,
         'description' => '',
         'link'        => '',
+        'enabled'     => true,
     ];
 
     /**
@@ -46,6 +47,7 @@ class Component extends Model implements HasPresenter
         'description' => 'string',
         'link'        => 'string',
         'deleted_at'  => 'date',
+        'enabled'     => 'bool',
     ];
 
     /**
@@ -61,6 +63,7 @@ class Component extends Model implements HasPresenter
         'link',
         'order',
         'group_id',
+        'enabled',
     ];
 
     /**
