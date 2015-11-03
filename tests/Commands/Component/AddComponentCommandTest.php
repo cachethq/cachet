@@ -31,6 +31,7 @@ class AddComponentCommandTest extends AbstractCommandTestCase
             'link'        => 'https://cachethq.io',
             'order'       => 0,
             'group_id'    => 0,
+            'enabled'     => true,
         ];
         $object = new AddComponentCommand(
             $params['name'],
@@ -38,7 +39,8 @@ class AddComponentCommandTest extends AbstractCommandTestCase
             $params['status'],
             $params['link'],
             $params['order'],
-            $params['group_id']
+            $params['group_id'],
+            $params['enabled']
         );
 
         return compact('params', 'object');
