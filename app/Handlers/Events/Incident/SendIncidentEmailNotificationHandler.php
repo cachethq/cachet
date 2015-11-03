@@ -56,6 +56,10 @@ class SendIncidentEmailNotificationHandler
      */
     public function handle(IncidentWasReportedEvent $event)
     {
+        if (!$event->incident->notify) {
+            return false;
+        }
+
         $incident = AutoPresenter::decorate($event->incident);
         $component = AutoPresenter::decorate($event->incident->component);
 

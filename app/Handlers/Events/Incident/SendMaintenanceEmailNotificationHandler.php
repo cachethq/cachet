@@ -56,6 +56,10 @@ class SendMaintenanceEmailNotificationHandler
      */
     public function handle(MaintenanceWasScheduledEvent $event)
     {
+        if (!$event->incident->notify) {
+            return false;
+        }
+
         $data = AutoPresenter::decorate($event->incident);
 
         foreach ($this->subscriber->all() as $subscriber) {

@@ -50,9 +50,7 @@ class UpdateIncidentCommandHandler
         }
 
         // Notify subscribers.
-        if ($command->notify) {
-            event(new IncidentWasUpdatedEvent($incident));
-        }
+        event(new IncidentWasUpdatedEvent($incident));
 
         return $incident;
     }

@@ -41,9 +41,7 @@ class ReportMaintenanceCommandHandler
         ]);
 
         // Notify subscribers.
-        if ($command->notify) {
-            event(new MaintenanceWasScheduledEvent($maintenanceEvent));
-        }
+        event(new MaintenanceWasScheduledEvent($maintenanceEvent));
 
         return $maintenanceEvent;
     }
