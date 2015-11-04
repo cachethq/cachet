@@ -18,7 +18,6 @@ use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Tag;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
-use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
@@ -56,11 +55,9 @@ class ComponentController extends AbstractApiController
     /**
      * Create a new component.
      *
-     * @param \Illuminate\Contracts\Auth\Guard $auth
-     *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function postComponents(Guard $auth)
+    public function postComponents()
     {
         try {
             $component = $this->dispatch(new AddComponentCommand(
