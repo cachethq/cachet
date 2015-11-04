@@ -1,4 +1,3 @@
-@if($current_user)
 <div class="sidebar">
     <div class="sidebar-inner">
         <div class="profile">
@@ -93,4 +92,3 @@
         </div>
     </div>
 </div>
-@endif
