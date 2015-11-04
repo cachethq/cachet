@@ -134,6 +134,30 @@ class Component extends Model implements HasPresenter
     }
 
     /**
+     * Finds all components which are enabled.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeEnabled(Builder $query)
+    {
+        return $query->where('enabled', true);
+    }
+
+    /**
+     * Finds all components which are disabled.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeDisabled(Builder $query)
+    {
+        return $query->where('enabled', false);
+    }
+
+    /**
      * Looks up the human readable version of the status.
      *
      * @return string
