@@ -23,9 +23,25 @@ use Illuminate\Support\Facades\View;
 
 class SettingsController extends Controller
 {
+    /**
+     * Array of sub-menu items.
+     *
+     * @var array
+     */
     protected $subMenu = [];
+
+    /**
+     * The title of the sub-menu.
+     *
+     * @var string
+     */
     protected $subTitle = 'Settings';
 
+    /**
+     * Creates a new settings controller instance.
+     *
+     * @return void
+     */
     public function __construct()
     {
         $this->subMenu = [
@@ -67,9 +83,10 @@ class SettingsController extends Controller
             ],
         ];
 
-        View::share('sub_title', $this->subTitle);
-
-        View::share('sub_menu', $this->subMenu);
+        View::share([
+            'sub_title' => $this->subTitle,
+            'sub_menu'  => $this->subMenu,
+        ]);
     }
 
     /**

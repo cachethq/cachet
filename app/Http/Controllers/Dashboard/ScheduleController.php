@@ -36,7 +36,7 @@ class ScheduleController extends Controller
     protected $subMenu = [];
 
     /**
-     * Creates a new DashScheduleController instance.
+     * Creates a new schedule controller instance.
      *
      * @return \CachetHQ\Cachet\Http\Controllers\DashScheduleController
      */

@@ -31,8 +31,18 @@ class ComponentController extends Controller
 {
     use DispatchesJobs;
 
+    /**
+     * Array of sub-menu items.
+     *
+     * @var array
+     */
     protected $subMenu = [];
 
+    /**
+     * Creates a new component controller instance.
+     *
+     * @return void
+     */
     public function __construct()
     {
         $this->subMenu = [

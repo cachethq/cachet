@@ -37,7 +37,7 @@ class IncidentController extends Controller
     protected $subMenu = [];
 
     /**
-     * Creates a new DashIncidentController instance.
+     * Creates a new incident controller instance.
      *
      * @return \CachetHQ\Cachet\Http\Controllers\DashScheduleController
      */
