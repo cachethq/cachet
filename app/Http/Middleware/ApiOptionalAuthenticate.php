@@ -15,7 +15,6 @@ use CachetHQ\Cachet\Models\User;
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
-use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class ApiOptionalAuthenticate
 {
