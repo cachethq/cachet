@@ -28,8 +28,6 @@ class AppServiceProvider extends ServiceProvider
             return Dispatcher::simpleMapping($command, 'CachetHQ\Cachet', 'CachetHQ\Cachet\Handlers');
         });
 
-        define('CACHET_VERSION', trim(file_get_contents($this->app->basePath().'/VERSION')));
-
         Str::macro('canonicalize', function ($url) {
             return preg_replace('/([^\/])$/', '$1/', $url);
         });
