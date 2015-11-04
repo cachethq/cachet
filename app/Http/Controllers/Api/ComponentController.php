@@ -18,6 +18,7 @@ use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Tag;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
+use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
@@ -30,14 +31,19 @@ class ComponentController extends AbstractApiController
      * Get all components.
      *
      * @param \Symfony\Component\HttpFoundation\Request $request
+     * @param \Illuminate\Contracts\Auth\Guard          $auth
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function getComponents(Request $request)
+    public function getComponents(Request $request, Guard $auth)
     {
-        $components = Component::paginate(Binput::get('per_page', 20));
+        if ($auth->check()) {
+            $components = Component::whereRaw('1 = 1');
+        } else {
+            $components = Component::enabled();
+        }
 
-        return $this->paginator($components, $request);
+        return $this->paginator($components->paginate(Binput::get('per_page', 20)), $request);
     }
 
     /**
