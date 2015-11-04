@@ -42,7 +42,6 @@ class ScheduleController extends Controller
      */
     public function __construct()
     {
-        // TODO: Remove this from DashIncidentController, so it's shared?
         $this->subMenu = [
             'incidents' => [
                 'title'  => trans('dashboard.incidents.incidents'),
