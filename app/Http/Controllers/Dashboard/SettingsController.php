@@ -81,6 +81,12 @@ class SettingsController extends Controller
                 'icon'   => 'ion-paintbucket',
                 'active' => false,
             ],
+            'about' => [
+                'title'  => CACHET_VERSION,
+                'url'    => 'javascript: void(0);',
+                'icon'   => 'ion-flag',
+                'active' => false,
+            ],
         ];
 
         View::share([

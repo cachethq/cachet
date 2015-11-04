@@ -11,6 +11,8 @@
 
 define('LARAVEL_START', microtime(true));
 
+define('CACHET_VERSION', trim(file_get_contents(__DIR__.'/../VERSION')));
+
 /*
 |--------------------------------------------------------------------------
 | Register The Composer Auto Loader
