@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "24e674b8b54e42a0e6993de5fd8b2577",
-    "content-hash": "19769a302d94a2ef4f3b5d42769eca2b",
+    "hash": "fba338ed3288839c2e0e96b77456b911",
+    "content-hash": "6cf324173845e67b192c03cb4e3caf16",
     "packages": [
         {
             "name": "alt-three/emoji",
@@ -1132,23 +1132,23 @@
         },
         {
             "name": "graham-campbell/markdown",
-            "version": "v5.1.0",
+            "version": "v5.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Markdown.git",
-                "reference": "990e9ef977376331ba1ed50fe36adfbe7e34677f"
+                "reference": "7498cd47107ab6f617937e68195f3453b0ef0537"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Markdown/zipball/990e9ef977376331ba1ed50fe36adfbe7e34677f",
-                "reference": "990e9ef977376331ba1ed50fe36adfbe7e34677f",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Markdown/zipball/7498cd47107ab6f617937e68195f3453b0ef0537",
+                "reference": "7498cd47107ab6f617937e68195f3453b0ef0537",
                 "shasum": ""
             },
             "require": {
                 "illuminate/contracts": "5.0.*|5.1.*",
                 "illuminate/support": "5.0.*|5.1.*",
                 "illuminate/view": "5.0.*|5.1.*",
-                "league/commonmark": "0.11.*",
+                "league/commonmark": "0.12.*",
                 "php": ">=5.5.9"
             },
             "require-dev": {
@@ -1159,7 +1159,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "5.1-dev"
+                    "dev-master": "5.2-dev"
                 }
             },
             "autoload": {
@@ -1189,7 +1189,7 @@
                 "laravel",
                 "markdown"
             ],
-            "time": "2015-10-06 16:53:34"
+            "time": "2015-11-05 15:09:56"
         },
         {
             "name": "graham-campbell/security",
@@ -1665,7 +1665,7 @@
                     "name": "Jeremy Lindblom",
                     "email": "jeremeamia@gmail.com",
                     "homepage": "https://github.com/jeremeamia",
-                    "role": "developer"
+                    "role": "Developer"
                 }
             ],
             "description": "Serialize Closure objects, including their context and binding",
@@ -1812,16 +1812,16 @@
         },
         {
             "name": "league/commonmark",
-            "version": "0.11.3",
+            "version": "0.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/commonmark.git",
-                "reference": "d22d6a6a4b049faccc2f8e491cce6076eeb165c7"
+                "reference": "3eb64850ee688623db494398a5284a7a4cdf7b47"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/d22d6a6a4b049faccc2f8e491cce6076eeb165c7",
-                "reference": "d22d6a6a4b049faccc2f8e491cce6076eeb165c7",
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/3eb64850ee688623db494398a5284a7a4cdf7b47",
+                "reference": "3eb64850ee688623db494398a5284a7a4cdf7b47",
                 "shasum": ""
             },
             "require": {
@@ -1837,8 +1837,8 @@
                 "jgm/smartpunct": "0.22",
                 "michelf/php-markdown": "~1.4",
                 "mikehaertl/php-shellcommand": "~1.1.0",
-                "phpunit/phpunit": "~4.3",
-                "phpunit/phpunit-mock-objects": "2.3.0",
+                "phpunit/phpunit": "~4.3|~5.0",
+                "scrutinizer/ocular": "^1.1",
                 "symfony/finder": "~2.3"
             },
             "bin": [
@@ -1847,7 +1847,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.12-dev"
+                    "dev-master": "0.13-dev"
                 }
             },
             "autoload": {
@@ -1874,7 +1874,7 @@
                 "markdown",
                 "parser"
             ],
-            "time": "2015-09-25 12:40:32"
+            "time": "2015-11-04 14:24:41"
         },
         {
             "name": "league/flysystem",
@@ -2145,16 +2145,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "1.20.0",
+            "version": "1.21.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "bfd3eaba109c9a2405c92174c8e17f20c2b9caf3"
+                "reference": "7b08ec6f75791e130012f206e3f7b0e76e18e3d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/bfd3eaba109c9a2405c92174c8e17f20c2b9caf3",
-                "reference": "bfd3eaba109c9a2405c92174c8e17f20c2b9caf3",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/7b08ec6f75791e130012f206e3f7b0e76e18e3d7",
+                "reference": "7b08ec6f75791e130012f206e3f7b0e76e18e3d7",
                 "shasum": ""
             },
             "require": {
@@ -2162,12 +2162,12 @@
                 "symfony/translation": "~2.6|~3.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.0"
+                "phpunit/phpunit": "~4.0|~5.0"
             },
             "type": "library",
             "autoload": {
-                "psr-0": {
-                    "Carbon": "src"
+                "psr-4": {
+                    "Carbon\\": "src/Carbon/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -2188,7 +2188,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2015-06-25 04:19:39"
+            "time": "2015-11-04 20:07:17"
         },
         {
             "name": "nikic/php-parser",
