@@ -30,7 +30,7 @@
                         @endif
                         <div class="form-group">
                             <label for="incident-name">{{ trans('forms.incidents.name') }}</label>
-                            <input type="text" class="form-control" name="incident[name]" id="incident-name" required value="{{ Input::old('incident.name') }}">
+                            <input type="text" class="form-control" name="name" id="incident-name" required value="{{ Input::old('incident.name') }}">
                         </div>
                         <div class="form-group">
                             <label for="incident-name">{{ trans('forms.incidents.status') }}</label><br>
@@ -100,7 +100,7 @@
                         <div class="form-group">
                             <label>{{ trans('forms.incidents.message') }}</label>
                             <div class='markdown-control'>
-                                <textarea name="incident[message]" class="form-control autosize" rows="5" required>{{ Input::old('incident.message') }}</textarea>
+                                <textarea name="message" class="form-control autosize" rows="5" required>{{ Input::old('incident.message') }}</textarea>
                             </div>
                         </div>
                         <div class="form-group">
