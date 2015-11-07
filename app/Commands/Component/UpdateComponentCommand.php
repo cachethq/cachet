@@ -79,7 +79,7 @@ final class UpdateComponentCommand
     public $rules = [
         'name'        => 'string',
         'description' => 'string',
-        'status'      => 'int',
+        'status'      => 'int|min:1|max:4',
         'link'        => 'url',
         'order'       => 'int',
         'group_id'    => 'int',
