@@ -714,16 +714,16 @@
         },
         {
             "name": "doctrine/inflector",
-            "version": "v1.0.1",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/inflector.git",
-                "reference": "0bcb2e79d8571787f18b7eb036ed3d004908e604"
+                "reference": "90b2128806bfde671b6952ab8bea493942c1fdae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/inflector/zipball/0bcb2e79d8571787f18b7eb036ed3d004908e604",
-                "reference": "0bcb2e79d8571787f18b7eb036ed3d004908e604",
+                "url": "https://api.github.com/repos/doctrine/inflector/zipball/90b2128806bfde671b6952ab8bea493942c1fdae",
+                "reference": "90b2128806bfde671b6952ab8bea493942c1fdae",
                 "shasum": ""
             },
             "require": {
@@ -735,7 +735,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-master": "1.1.x-dev"
                 }
             },
             "autoload": {
@@ -777,7 +777,7 @@
                 "singularize",
                 "string"
             ],
-            "time": "2014-12-20 21:24:13"
+            "time": "2015-11-06 14:35:42"
         },
         {
             "name": "doctrine/lexer",
@@ -1193,16 +1193,16 @@
         },
         {
             "name": "graham-campbell/security",
-            "version": "v3.3.0",
+            "version": "v3.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Security.git",
-                "reference": "3211aec137362c61dbd28ae8b01920c6d3da82fd"
+                "reference": "086150e2c98f9bca17f9f882e56fe495b11bfcc0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Security/zipball/3211aec137362c61dbd28ae8b01920c6d3da82fd",
-                "reference": "3211aec137362c61dbd28ae8b01920c6d3da82fd",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Security/zipball/086150e2c98f9bca17f9f882e56fe495b11bfcc0",
+                "reference": "086150e2c98f9bca17f9f882e56fe495b11bfcc0",
                 "shasum": ""
             },
             "require": {
@@ -1217,7 +1217,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.3-dev"
+                    "dev-master": "3.4-dev"
                 }
             },
             "autoload": {
@@ -1246,7 +1246,7 @@
                 "laravel",
                 "security"
             ],
-            "time": "2015-10-06 16:55:49"
+            "time": "2015-11-05 21:07:59"
         },
         {
             "name": "graham-campbell/throttle",
