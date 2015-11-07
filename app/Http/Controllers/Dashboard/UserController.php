@@ -40,12 +40,7 @@ class UserController extends Controller
      */
     public function postUser()
     {
-        $userData = array_filter(Binput::only([
-            'username',
-            'email',
-            'password',
-            'google2fa',
-        ]));
+        $userData = array_filter(Binput::only(['username', 'email', 'password', 'google2fa']));
 
         $enable2FA = (bool) array_pull($userData, 'google2fa');
 

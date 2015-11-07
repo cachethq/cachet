@@ -96,12 +96,7 @@ class TeamController extends Controller
      */
     public function postUpdateUser(User $user)
     {
-        $userData = array_filter(Binput::only([
-            'username',
-            'email',
-            'password',
-            'level',
-        ]));
+        $userData = array_filter(Binput::only(['username', 'email', 'password', 'level']));
 
         try {
             $user->update($userData);

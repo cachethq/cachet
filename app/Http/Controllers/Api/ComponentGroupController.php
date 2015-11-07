@@ -79,8 +79,6 @@ class ComponentGroupController extends AbstractApiController
      */
     public function putGroup(ComponentGroup $group)
     {
-        $groupData = array_filter(Binput::only(['name', 'order']));
-
         try {
             $group = $this->dispatch(new UpdateComponentGroupCommand(
                 $group,
