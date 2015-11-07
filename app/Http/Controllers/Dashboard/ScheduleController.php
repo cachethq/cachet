@@ -13,12 +13,12 @@ namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
 use AltThree\Validator\ValidationException;
 use CachetHQ\Cachet\Commands\Incident\ReportMaintenanceCommand;
+use CachetHQ\Cachet\Dates\DateFactory;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentTemplate;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller;
-use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\MessageBag;
@@ -130,16 +130,17 @@ class ScheduleController extends Controller
     /**
      * Updates the given incident.
      *
-     * @param \CachetHQ\Cachet\Models\Incident $schedule
+     * @param \CachetHQ\Cachet\Models\Incident   $schedule
+     * @param \CachetHQ\Cachet\Dates\DateFactory $dates
      *
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function editScheduleAction(Incident $schedule)
+    public function editScheduleAction(Incident $schedule, DateFactory $dates)
     {
         $scheduleData = Binput::get('incident');
+
         // Parse the schedule date.
-        $scheduledAt = Date::createFromFormat('d/m/Y H:i', $scheduleData['scheduled_at'], config('cachet.timezone'))
-            ->setTimezone(Config::get('app.timezone'));
+        $scheduledAt = $dates->createNormalized('d/m/Y H:i', $scheduleData['scheduled_at']);
 
         if ($scheduledAt->isPast()) {
             $messageBag = new MessageBag();

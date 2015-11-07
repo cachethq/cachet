@@ -12,14 +12,32 @@
 namespace CachetHQ\Cachet\Handlers\Commands\Incident;
 
 use CachetHQ\Cachet\Commands\Incident\UpdateIncidentCommand;
+use CachetHQ\Cachet\Dates\DateFactory;
 use CachetHQ\Cachet\Events\Incident\IncidentWasUpdatedEvent;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
-use Illuminate\Support\Facades\Config;
-use Jenssegers\Date\Date;
 
 class UpdateIncidentCommandHandler
 {
+    /**
+     * The date factory instance.
+     *
+     * @var \CachetHQ\Cachet\Dates\DateFactory
+     */
+    protected $dates;
+
+    /**
+     * Create a new update incident command handler instance.
+     *
+     * @param \CachetHQ\Cachet\Dates\DateFactory $dates
+     *
+     * @return void
+     */
+    public function __construct(DateFactory $dates)
+    {
+        $this->dates = $dates;
+    }
+
     /**
      * Handle the update incident command.
      *
@@ -34,7 +52,7 @@ class UpdateIncidentCommandHandler
 
         // The incident occurred at a different time.
         if ($command->incident_date) {
-            $incidentDate = Date::createFromFormat('d/m/Y H:i', $command->incident_date, config('cachet.timezone'))->setTimezone(Config::get('app.timezone'));
+            $incidentDate = $this->dates->createNormalized('d/m/Y H:i', $command->incident_date);
 
             $incident->update([
                 'created_at' => $incidentDate,

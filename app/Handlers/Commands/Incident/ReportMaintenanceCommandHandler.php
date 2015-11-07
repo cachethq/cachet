@@ -12,13 +12,31 @@
 namespace CachetHQ\Cachet\Handlers\Commands\Incident;
 
 use CachetHQ\Cachet\Commands\Incident\ReportMaintenanceCommand;
+use CachetHQ\Cachet\Dates\DateFactory;
 use CachetHQ\Cachet\Events\Incident\MaintenanceWasScheduledEvent;
 use CachetHQ\Cachet\Models\Incident;
-use Illuminate\Support\Facades\Config;
-use Jenssegers\Date\Date;
 
 class ReportMaintenanceCommandHandler
 {
+    /**
+     * The date factory instance.
+     *
+     * @var \CachetHQ\Cachet\Dates\DateFactory
+     */
+    protected $dates;
+
+    /**
+     * Create a new report maintanance command handler instance.
+     *
+     * @param \CachetHQ\Cachet\Dates\DateFactory $dates
+     *
+     * @return void
+     */
+    public function __construct(DateFactory $dates)
+    {
+        $this->dates = $dates;
+    }
+
     /**
      * Handle the report maintenance command.
      *
@@ -28,8 +46,7 @@ class ReportMaintenanceCommandHandler
      */
     public function handle(ReportMaintenanceCommand $command)
     {
-        $scheduledAt = Date::createFromFormat('d/m/Y H:i', $command->timestamp, config('cachet.timezone'))
-            ->setTimezone(Config::get('app.timezone'));
+        $scheduledAt = $this->dates->createNormalized('d/m/Y H:i', $command->timestamp);
 
         $maintenanceEvent = Incident::create([
             'name'         => $command->name,

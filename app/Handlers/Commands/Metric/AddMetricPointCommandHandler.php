@@ -12,12 +12,31 @@
 namespace CachetHQ\Cachet\Handlers\Commands\Metric;
 
 use CachetHQ\Cachet\Commands\Metric\AddMetricPointCommand;
+use CachetHQ\Cachet\Dates\DateFactory;
 use CachetHQ\Cachet\Events\Metric\MetricPointWasAddedEvent;
 use CachetHQ\Cachet\Models\MetricPoint;
-use Carbon\Carbon;
 
 class AddMetricPointCommandHandler
 {
+    /**
+     * The date factory instance.
+     *
+     * @var \CachetHQ\Cachet\Dates\DateFactory
+     */
+    protected $dates;
+
+    /**
+     * Create a new add metric point command handler instance.
+     *
+     * @param \CachetHQ\Cachet\Dates\DateFactory $dates
+     *
+     * @return void
+     */
+    public function __construct(DateFactory $dates)
+    {
+        $this->dates = $dates;
+    }
+
     /**
      * Handle the add metric point command.
      *
@@ -36,7 +55,7 @@ class AddMetricPointCommandHandler
         ];
 
         if ($createdAt) {
-            $data['created_at'] = Carbon::createFromFormat('U', $createdAt)->format('Y-m-d H:i:s');
+            $data['created_at'] = $this->dates->create('U', $createdAt)->format('Y-m-d H:i:s');
         }
 
         $metricPoint = MetricPoint::create($data);
