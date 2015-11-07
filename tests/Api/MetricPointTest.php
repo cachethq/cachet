@@ -11,8 +11,8 @@
 
 namespace CachetHQ\Tests\Cachet\Api;
 
-use Carbon\Carbon;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
+use Carbon\Carbon;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class MetricPointTest extends AbstractTestCase
@@ -75,6 +75,10 @@ class MetricPointTest extends AbstractTestCase
 
     public function testPostMetricPointTimestampTimezone()
     {
+        if (defined('HHVM_VERSION')) {
+            $this->markTestSkipped('Timezones are broken on HHVM.');
+        }
+
         $this->beUser();
 
         $timezone = 'America/Mexico_City';

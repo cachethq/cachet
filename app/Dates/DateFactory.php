@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Date;
+namespace CachetHQ\Cachet\Dates;
 
-use Jenssegers\Date\Date
+use Jenssegers\Date\Date;
 
 class DateFactory
 {
