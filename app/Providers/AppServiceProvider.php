@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Cachet\Providers;
 
+use CachetHQ\Cachet\Dates\DateFactory;
 use Illuminate\Bus\Dispatcher;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
@@ -40,6 +41,21 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->registerDateFactory();
+    }
+
+    /**
+     * Register the date factory.
+     *
+     * @return void
+     */
+    protected function registerDateFactory()
+    {
+        $this->app->singleton(DateFactory::class, function ($app) {
+            $appTimezone = $app->config->get('app.timezone');
+            $cacheTimezone = $app->config->get('cachet.timezone');
+
+            return new DateFactory($appTimezone, $cacheTimezone);
+        });
     }
 }
