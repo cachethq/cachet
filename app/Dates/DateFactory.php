@@ -72,6 +72,6 @@ class DateFactory
      */
     public function createNormalized($format, $time)
     {
-        return $this->createFromFormat($format, $time)->setTimezone($this->appTimezone);
+        return $this->create($format, $time)->setTimezone($this->appTimezone);
     }
 }
