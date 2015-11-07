@@ -28,7 +28,7 @@ class UpdateMetricCommandHandler
     {
         $metric = $command->metric;
 
-        $metric->update($this->filterMetricData($command));
+        $metric->update($this->filter($command));
 
         event(new MetricWasUpdatedEvent($metric));
 
@@ -42,7 +42,7 @@ class UpdateMetricCommandHandler
      *
      * @return array
      */
-    protected function filterMetricData($command)
+    protected function filter(UpdateMetricCommand $command)
     {
         return array_filter([
             'name'          => $command->name,
@@ -52,6 +52,6 @@ class UpdateMetricCommandHandler
             'calc_type'     => $command->calc_type,
             'display_chart' => $command->display_chart,
             'places'        => $command->places,
-        ]);
+        ], 'is_null');
     }
 }

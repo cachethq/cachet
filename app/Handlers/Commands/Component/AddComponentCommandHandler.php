@@ -26,21 +26,30 @@ class AddComponentCommandHandler
      */
     public function handle(AddComponentCommand $command)
     {
-        $componentData = array_filter([
-            'name'        => $command->name,
-            'description' => $command->description,
-            'link'        => $command->link,
-            'status'      => $command->status,
-            'order'       => $command->order,
-            'group_id'    => $command->group_id,
-        ]);
-
-        $componentData['enabled'] = $command->enabled;
-
-        $component = Component::create($componentData);
+        $component = Component::create($this->filter($command));
 
         event(new ComponentWasAddedEvent($component));
 
         return $component;
+    }
+
+    /**
+     * Filter the command data.
+     *
+     * @param \CachetHQ\Cachet\Commands\Incident\AddComponentCommand $command
+     *
+     * @return array
+     */
+    protected function filter(AddComponentCommand $command)
+    {
+        return array_filter([
+            'name'        => $command->name,
+            'description' => $command->description,
+            'link'        => $command->link,
+            'status'      => $command->status,
+            'enabled'     => $command->enabled,
+            'order'       => $command->order,
+            'group_id'    => $command->group_id,
+        ], 'is_null');
     }
 }
