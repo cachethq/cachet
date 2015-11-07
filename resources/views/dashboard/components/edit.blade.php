@@ -56,6 +56,13 @@
                             <input name="component[tags]" class="form-control" value="{{ $component->tagsList }}">
                             <span class="help-block">{{ trans('forms.components.tags-help') }}</span>
                         </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="hidden" value="0" name="component[enabled]">
+                                <input type="checkbox" value="1" name="component[enabled]" {{ $component->enabled ? "checked" : null }}>
+                                {{ trans('forms.components.enabled') }}
+                            </label>
+                        </div>
                     </fieldset>
 
                     <input type="hidden" name="component[user_id]" value="{{ $component->agent_id || $current_user->id }}">

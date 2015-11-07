@@ -63,6 +63,7 @@ return [
         'link'        => 'Link',
         'tags'        => 'Marcações',
         'tags-help'   => 'Separados por vírgulas.',
+        'enabled'     => 'Component enabled?',
 
         'groups' => [
             'name' => 'Nome',

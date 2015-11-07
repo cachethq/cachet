@@ -57,6 +57,7 @@ return [
         'link'        => 'Link',
         'tags'        => 'Tagi',
         'tags-help'   => 'Rozdzielone przecinkiem.',
+        'enabled'     => 'Component enabled?',
 
         'groups' => [
             'name' => 'Nazwa',

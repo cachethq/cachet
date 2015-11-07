@@ -63,6 +63,7 @@ return [
         'link'        => 'Link',
         'tags'        => 'Tags',
         'tags-help'   => 'Komma gescheiden.',
+        'enabled'     => 'Component enabled?',
 
         'groups' => [
             'name' => 'Naam',

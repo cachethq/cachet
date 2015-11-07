@@ -63,6 +63,7 @@ return [
         'link'        => 'Link',
         'tags'        => 'Tags',
         'tags-help'   => 'Comma separated.',
+        'enabled'     => 'Component enabled?',
 
         'groups' => [
             'name' => 'Name',

@@ -63,6 +63,7 @@ return [
         'link'        => '링크',
         'tags'        => '태그',
         'tags-help'   => '쉼표로 구분.',
+        'enabled'     => 'Component enabled?',
 
         'groups' => [
             'name' => '이름',

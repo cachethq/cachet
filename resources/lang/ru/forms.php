@@ -63,6 +63,7 @@ return [
         'link'        => 'Ссылка',
         'tags'        => 'Теги',
         'tags-help'   => 'Разделитель - запятые.',
+        'enabled'     => 'Component enabled?',
 
         'groups' => [
             'name' => 'Название',

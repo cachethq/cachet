@@ -63,6 +63,7 @@ return [
         'link'        => '链接',
         'tags'        => '标签',
         'tags-help'   => '以逗号分隔。',
+        'enabled'     => 'Component enabled?',
 
         'groups' => [
             'name' => '组名',

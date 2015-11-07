@@ -56,6 +56,7 @@ return [
         'link'        => 'Enlace',
         'tags'        => 'Etiquetas',
         'tags-help'   => 'Separado por comas.',
+        'enabled'     => 'Component enabled?',
 
         'groups' => [
             'name' => 'Nombre',
