@@ -39,7 +39,6 @@ class ReportMaintenanceCommandHandler
             'visible'      => 1,
         ]);
 
-        // Notify subscribers.
         event(new MaintenanceWasScheduledEvent($maintenanceEvent));
 
         return $maintenanceEvent;

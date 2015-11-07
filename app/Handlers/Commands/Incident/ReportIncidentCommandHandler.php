@@ -59,10 +59,7 @@ class ReportIncidentCommandHandler
             ]);
         }
 
-        // Notify subscribers.
-        if ($command->notify) {
-            event(new IncidentWasReportedEvent($incident));
-        }
+        event(new IncidentWasReportedEvent($incident));
 
         return $incident;
     }

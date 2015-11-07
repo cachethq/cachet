@@ -49,7 +49,6 @@ class UpdateIncidentCommandHandler
             ]);
         }
 
-        // Notify subscribers.
         event(new IncidentWasUpdatedEvent($incident));
 
         return $incident;
