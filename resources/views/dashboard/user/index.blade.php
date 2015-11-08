@@ -54,7 +54,7 @@
                                 <div class="form-group">
                                     <?php
                                     $google2fa_url = PragmaRX\Google2FA\Vendor\Laravel\Facade::getQRCodeGoogleUrl(
-                                        'CachetHQ',
+                                        'Cachet',
                                         $current_user->email,
                                         $current_user->google_2fa_secret
                                     );
