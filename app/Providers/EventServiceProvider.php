@@ -31,7 +31,7 @@ class EventServiceProvider extends ServiceProvider
             'CachetHQ\Cachet\Handlers\Events\Subscriber\SendSubscriberVerificationEmailHandler',
         ],
         'CachetHQ\Cachet\Events\User\UserWasInvitedEvent' => [
-            'CachetHQ\Cachet\Handlers\Events\User\SendInviteEmailHandler',
+            'CachetHQ\Cachet\Handlers\Events\User\SendInviteUserEmailHandler',
         ],
         'CachetHQ\Cachet\Events\User\UserWasAddedEvent' => [
             //

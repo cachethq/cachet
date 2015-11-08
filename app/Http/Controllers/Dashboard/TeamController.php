@@ -13,6 +13,7 @@ namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
 use AltThree\Validator\ValidationException;
 use CachetHQ\Cachet\Commands\User\AddTeamMemberCommand;
+use CachetHQ\Cachet\Commands\User\InviteTeamMemberCommand;
 use CachetHQ\Cachet\Commands\User\RemoveUserCommand;
 use CachetHQ\Cachet\Models\User;
 use GrahamCampbell\Binput\Facades\Binput;
