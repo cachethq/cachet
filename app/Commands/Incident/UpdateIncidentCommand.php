@@ -85,11 +85,11 @@ final class UpdateIncidentCommand
      */
     public $rules = [
         'name'             => 'string',
-        'status'           => 'int',
+        'status'           => 'int|min:0|max:4',
         'message'          => 'string',
         'visible'          => 'bool',
         'component_id'     => 'int',
-        'component_status' => 'int',
+        'component_status' => 'int|min:1|max:4|required_with:component_id',
         'notify'           => 'bool',
     ];
 

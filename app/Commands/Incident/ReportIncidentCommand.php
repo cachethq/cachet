@@ -80,7 +80,7 @@ final class ReportIncidentCommand
         'message'          => 'string',
         'visible'          => 'bool',
         'component_id'     => 'int',
-        'component_status' => 'int|min:1|max:4',
+        'component_status' => 'int|min:1|max:4|required_with:component_id',
         'notify'           => 'bool',
         'incident_date'    => 'string',
     ];
