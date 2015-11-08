@@ -11,9 +11,9 @@
 
 namespace CachetHQ\Cachet\Handlers\Commands\Invite;
 
-use Carbon\Carbon;
 use CachetHQ\Cachet\Commands\Invite\ClaimInviteCommand;
 use CachetHQ\Cachet\Events\Invite\InviteWasClaimed;
+use Carbon\Carbon;
 
 class ClaimInviteCommandHandler
 {

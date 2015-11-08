@@ -12,7 +12,6 @@
 namespace CachetHQ\Cachet\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Str;
 
 class Invite extends Model
 {
