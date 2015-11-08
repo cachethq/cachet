@@ -11,7 +11,7 @@
 
 namespace CachetHQ\Cachet\Handlers\Events\User;
 
-use CachetHQ\Cachet\Events\Subscriber\UserWasInvitedEvent;
+use CachetHQ\Cachet\Events\User\UserWasInvitedEvent;
 use Illuminate\Contracts\Mail\MailQueue;
 use Illuminate\Mail\Message;
 
@@ -48,7 +48,7 @@ class SendInviteUserEmailHandler
         $mail = [
             'email'    => $event->invite->email,
             'subject'  => 'You have been invited.',
-            'link'     => route('invite.signup', ['code' => $event->invite->code]),
+            'link'     => route('signup.invite', ['code' => $event->invite->code]),
             'app_url'  => env('APP_URL'),
         ];
 

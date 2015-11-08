@@ -12,7 +12,7 @@
 namespace CachetHQ\Cachet\Handlers\Commands\User;
 
 use CachetHQ\Cachet\Commands\User\InviteTeamMemberCommand;
-use CachetHQ\Cachet\Events\User\UserWasAddedEvent;
+use CachetHQ\Cachet\Events\User\UserWasInvitedEvent;
 use CachetHQ\Cachet\Models\Invite;
 
 class InviteTeamMemberCommandHandler
@@ -28,7 +28,7 @@ class InviteTeamMemberCommandHandler
     {
         foreach ($command->emails as $email) {
             $invite = Invite::create([
-                'email' => $command->email,
+                'email' => $email,
             ]);
 
             event(new UserWasInvitedEvent($invite));

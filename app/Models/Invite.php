@@ -41,8 +41,28 @@ class Invite extends Model
 
         self::creating(function ($invite) {
             if (!$invite->code) {
-                $invite->code = self::generateVerifyCode();
+                $invite->code = self::generateInviteCode();
             }
         });
+    }
+
+    /**
+     * Returns an invite code.
+     *
+     * @return string
+     */
+    public static function generateInviteCode()
+    {
+        return str_random(20);
+    }
+
+    /**
+     * Determines if the invite was claimed.
+     *
+     * @return bool
+     */
+    public function claimed()
+    {
+        return !is_null($this->claimed_at);
     }
 }
