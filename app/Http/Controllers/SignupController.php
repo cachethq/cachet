@@ -11,9 +11,8 @@
 
 namespace CachetHQ\Cachet\Http\Controllers;
 
-use AltThree\Validator\ValidationException;
-use CachetHQ\Cachet\Commands\User\SignupUserCommand;
 use CachetHQ\Cachet\Commands\Invite\ClaimInviteCommand;
+use CachetHQ\Cachet\Commands\User\SignupUserCommand;
 use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Cachet\Models\Invite;
 use GrahamCampbell\Binput\Facades\Binput;
