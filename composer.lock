@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "743778a379775358e4819a8e9b172e9c",
-    "content-hash": "36a703be64167db30993b8d5c852d286",
+    "hash": "9f760c1f3594b5fa308631ec3f5fa3c7",
+    "content-hash": "31afc202359e3787aaf86e09a69c7dd5",
     "packages": [
         {
             "name": "alt-three/emoji",
@@ -3578,23 +3578,23 @@
         },
         {
             "name": "graham-campbell/testbench-core",
-            "version": "v1.0.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-TestBench-Core.git",
-                "reference": "ef25bf4c8f71713a7c072aafe951b6a8d643702c"
+                "reference": "70ccdaa343d0e829c494864f273bd949a141d1a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-TestBench-Core/zipball/ef25bf4c8f71713a7c072aafe951b6a8d643702c",
-                "reference": "ef25bf4c8f71713a7c072aafe951b6a8d643702c",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-TestBench-Core/zipball/70ccdaa343d0e829c494864f273bd949a141d1a8",
+                "reference": "70ccdaa343d0e829c494864f273bd949a141d1a8",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.5.9"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.8|~5.0"
+                "phpunit/phpunit": "^4.8|^5.0"
             },
             "suggest": {
                 "illuminate/support": "Required to use the laravel trait.",
@@ -3604,7 +3604,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0-dev"
+                    "dev-master": "1.1-dev"
                 }
             },
             "autoload": {
@@ -3634,7 +3634,7 @@
                 "testbench-core",
                 "testing"
             ],
-            "time": "2015-10-06 16:56:21"
+            "time": "2015-11-08 20:26:12"
         },
         {
             "name": "hamcrest/hamcrest-php",
