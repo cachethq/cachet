@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "505aece503be603d6a922dcf810729ac",
-    "content-hash": "d8946ef08583fc6db5fc632635c2ff1b",
+    "hash": "743778a379775358e4819a8e9b172e9c",
+    "content-hash": "36a703be64167db30993b8d5c852d286",
     "packages": [
         {
             "name": "alt-three/emoji",
@@ -216,27 +216,27 @@
         },
         {
             "name": "barryvdh/laravel-cors",
-            "version": "v0.5.0",
+            "version": "v0.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvdh/laravel-cors.git",
-                "reference": "9fb31c457a416931684c7b8759751d1848aed5a8"
+                "reference": "f6f389f06d89d73536cf7ffda58850d4d09bdc4d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-cors/zipball/9fb31c457a416931684c7b8759751d1848aed5a8",
-                "reference": "9fb31c457a416931684c7b8759751d1848aed5a8",
+                "url": "https://api.github.com/repos/barryvdh/laravel-cors/zipball/f6f389f06d89d73536cf7ffda58850d4d09bdc4d",
+                "reference": "f6f389f06d89d73536cf7ffda58850d4d09bdc4d",
                 "shasum": ""
             },
             "require": {
                 "asm89/stack-cors": "0.2.x",
-                "illuminate/support": "~5.0.17|5.1.x",
+                "illuminate/support": "~5.0.14|5.1.x",
                 "php": ">=5.4.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.5-dev"
+                    "dev-master": "0.7-dev"
                 }
             },
             "autoload": {
@@ -261,7 +261,7 @@
                 "crossdomain",
                 "laravel"
             ],
-            "time": "2015-05-25 13:45:30"
+            "time": "2015-09-09 16:56:18"
         },
         {
             "name": "christian-riesen/base32",

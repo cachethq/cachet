@@ -150,7 +150,7 @@ return [
          * Packages Service Providers...
          */
         env('CACHET_EMOJI', false) ? 'AltThree\Emoji\EmojiServiceProvider' : null,
-        'Barryvdh\Cors\CorsServiceProvider',
+        'Barryvdh\Cors\ServiceProvider',
         'Fideloper\Proxy\TrustedProxyServiceProvider',
         'GrahamCampbell\Binput\BinputServiceProvider',
         'GrahamCampbell\Exceptions\ExceptionsServiceProvider',
