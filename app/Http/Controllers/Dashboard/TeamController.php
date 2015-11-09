@@ -13,6 +13,7 @@ namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
 use AltThree\Validator\ValidationException;
 use CachetHQ\Cachet\Commands\User\AddTeamMemberCommand;
+use CachetHQ\Cachet\Commands\User\InviteTeamMemberCommand;
 use CachetHQ\Cachet\Commands\User\RemoveUserCommand;
 use CachetHQ\Cachet\Models\User;
 use GrahamCampbell\Binput\Facades\Binput;
@@ -63,6 +64,17 @@ class TeamController extends Controller
     }
 
     /**
+     * Shows the invite team member view.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function showInviteTeamMemberView()
+    {
+        return View::make('dashboard.team.invite')
+            ->withPageTitle(trans('dashboard.team.invite.title').' - '.trans('dashboard.dashboard'));
+    }
+
+    /**
      * Creates a new team member.
      *
      * @return \Illuminate\Http\RedirectResponse
@@ -109,6 +121,28 @@ class TeamController extends Controller
 
         return Redirect::route('dashboard.team.edit', ['id' => $user->id])
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.team.edit.success')));
+    }
+
+    /**
+     * Creates a new team member.
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function postInviteUser()
+    {
+        try {
+            $this->dispatch(new InviteTeamMemberCommand(
+                array_unique(array_filter((array) Binput::get('emails')))
+            ));
+        } catch (ValidationException $e) {
+            return Redirect::route('dashboard.team.invite')
+                ->withInput(Binput::except('password'))
+                ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.team.invite.failure')))
+                ->withErrors($e->getMessageBag());
+        }
+
+        return Redirect::route('dashboard.team.invite')
+            ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.team.invite.success')));
     }
 
     /**

@@ -153,6 +153,10 @@ return [
         '2fa' => [
             'help' => 'Brug Two-Factor login for større sikkerhed på din konto. Du skal så nok installere <a href="https://support.google.com/accounts/answer/1066447?hl=en">Google Authenticator</a> eller lignende på din mobile enked for at kunne logge ind med nøgler fra appen.',
         ],
+        'team' => [
+            'description' => 'Invite your team members by entering their email addresses here.',
+            'email'       => 'Email #:id',
+        ],
     ],
 
     // Buttons

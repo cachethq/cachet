@@ -130,6 +130,10 @@ return [
         '2fa'            => [
             'help' => 'Habilitar autenticación de dos pasos aumenta la seguridad de tu cuenta. Necesitarás descargar <a href="https://support.google.com/accounts/answer/1066447?hl=en"> Google Authenticator</a> o una aplicación similar en tu dispositivo móvil. Al iniciar sesión te pedirá proporcionar un token generado por la aplicación.',
         ],
+        'team' => [
+            'description' => 'Invite your team members by entering their email addresses here.',
+            'email'       => 'Email #:id',
+        ],
     ],
 
     // Buttons

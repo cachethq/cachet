@@ -144,6 +144,10 @@ return [
         '2fa' => [
             'help' => 'L\'abilitazione della verifica in 2 passaggi aumenta la sicurezza del tuo account. Sarà necessario scaricare <a href="https://support.google.com/accounts/answer/1066447?hl=it">Google Authenticator</a> o un\'applicazione simile sul tuo dispositivo mobile. Quando accederai, ti verrà chiesto di fornire un token generato dall\'app.',
         ],
+        'team' => [
+            'description' => 'Invite your team members by entering their email addresses here.',
+            'email'       => 'Email #:id',
+        ],
     ],
 
     // Buttons
