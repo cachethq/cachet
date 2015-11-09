@@ -92,6 +92,6 @@ class SignupController extends Controller
         $this->dispatch(new ClaimInviteCommand($invite));
 
         return Redirect::route('status-page')
-            ->withSuccess(sprintf('<strong>%s</strong> %s', trans('dashboard.notifications.awesome'), trans('cachet.signup.unsubscribed')));
+            ->withSuccess(sprintf('<strong>%s</strong> %s', trans('dashboard.notifications.awesome'), trans('cachet.signup.success')));
     }
 }
