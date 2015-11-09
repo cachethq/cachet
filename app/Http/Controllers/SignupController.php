@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Cachet\Http\Controllers;
 
+use AltThree\Validator\ValidationException;
 use CachetHQ\Cachet\Commands\Invite\ClaimInviteCommand;
 use CachetHQ\Cachet\Commands\User\SignupUserCommand;
 use CachetHQ\Cachet\Facades\Setting;
@@ -50,7 +51,9 @@ class SignupController extends Controller
         return View::make('signup')
             ->withPageTitle(Setting::get('app_name'))
             ->withAboutApp(Markdown::convertToHtml(Setting::get('app_about')))
-            ->withCode($invite->code);
+            ->withCode($invite->code)
+            ->withUsername(Binput::old('username'))
+            ->withEmail(Binput::old('emai', $invite->email));
     }
 
     /**
@@ -72,16 +75,23 @@ class SignupController extends Controller
             throw new BadRequestHttpException();
         }
 
-        $this->dispatch(new SignupUserCommand(
-            Binput::get('username'),
-            Binput::get('password'),
-            Binput::get('email'),
-            2
-        ));
+        try {
+            $this->dispatch(new SignupUserCommand(
+                Binput::get('username'),
+                Binput::get('password'),
+                Binput::get('email'),
+                2
+            ));
+        } catch (ValidationException $e) {
+            return Redirect::route('signup.invite', ['code' => $invite->code])
+                ->withInput(Binput::except('password'))
+                ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('cachet.signup.failure')))
+                ->withErrors($e->getMessageBag());
+        }
 
         $this->dispatch(new ClaimInviteCommand($invite));
 
         return Redirect::route('status-page')
-            ->withSuccess(sprintf('<strong>%s</strong> %s', trans('dashboard.notifications.awesome'), trans('cachet.subscriber.email.unsubscribed')));
+            ->withSuccess(sprintf('<strong>%s</strong> %s', trans('dashboard.notifications.awesome'), trans('cachet.signup.unsubscribed')));
     }
 }

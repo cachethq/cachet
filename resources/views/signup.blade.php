@@ -24,24 +24,24 @@
 
     <div class="panel panel-meassage">
         <div class="panel-heading">
-            <strong>{{ trans('cachet.subscriber.subscribe') }}</strong>
+            <strong>{{ trans('cachet.signup.title') }}</strong>
         </div>
         <div class="panel-body">
             <form action="{{ route('signup.invite', ['code' => $code]) }}" method="post" class="form">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="form-group">
-                    <label for="username">{{ trans('cachet.subscriber.subscribe') }}</label>
-                    <input class="form-control" type="text" name="username">
+                    <label for="username">{{ trans('cachet.signup.username') }}</label>
+                    <input class="form-control" type="text" name="username" value="{{ $username }}">
                 </div>
                 <div class="form-group">
-                    <label for="email">{{ trans('cachet.subscriber.subscribe') }}</label>
-                    <input class="form-control" type="email" name="email">
+                    <label for="email">{{ trans('cachet.signup.email') }}</label>
+                    <input class="form-control" type="email" name="email" value="{{ $email }}">
                 </div>
                 <div class="form-group">
-                    <label for="password">{{ trans('cachet.subscriber.subscribe') }}</label>
+                    <label for="password">{{ trans('cachet.signup.password') }}</label>
                     <input class="form-control" type="password" name="password">
                 </div>
-                <button type="submit" class="btn btn-success">{{ trans('cachet.subscriber.button') }}</button>
+                <button type="submit" class="btn btn-success">{{ trans('forms.signup') }}</button>
             </form>
         </div>
     </div>

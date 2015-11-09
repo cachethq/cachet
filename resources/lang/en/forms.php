@@ -165,6 +165,8 @@ return [
     'submit' => 'Submit',
     'cancel' => 'Cancel',
     'remove' => 'Remove',
+    'invite' => 'Invite',
+    'signup' => 'Sign Up',
 
     // Other
     'optional' => '* Optional',

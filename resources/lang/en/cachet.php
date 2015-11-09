@@ -87,6 +87,15 @@ return [
         ],
     ],
 
+    'signup' => [
+        'title'    => 'Sign Up',
+        'username' => 'Username',
+        'email'    => 'Email',
+        'password' => 'Password',
+        'success'  => 'Your account has been created.',
+        'failure'  => 'Something went wrong with the signup.',
+    ],
+
     // Other
     'powered_by'      => ':app Status Page is powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
     'about_this_site' => 'About This Site',

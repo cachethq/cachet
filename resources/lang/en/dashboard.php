@@ -142,7 +142,7 @@ return [
         'add'         => [
             'title'   => 'Add a New Team Member',
             'success' => 'Team member added.',
-            'failure' => 'Something went wrong with the component.',
+            'failure' => 'Something went wrong with the user.',
         ],
         'edit' => [
             'title'   => 'Update Profile',
@@ -152,6 +152,11 @@ return [
         'delete' => [
             'success' => 'User deleted.',
             'failure' => 'Something went wrong when deleting this user.',
+        ],
+        'invite' => [
+            'title'   => 'Invite a New Team Member',
+            'success' => 'The users invited.',
+            'failure' => 'Something went wrong with the invite.',
         ],
     ],
 
