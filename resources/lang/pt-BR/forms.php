@@ -153,6 +153,10 @@ return [
         '2fa'            => [
             'help' => 'Ativar a autenticação de dois fatores aumenta a segurança de sua conta. Você vai precisar baixar <a href="https://support.google.com/accounts/answer/1066447?hl=en"> Google Authenticator</a> ou um app similar em seu dispositivo móvel. Quando você entrar, será solicitado um token gerado pelo app.',
         ],
+        'team' => [
+            'description' => 'Invite your team members by entering their email addresses here.',
+            'email'       => 'Email #:id',
+        ],
     ],
 
     // Buttons

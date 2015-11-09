@@ -17,23 +17,20 @@
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <fieldset>
                         <div class="form-group">
-                            <label>{{ trans('forms.user.email') }}</label>
-                            <input type="email" class="form-control" name="emails[]" required>
+                            <label>{{ trans('forms.user.team.description') }}</label>
+                            <input type="email" class="form-control" name="emails[]" placeholder="{{ trans('forms.user.team.email', ['id' => 1]) }}" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control" name="emails[]">
+                            <input type="email" class="form-control" name="emails[]" placeholder="{{ trans('forms.user.team.email', ['id' => 2]) }}">
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control" name="emails[]">
+                            <input type="email" class="form-control" name="emails[]" placeholder="{{ trans('forms.user.team.email', ['id' => 3]) }}">
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control" name="emails[]">
+                            <input type="email" class="form-control" name="emails[]" placeholder="{{ trans('forms.user.team.email', ['id' => 4]) }}">
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control" name="emails[]">
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control" name="emails[]">
+                            <input type="email" class="form-control" name="emails[]" placeholder="{{ trans('forms.user.team.email', ['id' => 5]) }}">
                         </div>
                     </fieldset>
 
