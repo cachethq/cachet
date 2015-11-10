@@ -114,7 +114,7 @@ class ComponentController extends AbstractApiController
                 Binput::get('link'),
                 Binput::get('order'),
                 Binput::get('group_id'),
-                (bool) Binput::get('enabled')
+                (bool) Binput::get('enabled', true)
             ));
         } catch (Exception $e) {
             throw new BadRequestHttpException();
