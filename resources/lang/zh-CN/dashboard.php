@@ -35,7 +35,7 @@ return [
         'templates' => [
             'title' => '事件模板',
             'add'   => [
-                'title'   => '创建一个事件模板。',
+                'title'   => '创建一个事件模板',
                 'success' => '模板已创建。',
                 'failure' => '创建模板失败。',
             ],
@@ -116,6 +116,24 @@ return [
         ],
     ],
 
+    // Subscribers
+    'subscribers' => [
+        'subscribers'  => '订阅者',
+        'description'  => '当有新的事件被创建时订阅者将收到邮件通知.',
+        'verified'     => '已认证',
+        'not_verified' => '未认证',
+        'add'          => [
+            'title'   => '添加一个订阅者',
+            'success' => '订阅者已添加成功.',
+            'failure' => '订阅者添加失败.',
+        ],
+        'edit' => [
+            'title'   => '更新订阅者',
+            'success' => '订阅者信息已更新.',
+            'failure' => '更新订阅者信息失败.',
+        ],
+    ],
+
     // Team
     'team' => [
         'team'        => '团队',
@@ -132,6 +150,15 @@ return [
             'success' => '配置文件已更新。',
             'failure' => '资料更新失败。',
         ],
+        'delete' => [
+            'success' => '团队成员已删除.',
+            'failure' => '删除团队成员失败.',
+        ],
+        'invite' => [
+            'title'   => '邀请团队成员',
+            'success' => '团队成员已邀请成功.',
+            'failure' => '邀请团队成员失败.',
+        ],
     ],
 
     // Settings
@@ -143,10 +170,10 @@ return [
             'too-big'     => '你上传的文件太大了。上传的图像大小应小于:size',
         ],
         'analytics' => [
-            'analytics' => 'Analytics',
+            'analytics' => '第三方统计',
         ],
         'localization' => [
-            'localization' => 'Localization',
+            'localization' => '国际化',
         ],
         'security' => [
             'security'   => '安全',
