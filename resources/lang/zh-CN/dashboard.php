@@ -165,7 +165,7 @@ return [
     'settings' => [
         'settings'  => '设置',
         'app-setup' => [
-            'app-setup'   => '应用安装',
+            'app-setup'   => '系统设置',
             'images-only' => '只能上传图像。',
             'too-big'     => '你上传的文件太大了。上传的图像大小应小于:size',
         ],
@@ -176,11 +176,11 @@ return [
             'localization' => '国际化',
         ],
         'security' => [
-            'security'   => '安全',
+            'security'   => '安全设置',
             'two-factor' => '没有启用双因素身份验证的用户',
         ],
         'stylesheet' => [
-            'stylesheet' => '样式表',
+            'stylesheet' => '自定义样式',
         ],
         'theme' => [
             'theme' => '主题',
@@ -193,8 +193,8 @@ return [
 
     // Login
     'login' => [
-        'login'      => '登陆',
-        'logged_in'  => '您已登陆',
+        'login'      => '登录',
+        'logged_in'  => '您已登录',
         'welcome'    => '欢迎回来！',
         'two-factor' => '请输入您的双重验证Token。',
     ],
