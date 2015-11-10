@@ -31,13 +31,6 @@ class SettingsController extends Controller
     protected $subMenu = [];
 
     /**
-     * The title of the sub-menu.
-     *
-     * @var string
-     */
-    protected $subTitle = 'Settings';
-
-    /**
      * Creates a new settings controller instance.
      *
      * @return void
@@ -90,7 +83,7 @@ class SettingsController extends Controller
         ];
 
         View::share([
-            'sub_title' => $this->subTitle,
+            'sub_title' => trans('dashboard.settings.settings'),
             'sub_menu'  => $this->subMenu,
         ]);
     }
