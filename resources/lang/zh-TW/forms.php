@@ -81,6 +81,7 @@ return [
         'calc_type'        => '圖表計算方法',
         'type_sum'         => '求和',
         'type_avg'         => '求平均數',
+        'places'           => '小數點位數',
 
         'points' => [
             'value' => '數值',
@@ -120,12 +121,20 @@ return [
             'custom-css' => '自定義樣式表',
         ],
         'theme' => [
-            'background-color'        => '背景色',
+            'background-color'        => '頁面背景色',
+            'background-fills'        => '區塊填充色(組件, 事件, 頁尾)',
+            'banner-background-color' => '横幅背景色',
+            'banner-padding'          => '横幅Padding值',
+            'fullwidth-banner'        => '横幅全寬？',
             'text-color'              => '文字顏色',
-            'dashboard-login'         => 'Show dashboard button in the footer?',
-            'banner-background-color' => 'Banner Background Color',
-            'banner-padding'          => 'Banner Padding',
-            'fullwidth-banner'        => 'Enable fullwidth banner?',
+            'dashboard-login'         => '在頁尾顯示 管理後臺 的入口？',
+            'reds'                    => '紅（用於錯誤類提示)',
+            'blues'                   => '藍 (用於信息類提示)',
+            'greens'                  => '綠 (用於成功類提示)',
+            'yellows'                 => '黃 (用於警告類提示)',
+            'oranges'                 => '橙 (用於通知類提示)',
+            'metrics'                 => '圖表填充色',
+            'links'                   => '鏈接',
         ],
     ],
 
@@ -133,9 +142,14 @@ return [
         'username'       => '用戶名',
         'email'          => '電子郵箱',
         'password'       => '密碼',
-        'api-token'      => 'API 令牌',
-        'api-token-help' => '重新生成您的 API 令牌將阻止現有的應用程序訪問Cachet。',
-        'gravatar'       => 'Change your profile picture at Gravatar.',
+        'api-token'      => 'API Token',
+        'api-token-help' => '重新生成您的 API Token 將阻止現有的應用程序訪問Cachet。',
+        'gravatar'       => '修改您的 Gravatar 頭像。',
+        'user_level'     => '用戶等級',
+        'levels'         => [
+            'admin' => '管理員',
+            'user'  => '普通用戶',
+        ],
         '2fa'            => [
             'help' => '啟用雙因素身份驗證會增加您的帳戶安全。您將需要下載 <a href="https://support.google.com/accounts/answer/1066447?hl=en">Google Authenticator</a> 或類似的應用到您的移動設備。當您登錄時將會要求您提供由應用程序生成的壹個短碼。',
         ],
@@ -155,6 +169,8 @@ return [
     'submit' => '提交',
     'cancel' => '取消',
     'remove' => '移除',
+    'invite' => '邀請',
+    'signup' => '註冊',
 
     // Other
     'optional' => '* 可選',

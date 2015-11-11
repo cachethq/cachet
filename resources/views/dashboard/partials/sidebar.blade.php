@@ -50,12 +50,6 @@
                     <span class="label label-info">{{ $component_count }}</span>
                 </a>
             </li>
-            <li {!! set_active('dashboard/team*') !!}>
-                <a href="{{ route('dashboard.team.index') }}">
-                    <i class="icons ion-ios-people"></i>
-                    <span>{{ trans('dashboard.team.team') }}</span>
-                </a>
-            </li>
             <li {!! set_active('dashboard/metrics*') !!}>
                 <a href="{{ route('dashboard.metrics.index') }}">
                     <i class="icon ion-stats-bars"></i>
@@ -66,6 +60,12 @@
                 <a href="{{ route('dashboard.subscribers.index') }}">
                     <i class="icons ion-email"></i>
                     <span>{{ trans('dashboard.subscribers.subscribers') }}</span>
+                </a>
+            </li>
+            <li {!! set_active('dashboard/team*') !!}>
+                <a href="{{ route('dashboard.team.index') }}">
+                    <i class="icons ion-ios-people"></i>
+                    <span>{{ trans('dashboard.team.team') }}</span>
                 </a>
             </li>
             <li {!! set_active('dashboard/settings*') !!}>
