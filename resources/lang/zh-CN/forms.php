@@ -49,7 +49,7 @@ return [
         'public'             => '公共可见',
         'logged_in_only'     => '仅登录用户可见',
         'templates'          => [
-            'name'     => '事件名',
+            'name'     => '事件模板名',
             'template' => '模板',
         ],
     ],
@@ -58,12 +58,12 @@ return [
     'components' => [
         'name'        => '组件名',
         'status'      => '状态',
-        'group'       => '部件分组',
+        'group'       => '组件分组',
         'description' => '描述',
         'link'        => '链接',
         'tags'        => '标签',
         'tags-help'   => '以逗号分隔。',
-        'enabled'     => 'Component enabled?',
+        'enabled'     => '启用',
 
         'groups' => [
             'name' => '组名',
@@ -140,7 +140,7 @@ return [
             'help' => '启用双因素身份验证会增加您的帐户安全。您将需要下载 <a href="https://support.google.com/accounts/answer/1066447?hl=en">Google Authenticator</a> 或类似的应用到您的移动设备。当您登录时将会要求您提供由应用程序生成的一个短码。',
         ],
         'team' => [
-            'description' => '请输入你要邀请的团队成员的邮件地址：',
+            'description' => '请输入您要邀请的团队成员的邮件地址：',
             'email'       => 'Email #:id',
         ],
     ],

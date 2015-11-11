@@ -21,12 +21,12 @@ return [
         'incident-create-template' => '创建模板',
         'incident-templates'       => '事件模板',
         'add'                      => [
-            'title'   => '添加一个事件',
+            'title'   => '添加事件',
             'success' => '事件已添加',
             'failure' => '事件添加失败。',
         ],
         'edit' => [
-            'title'   => '编辑一个事件',
+            'title'   => '编辑事件',
             'success' => '事件已更新。',
             'failure' => '事件编辑失败。',
         ],
@@ -35,7 +35,7 @@ return [
         'templates' => [
             'title' => '事件模板',
             'add'   => [
-                'title'   => '创建一个事件模板',
+                'title'   => '添加事件模板',
                 'success' => '模板已创建。',
                 'failure' => '创建模板失败。',
             ],
@@ -49,7 +49,7 @@ return [
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => '计划维护',
+        'schedule'     => '维护计划',
         'scheduled_at' => '计划在 :timestamp',
         'add'          => [
             'title'   => '添加维护计划',
@@ -62,7 +62,7 @@ return [
             'failure' => '计划更新失败。',
         ],
         'delete' => [
-            'success' => '维护计划已被删除，它将从你的状态页上消失。',
+            'success' => '维护计划已被删除，它将从您的状态页上消失。',
             'failure' => '无法删除该维护计划。请再试一次。',
         ],
     ],
@@ -73,24 +73,24 @@ return [
         'component_statuses' => '组件状态',
         'listed_group'       => '根据 :name 分组',
         'add'                => [
-            'title'   => '添加一个组件',
-            'message' => '你应该添加一个组件。',
-            'success' => '组件已创建。',
+            'title'   => '添加组件',
+            'message' => '您应该添加一个组件。',
+            'success' => '组件已添加。',
             'failure' => '组件添加失败。',
         ],
         'edit' => [
-            'title'   => '编辑一个组件',
+            'title'   => '编辑组件',
             'success' => '组件已更新。',
             'failure' => '组件编辑失败。',
         ],
 
         // Component groups
         'groups' => [
-            'groups'        => '部件分组|部件分组',
+            'groups'        => '组件分组|组件分组',
             'no_components' => '您应添加一个组件分组。',
             'add'           => [
-                'title'   => '添加一个分组。',
-                'success' => '部件分组已添加。',
+                'title'   => '添加组件分组',
+                'success' => '组件分组已添加。',
                 'failure' => '分组添加失败。',
             ],
             'edit' => [
@@ -105,7 +105,7 @@ return [
     'metrics' => [
         'metrics' => '图表',
         'add'     => [
-            'title'   => '添加一个图表',
+            'title'   => '添加图表',
             'success' => '图表已创建。',
             'failure' => '图表创建失败。',
         ],
@@ -123,7 +123,7 @@ return [
         'verified'     => '已认证',
         'not_verified' => '未认证',
         'add'          => [
-            'title'   => '添加一个订阅者',
+            'title'   => '添加订阅者',
             'success' => '订阅者已添加成功.',
             'failure' => '订阅者添加失败.',
         ],
@@ -141,7 +141,7 @@ return [
         'profile'     => '更改资料',
         'description' => '团队成员将能够添加、修改和编辑组件和事件。',
         'add'         => [
-            'title'   => '添加一个新团队成员',
+            'title'   => '添加团队成员',
             'success' => '团队成员已添加。',
             'failure' => '添加组件失败。',
         ],
@@ -167,7 +167,7 @@ return [
         'app-setup' => [
             'app-setup'   => '系统设置',
             'images-only' => '只能上传图像。',
-            'too-big'     => '你上传的文件太大了。上传的图像大小应小于:size',
+            'too-big'     => '您上传的文件太大了。上传的图像大小应小于:size',
         ],
         'analytics' => [
             'analytics' => '第三方统计',
