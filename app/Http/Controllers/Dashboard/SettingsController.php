@@ -100,7 +100,7 @@ class SettingsController extends Controller
         Session::flash('redirect_to', $this->subMenu['setup']['url']);
 
         return View::make('dashboard.settings.app-setup')
-            ->withPageTitle('Application Setup - Dashboard')
+            ->withPageTitle(trans('dashboard.settings.app-setup.app-setup').' - '.trans('dashboard.dashboard'))
             ->withSubMenu($this->subMenu);
     }
 
@@ -116,7 +116,7 @@ class SettingsController extends Controller
         Session::flash('redirect_to', $this->subMenu['analytics']['url']);
 
         return View::make('dashboard.settings.analytics')
-            ->withPageTitle('Analytics - Dashboard')
+            ->withPageTitle(trans('dashboard.settings.analytics.analytics').' - '.trans('dashboard.dashboard'))
             ->withSubMenu($this->subMenu);
     }
 
@@ -132,7 +132,7 @@ class SettingsController extends Controller
         Session::flash('redirect_to', $this->subMenu['localization']['url']);
 
         return View::make('dashboard.settings.localization')
-            ->withPageTitle('Localization - Dashboard')
+            ->withPageTitle(trans('dashboard.settings.localization.localization').' - '.trans('dashboard.dashboard'))
             ->withSubMenu($this->subMenu);
     }
 
@@ -148,7 +148,7 @@ class SettingsController extends Controller
         Session::flash('redirect_to', $this->subMenu['theme']['url']);
 
         return View::make('dashboard.settings.theme')
-            ->withPageTitle('Theme - Dashboard')
+            ->withPageTitle(trans('dashboard.settings.theme.theme').' - '.trans('dashboard.dashboard'))
             ->withSubMenu($this->subMenu);
     }
 
@@ -166,7 +166,7 @@ class SettingsController extends Controller
         Session::flash('redirect_to', $this->subMenu['security']['url']);
 
         return View::make('dashboard.settings.security')
-            ->withPageTitle('Security - Dashboard')
+            ->withPageTitle(trans('dashboard.settings.security.security').' - '.trans('dashboard.dashboard'))
             ->withSubMenu($this->subMenu)
             ->withUnsecureUsers($unsecureUsers);
     }
@@ -183,7 +183,7 @@ class SettingsController extends Controller
         Session::flash('redirect_to', $this->subMenu['stylesheet']['url']);
 
         return View::make('dashboard.settings.stylesheet')
-            ->withPageTitle('Stylesheet - Dashboard')
+            ->withPageTitle(trans('dashboard.settings.stylesheet.stylesheet').' - '.trans('dashboard.dashboard'))
             ->withSubMenu($this->subMenu);
     }
 

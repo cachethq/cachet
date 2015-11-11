@@ -70,7 +70,6 @@ class IncidentController extends Controller
     public function showIncidents()
     {
         $incidents = Incident::notScheduled()->orderBy('created_at', 'desc')->get();
-
         return View::make('dashboard.incidents.index')
             ->withPageTitle(trans('dashboard.incidents.incidents').' - '.trans('dashboard.dashboard'))
             ->withIncidents($incidents);

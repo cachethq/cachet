@@ -49,7 +49,7 @@ class ComponentController extends Controller
             'components' => [
                 'title'  => trans('dashboard.components.components'),
                 'url'    => route('dashboard.components.index'),
-                'icon'   => 'ion-outlet',
+                'icon'   => 'ion-ios-browsers',
                 'active' => false,
             ],
             'groups' => [

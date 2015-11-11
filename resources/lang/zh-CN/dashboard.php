@@ -53,13 +53,13 @@ return [
         'scheduled_at' => '计划在 :timestamp',
         'add'          => [
             'title'   => '添加维护计划',
-            'success' => '计划已添加。',
-            'failure' => '计划添加失败。',
+            'success' => '维护计划已添加。',
+            'failure' => '维护计划添加失败。',
         ],
         'edit' => [
             'title'   => '编辑维护计划',
-            'success' => '计划已更新！',
-            'failure' => '计划更新失败。',
+            'success' => '维护计划已更新！',
+            'failure' => '维护计划更新失败。',
         ],
         'delete' => [
             'success' => '维护计划已被删除，它将从您的状态页上消失。',
@@ -183,7 +183,7 @@ return [
             'stylesheet' => '自定义样式',
         ],
         'theme' => [
-            'theme' => '主题',
+            'theme' => '主题设置',
         ],
         'edit' => [
             'success' => '设置已保存。',

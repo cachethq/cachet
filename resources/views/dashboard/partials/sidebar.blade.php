@@ -26,7 +26,7 @@
         <ul>
             <li {!! set_active('dashboard') !!}>
                 <a href="{{ route('dashboard.index') }}">
-                    <i class="icon ion-speedometer"></i>
+                    <i class="icon ion-ios-speedometer"></i>
                     <span>{{ trans('dashboard.dashboard') }}</span>
                 </a>
             </li>
@@ -45,7 +45,7 @@
             </li>
             <li {!! set_active('dashboard/components*') !!}>
                 <a href="{{ route('dashboard.components.index') }}">
-                    <i class="icons ion-outlet"></i>
+                    <i class="icons ion-ios-browsers"></i>
                     <span>{{ trans('dashboard.components.components') }}</span>
                     <span class="label label-info">{{ $component_count }}</span>
                 </a>
