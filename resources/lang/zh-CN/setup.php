@@ -10,7 +10,7 @@
  */
 
 return [
-    'setup'             => '设置',
+    'setup'             => '安装设置',
     'title'             => '安装 Cachet',
     'service_details'   => '服务细节',
     'env_setup'         => '环境设置',

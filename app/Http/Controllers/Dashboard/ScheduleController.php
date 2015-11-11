@@ -70,7 +70,9 @@ class ScheduleController extends Controller
     {
         $schedule = Incident::scheduled()->orderBy('created_at')->get();
 
-        return View::make('dashboard.schedule.index')->withSchedule($schedule);
+        return View::make('dashboard.schedule.index')
+            ->withPageTitle(trans('dashboard.schedule.schedule').' - '.trans('dashboard.dashboard'))
+            ->withSchedule($schedule);
     }
 
     /**
@@ -83,6 +85,7 @@ class ScheduleController extends Controller
         $incidentTemplates = IncidentTemplate::all();
 
         return View::make('dashboard.schedule.add')
+            ->withPageTitle(trans('dashboard.schedule.add.title').' - '.trans('dashboard.dashboard'))
             ->withIncidentTemplates($incidentTemplates);
     }
 
@@ -123,6 +126,7 @@ class ScheduleController extends Controller
         $incidentTemplates = IncidentTemplate::all();
 
         return View::make('dashboard.schedule.edit')
+            ->withPageTitle(trans('dashboard.schedule.edit.title').' - '.trans('dashboard.dashboard'))
             ->withIncidentTemplates($incidentTemplates)
             ->withSchedule($schedule);
     }

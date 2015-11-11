@@ -30,9 +30,9 @@ return [
         'scheduled'     => '计划维护',
         'scheduled_at'  => '，计划于 :timestamp',
         'status'        => [
-            0 => '计划中的', // TODO: Hopefully remove this.
+            0 => '计划中', // TODO: Hopefully remove this.
             1 => '调查中',
-            2 => '已定位',
+            2 => '已确认',
             3 => '观察中',
             4 => '已修复',
         ],
@@ -46,15 +46,15 @@ return [
 
     'api' => [
         'regenerate' => '重新生成 API 密钥',
-        'revoke'     => '吊销 API 密钥',
+        'revoke'     => '注销 API 密钥',
     ],
 
     // Metrics
     'metrics' => [
         'filter' => [
-            'hourly'  => 'Last 12 Hours',
-            'weekly'  => 'Week',
-            'monthly' => 'Month',
+            'hourly'  => '最近12小时',
+            'weekly'  => '周',
+            'monthly' => '月',
         ],
     ],
 
@@ -64,7 +64,7 @@ return [
         'button'    => '订阅',
         'email'     => [
             'subscribe'    => '订阅电子邮件更新。',
-            'subscribed'   => '你已经订阅电子邮件通知，请检查您的电子邮件，确认您的订阅。',
+            'subscribed'   => '您已经订阅电子邮件通知，请检查您的电子邮件，确认您的订阅。',
             'verified'     => '您的电子邮件订阅已确认。谢谢！',
             'unsubscribe'  => '取消电子邮件订阅。',
             'unsubscribed' => '您的电子邮件订阅已被取消。',
@@ -85,6 +85,25 @@ return [
                 'html'           => '<p>:app_name 有新事件报告。</p><p>此致，:app_name</p>',
             ],
         ],
+    ],
+
+    'users' => [
+        'email' => [
+            'invite' => [
+                'text'           => "您已被邀请加入 :app_name 团队的状态页, 请点击以下链接进行注册。\n:link\n谢谢, :app_name",
+                'html-preheader' => '您已被邀请加入 :app_name.',
+                'html'           => '<p>您已被邀请加入 :app_name 团队的状态页, 请点击以下链接进行注册。</p><p><a href=":link">:link</a></p><p>谢谢, :app_name</p>',
+            ],
+        ],
+    ],
+
+    'signup' => [
+        'title'    => '注册',
+        'username' => '用户名',
+        'email'    => '邮箱',
+        'password' => '密码',
+        'success'  => '您的账号已注册成功。',
+        'failure'  => '注册失败。',
     ],
 
     // Other
