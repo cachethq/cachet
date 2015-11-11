@@ -58,6 +58,7 @@ class DashboardController extends Controller
         $subscribers = $this->getSubscribers();
 
         return View::make('dashboard.index')
+            ->withPageTitle(trans('dashboard.dashboard'))
             ->withComponents($components)
             ->withIncidents($incidents)
             ->withSubscribers($subscribers);
