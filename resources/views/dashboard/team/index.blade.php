@@ -6,7 +6,7 @@
             <i class="icon ion-navicon"></i>
         </div>
         <span class="uppercase">
-            <i class="icon icon ion-android-alert"></i> {{ trans('dashboard.team.team') }}
+            <i class="icon ion-ios-people"></i> {{ trans('dashboard.team.team') }}
         </span>
         @if($current_user->isAdmin)
         <div class="button-group pull-right">

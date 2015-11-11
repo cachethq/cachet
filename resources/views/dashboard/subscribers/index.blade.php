@@ -6,7 +6,7 @@
             <i class="icon ion-navicon"></i>
         </div>
         <span class="uppercase">
-            <i class="icon icon ion-android-alert"></i> {{ trans('dashboard.subscribers.subscribers') }}
+            <i class="icon icon ion-email"></i> {{ trans('dashboard.subscribers.subscribers') }}
         </span>
         @if($current_user->isAdmin)
         <a class="btn btn-sm btn-success pull-right" href="{{ route('dashboard.subscribers.add') }}">

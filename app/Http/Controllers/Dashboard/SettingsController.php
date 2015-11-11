@@ -44,10 +44,16 @@ class SettingsController extends Controller
                 'icon'   => 'ion-gear-b',
                 'active' => false,
             ],
-            'analytics' => [
-                'title'  => trans('dashboard.settings.analytics.analytics'),
-                'url'    => route('dashboard.settings.analytics'),
-                'icon'   => 'ion-stats-bars',
+            'theme' => [
+                'title'  => trans('dashboard.settings.theme.theme'),
+                'url'    => route('dashboard.settings.theme'),
+                'icon'   => 'ion-paintbrush',
+                'active' => false,
+            ],
+            'stylesheet' => [
+                'title'  => trans('dashboard.settings.stylesheet.stylesheet'),
+                'url'    => route('dashboard.settings.stylesheet'),
+                'icon'   => 'ion-paintbucket',
                 'active' => false,
             ],
             'localization' => [
@@ -62,16 +68,10 @@ class SettingsController extends Controller
                 'icon'   => 'ion-lock-combination',
                 'active' => false,
             ],
-            'theme' => [
-                'title'  => trans('dashboard.settings.theme.theme'),
-                'url'    => route('dashboard.settings.theme'),
-                'icon'   => 'ion-paintbrush',
-                'active' => false,
-            ],
-            'stylesheet' => [
-                'title'  => trans('dashboard.settings.stylesheet.stylesheet'),
-                'url'    => route('dashboard.settings.stylesheet'),
-                'icon'   => 'ion-paintbucket',
+            'analytics' => [
+                'title'  => trans('dashboard.settings.analytics.analytics'),
+                'url'    => route('dashboard.settings.analytics'),
+                'icon'   => 'ion-stats-bars',
                 'active' => false,
             ],
             'about' => [
