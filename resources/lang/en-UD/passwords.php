@@ -26,6 +26,6 @@ return [
     'reset'    => 'crwdns537:0crwdne537:0',
     'sent'     => 'crwdns538:0crwdne538:0',
     'token'    => 'crwdns539:0crwdne539:0',
-    'user'     => "crwdns540:0crwdne540:0",
+    'user'     => 'crwdns540:0crwdne540:0',
 
 ];
