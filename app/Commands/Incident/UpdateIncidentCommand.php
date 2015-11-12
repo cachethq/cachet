@@ -79,6 +79,20 @@ final class UpdateIncidentCommand
     public $incident_date;
 
     /**
+     * A given incident template.
+     *
+     * @var string|null
+     */
+    public $template;
+
+    /**
+     * Variables for the incident template.
+     *
+     * @var string[]|null
+     */
+    public $template_vars;
+
+    /**
      * The validation rules.
      *
      * @var string[]
@@ -91,6 +105,7 @@ final class UpdateIncidentCommand
         'component_id'     => 'int',
         'component_status' => 'int|min:1|max:4|required_with:component_id',
         'notify'           => 'bool',
+        'template'         => 'string',
     ];
 
     /**
@@ -105,10 +120,12 @@ final class UpdateIncidentCommand
      * @param int                              $component_status
      * @param bool                             $notify
      * @param string|null                      $incident_date
+     * @param string|null                      $template
+     * @param array|null                       $template_vars
      *
      * @return void
      */
-    public function __construct(Incident $incident, $name, $status, $message, $visible, $component_id, $component_status, $notify, $incident_date = null)
+    public function __construct(Incident $incident, $name, $status, $message, $visible, $component_id, $component_status, $notify, $incident_date, $template, $template_vars)
     {
         $this->incident = $incident;
         $this->name = $name;
@@ -119,5 +136,7 @@ final class UpdateIncidentCommand
         $this->component_status = $component_status;
         $this->notify = $notify;
         $this->incident_date = $incident_date;
+        $this->template = $template;
+        $this->template_vars = $template_vars;
     }
 }

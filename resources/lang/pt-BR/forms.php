@@ -51,6 +51,7 @@ return [
         'templates'          => [
             'name'     => 'Nome',
             'template' => 'Template',
+            'twig'     => 'Incident Templates can make use of the <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a> templating language.',
         ],
     ],
 

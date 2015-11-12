@@ -58,4 +58,17 @@ class IncidentTemplate extends Model
             $template->slug = Str::slug($template->name);
         });
     }
+
+    /**
+     * Finds a template by the slug.
+     *
+     * @param \Illuminate\Database\Query\Builder $query
+     * @param string                             $slug
+     *
+     * @return \Illuminate\Database\Query\Builder
+     */
+    public function scopeForSlug($query, $slug)
+    {
+        return $query->where('slug', $slug);
+    }
 }

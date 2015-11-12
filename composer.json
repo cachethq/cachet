@@ -35,7 +35,8 @@
         "jenssegers/date": "^3.0",
         "mccool/laravel-auto-presenter": "^4.2",
         "pragmarx/google2fa": "^0.7",
-        "roumen/feed": "^2.9"
+        "roumen/feed": "^2.9",
+        "rcrowe/twigbridge": "^0.9.0"
     },
     "require-dev": {
         "fzaninotto/faker": "^1.5",
