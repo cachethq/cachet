@@ -45,10 +45,12 @@ return [
     'digits_between' => 'crwdns114:0crwdne114:0',
     'email'          => 'crwdns115:0crwdne115:0',
     'exists'         => 'crwdns116:0crwdne116:0',
+    'filled'         => 'crwdns620:0crwdne620:0',
     'image'          => 'crwdns117:0crwdne117:0',
     'in'             => 'crwdns118:0crwdne118:0',
     'integer'        => 'crwdns119:0crwdne119:0',
     'ip'             => 'crwdns120:0crwdne120:0',
+    'json'           => 'crwdns621:0crwdne621:0',
     'max'            => [
         'numeric' => 'crwdns121:0crwdne121:0',
         'file'    => 'crwdns421:0crwdne421:0',
@@ -79,9 +81,9 @@ return [
         'array'   => 'crwdns429:0crwdne429:0',
     ],
     'string'   => 'crwdns515:0crwdne515:0',
+    'timezone' => 'crwdns146:0crwdne146:0',
     'unique'   => 'crwdns144:0crwdne144:0',
     'url'      => 'crwdns145:0crwdne145:0',
-    'timezone' => 'crwdns146:0crwdne146:0',
 
     /*
     |--------------------------------------------------------------------------
