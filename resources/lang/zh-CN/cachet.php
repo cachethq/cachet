@@ -13,8 +13,8 @@ return [
     // Components
     'components' => [
         'status' => [
-            1 => '正常运转',
-            2 => '性能问题',
+            1 => '运行正常',
+            2 => '负载较高',
             3 => '部分停运',
             4 => '严重停转',
         ],
@@ -22,26 +22,26 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => '没有已报告的事件。',
-        'past'          => '过去的事件',
+        'none'          => '无故障报告',
+        'past'          => '历史状态',
         'previous_week' => '前一周',
         'next_week'     => '后一周',
-        'none'          => '没有已报告的事件。',
+        'none'          => '当日无故障',
         'scheduled'     => '计划维护',
         'scheduled_at'  => '，计划于 :timestamp',
         'status'        => [
             0 => '计划中', // TODO: Hopefully remove this.
-            1 => '调查中',
-            2 => '已确认',
-            3 => '观察中',
-            4 => '已修复',
+            1 => '确认中',
+            2 => '修复中',
+            3 => '已更新',
+            4 => '已解决',
         ],
     ],
 
     // Service Status
     'service' => [
-        'good' => '所有系统正常运转。',
-        'bad'  => '一些系统出了问题。',
+        'good' => '所有系统运行正常',
+        'bad'  => '部分系统运行异常',
     ],
 
     'api' => [
@@ -107,8 +107,8 @@ return [
     ],
 
     // Other
-    'powered_by'      => ':app 应用状态页面由 <a href="https://cachethq.io">Cachet</a>提供支持。',
-    'about_this_site' => '关于此站点',
+    'powered_by'      => ':app 状态页托管服务由 <a href="https://cachethq.io">Cachet</a> 提供技术支持。',
+    'about_this_site' => '关于我们',
     'rss-feed'        => 'RSS 订阅',
     'atom-feed'       => 'Atom 订阅',
     'feed'            => '状态源',

@@ -16,8 +16,8 @@ return [
         'email'            => '电子邮箱',
         'username'         => '用户名',
         'password'         => '密码',
-        'site_name'        => '站点名称',
-        'site_domain'      => '站点域名',
+        'site_name'        => '网站名称',
+        'site_domain'      => '域名',
         'site_timezone'    => '选择您的时区',
         'site_locale'      => '选择您的语言',
         'enable_google2fa' => '启用谷歌双因素身份验证',
@@ -37,37 +37,37 @@ return [
 
     // Incidents form fields
     'incidents' => [
-        'name'               => '事件名',
+        'name'               => '名称',
         'status'             => '状态',
         'component'          => '组件',
-        'message'            => '消息',
+        'message'            => '描述',
         'message-help'       => '您可以使用Markdown语言。',
         'scheduled_at'       => '什么时间安排维护？',
-        'incident_time'      => '这次事件是什么时候发生的？',
+        'incident_time'      => '这次故障是什么时候发生的？',
         'notify_subscribers' => '通知订阅者',
-        'visibility'         => '事件的可见性',
+        'visibility'         => '故障的可见性',
         'public'             => '公共可见',
         'logged_in_only'     => '仅登录用户可见',
         'templates'          => [
-            'name'     => '事件模板名',
+            'name'     => '故障模板名称',
             'template' => '模板',
-            'twig'     => 'Incident Templates can make use of the <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a> templating language.',
+            'twig'     => '故障模板可使用 <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a> 模板引擎的语法.',
         ],
     ],
 
     // Components form fields
     'components' => [
-        'name'        => '组件名',
-        'status'      => '状态',
+        'name'        => '组件名称',
+        'status'      => '组件状态',
         'group'       => '组件分组',
-        'description' => '描述',
+        'description' => '组件描述',
         'link'        => '链接',
         'tags'        => '标签',
         'tags-help'   => '以逗号分隔。',
         'enabled'     => '启用',
 
         'groups' => [
-            'name' => '组名',
+            'name'        => '组名',
         ],
     ],
 
@@ -93,11 +93,11 @@ return [
     'settings' => [
         /// Application setup
         'app-setup' => [
-            'site-name'              => '站点名称',
-            'site-url'               => '站点URL',
+            'site-name'              => '网站名称',
+            'site-url'               => '网址',
             'display-graphs'         => '是否在状态页上显示图表',
-            'about-this-page'        => '关于这个页面',
-            'days-of-incidents'      => '显示多少天的事件？',
+            'about-this-page'        => '关于本页',
+            'days-of-incidents'      => '显示多少天的故障？',
             'banner'                 => '横幅图像',
             'banner-help'            => '建议上传文件宽度不大于930像素。',
             'subscribers'            => '允许用户订阅邮件通知吗?',
@@ -106,13 +106,13 @@ return [
             'analytics_google'       => 'Google Analytics 代码',
             'analytics_gosquared'    => 'GoSquared Analytics 代码',
             'analytics_piwik_url'    => '输入Piwik实例的URL(不含http(s)://)',
-            'analytics_piwik_siteid' => 'Piwik 的站点 id',
+            'analytics_piwik_siteid' => 'Piwik 网站的 id',
         ],
         'localization' => [
-            'site-timezone'          => '站点时区',
-            'site-locale'            => '站点语言',
+            'site-timezone'          => '系统时区',
+            'site-locale'            => '系统语言',
             'date-format'            => '日期格式',
-            'incident-date-format'   => '事件的时间戳格式',
+            'incident-date-format'   => '故障的时间显示格式',
         ],
         'security' => [
             'allowed-domains'      => '允许的域',
@@ -123,7 +123,7 @@ return [
         ],
         'theme' => [
             'background-color'        => '页面背景色',
-            'background-fills'        => '区块填充色(组件, 事件, 页尾)',
+            'background-fills'        => '区块填充色(组件, 故障, 页尾)',
             'banner-background-color' => '横幅背景色',
             'banner-padding'          => '横幅Padding值',
             'fullwidth-banner'        => '横幅全宽？',
