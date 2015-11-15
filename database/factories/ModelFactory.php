@@ -74,3 +74,14 @@ $factory->define('CachetHQ\Cachet\Models\Subscriber', function ($faker) {
         'verified_at' => Carbon::now(),
     ];
 });
+
+$factory->define('CachetHQ\Cachet\Models\IncidentTemplate', function ($faker) {
+    return [
+        'name'     => 'Test Template',
+        'slug'     => 'test-template',
+        'template' => <<<ETEMPLATE
+Name: {{ name }},
+Message: {{ message }}
+ETEMPLATE
+    ];
+});

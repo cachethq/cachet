@@ -162,6 +162,7 @@ return [
         'McCool\LaravelAutoPresenter\AutoPresenterServiceProvider',
         'PragmaRX\Google2FA\Vendor\Laravel\ServiceProvider',
         'Roumen\Feed\FeedServiceProvider',
+        'TwigBridge\ServiceProvider',
 
         /*
          * Application Service Providers...

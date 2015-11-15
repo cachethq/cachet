@@ -16,6 +16,9 @@ use CachetHQ\Cachet\Dates\DateFactory;
 use CachetHQ\Cachet\Events\Incident\IncidentWasUpdatedEvent;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
+use CachetHQ\Cachet\Models\IncidentTemplate;
+use Twig_Loader_String;
+use TwigBridge\Facade\Twig;
 
 class UpdateIncidentCommandHandler
 {
@@ -47,6 +50,10 @@ class UpdateIncidentCommandHandler
      */
     public function handle(UpdateIncidentCommand $command)
     {
+        if ($command->template) {
+            $command->message = $this->parseIncidentTemplate($command->template, $command->template_vars);
+        }
+
         $incident = $command->incident;
         $incident->update($this->filterIncidentData($command));
 
@@ -90,5 +97,21 @@ class UpdateIncidentCommandHandler
             'component_status' => $command->component_status,
             'notify'           => $command->notify,
         ]);
+    }
+
+    /**
+     * Compiles an incident template into an incident message.
+     *
+     * @param string $templateSlug
+     * @param array  $vars
+     *
+     * @return string
+     */
+    protected function parseIncidentTemplate($templateSlug, $vars)
+    {
+        Twig::setLoader(new Twig_Loader_String());
+        $template = IncidentTemplate::forSlug($templateSlug)->first();
+
+        return Twig::render($template->template, $vars);
     }
 }

@@ -73,7 +73,9 @@ class IncidentController extends AbstractApiController
                 Binput::get('component_id'),
                 Binput::get('component_status'),
                 Binput::get('notify', true),
-                Binput::get('created_at')
+                Binput::get('created_at'),
+                Binput::get('template'),
+                Binput::get('vars')
             ));
         } catch (Exception $e) {
             throw new BadRequestHttpException();
@@ -101,7 +103,9 @@ class IncidentController extends AbstractApiController
                 Binput::get('component_id'),
                 Binput::get('component_status'),
                 Binput::get('notify', true),
-                Binput::get('created_at')
+                Binput::get('created_at'),
+                Binput::get('template'),
+                Binput::get('vars')
             ));
         } catch (Exception $e) {
             throw new BadRequestHttpException();

@@ -1,5 +1,25 @@
 @extends('layout.dashboard')
 
+@section('css')
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.css">
+@stop
+
+@section('js')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/mode/twig/twig.min.js"></script>
+
+<script>
+(function() {
+    console.log(document.getElementById('cm-editor'));
+    var editor = CodeMirror.fromTextArea(document.getElementById('cm-editor'), {
+        lineNumbers: true,
+        mode: 'twig',
+        lineWrapping: true
+    });
+}());
+</script>
+@stop
+
 @section('content')
     <div class="header">
         <div class="sidebar-toggler visible-xs">
@@ -32,9 +52,8 @@
                         </div>
                         <div class="form-group">
                             <label>{{ trans('forms.incidents.templates.template') }}</label>
-                            <div class='markdown-control'>
-                                <textarea name="template[template]" class="form-control" rows="5" required>{{ $template->template }}</textarea>
-                            </div>
+                            <textarea name="template[template]" id="cm-editor" class="form-control" rows="8">{{ $template->template }}</textarea>
+                            <span class="help-block">{!! trans('forms.incidents.templates.twig') !!}</span>
                         </div>
                     </fieldset>
 
