@@ -58,7 +58,7 @@ class MetricRepository
 
         $pointKey = $dateTime->format('H:00');
         for ($i = 0; $i <= $hours; $i++) {
-            $points[$pointKey] = $this->repository->getPointsByHour($metric, $i + 1);
+            $points[$pointKey] = $this->repository->getPointsByHour($metric, $i);
             $pointKey = $dateTime->sub(new DateInterval('PT1H'))->format('H:00');
         }
 
