@@ -118,7 +118,9 @@ class IncidentController extends Controller
                 Binput::get('component_id'),
                 Binput::get('component_status'),
                 Binput::get('notify', true),
-                Binput::get('created_at')
+                Binput::get('created_at'),
+                null,
+                null
             ));
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.incidents.add')
@@ -239,7 +241,9 @@ class IncidentController extends Controller
                 Binput::get('component_id'),
                 Binput::get('component_status'),
                 Binput::get('notify', true),
-                Binput::get('created_at')
+                Binput::get('created_at'),
+                null,
+                null
             ));
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.incidents.edit', ['id' => $incident->id])
