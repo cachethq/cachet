@@ -16,7 +16,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="striped-list">
-                    @foreach($incident_templates as $template)
+                    @forelse($incident_templates as $template)
                     <div class="row striped-list-item">
                         <div class="col-xs-6">
                             <strong>{{ $template->name }}</strong>
@@ -26,7 +26,9 @@
                             <a href="/dashboard/templates/{{ $template->id }}/delete" class="btn btn-danger confirm-action" data-method='DELETE'>{{ trans('forms.delete') }}</a>
                         </div>
                     </div>
-                    @endforeach
+                    @empty
+                    <div class="list-group-item text-danger">{{ trans('dashboard.incidents.templates.add.message') }}</div>
+                    @endforelse
                 </div>
             </div>
         </div>

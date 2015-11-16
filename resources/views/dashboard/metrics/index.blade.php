@@ -18,7 +18,7 @@
             <div class="col-sm-12">
                 @include('dashboard.partials.errors')
                 <div class="striped-list">
-                    @foreach($metrics as $metric)
+                    @forelse($metrics as $metric)
                     <div class="row striped-list-item">
                         <div class="col-md-6">
                             <i class="{{ $metric->icon }}"></i> <strong>{{ $metric->name }}</strong>
@@ -31,7 +31,9 @@
                             <a href="/dashboard/metrics/{{ $metric->id }}/delete" class="btn btn-danger confirm-action" data-method='DELETE'>{{ trans('forms.delete') }}</a>
                         </div>
                     </div>
-                    @endforeach
+                    @empty
+                    <div class="list-group-item text-danger">{{ trans('dashboard.metrics.add.message') }}</div>
+                    @endforelse
                 </div>
             </div>
         </div>

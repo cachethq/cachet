@@ -36,6 +36,7 @@ return [
             'title' => 'Incident Templates',
             'add'   => [
                 'title'   => 'Create an Incident Template',
+                'message' => 'You should add an Incident Template.',
                 'success' => 'Template created.',
                 'failure' => 'Something went wrong with the incident template.',
             ],
@@ -50,6 +51,7 @@ return [
     // Incident Maintenance
     'schedule' => [
         'schedule'     => 'Scheduled Maintenance',
+        'logged'       => '{0} There are no schedules, good work.|You have logged one schedule.|You have reported <strong>:count</strong> schedules.',
         'scheduled_at' => 'Scheduled at :timestamp',
         'add'          => [
             'title'   => 'Add Scheduled Maintenance',
@@ -106,6 +108,7 @@ return [
         'metrics' => 'Metrics',
         'add'     => [
             'title'   => 'Create a Metric',
+            'message' => 'You should add a Metric.',
             'success' => 'Metric created.',
             'failure' => 'Something went wrong with the metric.',
         ],
