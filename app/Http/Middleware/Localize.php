@@ -58,7 +58,7 @@ class Localize
         $userLanguage = $this->config->get('app.locale');
 
         foreach ($supportedLanguages as $language) {
-            $language = substr($language, 0, 2);
+            $language = str_replace('_', '-', $language);
 
             if (isset($this->langs[$language])) {
                 $userLanguage = $language;
