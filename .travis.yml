@@ -2,10 +2,10 @@ language: php
 
 php:
   - 7.0
-  - hhvm
-  - 5.5.9
-  - 5.5
   - 5.6
+  - 5.5
+  - 5.5.9
+  - hhvm
 
 sudo: false
 
