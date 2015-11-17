@@ -25,4 +25,10 @@
     @yield('css')
 
     @include('partials.crowdin')
+
+    <script type="text/javascript">
+        var Global = {};
+        Global.locale = '{{ Setting::get('app_locale') }}';
+    </script>
+    <script src="{{ elixir('dist/js/all.js') }}"></script>
 </head>
