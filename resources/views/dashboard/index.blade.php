@@ -48,7 +48,7 @@
             <div class="col-sm-12 col-lg-6">
                 <div class="stats-widget">
                     <div class="stats-top">
-                        <span class="stats-value">{{ $incidents->map(function($incident) { return count($incident); })->sum() }}</span>
+                        <span class="stats-value"><a href="{{ route('dashboard.incidents.index') }}">{{ $incidents->map(function($incident) { return count($incident); })->sum() }}</a></span>
                         <span class="stats-label">{{ trans('dashboard.incidents.incidents') }}</span>
                     </div>
                     <div class="stats-chart">
@@ -60,7 +60,7 @@
             <div class="col-sm-12 col-lg-6">
                 <div class="stats-widget">
                     <div class="stats-top">
-                        <span class="stats-value">{{ $subscribers->map(function($subscribers) { return count($subscribers); })->sum() }}</span>
+                        <span class="stats-value"><a href="{{ route('dashboard.subscribers.index') }}">{{ $subscribers->map(function($subscribers) { return count($subscribers); })->sum() }}</a></span>
                         <span class="stats-label">{{ trans('dashboard.subscribers.subscribers') }}</span>
                     </div>
                     <div class="stats-chart">
