@@ -57,8 +57,9 @@
                         </div>
                     </fieldset>
 
-                    <div class="form-group">
+                    <div class="btn-group">
                         <button type="submit" class="btn btn-success">{{ trans('forms.update') }}</button>
+                        <a class="btn btn-default" href="{{ route('dashboard.templates.index') }}">{{ trans('forms.cancel') }}</a>
                     </div>
                 </form>
             </div>
