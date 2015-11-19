@@ -27,6 +27,7 @@
                                         <button id="remove-banner" class="btn btn-danger">{{ trans('forms.remove') }}</button>
                                     </div>
                                     @endif
+                                    <input type="hidden" name="remove_banner" value="0">
                                     <input type="file" name="app_banner" class="form-control">
                                     <span class="help-block">{{ trans('forms.settings.app-setup.banner-help') }}</span>
                                 </div>
