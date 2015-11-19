@@ -9,11 +9,6 @@
             @yield('content')
         </div>
     </div>
-    <script type="text/javascript">
-        var Global = {};
-        Global.locale = '{{ Setting::get('app_locale') }}';
-    </script>
     @yield('js')
-    <script src="{{ elixir('dist/js/all.js') }}"></script>
 </body>
 </html>
