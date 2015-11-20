@@ -67,7 +67,7 @@ $(function() {
     };
 
     // App setup
-    window.CachetHQ = {};
+    window.Cachet = {};
 
     moment.locale(Global.locale);
 
@@ -78,7 +78,7 @@ $(function() {
             .tooltip();
     });
 
-    window.CachetHQ.Notifier = function () {
+    window.Cachet.Notifier = function () {
         this.notify = function (message, type, options) {
             type = (typeof type === 'undefined' || type === 'error') ? 'error' : type;
 
@@ -179,10 +179,10 @@ $(function() {
                         ids: orderedComponentIds
                     },
                     success: function() {
-                        (new CachetHQ.Notifier()).notify('Component orders updated.', 'success');
+                        (new Cachet.Notifier()).notify('Component orders updated.', 'success');
                     },
                     error: function() {
-                        (new CachetHQ.Notifier()).notify('Component orders not updated.', 'error');
+                        (new Cachet.Notifier()).notify('Component orders not updated.', 'error');
                     }
                 });
             }
@@ -208,10 +208,10 @@ $(function() {
                     type: 'POST',
                     data: {ids: orderedComponentGroupsIds},
                     success: function() {
-                        (new CachetHQ.Notifier()).notify('Component groups order has been updated.', 'success');
+                        (new Cachet.Notifier()).notify('Component groups order has been updated.', 'success');
                     },
                     error: function() {
-                        (new CachetHQ.Notifier()).notify('Component groups order could not be updated.', 'error');
+                        (new Cachet.Notifier()).notify('Component groups order could not be updated.', 'error');
                     }
                 });
             }
@@ -229,10 +229,10 @@ $(function() {
             type: 'POST',
             data: formData,
             success: function(component) {
-                (new CachetHQ.Notifier()).notify($form.data('messenger'), 'success');
+                (new Cachet.Notifier()).notify($form.data('messenger'), 'success');
             },
             error: function(a, b, c) {
-                (new CachetHQ.Notifier()).notify('Something went wrong updating the component.');
+                (new Cachet.Notifier()).notify('Something went wrong updating the component.');
             }
         });
     });
@@ -256,7 +256,7 @@ $(function() {
                     $form.find('textarea[name=incident\\[message\\]]').val(tpl.template);
                 },
                 error: function() {
-                    (new CachetHQ.Notifier()).notify('There was an error finding that template.');
+                    (new Cachet.Notifier()).notify('There was an error finding that template.');
                 }
             });
         }
@@ -295,7 +295,7 @@ $(function() {
                 .fail(function(response) {
                     var errors = _.toArray(response.responseJSON.errors);
                     _.each(errors, function(error) {
-                        (new CachetHQ.Notifier()).notify(error);
+                        (new Cachet.Notifier()).notify(error);
                     });
                 })
                 .always(function() {
