@@ -30,6 +30,10 @@ return [
             'success' => '故障已更新。',
             'failure' => '故障编辑失败。',
         ],
+        'delete' => [
+            'success' => '该故障已被删除，它将从您的状态页上消失。',
+            'failure' => '故障删除失败，请重试。',
+        ],
 
         // Incident templates
         'templates' => [
@@ -44,6 +48,10 @@ return [
                 'title'   => '编辑模板',
                 'success' => '模板已更新!',
                 'failure' => '模板修改失败',
+            ],
+            'delete' => [
+                'success' => '该模板已被成功删除。',
+                'failure' => '模板删除失败，请重试。',
             ],
         ],
     ],
@@ -64,7 +72,7 @@ return [
             'failure' => '维护计划更新失败。',
         ],
         'delete' => [
-            'success' => '维护计划已被删除，它将从您的状态页上消失。',
+            'success' => '该维护计划已被删除，它将从您的状态页上消失。',
             'failure' => '无法删除该维护计划。请再试一次。',
         ],
     ],
@@ -85,6 +93,10 @@ return [
             'success' => '组件已更新。',
             'failure' => '组件编辑失败。',
         ],
+        'delete' => [
+            'success' => '该组件已被删除.',
+            'failure' => '组件删除失败，请重试.',
+        ],
 
         // Component groups
         'groups' => [
@@ -99,6 +111,10 @@ return [
                 'title'   => '编辑组件分组',
                 'success' => '分组已更新。',
                 'failure' => '分组更新失败。',
+            ],
+            'delete' => [
+                'success' => '组件分组已被删除。',
+                'failure' => '组件分组删除失败，请重试。',
             ],
         ],
     ],
@@ -116,6 +132,10 @@ return [
             'title'   => '编辑图表',
             'success' => '图表已更新。',
             'failure' => '图表更新失败。',
+        ],
+        'delete' => [
+            'success' => '该图表已被删除，它将从您的状态页上消失。',
+            'failure' => '图表删除失败，请重试。',
         ],
     ],
 
