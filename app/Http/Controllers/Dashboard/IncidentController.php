@@ -129,7 +129,7 @@ class IncidentController extends Controller
                 ->withErrors($e->getMessageBag());
         }
 
-        return Redirect::route('dashboard.incidents.add')
+        return Redirect::route('dashboard.incidents.index')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.incidents.add.success')));
     }
 
@@ -169,7 +169,8 @@ class IncidentController extends Controller
     {
         $template->delete();
 
-        return Redirect::route('dashboard.incidents.index');
+        return Redirect::route('dashboard.templates.index')
+            ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.incidents.templates.delete.success')));
     }
 
     /**
@@ -188,7 +189,7 @@ class IncidentController extends Controller
                 ->withErrors($e->getMessageBag());
         }
 
-        return Redirect::route('dashboard.templates.add')
+        return Redirect::route('dashboard.templates.index')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.incidents.templates.add.success')));
     }
 
@@ -203,7 +204,8 @@ class IncidentController extends Controller
     {
         $this->dispatch(new RemoveIncidentCommand($incident));
 
-        return Redirect::route('dashboard.incidents.index');
+        return Redirect::route('dashboard.incidents.index')
+            ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.incidents.delete.success')));
     }
 
     /**

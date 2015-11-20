@@ -15,6 +15,7 @@
                 </a>
                 <div class="clearfix"></div>
             </div>
+            @include('dashboard.partials.errors')
             <div class="row">
                 <div class="col-sm-12 striped-list" id="component-list">
                     @forelse($components as $component)

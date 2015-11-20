@@ -30,6 +30,10 @@ return [
             'success' => 'Incident updated.',
             'failure' => 'Something went wrong with the incident.',
         ],
+        'delete' => [
+            'success' => 'The incident has been deleted and will not show on your status page.',
+            'failure' => 'The incident could not be deleted. Please try again.',
+        ],
 
         // Incident templates
         'templates' => [
@@ -44,6 +48,10 @@ return [
                 'title'   => 'Edit Template',
                 'success' => 'Template has been updated!',
                 'failure' => 'Something went wrong updating the incident template',
+            ],
+            'delete' => [
+                'success' => 'The tmplate has been deleted.',
+                'failure' => 'The template could not be deleted. Please try again.',
             ],
         ],
     ],
@@ -85,6 +93,10 @@ return [
             'success' => 'Component updated.',
             'failure' => 'Something went wrong with the component.',
         ],
+        'delete' => [
+            'success' => 'Component deleted.',
+            'failure' => 'The Component could not be deleted. Please try again.',
+        ],
 
         // Component groups
         'groups' => [
@@ -100,6 +112,11 @@ return [
                 'success' => 'Component group updated.',
                 'failure' => 'Something went wrong with the component group.',
             ],
+            'delete' => [
+                'success' => 'Component Group deleted.',
+                'failure' => 'The Component Group could not be deleted. Please try again.',
+            ],
+
         ],
     ],
 
@@ -116,6 +133,10 @@ return [
             'title'   => 'Edit a Metric',
             'success' => 'Metric updated.',
             'failure' => 'Something went wrong with the metric.',
+        ],
+        'delete' => [
+            'success' => 'The metric has been deleted and will not show on your status page.',
+            'failure' => 'The metric could not be deleted. Please try again.',
         ],
     ],
     // Subscribers
