@@ -80,7 +80,7 @@ class MetricController extends Controller
                 ->withErrors($e->getMessageBag());
         }
 
-        return Redirect::route('dashboard.metrics.add')
+        return Redirect::route('dashboard.metrics.index')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.metrics.add.success')));
     }
 
@@ -106,7 +106,8 @@ class MetricController extends Controller
     {
         $this->dispatch(new RemoveMetricCommand($metric));
 
-        return Redirect::route('dashboard.metrics.index');
+        return Redirect::route('dashboard.metrics.index')
+            ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.metrics.delete.success')));
     }
 
     /**

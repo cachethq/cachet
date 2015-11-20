@@ -110,7 +110,7 @@ class ScheduleController extends Controller
                 ->withErrors($e->getMessageBag());
         }
 
-        return Redirect::route('dashboard.schedule.add')
+        return Redirect::route('dashboard.schedule.index')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.schedule.add.success')));
     }
 
@@ -182,6 +182,6 @@ class ScheduleController extends Controller
         $schedule->delete();
 
         return Redirect::route('dashboard.schedule.index')
-            ->withWarning(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.schedule.delete.success')));
+            ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.schedule.delete.success')));
     }
 }

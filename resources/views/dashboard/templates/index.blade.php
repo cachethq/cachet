@@ -15,6 +15,7 @@
     <div class="content-wrapper">
         <div class="row">
             <div class="col-sm-12">
+                @include('dashboard.partials.errors')
                 <div class="striped-list">
                     @forelse($incident_templates as $template)
                     <div class="row striped-list-item">
