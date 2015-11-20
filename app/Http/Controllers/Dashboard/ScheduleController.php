@@ -182,6 +182,6 @@ class ScheduleController extends Controller
         $schedule->delete();
 
         return Redirect::route('dashboard.schedule.index')
-            ->withWarning(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.schedule.delete.failure')));
+            ->withWarning(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.schedule.delete.success')));
     }
 }
