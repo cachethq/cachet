@@ -116,7 +116,6 @@ return [
                 'success' => 'Component Group deleted.',
                 'failure' => 'The Component Group could not be deleted. Please try again.',
             ],
-
         ],
     ],
 
