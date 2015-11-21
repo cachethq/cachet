@@ -76,7 +76,6 @@ class SendIncidentEmailNotificationHandler
                     'text_content'     => $incident->message,
                     'token'            => $subscriber->token,
                     'unsubscribe_link' => route('subscribe.unsubscribe', ['code' => $subscriber->verify_code]),
-                    'app_url'          => env('APP_URL'),
                 ];
 
                 $this->mailer->queue([

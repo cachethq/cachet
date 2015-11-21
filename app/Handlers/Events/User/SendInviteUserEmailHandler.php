@@ -49,7 +49,6 @@ class SendInviteUserEmailHandler
             'email'    => $event->invite->email,
             'subject'  => 'You have been invited.',
             'link'     => route('signup.invite', ['code' => $event->invite->code]),
-            'app_url'  => env('APP_URL'),
         ];
 
         $this->mailer->queue([

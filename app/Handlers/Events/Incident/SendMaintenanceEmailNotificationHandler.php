@@ -72,7 +72,6 @@ class SendMaintenanceEmailNotificationHandler
                 'scheduled_at'     => $data->scheduled_at_formatted,
                 'token'            => $subscriber->token,
                 'unsubscribe_link' => route('subscribe.unsubscribe', ['code' => $subscriber->verify_code]),
-                'app_url'          => env('APP_URL'),
             ];
 
             $this->mailer->queue([
