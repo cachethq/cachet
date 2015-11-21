@@ -26,10 +26,6 @@ class AppComposer
      */
     public function compose(View $view)
     {
-        $isEnabled = (bool) Setting::get('enable_subscribers', false);
-        $mailAddress = env('MAIL_ADDRESS', false);
-        $mailFrom = env('MAIL_NAME', false);
-
         $view->withAboutApp(Markdown::convertToHtml(Setting::get('app_about')));
         $view->withAppBanner(Setting::get('app_banner'));
         $view->withAppBannerType(Setting::get('app_banner_type'));
@@ -37,6 +33,5 @@ class AppComposer
         $view->withAppName(Setting::get('app_name'));
         $view->withAppUrl(Config::get('app.url'));
         $view->withShowSupport(Setting::get('show_support'));
-        $view->withSubscribersEnabled($isEnabled && $mailAddress && $mailFrom);
     }
 }
