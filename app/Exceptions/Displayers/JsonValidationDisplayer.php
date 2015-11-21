@@ -14,7 +14,7 @@ namespace CachetHQ\Cachet\Exceptions\Displayers;
 use AltThree\Validator\ValidationException;
 use Exception;
 use GrahamCampbell\Exceptions\Displayers\DisplayerInterface;
-use GrahamCampbell\Exceptions\Displayers\JsonDisplayere;
+use GrahamCampbell\Exceptions\Displayers\JsonDisplayer;
 
 class JsonValidationDisplayer extends JsonDisplayer implements DisplayerInterface
 {
