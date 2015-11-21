@@ -62,9 +62,22 @@ class SetupController extends Controller
             $this->keyGenerate();
         }
 
+        $supportedLanguages = Request::getLanguages();
+        $userLanguage = Config::get('app.locale');
+
+        foreach ($supportedLanguages as $language) {
+            $language = str_replace('_', '-', $language);
+
+            if (isset($this->langs[$language])) {
+                $userLanguage = $language;
+                break;
+            }
+        }
+
         return View::make('setup')
             ->withPageTitle(trans('setup.setup'))
             ->withCacheDrivers($this->cacheDrivers)
+            ->withUserLanguage($userLanguage)
             ->withAppUrl(Request::root());
     }
 

@@ -101,7 +101,7 @@
                             <select name="settings[app_locale]" class="form-control" required>
                                 <option value="">Select Language</option>
                                 @foreach($langs as $lang => $name)
-                                <option value="{{ $lang }}" @if(Input::old('settings.app_locale') == $lang) selected @endif>
+                                <option value="{{ $lang }}" @if(Input::old('settings.app_locale') == $lang || $user_language == $lang) selected @endif>
                                     {{ $name }}
                                 </option>
                                 @endforeach
