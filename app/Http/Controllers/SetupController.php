@@ -65,6 +65,8 @@ class SetupController extends Controller
         return View::make('setup')
             ->withPageTitle(trans('setup.setup'))
             ->withCacheDrivers($this->cacheDrivers)
+            ->withAppTimezone(Config::get('cachet.timezone'))
+            ->withAppLocale(getenv('APP_LOCALE'))
             ->withAppUrl(Request::root());
     }
 
