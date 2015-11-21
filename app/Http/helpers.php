@@ -10,6 +10,7 @@
  */
 
 use CachetHQ\Cachet\Facades\Setting;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Request;
 use Jenssegers\Date\Date;
 
@@ -61,8 +62,8 @@ if (!function_exists('subscribers_enabled')) {
     function subscribers_enabled()
     {
         $isEnabled = Setting::get('enable_subscribers', false);
-        $mailAddress = env('MAIL_ADDRESS', false);
-        $mailFrom = env('MAIL_NAME', false);
+        $mailAddress = Config::get('mail.from.address', false);
+        $mailFrom = Config::get('mail.from.name', false);
 
         return $isEnabled && $mailAddress && $mailFrom;
     }
