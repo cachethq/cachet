@@ -16,9 +16,8 @@ use CachetHQ\Cachet\Commands\Metric\RemoveMetricPointCommand;
 use CachetHQ\Cachet\Commands\Metric\UpdateMetricPointCommand;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\MetricPoint;
-use Exception;
-use Illuminate\Database\QueryException;
 use GrahamCampbell\Binput\Facades\Binput;
+use Illuminate\Database\QueryException;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
