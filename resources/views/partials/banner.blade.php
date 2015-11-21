@@ -4,7 +4,7 @@
         <div class="row app-banner-padding  @if(!Setting::get('style_fullwidth_header')) app-banner @endif">
             <div class="col-md-12 text-center">
                 <?php $bannerType = Setting::get('app_banner_type') ?>
-                @if(isset($app_domain))
+                @if($app_domain)
                     <a href="{{ $app_domain }}" class="links"><img src="data:{{ $bannerType }};base64, {{ $bannerImage}}" class="banner-image img-responsive"></a>
                 @else
                     <img src="data:{{ $bannerType }};base64, {{ $bannerImage}}" class="banner-image img-responsive">
