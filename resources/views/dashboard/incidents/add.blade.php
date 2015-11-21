@@ -107,12 +107,14 @@
                             <label>{{ trans('forms.incidents.incident_time') }}</label> <small class="text-muted">{{ trans('forms.optional') }}</small>
                             <input type="text" name="created_at" class="form-control" rel="datepicker-any">
                         </div>
+                        @if(subscribers_enabled())
                         <div class="checkbox">
                             <label>
                                 <input type="checkbox" name="notify" value="1" checked="{{ Input::old('incident.message', 'checked') }}">
                                 {{ trans('forms.incidents.notify_subscribers') }}
                             </label>
                         </div>
+                        @endif
                     </fieldset>
 
                     <div class="form-group">
