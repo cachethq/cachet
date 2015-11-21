@@ -254,10 +254,8 @@ class IncidentController extends Controller
                 ->withErrors($e->getMessageBag());
         }
 
-        $componentStatus = array_pull($incidentData, 'component_status');
-
         if ($incident->component) {
-            $incident->component->update(['status' => $componentStatus]);
+            $incident->component->update(['status' => Binput::get('component_status')]);
         }
 
         return Redirect::route('dashboard.incidents.edit', ['id' => $incident->id])
