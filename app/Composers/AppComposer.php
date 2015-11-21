@@ -28,6 +28,10 @@ class AppComposer
     public function compose(View $view)
     {
         $view->withAboutApp(Markdown::convertToHtml(Setting::get('app_about')));
+        $view->withAppAnalytics(Setting::get('app_analytics'));
+        $view->withAppAnalyticsGoSquared(Setting::get('app_analytics_gs'));
+        $view->withAppAnalyticsPiwikUrl(Setting::get('app_analytics_piwik_url'));
+        $view->withAppAnalyticsPiwikSiteId(Setting::get('app_analytics_piwik_siteid'));
         $view->withAppBanner(Setting::get('app_banner'));
         $view->withAppBannerType(Setting::get('app_banner_type'));
         $view->withAppDomain(Setting::get('app_domain'));
