@@ -210,7 +210,7 @@ class SetupController extends Controller
         if ($path === null || ($path !== null && file_exists($path))) {
             $path = base_path('.env');
             file_put_contents($path, str_replace(
-                getenv(strtoupper($key)), $value, file_get_contents($path)
+                env(strtoupper($key)), $value, file_get_contents($path)
             ));
         }
     }

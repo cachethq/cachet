@@ -63,10 +63,8 @@ class Repository
         }
 
         // fallback to getenv if allowed to
-        if ($checkEnv) {
-            if ($this->settings[$name] = env(strtoupper($name))) {
-                return $this->settings[$name];
-            }
+        if ($checkEnv && ($this->settings[$name] = env(strtoupper($name)))) {
+            return $this->settings[$name];
         }
 
         return $default;
