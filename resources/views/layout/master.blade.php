@@ -44,7 +44,7 @@
 
     @include('partials.crowdin')
 
-    @if($stylesheet = Setting::get('stylesheet'))
+    @if($stylesheet = $app_stylesheet)
     <style type="text/css">
     {!! $stylesheet !!}
     </style>

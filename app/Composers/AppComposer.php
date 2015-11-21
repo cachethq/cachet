@@ -31,6 +31,7 @@ class AppComposer
         $view->withAppBannerType(Setting::get('app_banner_type'));
         $view->withAppDomain(Setting::get('app_domain'));
         $view->withAppName(Setting::get('app_name'));
+        $view->withAppStylesheet(Setting::get('app_stylesheet'));
         $view->withAppUrl(Config::get('app.url'));
         $view->withShowSupport(Setting::get('show_support'));
     }
