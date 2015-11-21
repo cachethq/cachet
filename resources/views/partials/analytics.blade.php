@@ -27,10 +27,10 @@
   (function() {
     var u="//{{ $app_analytics_piwik_url }}";
     _paq.push(['setTrackerUrl', u+'/piwik.php']);
-    _paq.push(['setSiteId', {{ $app_analytics_piwik_siteid }}]);
+    _paq.push(['setSiteId', {{ $app_analytics_piwik_site_id }}]);
     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
     g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'/piwik.js'; s.parentNode.insertBefore(g,s);
   })();
 </script>
-<noscript><p><img src="//{{ $app_analytics_piwik_url }}/piwik.php?idsite={{ $app_analytics_piwik_siteid }}" style="border:0;" alt="" /></p></noscript>
+<noscript><p><img src="//{{ $app_analytics_piwik_url }}/piwik.php?idsite={{ $app_analytics_piwik_site_id }}" style="border:0;" alt="" /></p></noscript>
 @endif
