@@ -67,7 +67,7 @@
                                     <div class="checkbox">
                                         <label>
                                             <input type="hidden" value="0" name="style.fullwidth_header">
-                                            <input type="checkbox" value="1" name="style.fullwidth_header" {{ Setting::get('style_fullwidth_header') ? 'checked' : null }}>
+                                            <input type="checkbox" value="1" name="style.fullwidth_header" {{ $app_banner_style_full_width ? 'checked' : null }}>
                                             {{ trans('forms.settings.theme.fullwidth-banner') }}
                                         </label>
                                     </div>
