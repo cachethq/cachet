@@ -30,11 +30,11 @@ class JsonValidationDisplayer extends JsonDisplayer implements DisplayerInterfac
      */
     public function display(Exception $exception, $id, $code, array $headers)
     {
-        $info = $this->info->generate($exception, $id, $code);
+        $info = $this->info->generate($exception, $id, 400);
 
         $error = ['id' => $id, 'status' => $info['code'], 'title' => $info['name'], 'detail' => $info['detail'], 'meta' => ['details' => $exception->getMessageBag()->all()]];
 
-        return new JsonResponse(['errors' => [$error]], $code, array_merge($headers, ['Content-Type' => $this->contentType()]));
+        return new JsonResponse(['errors' => [$error]], 400, array_merge($headers, ['Content-Type' => $this->contentType()]));
     }
 
     /**
