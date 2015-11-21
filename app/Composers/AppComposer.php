@@ -13,6 +13,7 @@ namespace CachetHQ\Cachet\Composers;
 
 use CachetHQ\Cachet\Facades\Setting;
 use GrahamCampbell\Markdown\Facades\Markdown;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Contracts\View\View;
 
 class AppComposer
