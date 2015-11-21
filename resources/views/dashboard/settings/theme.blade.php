@@ -20,9 +20,9 @@
                             <div class="col-xs-12">
                                 <div class="form-group">
                                     <label>{{ trans('forms.settings.app-setup.banner') }}</label>
-                                    @if($banner = Setting::get('app_banner'))
+                                    @if($app_banner)
                                     <div id="banner-view" class="well">
-                                        <img src="data:{{ Setting::get('app_banner_type') }};base64,{{ $banner }}" style="max-width: 100%">
+                                        <img src="data:{{ $app_banner_type }};base64,{{ $app_banner }}" style="max-width: 100%">
                                         <br><br>
                                         <button id="remove-banner" class="btn btn-danger">{{ trans('forms.remove') }}</button>
                                     </div>

@@ -30,10 +30,12 @@ class AppComposer
         $mailAddress = env('MAIL_ADDRESS', false);
         $mailFrom = env('MAIL_NAME', false);
 
-        $view->withSubscribersEnabled($isEnabled && $mailAddress && $mailFrom);
-        $view->withAppName(Setting::get('app_name'));
         $view->withAboutApp(Markdown::convertToHtml(Setting::get('app_about')));
+        $view->withAppBanner(Setting::get('app_banner'));
+        $view->withAppBannerType(Setting::get('app_banner_type'));
         $view->withAppDomain(Setting::get('app_domain'));
+        $view->withAppName(Setting::get('app_name'));
         $view->withShowSupport(Setting::get('show_support'));
+        $view->withSubscribersEnabled($isEnabled && $mailAddress && $mailFrom);
     }
 }

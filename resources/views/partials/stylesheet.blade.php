@@ -2,7 +2,7 @@
 body.status-page {
     background-color: {{ $theme_background_color }};
     color: {{ $theme_text_color }};
-    @if(Setting::get('app_banner'))
+    @if($app_banner)
     padding-top: 0;
     @endif
 }

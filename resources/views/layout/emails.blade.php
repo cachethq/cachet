@@ -13,13 +13,13 @@
         <tr>
             <td align="center" valign="top" class="body-cell">
                 <table width="544" border="0" cellpadding="0" cellspacing="0" class="box">
-                    @if($banner_image = Setting::get('app_banner'))
+                    @if($app_banner)
                     <tr>
                         <td class="header">
                             <table width="100%" border="0" cellpadding="0" cellspacing="0">
                                 <tr>
                                     <td class="header-logo">
-                                       <a href="{{ $app_domain }}"><img src="data:{{ Setting::get('app_banner_type') }};base64, {{ $banner_image}}"></a>
+                                       <a href="{{ $app_domain }}"><img src="data:{{ $app_banner_type }};base64, {{ $app_banner }}"></a>
                                     </td>
                                 </tr>
                             </table>

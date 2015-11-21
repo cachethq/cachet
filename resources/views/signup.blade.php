@@ -7,14 +7,13 @@
 
     <div class="clearfix"></div>
 
-    @if($bannerImage = Setting::get('app_banner'))
+    @if($app_banner)
     <div class="row app-banner">
         <div class="col-md-12 text-center">
-            <?php $bannerType = Setting::get('app_banner_type') ?>
             @if($app_domain)
-            <a href="{{ $app_domain }}"><img src="data:{{ $bannerType }};base64, {{ $bannerImage}}" class="banner-image img-responsive"></a>
+            <a href="{{ $app_domain }}"><img src="data:{{ $app_banner_type }};base64, {{ $app_banner }}" class="banner-image img-responsive"></a>
             @else
-            <img src="data:{{ $bannerType }};base64, {{ $bannerImage}}" class="banner-image img-responsive">
+            <img src="data:{{ $app_banner_type }};base64, {{ $app_banner }}" class="banner-image img-responsive">
             @endif
         </div>
     </div>
