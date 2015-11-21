@@ -15,6 +15,7 @@ use AltThree\Validator\ValidationException;
 use Exception;
 use GrahamCampbell\Exceptions\Displayers\DisplayerInterface;
 use GrahamCampbell\Exceptions\Displayers\JsonDisplayer;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class JsonValidationDisplayer extends JsonDisplayer implements DisplayerInterface
 {
