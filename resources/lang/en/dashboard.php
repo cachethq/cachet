@@ -235,7 +235,7 @@ return [
 
     // Welcome modal
     'welcome' => [
-        'welcome' => 'Welcome to Cachet',
+        'welcome' => 'Welcome to your status page!',
         'message' => 'Your status page is almost ready! You might want to configure these extra settings',
         'close'   => 'Just go straight to my dashboard',
         'steps'   => [
