@@ -49,6 +49,6 @@ class JsonValidationDisplayer extends JsonDisplayer implements DisplayerInterfac
      */
     public function canDisplay(Exception $original, Exception $transformed, $code)
     {
-        return $exception instanceof ValidationException;
+        return $original instanceof ValidationException || $transformed instanceof ValidationException;
     }
 }
