@@ -17,6 +17,7 @@ use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\MetricPoint;
 use CachetHQ\Cachet\Models\Setting;
+use CachetHQ\Cachet\Models\Subscriber;
 use CachetHQ\Cachet\Models\User;
 use DateInterval;
 use DateTime;
@@ -64,6 +65,7 @@ class DemoSeederCommand extends Command
         $this->seedMetricPoints();
         $this->seedMetrics();
         $this->seedSettings();
+        $this->seedSubscribers();
         $this->seedUsers();
 
         $this->info('Database seeded with demo data successfully!');
@@ -291,6 +293,16 @@ class DemoSeederCommand extends Command
         foreach ($defaultSettings as $setting) {
             Setting::create($setting);
         }
+    }
+
+    /**
+     * Seed the subscribers.
+     *
+     * @return void
+     */
+    protected function seedSubscribers()
+    {
+        Subscriber::truncate();
     }
 
     /**
