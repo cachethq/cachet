@@ -16,6 +16,7 @@ use CachetHQ\Cachet\Commands\Metric\RemoveMetricCommand;
 use CachetHQ\Cachet\Commands\Metric\UpdateMetricCommand;
 use CachetHQ\Cachet\Models\Metric;
 use Exception;
+use Illuminate\Database\QueryException;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Http\Request;
@@ -80,7 +81,7 @@ class MetricController extends AbstractApiController
                 Binput::get('display_chart'),
                 Binput::get('places', 2)
             ));
-        } catch (Exception $e) {
+        } catch (QueryException $e) {
             throw new BadRequestHttpException();
         }
 
@@ -107,7 +108,7 @@ class MetricController extends AbstractApiController
                 Binput::get('display_chart'),
                 Binput::get('places', 2)
             ));
-        } catch (Exception $e) {
+        } catch (QueryException $e) {
             throw new BadRequestHttpException();
         }
 

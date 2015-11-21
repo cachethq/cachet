@@ -17,6 +17,7 @@ use CachetHQ\Cachet\Commands\Metric\UpdateMetricPointCommand;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\MetricPoint;
 use Exception;
+use Illuminate\Database\QueryException;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
@@ -53,7 +54,7 @@ class MetricPointController extends AbstractApiController
                 Binput::get('value'),
                 Binput::get('timestamp'))
             );
-        } catch (Exception $e) {
+        } catch (QueryException $e) {
             throw new BadRequestHttpException();
         }
 

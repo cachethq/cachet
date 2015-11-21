@@ -17,6 +17,7 @@ use CachetHQ\Cachet\Commands\Component\UpdateComponentCommand;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Tag;
 use Exception;
+use Illuminate\Database\QueryException;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -75,7 +76,7 @@ class ComponentController extends AbstractApiController
                 Binput::get('group_id'),
                 (bool) Binput::get('enabled', true)
             ));
-        } catch (Exception $e) {
+        } catch (QueryException $e) {
             throw new BadRequestHttpException();
         }
 
@@ -116,7 +117,7 @@ class ComponentController extends AbstractApiController
                 Binput::get('group_id'),
                 (bool) Binput::get('enabled', true)
             ));
-        } catch (Exception $e) {
+        } catch (QueryException $e) {
             throw new BadRequestHttpException();
         }
 
