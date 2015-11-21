@@ -62,6 +62,6 @@ class Invite extends Model
      */
     public function claimed()
     {
-        return !is_null($this->claimed_at);
+        return $this->claimed_at !== null;
     }
 }

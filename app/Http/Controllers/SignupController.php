@@ -38,7 +38,7 @@ class SignupController extends Controller
      */
     public function getSignup($code = null)
     {
-        if (is_null($code)) {
+        if ($code !== null) {
             throw new NotFoundHttpException();
         }
 
@@ -65,7 +65,7 @@ class SignupController extends Controller
      */
     public function postSignup($code = null)
     {
-        if (is_null($code)) {
+        if ($code !== null) {
             throw new NotFoundHttpException();
         }
 

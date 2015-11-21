@@ -69,7 +69,7 @@ class Subscriber extends Model implements HasPresenter
      */
     public function verified()
     {
-        return !is_null($this->verified_at);
+        return $this->verified_at !== null;
     }
 
     /**

@@ -71,7 +71,7 @@ class SubscribeController extends Controller
      */
     public function getVerify($code = null)
     {
-        if (is_null($code)) {
+        if ($code !== null) {
             throw new NotFoundHttpException();
         }
 
@@ -96,7 +96,7 @@ class SubscribeController extends Controller
      */
     public function getUnsubscribe($code = null)
     {
-        if (is_null($code)) {
+        if ($code !== null) {
             throw new NotFoundHttpException();
         }
 
