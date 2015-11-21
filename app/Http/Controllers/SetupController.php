@@ -58,7 +58,7 @@ class SetupController extends Controller
     public function getIndex()
     {
         // If we've copied the .env.example file, then we should try and reset it.
-        if (getenv('APP_KEY') === 'SomeRandomString') {
+        if (strlen(Config::get('app.key')) !== 32) {
             $this->keyGenerate();
         }
 
