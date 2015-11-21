@@ -37,7 +37,7 @@
                             </form>
                         </div>
                         @empty
-                        <div class="list-group-item text-danger">{{ trans('dashboard.components.add.message') }}</div>
+                        <div class="list-group-item"><a href="{{ route('dashboard.components.add') }}">{{ trans('dashboard.components.add.message') }}</a></div>
                         @endforelse
                     </div>
                 </div>
