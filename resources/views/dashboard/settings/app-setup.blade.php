@@ -29,7 +29,7 @@
                                 <div class="col-xs-12">
                                     <div class="form-group">
                                         <label>{{ trans('forms.settings.app-setup.site-url') }}</label>
-                                        <input type="text" class="form-control" name="app_domain" value="{{ Setting::get('app_domain') }}" required>
+                                        <input type="text" class="form-control" name="app_domain" value="{{ $app_domain }}" required>
                                     </div>
                                 </div>
                             </div>

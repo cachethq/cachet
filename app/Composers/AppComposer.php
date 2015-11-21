@@ -33,6 +33,7 @@ class AppComposer
         $view->withSubscribersEnabled($isEnabled && $mailAddress && $mailFrom);
         $view->withAppName(Setting::get('app_name'));
         $view->withAboutApp(Markdown::convertToHtml(Setting::get('app_about')));
+        $view->withAppDomain(Setting::get('app_domain'));
         $view->withShowSupport(Setting::get('show_support'));
     }
 }
