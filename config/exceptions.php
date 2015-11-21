@@ -45,10 +45,10 @@ return [
     */
 
     'displayers' => [
+        'CachetHQ\Cachet\Exceptions\Displayers\JsonValidationDisplayer',
         'CachetHQ\Cachet\Exceptions\Displayers\RedirectDisplayer',
         'GrahamCampbell\Exceptions\Displayers\DebugDisplayer',
         'GrahamCampbell\Exceptions\Displayers\HtmlDisplayer',
-        'GrahamCampbell\Exceptions\Displayers\JsonValidationDisplayer',
         'GrahamCampbell\Exceptions\Displayers\JsonDisplayer',
         'GrahamCampbell\Exceptions\Displayers\JsonApiDisplayer',
     ],
