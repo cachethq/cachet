@@ -27,21 +27,35 @@ class UpdateComponentCommandHandler
     public function handle(UpdateComponentCommand $command)
     {
         $component = $command->component;
-        $componentData = array_filter([
-            'name'        => $command->name,
-            'description' => $command->description,
-            'link'        => $command->link,
-            'status'      => $command->status,
-            'order'       => $command->order,
-            'group_id'    => $command->group_id,
-        ]);
 
-        $componentData['enabled'] = $command->enabled;
-
-        $component->update($componentData);
+        $component->update($this->filter($command));
 
         event(new ComponentWasUpdatedEvent($component));
 
         return $component;
+    }
+
+    /**
+     * Filter the command data.
+     *
+     * @param \CachetHQ\Cachet\Commands\Incident\UpdateComponentCommand $command
+     *
+     * @return array
+     */
+    protected function filter(UpdateComponentCommand $command)
+    {
+        $params = [
+            'name'        => $command->name,
+            'description' => $command->description,
+            'link'        => $command->link,
+            'status'      => $command->status,
+            'enabled'     => $command->enabled,
+            'order'       => $command->order,
+            'group_id'    => $command->group_id,
+        ];
+
+        return array_filter($params, function ($val) {
+            return $val !== null;
+        });
     }
 }
