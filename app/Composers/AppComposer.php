@@ -33,8 +33,10 @@ class AppComposer
         $view->withAppAnalyticsPiwikUrl(Setting::get('app_analytics_piwik_url'));
         $view->withAppAnalyticsPiwikSiteId(Setting::get('app_analytics_piwik_siteid'));
         $view->withAppBanner(Setting::get('app_banner'));
+        $view->withAppBannerStyleFullWidth(Setting::get('style_fullwidth_header'));
         $view->withAppBannerType(Setting::get('app_banner_type'));
         $view->withAppDomain(Setting::get('app_domain'));
+        $view->withAppGraphs(Setting::get('display_graphs'));
         $view->withAppLocale(Setting::get('app_locale'));
         $view->withAppName(Setting::get('app_name'));
         $view->withAppStylesheet(Setting::get('app_stylesheet'));

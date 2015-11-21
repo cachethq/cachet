@@ -67,7 +67,7 @@
                                     <div class="checkbox">
                                         <label>
                                             <input type="hidden" value="0" name="display_graphs">
-                                            <input type="checkbox" value="1" name="display_graphs" {{ Setting::get('display_graphs') ? 'checked' : null }}>
+                                            <input type="checkbox" value="1" name="display_graphs" {{ $app_graphs ? 'checked' : null }}>
                                             {{ trans('forms.settings.app-setup.display-graphs') }}
                                         </label>
                                     </div>

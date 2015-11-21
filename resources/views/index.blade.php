@@ -17,7 +17,7 @@
 </div>
 @endif
 
-@if($display_metrics && Setting::get('display_graphs'))
+@if($display_metrics && $app_graphs)
 <div class="section-metrics">
     @include('partials.metrics')
 </div>
