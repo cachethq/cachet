@@ -21,7 +21,7 @@
                                 <div class="col-xs-12">
                                     <div class="form-group">
                                         <label>{{ trans('forms.settings.app-setup.site-name') }}</label>
-                                        <input type="text" class="form-control" name="app_name" value="{{ Setting::get('app_name') }}" required>
+                                        <input type="text" class="form-control" name="app_name" value="{{ $app_name }}" required>
                                     </div>
                                 </div>
                             </div>
@@ -38,7 +38,7 @@
                                     <div class="form-group">
                                         <label>{{ trans('forms.settings.app-setup.about-this-page') }}</label>
                                         <div class='markdown-control'>
-                                            <textarea name="app_about" class="form-control autosize" rows="4">{{ Setting::get('app_about') }}</textarea>
+                                            <textarea name="app_about" class="form-control autosize" rows="4">{{ $app_about }}</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -78,7 +78,7 @@
                                     <div class="checkbox">
                                         <label>
                                             <input type="hidden" value="0" name="show_support">
-                                            <input type="checkbox" value="1" name="show_support" {{ Setting::get('show_support') ? 'checked' : null }}>
+                                            <input type="checkbox" value="1" name="show_support" {{ $show_support ? 'checked' : null }}>
                                             {{ trans('setup.show_support') }}
                                         </label>
                                     </div>

@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <link rel="alternate" type="application/atom+xml" href="/atom" title="{{ isset($page_title) ?: Setting::get('app_name') }} - Atom Feed">
-    <link rel="alternate" type="application/rss+xml" href="/rss" title="{{ isset($page_title) ?: Setting::get('app_name') }} - RSS Feed">
+    <link rel="alternate" type="application/atom+xml" href="/atom" title="{{ isset($page_title) ?: $app_name }} - Atom Feed">
+    <link rel="alternate" type="application/rss+xml" href="/rss" title="{{ isset($page_title) ?: $app_name }} - RSS Feed">
 
     <link rel="icon" type="image/png" href="/favicon.ico">
     <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
@@ -19,7 +19,7 @@
     <!-- Mobile IE allows us to activate ClearType technology for smoothing fonts for easy reading -->
     <meta http-equiv="cleartype" content="on">
 
-    <title>{{ isset($page_title) ?: Setting::get('app_name') }}</title>
+    <title>{{ isset($page_title) ?: $app_name }}</title>
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="{{ elixir('dist/css/all.css') }}">

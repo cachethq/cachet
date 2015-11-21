@@ -1,5 +1,5 @@
-{{ trans('cachet.subscriber.email.verify.text', ['app_name' => Setting::get('app_name'), 'link' => $link]) }}
+{{ trans('cachet.subscriber.email.verify.text', ['app_name' => $app_name, 'link' => $link]) }}
 
-@if(Setting::get('show_support'))
-{!! trans('cachet.powered_by', ['app' => Setting::get('app_name')]) !!}
+@if($show_support)
+{!! trans('cachet.powered_by', ['app' => $app_name]) !!}
 @endif

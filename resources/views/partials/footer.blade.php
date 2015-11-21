@@ -2,8 +2,8 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-5">
-                @if(Setting::get('show_support'))
-                <p>{!! trans('cachet.powered_by', ['app' => Setting::get('app_name')]) !!}</p>
+                @if($show_support)
+                <p>{!! trans('cachet.powered_by', ['app' => $app_name]) !!}</p>
                 @endif
             </div>
             <div class="col-sm-7">

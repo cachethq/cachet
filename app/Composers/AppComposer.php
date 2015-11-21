@@ -31,6 +31,8 @@ class AppComposer
         $mailFrom = env('MAIL_NAME', false);
 
         $view->withSubscribersEnabled($isEnabled && $mailAddress && $mailFrom);
+        $view->withAppName(Setting::get('app_name'));
         $view->withAboutApp(Markdown::convertToHtml(Setting::get('app_about')));
+        $view->withShowSupport(Setting::get('show_support'));
     }
 }
