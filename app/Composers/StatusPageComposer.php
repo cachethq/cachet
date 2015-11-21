@@ -64,7 +64,6 @@ class StatusPageComposer
         $view->with($withData)
             ->withComponentGroups($componentGroups)
             ->withUngroupedComponents($ungroupedComponents)
-            ->withScheduledMaintenance($scheduledMaintenance)
-            ->withPageTitle(Setting::get('app_name'));
+            ->withScheduledMaintenance($scheduledMaintenance);
     }
 }

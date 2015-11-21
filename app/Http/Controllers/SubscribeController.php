@@ -38,7 +38,6 @@ class SubscribeController extends Controller
     public function showSubscribe()
     {
         return View::make('subscribe')
-            ->withPageTitle(Setting::get('app_name'))
             ->withAboutApp(Markdown::convertToHtml(Setting::get('app_about')));
     }
 

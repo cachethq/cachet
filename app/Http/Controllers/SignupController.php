@@ -49,8 +49,6 @@ class SignupController extends Controller
         }
 
         return View::make('signup')
-            ->withPageTitle(Setting::get('app_name'))
-            ->withAboutApp(Markdown::convertToHtml(Setting::get('app_about')))
             ->withCode($invite->code)
             ->withUsername(Binput::old('username'))
             ->withEmail(Binput::old('emai', $invite->email));

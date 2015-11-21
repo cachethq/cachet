@@ -1,5 +1,7 @@
 @extends('layout.clean')
 
+@section('pageTitle', trans('setup.setup'))
+
 @section('content')
 <div class="setup-page">
     <div class="text-center">
