@@ -44,7 +44,7 @@ class UpdateComponentCommandHandler
      */
     protected function filter(UpdateComponentCommand $command)
     {
-        return array_filter([
+        $params = [
             'name'        => $command->name,
             'description' => $command->description,
             'link'        => $command->link,
@@ -52,6 +52,10 @@ class UpdateComponentCommandHandler
             'enabled'     => $command->enabled,
             'order'       => $command->order,
             'group_id'    => $command->group_id,
-        ], 'is_null');
+        ];
+
+        return array_filter($params, function ($val) {
+            return $val !== null;
+        });
     }
 }

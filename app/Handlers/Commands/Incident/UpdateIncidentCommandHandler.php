@@ -88,7 +88,7 @@ class UpdateIncidentCommandHandler
      */
     protected function filter(UpdateIncidentCommand $command)
     {
-        return array_filter([
+        $params = [
             'name'             => $command->name,
             'status'           => $command->status,
             'message'          => $command->message,
@@ -96,7 +96,11 @@ class UpdateIncidentCommandHandler
             'component_id'     => $command->component_id,
             'component_status' => $command->component_status,
             'notify'           => $command->notify,
-        ], 'is_null');
+        ];
+
+        return array_filter($params, function ($val) {
+            return $val !== null;
+        });
     }
 
     /**

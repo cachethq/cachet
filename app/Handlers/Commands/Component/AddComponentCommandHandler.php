@@ -42,7 +42,7 @@ class AddComponentCommandHandler
      */
     protected function filter(AddComponentCommand $command)
     {
-        return array_filter([
+        $params = [
             'name'        => $command->name,
             'description' => $command->description,
             'link'        => $command->link,
@@ -50,6 +50,10 @@ class AddComponentCommandHandler
             'enabled'     => $command->enabled,
             'order'       => $command->order,
             'group_id'    => $command->group_id,
-        ], 'is_null');
+        ];
+
+        return array_filter($params, function ($val) {
+            return $val !== null;
+        });
     }
 }

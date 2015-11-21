@@ -44,7 +44,7 @@ class UpdateMetricCommandHandler
      */
     protected function filter(UpdateMetricCommand $command)
     {
-        return array_filter([
+        $params = [
             'name'          => $command->name,
             'suffix'        => $command->suffix,
             'description'   => $command->description,
@@ -52,6 +52,10 @@ class UpdateMetricCommandHandler
             'calc_type'     => $command->calc_type,
             'display_chart' => $command->display_chart,
             'places'        => $command->places,
-        ], 'is_null');
+        ];
+
+        return array_filter($params, function ($val) {
+            return $val !== null;
+        });
     }
 }
