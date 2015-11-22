@@ -11,18 +11,6 @@
 
 use Carbon\Carbon;
 
-$factory->define('CachetHQ\Cachet\Models\User', function ($faker) {
-    return [
-        'username'       => $faker->userName,
-        'email'          => $faker->email,
-        'password'       => str_random(10),
-        'remember_token' => str_random(10),
-        'api_key'        => str_random(20),
-        'active'         => true,
-        'level'          => 1,
-    ];
-});
-
 $factory->define('CachetHQ\Cachet\Models\Component', function ($faker) {
     return [
         'name'        => $faker->sentence(),
@@ -46,6 +34,17 @@ $factory->define('CachetHQ\Cachet\Models\Incident', function ($faker) {
         'message' => $faker->paragraph(),
         'status'  => 1,
         'visible' => 1,
+    ];
+});
+
+$factory->define('CachetHQ\Cachet\Models\IncidentTemplate', function ($faker) {
+    return [
+        'name'     => 'Test Template',
+        'slug'     => 'test-template',
+        'template' => <<<ETEMPLATE
+Name: {{ name }},
+Message: {{ message }}
+ETEMPLATE
     ];
 });
 
@@ -75,13 +74,14 @@ $factory->define('CachetHQ\Cachet\Models\Subscriber', function ($faker) {
     ];
 });
 
-$factory->define('CachetHQ\Cachet\Models\IncidentTemplate', function ($faker) {
+$factory->define('CachetHQ\Cachet\Models\User', function ($faker) {
     return [
-        'name'     => 'Test Template',
-        'slug'     => 'test-template',
-        'template' => <<<ETEMPLATE
-Name: {{ name }},
-Message: {{ message }}
-ETEMPLATE
+        'username'       => $faker->userName,
+        'email'          => $faker->email,
+        'password'       => str_random(10),
+        'remember_token' => str_random(10),
+        'api_key'        => str_random(20),
+        'active'         => true,
+        'level'          => 1,
     ];
 });
