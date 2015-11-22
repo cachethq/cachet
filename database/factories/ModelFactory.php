@@ -9,7 +9,6 @@
  * file that was distributed with this source code.
  */
 
-use Carbon\Carbon;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Incident;
@@ -18,6 +17,7 @@ use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\MetricPoint;
 use CachetHQ\Cachet\Models\Subscriber;
 use CachetHQ\Cachet\Models\User;
+use Carbon\Carbon;
 
 $factory->define(Component::class, function ($faker) {
     return [
