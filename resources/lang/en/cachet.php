@@ -22,11 +22,11 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => 'No Incidents Reported.',
+        'none'          => 'No incidents reported',
         'past'          => 'Past Incidents',
         'previous_week' => 'Previous Week',
         'next_week'     => 'Next Week',
-        'none'          => 'Nothing to report.',
+        'none'          => 'Nothing to report',
         'scheduled'     => 'Scheduled Maintenance',
         'scheduled_at'  => ', scheduled :timestamp',
         'status'        => [
@@ -60,7 +60,7 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe' => 'Subscribe to Get the Most Recent Updates',
+        'subscribe' => 'Subscribe to get the most recent updates',
         'button'    => 'Subscribe',
         'email'     => [
             'subscribe'    => 'Subscribe to email updates.',
