@@ -56,6 +56,8 @@ class ReportMaintenanceCommandHandler
             'visible'      => 1,
         ]);
 
+        $maintenanceEvent->notify = (bool) $command->notify;
+
         event(new MaintenanceWasScheduledEvent($maintenanceEvent));
 
         return $maintenanceEvent;
