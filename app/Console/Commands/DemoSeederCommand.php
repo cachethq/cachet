@@ -210,7 +210,7 @@ class DemoSeederCommand extends Command
 
             MetricPoint::create([
                 'metric_id'  => 1,
-                'value'      => rand(1, 10),
+                'value'      => random_int(1, 10),
                 'created_at' => $metricTime,
                 'updated_at' => $metricTime,
             ]);

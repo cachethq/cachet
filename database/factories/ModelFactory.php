@@ -62,7 +62,7 @@ $factory->define('CachetHQ\Cachet\Models\Metric', function ($faker) {
 $factory->define('CachetHQ\Cachet\Models\MetricPoint', function ($faker) {
     return [
         'metric_id' => 1,
-        'value'     => rand(1, 100),
+        'value'     => random_int(1, 100),
     ];
 });
 
