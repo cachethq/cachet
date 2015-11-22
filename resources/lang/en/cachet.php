@@ -40,8 +40,8 @@ return [
 
     // Service Status
     'service' => [
-        'good' => 'All Systems Are Functional',
-        'bad'  => 'Some Systems Are Experiencing Issues',
+        'good' => 'All systems are functional',
+        'bad'  => 'Some systems are experiencing issues',
     ],
 
     'api' => [
