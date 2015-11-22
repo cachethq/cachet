@@ -982,20 +982,20 @@
         },
         {
             "name": "filp/whoops",
-            "version": "1.1.8",
+            "version": "1.1.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filp/whoops.git",
-                "reference": "df6f140c89876f687c98c8af4f07ae09cf6bdc2e"
+                "reference": "c9abab430c5a019724425b57093fc4c853cf716a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filp/whoops/zipball/df6f140c89876f687c98c8af4f07ae09cf6bdc2e",
-                "reference": "df6f140c89876f687c98c8af4f07ae09cf6bdc2e",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/c9abab430c5a019724425b57093fc4c853cf716a",
+                "reference": "c9abab430c5a019724425b57093fc4c853cf716a",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0 <6"
+                "php": ">=5.3.0"
             },
             "require-dev": {
                 "mockery/mockery": "0.9.*"
@@ -1036,7 +1036,7 @@
                 "whoops",
                 "zf2"
             ],
-            "time": "2015-11-22 18:42:52"
+            "time": "2015-11-22 19:20:15"
         },
         {
             "name": "graham-campbell/binput",
