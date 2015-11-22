@@ -41,10 +41,7 @@ $factory->define('CachetHQ\Cachet\Models\IncidentTemplate', function ($faker) {
     return [
         'name'     => 'Test Template',
         'slug'     => 'test-template',
-        'template' => <<<ETEMPLATE
-Name: {{ name }},
-Message: {{ message }}
-ETEMPLATE
+        'template' => "Name: {{ name }},\nMessage: {{ message }}",
     ];
 });
 
