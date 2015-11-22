@@ -10,8 +10,16 @@
  */
 
 use Carbon\Carbon;
+use CachetHQ\Cachet\Models\Component;
+use CachetHQ\Cachet\Models\ComponentGroup;
+use CachetHQ\Cachet\Models\Incident;
+use CachetHQ\Cachet\Models\IncidentTemplate;
+use CachetHQ\Cachet\Models\Metric;
+use CachetHQ\Cachet\Models\MetricPoint;
+use CachetHQ\Cachet\Models\Subscriber;
+use CachetHQ\Cachet\Models\User;
 
-$factory->define('CachetHQ\Cachet\Models\Component', function ($faker) {
+$factory->define(Component::class, function ($faker) {
     return [
         'name'        => $faker->sentence(),
         'description' => $faker->paragraph(),
@@ -21,14 +29,14 @@ $factory->define('CachetHQ\Cachet\Models\Component', function ($faker) {
     ];
 });
 
-$factory->define('CachetHQ\Cachet\Models\ComponentGroup', function ($faker) {
+$factory->define(ComponentGroup::class, function ($faker) {
     return [
         'name'  => $faker->words(2, true),
         'order' => 0,
     ];
 });
 
-$factory->define('CachetHQ\Cachet\Models\Incident', function ($faker) {
+$factory->define(Incident::class, function ($faker) {
     return [
         'name'    => $faker->sentence(),
         'message' => $faker->paragraph(),
@@ -37,7 +45,7 @@ $factory->define('CachetHQ\Cachet\Models\Incident', function ($faker) {
     ];
 });
 
-$factory->define('CachetHQ\Cachet\Models\IncidentTemplate', function ($faker) {
+$factory->define(IncidentTemplate::class, function ($faker) {
     return [
         'name'     => 'Test Template',
         'slug'     => 'test-template',
@@ -45,7 +53,7 @@ $factory->define('CachetHQ\Cachet\Models\IncidentTemplate', function ($faker) {
     ];
 });
 
-$factory->define('CachetHQ\Cachet\Models\Metric', function ($faker) {
+$factory->define(Metric::class, function ($faker) {
     return [
         'name'          => $faker->sentence(),
         'suffix'        => $faker->word(),
@@ -56,14 +64,14 @@ $factory->define('CachetHQ\Cachet\Models\Metric', function ($faker) {
     ];
 });
 
-$factory->define('CachetHQ\Cachet\Models\MetricPoint', function ($faker) {
+$factory->define(MetricPoint::class, function ($faker) {
     return [
         'metric_id' => 1,
         'value'     => random_int(1, 100),
     ];
 });
 
-$factory->define('CachetHQ\Cachet\Models\Subscriber', function ($faker) {
+$factory->define(Subscriber::class, function ($faker) {
     return [
         'email'       => $faker->email,
         'verify_code' => 'Mqr80r2wJtxHCW5Ep4azkldFfIwHhw98M9HF04dn0z',
@@ -71,7 +79,7 @@ $factory->define('CachetHQ\Cachet\Models\Subscriber', function ($faker) {
     ];
 });
 
-$factory->define('CachetHQ\Cachet\Models\User', function ($faker) {
+$factory->define(User::class, function ($faker) {
     return [
         'username'       => $faker->userName,
         'email'          => $faker->email,
