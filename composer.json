@@ -30,7 +30,7 @@
         "graham-campbell/core": "^4.2",
         "graham-campbell/markdown": "^5.3",
         "graham-campbell/throttle": "^5.1",
-        "graham-campbell/exceptions": "^5.1",
+        "graham-campbell/exceptions": "^6.0",
         "guzzlehttp/guzzle": "^6.1",
         "jenssegers/date": "^3.0",
         "mccool/laravel-auto-presenter": "^4.2",
@@ -39,6 +39,7 @@
         "roumen/feed": "^2.9"
     },
     "require-dev": {
+        "filp/whoops": "^1.1",
         "fzaninotto/faker": "^1.5",
         "graham-campbell/testbench-core": "^1.1",
         "mockery/mockery": "^0.9.4",

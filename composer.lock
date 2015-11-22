@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "93ed9ed928259f27278499615845313b",
-    "content-hash": "199a0d8961fdc1d0414049bf215979c3",
+    "hash": "52036c1c441764199c64feae792eaf43",
+    "content-hash": "739bbddba8a0a28e8e4a1ec8a0e47e44",
     "packages": [
         {
             "name": "alt-three/emoji",
@@ -981,64 +981,6 @@
             "time": "2015-02-04 20:24:17"
         },
         {
-            "name": "filp/whoops",
-            "version": "1.1.9",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/filp/whoops.git",
-                "reference": "c9abab430c5a019724425b57093fc4c853cf716a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/filp/whoops/zipball/c9abab430c5a019724425b57093fc4c853cf716a",
-                "reference": "c9abab430c5a019724425b57093fc4c853cf716a",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "0.9.*"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.2-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Whoops": "src/"
-                },
-                "classmap": [
-                    "src/deprecated"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Filipe Dobreira",
-                    "homepage": "https://github.com/filp",
-                    "role": "Developer"
-                }
-            ],
-            "description": "php error handling for cool kids",
-            "homepage": "https://github.com/filp/whoops",
-            "keywords": [
-                "error",
-                "exception",
-                "handling",
-                "library",
-                "silex-provider",
-                "whoops",
-                "zf2"
-            ],
-            "time": "2015-11-22 19:20:15"
-        },
-        {
             "name": "graham-campbell/binput",
             "version": "v3.3.0",
             "source": {
@@ -1163,20 +1105,19 @@
         },
         {
             "name": "graham-campbell/exceptions",
-            "version": "v5.1.0",
+            "version": "v6.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Exceptions.git",
-                "reference": "6dd2bb9801eb8e45e7302a45e022d9294e2b62a3"
+                "reference": "abd3ea87415e2420576ace02969798222a114752"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Exceptions/zipball/6dd2bb9801eb8e45e7302a45e022d9294e2b62a3",
-                "reference": "6dd2bb9801eb8e45e7302a45e022d9294e2b62a3",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Exceptions/zipball/abd3ea87415e2420576ace02969798222a114752",
+                "reference": "abd3ea87415e2420576ace02969798222a114752",
                 "shasum": ""
             },
             "require": {
-                "filp/whoops": "1.1.*",
                 "illuminate/contracts": "5.1.*|5.2.*",
                 "illuminate/support": "5.1.*|5.2.*",
                 "paragonie/random_compat": "^1.1",
@@ -1186,14 +1127,18 @@
                 "symfony/http-foundation": "^2.7|^3.0"
             },
             "require-dev": {
+                "filp/whoops": "^1.1",
                 "graham-campbell/testbench": "^3.1",
                 "mockery/mockery": "^0.9.4",
                 "phpunit/phpunit": "^4.8|^5.0"
             },
+            "suggest": {
+                "filp/whoops": "Enables use of the debug displayer."
+            },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "5.1-dev"
+                    "dev-master": "6.0-dev"
                 }
             },
             "autoload": {
@@ -1211,7 +1156,7 @@
                     "email": "graham@alt-three.com"
                 }
             ],
-            "description": "Provides Pretty Error Pages For Both Development And Production",
+            "description": "Provides A Powerful Error Response System For Both Development And Production",
             "keywords": [
                 "Graham Campbell",
                 "GrahamCampbell",
@@ -1225,7 +1170,7 @@
                 "laravel",
                 "whoops"
             ],
-            "time": "2015-11-14 11:53:08"
+            "time": "2015-11-22 19:54:20"
         },
         {
             "name": "graham-campbell/markdown",
@@ -3652,6 +3597,64 @@
                 "instantiate"
             ],
             "time": "2015-06-14 21:17:01"
+        },
+        {
+            "name": "filp/whoops",
+            "version": "1.1.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/filp/whoops.git",
+                "reference": "c9abab430c5a019724425b57093fc4c853cf716a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/c9abab430c5a019724425b57093fc4c853cf716a",
+                "reference": "c9abab430c5a019724425b57093fc4c853cf716a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.9.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Whoops": "src/"
+                },
+                "classmap": [
+                    "src/deprecated"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Filipe Dobreira",
+                    "homepage": "https://github.com/filp",
+                    "role": "Developer"
+                }
+            ],
+            "description": "php error handling for cool kids",
+            "homepage": "https://github.com/filp/whoops",
+            "keywords": [
+                "error",
+                "exception",
+                "handling",
+                "library",
+                "silex-provider",
+                "whoops",
+                "zf2"
+            ],
+            "time": "2015-11-22 19:20:15"
         },
         {
             "name": "fzaninotto/faker",
