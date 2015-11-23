@@ -24,7 +24,7 @@ abstract class AbstractPresenter extends BaseLaravelAutoPresenter implements Arr
     protected $setting;
 
     /**
-     * Create a incident presenter instance.
+     * Create an abstract presenter instance.
      *
      * @param \Illuminate\Database\Eloquent\Model $resource
      *
