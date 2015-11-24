@@ -19,7 +19,7 @@
                             <table width="100%" border="0" cellpadding="0" cellspacing="0">
                                 <tr>
                                     <td class="header-logo">
-                                       <a href="{{ $app_domain }}"><img src="data:{{ $app_banner_type }};base64, {{ $app_banner }}"></a>
+                                       <a href="{{ $app_domain }}"><img src="{{ $message->embedData(base64_decode($app_banner), $app_name) }}"></a>
                                     </td>
                                 </tr>
                             </table>
