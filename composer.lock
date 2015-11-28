@@ -1611,16 +1611,16 @@
         },
         {
             "name": "jenssegers/date",
-            "version": "v3.0.10",
+            "version": "v3.0.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jenssegers/date.git",
-                "reference": "467278308153eb27048e471213366193587d87a0"
+                "reference": "2e423f6327cbf72a41fd6bac094a788bc524a863"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jenssegers/date/zipball/467278308153eb27048e471213366193587d87a0",
-                "reference": "467278308153eb27048e471213366193587d87a0",
+                "url": "https://api.github.com/repos/jenssegers/date/zipball/2e423f6327cbf72a41fd6bac094a788bc524a863",
+                "reference": "2e423f6327cbf72a41fd6bac094a788bc524a863",
                 "shasum": ""
             },
             "require": {
@@ -1663,7 +1663,7 @@
                 "time",
                 "translation"
             ],
-            "time": "2015-09-24 17:36:06"
+            "time": "2015-10-26 15:04:00"
         },
         {
             "name": "jeremeamia/SuperClosure",
