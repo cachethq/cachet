@@ -363,6 +363,19 @@ $(function() {
 
     // Password strength
     $('.password-strength').strengthify();
+
+    // Check for updates.
+    if ($('#update-alert').length > 0) {
+        $.ajax({
+            async: true,
+            dataType: 'json',
+            url: '/dashboard/api/system/version',
+        }).done(function (result) {
+            if (result.is_latest == false) {
+                $('#update-alert').removeClass('hidden');
+            }
+        });
+    }
 });
 
 function askConfirmation(callback) {

@@ -23,6 +23,10 @@ return [
     |
     */
 
+   'github' => [
+        'token' => env('GITHUB_TOKEN'),
+    ],
+
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),
         'secret' => env('MAILGUN_SECRET'),

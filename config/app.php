@@ -171,6 +171,7 @@ return [
         'CachetHQ\Cachet\Providers\ComposerServiceProvider',
         'CachetHQ\Cachet\Providers\ConfigServiceProvider',
         'CachetHQ\Cachet\Providers\EventServiceProvider',
+        'CachetHQ\Cachet\Providers\GitHubServiceProvider',
         'CachetHQ\Cachet\Providers\RepositoryServiceProvider',
         'CachetHQ\Cachet\Providers\RouteServiceProvider',
 

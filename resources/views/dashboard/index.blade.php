@@ -12,6 +12,11 @@
     <div class="content-wrapper">
         <div class="row">
             <div class="col-md-12">
+                <div class="alert alert-info hidden" id="update-alert">{!! trans('cachet.system.update') !!}</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
                 <h4 class="sub-header">{{ trans('dashboard.components.component_statuses') }}</h4>
                 <div class="panel panel-default">
                     <div class="list-group">

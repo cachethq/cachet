@@ -106,6 +106,10 @@ return [
         'failure'  => 'Something went wrong with the signup.',
     ],
 
+    'system' => [
+        'update' => 'There is a newer version of Cachet available. You can learn how to update <a href="https://docs.cachethq.io/docs/updating-cachet">here</a>!',
+    ],
+
     // Other
     'powered_by'      => ':app Status Page is powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
     'about_this_site' => 'About This Site',
