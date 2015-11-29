@@ -7,17 +7,32 @@
         background-color: $cachet_green;
         border: solid 2px $cachet_dark-green;
         color: white;
+
+        a {
+            color: white;
+            font-weight: bold;
+        }
     }
 
     &.alert-info {
         background: $cachet_blue;
         border: solid 2px $cachet_dark-blue;
-        color: #FFF;
+        color: white;
+
+        a {
+            color: white;
+            font-weight: bold;
+        }
     }
 
     &.alert-danger {
         background: $cachet_red;
         border: solid 2px $cachet_dark-red;
-        color: #FFF;
+        color: white;
+
+        a {
+            color: white;
+            font-weight: bold;
+        }
     }
 }
