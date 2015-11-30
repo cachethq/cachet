@@ -16,7 +16,7 @@ final class InviteTeamMemberCommand
     /**
      * The invte emails.
      *
-     * @var string
+     * @var string[]
      */
     public $emails;
 
