@@ -18,7 +18,7 @@ final class InviteTeamMemberCommand
      *
      * @var string
      */
-    public $email;
+    public $emails;
 
     /**
      * The validation rules.
