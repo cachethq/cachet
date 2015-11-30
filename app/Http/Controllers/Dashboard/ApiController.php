@@ -24,25 +24,6 @@ use Illuminate\Support\Facades\Response;
 class ApiController extends Controller
 {
     /**
-     * The release instance.
-     *
-     * @var \CachetHQ\Cachet\GitHub\Release
-     */
-    protected $release;
-
-    /**
-     * Creates a new api controller instance.
-     *
-     * @param \CachetHQ\Cachet\GitHub\Release $release
-     *
-     * @return void
-     */
-    public function __construct(Release $release)
-    {
-        $this->release = $release;
-    }
-
-    /**
      * Updates a component with the entered info.
      *
      * @param \CachetHQ\Cachet\Models\Component $component
@@ -118,10 +99,12 @@ class ApiController extends Controller
      */
     public function checkVersion()
     {
+        $latest = app(Release::class)->latest();
+
         return Response::json([
             'cachet_version' => CACHET_VERSION,
-            'latest_version' => $this->release->latest(),
-            'is_latest'      => version_compare(CACHET_VERSION, $this->release->latest()) === 1,
+            'latest_version' => $latest,
+            'is_latest'      => version_compare(CACHET_VERSION, $latest) === 1,
         ]);
     }
 }
