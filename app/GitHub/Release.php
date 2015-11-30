@@ -12,15 +12,15 @@
 namespace CachetHQ\Cachet\GitHub;
 
 use GuzzleHttp\Client;
-use Illuminate\Cache\CacheManager;
-use Illuminate\Config\Repository;
+use Illuminate\Contracts\Cache\Repository as CacheRepository;
+use Illuminate\Contracts\Config\Repository as ConfigRepository;
 
 class Release
 {
     /**
      * Cache instance.
      *
-     * @var \Illuminate\Cache\CacheManager
+     * @var \Illuminate\Contracts\Cache\Repository
      */
     protected $cache;
 
@@ -34,12 +34,12 @@ class Release
     /**
      * Creates a new release instance.
      *
-     * @param \Illuminate\Cache\CacheManager          $cache
+     * @param \Illuminate\Contracts\Cache\Repository $cache
      * @param \Illuminate\Contracts\Config\Repository $config
      *
      * @return void
      */
-    public function __construct(CacheManager $cache, Repository $config)
+    public function __construct(CacheRepository $cache, ConfigRepository $config)
     {
         $this->cache = $cache;
         $this->config = $config;

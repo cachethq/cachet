@@ -34,7 +34,7 @@ class GitHubServiceProvider extends ServiceProvider
     protected function registerRelease()
     {
         $this->app->singleton('cachet.release', function ($app) {
-            $cache = $app['cache'];
+            $cache = $app['cache.store'];
             $config = $app['config'];
 
             return new Release($cache, $config);
