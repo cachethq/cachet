@@ -135,6 +135,7 @@
                                 <div class="col-sm-12">
                                     <div class="checkbox">
                                         <label>
+                                            <input type="hidden" name="dashboard_login_link" value="0">
                                             <input type="checkbox" value="1" name="dashboard_login_link" {{ Setting::get('dashboard_login_link') ? 'checked' : null }}>
                                             {{ trans('forms.settings.theme.dashboard-login') }}
                                         </label>
