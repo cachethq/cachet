@@ -34,11 +34,11 @@ class FeedRoutes
         ], function ($router) {
             $router->get('/atom/{component_group?}', [
                 'as'   => 'feed.atom',
-                'uses' => 'AtomController@feedAction',
+                'uses' => 'FeedController@atomAction',
             ]);
             $router->get('/rss/{component_group?}', [
                 'as'   => 'feed.rss',
-                'uses' => 'RssController@feedAction',
+                'uses' => 'FeedController@rssAction',
             ]);
         });
     }
