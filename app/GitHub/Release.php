@@ -34,7 +34,7 @@ class Release
     /**
      * Creates a new release instance.
      *
-     * @param \Illuminate\Contracts\Cache\Repository $cache
+     * @param \Illuminate\Contracts\Cache\Repository  $cache
      * @param \Illuminate\Contracts\Config\Repository $config
      *
      * @return void
