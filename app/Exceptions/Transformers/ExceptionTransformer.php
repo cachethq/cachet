@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of StyleCI.
+ * This file is part of Cachet.
  *
  * (c) Alt Three Services Limited
  *
