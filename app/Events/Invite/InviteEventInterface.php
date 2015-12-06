@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Events\User;
+namespace CachetHQ\Cachet\Events\Invite;
 
 use CachetHQ\Cachet\Events\EventInterface;
 
-interface UserEventInterface extends EventInterface
+interface InviteEventInterface extends EventInterface
 {
     //
 }

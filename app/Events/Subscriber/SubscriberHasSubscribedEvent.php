@@ -13,7 +13,7 @@ namespace CachetHQ\Cachet\Events\Subscriber;
 
 use CachetHQ\Cachet\Models\Subscriber;
 
-class SubscriberHasSubscribedEvent
+class SubscriberHasSubscribedEvent implements SubscriberEventInterface
 {
     /**
      * The subscriber who has subscribed.

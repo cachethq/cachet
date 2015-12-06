@@ -13,7 +13,7 @@ namespace CachetHQ\Cachet\Events\Component;
 
 use CachetHQ\Cachet\Models\Component;
 
-class ComponentWasRemovedEvent
+class ComponentWasRemovedEvent implements ComponentEventInterface
 {
     /**
      * The component that was removed.

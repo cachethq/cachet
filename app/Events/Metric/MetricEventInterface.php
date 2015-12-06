@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Events\User;
+namespace CachetHQ\Cachet\Events\Metric;
 
 use CachetHQ\Cachet\Events\EventInterface;
 
-interface UserEventInterface extends EventInterface
+interface MetricEventInterface extends EventInterface
 {
     //
 }

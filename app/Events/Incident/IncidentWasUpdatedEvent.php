@@ -13,7 +13,7 @@ namespace CachetHQ\Cachet\Events\Incident;
 
 use CachetHQ\Cachet\Models\Incident;
 
-class IncidentWasUpdatedEvent
+class IncidentWasUpdatedEvent implements IncidentEventInterface
 {
     /**
      * The incident that has been updated.
