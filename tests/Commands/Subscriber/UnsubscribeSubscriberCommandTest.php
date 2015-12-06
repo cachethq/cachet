@@ -11,11 +11,11 @@
 
 namespace CachetHQ\Tests\Cachet\Commands\Subscriber;
 
+use AltThree\TestBench\CommandTrait;
 use CachetHQ\Cachet\Commands\Subscriber\UnsubscribeSubscriberCommand;
 use CachetHQ\Cachet\Handlers\Commands\Subscriber\UnsubscribeSubscriberCommandHandler;
 use CachetHQ\Cachet\Models\Subscriber;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
-use AltThree\TestBench\CommandTrait;
 
 /**
  * This is the unsubscribe subscriber command test class.

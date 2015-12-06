@@ -11,10 +11,10 @@
 
 namespace CachetHQ\Tests\Cachet\Commands\Subscriber;
 
+use AltThree\TestBench\CommandTrait;
 use CachetHQ\Cachet\Commands\Subscriber\SubscribeSubscriberCommand;
 use CachetHQ\Cachet\Handlers\Commands\Subscriber\SubscribeSubscriberCommandHandler;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
-use AltThree\TestBench\CommandTrait;
 
 /**
  * This is the subscribe subscriber command test class.

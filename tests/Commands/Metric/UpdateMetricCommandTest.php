@@ -11,11 +11,11 @@
 
 namespace CachetHQ\Tests\Cachet\Commands\Metric;
 
+use AltThree\TestBench\CommandTrait;
 use CachetHQ\Cachet\Commands\Metric\UpdateMetricCommand;
 use CachetHQ\Cachet\Handlers\Commands\Metric\UpdateMetricCommandHandler;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
-use AltThree\TestBench\CommandTrait;
 
 /**
  * This is the update metric command test class.

@@ -11,12 +11,12 @@
 
 namespace CachetHQ\Tests\Cachet\Commands\Metric;
 
+use AltThree\TestBench\CommandTrait;
 use CachetHQ\Cachet\Commands\Metric\UpdateMetricPointCommand;
 use CachetHQ\Cachet\Handlers\Commands\Metric\UpdateMetricPointCommandHandler;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\MetricPoint;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
-use AltThree\TestBench\CommandTrait;
 
 /**
  * This is the update metric point command test class.

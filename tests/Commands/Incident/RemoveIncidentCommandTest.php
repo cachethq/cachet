@@ -11,11 +11,11 @@
 
 namespace CachetHQ\Tests\Cachet\Commands\Incident;
 
+use AltThree\TestBench\CommandTrait;
 use CachetHQ\Cachet\Commands\Incident\RemoveIncidentCommand;
 use CachetHQ\Cachet\Handlers\Commands\Incident\RemoveIncidentCommandHandler;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
-use AltThree\TestBench\CommandTrait;
 
 /**
  * This is the remove incident command test class.

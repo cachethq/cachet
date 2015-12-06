@@ -11,10 +11,10 @@
 
 namespace CachetHQ\Tests\Cachet\Commands\ComponentGroup;
 
+use AltThree\TestBench\CommandTrait;
 use CachetHQ\Cachet\Commands\ComponentGroup\AddComponentGroupCommand;
 use CachetHQ\Cachet\Handlers\Commands\ComponentGroup\AddComponentGroupCommandHandler;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
-use AltThree\TestBench\CommandTrait;
 
 /**
  * This is the add component group command test class.

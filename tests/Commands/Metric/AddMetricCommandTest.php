@@ -11,10 +11,10 @@
 
 namespace CachetHQ\Tests\Cachet\Commands\Metric;
 
+use AltThree\TestBench\CommandTrait;
 use CachetHQ\Cachet\Commands\Metric\AddMetricCommand;
 use CachetHQ\Cachet\Handlers\Commands\Metric\AddMetricCommandHandler;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
-use AltThree\TestBench\CommandTrait;
 
 /**
  * This is the add metric command test class.

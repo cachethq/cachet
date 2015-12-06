@@ -11,11 +11,11 @@
 
 namespace CachetHQ\Tests\Cachet\Commands\ComponentGroup;
 
+use AltThree\TestBench\CommandTrait;
 use CachetHQ\Cachet\Commands\ComponentGroup\UpdateComponentGroupCommand;
 use CachetHQ\Cachet\Handlers\Commands\ComponentGroup\UpdateComponentGroupCommandHandler;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
-use AltThree\TestBench\CommandTrait;
 
 /**
  * This is the update component group command test class.

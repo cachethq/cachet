@@ -11,10 +11,10 @@
 
 namespace CachetHQ\Tests\Cachet\Commands\Incident;
 
+use AltThree\TestBench\CommandTrait;
 use CachetHQ\Cachet\Commands\Incident\ReportIncidentCommand;
 use CachetHQ\Cachet\Handlers\Commands\Incident\ReportIncidentCommandHandler;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
-use AltThree\TestBench\CommandTrait;
 
 /**
  * This is the add incident command test class.

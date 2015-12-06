@@ -11,11 +11,11 @@
 
 namespace CachetHQ\Tests\Cachet\Commands\Subscriber;
 
+use AltThree\TestBench\CommandTrait;
 use CachetHQ\Cachet\Commands\Subscriber\VerifySubscriberCommand;
 use CachetHQ\Cachet\Handlers\Commands\Subscriber\VerifySubscriberCommandHandler;
 use CachetHQ\Cachet\Models\Subscriber;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
-use AltThree\TestBench\CommandTrait;
 
 /**
  * This is the verify subscriber command test class.
