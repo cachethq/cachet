@@ -3696,16 +3696,16 @@
     "packages-dev": [
         {
             "name": "alt-three/testbench",
-            "version": "dev-master",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/AltThree/TestBench.git",
-                "reference": "cf53fab68ef3e397a0a72dc93fba2c65735916fa"
+                "reference": "d3db224b22cc70fae5d7ce3d957d1a359648c92b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/AltThree/TestBench/zipball/cf53fab68ef3e397a0a72dc93fba2c65735916fa",
-                "reference": "cf53fab68ef3e397a0a72dc93fba2c65735916fa",
+                "url": "https://api.github.com/repos/AltThree/TestBench/zipball/d3db224b22cc70fae5d7ce3d957d1a359648c92b",
+                "reference": "d3db224b22cc70fae5d7ce3d957d1a359648c92b",
                 "shasum": ""
             },
             "require": {
@@ -3714,6 +3714,9 @@
             },
             "require-dev": {
                 "phpunit/phpunit": "^4.8|^5.0"
+            },
+            "suggest": {
+                "laravel/framework": "Enables the use of every trait."
             },
             "type": "library",
             "extra": {
@@ -3744,13 +3747,13 @@
                     "email": "joe@alt-three.com"
                 }
             ],
-            "description": "Provides Some Testing Traits For Alt Three Applications",
+            "description": "Provides Some Testing Traits For Apps",
             "keywords": [
                 "Alt Three",
                 "TestBench",
-                "application"
+                "app"
             ],
-            "time": "2015-12-06 10:47:25"
+            "time": "2015-12-06 11:51:01"
         },
         {
             "name": "doctrine/instantiator",
