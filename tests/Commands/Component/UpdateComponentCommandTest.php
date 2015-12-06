@@ -11,18 +11,22 @@
 
 namespace CachetHQ\Tests\Cachet\Commands\Component;
 
+use AltThree\TestBench\CommandTrait;
 use CachetHQ\Cachet\Commands\Component\UpdateComponentCommand;
 use CachetHQ\Cachet\Handlers\Commands\Component\UpdateComponentCommandHandler;
 use CachetHQ\Cachet\Models\Component;
-use CachetHQ\Tests\Cachet\Commands\AbstractCommandTestCase;
+use CachetHQ\Tests\Cachet\AbstractTestCase;
 
 /**
  * This is the update component command test class.
  *
  * @author James Brooks <james@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
  */
-class UpdateComponentCommandTest extends AbstractCommandTestCase
+class UpdateComponentCommandTest extends AbstractTestCase
 {
+    use CommandTrait;
+
     protected function getObjectAndParams()
     {
         $params = [
@@ -35,6 +39,7 @@ class UpdateComponentCommandTest extends AbstractCommandTestCase
             'group_id'    => 0,
             'enabled'     => true,
         ];
+
         $object = new UpdateComponentCommand(
             $params['component'],
             $params['name'],

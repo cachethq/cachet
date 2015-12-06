@@ -11,13 +11,14 @@
 
 namespace CachetHQ\Tests\Cachet\Api;
 
-use CachetHQ\Tests\Cachet\AbstractTestCase;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
-
-class SubscriberTest extends AbstractTestCase
+/**
+ * This is the subscriber test class.
+ *
+ * @author James Brooks <james@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
+ */
+class SubscriberTest extends AbstractApiTestCase
 {
-    use DatabaseMigrations;
-
     public function testGetSubscribersUnauthenticated()
     {
         $this->get('/api/v1/subscribers');

@@ -11,29 +11,28 @@
 
 namespace CachetHQ\Tests\Cachet\Commands\Subscriber;
 
+use AltThree\TestBench\CommandTrait;
 use CachetHQ\Cachet\Commands\Subscriber\VerifySubscriberCommand;
 use CachetHQ\Cachet\Handlers\Commands\Subscriber\VerifySubscriberCommandHandler;
 use CachetHQ\Cachet\Models\Subscriber;
-use CachetHQ\Tests\Cachet\Commands\AbstractCommandTestCase;
+use CachetHQ\Tests\Cachet\AbstractTestCase;
 
 /**
  * This is the verify subscriber command test class.
  *
  * @author James Brooks <james@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
  */
-class VerifySubscriberCommandTest extends AbstractCommandTestCase
+class VerifySubscriberCommandTest extends AbstractTestCase
 {
+    use CommandTrait;
+
     protected function getObjectAndParams()
     {
         $params = ['subscriber' => new Subscriber()];
         $object = new VerifySubscriberCommand($params['subscriber']);
 
         return compact('params', 'object');
-    }
-
-    protected function objectHasRules()
-    {
-        return false;
     }
 
     protected function getHandlerClass()

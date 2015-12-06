@@ -11,29 +11,28 @@
 
 namespace CachetHQ\Tests\Cachet\Commands\User;
 
+use AltThree\TestBench\CommandTrait;
 use CachetHQ\Cachet\Commands\User\RemoveUserCommand;
 use CachetHQ\Cachet\Handlers\Commands\User\RemoveUserCommandHandler;
 use CachetHQ\Cachet\Models\User;
-use CachetHQ\Tests\Cachet\Commands\AbstractCommandTestCase;
+use CachetHQ\Tests\Cachet\AbstractTestCase;
 
 /**
  * This is the remove user command test class.
  *
  * @author James Brooks <james@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
  */
-class RemoveUserCommandTest extends AbstractCommandTestCase
+class RemoveUserCommandTest extends AbstractTestCase
 {
+    use CommandTrait;
+
     protected function getObjectAndParams()
     {
         $params = ['user' => new User()];
         $object = new RemoveUserCommand($params['user']);
 
         return compact('params', 'object');
-    }
-
-    protected function objectHasRules()
-    {
-        return false;
     }
 
     protected function getHandlerClass()

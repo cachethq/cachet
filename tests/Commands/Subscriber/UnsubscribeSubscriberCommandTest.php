@@ -11,29 +11,28 @@
 
 namespace CachetHQ\Tests\Cachet\Commands\Subscriber;
 
+use AltThree\TestBench\CommandTrait;
 use CachetHQ\Cachet\Commands\Subscriber\UnsubscribeSubscriberCommand;
 use CachetHQ\Cachet\Handlers\Commands\Subscriber\UnsubscribeSubscriberCommandHandler;
 use CachetHQ\Cachet\Models\Subscriber;
-use CachetHQ\Tests\Cachet\Commands\AbstractCommandTestCase;
+use CachetHQ\Tests\Cachet\AbstractTestCase;
 
 /**
  * This is the unsubscribe subscriber command test class.
  *
  * @author James Brooks <james@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
  */
-class UnsubscribeSubscriberCommandTest extends AbstractCommandTestCase
+class UnsubscribeSubscriberCommandTest extends AbstractTestCase
 {
+    use CommandTrait;
+
     protected function getObjectAndParams()
     {
         $params = ['subscriber' => new Subscriber()];
         $object = new UnsubscribeSubscriberCommand($params['subscriber']);
 
         return compact('params', 'object');
-    }
-
-    protected function objectHasRules()
-    {
-        return false;
     }
 
     protected function getHandlerClass()
