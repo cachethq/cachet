@@ -11,13 +11,14 @@
 
 namespace CachetHQ\Tests\Cachet\Api;
 
-use CachetHQ\Tests\Cachet\AbstractTestCase;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
-
-class MetricTest extends AbstractTestCase
+/**
+ * This is the metric test class.
+ *
+ * @author James Brooks <james@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
+ */
+class MetricTest extends AbstractApiTestCase
 {
-    use DatabaseMigrations;
-
     public function testGetMetrics()
     {
         $metrics = factory('CachetHQ\Cachet\Models\Metric', 3)->create();

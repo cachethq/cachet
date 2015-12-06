@@ -11,13 +11,14 @@
 
 namespace CachetHQ\Tests\Cachet\Api;
 
-use CachetHQ\Tests\Cachet\AbstractTestCase;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
-
-class IncidentTest extends AbstractTestCase
+/**
+ * This is the incident test class.
+ *
+ * @author James Brooks <james@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
+ */
+class IncidentTest extends AbstractApiTestCase
 {
-    use DatabaseMigrations;
-
     public function testGetIncidents()
     {
         $incidents = factory('CachetHQ\Cachet\Models\Incident', 3)->create();

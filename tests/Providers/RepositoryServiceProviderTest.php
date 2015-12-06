@@ -11,17 +11,15 @@
 
 namespace CachetHQ\Tests\Cachet\Providers;
 
-use CachetHQ\Cachet\Providers\RepositoryServiceProvider;
+use AltThree\TestBench\ServiceProviderTrait;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
-use GrahamCampbell\TestBenchCore\LaravelTrait;
-use GrahamCampbell\TestBenchCore\ServiceProviderTrait;
 
+/**
+ * This is the repository service provider test class.
+ *
+ * @author Graham Campbell <graham@alt-three.com>
+ */
 class RepositoryServiceProviderTest extends AbstractTestCase
 {
-    use LaravelTrait, ServiceProviderTrait;
-
-    protected function getServiceProviderClass($app)
-    {
-        return RepositoryServiceProvider::class;
-    }
+    use ServiceProviderTrait;
 }

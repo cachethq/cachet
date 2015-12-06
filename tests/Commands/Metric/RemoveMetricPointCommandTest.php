@@ -14,26 +14,25 @@ namespace CachetHQ\Tests\Cachet\Commands\Metric;
 use CachetHQ\Cachet\Commands\Metric\RemoveMetricPointCommand;
 use CachetHQ\Cachet\Handlers\Commands\Metric\RemoveMetricPointCommandHandler;
 use CachetHQ\Cachet\Models\MetricPoint;
-use CachetHQ\Tests\Cachet\Commands\AbstractCommandTestCase;
+use CachetHQ\Tests\Cachet\AbstractTestCase;
+use AltThree\TestBench\CommandTrait;
 
 /**
  * This is the remove metric point command test class.
  *
  * @author James Brooks <james@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
  */
-class RemoveMetricPointCommandTest extends AbstractCommandTestCase
+class RemoveMetricPointCommandTest extends AbstractTestCase
 {
+    use CommandTrait;
+
     protected function getObjectAndParams()
     {
         $params = ['metricPoint' => new MetricPoint()];
         $object = new RemoveMetricPointCommand($params['metricPoint']);
 
         return compact('params', 'object');
-    }
-
-    protected function objectHasRules()
-    {
-        return false;
     }
 
     protected function getHandlerClass()

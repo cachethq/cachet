@@ -13,15 +13,19 @@ namespace CachetHQ\Tests\Cachet\Commands\Incident;
 
 use CachetHQ\Cachet\Commands\Incident\ReportMaintenanceCommand;
 use CachetHQ\Cachet\Handlers\Commands\Incident\ReportMaintenanceCommandHandler;
-use CachetHQ\Tests\Cachet\Commands\AbstractCommandTestCase;
+use CachetHQ\Tests\Cachet\AbstractTestCase;
+use AltThree\TestBench\CommandTrait;
 
 /**
  * This is the add incident command test class.
  *
  * @author James Brooks <james@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
  */
-class ReportMaintenanceCommandTest extends AbstractCommandTestCase
+class ReportMaintenanceCommandTest extends AbstractTestCase
 {
+    use CommandTrait;
+
     protected function getObjectAndParams()
     {
         $params = [
@@ -30,6 +34,7 @@ class ReportMaintenanceCommandTest extends AbstractCommandTestCase
             'notify'    => false,
             'timestamp' => '2020-12-30 00:00:01',
         ];
+
         $object = new ReportMaintenanceCommand(
             $params['name'],
             $params['message'],

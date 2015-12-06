@@ -14,15 +14,19 @@ namespace CachetHQ\Tests\Cachet\Commands\Incident;
 use CachetHQ\Cachet\Commands\Incident\UpdateIncidentCommand;
 use CachetHQ\Cachet\Handlers\Commands\Incident\UpdateIncidentCommandHandler;
 use CachetHQ\Cachet\Models\Incident;
-use CachetHQ\Tests\Cachet\Commands\AbstractCommandTestCase;
+use CachetHQ\Tests\Cachet\AbstractTestCase;
+use AltThree\TestBench\CommandTrait;
 
 /**
  * This is the update incident command test class.
  *
  * @author James Brooks <james@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
  */
-class UpdateIncidentCommandTest extends AbstractCommandTestCase
+class UpdateIncidentCommandTest extends AbstractTestCase
 {
+    use CommandTrait;
+
     protected function getObjectAndParams()
     {
         $params = [
@@ -38,6 +42,7 @@ class UpdateIncidentCommandTest extends AbstractCommandTestCase
             'template'         => null,
             'template_vars'    => null,
         ];
+
         $object = new UpdateIncidentCommand(
             $params['incident'],
             $params['name'],

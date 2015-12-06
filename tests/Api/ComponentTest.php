@@ -11,13 +11,14 @@
 
 namespace CachetHQ\Tests\Cachet\Api;
 
-use CachetHQ\Tests\Cachet\AbstractTestCase;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
-
-class ComponentTest extends AbstractTestCase
+/**
+ * This is the component test class.
+ *
+ * @author James Brooks <james@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
+ */
+class ComponentTest extends AbstractApiTestCase
 {
-    use DatabaseMigrations;
-
     public function testGetComponents()
     {
         $components = factory('CachetHQ\Cachet\Models\Component', 3)->create();

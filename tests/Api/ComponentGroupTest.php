@@ -11,13 +11,14 @@
 
 namespace CachetHQ\Tests\Cachet\Api;
 
-use CachetHQ\Tests\Cachet\AbstractTestCase;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
-
-class ComponentGroupTest extends AbstractTestCase
+/**
+ * This is the component group test class.
+ *
+ * @author James Brooks <james@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
+ */
+class ComponentGroupTest extends AbstractApiTestCase
 {
-    use DatabaseMigrations;
-
     public function testGetGroups()
     {
         $groups = factory('CachetHQ\Cachet\Models\ComponentGroup', 3)->create();

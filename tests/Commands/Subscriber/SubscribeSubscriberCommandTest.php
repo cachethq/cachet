@@ -13,25 +13,23 @@ namespace CachetHQ\Tests\Cachet\Commands\Subscriber;
 
 use CachetHQ\Cachet\Commands\Subscriber\SubscribeSubscriberCommand;
 use CachetHQ\Cachet\Handlers\Commands\Subscriber\SubscribeSubscriberCommandHandler;
-use CachetHQ\Tests\Cachet\Commands\AbstractCommandTestCase;
+use CachetHQ\Tests\Cachet\AbstractTestCase;
+use AltThree\TestBench\CommandTrait;
 
 /**
  * This is the subscribe subscriber command test class.
  *
  * @author James Brooks <james@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
  */
-class SubscribeSubscriberCommandTest extends AbstractCommandTestCase
+class SubscribeSubscriberCommandTest extends AbstractTestCase
 {
+    use CommandTrait;
+
     protected function getObjectAndParams()
     {
-        $params = [
-            'email'    => 'support@cachethq.io',
-            'verified' => true,
-        ];
-        $object = new SubscribeSubscriberCommand(
-            $params['email'],
-            $params['verified']
-        );
+        $params = ['email' => 'support@cachethq.io', 'verified' => true];
+        $object = new SubscribeSubscriberCommand($params['email'], $params['verified']);
 
         return compact('params', 'object');
     }

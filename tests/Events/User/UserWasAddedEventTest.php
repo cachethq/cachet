@@ -14,6 +14,11 @@ namespace CachetHQ\Tests\Cachet\Events\User;
 use CachetHQ\Cachet\Events\User\UserWasAddedEvent;
 use CachetHQ\Cachet\Models\User;
 
+/**
+ * This is the user was added event test class.
+ *
+ * @author Graham Campbell <graham@alt-three.com>
+ */
 class UserWasAddedEventTest extends AbstractUserEventTestCase
 {
     protected function objectHasHandlers()

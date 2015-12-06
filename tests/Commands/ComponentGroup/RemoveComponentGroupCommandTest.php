@@ -14,26 +14,25 @@ namespace CachetHQ\Tests\Cachet\Commands\ComponentGroup;
 use CachetHQ\Cachet\Commands\ComponentGroup\RemoveComponentGroupCommand;
 use CachetHQ\Cachet\Handlers\Commands\ComponentGroup\RemoveComponentGroupCommandHandler;
 use CachetHQ\Cachet\Models\ComponentGroup;
-use CachetHQ\Tests\Cachet\Commands\AbstractCommandTestCase;
+use CachetHQ\Tests\Cachet\AbstractTestCase;
+use AltThree\TestBench\CommandTrait;
 
 /**
  * This is the remove component group command test class.
  *
  * @author James Brooks <james@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
  */
-class RemoveComponentGroupCommandTest extends AbstractCommandTestCase
+class RemoveComponentGroupCommandTest extends AbstractTestCase
 {
+    use CommandTrait;
+
     protected function getObjectAndParams()
     {
         $params = ['group' => new ComponentGroup()];
         $object = new RemoveComponentGroupCommand($params['group']);
 
         return compact('params', 'object');
-    }
-
-    protected function objectHasRules()
-    {
-        return false;
     }
 
     protected function getHandlerClass()

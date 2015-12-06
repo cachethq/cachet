@@ -14,15 +14,19 @@ namespace CachetHQ\Tests\Cachet\Commands\Metric;
 use CachetHQ\Cachet\Commands\Metric\UpdateMetricCommand;
 use CachetHQ\Cachet\Handlers\Commands\Metric\UpdateMetricCommandHandler;
 use CachetHQ\Cachet\Models\Metric;
-use CachetHQ\Tests\Cachet\Commands\AbstractCommandTestCase;
+use CachetHQ\Tests\Cachet\AbstractTestCase;
+use AltThree\TestBench\CommandTrait;
 
 /**
  * This is the update metric command test class.
  *
  * @author James Brooks <james@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
  */
-class UpdateMetricCommandTest extends AbstractCommandTestCase
+class UpdateMetricCommandTest extends AbstractTestCase
 {
+    use CommandTrait;
+
     protected function getObjectAndParams()
     {
         $params = [
@@ -35,6 +39,7 @@ class UpdateMetricCommandTest extends AbstractCommandTestCase
             'display_chart' => 1,
             'places'        => 0,
         ];
+
         $object = new UpdateMetricCommand(
             $params['metric'],
             $params['name'],

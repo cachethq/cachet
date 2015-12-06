@@ -11,11 +11,19 @@
 
 namespace CachetHQ\Tests\Cachet\Events\User;
 
+use AltThree\TestBench\EventTrait;
 use CachetHQ\Cachet\Events\User\UserEventInterface;
-use CachetHQ\Tests\Cachet\Events\AbstractEventTestCase;
+use CachetHQ\Tests\Cachet\AbstractTestCase;
 
-class AbstractUserEventTestCase extends AbstractEventTestCase
+/**
+ * This is the abstract user event test class.
+ *
+ * @author Graham Campbell <graham@alt-three.com>
+ */
+abstract class AbstractUserEventTestCase extends AbstractTestCase
 {
+    use EventTrait;
+
     protected function getEventInterfaces()
     {
         return [UserEventInterface::class];

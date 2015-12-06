@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "68368056b2e111808dc9fde989b5324d",
-    "content-hash": "976eda704e6a191e2bd557cb919f1ed6",
+    "hash": "d02e0141216bd2f17d2c97a5e7d0baab",
+    "content-hash": "2dd41f1dc4f63c1ffae8cb0fc62ebfb5",
     "packages": [
         {
             "name": "alt-three/emoji",
@@ -3694,6 +3694,64 @@
         }
     ],
     "packages-dev": [
+        {
+            "name": "alt-three/testbench",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AltThree/TestBench.git",
+                "reference": "cf53fab68ef3e397a0a72dc93fba2c65735916fa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/AltThree/TestBench/zipball/cf53fab68ef3e397a0a72dc93fba2c65735916fa",
+                "reference": "cf53fab68ef3e397a0a72dc93fba2c65735916fa",
+                "shasum": ""
+            },
+            "require": {
+                "graham-campbell/testbench-core": "^1.1",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8|^5.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "AltThree\\TestBench\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "James Brooks",
+                    "email": "james@alt-three.com"
+                },
+                {
+                    "name": "Graham Campbell",
+                    "email": "graham@alt-three.com"
+                },
+                {
+                    "name": "Joseph Cohen",
+                    "email": "joe@alt-three.com"
+                }
+            ],
+            "description": "Provides Some Testing Traits For Alt Three Applications",
+            "keywords": [
+                "Alt Three",
+                "TestBench",
+                "application"
+            ],
+            "time": "2015-12-06 10:47:25"
+        },
         {
             "name": "doctrine/instantiator",
             "version": "1.0.5",
