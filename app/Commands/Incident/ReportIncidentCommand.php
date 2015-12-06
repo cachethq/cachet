@@ -116,7 +116,7 @@ final class ReportIncidentCommand
      *
      * @return void
      */
-    public function __construct($name, $status, $message, $visible, $component_id, $component_status, $notify, $incident_date, $template, $template_vars)
+    public function __construct($name, $status, $message, $visible, $component_id, $component_status, $notify, $incident_date, $template, array $template_vars = null)
     {
         $this->name = $name;
         $this->status = $status;

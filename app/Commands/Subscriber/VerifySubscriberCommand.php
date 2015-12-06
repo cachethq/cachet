@@ -25,7 +25,7 @@ final class VerifySubscriberCommand
     /**
      * Create a verify subscriber command instance.
      *
-     * @param string $subscriber
+     * @param \CachetHQ\Cachet\Models\Subscriber $subscriber
      *
      * @return void
      */
