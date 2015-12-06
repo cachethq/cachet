@@ -11,10 +11,10 @@
 
 namespace CachetHQ\Tests\Cachet\Commands\User;
 
+use AltThree\TestBench\CommandTrait;
 use CachetHQ\Cachet\Commands\User\AddTeamMemberCommand;
 use CachetHQ\Cachet\Handlers\Commands\User\AddTeamMemberCommandHandler;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
-use AltThree\TestBench\CommandTrait;
 
 /**
  * This is the add team member command test class.

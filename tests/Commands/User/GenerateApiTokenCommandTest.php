@@ -11,11 +11,11 @@
 
 namespace CachetHQ\Tests\Cachet\Commands\User;
 
+use AltThree\TestBench\CommandTrait;
 use CachetHQ\Cachet\Commands\User\GenerateApiTokenCommand;
 use CachetHQ\Cachet\Handlers\Commands\User\GenerateApiTokenCommandHandler;
 use CachetHQ\Cachet\Models\User;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
-use AltThree\TestBench\CommandTrait;
 
 /**
  * This is the generate api token command test class.

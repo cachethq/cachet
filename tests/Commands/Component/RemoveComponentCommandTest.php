@@ -11,11 +11,11 @@
 
 namespace CachetHQ\Tests\Cachet\Commands\Component;
 
+use AltThree\TestBench\CommandTrait;
 use CachetHQ\Cachet\Commands\Component\RemoveComponentCommand;
 use CachetHQ\Cachet\Handlers\Commands\Component\RemoveComponentCommandHandler;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
-use AltThree\TestBench\CommandTrait;
 
 /**
  * This is the remove component command test class.

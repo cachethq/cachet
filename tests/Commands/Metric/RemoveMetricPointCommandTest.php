@@ -11,11 +11,11 @@
 
 namespace CachetHQ\Tests\Cachet\Commands\Metric;
 
+use AltThree\TestBench\CommandTrait;
 use CachetHQ\Cachet\Commands\Metric\RemoveMetricPointCommand;
 use CachetHQ\Cachet\Handlers\Commands\Metric\RemoveMetricPointCommandHandler;
 use CachetHQ\Cachet\Models\MetricPoint;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
-use AltThree\TestBench\CommandTrait;
 
 /**
  * This is the remove metric point command test class.
