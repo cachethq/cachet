@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Exception;
+namespace CachetHQ\Cachet\Exceptions;
 
 use Exception;
 
