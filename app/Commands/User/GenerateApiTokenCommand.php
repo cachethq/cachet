@@ -11,6 +11,8 @@
 
 namespace CachetHQ\Cachet\Commands\User;
 
+use CachetHQ\Cachet\Models\User;
+
 final class GenerateApiTokenCommand
 {
     /**
@@ -27,7 +29,7 @@ final class GenerateApiTokenCommand
      *
      * @return void
      */
-    public function __construct($user)
+    public function __construct(User $user)
     {
         $this->user = $user;
     }

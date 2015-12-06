@@ -25,7 +25,7 @@ final class UnsubscribeSubscriberCommand
     /**
      * Create a unsubscribe subscriber command instance.
      *
-     * @param string $subscriber
+     * @param \CachetHQ\Cachet\Models\Subscriber $subscriber
      *
      * @return void
      */

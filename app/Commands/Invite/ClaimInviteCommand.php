@@ -11,23 +11,25 @@
 
 namespace CachetHQ\Cachet\Commands\Invite;
 
+use CachetHQ\Cachet\Models\Invite;
+
 final class ClaimInviteCommand
 {
     /**
      * The invte to mark as claimed.
      *
-     * @var \CachetHQ\Cachet\Model\Invite
+     * @var \CachetHQ\Cachet\Models\Invite
      */
     public $invite;
 
     /**
      * Create a new claim invite command instance.
      *
-     * @param \CachetHQ\Cachet\Model\Invite $invite
+     * @param \CachetHQ\Cachet\Models\Invite $invite
      *
      * @return void
      */
-    public function __construct($invite)
+    public function __construct(Invite $invite)
     {
         $this->invite = $invite;
     }
