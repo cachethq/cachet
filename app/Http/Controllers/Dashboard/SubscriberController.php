@@ -32,8 +32,6 @@ class SubscriberController extends Controller
      */
     public function showSubscribers()
     {
-        $subscribers = Subscriber::all();
-
         return View::make('dashboard.subscribers.index')
             ->withPageTitle(trans('dashboard.subscribers.subscribers').' - '.trans('dashboard.dashboard'))
             ->withSubscribers(Subscriber::all());
