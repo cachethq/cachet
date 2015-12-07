@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Exceptions\Transformers;
+namespace CachetHQ\Cachet\Foundation\Exceptions\Transformers;
 
 use CachetHQ\Cachet\Exceptions\ExceptionInterface;
 use Exception;

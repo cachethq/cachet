@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Providers;
+namespace CachetHQ\Cachet\Foundation\Providers;
 
 use CachetHQ\Cachet\Repositories\Metric\MetricRepository;
 use CachetHQ\Cachet\Repositories\Metric\MySqlRepository as MetricMySqlRepository;
@@ -50,6 +50,6 @@ class RepositoryServiceProvider extends ServiceProvider
             return new MetricRepository($repository);
         });
 
-        $this->app->alias('cachet.metricrepository', 'CachetHQ\Cachet\Repositories\Metric\MetricRepository');
+        $this->app->alias('cachet.metricrepository', MetricRepository::class);
     }
 }

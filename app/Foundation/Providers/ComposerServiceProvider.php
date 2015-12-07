@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Providers;
+namespace CachetHQ\Cachet\Foundation\Providers;
 
 use CachetHQ\Cachet\Composers\AppComposer;
 use CachetHQ\Cachet\Composers\CurrentUserComposer;
