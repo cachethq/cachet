@@ -13,7 +13,7 @@ namespace CachetHQ\Cachet\Events\ComponentGroup;
 
 use CachetHQ\Cachet\Models\ComponentGroup;
 
-class ComponentGroupWasUpdatedEvent
+class ComponentGroupWasUpdatedEvent implements ComponentGroupEventInterface
 {
     /**
      * The component group that was updated.

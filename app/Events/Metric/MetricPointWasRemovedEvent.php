@@ -13,7 +13,7 @@ namespace CachetHQ\Cachet\Events\Metric;
 
 use CachetHQ\Cachet\Models\MetricPoint;
 
-class MetricPointWasRemovedEvent
+class MetricPointWasRemovedEvent implements MetricEventInterface
 {
     /**
      * The metric point that was removed.

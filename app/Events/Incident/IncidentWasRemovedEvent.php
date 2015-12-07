@@ -13,7 +13,7 @@ namespace CachetHQ\Cachet\Events\Incident;
 
 use CachetHQ\Cachet\Models\Incident;
 
-class IncidentWasRemovedEvent
+class IncidentWasRemovedEvent implements IncidentEventInterface
 {
     /**
      * The incident that has been removed.
