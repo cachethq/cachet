@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d02e0141216bd2f17d2c97a5e7d0baab",
-    "content-hash": "2dd41f1dc4f63c1ffae8cb0fc62ebfb5",
+    "hash": "88ebd9e0385e7124bbc8a0fa4ac308b0",
+    "content-hash": "175a8a8dfa4cf51ba1f327401806d99e",
     "packages": [
         {
             "name": "alt-three/emoji",
@@ -3696,16 +3696,16 @@
     "packages-dev": [
         {
             "name": "alt-three/testbench",
-            "version": "v1.0.0",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/AltThree/TestBench.git",
-                "reference": "d3db224b22cc70fae5d7ce3d957d1a359648c92b"
+                "reference": "1fc2d7a725d2d85adc6a2dfba8975c37f701cb04"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/AltThree/TestBench/zipball/d3db224b22cc70fae5d7ce3d957d1a359648c92b",
-                "reference": "d3db224b22cc70fae5d7ce3d957d1a359648c92b",
+                "url": "https://api.github.com/repos/AltThree/TestBench/zipball/1fc2d7a725d2d85adc6a2dfba8975c37f701cb04",
+                "reference": "1fc2d7a725d2d85adc6a2dfba8975c37f701cb04",
                 "shasum": ""
             },
             "require": {
@@ -3721,7 +3721,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0-dev"
+                    "dev-master": "1.1-dev"
                 }
             },
             "autoload": {
@@ -3753,7 +3753,7 @@
                 "TestBench",
                 "app"
             ],
-            "time": "2015-12-06 11:51:01"
+            "time": "2015-12-07 21:57:27"
         },
         {
             "name": "doctrine/instantiator",

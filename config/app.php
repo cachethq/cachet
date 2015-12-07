@@ -167,13 +167,13 @@ return [
         /*
          * Application Service Providers...
          */
-        'CachetHQ\Cachet\Providers\AppServiceProvider',
-        'CachetHQ\Cachet\Providers\ComposerServiceProvider',
-        'CachetHQ\Cachet\Providers\ConfigServiceProvider',
-        'CachetHQ\Cachet\Providers\EventServiceProvider',
-        'CachetHQ\Cachet\Providers\GitHubServiceProvider',
-        'CachetHQ\Cachet\Providers\RepositoryServiceProvider',
-        'CachetHQ\Cachet\Providers\RouteServiceProvider',
+        'CachetHQ\Cachet\Foundation\Providers\AppServiceProvider',
+        'CachetHQ\Cachet\Foundation\Providers\ComposerServiceProvider',
+        'CachetHQ\Cachet\Foundation\Providers\ConfigServiceProvider',
+        'CachetHQ\Cachet\Foundation\Providers\EventServiceProvider',
+        'CachetHQ\Cachet\Foundation\Providers\GitHubServiceProvider',
+        'CachetHQ\Cachet\Foundation\Providers\RepositoryServiceProvider',
+        'CachetHQ\Cachet\Foundation\Providers\RouteServiceProvider',
 
     ]),
 

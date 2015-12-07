@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Exceptions\Filters;
+namespace CachetHQ\Cachet\Foundation\Exceptions\Filters;
 
 use Exception;
 use Illuminate\Http\Request;

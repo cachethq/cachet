@@ -27,7 +27,7 @@ return [
 
     'transformers' => [
         'GrahamCampbell\Exceptions\Transformers\CsrfTransformer',
-        'CachetHQ\Cachet\Exceptions\Transformers\ExceptionTransformer',
+        'CachetHQ\Cachet\Foundation\Exceptions\Transformers\ExceptionTransformer',
     ],
 
     /*
@@ -45,8 +45,8 @@ return [
     */
 
     'displayers' => [
-        'CachetHQ\Cachet\Exceptions\Displayers\JsonValidationDisplayer',
-        'CachetHQ\Cachet\Exceptions\Displayers\RedirectDisplayer',
+        'CachetHQ\Cachet\Foundation\Exceptions\Displayers\JsonValidationDisplayer',
+        'CachetHQ\Cachet\Foundation\Exceptions\Displayers\RedirectDisplayer',
         'GrahamCampbell\Exceptions\Displayers\DebugDisplayer',
         'GrahamCampbell\Exceptions\Displayers\HtmlDisplayer',
         'GrahamCampbell\Exceptions\Displayers\JsonDisplayer',
@@ -70,7 +70,7 @@ return [
         'GrahamCampbell\Exceptions\Filters\VerboseFilter',
         'GrahamCampbell\Exceptions\Filters\CanDisplayFilter',
         'GrahamCampbell\Exceptions\Filters\ContentTypeFilter',
-        'CachetHQ\Cachet\Exceptions\Filters\ApiFilter',
+        'CachetHQ\Cachet\Foundation\Exceptions\Filters\ApiFilter',
     ],
 
     /*
