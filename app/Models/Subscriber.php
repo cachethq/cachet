@@ -13,8 +13,8 @@ namespace CachetHQ\Cachet\Models;
 
 use AltThree\Validator\ValidatingTrait;
 use CachetHQ\Cachet\Presenters\SubscriberPresenter;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use McCool\LaravelAutoPresenter\HasPresenter;
 
 class Subscriber extends Model implements HasPresenter
