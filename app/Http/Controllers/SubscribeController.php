@@ -81,7 +81,7 @@ class SubscribeController extends Controller
 
         $subscriber = Subscriber::where('verify_code', '=', $code)->first();
 
-        if (!$subscriber || $subscriber->verified()) {
+        if (!$subscriber || $subscriber->is_verified) {
             throw new BadRequestHttpException();
         }
 
@@ -106,7 +106,7 @@ class SubscribeController extends Controller
 
         $subscriber = Subscriber::where('verify_code', '=', $code)->first();
 
-        if (!$subscriber || !$subscriber->verified()) {
+        if (!$subscriber || !$subscriber->is_verified) {
             throw new BadRequestHttpException();
         }
 
