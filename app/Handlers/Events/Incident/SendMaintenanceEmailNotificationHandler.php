@@ -62,7 +62,7 @@ class SendMaintenanceEmailNotificationHandler
 
         $data = AutoPresenter::decorate($event->incident);
 
-        foreach ($this->subscriber->all() as $subscriber) {
+        foreach ($this->subscriber->verified()->get() as $subscriber) {
             $mail = [
                 'email'            => $subscriber->email,
                 'subject'          => 'Scheduled maintenance.',

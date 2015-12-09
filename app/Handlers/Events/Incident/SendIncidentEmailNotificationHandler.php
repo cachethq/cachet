@@ -65,7 +65,7 @@ class SendIncidentEmailNotificationHandler
 
         // Only send emails for public incidents.
         if ($event->incident->visible === 1) {
-            foreach ($this->subscriber->all() as $subscriber) {
+            foreach ($this->subscriber->verified()->get() as $subscriber) {
                 $mail = [
                     'email'            => $subscriber->email,
                     'subject'          => 'New incident reported.',

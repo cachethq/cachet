@@ -63,6 +63,16 @@ class Subscriber extends Model implements HasPresenter
     }
 
     /**
+     * Scope a query to only include verified subscribers.
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeVerified($query)
+    {
+        return $query->whereNotNull('verified_at');
+    }
+
+    /**
      * Determines if the subscriber is verified.
      *
      * @return bool
