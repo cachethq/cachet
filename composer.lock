@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "88ebd9e0385e7124bbc8a0fa4ac308b0",
-    "content-hash": "175a8a8dfa4cf51ba1f327401806d99e",
+    "hash": "1a18306b4422dff909c22e3c7044555f",
+    "content-hash": "943926833b8f9e0fcd31747b6aa5ad5d",
     "packages": [
         {
             "name": "alt-three/emoji",
@@ -1105,16 +1105,16 @@
         },
         {
             "name": "graham-campbell/exceptions",
-            "version": "v6.0.0",
+            "version": "v6.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Exceptions.git",
-                "reference": "abd3ea87415e2420576ace02969798222a114752"
+                "reference": "febf4f8c2e8013742269625d1af6cb440c895b18"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Exceptions/zipball/abd3ea87415e2420576ace02969798222a114752",
-                "reference": "abd3ea87415e2420576ace02969798222a114752",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Exceptions/zipball/febf4f8c2e8013742269625d1af6cb440c895b18",
+                "reference": "febf4f8c2e8013742269625d1af6cb440c895b18",
                 "shasum": ""
             },
             "require": {
@@ -1138,7 +1138,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "6.0-dev"
+                    "dev-master": "6.1-dev"
                 }
             },
             "autoload": {
@@ -1170,7 +1170,7 @@
                 "laravel",
                 "whoops"
             ],
-            "time": "2015-11-22 19:54:20"
+            "time": "2015-12-09 12:50:33"
         },
         {
             "name": "graham-campbell/markdown",
@@ -1611,26 +1611,26 @@
         },
         {
             "name": "jenssegers/date",
-            "version": "v3.0.12",
+            "version": "v3.0.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jenssegers/date.git",
-                "reference": "2e423f6327cbf72a41fd6bac094a788bc524a863"
+                "reference": "e285f567af6d6cd0061efca109b38da3bcfc21c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jenssegers/date/zipball/2e423f6327cbf72a41fd6bac094a788bc524a863",
-                "reference": "2e423f6327cbf72a41fd6bac094a788bc524a863",
+                "url": "https://api.github.com/repos/jenssegers/date/zipball/e285f567af6d6cd0061efca109b38da3bcfc21c9",
+                "reference": "e285f567af6d6cd0061efca109b38da3bcfc21c9",
                 "shasum": ""
             },
             "require": {
-                "nesbot/carbon": "~1.0",
+                "nesbot/carbon": "^1.0",
                 "php": ">=5.3.3",
-                "symfony/translation": "~2.0"
+                "symfony/translation": "^2.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.0",
-                "satooshi/php-coveralls": "~0.6"
+                "phpunit/phpunit": "^4.0|^5.0",
+                "satooshi/php-coveralls": "^0.6"
             },
             "type": "library",
             "extra": {
@@ -1650,10 +1650,11 @@
             "authors": [
                 {
                     "name": "Jens Segers",
-                    "homepage": "http://jenssegers.be"
+                    "homepage": "https://jenssegers.com"
                 }
             ],
             "description": "A date library to help you work with dates in different languages",
+            "homepage": "https://github.com/jenssegers/date",
             "keywords": [
                 "carbon",
                 "date",
@@ -1663,7 +1664,7 @@
                 "time",
                 "translation"
             ],
-            "time": "2015-10-26 15:04:00"
+            "time": "2015-12-01 08:34:42"
         },
         {
             "name": "jeremeamia/SuperClosure",
@@ -4632,23 +4633,23 @@
         },
         {
             "name": "sebastian/diff",
-            "version": "1.4.0",
+            "version": "1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/diff.git",
-                "reference": "2b0112e42c338afa9ad9dfeb94d66f6d84c2f828"
+                "reference": "13edfd8706462032c2f52b4b862974dd46b71c9e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/2b0112e42c338afa9ad9dfeb94d66f6d84c2f828",
-                "reference": "2b0112e42c338afa9ad9dfeb94d66f6d84c2f828",
+                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/13edfd8706462032c2f52b4b862974dd46b71c9e",
+                "reference": "13edfd8706462032c2f52b4b862974dd46b71c9e",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
             "require-dev": {
-                "phpunit/phpunit": "~5"
+                "phpunit/phpunit": "~4.8"
             },
             "type": "library",
             "extra": {
@@ -4680,7 +4681,7 @@
             "keywords": [
                 "diff"
             ],
-            "time": "2015-12-06 07:21:36"
+            "time": "2015-12-08 07:14:41"
         },
         {
             "name": "sebastian/environment",
