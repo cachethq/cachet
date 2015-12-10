@@ -15,6 +15,7 @@ use AltThree\Validator\ValidationException;
 use CachetHQ\Cachet\Commands\Subscriber\SubscribeSubscriberCommand;
 use CachetHQ\Cachet\Commands\Subscriber\UnsubscribeSubscriberCommand;
 use CachetHQ\Cachet\Commands\Subscriber\VerifySubscriberCommand;
+use CachetHQ\Cachet\Exceptions\AlreadySubscribedException;
 use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Cachet\Models\Subscriber;
 use GrahamCampbell\Binput\Facades\Binput;
@@ -50,6 +51,10 @@ class SubscribeController extends Controller
     {
         try {
             $this->dispatch(new SubscribeSubscriberCommand(Binput::get('email')));
+        } catch (AlreadySubscribedException $e) {
+            return Redirect::route('subscribe.subscribe')
+                ->withTitle(sprintf('<strong>%s</strong> %s', trans('dashboard.notifications.whoops'), trans('cachet.subscriber.email.failure')))
+                ->withErrors($e->getMessage());
         } catch (ValidationException $e) {
             return Redirect::route('subscribe.subscribe')
                 ->withInput(Binput::all())
@@ -76,7 +81,7 @@ class SubscribeController extends Controller
 
         $subscriber = Subscriber::where('verify_code', '=', $code)->first();
 
-        if (!$subscriber || $subscriber->verified()) {
+        if (!$subscriber || $subscriber->is_verified) {
             throw new BadRequestHttpException();
         }
 
@@ -101,7 +106,7 @@ class SubscribeController extends Controller
 
         $subscriber = Subscriber::where('verify_code', '=', $code)->first();
 
-        if (!$subscriber || !$subscriber->verified()) {
+        if (!$subscriber || !$subscriber->is_verified) {
             throw new BadRequestHttpException();
         }
 

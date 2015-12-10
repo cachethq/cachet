@@ -13,6 +13,7 @@ namespace CachetHQ\Cachet\Models;
 
 use AltThree\Validator\ValidatingTrait;
 use CachetHQ\Cachet\Presenters\SubscriberPresenter;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use McCool\LaravelAutoPresenter\HasPresenter;
 
@@ -63,11 +64,23 @@ class Subscriber extends Model implements HasPresenter
     }
 
     /**
+     * Scope a query to only include verified subscribers.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeVerified(Builder $query)
+    {
+        return $query->whereNotNull('verified_at');
+    }
+
+    /**
      * Determines if the subscriber is verified.
      *
      * @return bool
      */
-    public function verified()
+    public function getIsVerifiedAttribute()
     {
         return $this->verified_at !== null;
     }
