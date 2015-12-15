@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a4e93cada67102314b35909f552564d2",
-    "content-hash": "6882064a35b25f99f4ae49a322ee4073",
+    "hash": "69351d8294abb8da597970b4efe4832b",
+    "content-hash": "ab7a9bda7516015750a94f9792b45bb4",
     "packages": [
         {
             "name": "alt-three/emoji",
@@ -1611,22 +1611,22 @@
         },
         {
             "name": "jenssegers/date",
-            "version": "v3.0.13",
+            "version": "v3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jenssegers/date.git",
-                "reference": "e285f567af6d6cd0061efca109b38da3bcfc21c9"
+                "reference": "0fac566c8bc34a095b5bf418db888fdf11632a96"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jenssegers/date/zipball/e285f567af6d6cd0061efca109b38da3bcfc21c9",
-                "reference": "e285f567af6d6cd0061efca109b38da3bcfc21c9",
+                "url": "https://api.github.com/repos/jenssegers/date/zipball/0fac566c8bc34a095b5bf418db888fdf11632a96",
+                "reference": "0fac566c8bc34a095b5bf418db888fdf11632a96",
                 "shasum": ""
             },
             "require": {
                 "nesbot/carbon": "^1.0",
                 "php": ">=5.3.3",
-                "symfony/translation": "^2.0"
+                "symfony/translation": "^2.0|^3.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "^4.0|^5.0",
@@ -1664,7 +1664,7 @@
                 "time",
                 "translation"
             ],
-            "time": "2015-12-01 08:34:42"
+            "time": "2015-12-11 22:19:37"
         },
         {
             "name": "jeremeamia/SuperClosure",
@@ -2611,16 +2611,16 @@
         },
         {
             "name": "roumen/feed",
-            "version": "v2.9.7",
+            "version": "v2.9.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RoumenDamianoff/laravel-feed.git",
-                "reference": "4611e281e28934b17c564be8f709ac99176cf5f9"
+                "reference": "dce91e2d7a912b7b4d6448cc3e7faef725b4c752"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RoumenDamianoff/laravel-feed/zipball/4611e281e28934b17c564be8f709ac99176cf5f9",
-                "reference": "4611e281e28934b17c564be8f709ac99176cf5f9",
+                "url": "https://api.github.com/repos/RoumenDamianoff/laravel-feed/zipball/dce91e2d7a912b7b4d6448cc3e7faef725b4c752",
+                "reference": "dce91e2d7a912b7b4d6448cc3e7faef725b4c752",
                 "shasum": ""
             },
             "require": {
@@ -2658,7 +2658,7 @@
                 "laravel",
                 "rss"
             ],
-            "time": "2015-11-02 19:03:05"
+            "time": "2015-12-11 18:20:14"
         },
         {
             "name": "simplesoftwareio/simple-qrcode",
