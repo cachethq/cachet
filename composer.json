@@ -32,11 +32,11 @@
         "graham-campbell/throttle": "^5.1",
         "graham-campbell/exceptions": "^6.1",
         "guzzlehttp/guzzle": "^6.1",
-        "jenssegers/date": "^3.0",
+        "jenssegers/date": "^3.1",
         "mccool/laravel-auto-presenter": "^4.2",
         "pragmarx/google2fa": "^0.7",
         "rcrowe/twigbridge": "^0.9",
-        "roumen/feed": "^2.9"
+        "roumen/feed": "^2.9.8"
     },
     "require-dev": {
         "filp/whoops": "^1.1",
