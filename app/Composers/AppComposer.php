@@ -39,7 +39,7 @@ class AppComposer
         $view->withAppGraphs(Setting::get('display_graphs'));
         $view->withAppLocale(Setting::get('app_locale'));
         $view->withAppName(Setting::get('app_name'));
-        $view->withAppStylesheet(Setting::get('app_stylesheet'));
+        $view->withAppStylesheet(Setting::get('stylesheet'));
         $view->withAppUrl(Config::get('app.url'));
         $view->withShowSupport(Setting::get('show_support'));
     }

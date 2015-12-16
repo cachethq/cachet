@@ -44,9 +44,9 @@
 
     @include('partials.crowdin')
 
-    @if($stylesheet = $app_stylesheet)
+    @if($app_stylesheet)
     <style type="text/css">
-    {!! $stylesheet !!}
+    {!! $app_stylesheet !!}
     </style>
     @endif
 
