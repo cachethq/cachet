@@ -27,6 +27,7 @@ return [
 
     // Login form fields
     'login' => [
+        'login'         => 'Username or Email',
         'email'         => '이메일',
         'password'      => '비밀번호',
         '2fauth'        => '인증 코드',

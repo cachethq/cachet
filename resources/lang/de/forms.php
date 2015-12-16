@@ -27,6 +27,7 @@ return [
 
     // Login form fields
     'login' => [
+        'login'         => 'Username or Email',
         'email'         => 'E-Mail',
         'password'      => 'Passwort',
         '2fauth'        => 'Authentifizierungscode',
