@@ -27,6 +27,7 @@ return [
 
     // Login form fields
     'login' => [
+        'login'         => 'Username or Email',
         'email'         => '電子郵箱',
         'password'      => '密碼',
         '2fauth'        => '雙因素驗證代碼',
