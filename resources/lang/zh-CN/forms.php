@@ -27,6 +27,7 @@ return [
 
     // Login form fields
     'login' => [
+        'login'         => '用户名或电子邮箱',
         'email'         => '电子邮箱',
         'password'      => '密码',
         '2fauth'        => '双因素验证代码',

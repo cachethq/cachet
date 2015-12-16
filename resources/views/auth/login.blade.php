@@ -30,8 +30,8 @@
                     @endif
 
                     <div class="form-group">
-                        <label class="sr-only">{{ trans('forms.login.email') }}</label>
-                        <input autocomplete="off" class="form-control login-input" placeholder="{{ trans('forms.login.email') }}" required="required" name="email" type="email" autofocus>
+                        <label class="sr-only">{{ trans('forms.login.login') }}</label>
+                        <input autocomplete="off" class="form-control login-input" placeholder="{{ trans('forms.login.login') }}" required="required" name="login" type="text" autofocus>
                     </div>
                     <div class="form-group">
                         <label class="sr-only">{{ trans('forms.login.password') }}</label>

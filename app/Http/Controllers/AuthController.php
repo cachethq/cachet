@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Str;
 use PragmaRX\Google2FA\Vendor\Laravel\Facade as Google2FA;
 
 class AuthController extends Controller
@@ -40,7 +41,12 @@ class AuthController extends Controller
      */
     public function postLogin()
     {
-        $loginData = Binput::only(['email', 'password']);
+        $loginData = Binput::only(['login', 'password']);
+
+        // Login with username or email.
+        $loginKey = Str::contains($loginData['login'], '@') ? 'email' : 'username';
+        $loginData[$loginKey] = array_pull($loginData, 'login');
+
         // Validate login credentials.
         if (Auth::validate($loginData)) {
             // Log the user in for one request.
