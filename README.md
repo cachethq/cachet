@@ -50,7 +50,7 @@ You can now find our documentation at [https://docs.cachethq.io](https://docs.ca
 
 To test out the demo, you may login to the [Dashboard](https://demo.cachethq.io/dashboard) with the following:
 
-- **Username:** test@test.com
+- **Username:** test or test@test.com
 - **Password:** test123
 
 The demo is reset every half hour.
