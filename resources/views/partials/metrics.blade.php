@@ -93,7 +93,7 @@
         chartConfig.datasets[0].data = _.values(charter);
 
         charts[metricId].chart = new Chart(charts[metricId].context).Line(chartConfig, {
-            tooltipTemplate: $el.data('metric-name') + ": <%= value %> " + $el.data('metric-suffix'),
+            tooltipTemplate: $el.data('metric-name') + ": <{{ '%' }}= value %> " + $el.data('metric-suffix'),
             scaleShowVerticalLines: true,
             scaleShowLabels: false,
             responsive: true,
