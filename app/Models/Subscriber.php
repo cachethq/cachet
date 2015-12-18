@@ -13,6 +13,7 @@ namespace CachetHQ\Cachet\Models;
 
 use AltThree\Validator\ValidatingTrait;
 use CachetHQ\Cachet\Presenters\SubscriberPresenter;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use McCool\LaravelAutoPresenter\HasPresenter;
 
@@ -60,6 +61,18 @@ class Subscriber extends Model implements HasPresenter
                 $user->verify_code = self::generateVerifyCode();
             }
         });
+    }
+
+    /**
+     * Scope verified subscribers.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeIsVerified(Builder $query)
+    {
+        return $query->whereNotNull('verified_at');
     }
 
     /**
