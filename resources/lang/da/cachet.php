@@ -63,13 +63,14 @@ return [
         'subscribe' => 'Abonner på seneste hændelser.',
         'button'    => 'Abonner',
         'email'     => [
-            'subscribe'    => 'Få opdateringer pr. email.',
-            'subscribed'   => 'Du er blevet tilmeldt emailnotifikationer. Vi har sendt dig en bekræftelse på den indtastede email-adresse.',
-            'verified'     => 'Din tilmelding er nu blevet bekræftet, tak.',
-            'unsubscribe'  => 'Afmeld emailnotifikationer.',
-            'unsubscribed' => 'Du er nu blevet frameldt vores emailnotifikationer.',
-            'failure'      => 'Noget gik galt med bekræftelsen.',
-            'verify'       => [
+            'subscribe'          => 'Få opdateringer pr. email.',
+            'subscribed'         => 'Du er blevet tilmeldt emailnotifikationer. Vi har sendt dig en bekræftelse på den indtastede email-adresse.',
+            'verified'           => 'Din tilmelding er nu blevet bekræftet, tak.',
+            'unsubscribe'        => 'Afmeld emailnotifikationer.',
+            'unsubscribed'       => 'Du er nu blevet frameldt vores emailnotifikationer.',
+            'failure'            => 'Noget gik galt med bekræftelsen.',
+            'already-subscribed' => 'Cannot subscribe :email because they\'re already subscribed.',
+            'verify'             => [
                 'text'           => "Bekræft din tilmelding til vores emailnotifikationer for :app_name statusopdateringer.\n:link\nTak, :app_name",
                 'html-preheader' => 'Bekræft venligst din tilmelding til :app_name statusopdateringer via email.',
                 'html'           => '<p>Bekræft venligst din tilmelding til :app_name statuspdateringer via email.</p><p><a href=":link">:link</a></p><p>Tak, :app_name</p>',

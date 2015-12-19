@@ -1,3 +1,4 @@
+
 <?php
 
 /*
@@ -63,13 +64,14 @@ return [
         'subscribe' => 'Abonnez-vous pour obtenir les dernières mises à jour.',
         'button'    => 'S\'abonner',
         'email'     => [
-            'subscribe'    => 'S\'abonner aux mises à jour par courriel.',
-            'subscribed'   => 'Vous êtes abonné aux notifications par courriel, veuillez vérifier votre messagerie pour confirmer votre abonnement.',
-            'verified'     => 'Votre abonnement par courriel a été confirmé. Merci !',
-            'unsubscribe'  => 'Désinscription des mises à jour par courriel.',
-            'unsubscribed' => 'Votre abonnement par courriel a été annulé.',
-            'failure'      => 'Quelque chose s\'est mal passé avec l\'abonnement.',
-            'verify'       => [
+            'subscribe'          => 'S\'abonner aux mises à jour par courriel.',
+            'subscribed'         => 'Vous êtes abonné aux notifications par courriel, veuillez vérifier votre messagerie pour confirmer votre abonnement.',
+            'verified'           => 'Votre abonnement par courriel a été confirmé. Merci !',
+            'unsubscribe'        => 'Désinscription des mises à jour par courriel.',
+            'unsubscribed'       => 'Votre abonnement par courriel a été annulé.',
+            'failure'            => 'Quelque chose s\'est mal passé avec l\'abonnement.',
+            'already-subscribed' => 'Cannot subscribe :email because they\'re already subscribed.',
+            'verify'             => [
                 'text'           => "Veuillez confirmer votre abonnement par courriel aux mises à jour d'état de :app_name.\\n:link\\nMerci, :app_name",
                 'html-preheader' => 'Veuillez confirmer votre abonnement par courriel aux mises à jour de :app_name.',
                 'html'           => '',
