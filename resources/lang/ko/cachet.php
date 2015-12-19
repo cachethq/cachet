@@ -63,13 +63,14 @@ return [
         'subscribe' => '최신 업데이트를 받아 보기 위한 구독신청.',
         'button'    => '구독',
         'email'     => [
-            'subscribe'    => '이메일 구독 신청.',
-            'subscribed'   => '이메일 구독 신청이 완료되었습니다. 구독 신청 확인을 위한 이메일을 확인해주세요.',
-            'verified'     => '이메일 구독이 확인 되었습니다. 감사합니다!',
-            'unsubscribe'  => '이메일 구독 취소',
-            'unsubscribed' => '이메일 구독이 취소 되었습니다.',
-            'failure'      => '구독 신청 중에 문제가 발생했습니다.',
-            'verify'       => [
+            'subscribe'          => '이메일 구독 신청.',
+            'subscribed'         => '이메일 구독 신청이 완료되었습니다. 구독 신청 확인을 위한 이메일을 확인해주세요.',
+            'verified'           => '이메일 구독이 확인 되었습니다. 감사합니다!',
+            'unsubscribe'        => '이메일 구독 취소',
+            'unsubscribed'       => '이메일 구독이 취소 되었습니다.',
+            'failure'            => '구독 신청 중에 문제가 발생했습니다.',
+            'already-subscribed' => 'Cannot subscribe :email because they\'re already subscribed.',
+            'verify'             => [
                 'text'           => ":app_name 의 상태 업데이트에 대한 이메일 구독을 확인해주세요.\n:link\n감사합니다, :app_name",
                 'html-preheader' => ':app_name 의 상태 업데이트에 대한 이메일 구독을 확인해주세요.',
                 'html'           => '<p>:app_name 의 상태 업데이트에 대한 이메일 구독을 확인해주세요.</p><p><a href=":link">:link</a></p> <p>감사 합니다, :app_name</p>',

@@ -61,13 +61,14 @@ return [
         'subscribe' => 'Suscríbete para recibir las actualizaciones más recientes.',
         'button'    => 'Suscribirse',
         'email'     => [
-            'subscribe'    => 'Suscríbete a las actualizaciones por correo electrónico.',
-            'subscribed'   => 'Se te ha suscrito a la la lista de notificaciones por correo electónico, por favor comprueba tu email para confirmar la suscripción.',
-            'verified'     => 'Tu suscripción a la lista de notificaciones por correo electrónico ha sido confirmada. ¡Gracias!',
-            'unsubscribe'  => 'Desuscribirse de la lista de notificaciones por correo electrónico.',
-            'unsubscribed' => 'Tu suscripción a la lista de notificaciones por correo electrónico has sido cancelada.',
-            'failure'      => 'Algo salió mal con la suscripción.',
-            'verify'       => [
+            'subscribe'          => 'Suscríbete a las actualizaciones por correo electrónico.',
+            'subscribed'         => 'Se te ha suscrito a la la lista de notificaciones por correo electónico, por favor comprueba tu email para confirmar la suscripción.',
+            'verified'           => 'Tu suscripción a la lista de notificaciones por correo electrónico ha sido confirmada. ¡Gracias!',
+            'unsubscribe'        => 'Desuscribirse de la lista de notificaciones por correo electrónico.',
+            'unsubscribed'       => 'Tu suscripción a la lista de notificaciones por correo electrónico has sido cancelada.',
+            'failure'            => 'Algo salió mal con la suscripción.',
+            'already-subscribed' => 'Cannot subscribe :email because they\'re already subscribed.',
+            'verify'             => [
                 'text'           => "Por favor confirma tu suscripción por correo electrónico a las actualizaciones de estado de :app_name.\n:link\nGracias, :app_name",
                 'html-preheader' => 'Por favor confirma tu suscripción por correo electrónico a las actualizaciones de estado de :app_name.',
                 'html'           => '<p>Por favor confirma tu suscripción por correo electrónico a las actualizaciones de estado de :app_name.</p><p><a href=":link">:link</a></p><p>Gracias, :app_name</p>',

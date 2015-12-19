@@ -34,7 +34,7 @@ class SubscribeSubscriberCommandHandler
     public function handle(SubscribeSubscriberCommand $command)
     {
         if (Subscriber::where('email', $command->email)->first()) {
-            throw new AlreadySubscribedException("Cannot subscribe {$command->email} because they're already subscribed.");
+            throw new AlreadySubscribedException(trans('cachet.subscriber.email.already-subscribed', ['email' => $command->email]));
         }
 
         $subscriber = Subscriber::create(['email' => $command->email]);
