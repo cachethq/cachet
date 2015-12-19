@@ -63,13 +63,14 @@ return [
         'subscribe' => '訂閱最新的更新。',
         'button'    => '訂閱',
         'email'     => [
-            'subscribe'    => '訂閱電子郵件更新。',
-            'subscribed'   => '您已經訂閱電子郵件通知，請檢查您的電子郵件，確認您的訂閱。',
-            'verified'     => '您的電子郵件訂閱已確認。謝謝！',
-            'unsubscribe'  => '取消電子郵件訂閱。',
-            'unsubscribed' => '您的電子郵件訂閱已被取消。',
-            'failure'      => '郵件訂閱失敗。',
-            'verify'       => [
+            'subscribe'          => '訂閱電子郵件更新。',
+            'subscribed'         => '您已經訂閱電子郵件通知，請檢查您的電子郵件，確認您的訂閱。',
+            'verified'           => '您的電子郵件訂閱已確認。謝謝！',
+            'unsubscribe'        => '取消電子郵件訂閱。',
+            'unsubscribed'       => '您的電子郵件訂閱已被取消。',
+            'failure'            => '郵件訂閱失敗。',
+            'already-subscribed' => 'Cannot subscribe :email because they\'re already subscribed.',
+            'verify'             => [
                 'text'           => '請確認您的 :app_name 電子郵件訂閱。\\n:link\\n此致，:app_name',
                 'html-preheader' => '請確認您的 :app_name 狀態更新郵件訂閱。',
                 'html'           => '<p>請確認您的 :app_name 電子郵件訂閱。</p><p><a href=":link">:link</a></p><p>此致，:app_name</p>',
