@@ -25,7 +25,7 @@ class ComponentWasRemovedEvent implements ComponentEventInterface
     /**
      * Create a new component was removed event instance.
      *
-     * @return void
+     * @param Component $component
      */
     public function __construct(Component $component)
     {

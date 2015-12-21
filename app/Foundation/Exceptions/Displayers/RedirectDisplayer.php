@@ -30,7 +30,6 @@ class RedirectDisplayer implements DisplayerInterface
      *
      * @param \Illuminate\Http\Request $request
      *
-     * @return void
      */
     public function __construct(Request $request)
     {

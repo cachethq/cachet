@@ -88,7 +88,6 @@ final class AddComponentCommand
      * @param int    $group_id
      * @param bool   $enabled
      *
-     * @return void
      */
     public function __construct($name, $description, $status, $link, $order, $group_id, $enabled)
     {

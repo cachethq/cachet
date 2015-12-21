@@ -28,7 +28,6 @@ class MetricsComposer
      *
      * @param \CachetHQ\Cachet\Repositories\Metric\MetricRepository $metricRepository
      *
-     * @return void
      */
     public function __construct(MetricRepository $metricRepository)
     {

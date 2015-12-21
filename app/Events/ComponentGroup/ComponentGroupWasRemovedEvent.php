@@ -25,7 +25,7 @@ class ComponentGroupWasRemovedEvent implements ComponentGroupEventInterface
     /**
      * Create a new component group was removed event instance.
      *
-     * @return void
+     * @param ComponentGroup $group
      */
     public function __construct(ComponentGroup $group)
     {

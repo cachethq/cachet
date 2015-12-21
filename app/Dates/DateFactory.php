@@ -35,7 +35,6 @@ class DateFactory
      * @param string $appTimezone
      * @param string $cachetTimezone
      *
-     * @return void
      */
     public function __construct($appTimezone, $cachetTimezone)
     {

@@ -38,7 +38,6 @@ class ScheduleController extends Controller
     /**
      * Creates a new schedule controller instance.
      *
-     * @return \CachetHQ\Cachet\Http\Controllers\DashScheduleController
      */
     public function __construct()
     {

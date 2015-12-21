@@ -41,7 +41,6 @@ class ComponentController extends Controller
     /**
      * Creates a new component controller instance.
      *
-     * @return void
      */
     public function __construct()
     {

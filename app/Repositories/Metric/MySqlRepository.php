@@ -29,7 +29,6 @@ class MySqlRepository implements MetricInterface
     /**
      * Creates a new instance of the metric repository.
      *
-     * @return void
      */
     public function __construct()
     {
@@ -71,6 +70,7 @@ class MySqlRepository implements MetricInterface
      * Returns metrics for the week.
      *
      * @param \CachetHQ\Cachet\Models\Metric $metric
+     * @param                                $day
      *
      * @return int
      */

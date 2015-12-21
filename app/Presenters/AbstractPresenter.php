@@ -28,7 +28,6 @@ abstract class AbstractPresenter extends BaseLaravelAutoPresenter implements Arr
      *
      * @param \Illuminate\Database\Eloquent\Model $resource
      *
-     * @return void
      */
     public function __construct($resource)
     {

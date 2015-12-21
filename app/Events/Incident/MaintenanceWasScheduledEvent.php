@@ -25,7 +25,7 @@ class MaintenanceWasScheduledEvent implements IncidentEventInterface
     /**
      * Create a new maintenance has scheduled event instance.
      *
-     * @return void
+     * @param Incident $incident
      */
     public function __construct(Incident $incident)
     {

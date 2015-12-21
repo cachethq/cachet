@@ -36,10 +36,9 @@ class SendMaintenanceEmailNotificationHandler
     /**
      * Create a new send maintenance email notification handler.
      *
-     * @param \Illuminate\Contracts\Mail\Mailer  $mailer
+     * @param \Illuminate\Contracts\Mail\Mailer $mailer
      * @param \CachetHQ\Cachet\Models\Subscriber $subscriber
      *
-     * @return void
      */
     public function __construct(MailQueue $mailer, Subscriber $subscriber)
     {

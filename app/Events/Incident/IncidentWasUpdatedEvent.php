@@ -25,7 +25,7 @@ class IncidentWasUpdatedEvent implements IncidentEventInterface
     /**
      * Create a new incident has updated event instance.
      *
-     * @return void
+     * @param Incident $incident
      */
     public function __construct(Incident $incident)
     {

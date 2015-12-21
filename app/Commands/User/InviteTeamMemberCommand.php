@@ -32,9 +32,7 @@ final class InviteTeamMemberCommand
     /**
      * Create a new invite team member command instance.
      *
-     * @param string[] $email
-     *
-     * @return void
+     * @param string[] $emails
      */
     public function __construct(array $emails)
     {

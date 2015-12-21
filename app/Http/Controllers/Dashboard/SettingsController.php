@@ -33,7 +33,6 @@ class SettingsController extends Controller
     /**
      * Creates a new settings controller instance.
      *
-     * @return void
      */
     public function __construct()
     {

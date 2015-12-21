@@ -25,7 +25,7 @@ class MetricPointWasUpdatedEvent implements MetricEventInterface
     /**
      * Create a new metric point was updated event instance.
      *
-     * @return void
+     * @param MetricPoint $point
      */
     public function __construct(MetricPoint $point)
     {

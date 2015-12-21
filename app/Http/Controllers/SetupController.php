@@ -43,7 +43,6 @@ class SetupController extends Controller
     /**
      * Create a new setup controller instance.
      *
-     * @return void
      */
     public function __construct()
     {

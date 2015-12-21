@@ -61,7 +61,6 @@ final class SignupUserCommand
      * @param string $email
      * @param int    $level
      *
-     * @return void
      */
     public function __construct($username, $password, $email, $level)
     {

@@ -99,7 +99,6 @@ final class UpdateMetricCommand
      * @param int                            $display_chart
      * @param int                            $places
      *
-     * @return void
      */
     public function __construct(Metric $metric, $name, $suffix, $description, $default_value, $calc_type, $display_chart, $places)
     {

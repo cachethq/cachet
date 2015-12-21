@@ -29,7 +29,6 @@ class SendSubscriberVerificationEmailHandler
      *
      * @param \Illuminate\Contracts\Mail\Mailer $mailer
      *
-     * @return void
      */
     public function __construct(MailQueue $mailer)
     {

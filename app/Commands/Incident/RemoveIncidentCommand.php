@@ -27,7 +27,6 @@ final class RemoveIncidentCommand
      *
      * @param \CachetHQ\Cachet\Models\Incident $incident
      *
-     * @return void
      */
     public function __construct(Incident $incident)
     {

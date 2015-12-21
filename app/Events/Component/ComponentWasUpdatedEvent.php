@@ -25,7 +25,7 @@ class ComponentWasUpdatedEvent implements ComponentEventInterface
     /**
      * Create a new component was updated event instance.
      *
-     * @return void
+     * @param Component $component
      */
     public function __construct(Component $component)
     {

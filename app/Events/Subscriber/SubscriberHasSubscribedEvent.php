@@ -25,7 +25,7 @@ class SubscriberHasSubscribedEvent implements SubscriberEventInterface
     /**
      * Create a new subscriber has subscribed event instance.
      *
-     * @return void
+     * @param Subscriber $subscriber
      */
     public function __construct(Subscriber $subscriber)
     {

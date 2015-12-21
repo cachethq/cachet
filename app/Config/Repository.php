@@ -34,7 +34,6 @@ class Repository
      *
      * @param \CachetHQ\Cachet\Models\Setting $model
      *
-     * @return void
      */
     public function __construct(Setting $model)
     {
