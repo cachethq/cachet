@@ -25,7 +25,7 @@ class ComponentGroupWasUpdatedEvent implements ComponentGroupEventInterface
     /**
      * Create a new component group was updated event instance.
      *
-     * @return void
+     * @param ComponentGroup $group
      */
     public function __construct(ComponentGroup $group)
     {

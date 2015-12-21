@@ -27,7 +27,6 @@ final class RemoveComponentCommand
      *
      * @param \CachetHQ\Cachet\Models\Component $component
      *
-     * @return void
      */
     public function __construct(Component $component)
     {

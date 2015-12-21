@@ -98,7 +98,6 @@ final class UpdateComponentCommand
      * @param int                               $group_id
      * @param bool                              $enabled
      *
-     * @return void
      */
     public function __construct(Component $component, $name, $description, $status, $link, $order, $group_id, $enabled)
     {

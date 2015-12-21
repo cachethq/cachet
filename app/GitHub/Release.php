@@ -37,7 +37,6 @@ class Release
      * @param \Illuminate\Contracts\Cache\Repository  $cache
      * @param \Illuminate\Contracts\Config\Repository $config
      *
-     * @return void
      */
     public function __construct(CacheRepository $cache, ConfigRepository $config)
     {

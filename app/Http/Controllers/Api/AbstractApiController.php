@@ -173,8 +173,6 @@ abstract class AbstractApiController extends Controller
     /**
      * Respond with a no content response.
      *
-     * @param string $message
-     *
      * @return \Illuminate\Http\JsonResponse
      */
     protected function noContent()

@@ -38,7 +38,6 @@ class DashboardController extends Controller
     /**
      * Creates a new dashboard controller.
      *
-     * @return void
      */
     public function __construct()
     {

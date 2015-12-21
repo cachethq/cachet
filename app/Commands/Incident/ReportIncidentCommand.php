@@ -114,7 +114,6 @@ final class ReportIncidentCommand
      * @param string|null $template
      * @param array|null  $template_vars
      *
-     * @return void
      */
     public function __construct($name, $status, $message, $visible, $component_id, $component_status, $notify, $incident_date, $template, array $template_vars = null)
     {

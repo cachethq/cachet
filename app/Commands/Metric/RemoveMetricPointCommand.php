@@ -27,7 +27,6 @@ final class RemoveMetricPointCommand
      *
      * @param \CachetHQ\Cachet\Models\MetricPoint $metricPoint
      *
-     * @return void
      */
     public function __construct(MetricPoint $metricPoint)
     {

@@ -27,7 +27,6 @@ final class RemoveComponentGroupCommand
      *
      * @param \CachetHQ\Cachet\Models\ComponentGroup $group
      *
-     * @return void
      */
     public function __construct(ComponentGroup $group)
     {

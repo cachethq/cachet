@@ -83,6 +83,9 @@ class MetricPointTest extends AbstractApiTestCase
 
         $this->beUser();
 
+        // prevent tests breaking due to rolling into the next second
+        Carbon::setTestNow(Carbon::now());
+
         $timezone = 'America/Mexico_City';
         $metric = factory('CachetHQ\Cachet\Models\Metric')->create();
         $timestamp = Carbon::now()->timezone($timezone)->timestamp;

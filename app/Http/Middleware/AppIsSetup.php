@@ -23,9 +23,8 @@ class AppIsSetup
      * We're verifying that Cachet is correctly setup. If it is, then we're
      * redirecting the user to the dashboard so they can use Cachet.
      *
-     * @param \Illuminate\Routing\Route $route
-     * @param \Closure                  $next
-     *
+     * @param          $request
+     * @param \Closure $next
      * @return mixed
      */
     public function handle($request, Closure $next)

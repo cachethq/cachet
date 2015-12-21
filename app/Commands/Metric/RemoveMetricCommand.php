@@ -27,7 +27,6 @@ final class RemoveMetricCommand
      *
      * @param \CachetHQ\Cachet\Models\Metric $metric
      *
-     * @return void
      */
     public function __construct(Metric $metric)
     {

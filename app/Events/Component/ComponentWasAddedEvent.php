@@ -25,7 +25,7 @@ class ComponentWasAddedEvent implements ComponentEventInterface
     /**
      * Create a new component was added event instance.
      *
-     * @return void
+     * @param Component $component
      */
     public function __construct(Component $component)
     {

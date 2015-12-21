@@ -111,7 +111,7 @@ final class UpdateIncidentCommand
     /**
      * Create a new update incident command instance.
      *
-     * @param \CachetHQ\Cachet\Models\Incident $name
+     * @param \CachetHQ\Cachet\Models\Incident $incident
      * @param string                           $name
      * @param int                              $status
      * @param string                           $message
@@ -123,7 +123,6 @@ final class UpdateIncidentCommand
      * @param string|null                      $template
      * @param array|null                       $template_vars
      *
-     * @return void
      */
     public function __construct(Incident $incident, $name, $status, $message, $visible, $component_id, $component_status, $notify, $incident_date, $template, array $template_vars = null)
     {

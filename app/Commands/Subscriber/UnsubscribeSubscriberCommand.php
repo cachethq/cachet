@@ -27,7 +27,6 @@ final class UnsubscribeSubscriberCommand
      *
      * @param \CachetHQ\Cachet\Models\Subscriber $subscriber
      *
-     * @return void
      */
     public function __construct(Subscriber $subscriber)
     {

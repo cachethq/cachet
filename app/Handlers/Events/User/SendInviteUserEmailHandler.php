@@ -29,7 +29,6 @@ class SendInviteUserEmailHandler
      *
      * @param \Illuminate\Contracts\Mail\Mailer $mailer
      *
-     * @return void
      */
     public function __construct(MailQueue $mailer)
     {

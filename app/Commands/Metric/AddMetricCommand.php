@@ -89,7 +89,6 @@ final class AddMetricCommand
      * @param int    $display_chart
      * @param int    $places
      *
-     * @return void
      */
     public function __construct($name, $suffix, $description, $default_value, $calc_type, $display_chart, $places)
     {

@@ -61,7 +61,6 @@ final class ReportMaintenanceCommand
      * @param bool   $notify
      * @param string $timestamp
      *
-     * @return void
      */
     public function __construct($name, $message, $notify, $timestamp)
     {

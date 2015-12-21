@@ -29,7 +29,6 @@ class UpdateMetricPointCommandHandler
      *
      * @param \CachetHQ\Cachet\Dates\DateFactory $dates
      *
-     * @return void
      */
     public function __construct(DateFactory $dates)
     {

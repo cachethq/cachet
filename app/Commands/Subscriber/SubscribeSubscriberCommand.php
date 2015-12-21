@@ -42,7 +42,6 @@ final class SubscribeSubscriberCommand
      * @param string $email
      * @param bool   $verified
      *
-     * @return void
      */
     public function __construct($email, $verified = false)
     {

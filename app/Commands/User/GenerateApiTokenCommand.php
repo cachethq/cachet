@@ -27,7 +27,6 @@ final class GenerateApiTokenCommand
      *
      * @param \CachetHQ\Cachet\Models\User $user
      *
-     * @return void
      */
     public function __construct(User $user)
     {

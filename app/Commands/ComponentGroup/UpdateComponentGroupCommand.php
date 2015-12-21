@@ -53,7 +53,6 @@ final class UpdateComponentGroupCommand
      * @param string                                 $name
      * @param int                                    $order
      *
-     * @return void
      */
     public function __construct(ComponentGroup $group, $name, $order)
     {

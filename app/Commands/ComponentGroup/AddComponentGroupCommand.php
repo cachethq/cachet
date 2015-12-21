@@ -43,7 +43,6 @@ final class AddComponentGroupCommand
      * @param string $name
      * @param int    $order
      *
-     * @return void
      */
     public function __construct($name, $order)
     {

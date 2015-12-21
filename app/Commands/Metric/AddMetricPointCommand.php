@@ -53,7 +53,6 @@ final class AddMetricPointCommand
      * @param int                            $value
      * @param string                         $created_at
      *
-     * @return void
      */
     public function __construct(Metric $metric, $value, $created_at)
     {
