@@ -98,7 +98,7 @@ class IncidentPresenter extends AbstractPresenter
     }
 
     /**
-     * Present formated date time.
+     * Present formatted date time.
      *
      * @return string
      */

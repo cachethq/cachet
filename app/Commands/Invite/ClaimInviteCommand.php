@@ -16,7 +16,7 @@ use CachetHQ\Cachet\Models\Invite;
 final class ClaimInviteCommand
 {
     /**
-     * The invte to mark as claimed.
+     * The invite to mark as claimed.
      *
      * @var \CachetHQ\Cachet\Models\Invite
      */
