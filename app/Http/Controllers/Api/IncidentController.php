@@ -36,9 +36,9 @@ class IncidentController extends AbstractApiController
      */
     public function getIncidents(Request $request, Guard $auth)
     {
-        $incidentVisiblity = $auth->check() ? 0 : 1;
+        $incidentVisibility = $auth->check() ? 0 : 1;
 
-        $incidents = Incident::where('visible', '>=', $incidentVisiblity)->paginate(Binput::get('per_page', 20));
+        $incidents = Incident::where('visible', '>=', $incidentVisibility)->paginate(Binput::get('per_page', 20));
 
         return $this->paginator($incidents, $request);
     }
@@ -87,7 +87,7 @@ class IncidentController extends AbstractApiController
     /**
      * Update an existing incident.
      *
-     * @param \CachetHQ\Cachet\Models\Inicdent $incident
+     * @param \CachetHQ\Cachet\Models\Incident $incident
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -117,7 +117,7 @@ class IncidentController extends AbstractApiController
     /**
      * Delete an existing incident.
      *
-     * @param \CachetHQ\Cachet\Models\Inicdent $incident
+     * @param \CachetHQ\Cachet\Models\Incident $incident
      *
      * @return \Illuminate\Http\JsonResponse
      */

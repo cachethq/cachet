@@ -26,7 +26,7 @@ class ReportMaintenanceCommandHandler
     protected $dates;
 
     /**
-     * Create a new report maintanance command handler instance.
+     * Create a new report maintenance command handler instance.
      *
      * @param \CachetHQ\Cachet\Dates\DateFactory $dates
      *

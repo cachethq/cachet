@@ -14,7 +14,7 @@ namespace CachetHQ\Cachet\Commands\User;
 final class InviteTeamMemberCommand
 {
     /**
-     * The invte emails.
+     * The invite emails.
      *
      * @var string[]
      */
