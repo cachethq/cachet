@@ -25,6 +25,8 @@ final class UserWasInvitedEvent
     /**
      * Create a new user was invite event instance.
      *
+     * @param \CachetHQ\Cachet\Models\Invite $invite
+     *
      * @return void
      */
     public function __construct(Invite $invite)

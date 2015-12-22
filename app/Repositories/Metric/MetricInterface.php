@@ -29,6 +29,7 @@ interface MetricInterface
      * Returns metrics for the week.
      *
      * @param \CachetHQ\Cachet\Models\Metric $metric
+     * @param int                            $day
      *
      * @return int
      */

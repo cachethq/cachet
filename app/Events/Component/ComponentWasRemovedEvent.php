@@ -25,6 +25,8 @@ class ComponentWasRemovedEvent implements ComponentEventInterface
     /**
      * Create a new component was removed event instance.
      *
+     * @param \CachetHQ\Cachet\Models\Component $component
+     *
      * @return void
      */
     public function __construct(Component $component)

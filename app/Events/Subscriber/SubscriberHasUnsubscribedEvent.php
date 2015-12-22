@@ -25,6 +25,8 @@ class SubscriberHasUnsubscribedEvent implements SubscriberEventInterface
     /**
      * Create a new subscriber has unsubscribed event instance.
      *
+     * @param \CachetHQ\Cachet\Models\Subscriber $subscriber
+     *
      * @return void
      */
     public function __construct(Subscriber $subscriber)

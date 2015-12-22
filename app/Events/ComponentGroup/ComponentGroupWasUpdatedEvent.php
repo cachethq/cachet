@@ -25,6 +25,8 @@ class ComponentGroupWasUpdatedEvent implements ComponentGroupEventInterface
     /**
      * Create a new component group was updated event instance.
      *
+     * @param \CachetHQ\Cachet\Models\ComponentGroup $group
+     *
      * @return void
      */
     public function __construct(ComponentGroup $group)

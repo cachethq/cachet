@@ -25,6 +25,8 @@ class MetricWasAddedEvent implements MetricEventInterface
     /**
      * Create a new metric was added event instance.
      *
+     * @param \CachetHQ\Cachet\Models\Metric $metric
+     *
      * @return void
      */
     public function __construct(Metric $metric)

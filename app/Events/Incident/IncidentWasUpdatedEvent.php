@@ -25,6 +25,8 @@ class IncidentWasUpdatedEvent implements IncidentEventInterface
     /**
      * Create a new incident has updated event instance.
      *
+     * @param \CachetHQ\Cachet\Models\Incident $incident
+     *
      * @return void
      */
     public function __construct(Incident $incident)

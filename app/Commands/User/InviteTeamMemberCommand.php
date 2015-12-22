@@ -32,7 +32,7 @@ final class InviteTeamMemberCommand
     /**
      * Create a new invite team member command instance.
      *
-     * @param string[] $email
+     * @param string[] $emails
      *
      * @return void
      */

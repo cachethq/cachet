@@ -25,6 +25,8 @@ class MetricPointWasUpdatedEvent implements MetricEventInterface
     /**
      * Create a new metric point was updated event instance.
      *
+     * @param \CachetHQ\Cachet\Models\MetricPoint $point
+     *
      * @return void
      */
     public function __construct(MetricPoint $point)

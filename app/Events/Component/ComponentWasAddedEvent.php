@@ -25,6 +25,8 @@ class ComponentWasAddedEvent implements ComponentEventInterface
     /**
      * Create a new component was added event instance.
      *
+     * @param \CachetHQ\Cachet\Models\Component $component
+     *
      * @return void
      */
     public function __construct(Component $component)
