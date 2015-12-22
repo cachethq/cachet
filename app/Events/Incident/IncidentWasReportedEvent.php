@@ -25,7 +25,7 @@ class IncidentWasReportedEvent implements IncidentEventInterface
     /**
      * Create a new incident has reported event instance.
      *
-     * @param Incident $incident
+     * @param \CachetHQ\Cachet\Models\Incident $incident
      *
      * @return void
      */

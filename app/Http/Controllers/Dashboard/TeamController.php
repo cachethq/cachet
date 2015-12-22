@@ -43,7 +43,7 @@ class TeamController extends Controller
     /**
      * Shows the edit team member view.
      *
-     * @param User $user
+     * @param \CachetHQ\Cachet\Models\User $user
      *
      * @return \Illuminate\View\View
      */

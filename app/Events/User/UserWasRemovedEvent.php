@@ -25,7 +25,7 @@ final class UserWasRemovedEvent implements UserEventInterface
     /**
      * Create a new user was removed event instance.
      *
-     * @param User $user
+     * @param \CachetHQ\Cachet\Models\User $user
      *
      * @return void
      */

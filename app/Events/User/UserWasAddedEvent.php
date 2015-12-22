@@ -25,7 +25,7 @@ final class UserWasAddedEvent implements UserEventInterface
     /**
      * Create a new user was added event instance.
      *
-     * @param User $user
+     * @param \CachetHQ\Cachet\Models\User $user
      *
      * @return void
      */

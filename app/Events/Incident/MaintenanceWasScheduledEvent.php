@@ -25,7 +25,7 @@ class MaintenanceWasScheduledEvent implements IncidentEventInterface
     /**
      * Create a new maintenance has scheduled event instance.
      *
-     * @param Incident $incident
+     * @param \CachetHQ\Cachet\Models\Incident $incident
      *
      * @return void
      */

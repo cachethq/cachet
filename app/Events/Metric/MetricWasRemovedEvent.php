@@ -25,7 +25,7 @@ class MetricWasRemovedEvent implements MetricEventInterface
     /**
      * Create a new metric was removed event instance.
      *
-     * @param Metric $metric
+     * @param \CachetHQ\Cachet\Models\Metric $metric
      *
      * @return void
      */

@@ -25,7 +25,7 @@ class ComponentWasUpdatedEvent implements ComponentEventInterface
     /**
      * Create a new component was updated event instance.
      *
-     * @param Component $component
+     * @param \CachetHQ\Cachet\Models\Component $component
      *
      * @return void
      */

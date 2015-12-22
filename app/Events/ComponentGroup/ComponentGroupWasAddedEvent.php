@@ -25,8 +25,8 @@ class ComponentGroupWasAddedEvent implements ComponentGroupEventInterface
     /**
      * Create a new component group was added event instance.
      *
-     * @param ComponentGroup $group
-     * 
+     * @param \CachetHQ\Cachet\Models\ComponentGroup $group
+     *
      * @return void
      */
     public function __construct(ComponentGroup $group)

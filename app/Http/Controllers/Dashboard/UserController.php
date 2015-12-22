@@ -66,8 +66,8 @@ class UserController extends Controller
 
     /**
      * Regenerates the users API key.
-     * 
-     * @param User $user
+     *
+     * @param \CachetHQ\Cachet\Models\User $user
      *
      * @return \Illuminate\View\View
      */

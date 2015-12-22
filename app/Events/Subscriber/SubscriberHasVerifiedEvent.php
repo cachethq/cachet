@@ -25,7 +25,7 @@ class SubscriberHasVerifiedEvent implements SubscriberEventInterface
     /**
      * Create a new subscriber has subscribed event instance.
      *
-     * @param Subscriber $subscriber
+     * @param \CachetHQ\Cachet\Models\Subscriber $subscriber
      *
      * @return void
      */
