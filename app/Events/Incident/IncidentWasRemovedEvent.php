@@ -26,6 +26,8 @@ class IncidentWasRemovedEvent implements IncidentEventInterface
      * Create a new incident was removed event instance.
      *
      * @param \CachetHQ\Cachet\Models\Incident $incident
+     *
+     * @return void
      */
     public function __construct(Incident $incident)
     {
