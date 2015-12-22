@@ -43,6 +43,8 @@ class TeamController extends Controller
     /**
      * Shows the edit team member view.
      *
+     * @param User $user
+     *
      * @return \Illuminate\View\View
      */
     public function showTeamMemberView(User $user)

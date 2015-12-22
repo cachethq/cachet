@@ -111,7 +111,7 @@ final class UpdateIncidentCommand
     /**
      * Create a new update incident command instance.
      *
-     * @param \CachetHQ\Cachet\Models\Incident $name
+     * @param \CachetHQ\Cachet\Models\Incident $incident
      * @param string                           $name
      * @param int                              $status
      * @param string                           $message

@@ -25,6 +25,8 @@ class IncidentWasReportedEvent implements IncidentEventInterface
     /**
      * Create a new incident has reported event instance.
      *
+     * @param Incident $incident
+     *
      * @return void
      */
     public function __construct(Incident $incident)

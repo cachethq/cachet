@@ -25,6 +25,8 @@ final class UserWasRemovedEvent implements UserEventInterface
     /**
      * Create a new user was removed event instance.
      *
+     * @param User $user
+     *
      * @return void
      */
     public function __construct(User $user)

@@ -25,6 +25,8 @@ class MetricWasRemovedEvent implements MetricEventInterface
     /**
      * Create a new metric was removed event instance.
      *
+     * @param Metric $metric
+     *
      * @return void
      */
     public function __construct(Metric $metric)

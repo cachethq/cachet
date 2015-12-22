@@ -66,6 +66,8 @@ class UserController extends Controller
 
     /**
      * Regenerates the users API key.
+     * 
+     * @param User $user
      *
      * @return \Illuminate\View\View
      */
