@@ -27,7 +27,7 @@ class SetupRoutes
      */
     public function map(Registrar $router)
     {
-        $router->group(['middleware' => 'app.isSetup'], function ($router) {
+        $router->group(['middleware' => ['app.isSetup', 'csrf']], function ($router) {
             $router->controller('setup', 'SetupController');
         });
     }

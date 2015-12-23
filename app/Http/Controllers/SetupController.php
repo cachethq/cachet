@@ -41,16 +41,6 @@ class SetupController extends Controller
     ];
 
     /**
-     * Create a new setup controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->beforeFilter('csrf', ['only' => ['postCachet']]);
-    }
-
-    /**
      * Returns the setup page.
      *
      * @return \Illuminate\View\View
