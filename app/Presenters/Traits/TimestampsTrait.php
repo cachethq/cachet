@@ -31,17 +31,6 @@ trait TimestampsTrait
      *
      * @return string
      */
-    public function scheduled_at()
-    {
-        return (new Date($this->wrappedObject->scheduled_at))
-            ->setTimezone($this->setting->get('app_timezone'))->toDateTimeString();
-    }
-
-    /**
-     * Present formatted date time.
-     *
-     * @return string
-     */
     public function updated_at()
     {
         return (new Date($this->wrappedObject->updated_at))
@@ -56,17 +45,6 @@ trait TimestampsTrait
     public function deleted_at()
     {
         return (new Date($this->wrappedObject->deleted_at))
-            ->setTimezone($this->setting->get('app_timezone'))->toDateTimeString();
-    }
-
-    /**
-     * Present formatted date time.
-     *
-     * @return string
-     */
-    public function verified_at()
-    {
-        return (new Date($this->wrappedObject->verified_at))
             ->setTimezone($this->setting->get('app_timezone'))->toDateTimeString();
     }
 }
