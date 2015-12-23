@@ -130,8 +130,16 @@ class ComponentController extends Controller
         $tags = array_pull($componentData, 'tags');
 
         try {
-            $componentData['component'] = $component;
-            $component = $this->dispatchFromArray(UpdateComponentCommand::class, $componentData);
+            $component = $this->dispatch(new UpdateComponentCommand(
+                $component,
+                $componentData['name'],
+                $componentData['description'],
+                $componentData['status'],
+                $componentData['link'],
+                $componentData['order'],
+                $componentData['group_id'],
+                $componentData['enabled']
+            ));
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.components.edit', ['id' => $component->id])
                 ->withInput(Binput::all())
@@ -176,7 +184,15 @@ class ComponentController extends Controller
         $tags = array_pull($componentData, 'tags');
 
         try {
-            $component = $this->dispatchFromArray(AddComponentCommand::class, $componentData);
+            $component = $this->dispatch(new AddComponentCommand(
+                $componentData['name'],
+                $componentData['description'],
+                $componentData['status'],
+                $componentData['link'],
+                $componentData['order'],
+                $componentData['group_id'],
+                $componentData['enabled']
+            ));
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.components.add')
                 ->withInput(Binput::all())
