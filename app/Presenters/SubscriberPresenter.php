@@ -12,10 +12,22 @@
 namespace CachetHQ\Cachet\Presenters;
 
 use CachetHQ\Cachet\Presenters\Traits\TimestampsTrait;
+use Jenssegers\Date\Date;
 
 class SubscriberPresenter extends AbstractPresenter
 {
     use TimestampsTrait;
+
+    /**
+     * Present formatted date time.
+     *
+     * @return string
+     */
+    public function verified_at()
+    {
+        return (new Date($this->wrappedObject->verified_at))
+            ->setTimezone($this->setting->get('app_timezone'))->toDateTimeString();
+    }
 
     /**
      * Convert the presenter instance to an array.
