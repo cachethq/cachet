@@ -17,7 +17,7 @@ use CachetHQ\Cachet\Models\Subscriber;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Database\QueryException;
 use Illuminate\Foundation\Bus\DispatchesJobs;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 class SubscriberController extends AbstractApiController
@@ -27,15 +27,13 @@ class SubscriberController extends AbstractApiController
     /**
      * Get all subscribers.
      *
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function getSubscribers(Request $request)
+    public function getSubscribers()
     {
         $subscribers = Subscriber::paginate(Binput::get('per_page', 20));
 
-        return $this->paginator($subscribers, $request);
+        return $this->paginator($subscribers, Request::instance());
     }
 
     /**

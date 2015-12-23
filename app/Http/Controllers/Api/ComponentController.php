@@ -20,7 +20,7 @@ use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Database\QueryException;
 use Illuminate\Foundation\Bus\DispatchesJobs;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 class ComponentController extends AbstractApiController
@@ -30,20 +30,17 @@ class ComponentController extends AbstractApiController
     /**
      * Get all components.
      *
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     * @param \Illuminate\Contracts\Auth\Guard          $auth
-     *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function getComponents(Request $request, Guard $auth)
+    public function getComponents()
     {
-        if ($auth->check()) {
+        if (app(Guard::class)->check()) {
             $components = Component::whereRaw('1 = 1');
         } else {
             $components = Component::enabled();
         }
 
-        return $this->paginator($components->paginate(Binput::get('per_page', 20)), $request);
+        return $this->paginator($components->paginate(Binput::get('per_page', 20)), Request::instance());
     }
 
     /**

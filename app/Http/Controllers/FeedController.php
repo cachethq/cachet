@@ -99,7 +99,7 @@ class FeedController extends Controller
      * @param \CachetHQ\Cachet\Models\Incident $incident
      * @param bool                             $isRss
      */
-    private function feedAddItem($incident, $isRss)
+    private function feedAddItem(Incident $incident, $isRss)
     {
         $this->feed->add(
             $incident->name,
