@@ -158,16 +158,6 @@ class Component extends Model implements HasPresenter
     }
 
     /**
-     * Looks up the human readable version of the status.
-     *
-     * @return string
-     */
-    public function getHumanStatusAttribute()
-    {
-        return trans('cachet.components.status.'.$this->status);
-    }
-
-    /**
      * Returns all of the tags on this component.
      *
      * @return string
