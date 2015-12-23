@@ -11,7 +11,7 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
-use CachetHQ\Cachet\Models\Setting;
+use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Cachet\Models\User;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
@@ -197,8 +197,7 @@ class SettingsController extends Controller
         $redirectUrl = Session::get('redirect_to', route('dashboard.settings.setup'));
 
         if (Binput::get('remove_banner') === '1') {
-            $setting = Setting::where('name', 'app_banner');
-            $setting->delete();
+            Setting::set('app_banner', null);
         }
 
         if (Binput::hasFile('app_banner')) {
@@ -221,10 +220,10 @@ class SettingsController extends Controller
             }
 
             // Store the banner.
-            Setting::firstOrCreate(['name' => 'app_banner'])->update(['value' => base64_encode(file_get_contents($file->getRealPath()))]);
+            Setting::set('app_banner', base64_encode(file_get_contents($file->getRealPath())));
 
-            // Store the banner type
-            Setting::firstOrCreate(['name' => 'app_banner_type'])->update(['value' => $file->getMimeType()]);
+            // Store the banner type.
+            Setting::set('app_banner_type', $file->getMimeType());
         }
 
         try {
@@ -233,7 +232,7 @@ class SettingsController extends Controller
                     $settingValue = rtrim($settingValue, '/');
                 }
 
-                Setting::firstOrCreate(['name' => $settingName])->update(['value' => $settingValue]);
+                Setting::set($settingName, $settingValue);
             }
         } catch (Exception $e) {
             return Redirect::to($redirectUrl)->withErrors(trans('dashboard.settings.edit.failure'));
