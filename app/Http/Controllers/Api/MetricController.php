@@ -18,7 +18,7 @@ use CachetHQ\Cachet\Models\Metric;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Database\QueryException;
 use Illuminate\Foundation\Bus\DispatchesJobs;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 class MetricController extends AbstractApiController
@@ -28,15 +28,13 @@ class MetricController extends AbstractApiController
     /**
      * Get all metrics.
      *
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
      * @return \Illuminate\Database\Eloquent\Collection
      */
-    public function getMetrics(Request $request)
+    public function getMetrics()
     {
         $metrics = Metric::paginate(Binput::get('per_page', 20));
 
-        return $this->paginator($metrics, $request);
+        return $this->paginator($metrics, Request::instance());
     }
 
     /**

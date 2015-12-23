@@ -18,7 +18,7 @@ use CachetHQ\Cachet\Models\ComponentGroup;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Database\QueryException;
 use Illuminate\Foundation\Bus\DispatchesJobs;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 class ComponentGroupController extends AbstractApiController
@@ -28,15 +28,13 @@ class ComponentGroupController extends AbstractApiController
     /**
      * Get all groups.
      *
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function getGroups(Request $request)
+    public function getGroups()
     {
         $groups = ComponentGroup::paginate(Binput::get('per_page', 20));
 
-        return $this->paginator($groups, $request);
+        return $this->paginator($groups, Request::instance());
     }
 
     /**

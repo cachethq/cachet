@@ -134,17 +134,16 @@ class ScheduleController extends Controller
     /**
      * Updates the given incident.
      *
-     * @param \CachetHQ\Cachet\Models\Incident   $schedule
-     * @param \CachetHQ\Cachet\Dates\DateFactory $dates
+     * @param \CachetHQ\Cachet\Models\Incident $schedule
      *
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function editScheduleAction(Incident $schedule, DateFactory $dates)
+    public function editScheduleAction(Incident $schedule)
     {
         $scheduleData = Binput::get('incident');
 
         // Parse the schedule date.
-        $scheduledAt = $dates->createNormalized('d/m/Y H:i', $scheduleData['scheduled_at']);
+        $scheduledAt = app(DateFactory::class)->createNormalized('d/m/Y H:i', $scheduleData['scheduled_at']);
 
         if ($scheduledAt->isPast()) {
             $messageBag = new MessageBag();
