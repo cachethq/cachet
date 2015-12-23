@@ -19,16 +19,16 @@
                     <fieldset>
                         <div class="form-group">
                             <label for="metric-name">{{ trans('forms.metrics.name') }}</label>
-                            <input type="text" class="form-control" name="metric[name]" id="metric-name" required value="{{ Input::old('metric.name') }}">
+                            <input type="text" class="form-control" name="metric[name]" id="metric-name" required value="{{ Binput::old('metric.name') }}">
                         </div>
                         <div class="form-group">
                             <label for="metric-suffix">{{ trans('forms.metrics.suffix') }}</label>
-                            <input type="text" class="form-control" name="metric[suffix]" id="metric-suffix" required value="{{ Input::old('metric.suffix') }}">
+                            <input type="text" class="form-control" name="metric[suffix]" id="metric-suffix" required value="{{ Binput::old('metric.suffix') }}">
                         </div>
                         <div class="form-group">
                             <label>{{ trans('forms.metrics.description') }}</label>
                             <div class='markdown-control'>
-                                <textarea name="metric[description]" class="form-control" rows="5">{{ Input::old('metric.description') }}</textarea>
+                                <textarea name="metric[description]" class="form-control" rows="5">{{ Binput::old('metric.description') }}</textarea>
                             </div>
                         </div>
                         <div class="form-group">
@@ -40,11 +40,11 @@
                         </div>
                         <div class="form-group">
                             <label for="metric-default_value">{{ trans('forms.metrics.default-value') }}</label>
-                            <input type="number" class="form-control" name="metric[default_value]" id="metric-default_value" value="{{ Input::old('metric.default_value') }}">
+                            <input type="number" class="form-control" name="metric[default_value]" id="metric-default_value" value="{{ Binput::old('metric.default_value') }}">
                         </div>
                         <div class="form-group">
                             <label for="metric-places">{{ trans('forms.metrics.places') }}</label>
-                            <input type="number" min="0" max="4" class="form-control" name="metric[places]" id="metric-places" required value="{{ Input::old('metric.places') }}">
+                            <input type="number" min="0" max="4" class="form-control" name="metric[places]" id="metric-places" required value="{{ Binput::old('metric.places') }}">
                         </div>
                         <div class="checkbox">
                             <label>

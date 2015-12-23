@@ -18,7 +18,7 @@
                 <fieldset>
                 <div class="form-group">
                     <label>{{ trans('forms.user.email') }}</label>
-                    <input type="email" class="form-control" name="email" value="{{ Input::old('email') }}" required>
+                    <input type="email" class="form-control" name="email" value="{{ Binput::old('email') }}" required>
                 </div>
                 </fieldset>
 
