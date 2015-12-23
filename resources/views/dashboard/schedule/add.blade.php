@@ -31,12 +31,12 @@
                         @endif
                         <div class="form-group">
                             <label for="incident-name">{{ trans('forms.incidents.name') }}</label>
-                            <input type="text" class="form-control" name="incident[name]" id="incident-name" required value="{{ Input::old('incident.name') }}">
+                            <input type="text" class="form-control" name="incident[name]" id="incident-name" required value="{{ Binput::old('incident.name') }}">
                         </div>
                         <div class="form-group">
                             <label>{{ trans('forms.incidents.message') }}</label>
                             <div class='markdown-control'>
-                                <textarea name="incident[message]" class="form-control autosize" rows="5" required>{{ Input::old('incident.message') }}</textarea>
+                                <textarea name="incident[message]" class="form-control autosize" rows="5" required>{{ Binput::old('incident.message') }}</textarea>
                             </div>
                         </div>
                         <div class="form-group">
@@ -46,7 +46,7 @@
                         @if(subscribers_enabled())
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox" name="incident[notify]" value="1" checked="{{ Input::old('incident.message', 'checked') }}">
+                                <input type="checkbox" name="incident[notify]" value="1" checked="{{ Binput::old('incident.message', 'checked') }}">
                                 {{ trans('forms.incidents.notify_subscribers') }}
                             </label>
                         </div>
