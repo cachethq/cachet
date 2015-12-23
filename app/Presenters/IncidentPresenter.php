@@ -181,6 +181,18 @@ class IncidentPresenter extends AbstractPresenter
     }
 
     /**
+     * Returns a human readable version of the status.
+     *
+     * @return string
+     */
+    public function human_status()
+    {
+        $statuses = trans('cachet.incidents.status');
+
+        return $statuses[$this->wrappedObject->status];
+    }
+
+    /**
      * Convert the presenter instance to an array.
      *
      * @return string[]
@@ -188,6 +200,7 @@ class IncidentPresenter extends AbstractPresenter
     public function toArray()
     {
         return array_merge($this->wrappedObject->toArray(), [
+            'human_status' => $this->human_status(),
             'scheduled_at' => $this->scheduled_at(),
             'created_at'   => $this->created_at(),
             'updated_at'   => $this->updated_at(),

@@ -23,13 +23,6 @@ class Incident extends Model implements HasPresenter
     use SoftDeletes, ValidatingTrait;
 
     /**
-     * The accessors to append to the model's serialized form.
-     *
-     * @var string[]
-     */
-    protected $appends = ['human_status'];
-
-    /**
      * The attributes that should be casted to native types.
      *
      * @var string[]
@@ -116,18 +109,6 @@ class Incident extends Model implements HasPresenter
     public function component()
     {
         return $this->belongsTo(Component::class, 'component_id', 'id');
-    }
-
-    /**
-     * Returns a human readable version of the status.
-     *
-     * @return string
-     */
-    public function getHumanStatusAttribute()
-    {
-        $statuses = trans('cachet.incidents.status');
-
-        return $statuses[$this->status];
     }
 
     /**
