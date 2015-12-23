@@ -20,17 +20,17 @@ class MetricPointWasAddedEvent implements MetricEventInterface
      *
      * @var \CachetHQ\Cachet\Models\MetricPoint
      */
-    public $metric;
+    public $metricPoint;
 
     /**
      * Create a new metric point was added event instance.
      *
-     * @param \CachetHQ\Cachet\Models\MetricPoint $metric
+     * @param \CachetHQ\Cachet\Models\MetricPoint $metricPoint
      *
      * @return void
      */
-    public function __construct(MetricPoint $metric)
+    public function __construct(MetricPoint $metricPoint)
     {
-        $this->metric = $metric;
+        $this->metricPoint = $metricPoint;
     }
 }
