@@ -37,6 +37,27 @@ if (!function_exists('set_active')) {
     }
 }
 
+if (!function_exists('previous')) {
+    /**
+     * Create a new previous url.
+     *
+     * @param string $route
+     *
+     * @return string
+     */
+    function previous($route)
+    {
+        $url = app('url');
+        $previous = $url->previous();
+
+        if ($previous === $url->full()) {
+            return $url->route($route);
+        }
+
+        return $previous;
+    }
+}
+
 if (!function_exists('formatted_date')) {
     /**
      * Formats a date with the user timezone and the selected format.
