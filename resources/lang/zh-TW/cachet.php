@@ -69,7 +69,7 @@ return [
             'unsubscribe'        => '取消電子郵件訂閱。',
             'unsubscribed'       => '您的電子郵件訂閱已被取消。',
             'failure'            => '郵件訂閱失敗。',
-            'already-subscribed' => 'Cannot subscribe :email because they\'re already subscribed.',
+            'already-subscribed' => '電子郵件 :email 已經訂閱，請勿重複訂閱。',
             'verify'             => [
                 'text'           => '請確認您的 :app_name 電子郵件訂閱。\\n:link\\n此致，:app_name',
                 'html-preheader' => '請確認您的 :app_name 狀態更新郵件訂閱。',
