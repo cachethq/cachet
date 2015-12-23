@@ -194,7 +194,6 @@ return [
         'Artisan'   => 'Illuminate\Support\Facades\Artisan',
         'Auth'      => 'Illuminate\Support\Facades\Auth',
         'Blade'     => 'Illuminate\Support\Facades\Blade',
-        'Bus'       => 'Illuminate\Support\Facades\Bus',
         'Cache'     => 'Illuminate\Support\Facades\Cache',
         'Config'    => 'Illuminate\Support\Facades\Config',
         'Cookie'    => 'Illuminate\Support\Facades\Cookie',
