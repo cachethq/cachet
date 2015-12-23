@@ -209,7 +209,7 @@ class SetupController extends Controller
      */
     protected function keyGenerate()
     {
-        $key = str_random(42);
+        $key = str_random(32);
 
         $path = base_path('.env');
 
