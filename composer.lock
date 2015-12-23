@@ -2546,21 +2546,21 @@
         },
         {
             "name": "rcrowe/twigbridge",
-            "version": "v0.9.0",
+            "version": "v0.9.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rcrowe/TwigBridge.git",
-                "reference": "f875fa9457ebadf8f24b683b226848b660407f8f"
+                "reference": "634c4d12fc3dc633d202341b7a29a107f77a67da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rcrowe/TwigBridge/zipball/f875fa9457ebadf8f24b683b226848b660407f8f",
-                "reference": "f875fa9457ebadf8f24b683b226848b660407f8f",
+                "url": "https://api.github.com/repos/rcrowe/TwigBridge/zipball/634c4d12fc3dc633d202341b7a29a107f77a67da",
+                "reference": "634c4d12fc3dc633d202341b7a29a107f77a67da",
                 "shasum": ""
             },
             "require": {
-                "illuminate/support": "5.0.*|5.1.*",
-                "illuminate/view": "5.0.*|5.1.*",
+                "illuminate/support": "5.0.*|5.1.*|5.2.*",
+                "illuminate/view": "5.0.*|5.1.*|5.2.*",
                 "php": ">=5.4.0",
                 "twig/twig": "~1.15|~2.0"
             },
@@ -2578,7 +2578,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.8-dev"
+                    "dev-master": "0.10-dev"
                 }
             },
             "autoload": {
@@ -2606,7 +2606,7 @@
                 "laravel",
                 "twig"
             ],
-            "time": "2015-11-02 17:37:16"
+            "time": "2015-12-21 22:03:34"
         },
         {
             "name": "roumen/feed",
