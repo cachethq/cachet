@@ -71,8 +71,18 @@ class MetricController extends Controller
      */
     public function createMetricAction()
     {
+        $metricData = Binput::get('metric');
+
         try {
-            $this->dispatchFromArray(AddMetricCommand::class, Binput::get('metric'));
+            $this->dispatch(new AddMetricCommand(
+                $metricData['name'],
+                $metricData['suffix'],
+                $metricData['description'],
+                $metricData['default_value'],
+                $metricData['calc_type'],
+                $metricData['display_chart'],
+                $metricData['places']
+            ));
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.metrics.add')
                 ->withInput(Binput::all())
