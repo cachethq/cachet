@@ -13,7 +13,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Password Reminder Language Lines
+    | Password Reset Language Lines
     |--------------------------------------------------------------------------
     |
     | The following language lines are the default lines which match reasons

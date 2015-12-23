@@ -69,6 +69,7 @@ return [
     'regex'                => 'crwdns132:0crwdne132:0',
     'required'             => 'crwdns133:0crwdne133:0',
     'required_if'          => 'crwdns134:0crwdne134:0',
+    'required_unless'      => 'The :attribute field is required unless :other is in :values.',
     'required_with'        => 'crwdns135:0crwdne135:0',
     'required_with_all'    => 'crwdns136:0crwdne136:0',
     'required_without'     => 'crwdns137:0crwdne137:0',

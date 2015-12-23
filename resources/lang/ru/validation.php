@@ -67,6 +67,7 @@ return [
     'regex'                => 'Неправильный формат :attribute.',
     'required'             => 'Поле :attribute является обязательным.',
     'required_if'          => 'Поле :attribute является обязательным, если :other имеет значение :value.',
+    'required_unless'      => 'The :attribute field is required unless :other is in :values.',
     'required_with'        => 'Поле :attribute является обязательным, если заполнено :values.',
     'required_with_all'    => 'Поле :attribute является обязательным, если все :values заполнены.',
     'required_without'     => 'Поле :attribute является обязательным, если :values не заполнены.',
