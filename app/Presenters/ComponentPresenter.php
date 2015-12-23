@@ -33,6 +33,16 @@ class ComponentPresenter extends AbstractPresenter
     }
 
     /**
+     * Looks up the human readable version of the status.
+     *
+     * @return string
+     */
+    public function human_status()
+    {
+        return trans('cachet.components.status.'.$this->wrappedObject->status);
+    }
+
+    /**
      * Convert the presenter instance to an array.
      *
      * @return string[]
@@ -42,7 +52,7 @@ class ComponentPresenter extends AbstractPresenter
         return array_merge($this->wrappedObject->toArray(), [
             'created_at'  => $this->created_at(),
             'updated_at'  => $this->updated_at(),
-            'status_name' => $this->wrappedObject->humanStatus,
+            'status_name' => $this->human_status(),
         ]);
     }
 }
