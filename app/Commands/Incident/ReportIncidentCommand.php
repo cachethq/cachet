@@ -93,7 +93,7 @@ final class ReportIncidentCommand
         'status'           => 'required|int|min:0|max:4',
         'message'          => 'string',
         'visible'          => 'bool',
-        'component_id'     => 'int',
+        'component_id'     => 'int|exists:components|required_with:component_status',
         'component_status' => 'int|min:1|max:4|required_with:component_id',
         'notify'           => 'bool',
         'incident_date'    => 'string',
