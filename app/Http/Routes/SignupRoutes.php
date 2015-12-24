@@ -28,7 +28,7 @@ class SignupRoutes
     public function map(Registrar $router)
     {
         $router->group([
-            'middleware' => ['app.hasSetting', 'guest'],
+            'middleware' => ['web', 'app.hasSetting', 'guest'],
             'setting'    => 'app_name',
             'as'         => 'signup.',
         ], function ($router) {

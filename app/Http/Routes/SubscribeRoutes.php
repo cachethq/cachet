@@ -28,7 +28,7 @@ class SubscribeRoutes
     public function map(Registrar $router)
     {
         $router->group([
-            'middleware' => ['app.hasSetting', 'localize'],
+            'middleware' => ['web', 'app.hasSetting', 'localize'],
             'setting'    => 'app_name',
             'as'         => 'subscribe.',
         ], function ($router) {

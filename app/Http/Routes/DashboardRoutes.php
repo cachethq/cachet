@@ -28,7 +28,7 @@ class DashboardRoutes
     public function map(Registrar $router)
     {
         $router->group([
-            'middleware' => 'auth',
+            'middleware' => ['web', 'auth'],
             'prefix'     => 'dashboard',
             'namespace'  => 'Dashboard',
             'as'         => 'dashboard.',

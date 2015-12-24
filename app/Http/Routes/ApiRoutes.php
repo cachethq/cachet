@@ -30,28 +30,25 @@ class ApiRoutes
         $router->group([
             'namespace'  => 'Api',
             'prefix'     => 'api/v1',
-            'middleware' => ['accept:application/json', 'timezone', 'auth.api.optional'],
+            'middleware' => ['api'],
         ], function ($router) {
-            // General
-            $router->get('ping', 'GeneralController@ping');
+            $router->group(['middleware' => ['auth.api.optional']], function ($router) {
+                $router->get('ping', 'GeneralController@ping');
 
-            // Components
-            $router->get('components', 'ComponentController@getComponents');
-            $router->get('components/groups', 'ComponentGroupController@getGroups');
-            $router->get('components/groups/{component_group}', 'ComponentGroupController@getGroup');
-            $router->get('components/{component}', 'ComponentController@getComponent');
+                $router->get('components', 'ComponentController@getComponents');
+                $router->get('components/groups', 'ComponentGroupController@getGroups');
+                $router->get('components/groups/{component_group}', 'ComponentGroupController@getGroup');
+                $router->get('components/{component}', 'ComponentController@getComponent');
 
-            // Incidents
-            $router->get('incidents', 'IncidentController@getIncidents');
-            $router->get('incidents/{incident}', 'IncidentController@getIncident');
+                $router->get('incidents', 'IncidentController@getIncidents');
+                $router->get('incidents/{incident}', 'IncidentController@getIncident');
 
-            // Metrics
-            $router->get('metrics', 'MetricController@getMetrics');
-            $router->get('metrics/{metric}', 'MetricController@getMetric');
-            $router->get('metrics/{metric}/points', 'MetricController@getMetricPoints');
+                $router->get('metrics', 'MetricController@getMetrics');
+                $router->get('metrics/{metric}', 'MetricController@getMetric');
+                $router->get('metrics/{metric}/points', 'MetricController@getMetricPoints');
+            });
 
-            // Authorization Required
-            $router->group(['middleware' => 'auth.api'], function ($router) {
+            $router->group(['middleware' => ['auth.api.required']], function ($router) {
                 $router->get('subscribers', 'SubscriberController@getSubscribers');
 
                 $router->post('components', 'ComponentController@postComponents');

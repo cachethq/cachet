@@ -29,7 +29,7 @@ class AuthRoutes
     {
         $router->group([
             'as'         => 'auth.',
-            'middleware' => 'app.hasSetting',
+            'middleware' => ['web', 'app.hasSetting'],
             'prefix'     => 'auth',
             'setting'    => 'app_name',
         ], function ($router) {
@@ -40,7 +40,7 @@ class AuthRoutes
             ]);
 
             $router->post('login', [
-                'middleware' => ['guest', 'csrf', 'throttling:10,10'],
+                'middleware' => ['guest', 'throttling:10,10'],
                 'uses'       => 'AuthController@postLogin',
             ]);
 
@@ -51,7 +51,7 @@ class AuthRoutes
             ]);
 
             $router->post('2fa', [
-                'middleware' => ['csrf', 'throttling:10,10'],
+                'middleware' => ['throttling:10,10'],
                 'uses'       => 'AuthController@postTwoFactor',
             ]);
 
