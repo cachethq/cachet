@@ -37,6 +37,38 @@ class MySqlRepository implements MetricInterface
     }
 
     /**
+     * Returns metrics for the last hour.
+     *
+     * @param \CachetHQ\Cachet\Models\Metric $metric
+     * @param int                            $hour
+     * @param int                            $minute
+     *
+     * @return int
+     */
+    public function getPointsLastHour(Metric $metric, $hour, $minute)
+    {
+        $dateTime = (new Date())->setTimezone($this->dateTimeZone);
+        $dateTime->sub(new DateInterval('PT'.$hour.'H'))->sub(new DateInterval('PT'.$minute.'M'));
+        $timeInterval = $dateTime->format('YmdHi');
+
+        $points = $metric->points()
+                    ->whereRaw('DATE_FORMAT(created_at, "%Y%m%d%H%i") = '.$timeInterval)
+                    ->groupBy(DB::raw('HOUR(created_at), MINUTE(created_at)'));
+
+        if (!isset($metric->calc_type) || $metric->calc_type == Metric::CALC_SUM) {
+            $value = $points->sum('value');
+        } elseif ($metric->calc_type == Metric::CALC_AVG) {
+            $value = $points->avg('value');
+        }
+
+        if ($value === 0 && $metric->default_value != $value) {
+            return $metric->default_value;
+        }
+
+        return round($value, $metric->places);
+    }
+
+    /**
      * Returns metrics for a given hour.
      *
      * @param \CachetHQ\Cachet\Models\Metric $metric

@@ -51,9 +51,10 @@ return [
     // Metrics
     'metrics' => [
         'filter' => [
-            'hourly'  => 'Последние 12 часов',
-            'weekly'  => 'Неделя',
-            'monthly' => 'Месяц',
+            'last_hour' => 'Last Hour',
+            'hourly'    => 'Последние 12 часов',
+            'weekly'    => 'Неделя',
+            'monthly'   => 'Месяц',
         ],
     ],
 

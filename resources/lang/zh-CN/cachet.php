@@ -52,9 +52,10 @@ return [
     // Metrics
     'metrics' => [
         'filter' => [
-            'hourly'  => '最近12小时',
-            'weekly'  => '周',
-            'monthly' => '月',
+            'last_hour' => 'Last Hour',
+            'hourly'    => '最近12小时',
+            'weekly'    => '周',
+            'monthly'   => '月',
         ],
     ],
 

@@ -37,6 +37,38 @@ class SqliteRepository implements MetricInterface
     }
 
     /**
+     * Returns metrics for the last hour.
+     *
+     * @param \CachetHQ\Cachet\Models\Metric $metric
+     * @param int                            $hour
+     * @param int                            $minute
+     *
+     * @return int
+     */
+    public function getPointsLastHour(Metric $metric, $hour, $minute)
+    {
+        $dateTime = (new Date())->setTimezone($this->dateTimeZone);
+        $dateTime->sub(new DateInterval('PT'.$hour.'H'))->sub(new DateInterval('PT'.$minute.'M'));
+        $hourInterval = $dateTime->format('YmdHi');
+
+        $points = $metric->points()
+                    ->whereRaw('strftime("%Y%m%d%H%i", created_at) = "'.$hourInterval.'"')
+                    ->groupBy(DB::raw('strftime("%H%i", created_at)'));
+
+        if (!isset($metric->calc_type) || $metric->calc_type == Metric::CALC_SUM) {
+            $value = $points->sum('value');
+        } elseif ($metric->calc_type == Metric::CALC_AVG) {
+            $value = $points->avg('value');
+        }
+
+        if ($value === 0 && $metric->default_value != $value) {
+            return $metric->default_value;
+        }
+
+        return round($value, $metric->places);
+    }
+
+    /**
      * Returns metrics for a given hour.
      *
      * @param \CachetHQ\Cachet\Models\Metric $metric

@@ -52,9 +52,10 @@ return [
     // Metrics
     'metrics' => [
         'filter' => [
-            'hourly'  => 'Sidste 12 timer',
-            'weekly'  => 'Uge',
-            'monthly' => 'Måned',
+            'last_hour' => 'Last Hour',
+            'hourly'    => 'Sidste 12 timer',
+            'weekly'    => 'Uge',
+            'monthly'   => 'Måned',
         ],
     ],
 
