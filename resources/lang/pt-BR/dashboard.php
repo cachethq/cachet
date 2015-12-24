@@ -167,7 +167,7 @@ return [
             'analytics' => 'Analytics',
         ],
         'localization' => [
-            'localization' => 'Localization',
+            'localization' => 'Localização',
         ],
         'security' => [
             'security' => 'Segurança',
