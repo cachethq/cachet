@@ -11,12 +11,12 @@
 
 namespace CachetHQ\Cachet\Http\Controllers;
 
-use Illuminate\Support\Facades\Config;
 use CachetHQ\Cachet\Models\Incident;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\View;
 use Jenssegers\Date\Date;
 

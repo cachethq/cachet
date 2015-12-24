@@ -11,10 +11,10 @@
 
 namespace CachetHQ\Cachet\Presenters;
 
-use Illuminate\Support\Facades\Config;
 use CachetHQ\Cachet\Presenters\Traits\TimestampsTrait;
 use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Contracts\Support\Arrayable;
+use Illuminate\Support\Facades\Config;
 use Jenssegers\Date\Date;
 use McCool\LaravelAutoPresenter\BasePresenter;
 

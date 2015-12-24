@@ -11,9 +11,9 @@
 
 namespace CachetHQ\Cachet\Repositories\Metric;
 
-use Illuminate\Support\Facades\Config;
 use CachetHQ\Cachet\Models\Metric;
 use DateInterval;
+use Illuminate\Support\Facades\Config;
 use Jenssegers\Date\Date;
 
 class MetricRepository

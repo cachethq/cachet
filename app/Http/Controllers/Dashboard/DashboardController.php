@@ -11,11 +11,11 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
-use Illuminate\Support\Facades\Config;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\Subscriber;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\View;
 use Jenssegers\Date\Date;
 

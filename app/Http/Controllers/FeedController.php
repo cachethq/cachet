@@ -11,11 +11,11 @@
 
 namespace CachetHQ\Cachet\Http\Controllers;
 
-use Illuminate\Support\Facades\Config;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Incident;
 use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Str;
 use Roumen\Feed\Facades\Feed;
 

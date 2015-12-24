@@ -11,7 +11,6 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
-use Illuminate\Support\Facades\Config;
 use CachetHQ\Cachet\Models\User;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;

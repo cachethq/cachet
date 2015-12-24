@@ -11,10 +11,10 @@
 
 namespace CachetHQ\Cachet\Composers;
 
-use Illuminate\Support\Facades\Config;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Repositories\Metric\MetricRepository;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\Config;
 
 class MetricsComposer
 {

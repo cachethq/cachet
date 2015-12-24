@@ -11,8 +11,8 @@
 
 namespace CachetHQ\Cachet\Composers;
 
-use Illuminate\Support\Facades\Config;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\Config;
 
 class ThemeComposer
 {
