@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Redirect;
 class SubscribersConfigured
 {
     /**
-     * We're verifying that subscribers is both enabled and configured.
+     * Handle an incoming request.
      *
      * @param \Illuminate\Http\Request $request
      * @param \Closure                 $next

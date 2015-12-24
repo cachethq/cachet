@@ -24,15 +24,13 @@ class ApiRoutes
      * Define the api routes.
      *
      * @param \Illuminate\Contracts\Routing\Registrar $router
+     *
+     * @return void
      */
     public function map(Registrar $router)
     {
-        $router->group([
-            'namespace'  => 'Api',
-            'prefix'     => 'api/v1',
-            'middleware' => ['api'],
-        ], function ($router) {
-            $router->group(['middleware' => ['auth.api.optional']], function ($router) {
+        $router->group(['namespace' => 'Api', 'prefix' => 'api/v1', 'middleware' => ['api']], function ($router) {
+            $router->group(['middleware' => ['auth.api']], function ($router) {
                 $router->get('ping', 'GeneralController@ping');
 
                 $router->get('components', 'ComponentController@getComponents');
@@ -48,7 +46,7 @@ class ApiRoutes
                 $router->get('metrics/{metric}/points', 'MetricController@getMetricPoints');
             });
 
-            $router->group(['middleware' => ['auth.api.required']], function ($router) {
+            $router->group(['middleware' => ['auth.api:true']], function ($router) {
                 $router->get('subscribers', 'SubscriberController@getSubscribers');
 
                 $router->post('components', 'ComponentController@postComponents');

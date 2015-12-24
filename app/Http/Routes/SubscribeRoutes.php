@@ -24,15 +24,13 @@ class SubscribeRoutes
      * Define the subscribe routes.
      *
      * @param \Illuminate\Contracts\Routing\Registrar $router
+     *
+     * @return void
      */
     public function map(Registrar $router)
     {
-        $router->group([
-            'middleware' => ['web', 'app.hasSetting', 'localize'],
-            'setting'    => 'app_name',
-            'as'         => 'subscribe.',
-        ], function ($router) {
-            $router->group(['middleware' => 'app.subscribers'], function ($router) {
+        $router->group(['middleware' => ['web', 'ready', 'localize'], 'as' => 'subscribe.'], function ($router) {
+            $router->group(['middleware' => ['subscribers']], function ($router) {
                 $router->get('subscribe', [
                     'as'   => 'subscribe',
                     'uses' => 'SubscribeController@showSubscribe',

@@ -16,14 +16,10 @@ use Closure;
 use Exception;
 use Illuminate\Support\Facades\Redirect;
 
-class HasSetting
+class ReadyForUse
 {
     /**
-     * Run the has setting middleware.
-     *
-     * We're verifying that the given setting exists in our database. If it
-     * doesn't, then we're sending the user to the setup page so that they can
-     * complete the installation of Cachet on their server.
+     * Handle an incoming request.
      *
      * @param \Illuminate\Http\Request $request
      * @param \Closure                 $next
@@ -32,10 +28,8 @@ class HasSetting
      */
     public function handle($request, Closure $next)
     {
-        $settingName = $this->getSettingName($request);
-
         try {
-            if (!Setting::get($settingName)) {
+            if (!Setting::get('app_name')) {
                 return Redirect::to('setup');
             }
         } catch (Exception $e) {
@@ -43,19 +37,5 @@ class HasSetting
         }
 
         return $next($request);
-    }
-
-    /**
-     * Get the setting from the request.
-     *
-     * @param \Illuminate\Http\Request $request
-     *
-     * @return array
-     */
-    private function getSettingName($request)
-    {
-        $actions = $request->route()->getAction();
-
-        return $actions['setting'];
     }
 }

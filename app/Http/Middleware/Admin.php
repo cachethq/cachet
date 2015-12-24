@@ -35,7 +35,7 @@ class Admin
     }
 
     /**
-     * We're verifying that the current user is logged in to Cachet and is an admin level.
+     * Handle an incoming request.
      *
      * @param \Illuminate\Http\Request $request
      * @param \Closure                 $next

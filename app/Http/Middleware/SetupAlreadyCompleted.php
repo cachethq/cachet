@@ -15,13 +15,10 @@ use CachetHQ\Cachet\Facades\Setting;
 use Closure;
 use Illuminate\Support\Facades\Redirect;
 
-class AppIsSetup
+class SetupAlreadyCompleted
 {
     /**
-     * Run the app is setup middleware.
-     *
-     * We're verifying that Cachet is correctly setup. If it is, then we're
-     * redirecting the user to the dashboard so they can use Cachet.
+     * Handle an incoming request.
      *
      * @param \Illuminate\Http\Request $request
      * @param \Closure                 $next

@@ -24,14 +24,12 @@ class SignupRoutes
      * Define the signup routes.
      *
      * @param \Illuminate\Contracts\Routing\Registrar $router
+     *
+     * @return void
      */
     public function map(Registrar $router)
     {
-        $router->group([
-            'middleware' => ['web', 'app.hasSetting', 'guest'],
-            'setting'    => 'app_name',
-            'as'         => 'signup.',
-        ], function ($router) {
+        $router->group(['middleware' => ['web', 'ready', 'guest'], 'as' => 'signup.'], function ($router) {
             $router->get('signup/invite/{code}', [
                 'as'   => 'invite',
                 'uses' => 'SignupController@getSignup',
