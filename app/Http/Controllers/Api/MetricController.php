@@ -17,14 +17,11 @@ use CachetHQ\Cachet\Commands\Metric\UpdateMetricCommand;
 use CachetHQ\Cachet\Models\Metric;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Database\QueryException;
-use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Support\Facades\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 class MetricController extends AbstractApiController
 {
-    use DispatchesJobs;
-
     /**
      * Get all metrics.
      *
@@ -69,7 +66,7 @@ class MetricController extends AbstractApiController
     public function postMetrics()
     {
         try {
-            $metric = $this->dispatch(new AddMetricCommand(
+            $metric = dispatch(new AddMetricCommand(
                 Binput::get('name'),
                 Binput::get('suffix'),
                 Binput::get('description'),
@@ -95,7 +92,7 @@ class MetricController extends AbstractApiController
     public function putMetric(Metric $metric)
     {
         try {
-            $metric = $this->dispatch(new UpdateMetricCommand(
+            $metric = dispatch(new UpdateMetricCommand(
                 $metric,
                 Binput::get('name'),
                 Binput::get('suffix'),
@@ -121,7 +118,7 @@ class MetricController extends AbstractApiController
      */
     public function deleteMetric(Metric $metric)
     {
-        $this->dispatch(new RemoveMetricCommand($metric));
+        dispatch(new RemoveMetricCommand($metric));
 
         return $this->noContent();
     }

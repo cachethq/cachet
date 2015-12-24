@@ -17,7 +17,6 @@ use CachetHQ\Cachet\Dates\DateFactory;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentTemplate;
 use GrahamCampbell\Binput\Facades\Binput;
-use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
@@ -26,8 +25,6 @@ use Jenssegers\Date\Date;
 
 class ScheduleController extends Controller
 {
-    use DispatchesJobs;
-
     /**
      * Stores the sub-sidebar tree list.
      *
@@ -97,7 +94,7 @@ class ScheduleController extends Controller
     public function addScheduleAction()
     {
         try {
-            $incident = $this->dispatch(new ReportMaintenanceCommand(
+            $incident = dispatch(new ReportMaintenanceCommand(
                 Binput::get('incident.name'),
                 Binput::get('incident.message'),
                 Binput::get('incident.notify'),

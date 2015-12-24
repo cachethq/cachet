@@ -22,15 +22,12 @@ use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Tag;
 use GrahamCampbell\Binput\Facades\Binput;
-use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 
 class ComponentController extends Controller
 {
-    use DispatchesJobs;
-
     /**
      * Array of sub-menu items.
      *
@@ -130,7 +127,7 @@ class ComponentController extends Controller
         $tags = array_pull($componentData, 'tags');
 
         try {
-            $component = $this->dispatch(new UpdateComponentCommand(
+            $component = dispatch(new UpdateComponentCommand(
                 $component,
                 $componentData['name'],
                 $componentData['description'],
@@ -184,7 +181,7 @@ class ComponentController extends Controller
         $tags = array_pull($componentData, 'tags');
 
         try {
-            $component = $this->dispatch(new AddComponentCommand(
+            $component = dispatch(new AddComponentCommand(
                 $componentData['name'],
                 $componentData['description'],
                 $componentData['status'],
@@ -223,7 +220,7 @@ class ComponentController extends Controller
      */
     public function deleteComponentAction(Component $component)
     {
-        $this->dispatch(new RemoveComponentCommand($component));
+        dispatch(new RemoveComponentCommand($component));
 
         return Redirect::route('dashboard.components.index')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.components.delete.success')));
@@ -238,7 +235,7 @@ class ComponentController extends Controller
      */
     public function deleteComponentGroupAction(ComponentGroup $group)
     {
-        $this->dispatch(new RemoveComponentGroupCommand($group));
+        dispatch(new RemoveComponentGroupCommand($group));
 
         return Redirect::route('dashboard.components.index')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.components.delete.success')));
@@ -277,7 +274,7 @@ class ComponentController extends Controller
     public function postAddComponentGroup()
     {
         try {
-            $group = $this->dispatch(new AddComponentGroupCommand(
+            $group = dispatch(new AddComponentGroupCommand(
                 Binput::get('name'),
                 Binput::get('order', 0)
             ));
@@ -302,7 +299,7 @@ class ComponentController extends Controller
     public function updateComponentGroupAction(ComponentGroup $group)
     {
         try {
-            $group = $this->dispatch(new UpdateComponentGroupCommand(
+            $group = dispatch(new UpdateComponentGroupCommand(
                 $group,
                 Binput::get('name'),
                 Binput::get('order', 0)

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "40ead365cbc5479b0d518891503a56d5",
-    "content-hash": "1e0a5483b39ca2ec40856079036a4c13",
+    "hash": "2af403fbb9568e4db94c2d9eb8b00e6f",
+    "content-hash": "8a51b88ff61aa51581943bbf535a48d1",
     "packages": [
         {
             "name": "alt-three/emoji",
@@ -931,16 +931,16 @@
         },
         {
             "name": "fideloper/proxy",
-            "version": "3.0.0",
+            "version": "3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fideloper/TrustedProxy.git",
-                "reference": "cc7937c3b4e285e24e020beeaff331180a641e6d"
+                "reference": "ec4dd30141e2515e307aea3539ff242e85c3f120"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fideloper/TrustedProxy/zipball/cc7937c3b4e285e24e020beeaff331180a641e6d",
-                "reference": "cc7937c3b4e285e24e020beeaff331180a641e6d",
+                "url": "https://api.github.com/repos/fideloper/TrustedProxy/zipball/ec4dd30141e2515e307aea3539ff242e85c3f120",
+                "reference": "ec4dd30141e2515e307aea3539ff242e85c3f120",
                 "shasum": ""
             },
             "require": {
@@ -954,7 +954,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0-dev"
+                    "dev-master": "3.1-dev"
                 }
             },
             "autoload": {
@@ -978,7 +978,7 @@
                 "proxy",
                 "trusted proxy"
             ],
-            "time": "2015-02-04 20:24:17"
+            "time": "2015-12-24 15:02:55"
         },
         {
             "name": "graham-campbell/binput",
@@ -1726,16 +1726,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.1.27",
+            "version": "5.1.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "b16f80878fd3603022d3c84593397cedd9af0bcf"
+                "reference": "5be7f261e8a2f03d6fa6be99eb79e261a880421d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/b16f80878fd3603022d3c84593397cedd9af0bcf",
-                "reference": "b16f80878fd3603022d3c84593397cedd9af0bcf",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/5be7f261e8a2f03d6fa6be99eb79e261a880421d",
+                "reference": "5be7f261e8a2f03d6fa6be99eb79e261a880421d",
                 "shasum": ""
             },
             "require": {
@@ -1850,7 +1850,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2015-12-17 20:35:38"
+            "time": "2015-12-24 15:05:06"
         },
         {
             "name": "league/commonmark",

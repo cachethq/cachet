@@ -18,15 +18,12 @@ use CachetHQ\Cachet\Commands\Metric\UpdateMetricCommand;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\MetricPoint;
 use GrahamCampbell\Binput\Facades\Binput;
-use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 
 class MetricController extends Controller
 {
-    use DispatchesJobs;
-
     /**
      * Shows the metrics view.
      *
@@ -74,7 +71,7 @@ class MetricController extends Controller
         $metricData = Binput::get('metric');
 
         try {
-            $this->dispatch(new AddMetricCommand(
+            dispatch(new AddMetricCommand(
                 $metricData['name'],
                 $metricData['suffix'],
                 $metricData['description'],
@@ -114,7 +111,7 @@ class MetricController extends Controller
      */
     public function deleteMetricAction(Metric $metric)
     {
-        $this->dispatch(new RemoveMetricCommand($metric));
+        dispatch(new RemoveMetricCommand($metric));
 
         return Redirect::route('dashboard.metrics.index')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.metrics.delete.success')));
@@ -144,7 +141,7 @@ class MetricController extends Controller
     public function editMetricAction(Metric $metric)
     {
         try {
-            $this->dispatch(new UpdateMetricCommand(
+            dispatch(new UpdateMetricCommand(
                 $metric,
                 Binput::get('metric.name', null, false),
                 Binput::get('metric.suffix', null, false),

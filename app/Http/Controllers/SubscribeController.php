@@ -20,7 +20,6 @@ use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Cachet\Models\Subscriber;
 use GrahamCampbell\Binput\Facades\Binput;
 use GrahamCampbell\Markdown\Facades\Markdown;
-use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
@@ -29,8 +28,6 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class SubscribeController extends Controller
 {
-    use DispatchesJobs;
-
     /**
      * Show the subscribe by email page.
      *
@@ -52,7 +49,7 @@ class SubscribeController extends Controller
         $email = Binput::get('email');
 
         try {
-            $this->dispatch(new SubscribeSubscriberCommand($email));
+            dispatch(new SubscribeSubscriberCommand($email));
         } catch (AlreadySubscribedException $e) {
             return Redirect::route('subscribe.subscribe')
                 ->withTitle(sprintf('<strong>%s</strong> %s', trans('dashboard.notifications.whoops'), trans('cachet.subscriber.email.failure')))
@@ -87,7 +84,7 @@ class SubscribeController extends Controller
             throw new BadRequestHttpException();
         }
 
-        $this->dispatch(new VerifySubscriberCommand($subscriber));
+        dispatch(new VerifySubscriberCommand($subscriber));
 
         return Redirect::route('status-page')
             ->withSuccess(sprintf('<strong>%s</strong> %s', trans('dashboard.notifications.awesome'), trans('cachet.subscriber.email.verified')));
@@ -112,7 +109,7 @@ class SubscribeController extends Controller
             throw new BadRequestHttpException();
         }
 
-        $this->dispatch(new UnsubscribeSubscriberCommand($subscriber));
+        dispatch(new UnsubscribeSubscriberCommand($subscriber));
 
         return Redirect::route('status-page')
             ->withSuccess(sprintf('<strong>%s</strong> %s', trans('dashboard.notifications.awesome'), trans('cachet.subscriber.email.unsubscribed')));
