@@ -24,13 +24,12 @@ class FeedRoutes
      * Define the status page routes.
      *
      * @param \Illuminate\Contracts\Routing\Registrar $router
+     *
+     * @return void
      */
     public function map(Registrar $router)
     {
-        $router->group([
-            'middleware' => ['web', 'app.hasSetting'],
-            'setting'    => 'app_name',
-        ], function ($router) {
+        $router->group(['middleware' => ['web', 'ready']], function ($router) {
             $router->get('/atom/{component_group?}', [
                 'as'   => 'feed.atom',
                 'uses' => 'FeedController@atomAction',

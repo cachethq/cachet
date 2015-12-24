@@ -51,15 +51,14 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'admin'             => 'CachetHQ\Cachet\Http\Middleware\Admin',
-        'app.hasSetting'    => 'CachetHQ\Cachet\Http\Middleware\HasSetting',
-        'app.isSetup'       => 'CachetHQ\Cachet\Http\Middleware\AppIsSetup',
-        'app.subscribers'   => 'CachetHQ\Cachet\Http\Middleware\SubscribersConfigured',
-        'auth'              => 'CachetHQ\Cachet\Http\Middleware\Authenticate',
-        'auth.api.optional' => 'CachetHQ\Cachet\Http\Middleware\ApiOptionalAuthenticate',
-        'auth.api.required' => 'CachetHQ\Cachet\Http\Middleware\ApiAuthenticate',
-        'guest'             => 'CachetHQ\Cachet\Http\Middleware\RedirectIfAuthenticated',
-        'localize'          => 'CachetHQ\Cachet\Http\Middleware\Localize',
-        'throttling'        => 'GrahamCampbell\Throttle\Http\Middleware\ThrottleMiddleware',
+        'admin'       => 'CachetHQ\Cachet\Http\Middleware\Admin',
+        'auth'        => 'CachetHQ\Cachet\Http\Middleware\Authenticate',
+        'auth.api'    => 'CachetHQ\Cachet\Http\Middleware\ApiAuthentication',
+        'guest'       => 'CachetHQ\Cachet\Http\Middleware\RedirectIfAuthenticated',
+        'localize'    => 'CachetHQ\Cachet\Http\Middleware\Localize',
+        'ready'       => 'CachetHQ\Cachet\Http\Middleware\ReadyForUse',
+        'setup'       => 'CachetHQ\Cachet\Http\Middleware\SetupAlreadyCompleted',
+        'subscribers' => 'CachetHQ\Cachet\Http\Middleware\SubscribersConfigured',
+        'throttling'  => 'GrahamCampbell\Throttle\Http\Middleware\ThrottleMiddleware',
     ];
 }

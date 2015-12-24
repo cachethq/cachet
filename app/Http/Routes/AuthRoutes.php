@@ -24,15 +24,12 @@ class AuthRoutes
      * Define the auth routes.
      *
      * @param \Illuminate\Contracts\Routing\Registrar $router
+     *
+     * @return void
      */
     public function map(Registrar $router)
     {
-        $router->group([
-            'as'         => 'auth.',
-            'middleware' => ['web', 'app.hasSetting'],
-            'prefix'     => 'auth',
-            'setting'    => 'app_name',
-        ], function ($router) {
+        $router->group(['as' => 'auth.', 'middleware' => ['web', 'ready'], 'prefix' => 'auth'], function ($router) {
             $router->get('login', [
                 'middleware' => 'guest',
                 'as'         => 'login',
@@ -44,7 +41,6 @@ class AuthRoutes
                 'uses'       => 'AuthController@postLogin',
             ]);
 
-            // Two factor authorization
             $router->get('2fa', [
                 'as'   => 'two-factor',
                 'uses' => 'AuthController@showTwoFactorAuth',

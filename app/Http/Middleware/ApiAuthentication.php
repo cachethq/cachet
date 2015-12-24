@@ -15,8 +15,9 @@ use CachetHQ\Cachet\Models\User;
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
-class ApiOptionalAuthenticate
+class ApiAuthentication
 {
     /**
      * The authentication guard instance.
@@ -26,7 +27,7 @@ class ApiOptionalAuthenticate
     protected $auth;
 
     /**
-     * Create a new api authenticate middleware instance.
+     * Create a new api authentication middleware instance.
      *
      * @param \Illuminate\Contracts\Auth\Guard $auth
      *
@@ -42,18 +43,23 @@ class ApiOptionalAuthenticate
      *
      * @param \Illuminate\Http\Request $request
      * @param \Closure                 $next
+     * @param bool                     $required
      *
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle($request, Closure $next, $required = false)
     {
         if ($this->auth->guest()) {
             if ($apiToken = $request->header('X-Cachet-Token')) {
                 try {
                     $this->auth->onceUsingId(User::findByApiToken($apiToken)->id);
                 } catch (ModelNotFoundException $e) {
-                    //
+                    if ($required) {
+                        throw new HttpException(401);
+                    }
                 }
+            } elseif ($required) {
+                throw new HttpException(401);
             }
         }
 
