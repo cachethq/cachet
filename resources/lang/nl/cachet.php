@@ -52,9 +52,10 @@ return [
     // Metrics
     'metrics' => [
         'filter' => [
-            'hourly'  => 'Laatste 12 uren',
-            'weekly'  => 'Week',
-            'monthly' => 'Maand',
+            'last_hour' => 'Last Hour',
+            'hourly'    => 'Laatste 12 uren',
+            'weekly'    => 'Week',
+            'monthly'   => 'Maand',
         ],
     ],
 

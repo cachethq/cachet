@@ -15,6 +15,7 @@
                 <div class="dropdown pull-right">
                     <a href="javascript: void(0);" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class='filter'>{{ trans('cachet.metrics.filter.hourly') }}</span> <span class="caret"></span></a>
                     <ul class="dropdown-menu dropdown-menu-right">
+                        <li><a href="#" data-filter-type="last_hour">{{ trans('cachet.metrics.filter.last_hour') }}</a></li>
                         <li><a href="#" data-filter-type="today">{{ trans('cachet.metrics.filter.hourly') }}</a></li>
                         <li><a href="#" data-filter-type="week">{{ trans('cachet.metrics.filter.weekly') }}</a></li>
                         <li><a href="#" data-filter-type="month">{{ trans('cachet.metrics.filter.monthly') }}</a></li>

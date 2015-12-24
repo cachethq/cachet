@@ -37,6 +37,48 @@ class PgSqlRepository implements MetricInterface
     }
 
     /**
+     * Returns metrics for the last hour.
+     *
+     * @param \CachetHQ\Cachet\Models\Metric $metric
+     * @param int                            $hour
+     * @param int                            $minute
+     *
+     * @return int
+     */
+    public function getPointsLastHour(Metric $metric, $hour, $minute)
+    {
+        $dateTime = (new Date())->setTimezone($this->dateTimeZone);
+        $dateTime->sub(new DateInterval('PT'.$hour.'H'))->sub(new DateInterval('PT'.$minute.'M'));
+        $hourInterval = $dateTime->format('YmdHi');
+
+        // Default metrics calculations.
+        if (!isset($metric->calc_type) || $metric->calc_type == Metric::CALC_SUM) {
+            $queryType = 'sum(metric_points.value)';
+        } elseif ($metric->calc_type == Metric::CALC_AVG) {
+            $queryType = 'avg(metric_points.value)';
+        } else {
+            $queryType = 'sum(metric_points.value)';
+        }
+
+        $query = DB::select("select {$queryType} as aggregate FROM metrics JOIN metric_points ON metric_points.metric_id = metrics.id WHERE metric_points.metric_id = :metric_id AND to_char(metric_points.created_at, 'YYYYMMDDHHMI24') = :timestamp GROUP BY to_char(metric_points.created_at, 'HI')", [
+            'metric_id' => $metric->id,
+            'timestamp' => $hourInterval,
+        ]);
+
+        if (isset($query[0])) {
+            $value = $query[0]->aggregate;
+        } else {
+            $value = 0;
+        }
+
+        if ($value === 0 && $metric->default_value != $value) {
+            return $metric->default_value;
+        }
+
+        return round($value, $metric->places);
+    }
+
+    /**
      * Returns metrics for a given hour.
      *
      * @param \CachetHQ\Cachet\Models\Metric $metric

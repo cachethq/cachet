@@ -44,6 +44,27 @@ class MetricRepository
     }
 
     /**
+     * Returns all points as an array, for the last hour.
+     *
+     * @param \CachetHQ\Cachet\Models\Metric $metric
+     *
+     * @return array
+     */
+    public function listPointsLastHour(Metric $metric)
+    {
+        $dateTime = (new Date())->setTimezone($this->dateTimeZone);
+        $points = [];
+
+        $pointKey = $dateTime->format('H:i');
+        for ($i = 0; $i <= 60; $i++) {
+            $points[$pointKey] = $this->repository->getPointsLastHour($metric, 0, $i);
+            $pointKey = $dateTime->sub(new DateInterval('PT1M'))->format('H:i');
+        }
+
+        return array_reverse($points);
+    }
+
+    /**
      * Returns all points as an array, by x hours.
      *
      * @param \CachetHQ\Cachet\Models\Metric $metric

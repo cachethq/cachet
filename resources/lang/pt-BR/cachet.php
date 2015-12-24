@@ -52,9 +52,10 @@ return [
     // Metrics
     'metrics' => [
         'filter' => [
-            'hourly'  => 'Últimas 12 horas',
-            'weekly'  => 'Semana',
-            'monthly' => 'Mês',
+            'last_hour' => 'Last Hour',
+            'hourly'    => 'Últimas 12 horas',
+            'weekly'    => 'Semana',
+            'monthly'   => 'Mês',
         ],
     ],
 

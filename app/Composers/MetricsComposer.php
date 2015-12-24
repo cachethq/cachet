@@ -51,9 +51,10 @@ class MetricsComposer
 
             $metrics->map(function ($metric) use (&$metricData) {
                 $metricData[$metric->id] = [
-                    'today' => $this->metricRepository->listPointsToday($metric),
-                    'week'  => $this->metricRepository->listPointsForWeek($metric),
-                    'month' => $this->metricRepository->listPointsForMonth($metric),
+                    'last_hour' => $this->metricRepository->listPointsLastHour($metric),
+                    'today'     => $this->metricRepository->listPointsToday($metric),
+                    'week'      => $this->metricRepository->listPointsForWeek($metric),
+                    'month'     => $this->metricRepository->listPointsForMonth($metric),
                 ];
             });
         }
