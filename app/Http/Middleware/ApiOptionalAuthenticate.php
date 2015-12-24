@@ -54,10 +54,6 @@ class ApiOptionalAuthenticate
                 } catch (ModelNotFoundException $e) {
                     //
                 }
-            } elseif ($request->getUser()) {
-                if ($this->auth->onceBasic() !== null) {
-                    //
-                }
             }
         }
 

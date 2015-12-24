@@ -55,10 +55,6 @@ class ApiAuthenticate
                 } catch (ModelNotFoundException $e) {
                     throw new HttpException(401);
                 }
-            } elseif ($request->getUser()) {
-                if ($this->auth->onceBasic() !== null) {
-                    throw new HttpException(401);
-                }
             } else {
                 throw new HttpException(401);
             }

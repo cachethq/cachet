@@ -28,7 +28,7 @@ class StatusPageRoutes
     public function map(Registrar $router)
     {
         $router->group([
-            'middleware' => ['app.hasSetting', 'localize'],
+            'middleware' => ['web', 'app.hasSetting', 'localize'],
             'setting'    => 'app_name',
         ], function ($router) {
             $router->get('/', [
