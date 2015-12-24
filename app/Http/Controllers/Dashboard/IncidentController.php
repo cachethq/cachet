@@ -39,7 +39,7 @@ class IncidentController extends Controller
     /**
      * Creates a new incident controller instance.
      *
-     * @return \CachetHQ\Cachet\Http\Controllers\DashScheduleController
+     * @return void
      */
     public function __construct()
     {
