@@ -11,8 +11,8 @@
 
 namespace CachetHQ\Cachet\Foundation\Providers;
 
+use AltThree\Bus\Dispatcher;
 use CachetHQ\Cachet\Dates\DateFactory;
-use Illuminate\Bus\Dispatcher;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 
@@ -21,7 +21,7 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Boot the service provider.
      *
-     * @param \Illuminate\Bus\Dispatcher $dispatcher
+     * @param \AltThree\Bus\Dispatcher $dispatcher
      */
     public function boot(Dispatcher $dispatcher)
     {

@@ -75,7 +75,7 @@
                     </div>
                     <div class="form-group">
                         <label>{{ trans('forms.setup.site_domain') }}</label>
-                        <input type="text" name="settings[app_domain]" class="form-control" placeholder="{{ trans('forms.setup.site_domain') }}" value="{{ Binput::old('settings.app_domain', url()) }}" required>
+                        <input type="text" name="settings[app_domain]" class="form-control" placeholder="{{ trans('forms.setup.site_domain') }}" value="{{ Binput::old('settings.app_domain', url('/')) }}" required>
                         @if($errors->has('settings.app_domain'))
                         <span class="text-danger">{{ $errors->first('settings.app_domain') }}</span>
                         @endif
