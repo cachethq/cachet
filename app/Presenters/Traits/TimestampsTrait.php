@@ -23,7 +23,7 @@ trait TimestampsTrait
     public function created_at()
     {
         return (new Date($this->wrappedObject->created_at))
-            ->setTimezone($this->setting->get('app_timezone'))->toDateTimeString();
+            ->setTimezone(Config::get('cachet.timezone'))->toDateTimeString();
     }
 
     /**
@@ -34,7 +34,7 @@ trait TimestampsTrait
     public function updated_at()
     {
         return (new Date($this->wrappedObject->updated_at))
-            ->setTimezone($this->setting->get('app_timezone'))->toDateTimeString();
+            ->setTimezone(Config::get('cachet.timezone'))->toDateTimeString();
     }
 
     /**
@@ -45,6 +45,6 @@ trait TimestampsTrait
     public function deleted_at()
     {
         return (new Date($this->wrappedObject->deleted_at))
-            ->setTimezone($this->setting->get('app_timezone'))->toDateTimeString();
+            ->setTimezone(Config::get('cachet.timezone'))->toDateTimeString();
     }
 }

@@ -11,7 +11,7 @@
 
 namespace CachetHQ\Cachet\Repositories\Metric;
 
-use CachetHQ\Cachet\Facades\Setting as SettingFacade;
+use Illuminate\Support\Facades\Config;
 use CachetHQ\Cachet\Models\Metric;
 use DateInterval;
 use Illuminate\Support\Facades\DB;
@@ -33,7 +33,7 @@ class PgSqlRepository implements MetricInterface
      */
     public function __construct()
     {
-        $this->dateTimeZone = SettingFacade::get('app_timezone');
+        $this->dateTimeZone = Config::get('cachet.timezone');
     }
 
     /**

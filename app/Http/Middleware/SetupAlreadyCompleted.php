@@ -11,7 +11,7 @@
 
 namespace CachetHQ\Cachet\Http\Middleware;
 
-use CachetHQ\Cachet\Facades\Setting;
+use Illuminate\Support\Facades\Config;
 use Closure;
 use Illuminate\Support\Facades\Redirect;
 
@@ -27,7 +27,7 @@ class SetupAlreadyCompleted
      */
     public function handle($request, Closure $next)
     {
-        if (Setting::get('app_name')) {
+        if (Config::get('setting.app_name')) {
             return Redirect::to('dashboard');
         }
 

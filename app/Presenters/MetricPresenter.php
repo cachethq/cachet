@@ -12,8 +12,10 @@
 namespace CachetHQ\Cachet\Presenters;
 
 use CachetHQ\Cachet\Presenters\Traits\TimestampsTrait;
+use Illuminate\Contracts\Support\Arrayable;
+use McCool\LaravelAutoPresenter\BasePresenter;
 
-class MetricPresenter extends AbstractPresenter
+class MetricPresenter extends BasePresenter implements Arrayable
 {
     use TimestampsTrait;
 

@@ -11,7 +11,7 @@
 
 namespace CachetHQ\Cachet\Http\Controllers;
 
-use CachetHQ\Cachet\Facades\Setting;
+use Illuminate\Support\Facades\Config;
 use CachetHQ\Cachet\Models\Incident;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
@@ -47,14 +47,14 @@ class StatusPageController extends Controller
             }
         }
 
-        $daysToShow = Setting::get('app_incident_days', 0) - 1;
+        $daysToShow = Config::get('setting.app_incident_days', 0) - 1;
         if ($daysToShow < 0) {
             $daysToShow = 0;
             $incidentDays = [];
         } else {
             $incidentDays = range(0, $daysToShow);
         }
-        $dateTimeZone = Setting::get('app_timezone');
+        $dateTimeZone = Config::get('cachet.timezone');
 
         $incidentVisibility = Auth::check() ? 0 : 1;
 

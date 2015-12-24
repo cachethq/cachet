@@ -16,7 +16,7 @@ use CachetHQ\Cachet\Commands\Subscriber\SubscribeSubscriberCommand;
 use CachetHQ\Cachet\Commands\Subscriber\UnsubscribeSubscriberCommand;
 use CachetHQ\Cachet\Commands\Subscriber\VerifySubscriberCommand;
 use CachetHQ\Cachet\Exceptions\AlreadySubscribedException;
-use CachetHQ\Cachet\Facades\Setting;
+use Illuminate\Support\Facades\Config;
 use CachetHQ\Cachet\Models\Subscriber;
 use GrahamCampbell\Binput\Facades\Binput;
 use GrahamCampbell\Markdown\Facades\Markdown;
@@ -36,7 +36,7 @@ class SubscribeController extends Controller
     public function showSubscribe()
     {
         return View::make('subscribe')
-            ->withAboutApp(Markdown::convertToHtml(Setting::get('app_about')));
+            ->withAboutApp(Markdown::convertToHtml(Config::get('setting.app_about')));
     }
 
     /**

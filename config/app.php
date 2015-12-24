@@ -232,7 +232,6 @@ return [
         'View'      => 'Illuminate\Support\Facades\View',
 
         'Binput'    => 'GrahamCampbell\Binput\Facades\Binput',
-        'Setting'   => 'CachetHQ\Cachet\Facades\Setting',
         'Str'       => 'Illuminate\Support\Str',
 
     ],

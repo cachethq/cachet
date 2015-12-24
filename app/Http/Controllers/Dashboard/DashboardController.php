@@ -11,7 +11,7 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
-use CachetHQ\Cachet\Facades\Setting;
+use Illuminate\Support\Facades\Config;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\Subscriber;
@@ -43,7 +43,7 @@ class DashboardController extends Controller
     public function __construct()
     {
         $this->startDate = new Date();
-        $this->dateTimeZone = Setting::get('app_timezone');
+        $this->dateTimeZone = Config::get('cachet.timezone');
     }
 
     /**

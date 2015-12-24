@@ -11,7 +11,7 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
-use CachetHQ\Cachet\Facades\Setting;
+use Illuminate\Support\Facades\Config;
 use CachetHQ\Cachet\Models\User;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
@@ -196,8 +196,10 @@ class SettingsController extends Controller
     {
         $redirectUrl = Session::get('redirect_to', route('dashboard.settings.setup'));
 
+        $setting = app('setting');
+
         if (Binput::get('remove_banner') === '1') {
-            Setting::set('app_banner', null);
+            $setting->set('app_banner', null);
         }
 
         if (Binput::hasFile('app_banner')) {
@@ -220,10 +222,10 @@ class SettingsController extends Controller
             }
 
             // Store the banner.
-            Setting::set('app_banner', base64_encode(file_get_contents($file->getRealPath())));
+            $setting->set('app_banner', base64_encode(file_get_contents($file->getRealPath())));
 
             // Store the banner type.
-            Setting::set('app_banner_type', $file->getMimeType());
+            $setting->set('app_banner_type', $file->getMimeType());
         }
 
         try {
@@ -232,7 +234,7 @@ class SettingsController extends Controller
                     $settingValue = rtrim($settingValue, '/');
                 }
 
-                Setting::set($settingName, $settingValue);
+                $setting->set($settingName, $settingValue);
             }
         } catch (Exception $e) {
             return Redirect::to($redirectUrl)->withErrors(trans('dashboard.settings.edit.failure'));

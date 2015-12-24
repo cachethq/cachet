@@ -26,7 +26,7 @@
                                             @foreach($timezones as $region => $list)
                                                 <optgroup label="{{ $region }}">
                                                     @foreach($list as $timezone => $name)
-                                                        <option value="{{ $timezone }}" @if(Setting::get('app_timezone') == $timezone) selected @endif>
+                                                        <option value="{{ $timezone }}" @if(Config::get('cachet.timezone') == $timezone) selected @endif>
                                                             {{ $name }}
                                                         </option>
                                                     @endforeach
@@ -43,7 +43,7 @@
                                             {{ trans('forms.settings.localization.date-format') }}
                                             <a href="http://php.net/manual/en/function.date.php" target="_blank"><i class="icon ion-help-circled"></i></a>
                                         </label>
-                                        <input type="text" class="form-control" name="date_format" value="{{ Setting::get('date_format') ?: 'l jS F Y' }}">
+                                        <input type="text" class="form-control" name="date_format" value="{{ Config::get('setting.date_format') ?: 'l jS F Y' }}">
                                     </div>
                                 </div>
                             </div>
@@ -54,7 +54,7 @@
                                             {{ trans('forms.settings.localization.incident-date-format') }}
                                             <a href="http://php.net/manual/en/function.date.php" target="_blank"><i class="icon ion-help-circled"></i></a>
                                         </label>
-                                        <input type="text" class="form-control" name="incident_date_format" value="{{ Setting::get('incident_date_format') ?: 'l jS F Y H:i:s' }}">
+                                        <input type="text" class="form-control" name="incident_date_format" value="{{ Config::get('setting.incident_date_format') ?: 'l jS F Y H:i:s' }}">
                                     </div>
                                 </div>
                             </div>
