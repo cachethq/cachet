@@ -52,7 +52,7 @@ class Repository
     public function get($name, $default = null)
     {
         if (!$this->settings) {
-            $this->settings = $this->model->all()->lists('value', 'name');
+            $this->settings = $this->model->all()->pluck('value', 'name');
         }
 
         if (!empty($this->settings[$name])) {
