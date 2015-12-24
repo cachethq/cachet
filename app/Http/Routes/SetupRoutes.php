@@ -23,7 +23,7 @@ class SetupRoutes
     /**
      * Define the setup routes.
      *
-     * @param \Illuminate\Contracts\Routing\Registrar $router#*
+     * @param \Illuminate\Contracts\Routing\Registrar $router
      *
      * @return void
      */
