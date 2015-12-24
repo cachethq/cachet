@@ -16,7 +16,6 @@ use CachetHQ\Cachet\Commands\Invite\ClaimInviteCommand;
 use CachetHQ\Cachet\Commands\User\SignupUserCommand;
 use CachetHQ\Cachet\Models\Invite;
 use GrahamCampbell\Binput\Facades\Binput;
-use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
@@ -25,8 +24,6 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class SignupController extends Controller
 {
-    use DispatchesJobs;
-
     /**
      * Handle the signup with invite.
      *
@@ -72,7 +69,7 @@ class SignupController extends Controller
         }
 
         try {
-            $this->dispatch(new SignupUserCommand(
+            dispatch(new SignupUserCommand(
                 Binput::get('username'),
                 Binput::get('password'),
                 Binput::get('email'),
@@ -85,7 +82,7 @@ class SignupController extends Controller
                 ->withErrors($e->getMessageBag());
         }
 
-        $this->dispatch(new ClaimInviteCommand($invite));
+        dispatch(new ClaimInviteCommand($invite));
 
         return Redirect::route('status-page')
             ->withSuccess(sprintf('<strong>%s</strong> %s', trans('dashboard.notifications.awesome'), trans('cachet.signup.success')));

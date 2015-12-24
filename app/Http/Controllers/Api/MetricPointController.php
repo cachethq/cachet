@@ -18,13 +18,10 @@ use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\MetricPoint;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Database\QueryException;
-use Illuminate\Foundation\Bus\DispatchesJobs;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 class MetricPointController extends AbstractApiController
 {
-    use DispatchesJobs;
-
     /**
      * Get a single metric point.
      *
@@ -48,7 +45,7 @@ class MetricPointController extends AbstractApiController
     public function postMetricPoints(Metric $metric)
     {
         try {
-            $metricPoint = $this->dispatch(new AddMetricPointCommand(
+            $metricPoint = dispatch(new AddMetricPointCommand(
                 $metric,
                 Binput::get('value'),
                 Binput::get('timestamp'))
@@ -70,7 +67,7 @@ class MetricPointController extends AbstractApiController
      */
     public function putMetricPoint(Metric $metric, MetricPoint $metricPoint)
     {
-        $metricPoint = $this->dispatch(new UpdateMetricPointCommand(
+        $metricPoint = dispatch(new UpdateMetricPointCommand(
             $metricPoint,
             $metric,
             Binput::get('value'),
@@ -90,7 +87,7 @@ class MetricPointController extends AbstractApiController
      */
     public function deleteMetricPoint(Metric $metric, MetricPoint $metricPoint)
     {
-        $this->dispatch(new RemoveMetricPointCommand($metricPoint));
+        dispatch(new RemoveMetricPointCommand($metricPoint));
 
         return $this->noContent();
     }

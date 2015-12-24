@@ -17,14 +17,11 @@ use CachetHQ\Cachet\Commands\ComponentGroup\UpdateComponentGroupCommand;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Database\QueryException;
-use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Support\Facades\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 class ComponentGroupController extends AbstractApiController
 {
-    use DispatchesJobs;
-
     /**
      * Get all groups.
      *
@@ -57,7 +54,7 @@ class ComponentGroupController extends AbstractApiController
     public function postGroups()
     {
         try {
-            $group = $this->dispatch(new AddComponentGroupCommand(
+            $group = dispatch(new AddComponentGroupCommand(
                 Binput::get('name'),
                 Binput::get('order', 0)
             ));
@@ -78,7 +75,7 @@ class ComponentGroupController extends AbstractApiController
     public function putGroup(ComponentGroup $group)
     {
         try {
-            $group = $this->dispatch(new UpdateComponentGroupCommand(
+            $group = dispatch(new UpdateComponentGroupCommand(
                 $group,
                 Binput::get('name'),
                 Binput::get('order', 0)
@@ -99,7 +96,7 @@ class ComponentGroupController extends AbstractApiController
      */
     public function deleteGroup(ComponentGroup $group)
     {
-        $this->dispatch(new RemoveComponentGroupCommand($group));
+        dispatch(new RemoveComponentGroupCommand($group));
 
         return $this->noContent();
     }

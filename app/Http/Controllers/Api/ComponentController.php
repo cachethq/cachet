@@ -19,14 +19,11 @@ use CachetHQ\Cachet\Models\Tag;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Database\QueryException;
-use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Support\Facades\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 class ComponentController extends AbstractApiController
 {
-    use DispatchesJobs;
-
     /**
      * Get all components.
      *
@@ -63,7 +60,7 @@ class ComponentController extends AbstractApiController
     public function postComponents()
     {
         try {
-            $component = $this->dispatch(new AddComponentCommand(
+            $component = dispatch(new AddComponentCommand(
                 Binput::get('name'),
                 Binput::get('description'),
                 Binput::get('status'),
@@ -103,7 +100,7 @@ class ComponentController extends AbstractApiController
     public function putComponent(Component $component)
     {
         try {
-            $this->dispatch(new UpdateComponentCommand(
+            dispatch(new UpdateComponentCommand(
                 $component,
                 Binput::get('name'),
                 Binput::get('description'),
@@ -140,7 +137,7 @@ class ComponentController extends AbstractApiController
      */
     public function deleteComponent(Component $component)
     {
-        $this->dispatch(new RemoveComponentCommand($component));
+        dispatch(new RemoveComponentCommand($component));
 
         return $this->noContent();
     }

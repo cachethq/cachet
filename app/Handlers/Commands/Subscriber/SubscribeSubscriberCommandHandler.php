@@ -16,12 +16,9 @@ use CachetHQ\Cachet\Commands\Subscriber\VerifySubscriberCommand;
 use CachetHQ\Cachet\Events\Subscriber\SubscriberHasSubscribedEvent;
 use CachetHQ\Cachet\Exceptions\AlreadySubscribedException;
 use CachetHQ\Cachet\Models\Subscriber;
-use Illuminate\Foundation\Bus\DispatchesJobs;
 
 class SubscribeSubscriberCommandHandler
 {
-    use DispatchesJobs;
-
     /**
      * Handle the subscribe subscriber command.
      *
@@ -40,7 +37,7 @@ class SubscribeSubscriberCommandHandler
         $subscriber = Subscriber::create(['email' => $command->email]);
 
         if ($command->verified) {
-            $this->dispatch(new VerifySubscriberCommand($subscriber));
+            dispatch(new VerifySubscriberCommand($subscriber));
         } else {
             event(new SubscriberHasSubscribedEvent($subscriber));
         }

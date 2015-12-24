@@ -18,14 +18,11 @@ use CachetHQ\Cachet\Models\Incident;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Database\QueryException;
-use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Support\Facades\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 class IncidentController extends AbstractApiController
 {
-    use DispatchesJobs;
-
     /**
      * Get all incidents.
      *
@@ -60,7 +57,7 @@ class IncidentController extends AbstractApiController
     public function postIncidents()
     {
         try {
-            $incident = $this->dispatch(new ReportIncidentCommand(
+            $incident = dispatch(new ReportIncidentCommand(
                 Binput::get('name'),
                 Binput::get('status'),
                 Binput::get('message'),
@@ -89,7 +86,7 @@ class IncidentController extends AbstractApiController
     public function putIncident(Incident $incident)
     {
         try {
-            $incident = $this->dispatch(new UpdateIncidentCommand(
+            $incident = dispatch(new UpdateIncidentCommand(
                 $incident,
                 Binput::get('name'),
                 Binput::get('status'),
@@ -118,7 +115,7 @@ class IncidentController extends AbstractApiController
      */
     public function deleteIncident(Incident $incident)
     {
-        $this->dispatch(new RemoveIncidentCommand($incident));
+        dispatch(new RemoveIncidentCommand($incident));
 
         return $this->noContent();
     }
