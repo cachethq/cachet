@@ -33,16 +33,21 @@ return [
 
         // Incident templates
         'templates' => [
-            'title' => 'Template de incidentes',
+            'title' => 'Incidentes Templates',
             'add'   => [
                 'title'   => 'Criar um template de incidente',
+                'message' => 'Você deve adicionar um template de incidente.',
                 'success' => 'Template criado.',
-                'failure' => 'Algo deu errado com o template de incidente.',
+                'failure' => 'Ocorreu algum erro ao criar o template, tente novamente.',
             ],
             'edit' => [
-                'title'   => 'Editar template',
+                'title'   => 'Editar Template',
                 'success' => 'Template foi atualizado!',
-                'failure' => 'Algo deu errado ao atualizar o template de incidente',
+                'failure' => 'Ocorreu algum erro ao editar o template, tente novamente.',
+            ],
+            'delete' => [
+                'success' => 'O Template foi deletado.',
+                'failure' => 'Ocorreu algum erro ao deletar o template, tente novamente.',
             ],
         ],
     ],
