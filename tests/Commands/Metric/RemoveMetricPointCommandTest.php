@@ -17,12 +17,6 @@ use CachetHQ\Cachet\Handlers\Commands\Metric\RemoveMetricPointCommandHandler;
 use CachetHQ\Cachet\Models\MetricPoint;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 
-/**
- * This is the remove metric point command test class.
- *
- * @author James Brooks <james@alt-three.com>
- * @author Graham Campbell <graham@alt-three.com>
- */
 class RemoveMetricPointCommandTest extends AbstractTestCase
 {
     use CommandTrait;

@@ -16,11 +16,6 @@ use CachetHQ\Cachet\Commands\User\InviteTeamMemberCommand;
 use CachetHQ\Cachet\Handlers\Commands\User\InviteTeamMemberCommandHandler;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 
-/**
- * This is the invite team member command test class.
- *
- * @author Graham Campbell <graham@alt-three.com>
- */
 class InviteTeamMemberCommandTest extends AbstractTestCase
 {
     use CommandTrait;

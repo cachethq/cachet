@@ -17,12 +17,6 @@ use CachetHQ\Cachet\Handlers\Commands\Subscriber\VerifySubscriberCommandHandler;
 use CachetHQ\Cachet\Models\Subscriber;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 
-/**
- * This is the verify subscriber command test class.
- *
- * @author James Brooks <james@alt-three.com>
- * @author Graham Campbell <graham@alt-three.com>
- */
 class VerifySubscriberCommandTest extends AbstractTestCase
 {
     use CommandTrait;

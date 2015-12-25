@@ -17,12 +17,6 @@ use CachetHQ\Cachet\Handlers\Commands\Incident\RemoveIncidentCommandHandler;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 
-/**
- * This is the remove incident command test class.
- *
- * @author James Brooks <james@alt-three.com>
- * @author Graham Campbell <graham@alt-three.com>
- */
 class RemoveIncidentCommandTest extends AbstractTestCase
 {
     use CommandTrait;

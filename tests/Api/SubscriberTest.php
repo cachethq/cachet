@@ -11,12 +11,6 @@
 
 namespace CachetHQ\Tests\Cachet\Api;
 
-/**
- * This is the subscriber test class.
- *
- * @author James Brooks <james@alt-three.com>
- * @author Graham Campbell <graham@alt-three.com>
- */
 class SubscriberTest extends AbstractApiTestCase
 {
     public function testGetSubscribersUnauthenticated()

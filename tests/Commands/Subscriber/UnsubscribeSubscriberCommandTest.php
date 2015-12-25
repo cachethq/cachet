@@ -17,12 +17,6 @@ use CachetHQ\Cachet\Handlers\Commands\Subscriber\UnsubscribeSubscriberCommandHan
 use CachetHQ\Cachet\Models\Subscriber;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 
-/**
- * This is the unsubscribe subscriber command test class.
- *
- * @author James Brooks <james@alt-three.com>
- * @author Graham Campbell <graham@alt-three.com>
- */
 class UnsubscribeSubscriberCommandTest extends AbstractTestCase
 {
     use CommandTrait;

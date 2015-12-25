@@ -17,12 +17,6 @@ use CachetHQ\Cachet\Handlers\Commands\Metric\RemoveMetricCommandHandler;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 
-/**
- * This is the remove metric command test class.
- *
- * @author James Brooks <james@alt-three.com>
- * @author Graham Campbell <graham@alt-three.com>
- */
 class RemoveMetricCommandTest extends AbstractTestCase
 {
     use CommandTrait;

@@ -16,12 +16,6 @@ use CachetHQ\Cachet\Commands\Incident\ReportIncidentCommand;
 use CachetHQ\Cachet\Handlers\Commands\Incident\ReportIncidentCommandHandler;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 
-/**
- * This is the add incident command test class.
- *
- * @author James Brooks <james@alt-three.com>
- * @author Graham Campbell <graham@alt-three.com>
- */
 class ReportIncidentCommandTest extends AbstractTestCase
 {
     use CommandTrait;

@@ -17,12 +17,6 @@ use CachetHQ\Cachet\Handlers\Commands\Component\RemoveComponentCommandHandler;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 
-/**
- * This is the remove component command test class.
- *
- * @author James Brooks <james@alt-three.com>
- * @author Graham Campbell <graham@alt-three.com>
- */
 class RemoveComponentCommandTest extends AbstractTestCase
 {
     use CommandTrait;

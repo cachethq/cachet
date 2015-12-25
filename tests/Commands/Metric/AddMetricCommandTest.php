@@ -16,12 +16,6 @@ use CachetHQ\Cachet\Commands\Metric\AddMetricCommand;
 use CachetHQ\Cachet\Handlers\Commands\Metric\AddMetricCommandHandler;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 
-/**
- * This is the add metric command test class.
- *
- * @author James Brooks <james@alt-three.com>
- * @author Graham Campbell <graham@alt-three.com>
- */
 class AddMetricCommandTest extends AbstractTestCase
 {
     use CommandTrait;

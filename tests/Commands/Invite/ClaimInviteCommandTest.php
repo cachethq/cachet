@@ -17,11 +17,6 @@ use CachetHQ\Cachet\Handlers\Commands\Invite\ClaimInviteCommandHandler;
 use CachetHQ\Cachet\Models\Invite;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 
-/**
- * This is the claim invite command test class.
- *
- * @author Graham Campbell <graham@alt-three.com>
- */
 class ClaimInviteCommandTest extends AbstractTestCase
 {
     use CommandTrait;

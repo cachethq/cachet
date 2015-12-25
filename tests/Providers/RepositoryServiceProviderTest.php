@@ -14,11 +14,6 @@ namespace CachetHQ\Tests\Cachet\Providers;
 use AltThree\TestBench\ServiceProviderTrait;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 
-/**
- * This is the repository service provider test class.
- *
- * @author Graham Campbell <graham@alt-three.com>
- */
 class RepositoryServiceProviderTest extends AbstractTestCase
 {
     use ServiceProviderTrait;

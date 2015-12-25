@@ -17,12 +17,6 @@ use CachetHQ\Cachet\Handlers\Commands\Metric\AddMetricPointCommandHandler;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 
-/**
- * This is the add metric point command test class.
- *
- * @author James Brooks <james@alt-three.com>
- * @author Graham Campbell <graham@alt-three.com>
- */
 class AddMetricPointCommandTest extends AbstractTestCase
 {
     use CommandTrait;

@@ -16,12 +16,6 @@ use CachetHQ\Cachet\Commands\ComponentGroup\AddComponentGroupCommand;
 use CachetHQ\Cachet\Handlers\Commands\ComponentGroup\AddComponentGroupCommandHandler;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 
-/**
- * This is the add component group command test class.
- *
- * @author James Brooks <james@alt-three.com>
- * @author Graham Campbell <graham@alt-three.com>
- */
 class AddComponentGroupCommandTest extends AbstractTestCase
 {
     use CommandTrait;

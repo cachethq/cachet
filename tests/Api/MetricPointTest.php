@@ -13,12 +13,6 @@ namespace CachetHQ\Tests\Cachet\Api;
 
 use Carbon\Carbon;
 
-/**
- * This is the metric point test class.
- *
- * @author James Brooks <james@alt-three.com>
- * @author Graham Campbell <graham@alt-three.com>
- */
 class MetricPointTest extends AbstractApiTestCase
 {
     public function testGetMetricPoint()

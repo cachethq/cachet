@@ -18,12 +18,6 @@ use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\MetricPoint;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 
-/**
- * This is the update metric point command test class.
- *
- * @author James Brooks <james@alt-three.com>
- * @author Graham Campbell <graham@alt-three.com>
- */
 class UpdateMetricPointCommandTest extends AbstractTestCase
 {
     use CommandTrait;
