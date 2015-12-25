@@ -14,7 +14,7 @@ namespace CachetHQ\Tests\Cachet\Events\ComponentGroup;
 use CachetHQ\Cachet\Events\ComponentGroup\ComponentGroupWasAddedEvent;
 use CachetHQ\Cachet\Models\ComponentGroup;
 
-class ComponentGroupWasAddedEventTest extends AbstractComponentGroupEventTestCase
+class ComponentGroupWasAddedTest extends AbstractComponentGroupEventTestCase
 {
     protected function objectHasHandlers()
     {
