@@ -24,5 +24,7 @@ class CommandTest extends AbstractTestCase
     public function testMigrations()
     {
         $this->assertSame(0, $this->app->make(Kernel::class)->call('migrate', ['--force' => true]));
+        $this->assertSame(0, $this->app->make(Kernel::class)->call('cachet:seed', ['--force' => true]));
+        $this->assertSame(0, $this->app->make(Kernel::class)->call('cachet:metrics', ['--force' => true]));
     }
 }
