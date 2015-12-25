@@ -35,7 +35,7 @@ return [
     |
     */
 
-    'default' => env('DB_DRIVER', 'sqlite'),
+    'default' => env('DB_CONNECTION', 'sqlite'),
 
     /*
     |--------------------------------------------------------------------------
