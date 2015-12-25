@@ -17,12 +17,6 @@ use CachetHQ\Cachet\Handlers\Commands\Incident\UpdateIncidentCommandHandler;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 
-/**
- * This is the update incident command test class.
- *
- * @author James Brooks <james@alt-three.com>
- * @author Graham Campbell <graham@alt-three.com>
- */
 class UpdateIncidentCommandTest extends AbstractTestCase
 {
     use CommandTrait;

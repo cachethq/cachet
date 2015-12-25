@@ -17,12 +17,6 @@ use CachetHQ\Cachet\Handlers\Commands\Metric\UpdateMetricCommandHandler;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 
-/**
- * This is the update metric command test class.
- *
- * @author James Brooks <james@alt-three.com>
- * @author Graham Campbell <graham@alt-three.com>
- */
 class UpdateMetricCommandTest extends AbstractTestCase
 {
     use CommandTrait;

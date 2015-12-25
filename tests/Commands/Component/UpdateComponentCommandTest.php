@@ -17,12 +17,6 @@ use CachetHQ\Cachet\Handlers\Commands\Component\UpdateComponentCommandHandler;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 
-/**
- * This is the update component command test class.
- *
- * @author James Brooks <james@alt-three.com>
- * @author Graham Campbell <graham@alt-three.com>
- */
 class UpdateComponentCommandTest extends AbstractTestCase
 {
     use CommandTrait;

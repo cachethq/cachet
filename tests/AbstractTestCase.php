@@ -14,11 +14,6 @@ namespace CachetHQ\Tests\Cachet;
 use Illuminate\Contracts\Console\Kernel;
 use Illuminate\Foundation\Testing\TestCase;
 
-/**
- * This is the abstract test case class.
- *
- * @author Graham Campbell <graham@alt-three.com>
- */
 abstract class AbstractTestCase extends TestCase
 {
     /**

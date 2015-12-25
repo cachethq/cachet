@@ -15,11 +15,6 @@ use CachetHQ\Cachet\Models\User;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
-/**
- * This is the abstract api test case class.
- *
- * @author Graham Campbell <graham@alt-three.com>
- */
 abstract class AbstractApiTestCase extends AbstractTestCase
 {
     use DatabaseMigrations;

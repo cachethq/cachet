@@ -16,11 +16,6 @@ use CachetHQ\Cachet\Commands\User\SignupUserCommand;
 use CachetHQ\Cachet\Handlers\Commands\User\SignupUserCommandHandler;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 
-/**
- * This is the signup user command test class.
- *
- * @author Graham Campbell <graham@alt-three.com>
- */
 class SignupUserCommandTest extends AbstractTestCase
 {
     use CommandTrait;

@@ -14,11 +14,6 @@ namespace CachetHQ\Tests\Cachet\Providers;
 use AltThree\TestBench\EventServiceProviderTrait;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 
-/**
- * This is the event service provider test class.
- *
- * @author Graham Campbell <graham@alt-three.com>
- */
 class EventServiceProviderTest extends AbstractTestCase
 {
     use EventServiceProviderTrait;

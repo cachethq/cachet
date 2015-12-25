@@ -17,12 +17,6 @@ use CachetHQ\Cachet\Handlers\Commands\ComponentGroup\RemoveComponentGroupCommand
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 
-/**
- * This is the remove component group command test class.
- *
- * @author James Brooks <james@alt-three.com>
- * @author Graham Campbell <graham@alt-three.com>
- */
 class RemoveComponentGroupCommandTest extends AbstractTestCase
 {
     use CommandTrait;

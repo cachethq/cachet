@@ -16,12 +16,6 @@ use CachetHQ\Cachet\Commands\User\AddTeamMemberCommand;
 use CachetHQ\Cachet\Handlers\Commands\User\AddTeamMemberCommandHandler;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 
-/**
- * This is the add team member command test class.
- *
- * @author James Brooks <james@alt-three.com>
- * @author Graham Campbell <graham@alt-three.com>
- */
 class AddTeamMemberCommandTest extends AbstractTestCase
 {
     use CommandTrait;

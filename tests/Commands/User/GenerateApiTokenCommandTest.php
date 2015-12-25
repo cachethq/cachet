@@ -17,12 +17,6 @@ use CachetHQ\Cachet\Handlers\Commands\User\GenerateApiTokenCommandHandler;
 use CachetHQ\Cachet\Models\User;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 
-/**
- * This is the generate api token command test class.
- *
- * @author James Brooks <james@alt-three.com>
- * @author Graham Campbell <graham@alt-three.com>
- */
 class GenerateApiTokenCommandTest extends AbstractTestCase
 {
     use CommandTrait;

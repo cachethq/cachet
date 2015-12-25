@@ -11,12 +11,6 @@
 
 namespace CachetHQ\Tests\Cachet\Api;
 
-/**
- * This is the metric test class.
- *
- * @author James Brooks <james@alt-three.com>
- * @author Graham Campbell <graham@alt-three.com>
- */
 class MetricTest extends AbstractApiTestCase
 {
     public function testGetMetrics()

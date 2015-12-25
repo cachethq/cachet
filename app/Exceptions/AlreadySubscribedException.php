@@ -13,11 +13,6 @@ namespace CachetHQ\Cachet\Exceptions;
 
 use Exception;
 
-/**
- * This is the already subscribed exception class.
- *
- * @author Graham Campbell <graham@alt-three.com>
- */
 class AlreadySubscribedException extends Exception implements ExceptionInterface
 {
     //

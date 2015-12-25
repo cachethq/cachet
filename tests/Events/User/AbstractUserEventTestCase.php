@@ -15,11 +15,6 @@ use AltThree\TestBench\EventTrait;
 use CachetHQ\Cachet\Events\User\UserEventInterface;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 
-/**
- * This is the abstract user event test class.
- *
- * @author Graham Campbell <graham@alt-three.com>
- */
 abstract class AbstractUserEventTestCase extends AbstractTestCase
 {
     use EventTrait;

@@ -11,11 +11,6 @@
 
 namespace CachetHQ\Cachet\Exceptions;
 
-/**
- * This is the exception interface.
- *
- * @author Graham Campbell <graham@alt-three.com>
- */
 interface ExceptionInterface
 {
     //

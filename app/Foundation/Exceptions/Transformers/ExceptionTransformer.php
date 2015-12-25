@@ -18,11 +18,6 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
-/**
- * This is the exception transformer class.
- *
- * @author Graham Campbell <graham@alt-three.com>
- */
 class ExceptionTransformer implements TransformerInterface
 {
     /**
