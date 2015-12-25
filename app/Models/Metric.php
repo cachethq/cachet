@@ -20,7 +20,18 @@ class Metric extends Model implements HasPresenter
 {
     use ValidatingTrait;
 
+    /**
+     * The calculation type of sum.
+     *
+     * @var int
+     */
     const CALC_SUM = 0;
+
+    /**
+     * The calculation type of average.
+     *
+     * @var int
+     */
     const CALC_AVG = 1;
 
     /**
