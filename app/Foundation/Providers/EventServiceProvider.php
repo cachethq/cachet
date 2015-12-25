@@ -21,6 +21,42 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
+        'CachetHQ\Cachet\Events\Component\ComponentWasAddedEvent' => [
+            //
+        ],
+        'CachetHQ\Cachet\Events\Component\ComponentWasRemovedEvent' => [
+            //
+        ],
+        'CachetHQ\Cachet\Events\Component\ComponentWasUpdatedEvent' => [
+            //
+        ],
+        'CachetHQ\Cachet\Events\ComponentGroup\ComponentGroupWasAddedEvent' => [
+            //
+        ],
+        'CachetHQ\Cachet\Events\ComponentGroup\ComponentGroupWasRemovedEvent' => [
+            //
+        ],
+        'CachetHQ\Cachet\Events\ComponentGroup\ComponentGroupWasUpdatedEvent' => [
+            //
+        ],
+        'CachetHQ\Cachet\Events\Metric\MetricWasAddedEvent' => [
+            //
+        ],
+        'CachetHQ\Cachet\Events\Metric\MetricWasRemovedEvent' => [
+            //
+        ],
+        'CachetHQ\Cachet\Events\Metric\MetricWasUpdatedEvent' => [
+            //
+        ],
+        'CachetHQ\Cachet\Events\Metric\MetricPointWasAddedEvent' => [
+            //
+        ],
+        'CachetHQ\Cachet\Events\Metric\MetricPointWasRemovedEvent' => [
+            //
+        ],
+        'CachetHQ\Cachet\Events\Metric\MetricPointWasUpdatedEvent' => [
+            //
+        ],
         'CachetHQ\Cachet\Events\Incident\IncidentWasReportedEvent' => [
             'CachetHQ\Cachet\Handlers\Events\Incident\SendIncidentEmailNotificationHandler',
         ],
