@@ -25,11 +25,6 @@ use Illuminate\Console\Command;
 use Illuminate\Console\ConfirmableTrait;
 use Symfony\Component\Console\Input\InputOption;
 
-/**
- * This is the demo seeder command.
- *
- * @author James Brooks <james@alt-three.com>
- */
 class DemoSeederCommand extends Command
 {
     use ConfirmableTrait;

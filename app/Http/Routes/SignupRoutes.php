@@ -13,11 +13,6 @@ namespace CachetHQ\Cachet\Http\Routes;
 
 use Illuminate\Contracts\Routing\Registrar;
 
-/**
- * This is the signup routes class.
- *
- * @author Joseph Cohen <joe@alt-three.com>
- */
 class SignupRoutes
 {
     /**

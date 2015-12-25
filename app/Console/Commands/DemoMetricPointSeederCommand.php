@@ -18,11 +18,6 @@ use Illuminate\Console\Command;
 use Illuminate\Console\ConfirmableTrait;
 use Symfony\Component\Console\Input\InputOption;
 
-/**
- * This is the demo seeder of metric points command.
- *
- * @author James Brooks <james@alt-three.com>
- */
 class DemoMetricPointSeederCommand extends Command
 {
     use ConfirmableTrait;
