@@ -15,14 +15,14 @@ use CachetHQ\Tests\Cachet\AbstractTestCase;
 use Illuminate\Contracts\Console\Kernel;
 
 /**
- * This is the command test class.
+ * This is the cachet seed command test class.
  *
- * @author Graham Campbell <graham@alt-three.com>
+ * @author James Brooks <james@alt-three.com>
  */
-class CommandTest extends AbstractTestCase
+class CachetSeedCommandTest extends AbstractTestCase
 {
     public function testMigrations()
     {
-        $this->assertSame(0, $this->app->make(Kernel::class)->call('migrate', ['--force' => true]));
+        $this->assertSame(0, $this->app->make(Kernel::class)->call('cachet:seed', ['--force' => true]));
     }
 }
