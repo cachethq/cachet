@@ -148,7 +148,7 @@ class SetupController extends Controller
                 'username' => $userDetails['username'],
                 'email'    => $userDetails['email'],
                 'password' => $userDetails['password'],
-                'level'    => 1,
+                'level'    => User::LEVEL_ADMIN,
             ]);
 
             Auth::login($user);

@@ -15,6 +15,7 @@ use AltThree\Validator\ValidationException;
 use CachetHQ\Cachet\Commands\Invite\ClaimInviteCommand;
 use CachetHQ\Cachet\Commands\User\SignupUserCommand;
 use CachetHQ\Cachet\Models\Invite;
+use CachetHQ\Cachet\Models\User;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Redirect;
@@ -73,7 +74,7 @@ class SignupController extends Controller
                 Binput::get('username'),
                 Binput::get('password'),
                 Binput::get('email'),
-                2
+                User::LEVEL_USER
             ));
         } catch (ValidationException $e) {
             return Redirect::route('signup.invite', ['code' => $invite->code])
