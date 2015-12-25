@@ -21,15 +21,6 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'CachetHQ\Cachet\Events\Component\ComponentWasAddedEvent' => [
-            //
-        ],
-        'CachetHQ\Cachet\Events\Component\ComponentWasRemovedEvent' => [
-            //
-        ],
-        'CachetHQ\Cachet\Events\Component\ComponentWasUpdatedEvent' => [
-            //
-        ],
         'CachetHQ\Cachet\Events\ComponentGroup\ComponentGroupWasAddedEvent' => [
             //
         ],
@@ -39,14 +30,20 @@ class EventServiceProvider extends ServiceProvider
         'CachetHQ\Cachet\Events\ComponentGroup\ComponentGroupWasUpdatedEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Events\Metric\MetricWasAddedEvent' => [
+        'CachetHQ\Cachet\Events\Component\ComponentWasAddedEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Events\Metric\MetricWasRemovedEvent' => [
+        'CachetHQ\Cachet\Events\Component\ComponentWasRemovedEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Events\Metric\MetricWasUpdatedEvent' => [
+        'CachetHQ\Cachet\Events\Component\ComponentWasUpdatedEvent' => [
             //
+        ],
+        'CachetHQ\Cachet\Events\Incident\IncidentWasReportedEvent' => [
+            'CachetHQ\Cachet\Handlers\Events\Incident\SendIncidentEmailNotificationHandler',
+        ],
+        'CachetHQ\Cachet\Events\Incident\MaintenanceWasScheduledEvent' => [
+            'CachetHQ\Cachet\Handlers\Events\Incident\SendMaintenanceEmailNotificationHandler',
         ],
         'CachetHQ\Cachet\Events\Metric\MetricPointWasAddedEvent' => [
             //
@@ -57,11 +54,14 @@ class EventServiceProvider extends ServiceProvider
         'CachetHQ\Cachet\Events\Metric\MetricPointWasUpdatedEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Events\Incident\IncidentWasReportedEvent' => [
-            'CachetHQ\Cachet\Handlers\Events\Incident\SendIncidentEmailNotificationHandler',
+        'CachetHQ\Cachet\Events\Metric\MetricWasAddedEvent' => [
+            //
         ],
-        'CachetHQ\Cachet\Events\Incident\MaintenanceWasScheduledEvent' => [
-            'CachetHQ\Cachet\Handlers\Events\Incident\SendMaintenanceEmailNotificationHandler',
+        'CachetHQ\Cachet\Events\Metric\MetricWasRemovedEvent' => [
+            //
+        ],
+        'CachetHQ\Cachet\Events\Metric\MetricWasUpdatedEvent' => [
+            //
         ],
         'CachetHQ\Cachet\Events\Subscriber\SubscriberHasSubscribedEvent' => [
             'CachetHQ\Cachet\Handlers\Events\Subscriber\SendSubscriberVerificationEmailHandler',
