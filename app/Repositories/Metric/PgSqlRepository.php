@@ -17,25 +17,8 @@ use DateInterval;
 use Illuminate\Support\Facades\DB;
 use Jenssegers\Date\Date;
 
-class PgSqlRepository implements MetricInterface
+class PgSqlRepository extends AbstractMetricRepository implements MetricInterface
 {
-    /**
-     * The timezone the status page is showing in.
-     *
-     * @var string
-     */
-    protected $dateTimeZone;
-
-    /**
-     * Creates a new instance of the metric repository.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->dateTimeZone = SettingFacade::get('app_timezone');
-    }
-
     /**
      * Returns metrics for the last hour.
      *
