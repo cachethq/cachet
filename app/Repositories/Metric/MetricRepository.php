@@ -11,12 +11,11 @@
 
 namespace CachetHQ\Cachet\Repositories\Metric;
 
-use CachetHQ\Cachet\Facades\Setting as SettingFacade;
 use CachetHQ\Cachet\Models\Metric;
 use DateInterval;
 use Jenssegers\Date\Date;
 
-class MetricRepository
+class MetricRepository extends AbstractMetricRepository
 {
     /**
      * Metric repository.
@@ -26,21 +25,15 @@ class MetricRepository
     protected $repository;
 
     /**
-     * The timezone the status page is showing in.
-     *
-     * @var string
-     */
-    protected $dateTimeZone;
-
-    /**
      * Create a new metric repository class.
      *
      * @param \CachetHQ\Cachet\Repositories\Metric\MetricInterface $repository
      */
     public function __construct(MetricInterface $repository)
     {
+        parent::__construct();
+
         $this->repository = $repository;
-        $this->dateTimeZone = SettingFacade::get('app_timezone');
     }
 
     /**
