@@ -13,7 +13,7 @@ namespace CachetHQ\Cachet\Events\Metric;
 
 use CachetHQ\Cachet\Models\MetricPoint;
 
-class MetricPointWasAddedEvent implements MetricEventInterface
+final class MetricPointWasAddedEvent implements MetricEventInterface
 {
     /**
      * The metric point that was added.

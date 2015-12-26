@@ -13,7 +13,7 @@ namespace CachetHQ\Cachet\Events\ComponentGroup;
 
 use CachetHQ\Cachet\Models\ComponentGroup;
 
-class ComponentGroupWasRemovedEvent implements ComponentGroupEventInterface
+final class ComponentGroupWasRemovedEvent implements ComponentGroupEventInterface
 {
     /**
      * The component group that was removed.

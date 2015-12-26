@@ -13,7 +13,7 @@ namespace CachetHQ\Cachet\Events\User;
 
 use CachetHQ\Cachet\Models\Invite;
 
-final class UserWasInvitedEvent
+final class UserWasInvitedEvent implements UserEventInterface
 {
     /**
      * The invite that has been added.

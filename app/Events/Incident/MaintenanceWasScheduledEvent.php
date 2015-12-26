@@ -13,7 +13,7 @@ namespace CachetHQ\Cachet\Events\Incident;
 
 use CachetHQ\Cachet\Models\Incident;
 
-class MaintenanceWasScheduledEvent implements IncidentEventInterface
+final class MaintenanceWasScheduledEvent implements IncidentEventInterface
 {
     /**
      * The incident that has been reported.

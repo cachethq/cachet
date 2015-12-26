@@ -13,7 +13,7 @@ namespace CachetHQ\Cachet\Events\Component;
 
 use CachetHQ\Cachet\Models\Component;
 
-class ComponentWasAddedEvent implements ComponentEventInterface
+final class ComponentWasAddedEvent implements ComponentEventInterface
 {
     /**
      * The component that was added.
