@@ -45,6 +45,7 @@ class Metric extends Model implements HasPresenter
         'default_value' => 0,
         'calc_type'     => 0,
         'places'        => 2,
+        'default_view'  => 1,
     ];
 
     /**
@@ -59,6 +60,7 @@ class Metric extends Model implements HasPresenter
         'default_value' => 'int',
         'calc_type'     => 'int',
         'places'        => 'int',
+        'default_view'  => 'int',
     ];
 
     /**
@@ -74,6 +76,7 @@ class Metric extends Model implements HasPresenter
         'default_value',
         'calc_type',
         'places',
+        'default_view',
     ];
 
     /**
@@ -86,7 +89,8 @@ class Metric extends Model implements HasPresenter
         'suffix'        => 'required',
         'display_chart' => 'bool',
         'default_value' => 'numeric',
-        'places'        => 'numeric|min:0|max:4',
+        'places'        => 'numeric|between:0,4',
+        'default_view'  => 'numeric|between:0,3',
     ];
 
     /**

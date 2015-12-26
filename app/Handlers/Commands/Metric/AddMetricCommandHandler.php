@@ -34,6 +34,7 @@ class AddMetricCommandHandler
             'calc_type'     => $command->calc_type,
             'display_chart' => $command->display_chart,
             'places'        => $command->places,
+            'default_view'  => $command->default_view,
         ]);
 
         event(new MetricWasAddedEvent($metric));

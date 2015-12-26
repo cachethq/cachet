@@ -39,6 +39,15 @@
                             </select>
                         </div>
                         <div class="form-group">
+                            <label>{{ trans('forms.metrics.default_view') }}</label>
+                            <select name="metric[default_view]" class="form-control" required>
+                                <option value="0">{{ trans('cachet.metrics.filter.last_hour') }}</option>
+                                <option value="1" selected>{{ trans('cachet.metrics.filter.hourly') }}</option>
+                                <option value="2">{{ trans('cachet.metrics.filter.weekly') }}</option>
+                                <option value="3">{{ trans('cachet.metrics.filter.monthly') }}</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <label for="metric-default_value">{{ trans('forms.metrics.default-value') }}</label>
                             <input type="number" class="form-control" name="metric[default_value]" id="metric-default_value" value="{{ Binput::old('metric.default_value') }}">
                         </div>
