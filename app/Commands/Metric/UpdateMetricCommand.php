@@ -72,6 +72,13 @@ final class UpdateMetricCommand
     public $places;
 
     /**
+     * The view to show the metric points in.
+     *
+     * @var int
+     */
+    public $default_view;
+
+    /**
      * The validation rules.
      *
      * @var string[]
@@ -84,7 +91,8 @@ final class UpdateMetricCommand
         'default_value' => 'numeric',
         'calc_type'     => 'int|in:0,1',
         'display_chart' => 'int',
-        'places'        => 'numeric|min:0|max:4',
+        'places'        => 'numeric|between:0,4',
+        'default_view'  => 'numeric|between:0,4',
     ];
 
     /**
@@ -98,10 +106,11 @@ final class UpdateMetricCommand
      * @param int                            $calc_type
      * @param int                            $display_chart
      * @param int                            $places
+     * @param int                            $default_view
      *
      * @return void
      */
-    public function __construct(Metric $metric, $name, $suffix, $description, $default_value, $calc_type, $display_chart, $places)
+    public function __construct(Metric $metric, $name, $suffix, $description, $default_value, $calc_type, $display_chart, $places, $default_view)
     {
         $this->metric = $metric;
         $this->name = $name;
@@ -111,5 +120,6 @@ final class UpdateMetricCommand
         $this->calc_type = $calc_type;
         $this->display_chart = $display_chart;
         $this->places = $places;
+        $this->default_view = $default_view;
     }
 }

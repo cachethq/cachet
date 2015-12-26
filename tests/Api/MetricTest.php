@@ -61,6 +61,7 @@ class MetricTest extends AbstractApiTestCase
             'default_value' => 1,
             'display_chart' => 1,
             'places'        => 0,
+            'view'          => 0,
         ]);
         $this->seeJson(['name' => 'Foo']);
         $this->assertResponseOk();
@@ -82,8 +83,9 @@ class MetricTest extends AbstractApiTestCase
 
         $this->put('/api/v1/metrics/1', [
             'name' => 'Foo',
+            'view' => 2,
         ]);
-        $this->seeJson(['name' => 'Foo']);
+        $this->seeJson(['name' => 'Foo', 'default_view' => 2]);
         $this->assertResponseOk();
     }
 
