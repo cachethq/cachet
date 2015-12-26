@@ -22,7 +22,8 @@ class MetricPresenter extends AbstractPresenter
      *
      * @return string
      */
-    public function view_name() {
+    public function view_name()
+    {
         switch ($this->wrappedObject->default_view) {
             case 0: return 'last_hour';
             case 1: return 'today';
@@ -36,7 +37,8 @@ class MetricPresenter extends AbstractPresenter
      *
      * @return string
      */
-    public function trans_string_name() {
+    public function trans_string_name()
+    {
         switch ($this->wrappedObject->default_view) {
             case 0: return 'last_hour';
             case 1: return 'hourly';
