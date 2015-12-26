@@ -51,7 +51,7 @@ class SignupController extends Controller
     }
 
     /**
-     * Handle the unsubscribe.
+     * Handle a signup request.
      *
      * @param string|null $code
      *
