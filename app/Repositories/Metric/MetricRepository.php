@@ -11,7 +11,6 @@
 
 namespace CachetHQ\Cachet\Repositories\Metric;
 
-use CachetHQ\Cachet\Facades\Setting as SettingFacade;
 use CachetHQ\Cachet\Models\Metric;
 use DateInterval;
 use Jenssegers\Date\Date;
