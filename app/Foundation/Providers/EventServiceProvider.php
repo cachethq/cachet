@@ -45,6 +45,9 @@ class EventServiceProvider extends ServiceProvider
         'CachetHQ\Cachet\Events\Incident\MaintenanceWasScheduledEvent' => [
             'CachetHQ\Cachet\Handlers\Events\Incident\SendMaintenanceEmailNotificationHandler',
         ],
+        'CachetHQ\Cachet\Events\Invite\InviteWasClaimedEvent' => [
+            //
+        ],
         'CachetHQ\Cachet\Events\Metric\MetricPointWasAddedEvent' => [
             //
         ],
@@ -65,6 +68,12 @@ class EventServiceProvider extends ServiceProvider
         ],
         'CachetHQ\Cachet\Events\Subscriber\SubscriberHasSubscribedEvent' => [
             'CachetHQ\Cachet\Handlers\Events\Subscriber\SendSubscriberVerificationEmailHandler',
+        ],
+        'CachetHQ\Cachet\Events\Subscriber\SubscriberHasUnsubscribedEvent' => [
+            //
+        ],
+        'CachetHQ\Cachet\Events\Subscriber\SubscriberHasVerifiedEvent' => [
+            //
         ],
         'CachetHQ\Cachet\Events\User\UserWasAddedEvent' => [
             //
