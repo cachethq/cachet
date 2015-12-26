@@ -13,7 +13,7 @@ namespace CachetHQ\Cachet\Events\Invite;
 
 use CachetHQ\Cachet\Models\Invite;
 
-final class InviteWasClaimed implements InviteEventInterface
+final class InviteWasClaimedEvent implements InviteEventInterface
 {
     /**
      * The invite that has been claimed.
