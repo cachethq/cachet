@@ -31,7 +31,7 @@ return [
         'email'         => 'Email',
         'password'      => 'Password',
         '2fauth'        => 'Authentication Code',
-        'invalid'       => 'Invalid email or password',
+        'invalid'       => 'Invalid username or password',
         'invalid-token' => 'Invalid token',
         'cookies'       => 'You must enable cookies to login.',
     ],
