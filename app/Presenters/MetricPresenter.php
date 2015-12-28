@@ -18,6 +18,36 @@ class MetricPresenter extends AbstractPresenter
     use TimestampsTrait;
 
     /**
+     * Determines the metric view filter name.
+     *
+     * @return string
+     */
+    public function view_name()
+    {
+        switch ($this->wrappedObject->default_view) {
+            case 0: return 'last_hour';
+            case 1: return 'today';
+            case 2: return 'week';
+            case 3: return 'month';
+        }
+    }
+
+    /**
+     * Determines the metric translation view filter name.
+     *
+     * @return string
+     */
+    public function trans_string_name()
+    {
+        switch ($this->wrappedObject->default_view) {
+            case 0: return 'last_hour';
+            case 1: return 'hourly';
+            case 2: return 'weekly';
+            case 3: return 'monthly';
+        }
+    }
+
+    /**
      * Convert the presenter instance to an array.
      *
      * @return string[]

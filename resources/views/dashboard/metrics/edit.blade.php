@@ -19,43 +19,52 @@
                     <fieldset>
                         <div class="form-group">
                             <label for="metric-name">{{ trans('forms.metrics.name') }}</label>
-                            <input type="text" class="form-control" name="metric[name]" id="metric-name" required value="{{ $metric->name }}">
+                            <input type="text" class="form-control" name="name" id="metric-name" required value="{{ $metric->name }}">
                         </div>
                         <div class="form-group">
                             <label for="metric-suffix">{{ trans('forms.metrics.suffix') }}</label>
-                            <input type="text" class="form-control" name="metric[suffix]" id="metric-suffix" required value="{{ $metric->suffix }}">
+                            <input type="text" class="form-control" name="suffix" id="metric-suffix" required value="{{ $metric->suffix }}">
                         </div>
                         <div class="form-group">
                             <label>{{ trans('forms.metrics.description') }}</label>
                             <div class='markdown-control'>
-                                <textarea name="metric[description]" class="form-control" rows="5">{{ $metric->description }}</textarea>
+                                <textarea name="description" class="form-control" rows="5">{{ $metric->description }}</textarea>
                             </div>
                         </div>
                         <div class="form-group">
                             <label>{{ trans('forms.metrics.calc_type') }}</label>
-                            <select name="metric[calc_type]" class="form-control" required>
+                            <select name="calc_type" class="form-control" required>
                                 <option value="0" {{ $metric->calc_type === 0 ? "selected" : null }}>{{ trans('forms.metrics.type_sum') }}</option>
                                 <option value="1" {{ $metric->calc_type === 1 ? "selected" : null }}>{{ trans('forms.metrics.type_avg') }}</option>
                             </select>
                         </div>
                         <div class="form-group">
+                            <label>{{ trans('forms.metrics.default_view') }}</label>
+                            <select name="default_view" class="form-control" required>
+                                <option value="0" {{ $metric->default_view === 0 ? "selected" : null }}>{{ trans('cachet.metrics.filter.last_hour') }}</option>
+                                <option value="1" {{ $metric->default_view === 1 ? "selected" : null }}>{{ trans('cachet.metrics.filter.hourly') }}</option>
+                                <option value="2" {{ $metric->default_view === 2 ? "selected" : null }}>{{ trans('cachet.metrics.filter.weekly') }}</option>
+                                <option value="3" {{ $metric->default_view === 3 ? "selected" : null }}>{{ trans('cachet.metrics.filter.monthly') }}</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <label for="metric-default_value">{{ trans('forms.metrics.default-value') }}</label>
-                            <input type="number" class="form-control" name="metric[default_value]" id="metric-default_value" value="{{ $metric->default_value }}">
+                            <input type="number" class="form-control" name="default_value" id="metric-default_value" value="{{ $metric->default_value }}">
                         </div>
                         <div class="form-group">
                             <label for="metric-places">{{ trans('forms.metrics.places') }}</label>
-                            <input type="number" min="0" max="4" class="form-control" name="metric[places]" id="metric-places" required value="{{ $metric->places }}">
+                            <input type="number" min="0" max="4" class="form-control" name="places" id="metric-places" required value="{{ $metric->places }}">
                         </div>
                         <div class="checkbox">
                             <label>
-                                <input type="hidden" value="0" name="metric[display_chart]">
-                                <input type="checkbox" value="1" name="metric[display_chart]" {{ $metric->display_chart ? 'checked' : null }}>
+                                <input type="hidden" value="0" name="display_chart">
+                                <input type="checkbox" value="1" name="display_chart" {{ $metric->display_chart ? 'checked' : null }}>
                                 {{ trans('forms.metrics.display-chart') }}
                             </label>
                         </div>
                     </fieldset>
 
-                    <input type="hidden" name="metric[id]" value={{$metric->id}}>
+                    <input type="hidden" name="id" value={{$metric->id}}>
 
                     <div class='form-group'>
                         <div class='btn-group'>

@@ -78,7 +78,8 @@ class MetricController extends Controller
                 $metricData['default_value'],
                 $metricData['calc_type'],
                 $metricData['display_chart'],
-                $metricData['places']
+                $metricData['places'],
+                $metricData['view']
             ));
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.metrics.add')
@@ -143,13 +144,14 @@ class MetricController extends Controller
         try {
             dispatch(new UpdateMetricCommand(
                 $metric,
-                Binput::get('metric.name', null, false),
-                Binput::get('metric.suffix', null, false),
-                Binput::get('metric.description', null, false),
-                Binput::get('metric.default_value', null, false),
-                Binput::get('metric.calc_type', null, false),
-                Binput::get('metric.display_chart', null, false),
-                Binput::get('metric.places', null, false)
+                Binput::get('name', null, false),
+                Binput::get('suffix', null, false),
+                Binput::get('description', null, false),
+                Binput::get('default_value', null, false),
+                Binput::get('calc_type', null, false),
+                Binput::get('display_chart', null, false),
+                Binput::get('places', null, false),
+                Binput::get('default_view', null, false)
             ));
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.metrics.edit', ['id' => $metric->id])
