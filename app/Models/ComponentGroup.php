@@ -12,9 +12,11 @@
 namespace CachetHQ\Cachet\Models;
 
 use AltThree\Validator\ValidatingTrait;
+use CachetHQ\Cachet\Presenters\ComponentGroupPresenter;
 use Illuminate\Database\Eloquent\Model;
+use McCool\LaravelAutoPresenter\HasPresenter;
 
-class ComponentGroup extends Model
+class ComponentGroup extends Model implements HasPresenter
 {
     use ValidatingTrait;
 
@@ -47,6 +49,13 @@ class ComponentGroup extends Model
     ];
 
     /**
+     * The relations to eager load on every query.
+     *
+     * @var string[]
+     */
+    protected $with = ['enabled_components'];
+
+    /**
      * A group can have many components.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
@@ -54,5 +63,25 @@ class ComponentGroup extends Model
     public function components()
     {
         return $this->hasMany(Component::class, 'group_id', 'id');
+    }
+
+    /**
+     * Return all of the enabled components.
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function enabled_components()
+    {
+        return $this->components()->enabled();
+    }
+
+    /**
+     * Get the presenter class.
+     *
+     * @return string
+     */
+    public function getPresenterClass()
+    {
+        return ComponentGroupPresenter::class;
     }
 }
