@@ -24,7 +24,7 @@ class ComponentGroupPresenter extends AbstractPresenter
      */
     public function lowest_status()
     {
-        if ($component = $this->wrappedObject->enabled_components_lowest->first()) {
+        if ($component = $this->wrappedObject->enabled_components_lowest()->first()) {
             return $component->status;
         }
     }
@@ -36,7 +36,7 @@ class ComponentGroupPresenter extends AbstractPresenter
      */
     public function lowest_human_status()
     {
-        if ($component = $this->wrappedObject->enabled_components_lowest->first()) {
+        if ($component = $this->wrappedObject->enabled_components_lowest()->first()) {
             return $component->human_status;
         }
     }
@@ -48,7 +48,7 @@ class ComponentGroupPresenter extends AbstractPresenter
      */
     public function lowest_status_color()
     {
-        if ($component = $this->wrappedObject->enabled_components_lowest->first()) {
+        if ($component = $this->wrappedObject->enabled_components_lowest()->first()) {
             return $component->status_color;
         }
     }
