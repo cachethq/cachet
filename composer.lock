@@ -9,16 +9,16 @@
     "packages": [
         {
             "name": "alt-three/bus",
-            "version": "dev-master",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/AltThree/Bus.git",
-                "reference": "f8f1a29738339df1118e375e2878545b2977a241"
+                "reference": "152dab4e246cb3af794ad7557ea7f820a738751c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/AltThree/Bus/zipball/f8f1a29738339df1118e375e2878545b2977a241",
-                "reference": "f8f1a29738339df1118e375e2878545b2977a241",
+                "url": "https://api.github.com/repos/AltThree/Bus/zipball/152dab4e246cb3af794ad7557ea7f820a738751c",
+                "reference": "152dab4e246cb3af794ad7557ea7f820a738751c",
                 "shasum": ""
             },
             "require": {
@@ -74,20 +74,20 @@
                 "command bus",
                 "job"
             ],
-            "time": "2015-12-24 16:13:37"
+            "time": "2016-01-03 10:39:49"
         },
         {
             "name": "alt-three/emoji",
-            "version": "v2.1.0",
+            "version": "v2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/AltThree/Emoji.git",
-                "reference": "47eaa883ffd3628aa84f9fd379cbc9c9cbff852e"
+                "reference": "36cd1c1a5ebd0d390cbaccc4a9919285270603ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/AltThree/Emoji/zipball/47eaa883ffd3628aa84f9fd379cbc9c9cbff852e",
-                "reference": "47eaa883ffd3628aa84f9fd379cbc9c9cbff852e",
+                "url": "https://api.github.com/repos/AltThree/Emoji/zipball/36cd1c1a5ebd0d390cbaccc4a9919285270603ca",
+                "reference": "36cd1c1a5ebd0d390cbaccc4a9919285270603ca",
                 "shasum": ""
             },
             "require": {
@@ -136,20 +136,20 @@
                 "emoji",
                 "parser"
             ],
-            "time": "2015-11-08 21:20:31"
+            "time": "2016-01-03 10:40:57"
         },
         {
             "name": "alt-three/validator",
-            "version": "v1.4.0",
+            "version": "v1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/AltThree/Validator.git",
-                "reference": "e7713677c9f0f00d1788eddf3b3ec335a98a70b4"
+                "reference": "9845766276479bac04439390ea91817c5b2dbda8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/AltThree/Validator/zipball/e7713677c9f0f00d1788eddf3b3ec335a98a70b4",
-                "reference": "e7713677c9f0f00d1788eddf3b3ec335a98a70b4",
+                "url": "https://api.github.com/repos/AltThree/Validator/zipball/9845766276479bac04439390ea91817c5b2dbda8",
+                "reference": "9845766276479bac04439390ea91817c5b2dbda8",
                 "shasum": ""
             },
             "require": {
@@ -196,7 +196,7 @@
                 "logging",
                 "validator"
             ],
-            "time": "2015-11-08 21:30:34"
+            "time": "2016-01-03 10:46:21"
         },
         {
             "name": "asm89/stack-cors",
@@ -3670,16 +3670,16 @@
     "packages-dev": [
         {
             "name": "alt-three/testbench",
-            "version": "v1.2.0",
+            "version": "v1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/AltThree/TestBench.git",
-                "reference": "52a8658201d497a687b2ffb847b27502fa1c3085"
+                "reference": "36da8c1357570ee323cd07e9e25df2372863623d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/AltThree/TestBench/zipball/52a8658201d497a687b2ffb847b27502fa1c3085",
-                "reference": "52a8658201d497a687b2ffb847b27502fa1c3085",
+                "url": "https://api.github.com/repos/AltThree/TestBench/zipball/36da8c1357570ee323cd07e9e25df2372863623d",
+                "reference": "36da8c1357570ee323cd07e9e25df2372863623d",
                 "shasum": ""
             },
             "require": {
@@ -3727,7 +3727,7 @@
                 "TestBench",
                 "app"
             ],
-            "time": "2015-12-30 00:45:16"
+            "time": "2016-01-03 10:46:11"
         },
         {
             "name": "doctrine/instantiator",
