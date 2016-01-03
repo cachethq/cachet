@@ -5,6 +5,10 @@
     <li class="list-group-item group-name">
         <i class="ion-ios-minus-outline group-toggle"></i>
         <strong>{{ $componentGroup->name }}</strong>
+
+        <div class="pull-right">
+            <i class="ion-ios-circle-filled text-component-{{ $componentGroup->lowest_status }} {{ $componentGroup->lowest_status_color }}" data-toggle="tooltip" title="{{ $componentGroup->lowest_human_status }}"></i>
+        </div>
     </li>
 
     <div class="group-items">
