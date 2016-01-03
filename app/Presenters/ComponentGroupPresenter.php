@@ -20,31 +20,37 @@ class ComponentGroupPresenter extends AbstractPresenter
     /**
      * Returns the lowest component status.
      *
-     * @return string
+     * @return string|null
      */
     public function lowest_status()
     {
-        return $this->wrappedObject->enabled_components->first()->human_status;
+        if ($enabledComponents = $this->wrappedObject->enabled_components()->orderBy('status', 'desc')->first()) {
+            return $enabledComponents->status;
+        }
     }
 
     /**
      * Returns the lowest component status, readable by humans.
      *
-     * @return string
+     * @return string|null
      */
     public function lowest_human_status()
     {
-        return $this->wrappedObject->enabled_components->first()->human_status;
+        if ($enabledComponents = $this->wrappedObject->enabled_components()->orderBy('status', 'desc')->first()) {
+            return $enabledComponents->human_status;
+        }
     }
 
     /**
      * Returns the lowest component status color.
      *
-     * @return string
+     * @return string|null
      */
     public function lowest_status_color()
     {
-        return $this->wrappedObject->enabled_components->first()->status_color;
+        if ($enabledComponents = $this->wrappedObject->enabled_components()->orderBy('status', 'desc')->first()) {
+            return $enabledComponents->status_color;
+        }
     }
 
     /**
