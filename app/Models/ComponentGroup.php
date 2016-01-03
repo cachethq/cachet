@@ -53,7 +53,7 @@ class ComponentGroup extends Model implements HasPresenter
      *
      * @var string[]
      */
-    protected $with = ['enabled_components'];
+    protected $with = ['enabled_components', 'enabled_components_lowest'];
 
     /**
      * A group can have many components.
@@ -73,6 +73,16 @@ class ComponentGroup extends Model implements HasPresenter
     public function enabled_components()
     {
         return $this->components()->enabled();
+    }
+
+    /**
+     * Return all of the enabled components ordered by status.
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function enabled_components_lowest()
+    {
+        return $this->components()->enabled()->orderBy('status', 'desc');
     }
 
     /**
