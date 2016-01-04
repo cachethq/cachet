@@ -101,7 +101,8 @@ class SettingsController extends Controller
 
         return View::make('dashboard.settings.app-setup')
             ->withPageTitle(trans('dashboard.settings.app-setup.app-setup').' - '.trans('dashboard.dashboard'))
-            ->withSubMenu($this->subMenu);
+            ->withSubMenu($this->subMenu)
+            ->withRawAppAbout(Setting::get('app_about'));
     }
 
     /**
