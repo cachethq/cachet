@@ -79,7 +79,7 @@ class MetricController extends Controller
                 $metricData['calc_type'],
                 $metricData['display_chart'],
                 $metricData['places'],
-                $metricData['view']
+                $metricData['default_view']
             ));
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.metrics.add')
