@@ -108,14 +108,14 @@ class IncidentController extends Controller
     {
         try {
             $incident = dispatch(new ReportIncidentCommand(
-                Binput::get('name'),
-                Binput::get('status'),
-                Binput::get('message'),
-                Binput::get('visible', true),
-                Binput::get('component_id'),
-                Binput::get('component_status'),
-                Binput::get('notify', true),
-                Binput::get('created_at'),
+                Binput::get('incident.name'),
+                Binput::get('incident.status'),
+                Binput::get('incident.message'),
+                Binput::get('incident.visible', true),
+                Binput::get('incident.component_id'),
+                Binput::get('incident.component_status'),
+                Binput::get('incident.notify', true),
+                Binput::get('incident.created_at'),
                 null,
                 null
             ));
