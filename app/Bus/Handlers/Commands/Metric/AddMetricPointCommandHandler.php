@@ -12,8 +12,8 @@
 namespace CachetHQ\Cachet\Bus\Handlers\Commands\Metric;
 
 use CachetHQ\Cachet\Bus\Commands\Metric\AddMetricPointCommand;
-use CachetHQ\Cachet\Dates\DateFactory;
 use CachetHQ\Cachet\Bus\Events\Metric\MetricPointWasAddedEvent;
+use CachetHQ\Cachet\Dates\DateFactory;
 use CachetHQ\Cachet\Models\MetricPoint;
 
 class AddMetricPointCommandHandler
