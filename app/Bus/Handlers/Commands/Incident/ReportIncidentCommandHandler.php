@@ -12,8 +12,8 @@
 namespace CachetHQ\Cachet\Bus\Handlers\Commands\Incident;
 
 use CachetHQ\Cachet\Bus\Commands\Incident\ReportIncidentCommand;
-use CachetHQ\Cachet\Dates\DateFactory;
 use CachetHQ\Cachet\Bus\Events\Incident\IncidentWasReportedEvent;
+use CachetHQ\Cachet\Dates\DateFactory;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentTemplate;

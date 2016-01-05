@@ -12,8 +12,8 @@
 namespace CachetHQ\Cachet\Bus\Handlers\Commands\Metric;
 
 use CachetHQ\Cachet\Bus\Commands\Metric\UpdateMetricPointCommand;
-use CachetHQ\Cachet\Dates\DateFactory;
 use CachetHQ\Cachet\Bus\Events\Metric\MetricPointWasUpdatedEvent;
+use CachetHQ\Cachet\Dates\DateFactory;
 
 class UpdateMetricPointCommandHandler
 {

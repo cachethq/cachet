@@ -12,8 +12,8 @@
 namespace CachetHQ\Cachet\Bus\Handlers\Commands\Incident;
 
 use CachetHQ\Cachet\Bus\Commands\Incident\ReportMaintenanceCommand;
-use CachetHQ\Cachet\Dates\DateFactory;
 use CachetHQ\Cachet\Bus\Events\Incident\MaintenanceWasScheduledEvent;
+use CachetHQ\Cachet\Dates\DateFactory;
 use CachetHQ\Cachet\Models\Incident;
 
 class ReportMaintenanceCommandHandler
