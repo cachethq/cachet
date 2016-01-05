@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8baadd34f40ad2d4fefb9c25642d2fea",
-    "content-hash": "202031911699f705b2c05111f89c81b7",
+    "hash": "0a15626f82a9b6699a875ad9efea9b2a",
+    "content-hash": "6547b60f79a4b317628ba48328daa51d",
     "packages": [
         {
             "name": "alt-three/bus",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/AltThree/Bus.git",
-                "reference": "152dab4e246cb3af794ad7557ea7f820a738751c"
+                "reference": "4f29669e38d3fee90f199f641f5da3aae49f3115"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/AltThree/Bus/zipball/152dab4e246cb3af794ad7557ea7f820a738751c",
-                "reference": "152dab4e246cb3af794ad7557ea7f820a738751c",
+                "url": "https://api.github.com/repos/AltThree/Bus/zipball/4f29669e38d3fee90f199f641f5da3aae49f3115",
+                "reference": "4f29669e38d3fee90f199f641f5da3aae49f3115",
                 "shasum": ""
             },
             "require": {
@@ -74,7 +74,7 @@
                 "command bus",
                 "job"
             ],
-            "time": "2016-01-03 10:39:49"
+            "time": "2016-01-05 11:01:26"
         },
         {
             "name": "alt-three/emoji",
@@ -1118,16 +1118,16 @@
         },
         {
             "name": "graham-campbell/exceptions",
-            "version": "v7.0.0",
+            "version": "v8.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Exceptions.git",
-                "reference": "a823d44500c1dbe659e993ada1ee833a32d11e89"
+                "reference": "8e095c17df313e763645114506be58bc4e268cff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Exceptions/zipball/a823d44500c1dbe659e993ada1ee833a32d11e89",
-                "reference": "a823d44500c1dbe659e993ada1ee833a32d11e89",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Exceptions/zipball/8e095c17df313e763645114506be58bc4e268cff",
+                "reference": "8e095c17df313e763645114506be58bc4e268cff",
                 "shasum": ""
             },
             "require": {
@@ -1151,7 +1151,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "7.0-dev"
+                    "dev-master": "8.0-dev"
                 }
             },
             "autoload": {
@@ -1183,7 +1183,7 @@
                 "laravel",
                 "whoops"
             ],
-            "time": "2015-12-11 11:28:48"
+            "time": "2016-01-05 15:10:24"
         },
         {
             "name": "graham-campbell/markdown",
@@ -3882,7 +3882,7 @@
             ],
             "authors": [
                 {
-                    "name": "Francois Zaninotto"
+                    "name": "François Zaninotto"
                 }
             ],
             "description": "Faker is a PHP library that generates fake data for you.",

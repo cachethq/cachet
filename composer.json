@@ -32,7 +32,7 @@
         "graham-campbell/core": "^4.2",
         "graham-campbell/markdown": "^5.3",
         "graham-campbell/throttle": "^5.1",
-        "graham-campbell/exceptions": "^7.0",
+        "graham-campbell/exceptions": "^8.0",
         "guzzlehttp/guzzle": "^6.1",
         "jenssegers/date": "^3.1",
         "mccool/laravel-auto-presenter": "^4.2",
