@@ -317,7 +317,7 @@ class DemoSeederCommand extends Command
                 'username' => 'test',
                 'password' => 'test123',
                 'email'    => 'test@test.com',
-                'level'    => 1,
+                'level'    => User::LEVEL_ADMIN,
                 'api_key'  => '9yMHsdioQosnyVK4iCVR',
             ],
         ];
