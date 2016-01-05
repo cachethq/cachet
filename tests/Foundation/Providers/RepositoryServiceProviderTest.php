@@ -9,17 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Tests\Cachet\Providers;
+namespace CachetHQ\Tests\Cachet\Foundation\Providers;
 
-use AltThree\TestBench\EventServiceProviderTrait;
+use AltThree\TestBench\ServiceProviderTrait;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 
 /**
- * This is the event service provider test class.
+ * This is the repository service provider test class.
  *
  * @author Graham Campbell <graham@alt-three.com>
  */
-class EventServiceProviderTest extends AbstractTestCase
+class RepositoryServiceProviderTest extends AbstractTestCase
 {
-    use EventServiceProviderTrait;
+    use ServiceProviderTrait;
 }
