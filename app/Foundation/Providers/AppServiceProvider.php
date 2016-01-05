@@ -26,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot(Dispatcher $dispatcher)
     {
         $dispatcher->mapUsing(function ($command) {
-            return Dispatcher::simpleMapping($command, 'CachetHQ\Cachet', 'CachetHQ\Cachet\Handlers');
+            return Dispatcher::simpleMapping($command, 'CachetHQ\Cachet\Bus', 'CachetHQ\Cachet\Bus\Handlers');
         });
 
         Str::macro('canonicalize', function ($url) {

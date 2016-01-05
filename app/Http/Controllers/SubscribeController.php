@@ -12,9 +12,9 @@
 namespace CachetHQ\Cachet\Http\Controllers;
 
 use AltThree\Validator\ValidationException;
-use CachetHQ\Cachet\Commands\Subscriber\SubscribeSubscriberCommand;
-use CachetHQ\Cachet\Commands\Subscriber\UnsubscribeSubscriberCommand;
-use CachetHQ\Cachet\Commands\Subscriber\VerifySubscriberCommand;
+use CachetHQ\Cachet\Bus\Commands\Subscriber\SubscribeSubscriberCommand;
+use CachetHQ\Cachet\Bus\Commands\Subscriber\UnsubscribeSubscriberCommand;
+use CachetHQ\Cachet\Bus\Commands\Subscriber\VerifySubscriberCommand;
 use CachetHQ\Cachet\Exceptions\AlreadySubscribedException;
 use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Cachet\Models\Subscriber;
