@@ -12,9 +12,9 @@
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
 use AltThree\Validator\ValidationException;
-use CachetHQ\Cachet\Commands\Metric\AddMetricCommand;
-use CachetHQ\Cachet\Commands\Metric\RemoveMetricCommand;
-use CachetHQ\Cachet\Commands\Metric\UpdateMetricCommand;
+use CachetHQ\Cachet\Bus\Commands\Metric\AddMetricCommand;
+use CachetHQ\Cachet\Bus\Commands\Metric\RemoveMetricCommand;
+use CachetHQ\Cachet\Bus\Commands\Metric\UpdateMetricCommand;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\MetricPoint;
 use GrahamCampbell\Binput\Facades\Binput;

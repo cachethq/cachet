@@ -21,65 +21,65 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'CachetHQ\Cachet\Events\ComponentGroup\ComponentGroupWasAddedEvent' => [
+        'CachetHQ\Cachet\Bus\Events\ComponentGroup\ComponentGroupWasAddedEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Events\ComponentGroup\ComponentGroupWasRemovedEvent' => [
+        'CachetHQ\Cachet\Bus\Events\ComponentGroup\ComponentGroupWasRemovedEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Events\ComponentGroup\ComponentGroupWasUpdatedEvent' => [
+        'CachetHQ\Cachet\Bus\Events\ComponentGroup\ComponentGroupWasUpdatedEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Events\Component\ComponentWasAddedEvent' => [
+        'CachetHQ\Cachet\Bus\Events\Component\ComponentWasAddedEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Events\Component\ComponentWasRemovedEvent' => [
+        'CachetHQ\Cachet\Bus\Events\Component\ComponentWasRemovedEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Events\Component\ComponentWasUpdatedEvent' => [
+        'CachetHQ\Cachet\Bus\Events\Component\ComponentWasUpdatedEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Events\Incident\IncidentWasReportedEvent' => [
-            'CachetHQ\Cachet\Handlers\Events\Incident\SendIncidentEmailNotificationHandler',
+        'CachetHQ\Cachet\Bus\Events\Incident\IncidentWasReportedEvent' => [
+            'CachetHQ\Cachet\Bus\Handlers\Events\Incident\SendIncidentEmailNotificationHandler',
         ],
-        'CachetHQ\Cachet\Events\Incident\MaintenanceWasScheduledEvent' => [
-            'CachetHQ\Cachet\Handlers\Events\Incident\SendMaintenanceEmailNotificationHandler',
+        'CachetHQ\Cachet\Bus\Events\Incident\MaintenanceWasScheduledEvent' => [
+            'CachetHQ\Cachet\Bus\Handlers\Events\Incident\SendMaintenanceEmailNotificationHandler',
         ],
-        'CachetHQ\Cachet\Events\Invite\InviteWasClaimedEvent' => [
+        'CachetHQ\Cachet\Bus\Events\Invite\InviteWasClaimedEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Events\Metric\MetricPointWasAddedEvent' => [
+        'CachetHQ\Cachet\Bus\Events\Metric\MetricPointWasAddedEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Events\Metric\MetricPointWasRemovedEvent' => [
+        'CachetHQ\Cachet\Bus\Events\Metric\MetricPointWasRemovedEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Events\Metric\MetricPointWasUpdatedEvent' => [
+        'CachetHQ\Cachet\Bus\Events\Metric\MetricPointWasUpdatedEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Events\Metric\MetricWasAddedEvent' => [
+        'CachetHQ\Cachet\Bus\Events\Metric\MetricWasAddedEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Events\Metric\MetricWasRemovedEvent' => [
+        'CachetHQ\Cachet\Bus\Events\Metric\MetricWasRemovedEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Events\Metric\MetricWasUpdatedEvent' => [
+        'CachetHQ\Cachet\Bus\Events\Metric\MetricWasUpdatedEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Events\Subscriber\SubscriberHasSubscribedEvent' => [
-            'CachetHQ\Cachet\Handlers\Events\Subscriber\SendSubscriberVerificationEmailHandler',
+        'CachetHQ\Cachet\Bus\Events\Subscriber\SubscriberHasSubscribedEvent' => [
+            'CachetHQ\Cachet\Bus\Handlers\Events\Subscriber\SendSubscriberVerificationEmailHandler',
         ],
-        'CachetHQ\Cachet\Events\Subscriber\SubscriberHasUnsubscribedEvent' => [
+        'CachetHQ\Cachet\Bus\Events\Subscriber\SubscriberHasUnsubscribedEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Events\Subscriber\SubscriberHasVerifiedEvent' => [
+        'CachetHQ\Cachet\Bus\Events\Subscriber\SubscriberHasVerifiedEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Events\User\UserWasAddedEvent' => [
+        'CachetHQ\Cachet\Bus\Events\User\UserWasAddedEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Events\User\UserWasInvitedEvent' => [
-            'CachetHQ\Cachet\Handlers\Events\User\SendInviteUserEmailHandler',
+        'CachetHQ\Cachet\Bus\Events\User\UserWasInvitedEvent' => [
+            'CachetHQ\Cachet\Bus\Handlers\Events\User\SendInviteUserEmailHandler',
         ],
     ];
 }

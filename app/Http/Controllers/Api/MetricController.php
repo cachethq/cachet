@@ -11,9 +11,9 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Api;
 
-use CachetHQ\Cachet\Commands\Metric\AddMetricCommand;
-use CachetHQ\Cachet\Commands\Metric\RemoveMetricCommand;
-use CachetHQ\Cachet\Commands\Metric\UpdateMetricCommand;
+use CachetHQ\Cachet\Bus\Commands\Metric\AddMetricCommand;
+use CachetHQ\Cachet\Bus\Commands\Metric\RemoveMetricCommand;
+use CachetHQ\Cachet\Bus\Commands\Metric\UpdateMetricCommand;
 use CachetHQ\Cachet\Models\Metric;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Database\QueryException;

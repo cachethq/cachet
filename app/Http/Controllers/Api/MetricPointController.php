@@ -11,9 +11,9 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Api;
 
-use CachetHQ\Cachet\Commands\Metric\AddMetricPointCommand;
-use CachetHQ\Cachet\Commands\Metric\RemoveMetricPointCommand;
-use CachetHQ\Cachet\Commands\Metric\UpdateMetricPointCommand;
+use CachetHQ\Cachet\Bus\Commands\Metric\AddMetricPointCommand;
+use CachetHQ\Cachet\Bus\Commands\Metric\RemoveMetricPointCommand;
+use CachetHQ\Cachet\Bus\Commands\Metric\UpdateMetricPointCommand;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\MetricPoint;
 use GrahamCampbell\Binput\Facades\Binput;
