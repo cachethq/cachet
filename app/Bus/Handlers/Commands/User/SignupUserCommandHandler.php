@@ -30,7 +30,7 @@ class SignupUserCommandHandler
             'username' => $command->username,
             'password' => $command->password,
             'email'    => $command->email,
-            'level'    => 2,
+            'level'    => User::LEVEL_USER,
         ]);
 
         event(new UserWasAddedEvent($user));
