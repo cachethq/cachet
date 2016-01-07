@@ -28,7 +28,6 @@ class Incident extends Model implements HasPresenter
      * @var string[]
      */
     protected $casts = [
-        'id'           => 'int',
         'visible'      => 'int',
         'scheduled_at' => 'date',
         'deleted_at'   => 'date',

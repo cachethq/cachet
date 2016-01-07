@@ -26,7 +26,6 @@ class MetricPoint extends Model implements HasPresenter
      * @var string[]
      */
     protected $casts = [
-        'id'        => 'int',
         'metric_id' => 'int',
         'value'     => 'int',
     ];
