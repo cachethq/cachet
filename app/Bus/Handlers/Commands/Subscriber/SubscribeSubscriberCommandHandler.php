@@ -14,7 +14,7 @@ namespace CachetHQ\Cachet\Bus\Handlers\Commands\Subscriber;
 use CachetHQ\Cachet\Bus\Commands\Subscriber\SubscribeSubscriberCommand;
 use CachetHQ\Cachet\Bus\Commands\Subscriber\VerifySubscriberCommand;
 use CachetHQ\Cachet\Bus\Events\Subscriber\SubscriberHasSubscribedEvent;
-use CachetHQ\Cachet\Exceptions\AlreadySubscribedException;
+use CachetHQ\Cachet\Bus\Exceptions\Subscriber\AlreadySubscribedException;
 use CachetHQ\Cachet\Models\Subscriber;
 
 class SubscribeSubscriberCommandHandler
