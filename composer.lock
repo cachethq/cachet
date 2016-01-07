@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0a15626f82a9b6699a875ad9efea9b2a",
-    "content-hash": "6547b60f79a4b317628ba48328daa51d",
+    "hash": "bb9fb81d62145fc14e35346a02e18cc7",
+    "content-hash": "a4154663881a4118125e27e67cb3b0cd",
     "packages": [
         {
             "name": "alt-three/bus",
@@ -752,16 +752,16 @@
         },
         {
             "name": "doctrine/dbal",
-            "version": "v2.5.3",
+            "version": "v2.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "2fbcea96eae34a53183377cdbb0b9bec33974648"
+                "reference": "abbdfd1cff43a7b99d027af3be709bc8fc7d4769"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/2fbcea96eae34a53183377cdbb0b9bec33974648",
-                "reference": "2fbcea96eae34a53183377cdbb0b9bec33974648",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/abbdfd1cff43a7b99d027af3be709bc8fc7d4769",
+                "reference": "abbdfd1cff43a7b99d027af3be709bc8fc7d4769",
                 "shasum": ""
             },
             "require": {
@@ -819,7 +819,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2015-12-25 16:28:24"
+            "time": "2016-01-05 22:11:12"
         },
         {
             "name": "doctrine/inflector",
@@ -1118,16 +1118,16 @@
         },
         {
             "name": "graham-campbell/exceptions",
-            "version": "v8.0.0",
+            "version": "v8.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Exceptions.git",
-                "reference": "8e095c17df313e763645114506be58bc4e268cff"
+                "reference": "14e165a3fa250c61a69c5db8e8e1ad573de8968b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Exceptions/zipball/8e095c17df313e763645114506be58bc4e268cff",
-                "reference": "8e095c17df313e763645114506be58bc4e268cff",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Exceptions/zipball/14e165a3fa250c61a69c5db8e8e1ad573de8968b",
+                "reference": "14e165a3fa250c61a69c5db8e8e1ad573de8968b",
                 "shasum": ""
             },
             "require": {
@@ -1151,7 +1151,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "8.0-dev"
+                    "dev-master": "8.1-dev"
                 }
             },
             "autoload": {
@@ -1183,7 +1183,7 @@
                 "laravel",
                 "whoops"
             ],
-            "time": "2016-01-05 15:10:24"
+            "time": "2016-01-07 02:34:58"
         },
         {
             "name": "graham-campbell/markdown",
@@ -1739,16 +1739,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.2.6",
+            "version": "v5.2.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "b774c304ee81fcf5402fa06b261b364ba8f29cf0"
+                "reference": "26cd65eaa4bcc0fb0be381cfb7cfdcda06a3c2b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/b774c304ee81fcf5402fa06b261b364ba8f29cf0",
-                "reference": "b774c304ee81fcf5402fa06b261b364ba8f29cf0",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/26cd65eaa4bcc0fb0be381cfb7cfdcda06a3c2b4",
+                "reference": "26cd65eaa4bcc0fb0be381cfb7cfdcda06a3c2b4",
                 "shasum": ""
             },
             "require": {
@@ -1863,7 +1863,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2015-12-31 17:41:58"
+            "time": "2016-01-07 13:54:34"
         },
         {
             "name": "league/commonmark",
@@ -2298,16 +2298,16 @@
         },
         {
             "name": "paragonie/random_compat",
-            "version": "1.1.4",
+            "version": "1.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "d762ee5b099a29044603cd4649851e81aa66cb47"
+                "reference": "dd8998b7c846f6909f4e7a5f67fabebfc412a4f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/d762ee5b099a29044603cd4649851e81aa66cb47",
-                "reference": "d762ee5b099a29044603cd4649851e81aa66cb47",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/dd8998b7c846f6909f4e7a5f67fabebfc412a4f7",
+                "reference": "dd8998b7c846f6909f4e7a5f67fabebfc412a4f7",
                 "shasum": ""
             },
             "require": {
@@ -2342,7 +2342,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2015-12-10 14:48:13"
+            "time": "2016-01-06 13:31:20"
         },
         {
             "name": "pragmarx/google2fa",

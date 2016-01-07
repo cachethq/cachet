@@ -26,6 +26,7 @@ return [
     */
 
     'transformers' => [
+        'GrahamCampbell\Exceptions\Transformers\AuthTransformer',
         'GrahamCampbell\Exceptions\Transformers\CsrfTransformer',
         'CachetHQ\Cachet\Foundation\Exceptions\Transformers\ExceptionTransformer',
     ],
@@ -100,6 +101,7 @@ return [
     */
 
     'levels' => [
+        'Illuminate\Auth\Access\AuthorizationException'                 => 'warning',
         'Illuminate\Session\TokenMismatchException'                     => 'notice',
         'Illuminate\Database\Eloquent\ModelNotFoundException'           => 'warning',
         'Symfony\Component\HttpKernel\Exception\HttpExceptionInterface' => 'warning',
