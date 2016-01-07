@@ -26,7 +26,6 @@ class ComponentGroup extends Model implements HasPresenter
      * @var string[]
      */
     protected $casts = [
-        'id'    => 'int',
         'name'  => 'string',
         'order' => 'int',
     ];

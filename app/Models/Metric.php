@@ -54,7 +54,6 @@ class Metric extends Model implements HasPresenter
      * @var string[]
      */
     protected $casts = [
-        'id'            => 'int',
         'name'          => 'string',
         'display_chart' => 'bool',
         'default_value' => 'int',

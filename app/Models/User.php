@@ -44,7 +44,6 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      * @var string[]
      */
     protected $casts = [
-        'id'                => 'int',
         'username'          => 'string',
         'email'             => 'string',
         'google_2fa_secret' => 'string',

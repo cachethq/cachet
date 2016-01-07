@@ -25,7 +25,6 @@ class IncidentTemplate extends Model
      * @var string[]
      */
     protected $casts = [
-        'id'       => 'int',
         'name'     => 'string',
         'template' => 'string',
     ];
