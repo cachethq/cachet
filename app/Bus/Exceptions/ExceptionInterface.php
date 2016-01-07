@@ -9,12 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Exceptions;
+namespace CachetHQ\Cachet\Bus\Exceptions;
 
 /**
  * This is the exception interface.
  *
  * @author Graham Campbell <graham@alt-three.com>
+ * @author James Brooks <james@alt-three.com>
  */
 interface ExceptionInterface
 {
