@@ -40,8 +40,9 @@ return [
 
     // Service Status
     'service' => [
-        'good' => '所有系統正常運轉。',
-        'bad'  => '壹些系統出了問題。',
+        'good'  => '[0,1] System operational|[2,Inf] All systems are operational',
+        'bad'   => '[0,1] The system is currently experiencing issues|[2,Inf] Some systems are experiencing issues',
+        'major' => '[0,1] The service experiencing a major outage|[2,Inf] Some systems are experiencing a major outage',
     ],
 
     'api' => [
