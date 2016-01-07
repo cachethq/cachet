@@ -29,9 +29,9 @@ class StatusPageComposer
     {
         // Default data
         $withData = [
-            'systemStatus'  => 'info',
-            'systemMessage' => trans('cachet.service.bad'),
-            'favicon'       => 'favicon-high-alert',
+            'system_status'  => 'info',
+            'system_message' => trans('cachet.service.bad'),
+            'favicon'        => 'favicon-high-alert',
         ];
 
         if (Component::enabled()->notStatus(1)->count() === 0) {
@@ -41,9 +41,9 @@ class StatusPageComposer
 
             if ($incidentCount === 0 || ($incidentCount >= 1 && (int) $incidents->first()->status === 4)) {
                 $withData = [
-                    'systemStatus'  => 'success',
-                    'systemMessage' => trans('cachet.service.good'),
-                    'favicon'       => 'favicon',
+                    'system_status'  => 'success',
+                    'system_message' => trans('cachet.service.good'),
+                    'favicon'        => 'favicon',
                 ];
             }
         } else {
