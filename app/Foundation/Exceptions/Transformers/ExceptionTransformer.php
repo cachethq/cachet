@@ -11,7 +11,7 @@
 
 namespace CachetHQ\Cachet\Foundation\Exceptions\Transformers;
 
-use CachetHQ\Cachet\Exceptions\ExceptionInterface;
+use CachetHQ\Cachet\Bus\Exceptions\ExceptionInterface;
 use Exception;
 use GrahamCampbell\Exceptions\Transformers\TransformerInterface;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
