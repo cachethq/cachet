@@ -18,7 +18,7 @@ class ComponentWasUpdatedEventTest extends AbstractComponentEventTestCase
 {
     protected function objectHasHandlers()
     {
-        return false;
+        return true;
     }
 
     protected function getObjectAndParams()
