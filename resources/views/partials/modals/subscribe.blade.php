@@ -2,6 +2,7 @@
     <div class="modal-dialog">
         <form action="{{ route("subscribe.subscribe", [], false) }}" method="post" class="form">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <input type="hidden" name="subscriptions[component_id]" value="">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -10,13 +11,13 @@
                 <div class="modal-body">
                         <p>{{ trans("cachet.modal.subscribe.body") }}</p>
                         <div class="form-group">
-                            <input class="form-control" type="email" name="email">
+                            <input class="form-control" type="email" name="email" placeholder="hello@alt-three.com">
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">{{ trans("cachet.modal.close") }}</button>
-                    <button type="button" class="btn btn-success">{{ trans("cachet.modal.subscribe.button") }}</button>
+                    <button type="submit" class="btn btn-success">{{ trans("cachet.modal.subscribe.button") }}</button>
                 </div>
             </div>
         </form>

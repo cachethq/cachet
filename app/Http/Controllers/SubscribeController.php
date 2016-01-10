@@ -26,6 +26,11 @@ use Illuminate\Support\Facades\View;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
+/**
+ * This is the subscribe controller.
+ *
+ * @author James Brooks <james@alt-three.com>
+ */
 class SubscribeController extends Controller
 {
     /**
@@ -47,9 +52,10 @@ class SubscribeController extends Controller
     public function postSubscribe()
     {
         $email = Binput::get('email');
+        $subscriptions = Binput::get('subscriptions');
 
         try {
-            dispatch(new SubscribeSubscriberCommand($email));
+            dispatch(new SubscribeSubscriberCommand($email, false, $subscriptions));
         } catch (AlreadySubscribedException $e) {
             return Redirect::route('subscribe.subscribe')
                 ->withTitle(sprintf('<strong>%s</strong> %s', trans('dashboard.notifications.whoops'), trans('cachet.subscriber.email.failure')))

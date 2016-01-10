@@ -41,7 +41,7 @@ class SubscriberController extends AbstractApiController
     public function postSubscribers()
     {
         try {
-            $subscriber = dispatch(new SubscribeSubscriberCommand(Binput::get('email'), Binput::get('verify', false)));
+            $subscriber = dispatch(new SubscribeSubscriberCommand(Binput::get('email'), Binput::get('verify', false), null));
         } catch (QueryException $e) {
             throw new BadRequestHttpException();
         }
