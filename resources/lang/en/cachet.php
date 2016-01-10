@@ -91,6 +91,7 @@ return [
                 'text'           => 'The :component_name component has seen a status change.\nThank you, :app_name',
                 'html-preheader' => 'Component Update from :app_name',
                 'html'           => '<p>The :component_name component has seen a status change.</p><p>Thank you, :app_name</p>',
+                'tooltip-title'  => 'Subscribe to notifications for :component_name.',
             ],
         ],
     ],
@@ -116,6 +117,16 @@ return [
 
     'system' => [
         'update' => 'There is a newer version of Cachet available. You can learn how to update <a href="https://docs.cachethq.io/docs/updating-cachet">here</a>!',
+    ],
+
+    // Modal
+    'modal' => [
+        'close' => 'Close',
+        'subscribe' => [
+            'title'  => 'Subscribe to omponent updates?',
+            'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll receive emails for this component too.',
+            'button' => 'Subscribe',
+        ],
     ],
 
     // Other
