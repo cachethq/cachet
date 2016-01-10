@@ -123,7 +123,7 @@ return [
     'modal' => [
         'close' => 'Close',
         'subscribe' => [
-            'title'  => 'Subscribe to omponent updates?',
+            'title'  => 'Subscribe to component updates?',
             'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll receive emails for this component too.',
             'button' => 'Subscribe',
         ],
