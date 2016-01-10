@@ -72,6 +72,9 @@ class EventServiceProvider extends ServiceProvider
         'CachetHQ\Cachet\Bus\Events\Subscriber\SubscriberHasUnsubscribedEvent' => [
             //
         ],
+        'CachetHQ\Cachet\Bus\Events\Subscriber\SubscriberHasUpdatedSubscriptionsEvent' => [
+            //
+        ],
         'CachetHQ\Cachet\Bus\Events\Subscriber\SubscriberHasVerifiedEvent' => [
             //
         ],

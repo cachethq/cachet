@@ -376,6 +376,20 @@ $(function() {
             }
         });
     }
+
+    // Open a modal.
+    $('#subscribeModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget);
+        var componentId = button.data('component-id');
+
+        var modal = $(this);
+        modal.find('input[name=subscriptions\\[component_id\\]]').val(componentId);
+    });
+
+    // Focus on any modals.
+    $('.modal').on('shown.bs.modal', function () {
+        $(this).find('input[type=text]').focus();
+    });
 });
 
 function askConfirmation(callback) {
