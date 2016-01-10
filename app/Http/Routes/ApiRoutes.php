@@ -68,6 +68,7 @@ class ApiRoutes
                 $router->delete('metrics/{metric}', 'MetricController@deleteMetric');
                 $router->delete('metrics/{metric}/points/{metric_point}', 'MetricPointController@deleteMetricPoint');
                 $router->delete('subscribers/{subscriber}', 'SubscriberController@deleteSubscriber');
+                $router->delete('subscriptions/{subscription}', 'SubscriberController@deleteSubscription');
             });
         });
     }

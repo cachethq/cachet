@@ -63,6 +63,16 @@ class Subscriber extends Model implements HasPresenter
     }
 
     /**
+     * A subscriber has many subscriptions.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function subcriptions()
+    {
+        return $this->hasMany(Subscription::class);
+    }
+
+    /**
      * Scope verified subscribers.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query

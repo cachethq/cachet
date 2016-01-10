@@ -72,4 +72,13 @@ class SubscriberTest extends AbstractApiTestCase
         $this->delete("/api/v1/subscribers/{$subscriber->id}");
         $this->assertResponseStatus(204);
     }
+
+    public function testDeleteSubscription()
+    {
+        $this->beUser();
+
+        $subscription = factory('CachetHQ\Cachet\Models\Subscription')->create();
+        $this->delete("/api/v1/subscriptions/{$subscription->id}");
+        $this->assertResponseStatus(204);
+    }
 }
