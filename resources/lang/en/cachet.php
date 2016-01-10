@@ -86,6 +86,12 @@ return [
                 'html-preheader' => 'New incident has been reported on :app_name.',
                 'html'           => '<p>New incident has been reported on :app_name.</p><p>Thank you, :app_name</p>',
             ],
+            'component' => [
+                'subject'        => 'Component Status Update',
+                'text'           => 'The :component_name component has seen a status change.\nThank you, :app_name',
+                'html-preheader' => 'Component Update from :app_name',
+                'html'           => '<p>The :component_name component has seen a status change.</p><p>Thank you, :app_name</p>',
+            ],
         ],
     ],
 
