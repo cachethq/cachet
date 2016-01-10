@@ -14,7 +14,6 @@ namespace CachetHQ\Cachet\Bus\Handlers\Events\Component;
 use CachetHQ\Cachet\Bus\Events\Component\ComponentWasUpdatedEvent;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Subscription;
-use CachetHQ\Cachet\Facades\Setting;
 use Illuminate\Contracts\Mail\MailQueue;
 use Illuminate\Mail\Message;
 use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
