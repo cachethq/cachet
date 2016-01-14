@@ -29,7 +29,7 @@ class AppComposer
     {
         $view->withAboutApp(Markdown::convertToHtml(Setting::get('app_about')));
         $view->withAppAnalytics(Setting::get('app_analytics'));
-        $view->withAppAnalyticsGoSquared(Setting::get('app_analytics_gs'));
+        $view->withAppAnalyticsGoSquared(Setting::get('app_analytics_go_squared'));
         $view->withAppAnalyticsPiwikUrl(Setting::get('app_analytics_piwik_url'));
         $view->withAppAnalyticsPiwikSiteId(Setting::get('app_analytics_piwik_siteid'));
         $view->withAppBanner(Setting::get('app_banner'));
