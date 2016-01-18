@@ -252,8 +252,8 @@ $(function() {
                 url: '/dashboard/api/incidents/templates',
                 success: function(tpl) {
                     var $form = $('form[role=form]');
-                    $form.find('input[name=incident\\[name\\]]').val(tpl.name);
-                    $form.find('textarea[name=incident\\[message\\]]').val(tpl.template);
+                    $form.find('input[name=name]').val(tpl.name);
+                    $form.find('textarea[name=message]').val(tpl.template);
                 },
                 error: function() {
                     (new Cachet.Notifier()).notify('There was an error finding that template.');
