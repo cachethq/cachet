@@ -160,7 +160,7 @@ return [
         /*
          * Packages Service Providers...
          */
-        env('CACHET_EMOJI', false) ? 'AltThree\Emoji\EmojiServiceProvider' : null,
+        'AltThree\Emoji\EmojiServiceProvider',
         'Barryvdh\Cors\ServiceProvider',
         'Fideloper\Proxy\TrustedProxyServiceProvider',
         'GrahamCampbell\Binput\BinputServiceProvider',
