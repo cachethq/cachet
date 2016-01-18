@@ -39,9 +39,7 @@ return [
     |
     */
 
-    'extensions' => [
-        'AltThree\Emoji\EmojiExtension',
-    ],
+    'extensions' => env('CACHET_EMOJI', false) ? ['AltThree\Emoji\EmojiExtension'] : [],
 
     /*
     |--------------------------------------------------------------------------
