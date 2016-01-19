@@ -121,7 +121,7 @@ return [
 
     // Modal
     'modal' => [
-        'close' => 'Close',
+        'close'     => 'Close',
         'subscribe' => [
             'title'  => 'Subscribe to component updates?',
             'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll receive emails for this component too.',
