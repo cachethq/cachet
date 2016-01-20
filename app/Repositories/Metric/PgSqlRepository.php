@@ -60,7 +60,7 @@ class PgSqlRepository implements MetricInterface
             $queryType = 'sum(metric_points.value)';
         }
 
-        $query = DB::select("select {$queryType} as aggregate FROM metrics JOIN metric_points ON metric_points.metric_id = metrics.id WHERE metric_points.metric_id = :metric_id AND to_char(metric_points.created_at, 'YYYYMMDDHHMI24') = :timestamp GROUP BY to_char(metric_points.created_at, 'HI')", [
+        $query = DB::select("select {$queryType} as aggregate FROM metrics JOIN metric_points ON metric_points.metric_id = metrics.id WHERE metrics.id = :metric_id AND to_char(metric_points.created_at, 'YYYYMMDDHHMI') = :timestamp GROUP BY to_char(metric_points.created_at, 'HHMI')", [
             'metric_id' => $metric->id,
             'timestamp' => $hourInterval,
         ]);
