@@ -47,7 +47,7 @@ class MetricsComposer
         $metrics = null;
         $metricData = [];
         if ($displayMetrics = Setting::get('display_graphs')) {
-            $metrics = Metric::where('display_chart', 1)->get();
+            $metrics = Metric::where('display_chart', 1)->orderBy('id')->get();
 
             $metrics->map(function ($metric) use (&$metricData) {
                 $metricData[$metric->id] = [
