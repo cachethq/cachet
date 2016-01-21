@@ -117,18 +117,18 @@ return [
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'  => '',
-        'description'  => '',
-        'verified'     => '',
-        'not_verified' => '',
+        'subscribers'  => 'Abonnés',
+        'description'  => 'Les abonnés receveront un courriel lors de la création d\'incident.',
+        'verified'     => 'Vérifié',
+        'not_verified' => 'Non vérifié',
         'add'          => [
-            'title'   => '',
-            'success' => '',
+            'title'   => 'Ajouter un abonné',
+            'success' => 'Abonné ajouté.',
             'failure' => 'Une erreur est survenue avec le composant.',
         ],
         'edit' => [
-            'title'   => '',
-            'success' => '',
+            'title'   => 'Mettre à jour un abonné',
+            'success' => 'Abonné mis à jour.',
             'failure' => 'Une erreur est survenue lors de l\'actualisation.',
         ],
     ],
@@ -150,8 +150,8 @@ return [
             'failure' => 'Une erreur est survenue lors de l\'actualisation.',
         ],
         'delete' => [
-            'success' => '',
-            'failure' => '',
+            'success' => 'Profil supprimé',
+            'failure' => 'Une erreur est survenue lors de la suppression.',
         ],
     ],
 
