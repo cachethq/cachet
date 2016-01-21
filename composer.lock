@@ -1119,16 +1119,16 @@
         },
         {
             "name": "graham-campbell/exceptions",
-            "version": "v8.3.0",
+            "version": "v8.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Exceptions.git",
-                "reference": "9e5b00e6abff7a91730e52263c4a696aeeeef5d9"
+                "reference": "4c265f5c4064b98415d1f39a265d02e322f7f3c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Exceptions/zipball/9e5b00e6abff7a91730e52263c4a696aeeeef5d9",
-                "reference": "9e5b00e6abff7a91730e52263c4a696aeeeef5d9",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Exceptions/zipball/4c265f5c4064b98415d1f39a265d02e322f7f3c0",
+                "reference": "4c265f5c4064b98415d1f39a265d02e322f7f3c0",
                 "shasum": ""
             },
             "require": {
@@ -1184,7 +1184,7 @@
                 "laravel",
                 "whoops"
             ],
-            "time": "2016-01-21 12:54:36"
+            "time": "2016-01-21 13:41:07"
         },
         {
             "name": "graham-campbell/markdown",
