@@ -23,7 +23,10 @@
                 </fieldset>
 
                 <div class="form-group">
-                <button type="submit" class="btn btn-success">{{ trans('forms.add') }}</button>
+                    <div class='btn-group'>
+                        <button type="submit" class="btn btn-success">{{ trans('forms.add') }}</button>
+                        <a class="btn btn-default" href="{{ route('dashboard.subscribers.index') }}">{{ trans('forms.cancel') }}</a>
+                    </div>
                 </div>
             </form>
             </div>
