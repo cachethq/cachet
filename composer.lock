@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "23040a215cf37e88ed03bb3dc2602aae",
-    "content-hash": "1c679656f822bf0dc48d83459cb5234c",
+    "hash": "a03ddb86888b5d17380401b81539fa2f",
+    "content-hash": "07e7bd2633a541cdb139d05193037ea6",
     "packages": [
         {
             "name": "alt-three/bus",
@@ -1119,16 +1119,16 @@
         },
         {
             "name": "graham-campbell/exceptions",
-            "version": "v8.2.0",
+            "version": "v8.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Exceptions.git",
-                "reference": "32ed22ec846c84475ed40d798bac5c7340f75bec"
+                "reference": "9e5b00e6abff7a91730e52263c4a696aeeeef5d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Exceptions/zipball/32ed22ec846c84475ed40d798bac5c7340f75bec",
-                "reference": "32ed22ec846c84475ed40d798bac5c7340f75bec",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Exceptions/zipball/9e5b00e6abff7a91730e52263c4a696aeeeef5d9",
+                "reference": "9e5b00e6abff7a91730e52263c4a696aeeeef5d9",
                 "shasum": ""
             },
             "require": {
@@ -1152,7 +1152,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "8.2-dev"
+                    "dev-master": "8.3-dev"
                 }
             },
             "autoload": {
@@ -1184,7 +1184,7 @@
                 "laravel",
                 "whoops"
             ],
-            "time": "2016-01-15 12:51:42"
+            "time": "2016-01-21 12:54:36"
         },
         {
             "name": "graham-campbell/markdown",
@@ -1745,12 +1745,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "30a1c93e08a05e9136cfdaf9b5da7a5039fb6106"
+                "reference": "4966bbda682839d6cd02bbcbc07a6eb984f31ca0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/30a1c93e08a05e9136cfdaf9b5da7a5039fb6106",
-                "reference": "30a1c93e08a05e9136cfdaf9b5da7a5039fb6106",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/4966bbda682839d6cd02bbcbc07a6eb984f31ca0",
+                "reference": "4966bbda682839d6cd02bbcbc07a6eb984f31ca0",
                 "shasum": ""
             },
             "require": {
@@ -1865,7 +1865,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2016-01-18 14:30:57"
+            "time": "2016-01-20 20:38:15"
         },
         {
             "name": "league/commonmark",

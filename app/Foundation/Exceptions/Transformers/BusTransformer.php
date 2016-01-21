@@ -14,16 +14,14 @@ namespace CachetHQ\Cachet\Foundation\Exceptions\Transformers;
 use CachetHQ\Cachet\Bus\Exceptions\ExceptionInterface;
 use Exception;
 use GrahamCampbell\Exceptions\Transformers\TransformerInterface;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 /**
- * This is the exception transformer class.
+ * This is the bus transformer class.
  *
  * @author Graham Campbell <graham@alt-three.com>
  */
-class ExceptionTransformer implements TransformerInterface
+class BusTransformer implements TransformerInterface
 {
     /**
      * Transform the provided exception.
@@ -36,8 +34,6 @@ class ExceptionTransformer implements TransformerInterface
     {
         if ($exception instanceof ExceptionInterface) {
             $exception = new BadRequestHttpException($exception->getMessage());
-        } elseif ($exception instanceof ModelNotFoundException) {
-            $exception = new NotFoundHttpException('Resource not found.');
         }
 
         return $exception;
