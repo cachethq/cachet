@@ -94,4 +94,19 @@ class Subscription extends Model
     {
         return $query->where('component_id', $component_id);
     }
+
+    /**
+     * Finds all verified subscriptions for a component.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @param int                                   $component_id
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeIsVerifiedForComponent(Builder $query, $component_id)
+    {
+        return $query->join('subscribers', 'subscriptions.subscriber_id', '=', 'subscribers.id')
+            ->where('component_id', $component_id)
+            ->whereNotNull('subscribers.verified_at');
+    }
 }

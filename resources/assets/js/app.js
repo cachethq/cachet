@@ -378,13 +378,16 @@ $(function() {
     }
 
     // Open a modal.
-    $('#subscribeModal').on('show.bs.modal', function (event) {
-        var button = $(event.relatedTarget);
-        var componentId = button.data('component-id');
-
-        var modal = $(this);
-        modal.find('input[name=subscriptions\\[component_id\\]]').val(componentId);
-    });
+    $('#subscribe-modal')
+        .on('show.bs.modal', function (event) {
+            var $button = $(event.relatedTarget);
+            var $modal = $(this);
+            $modal.find('#subscribe-modal-id').val($button.data('component-id'));
+        })
+        .on('hidden.bs.modal', function (event) {
+            var $modal = $(this);
+            $modal.find('#subscribe-modal-id').val('');
+        });
 
     // Focus on any modals.
     $('.modal').on('shown.bs.modal', function () {

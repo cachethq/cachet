@@ -10,7 +10,7 @@
     @endif
 
     @if(subscribers_enabled())
-    <a href="javascript: void(0);" data-toggle="modal" data-target="#subscribeModal" data-component-id="{{ $component->id }}"><i class="ion-ios-email-outline" data-toggle="tooltip" data-title="{{ trans('cachet.subscriber.email.component.tooltip-title', ['component_name' => $component->name]) }}"></i></a>
+    <a href="#" data-toggle="modal" data-target="#subscribe-modal" data-component-id="{{ $component->id }}"><i class="ion-ios-email-outline" data-toggle="tooltip" data-title="{{ trans('cachet.subscriber.email.component.tooltip-title', ['component_name' => $component->name]) }}"></i></a>
     @endif
 
     <div class="pull-right">
