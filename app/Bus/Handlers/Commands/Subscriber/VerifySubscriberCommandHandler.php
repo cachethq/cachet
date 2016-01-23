@@ -14,7 +14,6 @@ namespace CachetHQ\Cachet\Bus\Handlers\Commands\Subscriber;
 use CachetHQ\Cachet\Bus\Commands\Subscriber\VerifySubscriberCommand;
 use CachetHQ\Cachet\Bus\Events\Subscriber\SubscriberHasVerifiedEvent;
 use CachetHQ\Cachet\Models\Subscriber;
-use CachetHQ\Cachet\Models\Subscription;
 use Carbon\Carbon;
 
 class VerifySubscriberCommandHandler
