@@ -34,9 +34,6 @@ class VerifySubscriberCommandHandler
         $subscriber->verified_at = Carbon::now();
         $subscriber->save();
 
-        // Create a new subscription for the subscriber.
-        Subscription::create(['subscriber_id' => $subscriber->id]);
-
         event(new SubscriberHasVerifiedEvent($subscriber));
     }
 }
