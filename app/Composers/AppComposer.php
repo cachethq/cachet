@@ -27,6 +27,7 @@ class AppComposer
      */
     public function compose(View $view)
     {
+        $support = Setting::get('show_support');
         $view->withAboutApp(Markdown::convertToHtml(Setting::get('app_about')));
         $view->withAppAnalytics(Setting::get('app_analytics'));
         $view->withAppAnalyticsGoSquared(Setting::get('app_analytics_go_squared'));
@@ -39,8 +40,13 @@ class AppComposer
         $view->withAppGraphs(Setting::get('display_graphs'));
         $view->withAppLocale(Setting::get('app_locale'));
         $view->withAppName(Setting::get('app_name'));
+        if ($support) {
+            $view->withSiteTitle(Setting::get('app_name').' | Cachet');
+        } else {
+            $view->withSiteTitle(Setting::get('app_name'));
+        }
         $view->withAppStylesheet(Setting::get('stylesheet'));
         $view->withAppUrl(Config::get('app.url'));
-        $view->withShowSupport(Setting::get('show_support'));
+        $view->withShowSupport($support);
     }
 }
