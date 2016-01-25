@@ -9,16 +9,16 @@
     "packages": [
         {
             "name": "alt-three/bus",
-            "version": "v1.0.1",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/AltThree/Bus.git",
-                "reference": "4f29669e38d3fee90f199f641f5da3aae49f3115"
+                "reference": "a7a3bc76c66643624b072d551ca0fe31008d3f80"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/AltThree/Bus/zipball/4f29669e38d3fee90f199f641f5da3aae49f3115",
-                "reference": "4f29669e38d3fee90f199f641f5da3aae49f3115",
+                "url": "https://api.github.com/repos/AltThree/Bus/zipball/a7a3bc76c66643624b072d551ca0fe31008d3f80",
+                "reference": "a7a3bc76c66643624b072d551ca0fe31008d3f80",
                 "shasum": ""
             },
             "require": {
@@ -74,20 +74,20 @@
                 "command bus",
                 "job"
             ],
-            "time": "2016-01-05 11:01:26"
+            "time": "2016-01-24 10:52:16"
         },
         {
             "name": "alt-three/emoji",
-            "version": "v3.0.0",
+            "version": "v3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/AltThree/Emoji.git",
-                "reference": "8bf349237cf2858ea149331322a7bbd994c6efdb"
+                "reference": "7504b09d6979c9d22a7f1ef70c9e7181d99f2305"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/AltThree/Emoji/zipball/8bf349237cf2858ea149331322a7bbd994c6efdb",
-                "reference": "8bf349237cf2858ea149331322a7bbd994c6efdb",
+                "url": "https://api.github.com/repos/AltThree/Emoji/zipball/7504b09d6979c9d22a7f1ef70c9e7181d99f2305",
+                "reference": "7504b09d6979c9d22a7f1ef70c9e7181d99f2305",
                 "shasum": ""
             },
             "require": {
@@ -137,7 +137,7 @@
                 "emoji",
                 "parser"
             ],
-            "time": "2016-01-15 21:27:12"
+            "time": "2016-01-24 10:52:39"
         },
         {
             "name": "alt-three/validator",
@@ -1481,16 +1481,16 @@
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "1.2.1",
+            "version": "1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "4d0bdbe1206df7440219ce14c972aa57cc5e4982"
+                "reference": "f5d04bdd2881ac89abde1fb78cc234bce24327bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/4d0bdbe1206df7440219ce14c972aa57cc5e4982",
-                "reference": "4d0bdbe1206df7440219ce14c972aa57cc5e4982",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/f5d04bdd2881ac89abde1fb78cc234bce24327bb",
+                "reference": "f5d04bdd2881ac89abde1fb78cc234bce24327bb",
                 "shasum": ""
             },
             "require": {
@@ -1535,7 +1535,7 @@
                 "stream",
                 "uri"
             ],
-            "time": "2015-11-03 01:34:55"
+            "time": "2016-01-23 01:23:02"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -1741,16 +1741,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "5.2.x-dev",
+            "version": "v5.2.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "4966bbda682839d6cd02bbcbc07a6eb984f31ca0"
+                "reference": "e8ad411ac3ca63f532952417156e32d010fcc522"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/4966bbda682839d6cd02bbcbc07a6eb984f31ca0",
-                "reference": "4966bbda682839d6cd02bbcbc07a6eb984f31ca0",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/e8ad411ac3ca63f532952417156e32d010fcc522",
+                "reference": "e8ad411ac3ca63f532952417156e32d010fcc522",
                 "shasum": ""
             },
             "require": {
@@ -1865,7 +1865,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2016-01-20 20:38:15"
+            "time": "2016-01-22 18:36:05"
         },
         {
             "name": "league/commonmark",
@@ -2021,16 +2021,16 @@
         },
         {
             "name": "mccool/laravel-auto-presenter",
-            "version": "4.2.0",
+            "version": "v4.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-auto-presenter/laravel-auto-presenter.git",
-                "reference": "1e3efb5a0026eea6c80b2942515270992e53e837"
+                "reference": "48649d3f98e369c2e0922ef37190dd15812a292a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-auto-presenter/laravel-auto-presenter/zipball/1e3efb5a0026eea6c80b2942515270992e53e837",
-                "reference": "1e3efb5a0026eea6c80b2942515270992e53e837",
+                "url": "https://api.github.com/repos/laravel-auto-presenter/laravel-auto-presenter/zipball/48649d3f98e369c2e0922ef37190dd15812a292a",
+                "reference": "48649d3f98e369c2e0922ef37190dd15812a292a",
                 "shasum": ""
             },
             "require": {
@@ -2079,7 +2079,7 @@
                 "lpm",
                 "presenter"
             ],
-            "time": "2015-11-14 11:46:57"
+            "time": "2016-01-24 11:06:03"
         },
         {
             "name": "monolog/monolog",
@@ -3143,16 +3143,16 @@
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.0.1",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "49ff736bd5d41f45240cec77b44967d76e0c3d25"
+                "reference": "1289d16209491b584839022f29257ad859b8532d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/49ff736bd5d41f45240cec77b44967d76e0c3d25",
-                "reference": "49ff736bd5d41f45240cec77b44967d76e0c3d25",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/1289d16209491b584839022f29257ad859b8532d",
+                "reference": "1289d16209491b584839022f29257ad859b8532d",
                 "shasum": ""
             },
             "require": {
@@ -3164,7 +3164,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0-dev"
+                    "dev-master": "1.1-dev"
                 }
             },
             "autoload": {
@@ -3198,20 +3198,20 @@
                 "portable",
                 "shim"
             ],
-            "time": "2015-11-20 09:19:13"
+            "time": "2016-01-20 09:13:37"
         },
         {
             "name": "symfony/polyfill-php56",
-            "version": "v1.0.1",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php56.git",
-                "reference": "e2e77609a9e2328eb370fbb0e0d8b2000ebb488f"
+                "reference": "4d891fff050101a53a4caabb03277284942d1ad9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php56/zipball/e2e77609a9e2328eb370fbb0e0d8b2000ebb488f",
-                "reference": "e2e77609a9e2328eb370fbb0e0d8b2000ebb488f",
+                "url": "https://api.github.com/repos/symfony/polyfill-php56/zipball/4d891fff050101a53a4caabb03277284942d1ad9",
+                "reference": "4d891fff050101a53a4caabb03277284942d1ad9",
                 "shasum": ""
             },
             "require": {
@@ -3221,7 +3221,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0-dev"
+                    "dev-master": "1.1-dev"
                 }
             },
             "autoload": {
@@ -3254,20 +3254,20 @@
                 "portable",
                 "shim"
             ],
-            "time": "2015-12-18 15:10:25"
+            "time": "2016-01-20 09:13:37"
         },
         {
             "name": "symfony/polyfill-util",
-            "version": "v1.0.1",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-util.git",
-                "reference": "4271c55cbc0a77b2641f861b978123e46b3da969"
+                "reference": "8de62801aa12bc4dfcf85eef5d21981ae7bb3cc4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-util/zipball/4271c55cbc0a77b2641f861b978123e46b3da969",
-                "reference": "4271c55cbc0a77b2641f861b978123e46b3da969",
+                "url": "https://api.github.com/repos/symfony/polyfill-util/zipball/8de62801aa12bc4dfcf85eef5d21981ae7bb3cc4",
+                "reference": "8de62801aa12bc4dfcf85eef5d21981ae7bb3cc4",
                 "shasum": ""
             },
             "require": {
@@ -3276,7 +3276,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0-dev"
+                    "dev-master": "1.1-dev"
                 }
             },
             "autoload": {
@@ -3306,7 +3306,7 @@
                 "polyfill",
                 "shim"
             ],
-            "time": "2015-11-04 20:28:58"
+            "time": "2016-01-20 09:13:37"
         },
         {
             "name": "symfony/process",
@@ -3887,7 +3887,7 @@
             ],
             "authors": [
                 {
-                    "name": "François Zaninotto"
+                    "name": "Francois Zaninotto"
                 }
             ],
             "description": "Faker is a PHP library that generates fake data for you.",
@@ -4042,7 +4042,7 @@
             ],
             "authors": [
                 {
-                    "name": "Padraic Brady",
+                    "name": "Pádraic Brady",
                     "email": "padraic.brady@gmail.com",
                     "homepage": "http://blog.astrumfutura.com"
                 },
