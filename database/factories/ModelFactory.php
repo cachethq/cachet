@@ -83,6 +83,7 @@ $factory->define(Subscriber::class, function ($faker) {
 $factory->define(Subscription::class, function ($faker) {
     $user = factory(Subscriber::class)->create();
     $component = factory(Component::class)->create();
+
     return [
         'subscriber_id' => $user->id,
         'component_id'  => $component->id,
