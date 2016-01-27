@@ -13,7 +13,9 @@ namespace CachetHQ\Cachet\Http\Controllers\Api;
 
 use CachetHQ\Cachet\Bus\Commands\Subscriber\SubscribeSubscriberCommand;
 use CachetHQ\Cachet\Bus\Commands\Subscriber\UnsubscribeSubscriberCommand;
+use CachetHQ\Cachet\Bus\Commands\Subscriber\UnsubscribeSubscriptionCommand;
 use CachetHQ\Cachet\Models\Subscriber;
+use CachetHQ\Cachet\Models\Subscription;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Request;
@@ -59,6 +61,20 @@ class SubscriberController extends AbstractApiController
     public function deleteSubscriber(Subscriber $subscriber)
     {
         dispatch(new UnsubscribeSubscriberCommand($subscriber));
+
+        return $this->noContent();
+    }
+
+    /**
+     * Delete a subscriber.
+     *
+     * @param \CachetHQ\Cachet\Models\Subscriber $subscriber
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function deleteSubscription(Subscription $subscriber)
+    {
+        dispatch(new UnsubscribeSubscriptionCommand($subscriber));
 
         return $this->noContent();
     }

@@ -88,9 +88,9 @@ return [
             ],
             'component' => [
                 'subject'        => 'Component Status Update',
-                'text'           => 'The :component_name component has seen a status change.\nThank you, :app_name',
+                'text'           => 'The component :component_name has seen a status change. The component is now at :component_human_status.\nThank you, :app_name',
                 'html-preheader' => 'Component Update from :app_name',
-                'html'           => '<p>The :component_name component has seen a status change.</p><p>Thank you, :app_name</p>',
+                'html'           => '<p>The component :component_name has seen a status change. The component is now at :component_human_status.</p><p>Thank you, :app_name</p>',
                 'tooltip-title'  => 'Subscribe to notifications for :component_name.',
             ],
         ],

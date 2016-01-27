@@ -46,7 +46,7 @@ class SubscribeRoutes
                 'uses' => 'SubscribeController@getVerify',
             ]);
 
-            $router->get('unsubscribe/{code}', [
+            $router->get('unsubscribe/{code}/{subscription?}', [
                 'as'   => 'unsubscribe',
                 'uses' => 'SubscribeController@getUnsubscribe',
             ]);

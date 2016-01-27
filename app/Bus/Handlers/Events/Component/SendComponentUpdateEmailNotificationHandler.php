@@ -49,16 +49,17 @@ class SendComponentUpdateEmailNotificationHandler
     public function handle(ComponentWasUpdatedEvent $event)
     {
         $component = AutoPresenter::decorate($event->component);
+
         $mail = [
             'subject'                => trans('cachet.subscriber.email.component.subject'),
             'component_name'         => $component->name,
             'component_human_status' => $component->human_status,
         ];
 
-        foreach (Subscription::isVerifiedForComponent($component->id)->get() as $subscription) {
+        foreach (Subscription::isVerifiedForComponent($component->id)->with('subscriber')->get() as $subscription) {
             $subscriber = $subscription->subscriber;
             $mail['email'] = $subscriber->email;
-            $mail['unsubscribe_link'] = route('subscribe.unsubscribe', ['code' => $subscriber->verify_code]);
+            $mail['unsubscribe_link'] = route('subscribe.unsubscribe', ['code' => $subscriber->verify_code, 'subscription' => $subscription->id]);
 
             $this->mailer->queue([
                 'html' => 'emails.components.update-html',

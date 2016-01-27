@@ -105,7 +105,8 @@ class Subscription extends Model
      */
     public function scopeIsVerifiedForComponent(Builder $query, $component_id)
     {
-        return $query->join('subscribers', 'subscriptions.subscriber_id', '=', 'subscribers.id')
+        return $query->select('subscriptions.*')
+            ->join('subscribers', 'subscriptions.subscriber_id', '=', 'subscribers.id')
             ->where('component_id', $component_id)
             ->whereNotNull('subscribers.verified_at');
     }
