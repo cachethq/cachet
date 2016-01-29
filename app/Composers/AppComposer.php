@@ -40,7 +40,7 @@ class AppComposer
         $view->withAppStylesheet(Config::get('setting.stylesheet'));
         $view->withAppUrl(Config::get('app.url'));
 
-        $view->withAppName($name =Config::get('setting.app_name'));
+        $view->withAppName($name = Config::get('setting.app_name'));
         $view->withShowSupport($support = Config::get('setting.show_support'));
 
         if ($support) {
