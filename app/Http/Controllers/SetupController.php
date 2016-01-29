@@ -12,6 +12,8 @@
 namespace CachetHQ\Cachet\Http\Controllers;
 
 use CachetHQ\Cachet\Models\User;
+use Dotenv\Dotenv;
+use Dotenv\Exception\InvalidPathException;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -219,13 +221,16 @@ class SetupController extends Controller
      */
     protected function writeEnv($key, $value)
     {
-        static $path = null;
+        $path = app()->environmentFile();
 
-        if ($path === null || ($path !== null && file_exists($path))) {
-            $path = base_path('.env');
+        try {
+            (new Dotenv(app()->environmentPath(), $path))->load();
+
             file_put_contents($path, str_replace(
                 env(strtoupper($key)), $value, file_get_contents($path)
             ));
+        } catch (InvalidPathException $e) {
+            //
         }
     }
 
@@ -238,7 +243,9 @@ class SetupController extends Controller
     {
         $key = str_random(32);
 
-        $path = base_path('.env');
+        $path = app()->environmentFile();
+
+        (new Dotenv(app()->environmentPath(), $path))->load();
 
         file_put_contents($path, str_replace(
             Config::get('app.key'), $key, file_get_contents($path)
