@@ -45,10 +45,12 @@ return [
     'digits_between' => ':attribute harus antara :min dan :max digit.',
     'email'          => ':attribute harus merupakan alamat email yang benar.',
     'exists'         => ':attribute yang dipilih tidak benar.',
+    'filled'         => ':attribute belum diisi.',
     'image'          => ':attribute harus merupakan gambar.',
     'in'             => ':attribute yang dipilih tidak benar.',
     'integer'        => ':attribute harus merupakan bilangan bulat.',
     'ip'             => ':attribute harus merupakan alamat IP yang benar.',
+    'json'           => ':attribute harus merupakan string JSON yang valid.',
     'max'            => [
         'numeric' => ':attribute tidak boleh lebih dari :max.',
         'file'    => ':attribute tidak boleh lebih dari :max kilobyte.',
@@ -80,9 +82,9 @@ return [
         'array'   => ':attribute harus berisi :size item.',
     ],
     'string'   => ':attribute harus berupa string.',
+    'timezone' => ':attribute harus merupakan zona yang benar.',
     'unique'   => ':attribute sudah ada.',
     'url'      => 'Format :attribute tidak benar.',
-    'timezone' => ':attribute harus merupakan zona yang benar.',
 
     /*
     |--------------------------------------------------------------------------

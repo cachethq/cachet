@@ -45,10 +45,12 @@ return [
     'digits_between' => ':attribute 必须在 :min 和 :max 位之间。',
     'email'          => ':attribute 必须是个有效的邮件地址。',
     'exists'         => '选择的 :attribute 无效。',
+    'filled'         => ':attribute 字段必填。',
     'image'          => ':attribute 必须是图片。',
     'in'             => '选择的 :attribute 无效。',
     'integer'        => ':attribute 必须是整数。',
     'ip'             => ':attribute 必须是一个有效的 IP 地址。',
+    'json'           => ':attribute 必须是规范的 JSON 字串。',
     'max'            => [
         'numeric' => ':attribute 不能大于 :max。',
         'file'    => ':attribute 不能大于 :max KB。',
@@ -80,9 +82,9 @@ return [
         'array'   => ':attribute 必须包含 :size 个',
     ],
     'string'   => ':attribute必须是一个字符串。',
+    'timezone' => ':attribute 必须是个有效的区域。',
     'unique'   => ':attribute 已经被占用',
     'url'      => ':attribute 的格式无效',
-    'timezone' => ':attribute 必须是个有效的区域。',
 
     /*
     |--------------------------------------------------------------------------

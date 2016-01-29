@@ -16,9 +16,9 @@ return [
     // Incidents
     'incidents' => [
         'title'                    => '故障和维护计划',
-        'incidents'                => '故障',
+        'incidents'                => 'Incidents',
         'logged'                   => '{0} 当前没有故障信息|您已经记录了一个故障|您已经报告了 <strong>:count</strong> 个故障',
-        'incident-create-template' => '创建模板',
+        'incident-create-template' => 'Create Template',
         'incident-templates'       => '故障模板',
         'add'                      => [
             'title'   => '添加故障',
@@ -28,74 +28,74 @@ return [
         'edit' => [
             'title'   => '编辑故障',
             'success' => '故障已更新。',
-            'failure' => '故障编辑失败。',
+            'failure' => '事件编辑失败。',
         ],
         'delete' => [
-            'success' => '该故障已被删除，它将从您的状态页上消失。',
-            'failure' => '故障删除失败，请重试。',
+            'success' => 'The incident has been deleted and will not show on your status page.',
+            'failure' => 'The incident could not be deleted. Please try again.',
         ],
 
         // Incident templates
         'templates' => [
-            'title' => '故障模板',
+            'title' => '事件模板',
             'add'   => [
                 'title'   => '添加故障模板',
-                'message' => '没有模板，马上添加一个吧',
-                'success' => '模板已创建。',
-                'failure' => '创建模板失败。',
+                'message' => 'You should add an Incident Template.',
+                'success' => 'Template created.',
+                'failure' => 'Something went wrong with the incident template.',
             ],
             'edit' => [
                 'title'   => '编辑模板',
-                'success' => '模板已更新!',
-                'failure' => '模板修改失败',
+                'success' => 'Template has been updated!',
+                'failure' => 'Something went wrong updating the incident template',
             ],
             'delete' => [
-                'success' => '该模板已被成功删除。',
-                'failure' => '模板删除失败，请重试。',
+                'success' => 'The tmplate has been deleted.',
+                'failure' => 'The template could not be deleted. Please try again.',
             ],
         ],
     ],
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => '维护计划',
-        'scheduled_at' => '计划在 :timestamp',
-        'logged'       => '{0} 当前没有维护计划|您已经添加了一个维护|您已经添加了 <strong>:count</strong> 个维护计划',
+        'schedule'     => '计划维护',
+        'logged'       => '{0} There are no schedules, good work.|You have logged one schedule.|You have reported <strong>:count</strong> schedules.',
+        'scheduled_at' => 'Scheduled at :timestamp',
         'add'          => [
-            'title'   => '添加维护计划',
+            'title'   => 'Add Scheduled Maintenance',
             'success' => '维护计划已添加。',
             'failure' => '维护计划添加失败。',
         ],
         'edit' => [
-            'title'   => '编辑维护计划',
+            'title'   => 'Edit Scheduled Maintenance',
             'success' => '维护计划已更新！',
             'failure' => '维护计划更新失败。',
         ],
         'delete' => [
             'success' => '该维护计划已被删除，它将从您的状态页上消失。',
-            'failure' => '无法删除该维护计划。请再试一次。',
+            'failure' => 'The schedule could not be deleted. Please try again.',
         ],
     ],
 
     // Components
     'components' => [
-        'components'         => '组件',
-        'component_statuses' => '组件状态',
-        'listed_group'       => '根据 :name 分组',
+        'components'         => 'Components',
+        'component_statuses' => 'Component Statuses',
+        'listed_group'       => 'Grouped under :name',
         'add'                => [
             'title'   => '添加组件',
             'message' => '没有组件，马上添加一个吧',
             'success' => '组件已添加。',
-            'failure' => '组件添加失败。',
+            'failure' => 'Something went wrong with the component.',
         ],
         'edit' => [
             'title'   => '编辑组件',
-            'success' => '组件已更新。',
+            'success' => 'Component updated.',
             'failure' => '组件编辑失败。',
         ],
         'delete' => [
-            'success' => '该组件已被删除.',
-            'failure' => '组件删除失败，请重试.',
+            'success' => 'Component deleted.',
+            'failure' => 'The Component could not be deleted. Please try again.',
         ],
 
         // Component groups
@@ -105,40 +105,39 @@ return [
             'add'           => [
                 'title'   => '添加组件分组',
                 'success' => '组件分组已添加。',
-                'failure' => '分组添加失败。',
+                'failure' => 'Something went wrong with the component group.',
             ],
             'edit' => [
                 'title'   => '编辑组件分组',
-                'success' => '分组已更新。',
+                'success' => 'Component group updated.',
                 'failure' => '分组更新失败。',
             ],
             'delete' => [
-                'success' => '组件分组已被删除。',
-                'failure' => '组件分组删除失败，请重试。',
+                'success' => 'Component Group deleted.',
+                'failure' => 'The Component Group could not be deleted. Please try again.',
             ],
         ],
     ],
 
     // Metrics
     'metrics' => [
-        'metrics' => '图表',
+        'metrics' => 'Metrics',
         'add'     => [
             'title'   => '添加图表',
-            'message' => '没有图表，马上添加一个吧',
-            'success' => '图表已创建。',
-            'failure' => '图表创建失败。',
+            'message' => 'You should add a Metric.',
+            'success' => 'Metric created.',
+            'failure' => 'Something went wrong with the metric.',
         ],
         'edit' => [
             'title'   => '编辑图表',
-            'success' => '图表已更新。',
+            'success' => 'Metric updated.',
             'failure' => '图表更新失败。',
         ],
         'delete' => [
-            'success' => '该图表已被删除，它将从您的状态页上消失。',
-            'failure' => '图表删除失败，请重试。',
+            'success' => 'The metric has been deleted and will not show on your status page.',
+            'failure' => 'The metric could not be deleted. Please try again.',
         ],
     ],
-
     // Subscribers
     'subscribers' => [
         'subscribers'  => '通知',
@@ -148,30 +147,30 @@ return [
         'add'          => [
             'title'   => '添加邮件订阅',
             'success' => '邮件订阅已添加成功。',
-            'failure' => '邮件订阅添加失败。',
+            'failure' => 'Something went wrong with the component.',
         ],
         'edit' => [
             'title'   => '更新订阅者',
             'success' => '订阅者信息已更新.',
-            'failure' => '更新订阅者信息失败.',
+            'failure' => 'Something went wrong when updating.',
         ],
     ],
 
     // Team
     'team' => [
-        'team'        => '团队',
-        'member'      => '成员',
-        'profile'     => '更改资料',
+        'team'        => 'Team',
+        'member'      => 'Member',
+        'profile'     => 'Profile',
         'description' => '团队成员可维护组件和故障信息。',
         'add'         => [
             'title'   => '添加团队成员',
-            'success' => '团队成员已添加。',
+            'success' => 'Team member added.',
             'failure' => '添加组件失败。',
         ],
         'edit' => [
             'title'   => '更新配置文件',
-            'success' => '配置文件已更新。',
-            'failure' => '资料更新失败。',
+            'success' => 'Profile updated.',
+            'failure' => 'Something went wrong when updating.',
         ],
         'delete' => [
             'success' => '团队成员已删除.',
@@ -186,31 +185,31 @@ return [
 
     // Settings
     'settings' => [
-        'settings'  => '设置',
+        'settings'  => 'Settings',
         'app-setup' => [
             'app-setup'   => '网站设置',
-            'images-only' => '只能上传图像。',
+            'images-only' => 'Only images may be uploaded.',
             'too-big'     => '您上传的文件太大了。上传的图像大小应小于:size',
         ],
         'analytics' => [
             'analytics' => '第三方统计',
         ],
         'localization' => [
-            'localization' => '国际化',
+            'localization' => '本地化',
         ],
         'security' => [
             'security'   => '安全设置',
-            'two-factor' => '没有启用双因素身份验证的用户',
+            'two-factor' => 'Users without two-factor authentication',
         ],
         'stylesheet' => [
             'stylesheet' => '自定义样式',
         ],
         'theme' => [
-            'theme' => '主题设置',
+            'theme' => 'Theme',
         ],
         'edit' => [
-            'success' => '设置已保存。',
-            'failure' => '无法保存设置。',
+            'success' => 'Settings saved.',
+            'failure' => 'Settings could not be saved.',
         ],
     ],
 
@@ -218,34 +217,34 @@ return [
     'login' => [
         'login'      => '登录',
         'logged_in'  => '您已登录',
-        'welcome'    => '欢迎回来！',
-        'two-factor' => '请输入您的双重验证Token。',
+        'welcome'    => 'Welcome Back!',
+        'two-factor' => 'Please enter your token.',
     ],
 
     // Sidebar footer
-    'help'        => '帮助',
+    'help'        => 'Help',
     'status_page' => '状态页',
     'logout'      => '退出',
 
     // Notifications
     'notifications' => [
-        'notifications' => '通知',
-        'awesome'       => '太棒了！',
+        'notifications' => 'Notifications',
+        'awesome'       => 'Awesome.',
         'whoops'        => '抱歉，',
     ],
 
     // Welcome modal
     'welcome' => [
-        'welcome' => '欢迎来到Cachet',
-        'message' => '您的状态页面即将准备好了！您可能想要配置这些额外的设置',
+        'welcome' => 'Welcome to your status page!',
+        'message' => 'Your status page is almost ready! You might want to configure these extra settings',
         'close'   => '您可以直接进入控制台',
         'steps'   => [
             'component'  => '添加组件',
             'incident'   => '添加故障',
             'customize'  => '主题设置',
-            'team'       => '添加用户',
+            'team'       => 'Add users',
             'api'        => '生成 API Token',
-            'two-factor' => '双因子身份验证',
+            'two-factor' => '双因素身份验证',
         ],
     ],
 

@@ -45,10 +45,12 @@ return [
     'digits_between' => ':attribute doit être entre :min et :max chiffres.',
     'email'          => ':attribute doit être une adresse électronique valide.',
     'exists'         => 'Le champ :attribute sélectionné est invalide.',
+    'filled'         => 'Le champ :attribute est requis.',
     'image'          => ':attribute doit être une image.',
     'in'             => 'Le champ :attribute sélectionné est invalide.',
     'integer'        => ':attribute doit être un entier.',
     'ip'             => ':attribute doit être une adresse IP valide.',
+    'json'           => 'The :attribute must be a valid JSON string.',
     'max'            => [
         'numeric' => ':attribute ne doit pas être plus grand que :max.',
         'file'    => 'attribute ne doit pas être plus grand que :max kilo-octets.',
@@ -80,9 +82,9 @@ return [
         'array'   => 'attribute doit contenir :size éléments.',
     ],
     'string'   => ':attribute doit être une chaîne.',
+    'timezone' => ':attribute doit être une zone valide.',
     'unique'   => ':attribute a déjà été pris.',
     'url'      => 'Le format de :attribute n\'est pas valide.',
-    'timezone' => ':attribute doit être une zone valide.',
 
     /*
     |--------------------------------------------------------------------------

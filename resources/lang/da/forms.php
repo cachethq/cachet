@@ -16,7 +16,7 @@ return [
         'email'            => 'Email',
         'username'         => 'Brugernavn',
         'password'         => 'Kodeord',
-        'site_name'        => 'Sidens navn',
+        'site_name'        => 'Sidenavn',
         'site_domain'      => 'Sidens domæne',
         'site_timezone'    => 'Vælg tidszone',
         'site_locale'      => 'Vælg sprog',
@@ -29,9 +29,9 @@ return [
     'login' => [
         'login'         => 'Username or Email',
         'email'         => 'Email',
-        'password'      => 'Kodeord',
+        'password'      => 'Adgangskode',
         '2fauth'        => 'Godkendelses kode',
-        'invalid'       => 'Ugyldig brugernavn eller kodeord',
+        'invalid'       => 'Invalid username or password',
         'invalid-token' => 'Ugyldig kode',
         'cookies'       => 'Du skal tillade cookies for at kunne logge ind.',
     ],
@@ -40,8 +40,8 @@ return [
     'incidents' => [
         'name'               => 'Name',
         'status'             => 'Status',
-        'component'          => 'Komponent',
-        'message'            => 'Besked',
+        'component'          => 'Component',
+        'message'            => 'Message',
         'message-help'       => 'Du kan benytte Markdown.',
         'scheduled_at'       => 'Hvornår skal vedligeholdelses vinduet skeduleres til?',
         'incident_time'      => 'Hvornår skete hændelsen?',
@@ -51,7 +51,7 @@ return [
         'logged_in_only'     => 'Kun synlig for brugere der er logget ind',
         'templates'          => [
             'name'     => 'Navn',
-            'template' => 'Skabelon',
+            'template' => 'Template',
             'twig'     => 'Incident Templates can make use of the <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a> templating language.',
         ],
     ],
@@ -60,15 +60,16 @@ return [
     'components' => [
         'name'        => 'Navn',
         'status'      => 'Status',
-        'group'       => 'Gruppe',
-        'description' => 'Beskrivelse',
+        'group'       => 'Group',
+        'description' => 'Description',
         'link'        => 'Link',
         'tags'        => 'Tags',
         'tags-help'   => 'Komma adskilt.',
         'enabled'     => 'Component enabled?',
 
         'groups' => [
-            'name' => 'Navn',
+            'name'      => 'Navn',
+            'collapsed' => 'Collapse the group by default?',
         ],
     ],
 
@@ -77,16 +78,17 @@ return [
         'name'             => 'Navn',
         'suffix'           => 'Suffix',
         'description'      => 'Beskrivelse',
-        'description-help' => 'Der kan benyttes Markdown.',
+        'description-help' => 'Du kan også bruge Markdown.',
         'display-chart'    => 'Vis graf på statussiden?',
         'default-value'    => 'Default værdi',
         'calc_type'        => 'Beregning af grafer',
         'type_sum'         => 'Sum',
-        'type_avg'         => 'Gennemsnit',
+        'type_avg'         => 'Average',
         'places'           => 'Antal decimaler',
+        'default_view'     => 'Default View',
 
         'points' => [
-            'value' => 'Værdi',
+            'value' => 'Value',
         ],
     ],
 
@@ -96,11 +98,11 @@ return [
         'app-setup' => [
             'site-name'              => 'Sidens navn',
             'site-url'               => 'Sidens URL',
-            'display-graphs'         => 'Vis grafer på statussiden?',
+            'display-graphs'         => 'Display graphs on status page?',
             'about-this-page'        => 'Om',
             'days-of-incidents'      => 'Hvor mange dage skal der vises hændelser for?',
-            'banner'                 => 'Bannerbillede',
-            'banner-help'            => 'Det anbefales ikke at uploade billeder bredere end 930px.',
+            'banner'                 => 'Banner Image',
+            'banner-help'            => "Det anbefales ikke at uploade billeder bredere end 930px.",
             'subscribers'            => 'Tillad at man kan tilmelde sig emailnotifikationer?',
         ],
         'analytics' => [
@@ -123,12 +125,12 @@ return [
             'custom-css' => 'Tilpasset stylesheet',
         ],
         'theme' => [
-            'background-color'        => 'Baggrundsfarve',
+            'background-color'        => 'Background Color',
             'background-fills'        => 'Baggrundsfyld (Komponenter, hændelser og footer)',
             'banner-background-color' => 'Banner Background Color',
             'banner-padding'          => 'Banner Padding',
             'fullwidth-banner'        => 'Enable fullwidth banner?',
-            'text-color'              => 'Tekstfarve',
+            'text-color'              => 'Text Color',
             'dashboard-login'         => 'Vis oversigtsside ikon i bunden af siden?',
             'reds'                    => 'Rød (Brugt til fejl)',
             'blues'                   => 'Blå (Brugt til information)',
@@ -141,9 +143,9 @@ return [
     ],
 
     'user' => [
-        'username'       => 'Brugernavn',
+        'username'       => 'Username',
         'email'          => 'Email',
-        'password'       => 'Kodeord',
+        'password'       => 'Adgangskode',
         'api-token'      => 'API nøgle',
         'api-token-help' => 'Hvis du regenerere din API nøgle vil eksisterende applikationer ikke kunne tilgå API\'et.',
         'gravatar'       => 'Change your profile picture at Gravatar.',
@@ -163,14 +165,16 @@ return [
 
     // Buttons
     'add'    => 'Tilføj',
-    'save'   => 'Gem',
+    'save'   => 'Save',
     'update' => 'Opdatér',
-    'create' => 'Opret',
+    'create' => 'Create',
     'edit'   => 'Editér',
-    'delete' => 'Slet',
+    'delete' => 'Delete',
     'submit' => 'Gem',
-    'cancel' => 'Afbryd',
-    'remove' => 'Fjern',
+    'cancel' => 'Cancel',
+    'remove' => 'Remove',
+    'invite' => 'Invite',
+    'signup' => 'Sign Up',
 
     // Other
     'optional' => '* ej påkrævet',

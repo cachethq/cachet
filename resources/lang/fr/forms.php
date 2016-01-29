@@ -18,9 +18,9 @@ return [
         'password'         => 'Mot de passe ',
         'site_name'        => 'Nom du site',
         'site_domain'      => 'Nom de domaine du site',
-        'site_timezone'    => 'Choisissez un fuseau horaire',
-        'site_locale'      => 'Choisir la langue',
-        'enable_google2fa' => 'Activez l\'authentification à deux facteurs Google',
+        'site_timezone'    => 'Choisissez votre fuseau horaire',
+        'site_locale'      => 'Choisissez votre langue',
+        'enable_google2fa' => 'Activez la validation en deux étapes Google',
         'cache_driver'     => 'Pilote de cache',
         'session_driver'   => 'Pilote de session',
     ],
@@ -31,7 +31,7 @@ return [
         'email'         => 'Email',
         'password'      => 'Mot de passe ',
         '2fauth'        => 'Code d\'authentification',
-        'invalid'       => 'E-mail ou mot de passe non valide',
+        'invalid'       => 'Invalid username or password',
         'invalid-token' => 'Jeton non valide',
         'cookies'       => 'Vous devez activer les cookies pour vous identifier.',
     ],
@@ -51,7 +51,7 @@ return [
         'logged_in_only'     => 'Uniquement visible des utilisateurs enregistrés',
         'templates'          => [
             'name'     => 'Nom',
-            'template' => 'Modéle',
+            'template' => 'Modèle',
             'twig'     => 'Incident Templates can make use of the <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a> templating language.',
         ],
     ],
@@ -60,15 +60,16 @@ return [
     'components' => [
         'name'        => 'Nom',
         'status'      => 'Etat',
-        'group'       => 'Groupes',
+        'group'       => 'Groupe',
         'description' => 'Description',
         'link'        => 'Lien',
         'tags'        => 'Mots clés',
-        'tags-help'   => 'séparé par des virgules.',
+        'tags-help'   => 'Séparés par des virgules.',
         'enabled'     => 'Component enabled?',
 
         'groups' => [
-            'name' => 'Nom',
+            'name'      => 'Nom',
+            'collapsed' => 'Collapse the group by default?',
         ],
     ],
 
@@ -83,6 +84,8 @@ return [
         'calc_type'        => 'Calcul des données',
         'type_sum'         => 'Somme',
         'type_avg'         => 'Moyenne',
+        'places'           => 'Nombre de chiffres après la virgule',
+        'default_view'     => 'Default View',
 
         'points' => [
             'value' => 'Valeur',
@@ -97,10 +100,10 @@ return [
             'site-url'               => 'Url du site',
             'display-graphs'         => 'Afficher les graphiques sur la page de status ?',
             'about-this-page'        => 'À propos de cette page',
-            'days-of-incidents'      => 'Combien de jours d\'incidents à montrer?',
-            'banner'                 => 'Image de la bannière',
-            'banner-help'            => 'Il est recommandé que vous téléchargez des fichiers ne dépassant pas les 930px large .',
-            'subscribers'            => 'Permettre aux gens de s\'inscrire aux notifications par courrier électronique ?',
+            'days-of-incidents'      => 'Combien de jours d\'incidents à montrer ?',
+            'banner'                 => 'Image d\'en-tête',
+            'banner-help'            => "Il est recommandé de téléchargez un fichier ne dépassant pas 930px de large .",
+            'subscribers'            => 'Permettre aux gens de s\'inscrire aux notifications par email ?',
         ],
         'analytics' => [
             'analytics_google'       => 'Code de Google Analytics',
@@ -123,10 +126,19 @@ return [
         ],
         'theme' => [
             'background-color'        => 'Couleur de fond',
-            'text-color'              => 'Couleur Texte',
+            'background-fills'        => 'Background Fills (Components, Incidents, Footer)',
             'banner-background-color' => 'Banner Background Color',
             'banner-padding'          => 'Banner Padding',
             'fullwidth-banner'        => 'Enable fullwidth banner?',
+            'text-color'              => 'Couleur Texte',
+            'dashboard-login'         => 'Afficher le bouton "Tableau de bord" dans le pied de page ?',
+            'reds'                    => 'Rouge (utilisé pour les erreurs)',
+            'blues'                   => 'Bleu (utilisé pour les informations)',
+            'greens'                  => 'Vert (utilisé pour les succès)',
+            'yellows'                 => 'Jaune (utilisé pour les alertes)',
+            'oranges'                 => 'Orange (utilisé pour les notices)',
+            'metrics'                 => 'Metrics Fill',
+            'links'                   => 'Liens',
         ],
     ],
 
@@ -137,7 +149,12 @@ return [
         'api-token'      => 'Jeton de l\'API',
         'api-token-help' => 'Régénérer votre jeton API permettra d\'éviter les applications existantes d\'accéder à Cachet.',
         'gravatar'       => 'Change your profile picture at Gravatar.',
-        '2fa'            => [
+        'user_level'     => 'User Level',
+        'levels'         => [
+            'admin' => 'Admin',
+            'user'  => 'Utilisateur',
+        ],
+        '2fa' => [
             'help' => 'Habilitante authentification à deux facteurs augmente la sécurité de votre compte. Vous aurez besoin de télécharger <a href="https://support.google.com/accounts/answer/1066447?hl=en"> Google Authenticator</a> ou une application similaire sur votre appareil mobile. Lorsque vous vous connectez vous sera demandé de fournir un jeton généré par l\'application.',
         ],
         'team' => [
@@ -147,7 +164,7 @@ return [
     ],
 
     // Buttons
-    'add'    => 'Ajouter catégorie',
+    'add'    => 'Ajouter',
     'save'   => 'Enregistrer',
     'update' => 'mettre à jour',
     'create' => 'Nouveau',
@@ -156,6 +173,8 @@ return [
     'submit' => 'ENVOYER',
     'cancel' => 'Annuler',
     'remove' => 'Enlever',
+    'invite' => 'Inviter',
+    'signup' => 'Inscription',
 
     // Other
     'optional' => '* En option',

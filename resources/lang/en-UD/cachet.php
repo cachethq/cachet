@@ -40,8 +40,9 @@ return [
 
     // Service Status
     'service' => [
-        'good' => 'crwdns546:0crwdne546:0',
-        'bad'  => 'crwdns547:0crwdne547:0',
+        'good'  => 'crwdns622:0crwdne622:0',
+        'bad'   => 'crwdns623:0crwdne623:0',
+        'major' => 'crwdns624:0crwdne624:0',
     ],
 
     'api' => [
@@ -52,9 +53,10 @@ return [
     // Metrics
     'metrics' => [
         'filter' => [
-            'hourly'  => 'crwdns548:0crwdne548:0',
-            'weekly'  => 'crwdns549:0crwdne549:0',
-            'monthly' => 'crwdns550:0crwdne550:0',
+            'last_hour' => 'crwdns625:0crwdne625:0',
+            'hourly'    => 'crwdns548:0crwdne548:0',
+            'weekly'    => 'crwdns549:0crwdne549:0',
+            'monthly'   => 'crwdns550:0crwdne550:0',
         ],
     ],
 
@@ -69,21 +71,28 @@ return [
             'unsubscribe'        => 'crwdns552:0crwdne552:0',
             'unsubscribed'       => 'crwdns495:0crwdne495:0',
             'failure'            => 'crwdns496:0crwdne496:0',
-            'already-subscribed' => 'Cannot subscribe :email because they\'re already subscribed.',
+            'already-subscribed' => 'crwdns626:0crwdne626:0',
             'verify'             => [
-                'text'           => 'crwdns497:0crwdne497:0',
+                'text'           => "crwdns497:0crwdne497:0",
                 'html-preheader' => 'crwdns498:0crwdne498:0',
                 'html'           => 'crwdns520:0crwdne520:0',
             ],
             'maintenance' => [
-                'text'           => 'crwdns500:0crwdne500:0',
+                'text'           => "crwdns500:0crwdne500:0",
                 'html-preheader' => 'crwdns501:0crwdne501:0',
                 'html'           => 'crwdns521:0crwdne521:0',
             ],
             'incident' => [
-                'text'           => 'crwdns503:0crwdne503:0',
+                'text'           => "crwdns503:0crwdne503:0",
                 'html-preheader' => 'crwdns504:0crwdne504:0',
                 'html'           => 'crwdns505:0crwdne505:0',
+            ],
+            'component' => [
+                'subject'        => 'crwdns627:0crwdne627:0',
+                'text'           => 'crwdns628:0crwdne628:0',
+                'html-preheader' => 'crwdns629:0crwdne629:0',
+                'html'           => 'crwdns630:0crwdne630:0',
+                'tooltip-title'  => 'crwdns631:0crwdne631:0',
             ],
         ],
     ],
@@ -91,7 +100,7 @@ return [
     'users' => [
         'email' => [
             'invite' => [
-                'text'           => 'crwdns553:0crwdne553:0',
+                'text'           => "crwdns553:0crwdne553:0",
                 'html-preheader' => 'crwdns554:0crwdne554:0',
                 'html'           => 'crwdns555:0crwdne555:0',
             ],
@@ -105,6 +114,20 @@ return [
         'password' => 'crwdns559:0crwdne559:0',
         'success'  => 'crwdns560:0crwdne560:0',
         'failure'  => 'crwdns561:0crwdne561:0',
+    ],
+
+    'system' => [
+        'update' => 'crwdns632:0crwdne632:0',
+    ],
+
+    // Modal
+    'modal' => [
+        'close'     => 'crwdns633:0crwdne633:0',
+        'subscribe' => [
+            'title'  => 'crwdns634:0crwdne634:0',
+            'body'   => 'crwdns635:0crwdne635:0',
+            'button' => 'crwdns636:0crwdne636:0',
+        ],
     ],
 
     // Other

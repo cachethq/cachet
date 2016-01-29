@@ -16,10 +16,10 @@ return [
     // Incidents
     'incidents' => [
         'title'                    => 'Hændelser &amp; Planlagte',
-        'incidents'                => 'Hændelser',
+        'incidents'                => 'Incidents',
         'logged'                   => '{0} Ingen åbne hændelser.|Der er en åben hændelse.|Der er <strong>:count</strong> åbne hændelser.',
-        'incident-create-template' => 'Opret skabelon',
-        'incident-templates'       => 'Hændelses skabeloner',
+        'incident-create-template' => 'Create Template',
+        'incident-templates'       => 'Incident Templates',
         'add'                      => [
             'title'   => 'Opret hændelse',
             'success' => 'Hændelse oprettet.',
@@ -28,7 +28,11 @@ return [
         'edit' => [
             'title'   => 'Redigér hændelse',
             'success' => 'Hændelse opdateret.',
-            'failure' => 'Noget gik galt under opdateringen af hændelsen.',
+            'failure' => 'Noget gik galt med hændelsen.',
+        ],
+        'delete' => [
+            'success' => 'The incident has been deleted and will not show on your status page.',
+            'failure' => 'The incident could not be deleted. Please try again.',
         ],
 
         // Incident templates
@@ -36,7 +40,8 @@ return [
             'title' => 'Hændelses skabeloner',
             'add'   => [
                 'title'   => 'Opret hændelses skabelon',
-                'success' => 'Skabelon oprettet.',
+                'message' => 'You should add an Incident Template.',
+                'success' => 'Template created.',
                 'failure' => 'Noget gik galt i oprettelsen af skabelonen.',
             ],
             'edit' => [
@@ -44,12 +49,17 @@ return [
                 'success' => 'Skabelonen opdateret!',
                 'failure' => 'Noget gik galt under opdateringen af skabelonen',
             ],
+            'delete' => [
+                'success' => 'The tmplate has been deleted.',
+                'failure' => 'The template could not be deleted. Please try again.',
+            ],
         ],
     ],
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => 'Planlagt nedetid',
+        'schedule'     => 'Planlagt vedligeholdelse',
+        'logged'       => '{0} There are no schedules, good work.|You have logged one schedule.|You have reported <strong>:count</strong> schedules.',
         'scheduled_at' => 'Planlagt til :timestamp',
         'add'          => [
             'title'   => 'Tilføj planlagt nedetid',
@@ -69,9 +79,9 @@ return [
 
     // Components
     'components' => [
-        'components'         => 'Komponenter',
+        'components'         => 'Components',
         'component_statuses' => 'Komponentstatus',
-        'listed_group'       => 'Grupperet under :name',
+        'listed_group'       => 'Grouped under :name',
         'add'                => [
             'title'   => 'Tilføj komponent',
             'message' => 'Du bør tilføje en komponent.',
@@ -81,13 +91,17 @@ return [
         'edit' => [
             'title'   => 'Redigér komponent',
             'success' => 'Komponent opdteret.',
-            'failure' => 'Noget gik galt under opdateringen.',
+            'failure' => 'Noget gik galt med komponenten.',
+        ],
+        'delete' => [
+            'success' => 'Component deleted.',
+            'failure' => 'The Component could not be deleted. Please try again.',
         ],
 
         // Component groups
         'groups' => [
             'groups'        => 'Komponentgruppe|Komponentgrupper',
-            'no_components' => 'Du bør tilføje en komponentgruppe.',
+            'no_components' => 'You should add a component group.',
             'add'           => [
                 'title'   => 'Tilføj komponentgruppe',
                 'success' => 'Komponentgruppe tilføjet.',
@@ -96,7 +110,11 @@ return [
             'edit' => [
                 'title'   => 'Redigér komponentgruppe',
                 'success' => 'Gruppe opdateret.',
-                'failure' => 'Noget gik galt under opdateringen.',
+                'failure' => 'Noget gik galt med komponentgruppen.',
+            ],
+            'delete' => [
+                'success' => 'Component Group deleted.',
+                'failure' => 'The Component Group could not be deleted. Please try again.',
             ],
         ],
     ],
@@ -106,30 +124,35 @@ return [
         'metrics' => 'Grafer',
         'add'     => [
             'title'   => 'Opret graf',
+            'message' => 'You should add a Metric.',
             'success' => 'Graf oprettet.',
             'failure' => 'Noget gik galt med oprettelsen.',
         ],
         'edit' => [
             'title'   => 'Redigér graf',
             'success' => 'Graf opdateret.',
-            'failure' => 'Noget gik galt under opdateringen.',
+            'failure' => 'Noget gik galt med målestokken.',
+        ],
+        'delete' => [
+            'success' => 'The metric has been deleted and will not show on your status page.',
+            'failure' => 'The metric could not be deleted. Please try again.',
         ],
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'  => 'Abonnenter',
+        'subscribers'  => 'Subscribers',
         'description'  => 'Abonnenter vil modtage notifikationer når hændelser oprettes.',
         'verified'     => 'Bekræftet',
         'not_verified' => 'Ej bekræftet',
         'add'          => [
             'title'   => 'Tilføj abonnent',
-            'success' => 'Abonnent tilføjet.',
+            'success' => 'Subscriber added.',
             'failure' => 'Noget gik galt med oprettelsen.',
         ],
         'edit' => [
             'title'   => 'Redigér abonnent',
-            'success' => 'Abonnent opdateret.',
-            'failure' => 'Noget gik galt under opdateringen.',
+            'success' => 'Subscriber updated.',
+            'failure' => 'Something went wrong when updating.',
         ],
     ],
 
@@ -137,7 +160,7 @@ return [
     'team' => [
         'team'        => 'Brugere',
         'member'      => 'Bruger',
-        'profile'     => 'Profil',
+        'profile'     => 'Profile',
         'description' => 'Brugere kan oprette og rette komponenter og hændelser.',
         'add'         => [
             'title'   => 'Tilføj bruger',
@@ -146,21 +169,26 @@ return [
         ],
         'edit' => [
             'title'   => 'Redigér profil',
-            'success' => 'Profil opdateret.',
-            'failure' => 'Noget gik galt under opdateringen.',
+            'success' => 'Profile updated.',
+            'failure' => 'Something went wrong when updating.',
         ],
         'delete' => [
             'success' => 'Slet bruger.',
             'failure' => 'Noget gik galt under sletningen af brugeren.',
         ],
+        'invite' => [
+            'title'   => 'Invite a New Team Member',
+            'success' => 'The users invited.',
+            'failure' => 'Something went wrong with the invite.',
+        ],
     ],
 
     // Settings
     'settings' => [
-        'settings'  => 'Indstillinger',
+        'settings'  => 'Settings',
         'app-setup' => [
             'app-setup'   => 'Applikationssetup',
-            'images-only' => 'Kun billeder kan uploades.',
+            'images-only' => 'Only images may be uploaded.',
             'too-big'     => 'Filen du prøvede at uploade er for stort, billet skal være mindre end :size',
         ],
         'analytics' => [
@@ -170,7 +198,7 @@ return [
             'localization' => 'Localization',
         ],
         'security' => [
-            'security'   => 'Sikkerhed',
+            'security'   => 'Security',
             'two-factor' => 'Brugere uden two-factor login',
         ],
         'stylesheet' => [
@@ -181,39 +209,39 @@ return [
         ],
         'edit' => [
             'success' => 'Indstillingerne er gemt.',
-            'failure' => 'Indstillingerne kunne ikke gemmes.',
+            'failure' => 'Settings could not be saved.',
         ],
     ],
 
     // Login
     'login' => [
-        'login'      => 'Log ind',
-        'logged_in'  => 'Du er logget ind.',
+        'login'      => 'Login',
+        'logged_in'  => 'You\'re logged in.',
         'welcome'    => 'Velkommen tilbage',
         'two-factor' => 'Indtast venligst din log ind nøgle',
     ],
 
     // Sidebar footer
-    'help'        => 'Hjælp',
+    'help'        => 'Help',
     'status_page' => 'Status Siden',
-    'logout'      => 'Log ud',
+    'logout'      => 'Logout',
 
     // Notifications
     'notifications' => [
-        'notifications' => 'Notifikationer',
+        'notifications' => 'Notifications',
         'awesome'       => 'Fedt!',
         'whoops'        => 'Whoops!',
     ],
 
     // Welcome modal
     'welcome' => [
-        'welcome' => 'Velkommen til Cachet',
+        'welcome' => 'Welcome to your status page!',
         'message' => 'Din statusside er nærmest klar! Måske du skulle gennemgå disse ekstra indstillinger',
         'close'   => 'Til oversigtssiden tak.',
         'steps'   => [
             'component'  => 'Opret Komponent',
             'incident'   => 'Opret hændelse',
-            'customize'  => 'Tilpas',
+            'customize'  => 'Customize',
             'team'       => 'Tilføj bruger',
             'api'        => 'Generer API nøgle',
             'two-factor' => 'Two Factor Log ind',

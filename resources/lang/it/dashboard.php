@@ -15,34 +15,43 @@ return [
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Incidenti &amp; Pianificazione',
+        'title'                    => 'Incidents &amp; Schedule',
         'incidents'                => 'Incidenti',
-        'logged'                   => '{0} Non ci sono incidenti, ottimo lavoro!|Hai registrato un incidente.|Hai riportato <strong>:count</strong> incidenti.',
-        'incident-create-template' => 'Crea modello',
-        'incident-templates'       => 'Modelli incidente',
+        'logged'                   => '{0} Non ci sono incidenti, ottimo lavoro.|Hai segnalato un incidente.|Hai segnalato <strong>:count</strong> incidenti.',
+        'incident-create-template' => 'Crea Modello',
+        'incident-templates'       => 'Incident Templates',
         'add'                      => [
-            'title'   => 'Aggiungi un incidente',
+            'title'   => 'Add an Incident',
             'success' => 'Incidente aggiunto.',
             'failure' => 'Qualcosa è andato storto con l\'incidente.',
         ],
         'edit' => [
-            'title'   => 'Modifica un incidente',
+            'title'   => 'Edit an Incident',
             'success' => 'Incidente aggiornato.',
             'failure' => 'Qualcosa è andato storto con l\'incidente.',
+        ],
+        'delete' => [
+            'success' => 'The incident has been deleted and will not show on your status page.',
+            'failure' => 'The incident could not be deleted. Please try again.',
         ],
 
         // Incident templates
         'templates' => [
-            'title' => 'Modelli incidente',
+            'title' => 'Incident Templates',
             'add'   => [
-                'title'   => 'Crea un modello di incidente',
-                'success' => 'Modello creato.',
-                'failure' => 'Qualcosa è andato storto con il modello di incidente.',
+                'title'   => 'Create an Incident Template',
+                'message' => 'You should add an Incident Template.',
+                'success' => 'Template created.',
+                'failure' => 'Something went wrong with the incident template.',
             ],
             'edit' => [
-                'title'   => 'Modifica modello',
-                'success' => 'Il modello è stato aggiornato.',
-                'failure' => 'Qualcosa è andato storto con il modello di incidente.',
+                'title'   => 'Edit Template',
+                'success' => 'Il modello è stato aggiornato!',
+                'failure' => 'Something went wrong updating the incident template',
+            ],
+            'delete' => [
+                'success' => 'The tmplate has been deleted.',
+                'failure' => 'The template could not be deleted. Please try again.',
             ],
         ],
     ],
@@ -50,86 +59,100 @@ return [
     // Incident Maintenance
     'schedule' => [
         'schedule'     => 'Manutenzione programmata',
-        'scheduled_at' => 'Pianificato alle :timestamp',
+        'logged'       => '{0} There are no schedules, good work.|You have logged one schedule.|You have reported <strong>:count</strong> schedules.',
+        'scheduled_at' => 'Scheduled at :timestamp',
         'add'          => [
-            'title'   => 'Aggiungi Manutenzione programmata',
-            'success' => 'Pianificazione aggiunta.',
-            'failure' => 'Qualcosa è andato storto con la pianificazione.',
+            'title'   => 'Add Scheduled Maintenance',
+            'success' => 'Schedule added.',
+            'failure' => 'Something went wrong adding the schedule.',
         ],
         'edit' => [
-            'title'   => 'Modifica Manutenzione programmata',
-            'success' => 'La pianificazione è stata aggiornata.',
-            'failure' => 'Qualcosa è andato storto con la pianificazione.',
+            'title'   => 'Edit Scheduled Maintenance',
+            'success' => 'Schedule has been updated!',
+            'failure' => 'Something went wrong editing the schedule.',
         ],
         'delete' => [
-            'success' => 'La pianificazione è stata eliminate e non verrà visualizzata nella Status Page.',
-            'failure' => 'Non è stato possibile eliminare la pianificazione. Riprova.',
+            'success' => 'The schedule has been deleted and will not show on your status page.',
+            'failure' => 'The schedule could not be deleted. Please try again.',
         ],
     ],
 
     // Components
     'components' => [
-        'components'         => 'Componenti',
-        'component_statuses' => 'Stato componenti',
-        'listed_group'       => 'Raggruppati sotto :name',
+        'components'         => 'Components',
+        'component_statuses' => 'Component Statuses',
+        'listed_group'       => 'Grouped under :name',
         'add'                => [
-            'title'   => 'Aggiungi un componente',
-            'message' => 'Dovresti aggiungere un componente.',
-            'success' => 'Componente creato.',
-            'failure' => 'Qualcosa è andato storto con il componente.',
+            'title'   => 'Add a Component',
+            'message' => 'You should add a component.',
+            'success' => 'Component created.',
+            'failure' => 'Something went wrong with the component.',
         ],
         'edit' => [
-            'title'   => 'Modifica un componente',
-            'success' => 'Componente aggiornato.',
-            'failure' => 'Qualcosa è andato storto con il componente.',
+            'title'   => 'Edit a Component',
+            'success' => 'Component updated.',
+            'failure' => 'Something went wrong with the component.',
+        ],
+        'delete' => [
+            'success' => 'Component deleted.',
+            'failure' => 'The Component could not be deleted. Please try again.',
         ],
 
         // Component groups
         'groups' => [
-            'groups'        => 'Gruppo di componenti|Gruppi di componenti',
-            'no_components' => 'Dovresti aggiungere un gruppo di componenti.',
+            'groups'        => 'Component group|Component groups',
+            'no_components' => 'You should add a component group.',
             'add'           => [
-                'title'   => 'Aggiungi un gruppo di componenti',
-                'success' => 'Gruppo di componenti aggiunto.',
-                'failure' => 'Qualcosa è andato storto con il componente.',
+                'title'   => 'Add a Component Group',
+                'success' => 'Component group added.',
+                'failure' => 'Something went wrong with the component group.',
             ],
             'edit' => [
-                'title'   => 'Modifica un gruppo di componenti',
-                'success' => 'Gruppo di componenti aggiornato.',
-                'failure' => 'Qualcosa è andato storto con il componente.',
+                'title'   => 'Edit a Component Group',
+                'success' => 'Component group updated.',
+                'failure' => 'Something went wrong with the component group.',
+            ],
+            'delete' => [
+                'success' => 'Component Group deleted.',
+                'failure' => 'The Component Group could not be deleted. Please try again.',
             ],
         ],
     ],
 
     // Metrics
     'metrics' => [
-        'metrics' => 'Misurazioni',
+        'metrics' => 'Metriche',
         'add'     => [
-            'title'   => 'Crea una misurazione',
-            'success' => 'Misurazione creata.',
-            'failure' => 'Qualcosa è andato storto con la misurazione.',
+            'title'   => 'Create a Metric',
+            'message' => 'You should add a Metric.',
+            'success' => 'Metrica creata.',
+            'failure' => 'Something went wrong with the metric.',
         ],
         'edit' => [
-            'title'   => 'Modifica una misurazione',
-            'success' => 'Misurazione aggiornata.',
-            'failure' => 'Qualcosa è andato storto con la misurazione.',
+            'title'   => 'Edit a Metric',
+            'success' => 'Metrica aggiornata.',
+            'failure' => 'Something went wrong with the metric.',
+        ],
+        'delete' => [
+            'success' => 'The metric has been deleted and will not show on your status page.',
+            'failure' => 'The metric could not be deleted. Please try again.',
         ],
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'  => 'Iscritti',
-        'description'  => 'Gli iscritti riceveranno aggiornamenti via email quando verranno creati gli incidenti.',
-        'verified'     => 'Verificato',
+        'subscribers'  => 'Subscribers',
+        'description'  => 'Subscribers will receive email updates when incidents are created.',
+        'verified'     => 'Verified',
         'not_verified' => 'Non Verificato',
         'add'          => [
-            'title'   => 'Aggiungi un nuovo iscritto',
-            'success' => 'Iscrizione aggiunta.',
-            'failure' => 'Qualcosa è andato storto con il componente.',
+            'title'   => 'Add a New Subscriber',
+            'success' => 'Subscriber added.',
+            'failure' => 'Something went wrong with the component.',
         ],
         'edit' => [
-            'title'   => 'Aggiorna iscritto',
-            'success' => 'Iscrizione aggiornata.',
-            'failure' => 'Qualcosa è andato storto durante l\'aggiornamento.',
+            'title'   => 'Update Subscriber',
+            'success' => 'Subscriber updated.',
+            'failure' => 'Something went wrong when updating.',
         ],
     ],
 
@@ -138,26 +161,35 @@ return [
         'team'        => 'Team',
         'member'      => 'Membro',
         'profile'     => 'Profilo',
-        'description' => 'I membri di un Team saranno in grado di aggiungere e modificare componenti e incidenti.',
+        'description' => 'Team Members will be able to add, modify &amp; edit components and incidents.',
         'add'         => [
-            'title'   => 'Aggiungi un nuovo membro del Team',
-            'success' => 'Membro del Team aggiunto.',
-            'failure' => 'Qualcosa è andato storto con il componente.',
+            'title'   => 'Add a New Team Member',
+            'success' => 'Team member added.',
+            'failure' => 'Something went wrong with the user.',
         ],
         'edit' => [
-            'title'   => 'Aggiorna profilo',
-            'success' => 'Profilo aggiornato.',
-            'failure' => 'Qualcosa è andato storto durante l\'aggiornamento.',
+            'title'   => 'Update Profile',
+            'success' => 'Profile updated.',
+            'failure' => 'Something went wrong when updating.',
+        ],
+        'delete' => [
+            'success' => 'User deleted.',
+            'failure' => 'Something went wrong when deleting this user.',
+        ],
+        'invite' => [
+            'title'   => 'Invite a New Team Member',
+            'success' => 'The users invited.',
+            'failure' => 'Something went wrong with the invite.',
         ],
     ],
 
     // Settings
     'settings' => [
-        'settings'  => 'Impostazioni',
+        'settings'  => 'Settings',
         'app-setup' => [
-            'app-setup'   => 'Configurazione applicazione',
-            'images-only' => 'Possono essere caricate solo immagini.',
-            'too-big'     => 'Il file che hai caricato è troppo grande. Carica un\'immagine più piccola di :size',
+            'app-setup'   => 'Application Setup',
+            'images-only' => 'Only images may be uploaded.',
+            'too-big'     => 'The file you uploaded is too big. Upload an image smaller than :size',
         ],
         'analytics' => [
             'analytics' => 'Analytics',
@@ -166,53 +198,53 @@ return [
             'localization' => 'Localization',
         ],
         'security' => [
-            'security'   => 'Sicurezza',
-            'two-factor' => 'Utenti senza verifica in 2 passaggi',
+            'security'   => 'Security',
+            'two-factor' => 'Users without two-factor authentication',
         ],
         'stylesheet' => [
-            'stylesheet' => 'Foglio di stile',
+            'stylesheet' => 'Stylesheet',
         ],
         'theme' => [
-            'theme' => 'Tema',
+            'theme' => 'Theme',
         ],
         'edit' => [
-            'success' => 'Impostazioni salvate.',
-            'failure' => 'Le impostazioni non possono essere salvate.',
+            'success' => 'Settings saved.',
+            'failure' => 'Settings could not be saved.',
         ],
     ],
 
     // Login
     'login' => [
-        'login'      => 'Accedi',
-        'logged_in'  => 'Sei loggato.',
-        'welcome'    => 'Ben tornato!',
-        'two-factor' => 'Inserisci il tuo token.',
+        'login'      => 'Login',
+        'logged_in'  => 'You\'re logged in.',
+        'welcome'    => 'Welcome Back!',
+        'two-factor' => 'Please enter your token.',
     ],
 
     // Sidebar footer
-    'help'        => 'Aiuto',
+    'help'        => 'Help',
     'status_page' => 'Status Page',
-    'logout'      => 'Esci',
+    'logout'      => 'Logout',
 
     // Notifications
     'notifications' => [
-        'notifications' => 'Notifiche',
-        'awesome'       => 'Fantastico.',
+        'notifications' => 'Notifications',
+        'awesome'       => 'Awesome.',
         'whoops'        => 'Whoops.',
     ],
 
     // Welcome modal
     'welcome' => [
-        'welcome' => 'Benvenuto in Cachet',
-        'message' => 'La tua Status Page è quasi pronta! Potresti voler configurare queste impostazioni aggiuntive',
-        'close'   => 'Vai alla dashboard',
+        'welcome' => 'Welcome to your status page!',
+        'message' => 'Your status page is almost ready! You might want to configure these extra settings',
+        'close'   => 'Just go straight to my dashboard',
         'steps'   => [
-            'component'  => 'Crea componenti',
-            'incident'   => 'Crea incidenti',
-            'customize'  => 'Personalizza',
-            'team'       => 'Aggiungi utenti',
-            'api'        => 'Genera un API Token',
-            'two-factor' => 'Verifica in 2 passaggi',
+            'component'  => 'Create components',
+            'incident'   => 'Create incidents',
+            'customize'  => 'Customize',
+            'team'       => 'Add users',
+            'api'        => 'Generate API token',
+            'two-factor' => 'Two Factor Authentication',
         ],
     ],
 

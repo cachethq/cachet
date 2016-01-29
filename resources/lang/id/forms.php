@@ -31,7 +31,7 @@ return [
         'email'         => 'Email',
         'password'      => 'Password',
         '2fauth'        => 'Kode Otentikasi',
-        'invalid'       => 'Email atau password tidak benar',
+        'invalid'       => 'Invalid username or password',
         'invalid-token' => 'Token tidak benar',
         'cookies'       => 'Mohon aktifkan cookies untuk login.',
     ],
@@ -68,7 +68,8 @@ return [
         'enabled'     => 'Component enabled?',
 
         'groups' => [
-            'name' => 'Nama',
+            'name'      => 'Nama',
+            'collapsed' => 'Collapse the group by default?',
         ],
     ],
 
@@ -83,6 +84,8 @@ return [
         'calc_type'        => 'Kalkulasi metrik',
         'type_sum'         => 'Jumlah',
         'type_avg'         => 'Rata-rata',
+        'places'           => 'Digit Desimal',
+        'default_view'     => 'Default View',
 
         'points' => [
             'value' => 'Nilai',
@@ -99,7 +102,7 @@ return [
             'about-this-page'        => 'Tentang halaman ini',
             'days-of-incidents'      => 'Berapa hari insiden akan ditampilkan?',
             'banner'                 => 'Gambar Banner',
-            'banner-help'            => 'Disarankan gambar yang anda unggah tidak lebih lebar dari 930px.',
+            'banner-help'            => "Disarankan gambar yang anda unggah tidak lebih lebar dari 930px.",
             'subscribers'            => 'Bolehkan pengunjung mendaftar notifikasi email?',
         ],
         'analytics' => [
@@ -123,10 +126,19 @@ return [
         ],
         'theme' => [
             'background-color'        => 'Warna Latar',
-            'text-color'              => 'Warna Teks',
+            'background-fills'        => 'Isian latar belakang (Komponen, Insiden, Footer)',
             'banner-background-color' => 'Banner Background Color',
             'banner-padding'          => 'Banner Padding',
             'fullwidth-banner'        => 'Enable fullwidth banner?',
+            'text-color'              => 'Warna Teks',
+            'dashboard-login'         => 'Tampilkan tombol dashboard di footer?',
+            'reds'                    => 'Merah (Digunakan jika ada kesalahan)',
+            'blues'                   => 'Biru (Digunakan jika ada informasi)',
+            'greens'                  => 'Hijau (Digunakan saat operasi berhasil)',
+            'yellows'                 => 'Kuning (Digunakan sebagai peringatan)',
+            'oranges'                 => 'Jingga (Digunakan sebagai pemberitahuan)',
+            'metrics'                 => 'Isian metrik',
+            'links'                   => 'Tautan',
         ],
     ],
 
@@ -137,7 +149,12 @@ return [
         'api-token'      => 'Token API',
         'api-token-help' => 'Pembuatan ulang token API akan bermasalah jika sudah ada aplikasi lain yang mengakses Cachet.',
         'gravatar'       => 'Change your profile picture at Gravatar.',
-        '2fa'            => [
+        'user_level'     => 'Tingkatan pengguna',
+        'levels'         => [
+            'admin' => 'Admin',
+            'user'  => 'User',
+        ],
+        '2fa' => [
             'help' => 'Mengaktifkan otentikasi dua faktor akan memperkuat keamanan akun anda. Anda perlu mengunduh <a href="https://support.google.com/accounts/answer/1066447?hl=en">Google Authenticator</a> atau app sejenis di gadget anda. Saat login anda akan ditanyakan untuk mengisi token yang dibuat oleh app tersebut.',
         ],
         'team' => [
@@ -156,6 +173,8 @@ return [
     'submit' => 'Kirim',
     'cancel' => 'Batalkan',
     'remove' => 'Buang',
+    'invite' => 'Undang',
+    'signup' => 'Daftar',
 
     // Other
     'optional' => '* Tidak wajib',
