@@ -32,8 +32,9 @@ $factory->define(Component::class, function ($faker) {
 
 $factory->define(ComponentGroup::class, function ($faker) {
     return [
-        'name'  => $faker->words(2, true),
-        'order' => 0,
+        'name'      => $faker->words(2, true),
+        'order'     => 0,
+        'collapsed' => false,
     ];
 });
 

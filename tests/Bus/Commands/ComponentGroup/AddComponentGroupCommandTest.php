@@ -28,9 +28,9 @@ class AddComponentGroupCommandTest extends AbstractTestCase
 
     protected function getObjectAndParams()
     {
-        $params = ['name' => 'Test', 'order' => 0];
+        $params = ['name' => 'Test', 'order' => 0, 'collapsed' => true];
 
-        $object = new AddComponentGroupCommand($params['name'], $params['order']);
+        $object = new AddComponentGroupCommand($params['name'], $params['order'], $params['collapsed']);
 
         return compact('params', 'object');
     }

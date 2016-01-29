@@ -68,7 +68,8 @@ return [
         'enabled'     => 'Component enabled?',
 
         'groups' => [
-            'name' => 'Name',
+            'name'      => 'Name',
+            'collapsed' => 'Collapse the group by default?',
         ],
     ],
 

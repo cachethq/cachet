@@ -56,10 +56,11 @@ class ComponentGroupTest extends AbstractApiTestCase
         $this->beUser();
 
         $this->post('/api/v1/components/groups', [
-            'name'  => 'Foo',
-            'order' => 1,
+            'name'      => 'Foo',
+            'order'     => 1,
+            'collapsed' => true,
         ]);
-        $this->seeJson(['name' => 'Foo']);
+        $this->seeJson(['name' => 'Foo', 'order' => 1, 'collapsed' => true]);
         $this->assertResponseOk();
     }
 

@@ -276,7 +276,8 @@ class ComponentController extends Controller
         try {
             $group = dispatch(new AddComponentGroupCommand(
                 Binput::get('name'),
-                Binput::get('order', 0)
+                Binput::get('order', 0),
+                Binput::get('collapsed')
             ));
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.components.groups.add')
@@ -302,7 +303,8 @@ class ComponentController extends Controller
             $group = dispatch(new UpdateComponentGroupCommand(
                 $group,
                 Binput::get('name'),
-                Binput::get('order', 0)
+                Binput::get('order', 0),
+                Binput::get('collapsed')
             ));
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.components.groups.edit', ['id' => $group->id])
