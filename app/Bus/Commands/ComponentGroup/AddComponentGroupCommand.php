@@ -28,13 +28,21 @@ final class AddComponentGroupCommand
     public $order;
 
     /**
+     * Is the component group collapsed?
+     *
+     * @var bool
+     */
+    public $collapsed;
+
+    /**
      * The validation rules.
      *
      * @var string[]
      */
     public $rules = [
-        'name'  => 'required|string',
-        'order' => 'int',
+        'name'      => 'required|string',
+        'order'     => 'int',
+        'collapsed' => 'bool',
     ];
 
     /**
@@ -42,12 +50,14 @@ final class AddComponentGroupCommand
      *
      * @param string $name
      * @param int    $order
+     * @param bool   $collapsed
      *
      * @return void
      */
-    public function __construct($name, $order)
+    public function __construct($name, $order, $collapsed)
     {
         $this->name = $name;
         $this->order = (int) $order;
+        $this->collapsed = $collapsed;
     }
 }

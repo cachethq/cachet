@@ -26,8 +26,9 @@ class ComponentGroup extends Model implements HasPresenter
      * @var string[]
      */
     protected $casts = [
-        'name'  => 'string',
-        'order' => 'int',
+        'name'      => 'string',
+        'order'     => 'int',
+        'collapsed' => 'bool',
     ];
 
     /**
@@ -35,7 +36,7 @@ class ComponentGroup extends Model implements HasPresenter
      *
      * @var string[]
      */
-    protected $fillable = ['name', 'order'];
+    protected $fillable = ['name', 'order', 'collapsed'];
 
     /**
      * The validation rules.
@@ -43,8 +44,9 @@ class ComponentGroup extends Model implements HasPresenter
      * @var string[]
      */
     public $rules = [
-        'name'  => 'required|string',
-        'order' => 'int',
+        'name'      => 'required|string',
+        'order'     => 'int',
+        'collapsed' => 'bool',
     ];
 
     /**

@@ -37,13 +37,21 @@ final class UpdateComponentGroupCommand
     public $order;
 
     /**
+     * Is the component group collapsed?
+     *
+     * @var bool
+     */
+    public $collapsed;
+
+    /**
      * The validation rules.
      *
      * @var string[]
      */
     public $rules = [
-        'name'  => 'string',
-        'order' => 'int',
+        'name'      => 'string',
+        'order'     => 'int',
+        'collapsed' => 'bool',
     ];
 
     /**
@@ -52,13 +60,15 @@ final class UpdateComponentGroupCommand
      * @param \CachetHQ\Cachet\Models\ComponentGroup $group
      * @param string                                 $name
      * @param int                                    $order
+     * @param bool                                   $collapsed
      *
      * @return void
      */
-    public function __construct(ComponentGroup $group, $name, $order)
+    public function __construct(ComponentGroup $group, $name, $order, $collapsed)
     {
         $this->group = $group;
         $this->name = $name;
         $this->order = (int) $order;
+        $this->collapsed = $collapsed;
     }
 }

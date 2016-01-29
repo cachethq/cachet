@@ -26,13 +26,30 @@ class UpdateComponentGroupCommandHandler
     public function handle(UpdateComponentGroupCommand $command)
     {
         $group = $command->group;
-        $group->update([
-            'name'  => $command->name,
-            'order' => $command->order,
-        ]);
+        $group->update($this->filter($command));
 
         event(new ComponentGroupWasUpdatedEvent($group));
 
         return $group;
+    }
+
+    /**
+     * Filter the command data.
+     *
+     * @param \CachetHQ\Cachet\Bus\Commands\ComponentGroup\UpdateComponentGroupCommand $command
+     *
+     * @return array
+     */
+    protected function filter(UpdateComponentGroupCommand $command)
+    {
+        $params = [
+            'name'      => $command->name,
+            'order'     => $command->order,
+            'collapsed' => $command->collapsed,
+        ];
+
+        return array_filter($params, function ($val) {
+            return $val !== null;
+        });
     }
 }

@@ -18,8 +18,15 @@
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <fieldset>
                         <div class="form-group">
-                            <label for="incident-name">{{ trans('forms.components.groups.name') }}</label>
+                            <label>{{ trans('forms.components.groups.name') }}</label>
                             <input type="text" class="form-control" name="name" id="group-name" value="{{ $group->name }}" required>
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                <input type="hidden" value="0" name="collapsed">
+                                <input type="checkbox" value="1" name="collapsed" {{ $group->collapsed ? "checked" : null }}>
+                                {{ trans('forms.components.groups.collapsed') }}
+                            </label>
                         </div>
                     </fieldset>
 
