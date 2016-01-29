@@ -9,7 +9,6 @@
  * file that was distributed with this source code.
  */
 
-use CachetHQ\Cachet\Facades\Setting;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Request;
 use Jenssegers\Date\Date;
@@ -47,7 +46,7 @@ if (!function_exists('formatted_date')) {
      */
     function formatted_date($date)
     {
-        $dateFormat = Setting::get('date_format', 'jS F Y');
+        $dateFormat = Config::get('setting.date_format', 'jS F Y');
 
         return (new Date($date))->format($dateFormat);
     }
@@ -61,7 +60,7 @@ if (!function_exists('subscribers_enabled')) {
      */
     function subscribers_enabled()
     {
-        $isEnabled = Setting::get('enable_subscribers', false);
+        $isEnabled = Config::get('setting.enable_subscribers', false);
         $mailAddress = Config::get('mail.from.address', false);
         $mailFrom = Config::get('mail.from.name', false);
 

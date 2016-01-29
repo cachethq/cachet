@@ -23,11 +23,11 @@ class Repository
     protected $model;
 
     /**
-     * Cache of the settings.
+     * Is the config state stale?
      *
-     * @var array|null
+     * @var bool
      */
-    protected $settings;
+    protected $stale = false;
 
     /**
      * Create a new settings service instance.
@@ -44,26 +44,15 @@ class Repository
     /**
      * Returns a setting from the database.
      *
-     * @param string      $name
-     * @param string|null $default
-     *
-     * @return string|null
+     * @return array
      */
-    public function get($name, $default = null)
+    public function all()
     {
-        if (!$this->settings) {
-            $this->settings = $this->model->all()->pluck('value', 'name');
-        }
-
-        if (!empty($this->settings[$name])) {
-            return $this->settings[$name];
-        }
-
-        return $default;
+        return $this->model->all(['name', 'value'])->pluck('value', 'name')->toArray();
     }
 
     /**
-     * Creates or updates a setting value.
+     * Updates a setting value.
      *
      * @param string      $name
      * @param string|null $value
@@ -72,18 +61,22 @@ class Repository
      */
     public function set($name, $value)
     {
+        $this->stale = true;
+
         if ($value === null) {
             $this->model->where('name', $name)->delete();
-
-            if ($this->settings && isset($this->settings[$name])) {
-                unset($this->settings[$name]);
-            }
         } else {
             $this->model->updateOrCreate(compact('name'), compact('value'));
-
-            if ($this->settings) {
-                $this->settings[$name] = $value;
-            }
         }
+    }
+
+    /**
+     * Is the config state stale?
+     *
+     * @return bool
+     */
+    public function stale()
+    {
+        return $this->stale;
     }
 }

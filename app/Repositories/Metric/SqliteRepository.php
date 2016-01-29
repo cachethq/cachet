@@ -11,9 +11,9 @@
 
 namespace CachetHQ\Cachet\Repositories\Metric;
 
-use CachetHQ\Cachet\Facades\Setting as SettingFacade;
 use CachetHQ\Cachet\Models\Metric;
 use DateInterval;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 use Jenssegers\Date\Date;
 
@@ -33,7 +33,7 @@ class SqliteRepository implements MetricInterface
      */
     public function __construct()
     {
-        $this->dateTimeZone = SettingFacade::get('app_timezone');
+        $this->dateTimeZone = Config::get('cachet.timezone');
     }
 
     /**

@@ -11,10 +11,10 @@
 
 namespace CachetHQ\Cachet\Composers;
 
-use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Repositories\Metric\MetricRepository;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\Config;
 
 class MetricsComposer
 {
@@ -46,7 +46,7 @@ class MetricsComposer
     {
         $metrics = null;
         $metricData = [];
-        if ($displayMetrics = Setting::get('display_graphs')) {
+        if ($displayMetrics = Config::get('setting.display_graphs')) {
             $metrics = Metric::where('display_chart', 1)->orderBy('id')->get();
 
             $metrics->map(function ($metric) use (&$metricData) {

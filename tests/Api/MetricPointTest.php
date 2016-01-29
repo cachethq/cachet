@@ -88,16 +88,15 @@ class MetricPointTest extends AbstractApiTestCase
 
         $timezone = 'America/Mexico_City';
         $metric = factory('CachetHQ\Cachet\Models\Metric')->create();
-        $timestamp = Carbon::now()->timezone($timezone)->timestamp;
-        $datetime = Carbon::now()->toDateTimeString();
+        $datetime = Carbon::now()->timezone($timezone);
         $metricPoint = factory('CachetHQ\Cachet\Models\MetricPoint')->make([
             'metric_id' => $metric->id,
         ]);
         $postData = $metricPoint->toArray();
-        $postData['timestamp'] = $timestamp;
+        $postData['timestamp'] = $datetime->timestamp;
 
         $this->post("/api/v1/metrics/{$metric->id}/points", $postData, ['Time-Zone' => $timezone]);
-        $this->seeJson(['value' => $metricPoint->value, 'created_at' => $datetime]);
+        $this->seeJson(['value' => $metricPoint->value, 'created_at' => $datetime->toDateTimeString()]);
     }
 
     public function testPutMetricPoint()
