@@ -64,6 +64,24 @@ class IncidentTest extends AbstractApiTestCase
         $this->assertResponseOk();
     }
 
+    public function testPostIncidentWithComponentStatus()
+    {
+        $component = factory('CachetHQ\Cachet\Models\Component')->create();
+
+        $this->beUser();
+
+        $this->post('/api/v1/incidents', [
+            'name'             => 'Foo',
+            'message'          => 'Lorem ipsum dolor sit amet',
+            'status'           => 1,
+            'component_id'     => $component->id,
+            'component_status' => 1,
+            'visible'          => 1,
+        ]);
+        $this->seeJson(['name' => 'Foo']);
+        $this->assertResponseOk();
+    }
+
     public function testCreateIncidentWithTemplate()
     {
         $template = factory('CachetHQ\Cachet\Models\IncidentTemplate')->create();
