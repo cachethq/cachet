@@ -102,7 +102,7 @@ return [
             'about-this-page'        => 'Om',
             'days-of-incidents'      => 'Hvor mange dage skal der vises hændelser for?',
             'banner'                 => 'Banner Image',
-            'banner-help'            => "Det anbefales ikke at uploade billeder bredere end 930px.",
+            'banner-help'            => 'Det anbefales ikke at uploade billeder bredere end 930px.',
             'subscribers'            => 'Tillad at man kan tilmelde sig emailnotifikationer?',
         ],
         'analytics' => [
