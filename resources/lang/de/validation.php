@@ -45,10 +45,12 @@ return [
     'digits_between' => ':attribute muss zwischen :min und :max Stellen haben.',
     'email'          => ':attribute muss eine gültige E-Mail Adresse sein.',
     'exists'         => 'Der gewählte Wert für :attribute ist ungültig.',
+    'filled'         => ':attribute muss ausgefüllt sein.',
     'image'          => ':attribute muss ein Bild sein.',
     'in'             => 'Der gewählte Wert für :attribute ist ungültig.',
     'integer'        => ':attribute muss eine ganze Zahl sein.',
     'ip'             => ':attribute muss eine gültige IP-Adresse sein.',
+    'json'           => 'Das :attribut muss eine gültige JSON-Zeichenfolge sein.',
     'max'            => [
         'numeric' => ':attribute darf maximal :max sein.',
         'file'    => ':attribute darf maximal :max Kilobytes groß sein.',
@@ -80,9 +82,9 @@ return [
         'array'   => ':attribute muss :size Elemente beinhalten.',
     ],
     'string'   => ':attribute muss eine Zeichenfolge sein.',
+    'timezone' => ':attribute muss eine gültige Zeitzone sein.',
     'unique'   => ':attribute ist schon vergeben.',
     'url'      => 'Das Format von :attribute ist ungültig.',
-    'timezone' => ':attribute muss eine gültige Zeitzone sein.',
 
     /*
     |--------------------------------------------------------------------------

@@ -27,11 +27,11 @@ return [
 
     // Login form fields
     'login' => [
-        'login'         => 'Username or Email',
+        'login'         => 'crwdns651:0crwdne651:0',
         'email'         => 'crwdns217:0crwdne217:0',
         'password'      => 'crwdns381:0crwdne381:0',
         '2fauth'        => 'crwdns382:0crwdne382:0',
-        'invalid'       => 'crwdns383:0crwdne383:0',
+        'invalid'       => 'crwdns652:0crwdne652:0',
         'invalid-token' => 'crwdns384:0crwdne384:0',
         'cookies'       => 'crwdns480:0crwdne480:0',
     ],
@@ -52,6 +52,7 @@ return [
         'templates'          => [
             'name'     => 'crwdns389:0crwdne389:0',
             'template' => 'crwdns390:0crwdne390:0',
+            'twig'     => 'crwdns653:0crwdne653:0',
         ],
     ],
 
@@ -67,7 +68,8 @@ return [
         'enabled'     => 'crwdns587:0crwdne587:0',
 
         'groups' => [
-            'name' => 'crwdns397:0crwdne397:0',
+            'name'      => 'crwdns397:0crwdne397:0',
+            'collapsed' => 'crwdns654:0crwdne654:0',
         ],
     ],
 
@@ -83,6 +85,7 @@ return [
         'type_sum'         => 'crwdns476:0crwdne476:0',
         'type_avg'         => 'crwdns477:0crwdne477:0',
         'places'           => 'crwdns590:0crwdne590:0',
+        'default_view'     => 'crwdns655:0crwdne655:0',
 
         'points' => [
             'value' => 'crwdns471:0crwdne471:0',

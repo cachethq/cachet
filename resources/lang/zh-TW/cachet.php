@@ -13,10 +13,10 @@ return [
     // Components
     'components' => [
         'status' => [
-            1 => '正常運轉',
-            2 => '性能問題',
-            3 => '部分停運',
-            4 => '嚴重停轉',
+            1 => '正常',
+            2 => '效能問題',
+            3 => '部分停止運作',
+            4 => '停止運作',
         ],
     ],
 
@@ -24,16 +24,16 @@ return [
     'incidents' => [
         'none'          => '沒有已報告的事件。',
         'past'          => '過去的事件',
-        'previous_week' => '前壹周',
-        'next_week'     => '後壹周',
+        'previous_week' => '上一週',
+        'next_week'     => '下一週',
         'none'          => '沒有已報告的事件。',
-        'scheduled'     => '計劃維護',
-        'scheduled_at'  => '，計劃於 :timestamp',
+        'scheduled'     => '排程維護',
+        'scheduled_at'  => '，於:timestamp',
         'status'        => [
-            0 => '計劃中', // TODO: Hopefully remove this.
+            0 => '排程中的維護', // TODO: Hopefully remove this.
             1 => '調查中',
-            2 => '已確認',
-            3 => '觀察中',
+            2 => '已辨明',
+            3 => '警戒中',
             4 => '已修復',
         ],
     ],
@@ -46,8 +46,8 @@ return [
     ],
 
     'api' => [
-        'regenerate' => '重新生成 API 密鑰',
-        'revoke'     => '註銷 API 密鑰',
+        'regenerate' => '重新產生 API 金鑰',
+        'revoke'     => '撤銷 API 密鑰',
     ],
 
     // Metrics
@@ -55,37 +55,44 @@ return [
         'filter' => [
             'last_hour' => 'Last Hour',
             'hourly'    => '最近12小時',
-            'weekly'    => '周',
+            'weekly'    => '週',
             'monthly'   => '月',
         ],
     ],
 
     // Subscriber
     'subscriber' => [
-        'subscribe' => '訂閱最新的更新。',
+        'subscribe' => '訂閱最新的狀態更新。',
         'button'    => '訂閱',
         'email'     => [
-            'subscribe'          => '訂閱電子郵件更新。',
+            'subscribe'          => '訂閱 電子郵件 系統狀態更新。',
             'subscribed'         => '您已經訂閱電子郵件通知，請檢查您的電子郵件，確認您的訂閱。',
             'verified'           => '您的電子郵件訂閱已確認。謝謝！',
             'unsubscribe'        => '取消電子郵件訂閱。',
-            'unsubscribed'       => '您的電子郵件訂閱已被取消。',
+            'unsubscribed'       => '您的電子郵件訂閱已取消。',
             'failure'            => '郵件訂閱失敗。',
-            'already-subscribed' => '電子郵件 :email 已經訂閱，請勿重複訂閱。',
+            'already-subscribed' => 'Cannot subscribe :email because they\'re already subscribed.',
             'verify'             => [
-                'text'           => '請確認您的 :app_name 電子郵件訂閱。\\n:link\\n此致，:app_name',
+                'text'           => "請確認您的 :app_name 電子郵件訂閱。\n:link\n此致，:app_name",
                 'html-preheader' => '請確認您的 :app_name 狀態更新郵件訂閱。',
                 'html'           => '<p>請確認您的 :app_name 電子郵件訂閱。</p><p><a href=":link">:link</a></p><p>此致，:app_name</p>',
             ],
             'maintenance' => [
-                'text'           => '新的維護計劃已被安排在 :app_name 上。\\n此致，:app_name',
+                'text'           => "新的維護計劃已被安排在 :app_name 上。\n此致，:app_name",
                 'html-preheader' => '新的維護計劃已被安排在 :app_name 上。',
                 'html'           => '<p>新的維護計劃已被安排在 :app_name 上。</p><p>此致，:app_name</p>',
             ],
             'incident' => [
-                'text'           => ':app_name 有新事件報告。\\n此致，:app_name',
+                'text'           => ":app_name 有新事件報告。\n此致，:app_name",
                 'html-preheader' => ':app_name 有新事件報告。',
                 'html'           => '<p>:app_name 有新事件報告。</p><p>此致，:app_name</p>',
+            ],
+            'component' => [
+                'subject'        => 'Component Status Update',
+                'text'           => 'The component :component_name has seen a status change. The component is now at :component_human_status.\nThank you, :app_name',
+                'html-preheader' => 'Component Update from :app_name',
+                'html'           => '<p>The component :component_name has seen a status change. The component is now at :component_human_status.</p><p>Thank you, :app_name</p>',
+                'tooltip-title'  => 'Subscribe to notifications for :component_name.',
             ],
         ],
     ],
@@ -103,10 +110,24 @@ return [
     'signup' => [
         'title'    => '註冊',
         'username' => '用戶名',
-        'email'    => '郵箱',
+        'email'    => '電郵地址',
         'password' => '密碼',
         'success'  => '您的賬號已註冊成功。',
         'failure'  => '註冊失敗。',
+    ],
+
+    'system' => [
+        'update' => 'There is a newer version of Cachet available. You can learn how to update <a href="https://docs.cachethq.io/docs/updating-cachet">here</a>!',
+    ],
+
+    // Modal
+    'modal' => [
+        'close'     => 'Close',
+        'subscribe' => [
+            'title'  => 'Subscribe to component updates?',
+            'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll receive emails for this component too.',
+            'button' => '訂閱',
+        ],
     ],
 
     // Other
@@ -114,6 +135,6 @@ return [
     'about_this_site' => '關於此站點',
     'rss-feed'        => 'RSS 訂閱',
     'atom-feed'       => 'Atom 訂閱',
-    'feed'            => '狀態源',
+    'feed'            => 'Status 訂閱',
 
 ];

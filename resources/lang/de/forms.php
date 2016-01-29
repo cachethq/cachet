@@ -31,7 +31,7 @@ return [
         'email'         => 'E-Mail',
         'password'      => 'Passwort',
         '2fauth'        => 'Authentifizierungscode',
-        'invalid'       => 'E-Mail-Adresse oder Passwort ungültig',
+        'invalid'       => 'Invalid username or password',
         'invalid-token' => 'Token ist ungültig',
         'cookies'       => 'Sie müssen Cookies aktivieren um sich anzumelden.',
     ],
@@ -68,7 +68,8 @@ return [
         'enabled'     => 'Component enabled?',
 
         'groups' => [
-            'name' => 'Name',
+            'name'      => 'Name',
+            'collapsed' => 'Collapse the group by default?',
         ],
     ],
 
@@ -83,6 +84,8 @@ return [
         'calc_type'        => 'Berechnung der Metrik',
         'type_sum'         => 'Summe',
         'type_avg'         => 'Durchschnitt',
+        'places'           => 'Nachkommastellen',
+        'default_view'     => 'Default View',
 
         'points' => [
             'value' => 'Wert',
@@ -123,10 +126,19 @@ return [
         ],
         'theme' => [
             'background-color'        => 'Hintergrundfarbe',
-            'text-color'              => 'Schriftfarbe',
+            'background-fills'        => 'Hintergrunddateien (Komponenten, Vorfälle, Footer)',
             'banner-background-color' => 'Banner Background Color',
             'banner-padding'          => 'Banner Padding',
             'fullwidth-banner'        => 'Enable fullwidth banner?',
+            'text-color'              => 'Schriftfarbe',
+            'dashboard-login'         => 'Dashboard-Button im Footer anzeigen?',
+            'reds'                    => 'Rot (Genutzt für Fehler)',
+            'blues'                   => 'Blau (Genutzt für Informationen)',
+            'greens'                  => 'Grün (Genutzt für Erfolgreich)',
+            'yellows'                 => 'Gelb (Genutzt für Warnungen)',
+            'oranges'                 => 'Orange (Genutzt für Nachrichten)',
+            'metrics'                 => 'Kennzahlen-Füllung',
+            'links'                   => 'Links',
         ],
     ],
 
@@ -137,7 +149,12 @@ return [
         'api-token'      => 'API Token',
         'api-token-help' => 'Wenn sie ihren API-Token neu generieren, können bestehende Anwendungen nicht mehr auf Cachet zugreifen.',
         'gravatar'       => 'Change your profile picture at Gravatar.',
-        '2fa'            => [
+        'user_level'     => 'Benutzerebene',
+        'levels'         => [
+            'admin' => 'Admin',
+            'user'  => 'Benutzer',
+        ],
+        '2fa' => [
             'help' => 'Die Zwei-Faktor-Authentifizierung erhöht die Sicherheit Ihres Kontos. Sie benötigen <a href="https://support.google.com/accounts/answer/1066447?hl=en">Google Authenticator</a> oder eine ähnliche App auf Ihrem Mobilgerät. Beim Anmelden werden sie aufgefordert, einen Token einzugeben, der von der App generiert wird.',
         ],
         'team' => [
@@ -156,6 +173,8 @@ return [
     'submit' => 'Abschicken',
     'cancel' => 'Abbrechen',
     'remove' => 'Entfernen',
+    'invite' => 'Einladen',
+    'signup' => 'Registrieren',
 
     // Other
     'optional' => '* optional',

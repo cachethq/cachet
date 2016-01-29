@@ -73,20 +73,60 @@ return [
             'failure'            => 'Etwas ist mit dem Abonnement schief gelaufen.',
             'already-subscribed' => 'Cannot subscribe :email because they\'re already subscribed.',
             'verify'             => [
-                'text'           => 'Bitte bestätigen Sie Ihre E-Mail-Abonnement zu :app_name Status-Aktualisierungen.\\n:link\\nDanke, :app_name',
+                'text'           => "Bitte bestätigen Sie Ihre E-Mail-Abonnement zu :app_name Status-Aktualisierungen.\n:link\nDanke, :app_name",
                 'html-preheader' => 'Bitte bestätigen Sie Ihre E-Mail-Abonnement zu :app_name Status-Aktualisierungen.',
                 'html'           => '<p>Bestätigen Sie bitte Ihr E-Mail-Abonnement für :app_name Statusaktualisierungen.</p><p><a href=":link">:link</a></p><p>Danke, :app_name</p>',
             ],
             'maintenance' => [
-                'text'           => 'Neue Wartung wurde für :app_name geplant.\\nDanke, :app_name',
+                'text'           => "Neue Wartung wurde für :app_name geplant.\nDanke, :app_name",
                 'html-preheader' => 'Neue Wartung wurde für :app_name geplant.',
                 'html'           => '<p>Neue Wartung wurde für :app_name geplant.</p>',
             ],
             'incident' => [
-                'text'           => 'Ein neuer Vorfall wurde auf :app_name berichtet.\\nDanke, :app_name',
+                'text'           => "Ein neuer Vorfall wurde auf :app_name berichtet.\nDanke, :app_name",
                 'html-preheader' => 'Ein neuer Vorfall wurde über :app_name berichtet.',
                 'html'           => '<p>Ein neuer Vorfall wurde über :app_name berichtet.</p> <p>Danke, :app_name</p>',
             ],
+            'component' => [
+                'subject'        => 'Component Status Update',
+                'text'           => 'The component :component_name has seen a status change. The component is now at :component_human_status.\nThank you, :app_name',
+                'html-preheader' => 'Component Update from :app_name',
+                'html'           => '<p>The component :component_name has seen a status change. The component is now at :component_human_status.</p><p>Thank you, :app_name</p>',
+                'tooltip-title'  => 'Subscribe to notifications for :component_name.',
+            ],
+        ],
+    ],
+
+    'users' => [
+        'email' => [
+            'invite' => [
+                'text'           => "Du wurdest in das Team :app_name Status Seite eingeladen. Um dich zu registrieren klicke den Link.\n:link\nDanke, :app_name",
+                'html-preheader' => 'Du wurdest in das Team :app_name eingeladen.',
+                'html'           => '<p>Du wurdest in das Team :app_name Status Seite eingeladen. Um dich zu registrieren klicke den Link.</p><p><a href=":link">:link</a></p><p>Danke, :app_name</p>',
+            ],
+        ],
+    ],
+
+    'signup' => [
+        'title'    => 'Registrieren',
+        'username' => 'Benutzername',
+        'email'    => 'E-Mail',
+        'password' => 'Passwort',
+        'success'  => 'Ihr Konto wurde erfolgreich erstellt.',
+        'failure'  => 'Mit der Registrierung ist etwas schief gelaufen.',
+    ],
+
+    'system' => [
+        'update' => 'There is a newer version of Cachet available. You can learn how to update <a href="https://docs.cachethq.io/docs/updating-cachet">here</a>!',
+    ],
+
+    // Modal
+    'modal' => [
+        'close'     => 'Close',
+        'subscribe' => [
+            'title'  => 'Subscribe to component updates?',
+            'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll receive emails for this component too.',
+            'button' => 'Abonnieren',
         ],
     ],
 

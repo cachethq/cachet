@@ -11,13 +11,13 @@
 
 return [
     'setup'             => 'Installazione',
-    'title'             => 'Installazione Cachet',
-    'service_details'   => 'Dettagli Servizio',
-    'env_setup'         => 'Installazione Environment',
-    'status_page_setup' => 'Installazione Status Page',
-    'show_support'      => 'Mostrare il supporto per Cachet?',
+    'title'             => 'Installa Cachet',
+    'service_details'   => 'Dettagli del Servizio',
+    'env_setup'         => 'Configurazione dell\'Ambiente',
+    'status_page_setup' => 'Installazione della Pagina di Stato',
+    'show_support'      => 'Mostrare supporto per Cachet?',
     'admin_account'     => 'Account Amministratore',
     'complete_setup'    => 'Installazione Completata',
     'completed'         => 'Cachet è stato configurato con successo!',
-    'finish_setup'      => 'Vai alla dashboard',
+    'finish_setup'      => 'Vai alla bacheca',
 ];

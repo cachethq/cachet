@@ -30,12 +30,17 @@ return [
             'success' => 'crwdns312:0crwdne312:0',
             'failure' => 'crwdns313:0crwdne313:0',
         ],
+        'delete' => [
+            'success' => 'crwdns637:0crwdne637:0',
+            'failure' => 'crwdns638:0crwdne638:0',
+        ],
 
         // Incident templates
         'templates' => [
             'title' => 'crwdns314:0crwdne314:0',
             'add'   => [
                 'title'   => 'crwdns566:0crwdne566:0',
+                'message' => 'crwdns639:0crwdne639:0',
                 'success' => 'crwdns316:0crwdne316:0',
                 'failure' => 'crwdns317:0crwdne317:0',
             ],
@@ -44,12 +49,17 @@ return [
                 'success' => 'crwdns319:0crwdne319:0',
                 'failure' => 'crwdns320:0crwdne320:0',
             ],
+            'delete' => [
+                'success' => 'crwdns640:0crwdne640:0',
+                'failure' => 'crwdns641:0crwdne641:0',
+            ],
         ],
     ],
 
     // Incident Maintenance
     'schedule' => [
         'schedule'     => 'crwdns445:0crwdne445:0',
+        'logged'       => 'crwdns642:0{0}crwdne642:0',
         'scheduled_at' => 'crwdns446:0crwdne446:0',
         'add'          => [
             'title'   => 'crwdns447:0crwdne447:0',
@@ -83,6 +93,10 @@ return [
             'success' => 'crwdns327:0crwdne327:0',
             'failure' => 'crwdns328:0crwdne328:0',
         ],
+        'delete' => [
+            'success' => 'crwdns643:0crwdne643:0',
+            'failure' => 'crwdns644:0crwdne644:0',
+        ],
 
         // Component groups
         'groups' => [
@@ -98,6 +112,10 @@ return [
                 'success' => 'crwdns456:0crwdne456:0',
                 'failure' => 'crwdns457:0crwdne457:0',
             ],
+            'delete' => [
+                'success' => 'crwdns645:0crwdne645:0',
+                'failure' => 'crwdns646:0crwdne646:0',
+            ],
         ],
     ],
 
@@ -106,6 +124,7 @@ return [
         'metrics' => 'crwdns178:0crwdne178:0',
         'add'     => [
             'title'   => 'crwdns572:0crwdne572:0',
+            'message' => 'crwdns647:0crwdne647:0',
             'success' => 'crwdns459:0crwdne459:0',
             'failure' => 'crwdns460:0crwdne460:0',
         ],
@@ -113,6 +132,10 @@ return [
             'title'   => 'crwdns573:0crwdne573:0',
             'success' => 'crwdns462:0crwdne462:0',
             'failure' => 'crwdns463:0crwdne463:0',
+        ],
+        'delete' => [
+            'success' => 'crwdns648:0crwdne648:0',
+            'failure' => 'crwdns649:0crwdne649:0',
         ],
     ],
     // Subscribers
@@ -212,7 +235,7 @@ return [
 
     // Welcome modal
     'welcome' => [
-        'welcome' => 'crwdns358:0crwdne358:0',
+        'welcome' => 'crwdns650:0crwdne650:0',
         'message' => 'crwdns359:0crwdne359:0',
         'close'   => 'crwdns360:0crwdne360:0',
         'steps'   => [

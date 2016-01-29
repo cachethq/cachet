@@ -10,14 +10,14 @@
  */
 
 return [
-    'setup'             => '安装设置',
-    'title'             => '安装 Cachet',
-    'service_details'   => '服务细节',
+    'setup'             => '安裝',
+    'title'             => '安裝 Cachet',
+    'service_details'   => '服務詳細信息',
     'env_setup'         => '环境设置',
-    'status_page_setup' => '状态页面设置',
+    'status_page_setup' => '設置狀態頁面',
     'show_support'      => '您想支持Cachet么?',
-    'admin_account'     => '管理员帐户',
-    'complete_setup'    => '设置完成',
-    'completed'         => 'Cachet已成功配置！',
-    'finish_setup'      => '前往控制面板',
+    'admin_account'     => '管理員帳戶',
+    'complete_setup'    => '完成安裝',
+    'completed'         => '成功安裝 Cachet ！',
+    'finish_setup'      => '前往儀表板',
 ];

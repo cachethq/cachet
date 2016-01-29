@@ -30,12 +30,17 @@ return [
             'success' => 'Insiden sudah diperbarui.',
             'failure' => 'Ada masalah dengan insiden ini.',
         ],
+        'delete' => [
+            'success' => 'The incident has been deleted and will not show on your status page.',
+            'failure' => 'The incident could not be deleted. Please try again.',
+        ],
 
         // Incident templates
         'templates' => [
             'title' => 'Template Insiden',
             'add'   => [
                 'title'   => 'Buat template insiden',
+                'message' => 'You should add an Incident Template.',
                 'success' => 'Template sudah dibuat.',
                 'failure' => 'Ada masalah dengan template insiden ini.',
             ],
@@ -44,12 +49,17 @@ return [
                 'success' => 'Template sudah diperbarui!',
                 'failure' => 'Ada masalah dengan template insiden ini',
             ],
+            'delete' => [
+                'success' => 'The tmplate has been deleted.',
+                'failure' => 'The template could not be deleted. Please try again.',
+            ],
         ],
     ],
 
     // Incident Maintenance
     'schedule' => [
         'schedule'     => 'Jadwal Pemeliharaan',
+        'logged'       => '{0} There are no schedules, good work.|You have logged one schedule.|You have reported <strong>:count</strong> schedules.',
         'scheduled_at' => 'Dijadwalkan pada :timestamp',
         'add'          => [
             'title'   => 'Tambahkan Jadwal Pemeliharaan',
@@ -83,6 +93,10 @@ return [
             'success' => 'Komponen sudah diperbarui.',
             'failure' => 'Ada masalah dengan komponen ini.',
         ],
+        'delete' => [
+            'success' => 'Component deleted.',
+            'failure' => 'The Component could not be deleted. Please try again.',
+        ],
 
         // Component groups
         'groups' => [
@@ -98,6 +112,10 @@ return [
                 'success' => 'Grup komponen sudah diperbarui.',
                 'failure' => 'Ada masalah dengan grup komponen ini.',
             ],
+            'delete' => [
+                'success' => 'Component Group deleted.',
+                'failure' => 'The Component Group could not be deleted. Please try again.',
+            ],
         ],
     ],
 
@@ -106,6 +124,7 @@ return [
         'metrics' => 'Metrik',
         'add'     => [
             'title'   => 'Buat metrik',
+            'message' => 'You should add a Metric.',
             'success' => 'Metrik sudah dibuat.',
             'failure' => 'Ada masalah dengan metrik ini.',
         ],
@@ -114,22 +133,26 @@ return [
             'success' => 'Metrik sudah diperbarui.',
             'failure' => 'Ada masalah dengan metrik ini.',
         ],
+        'delete' => [
+            'success' => 'The metric has been deleted and will not show on your status page.',
+            'failure' => 'The metric could not be deleted. Please try again.',
+        ],
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'  => '',
-        'description'  => '',
-        'verified'     => '',
-        'not_verified' => '',
+        'subscribers'  => 'Berlangganan',
+        'description'  => 'Pelanggan email akan menerima update ketika insiden dibuat.',
+        'verified'     => 'Terverifikasi',
+        'not_verified' => 'Belum Diverifikasi',
         'add'          => [
-            'title'   => '',
-            'success' => '',
-            'failure' => '',
+            'title'   => 'Tambah Pelanggan Baru',
+            'success' => 'Pelanggan sudah ditambahkan.',
+            'failure' => 'Ada masalah dengan komponen ini.',
         ],
         'edit' => [
-            'title'   => '',
-            'success' => '',
-            'failure' => '',
+            'title'   => 'Perbarui Pelanggan',
+            'success' => 'Pelanggan sudah diupdate.',
+            'failure' => 'Ada masalah saat memperbarui.',
         ],
     ],
 
@@ -150,8 +173,13 @@ return [
             'failure' => 'Ada masalah saat memperbarui.',
         ],
         'delete' => [
-            'success' => '',
-            'failure' => '',
+            'success' => 'Pengguna sudah dihapus.',
+            'failure' => 'Ada yang tidak beres saat menghapus pengguna ini.',
+        ],
+        'invite' => [
+            'title'   => 'Undang Anggota Tim Baru',
+            'success' => 'Pengguna sudah diundang.',
+            'failure' => 'Ada masalah dengan sistem undangan.',
         ],
     ],
 
@@ -207,7 +235,7 @@ return [
 
     // Welcome modal
     'welcome' => [
-        'welcome' => 'Selamat Datang di Cachet',
+        'welcome' => 'Welcome to your status page!',
         'message' => 'Halaman status anda hampir siap! Anda masih perlu mengkonfigurasi beberapa pengaturan',
         'close'   => 'Langsung ke dashboard saja',
         'steps'   => [

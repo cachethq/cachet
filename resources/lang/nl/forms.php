@@ -21,7 +21,7 @@ return [
         'site_timezone'    => 'Selecteer uw tijdzone',
         'site_locale'      => 'Selecteer uw taal',
         'enable_google2fa' => 'Schakel Google twee factor authenticatie in',
-        'cache_driver'     => '',
+        'cache_driver'     => 'Cache Driver',
         'session_driver'   => 'Sessie Driver',
     ],
 
@@ -31,7 +31,7 @@ return [
         'email'         => 'E-mail',
         'password'      => 'Wachtwoord',
         '2fauth'        => 'Authenticatie Code',
-        'invalid'       => 'Ongeldig e-mailadres of wachtwoord',
+        'invalid'       => 'Invalid username or password',
         'invalid-token' => 'Ongeldig token',
         'cookies'       => 'U moet cookies inschakelen om in te loggen.',
     ],
@@ -45,10 +45,10 @@ return [
         'message-help'       => 'U kan ook gebruik maken van Markdown.',
         'scheduled_at'       => 'Voor wanneer is het onderhoud gepland?',
         'incident_time'      => 'Wanneer heeft dit incident plaatsgevonden?',
-        'notify_subscribers' => 'Houd abonnees op de hoogte',
+        'notify_subscribers' => 'Notify Subscribers?',
         'visibility'         => 'Incident Zichtbaarheid',
         'public'             => 'Zichtbaar voor publiek',
-        'logged_in_only'     => 'Alleen zichtbaar voor ingelogde gebruikers',
+        'logged_in_only'     => 'Only visible to logged in users',
         'templates'          => [
             'name'     => 'Naam',
             'template' => 'Sjabloon',
@@ -68,7 +68,8 @@ return [
         'enabled'     => 'Component enabled?',
 
         'groups' => [
-            'name' => 'Naam',
+            'name'      => 'Naam',
+            'collapsed' => 'Collapse the group by default?',
         ],
     ],
 
@@ -79,10 +80,12 @@ return [
         'description'      => 'Beschrijving',
         'description-help' => 'Je mag ook Markdown gebruiken.',
         'display-chart'    => 'Grafiek tonen op statuspagina?',
-        'default-value'    => 'Standaardwaarde',
-        'calc_type'        => 'Berekening van metingen',
+        'default-value'    => 'Default Value',
+        'calc_type'        => 'Calculation of Metrics',
         'type_sum'         => 'Som',
         'type_avg'         => 'Gemiddelde',
+        'places'           => 'Decimal Places',
+        'default_view'     => 'Default View',
 
         'points' => [
             'value' => 'Waarde',
@@ -103,19 +106,19 @@ return [
             'subscribers'            => 'Bezoekers toestaan om te abonneren op e-mail notificaties?',
         ],
         'analytics' => [
-            'analytics_google'       => 'Google Analytics-code',
-            'analytics_gosquared'    => 'GoSquared Analytics-code',
-            'analytics_piwik_url'    => 'URL van uw Piwik exemplaar (zonder http(s)://)',
-            'analytics_piwik_siteid' => 'Site-id van Piwik',
+            'analytics_google'       => 'Google Analytics code',
+            'analytics_gosquared'    => 'GoSquared Analytics code',
+            'analytics_piwik_url'    => 'URL of your Piwik instance (without http(s)://)',
+            'analytics_piwik_siteid' => 'Piwik\'s site id',
         ],
         'localization' => [
-            'site-timezone'          => 'Site tijdzone',
-            'site-locale'            => 'Taal van de site',
-            'date-format'            => 'Datum formaat',
-            'incident-date-format'   => 'Incident Tijdsaanduiding Formaat',
+            'site-timezone'          => 'Site Timezone',
+            'site-locale'            => 'Site Language',
+            'date-format'            => 'Date Format',
+            'incident-date-format'   => 'Incident Timestamp Format',
         ],
         'security' => [
-            'allowed-domains'      => 'Toegestane domeinen',
+            'allowed-domains'      => 'Allowed Domains',
             'allowed-domains-help' => 'Door komma\'s gescheiden. Het hierboven ingestelde domein is automatisch standaard toegelaten.',
         ],
         'stylesheet' => [
@@ -123,10 +126,19 @@ return [
         ],
         'theme' => [
             'background-color'        => 'Achtergrondkleur',
-            'text-color'              => 'Tekstkleur',
+            'background-fills'        => 'Background Fills (Components, Incidents, Footer)',
             'banner-background-color' => 'Banner Background Color',
             'banner-padding'          => 'Banner Padding',
             'fullwidth-banner'        => 'Enable fullwidth banner?',
+            'text-color'              => 'Tekstkleur',
+            'dashboard-login'         => 'Show dashboard button in the footer?',
+            'reds'                    => 'Red (Used for errors)',
+            'blues'                   => 'Blue (Used for information)',
+            'greens'                  => 'Green (Used for success)',
+            'yellows'                 => 'Yellow (Used for alerts)',
+            'oranges'                 => 'Orange (Used for notices)',
+            'metrics'                 => 'Metrics Fill',
+            'links'                   => 'Links',
         ],
     ],
 
@@ -137,7 +149,12 @@ return [
         'api-token'      => 'API-token',
         'api-token-help' => 'Het opnieuw genereren van je API-token zorgt ervoor dat bestaande applicaties geen toegang meer hebben tot Cachet.',
         'gravatar'       => 'Change your profile picture at Gravatar.',
-        '2fa'            => [
+        'user_level'     => 'User Level',
+        'levels'         => [
+            'admin' => 'Admin',
+            'user'  => 'User',
+        ],
+        '2fa' => [
             'help' => 'Het inschakelen van two-factor authenticatie verhoogt de veiligheid van uw account. U zult een applicatie zoals <a href="https://support.google.com/accounts/answer/1066447?hl=en">Google Authenticator</a> of een vergelijkbare applicatie moeten downloaden op uw mobiele apparaat. Wanneer u inlogt wordt u gevraagd om een token in te voeren welke door de applicatie wordt gegenereerd.',
         ],
         'team' => [
@@ -156,6 +173,8 @@ return [
     'submit' => 'Versturen',
     'cancel' => 'Annuleren',
     'remove' => 'Verwijderen',
+    'invite' => 'Invite',
+    'signup' => 'Sign Up',
 
     // Other
     'optional' => '* Optioneel',

@@ -15,8 +15,8 @@ return [
         'status' => [
             1 => '运行正常',
             2 => '负载较高',
-            3 => '部分停运',
-            4 => '严重停转',
+            3 => 'Partial Outage',
+            4 => 'Major Outage',
         ],
     ],
 
@@ -26,9 +26,9 @@ return [
         'past'          => '历史状态',
         'previous_week' => '前一周',
         'next_week'     => '后一周',
-        'none'          => '当日无故障',
-        'scheduled'     => '计划维护',
-        'scheduled_at'  => '，计划于 :timestamp',
+        'none'          => '无故障报告',
+        'scheduled'     => 'Scheduled Maintenance',
+        'scheduled_at'  => ', scheduled :timestamp',
         'status'        => [
             0 => '计划中', // TODO: Hopefully remove this.
             1 => '确认中',
@@ -46,7 +46,7 @@ return [
     ],
 
     'api' => [
-        'regenerate' => '重新生成 API 密钥',
+        'regenerate' => 'Regenerate API Key',
         'revoke'     => '注销 API 密钥',
     ],
 
@@ -63,29 +63,36 @@ return [
     // Subscriber
     'subscriber' => [
         'subscribe' => '订阅最新的更新。',
-        'button'    => '订阅',
+        'button'    => 'Subscribe',
         'email'     => [
-            'subscribe'          => '订阅电子邮件更新。',
+            'subscribe'          => 'Subscribe to email updates.',
             'subscribed'         => '您已经订阅电子邮件通知，请检查您的电子邮件，确认您的订阅。',
-            'verified'           => '您的电子邮件订阅已确认。谢谢！',
+            'verified'           => 'Your email subscription has been confirmed. Thank you!',
             'unsubscribe'        => '取消电子邮件订阅。',
-            'unsubscribed'       => '您的电子邮件订阅已被取消。',
-            'failure'            => '邮件订阅失败。',
-            'already-subscribed' => '邮箱 :email 已加入订阅，请勿重复订阅.',
+            'unsubscribed'       => 'Your email subscription has been cancelled.',
+            'failure'            => 'Something went wrong with the subscription.',
+            'already-subscribed' => 'Cannot subscribe :email because they\'re already subscribed.',
             'verify'             => [
-                'text'           => '请确认您的 :app_name 电子邮件订阅。\\n:link\\n此致，:app_name',
-                'html-preheader' => '请确认您的 :app_name 状态更新邮件订阅。',
+                'text'           => "Please confirm your email subscription to :app_name status updates.\n:link\nThank you, :app_name",
+                'html-preheader' => 'Please confirm your email subscription to :app_name status updates.',
                 'html'           => '<p>请确认您的 :app_name 电子邮件订阅。</p><p><a href=":link">:link</a></p><p>此致，:app_name</p>',
             ],
             'maintenance' => [
-                'text'           => '新的维护计划已被安排在 :app_name 上。\\n此致，:app_name',
-                'html-preheader' => '新的维护计划已被安排在 :app_name 上。',
+                'text'           => "New maintenance has been scheduled on :app_name.\nThank you, :app_name",
+                'html-preheader' => 'New maintenance has been scheduled on :app_name.',
                 'html'           => '<p>新的维护计划已被安排在 :app_name 上。</p><p>此致，:app_name</p>',
             ],
             'incident' => [
-                'text'           => ':app_name 有新事件报告。\\n此致，:app_name',
-                'html-preheader' => ':app_name 有新事件报告。',
-                'html'           => '<p>:app_name 有新事件报告。</p><p>此致，:app_name</p>',
+                'text'           => "New incident has been reported on :app_name.\nThank you, :app_name",
+                'html-preheader' => 'New incident has been reported on :app_name.',
+                'html'           => '<p>New incident has been reported on :app_name.</p><p>Thank you, :app_name</p>',
+            ],
+            'component' => [
+                'subject'        => 'Component Status Update',
+                'text'           => 'The component :component_name has seen a status change. The component is now at :component_human_status.\nThank you, :app_name',
+                'html-preheader' => 'Component Update from :app_name',
+                'html'           => '<p>The component :component_name has seen a status change. The component is now at :component_human_status.</p><p>Thank you, :app_name</p>',
+                'tooltip-title'  => 'Subscribe to notifications for :component_name.',
             ],
         ],
     ],
@@ -102,18 +109,32 @@ return [
 
     'signup' => [
         'title'    => '注册',
-        'username' => '用户名',
-        'email'    => '邮箱',
-        'password' => '密码',
+        'username' => 'Username',
+        'email'    => '电子邮箱',
+        'password' => 'Password',
         'success'  => '您的账号已注册成功。',
         'failure'  => '注册失败。',
+    ],
+
+    'system' => [
+        'update' => 'There is a newer version of Cachet available. You can learn how to update <a href="https://docs.cachethq.io/docs/updating-cachet">here</a>!',
+    ],
+
+    // Modal
+    'modal' => [
+        'close'     => 'Close',
+        'subscribe' => [
+            'title'  => 'Subscribe to component updates?',
+            'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll receive emails for this component too.',
+            'button' => 'Subscribe',
+        ],
     ],
 
     // Other
     'powered_by'      => ':app 状态页托管服务由 <a href="https://cachethq.io">Cachet</a> 提供技术支持。',
     'about_this_site' => '关于我们',
-    'rss-feed'        => 'RSS 订阅',
-    'atom-feed'       => 'Atom 订阅',
-    'feed'            => '状态源',
+    'rss-feed'        => 'RSS',
+    'atom-feed'       => 'Atom',
+    'feed'            => 'Status Feed',
 
 ];

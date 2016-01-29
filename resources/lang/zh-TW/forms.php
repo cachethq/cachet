@@ -13,14 +13,14 @@ return [
 
     // Setup form fields
     'setup' => [
-        'email'            => '電子郵箱',
+        'email'            => '電郵地址',
         'username'         => '用戶名',
         'password'         => '密碼',
-        'site_name'        => '站點名稱',
-        'site_domain'      => '站點域名',
-        'site_timezone'    => '選擇您的時區',
-        'site_locale'      => '選擇您的語言',
-        'enable_google2fa' => '啟用谷歌雙因素身份驗證',
+        'site_name'        => '網站名稱',
+        'site_domain'      => '網站域名',
+        'site_timezone'    => '選擇你的時區',
+        'site_locale'      => '選擇你的語言',
+        'enable_google2fa' => '啟用 Google 兩步驗證',
         'cache_driver'     => '緩存驅動',
         'session_driver'   => '會話驅動',
     ],
@@ -28,65 +28,67 @@ return [
     // Login form fields
     'login' => [
         'login'         => 'Username or Email',
-        'email'         => '電子郵箱',
+        'email'         => '電郵地址',
         'password'      => '密碼',
-        '2fauth'        => '雙因素驗證代碼',
-        'invalid'       => '無效的電子郵件或密碼。',
-        'invalid-token' => '無效的令牌。',
+        '2fauth'        => '驗證碼',
+        'invalid'       => 'Invalid username or password',
+        'invalid-token' => '錯誤的驗證碼',
         'cookies'       => '您必須啟用 cookies 來進行登錄。',
     ],
 
     // Incidents form fields
     'incidents' => [
-        'name'               => '事件名',
+        'name'               => '名稱',
         'status'             => '狀態',
         'component'          => '組件',
-        'message'            => '消息',
-        'message-help'       => '您可以使用Markdown語言。',
-        'scheduled_at'       => '什麽時間安排維護？',
+        'message'            => '訊息',
+        'message-help'       => '你可以使用 Markdown 。',
+        'scheduled_at'       => '排期在什麼時候進行維護？',
         'incident_time'      => '這次事件是什麽時候發生的？',
         'notify_subscribers' => '通知訂閱者',
         'visibility'         => '事件的可見性',
         'public'             => '公共可見',
         'logged_in_only'     => '僅登錄用戶可見',
         'templates'          => [
-            'name'     => '事件模板名',
-            'template' => '模板',
+            'name'     => '名稱',
+            'template' => '範本',
             'twig'     => 'Incident Templates can make use of the <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a> templating language.',
         ],
     ],
 
     // Components form fields
     'components' => [
-        'name'        => '組件名',
+        'name'        => '名稱',
         'status'      => '狀態',
-        'group'       => '組件分組',
+        'group'       => '組別',
         'description' => '描述',
-        'link'        => '鏈接',
-        'tags'        => '標簽',
-        'tags-help'   => '以逗號分隔。',
+        'link'        => '連結',
+        'tags'        => '標籤',
+        'tags-help'   => '請以半角逗號分隔。',
         'enabled'     => '啟用',
 
         'groups' => [
-            'name' => '組名',
+            'name'      => '名稱',
+            'collapsed' => 'Collapse the group by default?',
         ],
     ],
 
     // Metric form fields
     'metrics' => [
-        'name'             => '圖表名',
+        'name'             => '名稱',
         'suffix'           => '後綴',
-        'description'      => '描述信息',
-        'description-help' => '您可以使用Markdown語言。',
-        'display-chart'    => '在狀態頁上顯示圖表?',
+        'description'      => '描述',
+        'description-help' => '你也可以使用 Markdown',
+        'display-chart'    => '在狀態頁上顯示圖表？',
         'default-value'    => '默認值',
         'calc_type'        => '圖表計算方法',
-        'type_sum'         => '求和',
-        'type_avg'         => '求平均數',
+        'type_sum'         => '總和',
+        'type_avg'         => '平均',
         'places'           => '小數點位數',
+        'default_view'     => 'Default View',
 
         'points' => [
-            'value' => '數值',
+            'value' => '值',
         ],
     ],
 
@@ -94,13 +96,13 @@ return [
     'settings' => [
         /// Application setup
         'app-setup' => [
-            'site-name'              => '站點名稱',
-            'site-url'               => '站點URL',
-            'display-graphs'         => '是否在狀態頁上顯示圖表',
-            'about-this-page'        => '關於這個頁面',
-            'days-of-incidents'      => '顯示多少天的事件？',
-            'banner'                 => '橫幅圖像',
-            'banner-help'            => '建議上傳文件寬度不大於930像素。',
+            'site-name'              => '網站名稱',
+            'site-url'               => '網站 URL',
+            'display-graphs'         => '在狀態頁上顯示圖片？',
+            'about-this-page'        => '關於本站',
+            'days-of-incidents'      => '顯示多少天前的事件？',
+            'banner'                 => '圖片橫幅',
+            'banner-help'            => '橫幅寬度建議少於 930px 。',
             'subscribers'            => '允許用戶訂閱郵件通知嗎?',
         ],
         'analytics' => [
@@ -117,13 +119,13 @@ return [
         ],
         'security' => [
             'allowed-domains'      => '允許的域',
-            'allowed-domains-help' => '以逗號分隔。默認情況下，API跨域請求將自動允許以上已設置的域。',
+            'allowed-domains-help' => '請以半角逗號分隔。以上域名將會自動允許訪問。',
         ],
         'stylesheet' => [
             'custom-css' => '自定義樣式表',
         ],
         'theme' => [
-            'background-color'        => '頁面背景色',
+            'background-color'        => '背景顏色',
             'background-fills'        => '區塊填充色(組件, 事件, 頁尾)',
             'banner-background-color' => '横幅背景色',
             'banner-padding'          => '横幅Padding值',
@@ -142,18 +144,18 @@ return [
 
     'user' => [
         'username'       => '用戶名',
-        'email'          => '電子郵箱',
+        'email'          => '電郵地址',
         'password'       => '密碼',
-        'api-token'      => 'API Token',
-        'api-token-help' => '重新生成您的 API Token 將阻止現有的應用程序訪問Cachet。',
+        'api-token'      => 'API 密鑰',
+        'api-token-help' => '重新生成 API 密鑰將會導致現存的應用程序無法訪問 Cachet 。',
         'gravatar'       => '修改您的 Gravatar 頭像。',
         'user_level'     => '用戶等級',
         'levels'         => [
             'admin' => '管理員',
             'user'  => '普通用戶',
         ],
-        '2fa'            => [
-            'help' => '啟用雙因素身份驗證會增加您的帳戶安全。您將需要下載 <a href="https://support.google.com/accounts/answer/1066447?hl=en">Google Authenticator</a> 或類似的應用到您的移動設備。當您登錄時將會要求您提供由應用程序生成的壹個短碼。',
+        '2fa' => [
+            'help' => '啟用兩步認證會使得你的賬戶更加安全。您需要下載 <a href="https://support.google.com/accounts/answer/1066447?hl=zh-hant">Google Authenticator</a> 或類似的應用程序到您的設備上。啓用後，你需要提供由該應用程序生成的驗證碼方可登錄。',
         ],
         'team' => [
             'description' => '請輸入您要邀請的團隊成員的郵件地址：',
@@ -163,17 +165,17 @@ return [
 
     // Buttons
     'add'    => '增加',
-    'save'   => '保存​​',
+    'save'   => '儲存',
     'update' => '更新',
-    'create' => '創建',
+    'create' => '建立',
     'edit'   => '編輯',
     'delete' => '刪除',
-    'submit' => '提交',
+    'submit' => '送出',
     'cancel' => '取消',
     'remove' => '移除',
     'invite' => '邀請',
     'signup' => '註冊',
 
     // Other
-    'optional' => '* 可選',
+    'optional' => '* 可選項目',
 ];

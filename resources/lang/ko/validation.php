@@ -45,10 +45,12 @@ return [
     'digits_between' => ':attribute 는 :min 과 :max 사이의 숫자 여야 합니다.',
     'email'          => ':attribute 는 유효한 이메일 주소 여야 합니다.',
     'exists'         => '선택된 :attribute 가 유효하지 않습니다.',
+    'filled'         => ':attribute 필드는 필수 항목입니다.',
     'image'          => ':attribute 는 이미지여야 합니다.',
     'in'             => '선택된 :attribute 는 유효하지 않습니다.',
     'integer'        => ':attribute 는 정수 여야 합니다.',
     'ip'             => ':attribute 는 유효한 IP 주소 여야 합니다.',
+    'json'           => ':attribute 는 유효한 JSON 문자열이어야 합니다.',
     'max'            => [
         'numeric' => ':attribute 는 :max 보다 클 수 없습니다.',
         'file'    => ':attribute 는 :max kilobytes 보다 클 수 없습니다.',
@@ -80,9 +82,9 @@ return [
         'array'   => ':attribute 는 :size 개의 항목을 포함해야 합니다.',
     ],
     'string'   => ':attribute 는 문자열 이어야 합니다.',
+    'timezone' => ':attribute 는 유효한 영역이어야 합니다.',
     'unique'   => ':attribute 는 이미 사용되었습니다.',
     'url'      => ':attribute 형식이 올바르지 않습니다.',
-    'timezone' => ':attribute 는 유효한 영역이어야 합니다.',
 
     /*
     |--------------------------------------------------------------------------

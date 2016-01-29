@@ -13,7 +13,7 @@ return [
 
     // Setup form fields
     'setup' => [
-        'email'            => 'Эл. почта',
+        'email'            => 'Email',
         'username'         => 'Имя пользователя',
         'password'         => 'Пароль',
         'site_name'        => 'Название сайта',
@@ -31,9 +31,9 @@ return [
         'email'         => 'Эл. почта',
         'password'      => 'Пароль',
         '2fauth'        => 'Код аутентификации',
-        'invalid'       => 'Неправильный адрес эл. почты или пароль',
+        'invalid'       => 'Invalid username or password',
         'invalid-token' => 'Неправильный токен',
-        'cookies'       => 'Необходимо включить куки для входа.',
+        'cookies'       => 'Необходимо включить cookies для входа.',
     ],
 
     // Incidents form fields
@@ -45,7 +45,7 @@ return [
         'message-help'       => 'Вы также можете использовать Markdown.',
         'scheduled_at'       => 'Когда запланированы работы?',
         'incident_time'      => 'Когда инцидент произошел?',
-        'notify_subscribers' => 'Уведомить подписчиков',
+        'notify_subscribers' => 'Уведомлять подписчиков?',
         'visibility'         => 'Видимость инцидента',
         'public'             => 'Доступен публично',
         'logged_in_only'     => 'Видимый только авторизованным пользователям',
@@ -68,7 +68,8 @@ return [
         'enabled'     => 'Component enabled?',
 
         'groups' => [
-            'name' => 'Название',
+            'name'      => 'Название',
+            'collapsed' => 'Collapse the group by default?',
         ],
     ],
 
@@ -79,10 +80,12 @@ return [
         'description'      => 'Описание',
         'description-help' => 'Вы также можете использовать Markdown.',
         'display-chart'    => 'Отображать график на статусной странице?',
-        'default-value'    => 'Значение по-умолчанию',
+        'default-value'    => 'Значение по умолчанию',
         'calc_type'        => 'Расчет метрики',
         'type_sum'         => 'Сумма',
         'type_avg'         => 'Среднее значение',
+        'places'           => 'Разрядность',
+        'default_view'     => 'Default View',
 
         'points' => [
             'value' => 'Значение',
@@ -105,17 +108,17 @@ return [
         'analytics' => [
             'analytics_google'       => 'Код Google Analytics',
             'analytics_gosquared'    => 'Код GoSquared Analytics',
-            'analytics_piwik_url'    => 'URL установки Piwik (без http(s)://)',
+            'analytics_piwik_url'    => 'URL Piwik сайта (без http(s)://)',
             'analytics_piwik_siteid' => 'Идентификатор сайта в Piwik',
         ],
         'localization' => [
             'site-timezone'          => 'Часовой пояс сайта',
             'site-locale'            => 'Язык сайта',
             'date-format'            => 'Формат даты',
-            'incident-date-format'   => 'Формат даты и времени инцидента',
+            'incident-date-format'   => 'Формат даты и времени для инцидента',
         ],
         'security' => [
-            'allowed-domains'      => 'Разрешенные домены',
+            'allowed-domains'      => 'Разрешённые домены',
             'allowed-domains-help' => 'Разделитель - запятые. Домен, установленный в настройках разрешен по-умолчанию.',
         ],
         'stylesheet' => [
@@ -123,11 +126,19 @@ return [
         ],
         'theme' => [
             'background-color'        => 'Цвет фона',
+            'background-fills'        => 'Background Fills (Components, Incidents, Footer)',
+            'banner-background-color' => 'Цвет фона для баннера',
+            'banner-padding'          => 'Banner Padding',
+            'fullwidth-banner'        => 'Enable fullwidth banner?',
             'text-color'              => 'Цвет текста',
-            'dashboard-login'         => 'Показывать кнопку панели управления внизу страницы?',
-            'banner-background-color' => 'Фоновый цвет баннера',
-            'banner-padding'          => 'Поля вокруг баннера',
-            'fullwidth-banner'        => 'Включить баннер в полную ширину?',
+            'dashboard-login'         => 'Show dashboard button in the footer?',
+            'reds'                    => 'Red (Used for errors)',
+            'blues'                   => 'Blue (Used for information)',
+            'greens'                  => 'Green (Used for success)',
+            'yellows'                 => 'Yellow (Used for alerts)',
+            'oranges'                 => 'Orange (Used for notices)',
+            'metrics'                 => 'Metrics Fill',
+            'links'                   => 'Ссылки',
         ],
     ],
 
@@ -137,9 +148,14 @@ return [
         'password'       => 'Пароль',
         'api-token'      => 'API токен',
         'api-token-help' => 'Обновление вашего API токена заблокирует существующим приложениям доступ в Cachet. Вам будет необходимо прописать в них новый токен.',
-        'gravatar'       => 'Измените вашу картинку профиля в Gravatar.',
-        '2fa'            => [
-            'help' => 'Включение двухфакторной аутентификации увеличивает безопасность вашей учетной записи. Вам понадобится скачать <a href="https://support.google.com/accounts/answer/1066447?hl=ru">Google Authenticator</a> или аналогичное приложение на свой смартфон. Когда в следующий раз вы войдете в панель управления, вам понадобится токен, выданный этим приложением.',
+        'gravatar'       => 'Change your profile picture at Gravatar.',
+        'user_level'     => 'User Level',
+        'levels'         => [
+            'admin' => 'Admin',
+            'user'  => 'User',
+        ],
+        '2fa' => [
+            'help' => 'Включение двухфакторной аутентификации увеличивает безопасность вашей учетной записи. Вам понадобится скачать <a href="https://support.google.com/accounts/answer/1066447?hl=en">Google Authenticator</a> или аналогичное приложение на свой смартфон. Когда в следующий раз вы войдете в панель управления, вам понадобится токен, выданный этим приложением.',
         ],
         'team' => [
             'description' => 'Invite your team members by entering their email addresses here.',
@@ -157,6 +173,8 @@ return [
     'submit' => 'Отправить',
     'cancel' => 'Отмена',
     'remove' => 'Удалить',
+    'invite' => 'Пригласить',
+    'signup' => 'Зарегистрироваться',
 
     // Other
     'optional' => '* не обязательное',

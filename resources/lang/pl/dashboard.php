@@ -11,136 +11,185 @@
 
 return [
 
-    'dashboard' => 'Panel sterowania',
+    'dashboard' => 'Dashboard',
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Incydenty i kalendarz',
-        'incidents'                => 'Incydenty',
-        'logged'                   => '{0} Brak incydentów, gratulacje.| Zapisałeś jeden incydent.|Zapisałeś <strong>:count</strong> incydentów.',
-        'incident-create-template' => 'Utwórz szablon',
-        'incident-templates'       => 'Szablony incydentów',
+        'title'                    => 'Ereignisse &amp; Termine',
+        'incidents'                => 'Vorfälle',
+        'logged'                   => '{0} Es gibt keine Vorfälle, gute Arbeit.|Du hast einen Vorfall gemeldet.|Du hast <strong>:count</strong> Vorfälle gemeldet.',
+        'incident-create-template' => 'Vorlage erstellen',
+        'incident-templates'       => 'Vorfall Vorlagen',
         'add'                      => [
-            'title'   => 'Dodaj incydent',
-            'success' => 'Incydent dodany.',
-            'failure' => 'Coś poszło nie tak z incydentem.',
+            'title'   => 'Vorfall hinzufügen',
+            'success' => 'Vorfall hinzugefügt.',
+            'failure' => 'Etwas ist mit dem Vorfall schiefgelaufen.',
         ],
         'edit' => [
-            'title'   => 'Aktualizuj incydent',
-            'success' => 'Incydent zaktualizowany.',
-            'failure' => 'Coś poszło nie tak z incydentem.',
+            'title'   => 'Vorfall bearbeiten',
+            'success' => 'Vorfall aktualisiert.',
+            'failure' => 'Etwas ist mit dem Vorfall schiefgelaufen.',
+        ],
+        'delete' => [
+            'success' => 'The incident has been deleted and will not show on your status page.',
+            'failure' => 'The incident could not be deleted. Please try again.',
         ],
 
         // Incident templates
         'templates' => [
-            'title' => 'Szablony incydentów',
+            'title' => 'Vorfall Vorlagen',
             'add'   => [
-                'title'   => 'Stwórz szablon incydentu.',
-                'success' => 'Szablon utworzony.',
-                'failure' => 'Coś poszło nie tak z szablonem incydentu.',
+                'title'   => 'Vorfallvorlage erstellen',
+                'message' => 'You should add an Incident Template.',
+                'success' => 'Vorlage erstellt.',
+                'failure' => 'Etwas ist mit der Vorfallvorlage schiefgelaufen.',
             ],
             'edit' => [
-                'title'   => 'Edytuj szablon',
-                'success' => 'Szablon został zaktualizowany!',
-                'failure' => 'Coś poszło nie tak przy aktualizacji szablonu.',
+                'title'   => 'Vorlage bearbeiten',
+                'success' => 'Vorlage aktualisiert!',
+                'failure' => 'Etwas ist mit dem Updaten der Vorfallvorlage schiefgelaufen',
+            ],
+            'delete' => [
+                'success' => 'The tmplate has been deleted.',
+                'failure' => 'The template could not be deleted. Please try again.',
             ],
         ],
     ],
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => 'Zaplanowana przerwa',
-        'scheduled_at' => 'Zaplanowana data :timestamp',
+        'schedule'     => 'Geplante Wartungen',
+        'logged'       => '{0} There are no schedules, good work.|You have logged one schedule.|You have reported <strong>:count</strong> schedules.',
+        'scheduled_at' => 'Geplant am :timestamp',
         'add'          => [
-            'title'   => 'Dodaj planową przerwę',
-            'success' => 'Zaplanowana przerwa dodana.',
-            'failure' => 'Coś poszło nie tak przy dodawaniu przerwy.',
+            'title'   => 'Planmäßige Wartung hinzufügen',
+            'success' => 'Zeitplan hinzugefügt.',
+            'failure' => 'Etwas ist mit dem hinzufügen des Zeitplanes schiefgelaufen.',
         ],
         'edit' => [
-            'title'   => 'Aktualizuj zaplanowaną przerwę',
-            'success' => 'Przerwa zaktualizowana!',
-            'failure' => 'Coś poszło nie tak przy aktualizacji przerwy.',
+            'title'   => 'Planmäßige Wartung bearbeiten',
+            'success' => 'Zeitplan wurde aktualisiert!',
+            'failure' => 'Etwas ist mit dem Bearbeiten des Zeitplanes schiefgelaufen.',
         ],
         'delete' => [
-            'success' => 'Przerwa została skasowana i nie będzie pokazywana na stronie statusowej.',
-            'failure' => 'Nie można było skasować przerwy. Spróbuj ponownie.',
+            'success' => 'Der Zeitplan wurde gelöscht und wird nicht auf Ihrer Statusseite angezeigt.',
+            'failure' => 'Der Zeitplan konnte nicht gelöscht werden. Bitte versuchen Sie es erneut.',
         ],
     ],
 
     // Components
     'components' => [
-        'components'         => 'Komponenty',
-        'component_statuses' => 'Statusy komponentów',
-        'listed_group'       => 'Zgrupowane pod :name',
+        'components'         => 'Komponenten',
+        'component_statuses' => 'Komponentenstatus',
+        'listed_group'       => 'Gruppiert unter :name',
         'add'                => [
-            'title'   => 'Dodaj komponent',
-            'message' => 'Powinieneś doddać komponent.',
-            'success' => 'Komponent utworzony.',
-            'failure' => 'Coś poszło nie tak przy tworzeniu komponentu.',
+            'title'   => 'Komponente hinzufügen',
+            'message' => 'Sie sollten eine Komponente erstellen.',
+            'success' => 'Komponente erstellt.',
+            'failure' => 'Beim Erstellen der Komponente ist etwas schiefgegangen.',
         ],
         'edit' => [
-            'title'   => 'Edytuj komponent',
-            'success' => 'Komponent zaktualizowany.',
-            'failure' => 'Coś poszło nie tak przy aktualizacji komponent.',
+            'title'   => 'Komponente bearbeiten',
+            'success' => 'Komponente aktualisiert.',
+            'failure' => 'Beim Erstellen der Komponente ist etwas schiefgegangen.',
+        ],
+        'delete' => [
+            'success' => 'Component deleted.',
+            'failure' => 'The Component could not be deleted. Please try again.',
         ],
 
         // Component groups
         'groups' => [
-            'groups'        => 'Grupa komponenów|Grupy komponentów',
-            'no_components' => 'You should add a component group.',
+            'groups'        => 'Komponentgruppe|Komponentgruppen',
+            'no_components' => 'Sie sollten eine Komponentengruppe hinzufügen.',
             'add'           => [
-                'title'   => 'Dodaj grupę komponentów',
-                'success' => 'Grupa komponentów utworzona.',
-                'failure' => 'Coś poszło nie tak przy tworzeniu grupy.',
+                'title'   => 'Eine Komponentengruppe hinzufügen',
+                'success' => 'Komponentengruppe hinzugefügt.',
+                'failure' => 'Mit der Komponentengruppe ist etwas schiefgegangen.',
             ],
             'edit' => [
-                'title'   => 'Edytuj grupę komponentów',
-                'success' => 'Grupa komponentów zaktualizaowana.',
-                'failure' => 'Coś poszło nie tak przy aktualizacji grupy.',
+                'title'   => 'Komponentengruppe bearbeiten',
+                'success' => 'Komponentengruppe aktualisiert.',
+                'failure' => 'Mit der Komponentengruppe ist etwas schiefgegangen.',
+            ],
+            'delete' => [
+                'success' => 'Component Group deleted.',
+                'failure' => 'The Component Group could not be deleted. Please try again.',
             ],
         ],
     ],
 
     // Metrics
     'metrics' => [
-        'metrics' => 'Metryki',
+        'metrics' => 'Metriken',
         'add'     => [
-            'title'   => 'Utwórz metrykę',
-            'success' => 'Metryka utworzona.',
-            'failure' => 'Coś poszło nie tak z tworzeniem metryki.',
+            'title'   => 'Metrik erstellen',
+            'message' => 'You should add a Metric.',
+            'success' => 'Metrik erstellt.',
+            'failure' => 'Mit der Metrik ist etwas schiefgegangen.',
         ],
         'edit' => [
-            'title'   => 'Edytuj metrykę',
-            'success' => 'Metryka zaktualizowana.',
-            'failure' => 'Coś poszło nie tak przy aktualizacji metryki.',
+            'title'   => 'Metrik bearbeiten',
+            'success' => 'Metrik aktualisiert.',
+            'failure' => 'Mit der Metrik ist etwas schiefgegangen.',
+        ],
+        'delete' => [
+            'success' => 'The metric has been deleted and will not show on your status page.',
+            'failure' => 'The metric could not be deleted. Please try again.',
+        ],
+    ],
+    // Subscribers
+    'subscribers' => [
+        'subscribers'  => 'Abonnenten',
+        'description'  => 'Abonnenten erhalten E-Mail Updates wenn Vorfälle erstellt werden.',
+        'verified'     => 'Verifiziert',
+        'not_verified' => 'Nicht verifiziert',
+        'add'          => [
+            'title'   => 'Einen neuen Abonnenten hinzufügen',
+            'success' => 'Abonnent hinzugefügt.',
+            'failure' => 'Beim Erstellen der Komponente ist etwas schiefgegangen.',
+        ],
+        'edit' => [
+            'title'   => 'Abonnent aktualisieren',
+            'success' => 'Abonnent aktualisiert.',
+            'failure' => 'Bei der Aktualisierung ging etwas schief.',
         ],
     ],
 
     // Team
     'team' => [
-        'team'        => 'Zespół',
-        'member'      => 'Członek',
+        'team'        => 'Team',
+        'member'      => 'Mitglied',
         'profile'     => 'Profil',
-        'description' => 'Członkowie zespołu będą mogli dodawać i modyfikować komponenty i incydenty.',
+        'description' => 'Teammitglieder werden die M&ouml;glichkeit haben, Komponente sowie Vorf&auml;lle hinzuzuf&uuml;gen und zu ver&auml;ndern.',
         'add'         => [
-            'title'   => 'Dodaj nowego członka zespołu',
-            'success' => 'Dodano członka zespołu.',
-            'failure' => 'Coś poszło nie tak z dodawaniem do zespołu.',
+            'title'   => 'Neues Teammitglied hinzufügen',
+            'success' => 'Teammitglied hinzugefügt.',
+            'failure' => 'Mit der Komponente ist etwas schiefgegangen.',
         ],
         'edit' => [
-            'title'   => 'Aktualizuj profil',
-            'success' => 'Profil zaktualizowany.',
-            'failure' => 'Coś poszło nie tak przy aktualizacji.',
+            'title'   => 'Profil aktualisieren',
+            'success' => 'Profil aktualisiert.',
+            'failure' => 'Bei der Aktualisierung ging etwas schief.',
+        ],
+        'delete' => [
+            'success' => 'Benutzer aktualisiert.',
+            'failure' => 'Bei dem Löschen dieses Benutzers ging etwas schief.',
+        ],
+        'invite' => [
+            'title'   => 'Invite a New Team Member',
+            'success' => 'The users invited.',
+            'failure' => 'Something went wrong with the invite.',
         ],
     ],
 
     // Settings
     'settings' => [
-        'settings'  => 'Ustawienia',
+        'settings'  => 'Einstellungen',
         'app-setup' => [
-            'app-setup'   => 'Ustawienia aplikacji',
-            'images-only' => 'Można wgrywać tylko pliki graficzne.',
-            'too-big'     => 'Wgrany plik jest zbyt duży. Wgraj plik mnijeszy niż :size',
+            'app-setup'   => 'Anwendungsinstallation',
+            'images-only' => 'Es können nur Bilder hochgeladen werden.',
+            'too-big'     => 'Die von Ihnen hochgeladene Datei ist zu groß. Laden Sie ein Bild welches kleiner als :size ist hoch',
         ],
         'analytics' => [
             'analytics' => 'Analytics',
@@ -149,53 +198,53 @@ return [
             'localization' => 'Localization',
         ],
         'security' => [
-            'security'   => 'Bezpieczeństwo',
-            'two-factor' => 'Użytkownicy bez autentykacji dwuetapowej',
+            'security'   => 'Sicherheit',
+            'two-factor' => 'Nutzer ohne Zwei-Faktor-Authentifizierung',
         ],
         'stylesheet' => [
             'stylesheet' => 'Stylesheet',
         ],
         'theme' => [
-            'theme' => 'Skórka',
+            'theme' => 'Theme',
         ],
         'edit' => [
-            'success' => 'Ustawienia zapisane.',
-            'failure' => 'Ustawienia nie mogły być zapisane.',
+            'success' => 'Einstellungen gespeichert.',
+            'failure' => 'Einstellungen konnten nicht gespeichert werden.',
         ],
     ],
 
     // Login
     'login' => [
-        'login'      => 'Zaloguj',
-        'logged_in'  => 'Jesteś zalogowany.',
-        'welcome'    => 'Witam ponownie!',
-        'two-factor' => 'Wpisz swój kod.',
+        'login'      => 'Anmelden',
+        'logged_in'  => 'Sie sind angemeldet.',
+        'welcome'    => 'Willkommen zurück!',
+        'two-factor' => 'Bitte geben Sie Ihren Token ein.',
     ],
 
     // Sidebar footer
-    'help'        => 'Pomoc',
-    'status_page' => 'Strona statusu',
-    'logout'      => 'Wyloguj',
+    'help'        => 'Hilfe',
+    'status_page' => 'Statusseite',
+    'logout'      => 'Abmelden',
 
     // Notifications
     'notifications' => [
-        'notifications' => 'Powiadomienia',
-        'awesome'       => 'Super.',
-        'whoops'        => 'Ojej.',
+        'notifications' => 'Benachrichtigungen',
+        'awesome'       => 'Großartig.',
+        'whoops'        => 'Hoppla.',
     ],
 
     // Welcome modal
     'welcome' => [
-        'welcome' => 'Witamy w Cachet',
-        'message' => 'Twoja strona statusowa jest już prawie gotowa! Możesz skonfigurować dodatkowe ustawienia',
-        'close'   => 'Przejdź do mojego panelu',
+        'welcome' => 'Welcome to your status page!',
+        'message' => 'Ihre Statusseite ist fast fertig! Vielleicht möchten Sie diese zusätzlichen Einstellungen konfigurieren',
+        'close'   => 'Gehe einfach direkt zu meinem Dashboard',
         'steps'   => [
-            'component'  => 'Utwórz komponenty',
-            'incident'   => 'Utwórz incydenty',
-            'customize'  => 'Personalizacja',
-            'team'       => 'Dodaj użytkowników',
-            'api'        => 'Wygeneruj token API',
-            'two-factor' => 'Autentykacja dwuetapowa',
+            'component'  => 'Komponenten erstellen',
+            'incident'   => 'Vorfälle erstellen',
+            'customize'  => 'Personalisieren',
+            'team'       => 'Benutzer hinzufügen',
+            'api'        => 'API Token generieren',
+            'two-factor' => 'Zwei-Faktor-Authentifizierung',
         ],
     ],
 

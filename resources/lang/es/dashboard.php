@@ -15,105 +15,181 @@ return [
 
     // Incidents
     'incidents' => [
-        'incidents'                => 'Incidentes',
-        'logged'                   => '{0} No hay incidentes, ¡buen trabajo!|Has registrado un incidente.|Has reportado <strong>:count</strong> incidentes.',
-        'incident-create-template' => 'Crear plantilla',
-        'incident-templates'       => 'Plantillas de incidente',
+        'title'                    => 'Ereignisse &amp; Termine',
+        'incidents'                => 'Vorfälle',
+        'logged'                   => '{0} Es gibt keine Vorfälle, gute Arbeit.|Du hast einen Vorfall gemeldet.|Du hast <strong>:count</strong> Vorfälle gemeldet.',
+        'incident-create-template' => 'Vorlage erstellen',
+        'incident-templates'       => 'Vorfall Vorlagen',
         'add'                      => [
-            'title'   => 'Agregar un incidente',
-            'success' => 'Incidente agregado.',
-            'failure' => 'Algo salió mal con el incidente.',
+            'title'   => 'Vorfall hinzufügen',
+            'success' => 'Vorfall hinzugefügt.',
+            'failure' => 'Etwas ist mit dem Vorfall schiefgelaufen.',
         ],
         'edit' => [
-            'title'   => 'Editar un incidente',
-            'success' => 'Incidente actualizado.',
+            'title'   => 'Vorfall bearbeiten',
+            'success' => 'Vorfall aktualisiert.',
             'failure' => 'Algo salió mal con el incidente.',
+        ],
+        'delete' => [
+            'success' => 'The incident has been deleted and will not show on your status page.',
+            'failure' => 'The incident could not be deleted. Please try again.',
         ],
 
         // Incident templates
         'templates' => [
             'title' => 'Plantillas de incidente',
             'add'   => [
-                'title'   => 'Crear una plantilla de incidente',
-                'success' => 'Plantilla creada.',
-                'failure' => 'Algo salió mal con la plantilla de incidente.',
+                'title'   => 'Vorfallvorlage erstellen',
+                'message' => 'You should add an Incident Template.',
+                'success' => 'Vorlage erstellt.',
+                'failure' => 'Etwas ist mit der Vorfallvorlage schiefgelaufen.',
             ],
             'edit' => [
-                'title'   => 'Editar plantilla',
-                'success' => '¡Se ha actualizado la plantilla!',
-                'failure' => 'Algo salió mal actualizar la plantilla de incidente',
+                'title'   => 'Vorlage bearbeiten',
+                'success' => 'Vorlage aktualisiert!',
+                'failure' => 'Etwas ist mit dem Updaten der Vorfallvorlage schiefgelaufen',
             ],
+            'delete' => [
+                'success' => 'The tmplate has been deleted.',
+                'failure' => 'The template could not be deleted. Please try again.',
+            ],
+        ],
+    ],
+
+    // Incident Maintenance
+    'schedule' => [
+        'schedule'     => 'Geplante Wartungen',
+        'logged'       => '{0} There are no schedules, good work.|You have logged one schedule.|You have reported <strong>:count</strong> schedules.',
+        'scheduled_at' => 'Geplant am :timestamp',
+        'add'          => [
+            'title'   => 'Planmäßige Wartung hinzufügen',
+            'success' => 'Zeitplan hinzugefügt.',
+            'failure' => 'Etwas ist mit dem hinzufügen des Zeitplanes schiefgelaufen.',
+        ],
+        'edit' => [
+            'title'   => 'Planmäßige Wartung bearbeiten',
+            'success' => 'Zeitplan wurde aktualisiert!',
+            'failure' => 'Etwas ist mit dem Bearbeiten des Zeitplanes schiefgelaufen.',
+        ],
+        'delete' => [
+            'success' => 'Der Zeitplan wurde gelöscht und wird nicht auf Ihrer Statusseite angezeigt.',
+            'failure' => 'Der Zeitplan konnte nicht gelöscht werden. Bitte versuchen Sie es erneut.',
         ],
     ],
 
     // Components
     'components' => [
-        'components'         => 'Componentes',
-        'component_statuses' => 'Estatus de los componentes',
+        'components'         => 'Komponenten',
+        'component_statuses' => 'Komponentenstatus',
+        'listed_group'       => 'Gruppiert unter :name',
         'add'                => [
-            'title'   => 'Agregar un componente',
-            'message' => 'Deberías agregar un componente.',
-            'success' => 'Componente creado.',
-            'failure' => 'Algo salió mal con el componente.',
+            'title'   => 'Komponente hinzufügen',
+            'message' => 'Sie sollten eine Komponente erstellen.',
+            'success' => 'Komponente erstellt.',
+            'failure' => 'Beim Erstellen der Komponente ist etwas schiefgegangen.',
         ],
         'edit' => [
-            'title'   => 'Editar un componente',
-            'success' => 'Componente actualizado.',
+            'title'   => 'Komponente bearbeiten',
+            'success' => 'Komponente aktualisiert.',
             'failure' => 'Algo salió mal con el componente.',
+        ],
+        'delete' => [
+            'success' => 'Component deleted.',
+            'failure' => 'The Component could not be deleted. Please try again.',
         ],
 
         // Component groups
         'groups' => [
-            'groups'        => 'Grupo de componente|Grupos de componente',
-            'no_components' => 'Deberías añadir un grupo de componentes.',
+            'groups'        => 'Komponentgruppe|Komponentgruppen',
+            'no_components' => 'Sie sollten eine Komponentengruppe hinzufügen.',
             'add'           => [
-                'title'   => 'Agregar un grupo',
-                'success' => 'Grupo componente agregado.',
-                'failure' => 'Algo salió mal con el grupo del componente.',
+                'title'   => 'Eine Komponentengruppe hinzufügen',
+                'success' => 'Komponentengruppe hinzugefügt.',
+                'failure' => 'Mit der Komponentengruppe ist etwas schiefgegangen.',
             ],
             'edit' => [
-                'title'   => 'Editar un grupo de componentes',
-                'success' => 'Grupo de componentes actualizado.',
-                'failure' => 'Algo salió mal con el grupo de componentes.',
+                'title'   => 'Komponentengruppe bearbeiten',
+                'success' => 'Komponentengruppe aktualisiert.',
+                'failure' => 'Mit der Komponentengruppe ist etwas schiefgegangen.',
+            ],
+            'delete' => [
+                'success' => 'Component Group deleted.',
+                'failure' => 'The Component Group could not be deleted. Please try again.',
             ],
         ],
     ],
 
     // Metrics
     'metrics' => [
-        'metrics' => 'Métricas',
+        'metrics' => 'Metriken',
         'add'     => [
-            'title'   => 'Crear una métrica',
-            'success' => 'Métrica creada.',
-            'failure' => 'Algo salió mal con la métrica.',
+            'title'   => 'Metrik erstellen',
+            'message' => 'You should add a Metric.',
+            'success' => 'Metrik erstellt.',
+            'failure' => 'Mit der Metrik ist etwas schiefgegangen.',
+        ],
+        'edit' => [
+            'title'   => 'Metrik bearbeiten',
+            'success' => 'Metrik aktualisiert.',
+            'failure' => 'Mit der Metrik ist etwas schiefgegangen.',
+        ],
+        'delete' => [
+            'success' => 'The metric has been deleted and will not show on your status page.',
+            'failure' => 'The metric could not be deleted. Please try again.',
+        ],
+    ],
+    // Subscribers
+    'subscribers' => [
+        'subscribers'  => 'Abonnenten',
+        'description'  => 'Abonnenten erhalten E-Mail Updates wenn Vorfälle erstellt werden.',
+        'verified'     => 'Verifiziert',
+        'not_verified' => 'Nicht verifiziert',
+        'add'          => [
+            'title'   => 'Einen neuen Abonnenten hinzufügen',
+            'success' => 'Abonnent hinzugefügt.',
+            'failure' => 'Beim Erstellen der Komponente ist etwas schiefgegangen.',
+        ],
+        'edit' => [
+            'title'   => 'Abonnent aktualisieren',
+            'success' => 'Abonnent aktualisiert.',
+            'failure' => 'Bei der Aktualisierung ging etwas schief.',
         ],
     ],
 
     // Team
     'team' => [
-        'team'        => 'Equipo',
-        'member'      => 'Miembro',
-        'profile'     => 'Perfil',
-        'description' => 'Los miembros del equipo será capaces de añadir, modificar y editar componentes e incidentes.',
+        'team'        => 'Team',
+        'member'      => 'Mitglied',
+        'profile'     => 'Profil',
+        'description' => 'Teammitglieder werden die M&ouml;glichkeit haben, Komponente sowie Vorf&auml;lle hinzuzuf&uuml;gen und zu ver&auml;ndern.',
         'add'         => [
-            'title'   => 'Agregar miembro de equipo',
-            'success' => 'Miembro del equipo agregado.',
-            'failure' => 'Algo salió mal con el componente.',
+            'title'   => 'Neues Teammitglied hinzufügen',
+            'success' => 'Teammitglied hinzugefügt.',
+            'failure' => 'Mit der Komponente ist etwas schiefgegangen.',
         ],
         'edit' => [
-            'title'   => 'Actualizar perfil',
-            'success' => 'Perfil actualizado.',
-            'failure' => 'Algo salió mal al actualizar.',
+            'title'   => 'Profil aktualisieren',
+            'success' => 'Profil aktualisiert.',
+            'failure' => 'Bei der Aktualisierung ging etwas schief.',
+        ],
+        'delete' => [
+            'success' => 'Benutzer aktualisiert.',
+            'failure' => 'Bei dem Löschen dieses Benutzers ging etwas schief.',
+        ],
+        'invite' => [
+            'title'   => 'Invitar a un nuevo miembro al equipo',
+            'success' => 'Los usuarios invitados.',
+            'failure' => 'Algo salió mal en la invitación.',
         ],
     ],
 
     // Settings
     'settings' => [
-        'settings'  => 'Ajustes',
+        'settings'  => 'Einstellungen',
         'app-setup' => [
-            'app-setup'   => 'Configuración',
-            'images-only' => 'Sólo puedes subir imágenes.',
-            'too-big'     => 'El archivo subido es demasiado grande. Sube una imagen con tamaño menor a: tamaño',
+            'app-setup'   => 'Anwendungsinstallation',
+            'images-only' => 'Es können nur Bilder hochgeladen werden.',
+            'too-big'     => 'Die von Ihnen hochgeladene Datei ist zu groß. Laden Sie ein Bild welches kleiner als :size ist hoch',
         ],
         'analytics' => [
             'analytics' => 'Analytics',
@@ -122,52 +198,53 @@ return [
             'localization' => 'Localization',
         ],
         'security' => [
-            'security' => 'Seguridad',
+            'security'   => 'Sicherheit',
+            'two-factor' => 'Nutzer ohne Zwei-Faktor-Authentifizierung',
         ],
         'stylesheet' => [
-            'stylesheet' => 'Hoja de estilo',
+            'stylesheet' => 'Stylesheet',
         ],
         'theme' => [
-            'theme' => 'Tema',
+            'theme' => 'Theme',
         ],
         'edit' => [
-            'success' => 'Configuración guardada.',
-            'failure' => 'La configuración no ha podido ser guardada.',
+            'success' => 'Einstellungen gespeichert.',
+            'failure' => 'Einstellungen konnten nicht gespeichert werden.',
         ],
     ],
 
     // Login
     'login' => [
-        'login'      => 'Iniciar Sesión',
-        'logged_in'  => 'Estás conectado.',
-        'welcome'    => '¡Bienvenido!',
-        'two-factor' => 'Por favor ingresa tu token.',
+        'login'      => 'Anmelden',
+        'logged_in'  => 'Sie sind angemeldet.',
+        'welcome'    => 'Willkommen zurück!',
+        'two-factor' => 'Bitte geben Sie Ihren Token ein.',
     ],
 
     // Sidebar footer
-    'help'        => 'Ayuda',
-    'status_page' => 'Página de estado',
-    'logout'      => 'Salir',
+    'help'        => 'Hilfe',
+    'status_page' => 'Statusseite',
+    'logout'      => 'Abmelden',
 
     // Notifications
     'notifications' => [
-        'notifications' => 'Notificaciones',
-        'awesome'       => 'Excelente.',
-        'whoops'        => 'Ups.',
+        'notifications' => 'Benachrichtigungen',
+        'awesome'       => 'Großartig.',
+        'whoops'        => 'Hoppla.',
     ],
 
     // Welcome modal
     'welcome' => [
-        'welcome' => 'Bienvenido a Cachet',
-        'message' => '¡La página de estado está casi lista! Tal vez quieras configurar estos ajustes adicionales',
-        'close'   => 'Ir directo al Panel de Control',
+        'welcome' => 'Welcome to your status page!',
+        'message' => 'Ihre Statusseite ist fast fertig! Vielleicht möchten Sie diese zusätzlichen Einstellungen konfigurieren',
+        'close'   => 'Gehe einfach direkt zu meinem Dashboard',
         'steps'   => [
-            'component'  => 'Crear componentes',
-            'incident'   => 'Crear incidentes',
-            'customize'  => 'Personaliza tu página de estado Cachet.',
-            'team'       => 'Agregar usuarios a tu equipo.',
-            'api'        => 'Generar token API.',
-            'two-factor' => 'Habilitar autenticación de dos pasos.',
+            'component'  => 'Komponenten erstellen',
+            'incident'   => 'Vorfälle erstellen',
+            'customize'  => 'Personalisieren',
+            'team'       => 'Benutzer hinzufügen',
+            'api'        => 'API Token generieren',
+            'two-factor' => 'Zwei-Faktor-Authentifizierung',
         ],
     ],
 

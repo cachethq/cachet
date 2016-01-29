@@ -31,7 +31,7 @@ return [
         'email'         => '이메일',
         'password'      => '비밀번호',
         '2fauth'        => '인증 코드',
-        'invalid'       => '잘못된 이메일 또는 패스워드',
+        'invalid'       => 'Invalid username or password',
         'invalid-token' => '잘못된 토큰n',
         'cookies'       => '로그인 하려면 쿠키를 활성화 해야 합니다.',
     ],
@@ -43,7 +43,7 @@ return [
         'component'          => '구성요소',
         'message'            => '메시지',
         'message-help'       => 'Markdown을 사용할 수 있습니다.',
-        'scheduled_at'       => '유지 관리는 언제 예정되었습니까?',
+        'scheduled_at'       => '언제 작업을 예약하시겠습니까?',
         'incident_time'      => '이 문제는 언제 발생 했습니까??',
         'notify_subscribers' => '구독자에게 알림',
         'visibility'         => '공개 설정',
@@ -68,7 +68,8 @@ return [
         'enabled'     => 'Component enabled?',
 
         'groups' => [
-            'name' => '이름',
+            'name'      => '이름',
+            'collapsed' => 'Collapse the group by default?',
         ],
     ],
 
@@ -83,6 +84,8 @@ return [
         'calc_type'        => '통계 계산',
         'type_sum'         => '합계',
         'type_avg'         => '평균',
+        'places'           => 'Decimal Places',
+        'default_view'     => 'Default View',
 
         'points' => [
             'value' => '값',
@@ -123,11 +126,19 @@ return [
         ],
         'theme' => [
             'background-color'        => '배경색',
-            'text-color'              => '글자색',
-            'dashboard-login'         => 'Show dashboard button in the footer?',
+            'background-fills'        => 'Background Fills (Components, Incidents, Footer)',
             'banner-background-color' => 'Banner Background Color',
             'banner-padding'          => 'Banner Padding',
             'fullwidth-banner'        => 'Enable fullwidth banner?',
+            'text-color'              => '글자색',
+            'dashboard-login'         => 'Show dashboard button in the footer?',
+            'reds'                    => '빨강 (에러에 사용됨)',
+            'blues'                   => '파랑 (정보에 사용됨)',
+            'greens'                  => '초록 (성공에 사용됨)',
+            'yellows'                 => '노랑 (알림에 사용됨)',
+            'oranges'                 => '주황 (공지에 사용됨)',
+            'metrics'                 => 'Metrics Fill',
+            'links'                   => '링크',
         ],
     ],
 
@@ -138,7 +149,12 @@ return [
         'api-token'      => 'API 토큰',
         'api-token-help' => '기존의 프로그램이 Cachet에 접근하는 것을 막기 위해, API token 을 재성성합니다.',
         'gravatar'       => 'Change your profile picture at Gravatar.',
-        '2fa'            => [
+        'user_level'     => '사용자 레벨',
+        'levels'         => [
+            'admin' => '관리자',
+            'user'  => '사용자',
+        ],
+        '2fa' => [
             'help' => '2단계 인증을 활성화하면 계정 보안이 강화됩니다. <a href="https://support.google.com/accounts/answer/1066447?hl=en">Google Authenticator</a> 또는 유사한 앱을 모바일 기기에 다운로드 받아야 합니다. 로그인 할 때, 해당 앱에서 생성된 토큰을 입력해야합니다.',
         ],
         'team' => [
@@ -157,6 +173,8 @@ return [
     'submit' => '전송',
     'cancel' => '취소',
     'remove' => '삭제',
+    'invite' => '초대',
+    'signup' => '가입',
 
     // Other
     'optional' => '* 선택사항',

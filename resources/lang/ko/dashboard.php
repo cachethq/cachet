@@ -28,7 +28,11 @@ return [
         'edit' => [
             'title'   => '문제 수정',
             'success' => '문제가 수정되었습니다.',
-            'failure' => '수정 중 문제가 발생했습니다.',
+            'failure' => '문제가 발생했습니다.',
+        ],
+        'delete' => [
+            'success' => 'The incident has been deleted and will not show on your status page.',
+            'failure' => 'The incident could not be deleted. Please try again.',
         ],
 
         // Incident templates
@@ -36,6 +40,7 @@ return [
             'title' => '문제 템플릿',
             'add'   => [
                 'title'   => '문제 템플릿 생성하기',
+                'message' => 'You should add an Incident Template.',
                 'success' => '템플릿이 생성되었습니다.',
                 'failure' => '템플릿 생성 중 문제가 발생했습니다.',
             ],
@@ -44,12 +49,17 @@ return [
                 'success' => '템플릿이 수정되었습니다!',
                 'failure' => '템플릿 수정 중 문제가 발생했습니다.',
             ],
+            'delete' => [
+                'success' => 'The tmplate has been deleted.',
+                'failure' => 'The template could not be deleted. Please try again.',
+            ],
         ],
     ],
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => '예정된 유지 관리',
+        'schedule'     => '예약 된 유지 관리',
+        'logged'       => '{0} There are no schedules, good work.|You have logged one schedule.|You have reported <strong>:count</strong> schedules.',
         'scheduled_at' => ':timestamp 에 예정됨',
         'add'          => [
             'title'   => '예정 된 유지 관리 추가',
@@ -81,7 +91,11 @@ return [
         'edit' => [
             'title'   => '구성요소 수정',
             'success' => '구성요소가 수정되었습니다.',
-            'failure' => '구성요소 수정 중 문제가 발생했습니다.',
+            'failure' => '구성요소와 관련하여 문제가 생겼습니다.',
+        ],
+        'delete' => [
+            'success' => 'Component deleted.',
+            'failure' => 'The Component could not be deleted. Please try again.',
         ],
 
         // Component groups
@@ -96,7 +110,11 @@ return [
             'edit' => [
                 'title'   => '구성요소 그룹 수정',
                 'success' => '구성요소 그룹이 수정되었습니다.',
-                'failure' => '구성요소 그룹 수정 중 문제가 발생했습니다.',
+                'failure' => '구성요소 그룹과 관련하여 문제가 생겼습니다.',
+            ],
+            'delete' => [
+                'success' => 'Component Group deleted.',
+                'failure' => 'The Component Group could not be deleted. Please try again.',
             ],
         ],
     ],
@@ -106,13 +124,35 @@ return [
         'metrics' => '통계',
         'add'     => [
             'title'   => '통계 추가',
+            'message' => 'You should add a Metric.',
             'success' => '통계가 추가되었습니다.',
             'failure' => '통계 추가 중 문제가 발생했습니다.',
         ],
         'edit' => [
             'title'   => '통계 수정',
             'success' => '통계가 수정되었습니다.',
-            'failure' => '통계 수정 중 문제가 발생했습니다.',
+            'failure' => '통계와 관련하여 문제가 생겼습니다.',
+        ],
+        'delete' => [
+            'success' => 'The metric has been deleted and will not show on your status page.',
+            'failure' => 'The metric could not be deleted. Please try again.',
+        ],
+    ],
+    // Subscribers
+    'subscribers' => [
+        'subscribers'  => '구독자',
+        'description'  => '구독자들이 문제가 생겼을 때 이메일 업데이트를 받게 됩니다.',
+        'verified'     => '인증됨',
+        'not_verified' => '인증되지 않음',
+        'add'          => [
+            'title'   => '구독자 추가',
+            'success' => '구독자가 추가됨.',
+            'failure' => '구성요소 생성 중 문제가 발생했습니다.',
+        ],
+        'edit' => [
+            'title'   => '구독자 업데이트',
+            'success' => '구독자가 업데이트됨.',
+            'failure' => '프로필 수정 중 문제가 생겼습니다.',
         ],
     ],
 
@@ -131,6 +171,15 @@ return [
             'title'   => '프로필 수정',
             'success' => '프로필이 수정되었습니다.',
             'failure' => '프로필 수정 중 문제가 생겼습니다.',
+        ],
+        'delete' => [
+            'success' => '사용자 삭제',
+            'failure' => '사용자를 삭제하던 도중 문제가 발생했습니다.',
+        ],
+        'invite' => [
+            'title'   => '새 팀 멤버 초대하기',
+            'success' => '사용자가 초대되었습니다.',
+            'failure' => '초대 중에 문제가 발생했습니다.',
         ],
     ],
 
@@ -186,7 +235,7 @@ return [
 
     // Welcome modal
     'welcome' => [
-        'welcome' => 'Cachet에 오신 것을 환영 합니다',
+        'welcome' => 'Welcome to your status page!',
         'message' => '상태 페이지는 거의 다 준비 되었습니다! 추가 설정을 해보세요',
         'close'   => '내 대시보드로 바로 가기',
         'steps'   => [

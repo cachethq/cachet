@@ -22,7 +22,7 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => '아무 문제도 보고되지 않음.',
+        'none'          => '아무 문제도 보고되지 않음',
         'past'          => '이전 문제',
         'previous_week' => '전 주',
         'next_week'     => '다음 주',
@@ -30,7 +30,7 @@ return [
         'scheduled'     => '예정된 유지 보수',
         'scheduled_at'  => ', :timestamp 에 예정됨',
         'status'        => [
-            0 => '예정된', // TODO: Hopefully remove this.
+            0 => '예정됨', // TODO: Hopefully remove this.
             1 => '파악 중',
             2 => '확인됨',
             3 => '주시하는 중',
@@ -78,7 +78,7 @@ return [
                 'html'           => '<p>:app_name 의 상태 업데이트에 대한 이메일 구독을 확인해주세요.</p><p><a href=":link">:link</a></p> <p>감사 합니다, :app_name</p>',
             ],
             'maintenance' => [
-                'text'           => ":app_name 에 새로운 유지 보수에 예정 되었습니다.\n감사합니다, :app_name",
+                'text'           => ":app_name 에 새로운 작업이 예정 되었습니다.\n감사합니다, :app_name",
                 'html-preheader' => ':app_name 에 새로운 유지 보수가 예정 되었습니다..',
                 'html'           => '<p>:app_name 에 새로운 유지 보수가 예정 되었습니다.</p> <p>감사 합니다, :app_name</p>',
             ],
@@ -87,6 +87,47 @@ return [
                 'html-preheader' => ':app_name 에 새로운 문제가 보고 되었습니다.',
                 'html'           => '<p>:app_name 에 새로운 문제가 보고 되었습니다.</p> <p>감사 합니다, : app_name</p>',
             ],
+            'component' => [
+                'subject'        => 'Component Status Update',
+                'text'           => 'The component :component_name has seen a status change. The component is now at :component_human_status.\nThank you, :app_name',
+                'html-preheader' => 'Component Update from :app_name',
+                'html'           => '<p>The component :component_name has seen a status change. The component is now at :component_human_status.</p><p>Thank you, :app_name</p>',
+                'tooltip-title'  => 'Subscribe to notifications for :component_name.',
+            ],
+        ],
+    ],
+
+    'users' => [
+        'email' => [
+            'invite' => [
+                'text'           => ":app_name 팀의 상태페이지에 초대되었습니다. 가입하시려면 다음 링크를 눌러주세요.\n:link\n감사합니다, :app_name",
+                'html-preheader' => ':app_name 팀에 초대되었습니다.',
+                'html'           => '<p>:app_name 팀의 상태페이지에 초대되었습니다. 가입하시려면 다음 링크를 눌러주세요.</p>
+<p><a href=":link">:link</a></p><p>감사합니다, :app_name</p>',
+            ],
+        ],
+    ],
+
+    'signup' => [
+        'title'    => '가입',
+        'username' => '사용자이름',
+        'email'    => '이메일',
+        'password' => '비밀번호',
+        'success'  => '계정이 생성되었습니다.',
+        'failure'  => '가입 중에 문제가 생겼습니다.',
+    ],
+
+    'system' => [
+        'update' => 'There is a newer version of Cachet available. You can learn how to update <a href="https://docs.cachethq.io/docs/updating-cachet">here</a>!',
+    ],
+
+    // Modal
+    'modal' => [
+        'close'     => 'Close',
+        'subscribe' => [
+            'title'  => 'Subscribe to component updates?',
+            'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll receive emails for this component too.',
+            'button' => '구독',
         ],
     ],
 

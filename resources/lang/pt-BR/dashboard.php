@@ -15,39 +15,43 @@ return [
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Incidentes &amp; Agendamentos',
+        'title'                    => 'Incidentes &amp; Agenda',
         'incidents'                => 'Incidentes',
         'logged'                   => '{0} Não existem incidentes, bom trabalho.|Você registrou um incidente.|Você reportou <strong>:count</strong> incidentes.',
         'incident-create-template' => 'Criar template',
         'incident-templates'       => 'Template de incidentes',
         'add'                      => [
-            'title'   => 'Adicionar um incidente',
+            'title'   => 'Add an Incident',
             'success' => 'Incidente adicionado.',
             'failure' => 'Algo deu errado com o incidente.',
         ],
         'edit' => [
-            'title'   => 'Editar incidente',
+            'title'   => 'Edit an Incident',
             'success' => 'Incidente atualizado.',
             'failure' => 'Algo deu errado com o incidente.',
+        ],
+        'delete' => [
+            'success' => 'The incident has been deleted and will not show on your status page.',
+            'failure' => 'The incident could not be deleted. Please try again.',
         ],
 
         // Incident templates
         'templates' => [
-            'title' => 'Incidentes Templates',
+            'title' => 'Template de incidentes',
             'add'   => [
-                'title'   => 'Criar um template de incidente',
-                'message' => 'Você deve adicionar um template de incidente.',
+                'title'   => 'Create an Incident Template',
+                'message' => 'You should add an Incident Template.',
                 'success' => 'Template criado.',
-                'failure' => 'Ocorreu algum erro ao criar o template, tente novamente.',
+                'failure' => 'Algo deu errado com o template de incidente.',
             ],
             'edit' => [
-                'title'   => 'Editar Template',
+                'title'   => 'Edit Template',
                 'success' => 'Template foi atualizado!',
-                'failure' => 'Ocorreu algum erro ao editar o template, tente novamente.',
+                'failure' => 'Algo deu errado atualizando o template de incidente',
             ],
             'delete' => [
-                'success' => 'O Template foi deletado.',
-                'failure' => 'Ocorreu algum erro ao deletar o template, tente novamente.',
+                'success' => 'The tmplate has been deleted.',
+                'failure' => 'The template could not be deleted. Please try again.',
             ],
         ],
     ],
@@ -55,20 +59,21 @@ return [
     // Incident Maintenance
     'schedule' => [
         'schedule'     => 'Manutenção Agendada',
-        'scheduled_at' => 'Manutenção agendada em :timestamp ',
+        'logged'       => '{0} There are no schedules, good work.|You have logged one schedule.|You have reported <strong>:count</strong> schedules.',
+        'scheduled_at' => 'Agendada em :timestamp',
         'add'          => [
-            'title'   => 'Adicionar manutenção agendada',
-            'success' => 'Agendamento atualizado com sucesso!',
-            'failure' => 'Algo deu errado com o agendamento.',
+            'title'   => 'Adicionar manutenção programada',
+            'success' => 'Agenda adicionada.',
+            'failure' => 'Aconteceu algo errado ao adicionar o cronograma.',
         ],
         'edit' => [
-            'title'   => 'Editar manutenção agendada',
-            'success' => 'Agendamento atualizado com sucesso!',
-            'failure' => 'Algo deu errado com a atualização do agendamento.',
+            'title'   => 'Editar manutenção programada',
+            'success' => 'Agenda foi atualizada!',
+            'failure' => 'Aconteceu algo errado ao editar o cronograma.',
         ],
         'delete' => [
-            'success' => 'O agendamento foi excluído e não será exibido na página de status.',
-            'failure' => 'O agendamento não pode ser excluído. Por favor, tente novamente.',
+            'success' => 'O cronograma foi excluído e não aparecerá na sua página de status.',
+            'failure' => 'O cronograma não pôde ser excluído. Por favor, tente novamente.',
         ],
     ],
 
@@ -76,65 +81,78 @@ return [
     'components' => [
         'components'         => 'Componentes',
         'component_statuses' => 'Status do componente',
-        'listed_group'       => 'Agrupados por :name',
+        'listed_group'       => 'Agrupados sob :name',
         'add'                => [
-            'title'   => 'Adicionar componente',
+            'title'   => 'Add a Component',
             'message' => 'Você deve adicionar um componente.',
             'success' => 'Componente criado.',
             'failure' => 'Algo deu errado com o componente.',
         ],
         'edit' => [
-            'title'   => 'Editar componente',
+            'title'   => 'Edit a Component',
             'success' => 'Componente atualizado.',
-            'failure' => 'Algo deu errado com a atualização do componente.',
+            'failure' => 'Algo deu errado com o componente.',
+        ],
+        'delete' => [
+            'success' => 'Component deleted.',
+            'failure' => 'The Component could not be deleted. Please try again.',
         ],
 
         // Component groups
         'groups' => [
             'groups'        => 'Grupo de componente|Grupos de componente',
-            'no_components' => 'Você deve adicionar um grupo de componentes.',
+            'no_components' => 'Você deve adicionar um componente à um grupo.',
             'add'           => [
-                'title'   => 'Adicionar um grupo de componentes',
+                'title'   => 'Add a Component Group',
                 'success' => 'Grupo de componente adicionado.',
                 'failure' => 'Algo deu errado com o grupo de componente.',
             ],
             'edit' => [
-                'title'   => 'Editar grupo de componentes',
-                'success' => 'Grupo de compoenentes atualizado.',
-                'failure' => 'Algo deu errado com a atualização do grupo de componentes.',
+                'title'   => 'Edit a Component Group',
+                'success' => 'Grupo de componentes atualizado.',
+                'failure' => 'Algo deu errado com o grupo de componentes.',
+            ],
+            'delete' => [
+                'success' => 'Component Group deleted.',
+                'failure' => 'The Component Group could not be deleted. Please try again.',
             ],
         ],
     ],
 
     // Metrics
     'metrics' => [
-        'metrics' => 'Métricas',
+        'metrics' => 'Metricas',
         'add'     => [
-            'title'   => 'Criar uma métrica',
+            'title'   => 'Create a Metric',
+            'message' => 'You should add a Metric.',
             'success' => 'Métrica criada.',
-            'failure' => 'Algo deu errado ao criar a métrica.',
+            'failure' => 'Algo deu errado com a métrica.',
         ],
         'edit' => [
-            'title'   => 'Editar métrica',
+            'title'   => 'Edit a Metric',
             'success' => 'Métrica atualizada.',
-            'failure' => 'Algo deu errado ao atualizar a métrica.',
+            'failure' => 'Algo deu errado com a métrica.',
+        ],
+        'delete' => [
+            'success' => 'The metric has been deleted and will not show on your status page.',
+            'failure' => 'The metric could not be deleted. Please try again.',
         ],
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'  => 'Assinantes',
-        'description'  => 'Os assinantes receberão um alerta quando os incidentes forem criados.',
+        'subscribers'  => 'Inscritos',
+        'description'  => 'Todos os inscritos receberão atualizações quando novos incidentes forem criados.',
         'verified'     => 'Verificado',
         'not_verified' => 'Não verificado',
         'add'          => [
-            'title'   => 'Adicionar novo assinante',
-            'success' => 'Assinante adicionado',
-            'failure' => 'Algo deu errado ao adicionar o assinate.',
+            'title'   => 'Add a New Subscriber',
+            'success' => 'Inscrito adicionado.',
+            'failure' => 'Algo deu errado com o componente.',
         ],
         'edit' => [
-            'title'   => 'Editar assinante',
-            'success' => 'Assinante atualizado.',
-            'failure' => 'Algo deu errado ao atualizar o assinante.',
+            'title'   => 'Update Subscriber',
+            'success' => 'Inscrito atualizado.',
+            'failure' => 'Algo deu errado duante a atualização.',
         ],
     ],
 
@@ -142,21 +160,26 @@ return [
     'team' => [
         'team'        => 'Equipe',
         'member'      => 'Membro',
-        'profile'     => 'Perfil',
+        'profile'     => 'Perfil	',
         'description' => 'Membros da equipe serão capazes de adicionar, modificar &amp; editar componentes e incidentes.',
         'add'         => [
-            'title'   => 'Adicionar um novo membro da equipe',
+            'title'   => 'Add a New Team Member',
             'success' => 'Membro da equipe adicionado.',
-            'failure' => 'Algo deu errado com o componente.',
+            'failure' => 'Something went wrong with the user.',
         ],
         'edit' => [
-            'title'   => 'Editar perfil',
+            'title'   => 'Update Profile',
             'success' => 'Perfil atualizado.',
             'failure' => 'Algo deu errado duante a atualização.',
         ],
         'delete' => [
-            'success' => 'Perfil excluído',
-            'failure' => 'Algo deu errado ao excluir o perfil.',
+            'success' => 'User deleted.',
+            'failure' => 'Ocorreu um problema ao excluir esse usuário.',
+        ],
+        'invite' => [
+            'title'   => 'Invite a New Team Member',
+            'success' => 'The users invited.',
+            'failure' => 'Something went wrong with the invite.',
         ],
     ],
 
@@ -172,10 +195,11 @@ return [
             'analytics' => 'Analytics',
         ],
         'localization' => [
-            'localization' => 'Localização',
+            'localization' => 'Localization',
         ],
         'security' => [
-            'security' => 'Segurança',
+            'security'   => 'Segurança',
+            'two-factor' => 'Usuários sem autenticação de dois fatores',
         ],
         'stylesheet' => [
             'stylesheet' => 'Folha de estilo',
@@ -206,13 +230,13 @@ return [
     'notifications' => [
         'notifications' => 'Notificações',
         'awesome'       => 'Excelente.',
-        'whoops'        => 'Ops.',
+        'whoops'        => 'Opa.',
     ],
 
     // Welcome modal
     'welcome' => [
-        'welcome' => 'Bem-vindo ao Cachet',
-        'message' => 'Sua página de status está quase pronta! Tavez você queira checar essas configurações extras',
+        'welcome' => 'Welcome to your status page!',
+        'message' => 'Sua página de status está quase pronta! Tavez vocë queira checar essas configurações extras',
         'close'   => 'Basta ir direto para o meu painel de controle',
         'steps'   => [
             'component'  => 'Criar componentes',
@@ -220,7 +244,7 @@ return [
             'customize'  => 'Personalizar',
             'team'       => 'Adicionar usuários',
             'api'        => 'Gerar token de API',
-            'two-factor' => 'Autneticação em 2 passos',
+            'two-factor' => 'Autenticação em duas etapas',
         ],
     ],
 

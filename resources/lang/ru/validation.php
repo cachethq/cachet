@@ -22,18 +22,18 @@ return [
     |
     */
 
-    'accepted'   => ':attribute должно быть принято.',
+    'accepted'   => ':attribute должен быть принят.',
     'active_url' => ':attribute не является правильным URL.',
     'after'      => ':attribute должно быть датой после :date.',
     'alpha'      => ':attribute может содержать только буквы.',
     'alpha_dash' => ':attribute может содержать только латинские буквы, цифры и дефис.',
     'alpha_num'  => ':attribute может содержать только буквы и цифры.',
-    'array'      => ':attribute должно быть массивом.',
+    'array'      => ': attribute должно быть массивом.',
     'before'     => ':attribute должно быть датой до :date.',
     'between'    => [
         'numeric' => ':attribute должно быть между :min и :max.',
-        'file'    => ':attribute должно быть от :min до :max килобайт.',
-        'string'  => ':attribute должно быть от :min до :max символов.',
+        'file'    => ':attribute должно быть между :min и :max килобайт.',
+        'string'  => ':attribute должно быть между :min и :max символов.',
         'array'   => ':attribute должно содержать от :min до :max элементов.',
     ],
     'boolean'        => 'Поле :attribute должно содержать true или false.',
@@ -45,10 +45,12 @@ return [
     'digits_between' => ':attribute должно содержать от :min до :max цифр.',
     'email'          => ':attribute должно быть корректным адресом электронной почты.',
     'exists'         => 'Выбранное значение :attribute не верно.',
+    'filled'         => 'Поле :attribute является обязательным.',
     'image'          => ':attribute должно быть изображением.',
     'in'             => 'Выбранное значение :attribute не верно.',
     'integer'        => ':attribute должно быть целым числом.',
     'ip'             => ':attribute не является корректным IP-адресом.',
+    'json'           => ':attribute должен быть в JSON формате.',
     'max'            => [
         'numeric' => ':attribute не может быть больше чем  :max .',
         'file'    => ':attribute не может быть больше :max килобайт.',
@@ -80,9 +82,9 @@ return [
         'array'   => 'Поле :attribute должно содержать :size элементов.',
     ],
     'string'   => 'Поле :attribute должно быть строкой.',
+    'timezone' => ':attribute должно быть корректным часовым поясом.',
     'unique'   => ':attribute уже занято.',
     'url'      => 'Неправильный формат :attribute.',
-    'timezone' => ':attribute должно быть корректным часовым поясом.',
 
     /*
     |--------------------------------------------------------------------------
@@ -97,7 +99,7 @@ return [
 
     'custom' => [
         'attribute-name' => [
-            'rule-name' => 'custom-message',
+            'rule-name' => 'настраиваемое сообщение',
         ],
     ],
 

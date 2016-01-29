@@ -45,10 +45,12 @@ return [
     'digits_between' => ':attribute moet tussen :min en :max cijfers hebben.',
     'email'          => ':attribute moet een geldig e-mailadres zijn.',
     'exists'         => 'Het geselecteerde :attribute is ongeldig.',
+    'filled'         => ':attribute formaat is verplicht.',
     'image'          => ':attribute moet een afbeelding zijn.',
     'in'             => 'Het geselecteerde :attribute is ongeldig.',
     'integer'        => 'The :attribute moet een geheel getal zijn.',
     'ip'             => ':attribute moet een geldig IP-adres zijn.',
+    'json'           => 'The :attribute must be a valid JSON string.',
     'max'            => [
         'numeric' => ':attribute mag niet groter dan :max zijn.',
         'file'    => ':attribute mag niet groter dan :max kilobytes zijn.',
@@ -80,9 +82,9 @@ return [
         'array'   => ':attribute moet :size items bevatten.',
     ],
     'string'   => ':attribute een text waarde zijn.',
+    'timezone' => ':attribute moet een geldige zone zijn.',
     'unique'   => ':attribute is reeds in gebruik.',
     'url'      => 'Het :attribute-formaat is ongeldig.',
-    'timezone' => ':attribute moet een geldige zone zijn.',
 
     /*
     |--------------------------------------------------------------------------

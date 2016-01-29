@@ -30,12 +30,17 @@ return [
             'success' => 'Vorfall aktualisiert.',
             'failure' => 'Etwas ist mit dem Vorfall schiefgelaufen.',
         ],
+        'delete' => [
+            'success' => 'The incident has been deleted and will not show on your status page.',
+            'failure' => 'The incident could not be deleted. Please try again.',
+        ],
 
         // Incident templates
         'templates' => [
             'title' => 'Vorfall Vorlagen',
             'add'   => [
                 'title'   => 'Vorfallvorlage erstellen',
+                'message' => 'You should add an Incident Template.',
                 'success' => 'Vorlage erstellt.',
                 'failure' => 'Etwas ist mit der Vorfallvorlage schiefgelaufen.',
             ],
@@ -44,12 +49,17 @@ return [
                 'success' => 'Vorlage aktualisiert!',
                 'failure' => 'Etwas ist mit dem Updaten der Vorfallvorlage schiefgelaufen',
             ],
+            'delete' => [
+                'success' => 'The tmplate has been deleted.',
+                'failure' => 'The template could not be deleted. Please try again.',
+            ],
         ],
     ],
 
     // Incident Maintenance
     'schedule' => [
         'schedule'     => 'Planmäßige Wartung',
+        'logged'       => '{0} There are no schedules, good work.|You have logged one schedule.|You have reported <strong>:count</strong> schedules.',
         'scheduled_at' => 'Geplant am :timestamp',
         'add'          => [
             'title'   => 'Planmäßige Wartung hinzufügen',
@@ -83,6 +93,10 @@ return [
             'success' => 'Komponente aktualisiert.',
             'failure' => 'Mit der Komponente ist etwas schiefgegangen.',
         ],
+        'delete' => [
+            'success' => 'Component deleted.',
+            'failure' => 'The Component could not be deleted. Please try again.',
+        ],
 
         // Component groups
         'groups' => [
@@ -98,6 +112,10 @@ return [
                 'success' => 'Komponentengruppe aktualisiert.',
                 'failure' => 'Mit der Komponentengruppe ist etwas schiefgegangen.',
             ],
+            'delete' => [
+                'success' => 'Component Group deleted.',
+                'failure' => 'The Component Group could not be deleted. Please try again.',
+            ],
         ],
     ],
 
@@ -106,6 +124,7 @@ return [
         'metrics' => 'Metriken',
         'add'     => [
             'title'   => 'Metrik erstellen',
+            'message' => 'You should add a Metric.',
             'success' => 'Metrik erstellt.',
             'failure' => 'Mit der Metrik ist etwas schiefgegangen.',
         ],
@@ -113,6 +132,10 @@ return [
             'title'   => 'Metrik bearbeiten',
             'success' => 'Metrik aktualisiert.',
             'failure' => 'Mit der Metrik ist etwas schiefgegangen.',
+        ],
+        'delete' => [
+            'success' => 'The metric has been deleted and will not show on your status page.',
+            'failure' => 'The metric could not be deleted. Please try again.',
         ],
     ],
     // Subscribers
@@ -124,12 +147,12 @@ return [
         'add'          => [
             'title'   => 'Einen neuen Abonnenten hinzufügen',
             'success' => 'Abonnent hinzugefügt.',
-            'failure' => 'Mit der Komponente ist etwas schiefgegangen.',
+            'failure' => 'Beim Erstellen der Komponente ist etwas schiefgegangen.',
         ],
         'edit' => [
             'title'   => 'Abonnent aktualisieren',
             'success' => 'Abonnent aktualisiert.',
-            'failure' => 'Bei der Aktualisierung ist etwas schiefgegangen.',
+            'failure' => 'Bei der Aktualisierung ging etwas schief.',
         ],
     ],
 
@@ -152,6 +175,11 @@ return [
         'delete' => [
             'success' => 'Benutzer aktualisiert.',
             'failure' => 'Bei dem Löschen dieses Benutzers ging etwas schief.',
+        ],
+        'invite' => [
+            'title'   => 'Ein neues Teammitglied einladen',
+            'success' => 'Die Benutzer eingeladen.',
+            'failure' => 'Mit der Einladung ist etwas schiefgelaufen.',
         ],
     ],
 
@@ -188,7 +216,7 @@ return [
     // Login
     'login' => [
         'login'      => 'Anmelden',
-        'logged_in'  => 'Sie sind angemeldet.',
+        'logged_in'  => 'Sie sind eingeloggt.',
         'welcome'    => 'Willkommen zurück!',
         'two-factor' => 'Bitte geben Sie Ihren Token ein.',
     ],
@@ -207,7 +235,7 @@ return [
 
     // Welcome modal
     'welcome' => [
-        'welcome' => 'Willkommen zu Cachet',
+        'welcome' => 'Welcome to your status page!',
         'message' => 'Ihre Statusseite ist fast fertig! Vielleicht möchten Sie diese zusätzlichen Einstellungen konfigurieren',
         'close'   => 'Gehe einfach direkt zu meinem Dashboard',
         'steps'   => [

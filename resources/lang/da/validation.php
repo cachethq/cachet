@@ -64,14 +64,14 @@ return [
         'string'  => ':attribute skal være mindst :min karakterer.',
         'array'   => ':attribute skal have mindst :min emner.',
     ],
-    'not_in'               => 'Det valgte :attribute er ikke gyldigt.',
+    'not_in'               => 'Den valgte :attribute er ugyldig.',
     'numeric'              => ':attribute skal være et tal.',
     'regex'                => ':attribute er ikke korrekt formateret.',
     'required'             => ':attribute skal udfyldes.',
     'required_if'          => ':attribute skal udfyldes når :other er :value.',
     'required_unless'      => 'The :attribute field is required unless :other is in :values.',
     'required_with'        => ':attribute skal udfyldes når :values er present.',
-    'required_with_all'    => ':attribute skal udfyldes når :values er present.',
+    'required_with_all'    => 'Feltet :attribute er krævet når :values eksisterer.',
     'required_without'     => ':attribute skal udfyldes når :values ikke er sat.',
     'required_without_all' => ':attribute skal udfyldes når ingen af :values er sat.',
     'same'                 => ':attribute og :other skal være ens.',
@@ -84,7 +84,7 @@ return [
     'string'   => ':attribute skal være en streng.',
     'timezone' => ':attribute skal være en gyldig zone.',
     'unique'   => ':attribute er allerede i brug.',
-    'url'      => ':attribute er ikke gyldigt formateret.',
+    'url'      => 'Formatet af :attribute er ugyldigt.',
 
     /*
     |--------------------------------------------------------------------------

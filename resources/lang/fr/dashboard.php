@@ -30,19 +30,28 @@ return [
             'success' => 'Incident mis à jour.',
             'failure' => 'Une erreur est survenue avec l\'incident.',
         ],
+        'delete' => [
+            'success' => 'The incident has been deleted and will not show on your status page.',
+            'failure' => 'The incident could not be deleted. Please try again.',
+        ],
 
         // Incident templates
         'templates' => [
             'title' => 'Modèles d\'incident',
             'add'   => [
                 'title'   => 'Créer un modèle d\'incident',
+                'message' => 'You should add an Incident Template.',
                 'success' => 'Modèle créé.',
                 'failure' => 'Une erreur est survenue avec le modèle d\'incident.',
             ],
             'edit' => [
                 'title'   => 'Editer le Template',
                 'success' => 'Le modèle a été mis à jour !',
-                'failure' => 'Une erreur est survenue avec la mise à jour le modèle d\'incident',
+                'failure' => 'Une erreur est survenue lors de la mise à jour le modèle d\'incident',
+            ],
+            'delete' => [
+                'success' => 'The tmplate has been deleted.',
+                'failure' => 'The template could not be deleted. Please try again.',
             ],
         ],
     ],
@@ -50,6 +59,7 @@ return [
     // Incident Maintenance
     'schedule' => [
         'schedule'     => 'Maintenance planifiée',
+        'logged'       => '{0} There are no schedules, good work.|You have logged one schedule.|You have reported <strong>:count</strong> schedules.',
         'scheduled_at' => 'Planifiée à :timestamp',
         'add'          => [
             'title'   => 'Ajouter une maintenance planifiée',
@@ -62,16 +72,16 @@ return [
             'failure' => 'Une erreur est survenue lors de l\'édition de la planification.',
         ],
         'delete' => [
-            'success' => 'Cette planification a été supprimée et ne sera pas affichée sur votre page de statut.',
-            'failure' => 'Cette planification n\'a pas pu être supprimée. Veuillez réessayer.',
+            'success' => 'La planification a été supprimée et ne sera pas affichée sur votre page de statut.',
+            'failure' => 'La planification n\'a pas pu être supprimée. Veuillez réessayer.',
         ],
     ],
 
     // Components
     'components' => [
         'components'         => 'Composants',
-        'component_statuses' => 'Statuts des composant',
-        'listed_group'       => 'Groupés dans : nom',
+        'component_statuses' => 'Statut des composants',
+        'listed_group'       => 'Groupés par : nom',
         'add'                => [
             'title'   => 'Ajouter un composant',
             'message' => 'Vous devez ajouter un composant.',
@@ -83,20 +93,28 @@ return [
             'success' => 'Composant mis à jour.',
             'failure' => 'Une erreur est survenue avec le composant.',
         ],
+        'delete' => [
+            'success' => 'Component deleted.',
+            'failure' => 'The Component could not be deleted. Please try again.',
+        ],
 
         // Component groups
         'groups' => [
-            'groups'        => 'Groupes de composants',
+            'groups'        => 'Groupe de composants|Groupes de composants',
             'no_components' => 'Vous devez ajouter un groupe de composants.',
             'add'           => [
                 'title'   => 'Ajouter un groupe de composants',
-                'success' => 'Groupe composant ajouté.',
+                'success' => 'Groupe de composants ajouté.',
                 'failure' => 'Une erreur est survenue avec le groupe de composants.',
             ],
             'edit' => [
                 'title'   => 'Modifier un groupe de composants',
                 'success' => 'Groupe de composants mis à jour.',
                 'failure' => 'Un problème est survenu avec le groupe de composants.',
+            ],
+            'delete' => [
+                'success' => 'Component Group deleted.',
+                'failure' => 'The Component Group could not be deleted. Please try again.',
             ],
         ],
     ],
@@ -106,6 +124,7 @@ return [
         'metrics' => 'Métriques',
         'add'     => [
             'title'   => 'Créer un indicateur',
+            'message' => 'You should add a Metric.',
             'success' => 'Métrique créé.',
             'failure' => 'Un problème est survenu avec cet indicateur.',
         ],
@@ -114,12 +133,16 @@ return [
             'success' => 'Indicateur mise à jour.',
             'failure' => 'Un problème est survenu avec cet indicateur.',
         ],
+        'delete' => [
+            'success' => 'The metric has been deleted and will not show on your status page.',
+            'failure' => 'The metric could not be deleted. Please try again.',
+        ],
     ],
     // Subscribers
     'subscribers' => [
         'subscribers'  => 'Abonnés',
-        'description'  => 'Les abonnés receveront un courriel lors de la création d\'incident.',
-        'verified'     => 'Vérifié',
+        'description'  => 'Les abonnés reçoivent des notifications par email lorsque des incidents sont créés.',
+        'verified'     => 'Vérifié ',
         'not_verified' => 'Non vérifié',
         'add'          => [
             'title'   => 'Ajouter un abonné',
@@ -127,18 +150,18 @@ return [
             'failure' => 'Une erreur est survenue avec le composant.',
         ],
         'edit' => [
-            'title'   => 'Mettre à jour un abonné',
+            'title'   => 'Mettre à jour l\'abonné',
             'success' => 'Abonné mis à jour.',
-            'failure' => 'Une erreur est survenue lors de l\'actualisation.',
+            'failure' => 'Une erreur est survenue lors de la mise à jour.',
         ],
     ],
 
     // Team
     'team' => [
         'team'        => 'Equipe',
-        'member'      => 'Utilisateur',
+        'member'      => 'Membre',
         'profile'     => 'Profil utilisateur',
-        'description' => 'Membres de l\'équipe sera en mesure d\'ajouter, de modifier et de modifier les composants et les incidents.',
+        'description' => 'Les membres de l\'équipe pourront ajouter &amp; modifier les composants et les incidents.',
         'add'         => [
             'title'   => 'Ajouter un nouveau membre de l\'équipe',
             'success' => 'Membre de l\'équipe a ajouté.',
@@ -147,11 +170,16 @@ return [
         'edit' => [
             'title'   => 'Mettre le Profil à Jour',
             'success' => 'Profil mis à jour.',
-            'failure' => 'Une erreur est survenue lors de l\'actualisation.',
+            'failure' => 'Une erreur est survenue lors de la mise à jour.',
         ],
         'delete' => [
-            'success' => 'Profil supprimé',
-            'failure' => 'Une erreur est survenue lors de la suppression.',
+            'success' => 'Utilisateur supprimé.',
+            'failure' => 'Une erreur s\'est produite lors de la suppression de l\'utilisateur.',
+        ],
+        'invite' => [
+            'title'   => 'Inviter un nouveau membre d\'équipe',
+            'success' => 'The users invited.',
+            'failure' => 'Un problème est survenu avec cette invitation.',
         ],
     ],
 
@@ -207,15 +235,15 @@ return [
 
     // Welcome modal
     'welcome' => [
-        'welcome' => 'Bienvenue sur Cachet',
-        'message' => 'Votre page de statut est presque prêt ! Vous pouvez configurer ces paramètres supplémentaires',
-        'close'   => 'Il suffit d\'aller directement à mon tableau de bord',
+        'welcome' => 'Welcome to your status page!',
+        'message' => 'Votre page de statut est presque prête ! Vous pouvez configurer ces paramètres supplémentaires',
+        'close'   => 'Aller directement au tableau de bord',
         'steps'   => [
             'component'  => 'Créer des composants',
             'incident'   => 'Créer des incidents',
             'customize'  => 'Personnaliser',
             'team'       => 'Ajouter des utilisateurs',
-            'api'        => 'Générer un jeton pour l\'API',
+            'api'        => 'Générer un jeton d\'API',
             'two-factor' => 'Authentification à deux facteurs',
         ],
     ],

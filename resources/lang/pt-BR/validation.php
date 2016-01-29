@@ -45,10 +45,12 @@ return [
     'digits_between' => 'O :attribute deve ter entre :min e :max dígitos.',
     'email'          => 'A: attribute deve ser um endereço de email válido.',
     'exists'         => 'O :attribute selecionado é inválido.',
+    'filled'         => 'O campo de :attribute é obrigatório.',
     'image'          => 'O :attribute deve ser uma imagem.',
     'in'             => 'O :attribute selecionado é inválido.',
     'integer'        => 'O :attribute deve ser um número inteiro.',
     'ip'             => 'O :attribute deve ser um endereço de IP válido.',
+    'json'           => 'The :attribute must be a valid JSON string.',
     'max'            => [
         'numeric' => 'O :attribute não pode ser maior do que :max.',
         'file'    => 'O campo :attribute não deverá ter um tamanho superior a :max kilobytes.',
@@ -79,10 +81,10 @@ return [
         'string'  => 'O :attribute deve ter :size caracteres.',
         'array'   => 'O :attribute deve ter :size itens.',
     ],
-    'string'   => 'O :attribute deve ser uma string.',
+    'string'   => 'O campo :attribute deve ser uma string.',
+    'timezone' => 'O :attribute deve ser uma zona válida.',
     'unique'   => 'O :attribute já existe.',
     'url'      => 'O formato de :attribute é inválido.',
-    'timezone' => 'O :attribute deve ser uma zona válida.',
 
     /*
     |--------------------------------------------------------------------------
@@ -97,7 +99,7 @@ return [
 
     'custom' => [
         'attribute-name' => [
-            'rule-name' => 'Mensagem personalizada',
+            'rule-name' => 'Mensagem-personalizada',
         ],
     ],
 

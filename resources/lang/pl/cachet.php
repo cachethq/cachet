@@ -13,28 +13,28 @@ return [
     // Components
     'components' => [
         'status' => [
-            1 => 'Działa',
-            2 => 'Problemy wydajnościowe',
-            3 => 'Częściowa niedostępność',
-            4 => 'Poważna awaria',
+            1 => 'Funktionsfähig',
+            2 => 'Leistungsprobleme',
+            3 => 'Teilweiser Ausfall',
+            4 => 'Schwerer Ausfall',
         ],
     ],
 
     // Incidents
     'incidents' => [
-        'none'          => 'Brak incydentów.',
-        'past'          => 'Poprzednie incydenty',
-        'previous_week' => 'Poprzedni tydzień',
-        'next_week'     => 'Następny tydzień',
-        'none'          => 'Brak incydentów',
-        'scheduled'     => 'Zapowiedziane prace',
-        'scheduled_at'  => ', scheduled :timestamp',
+        'none'          => 'Keine Vorfälle berichtet.',
+        'past'          => 'Vergangene Vorfälle',
+        'previous_week' => 'Vorherige Woche',
+        'next_week'     => 'Nächste Woche',
+        'none'          => 'Keine Vorfälle berichtet.',
+        'scheduled'     => 'Geplante Wartungen',
+        'scheduled_at'  => ', geplant :timestamp',
         'status'        => [
-            0 => 'Planowy', // TODO: Hopefully remove this.
-            1 => 'Szukanie',
-            2 => 'Zidentyfikowany',
-            3 => 'Obserwacja',
-            4 => 'Naprawiony',
+            0 => 'Geplant', // TODO: Hopefully remove this.
+            1 => 'Untersuchungen laufen',
+            2 => 'Identifiziert',
+            3 => 'Unter Beobachtung',
+            4 => 'Behoben',
         ],
     ],
 
@@ -46,55 +46,95 @@ return [
     ],
 
     'api' => [
-        'regenerate' => 'Przegeneruj klucz API',
-        'revoke'     => 'Odwołaj klucz API',
+        'regenerate' => 'API-Schlüssel neu generieren',
+        'revoke'     => 'API-Schlüssel widerrufen',
     ],
 
     // Metrics
     'metrics' => [
         'filter' => [
             'last_hour' => 'Last Hour',
-            'hourly'    => 'Last 12 Hours',
-            'weekly'    => 'Week',
-            'monthly'   => 'Month',
+            'hourly'    => 'Letzte 12 Stunden',
+            'weekly'    => 'Wöchentlich',
+            'monthly'   => 'Monatlich',
         ],
     ],
 
     // Subscriber
     'subscriber' => [
-        'subscribe' => 'Subscribe to get the most recent updates.',
-        'button'    => 'Subscribe',
+        'subscribe' => 'Abonnieren Sie um die neuesten Updates zu erhalten.',
+        'button'    => 'Abonnieren',
         'email'     => [
-            'subscribe'          => 'Subscribe to email updates.',
-            'subscribed'         => 'You\'ve been subscribed to email notifications, please check your email to confirm your subscription.',
-            'verified'           => 'Your email subscription has been confirmed. Thank you!',
-            'unsubscribe'        => 'Unsuscribe from email updates.',
-            'unsubscribed'       => 'Your email subscription has been cancelled.',
-            'failure'            => 'Something went wrong with the subscription.',
+            'subscribe'          => 'Aktualisierungen per E-Mail abonnieren.',
+            'subscribed'         => 'Sie haben E-Mail-Benachrichtigungen abonniert, überprüfen Sie bitte Ihre E-Mail, um Ihr Abonnement zu bestätigen.',
+            'verified'           => 'Ihre E-Mail-Abonnement ist bestätigt worden. Danke!',
+            'unsubscribe'        => 'Von E-Mail-Updates deabonnieren.',
+            'unsubscribed'       => 'Ihre E-Mail-Abonnement wurde gekündigt.',
+            'failure'            => 'Etwas ist mit dem Abonnement schief gelaufen.',
             'already-subscribed' => 'Cannot subscribe :email because they\'re already subscribed.',
             'verify'             => [
-                'text'           => "Please confirm your email subscription to :app_name status updates.\n:link\nThank you, :app_name",
-                'html-preheader' => 'Please confirm your email subscription to :app_name status updates.',
-                'html'           => '<p>Please confirm your email subscription to :app_name status updates.</p><p><a href=":link">:link</a></p><p>Thank you, :app_name</p>',
+                'text'           => "Bitte bestätigen Sie Ihre E-Mail-Abonnement zu :app_name Status-Aktualisierungen.\n:link\nDanke, :app_name",
+                'html-preheader' => 'Bitte bestätigen Sie Ihre E-Mail-Abonnement zu :app_name Status-Aktualisierungen.',
+                'html'           => '<p>Bestätigen Sie bitte Ihr E-Mail-Abonnement für :app_name Statusaktualisierungen.</p><p><a href=":link">:link</a></p><p>Danke, :app_name</p>',
             ],
             'maintenance' => [
-                'text'           => "New maintenance has been scheduled on :app_name.\nThank you, :app_name",
-                'html-preheader' => 'New maintenance has been scheduled on :app_name.',
-                'html'           => '<p>New maintenance has been scheduled on :app_name.</p><p>Thank you, :app_name</p>',
+                'text'           => "Neue Wartung wurde für :app_name geplant.\nDanke, :app_name",
+                'html-preheader' => 'Neue Wartung wurde für :app_name geplant.',
+                'html'           => '<p>Neue Wartung wurde für :app_name geplant.</p>',
             ],
             'incident' => [
-                'text'           => "New incident has been reported on :app_name.\nThank you, :app_name",
-                'html-preheader' => 'New incident has been reported on :app_name.',
-                'html'           => '<p>New incident has been reported on :app_name.</p><p>Thank you, :app_name</p>',
+                'text'           => "Ein neuer Vorfall wurde auf :app_name berichtet.\nDanke, :app_name",
+                'html-preheader' => 'Ein neuer Vorfall wurde über :app_name berichtet.',
+                'html'           => '<p>Ein neuer Vorfall wurde über :app_name berichtet.</p> <p>Danke, :app_name</p>',
+            ],
+            'component' => [
+                'subject'        => 'Component Status Update',
+                'text'           => 'The component :component_name has seen a status change. The component is now at :component_human_status.\nThank you, :app_name',
+                'html-preheader' => 'Component Update from :app_name',
+                'html'           => '<p>The component :component_name has seen a status change. The component is now at :component_human_status.</p><p>Thank you, :app_name</p>',
+                'tooltip-title'  => 'Subscribe to notifications for :component_name.',
             ],
         ],
     ],
 
+    'users' => [
+        'email' => [
+            'invite' => [
+                'text'           => "You have been invited to the team :app_name status page, to sign up follow the next link.\n:link\nThank you, :app_name",
+                'html-preheader' => 'You have been invited to the team :app_name.',
+                'html'           => '<p>You have been invited to the team :app_name status page, to sign up follow the next link.</p><p><a href=":link">:link</a></p><p>Thank you, :app_name</p>',
+            ],
+        ],
+    ],
+
+    'signup' => [
+        'title'    => 'Sign Up',
+        'username' => 'Benutzername',
+        'email'    => 'E-Mail',
+        'password' => 'Passwort',
+        'success'  => 'Your account has been created.',
+        'failure'  => 'Something went wrong with the signup.',
+    ],
+
+    'system' => [
+        'update' => 'There is a newer version of Cachet available. You can learn how to update <a href="https://docs.cachethq.io/docs/updating-cachet">here</a>!',
+    ],
+
+    // Modal
+    'modal' => [
+        'close'     => 'Close',
+        'subscribe' => [
+            'title'  => 'Subscribe to component updates?',
+            'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll receive emails for this component too.',
+            'button' => 'Abonnieren',
+        ],
+    ],
+
     // Other
-    'powered_by'      => ':app Status Page is powered by <a href="https://cachethq.io">Cachet</a>.',
-    'about_this_site' => 'O tej stronie',
-    'rss-feed'        => 'RSS Feed',
-    'atom-feed'       => 'Atom Feed',
-    'feed'            => 'Status Feed',
+    'powered_by'      => ':app Status-Seite betrieben mit <a href="https://cachethq.io">Cachet</a>.',
+    'about_this_site' => 'Über diese Seite',
+    'rss-feed'        => 'RSS',
+    'atom-feed'       => 'Atom',
+    'feed'            => 'Status-Feed',
 
 ];
