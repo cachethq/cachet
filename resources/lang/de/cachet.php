@@ -40,8 +40,9 @@ return [
 
     // Service Status
     'service' => [
-        'good' => 'Alle Systeme sind funktionsfähig.',
-        'bad'  => 'Einige Dienste arbeiten nicht ordnungsgemäß.',
+        'good'  => '[0,1] System operational|[2,Inf] All systems are operational',
+        'bad'   => '[0,1] The system is currently experiencing issues|[2,Inf] Some systems are experiencing issues',
+        'major' => '[0,1] The service experiencing a major outage|[2,Inf] Some systems are experiencing a major outage',
     ],
 
     'api' => [
