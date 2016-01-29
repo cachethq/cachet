@@ -21,7 +21,7 @@
                                 <div class="col-xs-12">
                                     <div class="form-group">
                                         <label>{{ trans('forms.settings.stylesheet.custom-css') }}</label>
-                                        <textarea class="form-control autosize" name="stylesheet" rows="10">{{ Setting::get('stylesheet') }}</textarea>
+                                        <textarea class="form-control autosize" name="stylesheet" rows="10">{{ Config::get('setting.stylesheet') }}</textarea>
                                     </div>
                                 </div>
                             </div>
