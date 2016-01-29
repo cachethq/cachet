@@ -37,7 +37,7 @@ class EventServiceProvider extends ServiceProvider
             //
         ],
         'CachetHQ\Cachet\Bus\Events\Component\ComponentWasUpdatedEvent' => [
-            //
+            'CachetHQ\Cachet\Bus\Handlers\Events\Component\SendComponentUpdateEmailNotificationHandler',
         ],
         'CachetHQ\Cachet\Bus\Events\Incident\IncidentWasReportedEvent' => [
             'CachetHQ\Cachet\Bus\Handlers\Events\Incident\SendIncidentEmailNotificationHandler',
@@ -70,6 +70,9 @@ class EventServiceProvider extends ServiceProvider
             'CachetHQ\Cachet\Bus\Handlers\Events\Subscriber\SendSubscriberVerificationEmailHandler',
         ],
         'CachetHQ\Cachet\Bus\Events\Subscriber\SubscriberHasUnsubscribedEvent' => [
+            //
+        ],
+        'CachetHQ\Cachet\Bus\Events\Subscriber\SubscriberHasUpdatedSubscriptionsEvent' => [
             //
         ],
         'CachetHQ\Cachet\Bus\Events\Subscriber\SubscriberHasVerifiedEvent' => [

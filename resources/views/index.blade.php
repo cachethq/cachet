@@ -56,4 +56,6 @@
     </ul>
 </nav>
 @endif
+
+@include('partials.modals.subscribe')
 @stop
