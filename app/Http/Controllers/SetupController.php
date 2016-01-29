@@ -11,7 +11,6 @@
 
 namespace CachetHQ\Cachet\Http\Controllers;
 
-use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Cachet\Models\User;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
@@ -179,10 +178,12 @@ class SetupController extends Controller
 
             Auth::login($user);
 
+            $setting = app('setting');
+
             $settings = array_pull($postData, 'settings');
 
             foreach ($settings as $settingName => $settingValue) {
-                Setting::set($settingName, $settingValue);
+                $setting->set($settingName, $settingValue);
             }
 
             $envData = array_pull($postData, 'env');
