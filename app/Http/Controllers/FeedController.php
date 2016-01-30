@@ -11,11 +11,11 @@
 
 namespace CachetHQ\Cachet\Http\Controllers;
 
-use CachetHQ\Cachet\Facades\Setting;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Incident;
 use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Str;
 use Roumen\Feed\Facades\Feed;
 
@@ -36,9 +36,9 @@ class FeedController extends Controller
     public function __construct()
     {
         $this->feed = Feed::make();
-        $this->feed->title = Setting::get('app_name');
+        $this->feed->title = Config::get('setting.app_name');
         $this->feed->description = trans('cachet.feed');
-        $this->feed->link = Str::canonicalize(Setting::get('app_domain'));
+        $this->feed->link = Str::canonicalize(Config::get('setting.app_domain'));
         $this->feed->setDateFormat('datetime');
     }
 
@@ -63,7 +63,7 @@ class FeedController extends Controller
      */
     public function rssAction(ComponentGroup $group = null)
     {
-        $this->feed->lang = Setting::get('app_locale');
+        $this->feed->lang = Config::get('setting.app_locale');
 
         return $this->feedAction($group, true);
     }
@@ -103,7 +103,7 @@ class FeedController extends Controller
     {
         $this->feed->add(
             $incident->name,
-            Setting::get('app_name'),
+            Config::get('setting.app_name'),
             Str::canonicalize(route('incident', ['id' => $incident->id])),
             $isRss ? $incident->created_at->toRssString() : $incident->created_at->toAtomString(),
             $isRss ? $incident->message : Markdown::convertToHtml($incident->message)
