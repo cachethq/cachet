@@ -12,6 +12,9 @@ sudo: false
 install:
   - travis_retry composer install --no-interaction --no-scripts --prefer-source
 
+before_script:
+  - if [ "$TRAVIS_PHP_VERSION" != "5.6" ] || [ "$TRAVIS_PULL_REQUEST" != false ]; then phpenv config-rm xdebug.ini; fi
+
 script:
   - if [ "$TRAVIS_PHP_VERSION" != "5.6" ] || [ "$TRAVIS_PULL_REQUEST" != false ]; then vendor/bin/phpunit; fi
   - if [ "$TRAVIS_PHP_VERSION" == "5.6" ] && [ "$TRAVIS_PULL_REQUEST" == false ]; then vendor/bin/phpunit --coverage-clover build/logs/clover.xml; fi
