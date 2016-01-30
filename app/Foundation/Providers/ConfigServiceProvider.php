@@ -14,6 +14,7 @@ namespace CachetHQ\Cachet\Foundation\Providers;
 use CachetHQ\Cachet\Config\Repository;
 use CachetHQ\Cachet\Models\Setting as SettingModel;
 use Exception;
+use Illuminate\Contracts\Console\Kernel;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ServiceProvider;
 
@@ -26,6 +27,20 @@ class ConfigServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        if ($this->app->configurationIsCached()) {
+            if ($this->app->environment() === 'production') {
+                $this->app->terminating(function () {
+                    if ($this->app->setting->stale()) {
+                        $this->app->make(Kernel::class)->call('config:cache');
+                    }
+                });
+            } else {
+                $this->app->make(Kernel::class)->call('config:clear');
+            }
+
+            return;
+        }
+
         try {
             $this->app->config->set('setting', $this->app->setting->all());
         } catch (Exception $e) {
@@ -57,6 +72,12 @@ class ConfigServiceProvider extends ServiceProvider
         }
 
         $this->app->config->set('cors.paths.api/v1/*.allowedOrigins', $allowedOrigins);
+
+        if ($this->app->environment() === 'production') {
+            $this->app->terminating(function () {
+                $this->app->make(Kernel::class)->call('config:cache');
+            });
+        }
     }
 
     /**
