@@ -50,7 +50,7 @@ return [
                 'failure' => 'Something went wrong updating the incident template',
             ],
             'delete' => [
-                'success' => 'The tmplate has been deleted.',
+                'success' => 'The template has been deleted.',
                 'failure' => 'The template could not be deleted. Please try again.',
             ],
         ],
