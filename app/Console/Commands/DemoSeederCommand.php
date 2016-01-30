@@ -80,8 +80,13 @@ class DemoSeederCommand extends Command
     {
         $defaultGroups = [
             [
-                'name'  => 'Websites',
-                'order' => 1,
+                'name'      => 'Websites',
+                'order'     => 1,
+                'collapsed' => false,
+            ], [
+                'name'      => 'Alt Three',
+                'order'     => 2,
+                'collapsed' => true,
             ],
         ];
 
@@ -123,11 +128,18 @@ class DemoSeederCommand extends Command
                 'link'        => 'https://cachethq.io',
             ], [
                 'name'        => 'Blog',
-                'description' => 'The Cachet Blog.',
+                'description' => 'The Alt Three Blog.',
                 'status'      => 1,
                 'order'       => 0,
-                'group_id'    => 1,
-                'link'        => 'https://blog.cachethq.io',
+                'group_id'    => 2,
+                'link'        => 'https://blog.alt-three.com',
+            ], [
+                'name'        => 'StyleCI',
+                'description' => 'The PHP Coding Style Service.',
+                'status'      => 1,
+                'order'       => 1,
+                'group_id'    => 2,
+                'link'        => 'https://styleci.io',
             ],
         ];
 
