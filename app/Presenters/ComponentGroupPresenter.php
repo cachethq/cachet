@@ -57,6 +57,16 @@ class ComponentGroupPresenter extends BasePresenter implements Arrayable
     }
 
     /**
+     * Determine the class for collapsed/uncollapsed groups.
+     *
+     * @return string
+     */
+    public function collapse_class()
+    {
+        return $this->wrappedObject->collapsed ? 'ion-ios-plus-outline' : 'ion-ios-minus-outline';
+    }
+
+    /**
      * Convert the presenter instance to an array.
      *
      * @return string[]

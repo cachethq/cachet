@@ -3,7 +3,7 @@
     @foreach($component_groups as $componentGroup)
     @if($componentGroup->enabled_components->count() > 0)
     <li class="list-group-item group-name">
-        <i class="ion-ios-minus-outline group-toggle"></i>
+        <i class="{{ $componentGroup->collapse_class }} group-toggle"></i>
         <strong>{{ $componentGroup->name }}</strong>
 
         <div class="pull-right">
