@@ -14,7 +14,6 @@ namespace CachetHQ\Cachet\Foundation\Providers;
 use CachetHQ\Cachet\Config\Repository;
 use CachetHQ\Cachet\Models\Setting as SettingModel;
 use Exception;
-use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ServiceProvider;
 
 class ConfigServiceProvider extends ServiceProvider
