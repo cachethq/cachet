@@ -94,7 +94,7 @@ return [
             'failure' => 'The component could not be updated. Please try again.',
         ],
         'delete' => [
-            'success' => 'Component has been deleted!',
+            'success' => 'The component has been deleted!',
             'failure' => 'The component could not be deleted. Please try again.',
         ],
 
