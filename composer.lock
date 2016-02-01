@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a03ddb86888b5d17380401b81539fa2f",
-    "content-hash": "07e7bd2633a541cdb139d05193037ea6",
+    "hash": "2109e6c3d0a83e2c1f6faf80ee43af4c",
+    "content-hash": "20ece70ee25048057bfc6c188b758d5e",
     "packages": [
         {
             "name": "alt-three/bus",
@@ -283,6 +283,71 @@
             "description": "BaconQrCode is a QR code generator for PHP.",
             "homepage": "https://github.com/Bacon/BaconQrCode",
             "time": "2016-01-09 22:55:35"
+        },
+        {
+            "name": "badges/poser",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/JamesForks/poser.git",
+                "reference": "701f9dcc04badd174bf8b2efb07a90a75ff84400"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/JamesForks/poser/zipball/701f9dcc04badd174bf8b2efb07a90a75ff84400",
+                "reference": "701f9dcc04badd174bf8b2efb07a90a75ff84400",
+                "shasum": ""
+            },
+            "require": {
+                "symfony/console": "~2"
+            },
+            "require-dev": {
+                "behat/behat": "dev-master",
+                "phpspec/phpspec": "dev-master"
+            },
+            "bin": [
+                "bin/poser"
+            ],
+            "type": "lib",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PUGX\\Poser\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Giulio De Donato",
+                    "email": "liuggio@gmail.com"
+                },
+                {
+                    "name": "PUGX Community",
+                    "homepage": "https://github.com/PUGX/badge-poser/contributors"
+                },
+                {
+                    "name": "Shields Community",
+                    "homepage": "https://github.com/badges/poser/contributors"
+                }
+            ],
+            "description": "Poser, add badges on your readme..",
+            "homepage": "https://github.com/PUGX",
+            "keywords": [
+                "badge",
+                "composer",
+                "packagist",
+                "pin"
+            ],
+            "support": {
+                "source": "https://github.com/JamesForks/poser/tree/master"
+            },
+            "time": "2015-10-13 10:59:32"
         },
         {
             "name": "barryvdh/laravel-cors",
@@ -2021,16 +2086,16 @@
         },
         {
             "name": "mccool/laravel-auto-presenter",
-            "version": "4.2.1",
+            "version": "v4.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-auto-presenter/laravel-auto-presenter.git",
-                "reference": "c385b113696dfc564869c54f5c4baba5e116a3be"
+                "reference": "48649d3f98e369c2e0922ef37190dd15812a292a"
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel-auto-presenter/laravel-auto-presenter/zipball/c385b113696dfc564869c54f5c4baba5e116a3be",
-                "reference": "c385b113696dfc564869c54f5c4baba5e116a3be",
+                "reference": "48649d3f98e369c2e0922ef37190dd15812a292a",
                 "shasum": ""
             },
             "require": {
@@ -2079,7 +2144,7 @@
                 "lpm",
                 "presenter"
             ],
-            "time": "2016-01-30 14:04:34"
+            "time": "2016-01-24 11:06:03"
         },
         {
             "name": "monolog/monolog",
@@ -2679,16 +2744,16 @@
         },
         {
             "name": "simplesoftwareio/simple-qrcode",
-            "version": "1.3.2",
+            "version": "1.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SimpleSoftwareIO/simple-qrcode.git",
-                "reference": "551f7ff10d0f95ac64cfc98d1eba5d331cad8428"
+                "reference": "17c5e45c79c40f717d4bc08cf5e568f29ebf9333"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SimpleSoftwareIO/simple-qrcode/zipball/551f7ff10d0f95ac64cfc98d1eba5d331cad8428",
-                "reference": "551f7ff10d0f95ac64cfc98d1eba5d331cad8428",
+                "url": "https://api.github.com/repos/SimpleSoftwareIO/simple-qrcode/zipball/17c5e45c79c40f717d4bc08cf5e568f29ebf9333",
+                "reference": "17c5e45c79c40f717d4bc08cf5e568f29ebf9333",
                 "shasum": ""
             },
             "require": {
@@ -2726,7 +2791,7 @@
                 "qrcode",
                 "wrapper"
             ],
-            "time": "2015-12-22 18:00:28"
+            "time": "2016-01-31 02:09:25"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -2783,26 +2848,26 @@
         },
         {
             "name": "symfony/console",
-            "version": "v3.0.1",
+            "version": "v2.8.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "ebcdc507829df915f4ca23067bd59ee4ef61f6c3"
+                "reference": "d0239fb42f98dd02e7d342f793c5d2cdee0c478d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/ebcdc507829df915f4ca23067bd59ee4ef61f6c3",
-                "reference": "ebcdc507829df915f4ca23067bd59ee4ef61f6c3",
+                "url": "https://api.github.com/repos/symfony/console/zipball/d0239fb42f98dd02e7d342f793c5d2cdee0c478d",
+                "reference": "d0239fb42f98dd02e7d342f793c5d2cdee0c478d",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.5.9",
+                "php": ">=5.3.9",
                 "symfony/polyfill-mbstring": "~1.0"
             },
             "require-dev": {
                 "psr/log": "~1.0",
-                "symfony/event-dispatcher": "~2.8|~3.0",
-                "symfony/process": "~2.8|~3.0"
+                "symfony/event-dispatcher": "~2.1|~3.0.0",
+                "symfony/process": "~2.1|~3.0.0"
             },
             "suggest": {
                 "psr/log": "For using the console logger",
@@ -2812,7 +2877,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0-dev"
+                    "dev-master": "2.8-dev"
                 }
             },
             "autoload": {
@@ -2839,7 +2904,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2015-12-22 10:39:06"
+            "time": "2016-01-14 08:33:16"
         },
         {
             "name": "symfony/debug",
@@ -4042,7 +4107,7 @@
             ],
             "authors": [
                 {
-                    "name": "Pádraic Brady",
+                    "name": "Padraic Brady",
                     "email": "padraic.brady@gmail.com",
                     "homepage": "http://blog.astrumfutura.com"
                 },
@@ -5081,11 +5146,18 @@
             "alias_normalized": "0.2.2.0",
             "version": "9999999-dev",
             "package": "asm89/stack-cors"
+        },
+        {
+            "alias": "1.1",
+            "alias_normalized": "1.1.0.0",
+            "version": "9999999-dev",
+            "package": "badges/poser"
         }
     ],
     "minimum-stability": "dev",
     "stability-flags": {
-        "asm89/stack-cors": 20
+        "asm89/stack-cors": 20,
+        "badges/poser": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

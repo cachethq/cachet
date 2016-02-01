@@ -39,6 +39,8 @@ class StatusPageRoutes
                 'as'   => 'incident',
                 'uses' => 'StatusPageController@showIncident',
             ]);
+
+            $router->get('component/{component}/shield', 'StatusPageController@showComponentBadge');
         });
     }
 }
