@@ -21,8 +21,8 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\View;
 use Jenssegers\Date\Date;
 use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
-use PUGX\Poser\Render\SvgRender;
 use PUGX\Poser\Poser;
+use PUGX\Poser\Render\SvgRender;
 
 class StatusPageController extends Controller
 {
