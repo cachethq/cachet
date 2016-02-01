@@ -39,11 +39,9 @@ $(function() {
     // Mock the DELETE form requests.
     $('[data-method]').not(".disabled").append(function() {
         var methodForm = "\n";
-        methodForm    += "<form action='" + $(this).attr('href') + "' method='POST' style='display:none'>\n";
-        methodForm    += " <input type='hidden' name='_method' value='" + $(this).attr('data-method') + "'>\n";
-        if ($(this).attr('data-token')) {
-            methodForm += "<input type='hidden' name='_token' value='" + $(this).attr('data-token') + "'>\n";
-        }
+        methodForm += "<form action='" + $(this).attr('href') + "' method='POST' style='display:none'>\n";
+        methodForm += "<input type='hidden' name='_method' value='" + $(this).attr('data-method') + "'>\n";
+        methodForm += "<input type='hidden' name='_token' value='" + $('meta[name=token]').attr('content') + "'>\n";
         methodForm += "</form>\n";
         return methodForm;
     })
