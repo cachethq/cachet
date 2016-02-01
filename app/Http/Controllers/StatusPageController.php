@@ -11,8 +11,10 @@
 
 namespace CachetHQ\Cachet\Http\Controllers;
 
+use AltThree\Badger\Facades\Badger;
 use CachetHQ\Cachet\Dates\DateFactory;
 use CachetHQ\Cachet\Http\Controllers\Api\AbstractApiController;
+use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Repositories\Metric\MetricRepository;
@@ -21,8 +23,10 @@ use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\View;
 use Jenssegers\Date\Date;
+use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
 
 class StatusPageController extends AbstractApiController
 {
@@ -152,5 +156,42 @@ class StatusPageController extends AbstractApiController
             'metric' => $metric->toArray(),
             'items'  => $metricData,
         ]);
+    }
+
+    /**
+     * Generates a Shield (badge) for the component.
+     *
+     * @param \CachetHQ\Cachet\Models\Component $component
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showComponentBadge(Component $component)
+    {
+        $component = AutoPresenter::decorate($component);
+        $color = null;
+
+        switch ($component->status_color) {
+            case 'reds':
+                $color = Config::get('setting.style_reds', '#ff6f6f');
+                break;
+            case 'blues':
+                $color = Config::get('setting.style_blues', '#3498db');
+                break;
+            case 'greens':
+                $color = Config::get('setting.style_greens', '#7ED321');
+                break;
+            case 'yellows':
+                $color = Config::get('setting.style_yellows', '#F7CA18');
+                break;
+        }
+
+        $badge = Badger::generate(
+            $component->name,
+            $component->human_status,
+            substr($color, 1),
+            Binput::get('style', 'flat-square')
+        );
+
+        return Response::make($badge, 200, ['Content-Type' => 'image/svg+xml']);
     }
 }
