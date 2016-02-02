@@ -13,29 +13,11 @@ namespace CachetHQ\Cachet\Repositories\Metric;
 
 use CachetHQ\Cachet\Models\Metric;
 use DateInterval;
-use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 use Jenssegers\Date\Date;
 
 class MySqlRepository implements MetricInterface
 {
-    /**
-     * The timezone the status page is showing in.
-     *
-     * @var string
-     */
-    protected $dateTimeZone;
-
-    /**
-     * Creates a new instance of the metric repository.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->dateTimeZone = Config::get('cachet.timezone');
-    }
-
     /**
      * Returns metrics for the last hour.
      *
