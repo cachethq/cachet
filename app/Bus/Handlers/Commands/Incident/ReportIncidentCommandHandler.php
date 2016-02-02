@@ -50,16 +50,17 @@ class ReportIncidentCommandHandler
      */
     public function handle(ReportIncidentCommand $command)
     {
-        if ($command->template) {
-            $command->message = $this->parseIncidentTemplate($command->template, $command->template_vars);
-        }
-
         $data = [
             'name'    => $command->name,
             'status'  => $command->status,
-            'message' => $command->message,
             'visible' => $command->visible,
         ];
+
+        if ($command->template) {
+            $data['message'] = $this->parseIncidentTemplate($command->template, $command->template_vars);
+        } else {
+            $data['message'] = $command->message;
+        }
 
         // Link with the component.
         if ($command->component_id) {
@@ -101,6 +102,10 @@ class ReportIncidentCommandHandler
      */
     protected function parseIncidentTemplate($templateSlug, $vars)
     {
+        if ($vars === null) {
+            $vars = [];
+        }
+
         Twig::setLoader(new Twig_Loader_String());
         $template = IncidentTemplate::forSlug($templateSlug)->first();
 

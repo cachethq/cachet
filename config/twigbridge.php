@@ -35,7 +35,7 @@ return [
             // When set to true, the generated templates have a __toString() method
             // that you can use to display the generated nodes.
             // default: false
-            'debug' => config('app.debug', false),
+            'debug' => false,
 
             // The charset used by the templates.
             // default: utf-8
