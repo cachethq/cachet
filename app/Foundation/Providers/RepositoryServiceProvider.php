@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Cachet\Foundation\Providers;
 
+use CachetHQ\Cachet\Dates\DateFactory;
 use CachetHQ\Cachet\Repositories\Metric\MetricRepository;
 use CachetHQ\Cachet\Repositories\Metric\MySqlRepository as MetricMySqlRepository;
 use CachetHQ\Cachet\Repositories\Metric\PgSqlRepository as MetricPgSqlRepository;
@@ -47,7 +48,9 @@ class RepositoryServiceProvider extends ServiceProvider
                 $repository = new MetricSqliteRepository();
             }
 
-            return new MetricRepository($repository);
+            $dates = $app->make(DateFactory::class);
+
+            return new MetricRepository($repository, $dates);
         });
 
         $this->app->alias('cachet.metricrepository', MetricRepository::class);
