@@ -74,4 +74,18 @@ class DateFactory
     {
         return Date::createFromFormat($format, $time)->setTimezone($this->appTimezone);
     }
+
+    /**
+     * Make a Carbon instance from a string.
+     *
+     * @param string|null $time
+     *
+     * @throws \InvalidArgumentException
+     *
+     * @return \Carbon\Carbon
+     */
+    public function make($time = null)
+    {
+        return (new Date($time))->setTimezone($this->cachetTimezone);
+    }
 }

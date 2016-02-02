@@ -11,11 +11,11 @@
 
 namespace CachetHQ\Cachet\Presenters;
 
+use CachetHQ\Cachet\Dates\DateFactory;
 use CachetHQ\Cachet\Presenters\Traits\TimestampsTrait;
 use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Support\Facades\Config;
-use Jenssegers\Date\Date;
 use McCool\LaravelAutoPresenter\BasePresenter;
 
 class IncidentPresenter extends BasePresenter implements Arrayable
@@ -39,9 +39,7 @@ class IncidentPresenter extends BasePresenter implements Arrayable
      */
     public function created_at_diff()
     {
-        return (new Date($this->wrappedObject->created_at))
-            ->setTimezone(Config::get('cachet.timezone'))
-            ->diffForHumans();
+        return app(DateFactory::class)->make($this->wrappedObject->created_at)->diffForHumans();
     }
 
     /**
@@ -51,9 +49,7 @@ class IncidentPresenter extends BasePresenter implements Arrayable
      */
     public function created_at_formatted()
     {
-        return ucfirst((new Date($this->wrappedObject->created_at))
-            ->setTimezone(Config::get('cachet.timezone'))
-            ->format(Config::get('setting.incident_date_format', 'l jS F Y H:i:s')));
+        return ucfirst(app(DateFactory::class)->make($this->wrappedObject->created_at)->format(Config::get('setting.incident_date_format', 'l jS F Y H:i:s')));
     }
 
     /**
@@ -83,8 +79,7 @@ class IncidentPresenter extends BasePresenter implements Arrayable
      */
     public function scheduled_at()
     {
-        return (new Date($this->wrappedObject->scheduled_at))
-            ->setTimezone(Config::get('cachet.timezone'))->toDateTimeString();
+        return app(DateFactory::class)->make($this->wrappedObject->scheduled_at)->toDateTimeString();
     }
 
     /**
@@ -94,9 +89,7 @@ class IncidentPresenter extends BasePresenter implements Arrayable
      */
     public function scheduled_at_diff()
     {
-        return (new Date($this->wrappedObject->scheduled_at))
-            ->setTimezone(Config::get('cachet.timezone'))
-            ->diffForHumans();
+        return app(DateFactory::class)->make($this->wrappedObject->scheduled_at)->diffForHumans();
     }
 
     /**
@@ -106,9 +99,7 @@ class IncidentPresenter extends BasePresenter implements Arrayable
      */
     public function scheduled_at_formatted()
     {
-        return ucfirst((new Date($this->wrappedObject->scheduled_at))
-            ->setTimezone(Config::get('cachet.timezone'))
-            ->format(Config::get('setting.incident_date_format', 'l jS F Y H:i:s')));
+        return ucfirst(app(DateFactory::class)->make($this->wrappedObject->created_at)->format(Config::get('setting.incident_date_format', 'l jS F Y H:i:s')));
     }
 
     /**
@@ -140,9 +131,9 @@ class IncidentPresenter extends BasePresenter implements Arrayable
     {
         if ($this->wrappedObject->is_scheduled) {
             return $this->scheduled_at_formatted;
-        } else {
-            return $this->created_at_formatted;
         }
+
+        return $this->created_at_formatted;
     }
 
     /**
@@ -154,9 +145,9 @@ class IncidentPresenter extends BasePresenter implements Arrayable
     {
         if ($this->wrappedObject->is_scheduled) {
             return $this->scheduled_at_iso;
-        } else {
-            return $this->created_at_iso;
         }
+
+        return $this->created_at_iso;
     }
 
     /**

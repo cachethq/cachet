@@ -12,9 +12,29 @@
 namespace CachetHQ\Cachet\Http\Middleware;
 
 use Closure;
+use Illuminate\Contracts\Config\Repository;
 
 class Timezone
 {
+    /**
+     * The config repository instance.
+     *
+     * @var \Illuminate\Contracts\Config\Repository
+     */
+    protected $config;
+
+    /**
+     * Creates a new release instance.
+     *
+     * @param \Illuminate\Contracts\Config\Repository $config
+     *
+     * @return void
+     */
+    public function __construct(Repository $config)
+    {
+        $this->config = $config;
+    }
+
     /**
      * Handle an incoming request.
      *
@@ -26,7 +46,7 @@ class Timezone
     public function handle($request, Closure $next)
     {
         if ($tz = $request->header('Time-Zone')) {
-            app('config')->set('cachet.timezone', $tz);
+            $this->config->set('cachet.timezone', $tz);
         }
 
         return $next($request);

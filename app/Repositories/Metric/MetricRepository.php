@@ -11,10 +11,9 @@
 
 namespace CachetHQ\Cachet\Repositories\Metric;
 
+use CachetHQ\Cachet\Dates\DateFactory;
 use CachetHQ\Cachet\Models\Metric;
 use DateInterval;
-use Illuminate\Support\Facades\Config;
-use Jenssegers\Date\Date;
 
 class MetricRepository
 {
@@ -26,21 +25,24 @@ class MetricRepository
     protected $repository;
 
     /**
-     * The timezone the status page is showing in.
+     * The date factory instance.
      *
-     * @var string
+     * @var \CachetHQ\Cachet\Dates\DateFactory
      */
-    protected $dateTimeZone;
+    protected $dates;
 
     /**
      * Create a new metric repository class.
      *
      * @param \CachetHQ\Cachet\Repositories\Metric\MetricInterface $repository
+     * @param \CachetHQ\Cachet\Dates\DateFactory                   $dates
+     *
+     * @return void
      */
-    public function __construct(MetricInterface $repository)
+    public function __construct(MetricInterface $repository, DateFactory $dates)
     {
         $this->repository = $repository;
-        $this->dateTimeZone = Config::get('cachet.timezone');
+        $this->dates = $dates;
     }
 
     /**
@@ -52,10 +54,12 @@ class MetricRepository
      */
     public function listPointsLastHour(Metric $metric)
     {
-        $dateTime = (new Date())->setTimezone($this->dateTimeZone);
+        $dateTime = $this->dates->make();
+
         $points = [];
 
         $pointKey = $dateTime->format('H:i');
+
         for ($i = 0; $i <= 60; $i++) {
             $points[$pointKey] = $this->repository->getPointsLastHour($metric, 0, $i);
             $pointKey = $dateTime->sub(new DateInterval('PT1M'))->format('H:i');
@@ -74,10 +78,12 @@ class MetricRepository
      */
     public function listPointsToday(Metric $metric, $hours = 12)
     {
-        $dateTime = (new Date())->setTimezone($this->dateTimeZone);
+        $dateTime = $this->dates->make();
+
         $points = [];
 
         $pointKey = $dateTime->format('H:00');
+
         for ($i = 0; $i <= $hours; $i++) {
             $points[$pointKey] = $this->repository->getPointsByHour($metric, $i);
             $pointKey = $dateTime->sub(new DateInterval('PT1H'))->format('H:00');
@@ -95,10 +101,12 @@ class MetricRepository
      */
     public function listPointsForWeek(Metric $metric)
     {
-        $dateTime = (new Date())->setTimezone($this->dateTimeZone);
+        $dateTime = $this->dates->make();
+
         $points = [];
 
         $pointKey = $dateTime->format('jS M');
+
         for ($i = 0; $i <= 7; $i++) {
             $points[$pointKey] = $this->repository->getPointsForDayInWeek($metric, $i);
             $pointKey = $dateTime->sub(new DateInterval('P1D'))->format('D jS M');
@@ -116,11 +124,14 @@ class MetricRepository
      */
     public function listPointsForMonth(Metric $metric)
     {
-        $dateTime = (new Date())->setTimezone($this->dateTimeZone);
+        $dateTime = $this->dates->make();
+
         $daysInMonth = $dateTime->format('t');
+
         $points = [];
 
         $pointKey = $dateTime->format('jS M');
+
         for ($i = 0; $i <= $daysInMonth; $i++) {
             $points[$pointKey] = $this->repository->getPointsForDayInWeek($metric, $i);
             $pointKey = $dateTime->sub(new DateInterval('P1D'))->format('jS M');

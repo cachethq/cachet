@@ -11,8 +11,7 @@
 
 namespace CachetHQ\Cachet\Presenters\Traits;
 
-use Illuminate\Support\Facades\Config;
-use Jenssegers\Date\Date;
+use CachetHQ\Cachet\Dates\DateFactory;
 
 trait TimestampsTrait
 {
@@ -23,8 +22,7 @@ trait TimestampsTrait
      */
     public function created_at()
     {
-        return (new Date($this->wrappedObject->created_at))
-            ->setTimezone(Config::get('cachet.timezone'))->toDateTimeString();
+        return app(DateFactory::class)->make($this->wrappedObject->created_at)->toDateTimeString();
     }
 
     /**
@@ -34,8 +32,7 @@ trait TimestampsTrait
      */
     public function updated_at()
     {
-        return (new Date($this->wrappedObject->updated_at))
-            ->setTimezone(Config::get('cachet.timezone'))->toDateTimeString();
+        return app(DateFactory::class)->make($this->wrappedObject->updated_at)->toDateTimeString();
     }
 
     /**
@@ -45,7 +42,6 @@ trait TimestampsTrait
      */
     public function deleted_at()
     {
-        return (new Date($this->wrappedObject->deleted_at))
-            ->setTimezone(Config::get('cachet.timezone'))->toDateTimeString();
+        return app(DateFactory::class)->make($this->wrappedObject->deleted_at)->toDateTimeString();
     }
 }

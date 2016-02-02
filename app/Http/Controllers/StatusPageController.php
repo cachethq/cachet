@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Cachet\Http\Controllers;
 
+use CachetHQ\Cachet\Dates\DateFactory;
 use CachetHQ\Cachet\Models\Incident;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
@@ -54,27 +55,19 @@ class StatusPageController extends Controller
         } else {
             $incidentDays = range(0, $daysToShow);
         }
-        $dateTimeZone = Config::get('cachet.timezone');
 
         $incidentVisibility = Auth::check() ? 0 : 1;
 
         $allIncidents = Incident::notScheduled()->where('visible', '>=', $incidentVisibility)->whereBetween('created_at', [
             $startDate->copy()->subDays($daysToShow)->format('Y-m-d').' 00:00:00',
             $startDate->format('Y-m-d').' 23:59:59',
-        ])->orderBy('scheduled_at', 'desc')->orderBy('created_at', 'desc')->get()->groupBy(function (Incident $incident) use ($dateTimeZone) {
-            // If it's scheduled, get the scheduled at date.
-            if ($incident->is_scheduled) {
-                return (new Date($incident->scheduled_at))
-                    ->setTimezone($dateTimeZone)->toDateString();
-            }
-
-            return (new Date($incident->created_at))
-                ->setTimezone($dateTimeZone)->toDateString();
+        ])->orderBy('scheduled_at', 'desc')->orderBy('created_at', 'desc')->get()->groupBy(function (Incident $incident) {
+            return app(DateFactory::class)->make($incident->is_scheduled ? $incident->scheduled_at : $incident->created_at)->toDateString();
         });
 
         // Add in days that have no incidents
         foreach ($incidentDays as $i) {
-            $date = (new Date($startDate))->setTimezone($dateTimeZone)->subDays($i);
+            $date = app(DateFactory::class)->make($startDate)->subDays($i);
 
             if (!isset($allIncidents[$date->toDateString()])) {
                 $allIncidents[$date->toDateString()] = [];
