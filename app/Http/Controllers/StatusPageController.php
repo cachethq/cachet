@@ -11,6 +11,10 @@
 
 namespace CachetHQ\Cachet\Http\Controllers;
 
+use AltThree\Badger\Badge;
+use AltThree\Badger\Render\FlatSquareRender;
+use AltThree\Badger\Render\PlasticFlatRender;
+use AltThree\Badger\Render\PlasticRender;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
 use Exception;
@@ -21,8 +25,8 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\View;
 use Jenssegers\Date\Date;
 use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
-use PUGX\Poser\Poser;
-use PUGX\Poser\Render\SvgRender;
+// use PUGX\Poser\Poser;
+// use PUGX\Poser\Render\SvgRender;
 
 class StatusPageController extends Controller
 {
@@ -122,7 +126,13 @@ class StatusPageController extends Controller
     public function showComponentBadge(Component $component)
     {
         $component = AutoPresenter::decorate($component);
-        $poser = new Poser([new SvgRender()]);
+        switch (Binput::get('style', 'flat-square')) {
+            case 'plastic-flat': $badgeRenderer = new PlasticFlatRender(); break;
+            case 'plastic': $badgeRenderer = new PlasticRender(); break;
+            case 'flat-square':
+            default:
+                $badgeRenderer = new FlatSquareRender(); break;
+        }
         $color = null;
 
         switch ($component->status_color) {
@@ -140,11 +150,10 @@ class StatusPageController extends Controller
                 break;
         }
 
-        return $poser->generate(
+        return $badgeRenderer->render(new Badge(
             $component->name,
             $component->human_status,
-            substr($color, 1),
-            Binput::get('style', 'plastic')
-        );
+            substr($color, 1)
+        ));
     }
 }

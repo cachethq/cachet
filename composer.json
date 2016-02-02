@@ -27,11 +27,11 @@
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "~5.2.11",
+        "alt-three/badger": "^1.0",
         "alt-three/bus": "^1.0",
         "alt-three/emoji": "^3.0",
         "alt-three/validator": "^1.4",
         "asm89/stack-cors": "dev-master as 0.2.2",
-        "badges/poser": "dev-master as 1.1",
         "barryvdh/laravel-cors": "^0.7.3",
         "doctrine/dbal": "^2.5",
         "fideloper/proxy": "^3.1",

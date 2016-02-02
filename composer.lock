@@ -4,9 +4,70 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2109e6c3d0a83e2c1f6faf80ee43af4c",
-    "content-hash": "20ece70ee25048057bfc6c188b758d5e",
+    "hash": "d6a7dd46b2a9e661bcde1972ca4b75fd",
+    "content-hash": "46d7748b6c7fd8ab2eb7b1ad9e1a526b",
     "packages": [
+        {
+            "name": "alt-three/badger",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AltThree/Badger.git",
+                "reference": "b2903529ff51a68762c2c2e6103dd707e5d0d642"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/AltThree/Badger/zipball/b2903529ff51a68762c2c2e6103dd707e5d0d642",
+                "reference": "b2903529ff51a68762c2c2e6103dd707e5d0d642",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "5.1.*|5.2.*",
+                "illuminate/support": "5.1.*|5.2.*",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "graham-campbell/testbench": "^3.1",
+                "phpunit/phpunit": "^4.8|^5.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "AltThree\\Badger\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "James Brooks",
+                    "email": "james@alt-three.com"
+                },
+                {
+                    "name": "Graham Campbell",
+                    "email": "graham@alt-three.com"
+                },
+                {
+                    "name": "Joseph Cohen",
+                    "email": "joe@alt-three.com"
+                }
+            ],
+            "description": "A Badge Generator For Laravel 5",
+            "keywords": [
+                "Alt Three",
+                "badge",
+                "shield",
+                "svg"
+            ],
+            "time": "2016-02-02 11:01:09"
+        },
         {
             "name": "alt-three/bus",
             "version": "v1.0.2",
@@ -283,71 +344,6 @@
             "description": "BaconQrCode is a QR code generator for PHP.",
             "homepage": "https://github.com/Bacon/BaconQrCode",
             "time": "2016-01-09 22:55:35"
-        },
-        {
-            "name": "badges/poser",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/JamesForks/poser.git",
-                "reference": "701f9dcc04badd174bf8b2efb07a90a75ff84400"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/JamesForks/poser/zipball/701f9dcc04badd174bf8b2efb07a90a75ff84400",
-                "reference": "701f9dcc04badd174bf8b2efb07a90a75ff84400",
-                "shasum": ""
-            },
-            "require": {
-                "symfony/console": "~2"
-            },
-            "require-dev": {
-                "behat/behat": "dev-master",
-                "phpspec/phpspec": "dev-master"
-            },
-            "bin": [
-                "bin/poser"
-            ],
-            "type": "lib",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "PUGX\\Poser\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Giulio De Donato",
-                    "email": "liuggio@gmail.com"
-                },
-                {
-                    "name": "PUGX Community",
-                    "homepage": "https://github.com/PUGX/badge-poser/contributors"
-                },
-                {
-                    "name": "Shields Community",
-                    "homepage": "https://github.com/badges/poser/contributors"
-                }
-            ],
-            "description": "Poser, add badges on your readme..",
-            "homepage": "https://github.com/PUGX",
-            "keywords": [
-                "badge",
-                "composer",
-                "packagist",
-                "pin"
-            ],
-            "support": {
-                "source": "https://github.com/JamesForks/poser/tree/master"
-            },
-            "time": "2015-10-13 10:59:32"
         },
         {
             "name": "barryvdh/laravel-cors",
@@ -2848,26 +2844,26 @@
         },
         {
             "name": "symfony/console",
-            "version": "v2.8.2",
+            "version": "v3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "d0239fb42f98dd02e7d342f793c5d2cdee0c478d"
+                "reference": "ebcdc507829df915f4ca23067bd59ee4ef61f6c3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/d0239fb42f98dd02e7d342f793c5d2cdee0c478d",
-                "reference": "d0239fb42f98dd02e7d342f793c5d2cdee0c478d",
+                "url": "https://api.github.com/repos/symfony/console/zipball/ebcdc507829df915f4ca23067bd59ee4ef61f6c3",
+                "reference": "ebcdc507829df915f4ca23067bd59ee4ef61f6c3",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.9",
+                "php": ">=5.5.9",
                 "symfony/polyfill-mbstring": "~1.0"
             },
             "require-dev": {
                 "psr/log": "~1.0",
-                "symfony/event-dispatcher": "~2.1|~3.0.0",
-                "symfony/process": "~2.1|~3.0.0"
+                "symfony/event-dispatcher": "~2.8|~3.0",
+                "symfony/process": "~2.8|~3.0"
             },
             "suggest": {
                 "psr/log": "For using the console logger",
@@ -2877,7 +2873,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.8-dev"
+                    "dev-master": "3.0-dev"
                 }
             },
             "autoload": {
@@ -2904,7 +2900,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2016-01-14 08:33:16"
+            "time": "2015-12-22 10:39:06"
         },
         {
             "name": "symfony/debug",
@@ -5146,18 +5142,11 @@
             "alias_normalized": "0.2.2.0",
             "version": "9999999-dev",
             "package": "asm89/stack-cors"
-        },
-        {
-            "alias": "1.1",
-            "alias_normalized": "1.1.0.0",
-            "version": "9999999-dev",
-            "package": "badges/poser"
         }
     ],
     "minimum-stability": "dev",
     "stability-flags": {
-        "asm89/stack-cors": 20,
-        "badges/poser": 20
+        "asm89/stack-cors": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
