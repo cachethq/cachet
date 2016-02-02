@@ -47,8 +47,7 @@ class MySqlRepository implements MetricInterface
      */
     public function getPointsLastHour(Metric $metric, $hour, $minute)
     {
-        $dateTime = (new Date())->setTimezone($this->dateTimeZone);
-        $dateTime->sub(new DateInterval('PT'.$hour.'H'))->sub(new DateInterval('PT'.$minute.'M'));
+        $dateTime = (new Date())->sub(new DateInterval('PT'.$hour.'H'))->sub(new DateInterval('PT'.$minute.'M'));
         $timeInterval = $dateTime->format('YmdHi');
 
         $points = $metric->points()
@@ -78,8 +77,7 @@ class MySqlRepository implements MetricInterface
      */
     public function getPointsByHour(Metric $metric, $hour)
     {
-        $dateTime = (new Date())->setTimezone($this->dateTimeZone);
-        $dateTime->sub(new DateInterval('PT'.$hour.'H'));
+        $dateTime = (new Date())->sub(new DateInterval('PT'.$hour.'H'));
         $hourInterval = $dateTime->format('YmdH');
 
         $points = $metric->points()
@@ -108,8 +106,7 @@ class MySqlRepository implements MetricInterface
      */
     public function getPointsForDayInWeek(Metric $metric, $day)
     {
-        $dateTime = (new Date())->setTimezone($this->dateTimeZone);
-        $dateTime->sub(new DateInterval('P'.$day.'D'));
+        $dateTime = (new Date())->sub(new DateInterval('P'.$day.'D'));
 
         $points = $metric->points()
                     ->whereRaw('created_at BETWEEN DATE_SUB(created_at, INTERVAL 1 WEEK) AND NOW()')
