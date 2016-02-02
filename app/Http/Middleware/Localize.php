@@ -25,7 +25,7 @@ class Localize
     protected $langs;
 
     /**
-     * Config repository.
+     * The config repository instance.
      *
      * @var \Illuminate\Config\Repository
      */

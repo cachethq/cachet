@@ -17,7 +17,7 @@ use Illuminate\Contracts\Config\Repository;
 class Timezone
 {
     /**
-     * Config repository.
+     * The config repository instance.
      *
      * @var \Illuminate\Contracts\Config\Repository
      */

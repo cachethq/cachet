@@ -18,14 +18,14 @@ use Illuminate\Contracts\Config\Repository as ConfigRepository;
 class Release
 {
     /**
-     * Cache instance.
+     * The cache repository instance.
      *
      * @var \Illuminate\Contracts\Cache\Repository
      */
     protected $cache;
 
     /**
-     * Config repository.
+     * The config repository instance.
      *
      * @var \Illuminate\Contracts\Config\Repository
      */
