@@ -20,7 +20,7 @@
     ],
     "require": {
         "php": ">=5.5.9",
-        "laravel/framework": "~5.2.11",
+        "laravel/framework": "~5.2.14",
         "alt-three/bus": "^1.0",
         "alt-three/emoji": "^3.0",
         "alt-three/validator": "^1.4",
