@@ -110,7 +110,6 @@ class IncidentPresenter extends BasePresenter implements Arrayable
     public function scheduled_at_iso()
     {
         return app(DateFactory::class)->make($this->wrappedObject->scheduled_at)->toISO8601String();
-
     }
 
     /**
