@@ -59,7 +59,7 @@ class IncidentPresenter extends BasePresenter implements Arrayable
      */
     public function created_at_datetimepicker()
     {
-        return $this->wrappedObject->created_at->setTimezone(Config::get('cachet.timezone'))->format('d/m/Y H:i');
+        return app(DateFactory::class)->make($this->wrappedObject->created_at)->format('d/m/Y H:i');
     }
 
     /**
@@ -69,7 +69,7 @@ class IncidentPresenter extends BasePresenter implements Arrayable
      */
     public function created_at_iso()
     {
-        return $this->wrappedObject->created_at->setTimezone(Config::get('cachet.timezone'))->toISO8601String();
+        return app(DateFactory::class)->make($this->wrappedObject->created_at)->toISO8601String();
     }
 
     /**
@@ -99,7 +99,7 @@ class IncidentPresenter extends BasePresenter implements Arrayable
      */
     public function scheduled_at_formatted()
     {
-        return ucfirst(app(DateFactory::class)->make($this->wrappedObject->created_at)->format(Config::get('setting.incident_date_format', 'l jS F Y H:i:s')));
+        return ucfirst(app(DateFactory::class)->make($this->wrappedObject->scheduled_at)->format(Config::get('setting.incident_date_format', 'l jS F Y H:i:s')));
     }
 
     /**
@@ -109,7 +109,7 @@ class IncidentPresenter extends BasePresenter implements Arrayable
      */
     public function scheduled_at_iso()
     {
-        return $this->wrappedObject->scheduled_at->setTimezone(Config::get('cachet.timezone'))->toISO8601String();
+        return app(DateFactory::class)->make($this->wrappedObject->scheduled_at)->toISO8601String();
     }
 
     /**
@@ -119,7 +119,7 @@ class IncidentPresenter extends BasePresenter implements Arrayable
      */
     public function scheduled_at_datetimepicker()
     {
-        return $this->wrappedObject->scheduled_at->setTimezone(Config::get('cachet.timezone'))->format('d/m/Y H:i');
+        return app(DateFactory::class)->make($this->wrappedObject->scheduled_at)->format('d/m/Y H:i');
     }
 
     /**
