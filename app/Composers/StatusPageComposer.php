@@ -29,7 +29,7 @@ class StatusPageComposer
     {
         $totalComponents = Component::enabled()->count();
         $majorOutages = Component::enabled()->status(4)->count();
-        $isMajorOutage = ($majorOutages / $totalComponents) >= 0.5;
+        $isMajorOutage = $totalComponents ? ($majorOutages / $totalComponents) >= 0.5 : false;
 
         // Default data
         $withData = [
