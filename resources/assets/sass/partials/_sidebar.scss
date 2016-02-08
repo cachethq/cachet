@@ -65,9 +65,6 @@ body.dashboard {
 
                 li {
                     font-size: $sidebar-text-size;
-                    &:last-child {
-                        border-bottom: $sidebar-border-color;
-                    }
                     &.active {
                         background: lighten($sidebar-background-color, 2%);
                         a {
