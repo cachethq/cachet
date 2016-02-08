@@ -12,7 +12,7 @@
 namespace CachetHQ\Cachet\Bus\Handlers\Commands\Invite;
 
 use CachetHQ\Cachet\Bus\Commands\Invite\ClaimInviteCommand;
-use CachetHQ\Cachet\Bus\Events\Invite\InviteWasClaimed;
+use CachetHQ\Cachet\Bus\Events\Invite\InviteWasClaimedEvent;
 use Carbon\Carbon;
 
 class ClaimInviteCommandHandler
@@ -31,6 +31,6 @@ class ClaimInviteCommandHandler
         $invite->claimed_at = Carbon::now();
         $invite->save();
 
-        event(new InviteWasClaimed($invite));
+        event(new InviteWasClaimedEvent($invite));
     }
 }
