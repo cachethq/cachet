@@ -39,6 +39,7 @@
 <script>
 (function () {
     Chart.defaults.global.pointHitDetectionRadius = 1;
+    Chart.defaults.global.scaleBeginAtZero = true;
 
     var charts = JSON.parse(document.getElementById('metricData').text);
 
