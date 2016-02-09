@@ -49,6 +49,13 @@ class Subscriber extends Model implements HasPresenter
     ];
 
     /**
+     * The relations to eager load on every query.
+     *
+     * @var string[]
+     */
+    protected $with = ['subscriptions'];
+
+    /**
      * Overrides the models boot method.
      */
     public static function boot()
