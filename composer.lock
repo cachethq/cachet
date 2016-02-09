@@ -2021,16 +2021,16 @@
         },
         {
             "name": "mccool/laravel-auto-presenter",
-            "version": "4.2.1",
+            "version": "v4.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-auto-presenter/laravel-auto-presenter.git",
-                "reference": "c385b113696dfc564869c54f5c4baba5e116a3be"
+                "reference": "48649d3f98e369c2e0922ef37190dd15812a292a"
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel-auto-presenter/laravel-auto-presenter/zipball/c385b113696dfc564869c54f5c4baba5e116a3be",
-                "reference": "c385b113696dfc564869c54f5c4baba5e116a3be",
+                "reference": "48649d3f98e369c2e0922ef37190dd15812a292a",
                 "shasum": ""
             },
             "require": {
@@ -2079,7 +2079,7 @@
                 "lpm",
                 "presenter"
             ],
-            "time": "2016-01-30 14:04:34"
+            "time": "2016-01-24 11:06:03"
         },
         {
             "name": "monolog/monolog",
@@ -2627,26 +2627,25 @@
         },
         {
             "name": "roumen/feed",
-            "version": "v2.9.9",
+            "version": "v2.10.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RoumenDamianoff/laravel-feed.git",
-                "reference": "f923473cfd7df2af73b1026c8f23a6f873f84027"
+                "reference": "4c7a0e3b0f1b252e96c617bfc27a138809f8fbb3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RoumenDamianoff/laravel-feed/zipball/f923473cfd7df2af73b1026c8f23a6f873f84027",
-                "reference": "f923473cfd7df2af73b1026c8f23a6f873f84027",
+                "url": "https://api.github.com/repos/RoumenDamianoff/laravel-feed/zipball/4c7a0e3b0f1b252e96c617bfc27a138809f8fbb3",
+                "reference": "4c7a0e3b0f1b252e96c617bfc27a138809f8fbb3",
                 "shasum": ""
             },
             "require": {
-                "illuminate/support": "~5",
-                "paragonie/random_compat": "~1",
+                "illuminate/support": "^5.0",
                 "php": ">=5.5.9"
             },
             "require-dev": {
-                "orchestra/testbench": "2.2.*",
-                "phpunit/phpunit": "3.7.*"
+                "orchestra/testbench": "^3.0",
+                "phpunit/phpunit": "^4.8"
             },
             "type": "library",
             "autoload": {
@@ -2675,7 +2674,7 @@
                 "laravel",
                 "rss"
             ],
-            "time": "2015-12-27 15:38:43"
+            "time": "2016-02-07 13:47:41"
         },
         {
             "name": "simplesoftwareio/simple-qrcode",
@@ -3887,7 +3886,7 @@
             ],
             "authors": [
                 {
-                    "name": "François Zaninotto"
+                    "name": "Francois Zaninotto"
                 }
             ],
             "description": "Faker is a PHP library that generates fake data for you.",
