@@ -141,7 +141,7 @@ return [
     // Subscribers
     'subscribers' => [
         'subscribers'      => 'Subscribers',
-        'description'      => 'Subscribers will receive email updates when incidents are created.',
+        'description'      => 'Subscribers will receive email updates when incidents are created or components are updated.',
         'verified'         => 'Verified',
         'not_verified'     => 'Not verified',
         'subscriber'       => ':email, subscribed :date',
