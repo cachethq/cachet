@@ -16,7 +16,6 @@ use CachetHQ\Cachet\Models\Incident;
 use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Str;
 use Roumen\Feed\Feed;
 
@@ -40,7 +39,7 @@ class FeedController extends Controller
         $this->feed->title = Config::get('setting.app_name');
         $this->feed->description = trans('cachet.feed');
         $this->feed->link = Str::canonicalize(Config::get('setting.app_domain'));
-        $this->feed->ctype = "text/xml";
+        $this->feed->ctype = 'text/xml';
         $this->feed->setDateFormat('datetime');
     }
 
