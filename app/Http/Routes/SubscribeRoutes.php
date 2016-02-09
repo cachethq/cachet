@@ -29,17 +29,20 @@ class SubscribeRoutes
      */
     public function map(Registrar $router)
     {
-        $router->group(['middleware' => ['web', 'ready', 'localize'], 'as' => 'subscribe.'], function ($router) {
-            $router->group(['middleware' => ['subscribers']], function ($router) {
-                $router->get('subscribe', [
-                    'as'   => 'subscribe',
-                    'uses' => 'SubscribeController@showSubscribe',
-                ]);
+        $router->group(['middleware' => ['web', 'ready', 'localize', 'subscribers'], 'as' => 'subscribe.'], function ($router) {
+            $router->get('subscribe', [
+                'as'   => 'subscribe',
+                'uses' => 'SubscribeController@showSubscribe',
+            ]);
 
-                $router->post('subscribe', [
-                    'uses' => 'SubscribeController@postSubscribe',
-                ]);
-            });
+            $router->post('subscribe', [
+                'uses' => 'SubscribeController@postSubscribe',
+            ]);
+
+            $router->get('subscribe/manage', [
+                'as'   => 'subscribe.manage',
+                'uses' => 'SubscribeController@showManage',
+            ]);
 
             $router->get('subscribe/verify/{code}', [
                 'as'   => 'verify',

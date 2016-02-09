@@ -42,7 +42,7 @@ class SubscribeController extends Controller
      */
     public function showSubscribe()
     {
-        return View::make('subscribe')
+        return View::make('subscribe.subscribe')
             ->withAboutApp(Markdown::convertToHtml(Config::get('setting.app_about')));
     }
 
@@ -126,5 +126,25 @@ class SubscribeController extends Controller
 
         return Redirect::route('status-page')
             ->withSuccess(sprintf('<strong>%s</strong> %s', trans('dashboard.notifications.awesome'), trans('cachet.subscriber.email.unsubscribed')));
+    }
+
+    /**
+     * Shows the subscription manager page.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function showManage()
+    {
+        if (!($code = Binput::get('subscriber'))) {
+            throw new NotFoundHttpException();
+        }
+
+        $subscriber = Subscriber::where('verify_code', '=', $code)->first();
+
+        if (!$subscriber || !$subscriber->is_verified) {
+            throw new BadRequestHttpException();
+        }
+
+        return View::make('subscribe.manage')->withSubscriber($subscriber);
     }
 }
