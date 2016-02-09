@@ -60,6 +60,7 @@
                 <a href="{{ route('dashboard.subscribers.index') }}">
                     <i class="icons ion-email"></i>
                     <span>{{ trans('dashboard.subscribers.subscribers') }}</span>
+                    <span class="label label-info">{{ $subscriber_count }}</span>
                 </a>
             </li>
             <li {!! set_active('dashboard/team*') !!}>
