@@ -35,6 +35,21 @@ class ComponentPresenter extends BasePresenter implements Arrayable
     }
 
     /**
+     * Return the color for the status label.
+     *
+     * @return string
+     */
+    public function label_color()
+    {
+        switch ($this->wrappedObject->status) {
+            case 1: return 'success';
+            case 2: return 'info';
+            case 3: return 'warning';
+            case 4: return 'danger';
+        }
+    }
+
+    /**
      * Looks up the human readable version of the status.
      *
      * @return string

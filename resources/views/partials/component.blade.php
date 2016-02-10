@@ -14,6 +14,6 @@
     @endif
 
     <div class="pull-right">
-        <small class="text-component-{{ $component->status }} {{ $component->status_color }}">{{ $component->human_status }}</small>
+        <span class="label label-{{ $component->label_color }} label-{{ $component->status_color }}">{{ $component->human_status }}</span>
     </div>
 </li>
