@@ -3886,7 +3886,7 @@
             ],
             "authors": [
                 {
-                    "name": "Francois Zaninotto"
+                    "name": "François Zaninotto"
                 }
             ],
             "description": "Faker is a PHP library that generates fake data for you.",
@@ -4041,7 +4041,7 @@
             ],
             "authors": [
                 {
-                    "name": "Pádraic Brady",
+                    "name": "Padraic Brady",
                     "email": "padraic.brady@gmail.com",
                     "homepage": "http://blog.astrumfutura.com"
                 },
