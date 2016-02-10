@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "220c568655ec02cbdee97b670dfb12c5",
-    "content-hash": "a586d5869f1f58f644d08be90e3b819d",
+    "hash": "baf02172698258345cb7e760114be928",
+    "content-hash": "eb6f3929a4b604defd6550213cda52f8",
     "packages": [
         {
             "name": "alt-three/bus",
@@ -2021,16 +2021,16 @@
         },
         {
             "name": "mccool/laravel-auto-presenter",
-            "version": "v4.2.1",
+            "version": "4.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-auto-presenter/laravel-auto-presenter.git",
-                "reference": "48649d3f98e369c2e0922ef37190dd15812a292a"
+                "reference": "c385b113696dfc564869c54f5c4baba5e116a3be"
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel-auto-presenter/laravel-auto-presenter/zipball/c385b113696dfc564869c54f5c4baba5e116a3be",
-                "reference": "48649d3f98e369c2e0922ef37190dd15812a292a",
+                "reference": "c385b113696dfc564869c54f5c4baba5e116a3be",
                 "shasum": ""
             },
             "require": {
@@ -2079,7 +2079,7 @@
                 "lpm",
                 "presenter"
             ],
-            "time": "2016-01-24 11:06:03"
+            "time": "2016-01-30 14:04:34"
         },
         {
             "name": "monolog/monolog",
@@ -3886,7 +3886,7 @@
             ],
             "authors": [
                 {
-                    "name": "Francois Zaninotto"
+                    "name": "François Zaninotto"
                 }
             ],
             "description": "Faker is a PHP library that generates fake data for you.",

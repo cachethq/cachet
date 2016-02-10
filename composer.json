@@ -38,7 +38,7 @@
         "mccool/laravel-auto-presenter": "^4.2",
         "pragmarx/google2fa": "^0.7.1",
         "rcrowe/twigbridge": "^0.9.1",
-        "roumen/feed": "^2.9.9"
+        "roumen/feed": "^2.10"
     },
     "require-dev": {
         "alt-three/testbench": "^1.1",
