@@ -67,7 +67,7 @@ class Subscriber extends Model implements HasPresenter
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function subcriptions()
+    public function subscriptions()
     {
         return $this->hasMany(Subscription::class);
     }
