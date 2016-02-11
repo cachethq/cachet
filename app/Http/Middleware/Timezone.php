@@ -13,6 +13,7 @@ namespace CachetHQ\Cachet\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Config\Repository;
+use Illuminate\Http\Request;
 
 class Timezone
 {
@@ -43,7 +44,7 @@ class Timezone
      *
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle(Request $request, Closure $next)
     {
         if ($tz = $request->header('Time-Zone')) {
             $this->config->set('cachet.timezone', $tz);

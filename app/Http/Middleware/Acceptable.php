@@ -12,6 +12,7 @@
 namespace CachetHQ\Cachet\Http\Middleware;
 
 use Closure;
+use Illuminate\Http\Request;
 use Symfony\Component\HttpKernel\Exception\NotAcceptableHttpException;
 
 class Acceptable
@@ -25,7 +26,7 @@ class Acceptable
      *
      * @return mixed
      */
-    public function handle($request, Closure $next, $type = null)
+    public function handle(Request $request, Closure $next, $type = null)
     {
         if (!$request->accepts($type ?: 'accept:application/json')) {
             throw new NotAcceptableHttpException();
