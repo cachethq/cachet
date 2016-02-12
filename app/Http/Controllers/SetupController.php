@@ -222,12 +222,13 @@ class SetupController extends Controller
     protected function writeEnv($key, $value)
     {
         $path = app()->environmentFile();
+        $basePath = base_path($path);
 
         try {
             (new Dotenv(app()->environmentPath(), $path))->load();
 
-            file_put_contents($path, str_replace(
-                env(strtoupper($key)), $value, file_get_contents($path)
+            file_put_contents($basePath, str_replace(
+                env(strtoupper($key)), $value, file_get_contents($basePath)
             ));
         } catch (InvalidPathException $e) {
             //
