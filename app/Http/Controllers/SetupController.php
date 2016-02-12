@@ -221,10 +221,12 @@ class SetupController extends Controller
      */
     protected function writeEnv($key, $value)
     {
-        $path = app()->environmentFile();
+        $dir = app()->environmentPath();
+        $file = app()->environmentFile();
+        $path = "{$dir}/{$file}";
 
         try {
-            (new Dotenv(app()->environmentPath(), $path))->load();
+            (new Dotenv($dir, $file))->load();
 
             file_put_contents($path, str_replace(
                 env(strtoupper($key)), $value, file_get_contents($path)
@@ -243,9 +245,11 @@ class SetupController extends Controller
     {
         $key = str_random(32);
 
-        $path = app()->environmentFile();
+        $dir = app()->environmentPath();
+        $file = app()->environmentFile();
+        $path = "{$dir}/{$file}";
 
-        (new Dotenv(app()->environmentPath(), $path))->load();
+        (new Dotenv($dir, $file))->load();
 
         file_put_contents($path, str_replace(
             Config::get('app.key'), $key, file_get_contents($path)
