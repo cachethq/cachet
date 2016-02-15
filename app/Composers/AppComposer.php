@@ -30,7 +30,7 @@ class AppComposer
         $view->withAppAnalytics(Config::get('setting.app_analytics'));
         $view->withAppAnalyticsGoSquared(Config::get('setting.app_analytics_go_squared'));
         $view->withAppAnalyticsPiwikUrl(Config::get('setting.app_analytics_piwik_url'));
-        $view->withAppAnalyticsPiwikSiteId(Config::get('setting.app_analytics_piwik_siteid'));
+        $view->withAppAnalyticsPiwikSiteId(Config::get('setting.app_analytics_piwik_site_id'));
         $view->withAppBanner(Config::get('setting.app_banner'));
         $view->withAppBannerStyleFullWidth(Config::get('setting.style_fullwidth_header'));
         $view->withAppBannerType(Config::get('setting.app_banner_type'));
