@@ -230,7 +230,7 @@ class SettingsController extends Controller
         }
 
         try {
-            foreach (Binput::except(['app_banner', 'remove_banner']) as $settingName => $settingValue) {
+            foreach (Binput::except(['app_banner', 'remove_banner', '_token']) as $settingName => $settingValue) {
                 if ($settingName === 'app_analytics_pi_url') {
                     $settingValue = rtrim($settingValue, '/');
                 }
