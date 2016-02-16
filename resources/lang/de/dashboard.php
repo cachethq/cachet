@@ -31,8 +31,8 @@ return [
             'failure' => 'Etwas ist mit dem Vorfall schiefgelaufen.',
         ],
         'delete' => [
-            'success' => 'The incident has been deleted and will not show on your status page.',
-            'failure' => 'The incident could not be deleted. Please try again.',
+            'success' => 'Der Vorfall wurde gelöscht und wird nicht mehr angezeigt.',
+            'failure' => 'Der Vorfall konnte nicht gelöscht werden. Bitte versuche es erneut.',
         ],
 
         // Incident templates
@@ -40,7 +40,7 @@ return [
             'title' => 'Vorfall Vorlagen',
             'add'   => [
                 'title'   => 'Vorfallvorlage erstellen',
-                'message' => 'You should add an Incident Template.',
+                'message' => 'Du solltest eine Vorfall-Vorlage hinzufügen.',
                 'success' => 'Vorlage erstellt.',
                 'failure' => 'Etwas ist mit der Vorfallvorlage schiefgelaufen.',
             ],
@@ -50,8 +50,8 @@ return [
                 'failure' => 'Etwas ist mit dem Updaten der Vorfallvorlage schiefgelaufen',
             ],
             'delete' => [
-                'success' => 'The tmplate has been deleted.',
-                'failure' => 'The template could not be deleted. Please try again.',
+                'success' => 'Die Vorfall-Vorlage wurde gelöscht.',
+                'failure' => 'Die Vorfall-Vorlage konnte nicht gelöscht werden. Bitte versuche es erneut.',
             ],
         ],
     ],
@@ -59,7 +59,7 @@ return [
     // Incident Maintenance
     'schedule' => [
         'schedule'     => 'Planmäßige Wartung',
-        'logged'       => '{0} There are no schedules, good work.|You have logged one schedule.|You have reported <strong>:count</strong> schedules.',
+        'logged'       => '{0} Es gibt keine Zeitpläne, gute Arbeit.|Du hast einen Zeitplan geloggt.|Du hast <strong>:count</strong> Zeitpläne gemeldet.',
         'scheduled_at' => 'Geplant am :timestamp',
         'add'          => [
             'title'   => 'Planmäßige Wartung hinzufügen',
@@ -94,8 +94,8 @@ return [
             'failure' => 'Mit der Komponente ist etwas schiefgegangen.',
         ],
         'delete' => [
-            'success' => 'Component deleted.',
-            'failure' => 'The Component could not be deleted. Please try again.',
+            'success' => 'Die Komponente wurde gelöscht!',
+            'failure' => 'Die Komponente konnte nicht gelöscht werden. Bitte versuche es erneut.',
         ],
 
         // Component groups
@@ -113,8 +113,8 @@ return [
                 'failure' => 'Mit der Komponentengruppe ist etwas schiefgegangen.',
             ],
             'delete' => [
-                'success' => 'Component Group deleted.',
-                'failure' => 'The Component Group could not be deleted. Please try again.',
+                'success' => 'Die Komponentengruppe wurde gelöscht!',
+                'failure' => 'Die Komponentengruppe konnte nicht gelöscht werden. Bitte versuche es erneut.',
             ],
         ],
     ],
@@ -124,7 +124,7 @@ return [
         'metrics' => 'Metriken',
         'add'     => [
             'title'   => 'Metrik erstellen',
-            'message' => 'You should add a Metric.',
+            'message' => 'Du solltest eine Metrik hinzufügen.',
             'success' => 'Metrik erstellt.',
             'failure' => 'Mit der Metrik ist etwas schiefgegangen.',
         ],
@@ -134,8 +134,8 @@ return [
             'failure' => 'Mit der Metrik ist etwas schiefgegangen.',
         ],
         'delete' => [
-            'success' => 'The metric has been deleted and will not show on your status page.',
-            'failure' => 'The metric could not be deleted. Please try again.',
+            'success' => 'Die Metrik wurde gelöscht und wird nicht mehr angezeigt.',
+            'failure' => 'Die Metrik konnte nicht gelöscht werden. Bitte versuche es erneut.',
         ],
     ],
     // Subscribers
@@ -178,7 +178,7 @@ return [
         ],
         'invite' => [
             'title'   => 'Ein neues Teammitglied einladen',
-            'success' => 'Die Benutzer eingeladen.',
+            'success' => 'Eine Einladung wurde verschickt',
             'failure' => 'Mit der Einladung ist etwas schiefgelaufen.',
         ],
     ],
@@ -235,7 +235,7 @@ return [
 
     // Welcome modal
     'welcome' => [
-        'welcome' => 'Welcome to your status page!',
+        'welcome' => 'Willkommen zu Deiner Status Seite!',
         'message' => 'Ihre Statusseite ist fast fertig! Vielleicht möchten Sie diese zusätzlichen Einstellungen konfigurieren',
         'close'   => 'Gehe einfach direkt zu meinem Dashboard',
         'steps'   => [

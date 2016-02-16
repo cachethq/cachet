@@ -14,21 +14,20 @@ return [
     'components' => [
         'status' => [
             1 => 'Работает',
-            2 => 'Падение производительности',
-            3 => 'Частичные неполадки',
-            4 => 'Не работает',
+            2 => 'Проблемы с производительностью',
+            3 => 'Перебои в работе',
+            4 => 'Полное отключение',
         ],
     ],
 
     // Incidents
     'incidents' => [
-        'none'          => 'Нет происшествий.',
-        'past'          => 'Полседние инциденты',
+        'none'          => 'Без происшествий',
+        'past'          => 'Последние инциденты',
         'previous_week' => 'Предыдущая неделя',
         'next_week'     => 'Следующая неделя',
-        'none'          => 'Нет происшествий.',
         'scheduled'     => 'Плановое техническое обслуживание',
-        'scheduled_at'  => ', запланированное :timestamp',
+        'scheduled_at'  => ', запланировано :timestamp',
         'status'        => [
             0 => 'Запланировано', // TODO: Hopefully remove this.
             1 => 'Проводим анализ проблемы',
@@ -47,13 +46,13 @@ return [
 
     'api' => [
         'regenerate' => 'Сгенерировать ключ API',
-        'revoke'     => 'Отозвать API ключ',
+        'revoke'     => 'Отозвать ключ API',
     ],
 
     // Metrics
     'metrics' => [
         'filter' => [
-            'last_hour' => 'Last Hour',
+            'last_hour' => 'Последний час',
             'hourly'    => 'Последние 12 часов',
             'weekly'    => 'Неделя',
             'monthly'   => 'Месяц',
@@ -122,17 +121,17 @@ return [
 
     // Modal
     'modal' => [
-        'close'     => 'Close',
+        'close'     => 'Закрыть',
         'subscribe' => [
-            'title'  => 'Subscribe to component updates?',
-            'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll receive emails for this component too.',
+            'title'  => 'Subscribe to component updates',
+            'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll already receive emails for this component.',
             'button' => 'Подписаться',
         ],
     ],
 
     // Other
     'powered_by'      => ':app Status Page is powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
-    'about_this_site' => 'About This Site',
+    'about_this_site' => 'Об этом сайте',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',
     'feed'            => 'Статус фид',

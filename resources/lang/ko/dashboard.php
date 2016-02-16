@@ -40,7 +40,7 @@ return [
             'title' => '문제 템플릿',
             'add'   => [
                 'title'   => '문제 템플릿 생성하기',
-                'message' => 'You should add an Incident Template.',
+                'message' => 'You should add an incident template.',
                 'success' => '템플릿이 생성되었습니다.',
                 'failure' => '템플릿 생성 중 문제가 발생했습니다.',
             ],
@@ -50,8 +50,8 @@ return [
                 'failure' => '템플릿 수정 중 문제가 발생했습니다.',
             ],
             'delete' => [
-                'success' => 'The tmplate has been deleted.',
-                'failure' => 'The template could not be deleted. Please try again.',
+                'success' => 'The incident template has been deleted.',
+                'failure' => 'The incident template could not be deleted. Please try again.',
             ],
         ],
     ],
@@ -94,8 +94,8 @@ return [
             'failure' => '구성요소와 관련하여 문제가 생겼습니다.',
         ],
         'delete' => [
-            'success' => 'Component deleted.',
-            'failure' => 'The Component could not be deleted. Please try again.',
+            'success' => 'The component has been deleted!',
+            'failure' => 'The component could not be deleted. Please try again.',
         ],
 
         // Component groups
@@ -113,8 +113,8 @@ return [
                 'failure' => '구성요소 그룹과 관련하여 문제가 생겼습니다.',
             ],
             'delete' => [
-                'success' => 'Component Group deleted.',
-                'failure' => 'The Component Group could not be deleted. Please try again.',
+                'success' => 'Component group has been deleted!',
+                'failure' => 'The component group could not be deleted. Please try again.',
             ],
         ],
     ],
@@ -124,7 +124,7 @@ return [
         'metrics' => '통계',
         'add'     => [
             'title'   => '통계 추가',
-            'message' => 'You should add a Metric.',
+            'message' => 'You should add a metric.',
             'success' => '통계가 추가되었습니다.',
             'failure' => '통계 추가 중 문제가 발생했습니다.',
         ],
@@ -134,7 +134,7 @@ return [
             'failure' => '통계와 관련하여 문제가 생겼습니다.',
         ],
         'delete' => [
-            'success' => 'The metric has been deleted and will not show on your status page.',
+            'success' => 'The metric has been deleted and will no longer display on your status page.',
             'failure' => 'The metric could not be deleted. Please try again.',
         ],
     ],

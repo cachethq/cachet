@@ -40,7 +40,7 @@ return [
             'title' => '事件模板',
             'add'   => [
                 'title'   => '添加事件模板',
-                'message' => 'You should add an Incident Template.',
+                'message' => 'You should add an incident template.',
                 'success' => '事件模板新增成功。',
                 'failure' => '新增事件模板時遇到一些問題。',
             ],
@@ -50,8 +50,8 @@ return [
                 'failure' => '更新事件模板時遇到一些問題。',
             ],
             'delete' => [
-                'success' => 'The tmplate has been deleted.',
-                'failure' => 'The template could not be deleted. Please try again.',
+                'success' => 'The incident template has been deleted.',
+                'failure' => 'The incident template could not be deleted. Please try again.',
             ],
         ],
     ],
@@ -94,8 +94,8 @@ return [
             'failure' => '修改組件時遇到一些問題。',
         ],
         'delete' => [
-            'success' => 'Component deleted.',
-            'failure' => 'The Component could not be deleted. Please try again.',
+            'success' => 'The component has been deleted!',
+            'failure' => 'The component could not be deleted. Please try again.',
         ],
 
         // Component groups
@@ -113,8 +113,8 @@ return [
                 'failure' => '修改組件組時遇到一些問題。',
             ],
             'delete' => [
-                'success' => 'Component Group deleted.',
-                'failure' => 'The Component Group could not be deleted. Please try again.',
+                'success' => 'Component group has been deleted!',
+                'failure' => 'The component group could not be deleted. Please try again.',
             ],
         ],
     ],
@@ -124,7 +124,7 @@ return [
         'metrics' => '效能度量',
         'add'     => [
             'title'   => '添加圖表',
-            'message' => 'You should add a Metric.',
+            'message' => 'You should add a metric.',
             'success' => '指標新增成功。',
             'failure' => '新增指標時遇到一些問題。',
         ],
@@ -134,7 +134,7 @@ return [
             'failure' => '修改指標時遇到一些問題。',
         ],
         'delete' => [
-            'success' => 'The metric has been deleted and will not show on your status page.',
+            'success' => 'The metric has been deleted and will no longer display on your status page.',
             'failure' => 'The metric could not be deleted. Please try again.',
         ],
     ],

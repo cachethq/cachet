@@ -22,11 +22,10 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => 'Aucun incident signalé.',
+        'none'          => 'Aucun incident signalé',
         'past'          => 'Incidents antérieurs',
         'previous_week' => 'Semaine précédente',
         'next_week'     => 'Semaine suivante',
-        'none'          => 'Aucun incident signalé.',
         'scheduled'     => 'Geplante Wartungen',
         'scheduled_at'  => ', geplant :timestamp',
         'status'        => [
@@ -40,9 +39,9 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] System operational|[2,Inf] All systems are operational',
-        'bad'   => '[0,1] The system is currently experiencing issues|[2,Inf] Some systems are experiencing issues',
-        'major' => '[0,1] The service experiencing a major outage|[2,Inf] Some systems are experiencing a major outage',
+        'good'  => '[0,1] Système opérationnel|[2,Inf] Tous les systèmes sont opérationnels',
+        'bad'   => '[0,1] Le système rencontre actuellement des problèmes|[2,Inf] Certains systèmes rencontrent des problèmes',
+        'major' => '[0,1] Le service rencontre une panne majeure|[2,Inf] Certains systèmes rencontrent une panne majeure',
     ],
 
     'api' => [
@@ -53,7 +52,7 @@ return [
     // Metrics
     'metrics' => [
         'filter' => [
-            'last_hour' => 'Last Hour',
+            'last_hour' => 'Dernière heure',
             'hourly'    => 'Last 12 Hours',
             'weekly'    => 'Week',
             'monthly'   => 'Month',
@@ -71,7 +70,7 @@ return [
             'unsubscribe'        => 'Désinscription des mises à jour par courriel.',
             'unsubscribed'       => 'Ihre E-Mail-Abonnement wurde gekündigt.',
             'failure'            => 'Etwas ist mit dem Abonnement schief gelaufen.',
-            'already-subscribed' => 'Cannot subscribe :email because they\'re already subscribed.',
+            'already-subscribed' => 'Impossible de s\'abonner avec l\'adresse e-mail :email car celle-ci est déjà abonné.',
             'verify'             => [
                 'text'           => "Bitte bestätigen Sie Ihre E-Mail-Abonnement zu :app_name Status-Aktualisierungen.\n:link\nDanke, :app_name",
                 'html-preheader' => 'Bitte bestätigen Sie Ihre E-Mail-Abonnement zu :app_name Status-Aktualisierungen.',
@@ -88,11 +87,11 @@ return [
                 'html'           => '<p>Ein neuer Vorfall wurde über :app_name berichtet.</p> <p>Danke, :app_name</p>',
             ],
             'component' => [
-                'subject'        => 'Component Status Update',
-                'text'           => 'The component :component_name has seen a status change. The component is now at :component_human_status.\nThank you, :app_name',
-                'html-preheader' => 'Component Update from :app_name',
-                'html'           => '<p>The component :component_name has seen a status change. The component is now at :component_human_status.</p><p>Thank you, :app_name</p>',
-                'tooltip-title'  => 'Subscribe to notifications for :component_name.',
+                'subject'        => 'Statut de la mise à jour du composant',
+                'text'           => 'Le composant :component_name a vu son statut changé. Le composant est maintenant à :component_human_status.\nMerci, :app_name',
+                'html-preheader' => 'Mise à jour du composant sur :app_name',
+                'html'           => '<p>Le composant :component_name a vu son statut changé. Le composant est maintenant à :component_human_status.</p><p>Merci, :app_name</p>',
+                'tooltip-title'  => 'S\'abonner aux notifications pour :component_name.',
             ],
         ],
     ],
@@ -102,7 +101,7 @@ return [
             'invite' => [
                 'text'           => "Vous avez été invité à la page de statut de l'équipe :app_name , veuillez suivre le lien suivant pour vous inscire \n:link\nMerci, :app_name",
                 'html-preheader' => 'Vous avez été invité à rejoindre l\'équipe :app_name.',
-                'html'           => '<p>You have been invited to the team :app_name status page, to sign up follow the next link.</p><p><a href=":link">:link</a></p><p>Thank you, :app_name</p>',
+                'html'           => '<p>Vous avez été invité à la page de statut de l\'équipe :app_name, veuillez suivre le lien suivant pour vous inscrire.</p><p><a href=":link">:link</a></p><p>Merci, :app_name</p>',
             ],
         ],
     ],
@@ -113,19 +112,19 @@ return [
         'email'    => 'Adresse email',
         'password' => 'Mot de passe ',
         'success'  => 'Votre compte a été créé.',
-        'failure'  => 'Un problème est survenu lors de votre inscription.',
+        'failure'  => 'Une erreur est survenue lors de votre inscription.',
     ],
 
     'system' => [
-        'update' => 'There is a newer version of Cachet available. You can learn how to update <a href="https://docs.cachethq.io/docs/updating-cachet">here</a>!',
+        'update' => 'Il y a une nouvelle version disponible de Cachet. Vous pouvez apprendre comment le mettre à jour <a href="https://docs.cachethq.io/docs/updating-cachet">ici</a> !',
     ],
 
     // Modal
     'modal' => [
-        'close'     => 'Close',
+        'close'     => 'Fermer',
         'subscribe' => [
-            'title'  => 'Subscribe to component updates?',
-            'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll receive emails for this component too.',
+            'title'  => 'Abonnez-vous pour les mises à jour du composant',
+            'body'   => 'Entrez votre adresse e-mail pour vous abonner aux mises à jour pour ce composant. Si vous êtes déjà inscrit, vous devrez déjà recevoir des e-mails pour ce composant.',
             'button' => 'Abonnieren',
         ],
     ],

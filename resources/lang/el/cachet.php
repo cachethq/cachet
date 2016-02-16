@@ -22,11 +22,10 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => 'Nothing to report',
+        'none'          => 'No incidents reported',
         'past'          => 'Past Incidents',
         'previous_week' => 'Previous Week',
         'next_week'     => 'Next Week',
-        'none'          => 'Nothing to report',
         'scheduled'     => 'Προγραμματισμένη Συντήρηση',
         'scheduled_at'  => ', προγραμματισμένη :timestamp',
         'status'        => [
@@ -124,8 +123,8 @@ return [
     'modal' => [
         'close'     => 'Close',
         'subscribe' => [
-            'title'  => 'Subscribe to component updates?',
-            'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll receive emails for this component too.',
+            'title'  => 'Subscribe to component updates',
+            'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll already receive emails for this component.',
             'button' => 'Subscribe',
         ],
     ],

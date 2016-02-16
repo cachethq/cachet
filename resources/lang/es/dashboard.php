@@ -31,8 +31,8 @@ return [
             'failure' => 'Algo salió mal con el incidente.',
         ],
         'delete' => [
-            'success' => 'The incident has been deleted and will not show on your status page.',
-            'failure' => 'The incident could not be deleted. Please try again.',
+            'success' => 'El incidente se ha eliminado y no se mostrará en tu página de estado.',
+            'failure' => 'El incidente no se pudo eliminar. Por favor, inténtalo de nuevo.',
         ],
 
         // Incident templates
@@ -40,7 +40,7 @@ return [
             'title' => 'Plantillas de incidente',
             'add'   => [
                 'title'   => 'Vorfallvorlage erstellen',
-                'message' => 'You should add an Incident Template.',
+                'message' => 'Deberías añadir una plantilla de incidente.',
                 'success' => 'Vorlage erstellt.',
                 'failure' => 'Etwas ist mit der Vorfallvorlage schiefgelaufen.',
             ],
@@ -50,8 +50,8 @@ return [
                 'failure' => 'Etwas ist mit dem Updaten der Vorfallvorlage schiefgelaufen',
             ],
             'delete' => [
-                'success' => 'The tmplate has been deleted.',
-                'failure' => 'The template could not be deleted. Please try again.',
+                'success' => 'La plantilla de incidente se ha eliminado.',
+                'failure' => 'La plantilla de incidente no se pudo eliminar. Por favor, inténtalo de nuevo.',
             ],
         ],
     ],
@@ -59,7 +59,7 @@ return [
     // Incident Maintenance
     'schedule' => [
         'schedule'     => 'Geplante Wartungen',
-        'logged'       => '{0} There are no schedules, good work.|You have logged one schedule.|You have reported <strong>:count</strong> schedules.',
+        'logged'       => '{0} No hay planificaciones, buen trabajo.|Has registrado una planificación.|Has registrado <strong>:count</strong> planificaciones.',
         'scheduled_at' => 'Geplant am :timestamp',
         'add'          => [
             'title'   => 'Planmäßige Wartung hinzufügen',
@@ -94,8 +94,8 @@ return [
             'failure' => 'Algo salió mal con el componente.',
         ],
         'delete' => [
-            'success' => 'Component deleted.',
-            'failure' => 'The Component could not be deleted. Please try again.',
+            'success' => 'El componente se ha eliminado!',
+            'failure' => 'El componente no se pudo eliminar. Por favor, inténtalo de nuevo.',
         ],
 
         // Component groups
@@ -113,8 +113,8 @@ return [
                 'failure' => 'Mit der Komponentengruppe ist etwas schiefgegangen.',
             ],
             'delete' => [
-                'success' => 'Component Group deleted.',
-                'failure' => 'The Component Group could not be deleted. Please try again.',
+                'success' => 'El grupo de componentes se ha eliminado!',
+                'failure' => 'El grupo de componentes no se pudo eliminar. Por favor, inténtalo de nuevo.',
             ],
         ],
     ],
@@ -124,7 +124,7 @@ return [
         'metrics' => 'Metriken',
         'add'     => [
             'title'   => 'Metrik erstellen',
-            'message' => 'You should add a Metric.',
+            'message' => 'Deberías añadir una métrica.',
             'success' => 'Metrik erstellt.',
             'failure' => 'Mit der Metrik ist etwas schiefgegangen.',
         ],
@@ -134,8 +134,8 @@ return [
             'failure' => 'Mit der Metrik ist etwas schiefgegangen.',
         ],
         'delete' => [
-            'success' => 'The metric has been deleted and will not show on your status page.',
-            'failure' => 'The metric could not be deleted. Please try again.',
+            'success' => 'La métrica se ha eliminado y no se mostrará más en tu página de estado.',
+            'failure' => 'La métrica no se pudo eliminar. Por favor, inténtalo de nuevo.',
         ],
     ],
     // Subscribers
@@ -178,7 +178,7 @@ return [
         ],
         'invite' => [
             'title'   => 'Invitar a un nuevo miembro al equipo',
-            'success' => 'Los usuarios invitados.',
+            'success' => 'Se ha enviado una invitación',
             'failure' => 'Algo salió mal en la invitación.',
         ],
     ],
@@ -235,7 +235,7 @@ return [
 
     // Welcome modal
     'welcome' => [
-        'welcome' => 'Welcome to your status page!',
+        'welcome' => 'Bienvenido a tu página de estado!',
         'message' => 'Ihre Statusseite ist fast fertig! Vielleicht möchten Sie diese zusätzlichen Einstellungen konfigurieren',
         'close'   => 'Gehe einfach direkt zu meinem Dashboard',
         'steps'   => [

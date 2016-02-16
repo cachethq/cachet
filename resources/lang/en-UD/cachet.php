@@ -22,11 +22,10 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => 'crwdns541:0crwdne541:0',
+        'none'          => 'crwdns657:0crwdne657:0',
         'past'          => 'crwdns542:0crwdne542:0',
         'previous_week' => 'crwdns543:0crwdne543:0',
         'next_week'     => 'crwdns544:0crwdne544:0',
-        'none'          => 'crwdns541:0crwdne541:0',
         'scheduled'     => 'crwdns438:0crwdne438:0',
         'scheduled_at'  => 'crwdns439:0crwdne439:0',
         'status'        => [
@@ -73,17 +72,17 @@ return [
             'failure'            => 'crwdns496:0crwdne496:0',
             'already-subscribed' => 'crwdns626:0crwdne626:0',
             'verify'             => [
-                'text'           => 'crwdns497:0crwdne497:0',
+                'text'           => "crwdns497:0crwdne497:0",
                 'html-preheader' => 'crwdns498:0crwdne498:0',
                 'html'           => 'crwdns520:0crwdne520:0',
             ],
             'maintenance' => [
-                'text'           => 'crwdns500:0crwdne500:0',
+                'text'           => "crwdns500:0crwdne500:0",
                 'html-preheader' => 'crwdns501:0crwdne501:0',
                 'html'           => 'crwdns521:0crwdne521:0',
             ],
             'incident' => [
-                'text'           => 'crwdns503:0crwdne503:0',
+                'text'           => "crwdns503:0crwdne503:0",
                 'html-preheader' => 'crwdns504:0crwdne504:0',
                 'html'           => 'crwdns505:0crwdne505:0',
             ],
@@ -100,7 +99,7 @@ return [
     'users' => [
         'email' => [
             'invite' => [
-                'text'           => 'crwdns553:0crwdne553:0',
+                'text'           => "crwdns553:0crwdne553:0",
                 'html-preheader' => 'crwdns554:0crwdne554:0',
                 'html'           => 'crwdns555:0crwdne555:0',
             ],
@@ -125,7 +124,7 @@ return [
         'close'     => 'crwdns633:0crwdne633:0',
         'subscribe' => [
             'title'  => 'crwdns634:0crwdne634:0',
-            'body'   => 'crwdns635:0crwdne635:0',
+            'body'   => 'crwdns658:0crwdne658:0',
             'button' => 'crwdns636:0crwdne636:0',
         ],
     ],

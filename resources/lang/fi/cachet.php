@@ -22,11 +22,10 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => 'Ei ilmoitettuja tapahtumia.',
+        'none'          => 'Ei raportoitavia tapauksia',
         'past'          => 'Aikaisemmat tapahtumat',
         'previous_week' => 'Edellinen viikko',
         'next_week'     => 'Seuraava viikko',
-        'none'          => 'Ei ilmoitettuja tapahtumia.',
         'scheduled'     => 'Määräaikaishuolto',
         'scheduled_at'  => ', ajoitettu: aikaleima',
         'status'        => [
@@ -40,9 +39,9 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] System operational|[2,Inf] All systems are operational',
-        'bad'   => '[0,1] The system is currently experiencing issues|[2,Inf] Some systems are experiencing issues',
-        'major' => '[0,1] The service experiencing a major outage|[2,Inf] Some systems are experiencing a major outage',
+        'good'  => '[0,1] järjestelmät ovat toiminnassa| [2, Inf] Kaikki järjestelmät ovat toiminnassa',
+        'bad'   => '[0,1] järjestelmä on tällä hetkellä ongelmia| [2, Inf] Joissakin järjestelmissä on ongelmia',
+        'major' => '[0,1] Palveluissa on katkoksia| [2, Inf] Joissakin järjestelmissä on merkittävä katkoksia',
     ],
 
     'api' => [
@@ -53,7 +52,7 @@ return [
     // Metrics
     'metrics' => [
         'filter' => [
-            'last_hour' => 'Last Hour',
+            'last_hour' => 'Viimeisen tunnin',
             'hourly'    => 'Viimeisen 12 tunnin',
             'weekly'    => 'Viikko',
             'monthly'   => 'Kuukausi',
@@ -62,13 +61,13 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe' => 'Subscribe to get the most recent updates',
+        'subscribe' => 'Tilaa uusimmat päivitykset',
         'button'    => 'Tilaa',
         'email'     => [
             'subscribe'          => 'Tilaa email päivitykset.',
             'subscribed'         => 'Olet tilannut sähköposti-ilmoitukset, tarkista sähköpostisi vahvistaaksesi tilauksen.',
             'verified'           => 'Sinun sähköposti tilaus on vahvistettu. Kiitos!',
-            'unsubscribe'        => 'Unsubscribe from email updates.',
+            'unsubscribe'        => 'Poista sähköposti tilauksesi.',
             'unsubscribed'       => 'Sähköpostitilauksesi on peruuttu.',
             'failure'            => 'Jokin meni vikaan sähköpostitilauksen käsittelyssä.',
             'already-subscribed' => 'Cannot subscribe :email because they\'re already subscribed.',
@@ -122,10 +121,10 @@ return [
 
     // Modal
     'modal' => [
-        'close'     => 'Close',
+        'close'     => 'Sulje',
         'subscribe' => [
-            'title'  => 'Subscribe to component updates?',
-            'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll receive emails for this component too.',
+            'title'  => 'Subscribe to component updates',
+            'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll already receive emails for this component.',
             'button' => 'Tilaa',
         ],
     ],
