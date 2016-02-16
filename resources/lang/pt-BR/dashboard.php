@@ -21,12 +21,12 @@ return [
         'incident-create-template' => 'Criar template',
         'incident-templates'       => 'Template de incidentes',
         'add'                      => [
-            'title'   => 'Add an Incident',
+            'title'   => 'Report an incident',
             'success' => 'Incidente adicionado.',
             'failure' => 'Algo deu errado com o incidente.',
         ],
         'edit' => [
-            'title'   => 'Edit an Incident',
+            'title'   => 'Edit an incident',
             'success' => 'Incidente atualizado.',
             'failure' => 'Algo deu errado com o incidente.',
         ],
@@ -39,8 +39,8 @@ return [
         'templates' => [
             'title' => 'Template de incidentes',
             'add'   => [
-                'title'   => 'Create an Incident Template',
-                'message' => 'You should add an Incident Template.',
+                'title'   => 'Create an incident template',
+                'message' => 'You should add an incident template.',
                 'success' => 'Template criado.',
                 'failure' => 'Algo deu errado com o template de incidente.',
             ],
@@ -50,8 +50,8 @@ return [
                 'failure' => 'Algo deu errado atualizando o template de incidente',
             ],
             'delete' => [
-                'success' => 'The tmplate has been deleted.',
-                'failure' => 'The template could not be deleted. Please try again.',
+                'success' => 'The incident template has been deleted.',
+                'failure' => 'The incident template could not be deleted. Please try again.',
             ],
         ],
     ],
@@ -83,19 +83,19 @@ return [
         'component_statuses' => 'Status do componente',
         'listed_group'       => 'Agrupados sob :name',
         'add'                => [
-            'title'   => 'Add a Component',
+            'title'   => 'Add a component',
             'message' => 'Você deve adicionar um componente.',
             'success' => 'Componente criado.',
             'failure' => 'Algo deu errado com o componente.',
         ],
         'edit' => [
-            'title'   => 'Edit a Component',
+            'title'   => 'Edit a component',
             'success' => 'Componente atualizado.',
             'failure' => 'Algo deu errado com o componente.',
         ],
         'delete' => [
-            'success' => 'Component deleted.',
-            'failure' => 'The Component could not be deleted. Please try again.',
+            'success' => 'The component has been deleted!',
+            'failure' => 'The component could not be deleted. Please try again.',
         ],
 
         // Component groups
@@ -103,18 +103,18 @@ return [
             'groups'        => 'Grupo de componente|Grupos de componente',
             'no_components' => 'Você deve adicionar um componente à um grupo.',
             'add'           => [
-                'title'   => 'Add a Component Group',
+                'title'   => 'Add a component group',
                 'success' => 'Grupo de componente adicionado.',
                 'failure' => 'Algo deu errado com o grupo de componente.',
             ],
             'edit' => [
-                'title'   => 'Edit a Component Group',
+                'title'   => 'Edit a component group',
                 'success' => 'Grupo de componentes atualizado.',
                 'failure' => 'Algo deu errado com o grupo de componentes.',
             ],
             'delete' => [
-                'success' => 'Component Group deleted.',
-                'failure' => 'The Component Group could not be deleted. Please try again.',
+                'success' => 'Component group has been deleted!',
+                'failure' => 'The component group could not be deleted. Please try again.',
             ],
         ],
     ],
@@ -123,18 +123,18 @@ return [
     'metrics' => [
         'metrics' => 'Metricas',
         'add'     => [
-            'title'   => 'Create a Metric',
-            'message' => 'You should add a Metric.',
+            'title'   => 'Create a metric',
+            'message' => 'You should add a metric.',
             'success' => 'Métrica criada.',
             'failure' => 'Algo deu errado com a métrica.',
         ],
         'edit' => [
-            'title'   => 'Edit a Metric',
+            'title'   => 'Edit a metric',
             'success' => 'Métrica atualizada.',
             'failure' => 'Algo deu errado com a métrica.',
         ],
         'delete' => [
-            'success' => 'The metric has been deleted and will not show on your status page.',
+            'success' => 'The metric has been deleted and will no longer display on your status page.',
             'failure' => 'The metric could not be deleted. Please try again.',
         ],
     ],
@@ -145,12 +145,12 @@ return [
         'verified'     => 'Verificado',
         'not_verified' => 'Não verificado',
         'add'          => [
-            'title'   => 'Add a New Subscriber',
+            'title'   => 'Add a new subscriber',
             'success' => 'Inscrito adicionado.',
             'failure' => 'Algo deu errado com o componente.',
         ],
         'edit' => [
-            'title'   => 'Update Subscriber',
+            'title'   => 'Update subscriber',
             'success' => 'Inscrito atualizado.',
             'failure' => 'Algo deu errado duante a atualização.',
         ],
@@ -163,23 +163,23 @@ return [
         'profile'     => 'Perfil	',
         'description' => 'Membros da equipe serão capazes de adicionar, modificar &amp; editar componentes e incidentes.',
         'add'         => [
-            'title'   => 'Add a New Team Member',
+            'title'   => 'Add a new team member',
             'success' => 'Membro da equipe adicionado.',
-            'failure' => 'Something went wrong with the user.',
+            'failure' => 'Ocorreu um problema ao excluir esse usuário.',
         ],
         'edit' => [
-            'title'   => 'Update Profile',
+            'title'   => 'Update profile',
             'success' => 'Perfil atualizado.',
             'failure' => 'Algo deu errado duante a atualização.',
         ],
         'delete' => [
-            'success' => 'User deleted.',
+            'success' => 'Team member has been deleted and will no longer have access to the dashboard!',
             'failure' => 'Ocorreu um problema ao excluir esse usuário.',
         ],
         'invite' => [
-            'title'   => 'Invite a New Team Member',
-            'success' => 'The users invited.',
-            'failure' => 'Something went wrong with the invite.',
+            'title'   => 'Invite a new team member',
+            'success' => 'An invite has been sent',
+            'failure' => 'The invite could not be sent. Please try again.',
         ],
     ],
 

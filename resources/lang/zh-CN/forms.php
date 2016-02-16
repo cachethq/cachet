@@ -27,11 +27,11 @@ return [
 
     // Login form fields
     'login' => [
-        'login'         => 'Username or Email',
+        'login'         => '用户名或者邮箱地址',
         'email'         => '电子邮箱',
         'password'      => '密码',
         '2fauth'        => 'Authentication Code',
-        'invalid'       => 'Invalid username or password',
+        'invalid'       => '无效的用户名或者邮箱地址',
         'invalid-token' => 'Invalid token',
         'cookies'       => 'You must enable cookies to login.',
     ],
@@ -52,7 +52,7 @@ return [
         'templates'          => [
             'name'     => '事件名',
             'template' => 'Template',
-            'twig'     => 'Incident Templates can make use of the <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a> templating language.',
+            'twig'     => '故障模板可以使用 <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a> 模板语言',
         ],
     ],
 
@@ -69,7 +69,7 @@ return [
 
         'groups' => [
             'name'      => '组名',
-            'collapsed' => 'Collapse the group by default?',
+            'collapsed' => '默认折叠组？',
         ],
     ],
 
@@ -85,7 +85,7 @@ return [
         'type_sum'         => 'Sum',
         'type_avg'         => 'Average',
         'places'           => '小数点位数',
-        'default_view'     => 'Default View',
+        'default_view'     => '默认视图',
 
         'points' => [
             'value' => 'Value',

@@ -85,7 +85,7 @@ return [
         'type_sum'         => 'Jumlah',
         'type_avg'         => 'Rata-rata',
         'places'           => 'Digit Desimal',
-        'default_view'     => 'Default View',
+        'default_view'     => 'Default view',
 
         'points' => [
             'value' => 'Nilai',

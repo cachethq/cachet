@@ -22,11 +22,10 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => 'Nici un incident raportat.',
+        'none'          => 'No incidents reported',
         'past'          => 'Incidente anterioare',
         'previous_week' => 'Săptămâna anterioară',
         'next_week'     => 'Săptămâna viitoare',
-        'none'          => 'Nici un incident raportat.',
         'scheduled'     => 'Întreținere programată',
         'scheduled_at'  => ', programată: timestamp',
         'status'        => [
@@ -124,8 +123,8 @@ return [
     'modal' => [
         'close'     => 'Close',
         'subscribe' => [
-            'title'  => 'Subscribe to component updates?',
-            'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll receive emails for this component too.',
+            'title'  => 'Subscribe to component updates',
+            'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll already receive emails for this component.',
             'button' => 'Abonează-te',
         ],
     ],

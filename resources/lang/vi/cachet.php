@@ -22,11 +22,10 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => 'Không có báo cáo sự cố.',
+        'none'          => 'No incidents reported',
         'past'          => 'Sự số trong quá khứ',
         'previous_week' => 'Tuần trước',
         'next_week'     => 'Tuần sau',
-        'none'          => 'Không có báo cáo sự cố.',
         'scheduled'     => 'Bảo trì định kỳ',
         'scheduled_at'  => ', định kỳ :timestamp',
         'status'        => [
@@ -124,8 +123,8 @@ return [
     'modal' => [
         'close'     => 'Close',
         'subscribe' => [
-            'title'  => 'Subscribe to component updates?',
-            'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll receive emails for this component too.',
+            'title'  => 'Subscribe to component updates',
+            'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll already receive emails for this component.',
             'button' => 'Đăng ký',
         ],
     ],

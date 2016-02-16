@@ -85,7 +85,7 @@ return [
         'type_sum'         => '總和',
         'type_avg'         => '平均',
         'places'           => '小數點位數',
-        'default_view'     => 'Default View',
+        'default_view'     => 'Default view',
 
         'points' => [
             'value' => '值',
