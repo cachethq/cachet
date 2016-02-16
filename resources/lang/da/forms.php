@@ -85,7 +85,7 @@ return [
         'type_sum'         => 'Sum',
         'type_avg'         => 'Average',
         'places'           => 'Antal decimaler',
-        'default_view'     => 'Default View',
+        'default_view'     => 'Default view',
 
         'points' => [
             'value' => 'Value',
@@ -102,7 +102,7 @@ return [
             'about-this-page'        => 'Om',
             'days-of-incidents'      => 'Hvor mange dage skal der vises hændelser for?',
             'banner'                 => 'Banner Image',
-            'banner-help'            => 'Det anbefales ikke at uploade billeder bredere end 930px.',
+            'banner-help'            => "Det anbefales ikke at uploade billeder bredere end 930px.",
             'subscribers'            => 'Tillad at man kan tilmelde sig emailnotifikationer?',
         ],
         'analytics' => [

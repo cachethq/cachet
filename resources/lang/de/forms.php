@@ -27,11 +27,11 @@ return [
 
     // Login form fields
     'login' => [
-        'login'         => 'Username or Email',
+        'login'         => 'Username oder E-Mail',
         'email'         => 'E-Mail',
         'password'      => 'Passwort',
         '2fauth'        => 'Authentifizierungscode',
-        'invalid'       => 'Invalid username or password',
+        'invalid'       => 'Ungültiger Benutzername oder Passwort',
         'invalid-token' => 'Token ist ungültig',
         'cookies'       => 'Sie müssen Cookies aktivieren um sich anzumelden.',
     ],
@@ -52,7 +52,7 @@ return [
         'templates'          => [
             'name'     => 'Name',
             'template' => 'Vorlage',
-            'twig'     => 'Incident Templates can make use of the <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a> templating language.',
+            'twig'     => 'Vorfall Vorlagen können den <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a> Syntax nutzen.',
         ],
     ],
 
@@ -69,7 +69,7 @@ return [
 
         'groups' => [
             'name'      => 'Name',
-            'collapsed' => 'Collapse the group by default?',
+            'collapsed' => 'Die Gruppe standardmäßig ausblenden?',
         ],
     ],
 
@@ -85,7 +85,7 @@ return [
         'type_sum'         => 'Summe',
         'type_avg'         => 'Durchschnitt',
         'places'           => 'Nachkommastellen',
-        'default_view'     => 'Default View',
+        'default_view'     => 'Standardansicht',
 
         'points' => [
             'value' => 'Wert',
@@ -102,7 +102,7 @@ return [
             'about-this-page'        => 'Über diese Seite',
             'days-of-incidents'      => 'Wie viele Tage mit Vorfällen sollen gezeigt werden?',
             'banner'                 => 'Banner',
-            'banner-help'            => 'Es wird empfohlen, dass Sie keine Dateien die breiter als 930 Pixel sind hochladen .',
+            'banner-help'            => "Es wird empfohlen, dass Sie keine Dateien die breiter als 930 Pixel sind hochladen .",
             'subscribers'            => 'Personen die Anmeldung für E-Mail-Benachrichtigung erlauben?',
         ],
         'analytics' => [

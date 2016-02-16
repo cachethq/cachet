@@ -31,8 +31,8 @@ return [
             'failure' => '事件编辑失败。',
         ],
         'delete' => [
-            'success' => 'The incident has been deleted and will not show on your status page.',
-            'failure' => 'The incident could not be deleted. Please try again.',
+            'success' => '故障已删除并将不会出现在状态页中',
+            'failure' => '无法删除该故障，请再试一次。',
         ],
 
         // Incident templates
@@ -40,7 +40,7 @@ return [
             'title' => '事件模板',
             'add'   => [
                 'title'   => '添加故障模板',
-                'message' => 'You should add an Incident Template.',
+                'message' => '你应该增加一个故障模板',
                 'success' => 'Template created.',
                 'failure' => 'Something went wrong with the incident template.',
             ],
@@ -50,8 +50,8 @@ return [
                 'failure' => 'Something went wrong updating the incident template',
             ],
             'delete' => [
-                'success' => 'The tmplate has been deleted.',
-                'failure' => 'The template could not be deleted. Please try again.',
+                'success' => '模板已删除。',
+                'failure' => '无法删除该模板，请再试一次。',
             ],
         ],
     ],
@@ -59,7 +59,7 @@ return [
     // Incident Maintenance
     'schedule' => [
         'schedule'     => '计划维护',
-        'logged'       => '{0} There are no schedules, good work.|You have logged one schedule.|You have reported <strong>:count</strong> schedules.',
+        'logged'       => '{0} 现在没有维护计划，好样的。|你已经记录下 1 个维护计划|你已经报告了 <strong>:count</strong> 个维护计划',
         'scheduled_at' => 'Scheduled at :timestamp',
         'add'          => [
             'title'   => 'Add Scheduled Maintenance',
@@ -94,8 +94,8 @@ return [
             'failure' => '组件编辑失败。',
         ],
         'delete' => [
-            'success' => 'Component deleted.',
-            'failure' => 'The Component could not be deleted. Please try again.',
+            'success' => '组件已删除。',
+            'failure' => '无法删除该组件，请再试一次。',
         ],
 
         // Component groups
@@ -113,8 +113,8 @@ return [
                 'failure' => '分组更新失败。',
             ],
             'delete' => [
-                'success' => 'Component Group deleted.',
-                'failure' => 'The Component Group could not be deleted. Please try again.',
+                'success' => '组建分组已删除。',
+                'failure' => '无法删除该组件分组，请再试一次。',
             ],
         ],
     ],
@@ -124,7 +124,7 @@ return [
         'metrics' => 'Metrics',
         'add'     => [
             'title'   => '添加图表',
-            'message' => 'You should add a Metric.',
+            'message' => '你应该添加一个图表。',
             'success' => 'Metric created.',
             'failure' => 'Something went wrong with the metric.',
         ],
@@ -134,8 +134,8 @@ return [
             'failure' => '图表更新失败。',
         ],
         'delete' => [
-            'success' => 'The metric has been deleted and will not show on your status page.',
-            'failure' => 'The metric could not be deleted. Please try again.',
+            'success' => '图表已删除并将不会出现在状态页中',
+            'failure' => '无法删除该图表，请再试一次。',
         ],
     ],
     // Subscribers
@@ -235,7 +235,7 @@ return [
 
     // Welcome modal
     'welcome' => [
-        'welcome' => 'Welcome to your status page!',
+        'welcome' => '欢迎来到你的状态页！',
         'message' => 'Your status page is almost ready! You might want to configure these extra settings',
         'close'   => '您可以直接进入控制台',
         'steps'   => [

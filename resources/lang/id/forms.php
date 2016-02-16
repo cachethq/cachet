@@ -85,7 +85,7 @@ return [
         'type_sum'         => 'Jumlah',
         'type_avg'         => 'Rata-rata',
         'places'           => 'Digit Desimal',
-        'default_view'     => 'Default View',
+        'default_view'     => 'Default view',
 
         'points' => [
             'value' => 'Nilai',
@@ -102,7 +102,7 @@ return [
             'about-this-page'        => 'Tentang halaman ini',
             'days-of-incidents'      => 'Berapa hari insiden akan ditampilkan?',
             'banner'                 => 'Gambar Banner',
-            'banner-help'            => 'Disarankan gambar yang anda unggah tidak lebih lebar dari 930px.',
+            'banner-help'            => "Disarankan gambar yang anda unggah tidak lebih lebar dari 930px.",
             'subscribers'            => 'Bolehkan pengunjung mendaftar notifikasi email?',
         ],
         'analytics' => [
