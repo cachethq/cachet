@@ -33,73 +33,72 @@
     </li>
     @endforeach
 </ul>
-<script type="text/json" id="metricData">
-{!! json_encode($metric_data) !!}
-</script>
 <script>
 (function () {
     Chart.defaults.global.pointHitDetectionRadius = 1;
     Chart.defaults.global.scaleBeginAtZero = true;
 
-    var charts = JSON.parse(document.getElementById('metricData').text);
-
-    var defaultData = {
-        showTooltips: false,
-        labels: [],
-        datasets: [{
-            // fillColor: "rgba(220,220,220,0.1)",
-            fillColor: "{{$theme_metrics}}",
-            // strokeColor: "{{ $theme_metrics }}",
-            pointColor: "{{ color_darken($theme_metrics, -0.1) }}",
-            pointStrokeColor: "{{ color_darken($theme_metrics, -0.1) }}",
-            pointHighlightFill: "{{ color_darken($theme_metrics, -0.2) }}",
-            pointHighlightStroke: "{{ color_darken($theme_metrics, -0.2) }}",
-            data: []
-        }],
-    };
+    var charts = {},
+        defaultData = {
+            showTooltips: false,
+            labels: [],
+            datasets: [{
+                fillColor: "{{ $theme_metrics }}",
+                pointColor: "{{ color_darken($theme_metrics, -0.1) }}",
+                pointStrokeColor: "{{ color_darken($theme_metrics, -0.1) }}",
+                pointHighlightFill: "{{ color_darken($theme_metrics, -0.2) }}",
+                pointHighlightStroke: "{{ color_darken($theme_metrics, -0.2) }}",
+                data: []
+            }],
+        };
 
     $('a[data-filter-type]').on('click', function(e) {
         e.preventDefault();
 
-        var $this = $(this);
+        var $this = $(this), $li, $canvas;
 
-        // Change the selected view.
-        var $li = $this.parents('li')
+        $li = $this.parents('li');
         $li.find('a[data-toggle=dropdown] span.filter').text($this.text());
-
-        var $canvas = $li.find('canvas');
+        $canvas = $li.find('canvas');
 
         $canvas.data('metric-group', $this.data('filter-type'));
         drawChart($canvas);
     });
 
     $('canvas[data-metric-id]').each(function() {
-        var $this = $(this);
-        drawChart($this);
+        drawChart($(this));
     });
 
     function drawChart($el) {
+        var chartConfig = defaultData;
         var metricId = $el.data('metric-id');
         var metricGroup = $el.data('metric-group');
 
-        charts[metricId].context = document.getElementById("metric-"+metricId).getContext("2d");
-
-        if (typeof charts[metricId].chart !== 'undefined') {
-            charts[metricId].chart.destroy();
+        if (typeof charts[metricId] === 'undefined') {
+            charts[metricId] = {
+                context: document.getElementById("metric-"+metricId).getContext("2d"),
+                chart: null,
+            };
         }
 
-        var chartConfig = defaultData;
-        var charter = charts[metricId][metricGroup];
+        var chart = charts[metricId];
 
-        chartConfig.labels = _.keys(charter);
-        chartConfig.datasets[0].data = _.values(charter);
+        $.getJSON('/metrics/'+metricId, { filter: metricGroup }).done(function (result) {
+            var data = result.data.items;
+            chartConfig.labels = _.keys(data);
+            chartConfig.datasets[0].data = _.values(data);
 
-        charts[metricId].chart = new Chart(charts[metricId].context).Line(chartConfig, {
-            tooltipTemplate: $el.data('metric-name') + ": <{{ '%' }}= value %> " + $el.data('metric-suffix'),
-            scaleShowVerticalLines: true,
-            scaleShowLabels: false,
-            responsive: true,
-            maintainAspectRatio: false
+            if (chart.chart !== null) {
+                chart.chart.destroy();
+            }
+
+            chart.chart = new Chart(chart.context).Line(chartConfig, {
+                tooltipTemplate: $el.data('metric-name') + ": <{{ '%' }}= value %> " + $el.data('metric-suffix'),
+                scaleShowVerticalLines: true,
+                scaleShowLabels: false,
+                responsive: true,
+                maintainAspectRatio: false
+            });
         });
     }
 }());

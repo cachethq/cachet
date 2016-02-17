@@ -12,7 +12,10 @@
 namespace CachetHQ\Cachet\Http\Controllers;
 
 use CachetHQ\Cachet\Dates\DateFactory;
+use CachetHQ\Cachet\Http\Controllers\Api\AbstractApiController;
 use CachetHQ\Cachet\Models\Incident;
+use CachetHQ\Cachet\Models\Metric;
+use CachetHQ\Cachet\Repositories\Metric\MetricRepository;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
@@ -21,8 +24,25 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\View;
 use Jenssegers\Date\Date;
 
-class StatusPageController extends Controller
+class StatusPageController extends AbstractApiController
 {
+    /**
+     * @var \CachetHQ\Cachet\Repositories\Metric\MetricRepository
+     */
+    protected $metricRepository;
+
+    /**
+     * Construct a new status page controller instance.
+     *
+     * @param \CachetHQ\Cachet\Repositories\Metric\MetricRepository $metricRepository
+     *
+     * @return void
+     */
+    public function __construct(MetricRepository $metricRepository)
+    {
+        $this->metricRepository = $metricRepository;
+    }
+
     /**
      * Displays the status page.
      *
@@ -99,5 +119,38 @@ class StatusPageController extends Controller
     {
         return View::make('incident')
             ->withIncident($incident);
+    }
+
+    /**
+     * Returns metrics in a readily formatted way.
+     *
+     * @param \CachetHQ\Cachet\Models\Metric $metric
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function getMetrics(Metric $metric)
+    {
+        $metricData = [];
+        $type = Binput::get('filter', 'last_hour');
+
+        switch ($type) {
+            case 'last_hour':
+                $metricData = $this->metricRepository->listPointsLastHour($metric);
+                break;
+            case 'today':
+                $metricData = $this->metricRepository->listPointsToday($metric);
+                break;
+            case 'week':
+                $metricData = $this->metricRepository->listPointsForWeek($metric);
+                break;
+            case 'month':
+                $metricData = $this->metricRepository->listPointsForMonth($metric);
+                break;
+        }
+
+        return $this->item([
+            'metric' => $metric->toArray(),
+            'items'  => $metricData,
+        ]);
     }
 }
