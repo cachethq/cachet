@@ -62,7 +62,7 @@ return [
         'status'      => 'Status',
         'group'       => 'Group',
         'description' => 'Description',
-        'version' => 'Version',
+        'version'     => 'Version',
         'link'        => 'Link',
         'tags'        => 'Tags',
         'tags-help'   => 'Comma separated.',

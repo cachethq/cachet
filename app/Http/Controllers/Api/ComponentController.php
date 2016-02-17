@@ -106,7 +106,7 @@ class ComponentController extends AbstractApiController
                 Binput::get('name'),
                 Binput::get('description'),
                 Binput::get('version'),
-                Binput::get('status',$component->status),
+                Binput::get('status', $component->status),
                 Binput::get('link'),
                 Binput::get('order'),
                 Binput::get('group_id'),

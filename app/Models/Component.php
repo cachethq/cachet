@@ -31,7 +31,7 @@ class Component extends Model implements HasPresenter
         'order'       => 0,
         'group_id'    => 0,
         'description' => '',
-        'version' => '',
+        'version'     => '',
         'link'        => '',
         'enabled'     => true,
     ];
@@ -190,9 +190,10 @@ class Component extends Model implements HasPresenter
      */
     public function displayVersion()
     {
-        if( is_null($this->version) || empty($this->version) ){
+        if (is_null($this->version) || empty($this->version)) {
             return '';
         }
+
         return sprintf('(%s)', $this->version);
     }
 }

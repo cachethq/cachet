@@ -77,7 +77,7 @@ final class AddComponentCommand
     public $rules = [
         'name'        => 'required|string',
         'description' => 'string',
-        'version' => 'string',
+        'version'     => 'string',
         'status'      => 'int|min:1|max:4',
         'link'        => 'url',
         'order'       => 'int',
