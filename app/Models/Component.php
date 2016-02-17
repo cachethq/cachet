@@ -31,6 +31,7 @@ class Component extends Model implements HasPresenter
         'order'       => 0,
         'group_id'    => 0,
         'description' => '',
+        'version' => '',
         'link'        => '',
         'enabled'     => true,
     ];
@@ -44,6 +45,7 @@ class Component extends Model implements HasPresenter
         'order'       => 'int',
         'group_id'    => 'int',
         'description' => 'string',
+        'version'     => 'string',
         'link'        => 'string',
         'deleted_at'  => 'date',
         'enabled'     => 'bool',
@@ -57,6 +59,7 @@ class Component extends Model implements HasPresenter
     protected $fillable = [
         'name',
         'description',
+        'version',
         'status',
         'tags',
         'link',
@@ -178,5 +181,18 @@ class Component extends Model implements HasPresenter
     public function getPresenterClass()
     {
         return ComponentPresenter::class;
+    }
+
+    /**
+     * Get the presenter class.
+     *
+     * @return string
+     */
+    public function displayVersion()
+    {
+        if( !is_null($this->version) && !empty($this->version) ){
+            return sprintf('(%s)', $this->version);
+        }
+        return '';
     }
 }
