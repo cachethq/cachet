@@ -190,9 +190,9 @@ class Component extends Model implements HasPresenter
      */
     public function displayVersion()
     {
-        if( !is_null($this->version) && !empty($this->version) ){
-            return sprintf('(%s)', $this->version);
+        if( is_null($this->version) || empty($this->version) ){
+            return '';
         }
-        return '';
+        return sprintf('(%s)', $this->version);
     }
 }
