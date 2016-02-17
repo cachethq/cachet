@@ -39,6 +39,11 @@ class StatusPageRoutes
                 'as'   => 'incident',
                 'uses' => 'StatusPageController@showIncident',
             ]);
+
+            $router->get('metrics/{metric}', [
+                'as'   => 'metrics',
+                'uses' => 'StatusPageController@getMetrics',
+            ]);
         });
     }
 }
