@@ -33,6 +33,10 @@
                             <label>{{ trans('forms.components.description') }}</label>
                             <textarea name="component[description]" class="form-control" rows="5">{{ $component->description }}</textarea>
                         </div>
+                        <div class="form-group">
+                            <label for="incident-version">{{ trans('forms.components.version') }}</label>
+                            <input type="text" class="form-control" name="component[version]" id="component-version" value="{{ $component->version }}">
+                        </div>
                         @if($groups->count() > 0)
                         <div class="form-group">
                             <label>{{ trans('forms.components.group') }}</label>

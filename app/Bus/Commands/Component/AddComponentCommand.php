@@ -28,6 +28,13 @@ final class AddComponentCommand
     public $description;
 
     /**
+     * The component version.
+     *
+     * @var string
+     */
+    public $version;
+
+    /**
      * The component status.
      *
      * @var int
@@ -70,6 +77,7 @@ final class AddComponentCommand
     public $rules = [
         'name'        => 'required|string',
         'description' => 'string',
+        'version'     => 'string',
         'status'      => 'int|min:1|max:4',
         'link'        => 'url',
         'order'       => 'int',
@@ -82,6 +90,7 @@ final class AddComponentCommand
      *
      * @param string $name
      * @param string $description
+     * @param string $version
      * @param int    $status
      * @param string $link
      * @param int    $order
@@ -90,10 +99,11 @@ final class AddComponentCommand
      *
      * @return void
      */
-    public function __construct($name, $description, $status, $link, $order, $group_id, $enabled)
+    public function __construct($name, $description, $version, $status, $link, $order, $group_id, $enabled)
     {
         $this->name = $name;
         $this->description = $description;
+        $this->version = $version;
         $this->status = (int) $status;
         $this->link = $link;
         $this->order = $order;
