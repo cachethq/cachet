@@ -46,7 +46,7 @@ class ReportMaintenanceCommandHandler
      */
     public function handle(ReportMaintenanceCommand $command)
     {
-        $scheduledAt = $this->dates->createNormalized('d/m/Y H:i', $command->timestamp);
+        $scheduledAt = $this->dates->create('d/m/Y H:i', $command->timestamp);
 
         $maintenanceEvent = Incident::create([
             'name'         => $command->name,
