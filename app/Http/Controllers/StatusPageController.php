@@ -150,7 +150,7 @@ class StatusPageController extends AbstractApiController
 
         return $this->item([
             'metric' => $metric->toArray(),
-            'items'  => $metricData
+            'items'  => $metricData,
         ]);
     }
 }
