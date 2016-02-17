@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "27d40735fd027c42e2e4c7e6548add8c",
-    "content-hash": "26fcebcc03ef56202fa94ec1c96c63fa",
+    "hash": "eff2274253ab51116e07919bed3faeea",
+    "content-hash": "bedffab57d15b9f3c3315439a2e957cb",
     "packages": [
         {
             "name": "alt-three/bus",
