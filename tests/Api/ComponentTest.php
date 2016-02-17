@@ -58,6 +58,7 @@ class ComponentTest extends AbstractApiTestCase
         $this->post('/api/v1/components', [
             'name'        => 'Foo',
             'description' => 'Bar',
+            'version'     => 'V1.0',
             'status'      => 1,
             'link'        => 'http://example.com',
             'order'       => 1,
@@ -75,6 +76,7 @@ class ComponentTest extends AbstractApiTestCase
         $this->post('/api/v1/components', [
             'name'        => 'Foo',
             'description' => 'Bar',
+            'version'     => 'V1.0',
             'status'      => 1,
             'link'        => 'http://example.com',
             'order'       => 1,
@@ -91,6 +93,7 @@ class ComponentTest extends AbstractApiTestCase
         $this->post('/api/v1/components', [
             'name'        => 'Foo',
             'description' => 'Bar',
+            'version'     => 'V1.0',
             'status'      => 1,
             'link'        => 'http://example.com',
             'order'       => 1,
@@ -116,9 +119,11 @@ class ComponentTest extends AbstractApiTestCase
         $component = factory('CachetHQ\Cachet\Models\Component')->create();
 
         $this->put('/api/v1/components/1', [
-            'name' => 'Foo',
+            'version' => 'V2.0',
+            'name'    => 'Foo',
         ]);
         $this->seeJson(['name' => 'Foo']);
+        $this->seeJson(['version' => 'V2.0']);
         $this->assertResponseOk();
     }
 
