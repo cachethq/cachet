@@ -45,6 +45,7 @@ class AddComponentCommandHandler
         $params = [
             'name'        => $command->name,
             'description' => $command->description,
+            'version'     => $command->version,
             'link'        => $command->link,
             'status'      => $command->status,
             'enabled'     => $command->enabled,

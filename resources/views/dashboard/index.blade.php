@@ -25,7 +25,7 @@
                             <form class='component-inline form-vertical' data-messenger="{{trans('dashboard.components.edit.success')}}">
                                 <div class="row striped-list-item">
                                     <div class="col-lg-4 col-md-3 col-sm-12">
-                                        <h4>{{ $component->name }}</h4>
+                                        <h4>{{ $component->name }} {{ $component->displayVersion() }}</h4>
                                     </div>
                                     <div class="col-lg-8 col-md-9 col-sm-12 radio-items componet-inline-update">
                                         @foreach(trans('cachet.components.status') as $statusID => $status)
