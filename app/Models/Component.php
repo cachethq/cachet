@@ -31,6 +31,7 @@ class Component extends Model implements HasPresenter
         'order'       => 0,
         'group_id'    => 0,
         'description' => '',
+        'version'     => '',
         'link'        => '',
         'enabled'     => true,
     ];
@@ -44,6 +45,7 @@ class Component extends Model implements HasPresenter
         'order'       => 'int',
         'group_id'    => 'int',
         'description' => 'string',
+        'version'     => 'string',
         'link'        => 'string',
         'deleted_at'  => 'date',
         'enabled'     => 'bool',
@@ -57,6 +59,7 @@ class Component extends Model implements HasPresenter
     protected $fillable = [
         'name',
         'description',
+        'version',
         'status',
         'tags',
         'link',

@@ -63,6 +63,7 @@ class ComponentController extends AbstractApiController
             $component = dispatch(new AddComponentCommand(
                 Binput::get('name'),
                 Binput::get('description'),
+                Binput::get('version'),
                 Binput::get('status'),
                 Binput::get('link'),
                 Binput::get('order'),
@@ -104,7 +105,8 @@ class ComponentController extends AbstractApiController
                 $component,
                 Binput::get('name'),
                 Binput::get('description'),
-                Binput::get('status'),
+                Binput::get('version'),
+                Binput::get('status', $component->status),
                 Binput::get('link'),
                 Binput::get('order'),
                 Binput::get('group_id'),

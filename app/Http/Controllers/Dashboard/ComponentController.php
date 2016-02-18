@@ -131,6 +131,7 @@ class ComponentController extends Controller
                 $component,
                 $componentData['name'],
                 $componentData['description'],
+                $componentData['version'],
                 $componentData['status'],
                 $componentData['link'],
                 $componentData['order'],
@@ -184,6 +185,7 @@ class ComponentController extends Controller
             $component = dispatch(new AddComponentCommand(
                 $componentData['name'],
                 $componentData['description'],
+                $componentData['version'],
                 $componentData['status'],
                 $componentData['link'],
                 $componentData['order'],

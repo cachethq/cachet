@@ -45,6 +45,20 @@ class ComponentPresenter extends BasePresenter implements Arrayable
     }
 
     /**
+     * Looks up the human readable attributes of version.
+     *
+     * @return string
+     */
+    public function display_version()
+    {
+        if (is_null($this->wrappedObject->version) || empty($this->wrappedObject->version)) {
+            return '';
+        }
+
+        return sprintf('(%s)', $this->wrappedObject->version);
+    }
+
+    /**
      * Convert the presenter instance to an array.
      *
      * @return string[]
@@ -52,9 +66,10 @@ class ComponentPresenter extends BasePresenter implements Arrayable
     public function toArray()
     {
         return array_merge($this->wrappedObject->toArray(), [
-            'created_at'  => $this->created_at(),
-            'updated_at'  => $this->updated_at(),
-            'status_name' => $this->human_status(),
+            'created_at'      => $this->created_at(),
+            'updated_at'      => $this->updated_at(),
+            'status_name'     => $this->human_status(),
+            'display_version' => $this->display_version(),
         ]);
     }
 }
