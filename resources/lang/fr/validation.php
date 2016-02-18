@@ -50,7 +50,7 @@ return [
     'in'             => 'Le champ :attribute sélectionné est invalide.',
     'integer'        => ':attribute doit être un entier.',
     'ip'             => ':attribute doit être une adresse IP valide.',
-    'json'           => 'The :attribute must be a valid JSON string.',
+    'json'           => ':attribut doit être une chaîne JSON valide.',
     'max'            => [
         'numeric' => ':attribute ne doit pas être plus grand que :max.',
         'file'    => 'attribute ne doit pas être plus grand que :max kilo-octets.',
@@ -69,7 +69,7 @@ return [
     'regex'                => 'Le format de :attribute est invalide.',
     'required'             => 'Le champ :attribute est requis.',
     'required_if'          => 'Le champ :attribute est requis lorsque :other est :value.',
-    'required_unless'      => 'The :attribute field is required unless :other is in :values.',
+    'required_unless'      => 'Le champ :attribute est requis sauf si :other est dans :values.',
     'required_with'        => 'Le champ :attribute est requis lorsque :values est présent.',
     'required_with_all'    => 'Le champ :attribute est requis lorsque :values est présent.',
     'required_without'     => 'Le champ :attribute est requis lorsque :values n\'est pas présent.',

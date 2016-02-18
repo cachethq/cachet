@@ -22,11 +22,10 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => '无故障报告',
+        'none'          => 'No incidents reported',
         'past'          => '历史状态',
         'previous_week' => '前一周',
         'next_week'     => '后一周',
-        'none'          => '无故障报告',
         'scheduled'     => 'Scheduled Maintenance',
         'scheduled_at'  => ', scheduled :timestamp',
         'status'        => [
@@ -124,8 +123,8 @@ return [
     'modal' => [
         'close'     => 'Close',
         'subscribe' => [
-            'title'  => 'Subscribe to component updates?',
-            'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll receive emails for this component too.',
+            'title'  => 'Subscribe to component updates',
+            'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll already receive emails for this component.',
             'button' => 'Subscribe',
         ],
     ],

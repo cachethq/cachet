@@ -10,14 +10,14 @@
  */
 
 return [
-    'setup'             => 'Setup',
-    'title'             => 'Setup Cachet',
-    'service_details'   => 'Service Details',
-    'env_setup'         => 'Environment Setup',
-    'status_page_setup' => 'Status Page Setup',
-    'show_support'      => 'Show support for Cachet?',
-    'admin_account'     => 'Administrator Account',
-    'complete_setup'    => 'Complete Setup',
-    'completed'         => 'Cachet has been configured successfully!',
-    'finish_setup'      => 'Go to dashboard',
+    'setup'             => 'Installation',
+    'title'             => 'Installera Cachet',
+    'service_details'   => 'Servicedetaljer',
+    'env_setup'         => 'Miljöinställningar',
+    'status_page_setup' => 'Inställningar för statussida',
+    'show_support'      => 'Visa ditt stöd för Cachet?',
+    'admin_account'     => 'Administrationskonto',
+    'complete_setup'    => 'Färdigställ installationen',
+    'completed'         => 'Cachet är färdigkonfigurerat!',
+    'finish_setup'      => 'Gå till intrumentpanelen',
 ];

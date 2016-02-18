@@ -22,11 +22,10 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => 'Intet at rapportere',
+        'none'          => 'No incidents reported',
         'past'          => 'Tidligere hændelser',
         'previous_week' => 'Sidste uge',
         'next_week'     => 'Næste uge',
-        'none'          => 'Intet at rapportere',
         'scheduled'     => 'Planlagte hændelser',
         'scheduled_at'  => ', planlagt til :timestamp',
         'status'        => [
@@ -124,8 +123,8 @@ return [
     'modal' => [
         'close'     => 'Close',
         'subscribe' => [
-            'title'  => 'Subscribe to component updates?',
-            'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll receive emails for this component too.',
+            'title'  => 'Subscribe to component updates',
+            'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll already receive emails for this component.',
             'button' => 'Abonner',
         ],
     ],

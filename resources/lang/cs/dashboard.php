@@ -21,12 +21,12 @@ return [
         'incident-create-template' => 'Vytvořit šablonu',
         'incident-templates'       => 'Šablony incidentů',
         'add'                      => [
-            'title'   => 'Add an Incident',
+            'title'   => 'Report an incident',
             'success' => 'Incident přidán.',
             'failure' => 'Na incidentu se něco pokazilo.',
         ],
         'edit' => [
-            'title'   => 'Edit an Incident',
+            'title'   => 'Edit an incident',
             'success' => 'Incident aktualizován.',
             'failure' => 'S incidentem se něco pokazilo.',
         ],
@@ -39,8 +39,8 @@ return [
         'templates' => [
             'title' => 'Šablony incidentů',
             'add'   => [
-                'title'   => 'Create an Incident Template',
-                'message' => 'You should add an Incident Template.',
+                'title'   => 'Create an incident template',
+                'message' => 'You should add an incident template.',
                 'success' => 'Šablona vytvořena.',
                 'failure' => 'Na šabloně incidentu se něco se pokazilo.',
             ],
@@ -50,8 +50,8 @@ return [
                 'failure' => 'Při aktualizaci šablony incidentu se něco pokazilo',
             ],
             'delete' => [
-                'success' => 'The tmplate has been deleted.',
-                'failure' => 'The template could not be deleted. Please try again.',
+                'success' => 'The incident template has been deleted.',
+                'failure' => 'The incident template could not be deleted. Please try again.',
             ],
         ],
     ],
@@ -83,19 +83,19 @@ return [
         'component_statuses' => 'Stavy služeb',
         'listed_group'       => 'Seskupeno podle :name',
         'add'                => [
-            'title'   => 'Add a Component',
+            'title'   => 'Add a component',
             'message' => 'Měli byste přidat službu.',
             'success' => 'Služba vytvořena.',
             'failure' => 'Na službě se objevila chyba.',
         ],
         'edit' => [
-            'title'   => 'Edit a Component',
+            'title'   => 'Edit a component',
             'success' => 'Služba byla aktualizována.',
             'failure' => 'Na službě se objevila chyba.',
         ],
         'delete' => [
-            'success' => 'Component deleted.',
-            'failure' => 'The Component could not be deleted. Please try again.',
+            'success' => 'The component has been deleted!',
+            'failure' => 'The component could not be deleted. Please try again.',
         ],
 
         // Component groups
@@ -103,18 +103,18 @@ return [
             'groups'        => 'Skupina služeb|Skupiny služeb',
             'no_components' => 'Můžete přidat skupinu služeb.',
             'add'           => [
-                'title'   => 'Add a Component Group',
+                'title'   => 'Add a component group',
                 'success' => 'Skupina služeb byla přidána.',
                 'failure' => 'Vyskytla se chyba skupiny služeb.',
             ],
             'edit' => [
-                'title'   => 'Edit a Component Group',
+                'title'   => 'Edit a component group',
                 'success' => 'Skupina služeb byla aktualizována.',
                 'failure' => 'Vyskytla se chyba skupiny služeb.',
             ],
             'delete' => [
-                'success' => 'Component Group deleted.',
-                'failure' => 'The Component Group could not be deleted. Please try again.',
+                'success' => 'Component group has been deleted!',
+                'failure' => 'The component group could not be deleted. Please try again.',
             ],
         ],
     ],
@@ -123,18 +123,18 @@ return [
     'metrics' => [
         'metrics' => 'Metriky',
         'add'     => [
-            'title'   => 'Create a Metric',
-            'message' => 'You should add a Metric.',
+            'title'   => 'Create a metric',
+            'message' => 'You should add a metric.',
             'success' => 'Metrika vytvořena.',
             'failure' => 'Něco se stalo s metrikou.',
         ],
         'edit' => [
-            'title'   => 'Edit a Metric',
+            'title'   => 'Edit a metric',
             'success' => 'Metrika aktualizována.',
             'failure' => 'Něco se stalo s metrikou.',
         ],
         'delete' => [
-            'success' => 'The metric has been deleted and will not show on your status page.',
+            'success' => 'The metric has been deleted and will no longer display on your status page.',
             'failure' => 'The metric could not be deleted. Please try again.',
         ],
     ],
@@ -145,12 +145,12 @@ return [
         'verified'     => 'Ověřeno',
         'not_verified' => 'Neověřeno',
         'add'          => [
-            'title'   => 'Add a New Subscriber',
+            'title'   => 'Add a new subscriber',
             'success' => 'Odběratel přidán.',
             'failure' => 'Na službě se objevila chyba.',
         ],
         'edit' => [
-            'title'   => 'Update Subscriber',
+            'title'   => 'Update subscriber',
             'success' => 'Odběratel aktualizován.',
             'failure' => 'Něco se pokazilo při aktualizaci.',
         ],
@@ -163,23 +163,23 @@ return [
         'profile'     => 'Profil',
         'description' => 'Členové týmu budou schopni přidat nebo upravit komponenty a incidenty.',
         'add'         => [
-            'title'   => 'Add a New Team Member',
+            'title'   => 'Add a new team member',
             'success' => 'Nový člen týmu byl přidán.',
-            'failure' => 'Something went wrong with the user.',
+            'failure' => 'Nastala chyba při mazání uživatele.',
         ],
         'edit' => [
-            'title'   => 'Update Profile',
+            'title'   => 'Update profile',
             'success' => 'Profil byl aktualizován.',
             'failure' => 'Něco se pokazilo při aktualizaci.',
         ],
         'delete' => [
-            'success' => 'User deleted.',
+            'success' => 'Team member has been deleted and will no longer have access to the dashboard!',
             'failure' => 'Nastala chyba při mazání uživatele.',
         ],
         'invite' => [
-            'title'   => 'Invite a New Team Member',
-            'success' => 'The users invited.',
-            'failure' => 'Something went wrong with the invite.',
+            'title'   => 'Invite a new team member',
+            'success' => 'An invite has been sent',
+            'failure' => 'The invite could not be sent. Please try again.',
         ],
     ],
 

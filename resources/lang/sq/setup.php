@@ -12,12 +12,12 @@
 return [
     'setup'             => 'Instalimi',
     'title'             => 'Setup Cachet',
-    'service_details'   => 'Service Details',
-    'env_setup'         => 'Environment Setup',
-    'status_page_setup' => 'Status Page Setup',
+    'service_details'   => 'Service details',
+    'env_setup'         => 'Environment setup',
+    'status_page_setup' => 'Status page setup',
     'show_support'      => 'Show support for Cachet?',
     'admin_account'     => 'Administrator i llogarisë',
-    'complete_setup'    => 'Complete Setup',
+    'complete_setup'    => 'Complete setup',
     'completed'         => 'Cachet has been configured successfully!',
     'finish_setup'      => 'Shko tek paneli',
 ];

@@ -15,7 +15,7 @@ return [
     'setup' => [
         'email'            => 'E-mail',
         'username'         => 'Usuário',
-        'password'         => 'Palavra passe',
+        'password'         => 'Senha',
         'site_name'        => 'Nome do site',
         'site_domain'      => 'Domínio do site',
         'site_timezone'    => 'Selecione o seu fuso horário',
@@ -27,11 +27,11 @@ return [
 
     // Login form fields
     'login' => [
-        'login'         => 'Username or Email',
+        'login'         => 'Nome de utilizador ou E-mail',
         'email'         => 'Endereço de Correio',
         'password'      => 'Senha',
         '2fauth'        => 'Código de autenticação',
-        'invalid'       => 'Invalid username or password',
+        'invalid'       => 'Nome de utilizador ou palavra-passe inválidos',
         'invalid-token' => 'Token inválido',
         'cookies'       => 'Deverá activar cookies para efectuar autenticação.',
     ],
@@ -52,7 +52,7 @@ return [
         'templates'          => [
             'name'     => 'Nome',
             'template' => 'Template',
-            'twig'     => 'Incident Templates can make use of the <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a> templating language.',
+            'twig'     => 'Esboços de incidentes podem fazer uso da linguagem de template <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a>.',
         ],
     ],
 
@@ -69,7 +69,7 @@ return [
 
         'groups' => [
             'name'      => 'Nome',
-            'collapsed' => 'Collapse the group by default?',
+            'collapsed' => 'Colapsar o grupo por defeito?',
         ],
     ],
 
@@ -85,7 +85,7 @@ return [
         'type_sum'         => 'Soma',
         'type_avg'         => 'Média',
         'places'           => 'Casas Decimais',
-        'default_view'     => 'Default View',
+        'default_view'     => 'Vista por defeito',
 
         'points' => [
             'value' => 'Valor',

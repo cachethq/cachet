@@ -21,12 +21,12 @@ return [
         'incident-create-template' => 'Создать шаблон',
         'incident-templates'       => 'Шаблоны инцидентов',
         'add'                      => [
-            'title'   => 'Add an Incident',
+            'title'   => 'Report an incident',
             'success' => 'Инцидент добавлен.',
             'failure' => 'Что-то пошло не так при добавлении инцидента.',
         ],
         'edit' => [
-            'title'   => 'Edit an Incident',
+            'title'   => 'Edit an incident',
             'success' => 'Инцидент обновлен.',
             'failure' => 'Что-то пошло не так при изменении инцидента.',
         ],
@@ -39,8 +39,8 @@ return [
         'templates' => [
             'title' => 'Шаблоны инцидентов',
             'add'   => [
-                'title'   => 'Create an Incident Template',
-                'message' => 'You should add an Incident Template.',
+                'title'   => 'Create an incident template',
+                'message' => 'You should add an incident template.',
                 'success' => 'Шаблон создан.',
                 'failure' => 'Что-то пошло не так при создании шаблона.',
             ],
@@ -50,8 +50,8 @@ return [
                 'failure' => 'Что-то пошло не так при изменении шаблона',
             ],
             'delete' => [
-                'success' => 'The tmplate has been deleted.',
-                'failure' => 'The template could not be deleted. Please try again.',
+                'success' => 'The incident template has been deleted.',
+                'failure' => 'The incident template could not be deleted. Please try again.',
             ],
         ],
     ],
@@ -83,19 +83,19 @@ return [
         'component_statuses' => ' Статусы компонентов',
         'listed_group'       => 'Сгруппированные по :name',
         'add'                => [
-            'title'   => 'Add a Component',
+            'title'   => 'Add a component',
             'message' => 'Вам следует добавить компонент.',
             'success' => 'Компонент создан.',
             'failure' => 'Что-то пошло не так с компонентом.',
         ],
         'edit' => [
-            'title'   => 'Edit a Component',
+            'title'   => 'Edit a component',
             'success' => 'Обновление компонента.',
             'failure' => 'Что-то пошло не так с компонентом.',
         ],
         'delete' => [
-            'success' => 'Component deleted.',
-            'failure' => 'The Component could not be deleted. Please try again.',
+            'success' => 'The component has been deleted!',
+            'failure' => 'The component could not be deleted. Please try again.',
         ],
 
         // Component groups
@@ -103,18 +103,18 @@ return [
             'groups'        => 'Группа компонентов|Группы компонентов',
             'no_components' => 'Вам следует добавить группу компонентов.',
             'add'           => [
-                'title'   => 'Add a Component Group',
+                'title'   => 'Add a component group',
                 'success' => 'Группа компонентов добавлена.',
                 'failure' => 'Что-то пошло не так при создании группы компонентов.',
             ],
             'edit' => [
-                'title'   => 'Edit a Component Group',
+                'title'   => 'Edit a component group',
                 'success' => 'Группа компонентов обновлена.',
                 'failure' => 'Что-то пошло не так при изменении группы компонентов.',
             ],
             'delete' => [
-                'success' => 'Component Group deleted.',
-                'failure' => 'The Component Group could not be deleted. Please try again.',
+                'success' => 'Component group has been deleted!',
+                'failure' => 'The component group could not be deleted. Please try again.',
             ],
         ],
     ],
@@ -123,18 +123,18 @@ return [
     'metrics' => [
         'metrics' => 'Метрики',
         'add'     => [
-            'title'   => 'Create a Metric',
-            'message' => 'You should add a Metric.',
+            'title'   => 'Create a metric',
+            'message' => 'You should add a metric.',
             'success' => 'Метрика создана.',
             'failure' => 'Что-то пошло не так при создании метрики.',
         ],
         'edit' => [
-            'title'   => 'Edit a Metric',
+            'title'   => 'Edit a metric',
             'success' => 'Метрика обновлена.',
             'failure' => 'Что-то пошло не так при изменении метрики.',
         ],
         'delete' => [
-            'success' => 'The metric has been deleted and will not show on your status page.',
+            'success' => 'The metric has been deleted and will no longer display on your status page.',
             'failure' => 'The metric could not be deleted. Please try again.',
         ],
     ],
@@ -143,15 +143,15 @@ return [
         'subscribers'  => 'Subscribers',
         'description'  => 'Subscribers will receive email updates when incidents are created.',
         'verified'     => 'Verified',
-        'not_verified' => 'Not Verified',
+        'not_verified' => 'Not verified',
         'add'          => [
-            'title'   => 'Add a New Subscriber',
-            'success' => 'Subscriber added.',
+            'title'   => 'Add a new subscriber',
+            'success' => 'Subscriber has been added!',
             'failure' => 'Что-то пошло не так с компонентом.',
         ],
         'edit' => [
-            'title'   => 'Update Subscriber',
-            'success' => 'Subscriber updated.',
+            'title'   => 'Update subscriber',
+            'success' => 'Subscriber has been updated!',
             'failure' => 'Что-то пошло не так при изменении профиля.',
         ],
     ],
@@ -163,23 +163,23 @@ return [
         'profile'     => 'Профиль',
         'description' => 'Участники команды смогут добавлять и изменять компоненты и инциденты.',
         'add'         => [
-            'title'   => 'Add a New Team Member',
+            'title'   => 'Add a new team member',
             'success' => 'Участник команды добавлен.',
-            'failure' => 'Something went wrong with the user.',
+            'failure' => 'The team member could not be added. Please try again.',
         ],
         'edit' => [
-            'title'   => 'Update Profile',
+            'title'   => 'Update profile',
             'success' => 'Данные профиля обновлены.',
             'failure' => 'Что-то пошло не так при изменении профиля.',
         ],
         'delete' => [
-            'success' => 'User deleted.',
-            'failure' => 'Something went wrong when deleting this user.',
+            'success' => 'Team member has been deleted and will no longer have access to the dashboard!',
+            'failure' => 'The team member could not be added. Please try again.',
         ],
         'invite' => [
-            'title'   => 'Invite a New Team Member',
-            'success' => 'The users invited.',
-            'failure' => 'Something went wrong with the invite.',
+            'title'   => 'Invite a new team member',
+            'success' => 'An invite has been sent',
+            'failure' => 'The invite could not be sent. Please try again.',
         ],
     ],
 
