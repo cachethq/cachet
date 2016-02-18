@@ -1,0 +1,19 @@
+Before submitting your issue, please make sure that you've checked all of the checkboxes below.
+
+- [ ] You're running the [latest release](https://github.com/CachetHQ/Cachet/releases/latest) version of Cachet.
+- [ ] Ensure that you're running at least PHP 5.5.9, you can check this by running `php -v`
+- [ ] You've ran `rm -rf bootstrap/cache/*` from the root of your Cachet installation.
+
+To help us better understand your issue, please answer the following — cheers!
+
+### Expected behaviour
+
+*Please describe what you're expecting to see happen.*
+
+### Actual behaviour
+
+*Please describe what you're actually seeing happen.*
+
+### Steps to reproduce
+
+*If your issue requires any specific steps to reproduce, please outline them here.*
