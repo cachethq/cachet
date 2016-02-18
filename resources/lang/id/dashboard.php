@@ -40,7 +40,7 @@ return [
             'title' => 'Template Insiden',
             'add'   => [
                 'title'   => 'Buat template insiden',
-                'message' => 'You should add an Incident Template.',
+                'message' => 'You should add an incident template.',
                 'success' => 'Template sudah dibuat.',
                 'failure' => 'Ada masalah dengan template insiden ini.',
             ],
@@ -50,8 +50,8 @@ return [
                 'failure' => 'Ada masalah dengan template insiden ini',
             ],
             'delete' => [
-                'success' => 'The tmplate has been deleted.',
-                'failure' => 'The template could not be deleted. Please try again.',
+                'success' => 'The incident template has been deleted.',
+                'failure' => 'The incident template could not be deleted. Please try again.',
             ],
         ],
     ],
@@ -94,8 +94,8 @@ return [
             'failure' => 'Ada masalah dengan komponen ini.',
         ],
         'delete' => [
-            'success' => 'Component deleted.',
-            'failure' => 'The Component could not be deleted. Please try again.',
+            'success' => 'The component has been deleted!',
+            'failure' => 'The component could not be deleted. Please try again.',
         ],
 
         // Component groups
@@ -113,8 +113,8 @@ return [
                 'failure' => 'Ada masalah dengan grup komponen ini.',
             ],
             'delete' => [
-                'success' => 'Component Group deleted.',
-                'failure' => 'The Component Group could not be deleted. Please try again.',
+                'success' => 'Component group has been deleted!',
+                'failure' => 'The component group could not be deleted. Please try again.',
             ],
         ],
     ],
@@ -124,7 +124,7 @@ return [
         'metrics' => 'Metrik',
         'add'     => [
             'title'   => 'Buat metrik',
-            'message' => 'You should add a Metric.',
+            'message' => 'You should add a metric.',
             'success' => 'Metrik sudah dibuat.',
             'failure' => 'Ada masalah dengan metrik ini.',
         ],
@@ -134,7 +134,7 @@ return [
             'failure' => 'Ada masalah dengan metrik ini.',
         ],
         'delete' => [
-            'success' => 'The metric has been deleted and will not show on your status page.',
+            'success' => 'The metric has been deleted and will no longer display on your status page.',
             'failure' => 'The metric could not be deleted. Please try again.',
         ],
     ],

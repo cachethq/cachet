@@ -13,7 +13,7 @@ return [
     'setup'             => 'הגדרות',
     'title'             => 'התקנת Cachet',
     'service_details'   => 'פרטי שרות',
-    'env_setup'         => 'Environment Setup',
+    'env_setup'         => 'Environment setup',
     'status_page_setup' => 'הגדרת עמוד מצב',
     'show_support'      => 'Show support for Cachet?',
     'admin_account'     => 'חשבון מנהל המערכת',

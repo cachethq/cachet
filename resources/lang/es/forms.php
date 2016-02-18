@@ -27,11 +27,11 @@ return [
 
     // Login form fields
     'login' => [
-        'login'         => 'Username or Email',
+        'login'         => 'Nombre de usuario o dirección de correo electrónico',
         'email'         => 'Correo electrónico',
         'password'      => 'Contraseña',
         '2fauth'        => 'Authentifizierungscode',
-        'invalid'       => 'Invalid username or password',
+        'invalid'       => 'Nombre de usuario o contraseña incorrectos',
         'invalid-token' => 'Token ist ungültig',
         'cookies'       => 'Sie müssen Cookies aktivieren um sich anzumelden.',
     ],
@@ -52,7 +52,7 @@ return [
         'templates'          => [
             'name'     => 'Nombre',
             'template' => 'Vorlage',
-            'twig'     => 'Incident Templates can make use of the <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a> templating language.',
+            'twig'     => 'Las plantillas de incidentes pueden hacer uso del lenguaje de plantillas <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a>.',
         ],
     ],
 
@@ -69,7 +69,7 @@ return [
 
         'groups' => [
             'name'      => 'Nombre',
-            'collapsed' => 'Collapse the group by default?',
+            'collapsed' => 'Por defecto, ¿mostrar el grupo contraído?',
         ],
     ],
 
@@ -84,8 +84,8 @@ return [
         'calc_type'        => 'Berechnung der Metrik',
         'type_sum'         => 'Summe',
         'type_avg'         => 'Durchschnitt',
-        'places'           => 'Decimal Places',
-        'default_view'     => 'Default View',
+        'places'           => 'Cantidad de decimales',
+        'default_view'     => 'Vista predeterminada',
 
         'points' => [
             'value' => 'Wert',
@@ -126,18 +126,18 @@ return [
         ],
         'theme' => [
             'background-color'        => 'Hintergrundfarbe',
-            'background-fills'        => 'Background Fills (Components, Incidents, Footer)',
+            'background-fills'        => 'Relleno del fondo (componentes, incidentes, pie)',
             'banner-background-color' => 'Banner Background Color',
             'banner-padding'          => 'Banner Padding',
             'fullwidth-banner'        => 'Enable fullwidth banner?',
             'text-color'              => 'Schriftfarbe',
-            'dashboard-login'         => 'Show dashboard button in the footer?',
+            'dashboard-login'         => '¿Mostrar el botón de Panel de Control en el pie?',
             'reds'                    => 'Rojo (usado para errores)',
             'blues'                   => 'Azul (usado para información)',
             'greens'                  => 'Verde (usado para operaciones correctas)',
             'yellows'                 => 'Amarillo (usado para alertas)',
-            'oranges'                 => 'Orange (Used for notices)',
-            'metrics'                 => 'Metrics Fill',
+            'oranges'                 => 'Naranja (usado para avisos)',
+            'metrics'                 => 'Relleno de las métricas',
             'links'                   => 'Enlaces',
         ],
     ],

@@ -22,11 +22,10 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => 'crwdns541:0crwdne541:0',
+        'none'          => 'crwdns657:0crwdne657:0',
         'past'          => 'crwdns542:0crwdne542:0',
         'previous_week' => 'crwdns543:0crwdne543:0',
         'next_week'     => 'crwdns544:0crwdne544:0',
-        'none'          => 'crwdns541:0crwdne541:0',
         'scheduled'     => 'crwdns438:0crwdne438:0',
         'scheduled_at'  => 'crwdns439:0crwdne439:0',
         'status'        => [
@@ -125,7 +124,7 @@ return [
         'close'     => 'crwdns633:0crwdne633:0',
         'subscribe' => [
             'title'  => 'crwdns634:0crwdne634:0',
-            'body'   => 'crwdns635:0crwdne635:0',
+            'body'   => 'crwdns658:0crwdne658:0',
             'button' => 'crwdns636:0crwdne636:0',
         ],
     ],

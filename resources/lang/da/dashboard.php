@@ -40,7 +40,7 @@ return [
             'title' => 'Hændelses skabeloner',
             'add'   => [
                 'title'   => 'Opret hændelses skabelon',
-                'message' => 'You should add an Incident Template.',
+                'message' => 'You should add an incident template.',
                 'success' => 'Template created.',
                 'failure' => 'Noget gik galt i oprettelsen af skabelonen.',
             ],
@@ -50,8 +50,8 @@ return [
                 'failure' => 'Noget gik galt under opdateringen af skabelonen',
             ],
             'delete' => [
-                'success' => 'The tmplate has been deleted.',
-                'failure' => 'The template could not be deleted. Please try again.',
+                'success' => 'The incident template has been deleted.',
+                'failure' => 'The incident template could not be deleted. Please try again.',
             ],
         ],
     ],
@@ -94,8 +94,8 @@ return [
             'failure' => 'Noget gik galt med komponenten.',
         ],
         'delete' => [
-            'success' => 'Component deleted.',
-            'failure' => 'The Component could not be deleted. Please try again.',
+            'success' => 'The component has been deleted!',
+            'failure' => 'The component could not be deleted. Please try again.',
         ],
 
         // Component groups
@@ -113,8 +113,8 @@ return [
                 'failure' => 'Noget gik galt med komponentgruppen.',
             ],
             'delete' => [
-                'success' => 'Component Group deleted.',
-                'failure' => 'The Component Group could not be deleted. Please try again.',
+                'success' => 'Component group has been deleted!',
+                'failure' => 'The component group could not be deleted. Please try again.',
             ],
         ],
     ],
@@ -124,7 +124,7 @@ return [
         'metrics' => 'Grafer',
         'add'     => [
             'title'   => 'Opret graf',
-            'message' => 'You should add a Metric.',
+            'message' => 'You should add a metric.',
             'success' => 'Graf oprettet.',
             'failure' => 'Noget gik galt med oprettelsen.',
         ],
@@ -134,7 +134,7 @@ return [
             'failure' => 'Noget gik galt med målestokken.',
         ],
         'delete' => [
-            'success' => 'The metric has been deleted and will not show on your status page.',
+            'success' => 'The metric has been deleted and will no longer display on your status page.',
             'failure' => 'The metric could not be deleted. Please try again.',
         ],
     ],
