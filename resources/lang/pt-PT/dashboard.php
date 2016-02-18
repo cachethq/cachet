@@ -31,8 +31,8 @@ return [
             'failure' => 'Algo deu errado com o incidente.',
         ],
         'delete' => [
-            'success' => 'The incident has been deleted and will not show on your status page.',
-            'failure' => 'The incident could not be deleted. Please try again.',
+            'success' => 'O incidente foi apagado e não será mais mostrado na sua página de estado.',
+            'failure' => 'O incidente não pode ser apagado. Por favor tente de novo.',
         ],
 
         // Incident templates
@@ -40,7 +40,7 @@ return [
             'title' => 'Template de incidentes',
             'add'   => [
                 'title'   => 'Criar um modelo de incidente',
-                'message' => 'You should add an Incident Template.',
+                'message' => 'Adicione um esboço de incidente.',
                 'success' => 'Template criado.',
                 'failure' => 'Algo deu errado com o template de incidente.',
             ],
@@ -50,8 +50,8 @@ return [
                 'failure' => 'Algo deu errado atualizando o template de incidente',
             ],
             'delete' => [
-                'success' => 'The tmplate has been deleted.',
-                'failure' => 'The template could not be deleted. Please try again.',
+                'success' => 'O esboço de incidente foi apagado.',
+                'failure' => 'O esboço de incidente não pode ser apagado. Por favor tente de novo.',
             ],
         ],
     ],
@@ -59,7 +59,7 @@ return [
     // Incident Maintenance
     'schedule' => [
         'schedule'     => 'Manutenção Agendada',
-        'logged'       => '{0} There are no schedules, good work.|You have logged one schedule.|You have reported <strong>:count</strong> schedules.',
+        'logged'       => '{0} Não existem agendamentos, bom trabalho.|Você introduziu um agendamento.|Você reportou <strong>:count</strong> agendamentos.',
         'scheduled_at' => 'Agendada em :timestamp',
         'add'          => [
             'title'   => 'Adicionar Manutenção Agendada',
@@ -94,8 +94,8 @@ return [
             'failure' => 'Algo deu errado com o componente.',
         ],
         'delete' => [
-            'success' => 'Component deleted.',
-            'failure' => 'The Component could not be deleted. Please try again.',
+            'success' => 'O componente foi apagado!',
+            'failure' => 'O componente não pode ser apagado. Por favor tente de novo.',
         ],
 
         // Component groups
@@ -113,8 +113,8 @@ return [
                 'failure' => 'Algo correu mal com o grupo de componente.',
             ],
             'delete' => [
-                'success' => 'Component Group deleted.',
-                'failure' => 'The Component Group could not be deleted. Please try again.',
+                'success' => 'O grupo de componentes foi apagado!',
+                'failure' => 'O grupo de componentes não pode ser apagado. Por favor tente de novo.',
             ],
         ],
     ],
@@ -124,7 +124,7 @@ return [
         'metrics' => 'Metricas',
         'add'     => [
             'title'   => 'Criar uma métrica',
-            'message' => 'You should add a Metric.',
+            'message' => 'Adicione uma métrica.',
             'success' => 'Métrica criada.',
             'failure' => 'Algo correu mal com a métrica.',
         ],
@@ -134,8 +134,8 @@ return [
             'failure' => 'Algo correu mal com a métrica.',
         ],
         'delete' => [
-            'success' => 'The metric has been deleted and will not show on your status page.',
-            'failure' => 'The metric could not be deleted. Please try again.',
+            'success' => 'A métrica foi apagada e não será mais mostrada na sua página de estado.',
+            'failure' => 'A métrica não pode ser apagada. Por favor tente de novo.',
         ],
     ],
     // Subscribers
@@ -235,7 +235,7 @@ return [
 
     // Welcome modal
     'welcome' => [
-        'welcome' => 'Welcome to your status page!',
+        'welcome' => 'Bem vindo à sua página de estado!',
         'message' => 'Sua página de status está quase pronta! Tavez vocë queira checar essas configurações extras',
         'close'   => 'Basta ir direto para o meu painel de controle',
         'steps'   => [

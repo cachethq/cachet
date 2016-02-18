@@ -69,7 +69,7 @@ return [
     'regex'                => ':attribute 格式无效。',
     'required'             => ':attribute 字段必填。',
     'required_if'          => ':attribute 项在 :other 是 :value 时是必须填写的。',
-    'required_unless'      => 'The :attribute field is required unless :other is in :values.',
+    'required_unless'      => ':attribute 是必须的除非 :other 在 :values 中。',
     'required_with'        => '当含有 :values 时， :attribute 是必需的。',
     'required_with_all'    => '当含有 :values 时， :attribute 是必需的。',
     'required_without'     => '当 :values 不存在时， :attribute 是必需的。',

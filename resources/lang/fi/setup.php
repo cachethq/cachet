@@ -12,12 +12,12 @@
 return [
     'setup'             => 'Asetukset',
     'title'             => 'Setup Cachet',
-    'service_details'   => 'Service Details',
-    'env_setup'         => 'Environment Setup',
+    'service_details'   => 'Service details',
+    'env_setup'         => 'Environment setup',
     'status_page_setup' => 'Sivun asetukset',
     'show_support'      => 'Show support for Cachet?',
     'admin_account'     => 'Järjestelmänvalvojantili',
-    'complete_setup'    => 'Complete Setup',
+    'complete_setup'    => 'Complete setup',
     'completed'         => 'Välimuisti on konfiguroitu onnistuneesti!',
     'finish_setup'      => 'Siirry hallintapaneeliin',
 ];

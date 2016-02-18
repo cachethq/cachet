@@ -21,12 +21,12 @@ return [
         'incident-create-template' => 'Opprett mal',
         'incident-templates'       => 'Hendelsesmaler',
         'add'                      => [
-            'title'   => 'Add an Incident',
+            'title'   => 'Report an incident',
             'success' => 'Hendelse lagt til.',
             'failure' => 'Noe gikk galt med hendelsen.',
         ],
         'edit' => [
-            'title'   => 'Edit an Incident',
+            'title'   => 'Edit an incident',
             'success' => 'Hendelse oppdatert.',
             'failure' => 'Noe gikk halt med hendelsen.',
         ],
@@ -39,8 +39,8 @@ return [
         'templates' => [
             'title' => 'Hendelsesmaler',
             'add'   => [
-                'title'   => 'Create an Incident Template',
-                'message' => 'You should add an Incident Template.',
+                'title'   => 'Create an incident template',
+                'message' => 'You should add an incident template.',
                 'success' => 'Mal opprettet.',
                 'failure' => 'Noe gikk galt med hendelsesmalen.',
             ],
@@ -50,8 +50,8 @@ return [
                 'failure' => 'Noe gikk galt under oppdatering av hendelsesmal',
             ],
             'delete' => [
-                'success' => 'The tmplate has been deleted.',
-                'failure' => 'The template could not be deleted. Please try again.',
+                'success' => 'The incident template has been deleted.',
+                'failure' => 'The incident template could not be deleted. Please try again.',
             ],
         ],
     ],
@@ -83,19 +83,19 @@ return [
         'component_statuses' => 'Komponentstatus',
         'listed_group'       => 'Gruppert under :name',
         'add'                => [
-            'title'   => 'Add a Component',
+            'title'   => 'Add a component',
             'message' => 'Du burde legge til en komponent.',
             'success' => 'Komponent lagt til.',
             'failure' => 'Noe gikk galt med komponenten.',
         ],
         'edit' => [
-            'title'   => 'Edit a Component',
+            'title'   => 'Edit a component',
             'success' => 'Komponent oppdatert.',
             'failure' => 'Noe gikk galt med komponenten.',
         ],
         'delete' => [
-            'success' => 'Component deleted.',
-            'failure' => 'The Component could not be deleted. Please try again.',
+            'success' => 'The component has been deleted!',
+            'failure' => 'The component could not be deleted. Please try again.',
         ],
 
         // Component groups
@@ -103,18 +103,18 @@ return [
             'groups'        => 'Komponentgruppe | Komponentgrupper',
             'no_components' => 'Du burde legge til en komponentgruppe.',
             'add'           => [
-                'title'   => 'Add a Component Group',
+                'title'   => 'Add a component group',
                 'success' => 'Komponentgruppe lagt til.',
                 'failure' => 'Noe gikk galt med komponentgruppen.',
             ],
             'edit' => [
-                'title'   => 'Edit a Component Group',
+                'title'   => 'Edit a component group',
                 'success' => 'Komponentgruppe oppdatert.',
                 'failure' => 'Noe gikk galt med komponentgruppen.',
             ],
             'delete' => [
-                'success' => 'Component Group deleted.',
-                'failure' => 'The Component Group could not be deleted. Please try again.',
+                'success' => 'Component group has been deleted!',
+                'failure' => 'The component group could not be deleted. Please try again.',
             ],
         ],
     ],
@@ -123,18 +123,18 @@ return [
     'metrics' => [
         'metrics' => 'Beregninger',
         'add'     => [
-            'title'   => 'Create a Metric',
-            'message' => 'You should add a Metric.',
+            'title'   => 'Create a metric',
+            'message' => 'You should add a metric.',
             'success' => 'Beregning opprettet.',
             'failure' => 'Noe gikk galt med beregningen.',
         ],
         'edit' => [
-            'title'   => 'Edit a Metric',
+            'title'   => 'Edit a metric',
             'success' => 'Beregning oppdatert.',
             'failure' => 'Noe gikk galt med beregningen.',
         ],
         'delete' => [
-            'success' => 'The metric has been deleted and will not show on your status page.',
+            'success' => 'The metric has been deleted and will no longer display on your status page.',
             'failure' => 'The metric could not be deleted. Please try again.',
         ],
     ],
@@ -143,16 +143,16 @@ return [
         'subscribers'  => 'Subscribers',
         'description'  => 'Subscribers will receive email updates when incidents are created.',
         'verified'     => 'Verified',
-        'not_verified' => 'Not Verified',
+        'not_verified' => 'Not verified',
         'add'          => [
-            'title'   => 'Add a New Subscriber',
-            'success' => 'Subscriber added.',
+            'title'   => 'Add a new subscriber',
+            'success' => 'Subscriber has been added!',
             'failure' => 'Noe gikk galt med komponenten.',
         ],
         'edit' => [
-            'title'   => 'Update Subscriber',
-            'success' => 'Subscriber updated.',
-            'failure' => 'Something went wrong when updating.',
+            'title'   => 'Update subscriber',
+            'success' => 'Subscriber has been updated!',
+            'failure' => 'The subscriber could not be updated. Please try again.',
         ],
     ],
 
@@ -163,23 +163,23 @@ return [
         'profile'     => 'Profil',
         'description' => 'Team Members will be able to add, modify &amp; edit components and incidents.',
         'add'         => [
-            'title'   => 'Add a New Team Member',
-            'success' => 'Team member added.',
-            'failure' => 'Something went wrong with the user.',
+            'title'   => 'Add a new team member',
+            'success' => 'Team member has been added!',
+            'failure' => 'The team member could not be added. Please try again.',
         ],
         'edit' => [
-            'title'   => 'Update Profile',
-            'success' => 'Profile updated.',
-            'failure' => 'Something went wrong when updating.',
+            'title'   => 'Update profile',
+            'success' => 'Team member has been updated!',
+            'failure' => 'The team member could not be updated. Please try again.',
         ],
         'delete' => [
-            'success' => 'User deleted.',
-            'failure' => 'Something went wrong when deleting this user.',
+            'success' => 'Team member has been deleted and will no longer have access to the dashboard!',
+            'failure' => 'The team member could not be added. Please try again.',
         ],
         'invite' => [
-            'title'   => 'Invite a New Team Member',
-            'success' => 'The users invited.',
-            'failure' => 'Something went wrong with the invite.',
+            'title'   => 'Invite a new team member',
+            'success' => 'An invite has been sent',
+            'failure' => 'The invite could not be sent. Please try again.',
         ],
     ],
 

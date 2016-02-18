@@ -85,7 +85,7 @@ return [
         'type_sum'         => 'Sum',
         'type_avg'         => 'Average',
         'places'           => 'Antal decimaler',
-        'default_view'     => 'Default View',
+        'default_view'     => 'Default view',
 
         'points' => [
             'value' => 'Value',

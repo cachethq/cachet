@@ -50,7 +50,7 @@ return [
     'in'             => 'O :attribute selecionado é inválido.',
     'integer'        => 'O :attribute deve ser um número inteiro.',
     'ip'             => 'O :attribute deve ser um endereço de IP válido.',
-    'json'           => 'The :attribute must be a valid JSON string.',
+    'json'           => 'O :attribute tem que ser uma string JSON válida.',
     'max'            => [
         'numeric' => 'O :attribute não pode ser maior do que :max.',
         'file'    => 'O campo :attribute não deverá ter um tamanho superior a :max kilobytes.',
@@ -69,7 +69,7 @@ return [
     'regex'                => 'O formato de :attribute é inválido.',
     'required'             => 'O campo de :attribute é obrigatório.',
     'required_if'          => 'O campo de :attribute é obrigatório quando :other é :value.',
-    'required_unless'      => 'The :attribute field is required unless :other is in :values.',
+    'required_unless'      => 'O campo :attribute é obrigatório a não ser que :other estiver em :values.',
     'required_with'        => 'O campo :attribute é obrigatório quando :values está presente.',
     'required_with_all'    => 'O campo :attribute é obrigatório quando :values está presente.',
     'required_without'     => 'O campo de :attribute é obrigatório quando :values não está presente.',
