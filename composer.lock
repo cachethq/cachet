@@ -4,9 +4,70 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ba38e29b36a482c9350a62373ef12a5b",
-    "content-hash": "a28b0a82f75e6f39655f7bb1def163e4",
+    "hash": "9e2445f92e1fd3c9598bb0001ea765f7",
+    "content-hash": "afe2e5eb227fb6b808aadafb3b51bd3a",
     "packages": [
+        {
+            "name": "alt-three/badger",
+            "version": "v1.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AltThree/Badger.git",
+                "reference": "b59dde5589f71fc7c757e7d3bfb27d65b82584e9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/AltThree/Badger/zipball/b59dde5589f71fc7c757e7d3bfb27d65b82584e9",
+                "reference": "b59dde5589f71fc7c757e7d3bfb27d65b82584e9",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "5.1.*|5.2.*",
+                "illuminate/support": "5.1.*|5.2.*",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "graham-campbell/testbench": "^3.1",
+                "phpunit/phpunit": "^4.8|^5.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "AltThree\\Badger\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "James Brooks",
+                    "email": "james@alt-three.com"
+                },
+                {
+                    "name": "Graham Campbell",
+                    "email": "graham@alt-three.com"
+                },
+                {
+                    "name": "Joseph Cohen",
+                    "email": "joe@alt-three.com"
+                }
+            ],
+            "description": "A Badge Generator For Laravel 5",
+            "keywords": [
+                "Alt Three",
+                "badge",
+                "shield",
+                "svg"
+            ],
+            "time": "2016-02-02 14:51:21"
+        },
         {
             "name": "alt-three/bus",
             "version": "v1.0.2",
@@ -1481,16 +1542,16 @@
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "1.2.2",
+            "version": "1.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "f5d04bdd2881ac89abde1fb78cc234bce24327bb"
+                "reference": "2e89629ff057ebb49492ba08e6995d3a6a80021b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/f5d04bdd2881ac89abde1fb78cc234bce24327bb",
-                "reference": "f5d04bdd2881ac89abde1fb78cc234bce24327bb",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/2e89629ff057ebb49492ba08e6995d3a6a80021b",
+                "reference": "2e89629ff057ebb49492ba08e6995d3a6a80021b",
                 "shasum": ""
             },
             "require": {
@@ -1535,7 +1596,7 @@
                 "stream",
                 "uri"
             ],
-            "time": "2016-01-23 01:23:02"
+            "time": "2016-02-18 21:54:00"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -1741,16 +1802,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.2.19",
+            "version": "v5.2.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "0eb6a77aa12b305300a2483778edcf4c7086cb78"
+                "reference": "d4ff9a1e3e9b2f99f8f3e957876e343d804d944f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/0eb6a77aa12b305300a2483778edcf4c7086cb78",
-                "reference": "0eb6a77aa12b305300a2483778edcf4c7086cb78",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/d4ff9a1e3e9b2f99f8f3e957876e343d804d944f",
+                "reference": "d4ff9a1e3e9b2f99f8f3e957876e343d804d944f",
                 "shasum": ""
             },
             "require": {
@@ -1865,7 +1926,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2016-02-17 19:33:49"
+            "time": "2016-02-19 17:58:28"
         },
         {
             "name": "league/commonmark",
@@ -1937,16 +1998,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.16",
+            "version": "1.0.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "183e1a610664baf6dcd6fceda415baf43cbdc031"
+                "reference": "02f5b6c9a8b9278c8381e3361e7bd9d641c740ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/183e1a610664baf6dcd6fceda415baf43cbdc031",
-                "reference": "183e1a610664baf6dcd6fceda415baf43cbdc031",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/02f5b6c9a8b9278c8381e3361e7bd9d641c740ca",
+                "reference": "02f5b6c9a8b9278c8381e3361e7bd9d641c740ca",
                 "shasum": ""
             },
             "require": {
@@ -1959,8 +2020,7 @@
                 "ext-fileinfo": "*",
                 "mockery/mockery": "~0.9",
                 "phpspec/phpspec": "^2.2",
-                "phpspec/prophecy-phpunit": "~1.0",
-                "phpunit/phpunit": "~4.8"
+                "phpunit/phpunit": "~4.8 || ~5.0"
             },
             "suggest": {
                 "ext-fileinfo": "Required for MimeType",
@@ -2017,20 +2077,20 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2015-12-19 20:16:43"
+            "time": "2016-02-19 15:35:38"
         },
         {
             "name": "mccool/laravel-auto-presenter",
-            "version": "4.2.1",
+            "version": "v4.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-auto-presenter/laravel-auto-presenter.git",
-                "reference": "c385b113696dfc564869c54f5c4baba5e116a3be"
+                "reference": "48649d3f98e369c2e0922ef37190dd15812a292a"
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel-auto-presenter/laravel-auto-presenter/zipball/c385b113696dfc564869c54f5c4baba5e116a3be",
-                "reference": "c385b113696dfc564869c54f5c4baba5e116a3be",
+                "reference": "48649d3f98e369c2e0922ef37190dd15812a292a",
                 "shasum": ""
             },
             "require": {
@@ -2079,7 +2139,7 @@
                 "lpm",
                 "presenter"
             ],
-            "time": "2016-01-30 14:04:34"
+            "time": "2016-01-24 11:06:03"
         },
         {
             "name": "monolog/monolog",
@@ -3886,7 +3946,7 @@
             ],
             "authors": [
                 {
-                    "name": "François Zaninotto"
+                    "name": "Francois Zaninotto"
                 }
             ],
             "description": "Faker is a PHP library that generates fake data for you.",

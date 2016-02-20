@@ -44,6 +44,8 @@ class StatusPageRoutes
                 'as'   => 'metrics',
                 'uses' => 'StatusPageController@getMetrics',
             ]);
+
+            $router->get('component/{component}/shield', 'StatusPageController@showComponentBadge');
         });
     }
 }

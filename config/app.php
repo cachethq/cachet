@@ -160,6 +160,7 @@ return [
         /*
          * Packages Service Providers...
          */
+        'AltThree\Badger\BadgerServiceProvider',
         'AltThree\Emoji\EmojiServiceProvider',
         'Barryvdh\Cors\ServiceProvider',
         'Fideloper\Proxy\TrustedProxyServiceProvider',

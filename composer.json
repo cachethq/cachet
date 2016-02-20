@@ -18,9 +18,16 @@
             "email": "joe@alt-three.com"
         }
     ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/JamesForks/poser"
+        }
+    ],
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "~5.2.19",
+        "alt-three/badger": "^1.0",
         "alt-three/bus": "^1.0",
         "alt-three/emoji": "^3.0",
         "alt-three/validator": "^1.4",
