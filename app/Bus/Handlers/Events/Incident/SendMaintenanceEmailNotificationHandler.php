@@ -71,6 +71,7 @@ class SendMaintenanceEmailNotificationHandler
                 'text_content'     => $data->message,
                 'scheduled_at'     => $data->scheduled_at_formatted,
                 'token'            => $subscriber->token,
+                'manage_link'      => route('subscribe.manage', ['code' => $subscriber->verify_code]),
                 'unsubscribe_link' => route('subscribe.unsubscribe', ['code' => $subscriber->verify_code]),
             ];
 

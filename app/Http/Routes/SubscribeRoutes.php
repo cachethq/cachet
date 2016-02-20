@@ -39,8 +39,8 @@ class SubscribeRoutes
                 'uses' => 'SubscribeController@postSubscribe',
             ]);
 
-            $router->get('subscribe/manage', [
-                'as'   => 'subscribe.manage',
+            $router->get('subscribe/manage/{code}', [
+                'as'   => 'manage',
                 'uses' => 'SubscribeController@showManage',
             ]);
 

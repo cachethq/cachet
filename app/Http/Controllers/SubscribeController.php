@@ -131,11 +131,13 @@ class SubscribeController extends Controller
     /**
      * Shows the subscription manager page.
      *
+     * @param string|null $code
+     *
      * @return \Illuminate\View\View
      */
-    public function showManage()
+    public function showManage($code = null)
     {
-        if (!($code = Binput::get('subscriber'))) {
+        if ($code === null) {
             throw new NotFoundHttpException();
         }
 

@@ -59,6 +59,7 @@ class SendComponentUpdateEmailNotificationHandler
         foreach (Subscription::isVerifiedForComponent($component->id)->with('subscriber')->get() as $subscription) {
             $subscriber = $subscription->subscriber;
             $mail['email'] = $subscriber->email;
+            $mail['manage_link'] = route('subscribe.manage', ['code' => $subscriber->verify_code]);
             $mail['unsubscribe_link'] = route('subscribe.unsubscribe', ['code' => $subscriber->verify_code, 'subscription' => $subscription->id]);
 
             $this->mailer->queue([
