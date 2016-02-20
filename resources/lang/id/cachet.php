@@ -22,11 +22,10 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => 'Tidak ada insiden.',
+        'none'          => 'No incidents reported',
         'past'          => 'Insiden sebelumnya',
         'previous_week' => 'Pekan sebelumnya',
         'next_week'     => 'Pekan selanjutnya',
-        'none'          => 'Tidak ada insiden.',
         'scheduled'     => 'Jadwal Pemeliharaan',
         'scheduled_at'  => ', dijadwalkan pada :timestamp',
         'status'        => [
@@ -125,8 +124,8 @@ return [
     'modal' => [
         'close'     => 'Close',
         'subscribe' => [
-            'title'  => 'Subscribe to component updates?',
-            'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll receive emails for this component too.',
+            'title'  => 'Subscribe to component updates',
+            'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll already receive emails for this component.',
             'button' => 'Daftar',
         ],
     ],

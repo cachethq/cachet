@@ -50,7 +50,7 @@ return [
     'in'             => 'Het geselecteerde :attribute is ongeldig.',
     'integer'        => 'The :attribute moet een geheel getal zijn.',
     'ip'             => ':attribute moet een geldig IP-adres zijn.',
-    'json'           => 'The :attribute must be a valid JSON string.',
+    'json'           => ':attribute moet een valide JSON tekst zijn.',
     'max'            => [
         'numeric' => ':attribute mag niet groter dan :max zijn.',
         'file'    => ':attribute mag niet groter dan :max kilobytes zijn.',
@@ -69,7 +69,7 @@ return [
     'regex'                => ':attribute formaat is ongeldig.',
     'required'             => ':attribute formaat is verplicht.',
     'required_if'          => ':attribute veld is verplicht wanneer :other gelijk is aan :value.',
-    'required_unless'      => 'The :attribute field is required unless :other is in :values.',
+    'required_unless'      => 'Het :attribute veld is verplicht tenzij :other is in :values.',
     'required_with'        => ':attribute veld is verplicht wanneer :values aanwezig is.',
     'required_with_all'    => ':attribute veld is verplicht wanneer :values aanwezig zijn.',
     'required_without'     => ':attribute veld is verplicht wanner :values niet aanwezig is.',

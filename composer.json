@@ -26,7 +26,7 @@
     ],
     "require": {
         "php": ">=5.5.9",
-        "laravel/framework": "~5.2.19",
+        "laravel/framework": "~5.2.20",
         "alt-three/badger": "^1.0",
         "alt-three/bus": "^1.0",
         "alt-three/emoji": "^3.0",

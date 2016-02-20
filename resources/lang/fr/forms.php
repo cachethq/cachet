@@ -19,40 +19,40 @@ return [
         'site_name'        => 'Nom du site',
         'site_domain'      => 'Nom de domaine du site',
         'site_timezone'    => 'Choisissez votre fuseau horaire',
-        'site_locale'      => 'Choisissez votre langue',
-        'enable_google2fa' => 'Activez la validation en deux étapes Google',
+        'site_locale'      => 'Sélectionner votre langue',
+        'enable_google2fa' => 'Activer l\'authentification à deux facteurs de Google',
         'cache_driver'     => 'Pilote de cache',
         'session_driver'   => 'Pilote de session',
     ],
 
     // Login form fields
     'login' => [
-        'login'         => 'Username or Email',
+        'login'         => 'Nom d\'utilisateur ou e-mail',
         'email'         => 'Email',
         'password'      => 'Mot de passe ',
         '2fauth'        => 'Code d\'authentification',
-        'invalid'       => 'Invalid username or password',
-        'invalid-token' => 'Jeton non valide',
-        'cookies'       => 'Vous devez activer les cookies pour vous identifier.',
+        'invalid'       => 'Nom d\'utilisateur ou mot de passe invalide',
+        'invalid-token' => 'Jeton invalide',
+        'cookies'       => 'Vous devez activer les cookies pour vous connecter.',
     ],
 
     // Incidents form fields
     'incidents' => [
         'name'               => 'Nom',
-        'status'             => 'Etat',
+        'status'             => 'Statut',
         'component'          => 'Composant',
-        'message'            => 'Message ',
+        'message'            => 'Message',
         'message-help'       => 'Vous pouvez également utiliser Markdown.',
-        'scheduled_at'       => 'Pour quand planifier la maintenance ?',
+        'scheduled_at'       => 'Quand planifier la maintenance ?',
         'incident_time'      => 'Quand s\'est produit cet incident ?',
         'notify_subscribers' => 'Aviser les abonnés',
         'visibility'         => 'Visibilité de l\'incident',
-        'public'             => 'Visibles par le public',
+        'public'             => 'Visible par le public',
         'logged_in_only'     => 'Uniquement visible des utilisateurs enregistrés',
         'templates'          => [
             'name'     => 'Nom',
             'template' => 'Modèle',
-            'twig'     => 'Incident Templates can make use of the <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a> templating language.',
+            'twig'     => 'Les modèles d\'incidents utilisent le modèle de langue <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a>.',
         ],
     ],
 
@@ -63,13 +63,13 @@ return [
         'group'       => 'Groupe',
         'description' => 'Description',
         'link'        => 'Lien',
-        'tags'        => 'Mots clés',
+        'tags'        => 'Mots-clés',
         'tags-help'   => 'Séparés par des virgules.',
         'enabled'     => 'Component enabled?',
 
         'groups' => [
             'name'      => 'Nom',
-            'collapsed' => 'Collapse the group by default?',
+            'collapsed' => 'Effrondrer le groupe par défaut ?',
         ],
     ],
 
@@ -85,7 +85,7 @@ return [
         'type_sum'         => 'Somme',
         'type_avg'         => 'Moyenne',
         'places'           => 'Nombre de chiffres après la virgule',
-        'default_view'     => 'Default View',
+        'default_view'     => 'Vue par défaut',
 
         'points' => [
             'value' => 'Valeur',
@@ -97,13 +97,13 @@ return [
         /// Application setup
         'app-setup' => [
             'site-name'              => 'Nom du site',
-            'site-url'               => 'Url du site',
-            'display-graphs'         => 'Afficher les graphiques sur la page de status ?',
+            'site-url'               => 'URL du site',
+            'display-graphs'         => 'Afficher les graphiques sur la page de statut ?',
             'about-this-page'        => 'À propos de cette page',
             'days-of-incidents'      => 'Combien de jours d\'incidents à montrer ?',
             'banner'                 => 'Image d\'en-tête',
-            'banner-help'            => 'Il est recommandé de téléchargez un fichier ne dépassant pas 930px de large .',
-            'subscribers'            => 'Permettre aux gens de s\'inscrire aux notifications par email ?',
+            'banner-help'            => 'Il est recommandé de télécharger un fichier ne dépassant pas les 930px de large.',
+            'subscribers'            => 'Permettre aux personnes de s\'inscrire aux notifications par e-mail ?',
         ],
         'analytics' => [
             'analytics_google'       => 'Code de Google Analytics',
@@ -125,19 +125,19 @@ return [
             'custom-css' => 'Feuille de style personnalisée',
         ],
         'theme' => [
-            'background-color'        => 'Couleur de fond',
-            'background-fills'        => 'Background Fills (Components, Incidents, Footer)',
+            'background-color'        => 'Couleur d\'arrière-plan',
+            'background-fills'        => 'Couleur de remplissage de l\'arrière-plan (composants, incidents, pied de page)',
             'banner-background-color' => 'Banner Background Color',
             'banner-padding'          => 'Banner Padding',
             'fullwidth-banner'        => 'Enable fullwidth banner?',
-            'text-color'              => 'Couleur Texte',
+            'text-color'              => 'Couleur du texte',
             'dashboard-login'         => 'Afficher le bouton "Tableau de bord" dans le pied de page ?',
             'reds'                    => 'Rouge (utilisé pour les erreurs)',
             'blues'                   => 'Bleu (utilisé pour les informations)',
             'greens'                  => 'Vert (utilisé pour les succès)',
             'yellows'                 => 'Jaune (utilisé pour les alertes)',
             'oranges'                 => 'Orange (utilisé pour les notices)',
-            'metrics'                 => 'Metrics Fill',
+            'metrics'                 => 'Remplissage des données',
             'links'                   => 'Liens',
         ],
     ],
@@ -149,13 +149,13 @@ return [
         'api-token'      => 'Jeton de l\'API',
         'api-token-help' => 'Régénérer votre jeton API permettra d\'éviter les applications existantes d\'accéder à Cachet.',
         'gravatar'       => 'Change your profile picture at Gravatar.',
-        'user_level'     => 'User Level',
+        'user_level'     => 'Niveau de l\'utilisateur',
         'levels'         => [
             'admin' => 'Admin',
             'user'  => 'Utilisateur',
         ],
         '2fa' => [
-            'help' => 'Habilitante authentification à deux facteurs augmente la sécurité de votre compte. Vous aurez besoin de télécharger <a href="https://support.google.com/accounts/answer/1066447?hl=en"> Google Authenticator</a> ou une application similaire sur votre appareil mobile. Lorsque vous vous connectez vous sera demandé de fournir un jeton généré par l\'application.',
+            'help' => 'Activer l\'authentification à deux facteurs augmente la sécurité de votre compte. Vous aurez besoin de télécharger <a href="https://support.google.com/accounts/answer/1066447?hl=en"> Google Authenticator</a> ou une application similaire sur votre appareil mobile. Lorsque vous vous connectez, il vous sera demandé de fournir un jeton généré par l\'application.',
         ],
         'team' => [
             'description' => 'Invite your team members by entering their email addresses here.',
@@ -165,17 +165,17 @@ return [
 
     // Buttons
     'add'    => 'Ajouter',
-    'save'   => 'Enregistrer',
-    'update' => 'mettre à jour',
-    'create' => 'Nouveau',
+    'save'   => 'Sauvegarder',
+    'update' => 'Mettre à jour',
+    'create' => 'Créer',
     'edit'   => 'Modifier',
     'delete' => 'Supprimer',
-    'submit' => 'ENVOYER',
+    'submit' => 'Envoyer',
     'cancel' => 'Annuler',
     'remove' => 'Enlever',
     'invite' => 'Inviter',
     'signup' => 'Inscription',
 
     // Other
-    'optional' => '* En option',
+    'optional' => '* Optionnel',
 ];

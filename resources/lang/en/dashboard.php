@@ -22,13 +22,13 @@ return [
         'incident-templates'       => 'Incident Templates',
         'add'                      => [
             'title'   => 'Report an incident',
-            'success' => 'Incident reported.',
-            'failure' => 'The incident could not be reported. Please try again.',
+            'success' => 'Incident added.',
+            'failure' => 'Something went wrong with the incident.',
         ],
         'edit' => [
             'title'   => 'Edit an incident',
             'success' => 'Incident updated.',
-            'failure' => 'The incident could not be edited. Please try again.',
+            'failure' => 'Something went wrong with the incident.',
         ],
         'delete' => [
             'success' => 'The incident has been deleted and will not show on your status page.',
@@ -41,13 +41,13 @@ return [
             'add'   => [
                 'title'   => 'Create an incident template',
                 'message' => 'You should add an incident template.',
-                'success' => 'The incdent template has been created!',
-                'failure' => 'The incident template could not be created. Please try again.',
+                'success' => 'Template created.',
+                'failure' => 'Something went wrong with the incident template.',
             ],
             'edit' => [
                 'title'   => 'Edit Template',
-                'success' => 'The incdent template has been updated!',
-                'failure' => 'The incident template could not be edited. Please try again.',
+                'success' => 'Template has been updated!',
+                'failure' => 'Something went wrong updating the incident template',
             ],
             'delete' => [
                 'success' => 'The incident template has been deleted.',
@@ -62,18 +62,18 @@ return [
         'logged'       => '{0} There are no schedules, good work.|You have logged one schedule.|You have reported <strong>:count</strong> schedules.',
         'scheduled_at' => 'Scheduled at :timestamp',
         'add'          => [
-            'title'   => 'Add scheduled maintenance',
-            'success' => 'Scheduled maintenance has been reported!',
-            'failure' => 'The scheduled maintenance could not be reported. Please try again.',
+            'title'   => 'Add Scheduled Maintenance',
+            'success' => 'Schedule added.',
+            'failure' => 'Something went wrong adding the schedule.',
         ],
         'edit' => [
-            'title'   => 'Edit scheduled maintenance',
-            'success' => 'Scheduled maintenance has been edited!',
-            'failure' => 'The scheduled maintenance could not be edited. Please try again.',
+            'title'   => 'Edit Scheduled Maintenance',
+            'success' => 'Schedule has been updated!',
+            'failure' => 'Something went wrong editing the schedule.',
         ],
         'delete' => [
-            'success' => 'Scheduled maintenance has been deleted!',
-            'failure' => 'The scheduled maintenance could not be deleted. Please try again.',
+            'success' => 'The schedule has been deleted and will not show on your status page.',
+            'failure' => 'The schedule could not be deleted. Please try again.',
         ],
     ],
 
@@ -85,13 +85,13 @@ return [
         'add'                => [
             'title'   => 'Add a component',
             'message' => 'You should add a component.',
-            'success' => 'Component has been added!',
-            'failure' => 'The component could not be added. Please try again.',
+            'success' => 'Component created.',
+            'failure' => 'Something went wrong with the component.',
         ],
         'edit' => [
             'title'   => 'Edit a component',
-            'success' => 'Component has been updated!',
-            'failure' => 'The component could not be updated. Please try again.',
+            'success' => 'Component updated.',
+            'failure' => 'Something went wrong with the component.',
         ],
         'delete' => [
             'success' => 'The component has been deleted!',
@@ -104,13 +104,13 @@ return [
             'no_components' => 'You should add a component group.',
             'add'           => [
                 'title'   => 'Add a component group',
-                'success' => 'Component group has been added!',
-                'failure' => 'The component group could not be added. Please try again.',
+                'success' => 'Component group added.',
+                'failure' => 'Something went wrong with the component group.',
             ],
             'edit' => [
                 'title'   => 'Edit a component group',
-                'success' => 'Component group has been edited!',
-                'failure' => 'The component group could not be edited. Please try again.',
+                'success' => 'Component group updated.',
+                'failure' => 'Something went wrong with the component group.',
             ],
             'delete' => [
                 'success' => 'Component group has been deleted!',
@@ -125,13 +125,13 @@ return [
         'add'     => [
             'title'   => 'Create a metric',
             'message' => 'You should add a metric.',
-            'success' => 'Metric has been added!',
-            'failure' => 'The metric could not be added. Please try again.',
+            'success' => 'Metric created.',
+            'failure' => 'Something went wrong with the metric.',
         ],
         'edit' => [
             'title'   => 'Edit a metric',
-            'success' => 'Metric has been updated!',
-            'failure' => 'The metric could not be updated. Please try again.',
+            'success' => 'Metric updated.',
+            'failure' => 'Something went wrong with the metric.',
         ],
         'delete' => [
             'success' => 'The metric has been deleted and will no longer display on your status page.',
@@ -147,12 +147,12 @@ return [
         'add'          => [
             'title'   => 'Add a new subscriber',
             'success' => 'Subscriber has been added!',
-            'failure' => 'The subscriber could not be added. Please try again.',
+            'failure' => 'Something went wrong with the component.',
         ],
         'edit' => [
             'title'   => 'Update subscriber',
             'success' => 'Subscriber has been updated!',
-            'failure' => 'The subscriber could not be updated. Please try again.',
+            'failure' => 'Something went wrong when updating.',
         ],
     ],
 
@@ -164,13 +164,13 @@ return [
         'description' => 'Team Members will be able to add, modify &amp; edit components and incidents.',
         'add'         => [
             'title'   => 'Add a new team member',
-            'success' => 'Team member has been added!',
+            'success' => 'Team member added.',
             'failure' => 'The team member could not be added. Please try again.',
         ],
         'edit' => [
             'title'   => 'Update profile',
-            'success' => 'Team member has been updated!',
-            'failure' => 'The team member could not be updated. Please try again.',
+            'success' => 'Profile updated.',
+            'failure' => 'Something went wrong when updating.',
         ],
         'delete' => [
             'success' => 'Team member has been deleted and will no longer have access to the dashboard!',

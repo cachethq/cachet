@@ -40,7 +40,7 @@ return [
             'title' => 'Mẫu sự cố',
             'add'   => [
                 'title'   => 'Tạo ra một khuôn mẫu khi gặp sự cố',
-                'message' => 'You should add an Incident Template.',
+                'message' => 'You should add an incident template.',
                 'success' => 'Mẫu đã được tạo.',
                 'failure' => 'Có lỗi gì đó xảy ra khi thêm mẫu.',
             ],
@@ -50,8 +50,8 @@ return [
                 'failure' => 'Có lỗi gì đó xảy ra khi sửa mẫu',
             ],
             'delete' => [
-                'success' => 'The tmplate has been deleted.',
-                'failure' => 'The template could not be deleted. Please try again.',
+                'success' => 'The incident template has been deleted.',
+                'failure' => 'The incident template could not be deleted. Please try again.',
             ],
         ],
     ],
@@ -94,8 +94,8 @@ return [
             'failure' => 'Điều gì đó không đúng đã xảy ra với các component.',
         ],
         'delete' => [
-            'success' => 'Component deleted.',
-            'failure' => 'The Component could not be deleted. Please try again.',
+            'success' => 'The component has been deleted!',
+            'failure' => 'The component could not be deleted. Please try again.',
         ],
 
         // Component groups
@@ -103,18 +103,18 @@ return [
             'groups'        => 'Component group|Component groups',
             'no_components' => 'You should add a component group.',
             'add'           => [
-                'title'   => 'Add a Component Group',
+                'title'   => 'Add a component group',
                 'success' => 'Nhóm component đã được thêm.',
                 'failure' => 'Điều gì đó sai đã xảy ra với nhóm component.',
             ],
             'edit' => [
-                'title'   => 'Edit a Component Group',
+                'title'   => 'Edit a component group',
                 'success' => 'Nhóm thành phần đã được cập nhật.',
                 'failure' => 'Điều gì đó không đúng đã xảy ra với nhóm thành phần.',
             ],
             'delete' => [
-                'success' => 'Component Group deleted.',
-                'failure' => 'The Component Group could not be deleted. Please try again.',
+                'success' => 'Component group has been deleted!',
+                'failure' => 'The component group could not be deleted. Please try again.',
             ],
         ],
     ],
@@ -123,18 +123,18 @@ return [
     'metrics' => [
         'metrics' => 'Các số liệu',
         'add'     => [
-            'title'   => 'Create a Metric',
-            'message' => 'You should add a Metric.',
+            'title'   => 'Create a metric',
+            'message' => 'You should add a metric.',
             'success' => 'Metric đã được tạo.',
             'failure' => 'Có lỗi xảy ra khi thêm metric.',
         ],
         'edit' => [
-            'title'   => 'Edit a Metric',
+            'title'   => 'Edit a metric',
             'success' => 'Metric đã được sửa.',
             'failure' => 'Có lỗi xảy ra khi thêm metric',
         ],
         'delete' => [
-            'success' => 'The metric has been deleted and will not show on your status page.',
+            'success' => 'The metric has been deleted and will no longer display on your status page.',
             'failure' => 'The metric could not be deleted. Please try again.',
         ],
     ],
@@ -145,13 +145,13 @@ return [
         'verified'     => 'Đã xác nhận',
         'not_verified' => 'Chưa xác nhận',
         'add'          => [
-            'title'   => 'Add a New Subscriber',
-            'success' => 'Subscriber added.',
+            'title'   => 'Add a new subscriber',
+            'success' => 'Subscriber has been added!',
             'failure' => 'Điều gì đó không đúng đã xảy ra với các component.',
         ],
         'edit' => [
-            'title'   => 'Update Subscriber',
-            'success' => 'Subscriber updated.',
+            'title'   => 'Update subscriber',
+            'success' => 'Subscriber has been updated!',
             'failure' => 'Có lỗi sai gì đó đã xảy ra khi cập nhật.',
         ],
     ],
@@ -163,23 +163,23 @@ return [
         'profile'     => 'Hồ sơ cá nhân',
         'description' => 'Thành viên trong đội sẽ có thể để thêm, sửa đổi và chỉnh sửa các thành phần và sự cố.',
         'add'         => [
-            'title'   => 'Add a New Team Member',
+            'title'   => 'Add a new team member',
             'success' => 'Thành viên đã được add.',
-            'failure' => 'Something went wrong with the user.',
+            'failure' => 'The team member could not be added. Please try again.',
         ],
         'edit' => [
-            'title'   => 'Update Profile',
+            'title'   => 'Update profile',
             'success' => 'Hồ Sơ đã được cập nhật.',
             'failure' => 'Có lỗi sai gì đó đã xảy ra khi cập nhật.',
         ],
         'delete' => [
-            'success' => 'User deleted.',
-            'failure' => 'Something went wrong when deleting this user.',
+            'success' => 'Team member has been deleted and will no longer have access to the dashboard!',
+            'failure' => 'The team member could not be added. Please try again.',
         ],
         'invite' => [
-            'title'   => 'Invite a New Team Member',
-            'success' => 'The users invited.',
-            'failure' => 'Something went wrong with the invite.',
+            'title'   => 'Invite a new team member',
+            'success' => 'An invite has been sent',
+            'failure' => 'The invite could not be sent. Please try again.',
         ],
     ],
 

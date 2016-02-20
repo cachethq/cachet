@@ -22,11 +22,10 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => 'Keine Vorfälle berichtet.',
+        'none'          => 'Es liegen keine Vorfälle vor',
         'past'          => 'Vergangene Vorfälle',
         'previous_week' => 'Vorherige Woche',
         'next_week'     => 'Nächste Woche',
-        'none'          => 'Keine Vorfälle berichtet.',
         'scheduled'     => 'Geplante Wartungen',
         'scheduled_at'  => ', geplant :timestamp',
         'status'        => [
@@ -40,9 +39,9 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] System operational|[2,Inf] All systems are operational',
-        'bad'   => '[0,1] The system is currently experiencing issues|[2,Inf] Some systems are experiencing issues',
-        'major' => '[0,1] The service experiencing a major outage|[2,Inf] Some systems are experiencing a major outage',
+        'good'  => '[0,1] System funktioniert|[2,Inf] Alle Systeme funktionieren',
+        'bad'   => '[0,1] System hat momentan Probleme|[2,Inf] Mehrere Systeme haben momentan Probleme',
+        'major' => '[0,1] System hat ein schwerwiegendes Problem|[2,Inf] Mehrere Systeme haben ein schwerwiegendes Problem',
     ],
 
     'api' => [
@@ -53,7 +52,7 @@ return [
     // Metrics
     'metrics' => [
         'filter' => [
-            'last_hour' => 'Last Hour',
+            'last_hour' => 'Letzte Stunde',
             'hourly'    => 'Letzte 12 Stunden',
             'weekly'    => 'Wöchentlich',
             'monthly'   => 'Monatlich',
@@ -71,7 +70,7 @@ return [
             'unsubscribe'        => 'Von E-Mail-Updates deabonnieren.',
             'unsubscribed'       => 'Ihre E-Mail-Abonnement wurde gekündigt.',
             'failure'            => 'Etwas ist mit dem Abonnement schief gelaufen.',
-            'already-subscribed' => 'Cannot subscribe :email because they\'re already subscribed.',
+            'already-subscribed' => 'Abonnement für :email konnte nicht registriert werden, da die E-Mail Adresse schon registriert ist.',
             'verify'             => [
                 'text'           => "Bitte bestätigen Sie Ihre E-Mail-Abonnement zu :app_name Status-Aktualisierungen.\n:link\nDanke, :app_name",
                 'html-preheader' => 'Bitte bestätigen Sie Ihre E-Mail-Abonnement zu :app_name Status-Aktualisierungen.',
@@ -88,11 +87,11 @@ return [
                 'html'           => '<p>Ein neuer Vorfall wurde über :app_name berichtet.</p> <p>Danke, :app_name</p>',
             ],
             'component' => [
-                'subject'        => 'Component Status Update',
-                'text'           => 'The component :component_name has seen a status change. The component is now at :component_human_status.\nThank you, :app_name',
-                'html-preheader' => 'Component Update from :app_name',
-                'html'           => '<p>The component :component_name has seen a status change. The component is now at :component_human_status.</p><p>Thank you, :app_name</p>',
-                'tooltip-title'  => 'Subscribe to notifications for :component_name.',
+                'subject'        => 'Komponent Status Update',
+                'text'           => 'Der Komponent :component_name hatte eine Status-Änderung. Der Komponent befindet sich nun im :component_human_status.\nDanke, :app_name',
+                'html-preheader' => 'Komponenten Update von :app_name',
+                'html'           => '<p>Der Komponent :component_name hatte eine Status-Änderung. Der Komponent befindet sich nun im :component_human_status.</p><p>Danke, :app_name</p>',
+                'tooltip-title'  => 'Neuigkeiten für :component_name abonnieren.',
             ],
         ],
     ],
@@ -117,15 +116,15 @@ return [
     ],
 
     'system' => [
-        'update' => 'There is a newer version of Cachet available. You can learn how to update <a href="https://docs.cachethq.io/docs/updating-cachet">here</a>!',
+        'update' => 'Es ist eine neuere Version von Cachet verfügbar. Lerne <a href="https://docs.cachethq.io/docs/updating-cachet">hier</a>!, wie du updaten kannst!',
     ],
 
     // Modal
     'modal' => [
-        'close'     => 'Close',
+        'close'     => 'Schließen',
         'subscribe' => [
-            'title'  => 'Subscribe to component updates?',
-            'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll receive emails for this component too.',
+            'title'  => 'Abonniere die Komponenten-Updates',
+            'body'   => 'Gib deine E-Mail Adresse ein, um Updates für diesen Komponenten zu erhalten. Wenn du bereits abonniert bist, erhälst du schon Updates für diesen Komponenten.',
             'button' => 'Abonnieren',
         ],
     ],

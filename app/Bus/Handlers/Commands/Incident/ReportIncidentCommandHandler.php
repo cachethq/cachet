@@ -69,7 +69,7 @@ class ReportIncidentCommandHandler
 
         // The incident occurred at a different time.
         if ($command->incident_date) {
-            $incidentDate = $this->dates->createNormalized('d/m/Y H:i', $command->incident_date);
+            $incidentDate = $this->dates->create('d/m/Y H:i', $command->incident_date);
 
             $data['created_at'] = $incidentDate;
             $data['updated_at'] = $incidentDate;

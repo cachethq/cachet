@@ -22,11 +22,10 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => '沒有已報告的事件。',
+        'none'          => 'No incidents reported',
         'past'          => '過去的事件',
         'previous_week' => '上一週',
         'next_week'     => '下一週',
-        'none'          => '沒有已報告的事件。',
         'scheduled'     => '排程維護',
         'scheduled_at'  => '，於:timestamp',
         'status'        => [
@@ -124,8 +123,8 @@ return [
     'modal' => [
         'close'     => 'Close',
         'subscribe' => [
-            'title'  => 'Subscribe to component updates?',
-            'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll receive emails for this component too.',
+            'title'  => 'Subscribe to component updates',
+            'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll already receive emails for this component.',
             'button' => '訂閱',
         ],
     ],
