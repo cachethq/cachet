@@ -33,8 +33,8 @@ class SqliteRepository implements MetricInterface
         $hourInterval = $dateTime->format('YmdHi');
 
         $points = $metric->points()
-                    ->whereRaw('strftime("%Y%m%d%H%i", created_at) = "'.$hourInterval.'"')
-                    ->groupBy(DB::raw('strftime("%H%i", created_at)'));
+                    ->whereRaw('strftime("%Y%m%d%H%M", created_at) = "'.$hourInterval.'"')
+                    ->groupBy(DB::raw('strftime("%H%M", created_at)'));
 
         if (!isset($metric->calc_type) || $metric->calc_type == Metric::CALC_SUM) {
             $value = $points->sum('value');

@@ -50,7 +50,7 @@ return [
     'in'             => 'Der gewählte Wert für :attribute ist ungültig.',
     'integer'        => ':attribute muss eine ganze Zahl sein.',
     'ip'             => ':attribute muss eine gültige IP-Adresse sein.',
-    'json'           => 'Das :attribut muss eine gültige JSON-Zeichenfolge sein.',
+    'json'           => ':attribut muss ein gültiger JSON-String sein.',
     'max'            => [
         'numeric' => ':attribute darf maximal :max sein.',
         'file'    => ':attribute darf maximal :max Kilobytes groß sein.',
@@ -69,7 +69,7 @@ return [
     'regex'                => ':attribute Format ist ungültig.',
     'required'             => ':attribute muss ausgefüllt sein.',
     'required_if'          => ':attribute muss ausgefüllt sein wenn :other :value ist.',
-    'required_unless'      => 'The :attribute field is required unless :other is in :values.',
+    'required_unless'      => 'Das :attribute Feld ist erforderlich außer :other hat den Wert :values.',
     'required_with'        => ':attribute muss angegeben werden wenn :values ausgefüllt wurde.',
     'required_with_all'    => ':attribute muss angegeben werden, wenn :values ausgefüllt wurde.',
     'required_without'     => ':attribute muss angegeben werden wenn :values nicht ausgefüllt wurde.',

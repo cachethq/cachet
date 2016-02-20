@@ -22,11 +22,10 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => 'Inga händelser har rapporterats.',
+        'none'          => 'Inga händelser har rapporterats',
         'past'          => 'Tidigare händelser',
         'previous_week' => 'Förra veckan',
         'next_week'     => 'Nästa vecka',
-        'none'          => 'Inga händelser har rapporterats.',
         'scheduled'     => 'Planerat underhåll',
         'scheduled_at'  => ', schemalagda: tidsstämpel',
         'status'        => [
@@ -40,9 +39,9 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] System operational|[2,Inf] All systems are operational',
-        'bad'   => '[0,1] The system is currently experiencing issues|[2,Inf] Some systems are experiencing issues',
-        'major' => '[0,1] The service experiencing a major outage|[2,Inf] Some systems are experiencing a major outage',
+        'good'  => '[0,1] Systemet fungerar |[2,Inf] Alla system fungerar',
+        'bad'   => '[0,1] Systemet har för närvarande problem|[2,Inf] Vissa system har problem',
+        'major' => '[0,1] Stora störningar på tjänsten [2,Inf] Stora störningar på vissa system',
     ],
 
     'api' => [
@@ -53,7 +52,7 @@ return [
     // Metrics
     'metrics' => [
         'filter' => [
-            'last_hour' => 'Last Hour',
+            'last_hour' => 'Senaste timmen',
             'hourly'    => 'Senaste 12 timmarna',
             'weekly'    => 'Vecka',
             'monthly'   => 'Månad',
@@ -71,7 +70,7 @@ return [
             'unsubscribe'        => 'Avbeställ epost-uppdateringar.',
             'unsubscribed'       => 'Din epost-prenumeration har avbrutits.',
             'failure'            => 'Något blev fel med prenumerationen.',
-            'already-subscribed' => 'Cannot subscribe :email because they\'re already subscribed.',
+            'already-subscribed' => 'Kan inte skapa en prenumeration för :email eftersom den redan prenumererar.',
             'verify'             => [
                 'text'           => "Vänligen bekräfta din epost-prenumeration för: :app_name-statusuppdateringar.\n:link\nTack, :app_name",
                 'html-preheader' => 'Vänligen bekräfta din epost-prenumeration på statusuppdateringar för :app_name.',
@@ -88,11 +87,11 @@ return [
                 'html'           => '<p>Nya händelser har rapporterats hos :app_name.</p> <p>Tack, :app_name</p>',
             ],
             'component' => [
-                'subject'        => 'Component Status Update',
-                'text'           => 'The component :component_name has seen a status change. The component is now at :component_human_status.\nThank you, :app_name',
-                'html-preheader' => 'Component Update from :app_name',
-                'html'           => '<p>The component :component_name has seen a status change. The component is now at :component_human_status.</p><p>Thank you, :app_name</p>',
-                'tooltip-title'  => 'Subscribe to notifications for :component_name.',
+                'subject'        => 'Komponentstatusuppdatering',
+                'text'           => 'Komponenten :component_name har fått en ny status. Komponenten har nu status :component_human_status.\nTack, :app_name',
+                'html-preheader' => 'Komponentstatusuppdatering från :app_name',
+                'html'           => '<p>Komponenten :component_name har fått en ny status. Komponenten har nu status :component_human_status.</p><p>Tack, :app_name</p>',
+                'tooltip-title'  => 'Prenumerera på uppdateringar för :component_name.',
             ],
         ],
     ],
@@ -109,23 +108,23 @@ return [
 
     'signup' => [
         'title'    => 'Registrera dig',
-        'username' => 'Username',
-        'email'    => 'Email',
-        'password' => 'Password',
+        'username' => 'Användarnamn',
+        'email'    => 'E-post',
+        'password' => 'Lösenord',
         'success'  => 'Ditt konto har skapats.',
         'failure'  => 'Något gick fel med registreringen.',
     ],
 
     'system' => [
-        'update' => 'There is a newer version of Cachet available. You can learn how to update <a href="https://docs.cachethq.io/docs/updating-cachet">here</a>!',
+        'update' => 'Det finns en nyare version av Cachet tillgänglig. Du kan lära dig hur du uppdaterar <a href="https://docs.cachethq.io/docs/updating-cachet">här</a>!',
     ],
 
     // Modal
     'modal' => [
-        'close'     => 'Close',
+        'close'     => 'Stäng',
         'subscribe' => [
-            'title'  => 'Subscribe to component updates?',
-            'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll receive emails for this component too.',
+            'title'  => 'Prenumerera på komponentuppdateringar',
+            'body'   => 'Fyll i din epostadress för att prenumerera på uppdateringar för den här kompontenten. Om du redan prenumererar, får du redan epost om den här komponenten.',
             'button' => 'Prenumerera',
         ],
     ],

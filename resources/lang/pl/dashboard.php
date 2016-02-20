@@ -40,7 +40,7 @@ return [
             'title' => 'Vorfall Vorlagen',
             'add'   => [
                 'title'   => 'Vorfallvorlage erstellen',
-                'message' => 'You should add an Incident Template.',
+                'message' => 'You should add an incident template.',
                 'success' => 'Vorlage erstellt.',
                 'failure' => 'Etwas ist mit der Vorfallvorlage schiefgelaufen.',
             ],
@@ -50,8 +50,8 @@ return [
                 'failure' => 'Etwas ist mit dem Updaten der Vorfallvorlage schiefgelaufen',
             ],
             'delete' => [
-                'success' => 'The tmplate has been deleted.',
-                'failure' => 'The template could not be deleted. Please try again.',
+                'success' => 'The incident template has been deleted.',
+                'failure' => 'The incident template could not be deleted. Please try again.',
             ],
         ],
     ],
@@ -94,8 +94,8 @@ return [
             'failure' => 'Beim Erstellen der Komponente ist etwas schiefgegangen.',
         ],
         'delete' => [
-            'success' => 'Component deleted.',
-            'failure' => 'The Component could not be deleted. Please try again.',
+            'success' => 'The component has been deleted!',
+            'failure' => 'The component could not be deleted. Please try again.',
         ],
 
         // Component groups
@@ -113,8 +113,8 @@ return [
                 'failure' => 'Mit der Komponentengruppe ist etwas schiefgegangen.',
             ],
             'delete' => [
-                'success' => 'Component Group deleted.',
-                'failure' => 'The Component Group could not be deleted. Please try again.',
+                'success' => 'Component group has been deleted!',
+                'failure' => 'The component group could not be deleted. Please try again.',
             ],
         ],
     ],
@@ -124,7 +124,7 @@ return [
         'metrics' => 'Metriken',
         'add'     => [
             'title'   => 'Metrik erstellen',
-            'message' => 'You should add a Metric.',
+            'message' => 'You should add a metric.',
             'success' => 'Metrik erstellt.',
             'failure' => 'Mit der Metrik ist etwas schiefgegangen.',
         ],
@@ -134,7 +134,7 @@ return [
             'failure' => 'Mit der Metrik ist etwas schiefgegangen.',
         ],
         'delete' => [
-            'success' => 'The metric has been deleted and will not show on your status page.',
+            'success' => 'The metric has been deleted and will no longer display on your status page.',
             'failure' => 'The metric could not be deleted. Please try again.',
         ],
     ],
@@ -177,9 +177,9 @@ return [
             'failure' => 'Bei dem Löschen dieses Benutzers ging etwas schief.',
         ],
         'invite' => [
-            'title'   => 'Invite a New Team Member',
-            'success' => 'The users invited.',
-            'failure' => 'Something went wrong with the invite.',
+            'title'   => 'Invite a new team member',
+            'success' => 'An invite has been sent',
+            'failure' => 'The invite could not be sent. Please try again.',
         ],
     ],
 

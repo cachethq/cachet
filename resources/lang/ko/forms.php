@@ -84,8 +84,8 @@ return [
         'calc_type'        => '통계 계산',
         'type_sum'         => '합계',
         'type_avg'         => '평균',
-        'places'           => 'Decimal Places',
-        'default_view'     => 'Default View',
+        'places'           => 'Decimal places',
+        'default_view'     => 'Default view',
 
         'points' => [
             'value' => '값',
@@ -126,7 +126,7 @@ return [
         ],
         'theme' => [
             'background-color'        => '배경색',
-            'background-fills'        => 'Background Fills (Components, Incidents, Footer)',
+            'background-fills'        => 'Background fills (components, incidents, footer)',
             'banner-background-color' => 'Banner Background Color',
             'banner-padding'          => 'Banner Padding',
             'fullwidth-banner'        => 'Enable fullwidth banner?',
@@ -137,7 +137,7 @@ return [
             'greens'                  => '초록 (성공에 사용됨)',
             'yellows'                 => '노랑 (알림에 사용됨)',
             'oranges'                 => '주황 (공지에 사용됨)',
-            'metrics'                 => 'Metrics Fill',
+            'metrics'                 => 'Metrics fill',
             'links'                   => '링크',
         ],
     ],

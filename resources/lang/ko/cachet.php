@@ -22,11 +22,10 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => '아무 문제도 보고되지 않음',
+        'none'          => 'No incidents reported',
         'past'          => '이전 문제',
         'previous_week' => '전 주',
         'next_week'     => '다음 주',
-        'none'          => '아무 문제도 보고되지 않음',
         'scheduled'     => '예정된 유지 보수',
         'scheduled_at'  => ', :timestamp 에 예정됨',
         'status'        => [
@@ -125,8 +124,8 @@ return [
     'modal' => [
         'close'     => 'Close',
         'subscribe' => [
-            'title'  => 'Subscribe to component updates?',
-            'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll receive emails for this component too.',
+            'title'  => 'Subscribe to component updates',
+            'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll already receive emails for this component.',
             'button' => '구독',
         ],
     ],
