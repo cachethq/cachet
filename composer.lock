@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9e2445f92e1fd3c9598bb0001ea765f7",
-    "content-hash": "afe2e5eb227fb6b808aadafb3b51bd3a",
+    "hash": "a469e0ab4ecee06801479b07e8604ec3",
+    "content-hash": "2bb7e0cc06d8ea88d186891c657a9987",
     "packages": [
         {
             "name": "alt-three/badger",
-            "version": "v1.0.7",
+            "version": "v3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/AltThree/Badger.git",
-                "reference": "b59dde5589f71fc7c757e7d3bfb27d65b82584e9"
+                "reference": "a39c10501443dc7a1197a7a75884ebdd5aeb2691"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/AltThree/Badger/zipball/b59dde5589f71fc7c757e7d3bfb27d65b82584e9",
-                "reference": "b59dde5589f71fc7c757e7d3bfb27d65b82584e9",
+                "url": "https://api.github.com/repos/AltThree/Badger/zipball/a39c10501443dc7a1197a7a75884ebdd5aeb2691",
+                "reference": "a39c10501443dc7a1197a7a75884ebdd5aeb2691",
                 "shasum": ""
             },
             "require": {
@@ -33,7 +33,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0-dev"
+                    "dev-master": "3.0-dev"
                 }
             },
             "autoload": {
@@ -63,10 +63,11 @@
             "keywords": [
                 "Alt Three",
                 "badge",
+                "badger",
                 "shield",
                 "svg"
             ],
-            "time": "2016-02-02 14:51:21"
+            "time": "2016-02-20 16:48:04"
         },
         {
             "name": "alt-three/bus",
@@ -2081,16 +2082,16 @@
         },
         {
             "name": "mccool/laravel-auto-presenter",
-            "version": "v4.2.1",
+            "version": "4.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-auto-presenter/laravel-auto-presenter.git",
-                "reference": "48649d3f98e369c2e0922ef37190dd15812a292a"
+                "reference": "c385b113696dfc564869c54f5c4baba5e116a3be"
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel-auto-presenter/laravel-auto-presenter/zipball/c385b113696dfc564869c54f5c4baba5e116a3be",
-                "reference": "48649d3f98e369c2e0922ef37190dd15812a292a",
+                "reference": "c385b113696dfc564869c54f5c4baba5e116a3be",
                 "shasum": ""
             },
             "require": {
@@ -2139,7 +2140,7 @@
                 "lpm",
                 "presenter"
             ],
-            "time": "2016-01-24 11:06:03"
+            "time": "2016-01-30 14:04:34"
         },
         {
             "name": "monolog/monolog",
@@ -3946,7 +3947,7 @@
             ],
             "authors": [
                 {
-                    "name": "Francois Zaninotto"
+                    "name": "François Zaninotto"
                 }
             ],
             "description": "Faker is a PHP library that generates fake data for you.",
