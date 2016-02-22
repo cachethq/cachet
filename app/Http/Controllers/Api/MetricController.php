@@ -55,7 +55,9 @@ class MetricController extends AbstractApiController
      */
     public function getMetricPoints(Metric $metric)
     {
-        return $this->collection($metric->points);
+        $points = $metric->points()->paginate(Binput::get('per_page', 20));
+
+        return $this->paginator($points, Request::instance());
     }
 
     /**
