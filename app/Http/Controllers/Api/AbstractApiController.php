@@ -161,12 +161,6 @@ abstract class AbstractApiController extends Controller
 
         $items = $paginator->getCollection();
 
-        if ($sortBy = $request->get('sort')) {
-            $direction = $request->has('order') && $request->get('order') == 'desc';
-
-            $items = $items->sortBy($sortBy, SORT_REGULAR, $direction);
-        }
-
         return $this->setMetaData($pagination)->setData(AutoPresenter::decorate($items->values()))->respond();
     }
 
