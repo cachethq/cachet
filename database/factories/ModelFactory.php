@@ -25,7 +25,7 @@ $factory->define(Component::class, function ($faker) {
         'name'        => $faker->sentence(),
         'description' => $faker->paragraph(),
         'link'        => $faker->url(),
-        'status'      => 1,
+        'status'      => random_int(1, 4),
         'order'       => 0,
     ];
 });
@@ -34,7 +34,7 @@ $factory->define(ComponentGroup::class, function ($faker) {
     return [
         'name'      => $faker->words(2, true),
         'order'     => 0,
-        'collapsed' => false,
+        'collapsed' => $faker->boolean(),
     ];
 });
 
@@ -42,7 +42,7 @@ $factory->define(Incident::class, function ($faker) {
     return [
         'name'    => $faker->sentence(),
         'message' => $faker->paragraph(),
-        'status'  => 1,
+        'status'  => random_int(1, 4),
         'visible' => 1,
     ];
 });
@@ -61,14 +61,14 @@ $factory->define(Metric::class, function ($faker) {
         'suffix'        => $faker->word(),
         'description'   => $faker->paragraph(),
         'default_value' => 1,
-        'calc_type'     => 1,
-        'display_chart' => 1,
+        'calc_type'     => $faker->boolean(),
+        'display_chart' => $faker->boolean(),
     ];
 });
 
 $factory->define(MetricPoint::class, function ($faker) {
     return [
-        'metric_id' => 1,
+        'metric_id' => factory(Metric::class)->create()->id,
         'value'     => random_int(1, 100),
     ];
 });
@@ -82,12 +82,9 @@ $factory->define(Subscriber::class, function ($faker) {
 });
 
 $factory->define(Subscription::class, function ($faker) {
-    $user = factory(Subscriber::class)->create();
-    $component = factory(Component::class)->create();
-
     return [
-        'subscriber_id' => $user->id,
-        'component_id'  => $component->id,
+        'subscriber_id' => factory(Subscriber::class)->create()->id,
+        'component_id'  => factory(Component::class)->create()->id,
     ];
 });
 
