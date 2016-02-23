@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "615527bfdcb047bd29b69ba193df6082",
-    "content-hash": "26390cf00f34ea90e3e9c75e8b5fd785",
+    "hash": "731b34c985f8977468e5442782fa2ef5",
+    "content-hash": "0053ccda3d8fe486cea2380a18e8a1ec",
     "packages": [
         {
             "name": "alt-three/badger",
@@ -2082,16 +2082,16 @@
         },
         {
             "name": "mccool/laravel-auto-presenter",
-            "version": "4.2.1",
+            "version": "v4.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-auto-presenter/laravel-auto-presenter.git",
-                "reference": "c385b113696dfc564869c54f5c4baba5e116a3be"
+                "reference": "48649d3f98e369c2e0922ef37190dd15812a292a"
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel-auto-presenter/laravel-auto-presenter/zipball/c385b113696dfc564869c54f5c4baba5e116a3be",
-                "reference": "c385b113696dfc564869c54f5c4baba5e116a3be",
+                "reference": "48649d3f98e369c2e0922ef37190dd15812a292a",
                 "shasum": ""
             },
             "require": {
@@ -2140,7 +2140,7 @@
                 "lpm",
                 "presenter"
             ],
-            "time": "2016-01-30 14:04:34"
+            "time": "2016-01-24 11:06:03"
         },
         {
             "name": "monolog/monolog",
@@ -3734,16 +3734,16 @@
     "packages-dev": [
         {
             "name": "alt-three/testbench",
-            "version": "v1.2.1",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/AltThree/TestBench.git",
-                "reference": "36da8c1357570ee323cd07e9e25df2372863623d"
+                "reference": "51155d628f670d6b1670dbd408c055274d26dc03"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/AltThree/TestBench/zipball/36da8c1357570ee323cd07e9e25df2372863623d",
-                "reference": "36da8c1357570ee323cd07e9e25df2372863623d",
+                "url": "https://api.github.com/repos/AltThree/TestBench/zipball/51155d628f670d6b1670dbd408c055274d26dc03",
+                "reference": "51155d628f670d6b1670dbd408c055274d26dc03",
                 "shasum": ""
             },
             "require": {
@@ -3759,7 +3759,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.2-dev"
+                    "dev-master": "1.3-dev"
                 }
             },
             "autoload": {
@@ -3791,7 +3791,7 @@
                 "TestBench",
                 "app"
             ],
-            "time": "2016-01-03 10:46:11"
+            "time": "2016-02-21 16:34:19"
         },
         {
             "name": "doctrine/instantiator",
@@ -3947,7 +3947,7 @@
             ],
             "authors": [
                 {
-                    "name": "François Zaninotto"
+                    "name": "Francois Zaninotto"
                 }
             ],
             "description": "Faker is a PHP library that generates fake data for you.",
