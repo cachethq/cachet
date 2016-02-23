@@ -12,6 +12,7 @@
 namespace CachetHQ\Cachet\Models;
 
 use AltThree\Validator\ValidatingTrait;
+use CachetHQ\Cachet\Models\Traits\SortableTrait;
 use CachetHQ\Cachet\Presenters\IncidentPresenter;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
@@ -20,7 +21,7 @@ use McCool\LaravelAutoPresenter\HasPresenter;
 
 class Incident extends Model implements HasPresenter
 {
-    use SoftDeletes, ValidatingTrait;
+    use SoftDeletes, SortableTrait, ValidatingTrait;
 
     /**
      * The attributes that should be casted to native types.
@@ -60,6 +61,19 @@ class Incident extends Model implements HasPresenter
         'status'       => 'required|int',
         'visible'      => 'required|bool',
         'message'      => 'required',
+    ];
+
+    /**
+     * The sortable fields.
+     *
+     * @var string[]
+     */
+    protected $sortable = [
+        'id',
+        'name',
+        'status',
+        'visible',
+        'message',
     ];
 
     /**

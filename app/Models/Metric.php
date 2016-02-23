@@ -12,13 +12,14 @@
 namespace CachetHQ\Cachet\Models;
 
 use AltThree\Validator\ValidatingTrait;
+use CachetHQ\Cachet\Models\Traits\SortableTrait;
 use CachetHQ\Cachet\Presenters\MetricPresenter;
 use Illuminate\Database\Eloquent\Model;
 use McCool\LaravelAutoPresenter\HasPresenter;
 
 class Metric extends Model implements HasPresenter
 {
-    use ValidatingTrait;
+    use SortableTrait, ValidatingTrait;
 
     /**
      * The calculation type of sum.
@@ -90,6 +91,19 @@ class Metric extends Model implements HasPresenter
         'default_value' => 'numeric',
         'places'        => 'numeric|between:0,4',
         'default_view'  => 'numeric|between:0,3',
+    ];
+
+    /**
+     * The sortable fields.
+     *
+     * @var string[]
+     */
+    protected $sortable = [
+        'id',
+        'name',
+        'display_chart',
+        'default_value',
+        'calc_type',
     ];
 
     /**
