@@ -42,7 +42,7 @@
         "roumen/feed": "^2.10"
     },
     "require-dev": {
-        "alt-three/testbench": "^1.1",
+        "alt-three/testbench": "^1.3",
         "filp/whoops": "^2.0",
         "fzaninotto/faker": "^1.5",
         "graham-campbell/testbench-core": "^1.1",
