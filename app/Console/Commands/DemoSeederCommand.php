@@ -265,38 +265,33 @@ class DemoSeederCommand extends Command
             [
                 'name'  => 'app_name',
                 'value' => 'Cachet Demo',
-            ],
-            [
+            ], [
                 'name'  => 'app_domain',
                 'value' => 'https://demo.cachethq.io',
-            ],
-            [
+            ], [
                 'name'  => 'show_support',
                 'value' => '1',
-            ],
-            [
+            ], [
                 'name'  => 'app_locale',
                 'value' => 'en',
-            ],
-            [
+            ], [
                 'name'  => 'app_timezone',
                 'value' => 'Europe/London',
-            ],
-            [
+            ], [
                 'name'  => 'app_incident_days',
                 'value' => '7',
-            ],
-            [
+            ], [
                 'name'  => 'app_analytics',
                 'value' => 'UA-58442674-3',
-            ],
-            [
+            ], [
                 'name'  => 'app_analytics_gs',
                 'value' => 'GSN-712462-P',
-            ],
-            [
+            ], [
                 'name'  => 'display_graphs',
                 'value' => '1',
+            ], [
+                'name'  => 'app_about',
+                'value' => 'This is the demo instance of [Cachet](https://cachethq.io?ref=demo). The open source status page system, for everyone. An [Alt Three](https://alt-three.com) product.',
             ],
         ];
 
