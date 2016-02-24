@@ -296,7 +296,14 @@ body.status-page {
         &.components {
             @extend .panel;
             border-color: $cachet_gray_light;
-            margin-bottom: 30px;
+
+            &:last-child {
+                margin-bottom: 30px;
+            }
+
+            + .components {
+                margin-top: 5px;
+            }
 
             p {
                 margin-bottom: 10px;

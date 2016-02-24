@@ -12,6 +12,9 @@
 return [
     // Components
     'components' => [
+        'group' => [
+            'other' => 'Other Components',
+        ],
         'status' => [
             1 => 'Operational',
             2 => 'Performance Issues',
