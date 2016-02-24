@@ -1,6 +1,6 @@
+@if($component_groups->count() > 0)
+@foreach($component_groups as $componentGroup)
 <ul class="list-group components">
-    @if($component_groups->count() > 0)
-    @foreach($component_groups as $componentGroup)
     @if($componentGroup->enabled_components->count() > 0)
     <li class="list-group-item group-name">
         <i class="{{ $componentGroup->collapse_class }} group-toggle"></i>
@@ -17,15 +17,17 @@
     @endforeach
     </div>
     @endif
-    @endforeach
-    @if($ungrouped_components->count() > 0)
-    <li class="list-group-item break"></li>
-    @endif
-    @endif
+</ul>
+@endforeach
+@endif
 
-    @if($ungrouped_components->count() > 0)
+@if($ungrouped_components->count() > 0)
+<ul class="list-group components">
+    <li class="list-group-item group-name">
+        <strong>{{ trans('cachet.components.group.other') }}</strong>
+    </li>
     @foreach($ungrouped_components as $component)
     @include('partials.component', compact($component))
     @endforeach
-    @endif
 </ul>
+@endif

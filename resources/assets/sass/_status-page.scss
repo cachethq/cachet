@@ -83,6 +83,10 @@ body.status-page {
         font-weight: 600;
     }
 
+    h4 + .timeline {
+        margin-bottom: 10px;
+    }
+
     .timeline {
         .content-wrapper {
             margin-top: 40px;
@@ -296,7 +300,14 @@ body.status-page {
         &.components {
             @extend .panel;
             border-color: $cachet_gray_light;
-            margin-bottom: 30px;
+
+            &:last-child {
+                margin-bottom: 30px;
+            }
+
+            + .components {
+                margin-top: 5px;
+            }
 
             p {
                 margin-bottom: 10px;
