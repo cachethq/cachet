@@ -37,7 +37,7 @@ class AuthRoutes
             ]);
 
             $router->post('login', [
-                'middleware' => ['guest', 'throttling:10,10'],
+                'middleware' => ['guest', 'throttle:10,10'],
                 'uses'       => 'AuthController@postLogin',
             ]);
 
@@ -47,7 +47,7 @@ class AuthRoutes
             ]);
 
             $router->post('2fa', [
-                'middleware' => ['throttling:10,10'],
+                'middleware' => ['throttle:10,10'],
                 'uses'       => 'AuthController@postTwoFactor',
             ]);
 
