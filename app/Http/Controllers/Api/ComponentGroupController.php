@@ -15,6 +15,7 @@ use CachetHQ\Cachet\Bus\Commands\ComponentGroup\AddComponentGroupCommand;
 use CachetHQ\Cachet\Bus\Commands\ComponentGroup\RemoveComponentGroupCommand;
 use CachetHQ\Cachet\Bus\Commands\ComponentGroup\UpdateComponentGroupCommand;
 use CachetHQ\Cachet\Models\ComponentGroup;
+use CachetHQ\Cachet\Models\Traits\SortableTrait;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Request;
@@ -29,7 +30,15 @@ class ComponentGroupController extends AbstractApiController
      */
     public function getGroups()
     {
-        $groups = ComponentGroup::paginate(Binput::get('per_page', 20));
+        $groups = ComponentGroup::whereRaw('1=1');
+
+        if ($sortBy = Binput::get('sort')) {
+            $direction = Binput::has('order') && Binput::get('order') == 'desc';
+
+            $groups->sort($sortBy, $direction);
+        }
+
+        $groups = $groups->paginate(Binput::get('per_page', 20));
 
         return $this->paginator($groups, Request::instance());
     }

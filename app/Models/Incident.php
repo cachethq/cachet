@@ -12,16 +12,16 @@
 namespace CachetHQ\Cachet\Models;
 
 use AltThree\Validator\ValidatingTrait;
+use CachetHQ\Cachet\Models\Traits\SortableTrait;
 use CachetHQ\Cachet\Presenters\IncidentPresenter;
 use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use McCool\LaravelAutoPresenter\HasPresenter;
 
 class Incident extends Model implements HasPresenter
 {
-    use SoftDeletes, ValidatingTrait;
+    use SoftDeletes, SortableTrait, ValidatingTrait;
 
     /**
      * The attributes that should be casted to native types.
@@ -68,31 +68,13 @@ class Incident extends Model implements HasPresenter
      *
      * @var string[]
      */
-    public $sortable = [
+    protected $sortable = [
         'id',
         'name',
         'status',
         'visible',
         'message',
     ];
-
-    /**
-     * Adds a sort scope.
-     *
-     * @param \Illuminate\Database\Eloquent\Builder $query
-     * @param string                                $column
-     * @param string                                $direction
-     *
-     * @return \Illuminate\Database\Eloquent\Builder
-     */
-    public function scopeSort(Builder $query, $column, $direction)
-    {
-        if (!in_array($column, $this->sortable)) {
-            return $query;
-        }
-
-        return $query->orderBy($column, $direction);
-    }
 
     /**
      * Finds all visible incidents.
