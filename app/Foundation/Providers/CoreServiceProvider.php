@@ -12,7 +12,6 @@
 namespace CachetHQ\Cachet\Foundation\Providers;
 
 use CachetHQ\Cachet\Foundation\Subscribers\CommandSubscriber;
-use Illuminate\Contracts\Container\Container;
 use Illuminate\Support\ServiceProvider;
 
 /**
