@@ -29,7 +29,15 @@ class MetricController extends AbstractApiController
      */
     public function getMetrics()
     {
-        $metrics = Metric::paginate(Binput::get('per_page', 20));
+        $metrics = Metric::whereRaw('1=1');
+
+        if ($sortBy = Binput::get('sort')) {
+            $direction = Binput::has('order') && Binput::get('order') == 'desc';
+
+            $metrics->sort($sortBy, $direction);
+        }
+
+        $metrics = $metrics->paginate(Binput::get('per_page', 20));
 
         return $this->paginator($metrics, Request::instance());
     }

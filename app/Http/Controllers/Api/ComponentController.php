@@ -37,7 +37,15 @@ class ComponentController extends AbstractApiController
             $components = Component::enabled();
         }
 
-        return $this->paginator($components->paginate(Binput::get('per_page', 20)), Request::instance());
+        if ($sortBy = Binput::get('sort')) {
+            $direction = Binput::has('order') && Binput::get('order') == 'desc';
+
+            $components->sort($sortBy, $direction);
+        }
+
+        $components = $components->paginate(Binput::get('per_page', 20));
+
+        return $this->paginator($components, Request::instance());
     }
 
     /**

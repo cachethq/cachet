@@ -29,7 +29,15 @@ class ComponentGroupController extends AbstractApiController
      */
     public function getGroups()
     {
-        $groups = ComponentGroup::paginate(Binput::get('per_page', 20));
+        $groups = ComponentGroup::whereRaw('1=1');
+
+        if ($sortBy = Binput::get('sort')) {
+            $direction = Binput::has('order') && Binput::get('order') == 'desc';
+
+            $groups->sort($sortBy, $direction);
+        }
+
+        $groups = $groups->paginate(Binput::get('per_page', 20));
 
         return $this->paginator($groups, Request::instance());
     }

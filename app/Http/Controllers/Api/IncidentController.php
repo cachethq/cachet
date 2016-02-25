@@ -32,7 +32,15 @@ class IncidentController extends AbstractApiController
     {
         $incidentVisibility = app(Guard::class)->check() ? 0 : 1;
 
-        $incidents = Incident::where('visible', '>=', $incidentVisibility)->paginate(Binput::get('per_page', 20));
+        $incidents = Incident::where('visible', '>=', $incidentVisibility);
+
+        if ($sortBy = Binput::get('sort')) {
+            $direction = Binput::has('order') && Binput::get('order') == 'desc';
+
+            $incidents->sort($sortBy, $direction);
+        }
+
+        $incidents = $incidents->paginate(Binput::get('per_page', 20));
 
         return $this->paginator($incidents, Request::instance());
     }
