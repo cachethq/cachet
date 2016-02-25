@@ -59,6 +59,6 @@ class Kernel extends HttpKernel
         'ready'       => 'CachetHQ\Cachet\Http\Middleware\ReadyForUse',
         'setup'       => 'CachetHQ\Cachet\Http\Middleware\SetupAlreadyCompleted',
         'subscribers' => 'CachetHQ\Cachet\Http\Middleware\SubscribersConfigured',
-        'throttling'  => 'GrahamCampbell\Throttle\Http\Middleware\ThrottleMiddleware',
+        'throttle'    => 'Illuminate\Routing\Middleware\ThrottleRequests',
     ];
 }
