@@ -15,7 +15,6 @@ use CachetHQ\Cachet\Bus\Commands\ComponentGroup\AddComponentGroupCommand;
 use CachetHQ\Cachet\Bus\Commands\ComponentGroup\RemoveComponentGroupCommand;
 use CachetHQ\Cachet\Bus\Commands\ComponentGroup\UpdateComponentGroupCommand;
 use CachetHQ\Cachet\Models\ComponentGroup;
-use CachetHQ\Cachet\Models\Traits\SortableTrait;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Request;
