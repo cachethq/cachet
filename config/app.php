@@ -182,6 +182,7 @@ return [
         'CachetHQ\Cachet\Foundation\Providers\AppServiceProvider',
         'CachetHQ\Cachet\Foundation\Providers\ComposerServiceProvider',
         'CachetHQ\Cachet\Foundation\Providers\ConfigServiceProvider',
+        'CachetHQ\Cachet\Foundation\Providers\CoreServiceProvider',
         'CachetHQ\Cachet\Foundation\Providers\EventServiceProvider',
         'CachetHQ\Cachet\Foundation\Providers\GitHubServiceProvider',
         'CachetHQ\Cachet\Foundation\Providers\RepositoryServiceProvider',
