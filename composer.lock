@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "74c779dc332906a864a316cc48fdb8c6",
-    "content-hash": "d0ab20df55c42e4852db58b8a0804159",
+    "hash": "4679aa1d77fd3d0e6a4edcc6b72b2e31",
+    "content-hash": "be811d8ee1ae07b63536110056584327",
     "packages": [
         {
             "name": "alt-three/badger",
@@ -262,49 +262,6 @@
             "time": "2016-01-03 10:46:21"
         },
         {
-            "name": "asm89/stack-cors",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/asm89/stack-cors.git",
-                "reference": "f76d3ff80f287dcdf18cec0855efd6787cc1c7a5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/asm89/stack-cors/zipball/f76d3ff80f287dcdf18cec0855efd6787cc1c7a5",
-                "reference": "f76d3ff80f287dcdf18cec0855efd6787cc1c7a5",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.2",
-                "symfony/http-foundation": "~2.1|~3.0",
-                "symfony/http-kernel": "~2.1|~3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Asm89\\Stack": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Alexander",
-                    "email": "iam.asm89@gmail.com"
-                }
-            ],
-            "description": "Cross-origin resource sharing library and stack middleware",
-            "homepage": "https://github.com/asm89/stack-cors",
-            "keywords": [
-                "cors",
-                "stack"
-            ],
-            "time": "2015-12-23 16:04:18"
-        },
-        {
             "name": "bacon/bacon-qr-code",
             "version": "1.0.1",
             "source": {
@@ -348,27 +305,31 @@
         },
         {
             "name": "barryvdh/laravel-cors",
-            "version": "v0.7.3",
+            "version": "v0.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvdh/laravel-cors.git",
-                "reference": "e4c4545879f5f00b8595a13fcf8e648b9bfdb40a"
+                "reference": "39975d7505757488f982ca132bcd02c704792fd8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-cors/zipball/e4c4545879f5f00b8595a13fcf8e648b9bfdb40a",
-                "reference": "e4c4545879f5f00b8595a13fcf8e648b9bfdb40a",
+                "url": "https://api.github.com/repos/barryvdh/laravel-cors/zipball/39975d7505757488f982ca132bcd02c704792fd8",
+                "reference": "39975d7505757488f982ca132bcd02c704792fd8",
                 "shasum": ""
             },
             "require": {
-                "asm89/stack-cors": "0.2.x",
-                "illuminate/support": "~5.0.14|5.1.x|5.2.x",
-                "php": ">=5.4.0"
+                "illuminate/support": "5.1.x|5.2.x",
+                "php": ">=5.5.9",
+                "symfony/http-foundation": "~2.7|~3.0",
+                "symfony/http-kernel": "~2.7|~3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.2"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.7-dev"
+                    "dev-master": "0.8-dev"
                 }
             },
             "autoload": {
@@ -393,7 +354,7 @@
                 "crossdomain",
                 "laravel"
             ],
-            "time": "2015-12-20 20:32:17"
+            "time": "2016-02-11 18:38:09"
         },
         {
             "name": "christian-riesen/base32",
@@ -5137,18 +5098,9 @@
             "time": "2016-02-02 13:44:19"
         }
     ],
-    "aliases": [
-        {
-            "alias": "0.2.2",
-            "alias_normalized": "0.2.2.0",
-            "version": "9999999-dev",
-            "package": "asm89/stack-cors"
-        }
-    ],
+    "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "asm89/stack-cors": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
