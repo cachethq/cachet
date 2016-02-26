@@ -15,9 +15,18 @@
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="description" content="{{ trans('cachet.description', ['app' => $app_name]) }}">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ $site_title }}">
+    <meta property="og:image" content="/img/favicon.png">
+    <meta property="og:description" content="{{ trans('cachet.description', ['app' => $app_name]) }}">
 
     <!-- Mobile IE allows us to activate ClearType technology for smoothing fonts for easy reading -->
     <meta http-equiv="cleartype" content="on">
+
+    <meta name="msapplication-TileColor" content="{{ $theme_greens }}" />
+    <meta name="msapplication-TileImage" content="/img/favicon.png" />
 
     @if (isset($favicon))
     <link rel="icon" type="image/png" href="/img/{{ $favicon }}.ico">
