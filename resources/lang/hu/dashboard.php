@@ -17,41 +17,41 @@ return [
     'incidents' => [
         'title'                    => 'Incidensek &amp; Ütemezés',
         'incidents'                => 'Incidensek',
-        'logged'                   => '{0} There are no incidents, good work.|You have logged one incident.|You have reported <strong>:count</strong> incidents.',
+        'logged'                   => '{0} Nincsenek incidensek, szép munka!|Egy incidenst regisztráltál|<strong>:count</strong> incidenst regisztráltál',
         'incident-create-template' => 'Sablon létrehozása',
         'incident-templates'       => 'Incidens Sablonok',
         'add'                      => [
-            'title'   => 'Report an incident',
+            'title'   => 'Incidens regisztrálása',
             'success' => 'Incidens létrehozva.',
             'failure' => 'Hiba történt az incidens létrehozása során.',
         ],
         'edit' => [
-            'title'   => 'Edit an incident',
+            'title'   => 'Incidens szerkesztése',
             'success' => 'Incidens frissítve.',
             'failure' => 'Hiba történt az incidens szerkesztése során.',
         ],
         'delete' => [
-            'success' => 'The incident has been deleted and will not show on your status page.',
-            'failure' => 'The incident could not be deleted. Please try again.',
+            'success' => 'Az incidens törölve, így nem fog megjelenni a státusz oldalon',
+            'failure' => 'Hiba történt az incidens törlésekor, próbáld újra!',
         ],
 
         // Incident templates
         'templates' => [
             'title' => 'Incidens Sablonok',
             'add'   => [
-                'title'   => 'Create an incident template',
-                'message' => 'You should add an incident template.',
+                'title'   => 'Incidens sablon létrehozása',
+                'message' => 'Adj hozzá egy incidens sablont!',
                 'success' => 'Sablon létrehozva.',
                 'failure' => 'Hiba történt az incidens sablon létrehozása során.',
             ],
             'edit' => [
-                'title'   => 'Edit Template',
+                'title'   => 'Sablon szerkesztése',
                 'success' => 'Sablon frissítve!',
                 'failure' => 'Hiba történt az incidens sablon szerkesztése során',
             ],
             'delete' => [
-                'success' => 'The incident template has been deleted.',
-                'failure' => 'The incident template could not be deleted. Please try again.',
+                'success' => 'Incidens sablon törölve.',
+                'failure' => 'Hiba történt az incidens sablon törlésekor, próbáld újra!',
             ],
         ],
     ],
@@ -59,192 +59,192 @@ return [
     // Incident Maintenance
     'schedule' => [
         'schedule'     => 'Ütemezett Karbantartás',
-        'logged'       => '{0} There are no schedules, good work.|You have logged one schedule.|You have reported <strong>:count</strong> schedules.',
-        'scheduled_at' => 'Scheduled at :timestamp',
+        'logged'       => '{0} Nincs ütemezett karbantartás, szép munka!|Egy ütemezett karbantást regisztráltál|<strong>:count</strong> ütemezett karbantartást regisztráltál.',
+        'scheduled_at' => 'Ütemezett karbantartás időpontja: :timestamp',
         'add'          => [
-            'title'   => 'Add scheduled maintenance',
-            'success' => 'Scheduled maintenance has been reported!',
-            'failure' => 'The scheduled maintenance could not be reported. Please try again.',
+            'title'   => 'Ütemezett karbantartás hozzáadása',
+            'success' => 'Az ütemezett karbantartás hozzáadása sikeres!',
+            'failure' => 'Hiba történt az ütemezett karbantartás hozzáadásakor, próbáld újra!',
         ],
         'edit' => [
-            'title'   => 'Edit scheduled maintenance',
-            'success' => 'Scheduled maintenance has been edited!',
-            'failure' => 'The scheduled maintenance could not be edited. Please try again.',
+            'title'   => 'Ütemezett karbantartás szerkesztése',
+            'success' => 'Ütemezett karbantartás szerkesztése sikeres!',
+            'failure' => 'Hiba történt az ütemezett karbantartás szerkesztésekor, próbáld újra!',
         ],
         'delete' => [
-            'success' => 'Scheduled maintenance has been deleted!',
-            'failure' => 'The scheduled maintenance could not be deleted. Please try again.',
+            'success' => 'Ütemezett karbantartás törölve',
+            'failure' => 'Hiba történt az ütemezett karbantartás törlésekor, próbáld újra!',
         ],
     ],
 
     // Components
     'components' => [
-        'components'         => 'Components',
-        'component_statuses' => 'Component Statuses',
-        'listed_group'       => 'Grouped under :name',
+        'components'         => 'Komponensek',
+        'component_statuses' => 'Komponensek Státusza',
+        'listed_group'       => ':name csoport',
         'add'                => [
-            'title'   => 'Add a component',
-            'message' => 'You should add a component.',
-            'success' => 'Component has been added!',
-            'failure' => 'The component could not be added. Please try again.',
+            'title'   => 'Komponens hozzáadása',
+            'message' => 'Adj hozzá egy komponenst!',
+            'success' => 'Komponens hozzáadása sikeres!',
+            'failure' => 'Hiba történt a komponens hozzáadásakor, próbáld újra!',
         ],
         'edit' => [
-            'title'   => 'Edit a component',
-            'success' => 'Component has been updated!',
-            'failure' => 'The component could not be updated. Please try again.',
+            'title'   => 'Komponens szerkesztése',
+            'success' => 'Komponens szerkesztése sikeres!',
+            'failure' => 'Hiba történt a komponens szerkesztésekor, próbáld újra!',
         ],
         'delete' => [
-            'success' => 'The component has been deleted!',
-            'failure' => 'The component could not be deleted. Please try again.',
+            'success' => 'Komponens törlése sikeres.',
+            'failure' => 'Hiba történt a komponens törlésekor, próbáld újra!',
         ],
 
         // Component groups
         'groups' => [
-            'groups'        => 'Component group|Component groups',
-            'no_components' => 'You should add a component group.',
+            'groups'        => 'Komponens csoport|Komponens csoportok',
+            'no_components' => 'Adj hozzá egy komponens csoportot!',
             'add'           => [
-                'title'   => 'Add a component group',
-                'success' => 'Component group has been added!',
-                'failure' => 'The component group could not be added. Please try again.',
+                'title'   => 'Komponens csoport hozzáadása',
+                'success' => 'Komponens csoport hozzáadása sikeres!',
+                'failure' => 'Hiba történt a komponens csoport hozzáadásakor, próbáld újra!',
             ],
             'edit' => [
-                'title'   => 'Edit a component group',
-                'success' => 'Component group has been edited!',
-                'failure' => 'The component group could not be edited. Please try again.',
+                'title'   => 'Komponens csoport szerkesztése',
+                'success' => 'Komponens csoport szerkesztése sikeres!',
+                'failure' => 'Hiba történt a komponens csoport szerkesztésekor, próbáld újra!',
             ],
             'delete' => [
-                'success' => 'Component group has been deleted!',
-                'failure' => 'The component group could not be deleted. Please try again.',
+                'success' => 'Komponens csoport törlése sikeres.',
+                'failure' => 'Hiba történt a komponens csoport törlésekor, próbáld újra!',
             ],
         ],
     ],
 
     // Metrics
     'metrics' => [
-        'metrics' => 'Metrics',
+        'metrics' => 'Metrika',
         'add'     => [
-            'title'   => 'Create a metric',
-            'message' => 'You should add a metric.',
-            'success' => 'Metric has been added!',
-            'failure' => 'The metric could not be added. Please try again.',
+            'title'   => 'Metrika hozzáadása',
+            'message' => 'Adj hozzá egy metrikát!',
+            'success' => 'Metrika hozzáadása sikeres!',
+            'failure' => 'Hiba történt a metrika hozzáadásakor, próbáld újra!',
         ],
         'edit' => [
-            'title'   => 'Edit a metric',
-            'success' => 'Metric has been updated!',
-            'failure' => 'The metric could not be updated. Please try again.',
+            'title'   => 'Metrika szerkesztése',
+            'success' => 'Metrika szerkesztése sikeres!',
+            'failure' => 'Hiba történt a metrika szerkesztésekor, próbáld újra!',
         ],
         'delete' => [
-            'success' => 'The metric has been deleted and will no longer display on your status page.',
-            'failure' => 'The metric could not be deleted. Please try again.',
+            'success' => 'A metrika törölve, így nem fog megjelenni a státusz oldalon.',
+            'failure' => 'Hiba történt a metrika törlésekor, próbáld újra!',
         ],
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'  => 'Subscribers',
-        'description'  => 'Subscribers will receive email updates when incidents are created.',
-        'verified'     => 'Verified',
-        'not_verified' => 'Not verified',
+        'subscribers'  => 'Feliratkozók',
+        'description'  => 'Akik feliratkoztak értesítést fognak kapni ha incidens történik',
+        'verified'     => 'Ellenőrzött',
+        'not_verified' => 'Nem ellenőrzött',
         'add'          => [
-            'title'   => 'Add a new subscriber',
-            'success' => 'Subscriber has been added!',
-            'failure' => 'The subscriber could not be added. Please try again.',
+            'title'   => 'Új feliratkozó',
+            'success' => 'Feliratkozó hozzáadása sikeres!',
+            'failure' => 'Hiba történt a feliratkozó hozzáadásakor, próbáld újra!',
         ],
         'edit' => [
-            'title'   => 'Update subscriber',
-            'success' => 'Subscriber has been updated!',
-            'failure' => 'The subscriber could not be updated. Please try again.',
+            'title'   => 'Feliratkozó szerkesztése',
+            'success' => 'Feliratkozó szerkesztése sikeres!',
+            'failure' => 'Hiba történt a feliratkozó szerkesztésekor, próbáld újra!',
         ],
     ],
 
     // Team
     'team' => [
-        'team'        => 'Team',
-        'member'      => 'Member',
-        'profile'     => 'Profile',
-        'description' => 'Team Members will be able to add, modify &amp; edit components and incidents.',
+        'team'        => 'Csapat',
+        'member'      => 'Csapattag',
+        'profile'     => 'Profil',
+        'description' => 'A csapat tagjai hozzáadhatnak és szerkeszthetnek komponenseket és incidenseket.',
         'add'         => [
-            'title'   => 'Add a new team member',
-            'success' => 'Team member has been added!',
-            'failure' => 'The team member could not be added. Please try again.',
+            'title'   => 'Új csapattag hozzáadása',
+            'success' => 'Csapattag hozzáadása sikeres!',
+            'failure' => 'Hiba történt a csapattag hozzáadásakor, próbáld újra!',
         ],
         'edit' => [
-            'title'   => 'Update profile',
-            'success' => 'Team member has been updated!',
-            'failure' => 'The team member could not be updated. Please try again.',
+            'title'   => 'Profil szerkesztése',
+            'success' => 'Profil szerkesztés sikeres!',
+            'failure' => 'Hiba történt a profil szerkesztésekor, próbáld újra!',
         ],
         'delete' => [
-            'success' => 'Team member has been deleted and will no longer have access to the dashboard!',
-            'failure' => 'The team member could not be added. Please try again.',
+            'success' => 'Csapattag törlése sikeres, mostantól fogva nem fog hozzáférni a műszerfalhoz!',
+            'failure' => 'Hiba történt a csapattag törlésekor, próbáld újra!',
         ],
         'invite' => [
-            'title'   => 'Invite a new team member',
-            'success' => 'An invite has been sent',
-            'failure' => 'The invite could not be sent. Please try again.',
+            'title'   => 'Új tag meghívása',
+            'success' => 'Meghívó elküldve',
+            'failure' => 'Hiba történt a meghívó küldésekor, próbáld újra!',
         ],
     ],
 
     // Settings
     'settings' => [
-        'settings'  => 'Settings',
+        'settings'  => 'Beállítások',
         'app-setup' => [
-            'app-setup'   => 'Application Setup',
-            'images-only' => 'Only images may be uploaded.',
-            'too-big'     => 'The file you uploaded is too big. Upload an image smaller than :size',
+            'app-setup'   => 'Alkalmazás Beállítások',
+            'images-only' => 'Csak kép tölthető fel',
+            'too-big'     => 'A feltöltött fájl mérete túl nagy, tölts fel ennél kisebbet: :size',
         ],
         'analytics' => [
-            'analytics' => 'Analytics',
+            'analytics' => 'Analitika',
         ],
         'localization' => [
-            'localization' => 'Localization',
+            'localization' => 'Területi és nyelvi beállítások',
         ],
         'security' => [
-            'security'   => 'Security',
-            'two-factor' => 'Users without two-factor authentication',
+            'security'   => 'Biztonság',
+            'two-factor' => '2-faktoros autentikáció nélküli felhasználók',
         ],
         'stylesheet' => [
-            'stylesheet' => 'Stylesheet',
+            'stylesheet' => 'Stíluslap',
         ],
         'theme' => [
-            'theme' => 'Theme',
+            'theme' => 'Téma',
         ],
         'edit' => [
-            'success' => 'Settings saved.',
-            'failure' => 'Settings could not be saved.',
+            'success' => 'Beállítások mentése sikeres',
+            'failure' => 'Hiba történt a beállítás mentésekor!',
         ],
     ],
 
     // Login
     'login' => [
-        'login'      => 'Login',
-        'logged_in'  => 'You\'re logged in.',
-        'welcome'    => 'Welcome Back!',
-        'two-factor' => 'Please enter your token.',
+        'login'      => 'Bejelentkezés',
+        'logged_in'  => 'Bejelentkeztél!',
+        'welcome'    => 'Üdv újra!',
+        'two-factor' => 'Írd be a token kódot',
     ],
 
     // Sidebar footer
-    'help'        => 'Help',
-    'status_page' => 'Status Page',
-    'logout'      => 'Logout',
+    'help'        => 'Segítség',
+    'status_page' => 'Státusz Oldal',
+    'logout'      => 'Kijelentkezés',
 
     // Notifications
     'notifications' => [
-        'notifications' => 'Notifications',
-        'awesome'       => 'Awesome.',
-        'whoops'        => 'Whoops.',
+        'notifications' => 'Értesítések',
+        'awesome'       => 'Király.',
+        'whoops'        => 'Hupsz.',
     ],
 
     // Welcome modal
     'welcome' => [
-        'welcome' => 'Welcome to your status page!',
-        'message' => 'Your status page is almost ready! You might want to configure these extra settings',
-        'close'   => 'Just go straight to my dashboard',
+        'welcome' => 'Üdv a státusz oldaladon!',
+        'message' => 'A státusz oldalad már majdnem kész! Alább találsz még pár extra beállítást amit módosíthatsz',
+        'close'   => 'Vigyél egyenesen a műszerfalhoz',
         'steps'   => [
-            'component'  => 'Create components',
-            'incident'   => 'Create incidents',
-            'customize'  => 'Customize',
-            'team'       => 'Add users',
-            'api'        => 'Generate API token',
-            'two-factor' => 'Two Factor Authentication',
+            'component'  => 'Komponens létrehozása',
+            'incident'   => 'Incidens regisztrálása',
+            'customize'  => 'Testreszabás',
+            'team'       => 'Felhasználók hozzáadása',
+            'api'        => 'API kulcs generálása',
+            'two-factor' => '2-faktoros autentikáció',
         ],
     ],
 
