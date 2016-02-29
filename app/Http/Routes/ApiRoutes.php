@@ -32,6 +32,7 @@ class ApiRoutes
         $router->group(['namespace' => 'Api', 'prefix' => 'api/v1', 'middleware' => ['api']], function ($router) {
             $router->group(['middleware' => ['auth.api']], function ($router) {
                 $router->get('ping', 'GeneralController@ping');
+                $router->get('version', 'GeneralController@version');
 
                 $router->get('components', 'ComponentController@getComponents');
                 $router->get('components/groups', 'ComponentGroupController@getGroups');

@@ -22,4 +22,14 @@ class GeneralController extends AbstractApiController
     {
         return $this->item('Pong!');
     }
+
+    /**
+     * Endpoint to show the Cachet version.
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function version()
+    {
+        return $this->item(CACHET_VERSION);
+    }
 }
