@@ -82,7 +82,7 @@ class MetricController extends AbstractApiController
                 Binput::get('description'),
                 Binput::get('default_value'),
                 Binput::get('calc_type', 0),
-                Binput::get('display_chart'),
+                Binput::get('display_chart', true),
                 Binput::get('places', 2),
                 Binput::get('view', 1)
             ));
