@@ -9,6 +9,8 @@
 
 ![Screenshot](https://cachethq.io/img/main-interface.jpg)
 
+Cachet is a beautiful and powerful open source status page system, a free replacement to services such as StatusPage.io, Status.io and others.
+
 ## Features
 
 - List your services components
