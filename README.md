@@ -31,9 +31,37 @@ The `master` branch of this repository is a development branch and **should not*
 ## Requirements
 
 - PHP 5.5.9+ or newer
+- Apache or Nginx server
 - [Composer](https://getcomposer.org)
 
-### Development Requirements
+## How to contribute
+
+We're always looking for contributions that improve Cachet. It's easy to get started and you don't even need to know how to write a single line of code!
+
+### Contributing as a non-developer/non-designer
+
+If you're one of the more linguistically talented people in the world who can speak and write more than just English, we're always looking for new [translations](#translations).
+
+Of course bug reports, feature requests and [documentation](https://docs.cachethq.io) are always being sought after.
+
+### Contributing as a designer
+
+As Cachet gains new features, the design and ideas that were once a perfect fit need updating and in some cases designing from scratch. This is where you come in! Fancy giving Cachet a lick of paint? Sweet!
+
+You'll need to install Node.js, Bower and Gulp.
+
+To get started you can do the following:
+
+1. Install Node.js, Bower and Gulp.
+2. Install the assets; `bower install`
+3. Modify the SCSS files in `./resources/assets/sass/`
+4. Run `gulp`
+
+If you're making a lot of changes, you'll find that running `gulp watch` will really help you out!
+
+### Contributing as a developer
+
+Built using [Laravel](https://laravel.com), Cachet is very easy to jump into. Have a look around you'll find it!
 
 These extra dependencies are required to develop Cachet:
 
