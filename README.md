@@ -5,6 +5,7 @@
 [![Quality Score](https://img.shields.io/scrutinizer/g/CachetHQ/Cachet.svg?style=flat-square)](https://scrutinizer-ci.com/g/CachetHQ/Cachet)
 [![Software License](https://img.shields.io/badge/license-BSD3-brightgreen.svg?style=flat-square)](LICENSE)
 [![Crowdin](https://d322cqt584bo4o.cloudfront.net/cachet/localized.png)](http://translate.cachethq.io/project/cachet)
+[![Packagist](https://img.shields.io/packagist/v/cachethq/cachet.svg?style=flat-square)](https://packagist.org/packages/cachethq/cachet)
 
 ![Screenshot](https://cachethq.io/img/main-interface.jpg)
 
