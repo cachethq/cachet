@@ -68,6 +68,9 @@ These extra dependencies are required to develop Cachet:
 - Node.js
 - Bower
 - Gulp
+- Git
+
+Once cloned to your local machine, you'll need some demo data! Simply run `php artisan cachet:seed` to get the demo installation on the go.
 
 ## Installation, Upgrades and Documentation
 
