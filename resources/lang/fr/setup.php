@@ -10,7 +10,7 @@
  */
 
 return [
-    'setup'             => 'Réglages',
+    'setup'             => 'Installation',
     'title'             => 'Configuration de Cachet',
     'service_details'   => 'Détails du service',
     'env_setup'         => 'Configuration de l\'environnement',

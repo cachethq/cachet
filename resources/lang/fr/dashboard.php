@@ -123,19 +123,19 @@ return [
     'metrics' => [
         'metrics' => 'Indicateur',
         'add'     => [
-            'title'   => 'Créer un indicateur',
+            'title'   => 'Créer une métrique',
             'message' => 'Vous devez ajouter un indicateur.',
             'success' => 'L\'indicateur a été ajouté !',
-            'failure' => 'L\'indicateur n\'a pas pu être ajouté. Veuillez réessayer.',
+            'failure' => 'Un problème est survenu avec cette métrique.',
         ],
         'edit' => [
-            'title'   => 'Modifier un indicateur',
-            'success' => 'L\'indicateur a été mis à jour !',
-            'failure' => 'L\'indicateur n\'a pas pu être mis à jour. Veuillez réessayer.',
+            'title'   => 'Modifier une métrique',
+            'success' => 'Métrique mise à jour.',
+            'failure' => 'Un problème est survenu avec cette métrique.',
         ],
         'delete' => [
-            'success' => 'L\'indicateur a été supprimé et ne sera pas affiché sur votre page de statut.',
-            'failure' => 'L\'indicateur n\'a pas pu être supprimé. Veuillez réessayer.',
+            'success' => 'La métrique a été supprimé et ne sera plus visible sur votre page de statut.',
+            'failure' => 'La métrique n\'a pas pu être supprimé. Veuillez réessayer.',
         ],
     ],
     // Subscribers
@@ -168,17 +168,17 @@ return [
             'failure' => 'Une erreur est survenue avec le composant.',
         ],
         'edit' => [
-            'title'   => 'Mettre le Profil à Jour',
+            'title'   => 'Mettre le profil à jour',
             'success' => 'Le membre de l\'équipe a été mis à jour !',
             'failure' => 'Le membre de l\'équipe n\'a pas pu être mis à jour. Veuillez réessayer.',
         ],
         'delete' => [
-            'success' => 'Le membre de l\'équipe a été supprimé et n\'ont plus avoir accès au tableau de bord !',
+            'success' => 'Le membre de l\'équipe a été supprimé et n\'aura plus l\'accès au tableau de bord !',
             'failure' => 'Le membre de l\'équipe n\'a pas pu être supprimé. Veuillez réessayer.',
         ],
         'invite' => [
             'title'   => 'Inviter un nouveau membre de l\'équipe',
-            'success' => 'L\'invitation a été envoyé',
+            'success' => 'Nouveau membre invité.',
             'failure' => 'L\'invitation n\'a pas pu être envoyé. Veuillez réessayer.',
         ],
     ],
@@ -195,7 +195,7 @@ return [
             'analytics' => 'Analytics',
         ],
         'localization' => [
-            'localization' => 'Localization',
+            'localization' => 'Localisation',
         ],
         'security' => [
             'security'   => 'Sécurité',
@@ -209,7 +209,7 @@ return [
         ],
         'edit' => [
             'success' => 'Paramètres sauvegardés.',
-            'failure' => 'Les paramètres n\'a pas pu être sauvegardé.',
+            'failure' => 'Les paramètres n\'ont pas pu être sauvegardés.',
         ],
     ],
 
@@ -236,7 +236,7 @@ return [
     // Welcome modal
     'welcome' => [
         'welcome' => 'Bienvenue sur votre page de statut !',
-        'message' => 'Votre page de statut est presque prête ! Vous pouvez configurer ces paramètres supplémentaires',
+        'message' => 'Votre page de statut est presque prête ! Vous voudrez peut-être configurer ces paramètres supplémentaires',
         'close'   => 'Aller directement à mon tableau de bord',
         'steps'   => [
             'component'  => 'Créer des composants',

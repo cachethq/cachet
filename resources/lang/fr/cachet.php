@@ -26,7 +26,7 @@ return [
         'past'          => 'Incidents antérieurs',
         'previous_week' => 'Semaine précédente',
         'next_week'     => 'Semaine suivante',
-        'scheduled'     => 'Geplante Wartungen',
+        'scheduled'     => 'Maintenance Planifiée',
         'scheduled_at'  => ', planifé à :timestamp',
         'status'        => [
             0 => 'Planifié', // TODO: Hopefully remove this.
@@ -46,7 +46,7 @@ return [
 
     'api' => [
         'regenerate' => 'Régénérer la clé API',
-        'revoke'     => 'API-Schlüssel widerrufen',
+        'revoke'     => 'Révoquer la clé API',
     ],
 
     // Metrics
@@ -110,7 +110,7 @@ return [
     'signup' => [
         'title'    => 'Inscription',
         'username' => 'Nom d\'utilisateur',
-        'email'    => 'Adresse email',
+        'email'    => 'Adresse e-mail',
         'password' => 'Mot de passe ',
         'success'  => 'Votre compte a été créé.',
         'failure'  => 'Un problème est survenu lors de votre inscription.',
