@@ -18,7 +18,8 @@ use Illuminate\Database\Eloquent\Builder;
  *
  * @author James Brooks <james@alt-three.com>
  */
-trait SearchableTrait {
+trait SearchableTrait
+{
     /**
      * Adds clauses to an eloquent builder.
      *
