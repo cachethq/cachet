@@ -24,6 +24,8 @@ use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 class ComponentController extends AbstractApiController
 {
+    use SearchableTrait;
+
     /**
      * Get all components.
      *
@@ -42,6 +44,8 @@ class ComponentController extends AbstractApiController
 
             $components->sort($sortBy, $direction);
         }
+
+        $components = $this->search($components, Binput::except(['sort', 'order', 'per_page']));
 
         $components = $components->paginate(Binput::get('per_page', 20));
 

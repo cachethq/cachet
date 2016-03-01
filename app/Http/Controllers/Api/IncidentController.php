@@ -40,6 +40,8 @@ class IncidentController extends AbstractApiController
             $incidents->sort($sortBy, $direction);
         }
 
+        $incidents = $this->search($incidents, Binput::except(['sort', 'order', 'per_page']));
+
         $incidents = $incidents->paginate(Binput::get('per_page', 20));
 
         return $this->paginator($incidents, Request::instance());

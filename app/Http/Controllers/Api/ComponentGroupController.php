@@ -37,6 +37,8 @@ class ComponentGroupController extends AbstractApiController
             $groups->sort($sortBy, $direction);
         }
 
+        $groups = $this->search($groups, Binput::except(['sort', 'order', 'per_page']));
+
         $groups = $groups->paginate(Binput::get('per_page', 20));
 
         return $this->paginator($groups, Request::instance());
