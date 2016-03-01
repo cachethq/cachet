@@ -34,6 +34,8 @@ class IncidentController extends AbstractApiController
 
         $incidents = Incident::where('visible', '>=', $incidentVisibility);
 
+        $incidents->search(Binput::except(['sort', 'order', 'per_page']));
+
         if ($sortBy = Binput::get('sort')) {
             $direction = Binput::has('order') && Binput::get('order') == 'desc';
 

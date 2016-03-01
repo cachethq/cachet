@@ -37,6 +37,8 @@ class ComponentController extends AbstractApiController
             $components = Component::enabled();
         }
 
+        $components->search(Binput::except(['sort', 'order', 'per_page']));
+
         if ($sortBy = Binput::get('sort')) {
             $direction = Binput::has('order') && Binput::get('order') == 'desc';
 

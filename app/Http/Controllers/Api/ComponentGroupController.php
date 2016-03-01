@@ -31,6 +31,8 @@ class ComponentGroupController extends AbstractApiController
     {
         $groups = ComponentGroup::whereRaw('1=1');
 
+        $groups->search(Binput::except(['sort', 'order', 'per_page']));
+
         if ($sortBy = Binput::get('sort')) {
             $direction = Binput::has('order') && Binput::get('order') == 'desc';
 
