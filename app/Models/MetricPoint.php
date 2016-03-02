@@ -21,13 +21,24 @@ class MetricPoint extends Model implements HasPresenter
     use ValidatingTrait;
 
     /**
+     * The model's attributes.
+     *
+     * @var string[]
+     */
+    protected $attributes = [
+        'value'   => 0,
+        'counter' => 1,
+    ];
+
+    /**
      * The attributes that should be casted to native types.
      *
      * @var string[]
      */
     protected $casts = [
         'metric_id' => 'int',
-        'value'     => 'int',
+        'value'     => 'float',
+        'counter'   => 'int',
     ];
 
     /**
@@ -35,7 +46,12 @@ class MetricPoint extends Model implements HasPresenter
      *
      * @var string[]
      */
-    protected $fillable = ['metric_id', 'value', 'created_at'];
+    protected $fillable = [
+        'metric_id',
+        'value',
+        'counter',
+        'created_at',
+    ];
 
     /**
      * The validation rules.
@@ -53,7 +69,25 @@ class MetricPoint extends Model implements HasPresenter
      */
     public function metric()
     {
-        return $this->belongsTo(Metric::class, 'id', 'metric_id');
+        return $this->belongsTo(Metric::class);
+    }
+
+    /**
+     * Override the value attribute.
+     *
+     * @param mixed $value
+     *
+     * @return float
+     */
+    public function getActiveValueAttribute($value)
+    {
+        if ($this->metric->calc_type === Metric::CALC_SUM) {
+            return round((float) $value * $this->counter, $this->metric->places);
+        } elseif ($this->metric->calc_type === Metric::CALC_AVG) {
+            return round((float) $value * $this->counter, $this->metric->places);
+        }
+
+        return round((float) $value, $this->metric->places);
     }
 
     /**
