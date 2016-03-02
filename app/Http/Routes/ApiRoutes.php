@@ -29,8 +29,8 @@ class ApiRoutes
      */
     public function map(Registrar $router)
     {
-        $router->group(['namespace' => 'Api', 'prefix' => 'api/v1', 'middleware' => ['api']], function ($router) {
-            $router->group(['middleware' => ['auth.api']], function ($router) {
+        $router->group(['namespace' => 'Api', 'prefix' => 'api/v1', 'middleware' => ['api']], function (Registrar $router) {
+            $router->group(['middleware' => ['auth.api']], function (Registrar $router) {
                 $router->get('ping', 'GeneralController@ping');
                 $router->get('version', 'GeneralController@version');
 
@@ -47,7 +47,7 @@ class ApiRoutes
                 $router->get('metrics/{metric}/points', 'MetricController@getMetricPoints');
             });
 
-            $router->group(['middleware' => ['auth.api:true']], function ($router) {
+            $router->group(['middleware' => ['auth.api:true']], function (Registrar $router) {
                 $router->get('subscribers', 'SubscriberController@getSubscribers');
 
                 $router->post('components', 'ComponentController@postComponents');

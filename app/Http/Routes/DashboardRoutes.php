@@ -29,13 +29,13 @@ class DashboardRoutes
      */
     public function map(Registrar $router)
     {
-        $router->group(['middleware' => ['web', 'auth'], 'prefix' => 'dashboard', 'namespace' => 'Dashboard', 'as' => 'dashboard.'], function ($router) {
+        $router->group(['middleware' => ['web', 'auth'], 'prefix' => 'dashboard', 'namespace' => 'Dashboard', 'as' => 'dashboard.'], function (Registrar $router) {
             $router->get('/', [
                 'as'   => 'index',
                 'uses' => 'DashboardController@showDashboard',
             ]);
 
-            $router->group(['as' => 'components.', 'prefix' => 'components'], function ($router) {
+            $router->group(['as' => 'components.', 'prefix' => 'components'], function (Registrar $router) {
                 $router->get('/', [
                     'as'   => 'index',
                     'uses' => 'ComponentController@showComponents',
@@ -68,7 +68,7 @@ class DashboardRoutes
                 $router->post('{component}/edit', 'ComponentController@updateComponentAction');
             });
 
-            $router->group(['as' => 'incidents.', 'prefix' => 'incidents'], function ($router) {
+            $router->group(['as' => 'incidents.', 'prefix' => 'incidents'], function (Registrar $router) {
                 $router->get('/', [
                     'as'   => 'index',
                     'uses' => 'IncidentController@showIncidents',
@@ -89,7 +89,7 @@ class DashboardRoutes
                 $router->post('{incident}/edit', 'IncidentController@editIncidentAction');
             });
 
-            $router->group(['as' => 'schedule.', 'prefix' => 'schedule'], function ($router) {
+            $router->group(['as' => 'schedule.', 'prefix' => 'schedule'], function (Registrar $router) {
                 $router->get('/', [
                     'as'   => 'index',
                     'uses' => 'ScheduleController@showIndex',
@@ -110,7 +110,7 @@ class DashboardRoutes
                 ]);
             });
 
-            $router->group(['as' => 'templates.', 'prefix' => 'templates'], function ($router) {
+            $router->group(['as' => 'templates.', 'prefix' => 'templates'], function (Registrar $router) {
                 $router->get('/', [
                     'as'   => 'index',
                     'uses' => 'IncidentController@showTemplates',
@@ -128,7 +128,7 @@ class DashboardRoutes
                 $router->delete('{incident_template}/delete', 'IncidentController@deleteTemplateAction');
             });
 
-            $router->group(['as'     => 'subscribers.', 'prefix' => 'subscribers'], function ($router) {
+            $router->group(['as'     => 'subscribers.', 'prefix' => 'subscribers'], function (Registrar $router) {
                 $router->get('/', [
                     'as'   => 'index',
                     'uses' => 'SubscriberController@showSubscribers',
@@ -141,7 +141,7 @@ class DashboardRoutes
                 $router->delete('{subscriber}/delete', 'SubscriberController@deleteSubscriberAction');
             });
 
-            $router->group(['as'  => 'metrics.', 'prefix' => 'metrics'], function ($router) {
+            $router->group(['as'  => 'metrics.', 'prefix' => 'metrics'], function (Registrar $router) {
                 $router->get('/', [
                     'as'   => 'index',
                     'uses' => 'MetricController@showMetrics',
@@ -159,13 +159,13 @@ class DashboardRoutes
                 $router->post('{metric}/edit', 'MetricController@editMetricAction');
             });
 
-            $router->group(['as' => 'team.', 'prefix' => 'team'], function ($router) {
+            $router->group(['as' => 'team.', 'prefix' => 'team'], function (Registrar $router) {
                 $router->get('/', [
                     'as'   => 'index',
                     'uses' => 'TeamController@showTeamView',
                 ]);
 
-                $router->group(['middleware' => 'admin'], function ($router) {
+                $router->group(['middleware' => 'admin'], function (Registrar $router) {
                     $router->get('add', [
                         'as'   => 'add',
                         'uses' => 'TeamController@showAddTeamMemberView',
@@ -182,7 +182,7 @@ class DashboardRoutes
                 });
             });
 
-            $router->group(['as' => 'settings.', 'prefix' => 'settings'], function ($router) {
+            $router->group(['as' => 'settings.', 'prefix' => 'settings'], function (Registrar $router) {
                 $router->get('setup', [
                     'as'   => 'setup',
                     'uses' => 'SettingsController@showSetupView',
@@ -210,7 +210,7 @@ class DashboardRoutes
                 $router->post('/', 'SettingsController@postSettings');
             });
 
-            $router->group(['prefix' => 'user'], function ($router) {
+            $router->group(['prefix' => 'user'], function (Registrar $router) {
                 $router->get('/', [
                     'as'   => 'user',
                     'uses' => 'UserController@showUser',
@@ -219,7 +219,7 @@ class DashboardRoutes
                 $router->get('{user}/api/regen', 'UserController@regenerateApiKey');
             });
 
-            $router->group(['prefix' => 'api'], function ($router) {
+            $router->group(['prefix' => 'api'], function (Registrar $router) {
                 $router->get('incidents/templates', 'ApiController@getIncidentTemplate');
                 $router->post('components/groups/order', 'ApiController@postUpdateComponentGroupOrder');
                 $router->post('components/order', 'ApiController@postUpdateComponentOrder');

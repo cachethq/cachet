@@ -29,7 +29,7 @@ class SetupRoutes
      */
     public function map(Registrar $router)
     {
-        $router->group(['middleware' => ['web', 'setup']], function ($router) {
+        $router->group(['middleware' => ['web', 'setup']], function (Registrar $router) {
             $router->controller('setup', 'SetupController');
         });
     }

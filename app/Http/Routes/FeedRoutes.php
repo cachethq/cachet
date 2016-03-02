@@ -29,7 +29,7 @@ class FeedRoutes
      */
     public function map(Registrar $router)
     {
-        $router->group(['middleware' => ['web', 'ready']], function ($router) {
+        $router->group(['middleware' => ['web', 'ready']], function (Registrar $router) {
             $router->get('/atom/{component_group?}', [
                 'as'   => 'feed.atom',
                 'uses' => 'FeedController@atomAction',

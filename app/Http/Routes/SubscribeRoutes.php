@@ -29,7 +29,7 @@ class SubscribeRoutes
      */
     public function map(Registrar $router)
     {
-        $router->group(['middleware' => ['web', 'ready', 'localize', 'subscribers'], 'as' => 'subscribe.'], function ($router) {
+        $router->group(['middleware' => ['web', 'ready', 'localize', 'subscribers'], 'as' => 'subscribe.'], function (Registrar $router) {
             $router->get('subscribe', [
                 'as'   => 'subscribe',
                 'uses' => 'SubscribeController@showSubscribe',

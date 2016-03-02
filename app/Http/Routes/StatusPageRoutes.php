@@ -29,7 +29,7 @@ class StatusPageRoutes
      */
     public function map(Registrar $router)
     {
-        $router->group(['middleware' => ['web', 'ready', 'localize']], function ($router) {
+        $router->group(['middleware' => ['web', 'ready', 'localize']], function (Registrar $router) {
             $router->get('/', [
                 'as'   => 'status-page',
                 'uses' => 'StatusPageController@showIndex',
