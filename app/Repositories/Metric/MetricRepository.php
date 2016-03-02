@@ -105,7 +105,7 @@ class MetricRepository
 
         $points = [];
 
-        $pointKey = $dateTime->format('jS M');
+        $pointKey = $dateTime->format('D jS M');
 
         for ($i = 0; $i <= 7; $i++) {
             $points[$pointKey] = $this->repository->getPointsForDayInWeek($metric, $i);

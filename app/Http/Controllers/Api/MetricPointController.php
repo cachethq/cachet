@@ -48,8 +48,8 @@ class MetricPointController extends AbstractApiController
             $metricPoint = dispatch(new AddMetricPointCommand(
                 $metric,
                 Binput::get('value'),
-                Binput::get('timestamp'))
-            );
+                Binput::get('timestamp')
+            ));
         } catch (QueryException $e) {
             throw new BadRequestHttpException();
         }
