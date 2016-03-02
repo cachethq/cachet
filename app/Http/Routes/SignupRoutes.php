@@ -29,7 +29,7 @@ class SignupRoutes
      */
     public function map(Registrar $router)
     {
-        $router->group(['middleware' => ['web', 'ready', 'guest'], 'as' => 'signup.'], function ($router) {
+        $router->group(['middleware' => ['web', 'ready', 'guest'], 'as' => 'signup.'], function (Registrar $router) {
             $router->get('signup/invite/{code}', [
                 'as'   => 'invite',
                 'uses' => 'SignupController@getSignup',

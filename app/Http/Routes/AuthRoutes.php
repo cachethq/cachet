@@ -29,7 +29,7 @@ class AuthRoutes
      */
     public function map(Registrar $router)
     {
-        $router->group(['as' => 'auth.', 'middleware' => ['web', 'ready'], 'prefix' => 'auth'], function ($router) {
+        $router->group(['as' => 'auth.', 'middleware' => ['web', 'ready'], 'prefix' => 'auth'], function (Registrar $router) {
             $router->get('login', [
                 'middleware' => 'guest',
                 'as'         => 'login',
