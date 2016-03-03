@@ -60,6 +60,7 @@ return [
             'weekly'    => 'Week',
             'monthly'   => 'Month',
         ],
+        'uptime_percent' => 'Uptime percent',
     ],
 
     // Subscriber
