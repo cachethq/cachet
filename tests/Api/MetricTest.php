@@ -62,6 +62,7 @@ class MetricTest extends AbstractApiTestCase
             'display_chart' => 1,
             'places'        => 0,
             'view'          => 0,
+            'uptime_calc'   => 1,
         ]);
         $this->seeJson(['name' => 'Foo']);
         $this->assertResponseOk();

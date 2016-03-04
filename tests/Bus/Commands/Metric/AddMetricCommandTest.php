@@ -37,6 +37,7 @@ class AddMetricCommandTest extends AbstractTestCase
             'display_chart' => 1,
             'places'        => 0,
             'default_view'  => 0,
+            'uptime_calc'   => 1,
         ];
 
         $object = new AddMetricCommand(
@@ -47,7 +48,8 @@ class AddMetricCommandTest extends AbstractTestCase
             $params['calc_type'],
             $params['display_chart'],
             $params['places'],
-            $params['default_view']
+            $params['default_view'],
+            $params['uptime_calc']
         );
 
         return compact('params', 'object');
