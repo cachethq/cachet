@@ -70,6 +70,13 @@ final class AddMetricCommand
     public $default_view;
 
     /**
+     * The metric uptime calculator switcher.
+     *
+     * @var int
+     */
+    public $uptime_calc;
+
+    /**
      * The validation rules.
      *
      * @var string[]
@@ -84,6 +91,7 @@ final class AddMetricCommand
         'display_chart' => 'int',
         'places'        => 'int|between:0,4',
         'default_view'  => 'int|between:0,3',
+        'uptime_calc'   => 'bool',
     ];
 
     /**
@@ -97,10 +105,11 @@ final class AddMetricCommand
      * @param int    $display_chart
      * @param int    $places
      * @param int    $default_view
+     * @param int    $uptime_calc
      *
      * @return void
      */
-    public function __construct($name, $suffix, $description, $default_value, $calc_type, $display_chart, $places, $default_view)
+    public function __construct($name, $suffix, $description, $default_value, $calc_type, $display_chart, $places, $default_view, $uptime_calc)
     {
         $this->name = $name;
         $this->suffix = $suffix;
@@ -110,5 +119,6 @@ final class AddMetricCommand
         $this->display_chart = $display_chart;
         $this->places = $places;
         $this->default_view = $default_view;
+        $this->uptime_calc = $uptime_calc;
     }
 }

@@ -244,6 +244,7 @@ class DemoSeederCommand extends Command
                 'default_value' => 0,
                 'calc_type'     => 1,
                 'display_chart' => 1,
+                'uptime_calc'   => random_int(0, 1), # display (or not) uptime percent
             ],
         ];
 

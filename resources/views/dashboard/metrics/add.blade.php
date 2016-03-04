@@ -62,6 +62,13 @@
                                 {{ trans('forms.metrics.display-chart') }}
                             </label>
                         </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="hidden" value="0" name="metric[uptime_calc]">
+                                <input type="checkbox" value="1" name="metric[uptime_calc]">
+                                {{ trans('forms.metrics.uptime_calc') }}
+                            </label>
+                        </div>
                     </fieldset>
                     <div class='form-group'>
                         <div class='btn-group'>
