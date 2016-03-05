@@ -79,7 +79,7 @@ class FeedController extends Controller
     private function feedAction(ComponentGroup &$group, $isRss)
     {
         if ($group->exists) {
-            $group->components->map(function ($component) {
+            $group->components->map(function ($component) use ($isRss) {
                 $component->incidents()->visible()->orderBy('created_at', 'desc')->get()->map(function ($incident) use ($isRss) {
                     $this->feedAddItem($incident, $isRss);
                 });
