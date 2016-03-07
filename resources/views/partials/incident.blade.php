@@ -22,4 +22,11 @@
     <div class="panel-body">
         {!! $incident->formattedMessage !!}
     </div>
+    @if($incident->updates->count())
+    <div class="list-group">
+        @foreach($incident->updates as $update)
+        <div class="list-group-item"><i class="{{ $update->icon }}"></i> <strong>{{ $update->human_status }}</strong><br>{!! $update->formattedMessage !!}</div>
+        @endforeach
+    </div>
+    @endif
 </div>

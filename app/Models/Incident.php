@@ -90,6 +90,13 @@ class Incident extends Model implements HasPresenter
     ];
 
     /**
+     * The relations to eager load on every query.
+     *
+     * @var string[]
+     */
+    protected $with = ['updates'];
+
+    /**
      * Finds all visible incidents.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
@@ -125,6 +132,16 @@ class Incident extends Model implements HasPresenter
         return $query->where(function ($query) {
             return $query->whereNull('scheduled_at')->orWhere('scheduled_at', '<=', Carbon::now());
         });
+    }
+
+    /**
+     * Get the updates relation.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function updates()
+    {
+        return $this->hasMany(IncidentUpdate::class)->orderBy('created_at', 'desc');
     }
 
     /**
