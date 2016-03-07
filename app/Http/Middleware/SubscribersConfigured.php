@@ -18,6 +18,25 @@ use Illuminate\Support\Facades\Redirect;
 class SubscribersConfigured
 {
     /**
+     * The redirector instance.
+     *
+     * @var \Illuminate\Routing\Redirector
+     */
+    protected $redirector;
+
+    /**
+     * Create a new subscribers configured middleware instance.
+     *
+     * @param \Illuminate\Routing\Redirector $redirector
+     *
+     * @return void
+     */
+    public function __construct(Redirector $redirector)
+    {
+        $this->redirector = $redirector;
+    }
+
+    /**
      * Handle an incoming request.
      *
      * @param \Illuminate\Http\Request $request
@@ -28,7 +47,7 @@ class SubscribersConfigured
     public function handle(Request $request, Closure $next)
     {
         if (!subscribers_enabled()) {
-            return Redirect::route('status-page');
+            return $this->redirector->route('status-page');
         }
 
         return $next($request);
