@@ -207,6 +207,10 @@ class DashboardRoutes
                     'as'   => 'stylesheet',
                     'uses' => 'SettingsController@showStylesheetView',
                 ]);
+                $router->get('customization', [
+                    'as'   => 'customization',
+                    'uses' => 'SettingsController@showCustomizationView',
+                ]);
                 $router->post('/', 'SettingsController@postSettings');
             });
 

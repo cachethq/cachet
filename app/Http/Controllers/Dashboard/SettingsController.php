@@ -56,6 +56,12 @@ class SettingsController extends Controller
                 'icon'   => 'ion-paintbucket',
                 'active' => false,
             ],
+            'customization' => [
+                'title'  => trans('dashboard.settings.customization.customization'),
+                'url'    => route('dashboard.settings.customization'),
+                'icon'   => 'ion-wand',
+                'active' => false,
+            ],
             'localization' => [
                 'title'  => trans('dashboard.settings.localization.localization'),
                 'url'    => route('dashboard.settings.localization'),
@@ -134,6 +140,22 @@ class SettingsController extends Controller
 
         return View::make('dashboard.settings.localization')
             ->withPageTitle(trans('dashboard.settings.localization.localization').' - '.trans('dashboard.dashboard'))
+            ->withSubMenu($this->subMenu);
+    }
+
+    /**
+     * Shows the settings customization view.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function showCustomizationView()
+    {
+        $this->subMenu['customization']['active'] = true;
+
+        Session::flash('redirect_to', $this->subMenu['customization']['url']);
+
+        return View::make('dashboard.settings.customization')
+            ->withPageTitle(trans('dashboard.settings.customization.customization').' - '.trans('dashboard.dashboard'))
             ->withSubMenu($this->subMenu);
     }
 

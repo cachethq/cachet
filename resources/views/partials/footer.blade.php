@@ -1,3 +1,6 @@
+@if($app_footer)
+{!! $app_footer !!}
+@else
 <footer class="footer">
     <div class="container">
         <div class="row">
@@ -34,5 +37,6 @@
         </div>
     </div>
 </footer>
+@endif
 
 @include("partials.analytics")
