@@ -199,6 +199,11 @@ return [
         'localization' => [
             'localization' => 'Localization',
         ],
+        'customization' => [
+            'customization' => 'Customization',
+            'header'        => 'Custom Header HTML',
+            'footer'        => 'Custom Footer HTML',
+        ],
         'security' => [
             'security'   => 'Security',
             'two-factor' => 'Users without two-factor authentication',

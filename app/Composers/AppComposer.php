@@ -39,6 +39,8 @@ class AppComposer
         $view->withAppLocale(Config::get('setting.app_locale'));
         $view->withAppStylesheet(Config::get('setting.stylesheet'));
         $view->withAppUrl(Config::get('app.url'));
+        $view->withAppHeader(Config::get('setting.header'));
+        $view->withAppFooter(Config::get('setting.footer'));
 
         $view->withAppName($name = Config::get('setting.app_name'));
         $view->withShowSupport($support = Config::get('setting.show_support'));
