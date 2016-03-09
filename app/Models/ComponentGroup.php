@@ -12,6 +12,7 @@
 namespace CachetHQ\Cachet\Models;
 
 use AltThree\Validator\ValidatingTrait;
+use CachetHQ\Cachet\Models\Traits\SearchableTrait;
 use CachetHQ\Cachet\Models\Traits\SortableTrait;
 use CachetHQ\Cachet\Presenters\ComponentGroupPresenter;
 use Illuminate\Database\Eloquent\Model;
@@ -19,7 +20,7 @@ use McCool\LaravelAutoPresenter\HasPresenter;
 
 class ComponentGroup extends Model implements HasPresenter
 {
-    use SortableTrait, ValidatingTrait;
+    use SearchableTrait, SortableTrait, ValidatingTrait;
 
     /**
      * The attributes that should be casted to native types.
@@ -48,6 +49,18 @@ class ComponentGroup extends Model implements HasPresenter
         'name'      => 'required|string',
         'order'     => 'int',
         'collapsed' => 'bool',
+    ];
+
+    /**
+     * The searchable fields.
+     *
+     * @var string[]
+     */
+    protected $searchable = [
+        'id',
+        'name',
+        'order',
+        'collapsed',
     ];
 
     /**

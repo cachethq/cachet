@@ -1,3 +1,6 @@
+@if($app_header)
+{!! $app_header !!}
+@else
 @if($app_banner)
 <div @if($app_banner_style_full_width)class="app-banner"@endif>
     <div class="container">
@@ -12,4 +15,5 @@
         </div>
     </div>
 </div>
+@endif
 @endif
