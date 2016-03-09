@@ -21,10 +21,10 @@ use Illuminate\Database\Eloquent\Builder;
 trait SearchableTrait
 {
     /**
-     * Adds a sort scope.
+     * Adds a search scope.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
-     * @param array                                 $column
+     * @param array                                 $search
      *
      * @return \Illuminate\Database\Eloquent\Builder
      */
