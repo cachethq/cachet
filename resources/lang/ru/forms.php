@@ -86,6 +86,7 @@ return [
         'type_avg'         => 'Среднее значение',
         'places'           => 'Разрядность',
         'default_view'     => 'Default view',
+        'uptime_calc'      => 'Отображать процент доступности метрики?',
 
         'points' => [
             'value' => 'Значение',

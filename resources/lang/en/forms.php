@@ -89,6 +89,7 @@ return [
         'type_avg'         => 'Average',
         'places'           => 'Decimal places',
         'default_view'     => 'Default view',
+        'uptime_calc'      => 'Display metric uptime percent?',
 
         'points' => [
             'value' => 'Value',

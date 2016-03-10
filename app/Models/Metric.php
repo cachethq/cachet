@@ -47,6 +47,7 @@ class Metric extends Model implements HasPresenter
         'calc_type'     => 0,
         'places'        => 2,
         'default_view'  => 1,
+        'uptime_calc'   => 0,
     ];
 
     /**
@@ -61,6 +62,7 @@ class Metric extends Model implements HasPresenter
         'calc_type'     => 'int',
         'places'        => 'int',
         'default_view'  => 'int',
+        'uptime_calc'   => 'bool',
     ];
 
     /**
@@ -77,6 +79,7 @@ class Metric extends Model implements HasPresenter
         'calc_type',
         'places',
         'default_view',
+        'uptime_calc',
     ];
 
     /**
@@ -91,6 +94,7 @@ class Metric extends Model implements HasPresenter
         'default_value' => 'numeric',
         'places'        => 'numeric|between:0,4',
         'default_view'  => 'numeric|between:0,3',
+        'uptime_calc'   => 'bool',
     ];
 
     /**
@@ -104,6 +108,7 @@ class Metric extends Model implements HasPresenter
         'display_chart',
         'default_value',
         'calc_type',
+        'uptime_calc',
     ];
 
     /**

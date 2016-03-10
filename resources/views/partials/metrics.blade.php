@@ -10,6 +10,9 @@
                     <i class="ion ion-ios-help-outline" data-toggle="tooltip" data-title="{{ $metric->description }}"></i>
                     @endif
                 </strong>
+                @if($metric->uptime_calc)
+                {{ trans('cachet.metrics.uptime_percent') }}: <span id="metric-{{ $metric->id }}-uptime">0</span>%
+                @endif
             </div>
             <div class="col-xs-2">
                 <div class="dropdown pull-right">
@@ -90,6 +93,26 @@
 
             if (chart.chart !== null) {
                 chart.chart.destroy();
+            }
+
+            if (result.data.metric.uptime_calc) {
+                // calculate uptime percent
+                var not_null_cnt = data_len = 0;
+                var def_value = result.data.metric.default_value;
+
+                $.each(data, function (time, val) {
+                    if (val > def_value) { // or maybe should be 'not equal to def_value'?
+                        not_null_cnt++;
+                    }
+                    data_len++;
+                });
+
+                // render new uptime percent
+                var uptime_percent = 0;
+                if (data_len > 0) {
+                    uptime_percent = (not_null_cnt / data_len * 100).toFixed(4);
+                }
+                $('#metric-' + metricId + '-uptime').html(uptime_percent);
             }
 
             chart.chart = new Chart(chart.context).Line(chartConfig, {

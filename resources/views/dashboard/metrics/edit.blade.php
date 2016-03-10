@@ -62,6 +62,13 @@
                                 {{ trans('forms.metrics.display-chart') }}
                             </label>
                         </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="hidden" value="0" name="uptime_calc">
+                                <input type="checkbox" value="1" name="uptime_calc" {{ $metric->uptime_calc ? 'checked' : null }}>
+                                {{ trans('forms.metrics.uptime_calc') }}
+                            </label>
+                        </div>
                     </fieldset>
 
                     <input type="hidden" name="id" value={{$metric->id}}>

@@ -57,6 +57,7 @@ return [
             'weekly'    => 'Неделя',
             'monthly'   => 'Месяц',
         ],
+        'uptime_percent' => 'Процент доступности',
     ],
 
     // Subscriber
