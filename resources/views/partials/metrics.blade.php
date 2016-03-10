@@ -95,7 +95,7 @@
             chart.chart = new Chart(chart.context).Line(chartConfig, {
                 tooltipTemplate: $el.data('metric-name') + ": <{{ '%' }}= value %> " + $el.data('metric-suffix'),
                 scaleShowVerticalLines: true,
-                scaleShowLabels: false,
+                scaleShowLabels: true,
                 responsive: true,
                 maintainAspectRatio: false
             });
