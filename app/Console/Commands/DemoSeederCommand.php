@@ -82,11 +82,11 @@ class DemoSeederCommand extends Command
             [
                 'name'      => 'Websites',
                 'order'     => 1,
-                'collapsed' => false,
+                'collapsed' => 0,
             ], [
                 'name'      => 'Alt Three',
                 'order'     => 2,
-                'collapsed' => true,
+                'collapsed' => 1,
             ],
         ];
 

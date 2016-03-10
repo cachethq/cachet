@@ -22,11 +22,12 @@
                             <input type="text" class="form-control" name="name" id="group-name" value="{{ $group->name }}" required>
                         </div>
                         <div class="form-group">
-                            <label>
-                                <input type="hidden" value="0" name="collapsed">
-                                <input type="checkbox" value="1" name="collapsed" {{ $group->collapsed ? "checked" : null }}>
-                                {{ trans('forms.components.groups.collapsed') }}
-                            </label>
+                            <label>{{ trans('forms.components.groups.collapsing') }}</label>
+                            <select name="collapsed" class="form-control" required>
+                                <option value="0" {{ $group->collapsed === 0 ? "selected" : null }}>{{ trans('forms.components.groups.visible') }}</option>
+                                <option value="1" {{ $group->collapsed === 1 ? "selected" : null }}>{{ trans('forms.components.groups.collapsed') }}</option>
+                                <option value="2" {{ $group->collapsed === 2 ? "selected" : null }}>{{ trans('forms.components.groups.collapsed_incident') }}</option>
+                            </select>
                         </div>
                     </fieldset>
 
