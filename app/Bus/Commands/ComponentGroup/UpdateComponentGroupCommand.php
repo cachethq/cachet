@@ -13,6 +13,11 @@ namespace CachetHQ\Cachet\Bus\Commands\ComponentGroup;
 
 use CachetHQ\Cachet\Models\ComponentGroup;
 
+/**
+ * This is the update component group command.
+ *
+ * @author James Brooks <james@alt-three.com>
+ */
 final class UpdateComponentGroupCommand
 {
     /**
@@ -39,7 +44,7 @@ final class UpdateComponentGroupCommand
     /**
      * Is the component group collapsed?
      *
-     * @var bool
+     * @var int
      */
     public $collapsed;
 
@@ -51,7 +56,7 @@ final class UpdateComponentGroupCommand
     public $rules = [
         'name'      => 'string',
         'order'     => 'int',
-        'collapsed' => 'bool',
+        'collapsed' => 'int|between:0,3',
     ];
 
     /**
@@ -60,7 +65,7 @@ final class UpdateComponentGroupCommand
      * @param \CachetHQ\Cachet\Models\ComponentGroup $group
      * @param string                                 $name
      * @param int                                    $order
-     * @param bool                                   $collapsed
+     * @param int                                    $collapsed
      *
      * @return void
      */

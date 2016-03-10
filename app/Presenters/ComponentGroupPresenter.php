@@ -63,7 +63,25 @@ class ComponentGroupPresenter extends BasePresenter implements Arrayable
      */
     public function collapse_class()
     {
-        return $this->wrappedObject->collapsed ? 'ion-ios-plus-outline' : 'ion-ios-minus-outline';
+        return $this->is_collapsed() ? 'ion-ios-plus-outline' : 'ion-ios-minus-outline';
+    }
+
+    /**
+     * Determine if the group should be collapsed.
+     *
+     * @return bool
+     */
+    public function is_collapsed()
+    {
+        if ($this->wrappedObject->collapsed === 0) {
+            return false;
+        } elseif ($this->wrappedObject->collapsed === 1) {
+            return true;
+        }
+
+        return $this->wrappedObject->components->filter(function ($component) {
+            return $component->status > 1;
+        })->count() === 0;
     }
 
     /**

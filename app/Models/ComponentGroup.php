@@ -30,7 +30,7 @@ class ComponentGroup extends Model implements HasPresenter
     protected $casts = [
         'name'      => 'string',
         'order'     => 'int',
-        'collapsed' => 'bool',
+        'collapsed' => 'int',
     ];
 
     /**
@@ -48,7 +48,7 @@ class ComponentGroup extends Model implements HasPresenter
     public $rules = [
         'name'      => 'required|string',
         'order'     => 'int',
-        'collapsed' => 'bool',
+        'collapsed' => 'int',
     ];
 
     /**
@@ -90,6 +90,16 @@ class ComponentGroup extends Model implements HasPresenter
     public function components()
     {
         return $this->hasMany(Component::class, 'group_id', 'id');
+    }
+
+    /**
+     * Get the incidents relation.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasManyThrough
+     */
+    public function incidents()
+    {
+        return $this->hasManyThrough(Incident::class, Component::class, 'id', 'component_id');
     }
 
     /**
