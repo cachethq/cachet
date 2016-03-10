@@ -34,7 +34,7 @@ $factory->define(ComponentGroup::class, function ($faker) {
     return [
         'name'      => $faker->words(2, true),
         'order'     => 0,
-        'collapsed' => $faker->boolean(),
+        'collapsed' => random_int(0, 3),
     ];
 });
 

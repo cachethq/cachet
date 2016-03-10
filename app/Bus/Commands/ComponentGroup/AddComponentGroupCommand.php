@@ -11,6 +11,11 @@
 
 namespace CachetHQ\Cachet\Bus\Commands\ComponentGroup;
 
+/**
+ * This is the add component group command.
+ *
+ * @author James Brooks <james@alt-three.com>
+ */
 final class AddComponentGroupCommand
 {
     /**
@@ -30,7 +35,7 @@ final class AddComponentGroupCommand
     /**
      * Is the component group collapsed?
      *
-     * @var bool
+     * @var int
      */
     public $collapsed;
 
@@ -42,7 +47,7 @@ final class AddComponentGroupCommand
     public $rules = [
         'name'      => 'required|string',
         'order'     => 'int',
-        'collapsed' => 'bool',
+        'collapsed' => 'int|between:0,3',
     ];
 
     /**
@@ -50,7 +55,7 @@ final class AddComponentGroupCommand
      *
      * @param string $name
      * @param int    $order
-     * @param bool   $collapsed
+     * @param int    $collapsed
      *
      * @return void
      */
