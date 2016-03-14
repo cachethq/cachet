@@ -37,6 +37,13 @@ final class UpdateComponentCommand
     public $description;
 
     /**
+     * The component version.
+     *
+     * @var string
+     */
+    public $version;
+
+    /**
      * The component status.
      *
      * @var int
@@ -79,6 +86,7 @@ final class UpdateComponentCommand
     public $rules = [
         'name'        => 'string',
         'description' => 'string',
+        'version'     => 'string',
         'status'      => 'int|min:1|max:4',
         'link'        => 'url',
         'order'       => 'int',
@@ -92,6 +100,7 @@ final class UpdateComponentCommand
      * @param \CachetHQ\Cachet\Models\Component $component
      * @param string                            $name
      * @param string                            $description
+     * @param string                            $version
      * @param int                               $status
      * @param string                            $link
      * @param int                               $order
@@ -100,11 +109,12 @@ final class UpdateComponentCommand
      *
      * @return void
      */
-    public function __construct(Component $component, $name, $description, $status, $link, $order, $group_id, $enabled)
+    public function __construct(Component $component, $name, $description, $version, $status, $link, $order, $group_id, $enabled)
     {
         $this->component = $component;
         $this->name = $name;
         $this->description = $description;
+        $this->version = $version;
         $this->status = (int) $status;
         $this->link = $link;
         $this->order = $order;
