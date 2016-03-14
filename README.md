@@ -89,6 +89,10 @@ To test out the demo, you may login to the [Dashboard](https://demo.cachethq.io/
 
 The demo is reset every half hour.
 
+### Release Notes
+
+All releases are listed on the [Releases page](https://github.com/CachetHQ/Cachet/releases) of the [Cachet GitHub repository](https://github.com/CachetHQ/Cachet). On the Releases page, you can also find the release notes for each release.
+
 ## Translations
 
 A special thank you to our [translators](https://crowdin.com/project/cachet/activity_stream), who have allowed us to share Cachet with the world. If you'd like to contribute translations, please check out our [CrowdIn project](https://crowdin.com/project/cachet).
