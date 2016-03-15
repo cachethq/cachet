@@ -35,19 +35,19 @@
 </ul>
 <script>
 (function () {
-    Chart.defaults.global.pointHitDetectionRadius = 1;
-    Chart.defaults.global.scaleBeginAtZero = true;
+    Chart.defaults.global.responsive = true;
+    Chart.defaults.global.maintainAspectRation = false;
+    Chart.defaults.global.legend.display = false;
 
     var charts = {},
         defaultData = {
-            showTooltips: false,
             labels: [],
             datasets: [{
-                fillColor: "{{ $theme_metrics }}",
-                pointColor: "{{ color_darken($theme_metrics, -0.1) }}",
-                pointStrokeColor: "{{ color_darken($theme_metrics, -0.1) }}",
-                pointHighlightFill: "{{ color_darken($theme_metrics, -0.2) }}",
-                pointHighlightStroke: "{{ color_darken($theme_metrics, -0.2) }}",
+                backgroundColor: "{{ $theme_metrics }}",
+                pointBackgroundColor: "{{ color_darken($theme_metrics, -0.1) }}",
+                pointBorderColor: "{{ color_darken($theme_metrics, -0.1) }}",
+                pointHoverBackgroundColor: "{{ color_darken($theme_metrics, -0.2) }}",
+                pointHoverBorderColor: "{{ color_darken($theme_metrics, -0.2) }}",
                 data: []
             }],
         };
@@ -92,12 +92,21 @@
                 chart.chart.destroy();
             }
 
-            chart.chart = new Chart(chart.context).Line(chartConfig, {
+            chart.chart = new Chart(chart.context, {
+                type: 'line',
+                data: chartConfig,
+                options:{
+                    scales:{
+                        yAxes:[{
+                            ticks:{
+                                beginAtZero:true
+                            }
+                        }]
+                    }
+                },
                 tooltipTemplate: $el.data('metric-name') + ": <{{ '%' }}= value %> " + $el.data('metric-suffix'),
                 scaleShowVerticalLines: true,
                 scaleShowLabels: true,
-                responsive: true,
-                maintainAspectRatio: false
             });
         });
     }
