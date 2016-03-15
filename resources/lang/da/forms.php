@@ -27,11 +27,11 @@ return [
 
     // Login form fields
     'login' => [
-        'login'         => 'Username or Email',
+        'login'         => 'Brugernavn eller email',
         'email'         => 'Email',
         'password'      => 'Adgangskode',
         '2fauth'        => 'Godkendelses kode',
-        'invalid'       => 'Invalid username or password',
+        'invalid'       => 'Ugyldigt brugernavn eller adgangskode',
         'invalid-token' => 'Ugyldig kode',
         'cookies'       => 'Du skal tillade cookies for at kunne logge ind.',
     ],
@@ -52,7 +52,7 @@ return [
         'templates'          => [
             'name'     => 'Navn',
             'template' => 'Template',
-            'twig'     => 'Incident Templates can make use of the <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a> templating language.',
+            'twig'     => 'Hændelse skabeloner kan gøre brug af <a href="http://twig.sensiolabs.org/" target="_blank"> Twigs</a> skabelon sprog.',
         ],
     ],
 
@@ -63,13 +63,13 @@ return [
         'group'       => 'Group',
         'description' => 'Description',
         'link'        => 'Link',
-        'tags'        => 'Tags',
+        'tags'        => 'Mærkat',
         'tags-help'   => 'Komma adskilt.',
         'enabled'     => 'Component enabled?',
 
         'groups' => [
             'name'      => 'Navn',
-            'collapsed' => 'Collapse the group by default?',
+            'collapsed' => 'Minimer gruppen som standard',
         ],
     ],
 
@@ -85,7 +85,7 @@ return [
         'type_sum'         => 'Sum',
         'type_avg'         => 'Average',
         'places'           => 'Antal decimaler',
-        'default_view'     => 'Default view',
+        'default_view'     => 'Standardvisning',
 
         'points' => [
             'value' => 'Value',
@@ -102,7 +102,7 @@ return [
             'about-this-page'        => 'Om',
             'days-of-incidents'      => 'Hvor mange dage skal der vises hændelser for?',
             'banner'                 => 'Banner Image',
-            'banner-help'            => 'Det anbefales ikke at uploade billeder bredere end 930px.',
+            'banner-help'            => "Det anbefales ikke at uploade billeder bredere end 930px.",
             'subscribers'            => 'Tillad at man kan tilmelde sig emailnotifikationer?',
         ],
         'analytics' => [

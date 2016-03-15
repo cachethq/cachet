@@ -11,13 +11,13 @@
 
 return [
     'setup'             => 'セットアップ',
-    'title'             => 'セットアップ Cachet',
+    'title'             => 'Cachetのセットアップ',
     'service_details'   => 'サービスの詳細情報',
-    'env_setup'         => 'Environment setup',
-    'status_page_setup' => 'ステータス　ページのセットアップ',
+    'env_setup'         => '環境設定',
+    'status_page_setup' => 'ステータスページのセットアップ',
     'show_support'      => 'Show support for Cachet?',
-    'admin_account'     => 'Administrator account',
-    'complete_setup'    => 'Complete setup',
-    'completed'         => 'Cachet has been configured successfully!',
-    'finish_setup'      => 'Go to dashboard',
+    'admin_account'     => '管理者アカウント',
+    'complete_setup'    => 'セットアップの完了',
+    'completed'         => 'Cachetの設定が正常に終わりました！',
+    'finish_setup'      => 'ダッシュボード画面に移動',
 ];

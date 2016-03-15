@@ -174,7 +174,7 @@ return [
     'cancel' => 'Peruuta',
     'remove' => 'Poista',
     'invite' => 'Kutsu',
-    'signup' => 'Sign Up',
+    'signup' => 'Rekisteröidy',
 
     // Other
     'optional' => '* Valinnainen',

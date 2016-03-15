@@ -102,7 +102,7 @@ return [
             'about-this-page'        => 'À propos de cette page',
             'days-of-incidents'      => 'Combien de jours d\'incidents à montrer ?',
             'banner'                 => 'Image d\'en-tête',
-            'banner-help'            => 'Il est recommandé de téléchargez un fichier ne dépassant pas 930px de large .',
+            'banner-help'            => "Il est recommandé de téléchargez un fichier ne dépassant pas 930px de large .",
             'subscribers'            => 'Permettre aux personnes de s\'inscrire aux notifications par e-mail ?',
         ],
         'analytics' => [

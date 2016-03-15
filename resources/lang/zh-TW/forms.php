@@ -102,7 +102,7 @@ return [
             'about-this-page'        => '關於本站',
             'days-of-incidents'      => '顯示多少天前的事件？',
             'banner'                 => '圖片橫幅',
-            'banner-help'            => '橫幅寬度建議少於 930px 。',
+            'banner-help'            => "橫幅寬度建議少於 930px 。",
             'subscribers'            => '允許用戶訂閱郵件通知嗎?',
         ],
         'analytics' => [

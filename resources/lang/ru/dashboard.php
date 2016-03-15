@@ -17,7 +17,7 @@ return [
     'incidents' => [
         'title'                    => 'Инциденты и Плановые работы',
         'incidents'                => 'Инциденты',
-        'logged'                   => '{0} Нет инцидентов, отличная работа!|У вас записан один инцидент.|Записано инцидентов: <strong>:count</strong>.',
+        'logged'                   => '{0} Нет инцидентов, отличная работа!|У вас зарегистрирован <strong>:count</strong> инцидент.|У вас зарегистрировано <strong>:count</strong> инцидента.|У вас зарегистрировано <strong>:count</strong> инцидентов.',
         'incident-create-template' => 'Создать шаблон',
         'incident-templates'       => 'Шаблоны инцидентов',
         'add'                      => [
@@ -59,7 +59,7 @@ return [
     // Incident Maintenance
     'schedule' => [
         'schedule'     => 'Плановое техническое обслуживание',
-        'logged'       => '{0} There are no schedules, good work.|You have logged one schedule.|You have reported <strong>:count</strong> schedules.',
+        'logged'       => '{0} Ни одного планового обслуживания не зарегистрировано.|У вас зарегистрировано <strong>:count</strong> плановое обслуживание.|У вас зарегистрировано <strong>:count</strong> плановых обслуживания.|У вас зарегистрировано <strong>:count</strong> плановых обслуживаний.',
         'scheduled_at' => 'запланировано на :timestamp',
         'add'          => [
             'title'   => 'Добавить плановое техническое обслуживание',

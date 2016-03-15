@@ -107,7 +107,7 @@ return [
     ],
 
     'signup' => [
-        'title'    => 'Sign Up',
+        'title'    => 'Rekisteröidy',
         'username' => 'Käyttäjätunnus',
         'email'    => 'Sähköposti',
         'password' => 'Salasana',

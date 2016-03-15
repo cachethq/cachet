@@ -22,7 +22,7 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => 'No incidents reported',
+        'none'          => '无故障报告',
         'past'          => '历史状态',
         'previous_week' => '前一周',
         'next_week'     => '后一周',
@@ -39,9 +39,9 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] System operational|[2,Inf] All systems are operational',
-        'bad'   => '[0,1] The system is currently experiencing issues|[2,Inf] Some systems are experiencing issues',
-        'major' => '[0,1] The service experiencing a major outage|[2,Inf] Some systems are experiencing a major outage',
+        'good'  => '[0,1] 系统工作正常|[2,Inf] 所有系统工作正常',
+        'bad'   => '[0,1] 一个系统出现了问题|[2,Inf] 一些系统出现了问题',
+        'major' => '[0,1] 一个系统出现重大故障|[2,Inf] 一些系统出现重大故障',
     ],
 
     'api' => [
@@ -52,7 +52,7 @@ return [
     // Metrics
     'metrics' => [
         'filter' => [
-            'last_hour' => 'Last Hour',
+            'last_hour' => '上个小时',
             'hourly'    => '最近12小时',
             'weekly'    => '周',
             'monthly'   => '月',
@@ -70,7 +70,7 @@ return [
             'unsubscribe'        => '取消电子邮件订阅。',
             'unsubscribed'       => 'Your email subscription has been cancelled.',
             'failure'            => 'Something went wrong with the subscription.',
-            'already-subscribed' => 'Cannot subscribe :email because they\'re already subscribed.',
+            'already-subscribed' => '无法订阅：因为这个邮箱地址已经在订阅列表中了。',
             'verify'             => [
                 'text'           => "Please confirm your email subscription to :app_name status updates.\n:link\nThank you, :app_name",
                 'html-preheader' => 'Please confirm your email subscription to :app_name status updates.',
@@ -87,11 +87,11 @@ return [
                 'html'           => '<p>New incident has been reported on :app_name.</p><p>Thank you, :app_name</p>',
             ],
             'component' => [
-                'subject'        => 'Component Status Update',
-                'text'           => 'The component :component_name has seen a status change. The component is now at :component_human_status.\nThank you, :app_name',
-                'html-preheader' => 'Component Update from :app_name',
-                'html'           => '<p>The component :component_name has seen a status change. The component is now at :component_human_status.</p><p>Thank you, :app_name</p>',
-                'tooltip-title'  => 'Subscribe to notifications for :component_name.',
+                'subject'        => '组件状态更新',
+                'text'           => 'component :component_name 的状态已经更新。component现在的状态为: component_human_status。\n谢谢, :app_name',
+                'html-preheader' => 'component 更新来自:app_name',
+                'html'           => '<p>component :component_name 已经被变更。component正在component_human_status。</p><p>谢谢, :app_name</p>',
+                'tooltip-title'  => '订阅来自 component_name 的更新',
             ],
         ],
     ],
@@ -116,15 +116,15 @@ return [
     ],
 
     'system' => [
-        'update' => 'There is a newer version of Cachet available. You can learn how to update <a href="https://docs.cachethq.io/docs/updating-cachet">here</a>!',
+        'update' => '有新版的Cachet可用，您可以<a href="https://docs.cachethq.io/docs/updating-cachet">点击这里</a>获取更新咨询',
     ],
 
     // Modal
     'modal' => [
-        'close'     => 'Close',
+        'close'     => '关闭',
         'subscribe' => [
-            'title'  => 'Subscribe to component updates',
-            'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll already receive emails for this component.',
+            'title'  => '订阅组件状态更新',
+            'body'   => '请输入您用于接收订阅该组件更新通知的电子邮箱。如果您已经订阅，您应已收到关于这个组件的一系列电子邮件。',
             'button' => 'Subscribe',
         ],
     ],

@@ -68,11 +68,8 @@ return [
         'enabled'     => 'Component enabled?',
 
         'groups' => [
-            'name'               => 'Name',
-            'collapsing'         => 'Choose visibility of the group',
-            'visible'            => 'Always expanded',
-            'collapsed'          => 'Collapse the group by default',
-            'collapsed_incident' => 'Collapse the group, but expand if there are issues',
+            'name'      => 'Name',
+            'collapsed' => 'Collapse the group by default?',
         ],
     ],
 
