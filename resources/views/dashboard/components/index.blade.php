@@ -8,7 +8,7 @@
         <div class="content-wrapper">
             <div class="header sub-header">
                 <span class="uppercase">
-                    <i class="icons ion-ios-browsers"></i> {{ trans('dashboard.components.components') }}
+                    <i class="ion ion-ios-browsers-outline"></i> {{ trans('dashboard.components.components') }}
                 </span>
                 <a class="btn btn-sm btn-success pull-right" href="{{ route('dashboard.components.add') }}">
                     {{ trans('dashboard.components.add.title') }}
@@ -23,7 +23,7 @@
                         <div class="col-xs-6">
                             <h4>
                                 @if($components->count() > 1)
-                                <span class="drag-handle"><i class="ion-drag"></i></span>
+                                <span class="drag-handle"><i class="ion ion-drag"></i></span>
                                 @endif
                                 {{ $component->name }} <small>{{ $component->human_status }}</small>
                             </h4>

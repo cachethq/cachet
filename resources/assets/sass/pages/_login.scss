@@ -1,15 +1,10 @@
 body.login {
-    background: linear-gradient(rgba($cachet-icons, 0.2), rgba($cachet-icons, 0.3)), $cachet-green;
+    background: $sidebar-background-color;
 
     .form-bg {
-        padding:20px;
-        border-radius:10px;
-        position: absolute;
+        border-radius: 10px;
         margin: auto;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
+        padding-top: 100px;
         width: 320px;
         height: 280px;
     }

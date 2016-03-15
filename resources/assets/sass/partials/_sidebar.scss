@@ -23,6 +23,7 @@ body.dashboard {
             list-style: none;
 
             .profile {
+                text-align: center;
                 padding: 20px 10px;
                 margin-bottom: 0;
                 .dropdown-toggle {
@@ -33,18 +34,18 @@ body.dashboard {
                 }
                 .avatar {
                     width: 60px;
-                    margin-right: 10px;
                     img {
                         border-radius: 50%;
                         width: 50px;
                     }
                 }
-                .username-wrapper {
-                    @extend .hidden-sm;
-                }
-                &.username {
+                .username {
                     word-break: break-all;
+                    margin-bottom: 0;
+                }
+                a {
                     color: $sidebar-text-color;
+                    text-decoration: none;
                 }
             }
             .quick-add-incident {
@@ -70,9 +71,13 @@ body.dashboard {
                         a {
                             padding-top: 14px;
                             padding-bottom: 14px;
-                            border-top: 1px solid #BED3EA;
-                            border-bottom: 1px solid #BED3EA;
+                            border-top: 1px solid #6c818c;
+                            border-bottom: 1px solid #6c818c;
                             color: $sidebar-text-active-color;
+                            &:focus,
+                            &:hover {
+                                text-decoration: none;
+                            }
                         }
                     }
                     a {
@@ -85,7 +90,9 @@ body.dashboard {
                             text-align: center;
                             position: relative;
                             top: 1px;
+                            margin-right: 5px;
                         }
+                        &:focus,
                         &:hover {
                             text-decoration: none;
                         }
@@ -127,6 +134,7 @@ body.dashboard {
                 border-right: 1px solid #ddd;
                 border-top: 1px solid #ddd;
                 a {
+                    color: #333333;
                     display: block;
                     position: relative;
                     text-align: center;
@@ -196,7 +204,7 @@ body.dashboard {
         position: fixed;
         margin-left: 228px;
         width: 22%;
-        background: #fcfcfc;
+        background: #f9fdff;
         border-right: 1px solid #E8ECF1;
 
         h3 {
@@ -227,6 +235,9 @@ body.dashboard {
                     &:hover {
                         color: $cachet-secondary;
                     }
+                }
+                i {
+                    margin-right: 5px;
                 }
             }
         }

@@ -3,10 +3,10 @@
 @section('content')
     <div class="header">
         <div class="sidebar-toggler visible-xs">
-            <i class="icon ion-navicon"></i>
+            <i class="ion ion-navicon"></i>
         </div>
         <span class="uppercase">
-            <i class="icon ion-android-calendar"></i> {{ trans('dashboard.schedule.schedule') }}
+            <i class="ion ion-android-calendar"></i> {{ trans('dashboard.schedule.schedule') }}
         </span>
         &gt; <small>{{ trans('dashboard.schedule.add.title') }}</small>
     </div>

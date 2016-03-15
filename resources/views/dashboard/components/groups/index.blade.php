@@ -8,7 +8,7 @@
         <div class="content-wrapper">
             <div class="header sub-header">
                 <span class="uppercase">
-                    <i class="icons ion-ios-keypad"></i> {{ trans_choice('dashboard.components.groups.groups', 2) }}
+                    <i class="ion  ion-ios-keypad"></i> {{ trans_choice('dashboard.components.groups.groups', 2) }}
                 </span>
                 <a class="btn btn-sm btn-success pull-right" href="{{ route('dashboard.components.groups.add') }}">
                     {{ trans('dashboard.components.groups.add.title') }}
@@ -23,7 +23,7 @@
                         <div class="col-xs-6">
                             <h4>
                                 @if($groups->count() > 1)
-                                <span class="drag-handle"><i class="ion-drag"></i></span>
+                                <span class="drag-handle"><i class="ion ion-drag"></i></span>
                                 @endif
                                 {{ $group->name }}
                                 <span class="label label-info">{{ $group->components->count() }}</span>

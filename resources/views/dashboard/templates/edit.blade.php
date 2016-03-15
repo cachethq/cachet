@@ -23,10 +23,10 @@
 @section('content')
     <div class="header">
         <div class="sidebar-toggler visible-xs">
-            <i class="icon ion-navicon"></i>
+            <i class="ion ion-navicon"></i>
         </div>
         <span class="uppercase">
-            <i class="icon ion-document"></i> {{ trans('dashboard.incidents.templates.title') }}
+            <i class="ion ion-ios-paper-outline"></i> {{ trans('dashboard.incidents.templates.title') }}
         </span>
         &gt; <small>{{ trans('dashboard.incidents.templates.edit.title') }}</small>
     </div>

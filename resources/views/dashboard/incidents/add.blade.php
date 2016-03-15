@@ -3,10 +3,10 @@
 @section('content')
     <div class="header">
         <div class="sidebar-toggler visible-xs">
-            <i class="icon ion-navicon"></i>
+            <i class="ion ion-navicon"></i>
         </div>
         <span class="uppercase">
-            <i class="icon ion-android-alert"></i> {{ trans('dashboard.incidents.incidents') }}
+            <i class="ion ion-ios-information-outline"></i> {{ trans('dashboard.incidents.incidents') }}
         </span>
         &gt; <small>{{ trans('dashboard.incidents.add.title') }}</small>
     </div>
@@ -36,22 +36,22 @@
                             <label for="incident-name">{{ trans('forms.incidents.status') }}</label><br>
                             <label class="radio-inline">
                                 <input type="radio" name="status" value="1">
-                                <i class="icon ion-flag"></i>
+                                <i class="ion ion-flag"></i>
                                 {{ trans('cachet.incidents.status')[1] }}
                             </label>
                             <label class="radio-inline">
                                 <input type="radio" name="status" value="2">
-                                <i class="icon ion-alert-circled"></i>
+                                <i class="ion ion-alert-circled"></i>
                                 {{ trans('cachet.incidents.status')[2] }}
                             </label>
                             <label class="radio-inline">
                                 <input type="radio" name="status" value="3">
-                                <i class="icon ion-eye"></i>
+                                <i class="ion ion-eye"></i>
                                 {{ trans('cachet.incidents.status')[3] }}
                             </label>
                             <label class="radio-inline">
                                 <input type="radio" name="status" value="4">
-                                <i class="icon ion-checkmark"></i>
+                                <i class="ion ion-checkmark"></i>
                                 {{ trans('cachet.incidents.status')[4] }}
                             </label>
                         </div>

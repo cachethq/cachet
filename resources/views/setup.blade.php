@@ -167,7 +167,7 @@
             </div>
             <div class="step block-4 hidden">
                 <div class="setup-success">
-                    <i class="ion-checkmark-circled"></i>
+                    <i class="ion ion-checkmark-circled"></i>
                     <h3>
                         {{ trans("setup.completed") }}
                     </h3>
