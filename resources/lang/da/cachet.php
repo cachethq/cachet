@@ -22,7 +22,7 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => 'No incidents reported',
+        'none'          => 'Ingen hændelser er rapporteret',
         'past'          => 'Tidligere hændelser',
         'previous_week' => 'Sidste uge',
         'next_week'     => 'Næste uge',
@@ -39,9 +39,9 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] System operational|[2,Inf] All systems are operational',
-        'bad'   => '[0,1] The system is currently experiencing issues|[2,Inf] Some systems are experiencing issues',
-        'major' => '[0,1] The service experiencing a major outage|[2,Inf] Some systems are experiencing a major outage',
+        'good'  => '[0,1] Systemet virker|[2,Inf] Alle systemer virker',
+        'bad'   => '[0,1] Systemet har i øjeblikket problemer|[2,Inf] Nogle systemer har i øjeblikket problemer',
+        'major' => '[0,1] Systemet har i øjeblikket store problemer|[2,Inf] Nogle systemer har i øjeblikket store problemer',
     ],
 
     'api' => [
@@ -52,7 +52,7 @@ return [
     // Metrics
     'metrics' => [
         'filter' => [
-            'last_hour' => 'Last Hour',
+            'last_hour' => 'Sidste time',
             'hourly'    => 'Sidste 12 timer',
             'weekly'    => 'Uge',
             'monthly'   => 'Måned',
@@ -70,7 +70,7 @@ return [
             'unsubscribe'        => 'Afmeld emailnotifikationer.',
             'unsubscribed'       => 'Du er nu blevet frameldt vores emailnotifikationer.',
             'failure'            => 'Noget gik galt med bekræftelsen.',
-            'already-subscribed' => 'Cannot subscribe :email because they\'re already subscribed.',
+            'already-subscribed' => 'Kan ikke abonnere da :email allerede er tilmeldt.',
             'verify'             => [
                 'text'           => "Bekræft din tilmelding til vores emailnotifikationer for :app_name statusopdateringer.\n:link\nTak, :app_name",
                 'html-preheader' => 'Bekræft venligst din tilmelding til :app_name statusopdateringer via email.',
@@ -87,11 +87,11 @@ return [
                 'html'           => '<p>Ny fejl raporteret på :app_name.</p><p>Mvh, :app_name</p>',
             ],
             'component' => [
-                'subject'        => 'Component Status Update',
-                'text'           => 'The component :component_name has seen a status change. The component is now at :component_human_status.\nThank you, :app_name',
-                'html-preheader' => 'Component Update from :app_name',
-                'html'           => '<p>The component :component_name has seen a status change. The component is now at :component_human_status.</p><p>Thank you, :app_name</p>',
-                'tooltip-title'  => 'Subscribe to notifications for :component_name.',
+                'subject'        => 'Komponent status opdatering',
+                'text'           => 'Komponentet :component_name har ændret status. Komponentet er nu :component_human_status.\nTak, :app_name',
+                'html-preheader' => 'Komponent opdatering fra :app_name',
+                'html'           => '<p>Komponentet :component_name har ændret status. Komponentet er nu :component_human_status.</p><p>\nTak, :app_name</p>',
+                'tooltip-title'  => 'Abonner på notifikation for :component_name.',
             ],
         ],
     ],
@@ -116,15 +116,15 @@ return [
     ],
 
     'system' => [
-        'update' => 'There is a newer version of Cachet available. You can learn how to update <a href="https://docs.cachethq.io/docs/updating-cachet">here</a>!',
+        'update' => 'Der er en nyere version af Cachet tilgængelig. Du kan læse mere om hvordan du opdatere <a href="https://docs.cachethq.io/docs/updating-cachet">her</a>!',
     ],
 
     // Modal
     'modal' => [
-        'close'     => 'Close',
+        'close'     => 'Luk',
         'subscribe' => [
-            'title'  => 'Subscribe to component updates',
-            'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll already receive emails for this component.',
+            'title'  => 'Abonner på komponent opdateringer',
+            'body'   => 'Indtast din email adresse for at abonnere på opdateringer angående dette komponent. Hvis du allerede er tilmeldt, vil du modtage emails angående dette komponent.',
             'button' => 'Abonner',
         ],
     ],

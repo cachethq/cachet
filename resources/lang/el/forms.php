@@ -174,7 +174,7 @@ return [
     'cancel' => 'Cancel',
     'remove' => 'Remove',
     'invite' => 'Invite',
-    'signup' => 'Sign Up',
+    'signup' => 'Εγγραφή',
 
     // Other
     'optional' => '* Optional',

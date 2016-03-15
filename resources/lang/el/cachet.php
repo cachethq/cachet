@@ -22,10 +22,10 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => 'No incidents reported',
-        'past'          => 'Past Incidents',
-        'previous_week' => 'Previous Week',
-        'next_week'     => 'Next Week',
+        'none'          => 'Δεν υπάρχουν περιστατικά',
+        'past'          => 'Προηγούμενα περιστατικά',
+        'previous_week' => 'Προηγούμενη εβδομάδα',
+        'next_week'     => 'Επόμενη εβδομάδα',
         'scheduled'     => 'Προγραμματισμένη Συντήρηση',
         'scheduled_at'  => ', προγραμματισμένη :timestamp',
         'status'        => [
@@ -39,9 +39,9 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] System operational|[2,Inf] All systems are operational',
-        'bad'   => '[0,1] The system is currently experiencing issues|[2,Inf] Some systems are experiencing issues',
-        'major' => '[0,1] The service experiencing a major outage|[2,Inf] Some systems are experiencing a major outage',
+        'good'  => '[0,1] Το σύστημα βρίσκεται σε λειτουργία[2,Inf] Όλα τα συστήματα βρίσκονται σε λειτουργία',
+        'bad'   => '[0,1] Το σύστημα αντιμετωπίζει προβλήματα|[2,Inf] Κάποια συστήματα αντιμετωπίζουν προβλήματα',
+        'major' => '[0,1] Η υπηρεσία αντιμετωπίζει μία σημαντική διακοπή|[2,Inf] Κάποια συστήματα αντιμετωπίζουν μία σημαντική διακοπή',
     ],
 
     'api' => [
@@ -52,46 +52,46 @@ return [
     // Metrics
     'metrics' => [
         'filter' => [
-            'last_hour' => 'Last Hour',
-            'hourly'    => 'Last 12 Hours',
-            'weekly'    => 'Week',
-            'monthly'   => 'Month',
+            'last_hour' => 'Τελευταία ώρα',
+            'hourly'    => 'Τελευταίες 12 ώρες',
+            'weekly'    => 'Εβδομάδα',
+            'monthly'   => 'Μήνας',
         ],
     ],
 
     // Subscriber
     'subscriber' => [
-        'subscribe' => 'Subscribe to get the most recent updates',
-        'button'    => 'Subscribe',
+        'subscribe' => 'Εγγραφείτε για να λάβετε τις τελευταίες ενημερώσεις',
+        'button'    => 'Εγγραφή',
         'email'     => [
-            'subscribe'          => 'Subscribe to email updates.',
-            'subscribed'         => 'You\'ve been subscribed to email notifications, please check your email to confirm your subscription.',
-            'verified'           => 'Your email subscription has been confirmed. Thank you!',
-            'unsubscribe'        => 'Unsubscribe from email updates.',
-            'unsubscribed'       => 'Your email subscription has been cancelled.',
-            'failure'            => 'Something went wrong with the subscription.',
-            'already-subscribed' => 'Cannot subscribe :email because they\'re already subscribed.',
+            'subscribe'          => 'Εγγραφή στις ενημερώσεις μέσω email.',
+            'subscribed'         => 'Έχετε εγγραφεί στις ενημερώσεις μέσω email, παρακαλώ ελέγξτε το email σας για να επιβεβαιώσετε την εγγραφή σας.',
+            'verified'           => 'Η εγγραφή σας έχει επιβεβαιωθεί. Ευχαριστούμε!',
+            'unsubscribe'        => 'Διαγραφή από τις ενημερώσεις μέσω email.',
+            'unsubscribed'       => 'Η εγγραφή σας έχει ακυρωθεί.',
+            'failure'            => 'Προέκυψε ένα σφάλμα σχετικά με την εγγραφή.',
+            'already-subscribed' => 'Δεν ήταν δυνατή η εγγραφή του :email επειδή είναι ήδη εγγεγραμμένο.',
             'verify'             => [
-                'text'           => "Please confirm your email subscription to :app_name status updates.\n:link\nThank you, :app_name",
-                'html-preheader' => 'Please confirm your email subscription to :app_name status updates.',
-                'html'           => '<p>Please confirm your email subscription to :app_name status updates.</p><p><a href=":link">:link</a></p><p>Thank you, :app_name</p>',
+                'text'           => "Παρακαλώ επιβεβαιώστε τη συνδρομή σας στις ενημερώσεις για το :app_name.\n:link\nΕυχαριστούμε, :app_name",
+                'html-preheader' => 'Παρακαλώ επιβεβαιώστε τη συνδρομή σας στις ενημερώσεις του :app_name.',
+                'html'           => '<p>Παρακαλώ επιβεβαιώστε τη συνδρομή σας στις ενημερώσεις του :app_name.</p><p><a href=":link">:link</a></p><p>Ευχαριστούμε, :app_name</p>',
             ],
             'maintenance' => [
-                'text'           => "New maintenance has been scheduled on :app_name.\nThank you, :app_name",
-                'html-preheader' => 'New maintenance has been scheduled on :app_name.',
-                'html'           => '<p>New maintenance has been scheduled on :app_name.</p>',
+                'text'           => "Μία νέα συντήρηση έχει προγραμματιστεί για το :app_name.\nΕυχαριστούμε, :app_name",
+                'html-preheader' => 'Μία νέα συντήρηση έχει προγραμματιστεί για το :app_name.',
+                'html'           => '<p>Μία νέα συντήρηση έχει προγραμματιστεί για το :app_name.</p>',
             ],
             'incident' => [
-                'text'           => "New incident has been reported on :app_name.\nThank you, :app_name",
-                'html-preheader' => 'New incident has been reported on :app_name.',
-                'html'           => '<p>New incident has been reported on :app_name.</p><p>Thank you, :app_name</p>',
+                'text'           => "Ένα νέο περιστατικό έχει αναφερθεί στο :app_name.\nΕυχαριστούμε, :app_name",
+                'html-preheader' => 'Ένα νέο περιστατικό έχει αναφερθεί στο :app_name.',
+                'html'           => '<p>Ένα νέο περιστατικό έχει αναφερθεί στο :app_name.</p><p>Ευχαριστούμε, :app_name</p>',
             ],
             'component' => [
-                'subject'        => 'Component Status Update',
-                'text'           => 'The component :component_name has seen a status change. The component is now at :component_human_status.\nThank you, :app_name',
-                'html-preheader' => 'Component Update from :app_name',
-                'html'           => '<p>The component :component_name has seen a status change. The component is now at :component_human_status.</p><p>Thank you, :app_name</p>',
-                'tooltip-title'  => 'Subscribe to notifications for :component_name.',
+                'subject'        => 'Ενημέρωση κατάστασης στοιχείου',
+                'text'           => 'Η κατάσταση του στοιχείου :component_name έχει ενημερωθεί. Το στοιχείο είναι πλέον :component_human_status.\nΕυχαριστούμε, :app_name',
+                'html-preheader' => 'Ενημέρωση κατάστασης στοιχείου από :app_name',
+                'html'           => '<p>Η κατάσταση του στοιχείου :component_name έχει ενημερωθεί. Το στοιχείο είναι πλέον :component_human_status.</p><p>Ευχαριστούμε, :app_name</p>',
+                'tooltip-title'  => 'Εγγραφείτε στις ενημερώσεις σχετικά με :component_name.',
             ],
         ],
     ],
@@ -99,39 +99,39 @@ return [
     'users' => [
         'email' => [
             'invite' => [
-                'text'           => "You have been invited to the team :app_name status page, to sign up follow the next link.\n:link\nThank you, :app_name",
-                'html-preheader' => 'You have been invited to the team :app_name.',
-                'html'           => '<p>You have been invited to the team :app_name status page, to sign up follow the next link.</p><p><a href=":link">:link</a></p><p>Thank you, :app_name</p>',
+                'text'           => "Έχετε προσκληθεί στη σελίδα ενημερώσεων της ομάδας :app_name, εγγραφείτε στον παρακάτω σύνδεσμο.\n:link\nΕυχαριστούμε, :app_name",
+                'html-preheader' => 'Έχετε προσκληθεί στην ομάδα :app_name.',
+                'html'           => '<p>Έχετε προσκληθεί στη σελίδα ενημερώσεων της ομάδας :app_name, εγγραφείτε στον παρακάτω σύνδεσμο.</p><p><a href=":link">:link</a></p><p>Ευχαριστούμε, :app_name</p>',
             ],
         ],
     ],
 
     'signup' => [
-        'title'    => 'Sign Up',
+        'title'    => 'Εγγραφή',
         'username' => 'Username',
         'email'    => 'E-mail',
         'password' => 'Κωδικός πρόσβασης',
-        'success'  => 'Your account has been created.',
-        'failure'  => 'Something went wrong with the signup.',
+        'success'  => 'Ο λογαριασμός σας έχει δημιουργηθεί.',
+        'failure'  => 'Προέκυψε κάποιο σφάλμα σχετικά με την εγγραφή.',
     ],
 
     'system' => [
-        'update' => 'There is a newer version of Cachet available. You can learn how to update <a href="https://docs.cachethq.io/docs/updating-cachet">here</a>!',
+        'update' => 'Μια ενημερωμένη έκδοση του Cache είναι διαθέσιμη. Δείτε πως μπορείτε να αναβαθμίσετε <a href="https://docs.cachethq.io/docs/updating-cachet">εδώ</a>!',
     ],
 
     // Modal
     'modal' => [
-        'close'     => 'Close',
+        'close'     => 'Κλείσιμο',
         'subscribe' => [
-            'title'  => 'Subscribe to component updates',
-            'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll already receive emails for this component.',
-            'button' => 'Subscribe',
+            'title'  => 'Εγγραφή στις ενημερώσεις στοιχείων',
+            'body'   => 'Συμπληρώστε το email σας για να εγγραφείτε στις ενημερώσεις αυτού του στοιχείου. Αν είστε ήδη εγγεγραμένος, τότε λαμβάνεται ήδη emails για αυτό το στοιχείο.',
+            'button' => 'Εγγραφή',
         ],
     ],
 
     // Other
-    'powered_by'      => ':app Status Page is powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
-    'about_this_site' => 'About This Site',
+    'powered_by'      => 'Η σελίδα κατάστασης :app τροφοδοτείται από το <a href="https://cachethq.io" class="links">Cachet</a>.',
+    'about_this_site' => 'Σχετικά με αυτόν τον ιστότοπο',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',
     'feed'            => 'Status Feed',

@@ -13,27 +13,27 @@ return [
     // Components
     'components' => [
         'status' => [
-            1 => 'Operational',
-            2 => 'Performance Issues',
-            3 => 'Partial Outage',
-            4 => 'Major Outage',
+            1 => '稼働中',
+            2 => 'パフォーマンスに関する問題あり',
+            3 => '一部停止中',
+            4 => '大規模な停止中',
         ],
     ],
 
     // Incidents
     'incidents' => [
-        'none'          => 'No incidents reported',
-        'past'          => 'Past Incidents',
-        'previous_week' => 'Previous Week',
-        'next_week'     => 'Next Week',
-        'scheduled'     => 'Scheduled Maintenance',
-        'scheduled_at'  => ', scheduled :timestamp',
+        'none'          => 'インシデントはありません',
+        'past'          => '過去のインシデント',
+        'previous_week' => '前の週',
+        'next_week'     => '次の週',
+        'scheduled'     => '計画メンテナンス',
+        'scheduled_at'  => ', 予定日時 :timestamp',
         'status'        => [
             0 => 'Scheduled', // TODO: Hopefully remove this.
-            1 => 'Investigating',
-            2 => 'Identified',
-            3 => 'Watching',
-            4 => 'Fixed',
+            1 => '調査中',
+            2 => '特定済み',
+            3 => '監視中',
+            4 => '修正済み',
         ],
     ],
 
@@ -45,26 +45,26 @@ return [
     ],
 
     'api' => [
-        'regenerate' => 'Regenerate API Key',
-        'revoke'     => 'Revoke API Key',
+        'regenerate' => 'APIキーの再生成',
+        'revoke'     => 'APIキーの削除',
     ],
 
     // Metrics
     'metrics' => [
         'filter' => [
-            'last_hour' => 'Last Hour',
-            'hourly'    => 'Last 12 Hours',
-            'weekly'    => 'Week',
-            'monthly'   => 'Month',
+            'last_hour' => '過去1時間',
+            'hourly'    => '過去12時間',
+            'weekly'    => '週',
+            'monthly'   => '月',
         ],
     ],
 
     // Subscriber
     'subscriber' => [
-        'subscribe' => 'Subscribe to get the most recent updates',
-        'button'    => 'Subscribe',
+        'subscribe' => '最新のアップデート情報を購読する',
+        'button'    => '購読',
         'email'     => [
-            'subscribe'          => 'Subscribe to email updates.',
+            'subscribe'          => 'メールによるアップデート情報の購読',
             'subscribed'         => 'You\'ve been subscribed to email notifications, please check your email to confirm your subscription.',
             'verified'           => 'Your email subscription has been confirmed. Thank you!',
             'unsubscribe'        => 'Unsubscribe from email updates.',
@@ -107,33 +107,33 @@ return [
     ],
 
     'signup' => [
-        'title'    => 'Sign Up',
-        'username' => 'Username',
+        'title'    => '新規登録',
+        'username' => 'ユーザー名',
         'email'    => 'Email',
         'password' => 'Password',
-        'success'  => 'Your account has been created.',
-        'failure'  => 'Something went wrong with the signup.',
+        'success'  => 'アカウントが作成されました。',
+        'failure'  => '新規登録に失敗しました。',
     ],
 
     'system' => [
-        'update' => 'There is a newer version of Cachet available. You can learn how to update <a href="https://docs.cachethq.io/docs/updating-cachet">here</a>!',
+        'update' => 'Cachetの新しいバージョンがあります。アップデートの方法については<a href="https://docs.cachethq.io/docs/updating-cachet">こちら</a>を参照して下さい！',
     ],
 
     // Modal
     'modal' => [
-        'close'     => 'Close',
+        'close'     => '閉じる',
         'subscribe' => [
             'title'  => 'Subscribe to component updates',
             'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll already receive emails for this component.',
-            'button' => 'Subscribe',
+            'button' => '購読',
         ],
     ],
 
     // Other
     'powered_by'      => ':app Status Page is powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
-    'about_this_site' => 'About This Site',
+    'about_this_site' => 'このサイトについて',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',
-    'feed'            => 'Status Feed',
+    'feed'            => 'ステータスフィード',
 
 ];

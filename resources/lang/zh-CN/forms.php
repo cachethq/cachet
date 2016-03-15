@@ -31,7 +31,7 @@ return [
         'email'         => '电子邮箱',
         'password'      => '密码',
         '2fauth'        => 'Authentication Code',
-        'invalid'       => '无效的用户名或者邮箱地址',
+        'invalid'       => '无效的用户名或密码',
         'invalid-token' => 'Invalid token',
         'cookies'       => 'You must enable cookies to login.',
     ],
@@ -69,7 +69,7 @@ return [
 
         'groups' => [
             'name'      => '组名',
-            'collapsed' => '默认折叠组？',
+            'collapsed' => '默认折叠分组？',
         ],
     ],
 

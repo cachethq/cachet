@@ -28,11 +28,11 @@ return [
         'edit' => [
             'title'   => 'Redigér hændelse',
             'success' => 'Hændelse opdateret.',
-            'failure' => 'Noget gik galt med hændelsen.',
+            'failure' => 'Kunne ikke opdatere hændelsen. Prøv venligst igen.',
         ],
         'delete' => [
-            'success' => 'The incident has been deleted and will not show on your status page.',
-            'failure' => 'The incident could not be deleted. Please try again.',
+            'success' => 'Hændelsen er blevet slettet og vil ikke blive vist på din statusside.',
+            'failure' => 'Hændelsen kunne ikke slettes. Prøv venligst igen.',
         ],
 
         // Incident templates
@@ -40,7 +40,7 @@ return [
             'title' => 'Hændelses skabeloner',
             'add'   => [
                 'title'   => 'Opret hændelses skabelon',
-                'message' => 'You should add an incident template.',
+                'message' => 'Du bør tilføje en hændelses skabelon.',
                 'success' => 'Template created.',
                 'failure' => 'Noget gik galt i oprettelsen af skabelonen.',
             ],
@@ -50,8 +50,8 @@ return [
                 'failure' => 'Noget gik galt under opdateringen af skabelonen',
             ],
             'delete' => [
-                'success' => 'The incident template has been deleted.',
-                'failure' => 'The incident template could not be deleted. Please try again.',
+                'success' => 'Hændelses skabelonen er blevet slettet.',
+                'failure' => 'Hændelses skabelonen kunne ikke slettes. Prøv venligst igen.',
             ],
         ],
     ],
@@ -59,7 +59,7 @@ return [
     // Incident Maintenance
     'schedule' => [
         'schedule'     => 'Planlagt vedligeholdelse',
-        'logged'       => '{0} There are no schedules, good work.|You have logged one schedule.|You have reported <strong>:count</strong> schedules.',
+        'logged'       => '{0} Der er intet planlagt.|Der er 1 planlagt.|Der er <strong>:count</strong> planlagte.',
         'scheduled_at' => 'Planlagt til :timestamp',
         'add'          => [
             'title'   => 'Tilføj planlagt nedetid',
@@ -91,11 +91,11 @@ return [
         'edit' => [
             'title'   => 'Redigér komponent',
             'success' => 'Komponent opdteret.',
-            'failure' => 'Noget gik galt med komponenten.',
+            'failure' => 'Komponentet kunne ikke opdateres. Prøv venligst igen.',
         ],
         'delete' => [
-            'success' => 'The component has been deleted!',
-            'failure' => 'The component could not be deleted. Please try again.',
+            'success' => 'Komponentet er blevet slettet!',
+            'failure' => 'Komponentet kunne ikke slettes. Prøv venligst igen.',
         ],
 
         // Component groups
@@ -110,11 +110,11 @@ return [
             'edit' => [
                 'title'   => 'Redigér komponentgruppe',
                 'success' => 'Gruppe opdateret.',
-                'failure' => 'Noget gik galt med komponentgruppen.',
+                'failure' => 'Komponent gruppen kunne ikke redigeres. Prøv venligst igen.',
             ],
             'delete' => [
-                'success' => 'Component group has been deleted!',
-                'failure' => 'The component group could not be deleted. Please try again.',
+                'success' => 'Komponent gruppen er blevet slettet!',
+                'failure' => 'Komponent gruppen kunne ikke slettes. Prøv venligst igen.',
             ],
         ],
     ],
@@ -124,7 +124,7 @@ return [
         'metrics' => 'Grafer',
         'add'     => [
             'title'   => 'Opret graf',
-            'message' => 'You should add a metric.',
+            'message' => 'Du bør tilføje en graf.',
             'success' => 'Graf oprettet.',
             'failure' => 'Noget gik galt med oprettelsen.',
         ],
@@ -134,8 +134,8 @@ return [
             'failure' => 'Noget gik galt med målestokken.',
         ],
         'delete' => [
-            'success' => 'The metric has been deleted and will no longer display on your status page.',
-            'failure' => 'The metric could not be deleted. Please try again.',
+            'success' => 'Grafen er blevet slette og vil ikke længere blive vist på din status side.',
+            'failure' => 'Grafen kunne ikke slettes. Prøv venligst igen.',
         ],
     ],
     // Subscribers
@@ -235,7 +235,7 @@ return [
 
     // Welcome modal
     'welcome' => [
-        'welcome' => 'Welcome to your status page!',
+        'welcome' => 'Velkommen til din statusside!',
         'message' => 'Din statusside er nærmest klar! Måske du skulle gennemgå disse ekstra indstillinger',
         'close'   => 'Til oversigtssiden tak.',
         'steps'   => [

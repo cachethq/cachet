@@ -21,37 +21,37 @@ return [
         'incident-create-template' => 'Δημιουργία προτύπου',
         'incident-templates'       => 'Πρότυπα Περιστατικών',
         'add'                      => [
-            'title'   => 'Report an incident',
+            'title'   => 'Αναφορά περιστατικού',
             'success' => 'Το περιστατικό προστέθηκε.',
             'failure' => 'Κάτι πήγε στραβά με την προσθήκη του περιστατικού.',
         ],
         'edit' => [
-            'title'   => 'Edit an incident',
+            'title'   => 'Επεξεργασία περιστατικού',
             'success' => 'Επεξεργασία περιστατικού επιτυχής.',
             'failure' => 'Κάτι πήγε στραβά με την προσθήκη του περιστατικού.',
         ],
         'delete' => [
-            'success' => 'The incident has been deleted and will not show on your status page.',
-            'failure' => 'The incident could not be deleted. Please try again.',
+            'success' => 'Αυτό το περιστατικό έχει διαγραφεί και δε θα εμφανιστή στη σελίδα κατάστασης.',
+            'failure' => 'Το περιστατικό δεν ήταν δυνατό να διαγραφεί. Παρακαλώ δοκιμάστε ξανά.',
         ],
 
         // Incident templates
         'templates' => [
             'title' => 'Πρότυπα Περιστατικών',
             'add'   => [
-                'title'   => 'Create an incident template',
-                'message' => 'You should add an incident template.',
+                'title'   => 'Δημιουργήστε ένα πρότυπο περιστατικό',
+                'message' => 'Σας προτείνουμε να προσθέσετε ένα πρότυπο περιστατικό.',
                 'success' => 'Επιτυχής δημιουργία προτύπου.',
                 'failure' => 'Κάτι πήγε στραβά με την δημιουργία προτύπου.',
             ],
             'edit' => [
-                'title'   => 'Edit Template',
+                'title'   => 'Επεξεργασία προτύπου',
                 'success' => 'Επιτυχής ενημέρωση προτύπου!',
                 'failure' => 'Κάτι πήγε στραβά με την ενημέρωση του προτύπου',
             ],
             'delete' => [
-                'success' => 'The incident template has been deleted.',
-                'failure' => 'The incident template could not be deleted. Please try again.',
+                'success' => 'Το πρότυπο περιστατικό έχει διαγραφεί.',
+                'failure' => 'Το πρότυπο περιστατικό δεν ήταν δυνατό να διαγραφεί. Παρακαλώ δοκιμάστε ξανά.',
             ],
         ],
     ],

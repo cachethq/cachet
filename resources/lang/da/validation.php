@@ -69,7 +69,7 @@ return [
     'regex'                => ':attribute er ikke korrekt formateret.',
     'required'             => ':attribute skal udfyldes.',
     'required_if'          => ':attribute skal udfyldes når :other er :value.',
-    'required_unless'      => 'The :attribute field is required unless :other is in :values.',
+    'required_unless'      => ':attribute feltet er påkrævet, medmindre :other er i :values.',
     'required_with'        => ':attribute skal udfyldes når :values er present.',
     'required_with_all'    => 'Feltet :attribute er krævet når :values eksisterer.',
     'required_without'     => ':attribute skal udfyldes når :values ikke er sat.',
