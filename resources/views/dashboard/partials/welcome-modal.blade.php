@@ -18,19 +18,19 @@
                     <div class="row">
                         <div class="col-md-4 animated fadeInDown">
                             <a href="{{ route('dashboard.components.add') }}">
-                                <i class="icon ion-ios-browsers"></i>
+                                <i class="ion ion-ios-browsers"></i>
                                 {{ trans('dashboard.welcome.steps.component') }}
                             </a>
                         </div>
                         <div class="col-md-4 animated fadeInDown two">
                             <a href="{{ route('dashboard.incidents.add') }}">
-                                <i class="icon ion-android-alert"></i>
+                                <i class="ion ion-android-alert"></i>
                                 {{ trans('dashboard.welcome.steps.incident') }}
                             </a>
                         </div>
                         <div class="col-md-4 animated fadeInDown three">
                             <a href="{{ route('dashboard.settings.theme') }}">
-                                <i class="icon ion-ios-paper-outline"></i>
+                                <i class="ion ion-ios-paper-outline"></i>
                                 {{ trans('dashboard.welcome.steps.customize') }}
                             </a>
                         </div>
@@ -38,19 +38,19 @@
                     <div class="row">
                         <div class="col-md-4 animated fadeInDown">
                             <a href="{{ route('dashboard.team.add') }}">
-                                <i class="icons ion-ios-people"></i>
+                                <i class="ion  ion-ios-people"></i>
                                 {{ trans('dashboard.welcome.steps.team') }}
                             </a>
                         </div>
                         <div class="col-md-4 animated fadeInDown two">
                             <a href="{{ route('dashboard.user') }}">
-                                <i class="icon ion-code-working"></i>
+                                <i class="ion ion-code-working"></i>
                                 {{ trans('dashboard.welcome.steps.api') }}
                             </a>
                         </div>
                         <div class="col-md-4 animated fadeInDown three">
                             <a href="{{ route('dashboard.user') }}">
-                                <i class="icon ion-unlocked"></i>
+                                <i class="ion ion-unlocked"></i>
                                 {{ trans('dashboard.welcome.steps.two-factor') }}
                             </a>
                         </div>

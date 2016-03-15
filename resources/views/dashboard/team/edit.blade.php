@@ -3,10 +3,10 @@
 @section('content')
     <div class="header">
         <div class="sidebar-toggler visible-xs">
-            <i class="icon ion-navicon"></i>
+            <i class="ion ion-navicon"></i>
         </div>
         <span class="uppercase">
-            <i class="ion ion-person"></i> {{ trans('dashboard.team.member') }}
+            <i class="ion ion-ios-people-outline"></i> {{ trans('dashboard.team.member') }}
         </span>
     </div>
     <div class="content-wrapper">

@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="pull-right">
-    <p><a class="btn btn-success btn-outline" href="/"><i class="ion-home"></i></a></p>
+    <p><a class="btn btn-success btn-outline" href="/"><i class="ion ion-home"></i></a></p>
 </div>
 
 <div class="clearfix"></div>

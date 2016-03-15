@@ -3,10 +3,10 @@
 @section('content')
     <div class="header fixed">
         <div class="sidebar-toggler visible-xs">
-            <i class="icon ion-navicon"></i>
+            <i class="ion ion-navicon"></i>
         </div>
         <span class="uppercase">
-            <i class="icon ion-ios-people"></i> {{ trans('dashboard.team.team') }}
+            <i class="ion ion-ios-people-outline"></i> {{ trans('dashboard.team.team') }}
         </span>
         @if($current_user->isAdmin)
         <div class="button-group pull-right">

@@ -8,7 +8,7 @@
         <div class="content-wrapper">
             <div class="header sub-header">
                 <span class="uppercase">
-                    <i class="icon ion-android-alert"></i> {{ trans('dashboard.incidents.incidents') }}
+                    <i class="ion ion-ios-information-outline"></i> {{ trans('dashboard.incidents.incidents') }}
                 </span>
                 <a class="btn btn-sm btn-success pull-right" href="{{ route('dashboard.incidents.add') }}">
                     {{ trans('dashboard.incidents.add.title') }}

@@ -3,10 +3,10 @@
 @section('content')
     <div class="header">
         <div class="sidebar-toggler visible-xs">
-            <i class="icon ion-navicon"></i>
+            <i class="ion ion-navicon"></i>
         </div>
         <span class="uppercase">
-            <i class="ion ion-person"></i> {{ trans('dashboard.team.profile') }}
+            <i class="ion ion-ios-person-outline"></i> {{ trans('dashboard.team.profile') }}
         </span>
     </div>
     <div class="content-wrapper">
@@ -17,10 +17,10 @@
                     {!! csrf_field() !!}
                     <fieldset>
                         <div class="row">
-                            <div class="col-sm-1">
-                                <a href="https://gravatar.com"><img src="{{ $current_user->gravatar }}" class="img-responsive img-thumbnail" title="{{ trans('forms.user.gravatar') }}" data-toggle="tooltip"></a>
-                            </div>
-                            <div class="col-sm-11">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <a href="https://gravatar.com"><img src="{{ $current_user->gravatar }}" class="img-responsive img-thumbnail" title="{{ trans('forms.user.gravatar') }}" data-toggle="tooltip"></a>
+                                </div>
                                 <div class="form-group">
                                     <label>{{ trans('forms.user.username') }}</label>
                                     <input type="text" class="form-control" name="username" value="{{ $current_user->username }}" required>

@@ -1,3 +1,58 @@
+@mixin pretty-buttons($color, $background, $text-shadow: none) {
+    color: $color;
+    @include gradient-vertical(lighten($background, 5%), darken($background, 5%), 0%, 100%);
+    border-color: darken($background, 10%);
+    border-bottom-color: darken($background, 20%);
+    text-shadow: $text-shadow;
+    @include box-shadow(inset 0 1px 0 rgba(255, 255, 255, .1));
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+        @include gradient-vertical(darken($background, 0), darken($background, 10%), 0%, 100%);
+        border-color: darken($background, 20%);
+        color: $color;
+    }
+
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        &,
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            background-color: $background;
+            border-color: darken($background, 5%);
+        }
+    }
+}
+
+.btn {
+  &.btn-default {
+    @include pretty-buttons($btn-default-color, $btn-default-bg);
+  }
+  &.btn-primary {
+    @include pretty-buttons($btn-primary-color, $btn-primary-bg);
+  }
+  &.btn-success {
+    @include pretty-buttons($btn-success-color, $btn-success-bg);
+  }
+  &.btn-info {
+    @include pretty-buttons($btn-info-color, $btn-info-bg);
+  }
+  &.btn-warning {
+    @include pretty-buttons($btn-warning-color, $btn-warning-bg);
+  }
+  &.btn-danger {
+    @include pretty-buttons($btn-danger-color, $btn-danger-bg);
+  }
+  &.btn-inverse {
+    @include pretty-buttons(white, #474949);
+  }
+}
+
 .btn-outline {
     background-color: transparent;
     color: inherit;
