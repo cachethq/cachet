@@ -23,7 +23,11 @@ class AlterTableComponentGroupsMakeColumnInteger extends Migration
     public function up()
     {
         Schema::table('component_groups', function (Blueprint $table) {
-            $table->integer('collapsed')->unsigned()->default(2)->change();
+            $table->dropcolumn('collapsed');
+        });
+
+        Schema::table('component_groups', function (Blueprint $table) {
+            $table->integer('collapsed')->unsigned()->default(2)->after('order');
         });
     }
 
