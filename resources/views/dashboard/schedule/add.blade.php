@@ -16,7 +16,7 @@
                 @include('dashboard.partials.errors')
                 <form class='form-vertical' name='ScheduleForm' role='form' method='POST' autocomplete="off">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    <input type="hidden" name="incident[visible]" value="1">
+                    <input type="hidden" name="visible" value="1">
                     <fieldset>
                         @if($incident_templates->count() > 0)
                         <div class="form-group">
@@ -31,22 +31,22 @@
                         @endif
                         <div class="form-group">
                             <label for="incident-name">{{ trans('forms.incidents.name') }}</label>
-                            <input type="text" class="form-control" name="incident[name]" id="incident-name" required value="{{ Binput::old('incident.name') }}">
+                            <input type="text" class="form-control" name="name" id="incident-name" required value="{{ Binput::old('incident.name') }}">
                         </div>
                         <div class="form-group">
                             <label>{{ trans('forms.incidents.message') }}</label>
                             <div class='markdown-control'>
-                                <textarea name="incident[message]" class="form-control autosize" rows="5" required>{{ Binput::old('incident.message') }}</textarea>
+                                <textarea name="message" class="form-control autosize" rows="5" required>{{ Binput::old('incident.message') }}</textarea>
                             </div>
                         </div>
                         <div class="form-group">
                             <label>{{ trans('forms.incidents.scheduled_at') }}</label>
-                            <input type="text" name="incident[scheduled_at]" class="form-control" rel="datepicker" required>
+                            <input type="text" name="scheduled_at" class="form-control" rel="datepicker" required>
                         </div>
                         @if(subscribers_enabled())
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox" name="incident[notify]" value="1" checked="{{ Binput::old('incident.message', 'checked') }}">
+                                <input type="checkbox" name="notify" value="1" checked="{{ Binput::old('incident.message', 'checked') }}">
                                 {{ trans('forms.incidents.notify_subscribers') }}
                             </label>
                         </div>
