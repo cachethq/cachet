@@ -55,7 +55,7 @@
 
 .btn-outline {
     background-color: transparent;
-    background-image: none;
+    background-image: none !important;
     color: inherit;
     transition: all .5s;
 }
