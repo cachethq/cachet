@@ -33,6 +33,7 @@
                 <a href="{{ route('dashboard.templates.index') }}">
                     <i class="ion ion-ios-paper-outline"></i>
                     <span>{{ trans('dashboard.incidents.incident-templates') }}</span>
+                    <span class="label label-info">{{ $incident_template_count }}</span>
                 </a>
             </li>
             <li {!! set_active('dashboard/components*') !!}>

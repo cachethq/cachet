@@ -13,6 +13,7 @@ namespace CachetHQ\Cachet\Composers;
 
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
+use CachetHQ\Cachet\Models\IncidentTemplate;
 use CachetHQ\Cachet\Models\Subscriber;
 use Illuminate\Contracts\View\View;
 
@@ -28,6 +29,7 @@ class DashboardComposer
     public function compose(View $view)
     {
         $view->withIncidentCount(Incident::notScheduled()->count());
+        $view->withIncidentTemplateCount(IncidentTemplate::count());
         $view->withComponentCount(Component::all()->count());
         $view->withSubscriberCount(Subscriber::isVerified()->count());
     }

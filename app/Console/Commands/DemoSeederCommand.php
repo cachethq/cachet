@@ -14,6 +14,7 @@ namespace CachetHQ\Cachet\Console\Commands;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Incident;
+use CachetHQ\Cachet\Models\IncidentTemplate;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\MetricPoint;
 use CachetHQ\Cachet\Models\Setting;
@@ -62,6 +63,7 @@ class DemoSeederCommand extends Command
         $this->seedComponentGroups();
         $this->seedComponents();
         $this->seedIncidents();
+        $this->seedIncidentTemplates();
         $this->seedMetricPoints();
         $this->seedMetrics();
         $this->seedSettings();
@@ -205,6 +207,16 @@ class DemoSeederCommand extends Command
         foreach ($defaultIncidents as $incident) {
             Incident::create($incident);
         }
+    }
+
+    /**
+     * Seed the incident templates table.
+     *
+     * @return void
+     */
+    protected function seedIncidentTemplates()
+    {
+        IncidentTemplate::truncate();
     }
 
     /**
