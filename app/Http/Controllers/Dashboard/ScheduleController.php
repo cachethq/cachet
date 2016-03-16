@@ -95,10 +95,10 @@ class ScheduleController extends Controller
     {
         try {
             $incident = dispatch(new ReportMaintenanceCommand(
-                Binput::get('incident.name'),
-                Binput::get('incident.message'),
-                Binput::get('incident.notify'),
-                Binput::get('incident.scheduled_at')
+                Binput::get('name'),
+                Binput::get('message'),
+                Binput::get('notify'),
+                Binput::get('scheduled_at')
             ));
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.schedule.add')
