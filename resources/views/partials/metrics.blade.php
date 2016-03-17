@@ -35,6 +35,7 @@
 </ul>
 <script>
 (function () {
+    Chart.defaults.global.elements.point.hitRadius = 10;
     Chart.defaults.global.legend.display = false;
 
     var charts = {};
