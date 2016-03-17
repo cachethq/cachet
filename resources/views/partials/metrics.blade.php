@@ -35,22 +35,9 @@
 </ul>
 <script>
 (function () {
-    Chart.defaults.global.pointHitDetectionRadius = 1;
-    Chart.defaults.global.scaleBeginAtZero = true;
+    Chart.defaults.global.legend.display = false;
 
-    var charts = {},
-        defaultData = {
-            showTooltips: false,
-            labels: [],
-            datasets: [{
-                fillColor: "{{ $theme_metrics }}",
-                pointColor: "{{ color_darken($theme_metrics, -0.1) }}",
-                pointStrokeColor: "{{ color_darken($theme_metrics, -0.1) }}",
-                pointHighlightFill: "{{ color_darken($theme_metrics, -0.2) }}",
-                pointHighlightStroke: "{{ color_darken($theme_metrics, -0.2) }}",
-                data: []
-            }],
-        };
+    var charts = {};
 
     $('a[data-filter-type]').on('click', function(e) {
         e.preventDefault();
@@ -70,7 +57,6 @@
     });
 
     function drawChart($el) {
-        var chartConfig = defaultData;
         var metricId = $el.data('metric-id');
         var metricGroup = $el.data('metric-group');
 
@@ -85,19 +71,42 @@
 
         $.getJSON('/metrics/'+metricId, { filter: metricGroup }).done(function (result) {
             var data = result.data.items;
-            chartConfig.labels = _.keys(data);
-            chartConfig.datasets[0].data = _.values(data);
 
             if (chart.chart !== null) {
                 chart.chart.destroy();
             }
 
-            chart.chart = new Chart(chart.context).Line(chartConfig, {
-                tooltipTemplate: $el.data('metric-name') + ": <{{ '%' }}= value %> " + $el.data('metric-suffix'),
-                scaleShowVerticalLines: true,
-                scaleShowLabels: true,
-                responsive: true,
-                maintainAspectRatio: false
+            chart.chart = new Chart(chart.context, {
+                type: 'line',
+                data: {
+                    labels: _.keys(data),
+                    datasets: [{
+                        label: result.data.metric.name,
+                        data: _.values(data),
+                        backgroundColor: "{{ $theme_metrics }}",
+                        pointBackgroundColor: "{{ color_darken($theme_metrics, -0.1) }}",
+                        pointBorderColor: "{{ color_darken($theme_metrics, -0.1) }}",
+                        pointHoverBackgroundColor: "{{ color_darken($theme_metrics, -0.2) }}",
+                        pointHoverBorderColor: "{{ color_darken($theme_metrics, -0.2) }}"
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true,
+                                suggestedMax: 0.1
+                            }
+                        }]
+                    },
+                    tooltips: {
+                        callbacks: {
+                            afterLabel: function(tooltipItem, data) {
+                                return " " + result.data.metric.suffix;
+                            }
+                        }
+                    }
+                }
             });
         });
     }
