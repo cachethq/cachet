@@ -4,7 +4,7 @@
         "animate-sass": "~0.6",
         "autosize": "~3.0.15",
         "bootstrap-sass": "~3.3",
-        "chartjs": "~1.0.2",
+        "chartjs": "~2.0.0-beta2",
         "eonasdan-bootstrap-datetimepicker": "~3.1",
         "humane-js": "~3.2",
         "ionicons": "~2.0",
