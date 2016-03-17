@@ -84,6 +84,7 @@
                         label: result.data.metric.name,
                         data: _.values(data),
                         backgroundColor: "{{ $theme_metrics }}",
+                        borderColor: "{{ color_darken($theme_metrics, -0.1) }}",
                         pointBackgroundColor: "{{ color_darken($theme_metrics, -0.1) }}",
                         pointBorderColor: "{{ color_darken($theme_metrics, -0.1) }}",
                         pointHoverBackgroundColor: "{{ color_darken($theme_metrics, -0.2) }}",
