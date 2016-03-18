@@ -12,6 +12,8 @@
 namespace CachetHQ\Cachet\Models;
 
 use AltThree\Validator\ValidatingTrait;
+use CachetHQ\Cachet\Models\Traits\SearchableTrait;
+use CachetHQ\Cachet\Models\Traits\SortableTrait;
 use CachetHQ\Cachet\Presenters\SchedulePresenter;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
@@ -19,7 +21,7 @@ use McCool\LaravelAutoPresenter\HasPresenter;
 
 class Schedule extends Model implements HasPresenter
 {
-    use ValidatingTrait;
+    use SearchableTrait, SortableTrait, ValidatingTrait;
 
     /**
      * The attributes that should be casted to native types.
@@ -58,6 +60,31 @@ class Schedule extends Model implements HasPresenter
         'message'      => 'string',
         'status'       => 'required|int|between:0,2',
         'scheduled_at' => 'required',
+    ];
+
+    /**
+     * The searchable fields.
+     *
+     * @var string[]
+     */
+    protected $searchable = [
+        'id',
+        'name',
+        'status',
+    ];
+
+    /**
+     * The sortable fields.
+     *
+     * @var string[]
+     */
+    protected $sortable = [
+        'id',
+        'name',
+        'status',
+        'scheduled_at',
+        'created_at',
+        'updated_at',
     ];
 
     /**
