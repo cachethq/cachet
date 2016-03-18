@@ -16,7 +16,9 @@ use CachetHQ\Cachet\Bus\Commands\Schedule\DeleteScheduleCommand;
 use CachetHQ\Cachet\Bus\Commands\Schedule\UpdateScheduleCommand;
 use CachetHQ\Cachet\Models\Schedule;
 use GrahamCampbell\Binput\Facades\Binput;
+use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Request;
+use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 /**
  * This is the schedule controller.
@@ -88,6 +90,12 @@ class ScheduleController extends AbstractApiController
      */
     public function deleteSchedule(Schedule $schedule)
     {
-        //
+        try {
+            dispatch(new DeleteScheduleCommand($schedule));
+        } catch (QueryException $e) {
+            throw new BadRequestHttpException();
+        }
+
+        return $this->noContent();
     }
 }
