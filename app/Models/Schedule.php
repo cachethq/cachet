@@ -88,6 +88,13 @@ class Schedule extends Model implements HasPresenter
     ];
 
     /**
+     * The relations to eager load on every query.
+     *
+     * @var string[]
+     */
+    protected $with = ['components'];
+
+    /**
      * Scopes schedules to those in the future.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
