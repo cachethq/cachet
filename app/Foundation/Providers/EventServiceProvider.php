@@ -66,6 +66,15 @@ class EventServiceProvider extends ServiceProvider
         'CachetHQ\Cachet\Bus\Events\Metric\MetricWasUpdatedEvent' => [
             //
         ],
+        'CachetHQ\Cachet\Bus\Events\Schedule\ScheduleWasCreatedEvent' => [
+            //
+        ],
+        'CachetHQ\Cachet\Bus\Events\Schedule\ScheduleWasRemovedEvent' => [
+            //
+        ],
+        'CachetHQ\Cachet\Bus\Events\Schedule\ScheduleWasUpdatedEvent' => [
+            //
+        ],
         'CachetHQ\Cachet\Bus\Events\Subscriber\SubscriberHasSubscribedEvent' => [
             'CachetHQ\Cachet\Bus\Handlers\Events\Subscriber\SendSubscriberVerificationEmailHandler',
         ],
