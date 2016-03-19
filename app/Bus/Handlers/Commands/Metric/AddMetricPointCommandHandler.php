@@ -16,7 +16,7 @@ use CachetHQ\Cachet\Bus\Events\Metric\MetricPointWasAddedEvent;
 use CachetHQ\Cachet\Dates\DateFactory;
 use CachetHQ\Cachet\Models\MetricPoint;
 use Carbon\Carbon;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Config\Repository;
 
 class AddMetricPointCommandHandler
 {
@@ -28,15 +28,24 @@ class AddMetricPointCommandHandler
     protected $dates;
 
     /**
+     * The config repository instance.
+     *
+     * @var \Illuminate\Config\Repository
+     */
+    protected $config;
+
+    /**
      * Create a new add metric point command handler instance.
      *
      * @param \CachetHQ\Cachet\Dates\DateFactory $dates
+     * @param \Illuminate\Config\Repository      $config
      *
      * @return void
      */
-    public function __construct(DateFactory $dates)
+    public function __construct(DateFactory $dates, Repository $config)
     {
         $this->dates = $dates;
+        $this->config = $config;
     }
 
     /**
@@ -54,9 +63,7 @@ class AddMetricPointCommandHandler
         // Do we have an existing point with the same value?
         $point = $this->findOrCreatePoint($command);
 
-        DB::table('metric_points')->increment('counter', 1, [
-            'id' => $point->id,
-        ]);
+        $point->increment('counter', 1);
 
         event(new MetricPointWasAddedEvent($point));
 
@@ -65,23 +72,23 @@ class AddMetricPointCommandHandler
 
     protected function findOrCreatePoint(AddMetricPointCommand $command)
     {
-        $buffer = Carbon::now()->subMinutes(5);
+        $buffer = Carbon::now()->subMinutes($this->config->get('setting.metric_threshold', 5));
         $point = MetricPoint::where('metric_id', $command->metric->id)->where('value', $command->value)->where('created_at', '>=', $buffer)->first();
 
-        if (!$point) {
-            $data = [
-                'metric_id' => $command->metric->id,
-                'value'     => $command->value,
-                'counter'   => 0,
-            ];
-
-            if ($command->created_at) {
-                $data['created_at'] = $this->dates->create('U', $command->created_at)->format('Y-m-d H:i:s');
-            }
-
-            $point = MetricPoint::create($data);
+        if ($point) {
+            return $point;
         }
 
-        return $point;
+        $data = [
+            'metric_id' => $command->metric->id,
+            'value'     => $command->value,
+            'counter'   => 0,
+        ];
+
+        if ($command->created_at) {
+            $data['created_at'] = $this->dates->create('U', $command->created_at)->format('Y-m-d H:i:s');
+        }
+
+        return MetricPoint::create($data);
     }
 }
