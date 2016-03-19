@@ -53,6 +53,14 @@
                             </div>
                             <div class="row">
                                 <div class="col-xs-12">
+                                    <div class="form-group">
+                                        <label>{{ trans('forms.settings.app-setup.metric-threshold') }}</label>
+                                        <input type="number" max="100" name="metric_threshold" class="form-control" value="{{ Config::get('setting.metric_threshold', 5) }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12">
                                     <div class="checkbox">
                                         <label>
                                             <input type="hidden" value="0" name="enable_subscribers">
