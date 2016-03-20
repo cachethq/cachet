@@ -11,8 +11,10 @@
 
 namespace CachetHQ\Cachet\Presenters;
 
+use CachetHQ\Cachet\Dates\DateFactory;
 use CachetHQ\Cachet\Presenters\Traits\TimestampsTrait;
 use Illuminate\Contracts\Support\Arrayable;
+use Illuminate\Support\Facades\Config;
 use McCool\LaravelAutoPresenter\BasePresenter;
 
 class ComponentPresenter extends BasePresenter implements Arrayable
@@ -42,6 +44,16 @@ class ComponentPresenter extends BasePresenter implements Arrayable
     public function human_status()
     {
         return trans('cachet.components.status.'.$this->wrappedObject->status);
+    }
+
+    /**
+     * Present formatted date time.
+     *
+     * @return string
+     */
+    public function updated_at_formatted()
+    {
+        return ucfirst(app(DateFactory::class)->make($this->wrappedObject->updated_at)->format(Config::get('setting.incident_date_format', 'l jS F Y H:i:s')));
     }
 
     /**

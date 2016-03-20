@@ -12,7 +12,8 @@
 return [
     // Components
     'components' => [
-        'status' => [
+        'last_updated' => 'Last updated :timestamp',
+        'status'       => [
             1 => 'Operational',
             2 => 'Performance Issues',
             3 => 'Partial Outage',
