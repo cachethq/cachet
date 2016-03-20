@@ -56,6 +56,13 @@ final class UpdateScheduleCommand
     public $scheduledAt;
 
     /**
+     * The completed date.
+     *
+     * @var string
+     */
+    public $completedAt;
+
+    /**
      * The components affected by the schedule.
      *
      * @var array
@@ -84,17 +91,19 @@ final class UpdateScheduleCommand
      * @param string                           $message
      * @param int                              $status
      * @param string                           $scheduledAt
+     * @param string                           $completedAt
      * @param array                            $components
      *
      * @return void
      */
-    public function __construct(Schedule $schedule, $name, $message, $status, $components)
+    public function __construct(Schedule $schedule, $name, $message, $status, $scheduledAt, $completedAt, $components)
     {
         $this->schedule = $schedule;
         $this->name = $name;
         $this->message = $message;
         $this->status = $status;
         $this->scheduledAt = $scheduledAt;
+        $this->completedAt = $completedAt;
         $this->components = $components;
     }
 }
