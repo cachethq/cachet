@@ -24,6 +24,27 @@ class Schedule extends Model implements HasPresenter
     use SearchableTrait, SortableTrait, ValidatingTrait;
 
     /**
+     * The upcoming status.
+     *
+     * @var int
+     */
+    const UPCOMING = 0;
+
+    /**
+     * The in progress status.
+     *
+     * @var int
+     */
+    const IN_PROGRESS = 1;
+
+    /**
+     * The complete status.
+     *
+     * @var int
+     */
+    const COMPLETE = 2;
+
+    /**
      * The attributes that should be casted to native types.
      *
      * @var string[]
@@ -33,6 +54,7 @@ class Schedule extends Model implements HasPresenter
         'message'      => 'string',
         'status'       => 'int',
         'scheduled_at' => 'date',
+        'completed_at' => 'date',
     ];
 
     /**
@@ -45,6 +67,7 @@ class Schedule extends Model implements HasPresenter
         'message',
         'status',
         'scheduled_at',
+        'completed_at',
         'created_at',
         'updated_at',
     ];
@@ -60,6 +83,7 @@ class Schedule extends Model implements HasPresenter
         'message'      => 'string',
         'status'       => 'required|int|between:0,2',
         'scheduled_at' => 'required',
+        'completed_at' => 'date',
     ];
 
     /**
@@ -83,6 +107,7 @@ class Schedule extends Model implements HasPresenter
         'name',
         'status',
         'scheduled_at',
+        'completed_at',
         'created_at',
         'updated_at',
     ];
@@ -103,7 +128,7 @@ class Schedule extends Model implements HasPresenter
      */
     public function scopeFutureSchedules($query)
     {
-        return $query->where('status', 0)->where('scheduled_at', '>=', Carbon::now());
+        return $query->where('status', self::UPCOMING)->where('scheduled_at', '>=', Carbon::now());
     }
 
     /**
