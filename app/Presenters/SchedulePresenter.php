@@ -137,6 +137,70 @@ class SchedulePresenter extends BasePresenter implements Arrayable
     }
 
     /**
+     * Present formatted date time.
+     *
+     * @return string
+     */
+    public function completed_at()
+    {
+        return app(DateFactory::class)->make($this->wrappedObject->completed_at)->toDateTimeString();
+    }
+
+    /**
+     * Present diff for humans date time.
+     *
+     * @return string
+     */
+    public function completed_at_diff()
+    {
+        return app(DateFactory::class)->make($this->wrappedObject->completed_at)->diffForHumans();
+    }
+
+    /**
+     * Present formatted date time.
+     *
+     * @return string
+     */
+    public function completed_at_formatted()
+    {
+        return ucfirst(app(DateFactory::class)->make($this->wrappedObject->completed_at)->format(Config::get('setting.incident_date_format', 'l jS F Y H:i:s')));
+    }
+
+    /**
+     * Present formatted date time.
+     *
+     * @return string
+     */
+    public function completed_at_iso()
+    {
+        return app(DateFactory::class)->make($this->wrappedObject->completed_at)->toISO8601String();
+    }
+
+    /**
+     * Formats the completed_at time ready to be used by bootstrap-datetimepicker.
+     *
+     * @return string
+     */
+    public function completed_at_datetimepicker()
+    {
+        return app(DateFactory::class)->make($this->wrappedObject->completed_at)->format('d/m/Y H:i');
+    }
+
+    /**
+     * Returns a formatted timestamp for use within the timeline.
+     *
+     * @return string
+     */
+    public function timestamp_formatted()
+    {
+        if ($this->wrappedObject->is_completed) {
+            return $this->completed_at_formatted;
+        }
+
+        return $this->created_at_formatted;
+    }
+
+    /**
      * Return the iso timestamp for use within the timeline.
      *
      * @return string
@@ -147,7 +211,7 @@ class SchedulePresenter extends BasePresenter implements Arrayable
             return $this->scheduled_at_iso;
         }
 
-        return $this->created_at_iso;
+        return $this->completed_at_iso;
     }
 
     /**
@@ -176,6 +240,7 @@ class SchedulePresenter extends BasePresenter implements Arrayable
         return array_merge($this->wrappedObject->toArray(), [
             'human_status' => $this->human_status(),
             'scheduled_at' => $this->scheduled_at(),
+            'completed_at' => $this->completed_at(),
             'created_at'   => $this->created_at(),
             'updated_at'   => $this->updated_at(),
         ]);
