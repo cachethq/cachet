@@ -187,20 +187,6 @@ class SchedulePresenter extends BasePresenter implements Arrayable
     }
 
     /**
-     * Returns a formatted timestamp for use within the timeline.
-     *
-     * @return string
-     */
-    public function timestamp_formatted()
-    {
-        if ($this->wrappedObject->is_completed) {
-            return $this->completed_at_formatted;
-        }
-
-        return $this->created_at_formatted;
-    }
-
-    /**
      * Return the iso timestamp for use within the timeline.
      *
      * @return string
