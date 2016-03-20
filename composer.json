@@ -79,10 +79,8 @@
             "php artisan config:cache",
             "php artisan route:cache"
         ],
-        "pre-update-cmd": [
-            "php artisan clear-compiled"
-        ],
         "post-update-cmd": [
+            "php artisan clear-compiled",
             "php artisan optimize --force",
             "php artisan config:cache",
             "php artisan route:cache"
