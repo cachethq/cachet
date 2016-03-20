@@ -105,7 +105,7 @@ return [
             'about-this-page'        => 'Over deze pagina',
             'days-of-incidents'      => 'Hoeveel dagen moeten incidenten getoond worden?',
             'banner'                 => 'Banner Image',
-            'banner-help'            => "Het wordt aanbevolen dat u geen bestanden upload die breeder zijn dan 930px.",
+            'banner-help'            => 'Het wordt aanbevolen dat u geen bestanden upload die breeder zijn dan 930px.',
             'subscribers'            => 'Bezoekers toestaan om te abonneren op e-mail notificaties?',
         ],
         'analytics' => [
