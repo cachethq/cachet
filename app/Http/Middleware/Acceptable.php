@@ -28,7 +28,7 @@ class Acceptable
      */
     public function handle(Request $request, Closure $next, $type = null)
     {
-        if (!$request->accepts($type ?: 'accept:application/json')) {
+        if (!$request->accepts($type ?: 'application/json')) {
             throw new NotAcceptableHttpException();
         }
 
