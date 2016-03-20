@@ -22,17 +22,17 @@ return [
         'incident-templates'       => 'Template Insiden',
         'add'                      => [
             'title'   => 'Tambahkan Insiden',
-            'success' => 'Insiden sudah ditambahkan.',
-            'failure' => 'Ada masalah dengan insiden ini.',
+            'success' => 'Incident added.',
+            'failure' => 'There was an error adding the incident, please try again.',
         ],
         'edit' => [
             'title'   => 'Edit insiden',
             'success' => 'Insiden sudah diperbarui.',
-            'failure' => 'Ada masalah dengan insiden ini.',
+            'failure' => 'There was an error editing the incident, please try again.',
         ],
         'delete' => [
             'success' => 'The incident has been deleted and will not show on your status page.',
-            'failure' => 'The incident could not be deleted. Please try again.',
+            'failure' => 'The incident could not be deleted, please try again.',
         ],
 
         // Incident templates
@@ -41,17 +41,17 @@ return [
             'add'   => [
                 'title'   => 'Buat template insiden',
                 'message' => 'You should add an incident template.',
-                'success' => 'Template sudah dibuat.',
-                'failure' => 'Ada masalah dengan template insiden ini.',
+                'success' => 'Your new incident template has been created.',
+                'failure' => 'Something went wrong with the incident template.',
             ],
             'edit' => [
                 'title'   => 'Edit Template',
-                'success' => 'Template sudah diperbarui!',
-                'failure' => 'Ada masalah dengan template insiden ini',
+                'success' => 'The incident template has been updated.',
+                'failure' => 'Something went wrong updating the incident template',
             ],
             'delete' => [
                 'success' => 'The incident template has been deleted.',
-                'failure' => 'The incident template could not be deleted. Please try again.',
+                'failure' => 'The incident template could not be deleted, please try again.',
             ],
         ],
     ],
@@ -62,18 +62,18 @@ return [
         'logged'       => '{0} There are no schedules, good work.|You have logged one schedule.|You have reported <strong>:count</strong> schedules.',
         'scheduled_at' => 'Dijadwalkan pada :timestamp',
         'add'          => [
-            'title'   => 'Tambahkan Jadwal Pemeliharaan',
-            'success' => 'Jadwal sudah ditambahkan.',
-            'failure' => 'Ada masalah saat membuat jadwal.',
+            'title'   => 'Add Scheduled Maintenance',
+            'success' => 'Schedule added.',
+            'failure' => 'Something went wrong adding the schedule, please try again.',
         ],
         'edit' => [
-            'title'   => 'Edit Jadwal Pemeliharaan',
-            'success' => 'Jadwal sudah diperbarui!',
-            'failure' => 'Ada masalah saat mengedit jadwal.',
+            'title'   => 'Edit Scheduled Maintenance',
+            'success' => 'Schedule has been updated!',
+            'failure' => 'Something went wrong editing the schedule, please try again.',
         ],
         'delete' => [
-            'success' => 'Jadwal ini sudah dihapus dan tidak akan ditampilkan di halaman status anda.',
-            'failure' => 'Jadwal tidak bisa dihapus. Silakan coba lagi.',
+            'success' => 'The scheduled maintenance has been deleted and will not show on your status page.',
+            'failure' => 'The scheduled maintenance could not be deleted, please try again.',
         ],
     ],
 
@@ -85,17 +85,17 @@ return [
         'add'                => [
             'title'   => 'Tambahkan Komponen',
             'message' => 'Anda perlu menambahkan komponen.',
-            'success' => 'Komponen sudah dibuat.',
-            'failure' => 'Ada masalah dengan komponen ini.',
+            'success' => 'Component created.',
+            'failure' => 'Something went wrong with the component, please try again.',
         ],
         'edit' => [
             'title'   => 'Edit komponen',
-            'success' => 'Komponen sudah diperbarui.',
-            'failure' => 'Ada masalah dengan komponen ini.',
+            'success' => 'Component updated.',
+            'failure' => 'Something went wrong with the component, please try again.',
         ],
         'delete' => [
             'success' => 'The component has been deleted!',
-            'failure' => 'The component could not be deleted. Please try again.',
+            'failure' => 'The component could not be deleted, please try again.',
         ],
 
         // Component groups
@@ -104,17 +104,17 @@ return [
             'no_components' => 'Anda perlu menambahkan grup komponen.',
             'add'           => [
                 'title'   => 'Tambahkan grup komponen',
-                'success' => 'Grup komponen sudah ditambahkan.',
-                'failure' => 'Ada masalah dengan grup komponen ini.',
+                'success' => 'Component group added.',
+                'failure' => 'Something went wrong with the component group, please try again.',
             ],
             'edit' => [
                 'title'   => 'Edit grup komponen',
-                'success' => 'Grup komponen sudah diperbarui.',
-                'failure' => 'Ada masalah dengan grup komponen ini.',
+                'success' => 'Component group updated.',
+                'failure' => 'Something went wrong with the component group, please try again.',
             ],
             'delete' => [
                 'success' => 'Component group has been deleted!',
-                'failure' => 'The component group could not be deleted. Please try again.',
+                'failure' => 'The component group could not be deleted, please try again.',
             ],
         ],
     ],
@@ -125,34 +125,36 @@ return [
         'add'     => [
             'title'   => 'Buat metrik',
             'message' => 'You should add a metric.',
-            'success' => 'Metrik sudah dibuat.',
-            'failure' => 'Ada masalah dengan metrik ini.',
+            'success' => 'Metric created.',
+            'failure' => 'Something went wrong with the metric, please try again.',
         ],
         'edit' => [
             'title'   => 'Edit metrik',
-            'success' => 'Metrik sudah diperbarui.',
-            'failure' => 'Ada masalah dengan metrik ini.',
+            'success' => 'Metric updated.',
+            'failure' => 'Something went wrong with the metric, please try again.',
         ],
         'delete' => [
             'success' => 'The metric has been deleted and will no longer display on your status page.',
-            'failure' => 'The metric could not be deleted. Please try again.',
+            'failure' => 'The metric could not be deleted, please try again.',
         ],
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'  => 'Berlangganan',
-        'description'  => 'Pelanggan email akan menerima update ketika insiden dibuat.',
-        'verified'     => 'Terverifikasi',
-        'not_verified' => 'Belum Diverifikasi',
-        'add'          => [
+        'subscribers'      => 'Berlangganan',
+        'description'      => 'Subscribers will receive email updates when incidents are created or components are updated.',
+        'verified'         => 'Terverifikasi',
+        'not_verified'     => 'Belum Diverifikasi',
+        'subscriber'       => ':email, subscribed :date',
+        'no_subscriptions' => 'Subscribed to all updates',
+        'add'              => [
             'title'   => 'Tambah Pelanggan Baru',
             'success' => 'Pelanggan sudah ditambahkan.',
-            'failure' => 'Ada masalah dengan komponen ini.',
+            'failure' => 'Something went wrong adding the subscriber, please try again.',
         ],
         'edit' => [
             'title'   => 'Perbarui Pelanggan',
             'success' => 'Pelanggan sudah diupdate.',
-            'failure' => 'Ada masalah saat memperbarui.',
+            'failure' => 'Something went wrong editing the subscriber, please try again.',
         ],
     ],
 
@@ -164,22 +166,22 @@ return [
         'description' => 'Anggota Tim akan bisa menambahkan, mengubah &amp; mengedit komponen dan insiden.',
         'add'         => [
             'title'   => 'Tambahkan Anggota Tim',
-            'success' => 'Anggota Tim sudah ditambahkan.',
-            'failure' => 'Ada masalah dengan komponen ini.',
+            'success' => 'Team member added.',
+            'failure' => 'The team member could not be added, please try again.',
         ],
         'edit' => [
             'title'   => 'Perbarui profil',
-            'success' => 'Profil sudah diperbarui.',
-            'failure' => 'Ada masalah saat memperbarui.',
+            'success' => 'Profile updated.',
+            'failure' => 'Something went wrong updating the profile, please try again.',
         ],
         'delete' => [
             'success' => 'Pengguna sudah dihapus.',
-            'failure' => 'Ada yang tidak beres saat menghapus pengguna ini.',
+            'failure' => 'The team member could not be added, please try again.',
         ],
         'invite' => [
             'title'   => 'Undang Anggota Tim Baru',
             'success' => 'Pengguna sudah diundang.',
-            'failure' => 'Ada masalah dengan sistem undangan.',
+            'failure' => 'The invite could not be sent, please try again.',
         ],
     ],
 
@@ -196,6 +198,11 @@ return [
         ],
         'localization' => [
             'localization' => 'Localization',
+        ],
+        'customization' => [
+            'customization' => 'Customization',
+            'header'        => 'Custom Header HTML',
+            'footer'        => 'Custom Footer HTML',
         ],
         'security' => [
             'security'   => 'Keamanan',
@@ -237,7 +244,7 @@ return [
     'welcome' => [
         'welcome' => 'Welcome to your status page!',
         'message' => 'Halaman status anda hampir siap! Anda masih perlu mengkonfigurasi beberapa pengaturan',
-        'close'   => 'Langsung ke dashboard saja',
+        'close'   => 'Take me straight to my dashboard',
         'steps'   => [
             'component'  => 'Buat komponen',
             'incident'   => 'Buat insiden',

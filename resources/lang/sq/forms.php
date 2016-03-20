@@ -46,7 +46,7 @@ return [
         'scheduled_at'       => 'When to schedule the maintenance for?',
         'incident_time'      => 'When did this incident occur?',
         'notify_subscribers' => 'Notify subscribers?',
-        'visibility'         => 'Incident visibility',
+        'visibility'         => 'Incident Visibility',
         'public'             => 'Viewable by public',
         'logged_in_only'     => 'Only visible to logged in users',
         'templates'          => [
@@ -68,8 +68,11 @@ return [
         'enabled'     => 'Component enabled?',
 
         'groups' => [
-            'name'      => 'Emri',
-            'collapsed' => 'Collapse the group by default?',
+            'name'               => 'Emri',
+            'collapsing'         => 'Choose visibility of the group',
+            'visible'            => 'Always expanded',
+            'collapsed'          => 'Collapse the group by default',
+            'collapsed_incident' => 'Collapse the group, but expand if there are issues',
         ],
     ],
 
@@ -101,7 +104,7 @@ return [
             'display-graphs'         => 'Display graphs on status page?',
             'about-this-page'        => 'Rreth faqes',
             'days-of-incidents'      => 'How many days of incidents to show?',
-            'banner'                 => 'Banner image',
+            'banner'                 => 'Banner Image',
             'banner-help'            => "It's recommended that you upload files no bigger than 930px wide .",
             'subscribers'            => 'Allow people to signup to email notifications?',
         ],
@@ -122,15 +125,15 @@ return [
             'allowed-domains-help' => 'Comma separated. The domain set above is automatically allowed by default.',
         ],
         'stylesheet' => [
-            'custom-css' => 'Custom stylesheet',
+            'custom-css' => 'Custom Stylesheet',
         ],
         'theme' => [
-            'background-color'        => 'Background color',
+            'background-color'        => 'Background Color',
             'background-fills'        => 'Background fills (components, incidents, footer)',
             'banner-background-color' => 'Banner background color',
             'banner-padding'          => 'Banner padding',
             'fullwidth-banner'        => 'Enable fullwidth banner?',
-            'text-color'              => 'Text color',
+            'text-color'              => 'Text Color',
             'dashboard-login'         => 'Show dashboard button in the footer?',
             'reds'                    => 'Red (used for errors)',
             'blues'                   => 'Blue (used for information)',

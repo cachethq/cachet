@@ -12,11 +12,15 @@
 return [
     // Components
     'components' => [
-        'status' => [
+        'last_updated' => 'Last updated :timestamp',
+        'status'       => [
             1 => 'Λειτουργικό',
             2 => 'Προβλήματα επιδόσης',
             3 => 'Μερική Διακοπή',
             4 => 'Σημαντική Διακοπή',
+        ],
+        'group' => [
+            'other' => 'Other Components',
         ],
     ],
 
@@ -63,10 +67,15 @@ return [
     'subscriber' => [
         'subscribe' => 'Εγγραφείτε για να λάβετε τις τελευταίες ενημερώσεις',
         'button'    => 'Εγγραφή',
-        'email'     => [
+        'manage'    => [
+            'no_subscriptions' => 'You\'re currently subscribed to all updates.',
+            'my_subscriptions' => 'You\'re currently subscribed to the following updates.',
+        ],
+        'email' => [
             'subscribe'          => 'Εγγραφή στις ενημερώσεις μέσω email.',
             'subscribed'         => 'Έχετε εγγραφεί στις ενημερώσεις μέσω email, παρακαλώ ελέγξτε το email σας για να επιβεβαιώσετε την εγγραφή σας.',
             'verified'           => 'Η εγγραφή σας έχει επιβεβαιωθεί. Ευχαριστούμε!',
+            'manage'             => 'Manage your subscription.',
             'unsubscribe'        => 'Διαγραφή από τις ενημερώσεις μέσω email.',
             'unsubscribed'       => 'Η εγγραφή σας έχει ακυρωθεί.',
             'failure'            => 'Προέκυψε ένα σφάλμα σχετικά με την εγγραφή.',
@@ -130,6 +139,7 @@ return [
     ],
 
     // Other
+    'description'     => 'Stay up to date with the latest service updates from :app.',
     'powered_by'      => 'Η σελίδα κατάστασης :app τροφοδοτείται από το <a href="https://cachethq.io" class="links">Cachet</a>.',
     'about_this_site' => 'Σχετικά με αυτόν τον ιστότοπο',
     'rss-feed'        => 'RSS',

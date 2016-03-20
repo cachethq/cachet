@@ -22,17 +22,17 @@ return [
         'incident-templates'       => 'インシデント・テンプレート',
         'add'                      => [
             'title'   => 'インシデントの報告',
-            'success' => 'インシデントが登録されました。',
-            'failure' => 'インシデントの登録ができませんでした。もう一度試してみてください。',
+            'success' => 'Incident added.',
+            'failure' => 'There was an error adding the incident, please try again.',
         ],
         'edit' => [
             'title'   => 'インシデントの編集',
             'success' => 'インシデントが更新されました。',
-            'failure' => 'The incident could not be edited. Please try again.',
+            'failure' => 'There was an error editing the incident, please try again.',
         ],
         'delete' => [
             'success' => 'The incident has been deleted and will not show on your status page.',
-            'failure' => 'The incident could not be deleted. Please try again.',
+            'failure' => 'The incident could not be deleted, please try again.',
         ],
 
         // Incident templates
@@ -41,17 +41,17 @@ return [
             'add'   => [
                 'title'   => 'インシデントテンプレートの作成',
                 'message' => 'You should add an incident template.',
-                'success' => 'The incdent template has been created!',
-                'failure' => 'The incident template could not be created. Please try again.',
+                'success' => 'Your new incident template has been created.',
+                'failure' => 'Something went wrong with the incident template.',
             ],
             'edit' => [
                 'title'   => 'テンプレートの編集',
-                'success' => 'The incdent template has been updated!',
-                'failure' => 'The incident template could not be edited. Please try again.',
+                'success' => 'The incident template has been updated.',
+                'failure' => 'Something went wrong updating the incident template',
             ],
             'delete' => [
                 'success' => 'The incident template has been deleted.',
-                'failure' => 'The incident template could not be deleted. Please try again.',
+                'failure' => 'The incident template could not be deleted, please try again.',
             ],
         ],
     ],
@@ -62,18 +62,18 @@ return [
         'logged'       => '{0} There are no schedules, good work.|You have logged one schedule.|You have reported <strong>:count</strong> schedules.',
         'scheduled_at' => 'Scheduled at :timestamp',
         'add'          => [
-            'title'   => '計画メンテナンスの追加',
-            'success' => '計画メンテナンスが追加されました！',
-            'failure' => '計画メンテナンスの追加ができませんでした。もう一度試してみてください。',
+            'title'   => 'Add Scheduled Maintenance',
+            'success' => 'Schedule added.',
+            'failure' => 'Something went wrong adding the schedule, please try again.',
         ],
         'edit' => [
-            'title'   => '計画メンテナンスの編集',
-            'success' => '計画メンテナンスが編集されました！',
-            'failure' => '計画メンテナンスの編集ができませんでした。もう一度試してみてください。',
+            'title'   => 'Edit Scheduled Maintenance',
+            'success' => 'Schedule has been updated!',
+            'failure' => 'Something went wrong editing the schedule, please try again.',
         ],
         'delete' => [
-            'success' => '計画メンテナンスが削除されました！',
-            'failure' => '計画メンテナンスの削除ができませんでした。もう一度試してみてください。',
+            'success' => 'The scheduled maintenance has been deleted and will not show on your status page.',
+            'failure' => 'The scheduled maintenance could not be deleted, please try again.',
         ],
     ],
 
@@ -85,17 +85,17 @@ return [
         'add'                => [
             'title'   => 'コンポーネントの追加',
             'message' => 'コンポーネントを追加してください。',
-            'success' => 'コンポーネントが追加されました！',
-            'failure' => 'コンポーネントの追加ができませんでした。もう一度試してみてください。',
+            'success' => 'Component created.',
+            'failure' => 'Something went wrong with the component, please try again.',
         ],
         'edit' => [
             'title'   => 'コンポーネントの編集',
-            'success' => 'コンポーネントが更新されました！',
-            'failure' => 'コンポーネントの更新ができませんでした。もう一度試してみてください。',
+            'success' => 'Component updated.',
+            'failure' => 'Something went wrong with the component, please try again.',
         ],
         'delete' => [
             'success' => 'コンポーネントが削除されました！',
-            'failure' => 'コンポーネントの削除ができませんでした。もう一度試してみてください。',
+            'failure' => 'The component could not be deleted, please try again.',
         ],
 
         // Component groups
@@ -104,17 +104,17 @@ return [
             'no_components' => 'コンポーネントグループを追加して下さい',
             'add'           => [
                 'title'   => 'コンポーネントグループの追加',
-                'success' => 'コンポーネントグループが追加されました！',
-                'failure' => 'コンポーネントグループの追加ができませんでした。もう一度試してみてください。',
+                'success' => 'Component group added.',
+                'failure' => 'Something went wrong with the component group, please try again.',
             ],
             'edit' => [
                 'title'   => 'コンポーネントグループの編集',
-                'success' => 'コンポーネントグループが編集されました！',
-                'failure' => 'コンポーネントグループの編集ができませんでした。もう一度試してみてください。',
+                'success' => 'Component group updated.',
+                'failure' => 'Something went wrong with the component group, please try again.',
             ],
             'delete' => [
                 'success' => 'コンポーネントグループが削除されました！',
-                'failure' => 'コンポーネントグループの削除ができませんでした。もう一度試してみてください。',
+                'failure' => 'The component group could not be deleted, please try again.',
             ],
         ],
     ],
@@ -125,34 +125,36 @@ return [
         'add'     => [
             'title'   => 'メトリクスの作成',
             'message' => 'メトリクスを追加してください。',
-            'success' => 'メトリクスが追加されました！',
-            'failure' => 'メトリクスの追加ができませんでした。もう一度試してみてください。',
+            'success' => 'Metric created.',
+            'failure' => 'Something went wrong with the metric, please try again.',
         ],
         'edit' => [
             'title'   => 'メトリクスの編集',
-            'success' => 'メトリクスが更新されました！',
-            'failure' => 'The metric could not be updated. Please try again.',
+            'success' => 'Metric updated.',
+            'failure' => 'Something went wrong with the metric, please try again.',
         ],
         'delete' => [
             'success' => 'The metric has been deleted and will no longer display on your status page.',
-            'failure' => 'The metric could not be deleted. Please try again.',
+            'failure' => 'The metric could not be deleted, please try again.',
         ],
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'  => '購読者',
-        'description'  => 'Subscribers will receive email updates when incidents are created.',
-        'verified'     => '認証済',
-        'not_verified' => '未確認',
-        'add'          => [
+        'subscribers'      => '購読者',
+        'description'      => 'Subscribers will receive email updates when incidents are created or components are updated.',
+        'verified'         => '認証済',
+        'not_verified'     => '未確認',
+        'subscriber'       => ':email, subscribed :date',
+        'no_subscriptions' => 'Subscribed to all updates',
+        'add'              => [
             'title'   => '購読者の追加',
             'success' => 'Subscriber has been added!',
-            'failure' => 'The subscriber could not be added. Please try again.',
+            'failure' => 'Something went wrong adding the subscriber, please try again.',
         ],
         'edit' => [
             'title'   => '購読者の更新',
             'success' => 'Subscriber has been updated!',
-            'failure' => 'The subscriber could not be updated. Please try again.',
+            'failure' => 'Something went wrong editing the subscriber, please try again.',
         ],
     ],
 
@@ -164,22 +166,22 @@ return [
         'description' => 'Team Members will be able to add, modify &amp; edit components and incidents.',
         'add'         => [
             'title'   => '新しいチームメンバーを追加する',
-            'success' => 'Team member has been added!',
-            'failure' => 'The team member could not be added. Please try again.',
+            'success' => 'Team member added.',
+            'failure' => 'The team member could not be added, please try again.',
         ],
         'edit' => [
             'title'   => 'プロフィールの更新',
-            'success' => 'Team member has been updated!',
-            'failure' => 'The team member could not be updated. Please try again.',
+            'success' => 'Profile updated.',
+            'failure' => 'Something went wrong updating the profile, please try again.',
         ],
         'delete' => [
             'success' => 'Team member has been deleted and will no longer have access to the dashboard!',
-            'failure' => 'The team member could not be added. Please try again.',
+            'failure' => 'The team member could not be added, please try again.',
         ],
         'invite' => [
             'title'   => '新しいチームメンバーを招待する',
             'success' => '招待メールが送信されました',
-            'failure' => '招待メールが送信できませんでした。もう一度試してみてください。',
+            'failure' => 'The invite could not be sent, please try again.',
         ],
     ],
 
@@ -196,6 +198,11 @@ return [
         ],
         'localization' => [
             'localization' => 'ローカライズ',
+        ],
+        'customization' => [
+            'customization' => 'Customization',
+            'header'        => 'Custom Header HTML',
+            'footer'        => 'Custom Footer HTML',
         ],
         'security' => [
             'security'   => 'セキュリティ',
@@ -237,7 +244,7 @@ return [
     'welcome' => [
         'welcome' => 'ステータスページにようこそ！',
         'message' => 'Your status page is almost ready! You might want to configure these extra settings',
-        'close'   => 'Just go straight to my dashboard',
+        'close'   => 'Take me straight to my dashboard',
         'steps'   => [
             'component'  => 'コンポーネントの作成',
             'incident'   => 'インシデントの作成',

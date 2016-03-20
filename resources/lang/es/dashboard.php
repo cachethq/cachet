@@ -22,17 +22,17 @@ return [
         'incident-templates'       => 'Vorfall Vorlagen',
         'add'                      => [
             'title'   => 'Vorfall hinzufügen',
-            'success' => 'Vorfall hinzugefügt.',
-            'failure' => 'Etwas ist mit dem Vorfall schiefgelaufen.',
+            'success' => 'Incident added.',
+            'failure' => 'There was an error adding the incident, please try again.',
         ],
         'edit' => [
             'title'   => 'Vorfall bearbeiten',
             'success' => 'Vorfall aktualisiert.',
-            'failure' => 'Algo salió mal con el incidente.',
+            'failure' => 'There was an error editing the incident, please try again.',
         ],
         'delete' => [
             'success' => 'El incidente se ha eliminado y no se mostrará en tu página de estado.',
-            'failure' => 'El incidente no se pudo eliminar. Por favor, inténtalo de nuevo.',
+            'failure' => 'The incident could not be deleted, please try again.',
         ],
 
         // Incident templates
@@ -41,17 +41,17 @@ return [
             'add'   => [
                 'title'   => 'Vorfallvorlage erstellen',
                 'message' => 'Deberías añadir una plantilla de incidente.',
-                'success' => 'Vorlage erstellt.',
-                'failure' => 'Etwas ist mit der Vorfallvorlage schiefgelaufen.',
+                'success' => 'Your new incident template has been created.',
+                'failure' => 'Something went wrong with the incident template.',
             ],
             'edit' => [
                 'title'   => 'Vorlage bearbeiten',
-                'success' => 'Vorlage aktualisiert!',
-                'failure' => 'Etwas ist mit dem Updaten der Vorfallvorlage schiefgelaufen',
+                'success' => 'The incident template has been updated.',
+                'failure' => 'Something went wrong updating the incident template',
             ],
             'delete' => [
                 'success' => 'La plantilla de incidente se ha eliminado.',
-                'failure' => 'La plantilla de incidente no se pudo eliminar. Por favor, inténtalo de nuevo.',
+                'failure' => 'The incident template could not be deleted, please try again.',
             ],
         ],
     ],
@@ -62,18 +62,18 @@ return [
         'logged'       => '{0} No hay planificaciones, buen trabajo.|Has registrado una planificación.|Has registrado <strong>:count</strong> planificaciones.',
         'scheduled_at' => 'Geplant am :timestamp',
         'add'          => [
-            'title'   => 'Planmäßige Wartung hinzufügen',
-            'success' => 'Zeitplan hinzugefügt.',
-            'failure' => 'Etwas ist mit dem hinzufügen des Zeitplanes schiefgelaufen.',
+            'title'   => 'Add Scheduled Maintenance',
+            'success' => 'Schedule added.',
+            'failure' => 'Something went wrong adding the schedule, please try again.',
         ],
         'edit' => [
-            'title'   => 'Planmäßige Wartung bearbeiten',
-            'success' => 'Zeitplan wurde aktualisiert!',
-            'failure' => 'Etwas ist mit dem Bearbeiten des Zeitplanes schiefgelaufen.',
+            'title'   => 'Edit Scheduled Maintenance',
+            'success' => 'Schedule has been updated!',
+            'failure' => 'Something went wrong editing the schedule, please try again.',
         ],
         'delete' => [
-            'success' => 'Der Zeitplan wurde gelöscht und wird nicht auf Ihrer Statusseite angezeigt.',
-            'failure' => 'Der Zeitplan konnte nicht gelöscht werden. Bitte versuchen Sie es erneut.',
+            'success' => 'The scheduled maintenance has been deleted and will not show on your status page.',
+            'failure' => 'The scheduled maintenance could not be deleted, please try again.',
         ],
     ],
 
@@ -85,17 +85,17 @@ return [
         'add'                => [
             'title'   => 'Komponente hinzufügen',
             'message' => 'Sie sollten eine Komponente erstellen.',
-            'success' => 'Komponente erstellt.',
-            'failure' => 'Beim Erstellen der Komponente ist etwas schiefgegangen.',
+            'success' => 'Component created.',
+            'failure' => 'Something went wrong with the component, please try again.',
         ],
         'edit' => [
             'title'   => 'Komponente bearbeiten',
-            'success' => 'Komponente aktualisiert.',
-            'failure' => 'Algo salió mal con el componente.',
+            'success' => 'Component updated.',
+            'failure' => 'Something went wrong with the component, please try again.',
         ],
         'delete' => [
             'success' => 'El componente se ha eliminado!',
-            'failure' => 'El componente no se pudo eliminar. Por favor, inténtalo de nuevo.',
+            'failure' => 'The component could not be deleted, please try again.',
         ],
 
         // Component groups
@@ -104,17 +104,17 @@ return [
             'no_components' => 'Sie sollten eine Komponentengruppe hinzufügen.',
             'add'           => [
                 'title'   => 'Eine Komponentengruppe hinzufügen',
-                'success' => 'Komponentengruppe hinzugefügt.',
-                'failure' => 'Mit der Komponentengruppe ist etwas schiefgegangen.',
+                'success' => 'Component group added.',
+                'failure' => 'Something went wrong with the component group, please try again.',
             ],
             'edit' => [
                 'title'   => 'Komponentengruppe bearbeiten',
-                'success' => 'Komponentengruppe aktualisiert.',
-                'failure' => 'Mit der Komponentengruppe ist etwas schiefgegangen.',
+                'success' => 'Component group updated.',
+                'failure' => 'Something went wrong with the component group, please try again.',
             ],
             'delete' => [
                 'success' => 'El grupo de componentes se ha eliminado!',
-                'failure' => 'El grupo de componentes no se pudo eliminar. Por favor, inténtalo de nuevo.',
+                'failure' => 'The component group could not be deleted, please try again.',
             ],
         ],
     ],
@@ -125,34 +125,36 @@ return [
         'add'     => [
             'title'   => 'Metrik erstellen',
             'message' => 'Deberías añadir una métrica.',
-            'success' => 'Metrik erstellt.',
-            'failure' => 'Mit der Metrik ist etwas schiefgegangen.',
+            'success' => 'Metric created.',
+            'failure' => 'Something went wrong with the metric, please try again.',
         ],
         'edit' => [
             'title'   => 'Metrik bearbeiten',
-            'success' => 'Metrik aktualisiert.',
-            'failure' => 'Mit der Metrik ist etwas schiefgegangen.',
+            'success' => 'Metric updated.',
+            'failure' => 'Something went wrong with the metric, please try again.',
         ],
         'delete' => [
             'success' => 'La métrica se ha eliminado y no se mostrará más en tu página de estado.',
-            'failure' => 'La métrica no se pudo eliminar. Por favor, inténtalo de nuevo.',
+            'failure' => 'The metric could not be deleted, please try again.',
         ],
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'  => 'Abonnenten',
-        'description'  => 'Abonnenten erhalten E-Mail Updates wenn Vorfälle erstellt werden.',
-        'verified'     => 'Verifiziert',
-        'not_verified' => 'Nicht verifiziert',
-        'add'          => [
+        'subscribers'      => 'Abonnenten',
+        'description'      => 'Subscribers will receive email updates when incidents are created or components are updated.',
+        'verified'         => 'Verifiziert',
+        'not_verified'     => 'Nicht verifiziert',
+        'subscriber'       => ':email, subscribed :date',
+        'no_subscriptions' => 'Subscribed to all updates',
+        'add'              => [
             'title'   => 'Einen neuen Abonnenten hinzufügen',
             'success' => 'Abonnent hinzugefügt.',
-            'failure' => 'Beim Erstellen der Komponente ist etwas schiefgegangen.',
+            'failure' => 'Something went wrong adding the subscriber, please try again.',
         ],
         'edit' => [
             'title'   => 'Abonnent aktualisieren',
             'success' => 'Abonnent aktualisiert.',
-            'failure' => 'Bei der Aktualisierung ging etwas schief.',
+            'failure' => 'Something went wrong editing the subscriber, please try again.',
         ],
     ],
 
@@ -164,22 +166,22 @@ return [
         'description' => 'Teammitglieder werden die M&ouml;glichkeit haben, Komponente sowie Vorf&auml;lle hinzuzuf&uuml;gen und zu ver&auml;ndern.',
         'add'         => [
             'title'   => 'Neues Teammitglied hinzufügen',
-            'success' => 'Teammitglied hinzugefügt.',
-            'failure' => 'Mit der Komponente ist etwas schiefgegangen.',
+            'success' => 'Team member added.',
+            'failure' => 'The team member could not be added, please try again.',
         ],
         'edit' => [
             'title'   => 'Profil aktualisieren',
-            'success' => 'Profil aktualisiert.',
-            'failure' => 'Bei der Aktualisierung ging etwas schief.',
+            'success' => 'Profile updated.',
+            'failure' => 'Something went wrong updating the profile, please try again.',
         ],
         'delete' => [
             'success' => 'Benutzer aktualisiert.',
-            'failure' => 'Bei dem Löschen dieses Benutzers ging etwas schief.',
+            'failure' => 'The team member could not be added, please try again.',
         ],
         'invite' => [
             'title'   => 'Invitar a un nuevo miembro al equipo',
             'success' => 'Se ha enviado una invitación',
-            'failure' => 'Algo salió mal en la invitación.',
+            'failure' => 'The invite could not be sent, please try again.',
         ],
     ],
 
@@ -196,6 +198,11 @@ return [
         ],
         'localization' => [
             'localization' => 'Localization',
+        ],
+        'customization' => [
+            'customization' => 'Customization',
+            'header'        => 'Custom Header HTML',
+            'footer'        => 'Custom Footer HTML',
         ],
         'security' => [
             'security'   => 'Sicherheit',
@@ -237,7 +244,7 @@ return [
     'welcome' => [
         'welcome' => 'Bienvenido a tu página de estado!',
         'message' => 'Ihre Statusseite ist fast fertig! Vielleicht möchten Sie diese zusätzlichen Einstellungen konfigurieren',
-        'close'   => 'Gehe einfach direkt zu meinem Dashboard',
+        'close'   => 'Take me straight to my dashboard',
         'steps'   => [
             'component'  => 'Komponenten erstellen',
             'incident'   => 'Vorfälle erstellen',

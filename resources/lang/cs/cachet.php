@@ -12,11 +12,15 @@
 return [
     // Components
     'components' => [
-        'status' => [
+        'last_updated' => 'Last updated :timestamp',
+        'status'       => [
             1 => 'V provozu',
             2 => 'Problémy s výkonem',
             3 => 'Částečný výpadek',
             4 => 'Závažný výpadek',
+        ],
+        'group' => [
+            'other' => 'Other Components',
         ],
     ],
 
@@ -63,10 +67,15 @@ return [
     'subscriber' => [
         'subscribe' => 'Subscribe to get the most recent updates',
         'button'    => 'Přihlásit',
-        'email'     => [
+        'manage'    => [
+            'no_subscriptions' => 'You\'re currently subscribed to all updates.',
+            'my_subscriptions' => 'You\'re currently subscribed to the following updates.',
+        ],
+        'email' => [
             'subscribe'          => 'Přihlásit se k zasílání upozornění e-mailem.',
             'subscribed'         => 'Proběhlo přihlášení k e-mailovým upozorněním, potvrďte ho prosím na vašem e-mailu.',
             'verified'           => 'E-mail pro zasílání upozornění byl ověřen. Děkujeme!',
+            'manage'             => 'Manage your subscription.',
             'unsubscribe'        => 'Unsubscribe from email updates.',
             'unsubscribed'       => 'Odběr e-mailových upozornění byl zrušen.',
             'failure'            => 'Došlo k chybě při nastavení odběru e-mailů.',
@@ -130,6 +139,7 @@ return [
     ],
 
     // Other
+    'description'     => 'Stay up to date with the latest service updates from :app.',
     'powered_by'      => ':app Status Page is powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
     'about_this_site' => 'About This Site',
     'rss-feed'        => 'RSS',

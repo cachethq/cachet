@@ -46,7 +46,7 @@ return [
         'scheduled_at'       => 'When to schedule the maintenance for?',
         'incident_time'      => 'Quando è accaduto questo incidente?',
         'notify_subscribers' => 'Notify subscribers?',
-        'visibility'         => 'Visibilità dell\'Incidente',
+        'visibility'         => 'Incident Visibility',
         'public'             => 'Viewable by public',
         'logged_in_only'     => 'Only visible to logged in users',
         'templates'          => [
@@ -68,8 +68,11 @@ return [
         'enabled'     => 'Component enabled?',
 
         'groups' => [
-            'name'      => 'Nome',
-            'collapsed' => 'Collapse the group by default?',
+            'name'               => 'Nome',
+            'collapsing'         => 'Choose visibility of the group',
+            'visible'            => 'Always expanded',
+            'collapsed'          => 'Collapse the group by default',
+            'collapsed_incident' => 'Collapse the group, but expand if there are issues',
         ],
     ],
 
@@ -101,7 +104,7 @@ return [
             'display-graphs'         => 'Visualizzare i grafici nella pagina di stato?',
             'about-this-page'        => 'About this page',
             'days-of-incidents'      => 'How many days of incidents to show?',
-            'banner'                 => 'Banner image',
+            'banner'                 => 'Banner Image',
             'banner-help'            => "It's recommended that you upload files no bigger than 930px wide .",
             'subscribers'            => 'Allow people to signup to email notifications?',
         ],
@@ -122,15 +125,15 @@ return [
             'allowed-domains-help' => 'Comma separated. The domain set above is automatically allowed by default.',
         ],
         'stylesheet' => [
-            'custom-css' => 'Foglio di Stile Personalizzato',
+            'custom-css' => 'Custom Stylesheet',
         ],
         'theme' => [
-            'background-color'        => 'Colore di Sfondo',
+            'background-color'        => 'Background Color',
             'background-fills'        => 'Background fills (components, incidents, footer)',
             'banner-background-color' => 'Banner background color',
             'banner-padding'          => 'Banner padding',
             'fullwidth-banner'        => 'Enable fullwidth banner?',
-            'text-color'              => 'Colore del Testo',
+            'text-color'              => 'Text Color',
             'dashboard-login'         => 'Show dashboard button in the footer?',
             'reds'                    => 'Red (used for errors)',
             'blues'                   => 'Blue (used for information)',
@@ -174,7 +177,7 @@ return [
     'cancel' => 'Cancella',
     'remove' => 'Rimuovi',
     'invite' => 'Invite',
-    'signup' => 'Sign Up',
+    'signup' => 'Registrati',
 
     // Other
     'optional' => '* Opzionale',

@@ -46,7 +46,7 @@ return [
         'scheduled_at'       => 'Für wann ist die Wartung geplant?',
         'incident_time'      => 'Wann ist dieser Vorfall aufgetreten?',
         'notify_subscribers' => 'Abonnenten benachrichtigen',
-        'visibility'         => 'Vorfall Sichtbarkeit',
+        'visibility'         => 'Incident Visibility',
         'public'             => 'Öffentlich sichtbar',
         'logged_in_only'     => 'Nur für angemeldete Benutzer sichtbar',
         'templates'          => [
@@ -68,8 +68,11 @@ return [
         'enabled'     => 'Component enabled?',
 
         'groups' => [
-            'name'      => 'Name',
-            'collapsed' => 'Collapse the group by default?',
+            'name'               => 'Name',
+            'collapsing'         => 'Choose visibility of the group',
+            'visible'            => 'Always expanded',
+            'collapsed'          => 'Collapse the group by default',
+            'collapsed_incident' => 'Collapse the group, but expand if there are issues',
         ],
     ],
 
@@ -101,8 +104,8 @@ return [
             'display-graphs'         => 'Graphen auf der Statusseite anzeigen?',
             'about-this-page'        => 'Über diese Seite',
             'days-of-incidents'      => 'Wie viele Tage mit Vorfällen sollen gezeigt werden?',
-            'banner'                 => 'Banner',
-            'banner-help'            => 'Es wird empfohlen, dass Sie keine Dateien die breiter als 930 Pixel sind hochladen .',
+            'banner'                 => 'Banner Image',
+            'banner-help'            => "Es wird empfohlen, dass Sie keine Dateien die breiter als 930 Pixel sind hochladen .",
             'subscribers'            => 'Personen die Anmeldung für E-Mail-Benachrichtigung erlauben?',
         ],
         'analytics' => [
@@ -122,15 +125,15 @@ return [
             'allowed-domains-help' => 'Durch Kommata trennen. Die oben genannte Domain ist standardmäßig erlaubt.',
         ],
         'stylesheet' => [
-            'custom-css' => 'Benutzerdefiniertes Stylesheet',
+            'custom-css' => 'Custom Stylesheet',
         ],
         'theme' => [
-            'background-color'        => 'Hintergrundfarbe',
+            'background-color'        => 'Background Color',
             'background-fills'        => 'Background fills (components, incidents, footer)',
             'banner-background-color' => 'Banner Background Color',
             'banner-padding'          => 'Banner Padding',
             'fullwidth-banner'        => 'Enable fullwidth banner?',
-            'text-color'              => 'Schriftfarbe',
+            'text-color'              => 'Text Color',
             'dashboard-login'         => 'Show dashboard button in the footer?',
             'reds'                    => 'Red (used for errors)',
             'blues'                   => 'Blue (used for information)',

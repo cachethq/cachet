@@ -12,11 +12,15 @@
 return [
     // Components
     'components' => [
-        'status' => [
+        'last_updated' => 'Last updated :timestamp',
+        'status'       => [
             1 => '稼働中',
             2 => 'パフォーマンスに関する問題あり',
             3 => '一部停止中',
             4 => '大規模な停止中',
+        ],
+        'group' => [
+            'other' => 'Other Components',
         ],
     ],
 
@@ -63,10 +67,15 @@ return [
     'subscriber' => [
         'subscribe' => '最新のアップデート情報を購読する',
         'button'    => '購読',
-        'email'     => [
+        'manage'    => [
+            'no_subscriptions' => 'You\'re currently subscribed to all updates.',
+            'my_subscriptions' => 'You\'re currently subscribed to the following updates.',
+        ],
+        'email' => [
             'subscribe'          => 'メールによるアップデート情報の購読',
             'subscribed'         => 'You\'ve been subscribed to email notifications, please check your email to confirm your subscription.',
             'verified'           => 'Your email subscription has been confirmed. Thank you!',
+            'manage'             => 'Manage your subscription.',
             'unsubscribe'        => 'Unsubscribe from email updates.',
             'unsubscribed'       => 'Your email subscription has been cancelled.',
             'failure'            => 'Something went wrong with the subscription.',
@@ -130,6 +139,7 @@ return [
     ],
 
     // Other
+    'description'     => 'Stay up to date with the latest service updates from :app.',
     'powered_by'      => ':app Status Page is powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
     'about_this_site' => 'このサイトについて',
     'rss-feed'        => 'RSS',

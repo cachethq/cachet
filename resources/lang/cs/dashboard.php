@@ -22,17 +22,17 @@ return [
         'incident-templates'       => 'Šablony incidentů',
         'add'                      => [
             'title'   => 'Report an incident',
-            'success' => 'Incident přidán.',
-            'failure' => 'Na incidentu se něco pokazilo.',
+            'success' => 'Incident added.',
+            'failure' => 'There was an error adding the incident, please try again.',
         ],
         'edit' => [
             'title'   => 'Edit an incident',
             'success' => 'Incident aktualizován.',
-            'failure' => 'S incidentem se něco pokazilo.',
+            'failure' => 'There was an error editing the incident, please try again.',
         ],
         'delete' => [
             'success' => 'The incident has been deleted and will not show on your status page.',
-            'failure' => 'The incident could not be deleted. Please try again.',
+            'failure' => 'The incident could not be deleted, please try again.',
         ],
 
         // Incident templates
@@ -41,17 +41,17 @@ return [
             'add'   => [
                 'title'   => 'Create an incident template',
                 'message' => 'You should add an incident template.',
-                'success' => 'Šablona vytvořena.',
-                'failure' => 'Na šabloně incidentu se něco se pokazilo.',
+                'success' => 'Your new incident template has been created.',
+                'failure' => 'Something went wrong with the incident template.',
             ],
             'edit' => [
                 'title'   => 'Edit Template',
-                'success' => 'Šablona byla aktualizována!',
-                'failure' => 'Při aktualizaci šablony incidentu se něco pokazilo',
+                'success' => 'The incident template has been updated.',
+                'failure' => 'Something went wrong updating the incident template',
             ],
             'delete' => [
                 'success' => 'The incident template has been deleted.',
-                'failure' => 'The incident template could not be deleted. Please try again.',
+                'failure' => 'The incident template could not be deleted, please try again.',
             ],
         ],
     ],
@@ -62,18 +62,18 @@ return [
         'logged'       => '{0} There are no schedules, good work.|You have logged one schedule.|You have reported <strong>:count</strong> schedules.',
         'scheduled_at' => 'Naplánováno na :timestamp',
         'add'          => [
-            'title'   => 'Přidat plánovanou odstávku',
-            'success' => 'Plán byl přidán.',
-            'failure' => 'Něco se pokazilo při přidávání plánu.',
+            'title'   => 'Add Scheduled Maintenance',
+            'success' => 'Schedule added.',
+            'failure' => 'Something went wrong adding the schedule, please try again.',
         ],
         'edit' => [
-            'title'   => 'Upravit plánované odstávky',
-            'success' => 'Plán byl aktualizován!',
-            'failure' => 'Něco se pokazilo při úpravě plánu.',
+            'title'   => 'Edit Scheduled Maintenance',
+            'success' => 'Schedule has been updated!',
+            'failure' => 'Something went wrong editing the schedule, please try again.',
         ],
         'delete' => [
-            'success' => 'Plán byl vymazán a nebude se zobrazovat na vaší stavové stránce.',
-            'failure' => 'Plán se nepodařilo smazat. Zkuste to prosím znovu.',
+            'success' => 'The scheduled maintenance has been deleted and will not show on your status page.',
+            'failure' => 'The scheduled maintenance could not be deleted, please try again.',
         ],
     ],
 
@@ -85,17 +85,17 @@ return [
         'add'                => [
             'title'   => 'Add a component',
             'message' => 'Měli byste přidat službu.',
-            'success' => 'Služba vytvořena.',
-            'failure' => 'Na službě se objevila chyba.',
+            'success' => 'Component created.',
+            'failure' => 'Something went wrong with the component, please try again.',
         ],
         'edit' => [
             'title'   => 'Edit a component',
-            'success' => 'Služba byla aktualizována.',
-            'failure' => 'Na službě se objevila chyba.',
+            'success' => 'Component updated.',
+            'failure' => 'Something went wrong with the component, please try again.',
         ],
         'delete' => [
             'success' => 'The component has been deleted!',
-            'failure' => 'The component could not be deleted. Please try again.',
+            'failure' => 'The component could not be deleted, please try again.',
         ],
 
         // Component groups
@@ -104,17 +104,17 @@ return [
             'no_components' => 'Můžete přidat skupinu služeb.',
             'add'           => [
                 'title'   => 'Add a component group',
-                'success' => 'Skupina služeb byla přidána.',
-                'failure' => 'Vyskytla se chyba skupiny služeb.',
+                'success' => 'Component group added.',
+                'failure' => 'Something went wrong with the component group, please try again.',
             ],
             'edit' => [
                 'title'   => 'Edit a component group',
-                'success' => 'Skupina služeb byla aktualizována.',
-                'failure' => 'Vyskytla se chyba skupiny služeb.',
+                'success' => 'Component group updated.',
+                'failure' => 'Something went wrong with the component group, please try again.',
             ],
             'delete' => [
                 'success' => 'Component group has been deleted!',
-                'failure' => 'The component group could not be deleted. Please try again.',
+                'failure' => 'The component group could not be deleted, please try again.',
             ],
         ],
     ],
@@ -125,34 +125,36 @@ return [
         'add'     => [
             'title'   => 'Create a metric',
             'message' => 'You should add a metric.',
-            'success' => 'Metrika vytvořena.',
-            'failure' => 'Něco se stalo s metrikou.',
+            'success' => 'Metric created.',
+            'failure' => 'Something went wrong with the metric, please try again.',
         ],
         'edit' => [
             'title'   => 'Edit a metric',
-            'success' => 'Metrika aktualizována.',
-            'failure' => 'Něco se stalo s metrikou.',
+            'success' => 'Metric updated.',
+            'failure' => 'Something went wrong with the metric, please try again.',
         ],
         'delete' => [
             'success' => 'The metric has been deleted and will no longer display on your status page.',
-            'failure' => 'The metric could not be deleted. Please try again.',
+            'failure' => 'The metric could not be deleted, please try again.',
         ],
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'  => 'Odběratelé',
-        'description'  => 'Odběratelé obdrží aktualizace e-mailem v okamžiku, kdy dojde ke vzniku incidentu.',
-        'verified'     => 'Ověřeno',
-        'not_verified' => 'Neověřeno',
-        'add'          => [
+        'subscribers'      => 'Odběratelé',
+        'description'      => 'Subscribers will receive email updates when incidents are created or components are updated.',
+        'verified'         => 'Ověřeno',
+        'not_verified'     => 'Neověřeno',
+        'subscriber'       => ':email, subscribed :date',
+        'no_subscriptions' => 'Subscribed to all updates',
+        'add'              => [
             'title'   => 'Add a new subscriber',
             'success' => 'Odběratel přidán.',
-            'failure' => 'Na službě se objevila chyba.',
+            'failure' => 'Something went wrong adding the subscriber, please try again.',
         ],
         'edit' => [
             'title'   => 'Update subscriber',
             'success' => 'Odběratel aktualizován.',
-            'failure' => 'Něco se pokazilo při aktualizaci.',
+            'failure' => 'Something went wrong editing the subscriber, please try again.',
         ],
     ],
 
@@ -164,22 +166,22 @@ return [
         'description' => 'Členové týmu budou schopni přidat nebo upravit komponenty a incidenty.',
         'add'         => [
             'title'   => 'Add a new team member',
-            'success' => 'Nový člen týmu byl přidán.',
-            'failure' => 'Nastala chyba při mazání uživatele.',
+            'success' => 'Team member added.',
+            'failure' => 'The team member could not be added, please try again.',
         ],
         'edit' => [
             'title'   => 'Update profile',
-            'success' => 'Profil byl aktualizován.',
-            'failure' => 'Něco se pokazilo při aktualizaci.',
+            'success' => 'Profile updated.',
+            'failure' => 'Something went wrong updating the profile, please try again.',
         ],
         'delete' => [
             'success' => 'Team member has been deleted and will no longer have access to the dashboard!',
-            'failure' => 'Nastala chyba při mazání uživatele.',
+            'failure' => 'The team member could not be added, please try again.',
         ],
         'invite' => [
             'title'   => 'Invite a new team member',
             'success' => 'An invite has been sent',
-            'failure' => 'The invite could not be sent. Please try again.',
+            'failure' => 'The invite could not be sent, please try again.',
         ],
     ],
 
@@ -196,6 +198,11 @@ return [
         ],
         'localization' => [
             'localization' => 'Localization',
+        ],
+        'customization' => [
+            'customization' => 'Customization',
+            'header'        => 'Custom Header HTML',
+            'footer'        => 'Custom Footer HTML',
         ],
         'security' => [
             'security'   => 'Zabezpečení',
@@ -237,7 +244,7 @@ return [
     'welcome' => [
         'welcome' => 'Welcome to your status page!',
         'message' => 'Vaše stavová stránka je téměř připravena! Možná budete chtít upravit další nastavení',
-        'close'   => 'Přejděte do řídicího panelu',
+        'close'   => 'Take me straight to my dashboard',
         'steps'   => [
             'component'  => 'Vytvoření komponent',
             'incident'   => 'Vytvoření incidentů',

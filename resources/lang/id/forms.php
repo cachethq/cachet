@@ -46,7 +46,7 @@ return [
         'scheduled_at'       => 'Berapa lama pemeliharaan ini dijadwalkan?',
         'incident_time'      => 'Kapan insiden ini terjadi?',
         'notify_subscribers' => 'Beritahu subscriber',
-        'visibility'         => 'Tampilan Insiden',
+        'visibility'         => 'Incident Visibility',
         'public'             => 'Bisa dilihat oleh publik',
         'logged_in_only'     => 'Hanya bisa dilihat oleh yang login',
         'templates'          => [
@@ -68,8 +68,11 @@ return [
         'enabled'     => 'Component enabled?',
 
         'groups' => [
-            'name'      => 'Nama',
-            'collapsed' => 'Collapse the group by default?',
+            'name'               => 'Nama',
+            'collapsing'         => 'Choose visibility of the group',
+            'visible'            => 'Always expanded',
+            'collapsed'          => 'Collapse the group by default',
+            'collapsed_incident' => 'Collapse the group, but expand if there are issues',
         ],
     ],
 
@@ -101,8 +104,8 @@ return [
             'display-graphs'         => 'Tampilkan grafik di halaman status?',
             'about-this-page'        => 'Tentang halaman ini',
             'days-of-incidents'      => 'Berapa hari insiden akan ditampilkan?',
-            'banner'                 => 'Gambar Banner',
-            'banner-help'            => 'Disarankan gambar yang anda unggah tidak lebih lebar dari 930px.',
+            'banner'                 => 'Banner Image',
+            'banner-help'            => "Disarankan gambar yang anda unggah tidak lebih lebar dari 930px.",
             'subscribers'            => 'Bolehkan pengunjung mendaftar notifikasi email?',
         ],
         'analytics' => [
@@ -122,15 +125,15 @@ return [
             'allowed-domains-help' => 'Pisahkan dengan koma. Domain yang ada di atas otomatis akan dibolehkan.',
         ],
         'stylesheet' => [
-            'custom-css' => 'Stylesheet Kustom',
+            'custom-css' => 'Custom Stylesheet',
         ],
         'theme' => [
-            'background-color'        => 'Warna Latar',
+            'background-color'        => 'Background Color',
             'background-fills'        => 'Isian latar belakang (Komponen, Insiden, Footer)',
             'banner-background-color' => 'Banner Background Color',
             'banner-padding'          => 'Banner Padding',
             'fullwidth-banner'        => 'Enable fullwidth banner?',
-            'text-color'              => 'Warna Teks',
+            'text-color'              => 'Text Color',
             'dashboard-login'         => 'Tampilkan tombol dashboard di footer?',
             'reds'                    => 'Merah (Digunakan jika ada kesalahan)',
             'blues'                   => 'Biru (Digunakan jika ada informasi)',

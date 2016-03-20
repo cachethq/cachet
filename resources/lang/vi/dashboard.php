@@ -22,17 +22,17 @@ return [
         'incident-templates'       => 'Mẫu sự cố',
         'add'                      => [
             'title'   => 'Thêm một sự cố',
-            'success' => 'Sự cố đã được thêm.',
-            'failure' => 'Có lỗi gì đó đã xảy ra khi thêm sự cố.',
+            'success' => 'Incident added.',
+            'failure' => 'There was an error adding the incident, please try again.',
         ],
         'edit' => [
             'title'   => 'Chỉnh sửa một sự cố',
             'success' => 'Sự cố đã được cập nhật.',
-            'failure' => 'Có lỗi gì đó đã xảy ra khi sửa sự cố.',
+            'failure' => 'There was an error editing the incident, please try again.',
         ],
         'delete' => [
             'success' => 'The incident has been deleted and will not show on your status page.',
-            'failure' => 'The incident could not be deleted. Please try again.',
+            'failure' => 'The incident could not be deleted, please try again.',
         ],
 
         // Incident templates
@@ -41,17 +41,17 @@ return [
             'add'   => [
                 'title'   => 'Tạo ra một khuôn mẫu khi gặp sự cố',
                 'message' => 'You should add an incident template.',
-                'success' => 'Mẫu đã được tạo.',
-                'failure' => 'Có lỗi gì đó xảy ra khi thêm mẫu.',
+                'success' => 'Your new incident template has been created.',
+                'failure' => 'Something went wrong with the incident template.',
             ],
             'edit' => [
                 'title'   => 'Sửa mẫu',
-                'success' => 'Template đã được cập nhật thành công !',
-                'failure' => 'Có lỗi gì đó xảy ra khi sửa mẫu',
+                'success' => 'The incident template has been updated.',
+                'failure' => 'Something went wrong updating the incident template',
             ],
             'delete' => [
                 'success' => 'The incident template has been deleted.',
-                'failure' => 'The incident template could not be deleted. Please try again.',
+                'failure' => 'The incident template could not be deleted, please try again.',
             ],
         ],
     ],
@@ -62,18 +62,18 @@ return [
         'logged'       => '{0} There are no schedules, good work.|You have logged one schedule.|You have reported <strong>:count</strong> schedules.',
         'scheduled_at' => 'Định kỳ lúc :timestamp',
         'add'          => [
-            'title'   => 'Thêm lịch bảo trì',
-            'success' => 'Lịch đã được thêm.',
-            'failure' => 'Có lỗi xảy ra khi thêm lịch.',
+            'title'   => 'Add Scheduled Maintenance',
+            'success' => 'Schedule added.',
+            'failure' => 'Something went wrong adding the schedule, please try again.',
         ],
         'edit' => [
-            'title'   => 'Sửa lịch bảo trì',
-            'success' => 'Lịch bảo trì đã được cập nhật.',
-            'failure' => 'Có lỗi xảy ra khi sửa lịch bảo trì.',
+            'title'   => 'Edit Scheduled Maintenance',
+            'success' => 'Schedule has been updated!',
+            'failure' => 'Something went wrong editing the schedule, please try again.',
         ],
         'delete' => [
-            'success' => 'Lịch bảo trì đã được xóa, nó sẽ không hiển thị trên trang status của bạn.',
-            'failure' => 'Lịch bảo trì chưa thể bị xóa, hãy thử lại.',
+            'success' => 'The scheduled maintenance has been deleted and will not show on your status page.',
+            'failure' => 'The scheduled maintenance could not be deleted, please try again.',
         ],
     ],
 
@@ -85,17 +85,17 @@ return [
         'add'                => [
             'title'   => 'Thêm một thành phần',
             'message' => 'Bạn cần thêm một component.',
-            'success' => 'Component đã được tạo.',
-            'failure' => 'Điều gì đó không đúng đã xảy ra với các component.',
+            'success' => 'Component created.',
+            'failure' => 'Something went wrong with the component, please try again.',
         ],
         'edit' => [
             'title'   => 'Chỉnh sửa một thành phần',
-            'success' => 'Component đã được cập nhật.',
-            'failure' => 'Điều gì đó không đúng đã xảy ra với các component.',
+            'success' => 'Component updated.',
+            'failure' => 'Something went wrong with the component, please try again.',
         ],
         'delete' => [
             'success' => 'The component has been deleted!',
-            'failure' => 'The component could not be deleted. Please try again.',
+            'failure' => 'The component could not be deleted, please try again.',
         ],
 
         // Component groups
@@ -104,17 +104,17 @@ return [
             'no_components' => 'You should add a component group.',
             'add'           => [
                 'title'   => 'Add a component group',
-                'success' => 'Nhóm component đã được thêm.',
-                'failure' => 'Điều gì đó sai đã xảy ra với nhóm component.',
+                'success' => 'Component group added.',
+                'failure' => 'Something went wrong with the component group, please try again.',
             ],
             'edit' => [
                 'title'   => 'Edit a component group',
-                'success' => 'Nhóm thành phần đã được cập nhật.',
-                'failure' => 'Điều gì đó không đúng đã xảy ra với nhóm thành phần.',
+                'success' => 'Component group updated.',
+                'failure' => 'Something went wrong with the component group, please try again.',
             ],
             'delete' => [
                 'success' => 'Component group has been deleted!',
-                'failure' => 'The component group could not be deleted. Please try again.',
+                'failure' => 'The component group could not be deleted, please try again.',
             ],
         ],
     ],
@@ -125,34 +125,36 @@ return [
         'add'     => [
             'title'   => 'Create a metric',
             'message' => 'You should add a metric.',
-            'success' => 'Metric đã được tạo.',
-            'failure' => 'Có lỗi xảy ra khi thêm metric.',
+            'success' => 'Metric created.',
+            'failure' => 'Something went wrong with the metric, please try again.',
         ],
         'edit' => [
             'title'   => 'Edit a metric',
-            'success' => 'Metric đã được sửa.',
-            'failure' => 'Có lỗi xảy ra khi thêm metric',
+            'success' => 'Metric updated.',
+            'failure' => 'Something went wrong with the metric, please try again.',
         ],
         'delete' => [
             'success' => 'The metric has been deleted and will no longer display on your status page.',
-            'failure' => 'The metric could not be deleted. Please try again.',
+            'failure' => 'The metric could not be deleted, please try again.',
         ],
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'  => 'Subscribers',
-        'description'  => 'Subscribers will receive email updates when incidents are created.',
-        'verified'     => 'Đã xác nhận',
-        'not_verified' => 'Chưa xác nhận',
-        'add'          => [
+        'subscribers'      => 'Subscribers',
+        'description'      => 'Subscribers will receive email updates when incidents are created or components are updated.',
+        'verified'         => 'Đã xác nhận',
+        'not_verified'     => 'Chưa xác nhận',
+        'subscriber'       => ':email, subscribed :date',
+        'no_subscriptions' => 'Subscribed to all updates',
+        'add'              => [
             'title'   => 'Add a new subscriber',
             'success' => 'Subscriber has been added!',
-            'failure' => 'Điều gì đó không đúng đã xảy ra với các component.',
+            'failure' => 'Something went wrong adding the subscriber, please try again.',
         ],
         'edit' => [
             'title'   => 'Update subscriber',
             'success' => 'Subscriber has been updated!',
-            'failure' => 'Có lỗi sai gì đó đã xảy ra khi cập nhật.',
+            'failure' => 'Something went wrong editing the subscriber, please try again.',
         ],
     ],
 
@@ -164,22 +166,22 @@ return [
         'description' => 'Thành viên trong đội sẽ có thể để thêm, sửa đổi và chỉnh sửa các thành phần và sự cố.',
         'add'         => [
             'title'   => 'Add a new team member',
-            'success' => 'Thành viên đã được add.',
-            'failure' => 'The team member could not be added. Please try again.',
+            'success' => 'Team member added.',
+            'failure' => 'The team member could not be added, please try again.',
         ],
         'edit' => [
             'title'   => 'Update profile',
-            'success' => 'Hồ Sơ đã được cập nhật.',
-            'failure' => 'Có lỗi sai gì đó đã xảy ra khi cập nhật.',
+            'success' => 'Profile updated.',
+            'failure' => 'Something went wrong updating the profile, please try again.',
         ],
         'delete' => [
             'success' => 'Team member has been deleted and will no longer have access to the dashboard!',
-            'failure' => 'The team member could not be added. Please try again.',
+            'failure' => 'The team member could not be added, please try again.',
         ],
         'invite' => [
             'title'   => 'Invite a new team member',
             'success' => 'An invite has been sent',
-            'failure' => 'The invite could not be sent. Please try again.',
+            'failure' => 'The invite could not be sent, please try again.',
         ],
     ],
 
@@ -196,6 +198,11 @@ return [
         ],
         'localization' => [
             'localization' => 'Bản địa hoá',
+        ],
+        'customization' => [
+            'customization' => 'Customization',
+            'header'        => 'Custom Header HTML',
+            'footer'        => 'Custom Footer HTML',
         ],
         'security' => [
             'security'   => 'Bảo mật',
@@ -237,7 +244,7 @@ return [
     'welcome' => [
         'welcome' => 'Welcome to your status page!',
         'message' => 'Trang trái thái cảu bạn gần như đã sẵn sàng. Bạn có thể muốn cấu hình mình vài thiết lập phụ',
-        'close'   => 'Chỉ cần đi thẳng đến bảng điều khiển của tôi',
+        'close'   => 'Take me straight to my dashboard',
         'steps'   => [
             'component'  => 'Tạo thành phần',
             'incident'   => 'Tạo sự cố',

@@ -22,17 +22,17 @@ return [
         'incident-templates'       => 'Modèles d\'incident',
         'add'                      => [
             'title'   => 'Ajouter un incident',
-            'success' => 'Incident ajouté.',
-            'failure' => 'L\'incident n\'a pas pu être signalé. Veuillez réessayer.',
+            'success' => 'Incident added.',
+            'failure' => 'There was an error adding the incident, please try again.',
         ],
         'edit' => [
             'title'   => 'Modifier un incident',
             'success' => 'Incident mis à jour.',
-            'failure' => 'L\'incident n\'a pas pu être modifié. Veuillez réessayer.',
+            'failure' => 'There was an error editing the incident, please try again.',
         ],
         'delete' => [
             'success' => 'L\'incident a été supprimé et ne sera pas affiché sur votre page de statut.',
-            'failure' => 'L\'incident n\'a pas pu être supprimé. Veuillez réessayer.',
+            'failure' => 'The incident could not be deleted, please try again.',
         ],
 
         // Incident templates
@@ -41,17 +41,17 @@ return [
             'add'   => [
                 'title'   => 'Créer un modèle d\'incident',
                 'message' => 'Vous devriez ajouter un modèle d\'incident.',
-                'success' => 'Modèle créé.',
-                'failure' => 'Le modèle d\'incident n\'a pas pu être crée. Veuillez réessayer.',
+                'success' => 'Your new incident template has been created.',
+                'failure' => 'Something went wrong with the incident template.',
             ],
             'edit' => [
                 'title'   => 'Éditer le modèle',
-                'success' => 'Le modèle a été mis à jour !',
-                'failure' => 'Le modèle d\'incident n\'a pas pu être modifié. Veuillez réessayer.',
+                'success' => 'The incident template has been updated.',
+                'failure' => 'Something went wrong updating the incident template',
             ],
             'delete' => [
                 'success' => 'Le modèle d\'incident a été supprimé.',
-                'failure' => 'Le modèle d\'incident n\'a pas pu être supprimé. Veuillez réessayer.',
+                'failure' => 'The incident template could not be deleted, please try again.',
             ],
         ],
     ],
@@ -62,18 +62,18 @@ return [
         'logged'       => '{0} Aucune maintenance en cours, félicitations.|Vous avez une maintenance planifiée.|Vous avez <strong>:count</strong> maintenances planifiées.',
         'scheduled_at' => 'Planifiée à :timestamp',
         'add'          => [
-            'title'   => 'Ajouter une maintenance planifiée',
-            'success' => 'Planification ajoutée.',
-            'failure' => 'Une erreur est survenue lors de l\'ajout de la planification.',
+            'title'   => 'Add Scheduled Maintenance',
+            'success' => 'Schedule added.',
+            'failure' => 'Something went wrong adding the schedule, please try again.',
         ],
         'edit' => [
-            'title'   => 'Modifier la maintenance planifiée',
-            'success' => 'La planification a été mise à jour !',
-            'failure' => 'Une erreur est survenue lors de l\'édition de la planification.',
+            'title'   => 'Edit Scheduled Maintenance',
+            'success' => 'Schedule has been updated!',
+            'failure' => 'Something went wrong editing the schedule, please try again.',
         ],
         'delete' => [
-            'success' => 'La maintenance planifiée a été supprimée et ne sera pas affichée sur votre page de statut !',
-            'failure' => 'La maintenance planifiée n\'a pas pu être supprimée. Veuillez réessayer.',
+            'success' => 'The scheduled maintenance has been deleted and will not show on your status page.',
+            'failure' => 'The scheduled maintenance could not be deleted, please try again.',
         ],
     ],
 
@@ -85,17 +85,17 @@ return [
         'add'                => [
             'title'   => 'Ajouter un composant',
             'message' => 'Vous devez ajouter un composant.',
-            'success' => 'Composant créé.',
-            'failure' => 'Une erreur est survenue avec le composant.',
+            'success' => 'Component created.',
+            'failure' => 'Something went wrong with the component, please try again.',
         ],
         'edit' => [
             'title'   => 'Modifier un composant',
-            'success' => 'Composant mis à jour.',
-            'failure' => 'Le composant n\'a pas pu être mis à jour. Veuillez réessayer.',
+            'success' => 'Component updated.',
+            'failure' => 'Something went wrong with the component, please try again.',
         ],
         'delete' => [
             'success' => 'Le composant a été supprimé !',
-            'failure' => 'Le composant n\'a pas pu être supprimé. Veuillez réessayer.',
+            'failure' => 'The component could not be deleted, please try again.',
         ],
 
         // Component groups
@@ -104,17 +104,17 @@ return [
             'no_components' => 'Vous devez ajouter un groupe de composants.',
             'add'           => [
                 'title'   => 'Ajouter un groupe de composants',
-                'success' => 'Le groupe de composants a été ajouté !',
-                'failure' => 'Une erreur est survenue avec le groupe de composants.',
+                'success' => 'Component group added.',
+                'failure' => 'Something went wrong with the component group, please try again.',
             ],
             'edit' => [
                 'title'   => 'Modifier un groupe de composants',
-                'success' => 'Le groupe de composants a été mis à jour !',
-                'failure' => 'Le groupe de composants n\'a pas pu être modifié. Veuillez réessayer.',
+                'success' => 'Component group updated.',
+                'failure' => 'Something went wrong with the component group, please try again.',
             ],
             'delete' => [
                 'success' => 'Le groupe de composants a été supprimé !',
-                'failure' => 'Le groupe de composants n\'a pas pu être supprimé. Veuillez réessayer.',
+                'failure' => 'The component group could not be deleted, please try again.',
             ],
         ],
     ],
@@ -125,34 +125,36 @@ return [
         'add'     => [
             'title'   => 'Créer une métrique',
             'message' => 'Vous devez ajouter un indicateur.',
-            'success' => 'L\'indicateur a été ajouté !',
-            'failure' => 'Un problème est survenu avec cette métrique.',
+            'success' => 'Metric created.',
+            'failure' => 'Something went wrong with the metric, please try again.',
         ],
         'edit' => [
             'title'   => 'Modifier une métrique',
-            'success' => 'Métrique mise à jour.',
-            'failure' => 'Un problème est survenu avec cette métrique.',
+            'success' => 'Metric updated.',
+            'failure' => 'Something went wrong with the metric, please try again.',
         ],
         'delete' => [
             'success' => 'La métrique a été supprimé et ne sera plus visible sur votre page de statut.',
-            'failure' => 'La métrique n\'a pas pu être supprimé. Veuillez réessayer.',
+            'failure' => 'The metric could not be deleted, please try again.',
         ],
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'  => 'Abonnés',
-        'description'  => 'Les abonnés reçoivent des notifications par e-mail lorsque des incidents sont créés.',
-        'verified'     => 'Vérifié',
-        'not_verified' => 'Non vérifié',
-        'add'          => [
+        'subscribers'      => 'Abonnés',
+        'description'      => 'Subscribers will receive email updates when incidents are created or components are updated.',
+        'verified'         => 'Vérifié',
+        'not_verified'     => 'Non vérifié',
+        'subscriber'       => ':email, subscribed :date',
+        'no_subscriptions' => 'Subscribed to all updates',
+        'add'              => [
             'title'   => 'Ajouter un abonné',
             'success' => 'L\'abonné a été ajouté !',
-            'failure' => 'L\'abonné n\'a pas pu être ajouté. Veuillez réessayer.',
+            'failure' => 'Something went wrong adding the subscriber, please try again.',
         ],
         'edit' => [
             'title'   => 'Mettre à jour l\'abonné',
             'success' => 'L\'abonné a été mis à jour !',
-            'failure' => 'L\'abonné n\'a pas pu être mis à jour. Veuillez réessayer.',
+            'failure' => 'Something went wrong editing the subscriber, please try again.',
         ],
     ],
 
@@ -164,22 +166,22 @@ return [
         'description' => 'Les membres de l\'équipe pourront ajouter &amp; modifier les composants et les incidents.',
         'add'         => [
             'title'   => 'Ajouter un nouveau membre de l\'équipe',
-            'success' => 'Un membre à été ajouté à l\'équipe !',
-            'failure' => 'Une erreur est survenue avec le composant.',
+            'success' => 'Team member added.',
+            'failure' => 'The team member could not be added, please try again.',
         ],
         'edit' => [
             'title'   => 'Mettre le profil à jour',
-            'success' => 'Le membre de l\'équipe a été mis à jour !',
-            'failure' => 'Le membre de l\'équipe n\'a pas pu être mis à jour. Veuillez réessayer.',
+            'success' => 'Profile updated.',
+            'failure' => 'Something went wrong updating the profile, please try again.',
         ],
         'delete' => [
             'success' => 'Le membre de l\'équipe a été supprimé et n\'aura plus l\'accès au tableau de bord !',
-            'failure' => 'Le membre de l\'équipe n\'a pas pu être supprimé. Veuillez réessayer.',
+            'failure' => 'The team member could not be added, please try again.',
         ],
         'invite' => [
             'title'   => 'Inviter un nouveau membre de l\'équipe',
             'success' => 'Nouveau membre invité.',
-            'failure' => 'L\'invitation n\'a pas pu être envoyé. Veuillez réessayer.',
+            'failure' => 'The invite could not be sent, please try again.',
         ],
     ],
 
@@ -196,6 +198,11 @@ return [
         ],
         'localization' => [
             'localization' => 'Localisation',
+        ],
+        'customization' => [
+            'customization' => 'Customization',
+            'header'        => 'Custom Header HTML',
+            'footer'        => 'Custom Footer HTML',
         ],
         'security' => [
             'security'   => 'Sécurité',
@@ -237,7 +244,7 @@ return [
     'welcome' => [
         'welcome' => 'Bienvenue sur votre page de statut !',
         'message' => 'Votre page de statut est presque prête ! Vous voudrez peut-être configurer ces paramètres supplémentaires',
-        'close'   => 'Aller directement à mon tableau de bord',
+        'close'   => 'Take me straight to my dashboard',
         'steps'   => [
             'component'  => 'Créer des composants',
             'incident'   => 'Créer des incidents',

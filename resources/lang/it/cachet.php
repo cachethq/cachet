@@ -12,11 +12,15 @@
 return [
     // Components
     'components' => [
-        'status' => [
+        'last_updated' => 'Last updated :timestamp',
+        'status'       => [
             1 => 'Operativo',
             2 => 'Problemi sulle prestazioni',
             3 => 'Disservizio parziale',
             4 => 'Interruzione del servizio',
+        ],
+        'group' => [
+            'other' => 'Altri Componenti',
         ],
     ],
 
@@ -24,8 +28,8 @@ return [
     'incidents' => [
         'none'          => 'Nessun incidente segnalato',
         'past'          => 'Past Incidents',
-        'previous_week' => 'Previous Week',
-        'next_week'     => 'Next Week',
+        'previous_week' => 'Settimana Precedente',
+        'next_week'     => 'Prossima Settimana',
         'scheduled'     => 'Manutenzione programmata',
         'scheduled_at'  => ', programmata il :timestamp',
         'status'        => [
@@ -52,10 +56,10 @@ return [
     // Metrics
     'metrics' => [
         'filter' => [
-            'last_hour' => 'Last Hour',
-            'hourly'    => 'Last 12 Hours',
-            'weekly'    => 'Week',
-            'monthly'   => 'Month',
+            'last_hour' => 'Ultima Ora',
+            'hourly'    => 'Ultime 12 Ore',
+            'weekly'    => 'Settimana',
+            'monthly'   => 'Mese',
         ],
     ],
 
@@ -63,10 +67,15 @@ return [
     'subscriber' => [
         'subscribe' => 'Subscribe to get the most recent updates',
         'button'    => 'Iscriviti',
-        'email'     => [
+        'manage'    => [
+            'no_subscriptions' => 'You\'re currently subscribed to all updates.',
+            'my_subscriptions' => 'You\'re currently subscribed to the following updates.',
+        ],
+        'email' => [
             'subscribe'          => 'Iscriviti agli aggiornamenti via email.',
             'subscribed'         => 'Ti sei appena iscritto agli aggiornamenti email, controlla la tua casella per confermare la sottoscrizione',
             'verified'           => 'La tua iscrizione &egrave; stata confermata. Grazie!',
+            'manage'             => 'Manage your subscription.',
             'unsubscribe'        => 'Unsubscribe from email updates.',
             'unsubscribed'       => 'La tua iscrizione &egrave; stata rimossa.',
             'failure'            => 'Qualcosa è andato storto con l\'iscrizione.',
@@ -107,7 +116,7 @@ return [
     ],
 
     'signup' => [
-        'title'    => 'Sign Up',
+        'title'    => 'Registrati',
         'username' => 'Nome Utente',
         'email'    => 'Email',
         'password' => 'Password',
@@ -121,7 +130,7 @@ return [
 
     // Modal
     'modal' => [
-        'close'     => 'Close',
+        'close'     => 'Chiudi',
         'subscribe' => [
             'title'  => 'Subscribe to component updates',
             'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll already receive emails for this component.',
@@ -130,6 +139,7 @@ return [
     ],
 
     // Other
+    'description'     => 'Stay up to date with the latest service updates from :app.',
     'powered_by'      => ':app Status Page is powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
     'about_this_site' => 'About This Site',
     'rss-feed'        => 'RSS',

@@ -46,7 +46,7 @@ return [
         'scheduled_at'       => '排期在什麼時候進行維護？',
         'incident_time'      => '這次事件是什麽時候發生的？',
         'notify_subscribers' => '通知訂閱者',
-        'visibility'         => '事件的可見性',
+        'visibility'         => 'Incident Visibility',
         'public'             => '公共可見',
         'logged_in_only'     => '僅登錄用戶可見',
         'templates'          => [
@@ -68,8 +68,11 @@ return [
         'enabled'     => '啟用',
 
         'groups' => [
-            'name'      => '名稱',
-            'collapsed' => 'Collapse the group by default?',
+            'name'               => '名稱',
+            'collapsing'         => 'Choose visibility of the group',
+            'visible'            => 'Always expanded',
+            'collapsed'          => 'Collapse the group by default',
+            'collapsed_incident' => 'Collapse the group, but expand if there are issues',
         ],
     ],
 
@@ -101,8 +104,8 @@ return [
             'display-graphs'         => '在狀態頁上顯示圖片？',
             'about-this-page'        => '關於本站',
             'days-of-incidents'      => '顯示多少天前的事件？',
-            'banner'                 => '圖片橫幅',
-            'banner-help'            => '橫幅寬度建議少於 930px 。',
+            'banner'                 => 'Banner Image',
+            'banner-help'            => "橫幅寬度建議少於 930px 。",
             'subscribers'            => '允許用戶訂閱郵件通知嗎?',
         ],
         'analytics' => [
@@ -122,15 +125,15 @@ return [
             'allowed-domains-help' => '請以半角逗號分隔。以上域名將會自動允許訪問。',
         ],
         'stylesheet' => [
-            'custom-css' => '自定義樣式表',
+            'custom-css' => 'Custom Stylesheet',
         ],
         'theme' => [
-            'background-color'        => '背景顏色',
+            'background-color'        => 'Background Color',
             'background-fills'        => '區塊填充色(組件, 事件, 頁尾)',
             'banner-background-color' => '横幅背景色',
             'banner-padding'          => '横幅Padding值',
             'fullwidth-banner'        => '横幅全寬？',
-            'text-color'              => '文字顏色',
+            'text-color'              => 'Text Color',
             'dashboard-login'         => '在頁尾顯示 管理後臺 的入口？',
             'reds'                    => '紅（用於錯誤類提示)',
             'blues'                   => '藍 (用於信息類提示)',

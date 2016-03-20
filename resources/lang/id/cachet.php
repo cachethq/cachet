@@ -12,11 +12,15 @@
 return [
     // Components
     'components' => [
-        'status' => [
+        'last_updated' => 'Last updated :timestamp',
+        'status'       => [
             1 => 'Operasional',
             2 => 'Masalah Kinerja',
             3 => 'Gagal Sebagian',
             4 => 'Kegagalan Sistem',
+        ],
+        'group' => [
+            'other' => 'Other Components',
         ],
     ],
 
@@ -63,10 +67,15 @@ return [
     'subscriber' => [
         'subscribe' => 'Ikuti newsletter untuk mendapat update terbaru.',
         'button'    => 'Daftar',
-        'email'     => [
+        'manage'    => [
+            'no_subscriptions' => 'You\'re currently subscribed to all updates.',
+            'my_subscriptions' => 'You\'re currently subscribed to the following updates.',
+        ],
+        'email' => [
             'subscribe'          => 'Langganan update email.',
             'subscribed'         => 'Anda berhasil terdaftar pada notifikasi email, mohon periksa email anda untuk mengkonfirmasi pendaftaran ini.',
             'verified'           => 'Pendaftaran newsletter anda berhasil dikonfirmasi. Terima kasih!',
+            'manage'             => 'Manage your subscription.',
             'unsubscribe'        => 'Hapus saya dari update email.',
             'unsubscribed'       => 'Langganan email anda sudah dihentikan.',
             'failure'            => 'Ada yang salah dengan sistem langganan email.',
@@ -131,6 +140,7 @@ return [
     ],
 
     // Other
+    'description'     => 'Stay up to date with the latest service updates from :app.',
     'powered_by'      => 'Halaman Status :app dibuat dengan <a href="https://cachethq.io">Cachet</a>.',
     'about_this_site' => 'Tentang situs ini',
     'rss-feed'        => 'RSS',

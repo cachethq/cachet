@@ -46,7 +46,7 @@ return [
         'scheduled_at'       => 'Voor wanneer is het onderhoud gepland?',
         'incident_time'      => 'Wanneer heeft dit incident plaatsgevonden?',
         'notify_subscribers' => 'Houd abonnees op de hoogte?',
-        'visibility'         => 'Incident Zichtbaarheid',
+        'visibility'         => 'Incident Visibility',
         'public'             => 'Zichtbaar voor publiek',
         'logged_in_only'     => 'Alleen zichtbaar voor ingelogde gebruikers',
         'templates'          => [
@@ -68,8 +68,11 @@ return [
         'enabled'     => 'Component ingeschakeld?',
 
         'groups' => [
-            'name'      => 'Naam',
-            'collapsed' => 'Klap de groep standaard uit?',
+            'name'               => 'Naam',
+            'collapsing'         => 'Choose visibility of the group',
+            'visible'            => 'Always expanded',
+            'collapsed'          => 'Collapse the group by default',
+            'collapsed_incident' => 'Collapse the group, but expand if there are issues',
         ],
     ],
 
@@ -96,13 +99,13 @@ return [
     'settings' => [
         /// Application setup
         'app-setup' => [
-            'site-name'              => 'Site Naam',
+            'site-name'              => 'Site naam',
             'site-url'               => 'Site URL',
             'display-graphs'         => 'Grafieken tonen op statuspagina?',
             'about-this-page'        => 'Over deze pagina',
             'days-of-incidents'      => 'Hoeveel dagen moeten incidenten getoond worden?',
-            'banner'                 => 'Banner afbeelding',
-            'banner-help'            => 'Het wordt aanbevolen dat u geen bestanden upload die breeder zijn dan 930px.',
+            'banner'                 => 'Banner Image',
+            'banner-help'            => "Het wordt aanbevolen dat u geen bestanden upload die breeder zijn dan 930px.",
             'subscribers'            => 'Bezoekers toestaan om te abonneren op e-mail notificaties?',
         ],
         'analytics' => [
@@ -125,12 +128,12 @@ return [
             'custom-css' => 'Custom Stylesheet',
         ],
         'theme' => [
-            'background-color'        => 'Achtergrondkleur',
+            'background-color'        => 'Background Color',
             'background-fills'        => 'Achtergrond opvulling (components, incidents, footer)',
             'banner-background-color' => 'Banner achtergrond kleur',
             'banner-padding'          => 'Banner padding',
             'fullwidth-banner'        => 'Volledige breedte van de banner aanzetten?',
-            'text-color'              => 'Tekstkleur',
+            'text-color'              => 'Text Color',
             'dashboard-login'         => 'Laat dashboard knop zien in de footer?',
             'reds'                    => 'Rood (voor errors)',
             'blues'                   => 'Blauw (voor informatie)',

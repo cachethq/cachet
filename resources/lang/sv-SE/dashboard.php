@@ -22,17 +22,17 @@ return [
         'incident-templates'       => 'Händelsemallar',
         'add'                      => [
             'title'   => 'Lägg till händelse',
-            'success' => 'Händelse rapporterad.',
-            'failure' => 'Händelsen kunde inte sparas. Vänligen försök igen.',
+            'success' => 'Incident added.',
+            'failure' => 'There was an error adding the incident, please try again.',
         ],
         'edit' => [
             'title'   => 'Redigera en händelse',
             'success' => 'Händelse uppdaterad.',
-            'failure' => 'Händelsen kunde inte uppdateras. Vänligen försök igen.',
+            'failure' => 'There was an error editing the incident, please try again.',
         ],
         'delete' => [
             'success' => 'Händelsen har tagits bort och kommer inte visas på din statussida.',
-            'failure' => 'Händelsen kunde inte tas bort. Vänligen försök igen.',
+            'failure' => 'The incident could not be deleted, please try again.',
         ],
 
         // Incident templates
@@ -41,17 +41,17 @@ return [
             'add'   => [
                 'title'   => 'Skapa en händelsemall',
                 'message' => 'Du borde lägga till en händelsemall.',
-                'success' => 'Händelsemallen har skapats!',
-                'failure' => 'Händelsemallen kunde inte skapas. Vänligen försök igen.',
+                'success' => 'Your new incident template has been created.',
+                'failure' => 'Something went wrong with the incident template.',
             ],
             'edit' => [
                 'title'   => 'Redigera mall',
-                'success' => 'Händelsemallen har uppdaterats!',
-                'failure' => 'Något gick fel med uppdateringen av händelsemallen',
+                'success' => 'The incident template has been updated.',
+                'failure' => 'Something went wrong updating the incident template',
             ],
             'delete' => [
                 'success' => 'Händelsen har tagits bort.',
-                'failure' => 'Händelsemallen kunde inte tas bort. Vänligen försök igen.',
+                'failure' => 'The incident template could not be deleted, please try again.',
             ],
         ],
     ],
@@ -62,18 +62,18 @@ return [
         'logged'       => '{0} Det finns inget schemalagt, bra jobbat!|Du har skapat ett schemalagt underhåll.|Du har skapat <strong>:count</strong> schemalagda underhåll.',
         'scheduled_at' => 'Schemalagd till: tidsstämpel',
         'add'          => [
-            'title'   => 'Lägg till planerat underhåll',
-            'success' => 'Schemalagt underhåll tillagt!',
-            'failure' => 'Det schemalagda underhållet kunde inte sparas. Vänligen försök igen.',
+            'title'   => 'Add Scheduled Maintenance',
+            'success' => 'Schedule added.',
+            'failure' => 'Something went wrong adding the schedule, please try again.',
         ],
         'edit' => [
-            'title'   => 'Redigera schemalagt underhåll',
-            'success' => 'Schemalagt underhåll har redigerats!',
-            'failure' => 'Det schemalagda underhållet kunde inte uppdateras. Vänligen försök igen.',
+            'title'   => 'Edit Scheduled Maintenance',
+            'success' => 'Schedule has been updated!',
+            'failure' => 'Something went wrong editing the schedule, please try again.',
         ],
         'delete' => [
-            'success' => 'Schemalagt underhåll har tagits bort!',
-            'failure' => 'Det schemalagda underhållet kunde inte tas bort. Vänligen försök igen.',
+            'success' => 'The scheduled maintenance has been deleted and will not show on your status page.',
+            'failure' => 'The scheduled maintenance could not be deleted, please try again.',
         ],
     ],
 
@@ -85,17 +85,17 @@ return [
         'add'                => [
             'title'   => 'Lägg till en komponent',
             'message' => 'Du borde lägga till en komponent.',
-            'success' => 'Komponenten tillagd!',
-            'failure' => 'Komponenten kunde inte läggas till. Vänligen försök igen.',
+            'success' => 'Component created.',
+            'failure' => 'Something went wrong with the component, please try again.',
         ],
         'edit' => [
             'title'   => 'Redigera komponent',
-            'success' => 'Komponenten har uppdaterats!',
-            'failure' => 'Komponenten kunde inte uppdateras. Vänligen försök igen.',
+            'success' => 'Component updated.',
+            'failure' => 'Something went wrong with the component, please try again.',
         ],
         'delete' => [
             'success' => 'Komponenten har tagits bort!',
-            'failure' => 'Komponenten kunde inte tas bort. Vänligen försök igen.',
+            'failure' => 'The component could not be deleted, please try again.',
         ],
 
         // Component groups
@@ -104,17 +104,17 @@ return [
             'no_components' => 'Du borde lägga till en komponentgrupp.',
             'add'           => [
                 'title'   => 'Lägg till en komponentgrupp',
-                'success' => 'Komponentgruppen har lagts till!',
-                'failure' => 'Komponentgruppen kunde inte läggas till. Vänligen försök igen.',
+                'success' => 'Component group added.',
+                'failure' => 'Something went wrong with the component group, please try again.',
             ],
             'edit' => [
                 'title'   => 'Redigera komponentgrupp',
-                'success' => 'Komponentgruppen har uppdaterats!',
-                'failure' => 'Komponentgruppen kunde inte uppdateras. Vänligen försök igen.',
+                'success' => 'Component group updated.',
+                'failure' => 'Something went wrong with the component group, please try again.',
             ],
             'delete' => [
                 'success' => 'Komponentgruppen har tagits bort!',
-                'failure' => 'Komponentgruppen kunde inte tas bort. Vänligen försök igen.',
+                'failure' => 'The component group could not be deleted, please try again.',
             ],
         ],
     ],
@@ -125,34 +125,36 @@ return [
         'add'     => [
             'title'   => 'Skapa ett mätetal',
             'message' => 'Du borde lägga till ett mätetal.',
-            'success' => 'Mätetal tillagt!',
-            'failure' => 'Mätetalet kunde inte läggas till. Vänligen försök igen.',
+            'success' => 'Metric created.',
+            'failure' => 'Something went wrong with the metric, please try again.',
         ],
         'edit' => [
             'title'   => 'Redigera ett mätetal',
-            'success' => 'Mätetal uppdaterat!',
-            'failure' => 'Mätetalet kunde inte uppdateras. Vänligen försök igen.',
+            'success' => 'Metric updated.',
+            'failure' => 'Something went wrong with the metric, please try again.',
         ],
         'delete' => [
             'success' => 'Mätetalet har tagits bort och kommer inte längre visas på din statussida.',
-            'failure' => 'Mätetalet kunde inte tas bort. Vänligen försök igen.',
+            'failure' => 'The metric could not be deleted, please try again.',
         ],
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'  => 'Prenumeranter',
-        'description'  => 'Prenumeranter kommer att få uppdateringar via e-post när händelser skapas.',
-        'verified'     => 'Bekräftad',
-        'not_verified' => 'Inte bekräftad',
-        'add'          => [
+        'subscribers'      => 'Prenumeranter',
+        'description'      => 'Subscribers will receive email updates when incidents are created or components are updated.',
+        'verified'         => 'Bekräftad',
+        'not_verified'     => 'Inte bekräftad',
+        'subscriber'       => ':email, subscribed :date',
+        'no_subscriptions' => 'Subscribed to all updates',
+        'add'              => [
             'title'   => 'Lägg till en prenumerant',
             'success' => 'Prenumerant tillagd!',
-            'failure' => 'Prenumeranten kunde inte läggas till. Vänligen försök igen.',
+            'failure' => 'Something went wrong adding the subscriber, please try again.',
         ],
         'edit' => [
             'title'   => 'Uppdatera prenumerant',
             'success' => 'Prenumerant uppdaterad!',
-            'failure' => 'Prenumeranten kunde inte uppdateras. Vänligen försök igen.',
+            'failure' => 'Something went wrong editing the subscriber, please try again.',
         ],
     ],
 
@@ -164,22 +166,22 @@ return [
         'description' => 'Teammedlemmar kommer kunna lägga till, ändra &amp; redigera komponenter och händelser.',
         'add'         => [
             'title'   => 'Lägg till en ny teammedlem',
-            'success' => 'Teammedlem tillagd!',
-            'failure' => 'Teammedlemen kunde inte läggas till. Vänligen försök igen.',
+            'success' => 'Team member added.',
+            'failure' => 'The team member could not be added, please try again.',
         ],
         'edit' => [
             'title'   => 'Uppdatera profil',
-            'success' => 'Profil uppdaterad.',
-            'failure' => 'Teammedlemen kunde inte uppdateras. Vänligen försök igen.',
+            'success' => 'Profile updated.',
+            'failure' => 'Something went wrong updating the profile, please try again.',
         ],
         'delete' => [
             'success' => 'Teammedlemen har tagits bort och kommer inte längre ha tillgång till översiktspanelen!',
-            'failure' => 'Teammedlemen kunde inte läggas till. Vänligen försök igen.',
+            'failure' => 'The team member could not be added, please try again.',
         ],
         'invite' => [
             'title'   => 'Bjud in en ny teammedlem',
             'success' => 'Inbjudan har skickats',
-            'failure' => 'Inbjudan kunde inte skickas. Vänligen försök igen.',
+            'failure' => 'The invite could not be sent, please try again.',
         ],
     ],
 
@@ -196,6 +198,11 @@ return [
         ],
         'localization' => [
             'localization' => 'Platsanpassning',
+        ],
+        'customization' => [
+            'customization' => 'Customization',
+            'header'        => 'Custom Header HTML',
+            'footer'        => 'Custom Footer HTML',
         ],
         'security' => [
             'security'   => 'Säkerhet',
@@ -237,7 +244,7 @@ return [
     'welcome' => [
         'welcome' => 'Välkommen till din statussida!',
         'message' => 'Din statussida är nästan redo. Du kan vilja konfigerara de här extra inställningarna',
-        'close'   => 'Gå bara direkt till min översiktspanel',
+        'close'   => 'Take me straight to my dashboard',
         'steps'   => [
             'component'  => 'Skapa komponenter',
             'incident'   => 'Skapa händelser',

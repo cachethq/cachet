@@ -46,7 +46,7 @@ return [
         'scheduled_at'       => 'När vill du schemalägga underhållet?',
         'incident_time'      => 'När inträffade händelsen?',
         'notify_subscribers' => 'Meddela prenumeranter?',
-        'visibility'         => 'Händelsens synlighet',
+        'visibility'         => 'Incident Visibility',
         'public'             => 'Kan ses av allmänheten',
         'logged_in_only'     => 'Endast synlig för inloggade användare',
         'templates'          => [
@@ -68,8 +68,11 @@ return [
         'enabled'     => 'Komponent aktiverad?',
 
         'groups' => [
-            'name'      => 'Namn',
-            'collapsed' => 'Vik in grupper som standard?',
+            'name'               => 'Namn',
+            'collapsing'         => 'Choose visibility of the group',
+            'visible'            => 'Always expanded',
+            'collapsed'          => 'Collapse the group by default',
+            'collapsed_incident' => 'Collapse the group, but expand if there are issues',
         ],
     ],
 
@@ -101,8 +104,8 @@ return [
             'display-graphs'         => 'Visa grafer på statussidan?',
             'about-this-page'        => 'Om den här sidan',
             'days-of-incidents'      => 'Hur många dagar av händelser ska visas?',
-            'banner'                 => 'Bannerbild',
-            'banner-help'            => 'Vi rekommenderar att du inte laddar upp bilder som är bredare än 930 px.',
+            'banner'                 => 'Banner Image',
+            'banner-help'            => "Vi rekommenderar att du inte laddar upp bilder som är bredare än 930 px.",
             'subscribers'            => 'Tillåt att registrera sig för notifikationer via e-post?',
         ],
         'analytics' => [
@@ -122,15 +125,15 @@ return [
             'allowed-domains-help' => 'Kommaseparerad. Domänerna ovan tillåts automatiskt som standard.',
         ],
         'stylesheet' => [
-            'custom-css' => 'Anpassad stilmall',
+            'custom-css' => 'Custom Stylesheet',
         ],
         'theme' => [
-            'background-color'        => 'Bakgrundsfärg',
+            'background-color'        => 'Background Color',
             'background-fills'        => 'Bakgrundsfärg (komponenter, händelser, sidfot)',
             'banner-background-color' => 'Bakgrundsfärg för banner',
             'banner-padding'          => 'Bannerutfyllnad',
             'fullwidth-banner'        => 'Aktivera fullbreddsbanner?',
-            'text-color'              => 'Textfärg',
+            'text-color'              => 'Text Color',
             'dashboard-login'         => 'Visa länk till översiktspanelen i sidfoten?',
             'reds'                    => 'Röd (används för fel)',
             'blues'                   => 'Blå (används för information)',

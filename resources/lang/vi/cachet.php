@@ -12,11 +12,15 @@
 return [
     // Components
     'components' => [
-        'status' => [
+        'last_updated' => 'Last updated :timestamp',
+        'status'       => [
             1 => 'Hoạt động',
             2 => 'Vấn đề hiệu suất',
             3 => 'Ngưng hoạt động một phần',
             4 => 'Ngừng hoạt động toàn bộ',
+        ],
+        'group' => [
+            'other' => 'Other Components',
         ],
     ],
 
@@ -63,10 +67,15 @@ return [
     'subscriber' => [
         'subscribe' => 'Subscribe to get the most recent updates',
         'button'    => 'Đăng ký',
-        'email'     => [
+        'manage'    => [
+            'no_subscriptions' => 'You\'re currently subscribed to all updates.',
+            'my_subscriptions' => 'You\'re currently subscribed to the following updates.',
+        ],
+        'email' => [
             'subscribe'          => 'Subscribe to email updates.',
             'subscribed'         => 'You\'ve been subscribed to email notifications, please check your email to confirm your subscription.',
             'verified'           => 'Your email subscription has been confirmed. Thank you!',
+            'manage'             => 'Manage your subscription.',
             'unsubscribe'        => 'Unsubscribe from email updates.',
             'unsubscribed'       => 'Your email subscription has been cancelled.',
             'failure'            => 'Something went wrong with the subscription.',
@@ -130,6 +139,7 @@ return [
     ],
 
     // Other
+    'description'     => 'Stay up to date with the latest service updates from :app.',
     'powered_by'      => ':app Status Page is powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
     'about_this_site' => 'Về trang web này',
     'rss-feed'        => 'RSS',

@@ -12,11 +12,15 @@
 return [
     // Components
     'components' => [
-        'status' => [
+        'last_updated' => 'Last updated :timestamp',
+        'status'       => [
             1 => '运行正常',
             2 => '负载较高',
             3 => 'Partial Outage',
             4 => 'Major Outage',
+        ],
+        'group' => [
+            'other' => '其他组件',
         ],
     ],
 
@@ -63,14 +67,19 @@ return [
     'subscriber' => [
         'subscribe' => '订阅最新的更新。',
         'button'    => 'Subscribe',
-        'email'     => [
+        'manage'    => [
+            'no_subscriptions' => 'You\'re currently subscribed to all updates.',
+            'my_subscriptions' => 'You\'re currently subscribed to the following updates.',
+        ],
+        'email' => [
             'subscribe'          => 'Subscribe to email updates.',
             'subscribed'         => '您已经订阅电子邮件通知，请检查您的电子邮件，确认您的订阅。',
             'verified'           => 'Your email subscription has been confirmed. Thank you!',
+            'manage'             => '管理您的订阅',
             'unsubscribe'        => '取消电子邮件订阅。',
             'unsubscribed'       => 'Your email subscription has been cancelled.',
             'failure'            => 'Something went wrong with the subscription.',
-            'already-subscribed' => '无法订阅：因为这个邮箱地址已经在订阅列表中了。',
+            'already-subscribed' => '无法订阅，因为这个邮箱地址 ( :email ) 已经在订阅列表中了。',
             'verify'             => [
                 'text'           => "Please confirm your email subscription to :app_name status updates.\n:link\nThank you, :app_name",
                 'html-preheader' => 'Please confirm your email subscription to :app_name status updates.',
@@ -130,6 +139,7 @@ return [
     ],
 
     // Other
+    'description'     => 'Stay up to date with the latest service updates from :app.',
     'powered_by'      => ':app 状态页托管服务由 <a href="https://cachethq.io">Cachet</a> 提供技术支持。',
     'about_this_site' => '关于我们',
     'rss-feed'        => 'RSS',

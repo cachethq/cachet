@@ -12,11 +12,15 @@
 return [
     // Components
     'components' => [
-        'status' => [
+        'last_updated' => 'Last updated :timestamp',
+        'status'       => [
             1 => '정상',
             2 => '성능 이슈',
             3 => '부분 중단',
             4 => '주요 중단',
+        ],
+        'group' => [
+            'other' => 'Other Components',
         ],
     ],
 
@@ -63,10 +67,15 @@ return [
     'subscriber' => [
         'subscribe' => '최신 업데이트를 받아 보기 위한 구독신청.',
         'button'    => '구독',
-        'email'     => [
+        'manage'    => [
+            'no_subscriptions' => 'You\'re currently subscribed to all updates.',
+            'my_subscriptions' => 'You\'re currently subscribed to the following updates.',
+        ],
+        'email' => [
             'subscribe'          => '이메일 구독 신청.',
             'subscribed'         => '이메일 구독 신청이 완료되었습니다. 구독 신청 확인을 위한 이메일을 확인해주세요.',
             'verified'           => '이메일 구독이 확인 되었습니다. 감사합니다!',
+            'manage'             => 'Manage your subscription.',
             'unsubscribe'        => '이메일 구독 취소',
             'unsubscribed'       => '이메일 구독이 취소 되었습니다.',
             'failure'            => '구독 신청 중에 문제가 발생했습니다.',
@@ -131,6 +140,7 @@ return [
     ],
 
     // Other
+    'description'     => 'Stay up to date with the latest service updates from :app.',
     'powered_by'      => ':app Status Page is powered by <a href="https://cachethq.io">Cachet</a>.',
     'about_this_site' => '이 사이트에 대해',
     'rss-feed'        => 'RSS',

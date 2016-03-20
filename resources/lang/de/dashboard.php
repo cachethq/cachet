@@ -23,16 +23,16 @@ return [
         'add'                      => [
             'title'   => 'Vorfall hinzufügen',
             'success' => 'Vorfall hinzugefügt.',
-            'failure' => 'Etwas ist mit dem Vorfall schiefgelaufen.',
+            'failure' => 'Es ist ein Fehler beim Hinzufügen der Störung aufgetreten. Bitte erneut versuchen.',
         ],
         'edit' => [
             'title'   => 'Vorfall bearbeiten',
             'success' => 'Vorfall aktualisiert.',
-            'failure' => 'Etwas ist mit dem Vorfall schiefgelaufen.',
+            'failure' => 'Es ist ein Fehler beim Editieren der Störung aufgetreten. Bitte erneut versuchen.',
         ],
         'delete' => [
             'success' => 'Der Vorfall wurde gelöscht und wird nicht mehr angezeigt.',
-            'failure' => 'Der Vorfall konnte nicht gelöscht werden. Bitte versuche es erneut.',
+            'failure' => 'Die Störung konnte nicht gelöscht werden. Bitte versuche es erneut.',
         ],
 
         // Incident templates
@@ -41,12 +41,12 @@ return [
             'add'   => [
                 'title'   => 'Vorfallvorlage erstellen',
                 'message' => 'Du solltest eine Vorfall-Vorlage hinzufügen.',
-                'success' => 'Vorlage erstellt.',
+                'success' => 'Deine neue Störungsvorlage wurde angelegt.',
                 'failure' => 'Etwas ist mit der Vorfallvorlage schiefgelaufen.',
             ],
             'edit' => [
                 'title'   => 'Vorlage bearbeiten',
-                'success' => 'Vorlage aktualisiert!',
+                'success' => 'Die Vorfallvorlage wurde aktualisiert.',
                 'failure' => 'Etwas ist mit dem Updaten der Vorfallvorlage schiefgelaufen',
             ],
             'delete' => [
@@ -64,12 +64,12 @@ return [
         'add'          => [
             'title'   => 'Planmäßige Wartung hinzufügen',
             'success' => 'Zeitplan hinzugefügt.',
-            'failure' => 'Etwas ist mit dem hinzufügen des Zeitplanes schiefgelaufen.',
+            'failure' => 'Etwas lief schief mit dem Hinzufügen des Zeitplans. Bitte versuchen Sie es erneut.',
         ],
         'edit' => [
             'title'   => 'Planmäßige Wartung bearbeiten',
             'success' => 'Zeitplan wurde aktualisiert!',
-            'failure' => 'Etwas ist mit dem Bearbeiten des Zeitplanes schiefgelaufen.',
+            'failure' => 'Etwas lief schief mit dem Editieren des Zeitplans. Bitte versuchen Sie es erneut.',
         ],
         'delete' => [
             'success' => 'Der Zeitplan wurde gelöscht und wird nicht auf Ihrer Statusseite angezeigt.',
@@ -86,12 +86,12 @@ return [
             'title'   => 'Komponente hinzufügen',
             'message' => 'Sie sollten eine Komponente erstellen.',
             'success' => 'Komponente erstellt.',
-            'failure' => 'Beim Erstellen der Komponente ist etwas schiefgegangen.',
+            'failure' => 'Something went wrong with the component, please try again.',
         ],
         'edit' => [
             'title'   => 'Komponente bearbeiten',
             'success' => 'Komponente aktualisiert.',
-            'failure' => 'Mit der Komponente ist etwas schiefgegangen.',
+            'failure' => 'Something went wrong with the component, please try again.',
         ],
         'delete' => [
             'success' => 'Die Komponente wurde gelöscht!',
@@ -105,16 +105,16 @@ return [
             'add'           => [
                 'title'   => 'Eine Komponentengruppe hinzufügen',
                 'success' => 'Komponentengruppe hinzugefügt.',
-                'failure' => 'Mit der Komponentengruppe ist etwas schiefgegangen.',
+                'failure' => 'Something went wrong with the component group, please try again.',
             ],
             'edit' => [
                 'title'   => 'Komponentengruppe bearbeiten',
                 'success' => 'Komponentengruppe aktualisiert.',
-                'failure' => 'Mit der Komponentengruppe ist etwas schiefgegangen.',
+                'failure' => 'Something went wrong with the component group, please try again.',
             ],
             'delete' => [
                 'success' => 'Die Komponentengruppe wurde gelöscht!',
-                'failure' => 'Die Komponentengruppe konnte nicht gelöscht werden. Bitte versuche es erneut.',
+                'failure' => 'The component group could not be deleted, please try again.',
             ],
         ],
     ],
@@ -126,12 +126,12 @@ return [
             'title'   => 'Metrik erstellen',
             'message' => 'Du solltest eine Metrik hinzufügen.',
             'success' => 'Metrik erstellt.',
-            'failure' => 'Mit der Metrik ist etwas schiefgegangen.',
+            'failure' => 'Es lieft etwas mit der Metrik schief, bitte nochmal versuchen.',
         ],
         'edit' => [
             'title'   => 'Metrik bearbeiten',
             'success' => 'Metrik aktualisiert.',
-            'failure' => 'Mit der Metrik ist etwas schiefgegangen.',
+            'failure' => 'Es lieft etwas mit der Metrik schief, bitte nochmal versuchen.',
         ],
         'delete' => [
             'success' => 'Die Metrik wurde gelöscht und wird nicht mehr angezeigt.',
@@ -140,19 +140,21 @@ return [
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'  => 'Abonnenten',
-        'description'  => 'Abonnenten erhalten E-Mail Updates wenn Vorfälle erstellt werden.',
-        'verified'     => 'Verifiziert',
-        'not_verified' => 'Nicht verifiziert',
-        'add'          => [
+        'subscribers'      => 'Abonnenten',
+        'description'      => 'Abonnenten erhalten E-Mail Updates, wenn Vorfälle erstellt oder Komponenten bearbeitet werden.',
+        'verified'         => 'Verifiziert',
+        'not_verified'     => 'Nicht verifiziert',
+        'subscriber'       => ':email, abonniert am :date',
+        'no_subscriptions' => 'Aktualisierungen per E-Mail abonnieren',
+        'add'              => [
             'title'   => 'Einen neuen Abonnenten hinzufügen',
             'success' => 'Abonnent hinzugefügt.',
-            'failure' => 'Beim Erstellen der Komponente ist etwas schiefgegangen.',
+            'failure' => 'Etwas lief schief dem dem Hinzufügen eines Abonnenten. Bitte versuchen Sie es erneut.',
         ],
         'edit' => [
             'title'   => 'Abonnent aktualisieren',
             'success' => 'Abonnent aktualisiert.',
-            'failure' => 'Bei der Aktualisierung ging etwas schief.',
+            'failure' => 'Etwas lief schief mit dem Bearbeiten eines Abonnenten. Bitte versuchen sie es erneut.',
         ],
     ],
 
@@ -165,21 +167,21 @@ return [
         'add'         => [
             'title'   => 'Neues Teammitglied hinzufügen',
             'success' => 'Teammitglied hinzugefügt.',
-            'failure' => 'Mit der Komponente ist etwas schiefgegangen.',
+            'failure' => 'Teammitglied konnte nicht hinzugefügt werden. Bitte versuchen Sie es erneut.',
         ],
         'edit' => [
             'title'   => 'Profil aktualisieren',
             'success' => 'Profil aktualisiert.',
-            'failure' => 'Bei der Aktualisierung ging etwas schief.',
+            'failure' => 'Etwas lief schief mit dem Aktualisieren des Profils. Bitte versuchen Sie es erneut.',
         ],
         'delete' => [
             'success' => 'Benutzer aktualisiert.',
-            'failure' => 'Bei dem Löschen dieses Benutzers ging etwas schief.',
+            'failure' => 'Teammitglied konnte nicht hinzugefügt werden. Bitte versuchen Sie es erneut.',
         ],
         'invite' => [
             'title'   => 'Ein neues Teammitglied einladen',
             'success' => 'Eine Einladung wurde verschickt',
-            'failure' => 'Mit der Einladung ist etwas schiefgelaufen.',
+            'failure' => 'Diese Einladung konnte nicht versendet werden. Bitte versuchen Sie es erneut.',
         ],
     ],
 
@@ -196,6 +198,11 @@ return [
         ],
         'localization' => [
             'localization' => 'Localization',
+        ],
+        'customization' => [
+            'customization' => 'Individualisierung',
+            'header'        => 'Benutzerdefinierter HTML Header',
+            'footer'        => 'Benutzerdefinierter HTML Footer',
         ],
         'security' => [
             'security'   => 'Sicherheit',

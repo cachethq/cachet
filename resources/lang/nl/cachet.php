@@ -12,11 +12,15 @@
 return [
     // Components
     'components' => [
-        'status' => [
+        'last_updated' => 'Last updated :timestamp',
+        'status'       => [
             1 => 'Operationeel',
             2 => 'Prestatieproblemen',
             3 => 'Gedeeltelijke Storing',
             4 => 'Grote Storing',
+        ],
+        'group' => [
+            'other' => 'Other Components',
         ],
     ],
 
@@ -63,10 +67,15 @@ return [
     'subscriber' => [
         'subscribe' => 'Abonneer voor de meest recente updates',
         'button'    => 'Abonneren',
-        'email'     => [
+        'manage'    => [
+            'no_subscriptions' => 'You\'re currently subscribed to all updates.',
+            'my_subscriptions' => 'You\'re currently subscribed to the following updates.',
+        ],
+        'email' => [
             'subscribe'          => 'Abonneren op e-mail updates.',
             'subscribed'         => 'U bent geabonneerd op e-mail notificaties, controleer uw e-mail om uw abonnement te bevestigen.',
             'verified'           => 'Uw e-mail abonnement is bevestigd. Bedankt!',
+            'manage'             => 'Manage your subscription.',
             'unsubscribe'        => 'Afmelden voor e-mail updates.',
             'unsubscribed'       => 'Uw e-mail abonnement is opgezegd.',
             'failure'            => 'Er ging iets fout tijdens het aanmelden.',
@@ -130,6 +139,7 @@ return [
     ],
 
     // Other
+    'description'     => 'Stay up to date with the latest service updates from :app.',
     'powered_by'      => ':app Status pagina word mogelijk gemaakt door <a href="https://cachethq.io" class="links">Cachet</a>.',
     'about_this_site' => 'Over deze website',
     'rss-feed'        => 'RSS',

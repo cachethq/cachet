@@ -22,17 +22,17 @@ return [
         'incident-templates'       => 'crwdns307:0crwdne307:0',
         'add'                      => [
             'title'   => 'crwdns564:0crwdne564:0',
-            'success' => 'crwdns309:0crwdne309:0',
-            'failure' => 'crwdns310:0crwdne310:0',
+            'success' => 'crwdns664:0crwdne664:0',
+            'failure' => 'crwdns665:0crwdne665:0',
         ],
         'edit' => [
             'title'   => 'crwdns565:0crwdne565:0',
             'success' => 'crwdns312:0crwdne312:0',
-            'failure' => 'crwdns313:0crwdne313:0',
+            'failure' => 'crwdns666:0crwdne666:0',
         ],
         'delete' => [
             'success' => 'crwdns637:0crwdne637:0',
-            'failure' => 'crwdns638:0crwdne638:0',
+            'failure' => 'crwdns667:0crwdne667:0',
         ],
 
         // Incident templates
@@ -41,17 +41,17 @@ return [
             'add'   => [
                 'title'   => 'crwdns566:0crwdne566:0',
                 'message' => 'crwdns639:0crwdne639:0',
-                'success' => 'crwdns316:0crwdne316:0',
-                'failure' => 'crwdns317:0crwdne317:0',
+                'success' => 'crwdns668:0crwdne668:0',
+                'failure' => 'crwdns669:0crwdne669:0',
             ],
             'edit' => [
                 'title'   => 'crwdns567:0crwdne567:0',
-                'success' => 'crwdns319:0crwdne319:0',
-                'failure' => 'crwdns320:0crwdne320:0',
+                'success' => 'crwdns670:0crwdne670:0',
+                'failure' => 'crwdns671:0crwdne671:0',
             ],
             'delete' => [
                 'success' => 'crwdns640:0crwdne640:0',
-                'failure' => 'crwdns641:0crwdne641:0',
+                'failure' => 'crwdns672:0crwdne672:0',
             ],
         ],
     ],
@@ -62,18 +62,18 @@ return [
         'logged'       => 'crwdns642:0{0}crwdne642:0',
         'scheduled_at' => 'crwdns446:0crwdne446:0',
         'add'          => [
-            'title'   => 'crwdns447:0crwdne447:0',
-            'success' => 'crwdns448:0crwdne448:0',
-            'failure' => 'crwdns449:0crwdne449:0',
+            'title'   => 'crwdns673:0crwdne673:0',
+            'success' => 'crwdns674:0crwdne674:0',
+            'failure' => 'crwdns675:0crwdne675:0',
         ],
         'edit' => [
-            'title'   => 'crwdns450:0crwdne450:0',
-            'success' => 'crwdns451:0crwdne451:0',
-            'failure' => 'crwdns452:0crwdne452:0',
+            'title'   => 'crwdns676:0crwdne676:0',
+            'success' => 'crwdns677:0crwdne677:0',
+            'failure' => 'crwdns678:0crwdne678:0',
         ],
         'delete' => [
-            'success' => 'crwdns453:0crwdne453:0',
-            'failure' => 'crwdns454:0crwdne454:0',
+            'success' => 'crwdns679:0crwdne679:0',
+            'failure' => 'crwdns680:0crwdne680:0',
         ],
     ],
 
@@ -85,17 +85,17 @@ return [
         'add'                => [
             'title'   => 'crwdns568:0crwdne568:0',
             'message' => 'crwdns323:0crwdne323:0',
-            'success' => 'crwdns324:0crwdne324:0',
-            'failure' => 'crwdns325:0crwdne325:0',
+            'success' => 'crwdns681:0crwdne681:0',
+            'failure' => 'crwdns682:0crwdne682:0',
         ],
         'edit' => [
             'title'   => 'crwdns569:0crwdne569:0',
-            'success' => 'crwdns327:0crwdne327:0',
-            'failure' => 'crwdns328:0crwdne328:0',
+            'success' => 'crwdns683:0crwdne683:0',
+            'failure' => 'crwdns684:0crwdne684:0',
         ],
         'delete' => [
             'success' => 'crwdns643:0crwdne643:0',
-            'failure' => 'crwdns644:0crwdne644:0',
+            'failure' => 'crwdns685:0crwdne685:0',
         ],
 
         // Component groups
@@ -104,17 +104,17 @@ return [
             'no_components' => 'crwdns478:0crwdne478:0',
             'add'           => [
                 'title'   => 'crwdns570:0crwdne570:0',
-                'success' => 'crwdns331:0crwdne331:0',
-                'failure' => 'crwdns332:0crwdne332:0',
+                'success' => 'crwdns686:0crwdne686:0',
+                'failure' => 'crwdns687:0crwdne687:0',
             ],
             'edit' => [
                 'title'   => 'crwdns571:0crwdne571:0',
-                'success' => 'crwdns456:0crwdne456:0',
-                'failure' => 'crwdns457:0crwdne457:0',
+                'success' => 'crwdns688:0crwdne688:0',
+                'failure' => 'crwdns689:0crwdne689:0',
             ],
             'delete' => [
                 'success' => 'crwdns645:0crwdne645:0',
-                'failure' => 'crwdns646:0crwdne646:0',
+                'failure' => 'crwdns690:0crwdne690:0',
             ],
         ],
     ],
@@ -125,34 +125,36 @@ return [
         'add'     => [
             'title'   => 'crwdns572:0crwdne572:0',
             'message' => 'crwdns647:0crwdne647:0',
-            'success' => 'crwdns459:0crwdne459:0',
-            'failure' => 'crwdns460:0crwdne460:0',
+            'success' => 'crwdns691:0crwdne691:0',
+            'failure' => 'crwdns692:0crwdne692:0',
         ],
         'edit' => [
             'title'   => 'crwdns573:0crwdne573:0',
-            'success' => 'crwdns462:0crwdne462:0',
-            'failure' => 'crwdns463:0crwdne463:0',
+            'success' => 'crwdns693:0crwdne693:0',
+            'failure' => 'crwdns694:0crwdne694:0',
         ],
         'delete' => [
             'success' => 'crwdns648:0crwdne648:0',
-            'failure' => 'crwdns649:0crwdne649:0',
+            'failure' => 'crwdns695:0crwdne695:0',
         ],
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'  => 'crwdns522:0crwdne522:0',
-        'description'  => 'crwdns523:0crwdne523:0',
-        'verified'     => 'crwdns524:0crwdne524:0',
-        'not_verified' => 'crwdns525:0crwdne525:0',
-        'add'          => [
+        'subscribers'      => 'crwdns522:0crwdne522:0',
+        'description'      => 'crwdns696:0crwdne696:0',
+        'verified'         => 'crwdns524:0crwdne524:0',
+        'not_verified'     => 'crwdns525:0crwdne525:0',
+        'subscriber'       => 'crwdns697:0crwdne697:0',
+        'no_subscriptions' => 'crwdns698:0crwdne698:0',
+        'add'              => [
             'title'   => 'crwdns574:0crwdne574:0',
             'success' => 'crwdns527:0crwdne527:0',
-            'failure' => 'crwdns528:0crwdne528:0',
+            'failure' => 'crwdns699:0crwdne699:0',
         ],
         'edit' => [
             'title'   => 'crwdns575:0crwdne575:0',
             'success' => 'crwdns530:0crwdne530:0',
-            'failure' => 'crwdns531:0crwdne531:0',
+            'failure' => 'crwdns700:0crwdne700:0',
         ],
     ],
 
@@ -164,22 +166,22 @@ return [
         'description' => 'crwdns338:0crwdne338:0',
         'add'         => [
             'title'   => 'crwdns576:0crwdne576:0',
-            'success' => 'crwdns340:0crwdne340:0',
-            'failure' => 'crwdns577:0crwdne577:0',
+            'success' => 'crwdns701:0crwdne701:0',
+            'failure' => 'crwdns702:0crwdne702:0',
         ],
         'edit' => [
             'title'   => 'crwdns578:0crwdne578:0',
-            'success' => 'crwdns343:0crwdne343:0',
-            'failure' => 'crwdns344:0crwdne344:0',
+            'success' => 'crwdns703:0crwdne703:0',
+            'failure' => 'crwdns704:0crwdne704:0',
         ],
         'delete' => [
             'success' => 'crwdns579:0crwdne579:0',
-            'failure' => 'crwdns533:0crwdne533:0',
+            'failure' => 'crwdns705:0crwdne705:0',
         ],
         'invite' => [
             'title'   => 'crwdns580:0crwdne580:0',
             'success' => 'crwdns581:0crwdne581:0',
-            'failure' => 'crwdns582:0crwdne582:0',
+            'failure' => 'crwdns706:0crwdne706:0',
         ],
     ],
 
@@ -196,6 +198,11 @@ return [
         ],
         'localization' => [
             'localization' => 'crwdns584:0crwdne584:0',
+        ],
+        'customization' => [
+            'customization' => 'crwdns707:0crwdne707:0',
+            'header'        => 'crwdns708:0crwdne708:0',
+            'footer'        => 'crwdns709:0crwdne709:0',
         ],
         'security' => [
             'security'   => 'crwdns348:0crwdne348:0',
@@ -237,7 +244,7 @@ return [
     'welcome' => [
         'welcome' => 'crwdns650:0crwdne650:0',
         'message' => 'crwdns359:0crwdne359:0',
-        'close'   => 'crwdns360:0crwdne360:0',
+        'close'   => 'crwdns710:0crwdne710:0',
         'steps'   => [
             'component'  => 'crwdns361:0crwdne361:0',
             'incident'   => 'crwdns362:0crwdne362:0',

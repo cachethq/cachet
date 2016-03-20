@@ -12,11 +12,15 @@
 return [
     // Components
     'components' => [
-        'status' => [
+        'last_updated' => 'Last updated :timestamp',
+        'status'       => [
             1 => 'Operacional',
             2 => 'Problemas de performance',
             3 => 'Indisponibilidade parcial',
             4 => 'Indisponibilidade total',
+        ],
+        'group' => [
+            'other' => 'Other Components',
         ],
     ],
 
@@ -63,10 +67,15 @@ return [
     'subscriber' => [
         'subscribe' => 'Inscreva-se para obter as atualizações mais recentes',
         'button'    => 'Inscreva-se',
-        'email'     => [
+        'manage'    => [
+            'no_subscriptions' => 'You\'re currently subscribed to all updates.',
+            'my_subscriptions' => 'You\'re currently subscribed to the following updates.',
+        ],
+        'email' => [
             'subscribe'          => 'Inscreva-se para atualizações via e-mail.',
             'subscribed'         => 'Inscrição realizada com sucesso! Por favor verifique o e-mail que enviamos à você para confirmar sua inscrição.',
             'verified'           => 'Sua inscrição foi confirmada! Obrigado!',
+            'manage'             => 'Manage your subscription.',
             'unsubscribe'        => 'Não desejo mais receber notificações via e-mail.',
             'unsubscribed'       => 'Sua inscrição foi cancelada.',
             'failure'            => 'Ocorreu um problema na sua inscrição.',
@@ -130,6 +139,7 @@ return [
     ],
 
     // Other
+    'description'     => 'Stay up to date with the latest service updates from :app.',
     'powered_by'      => ':app Status Page is powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
     'about_this_site' => 'Sobre este Site',
     'rss-feed'        => 'RSS',

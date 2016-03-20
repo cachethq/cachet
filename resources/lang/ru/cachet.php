@@ -12,11 +12,15 @@
 return [
     // Components
     'components' => [
-        'status' => [
+        'last_updated' => 'Last updated :timestamp',
+        'status'       => [
             1 => 'Работает',
             2 => 'Проблемы с производительностью',
             3 => 'Перебои в работе',
             4 => 'Полное отключение',
+        ],
+        'group' => [
+            'other' => 'Other Components',
         ],
     ],
 
@@ -63,10 +67,15 @@ return [
     'subscriber' => [
         'subscribe' => 'Подпишитесь, чтобы получать информацию об изменениях',
         'button'    => 'Подписаться',
-        'email'     => [
+        'manage'    => [
+            'no_subscriptions' => 'You\'re currently subscribed to all updates.',
+            'my_subscriptions' => 'You\'re currently subscribed to the following updates.',
+        ],
+        'email' => [
             'subscribe'          => 'Подписка на рассылку об изменениях.',
             'subscribed'         => 'Вы подписались на рассылку email уведомлений. Проверьте вашу почту, чтобы подтвердить подписку.',
             'verified'           => 'Ваша подписка подтверждена. Спасибо!',
+            'manage'             => 'Manage your subscription.',
             'unsubscribe'        => 'Отписаться от рассылки.',
             'unsubscribed'       => 'Ваша подписка отменена.',
             'failure'            => 'Произошла ошибка при подписке на рассылку.',
@@ -130,6 +139,7 @@ return [
     ],
 
     // Other
+    'description'     => 'Stay up to date with the latest service updates from :app.',
     'powered_by'      => ':app Status Page is powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
     'about_this_site' => 'Об этом сайте',
     'rss-feed'        => 'RSS',

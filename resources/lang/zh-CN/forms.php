@@ -46,7 +46,7 @@ return [
         'scheduled_at'       => 'When to schedule the maintenance for?',
         'incident_time'      => '这次故障是什么时候发生的？',
         'notify_subscribers' => '通知订阅者',
-        'visibility'         => '故障的可见性',
+        'visibility'         => 'Incident Visibility',
         'public'             => 'Viewable by public',
         'logged_in_only'     => '仅登录用户可见',
         'templates'          => [
@@ -68,8 +68,11 @@ return [
         'enabled'     => '启用',
 
         'groups' => [
-            'name'      => '组名',
-            'collapsed' => '默认折叠分组？',
+            'name'               => '组名',
+            'collapsing'         => 'Choose visibility of the group',
+            'visible'            => 'Always expanded',
+            'collapsed'          => 'Collapse the group by default',
+            'collapsed_incident' => 'Collapse the group, but expand if there are issues',
         ],
     ],
 
@@ -96,7 +99,7 @@ return [
     'settings' => [
         /// Application setup
         'app-setup' => [
-            'site-name'              => '网站名称',
+            'site-name'              => '站点名称',
             'site-url'               => '网址',
             'display-graphs'         => 'Display graphs on status page?',
             'about-this-page'        => '关于本页',
@@ -125,7 +128,7 @@ return [
             'custom-css' => 'Custom Stylesheet',
         ],
         'theme' => [
-            'background-color'        => '页面背景色',
+            'background-color'        => 'Background Color',
             'background-fills'        => '区块填充色(组件, 故障, 页尾)',
             'banner-background-color' => '横幅背景色',
             'banner-padding'          => '横幅Padding值',

@@ -46,7 +46,7 @@ return [
         'scheduled_at'       => 'When to schedule the maintenance for?',
         'incident_time'      => 'When did this incident occur?',
         'notify_subscribers' => 'Notify subscribers?',
-        'visibility'         => 'Incident visibility',
+        'visibility'         => 'Incident Visibility',
         'public'             => 'Viewable by public',
         'logged_in_only'     => 'Only visible to logged in users',
         'templates'          => [
@@ -68,8 +68,11 @@ return [
         'enabled'     => 'Component enabled?',
 
         'groups' => [
-            'name'      => 'Name',
-            'collapsed' => 'Collapse the group by default?',
+            'name'               => 'Name',
+            'collapsing'         => 'Choose visibility of the group',
+            'visible'            => 'Always expanded',
+            'collapsed'          => 'Collapse the group by default',
+            'collapsed_incident' => 'Collapse the group, but expand if there are issues',
         ],
     ],
 
@@ -96,13 +99,13 @@ return [
     'settings' => [
         /// Application setup
         'app-setup' => [
-            'site-name'              => 'サイト名',
+            'site-name'              => 'Site Name',
             'site-url'               => 'サイトのURL',
             'display-graphs'         => 'Display graphs on status page?',
             'about-this-page'        => 'このページについて',
             'days-of-incidents'      => '何日間のインシデントを表示しますか？',
-            'banner'                 => 'バナー画像',
-            'banner-help'            => '横幅が930px以内の画像をアップロードしてください。',
+            'banner'                 => 'Banner Image',
+            'banner-help'            => "横幅が930px以内の画像をアップロードしてください。",
             'subscribers'            => 'Allow people to signup to email notifications?',
         ],
         'analytics' => [
@@ -122,15 +125,15 @@ return [
             'allowed-domains-help' => 'Comma separated. The domain set above is automatically allowed by default.',
         ],
         'stylesheet' => [
-            'custom-css' => 'スタイルシートのカスタマイズ',
+            'custom-css' => 'Custom Stylesheet',
         ],
         'theme' => [
-            'background-color'        => '背景色',
+            'background-color'        => 'Background Color',
             'background-fills'        => 'Background fills (components, incidents, footer)',
             'banner-background-color' => 'Banner background color',
             'banner-padding'          => 'Banner padding',
             'fullwidth-banner'        => 'Enable fullwidth banner?',
-            'text-color'              => '文字色',
+            'text-color'              => 'Text Color',
             'dashboard-login'         => 'ダッシュボードページへのリンクをフッター部分に表示しますか？',
             'reds'                    => 'レッド（エラー表示に使用されます）',
             'blues'                   => 'ブルー（インフォメーション表示に使用されます）',

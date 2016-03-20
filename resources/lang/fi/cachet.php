@@ -12,11 +12,15 @@
 return [
     // Components
     'components' => [
-        'status' => [
+        'last_updated' => 'Last updated :timestamp',
+        'status'       => [
             1 => 'Toiminnassa',
             2 => 'Suorituskykyyn liittyviä ongelmia',
             3 => 'Osittainen sähkökatkos',
             4 => 'Merkittävä katkos',
+        ],
+        'group' => [
+            'other' => 'Other Components',
         ],
     ],
 
@@ -63,18 +67,23 @@ return [
     'subscriber' => [
         'subscribe' => 'Tilaa uusimmat päivitykset',
         'button'    => 'Tilaa',
-        'email'     => [
+        'manage'    => [
+            'no_subscriptions' => 'Olet tällä hetkellä tilannut kaikki ilmoitukset.',
+            'my_subscriptions' => 'You\'re currently subscribed to the following updates.',
+        ],
+        'email' => [
             'subscribe'          => 'Tilaa email päivitykset.',
             'subscribed'         => 'Olet tilannut sähköposti-ilmoitukset, tarkista sähköpostisi vahvistaaksesi tilauksen.',
             'verified'           => 'Sinun sähköposti tilaus on vahvistettu. Kiitos!',
+            'manage'             => 'Hallinnoi tilaustasi.',
             'unsubscribe'        => 'Poista sähköposti tilauksesi.',
             'unsubscribed'       => 'Sähköpostitilauksesi on peruuttu.',
             'failure'            => 'Jokin meni vikaan sähköpostitilauksen käsittelyssä.',
             'already-subscribed' => 'Cannot subscribe :email because they\'re already subscribed.',
             'verify'             => [
                 'text'           => "Ole hyvä ja vahvista :app_name tilasivun sähköpostitilauksille.\n:link\nKiittäen, :app_name",
-                'html-preheader' => 'Please confirm your email subscription to :app_name status updates.',
-                'html'           => '<p>Please confirm your email subscription to :app_name status updates.</p><p><a href=":link">:link</a></p><p>Thank you, :app_name</p>',
+                'html-preheader' => 'Vahvista sähköposti tilaus: app_name tila-päivityksiä.',
+                'html'           => '<p>Vahvista sähköposti tilaus: app_name Status Page.</p> <p><a href=":link">: link</a></p> <p>Kiitos,: app_name</p>',
             ],
             'maintenance' => [
                 'text'           => "New maintenance has been scheduled on :app_name.\nThank you, :app_name",
@@ -112,24 +121,25 @@ return [
         'email'    => 'Sähköposti',
         'password' => 'Salasana',
         'success'  => 'Tilisi on luotu.',
-        'failure'  => 'Something went wrong with the signup.',
+        'failure'  => 'Jokin meni vikaan sähköpostitilauksen käsittelyssä.',
     ],
 
     'system' => [
-        'update' => 'There is a newer version of Cachet available. You can learn how to update <a href="https://docs.cachethq.io/docs/updating-cachet">here</a>!',
+        'update' => 'Cachetistä on saatavilla uudempi versio. Katso miten päivitetään uudempaan versioon <a href="https://docs.cachethq.io/docs/updating-cachet">täältä</a>!',
     ],
 
     // Modal
     'modal' => [
         'close'     => 'Sulje',
         'subscribe' => [
-            'title'  => 'Subscribe to component updates',
-            'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll already receive emails for this component.',
+            'title'  => 'Tilaa sähköpostiin ilmoituksia komponenttien tilasta',
+            'body'   => 'Anna sähköpostiosoitteesi tilataaksesi ilmoituksia tästä komponentista. Jos olet aikaisemmin jo tilannut, saat jo tästä komponentistä sähköpostiilmoituksia.',
             'button' => 'Tilaa',
         ],
     ],
 
     // Other
+    'description'     => 'Pysy ajan tasalla tilaamalla uusimmat päivitykset :app.',
     'powered_by'      => ':app Status Page is powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
     'about_this_site' => 'Tietoa sivustosta',
     'rss-feed'        => 'RSS',

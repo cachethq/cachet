@@ -46,7 +46,7 @@ return [
         'scheduled_at'       => 'Na kdy naplánovat údržbu/výpadek?',
         'incident_time'      => 'Kdy k incidentu došlo?',
         'notify_subscribers' => 'Notify subscribers?',
-        'visibility'         => 'Viditelnost incidentu',
+        'visibility'         => 'Incident Visibility',
         'public'             => 'Viditelné veřejnosti',
         'logged_in_only'     => 'Only visible to logged in users',
         'templates'          => [
@@ -68,8 +68,11 @@ return [
         'enabled'     => 'Component enabled?',
 
         'groups' => [
-            'name'      => 'Jméno',
-            'collapsed' => 'Collapse the group by default?',
+            'name'               => 'Jméno',
+            'collapsing'         => 'Choose visibility of the group',
+            'visible'            => 'Always expanded',
+            'collapsed'          => 'Collapse the group by default',
+            'collapsed_incident' => 'Collapse the group, but expand if there are issues',
         ],
     ],
 
@@ -101,8 +104,8 @@ return [
             'display-graphs'         => 'Zobrazit grafy na stavové stránce?',
             'about-this-page'        => 'O této stránce',
             'days-of-incidents'      => 'Kolik dní incidentů zobrazovat?',
-            'banner'                 => 'Obrázek banneru',
-            'banner-help'            => 'Doručuje se nenahrávat soubory větší než 930 pixelů na šířku.',
+            'banner'                 => 'Banner Image',
+            'banner-help'            => "Doručuje se nenahrávat soubory větší než 930 pixelů na šířku.",
             'subscribers'            => 'Umožnit lidem, aby se přihlašovali k odběru e-mailových upozornění?',
         ],
         'analytics' => [
@@ -122,15 +125,15 @@ return [
             'allowed-domains-help' => 'Oddělené čárkami. Výše uvedené domény jsou ve výchozím nastavení automaticky povoleny.',
         ],
         'stylesheet' => [
-            'custom-css' => 'Vlastní šablona stylů',
+            'custom-css' => 'Custom Stylesheet',
         ],
         'theme' => [
-            'background-color'        => 'Barva pozadí',
+            'background-color'        => 'Background Color',
             'background-fills'        => 'Background fills (components, incidents, footer)',
             'banner-background-color' => 'Banner background color',
             'banner-padding'          => 'Banner padding',
             'fullwidth-banner'        => 'Enable fullwidth banner?',
-            'text-color'              => 'Barva textu',
+            'text-color'              => 'Text Color',
             'dashboard-login'         => 'Show dashboard button in the footer?',
             'reds'                    => 'Red (used for errors)',
             'blues'                   => 'Blue (used for information)',

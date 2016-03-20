@@ -68,8 +68,11 @@ return [
         'enabled'     => 'Component enabled?',
 
         'groups' => [
-            'name'      => 'Name',
-            'collapsed' => 'Die Gruppe standardmäßig ausblenden?',
+            'name'               => 'Name',
+            'collapsing'         => 'Wähle Sichtbarkeit der Gruppe',
+            'visible'            => 'Immer erweitert',
+            'collapsed'          => 'Die Gruppe standardmäßig ausblenden',
+            'collapsed_incident' => 'Die Gruppe standardmäßig ausblenden, aber erweitern wenn es Probleme gibt',
         ],
     ],
 
@@ -101,8 +104,8 @@ return [
             'display-graphs'         => 'Graphen auf der Statusseite anzeigen?',
             'about-this-page'        => 'Über diese Seite',
             'days-of-incidents'      => 'Wie viele Tage mit Vorfällen sollen gezeigt werden?',
-            'banner'                 => 'Banner',
-            'banner-help'            => 'Es wird empfohlen, dass Sie keine Dateien die breiter als 930 Pixel sind hochladen .',
+            'banner'                 => 'Banner Bild',
+            'banner-help'            => "Es wird empfohlen, dass Sie keine Dateien die breiter als 930 Pixel sind hochladen .",
             'subscribers'            => 'Personen die Anmeldung für E-Mail-Benachrichtigung erlauben?',
         ],
         'analytics' => [

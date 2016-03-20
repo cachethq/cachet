@@ -12,11 +12,15 @@
 return [
     // Components
     'components' => [
-        'status' => [
+        'last_updated' => 'Last updated :timestamp',
+        'status'       => [
             1 => 'Fungerar',
             2 => 'Prestandaproblem',
             3 => 'Mindre avbrott',
             4 => 'Större avbrott',
+        ],
+        'group' => [
+            'other' => 'Other Components',
         ],
     ],
 
@@ -63,10 +67,15 @@ return [
     'subscriber' => [
         'subscribe' => 'Prenumerera för att få de senaste uppdateringarna',
         'button'    => 'Prenumerera',
-        'email'     => [
+        'manage'    => [
+            'no_subscriptions' => 'You\'re currently subscribed to all updates.',
+            'my_subscriptions' => 'You\'re currently subscribed to the following updates.',
+        ],
+        'email' => [
             'subscribe'          => 'Prenumerera på epost-uppdateringar.',
             'subscribed'         => 'Du har börjat prenumerera på e-postmeddelanden, vänligen kontrollera din e-post för att bekräfta din prenumeration.',
             'verified'           => 'Din epost-prenumeration har bekräftats. Tack!',
+            'manage'             => 'Manage your subscription.',
             'unsubscribe'        => 'Avbeställ epost-uppdateringar.',
             'unsubscribed'       => 'Din epost-prenumeration har avbrutits.',
             'failure'            => 'Något blev fel med prenumerationen.',
@@ -130,6 +139,7 @@ return [
     ],
 
     // Other
+    'description'     => 'Stay up to date with the latest service updates from :app.',
     'powered_by'      => ': app statussida drivs av <a href="https://cachethq.io" class="links"> Cachet</a>.',
     'about_this_site' => 'Om sidan',
     'rss-feed'        => 'RSS',

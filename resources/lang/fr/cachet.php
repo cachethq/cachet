@@ -12,11 +12,15 @@
 return [
     // Components
     'components' => [
-        'status' => [
+        'last_updated' => 'Last updated :timestamp',
+        'status'       => [
             1 => 'Opérationnel',
             2 => 'Problèmes de performances',
             3 => 'Panne partielle',
             4 => 'Panne majeure',
+        ],
+        'group' => [
+            'other' => 'Other Components',
         ],
     ],
 
@@ -63,10 +67,15 @@ return [
     'subscriber' => [
         'subscribe' => 'Abonnez-vous pour obtenir les dernières mises à jour.',
         'button'    => 'S\'abonner',
-        'email'     => [
+        'manage'    => [
+            'no_subscriptions' => 'You\'re currently subscribed to all updates.',
+            'my_subscriptions' => 'You\'re currently subscribed to the following updates.',
+        ],
+        'email' => [
             'subscribe'          => 'S\'abonner aux notifications par email.',
             'subscribed'         => 'Vous êtes abonné aux notifications par email, veuillez vérifier votre messagerie pour confirmer votre adresse.',
             'verified'           => 'Votre abonnement aux notifications par email a été confirmé. Merci !',
+            'manage'             => 'Manage your subscription.',
             'unsubscribe'        => 'Désinscription des mises à jour par courriel.',
             'unsubscribed'       => 'Votre abonnement aux notifications par email a été annulé.',
             'failure'            => 'Une erreur est survenue lors de l\'abonnement.',
@@ -131,6 +140,7 @@ return [
     ],
 
     // Other
+    'description'     => 'Stay up to date with the latest service updates from :app.',
     'powered_by'      => ':app Page de statut est propulsé par <a href="https://cachethq.io">Cachet</a>.',
     'about_this_site' => 'À propos du site',
     'rss-feed'        => 'RSS',

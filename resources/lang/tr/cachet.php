@@ -12,11 +12,15 @@
 return [
     // Components
     'components' => [
-        'status' => [
+        'last_updated' => 'Last updated :timestamp',
+        'status'       => [
             1 => 'Çalışıyor',
             2 => 'Performans Sorunları',
             3 => 'Kısmi Kesinti',
             4 => 'Ana Kesinti',
+        ],
+        'group' => [
+            'other' => 'Other Components',
         ],
     ],
 
@@ -63,10 +67,15 @@ return [
     'subscriber' => [
         'subscribe' => 'Subscribe to get the most recent updates',
         'button'    => 'Abone Ol',
-        'email'     => [
+        'manage'    => [
+            'no_subscriptions' => 'You\'re currently subscribed to all updates.',
+            'my_subscriptions' => 'You\'re currently subscribed to the following updates.',
+        ],
+        'email' => [
             'subscribe'          => 'Güncellemeler için abone ol.',
             'subscribed'         => 'Bir email bildirimi almış olmalısın, lütfen aboneliğini onaylamak için kontrol et.',
             'verified'           => 'E mail aboneliğin kabul edildi. Teşekkürler!',
+            'manage'             => 'Manage your subscription.',
             'unsubscribe'        => 'Unsubscribe from email updates.',
             'unsubscribed'       => 'Email aboneliğin iptal edildi.',
             'failure'            => 'Bazı şeyler yanlış gitti.',
@@ -130,6 +139,7 @@ return [
     ],
 
     // Other
+    'description'     => 'Stay up to date with the latest service updates from :app.',
     'powered_by'      => ':app Status Page is powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
     'about_this_site' => 'About This Site',
     'rss-feed'        => 'RSS',

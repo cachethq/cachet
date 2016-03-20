@@ -12,11 +12,15 @@
 return [
     // Components
     'components' => [
-        'status' => [
+        'last_updated' => 'Last updated :timestamp',
+        'status'       => [
             1 => 'Normal',
             2 => 'Hastighedsproblemer',
             3 => 'Nogen udfald',
             4 => 'Store problemer',
+        ],
+        'group' => [
+            'other' => 'Andre komponenter',
         ],
     ],
 
@@ -63,10 +67,15 @@ return [
     'subscriber' => [
         'subscribe' => 'Abonner på seneste hændelser.',
         'button'    => 'Abonner',
-        'email'     => [
+        'manage'    => [
+            'no_subscriptions' => 'Du abonner i øjeblikket på alle opdateringer.',
+            'my_subscriptions' => 'Du abonnere i øjeblikket på følgende opdateringer.',
+        ],
+        'email' => [
             'subscribe'          => 'Få opdateringer pr. email.',
             'subscribed'         => 'Du er blevet tilmeldt emailnotifikationer. Vi har sendt dig en bekræftelse på den indtastede email-adresse.',
             'verified'           => 'Din tilmelding er nu blevet bekræftet, tak.',
+            'manage'             => 'Administrer dit abonnement.',
             'unsubscribe'        => 'Afmeld emailnotifikationer.',
             'unsubscribed'       => 'Du er nu blevet frameldt vores emailnotifikationer.',
             'failure'            => 'Noget gik galt med bekræftelsen.',
@@ -130,6 +139,7 @@ return [
     ],
 
     // Other
+    'description'     => 'Hold dig opdateret med de seneste opdateringer fra :app.',
     'powered_by'      => ':app statusside er bygget på <a href="https://cachethq.io" class="links">Cachet</a>.',
     'about_this_site' => 'Om siden',
     'rss-feed'        => 'RSS',

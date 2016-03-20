@@ -12,11 +12,15 @@
 return [
     // Components
     'components' => [
-        'status' => [
+        'last_updated' => 'Last updated :timestamp',
+        'status'       => [
             1 => '正常',
             2 => '效能問題',
             3 => '部分停止運作',
             4 => '停止運作',
+        ],
+        'group' => [
+            'other' => 'Other Components',
         ],
     ],
 
@@ -63,10 +67,15 @@ return [
     'subscriber' => [
         'subscribe' => '訂閱最新的狀態更新。',
         'button'    => '訂閱',
-        'email'     => [
+        'manage'    => [
+            'no_subscriptions' => 'You\'re currently subscribed to all updates.',
+            'my_subscriptions' => 'You\'re currently subscribed to the following updates.',
+        ],
+        'email' => [
             'subscribe'          => '訂閱 電子郵件 系統狀態更新。',
             'subscribed'         => '您已經訂閱電子郵件通知，請檢查您的電子郵件，確認您的訂閱。',
             'verified'           => '您的電子郵件訂閱已確認。謝謝！',
+            'manage'             => 'Manage your subscription.',
             'unsubscribe'        => '取消電子郵件訂閱。',
             'unsubscribed'       => '您的電子郵件訂閱已取消。',
             'failure'            => '郵件訂閱失敗。',
@@ -130,6 +139,7 @@ return [
     ],
 
     // Other
+    'description'     => 'Stay up to date with the latest service updates from :app.',
     'powered_by'      => ':app 應用狀態頁面由 <a href="https://cachethq.io">Cachet</a>提供支持。',
     'about_this_site' => '關於此站點',
     'rss-feed'        => 'RSS 訂閱',

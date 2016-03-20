@@ -12,11 +12,15 @@
 return [
     // Components
     'components' => [
-        'status' => [
+        'last_updated' => 'Last updated :timestamp',
+        'status'       => [
             1 => 'Operaţional',
             2 => 'Probleme de performanţă',
             3 => 'Ȋntrerupere parțială',
             4 => 'Ȋntrerupere gravă',
+        ],
+        'group' => [
+            'other' => 'Other Components',
         ],
     ],
 
@@ -63,10 +67,15 @@ return [
     'subscriber' => [
         'subscribe' => 'Abonează-te pentru a primi cele mai recente actualizări',
         'button'    => 'Abonează-te',
-        'email'     => [
+        'manage'    => [
+            'no_subscriptions' => 'You\'re currently subscribed to all updates.',
+            'my_subscriptions' => 'You\'re currently subscribed to the following updates.',
+        ],
+        'email' => [
             'subscribe'          => 'Abonează-te la actualizări prin email.',
             'subscribed'         => 'Te-ai abonat la actualizări prin email, te rugăm să îți verifici adresa email și să confirmi abonarea.',
             'verified'           => 'Abonarea prin email a fost confirmată. Mulțumim!',
+            'manage'             => 'Manage your subscription.',
             'unsubscribe'        => 'Dezabonare de la actualizări prin email.',
             'unsubscribed'       => 'Actualizările prin email au fost anulate.',
             'failure'            => 'Ceva nu a funcționat în legătură cu abonarea.',
@@ -130,6 +139,7 @@ return [
     ],
 
     // Other
+    'description'     => 'Stay up to date with the latest service updates from :app.',
     'powered_by'      => ':app Status Page is powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
     'about_this_site' => 'About This Site',
     'rss-feed'        => 'RSS',

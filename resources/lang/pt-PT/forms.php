@@ -46,7 +46,7 @@ return [
         'scheduled_at'       => 'Para quando pretende agendar a manutenção?',
         'incident_time'      => 'Quando é que este incidente ocorreu?',
         'notify_subscribers' => 'Notificar subscritores?',
-        'visibility'         => 'Visibilidade do Incidente',
+        'visibility'         => 'Incident Visibility',
         'public'             => 'Visível ao Publico',
         'logged_in_only'     => 'Apenas visível para users autenticados',
         'templates'          => [
@@ -68,8 +68,11 @@ return [
         'enabled'     => 'Componente activado?',
 
         'groups' => [
-            'name'      => 'Nome',
-            'collapsed' => 'Colapsar o grupo por defeito?',
+            'name'               => 'Nome',
+            'collapsing'         => 'Choose visibility of the group',
+            'visible'            => 'Always expanded',
+            'collapsed'          => 'Collapse the group by default',
+            'collapsed_incident' => 'Collapse the group, but expand if there are issues',
         ],
     ],
 
@@ -101,8 +104,8 @@ return [
             'display-graphs'         => 'Mostrar gráficos na página de estado?',
             'about-this-page'        => 'Sobre esta página',
             'days-of-incidents'      => 'Quantos dias de incidentes para mostrar?',
-            'banner'                 => 'Imagem do banner',
-            'banner-help'            => 'É recomendável que você faça upload de arquivos menores que 930px .',
+            'banner'                 => 'Banner Image',
+            'banner-help'            => "É recomendável que você faça upload de arquivos menores que 930px .",
             'subscribers'            => 'Permitir que as pessoas subscrevam as notificações?',
         ],
         'analytics' => [
@@ -122,15 +125,15 @@ return [
             'allowed-domains-help' => 'Separados por vírgula. O domínio definido acima é permitido automaticamente por padrão.',
         ],
         'stylesheet' => [
-            'custom-css' => 'Folha de estilos personalizada',
+            'custom-css' => 'Custom Stylesheet',
         ],
         'theme' => [
-            'background-color'        => 'Cor de fundo',
+            'background-color'        => 'Background Color',
             'background-fills'        => 'Preenchimento de Fundo (Componentes, Incidentes, Rodapé)',
             'banner-background-color' => 'Cor de Fundo do banner',
             'banner-padding'          => 'Espaçamento do Banner',
             'fullwidth-banner'        => 'Habilitar largura completa do banner?',
-            'text-color'              => 'Cor do Texto',
+            'text-color'              => 'Text Color',
             'dashboard-login'         => 'Mostrar botão para painel no rodapé?',
             'reds'                    => 'Vermelho (Usado para erros)',
             'blues'                   => 'Azul (usado para informações)',
