@@ -21,7 +21,7 @@ use CachetHQ\Cachet\Models\Schedule;
  *
  * @author James Brooks <james@alt-three.com>
  */
-class CreateScheduleCommandHandler
+class UpdateScheduleCommandHandler
 {
     /**
      * The date factory instance.
