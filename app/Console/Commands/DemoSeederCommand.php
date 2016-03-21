@@ -159,7 +159,7 @@ class DemoSeederCommand extends Command
      */
     protected function seedIncidents()
     {
-        $incidentMessage = <<<EINCIDENT
+        $incidentMessage = <<<'EINCIDENT'
 # Of course it does!
 
 What kind of web application doesn't these days?
