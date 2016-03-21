@@ -158,8 +158,6 @@ class IncidentPresenter extends BasePresenter implements Arrayable
     public function icon()
     {
         switch ($this->wrappedObject->status) {
-            case 0: // Scheduled
-                return 'icon ion-android-calendar';
             case 1: // Investigating
                 return 'icon ion-flag oranges';
             case 2: // Identified
