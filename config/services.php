@@ -42,10 +42,4 @@ return [
         'region' => 'us-east-1',
     ],
 
-    'stripe' => [
-        'model'  => 'CachetHQ\Cachet\Models\User',
-        'key'    => env('STRIPE_KEY'),
-        'secret' => env('STRIPE_SECRET'),
-    ],
-
 ];
