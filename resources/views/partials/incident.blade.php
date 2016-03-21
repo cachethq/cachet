@@ -19,7 +19,7 @@
             @endif
         </small>
     </div>
-    <div class="panel-body">
+    <div class="panel-body markdown-body">
         {!! $incident->formattedMessage !!}
     </div>
 </div>

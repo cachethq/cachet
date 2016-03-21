@@ -159,7 +159,25 @@ class DemoSeederCommand extends Command
      */
     protected function seedIncidents()
     {
+        $incidentMessage = <<<EINCIDENT
+# Of course it does!
+
+What kind of web application doesn't these days?
+
+## Headers are fun aren't they
+
+It's _exactly_ why we need Markdown. For **emphasis** and such.
+EINCIDENT;
+
         $defaultIncidents = [
+            [
+                'name'         => 'Cachet supports Markdown!',
+                'message'      => $incidentMessage,
+                'status'       => 4,
+                'component_id' => 0,
+                'scheduled_at' => null,
+                'visible'      => 1,
+            ],
             [
                 'name'         => 'Awesome',
                 'message'      => ':+1: We totally nailed the fix.',

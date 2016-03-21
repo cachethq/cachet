@@ -1,22 +1,23 @@
 {
-    "name": "Cachet",
-    "dependencies": {
-        "animate-sass": "~0.6",
-        "autosize": "~3.0.15",
-        "bootstrap-sass": "~3.3",
-        "chartjs": "~2.0.0-beta2",
-        "eonasdan-bootstrap-datetimepicker": "~3.1",
-        "humane-js": "~3.2",
-        "ionicons": "~2.0",
-        "jquery": "~2.2",
-        "jquery-minicolors": "~2.2",
-        "jquery-serialize-object": "~2.5",
-        "jquery-sparkline": "~2.1",
-        "livestampjs": "~1.1",
-        "lodash": "~4.5.1",
-        "messenger": "~1.4",
-        "moment": "~2.11.2",
-        "Sortable": "~1.4",
-        "sweetalert": "~1.1"
-    }
+  "name": "Cachet",
+  "dependencies": {
+    "animate-sass": "~0.6",
+    "autosize": "~3.0.15",
+    "bootstrap-sass": "~3.3",
+    "chartjs": "~2.0.0-beta2",
+    "eonasdan-bootstrap-datetimepicker": "~3.1",
+    "humane-js": "~3.2",
+    "ionicons": "~2.0",
+    "jquery": "~2.2",
+    "jquery-minicolors": "~2.2",
+    "jquery-serialize-object": "~2.5",
+    "jquery-sparkline": "~2.1",
+    "livestampjs": "~1.1",
+    "lodash": "~4.5.1",
+    "messenger": "~1.4",
+    "moment": "~2.11.2",
+    "Sortable": "~1.4",
+    "sweetalert": "~1.1",
+    "github-markdown-css": "^2.2.1"
+  }
 }

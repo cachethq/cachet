@@ -9,6 +9,7 @@ elixir(function (mix) {
         .styles([
             'vendor/bower_components/jquery-minicolors/jquery.minicolors.css',
             'vendor/bower_components/sweetalert/dist/sweetalert.css',
+            'vendor/bower_components/github-markdown-css/github-markdown.css',
             'public/dist/css/app.css'
         ], 'public/dist/css/all.css', './')
         .scripts([
