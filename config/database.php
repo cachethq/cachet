@@ -67,11 +67,12 @@ return [
             'database'  => env('DB_DATABASE', null),
             'username'  => env('DB_USERNAME', null),
             'password'  => env('DB_PASSWORD', null),
-            'port'      => env('DB_PORT', null),
+            'port'      => env('DB_PORT', '3306'),
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
             'strict'    => false,
+            'engine'    => null,
         ],
 
         'pgsql' => [
@@ -80,7 +81,7 @@ return [
             'database'  => env('DB_DATABASE', null),
             'username'  => env('DB_USERNAME', null),
             'password'  => env('DB_PASSWORD', null),
-            'port'      => env('DB_PORT', null),
+            'port'      => env('DB_PORT', '5432'),
             'charset'   => 'utf8',
             'prefix'    => '',
             'schema'    => 'public',
