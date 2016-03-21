@@ -11,8 +11,8 @@
 
 namespace CachetHQ\Cachet\Bus\Handlers\Commands\Schedule;
 
-use CachetHQ\Cachet\Bus\Commands\Schedule\CreateScheduleCommand;
-use CachetHQ\Cachet\Bus\Events\Schedule\ScheduleWasCreatedEvent;
+use CachetHQ\Cachet\Bus\Commands\Schedule\UpdateScheduleCommand;
+use CachetHQ\Cachet\Bus\Events\Schedule\ScheduleWasUpdatedEvent;
 use CachetHQ\Cachet\Dates\DateFactory;
 use CachetHQ\Cachet\Models\Schedule;
 
@@ -45,15 +45,17 @@ class UpdateScheduleCommandHandler
     /**
      * Handle the update schedule command.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\Schedule\CreateScheduleCommand $command
+     * @param \CachetHQ\Cachet\Bus\Commands\Schedule\UpdateScheduleCommand $command
      *
      * @return \CachetHQ\Cachet\Models\Schedule
      */
-    public function handle(CreateScheduleCommand $command)
+    public function handle(UpdateScheduleCommand $command)
     {
-        $schedule = $command->schedule->update($this->filter($command));
+        $schedule = $command->schedule;
 
-        event(new ScheduleWasCreatedEvent($schedule));
+        $schedule->update($this->filter($command));
+
+        event(new ScheduleWasUpdatedEvent($schedule));
 
         return $schedule;
     }
@@ -78,6 +80,10 @@ class UpdateScheduleCommandHandler
         $availableParams = array_filter($params, function ($val) {
             return $val !== null;
         });
+
+        if (isset($availableParams['scheduled_at'])) {
+            $availableParams['scheduled_at'] = $this->dates->create('U', $command->scheduledAt)->format('Y-m-d H:i:s');
+        }
 
         if (isset($availableParams['completed_at'])) {
             $availableParams['completed_at'] = $this->dates->create('U', $command->completedAt)->format('Y-m-d H:i:s');

@@ -13,6 +13,7 @@ namespace CachetHQ\Cachet\Bus\Handlers\Commands\Schedule;
 
 use CachetHQ\Cachet\Bus\Commands\Schedule\CreateScheduleCommand;
 use CachetHQ\Cachet\Bus\Events\Schedule\ScheduleWasCreatedEvent;
+use CachetHQ\Cachet\Dates\DateFactory;
 use CachetHQ\Cachet\Models\Schedule;
 
 /**
@@ -23,6 +24,25 @@ use CachetHQ\Cachet\Models\Schedule;
 class CreateScheduleCommandHandler
 {
     /**
+     * The date factory instance.
+     *
+     * @var \CachetHQ\Cachet\Dates\DateFactory
+     */
+    protected $dates;
+
+    /**
+     * Create a new update schedule command handler instance.
+     *
+     * @param \CachetHQ\Cachet\Dates\DateFactory $dates
+     *
+     * @return void
+     */
+    public function __construct(DateFactory $dates)
+    {
+        $this->dates = $dates;
+    }
+
+    /**
      * Handle the create schedule command.
      *
      * @param \CachetHQ\Cachet\Bus\Commands\Schedule\CreateScheduleCommand $command
@@ -31,6 +51,10 @@ class CreateScheduleCommandHandler
      */
     public function handle(CreateScheduleCommand $command)
     {
+        if ($command->scheduledAt) {
+            $command->scheduledAt = $this->dates->create('U', $command->scheduledAt)->format('Y-m-d H:i:s');
+        }
+
         $schedule = Schedule::create([
             'name'         => $command->name,
             'message'      => $command->message,

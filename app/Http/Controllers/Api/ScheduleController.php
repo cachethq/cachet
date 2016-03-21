@@ -11,7 +11,9 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Api;
 
+use CachetHQ\Cachet\Bus\Commands\Schedule\CreateScheduleCommand;
 use CachetHQ\Cachet\Bus\Commands\Schedule\DeleteScheduleCommand;
+use CachetHQ\Cachet\Bus\Commands\Schedule\UpdateScheduleCommand;
 use CachetHQ\Cachet\Models\Schedule;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Database\QueryException;
@@ -64,7 +66,19 @@ class ScheduleController extends AbstractApiController
      */
     public function postSchedule()
     {
-        //
+        try {
+            $schedule = dispatch(new CreateScheduleCommand(
+                Binput::get('name'),
+                Binput::get('message'),
+                Binput::get('status'),
+                Binput::get('scheduled_at'),
+                Binput::get('components', [])
+            ));
+        } catch (QueryException $e) {
+            throw new BadRequestHttpException();
+        }
+
+        return $this->item($schedule);
     }
 
     /**
@@ -76,7 +90,21 @@ class ScheduleController extends AbstractApiController
      */
     public function putSchedule(Schedule $schedule)
     {
-        //
+        try {
+            $schedule = dispatch(new UpdateScheduleCommand(
+                $schedule,
+                Binput::get('name'),
+                Binput::get('message'),
+                Binput::get('status'),
+                Binput::get('scheduled_at'),
+                Binput::get('completed_at'),
+                Binput::get('components', [])
+            ));
+        } catch (QueryException $e) {
+            throw new BadRequestHttpException();
+        }
+
+        return $this->item($schedule);
     }
 
     /**

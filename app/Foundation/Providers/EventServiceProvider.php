@@ -64,7 +64,7 @@ class EventServiceProvider extends ServiceProvider
             //
         ],
         'CachetHQ\Cachet\Bus\Events\Schedule\ScheduleWasCreatedEvent' => [
-            'CachetHQ\Cachet\Bus\Handlers\Events\Incident\SendMaintenanceEmailNotificationHandler',
+            'CachetHQ\Cachet\Bus\Handlers\Events\Schedule\SendScheduleEmailNotificationHandler',
         ],
         'CachetHQ\Cachet\Bus\Events\Schedule\ScheduleWasRemovedEvent' => [
             //
