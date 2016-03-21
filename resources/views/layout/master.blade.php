@@ -66,6 +66,8 @@
     <script src="{{ elixir('dist/js/all.js') }}"></script>
 </head>
 <body class="status-page">
+    @yield('outer-content')
+
     @include('partials.banner')
 
     <div class="container">

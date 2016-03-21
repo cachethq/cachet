@@ -389,4 +389,25 @@ body.status-page {
     .section-timeline, .section-components, .section-metrics, .section-scheduled {
         margin-top: 40px;
     }
+
+    .navbar-custom {
+        width: 100%;
+        border-radius: 0px;
+        margin-bottom: 0px;
+
+        a.navbar-brand {
+            font-size: 30px;
+            font-weight: 600;
+        }
+
+        .navbar-nav li a {
+            color: $cachet-base-dark;
+            font-size: 1.7rem;
+            margin: 5px 0px;
+        }
+
+        .nav>li>a:focus,.navbar-custom .nav>li>a:hover {
+            background-color: transparent;
+        }
+    }
 }
