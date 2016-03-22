@@ -1,17 +1,12 @@
 <div class="navbar navbar-custom" role="navigation">
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <i class="zmdi zmdi-menu"></i>
-            </button>
-
-            <a class="navbar-brand" href="/">
-                <span>{{ $app_name }}</span>
-            </a>
+            <a class="navbar-brand" href="/"><span>{{ $app_name }}</span></a>
         </div>
 
         <div class="navbar-collapse collapse" id="navbar-menu">
             <ul class="nav navbar-nav navbar-right">
+                <li><a href="/">{{ trans('cachet.home') }}</a></li>
                 @if($current_user)
                 <li class="dropdown">
                     <a href="#" data-toggle="dropdown">
@@ -25,7 +20,7 @@
                     </ul>
                 </li>
                 @elseif(Config::get('setting.dashboard_login_link'))
-                <li><a href="/dashboard" class="btn btn-primary navbar-btn">{{ trans('dashboard.dashboard') }}</a></li>
+                <li><a href="/dashboard">{{ trans('dashboard.dashboard') }}</a></li>
                 @endif
             </ul>
         </div>

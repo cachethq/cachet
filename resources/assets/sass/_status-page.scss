@@ -7,6 +7,10 @@ body.status-page {
     font-weight: $base-font-weight;
     -webkit-font-smoothing: antialiased;
 
+    &.no-padding {
+        padding-top: 0 !important;
+    }
+
     hr {
         margin-top: 10px;
         margin-bottom: 10px;
@@ -391,9 +395,11 @@ body.status-page {
     }
 
     .navbar-custom {
+        padding-top: 10px;
+        padding-bottom: 10px;
         width: 100%;
         border-radius: 0px;
-        margin-bottom: 0px;
+        margin-bottom: 10px;
 
         a.navbar-brand {
             font-size: 30px;
@@ -403,11 +409,10 @@ body.status-page {
         .navbar-nav li a {
             color: $cachet-base-dark;
             font-size: 1.7rem;
-            margin: 5px 0px;
-        }
 
-        .nav>li>a:focus,.navbar-custom .nav>li>a:hover {
-            background-color: transparent;
+            &:hover {
+                background-color: transparent;
+            }
         }
     }
 }
