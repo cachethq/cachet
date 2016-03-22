@@ -1,13 +1,13 @@
 @extends('layout.master')
 
+@section('bodyClass', 'no-padding')
+
+@section('outer-content')
+@include('partials.nav')
+@stop
+
 @section('content')
-<div class="section-messages">
-    @include('dashboard.partials.errors')
-</div>
-
-@include('partials.about-app')
-
-<h4>{{ formatted_date($incident->created_at) }}</h4>
+<h1>{{ formatted_date($incident->created_at) }}</h1>
 
 <div class="timeline">
     <div class="content-wrapper">

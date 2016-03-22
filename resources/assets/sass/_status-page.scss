@@ -7,6 +7,10 @@ body.status-page {
     font-weight: $base-font-weight;
     -webkit-font-smoothing: antialiased;
 
+    &.no-padding {
+        padding-top: 0 !important;
+    }
+
     hr {
         margin-top: 10px;
         margin-bottom: 10px;
@@ -388,5 +392,27 @@ body.status-page {
     // Individual section styling.
     .section-timeline, .section-components, .section-metrics, .section-scheduled {
         margin-top: 40px;
+    }
+
+    .navbar-custom {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        width: 100%;
+        border-radius: 0px;
+        margin-bottom: 10px;
+
+        a.navbar-brand {
+            font-size: 30px;
+            font-weight: 600;
+        }
+
+        .navbar-nav li a {
+            color: $cachet-base-dark;
+            font-size: 1.7rem;
+
+            &:hover {
+                background-color: transparent;
+            }
+        }
     }
 }
