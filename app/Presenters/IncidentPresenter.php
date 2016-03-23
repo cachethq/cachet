@@ -184,6 +184,48 @@ class IncidentPresenter extends BasePresenter implements Arrayable
     }
 
     /**
+     * Returns the latest update.
+     *
+     * @return int|null
+     */
+    public function latest_status()
+    {
+        if ($update = $this->latest()) {
+            return $update->status;
+        }
+
+        return null;
+    }
+
+    /**
+     * Returns the latest update.
+     *
+     * @return string|null
+     */
+    public function latest_human_status()
+    {
+        if ($update = $this->latest()) {
+            return trans('cachet.incidents.status.'.$update->status);
+        }
+
+        return null;
+    }
+
+    /**
+     * Fetch the latest incident update.
+     *
+     * @return \CachetHQ\Cachet\Models\IncidentUpdate|null
+     */
+    public function latest()
+    {
+        if ($update = $this->wrappedObject->updates()->orderBy('created_at', 'desc')->first()) {
+            return $update;
+        }
+
+        return null;
+    }
+
+    /**
      * Convert the presenter instance to an array.
      *
      * @return string[]
@@ -191,10 +233,13 @@ class IncidentPresenter extends BasePresenter implements Arrayable
     public function toArray()
     {
         return array_merge($this->wrappedObject->toArray(), [
-            'human_status' => $this->human_status(),
-            'scheduled_at' => $this->scheduled_at(),
-            'created_at'   => $this->created_at(),
-            'updated_at'   => $this->updated_at(),
+            'human_status'        => $this->human_status(),
+            'latest_update_id'    => $this->latest() ? $this->latest()->id : null,
+            'latest_status'       => $this->latest_status(),
+            'latest_human_status' => $this->latest_human_status(),
+            'scheduled_at'        => $this->scheduled_at(),
+            'created_at'          => $this->created_at(),
+            'updated_at'          => $this->updated_at(),
         ]);
     }
 }

@@ -12,6 +12,7 @@
 namespace CachetHQ\Cachet\Bus\Handlers\Commands\IncidentUpdate;
 
 use CachetHQ\Cachet\Bus\Commands\IncidentUpdate\RemoveIncidentUpdateCommand;
+use CachetHQ\Cachet\Bus\Events\IncidentUpdate\IncidentUpdateWasRemovedEvent;
 
 /**
  * This is the remove incident update command handler.
@@ -30,6 +31,8 @@ class RemoveIncidentUpdateCommandHandler
     public function handle(RemoveIncidentUpdateCommand $command)
     {
         $update = $command->incidentUpdate;
+
+        event(new IncidentUpdateWasRemovedEvent($update));
 
         $update->delete();
     }
