@@ -90,13 +90,6 @@ class Incident extends Model implements HasPresenter
     ];
 
     /**
-     * The relations to eager load on every query.
-     *
-     * @var string[]
-     */
-    protected $with = ['updates'];
-
-    /**
      * Finds all visible incidents.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
