@@ -85,7 +85,7 @@ class StatusPageController extends AbstractApiController
         $allIncidents = Incident::notScheduled()->where('visible', '>=', $incidentVisibility)->whereBetween('created_at', [
             $startDate->copy()->subDays($daysToShow)->format('Y-m-d').' 00:00:00',
             $startDate->format('Y-m-d').' 23:59:59',
-        ])->orderBy('scheduled_at', 'desc')->orderBy('created_at', 'desc')->get()->groupBy(function (Incident $incident) {
+        ])->orderBy('scheduled_at', 'desc')->orderBy('created_at', 'desc')->get()->load('updates')->groupBy(function (Incident $incident) {
             return app(DateFactory::class)->make($incident->is_scheduled ? $incident->scheduled_at : $incident->created_at)->toDateString();
         });
 

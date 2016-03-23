@@ -7,15 +7,19 @@
 @stop
 
 @section('content')
-<h1><i class="{{ $incident->icon }}"></i> {{ $incident->name }} <small>{{ formatted_date($incident->created_at) }}</small></h1>
+<h1>{{ $incident->name }} <small>{{ formatted_date($incident->created_at) }}</small></h1>
 
-{!! $incident->formattedMessage !!}
+<hr>
+
+<div class="markdown-body">
+    {!! $incident->formattedMessage !!}
+</div>
 
 @if($incident->updates)
 <div class="timeline">
     <div class="content-wrapper">
         @foreach ($incident->updates as $index => $update)
-        <div class="moment {{ $index === 0 ? 'first' : null }}">
+        <div class="moment {{ $index === 0 ? 'first' : null }}" id="update-{{ $update->id }}">
             <div class="row event clearfix">
                 <div class="col-sm-1">
                     <div class="status-icon status-{{ $update->status }}" data-toggle="tooltip" title="{{ $update->human_status }}" data-placement="left">
@@ -25,10 +29,13 @@
                 <div class="col-xs-10 col-xs-offset-2 col-sm-11 col-sm-offset-0">
                     <div class="panel panel-message incident">
                         <div class="panel-body">
-                            {!! $update->formattedMessage !!}
+                            <div class="markdown-body">
+                                {!! $update->formattedMessage !!}
+                            </div>
                         </div>
                         <div class="panel-footer">
                             Updated {{ $update->created_at_diff }}
+                            <a href="#update-{{ $update->id }}" class="pull-right"><i class="icon ion-link"></i></a>
                         </div>
                     </div>
                 </div>

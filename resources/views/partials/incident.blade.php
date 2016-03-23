@@ -25,7 +25,7 @@
     @if($incident->updates->count())
     <div class="list-group">
         @foreach($incident->updates as $update)
-        <div class="list-group-item"><i class="{{ $update->icon }}"></i> <strong>{{ $update->human_status }}</strong><br>{!! $update->formattedMessage !!}</div>
+        <div class="list-group-item"><i class="{{ $update->icon }}"></i> <strong>{{ $update->human_status }}</strong> <small>{{ $update->created_at_diff }}</small></div>
         @endforeach
     </div>
     @endif
