@@ -122,7 +122,7 @@ class StatusPageController extends AbstractApiController
     public function showIncident(Incident $incident)
     {
         return View::make('single-incident')
-            ->withIncident($incident);
+            ->withIncident($incident->load('updates'));
     }
 
     /**
