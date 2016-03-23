@@ -193,8 +193,6 @@ class IncidentPresenter extends BasePresenter implements Arrayable
         if ($update = $this->latest()) {
             return $update->status;
         }
-
-        return null;
     }
 
     /**
@@ -207,8 +205,6 @@ class IncidentPresenter extends BasePresenter implements Arrayable
         if ($update = $this->latest()) {
             return trans('cachet.incidents.status.'.$update->status);
         }
-
-        return null;
     }
 
     /**
@@ -221,8 +217,6 @@ class IncidentPresenter extends BasePresenter implements Arrayable
         if ($update = $this->wrappedObject->updates()->orderBy('created_at', 'desc')->first()) {
             return $update;
         }
-
-        return null;
     }
 
     /**

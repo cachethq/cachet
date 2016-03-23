@@ -13,7 +13,6 @@ namespace CachetHQ\Cachet\Bus\Handlers\Commands\IncidentUpdate;
 
 use CachetHQ\Cachet\Bus\Commands\IncidentUpdate\UpdateIncidentUpdateCommand;
 use CachetHQ\Cachet\Bus\Events\IncidentUpdate\IncidentUpdateWasUpdatedEvent;
-use CachetHQ\Cachet\Models\IncidentUpdate;
 
 /**
  * This is the update incident update command handler.
