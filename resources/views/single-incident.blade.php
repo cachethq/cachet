@@ -23,7 +23,14 @@
                     </div>
                 </div>
                 <div class="col-xs-10 col-xs-offset-2 col-sm-11 col-sm-offset-0">
-                    {!! $update->formattedMessage !!}
+                    <div class="panel panel-message incident">
+                        <div class="panel-body">
+                            {!! $update->formattedMessage !!}
+                        </div>
+                        <div class="panel-footer">
+                            Updated {{ $update->created_at_diff }}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
