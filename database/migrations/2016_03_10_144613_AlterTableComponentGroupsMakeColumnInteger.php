@@ -27,7 +27,7 @@ class AlterTableComponentGroupsMakeColumnInteger extends Migration
         });
 
         Schema::table('component_groups', function (Blueprint $table) {
-            $table->integer('collapsed')->unsigned()->default(2)->after('order');
+            $table->integer('collapsed')->unsigned()->default(1)->after('order');
         });
     }
 
