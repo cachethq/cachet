@@ -30,7 +30,7 @@
         <env name="APP_URL" value="http://localhost"/>
         <env name="APP_KEY" value="GCvcgDKMRIN498g52zfVEd9CxDs6PR7q"/>
         <env name="DB_DRIVER" value="sqlite"/>
-        <env name="DB_HOST" value=":memory:"/>
+        <env name="DB_DATABASE" value=":memory:"/>
         <env name="CACHE_DRIVER" value="array"/>
         <env name="SESSION_DRIVER" value="array"/>
         <env name="MAIL_DRIVER" value="log"/>

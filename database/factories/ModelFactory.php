@@ -75,7 +75,7 @@ $factory->define(MetricPoint::class, function ($faker) {
 
 $factory->define(Subscriber::class, function ($faker) {
     return [
-        'email'       => $faker->email,
+        'email'       => $faker->safeEmail,
         'verify_code' => 'Mqr80r2wJtxHCW5Ep4azkldFfIwHhw98M9HF04dn0z',
         'verified_at' => Carbon::now(),
     ];
@@ -91,7 +91,7 @@ $factory->define(Subscription::class, function ($faker) {
 $factory->define(User::class, function ($faker) {
     return [
         'username'       => $faker->userName,
-        'email'          => $faker->email,
+        'email'          => $faker->safeEmail,
         'password'       => str_random(10),
         'remember_token' => str_random(10),
         'api_key'        => str_random(20),
