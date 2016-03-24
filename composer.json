@@ -20,7 +20,7 @@
     ],
     "require": {
         "php": ">=5.5.9",
-        "laravel/framework": "~5.2.21",
+        "laravel/framework": "~5.2.24",
         "alt-three/badger": "^3.0",
         "alt-three/bus": "^1.0",
         "alt-three/emoji": "^3.0",
@@ -79,10 +79,8 @@
             "php artisan config:cache",
             "php artisan route:cache"
         ],
-        "pre-update-cmd": [
-            "php artisan clear-compiled"
-        ],
         "post-update-cmd": [
+            "php artisan clear-compiled",
             "php artisan optimize --force",
             "php artisan config:cache",
             "php artisan route:cache"
