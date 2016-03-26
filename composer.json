@@ -20,7 +20,7 @@
     ],
     "require": {
         "php": ">=5.5.9",
-        "laravel/framework": "~5.2.24",
+        "laravel/framework": "~5.2.26",
         "alt-three/badger": "^3.0",
         "alt-three/bus": "^1.0",
         "alt-three/emoji": "^3.0",
@@ -32,11 +32,11 @@
         "graham-campbell/core": "^4.2",
         "graham-campbell/markdown": "^6.0",
         "graham-campbell/exceptions": "^8.3",
-        "guzzlehttp/guzzle": "^6.1",
+        "guzzlehttp/guzzle": "^6.2",
         "jenssegers/date": "^3.1",
         "mccool/laravel-auto-presenter": "^4.2",
         "pragmarx/google2fa": "^0.7.1",
-        "rcrowe/twigbridge": "^0.9.1",
+        "rcrowe/twigbridge": "^0.9.2",
         "roumen/feed": "^2.10"
     },
     "require-dev": {
@@ -74,13 +74,13 @@
             "php artisan key:generate"
         ],
         "post-install-cmd": [
-            "php artisan clear-compiled",
+            "Illuminate\\Foundation\\ComposerScripts::postInstall",
             "php artisan optimize --force",
             "php artisan config:cache",
             "php artisan route:cache"
         ],
         "post-update-cmd": [
-            "php artisan clear-compiled",
+            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
             "php artisan optimize --force",
             "php artisan config:cache",
             "php artisan route:cache"
