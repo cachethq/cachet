@@ -303,7 +303,7 @@ class ComponentController extends Controller
             $group = dispatch(new UpdateComponentGroupCommand(
                 $group,
                 Binput::get('name'),
-                Binput::get('order', 0),
+                $group->order,
                 Binput::get('collapsed')
             ));
         } catch (ValidationException $e) {
