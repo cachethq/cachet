@@ -23,6 +23,19 @@ class IncidentPresenter extends BasePresenter implements Arrayable
     use TimestampsTrait;
 
     /**
+     * Inciden icon lookup.
+     *
+     * @var array
+     */
+    protected $icons = [
+        0 => 'icon ion-android-calendar', // Scheduled
+        1 => 'icon ion-flag oranges', // Investigating
+        2 => 'icon ion-alert yellows', // Identified
+        3 => 'icon ion-eye blues', // Watching
+        4 => 'icon ion-checkmark greens', // Fixed
+    ];
+
+    /**
      * Renders the message from Markdown into HTML.
      *
      * @return string
@@ -157,19 +170,8 @@ class IncidentPresenter extends BasePresenter implements Arrayable
      */
     public function icon()
     {
-        switch ($this->wrappedObject->status) {
-            case 0: // Scheduled
-                return 'icon ion-android-calendar';
-            case 1: // Investigating
-                return 'icon ion-flag oranges';
-            case 2: // Identified
-                return 'icon ion-alert yellows';
-            case 3: // Watching
-                return 'icon ion-eye blues';
-            case 4: // Fixed
-                return 'icon ion-checkmark greens';
-            default: // Something actually broke, this shouldn't happen.
-                return '';
+        if (isset($this->icons[$this->wrappedObject->status])) {
+            return $this->icons[$this->wrappedObject->status];
         }
     }
 
@@ -193,6 +195,8 @@ class IncidentPresenter extends BasePresenter implements Arrayable
         if ($update = $this->latest()) {
             return $update->status;
         }
+
+        return $this->wrappedObject->status;
     }
 
     /**
@@ -205,6 +209,24 @@ class IncidentPresenter extends BasePresenter implements Arrayable
         if ($update = $this->latest()) {
             return trans('cachet.incidents.status.'.$update->status);
         }
+
+        return $this->human_status();
+    }
+
+    /**
+     * Present the latest icon.
+     *
+     * @return string
+     */
+    public function latest_icon()
+    {
+        if ($update = $this->latest()) {
+            if (isset($this->icons[$update->status])) {
+                return $this->icons[$update->status];
+            }
+        }
+
+        return $this->icon();
     }
 
     /**
@@ -231,6 +253,7 @@ class IncidentPresenter extends BasePresenter implements Arrayable
             'latest_update_id'    => $this->latest() ? $this->latest()->id : null,
             'latest_status'       => $this->latest_status(),
             'latest_human_status' => $this->latest_human_status(),
+            'latest_icon'         => $this->latest_icon(),
             'scheduled_at'        => $this->scheduled_at(),
             'created_at'          => $this->created_at(),
             'updated_at'          => $this->updated_at(),
