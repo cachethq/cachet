@@ -269,7 +269,7 @@ EINCIDENT;
                 'status'      => 4,
                 'message'     => 'We are happy with the fix.',
                 'user_id'     => 1,
-            ]
+            ],
         ];
 
         foreach ($defaultUpdates as $update) {
