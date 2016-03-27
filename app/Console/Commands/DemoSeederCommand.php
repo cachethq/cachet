@@ -15,6 +15,7 @@ use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentTemplate;
+use CachetHQ\Cachet\Models\IncidentUpdate;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\MetricPoint;
 use CachetHQ\Cachet\Models\Setting;
@@ -64,6 +65,7 @@ class DemoSeederCommand extends Command
         $this->seedComponents();
         $this->seedIncidents();
         $this->seedIncidentTemplates();
+        $this->seedIncidentUpdates();
         $this->seedMetricPoints();
         $this->seedMetrics();
         $this->seedSettings();
@@ -235,6 +237,44 @@ EINCIDENT;
     protected function seedIncidentTemplates()
     {
         IncidentTemplate::truncate();
+    }
+
+    /**
+     * Seed the incident updates table.
+     *
+     * @return void
+     */
+    protected function seedIncidentUpdates()
+    {
+        IncidentUpdate::truncate();
+
+        $defaultUpdates = [
+            [
+                'incident_id' => 1,
+                'status'      => 1,
+                'message'     => 'We are currently investigating this issue.',
+                'user_id'     => 1,
+            ], [
+                'incident_id' => 1,
+                'status'      => 2,
+                'message'     => 'We have identified the issue and are actively working on it.',
+                'user_id'     => 1,
+            ], [
+                'incident_id' => 1,
+                'status'      => 3,
+                'message'     => 'We have fixed the issue and are currently watching the fix.',
+                'user_id'     => 1,
+            ], [
+                'incident_id' => 1,
+                'status'      => 4,
+                'message'     => 'We are happy with the fix.',
+                'user_id'     => 1,
+            ]
+        ];
+
+        foreach ($defaultUpdates as $update) {
+            IncidentUpdate::create($update);
+        }
     }
 
     /**
