@@ -64,6 +64,7 @@ $factory->define(Metric::class, function ($faker) {
         'places'        => 2,
         'calc_type'     => $faker->boolean(),
         'display_chart' => $faker->boolean(),
+        'threshold'     => 5,
     ];
 });
 

@@ -22,6 +22,10 @@ class AlterTableMetricPointsAddCounterColumn extends Migration
      */
     public function up()
     {
+        Schema::table('metrics', function (Blueprint $table) {
+            $table->integer('threshold')->unsigned()->default(5)->after('default_view');
+        });
+
         Schema::table('metric_points', function (Blueprint $table) {
             $table->integer('counter')->unsigned()->default(1)->after('value');
         });
@@ -34,6 +38,10 @@ class AlterTableMetricPointsAddCounterColumn extends Migration
      */
     public function down()
     {
+        Schema::table('metrics', function (Blueprint $table) {
+            $table->dropColumn('threshold');
+        });
+
         Schema::table('metric_points', function (Blueprint $table) {
             $table->dropColumn('counter');
         });

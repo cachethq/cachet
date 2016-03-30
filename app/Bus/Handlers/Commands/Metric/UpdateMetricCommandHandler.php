@@ -53,6 +53,7 @@ class UpdateMetricCommandHandler
             'display_chart' => $command->display_chart,
             'places'        => $command->places,
             'default_view'  => $command->default_view,
+            'threshold'     => $command->threshold,
         ];
 
         return array_filter($params, function ($val) {
