@@ -47,6 +47,7 @@ class Metric extends Model implements HasPresenter
         'calc_type'     => 0,
         'places'        => 2,
         'default_view'  => 1,
+        'threshold'     => 5,
     ];
 
     /**
@@ -61,6 +62,7 @@ class Metric extends Model implements HasPresenter
         'calc_type'     => 'int',
         'places'        => 'int',
         'default_view'  => 'int',
+        'threshold'     => 'int',
     ];
 
     /**
@@ -77,6 +79,7 @@ class Metric extends Model implements HasPresenter
         'calc_type',
         'places',
         'default_view',
+        'threshold',
     ];
 
     /**
@@ -91,6 +94,7 @@ class Metric extends Model implements HasPresenter
         'default_value' => 'numeric',
         'places'        => 'numeric|between:0,4',
         'default_view'  => 'numeric|between:0,3',
+        'threshold'     => 'numeric|between:0,10',
     ];
 
     /**

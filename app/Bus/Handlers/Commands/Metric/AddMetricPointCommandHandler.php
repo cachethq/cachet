@@ -16,7 +16,6 @@ use CachetHQ\Cachet\Bus\Events\Metric\MetricPointWasAddedEvent;
 use CachetHQ\Cachet\Dates\DateFactory;
 use CachetHQ\Cachet\Models\MetricPoint;
 use Carbon\Carbon;
-use Illuminate\Config\Repository;
 
 class AddMetricPointCommandHandler
 {
@@ -28,24 +27,15 @@ class AddMetricPointCommandHandler
     protected $dates;
 
     /**
-     * The config repository instance.
-     *
-     * @var \Illuminate\Config\Repository
-     */
-    protected $config;
-
-    /**
      * Create a new add metric point command handler instance.
      *
      * @param \CachetHQ\Cachet\Dates\DateFactory $dates
-     * @param \Illuminate\Config\Repository      $config
      *
      * @return void
      */
-    public function __construct(DateFactory $dates, Repository $config)
+    public function __construct(DateFactory $dates)
     {
         $this->dates = $dates;
-        $this->config = $config;
     }
 
     /**
@@ -72,7 +62,7 @@ class AddMetricPointCommandHandler
 
     protected function findOrCreatePoint(AddMetricPointCommand $command)
     {
-        $buffer = Carbon::now()->subMinutes($this->config->get('setting.metric_threshold', 5));
+        $buffer = Carbon::now()->subMinutes($command->metric->threshold);
         $point = MetricPoint::where('metric_id', $command->metric->id)->where('value', $command->value)->where('created_at', '>=', $buffer)->first();
 
         if ($point) {
