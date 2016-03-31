@@ -140,7 +140,7 @@ class ScheduleController extends Controller
         $scheduleData = Binput::get('incident');
 
         // Parse the schedule date.
-        $scheduledAt = app(DateFactory::class)->createNormalized('d/m/Y H:i', $scheduleData['scheduled_at']);
+        $scheduledAt = app(DateFactory::class)->create('d/m/Y H:i', $scheduleData['scheduled_at']);
 
         if ($scheduledAt->isPast()) {
             $messageBag = new MessageBag();
