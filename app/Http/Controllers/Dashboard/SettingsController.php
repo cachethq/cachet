@@ -225,6 +225,14 @@ class SettingsController extends Controller
             $setting->set('app_banner', null);
         }
 
+        if ($header = Binput::get('header', null, false, false)) {
+            $setting->set('header', $header);
+        }
+
+        if ($footer = Binput::get('footer', null, false, false)) {
+            $setting->set('footer', $footer);
+        }
+
         if (Binput::hasFile('app_banner')) {
             $file = Binput::file('app_banner');
 
@@ -251,8 +259,16 @@ class SettingsController extends Controller
             $setting->set('app_banner_type', $file->getMimeType());
         }
 
+        $excludedParams = [
+            '_token',
+            'app_banner',
+            'remove_banner',
+            'header',
+            'footer',
+        ];
+
         try {
-            foreach (Binput::except(['app_banner', 'remove_banner', '_token']) as $settingName => $settingValue) {
+            foreach (Binput::except($excludedParams) as $settingName => $settingValue) {
                 if ($settingName === 'app_analytics_pi_url') {
                     $settingValue = rtrim($settingValue, '/');
                 }
