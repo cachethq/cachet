@@ -6,6 +6,12 @@ Before submitting your issue, please make sure that you've checked all of the ch
 
 To help us better understand your issue, please answer the following — cheers!
 
+### Your setup
+
+- *What version of Cachet?*
+- *What database driver? MySQL? Postgres? SQLite?*
+- *What version of PHP?*
+
 ### Expected behaviour
 
 *Please describe what you're expecting to see happen.*
