@@ -28,7 +28,7 @@ class AppComposer
     {
         $view->withAboutApp(Markdown::convertToHtml(Config::get('setting.app_about')));
         $view->withAppAnalytics(Config::get('setting.app_analytics'));
-        $view->withAppAnalyticsGoSquared(Config::get('setting.app_analytics_go_squared'));
+        $view->withAppAnalyticsGoSquared(Config::get('setting.app_analytics_gs'));
         $view->withAppAnalyticsPiwikUrl(Config::get('setting.app_analytics_piwik_url'));
         $view->withAppAnalyticsPiwikSiteId(Config::get('setting.app_analytics_piwik_site_id'));
         $view->withAppBanner(Config::get('setting.app_banner'));
