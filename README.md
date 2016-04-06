@@ -100,3 +100,17 @@ A special thank you to our [translators](https://crowdin.com/project/cachet/acti
 ## Security Vulnerabilities
 
 If you discover a security vulnerability within Cachet, please send an e-mail to us at support@alt-three.com. All security vulnerabilities will be promptly addressed.
+
+## Installations
+
+We offer a paid installation service, which starts at $99 but is subject to change, dependant on your setup and infrastructure.
+
+To find out more, email us at support@alt-three.com
+
+## Donations
+
+Cachet is open source, we don't have any licensing models and don't run ads on the [website](https://cachethq.io).
+
+If you'd like to donate towards further development of Cachet you can do so via Paypal.
+
+[![Donate](https://www.paypalobjects.com/en_GB/i/btn/btn_donate_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=D4M5LVULVPPKL)
