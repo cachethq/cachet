@@ -23,6 +23,16 @@ class ComponentGroup extends Model implements HasPresenter
     use SearchableTrait, SortableTrait, ValidatingTrait;
 
     /**
+     * The model's attributes.
+     *
+     * @var string
+     */
+    protected $attributes = [
+        'order'     => 0,
+        'collapsed' => 0,
+    ];
+
+    /**
      * The attributes that should be casted to native types.
      *
      * @var string[]
