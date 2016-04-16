@@ -47,6 +47,16 @@ class ComponentPresenter extends BasePresenter implements Arrayable
     }
 
     /**
+     * Find all tag names for the component names.
+     *
+     * @return array
+     */
+    public function tags()
+    {
+        return $this->wrappedObject->tags->lists('name', 'slug');
+    }
+
+    /**
      * Present formatted date time.
      *
      * @return string
@@ -67,6 +77,7 @@ class ComponentPresenter extends BasePresenter implements Arrayable
             'created_at'  => $this->created_at(),
             'updated_at'  => $this->updated_at(),
             'status_name' => $this->human_status(),
+            'tags'        => $this->tags(),
         ]);
     }
 }
