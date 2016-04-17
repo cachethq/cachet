@@ -12,24 +12,24 @@
 return [
     // Components
     'components' => [
-        'last_updated' => 'Last updated :timestamp',
+        'last_updated' => 'Son Güncelleme: zaman tipi',
         'status'       => [
             1 => 'Çalışıyor',
-            2 => 'Performans Sorunları',
+            2 => 'Performans Problemleri',
             3 => 'Kısmi Kesinti',
             4 => 'Ana Kesinti',
         ],
         'group' => [
-            'other' => 'Other Components',
+            'other' => 'Diğer Bileşenler',
         ],
     ],
 
     // Incidents
     'incidents' => [
-        'none'          => 'No incidents reported',
-        'past'          => 'Past Incidents',
-        'previous_week' => 'Previous Week',
-        'next_week'     => 'Next Week',
+        'none'          => 'Hiçbir olay raporlanmadı',
+        'past'          => 'Geçmiş Olaylar',
+        'previous_week' => 'Geçen Hafta',
+        'next_week'     => 'Gelecek Hafta',
         'scheduled'     => 'Zamanlanmış bakım',
         'scheduled_at'  => ',zamanlanmış :zamandilimi',
         'status'        => [
@@ -43,9 +43,9 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] System operational|[2,Inf] All systems are operational',
-        'bad'   => '[0,1] The system is currently experiencing issues|[2,Inf] Some systems are experiencing issues',
-        'major' => '[0,1] The service experiencing a major outage|[2,Inf] Some systems are experiencing a major outage',
+        'good'  => '[0,1] Sistem çalışır durumda| [2, Inf] Tüm sistemler çalışır durumda',
+        'bad'   => '[0,1] Sistemde şu anda sorunlar yaşanıyor [2, Inf] Bazı sistemlerde sorunlar yaşanıyor',
+        'major' => '[0,1] Bu serviste büyük bir kesinti yaşıyoruz [2, Inf] Bazı sistemlerde büyük bir kesintisi yaşıyoruz',
     ],
 
     'api' => [
@@ -56,27 +56,27 @@ return [
     // Metrics
     'metrics' => [
         'filter' => [
-            'last_hour' => 'Last Hour',
-            'hourly'    => 'Last 12 Hours',
-            'weekly'    => 'Week',
-            'monthly'   => 'Month',
+            'last_hour' => 'Son 1 saat',
+            'hourly'    => 'Son 12 saat',
+            'weekly'    => 'Hafta',
+            'monthly'   => 'Ay',
         ],
     ],
 
     // Subscriber
     'subscriber' => [
-        'subscribe' => 'Subscribe to get the most recent updates',
+        'subscribe' => 'En son güncelleştirmeleri almak için abone olun',
         'button'    => 'Abone Ol',
         'manage'    => [
-            'no_subscriptions' => 'You\'re currently subscribed to all updates.',
+            'no_subscriptions' => 'Şu anda tüm güncellemeleri abone oldunuz.',
             'my_subscriptions' => 'You\'re currently subscribed to the following updates.',
         ],
         'email' => [
             'subscribe'          => 'Güncellemeler için abone ol.',
             'subscribed'         => 'Bir email bildirimi almış olmalısın, lütfen aboneliğini onaylamak için kontrol et.',
             'verified'           => 'E mail aboneliğin kabul edildi. Teşekkürler!',
-            'manage'             => 'Manage your subscription.',
-            'unsubscribe'        => 'Unsubscribe from email updates.',
+            'manage'             => 'Aboneliğinizi yönetin.',
+            'unsubscribe'        => 'E-posta aboneliğinden çık.',
             'unsubscribed'       => 'Email aboneliğin iptal edildi.',
             'failure'            => 'Bazı şeyler yanlış gitti.',
             'already-subscribed' => 'Cannot subscribe :email because they\'re already subscribed.',
@@ -116,12 +116,12 @@ return [
     ],
 
     'signup' => [
-        'title'    => 'Sign Up',
-        'username' => 'Username',
+        'title'    => 'Kayıt Ol',
+        'username' => 'Kullanıcı adı',
         'email'    => 'E-posta',
         'password' => 'Parola',
-        'success'  => 'Your account has been created.',
-        'failure'  => 'Something went wrong with the signup.',
+        'success'  => 'Hesabınız oluşturuldu.',
+        'failure'  => 'Kayıt esnasında bir sorun oluştu.',
     ],
 
     'system' => [
@@ -130,7 +130,7 @@ return [
 
     // Modal
     'modal' => [
-        'close'     => 'Close',
+        'close'     => 'Kapat',
         'subscribe' => [
             'title'  => 'Subscribe to component updates',
             'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll already receive emails for this component.',
@@ -139,9 +139,10 @@ return [
     ],
 
     // Other
+    'home'            => 'Ana Sayfa',
     'description'     => 'Stay up to date with the latest service updates from :app.',
     'powered_by'      => ':app Status Page is powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
-    'about_this_site' => 'About This Site',
+    'about_this_site' => 'Bu Site hakkında',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',
     'feed'            => 'Status Feed',

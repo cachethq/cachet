@@ -22,17 +22,17 @@ return [
         'incident-templates'       => '故障模板',
         'add'                      => [
             'title'   => '添加故障',
-            'success' => 'Incident added.',
-            'failure' => 'There was an error adding the incident, please try again.',
+            'success' => '故障已添加',
+            'failure' => '添加故障时出错，请再试一次 ！',
         ],
         'edit' => [
             'title'   => '编辑故障',
             'success' => '故障已更新。',
-            'failure' => 'There was an error editing the incident, please try again.',
+            'failure' => '编辑故障时出错，请再试一次 ！',
         ],
         'delete' => [
             'success' => '故障已删除并将不会出现在状态页中',
-            'failure' => 'The incident could not be deleted, please try again.',
+            'failure' => '无法删除该故障，请再试一次。',
         ],
 
         // Incident templates
@@ -41,17 +41,17 @@ return [
             'add'   => [
                 'title'   => '添加故障模板',
                 'message' => '你应该增加一个故障模板',
-                'success' => 'Your new incident template has been created.',
-                'failure' => 'Something went wrong with the incident template.',
+                'success' => '已创建新的故障模板。',
+                'failure' => '创建模板失败。',
             ],
             'edit' => [
                 'title'   => '编辑模板',
-                'success' => 'The incident template has been updated.',
-                'failure' => 'Something went wrong updating the incident template',
+                'success' => '成功更新故障模板。',
+                'failure' => '模板修改失败',
             ],
             'delete' => [
                 'success' => '模板已删除。',
-                'failure' => 'The incident template could not be deleted, please try again.',
+                'failure' => '无法删除该模板，请再试一次。',
             ],
         ],
     ],
@@ -62,18 +62,18 @@ return [
         'logged'       => '{0} 现在没有维护计划，好样的。|你已经记录下 1 个维护计划|你已经报告了 <strong>:count</strong> 个维护计划',
         'scheduled_at' => 'Scheduled at :timestamp',
         'add'          => [
-            'title'   => 'Add Scheduled Maintenance',
-            'success' => 'Schedule added.',
-            'failure' => 'Something went wrong adding the schedule, please try again.',
+            'title'   => '添加维护计划',
+            'success' => '维护计划已添加。',
+            'failure' => '添加维护计划时出错了，请再试一次。',
         ],
         'edit' => [
-            'title'   => 'Edit Scheduled Maintenance',
-            'success' => 'Schedule has been updated!',
-            'failure' => 'Something went wrong editing the schedule, please try again.',
+            'title'   => '编辑维护计划',
+            'success' => '维护计划已更新！',
+            'failure' => '添加编辑计划时出错了，请再试一次。',
         ],
         'delete' => [
-            'success' => 'The scheduled maintenance has been deleted and will not show on your status page.',
-            'failure' => 'The scheduled maintenance could not be deleted, please try again.',
+            'success' => '该维护计划已被删除，它将从您的状态页上消失。',
+            'failure' => '无法删除该维护计划。请再试一次。',
         ],
     ],
 
@@ -85,12 +85,12 @@ return [
         'add'                => [
             'title'   => '添加组件',
             'message' => '没有组件，马上添加一个吧',
-            'success' => 'Component created.',
+            'success' => '组件已添加。',
             'failure' => 'Something went wrong with the component, please try again.',
         ],
         'edit' => [
             'title'   => '编辑组件',
-            'success' => 'Component updated.',
+            'success' => '组件已更新。',
             'failure' => 'Something went wrong with the component, please try again.',
         ],
         'delete' => [
@@ -125,13 +125,13 @@ return [
         'add'     => [
             'title'   => '添加图表',
             'message' => '你应该添加一个图表。',
-            'success' => 'Metric created.',
-            'failure' => 'Something went wrong with the metric, please try again.',
+            'success' => '图表已创建。',
+            'failure' => '添加图表时出错了，请再试一次。',
         ],
         'edit' => [
             'title'   => '编辑图表',
-            'success' => 'Metric updated.',
-            'failure' => 'Something went wrong with the metric, please try again.',
+            'success' => '图表已更新。',
+            'failure' => '添加图表时出错了，请再试一次。',
         ],
         'delete' => [
             'success' => '图表已删除并将不会出现在状态页中',
@@ -166,12 +166,12 @@ return [
         'description' => '团队成员可维护组件和故障信息。',
         'add'         => [
             'title'   => '添加团队成员',
-            'success' => 'Team member added.',
+            'success' => '团队成员已添加。',
             'failure' => 'The team member could not be added, please try again.',
         ],
         'edit' => [
             'title'   => '更新配置文件',
-            'success' => 'Profile updated.',
+            'success' => '个人资料已更新',
             'failure' => 'Something went wrong updating the profile, please try again.',
         ],
         'delete' => [
@@ -200,9 +200,9 @@ return [
             'localization' => '本地化',
         ],
         'customization' => [
-            'customization' => 'Customization',
-            'header'        => 'Custom Header HTML',
-            'footer'        => 'Custom Footer HTML',
+            'customization' => '自定义',
+            'header'        => '自定义页眉 HTML',
+            'footer'        => '自定义页脚 HTML',
         ],
         'security' => [
             'security'   => '安全设置',
@@ -244,7 +244,7 @@ return [
     'welcome' => [
         'welcome' => '欢迎来到你的状态页！',
         'message' => 'Your status page is almost ready! You might want to configure these extra settings',
-        'close'   => 'Take me straight to my dashboard',
+        'close'   => '带我直接进入控制台',
         'steps'   => [
             'component'  => '添加组件',
             'incident'   => '添加故障',

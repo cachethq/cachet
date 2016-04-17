@@ -12,7 +12,7 @@
 return [
     // Components
     'components' => [
-        'last_updated' => 'Last updated :timestamp',
+        'last_updated' => 'Ostatnia aktualizacja :timestamp',
         'status'       => [
             1 => 'Funktionsfähig',
             2 => 'Leistungsprobleme',
@@ -20,13 +20,13 @@ return [
             4 => 'Schwerer Ausfall',
         ],
         'group' => [
-            'other' => 'Other Components',
+            'other' => 'Pozostałe komponenty',
         ],
     ],
 
     // Incidents
     'incidents' => [
-        'none'          => 'Brak incydentów',
+        'none'          => 'Brak zgłoszonych incydentów',
         'past'          => 'Vergangene Vorfälle',
         'previous_week' => 'Vorherige Woche',
         'next_week'     => 'Nächste Woche',
@@ -43,9 +43,9 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] System operational|[2,Inf] All systems are operational',
-        'bad'   => '[0,1] The system is currently experiencing issues|[2,Inf] Some systems are experiencing issues',
-        'major' => '[0,1] The service experiencing a major outage|[2,Inf] Some systems are experiencing a major outage',
+        'good'  => '[0,1] System działa poprawnie|[2,Inf] Wszystkie systemy działają poprawnie',
+        'bad'   => '[0,1] W systemie obecnie występują problemy|[2,Inf] W niektórych systemach występują problemy',
+        'major' => '[0,1] Usługa jest poważnie przeciążona|[2,Inf] Niektóre systemy są poważnie przeciążone',
     ],
 
     'api' => [
@@ -68,14 +68,14 @@ return [
         'subscribe' => 'Abonnieren Sie um die neuesten Updates zu erhalten.',
         'button'    => 'Abonnieren',
         'manage'    => [
-            'no_subscriptions' => 'You\'re currently subscribed to all updates.',
-            'my_subscriptions' => 'You\'re currently subscribed to the following updates.',
+            'no_subscriptions' => 'Jesteś obecnie zapisany na wszystkie aktualizacje.',
+            'my_subscriptions' => 'Jesteś obecnie zapisany na poniższe aktualizacje.',
         ],
         'email' => [
             'subscribe'          => 'Aktualisierungen per E-Mail abonnieren.',
             'subscribed'         => 'Sie haben E-Mail-Benachrichtigungen abonniert, überprüfen Sie bitte Ihre E-Mail, um Ihr Abonnement zu bestätigen.',
             'verified'           => 'Ihre E-Mail-Abonnement ist bestätigt worden. Danke!',
-            'manage'             => 'Manage your subscription.',
+            'manage'             => 'Zarządzaj subskrypcją.',
             'unsubscribe'        => 'Von E-Mail-Updates deabonnieren.',
             'unsubscribed'       => 'Ihre E-Mail-Abonnement wurde gekündigt.',
             'failure'            => 'Etwas ist mit dem Abonnement schief gelaufen.',
@@ -97,9 +97,9 @@ return [
             ],
             'component' => [
                 'subject'        => 'Aktualizacje komponentu',
-                'text'           => 'The component :component_name has seen a status change. The component is now at :component_human_status.\nThank you, :app_name',
+                'text'           => 'Komponent :component_name zmienił status. Aktualnie jest w :component_human_status.\nDziękujemy, :app_name',
                 'html-preheader' => 'Aktualizacja komponentu z :app_name',
-                'html'           => '<p>The component :component_name has seen a status change. The component is now at :component_human_status.</p><p>Thank you, :app_name</p>',
+                'html'           => '<p>Komponent :component_name zmienił status. Aktualnie jest w :component_human_status.</p><p>Dziękujemy, :app_name</p>',
                 'tooltip-title'  => 'Subskrybuj powiadomienia dla :component_name.',
             ],
         ],
@@ -139,7 +139,8 @@ return [
     ],
 
     // Other
-    'description'     => 'Stay up to date with the latest service updates from :app.',
+    'home'            => 'Strona Główna',
+    'description'     => 'Bądź na bieżąco z aktualizacjami z :app.',
     'powered_by'      => ':app Status-Seite betrieben mit <a href="https://cachethq.io">Cachet</a>.',
     'about_this_site' => 'Über diese Seite',
     'rss-feed'        => 'RSS',

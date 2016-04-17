@@ -12,12 +12,12 @@
 return [
     // Components
     'components' => [
-        'last_updated' => 'Last updated :timestamp',
+        'last_updated' => 'آخرین بروز رسانی :timestamp',
         'status'       => [
-            1 => 'Operational',
-            2 => 'Performance Issues',
-            3 => 'Partial Outage',
-            4 => 'Major Outage',
+            1 => 'عملیاتی',
+            2 => 'مسائل مربوط به عملکرد',
+            3 => 'قطعی جزیی',
+            4 => 'قطعی بزرگ',
         ],
         'group' => [
             'other' => 'Other Components',
@@ -26,18 +26,18 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => 'No incidents reported',
-        'past'          => 'Past Incidents',
-        'previous_week' => 'Previous Week',
-        'next_week'     => 'Next Week',
+        'none'          => 'هیچ حادثه ای گزارش نشده است',
+        'past'          => 'حوادث گذشته',
+        'previous_week' => 'هفته گذشته',
+        'next_week'     => 'هفته ی آتی',
         'scheduled'     => 'Scheduled Maintenance',
-        'scheduled_at'  => ', scheduled :timestamp',
+        'scheduled_at'  => '، برنامه ریزی شده :timestamp',
         'status'        => [
-            0 => 'Scheduled', // TODO: Hopefully remove this.
-            1 => 'Investigating',
-            2 => 'Identified',
-            3 => 'Watching',
-            4 => 'Fixed',
+            0 => 'برنامه ریزی شده', // TODO: Hopefully remove this.
+            1 => 'در دست بررسی',
+            2 => 'شناسایی شده',
+            3 => 'در دست بررسی تغييرات',
+            4 => 'برطرف شده',
         ],
     ],
 
@@ -56,10 +56,10 @@ return [
     // Metrics
     'metrics' => [
         'filter' => [
-            'last_hour' => 'Last Hour',
-            'hourly'    => 'Last 12 Hours',
-            'weekly'    => 'Week',
-            'monthly'   => 'Month',
+            'last_hour' => 'ساعت گذشته',
+            'hourly'    => '12 ساعت گذشته',
+            'weekly'    => 'هفته',
+            'monthly'   => 'ماه',
         ],
     ],
 
@@ -116,11 +116,11 @@ return [
     ],
 
     'signup' => [
-        'title'    => 'Sign Up',
+        'title'    => 'نام‌نویسی',
         'username' => 'Username',
         'email'    => 'Email',
         'password' => 'Password',
-        'success'  => 'Your account has been created.',
+        'success'  => 'حساب کاربری شما ایجاد گردید.',
         'failure'  => 'Something went wrong with the signup.',
     ],
 
@@ -130,7 +130,7 @@ return [
 
     // Modal
     'modal' => [
-        'close'     => 'Close',
+        'close'     => 'بستن',
         'subscribe' => [
             'title'  => 'Subscribe to component updates',
             'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll already receive emails for this component.',
@@ -139,11 +139,12 @@ return [
     ],
 
     // Other
+    'home'            => 'خانه',
     'description'     => 'Stay up to date with the latest service updates from :app.',
     'powered_by'      => ':app Status Page is powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
-    'about_this_site' => 'About This Site',
-    'rss-feed'        => 'RSS',
-    'atom-feed'       => 'Atom',
+    'about_this_site' => 'درباره این سایت',
+    'rss-feed'        => 'خوراک (RSS)',
+    'atom-feed'       => 'خوراک (Atom)',
     'feed'            => 'Status Feed',
 
 ];

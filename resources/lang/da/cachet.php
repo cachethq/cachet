@@ -12,7 +12,7 @@
 return [
     // Components
     'components' => [
-        'last_updated' => 'Last updated :timestamp',
+        'last_updated' => 'Sidst opdateret :timestamp',
         'status'       => [
             1 => 'Normal',
             2 => 'Hastighedsproblemer',
@@ -139,6 +139,7 @@ return [
     ],
 
     // Other
+    'home'            => 'Hjem',
     'description'     => 'Hold dig opdateret med de seneste opdateringer fra :app.',
     'powered_by'      => ':app statusside er bygget på <a href="https://cachethq.io" class="links">Cachet</a>.',
     'about_this_site' => 'Om siden',

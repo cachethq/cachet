@@ -177,7 +177,7 @@ return [
     'cancel' => 'Cancel',
     'remove' => 'Remove',
     'invite' => 'Invite',
-    'signup' => 'Sign Up',
+    'signup' => 'نام‌نویسی',
 
     // Other
     'optional' => '* Optional',

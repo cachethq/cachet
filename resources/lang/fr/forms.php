@@ -46,7 +46,7 @@ return [
         'scheduled_at'       => 'Quand planifier la maintenance ?',
         'incident_time'      => 'Quand s\'est produit cet incident ?',
         'notify_subscribers' => 'Notifier les abonnés ?',
-        'visibility'         => 'Incident Visibility',
+        'visibility'         => 'Visibilité de l\'incident',
         'public'             => 'Visible par le public',
         'logged_in_only'     => 'Uniquement visible par les utilisateurs enregistrés',
         'templates'          => [
@@ -69,10 +69,10 @@ return [
 
         'groups' => [
             'name'               => 'Nom',
-            'collapsing'         => 'Choose visibility of the group',
-            'visible'            => 'Always expanded',
-            'collapsed'          => 'Collapse the group by default',
-            'collapsed_incident' => 'Collapse the group, but expand if there are issues',
+            'collapsing'         => 'Choisir la visibilité du groupe',
+            'visible'            => 'Toujours déplier',
+            'collapsed'          => 'Réduire le groupe par défaut',
+            'collapsed_incident' => 'Réduire le groupe par défaut, mais déplier s\'il y a des incidents',
         ],
     ],
 
@@ -104,8 +104,8 @@ return [
             'display-graphs'         => 'Afficher les graphiques sur la page de statut ?',
             'about-this-page'        => 'À propos de cette page',
             'days-of-incidents'      => 'Combien de jours d\'incidents à montrer ?',
-            'banner'                 => 'Banner Image',
-            'banner-help'            => 'Il est recommandé de téléchargez un fichier ne dépassant pas 930px de large .',
+            'banner'                 => 'Image d\'en-tête',
+            'banner-help'            => "Il est recommandé de téléchargez un fichier ne dépassant pas 930px de large .",
             'subscribers'            => 'Permettre aux personnes de s\'inscrire aux notifications par e-mail ?',
         ],
         'analytics' => [
@@ -125,15 +125,15 @@ return [
             'allowed-domains-help' => 'Séparés par des virgules. Le domaine défini ci-dessus est automatiquement autorisé par défaut.',
         ],
         'stylesheet' => [
-            'custom-css' => 'Custom Stylesheet',
+            'custom-css' => 'Feuille de style personnalisée',
         ],
         'theme' => [
-            'background-color'        => 'Background Color',
+            'background-color'        => 'Couleur de fond',
             'background-fills'        => 'Couleur de remplissage de l\'arrière-plan (composants, incidents, pied de page)',
             'banner-background-color' => 'Couleur d\'arrière-plan de l\'en-tête',
             'banner-padding'          => 'Marge de l\'en-tête',
             'fullwidth-banner'        => 'Activer l\'en-tête en pleine largeur ?',
-            'text-color'              => 'Text Color',
+            'text-color'              => 'Couleur du texte',
             'dashboard-login'         => 'Afficher le bouton "Tableau de bord" dans le pied de page ?',
             'reds'                    => 'Rouge (utilisé pour les erreurs)',
             'blues'                   => 'Bleu (utilisé pour les informations)',

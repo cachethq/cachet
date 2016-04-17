@@ -22,17 +22,17 @@ return [
         'incident-templates'       => 'Incident Sjablonen',
         'add'                      => [
             'title'   => 'Meld een incident',
-            'success' => 'Incident added.',
-            'failure' => 'There was an error adding the incident, please try again.',
+            'success' => 'Incident toegevoegd.',
+            'failure' => 'Er is een fout opgetreden tijdens het toevoegen van het incident, probeer het opnieuw.',
         ],
         'edit' => [
             'title'   => 'Wijzig een incident',
             'success' => 'Incident bijgewerkt.',
-            'failure' => 'There was an error editing the incident, please try again.',
+            'failure' => 'Er is een fout opgetreden bij het wijzigen van het incident, probeer het opnieuw.',
         ],
         'delete' => [
             'success' => 'Het incident is verwijderd en zal niet meer worden weergegeven op de statuspagina.',
-            'failure' => 'The incident could not be deleted, please try again.',
+            'failure' => 'Het incident kon niet worden verwijderd, probeer het opnieuw.',
         ],
 
         // Incident templates
@@ -41,17 +41,17 @@ return [
             'add'   => [
                 'title'   => 'Creëer een incident template',
                 'message' => 'Voeg een incident template toe.',
-                'success' => 'Your new incident template has been created.',
-                'failure' => 'Something went wrong with the incident template.',
+                'success' => 'Je nieuwe incident template is aangemaakt.',
+                'failure' => 'Er is iets misgegaan met de incident template.',
             ],
             'edit' => [
                 'title'   => 'Wijzig template',
-                'success' => 'The incident template has been updated.',
-                'failure' => 'Something went wrong updating the incident template',
+                'success' => 'De incident template is bijgewerkt.',
+                'failure' => 'Er is een fout opgetreden bij het wijzigen van het incident template',
             ],
             'delete' => [
                 'success' => 'De incident template is verwijderd.',
-                'failure' => 'The incident template could not be deleted, please try again.',
+                'failure' => 'De incident template kon niet worden verwijderd, probeer het opnieuw.',
             ],
         ],
     ],
@@ -62,18 +62,18 @@ return [
         'logged'       => '{0} Er zijn geen schema\'s, goed werk.|Je hebt één schema aangemaakt.|Je hebt <strong>:count</strong> schema\'s aangegeven.',
         'scheduled_at' => 'Gepland op :timestamp',
         'add'          => [
-            'title'   => 'Add Scheduled Maintenance',
-            'success' => 'Schedule added.',
-            'failure' => 'Something went wrong adding the schedule, please try again.',
+            'title'   => 'Gepland onderhoud toevoegen',
+            'success' => 'Planning toegevoegd.',
+            'failure' => 'Er ging iets mis met het toevoegen van het geplande onderhoud, probeer het opnieuw.',
         ],
         'edit' => [
-            'title'   => 'Edit Scheduled Maintenance',
-            'success' => 'Schedule has been updated!',
-            'failure' => 'Something went wrong editing the schedule, please try again.',
+            'title'   => 'Gepland onderhoud bewerken',
+            'success' => 'Planning is bijgewerkt!',
+            'failure' => 'Er ging iets mis met het wijzigen van het geplande onderhoud, probeer het opnieuw.',
         ],
         'delete' => [
-            'success' => 'The scheduled maintenance has been deleted and will not show on your status page.',
-            'failure' => 'The scheduled maintenance could not be deleted, please try again.',
+            'success' => 'De planning is verwijderd en zal niet worden getoond op jouw statuspagina.',
+            'failure' => 'De planning kon niet worden verwijderd, probeer het opnieuw.',
         ],
     ],
 
@@ -85,17 +85,17 @@ return [
         'add'                => [
             'title'   => 'Voeg een component toe',
             'message' => 'Gelieve een onderdeel toe te voegen.',
-            'success' => 'Component created.',
-            'failure' => 'Something went wrong with the component, please try again.',
+            'success' => 'Component aangemaakt.',
+            'failure' => 'Er ging iets mis met de component group, probeer het opnieuw.',
         ],
         'edit' => [
             'title'   => 'Wijzig een component',
-            'success' => 'Component updated.',
-            'failure' => 'Something went wrong with the component, please try again.',
+            'success' => 'Component bijgewerkt.',
+            'failure' => 'Er ging iets mis met de component group, probeer het opnieuw.',
         ],
         'delete' => [
             'success' => 'Het component is verwijderd!',
-            'failure' => 'The component could not be deleted, please try again.',
+            'failure' => 'Het component kon niet worden verwijderd, probeer het opnieuw.',
         ],
 
         // Component groups
@@ -104,17 +104,17 @@ return [
             'no_components' => 'U moet een componentgroep toevoegen.',
             'add'           => [
                 'title'   => 'Componentgroep toevoegen',
-                'success' => 'Component group added.',
-                'failure' => 'Something went wrong with the component group, please try again.',
+                'success' => 'Componentengroep toegevoegd.',
+                'failure' => 'Er ging iets mis met de componentengroep, probeer het opnieuw.',
             ],
             'edit' => [
                 'title'   => 'Componentgroep bewerken',
-                'success' => 'Component group updated.',
-                'failure' => 'Something went wrong with the component group, please try again.',
+                'success' => 'Componentengroep bijgewerkt.',
+                'failure' => 'Er ging iets mis met de componentengroep, probeer het opnieuw.',
             ],
             'delete' => [
                 'success' => 'De component groep is verwijderd!',
-                'failure' => 'The component group could not be deleted, please try again.',
+                'failure' => 'De componentengroep kon niet worden verwijderd, probeer het opnieuw.',
             ],
         ],
     ],
@@ -125,36 +125,36 @@ return [
         'add'     => [
             'title'   => 'Meting aanmaken',
             'message' => 'Voeg een meting toe.',
-            'success' => 'Metric created.',
-            'failure' => 'Something went wrong with the metric, please try again.',
+            'success' => 'Meting aangemaakt.',
+            'failure' => 'Er ging iets mis met de metingen, probeer het opnieuw.',
         ],
         'edit' => [
             'title'   => 'Meting bewerken',
-            'success' => 'Metric updated.',
-            'failure' => 'Something went wrong with the metric, please try again.',
+            'success' => 'Meting bijgewerkt.',
+            'failure' => 'Er ging iets mis met de metingen, probeer het opnieuw.',
         ],
         'delete' => [
             'success' => 'De meting is verwijderd en zal niet meer worden weergegeven op de statuspagina.',
-            'failure' => 'The metric could not be deleted, please try again.',
+            'failure' => 'De meting kon niet verwijderd worden, probeer het opnieuw.',
         ],
     ],
     // Subscribers
     'subscribers' => [
         'subscribers'      => 'Abonnees',
-        'description'      => 'Subscribers will receive email updates when incidents are created or components are updated.',
+        'description'      => 'Abonnees ontvangen een email update wanneer er incidenten zijn gemaakt of componenten worden bijgewerkt.',
         'verified'         => 'Geverifiëerd',
         'not_verified'     => 'Niet geverifiëerd',
-        'subscriber'       => ':email, subscribed :date',
-        'no_subscriptions' => 'Subscribed to all updates',
+        'subscriber'       => ':email, geabonneerd op :date',
+        'no_subscriptions' => 'Geabonneerd op alle updates',
         'add'              => [
             'title'   => 'Voeg een nieuwe abonnee toe',
             'success' => 'Abonnee is toegevoegd!',
-            'failure' => 'Something went wrong adding the subscriber, please try again.',
+            'failure' => 'Er ging iets mis met het toevoegen van de abonnee, probeer het opnieuw.',
         ],
         'edit' => [
             'title'   => 'Abonnee bijwerken',
             'success' => 'Abonnee is gewijzigd!',
-            'failure' => 'Something went wrong editing the subscriber, please try again.',
+            'failure' => 'Er ging iets verkeerd met bewerken van de abonnee, probeer het opnieuw.',
         ],
     ],
 
@@ -166,22 +166,22 @@ return [
         'description' => 'Teamleden zullen onderdelen en incidenten kunnen aanpassen &amp; toevoegen.',
         'add'         => [
             'title'   => 'Voeg een nieuw teamlid toe',
-            'success' => 'Team member added.',
-            'failure' => 'The team member could not be added, please try again.',
+            'success' => 'Teamlid toegevoegd.',
+            'failure' => 'Het teamlid kon niet worden toegevoegd, probeer het opnieuw.',
         ],
         'edit' => [
             'title'   => 'Profiel bijwerken',
-            'success' => 'Profile updated.',
-            'failure' => 'Something went wrong updating the profile, please try again.',
+            'success' => 'Profiel bijgewerkt.',
+            'failure' => 'Er ging iets mis met het bijwerken van het profiel, probeer het opnieuw.',
         ],
         'delete' => [
             'success' => 'Het teamlid is verwijderd en heeft geen toegang meer tot het dashboard!',
-            'failure' => 'The team member could not be added, please try again.',
+            'failure' => 'Het teamlid kon niet worden toegevoegd, probeer het opnieuw.',
         ],
         'invite' => [
             'title'   => 'Nodig een nieuw teamlid uit',
             'success' => 'De uitnodiging is verzonden',
-            'failure' => 'The invite could not be sent, please try again.',
+            'failure' => 'De uitnodiging kon niet verzonden worden, probeer het opnieuw.',
         ],
     ],
 
@@ -200,9 +200,9 @@ return [
             'localization' => 'Lokalisatie',
         ],
         'customization' => [
-            'customization' => 'Customization',
-            'header'        => 'Custom Header HTML',
-            'footer'        => 'Custom Footer HTML',
+            'customization' => 'Aanpassing',
+            'header'        => 'Aangepaste Header HTML',
+            'footer'        => 'Aangepaste voettekst HTML',
         ],
         'security' => [
             'security'   => 'Beveiliging',
@@ -244,7 +244,7 @@ return [
     'welcome' => [
         'welcome' => 'Welkom op je statuspagina!',
         'message' => 'Uw statuspagina is bijna klaar! U kunt deze extra instellingen configureren',
-        'close'   => 'Take me straight to my dashboard',
+        'close'   => 'Stuur me direct naar mijn dashboard',
         'steps'   => [
             'component'  => 'Onderdelen maken',
             'incident'   => 'Incidenten aanmaken',

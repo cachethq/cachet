@@ -12,7 +12,7 @@
 return [
     // Components
     'components' => [
-        'last_updated' => 'Last updated :timestamp',
+        'last_updated' => 'Dernière mise à jour :timestamp',
         'status'       => [
             1 => 'Opérationnel',
             2 => 'Problèmes de performances',
@@ -20,7 +20,7 @@ return [
             4 => 'Panne majeure',
         ],
         'group' => [
-            'other' => 'Other Components',
+            'other' => 'Autres composants',
         ],
     ],
 
@@ -68,14 +68,14 @@ return [
         'subscribe' => 'Abonnez-vous pour obtenir les dernières mises à jour.',
         'button'    => 'S\'abonner',
         'manage'    => [
-            'no_subscriptions' => 'You\'re currently subscribed to all updates.',
-            'my_subscriptions' => 'You\'re currently subscribed to the following updates.',
+            'no_subscriptions' => 'Vous êtes actuellement abonné à toutes les mises à jour.',
+            'my_subscriptions' => 'Vous êtes actuellement abonné aux mises à jour suivantes.',
         ],
         'email' => [
             'subscribe'          => 'S\'abonner aux notifications par email.',
             'subscribed'         => 'Vous êtes abonné aux notifications par email, veuillez vérifier votre messagerie pour confirmer votre adresse.',
             'verified'           => 'Votre abonnement aux notifications par email a été confirmé. Merci !',
-            'manage'             => 'Manage your subscription.',
+            'manage'             => 'Gérer vos abonnements.',
             'unsubscribe'        => 'Désinscription des mises à jour par courriel.',
             'unsubscribed'       => 'Votre abonnement aux notifications par email a été annulé.',
             'failure'            => 'Une erreur est survenue lors de l\'abonnement.',
@@ -140,7 +140,8 @@ return [
     ],
 
     // Other
-    'description'     => 'Stay up to date with the latest service updates from :app.',
+    'home'            => 'Accueil',
+    'description'     => 'Restez à jour avec les dernières mises à jour de :app.',
     'powered_by'      => ':app Page de statut est propulsé par <a href="https://cachethq.io">Cachet</a>.',
     'about_this_site' => 'À propos du site',
     'rss-feed'        => 'RSS',

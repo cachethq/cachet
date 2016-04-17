@@ -27,11 +27,11 @@ return [
 
     // Login form fields
     'login' => [
-        'login'         => 'Username or Email',
+        'login'         => 'Nazwa użytkownika lub e-mail',
         'email'         => 'E-Mail',
         'password'      => 'Passwort',
         '2fauth'        => 'Authentifizierungscode',
-        'invalid'       => 'Invalid username or password',
+        'invalid'       => 'Nieprawidłowa nazwa użytkownika lub hasło',
         'invalid-token' => 'Token ist ungültig',
         'cookies'       => 'Sie müssen Cookies aktivieren um sich anzumelden.',
     ],
@@ -70,7 +70,7 @@ return [
         'groups' => [
             'name'               => 'Name',
             'collapsing'         => 'Choose visibility of the group',
-            'visible'            => 'Always expanded',
+            'visible'            => 'Zawsze rozwinięte',
             'collapsed'          => 'Collapse the group by default',
             'collapsed_incident' => 'Collapse the group, but expand if there are issues',
         ],
@@ -87,8 +87,8 @@ return [
         'calc_type'        => 'Berechnung der Metrik',
         'type_sum'         => 'Summe',
         'type_avg'         => 'Durchschnitt',
-        'places'           => 'Decimal places',
-        'default_view'     => 'Default view',
+        'places'           => 'Miejsca dziesiętne',
+        'default_view'     => 'Domyślny widok',
 
         'points' => [
             'value' => 'Wert',
@@ -104,8 +104,8 @@ return [
             'display-graphs'         => 'Graphen auf der Statusseite anzeigen?',
             'about-this-page'        => 'Über diese Seite',
             'days-of-incidents'      => 'Wie viele Tage mit Vorfällen sollen gezeigt werden?',
-            'banner'                 => 'Banner Image',
-            'banner-help'            => 'Es wird empfohlen, dass Sie keine Dateien die breiter als 930 Pixel sind hochladen .',
+            'banner'                 => 'Banner',
+            'banner-help'            => "Es wird empfohlen, dass Sie keine Dateien die breiter als 930 Pixel sind hochladen .",
             'subscribers'            => 'Personen die Anmeldung für E-Mail-Benachrichtigung erlauben?',
         ],
         'analytics' => [
@@ -128,7 +128,7 @@ return [
             'custom-css' => 'Custom Stylesheet',
         ],
         'theme' => [
-            'background-color'        => 'Background Color',
+            'background-color'        => 'Kolor tła',
             'background-fills'        => 'Background fills (components, incidents, footer)',
             'banner-background-color' => 'Banner Background Color',
             'banner-padding'          => 'Banner Padding',

@@ -21,37 +21,37 @@ return [
         'incident-create-template' => 'Criar template',
         'incident-templates'       => 'Template de incidentes',
         'add'                      => [
-            'title'   => 'Report an incident',
-            'success' => 'Incident added.',
-            'failure' => 'There was an error adding the incident, please try again.',
+            'title'   => 'Relatar um incidente',
+            'success' => 'Incidente adicionado.',
+            'failure' => 'Houve um erro ao adicionar o incidente, por favor tente novamente.',
         ],
         'edit' => [
-            'title'   => 'Edit an incident',
+            'title'   => 'Editar um incidente',
             'success' => 'Incidente atualizado.',
-            'failure' => 'There was an error editing the incident, please try again.',
+            'failure' => 'Houve um erro na edição do incidente, por favor tente novamente.',
         ],
         'delete' => [
-            'success' => 'The incident has been deleted and will not show on your status page.',
-            'failure' => 'The incident could not be deleted, please try again.',
+            'success' => 'O incidente foi excluído e não aparecerá na sua página de status.',
+            'failure' => 'O incidente não pode ser excluído, por favor tente novamente.',
         ],
 
         // Incident templates
         'templates' => [
             'title' => 'Template de incidentes',
             'add'   => [
-                'title'   => 'Create an incident template',
-                'message' => 'You should add an incident template.',
-                'success' => 'Your new incident template has been created.',
-                'failure' => 'Something went wrong with the incident template.',
+                'title'   => 'Criar um modelo de incidente',
+                'message' => 'Você deve adicionar um modelo de incidente.',
+                'success' => 'Seu novo modelo de incidente foi criado.',
+                'failure' => 'Algo deu errado com o modelo de incidente.',
             ],
             'edit' => [
-                'title'   => 'Edit Template',
-                'success' => 'The incident template has been updated.',
-                'failure' => 'Something went wrong updating the incident template',
+                'title'   => 'Editar modelo',
+                'success' => 'O modelo de incidente foi atualizado.',
+                'failure' => 'Algo deu errado ao atualizar o modelo de incidente',
             ],
             'delete' => [
-                'success' => 'The incident template has been deleted.',
-                'failure' => 'The incident template could not be deleted, please try again.',
+                'success' => 'O modelo de incidente foi excluído.',
+                'failure' => 'O modelo de incidente não pode ser excluído, por favor tente novamente.',
             ],
         ],
     ],

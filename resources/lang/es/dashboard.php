@@ -22,17 +22,17 @@ return [
         'incident-templates'       => 'Vorfall Vorlagen',
         'add'                      => [
             'title'   => 'Vorfall hinzufügen',
-            'success' => 'Incident added.',
-            'failure' => 'There was an error adding the incident, please try again.',
+            'success' => 'Incidente agregado.',
+            'failure' => 'Hubo un error agregando el incidente, por favor intente de nuevo.',
         ],
         'edit' => [
             'title'   => 'Vorfall bearbeiten',
             'success' => 'Vorfall aktualisiert.',
-            'failure' => 'There was an error editing the incident, please try again.',
+            'failure' => 'Hubo un error editando el incidente, por favor intente de nuevo.',
         ],
         'delete' => [
             'success' => 'El incidente se ha eliminado y no se mostrará en tu página de estado.',
-            'failure' => 'The incident could not be deleted, please try again.',
+            'failure' => 'El incidente no se pudo eliminar, por favor intente de nuevo.',
         ],
 
         // Incident templates
@@ -41,17 +41,17 @@ return [
             'add'   => [
                 'title'   => 'Vorfallvorlage erstellen',
                 'message' => 'Deberías añadir una plantilla de incidente.',
-                'success' => 'Your new incident template has been created.',
-                'failure' => 'Something went wrong with the incident template.',
+                'success' => 'Su nueva plantilla de incidentes ha sido creada.',
+                'failure' => 'Algo salió mal con la plantilla de incidente.',
             ],
             'edit' => [
                 'title'   => 'Vorlage bearbeiten',
-                'success' => 'The incident template has been updated.',
-                'failure' => 'Something went wrong updating the incident template',
+                'success' => 'La plantilla de incidente ha sido actualizada.',
+                'failure' => 'Algo salió mal actualizando la plantilla de incidente',
             ],
             'delete' => [
                 'success' => 'La plantilla de incidente se ha eliminado.',
-                'failure' => 'The incident template could not be deleted, please try again.',
+                'failure' => 'La plantilla de incidente no se pudo eliminar. Por favor, inténtalo de nuevo.',
             ],
         ],
     ],
@@ -62,18 +62,18 @@ return [
         'logged'       => '{0} No hay planificaciones, buen trabajo.|Has registrado una planificación.|Has registrado <strong>:count</strong> planificaciones.',
         'scheduled_at' => 'Geplant am :timestamp',
         'add'          => [
-            'title'   => 'Add Scheduled Maintenance',
-            'success' => 'Schedule added.',
-            'failure' => 'Something went wrong adding the schedule, please try again.',
+            'title'   => 'Agregar mantenimiento programado',
+            'success' => 'Planificación agregada.',
+            'failure' => 'Algo salió mal agregando la planificación, por favor intente de nuevo.',
         ],
         'edit' => [
-            'title'   => 'Edit Scheduled Maintenance',
-            'success' => 'Schedule has been updated!',
-            'failure' => 'Something went wrong editing the schedule, please try again.',
+            'title'   => 'Editar Mantenimiento Programado',
+            'success' => 'La planificación ha sido actualzada!',
+            'failure' => 'Algo salió mal editando la planificación, por favor intente de nuevo.',
         ],
         'delete' => [
-            'success' => 'The scheduled maintenance has been deleted and will not show on your status page.',
-            'failure' => 'The scheduled maintenance could not be deleted, please try again.',
+            'success' => 'La planificación ha sido eliminada y no será mostrada en su página de estado.',
+            'failure' => 'El mantenimiento programado no pudo ser eliminado, por favor, inténtelo de nuevo.',
         ],
     ],
 
@@ -85,17 +85,17 @@ return [
         'add'                => [
             'title'   => 'Komponente hinzufügen',
             'message' => 'Sie sollten eine Komponente erstellen.',
-            'success' => 'Component created.',
-            'failure' => 'Something went wrong with the component, please try again.',
+            'success' => 'Componente creado.',
+            'failure' => 'Algo salió mal con el componente, por favor intente de nuevo.',
         ],
         'edit' => [
             'title'   => 'Komponente bearbeiten',
-            'success' => 'Component updated.',
-            'failure' => 'Something went wrong with the component, please try again.',
+            'success' => 'Componente actualizado.',
+            'failure' => 'Algo salió mal con el componente, por favor intente de nuevo.',
         ],
         'delete' => [
             'success' => 'El componente se ha eliminado!',
-            'failure' => 'The component could not be deleted, please try again.',
+            'failure' => 'El componente no pudo ser eliminado, por favor, inténtelo de nuevo.',
         ],
 
         // Component groups
@@ -104,17 +104,17 @@ return [
             'no_components' => 'Sie sollten eine Komponentengruppe hinzufügen.',
             'add'           => [
                 'title'   => 'Eine Komponentengruppe hinzufügen',
-                'success' => 'Component group added.',
-                'failure' => 'Something went wrong with the component group, please try again.',
+                'success' => 'Grupo de componentes agregado.',
+                'failure' => 'Algo salió mal con el grupo de componentes, por favor vuelva a intentarlo.',
             ],
             'edit' => [
                 'title'   => 'Komponentengruppe bearbeiten',
-                'success' => 'Component group updated.',
-                'failure' => 'Something went wrong with the component group, please try again.',
+                'success' => 'Grupo de componentes actualizado.',
+                'failure' => 'Algo salió mal con el grupo de componentes, por favor vuelva a intentarlo.',
             ],
             'delete' => [
                 'success' => 'El grupo de componentes se ha eliminado!',
-                'failure' => 'The component group could not be deleted, please try again.',
+                'failure' => 'El grupo de componentes no pudo ser eliminado, por favor, inténtelo de nuevo.',
             ],
         ],
     ],
@@ -125,36 +125,36 @@ return [
         'add'     => [
             'title'   => 'Metrik erstellen',
             'message' => 'Deberías añadir una métrica.',
-            'success' => 'Metric created.',
-            'failure' => 'Something went wrong with the metric, please try again.',
+            'success' => 'Métrica creada.',
+            'failure' => 'Algo salió mal con la métrica, por favor, inténtelo de nuevo.',
         ],
         'edit' => [
             'title'   => 'Metrik bearbeiten',
-            'success' => 'Metric updated.',
-            'failure' => 'Something went wrong with the metric, please try again.',
+            'success' => 'Métrica actualizada.',
+            'failure' => 'Algo salió mal con la métrica, por favor, inténtelo de nuevo.',
         ],
         'delete' => [
             'success' => 'La métrica se ha eliminado y no se mostrará más en tu página de estado.',
-            'failure' => 'The metric could not be deleted, please try again.',
+            'failure' => 'La métrica no pudo ser eliminada, por favor, inténtelo de nuevo.',
         ],
     ],
     // Subscribers
     'subscribers' => [
         'subscribers'      => 'Abonnenten',
-        'description'      => 'Subscribers will receive email updates when incidents are created or components are updated.',
+        'description'      => 'Los suscriptores recibirán actualizaciones por correo electrónico cuando se creen incidentes o se actualicen componentes.',
         'verified'         => 'Verifiziert',
         'not_verified'     => 'Nicht verifiziert',
-        'subscriber'       => ':email, subscribed :date',
-        'no_subscriptions' => 'Subscribed to all updates',
+        'subscriber'       => ':email, suscrito :date',
+        'no_subscriptions' => 'Suscrito a todas las actualizaciones',
         'add'              => [
             'title'   => 'Einen neuen Abonnenten hinzufügen',
             'success' => 'Abonnent hinzugefügt.',
-            'failure' => 'Something went wrong adding the subscriber, please try again.',
+            'failure' => 'Algo salió mal al agregar el suscriptor, por favor, inténtelo de nuevo.',
         ],
         'edit' => [
             'title'   => 'Abonnent aktualisieren',
             'success' => 'Abonnent aktualisiert.',
-            'failure' => 'Something went wrong editing the subscriber, please try again.',
+            'failure' => 'Algo salió mal al editar el suscriptor, por favor, inténtelo de nuevo.',
         ],
     ],
 
@@ -166,22 +166,22 @@ return [
         'description' => 'Teammitglieder werden die M&ouml;glichkeit haben, Komponente sowie Vorf&auml;lle hinzuzuf&uuml;gen und zu ver&auml;ndern.',
         'add'         => [
             'title'   => 'Neues Teammitglied hinzufügen',
-            'success' => 'Team member added.',
-            'failure' => 'The team member could not be added, please try again.',
+            'success' => 'Miembro del equipo agregado.',
+            'failure' => 'No se pudo agregar el miembro del equipo, por favor vuelva a intentarlo.',
         ],
         'edit' => [
             'title'   => 'Profil aktualisieren',
-            'success' => 'Profile updated.',
-            'failure' => 'Something went wrong updating the profile, please try again.',
+            'success' => 'Perfil actualizado.',
+            'failure' => 'Algo salió mal actualizando el perfil, por favor intente de nuevo.',
         ],
         'delete' => [
             'success' => 'Benutzer aktualisiert.',
-            'failure' => 'The team member could not be added, please try again.',
+            'failure' => 'No se pudo agregar el miembro del equipo, por favor vuelva a intentarlo.',
         ],
         'invite' => [
             'title'   => 'Invitar a un nuevo miembro al equipo',
             'success' => 'Se ha enviado una invitación',
-            'failure' => 'The invite could not be sent, please try again.',
+            'failure' => 'La invitación no pudo ser enviada, por favor intente de nuevo.',
         ],
     ],
 
@@ -200,9 +200,9 @@ return [
             'localization' => 'Localization',
         ],
         'customization' => [
-            'customization' => 'Customization',
-            'header'        => 'Custom Header HTML',
-            'footer'        => 'Custom Footer HTML',
+            'customization' => 'Personalización',
+            'header'        => 'Cabecera HTML personalizada',
+            'footer'        => 'Pie HTML personalizado',
         ],
         'security' => [
             'security'   => 'Sicherheit',
@@ -244,7 +244,7 @@ return [
     'welcome' => [
         'welcome' => 'Bienvenido a tu página de estado!',
         'message' => 'Ihre Statusseite ist fast fertig! Vielleicht möchten Sie diese zusätzlichen Einstellungen konfigurieren',
-        'close'   => 'Take me straight to my dashboard',
+        'close'   => 'Llévame directamente a mi dashboard',
         'steps'   => [
             'component'  => 'Komponenten erstellen',
             'incident'   => 'Vorfälle erstellen',

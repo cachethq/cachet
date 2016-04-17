@@ -15,65 +15,65 @@ return [
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Инциденты и Плановые работы',
+        'title'                    => 'Инциденты и плановые работы',
         'incidents'                => 'Инциденты',
         'logged'                   => '{0} Нет инцидентов, отличная работа!|У вас зарегистрирован <strong>:count</strong> инцидент.|У вас зарегистрировано <strong>:count</strong> инцидента.|У вас зарегистрировано <strong>:count</strong> инцидентов.',
         'incident-create-template' => 'Создать шаблон',
         'incident-templates'       => 'Шаблоны инцидентов',
         'add'                      => [
-            'title'   => 'Report an incident',
-            'success' => 'Incident added.',
-            'failure' => 'There was an error adding the incident, please try again.',
+            'title'   => 'Добавить инцидент',
+            'success' => 'Инцидент добавлен.',
+            'failure' => 'При добавлении инцидента произошла ошибка, пожалуйста, попробуйте ещё раз.',
         ],
         'edit' => [
-            'title'   => 'Edit an incident',
+            'title'   => 'Изменить инцидент',
             'success' => 'Инцидент обновлен.',
-            'failure' => 'There was an error editing the incident, please try again.',
+            'failure' => 'При редактировании инцидента произошла ошибка, пожалуйста, попробуйте ещё раз.',
         ],
         'delete' => [
-            'success' => 'The incident has been deleted and will not show on your status page.',
-            'failure' => 'The incident could not be deleted, please try again.',
+            'success' => 'Инцидент удалён и больше не будет отображаться на статусной странице.',
+            'failure' => 'Инцидент не может быть уделён, пожалуйста, попробуйте ещё раз.',
         ],
 
         // Incident templates
         'templates' => [
             'title' => 'Шаблоны инцидентов',
             'add'   => [
-                'title'   => 'Create an incident template',
-                'message' => 'You should add an incident template.',
-                'success' => 'Your new incident template has been created.',
-                'failure' => 'Something went wrong with the incident template.',
+                'title'   => 'Создать шаблон инцидента',
+                'message' => 'Необходимо добавить шаблон инцидента.',
+                'success' => 'Новый шаблон инцидента создан.',
+                'failure' => 'С шаблоном инцидента что-то не так.',
             ],
             'edit' => [
-                'title'   => 'Edit Template',
-                'success' => 'The incident template has been updated.',
-                'failure' => 'Something went wrong updating the incident template',
+                'title'   => 'Изменить шаблон',
+                'success' => 'Шаблон инцидента обновлён.',
+                'failure' => 'Что-то пошло не так при изменении шаблона инцидента',
             ],
             'delete' => [
-                'success' => 'The incident template has been deleted.',
-                'failure' => 'The incident template could not be deleted, please try again.',
+                'success' => 'Шаблон инцидента удалён.',
+                'failure' => 'Шаблон инцидента не может быть уделён, пожалуйста, попробуйте ещё раз.',
             ],
         ],
     ],
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => 'Плановое техническое обслуживание',
+        'schedule'     => 'Плановые работы',
         'logged'       => '{0} Ни одного планового обслуживания не зарегистрировано.|У вас зарегистрировано <strong>:count</strong> плановое обслуживание.|У вас зарегистрировано <strong>:count</strong> плановых обслуживания.|У вас зарегистрировано <strong>:count</strong> плановых обслуживаний.',
-        'scheduled_at' => 'запланировано на :timestamp',
+        'scheduled_at' => 'Запланировано на :timestamp',
         'add'          => [
-            'title'   => 'Add Scheduled Maintenance',
-            'success' => 'Schedule added.',
-            'failure' => 'Something went wrong adding the schedule, please try again.',
+            'title'   => 'Добавить плановые работы',
+            'success' => 'Плановые работы добавлены.',
+            'failure' => 'Что-то пошло не так при добавлении плановых работ, пожалуйста, попробуйте ещё раз.',
         ],
         'edit' => [
-            'title'   => 'Edit Scheduled Maintenance',
-            'success' => 'Schedule has been updated!',
-            'failure' => 'Something went wrong editing the schedule, please try again.',
+            'title'   => 'Изменить плановые работы',
+            'success' => 'Плановые работы обновлены!',
+            'failure' => 'Что-то пошло не так при изменении плановых работ, пожалуйста, попробуйте ещё раз.',
         ],
         'delete' => [
-            'success' => 'The scheduled maintenance has been deleted and will not show on your status page.',
-            'failure' => 'The scheduled maintenance could not be deleted, please try again.',
+            'success' => 'Плановые работы удалены и больше не будут отображаться на статусной странице.',
+            'failure' => 'Плановые работы не могут быть уделены, пожалуйста, попробуйте ещё раз.',
         ],
     ],
 
@@ -81,40 +81,40 @@ return [
     'components' => [
         'components'         => 'Компоненты',
         'component_statuses' => ' Статусы компонентов',
-        'listed_group'       => 'Сгруппированные по :name',
+        'listed_group'       => 'В группе :name',
         'add'                => [
-            'title'   => 'Add a component',
-            'message' => 'Вам следует добавить компонент.',
-            'success' => 'Component created.',
-            'failure' => 'Something went wrong with the component, please try again.',
+            'title'   => 'Добавить компонент',
+            'message' => 'Необходимо добавить компонент.',
+            'success' => 'Компонент создан.',
+            'failure' => 'Что-то не так с компонентом, пожалуйста, повторите ещё раз.',
         ],
         'edit' => [
-            'title'   => 'Edit a component',
-            'success' => 'Component updated.',
-            'failure' => 'Something went wrong with the component, please try again.',
+            'title'   => 'Изменить компонент',
+            'success' => 'Компонент обновлён.',
+            'failure' => 'Что-то не так с компонентом, пожалуйста, повторите ещё раз.',
         ],
         'delete' => [
-            'success' => 'The component has been deleted!',
-            'failure' => 'The component could not be deleted, please try again.',
+            'success' => 'Компонент удалён!',
+            'failure' => 'Компонент не может быть удалён, пожалуйста, повторите ещё раз.',
         ],
 
         // Component groups
         'groups' => [
             'groups'        => 'Группа компонентов|Группы компонентов',
-            'no_components' => 'Вам следует добавить группу компонентов.',
+            'no_components' => 'Необходимо добавить группу компонентов.',
             'add'           => [
-                'title'   => 'Add a component group',
-                'success' => 'Component group added.',
-                'failure' => 'Something went wrong with the component group, please try again.',
+                'title'   => 'Добавить группу компонентов',
+                'success' => 'Группа компонентов добавлена.',
+                'failure' => 'Что-то не так с группой компонентов, пожалуйста, повторите ещё раз.',
             ],
             'edit' => [
-                'title'   => 'Edit a component group',
-                'success' => 'Component group updated.',
-                'failure' => 'Something went wrong with the component group, please try again.',
+                'title'   => 'Изменить группу компонентов',
+                'success' => 'Группа компонентов обновлена.',
+                'failure' => 'Что-то не так с группой компонентов, пожалуйста, повторите ещё раз.',
             ],
             'delete' => [
-                'success' => 'Component group has been deleted!',
-                'failure' => 'The component group could not be deleted, please try again.',
+                'success' => 'Группа компонентов удалена!',
+                'failure' => 'Группа компонентов не может быть удалена, пожалуйста, повторите ещё раз.',
             ],
         ],
     ],
@@ -123,38 +123,38 @@ return [
     'metrics' => [
         'metrics' => 'Метрики',
         'add'     => [
-            'title'   => 'Create a metric',
-            'message' => 'You should add a metric.',
-            'success' => 'Metric created.',
-            'failure' => 'Something went wrong with the metric, please try again.',
+            'title'   => 'Создать метрику',
+            'message' => 'Необходимо добавить метрику.',
+            'success' => 'Метрика создана.',
+            'failure' => 'С метрикой что-то пошло не так, пожалуйста, повторите ещё раз.',
         ],
         'edit' => [
-            'title'   => 'Edit a metric',
-            'success' => 'Metric updated.',
-            'failure' => 'Something went wrong with the metric, please try again.',
+            'title'   => 'Изменить метрику',
+            'success' => 'Метрика обновлена.',
+            'failure' => 'С метрикой что-то пошло не так, пожалуйста, повторите ещё раз.',
         ],
         'delete' => [
-            'success' => 'The metric has been deleted and will no longer display on your status page.',
-            'failure' => 'The metric could not be deleted, please try again.',
+            'success' => 'Метрика удалена и больше не будет отображаться на статусной странице.',
+            'failure' => 'Метрика не может быть удалена, пожалуйста, повторите ещё раз.',
         ],
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'      => 'Subscribers',
-        'description'      => 'Subscribers will receive email updates when incidents are created or components are updated.',
-        'verified'         => 'Verified',
-        'not_verified'     => 'Not verified',
-        'subscriber'       => ':email, subscribed :date',
-        'no_subscriptions' => 'Subscribed to all updates',
+        'subscribers'      => 'Подписчики',
+        'description'      => 'Подписчики будут получать уведомления по электронной почте при добавлении инцидентов или изменении статусов компонентов.',
+        'verified'         => 'Подтверждён',
+        'not_verified'     => 'Не подтверждён',
+        'subscriber'       => ':email, подписан :date',
+        'no_subscriptions' => 'Подписан на все обновления',
         'add'              => [
-            'title'   => 'Add a new subscriber',
-            'success' => 'Subscriber has been added!',
-            'failure' => 'Something went wrong adding the subscriber, please try again.',
+            'title'   => 'Добавить нового подписчика',
+            'success' => 'Подписчик добавлен!',
+            'failure' => 'Что-то пошло не так при добавлении подписчика, пожалуйста, повторите ещё раз.',
         ],
         'edit' => [
-            'title'   => 'Update subscriber',
-            'success' => 'Subscriber has been updated!',
-            'failure' => 'Something went wrong editing the subscriber, please try again.',
+            'title'   => 'Обновить подписчика',
+            'success' => 'Подписчик обновлён!',
+            'failure' => 'Что-то пошло не так при изменении подписчика, пожалуйста, попробуйте ещё раз.',
         ],
     ],
 
@@ -165,23 +165,23 @@ return [
         'profile'     => 'Профиль',
         'description' => 'Участники команды смогут добавлять и изменять компоненты и инциденты.',
         'add'         => [
-            'title'   => 'Add a new team member',
-            'success' => 'Team member added.',
-            'failure' => 'The team member could not be added, please try again.',
+            'title'   => 'Добавить нового участника команды',
+            'success' => 'Участник команды добавлен.',
+            'failure' => 'Участник команды не может быть добавлен, пожалуйста, повторите ещё раз.',
         ],
         'edit' => [
-            'title'   => 'Update profile',
-            'success' => 'Profile updated.',
-            'failure' => 'Something went wrong updating the profile, please try again.',
+            'title'   => 'Обновить профиль',
+            'success' => 'Профиль обновлён.',
+            'failure' => 'Что-то пошло не так при обновлении профиля, пожалуйста, повторите ещё раз.',
         ],
         'delete' => [
-            'success' => 'Team member has been deleted and will no longer have access to the dashboard!',
-            'failure' => 'The team member could not be added, please try again.',
+            'success' => 'Участник команды удалён и больше не сможет получить доступ к панели управления!',
+            'failure' => 'Участник команды не может быть добавлен, пожалуйста, повторите ещё раз.',
         ],
         'invite' => [
-            'title'   => 'Invite a new team member',
-            'success' => 'An invite has been sent',
-            'failure' => 'The invite could not be sent, please try again.',
+            'title'   => 'Пригласить нового участника команды',
+            'success' => 'Приглашение отправлено',
+            'failure' => 'Не получается отправить приглашение, пожалуйста, попробуйте ещё раз.',
         ],
     ],
 
@@ -190,19 +190,19 @@ return [
         'settings'  => 'Настройки',
         'app-setup' => [
             'app-setup'   => 'Настройки приложения',
-            'images-only' => 'Могут быть загружены только изображения.',
+            'images-only' => 'Можно загружать только изображения.',
             'too-big'     => 'Загруженный вами файл слишком большой. Загрузите картинку меньше чем :size',
         ],
         'analytics' => [
-            'analytics' => 'Analytics',
+            'analytics' => 'Аналитика',
         ],
         'localization' => [
-            'localization' => 'Localization',
+            'localization' => 'Региональные настройки',
         ],
         'customization' => [
-            'customization' => 'Customization',
-            'header'        => 'Custom Header HTML',
-            'footer'        => 'Custom Footer HTML',
+            'customization' => 'Пользовательские настройки',
+            'header'        => 'Верхний колонтитул HTML',
+            'footer'        => 'Нижний колонтитул HTML',
         ],
         'security' => [
             'security'   => 'Безопасность',
@@ -216,7 +216,7 @@ return [
         ],
         'edit' => [
             'success' => 'Настройки сохранены.',
-            'failure' => 'Не удается сохранить настройки.',
+            'failure' => 'Не удаётся сохранить настройки.',
         ],
     ],
 
@@ -230,7 +230,7 @@ return [
 
     // Sidebar footer
     'help'        => 'Помощь',
-    'status_page' => 'Страница статуса',
+    'status_page' => 'Статусная страница',
     'logout'      => 'Выйти',
 
     // Notifications
@@ -242,15 +242,15 @@ return [
 
     // Welcome modal
     'welcome' => [
-        'welcome' => 'Welcome to your status page!',
+        'welcome' => 'Добро пожаловать на вашу статусную страницу!',
         'message' => 'Ваша статусная страница почти готова! Возможно, вы захотите настроить дополнительные параметры',
-        'close'   => 'Take me straight to my dashboard',
+        'close'   => 'Закрыть и перейти к панели управления',
         'steps'   => [
             'component'  => 'Создание компонентов',
             'incident'   => 'Создание инцидентов',
             'customize'  => 'Настройка',
             'team'       => 'Добавление пользователей',
-            'api'        => 'Сгенерировать API токен',
+            'api'        => 'Создание API токена',
             'two-factor' => 'Двухфакторная аутентификация',
         ],
     ],

@@ -139,6 +139,7 @@ return [
     ],
 
     // Other
+    'home'            => 'Home',
     'description'     => 'Stay up to date with the latest service updates from :app.',
     'powered_by'      => ':app Página Status é promovida por <a href="https://cachethq.io" class="links"> Cachet</a>.',
     'about_this_site' => 'Sobre este Site',

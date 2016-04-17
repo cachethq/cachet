@@ -12,7 +12,7 @@
 return [
     // Components
     'components' => [
-        'last_updated' => 'Last updated :timestamp',
+        'last_updated' => 'Última actualización :timestamp',
         'status'       => [
             1 => 'Funktionsfähig',
             2 => 'Leistungsprobleme',
@@ -20,7 +20,7 @@ return [
             4 => 'Schwerer Ausfall',
         ],
         'group' => [
-            'other' => 'Other Components',
+            'other' => 'Otros componentes',
         ],
     ],
 
@@ -68,14 +68,14 @@ return [
         'subscribe' => 'Abonnieren Sie um die neuesten Updates zu erhalten.',
         'button'    => 'Abonnieren',
         'manage'    => [
-            'no_subscriptions' => 'You\'re currently subscribed to all updates.',
-            'my_subscriptions' => 'You\'re currently subscribed to the following updates.',
+            'no_subscriptions' => 'Actualmente estás suscrito a todas las actualizaciones.',
+            'my_subscriptions' => 'Actualmente estás suscrito a las siguientes actualizaciones.',
         ],
         'email' => [
             'subscribe'          => 'Aktualisierungen per E-Mail abonnieren.',
             'subscribed'         => 'Sie haben E-Mail-Benachrichtigungen abonniert, überprüfen Sie bitte Ihre E-Mail, um Ihr Abonnement zu bestätigen.',
             'verified'           => 'Ihre E-Mail-Abonnement ist bestätigt worden. Danke!',
-            'manage'             => 'Manage your subscription.',
+            'manage'             => 'Gestionar suscripción.',
             'unsubscribe'        => 'Von E-Mail-Updates deabonnieren.',
             'unsubscribed'       => 'Ihre E-Mail-Abonnement wurde gekündigt.',
             'failure'            => 'Etwas ist mit dem Abonnement schief gelaufen.',
@@ -139,7 +139,8 @@ return [
     ],
 
     // Other
-    'description'     => 'Stay up to date with the latest service updates from :app.',
+    'home'            => 'Inicio',
+    'description'     => 'Mantente informado con las últimas actualizaciones de servicio de :app.',
     'powered_by'      => ':app Status-Seite betrieben mit <a href="https://cachethq.io">Cachet</a>.',
     'about_this_site' => 'Über diese Seite',
     'rss-feed'        => 'RSS',

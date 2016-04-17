@@ -12,7 +12,7 @@
 return [
     // Components
     'components' => [
-        'last_updated' => 'Last updated :timestamp',
+        'last_updated' => 'Laatst bijgewerkt :timestamp',
         'status'       => [
             1 => 'Operationeel',
             2 => 'Prestatieproblemen',
@@ -20,7 +20,7 @@ return [
             4 => 'Grote Storing',
         ],
         'group' => [
-            'other' => 'Other Components',
+            'other' => 'Andere componenten',
         ],
     ],
 
@@ -68,14 +68,14 @@ return [
         'subscribe' => 'Abonneer voor de meest recente updates',
         'button'    => 'Abonneren',
         'manage'    => [
-            'no_subscriptions' => 'You\'re currently subscribed to all updates.',
-            'my_subscriptions' => 'You\'re currently subscribed to the following updates.',
+            'no_subscriptions' => 'Je bent momenteel geabonneerd op alle updates.',
+            'my_subscriptions' => 'Je bent momenteel geabonneerd op de volgende updates.',
         ],
         'email' => [
             'subscribe'          => 'Abonneren op e-mail updates.',
             'subscribed'         => 'U bent geabonneerd op e-mail notificaties, controleer uw e-mail om uw abonnement te bevestigen.',
             'verified'           => 'Uw e-mail abonnement is bevestigd. Bedankt!',
-            'manage'             => 'Manage your subscription.',
+            'manage'             => 'Beheer je abonnement.',
             'unsubscribe'        => 'Afmelden voor e-mail updates.',
             'unsubscribed'       => 'Uw e-mail abonnement is opgezegd.',
             'failure'            => 'Er ging iets fout tijdens het aanmelden.',
@@ -139,7 +139,8 @@ return [
     ],
 
     // Other
-    'description'     => 'Stay up to date with the latest service updates from :app.',
+    'home'            => 'Home',
+    'description'     => 'Blijf op de hoogte van de laatste service updates over :app.',
     'powered_by'      => ':app Status pagina word mogelijk gemaakt door <a href="https://cachethq.io" class="links">Cachet</a>.',
     'about_this_site' => 'Over deze website',
     'rss-feed'        => 'RSS',

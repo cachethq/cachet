@@ -11,7 +11,7 @@
 
 return [
 
-    'dashboard' => 'Dashboard',
+    'dashboard' => 'لوحة التحكم',
 
     // Incidents
     'incidents' => [

@@ -12,15 +12,15 @@
 return [
     // Components
     'components' => [
-        'last_updated' => 'Last updated :timestamp',
+        'last_updated' => 'Последнее обновление :timestamp',
         'status'       => [
             1 => 'Работает',
-            2 => 'Проблемы с производительностью',
+            2 => 'Падение производительности',
             3 => 'Перебои в работе',
-            4 => 'Полное отключение',
+            4 => 'Значительные неполадки',
         ],
         'group' => [
-            'other' => 'Other Components',
+            'other' => 'Другие компоненты',
         ],
     ],
 
@@ -30,8 +30,8 @@ return [
         'past'          => 'Последние инциденты',
         'previous_week' => 'Предыдущая неделя',
         'next_week'     => 'Следующая неделя',
-        'scheduled'     => 'Плановое техническое обслуживание',
-        'scheduled_at'  => ', запланировано :timestamp',
+        'scheduled'     => 'Плановые работы',
+        'scheduled_at'  => ', запланированы :timestamp',
         'status'        => [
             0 => 'Запланировано', // TODO: Hopefully remove this.
             1 => 'Проводим анализ проблемы',
@@ -43,13 +43,13 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] System operational|[2,Inf] All systems are operational',
-        'bad'   => '[0,1] The system is currently experiencing issues|[2,Inf] Some systems are experiencing issues',
-        'major' => '[0,1] The service experiencing a major outage|[2,Inf] Some systems are experiencing a major outage',
+        'good'  => '[0,1] Система работает исправно|[2,Inf] Все системы работают исправно',
+        'bad'   => '[0,1] В системе есть неполадки|[2,Inf] В некоторых системах есть неполадки',
+        'major' => '[0,1] Система не работает|[2,Inf] Некоторые системы не работают',
     ],
 
     'api' => [
-        'regenerate' => 'Сгенерировать ключ API',
+        'regenerate' => 'Сгенерировать ключ API заново',
         'revoke'     => 'Отозвать ключ API',
     ],
 
@@ -68,39 +68,39 @@ return [
         'subscribe' => 'Подпишитесь, чтобы получать информацию об изменениях',
         'button'    => 'Подписаться',
         'manage'    => [
-            'no_subscriptions' => 'You\'re currently subscribed to all updates.',
-            'my_subscriptions' => 'You\'re currently subscribed to the following updates.',
+            'no_subscriptions' => 'Вы подписаны на все изменения.',
+            'my_subscriptions' => 'Вы подписаны на следующие изменения.',
         ],
         'email' => [
             'subscribe'          => 'Подписка на рассылку об изменениях.',
             'subscribed'         => 'Вы подписались на рассылку email уведомлений. Проверьте вашу почту, чтобы подтвердить подписку.',
             'verified'           => 'Ваша подписка подтверждена. Спасибо!',
-            'manage'             => 'Manage your subscription.',
+            'manage'             => 'Управление подпиской.',
             'unsubscribe'        => 'Отписаться от рассылки.',
             'unsubscribed'       => 'Ваша подписка отменена.',
             'failure'            => 'Произошла ошибка при подписке на рассылку.',
-            'already-subscribed' => 'Cannot subscribe :email because they\'re already subscribed.',
+            'already-subscribed' => 'Невозможно оформить подписку на :email, т.к. на него уже оформлена подписка.',
             'verify'             => [
-                'text'           => "Пожалуйста подтвердите вашу подписку на уведомления об изменениях статуса проекта :app_name.\n:link\nСпасибо! :app_name",
-                'html-preheader' => 'Пожалуйста подтвердите подписку на уведомления :app_name.',
-                'html'           => '<p>Пожалуйста, подтвердите ваш email для получения обновлений от :app_name</p><p><a href=":link">:link</a></p><p>Спасибо, :app_name</p>',
+                'text'           => "Пожалуйста, подтвердите вашу подписку на уведомления об изменениях статуса проекта :app_name.\n:link\nБлагодарим за внимание, :app_name",
+                'html-preheader' => 'Пожалуйста, подтвердите подписку на уведомления от «:app_name».',
+                'html'           => '<p>Пожалуйста, подтвердите ваш email для получения обновлений от :app_name.</p><p><a href=":link">:link</a></p><p>Благодарим за внимание, :app_name</p>',
             ],
             'maintenance' => [
-                'text'           => "На проекте :app_name запланированы технические работы.\nСпасибо! :app_name",
-                'html-preheader' => 'Плановые работы на проекте :app_name.',
-                'html'           => '<p>Плановые работы для :app_name зарегестрированы.</p>',
+                'text'           => "На проекте :app_name запланированы технические работы.\nБлагодарим за внимание, :app_name",
+                'html-preheader' => 'Плановые работы на проекте «:app_name».',
+                'html'           => '<p>На проекте :app_name запланированы технические работы.</p>',
             ],
             'incident' => [
-                'text'           => "На проекте :app_name добавлен новый инцидент.\nСпасибо! :app_name",
+                'text'           => "На проекте :app_name произошёл инцидент.\nБлагодарим за внимание, :app_name",
                 'html-preheader' => 'Новый инцидент на проекте :app_name.',
-                'html'           => '<p>На проекте :app_name добавлен новый инцидент.</p><p>Спасибо! :app_name</p>',
+                'html'           => '<p>На проекте :app_name произошёл инцидент.</p><p>Благодарим за внимание, :app_name</p>',
             ],
             'component' => [
-                'subject'        => 'Component Status Update',
-                'text'           => 'The component :component_name has seen a status change. The component is now at :component_human_status.\nThank you, :app_name',
-                'html-preheader' => 'Component Update from :app_name',
-                'html'           => '<p>The component :component_name has seen a status change. The component is now at :component_human_status.</p><p>Thank you, :app_name</p>',
-                'tooltip-title'  => 'Subscribe to notifications for :component_name.',
+                'subject'        => 'Статус компонента изменился',
+                'text'           => 'Изменился статус компонента :component_name. Текущее состояние компонента: :component_human_status.\nБлагодарим за внимание, :app_name',
+                'html-preheader' => 'Изменение статуса компонента от :app_name',
+                'html'           => '<p>Изменился статус компонента :component_name. Текущее состояние компонента: :component_human_status.</p><p>Благодарим за внимание, :app_name</p>',
+                'tooltip-title'  => 'Подписаться на уведомления по компоненту :component_name.',
             ],
         ],
     ],
@@ -108,9 +108,9 @@ return [
     'users' => [
         'email' => [
             'invite' => [
-                'text'           => "You have been invited to the team :app_name status page, to sign up follow the next link.\n:link\nThank you, :app_name",
-                'html-preheader' => 'You have been invited to the team :app_name.',
-                'html'           => '<p>You have been invited to the team :app_name status page, to sign up follow the next link.</p><p><a href=":link">:link</a></p><p>Thank you, :app_name</p>',
+                'text'           => "Вас пригласили в команду управления статусной страницей :app_name, перейдите по следующей ссылке, чтобы зарегистрироваться.\n:link\nБлагодарим за внимание, :app_name",
+                'html-preheader' => 'Вас пригласили в команду управления статусной страницей :app_name.',
+                'html'           => '<p>Вас пригласили в команду управления статусной страницей :app_name, перейдите по следующей ссылке, чтобы зарегистрироваться.</p><p><a href=":link">:link</a></p><p>Благодарим за внимание, :app_name</p>',
             ],
         ],
     ],
@@ -121,29 +121,30 @@ return [
         'email'    => 'Email',
         'password' => 'Пароль',
         'success'  => 'Ваша учетная запись создана.',
-        'failure'  => 'Something went wrong with the signup.',
+        'failure'  => 'Что-то пошло не так при регистрации.',
     ],
 
     'system' => [
-        'update' => 'There is a newer version of Cachet available. You can learn how to update <a href="https://docs.cachethq.io/docs/updating-cachet">here</a>!',
+        'update' => 'Доступна новая версия Cachet. Инструкции по обновлению можно получить <a href="https://docs.cachethq.io/docs/updating-cachet">здесь</a>!',
     ],
 
     // Modal
     'modal' => [
         'close'     => 'Закрыть',
         'subscribe' => [
-            'title'  => 'Subscribe to component updates',
-            'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll already receive emails for this component.',
+            'title'  => 'Подписка на изменения статуса компонента',
+            'body'   => 'Введите ваш email, чтобы подписаться на изменения статуса этого компонента. Если вы уже подписаны на обновления, значит сообщения об этом компоненте вам должны приходить.',
             'button' => 'Подписаться',
         ],
     ],
 
     // Other
-    'description'     => 'Stay up to date with the latest service updates from :app.',
-    'powered_by'      => ':app Status Page is powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
+    'home'            => 'Главный экран',
+    'description'     => 'Будьте в курсе последних новостей о состоянии сервиса от :app.',
+    'powered_by'      => 'Статусная страница «:app» работает на <a href="https://cachethq.io" class="links">Cachet</a>.',
     'about_this_site' => 'Об этом сайте',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',
-    'feed'            => 'Статус фид',
+    'feed'            => 'Статусная лента',
 
 ];

@@ -58,7 +58,7 @@ return [
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => 'Scheduled Maintenance',
+        'schedule'     => 'Interrupció programada',
         'logged'       => '{0} There are no schedules, good work.|You have logged one schedule.|You have reported <strong>:count</strong> schedules.',
         'scheduled_at' => 'Scheduled at :timestamp',
         'add'          => [

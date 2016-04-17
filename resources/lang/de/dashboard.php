@@ -86,12 +86,12 @@ return [
             'title'   => 'Komponente hinzufügen',
             'message' => 'Sie sollten eine Komponente erstellen.',
             'success' => 'Komponente erstellt.',
-            'failure' => 'Something went wrong with the component, please try again.',
+            'failure' => 'Etwas ist schief gelaufen mit der Komponente, versuchen sie es erneut.',
         ],
         'edit' => [
             'title'   => 'Komponente bearbeiten',
             'success' => 'Komponente aktualisiert.',
-            'failure' => 'Something went wrong with the component, please try again.',
+            'failure' => 'Etwas ist schief gelaufen mit der Komponente, versuchen sie es erneut.',
         ],
         'delete' => [
             'success' => 'Die Komponente wurde gelöscht!',
@@ -105,16 +105,16 @@ return [
             'add'           => [
                 'title'   => 'Eine Komponentengruppe hinzufügen',
                 'success' => 'Komponentengruppe hinzugefügt.',
-                'failure' => 'Something went wrong with the component group, please try again.',
+                'failure' => 'Etwas ist mit der Komponentengruppe schiefgelaufen, versuchen sie es erneut.',
             ],
             'edit' => [
                 'title'   => 'Komponentengruppe bearbeiten',
                 'success' => 'Komponentengruppe aktualisiert.',
-                'failure' => 'Something went wrong with the component group, please try again.',
+                'failure' => 'Etwas ist mit der Komponentengruppe schiefgelaufen, versuchen sie es erneut.',
             ],
             'delete' => [
                 'success' => 'Die Komponentengruppe wurde gelöscht!',
-                'failure' => 'The component group could not be deleted, please try again.',
+                'failure' => 'Die Komponentengruppe konnte nicht gelöscht werden. Bitte versuche es erneut.',
             ],
         ],
     ],

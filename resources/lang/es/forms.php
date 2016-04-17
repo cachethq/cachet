@@ -46,7 +46,7 @@ return [
         'scheduled_at'       => 'Für wann ist die Wartung geplant?',
         'incident_time'      => 'Wann ist dieser Vorfall aufgetreten?',
         'notify_subscribers' => 'Abonnenten benachrichtigen',
-        'visibility'         => 'Incident Visibility',
+        'visibility'         => 'Visibilidad del incidente',
         'public'             => 'Öffentlich sichtbar',
         'logged_in_only'     => 'Nur für angemeldete Benutzer sichtbar',
         'templates'          => [
@@ -69,10 +69,10 @@ return [
 
         'groups' => [
             'name'               => 'Nombre',
-            'collapsing'         => 'Choose visibility of the group',
-            'visible'            => 'Always expanded',
-            'collapsed'          => 'Collapse the group by default',
-            'collapsed_incident' => 'Collapse the group, but expand if there are issues',
+            'collapsing'         => 'Elegir la visibilidad del grupo',
+            'visible'            => 'Siempre expandido',
+            'collapsed'          => 'Contraer el grupo por defecto',
+            'collapsed_incident' => 'Contraer el grupo, pero ampliar si hay problemas',
         ],
     ],
 
@@ -104,8 +104,8 @@ return [
             'display-graphs'         => 'Graphen auf der Statusseite anzeigen?',
             'about-this-page'        => 'Über diese Seite',
             'days-of-incidents'      => 'Wie viele Tage mit Vorfällen sollen gezeigt werden?',
-            'banner'                 => 'Banner Image',
-            'banner-help'            => 'Es wird empfohlen, dass Sie keine Dateien die breiter als 930 Pixel sind hochladen .',
+            'banner'                 => 'Imagen del banner',
+            'banner-help'            => "Es wird empfohlen, dass Sie keine Dateien die breiter als 930 Pixel sind hochladen .",
             'subscribers'            => 'Personen die Anmeldung für E-Mail-Benachrichtigung erlauben?',
         ],
         'analytics' => [
@@ -125,15 +125,15 @@ return [
             'allowed-domains-help' => 'Durch Kommata trennen. Die oben genannte Domain ist standardmäßig erlaubt.',
         ],
         'stylesheet' => [
-            'custom-css' => 'Custom Stylesheet',
+            'custom-css' => 'Hoja de estilo personalizada',
         ],
         'theme' => [
-            'background-color'        => 'Background Color',
+            'background-color'        => 'Color de fondo',
             'background-fills'        => 'Relleno del fondo (componentes, incidentes, pie)',
             'banner-background-color' => 'Banner Background Color',
             'banner-padding'          => 'Banner Padding',
             'fullwidth-banner'        => 'Enable fullwidth banner?',
-            'text-color'              => 'Text Color',
+            'text-color'              => 'Color del texto',
             'dashboard-login'         => '¿Mostrar el botón de Panel de Control en el pie?',
             'reds'                    => 'Rojo (usado para errores)',
             'blues'                   => 'Azul (usado para información)',

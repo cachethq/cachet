@@ -12,7 +12,7 @@
 return [
     // Components
     'components' => [
-        'last_updated' => 'Last updated :timestamp',
+        'last_updated' => '最后更新 :timestamp',
         'status'       => [
             1 => '运行正常',
             2 => '负载较高',
@@ -68,8 +68,8 @@ return [
         'subscribe' => '订阅最新的更新。',
         'button'    => 'Subscribe',
         'manage'    => [
-            'no_subscriptions' => 'You\'re currently subscribed to all updates.',
-            'my_subscriptions' => 'You\'re currently subscribed to the following updates.',
+            'no_subscriptions' => '您当前已订阅所有更新。',
+            'my_subscriptions' => '您当前已订阅下列更新',
         ],
         'email' => [
             'subscribe'          => 'Subscribe to email updates.',
@@ -139,6 +139,7 @@ return [
     ],
 
     // Other
+    'home'            => '主屏幕',
     'description'     => 'Stay up to date with the latest service updates from :app.',
     'powered_by'      => ':app 状态页托管服务由 <a href="https://cachethq.io">Cachet</a> 提供技术支持。',
     'about_this_site' => '关于我们',

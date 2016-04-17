@@ -11,7 +11,7 @@
 
 return [
 
-    'dashboard' => 'Dashboard',
+    'dashboard' => 'داشبورد',
 
     // Incidents
     'incidents' => [
@@ -215,21 +215,21 @@ return [
             'theme' => 'Theme',
         ],
         'edit' => [
-            'success' => 'Settings saved.',
+            'success' => 'تنظیمات ذخیره گردید.',
             'failure' => 'Settings could not be saved.',
         ],
     ],
 
     // Login
     'login' => [
-        'login'      => 'Login',
+        'login'      => 'ورود به سیستم',
         'logged_in'  => 'You\'re logged in.',
         'welcome'    => 'Welcome Back!',
         'two-factor' => 'Please enter your token.',
     ],
 
     // Sidebar footer
-    'help'        => 'Help',
+    'help'        => 'راهنما',
     'status_page' => 'Status Page',
     'logout'      => 'Logout',
 

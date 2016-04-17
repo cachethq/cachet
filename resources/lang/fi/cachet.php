@@ -12,7 +12,7 @@
 return [
     // Components
     'components' => [
-        'last_updated' => 'Last updated :timestamp',
+        'last_updated' => 'Viimeksi päivitetty :timestamp',
         'status'       => [
             1 => 'Toiminnassa',
             2 => 'Suorituskykyyn liittyviä ongelmia',
@@ -20,7 +20,7 @@ return [
             4 => 'Merkittävä katkos',
         ],
         'group' => [
-            'other' => 'Other Components',
+            'other' => 'Muut komponentit',
         ],
     ],
 
@@ -100,7 +100,7 @@ return [
                 'text'           => 'The component :component_name has seen a status change. The component is now at :component_human_status.\nThank you, :app_name',
                 'html-preheader' => 'Component Update from :app_name',
                 'html'           => '<p>The component :component_name has seen a status change. The component is now at :component_human_status.</p><p>Thank you, :app_name</p>',
-                'tooltip-title'  => 'Subscribe to notifications for :component_name.',
+                'tooltip-title'  => 'Tilata ilmoitukset: component_name.',
             ],
         ],
     ],
@@ -133,12 +133,13 @@ return [
         'close'     => 'Sulje',
         'subscribe' => [
             'title'  => 'Tilaa sähköpostiin ilmoituksia komponenttien tilasta',
-            'body'   => 'Anna sähköpostiosoitteesi tilataaksesi ilmoituksia tästä komponentista. Jos olet aikaisemmin jo tilannut, saat jo tästä komponentistä sähköpostiilmoituksia.',
+            'body'   => 'Kirjoita sähköpostiosoitteesi tilaaksesi päivitykset tästä komponetista. Jos olet jo tilaaja, saat jo sähköposti ilmoituksia tästä komponetista.',
             'button' => 'Tilaa',
         ],
     ],
 
     // Other
+    'home'            => 'Home',
     'description'     => 'Pysy ajan tasalla tilaamalla uusimmat päivitykset :app.',
     'powered_by'      => ':app Status Page is powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
     'about_this_site' => 'Tietoa sivustosta',

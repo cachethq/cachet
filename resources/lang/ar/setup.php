@@ -18,6 +18,6 @@ return [
     'show_support'      => 'Show support for Cachet?',
     'admin_account'     => 'حساب المدير',
     'complete_setup'    => 'إكمال الإعداد',
-    'completed'         => 'تم إعداد cachet بنجاح!',
+    'completed'         => 'تم إعداد Cachet بنجاح!',
     'finish_setup'      => 'انتقل إلى لوحة التحكم',
 ];

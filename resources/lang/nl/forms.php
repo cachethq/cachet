@@ -46,7 +46,7 @@ return [
         'scheduled_at'       => 'Voor wanneer is het onderhoud gepland?',
         'incident_time'      => 'Wanneer heeft dit incident plaatsgevonden?',
         'notify_subscribers' => 'Houd abonnees op de hoogte?',
-        'visibility'         => 'Incident Visibility',
+        'visibility'         => 'Incident Zichtbaarheid',
         'public'             => 'Zichtbaar voor publiek',
         'logged_in_only'     => 'Alleen zichtbaar voor ingelogde gebruikers',
         'templates'          => [
@@ -69,10 +69,10 @@ return [
 
         'groups' => [
             'name'               => 'Naam',
-            'collapsing'         => 'Choose visibility of the group',
-            'visible'            => 'Always expanded',
-            'collapsed'          => 'Collapse the group by default',
-            'collapsed_incident' => 'Collapse the group, but expand if there are issues',
+            'collapsing'         => 'Kies de zichtbaarheid van de groep',
+            'visible'            => 'Altijd uitgevouwen',
+            'collapsed'          => 'Vouw de groep standaard samen',
+            'collapsed_incident' => 'De groep samenvouwen, maar uitklappen als er problemen zijn.',
         ],
     ],
 
@@ -104,8 +104,8 @@ return [
             'display-graphs'         => 'Grafieken tonen op statuspagina?',
             'about-this-page'        => 'Over deze pagina',
             'days-of-incidents'      => 'Hoeveel dagen moeten incidenten getoond worden?',
-            'banner'                 => 'Banner Image',
-            'banner-help'            => 'Het wordt aanbevolen dat u geen bestanden upload die breeder zijn dan 930px.',
+            'banner'                 => 'Banner afbeelding',
+            'banner-help'            => "Het wordt aanbevolen dat u geen bestanden upload die breeder zijn dan 930px.",
             'subscribers'            => 'Bezoekers toestaan om te abonneren op e-mail notificaties?',
         ],
         'analytics' => [
@@ -125,15 +125,15 @@ return [
             'allowed-domains-help' => 'Door komma\'s gescheiden. Het hierboven ingestelde domein is automatisch standaard toegelaten.',
         ],
         'stylesheet' => [
-            'custom-css' => 'Custom Stylesheet',
+            'custom-css' => 'Aangepaste Stylesheet',
         ],
         'theme' => [
-            'background-color'        => 'Background Color',
+            'background-color'        => 'Achtergrondkleur',
             'background-fills'        => 'Achtergrond opvulling (components, incidents, footer)',
             'banner-background-color' => 'Banner achtergrond kleur',
             'banner-padding'          => 'Banner padding',
             'fullwidth-banner'        => 'Volledige breedte van de banner aanzetten?',
-            'text-color'              => 'Text Color',
+            'text-color'              => 'Tekstkleur',
             'dashboard-login'         => 'Laat dashboard knop zien in de footer?',
             'reds'                    => 'Rood (voor errors)',
             'blues'                   => 'Blauw (voor informatie)',

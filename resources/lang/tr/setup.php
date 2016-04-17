@@ -12,12 +12,12 @@
 return [
     'setup'             => 'Kurulum',
     'title'             => 'Cachet\'i Kur',
-    'service_details'   => 'Hizmet Detayları',
+    'service_details'   => 'Hizmet detayları',
     'env_setup'         => 'Ortam kurulumu',
-    'status_page_setup' => 'Durum Sayfası Kurulumu',
+    'status_page_setup' => 'Durum sayfası kurulumu',
     'show_support'      => 'Cachet için destek ister misiniz?',
     'admin_account'     => 'Yönetici Hesabı',
     'complete_setup'    => 'Kurulumu tamamla',
     'completed'         => 'Cachet başarı ile ayarlandı!',
-    'finish_setup'      => 'Arayüze git',
+    'finish_setup'      => 'Gösterge paneline git',
 ];

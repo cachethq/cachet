@@ -46,7 +46,7 @@ return [
         'scheduled_at'       => 'When to schedule the maintenance for?',
         'incident_time'      => '这次故障是什么时候发生的？',
         'notify_subscribers' => '通知订阅者',
-        'visibility'         => 'Incident Visibility',
+        'visibility'         => '故障的可见性',
         'public'             => 'Viewable by public',
         'logged_in_only'     => '仅登录用户可见',
         'templates'          => [
@@ -70,8 +70,8 @@ return [
         'groups' => [
             'name'               => '组名',
             'collapsing'         => 'Choose visibility of the group',
-            'visible'            => 'Always expanded',
-            'collapsed'          => 'Collapse the group by default',
+            'visible'            => '总是展开',
+            'collapsed'          => '默认折叠',
             'collapsed_incident' => 'Collapse the group, but expand if there are issues',
         ],
     ],
@@ -104,7 +104,7 @@ return [
             'display-graphs'         => 'Display graphs on status page?',
             'about-this-page'        => '关于本页',
             'days-of-incidents'      => '显示多少天的故障？',
-            'banner'                 => 'Banner Image',
+            'banner'                 => '横幅图像',
             'banner-help'            => "It's recommended that you upload files no bigger than 930px wide .",
             'subscribers'            => 'Allow people to signup to email notifications?',
         ],
@@ -125,7 +125,7 @@ return [
             'allowed-domains-help' => 'Comma separated. The domain set above is automatically allowed by default.',
         ],
         'stylesheet' => [
-            'custom-css' => 'Custom Stylesheet',
+            'custom-css' => '自定义样式表',
         ],
         'theme' => [
             'background-color'        => 'Background Color',
@@ -133,7 +133,7 @@ return [
             'banner-background-color' => '横幅背景色',
             'banner-padding'          => '横幅Padding值',
             'fullwidth-banner'        => '启用全宽横幅？',
-            'text-color'              => 'Text Color',
+            'text-color'              => '文字颜色',
             'dashboard-login'         => '在页尾显示 管理后台 的入口？',
             'reds'                    => '红 (用于错误类提示)',
             'blues'                   => '蓝 (用于信息类提示)',

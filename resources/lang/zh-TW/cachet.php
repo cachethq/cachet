@@ -139,6 +139,7 @@ return [
     ],
 
     // Other
+    'home'            => 'Home',
     'description'     => 'Stay up to date with the latest service updates from :app.',
     'powered_by'      => ':app 應用狀態頁面由 <a href="https://cachethq.io">Cachet</a>提供支持。',
     'about_this_site' => '關於此站點',
