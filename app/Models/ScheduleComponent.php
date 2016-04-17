@@ -58,16 +58,16 @@ class ScheduleComponent extends Model
      */
     public function schedule()
     {
-        return $this->hasOne(Schedule::class);
+        return $this->belongsTo(Schedule::class);
     }
 
     /**
      * Get the component relation.
      *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function component()
     {
-        return $this->hasOne(Component::class);
+        return $this->hasOne(Component::class, 'id', 'component_id');
     }
 }

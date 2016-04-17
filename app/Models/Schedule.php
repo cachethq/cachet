@@ -117,7 +117,7 @@ class Schedule extends Model implements HasPresenter
      *
      * @var string[]
      */
-    protected $with = ['components'];
+    protected $with = ['affected_components'];
 
     /**
      * Scopes schedules to those in the future.
@@ -146,9 +146,9 @@ class Schedule extends Model implements HasPresenter
     /**
      * Get the components relation.
      *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function components()
+    public function affected_components()
     {
         return $this->hasMany(ScheduleComponent::class);
     }
