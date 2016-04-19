@@ -50,5 +50,7 @@ class AppComposer
         } else {
             $view->withSiteTitle(Config::get('setting.app_name'));
         }
+
+        $view->withFontSubset(Config::get('langs.'.Config::get('app.locale').'.subset', 'latin'));
     }
 }
