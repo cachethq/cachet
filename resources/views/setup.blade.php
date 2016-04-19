@@ -102,9 +102,9 @@
                         <label>{{ trans('forms.setup.site_locale') }}</label>
                         <select name="settings[app_locale]" class="form-control" required>
                             <option value="">Select Language</option>
-                            @foreach($langs as $lang => $name)
-                            <option value="{{ $lang }}" @if(Binput::old('settings.app_locale') == $lang || $user_language == $lang) selected @endif>
-                                {{ $name }}
+                            @foreach($langs as $key => $lang)
+                            <option value="{{ $key }}" @if(Binput::old('settings.app_locale') == $key || $user_language == $key) selected @endif>
+                                {{ $lang['name'] }}
                             </option>
                             @endforeach
                         </select>
