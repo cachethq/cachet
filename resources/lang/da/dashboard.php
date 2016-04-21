@@ -205,53 +205,53 @@ return [
             'footer'        => 'Brugerdefineret footer html',
         ],
         'security' => [
-            'security'   => 'Security',
-            'two-factor' => 'Brugere uden two-factor login',
+            'security'   => 'Sikkerhed',
+            'two-factor' => 'Brugere uden totrinsbekræftelse',
         ],
         'stylesheet' => [
             'stylesheet' => 'Stylesheet',
         ],
         'theme' => [
-            'theme' => 'Theme',
+            'theme' => 'Tema',
         ],
         'edit' => [
             'success' => 'Indstillingerne er gemt.',
-            'failure' => 'Settings could not be saved.',
+            'failure' => 'Indstillingerne kunne ikke gemmes.',
         ],
     ],
 
     // Login
     'login' => [
-        'login'      => 'Login',
-        'logged_in'  => 'You\'re logged in.',
-        'welcome'    => 'Velkommen tilbage',
-        'two-factor' => 'Indtast venligst din log ind nøgle',
+        'login'      => 'Log ind',
+        'logged_in'  => 'Du er logget ind.',
+        'welcome'    => 'Velkommen tilbage!',
+        'two-factor' => 'Indtast venligst din totrins bekræftelses nøgle.',
     ],
 
     // Sidebar footer
-    'help'        => 'Help',
-    'status_page' => 'Status Siden',
-    'logout'      => 'Logout',
+    'help'        => 'Hjælp',
+    'status_page' => 'Status side',
+    'logout'      => 'Log ud',
 
     // Notifications
     'notifications' => [
-        'notifications' => 'Notifications',
-        'awesome'       => 'Fedt!',
-        'whoops'        => 'Whoops!',
+        'notifications' => 'Notifikationer',
+        'awesome'       => 'Fantastisk.',
+        'whoops'        => 'Hov.',
     ],
 
     // Welcome modal
     'welcome' => [
         'welcome' => 'Velkommen til din statusside!',
-        'message' => 'Din statusside er nærmest klar! Måske du skulle gennemgå disse ekstra indstillinger',
+        'message' => 'Din status side er næsten klar! Du ønsker måske at konfigurere disse ekstra indstillinger',
         'close'   => 'Til oversigtssiden tak.',
         'steps'   => [
             'component'  => 'Opret Komponent',
-            'incident'   => 'Opret hændelse',
-            'customize'  => 'Customize',
+            'incident'   => 'Opret hændelser',
+            'customize'  => 'Tilpas',
             'team'       => 'Tilføj bruger',
             'api'        => 'Generer API nøgle',
-            'two-factor' => 'Two Factor Log ind',
+            'two-factor' => 'Totrinsbekræftelse',
         ],
     ],
 

@@ -28,15 +28,15 @@ return [
     'incidents' => [
         'none'          => 'Ingen hændelser er rapporteret',
         'past'          => 'Tidligere hændelser',
-        'previous_week' => 'Sidste uge',
+        'previous_week' => 'Forrige uge',
         'next_week'     => 'Næste uge',
-        'scheduled'     => 'Planlagte hændelser',
+        'scheduled'     => 'Planlagt vedligeholdelse',
         'scheduled_at'  => ', planlagt til :timestamp',
         'status'        => [
-            0 => 'Scheduled', // TODO: Hopefully remove this.
-            1 => 'Investigating',
-            2 => 'Identified',
-            3 => 'Watching',
+            0 => 'Planlagt', // TODO: Hopefully remove this.
+            1 => 'Undersøger',
+            2 => 'Identificeret',
+            3 => 'Overvåger',
             4 => 'Rettet',
         ],
     ],
@@ -49,8 +49,8 @@ return [
     ],
 
     'api' => [
-        'regenerate' => 'Dan ny API nøgle',
-        'revoke'     => 'Fjern API nøgle',
+        'regenerate' => 'Generer en ny API nøgle',
+        'revoke'     => 'Tilbagekald API nøgle',
     ],
 
     // Metrics
@@ -58,25 +58,25 @@ return [
         'filter' => [
             'last_hour' => 'Sidste time',
             'hourly'    => 'Sidste 12 timer',
-            'weekly'    => 'Uge',
-            'monthly'   => 'Måned',
+            'weekly'    => 'Ugentlig',
+            'monthly'   => 'Månedlig',
         ],
     ],
 
     // Subscriber
     'subscriber' => [
-        'subscribe' => 'Abonner på seneste hændelser.',
+        'subscribe' => 'Tilmeld dig for at få de seneste opdateringer',
         'button'    => 'Abonner',
         'manage'    => [
             'no_subscriptions' => 'Du abonner i øjeblikket på alle opdateringer.',
             'my_subscriptions' => 'Du abonnere i øjeblikket på følgende opdateringer.',
         ],
         'email' => [
-            'subscribe'          => 'Få opdateringer pr. email.',
-            'subscribed'         => 'Du er blevet tilmeldt emailnotifikationer. Vi har sendt dig en bekræftelse på den indtastede email-adresse.',
+            'subscribe'          => 'Abonner på email opdateringer.',
+            'subscribed'         => 'Du er blevet tilmeldt email notifikationer. Vi har sendt dig en bekræftelse på den indtastede email-adresse.',
             'verified'           => 'Din tilmelding er nu blevet bekræftet, tak.',
             'manage'             => 'Administrer dit abonnement.',
-            'unsubscribe'        => 'Afmeld emailnotifikationer.',
+            'unsubscribe'        => 'Afmeld email notifikationer.',
             'unsubscribed'       => 'Du er nu blevet frameldt vores emailnotifikationer.',
             'failure'            => 'Noget gik galt med bekræftelsen.',
             'already-subscribed' => 'Kan ikke abonnere da :email allerede er tilmeldt.',
@@ -93,7 +93,7 @@ return [
             'incident' => [
                 'text'           => "Ny fejl raporteret på :app_name.\nMvh, :app_name",
                 'html-preheader' => 'Ny fejl raporteret på :app_name.',
-                'html'           => '<p>Ny fejl raporteret på :app_name.</p><p>Mvh, :app_name</p>',
+                'html'           => '<p>Ny hændelse rapporteret på :app_name.</p><p>Mvh, :app_name</p>',
             ],
             'component' => [
                 'subject'        => 'Komponent status opdatering',
@@ -108,20 +108,20 @@ return [
     'users' => [
         'email' => [
             'invite' => [
-                'text'           => "You have been invited to the team :app_name status page, to sign up follow the next link.\n:link\nThank you, :app_name",
-                'html-preheader' => 'You have been invited to the team :app_name.',
-                'html'           => '<p>You have been invited to the team :app_name status page, to sign up follow the next link.</p><p><a href=":link">:link</a></p><p>Thank you, :app_name</p>',
+                'text'           => "Du er blevet inviteret til :app_name status status side, Klik på linket for at oprette dig.\n:link\nTak, :app_name",
+                'html-preheader' => 'Du er blevet inviteret til :app_name.',
+                'html'           => '<p>Du er blevet inviteret til :app_name status side, Klik på linket for at oprette dig.</p><p><a href=":link">:link</a></p><p>Tak, :app_name</p>',
             ],
         ],
     ],
 
     'signup' => [
-        'title'    => 'Sign Up',
-        'username' => 'Username',
+        'title'    => 'Tilmeld',
+        'username' => 'Brugernavn',
         'email'    => 'Email',
-        'password' => 'Kodeord',
-        'success'  => 'Your account has been created.',
-        'failure'  => 'Something went wrong with the signup.',
+        'password' => 'Adgangskode',
+        'success'  => 'Din konto er nu oprettet.',
+        'failure'  => 'Noget gik galt under tilmeldingen.',
     ],
 
     'system' => [
@@ -142,7 +142,7 @@ return [
     'home'            => 'Hjem',
     'description'     => 'Hold dig opdateret med de seneste opdateringer fra :app.',
     'powered_by'      => ':app statusside er bygget på <a href="https://cachethq.io" class="links">Cachet</a>.',
-    'about_this_site' => 'Om siden',
+    'about_this_site' => 'Om denne side',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',
     'feed'            => 'Status Feed',

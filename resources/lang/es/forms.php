@@ -13,9 +13,9 @@ return [
 
     // Setup form fields
     'setup' => [
-        'email'            => 'E-Mail',
+        'email'            => 'Correo electrónico',
         'username'         => 'Nombre de usario',
-        'password'         => 'Passwort',
+        'password'         => 'Contraseña',
         'site_name'        => 'Nombre del sitio',
         'site_domain'      => 'Domain ihrer Seite',
         'site_timezone'    => 'Wählen Sie Ihre Zeitzone',
@@ -105,7 +105,7 @@ return [
             'about-this-page'        => 'Über diese Seite',
             'days-of-incidents'      => 'Wie viele Tage mit Vorfällen sollen gezeigt werden?',
             'banner'                 => 'Imagen del banner',
-            'banner-help'            => 'Es wird empfohlen, dass Sie keine Dateien die breiter als 930 Pixel sind hochladen .',
+            'banner-help'            => "Es wird empfohlen, dass Sie keine Dateien die breiter als 930 Pixel sind hochladen .",
             'subscribers'            => 'Personen die Anmeldung für E-Mail-Benachrichtigung erlauben?',
         ],
         'analytics' => [

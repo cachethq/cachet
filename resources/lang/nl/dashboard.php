@@ -85,12 +85,12 @@ return [
         'add'                => [
             'title'   => 'Voeg een component toe',
             'message' => 'Gelieve een onderdeel toe te voegen.',
-            'success' => 'Component aangemaakt.',
+            'success' => 'Onderdeel aangemaakt.',
             'failure' => 'Er ging iets mis met de component group, probeer het opnieuw.',
         ],
         'edit' => [
             'title'   => 'Wijzig een component',
-            'success' => 'Component bijgewerkt.',
+            'success' => 'Onderdeel bijgewerkt.',
             'failure' => 'Er ging iets mis met de component group, probeer het opnieuw.',
         ],
         'delete' => [

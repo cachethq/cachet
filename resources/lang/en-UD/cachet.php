@@ -81,17 +81,17 @@ return [
             'failure'            => 'crwdns496:0crwdne496:0',
             'already-subscribed' => 'crwdns626:0crwdne626:0',
             'verify'             => [
-                'text'           => 'crwdns497:0crwdne497:0',
+                'text'           => "crwdns497:0crwdne497:0",
                 'html-preheader' => 'crwdns498:0crwdne498:0',
                 'html'           => 'crwdns520:0crwdne520:0',
             ],
             'maintenance' => [
-                'text'           => 'crwdns500:0crwdne500:0',
+                'text'           => "crwdns500:0crwdne500:0",
                 'html-preheader' => 'crwdns501:0crwdne501:0',
                 'html'           => 'crwdns521:0crwdne521:0',
             ],
             'incident' => [
-                'text'           => 'crwdns503:0crwdne503:0',
+                'text'           => "crwdns503:0crwdne503:0",
                 'html-preheader' => 'crwdns504:0crwdne504:0',
                 'html'           => 'crwdns505:0crwdne505:0',
             ],
@@ -108,7 +108,7 @@ return [
     'users' => [
         'email' => [
             'invite' => [
-                'text'           => 'crwdns553:0crwdne553:0',
+                'text'           => "crwdns553:0crwdne553:0",
                 'html-preheader' => 'crwdns554:0crwdne554:0',
                 'html'           => 'crwdns555:0crwdne555:0',
             ],

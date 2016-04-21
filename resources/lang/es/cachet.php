@@ -118,8 +118,8 @@ return [
     'signup' => [
         'title'    => 'Registrarse',
         'username' => 'Benutzername',
-        'email'    => 'E-Mail',
-        'password' => 'Passwort',
+        'email'    => 'Correo electrónico',
+        'password' => 'Contraseña',
         'success'  => 'Tu cuenta ha sido creada.',
         'failure'  => 'Hubo algún error al registrarse.',
     ],

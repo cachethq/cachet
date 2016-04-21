@@ -11,11 +11,11 @@
 
 return [
     'setup'             => 'Opsætning',
-    'title'             => 'Cachet opsætning',
-    'service_details'   => 'Service detaljer',
-    'env_setup'         => 'Opsægning af miljø',
-    'status_page_setup' => 'Statusside setup',
-    'show_support'      => 'Vis Cachet support?',
+    'title'             => 'Indstil Cachet',
+    'service_details'   => 'Tjenestesdetaljer',
+    'env_setup'         => 'Opsætning af miljø',
+    'status_page_setup' => 'Status side opsætning',
+    'show_support'      => 'Vis støtte til Cachet?',
     'admin_account'     => 'Administratorkonto',
     'complete_setup'    => 'Gennemfør opsætning',
     'completed'         => 'Cachet er nu sat op og er klar til brug!',

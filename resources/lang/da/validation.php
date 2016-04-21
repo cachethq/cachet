@@ -22,7 +22,7 @@ return [
     |
     */
 
-    'accepted'   => ':attribute Skal accepteres.',
+    'accepted'   => ':attribute skal accepteres.',
     'active_url' => ':attribute er ikke en valid URL.',
     'after'      => ':attribute skal være efter den :date.',
     'alpha'      => ':attribute må kun indeholde bogstaver.',
@@ -99,7 +99,7 @@ return [
 
     'custom' => [
         'attribute-name' => [
-            'rule-name' => 'custom-message',
+            'rule-name' => 'tilpasset-besked',
         ],
     ],
 
