@@ -98,7 +98,30 @@
                         yAxes: [{
                             ticks: {
                                 beginAtZero: true,
-                                suggestedMax: 0.1
+                                suggestedMax: 0.1,
+                                callback: function(tickValue, index, ticks) {
+                                    var delta = ticks[1] - ticks[0];
+
+                                    // If we have a number like 2.5 as the delta, figure out how many decimal places we need
+                                    if (Math.abs(delta) > 1) {
+                                        if (tickValue !== Math.floor(tickValue)) {
+                                            delta = tickValue - Math.floor(tickValue);
+                                        }
+                                    }
+
+                                    var logDelta = Chart.helpers.log10(Math.abs(delta));
+                                    var tickString = '';
+
+                                    if (tickValue !== 0) {
+                                        var numDecimal = -1 * Math.floor(logDelta);
+                                        numDecimal = Math.max(Math.min(numDecimal, {{ $metric->places }}), 0); // Use as many places as the metric defines
+                                        tickString = tickValue.toFixed(numDecimal);
+                                    } else {
+                                        tickString = '0'; // Never show decimal places for 0
+                                    }
+
+                                    return tickString;
+                                }
                             }
                         }]
                     },
