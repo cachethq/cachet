@@ -61,7 +61,7 @@ If you're making a lot of changes, you'll find that running `gulp watch` will re
 
 ### Contributing as a developer
 
-Built using [Laravel](https://laravel.com), Cachet is very easy to jump into. Have a look around you'll find it!
+Built using [Laravel](https://laravel.com), Cachet is very easy to jump into. Have a look around you'll find it surprisingly easy!
 
 These extra dependencies are required to develop Cachet:
 
