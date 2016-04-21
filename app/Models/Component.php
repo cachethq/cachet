@@ -129,11 +129,11 @@ class Component extends Model implements HasPresenter
     /**
      * Components can have many tags.
      *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     * @return \Illuminate\Database\Eloquent\Relations\HasManyThrough
      */
     public function tags()
     {
-        return $this->belongsToMany(Tag::class);
+        return $this->hasManyThrough(Tag::class, ComponentTag::class, 'tag_id', 'id');
     }
 
     /**

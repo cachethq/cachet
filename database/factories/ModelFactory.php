@@ -11,6 +11,7 @@
 
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
+use CachetHQ\Cachet\Models\ComponentTag;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentTemplate;
 use CachetHQ\Cachet\Models\IncidentUpdate;
@@ -38,6 +39,13 @@ $factory->define(ComponentGroup::class, function ($faker) {
         'name'      => $faker->words(2, true),
         'order'     => 0,
         'collapsed' => random_int(0, 3),
+    ];
+});
+
+$factory->define(ComponentTag::class, function ($faker) {
+    return [
+        'component_id' => factory(Component::class)->create()->id,
+        'tag_id'       => factory(Tag::class)->create()->id,
     ];
 });
 

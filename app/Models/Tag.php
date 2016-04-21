@@ -12,12 +12,13 @@
 namespace CachetHQ\Cachet\Models;
 
 use CachetHQ\Cachet\Models\Traits\SearchableTrait;
+use CachetHQ\Cachet\Models\Traits\SortableTrait;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
 class Tag extends Model
 {
-    use SearchableTrait;
+    use SearchableTrait, SortableTrait;
 
     /**
      * The attributes that should be casted to native types.
