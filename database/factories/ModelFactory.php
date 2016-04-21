@@ -18,8 +18,10 @@ use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\MetricPoint;
 use CachetHQ\Cachet\Models\Subscriber;
 use CachetHQ\Cachet\Models\Subscription;
+use CachetHQ\Cachet\Models\Tag;
 use CachetHQ\Cachet\Models\User;
 use Carbon\Carbon;
+use Illuminate\Support\Str;
 
 $factory->define(Component::class, function ($faker) {
     return [
@@ -98,6 +100,15 @@ $factory->define(Subscription::class, function ($faker) {
     return [
         'subscriber_id' => factory(Subscriber::class)->create()->id,
         'component_id'  => factory(Component::class)->create()->id,
+    ];
+});
+
+$factory->define(Tag::class, function ($faker) {
+    $name = $faker->sentence();
+
+    return [
+        'name' => $name,
+        'slug' => Str::slug($name),
     ];
 });
 

@@ -11,11 +11,14 @@
 
 namespace CachetHQ\Cachet\Models;
 
+use CachetHQ\Cachet\Models\Traits\SearchableTrait;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
 class Tag extends Model
 {
+    use SearchableTrait;
+
     /**
      * The attributes that should be casted to native types.
      *
@@ -31,6 +34,28 @@ class Tag extends Model
      * @var string[]
      */
     protected $fillable = ['name'];
+
+    /**
+     * The searchable fields.
+     *
+     * @var string[]
+     */
+    protected $searchable = [
+        'id',
+        'name',
+        'slug',
+    ];
+
+    /**
+     * The sortable fields.
+     *
+     * @var string[]
+     */
+    protected $sortable = [
+        'id',
+        'name',
+        'slug',
+    ];
 
     /**
      * Overrides the models boot method.

@@ -48,6 +48,9 @@ class ApiRoutes
                 $router->get('metrics', 'MetricController@getMetrics');
                 $router->get('metrics/{metric}', 'MetricController@getMetric');
                 $router->get('metrics/{metric}/points', 'MetricController@getMetricPoints');
+
+                $router->get('tags', 'TagController@getTags');
+                $router->get('tags/{tag}', 'TagController@getTag');
             });
 
             $router->group(['middleware' => ['auth.api:true']], function (Registrar $router) {
@@ -60,6 +63,7 @@ class ApiRoutes
                 $router->post('metrics', 'MetricController@postMetrics');
                 $router->post('metrics/{metric}/points', 'MetricPointController@postMetricPoints');
                 $router->post('subscribers', 'SubscriberController@postSubscribers');
+                $router->post('tags', 'TagController@postTags');
 
                 $router->put('components/groups/{component_group}', 'ComponentGroupController@putGroup');
                 $router->put('components/{component}', 'ComponentController@putComponent');
@@ -67,6 +71,7 @@ class ApiRoutes
                 $router->put('incidents/{incident}/updates/{update}', 'IncidentUpdateController@putIncidentUpdate');
                 $router->put('metrics/{metric}', 'MetricController@putMetric');
                 $router->put('metrics/{metric}/points/{metric_point}', 'MetricPointController@putMetricPoint');
+                $router->put('tags/{tag}', 'TagController@putTag');
 
                 $router->delete('components/groups/{component_group}', 'ComponentGroupController@deleteGroup');
                 $router->delete('components/{component}', 'ComponentController@deleteComponent');
@@ -76,6 +81,7 @@ class ApiRoutes
                 $router->delete('metrics/{metric}/points/{metric_point}', 'MetricPointController@deleteMetricPoint');
                 $router->delete('subscribers/{subscriber}', 'SubscriberController@deleteSubscriber');
                 $router->delete('subscriptions/{subscription}', 'SubscriberController@deleteSubscription');
+                $router->delete('tags/{tag}', 'TagController@deleteTag');
             });
         });
     }
