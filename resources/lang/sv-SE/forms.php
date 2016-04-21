@@ -105,7 +105,7 @@ return [
             'about-this-page'        => 'Om den här sidan',
             'days-of-incidents'      => 'Hur många dagar av händelser ska visas?',
             'banner'                 => 'Banner Image',
-            'banner-help'            => "Vi rekommenderar att du inte laddar upp bilder som är bredare än 930 px.",
+            'banner-help'            => 'Vi rekommenderar att du inte laddar upp bilder som är bredare än 930 px.',
             'subscribers'            => 'Tillåt att registrera sig för notifikationer via e-post?',
         ],
         'analytics' => [
