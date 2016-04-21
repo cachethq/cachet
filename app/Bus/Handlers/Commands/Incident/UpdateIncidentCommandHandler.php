@@ -18,8 +18,13 @@ use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentTemplate;
 use Twig_Loader_String;
-use TwigBridge\Facade\Twig;
+use TwigBridge\Bridge;
 
+/**
+ * This is the update incident command handler.
+ *
+ * @author James Brooks <james@alt-three.com>
+ */
 class UpdateIncidentCommandHandler
 {
     /**
@@ -30,15 +35,24 @@ class UpdateIncidentCommandHandler
     protected $dates;
 
     /**
+     * The twig bridge instance.
+     *
+     * @var \TwigBridge\Bridge
+     */
+    protected $twig;
+
+    /**
      * Create a new update incident command handler instance.
      *
      * @param \CachetHQ\Cachet\Dates\DateFactory $dates
+     * @param \TwigBridge\Bridge                 $twig
      *
      * @return void
      */
-    public function __construct(DateFactory $dates)
+    public function __construct(DateFactory $dates, Bridge $twig)
     {
         $this->dates = $dates;
+        $this->twig = $twig;
     }
 
     /**
@@ -113,9 +127,9 @@ class UpdateIncidentCommandHandler
      */
     protected function parseIncidentTemplate($templateSlug, $vars)
     {
-        Twig::setLoader(new Twig_Loader_String());
+        $this->twig->setLoader(new Twig_Loader_String());
         $template = IncidentTemplate::forSlug($templateSlug)->first();
 
-        return Twig::render($template->template, $vars);
+        return $this->twig->render($template->template, $vars);
     }
 }
