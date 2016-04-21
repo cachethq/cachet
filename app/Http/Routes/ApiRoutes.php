@@ -37,6 +37,8 @@ class ApiRoutes
                 $router->get('components', 'ComponentController@getComponents');
                 $router->get('components/groups', 'ComponentGroupController@getGroups');
                 $router->get('components/groups/{component_group}', 'ComponentGroupController@getGroup');
+                $router->get('components/tags', 'ComponentTagController@getTags');
+                $router->get('components/tags/{component_tag}', 'ComponentTagController@getTag');
                 $router->get('components/{component}', 'ComponentController@getComponent');
 
                 $router->get('incidents', 'IncidentController@getIncidents');
@@ -55,6 +57,7 @@ class ApiRoutes
 
                 $router->post('components', 'ComponentController@postComponents');
                 $router->post('components/groups', 'ComponentGroupController@postGroups');
+                $router->post('components/tags', 'ComponentTagController@postTags');
                 $router->post('incidents', 'IncidentController@postIncidents');
                 $router->post('metrics', 'MetricController@postMetrics');
                 $router->post('metrics/{metric}/points', 'MetricPointController@postMetricPoints');
@@ -69,6 +72,7 @@ class ApiRoutes
                 $router->put('tags/{tag}', 'TagController@putTag');
 
                 $router->delete('components/groups/{component_group}', 'ComponentGroupController@deleteGroup');
+                $router->delete('components/tags', 'ComponentTagController@deleteTag');
                 $router->delete('components/{component}', 'ComponentController@deleteComponent');
                 $router->delete('incidents/{incident}', 'IncidentController@deleteIncident');
                 $router->delete('metrics/{metric}', 'MetricController@deleteMetric');
