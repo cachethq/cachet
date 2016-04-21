@@ -33,9 +33,9 @@ class MySqlRepository implements MetricInterface
         $timeInterval = $dateTime->format('YmdHi');
 
         if (!isset($metric->calc_type) || $metric->calc_type == Metric::CALC_SUM) {
-            $queryType = "SUM(mp.`value` * mp.`counter`) AS `value`";
+            $queryType = 'SUM(mp.`value` * mp.`counter`) AS `value`';
         } elseif ($metric->calc_type == Metric::CALC_AVG) {
-            $queryType = "AVG(mp.`value` * mp.`counter`) AS `value`";
+            $queryType = 'AVG(mp.`value` * mp.`counter`) AS `value`';
         }
 
         $value = 0;
@@ -69,9 +69,9 @@ class MySqlRepository implements MetricInterface
         $hourInterval = $dateTime->format('YmdH');
 
         if (!isset($metric->calc_type) || $metric->calc_type == Metric::CALC_SUM) {
-            $queryType = "SUM(mp.`value` * mp.`counter`) AS `value`";
+            $queryType = 'SUM(mp.`value` * mp.`counter`) AS `value`';
         } elseif ($metric->calc_type == Metric::CALC_AVG) {
-            $queryType = "AVG(mp.`value` * mp.`counter`) AS `value`";
+            $queryType = 'AVG(mp.`value` * mp.`counter`) AS `value`';
         }
 
         $value = 0;
@@ -103,9 +103,9 @@ class MySqlRepository implements MetricInterface
         $dateTime = (new Date())->sub(new DateInterval('P'.$day.'D'));
 
         if (!isset($metric->calc_type) || $metric->calc_type == Metric::CALC_SUM) {
-            $queryType = "SUM(mp.`value` * mp.`counter`) AS `value`";
+            $queryType = 'SUM(mp.`value` * mp.`counter`) AS `value`';
         } elseif ($metric->calc_type == Metric::CALC_AVG) {
-            $queryType = "AVG(mp.`value` * mp.`counter`) AS `value`";
+            $queryType = 'AVG(mp.`value` * mp.`counter`) AS `value`';
         }
 
         $value = 0;
