@@ -29,7 +29,7 @@ class ComponentGroupController extends AbstractApiController
      */
     public function getGroups()
     {
-        $groups = ComponentGroup::whereRaw('1=1');
+        $groups = ComponentGroup::query();
 
         $groups->search(Binput::except(['sort', 'order', 'per_page']));
 

@@ -32,7 +32,7 @@ class ComponentController extends AbstractApiController
     public function getComponents()
     {
         if (app(Guard::class)->check()) {
-            $components = Component::whereRaw('1 = 1');
+            $components = Component::query();
         } else {
             $components = Component::enabled();
         }

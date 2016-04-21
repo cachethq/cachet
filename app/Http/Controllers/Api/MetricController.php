@@ -29,7 +29,7 @@ class MetricController extends AbstractApiController
      */
     public function getMetrics()
     {
-        $metrics = Metric::whereRaw('1=1');
+        $metrics = Metric::query();
 
         if ($sortBy = Binput::get('sort')) {
             $direction = Binput::has('order') && Binput::get('order') == 'desc';
