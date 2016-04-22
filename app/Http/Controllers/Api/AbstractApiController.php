@@ -19,6 +19,12 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Response;
 use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
 
+/**
+ * This is the abstract api controller class.
+ *
+ * @author Joe Cohen <joe@alt-three.com>
+ * @author James Brooks <james@alt-three.com>
+ */
 abstract class AbstractApiController extends Controller
 {
     /**
@@ -192,6 +198,12 @@ abstract class AbstractApiController extends Controller
         if ($this->data instanceof Arrayable) {
             $response['data'] = $this->data->toArray();
         }
+
+        $headers = [
+            'Content-Type' => 'application/vnd.api+json',
+        ];
+
+        $this->setHeaders(array_merge($headers, $this->headers));
 
         return Response::json($response, $this->statusCode, $this->headers);
     }
