@@ -30,7 +30,7 @@ class CreateSubscribersTable extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-            $table->unique(['email']);
+            $table->unique('email');
         });
     }
 

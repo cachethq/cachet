@@ -21,7 +21,7 @@ class AlterTableIncidentsAddVisibileColumn extends Migration
     public function up()
     {
         Schema::table('incidents', function (Blueprint $table) {
-            $table->boolean('visible')->after('status')->default(1);
+            $table->boolean('visible')->default(1)->after('status');
 
             $table->index('visible');
         });

@@ -21,6 +21,8 @@ class AlterTableIncidentsDropUserIdColumn extends Migration
     public function up()
     {
         Schema::table('incidents', function (Blueprint $table) {
+            $table->dropIndex('incidents_user_id_index');
+
             $table->dropColumn('user_id');
         });
     }
@@ -30,6 +32,10 @@ class AlterTableIncidentsDropUserIdColumn extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('incidents', function (Blueprint $table) {
+            $table->integer('user_id')->unsigned()->after('message');
+
+            $table->index('user_id');
+        });
     }
 }
