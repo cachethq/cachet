@@ -35,6 +35,16 @@ class MetricPresenter extends BasePresenter implements Arrayable
     }
 
     /**
+     * Determines the metric view filter name, used in the API.
+     *
+     * @return string
+     */
+    public function default_view_name()
+    {
+        return trans('cachet.metrics.filter.'.$this->trans_string_name());
+    }
+
+    /**
      * Determines the metric translation view filter name.
      *
      * @return string
@@ -57,8 +67,9 @@ class MetricPresenter extends BasePresenter implements Arrayable
     public function toArray()
     {
         return array_merge($this->wrappedObject->toArray(), [
-            'created_at' => $this->created_at(),
-            'updated_at' => $this->updated_at(),
+            'created_at'        => $this->created_at(),
+            'updated_at'        => $this->updated_at(),
+            'default_view_name' => $this->default_view_name(),
         ]);
     }
 }
