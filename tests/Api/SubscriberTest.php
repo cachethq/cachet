@@ -23,7 +23,6 @@ class SubscriberTest extends AbstractApiTestCase
     {
         $this->get('/api/v1/subscribers');
         $this->assertResponseStatus(401);
-        $this->seeHeader('Content-Type', 'application/json');
     }
 
     public function testGetSubscribers()
@@ -33,7 +32,6 @@ class SubscriberTest extends AbstractApiTestCase
         $subscriber = factory('CachetHQ\Cachet\Models\Subscriber')->create();
 
         $this->get('/api/v1/subscribers');
-        $this->seeHeader('Content-Type', 'application/json');
         $this->assertResponseOk();
     }
 
@@ -47,7 +45,6 @@ class SubscriberTest extends AbstractApiTestCase
             'email' => 'james@cachethq.io',
         ]);
         $this->assertResponseOk();
-        $this->seeHeader('Content-Type', 'application/json');
         $this->seeJson(['email' => 'james@cachethq.io']);
     }
 
@@ -60,7 +57,6 @@ class SubscriberTest extends AbstractApiTestCase
             'verify' => true,
         ]);
         $this->assertResponseOk();
-        $this->seeHeader('Content-Type', 'application/json');
         $this->seeJson(['email' => 'james@cachethq.io']);
     }
 
