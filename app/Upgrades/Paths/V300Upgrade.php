@@ -34,7 +34,7 @@ class V300Upgrade extends AbstractUpgrade
      */
     public function upgrade()
     {
-        echo "This would upgrade us to ".$this->version."\n";
+        echo 'This would upgrade us to '.$this->version."\n";
 
         return true;
     }
