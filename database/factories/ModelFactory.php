@@ -61,8 +61,10 @@ $factory->define(Metric::class, function ($faker) {
         'suffix'        => $faker->word(),
         'description'   => $faker->paragraph(),
         'default_value' => 1,
+        'places'        => 2,
         'calc_type'     => $faker->boolean(),
         'display_chart' => $faker->boolean(),
+        'threshold'     => 5,
     ];
 });
 
@@ -70,6 +72,7 @@ $factory->define(MetricPoint::class, function ($faker) {
     return [
         'metric_id' => factory(Metric::class)->create()->id,
         'value'     => random_int(1, 100),
+        'counter'   => 1,
     ];
 });
 

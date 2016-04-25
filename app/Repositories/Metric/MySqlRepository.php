@@ -32,14 +32,21 @@ class MySqlRepository implements MetricInterface
         $dateTime = (new Date())->sub(new DateInterval('PT'.$hour.'H'))->sub(new DateInterval('PT'.$minute.'M'));
         $timeInterval = $dateTime->format('YmdHi');
 
-        $points = $metric->points()
-                    ->whereRaw('DATE_FORMAT(created_at, "%Y%m%d%H%i") = '.$timeInterval)
-                    ->groupBy(DB::raw('HOUR(created_at), MINUTE(created_at)'));
-
         if (!isset($metric->calc_type) || $metric->calc_type == Metric::CALC_SUM) {
-            $value = $points->sum('value');
+            $queryType = 'SUM(mp.`value` * mp.`counter`) AS `value`';
         } elseif ($metric->calc_type == Metric::CALC_AVG) {
-            $value = $points->avg('value');
+            $queryType = 'AVG(mp.`value` * mp.`counter`) AS `value`';
+        }
+
+        $value = 0;
+
+        $points = DB::select("SELECT {$queryType} FROM metrics m INNER JOIN metric_points mp ON m.id = mp.metric_id WHERE m.id = :metricId AND DATE_FORMAT(mp.`created_at`, '%Y%m%d%H%i') = :timeInterval GROUP BY HOUR(mp.`created_at`), MINUTE(mp.`created_at`)", [
+            'metricId'     => $metric->id,
+            'timeInterval' => $timeInterval,
+        ]);
+
+        if (isset($points[0]) && !($value = $points[0]->value)) {
+            $value = 0;
         }
 
         if ($value === 0 && $metric->default_value != $value) {
@@ -62,14 +69,21 @@ class MySqlRepository implements MetricInterface
         $dateTime = (new Date())->sub(new DateInterval('PT'.$hour.'H'));
         $hourInterval = $dateTime->format('YmdH');
 
-        $points = $metric->points()
-                    ->whereRaw('DATE_FORMAT(created_at, "%Y%m%d%H") = '.$hourInterval)
-                    ->groupBy(DB::raw('HOUR(created_at)'));
-
         if (!isset($metric->calc_type) || $metric->calc_type == Metric::CALC_SUM) {
-            $value = $points->sum('value');
+            $queryType = 'SUM(mp.`value` * mp.`counter`) AS `value`';
         } elseif ($metric->calc_type == Metric::CALC_AVG) {
-            $value = $points->avg('value');
+            $queryType = 'AVG(mp.`value` * mp.`counter`) AS `value`';
+        }
+
+        $value = 0;
+
+        $points = DB::select("SELECT {$queryType} FROM metrics m INNER JOIN metric_points mp ON m.id = mp.metric_id WHERE m.id = :metricId AND DATE_FORMAT(mp.`created_at`, '%Y%m%d%H') = :hourInterval GROUP BY HOUR(mp.`created_at`)", [
+            'metricId'     => $metric->id,
+            'hourInterval' => $hourInterval,
+        ]);
+
+        if (isset($points[0]) && !($value = $points[0]->value)) {
+            $value = 0;
         }
 
         if ($value === 0 && $metric->default_value != $value) {
@@ -90,15 +104,21 @@ class MySqlRepository implements MetricInterface
     {
         $dateTime = (new Date())->sub(new DateInterval('P'.$day.'D'));
 
-        $points = $metric->points()
-                    ->whereRaw('created_at BETWEEN DATE_SUB(created_at, INTERVAL 1 WEEK) AND NOW()')
-                    ->whereRaw('DATE_FORMAT(created_at, "%Y%m%d") = '.$dateTime->format('Ymd'))
-                    ->groupBy(DB::raw('DATE_FORMAT(created_at, "%Y%m%d")'));
-
         if (!isset($metric->calc_type) || $metric->calc_type == Metric::CALC_SUM) {
-            $value = $points->sum('value');
+            $queryType = 'SUM(mp.`value` * mp.`counter`) AS `value`';
         } elseif ($metric->calc_type == Metric::CALC_AVG) {
-            $value = $points->avg('value');
+            $queryType = 'AVG(mp.`value` * mp.`counter`) AS `value`';
+        }
+
+        $value = 0;
+
+        $points = DB::select("SELECT {$queryType} FROM metrics m INNER JOIN metric_points mp ON m.id = mp.metric_id WHERE m.id = :metricId AND mp.`created_at` BETWEEN DATE_SUB(mp.`created_at`, INTERVAL 1 WEEK) AND DATE_ADD(NOW(), INTERVAL 1 DAY) AND DATE_FORMAT(mp.`created_at`, '%Y%m%d') = :timeInterval GROUP BY DATE_FORMAT(mp.`created_at`, '%Y%m%d')", [
+            'metricId'     => $metric->id,
+            'timeInterval' => $dateTime->format('Ymd'),
+        ]);
+
+        if (isset($points[0]) && !($value = $points[0]->value)) {
+            $value = 0;
         }
 
         if ($value === 0 && $metric->default_value != $value) {
