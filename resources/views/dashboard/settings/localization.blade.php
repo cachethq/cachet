@@ -64,9 +64,9 @@
                                         <label>{{ trans('forms.settings.localization.site-locale') }}</label>
                                         <select name="app_locale" class="form-control" required>
                                             <option value="">Select Language</option>
-                                            @foreach($langs as $lang => $name)
-                                                <option value="{{ $lang }}" @if($app_locale === $lang) selected @endif>
-                                                    {{ $name }}
+                                            @foreach($langs as $key => $lang)
+                                                <option value="{{ $key }}" @if($app_locale === $key) selected @endif>
+                                                    {{ $lang['name'] }}
                                                 </option>
                                             @endforeach
                                         </select>
