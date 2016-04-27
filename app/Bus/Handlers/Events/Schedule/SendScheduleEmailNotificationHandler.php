@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Handlers\Events\Incident;
+namespace CachetHQ\Cachet\Bus\Handlers\Events\Schedule;
 
-use CachetHQ\Cachet\Bus\Events\Incident\MaintenanceWasScheduledEvent;
+use CachetHQ\Cachet\Bus\Events\Schedule\ScheduleEventInterface;
 use CachetHQ\Cachet\Models\Subscriber;
 use Illuminate\Contracts\Mail\MailQueue;
 use Illuminate\Mail\Message;
 use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
 
-class SendMaintenanceEmailNotificationHandler
+class SendScheduleEmailNotificationHandler
 {
     /**
      * The mailer instance.
@@ -50,12 +50,15 @@ class SendMaintenanceEmailNotificationHandler
     /**
      * Handle the event.
      *
-     * @param \CachetHQ\Cachet\Bus\Events\MaintenanceHasScheduledEvent $event
+     * @param \CachetHQ\Cachet\Bus\Events\Schedule\ScheduleEventInterface $event
      *
      * @return void
      */
-    public function handle(MaintenanceWasScheduledEvent $event)
+    public function handle(ScheduleEventInterface $event)
     {
+        // TODO: Re-implement this.
+        return false;
+
         if (!$event->incident->notify) {
             return false;
         }

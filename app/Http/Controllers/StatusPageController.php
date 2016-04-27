@@ -17,6 +17,7 @@ use CachetHQ\Cachet\Http\Controllers\Api\AbstractApiController;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\Metric;
+use CachetHQ\Cachet\Models\Schedule;
 use CachetHQ\Cachet\Repositories\Metric\MetricRepository;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
@@ -82,7 +83,7 @@ class StatusPageController extends AbstractApiController
 
         $incidentVisibility = Auth::check() ? 0 : 1;
 
-        $allIncidents = Incident::notScheduled()->where('visible', '>=', $incidentVisibility)->whereBetween('created_at', [
+        $allIncidents = Incident::where('visible', '>=', $incidentVisibility)->whereBetween('created_at', [
             $startDate->copy()->subDays($daysToShow)->format('Y-m-d').' 00:00:00',
             $startDate->format('Y-m-d').' 23:59:59',
         ])->orderBy('scheduled_at', 'desc')->orderBy('created_at', 'desc')->get()->groupBy(function (Incident $incident) {
@@ -107,7 +108,7 @@ class StatusPageController extends AbstractApiController
             ->withDaysToShow($daysToShow)
             ->withAllIncidents($allIncidents)
             ->withCanPageForward((bool) $today->gt($startDate))
-            ->withCanPageBackward(Incident::notScheduled()->where('created_at', '<', $startDate->format('Y-m-d'))->count() > 0)
+            ->withCanPageBackward(Incident::where('created_at', '<', $startDate->format('Y-m-d'))->count() > 0)
             ->withPreviousDate($startDate->copy()->subDays($daysToShow)->toDateString())
             ->withNextDate($startDate->copy()->addDays($daysToShow)->toDateString());
     }
@@ -121,8 +122,19 @@ class StatusPageController extends AbstractApiController
      */
     public function showIncident(Incident $incident)
     {
-        return View::make('single-incident')
-            ->withIncident($incident);
+        return View::make('single-incident')->withIncident($incident);
+    }
+
+    /**
+     * Show a single schedule.
+     *
+     * @param \CachetHQ\Cachet\Models\Schedule $schedule
+     *
+     * @return \Illuminate\View\View
+     */
+    public function showSchedule(Schedule $schedule)
+    {
+        return View::make('schedule')->withSchedule($schedule);
     }
 
     /**

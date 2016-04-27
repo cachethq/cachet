@@ -17,6 +17,7 @@ use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentTemplate;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\MetricPoint;
+use CachetHQ\Cachet\Models\Schedule;
 use CachetHQ\Cachet\Models\Setting;
 use CachetHQ\Cachet\Models\Subscriber;
 use CachetHQ\Cachet\Models\User;
@@ -66,6 +67,7 @@ class DemoSeederCommand extends Command
         $this->seedIncidentTemplates();
         $this->seedMetricPoints();
         $this->seedMetrics();
+        $this->seedSchedules();
         $this->seedSettings();
         $this->seedSubscribers();
         $this->seedUsers();
@@ -281,6 +283,27 @@ EINCIDENT;
 
         foreach ($defaultMetrics as $metric) {
             Metric::create($metric);
+        }
+    }
+
+    /**
+     * Seed the schedules table.
+     *
+     * @return void
+     */
+    protected function seedSchedules()
+    {
+        $defaultSchedules = [
+            [
+                'name'         => 'Demo resets every half hour!',
+                'message'      => 'You can schedule downtime for _your_ service!',
+                'status'       => Schedule::UPCOMING,
+                'scheduled_at' => (new DateTime())->add(new DateInterval('PT2H')),
+            ],
+        ];
+
+        foreach ($defaultSchedules as $schedule) {
+            Schedule::create($schedule);
         }
     }
 

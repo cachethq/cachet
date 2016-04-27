@@ -40,6 +40,11 @@ class StatusPageRoutes
                 'uses' => 'StatusPageController@showIncident',
             ]);
 
+            $router->get('schedule/{schedule}', [
+                'as'   => 'schedule',
+                'uses' => 'StatusPageController@showSchedule',
+            ]);
+
             $router->get('metrics/{metric}', [
                 'as'   => 'metrics',
                 'uses' => 'StatusPageController@getMetrics',

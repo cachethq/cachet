@@ -14,6 +14,7 @@ namespace CachetHQ\Cachet\Composers;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Incident;
+use CachetHQ\Cachet\Models\Schedule;
 use Illuminate\Contracts\View\View;
 
 class StatusPageComposer
@@ -46,7 +47,7 @@ class StatusPageComposer
             ];
         } elseif (Component::enabled()->notStatus(1)->count() === 0) {
             // If all our components are ok, do we have any non-fixed incidents?
-            $incidents = Incident::notScheduled()->orderBy('created_at', 'desc')->get();
+            $incidents = Incident::orderBy('created_at', 'desc')->get();
             $incidentCount = $incidents->count();
 
             if ($incidentCount === 0 || ($incidentCount >= 1 && (int) $incidents->first()->status === 4)) {
@@ -63,7 +64,7 @@ class StatusPageComposer
         }
 
         // Scheduled maintenance code.
-        $scheduledMaintenance = Incident::scheduled()->orderBy('scheduled_at')->get();
+        $scheduledMaintenance = Schedule::futureSchedules()->orderBy('scheduled_at')->get();
 
         // Component & Component Group lists.
         $usedComponentGroups = Component::enabled()->where('group_id', '>', 0)->groupBy('group_id')->pluck('group_id');

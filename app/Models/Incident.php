@@ -15,7 +15,6 @@ use AltThree\Validator\ValidatingTrait;
 use CachetHQ\Cachet\Models\Traits\SearchableTrait;
 use CachetHQ\Cachet\Models\Traits\SortableTrait;
 use CachetHQ\Cachet\Presenters\IncidentPresenter;
-use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use McCool\LaravelAutoPresenter\HasPresenter;
@@ -30,9 +29,8 @@ class Incident extends Model implements HasPresenter
      * @var string[]
      */
     protected $casts = [
-        'visible'      => 'int',
-        'scheduled_at' => 'date',
-        'deleted_at'   => 'date',
+        'visible'    => 'int',
+        'deleted_at' => 'date',
     ];
 
     /**
@@ -46,7 +44,6 @@ class Incident extends Model implements HasPresenter
         'status',
         'visible',
         'message',
-        'scheduled_at',
         'created_at',
         'updated_at',
     ];
@@ -99,32 +96,6 @@ class Incident extends Model implements HasPresenter
     public function scopeVisible($query)
     {
         return $query->where('visible', 1);
-    }
-
-    /**
-     * Finds all scheduled incidents (maintenance).
-     *
-     * @param \Illuminate\Database\Eloquent\Builder $query
-     *
-     * @return \Illuminate\Database\Eloquent\Builder
-     */
-    public function scopeScheduled($query)
-    {
-        return $query->where('status', 0)->where('scheduled_at', '>=', Carbon::now());
-    }
-
-    /**
-     * Finds all non-scheduled incidents.
-     *
-     * @param \Illuminate\Database\Eloquent\Builder $query
-     *
-     * @return \Illuminate\Database\Eloquent\Builder
-     */
-    public function scopeNotScheduled($query)
-    {
-        return $query->where(function ($query) {
-            return $query->whereNull('scheduled_at')->orWhere('scheduled_at', '<=', Carbon::now());
-        });
     }
 
     /**
