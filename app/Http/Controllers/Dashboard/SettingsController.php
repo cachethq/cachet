@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Str;
 use Illuminate\Support\Facades\View;
 
 class SettingsController extends Controller
@@ -225,12 +226,22 @@ class SettingsController extends Controller
             $setting->set('app_banner', null);
         }
 
-        if ($header = Binput::get('header', null, false, false)) {
-            $setting->set('header', $header);
+        $parameters = Binput::all();
+
+        if (isset($parameters['header'])) {
+            if ($header = Binput::get('header', null, false, false)) {
+                $setting->set('header', $header);
+            } else {
+                $setting->delete('header');
+            }
         }
 
-        if ($footer = Binput::get('footer', null, false, false)) {
-            $setting->set('footer', $footer);
+        if (isset($parameters['footer'])) {
+            if ($footer = Binput::get('footer', null, false, false)) {
+                $setting->set('footer', $footer);
+            } else {
+                $setting->delete('footer');
+            }
         }
 
         if (Binput::hasFile('app_banner')) {
@@ -248,7 +259,7 @@ class SettingsController extends Controller
                 return Redirect::to($redirectUrl)->withErrors($file->getErrorMessage());
             }
 
-            if (!starts_with($file->getMimeType(), 'image/')) {
+            if (!Str::startsWith($file->getMimeType(), 'image/')) {
                 return Redirect::to($redirectUrl)->withErrors(trans('dashboard.settings.app-setup.images-only'));
             }
 

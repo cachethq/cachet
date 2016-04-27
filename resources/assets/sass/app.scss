@@ -9,6 +9,9 @@ html {
     position: relative;
     min-height: 100%;
     -webkit-font-smoothing: antialiased;
+    // always show up-down scrollbar to prevent content from jumping left/right
+    // depending on whether the page is taller than 100% of viewport height
+    overflow-y: scroll;
 }
 
 body {

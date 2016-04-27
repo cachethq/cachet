@@ -71,6 +71,20 @@ class Repository
     }
 
     /**
+     * Deletes a setting.
+     *
+     * @param string $name
+     *
+     * @return void
+     */
+    public function delete($name)
+    {
+        $this->stale = true;
+
+        $this->model->where('name', $name)->delete();
+    }
+
+    /**
      * Is the config state stale?
      *
      * @return bool
