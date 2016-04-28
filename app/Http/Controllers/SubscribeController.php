@@ -57,13 +57,13 @@ class SubscribeController extends Controller
         $subscriptions = Binput::get('subscriptions');
 
         try {
-            dispatch(new SubscribeSubscriberCommand($email, false, $subscriptions));
+            $subscription = dispatch(new SubscribeSubscriberCommand($email, false, $subscriptions));
         } catch (AlreadySubscribedException $e) {
-            return Redirect::route('subscribe.subscribe')
+            return Redirect::route('subscribe.manage', $subscription->id)
                 ->withTitle(sprintf('<strong>%s</strong> %s', trans('dashboard.notifications.whoops'), trans('cachet.subscriber.email.failure')))
                 ->withErrors(trans('cachet.subscriber.email.already-subscribed', ['email' => $email]));
         } catch (ValidationException $e) {
-            return Redirect::route('subscribe.subscribe')
+            return Redirect::route('status-page')
                 ->withInput(Binput::all())
                 ->withTitle(sprintf('<strong>%s</strong> %s', trans('dashboard.notifications.whoops'), trans('cachet.subscriber.email.failure')))
                 ->withErrors($e->getMessageBag());
