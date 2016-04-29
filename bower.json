@@ -1,5 +1,5 @@
 {
-  "name": "Cachet",
+  "name": "cachet",
   "dependencies": {
     "animate-sass": "~0.6",
     "autosize": "~3.0",
