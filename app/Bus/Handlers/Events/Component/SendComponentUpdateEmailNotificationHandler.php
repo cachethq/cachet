@@ -12,8 +12,8 @@
 namespace CachetHQ\Cachet\Bus\Handlers\Events\Component;
 
 use CachetHQ\Cachet\Bus\Events\Component\ComponentWasUpdatedEvent;
-use CachetHQ\Cachet\Models\Subscriber;
 use CachetHQ\Cachet\Models\Component;
+use CachetHQ\Cachet\Models\Subscriber;
 use Illuminate\Contracts\Mail\MailQueue;
 use Illuminate\Mail\Message;
 use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
@@ -37,7 +37,7 @@ class SendComponentUpdateEmailNotificationHandler
     /**
      * Create a new send incident email notification handler.
      *
-     * @param \Illuminate\Contracts\Mail\Mailer $mailer
+     * @param \Illuminate\Contracts\Mail\Mailer  $mailer
      * @param \CachetHQ\Cachet\Models\Subscriber $subscriber
      *
      * @return void
