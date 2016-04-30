@@ -44,8 +44,8 @@ final class SubscribeSubscriberCommand
     /**
      * Create a new subscribe subscriber command instance.
      *
-     * @param string     $email
-     * @param bool       $verified
+     * @param string $email
+     * @param bool   $verified
      *
      * @return void
      */
