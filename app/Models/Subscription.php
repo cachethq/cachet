@@ -107,7 +107,10 @@ class Subscription extends Model
     {
         return $query->select('subscriptions.*')
             ->join('subscribers', 'subscriptions.subscriber_id', '=', 'subscribers.id')
-            ->where('component_id', $component_id)
+            ->where(function ($query) {
+                $query->where('subscriptions.component_id', $component_id)
+                    ->orWhere('subscribers.global');
+            })
             ->whereNotNull('subscribers.verified_at');
     }
 }
