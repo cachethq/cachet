@@ -66,7 +66,7 @@
                                             <option value="">Select Language</option>
                                             @foreach($langs as $lang => $name)
                                                 <option value="{{ $lang }}" @if($app_locale === $lang) selected @endif>
-                                                    {{ $name }}
+                                                    {{ $name['name'] }}
                                                 </option>
                                             @endforeach
                                         </select>
