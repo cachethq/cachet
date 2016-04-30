@@ -50,7 +50,7 @@ class SendMaintenanceEmailNotificationHandler
     /**
      * Handle the event.
      *
-     * @param \CachetHQ\Cachet\Bus\Events\MaintenanceHasScheduledEvent $event
+     * @param \CachetHQ\Cachet\Bus\Events\MaintenanceWasScheduledEvent $event
      *
      * @return void
      */
@@ -60,27 +60,69 @@ class SendMaintenanceEmailNotificationHandler
             return false;
         }
 
-        $data = AutoPresenter::decorate($event->incident);
-
-        foreach ($this->subscriber->isVerified()->get() as $subscriber) {
-            $mail = [
-                'email'            => $subscriber->email,
-                'subject'          => 'Scheduled maintenance.',
-                'status'           => $data->human_status,
-                'html_content'     => $data->formattedMessage,
-                'text_content'     => $data->message,
-                'scheduled_at'     => $data->scheduled_at_formatted,
-                'token'            => $subscriber->token,
-                'manage_link'      => route('subscribe.manage', ['code' => $subscriber->verify_code]),
-                'unsubscribe_link' => route('subscribe.unsubscribe', ['code' => $subscriber->verify_code]),
-            ];
-
-            $this->mailer->queue([
-                'html' => 'emails.incidents.maintenance-html',
-                'text' => 'emails.incidents.maintenance-text',
-            ], $mail, function (Message $message) use ($mail) {
-                $message->to($mail['email'])->subject($mail['subject']);
-            });
+        // Only send emails for public incidents.
+        if ($event->incident->visible === 0) {
+            return;
         }
+
+        // First notify all global subscribers.
+        $globalSubscribers = $this->subscriber->isVerified()->isGlobal()->get();
+
+        foreach ($globalSubscribers as $subscriber) {
+            $this->notify($event, $subscriber);
+        }
+
+        if (!$event->incident->component) {
+            return;
+        }
+
+        $notified = $globalSubscribers->pluck('id')->all();
+
+        // Notify the remaining component specific subscribers.
+        $componentSubscribers = $this->subscriber
+            ->isVerified()
+            ->forComponent($event->incident->component->id)
+            ->get()
+            ->reject(function ($subscriber) use ($notified) {
+                return in_array($subscriber->id, $notified);
+            });
+
+        foreach ($componentSubscribers as $subscriber) {
+            $this->notify($event, $subscriber);
+        }
+    }
+
+    /**
+     * Send notification to subscriber.
+     *
+     * @param \CachetHQ\Cachet\Bus\Events\MaintenanceWasScheduledEvent $event
+     * @param \CachetHQ\Cachet\Models\Subscriber                       $subscriber
+     *
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+    public function notify(MaintenanceWasScheduledEvent $event, $subscriber)
+    {
+        $incident = AutoPresenter::decorate($event->incident);
+        $component = AutoPresenter::decorate($event->incident->component);
+
+        $mail = [
+            'email'            => $subscriber->email,
+            'subject'          => 'Scheduled maintenance.',
+            'has_component'    => ($event->incident->component) ? true : false,
+            'component_name'   => $component ? $component->name : null,
+            'status'           => $incident->human_status,
+            'html_content'     => $incident->formattedMessage,
+            'text_content'     => $incident->message,
+            'token'            => $subscriber->token,
+            'manage_link'      => route('subscribe.manage', ['code' => $subscriber->verify_code]),
+            'unsubscribe_link' => route('subscribe.unsubscribe', ['code' => $subscriber->verify_code]),
+        ];
+
+        $this->mailer->queue([
+            'html' => 'emails.incidents.maintenance-html',
+            'text' => 'emails.incidents.maintenance-text',
+        ], $mail, function (Message $message) use ($mail) {
+            $message->to($mail['email'])->subject($mail['subject']);
+        });
     }
 }

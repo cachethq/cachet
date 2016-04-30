@@ -15,8 +15,10 @@ use AltThree\Validator\ValidationException;
 use CachetHQ\Cachet\Bus\Commands\Subscriber\SubscribeSubscriberCommand;
 use CachetHQ\Cachet\Bus\Commands\Subscriber\UnsubscribeSubscriberCommand;
 use CachetHQ\Cachet\Bus\Commands\Subscriber\UnsubscribeSubscriptionCommand;
+use CachetHQ\Cachet\Bus\Commands\Subscriber\UpdateSubscriberSubscriptionCommand;
 use CachetHQ\Cachet\Bus\Commands\Subscriber\VerifySubscriberCommand;
 use CachetHQ\Cachet\Bus\Exceptions\Subscriber\AlreadySubscribedException;
+use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Subscriber;
 use CachetHQ\Cachet\Models\Subscription;
 use GrahamCampbell\Binput\Facades\Binput;
@@ -57,11 +59,9 @@ class SubscribeController extends Controller
         $subscriptions = Binput::get('subscriptions');
 
         try {
-            $subscription = dispatch(new SubscribeSubscriberCommand($email, false, $subscriptions));
-        } catch (AlreadySubscribedException $e) {
-            return Redirect::route('subscribe.manage', $subscription->id)
-                ->withTitle(sprintf('<strong>%s</strong> %s', trans('dashboard.notifications.whoops'), trans('cachet.subscriber.email.failure')))
-                ->withErrors(trans('cachet.subscriber.email.already-subscribed', ['email' => $email]));
+            $verified = false;
+
+            $subscription = dispatch(new SubscribeSubscriberCommand($email, $verified));
         } catch (ValidationException $e) {
             return Redirect::route('status-page')
                 ->withInput(Binput::all())
@@ -69,8 +69,12 @@ class SubscribeController extends Controller
                 ->withErrors($e->getMessageBag());
         }
 
-        return Redirect::route('status-page')
-            ->withSuccess(sprintf('<strong>%s</strong> %s', trans('dashboard.notifications.awesome'), trans('cachet.subscriber.email.subscribed')));
+        $message = $subscription->is_verified ?
+            trans('cachet.subscriber.email.already-subscribed', ['email' => $email]) :
+            trans('cachet.subscriber.email.subscribed');
+
+        return Redirect::route('subscribe.manage', $subscription->verify_code)
+            ->withSuccess(sprintf('<strong>%s</strong> %s', trans('dashboard.notifications.awesome'), $message));
     }
 
     /**
@@ -88,11 +92,13 @@ class SubscribeController extends Controller
 
         $subscriber = Subscriber::where('verify_code', '=', $code)->first();
 
-        if (!$subscriber || $subscriber->is_verified) {
+        if (!$subscriber) {
             throw new BadRequestHttpException();
         }
 
-        dispatch(new VerifySubscriberCommand($subscriber));
+        if (!$subscriber->is_verified) {
+            dispatch(new VerifySubscriberCommand($subscriber));
+        }
 
         return Redirect::route('status-page')
             ->withSuccess(sprintf('<strong>%s</strong> %s', trans('dashboard.notifications.awesome'), trans('cachet.subscriber.email.verified')));
@@ -143,10 +149,46 @@ class SubscribeController extends Controller
 
         $subscriber = Subscriber::where('verify_code', '=', $code)->first();
 
-        if (!$subscriber || !$subscriber->is_verified) {
+        if (!$subscriber) {
             throw new BadRequestHttpException();
         }
 
-        return View::make('subscribe.manage')->withSubscriber($subscriber);
+        return View::make('subscribe.manage')
+            ->withComponents(Component::all())
+            ->withSubscriber($subscriber)
+            ->withSubscriptions($subscriber->subscriptions->pluck('component_id')->all());
+    }
+
+    /**
+     * Updates the subscription manager for a subscriber.
+     *
+     * @param string|null $code
+     *
+     * @return \Illuminate\View\View
+     */
+    public function postManage($code = null)
+    {
+        if ($code === null) {
+            throw new NotFoundHttpException();
+        }
+
+        $subscriber = Subscriber::where('verify_code', '=', $code)->first();
+
+        if (!$subscriber) {
+            throw new BadRequestHttpException();
+        }
+
+        try {
+            dispatch(new UpdateSubscriberSubscriptionCommand($subscriber, Binput::get('subscriptions')));
+        } catch (ValidationException $e) {
+            dd($e->getMessageBag());
+            return Redirect::route('subscribe.manage', $subscriber->verify_code)
+                ->withInput(Binput::all())
+                ->withTitle(sprintf('<strong>%s</strong> %s', trans('dashboard.notifications.whoops'), trans('cachet.subscriber.email.failure')))
+                ->withErrors($e->getMessageBag());
+        }
+
+        return Redirect::route('subscribe.manage', $subscriber->verify_code)
+            ->withSuccess(sprintf('<strong>%s</strong> %s', trans('dashboard.notifications.awesome'), trans('cachet.subscriber.email.subscribed')));
     }
 }
