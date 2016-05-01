@@ -14,8 +14,7 @@ namespace CachetHQ\Cachet\Bus\Handlers\Commands\Subscriber;
 use CachetHQ\Cachet\Bus\Commands\Subscriber\SubscribeSubscriberCommand;
 use CachetHQ\Cachet\Bus\Commands\Subscriber\VerifySubscriberCommand;
 use CachetHQ\Cachet\Bus\Events\Subscriber\SubscriberHasSubscribedEvent;
-use CachetHQ\Cachet\Bus\Events\Subscriber\SubscriberHasUpdatedSubscriptionsEvent;
-use CachetHQ\Cachet\Bus\Exceptions\Subscriber\AlreadySubscribedException;
+use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Subscriber;
 use CachetHQ\Cachet\Models\Subscription;
 
@@ -31,35 +30,27 @@ class SubscribeSubscriberCommandHandler
      *
      * @param \CachetHQ\Cachet\Bus\Commands\Subscriber\SubscribeSubscriberCommand $command
      *
-     * @throws \CachetHQ\Cachet\Exceptions\AlreadySubscribedException
-     *
      * @return \CachetHQ\Cachet\Models\Subscriber
      */
     public function handle(SubscribeSubscriberCommand $command)
     {
-        if (Subscriber::where('email', $command->email)->first() && $command->subscriptions === null) {
-            throw new AlreadySubscribedException("Cannot subscribe {$command->email} because they're already subscribed.");
+        if ($subscriber = Subscriber::where('email', $command->email)->first()) {
+            return $subscriber;
         }
 
         $subscriber = Subscriber::firstOrCreate(['email' => $command->email]);
 
-        if ($subscriptions = $command->subscriptions) {
-            foreach ($subscriptions as $subscription => $subscriptionValue) {
-                Subscription::firstOrCreate([
-                    'subscriber_id' => $subscriber->id,
-                    $subscription   => $subscriptionValue,
-                ]);
-            }
+        foreach (Component::all() as $component) {
+            Subscription::create([
+                'subscriber_id' => $subscriber->id,
+                'component_id'  => $component->id,
+            ]);
         }
 
-        if ($subscriber->is_verified === false) {
-            if ($command->verified) {
-                dispatch(new VerifySubscriberCommand($subscriber));
-            } else {
-                event(new SubscriberHasSubscribedEvent($subscriber));
-            }
+        if ($command->verified) {
+            dispatch(new VerifySubscriberCommand($subscriber));
         } else {
-            event(new SubscriberHasUpdatedSubscriptionsEvent($subscriber));
+            event(new SubscriberHasSubscribedEvent($subscriber));
         }
 
         return $subscriber;

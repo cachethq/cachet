@@ -1,8 +1,7 @@
 <div class="modal fade" tabindex="-1" role="dialog" id="subscribe-modal">
     <div class="modal-dialog">
-        <form action="{{ route("subscribe.subscribe", [], false) }}" method="post" class="form">
+        <form action="{{ route("subscribe.subscribe") }}" method="post" class="form">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <input type="hidden" name="subscriptions[component_id]" id="subscribe-modal-id" value="">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
