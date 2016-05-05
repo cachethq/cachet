@@ -107,13 +107,13 @@ class PgSqlRepository implements MetricInterface
         $dateTime = (new Date())->sub(new DateInterval('P'.$day.'D'));
 
         if (!isset($metric->calc_type) || $metric->calc_type == Metric::CALC_SUM) {
-            $queryType = 'sum(mp.`value` * mp.`counter`) AS `value`';
+            $queryType = 'sum(mp.value * mp.counter) AS value';
         } elseif ($metric->calc_type == Metric::CALC_AVG) {
-            $queryType = 'avg(mp.`value` * mp.`counter`) AS `value`';
+            $queryType = 'avg(mp.value * mp.counter) AS value';
         }
 
         $value = 0;
-        $points = DB::select("SELECT {$queryType} FROM metrics m INNER JOIN metric_points mp ON m.id = mp.metric_id WHERE m.id = :metricId AND mp.`created_at` BETWEEN (mp.`created_at` - interval '1 week') AND (now() + interval 1 day) AND to_char(mp.`created_at`, 'YYYYMMDD') = :timeInterval GROUP BY to_char(mp.`created_at`, 'YYYYMMDD')", [
+        $points = DB::select("SELECT {$queryType} FROM metrics m INNER JOIN metric_points mp ON m.id = mp.metric_id WHERE m.id = :metricId AND mp.created_at BETWEEN (mp.created_at - interval '1 week') AND (now() + interval '1 day') AND to_char(mp.created_at, 'YYYYMMDD') = :timeInterval GROUP BY to_char(mp.created_at, 'YYYYMMDD')", [
             'metricId'     => $metric->id,
             'timeInterval' => $dateTime->format('Ymd'),
         ]);
