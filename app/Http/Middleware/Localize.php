@@ -55,6 +55,11 @@ class Localize
      */
     public function handle(Request $request, Closure $next)
     {
+        // Early exit optimization.
+        if (!$this->config->get('setting.automatic_localization')) {
+            return $next($request);
+        }
+
         $supportedLanguages = $request->getLanguages();
         $userLanguage = $this->config->get('app.locale');
 
