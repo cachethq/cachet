@@ -20,6 +20,13 @@ use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
+/**
+ * This is the component group controller.
+ *
+ * @author James Brooks <james@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
+ * @author Joe Cohen <joe@alt-three.com>
+ */
 class ComponentGroupController extends AbstractApiController
 {
     /**
