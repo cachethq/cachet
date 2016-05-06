@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e63067b7d2535cd6ebf2116d79b62d82",
-    "content-hash": "65ecacdd5c4d863b2af57ba8baec431d",
+    "hash": "c536395b4f295e266e96f1e1db0878ee",
+    "content-hash": "5751c0ab3f8417284e92bd23bb1ff835",
     "packages": [
         {
             "name": "alt-three/badger",
@@ -260,6 +260,128 @@
                 "validator"
             ],
             "time": "2016-04-22 17:26:22"
+        },
+        {
+            "name": "backup-manager/backup-manager",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/backup-manager/backup-manager.git",
+                "reference": "e793277e6f6efae6a31c7abbd8028cae7e151201"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/backup-manager/backup-manager/zipball/e793277e6f6efae6a31c7abbd8028cae7e151201",
+                "reference": "e793277e6f6efae6a31c7abbd8028cae7e151201",
+                "shasum": ""
+            },
+            "require": {
+                "league/flysystem": "~1.0",
+                "php": ">=5.5.9",
+                "symfony/process": "~2.1||~3.0"
+            },
+            "require-dev": {
+                "aws/aws-sdk-php": "~3.0",
+                "dropbox/dropbox-sdk": "~1.1",
+                "league/flysystem-aws-s3-v3": "~1.0",
+                "league/flysystem-dropbox": "~1.0",
+                "league/flysystem-rackspace": "~1.0",
+                "league/flysystem-sftp": "~1.0",
+                "mockery/mockery": "~0.9",
+                "phpspec/phpspec": "~2.1",
+                "satooshi/php-coveralls": "~0.6"
+            },
+            "suggest": {
+                "league/flysystem-aws-s3-v3": "AwsS3 and GoogleCS adapter support.",
+                "league/flysystem-dropbox": "Dropbox adapter support.",
+                "league/flysystem-rackspace": "Rackspace adapter support.",
+                "league/flysystem-sftp": "Sftp adapter support."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "BackupManager\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Shawn McCool",
+                    "email": "shawn@heybigname.com",
+                    "homepage": "http://heybigname.com/"
+                },
+                {
+                    "name": "Mitchell van Wijngaarden",
+                    "email": "mitchell@kooding.nl",
+                    "homepage": "http://heybigname.com/"
+                }
+            ],
+            "description": "A framework agnostic database backup manager with user-definable procedures and support for S3, Dropbox, FTP, SFTP, and more with drivers for popular frameworks.",
+            "time": "2016-02-05 10:01:19"
+        },
+        {
+            "name": "backup-manager/laravel",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/backup-manager/laravel.git",
+                "reference": "d7e6d12d24b8a27f58cf5eccb1ac943104c09856"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/backup-manager/laravel/zipball/d7e6d12d24b8a27f58cf5eccb1ac943104c09856",
+                "reference": "d7e6d12d24b8a27f58cf5eccb1ac943104c09856",
+                "shasum": ""
+            },
+            "require": {
+                "backup-manager/backup-manager": "^1.0",
+                "illuminate/console": "^4.0||^5.0",
+                "illuminate/container": "^4.0||^5.0",
+                "illuminate/support": "^4.0||^5.0",
+                "php": ">=5.5.0",
+                "symfony/process": "^2.0||^3.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "dev-master",
+                "satooshi/php-coveralls": "~0.6"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "BackupManager\\Laravel\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Shawn McCool",
+                    "email": "shawn@heybigname.com",
+                    "homepage": "http://heybigname.com/"
+                },
+                {
+                    "name": "Mitchell van Wijngaarden",
+                    "email": "mitchell@kooding.nl",
+                    "homepage": "http://heybigname.com/"
+                }
+            ],
+            "description": "Database backup manager seamlessly integrated with Laravel 4 or 5 with user-definable procedures and support for S3, Dropbox, FTP, SFTP, and more.",
+            "time": "2016-02-22 10:52:12"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -1082,16 +1204,16 @@
         },
         {
             "name": "graham-campbell/core",
-            "version": "v4.3.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Core.git",
-                "reference": "feb7c112bf09a7a01b12695ed9d81700be8f59f1"
+                "reference": "99e01720b3db50ca9aa2eac89a3a9e3c377e6444"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Core/zipball/feb7c112bf09a7a01b12695ed9d81700be8f59f1",
-                "reference": "feb7c112bf09a7a01b12695ed9d81700be8f59f1",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Core/zipball/99e01720b3db50ca9aa2eac89a3a9e3c377e6444",
+                "reference": "99e01720b3db50ca9aa2eac89a3a9e3c377e6444",
                 "shasum": ""
             },
             "require": {
@@ -1108,7 +1230,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.3-dev"
+                    "dev-master": "5.0-dev"
                 }
             },
             "autoload": {
@@ -1138,7 +1260,7 @@
                 "laravel",
                 "starter"
             ],
-            "time": "2016-04-26 14:18:59"
+            "time": "2016-05-06 13:42:15"
         },
         {
             "name": "graham-campbell/exceptions",
