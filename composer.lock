@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "13590d658eba9da99096a81b85e411bc",
-    "content-hash": "3dfc310b0a7e9c2543b4d09caf9ada4c",
+    "hash": "e63067b7d2535cd6ebf2116d79b62d82",
+    "content-hash": "65ecacdd5c4d863b2af57ba8baec431d",
     "packages": [
         {
             "name": "alt-three/badger",
@@ -358,16 +358,16 @@
         },
         {
             "name": "christian-riesen/base32",
-            "version": "1.3.0",
+            "version": "1.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ChristianRiesen/base32.git",
-                "reference": "fde061a370b0a97fdcd33d9d5f7b1b70ce1f79d4"
+                "reference": "0a31e50c0fa9b1692d077c86ac188eecdcbaf7fa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ChristianRiesen/base32/zipball/fde061a370b0a97fdcd33d9d5f7b1b70ce1f79d4",
-                "reference": "fde061a370b0a97fdcd33d9d5f7b1b70ce1f79d4",
+                "url": "https://api.github.com/repos/ChristianRiesen/base32/zipball/0a31e50c0fa9b1692d077c86ac188eecdcbaf7fa",
+                "reference": "0a31e50c0fa9b1692d077c86ac188eecdcbaf7fa",
                 "shasum": ""
             },
             "require": {
@@ -408,7 +408,7 @@
                 "encode",
                 "rfc4648"
             ],
-            "time": "2016-04-07 07:45:31"
+            "time": "2016-05-05 11:49:03"
         },
         {
             "name": "classpreloader/classpreloader",
