@@ -84,17 +84,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="hidden" value="0" name="automatic_localization">
-                                            <input type="checkbox" value="1" name="automatic_localization" {{ $automatic_localization ? 'checked' : null }}>
-                                            {{ trans('forms.settings.app-setup.automatic_localization') }}
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
                         </fieldset>
 
                         <div class="row">
