@@ -16,6 +16,13 @@ use CachetHQ\Cachet\Models\Setting as SettingModel;
 use Exception;
 use Illuminate\Support\ServiceProvider;
 
+/**
+ * This is the config service provider class.
+ *
+ * @author James Brooks <james@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
+ * @author Joe Cohen <joe@alt-three.com>
+ */
 class ConfigServiceProvider extends ServiceProvider
 {
     /**
@@ -26,7 +33,16 @@ class ConfigServiceProvider extends ServiceProvider
     public function boot()
     {
         try {
-            $this->app->config->set('setting', $this->app->setting->all());
+            // Get the default settings.
+            $defaultSettings = $this->app->config->get('setting');
+
+            // Get the configured settings.
+            $appSettings = $this->app->setting->all();
+
+            // Merge the settings
+            $settings = array_merge($defaultSettings, $appSettings);
+
+            $this->app->config->set('setting', $settings);
         } catch (Exception $e) {
             //
         }
