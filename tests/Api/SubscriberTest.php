@@ -44,11 +44,11 @@ class SubscriberTest extends AbstractApiTestCase
         $this->expectsEvents('CachetHQ\Cachet\Bus\Events\Subscriber\SubscriberHasSubscribedEvent');
 
         $this->post('/api/v1/subscribers', [
-            'email' => 'james@cachethq.io',
+            'email' => 'support@alt-three.com',
         ]);
         $this->assertResponseOk();
         $this->seeHeader('Content-Type', 'application/json');
-        $this->seeJson(['email' => 'james@cachethq.io']);
+        $this->seeJson(['email' => 'support@alt-three.com']);
     }
 
     public function testCreateSubscriberAutoVerified()
@@ -56,12 +56,32 @@ class SubscriberTest extends AbstractApiTestCase
         $this->beUser();
 
         $this->post('/api/v1/subscribers', [
-            'email'  => 'james@cachethq.io',
+            'email'  => 'support@alt-three.com',
             'verify' => true,
         ]);
         $this->assertResponseOk();
         $this->seeHeader('Content-Type', 'application/json');
-        $this->seeJson(['email' => 'james@cachethq.io']);
+        $this->seeJson(['email' => 'support@alt-three.com']);
+    }
+
+    public function testCreateSubscriberWithSubscriptions()
+    {
+        $this->beUser();
+
+        factory('CachetHQ\Cachet\Models\Component', 3)->create();
+
+        $this->post('/api/v1/subscribers', [
+            'email'         => 'support@alt-three.com',
+            'verify'        => true,
+            'subscriptions' => [
+                1,
+                2,
+                3,
+            ],
+        ]);
+        $this->assertResponseOk();
+        $this->seeHeader('Content-Type', 'application/json');
+        $this->seeJson(['email' => 'support@alt-three.com']);
     }
 
     public function testDeleteSubscriber()

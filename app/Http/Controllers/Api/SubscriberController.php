@@ -21,6 +21,12 @@ use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
+/**
+ * This is the subscriber controller class.
+ *
+ * @author James Brooks <james@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
+ */
 class SubscriberController extends AbstractApiController
 {
     /**
@@ -43,7 +49,11 @@ class SubscriberController extends AbstractApiController
     public function postSubscribers()
     {
         try {
-            $subscriber = dispatch(new SubscribeSubscriberCommand(Binput::get('email'), Binput::get('verify', false), null));
+            $subscriber = dispatch(new SubscribeSubscriberCommand(
+                Binput::get('email'),
+                Binput::get('verify', false),
+                Binput::get('components', null)
+            ));
         } catch (QueryException $e) {
             throw new BadRequestHttpException();
         }
