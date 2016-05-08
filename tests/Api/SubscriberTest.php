@@ -77,7 +77,7 @@ class SubscriberTest extends AbstractApiTestCase
                 1,
                 2,
                 3,
-            ]
+            ],
         ]);
         $this->assertResponseOk();
         $this->seeHeader('Content-Type', 'application/json');
