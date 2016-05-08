@@ -15,19 +15,19 @@ return [
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Ereignisse &amp; Termine',
-        'incidents'                => 'Vorfälle',
-        'logged'                   => '{0} Es gibt keine Vorfälle, gute Arbeit.|Du hast einen Vorfall gemeldet.|Du hast <strong>:count</strong> Vorfälle gemeldet.',
-        'incident-create-template' => 'Vorlage erstellen',
-        'incident-templates'       => 'Vorfall Vorlagen',
+        'title'                    => 'Incidencias y horario',
+        'incidents'                => 'Incidentes',
+        'logged'                   => '{0} No hay incidencias, ¡buen trabajo!|Has registrado una incidencia.|Has reportado <strong>:count</strong> incidencias.',
+        'incident-create-template' => 'Crear plantilla',
+        'incident-templates'       => 'Plantillas de incidente',
         'add'                      => [
-            'title'   => 'Vorfall hinzufügen',
+            'title'   => 'Reportar incidente',
             'success' => 'Incidente agregado.',
             'failure' => 'Hubo un error agregando el incidente, por favor intente de nuevo.',
         ],
         'edit' => [
-            'title'   => 'Vorfall bearbeiten',
-            'success' => 'Vorfall aktualisiert.',
+            'title'   => 'Editar un incidente',
+            'success' => 'Incidente actualizado.',
             'failure' => 'Hubo un error editando el incidente, por favor intente de nuevo.',
         ],
         'delete' => [
@@ -39,13 +39,13 @@ return [
         'templates' => [
             'title' => 'Plantillas de incidente',
             'add'   => [
-                'title'   => 'Vorfallvorlage erstellen',
+                'title'   => 'Crear una plantilla de incidente',
                 'message' => 'Deberías añadir una plantilla de incidente.',
                 'success' => 'Su nueva plantilla de incidentes ha sido creada.',
                 'failure' => 'Algo salió mal con la plantilla de incidente.',
             ],
             'edit' => [
-                'title'   => 'Vorlage bearbeiten',
+                'title'   => 'Editar plantilla',
                 'success' => 'La plantilla de incidente ha sido actualizada.',
                 'failure' => 'Algo salió mal actualizando la plantilla de incidente',
             ],
@@ -58,9 +58,9 @@ return [
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => 'Geplante Wartungen',
+        'schedule'     => 'Mantenimiento programado',
         'logged'       => '{0} No hay planificaciones, buen trabajo.|Has registrado una planificación.|Has registrado <strong>:count</strong> planificaciones.',
-        'scheduled_at' => 'Geplant am :timestamp',
+        'scheduled_at' => 'Programado para :timestamp',
         'add'          => [
             'title'   => 'Agregar mantenimiento programado',
             'success' => 'Planificación agregada.',
@@ -68,7 +68,7 @@ return [
         ],
         'edit' => [
             'title'   => 'Editar Mantenimiento Programado',
-            'success' => 'La planificación ha sido actualzada!',
+            'success' => 'La planificación ha sido actualizada!',
             'failure' => 'Algo salió mal editando la planificación, por favor intente de nuevo.',
         ],
         'delete' => [
@@ -79,17 +79,17 @@ return [
 
     // Components
     'components' => [
-        'components'         => 'Komponenten',
-        'component_statuses' => 'Komponentenstatus',
-        'listed_group'       => 'Gruppiert unter :name',
+        'components'         => 'Componentes',
+        'component_statuses' => 'Estatus de los componentes',
+        'listed_group'       => 'Agrupado bajo :nombre',
         'add'                => [
-            'title'   => 'Komponente hinzufügen',
-            'message' => 'Sie sollten eine Komponente erstellen.',
+            'title'   => 'Agregar componente',
+            'message' => 'Deberías agregar un componente.',
             'success' => 'Componente creado.',
             'failure' => 'Algo salió mal con el componente, por favor intente de nuevo.',
         ],
         'edit' => [
-            'title'   => 'Komponente bearbeiten',
+            'title'   => 'Editar componente',
             'success' => 'Componente actualizado.',
             'failure' => 'Algo salió mal con el componente, por favor intente de nuevo.',
         ],
@@ -100,15 +100,15 @@ return [
 
         // Component groups
         'groups' => [
-            'groups'        => 'Komponentgruppe|Komponentgruppen',
-            'no_components' => 'Sie sollten eine Komponentengruppe hinzufügen.',
+            'groups'        => 'Grupo de componente|Grupos de componente',
+            'no_components' => 'Usted debería agregar un grupo de componentes.',
             'add'           => [
-                'title'   => 'Eine Komponentengruppe hinzufügen',
+                'title'   => 'Agregar un grupo de componentes',
                 'success' => 'Grupo de componentes agregado.',
                 'failure' => 'Algo salió mal con el grupo de componentes, por favor vuelva a intentarlo.',
             ],
             'edit' => [
-                'title'   => 'Komponentengruppe bearbeiten',
+                'title'   => 'Editar un grupo de componentes',
                 'success' => 'Grupo de componentes actualizado.',
                 'failure' => 'Algo salió mal con el grupo de componentes, por favor vuelva a intentarlo.',
             ],
@@ -121,15 +121,15 @@ return [
 
     // Metrics
     'metrics' => [
-        'metrics' => 'Metriken',
+        'metrics' => 'Métricas',
         'add'     => [
-            'title'   => 'Metrik erstellen',
+            'title'   => 'Crear una métrica o indicador',
             'message' => 'Deberías añadir una métrica.',
             'success' => 'Métrica creada.',
             'failure' => 'Algo salió mal con la métrica, por favor, inténtelo de nuevo.',
         ],
         'edit' => [
-            'title'   => 'Metrik bearbeiten',
+            'title'   => 'Editar una métrica',
             'success' => 'Métrica actualizada.',
             'failure' => 'Algo salió mal con la métrica, por favor, inténtelo de nuevo.',
         ],
@@ -140,42 +140,42 @@ return [
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'      => 'Abonnenten',
+        'subscribers'      => 'Suscriptores',
         'description'      => 'Los suscriptores recibirán actualizaciones por correo electrónico cuando se creen incidentes o se actualicen componentes.',
-        'verified'         => 'Verifiziert',
-        'not_verified'     => 'Nicht verifiziert',
+        'verified'         => 'Verificado',
+        'not_verified'     => 'No confirmado',
         'subscriber'       => ':email, suscrito :date',
         'no_subscriptions' => 'Suscrito a todas las actualizaciones',
         'add'              => [
-            'title'   => 'Einen neuen Abonnenten hinzufügen',
-            'success' => 'Abonnent hinzugefügt.',
+            'title'   => 'Agregar un nuevo subscriptor',
+            'success' => 'Subscriptor agregado.',
             'failure' => 'Algo salió mal al agregar el suscriptor, por favor, inténtelo de nuevo.',
         ],
         'edit' => [
-            'title'   => 'Abonnent aktualisieren',
-            'success' => 'Abonnent aktualisiert.',
+            'title'   => 'Actualizar subscriptor',
+            'success' => 'Subscriptor actualizado.',
             'failure' => 'Algo salió mal al editar el suscriptor, por favor, inténtelo de nuevo.',
         ],
     ],
 
     // Team
     'team' => [
-        'team'        => 'Team',
-        'member'      => 'Mitglied',
-        'profile'     => 'Profil',
-        'description' => 'Teammitglieder werden die M&ouml;glichkeit haben, Komponente sowie Vorf&auml;lle hinzuzuf&uuml;gen und zu ver&auml;ndern.',
+        'team'        => 'Equipo',
+        'member'      => 'Miembro',
+        'profile'     => 'Perfil',
+        'description' => 'Los miembros del equipo será capaces de añadir, modificar y editar componentes e incidentes.',
         'add'         => [
-            'title'   => 'Neues Teammitglied hinzufügen',
+            'title'   => 'Añadir a un nuevo miembro de equipo',
             'success' => 'Miembro del equipo agregado.',
             'failure' => 'No se pudo agregar el miembro del equipo, por favor vuelva a intentarlo.',
         ],
         'edit' => [
-            'title'   => 'Profil aktualisieren',
+            'title'   => 'Actualizar perfil',
             'success' => 'Perfil actualizado.',
             'failure' => 'Algo salió mal actualizando el perfil, por favor intente de nuevo.',
         ],
         'delete' => [
-            'success' => 'Benutzer aktualisiert.',
+            'success' => 'El miembro del equipo ha sido eliminado y ya no tendrán acceso al Pane de Control!',
             'failure' => 'No se pudo agregar el miembro del equipo, por favor vuelva a intentarlo.',
         ],
         'invite' => [
@@ -187,17 +187,17 @@ return [
 
     // Settings
     'settings' => [
-        'settings'  => 'Einstellungen',
+        'settings'  => 'Ajustes',
         'app-setup' => [
-            'app-setup'   => 'Anwendungsinstallation',
-            'images-only' => 'Es können nur Bilder hochgeladen werden.',
-            'too-big'     => 'Die von Ihnen hochgeladene Datei ist zu groß. Laden Sie ein Bild welches kleiner als :size ist hoch',
+            'app-setup'   => 'Configuración de aplicación',
+            'images-only' => 'Sólo puedes subir imágenes.',
+            'too-big'     => 'El archivo subido es demasiado grande. Sube una imagen con tamaño menor a: tamaño',
         ],
         'analytics' => [
             'analytics' => 'Analytics',
         ],
         'localization' => [
-            'localization' => 'Localization',
+            'localization' => 'Localización',
         ],
         'customization' => [
             'customization' => 'Personalización',
@@ -205,53 +205,53 @@ return [
             'footer'        => 'Pie HTML personalizado',
         ],
         'security' => [
-            'security'   => 'Sicherheit',
-            'two-factor' => 'Nutzer ohne Zwei-Faktor-Authentifizierung',
+            'security'   => 'Seguridad',
+            'two-factor' => 'Usuarios sin autenticación de dos factores',
         ],
         'stylesheet' => [
-            'stylesheet' => 'Stylesheet',
+            'stylesheet' => 'Hoja de estilo',
         ],
         'theme' => [
-            'theme' => 'Theme',
+            'theme' => 'Tema',
         ],
         'edit' => [
-            'success' => 'Einstellungen gespeichert.',
-            'failure' => 'Einstellungen konnten nicht gespeichert werden.',
+            'success' => 'Configuración guardada.',
+            'failure' => 'La configuración no se podido guardar.',
         ],
     ],
 
     // Login
     'login' => [
-        'login'      => 'Anmelden',
-        'logged_in'  => 'Sie sind angemeldet.',
-        'welcome'    => 'Willkommen zurück!',
-        'two-factor' => 'Bitte geben Sie Ihren Token ein.',
+        'login'      => 'Iniciar Sesión',
+        'logged_in'  => 'Estás conectado.',
+        'welcome'    => '¡Bienvenido!',
+        'two-factor' => 'Por favor ingresa tu token.',
     ],
 
     // Sidebar footer
-    'help'        => 'Hilfe',
-    'status_page' => 'Statusseite',
-    'logout'      => 'Abmelden',
+    'help'        => 'Ayuda',
+    'status_page' => 'Página de estado',
+    'logout'      => 'Salir',
 
     // Notifications
     'notifications' => [
-        'notifications' => 'Benachrichtigungen',
-        'awesome'       => 'Großartig.',
-        'whoops'        => 'Hoppla.',
+        'notifications' => 'Notificaciones',
+        'awesome'       => 'Excelente.',
+        'whoops'        => 'Whoops.',
     ],
 
     // Welcome modal
     'welcome' => [
         'welcome' => 'Bienvenido a tu página de estado!',
-        'message' => 'Ihre Statusseite ist fast fertig! Vielleicht möchten Sie diese zusätzlichen Einstellungen konfigurieren',
+        'message' => 'La página de estado está casi lista! Tal vez quieras configurar estos ajustes adicionales',
         'close'   => 'Llévame directamente a mi dashboard',
         'steps'   => [
-            'component'  => 'Komponenten erstellen',
-            'incident'   => 'Vorfälle erstellen',
-            'customize'  => 'Personalisieren',
-            'team'       => 'Benutzer hinzufügen',
-            'api'        => 'API Token generieren',
-            'two-factor' => 'Zwei-Faktor-Authentifizierung',
+            'component'  => 'Crear componentes',
+            'incident'   => 'Crear incidentes',
+            'customize'  => 'Personalizar',
+            'team'       => 'Agregar Usuarios',
+            'api'        => 'Generar token API',
+            'two-factor' => 'Autenticación de dos factores',
         ],
     ],
 

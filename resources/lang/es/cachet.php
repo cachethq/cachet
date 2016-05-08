@@ -31,7 +31,7 @@ return [
         'previous_week' => 'Semana anterior',
         'next_week'     => 'Semana siguiente',
         'scheduled'     => 'Mantenimiento programado',
-        'scheduled_at'  => ',programado para :timestamp',
+        'scheduled_at'  => ', programado para :timestamp',
         'status'        => [
             0 => 'Programado', // TODO: Hopefully remove this.
             1 => 'Investigando',
@@ -79,11 +79,11 @@ return [
             'unsubscribe'        => 'Darse de baja de alertas.',
             'unsubscribed'       => 'Tu subscripción de correo electrónico ha sido cancelada.',
             'failure'            => 'Algo salió mal con la subscripción.',
-            'already-subscribed' => 'No se puede suscribir :email porque ya esta suscripto.',
+            'already-subscribed' => 'No se puede suscribir :email porque ya esta suscrito.',
             'verify'             => [
                 'text'           => "Por favor confirme su subscripcion a :app_name actualizaciones de estado. \n:enlace\nGracias, :app_name",
                 'html-preheader' => 'Por favor, confirme su subscripción de correo para actualizaciones de estado a :app_name.',
-                'html'           => '<p>Por favor, confirme su subscripcion por correo electronico a actualizaciones de :app_name.</p><p><a href=":link">:link</a></p><p>Muchas gracias, :app_name</p>',
+                'html'           => '<p>Por favor, confirme su subscripción por correo electrónico a actualizaciones de :app_name.</p><p><a href=":link">:link</a></p><p>Muchas gracias, :app_name</p>',
             ],
             'maintenance' => [
                 'text'           => "Un nuevo mantenimiento ha sido programado en :app_name. \nGracias, :app_name",
