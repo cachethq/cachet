@@ -96,11 +96,6 @@ class SetupController extends Controller
      */
     public function getIndex()
     {
-        // If we've copied the .env.example file, then we should try and reset it.
-        if (strlen(Config::get('app.key')) !== 32) {
-            $this->keyGenerate();
-        }
-
         $supportedLanguages = Request::getLanguages();
         $userLanguage = Config::get('app.locale');
 
@@ -234,27 +229,5 @@ class SetupController extends Controller
         } catch (InvalidPathException $e) {
             //
         }
-    }
-
-    /**
-     * Generate the app.key value.
-     *
-     * @return void
-     */
-    protected function keyGenerate()
-    {
-        $key = str_random(32);
-
-        $dir = app()->environmentPath();
-        $file = app()->environmentFile();
-        $path = "{$dir}/{$file}";
-
-        (new Dotenv($dir, $file))->load();
-
-        file_put_contents($path, str_replace(
-            Config::get('app.key'), $key, file_get_contents($path)
-        ));
-
-        Config::set('app.key', $key);
     }
 }

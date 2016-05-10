@@ -22,6 +22,8 @@ use CachetHQ\Cachet\Models\Subscription;
  * This is the subscribe subscriber command handler.
  *
  * @author James Brooks <james@alt-three.com>
+ * @author Joe Cohen <joe@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
  */
 class SubscribeSubscriberCommandHandler
 {
@@ -40,7 +42,14 @@ class SubscribeSubscriberCommandHandler
 
         $subscriber = Subscriber::firstOrCreate(['email' => $command->email]);
 
-        foreach (Component::all() as $component) {
+        // Decide what to subscribe the subscriber to.
+        if ($subscriptions = $command->subscriptions) {
+            $subscriptions = Component::whereIn('id', $subscriptions);
+        } else {
+            $subscriptions = Component::all();
+        }
+
+        foreach ($subscriptions as $component) {
             Subscription::create([
                 'subscriber_id' => $subscriber->id,
                 'component_id'  => $component->id,
