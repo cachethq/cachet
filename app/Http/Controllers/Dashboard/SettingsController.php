@@ -19,8 +19,8 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Str;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Str;
 
 class SettingsController extends Controller
 {
