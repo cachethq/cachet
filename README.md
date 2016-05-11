@@ -52,10 +52,9 @@ You'll need to install Node.js, Bower and Gulp.
 
 To get started you can do the following:
 
-1. Install Node.js, Bower and Gulp.
-2. Install the assets; `bower install`
-3. Modify the SCSS files in `./resources/assets/sass/`
-4. Run `gulp`
+1. Install Node.js and our dev dependencies.
+2. Modify the SCSS files in `./resources/assets/sass/`
+3. Run `gulp`
 
 If you're making a lot of changes, you'll find that running `gulp watch` will really help you out!
 
@@ -66,7 +65,6 @@ Built using [Laravel](https://laravel.com), Cachet is very easy to jump into. Ha
 These extra dependencies are required to develop Cachet:
 
 - Node.js
-- Bower
 - Gulp
 - Git
 
