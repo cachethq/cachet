@@ -33,6 +33,13 @@ final class SubscribeSubscriberCommand
     public $verified;
 
     /**
+     * The list of subscriptions to set the subscriber up with.
+     *
+     * @var array|null
+     */
+    public $subscriptions;
+
+    /**
      * The validation rules.
      *
      * @var array
@@ -44,14 +51,16 @@ final class SubscribeSubscriberCommand
     /**
      * Create a new subscribe subscriber command instance.
      *
-     * @param string $email
-     * @param bool   $verified
+     * @param string     $email
+     * @param bool       $verified
+     * @param array|null $subscriptions
      *
      * @return void
      */
-    public function __construct($email, $verified = false)
+    public function __construct($email, $verified = false, $subscriptions = null)
     {
         $this->email = $email;
         $this->verified = $verified;
+        $this->subscriptions = $subscriptions;
     }
 }

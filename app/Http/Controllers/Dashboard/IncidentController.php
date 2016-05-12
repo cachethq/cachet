@@ -120,8 +120,6 @@ class IncidentController extends Controller
                 null
             ));
         } catch (ValidationException $e) {
-            dd($e->getMessageBag());
-
             return Redirect::route('dashboard.incidents.add')
                 ->withInput(Binput::all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.incidents.add.failure')))
