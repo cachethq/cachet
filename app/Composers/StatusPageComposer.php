@@ -48,8 +48,11 @@ class StatusPageComposer
             // If all our components are ok, do we have any non-fixed incidents?
             $incidents = Incident::notScheduled()->orderBy('created_at', 'desc')->get();
             $incidentCount = $incidents->count();
+            $unresolvedCount = $incidents->filter(function ($incident) {
+                return !$incident->is_resolved;
+            })->count();
 
-            if ($incidentCount === 0 || ($incidentCount >= 1 && (int) $incidents->first()->status === 4)) {
+            if ($incidentCount === 0 || ($incidentCount >= 1 && $unresolvedCount === 0)) {
                 $withData = [
                     'system_status'  => 'success',
                     'system_message' => trans_choice('cachet.service.good', $totalComponents),

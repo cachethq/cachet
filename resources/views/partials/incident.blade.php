@@ -22,4 +22,11 @@
     <div class="panel-body markdown-body">
         {!! $incident->formattedMessage !!}
     </div>
+    @if($incident->updates->count())
+    <div class="list-group">
+        @foreach($incident->updates as $update)
+        <div class="list-group-item"><i class="{{ $update->icon }}" title="{{ $update->human_status }}" data-toggle="tooltip"></i> <strong>{{ Str::limit($update->raw_message, 20) }}</strong> <small><a href="{{ $incident->permalink }}#update-{{ $update->id }}">{{ $update->created_at_diff }}</a></small></div>
+        @endforeach
+    </div>
+    @endif
 </div>

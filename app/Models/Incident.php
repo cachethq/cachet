@@ -25,6 +25,43 @@ class Incident extends Model implements HasPresenter
     use SearchableTrait, SoftDeletes, SortableTrait, ValidatingTrait;
 
     /**
+     * Status for incident being investigated.
+     *
+     * @var int
+     */
+    const INVESTIGATING = 1;
+
+    /**
+     * Status for incident having been identified.
+     *
+     * @var int
+     */
+    const IDENTIFIED = 2;
+
+    /**
+     * Status for incident being watched.
+     *
+     * @var int
+     */
+    const WATCHED = 3;
+
+    /**
+     * Status for incident now being fixed.
+     *
+     * @var int
+     */
+    const FIXED = 4;
+
+    /**
+     * The accessors to append to the model's array form.
+     *
+     * @var string[]
+     */
+    protected $appends = [
+        'is_resolved',
+    ];
+
+    /**
      * The attributes that should be casted to native types.
      *
      * @var string[]
@@ -90,6 +127,13 @@ class Incident extends Model implements HasPresenter
     ];
 
     /**
+     * The relations to eager load on every query.
+     *
+     * @var string[]
+     */
+    protected $with = ['updates'];
+
+    /**
      * Finds all visible incidents.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
@@ -128,6 +172,16 @@ class Incident extends Model implements HasPresenter
     }
 
     /**
+     * Get the updates relation.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function updates()
+    {
+        return $this->hasMany(IncidentUpdate::class)->orderBy('created_at', 'desc');
+    }
+
+    /**
      * An incident belongs to a component.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -135,6 +189,20 @@ class Incident extends Model implements HasPresenter
     public function component()
     {
         return $this->belongsTo(Component::class, 'component_id', 'id');
+    }
+
+    /**
+     * Is the incident resolved?
+     *
+     * @return bool
+     */
+    public function getIsResolvedAttribute()
+    {
+        if ($updates = $this->updates->first()) {
+            return $updates->status === self::FIXED;
+        }
+
+        return $this->status === self::FIXED;
     }
 
     /**

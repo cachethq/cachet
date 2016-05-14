@@ -276,6 +276,14 @@ body.status-page {
                 line-height: 1.3em;
             }
 
+            i.icon {
+                font-size: 21px;
+                line-height: 24px;
+                text-align: center;
+                display: inline-block;
+                min-width: 20px;
+            }
+
             &.group-name {
                 background-color: $cachet_gray_light;
                 padding: {
