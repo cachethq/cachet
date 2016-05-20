@@ -12,6 +12,7 @@
 namespace CachetHQ\Cachet\Subscribers;
 
 use Carbon\Carbon;
+use Exception;
 use Illuminate\Console\Command;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Events\Dispatcher;
@@ -20,6 +21,7 @@ use Illuminate\Contracts\Events\Dispatcher;
  * This is the command subscriber class.
  *
  * @author James Brooks <james@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
  */
 class CommandSubscriber
 {
@@ -51,45 +53,9 @@ class CommandSubscriber
      */
     public function subscribe(Dispatcher $events)
     {
-        $events->listen('command.installing', __CLASS__.'@onInstalling', 5);
-        $events->listen('command.updating', __CLASS__.'@onUpdating', 5);
-        $events->listen('command.resetting', __CLASS__.'@onResetting', 5);
-    }
-
-    /**
-     * Handle a command.installing event.
-     *
-     * @param \Illuminate\Console\Command $command
-     *
-     * @return void
-     */
-    public function onInstalling(Command $command)
-    {
-        $this->backupDatabases($command);
-    }
-
-    /**
-     * Handle a command.updating event.
-     *
-     * @param \Illuminate\Console\Command $command
-     *
-     * @return void
-     */
-    public function onUpdating(Command $command)
-    {
-        $this->backupDatabases($command);
-    }
-
-    /**
-     * Handle a command.resetting event.
-     *
-     * @param \Illuminate\Console\Command $command
-     *
-     * @return void
-     */
-    public function onResetting(Command $command)
-    {
-        $this->backupDatabases($command);
+        $events->listen('command.installing', __CLASS__.'@fire', 5);
+        $events->listen('command.updating', __CLASS__.'@fire', 5);
+        $events->listen('command.resetting', __CLASS__.'@fire', 5);
     }
 
     /**
@@ -99,19 +65,23 @@ class CommandSubscriber
      *
      * @return void
      */
-    protected function backupDatabases(Command $command)
+    public function fire(Command $command)
     {
         $command->line('Backing up database...');
 
-        $date = Carbon::now()->format('Y-m-d H.i.s');
+        try {
+            $command->call('db:backup', [
+                '--compression'     => 'gzip',
+                '--database'        => $this->config->get('database.default'),
+                '--destination'     => 'local',
+                '--destinationPath' => Carbon::now()->format('Y-m-d H.i.s'),
+                '--no-interaction'  => true,
+            ]);
+        } catch (Exception $e) {
+            $command->error($e->getMessage());
+            $command->line('Backup skipped!');
+        }
 
-        $command->call('db:backup', [
-            '--database'        => $this->config->get('database.default'),
-            '--destination'     => 'local',
-            '--destinationPath' => $date,
-            '--compression'     => 'gzip',
-        ]);
-
-        $command->line('Backup completed...');
+        $command->line('Backup completed!');
     }
 }
