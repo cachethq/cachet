@@ -11,6 +11,10 @@
 
 Cachet is a beautiful and powerful open source status page system, a free replacement to services such as StatusPage.io, Status.io and others.
 
+## Supporting Cachet
+
+Cachet is a BSD-3-licensed open source project. If you'd like to support future development, check out the [Cachet Patreon campaign](https://patreon.com/jbrooksuk).
+
 ## Features
 
 - List your services components
@@ -104,11 +108,3 @@ If you discover a security vulnerability within Cachet, please send an e-mail to
 We offer a paid installation service, which starts at $99 but is subject to change, dependant on your setup and infrastructure.
 
 To find out more, email us at support@alt-three.com
-
-## Donations
-
-Cachet is open source, we don't have any licensing models and don't run ads on the [website](https://cachethq.io).
-
-If you'd like to donate towards further development of Cachet you can do so via Paypal.
-
-[![Donate](https://www.paypalobjects.com/en_GB/i/btn/btn_donate_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=D4M5LVULVPPKL)
