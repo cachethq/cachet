@@ -24,7 +24,7 @@
                 @foreach($subscribers as $subscriber)
                 <div class="row striped-list-item">
                     <div class="col-xs-3">
-                        <p>{{ trans('dashboard.subscribers.subscriber', ['email' => $subscriber->email, 'date' => $subscriber->subscribed_at]) }}</p>
+                        <p>{{ trans('dashboard.subscribers.subscriber', ['email' => $subscriber->email, 'date' => $subscriber->created_at]) }}</p>
                     </div>
                     <div class="col-xs-3">
                         @if(is_null($subscriber->getOriginal('verified_at')))
