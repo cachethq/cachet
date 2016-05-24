@@ -41,10 +41,8 @@ class ConfigServiceProvider extends ServiceProvider
         }
 
         $this->app->terminating(function () use ($cache, $path) {
-            if ($this->app->setting->stale()) {
+            if ($this->app->setting->stale() || $cache === false) {
                 $this->app->files->put($path, '<?php return '.var_export($this->app->setting->all(), true).';'.PHP_EOL);
-            } elseif ($cache === false) {
-                $this->app->files->put($path, '<?php return '.var_export([], true).';'.PHP_EOL);
             }
         });
 
