@@ -11,8 +11,8 @@
 
 namespace CachetHQ\Cachet\Foundation\Providers;
 
-use CachetHQ\Cachet\Config\Repository;
 use CachetHQ\Cachet\Models\Setting as SettingModel;
+use CachetHQ\Cachet\Settings\Repository;
 use Exception;
 use Illuminate\Support\ServiceProvider;
 

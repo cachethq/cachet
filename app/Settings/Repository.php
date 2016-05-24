@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Config;
+namespace CachetHQ\Cachet\Settings;
 
 use CachetHQ\Cachet\Models\Setting;
 
