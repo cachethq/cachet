@@ -53,7 +53,11 @@ class SubscriberController extends Controller
     public function createSubscriberAction()
     {
         try {
-            dispatch(new SubscribeSubscriberCommand(Binput::get('email')));
+            $subscribers = preg_split("/\r\n|\n|\r/", Binput::get('email'));
+
+            foreach ($subscribers as $subscriber) {
+                dispatch(new SubscribeSubscriberCommand($subscriber));
+            }
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.subscribers.add')
                 ->withInput(Binput::all())
