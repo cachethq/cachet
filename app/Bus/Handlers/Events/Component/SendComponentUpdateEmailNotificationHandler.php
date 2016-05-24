@@ -85,8 +85,8 @@ class SendComponentUpdateEmailNotificationHandler
     /**
      * Send notification to subscriber.
      *
-     * @param \CachetHQ\Cachet\Models\Component     $component
-     * @param \CachetHQ\Cachet\Models\Subscriber    $subscriber
+     * @param \CachetHQ\Cachet\Models\Component  $component
+     * @param \CachetHQ\Cachet\Models\Subscriber $subscriber
      *
      * @return \Illuminate\Database\Eloquent\Collection
      */
