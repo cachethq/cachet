@@ -32,12 +32,26 @@ class ConfigServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $path = $this->app->bootstrapPath().'/cache/cachet.'.$this->app->environment().'.php';
+
+        try {
+            $cache = $this->app->files->getRequire($path);
+        } catch (Exception $e) {
+            $cache = false;
+        }
+
+        $this->app->terminating(function () use ($cache, $path) {
+            if ($this->app->setting->stale() || $cache === false) {
+                $this->app->files->put($path, '<?php return '.var_export($this->app->setting->all(), true).';'.PHP_EOL);
+            }
+        });
+
         try {
             // Get the default settings.
             $defaultSettings = $this->app->config->get('setting');
 
             // Get the configured settings.
-            $appSettings = $this->app->setting->all();
+            $appSettings = $cache === false ? $this->app->setting->all() : $cache;
 
             // Merge the settings
             $settings = array_merge($defaultSettings, $appSettings);
