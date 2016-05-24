@@ -14,8 +14,6 @@ namespace CachetHQ\Cachet\Foundation\Providers;
 use CachetHQ\Cachet\Config\Repository;
 use CachetHQ\Cachet\Models\Setting as SettingModel;
 use Exception;
-use Illuminate\Contracts\Console\Kernel;
-use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ServiceProvider;
 
 /**
@@ -34,26 +32,26 @@ class ConfigServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if ($this->app->configurationIsCached()) {
-            if ($this->app->environment() === 'production') {
-                $this->app->terminating(function () {
-                    if ($this->app->setting->stale()) {
-                        $this->app->make(Kernel::class)->call('config:cache');
-                    }
-                });
-            } else {
-                $this->app->make(Kernel::class)->call('config:clear');
-            }
+        $path = $this->app->bootstrapPath().'/cache/cachet.'.$this->app->environment().'.php';
 
-            return;
+        try {
+            $cache = $this->app->files->getRequire($path);
+        } catch (Exception $e) {
+            $cache = false;
         }
+
+        $this->app->terminating(function () use ($path) {
+            if ($this->app->setting->stale()) {
+                $this->app->files->put($path, '<?php return '.var_export($this->app->setting->all(), true).';'.PHP_EOL);
+            }
+        });
 
         try {
             // Get the default settings.
             $defaultSettings = $this->app->config->get('setting');
 
             // Get the configured settings.
-            $appSettings = $this->app->setting->all();
+            $appSettings = $cache === false ? $this->app->setting->all() : $cache;
 
             // Merge the settings
             $settings = array_merge($defaultSettings, $appSettings);
@@ -88,12 +86,6 @@ class ConfigServiceProvider extends ServiceProvider
         }
 
         $this->app->config->set('cors.paths.api/v1/*.allowedOrigins', $allowedOrigins);
-
-        if ($this->app->environment() === 'production') {
-            $this->app->terminating(function () {
-                $this->app->make(Kernel::class)->call('config:cache');
-            });
-        }
     }
 
     /**
