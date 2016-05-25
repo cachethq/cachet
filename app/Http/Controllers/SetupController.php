@@ -12,6 +12,7 @@
 namespace CachetHQ\Cachet\Http\Controllers;
 
 use CachetHQ\Cachet\Models\User;
+use CachetHQ\Cachet\Settings\Repository;
 use Dotenv\Dotenv;
 use Dotenv\Exception\InvalidPathException;
 use GrahamCampbell\Binput\Facades\Binput;
@@ -175,7 +176,7 @@ class SetupController extends Controller
 
             Auth::login($user);
 
-            $setting = app('setting');
+            $setting = app(Repository::class);
 
             $settings = array_pull($postData, 'settings');
 
