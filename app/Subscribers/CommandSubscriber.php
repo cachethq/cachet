@@ -65,7 +65,7 @@ class CommandSubscriber
      *
      * @return void
      */
-    public function fire(Command $command)
+    public function backup(Command $command)
     {
         $command->line('Backing up database...');
 
@@ -83,5 +83,21 @@ class CommandSubscriber
         }
 
         $command->line('Backup completed!');
+    }
+
+    /**
+     * Clear the cachet settings cache.
+     *
+     * @param \Illuminate\Console\Command $command
+     *
+     * @return void
+     */
+    public function clear(Command $command)
+    {
+        $command->line('Clearing settings cache...');
+
+        $this->loader->clear();
+
+        $command->line('Settings cache cleared!');
     }
 }
