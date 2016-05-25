@@ -246,29 +246,7 @@ class SettingsController extends Controller
         }
 
         if (Binput::hasFile('app_banner')) {
-            $file = Binput::file('app_banner');
-
-            // Image Validation.
-            // Image size in bytes.
-            $maxSize = $file->getMaxFilesize();
-
-            if ($file->getSize() > $maxSize) {
-                return Redirect::to($redirectUrl)->withErrors(trans('dashboard.settings.app-setup.too-big', ['size' => $maxSize]));
-            }
-
-            if (!$file->isValid() || $file->getError()) {
-                return Redirect::to($redirectUrl)->withErrors($file->getErrorMessage());
-            }
-
-            if (!Str::startsWith($file->getMimeType(), 'image/')) {
-                return Redirect::to($redirectUrl)->withErrors(trans('dashboard.settings.app-setup.images-only'));
-            }
-
-            // Store the banner.
-            $setting->set('app_banner', base64_encode(file_get_contents($file->getRealPath())));
-
-            // Store the banner type.
-            $setting->set('app_banner_type', $file->getMimeType());
+            $this->handleUpdateBanner($setting);
         }
 
         $excludedParams = [
@@ -296,5 +274,39 @@ class SettingsController extends Controller
         }
 
         return Redirect::to($redirectUrl)->withSuccess(trans('dashboard.settings.edit.success'));
+    }
+
+    /**
+     * Handle updating of the banner image.
+     *
+     * @param \CachetHQ\Cachet\Settings\Repository $setting
+     *
+     * @return void
+     */
+    protected function handleUpdateBanner(Repository $setting)
+    {
+        $file = Binput::file('app_banner');
+
+        // Image Validation.
+        // Image size in bytes.
+        $maxSize = $file->getMaxFilesize();
+
+        if ($file->getSize() > $maxSize) {
+            return Redirect::to($redirectUrl)->withErrors(trans('dashboard.settings.app-setup.too-big', ['size' => $maxSize]));
+        }
+
+        if (!$file->isValid() || $file->getError()) {
+            return Redirect::to($redirectUrl)->withErrors($file->getErrorMessage());
+        }
+
+        if (!Str::startsWith($file->getMimeType(), 'image/')) {
+            return Redirect::to($redirectUrl)->withErrors(trans('dashboard.settings.app-setup.images-only'));
+        }
+
+        // Store the banner.
+        $setting->set('app_banner', base64_encode(file_get_contents($file->getRealPath())));
+
+        // Store the banner type.
+        $setting->set('app_banner_type', $file->getMimeType());
     }
 }
