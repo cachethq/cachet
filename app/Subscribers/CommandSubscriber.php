@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Cachet\Subscribers;
 
+use CachetHQ\Cachet\Settings\Cache;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Console\Command;
@@ -26,7 +27,14 @@ use Illuminate\Contracts\Events\Dispatcher;
 class CommandSubscriber
 {
     /**
-     * The config repository.
+     * The settings cache instance.
+     *
+     * @var \CachetHQ\Cachet\Settings\Cache
+     */
+    protected $cache;
+
+    /**
+     * The config repository instance.
      *
      * @var \Illuminate\Contracts\Config\Repository
      */
@@ -35,12 +43,14 @@ class CommandSubscriber
     /**
      * Create a new command subscriber instance.
      *
+     * @param \CachetHQ\Cachet\Settings\Cache         $cache
      * @param \Illuminate\Contracts\Config\Repository $config
      *
      * @return void
      */
-    public function __construct(Repository $config)
+    public function __construct(Cache $cache, Repository $config)
     {
+        $this->cache = $cache;
         $this->config = $config;
     }
 
@@ -59,7 +69,7 @@ class CommandSubscriber
     }
 
     /**
-     * Backup the databases.
+     * Clear the settings cache, and backup the databases.
      *
      * @param \Illuminate\Console\Command $command
      *
@@ -67,6 +77,12 @@ class CommandSubscriber
      */
     public function fire(Command $command)
     {
+        $command->line('Clearing settings cache...');
+
+        $this->cache->clear();
+
+        $command->line('Settings cache cleared!');
+
         $command->line('Backing up database...');
 
         try {

@@ -12,6 +12,7 @@
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
 use CachetHQ\Cachet\Models\User;
+use CachetHQ\Cachet\Settings\Repository;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
@@ -220,7 +221,7 @@ class SettingsController extends Controller
     {
         $redirectUrl = Session::get('redirect_to', route('dashboard.settings.setup'));
 
-        $setting = app('setting');
+        $setting = app(Repository::class);
 
         if (Binput::get('remove_banner') === '1') {
             $setting->set('app_banner', null);
