@@ -44,7 +44,7 @@ class Cache
     }
 
     /**
-     * Store the settings in the cache,.
+     * Store the settings in the cache.
      *
      * @param string $env
      * @param array  $data
