@@ -17,9 +17,9 @@ use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentTemplate;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\MetricPoint;
-use CachetHQ\Cachet\Models\Setting;
 use CachetHQ\Cachet\Models\Subscriber;
 use CachetHQ\Cachet\Models\User;
+use CachetHQ\Cachet\Settings\Repository;
 use DateInterval;
 use DateTime;
 use Illuminate\Console\Command;
@@ -48,6 +48,27 @@ class DemoSeederCommand extends Command
      * @var string
      */
     protected $description = 'Seeds Cachet with demo data.';
+
+    /**
+     * The settings repository.
+     *
+     * @var \CachetHQ\Cache\Settings\Repository
+     */
+    protected $settings;
+
+    /**
+     * Create a new demo seeder command instance.
+     *
+     * @param \CachetHQ\Cache\Settings\Repository $settings
+     *
+     * @return void
+     */
+    public function __construct(Repository $settings)
+    {
+        parent::__construct();
+
+        $this->settings = $settings;
+    }
 
     /**
      * Execute the console command.
@@ -325,10 +346,10 @@ EINCIDENT;
             ],
         ];
 
-        Setting::truncate();
+        $this->settings->truncate();
 
         foreach ($defaultSettings as $setting) {
-            Setting::create($setting);
+            $this->settings->set($setting['name'], $setting['value']);
         }
     }
 

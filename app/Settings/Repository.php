@@ -91,6 +91,18 @@ class Repository
     }
 
     /**
+     * Truncate all settings.
+     *
+     * @return void
+     */
+    public function truncate()
+    {
+        $this->stale = true;
+
+        $this->model->query()->delete();
+    }
+
+    /**
      * Is the config state stale?
      *
      * @return bool
