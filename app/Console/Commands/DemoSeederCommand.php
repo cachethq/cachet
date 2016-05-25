@@ -346,7 +346,7 @@ EINCIDENT;
             ],
         ];
 
-        $this->settings->truncate();
+        $this->settings->clear();
 
         foreach ($defaultSettings as $setting) {
             $this->settings->set($setting['name'], $setting['value']);

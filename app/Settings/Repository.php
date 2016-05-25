@@ -91,11 +91,11 @@ class Repository
     }
 
     /**
-     * Truncate all settings.
+     * Clear all settings.
      *
      * @return void
      */
-    public function truncate()
+    public function clear()
     {
         $this->stale = true;
 
