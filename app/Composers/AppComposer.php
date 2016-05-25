@@ -41,17 +41,10 @@ class AppComposer
         $view->withAppUrl(Config::get('app.url'));
         $view->withAppHeader(Config::get('setting.header'));
         $view->withAppFooter(Config::get('setting.footer'));
-
         $view->withAppName(Config::get('setting.app_name'));
         $view->withShowSupport($support = Config::get('setting.show_support'));
         $view->withAutomaticLocalization(Config::get('setting.automatic_localization'));
-
-        if ($support) {
-            $view->withSiteTitle(Config::get('setting.app_name').' | Cachet');
-        } else {
-            $view->withSiteTitle(Config::get('setting.app_name'));
-        }
-
+        $view->withSiteTitle(Config::get('setting.app_name'));
         $view->withFontSubset(Config::get('langs.'.Config::get('app.locale').'.subset', 'latin'));
     }
 }
