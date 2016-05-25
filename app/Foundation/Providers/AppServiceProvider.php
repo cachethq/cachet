@@ -82,7 +82,7 @@ class AppServiceProvider extends ServiceProvider
             $cache = $app['cache.store'];
             $token = $app['config']->get('services.github.token')
 
-            return new Release($cache, $config);
+            return new Release($cache, $token);
         });
     }
 }
