@@ -30,7 +30,7 @@ class Repository
     protected $stale = false;
 
     /**
-     * Create a new settings service instance.
+     * Create a new settings repository instance.
      *
      * @param \CachetHQ\Cachet\Models\Setting $model
      *
