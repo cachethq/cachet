@@ -13,7 +13,6 @@ namespace CachetHQ\Cachet\GitHub;
 
 use GuzzleHttp\Client;
 use Illuminate\Contracts\Cache\Repository as CacheRepository;
-use Illuminate\Contracts\Config\Repository as ConfigRepository;
 
 class Release
 {
@@ -25,24 +24,24 @@ class Release
     protected $cache;
 
     /**
-     * The config repository instance.
+     * The github authentication token.
      *
-     * @var \Illuminate\Contracts\Config\Repository
+     * @var string
      */
-    protected $config;
+    protected $token;
 
     /**
      * Creates a new release instance.
      *
-     * @param \Illuminate\Contracts\Cache\Repository  $cache
-     * @param \Illuminate\Contracts\Config\Repository $config
+     * @param \Illuminate\Contracts\Cache\Repository $cache
+     * @param string                                 $token
      *
      * @return void
      */
-    public function __construct(CacheRepository $cache, ConfigRepository $config)
+    public function __construct(CacheRepository $cache, $token)
     {
         $this->cache = $cache;
-        $this->config = $config;
+        $this->token = $token;
     }
 
     /**
@@ -56,8 +55,8 @@ class Release
             $headers = ['Accept' => 'application/vnd.github.v3+json'];
 
             // We can re-use the Emoji token here, if we have it.
-            if ($token = $this->config->get('services.github.token')) {
-                $headers['OAUTH-TOKEN'] = $token;
+            if ($this->token) {
+                $headers['OAUTH-TOKEN'] = $this->token;
             }
 
             return json_decode((new Client())->get('https://api.github.com/repos/cachethq/cachet/releases/latest', [

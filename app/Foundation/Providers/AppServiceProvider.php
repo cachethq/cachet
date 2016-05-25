@@ -14,6 +14,7 @@ namespace CachetHQ\Cachet\Foundation\Providers;
 use AltThree\Bus\Dispatcher;
 use CachetHQ\Cachet\Bus\Middleware\UseDatabaseTransactions;
 use CachetHQ\Cachet\Dates\DateFactory;
+use CachetHQ\Cachet\GitHub\Release;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 
@@ -52,6 +53,7 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         $this->registerDateFactory();
+        $this->registerRelease();
     }
 
     /**
@@ -62,10 +64,25 @@ class AppServiceProvider extends ServiceProvider
     protected function registerDateFactory()
     {
         $this->app->singleton(DateFactory::class, function ($app) {
-            $appTimezone = $app->config->get('app.timezone');
-            $cacheTimezone = $app->config->get('cachet.timezone');
+            $appTimezone = $app['config']->get('app.timezone');
+            $cacheTimezone = $app['config']->get('cachet.timezone');
 
             return new DateFactory($appTimezone, $cacheTimezone);
+        });
+    }
+
+    /**
+     * Register the releases class.
+     *
+     * @return void
+     */
+    protected function registerRelease()
+    {
+        $this->app->singleton(Release::class, function ($app) {
+            $cache = $app['cache.store'];
+            $token = $app['config']->get('services.github.token')
+
+            return new Release($cache, $token);
         });
     }
 }
