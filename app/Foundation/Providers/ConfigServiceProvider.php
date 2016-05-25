@@ -38,21 +38,19 @@ class ConfigServiceProvider extends ServiceProvider
         $cache = $this->app->make(Cache::class);
         $loaded = $cache->load($env);
 
-        $this->app->terminating(function () use ($env, $repo, $cache, $loaded) {
-            if ($repo->stale() || $loaded === false) {
-                $cache->store($env, $repo->all());
+        $this->app->terminating(function () use ($repo, $cache) {
+            if ($repo->stale()) {
+                $cache->clear();
             }
         });
 
         try {
-            // Get the default settings.
-            $defaultSettings = $this->app->config->get('setting');
+            if ($loaded === false) {
+                $loaded = $repo->all();
+                $cache->store($env, $loaded);
+            }
 
-            // Get the configured settings.
-            $appSettings = $loaded === false ? $repo->all() : $loaded;
-
-            // Merge the settings
-            $settings = array_merge($defaultSettings, $appSettings);
+            $settings = array_merge($this->app->config->get('setting'), $loaded);
 
             $this->app->config->set('setting', $settings);
         } catch (Exception $e) {
