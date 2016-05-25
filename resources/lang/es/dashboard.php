@@ -150,6 +150,7 @@ return [
             'title'   => 'Agregar un nuevo subscriptor',
             'success' => 'Subscriptor agregado.',
             'failure' => 'Algo salió mal al agregar el suscriptor, por favor, inténtelo de nuevo.',
+            'help'    => 'Enter each subscriber on a new line.',
         ],
         'edit' => [
             'title'   => 'Actualizar subscriptor',

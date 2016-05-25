@@ -141,7 +141,7 @@ return [
     // Other
     'home'            => 'Strona Główna',
     'description'     => 'Bądź na bieżąco z aktualizacjami z :app.',
-    'powered_by'      => ':app Status-Seite betrieben mit <a href="https://cachethq.io">Cachet</a>.',
+    'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
     'about_this_site' => 'Über diese Seite',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',

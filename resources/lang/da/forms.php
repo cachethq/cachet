@@ -89,6 +89,7 @@ return [
         'type_avg'         => 'Gennemsnit',
         'places'           => 'Antal decimaler',
         'default_view'     => 'Standardvisning',
+        'threshold'        => 'How many minutes of threshold between metric points?',
 
         'points' => [
             'value' => 'Værdi',
@@ -105,8 +106,9 @@ return [
             'about-this-page'        => 'Om',
             'days-of-incidents'      => 'Hvor mange dage skal der vises hændelser for?',
             'banner'                 => 'Banner billede',
-            'banner-help'            => 'Det anbefales ikke at uploade billeder bredere end 930px.',
+            'banner-help'            => "Det anbefales ikke at uploade billeder bredere end 930px.",
             'subscribers'            => 'Tillad folk at tilmelde sig email underretninger?',
+            'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
         ],
         'analytics' => [
             'analytics_google'       => 'Google Analytics kode',

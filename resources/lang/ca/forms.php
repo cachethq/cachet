@@ -89,6 +89,7 @@ return [
         'type_avg'         => 'Mitjana',
         'places'           => 'Nombre de decimals',
         'default_view'     => 'Vista per defecte',
+        'threshold'        => 'How many minutes of threshold between metric points?',
 
         'points' => [
             'value' => 'Valor',
@@ -107,6 +108,7 @@ return [
             'banner'                 => 'Imatge del banner',
             'banner-help'            => "Es recomana que no carregueu arxius més grans de 930 píxels d'ample.",
             'subscribers'            => 'Permetre el registre per a notificacions per correu electrònic?',
+            'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
         ],
         'analytics' => [
             'analytics_google'       => 'Codi de Google Analytics',

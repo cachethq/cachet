@@ -28,8 +28,8 @@ return [
     'incidents' => [
         'none'          => 'No incidents reported',
         'past'          => 'Past Incidents',
-        'previous_week' => 'Previous Week',
-        'next_week'     => 'Next Week',
+        'previous_week' => 'Previous',
+        'next_week'     => 'Next',
         'scheduled'     => 'Scheduled Maintenance',
         'scheduled_at'  => ', scheduled :timestamp',
         'status'        => [
@@ -117,9 +117,9 @@ return [
 
     'signup' => [
         'title'    => 'Sign Up',
-        'username' => 'Username',
-        'email'    => 'Email',
-        'password' => 'Password',
+        'username' => 'Ім’я користувача',
+        'email'    => 'Електронна пошта',
+        'password' => 'Пароль',
         'success'  => 'Your account has been created.',
         'failure'  => 'Something went wrong with the signup.',
     ],
@@ -141,7 +141,7 @@ return [
     // Other
     'home'            => 'Home',
     'description'     => 'Stay up to date with the latest service updates from :app.',
-    'powered_by'      => ':app Status Page is powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
+    'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
     'about_this_site' => 'About This Site',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',

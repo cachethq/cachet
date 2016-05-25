@@ -59,21 +59,21 @@ return [
     // Incident Maintenance
     'schedule' => [
         'schedule'     => 'Manutenção Agendada',
-        'logged'       => '{0} There are no schedules, good work.|You have logged one schedule.|You have reported <strong>:count</strong> schedules.',
+        'logged'       => '{0} Não existem agendamentos, bom trabalho.|Você introduziu um agendamento.|Você reportou <strong>:count</strong> agendamentos.',
         'scheduled_at' => 'Agendada em :timestamp',
         'add'          => [
-            'title'   => 'Add Scheduled Maintenance',
-            'success' => 'Schedule added.',
-            'failure' => 'Something went wrong adding the schedule, please try again.',
+            'title'   => 'Adicionar manutenção programada',
+            'success' => 'Programação adicionada.',
+            'failure' => 'Ocorreu um problema ao adicionar a programação, por favor tente novamente.',
         ],
         'edit' => [
-            'title'   => 'Edit Scheduled Maintenance',
-            'success' => 'Schedule has been updated!',
-            'failure' => 'Something went wrong editing the schedule, please try again.',
+            'title'   => 'Edite a manutenção agendada',
+            'success' => 'A programação foi atualizada!',
+            'failure' => 'Ocorreu um problema ao editar a programação, por favor tente novamente.',
         ],
         'delete' => [
-            'success' => 'The scheduled maintenance has been deleted and will not show on your status page.',
-            'failure' => 'The scheduled maintenance could not be deleted, please try again.',
+            'success' => 'A manutenção programada foi excluída e não aparecerá na sua página de status.',
+            'failure' => 'A manutenção programada não pode ser excluída, por favor tente novamente.',
         ],
     ],
 
@@ -83,19 +83,19 @@ return [
         'component_statuses' => 'Status do componente',
         'listed_group'       => 'Agrupados sob :name',
         'add'                => [
-            'title'   => 'Add a component',
+            'title'   => 'Adicionar componente',
             'message' => 'Você deve adicionar um componente.',
-            'success' => 'Component created.',
-            'failure' => 'Something went wrong with the component, please try again.',
+            'success' => 'Componente criado.',
+            'failure' => 'Algo deu errado com o componente, por favor tente novamente.',
         ],
         'edit' => [
-            'title'   => 'Edit a component',
-            'success' => 'Component updated.',
-            'failure' => 'Something went wrong with the component, please try again.',
+            'title'   => 'Editar um componente',
+            'success' => 'Componente atualizado.',
+            'failure' => 'Algo deu errado com o componente, por favor tente novamente.',
         ],
         'delete' => [
-            'success' => 'The component has been deleted!',
-            'failure' => 'The component could not be deleted, please try again.',
+            'success' => 'O componente foi excluído!',
+            'failure' => 'O componente não pode ser excluído. Por favor tente de novo.',
         ],
 
         // Component groups
@@ -103,18 +103,18 @@ return [
             'groups'        => 'Grupo de componente|Grupos de componente',
             'no_components' => 'Você deve adicionar um componente à um grupo.',
             'add'           => [
-                'title'   => 'Add a component group',
-                'success' => 'Component group added.',
-                'failure' => 'Something went wrong with the component group, please try again.',
+                'title'   => 'Adicionar um grupo de componentes',
+                'success' => 'Grupo de componentes adicionado.',
+                'failure' => 'Algo deu errado com o grupo de componentes, por favor tente novamente.',
             ],
             'edit' => [
-                'title'   => 'Edit a component group',
-                'success' => 'Component group updated.',
-                'failure' => 'Something went wrong with the component group, please try again.',
+                'title'   => 'Editar um grupo de componentes',
+                'success' => 'Grupo de componentes atualizado.',
+                'failure' => 'Algo deu errado com o grupo de componentes, por favor tente novamente.',
             ],
             'delete' => [
-                'success' => 'Component group has been deleted!',
-                'failure' => 'The component group could not be deleted, please try again.',
+                'success' => 'O grupo de componentes foi excluído!',
+                'failure' => 'O grupo de componentes não pode ser excluído, por favor tente novamente.',
             ],
         ],
     ],
@@ -123,19 +123,19 @@ return [
     'metrics' => [
         'metrics' => 'Metricas',
         'add'     => [
-            'title'   => 'Create a metric',
-            'message' => 'You should add a metric.',
-            'success' => 'Metric created.',
-            'failure' => 'Something went wrong with the metric, please try again.',
+            'title'   => 'Criar uma métrica',
+            'message' => 'Você deveria adicionar uma métrica.',
+            'success' => 'Métrica criada.',
+            'failure' => 'Algo deu errado com a métrica, por favor tente novamente.',
         ],
         'edit' => [
-            'title'   => 'Edit a metric',
-            'success' => 'Metric updated.',
-            'failure' => 'Something went wrong with the metric, please try again.',
+            'title'   => 'Editar uma métrica',
+            'success' => 'Métrica atualizada.',
+            'failure' => 'Algo deu errado com a métrica, por favor tente novamente.',
         ],
         'delete' => [
-            'success' => 'The metric has been deleted and will no longer display on your status page.',
-            'failure' => 'The metric could not be deleted, please try again.',
+            'success' => 'A métrica foi excluída e não será mais exibida na sua página de status.',
+            'failure' => 'A métrica não pode ser excluída, por favor tente novamente.',
         ],
     ],
     // Subscribers
@@ -150,6 +150,7 @@ return [
             'title'   => 'Add a new subscriber',
             'success' => 'Inscrito adicionado.',
             'failure' => 'Something went wrong adding the subscriber, please try again.',
+            'help'    => 'Enter each subscriber on a new line.',
         ],
         'edit' => [
             'title'   => 'Update subscriber',

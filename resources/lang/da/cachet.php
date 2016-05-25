@@ -141,7 +141,7 @@ return [
     // Other
     'home'            => 'Hjem',
     'description'     => 'Hold dig opdateret med de seneste opdateringer fra :app.',
-    'powered_by'      => ':app statusside er bygget på <a href="https://cachethq.io" class="links">Cachet</a>.',
+    'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
     'about_this_site' => 'Om denne side',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',

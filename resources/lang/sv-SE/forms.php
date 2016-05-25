@@ -89,6 +89,7 @@ return [
         'type_avg'         => 'Medelvärde',
         'places'           => 'Decimalplatser',
         'default_view'     => 'Standardvy',
+        'threshold'        => 'How many minutes of threshold between metric points?',
 
         'points' => [
             'value' => 'Värde',
@@ -105,8 +106,9 @@ return [
             'about-this-page'        => 'Om den här sidan',
             'days-of-incidents'      => 'Hur många dagar av händelser ska visas?',
             'banner'                 => 'Banner Image',
-            'banner-help'            => 'Vi rekommenderar att du inte laddar upp bilder som är bredare än 930 px.',
+            'banner-help'            => "Vi rekommenderar att du inte laddar upp bilder som är bredare än 930 px.",
             'subscribers'            => 'Tillåt att registrera sig för notifikationer via e-post?',
+            'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
         ],
         'analytics' => [
             'analytics_google'       => 'Google Analytics-kod',

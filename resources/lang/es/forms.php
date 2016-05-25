@@ -89,6 +89,7 @@ return [
         'type_avg'         => 'Promedio',
         'places'           => 'Cantidad de decimales',
         'default_view'     => 'Vista predeterminada',
+        'threshold'        => 'How many minutes of threshold between metric points?',
 
         'points' => [
             'value' => 'Valor',
@@ -105,8 +106,9 @@ return [
             'about-this-page'        => 'Sobre esta página',
             'days-of-incidents'      => '¿Cuántos días de incidentes mostrar?',
             'banner'                 => 'Imagen del banner',
-            'banner-help'            => 'Se recomienda subir una imagen no más grande de 930px de ancho .',
+            'banner-help'            => "Se recomienda subir una imagen no más grande de 930px de ancho .",
             'subscribers'            => '¿Permitir a la gente inscribirse mediante noficiacion por correo electronico?',
+            'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
         ],
         'analytics' => [
             'analytics_google'       => 'Código de Google Analytics',

@@ -22,13 +22,13 @@ return [
         'incident-templates'       => 'Mẫu sự cố',
         'add'                      => [
             'title'   => 'Thêm một sự cố',
-            'success' => 'Incident added.',
-            'failure' => 'There was an error adding the incident, please try again.',
+            'success' => 'Sự cố đã được thêm.',
+            'failure' => 'Có một lỗi xảy ra khi đang lưu Sự Cố, xin vui lòng thử lại.',
         ],
         'edit' => [
             'title'   => 'Chỉnh sửa một sự cố',
             'success' => 'Sự cố đã được cập nhật.',
-            'failure' => 'There was an error editing the incident, please try again.',
+            'failure' => 'Có một lỗi xảy ra khi đang lưu Sự Cố, xin vui lòng thử lại.',
         ],
         'delete' => [
             'success' => 'The incident has been deleted and will not show on your status page.',
@@ -150,6 +150,7 @@ return [
             'title'   => 'Add a new subscriber',
             'success' => 'Subscriber has been added!',
             'failure' => 'Something went wrong adding the subscriber, please try again.',
+            'help'    => 'Enter each subscriber on a new line.',
         ],
         'edit' => [
             'title'   => 'Update subscriber',

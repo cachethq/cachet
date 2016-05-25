@@ -243,7 +243,7 @@ return [
 
     // Welcome modal
     'welcome' => [
-        'welcome' => 'Welcome to your status page!',
+        'welcome' => 'Welcome to your new Status page!',
         'message' => 'Your status page is almost ready! You might want to configure these extra settings',
         'close'   => 'Take me straight to my dashboard',
         'steps'   => [

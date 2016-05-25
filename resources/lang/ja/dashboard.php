@@ -150,6 +150,7 @@ return [
             'title'   => '購読者の追加',
             'success' => 'Subscriber has been added!',
             'failure' => 'Something went wrong adding the subscriber, please try again.',
+            'help'    => 'Enter each subscriber on a new line.',
         ],
         'edit' => [
             'title'   => '購読者の更新',

@@ -89,6 +89,7 @@ return [
         'type_avg'         => 'crwdns477:0crwdne477:0',
         'places'           => 'crwdns590:0crwdne590:0',
         'default_view'     => 'crwdns655:0crwdne655:0',
+        'threshold'        => 'crwdns725:0crwdne725:0',
 
         'points' => [
             'value' => 'crwdns471:0crwdne471:0',
@@ -105,8 +106,9 @@ return [
             'about-this-page'        => 'crwdns402:0crwdne402:0',
             'days-of-incidents'      => 'crwdns403:0crwdne403:0',
             'banner'                 => 'crwdns717:0crwdne717:0',
-            'banner-help'            => 'crwdns405:0crwdne405:0',
+            'banner-help'            => "crwdns405:0crwdne405:0",
             'subscribers'            => 'crwdns513:0crwdne513:0',
+            'automatic_localization' => 'crwdns726:0crwdne726:0',
         ],
         'analytics' => [
             'analytics_google'       => 'crwdns591:0crwdne591:0',

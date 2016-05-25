@@ -150,6 +150,7 @@ return [
             'title'   => 'Adicionar um novo assinante',
             'success' => 'Assinante adicionado.',
             'failure' => 'Something went wrong adding the subscriber, please try again.',
+            'help'    => 'Enter each subscriber on a new line.',
         ],
         'edit' => [
             'title'   => 'Actualizar Assinante',

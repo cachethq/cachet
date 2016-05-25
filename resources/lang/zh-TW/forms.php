@@ -89,6 +89,7 @@ return [
         'type_avg'         => '平均',
         'places'           => '小數點位數',
         'default_view'     => 'Default view',
+        'threshold'        => 'How many minutes of threshold between metric points?',
 
         'points' => [
             'value' => '值',
@@ -105,8 +106,9 @@ return [
             'about-this-page'        => '關於本站',
             'days-of-incidents'      => '顯示多少天前的事件？',
             'banner'                 => 'Banner Image',
-            'banner-help'            => '橫幅寬度建議少於 930px 。',
+            'banner-help'            => "橫幅寬度建議少於 930px 。",
             'subscribers'            => '允許用戶訂閱郵件通知嗎?',
+            'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
         ],
         'analytics' => [
             'analytics_google'       => 'Google Analytics 代碼',

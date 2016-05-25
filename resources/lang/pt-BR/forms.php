@@ -89,6 +89,7 @@ return [
         'type_avg'         => 'Média',
         'places'           => 'Decimal places',
         'default_view'     => 'Default view',
+        'threshold'        => 'How many minutes of threshold between metric points?',
 
         'points' => [
             'value' => 'Valor',
@@ -105,8 +106,9 @@ return [
             'about-this-page'        => 'Sobre esta página',
             'days-of-incidents'      => 'Quantos dias de incidentes para mostrar?',
             'banner'                 => 'Banner Image',
-            'banner-help'            => 'É recomendável que você faça upload de arquivos menores que 930px .',
+            'banner-help'            => "É recomendável que você faça upload de arquivos menores que 930px .",
             'subscribers'            => 'Permitir que outras pessoas se cadastrem para notificações via e-mail?',
+            'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
         ],
         'analytics' => [
             'analytics_google'       => 'Google Analytics code',

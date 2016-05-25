@@ -28,8 +28,8 @@ return [
     'incidents' => [
         'none'          => 'No incidents reported',
         'past'          => 'Past Incidents',
-        'previous_week' => 'Previous',
-        'next_week'     => 'Next',
+        'previous_week' => 'Previous Week',
+        'next_week'     => 'Next Week',
         'scheduled'     => 'Scheduled Maintenance',
         'scheduled_at'  => ', scheduled :timestamp',
         'status'        => [
@@ -83,7 +83,7 @@ return [
             'verify'             => [
                 'text'           => "Please confirm your email subscription to :app_name status updates.\n:link\nThank you, :app_name",
                 'html-preheader' => 'Please confirm your email subscription to :app_name status updates.',
-                'html'           => '<p>Please confirm your email subscription to :app_name status updates.</p><p><a href=":link">:link</a></p><p>Thank you, :app_name</p>',
+                'html'           => '<p>Please confirm your email subscription to :app_name status updates.</p><p><a href=":link">:link</a></p><p>Thank you, :app_name</p>email',
             ],
             'maintenance' => [
                 'text'           => "New maintenance has been scheduled on :app_name.\nThank you, :app_name",

@@ -150,6 +150,7 @@ return [
             'title'   => 'Add a new subscriber',
             'success' => 'Subscriber has been added!',
             'failure' => 'Something went wrong adding the subscriber, please try again.',
+            'help'    => 'Enter each subscriber on a new line.',
         ],
         'edit' => [
             'title'   => 'Update subscriber',
