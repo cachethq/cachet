@@ -30,7 +30,7 @@
         "doctrine/dbal": "^2.5",
         "fideloper/proxy": "^3.1",
         "graham-campbell/binput": "^3.4",
-        "graham-campbell/core": "^5.0",
+        "graham-campbell/core": "^5.1",
         "graham-campbell/exceptions": "^8.5",
         "graham-campbell/markdown": "^6.1",
         "guzzlehttp/guzzle": "^6.2",
@@ -45,7 +45,7 @@
         "filp/whoops": "^2.1",
         "fzaninotto/faker": "^1.6",
         "graham-campbell/testbench-core": "^1.1",
-        "mockery/mockery": "0.9.4",
+        "mockery/mockery": "0.9.5",
         "phpunit/phpunit": "4.8.21",
         "symfony/css-selector": "^3.0",
         "symfony/dom-crawler": "^3.0"
