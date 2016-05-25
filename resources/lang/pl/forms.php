@@ -89,6 +89,7 @@ return [
         'type_avg'         => 'Durchschnitt',
         'places'           => 'Miejsca dziesiętne',
         'default_view'     => 'Domyślny widok',
+        'threshold'        => 'How many minutes of threshold between metric points?',
 
         'points' => [
             'value' => 'Wert',
@@ -107,6 +108,7 @@ return [
             'banner'                 => 'Banner',
             'banner-help'            => 'Es wird empfohlen, dass Sie keine Dateien die breiter als 930 Pixel sind hochladen .',
             'subscribers'            => 'Personen die Anmeldung für E-Mail-Benachrichtigung erlauben?',
+            'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
         ],
         'analytics' => [
             'analytics_google'       => 'Google Analytics Code',

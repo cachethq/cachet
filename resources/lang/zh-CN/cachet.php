@@ -140,8 +140,8 @@ return [
 
     // Other
     'home'            => '主屏幕',
-    'description'     => 'Stay up to date with the latest service updates from :app.',
-    'powered_by'      => ':app 状态页托管服务由 <a href="https://cachethq.io">Cachet</a> 提供技术支持。',
+    'description'     => '使用来自 :app 最新的服务更新保持更新。',
+    'powered_by'      => '由 <a href="https://cachethq.io" class="links">Cachet</a> 驱动。',
     'about_this_site' => '关于我们',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',

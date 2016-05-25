@@ -141,7 +141,7 @@ return [
     // Other
     'home'            => 'Inici',
     'description'     => 'Stay up to date with the latest service updates from :app.',
-    'powered_by'      => 'Pàgina d\'estats :app en base a <a href="https://cachethq.io" class="links">Cachet</a>.',
+    'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
     'about_this_site' => 'Sobre aquest lloc',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',

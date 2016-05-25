@@ -120,12 +120,12 @@ $(function() {
         var $option = $(this).find('option:selected');
         var $componentStatus = $('#component-status');
 
-        if ($option.val() !== '') {
+        if (parseInt($option.val(), 10) !== 0) {
             if ($componentStatus.hasClass('hidden')) {
                 $componentStatus.removeClass('hidden');
-            } else {
-                $componentStatus.addClass('hidden');
             }
+        } else {
+            $componentStatus.addClass('hidden');
         }
     });
 

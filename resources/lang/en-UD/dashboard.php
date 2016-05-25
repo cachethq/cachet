@@ -150,6 +150,7 @@ return [
             'title'   => 'crwdns574:0crwdne574:0',
             'success' => 'crwdns527:0crwdne527:0',
             'failure' => 'crwdns699:0crwdne699:0',
+            'help'    => 'crwdns724:0crwdne724:0',
         ],
         'edit' => [
             'title'   => 'crwdns575:0crwdne575:0',

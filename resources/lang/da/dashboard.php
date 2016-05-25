@@ -150,6 +150,7 @@ return [
             'title'   => 'Tilføj abonnent',
             'success' => 'Subscriber added.',
             'failure' => 'Noget gik galt under forsøget på at tilføje en abonnent. Prøv venligst igen.',
+            'help'    => 'Enter each subscriber on a new line.',
         ],
         'edit' => [
             'title'   => 'Redigér abonnent',

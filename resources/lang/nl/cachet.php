@@ -141,7 +141,7 @@ return [
     // Other
     'home'            => 'Home',
     'description'     => 'Blijf op de hoogte van de laatste service updates over :app.',
-    'powered_by'      => ':app Status pagina word mogelijk gemaakt door <a href="https://cachethq.io" class="links">Cachet</a>.',
+    'powered_by'      => 'Mogelijk gemaakt door <a href="https://cachethq.io" class="links">Cachet</a>.',
     'about_this_site' => 'Over deze website',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',

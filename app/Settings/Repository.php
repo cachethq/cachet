@@ -9,10 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Config;
+namespace CachetHQ\Cachet\Settings;
 
 use CachetHQ\Cachet\Models\Setting;
 
+/**
+ * This is the settings repository class.
+ *
+ * @author Graham Campbell <graham@alt-three.com>
+ * @author James Brooks <james@alt-three.com>
+ */
 class Repository
 {
     /**
@@ -30,7 +36,7 @@ class Repository
     protected $stale = false;
 
     /**
-     * Create a new settings service instance.
+     * Create a new settings repository instance.
      *
      * @param \CachetHQ\Cachet\Models\Setting $model
      *

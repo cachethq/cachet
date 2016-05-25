@@ -13,44 +13,44 @@ return [
 
     // Setup form fields
     'setup' => [
-        'email'            => 'Email',
-        'username'         => 'Username',
-        'password'         => 'Password',
-        'site_name'        => 'Site Name',
-        'site_domain'      => 'Site Domain',
-        'site_timezone'    => 'Select your timezone',
-        'site_locale'      => 'Select your language',
-        'enable_google2fa' => 'Enable Google Two Factor Authentication',
-        'cache_driver'     => 'Cache Driver',
-        'session_driver'   => 'Session Driver',
+        'email'            => 'Електронна пошта',
+        'username'         => 'Ім’я користувача',
+        'password'         => 'Пароль',
+        'site_name'        => 'Назва сайту',
+        'site_domain'      => 'Назва домену',
+        'site_timezone'    => 'Оберіть Ваш часовий пояс',
+        'site_locale'      => 'Оберіть свою мову',
+        'enable_google2fa' => 'Ввімкнути двофакторну автентифікацію Google',
+        'cache_driver'     => 'Драйвер кешування',
+        'session_driver'   => 'Сессія драйверу',
     ],
 
     // Login form fields
     'login' => [
-        'login'         => 'Username or Email',
-        'email'         => 'Email',
-        'password'      => 'Password',
-        '2fauth'        => 'Authentication Code',
-        'invalid'       => 'Invalid username or password',
+        'login'         => 'Ім\'я користувача або електронна пошта',
+        'email'         => 'Електронна пошта',
+        'password'      => 'Пароль',
+        '2fauth'        => 'Код автентифікації',
+        'invalid'       => 'Невірний логін чи пароль',
         'invalid-token' => 'Invalid token',
-        'cookies'       => 'You must enable cookies to login.',
+        'cookies'       => 'Ви повинні увімкнути куки щоб увійти.',
     ],
 
     // Incidents form fields
     'incidents' => [
-        'name'               => 'Name',
-        'status'             => 'Status',
-        'component'          => 'Component',
-        'message'            => 'Message',
-        'message-help'       => 'You may also use Markdown.',
+        'name'               => 'Ім’я',
+        'status'             => 'Статус',
+        'component'          => 'Компонент',
+        'message'            => 'Повідомлення',
+        'message-help'       => 'Ви також можете використовувати Markdown.',
         'scheduled_at'       => 'When to schedule the maintenance for?',
-        'incident_time'      => 'When did this incident occur?',
-        'notify_subscribers' => 'Notify subscribers?',
+        'incident_time'      => 'Коли цей інцидент відбувся?',
+        'notify_subscribers' => 'Повідомити підписників?',
         'visibility'         => 'Incident Visibility',
         'public'             => 'Viewable by public',
         'logged_in_only'     => 'Only visible to logged in users',
         'templates'          => [
-            'name'     => 'Name',
+            'name'     => 'Ім’я',
             'template' => 'Template',
             'twig'     => 'Incident Templates can make use of the <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a> templating language.',
         ],
@@ -58,17 +58,17 @@ return [
 
     // Components form fields
     'components' => [
-        'name'        => 'Name',
-        'status'      => 'Status',
+        'name'        => 'Ім’я',
+        'status'      => 'Статус',
         'group'       => 'Group',
-        'description' => 'Description',
-        'link'        => 'Link',
-        'tags'        => 'Tags',
+        'description' => 'Опис',
+        'link'        => 'Посилання',
+        'tags'        => 'Теги',
         'tags-help'   => 'Comma separated.',
         'enabled'     => 'Component enabled?',
 
         'groups' => [
-            'name'               => 'Name',
+            'name'               => 'Ім’я',
             'collapsing'         => 'Choose visibility of the group',
             'visible'            => 'Always expanded',
             'collapsed'          => 'Collapse the group by default',
@@ -78,20 +78,21 @@ return [
 
     // Metric form fields
     'metrics' => [
-        'name'             => 'Name',
+        'name'             => 'Ім’я',
         'suffix'           => 'Suffix',
-        'description'      => 'Description',
-        'description-help' => 'You may also use Markdown.',
+        'description'      => 'Опис',
+        'description-help' => 'Ви також можете використовувати Markdown.',
         'display-chart'    => 'Display chart on status page?',
         'default-value'    => 'Default value',
         'calc_type'        => 'Calculation of metrics',
-        'type_sum'         => 'Sum',
-        'type_avg'         => 'Average',
+        'type_sum'         => 'Сума',
+        'type_avg'         => 'В середньому',
         'places'           => 'Decimal places',
-        'default_view'     => 'Default view',
+        'default_view'     => 'Типовий вигляд',
+        'threshold'        => 'How many minutes of threshold between metric points?',
 
         'points' => [
-            'value' => 'Value',
+            'value' => 'Значення',
         ],
     ],
 
@@ -99,25 +100,26 @@ return [
     'settings' => [
         /// Application setup
         'app-setup' => [
-            'site-name'              => 'Site Name',
-            'site-url'               => 'Site URL',
-            'display-graphs'         => 'Display graphs on status page?',
-            'about-this-page'        => 'About this page',
+            'site-name'              => 'Назва сайту',
+            'site-url'               => 'URL сайту',
+            'display-graphs'         => 'Відображати графіки на сторінці статусу?',
+            'about-this-page'        => 'Інформація про цю сторінку',
             'days-of-incidents'      => 'How many days of incidents to show?',
             'banner'                 => 'Banner Image',
             'banner-help'            => "It's recommended that you upload files no bigger than 930px wide .",
             'subscribers'            => 'Allow people to signup to email notifications?',
+            'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
         ],
         'analytics' => [
-            'analytics_google'       => 'Google Analytics code',
-            'analytics_gosquared'    => 'GoSquared Analytics code',
+            'analytics_google'       => 'Код Google Analytics',
+            'analytics_gosquared'    => 'Код GoSquared Analytics',
             'analytics_piwik_url'    => 'URL of your Piwik instance (without http(s)://)',
-            'analytics_piwik_siteid' => 'Piwik\'s site id',
+            'analytics_piwik_siteid' => 'id сайту Piwik',
         ],
         'localization' => [
-            'site-timezone'          => 'Site timezone',
-            'site-locale'            => 'Site language',
-            'date-format'            => 'Date format',
+            'site-timezone'          => 'Часовий пояс сайту',
+            'site-locale'            => 'Мова сайту',
+            'date-format'            => 'формат дати',
             'incident-date-format'   => 'Incident timestamp format',
         ],
         'security' => [
@@ -133,7 +135,7 @@ return [
             'banner-background-color' => 'Banner background color',
             'banner-padding'          => 'Banner padding',
             'fullwidth-banner'        => 'Enable fullwidth banner?',
-            'text-color'              => 'Text Color',
+            'text-color'              => 'Колір тексту',
             'dashboard-login'         => 'Show dashboard button in the footer?',
             'reds'                    => 'Red (used for errors)',
             'blues'                   => 'Blue (used for information)',
@@ -146,16 +148,16 @@ return [
     ],
 
     'user' => [
-        'username'       => 'Username',
-        'email'          => 'Email',
-        'password'       => 'Password',
+        'username'       => 'Ім’я користувача',
+        'email'          => 'Електронна пошта',
+        'password'       => 'Пароль',
         'api-token'      => 'API Token',
         'api-token-help' => 'Regenerating your API token will prevent existing applications from accessing Cachet.',
         'gravatar'       => 'Change your profile picture at Gravatar.',
         'user_level'     => 'User Level',
         'levels'         => [
-            'admin' => 'Admin',
-            'user'  => 'User',
+            'admin' => 'Адміністратор',
+            'user'  => 'Користувач',
         ],
         '2fa' => [
             'help' => 'Enabling two factor authentication increases security of your account. You will need to download <a href="https://support.google.com/accounts/answer/1066447?hl=en">Google Authenticator</a> or a similar app on to your mobile device. When you login you will be asked to provide a token generated by the app.',
@@ -167,16 +169,16 @@ return [
     ],
 
     // Buttons
-    'add'    => 'Add',
-    'save'   => 'Save',
+    'add'    => 'додати',
+    'save'   => 'Зберегти',
     'update' => 'Update',
-    'create' => 'Create',
+    'create' => 'Створити',
     'edit'   => 'Edit',
-    'delete' => 'Delete',
+    'delete' => 'Видалити',
     'submit' => 'Submit',
-    'cancel' => 'Cancel',
+    'cancel' => 'Скасувати',
     'remove' => 'Remove',
-    'invite' => 'Invite',
+    'invite' => 'Запросити',
     'signup' => 'Sign Up',
 
     // Other

@@ -150,6 +150,7 @@ return [
             'title'   => 'Tambah Pelanggan Baru',
             'success' => 'Pelanggan sudah ditambahkan.',
             'failure' => 'Something went wrong adding the subscriber, please try again.',
+            'help'    => 'Enter each subscriber on a new line.',
         ],
         'edit' => [
             'title'   => 'Perbarui Pelanggan',

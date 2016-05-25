@@ -12,7 +12,7 @@
 return [
     // Components
     'components' => [
-        'last_updated' => 'Última atualização: timestamp',
+        'last_updated' => 'Última atualização :timestamp',
         'status'       => [
             1 => 'Operacional',
             2 => 'Problemas de performance',
@@ -141,7 +141,7 @@ return [
     // Other
     'home'            => 'Início',
     'description'     => 'Mantenha-se atualizado com as últimas atualizações de serviço de: app.',
-    'powered_by'      => ':app Página de Status é promovida por <a href="https://cachethq.io" class="links"> Cachet</a>.',
+    'powered_by'      => 'Desenvolvido por <a href="https://cachethq.io" class="links">Cachet</a>.',
     'about_this_site' => 'Sobre este Site',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',

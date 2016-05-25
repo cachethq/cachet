@@ -63,7 +63,7 @@ class SendComponentUpdateEmailNotificationHandler
         $globalSubscribers = $this->subscriber->isVerified()->isGlobal()->get();
 
         foreach ($globalSubscribers as $subscriber) {
-            $this->notify($event, $subscriber);
+            $this->notify($component, $subscriber);
         }
 
         $notified = $globalSubscribers->pluck('id')->all();
@@ -78,19 +78,19 @@ class SendComponentUpdateEmailNotificationHandler
             });
 
         foreach ($componentSubscribers as $subscriber) {
-            $this->notify($event, $subscriber);
+            $this->notify($component, $subscriber);
         }
     }
 
     /**
      * Send notification to subscriber.
      *
-     * @param \CachetHQ\Cachet\Bus\Events\ComponentWasUpdatedEvent $event
-     * @param \CachetHQ\Cachet\Models\Subscriber                   $subscriber
+     * @param \CachetHQ\Cachet\Models\Component  $component
+     * @param \CachetHQ\Cachet\Models\Subscriber $subscriber
      *
      * @return \Illuminate\Database\Eloquent\Collection
      */
-    public function notify(ComponentWasUpdatedEvent $event, $subscriber)
+    public function notify(Component $component, Subscriber $subscriber)
     {
         $mail = [
             'subject'                => trans('cachet.subscriber.email.component.subject'),

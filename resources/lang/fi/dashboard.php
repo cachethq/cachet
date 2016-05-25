@@ -60,14 +60,14 @@ return [
     'schedule' => [
         'schedule'     => 'Ajastettu huolto',
         'logged'       => '{0} There are no schedules, good work.|You have logged one schedule.|You have reported <strong>:count</strong> schedules.',
-        'scheduled_at' => 'Scheduled at :timestamp',
+        'scheduled_at' => 'Ajastettu :timestamp alkaen',
         'add'          => [
-            'title'   => 'Add Scheduled Maintenance',
-            'success' => 'Schedule added.',
+            'title'   => 'Lisää ajastettu huolto',
+            'success' => 'Ajastus lisätty.',
             'failure' => 'Something went wrong adding the schedule, please try again.',
         ],
         'edit' => [
-            'title'   => 'Edit Scheduled Maintenance',
+            'title'   => 'Muokkaa ajastettua huoltoa',
             'success' => 'Schedule has been updated!',
             'failure' => 'Something went wrong editing the schedule, please try again.',
         ],
@@ -81,40 +81,40 @@ return [
     'components' => [
         'components'         => 'Komponentit',
         'component_statuses' => 'Komponenttien tilat',
-        'listed_group'       => 'Grouped under :name',
+        'listed_group'       => 'Ryhmitetään :name alle',
         'add'                => [
             'title'   => 'Lisää komponentti',
             'message' => 'You should add a component.',
-            'success' => 'Component created.',
-            'failure' => 'Something went wrong with the component, please try again.',
+            'success' => 'Komponentti on luotu.',
+            'failure' => 'Jokin meni vikaa luodessa komponenttia, ole hyvä ja yritä uudelleen.',
         ],
         'edit' => [
             'title'   => 'Muokkaa komponenttia',
-            'success' => 'Component updated.',
-            'failure' => 'Something went wrong with the component, please try again.',
+            'success' => 'Komponentti päivitetty.',
+            'failure' => 'Jokin meni vikaa luodessa komponenttia, ole hyvä ja yritä uudelleen.',
         ],
         'delete' => [
             'success' => 'The component has been deleted!',
-            'failure' => 'The component could not be deleted, please try again.',
+            'failure' => 'Komponenttia ei voitu poistaa, ole hyvä ja yritä uudelleen.',
         ],
 
         // Component groups
         'groups' => [
             'groups'        => 'Component group|Component groups',
-            'no_components' => 'You should add a component group.',
+            'no_components' => 'Sinun tulisi lisätä komponentti ryhmä.',
             'add'           => [
                 'title'   => 'Lisää komponentti-ryhmä',
-                'success' => 'Component group added.',
-                'failure' => 'Something went wrong with the component group, please try again.',
+                'success' => 'Komponenti ryhmä lisätty.',
+                'failure' => 'Jokin meni vikaan luodessa komponenttiryhmää, ole hyvä ja yritä uudelleen.',
             ],
             'edit' => [
-                'title'   => 'Edit a component group',
-                'success' => 'Component group updated.',
-                'failure' => 'Something went wrong with the component group, please try again.',
+                'title'   => 'Muokkaa komponentti ryhmää',
+                'success' => 'Komponentti ryhmä päivitetty.',
+                'failure' => 'Jokin meni vikaan luodessa komponenttiryhmää, ole hyvä ja yritä uudelleen.',
             ],
             'delete' => [
-                'success' => 'Component group has been deleted!',
-                'failure' => 'The component group could not be deleted, please try again.',
+                'success' => 'Komponentti ryhmä poistettu!',
+                'failure' => 'Komponenttiryhmää ei voitu poistaa, ole hyvä ja yritä uudelleen.',
             ],
         ],
     ],
@@ -123,13 +123,13 @@ return [
     'metrics' => [
         'metrics' => 'Mittarit',
         'add'     => [
-            'title'   => 'Create a metric',
-            'message' => 'You should add a metric.',
+            'title'   => 'Luo kaavio',
+            'message' => 'Sinun tulisi lisätä kaavio.',
             'success' => 'Metric created.',
             'failure' => 'Something went wrong with the metric, please try again.',
         ],
         'edit' => [
-            'title'   => 'Edit a metric',
+            'title'   => 'Muokkaa kaaviota',
             'success' => 'Metric updated.',
             'failure' => 'Something went wrong with the metric, please try again.',
         ],
@@ -145,14 +145,15 @@ return [
         'verified'         => 'Vahvistettu',
         'not_verified'     => 'Not verified',
         'subscriber'       => ': sähköposti, tilannut: päivämäärä',
-        'no_subscriptions' => 'Subscribed to all updates',
+        'no_subscriptions' => 'Tilaa kaikki päivitykset',
         'add'              => [
             'title'   => 'Lisää uusi tilaaja',
             'success' => 'Tilaaja lisätty.',
             'failure' => 'Jotakin meni vikaan lisäessä uutta tilaajaa, ole hyvä ja yritä uudelleen.',
+            'help'    => 'Enter each subscriber on a new line.',
         ],
         'edit' => [
-            'title'   => 'Update subscriber',
+            'title'   => 'Päivitä tilaaja',
             'success' => 'Subscriber has been updated!',
             'failure' => 'Something went wrong editing the subscriber, please try again.',
         ],
@@ -242,7 +243,7 @@ return [
 
     // Welcome modal
     'welcome' => [
-        'welcome' => 'Welcome to your status page!',
+        'welcome' => 'Tervetuloa tila-sivulle!',
         'message' => 'Your status page is almost ready! You might want to configure these extra settings',
         'close'   => 'Siirry suoraan hallintapaneeliin',
         'steps'   => [

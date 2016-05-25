@@ -184,7 +184,6 @@ return [
         'CachetHQ\Cachet\Foundation\Providers\ConsoleServiceProvider',
         'CachetHQ\Cachet\Foundation\Providers\ConfigServiceProvider',
         'CachetHQ\Cachet\Foundation\Providers\EventServiceProvider',
-        'CachetHQ\Cachet\Foundation\Providers\GitHubServiceProvider',
         'CachetHQ\Cachet\Foundation\Providers\RepositoryServiceProvider',
         'CachetHQ\Cachet\Foundation\Providers\RouteServiceProvider',
 

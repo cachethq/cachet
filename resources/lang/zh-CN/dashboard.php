@@ -23,12 +23,12 @@ return [
         'add'                      => [
             'title'   => '添加故障',
             'success' => '故障已添加',
-            'failure' => '添加故障时出错，请再试一次 ！',
+            'failure' => '添加故障时出错，请稍后再试。',
         ],
         'edit' => [
             'title'   => '编辑故障',
             'success' => '故障已更新。',
-            'failure' => '编辑故障时出错，请再试一次 ！',
+            'failure' => '编辑故障时出错，请稍后再试。',
         ],
         'delete' => [
             'success' => '故障已删除并将不会出现在状态页中',
@@ -41,7 +41,7 @@ return [
             'add'   => [
                 'title'   => '添加故障模板',
                 'message' => '你应该增加一个故障模板',
-                'success' => '已创建新的故障模板。',
+                'success' => '成功创建新的故障模板。',
                 'failure' => '创建模板失败。',
             ],
             'edit' => [
@@ -86,16 +86,16 @@ return [
             'title'   => '添加组件',
             'message' => '没有组件，马上添加一个吧',
             'success' => '组件已添加。',
-            'failure' => 'Something went wrong with the component, please try again.',
+            'failure' => '组件更新失败，请稍后再试。',
         ],
         'edit' => [
             'title'   => '编辑组件',
             'success' => '组件已更新。',
-            'failure' => 'Something went wrong with the component, please try again.',
+            'failure' => '组件更新失败，请稍后再试。',
         ],
         'delete' => [
             'success' => '组件已删除。',
-            'failure' => 'The component could not be deleted, please try again.',
+            'failure' => '无法删除组件，请稍后再试。',
         ],
 
         // Component groups
@@ -104,17 +104,17 @@ return [
             'no_components' => '没有组件分组，马上添加一个吧',
             'add'           => [
                 'title'   => '添加组件分组',
-                'success' => 'Component group added.',
-                'failure' => 'Something went wrong with the component group, please try again.',
+                'success' => '分组已添加。',
+                'failure' => '分组更新失败，请重试。',
             ],
             'edit' => [
                 'title'   => '编辑组件分组',
-                'success' => 'Component group updated.',
-                'failure' => 'Something went wrong with the component group, please try again.',
+                'success' => '分组已更新。',
+                'failure' => '分组更新失败，请重试。',
             ],
             'delete' => [
                 'success' => '组建分组已删除。',
-                'failure' => 'The component group could not be deleted, please try again.',
+                'failure' => '无法删除组件分组，请稍后再试。',
             ],
         ],
     ],
@@ -135,26 +135,27 @@ return [
         ],
         'delete' => [
             'success' => '图表已删除并将不会出现在状态页中',
-            'failure' => 'The metric could not be deleted, please try again.',
+            'failure' => '无法删除图标，请稍后再试。',
         ],
     ],
     // Subscribers
     'subscribers' => [
         'subscribers'      => '通知',
-        'description'      => 'Subscribers will receive email updates when incidents are created or components are updated.',
+        'description'      => '有新增故障或有组件更新时，订阅者将会收到邮件提醒。',
         'verified'         => '已认证',
         'not_verified'     => '未认证',
-        'subscriber'       => ':email, subscribed :date',
-        'no_subscriptions' => 'Subscribed to all updates',
+        'subscriber'       => ':email, 订阅于 :date',
+        'no_subscriptions' => '已订阅全部更新',
         'add'              => [
             'title'   => '添加邮件订阅',
             'success' => '邮件订阅已添加成功。',
-            'failure' => 'Something went wrong adding the subscriber, please try again.',
+            'failure' => '无法添加订阅者，请稍后再试。',
+            'help'    => 'Enter each subscriber on a new line.',
         ],
         'edit' => [
             'title'   => '更新订阅者',
             'success' => '订阅者信息已更新.',
-            'failure' => 'Something went wrong editing the subscriber, please try again.',
+            'failure' => '无法编辑订阅者，请稍后再试。',
         ],
     ],
 
@@ -166,22 +167,22 @@ return [
         'description' => '团队成员可维护组件和故障信息。',
         'add'         => [
             'title'   => '添加团队成员',
-            'success' => '团队成员已添加。',
-            'failure' => 'The team member could not be added, please try again.',
+            'success' => '团队成员已添加',
+            'failure' => '无法添加团队成员，请稍后再试。',
         ],
         'edit' => [
             'title'   => '更新配置文件',
             'success' => '个人资料已更新',
-            'failure' => 'Something went wrong updating the profile, please try again.',
+            'failure' => '更新档案时发生错误，请稍后再试。',
         ],
         'delete' => [
             'success' => '团队成员已删除.',
-            'failure' => 'The team member could not be added, please try again.',
+            'failure' => '无法添加团队成员，请稍后再试。',
         ],
         'invite' => [
             'title'   => '邀请团队成员',
             'success' => '团队成员已邀请成功.',
-            'failure' => 'The invite could not be sent, please try again.',
+            'failure' => '邀请无法发送，请稍后再试。',
         ],
     ],
 

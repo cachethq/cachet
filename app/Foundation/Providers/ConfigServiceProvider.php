@@ -11,8 +11,9 @@
 
 namespace CachetHQ\Cachet\Foundation\Providers;
 
-use CachetHQ\Cachet\Config\Repository;
 use CachetHQ\Cachet\Models\Setting as SettingModel;
+use CachetHQ\Cachet\Settings\Cache;
+use CachetHQ\Cachet\Settings\Repository;
 use Exception;
 use Illuminate\Support\ServiceProvider;
 
@@ -32,15 +33,24 @@ class ConfigServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $env = $this->app->environment();
+        $repo = $this->app->make(Repository::class);
+        $cache = $this->app->make(Cache::class);
+        $loaded = $cache->load($env);
+
+        $this->app->terminating(function () use ($repo, $cache) {
+            if ($repo->stale()) {
+                $cache->clear();
+            }
+        });
+
         try {
-            // Get the default settings.
-            $defaultSettings = $this->app->config->get('setting');
+            if ($loaded === false) {
+                $loaded = $repo->all();
+                $cache->store($env, $loaded);
+            }
 
-            // Get the configured settings.
-            $appSettings = $this->app->setting->all();
-
-            // Merge the settings
-            $settings = array_merge($defaultSettings, $appSettings);
+            $settings = array_merge($this->app->config->get('setting'), $loaded);
 
             $this->app->config->set('setting', $settings);
         } catch (Exception $e) {
@@ -81,10 +91,12 @@ class ConfigServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('setting', function () {
-            return new Repository(new SettingModel());
+        $this->app->singleton(Cache::class, function ($app) {
+            return new Cache($app->files, $app->bootstrapPath().'/cachet');
         });
 
-        $this->app->alias('setting', Repository::class);
+        $this->app->singleton(Repository::class, function () {
+            return new Repository(new SettingModel());
+        });
     }
 }

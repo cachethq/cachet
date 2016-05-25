@@ -142,7 +142,7 @@ return [
     // Other
     'home'            => 'Accueil',
     'description'     => 'Restez à jour avec les dernières mises à jour de :app.',
-    'powered_by'      => ':app Page de statut est propulsé par <a href="https://cachethq.io">Cachet</a>.',
+    'powered_by'      => 'Propulsé par <a href="https://cachethq.io">Cachet</a>.',
     'about_this_site' => 'À propos du site',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',

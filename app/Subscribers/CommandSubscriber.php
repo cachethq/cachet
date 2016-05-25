@@ -11,7 +11,9 @@
 
 namespace CachetHQ\Cachet\Subscribers;
 
+use CachetHQ\Cachet\Settings\Cache;
 use Carbon\Carbon;
+use Exception;
 use Illuminate\Console\Command;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Events\Dispatcher;
@@ -20,11 +22,19 @@ use Illuminate\Contracts\Events\Dispatcher;
  * This is the command subscriber class.
  *
  * @author James Brooks <james@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
  */
 class CommandSubscriber
 {
     /**
-     * The config repository.
+     * The settings cache instance.
+     *
+     * @var \CachetHQ\Cachet\Settings\Cache
+     */
+    protected $cache;
+
+    /**
+     * The config repository instance.
      *
      * @var \Illuminate\Contracts\Config\Repository
      */
@@ -33,12 +43,14 @@ class CommandSubscriber
     /**
      * Create a new command subscriber instance.
      *
+     * @param \CachetHQ\Cachet\Settings\Cache         $cache
      * @param \Illuminate\Contracts\Config\Repository $config
      *
      * @return void
      */
-    public function __construct(Repository $config)
+    public function __construct(Cache $cache, Repository $config)
     {
+        $this->cache = $cache;
         $this->config = $config;
     }
 
@@ -51,67 +63,41 @@ class CommandSubscriber
      */
     public function subscribe(Dispatcher $events)
     {
-        $events->listen('command.installing', __CLASS__.'@onInstalling', 5);
-        $events->listen('command.updating', __CLASS__.'@onUpdating', 5);
-        $events->listen('command.resetting', __CLASS__.'@onResetting', 5);
+        $events->listen('command.installing', __CLASS__.'@fire', 5);
+        $events->listen('command.updating', __CLASS__.'@fire', 5);
+        $events->listen('command.resetting', __CLASS__.'@fire', 5);
     }
 
     /**
-     * Handle a command.installing event.
+     * Clear the settings cache, and backup the databases.
      *
      * @param \Illuminate\Console\Command $command
      *
      * @return void
      */
-    public function onInstalling(Command $command)
+    public function fire(Command $command)
     {
-        $this->backupDatabases($command);
-    }
+        $command->line('Clearing settings cache...');
 
-    /**
-     * Handle a command.updating event.
-     *
-     * @param \Illuminate\Console\Command $command
-     *
-     * @return void
-     */
-    public function onUpdating(Command $command)
-    {
-        $this->backupDatabases($command);
-    }
+        $this->cache->clear();
 
-    /**
-     * Handle a command.resetting event.
-     *
-     * @param \Illuminate\Console\Command $command
-     *
-     * @return void
-     */
-    public function onResetting(Command $command)
-    {
-        $this->backupDatabases($command);
-    }
+        $command->line('Settings cache cleared!');
 
-    /**
-     * Backup the databases.
-     *
-     * @param \Illuminate\Console\Command $command
-     *
-     * @return void
-     */
-    protected function backupDatabases(Command $command)
-    {
         $command->line('Backing up database...');
 
-        $date = Carbon::now()->format('Y-m-d H.i.s');
+        try {
+            $command->call('db:backup', [
+                '--compression'     => 'gzip',
+                '--database'        => $this->config->get('database.default'),
+                '--destination'     => 'local',
+                '--destinationPath' => Carbon::now()->format('Y-m-d H.i.s'),
+                '--no-interaction'  => true,
+            ]);
+        } catch (Exception $e) {
+            $command->error($e->getMessage());
+            $command->line('Backup skipped!');
+        }
 
-        $command->call('db:backup', [
-            '--database'        => $this->config->get('database.default'),
-            '--destination'     => 'local',
-            '--destinationPath' => $date,
-            '--compression'     => 'gzip',
-        ]);
-
-        $command->line('Backup completed...');
+        $command->line('Backup completed!');
     }
 }

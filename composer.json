@@ -20,7 +20,7 @@
     ],
     "require": {
         "php": ">=5.6.4",
-        "laravel/framework": "~5.2.31",
+        "laravel/framework": "5.2.32",
         "alt-three/badger": "^3.1",
         "alt-three/bus": "^1.1",
         "alt-three/emoji": "^3.1",
@@ -30,9 +30,9 @@
         "doctrine/dbal": "^2.5",
         "fideloper/proxy": "^3.1",
         "graham-campbell/binput": "^3.4",
-        "graham-campbell/core": "^5.0",
+        "graham-campbell/core": "^5.1",
+        "graham-campbell/exceptions": "^8.5",
         "graham-campbell/markdown": "^6.1",
-        "graham-campbell/exceptions": "^8.4",
         "guzzlehttp/guzzle": "^6.2",
         "jenssegers/date": "^3.2",
         "mccool/laravel-auto-presenter": "^4.3",
@@ -41,11 +41,11 @@
         "roumen/feed": "^2.10"
     },
     "require-dev": {
-        "alt-three/testbench": "^1.1",
-        "filp/whoops": "^2.0",
-        "fzaninotto/faker": "^1.5",
+        "alt-three/testbench": "^1.4",
+        "filp/whoops": "^2.1",
+        "fzaninotto/faker": "^1.6",
         "graham-campbell/testbench-core": "^1.1",
-        "mockery/mockery": "^0.9.4",
+        "mockery/mockery": "0.9.5",
         "phpunit/phpunit": "^5.2",
         "symfony/css-selector": "^3.0",
         "symfony/dom-crawler": "^3.0"
