@@ -15,7 +15,6 @@ use AltThree\Validator\ValidatingTrait;
 use CachetHQ\Cachet\Models\Traits\SearchableTrait;
 use CachetHQ\Cachet\Models\Traits\SortableTrait;
 use CachetHQ\Cachet\Presenters\IncidentPresenter;
-use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use McCool\LaravelAutoPresenter\HasPresenter;
@@ -67,9 +66,8 @@ class Incident extends Model implements HasPresenter
      * @var string[]
      */
     protected $casts = [
-        'visible'      => 'int',
-        'scheduled_at' => 'date',
-        'deleted_at'   => 'date',
+        'visible'    => 'int',
+        'deleted_at' => 'date',
     ];
 
     /**
@@ -83,7 +81,6 @@ class Incident extends Model implements HasPresenter
         'status',
         'visible',
         'message',
-        'scheduled_at',
         'created_at',
         'updated_at',
     ];
