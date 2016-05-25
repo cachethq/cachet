@@ -37,11 +37,13 @@ class Kernel extends HttpKernel
             'Illuminate\Session\Middleware\StartSession',
             'Illuminate\View\Middleware\ShareErrorsFromSession',
             'Illuminate\Foundation\Http\Middleware\VerifyCsrfToken',
+            'Illuminate\Routing\Middleware\SubstituteBindings',
         ],
         'api' => [
             'Barryvdh\Cors\HandleCors',
             'CachetHQ\Cachet\Http\Middleware\Acceptable',
             'CachetHQ\Cachet\Http\Middleware\Timezone',
+            'Illuminate\Routing\Middleware\SubstituteBindings',
         ],
     ];
 
