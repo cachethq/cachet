@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "700a13936736919be29f275c4a4c3bfd",
-    "content-hash": "bae9e99b0618b1b3b81a3130e1f39405",
+    "hash": "31e4d998c0fc1d3912448d193e2c3028",
+    "content-hash": "ccb2d5af2123e0aeb8a04e632d988a27",
     "packages": [
         {
             "name": "alt-three/badger",
@@ -1204,16 +1204,16 @@
         },
         {
             "name": "graham-campbell/core",
-            "version": "v5.0.0",
+            "version": "v5.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Core.git",
-                "reference": "34eb202940708c78ba1f532a2d1930118d2e6e4c"
+                "reference": "9ca45b4d0f9bde7084ffac6ca3337af153340790"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Core/zipball/34eb202940708c78ba1f532a2d1930118d2e6e4c",
-                "reference": "34eb202940708c78ba1f532a2d1930118d2e6e4c",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Core/zipball/9ca45b4d0f9bde7084ffac6ca3337af153340790",
+                "reference": "9ca45b4d0f9bde7084ffac6ca3337af153340790",
                 "shasum": ""
             },
             "require": {
@@ -1230,7 +1230,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "5.0-dev"
+                    "dev-master": "5.1-dev"
                 }
             },
             "autoload": {
@@ -1260,7 +1260,7 @@
                 "laravel",
                 "starter"
             ],
-            "time": "2016-05-20 15:25:14"
+            "time": "2016-05-25 09:22:06"
         },
         {
             "name": "graham-campbell/exceptions",
@@ -1954,16 +1954,16 @@
         },
         {
             "name": "league/commonmark",
-            "version": "0.13.2",
+            "version": "0.13.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/commonmark.git",
-                "reference": "35ac362082ca983a8123df2ee2cdfcf456ab6295"
+                "reference": "35816f39eb2498484fbb7b1495633a976ee1a8de"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/35ac362082ca983a8123df2ee2cdfcf456ab6295",
-                "reference": "35ac362082ca983a8123df2ee2cdfcf456ab6295",
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/35816f39eb2498484fbb7b1495633a976ee1a8de",
+                "reference": "35816f39eb2498484fbb7b1495633a976ee1a8de",
                 "shasum": ""
             },
             "require": {
@@ -1974,6 +1974,7 @@
                 "colinodell/commonmark-php": "*"
             },
             "require-dev": {
+                "cebe/markdown": "~1.0",
                 "erusev/parsedown": "~1.0",
                 "jgm/commonmark": "0.25",
                 "michelf/php-markdown": "~1.4",
@@ -2018,7 +2019,7 @@
                 "markdown",
                 "parser"
             ],
-            "time": "2016-03-27 19:10:13"
+            "time": "2016-05-21 18:41:30"
         },
         {
             "name": "league/flysystem",
@@ -2712,16 +2713,16 @@
         },
         {
             "name": "roumen/feed",
-            "version": "v2.10.1",
+            "version": "v2.10.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RoumenDamianoff/laravel-feed.git",
-                "reference": "4c7a0e3b0f1b252e96c617bfc27a138809f8fbb3"
+                "reference": "04bad00c402db03a59ef5de4531d2521120fa1ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RoumenDamianoff/laravel-feed/zipball/4c7a0e3b0f1b252e96c617bfc27a138809f8fbb3",
-                "reference": "4c7a0e3b0f1b252e96c617bfc27a138809f8fbb3",
+                "url": "https://api.github.com/repos/RoumenDamianoff/laravel-feed/zipball/04bad00c402db03a59ef5de4531d2521120fa1ac",
+                "reference": "04bad00c402db03a59ef5de4531d2521120fa1ac",
                 "shasum": ""
             },
             "require": {
@@ -2759,7 +2760,7 @@
                 "laravel",
                 "rss"
             ],
-            "time": "2016-02-07 13:47:41"
+            "time": "2016-05-23 13:10:24"
         },
         {
             "name": "simplesoftwareio/simple-qrcode",
@@ -4087,16 +4088,16 @@
         },
         {
             "name": "mockery/mockery",
-            "version": "0.9.4",
+            "version": "0.9.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/padraic/mockery.git",
-                "reference": "70bba85e4aabc9449626651f48b9018ede04f86b"
+                "reference": "4db079511a283e5aba1b3c2fb19037c645e70fc2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/padraic/mockery/zipball/70bba85e4aabc9449626651f48b9018ede04f86b",
-                "reference": "70bba85e4aabc9449626651f48b9018ede04f86b",
+                "url": "https://api.github.com/repos/padraic/mockery/zipball/4db079511a283e5aba1b3c2fb19037c645e70fc2",
+                "reference": "4db079511a283e5aba1b3c2fb19037c645e70fc2",
                 "shasum": ""
             },
             "require": {
@@ -4148,7 +4149,7 @@
                 "test double",
                 "testing"
             ],
-            "time": "2015-04-02 19:54:00"
+            "time": "2016-05-22 21:52:33"
         },
         {
             "name": "phpdocumentor/reflection-docblock",
