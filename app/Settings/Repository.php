@@ -91,6 +91,18 @@ class Repository
     }
 
     /**
+     * Clear all settings.
+     *
+     * @return void
+     */
+    public function clear()
+    {
+        $this->stale = true;
+
+        $this->model->query()->delete();
+    }
+
+    /**
      * Is the config state stale?
      *
      * @return bool
