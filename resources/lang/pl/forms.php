@@ -106,7 +106,7 @@ return [
             'about-this-page'        => 'Über diese Seite',
             'days-of-incidents'      => 'Wie viele Tage mit Vorfällen sollen gezeigt werden?',
             'banner'                 => 'Banner',
-            'banner-help'            => "Es wird empfohlen, dass Sie keine Dateien die breiter als 930 Pixel sind hochladen .",
+            'banner-help'            => 'Es wird empfohlen, dass Sie keine Dateien die breiter als 930 Pixel sind hochladen .',
             'subscribers'            => 'Personen die Anmeldung für E-Mail-Benachrichtigung erlauben?',
             'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
         ],
