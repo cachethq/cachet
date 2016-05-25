@@ -80,7 +80,7 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->singleton(Release::class, function ($app) {
             $cache = $app['cache.store'];
-            $token = $app['config']->get('services.github.token')
+            $token = $app['config']->get('services.github.token');
 
             return new Release($cache, $token);
         });
