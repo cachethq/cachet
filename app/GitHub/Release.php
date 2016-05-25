@@ -13,7 +13,6 @@ namespace CachetHQ\Cachet\GitHub;
 
 use GuzzleHttp\Client;
 use Illuminate\Contracts\Cache\Repository as CacheRepository;
-use Illuminate\Contracts\Config\Repository as ConfigRepository;
 
 class Release
 {
