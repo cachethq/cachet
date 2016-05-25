@@ -12,6 +12,7 @@
 namespace CachetHQ\Cachet\Foundation\Providers;
 
 use CachetHQ\Cachet\Models\Setting as SettingModel;
+use CachetHQ\Cachet\Settings\Cache;
 use CachetHQ\Cachet\Settings\Repository;
 use Exception;
 use Illuminate\Support\ServiceProvider;
@@ -32,17 +33,14 @@ class ConfigServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $path = $this->app->bootstrapPath().'/cache/cachet.'.$this->app->environment().'.php';
+        $env = $this->app->environment();
+        $repo = $app->make(Repository::class);
+        $cache = $app->make(Cache::class);
+        $loaded = $cache->load();
 
-        try {
-            $cache = $this->app->files->getRequire($path);
-        } catch (Exception $e) {
-            $cache = false;
-        }
-
-        $this->app->terminating(function () use ($cache, $path) {
-            if ($this->app->setting->stale() || $cache === false) {
-                $this->app->files->put($path, '<?php return '.var_export($this->app->setting->all(), true).';'.PHP_EOL);
+        $this->app->terminating(function () use ($env, $repo, $cache, $loaded) {
+            if ($repo->stale() || $loaded === false) {
+                $cache->store($env, $repo->all());
             }
         });
 
@@ -51,7 +49,7 @@ class ConfigServiceProvider extends ServiceProvider
             $defaultSettings = $this->app->config->get('setting');
 
             // Get the configured settings.
-            $appSettings = $cache === false ? $this->app->setting->all() : $cache;
+            $appSettings = $loaded === false ? $repo->all() : $loaded;
 
             // Merge the settings
             $settings = array_merge($defaultSettings, $appSettings);
@@ -95,10 +93,12 @@ class ConfigServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('setting', function () {
-            return new Repository(new SettingModel());
+        $this->app->singleton(Cache::class, function ($app) {
+            return new Cache($app->filesystem, $app->bootstrapPath().'/cachet');
         });
 
-        $this->app->alias('setting', Repository::class);
+        $this->app->singleton(Repository::class, function () {
+            return new Repository(new SettingModel());
+        });
     }
 }
