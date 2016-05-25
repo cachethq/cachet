@@ -34,9 +34,9 @@ class ConfigServiceProvider extends ServiceProvider
     public function boot()
     {
         $env = $this->app->environment();
-        $repo = $app->make(Repository::class);
-        $cache = $app->make(Cache::class);
-        $loaded = $cache->load();
+        $repo = $this->app->make(Repository::class);
+        $cache = $this->app->make(Cache::class);
+        $loaded = $cache->load($env);
 
         $this->app->terminating(function () use ($env, $repo, $cache, $loaded) {
             if ($repo->stale() || $loaded === false) {
@@ -94,7 +94,7 @@ class ConfigServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton(Cache::class, function ($app) {
-            return new Cache($app->filesystem, $app->bootstrapPath().'/cachet');
+            return new Cache($app->files, $app->bootstrapPath().'/cachet');
         });
 
         $this->app->singleton(Repository::class, function () {

@@ -11,8 +11,15 @@
 
 namespace CachetHQ\Cachet\Settings;
 
+use Exception;
 use Illuminate\Filesystem\Filesystem;
 
+/**
+ * This is the Cache class.
+ *
+ * @author Graham Campbell <graham@alt-three.com>
+ * @author James Brooks <james@alt-three.com>
+ */
 class Cache
 {
     /**
