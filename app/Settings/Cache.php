@@ -15,7 +15,7 @@ use Exception;
 use Illuminate\Filesystem\Filesystem;
 
 /**
- * This is the Cache class.
+ * This is the settings cache class.
  *
  * @author Graham Campbell <graham@alt-three.com>
  * @author James Brooks <james@alt-three.com>

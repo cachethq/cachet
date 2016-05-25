@@ -13,6 +13,12 @@ namespace CachetHQ\Cachet\Settings;
 
 use CachetHQ\Cachet\Models\Setting;
 
+/**
+ * This is the settings repository class.
+ *
+ * @author Graham Campbell <graham@alt-three.com>
+ * @author James Brooks <james@alt-three.com>
+ */
 class Repository
 {
     /**
