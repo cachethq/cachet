@@ -64,7 +64,7 @@ class SubscribeController extends Controller
         } catch (ValidationException $e) {
             return Redirect::route('status-page')
                 ->withInput(Binput::all())
-                ->withTitle(sprintf('<strong>%s</strong> %s', trans('dashboard.notifications.whoops'), trans('cachet.subscriber.email.failure')))
+                ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('cachet.subscriber.email.failure')))
                 ->withErrors($e->getMessageBag());
         }
 
@@ -73,7 +73,7 @@ class SubscribeController extends Controller
             trans('cachet.subscriber.email.subscribed');
 
         return Redirect::route('subscribe.manage', $subscription->verify_code)
-            ->withSuccess(sprintf('<strong>%s</strong> %s', trans('dashboard.notifications.awesome'), $message));
+            ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), $message));
     }
 
     /**
@@ -100,7 +100,7 @@ class SubscribeController extends Controller
         }
 
         return Redirect::route('status-page')
-            ->withSuccess(sprintf('<strong>%s</strong> %s', trans('dashboard.notifications.awesome'), trans('cachet.subscriber.email.verified')));
+            ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('cachet.subscriber.email.verified')));
     }
 
     /**
@@ -130,7 +130,7 @@ class SubscribeController extends Controller
         }
 
         return Redirect::route('status-page')
-            ->withSuccess(sprintf('<strong>%s</strong> %s', trans('dashboard.notifications.awesome'), trans('cachet.subscriber.email.unsubscribed')));
+            ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('cachet.subscriber.email.unsubscribed')));
     }
 
     /**
@@ -184,11 +184,11 @@ class SubscribeController extends Controller
 
             return Redirect::route('subscribe.manage', $subscriber->verify_code)
                 ->withInput(Binput::all())
-                ->withTitle(sprintf('<strong>%s</strong> %s', trans('dashboard.notifications.whoops'), trans('cachet.subscriber.email.failure')))
+                ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('cachet.subscriber.email.failure')))
                 ->withErrors($e->getMessageBag());
         }
 
         return Redirect::route('subscribe.manage', $subscriber->verify_code)
-            ->withSuccess(sprintf('<strong>%s</strong> %s', trans('dashboard.notifications.awesome'), trans('cachet.subscriber.email.subscribed')));
+            ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('cachet.subscriber.email.subscribed')));
     }
 }
