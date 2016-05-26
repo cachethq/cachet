@@ -89,8 +89,7 @@ class ReportIncidentCommandHandler
             $data['updated_at'] = $incidentDate;
         }
 
-        $data['email_subject'] = $command->email_subject;
-        
+        $data['email_subject'] = $command->email_subject;        
         // Create the incident
         $incident = Incident::create($data);
 

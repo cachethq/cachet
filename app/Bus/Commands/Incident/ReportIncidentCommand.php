@@ -70,7 +70,7 @@ final class ReportIncidentCommand
     public $incident_date;
 
     /**
-     * The subject line for the email
+     * The subject line for the email.
      *
      * @var string
      */
