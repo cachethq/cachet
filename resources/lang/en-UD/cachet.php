@@ -141,7 +141,7 @@ return [
     // Other
     'home'            => 'crwdns722:0crwdne722:0',
     'description'     => 'crwdns663:0crwdne663:0',
-    'powered_by'      => 'crwdns562:0crwdne562:0',
+    'powered_by'      => 'crwdns723:0crwdne723:0',
     'about_this_site' => 'crwdns563:0crwdne563:0',
     'rss-feed'        => 'crwdns506:0crwdne506:0',
     'atom-feed'       => 'crwdns507:0crwdne507:0',

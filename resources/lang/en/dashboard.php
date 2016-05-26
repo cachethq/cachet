@@ -150,6 +150,7 @@ return [
             'title'   => 'Add a new subscriber',
             'success' => 'Subscriber has been added!',
             'failure' => 'Something went wrong adding the subscriber, please try again.',
+            'help'    => 'Enter each subscriber on a new line.',
         ],
         'edit' => [
             'title'   => 'Update subscriber',
@@ -242,7 +243,7 @@ return [
 
     // Welcome modal
     'welcome' => [
-        'welcome' => 'Welcome to your status page!',
+        'welcome' => 'Welcome to your new status page!',
         'message' => 'Your status page is almost ready! You might want to configure these extra settings',
         'close'   => 'Take me straight to my dashboard',
         'steps'   => [

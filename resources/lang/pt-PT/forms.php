@@ -89,6 +89,7 @@ return [
         'type_avg'         => 'Média',
         'places'           => 'Casas Decimais',
         'default_view'     => 'Vista por defeito',
+        'threshold'        => 'How many minutes of threshold between metric points?',
 
         'points' => [
             'value' => 'Valor',
@@ -107,6 +108,7 @@ return [
             'banner'                 => 'Banner Image',
             'banner-help'            => 'É recomendável que você faça upload de arquivos menores que 930px .',
             'subscribers'            => 'Permitir que as pessoas subscrevam as notificações?',
+            'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
         ],
         'analytics' => [
             'analytics_google'       => 'Código do Google Analytics',

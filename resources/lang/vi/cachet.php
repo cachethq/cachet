@@ -12,7 +12,7 @@
 return [
     // Components
     'components' => [
-        'last_updated' => 'Last updated :timestamp',
+        'last_updated' => 'Lần cập nhật cuối :timestamp',
         'status'       => [
             1 => 'Hoạt động',
             2 => 'Vấn đề hiệu suất',
@@ -20,13 +20,13 @@ return [
             4 => 'Ngừng hoạt động toàn bộ',
         ],
         'group' => [
-            'other' => 'Other Components',
+            'other' => 'Các thành phần khác',
         ],
     ],
 
     // Incidents
     'incidents' => [
-        'none'          => 'No incidents reported',
+        'none'          => 'Không có báo cáo về sự số nào',
         'past'          => 'Sự số trong quá khứ',
         'previous_week' => 'Tuần trước',
         'next_week'     => 'Tuần sau',
@@ -141,7 +141,7 @@ return [
     // Other
     'home'            => 'Home',
     'description'     => 'Stay up to date with the latest service updates from :app.',
-    'powered_by'      => ':app Status Page is powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
+    'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
     'about_this_site' => 'Về trang web này',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',

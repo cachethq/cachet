@@ -150,6 +150,7 @@ return [
             'title'   => '구독자 추가',
             'success' => '구독자가 추가됨.',
             'failure' => 'Something went wrong adding the subscriber, please try again.',
+            'help'    => 'Enter each subscriber on a new line.',
         ],
         'edit' => [
             'title'   => '구독자 업데이트',

@@ -27,7 +27,7 @@ return [
 
     // Login form fields
     'login' => [
-        'login'         => 'Username or Email',
+        'login'         => 'Tên đăng nhập hoặc Email',
         'email'         => 'Email',
         'password'      => 'Mật khẩu',
         '2fauth'        => 'Mã số xác thực',
@@ -89,6 +89,7 @@ return [
         'type_avg'         => 'Trung bình',
         'places'           => 'Chữ số thập phân',
         'default_view'     => 'Default view',
+        'threshold'        => 'How many minutes of threshold between metric points?',
 
         'points' => [
             'value' => 'Giá trị',
@@ -107,6 +108,7 @@ return [
             'banner'                 => 'Banner Image',
             'banner-help'            => 'Bạn nên upload ảnh có chiều rộng lớn hơn 930px',
             'subscribers'            => 'Allow people to signup to email notifications?',
+            'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
         ],
         'analytics' => [
             'analytics_google'       => 'Mã Google Analytics',

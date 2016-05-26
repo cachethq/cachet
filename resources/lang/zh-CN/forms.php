@@ -69,10 +69,10 @@ return [
 
         'groups' => [
             'name'               => '组名',
-            'collapsing'         => 'Choose visibility of the group',
+            'collapsing'         => '选择分组可见',
             'visible'            => '总是展开',
             'collapsed'          => '默认折叠',
-            'collapsed_incident' => 'Collapse the group, but expand if there are issues',
+            'collapsed_incident' => '折叠分组，但当有故障时展开',
         ],
     ],
 
@@ -89,6 +89,7 @@ return [
         'type_avg'         => 'Average',
         'places'           => '小数点位数',
         'default_view'     => '默认视图',
+        'threshold'        => 'How many minutes of threshold between metric points?',
 
         'points' => [
             'value' => 'Value',
@@ -107,6 +108,7 @@ return [
             'banner'                 => '横幅图像',
             'banner-help'            => "It's recommended that you upload files no bigger than 930px wide .",
             'subscribers'            => 'Allow people to signup to email notifications?',
+            'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
         ],
         'analytics' => [
             'analytics_google'       => 'Google Analytics 代码',
@@ -125,10 +127,10 @@ return [
             'allowed-domains-help' => 'Comma separated. The domain set above is automatically allowed by default.',
         ],
         'stylesheet' => [
-            'custom-css' => '自定义样式表',
+            'custom-css' => '自定义 CSS 样式表',
         ],
         'theme' => [
-            'background-color'        => 'Background Color',
+            'background-color'        => '背景色',
             'background-fills'        => '区块填充色(组件, 故障, 页尾)',
             'banner-background-color' => '横幅背景色',
             'banner-padding'          => '横幅Padding值',

@@ -25,7 +25,7 @@ return [
     'accepted'   => 'The :attribute must be accepted.',
     'active_url' => ':attribute ei ole oikea URL-osoite.',
     'after'      => 'The :attribute must be a date after :date.',
-    'alpha'      => 'The :attribute may only contain letters.',
+    'alpha'      => ':attribute voi sisältää vain kirjaimia.',
     'alpha_dash' => 'The :attribute may only contain letters, numbers, and dashes.',
     'alpha_num'  => 'The :attribute may only contain letters and numbers.',
     'array'      => 'The :attribute must be an array.',
@@ -99,7 +99,7 @@ return [
 
     'custom' => [
         'attribute-name' => [
-            'rule-name' => 'custom-message',
+            'rule-name' => 'mukautettu viesti',
         ],
     ],
 

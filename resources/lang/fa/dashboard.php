@@ -58,7 +58,7 @@ return [
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => 'Scheduled Maintenance',
+        'schedule'     => 'تعمیرات زمان‌بندی شده',
         'logged'       => '{0} There are no schedules, good work.|You have logged one schedule.|You have reported <strong>:count</strong> schedules.',
         'scheduled_at' => 'Scheduled at :timestamp',
         'add'          => [
@@ -150,6 +150,7 @@ return [
             'title'   => 'Add a new subscriber',
             'success' => 'Subscriber has been added!',
             'failure' => 'Something went wrong adding the subscriber, please try again.',
+            'help'    => 'Enter each subscriber on a new line.',
         ],
         'edit' => [
             'title'   => 'Update subscriber',

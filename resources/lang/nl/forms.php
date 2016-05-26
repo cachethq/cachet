@@ -89,6 +89,7 @@ return [
         'type_avg'         => 'Gemiddelde',
         'places'           => 'Decimalen',
         'default_view'     => 'Standaardweergave',
+        'threshold'        => 'How many minutes of threshold between metric points?',
 
         'points' => [
             'value' => 'Waarde',
@@ -107,6 +108,7 @@ return [
             'banner'                 => 'Banner afbeelding',
             'banner-help'            => 'Het wordt aanbevolen dat u geen bestanden upload die breeder zijn dan 930px.',
             'subscribers'            => 'Bezoekers toestaan om te abonneren op e-mail notificaties?',
+            'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
         ],
         'analytics' => [
             'analytics_google'       => 'Google Analytics-code',

@@ -150,6 +150,7 @@ return [
             'title'   => 'Ajouter un abonné',
             'success' => 'L\'abonné a été ajouté !',
             'failure' => 'Une erreur s\'est produite lors de l\'ajout de l\'abonné. Veuillez réessayer.',
+            'help'    => 'Enter each subscriber on a new line.',
         ],
         'edit' => [
             'title'   => 'Mettre à jour l\'abonné',

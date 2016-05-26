@@ -150,6 +150,7 @@ return [
             'title'   => 'Voeg een nieuwe abonnee toe',
             'success' => 'Abonnee is toegevoegd!',
             'failure' => 'Er ging iets mis met het toevoegen van de abonnee, probeer het opnieuw.',
+            'help'    => 'Enter each subscriber on a new line.',
         ],
         'edit' => [
             'title'   => 'Abonnee bijwerken',

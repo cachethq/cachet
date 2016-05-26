@@ -20,4 +20,27 @@ return [
     */
 
     'dashboard_login_link' => true,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Enable subscribers
+    |--------------------------------------------------------------------------
+    |
+    | Whether to allow people to subscribe to the status page.
+    |
+    */
+
+    'enable_subscribers' => true,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Automatic Localization
+    |--------------------------------------------------------------------------
+    |
+    | Whether to automatically localize the status to the visitors default
+    | browser language settings.
+    |
+    */
+
+   'automatic_localization' => false,
 ];

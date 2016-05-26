@@ -141,7 +141,7 @@ return [
     // Other
     'home'            => 'Главный экран',
     'description'     => 'Будьте в курсе последних новостей о состоянии сервиса от :app.',
-    'powered_by'      => 'Статусная страница «:app» работает на <a href="https://cachethq.io" class="links">Cachet</a>.',
+    'powered_by'      => 'Работает на <a href="https://cachethq.io" class="links">Cachet</a>.',
     'about_this_site' => 'Об этом сайте',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',

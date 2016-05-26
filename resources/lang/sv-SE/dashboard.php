@@ -150,6 +150,7 @@ return [
             'title'   => 'Lägg till en prenumerant',
             'success' => 'Prenumerant tillagd!',
             'failure' => 'Something went wrong adding the subscriber, please try again.',
+            'help'    => 'Enter each subscriber on a new line.',
         ],
         'edit' => [
             'title'   => 'Uppdatera prenumerant',

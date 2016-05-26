@@ -89,6 +89,7 @@ return [
         'type_avg'         => 'Среднее значение',
         'places'           => 'Количество цифр после точки',
         'default_view'     => 'Представление по умолчанию',
+        'threshold'        => 'How many minutes of threshold between metric points?',
 
         'points' => [
             'value' => 'Значение',
@@ -107,6 +108,7 @@ return [
             'banner'                 => 'Картинка-баннер',
             'banner-help'            => 'Рекомендуется загружать картинки не больше 930 пикс. в ширину.',
             'subscribers'            => 'Разрешить посетителям подписываться на email-уведомления?',
+            'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
         ],
         'analytics' => [
             'analytics_google'       => 'Код Google Analytics',
