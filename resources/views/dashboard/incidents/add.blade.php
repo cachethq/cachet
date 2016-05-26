@@ -115,6 +115,10 @@
                                 {{ trans('forms.incidents.notify_subscribers') }}
                             </label>
                         </div>
+			<div class="form-group">
+			    <label>{{ trans('forms.incidents.email_subject') }}</label>
+			    <input type="text" name="email_subject" class="form-control" value="New incident reported.">
+			</div>
                         @endif
                     </fieldset>
 

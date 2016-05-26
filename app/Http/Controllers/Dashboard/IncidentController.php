@@ -116,6 +116,7 @@ class IncidentController extends Controller
                 Binput::get('component_status'),
                 Binput::get('notify', false),
                 Binput::get('created_at'),
+                Binput::get('email_subject'),
                 null,
                 null
             ));

@@ -70,6 +70,13 @@ final class ReportIncidentCommand
     public $incident_date;
 
     /**
+     * The subject line for the email
+     *
+     * @var string
+     */
+    public $email_subject;
+
+    /**
      * A given incident template.
      *
      * @var string|null
@@ -97,6 +104,7 @@ final class ReportIncidentCommand
         'component_status' => 'int|min:1|max:4|required_with:component_id',
         'notify'           => 'bool',
         'incident_date'    => 'string',
+        'email_subject'    => 'string',
         'template'         => 'string',
     ];
 
@@ -111,12 +119,13 @@ final class ReportIncidentCommand
      * @param int         $component_status
      * @param bool        $notify
      * @param string|null $incident_date
+     * @param string      $email_subject
      * @param string|null $template
      * @param array|null  $template_vars
      *
      * @return void
      */
-    public function __construct($name, $status, $message, $visible, $component_id, $component_status, $notify, $incident_date, $template, array $template_vars = null)
+    public function __construct($name, $status, $message, $visible, $component_id, $component_status, $notify, $incident_date, $email_subject, $template, array $template_vars = null)
     {
         $this->name = $name;
         $this->status = $status;
@@ -126,6 +135,7 @@ final class ReportIncidentCommand
         $this->component_status = $component_status;
         $this->notify = $notify;
         $this->incident_date = $incident_date;
+        $this->email_subject = $email_subject;
         $this->template = $template;
         $this->template_vars = $template_vars;
     }
