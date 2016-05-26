@@ -61,7 +61,7 @@ class ConfigServiceProvider extends ServiceProvider
             $this->app->config->set('app.url', $appDomain);
         }
 
-        if ($appLocale = $this->app->config->get('setting.app.locale')) {
+        if ($appLocale = $this->app->config->get('setting.app_locale')) {
             $this->app->config->set('app.locale', $appLocale);
             $this->app->translator->setLocale($appLocale);
         }
