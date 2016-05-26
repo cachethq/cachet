@@ -89,7 +89,7 @@ class SubscribeController extends Controller
             throw new NotFoundHttpException();
         }
 
-        $subscriber = Subscriber::where('verify_code', '=', $code)->first();
+        $subscriber = Subscriber::where('verify_code', $code)->first();
 
         if (!$subscriber) {
             throw new BadRequestHttpException();
