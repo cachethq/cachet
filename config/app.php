@@ -164,6 +164,7 @@ return [
         'AltThree\Emoji\EmojiServiceProvider',
         'BackupManager\Laravel\Laravel5ServiceProvider',
         'Barryvdh\Cors\ServiceProvider',
+        'Fedeisas\LaravelMailCssInliner\LaravelMailCssInlinerServiceProvider',
         'Fideloper\Proxy\TrustedProxyServiceProvider',
         'GrahamCampbell\Binput\BinputServiceProvider',
         'GrahamCampbell\Exceptions\ExceptionsServiceProvider',
