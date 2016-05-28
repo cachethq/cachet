@@ -43,6 +43,13 @@ final class ReportIncidentUpdateCommand
     public $message;
 
     /**
+     * Notify Subscribers for this update?
+     *
+     * @var bool
+     */
+    public $notify;
+
+    /**
      * The user.
      *
      * @var \CachetHQ\Cachet\Models\User
@@ -67,15 +74,17 @@ final class ReportIncidentUpdateCommand
      * @param \CachetHQ\Cachet\Models\Incident $incident
      * @param string                           $status
      * @param string                           $message
+     * @param bool                             $notify
      * @param \CachetHQ\Cachet\Models\User     $user
      *
      * @return void
      */
-    public function __construct(Incident $incident, $status, $message, User $user)
+    public function __construct(Incident $incident, $status, $message, $notify, User $user)
     {
         $this->incident = $incident;
         $this->status = $status;
         $this->message = $message;
+        $this->notify = $notify;
         $this->user = $user;
     }
 }
