@@ -41,6 +41,21 @@ class SetupController extends Controller
         'memcached' => 'Memcached',
         'redis'     => 'Redis',
     ];
+    /**
+     * Array of cache drivers.
+     *
+     * @var string[]
+     */
+    protected $mailDrivers = [
+        'log'       => 'Log (Testing)',
+        'smtp'      => 'SMTP',
+        'mail'      => 'Mail',
+        'sendmail'  => 'Sendmail',
+        'mailgun'   => 'Mailgun',
+        'mandrill'  => 'Mandrill',
+        'ses'       => 'Amazon SES',
+        'sparkpost' => 'SparkPost',
+    ];
 
     /**
      * Array of step1 rules.
@@ -112,6 +127,7 @@ class SetupController extends Controller
         return View::make('setup')
             ->withPageTitle(trans('setup.setup'))
             ->withCacheDrivers($this->cacheDrivers)
+            ->withMailDrivers($this->mailDrivers)
             ->withUserLanguage($userLanguage)
             ->withAppUrl(Request::root());
     }

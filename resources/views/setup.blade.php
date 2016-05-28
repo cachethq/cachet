@@ -56,6 +56,18 @@
                         <span class="text-danger">{{ $errors->first('env.session_driver') }}</span>
                         @endif
                     </div>
+                    <div class="form-group">
+                        <label>{{ trans('forms.setup.mail_driver') }}</label>
+                        <select name="env[mail_driver]" class="form-control" required>
+                            <option disabled>{{ trans('forms.setup.mail_driver') }}</option>
+                            @foreach($mail_drivers as $driver => $driverName)
+                            <option value="{{ $driver }}" {{ Binput::old('env.mail_driver') == $driver ? "selected" : null }}>{{ $driverName }}</option>
+                            @endforeach
+                        </select>
+                        @if($errors->has('env.mail_driver'))
+                        <span class="text-danger">{{ $errors->first('env.mail_driver') }}</span>
+                        @endif
+                    </div>
                 </fieldset>
                 <hr>
                 <div class="form-group text-center">
