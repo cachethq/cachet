@@ -104,7 +104,7 @@ class SendIncidentUpdateEmailNotificationHandler
     {
         $update = AutoPresenter::decorate($event->update);
         $incident = AutoPresenter::decorate($event->update->incident());
-        $component = AutoPresenter::decorate($event->incident->component);
+        $component = AutoPresenter::decorate($incident->component);
 
         $mail = [
             'email'            => $subscriber->email,
