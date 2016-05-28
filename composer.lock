@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "20e1a31cd1a88b67ac946fb3c3453a11",
-    "content-hash": "ed5e328f5b020fdc07ee9bfb3c639d81",
+    "hash": "d58416fb0d16c8b7fc9b936b6f642c39",
+    "content-hash": "226b91629f9aa94bb32446a4e963600c",
     "packages": [
         {
             "name": "alt-three/badger",
@@ -200,6 +200,68 @@
                 "parser"
             ],
             "time": "2016-04-22 17:24:35"
+        },
+        {
+            "name": "alt-three/throttle",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AltThree/Throttle.git",
+                "reference": "55738ea2e3900e9ba785aa8495c4a82cbb7eb998"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/AltThree/Throttle/zipball/55738ea2e3900e9ba785aa8495c4a82cbb7eb998",
+                "reference": "55738ea2e3900e9ba785aa8495c4a82cbb7eb998",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/cache": "5.2.*|5.3.*",
+                "illuminate/http": "5.2.*|5.3.*",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "graham-campbell/testbench": "^3.1",
+                "phpunit/phpunit": "^4.8|^5.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "AltThree\\Throttle\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "James Brooks",
+                    "email": "james@alt-three.com"
+                },
+                {
+                    "name": "Graham Campbell",
+                    "email": "graham@alt-three.com"
+                },
+                {
+                    "name": "Joseph Cohen",
+                    "email": "joe@alt-three.com"
+                }
+            ],
+            "description": "A request rate limiter for Laravel 5.2+",
+            "keywords": [
+                "Alt Three",
+                "http",
+                "rate limit",
+                "rate limiter",
+                "throttle"
+            ],
+            "time": "2016-05-28 14:23:19"
         },
         {
             "name": "alt-three/validator",
