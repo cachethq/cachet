@@ -32,7 +32,9 @@
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                             @if(Session::has('error'))
-                            <p>{{ Session::get('error') }}</p>
+                            <div class="alert alert-danger">
+                                <p>{{ Session::get('error') }}</p>
+                            </div>
                             @endif
 
                             <div class="form-group">
