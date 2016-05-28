@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9d38d3ba627f866fa276370913d9bf70",
-    "content-hash": "b75a2ca8a01159ff0a136823a7f26e88",
+    "hash": "4eca6e0ef520b03be087f81eaea53c7e",
+    "content-hash": "3899101d09bf7294dbb27dd9b21b8e8b",
     "packages": [
         {
             "name": "alt-three/badger",
@@ -203,16 +203,16 @@
         },
         {
             "name": "alt-three/throttle",
-            "version": "v1.0.2",
+            "version": "v1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/AltThree/Throttle.git",
-                "reference": "517067748a2cb63c8cd95296b9715841e250288a"
+                "reference": "15b158c232ba59f26ec149e3240c4e3e630b8570"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/AltThree/Throttle/zipball/517067748a2cb63c8cd95296b9715841e250288a",
-                "reference": "517067748a2cb63c8cd95296b9715841e250288a",
+                "url": "https://api.github.com/repos/AltThree/Throttle/zipball/15b158c232ba59f26ec149e3240c4e3e630b8570",
+                "reference": "15b158c232ba59f26ec149e3240c4e3e630b8570",
                 "shasum": ""
             },
             "require": {
@@ -261,7 +261,7 @@
                 "rate limiter",
                 "throttle"
             ],
-            "time": "2016-05-28 15:24:26"
+            "time": "2016-05-28 19:12:09"
         },
         {
             "name": "alt-three/validator",
