@@ -57,7 +57,7 @@ class SendComponentUpdateEmailNotificationHandler
      */
     public function handle(ComponentWasUpdatedEvent $event)
     {
-        $component = AutoPresenter::decorate($event->component);
+        $component = $event->component;
 
         // First notify all global subscribers.
         $globalSubscribers = $this->subscriber->isVerified()->isGlobal()->get();
@@ -92,6 +92,8 @@ class SendComponentUpdateEmailNotificationHandler
      */
     public function notify(Component $component, Subscriber $subscriber)
     {
+        $component = AutoPresenter::decorate($component);
+
         $mail = [
             'subject'                => trans('cachet.subscriber.email.component.subject'),
             'component_name'         => $component->name,
