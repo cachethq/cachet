@@ -41,6 +41,8 @@ class ReportIncidentUpdateCommandHandler
         // Create the incident update.
         $update = IncidentUpdate::create($data);
 
+        $update->notify = (bool) $command->notify;
+
         event(new IncidentUpdateWasReportedEvent($update));
 
         return $update;

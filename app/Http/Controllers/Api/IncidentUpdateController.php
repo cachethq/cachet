@@ -78,6 +78,7 @@ class IncidentUpdateController extends AbstractApiController
                 $incident,
                 Binput::get('status'),
                 Binput::get('message'),
+                Binput::get('notify', true),
                 Auth::user()
             ));
         } catch (QueryException $e) {
