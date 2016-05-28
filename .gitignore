@@ -4,3 +4,4 @@ phpunit.xml
 vendor
 .idea
 *.phar
+composer.lock
