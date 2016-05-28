@@ -203,16 +203,16 @@
         },
         {
             "name": "alt-three/throttle",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/AltThree/Throttle.git",
-                "reference": "55738ea2e3900e9ba785aa8495c4a82cbb7eb998"
+                "reference": "c1edfbb2c869fb4ca74447f661584ef89cdc6a96"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/AltThree/Throttle/zipball/55738ea2e3900e9ba785aa8495c4a82cbb7eb998",
-                "reference": "55738ea2e3900e9ba785aa8495c4a82cbb7eb998",
+                "url": "https://api.github.com/repos/AltThree/Throttle/zipball/c1edfbb2c869fb4ca74447f661584ef89cdc6a96",
+                "reference": "c1edfbb2c869fb4ca74447f661584ef89cdc6a96",
                 "shasum": ""
             },
             "require": {
@@ -261,7 +261,7 @@
                 "rate limiter",
                 "throttle"
             ],
-            "time": "2016-05-28 14:23:19"
+            "time": "2016-05-28 15:04:52"
         },
         {
             "name": "alt-three/validator",
