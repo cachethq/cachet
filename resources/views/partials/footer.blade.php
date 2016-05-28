@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-sm-5">
                 @if($show_support)
-                <p>{!! trans('cachet.powered_by', ['app' => $app_name]) !!}</p>
+                <p>{!! trans('cachet.powered_by') !!}</p>
                 @endif
             </div>
             <div class="col-sm-7">
@@ -29,7 +29,7 @@
                     </li>
                     @if(subscribers_enabled())
                     <li>
-                        <a class="btn btn-success btn-outline" href="#" data-toggle="modal" data-target="#subscribe-modal">{{ trans('cachet.subscriber.button') }}</a>
+                        <a class="btn btn-success btn-outline" href="{{ route('subscribe.subscribe') }}">{{ trans('cachet.subscriber.button') }}</a>
                     </li>
                     @endif
                 </ul>

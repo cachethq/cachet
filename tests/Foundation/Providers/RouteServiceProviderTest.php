@@ -12,26 +12,14 @@
 namespace CachetHQ\Tests\Cachet\Foundation\Providers;
 
 use AltThree\TestBench\ServiceProviderTrait;
-use CachetHQ\Cachet\Dates\DateFactory;
-use CachetHQ\Cachet\GitHub\Release;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 
 /**
- * This is the app service provider test class.
+ * This is the route service provider test class.
  *
  * @author Graham Campbell <graham@alt-three.com>
  */
-class AppServiceProviderTest extends AbstractTestCase
+class RouteServiceProviderTest extends AbstractTestCase
 {
     use ServiceProviderTrait;
-
-    public function testDateFactoryIsInjectable()
-    {
-        $this->assertIsInjectable(DateFactory::class);
-    }
-
-    public function testReleaseIsInjectable()
-    {
-        $this->assertIsInjectable(Release::class);
-    }
 }

@@ -202,6 +202,68 @@
             "time": "2016-04-22 17:24:35"
         },
         {
+            "name": "alt-three/throttle",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AltThree/Throttle.git",
+                "reference": "517067748a2cb63c8cd95296b9715841e250288a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/AltThree/Throttle/zipball/517067748a2cb63c8cd95296b9715841e250288a",
+                "reference": "517067748a2cb63c8cd95296b9715841e250288a",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/cache": "5.2.*|5.3.*",
+                "illuminate/http": "5.2.*|5.3.*",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "graham-campbell/testbench": "^3.1",
+                "phpunit/phpunit": "^4.8|^5.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "AltThree\\Throttle\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "James Brooks",
+                    "email": "james@alt-three.com"
+                },
+                {
+                    "name": "Graham Campbell",
+                    "email": "graham@alt-three.com"
+                },
+                {
+                    "name": "Joseph Cohen",
+                    "email": "joe@alt-three.com"
+                }
+            ],
+            "description": "A request rate limiter for Laravel 5.2+",
+            "keywords": [
+                "Alt Three",
+                "http",
+                "rate limit",
+                "rate limiter",
+                "throttle"
+            ],
+            "time": "2016-05-28 15:24:26"
+        },
+        {
             "name": "alt-three/validator",
             "version": "v1.5.0",
             "source": {
