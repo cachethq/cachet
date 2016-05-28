@@ -37,7 +37,7 @@ class RepositoryServiceProvider extends ServiceProvider
      */
     protected function registerMetricRepository()
     {
-        $this->app->singleton('cachet.metricrepository', function ($app) {
+        $this->app->singleton(MetricRepository::class, function ($app) {
             $dbDriver = $app['config']->get('database.default');
 
             if ($dbDriver == 'mysql') {
@@ -52,7 +52,5 @@ class RepositoryServiceProvider extends ServiceProvider
 
             return new MetricRepository($repository, $dates);
         });
-
-        $this->app->alias('cachet.metricrepository', MetricRepository::class);
     }
 }
