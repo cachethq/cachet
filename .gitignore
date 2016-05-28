@@ -3,4 +3,4 @@ node_modules
 phpunit.xml
 vendor
 .idea
-.composer.phar
+*.phar
