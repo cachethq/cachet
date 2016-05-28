@@ -1,11 +1,19 @@
 @extends('layout.emails')
 
 @section('content')
-{!! trans('cachet.subscriber.email.incident.html-preheader', ['app_name' => $app_name]) !!}
+<h1 class="align-center">{!! $name !!}</h1>
 
-<p>{!! $status !!} @if($has_component)<strong> ({{ $component_name }})</strong>@endif</p>
-
-<p>{!! $html_content !!}</p>
+<table class="border-rounded" width="100%" cellpadding="0" cellspacing="0">
+    <tr>
+        <td>
+            <p class="compressed">
+                <strong>{!! $status !!} @if($has_component) ({{ $component_name }}) @endif</strong>
+                {!! $html_content !!}
+                {!! $timestamp !!}
+            </p>
+        </td>
+    <tr>
+</table>
 
 <table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0">
     <tr>
@@ -22,9 +30,9 @@
     </tr>
 </table>
 
-<table class="body-sub">
+<table class="body-sub" align="center">
     <tr>
-        <td>
+        <td align="center">
             <p class="sub"><a href="{{ $unsubscribe_link }}">{!! trans('cachet.subscriber.email.unsubscribe') !!}</a></p>
         </td>
     </tr>
