@@ -107,9 +107,14 @@ class SendIncidentEmailNotificationHandler
 
         $mail = [
             'email'            => $subscriber->email,
-            'subject'          => 'New incident reported.',
+            'subject'          => trans('cachet.subscriber.email.incident.subject', [
+                'status' => $incident->human_status,
+                'name'   => $incident->name,
+            ]),
             'has_component'    => ($event->incident->component) ? true : false,
             'component_name'   => $component ? $component->name : null,
+            'name'             => $incident->name,
+            'timestamp'        => $incident->created_at_formatted,
             'status'           => $incident->human_status,
             'html_content'     => $incident->formattedMessage,
             'text_content'     => $incident->message,
