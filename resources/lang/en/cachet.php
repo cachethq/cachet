@@ -86,10 +86,10 @@ return [
                 'button' => 'Confirm Subscription',
             ],
             'maintenance' => [
-                'subject' => "[Maintenance Scheduled] :name",
+                'subject' => '[Maintenance Scheduled] :name',
             ],
             'incident' => [
-                'subject' => "[New Incident] :status: :name",
+                'subject' => '[New Incident] :status: :name',
             ],
             'component' => [
                 'subject'       => 'Component Status Update',
