@@ -28,6 +28,7 @@
         "backup-manager/laravel": "^1.1",
         "barryvdh/laravel-cors": "^0.8",
         "doctrine/dbal": "^2.5",
+        "fedeisas/laravel-mail-css-inliner": "^1.5",
         "fideloper/proxy": "^3.1",
         "graham-campbell/binput": "^3.4",
         "graham-campbell/core": "^5.1",
@@ -38,8 +39,7 @@
         "mccool/laravel-auto-presenter": "^4.3",
         "pragmarx/google2fa": "^0.7.1",
         "rcrowe/twigbridge": "^0.9.2",
-        "roumen/feed": "^2.10",
-        "fedeisas/laravel-mail-css-inliner": "^1.5"
+        "roumen/feed": "^2.10"
     },
     "require-dev": {
         "alt-three/testbench": "^1.4",

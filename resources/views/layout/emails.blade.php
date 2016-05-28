@@ -53,7 +53,7 @@
             border: 0;
         }
         .email-masthead_name {
-            font-size: 16px;
+            font-size: 40px;
             font-weight: bold;
             color: #bbbfc3;
             text-decoration: none;
@@ -83,6 +83,9 @@
         .email-footer p {
             color: #AEAEAE;
         }
+        .email-footer img {
+            width: 30px;
+        }
         .body-action {
             width: 100%;
             margin: 30px auto;
@@ -97,15 +100,23 @@
         .content-cell {
             padding: 35px;
         }
+        .align-center {
+            text-align: center;
+        }
         .align-right {
             text-align: right;
+        }
+        .border-rounded {
+            border: 1px solid #EDEFF2;
+            border-radius: 3px;
+            padding: 12px;
         }
 
         /* Type ------------------------------ */
         h1 {
             margin-top: 0;
             color: #2F3133;
-            font-size: 19px;
+            font-size: 36px;
             font-weight: bold;
             text-align: left;
         }
@@ -129,6 +140,9 @@
             font-size: 16px;
             line-height: 1.5em;
             text-align: left;
+        }
+        p.compressed {
+            margin: 0;
         }
         p.sub {
             font-size: 12px;

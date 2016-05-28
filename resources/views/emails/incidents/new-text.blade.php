@@ -1,11 +1,12 @@
-{!! trans('cachet.subscriber.email.incident.text', ['app_name' => $app_name]) !!}
+{!! $name !!}
 
 {!! $status !!}
+{!! $text_content !!}
+{!! $timestamp !!}
+
 @if($has_component)
 ({{ $component_name }})
 @endif
-
-{!! $text_content !!}
 
 {!! trans('cachet.subscriber.email.manage') !!} {{ $manage_link }}
 

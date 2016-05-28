@@ -86,12 +86,10 @@ return [
                 'button' => 'Confirm Subscription',
             ],
             'maintenance' => [
-                'text' => "New maintenance has been scheduled on :app_name.\nThank you, :app_name",
-                'html' => '<p>New maintenance has been scheduled on :app_name.</p>',
+                'subject' => "[Maintenance Scheduled] :name",
             ],
             'incident' => [
-                'text' => "New incident has been reported on :app_name.\nThank you, :app_name",
-                'html' => '<p>New incident has been reported on :app_name.</p><p>Thank you, :app_name</p>',
+                'subject' => "[New Incident] :status: :name",
             ],
             'component' => [
                 'subject'       => 'Component Status Update',
