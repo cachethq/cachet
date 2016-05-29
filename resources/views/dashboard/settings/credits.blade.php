@@ -38,7 +38,9 @@
                 <ul class="list-inline">
                     @foreach($contributors as $contributor)
                     <li>
-                        <img src="{{ $contributor['avatar'] }}" class="img-rounded img-responsive" title="{{ $contributor['name'] }}" data-toggle="tooltip" height="100" width="100">
+                        <a href="{{ $contributor['site'] }}" target="_blank">
+                            <img src="{{ $contributor['avatar'] }}" class="img-rounded img-responsive" title="{{ $contributor['name'] }}" data-toggle="tooltip" height="100" width="100">
+                        </a>
                     </li>
                     @endforeach
                 </ul>
