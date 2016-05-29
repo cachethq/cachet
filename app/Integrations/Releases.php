@@ -68,7 +68,7 @@ class Releases
     public function latest()
     {
         $release = $this->cache->remember('version', 720, function () {
-            $headers = ['Accept' => 'application/vnd.github.v3+json'];
+            $headers = ['Accept' => 'application/vnd.github.v3+json', 'User-Agent' => defined('CACHET_VERSION') ? 'cachet/'.constant('CACHET_VERSION') : 'cachet'];
 
             if ($this->token) {
                 $headers['OAUTH-TOKEN'] = $this->token;

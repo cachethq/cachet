@@ -60,7 +60,7 @@ class Credits
     {
         return $this->cache->remember('version', 2880, function () {
             return json_decode((new Client())->get($this->url, [
-                'headers' => ['Accept' => 'application/json'],
+                'headers' => ['Accept' => 'application/json', 'User-Agent' => defined('CACHET_VERSION') ? 'cachet/'.constant('CACHET_VERSION') : 'cachet'],
             ])->getBody(), true);
         });
     }
