@@ -220,6 +220,7 @@ return [
             'failure' => 'Settings could not be saved.',
         ],
         'credits' => [
+            'credits'       => 'Credits',
             'contributors'  => 'Contributors',
             'license'       => 'Cachet is a BSD-3-licensed open source project, released by <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
             'backers-title' => 'Backers & Sponsors',
