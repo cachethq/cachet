@@ -211,6 +211,10 @@ class DashboardRoutes
                     'as'   => 'customization',
                     'uses' => 'SettingsController@showCustomizationView',
                 ]);
+                $router->get('credits', [
+                    'as'   => 'credits',
+                    'uses' => 'SettingsController@showCreditsView',
+                ]);
                 $router->post('/', 'SettingsController@postSettings');
             });
 

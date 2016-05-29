@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
+use CachetHQ\Cachet\Integrations\Credits;
 use CachetHQ\Cachet\Models\User;
 use CachetHQ\Cachet\Settings\Repository;
 use Exception;
@@ -80,6 +81,12 @@ class SettingsController extends Controller
                 'title'  => trans('dashboard.settings.analytics.analytics'),
                 'url'    => route('dashboard.settings.analytics'),
                 'icon'   => 'ion-stats-bars',
+                'active' => false,
+            ],
+            'credits' => [
+                'title'  => trans('dashboard.settings.credits.credits'),
+                'url'    => route('dashboard.settings.credits'),
+                'icon'   => 'ion-ios-list',
                 'active' => false,
             ],
             'about' => [
@@ -209,6 +216,30 @@ class SettingsController extends Controller
 
         return View::make('dashboard.settings.stylesheet')
             ->withPageTitle(trans('dashboard.settings.stylesheet.stylesheet').' - '.trans('dashboard.dashboard'))
+            ->withSubMenu($this->subMenu);
+    }
+
+    /**
+     * Show the credits view.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function showCreditsView()
+    {
+        $this->subMenu['credits']['active'] = true;
+
+        $credits = app(Credits::class)->latest();
+
+        $backers = $credits['backers'];
+        $contributors = $credits['contributors'];
+
+        shuffle($backers);
+        shuffle($contributors);
+
+        return View::make('dashboard.settings.credits')
+            ->withPageTitle(trans('dashboard.settings.credits.credits').' - '.trans('dashboard.dashboard'))
+            ->withBackers($backers)
+            ->withContributors($contributors)
             ->withSubMenu($this->subMenu);
     }
 

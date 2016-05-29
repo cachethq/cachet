@@ -11,7 +11,7 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
-use CachetHQ\Cachet\GitHub\Release;
+use CachetHQ\Cachet\Integrations\Releases;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\IncidentTemplate;
@@ -99,7 +99,7 @@ class ApiController extends Controller
      */
     public function checkVersion()
     {
-        $latest = app(Release::class)->latest();
+        $latest = app(Releases::class)->latest();
 
         return Response::json([
             'cachet_version' => CACHET_VERSION,
