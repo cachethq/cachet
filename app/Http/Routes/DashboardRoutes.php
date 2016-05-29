@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Cachet\Http\Routes;
 
+use CachetHQ\Cachet\Integrations\Credits;
 use Illuminate\Contracts\Routing\Registrar;
 
 /**
@@ -210,6 +211,10 @@ class DashboardRoutes
                 $router->get('customization', [
                     'as'   => 'customization',
                     'uses' => 'SettingsController@showCustomizationView',
+                ]);
+                $router->get('credits', [
+                    'as'   => 'credits',
+                    'uses' => 'SettingsController@showCreditsView',
                 ]);
                 $router->post('/', 'SettingsController@postSettings');
             });
