@@ -86,6 +86,7 @@ class AppServiceProvider extends ServiceProvider
             return new Credits($cache);
         });
     }
+
     /**
      * Register the releases class.
      *
