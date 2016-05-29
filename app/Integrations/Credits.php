@@ -58,7 +58,7 @@ class Credits
      */
     public function latest()
     {
-        return $this->cache->remember('version', 2880, function () {
+        return $this->cache->remember('credits', 2880, function () {
             return json_decode((new Client())->get($this->url, [
                 'headers' => ['Accept' => 'application/json', 'User-Agent' => defined('CACHET_VERSION') ? 'cachet/'.constant('CACHET_VERSION') : 'cachet'],
             ])->getBody(), true);
