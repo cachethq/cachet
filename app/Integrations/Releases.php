@@ -9,13 +9,20 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\GitHub;
+namespace CachetHQ\Cachet\Integrations;
 
 use GuzzleHttp\Client;
-use Illuminate\Contracts\Cache\Repository as CacheRepository;
+use Illuminate\Contracts\Cache\Repository;
 
-class Release
+class Releases
 {
+    /**
+     * The default url.
+     *
+     * @var string
+     */
+    const URL = 'https://api.github.com/repos/cachethq/cachet/releases/latest';
+
     /**
      * The cache repository instance.
      *
@@ -26,40 +33,48 @@ class Release
     /**
      * The github authentication token.
      *
-     * @var string
+     * @var string|null
      */
     protected $token;
 
     /**
-     * Creates a new release instance.
+     * The url to use.
+     *
+     * @var string|null
+     */
+    protected $url;
+
+    /**
+     * Creates a new releases instance.
      *
      * @param \Illuminate\Contracts\Cache\Repository $cache
-     * @param string                                 $token
+     * @param string|null                            $token
+     * @param string|null                            $url
      *
      * @return void
      */
-    public function __construct(CacheRepository $cache, $token)
+    public function __construct(Repository $cache, $token = null, $url = null)
     {
         $this->cache = $cache;
         $this->token = $token;
+        $this->url = $url ?: static::URL;
     }
 
     /**
-     * Returns the latest GitHub release.
+     * Returns the latest release.
      *
      * @return string
      */
     public function latest()
     {
         $release = $this->cache->remember('version', 720, function () {
-            $headers = ['Accept' => 'application/vnd.github.v3+json'];
+            $headers = ['Accept' => 'application/vnd.github.v3+json', 'User-Agent' => defined('CACHET_VERSION') ? 'cachet/'.constant('CACHET_VERSION') : 'cachet'];
 
-            // We can re-use the Emoji token here, if we have it.
             if ($this->token) {
                 $headers['OAUTH-TOKEN'] = $this->token;
             }
 
-            return json_decode((new Client())->get('https://api.github.com/repos/cachethq/cachet/releases/latest', [
+            return json_decode((new Client())->get($this->url, [
                 'headers' => $headers,
             ])->getBody(), true);
         });
