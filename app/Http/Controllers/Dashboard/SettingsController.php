@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
+use CachetHQ\Cachet\Integrations\Credits;
 use CachetHQ\Cachet\Models\User;
 use CachetHQ\Cachet\Settings\Repository;
 use Exception;

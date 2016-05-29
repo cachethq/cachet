@@ -11,7 +11,6 @@
 
 namespace CachetHQ\Cachet\Http\Routes;
 
-use CachetHQ\Cachet\Integrations\Credits;
 use Illuminate\Contracts\Routing\Registrar;
 
 /**
