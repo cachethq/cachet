@@ -71,7 +71,7 @@ return [
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => env('DB_PREFIX', null),
-            'strict'    => false,
+            'strict'    => true,
             'engine'    => null,
         ],
 
@@ -85,6 +85,7 @@ return [
             'charset'   => 'utf8',
             'prefix'    => env('DB_PREFIX', null),
             'schema'    => env('DB_SCHEMA', 'public'),
+            'sslmode'   => 'prefer',
         ],
 
         'sqlsrv' => [
