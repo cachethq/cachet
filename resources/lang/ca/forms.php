@@ -34,6 +34,7 @@ return [
         'invalid'       => 'El nom d\'usuari o contrasenya no és vàlid',
         'invalid-token' => 'Token invàlid',
         'cookies'       => 'Heu d\'habilitar les galetes (cookies) per poder iniciar sessió.',
+        'rate-limit'    => 'Rate limit exceeded.',
     ],
 
     // Incidents form fields

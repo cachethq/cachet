@@ -34,6 +34,7 @@ return [
         'invalid'       => 'Invalid username or password',
         'invalid-token' => '錯誤的驗證碼',
         'cookies'       => '您必須啟用 cookies 來進行登錄。',
+        'rate-limit'    => 'Rate limit exceeded.',
     ],
 
     // Incidents form fields
@@ -106,7 +107,7 @@ return [
             'about-this-page'        => '關於本站',
             'days-of-incidents'      => '顯示多少天前的事件？',
             'banner'                 => 'Banner Image',
-            'banner-help'            => '橫幅寬度建議少於 930px 。',
+            'banner-help'            => "橫幅寬度建議少於 930px 。",
             'subscribers'            => '允許用戶訂閱郵件通知嗎?',
             'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
         ],

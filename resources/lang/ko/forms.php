@@ -34,6 +34,7 @@ return [
         'invalid'       => 'Invalid username or password',
         'invalid-token' => '잘못된 토큰n',
         'cookies'       => '로그인 하려면 쿠키를 활성화 해야 합니다.',
+        'rate-limit'    => 'Rate limit exceeded.',
     ],
 
     // Incidents form fields
@@ -106,7 +107,7 @@ return [
             'about-this-page'        => '이 페이지에 대하여',
             'days-of-incidents'      => '몇 일 동안 사건을 표시하시겠습니까?',
             'banner'                 => 'Banner Image',
-            'banner-help'            => '가로가 930 픽셀보다 작은 이미지를 업로드 하는 것을 권장합니다.',
+            'banner-help'            => "가로가 930 픽셀보다 작은 이미지를 업로드 하는 것을 권장합니다.",
             'subscribers'            => '이메일 알림을 받기 위한 회원가입 허용',
             'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
         ],

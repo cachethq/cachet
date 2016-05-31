@@ -34,6 +34,7 @@ return [
         'invalid'       => 'Invalid username or password',
         'invalid-token' => 'Érvénytelen kulcs',
         'cookies'       => 'A bejelentkezéshez engedélyezni kell a sütiket.',
+        'rate-limit'    => 'Rate limit exceeded.',
     ],
 
     // Incidents form fields

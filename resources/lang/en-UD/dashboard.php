@@ -219,6 +219,14 @@ return [
             'success' => 'crwdns351:0crwdne351:0',
             'failure' => 'crwdns352:0crwdne352:0',
         ],
+        'credits' => [
+            'credits'       => 'crwdns765:0crwdne765:0',
+            'contributors'  => 'crwdns766:0crwdne766:0',
+            'license'       => 'crwdns767:0%20Ccrwdnd767:0%20Dcrwdne767:0',
+            'backers-title' => 'crwdns768:0crwdne768:0',
+            'backers'       => 'crwdns769:0crwdne769:0',
+            'thank-you'     => 'crwdns770:0crwdne770:0',
+        ],
     ],
 
     // Login
@@ -239,6 +247,14 @@ return [
         'notifications' => 'crwdns205:0crwdne205:0',
         'awesome'       => 'crwdns356:0crwdne356:0',
         'whoops'        => 'crwdns357:0crwdne357:0',
+    ],
+
+    // Widgets
+    'widgets' => [
+        'support'          => 'crwdns771:0crwdne771:0',
+        'support_subtitle' => 'crwdns772:0crwdne772:0',
+        'news'             => 'crwdns773:0crwdne773:0',
+        'news_subtitle'    => 'crwdns774:0crwdne774:0',
     ],
 
     // Welcome modal

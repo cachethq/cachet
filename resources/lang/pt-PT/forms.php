@@ -34,6 +34,7 @@ return [
         'invalid'       => 'Nome de utilizador ou palavra-passe inválidos',
         'invalid-token' => 'Token inválido',
         'cookies'       => 'Deverá activar cookies para efectuar autenticação.',
+        'rate-limit'    => 'Rate limit exceeded.',
     ],
 
     // Incidents form fields
@@ -106,7 +107,7 @@ return [
             'about-this-page'        => 'Sobre esta página',
             'days-of-incidents'      => 'Quantos dias de incidentes para mostrar?',
             'banner'                 => 'Banner Image',
-            'banner-help'            => 'É recomendável que você faça upload de arquivos menores que 930px .',
+            'banner-help'            => "É recomendável que você faça upload de arquivos menores que 930px .",
             'subscribers'            => 'Permitir que as pessoas subscrevam as notificações?',
             'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
         ],

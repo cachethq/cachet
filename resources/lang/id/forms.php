@@ -34,6 +34,7 @@ return [
         'invalid'       => 'Invalid username or password',
         'invalid-token' => 'Token tidak benar',
         'cookies'       => 'Mohon aktifkan cookies untuk login.',
+        'rate-limit'    => 'Rate limit exceeded.',
     ],
 
     // Incidents form fields
@@ -106,7 +107,7 @@ return [
             'about-this-page'        => 'Tentang halaman ini',
             'days-of-incidents'      => 'Berapa hari insiden akan ditampilkan?',
             'banner'                 => 'Banner Image',
-            'banner-help'            => 'Disarankan gambar yang anda unggah tidak lebih lebar dari 930px.',
+            'banner-help'            => "Disarankan gambar yang anda unggah tidak lebih lebar dari 930px.",
             'subscribers'            => 'Bolehkan pengunjung mendaftar notifikasi email?',
             'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
         ],

@@ -13,34 +13,35 @@ return [
 
     // Setup form fields
     'setup' => [
-        'email'            => 'Email',
+        'email'            => 'メールアドレス',
         'username'         => 'ユーザー名',
-        'password'         => 'Password',
-        'site_name'        => 'Site Name',
-        'site_domain'      => 'Site Domain',
-        'site_timezone'    => 'Select your timezone',
-        'site_locale'      => 'Select your language',
-        'enable_google2fa' => 'Enable Google Two Factor Authentication',
-        'cache_driver'     => 'Cache Driver',
-        'session_driver'   => 'Session Driver',
+        'password'         => 'パスワード',
+        'site_name'        => 'サイト名',
+        'site_domain'      => 'サイトのドメイン',
+        'site_timezone'    => 'タイムゾーンの選択',
+        'site_locale'      => '言語選択',
+        'enable_google2fa' => 'Googleの2段階認証を有効にする',
+        'cache_driver'     => 'キャッシュドライバー',
+        'session_driver'   => 'セッションドライバー',
     ],
 
     // Login form fields
     'login' => [
-        'login'         => 'Username or Email',
-        'email'         => 'Email',
-        'password'      => 'Password',
+        'login'         => 'ユーザー名またはメールアドレス',
+        'email'         => 'メールアドレス',
+        'password'      => 'パスワード',
         '2fauth'        => 'Authentication Code',
-        'invalid'       => 'Invalid username or password',
-        'invalid-token' => 'Invalid token',
-        'cookies'       => 'You must enable cookies to login.',
+        'invalid'       => 'ユーザ名またはパスワードが違います',
+        'invalid-token' => '無効なトークン',
+        'cookies'       => 'ログインするにはクッキーを有効にする必要があります。',
+        'rate-limit'    => 'Rate limit exceeded.',
     ],
 
     // Incidents form fields
     'incidents' => [
-        'name'               => 'Name',
-        'status'             => 'Status',
-        'component'          => 'Component',
+        'name'               => '名前',
+        'status'             => '状況',
+        'component'          => 'コンポーネント',
         'message'            => 'Message',
         'message-help'       => 'You may also use Markdown.',
         'scheduled_at'       => 'When to schedule the maintenance for?',
@@ -50,7 +51,7 @@ return [
         'public'             => 'Viewable by public',
         'logged_in_only'     => 'Only visible to logged in users',
         'templates'          => [
-            'name'     => 'Name',
+            'name'     => '名前',
             'template' => 'Template',
             'twig'     => 'Incident Templates can make use of the <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a> templating language.',
         ],
@@ -58,8 +59,8 @@ return [
 
     // Components form fields
     'components' => [
-        'name'        => 'Name',
-        'status'      => 'Status',
+        'name'        => '名前',
+        'status'      => '状況',
         'group'       => 'Group',
         'description' => 'Description',
         'link'        => 'Link',
@@ -68,7 +69,7 @@ return [
         'enabled'     => 'Component enabled?',
 
         'groups' => [
-            'name'               => 'Name',
+            'name'               => '名前',
             'collapsing'         => 'Choose visibility of the group',
             'visible'            => 'Always expanded',
             'collapsed'          => 'Collapse the group by default',
@@ -78,7 +79,7 @@ return [
 
     // Metric form fields
     'metrics' => [
-        'name'             => 'Name',
+        'name'             => '名前',
         'suffix'           => 'Suffix',
         'description'      => 'Description',
         'description-help' => 'You may also use Markdown.',
@@ -100,13 +101,13 @@ return [
     'settings' => [
         /// Application setup
         'app-setup' => [
-            'site-name'              => 'Site Name',
+            'site-name'              => 'サイト名',
             'site-url'               => 'サイトのURL',
             'display-graphs'         => 'Display graphs on status page?',
             'about-this-page'        => 'このページについて',
             'days-of-incidents'      => '何日間のインシデントを表示しますか？',
             'banner'                 => 'Banner Image',
-            'banner-help'            => '横幅が930px以内の画像をアップロードしてください。',
+            'banner-help'            => "横幅が930px以内の画像をアップロードしてください。",
             'subscribers'            => 'Allow people to signup to email notifications?',
             'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
         ],
@@ -149,8 +150,8 @@ return [
 
     'user' => [
         'username'       => 'ユーザー名',
-        'email'          => 'Email',
-        'password'       => 'Password',
+        'email'          => 'メールアドレス',
+        'password'       => 'パスワード',
         'api-token'      => 'APIトークン',
         'api-token-help' => 'Regenerating your API token will prevent existing applications from accessing Cachet.',
         'gravatar'       => 'Change your profile picture at Gravatar.',

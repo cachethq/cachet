@@ -34,6 +34,7 @@ return [
         'invalid'       => 'Virheellinen käyttäjätunnus tai salasana',
         'invalid-token' => 'Invalid token',
         'cookies'       => 'Ota käyttöön evästeet kirjautuaksesi.',
+        'rate-limit'    => 'Rate limit exceeded.',
     ],
 
     // Incidents form fields

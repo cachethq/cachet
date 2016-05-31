@@ -34,6 +34,7 @@ return [
         'invalid'       => 'Kullanıcı adı veya parola hatalı',
         'invalid-token' => 'Geçersiz jeton',
         'cookies'       => 'Oturum açabilmek yapabilmek için çerezleri açmalısınız.',
+        'rate-limit'    => 'Rate limit exceeded.',
     ],
 
     // Incidents form fields

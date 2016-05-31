@@ -34,6 +34,7 @@ return [
         'invalid'       => 'Invalid username or password',
         'invalid-token' => 'Ugyldig token',
         'cookies'       => 'Du må aktivere informasjonskapsler for å logge inn.',
+        'rate-limit'    => 'Rate limit exceeded.',
     ],
 
     // Incidents form fields
@@ -106,7 +107,7 @@ return [
             'about-this-page'        => 'Om denne siden',
             'days-of-incidents'      => 'How many days of incidents to show?',
             'banner'                 => 'Banner Image',
-            'banner-help'            => 'Det anbefales at du ikke laster opp bilder bredere enn 930 piksler.',
+            'banner-help'            => "Det anbefales at du ikke laster opp bilder bredere enn 930 piksler.",
             'subscribers'            => 'Tillatt brukere å melde seg inn for epostvarslinger?',
             'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
         ],

@@ -34,6 +34,7 @@ return [
         'invalid'       => 'Invalid username or password',
         'invalid-token' => 'Neplatný token',
         'cookies'       => 'Pro přihlášení je třeba povolit soubory cookie.',
+        'rate-limit'    => 'Rate limit exceeded.',
     ],
 
     // Incidents form fields
@@ -106,7 +107,7 @@ return [
             'about-this-page'        => 'O této stránce',
             'days-of-incidents'      => 'Kolik dní incidentů zobrazovat?',
             'banner'                 => 'Banner Image',
-            'banner-help'            => 'Doručuje se nenahrávat soubory větší než 930 pixelů na šířku.',
+            'banner-help'            => "Doručuje se nenahrávat soubory větší než 930 pixelů na šířku.",
             'subscribers'            => 'Umožnit lidem, aby se přihlašovali k odběru e-mailových upozornění?',
             'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
         ],

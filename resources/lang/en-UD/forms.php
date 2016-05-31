@@ -34,6 +34,7 @@ return [
         'invalid'       => 'crwdns652:0crwdne652:0',
         'invalid-token' => 'crwdns384:0crwdne384:0',
         'cookies'       => 'crwdns480:0crwdne480:0',
+        'rate-limit'    => 'crwdns781:0crwdne781:0',
     ],
 
     // Incidents form fields
@@ -106,7 +107,7 @@ return [
             'about-this-page'        => 'crwdns402:0crwdne402:0',
             'days-of-incidents'      => 'crwdns403:0crwdne403:0',
             'banner'                 => 'crwdns717:0crwdne717:0',
-            'banner-help'            => 'crwdns405:0crwdne405:0',
+            'banner-help'            => "crwdns405:0crwdne405:0",
             'subscribers'            => 'crwdns513:0crwdne513:0',
             'automatic_localization' => 'crwdns726:0crwdne726:0',
         ],

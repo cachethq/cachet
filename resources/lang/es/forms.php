@@ -34,6 +34,7 @@ return [
         'invalid'       => 'Nombre de usuario o contraseña incorrectos',
         'invalid-token' => 'Token inválido',
         'cookies'       => 'Usted debe habilitar cookies para logearse o iniciar sesion.',
+        'rate-limit'    => 'Rate limit exceeded.',
     ],
 
     // Incidents form fields
@@ -89,7 +90,7 @@ return [
         'type_avg'         => 'Promedio',
         'places'           => 'Cantidad de decimales',
         'default_view'     => 'Vista predeterminada',
-        'threshold'        => 'How many minutes of threshold between metric points?',
+        'threshold'        => '¿Cuántos minutos de umbral entre púntos de métrica?',
 
         'points' => [
             'value' => 'Valor',
@@ -106,9 +107,9 @@ return [
             'about-this-page'        => 'Sobre esta página',
             'days-of-incidents'      => '¿Cuántos días de incidentes mostrar?',
             'banner'                 => 'Imagen del banner',
-            'banner-help'            => 'Se recomienda subir una imagen no más grande de 930px de ancho .',
+            'banner-help'            => "Se recomienda subir una imagen no más grande de 930px de ancho .",
             'subscribers'            => '¿Permitir a la gente inscribirse mediante noficiacion por correo electronico?',
-            'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
+            'automatic_localization' => '¿Usar automáticamente la localización para página de estado según lenguaje del visitante?',
         ],
         'analytics' => [
             'analytics_google'       => 'Código de Google Analytics',

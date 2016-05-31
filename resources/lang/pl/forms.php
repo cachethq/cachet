@@ -34,6 +34,7 @@ return [
         'invalid'       => 'Nieprawidłowa nazwa użytkownika lub hasło',
         'invalid-token' => 'Token ist ungültig',
         'cookies'       => 'Sie müssen Cookies aktivieren um sich anzumelden.',
+        'rate-limit'    => 'Rate limit exceeded.',
     ],
 
     // Incidents form fields
@@ -46,13 +47,13 @@ return [
         'scheduled_at'       => 'Für wann ist die Wartung geplant?',
         'incident_time'      => 'Wann ist dieser Vorfall aufgetreten?',
         'notify_subscribers' => 'Abonnenten benachrichtigen',
-        'visibility'         => 'Incident Visibility',
+        'visibility'         => 'Widoczność zdarzenia',
         'public'             => 'Öffentlich sichtbar',
         'logged_in_only'     => 'Nur für angemeldete Benutzer sichtbar',
         'templates'          => [
             'name'     => 'Name',
             'template' => 'Vorlage',
-            'twig'     => 'Incident Templates can make use of the <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a> templating language.',
+            'twig'     => 'Szablony wydarzeń mogą korzystać z języka szablonów <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a>.',
         ],
     ],
 
@@ -69,10 +70,10 @@ return [
 
         'groups' => [
             'name'               => 'Name',
-            'collapsing'         => 'Choose visibility of the group',
+            'collapsing'         => 'Wybierz widoczność grupy',
             'visible'            => 'Zawsze rozwinięte',
-            'collapsed'          => 'Collapse the group by default',
-            'collapsed_incident' => 'Collapse the group, but expand if there are issues',
+            'collapsed'          => 'Domyślnie zwiń grupę',
+            'collapsed_incident' => 'Zwiń grupę, ale rozwiń ją w razie problemów',
         ],
     ],
 
@@ -89,7 +90,7 @@ return [
         'type_avg'         => 'Durchschnitt',
         'places'           => 'Miejsca dziesiętne',
         'default_view'     => 'Domyślny widok',
-        'threshold'        => 'How many minutes of threshold between metric points?',
+        'threshold'        => 'Ile minut przerwy między punktami metrycznymi?',
 
         'points' => [
             'value' => 'Wert',
@@ -106,9 +107,9 @@ return [
             'about-this-page'        => 'Über diese Seite',
             'days-of-incidents'      => 'Wie viele Tage mit Vorfällen sollen gezeigt werden?',
             'banner'                 => 'Banner',
-            'banner-help'            => 'Es wird empfohlen, dass Sie keine Dateien die breiter als 930 Pixel sind hochladen .',
+            'banner-help'            => "Es wird empfohlen, dass Sie keine Dateien die breiter als 930 Pixel sind hochladen .",
             'subscribers'            => 'Personen die Anmeldung für E-Mail-Benachrichtigung erlauben?',
-            'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
+            'automatic_localization' => 'Automatycznie tłumaczyć twoją stronę statusu na język odwiedzającego?',
         ],
         'analytics' => [
             'analytics_google'       => 'Google Analytics Code',
@@ -127,23 +128,23 @@ return [
             'allowed-domains-help' => 'Durch Kommata trennen. Die oben genannte Domain ist standardmäßig erlaubt.',
         ],
         'stylesheet' => [
-            'custom-css' => 'Custom Stylesheet',
+            'custom-css' => 'Niestandardowy arkusz stylów',
         ],
         'theme' => [
             'background-color'        => 'Kolor tła',
-            'background-fills'        => 'Background fills (components, incidents, footer)',
+            'background-fills'        => 'Wypełnianie tła (komponenty, wydarzenia, stopka)',
             'banner-background-color' => 'Banner Background Color',
             'banner-padding'          => 'Banner Padding',
             'fullwidth-banner'        => 'Enable fullwidth banner?',
-            'text-color'              => 'Text Color',
-            'dashboard-login'         => 'Show dashboard button in the footer?',
-            'reds'                    => 'Red (used for errors)',
-            'blues'                   => 'Blue (used for information)',
-            'greens'                  => 'Green (used for success)',
-            'yellows'                 => 'Yellow (used for alerts)',
-            'oranges'                 => 'Orange (used for notices)',
-            'metrics'                 => 'Metrics fill',
-            'links'                   => 'Links',
+            'text-color'              => 'Kolor tekstu',
+            'dashboard-login'         => 'Pokazywać przycisk panelu głównego w stopce?',
+            'reds'                    => 'Czerwony (używany przy błędach)',
+            'blues'                   => 'Niebieski (używany przy informacjach)',
+            'greens'                  => 'Zielony (używany przy powodzeniu)',
+            'yellows'                 => 'Żółty (używany przy ostrzeżeniach)',
+            'oranges'                 => 'Pomarańczowy (używany przy ogłoszeniach)',
+            'metrics'                 => 'Wypełnienie metryki',
+            'links'                   => 'Łącza',
         ],
     ],
 
@@ -154,10 +155,10 @@ return [
         'api-token'      => 'API Token',
         'api-token-help' => 'Wenn sie ihren API-Token neu generieren, können bestehende Anwendungen nicht mehr auf Cachet zugreifen.',
         'gravatar'       => 'Change your profile picture at Gravatar.',
-        'user_level'     => 'User Level',
+        'user_level'     => 'Poziom użytkownika',
         'levels'         => [
-            'admin' => 'Admin',
-            'user'  => 'User',
+            'admin' => 'Administrator',
+            'user'  => 'Użytkownik',
         ],
         '2fa' => [
             'help' => 'Die Zwei-Faktor-Authentifizierung erhöht die Sicherheit Ihres Kontos. Sie benötigen <a href="https://support.google.com/accounts/answer/1066447?hl=en">Google Authenticator</a> oder eine ähnliche App auf Ihrem Mobilgerät. Beim Anmelden werden sie aufgefordert, einen Token einzugeben, der von der App generiert wird.',
@@ -178,7 +179,7 @@ return [
     'submit' => 'Abschicken',
     'cancel' => 'Abbrechen',
     'remove' => 'Entfernen',
-    'invite' => 'Invite',
+    'invite' => 'Zaproś',
     'signup' => 'Zarejestruj się',
 
     // Other
