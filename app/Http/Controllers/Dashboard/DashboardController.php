@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
+use CachetHQ\Cachet\Integrations\Feed;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\Subscriber;
@@ -36,12 +37,22 @@ class DashboardController extends Controller
     protected $timeZone;
 
     /**
-     * Creates a new dashboard controller.
+     * The feed integration.
+     *
+     * @var \CachetHQ\Cachet\Integrations\Feed
+     */
+    protected $feed;
+
+    /**
+     * Creates a new dashboard controller instance.
+     *
+     * @param \CachetHQ\Cachet\Integrations\Feed $feed
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Feed $feed)
     {
+        $this->feed = $feed;
         $this->startDate = new Date();
         $this->dateTimeZone = Config::get('cachet.timezone');
     }
@@ -56,12 +67,16 @@ class DashboardController extends Controller
         $components = Component::orderBy('order')->get();
         $incidents = $this->getIncidents();
         $subscribers = $this->getSubscribers();
+        $feed = $this->feed->entries();
+
+        dd($feed);
 
         return View::make('dashboard.index')
             ->withPageTitle(trans('dashboard.dashboard'))
             ->withComponents($components)
             ->withIncidents($incidents)
-            ->withSubscribers($subscribers);
+            ->withSubscribers($subscribers)
+            ->withFeed($feed);
     }
 
     /**
