@@ -15,6 +15,11 @@ use GuzzleHttp\Client;
 use Illuminate\Contracts\Cache\Repository;
 use SimpleXmlElement;
 
+/**
+ * This is the feed class.
+ *
+ * @author James Brooks <james@alt-three.com>
+ */
 class Feed
 {
     /**
@@ -60,9 +65,11 @@ class Feed
     public function entries()
     {
         return $this->cache->remember('feeds', 2880, function () {
-            return new SimpleXmlElement((new Client())->get($this->url, [
+            $xml = simplexml_load_string((new Client())->get($this->url, [
                 'headers' => ['Accept' => 'application/rss+xml', 'User-Agent' => defined('CACHET_VERSION') ? 'cachet/'.constant('CACHET_VERSION') : 'cachet'],
-            ])->getBody()->getContents());
+            ])->getBody()->getContents(), null, LIBXML_NOCDATA);
+
+            return json_decode(json_encode($xml));
         });
     }
 }

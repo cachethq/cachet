@@ -69,14 +69,14 @@ class DashboardController extends Controller
         $subscribers = $this->getSubscribers();
         $feed = $this->feed->entries();
 
-        dd($feed);
+        $entries = array_slice($feed->channel->item, 0, 5);
 
         return View::make('dashboard.index')
             ->withPageTitle(trans('dashboard.dashboard'))
             ->withComponents($components)
             ->withIncidents($incidents)
             ->withSubscribers($subscribers)
-            ->withFeed($feed);
+            ->withEntries($entries);
     }
 
     /**

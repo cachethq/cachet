@@ -79,8 +79,8 @@
         <div class="col-sm-12 col-lg-6">
             <div class="stats-widget">
                 <div class='stats-top'>
-                    <span class='stats-value'>Support Cachet</span>
-                    <span class='stats-label'>Check out our <a href="https://patreon.com/jbrooksuk" target="_blank">Patreon</a> page!</span>
+                    <span class='stats-value'>{{ trans('dashboard.widgets.support') }}</span>
+                    <span class='stats-label'>{!! trans('dashboard.widgets.support_subtitle') !!}</span>
                 </div>
             </div>
         </div>
@@ -88,15 +88,15 @@
         <div class="col-sm-12 col-lg-6">
             <div class="stats-widget">
                 <div class='stats-top'>
-                    <span class='stats-value'>Support Cachet</span>
-                    <span class='stats-label'>Check out our <a href="https://patreon.com/jbrooksuk" target="_blank">Patreon</a> page!</span>
+                    <span class='stats-value'>{{ trans('dashboard.widgets.news') }}</span>
+                    <span class='stats-label'>{{ trans('dashboard.widgets.news_subtitle') }}</span>
                 </div>
-                <div class='stats-chart'>
-                    <ul class="list-group">
-                        @foreach($feed->entries()['channel']['item'] as $item)
-                        <a class="list-group-item" href="{{ $item['link'] }}" target="_blank"></a>
+                <div class='stats-body'>
+                    <div class="list-group">
+                        @foreach($entries as $entry)
+                        <a class="list-group-item" href="{{ $entry->link }}" target="_blank">{{ $entry->title }}, <small>{{ $entry->pubDate }}</small></a>
                         @endforeach
-                    </ul>
+                    </div>
                 </div>
             </div>
         </div>
