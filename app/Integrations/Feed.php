@@ -13,7 +13,6 @@ namespace CachetHQ\Cachet\Integrations;
 
 use GuzzleHttp\Client;
 use Illuminate\Contracts\Cache\Repository;
-use SimpleXmlElement;
 
 /**
  * This is the feed class.
