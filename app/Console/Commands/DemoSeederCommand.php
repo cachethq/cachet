@@ -170,7 +170,7 @@ class DemoSeederCommand extends Command
                 'order'       => 0,
                 'group_id'    => 0,
                 'link'        => 'https://patreon.com/jbrooksuk',
-            ]
+            ],
         ];
 
         Component::truncate();
