@@ -163,7 +163,14 @@ class DemoSeederCommand extends Command
                 'order'       => 1,
                 'group_id'    => 2,
                 'link'        => 'https://styleci.io',
-            ],
+            ], [
+                'name'        => 'Patreon Page',
+                'description' => 'Support future development of Cachet.',
+                'status'      => 1,
+                'order'       => 0,
+                'group_id'    => 0,
+                'link'        => 'https://patreon.com/jbrooksuk',
+            ]
         ];
 
         Component::truncate();
