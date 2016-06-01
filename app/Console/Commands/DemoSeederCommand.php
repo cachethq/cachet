@@ -346,7 +346,7 @@ EINCIDENT;
             ], [
                 'key'   => 'enable_subscribers',
                 'value' => '0',
-            ]
+            ],
         ];
 
         $this->settings->clear();
