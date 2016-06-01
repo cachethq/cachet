@@ -54,6 +54,6 @@ return [
     |
     */
 
-  'show_support' => true,
+    'show_support' => true,
 
 ];
