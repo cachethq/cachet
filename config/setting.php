@@ -10,6 +10,7 @@
  */
 
 return [
+
     /*
     |--------------------------------------------------------------------------
     | Dashboard Login Link
@@ -44,14 +45,15 @@ return [
 
    'automatic_localization' => false,
 
-   /*
-   |--------------------------------------------------------------------------
-   | Show Support for Cachet
-   |--------------------------------------------------------------------------
-   |
-   | Whether to show the "Powered by Cachet" text in the footer.
-   |
-   */
+    /*
+    |--------------------------------------------------------------------------
+    | Show Support for Cachet
+    |--------------------------------------------------------------------------
+    |
+    | Whether to show the "Powered by Cachet" text in the footer.
+    |
+    */
 
   'show_support' => true,
+
 ];
