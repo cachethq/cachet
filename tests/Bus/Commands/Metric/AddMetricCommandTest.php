@@ -29,15 +29,16 @@ class AddMetricCommandTest extends AbstractTestCase
     protected function getObjectAndParams()
     {
         $params = [
-            'name'           => 'Coffee',
-            'suffix'         => 'cups',
-            'description'    => 'Cups of coffee consumed',
-            'default_value'  => 0,
-            'calc_type'      => 0,
-            'display_chart'  => 1,
-            'places'         => 0,
-            'default_view'   => 0,
-            'threshold'      => 0,
+            'name'          => 'Coffee',
+            'suffix'        => 'cups',
+            'description'   => 'Cups of coffee consumed',
+            'default_value' => 0,
+            'calc_type'     => 0,
+            'display_chart' => 1,
+            'places'        => 0,
+            'default_view'  => 0,
+            'threshold'     => 0,
+            'order'         => 0,
         ];
 
         $object = new AddMetricCommand(
@@ -49,7 +50,8 @@ class AddMetricCommandTest extends AbstractTestCase
             $params['display_chart'],
             $params['places'],
             $params['default_view'],
-            $params['threshold']
+            $params['threshold'],
+            $params['order']
         );
 
         return compact('params', 'object');

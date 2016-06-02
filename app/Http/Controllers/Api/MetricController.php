@@ -85,7 +85,8 @@ class MetricController extends AbstractApiController
                 Binput::get('display_chart', true),
                 Binput::get('places', 2),
                 Binput::get('view', 1),
-                Binput::get('threshold', 5)
+                Binput::get('threshold', 5),
+                Binput::get('order', 0)
             ));
         } catch (QueryException $e) {
             throw new BadRequestHttpException();
@@ -114,7 +115,8 @@ class MetricController extends AbstractApiController
                 Binput::get('display_chart'),
                 Binput::get('places'),
                 Binput::get('view'),
-                Binput::get('threshold')
+                Binput::get('threshold'),
+                Binput::get('order')
             ));
         } catch (QueryException $e) {
             throw new BadRequestHttpException();
