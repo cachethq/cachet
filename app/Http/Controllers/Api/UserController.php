@@ -17,7 +17,6 @@ use CachetHQ\Cachet\Bus\Commands\User\UpdateTeamMemberCommand;
 use CachetHQ\Cachet\Models\User;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Database\QueryException;
-use Illuminate\Support\Facades\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 /**

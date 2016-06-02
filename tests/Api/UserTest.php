@@ -25,7 +25,7 @@ class UserTest extends AbstractApiTestCase
         $this->post('/api/v1/users', [
             'username' => 'Alt Three',
             'email'    => 'support@alt-three.com',
-            'password' => 'AltTheeWinsLife'
+            'password' => 'AltTheeWinsLife',
         ]);
         $this->assertResponseOk();
         $this->seeHeader('Content-Type', 'application/json');
