@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4eca6e0ef520b03be087f81eaea53c7e",
-    "content-hash": "3899101d09bf7294dbb27dd9b21b8e8b",
+    "hash": "411bab88a37cc0995a5f0beaffe52073",
+    "content-hash": "1d6c38d21ef03dfe69436b76dd590635",
     "packages": [
         {
             "name": "alt-three/badger",
@@ -1939,16 +1939,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.2.34",
+            "version": "5.2.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "6a26f3bb6a6e00c53654a661221643ad1b98e146"
+                "reference": "c9d97487c3520ccfda88b7f71100911e7554c189"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/6a26f3bb6a6e00c53654a661221643ad1b98e146",
-                "reference": "6a26f3bb6a6e00c53654a661221643ad1b98e146",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/c9d97487c3520ccfda88b7f71100911e7554c189",
+                "reference": "c9d97487c3520ccfda88b7f71100911e7554c189",
                 "shasum": ""
             },
             "require": {
@@ -2064,7 +2064,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2016-05-26 21:59:46"
+            "time": "2016-06-01 20:12:23"
         },
         {
             "name": "league/commonmark",
@@ -2827,16 +2827,16 @@
         },
         {
             "name": "roumen/feed",
-            "version": "v2.10.2",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RoumenDamianoff/laravel-feed.git",
-                "reference": "04bad00c402db03a59ef5de4531d2521120fa1ac"
+                "reference": "d2f51d9f0d8c699cb812c5b7edeb4804e253f691"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RoumenDamianoff/laravel-feed/zipball/04bad00c402db03a59ef5de4531d2521120fa1ac",
-                "reference": "04bad00c402db03a59ef5de4531d2521120fa1ac",
+                "url": "https://api.github.com/repos/RoumenDamianoff/laravel-feed/zipball/d2f51d9f0d8c699cb812c5b7edeb4804e253f691",
+                "reference": "d2f51d9f0d8c699cb812c5b7edeb4804e253f691",
                 "shasum": ""
             },
             "require": {
@@ -2874,7 +2874,7 @@
                 "laravel",
                 "rss"
             ],
-            "time": "2016-05-23 13:10:24"
+            "time": "2016-06-01 18:54:03"
         },
         {
             "name": "simplesoftwareio/simple-qrcode",
@@ -5324,9 +5324,18 @@
             "time": "2016-05-26 21:46:24"
         }
     ],
-    "aliases": [],
+    "aliases": [
+        {
+            "alias": "2.10.3",
+            "alias_normalized": "2.10.3.0",
+            "version": "9999999-dev",
+            "package": "roumen/feed"
+        }
+    ],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "roumen/feed": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

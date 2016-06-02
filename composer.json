@@ -20,7 +20,7 @@
     ],
     "require": {
         "php": ">=5.5.9",
-        "laravel/framework": "5.2.34",
+        "laravel/framework": "~5.2.36",
         "alt-three/badger": "^3.1",
         "alt-three/bus": "^1.1",
         "alt-three/emoji": "^3.1",
@@ -40,7 +40,7 @@
         "mccool/laravel-auto-presenter": "^4.3",
         "pragmarx/google2fa": "^0.7.1",
         "rcrowe/twigbridge": "^0.9.2",
-        "roumen/feed": "^2.10"
+        "roumen/feed": "dev-master as 2.10.3"
     },
     "require-dev": {
         "alt-three/testbench": "^1.4",
