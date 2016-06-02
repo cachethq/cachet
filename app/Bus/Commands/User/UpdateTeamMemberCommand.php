@@ -11,8 +11,22 @@
 
 namespace CachetHQ\Cachet\Bus\Commands\User;
 
-final class AddTeamMemberCommand
+use CachetHQ\Cachet\Models\User;
+
+/**
+ * This is the update team member command.
+ *
+ * @author James Brooks <james@alt-three.com>
+ */
+final class UpdateTeamMemberCommand
 {
+    /**
+     * The user to update.
+     *
+     * @var \CachetHQ\Cachet\Models\User
+     */
+    public $user;
+
     /**
      * The user username.
      *
@@ -47,6 +61,7 @@ final class AddTeamMemberCommand
      * @var string[]
      */
     public $rules = [
+        'user'     => 'required',
         'name'     => 'required|string',
         'email'    => 'required|email',
         'password' => 'required|string',
@@ -56,15 +71,17 @@ final class AddTeamMemberCommand
     /**
      * Create a new add team member command instance.
      *
-     * @param string $username
-     * @param string $password
-     * @param string $email
-     * @param int    $level
+     * @param \CachetHQ\Cachet\Models\User $user
+     * @param string                       $username
+     * @param string                       $password
+     * @param string                       $email
+     * @param int                          $level
      *
      * @return void
      */
-    public function __construct($username, $password, $email, $level)
+    public function __construct(User $user, $username, $password, $email, $level)
     {
+        $this->user = $user;
         $this->username = $username;
         $this->password = $password;
         $this->email = $email;
