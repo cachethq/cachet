@@ -28,7 +28,7 @@ class MetricsComposer
     {
         $metrics = null;
         if ($displayMetrics = Config::get('setting.display_graphs')) {
-            $metrics = Metric::where('display_chart', 1)->orderBy('id')->get();
+            $metrics = Metric::displayable()->orderBy('order')->get();
         }
 
         $view->withDisplayMetrics($displayMetrics)

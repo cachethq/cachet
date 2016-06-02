@@ -14,6 +14,7 @@ namespace CachetHQ\Cachet\Models;
 use AltThree\Validator\ValidatingTrait;
 use CachetHQ\Cachet\Models\Traits\SortableTrait;
 use CachetHQ\Cachet\Presenters\MetricPresenter;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use McCool\LaravelAutoPresenter\HasPresenter;
 
@@ -48,6 +49,7 @@ class Metric extends Model implements HasPresenter
         'places'        => 2,
         'default_view'  => 1,
         'threshold'     => 5,
+        'order'         => 0,
     ];
 
     /**
@@ -63,6 +65,7 @@ class Metric extends Model implements HasPresenter
         'places'        => 'int',
         'default_view'  => 'int',
         'threshold'     => 'int',
+        'order'         => 'int',
     ];
 
     /**
@@ -80,6 +83,7 @@ class Metric extends Model implements HasPresenter
         'places',
         'default_view',
         'threshold',
+        'order',
     ];
 
     /**
@@ -95,6 +99,7 @@ class Metric extends Model implements HasPresenter
         'places'        => 'numeric|between:0,4',
         'default_view'  => 'numeric|between:0,3',
         'threshold'     => 'numeric|between:0,10',
+        'threshold'     => 'int',
     ];
 
     /**
@@ -108,6 +113,7 @@ class Metric extends Model implements HasPresenter
         'display_chart',
         'default_value',
         'calc_type',
+        'order',
     ];
 
     /**
@@ -118,6 +124,18 @@ class Metric extends Model implements HasPresenter
     public function points()
     {
         return $this->hasMany(MetricPoint::class, 'metric_id', 'id');
+    }
+
+    /**
+     * Scope metrics to those of which are displayable.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeDisplayable(Builder $query)
+    {
+        return $query->where('display_chart', 1);
     }
 
     /**
