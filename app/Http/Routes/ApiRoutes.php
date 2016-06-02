@@ -37,6 +37,8 @@ class ApiRoutes
                 $router->get('components', 'ComponentController@getComponents');
                 $router->get('components/groups', 'ComponentGroupController@getGroups');
                 $router->get('components/groups/{component_group}', 'ComponentGroupController@getGroup');
+                $router->get('components/tags', 'ComponentTagController@getTags');
+                $router->get('components/tags/{component_tag}', 'ComponentTagController@getTag');
                 $router->get('components/{component}', 'ComponentController@getComponent');
 
                 $router->get('incidents', 'IncidentController@getIncidents');
@@ -48,6 +50,9 @@ class ApiRoutes
                 $router->get('metrics', 'MetricController@getMetrics');
                 $router->get('metrics/{metric}', 'MetricController@getMetric');
                 $router->get('metrics/{metric}/points', 'MetricController@getMetricPoints');
+
+                $router->get('tags', 'TagController@getTags');
+                $router->get('tags/{tag}', 'TagController@getTag');
             });
 
             $router->group(['middleware' => ['auth.api:true']], function (Registrar $router) {
@@ -55,11 +60,13 @@ class ApiRoutes
 
                 $router->post('components', 'ComponentController@postComponents');
                 $router->post('components/groups', 'ComponentGroupController@postGroups');
+                $router->post('components/tags', 'ComponentTagController@postTags');
                 $router->post('incidents', 'IncidentController@postIncidents');
                 $router->post('incidents/{incident}/updates', 'IncidentUpdateController@postIncidentUpdate');
                 $router->post('metrics', 'MetricController@postMetrics');
                 $router->post('metrics/{metric}/points', 'MetricPointController@postMetricPoints');
                 $router->post('subscribers', 'SubscriberController@postSubscribers');
+                $router->post('tags', 'TagController@postTags');
 
                 $router->put('components/groups/{component_group}', 'ComponentGroupController@putGroup');
                 $router->put('components/{component}', 'ComponentController@putComponent');
@@ -67,8 +74,10 @@ class ApiRoutes
                 $router->put('incidents/{incident}/updates/{update}', 'IncidentUpdateController@putIncidentUpdate');
                 $router->put('metrics/{metric}', 'MetricController@putMetric');
                 $router->put('metrics/{metric}/points/{metric_point}', 'MetricPointController@putMetricPoint');
+                $router->put('tags/{tag}', 'TagController@putTag');
 
                 $router->delete('components/groups/{component_group}', 'ComponentGroupController@deleteGroup');
+                $router->delete('components/tags', 'ComponentTagController@deleteTag');
                 $router->delete('components/{component}', 'ComponentController@deleteComponent');
                 $router->delete('incidents/{incident}', 'IncidentController@deleteIncident');
                 $router->delete('incidents/{incident}/updates/{update}', 'IncidentUpdateController@deleteIncidentUpdate');
@@ -76,6 +85,7 @@ class ApiRoutes
                 $router->delete('metrics/{metric}/points/{metric_point}', 'MetricPointController@deleteMetricPoint');
                 $router->delete('subscribers/{subscriber}', 'SubscriberController@deleteSubscriber');
                 $router->delete('subscriptions/{subscription}', 'SubscriberController@deleteSubscription');
+                $router->delete('tags/{tag}', 'TagController@deleteTag');
             });
         });
     }

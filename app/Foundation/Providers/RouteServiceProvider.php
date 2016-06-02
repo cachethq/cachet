@@ -48,6 +48,7 @@ class RouteServiceProvider extends ServiceProvider
     {
         $this->app->router->model('component', 'CachetHQ\Cachet\Models\Component');
         $this->app->router->model('component_group', 'CachetHQ\Cachet\Models\ComponentGroup');
+        $this->app->router->model('component_tag', 'CachetHQ\Cachet\Models\ComponentTag');
         $this->app->router->model('incident', 'CachetHQ\Cachet\Models\Incident');
         $this->app->router->model('incident_template', 'CachetHQ\Cachet\Models\IncidentTemplate');
         $this->app->router->model('metric', 'CachetHQ\Cachet\Models\Metric');
@@ -55,6 +56,7 @@ class RouteServiceProvider extends ServiceProvider
         $this->app->router->model('setting', 'CachetHQ\Cachet\Models\Setting');
         $this->app->router->model('subscriber', 'CachetHQ\Cachet\Models\Subscriber');
         $this->app->router->model('subscription', 'CachetHQ\Cachet\Models\Subscription');
+        $this->app->router->model('tag', 'CachetHQ\Cachet\Models\Tag');
         $this->app->router->model('user', 'CachetHQ\Cachet\Models\User');
     }
 
