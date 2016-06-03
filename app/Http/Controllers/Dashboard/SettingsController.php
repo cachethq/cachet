@@ -250,8 +250,6 @@ class SettingsController extends Controller
      */
     public function postSettings()
     {
-        $redirectUrl = Session::get('redirect_to', route('dashboard.settings.setup'));
-
         $setting = app(Repository::class);
 
         if (Binput::get('remove_banner') === '1') {
@@ -297,14 +295,14 @@ class SettingsController extends Controller
                 $setting->set($settingName, $settingValue);
             }
         } catch (Exception $e) {
-            return Redirect::to($redirectUrl)->withErrors(trans('dashboard.settings.edit.failure'));
+            return Redirect::back()->withErrors(trans('dashboard.settings.edit.failure'));
         }
 
         if (Binput::has('app_locale')) {
             Lang::setLocale(Binput::get('app_locale'));
         }
 
-        return Redirect::to($redirectUrl)->withSuccess(trans('dashboard.settings.edit.success'));
+        return Redirect::back()->withSuccess(trans('dashboard.settings.edit.success'));
     }
 
     /**
