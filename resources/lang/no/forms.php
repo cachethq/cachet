@@ -34,6 +34,7 @@ return [
         'invalid'       => 'Invalid username or password',
         'invalid-token' => 'Ugyldig token',
         'cookies'       => 'Du må aktivere informasjonskapsler for å logge inn.',
+        'rate-limit'    => 'Rate limit exceeded.',
     ],
 
     // Incidents form fields

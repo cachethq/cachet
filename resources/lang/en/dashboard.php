@@ -254,9 +254,17 @@ return [
         'whoops'        => 'Whoops.',
     ],
 
+    // Widgets
+    'widgets' => [
+        'support'          => 'Support Cachet',
+        'support_subtitle' => 'Check out our <strong><a href="https://patreon.com/jbrooksuk" target="_blank">Patreon</a></strong> page!',
+        'news'             => 'Latest News',
+        'news_subtitle'    => 'Get the latest updates',
+    ],
+
     // Welcome modal
     'welcome' => [
-        'welcome' => 'Welcome to your new status page!',
+        'welcome' => 'Welcome to your new Status page!',
         'message' => 'Your status page is almost ready! You might want to configure these extra settings',
         'close'   => 'Take me straight to my dashboard',
         'steps'   => [

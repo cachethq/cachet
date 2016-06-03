@@ -34,6 +34,7 @@ return [
         'invalid'       => 'Ugyldigt brugernavn eller adgangskode',
         'invalid-token' => 'Ugyldig token',
         'cookies'       => 'Du skal tillade cookies for at logge ind.',
+        'rate-limit'    => 'Rate limit exceeded.',
     ],
 
     // Incidents form fields

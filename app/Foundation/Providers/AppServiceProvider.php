@@ -15,6 +15,7 @@ use AltThree\Bus\Dispatcher;
 use CachetHQ\Cachet\Bus\Middleware\UseDatabaseTransactions;
 use CachetHQ\Cachet\Dates\DateFactory;
 use CachetHQ\Cachet\Integrations\Credits;
+use CachetHQ\Cachet\Integrations\Feed;
 use CachetHQ\Cachet\Integrations\Releases;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
@@ -55,6 +56,7 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->registerDateFactory();
         $this->registerCredits();
+        $this->registerFeed();
         $this->registerReleases();
     }
 
@@ -84,6 +86,20 @@ class AppServiceProvider extends ServiceProvider
             $cache = $app['cache.store'];
 
             return new Credits($cache);
+        });
+    }
+
+    /**
+     * Register the feed class.
+     *
+     * @return void
+     */
+    protected function registerFeed()
+    {
+        $this->app->singleton(Feed::class, function ($app) {
+            $cache = $app['cache.store'];
+
+            return new Feed($cache);
         });
     }
 

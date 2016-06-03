@@ -34,6 +34,7 @@ return [
         'invalid'       => 'Невірний логін чи пароль',
         'invalid-token' => 'Invalid token',
         'cookies'       => 'Ви повинні увімкнути куки щоб увійти.',
+        'rate-limit'    => 'Rate limit exceeded.',
     ],
 
     // Incidents form fields

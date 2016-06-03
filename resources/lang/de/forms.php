@@ -34,6 +34,7 @@ return [
         'invalid'       => 'Ungültiger Benutzername oder Passwort',
         'invalid-token' => 'Token ist ungültig',
         'cookies'       => 'Sie müssen Cookies aktivieren um sich anzumelden.',
+        'rate-limit'    => 'Rate limit exceeded.',
     ],
 
     // Incidents form fields
@@ -108,7 +109,7 @@ return [
             'banner'                 => 'Banner Bild',
             'banner-help'            => 'Es wird empfohlen, dass Sie keine Dateien die breiter als 930 Pixel sind hochladen .',
             'subscribers'            => 'Personen die Anmeldung für E-Mail-Benachrichtigung erlauben?',
-            'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
+            'automatic_localization' => 'Die Status-Seite automatisch auf die Sprache deiner Besucher anpassen?',
         ],
         'analytics' => [
             'analytics_google'       => 'Google Analytics Code',

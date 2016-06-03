@@ -34,6 +34,7 @@ return [
         'invalid'       => 'crwdns652:0crwdne652:0',
         'invalid-token' => 'crwdns384:0crwdne384:0',
         'cookies'       => 'crwdns480:0crwdne480:0',
+        'rate-limit'    => 'crwdns781:0crwdne781:0',
     ],
 
     // Incidents form fields

@@ -108,6 +108,7 @@ class Incident extends Model implements HasPresenter
      */
     protected $searchable = [
         'id',
+        'component_id',
         'name',
         'status',
         'visible',

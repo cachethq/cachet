@@ -34,6 +34,7 @@ return [
         'invalid'       => 'Ogiltigt användarnamn eller lösenord',
         'invalid-token' => 'Ogiltig nyckel',
         'cookies'       => 'Du måste aktivera cookies för att kunna logga in.',
+        'rate-limit'    => 'Rate limit exceeded.',
     ],
 
     // Incidents form fields

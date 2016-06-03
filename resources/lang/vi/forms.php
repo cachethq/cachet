@@ -34,6 +34,7 @@ return [
         'invalid'       => 'Invalid username or password',
         'invalid-token' => 'Token không hợp lệ',
         'cookies'       => 'Bạn phải bật cookie để đăng nhập.',
+        'rate-limit'    => 'Rate limit exceeded.',
     ],
 
     // Incidents form fields

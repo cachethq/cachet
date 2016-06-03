@@ -13,7 +13,7 @@ return [
     'setup'             => 'Telepítés',
     'title'             => 'Cachet telepítése',
     'service_details'   => 'A szolgáltatás részletei',
-    'env_setup'         => 'Environment setup',
+    'env_setup'         => 'Environment Setup',
     'status_page_setup' => 'Állapotoldal beállítás',
     'show_support'      => 'Cachet támogató link megjelenítése?',
     'admin_account'     => 'Adminisztrátori fiók',

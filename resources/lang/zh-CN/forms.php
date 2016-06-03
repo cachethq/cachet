@@ -34,6 +34,7 @@ return [
         'invalid'       => '无效的用户名或密码',
         'invalid-token' => 'Invalid token',
         'cookies'       => 'You must enable cookies to login.',
+        'rate-limit'    => 'Rate limit exceeded.',
     ],
 
     // Incidents form fields
@@ -108,7 +109,7 @@ return [
             'banner'                 => '横幅图像',
             'banner-help'            => "It's recommended that you upload files no bigger than 930px wide .",
             'subscribers'            => 'Allow people to signup to email notifications?',
-            'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
+            'automatic_localization' => '根据访客的系统语言自动本地化状态页面？',
         ],
         'analytics' => [
             'analytics_google'       => 'Google Analytics 代码',

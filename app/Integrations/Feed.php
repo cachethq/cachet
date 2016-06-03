@@ -11,17 +11,23 @@
 
 namespace CachetHQ\Cachet\Integrations;
 
+use Exception;
 use GuzzleHttp\Client;
 use Illuminate\Contracts\Cache\Repository;
 
-class Releases
+/**
+ * This is the feed class.
+ *
+ * @author James Brooks <james@alt-three.com>
+ */
+class Feed
 {
     /**
      * The default url.
      *
      * @var string
      */
-    const URL = 'https://api.github.com/repos/cachethq/cachet/releases/latest';
+    const URL = 'https://blog.alt-three.com/tag/cachet/rss';
 
     /**
      * The failed status indicator.
@@ -38,13 +44,6 @@ class Releases
     protected $cache;
 
     /**
-     * The github authentication token.
-     *
-     * @var string|null
-     */
-    protected $token;
-
-    /**
      * The url to use.
      *
      * @var string|null
@@ -52,40 +51,38 @@ class Releases
     protected $url;
 
     /**
-     * Creates a new releases instance.
+     * Creates a new feed instance.
      *
      * @param \Illuminate\Contracts\Cache\Repository $cache
-     * @param string|null                            $token
      * @param string|null                            $url
      *
      * @return void
      */
-    public function __construct(Repository $cache, $token = null, $url = null)
+    public function __construct(Repository $cache, $url = null)
     {
         $this->cache = $cache;
-        $this->token = $token;
         $this->url = $url ?: static::URL;
     }
 
     /**
-     * Returns the latest release.
+     * Returns the latest entries.
      *
-     * @return string
+     * @return array|null
      */
     public function latest()
     {
-        $release = $this->cache->remember('version', 720, function () {
-            $headers = ['Accept' => 'application/vnd.github.v3+json', 'User-Agent' => defined('CACHET_VERSION') ? 'cachet/'.constant('CACHET_VERSION') : 'cachet'];
+        $result = $this->cache->remember('feeds', 720, function () {
+            try {
+                $xml = simplexml_load_string((new Client())->get($this->url, [
+                    'headers' => ['Accept' => 'application/rss+xml', 'User-Agent' => defined('CACHET_VERSION') ? 'cachet/'.constant('CACHET_VERSION') : 'cachet'],
+                ])->getBody()->getContents(), null, LIBXML_NOCDATA);
 
-            if ($this->token) {
-                $headers['OAUTH-TOKEN'] = $this->token;
+                return json_decode(json_encode($xml));
+            } catch (Exception $e) {
+                return self::FAILED;
             }
-
-            return json_decode((new Client())->get($this->url, [
-                'headers' => $headers,
-            ])->getBody(), true);
         });
 
-        return $release['tag_name'];
+        return $result === self::FAILED ? null : $result;
     }
 }

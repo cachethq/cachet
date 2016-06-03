@@ -75,35 +75,28 @@ return [
             'subscribe'          => 'اشتراک در به‌روزرسانی‌های ایمیلی.',
             'subscribed'         => 'شما در اطلاع‌رسانی‌های ایمیلی مشترک هستید، لطفا ایمیل خود را جهت تایید اشتراک، کنترل نمایید.',
             'verified'           => 'ایمیل اشتراک شما با موفقیت تایید شد. با تشکر!',
-            'manage'             => 'مدیریت اشتراک‌های شما.',
+            'manage'             => 'Manage your subscription',
             'unsubscribe'        => 'لغو اشتراک ایمیلی برای به‌روزرسانی‌ها.',
             'unsubscribed'       => 'اشتراک ایمیلی شما لغو گردید.',
             'failure'            => 'هنگام عضویت اشتراک خطایی رخ داد.',
             'already-subscribed' => 'امکان مشترک شدن :email وجود ندارد، زیرا در حال حاضر این ایمیل مشترک می‌باشد.',
             'verify'             => [
-                'text'           => "لطفا ایمیل خود را جهت دریافت به‌روز رسانی برای :app_name با کلیک‌کردن بر روی لینک زیر تایید نمایید:\n
-:link \n
-با تشکر، :app_name",
-                'html-preheader' => 'لطفا اشتراک ایمیلی خود را جهت دریافت ‌به‌روزرسانی وضعیت‌ها برای :app_name تایید نمایید.',
-                'html'           => '<p>Please confirm your email subscription to :app_name status updates.</p><p><a href=":link">:link</a></p><p>Thank you, :app_name</p>',
+                'text'   => "Please confirm your email subscription to :app_name status updates.\n:link",
+                'html'   => '<p>Please confirm your email subscription to :app_name status updates.</p>',
+                'button' => 'Confirm Subscription',
             ],
             'maintenance' => [
-                'text'           => "New maintenance has been scheduled on :app_name.\nThank you, :app_name",
-                'html-preheader' => 'New maintenance has been scheduled on :app_name.',
-                'html'           => '<p>New maintenance has been scheduled on :app_name.</p>',
+                'subject' => '[Maintenance Scheduled] :name',
             ],
             'incident' => [
-                'text'           => "New incident has been reported on :app_name.\nThank you, :app_name",
-                'html-preheader' => 'New incident has been reported on :app_name.',
-                'html'           => '<p>New incident has been reported on :app_name.</p><p>Thank you, :app_name</p>',
+                'subject' => '[New Incident] :status: :name',
             ],
             'component' => [
-                'subject'        => 'به‌روزرسانی وضعیت کامپوننت',
-                'text'           => 'کامپوننت :component یک تغییر وضعیت دارد. این کامپوننت هم‌اکنون در حالت :component_human_status قرار دارد.\n
+                'subject'       => 'به‌روزرسانی وضعیت کامپوننت',
+                'text'          => 'کامپوننت :component یک تغییر وضعیت دارد. این کامپوننت هم‌اکنون در حالت :component_human_status قرار دارد.\n
 با تشکر، :app_name',
-                'html-preheader' => 'به‌روزرسانی کامپوننت از :app_name',
-                'html'           => '<p> کامپوننت با نام :component_name یک تغییر وضعیت دارد. کامپوننت هم‌اکنون در حالت :component_human_status قرار دارد. </p><p> با تشکر :app_name </p>',
-                'tooltip-title'  => 'Subscribe to notifications for :component_name.',
+                'html'          => '<p> کامپوننت با نام :component_name یک تغییر وضعیت دارد. کامپوننت هم‌اکنون در حالت :component_human_status قرار دارد. </p><p> با تشکر :app_name </p>',
+                'tooltip-title' => 'Subscribe to notifications for :component_name.',
             ],
         ],
     ],
@@ -112,7 +105,6 @@ return [
         'email' => [
             'invite' => [
                 'text'           => "You have been invited to the team :app_name status page, to sign up follow the next link.\n:link\nThank you, :app_name",
-                'html-preheader' => 'You have been invited to the team :app_name.',
                 'html'           => '<p>You have been invited to the team :app_name status page, to sign up follow the next link.</p><p><a href=":link">:link</a></p><p>Thank you, :app_name</p>',
             ],
         ],

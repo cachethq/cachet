@@ -40,6 +40,7 @@ class UpdateMetricCommandTest extends AbstractTestCase
             'places'        => 0,
             'default_view'  => 0,
             'threshold'     => 0,
+            'order'         => 0,
         ];
 
         $object = new UpdateMetricCommand(
@@ -52,7 +53,8 @@ class UpdateMetricCommandTest extends AbstractTestCase
             $params['display_chart'],
             $params['places'],
             $params['default_view'],
-            $params['threshold']
+            $params['threshold'],
+            $params['order']
         );
 
         return compact('params', 'object');

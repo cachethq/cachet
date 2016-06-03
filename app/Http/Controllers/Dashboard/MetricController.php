@@ -31,7 +31,7 @@ class MetricController extends Controller
      */
     public function showMetrics()
     {
-        $metrics = Metric::orderBy('created_at', 'desc')->get();
+        $metrics = Metric::orderBy('order')->get();
 
         return View::make('dashboard.metrics.index')
             ->withPageTitle(trans('dashboard.metrics.metrics').' - '.trans('dashboard.dashboard'))

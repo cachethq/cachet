@@ -34,6 +34,7 @@ return [
         'invalid'       => 'Invalid username or password',
         'invalid-token' => 'Neplatný token',
         'cookies'       => 'Pro přihlášení je třeba povolit soubory cookie.',
+        'rate-limit'    => 'Rate limit exceeded.',
     ],
 
     // Incidents form fields

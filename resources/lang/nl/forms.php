@@ -34,6 +34,7 @@ return [
         'invalid'       => 'Ongeldige gebruikersnaam of wachtwoord',
         'invalid-token' => 'Ongeldig token',
         'cookies'       => 'U moet cookies inschakelen om in te loggen.',
+        'rate-limit'    => 'Rate limit exceeded.',
     ],
 
     // Incidents form fields
@@ -89,7 +90,7 @@ return [
         'type_avg'         => 'Gemiddelde',
         'places'           => 'Decimalen',
         'default_view'     => 'Standaardweergave',
-        'threshold'        => 'How many minutes of threshold between metric points?',
+        'threshold'        => 'Hoeveel minuten tussen de metrische punten?',
 
         'points' => [
             'value' => 'Waarde',
@@ -108,7 +109,7 @@ return [
             'banner'                 => 'Banner afbeelding',
             'banner-help'            => 'Het wordt aanbevolen dat u geen bestanden upload die breeder zijn dan 930px.',
             'subscribers'            => 'Bezoekers toestaan om te abonneren op e-mail notificaties?',
-            'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
+            'automatic_localization' => 'Stel de taal van de bezoeker in als standaardtaal voor deze bezoeker?',
         ],
         'analytics' => [
             'analytics_google'       => 'Google Analytics-code',

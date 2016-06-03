@@ -34,6 +34,7 @@ return [
         'invalid'       => 'Nome de utilizador ou palavra-passe inválidos',
         'invalid-token' => 'Token inválido',
         'cookies'       => 'Deverá activar cookies para efectuar autenticação.',
+        'rate-limit'    => 'Rate limit exceeded.',
     ],
 
     // Incidents form fields

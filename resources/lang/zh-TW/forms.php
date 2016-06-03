@@ -34,6 +34,7 @@ return [
         'invalid'       => 'Invalid username or password',
         'invalid-token' => '錯誤的驗證碼',
         'cookies'       => '您必須啟用 cookies 來進行登錄。',
+        'rate-limit'    => 'Rate limit exceeded.',
     ],
 
     // Incidents form fields

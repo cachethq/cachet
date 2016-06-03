@@ -34,6 +34,7 @@ return [
         'invalid'       => 'Invalid username or password',
         'invalid-token' => '잘못된 토큰n',
         'cookies'       => '로그인 하려면 쿠키를 활성화 해야 합니다.',
+        'rate-limit'    => 'Rate limit exceeded.',
     ],
 
     // Incidents form fields

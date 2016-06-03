@@ -34,6 +34,7 @@ return [
         'invalid'       => 'Неверное имя пользователя или пароль',
         'invalid-token' => 'Неверный токен',
         'cookies'       => 'Необходимо включить cookies для входа.',
+        'rate-limit'    => 'Rate limit exceeded.',
     ],
 
     // Incidents form fields
