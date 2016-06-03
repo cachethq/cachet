@@ -11,8 +11,8 @@
 
 namespace CachetHQ\Cachet\Integrations;
 
-use GuzzleHttp\Client;
 use Exception;
+use GuzzleHttp\Client;
 use Illuminate\Contracts\Cache\Repository;
 
 /**
