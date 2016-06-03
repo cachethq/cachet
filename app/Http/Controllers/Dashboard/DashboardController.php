@@ -69,7 +69,7 @@ class DashboardController extends Controller
         $subscribers = $this->getSubscribers();
 
         $entries = null;
-        if ($feed = $this->feed->entries()) {
+        if ($feed = $this->feed->latest()) {
             $entries = array_slice($feed->channel->item, 0, 5);
         }
 

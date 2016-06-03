@@ -24,6 +24,13 @@ class Releases
     const URL = 'https://api.github.com/repos/cachethq/cachet/releases/latest';
 
     /**
+     * The failed status indicator.
+     *
+     * @var int
+     */
+    const FAILED = 1;
+
+    /**
      * The cache repository instance.
      *
      * @var \Illuminate\Contracts\Cache\Repository
