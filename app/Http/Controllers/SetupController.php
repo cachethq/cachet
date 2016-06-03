@@ -53,7 +53,7 @@ class SetupController extends Controller
         'sendmail'  => 'Sendmail',
         'mailgun'   => 'Mailgun',
         'mandrill'  => 'Mandrill',
-        'ses'       => 'Amazon SES',
+        // 'ses'       => 'Amazon SES', this will be available only if aws/aws-sdk-php is installed
         'sparkpost' => 'SparkPost',
     ];
 
@@ -88,6 +88,7 @@ class SetupController extends Controller
         $this->rulesStep1 = [
             'env.cache_driver'   => 'required|in:'.implode(',', array_keys($this->cacheDrivers)),
             'env.session_driver' => 'required|in:'.implode(',', array_keys($this->cacheDrivers)),
+            'env.mail_driver'    => 'required|in:'.implode(',', array_keys($this->mailDrivers)),
         ];
 
         $this->rulesStep2 = [
@@ -142,6 +143,14 @@ class SetupController extends Controller
         $postData = Binput::all();
 
         $v = Validator::make($postData, $this->rulesStep1);
+
+        $v->sometimes('env.mail_host', 'required', function ($input) {
+            return $input->mail_driver === 'smtp';
+        });
+
+        $v->sometimes(['env.mail_from', 'env.mail_username', 'env.mail_password'], 'required', function ($input) {
+            return $input->mail_driver !== 'log';
+        });
 
         if ($v->passes()) {
             return Response::json(['status' => 1]);

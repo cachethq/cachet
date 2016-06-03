@@ -68,6 +68,34 @@
                         <span class="text-danger">{{ $errors->first('env.mail_driver') }}</span>
                         @endif
                     </div>
+                    <div class="form-group">
+                        <label>{{ trans('forms.setup.mail_host') }} (optional)</label>
+                        <input type="text" class="form-control" name="env[mail_host]" value="{{ Binput::old('env.mail_host') }}">
+                        @if($errors->has('env.mail_host'))
+                        <span class="text-danger">{{ $errors->first('env.mail_host') }}</span>
+                        @endif
+                    </div>
+                    <div class="form-group">
+                        <label>{{ trans('forms.setup.mail_from') }}</label>
+                        <input type="text" class="form-control" name="env[mail_from]" value="{{ Binput::old('env.mail_from') }}" placeholder="notifications@alt-three.com">
+                        @if($errors->has('env.mail_from'))
+                        <span class="text-danger">{{ $errors->first('env.mail_from') }}</span>
+                        @endif
+                    </div>
+                    <div class="form-group">
+                        <label>{{ trans('forms.setup.mail_username') }}</label>
+                        <input type="text" class="form-control" name="env[mail_username]" value="{{ Binput::old('env.mail_username') }}">
+                        @if($errors->has('env.mail_username'))
+                        <span class="text-danger">{{ $errors->first('env.mail_username') }}</span>
+                        @endif
+                    </div>
+                    <div class="form-group">
+                        <label>{{ trans('forms.setup.mail_password') }}</label>
+                        <input type="text" class="form-control" name="env[mail_password]" value="{{ Binput::old('env.mail_password') }}" autocomplete="off">
+                        @if($errors->has('env.mail_password'))
+                        <span class="text-danger">{{ $errors->first('env.mail_password') }}</span>
+                        @endif
+                    </div>
                 </fieldset>
                 <hr>
                 <div class="form-group text-center">
