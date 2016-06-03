@@ -144,11 +144,11 @@ class SetupController extends Controller
 
         $v = Validator::make($postData, $this->rulesStep1);
 
-        $v->sometimes('env.mail_host', 'required', function($input) {
+        $v->sometimes('env.mail_host', 'required', function ($input) {
             return $input->mail_driver === 'smtp';
         });
 
-        $v->sometimes(['env.mail_from', 'env.mail_username', 'env.mail_password'], 'required', function($input) {
+        $v->sometimes(['env.mail_from', 'env.mail_username', 'env.mail_password'], 'required', function ($input) {
             return $input->mail_driver !== 'log';
         });
 
