@@ -85,6 +85,7 @@
             </div>
         </div>
 
+        @if($entries)
         <div class="col-sm-12 col-lg-6">
             <div class="stats-widget">
                 <div class='stats-top'>
@@ -94,12 +95,13 @@
                 <div class='stats-body'>
                     <div class="list-group">
                         @foreach($entries as $entry)
-                        <a class="list-group-item" href="{{ $entry->link }}" target="_blank">{{ $entry->title }}, <small>{{ $entry->pubDate }}</small></a>
+                        <a class="list-group-item" href="{{ $entry->link }}" target="_blank">{{ $entry->title }}, <small>{{ $entry->pubDate }}</small> <span class="badge"><i class="ion-android-open"></i></span></a>
                         @endforeach
                     </div>
                 </div>
             </div>
         </div>
+        @endif
     </div>
 </div>
 @if(Session::get('setup.done'))

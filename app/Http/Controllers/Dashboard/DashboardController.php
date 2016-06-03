@@ -67,9 +67,11 @@ class DashboardController extends Controller
         $components = Component::orderBy('order')->get();
         $incidents = $this->getIncidents();
         $subscribers = $this->getSubscribers();
-        $feed = $this->feed->entries();
 
-        $entries = array_slice($feed->channel->item, 0, 5);
+        $entries = null;
+        if ($feed = $this->feed->entries()) {
+            $entries = array_slice($feed->channel->item, 0, 5);
+        }
 
         return View::make('dashboard.index')
             ->withPageTitle(trans('dashboard.dashboard'))
