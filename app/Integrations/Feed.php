@@ -30,6 +30,13 @@ class Feed
     const URL = 'https://blog.alt-three.com/tag/cachet/rss';
 
     /**
+     * The failed status indicator.
+     *
+     * @var int
+     */
+    const FAILED = 1;
+
+    /**
      * The cache repository instance.
      *
      * @var \Illuminate\Contracts\Cache\Repository
@@ -58,13 +65,13 @@ class Feed
     }
 
     /**
-     * Returns the entries.
+     * Returns the latest entries.
      *
-     * @return array
+     * @return array|null
      */
-    public function entries()
+    public function latest()
     {
-        return $this->cache->remember('feeds', 720, function () {
+        $result = $this->cache->remember('feeds', 720, function () {
             try {
                 $xml = simplexml_load_string((new Client())->get($this->url, [
                     'headers' => ['Accept' => 'application/rss+xml', 'User-Agent' => defined('CACHET_VERSION') ? 'cachet/'.constant('CACHET_VERSION') : 'cachet'],
@@ -72,8 +79,10 @@ class Feed
 
                 return json_decode(json_encode($xml));
             } catch (Exception $e) {
-                // Do nothing, this isn't critical.
+                return self::FAILED;
             }
         });
+
+        return $result === self::FAILED ? null : $result;
     }
 }

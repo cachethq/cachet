@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Cachet\Integrations;
 
+use Exception;
 use GuzzleHttp\Client;
 use Illuminate\Contracts\Cache\Repository;
 
@@ -22,6 +23,13 @@ class Credits
      * @var string
      */
     const URL = 'https://cachethq.io/credits';
+
+    /**
+     * The failed status indicator.
+     *
+     * @var int
+     */
+    const FAILED = 1;
 
     /**
      * The cache repository instance.
@@ -54,14 +62,20 @@ class Credits
     /**
      * Returns the latest credits.
      *
-     * @return array
+     * @return array|null
      */
     public function latest()
     {
-        return $this->cache->remember('credits', 2880, function () {
-            return json_decode((new Client())->get($this->url, [
-                'headers' => ['Accept' => 'application/json', 'User-Agent' => defined('CACHET_VERSION') ? 'cachet/'.constant('CACHET_VERSION') : 'cachet'],
-            ])->getBody(), true);
+        $result = $this->cache->remember('credits', 2880, function () {
+            try {
+                return json_decode((new Client())->get($this->url, [
+                    'headers' => ['Accept' => 'application/json', 'User-Agent' => defined('CACHET_VERSION') ? 'cachet/'.constant('CACHET_VERSION') : 'cachet'],
+                ])->getBody(), true);
+            } catch (Exception $e) {
+                return self::FAILED;
+            }
         });
+
+        return $result === self::FAILED ? null : $result;
     }
 }
