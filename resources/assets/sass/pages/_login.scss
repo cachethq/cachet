@@ -1,23 +1,23 @@
 body.login {
-    background: $sidebar-background-color;
+    background: $sidebar-background-color url("/img/login-background.png") center;
 
     .form-bg {
         border-radius: 10px;
         margin: auto;
-        padding-top: 100px;
+        margin-top: 60px;
+        padding: 30px;
         width: 320px;
-        height: 280px;
+        border: 1px solid rgba(0,0,0,.1);
+        box-shadow: 0 20px 30px rgba(0,0,0,.2);
+        background-color: white;
     }
 
     .logo {
-        margin-bottom: 10px;
-    }
+        margin-bottom: 30px;
 
-    p {
-        color: white;
-        text-align: center;
-        font-weight: 600;
-        font-size: 18px;
+        img {
+            margin: 0 auto;
+        }
     }
 
     .login-input {
