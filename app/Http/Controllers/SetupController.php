@@ -47,7 +47,6 @@ class SetupController extends Controller
      * @var string[]
      */
     protected $mailDrivers = [
-        'log'       => 'Log (Testing)',
         'smtp'      => 'SMTP',
         'mail'      => 'Mail',
         'sendmail'  => 'Sendmail',
@@ -55,6 +54,7 @@ class SetupController extends Controller
         'mandrill'  => 'Mandrill',
         // 'ses'       => 'Amazon SES', this will be available only if aws/aws-sdk-php is installed
         'sparkpost' => 'SparkPost',
+        'log'       => 'Log (Testing)',
     ];
 
     /**
