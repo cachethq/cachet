@@ -41,6 +41,7 @@ class SetupController extends Controller
         'memcached' => 'Memcached',
         'redis'     => 'Redis',
     ];
+
     /**
      * Array of cache drivers.
      *
