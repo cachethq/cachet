@@ -88,7 +88,7 @@ final class UpdateMetricCommand
     /**
      * The order of which to place the metric in.
      *
-     * @var int
+     * @var int|null
      */
     public $order;
 
@@ -124,11 +124,11 @@ final class UpdateMetricCommand
      * @param int                            $places
      * @param int                            $default_view
      * @param int                            $threshold
-     * @param int                            $order
+     * @param int|null                       $order
      *
      * @return void
      */
-    public function __construct(Metric $metric, $name, $suffix, $description, $default_value, $calc_type, $display_chart, $places, $default_view, $threshold, $order)
+    public function __construct(Metric $metric, $name, $suffix, $description, $default_value, $calc_type, $display_chart, $places, $default_view, $threshold, $order = null)
     {
         $this->metric = $metric;
         $this->name = $name;

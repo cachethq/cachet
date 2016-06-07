@@ -153,8 +153,7 @@ class MetricController extends Controller
                 Binput::get('display_chart', null, false),
                 Binput::get('places', null, false),
                 Binput::get('default_view', null, false),
-                Binput::get('threshold', null, false),
-                null,
+                Binput::get('threshold', null, false)
             ));
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.metrics.edit', ['id' => $metric->id])
