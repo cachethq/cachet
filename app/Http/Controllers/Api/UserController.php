@@ -14,8 +14,8 @@ namespace CachetHQ\Cachet\Http\Controllers\Api;
 use CachetHQ\Cachet\Bus\Commands\User\AddTeamMemberCommand;
 use CachetHQ\Cachet\Bus\Commands\User\RemoveUserCommand;
 use CachetHQ\Cachet\Models\User;
-use Illuminate\Contracts\Auth\Guard;
 use GrahamCampbell\Binput\Facades\Binput;
+use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
@@ -36,8 +36,7 @@ class UserController extends AbstractApiController
     {
         $currentUser = app(Guard::class)->user();
 
-        if (!$currentUser->getIsAdminAttribute())
-        {
+        if (!$currentUser->getIsAdminAttribute()) {
             return $this->unauthorized();
         }
 
@@ -55,8 +54,7 @@ class UserController extends AbstractApiController
     {
         $currentUser = app(Guard::class)->user();
 
-        if (!$currentUser->getIsAdminAttribute())
-        {
+        if (!$currentUser->getIsAdminAttribute()) {
             return $this->unauthorized();
         }
 
@@ -85,8 +83,7 @@ class UserController extends AbstractApiController
     {
         $currentUser = app(Guard::class)->user();
 
-        if (!$currentUser->getIsAdminAttribute())
-        {
+        if (!$currentUser->getIsAdminAttribute()) {
             return $this->unauthorized();
         }
 
