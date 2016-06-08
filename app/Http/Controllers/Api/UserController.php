@@ -19,6 +19,7 @@ use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
+use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
 
 /**
  * This is the user controller class.
@@ -37,7 +38,7 @@ class UserController extends AbstractApiController
         $currentUser = app(Guard::class)->user();
 
         if (!$currentUser->getIsAdminAttribute()) {
-            return $this->unauthorized();
+            throw new UnauthorizedHttpException();
         }
 
         $users = User::paginate(Binput::get('per_page', 20));
@@ -55,7 +56,7 @@ class UserController extends AbstractApiController
         $currentUser = app(Guard::class)->user();
 
         if (!$currentUser->getIsAdminAttribute()) {
-            return $this->unauthorized();
+            throw new UnauthorizedHttpException();
         }
 
         try {
@@ -84,7 +85,7 @@ class UserController extends AbstractApiController
         $currentUser = app(Guard::class)->user();
 
         if (!$currentUser->getIsAdminAttribute()) {
-            return $this->unauthorized();
+            throw new UnauthorizedHttpException();
         }
 
         dispatch(new RemoveUserCommand($user));
