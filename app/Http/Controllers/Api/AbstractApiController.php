@@ -175,6 +175,16 @@ abstract class AbstractApiController extends Controller
     }
 
     /**
+     * Respond with a 401 unauthorized.
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    protected function unauthorized()
+    {
+        return $this->setStatusCode(401)->respond();
+    }
+
+    /**
      * Build the response.
      *
      * @return \Illuminate\Http\Response

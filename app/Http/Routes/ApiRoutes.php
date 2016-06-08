@@ -57,6 +57,7 @@ class ApiRoutes
 
             $router->group(['middleware' => ['auth.api:true']], function (Registrar $router) {
                 $router->get('subscribers', 'SubscriberController@getSubscribers');
+                $router->get('users', 'UserController@getUsers');
 
                 $router->post('components', 'ComponentController@postComponents');
                 $router->post('components/groups', 'ComponentGroupController@postGroups');
@@ -67,6 +68,7 @@ class ApiRoutes
                 $router->post('metrics/{metric}/points', 'MetricPointController@postMetricPoints');
                 $router->post('subscribers', 'SubscriberController@postSubscribers');
                 $router->post('tags', 'TagController@postTags');
+                $router->post('users', 'UserController@postUsers');
 
                 $router->put('components/groups/{component_group}', 'ComponentGroupController@putGroup');
                 $router->put('components/{component}', 'ComponentController@putComponent');
@@ -86,6 +88,7 @@ class ApiRoutes
                 $router->delete('subscribers/{subscriber}', 'SubscriberController@deleteSubscriber');
                 $router->delete('subscriptions/{subscription}', 'SubscriberController@deleteSubscription');
                 $router->delete('tags/{tag}', 'TagController@deleteTag');
+                $router->delete('users/{user}', 'UserController@deleteUser');
             });
         });
     }
