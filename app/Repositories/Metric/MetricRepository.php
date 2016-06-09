@@ -15,6 +15,11 @@ use CachetHQ\Cachet\Dates\DateFactory;
 use CachetHQ\Cachet\Models\Metric;
 use DateInterval;
 
+/**
+ * This is the metric repository class.
+ *
+ * @author James Brooks <james@alt-three.com>
+ */
 class MetricRepository
 {
     /**
