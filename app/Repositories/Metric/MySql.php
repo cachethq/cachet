@@ -30,7 +30,7 @@ class Mysql extends AbstractMetricRepository implements MetricInterface
      * @param int                            $hour
      * @param int                            $minute
      *
-     * @return int
+     * @return array
      */
     public function getPointsLastHour(Metric $metric, $hour, $minute)
     {
@@ -67,17 +67,14 @@ class Mysql extends AbstractMetricRepository implements MetricInterface
      * @param \CachetHQ\Cachet\Models\Metric $metric
      * @param int                            $hour
      *
-     * @return int
+     * @return array
      */
     public function getPointsByHour(Metric $metric, $hour)
     {
-        $dateTime = (new Date())->sub(new DateInterval('PT'.$hour.'H'));
-        $hourInterval = $dateTime->format('YmdH');
-
         if (!isset($metric->calc_type) || $metric->calc_type == Metric::CALC_SUM) {
-            $queryType = 'SUM(mp.`value` * mp.`counter`) AS `value`';
+            $queryType = 'SUM(mp.value * mp.counter) AS `value`';
         } elseif ($metric->calc_type == Metric::CALC_AVG) {
-            $queryType = 'AVG(mp.`value` * mp.`counter`) AS `value`';
+            $queryType = 'AVG(mp.value * mp.counter) AS `value`';
         }
 
         $value = 0;
@@ -85,7 +82,6 @@ class Mysql extends AbstractMetricRepository implements MetricInterface
         $points = DB::select("SELECT {$queryType} FROM {$this->getTableName()} m INNER JOIN metric_points mp ON m.id = mp.metric_id WHERE m.id = :metricId AND DATE_FORMAT(mp.`created_at`, '%Y%m%d%H') = :hourInterval GROUP BY HOUR(mp.`created_at`)", [
             'metricId'     => $metric->id,
             'hourInterval' => $hourInterval,
-        ]);
 
         if (isset($points[0]) && !($value = $points[0]->value)) {
             $value = 0;
@@ -103,7 +99,7 @@ class Mysql extends AbstractMetricRepository implements MetricInterface
      *
      * @param \CachetHQ\Cachet\Models\Metric $metric
      *
-     * @return int
+     * @return array
      */
     public function getPointsForDayInWeek(Metric $metric, $day)
     {

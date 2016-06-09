@@ -27,7 +27,7 @@ interface MetricInterface
      * @param int                            $hour
      * @param int                            $minute
      *
-     * @return int
+     * @return array
      */
     public function getPointsLastHour(Metric $metric, $hour, $minute);
 
@@ -37,7 +37,7 @@ interface MetricInterface
      * @param \CachetHQ\Cachet\Models\Metric $metric
      * @param int                            $hour
      *
-     * @return int
+     * @return array
      */
     public function getPointsByHour(Metric $metric, $hour);
 
@@ -47,7 +47,7 @@ interface MetricInterface
      * @param \CachetHQ\Cachet\Models\Metric $metric
      * @param int                            $day
      *
-     * @return int
+     * @return array
      */
     public function getPointsForDayInWeek(Metric $metric, $day);
 }
