@@ -13,6 +13,7 @@ namespace CachetHQ\Cachet\Repositories\Metric;
 
 use CachetHQ\Cachet\Models\Metric;
 use Illuminate\Contracts\Config\Repository;
+use Illuminate\Support\Collection;
 
 /**
  * This is the abstract metric repository class.
@@ -59,5 +60,50 @@ abstract class AbstractMetricRepository
         $prefix = $connection['prefix'];
 
         return $prefix.'metrics';
+    }
+
+    /**
+     * Return the query type.
+     *
+     * @param \CachetHQ\Cachet\Models\Metric $metric
+     *
+     * @return string
+     */
+    protected function getQueryType(Metric $metric)
+    {
+        if (!isset($metric->calc_type) || $metric->calc_type == Metric::CALC_SUM) {
+            return 'sum(metric_points.value * metric_points.counter) AS value';
+        } elseif ($metric->calc_type == Metric::CALC_AVG) {
+            return 'avg(metric_points.value * metric_points.counter) AS value';
+        } else {
+            return 'sum(metric_points.value * metric_points.counter) AS value';
+        }
+    }
+
+    /**
+     * Map the result set.
+     *
+     * @param \CachetHQ\Cachet\Models\Metric $metric
+     * @param array                          $results
+     *
+     * @return \Illuminate\Support\Collection
+     */
+    protected function mapResults(Metric $metric, array $results)
+    {
+        $results = Collection::make($results);
+
+        return $results->map(function ($point) use ($metric) {
+            if (!$point->value) {
+                $point->value = $metric->default_value;
+            }
+
+            if ($point->value === 0 && $metric->default_value != $value) {
+                $point->value = $metric->default_value;
+            }
+
+            $point->value = round($point->value, $metric->places);
+
+            return $point;
+        });
     }
 }
