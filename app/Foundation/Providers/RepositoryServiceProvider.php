@@ -13,9 +13,9 @@ namespace CachetHQ\Cachet\Foundation\Providers;
 
 use CachetHQ\Cachet\Dates\DateFactory;
 use CachetHQ\Cachet\Repositories\Metric\MetricRepository;
-use CachetHQ\Cachet\Repositories\Metric\MySqlRepository as MetricMySqlRepository;
-use CachetHQ\Cachet\Repositories\Metric\PgSqlRepository as MetricPgSqlRepository;
-use CachetHQ\Cachet\Repositories\Metric\SqliteRepository as MetricSqliteRepository;
+use CachetHQ\Cachet\Repositories\Metric\MySql as MetricMySqlRepository;
+use CachetHQ\Cachet\Repositories\Metric\PgSql as MetricPgSqlRepository;
+use CachetHQ\Cachet\Repositories\Metric\Sqlite as MetricSqliteRepository;
 use Illuminate\Contracts\Config\Repository as ConfigRepository;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Support\ServiceProvider;
