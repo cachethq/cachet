@@ -16,7 +16,12 @@ use DateInterval;
 use Illuminate\Support\Facades\DB;
 use Jenssegers\Date\Date;
 
-class SqliteRepository extends AbstractMetricRepository implements MetricInterface
+/**
+ * This is the mysql metric class.
+ *
+ * @author James Brooks <james@alt-three.com>
+ */
+class Mysql extends AbstractMetricRepository implements MetricInterface
 {
     /**
      * Returns metrics for the last hour.
@@ -30,24 +35,23 @@ class SqliteRepository extends AbstractMetricRepository implements MetricInterfa
     public function getPointsLastHour(Metric $metric, $hour, $minute)
     {
         $dateTime = (new Date())->sub(new DateInterval('PT'.$hour.'H'))->sub(new DateInterval('PT'.$minute.'M'));
+        $timeInterval = $dateTime->format('YmdHi');
 
-        // Default metrics calculations.
         if (!isset($metric->calc_type) || $metric->calc_type == Metric::CALC_SUM) {
-            $queryType = 'sum(metric_points.value * metric_points.counter)';
+            $queryType = 'SUM(mp.`value` * mp.`counter`) AS `value`';
         } elseif ($metric->calc_type == Metric::CALC_AVG) {
-            $queryType = 'avg(metric_points.value * metric_points.counter)';
-        } else {
-            $queryType = 'sum(metric_points.value * metric_points.counter)';
+            $queryType = 'AVG(mp.`value` * mp.`counter`) AS `value`';
         }
 
         $value = 0;
-        $query = DB::select("select {$queryType} as value FROM {$this->getTableName()} m JOIN metric_points ON metric_points.metric_id = m.id WHERE m.id = :metricId AND strftime('%Y%m%d%H%M', metric_points.created_at) = :timeInterval GROUP BY strftime('%H%M', metric_points.created_at)", [
+
+        $points = DB::select("SELECT {$queryType} FROM {$this->getTableName()} m INNER JOIN metric_points mp ON m.id = mp.metric_id WHERE m.id = :metricId AND DATE_FORMAT(mp.`created_at`, '%Y%m%d%H%i') = :timeInterval GROUP BY HOUR(mp.`created_at`), MINUTE(mp.`created_at`)", [
             'metricId'     => $metric->id,
-            'timeInterval' => $dateTime->format('YmdHi'),
+            'timeInterval' => $timeInterval,
         ]);
 
-        if (isset($query[0])) {
-            $value = $query[0]->value;
+        if (isset($points[0]) && !($value = $points[0]->value)) {
+            $value = 0;
         }
 
         if ($value === 0 && $metric->default_value != $value) {
@@ -68,24 +72,23 @@ class SqliteRepository extends AbstractMetricRepository implements MetricInterfa
     public function getPointsByHour(Metric $metric, $hour)
     {
         $dateTime = (new Date())->sub(new DateInterval('PT'.$hour.'H'));
+        $hourInterval = $dateTime->format('YmdH');
 
-        // Default metrics calculations.
         if (!isset($metric->calc_type) || $metric->calc_type == Metric::CALC_SUM) {
-            $queryType = 'sum(metric_points.value * metric_points.counter)';
+            $queryType = 'SUM(mp.`value` * mp.`counter`) AS `value`';
         } elseif ($metric->calc_type == Metric::CALC_AVG) {
-            $queryType = 'avg(metric_points.value * metric_points.counter)';
-        } else {
-            $queryType = 'sum(metric_points.value * metric_points.counter)';
+            $queryType = 'AVG(mp.`value` * mp.`counter`) AS `value`';
         }
 
         $value = 0;
-        $query = DB::select("select {$queryType} as value FROM {$this->getTableName()} m JOIN metric_points ON metric_points.metric_id = m.id WHERE m.id = :metricId AND strftime('%Y%m%d%H', metric_points.created_at) = :timeInterval GROUP BY strftime('%H', metric_points.created_at)", [
+
+        $points = DB::select("SELECT {$queryType} FROM {$this->getTableName()} m INNER JOIN metric_points mp ON m.id = mp.metric_id WHERE m.id = :metricId AND DATE_FORMAT(mp.`created_at`, '%Y%m%d%H') = :hourInterval GROUP BY HOUR(mp.`created_at`)", [
             'metricId'     => $metric->id,
-            'timeInterval' => $dateTime->format('YmdH'),
+            'hourInterval' => $hourInterval,
         ]);
 
-        if (isset($query[0])) {
-            $value = $query[0]->value;
+        if (isset($points[0]) && !($value = $points[0]->value)) {
+            $value = 0;
         }
 
         if ($value === 0 && $metric->default_value != $value) {
@@ -106,23 +109,21 @@ class SqliteRepository extends AbstractMetricRepository implements MetricInterfa
     {
         $dateTime = (new Date())->sub(new DateInterval('P'.$day.'D'));
 
-        // Default metrics calculations.
         if (!isset($metric->calc_type) || $metric->calc_type == Metric::CALC_SUM) {
-            $queryType = 'sum(metric_points.value * metric_points.counter)';
+            $queryType = 'SUM(mp.`value` * mp.`counter`) AS `value`';
         } elseif ($metric->calc_type == Metric::CALC_AVG) {
-            $queryType = 'avg(metric_points.value * metric_points.counter)';
-        } else {
-            $queryType = 'sum(metric_points.value * metric_points.counter)';
+            $queryType = 'AVG(mp.`value` * mp.`counter`) AS `value`';
         }
 
         $value = 0;
-        $query = DB::select("select {$queryType} as value FROM {$this->getTableName()} m JOIN metric_points ON metric_points.metric_id = m.id WHERE m.id = :metricId AND metric_points.created_at > date('now', '-7 day') AND strftime('%Y%m%d', metric_points.created_at) = :timeInterval GROUP BY strftime('%Y%m%d', metric_points.created_at)", [
+
+        $points = DB::select("SELECT {$queryType} FROM {$this->getTableName()} m INNER JOIN metric_points mp ON m.id = mp.metric_id WHERE m.id = :metricId AND mp.`created_at` BETWEEN DATE_SUB(mp.`created_at`, INTERVAL 1 WEEK) AND DATE_ADD(NOW(), INTERVAL 1 DAY) AND DATE_FORMAT(mp.`created_at`, '%Y%m%d') = :timeInterval GROUP BY DATE_FORMAT(mp.`created_at`, '%Y%m%d')", [
             'metricId'     => $metric->id,
             'timeInterval' => $dateTime->format('Ymd'),
         ]);
 
-        if (isset($query[0])) {
-            $value = $query[0]->value;
+        if (isset($points[0]) && !($value = $points[0]->value)) {
+            $value = 0;
         }
 
         if ($value === 0 && $metric->default_value != $value) {

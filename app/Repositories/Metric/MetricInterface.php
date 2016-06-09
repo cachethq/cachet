@@ -13,6 +13,11 @@ namespace CachetHQ\Cachet\Repositories\Metric;
 
 use CachetHQ\Cachet\Models\Metric;
 
+/**
+ * This is the metric interface.
+ *
+ * @author James Brooks <james@alt-three.com>
+ */
 interface MetricInterface
 {
     /**
