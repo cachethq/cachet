@@ -232,7 +232,6 @@ class DashboardRoutes
                 $router->post('components/groups/order', 'ApiController@postUpdateComponentGroupOrder');
                 $router->post('components/order', 'ApiController@postUpdateComponentOrder');
                 $router->post('components/{component}', 'ApiController@postUpdateComponent');
-                $router->get('system/version', 'ApiController@checkVersion');
             });
         });
     }

@@ -370,9 +370,9 @@ $(function() {
         $.ajax({
             async: true,
             dataType: 'json',
-            url: '/dashboard/api/system/version',
+            url: '/api/v1/version',
         }).done(function (result) {
-            if (result.is_latest == false) {
+            if (result.meta.on_latest === false) {
                 $('#update-alert').removeClass('hidden');
             }
         });
