@@ -20,7 +20,7 @@
     ],
     "require": {
         "php": ">=5.5.9",
-        "laravel/framework": "~5.2.31",
+        "laravel/framework": "5.2.37",
         "alt-three/badger": "^3.0",
         "alt-three/bus": "^1.0",
         "alt-three/emoji": "^3.0",
@@ -37,14 +37,14 @@
         "mccool/laravel-auto-presenter": "^4.2",
         "pragmarx/google2fa": "^0.7.1",
         "rcrowe/twigbridge": "^0.9.2",
-        "roumen/feed": "^2.10"
+        "roumen/feed": "^2.10.3"
     },
     "require-dev": {
         "alt-three/testbench": "^1.1",
         "filp/whoops": "^2.0",
         "fzaninotto/faker": "^1.5",
         "graham-campbell/testbench-core": "^1.1",
-        "mockery/mockery": "0.9.4",
+        "mockery/mockery": "0.9.5",
         "phpunit/phpunit": "4.8.21",
         "symfony/css-selector": "^3.0",
         "symfony/dom-crawler": "^3.0"
