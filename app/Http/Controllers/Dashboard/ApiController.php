@@ -91,20 +91,4 @@ class ApiController extends Controller
 
         throw new ModelNotFoundException("Incident template for $templateSlug could not be found.");
     }
-
-    /**
-     * Checks if Cachet is up to date.
-     *
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function checkVersion()
-    {
-        $latest = app(Releases::class)->latest();
-
-        return Response::json([
-            'cachet_version' => CACHET_VERSION,
-            'latest_version' => $latest,
-            'is_latest'      => version_compare(CACHET_VERSION, $latest) === 1,
-        ]);
-    }
 }

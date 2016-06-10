@@ -74,7 +74,7 @@ class Releases
      */
     public function latest()
     {
-        $release = $this->cache->remember('version', 720, function () {
+        $release = $this->cache->remember('release.latest', 720, function () {
             $headers = ['Accept' => 'application/vnd.github.v3+json', 'User-Agent' => defined('CACHET_VERSION') ? 'cachet/'.constant('CACHET_VERSION') : 'cachet'];
 
             if ($this->token) {
@@ -86,6 +86,10 @@ class Releases
             ])->getBody(), true);
         });
 
-        return $release['tag_name'];
+        return [
+            'tag_name' => $release['tag_name'],
+            'prelease' => $release['prerelease'],
+            'draft'    => $release['draft'],
+        ];
     }
 }
