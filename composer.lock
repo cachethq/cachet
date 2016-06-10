@@ -493,12 +493,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvdh/laravel-cors.git",
-                "reference": "e0e1db7271582ce4a4023ea77de5a8235cc2721f"
+                "reference": "d4a1b08307b99dbc6df8f7faa1ade587a622f7be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-cors/zipball/e0e1db7271582ce4a4023ea77de5a8235cc2721f",
-                "reference": "e0e1db7271582ce4a4023ea77de5a8235cc2721f",
+                "url": "https://api.github.com/repos/barryvdh/laravel-cors/zipball/d4a1b08307b99dbc6df8f7faa1ade587a622f7be",
+                "reference": "d4a1b08307b99dbc6df8f7faa1ade587a622f7be",
                 "shasum": ""
             },
             "require": {
@@ -538,7 +538,7 @@
                 "crossdomain",
                 "laravel"
             ],
-            "time": "2016-05-17 05:37:27"
+            "time": "2016-06-10 05:44:37"
         },
         {
             "name": "christian-riesen/base32",
@@ -1943,12 +1943,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "01e5c100cfefba75368fe7dead10a7c11a3a852c"
+                "reference": "c6e9ff5956c09a95322235f57b5ff0e71eac1ae3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/01e5c100cfefba75368fe7dead10a7c11a3a852c",
-                "reference": "01e5c100cfefba75368fe7dead10a7c11a3a852c",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/c6e9ff5956c09a95322235f57b5ff0e71eac1ae3",
+                "reference": "c6e9ff5956c09a95322235f57b5ff0e71eac1ae3",
                 "shasum": ""
             },
             "require": {
@@ -2063,7 +2063,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2016-06-06 22:49:39"
+            "time": "2016-06-10 07:36:15"
         },
         {
             "name": "league/commonmark",
@@ -4462,16 +4462,16 @@
         },
         {
             "name": "phpdocumentor/reflection-docblock",
-            "version": "3.0.2",
+            "version": "3.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
-                "reference": "45ada3e3fd09789fbfbd6d65b3f0901f0030dc61"
+                "reference": "ea48fd2c79b68fba8693ae67a21cae5b5ee4cfb8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/45ada3e3fd09789fbfbd6d65b3f0901f0030dc61",
-                "reference": "45ada3e3fd09789fbfbd6d65b3f0901f0030dc61",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/ea48fd2c79b68fba8693ae67a21cae5b5ee4cfb8",
+                "reference": "ea48fd2c79b68fba8693ae67a21cae5b5ee4cfb8",
                 "shasum": ""
             },
             "require": {
@@ -4503,7 +4503,7 @@
                 }
             ],
             "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
-            "time": "2016-06-06 06:44:13"
+            "time": "2016-06-10 07:04:47"
         },
         {
             "name": "phpdocumentor/type-resolver",
@@ -4860,16 +4860,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "5.4.2",
+            "version": "5.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "f5726a0262e5f74f8e9cf03128798b64160c441d"
+                "reference": "02d5b64aa0837a038a5a4faeeefa5ef44bdcb928"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/f5726a0262e5f74f8e9cf03128798b64160c441d",
-                "reference": "f5726a0262e5f74f8e9cf03128798b64160c441d",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/02d5b64aa0837a038a5a4faeeefa5ef44bdcb928",
+                "reference": "02d5b64aa0837a038a5a4faeeefa5ef44bdcb928",
                 "shasum": ""
             },
             "require": {
@@ -4895,6 +4895,9 @@
                 "sebastian/resource-operations": "~1.0",
                 "sebastian/version": "~1.0|~2.0",
                 "symfony/yaml": "~2.1|~3.0"
+            },
+            "conflict": {
+                "phpdocumentor/reflection-docblock": "3.0.2"
             },
             "suggest": {
                 "phpunit/php-invoker": "~1.1"
@@ -4931,7 +4934,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2016-06-03 09:59:50"
+            "time": "2016-06-09 09:09:27"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
