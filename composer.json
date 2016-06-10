@@ -26,6 +26,7 @@
         "alt-three/emoji": "^3.1",
         "alt-three/throttle": "^1.0",
         "alt-three/validator": "^1.5",
+        "aws/aws-sdk-php": "^3.7",
         "backup-manager/laravel": "^1.1",
         "barryvdh/laravel-cors": "^0.8",
         "doctrine/dbal": "^2.5",
