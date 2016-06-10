@@ -107,9 +107,9 @@
 @if(Session::get('setup.done'))
 @include('dashboard.partials.welcome-modal')
 <script>
-    $(function() {
-        $('#welcome-modal').modal('show');
-    });
+(function() {
+    $('#welcome-modal').modal('show');
+}());
 </script>
 @endif
 @stop
