@@ -76,10 +76,10 @@
                         @endif
                     </div>
                     <div class="form-group">
-                        <label>{{ trans('forms.setup.mail_from') }}</label>
-                        <input type="text" class="form-control" name="env[mail_from]" value="{{ Binput::old('env.mail_from') }}" placeholder="notifications@alt-three.com">
-                        @if($errors->has('env.mail_from'))
-                        <span class="text-danger">{{ $errors->first('env.mail_from') }}</span>
+                        <label>{{ trans('forms.setup.mail_address') }}</label>
+                        <input type="text" class="form-control" name="env[mail_address]" value="{{ Binput::old('env.mail_address') }}" placeholder="notifications@alt-three.com">
+                        @if($errors->has('env.mail_address'))
+                        <span class="text-danger">{{ $errors->first('env.mail_address') }}</span>
                         @endif
                     </div>
                     <div class="form-group">

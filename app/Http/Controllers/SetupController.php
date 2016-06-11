@@ -149,7 +149,7 @@ class SetupController extends Controller
             return $input->mail_driver === 'smtp';
         });
 
-        $v->sometimes(['env.mail_from', 'env.mail_username', 'env.mail_password'], 'required', function ($input) {
+        $v->sometimes(['env.mail_address', 'env.mail_username', 'env.mail_password'], 'required', function ($input) {
             return $input->mail_driver !== 'log';
         });
 
@@ -250,8 +250,10 @@ class SetupController extends Controller
         try {
             (new Dotenv($dir, $file))->load();
 
+            $envValue = env(strtoupper($key)) ?: 'null';
+
             file_put_contents($path, str_replace(
-                env(strtoupper($key)), $value, file_get_contents($path)
+                $envValue, $value, file_get_contents($path)
             ));
         } catch (InvalidPathException $e) {
             //
