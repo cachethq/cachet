@@ -23,6 +23,11 @@ return [
         'enable_google2fa' => 'Enable Google Two Factor Authentication',
         'cache_driver'     => 'Cache Driver',
         'session_driver'   => 'Session Driver',
+        'mail_driver'      => 'Mail Driver',
+        'mail_host'        => 'Mail Host',
+        'mail_address'     => 'Mail From',
+        'mail_username'    => 'Mail Client User',
+        'mail_password'    => 'Mail Client Password',
     ],
 
     // Login form fields
