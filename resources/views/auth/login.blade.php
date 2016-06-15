@@ -21,7 +21,7 @@
 
                 <div class="form-group">
                     <label class="sr-only">{{ trans('forms.login.login') }}</label>
-                    <input autocomplete="off" class="form-control login-input" placeholder="{{ trans('forms.login.login') }}" required="required" name="login" type="text" value="{{ Binput::old('login') }}" autofocus>
+                    <input autocomplete="off" class="form-control login-input" placeholder="{{ trans('forms.login.login') }}" required="required" name="username" type="text" value="{{ Binput::old('username') }}" autofocus>
                 </div>
                 <div class="form-group">
                     <label class="sr-only">{{ trans('forms.login.password') }}</label>
