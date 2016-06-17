@@ -58,7 +58,7 @@
             "database"
         ],
         "files": [
-            "app/Http/helpers.php"
+            "app/helpers.php"
         ],
         "psr-4": {
             "CachetHQ\\Cachet\\": "app/"
