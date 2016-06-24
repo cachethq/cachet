@@ -15,38 +15,22 @@
             <div class="alert alert-info hidden" id="update-alert">{!! trans('cachet.system.update') !!}</div>
         </div>
     </div>
+
     <div class="row">
-        <div class="col-md-12">
-            <h4 class="sub-header">{{ trans('dashboard.components.component_statuses') }}</h4>
-            <div class="panel panel-default">
-                <div class="list-group">
-                    @forelse($components as $component)
-                    <div class="list-group-item">
-                        <form class='component-inline form-vertical' data-messenger="{{trans('dashboard.components.edit.success')}}">
-                            <div class="row striped-list-item">
-                                <div class="col-lg-4 col-md-3 col-sm-12">
-                                    <h4>{{ $component->name }}</h4>
-                                </div>
-                                <div class="col-lg-8 col-md-9 col-sm-12 radio-items componet-inline-update">
-                                    @foreach(trans('cachet.components.status') as $statusID => $status)
-                                    <div class="radio-inline">
-                                        <label>
-                                            <input type="radio" name="status" value="{{ $statusID }}" {{ (int) $component->status === $statusID ? 'checked' : null }}>
-                                            {{ $status }}
-                                        </label>
-                                    </div>
-                                    @endforeach
-                                </div>
-                            </div>
-                            <input type="hidden" name="component_id" value="{{ $component->id }}">
-                        </form>
-                    </div>
-                    @empty
-                    <div class="list-group-item"><a href="{{ route('dashboard.components.add') }}">{{ trans('dashboard.components.add.message') }}</a></div>
-                    @endforelse
-                </div>
-            </div>
-        </div>
+      <div class="col-md-12">
+          <h4 class="sub-header">{{ trans('dashboard.components.component_statuses') }}</h4>
+          <div class="section-components">
+              @if(!$component_groups->isEmpty() || !$ungrouped_components->isEmpty())
+              @include('dashboard.partials.components')
+              @else
+              <ul class="list-group components">
+                  <li class="list-group-item">
+                      <a href="{{ route('dashboard.components.add') }}">{{ trans('dashboard.components.add.message') }}</a>
+                  </li>
+              </ul>
+              @endif
+          </div>
+      </div>
     </div>
 
     <div class="row">
