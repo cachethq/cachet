@@ -100,11 +100,11 @@ return [
         'subset' => 'latin,latin-ext',
     ],
     'pt-BR' => [
-        'name'   => 'Portuguese',
+        'name'   => 'Portuguese, Brazilian',
         'subset' => 'latin,latin-ext',
     ],
     'pt-PT' => [
-        'name'   => 'Portuguese, Brazilian',
+        'name'   => 'Portuguese, Portugal',
         'subset' => 'latin,latin-ext',
     ],
     'ro'    => [
