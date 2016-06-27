@@ -28,22 +28,22 @@ return [
     ],
 
     'mailgun' => [
-        'domain' => env('MAILGUN_DOMAIN'),
-        'secret' => env('MAILGUN_SECRET'),
+        'domain' => env('MAIL_USERNAME'),
+        'secret' => env('MAIL_PASSWORD'),
     ],
 
     'mandrill' => [
-        'secret' => env('MANDRILL_SECRET'),
+        'secret' => env('MAIL_PASSWORD'),
     ],
 
     'ses' => [
-        'key'    => env('SES_KEY'),
-        'secret' => env('SES_SECRET'),
+        'key'    => env('MAIL_USERNAME'),
+        'secret' => env('MAIL_PASSWORD'),
         'region' => 'us-east-1',
     ],
 
     'sparkpost' => [
-        'secret' => env('SPARKPOST_SECRET'),
+        'secret' => env('MAIL_PASSWORD'),
     ],
 
 ];

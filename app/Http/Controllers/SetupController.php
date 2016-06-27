@@ -43,6 +43,22 @@ class SetupController extends Controller
     ];
 
     /**
+     * Array of cache drivers.
+     *
+     * @var string[]
+     */
+    protected $mailDrivers = [
+        'smtp'      => 'SMTP',
+        'mail'      => 'Mail',
+        'sendmail'  => 'Sendmail',
+        'mailgun'   => 'Mailgun',
+        'mandrill'  => 'Mandrill',
+        // 'ses'       => 'Amazon SES', this will be available only if aws/aws-sdk-php is installed
+        'sparkpost' => 'SparkPost',
+        'log'       => 'Log (Testing)',
+    ];
+
+    /**
      * Array of step1 rules.
      *
      * @var string[]
@@ -73,6 +89,7 @@ class SetupController extends Controller
         $this->rulesStep1 = [
             'env.cache_driver'   => 'required|in:'.implode(',', array_keys($this->cacheDrivers)),
             'env.session_driver' => 'required|in:'.implode(',', array_keys($this->cacheDrivers)),
+            'env.mail_driver'    => 'required|in:'.implode(',', array_keys($this->mailDrivers)),
         ];
 
         $this->rulesStep2 = [
@@ -112,6 +129,7 @@ class SetupController extends Controller
         return View::make('setup')
             ->withPageTitle(trans('setup.setup'))
             ->withCacheDrivers($this->cacheDrivers)
+            ->withMailDrivers($this->mailDrivers)
             ->withUserLanguage($userLanguage)
             ->withAppUrl(Request::root());
     }
@@ -126,6 +144,14 @@ class SetupController extends Controller
         $postData = Binput::all();
 
         $v = Validator::make($postData, $this->rulesStep1);
+
+        $v->sometimes('env.mail_host', 'required', function ($input) {
+            return $input->mail_driver === 'smtp';
+        });
+
+        $v->sometimes(['env.mail_address', 'env.mail_username', 'env.mail_password'], 'required', function ($input) {
+            return $input->mail_driver !== 'log';
+        });
 
         if ($v->passes()) {
             return Response::json(['status' => 1]);
@@ -224,8 +250,10 @@ class SetupController extends Controller
         try {
             (new Dotenv($dir, $file))->load();
 
+            $envValue = env(strtoupper($key)) ?: 'null';
+
             file_put_contents($path, str_replace(
-                env(strtoupper($key)), $value, file_get_contents($path)
+                $envValue, $value, file_get_contents($path)
             ));
         } catch (InvalidPathException $e) {
             //

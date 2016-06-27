@@ -20,7 +20,7 @@
     ],
     "require": {
         "php": ">=5.5.9",
-        "laravel/framework": "5.2.37",
+        "laravel/framework": "5.2.39",
         "alt-three/badger": "^3.1",
         "alt-three/bus": "^1.1",
         "alt-three/emoji": "^3.1",
@@ -58,7 +58,7 @@
             "database"
         ],
         "files": [
-            "app/Http/helpers.php"
+            "app/helpers.php"
         ],
         "psr-4": {
             "CachetHQ\\Cachet\\": "app/"
