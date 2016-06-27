@@ -60,7 +60,7 @@ class DashboardController extends Controller
     }
 
     /**
-     * Redirect /admin to /dashboard
+     * Redirect /admin to /dashboard.
      *
      * @return \Illuminate\Http\RedirectResponse
      */
