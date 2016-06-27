@@ -1,10 +1,19 @@
-.componet-inline-update {
+.component-inline-update {
     @extend .text-right;
     padding-top: 8px;
     label {
         display: initial;
         font-weight: normal;
     }
+}
+
+.component-group-name{
+  font-size: 18px;
+  padding-left: 10px;
+}
+
+.component-group-other{
+  font-size: 18px;
 }
 
 @import "modules/stats";

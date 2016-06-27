@@ -13,6 +13,7 @@ namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
 use CachetHQ\Cachet\Integrations\Feed;
 use CachetHQ\Cachet\Models\Component;
+use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\Subscriber;
 use Illuminate\Routing\Controller;
@@ -67,6 +68,9 @@ class DashboardController extends Controller
         $components = Component::orderBy('order')->get();
         $incidents = $this->getIncidents();
         $subscribers = $this->getSubscribers();
+        $usedComponentGroups = Component::enabled()->where('group_id', '>', 0)->groupBy('group_id')->pluck('group_id');
+        $componentGroups = ComponentGroup::whereIn('id', $usedComponentGroups)->orderBy('order')->get();
+        $ungroupedComponents = Component::enabled()->where('group_id', 0)->orderBy('order')->orderBy('created_at')->get();
 
         $entries = null;
         if ($feed = $this->feed->latest()) {
@@ -78,7 +82,9 @@ class DashboardController extends Controller
             ->withComponents($components)
             ->withIncidents($incidents)
             ->withSubscribers($subscribers)
-            ->withEntries($entries);
+            ->withEntries($entries)
+            ->withComponentGroups($componentGroups)
+            ->withUngroupedComponents($ungroupedComponents);
     }
 
     /**
