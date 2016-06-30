@@ -10,9 +10,9 @@
 
 Cachet is a beautiful and powerful open source status page system, a free replacement to services such as StatusPage.io, Status.io and others.
 
-## Supporting Cachet
+## Show your support
 
-Cachet is a BSD-3-licensed open source project. If you'd like to support future development, check out the [Cachet Patreon campaign](https://patreon.com/jbrooksuk).
+Cachet is a BSD-3-licensed open source project. If you'd like to support future development, check out the [Patreon campaign](https://patreon.com/jbrooksuk).
 
 ## Features
 
@@ -29,7 +29,7 @@ Cachet is a BSD-3-licensed open source project. If you'd like to support future 
 
 ## Usage in production
 
-The `master` branch of this repository is a development branch and **should not** be used in production. Instead, please check out the latest tag release.
+Use of `master` in a production environment is not recommended as it may change at any time.
 
 ## Requirements
 
@@ -43,9 +43,9 @@ We're always looking for contributions that improve Cachet. It's easy to get sta
 
 ### Contributing as a non-developer/non-designer
 
-If you're one of the more linguistically talented people in the world who can speak and write more than just English, we're always looking for new [translations](#translations).
+We're always looking for new [translations](#translations).
 
-Of course bug reports, feature requests and [documentation](https://docs.cachethq.io) are always being sought after.
+Of course bug reports, feature requests and [documentation](https://docs.cachethq.io) are always appreciated.
 
 ### Contributing as a designer
 
@@ -56,22 +56,22 @@ You'll need to install Node.js, Bower and Gulp.
 To get started you can do the following:
 
 1. Install Node.js and our dev dependencies.
-2. Modify the SCSS files in `./resources/assets/sass/`
+2. Make your changes to the SCSS files in `./resources/assets/sass/`
 3. Run `gulp`
 
-If you're making a lot of changes, you'll find that running `gulp watch` will really help you out!
+If you're making a lot of changes, you'll find that running `gulp watch` will make life easier for you!
 
 ### Contributing as a developer
 
-Built using [Laravel](https://laravel.com), Cachet is very easy to jump into. Have a look around you'll find it surprisingly easy!
+Built using [Laravel](https://laravel.com).
 
-These extra dependencies are required to develop Cachet:
+We use these extra dependencies to develop Cachet:
 
 - Node.js
 - Gulp
 - Git
 
-Once cloned to your local machine, you'll need some demo data! Simply run `php artisan cachet:seed` to get the demo installation on the go.
+Once cloned to your local machine, you'll need some demo data! Run `php artisan cachet:seed` to get the demo installation on the go.
 
 ## Installation, Upgrades and Documentation
 
@@ -92,7 +92,7 @@ The demo is reset every half hour.
 
 ### Release Notes
 
-All releases are listed on the [Releases page](https://github.com/CachetHQ/Cachet/releases) of the [Cachet GitHub repository](https://github.com/CachetHQ/Cachet). On the Releases page, you can also find the release notes for each release.
+We list releases on the [Releases page](https://github.com/CachetHQ/Cachet/releases) of the [Cachet GitHub repository](https://github.com/CachetHQ/Cachet). On the Releases page, you can also find the release notes for each release.
 
 ## Translations
 
@@ -100,7 +100,7 @@ A special thank you to our [translators](https://crowdin.com/project/cachet/acti
 
 ## Security Vulnerabilities
 
-If you discover a security vulnerability within Cachet, please send an e-mail to us at support@alt-three.com. All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within Cachet, please send an e-mail to us at support@alt-three.com. We handle all security vulnerabilities on a case-by-case basis.
 
 ## Installations
 
