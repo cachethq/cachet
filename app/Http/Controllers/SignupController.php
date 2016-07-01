@@ -47,7 +47,7 @@ class SignupController extends Controller
         return View::make('signup')
             ->withCode($invite->code)
             ->withUsername(Binput::old('username'))
-            ->withEmail(Binput::old('emai', $invite->email));
+            ->withEmail(Binput::old('email', $invite->email));
     }
 
     /**
