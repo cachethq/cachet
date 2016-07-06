@@ -75,21 +75,21 @@ return [
             'subscribe'          => 'S\'abonner aux notifications par email.',
             'subscribed'         => 'Vous êtes abonné aux notifications par email, veuillez vérifier votre messagerie pour confirmer votre adresse.',
             'verified'           => 'Votre abonnement aux notifications par email a été confirmé. Merci !',
-            'manage'             => 'Manage your subscription',
+            'manage'             => 'Gérer votre abonnement',
             'unsubscribe'        => 'Désinscription des mises à jour par courriel.',
             'unsubscribed'       => 'Votre abonnement aux notifications par email a été annulé.',
             'failure'            => 'Une erreur est survenue lors de l\'abonnement.',
             'already-subscribed' => 'Impossible de s\'abonner avec l\'adresse e-mail :email car celle-ci est déjà abonnée.',
             'verify'             => [
-                'text'   => "Please confirm your email subscription to :app_name status updates.\n:link",
-                'html'   => '<p>Please confirm your email subscription to :app_name status updates.</p>',
-                'button' => 'Confirm Subscription',
+                'text'   => "Veuillez confirmer votre abonnement par courriel aux changements de statut de :app_name.\n:link",
+                'html'   => '<p>Veuillez confirmer votre abonnement par courriel aux changements de statut de :app_name.</p>',
+                'button' => 'Confirmer l\'abonnement',
             ],
             'maintenance' => [
-                'subject' => '[Maintenance Scheduled] :name',
+                'subject' => '[Maintenance planifiée] :name',
             ],
             'incident' => [
-                'subject' => '[New Incident] :status: :name',
+                'subject' => '[Nouvel incident] :status: :name',
             ],
             'component' => [
                 'subject'       => 'Mise à jour du statut d\'un composant',

@@ -75,21 +75,21 @@ return [
             'subscribe'          => 'Abonneren op e-mail updates.',
             'subscribed'         => 'U bent geabonneerd op e-mail notificaties, controleer uw e-mail om uw abonnement te bevestigen.',
             'verified'           => 'Uw e-mail abonnement is bevestigd. Bedankt!',
-            'manage'             => 'Manage your subscription',
+            'manage'             => 'Beheer je abonnement',
             'unsubscribe'        => 'Afmelden voor e-mail updates.',
             'unsubscribed'       => 'Uw e-mail abonnement is opgezegd.',
             'failure'            => 'Er ging iets fout tijdens het aanmelden.',
             'already-subscribed' => 'Kan niet aanmelden voor :email omdat deze momenteel al is aangemeld.',
             'verify'             => [
-                'text'   => "Please confirm your email subscription to :app_name status updates.\n:link",
-                'html'   => '<p>Please confirm your email subscription to :app_name status updates.</p>',
-                'button' => 'Confirm Subscription',
+                'text'   => "Verifeer je email abbonement op :app_name status updates.\n:link",
+                'html'   => '<p>Verifeer je email abonnement op :app_name status updates.</p>',
+                'button' => 'Bevestig uw abbonement',
             ],
             'maintenance' => [
-                'subject' => '[Maintenance Scheduled] :name',
+                'subject' => '[Onderhoud gepland] :name',
             ],
             'incident' => [
-                'subject' => '[New Incident] :status: :name',
+                'subject' => '[Nieuw Incident] :status: :name',
             ],
             'component' => [
                 'subject'       => 'Component status update',

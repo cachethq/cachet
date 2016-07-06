@@ -16,7 +16,7 @@ return [
     // Incidents
     'incidents' => [
         'title'                    => 'Incidents &amp; Schedule',
-        'incidents'                => 'Incidents',
+        'incidents'                => 'Olaylar',
         'logged'                   => '{0} Hiç olay yok, tebrikler. |Bir olay rapor ettiniz.|<strong>:count</strong> olay rapor ettiniz.',
         'incident-create-template' => 'Şablon Oluştur',
         'incident-templates'       => 'Olay Şablonları',

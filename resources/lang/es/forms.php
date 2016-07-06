@@ -31,10 +31,10 @@ return [
         'email'         => 'Correo electrónico',
         'password'      => 'Contraseña',
         '2fauth'        => 'Código de Autenticación',
-        'invalid'       => 'Nombre de usuario o contraseña incorrectos',
+        'invalid'       => 'Nombre de usuario o contraseña incorrecto',
         'invalid-token' => 'Token inválido',
         'cookies'       => 'Usted debe habilitar cookies para logearse o iniciar sesion.',
-        'rate-limit'    => 'Rate limit exceeded.',
+        'rate-limit'    => 'Límite de transferencia excedido.',
     ],
 
     // Incidents form fields
@@ -107,9 +107,9 @@ return [
             'about-this-page'        => 'Sobre esta página',
             'days-of-incidents'      => '¿Cuántos días de incidentes mostrar?',
             'banner'                 => 'Imagen del banner',
-            'banner-help'            => 'Se recomienda subir una imagen no más grande de 930px de ancho .',
+            'banner-help'            => "Se recomienda subir una imagen no más grande de 930px de ancho .",
             'subscribers'            => '¿Permitir a la gente inscribirse mediante noficiacion por correo electronico?',
-            'automatic_localization' => '¿Usar automáticamente la localización para página de estado según lenguaje del visitante?',
+            'automatic_localization' => '¿Traducir automáticamente la página de estado según el lenguaje del visitante?',
         ],
         'analytics' => [
             'analytics_google'       => 'Código de Google Analytics',

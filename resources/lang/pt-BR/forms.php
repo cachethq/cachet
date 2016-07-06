@@ -34,7 +34,7 @@ return [
         'invalid'       => 'Nome de usuário ou senha incorretos',
         'invalid-token' => 'Token inválido',
         'cookies'       => 'Você deve habilitar os cookies do navegador para logar.',
-        'rate-limit'    => 'Rate limit exceeded.',
+        'rate-limit'    => 'Limite de acesso excedido.',
     ],
 
     // Incidents form fields
@@ -46,7 +46,7 @@ return [
         'message-help'       => 'Você também pode usar o Markdown.',
         'scheduled_at'       => 'Agendar a manutenção para quando?',
         'incident_time'      => 'Quando esse incidente ocorreu?',
-        'notify_subscribers' => 'Notificar os inscritos?',
+        'notify_subscribers' => 'Notificar os assinantes?',
         'visibility'         => 'Visibilidade do incidente',
         'public'             => 'Visível para todos',
         'logged_in_only'     => 'Visível somente para usuários logados',
@@ -107,7 +107,7 @@ return [
             'about-this-page'        => 'Sobre esta página',
             'days-of-incidents'      => 'Quantos dias de incidentes para mostrar?',
             'banner'                 => 'Imagem do banner',
-            'banner-help'            => 'É recomendável que você faça upload de arquivos menores que 930px .',
+            'banner-help'            => "É recomendável que você faça upload de arquivos menores que 930px .",
             'subscribers'            => 'Permitir que outras pessoas se cadastrem para notificações via e-mail?',
             'automatic_localization' => 'Localizar sua página de status de acordo com o idioma do visitante automaticamente?',
         ],

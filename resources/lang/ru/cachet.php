@@ -75,21 +75,21 @@ return [
             'subscribe'          => 'Подписка на рассылку об изменениях.',
             'subscribed'         => 'Вы подписались на рассылку email уведомлений. Проверьте вашу почту, чтобы подтвердить подписку.',
             'verified'           => 'Ваша подписка подтверждена. Спасибо!',
-            'manage'             => 'Manage your subscription',
+            'manage'             => 'Управление подпиской',
             'unsubscribe'        => 'Отписаться от рассылки.',
             'unsubscribed'       => 'Ваша подписка отменена.',
             'failure'            => 'Произошла ошибка при подписке на рассылку.',
             'already-subscribed' => 'Невозможно оформить подписку на :email, т.к. на него уже оформлена подписка.',
             'verify'             => [
-                'text'   => "Please confirm your email subscription to :app_name status updates.\n:link",
-                'html'   => '<p>Please confirm your email subscription to :app_name status updates.</p>',
-                'button' => 'Confirm Subscription',
+                'text'   => "Пожалуйста, подтвердите подписку на уведомления от «:app_name».\n:link",
+                'html'   => '<p>Пожалуйста, подтвердите подписку на уведомления от «:app_name»</p>',
+                'button' => 'Подтвердить подписку',
             ],
             'maintenance' => [
-                'subject' => '[Maintenance Scheduled] :name',
+                'subject' => '[Обслуживание по расписанию] :name',
             ],
             'incident' => [
-                'subject' => '[New Incident] :status: :name',
+                'subject' => '[Новый инцидент] :status: :name',
             ],
             'component' => [
                 'subject'       => 'Статус компонента изменился',

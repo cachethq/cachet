@@ -34,7 +34,7 @@ return [
         'invalid'       => 'Ongeldige gebruikersnaam of wachtwoord',
         'invalid-token' => 'Ongeldig token',
         'cookies'       => 'U moet cookies inschakelen om in te loggen.',
-        'rate-limit'    => 'Rate limit exceeded.',
+        'rate-limit'    => 'Snelheids limiet overschreden.',
     ],
 
     // Incidents form fields
@@ -107,7 +107,7 @@ return [
             'about-this-page'        => 'Over deze pagina',
             'days-of-incidents'      => 'Hoeveel dagen moeten incidenten getoond worden?',
             'banner'                 => 'Banner afbeelding',
-            'banner-help'            => 'Het wordt aanbevolen dat u geen bestanden upload die breeder zijn dan 930px.',
+            'banner-help'            => "Het wordt aanbevolen dat u geen bestanden upload die breeder zijn dan 930px.",
             'subscribers'            => 'Bezoekers toestaan om te abonneren op e-mail notificaties?',
             'automatic_localization' => 'Stel de taal van de bezoeker in als standaardtaal voor deze bezoeker?',
         ],

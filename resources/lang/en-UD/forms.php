@@ -107,7 +107,7 @@ return [
             'about-this-page'        => 'crwdns402:0crwdne402:0',
             'days-of-incidents'      => 'crwdns403:0crwdne403:0',
             'banner'                 => 'crwdns717:0crwdne717:0',
-            'banner-help'            => 'crwdns405:0crwdne405:0',
+            'banner-help'            => "crwdns405:0crwdne405:0",
             'subscribers'            => 'crwdns513:0crwdne513:0',
             'automatic_localization' => 'crwdns726:0crwdne726:0',
         ],
