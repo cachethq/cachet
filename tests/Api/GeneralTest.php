@@ -41,4 +41,12 @@ class GeneralTest extends AbstractApiTestCase
 
         $this->assertResponseStatus(406);
     }
+
+    public function testGetSystemStatus()
+    {
+        $this->get('/api/v1/status');
+
+        $this->assertResponseOk();
+        $this->seeHeader('Content-Type', 'application/json');
+    }
 }
