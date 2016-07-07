@@ -12,6 +12,8 @@
 namespace CachetHQ\Cachet\Http\Controllers\Api;
 
 use CachetHQ\Cachet\Integrations\Releases;
+use CachetHQ\Cachet\Foundation\Queries\SystemStatusQuery;
+use CachetHQ\Cachet\Foundation\ViewObjects\SystemStatusViewObject;
 
 /**
  * This is the general api controller.
@@ -43,5 +45,20 @@ class GeneralController extends AbstractApiController
             'on_latest' => version_compare(CACHET_VERSION, $latest['tag_name']) === 1,
             'latest'    => $latest,
         ])->item(CACHET_VERSION);
+    }
+
+    /**
+     * Endpoint to show System status
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function status()
+    {
+        $systemStatusViewArray = (new SystemStatusViewObject(new SystemStatusQuery))->toArray();
+
+        return [
+            'system_status'     => $systemStatusViewArray['system_status'],
+            'system_message'    => $systemStatusViewArray['system_message']
+        ];
     }
 }
