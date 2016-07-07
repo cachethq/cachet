@@ -187,6 +187,30 @@ class Component extends Model implements HasPresenter
     }
 
     /**
+     * Finds all components which have major outaged status.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeMajorOutaged(Builder $query)
+    {
+        return $query->enabled()->status(4);
+    }
+
+    /**
+     * Finds all components which are not operational ones.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeNotOperationaled(Builder $query)
+    {
+        return $this->enabled()->notStatus(1);
+    }
+
+    /**
      * Returns all of the tags on this component.
      *
      * @return string
