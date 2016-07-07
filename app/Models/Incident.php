@@ -31,8 +31,9 @@ class Incident extends Model implements HasPresenter
      */
     protected $casts = [
         'visible'      => 'int',
+        'status'       => 'int',
         'scheduled_at' => 'date',
-        'deleted_at'   => 'date',
+        'deleted_at'   => 'date'
     ];
 
     /**
@@ -129,6 +130,22 @@ class Incident extends Model implements HasPresenter
     }
 
     /**
+     * Do we have any non-fixed incidents?
+     *
+     * @return bool
+     */
+    public static function isAllAreFixed()
+    {
+        $incidentsOrderedByCreation = static::notScheduled()->orderBy('created_at', 'desc')->get();
+        $incidentCount              = $incidentsOrderedByCreation->count();
+
+        return
+            $incidentCount === 0
+            ||
+            ($incidentCount >= 1 && (int) $incidentsOrderedByCreation->first()->hasFixedStatus());
+    }
+
+    /**
      * An incident belongs to a component.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -146,6 +163,14 @@ class Incident extends Model implements HasPresenter
     public function getIsScheduledAttribute()
     {
         return $this->getOriginal('scheduled_at') !== null;
+    }
+
+    /**
+     * @return bool
+     */
+    public function hasFixedStatus()
+    {
+        return $this->getAttribute('status') === 4;
     }
 
     /**
