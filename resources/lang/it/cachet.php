@@ -75,7 +75,7 @@ return [
             'subscribe'          => 'Iscriviti agli aggiornamenti via email.',
             'subscribed'         => 'Ti sei appena iscritto agli aggiornamenti email, controlla la tua casella per confermare la sottoscrizione',
             'verified'           => 'La tua iscrizione &egrave; stata confermata. Grazie!',
-            'manage'             => 'Manage your subscription',
+            'manage'             => 'Gestisci la tua iscrizione',
             'unsubscribe'        => 'Annulla l\'iscrizione agli aggiornamenti email.',
             'unsubscribed'       => 'La tua iscrizione &egrave; stata rimossa.',
             'failure'            => 'Qualcosa è andato storto con l\'iscrizione.',
@@ -83,13 +83,13 @@ return [
             'verify'             => [
                 'text'   => "Please confirm your email subscription to :app_name status updates.\n:link",
                 'html'   => '<p>Please confirm your email subscription to :app_name status updates.</p>',
-                'button' => 'Confirm Subscription',
+                'button' => 'Conferma iscrizione',
             ],
             'maintenance' => [
-                'subject' => '[Maintenance Scheduled] :name',
+                'subject' => '[Manutenzione programmata] :name',
             ],
             'incident' => [
-                'subject' => '[New Incident] :status: :name',
+                'subject' => '[Nuova segnalazione] :status: :name',
             ],
             'component' => [
                 'subject'       => 'Aggiornamento di stato del componente',
@@ -135,7 +135,7 @@ return [
     // Other
     'home'            => 'Home',
     'description'     => 'Resta informato sugli ultimi aggiornamenti dei servizi di :app.',
-    'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
+    'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links"> Cachet</a>.',
     'about_this_site' => 'Informazioni sul sito',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',

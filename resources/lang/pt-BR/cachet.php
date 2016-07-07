@@ -75,21 +75,21 @@ return [
             'subscribe'          => 'Inscreva-se para atualizações via e-mail.',
             'subscribed'         => 'Inscrição realizada com sucesso! Por favor verifique o e-mail que enviamos à você para confirmar sua inscrição.',
             'verified'           => 'Sua inscrição foi confirmada! Obrigado!',
-            'manage'             => 'Manage your subscription',
+            'manage'             => 'Gerencie sua assinatura',
             'unsubscribe'        => 'Não desejo mais receber notificações via e-mail.',
             'unsubscribed'       => 'Sua inscrição foi cancelada.',
             'failure'            => 'Ocorreu um problema na sua inscrição.',
             'already-subscribed' => 'Impossível inscrever :email pois já se encontra inscrito.',
             'verify'             => [
-                'text'   => "Please confirm your email subscription to :app_name status updates.\n:link",
-                'html'   => '<p>Please confirm your email subscription to :app_name status updates.</p>',
-                'button' => 'Confirm Subscription',
+                'text'   => "Por favor, confirme sua assinatura de e-mail para receber atualizações de status de :app_name. \n:link",
+                'html'   => '<p>Por favor, confirme sua assinatura de e-mail para receber atualizações de status de :app_name.</p>',
+                'button' => 'Confirmar inscrição',
             ],
             'maintenance' => [
-                'subject' => '[Maintenance Scheduled] :name',
+                'subject' => '[Manutenção Programada] :name',
             ],
             'incident' => [
-                'subject' => '[New Incident] :status: :name',
+                'subject' => '[Novo incidente] :status: :name',
             ],
             'component' => [
                 'subject'       => 'Atualização do Estado do Componente',

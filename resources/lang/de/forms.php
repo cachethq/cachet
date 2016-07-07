@@ -34,7 +34,7 @@ return [
         'invalid'       => 'Ungültiger Benutzername oder Passwort',
         'invalid-token' => 'Token ist ungültig',
         'cookies'       => 'Sie müssen Cookies aktivieren um sich anzumelden.',
-        'rate-limit'    => 'Rate limit exceeded.',
+        'rate-limit'    => 'Maximale Anzahl von Bewertungen erreicht.',
     ],
 
     // Incidents form fields
@@ -90,7 +90,7 @@ return [
         'type_avg'         => 'Durchschnitt',
         'places'           => 'Nachkommastellen',
         'default_view'     => 'Standardansicht',
-        'threshold'        => 'How many minutes of threshold between metric points?',
+        'threshold'        => 'Wie viele Minuten soll der Abstand zwischen den Messpunkten sein?',
 
         'points' => [
             'value' => 'Wert',

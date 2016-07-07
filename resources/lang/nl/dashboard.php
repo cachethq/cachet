@@ -220,12 +220,12 @@ return [
             'failure' => 'Instellingen kunnen niet worden opgeslagen.',
         ],
         'credits' => [
-            'credits'       => 'Credits',
-            'contributors'  => 'Contributors',
-            'license'       => 'Cachet is a BSD-3-licensed open source project, released by <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
-            'backers-title' => 'Backers & Sponsors',
-            'backers'       => 'If you\'d like to support future development, check out the <a href="https://patreon.com/jbrooksuk" target="_blank">Cachet Patreon</a> campaign.',
-            'thank-you'     => 'Thank you to each and every one of the :count contributors.',
+            'credits'       => 'Erkenningen',
+            'contributors'  => 'Bijdragers',
+            'license'       => 'Cachet is een BSD-3-gelicentieerd opensourceproject, uitgebracht door <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank"> Alt Three Services Limited</a>.',
+            'backers-title' => 'Donateurs & Sponsoren',
+            'backers'       => 'Als u de toekomstige ontwikkeling wilt ondersteunen, bezoek de <a href="https://patreon.com/jbrooksuk" target="_blank"> Cachet Patreon</a>-campagne.',
+            'thank-you'     => 'Dank aan de :count verschillende medewerkers.',
         ],
     ],
 
@@ -251,10 +251,10 @@ return [
 
     // Widgets
     'widgets' => [
-        'support'          => 'Support Cachet',
-        'support_subtitle' => 'Check out our <strong><a href="https://patreon.com/jbrooksuk" target="_blank">Patreon</a></strong> page!',
-        'news'             => 'Latest News',
-        'news_subtitle'    => 'Get the latest updates',
+        'support'          => 'Ondersteuning Cachet',
+        'support_subtitle' => 'Kijk op onze <strong><a href="https://patreon.com/jbrooksuk" target="_blank"> Patreon</a></strong> pagina!',
+        'news'             => 'Laatste nieuws',
+        'news_subtitle'    => 'Ontvang de nieuwste updates',
     ],
 
     // Welcome modal

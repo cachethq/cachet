@@ -46,7 +46,7 @@ return [
     'email'          => 'The :attribute must be between :min and :max digits.',
     'exists'         => 'The :attribute must be a valid email address.',
     'distinct'       => 'The :attribute field has a duplicate value.',
-    'filled'         => 'The :attribute format is invalid.',
+    'filled'         => 'Määritteen :attribute muoto on virheellinen.',
     'image'          => 'The :attribute must be an image.',
     'in'             => 'The :attribute must be an image.',
     'in_array'       => 'The :attribute field does not exist in :other.',
@@ -70,7 +70,7 @@ return [
     'numeric'              => 'The selected :attribute is invalid.',
     'present'              => 'The :attribute field must be present.',
     'regex'                => 'The :attribute must be a number.',
-    'required'             => 'The :attribute format is invalid.',
+    'required'             => 'Määritteen :attribute muoto on virheellinen.',
     'required_if'          => 'The :attribute field is required.',
     'required_unless'      => 'The :attribute field is required unless :other is in :values.',
     'required_with'        => 'The :attribute field is required when :other is :value.',
@@ -86,8 +86,8 @@ return [
     ],
     'string'   => 'The :attribute must contain :size items.',
     'timezone' => 'The :attribute must be a valid zone.',
-    'unique'   => 'The :attribute has already been taken.',
-    'url'      => 'The :attribute format is invalid.',
+    'unique'   => 'Määrite :attribute on jo käytetty.',
+    'url'      => 'Määritteen :attribute muoto on virheellinen.',
 
     /*
     |--------------------------------------------------------------------------
