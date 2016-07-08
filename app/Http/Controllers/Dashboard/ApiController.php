@@ -11,32 +11,47 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
+use CachetHQ\Cachet\Bus\Commands\Component\UpdateComponentCommand;
+use CachetHQ\Cachet\Bus\Commands\ComponentGroup\UpdateComponentGroupCommand;
+use CachetHQ\Cachet\Http\Controllers\Api\AbstractApiController;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\IncidentTemplate;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
-use Illuminate\Routing\Controller;
+use Illuminate\Database\QueryException;
+use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
-class ApiController extends Controller
+class ApiController extends AbstractApiController
 {
     /**
      * Updates a component with the entered info.
      *
      * @param \CachetHQ\Cachet\Models\Component $component
      *
-     * @throws \Exception
+     * @throws \Symfony\Component\HttpKernel\Exception\BadRequestHttpException
      *
      * @return \CachetHQ\Cachet\Models\Component
      */
     public function postUpdateComponent(Component $component)
     {
-        if (!$component->update(Binput::except(['_token']))) {
-            throw new Exception(trans('dashboard.components.edit.failure'));
+        try {
+            dispatch(new UpdateComponentCommand(
+                $component,
+                null,
+                null,
+                Binput::get('status'),
+                null,
+                null,
+                null,
+                null
+            ));
+        } catch (QueryException $e) {
+            throw new BadRequestHttpException();
         }
 
-        return $component;
+        return $this->item($component);
     }
 
     /**
@@ -49,11 +64,23 @@ class ApiController extends Controller
         $componentData = Binput::get('ids');
 
         foreach ($componentData as $order => $componentId) {
-            // Ordering should be 1-based, data comes in 0-based
-            Component::find($componentId)->update(['order' => $order + 1]);
+            try {
+                dispatch(new UpdateComponentCommand(
+                    Component::find($componentId),
+                    null,
+                    null,
+                    null,
+                    null,
+                    $order + 1,
+                    null,
+                    null
+                ));
+            } catch (QueryException $e) {
+                throw new BadRequestHttpException();
+            }
         }
 
-        return $componentData;
+        return $this->collection(Component::query()->orderBy('order')->get());
     }
 
     /**
@@ -66,10 +93,15 @@ class ApiController extends Controller
         $groupData = Binput::get('ids');
 
         foreach ($groupData as $order => $groupId) {
-            ComponentGroup::find($groupId)->update(['order' => $order + 1]);
+            dispatch(new UpdateComponentGroupCommand(
+                ComponentGroup::find($groupId),
+                null,
+                $order + 1,
+                null
+            ));
         }
 
-        return $groupData;
+        return $this->collection(ComponentGroup::query()->orderBy('order')->get());
     }
 
     /**
