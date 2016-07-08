@@ -15,8 +15,8 @@ use CachetHQ\Cachet\Models\Setting as SettingModel;
 use CachetHQ\Cachet\Settings\Cache;
 use CachetHQ\Cachet\Settings\Repository;
 use Exception;
-use Jenssegers\Date\Date;
 use Illuminate\Support\ServiceProvider;
+use Jenssegers\Date\Date;
 
 /**
  * This is the config service provider class.
