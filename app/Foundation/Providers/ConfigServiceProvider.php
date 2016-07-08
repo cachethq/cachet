@@ -15,6 +15,7 @@ use CachetHQ\Cachet\Models\Setting as SettingModel;
 use CachetHQ\Cachet\Settings\Cache;
 use CachetHQ\Cachet\Settings\Repository;
 use Exception;
+use Jenssegers\Date\Date;
 use Illuminate\Support\ServiceProvider;
 
 /**
@@ -64,6 +65,7 @@ class ConfigServiceProvider extends ServiceProvider
         if ($appLocale = $this->app->config->get('setting.app_locale')) {
             $this->app->config->set('app.locale', $appLocale);
             $this->app->translator->setLocale($appLocale);
+            Date::setLocale($appLocale);
         }
 
         if ($appTimezone = $this->app->config->get('setting.app_timezone')) {
