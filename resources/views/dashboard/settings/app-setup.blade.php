@@ -95,6 +95,17 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="hidden" value="0" name="show_timezone">
+                                            <input type="checkbox" value="1" name="show_timezone" {{ $show_timezone ? 'checked' : null }}>
+                                            {{ trans('forms.settings.app-setup.show_timezone') }}
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
                         </fieldset>
 
                         <div class="row">

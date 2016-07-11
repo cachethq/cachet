@@ -67,4 +67,14 @@ return [
 
     'enable_external_dependencies' => true,
 
+   /*
+    |--------------------------------------------------------------------------
+    | Show the timezone
+    |--------------------------------------------------------------------------
+    |
+    | Whether to show the status page timezone in the footer.
+    |
+    */
+
+    'show_timezone' => false,
 ];

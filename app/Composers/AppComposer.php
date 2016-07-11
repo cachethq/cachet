@@ -11,12 +11,32 @@
 
 namespace CachetHQ\Cachet\Composers;
 
+use CachetHQ\Cachet\Dates\DateFactory;
 use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Config;
 
 class AppComposer
 {
+    /**
+     * The date factory instance.
+     *
+     * @var \CachetHQ\Cachet\Dates\DateFactory
+     */
+    protected $dates;
+
+    /**
+     * Create a new app composer instance.
+     *
+     * @param \CachetHQ\Cachet\Dates\DateFactory $dates
+     *
+     * @return void
+     */
+    public function __construct(DateFactory $dates)
+    {
+        $this->dates = $dates;
+    }
+
     /**
      * Index page view composer.
      *
@@ -45,6 +65,8 @@ class AppComposer
         $view->withShowSupport(Config::get('setting.show_support'));
         $view->withAutomaticLocalization(Config::get('setting.automatic_localization'));
         $view->withEnableExternalDependencies(Config::get('setting.enable_external_dependencies'));
+        $view->withShowTimezone(Config::get('setting.show_timezone'));
+        $view->withTimezone($this->dates->getTimezone());
         $view->withSiteTitle(Config::get('setting.app_name'));
         $view->withFontSubset(Config::get('langs.'.Config::get('app.locale').'.subset', 'latin'));
     }
