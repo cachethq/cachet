@@ -42,8 +42,9 @@ class AppComposer
         $view->withAppHeader(Config::get('setting.header'));
         $view->withAppFooter(Config::get('setting.footer'));
         $view->withAppName(Config::get('setting.app_name'));
-        $view->withShowSupport($support = Config::get('setting.show_support'));
+        $view->withShowSupport(Config::get('setting.show_support'));
         $view->withAutomaticLocalization(Config::get('setting.automatic_localization'));
+        $view->withEnableExternalDependencies(Config::get('setting.enable_external_dependencies'));
         $view->withSiteTitle(Config::get('setting.app_name'));
         $view->withFontSubset(Config::get('langs.'.Config::get('app.locale').'.subset', 'latin'));
     }
