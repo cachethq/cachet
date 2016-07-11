@@ -34,7 +34,7 @@ return [
         'invalid'       => '无效的用户名或密码',
         'invalid-token' => 'Invalid token',
         'cookies'       => 'You must enable cookies to login.',
-        'rate-limit'    => 'Rate limit exceeded.',
+        'rate-limit'    => '已超出登陆次数限制。',
     ],
 
     // Incidents form fields
@@ -90,7 +90,7 @@ return [
         'type_avg'         => 'Average',
         'places'           => '小数点位数',
         'default_view'     => '默认视图',
-        'threshold'        => 'How many minutes of threshold between metric points?',
+        'threshold'        => '每个度量点之间应当间隔多少分钟？',
 
         'points' => [
             'value' => 'Value',

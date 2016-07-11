@@ -1,4 +1,3 @@
-
 <div class="timeline schedule">
     <div class="panel panel-info">
         <div class="panel-heading">

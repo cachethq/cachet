@@ -220,12 +220,12 @@ return [
             'failure' => 'La configuración no se podido guardar.',
         ],
         'credits' => [
-            'credits'       => 'Credits',
-            'contributors'  => 'Contributors',
-            'license'       => 'Cachet is a BSD-3-licensed open source project, released by <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
-            'backers-title' => 'Backers & Sponsors',
-            'backers'       => 'If you\'d like to support future development, check out the <a href="https://patreon.com/jbrooksuk" target="_blank">Cachet Patreon</a> campaign.',
-            'thank-you'     => 'Thank you to each and every one of the :count contributors.',
+            'credits'       => 'Créditos',
+            'contributors'  => 'Colaboradores',
+            'license'       => 'Cachet es un proyecto de código libre bajo la licencia BSD-3, liberado por <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
+            'backers-title' => 'Patrocinadores',
+            'backers'       => 'Si desea apoyar futuros desarrollos, ingrese a la campaña de <a href="https://patreon.com/jbrooksuk" target="_blank">Cachet Patreon</a>.',
+            'thank-you'     => 'Gracias a todos y cada uno de los :count colaboradores.',
         ],
     ],
 
@@ -251,10 +251,10 @@ return [
 
     // Widgets
     'widgets' => [
-        'support'          => 'Support Cachet',
-        'support_subtitle' => 'Check out our <strong><a href="https://patreon.com/jbrooksuk" target="_blank">Patreon</a></strong> page!',
-        'news'             => 'Latest News',
-        'news_subtitle'    => 'Get the latest updates',
+        'support'          => 'Apoye Cachet',
+        'support_subtitle' => '¡Visite nuestro proyecto en la página de <strong><a href="https://patreon.com/jbrooksuk" target="_blank">Patreon</a></strong>!',
+        'news'             => 'Últimas noticias',
+        'news_subtitle'    => 'Obtener las actualizaciones más recientes',
     ],
 
     // Welcome modal

@@ -140,22 +140,22 @@ return [
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'      => 'Inscritos',
-        'description'      => 'Subscribers will receive email updates when incidents are created or components are updated.',
+        'subscribers'      => 'Assinantes',
+        'description'      => 'Assinantes vão receber atualizações de e-mail quando incidentes criados ou componentes atualizados.',
         'verified'         => 'Verificado',
         'not_verified'     => 'Não verificado',
-        'subscriber'       => ':email, subscribed :date',
-        'no_subscriptions' => 'Subscribed to all updates',
+        'subscriber'       => ':email, inscreveu-se em :date',
+        'no_subscriptions' => 'Inscrito em todas as atualizações',
         'add'              => [
-            'title'   => 'Add a new subscriber',
+            'title'   => 'Adicionar um novo assinante',
             'success' => 'Inscrito adicionado.',
-            'failure' => 'Something went wrong adding the subscriber, please try again.',
-            'help'    => 'Enter each subscriber on a new line.',
+            'failure' => 'Algo deu errado adicionando o assinante, por favor tente novamente.',
+            'help'    => 'Insira cada assinante em uma nova linha.',
         ],
         'edit' => [
-            'title'   => 'Update subscriber',
+            'title'   => 'Atualizar assinante',
             'success' => 'Inscrito atualizado.',
-            'failure' => 'Something went wrong editing the subscriber, please try again.',
+            'failure' => 'Algo deu errado editando o assinante, por favor tente novamente.',
         ],
     ],
 
@@ -166,23 +166,23 @@ return [
         'profile'     => 'Perfil	',
         'description' => 'Membros da equipe serão capazes de adicionar, modificar &amp; editar componentes e incidentes.',
         'add'         => [
-            'title'   => 'Add a new team member',
-            'success' => 'Team member added.',
-            'failure' => 'The team member could not be added, please try again.',
+            'title'   => 'Adicionar um novo membro da equipe',
+            'success' => 'Membro da equipe adicionado.',
+            'failure' => 'Membro da equipe não pôde ser adicionado, por favor tente novamente.',
         ],
         'edit' => [
-            'title'   => 'Update profile',
-            'success' => 'Profile updated.',
-            'failure' => 'Something went wrong updating the profile, please try again.',
+            'title'   => 'Atualizar perfil',
+            'success' => 'Perfil atualizado.',
+            'failure' => 'Algo deu errado atualizando o perfil, por favor tente novamente.',
         ],
         'delete' => [
-            'success' => 'Team member has been deleted and will no longer have access to the dashboard!',
-            'failure' => 'The team member could not be added, please try again.',
+            'success' => 'O membro da equipe foi excluído e não conseguirá mais acessar o painel de controle!',
+            'failure' => 'Membro da equipe não pôde ser adicionado, por favor tente novamente.',
         ],
         'invite' => [
-            'title'   => 'Invite a new team member',
-            'success' => 'An invite has been sent',
-            'failure' => 'The invite could not be sent, please try again.',
+            'title'   => 'Convidar um novo membro para a equipe',
+            'success' => 'Convite enviado',
+            'failure' => 'O convite não pôde ser enviado, por favor tente novamente.',
         ],
     ],
 
@@ -195,15 +195,15 @@ return [
             'too-big'     => 'O arquivo que você carregou é muito grande. Envie uma imagem inferior à :size',
         ],
         'analytics' => [
-            'analytics' => 'Analytics',
+            'analytics' => 'Estatísticas',
         ],
         'localization' => [
-            'localization' => 'Localization',
+            'localization' => 'Idioma',
         ],
         'customization' => [
-            'customization' => 'Customization',
-            'header'        => 'Custom Header HTML',
-            'footer'        => 'Custom Footer HTML',
+            'customization' => 'Personalização',
+            'header'        => 'HTML de cabeçalho personalizado',
+            'footer'        => 'HTML de rodapé personalizado',
         ],
         'security' => [
             'security'   => 'Segurança',
@@ -220,12 +220,12 @@ return [
             'failure' => 'Não foi possível salvar as configurações.',
         ],
         'credits' => [
-            'credits'       => 'Credits',
-            'contributors'  => 'Contributors',
-            'license'       => 'Cachet is a BSD-3-licensed open source project, released by <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
-            'backers-title' => 'Backers & Sponsors',
-            'backers'       => 'If you\'d like to support future development, check out the <a href="https://patreon.com/jbrooksuk" target="_blank">Cachet Patreon</a> campaign.',
-            'thank-you'     => 'Thank you to each and every one of the :count contributors.',
+            'credits'       => 'Créditos',
+            'contributors'  => 'Colaboradores',
+            'license'       => 'Cachet é um projeto de código aberto com licença BSD-3, lançado pela <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank"> Alt Three Services Limited</a>.',
+            'backers-title' => 'Apoiadores e Patrocinadores',
+            'backers'       => 'Se você deseja apoiar o desenvolvimento, confira a campanha do <a href="https://patreon.com/jbrooksuk" target="_blank">Cachet no Pantreon</a>.',
+            'thank-you'     => 'Agradeço a cada um dos :count colaboradores.',
         ],
     ],
 
@@ -251,17 +251,17 @@ return [
 
     // Widgets
     'widgets' => [
-        'support'          => 'Support Cachet',
-        'support_subtitle' => 'Check out our <strong><a href="https://patreon.com/jbrooksuk" target="_blank">Patreon</a></strong> page!',
-        'news'             => 'Latest News',
-        'news_subtitle'    => 'Get the latest updates',
+        'support'          => 'Ajude o Cachet',
+        'support_subtitle' => 'Confira nossa campanha no <strong><a href="https://patreon.com/jbrooksuk" target="_blank">Patreon</a></strong>!',
+        'news'             => 'Últimas Notícias',
+        'news_subtitle'    => 'Receba as últimas atualizações',
     ],
 
     // Welcome modal
     'welcome' => [
-        'welcome' => 'Welcome to your new status page!',
+        'welcome' => 'Bem-vindo à sua nova página de status!',
         'message' => 'Sua página de status está quase pronta! Tavez vocë queira checar essas configurações extras',
-        'close'   => 'Take me straight to my dashboard',
+        'close'   => 'Me leve direto para o meu painel de controle',
         'steps'   => [
             'component'  => 'Criar componentes',
             'incident'   => 'Criar incidentes',

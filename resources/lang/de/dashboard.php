@@ -150,7 +150,7 @@ return [
             'title'   => 'Einen neuen Abonnenten hinzufügen',
             'success' => 'Abonnent hinzugefügt.',
             'failure' => 'Etwas lief schief dem dem Hinzufügen eines Abonnenten. Bitte versuchen Sie es erneut.',
-            'help'    => 'Gebe jeden Abonnenten in eine neue Zeile ein.',
+            'help'    => 'Gib jeden Abonnenten in eine neue Zeile ein.',
         ],
         'edit' => [
             'title'   => 'Abonnent aktualisieren',
@@ -220,12 +220,12 @@ return [
             'failure' => 'Einstellungen konnten nicht gespeichert werden.',
         ],
         'credits' => [
-            'credits'       => 'Credits',
-            'contributors'  => 'Contributors',
-            'license'       => 'Cachet is a BSD-3-licensed open source project, released by <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
-            'backers-title' => 'Backers & Sponsors',
-            'backers'       => 'If you\'d like to support future development, check out the <a href="https://patreon.com/jbrooksuk" target="_blank">Cachet Patreon</a> campaign.',
-            'thank-you'     => 'Thank you to each and every one of the :count contributors.',
+            'credits'       => 'Danksagungen',
+            'contributors'  => 'Unterstützer',
+            'license'       => 'Cachet ist ein BSD-3-lizensiertes Open Source-Projekt, veröffentlicht von <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
+            'backers-title' => 'Unterstützer & Sponsoren',
+            'backers'       => 'Wenn Du die Entwicklung der Software unterstützen möchtest, kannst Du unter <a href="https://patreon.com/jbrooksuk" target="_blank">Cachet Patreon</a> einen Beitrag leisten.',
+            'thank-you'     => 'Vielen Dank an jeden der :count Unterstützer.',
         ],
     ],
 
@@ -251,10 +251,10 @@ return [
 
     // Widgets
     'widgets' => [
-        'support'          => 'Support Cachet',
-        'support_subtitle' => 'Check out our <strong><a href="https://patreon.com/jbrooksuk" target="_blank">Patreon</a></strong> page!',
-        'news'             => 'Latest News',
-        'news_subtitle'    => 'Get the latest updates',
+        'support'          => 'Cachet unterstützen',
+        'support_subtitle' => 'Unterstütze uns unter <strong><a href="https://patreon.com/jbrooksuk" target="_blank">Patreon</a></strong>!',
+        'news'             => 'Aktuelle Neuigkeiten',
+        'news_subtitle'    => 'Erhalte die neusten Nachrichten',
     ],
 
     // Welcome modal

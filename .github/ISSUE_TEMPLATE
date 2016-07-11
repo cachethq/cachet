@@ -1,16 +1,8 @@
-Before submitting your issue, please make sure that you've checked all of the checkboxes below.
+Before submitting your issue, please make sure that you've checked the checkboxes below.
 
-- [ ] You're running the [latest release](https://github.com/CachetHQ/Cachet/releases/latest) version of Cachet.
-- [ ] Ensure that you're running at least PHP 5.5.9, you can check this by running `php -v`
-- [ ] You've ran `rm -rf bootstrap/cache/*` from the root of your Cachet installation.
-
-To help us better understand your issue, please answer the following — cheers!
-
-### Your setup
-
-- *What version of Cachet?*
-- *What database driver? MySQL? Postgres? SQLite?*
-- *What version of PHP?*
+- [ ] I am running the [latest release](https://github.com/CachetHQ/Cachet/releases/latest) version of Cachet.
+- [ ] I am running at least PHP 5.5.9. *You can check this by running `php -v`.*
+- [ ] I have ran `rm -rf bootstrap/cache/*`.
 
 ### Expected behaviour
 
@@ -23,3 +15,6 @@ To help us better understand your issue, please answer the following — cheers!
 ### Steps to reproduce
 
 *If your issue requires any specific steps to reproduce, please outline them here.*
+
+1. First step
+2. Second step

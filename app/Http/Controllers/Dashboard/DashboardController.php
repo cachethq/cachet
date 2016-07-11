@@ -18,6 +18,7 @@ use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\Subscriber;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 use Jenssegers\Date\Date;
 
@@ -56,6 +57,16 @@ class DashboardController extends Controller
         $this->feed = $feed;
         $this->startDate = new Date();
         $this->dateTimeZone = Config::get('cachet.timezone');
+    }
+
+    /**
+     * Redirect /admin to /dashboard.
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function redirectAdmin()
+    {
+        return Redirect::route('dashboard.index');
     }
 
     /**
