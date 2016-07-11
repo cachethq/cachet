@@ -99,6 +99,7 @@ class DateFactory
     {
         $dateTime = new Date();
         $dateTime->setTimeZone(new DateTimeZone($this->cachetTimezone));
+
         return $dateTime->format('T');
     }
 }
