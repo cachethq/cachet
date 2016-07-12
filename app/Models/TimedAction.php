@@ -66,4 +66,14 @@ class TimedAction extends Model
         'schedule_frequency' => 'int',
         'completion_latency' => 'int',
     ];
+
+    /**
+     * Get the responses relation.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function responses()
+    {
+        return $this->hasMany(self::class);
+    }
 }
