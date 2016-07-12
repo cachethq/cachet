@@ -11,8 +11,8 @@
 
 namespace CachetHQ\Tests\Cachet\Foundation\Providers;
 
-use CachetHQ\Cachet\Integrations\Contracts\System;
 use AltThree\TestBench\ServiceProviderTrait;
+use CachetHQ\Cachet\Integrations\Contracts\System;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 
 /**
