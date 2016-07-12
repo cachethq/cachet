@@ -24,29 +24,21 @@ use Jenssegers\Date\Date;
 class PgSql extends AbstractMetricRepository implements MetricInterface
 {
     /**
-     * Returns metrics for the last hour.
+     * Returns metrics since given minutes.
      *
      * @param \CachetHQ\Cachet\Models\Metric $metric
-     * @param int                            $hour
-     * @param int                            $minute
+     * @param int                            $minutes
      *
-     * @return int
+     * @return array
      */
-    public function getPointsLastHour(Metric $metric, $hour, $minute)
+    public function getPointsSinceMinutes(Metric $metric, $minutes)
     {
         $dateTime = (new Date())->sub(new DateInterval('PT'.$hour.'H'))->sub(new DateInterval('PT'.$minute.'M'));
 
-        // Default metrics calculations.
-        if (!isset($metric->calc_type) || $metric->calc_type == Metric::CALC_SUM) {
-            $queryType = 'sum(metric_points.value * metric_points.counter)';
-        } elseif ($metric->calc_type == Metric::CALC_AVG) {
-            $queryType = 'avg(metric_points.value * metric_points.counter)';
-        } else {
-            $queryType = 'sum(metric_points.value * metric_points.counter)';
-        }
+        $queryType = $this->getQueryType($metric);
 
         $value = 0;
-        $query = DB::select("select {$queryType} as value FROM {$this->getTableName()} m JOIN metric_points ON metric_points.metric_id = m.id WHERE m.id = :metricId AND to_char(metric_points.created_at, 'YYYYMMDDHH24MI') = :timeInterval GROUP BY to_char(metric_points.created_at, 'HHMI')", [
+        $query = DB::select("select {$queryType} FROM {$this->getTableName()} m JOIN metric_points ON metric_points.metric_id = m.id WHERE m.id = :metricId AND to_char(metric_points.created_at, 'YYYYMMDDHH24MI') = :timeInterval GROUP BY to_char(metric_points.created_at, 'HHMI')", [
             'metricId'     => $metric->id,
             'timeInterval' => $dateTime->format('YmdHi'),
         ]);
@@ -75,16 +67,10 @@ class PgSql extends AbstractMetricRepository implements MetricInterface
         $dateTime = (new Date())->sub(new DateInterval('PT'.$hour.'H'));
 
         // Default metrics calculations.
-        if (!isset($metric->calc_type) || $metric->calc_type == Metric::CALC_SUM) {
-            $queryType = 'sum(metric_points.value * metric_points.counter)';
-        } elseif ($metric->calc_type == Metric::CALC_AVG) {
-            $queryType = 'avg(metric_points.value * metric_points.counter)';
-        } else {
-            $queryType = 'sum(metric_points.value * metric_points.counter)';
-        }
+        $queryType = $this->getQueryType($metric);
 
         $value = 0;
-        $query = DB::select("select {$queryType} as value FROM {$this->getTableName()} m JOIN metric_points ON metric_points.metric_id = m.id WHERE metric_points.metric_id = :metricId AND to_char(metric_points.created_at, 'YYYYMMDDHH24') = :timeInterval GROUP BY to_char(metric_points.created_at, 'H')", [
+        $query = DB::select("select {$queryType} FROM {$this->getTableName()} m JOIN metric_points ON metric_points.metric_id = m.id WHERE metric_points.metric_id = :metricId AND to_char(metric_points.created_at, 'YYYYMMDDHH24') = :timeInterval GROUP BY to_char(metric_points.created_at, 'H')", [
             'metricId'     => $metric->id,
             'timeInterval' => $dateTime->format('YmdH'),
         ]);
@@ -111,11 +97,7 @@ class PgSql extends AbstractMetricRepository implements MetricInterface
     {
         $dateTime = (new Date())->sub(new DateInterval('P'.$day.'D'));
 
-        if (!isset($metric->calc_type) || $metric->calc_type == Metric::CALC_SUM) {
-            $queryType = 'sum(mp.value * mp.counter) AS value';
-        } elseif ($metric->calc_type == Metric::CALC_AVG) {
-            $queryType = 'avg(mp.value * mp.counter) AS value';
-        }
+        $queryType = $this->getQueryType($metric);
 
         $value = 0;
         $points = DB::select("SELECT {$queryType} FROM {$this->getTableName()} m INNER JOIN metric_points mp ON m.id = mp.metric_id WHERE m.id = :metricId AND mp.created_at BETWEEN (mp.created_at - interval '1 week') AND (now() + interval '1 day') AND to_char(mp.created_at, 'YYYYMMDD') = :timeInterval GROUP BY to_char(mp.created_at, 'YYYYMMDD')", [
