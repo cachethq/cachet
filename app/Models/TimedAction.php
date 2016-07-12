@@ -74,6 +74,6 @@ class TimedAction extends Model
      */
     public function responses()
     {
-        return $this->hasMany(TimedAction::class);
+        return $this->hasMany(self::class);
     }
 }
