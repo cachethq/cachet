@@ -31,22 +31,22 @@ interface MetricInterface
     public function getPointsSinceMinutes(Metric $metric, $minutes);
 
     /**
-     * Returns metrics for a given hour.
+     * Returns metrics since given hour.
      *
      * @param \CachetHQ\Cachet\Models\Metric $metric
      * @param int                            $hour
      *
-     * @return array
+     * @return \Illuminate\Support\Collection
      */
-    public function getPointsByHour(Metric $metric, $hour);
+    public function getPointsSinceHour(Metric $metric, $hour);
 
     /**
-     * Returns metrics for the week.
+     * Returns metrics since given day.
      *
      * @param \CachetHQ\Cachet\Models\Metric $metric
      * @param int                            $day
      *
-     * @return array
+     * @return \Illuminate\Support\Collection
      */
-    public function getPointsForDayInWeek(Metric $metric, $day);
+    public function getPointsSinceDay(Metric $metric, $day);
 }

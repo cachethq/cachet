@@ -13,6 +13,7 @@ namespace CachetHQ\Cachet\Repositories\Metric;
 
 use CachetHQ\Cachet\Models\Metric;
 use Illuminate\Contracts\Config\Repository;
+use Illuminate\Support\Collection;
 
 /**
  * This is the abstract metric repository class.
@@ -77,5 +78,30 @@ abstract class AbstractMetricRepository
         } else {
             return 'sum(mp.`value` * mp.`counter`) AS `value`';
         }
+    }
+
+    /**
+     * Map the result set.
+     *
+     * @param \CachetHQ\Cachet\Models\Metric $metric
+     * @param \Illuminate\Support\Collection $results
+     *
+     * @return \Illuminate\Support\Collection
+     */
+    protected function mapResults(Metric $metric, Collection $results)
+    {
+        return $results->map(function ($point) use ($metric) {
+            if (!$point->value) {
+                $point->value = $metric->default_value;
+            }
+
+            if ($point->value === 0 && $metric->default_value != $value) {
+                $point->value = $metric->default_value;
+            }
+
+            $point->value = round($point->value, $metric->places);
+
+            return $point;
+        });
     }
 }
