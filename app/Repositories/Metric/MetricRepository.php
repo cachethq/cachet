@@ -55,22 +55,25 @@ class MetricRepository
      *
      * @param \CachetHQ\Cachet\Models\Metric $metric
      *
-     * @return array
+     * @return \Illuminate\Support\Collection
      */
     public function listPointsLastHour(Metric $metric)
     {
         $dateTime = $this->dates->make();
-
-        $points = [];
-
         $pointKey = $dateTime->format('H:i');
+        $points = $this->repository->getPointsSinceMinutes($metric, 60)->pluck('value', 'key');
 
         for ($i = 0; $i <= 60; $i++) {
-            $points[$pointKey] = $this->repository->getPointsLastHour($metric, 0, $i);
+            if (!$points->has($pointKey)) {
+                $points->put($pointKey, $metric->default_value);
+            }
+
             $pointKey = $dateTime->sub(new DateInterval('PT1M'))->format('H:i');
         }
 
-        return array_reverse($points);
+        return $points->sortBy(function ($point, $key) use ($points) {
+            return $key;
+        });
     }
 
     /**

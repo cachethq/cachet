@@ -21,15 +21,14 @@ use CachetHQ\Cachet\Models\Metric;
 interface MetricInterface
 {
     /**
-     * Returns metrics for the last hour.
+     * Returns metrics since given minutes.
      *
      * @param \CachetHQ\Cachet\Models\Metric $metric
-     * @param int                            $hour
-     * @param int                            $minute
+     * @param int                            $minutes
      *
-     * @return array
+     * @return \Illuminate\Support\Collection
      */
-    public function getPointsLastHour(Metric $metric, $hour, $minute);
+    public function getPointsSinceMinutes(Metric $metric, $minutes);
 
     /**
      * Returns metrics for a given hour.

@@ -60,4 +60,22 @@ abstract class AbstractMetricRepository
 
         return $prefix.'metrics';
     }
+
+    /**
+     * Return the query type.
+     *
+     * @param \CachetHQ\Cachet\Models\Metric $metric
+     *
+     * @return string
+     */
+    protected function getQueryType(Metric $metric)
+    {
+        if (!isset($metric->calc_type) || $metric->calc_type == Metric::CALC_SUM) {
+            return 'sum(mp.`value` * mp.`counter`) AS `value`';
+        } elseif ($metric->calc_type == Metric::CALC_AVG) {
+            return 'avg(mp.`value` * mp.`counter`) AS `value`';
+        } else {
+            return 'sum(mp.`value` * mp.`counter`) AS `value`';
+        }
+    }
 }

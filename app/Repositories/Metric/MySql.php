@@ -13,6 +13,7 @@ namespace CachetHQ\Cachet\Repositories\Metric;
 
 use CachetHQ\Cachet\Models\Metric;
 use DateInterval;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 use Jenssegers\Date\Date;
 
@@ -24,41 +25,34 @@ use Jenssegers\Date\Date;
 class Mysql extends AbstractMetricRepository implements MetricInterface
 {
     /**
-     * Returns metrics for the last hour.
+     * Returns metrics since given minutes.
      *
      * @param \CachetHQ\Cachet\Models\Metric $metric
-     * @param int                            $hour
-     * @param int                            $minute
+     * @param int                            $minutes
      *
-     * @return array
+     * @return \Illuminate\Support\Collection
      */
-    public function getPointsLastHour(Metric $metric, $hour, $minute)
+    public function getPointsSinceMinutes(Metric $metric, $minutes)
     {
-        $dateTime = (new Date())->sub(new DateInterval('PT'.$hour.'H'))->sub(new DateInterval('PT'.$minute.'M'));
-        $timeInterval = $dateTime->format('YmdHi');
+        $queryType = $this->getQueryType($metric);
+        $points = Collection::make(DB::select("SELECT DATE_FORMAT(mp.`created_at`, '%H:%i') AS `key`, {$queryType} FROM {$this->getTableName()} m INNER JOIN metric_points mp ON m.id = mp.metric_id WHERE m.id = :metricId AND mp.`created_at` >= DATE_SUB(NOW(), INTERVAL :minutes MINUTE) GROUP BY HOUR(mp.`created_at`), MINUTE(mp.`created_at`) ORDER BY mp.`created_at`", [
+            'metricId' => $metric->id,
+            'minutes'  => $minutes,
+        ]));
 
-        if (!isset($metric->calc_type) || $metric->calc_type == Metric::CALC_SUM) {
-            $queryType = 'SUM(mp.`value` * mp.`counter`) AS `value`';
-        } elseif ($metric->calc_type == Metric::CALC_AVG) {
-            $queryType = 'AVG(mp.`value` * mp.`counter`) AS `value`';
-        }
+        return $points->map(function ($point) use ($metric) {
+            if (!$point->value) {
+                $point->value = $metric->default_value;
+            }
 
-        $value = 0;
+            if ($point->value === 0 && $metric->default_value != $value) {
+                $point->value = $metric->default_value;
+            }
 
-        $points = DB::select("SELECT {$queryType} FROM {$this->getTableName()} m INNER JOIN metric_points mp ON m.id = mp.metric_id WHERE m.id = :metricId AND DATE_FORMAT(mp.`created_at`, '%Y%m%d%H%i') = :timeInterval GROUP BY HOUR(mp.`created_at`), MINUTE(mp.`created_at`)", [
-            'metricId'     => $metric->id,
-            'timeInterval' => $timeInterval,
-        ]);
+            $point->value = round($point->value, $metric->places);
 
-        if (isset($points[0]) && !($value = $points[0]->value)) {
-            $value = 0;
-        }
-
-        if ($value === 0 && $metric->default_value != $value) {
-            return $metric->default_value;
-        }
-
-        return round($value, $metric->places);
+            return $point;
+        });
     }
 
     /**
@@ -71,17 +65,14 @@ class Mysql extends AbstractMetricRepository implements MetricInterface
      */
     public function getPointsByHour(Metric $metric, $hour)
     {
-        if (!isset($metric->calc_type) || $metric->calc_type == Metric::CALC_SUM) {
-            $queryType = 'SUM(mp.value * mp.counter) AS `value`';
-        } elseif ($metric->calc_type == Metric::CALC_AVG) {
-            $queryType = 'AVG(mp.value * mp.counter) AS `value`';
-        }
+        $queryType = $this->getQueryType($metric);
 
         $value = 0;
 
         $points = DB::select("SELECT {$queryType} FROM {$this->getTableName()} m INNER JOIN metric_points mp ON m.id = mp.metric_id WHERE m.id = :metricId AND DATE_FORMAT(mp.`created_at`, '%Y%m%d%H') = :hourInterval GROUP BY HOUR(mp.`created_at`)", [
             'metricId'     => $metric->id,
             'hourInterval' => $hourInterval,
+        ]);
 
         if (isset($points[0]) && !($value = $points[0]->value)) {
             $value = 0;
@@ -105,11 +96,7 @@ class Mysql extends AbstractMetricRepository implements MetricInterface
     {
         $dateTime = (new Date())->sub(new DateInterval('P'.$day.'D'));
 
-        if (!isset($metric->calc_type) || $metric->calc_type == Metric::CALC_SUM) {
-            $queryType = 'SUM(mp.`value` * mp.`counter`) AS `value`';
-        } elseif ($metric->calc_type == Metric::CALC_AVG) {
-            $queryType = 'AVG(mp.`value` * mp.`counter`) AS `value`';
-        }
+        $queryType = $this->getQueryType($metric);
 
         $value = 0;
 
