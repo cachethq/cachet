@@ -21,6 +21,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class TimedAction extends Model
 {
+    use ValidatingTrait;
+
     /**
      * The attributes that should be casted to native types.
      *
