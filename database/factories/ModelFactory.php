@@ -17,6 +17,7 @@ use CachetHQ\Cachet\Models\IncidentTemplate;
 use CachetHQ\Cachet\Models\IncidentUpdate;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\MetricPoint;
+use CachetHQ\Cachet\Models\Schedule;
 use CachetHQ\Cachet\Models\Subscriber;
 use CachetHQ\Cachet\Models\Subscription;
 use CachetHQ\Cachet\Models\Tag;
@@ -93,6 +94,15 @@ $factory->define(MetricPoint::class, function ($faker) {
         'metric_id' => factory(Metric::class)->create()->id,
         'value'     => random_int(1, 100),
         'counter'   => 1,
+    ];
+});
+
+$factory->define(Schedule::class, function ($faker) {
+    return [
+        'name'         => $faker->sentence(),
+        'message'      => $faker->paragraph(),
+        'status'       => Schedule::UPCOMING,
+        'scheduled_at' => Carbon::now()->addDays(7),
     ];
 });
 

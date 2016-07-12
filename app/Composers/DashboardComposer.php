@@ -28,9 +28,9 @@ class DashboardComposer
      */
     public function compose(View $view)
     {
-        $view->withIncidentCount(Incident::notScheduled()->count());
+        $view->withIncidentCount(Incident::count());
         $view->withIncidentTemplateCount(IncidentTemplate::count());
-        $view->withComponentCount(Component::all()->count());
+        $view->withComponentCount(Component::count());
         $view->withSubscriberCount(Subscriber::isVerified()->count());
     }
 }
