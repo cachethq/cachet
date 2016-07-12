@@ -59,10 +59,8 @@ class System implements SystemContract
                     'favicon'        => 'favicon',
                 ];
             }
-        } else {
-            if (Component::enabled()->whereIn('status', [2, 3])->count() > 0) {
-                $status['favicon'] = 'favicon-medium-alert';
-            }
+        } elseif (Component::enabled()->whereIn('status', [2, 3])->count() > 0) {
+            $status['favicon'] = 'favicon-medium-alert';
         }
 
         return $status;
