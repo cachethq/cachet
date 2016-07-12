@@ -3,7 +3,7 @@
 [![StyleCI](https://styleci.io/repos/26730195/shield)](https://styleci.io/repos/26730195/)
 [![Build Status](https://img.shields.io/travis/CachetHQ/Cachet/master.svg?style=flat-square)](https://travis-ci.org/CachetHQ/Cachet)
 [![Software License](https://img.shields.io/badge/license-BSD3-brightgreen.svg?style=flat-square)](LICENSE)
-[![Crowdin](https://d322cqt584bo4o.cloudfront.net/cachet/localized.png)](http://translate.cachethq.io/project/cachet)
+[![Crowdin](https://d322cqt584bo4o.cloudfront.net/cachet/localized.svg)](http://translate.cachethq.io/project/cachet)
 [![Packagist](https://img.shields.io/packagist/v/cachethq/cachet.svg?style=flat-square)](https://packagist.org/packages/cachethq/cachet)
 
 ![Screenshot](https://cachethq.io/img/main-interface.jpg)
