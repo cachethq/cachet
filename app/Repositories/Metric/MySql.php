@@ -12,17 +12,15 @@
 namespace CachetHQ\Cachet\Repositories\Metric;
 
 use CachetHQ\Cachet\Models\Metric;
-use DateInterval;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
-use Jenssegers\Date\Date;
 
 /**
  * This is the mysql metric class.
  *
  * @author James Brooks <james@alt-three.com>
  */
-class Mysql extends AbstractMetricRepository implements MetricInterface
+class MySql extends AbstractMetricRepository implements MetricInterface
 {
     /**
      * Returns metrics since given minutes.
