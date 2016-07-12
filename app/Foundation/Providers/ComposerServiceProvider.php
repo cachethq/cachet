@@ -40,7 +40,6 @@ class ComposerServiceProvider extends ServiceProvider
         $factory->composer(['index', 'single-incident', 'subscribe.*', 'signup', 'dashboard.settings.theme', 'emails.*'], ThemeComposer::class);
         $factory->composer('dashboard.*', DashboardComposer::class);
         $factory->composer(['setup.*', 'dashboard.settings.localization'], TimezoneLocaleComposer::class);
-
         $factory->composer('*', ModuleComposer::class);
         $factory->composer('partials.modules.components', ComponentsModuleComposer::class);
         $factory->composer('partials.modules.metrics', MetricsModuleComposer::class);
@@ -48,6 +47,7 @@ class ComposerServiceProvider extends ServiceProvider
         $factory->composer('partials.modules.scheduled', ScheduledModuleComposer::class);
         $factory->composer('partials.modules.status', StatusModuleComposer::class);
         $factory->composer('partials.modules.timeline', TimelineModuleComposer::class);
+        $factory->composer(['setup', 'dashboard.actions.add', 'dashboard.settings.localization'], TimezoneLocaleComposer::class);
     }
 
     /**

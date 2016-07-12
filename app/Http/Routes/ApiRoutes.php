@@ -52,8 +52,14 @@ class ApiRoutes
             });
 
             $router->group(['middleware' => ['auth.api:true']], function (Registrar $router) {
+                $router->get('actions', 'ActionController@getActions');
+                $router->get('actions/{timed_action}', 'ActionController@getAction');
+                $router->get('actions/{timed_action}/instances', 'ActionController@getActionInstances');
+                $router->get('actions/{timed_action}/instances/{timed_action_instance}', 'ActionController@getActionInstance');
                 $router->get('subscribers', 'SubscriberController@getSubscribers');
 
+                $router->post('actions', 'ActionController@postActions');
+                $router->post('actions/{timed_action}/instances', 'ActionController@postActionInstance');
                 $router->post('components', 'ComponentController@postComponents');
                 $router->post('components/groups', 'ComponentGroupController@postGroups');
                 $router->post('incidents', 'IncidentController@postIncidents');
@@ -62,6 +68,7 @@ class ApiRoutes
                 $router->post('metrics/{metric}/points', 'MetricPointController@postMetricPoints');
                 $router->post('subscribers', 'SubscriberController@postSubscribers');
 
+                $router->put('actions/{timed_action}', 'ActionController@putAction');
                 $router->put('components/groups/{component_group}', 'ComponentGroupController@putGroup');
                 $router->put('components/{component}', 'ComponentController@putComponent');
                 $router->put('incidents/{incident}', 'IncidentController@putIncident');
@@ -69,6 +76,8 @@ class ApiRoutes
                 $router->put('metrics/{metric}', 'MetricController@putMetric');
                 $router->put('metrics/{metric}/points/{metric_point}', 'MetricPointController@putMetricPoint');
 
+                $router->delete('actions/{timed_action}', 'ActionController@deleteAction');
+                $router->delete('actions/{timed_action}/instance', 'ActionController@deleteInstance');
                 $router->delete('components/groups/{component_group}', 'ComponentGroupController@deleteGroup');
                 $router->delete('components/{component}', 'ComponentController@deleteComponent');
                 $router->delete('incidents/{incident}', 'IncidentController@deleteIncident');

@@ -11,9 +11,7 @@
 
 namespace CachetHQ\Cachet\Console;
 
-use CachetHQ\Cachet\Console\Commands\BeaconCommand;
-use CachetHQ\Cachet\Console\Commands\DemoMetricPointSeederCommand;
-use CachetHQ\Cachet\Console\Commands\DemoSeederCommand;
+use Illuminate\Console\Application;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -27,15 +25,24 @@ use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 class Kernel extends ConsoleKernel
 {
     /**
-     * The Artisan commands provided by your application.
+     * Get the artisan application instance.
      *
-     * @var array
+     * @return \Illuminate\Console\Application
      */
-    protected $commands = [
-        BeaconCommand::class,
-        DemoMetricPointSeederCommand::class,
-        DemoSeederCommand::class,
-    ];
+    protected function getArtisan()
+    {
+        if (!$this->artisan) {
+            $this->artisan = new Application($this->app, $this->events, $this->app->version());
+
+            foreach (glob(app_path('Console//Commands').'/*.php') as $file) {
+                $commands[] = 'CachetHQ\\Cachet\\Console\\Commands\\'.basename($file, '.php');
+            }
+
+            $this->artisan->resolveCommands($commands);
+        }
+
+        return $this->artisan;
+    }
 
     /**
      * Define the application's command schedule.
@@ -47,5 +54,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command('cachet:beacon')->twiceDaily(0, 12);
+
+        $schedule->command('cachet:tsa')->everyMinute();
     }
 }

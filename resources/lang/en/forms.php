@@ -96,7 +96,22 @@ return [
         'description'        => 'Description',
         'start_at'           => 'Schedule start time',
         'timezone'           => 'Timezone',
-        'schedule_frequency' => 'Schedule frequency (in seconds)',
+        'window_length'      => 'Window length (in seconds)',
+        'completion_latency' => 'Completion latency (in seconds)',
+        'group'              => 'Group',
+        'active'             => 'Active?',
+        'groups'             => [
+            'name' => 'Group Name',
+        ],
+    ],
+
+    // Action form fields
+    'actions' => [
+        'name'               => 'Name',
+        'description'        => 'Description',
+        'start_at'           => 'Schedule start time',
+        'timezone'           => 'Timezone',
+        'window_length'      => 'Window length (in seconds)',
         'completion_latency' => 'Completion latency (in seconds)',
         'group'              => 'Group',
         'active'             => 'Active?',

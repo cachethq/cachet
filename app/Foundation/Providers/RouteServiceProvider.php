@@ -55,6 +55,9 @@ class RouteServiceProvider extends ServiceProvider
         $this->app->router->model('setting', 'CachetHQ\Cachet\Models\Setting');
         $this->app->router->model('subscriber', 'CachetHQ\Cachet\Models\Subscriber');
         $this->app->router->model('subscription', 'CachetHQ\Cachet\Models\Subscription');
+        $this->app->router->model('timed_action', 'CachetHQ\Cachet\Models\TimedAction');
+        $this->app->router->model('timed_action_group', 'CachetHQ\Cachet\Models\TimedActionGroup');
+        $this->app->router->model('timed_action_instance', 'CachetHQ\Cachet\Models\TimedActionInstance');
         $this->app->router->model('user', 'CachetHQ\Cachet\Models\User');
     }
 

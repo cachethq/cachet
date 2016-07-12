@@ -97,6 +97,18 @@ class DateFactory
     }
 
     /**
+     * Set the cachet timezone.
+     *
+     * @param string $timezone
+     *
+     * @return void
+     */
+    public function setTimezone($timezone)
+    {
+        $this->cachetTimezone = $timezone;
+    }
+
+    /**
      * Return the abbreviated timezone.
      *
      * @return string
