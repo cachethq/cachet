@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Api;
 
+use CachetHQ\Cachet\Integrations\Contracts\System;
 use CachetHQ\Cachet\Integrations\Releases;
 
 /**
@@ -43,5 +44,17 @@ class GeneralController extends AbstractApiController
             'on_latest' => version_compare(CACHET_VERSION, $latest['tag_name']) === 1,
             'latest'    => $latest,
         ])->item(CACHET_VERSION);
+    }
+
+    /**
+     * Get the system status message.
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function status()
+    {
+        $system = app()->make(System::class)->getStatus();
+
+        return $this->item($system['system_message']);
     }
 }
