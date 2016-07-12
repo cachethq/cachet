@@ -12,53 +12,33 @@
 namespace CachetHQ\Cachet\Repositories\Metric;
 
 use CachetHQ\Cachet\Models\Metric;
-use DateInterval;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
-use Jenssegers\Date\Date;
 
 /**
  * This is the mysql metric class.
  *
  * @author James Brooks <james@alt-three.com>
  */
-class Mysql extends AbstractMetricRepository implements MetricInterface
+class MySql extends AbstractMetricRepository implements MetricInterface
 {
     /**
-     * Returns metrics for the last hour.
+     * Returns metrics since given minutes.
      *
      * @param \CachetHQ\Cachet\Models\Metric $metric
-     * @param int                            $hour
-     * @param int                            $minute
+     * @param int                            $minutes
      *
-     * @return array
+     * @return \Illuminate\Support\Collection
      */
-    public function getPointsLastHour(Metric $metric, $hour, $minute)
+    public function getPointsSinceMinutes(Metric $metric, $minutes)
     {
-        $dateTime = (new Date())->sub(new DateInterval('PT'.$hour.'H'))->sub(new DateInterval('PT'.$minute.'M'));
-        $timeInterval = $dateTime->format('YmdHi');
+        $queryType = $this->getQueryType($metric);
+        $points = Collection::make(DB::select("SELECT DATE_FORMAT(mp.`created_at`, '%H:%i') AS `key`, {$queryType} FROM {$this->getTableName()} m INNER JOIN metric_points mp ON m.id = mp.metric_id WHERE m.id = :metricId AND mp.`created_at` >= DATE_SUB(NOW(), INTERVAL :minutes MINUTE) GROUP BY HOUR(mp.`created_at`), MINUTE(mp.`created_at`) ORDER BY mp.`created_at`", [
+            'metricId' => $metric->id,
+            'minutes'  => $minutes,
+        ]));
 
-        if (!isset($metric->calc_type) || $metric->calc_type == Metric::CALC_SUM) {
-            $queryType = 'SUM(mp.`value` * mp.`counter`) AS `value`';
-        } elseif ($metric->calc_type == Metric::CALC_AVG) {
-            $queryType = 'AVG(mp.`value` * mp.`counter`) AS `value`';
-        }
-
-        $value = 0;
-
-        $points = DB::select("SELECT {$queryType} FROM {$this->getTableName()} m INNER JOIN metric_points mp ON m.id = mp.metric_id WHERE m.id = :metricId AND DATE_FORMAT(mp.`created_at`, '%Y%m%d%H%i') = :timeInterval GROUP BY HOUR(mp.`created_at`), MINUTE(mp.`created_at`)", [
-            'metricId'     => $metric->id,
-            'timeInterval' => $timeInterval,
-        ]);
-
-        if (isset($points[0]) && !($value = $points[0]->value)) {
-            $value = 0;
-        }
-
-        if ($value === 0 && $metric->default_value != $value) {
-            return $metric->default_value;
-        }
-
-        return round($value, $metric->places);
+        return $this->mapResults($metric, $points);
     }
 
     /**
@@ -67,31 +47,17 @@ class Mysql extends AbstractMetricRepository implements MetricInterface
      * @param \CachetHQ\Cachet\Models\Metric $metric
      * @param int                            $hour
      *
-     * @return array
+     * @return \Illuminate\Support\Collection
      */
-    public function getPointsByHour(Metric $metric, $hour)
+    public function getPointsSinceHour(Metric $metric, $hour)
     {
-        if (!isset($metric->calc_type) || $metric->calc_type == Metric::CALC_SUM) {
-            $queryType = 'SUM(mp.value * mp.counter) AS `value`';
-        } elseif ($metric->calc_type == Metric::CALC_AVG) {
-            $queryType = 'AVG(mp.value * mp.counter) AS `value`';
-        }
+        $queryType = $this->getQueryType($metric);
+        $points = Collection::make(DB::select("SELECT DATE_FORMAT(mp.`created_at`, '%H:00') AS `key`, {$queryType} FROM {$this->getTableName()} m INNER JOIN metric_points mp ON m.id = mp.metric_id WHERE m.id = :metricId AND mp.`created_at` >= DATE_SUB(NOW(), INTERVAL :hour HOUR) GROUP BY HOUR(mp.`created_at`) ORDER BY mp.`created_at`", [
+            'metricId' => $metric->id,
+            'hour'     => $hour,
+        ]));
 
-        $value = 0;
-
-        $points = DB::select("SELECT {$queryType} FROM {$this->getTableName()} m INNER JOIN metric_points mp ON m.id = mp.metric_id WHERE m.id = :metricId AND DATE_FORMAT(mp.`created_at`, '%Y%m%d%H') = :hourInterval GROUP BY HOUR(mp.`created_at`)", [
-            'metricId'     => $metric->id,
-            'hourInterval' => $hourInterval,
-
-        if (isset($points[0]) && !($value = $points[0]->value)) {
-            $value = 0;
-        }
-
-        if ($value === 0 && $metric->default_value != $value) {
-            return $metric->default_value;
-        }
-
-        return round($value, $metric->places);
+        return $this->mapResults($metric, $points);
     }
 
     /**
@@ -99,33 +65,16 @@ class Mysql extends AbstractMetricRepository implements MetricInterface
      *
      * @param \CachetHQ\Cachet\Models\Metric $metric
      *
-     * @return array
+     * @return \Illuminate\Support\Collection
      */
-    public function getPointsForDayInWeek(Metric $metric, $day)
+    public function getPointsSinceDay(Metric $metric, $day)
     {
-        $dateTime = (new Date())->sub(new DateInterval('P'.$day.'D'));
+        $queryType = $this->getQueryType($metric);
+        $points = Collection::make(DB::select("SELECT DATE_FORMAT(mp.`created_at`, '%Y-%m-%d') AS `key`, {$queryType} FROM {$this->getTableName()} m INNER JOIN metric_points mp ON m.id = mp.metric_id WHERE m.id = :metricId AND mp.`created_at` >= DATE_SUB(NOW(), INTERVAL :day DAY) GROUP BY DATE_FORMAT(mp.`created_at`) ORDER BY mp.`created_at`", [
+            'metricId' => $metric->id,
+            'day'      => $day,
+        ]));
 
-        if (!isset($metric->calc_type) || $metric->calc_type == Metric::CALC_SUM) {
-            $queryType = 'SUM(mp.`value` * mp.`counter`) AS `value`';
-        } elseif ($metric->calc_type == Metric::CALC_AVG) {
-            $queryType = 'AVG(mp.`value` * mp.`counter`) AS `value`';
-        }
-
-        $value = 0;
-
-        $points = DB::select("SELECT {$queryType} FROM {$this->getTableName()} m INNER JOIN metric_points mp ON m.id = mp.metric_id WHERE m.id = :metricId AND mp.`created_at` BETWEEN DATE_SUB(mp.`created_at`, INTERVAL 1 WEEK) AND DATE_ADD(NOW(), INTERVAL 1 DAY) AND DATE_FORMAT(mp.`created_at`, '%Y%m%d') = :timeInterval GROUP BY DATE_FORMAT(mp.`created_at`, '%Y%m%d')", [
-            'metricId'     => $metric->id,
-            'timeInterval' => $dateTime->format('Ymd'),
-        ]);
-
-        if (isset($points[0]) && !($value = $points[0]->value)) {
-            $value = 0;
-        }
-
-        if ($value === 0 && $metric->default_value != $value) {
-            return $metric->default_value;
-        }
-
-        return round($value, $metric->places);
+        return $this->mapResults($metric, $points);
     }
 }

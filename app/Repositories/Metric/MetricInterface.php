@@ -21,33 +21,32 @@ use CachetHQ\Cachet\Models\Metric;
 interface MetricInterface
 {
     /**
-     * Returns metrics for the last hour.
+     * Returns metrics since given minutes.
+     *
+     * @param \CachetHQ\Cachet\Models\Metric $metric
+     * @param int                            $minutes
+     *
+     * @return \Illuminate\Support\Collection
+     */
+    public function getPointsSinceMinutes(Metric $metric, $minutes);
+
+    /**
+     * Returns metrics since given hour.
      *
      * @param \CachetHQ\Cachet\Models\Metric $metric
      * @param int                            $hour
-     * @param int                            $minute
      *
-     * @return array
+     * @return \Illuminate\Support\Collection
      */
-    public function getPointsLastHour(Metric $metric, $hour, $minute);
+    public function getPointsSinceHour(Metric $metric, $hour);
 
     /**
-     * Returns metrics for a given hour.
-     *
-     * @param \CachetHQ\Cachet\Models\Metric $metric
-     * @param int                            $hour
-     *
-     * @return array
-     */
-    public function getPointsByHour(Metric $metric, $hour);
-
-    /**
-     * Returns metrics for the week.
+     * Returns metrics since given day.
      *
      * @param \CachetHQ\Cachet\Models\Metric $metric
      * @param int                            $day
      *
-     * @return array
+     * @return \Illuminate\Support\Collection
      */
-    public function getPointsForDayInWeek(Metric $metric, $day);
+    public function getPointsSinceDay(Metric $metric, $day);
 }
