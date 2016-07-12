@@ -67,6 +67,7 @@ class ApiRoutes
                 $router->post('metrics/{metric}/points', 'MetricPointController@postMetricPoints');
                 $router->post('subscribers', 'SubscriberController@postSubscribers');
                 $router->post('tags', 'TagController@postTags');
+                $router->post('users', 'UserController@postUsers');
 
                 $router->put('components/groups/{component_group}', 'ComponentGroupController@putGroup');
                 $router->put('components/{component}', 'ComponentController@putComponent');
@@ -75,6 +76,7 @@ class ApiRoutes
                 $router->put('metrics/{metric}', 'MetricController@putMetric');
                 $router->put('metrics/{metric}/points/{metric_point}', 'MetricPointController@putMetricPoint');
                 $router->put('tags/{tag}', 'TagController@putTag');
+                $router->put('users/{user}', 'UserController@putUser');
 
                 $router->delete('components/groups/{component_group}', 'ComponentGroupController@deleteGroup');
                 $router->delete('components/tags', 'ComponentTagController@deleteTag');
@@ -86,6 +88,7 @@ class ApiRoutes
                 $router->delete('subscribers/{subscriber}', 'SubscriberController@deleteSubscriber');
                 $router->delete('subscriptions/{subscription}', 'SubscriberController@deleteSubscription');
                 $router->delete('tags/{tag}', 'TagController@deleteTag');
+                $router->delete('users/{user}', 'UserController@deleteUser');
             });
         });
     }

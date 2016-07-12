@@ -90,5 +90,8 @@ class EventServiceProvider extends ServiceProvider
         'CachetHQ\Cachet\Bus\Events\User\UserWasInvitedEvent' => [
             'CachetHQ\Cachet\Bus\Handlers\Events\User\SendInviteUserEmailHandler',
         ],
+        'CachetHQ\Cachet\Bus\Events\User\UserWasUpdatedEvent' => [
+            //
+        ],
     ];
 }
