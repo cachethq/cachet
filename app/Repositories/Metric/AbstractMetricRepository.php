@@ -72,11 +72,11 @@ abstract class AbstractMetricRepository
     protected function getQueryType(Metric $metric)
     {
         if (!isset($metric->calc_type) || $metric->calc_type == Metric::CALC_SUM) {
-            return 'sum(mp.`value` * mp.`counter`) AS `value`';
+            return 'sum(metric_points.`value` * metric_points.`counter`) AS `value`';
         } elseif ($metric->calc_type == Metric::CALC_AVG) {
-            return 'avg(mp.`value` * mp.`counter`) AS `value`';
+            return 'avg(metric_points.`value` * metric_points.`counter`) AS `value`';
         } else {
-            return 'sum(mp.`value` * mp.`counter`) AS `value`';
+            return 'sum(metric_points.`value` * metric_points.`counter`) AS `value`';
         }
     }
 
