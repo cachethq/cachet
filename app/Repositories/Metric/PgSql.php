@@ -33,25 +33,13 @@ class PgSql extends AbstractMetricRepository implements MetricInterface
      */
     public function getPointsSinceMinutes(Metric $metric, $minutes)
     {
-        $dateTime = (new Date())->sub(new DateInterval('PT'.$hour.'H'))->sub(new DateInterval('PT'.$minute.'M'));
-
         $queryType = $this->getQueryType($metric);
+        $points = Collection::make(DB::select("SELECT to_char(metric_points.`created_at`, 'HHMI') AS `key`, {$queryType} FROM {$this->getTableName()} INNER JOIN metric_points ON metrics.id = metric_points.metric_id WHERE metrics.id = :metricId AND metric_points.`created_at` >= NOW() -, INTERVAL ':minutes' MINUTE) GROUP BY to_char(metric_points.`created_at`, 'HHMI') ORDER BY metric_points.`created_at`", [
+            'metricId' => $metric->id,
+            'minutes'  => $minutes,
+        ]));
 
-        $value = 0;
-        $query = DB::select("select {$queryType} FROM {$this->getTableName()} m JOIN metric_points ON metric_points.metric_id = m.id WHERE m.id = :metricId AND to_char(metric_points.created_at, 'YYYYMMDDHH24MI') = :timeInterval GROUP BY to_char(metric_points.created_at, 'HHMI')", [
-            'metricId'     => $metric->id,
-            'timeInterval' => $dateTime->format('YmdHi'),
-        ]);
-
-        if (isset($query[0])) {
-            $value = $query[0]->value;
-        }
-
-        if ($value === 0 && $metric->default_value != $value) {
-            return $metric->default_value;
-        }
-
-        return round($value, $metric->places);
+        return $this->mapResults($metric, $points);
     }
 
     /**
@@ -64,26 +52,18 @@ class PgSql extends AbstractMetricRepository implements MetricInterface
      */
     public function getPointsByHour(Metric $metric, $hour)
     {
-        $dateTime = (new Date())->sub(new DateInterval('PT'.$hour.'H'));
-
-        // Default metrics calculations.
-        $queryType = $this->getQueryType($metric);
-
-        $value = 0;
-        $query = DB::select("select {$queryType} FROM {$this->getTableName()} m JOIN metric_points ON metric_points.metric_id = m.id WHERE metric_points.metric_id = :metricId AND to_char(metric_points.created_at, 'YYYYMMDDHH24') = :timeInterval GROUP BY to_char(metric_points.created_at, 'H')", [
+        $query = DB::select("select {$queryType} FROM {$this->getTableName()} JOIN metric_points ON metric_points.metric_id = metrics.id WHERE metric_points.metric_id = :metricId AND to_char(metric_points.created_at, 'YYYYMMDDHH24') = :timeInterval GROUP BY to_char(metric_points.created_at, 'H')", [
             'metricId'     => $metric->id,
             'timeInterval' => $dateTime->format('YmdH'),
         ]);
 
-        if (isset($query[0])) {
-            $value = $query[0]->value;
-        }
+        $queryType = $this->getQueryType($metric);
+        $points = Collection::make(DB::select("SELECT to_char(metric_points.`created_at`, 'H') AS `key`, {$queryType} FROM {$this->getTableName()} INNER JOIN metric_points ON metrics.id = metric_points.metric_id WHERE metrics.id = :metricId AND metric_points.`created_at` >= NOW() -, INTERVAL ':minutes' MINUTE) GROUP BY to_char(metric_points.`created_at`, 'H') ORDER BY metric_points.`created_at`", [
+            'metricId' => $metric->id,
+            'minutes'  => $minutes,
+        ]));
 
-        if ($value === 0 && $metric->default_value != $value) {
-            return $metric->default_value;
-        }
-
-        return round($value, $metric->places);
+        return $this->mapResults($metric, $points);
     }
 
     /**
@@ -100,7 +80,7 @@ class PgSql extends AbstractMetricRepository implements MetricInterface
         $queryType = $this->getQueryType($metric);
 
         $value = 0;
-        $points = DB::select("SELECT {$queryType} FROM {$this->getTableName()} m INNER JOIN metric_points mp ON m.id = mp.metric_id WHERE m.id = :metricId AND mp.created_at BETWEEN (mp.created_at - interval '1 week') AND (now() + interval '1 day') AND to_char(mp.created_at, 'YYYYMMDD') = :timeInterval GROUP BY to_char(mp.created_at, 'YYYYMMDD')", [
+        $points = DB::select("SELECT {$queryType} FROM {$this->getTableName()} INNER JOIN metric_points ON metrics.id = metric_points.metric_id WHERE metrics.id = :metricId AND metric_points.created_at BETWEEN (metric_points.created_at - interval '1 week') AND (now() + interval '1 day') AND to_char(metric_points.created_at, 'YYYYMMDD') = :timeInterval GROUP BY to_char(metric_points.created_at, 'YYYYMMDD')", [
             'metricId'     => $metric->id,
             'timeInterval' => $dateTime->format('Ymd'),
         ]);

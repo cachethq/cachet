@@ -33,7 +33,7 @@ class MySql extends AbstractMetricRepository implements MetricInterface
     public function getPointsSinceMinutes(Metric $metric, $minutes)
     {
         $queryType = $this->getQueryType($metric);
-        $points = Collection::make(DB::select("SELECT DATE_FORMAT(mp.`created_at`, '%H:%i') AS `key`, {$queryType} FROM {$this->getTableName()} m INNER JOIN metric_points mp ON m.id = mp.metric_id WHERE m.id = :metricId AND mp.`created_at` >= DATE_SUB(NOW(), INTERVAL :minutes MINUTE) GROUP BY HOUR(mp.`created_at`), MINUTE(mp.`created_at`) ORDER BY mp.`created_at`", [
+        $points = Collection::make(DB::select("SELECT DATE_FORMAT(metric_points.`created_at`, '%H:%i') AS `key`, {$queryType} FROM {$this->getTableName()} INNER JOIN metric_points ON metrics.id = metric_points.metric_id WHERE metrics.id = :metricId AND metric_points.`created_at` >= DATE_SUB(NOW(), INTERVAL :minutes MINUTE) GROUP BY HOUR(metric_points.`created_at`), MINUTE(metric_points.`created_at`) ORDER BY metric_points.`created_at`", [
             'metricId' => $metric->id,
             'minutes'  => $minutes,
         ]));
@@ -52,7 +52,7 @@ class MySql extends AbstractMetricRepository implements MetricInterface
     public function getPointsSinceHour(Metric $metric, $hour)
     {
         $queryType = $this->getQueryType($metric);
-        $points = Collection::make(DB::select("SELECT DATE_FORMAT(mp.`created_at`, '%H:00') AS `key`, {$queryType} FROM {$this->getTableName()} m INNER JOIN metric_points mp ON m.id = mp.metric_id WHERE m.id = :metricId AND mp.`created_at` >= DATE_SUB(NOW(), INTERVAL :hour HOUR) GROUP BY HOUR(mp.`created_at`) ORDER BY mp.`created_at`", [
+        $points = Collection::make(DB::select("SELECT DATE_FORMAT(metric_points.`created_at`, '%H:00') AS `key`, {$queryType} FROM {$this->getTableName()} INNER JOIN metric_points ON metrics.id = metric_points.metric_id WHERE metrics.id = :metricId AND metric_points.`created_at` >= DATE_SUB(NOW(), INTERVAL :hour HOUR) GROUP BY HOUR(metric_points.`created_at`) ORDER BY metric_points.`created_at`", [
             'metricId' => $metric->id,
             'hour'     => $hour,
         ]));
@@ -70,7 +70,7 @@ class MySql extends AbstractMetricRepository implements MetricInterface
     public function getPointsSinceDay(Metric $metric, $day)
     {
         $queryType = $this->getQueryType($metric);
-        $points = Collection::make(DB::select("SELECT DATE_FORMAT(mp.`created_at`, '%Y-%m-%d') AS `key`, {$queryType} FROM {$this->getTableName()} m INNER JOIN metric_points mp ON m.id = mp.metric_id WHERE m.id = :metricId AND mp.`created_at` >= DATE_SUB(NOW(), INTERVAL :day DAY) GROUP BY DATE_FORMAT(mp.`created_at`) ORDER BY mp.`created_at`", [
+        $points = Collection::make(DB::select("SELECT DATE_FORMAT(metric_points.`created_at`, '%Y-%m-%d') AS `key`, {$queryType} FROM {$this->getTableName()} INNER JOIN metric_points ON metrics.id = metric_points.metric_id WHERE metrics.id = :metricId AND metric_points.`created_at` >= DATE_SUB(NOW(), INTERVAL :day DAY) GROUP BY DATE(metric_points.`created_at`) ORDER BY metric_points.`created_at`", [
             'metricId' => $metric->id,
             'day'      => $day,
         ]));
