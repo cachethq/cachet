@@ -14,7 +14,6 @@ namespace CachetHQ\Cachet\Composers;
 use CachetHQ\Cachet\Dates\DateFactory;
 use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Contracts\View\View;
-use Illuminate\Support\Facades\Config;
 
 class AppComposer
 {
@@ -26,15 +25,24 @@ class AppComposer
     protected $dates;
 
     /**
+     * The illuminate config instance.
+     *
+     * @var \Illuminate\Contracts\Config\Repository
+     */
+    protected $config;
+
+    /**
      * Create a new app composer instance.
      *
      * @param \CachetHQ\Cachet\Dates\DateFactory $dates
+     * @param \Illuminate\Contracts\Config\Repository $config
      *
      * @return void
      */
-    public function __construct(DateFactory $dates)
+    public function __construct(DateFactory $dates, Repository $config)
     {
         $this->dates = $dates;
+        $this->config = $config;
     }
 
     /**
@@ -46,28 +54,28 @@ class AppComposer
      */
     public function compose(View $view)
     {
-        $view->withAboutApp(Markdown::convertToHtml(Config::get('setting.app_about')));
-        $view->withAppAnalytics(Config::get('setting.app_analytics'));
-        $view->withAppAnalyticsGoSquared(Config::get('setting.app_analytics_gs'));
-        $view->withAppAnalyticsPiwikUrl(Config::get('setting.app_analytics_piwik_url'));
-        $view->withAppAnalyticsPiwikSiteId(Config::get('setting.app_analytics_piwik_site_id'));
-        $view->withAppBanner(Config::get('setting.app_banner'));
-        $view->withAppBannerStyleFullWidth(Config::get('setting.style_fullwidth_header'));
-        $view->withAppBannerType(Config::get('setting.app_banner_type'));
-        $view->withAppDomain(Config::get('setting.app_domain'));
-        $view->withAppGraphs(Config::get('setting.display_graphs'));
-        $view->withAppLocale(Config::get('setting.app_locale'));
-        $view->withAppStylesheet(Config::get('setting.stylesheet'));
-        $view->withAppUrl(Config::get('app.url'));
-        $view->withAppHeader(Config::get('setting.header'));
-        $view->withAppFooter(Config::get('setting.footer'));
-        $view->withAppName(Config::get('setting.app_name'));
-        $view->withShowSupport(Config::get('setting.show_support'));
-        $view->withAutomaticLocalization(Config::get('setting.automatic_localization'));
-        $view->withEnableExternalDependencies(Config::get('setting.enable_external_dependencies'));
-        $view->withShowTimezone(Config::get('setting.show_timezone'));
+        $view->withAboutApp(Markdown::convertToHtml($this->config->get('setting.app_about')));
+        $view->withAppAnalytics($this->config->get('setting.app_analytics'));
+        $view->withAppAnalyticsGoSquared($this->config->get('setting.app_analytics_gs'));
+        $view->withAppAnalyticsPiwikUrl($this->config->get('setting.app_analytics_piwik_url'));
+        $view->withAppAnalyticsPiwikSiteId($this->config->get('setting.app_analytics_piwik_site_id'));
+        $view->withAppBanner($this->config->get('setting.app_banner'));
+        $view->withAppBannerStyleFullWidth($this->config->get('setting.style_fullwidth_header'));
+        $view->withAppBannerType($this->config->get('setting.app_banner_type'));
+        $view->withAppDomain($this->config->get('setting.app_domain'));
+        $view->withAppGraphs($this->config->get('setting.display_graphs'));
+        $view->withAppLocale($this->config->get('setting.app_locale'));
+        $view->withAppStylesheet($this->config->get('setting.stylesheet'));
+        $view->withAppUrl($this->config->get('app.url'));
+        $view->withAppHeader($this->config->get('setting.header'));
+        $view->withAppFooter($this->config->get('setting.footer'));
+        $view->withAppName($this->config->get('setting.app_name'));
+        $view->withShowSupport($this->config->get('setting.show_support'));
+        $view->withAutomaticLocalization($this->config->get('setting.automatic_localization'));
+        $view->withEnableExternalDependencies($this->config->get('setting.enable_external_dependencies'));
+        $view->withShowTimezone($this->config->get('setting.show_timezone'));
         $view->withTimezone($this->dates->getTimezone());
-        $view->withSiteTitle(Config::get('setting.app_name'));
-        $view->withFontSubset(Config::get('langs.'.Config::get('app.locale').'.subset', 'latin'));
+        $view->withSiteTitle($this->config->get('setting.app_name'));
+        $view->withFontSubset($this->config->get('langs.'.$this->config->get('app.locale').'.subset', 'latin'));
     }
 }
