@@ -46,7 +46,9 @@ class StatusPageComposer
             ];
         } elseif (Component::enabled()->notStatus(1)->count() === 0) {
             // If all our components are ok, do we have any non-fixed incidents?
-            $incidents = Incident::notScheduled()->orderBy('created_at', 'desc')->get();
+            $incidents = Incident::notScheduled()->orderBy('created_at', 'desc')->get()->filter(function ($incident) {
+                return $incident->status > 0;
+            });
             $incidentCount = $incidents->count();
 
             if ($incidentCount === 0 || ($incidentCount >= 1 && (int) $incidents->first()->status === 4)) {
