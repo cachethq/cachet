@@ -11,8 +11,8 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Api;
 
+use CachetHQ\Cachet\Integrations\Contracts\Releases;
 use CachetHQ\Cachet\Integrations\Contracts\System;
-use CachetHQ\Cachet\Integrations\Releases;
 
 /**
  * This is the general api controller.
@@ -38,7 +38,7 @@ class GeneralController extends AbstractApiController
      */
     public function version()
     {
-        $latest = app(Releases::class)->latest();
+        $latest = app()->make(Releases::class)->latest();
 
         return $this->setMetaData([
             'on_latest' => version_compare(CACHET_VERSION, $latest['tag_name']) === 1,

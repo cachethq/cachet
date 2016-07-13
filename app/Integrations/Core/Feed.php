@@ -9,8 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Integrations;
+namespace CachetHQ\Cachet\Integrations\Core;
 
+use CachetHQ\Cachet\Integrations\Contracts\Feed as FeedContract;
 use Exception;
 use GuzzleHttp\Client;
 use Illuminate\Contracts\Cache\Repository;
@@ -20,7 +21,7 @@ use Illuminate\Contracts\Cache\Repository;
  *
  * @author James Brooks <james@alt-three.com>
  */
-class Feed
+class Feed implements FeedContract
 {
     /**
      * The default url.

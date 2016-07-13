@@ -14,9 +14,6 @@ namespace CachetHQ\Cachet\Foundation\Providers;
 use AltThree\Bus\Dispatcher;
 use CachetHQ\Cachet\Bus\Middleware\UseDatabaseTransactions;
 use CachetHQ\Cachet\Dates\DateFactory;
-use CachetHQ\Cachet\Integrations\Credits;
-use CachetHQ\Cachet\Integrations\Feed;
-use CachetHQ\Cachet\Integrations\Releases;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 
@@ -55,9 +52,6 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         $this->registerDateFactory();
-        $this->registerCredits();
-        $this->registerFeed();
-        $this->registerReleases();
     }
 
     /**
@@ -72,49 +66,6 @@ class AppServiceProvider extends ServiceProvider
             $cacheTimezone = $app['config']->get('cachet.timezone');
 
             return new DateFactory($appTimezone, $cacheTimezone);
-        });
-    }
-
-    /**
-     * Register the credits class.
-     *
-     * @return void
-     */
-    protected function registerCredits()
-    {
-        $this->app->singleton(Credits::class, function ($app) {
-            $cache = $app['cache.store'];
-
-            return new Credits($cache);
-        });
-    }
-
-    /**
-     * Register the feed class.
-     *
-     * @return void
-     */
-    protected function registerFeed()
-    {
-        $this->app->singleton(Feed::class, function ($app) {
-            $cache = $app['cache.store'];
-
-            return new Feed($cache);
-        });
-    }
-
-    /**
-     * Register the releases class.
-     *
-     * @return void
-     */
-    protected function registerReleases()
-    {
-        $this->app->singleton(Releases::class, function ($app) {
-            $cache = $app['cache.store'];
-            $token = $app['config']->get('services.github.token');
-
-            return new Releases($cache, $token);
         });
     }
 }
