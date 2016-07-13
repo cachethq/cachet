@@ -11,7 +11,7 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
-use CachetHQ\Cachet\Integrations\Feed;
+use CachetHQ\Cachet\Integrations\Contracts\Feed;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Incident;
