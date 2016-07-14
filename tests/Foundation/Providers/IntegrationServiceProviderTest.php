@@ -12,6 +12,9 @@
 namespace CachetHQ\Tests\Cachet\Foundation\Providers;
 
 use AltThree\TestBench\ServiceProviderTrait;
+use CachetHQ\Cachet\Integrations\Contracts\Credits;
+use CachetHQ\Cachet\Integrations\Contracts\Feed;
+use CachetHQ\Cachet\Integrations\Contracts\Releases;
 use CachetHQ\Cachet\Integrations\Contracts\System;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 
@@ -19,13 +22,29 @@ use CachetHQ\Tests\Cachet\AbstractTestCase;
  * This is the integration service provider test class.
  *
  * @author James Brooks <james@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
  */
 class IntegrationServiceProviderTest extends AbstractTestCase
 {
     use ServiceProviderTrait;
 
+    public function testCreditsIsInjectable()
+    {
+        $this->assertIsInjectable(Credits::class);
+    }
+
+    public function testFeedIsInjectable()
+    {
+        $this->assertIsInjectable(Feed::class);
+    }
+
     public function testSystemIsInjectable()
     {
         $this->assertIsInjectable(System::class);
+    }
+
+    public function testReleasesIsInjectable()
+    {
+        $this->assertIsInjectable(Releases::class);
     }
 }
