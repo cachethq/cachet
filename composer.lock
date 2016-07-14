@@ -2023,12 +2023,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "c5e2ef6569b18bc5dede7edd4f419e2a51c15b1a"
+                "reference": "59410ce9270355359ba36b2a4391f05c1076e830"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/c5e2ef6569b18bc5dede7edd4f419e2a51c15b1a",
-                "reference": "c5e2ef6569b18bc5dede7edd4f419e2a51c15b1a",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/59410ce9270355359ba36b2a4391f05c1076e830",
+                "reference": "59410ce9270355359ba36b2a4391f05c1076e830",
                 "shasum": ""
             },
             "require": {
@@ -2144,7 +2144,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2016-07-14 00:31:49"
+            "time": "2016-07-14 16:27:41"
         },
         {
             "name": "league/commonmark",
