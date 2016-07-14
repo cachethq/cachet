@@ -28,36 +28,36 @@ class RouteServiceProvider extends ServiceProvider
     /**
      * Define the route model bindings, pattern filters, etc.
      *
+     * @return void
+     */
+    public function boot()
+    {
+        parent::boot();
+
+        $this->app->call([$this, 'bind']);
+    }
+
+    /**
+     * Define the bindings for the application.
+     *
      * @param \Illuminate\Routing\Router $router
      *
      * @return void
      */
-    public function boot(Router $router)
+    public function bind(Router $router)
     {
-        parent::boot($router);
-
-        $this->registerBindings();
-    }
-
-    /**
-     * Register model bindings.
-     *
-     * @return void
-     */
-    protected function registerBindings()
-    {
-        $this->app->router->model('component', 'CachetHQ\Cachet\Models\Component');
-        $this->app->router->model('component_group', 'CachetHQ\Cachet\Models\ComponentGroup');
-        $this->app->router->model('component_tag', 'CachetHQ\Cachet\Models\ComponentTag');
-        $this->app->router->model('incident', 'CachetHQ\Cachet\Models\Incident');
-        $this->app->router->model('incident_template', 'CachetHQ\Cachet\Models\IncidentTemplate');
-        $this->app->router->model('metric', 'CachetHQ\Cachet\Models\Metric');
-        $this->app->router->model('metric_point', 'CachetHQ\Cachet\Models\MetricPoint');
-        $this->app->router->model('setting', 'CachetHQ\Cachet\Models\Setting');
-        $this->app->router->model('subscriber', 'CachetHQ\Cachet\Models\Subscriber');
-        $this->app->router->model('subscription', 'CachetHQ\Cachet\Models\Subscription');
-        $this->app->router->model('tag', 'CachetHQ\Cachet\Models\Tag');
-        $this->app->router->model('user', 'CachetHQ\Cachet\Models\User');
+        $router->model('component', 'CachetHQ\Cachet\Models\Component');
+        $router->model('component_group', 'CachetHQ\Cachet\Models\ComponentGroup');
+        $router->model('component_tag', 'CachetHQ\Cachet\Models\ComponentTag');
+        $router->model('incident', 'CachetHQ\Cachet\Models\Incident');
+        $router->model('incident_template', 'CachetHQ\Cachet\Models\IncidentTemplate');
+        $router->model('metric', 'CachetHQ\Cachet\Models\Metric');
+        $router->model('metric_point', 'CachetHQ\Cachet\Models\MetricPoint');
+        $router->model('setting', 'CachetHQ\Cachet\Models\Setting');
+        $router->model('subscriber', 'CachetHQ\Cachet\Models\Subscriber');
+        $router->model('subscription', 'CachetHQ\Cachet\Models\Subscription');
+        $router->model('tag', 'CachetHQ\Cachet\Models\Tag');
+        $router->model('user', 'CachetHQ\Cachet\Models\User');
     }
 
     /**
