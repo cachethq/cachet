@@ -34,7 +34,7 @@ return [
         'invalid'       => 'Ongeldige gebruikersnaam of wachtwoord',
         'invalid-token' => 'Ongeldig token',
         'cookies'       => 'U moet cookies inschakelen om in te loggen.',
-        'rate-limit'    => 'Rate limit exceeded.',
+        'rate-limit'    => 'Snelheids limiet overschreden.',
     ],
 
     // Incidents form fields

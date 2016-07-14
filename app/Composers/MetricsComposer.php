@@ -12,11 +12,30 @@
 namespace CachetHQ\Cachet\Composers;
 
 use CachetHQ\Cachet\Models\Metric;
+use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\View\View;
-use Illuminate\Support\Facades\Config;
 
 class MetricsComposer
 {
+    /**
+     * The illuminate config instance.
+     *
+     * @var \Illuminate\Contracts\Config\Repository
+     */
+    protected $config;
+
+    /**
+     * Create a new metrics composer.
+     *
+     * @param \Illuminate\Contracts\Config\Repository $config
+     *
+     * @return void
+     */
+    public function __construct(Repository $config)
+    {
+        $this->config = $config;
+    }
+
     /**
      * Metrics view composer.
      *
@@ -27,7 +46,7 @@ class MetricsComposer
     public function compose(View $view)
     {
         $metrics = null;
-        if ($displayMetrics = Config::get('setting.display_graphs')) {
+        if ($displayMetrics = $this->config->get('setting.display_graphs')) {
             $metrics = Metric::displayable()->orderBy('order')->orderBy('id')->get();
         }
 

@@ -56,4 +56,25 @@ return [
 
     'show_support' => true,
 
+    /*
+     |--------------------------------------------------------------------------
+     | Enable External Dependencies
+     |--------------------------------------------------------------------------
+     |
+     | Whether to disable third-party dependencies.
+     |
+     */
+
+    'enable_external_dependencies' => true,
+
+   /*
+    |--------------------------------------------------------------------------
+    | Show the timezone
+    |--------------------------------------------------------------------------
+    |
+    | Whether to show the status page timezone in the footer.
+    |
+    */
+
+    'show_timezone' => false,
 ];

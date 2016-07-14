@@ -34,7 +34,7 @@ return [
         'invalid'       => 'Nom d\'utilisateur ou mot de passe incorrect',
         'invalid-token' => 'Jeton invalide',
         'cookies'       => 'Vous devez activer les cookies pour vous connecter.',
-        'rate-limit'    => 'Rate limit exceeded.',
+        'rate-limit'    => 'Limite de tentatives atteinte.',
     ],
 
     // Incidents form fields

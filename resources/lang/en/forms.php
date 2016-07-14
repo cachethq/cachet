@@ -23,11 +23,6 @@ return [
         'enable_google2fa' => 'Enable Google Two Factor Authentication',
         'cache_driver'     => 'Cache Driver',
         'session_driver'   => 'Session Driver',
-        'mail_driver'      => 'Mail Driver',
-        'mail_host'        => 'Mail Host',
-        'mail_address'     => 'Mail From',
-        'mail_username'    => 'Mail Client User',
-        'mail_password'    => 'Mail Client Password',
     ],
 
     // Login form fields
@@ -104,17 +99,19 @@ return [
 
     // Settings
     'settings' => [
-        /// Application setup
+        // Application setup
         'app-setup' => [
-            'site-name'              => 'Site Name',
-            'site-url'               => 'Site URL',
-            'display-graphs'         => 'Display graphs on status page?',
-            'about-this-page'        => 'About this page',
-            'days-of-incidents'      => 'How many days of incidents to show?',
-            'banner'                 => 'Banner Image',
-            'banner-help'            => "It's recommended that you upload files no bigger than 930px wide .",
-            'subscribers'            => 'Allow people to signup to email notifications?',
-            'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
+            'site-name'                    => 'Site Name',
+            'site-url'                     => 'Site URL',
+            'display-graphs'               => 'Display graphs on status page?',
+            'about-this-page'              => 'About this page',
+            'days-of-incidents'            => 'How many days of incidents to show?',
+            'banner'                       => 'Banner Image',
+            'banner-help'                  => "It's recommended that you upload files no bigger than 930px wide .",
+            'subscribers'                  => 'Allow people to signup to email notifications?',
+            'automatic_localization'       => 'Automatically localise your status page to your visitor\'s language?',
+            'enable_external_dependencies' => 'Enable Third Party Dependencies (Google Fonts, Trackers, etc...)',
+            'show_timezone'                => 'Show the timezone the status page is running in.',
         ],
         'analytics' => [
             'analytics_google'       => 'Google Analytics code',

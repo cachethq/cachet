@@ -69,7 +69,7 @@ return [
         'edit' => [
             'title'   => '编辑维护计划',
             'success' => '维护计划已更新！',
-            'failure' => '添加编辑计划时出错了，请再试一次。',
+            'failure' => '编辑计划时出错了，请再试一次。',
         ],
         'delete' => [
             'success' => '该维护计划已被删除，它将从您的状态页上消失。',
@@ -135,7 +135,7 @@ return [
         ],
         'delete' => [
             'success' => '图表已删除并将不会出现在状态页中',
-            'failure' => '无法删除图标，请稍后再试。',
+            'failure' => '无法删除图表，请稍后再试。',
         ],
     ],
     // Subscribers
@@ -220,12 +220,12 @@ return [
             'failure' => 'Settings could not be saved.',
         ],
         'credits' => [
-            'credits'       => 'Credits',
-            'contributors'  => 'Contributors',
-            'license'       => 'Cachet is a BSD-3-licensed open source project, released by <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
-            'backers-title' => 'Backers & Sponsors',
-            'backers'       => 'If you\'d like to support future development, check out the <a href="https://patreon.com/jbrooksuk" target="_blank">Cachet Patreon</a> campaign.',
-            'thank-you'     => 'Thank you to each and every one of the :count contributors.',
+            'credits'       => '团队',
+            'contributors'  => '贡献者',
+            'license'       => 'Cachet 是 <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a> 开发的一个开源项目，使用 BSD-3 授权。',
+            'backers-title' => '后勤力量和赞助商',
+            'backers'       => '如果您想为后续的开发提供支持，请查看 <a href="https://patreon.com/jbrooksuk" target="_blank">Cachet Patreon</a>。',
+            'thank-you'     => '感谢您和 :count 位贡献者们',
         ],
     ],
 
@@ -251,10 +251,10 @@ return [
 
     // Widgets
     'widgets' => [
-        'support'          => 'Support Cachet',
-        'support_subtitle' => 'Check out our <strong><a href="https://patreon.com/jbrooksuk" target="_blank">Patreon</a></strong> page!',
-        'news'             => 'Latest News',
-        'news_subtitle'    => 'Get the latest updates',
+        'support'          => '支持 Cachet',
+        'support_subtitle' => '查看我们的 <strong><a href="https://patreon.com/jbrooksuk" target="_blank">Patreon</a></strong> 页面！',
+        'news'             => '最新消息',
+        'news_subtitle'    => '获取最近的更新',
     ],
 
     // Welcome modal

@@ -2,7 +2,7 @@
   "name": "cachet",
   "devDependencies": {
     "gulp": "~3.9.1",
-    "laravel-elixir": "~5.0.0",
+    "laravel-elixir": "~6.0.0-9",
     "animate-sass": "git+https://github.com/tgdev/animate-sass.git",
     "autosize": "^3.0.15",
     "bootstrap-sass": "^3.3.6",

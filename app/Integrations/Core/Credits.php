@@ -9,13 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Integrations;
+namespace CachetHQ\Cachet\Integrations\Core;
 
+use CachetHQ\Cachet\Integrations\Contracts\Credits as CreditsContract;
 use Exception;
 use GuzzleHttp\Client;
 use Illuminate\Contracts\Cache\Repository;
 
-class Credits
+class Credits implements CreditsContract
 {
     /**
      * The default url.
