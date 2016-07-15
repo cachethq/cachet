@@ -48,8 +48,11 @@ class ApiRoutes
             });
 
             $router->group(['middleware' => ['auth.api:true']], function (Registrar $router) {
+                $router->get('actions', 'ActionController@getActions');
                 $router->get('subscribers', 'SubscriberController@getSubscribers');
 
+                $router->post('actions', 'ActionController@postActions');
+                $router->post('actions/{timed_action}/responses', 'ActionController@postActionResponse');
                 $router->post('components', 'ComponentController@postComponents');
                 $router->post('components/groups', 'ComponentGroupController@postGroups');
                 $router->post('incidents', 'IncidentController@postIncidents');
@@ -57,12 +60,14 @@ class ApiRoutes
                 $router->post('metrics/{metric}/points', 'MetricPointController@postMetricPoints');
                 $router->post('subscribers', 'SubscriberController@postSubscribers');
 
+                $router->put('actions/{timed_action}', 'ActionController@putAction');
                 $router->put('components/groups/{component_group}', 'ComponentGroupController@putGroup');
                 $router->put('components/{component}', 'ComponentController@putComponent');
                 $router->put('incidents/{incident}', 'IncidentController@putIncident');
                 $router->put('metrics/{metric}', 'MetricController@putMetric');
                 $router->put('metrics/{metric}/points/{metric_point}', 'MetricPointController@putMetricPoint');
 
+                $router->delete('actions/{timed_action}', 'ActionController@deleteAction');
                 $router->delete('components/groups/{component_group}', 'ComponentGroupController@deleteGroup');
                 $router->delete('components/{component}', 'ComponentController@deleteComponent');
                 $router->delete('incidents/{incident}', 'IncidentController@deleteIncident');
