@@ -35,9 +35,10 @@ class ConfigServiceProvider extends ServiceProvider
     public function boot()
     {
         $env = $this->app->environment();
+        $cli = $this->app->runningInConsole();
         $repo = $this->app->make(Repository::class);
         $cache = $this->app->make(Cache::class);
-        $loaded = $cache->load($env);
+        $loaded = $cli ? false : $cache->load($env);
 
         $this->app->terminating(function () use ($repo, $cache) {
             if ($repo->stale()) {
@@ -46,7 +47,7 @@ class ConfigServiceProvider extends ServiceProvider
         });
 
         try {
-            if ($loaded === false) {
+            if ($cli === false && $loaded === false) {
                 $loaded = $repo->all();
                 $cache->store($env, $loaded);
             }
