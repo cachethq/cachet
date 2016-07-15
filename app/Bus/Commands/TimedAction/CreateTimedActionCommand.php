@@ -16,7 +16,7 @@ namespace CachetHQ\Cachet\Bus\Commands\TimedAction;
  *
  * @author James Brooks <james@alt-three.com>
  */
-class CreateTimedActionCommand
+final class CreateTimedActionCommand
 {
     /**
      * The name of the timed action.

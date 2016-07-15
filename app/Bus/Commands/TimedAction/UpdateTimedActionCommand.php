@@ -16,7 +16,7 @@ namespace CachetHQ\Cachet\Bus\Commands\TimedAction;
  *
  * @author James Brooks <james@alt-three.com>
  */
-class UpdateTimedActionCommand
+final class UpdateTimedActionCommand
 {
     //
 }

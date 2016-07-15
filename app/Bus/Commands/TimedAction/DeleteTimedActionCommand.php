@@ -18,7 +18,7 @@ use CachetHQ\Cachet\Models\TimedAction;
  *
  * @author James Brooks <james@alt-three.com>
  */
-class DeleteTimedActionCommand
+final class DeleteTimedActionCommand
 {
     /**
      * The timed action we're deleting.
