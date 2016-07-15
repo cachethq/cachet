@@ -11,15 +11,7 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Api;
 
-use CachetHQ\Cachet\Bus\Commands\TimedAction\CreatedTimedActionCommand;
-use CachetHQ\Cachet\Bus\Commands\TimedAction\DeleteTimedActionCommand;
-use CachetHQ\Cachet\Bus\Commands\TimedAction\ReportTimedActionCommand;
-use CachetHQ\Cachet\Bus\Commands\TimedAction\UpdateTimedActionCommand;
 use CachetHQ\Cachet\Models\TimedAction;
-use GrahamCampbell\Binput\Facades\Binput;
-use Illuminate\Database\QueryException;
-use Illuminate\Support\Facades\Request;
-use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 /**
  * This is the action controller class.
