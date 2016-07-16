@@ -70,6 +70,13 @@ final class UpdateTimedActionCommand
     public $completion_latency;
 
     /**
+     * The start date and time.
+     *
+     * @var string
+     */
+    public $start_at;
+
+    /**
      * Create a new created timed action command instance.
      *
      * @param \CachetHQ\Cachet\Models\TimedAction $action
@@ -79,10 +86,11 @@ final class UpdateTimedActionCommand
      * @param string                              $timezone
      * @param int                                 $schedule_frequency
      * @param int                                 $completion_latency
+     * @param string                              $start_at
      *
      * @return void
      */
-    public function __construct(TimedAction $action, $name, $description, $active, $timezone, $schedule_frequency, $completion_latency)
+    public function __construct(TimedAction $action, $name, $description, $active, $timezone, $schedule_frequency, $completion_lateny, $start_at)
     {
         $this->action = $action;
         $this->name = $name;
@@ -91,5 +99,6 @@ final class UpdateTimedActionCommand
         $this->timezone = $timezone;
         $this->schedule_frequency = $schedule_frequency;
         $this->completion_latency = $completion_latency;
+        $this->start_at = $start_at;
     }
 }

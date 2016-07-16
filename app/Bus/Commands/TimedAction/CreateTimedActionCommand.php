@@ -61,6 +61,13 @@ final class CreateTimedActionCommand
     public $completion_latency;
 
     /**
+     * The start date and time.
+     *
+     * @var string
+     */
+    public $start_at;
+
+    /**
      * Create a new created timed action command instance.
      *
      * @param string $name
@@ -69,10 +76,11 @@ final class CreateTimedActionCommand
      * @param string $timezone
      * @param int    $schedule_frequency
      * @param int    $completion_latency
+     * @param string $start_at
      *
      * @return void
      */
-    public function __construct($name, $description, $active, $timezone, $schedule_frequency, $completion_latency)
+    public function __construct($name, $description, $active, $timezone, $schedule_frequency, $completion_latency, $start_at)
     {
         $this->name = $name;
         $this->description = $description;
@@ -80,5 +88,6 @@ final class CreateTimedActionCommand
         $this->timezone = $timezone;
         $this->schedule_frequency = $schedule_frequency;
         $this->completion_latency = $completion_latency;
+        $this->start_ar = $start_ar;
     }
 }
