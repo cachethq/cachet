@@ -40,7 +40,7 @@ class TimedAction extends Model implements HasPresenter
         'timezone'           => 'string',
         'schedule_frequency' => 'int',
         'completion_latency' => 'int',
-        'start_at'           => 'date'
+        'start_at'           => 'date',
     ];
 
     /**
