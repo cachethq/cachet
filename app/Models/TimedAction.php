@@ -38,6 +38,7 @@ class TimedAction extends Model
         'timezone'           => 'string',
         'schedule_frequency' => 'int',
         'completion_latency' => 'int',
+        'start_at'           => 'date'
     ];
 
     /**
@@ -52,6 +53,7 @@ class TimedAction extends Model
         'timezone',
         'schedule_frequency',
         'completion_latency',
+        'start_at',
         'created_at',
         'updated_at',
     ];
@@ -68,6 +70,7 @@ class TimedAction extends Model
         'timezone'           => 'string',
         'schedule_frequency' => 'int',
         'completion_latency' => 'int',
+        'start_at'           => 'date|required',
     ];
 
     /**
@@ -82,6 +85,7 @@ class TimedAction extends Model
         'timezone',
         'schedule_frequency',
         'completion_latency',
+        'start_at',
     ];
 
     /**
@@ -96,6 +100,7 @@ class TimedAction extends Model
         'timezone',
         'schedule_frequency',
         'completion_latency',
+        'start_at',
     ];
 
     /**

@@ -30,6 +30,7 @@ class CreateTimedActionsTable extends Migration
             $table->string('timezone');
             $table->integer('schedule_frequency')->unsigned(); // In seconds
             $table->integer('completion_latency')->unsigned()->default(0); // In seconds
+            $table->timestamp('start_at'); // Start time
             $table->timestamps();
         });
     }
