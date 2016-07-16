@@ -12,6 +12,8 @@
 namespace CachetHQ\Cachet\Http\Controllers\Api;
 
 use CachetHQ\Cachet\Models\TimedAction;
+use GrahamCampbell\Binput\Facades\Binput;
+use Illuminate\Support\Facades\Request;
 
 /**
  * This is the action controller class.
@@ -27,7 +29,19 @@ class ActionController extends AbstractApiController
      */
     public function getActions()
     {
-        //
+        $actions = TimedAction::query();
+
+        $actions->search(Binput::except(['sort', 'order', 'per_page']));
+
+        if ($sortBy = Binput::get('sort')) {
+            $direction = Binput::has('order') && Binput::get('order') == 'desc';
+
+            $actions->sort($sortBy, $direction);
+        }
+
+        $actions = $actions->paginate(Binput::get('per_page', 20));
+
+        return $this->paginator($actions, Request::instance());
     }
 
     /**
