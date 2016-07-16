@@ -14,15 +14,17 @@ namespace CachetHQ\Cachet\Models;
 use AltThree\Validator\ValidatingTrait;
 use CachetHQ\Cachet\Models\Traits\SearchableTrait;
 use CachetHQ\Cachet\Models\Traits\SortableTrait;
+use CachetHQ\Cachet\Presenters\TimedActionPresenter;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use McCool\LaravelAutoPresenter\HasPresenter;
 
 /**
  * This is the timed action model.
  *
  * @author James Brooks <james@alt-three.com>
  */
-class TimedAction extends Model
+class TimedAction extends Model implements HasPresenter
 {
     use SearchableTrait, SortableTrait, ValidatingTrait;
 
@@ -123,5 +125,15 @@ class TimedAction extends Model
     public function scopeEnabled(Builder $query)
     {
         return $query->where('active', true);
+    }
+
+    /**
+     * Get the presenter class.
+     *
+     * @return string
+     */
+    public function getPresenterClass()
+    {
+        return TimedActionPresenter::class;
     }
 }

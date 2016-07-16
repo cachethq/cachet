@@ -45,6 +45,18 @@ class ActionController extends AbstractApiController
     }
 
     /**
+     * Get a single timed action.
+     *
+     * @param \CachetHQ\Cachet\Models\TimedAction $action
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function getAction(TimedAction $action)
+    {
+        return $this->item($action);
+    }
+
+    /**
      * Create a new timed action instance.
      *
      * @return \Illuminate\Http\JsonResponse
