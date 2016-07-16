@@ -11,9 +11,13 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Api;
 
+use CachetHQ\Cachet\Bus\Commands\TimedAction\CreateTimedActionCommand;
+use CachetHQ\Cachet\Bus\Commands\TimedAction\DeleteTimedActionCommand;
 use CachetHQ\Cachet\Models\TimedAction;
 use GrahamCampbell\Binput\Facades\Binput;
+use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Request;
+use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 /**
  * This is the action controller class.
@@ -63,7 +67,21 @@ class ActionController extends AbstractApiController
      */
     public function postActions()
     {
-        //
+        try {
+            $action = dispatch(new CreateTimedActionCommand(
+                Binput::get('name'),
+                Binput::get('description', null),
+                Binput::get('active', false),
+                Binput::get('timezone', null),
+                Binput::get('schedule_frequency'),
+                Binput::get('completion_latency'),
+                Binput::get('start_at')
+            ));
+        } catch (QueryException $e) {
+            throw new BadRequestHttpException($e);
+        }
+
+        return $this->item($action);
     }
 
     /**
@@ -99,6 +117,8 @@ class ActionController extends AbstractApiController
      */
     public function deleteAction(TimedAction $action)
     {
-        //
+        dispatch(new DeleteTimedActionCommand($action));
+
+        return $this->noContent();
     }
 }
