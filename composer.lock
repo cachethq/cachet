@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "85b73f3211babb4bf992e5628a862804",
-    "content-hash": "7b5f27f3d4ef54e83dd203203d704984",
+    "hash": "26bf01769eeb76c611500fbca9149683",
+    "content-hash": "f71c593ddc593fb0a0848fbe0248a4a2",
     "packages": [
         {
             "name": "alt-three/badger",
@@ -2962,16 +2962,16 @@
         },
         {
             "name": "roumen/feed",
-            "version": "v2.10.3",
+            "version": "v2.10.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RoumenDamianoff/laravel-feed.git",
-                "reference": "d2f51d9f0d8c699cb812c5b7edeb4804e253f691"
+                "reference": "900594412cab37515b2b53c8953af1201024e48d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RoumenDamianoff/laravel-feed/zipball/d2f51d9f0d8c699cb812c5b7edeb4804e253f691",
-                "reference": "d2f51d9f0d8c699cb812c5b7edeb4804e253f691",
+                "url": "https://api.github.com/repos/RoumenDamianoff/laravel-feed/zipball/900594412cab37515b2b53c8953af1201024e48d",
+                "reference": "900594412cab37515b2b53c8953af1201024e48d",
                 "shasum": ""
             },
             "require": {
@@ -3009,7 +3009,7 @@
                 "laravel",
                 "rss"
             ],
-            "time": "2016-06-01 18:54:03"
+            "time": "2016-07-17 13:06:35"
         },
         {
             "name": "simplesoftwareio/simple-qrcode",
