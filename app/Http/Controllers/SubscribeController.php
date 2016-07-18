@@ -18,6 +18,7 @@ use CachetHQ\Cachet\Bus\Commands\Subscriber\UnsubscribeSubscriptionCommand;
 use CachetHQ\Cachet\Bus\Commands\Subscriber\UpdateSubscriberSubscriptionCommand;
 use CachetHQ\Cachet\Bus\Commands\Subscriber\VerifySubscriberCommand;
 use CachetHQ\Cachet\Models\Component;
+use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Subscriber;
 use CachetHQ\Cachet\Models\Subscription;
 use GrahamCampbell\Binput\Facades\Binput;
@@ -147,15 +148,19 @@ class SubscribeController extends Controller
         }
 
         $subscriber = Subscriber::where('verify_code', '=', $code)->first();
+        $usedComponentGroups = Component::enabled()->where('group_id', '>', 0)->groupBy('group_id')->pluck('group_id');
+        $componentGroups = ComponentGroup::whereIn('id', $usedComponentGroups)->orderBy('order')->get();
+        $ungroupedComponents = Component::enabled()->where('group_id', 0)->orderBy('order')->orderBy('created_at')->get();
 
         if (!$subscriber) {
             throw new BadRequestHttpException();
         }
 
         return View::make('subscribe.manage')
-            ->withComponents(Component::all())
+            ->withUngroupedComponents($ungroupedComponents)
             ->withSubscriber($subscriber)
-            ->withSubscriptions($subscriber->subscriptions->pluck('component_id')->all());
+            ->withSubscriptions($subscriber->subscriptions->pluck('component_id')->all())
+            ->withComponentGroups($componentGroups);
     }
 
     /**
