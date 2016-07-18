@@ -99,7 +99,7 @@ class ComponentGroupPresenter extends BasePresenter implements Arrayable
     }
 
     /**
-     * Determine if any of the contained components have active subscriptions
+     * Determine if any of the contained components have active subscriptions.
      *
      * @return bool
      */
