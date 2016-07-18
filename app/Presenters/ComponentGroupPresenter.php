@@ -105,8 +105,8 @@ class ComponentGroupPresenter extends BasePresenter implements Arrayable
      */
     public function has_subscriber($subscriptions)
     {
-	$enabled_components = $this->wrappedObject->enabled_components()->orderBy('order')->pluck('id')->toArray();
-	$intersected = array_intersect($enabled_components, $subscriptions);
+        $enabled_components = $this->wrappedObject->enabled_components()->orderBy('order')->pluck('id')->toArray();
+        $intersected = array_intersect($enabled_components, $subscriptions);
         return count($intersected) != 0;
     }
 

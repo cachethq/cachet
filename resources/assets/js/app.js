@@ -278,21 +278,17 @@ $(function() {
     });
 
     $('.select-group').on('click', function () {
-        var $this = $(this);
-        var $parentGroup = $this.closest('ul.list-group');
+        var $parentGroup = $(this).closest('ul.list-group');
         $parentGroup.find('input[type=checkbox]').prop('checked', true);
-
         $parentGroup.find('.group-items').removeClass('hide')
         $parentGroup.find('.group-toggle').addClass('ion-ios-minus-outline').removeClass('ion-ios-plus-outline');
-	event.stopPropagation();
+        event.stopPropagation();
         return false;
     });
 
     $('.deselect-group').on('click', function () {
-        var $this = $(this);
-        var $parentGroup = $this.closest('ul.list-group');
+        var $parentGroup = $(this).closest('ul.list-group');
         $parentGroup.find('input[type=checkbox]').prop('checked', false);
-
         $parentGroup.find('.group-items').addClass('hide');
         $parentGroup.find('.group-toggle').removeClass('ion-ios-minus-outline').addClass('ion-ios-plus-outline');
         event.stopPropagation();
