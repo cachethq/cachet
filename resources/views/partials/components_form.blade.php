@@ -13,7 +13,7 @@
                 </li>
                 <div class="form-group group-items {{ $componentGroup->has_subscriber($subscriptions) ? null : "hide" }}">
                     @foreach($componentGroup->enabled_components()->orderBy('order')->get() as $component)
-                        @include('partials.component_input', compact($component))
+@include('partials.component_input', compact($component))
                     @endforeach
                 </div>
             @endif
@@ -27,7 +27,7 @@
             <strong>{{ trans('cachet.components.group.other') }}</strong>
         </li>
         @foreach($ungrouped_components as $component)
-            @include('partials.component_input', compact($component))
+@include('partials.component_input', compact($component))
         @endforeach
     </ul>
 @endif

@@ -26,7 +26,7 @@
                 </div>
                 <div class="panel-body">
                     @if(!$component_groups->isEmpty() || !$ungrouped_components->isEmpty())
-                       @include('partials.components_form')
+@include('partials.components_form')
                     @else
                         <p>{{ trans('cachet.subscriber.manage.no_subscriptions') }}</p>
                     @endif
