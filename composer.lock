@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2ec8c8e4e82b0c9ca40e10b064f885f4",
-    "content-hash": "e29d95a0f902ce2be0aeb2f09b8abc46",
+    "hash": "87606b8b10ee0e7d93ecb0508cd2eba6",
+    "content-hash": "e1355195b4f7684808a574cc94dbf01e",
     "packages": [
         {
             "name": "alt-three/badger",
