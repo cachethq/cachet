@@ -58,7 +58,7 @@ class SubscribeController extends Controller
     {
         $email = Binput::get('email');
         $subscriptions = Binput::get('subscriptions');
-        $verified = app(Repository::class)->get('setting.skip_subscriber_verification'));
+        $verified = app(Repository::class)->get('setting.skip_subscriber_verification');
 
         try {
             $subscription = dispatch(new SubscribeSubscriberCommand($email, $verified));

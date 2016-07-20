@@ -49,7 +49,7 @@ class SubscriberController extends AbstractApiController
      */
     public function postSubscribers()
     {
-        $verified = Binput::get('verify', app(Repository::class)->get('setting.skip_subscriber_verification')));
+        $verified = Binput::get('verify', app(Repository::class)->get('setting.skip_subscriber_verification'));
 
         try {
             $subscriber = dispatch(new SubscribeSubscriberCommand(Binput::get('email'), $verified, Binput::get('components')));

@@ -53,7 +53,7 @@ class SubscriberController extends Controller
      */
     public function createSubscriberAction()
     {
-        $verified = app(Repository::class)->get('setting.skip_subscriber_verification'));
+        $verified = app(Repository::class)->get('setting.skip_subscriber_verification');
 
         try {
             $subscribers = preg_split("/\r\n|\n|\r/", Binput::get('email'));
