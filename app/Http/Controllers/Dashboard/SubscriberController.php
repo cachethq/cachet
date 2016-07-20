@@ -14,6 +14,7 @@ namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 use AltThree\Validator\ValidationException;
 use CachetHQ\Cachet\Bus\Commands\Subscriber\SubscribeSubscriberCommand;
 use CachetHQ\Cachet\Bus\Commands\Subscriber\UnsubscribeSubscriberCommand;
+use Illuminate\Contracts\Config\Repository;
 use CachetHQ\Cachet\Models\Subscriber;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
@@ -52,11 +53,13 @@ class SubscriberController extends Controller
      */
     public function createSubscriberAction()
     {
+        $verified = app(Repository::class)->get('setting.skip_subscriber_verification'));
+
         try {
             $subscribers = preg_split("/\r\n|\n|\r/", Binput::get('email'));
 
             foreach ($subscribers as $subscriber) {
-                dispatch(new SubscribeSubscriberCommand($subscriber));
+                dispatch(new SubscribeSubscriberCommand($subscriber, $verified));
             }
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.subscribers.add')

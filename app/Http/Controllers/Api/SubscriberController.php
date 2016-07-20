@@ -14,6 +14,7 @@ namespace CachetHQ\Cachet\Http\Controllers\Api;
 use CachetHQ\Cachet\Bus\Commands\Subscriber\SubscribeSubscriberCommand;
 use CachetHQ\Cachet\Bus\Commands\Subscriber\UnsubscribeSubscriberCommand;
 use CachetHQ\Cachet\Bus\Commands\Subscriber\UnsubscribeSubscriptionCommand;
+use Illuminate\Contracts\Config\Repository;
 use CachetHQ\Cachet\Models\Subscriber;
 use CachetHQ\Cachet\Models\Subscription;
 use GrahamCampbell\Binput\Facades\Binput;
@@ -48,12 +49,10 @@ class SubscriberController extends AbstractApiController
      */
     public function postSubscribers()
     {
+        $verified = Binput::get('verify', app(Repository::class)->get('setting.skip_subscriber_verification')));
+
         try {
-            $subscriber = dispatch(new SubscribeSubscriberCommand(
-                Binput::get('email'),
-                Binput::get('verify', false),
-                Binput::get('components', null)
-            ));
+            $subscriber = dispatch(new SubscribeSubscriberCommand(Binput::get('email'), $verified, Binput::get('components')));
         } catch (QueryException $e) {
             throw new BadRequestHttpException();
         }

@@ -11,9 +11,7 @@
 
 namespace CachetHQ\Cachet\Bus\Handlers\Events\Subscriber;
 
-use CachetHQ\Cachet\Bus\Commands\Subscriber\VerifySubscriberCommand;
 use CachetHQ\Cachet\Bus\Events\Subscriber\SubscriberHasSubscribedEvent;
-use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Mail\MailQueue;
 use Illuminate\Mail\Message;
 
@@ -40,10 +38,9 @@ class SendSubscriberVerificationEmailHandler
      *
      * @return void
      */
-    public function __construct(MailQueue $mailer, Repository $config)
+    public function __construct(MailQueue $mailer)
     {
         $this->mailer = $mailer;
-        $this->config = $config;
     }
 
     /**
@@ -55,13 +52,6 @@ class SendSubscriberVerificationEmailHandler
      */
     public function handle(SubscriberHasSubscribedEvent $event)
     {
-        // If we've enabled verification skipping, then just verify the subscriber right now.
-        if ($this->config->get('setting.skip_subscriber_verification')) {
-            dispatch(new VerifySubscriberCommand($event->subscriber));
-
-            return;
-        }
-
         $mail = [
             'email'   => $event->subscriber->email,
             'subject' => 'Confirm your subscription.',
