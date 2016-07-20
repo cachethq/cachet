@@ -77,4 +77,15 @@ return [
     */
 
     'show_timezone' => false,
+
+   /*
+    |--------------------------------------------------------------------------
+    | Skip subscriber verifications
+    |--------------------------------------------------------------------------
+    |
+    | Whether to allow skipping of subscriber verifications.
+    |
+    */
+
+    'skip_subscriber_verification' => false,
 ];
