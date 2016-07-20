@@ -25,13 +25,6 @@ class SendSubscriberVerificationEmailHandler
     protected $mailer;
 
     /**
-     * The illuminate config instance.
-     *
-     * @var \Illuminate\Contracts\Config\Repository
-     */
-    protected $config;
-
-    /**
      * Create a new send subscriber verification email handler.
      *
      * @param \Illuminate\Contracts\Mail\Mailer $mailer
