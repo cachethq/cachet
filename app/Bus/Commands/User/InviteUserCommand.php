@@ -11,7 +11,12 @@
 
 namespace CachetHQ\Cachet\Bus\Commands\User;
 
-final class InviteTeamMemberCommand
+/**
+ * This is the invite user command.
+ *
+ * @author James Brooks <james@alt-three.com>
+ */
+final class InviteUserCommand
 {
     /**
      * The invite emails.
@@ -30,7 +35,7 @@ final class InviteTeamMemberCommand
     ];
 
     /**
-     * Create a new invite team member command instance.
+     * Create a new invite user command instance.
      *
      * @param string[] $emails
      *

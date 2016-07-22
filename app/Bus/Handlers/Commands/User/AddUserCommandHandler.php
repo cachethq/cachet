@@ -11,20 +11,25 @@
 
 namespace CachetHQ\Cachet\Bus\Handlers\Commands\User;
 
-use CachetHQ\Cachet\Bus\Commands\User\AddTeamMemberCommand;
+use CachetHQ\Cachet\Bus\Commands\User\AddUserCommand;
 use CachetHQ\Cachet\Bus\Events\User\UserWasAddedEvent;
 use CachetHQ\Cachet\Models\User;
 
-class AddTeamMemberCommandHandler
+/**
+ * This is the add user command handler.
+ *
+ * @author James Brooks <james@alt-three.com>
+ */
+class AddUserCommandHandler
 {
     /**
-     * Handle the add team member command.
+     * Handle the add user command.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\User\AddTeamMemberCommand $command
+     * @param \CachetHQ\Cachet\Bus\Commands\User\AddUserCommand $command
      *
      * @return \CachetHQ\Cachet\Models\User
      */
-    public function handle(AddTeamMemberCommand $command)
+    public function handle(AddUserCommand $command)
     {
         $user = User::create([
             'username' => $command->username,

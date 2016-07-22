@@ -11,20 +11,25 @@
 
 namespace CachetHQ\Cachet\Bus\Handlers\Commands\User;
 
-use CachetHQ\Cachet\Bus\Commands\User\InviteTeamMemberCommand;
+use CachetHQ\Cachet\Bus\Commands\User\InviteUserCommand;
 use CachetHQ\Cachet\Bus\Events\User\UserWasInvitedEvent;
 use CachetHQ\Cachet\Models\Invite;
 
-class InviteTeamMemberCommandHandler
+/**
+ * This is the invite user command handler.
+ *
+ * @author James Brooks <james@alt-three.com>
+ */
+class InviteUserCommandHandler
 {
     /**
      * Handle the invite team member command.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\User\InviteTeamMemberCommand $command
+     * @param \CachetHQ\Cachet\Bus\Commands\User\InviteUserCommand $command
      *
      * @return void
      */
-    public function handle(InviteTeamMemberCommand $command)
+    public function handle(InviteUserCommand $command)
     {
         foreach ($command->emails as $email) {
             $invite = Invite::create([
