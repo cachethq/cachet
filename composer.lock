@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2ec8c8e4e82b0c9ca40e10b064f885f4",
-    "content-hash": "e29d95a0f902ce2be0aeb2f09b8abc46",
+    "hash": "bebdff554746dd7e0b24b4881e92191e",
+    "content-hash": "7c21d245d3c8c6f69ac1d98a58e4b761",
     "packages": [
         {
             "name": "alt-three/badger",
@@ -4109,16 +4109,16 @@
     "packages-dev": [
         {
             "name": "alt-three/testbench",
-            "version": "v1.4.0",
+            "version": "v1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/AltThree/TestBench.git",
-                "reference": "215ca7a1394d79d3ab649b78bc4c55ca63b73531"
+                "reference": "9bc6029a3a813dd20674548e45db5f6db0d1b4cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/AltThree/TestBench/zipball/215ca7a1394d79d3ab649b78bc4c55ca63b73531",
-                "reference": "215ca7a1394d79d3ab649b78bc4c55ca63b73531",
+                "url": "https://api.github.com/repos/AltThree/TestBench/zipball/9bc6029a3a813dd20674548e45db5f6db0d1b4cd",
+                "reference": "9bc6029a3a813dd20674548e45db5f6db0d1b4cd",
                 "shasum": ""
             },
             "require": {
@@ -4126,15 +4126,17 @@
                 "php": ">=5.5.9"
             },
             "require-dev": {
+                "nikic/php-parser": "^2.0",
                 "phpunit/phpunit": "^4.8|^5.0"
             },
             "suggest": {
-                "laravel/framework": "Enables the use of every trait."
+                "laravel/framework": "Enables the use of every trait.",
+                "nikic/php-parser": "Enables the use of the static analyzer."
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.4-dev"
+                    "dev-master": "1.7-dev"
                 }
             },
             "autoload": {
@@ -4166,7 +4168,7 @@
                 "TestBench",
                 "app"
             ],
-            "time": "2016-03-14 18:08:23"
+            "time": "2016-07-24 13:16:43"
         },
         {
             "name": "doctrine/instantiator",
@@ -4224,16 +4226,16 @@
         },
         {
             "name": "filp/whoops",
-            "version": "2.1.2",
+            "version": "2.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filp/whoops.git",
-                "reference": "d13505b240a6f580bc75ba591da30299d6cb0eec"
+                "reference": "8828aaa2178e0a19325522e2a45282ff0a14649b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filp/whoops/zipball/d13505b240a6f580bc75ba591da30299d6cb0eec",
-                "reference": "d13505b240a6f580bc75ba591da30299d6cb0eec",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/8828aaa2178e0a19325522e2a45282ff0a14649b",
+                "reference": "8828aaa2178e0a19325522e2a45282ff0a14649b",
                 "shasum": ""
             },
             "require": {
@@ -4280,7 +4282,7 @@
                 "whoops",
                 "zf2"
             ],
-            "time": "2016-04-07 06:16:25"
+            "time": "2016-05-06 18:25:35"
         },
         {
             "name": "fzaninotto/faker",
