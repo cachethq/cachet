@@ -107,7 +107,7 @@ return [
             'about-this-page'        => 'Informazioni sulla pagina',
             'days-of-incidents'      => 'Quanti giorni di segnalazioni mostrare?',
             'banner'                 => 'Immagine del banner',
-            'banner-help'            => "È consigliabile caricare file larghi non più di 930px.",
+            'banner-help'            => 'È consigliabile caricare file larghi non più di 930px.',
             'subscribers'            => 'Permettere alle persone di iscriversi alle notifiche via email?',
             'automatic_localization' => 'Tradurre automaticamente la tua pagina di stato nella lingua del visitatore?',
         ],

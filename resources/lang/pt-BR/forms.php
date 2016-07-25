@@ -107,7 +107,7 @@ return [
             'about-this-page'        => 'Sobre esta página',
             'days-of-incidents'      => 'Quantos dias de incidentes para mostrar?',
             'banner'                 => 'Imagem do banner',
-            'banner-help'            => "É recomendável que você faça upload de arquivos menores que 930px .",
+            'banner-help'            => 'É recomendável que você faça upload de arquivos menores que 930px .',
             'subscribers'            => 'Permitir que outras pessoas se cadastrem para notificações via e-mail?',
             'automatic_localization' => 'Localizar sua página de status de acordo com o idioma do visitante automaticamente?',
         ],
