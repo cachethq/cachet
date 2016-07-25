@@ -107,7 +107,7 @@ return [
             'about-this-page'        => 'Về trang này',
             'days-of-incidents'      => 'Sự cố này sẽ hiển thị mấy ngày ?',
             'banner'                 => 'Banner Image',
-            'banner-help'            => 'Bạn nên upload ảnh có chiều rộng lớn hơn 930px',
+            'banner-help'            => "Bạn nên upload ảnh có chiều rộng lớn hơn 930px",
             'subscribers'            => 'Allow people to signup to email notifications?',
             'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
         ],
