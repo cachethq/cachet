@@ -81,7 +81,7 @@ return [
             'failure'            => 'crwdns496:0crwdne496:0',
             'already-subscribed' => 'crwdns626:0crwdne626:0',
             'verify'             => [
-                'text'   => "crwdns776:0crwdne776:0",
+                'text'   => 'crwdns776:0crwdne776:0',
                 'html'   => 'crwdns777:0crwdne777:0',
                 'button' => 'crwdns778:0crwdne778:0',
             ],
@@ -103,7 +103,7 @@ return [
     'users' => [
         'email' => [
             'invite' => [
-                'text'           => "crwdns553:0crwdne553:0",
+                'text'           => 'crwdns553:0crwdne553:0',
                 'html'           => 'crwdns555:0crwdne555:0',
             ],
         ],
