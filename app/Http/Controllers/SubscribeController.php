@@ -23,6 +23,7 @@ use CachetHQ\Cachet\Models\Subscriber;
 use CachetHQ\Cachet\Models\Subscription;
 use GrahamCampbell\Binput\Facades\Binput;
 use GrahamCampbell\Markdown\Facades\Markdown;
+use Illuminate\Contracts\Config\Repository;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Redirect;
@@ -57,10 +58,9 @@ class SubscribeController extends Controller
     {
         $email = Binput::get('email');
         $subscriptions = Binput::get('subscriptions');
+        $verified = app(Repository::class)->get('setting.skip_subscriber_verification');
 
         try {
-            $verified = false;
-
             $subscription = dispatch(new SubscribeSubscriberCommand($email, $verified));
         } catch (ValidationException $e) {
             return Redirect::route('status-page')
