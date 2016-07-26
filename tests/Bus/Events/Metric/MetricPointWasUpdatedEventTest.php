@@ -12,7 +12,7 @@
 namespace CachetHQ\Tests\Cachet\Bus\Events\Metric;
 
 use CachetHQ\Cachet\Bus\Events\Metric\MetricPointWasUpdatedEvent;
-use CachetHQ\Cachet\Models\Metric;
+use CachetHQ\Cachet\Models\MetricPoint;
 
 /**
  * This is the metric point was updated event test class.
@@ -28,8 +28,8 @@ class MetricPointWasUpdatedEventTest extends AbstractMetricEventTestCase
 
     protected function getObjectAndParams()
     {
-        $params = ['metric' => new Metric()];
-        $object = new MetricPointWasUpdatedEvent($params['metric']);
+        $params = ['metricPoint' => new MetricPoint()];
+        $object = new MetricPointWasUpdatedEvent($params['metricPoint']);
 
         return compact('params', 'object');
     }

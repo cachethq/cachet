@@ -12,7 +12,7 @@
 namespace CachetHQ\Tests\Cachet\Bus\Events\Metric;
 
 use CachetHQ\Cachet\Bus\Events\Metric\MetricPointWasRemovedEvent;
-use CachetHQ\Cachet\Models\Metric;
+use CachetHQ\Cachet\Models\MetricPoint;
 
 /**
  * This is the metric point was removed event test class.
@@ -28,8 +28,8 @@ class MetricPointWasRemovedEventTest extends AbstractMetricEventTestCase
 
     protected function getObjectAndParams()
     {
-        $params = ['metric' => new Metric()];
-        $object = new MetricPointWasRemovedEvent($params['metric']);
+        $params = ['metricPoint' => new MetricPoint()];
+        $object = new MetricPointWasRemovedEvent($params['metricPoint']);
 
         return compact('params', 'object');
     }
