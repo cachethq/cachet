@@ -25,7 +25,7 @@
         </div>
         <div class="row">
             <div class="col-xs-12">
-                <canvas id="metric-{{ $metric->id }}" data-metric-name="{{ $metric->name }}" data-metric-suffix="{{ $metric->suffix }}" data-metric-id="{{ $metric->id }}" data-metric-group="{{ $metric->view_name }}" height="160" width="600"></canvas>
+                <canvas id="metric-{{ $metric->id }}" data-metric-name="{{ $metric->name }}" data-metric-suffix="{{ $metric->suffix }}" data-metric-id="{{ $metric->id }}" data-metric-group="{{ $metric->view_name }}" data-metric-precision="{{ $metric->places }}" height="160" width="600"></canvas>
             </div>
         </div>
     </li>
@@ -97,6 +97,7 @@
                             ticks: {
                                 beginAtZero: true,
                                 suggestedMax: 0.1,
+                                fixedStepSize: result.data.metric.places,
                                 callback: function(tickValue, index, ticks) {
                                     var delta = ticks[1] - ticks[0];
 
