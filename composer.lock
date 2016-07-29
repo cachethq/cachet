@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "bebdff554746dd7e0b24b4881e92191e",
-    "content-hash": "7c21d245d3c8c6f69ac1d98a58e4b761",
+    "hash": "efee15cdcec498c266017d8b6b9dc40b",
+    "content-hash": "5e0dba0b123506042e11f77f15280b6e",
     "packages": [
         {
             "name": "alt-three/badger",
@@ -4109,16 +4109,16 @@
     "packages-dev": [
         {
             "name": "alt-three/testbench",
-            "version": "v1.7.0",
+            "version": "v1.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/AltThree/TestBench.git",
-                "reference": "9bc6029a3a813dd20674548e45db5f6db0d1b4cd"
+                "reference": "35c6e02a36a14e6fb2084adf22922d78d04424af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/AltThree/TestBench/zipball/9bc6029a3a813dd20674548e45db5f6db0d1b4cd",
-                "reference": "9bc6029a3a813dd20674548e45db5f6db0d1b4cd",
+                "url": "https://api.github.com/repos/AltThree/TestBench/zipball/35c6e02a36a14e6fb2084adf22922d78d04424af",
+                "reference": "35c6e02a36a14e6fb2084adf22922d78d04424af",
                 "shasum": ""
             },
             "require": {
@@ -4136,7 +4136,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.7-dev"
+                    "dev-master": "1.8-dev"
                 }
             },
             "autoload": {
@@ -4168,7 +4168,7 @@
                 "TestBench",
                 "app"
             ],
-            "time": "2016-07-24 13:16:43"
+            "time": "2016-07-29 18:38:43"
         },
         {
             "name": "doctrine/instantiator",
