@@ -48,6 +48,9 @@ class EventServiceProvider extends ServiceProvider
         'CachetHQ\Cachet\Bus\Events\Incident\IncidentWasUpdatedEvent' => [
             //
         ],
+        'CachetHQ\Cachet\Bus\Events\Incident\IncidentWasRemovedEvent' => [
+            //
+        ],
         'CachetHQ\Cachet\Bus\Events\Incident\MaintenanceWasScheduledEvent' => [
             'CachetHQ\Cachet\Bus\Handlers\Events\Incident\SendMaintenanceEmailNotificationHandler',
         ],
@@ -89,6 +92,9 @@ class EventServiceProvider extends ServiceProvider
         ],
         'CachetHQ\Cachet\Bus\Events\User\UserWasInvitedEvent' => [
             'CachetHQ\Cachet\Bus\Handlers\Events\User\SendInviteUserEmailHandler',
+        ],
+        'CachetHQ\Cachet\Bus\Events\User\UserWasRemovedEvent' => [
+            //
         ],
     ];
 }
