@@ -6,7 +6,7 @@
     "animate-sass": "git+https://github.com/tgdev/animate-sass.git",
     "autosize": "^3.0.15",
     "bootstrap-sass": "^3.3.6",
-    "chart.js": "^2.1.2",
+    "chart.js": "^2.2.0",
     "eonasdan-bootstrap-datetimepicker": "~3.1",
     "github-markdown-css": "^2.3.0",
     "ionicons": "~2.0",
