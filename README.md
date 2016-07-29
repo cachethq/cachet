@@ -79,7 +79,6 @@ You can now find our documentation at [https://docs.cachethq.io](https://docs.ca
 
 - [Installing Cachet](https://docs.cachethq.io/docs/installing-cachet)
 - [Getting started with Docker](https://docs.cachethq.io/docs/get-started-with-docker)
-- [Getting started with Vagrant](https://docs.cachethq.io/docs/get-started-with-vagrant)
 
 ### Demo Account
 

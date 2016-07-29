@@ -17,6 +17,7 @@ use CachetHQ\Cachet\Bus\Commands\Subscriber\UnsubscribeSubscriptionCommand;
 use CachetHQ\Cachet\Models\Subscriber;
 use CachetHQ\Cachet\Models\Subscription;
 use GrahamCampbell\Binput\Facades\Binput;
+use Illuminate\Contracts\Config\Repository;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
@@ -48,12 +49,10 @@ class SubscriberController extends AbstractApiController
      */
     public function postSubscribers()
     {
+        $verified = Binput::get('verify', app(Repository::class)->get('setting.skip_subscriber_verification'));
+
         try {
-            $subscriber = dispatch(new SubscribeSubscriberCommand(
-                Binput::get('email'),
-                Binput::get('verify', false),
-                Binput::get('components', null)
-            ));
+            $subscriber = dispatch(new SubscribeSubscriberCommand(Binput::get('email'), $verified, Binput::get('components')));
         } catch (QueryException $e) {
             throw new BadRequestHttpException();
         }

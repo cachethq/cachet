@@ -36,15 +36,15 @@
         "graham-campbell/core": "^5.1",
         "graham-campbell/exceptions": "^8.6",
         "graham-campbell/markdown": "^6.1",
-        "guzzlehttp/guzzle": "^6.2",
+        "guzzlehttp/guzzle": "^6.2.1",
         "jenssegers/date": "^3.2",
         "mccool/laravel-auto-presenter": "^4.3",
         "pragmarx/google2fa": "^0.7.1",
         "rcrowe/twigbridge": "^0.10",
-        "roumen/feed": "^2.10.3"
+        "roumen/feed": "^2.10.4"
     },
     "require-dev": {
-        "alt-three/testbench": "^1.4",
+        "alt-three/testbench": "^1.7",
         "filp/whoops": "^2.1",
         "fzaninotto/faker": "^1.6",
         "graham-campbell/testbench-core": "^1.1",
@@ -98,7 +98,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "3.0-dev"
+            "dev-develop": "3.0-dev"
         }
     },
     "minimum-stability": "dev",

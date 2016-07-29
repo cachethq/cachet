@@ -23,6 +23,11 @@ return [
         'enable_google2fa' => 'Enable Google Two Factor Authentication',
         'cache_driver'     => 'Cache Driver',
         'session_driver'   => 'Session Driver',
+        'mail_driver'      => 'Mail Driver',
+        'mail_host'        => 'Mail Host',
+        'mail_address'     => 'Mail From Address',
+        'mail_username'    => 'Mail Username',
+        'mail_password'    => 'Mail Password',
     ],
 
     // Login form fields
@@ -109,6 +114,7 @@ return [
             'banner'                       => 'Banner Image',
             'banner-help'                  => "It's recommended that you upload files no bigger than 930px wide .",
             'subscribers'                  => 'Allow people to signup to email notifications?',
+            'skip_subscriber_verification' => 'Skip verifying of users? (Be warned, you could be spammed)',
             'automatic_localization'       => 'Automatically localise your status page to your visitor\'s language?',
             'enable_external_dependencies' => 'Enable Third Party Dependencies (Google Fonts, Trackers, etc...)',
             'show_timezone'                => 'Show the timezone the status page is running in.',

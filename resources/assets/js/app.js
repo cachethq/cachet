@@ -277,6 +277,24 @@ $(function() {
         $this.next('.group-items').toggleClass('hide');
     });
 
+    $('.select-group').on('click', function () {
+        var $parentGroup = $(this).closest('ul.list-group');
+        $parentGroup.find('input[type=checkbox]').prop('checked', true);
+        $parentGroup.find('.group-items').removeClass('hide')
+        $parentGroup.find('.group-toggle').addClass('ion-ios-minus-outline').removeClass('ion-ios-plus-outline');
+        event.stopPropagation();
+        return false;
+    });
+
+    $('.deselect-group').on('click', function () {
+        var $parentGroup = $(this).closest('ul.list-group');
+        $parentGroup.find('input[type=checkbox]').prop('checked', false);
+        $parentGroup.find('.group-items').addClass('hide');
+        $parentGroup.find('.group-toggle').removeClass('ion-ios-minus-outline').addClass('ion-ios-plus-outline');
+        event.stopPropagation();
+        return false;
+    });
+
     // Setup wizard
     $('.wizard-next').on('click', function () {
         var $form   = $('#setup-form'),

@@ -66,6 +66,17 @@
                                 <div class="col-xs-12">
                                     <div class="checkbox">
                                         <label>
+                                            <input type="hidden" value="0" name="skip_subscriber_verification">
+                                            <input type="checkbox" value="1" name="skip_subscriber_verification" {{ Config::get('setting.skip_subscriber_verification') ? 'checked' : null }}>
+                                            {{ trans('forms.settings.app-setup.skip_subscriber_verification') }}
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="checkbox">
+                                        <label>
                                             <input type="hidden" value="0" name="display_graphs">
                                             <input type="checkbox" value="1" name="display_graphs" {{ $app_graphs ? 'checked' : null }}>
                                             {{ trans('forms.settings.app-setup.display-graphs') }}
