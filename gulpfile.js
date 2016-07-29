@@ -1,8 +1,5 @@
 var elixir = require('laravel-elixir');
 
-elixir.config.production = true;
-elixir.config.sourcemaps = false;
-
 elixir(function (mix) {
     mix
         .sass('app.scss', 'public/dist/css/app.css')
