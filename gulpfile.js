@@ -9,6 +9,7 @@ elixir(function (mix) {
             'node_modules/github-markdown-css/github-markdown.css',
             'public/dist/css/app.css'
         ], 'public/dist/css/all.css', './')
+        .browserify('app/app.js', 'public/dist/js/statuspage-app.js')
         .scripts([
             'node_modules/jquery/dist/jquery.js',
             'node_modules/bootstrap-sass/assets/javascripts/bootstrap.js',
