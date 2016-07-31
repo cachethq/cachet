@@ -29,6 +29,14 @@
                             <option value="2" {{ $group->collapsed === 2 ? "selected" : null }}>{{ trans('forms.components.groups.collapsed_incident') }}</option>
                         </select>
                     </div>
+                    <div class="form-group">
+                        <label>{{ trans('forms.components.groups.visibility') }}</label>
+                        <select name="visible" class="form-control" required>
+                            <option value="0" {{ $group->visible === 0 ? "selected" : null }}>{{ trans('forms.components.groups.visibility_public') }}</option>
+                            <option value="1" {{ $group->visible === 1 ? "selected" : null }}>{{ trans('forms.components.groups.visibility_authenticated') }}</option>
+                            <option value="2" {{ $group->visible === 2 ? "selected" : null }}>{{ trans('forms.components.groups.visibility_hidden') }}</option>
+                        </select>
+                    </div>
                 </fieldset>
 
                 <div class="btn-group">
