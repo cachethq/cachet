@@ -14,7 +14,6 @@ use Illuminate\Support\Facades\Request;
 use Jenssegers\Date\Date;
 
 if (!function_exists('set_active')) {
-
     /**
      * Set active class if request is in path.
      *
