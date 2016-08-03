@@ -22,4 +22,15 @@ return [
 
     'timezone' => 'UTC',
 
+    /*
+    |--------------------------------------------------------------------------
+    | Docker
+    |--------------------------------------------------------------------------
+    |
+    | Is the installation running under a Docker container?
+    |
+    */
+
+   'is_docker' => env('DOCKER', false),
+
 ];
