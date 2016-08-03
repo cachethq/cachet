@@ -12,6 +12,7 @@
 namespace CachetHQ\Tests\Cachet\Foundation\Providers;
 
 use AltThree\TestBench\ServiceProviderTrait;
+use CachetHQ\Cachet\Integrations\Contracts\Beacon;
 use CachetHQ\Cachet\Integrations\Contracts\Credits;
 use CachetHQ\Cachet\Integrations\Contracts\Feed;
 use CachetHQ\Cachet\Integrations\Contracts\Releases;
@@ -27,6 +28,11 @@ use CachetHQ\Tests\Cachet\AbstractTestCase;
 class IntegrationServiceProviderTest extends AbstractTestCase
 {
     use ServiceProviderTrait;
+
+    public function testBeaconIsInjectable()
+    {
+        $this->assertIsInjectable(Beacon::class);
+    }
 
     public function testCreditsIsInjectable()
     {

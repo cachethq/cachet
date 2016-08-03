@@ -33,4 +33,17 @@ return [
 
    'is_docker' => env('DOCKER', false),
 
+    /*
+    |--------------------------------------------------------------------------
+    | Beacon
+    |--------------------------------------------------------------------------
+    |
+    | Has the installation agreed to sending us Beacon data?
+    |
+    | Default: true
+    |
+    */
+
+   'beacon' => env('CACHET_BEACON', true),
+
 ];

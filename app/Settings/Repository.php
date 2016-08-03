@@ -77,6 +77,23 @@ class Repository
     }
 
     /**
+     * Get a setting, or the default value.
+     *
+     * @param string $name
+     * @param mixed  $default
+     *
+     * @return mixed
+     */
+    public function get($name, $default = null)
+    {
+        if ($setting = $this->model->where('name', $name)->first()) {
+            return $setting->value;
+        }
+
+        return $default;
+    }
+
+    /**
      * Deletes a setting.
      *
      * @param string $name
