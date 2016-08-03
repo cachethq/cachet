@@ -12,6 +12,7 @@
 namespace CachetHQ\Cachet\Http\Controllers;
 
 use CachetHQ\Cachet\Bus\Events\User\UserFailedTwoAuthEvent;
+use CachetHQ\Cachet\Bus\Events\User\UserLoggedInEvent;
 use CachetHQ\Cachet\Bus\Events\User\UserLoggedOutEvent;
 use CachetHQ\Cachet\Bus\Events\User\UserPassedTwoAuthEvent;
 use GrahamCampbell\Binput\Facades\Binput;
