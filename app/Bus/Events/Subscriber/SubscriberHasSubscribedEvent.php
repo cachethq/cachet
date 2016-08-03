@@ -11,8 +11,18 @@
 
 namespace CachetHQ\Cachet\Bus\Events\Subscriber;
 
+use CachetHQ\Cachet\Annotations\HandlerAnnotation;
 use CachetHQ\Cachet\Models\Subscriber;
 
+/**
+ * This is the subscriber has subscribed event class.
+ *
+ * @HandlerAnnotation("CachetHQ\Cachet\Bus\Handlers\Events\Subscriber\SendSubscriberVerificationEmailHandler")
+ *
+ * @author Joe Cohen <joe@alt-three.com>
+ * @author James Brooks <james@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
+ */
 final class SubscriberHasSubscribedEvent implements SubscriberEventInterface
 {
     /**
