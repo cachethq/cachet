@@ -87,6 +87,18 @@ class EventServiceProvider extends ServiceProvider
         'CachetHQ\Cachet\Bus\Events\Subscriber\SubscriberHasVerifiedEvent' => [
             //
         ],
+        'CachetHQ\Cachet\Bus\Events\User\UserFailedTwoAuthEvent' => [
+            //
+        ],
+        'CachetHQ\Cachet\Bus\Events\User\UserLoggedInEvent' => [
+            //
+        ],
+        'CachetHQ\Cachet\Bus\Events\User\UserLoggedOutEvent' => [
+            //
+        ],
+        'CachetHQ\Cachet\Bus\Events\User\UserPassedTwoAuthEvent' => [
+            //
+        ],
         'CachetHQ\Cachet\Bus\Events\User\UserWasAddedEvent' => [
             //
         ],
