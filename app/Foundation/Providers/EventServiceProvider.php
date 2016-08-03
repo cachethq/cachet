@@ -93,6 +93,9 @@ class EventServiceProvider extends ServiceProvider
         'CachetHQ\Cachet\Bus\Events\System\SystemWasInstalledEvent' => [
             //
         ],
+        'CachetHQ\Cachet\Bus\Events\System\SystemWasResetEvent' => [
+            //
+        ],
         'CachetHQ\Cachet\Bus\Events\System\SystemWasUpdatedEvent' => [
             //
         ],
