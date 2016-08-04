@@ -11,14 +11,14 @@
 
 namespace CachetHQ\Cachet\Integrations\Core;
 
+use CachetHQ\Cachet\Bus\Events\Beacon\BeaconFailedToSendEvent;
+use CachetHQ\Cachet\Bus\Events\Beacon\BeaconWasSentEvent;
 use CachetHQ\Cachet\Integrations\Contracts\Beacon as BeaconContract;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\User;
 use CachetHQ\Cachet\Settings\Repository as Setting;
-use CachetHQ\Cachet\Bus\Events\Beacon\BeaconWasSentEvent;
-use CachetHQ\Cachet\Bus\Events\Beacon\BeaconFailedToSendEvent;
 use Exception;
 use GuzzleHttp\Client;
 use Illuminate\Contracts\Config\Repository;
