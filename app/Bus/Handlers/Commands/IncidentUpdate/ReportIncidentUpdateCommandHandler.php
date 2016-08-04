@@ -12,6 +12,7 @@
 namespace CachetHQ\Cachet\Bus\Handlers\Commands\IncidentUpdate;
 
 use CachetHQ\Cachet\Bus\Commands\IncidentUpdate\ReportIncidentUpdateCommand;
+use CachetHQ\Cachet\Bus\Commands\Incident\UpdateIncidentCommand;
 use CachetHQ\Cachet\Bus\Events\IncidentUpdate\IncidentUpdateWasReportedEvent;
 use CachetHQ\Cachet\Models\IncidentUpdate;
 
@@ -40,6 +41,21 @@ class ReportIncidentUpdateCommandHandler
 
         // Create the incident update.
         $update = IncidentUpdate::create($data);
+
+        // Update the original incident with the new status.
+        dispatch(new UpdateIncidentCommand(
+            $incident,
+            null,
+            $command->status,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+        ));
 
         event(new IncidentUpdateWasReportedEvent($update));
 
