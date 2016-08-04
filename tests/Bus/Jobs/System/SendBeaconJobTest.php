@@ -12,8 +12,8 @@
 namespace CachetHQ\Tests\Cachet\Bus\Jobs\System;
 
 use AltThree\TestBench\JobTrait;
-use CachetHQ\Cachet\Bus\Jobs\System\SendBeaconJob;
 use CachetHQ\Cachet\Bus\Handlers\Jobs\System\SendBeaconJobHandler;
+use CachetHQ\Cachet\Bus\Jobs\System\SendBeaconJob;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 
 /**

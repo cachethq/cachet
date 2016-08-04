@@ -11,8 +11,8 @@
 
 namespace CachetHQ\Cachet\Bus\Handlers\Jobs\System;
 
-use CachetHQ\Cachet\Integrations\Contracts\Beacon;
 use CachetHQ\Cachet\Bus\Jobs\System\SendBeaconJob;
+use CachetHQ\Cachet\Integrations\Contracts\Beacon;
 use Exception;
 
 /**
