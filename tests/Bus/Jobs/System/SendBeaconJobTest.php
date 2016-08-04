@@ -25,14 +25,6 @@ class SendBeaconJobTest extends AbstractTestCase
 {
     use JobTrait;
 
-    /**
-     * @before
-     */
-    public function setEventExpectations()
-    {
-        $this->onlyExpectsEvents([]);
-    }
-
     protected function getObjectAndParams()
     {
         $params = [];
