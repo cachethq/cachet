@@ -30,8 +30,8 @@ class System implements SystemContract
     public function getStatus()
     {
         $enabledScope = Component::enabled();
-        $totalComponents = Component::enabled()->count();
-        $majorOutages = Component::enabled()->status(4)->count();
+        $totalComponents = $enabledScope->count();
+        $majorOutages = $enabledScope->status(4)->count();
         $isMajorOutage = $totalComponents ? ($majorOutages / $totalComponents) >= 0.5 : false;
 
         // Default data
@@ -47,7 +47,7 @@ class System implements SystemContract
                 'system_message' => trans_choice('cachet.service.major', $totalComponents),
                 'favicon'        => 'favicon-high-alert',
             ];
-        } elseif (Component::enabled()->notStatus(1)->count() === 0) {
+        } elseif ($enabledScope->notStatus(1)->count() === 0) {
             // If all our components are ok, do we have any non-fixed incidents?
             $incidents = Incident::notScheduled()->orderBy('created_at', 'desc')->get()->filter(function ($incident) {
                 return $incident->status > 0;
@@ -61,10 +61,20 @@ class System implements SystemContract
                     'favicon'        => 'favicon',
                 ];
             }
-        } elseif (Component::enabled()->whereIn('status', [2, 3])->count() > 0) {
+        } elseif ($enabledScope->whereIn('status', [2, 3])->count() > 0) {
             $status['favicon'] = 'favicon-medium-alert';
         }
 
         return $status;
+    }
+
+    /**
+     * Get the cachet version.
+     *
+     * @return string
+     */
+    public function getVersion()
+    {
+        return CACHET_VERSION;
     }
 }

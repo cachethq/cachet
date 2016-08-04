@@ -87,6 +87,39 @@ class EventServiceProvider extends ServiceProvider
         'CachetHQ\Cachet\Bus\Events\Subscriber\SubscriberHasVerifiedEvent' => [
             //
         ],
+        'CachetHQ\Cachet\Bus\Events\System\SystemCheckedForUpdatesEvent' => [
+            //
+        ],
+        'CachetHQ\Cachet\Bus\Events\System\SystemWasInstalledEvent' => [
+            //
+        ],
+        'CachetHQ\Cachet\Bus\Events\System\SystemWasResetEvent' => [
+            //
+        ],
+        'CachetHQ\Cachet\Bus\Events\System\SystemWasUpdatedEvent' => [
+            //
+        ],
+        'CachetHQ\Cachet\Bus\Events\User\UserDisabledTwoAuthEvent' => [
+            //
+        ],
+        'CachetHQ\Cachet\Bus\Events\User\UserEnabledTwoAuthEvent' => [
+            //
+        ],
+        'CachetHQ\Cachet\Bus\Events\User\UserFailedTwoAuthEvent' => [
+            //
+        ],
+        'CachetHQ\Cachet\Bus\Events\User\UserLoggedInEvent' => [
+            //
+        ],
+        'CachetHQ\Cachet\Bus\Events\User\UserLoggedOutEvent' => [
+            //
+        ],
+        'CachetHQ\Cachet\Bus\Events\User\UserPassedTwoAuthEvent' => [
+            //
+        ],
+        'CachetHQ\Cachet\Bus\Events\User\UserRegeneratedApiTokenEvent' => [
+            //
+        ],
         'CachetHQ\Cachet\Bus\Events\User\UserWasAddedEvent' => [
             //
         ],

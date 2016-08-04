@@ -24,4 +24,11 @@ interface System
      * @return array
      */
     public function getStatus();
+
+    /**
+     * Get the cachet version.
+     *
+     * @return string
+     */
+    public function getVersion();
 }
