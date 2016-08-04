@@ -2,6 +2,7 @@
 
 namespace CachetHQ\Tests\Cachet\Http\Controllers;
 
+use Exception;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Setting;
@@ -42,6 +43,17 @@ class StatusPageControllerTest extends AbstractTestCase
             ->dontSee(self::COMPONENT_GROUP_3_NAME);
     }
 
+    /** @test */
+    public function all_component_groups_are_displayed_for_loggedin_users()
+    {
+        $this->signIn();
+
+        $this->visit('/')
+            ->see(self::COMPONENT_GROUP_1_NAME)
+            ->see(self::COMPONENT_GROUP_2_NAME)
+            ->see(self::COMPONENT_GROUP_3_NAME);
+    }
+
     /**
      * Set up the needed data for the tests.
      *
@@ -49,9 +61,9 @@ class StatusPageControllerTest extends AbstractTestCase
      */
     protected function setupData()
     {
-        $this->createAComponentGroupAndAddAComponent(self::COMPONENT_GROUP_1_NAME, 0);
-        $this->createAComponentGroupAndAddAComponent(self::COMPONENT_GROUP_2_NAME, 1);
-        $this->createAComponentGroupAndAddAComponent(self::COMPONENT_GROUP_3_NAME, 2);
+        $this->createAComponentGroupAndAddAComponent(self::COMPONENT_GROUP_1_NAME, ComponentGroup::VISIBLE_PUBLIC);
+        $this->createAComponentGroupAndAddAComponent(self::COMPONENT_GROUP_2_NAME, ComponentGroup::VISIBLE_LOGGED_IN);
+        $this->createAComponentGroupAndAddAComponent(self::COMPONENT_GROUP_3_NAME, ComponentGroup::VISIBLE_HIDDEN);
 
         factory(Setting::class)->create();
 

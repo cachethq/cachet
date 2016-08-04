@@ -24,6 +24,21 @@ class ComponentGroup extends Model implements HasPresenter
     use SearchableTrait, SortableTrait, ValidatingTrait;
 
     /**
+     * Viewable by public.
+     */
+    const VISIBLE_PUBLIC = 0;
+
+    /**
+     * Viewable by logged in users.
+     */
+    const VISIBLE_LOGGED_IN = 1;
+
+    /**
+     * Hidden.
+     */
+    const VISIBLE_HIDDEN = 2;
+
+    /**
      * The model's attributes.
      *
      * @var string
@@ -157,7 +172,7 @@ class ComponentGroup extends Model implements HasPresenter
      */
     public function scopeGuest(Builder $query)
     {
-        return $query->where('visible', 0);
+        return $query->where('visible', self::VISIBLE_PUBLIC);
     }
 
     /**
@@ -169,6 +184,6 @@ class ComponentGroup extends Model implements HasPresenter
      */
     public function scopeLoggedIn(Builder $query)
     {
-        return $query->where('visible', '>=', 1);
+        return $query->where('visible', '>=', self::VISIBLE_PUBLIC);
     }
 }
