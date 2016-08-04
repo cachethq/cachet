@@ -81,7 +81,7 @@ $factory->define(MetricPoint::class, function ($faker) {
 
 $factory->define(Setting::class, function ($faker) {
     return [
-       'name'  => 'app.name',
+       'name'  => 'app_name',
        'value' => 'Cachet Test Demo',
     ];
 });

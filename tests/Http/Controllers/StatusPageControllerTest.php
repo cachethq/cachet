@@ -4,7 +4,10 @@ namespace CachetHQ\Tests\Cachet\Http\Controllers;
 
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
+use CachetHQ\Cachet\Models\Setting;
 use CachetHQ\Cachet\Models\User;
+use CachetHQ\Cachet\Settings\Cache;
+use CachetHQ\Cachet\Settings\Repository;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\TestCase;
@@ -26,7 +29,8 @@ class StatusPageControllerTest extends AbstractTestCase
     {
         parent::setUp();
 
-        $this->setupData();
+        $this->setupData()
+            ->setupConfig();
     }
 
     /** @test */
@@ -48,6 +52,8 @@ class StatusPageControllerTest extends AbstractTestCase
         $this->createAComponentGroupAndAddAComponent(self::COMPONENT_GROUP_1_NAME, 0);
         $this->createAComponentGroupAndAddAComponent(self::COMPONENT_GROUP_2_NAME, 1);
         $this->createAComponentGroupAndAddAComponent(self::COMPONENT_GROUP_3_NAME, 2);
+
+        factory(Setting::class)->create();
 
         return $this;
     }
@@ -96,6 +102,34 @@ class StatusPageControllerTest extends AbstractTestCase
     protected function createUser()
     {
         $this->user = factory(User::class)->create();
+
+        return $this;
+    }
+
+    /**
+     * Set up the needed configuration to be able to run the tests.
+     *
+     * @return TestCase
+     */
+    protected function setupConfig()
+    {
+        $env = $this->app->environment();
+        $repo = $this->app->make(Repository::class);
+        $cache = $this->app->make(Cache::class);
+        $loaded = $cache->load($env);
+
+        try {
+            if ($loaded === false) {
+                $loaded = $repo->all();
+                $cache->store($env, $loaded);
+            }
+
+            $settings = array_merge($this->app->config->get('setting'), $loaded);
+
+            $this->app->config->set('setting', $settings);
+        } catch (Exception $e) {
+            //
+        }
 
         return $this;
     }
