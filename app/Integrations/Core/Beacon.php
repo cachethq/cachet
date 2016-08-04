@@ -17,6 +17,8 @@ use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\User;
 use CachetHQ\Cachet\Settings\Repository as Setting;
+use CachetHQ\Cachet\Bus\Events\Beacon\BeaconWasSentEvent;
+use CachetHQ\Cachet\Bus\Events\Beacon\BeaconFailedToSendEvent;
 use Exception;
 use GuzzleHttp\Client;
 use Illuminate\Contracts\Config\Repository;
@@ -110,6 +112,11 @@ class Beacon implements BeaconContract
             ]);
         } catch (Exception $e) {
             // TODO: Log a warning that the beacon could not be sent.
+            event(new BeaconFailedToSendEvent());
+
+            return;
         }
+
+        event(new BeaconWasSentEvent());
     }
 }
