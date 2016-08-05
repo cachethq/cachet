@@ -134,7 +134,7 @@ return [
 
     // Other
     'home'            => 'Startseite',
-    'description'     => 'Bleiben sie up to date mit den neuesten Service-Updates von: app.',
+    'description'     => 'Bleiben sie up to date mit den neuesten Service-Updates von :app.',
     'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
     'about_this_site' => 'Über diese Seite',
     'rss-feed'        => 'RSS',
