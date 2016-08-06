@@ -47,15 +47,21 @@ final class AddComponentGroupCommand
     public $visible;
 
     /**
+     * The id of the creator of the component group.
+     */
+    public $created_by;
+
+    /**
      * The validation rules.
      *
      * @var string[]
      */
     public $rules = [
-        'name'      => 'required|string',
-        'order'     => 'int',
-        'collapsed' => 'int|between:0,3',
-        'visible'   => 'int|between:0,3',
+        'name'       => 'required|string',
+        'order'      => 'int',
+        'collapsed'  => 'int|between:0,3',
+        'visible'    => 'int|between:0,3',
+        'created_by' => 'int',
     ];
 
     /**
@@ -65,14 +71,16 @@ final class AddComponentGroupCommand
      * @param int    $order
      * @param int    $collapsed
      * @param int    $visible
+     * @param int    $created_by
      *
      * @return void
      */
-    public function __construct($name, $order, $collapsed, $visible)
+    public function __construct($name, $order, $collapsed, $visible, $created_by)
     {
         $this->name = $name;
         $this->order = (int) $order;
         $this->collapsed = $collapsed;
         $this->visible = (int) $visible;
+        $this->created_by = (int) $created_by;
     }
 }

@@ -11,14 +11,15 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Api;
 
+use Illuminate\Contracts\Auth\Guard;
+use Illuminate\Database\QueryException;
+use Illuminate\Support\Facades\Request;
+use GrahamCampbell\Binput\Facades\Binput;
+use CachetHQ\Cachet\Models\ComponentGroup;
+use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use CachetHQ\Cachet\Bus\Commands\ComponentGroup\AddComponentGroupCommand;
 use CachetHQ\Cachet\Bus\Commands\ComponentGroup\RemoveComponentGroupCommand;
 use CachetHQ\Cachet\Bus\Commands\ComponentGroup\UpdateComponentGroupCommand;
-use CachetHQ\Cachet\Models\ComponentGroup;
-use GrahamCampbell\Binput\Facades\Binput;
-use Illuminate\Database\QueryException;
-use Illuminate\Support\Facades\Request;
-use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 /**
  * This is the component group controller.
@@ -38,8 +39,8 @@ class ComponentGroupController extends AbstractApiController
     {
         $groups = ComponentGroup::query()->guest();
 
-        if (auth()->check()) {
-            $groups = ComponentGroup::query()->loggedIn();
+        if (app(Guard::class)->check()) {
+            $groups = ComponentGroup::query()->loggedIn(app(Guard::class)->user());
         }
 
         $groups->search(Binput::except(['sort', 'order', 'per_page']));
@@ -79,7 +80,8 @@ class ComponentGroupController extends AbstractApiController
                 Binput::get('name'),
                 Binput::get('order', 0),
                 Binput::get('collapsed', 0),
-                Binput::get('visible', 2)
+                Binput::get('visible', 2),
+                app(Guard::class)->user()->getKey()
             ));
         } catch (QueryException $e) {
             throw new BadRequestHttpException();
@@ -103,7 +105,8 @@ class ComponentGroupController extends AbstractApiController
                 Binput::get('name'),
                 Binput::get('order'),
                 Binput::get('collapsed'),
-                Binput::get('visible')
+                Binput::get('visible'),
+                app(Guard::class)->user()->getKey()
             ));
         } catch (QueryException $e) {
             throw new BadRequestHttpException();

@@ -2,15 +2,15 @@
 
 namespace CachetHQ\Tests\Cachet\Http\Controllers;
 
-use CachetHQ\Cachet\Models\User;
-use CachetHQ\Cachet\Models\Setting;
-use Illuminate\Contracts\Auth\Guard;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
+use CachetHQ\Cachet\Models\Setting;
+use CachetHQ\Cachet\Models\User;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Foundation\Testing\TestCase;
 
-class StatusPageControllerTest extends AbstractTestCase
+class DashboardControllerTest extends AbstractTestCase
 {
     use DatabaseMigrations;
 
@@ -33,57 +33,40 @@ class StatusPageControllerTest extends AbstractTestCase
     }
 
     /** @test */
-    public function on_index_only_public_component_groups_are_shown_to_a_guest()
-    {
-        $this->visit('/')
-            ->see(self::COMPONENT_GROUP_1_NAME)
-            ->dontSee(self::COMPONENT_GROUP_2_NAME)
-            ->dontSee(self::COMPONENT_GROUP_3_NAME);
-    }
-
-    /** @test */
-    public function on_index_all_component_groups_are_displayed_to_logged_in_users()
-    {
-        $this->signIn();
-
-        $this->visit('/')
-            ->see(self::COMPONENT_GROUP_1_NAME)
-            ->see(self::COMPONENT_GROUP_2_NAME)
-            ->see(self::COMPONENT_GROUP_3_NAME);
-    }
-
-    /** @test */
-    public function on_index_hidden_component_groups_are_not_displayed_if_not_belonging_to_logged_in_user()
+    public function on_dashboard_hidden_component_groups_are_not_displayed_if_not_belonging_to_logged_in_user()
     {
         $this->signIn()
             ->createAComponentGroupAndAddAComponent(
                 self::COMPONENT_GROUP_4_NAME,
                 ComponentGroup::VISIBLE_HIDDEN,
                 $this->createUser()
-            );
+            )
+        ;
 
-        $this->visit('/')
+        $this->visit('/dashboard')
             ->see(self::COMPONENT_GROUP_1_NAME)
             ->see(self::COMPONENT_GROUP_2_NAME)
             ->see(self::COMPONENT_GROUP_3_NAME)
-            ->dontSee(self::COMPONENT_GROUP_4_NAME);
+            ->dontSee(self::COMPONENT_GROUP_4_NAME)
+        ;
     }
 
     /**
      * Set up the needed data for the components groups tests.
      *
-     * @return AbstractTestCase
+     * @return TestCase
      */
     protected function setupPublicLoggedInAndHiddenComponentGroups()
     {
         $this->signIn()
             ->createAComponentGroupAndAddAComponent(self::COMPONENT_GROUP_1_NAME, ComponentGroup::VISIBLE_PUBLIC)
             ->createAComponentGroupAndAddAComponent(self::COMPONENT_GROUP_2_NAME, ComponentGroup::VISIBLE_LOGGED_IN)
-            ->createAComponentGroupAndAddAComponent(self::COMPONENT_GROUP_3_NAME, ComponentGroup::VISIBLE_HIDDEN);
+            ->createAComponentGroupAndAddAComponent(self::COMPONENT_GROUP_3_NAME, ComponentGroup::VISIBLE_HIDDEN)
+        ;
 
         factory(Setting::class)->create();
 
-        app(Guard::class)->logout();
+        auth()->logout();
 
         return $this;
     }
@@ -97,21 +80,22 @@ class StatusPageControllerTest extends AbstractTestCase
      * @param string $visible
      * @param User   $user
      *
-     * @return AbstractTestCase
+     * @return TestCase
      */
     protected function createAComponentGroupAndAddAComponent($name, $visible, User $user = null)
     {
         $createdBy = 0;
-        if ($user) {
+        if (!is_null($user)) {
             $createdBy = $user->getKey();
-        } elseif ($this->user) {
+        } elseif (!is_null($this->user)) {
             $createdBy = $this->user->getKey();
         }
 
         factory(ComponentGroup::class)
             ->create(['name' => $name, 'visible' => $visible, 'created_by' => $createdBy])
             ->components()
-            ->save(factory(Component::class)->create());
+            ->save(factory(Component::class)->create())
+        ;
 
         return $this;
     }

@@ -11,15 +11,16 @@
 
 namespace CachetHQ\Cachet\Models;
 
-use AltThree\Validator\ValidatingTrait;
 use Illuminate\Auth\Authenticatable;
+use Illuminate\Support\Facades\Hash;
+use AltThree\Validator\ValidatingTrait;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
+use CachetHQ\Cachet\Models\ComponentGroup;
 use Illuminate\Auth\Passwords\CanResetPassword;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
-use Illuminate\Support\Facades\Hash;
 
 /**
  * This is the user model.
@@ -224,5 +225,15 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     public function getHasTwoFactorAttribute()
     {
         return trim($this->google_2fa_secret) !== '';
+    }
+
+    /**
+     * An user has component groups.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function componentGroups()
+    {
+        return $this->hasMany(ComponentGroup::class);
     }
 }
