@@ -11,6 +11,9 @@
 
 namespace CachetHQ\Tests\Cachet\Api;
 
+use CachetHQ\Cachet\Models\Component;
+use CachetHQ\Cachet\Models\ComponentGroup;
+
 /**
  * This is the component group test class.
  *
@@ -19,9 +22,14 @@ namespace CachetHQ\Tests\Cachet\Api;
  */
 class ComponentGroupTest extends AbstractApiTestCase
 {
+    const COMPONENT_GROUP_1_NAME = 'Component Group 1';
+    const COMPONENT_GROUP_2_NAME = 'Component Group 2';
+    const COMPONENT_GROUP_3_NAME = 'Component Group 3';
+
     public function testGetGroups()
     {
-        $groups = factory('CachetHQ\Cachet\Models\ComponentGroup', 3)->create();
+        $groups = factory('CachetHQ\Cachet\Models\ComponentGroup', 3)
+            ->create(['visible' => ComponentGroup::VISIBLE_PUBLIC]);
 
         $this->get('/api/v1/components/groups');
         $this->seeJson(['id' => $groups[0]->id]);
@@ -92,5 +100,56 @@ class ComponentGroupTest extends AbstractApiTestCase
 
         $this->delete('/api/v1/components/groups/1');
         $this->assertResponseStatus(204);
+    }
+
+    /** @test */
+    public function only_public_component_groups_are_shown_for_a_guest()
+    {
+        $this->createComponentGroups();
+
+        $this->get('/api/v1/components/groups')
+            ->seeJson(['name' => self::COMPONENT_GROUP_1_NAME])
+            ->dontSeeJson(['name' => self::COMPONENT_GROUP_2_NAME])
+            ->dontSeeJson(['name' => self::COMPONENT_GROUP_3_NAME]);
+        $this->assertResponseOk();
+    }
+
+    /** @test */
+    public function all_component_groups_are_displayed_for_loggedin_users()
+    {
+        $this->createComponentGroups()
+            ->beUser();
+
+        $this->get('/api/v1/components/groups')
+            ->seeJson(['name' => self::COMPONENT_GROUP_1_NAME])
+            ->seeJson(['name' => self::COMPONENT_GROUP_2_NAME])
+            ->seeJson(['name' => self::COMPONENT_GROUP_3_NAME]);
+        $this->assertResponseOk();
+    }
+
+    /**
+     * Set up the needed data for the tests.
+     *
+     * @return TestCase
+     */
+    protected function createComponentGroups()
+    {
+        $this->createComponentGroup(self::COMPONENT_GROUP_1_NAME, ComponentGroup::VISIBLE_PUBLIC);
+        $this->createComponentGroup(self::COMPONENT_GROUP_2_NAME, ComponentGroup::VISIBLE_LOGGED_IN);
+        $this->createComponentGroup(self::COMPONENT_GROUP_3_NAME, ComponentGroup::VISIBLE_HIDDEN);
+
+        return $this;
+    }
+
+    /**
+     * Create a component group.
+     *
+     * @param string $name
+     * @param string $visible
+     */
+    protected function createComponentGroup($name, $visible)
+    {
+        factory(ComponentGroup::class)
+            ->create(['name' => $name, 'visible' => $visible]);
     }
 }
