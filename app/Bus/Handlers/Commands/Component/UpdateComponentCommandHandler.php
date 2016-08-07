@@ -12,6 +12,7 @@
 namespace CachetHQ\Cachet\Bus\Handlers\Commands\Component;
 
 use CachetHQ\Cachet\Bus\Commands\Component\UpdateComponentCommand;
+use CachetHQ\Cachet\Bus\Events\Component\ComponentStatusWasUpdatedEvent;
 use CachetHQ\Cachet\Bus\Events\Component\ComponentWasUpdatedEvent;
 use CachetHQ\Cachet\Models\Component;
 
@@ -27,6 +28,10 @@ class UpdateComponentCommandHandler
     public function handle(UpdateComponentCommand $command)
     {
         $component = $command->component;
+
+        if ($command->status && $component->status !== $command->status) {
+            event(new ComponentStatusWasUpdatedEvent($component, $component->status, $command->status));
+        }
 
         $component->update($this->filter($command));
 
