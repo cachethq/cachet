@@ -30,11 +30,11 @@ class UpdateComponentGroupCommandTest extends AbstractTestCase
     protected function getObjectAndParams()
     {
         $params = [
-            'group' => new ComponentGroup(),
-            'name' => 'Foo',
-            'order' => 1,
-            'collapsed' => 2,
-            'visible' => 1,
+            'group'      => new ComponentGroup(),
+            'name'       => 'Foo',
+            'order'      => 1,
+            'collapsed'  => 2,
+            'visible'    => 1,
             'created_by' => 0,
         ];
         $object = new UpdateComponentGroupCommand(

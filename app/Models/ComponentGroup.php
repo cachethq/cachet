@@ -11,14 +11,13 @@
 
 namespace CachetHQ\Cachet\Models;
 
-use CachetHQ\Cachet\Models\User;
 use AltThree\Validator\ValidatingTrait;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Builder;
-use McCool\LaravelAutoPresenter\HasPresenter;
-use CachetHQ\Cachet\Models\Traits\SortableTrait;
 use CachetHQ\Cachet\Models\Traits\SearchableTrait;
+use CachetHQ\Cachet\Models\Traits\SortableTrait;
 use CachetHQ\Cachet\Presenters\ComponentGroupPresenter;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
+use McCool\LaravelAutoPresenter\HasPresenter;
 
 class ComponentGroup extends Model implements HasPresenter
 {
@@ -182,7 +181,7 @@ class ComponentGroup extends Model implements HasPresenter
      *
      * @param User $user
      *
-     * @return boolean
+     * @return bool
      */
     public function isCreatedBy(User $user)
     {
@@ -213,9 +212,7 @@ class ComponentGroup extends Model implements HasPresenter
         return $query->where('visible', '<', self::VISIBLE_HIDDEN)
             ->orWhere(function (Builder $query) use ($user) {
                 $query->where('visible', self::VISIBLE_HIDDEN)
-                    ->where('created_by', $user->getKey())
-                ;
+                    ->where('created_by', $user->getKey());
             });
-        ;
     }
 }

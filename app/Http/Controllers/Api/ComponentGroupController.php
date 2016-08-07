@@ -11,15 +11,15 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Api;
 
-use Illuminate\Contracts\Auth\Guard;
-use Illuminate\Database\QueryException;
-use Illuminate\Support\Facades\Request;
-use GrahamCampbell\Binput\Facades\Binput;
-use CachetHQ\Cachet\Models\ComponentGroup;
-use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use CachetHQ\Cachet\Bus\Commands\ComponentGroup\AddComponentGroupCommand;
 use CachetHQ\Cachet\Bus\Commands\ComponentGroup\RemoveComponentGroupCommand;
 use CachetHQ\Cachet\Bus\Commands\ComponentGroup\UpdateComponentGroupCommand;
+use CachetHQ\Cachet\Models\ComponentGroup;
+use GrahamCampbell\Binput\Facades\Binput;
+use Illuminate\Contracts\Auth\Guard;
+use Illuminate\Database\QueryException;
+use Illuminate\Support\Facades\Request;
+use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 /**
  * This is the component group controller.

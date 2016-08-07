@@ -1,15 +1,24 @@
 <?php
 
+/*
+ * This file is part of Cachet.
+ *
+ * (c) Alt Three Services Limited
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace CachetHQ\Tests\Cachet\Http\Controllers;
 
-use CachetHQ\Cachet\Models\User;
-use CachetHQ\Cachet\Models\Setting;
-use Illuminate\Contracts\Auth\Guard;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
+use CachetHQ\Cachet\Models\Setting;
+use CachetHQ\Cachet\Models\User;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
-use Illuminate\Foundation\Testing\TestCase;
+use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Foundation\Testing\TestCase;
 
 class DashboardControllerTest extends AbstractTestCase
 {
@@ -41,15 +50,13 @@ class DashboardControllerTest extends AbstractTestCase
                 self::COMPONENT_GROUP_4_NAME,
                 ComponentGroup::VISIBLE_HIDDEN,
                 $this->createUser()
-            )
-        ;
+            );
 
         $this->visit('/dashboard')
             ->see(self::COMPONENT_GROUP_1_NAME)
             ->see(self::COMPONENT_GROUP_2_NAME)
             ->see(self::COMPONENT_GROUP_3_NAME)
-            ->dontSee(self::COMPONENT_GROUP_4_NAME)
-        ;
+            ->dontSee(self::COMPONENT_GROUP_4_NAME);
     }
 
     /**
@@ -62,8 +69,7 @@ class DashboardControllerTest extends AbstractTestCase
         $this->signIn()
             ->createAComponentGroupAndAddAComponent(self::COMPONENT_GROUP_1_NAME, ComponentGroup::VISIBLE_PUBLIC)
             ->createAComponentGroupAndAddAComponent(self::COMPONENT_GROUP_2_NAME, ComponentGroup::VISIBLE_LOGGED_IN)
-            ->createAComponentGroupAndAddAComponent(self::COMPONENT_GROUP_3_NAME, ComponentGroup::VISIBLE_HIDDEN)
-        ;
+            ->createAComponentGroupAndAddAComponent(self::COMPONENT_GROUP_3_NAME, ComponentGroup::VISIBLE_HIDDEN);
 
         factory(Setting::class)->create();
 
@@ -95,8 +101,7 @@ class DashboardControllerTest extends AbstractTestCase
         factory(ComponentGroup::class)
             ->create(['name' => $name, 'visible' => $visible, 'created_by' => $createdBy])
             ->components()
-            ->save(factory(Component::class)->create())
-        ;
+            ->save(factory(Component::class)->create());
 
         return $this;
     }

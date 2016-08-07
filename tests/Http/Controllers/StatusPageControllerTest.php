@@ -1,13 +1,22 @@
 <?php
 
+/*
+ * This file is part of Cachet.
+ *
+ * (c) Alt Three Services Limited
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace CachetHQ\Tests\Cachet\Http\Controllers;
 
-use CachetHQ\Cachet\Models\User;
-use CachetHQ\Cachet\Models\Setting;
-use Illuminate\Contracts\Auth\Guard;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
+use CachetHQ\Cachet\Models\Setting;
+use CachetHQ\Cachet\Models\User;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
+use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class StatusPageControllerTest extends AbstractTestCase

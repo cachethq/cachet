@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of Cachet.
+ *
+ * (c) Alt Three Services Limited
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace CachetHQ\Tests\Cachet;
 
 use CachetHQ\Cachet\Models\User;
@@ -37,7 +46,7 @@ abstract class AbstractTestCase extends TestCase
      */
     public function createApplication()
     {
-        $app = require __DIR__ . '/../bootstrap/app.php';
+        $app = require __DIR__.'/../bootstrap/app.php';
 
         $app->make(Kernel::class)->bootstrap();
 
@@ -55,7 +64,7 @@ abstract class AbstractTestCase extends TestCase
     {
         if ($user) {
             $this->user = $user;
-        } elseif (! $this->user) {
+        } elseif (!$this->user) {
             $this->user = $this->createUser();
         }
 

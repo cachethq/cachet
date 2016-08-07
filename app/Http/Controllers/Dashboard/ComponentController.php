@@ -11,14 +11,6 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
-use CachetHQ\Cachet\Models\Tag;
-use Illuminate\Routing\Controller;
-use Illuminate\Contracts\Auth\Guard;
-use Illuminate\Support\Facades\View;
-use CachetHQ\Cachet\Models\Component;
-use Illuminate\Support\Facades\Redirect;
-use GrahamCampbell\Binput\Facades\Binput;
-use CachetHQ\Cachet\Models\ComponentGroup;
 use AltThree\Validator\ValidationException;
 use CachetHQ\Cachet\Bus\Commands\Component\AddComponentCommand;
 use CachetHQ\Cachet\Bus\Commands\Component\RemoveComponentCommand;
@@ -26,6 +18,14 @@ use CachetHQ\Cachet\Bus\Commands\Component\UpdateComponentCommand;
 use CachetHQ\Cachet\Bus\Commands\ComponentGroup\AddComponentGroupCommand;
 use CachetHQ\Cachet\Bus\Commands\ComponentGroup\RemoveComponentGroupCommand;
 use CachetHQ\Cachet\Bus\Commands\ComponentGroup\UpdateComponentGroupCommand;
+use CachetHQ\Cachet\Models\Component;
+use CachetHQ\Cachet\Models\ComponentGroup;
+use CachetHQ\Cachet\Models\Tag;
+use GrahamCampbell\Binput\Facades\Binput;
+use Illuminate\Contracts\Auth\Guard;
+use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\View;
 
 class ComponentController extends Controller
 {

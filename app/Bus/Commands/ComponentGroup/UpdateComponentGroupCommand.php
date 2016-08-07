@@ -66,10 +66,10 @@ final class UpdateComponentGroupCommand
      * @var string[]
      */
     public $rules = [
-        'name'      => 'string',
-        'order'     => 'int',
-        'collapsed' => 'int|between:0,3',
-        'visible'   => 'int|between:0,3',
+        'name'       => 'string',
+        'order'      => 'int',
+        'collapsed'  => 'int|between:0,3',
+        'visible'    => 'int|between:0,3',
         'created_by' => 'int',
     ];
 

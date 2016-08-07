@@ -11,10 +11,10 @@
 
 namespace CachetHQ\Tests\Cachet\Api;
 
-use CachetHQ\Cachet\Models\User;
-use Illuminate\Contracts\Auth\Guard;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
+use CachetHQ\Cachet\Models\User;
+use Illuminate\Contracts\Auth\Guard;
 
 /**
  * This is the component group test class.

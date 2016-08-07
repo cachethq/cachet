@@ -43,10 +43,10 @@ class UpdateComponentGroupCommandHandler
     protected function filter(UpdateComponentGroupCommand $command)
     {
         $params = [
-            'name'      => $command->name,
-            'order'     => $command->order,
-            'collapsed' => $command->collapsed,
-            'visible'   => $command->visible,
+            'name'       => $command->name,
+            'order'      => $command->order,
+            'collapsed'  => $command->collapsed,
+            'visible'    => $command->visible,
             'created_by' => $command->created_by,
         ];
 
