@@ -2,13 +2,14 @@
 
 namespace CachetHQ\Tests\Cachet\Http\Controllers;
 
+use CachetHQ\Cachet\Models\User;
+use CachetHQ\Cachet\Models\Setting;
+use Illuminate\Contracts\Auth\Guard;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
-use CachetHQ\Cachet\Models\Setting;
-use CachetHQ\Cachet\Models\User;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\TestCase;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class DashboardControllerTest extends AbstractTestCase
 {
@@ -66,7 +67,7 @@ class DashboardControllerTest extends AbstractTestCase
 
         factory(Setting::class)->create();
 
-        auth()->logout();
+        app(Guard::class)->logout();
 
         return $this;
     }

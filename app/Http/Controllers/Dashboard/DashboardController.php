@@ -15,14 +15,15 @@ use CachetHQ\Cachet\Bus\Commands\User\WelcomeUserCommand;
 use CachetHQ\Cachet\Integrations\Contracts\Feed;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
-use CachetHQ\Cachet\Models\Incident;
-use CachetHQ\Cachet\Models\Subscriber;
+use Jenssegers\Date\Date;
 use Illuminate\Routing\Controller;
+use CachetHQ\Cachet\Models\Incident;
+use Illuminate\Contracts\Auth\Guard;
+use Illuminate\Support\Facades\View;
+use CachetHQ\Cachet\Models\Subscriber;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\View;
-use Jenssegers\Date\Date;
 
 /**
  * This is the dashboard controller class.
@@ -92,8 +93,8 @@ class DashboardController extends Controller
             ->groupBy('group_id')
             ->pluck('group_id');
         $componentGroupsBuilder = ComponentGroup::guest();
-        if (auth()->check()) {
-            $componentGroupsBuilder = ComponentGroup::loggedIn(auth()->user());
+        if (app(Guard::class)->check()) {
+            $componentGroupsBuilder = ComponentGroup::loggedIn(app(Guard::class)->user());
         }
         $componentGroups = $componentGroupsBuilder->whereIn('id', $usedComponentGroups)
             ->orderBy('order')
