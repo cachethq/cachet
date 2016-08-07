@@ -81,8 +81,8 @@ return [
             'failure'            => 'Qualcosa è andato storto con l\'iscrizione.',
             'already-subscribed' => 'Non è possibile iscrivere :email perchè risulta già iscritto.',
             'verify'             => [
-                'text'   => "Please confirm your email subscription to :app_name status updates.\n:link",
-                'html'   => '<p>Please confirm your email subscription to :app_name status updates.</p>',
+                'text'   => "Conferma l'iscrizione a :app_name. \n:link",
+                'html'   => 'Per favore conferma la tua iscrizione tramite email su :app_name',
                 'button' => 'Conferma iscrizione',
             ],
             'maintenance' => [
@@ -93,8 +93,8 @@ return [
             ],
             'component' => [
                 'subject'       => 'Aggiornamento di stato del componente',
-                'text'          => 'Lo stato del componente: nome_componente è cambiato. Il nuovo stato del componente è :component_human_status.\nGrazie,: app_name',
-                'html'          => '<p>Lo stato del componente: nome_componente è cambiato. Il nuovo stato del componente è :component_human_status.</p><p>Grazie, :app_name</p>',
+                'text'          => 'Lo stato del componente: :component_name è cambiato. Il nuovo stato del componente è :component_human_status.\nGrazie, :app_name',
+                'html'          => '<p>Lo stato del componente :component_name è cambiato. Il nuovo stato del componente è :component_human_status.</p><p>Grazie, :app_name</p>',
                 'tooltip-title' => 'Iscriviti alle notifiche di :component_name.',
             ],
         ],
@@ -103,8 +103,8 @@ return [
     'users' => [
         'email' => [
             'invite' => [
-                'text'           => "Sei stato invitato nel team :app_name status page, per iscriverti segui il prossimo link.\n:link\nGrazie, :app_name",
-                'html'           => '<p>Sei stato invitato nel team :app_name status page, per iscriverti segui il prossimo link.</p><p><a href=":link">:link</a></p><p>Grazie, :app_name</p>',
+                'text' => "Sei stato invitato nel team :app_name status page, per iscriverti segui il prossimo link.\n:link\nGrazie, :app_name",
+                'html' => '<p>Sei stato invitato nel team :app_name status page, per iscriverti segui il prossimo link.</p><p><a href=":link">:link</a></p><p>Grazie, :app_name</p>',
             ],
         ],
     ],
