@@ -103,8 +103,8 @@ return [
     'users' => [
         'email' => [
             'invite' => [
-                'text'           => "您已被邀請加入 :app_name 團隊的狀態頁, 請點擊以下鏈接進行註冊。\n:link\n謝謝, :app_name",
-                'html'           => '<p>您已被邀請加入 :app_name 團隊的狀態頁, 請點擊以下鏈接進行註冊。</p><p><a href=":link">:link</a></p><p>謝謝, :app_name</p>',
+                'text' => "您已被邀請加入 :app_name 團隊的狀態頁, 請點擊以下鏈接進行註冊。\n:link\n謝謝, :app_name",
+                'html' => '<p>您已被邀請加入 :app_name 團隊的狀態頁, 請點擊以下鏈接進行註冊。</p><p><a href=":link">:link</a></p><p>謝謝, :app_name</p>',
             ],
         ],
     ],

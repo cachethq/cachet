@@ -103,8 +103,8 @@ return [
     'users' => [
         'email' => [
             'invite' => [
-                'text'           => "Vous avez été invité à la page de statut de l'équipe :app_name , veuillez suivre le lien suivant pour vous inscire \n:link\nMerci, :app_name",
-                'html'           => '<p>Vous avez été invité à la page de statut de l\'équipe :app_name, veuillez suivre le lien suivant pour vous inscrire.</p><p><a href=":link">:link</a></p><p>Merci, :app_name</p>',
+                'text' => "Vous avez été invité à la page de statut de l'équipe :app_name , veuillez suivre le lien suivant pour vous inscire \n:link\nMerci, :app_name",
+                'html' => '<p>Vous avez été invité à la page de statut de l\'équipe :app_name, veuillez suivre le lien suivant pour vous inscrire.</p><p><a href=":link">:link</a></p><p>Merci, :app_name</p>',
             ],
         ],
     ],

@@ -118,10 +118,10 @@ return [
             'analytics_piwik_siteid' => 'Piwik 사이트 id',
         ],
         'localization' => [
-            'site-timezone'          => '사이트 시간대',
-            'site-locale'            => '사이트 언어',
-            'date-format'            => '날짜 형식',
-            'incident-date-format'   => '문제 Timestamp 형식',
+            'site-timezone'        => '사이트 시간대',
+            'site-locale'          => '사이트 언어',
+            'date-format'          => '날짜 형식',
+            'incident-date-format' => '문제 Timestamp 형식',
         ],
         'security' => [
             'allowed-domains'      => '허용된 도메인',

@@ -103,8 +103,8 @@ return [
     'users' => [
         'email' => [
             'invite' => [
-                'text'           => "Zostałeś zaproszony do strony statusowej zespołu :app_name. Aby się zapisać, kliknij na link umieszczony dalej.\n:link\nDziękujemy, :app_name",
-                'html'           => '<p>Zostałeś zaproszony do strony statusowej zespołu :app_name. Aby się zapisać, kliknij na link umieszczony dalej.</p><p><a href=":link">:link</a></p><p>Dziękujemy, :app_name</p>',
+                'text' => "Zostałeś zaproszony do strony statusowej zespołu :app_name. Aby się zapisać, kliknij na link umieszczony dalej.\n:link\nDziękujemy, :app_name",
+                'html' => '<p>Zostałeś zaproszony do strony statusowej zespołu :app_name. Aby się zapisać, kliknij na link umieszczony dalej.</p><p><a href=":link">:link</a></p><p>Dziękujemy, :app_name</p>',
             ],
         ],
     ],

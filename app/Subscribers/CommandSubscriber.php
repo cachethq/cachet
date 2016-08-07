@@ -134,6 +134,13 @@ class CommandSubscriber
 
         $command->line('Settings cache cleared!');
 
+        // SQLite does not backup.
+        if ($this->config->get('database.default') === 'sqlite') {
+            $command->line('Backup skipped: SQLite is not supported.');
+
+            return;
+        }
+
         $command->line('Backing up database...');
 
         try {

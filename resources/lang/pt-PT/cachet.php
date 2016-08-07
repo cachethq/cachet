@@ -103,8 +103,8 @@ return [
     'users' => [
         'email' => [
             'invite' => [
-                'text'           => "Você foi convidado para a equipa :app_name página de status, para se inscrever siga o próximo link.\n:link\nObrigado, :app_name",
-                'html'           => '<p>Foi convidado para a equipa :app_name página de status, para se inscrever siga o seguinte link.</p> <p><a href=":link">:link</a></p> <p>Obrigado, :app_name</p>',
+                'text' => "Você foi convidado para a equipa :app_name página de status, para se inscrever siga o próximo link.\n:link\nObrigado, :app_name",
+                'html' => '<p>Foi convidado para a equipa :app_name página de status, para se inscrever siga o seguinte link.</p> <p><a href=":link">:link</a></p> <p>Obrigado, :app_name</p>',
             ],
         ],
     ],

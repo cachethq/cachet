@@ -118,10 +118,10 @@ return [
             'analytics_piwik_siteid' => 'Piwik\'s sajt-id',
         ],
         'localization' => [
-            'site-timezone'          => 'Webbplatsens tidszon',
-            'site-locale'            => 'Webbplatsspråk',
-            'date-format'            => 'Datumformat',
-            'incident-date-format'   => 'Händelsens tidsstämpelformat',
+            'site-timezone'        => 'Webbplatsens tidszon',
+            'site-locale'          => 'Webbplatsspråk',
+            'date-format'          => 'Datumformat',
+            'incident-date-format' => 'Händelsens tidsstämpelformat',
         ],
         'security' => [
             'allowed-domains'      => 'Tillåtna domäner',

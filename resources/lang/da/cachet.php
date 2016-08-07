@@ -103,8 +103,8 @@ return [
     'users' => [
         'email' => [
             'invite' => [
-                'text'           => "Du er blevet inviteret til :app_name status status side, Klik på linket for at oprette dig.\n:link\nTak, :app_name",
-                'html'           => '<p>Du er blevet inviteret til :app_name status side, Klik på linket for at oprette dig.</p><p><a href=":link">:link</a></p><p>Tak, :app_name</p>',
+                'text' => "Du er blevet inviteret til :app_name status status side, Klik på linket for at oprette dig.\n:link\nTak, :app_name",
+                'html' => '<p>Du er blevet inviteret til :app_name status side, Klik på linket for at oprette dig.</p><p><a href=":link">:link</a></p><p>Tak, :app_name</p>',
             ],
         ],
     ],

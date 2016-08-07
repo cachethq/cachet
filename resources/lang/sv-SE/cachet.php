@@ -103,8 +103,8 @@ return [
     'users' => [
         'email' => [
             'invite' => [
-                'text'           => "Du har blivit inbjuden till teamet för :app_names statussida, registrera dig genom att trycka på länken.\n:link\nTack, :app_name",
-                'html'           => '<p>Du har blivit inbjuden till teamet :app_names statussida. Registrera dig genom att trycka på <a href=":link"> den här länken</a></p> <p>Tack, :app_name</p>',
+                'text' => "Du har blivit inbjuden till teamet för :app_names statussida, registrera dig genom att trycka på länken.\n:link\nTack, :app_name",
+                'html' => '<p>Du har blivit inbjuden till teamet :app_names statussida. Registrera dig genom att trycka på <a href=":link"> den här länken</a></p> <p>Tack, :app_name</p>',
             ],
         ],
     ],

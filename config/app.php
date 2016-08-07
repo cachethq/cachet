@@ -234,8 +234,8 @@ return [
         'Validator' => 'Illuminate\Support\Facades\Validator',
         'View'      => 'Illuminate\Support\Facades\View',
 
-        'Binput'    => 'GrahamCampbell\Binput\Facades\Binput',
-        'Str'       => 'Illuminate\Support\Str',
+        'Binput' => 'GrahamCampbell\Binput\Facades\Binput',
+        'Str'    => 'Illuminate\Support\Str',
 
     ],
 
