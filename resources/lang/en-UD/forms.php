@@ -118,10 +118,10 @@ return [
             'analytics_piwik_siteid' => 'crwdns594:0crwdne594:0',
         ],
         'localization' => [
-            'site-timezone'          => 'crwdns595:0crwdne595:0',
-            'site-locale'            => 'crwdns596:0crwdne596:0',
-            'date-format'            => 'crwdns597:0crwdne597:0',
-            'incident-date-format'   => 'crwdns598:0crwdne598:0',
+            'site-timezone'        => 'crwdns595:0crwdne595:0',
+            'site-locale'          => 'crwdns596:0crwdne596:0',
+            'date-format'          => 'crwdns597:0crwdne597:0',
+            'incident-date-format' => 'crwdns598:0crwdne598:0',
         ],
         'security' => [
             'allowed-domains'      => 'crwdns599:0crwdne599:0',

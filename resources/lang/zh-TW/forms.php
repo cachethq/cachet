@@ -118,10 +118,10 @@ return [
             'analytics_piwik_siteid' => 'Piwik 的站點 id',
         ],
         'localization' => [
-            'site-timezone'          => '站點時區',
-            'site-locale'            => '站點語言',
-            'date-format'            => '日期格式',
-            'incident-date-format'   => '事件的時間戳格式',
+            'site-timezone'        => '站點時區',
+            'site-locale'          => '站點語言',
+            'date-format'          => '日期格式',
+            'incident-date-format' => '事件的時間戳格式',
         ],
         'security' => [
             'allowed-domains'      => '允許的域',

@@ -103,8 +103,8 @@ return [
     'users' => [
         'email' => [
             'invite' => [
-                'text'           => "Anda diundang dalam tim Halaman Status :app_name, untuk mendaftar silakan klik tautan berikut \n:link\nTerima kasih, :app_name",
-                'html'           => '<p>Anda diundang dalam tim Halaman Status :app_name, untuk mendaftar silakan klik tautan berikut. </p><p><a href=":link">:link</a></p><p>Terima kasih, :app_name</p>',
+                'text' => "Anda diundang dalam tim Halaman Status :app_name, untuk mendaftar silakan klik tautan berikut \n:link\nTerima kasih, :app_name",
+                'html' => '<p>Anda diundang dalam tim Halaman Status :app_name, untuk mendaftar silakan klik tautan berikut. </p><p><a href=":link">:link</a></p><p>Terima kasih, :app_name</p>',
             ],
         ],
     ],

@@ -118,10 +118,10 @@ return [
             'analytics_piwik_siteid' => 'Piwik\'s site id',
         ],
         'localization' => [
-            'site-timezone'          => 'Múi giờ',
-            'site-locale'            => 'Ngôn ngữ',
-            'date-format'            => 'Định dạng ngày',
-            'incident-date-format'   => 'Incident timestamp format',
+            'site-timezone'        => 'Múi giờ',
+            'site-locale'          => 'Ngôn ngữ',
+            'date-format'          => 'Định dạng ngày',
+            'incident-date-format' => 'Incident timestamp format',
         ],
         'security' => [
             'allowed-domains'      => 'Allowed domains',

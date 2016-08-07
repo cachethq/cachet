@@ -103,8 +103,8 @@ return [
     'users' => [
         'email' => [
             'invite' => [
-                'text'           => 'crwdns553:0crwdne553:0',
-                'html'           => 'crwdns555:0crwdne555:0',
+                'text' => 'crwdns553:0crwdne553:0',
+                'html' => 'crwdns555:0crwdne555:0',
             ],
         ],
     ],

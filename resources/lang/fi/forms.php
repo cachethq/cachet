@@ -118,10 +118,10 @@ return [
             'analytics_piwik_siteid' => 'Piwik sivun tunnus',
         ],
         'localization' => [
-            'site-timezone'          => 'Sivuston aikavyöhyke',
-            'site-locale'            => 'Sivuston kieli',
-            'date-format'            => 'Päivämäärän muoto',
-            'incident-date-format'   => 'Incident timestamp format',
+            'site-timezone'        => 'Sivuston aikavyöhyke',
+            'site-locale'          => 'Sivuston kieli',
+            'date-format'          => 'Päivämäärän muoto',
+            'incident-date-format' => 'Incident timestamp format',
         ],
         'security' => [
             'allowed-domains'      => 'Sallittu toimialueet',
