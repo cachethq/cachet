@@ -118,10 +118,10 @@ return [
             'analytics_piwik_siteid' => 'Piwik\'s site id',
         ],
         'localization' => [
-            'site-timezone'          => 'Tidszone',
-            'site-locale'            => 'Sprog på siden',
-            'date-format'            => 'Datoformat',
-            'incident-date-format'   => 'Datoformat for hændelser',
+            'site-timezone'        => 'Tidszone',
+            'site-locale'          => 'Sprog på siden',
+            'date-format'          => 'Datoformat',
+            'incident-date-format' => 'Datoformat for hændelser',
         ],
         'security' => [
             'allowed-domains'      => 'Tilladte domæner',

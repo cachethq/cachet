@@ -103,8 +103,8 @@ return [
     'users' => [
         'email' => [
             'invite' => [
-                'text'           => "U bent uitgenodigd voor team :app_name status pagina, om u in te schrijven klik op de volgende link.\n:link\nBedankt, :app_name",
-                'html'           => '<p>U bent uitgenodigd voor team :app_name status pagina, om u in te schrijven klik op de volgende link.</p><p><a href=":link">:link</a></p><p>Bedankt, :app_name</p>',
+                'text' => "U bent uitgenodigd voor team :app_name status pagina, om u in te schrijven klik op de volgende link.\n:link\nBedankt, :app_name",
+                'html' => '<p>U bent uitgenodigd voor team :app_name status pagina, om u in te schrijven klik op de volgende link.</p><p><a href=":link">:link</a></p><p>Bedankt, :app_name</p>',
             ],
         ],
     ],

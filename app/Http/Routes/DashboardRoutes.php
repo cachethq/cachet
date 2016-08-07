@@ -131,7 +131,7 @@ class DashboardRoutes
                     $router->delete('{incident_template}/delete', 'IncidentController@deleteTemplateAction');
                 });
 
-                $router->group(['as'     => 'subscribers.', 'prefix' => 'subscribers'], function (Registrar $router) {
+                $router->group(['as' => 'subscribers.', 'prefix' => 'subscribers'], function (Registrar $router) {
                     $router->get('/', [
                         'as'   => 'index',
                         'uses' => 'SubscriberController@showSubscribers',
@@ -144,7 +144,7 @@ class DashboardRoutes
                     $router->delete('{subscriber}/delete', 'SubscriberController@deleteSubscriberAction');
                 });
 
-                $router->group(['as'  => 'metrics.', 'prefix' => 'metrics'], function (Registrar $router) {
+                $router->group(['as' => 'metrics.', 'prefix' => 'metrics'], function (Registrar $router) {
                     $router->get('/', [
                         'as'   => 'index',
                         'uses' => 'MetricController@showMetrics',

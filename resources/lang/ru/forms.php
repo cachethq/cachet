@@ -118,10 +118,10 @@ return [
             'analytics_piwik_siteid' => 'Идентификатор сайта в Piwik',
         ],
         'localization' => [
-            'site-timezone'          => 'Часовой пояс сайта',
-            'site-locale'            => 'Язык сайта',
-            'date-format'            => 'Формат даты',
-            'incident-date-format'   => 'Формат даты и времени для инцидента',
+            'site-timezone'        => 'Часовой пояс сайта',
+            'site-locale'          => 'Язык сайта',
+            'date-format'          => 'Формат даты',
+            'incident-date-format' => 'Формат даты и времени для инцидента',
         ],
         'security' => [
             'allowed-domains'      => 'Разрешённые домены',
