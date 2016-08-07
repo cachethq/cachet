@@ -96,7 +96,7 @@
                             ticks: {
                                 beginAtZero: true,
                                 suggestedMax: 0.1,
-                                fixedStepSize: result.data.metric.places,
+                                // fixedStepSize: result.data.metric.places,
                                 callback: function(tickValue, index, ticks) {
                                     var delta = ticks[1] - ticks[0];
 
