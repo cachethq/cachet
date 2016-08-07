@@ -31,7 +31,7 @@ class ComponentGroupPresenter extends BasePresenter implements Arrayable
     /**
      * Create a new component group presenter instance.
      *
-     * @param \CachetHQ\Cachet\Models\ComponentGroup     $resource
+     * @param \CachetHQ\Cachet\Models\ComponentGroup $resource
      * @param \McCool\LaravelAutoPresenter\AutoPresenter $presenter
      *
      * @return void
