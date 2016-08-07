@@ -82,6 +82,21 @@ return [
         ],
     ],
 
+    // Action form fields
+    'actions' => [
+        'name'               => 'Name',
+        'description'        => 'Description',
+        'start_at'           => 'Schedule start time',
+        'timezone'           => 'Timezone',
+        'schedule_frequency' => 'Schedule frequency (in seconds)',
+        'completion_latency' => 'Completion latency (in seconds)',
+        'group'              => 'Group',
+        'active'             => 'Active?',
+        'groups'             => [
+            'name' => 'Group Name',
+        ],
+    ],
+
     // Metric form fields
     'metrics' => [
         'name'             => 'Name',
@@ -175,6 +190,10 @@ return [
             'description' => 'Invite your team members by entering their email addresses here.',
             'email'       => 'Email #:id',
         ],
+    ],
+
+    'general' => [
+        'timezone' => 'Select Timezone',
     ],
 
     // Buttons
