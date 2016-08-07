@@ -11,14 +11,36 @@
 
 namespace CachetHQ\Cachet\Presenters;
 
+use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Presenters\Traits\TimestampsTrait;
 use Illuminate\Contracts\Support\Arrayable;
+use McCool\LaravelAutoPresenter\AutoPresenter;
 use McCool\LaravelAutoPresenter\BasePresenter;
-use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
 
 class ComponentGroupPresenter extends BasePresenter implements Arrayable
 {
     use TimestampsTrait;
+
+    /**
+     * This is the laravel auto presenter instance.
+     *
+     * @var \McCool\LaravelAutoPresenter\AutoPresenter
+     */
+    protected $presenter;
+
+    /**
+     * Create a new component group presenter instance.
+     *
+     * @param \CachetHQ\Cachet\Models\ComponentGroup     $resource
+     * @param \McCool\LaravelAutoPresenter\AutoPresenter $presenter
+     *
+     * @return void
+     */
+    public function __construct(ComponentGroup $resource, AutoPresenter $presenter)
+    {
+        $this->wrappedObject = $resource;
+        $this->presenter = $presenter;
+    }
 
     /**
      * Returns the lowest component status.
@@ -28,7 +50,7 @@ class ComponentGroupPresenter extends BasePresenter implements Arrayable
     public function lowest_status()
     {
         if ($component = $this->wrappedObject->enabled_components_lowest()->first()) {
-            return AutoPresenter::decorate($component)->status;
+            return $this->presenter->decorate($component)->status;
         }
     }
 
@@ -40,7 +62,7 @@ class ComponentGroupPresenter extends BasePresenter implements Arrayable
     public function lowest_human_status()
     {
         if ($component = $this->wrappedObject->enabled_components_lowest()->first()) {
-            return AutoPresenter::decorate($component)->human_status;
+            return $this->presenter->decorate($component)->human_status;
         }
     }
 
@@ -52,7 +74,7 @@ class ComponentGroupPresenter extends BasePresenter implements Arrayable
     public function lowest_status_color()
     {
         if ($component = $this->wrappedObject->enabled_components_lowest()->first()) {
-            return AutoPresenter::decorate($component)->status_color;
+            return $this->presenter->decorate($component)->status_color;
         }
     }
 
