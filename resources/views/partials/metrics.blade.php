@@ -81,7 +81,6 @@
                 data: {
                     labels: _.keys(data),
                     datasets: [{
-                        label: result.data.metric.name,
                         data: _.values(data),
                         backgroundColor: "{{ $theme_metrics }}",
                         borderColor: "{{ color_darken($theme_metrics, -0.1) }}",
@@ -126,8 +125,8 @@
                     },
                     tooltips: {
                         callbacks: {
-                            afterLabel: function(tooltipItem, data) {
-                                return " " + result.data.metric.suffix;
+                            label: function(tooltipItem, data) {
+                                return tooltipItem.yLabel + ' ' + result.data.metric.suffix;
                             }
                         }
                     }
