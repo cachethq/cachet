@@ -84,7 +84,7 @@ class CommandSubscriber
 
         event(new SystemWasInstalledEvent());
 
-        $command->success('System was installed!');
+        $command->info('System was installed!');
     }
 
     /**
@@ -100,7 +100,7 @@ class CommandSubscriber
 
         event(new SystemWasUpdatedEvent());
 
-        $command->success('System was updated!');
+        $command->info('System was updated!');
     }
 
     /**
@@ -116,7 +116,7 @@ class CommandSubscriber
 
         event(new SystemWasResetEvent());
 
-        $command->success('System was reset!');
+        $command->info('System was reset!');
     }
 
     /**
