@@ -24,19 +24,31 @@ use Illuminate\Support\ServiceProvider;
 class ComposerServiceProvider extends ServiceProvider
 {
     /**
+     * The view composers.
+     *
+     * @var array
+     */
+    protected $composers = [
+        AppComposer::class            => '*',
+        CurrentUserComposer::class    => '*',
+        MetricsComposer::class        => ['index'],
+        StatusPageComposer::class     => ['index', 'single-incident', 'subscribe', 'signup'],
+        ThemeComposer::class          => ['index', 'single-incident', 'subscribe.*', 'signup', 'dashboard.settings.theme', 'emails.*'],
+        DashboardComposer::class      => 'dashboard.*',
+        TimezoneLocaleComposer::class => ['setup', 'dashboard.settings.localization'],
+
+    ];
+
+    /**
      * Boot the service provider.
      *
      * @param \Illuminate\Contracts\View\Factory $factory
      */
     public function boot(Factory $factory)
     {
-        $factory->composer('*', AppComposer::class);
-        $factory->composer('*', CurrentUserComposer::class);
-        $factory->composer(['index'], MetricsComposer::class);
-        $factory->composer(['index', 'single-incident', 'subscribe', 'signup'], StatusPageComposer::class);
-        $factory->composer(['index', 'single-incident', 'subscribe.*', 'signup', 'dashboard.settings.theme', 'emails.*'], ThemeComposer::class);
-        $factory->composer('dashboard.*', DashboardComposer::class);
-        $factory->composer(['setup', 'dashboard.settings.localization'], TimezoneLocaleComposer::class);
+        foreach ($this->composers as $composer => $views) {
+            $factory->composer($views, $composer);
+        }
     }
 
     /**
