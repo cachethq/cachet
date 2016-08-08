@@ -87,16 +87,6 @@ return [
             'schema'   => env('DB_SCHEMA', 'public'),
         ],
 
-        'sqlsrv' => [
-            'driver'   => 'sqlsrv',
-            'host'     => env('DB_HOST', null),
-            'database' => env('DB_DATABASE', null),
-            'username' => env('DB_USERNAME', null),
-            'password' => env('DB_PASSWORD', null),
-            'port'     => env('DB_PORT', null),
-            'prefix'   => env('DB_PREFIX', null),
-        ],
-
     ],
 
     /*
