@@ -10,6 +10,8 @@ php:
 
 sudo: false
 
+before_install: cp .env.example .env
+
 install: travis_retry composer install --no-interaction --no-scripts --prefer-source
 
 script: vendor/bin/phpunit
