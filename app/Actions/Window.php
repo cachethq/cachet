@@ -12,13 +12,15 @@
 namespace CachetHQ\Cachet\Actions;
 
 use Carbon\Carbon;
+use Illuminate\Contracts\Support\Arrayable;
 
 /**
  * This is the timed action window class.
  *
- * @author Graham Campbell<graham@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
+ * @author James Brooks <james@alt-three.com>
  */
-class Window
+class Window implements Arrayable
 {
     /**
      * The window start time.
@@ -66,5 +68,18 @@ class Window
     public function end()
     {
         return $this->end->copy();
+    }
+
+    /**
+     * Get the instance as an array.
+     *
+     * @return array
+     */
+    public function toArray()
+    {
+        return [
+            'start' => $this->start()->toDateTimeString(),
+            'end'   => $this->end()->toDateTimeString(),
+        ];
     }
 }

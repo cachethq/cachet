@@ -33,6 +33,7 @@ class UpdateTimedActionCommandTest extends AbstractTestCase
             'name'                  => 'New Name',
             'description'           => 'New Description',
             'active'                => true,
+            'visible'               => true,
             'timed_action_group_id' => null,
         ];
 
@@ -41,6 +42,7 @@ class UpdateTimedActionCommandTest extends AbstractTestCase
             $params['name'],
             $params['description'],
             $params['active'],
+            $params['visible'],
             $params['timed_action_group_id']
         );
 

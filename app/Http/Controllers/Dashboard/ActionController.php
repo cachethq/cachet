@@ -125,6 +125,7 @@ class ActionController extends Controller
                 Binput::get('name'),
                 Binput::get('description'),
                 Binput::get('active'),
+                Binput::get('visible'),
                 Binput::get('start_at'),
                 Binput::get('timezone'),
                 Binput::get('window_length'),
@@ -208,6 +209,7 @@ class ActionController extends Controller
                 Binput::get('name'),
                 Binput::get('description'),
                 Binput::get('active'),
+                Binput::get('visible'),
                 Binput::get('timed_action_group_id')
             ));
         } catch (ValidationException $e) {

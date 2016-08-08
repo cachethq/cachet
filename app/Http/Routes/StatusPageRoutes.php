@@ -45,6 +45,11 @@ class StatusPageRoutes
                 'uses' => 'StatusPageController@getMetrics',
             ]);
 
+            $router->get('actions/{timed_action}', [
+                'as'   => 'actions',
+                'uses' => 'StatusPageController@getActions',
+            ]);
+
             $router->get('component/{component}/shield', 'StatusPageController@showComponentBadge');
         });
     }

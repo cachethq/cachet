@@ -12,17 +12,18 @@
 namespace CachetHQ\Cachet\Console\Commands;
 
 use CachetHQ\Cachet\Actions\ActionExceptionInterface;
-use CachetHQ\Cachet\Bus\Commands\TimedAction\CheckTimedActionCommand;
+use CachetHQ\Cachet\Actions\WindowFactory;
+use CachetHQ\Cachet\Bus\Commands\TimedAction\CreateTimedActionInstanceCommand;
 use CachetHQ\Cachet\Models\TimedAction;
 use Illuminate\Console\Command;
 
 /**
- * This is the time sensitive action checker command class.
+ * This is the time sensitive action generator command class.
  *
  * @author James Brooks <james@alt-three.com>
  * @author Graham Campbell <graham@alt-three.com>
  */
-class TSACheckerCommand extends Command
+class TSAGeneratorCommand extends Command
 {
     /**
      * The console command name.
@@ -36,7 +37,7 @@ class TSACheckerCommand extends Command
      *
      * @var string
      */
-    protected $description = 'Checks the time sensitive actions.';
+    protected $description = 'Generate the next time sensitive actions.';
 
     /**
      * Execute the console command.
@@ -45,12 +46,18 @@ class TSACheckerCommand extends Command
      */
     public function fire()
     {
-        foreach (TimedAction::started()->get() as $action) {
+        foreach (TimedAction::all() as $action) {
             try {
-                dispatch(new CheckTimedActionCommand($action));
+                $window = app(WindowFactory::class)->next($action);
             } catch (ActionExceptionInterface $e) {
-                // just means they're not started or matured
+                break;
             }
+
+            if ($action->instances()->window($window)->count() > 0) {
+                break;
+            }
+
+            dispatch(new CreateTimedActionInstanceCommand($action, $window->start()->toDateTimeString()));
         }
     }
 }

@@ -23,13 +23,20 @@
                     </div>
                     <div class="form-group">
                         <label for="action-description">{{ trans('forms.actions.description') }}</label>
-                        <textarea rows="4" class="form-control" name="description" id="action-description" required>{{ Binput::old('action.description', $action->description) }}</textarea>
+                        <textarea rows="4" class="form-control" name="description" id="action-description">{{ Binput::old('action.description', $action->description) }}</textarea>
                     </div>
                     <div class="checkbox">
                         <label>
                             <input type="hidden" value="0" name="active">
                             <input type="checkbox" value="1" name="active" {{ $action->active ? "checked" : null }}>
                             {{ trans('forms.actions.active') }}
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="hidden" value="0" name="visible">
+                            <input type="checkbox" value="1" name="visible" checked>
+                            {{ trans('forms.actions.visible') }}
                         </label>
                     </div>
                     @if($groups->count() > 0)
@@ -45,6 +52,34 @@
                     @else
                     <input type="hidden" name="timed_action_group_id" value="0">
                     @endif
+
+                    <hr>
+
+                    <div class="form-group">
+                        <label for="action-start_at">{{ trans('forms.actions.start_at') }}</label>
+                        <input type="text" class="form-control" name="start_at" id="action-start_at" disabled value="{{ $action->start_at }}" rel="datepicker">
+                    </div>
+                    <div class="form-group">
+                        <label>{{ trans('forms.actions.timezone') }}</label>
+                        <select name="timezone" class="form-control" disabled>
+                            <option disabled>Select Timezone</option>
+                            @foreach($timezones as $region => $list)
+                                <optgroup label="{{ $region }}">
+                                    @foreach($list as $timezone => $name)
+                                    <option value="{{ $timezone }}" @if($action->timezone == $timezone) selected @endif>{{ $timezone }}</option>
+                                    @endforeach
+                                </optgroup>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="action-window_length">{{ trans('forms.actions.window_length') }}</label>
+                        <input type="number" min="0" class="form-control" name="window_length" id="action-window_length" disabled value="{{ $action->window_length }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="action-completion_latency">{{ trans('forms.actions.completion_latency') }}</label>
+                        <input type="number" min="0" class="form-control" name="completion_latency" id="action-completion_latency" disabled value="{{ $action->completion_latency }}">
+                    </div>
                 </fieldset>
                 <div class='form-group'>
                     <div class='btn-group'>

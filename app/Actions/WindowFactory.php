@@ -30,9 +30,9 @@ class WindowFactory
      *
      * @return \CachetHQ\Cachet\Actions\Window
      */
-    public function current(TimedAction $action)
+    public function next(TimedAction $action)
     {
-        return new Window($this->currentWindowStart($action), $action->window_length);
+        return new Window($this->nextWindowStart($action), $action->window_length);
     }
 
     /**
@@ -40,13 +40,37 @@ class WindowFactory
      *
      * @param \CachetHQ\Cachet\Models\TimedAction $action
      *
-     * @throws \CachetHQ\Cachet\Actions\ActionNotStartedException|\CachetHQ\Cachet\Actions\ActionNotMatureException
+     * @throws \CachetHQ\Cachet\Actions\ActionNotStartedException|\CachetHQ\Cachet\Actions\ActionNotMaturedException
      *
      * @return \CachetHQ\Cachet\Actions\Window
      */
-    public function previous(TimedAction $action)
+    public function current(TimedAction $action)
     {
-        return new Window($this->previousWindowStart($action), $action->window_length);
+        return new Window($this->currentWindowStart($action), $action->window_length);
+    }
+
+    /**
+     * Get the start time of the previous window.
+     *
+     * @param \CachetHQ\Cachet\Models\TimedAction $action
+     *
+     * @throws \CachetHQ\Cachet\Actions\ActionNotStartedException|\CachetHQ\Cachet\Actions\ActionNotMaturedException
+     *
+     * @return \Carbon\Carbon
+     */
+    protected function nextWindowStart(TimedAction $action)
+    {
+        $now = Carbon::now();
+
+        $diff = $now->diffInSeconds($action->start_at->copy()->addSeconds($action->window_length), false);
+
+        if ($diff > 0) {
+            throw new ActionNotMaturedException("The timed action is only due to mature in {$diff} seconds");
+        }
+
+        $offset = -$diff % $action->window_length;
+
+        return $now->copy()->subSeconds($offset);
     }
 
     /**
@@ -60,36 +84,12 @@ class WindowFactory
      */
     protected function currentWindowStart(TimedAction $action)
     {
-        $now = Carbon::now();
-
-        $diff = $now->diffInSeconds($action->start_at, false);
-
-        if ($diff > 0) {
-            throw new ActionNotStartedException("The timed action is only due to start in {$diff} seconds");
-        }
-
-        $offset = -$diff % $action->window_length;
-
-        return $now->copy()->subSeconds($offset);
-    }
-
-    /**
-     * Get the start time of the previous window.
-     *
-     * @param \CachetHQ\Cachet\Models\TimedAction $action
-     *
-     * @throws \CachetHQ\Cachet\Actions\ActionNotStartedException|\CachetHQ\Cachet\Actions\ActionNotMatureException
-     *
-     * @return \Carbon\Carbon
-     */
-    protected function previousWindowStart(TimedAction $action)
-    {
-        $start = $this->currentWindowStart($action)->subSeconds($action->window_length);
+        $start = $this->nextWindowStart($action)->subSeconds($action->window_length);
 
         $diff = Carbon::now()->diffInSeconds($start, false);
 
         if ($diff > 0) {
-            throw new ActionNotMatureException("The timed action is only due to mature in {$diff} seconds");
+            throw new ActionNotStartedException("The timed action is only due to start in {$diff} seconds");
         }
 
         return $start;

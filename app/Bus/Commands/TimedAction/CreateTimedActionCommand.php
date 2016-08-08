@@ -40,6 +40,13 @@ final class CreateTimedActionCommand
     public $active;
 
     /**
+     * Whether the timed action is visible on the status page.
+     *
+     * @var bool
+     */
+    public $visible;
+
+    /**
      * The schedule start time.
      *
      * @var string
@@ -75,11 +82,12 @@ final class CreateTimedActionCommand
     public $timed_action_group_id;
 
     /**
-     * Create a new created timed action command instance.
+     * Create a new create timed action command instance.
      *
      * @param string   $name
      * @param string   $description
      * @param bool     $active
+     * @param bool     $visible
      * @param string   $start_at
      * @param string   $timezone
      * @param int      $window_length
@@ -88,12 +96,13 @@ final class CreateTimedActionCommand
      *
      * @return void
      */
-    public function __construct($name, $description, $active, $start_at, $timezone, $window_length, $completion_latency, $timed_action_group_id = null)
+    public function __construct($name, $description, $active, $visible, $start_at, $timezone, $window_length, $completion_latency, $timed_action_group_id = null)
     {
         $this->name = $name;
         $this->description = $description;
         $this->start_at = $start_at;
         $this->active = $active;
+        $this->visible = $visible;
         $this->timezone = $timezone;
         $this->window_length = $window_length;
         $this->completion_latency = $completion_latency;

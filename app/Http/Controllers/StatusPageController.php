@@ -17,7 +17,9 @@ use CachetHQ\Cachet\Http\Controllers\Api\AbstractApiController;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\Metric;
+use CachetHQ\Cachet\Models\TimedAction;
 use CachetHQ\Cachet\Repositories\Metric\MetricRepository;
+use Carbon\Carbon;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
@@ -36,15 +38,24 @@ class StatusPageController extends AbstractApiController
     protected $metricRepository;
 
     /**
+     * The date factory instance.
+     *
+     * @var \CachetHQ\Cachet\Dates\DateFactory
+     */
+    protected $dates;
+
+    /**
      * Construct a new status page controller instance.
      *
      * @param \CachetHQ\Cachet\Repositories\Metric\MetricRepository $metricRepository
+     * @param \CachetHQ\Cachet\Dates\DateFactory                    $dates
      *
      * @return void
      */
-    public function __construct(MetricRepository $metricRepository)
+    public function __construct(MetricRepository $metricRepository, DateFactory $dates)
     {
         $this->metricRepository = $metricRepository;
+        $this->dates = $dates;
     }
 
     /**
@@ -157,6 +168,34 @@ class StatusPageController extends AbstractApiController
         return $this->item([
             'metric' => $metric->toArray(),
             'items'  => $metricData,
+        ]);
+    }
+
+    /**
+     * Returns all time sensitive action instances over the last 30 days.
+     *
+     * @param \CachetHQ\Cachet\Models\TimedAction $action
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function getActions(TimedAction $action)
+    {
+        $actionData = [];
+
+        $instances = $action->instances()->where('started_at', '>=', Carbon::now()->subDays(30))->orderBy('created_at', 'desc')->limit(30)->get();
+
+        $items = [];
+
+        foreach (AutoPresenter::decorate($instances)->reverse() as $instance) {
+            $items[$instance->started_at->format('Y-m-d H:i')] = [
+                'time_taken'   => $instance->is_completed ? $instance->started_at->diffInSeconds($instance->completed_at) : 0,
+                'completed_at' => $instance->is_completed ? $instance->completed_at->format('H:i') : null,
+            ];
+        }
+
+        return $this->item([
+            'action' => array_except(AutoPresenter::decorate($action)->toArray(), 'instances'),
+            'items'  => $items,
         ]);
     }
 

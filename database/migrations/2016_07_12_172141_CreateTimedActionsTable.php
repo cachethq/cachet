@@ -28,6 +28,7 @@ class CreateTimedActionsTable extends Migration
             $table->integer('timed_action_group_id')->unsigned()->nullable()->default(null);
             $table->text('description')->nullable()->default(null);
             $table->boolean('active')->default(false);
+            $table->boolean('visible')->default(false);
             $table->timestamp('start_at');
             $table->string('timezone');
             $table->integer('window_length')->unsigned(); // In seconds

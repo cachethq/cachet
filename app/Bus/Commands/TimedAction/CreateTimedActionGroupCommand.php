@@ -33,7 +33,7 @@ final class CreateTimedActionGroupCommand
     public $order;
 
     /**
-     * Create a new created timed action group command instance.
+     * Create a new create timed action group command instance.
      *
      * @param string $name
      * @param int    $order

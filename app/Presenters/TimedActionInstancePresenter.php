@@ -23,7 +23,25 @@ use McCool\LaravelAutoPresenter\BasePresenter;
  */
 class TimedActionInstancePresenter extends BasePresenter implements Arrayable
 {
-    use TimestampsTrait;
+    /**
+     * Present formatted date time.
+     *
+     * @return string
+     */
+    public function created_at()
+    {
+        return app(DateFactory::class)->make($this->wrappedObject->created_at, $this->wrappedObject->instance->timezone)->toDateTimeString();
+    }
+
+    /**
+     * Present formatted date time.
+     *
+     * @return string
+     */
+    public function updated_at()
+    {
+        return app(DateFactory::class)->make($this->wrappedObject->updated_at, $this->wrappedObject->instance->timezone)->toDateTimeString();
+    }
 
     /**
      * Did the instance get completed at the expected time, within the completion latency?

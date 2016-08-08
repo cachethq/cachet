@@ -23,7 +23,7 @@
                     </div>
                     <div class="form-group">
                         <label for="action-description">{{ trans('forms.actions.description') }}</label>
-                        <textarea rows="4" class="form-control" name="description" id="action-description" required value="{{ Binput::old('description') }}"></textarea>
+                        <textarea rows="4" class="form-control" name="description" id="action-description" value="{{ Binput::old('description') }}"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="action-start_at">{{ trans('forms.actions.start_at') }}</label>
@@ -36,7 +36,7 @@
                             @foreach($timezones as $region => $list)
                                 <optgroup label="{{ $region }}">
                                     @foreach($list as $timezone => $name)
-                                        <option value="{{ $timezone }}" @if(Config::get('cachet.timezone') == $timezone) selected @endif>{{ $timezone }}</option>
+                                    <option value="{{ $timezone }}" @if(Config::get('cachet.timezone') == $timezone) selected @endif>{{ $timezone }}</option>
                                     @endforeach
                                 </optgroup>
                             @endforeach
@@ -68,6 +68,13 @@
                             <input type="hidden" value="0" name="active">
                             <input type="checkbox" value="1" name="active" checked>
                             {{ trans('forms.actions.active') }}
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="hidden" value="0" name="visible">
+                            <input type="checkbox" value="1" name="visible" checked>
+                            {{ trans('forms.actions.visible') }}
                         </label>
                     </div>
                 </fieldset>

@@ -49,6 +49,13 @@ final class UpdateTimedActionCommand
     public $active;
 
     /**
+     * Whether the timed action is visible on the status page.
+     *
+     * @var bool
+     */
+    public $visible;
+
+    /**
      * The group in which to place the timed action.
      *
      * @var int|null
@@ -62,16 +69,18 @@ final class UpdateTimedActionCommand
      * @param string                              $name
      * @param string                              $description
      * @param bool                                $active
+     * @param bool                                $visible
      * @param int|null                            $timed_action_group_id
      *
      * @return void
      */
-    public function __construct(TimedAction $action, $name, $description, $active, $timed_action_group_id = null)
+    public function __construct(TimedAction $action, $name, $description, $active, $visible, $timed_action_group_id = null)
     {
         $this->action = $action;
         $this->name = $name;
         $this->description = $description;
         $this->active = $active;
+        $this->visible = $visible;
         $this->timed_action_group_id = $timed_action_group_id;
     }
 }

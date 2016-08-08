@@ -49,6 +49,7 @@ class UpdateTimedActionCommandHandler
             'name'                  => $command->name,
             'description'           => $command->description,
             'active'                => $command->active,
+            'visible'               => $command->visible,
             'timed_action_group_id' => $command->timed_action_group_id,
         ];
 

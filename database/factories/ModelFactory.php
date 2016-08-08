@@ -141,7 +141,6 @@ $factory->define(TimedActionInstance::class, function ($faker) {
     return [
         'timed_action_id' => factory(TimedAction::class)->create()->id,
         'message'         => $faker->sentence(),
-        'status'          => 0,
         'started_at'      => $startedAt,
         'completed_at'    => $completedAt,
     ];

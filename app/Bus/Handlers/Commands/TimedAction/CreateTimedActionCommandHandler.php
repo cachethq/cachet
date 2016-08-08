@@ -57,6 +57,7 @@ class CreateTimedActionCommandHandler
             'name'                  => $command->name,
             'description'           => $command->description,
             'active'                => $command->active,
+            'visible'               => $command->visible,
             'start_at'              => $this->dates->create($format, $command->start_at),
             'timezone'              => $command->timezone,
             'window_length'         => $command->window_length,

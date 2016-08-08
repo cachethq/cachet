@@ -41,6 +41,7 @@ class TimedAction extends Model implements HasPresenter
         'name'                  => 'string',
         'description'           => 'string',
         'active'                => 'bool',
+        'visible'               => 'bool',
         'start_at'              => 'date',
         'timezone'              => 'string',
         'window_length'         => 'int',
@@ -58,6 +59,7 @@ class TimedAction extends Model implements HasPresenter
         'timed_action_group_id',
         'description',
         'active',
+        'visible',
         'start_at',
         'timezone',
         'window_length',
@@ -77,6 +79,7 @@ class TimedAction extends Model implements HasPresenter
         'timed_action_group_id' => 'int',
         'description'           => 'string',
         'active'                => 'bool',
+        'visible'               => 'bool',
         'timezone'              => 'string|required',
         'window_length'         => 'int|required',
         'completion_latency'    => 'int|required',
@@ -92,6 +95,7 @@ class TimedAction extends Model implements HasPresenter
         'timed_action_group_id',
         'description',
         'active',
+        'visible',
         'start_at',
         'timezone',
         'window_length',
@@ -112,6 +116,7 @@ class TimedAction extends Model implements HasPresenter
         'timed_action_group_id',
         'description',
         'active',
+        'visible',
         'start_at',
         'timezone',
         'window_length',
@@ -128,7 +133,7 @@ class TimedAction extends Model implements HasPresenter
      */
     public function instances()
     {
-        return $this->hasMany(TimedActionInstance::class);
+        return $this->hasMany(TimedActionInstance::class)->orderBy('started_at', 'desc');
     }
 
     /**

@@ -14,11 +14,11 @@ namespace CachetHQ\Cachet\Actions;
 use RuntimeException;
 
 /**
- * This is the action not mature exception class.
+ * This is the action not matured exception class.
  *
  * @author Graham Campbell <graham@alt-three.com>
  */
-class ActionNotMatureException extends RuntimeException implements ActionExceptionInterface
+class ActionNotMaturedException extends RuntimeException implements ActionExceptionInterface
 {
     //
 }

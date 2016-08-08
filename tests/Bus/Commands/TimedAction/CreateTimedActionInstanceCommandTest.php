@@ -30,19 +30,13 @@ class CreateTimedActionInstanceCommandTest extends AbstractTestCase
     protected function getObjectAndParams()
     {
         $params = [
-            'action'       => new TimedAction(),
-            'message'      => null,
-            'started_at'   => Carbon::now()->toDateTimeString(),
-            'completed_at' => Carbon::now()->toDateTimeString(),
-            'failed'       => false,
+            'action'     => new TimedAction(),
+            'started_at' => Carbon::now()->toDateTimeString(),
         ];
 
         $object = new CreateTimedActionInstanceCommand(
             $params['action'],
-            $params['message'],
-            $params['started_at'],
-            $params['completed_at'],
-            $params['failed']
+            $params['started_at']
         );
 
         return compact('params', 'object');
@@ -50,7 +44,7 @@ class CreateTimedActionInstanceCommandTest extends AbstractTestCase
 
     protected function objectHasRules()
     {
-        return false;
+        return true;
     }
 
     protected function getHandlerClass()

@@ -28,25 +28,14 @@ class TimedActionInstance extends Model
     use SearchableTrait, SortableTrait, ValidatingTrait;
 
     /**
-     * The instance was successfully created naturally.
+     * The model's attributes.
      *
-     * @var int
+     * @var array
      */
-    const SUCCESSFUL = 0;
-
-    /**
-     * The api was posted in a time window, but the latency period has already passed.
-     *
-     * @var int
-     */
-    const LATE = 1;
-
-    /**
-     * The instancw was created by our cron job.
-     *
-     * @var int
-     */
-    const FAILED = 2;
+    protected $attributes = [
+        'message'      => null,
+        'completed_at' => null,
+    ];
 
     /**
      * The attributes that should be casted to native types.
@@ -56,7 +45,6 @@ class TimedActionInstance extends Model
     protected $casts = [
         'timed_action_id' => 'int',
         'message'         => 'string',
-        'status'          => 'int',
         'started_at'      => 'date',
         'completed_at'    => 'date',
     ];
@@ -69,7 +57,6 @@ class TimedActionInstance extends Model
     protected $fillable = [
         'timed_action_id',
         'message',
-        'status',
         'started_at',
         'completed_at',
         'created_at',
@@ -83,9 +70,8 @@ class TimedActionInstance extends Model
      */
     public $rules = [
         'timed_action_id' => 'required|int',
-        'status'          => 'required|int|min:0|max:2',
         'started_at'      => 'required|date',
-        'completed_at'    => 'required|date',
+        'completed_at'    => 'date',
     ];
 
     /**
@@ -95,7 +81,6 @@ class TimedActionInstance extends Model
      */
     protected $searchable = [
         'id',
-        'status',
         'started_at',
         'completed_at',
     ];
@@ -136,38 +121,37 @@ class TimedActionInstance extends Model
     }
 
     /**
-     * Scope instances to those that were successful.
+     * Scope instances to those after the given window.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
+     * @param \CachetHQ\Cachet\Actions\Window       $window
      *
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function scopeSuccessful(Builder $query)
+    public function scopeAfterWindow(Builder $query, Window $window)
     {
-        return $query->where('status', self::SUCCESSFUL);
+        return $query->where('created_at', '>=', $window->start());
     }
 
     /**
-     * Scope instances to those that were late.
+     * Was the instance submitted late?
      *
-     * @param \Illuminate\Database\Eloquent\Builder $query
-     *
-     * @return \Illuminate\Database\Eloquent\Builder
+     * @return bool
      */
-    public function scopeLate(Builder $query)
+    public function getIsLateAttribute()
     {
-        return $query->where('status', self::LATE);
+        $diff = $this->started_at->addSeconds($this->action->completion_latency);
+
+        return $this->completed_at->gt($diff);
     }
 
     /**
-     * Scope instances to those that failed.
+     * Was the instance completed?
      *
-     * @param \Illuminate\Database\Eloquent\Builder $query
-     *
-     * @return \Illuminate\Database\Eloquent\Builder
+     * @return bool
      */
-    public function scopeFailed(Builder $query)
+    public function getIsCompletedAttribute()
     {
-        return $query->where('status', self::FAILED);
+        return $this->completed_at !== null;
     }
 }
