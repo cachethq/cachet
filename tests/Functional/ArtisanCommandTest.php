@@ -16,12 +16,12 @@ use Illuminate\Contracts\Console\Kernel;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 /**
- * This is the command test class.
+ * This is the artisan command test class.
  *
  * @author Graham Campbell <graham@alt-three.com>
  * @author James Brooks <james@alt-three.com>
  */
-class CommandTest extends AbstractTestCase
+class ArtisanCommandTest extends AbstractTestCase
 {
     use DatabaseMigrations;
 
