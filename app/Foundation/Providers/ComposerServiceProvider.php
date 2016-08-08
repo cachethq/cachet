@@ -36,7 +36,6 @@ class ComposerServiceProvider extends ServiceProvider
         ThemeComposer::class          => ['index', 'single-incident', 'subscribe.*', 'signup', 'dashboard.settings.theme', 'emails.*'],
         DashboardComposer::class      => 'dashboard.*',
         TimezoneLocaleComposer::class => ['setup', 'dashboard.settings.localization'],
-
     ];
 
     /**
