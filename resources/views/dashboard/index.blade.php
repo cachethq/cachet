@@ -18,7 +18,6 @@
 
     <div class="row">
       <div class="col-md-12">
-          <h4 class="sub-header">{{ trans('dashboard.components.component_statuses') }}</h4>
           <div class="section-components">
               @if(!$component_groups->isEmpty() || !$ungrouped_components->isEmpty())
               @include('dashboard.partials.components')
