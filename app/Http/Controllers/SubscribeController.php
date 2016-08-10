@@ -180,8 +180,6 @@ class SubscribeController extends Controller
         try {
             dispatch(new UpdateSubscriberSubscriptionCommand($subscriber, Binput::get('subscriptions')));
         } catch (ValidationException $e) {
-            dd($e->getMessageBag());
-
             return Redirect::route('subscribe.manage', $subscriber->verify_code)
                 ->withInput(Binput::all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('cachet.subscriber.email.failure')))
