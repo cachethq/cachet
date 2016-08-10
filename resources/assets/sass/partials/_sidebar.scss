@@ -6,7 +6,7 @@ body.dashboard {
         height: 100%;
         margin-left: -$sidebar-normal-width;
         overflow-y: auto;
-        background: $sidebar-background-color;
+        background: $cachet-base-dark;
         @include box-shadow($sidebar-border-shadow);
         z-index: 1000;
         -webkit-transition: all 0.5s ease;
@@ -66,13 +66,20 @@ body.dashboard {
 
                 li {
                     font-size: $sidebar-text-size;
+                    &:focus,
+                    &:hover {
+                        background: lighten($cachet-base-dark, 5%) !important;
+                    }
                     &.active {
-                        background: lighten($sidebar-background-color, 2%);
+                        background: lighten($cachet-base-dark, 10%);
+                        &:hover {
+                            background: lighten($cachet-base-dark, 15%) !important;
+                        }
                         a {
                             padding-top: 14px;
                             padding-bottom: 14px;
-                            border-top: 1px solid #6c818c;
-                            border-bottom: 1px solid #6c818c;
+                            border-top: 1px solid $cachet-gray-darker;
+                            border-bottom: 1px solid $cachet-gray-darker;
                             color: $sidebar-text-active-color;
                             &:focus,
                             &:hover {
@@ -100,9 +107,9 @@ body.dashboard {
                         span {
                             &.label {
                                 float: right;
-                                margin: 6px 0;
+                                margin: 3px 0;
                                 &.label-info {
-                                    background-color: $cachet-primary;
+                                    background-color: $cachet-secondary;
                                 }
                             }
                         }
@@ -204,7 +211,7 @@ body.dashboard {
         position: fixed;
         margin-left: 228px;
         width: 22%;
-        background: #f9fdff;
+        background: #F0F3F4;
         border-right: 1px solid #E8ECF1;
 
         h3 {
