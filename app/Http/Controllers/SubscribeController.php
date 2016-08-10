@@ -69,12 +69,12 @@ class SubscribeController extends Controller
                 ->withErrors($e->getMessageBag());
         }
 
-        $message = $subscription->is_verified ?
-            trans('cachet.subscriber.email.already-subscribed', ['email' => $email]) :
-            trans('cachet.subscriber.email.subscribed');
+        if ($subscription->is_verified) {
+            return Redirect::route('status-page')->withSuccess(trans('cachet.subscriber.email.already-subscribed', ['email' => $email]));
+        }
 
         return Redirect::route('subscribe.manage', $subscription->verify_code)
-            ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), $message));
+            ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('cachet.subscriber.email.subscribed')));
     }
 
     /**
