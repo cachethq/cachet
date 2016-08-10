@@ -99,17 +99,6 @@ class DashboardController extends Controller
     }
 
     /**
-     * Shows the notifications view.
-     *
-     * @return \Illuminate\View\View
-     */
-    public function showNotifications()
-    {
-        return View::make('dashboard.notifications.index')
-            ->withPageTitle(trans('dashboard.notifications.notifications').' '.trans('dashboard.dashboard'));
-    }
-
-    /**
      * Fetches all of the incidents over the last 30 days.
      *
      * @return \Illuminate\Support\Collection
