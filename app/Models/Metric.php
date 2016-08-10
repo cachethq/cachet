@@ -117,7 +117,7 @@ class Metric extends Model implements HasPresenter
     ];
 
     /**
-     * Metrics contain many metric points.
+     * Get the points relation.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */

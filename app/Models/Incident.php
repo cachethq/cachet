@@ -92,6 +92,16 @@ class Incident extends Model implements HasPresenter
     ];
 
     /**
+     * Get the component relation.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function component()
+    {
+        return $this->belongsTo(Component::class, 'component_id', 'id');
+    }
+
+    /**
      * Finds all visible incidents.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
@@ -129,16 +139,6 @@ class Incident extends Model implements HasPresenter
                 $query->whereNull('scheduled_at')->orWhere('scheduled_at', '<=', Carbon::now()->toDateTimeString());
             });
         });
-    }
-
-    /**
-     * An incident belongs to a component.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function component()
-    {
-        return $this->belongsTo(Component::class, 'component_id', 'id');
     }
 
     /**

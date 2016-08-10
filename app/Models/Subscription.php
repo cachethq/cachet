@@ -50,7 +50,7 @@ class Subscription extends Model
     ];
 
     /**
-     * A subscription belongs to a subscriber.
+     * Get the subscriber relation.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -60,7 +60,7 @@ class Subscription extends Model
     }
 
     /**
-     * A subscription has one component.
+     * Get the component relation.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */

@@ -45,7 +45,7 @@ class Tag extends Model
     }
 
     /**
-     * Tags can have many components.
+     * Get the components relation.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
