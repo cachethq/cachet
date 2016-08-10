@@ -10,7 +10,6 @@
 
 <script>
 (function() {
-    console.log(document.getElementById('cm-editor'));
     var editor = CodeMirror.fromTextArea(document.getElementById('cm-editor'), {
         lineNumbers: true,
         mode: 'twig',
