@@ -18,7 +18,7 @@
 
     <div class="row">
       <div class="col-md-12">
-          <div class="section-components">
+          <div class="section-components no-select">
               @if(!$component_groups->isEmpty() || !$ungrouped_components->isEmpty())
               @include('dashboard.partials.components')
               @else
