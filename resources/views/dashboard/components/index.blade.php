@@ -10,7 +10,7 @@
                 <span class="uppercase">
                     <i class="ion ion-ios-browsers-outline"></i> {{ trans('dashboard.components.components') }}
                 </span>
-                <a class="btn btn-sm btn-success pull-right" href="{{ route('dashboard.components.add') }}">
+                <a class="btn btn-md btn-success pull-right" href="{{ route('dashboard.components.add') }}">
                     {{ trans('dashboard.components.add.title') }}
                 </a>
                 <div class="clearfix"></div>

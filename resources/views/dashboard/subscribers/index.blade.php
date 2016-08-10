@@ -9,7 +9,7 @@
         <i class="ion ion-ios-email-outline"></i> {{ trans('dashboard.subscribers.subscribers') }}
     </span>
     @if($current_user->isAdmin && subscribers_enabled())
-    <a class="btn btn-sm btn-success pull-right" href="{{ route('dashboard.subscribers.add') }}">
+    <a class="btn btn-md btn-success pull-right" href="{{ route('dashboard.subscribers.add') }}">
         {{ trans('dashboard.subscribers.add.title') }}
     </a>
     @endif

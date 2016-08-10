@@ -10,7 +10,7 @@
                 <span class="uppercase">
                     <i class="ion ion-android-calendar"></i> {{ trans('dashboard.schedule.schedule') }}
                 </span>
-                <a class="btn btn-sm btn-success pull-right" href="{{ route('dashboard.schedule.add') }}">
+                <a class="btn btn-md btn-success pull-right" href="{{ route('dashboard.schedule.add') }}">
                     {{ trans('dashboard.schedule.add.title') }}
                 </a>
                 <div class="clearfix"></div>

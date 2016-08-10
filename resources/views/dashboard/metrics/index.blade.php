@@ -8,7 +8,7 @@
         <span class="uppercase">
             <i class="ion ion-ios-pie-outline"></i> {{ trans('dashboard.metrics.metrics') }}
         </span>
-        <a class="btn btn-sm btn-success pull-right" href="{{ route('dashboard.metrics.add') }}">
+        <a class="btn btn-md btn-success pull-right" href="{{ route('dashboard.metrics.add') }}">
             {{ trans('dashboard.metrics.add.title') }}
         </a>
         <div class="clearfix"></div>

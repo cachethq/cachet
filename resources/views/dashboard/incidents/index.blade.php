@@ -10,7 +10,7 @@
                 <span class="uppercase">
                     <i class="ion ion-ios-information-outline"></i> {{ trans('dashboard.incidents.incidents') }}
                 </span>
-                <a class="btn btn-sm btn-success pull-right" href="{{ route('dashboard.incidents.add') }}">
+                <a class="btn btn-md btn-success pull-right" href="{{ route('dashboard.incidents.add') }}">
                     {{ trans('dashboard.incidents.add.title') }}
                 </a>
                 <div class="clearfix"></div>
