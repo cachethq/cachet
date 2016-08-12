@@ -41,6 +41,10 @@ class LoadConfiguration extends BaseLoadConfiguration
         $configPath = realpath(plugin_path('enabled'));
         $configPath = glob("${configPath}/*/*/config");
 
+        if (empty($configPath)) {
+            return $files;
+        }
+
         foreach (Finder::create()->files()->name('*.php')->in($configPath) as $path => $file) {
             $nesting = $this->getConfigurationNesting($file, dirname($path));
             $key = $nesting.basename($file->getRealPath(), '.php');
