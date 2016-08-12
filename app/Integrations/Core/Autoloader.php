@@ -12,7 +12,8 @@
 namespace CachetHQ\Cachet\Integrations\Core;
 
 use CachetHQ\Cachet\Integrations\Contracts\Autoloader as AutoloaderContract;
-use CachetHQ\Cachet\Integrations\Exceptions\Autoloader\DumpFailedException;
+use CachetHQ\Cachet\Integrations\Exceptions\Autoloader\UpdateFailedException;
+use Symfony\Component\Process\Exception\ProcessFailedException;
 use Symfony\Component\Process\Process;
 
 class Autoloader implements AutoloaderContract
@@ -47,9 +48,7 @@ class Autoloader implements AutoloaderContract
 
         $process->setCommandLine("{$this->composer} update --lock");
 
-        try {
-            $process->mustRun();
-        } catch (Exception $e) {
+        if (!$process->run()) {
             throw new UpdateFailedException();
         }
     }

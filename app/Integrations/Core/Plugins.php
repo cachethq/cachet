@@ -13,6 +13,7 @@ namespace CachetHQ\Cachet\Integrations\Core;
 
 use CachetHQ\Cachet\Integrations\Contracts\Plugins as PluginsContract;
 use CachetHQ\Cachet\Integrations\Contracts\Autoloader as AutoloaderContract;
+use CachetHQ\Cachet\Integrations\Exceptions\Autoloader\UpdateFailedException;
 use CachetHQ\Cachet\Models\Plugin;
 use Illuminate\Contracts\Filesystem\Filesystem;
 
@@ -60,7 +61,15 @@ class Plugins implements PluginsContract
         set_time_limit(60 * 15);
 
         $this->filesystem->move("disabled/{$plugin->name}", "enabled/{$plugin->name}");
-        $this->autoloader->update();
+
+        try {
+            $this->autoloader->update();
+        } catch (UpdateFailedException $e) {
+            $this->filesystem->move("enabled/{$plugin->name}", "disabled/{$plugin->name}");
+            $this->autoloader->update();
+
+            throw new PluginFailedToEnableException();
+        }
 
         $plugin->update(['enabled' => true]);
 
