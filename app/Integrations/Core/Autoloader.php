@@ -48,7 +48,7 @@ class Autoloader implements AutoloaderContract
 
         $process->setCommandLine("{$this->composer} update --lock");
 
-        if (!$process->run()) {
+        if ($process->run() !== 0) {
             throw new UpdateFailedException();
         }
     }

@@ -16,6 +16,7 @@ use CachetHQ\Cachet\Integrations\Contracts\Autoloader as AutoloaderContract;
 use CachetHQ\Cachet\Integrations\Exceptions\Autoloader\UpdateFailedException;
 use CachetHQ\Cachet\Models\Plugin;
 use Illuminate\Contracts\Filesystem\Filesystem;
+use Illuminate\Support\Facades\Artisan;
 
 class Plugins implements PluginsContract
 {
@@ -60,13 +61,22 @@ class Plugins implements PluginsContract
     {
         set_time_limit(60 * 15);
 
+        Artisan::call('config:clear');
+        Artisan::call('route:clear');
+
         $this->filesystem->move("disabled/{$plugin->name}", "enabled/{$plugin->name}");
 
         try {
             $this->autoloader->update();
         } catch (UpdateFailedException $e) {
             $this->filesystem->move("enabled/{$plugin->name}", "disabled/{$plugin->name}");
+
+            Artisan::call('config:clear');
+            Artisan::call('route:clear');
+
             $this->autoloader->update();
+
+            die;
 
             throw new PluginFailedToEnableException();
         }
