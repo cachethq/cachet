@@ -62,7 +62,7 @@ return [
     |
     */
 
-    'filters' => ['password'],
+    'filters' => ['api_token', 'password', 'X-Cachet-Token'],
 
     /*
     |--------------------------------------------------------------------------
@@ -95,7 +95,19 @@ return [
     |
     */
 
-    'user' => true,
+    'user' => false,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Events
+    |--------------------------------------------------------------------------
+    |
+    | Enable this if you'd like us to automatically record all fired events as
+    | breadcrumbs. This includes both framework and user dispatched events.
+    |
+    */
+
+    'events' => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -108,8 +120,9 @@ return [
     */
 
     'proxy' => array_filter([
+        'http'  => env('HTTP_PROXY'),
         'https' => env('HTTPS_PROXY'),
-        'no'    => explode(',', str_replace(' ', '', env('NO_PROXY', ''))) ?: null,
+        'no'    => empty(env('NO_PROXY')) ? null : explode(',', str_replace(' ', '', env('NO_PROXY'))),
     ]),
 
 ];
