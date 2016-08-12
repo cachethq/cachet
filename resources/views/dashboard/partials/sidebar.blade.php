@@ -62,6 +62,12 @@
                     <span>{{ trans('dashboard.team.team') }}</span>
                 </a>
             </li>
+            <li {!! set_active('dashboard/plugins*') !!}>
+                <a href="{{ route('dashboard.plugins.index') }}">
+                    <i class="ion ion-ios-color-filter-outline"></i>
+                    <span>{{ trans('dashboard.plugins.plugins') }}</span>
+                </a>
+            </li>
             <li {!! set_active('dashboard/settings*') !!}>
                 <a href="{{ route('dashboard.settings.setup') }}">
                     <i class="ion ion-ios-gear-outline"></i>

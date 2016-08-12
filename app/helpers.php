@@ -115,3 +115,34 @@ if (!function_exists('color_contrast')) {
         return ($yiq >= 128) ? 'black' : 'white';
     }
 }
+
+if (! function_exists('plugin_path')) {
+    /**
+     * Get the path to the plugins folder.
+     *
+     * @param  boolean $enabled
+     * @param  string  $vendor
+     * @param  string  $package
+     *
+     * @return string
+     */
+    function plugin_path($enabled = null, $vendor = null, $package = null)
+    {
+        $path = base_path('plugins');
+        if ($enabled === null) {
+            return $path;
+        }
+
+        $path .= DIRECTORY_SEPARATOR.($enabled ? 'enabled' : 'disabled');
+        if ($vendor === null) {
+            return $path;
+        }
+
+        $path .= DIRECTORY_SEPARATOR.$vendor;
+        if ($package === null) {
+            return $path;
+        }
+
+        return $path.DIRECTORY_SEPARATOR.$package;
+    }
+}
