@@ -36,8 +36,8 @@
                         <a href="/dashboard/plugins/{{ $plugin->id }}/disable" class="btn btn-default">{{ trans('forms.plugins.actions.disable') }}</a>
                     @else
                         <a href="/dashboard/plugins/{{ $plugin->id }}/enable" class="btn btn-default">{{ trans('forms.plugins.actions.enable') }}</a>
-                    @endif
                         <a href="/dashboard/plugins/{{ $plugin->id }}/uninstall" class="btn btn-danger confirm-action" data-method="DELETE">{{ trans('forms.plugins.actions.uninstall') }}</a>
+                    @endif
                     </div>
                 </div>
                 @empty

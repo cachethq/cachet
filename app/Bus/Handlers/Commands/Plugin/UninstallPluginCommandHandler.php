@@ -12,7 +12,7 @@
 namespace CachetHQ\Cachet\Bus\Handlers\Commands\Plugin;
 
 use CachetHQ\Cachet\Bus\Commands\Plugin\UninstallPluginCommand;
-use CachetHQ\Cachet\Bus\Events\Plugin\PluginWillUninstallEvent;
+use CachetHQ\Cachet\Bus\Events\Plugin\PluginWillBeUninstalledEvent;
 use CachetHQ\Cachet\Bus\Events\Plugin\PluginWasUninstalldEvent;
 use CachetHQ\Cachet\Models\Plugin;
 use Illuminate\Contracts\Filesystem\Factory as FilesystemManager;
@@ -47,8 +47,12 @@ class UninstallPluginCommandHandler
      */
     public function handle(UninstallPluginCommand $command)
     {
+        event(new PluginWillBeUninstalledEvent($command->plugin));
+
         $this->filesystem->deleteDirectory("disabled/{$command->plugin->name}");
 
         $command->plugin->delete();
+
+        event(new PluginWasUninstalledEvent($command->plugin));
     }
 }

@@ -84,6 +84,30 @@ class EventServiceProvider extends ServiceProvider
         'CachetHQ\Cachet\Bus\Events\Metric\MetricWasUpdatedEvent' => [
             //
         ],
+        'CachetHQ\Cachet\Bus\Events\Plugin\PluginWasDisabledEvent' => [
+            //
+        ],
+        'CachetHQ\Cachet\Bus\Events\Plugin\PluginWasEnabledEvent' => [
+            //
+        ],
+        'CachetHQ\Cachet\Bus\Events\Plugin\PluginWasInstalledEvent' => [
+            //
+        ],
+        'CachetHQ\Cachet\Bus\Events\Plugin\PluginWasUninstalledEvent' => [
+            //
+        ],
+        'CachetHQ\Cachet\Bus\Events\Plugin\PluginWillBeDisabledEvent' => [
+            //
+        ],
+        'CachetHQ\Cachet\Bus\Events\Plugin\PluginWillBeEnabledEvent' => [
+            //
+        ],
+        'CachetHQ\Cachet\Bus\Events\Plugin\PluginWillBeInstalledEvent' => [
+            //
+        ],
+        'CachetHQ\Cachet\Bus\Events\Plugin\PluginWillBeUninstalledEvent' => [
+            //
+        ],
         'CachetHQ\Cachet\Bus\Events\Subscriber\SubscriberHasSubscribedEvent' => [
             'CachetHQ\Cachet\Bus\Handlers\Events\Subscriber\SendSubscriberVerificationEmailHandler',
         ],

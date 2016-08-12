@@ -188,6 +188,7 @@ return [
         'CachetHQ\Cachet\Foundation\Providers\EventServiceProvider',
         'CachetHQ\Cachet\Foundation\Providers\RepositoryServiceProvider',
         'CachetHQ\Cachet\Foundation\Providers\RouteServiceProvider',
+        'CachetHQ\Cachet\Foundation\Providers\ScheduleServiceProvider',
 
     ]),
 
@@ -239,4 +240,18 @@ return [
 
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Autoloaded Task Schedulers
+    |--------------------------------------------------------------------------
+    |
+    | The task schedulers listed here will be automatically loaded on the
+    | consloe your application. Feel free to add your own schedulers to
+    | this array to grant expanded functionality to your applications.
+    |
+    */
+
+    'schedulers' => [
+        'CachetHQ\Cachet\Console\Scheduler',
+    ],
 ];

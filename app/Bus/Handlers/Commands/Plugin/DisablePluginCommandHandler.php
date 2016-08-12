@@ -12,7 +12,7 @@
 namespace CachetHQ\Cachet\Bus\Handlers\Commands\Plugin;
 
 use CachetHQ\Cachet\Bus\Commands\Plugin\DisablePluginCommand;
-use CachetHQ\Cachet\Bus\Events\Plugin\PluginWillDisableEvent;
+use CachetHQ\Cachet\Bus\Events\Plugin\PluginWillBeDisabledEvent;
 use CachetHQ\Cachet\Bus\Events\Plugin\PluginWasDisabledEvent;
 use CachetHQ\Cachet\Integrations\Contracts\Plugins;
 use CachetHQ\Cachet\Models\Plugin;
@@ -47,6 +47,10 @@ class DisablePluginCommandHandler
      */
     public function handle(DisablePluginCommand $command)
     {
+        event(new PluginWillBeDisabledEvent($command->plugin));
+
         $this->plugins->disable($command->plugin);
+
+        event(new PluginWasDisabledEvent($command->plugin));
     }
 }
