@@ -19,11 +19,11 @@ namespace CachetHQ\Cachet\Integrations\Contracts;
 interface Autoloader
 {
     /**
-     * Dumps the autoloader.
+     * Updates the autoloader.
      *
      * @return void
      *
-     * @throws \CachetHQ\Cachet\Integrations\Exceptions\Autoloader\DumpFailedException
+     * @throws \CachetHQ\Cachet\Integrations\Exceptions\Autoloader\UpdateFailedException
      */
-    public function dump();
+    public function update();
 }

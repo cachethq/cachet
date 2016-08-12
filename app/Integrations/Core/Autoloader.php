@@ -35,22 +35,22 @@ class Autoloader implements AutoloaderContract
     }
 
     /**
-     * Dumps the autoloader.
+     * Updates the autoloader.
      *
      * @return void
      *
-     * @throws \CachetHQ\Cachet\Integrations\Exceptions\Autoloader\DumpFailedException
+     * @throws \CachetHQ\Cachet\Integrations\Exceptions\Autoloader\UpdateFailedException
      */
-    public function dump()
+    public function update()
     {
         $process = $this->createProcess();
 
-        $process->setCommandLine("{$this->composer} dump-autoload");
+        $process->setCommandLine("{$this->composer} update --lock");
 
         try {
             $process->mustRun();
         } catch (Exception $e) {
-            throw new DumpFailedException;
+            throw new UpdateFailedException();
         }
     }
 

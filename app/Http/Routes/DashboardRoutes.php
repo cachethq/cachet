@@ -195,7 +195,7 @@ class DashboardRoutes
                         'uses' => 'PluginController@showInstallPlugin',
                     ]);
                     $router->post('install', 'PluginController@installPluginAction');
-                    $router->get('{plugin}/uninstall', 'PluginController@uninstallPluginAction');
+                    $router->delete('{plugin}/uninstall', 'PluginController@uninstallPluginAction');
                     $router->get('{plugin}/enable', 'PluginController@enablePluginAction');
                     $router->get('{plugin}/disable', 'PluginController@disablePluginAction');
                 });

@@ -57,10 +57,14 @@ class Plugins implements PluginsContract
      */
     public function enable(Plugin $plugin)
     {
+        set_time_limit(60 * 15);
+
         $this->filesystem->move("disabled/{$plugin->name}", "enabled/{$plugin->name}");
-        $this->autoloader->dump();
+        $this->autoloader->update();
 
         $plugin->update(['enabled' => true]);
+
+        set_time_limit(ini_get('max_execution_time'));
     }
 
     /**
@@ -74,6 +78,13 @@ class Plugins implements PluginsContract
      */
     public function disable(Plugin $plugin)
     {
-        // ...
+        set_time_limit(60 * 15);
+
+        $this->filesystem->move("enabled/{$plugin->name}", "disabled/{$plugin->name}");
+        $this->autoloader->update();
+
+        $plugin->update(['enabled' => false]);
+
+        set_time_limit(ini_get('max_execution_time'));
     }
 }
