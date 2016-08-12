@@ -59,31 +59,9 @@ class Plugins implements PluginsContract
      */
     public function enable(Plugin $plugin)
     {
-        set_time_limit(60 * 15);
-
-        Artisan::call('config:clear');
-        Artisan::call('route:clear');
-
-        $this->filesystem->move("disabled/{$plugin->name}", "enabled/{$plugin->name}");
-
-        try {
-            $this->autoloader->update();
-        } catch (UpdateFailedException $e) {
-            $this->filesystem->move("enabled/{$plugin->name}", "disabled/{$plugin->name}");
-
-            Artisan::call('config:clear');
-            Artisan::call('route:clear');
-
-            $this->autoloader->update();
-
-            die;
-
-            throw new PluginFailedToEnableException();
-        }
+        $this->movePlugin($plugin, 'disabled', 'enabled');
 
         $plugin->update(['enabled' => true]);
-
-        set_time_limit(ini_get('max_execution_time'));
     }
 
     /**
@@ -97,13 +75,56 @@ class Plugins implements PluginsContract
      */
     public function disable(Plugin $plugin)
     {
-        set_time_limit(60 * 15);
-
-        $this->filesystem->move("enabled/{$plugin->name}", "disabled/{$plugin->name}");
-        $this->autoloader->update();
+        $this->movePlugin($plugin, 'enabled', 'disabled');
 
         $plugin->update(['enabled' => false]);
+    }
+
+    /**
+     * Move a plugin.
+     *
+     * @param \CachetHQ\Cachet\Models\Plugin $plugin
+     * @param string                         $from
+     * @param string                         $to
+     *
+     * @return void
+     */
+    protected function movePlugin(Plugin $plugin, $from, $to)
+    {
+        set_time_limit(60 * 15);
+
+        $this->filesystem->move(
+            "${from}/{$plugin->name}",
+            "${to}/{$plugin->name}"
+        );
+
+        $this->clearCaches();
+
+        try {
+            $this->autoloader->update();
+        } catch (UpdateFailedException $e) {
+            $this->filesystem->move(
+                "${to}/{$plugin->name}",
+                "${from}/{$plugin->name}"
+            );
+
+            $this->clearCaches();
+            $this->autoloader->update();
+
+            throw new PluginFailedToEnableException();
+        }
 
         set_time_limit(ini_get('max_execution_time'));
+    }
+
+    /**
+     * Clear the caches.
+     *
+     * @return void
+     */
+    protected function clearCaches()
+    {
+        Artisan::call('config:clear');
+        Artisan::call('route:clear');
     }
 }
