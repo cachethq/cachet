@@ -325,16 +325,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.18.38",
+            "version": "3.18.39",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "979470feb19af8b5cd2f7a455407618416cdfadc"
+                "reference": "85f1fddaeb40b95106b2a2764268e9c89fc258ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/979470feb19af8b5cd2f7a455407618416cdfadc",
-                "reference": "979470feb19af8b5cd2f7a455407618416cdfadc",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/85f1fddaeb40b95106b2a2764268e9c89fc258ce",
+                "reference": "85f1fddaeb40b95106b2a2764268e9c89fc258ce",
                 "shasum": ""
             },
             "require": {
@@ -401,7 +401,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2016-08-09 18:09:34"
+            "time": "2016-08-11 16:40:35"
         },
         {
             "name": "backup-manager/backup-manager",
@@ -4396,49 +4396,6 @@
                 "zf2"
             ],
             "time": "2016-05-06 18:25:35"
-        },
-        {
-            "name": "frlnc/php-slack",
-            "version": "1.0.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Frlnc/php-slack.git",
-                "reference": "07797663e8799407675d473d9153b260dd0fb023"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Frlnc/php-slack/zipball/07797663e8799407675d473d9153b260dd0fb023",
-                "reference": "07797663e8799407675d473d9153b260dd0fb023",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "~0.9",
-                "phpunit/phpunit": "~4.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Frlnc\\Slack\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Connor Parks",
-                    "email": "connor@connorvg.tv"
-                }
-            ],
-            "description": "A lightweight PHP implementation of Slack's API.",
-            "keywords": [
-                "slack"
-            ],
-            "time": "2016-04-10 18:57:50"
         },
         {
             "name": "fzaninotto/faker",
