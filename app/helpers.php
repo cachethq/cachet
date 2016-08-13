@@ -117,13 +117,13 @@ if (!function_exists('color_contrast')) {
     }
 }
 
-if (! function_exists('plugin_path')) {
+if (!function_exists('plugin_path')) {
     /**
      * Get the path to the plugins folder.
      *
-     * @param  boolean $enabled
-     * @param  string  $vendor
-     * @param  string  $package
+     * @param boolean $enabled
+     * @param string  $vendor
+     * @param string  $package
      *
      * @return string
      */
@@ -145,5 +145,22 @@ if (! function_exists('plugin_path')) {
         }
 
         return $path.DIRECTORY_SEPARATOR.$package;
+    }
+}
+
+if (!function_exists('array_numeric_sort')) {
+    /**
+     * Numerically sort an array based on a specific key.
+     *
+     * @param array  $array
+     * @param string $key
+     *
+     * @return array
+     */
+    function array_numeric_sort(array $array = [], $key = 'order')
+    {
+        return array_sort($array, function ($a, $b) use ($key) {
+            return array_get($a, $key, PHP_INT_MAX) - array_get($b, $key, PHP_INT_MAX);
+        });
     }
 }

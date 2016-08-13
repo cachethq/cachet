@@ -52,11 +52,13 @@ class DashboardComposer
             'url'    => route('dashboard.index'),
             'icon'   => 'ion ion-speedometer',
             'title'  => trans('dashboard.dashboard'),
+            'order'  => 10000,
         ], [
             'active' => ['dashboard/incidents*', 'dashboard/schedule*'],
             'url'    => route('dashboard.incidents.index'),
             'icon'   => 'ion ion-ios-information-outline',
             'title'  => trans('dashboard.incidents.incidents'),
+            'order'  => 20000,
             'label'  => [
                 'class' => 'label-info',
                 'text'  => $data['incident_count'],
@@ -66,6 +68,7 @@ class DashboardComposer
             'url'    => route('dashboard.templates.index'),
             'icon'   => 'ion ion-ios-paper-outline',
             'title'  => trans('dashboard.incidents.incident-templates'),
+            'order'  => 30000,
             'label'  => [
                 'class' => 'label-info',
                 'text'  => $data['incident_template_count'],
@@ -75,6 +78,7 @@ class DashboardComposer
             'url'    => route('dashboard.components.index'),
             'icon'   => 'ion ion-ios-paper-outline',
             'title'  => trans('dashboard.components.components'),
+            'order'  => 40000,
             'label'  => [
                 'class' => 'label-info',
                 'text'  => $data['component_count'],
@@ -84,11 +88,13 @@ class DashboardComposer
             'url'    => route('dashboard.metrics.index'),
             'icon'   => 'ion ion-ios-pie-outline',
             'title'  => trans('dashboard.metrics.metrics'),
+            'order'  => 50000,
         ], [
             'active' => 'dashboard/subscribers*',
             'url'    => route('dashboard.subscribers.index'),
             'icon'   => 'ion ion-ios-email-outline',
             'title'  => trans('dashboard.subscribers.subscribers'),
+            'order'  => 60000,
             'label'  => [
                 'class' => 'label-info',
                 'text'  => $data['subscriber_count'],
@@ -98,11 +104,13 @@ class DashboardComposer
             'url'    => route('dashboard.team.index'),
             'icon'   => 'ion ion-ios-people-outline',
             'title'  => trans('dashboard.team.team'),
+            'order'  => 70000,
         ], [
             'active' => 'dashboard/plugins*',
             'url'    => route('dashboard.plugins.index'),
             'icon'   => 'ion ion-ios-color-filter-outline',
             'title'  => trans('dashboard.plugins.plugins'),
+            'order'  => 80000,
             'label'  => [
                 'class' => 'label-info',
                 'text'  => $data['plugin_count'],
@@ -112,6 +120,7 @@ class DashboardComposer
             'url'    => route('dashboard.settings.setup'),
             'icon'   => 'ion ion-ios-gear-outline',
             'title'  => trans('dashboard.settings.settings'),
+            'order'  => 90000,
         ]];
 
         if (isset($data['tabs'])) {

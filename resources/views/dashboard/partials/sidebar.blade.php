@@ -16,7 +16,7 @@
             </a>
         </div>
         <ul>
-        @foreach($tabs as $tab)
+        @foreach(array_numeric_sort($tabs) as $tab)
             <li {!! set_active($tab['active']) !!}>
                 <a href="{{ $tab['url'] }}">
                 @if($tab['icon'])
