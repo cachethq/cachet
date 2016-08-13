@@ -11,10 +11,10 @@
 
 namespace CachetHQ\Cachet\Composers\Modules;
 
-use Illuminate\Contracts\View\View;
-use Illuminate\Contracts\Auth\Guard;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
+use Illuminate\Contracts\Auth\Guard;
+use Illuminate\Contracts\View\View;
 
 /**
  * This is the status page composer.
@@ -37,7 +37,7 @@ class ComponentsComposer
         $usedComponentGroups = Component::enabled()->where('group_id', '>', 0)
             ->groupBy('group_id')
             ->pluck('group_id');
-        $componentGroupsBuilder = ComponentGroup::public();
+        $componentGroupsBuilder = ComponentGroup::visible();
         if (app(Guard::class)->check()) {
             $componentGroupsBuilder = ComponentGroup::query();
         }

@@ -25,11 +25,15 @@ class ComponentGroup extends Model implements HasPresenter
 
     /**
      * Viewable only logged in users.
+     *
+     * @var int
      */
     const VISIBLE_LOGGED_IN = 0;
 
     /**
      * Viewable by public.
+     *
+     * @var int
      */
     const VISIBLE_PUBLIC = 1;
 
@@ -165,7 +169,7 @@ class ComponentGroup extends Model implements HasPresenter
      *
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function scopePublic(Builder $query)
+    public function scopeVisible(Builder $query)
     {
         return $query->where('visible', self::VISIBLE_PUBLIC);
     }

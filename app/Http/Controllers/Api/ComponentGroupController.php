@@ -37,7 +37,7 @@ class ComponentGroupController extends AbstractApiController
      */
     public function getGroups()
     {
-        $groups = ComponentGroup::public();
+        $groups = ComponentGroup::visible();
 
         if (app(Guard::class)->check()) {
             $groups = ComponentGroup::query();

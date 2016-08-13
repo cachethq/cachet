@@ -13,7 +13,6 @@ namespace CachetHQ\Tests\Cachet\Api;
 
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
-use Illuminate\Contracts\Auth\Guard;
 
 /**
  * This is the component group test class.
