@@ -24,19 +24,14 @@ class ComponentGroup extends Model implements HasPresenter
     use SearchableTrait, SortableTrait, ValidatingTrait;
 
     /**
+     * Viewable only logged in users.
+     */
+    const VISIBLE_LOGGED_IN = 0;
+
+    /**
      * Viewable by public.
      */
-    const VISIBLE_PUBLIC = 0;
-
-    /**
-     * Viewable by logged in users.
-     */
-    const VISIBLE_LOGGED_IN = 1;
-
-    /**
-     * Hidden.
-     */
-    const VISIBLE_HIDDEN = 2;
+    const VISIBLE_PUBLIC = 1;
 
     /**
      * The model's attributes.
@@ -47,7 +42,6 @@ class ComponentGroup extends Model implements HasPresenter
         'order'      => 0,
         'collapsed'  => 0,
         'visible'    => 0,
-        'created_by' => 0,
     ];
 
     /**
@@ -60,7 +54,6 @@ class ComponentGroup extends Model implements HasPresenter
         'order'      => 'int',
         'collapsed'  => 'int',
         'visible'    => 'int',
-        'created_by' => 'int',
     ];
 
     /**
@@ -68,7 +61,7 @@ class ComponentGroup extends Model implements HasPresenter
      *
      * @var string[]
      */
-    protected $fillable = ['name', 'order', 'collapsed', 'visible', 'created_by'];
+    protected $fillable = ['name', 'order', 'collapsed', 'visible'];
 
     /**
      * The validation rules.
@@ -79,8 +72,7 @@ class ComponentGroup extends Model implements HasPresenter
         'name'       => 'required|string',
         'order'      => 'int',
         'collapsed'  => 'int',
-        'visible'    => 'int',
-        'created_by' => 'int',
+        'visible'    => 'bool',
     ];
 
     /**
@@ -167,52 +159,14 @@ class ComponentGroup extends Model implements HasPresenter
     }
 
     /**
-     * A group is created by an user.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function createdBy()
-    {
-        return $this->belongsTo(User::class);
-    }
-
-    /**
-     * Was the component group created by the target user?
-     *
-     * @param User $user
-     *
-     * @return bool
-     */
-    public function isCreatedBy(User $user)
-    {
-        return $this->created_by === $user->getKey();
-    }
-
-    /**
      * Finds all component groups which are visible to public.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
      *
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function scopeGuest(Builder $query)
+    public function scopePublic(Builder $query)
     {
         return $query->where('visible', self::VISIBLE_PUBLIC);
-    }
-
-    /**
-     * Finds all component groups which are only visible to logged in users.
-     *
-     * @param \Illuminate\Database\Eloquent\Builder $query
-     *
-     * @return \Illuminate\Database\Eloquent\Builder
-     */
-    public function scopeLoggedIn(Builder $query, User $user)
-    {
-        return $query->where('visible', '<', self::VISIBLE_HIDDEN)
-            ->orWhere(function (Builder $query) use ($user) {
-                $query->where('visible', self::VISIBLE_HIDDEN)
-                    ->where('created_by', $user->getKey());
-            });
     }
 }

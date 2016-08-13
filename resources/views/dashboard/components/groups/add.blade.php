@@ -32,9 +32,8 @@
                     <div class="form-group">
                         <label>{{ trans('forms.components.groups.visibility') }}</label>
                         <select name="collapsed" class="form-control" required>
-                            <option value="0">{{ trans('forms.components.groups.visibility_public') }}</option>
-                            <option value="1">{{ trans('forms.components.groups.visibility_authenticated') }}</option>
-                            <option value="2">{{ trans('forms.components.groups.visibility_hidden') }}</option>
+                            <option value="0">{{ trans('forms.components.groups.visibility_authenticated') }}</option>
+                            <option value="1">{{ trans('forms.components.groups.visibility_public') }}</option>
                         </select>
                     </div>
 

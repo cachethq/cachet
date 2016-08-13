@@ -36,8 +36,7 @@ $factory->define(ComponentGroup::class, function ($faker) {
         'name'       => $faker->words(2, true),
         'order'      => 0,
         'collapsed'  => random_int(0, 3),
-        'visible'    => random_int(0, 2),
-        'created_by' => 0,
+        'visible'    => $faker->boolean(),
     ];
 });
 

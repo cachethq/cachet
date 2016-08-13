@@ -35,15 +35,13 @@ class UpdateComponentGroupCommandTest extends AbstractTestCase
             'order'      => 1,
             'collapsed'  => 2,
             'visible'    => 1,
-            'created_by' => 0,
         ];
         $object = new UpdateComponentGroupCommand(
             $params['group'],
             $params['name'],
             $params['order'],
             $params['collapsed'],
-            $params['visible'],
-            $params['created_by']
+            $params['visible']
         );
 
         return compact('params', 'object');

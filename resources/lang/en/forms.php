@@ -85,7 +85,6 @@ return [
             'visibility'               => 'Visibility',
             'visibility_public'        => 'Visible to public',
             'visibility_authenticated' => 'Visible only to logged in users',
-            'visibility_hidden'        => 'Hidden',
         ],
     ],
 

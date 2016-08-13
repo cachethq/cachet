@@ -13,7 +13,6 @@ namespace CachetHQ\Tests\Cachet\Api;
 
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
-use CachetHQ\Cachet\Models\User;
 use Illuminate\Contracts\Auth\Guard;
 
 /**
@@ -26,8 +25,6 @@ class ComponentGroupTest extends AbstractApiTestCase
 {
     const COMPONENT_GROUP_1_NAME = 'Component Group 1';
     const COMPONENT_GROUP_2_NAME = 'Component Group 2';
-    const COMPONENT_GROUP_3_NAME = 'Component Group 3';
-    const COMPONENT_GROUP_4_NAME = 'Component Group 4';
 
     public function testGetGroups()
     {
@@ -70,8 +67,9 @@ class ComponentGroupTest extends AbstractApiTestCase
             'name'      => 'Foo',
             'order'     => 1,
             'collapsed' => 1,
+            'visible'   => ComponentGroup::VISIBLE_PUBLIC,
         ]);
-        $this->seeJson(['name' => 'Foo', 'order' => 1, 'collapsed' => 1]);
+        $this->seeJson(['name' => 'Foo', 'order' => 1, 'collapsed' => 1, 'visible' => ComponentGroup::VISIBLE_PUBLIC]);
         $this->assertResponseOk();
     }
 
@@ -112,8 +110,7 @@ class ComponentGroupTest extends AbstractApiTestCase
 
         $this->get('/api/v1/components/groups')
             ->seeJson(['name' => self::COMPONENT_GROUP_1_NAME])
-            ->dontSeeJson(['name' => self::COMPONENT_GROUP_2_NAME])
-            ->dontSeeJson(['name' => self::COMPONENT_GROUP_3_NAME]);
+            ->dontSeeJson(['name' => self::COMPONENT_GROUP_2_NAME]);
         $this->assertResponseOk();
     }
 
@@ -125,27 +122,7 @@ class ComponentGroupTest extends AbstractApiTestCase
 
         $this->get('/api/v1/components/groups')
             ->seeJson(['name' => self::COMPONENT_GROUP_1_NAME])
-            ->seeJson(['name' => self::COMPONENT_GROUP_2_NAME])
-            ->seeJson(['name' => self::COMPONENT_GROUP_3_NAME]);
-        $this->assertResponseOk();
-    }
-
-    /** @test */
-    public function hidden_component_groups_arent_shown_if_not_belonging_to_loggedin_user()
-    {
-        $this->createComponentGroups()
-            ->signIn()
-            ->createComponentGroup(
-                self::COMPONENT_GROUP_4_NAME,
-                ComponentGroup::VISIBLE_HIDDEN,
-                $this->createUser()
-            );
-
-        $this->get('/api/v1/components/groups')
-            ->seeJson(['name' => self::COMPONENT_GROUP_1_NAME])
-            ->seeJson(['name' => self::COMPONENT_GROUP_2_NAME])
-            ->seeJson(['name' => self::COMPONENT_GROUP_3_NAME])
-            ->dontSeeJson(['name' => self::COMPONENT_GROUP_4_NAME]);
+            ->seeJson(['name' => self::COMPONENT_GROUP_2_NAME]);
         $this->assertResponseOk();
     }
 
@@ -156,12 +133,8 @@ class ComponentGroupTest extends AbstractApiTestCase
      */
     protected function createComponentGroups()
     {
-        $this->signIn()
-            ->createComponentGroup(self::COMPONENT_GROUP_1_NAME, ComponentGroup::VISIBLE_PUBLIC)
-            ->createComponentGroup(self::COMPONENT_GROUP_2_NAME, ComponentGroup::VISIBLE_LOGGED_IN)
-            ->createComponentGroup(self::COMPONENT_GROUP_3_NAME, ComponentGroup::VISIBLE_HIDDEN);
-
-        app(Guard::class)->logout();
+        $this->createComponentGroup(self::COMPONENT_GROUP_1_NAME, ComponentGroup::VISIBLE_PUBLIC)
+            ->createComponentGroup(self::COMPONENT_GROUP_2_NAME, ComponentGroup::VISIBLE_LOGGED_IN);
 
         return $this;
     }
@@ -173,21 +146,13 @@ class ComponentGroupTest extends AbstractApiTestCase
      *
      * @param string $name
      * @param string $visible
-     * @param User   $user
      *
      * @return AbstractApiTestCase
      */
-    protected function createComponentGroup($name, $visible, User $user = null)
+    protected function createComponentGroup($name, $visible)
     {
-        $createdBy = 0;
-        if (!is_null($user)) {
-            $createdBy = $user->getKey();
-        } elseif (!is_null($this->user)) {
-            $createdBy = $this->user->getKey();
-        }
-
         factory(ComponentGroup::class)
-            ->create(['name' => $name, 'visible' => $visible, 'created_by' => $createdBy]);
+            ->create(['name' => $name, 'visible' => $visible]);
 
         return $this;
     }

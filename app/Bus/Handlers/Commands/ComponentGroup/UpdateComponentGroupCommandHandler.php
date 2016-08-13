@@ -47,7 +47,6 @@ class UpdateComponentGroupCommandHandler
             'order'      => $command->order,
             'collapsed'  => $command->collapsed,
             'visible'    => $command->visible,
-            'created_by' => $command->created_by,
         ];
 
         return array_filter($params, function ($val) {

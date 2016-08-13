@@ -92,9 +92,9 @@ class DashboardController extends Controller
         $usedComponentGroups = Component::enabled()->where('group_id', '>', 0)
             ->groupBy('group_id')
             ->pluck('group_id');
-        $componentGroupsBuilder = ComponentGroup::guest();
+        $componentGroupsBuilder = ComponentGroup::public();
         if (app(Guard::class)->check()) {
-            $componentGroupsBuilder = ComponentGroup::loggedIn(app(Guard::class)->user());
+            $componentGroupsBuilder = ComponentGroup::query();
         }
         $componentGroups = $componentGroupsBuilder->whereIn('id', $usedComponentGroups)
             ->orderBy('order')

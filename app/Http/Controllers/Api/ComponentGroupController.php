@@ -37,10 +37,10 @@ class ComponentGroupController extends AbstractApiController
      */
     public function getGroups()
     {
-        $groups = ComponentGroup::query()->guest();
+        $groups = ComponentGroup::public();
 
         if (app(Guard::class)->check()) {
-            $groups = ComponentGroup::query()->loggedIn(app(Guard::class)->user());
+            $groups = ComponentGroup::query();
         }
 
         $groups->search(Binput::except(['sort', 'order', 'per_page']));

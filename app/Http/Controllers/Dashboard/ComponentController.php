@@ -279,8 +279,7 @@ class ComponentController extends Controller
                 Binput::get('name'),
                 Binput::get('order', 0),
                 Binput::get('collapsed'),
-                Binput::get('visible'),
-                app(Guard::class)->user()->getKey()
+                Binput::get('visible')
             ));
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.components.groups.add')
@@ -308,8 +307,7 @@ class ComponentController extends Controller
                 Binput::get('name'),
                 $group->order,
                 Binput::get('collapsed'),
-                Binput::get('visible'),
-                app(Guard::class)->user()->getKey()
+                Binput::get('visible')
             ));
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.components.groups.edit', ['id' => $group->id])
