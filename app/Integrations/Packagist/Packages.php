@@ -19,7 +19,7 @@ use CachetHQ\Cachet\Integrations\Exceptions\Packages\PackageNotFoundException;
 use CachetHQ\Cachet\Integrations\Exceptions\Packages\PackageVersionUnsatisfiedException;
 use Composer\Semver\Semver;
 use GuzzleHttp\Client;
-use GuzzleHttp\GuzzleException();
+use GuzzleHttp\GuzzleException;
 use Illuminate\Contracts\Cache\Repository;
 use Illuminate\Contracts\Filesystem\Filesystem;
 use ZipArchive;
@@ -186,8 +186,8 @@ class Packages implements PackagesContract
     /**
      * Get a packagist resource.
      *
-     * @param string  $url
-     * @param integer $cache
+     * @param string $url
+     * @param int    $cache
      *
      * @return array|null
      */

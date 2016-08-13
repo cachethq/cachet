@@ -21,8 +21,8 @@ class LoadConfiguration extends BaseLoadConfiguration
     /**
      * Load the configuration items from all of the files.
      *
-     * @param \Illuminate\Contracts\Foundation\Application  $app
-     * @param \Illuminate\Contracts\Config\Repository  $repository
+     * @param \Illuminate\Contracts\Foundation\Application $app
+     * @param \Illuminate\Contracts\Config\Repository      $repository
      *
      * @return void
      */
@@ -41,7 +41,7 @@ class LoadConfiguration extends BaseLoadConfiguration
     /**
      * Get all of the configuration files for the application.
      *
-     * @param \Illuminate\Contracts\Foundation\Application  $app
+     * @param \Illuminate\Contracts\Foundation\Application $app
      *
      * @return array
      */
