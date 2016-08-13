@@ -325,16 +325,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.18.38",
+            "version": "3.18.39",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "979470feb19af8b5cd2f7a455407618416cdfadc"
+                "reference": "85f1fddaeb40b95106b2a2764268e9c89fc258ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/979470feb19af8b5cd2f7a455407618416cdfadc",
-                "reference": "979470feb19af8b5cd2f7a455407618416cdfadc",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/85f1fddaeb40b95106b2a2764268e9c89fc258ce",
+                "reference": "85f1fddaeb40b95106b2a2764268e9c89fc258ce",
                 "shasum": ""
             },
             "require": {
@@ -401,7 +401,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2016-08-09 18:09:34"
+            "time": "2016-08-11 16:40:35"
         },
         {
             "name": "backup-manager/backup-manager",
