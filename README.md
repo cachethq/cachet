@@ -81,7 +81,7 @@ To test out the demo, you may login to the [Dashboard](https://demo.cachethq.io/
 - **Username:** `test` or `test@test.com`
 - **Password:** `test123`
 
-The demo is reset every half an hour.
+The demo is reset every half hour.
 
 ### Release Notes
 
