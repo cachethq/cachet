@@ -10,7 +10,9 @@ php:
 
 sudo: false
 
-before_install: cp .env.example .env
+before_install:
+  - cp .env.example .env
+  - phpenv config-rm xdebug.ini
 
 install: travis_retry composer install --no-interaction --no-scripts --prefer-source
 
