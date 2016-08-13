@@ -13,7 +13,6 @@ namespace CachetHQ\Cachet\Integrations\Core;
 
 use CachetHQ\Cachet\Integrations\Contracts\Autoloader as AutoloaderContract;
 use CachetHQ\Cachet\Integrations\Exceptions\Autoloader\UpdateFailedException;
-use Symfony\Component\Process\Exception\ProcessFailedException;
 use Symfony\Component\Process\Process;
 
 class Autoloader implements AutoloaderContract
@@ -38,9 +37,9 @@ class Autoloader implements AutoloaderContract
     /**
      * Updates the autoloader.
      *
-     * @return void
-     *
      * @throws \CachetHQ\Cachet\Integrations\Exceptions\Autoloader\UpdateFailedException
+     *
+     * @return void
      */
     public function update()
     {

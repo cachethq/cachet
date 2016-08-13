@@ -121,9 +121,9 @@ if (!function_exists('plugin_path')) {
     /**
      * Get the path to the plugins folder.
      *
-     * @param boolean $enabled
-     * @param string  $vendor
-     * @param string  $package
+     * @param bool   $enabled
+     * @param string $vendor
+     * @param string $package
      *
      * @return string
      */

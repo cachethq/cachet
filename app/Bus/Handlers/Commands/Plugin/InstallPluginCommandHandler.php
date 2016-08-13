@@ -12,8 +12,8 @@
 namespace CachetHQ\Cachet\Bus\Handlers\Commands\Plugin;
 
 use CachetHQ\Cachet\Bus\Commands\Plugin\InstallPluginCommand;
-use CachetHQ\Cachet\Bus\Events\Plugin\PluginWillBeInstalledEvent;
 use CachetHQ\Cachet\Bus\Events\Plugin\PluginWasInstalledEvent;
+use CachetHQ\Cachet\Bus\Events\Plugin\PluginWillBeInstalledEvent;
 use CachetHQ\Cachet\Integrations\Contracts\Packages;
 use CachetHQ\Cachet\Models\Plugin;
 
@@ -89,7 +89,7 @@ class InstallPluginCommandHandler
     /**
      * Map a package to plugin attributes.
      *
-     * @param  array $package
+     * @param array $package
      *
      * @return array
      */

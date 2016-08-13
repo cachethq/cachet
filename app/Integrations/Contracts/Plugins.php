@@ -25,9 +25,9 @@ interface Plugins
      *
      * @param \CachetHQ\Cachet\Models\Plugin $plugin
      *
-     * @return void
-     *
      * @throws \CachetHQ\Cachet\Integrations\Exceptions\Plugins\PluginFailedToEnableException
+     *
+     * @return void
      */
     public function enable(Plugin $plugin);
 
@@ -36,9 +36,9 @@ interface Plugins
      *
      * @param \CachetHQ\Cachet\Models\Plugin $plugin
      *
-     * @return void
-     *
      * @throws \CachetHQ\Cachet\Integrations\Exceptions\Plugins\PluginFailedToDisableException
+     *
+     * @return void
      */
     public function disable(Plugin $plugin);
 }

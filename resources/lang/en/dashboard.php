@@ -188,10 +188,10 @@ return [
 
     // Plugins
     'plugins' => [
-        'plugins'         => 'Plugins',
-        'enabled'         => 'Enabled',
-        'disabled'        => 'Disabled',
-        'install'                => [
+        'plugins'  => 'Plugins',
+        'enabled'  => 'Enabled',
+        'disabled' => 'Disabled',
+        'install'  => [
             'title'   => 'Install a plugin',
             'message' => 'You should install a plugin.',
             'success' => 'Plugin installed.',

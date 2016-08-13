@@ -12,8 +12,8 @@
 namespace CachetHQ\Cachet\Bus\Handlers\Commands\Plugin;
 
 use CachetHQ\Cachet\Bus\Commands\Plugin\DisablePluginCommand;
-use CachetHQ\Cachet\Bus\Events\Plugin\PluginWillBeDisabledEvent;
 use CachetHQ\Cachet\Bus\Events\Plugin\PluginWasDisabledEvent;
+use CachetHQ\Cachet\Bus\Events\Plugin\PluginWillBeDisabledEvent;
 use CachetHQ\Cachet\Integrations\Contracts\Plugins;
 use CachetHQ\Cachet\Models\Plugin;
 

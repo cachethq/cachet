@@ -6,7 +6,7 @@
  * (c) Alt Three Services Limited
  *
  * For the full copyright and license information, please view the LICENSE
- * file that willbe distributed with this source code.
+ * file that was distributed with this source code.
  */
 
 namespace CachetHQ\Cachet\Bus\Events\Plugin;

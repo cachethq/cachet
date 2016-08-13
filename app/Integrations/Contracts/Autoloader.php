@@ -21,9 +21,9 @@ interface Autoloader
     /**
      * Updates the autoloader.
      *
-     * @return void
-     *
      * @throws \CachetHQ\Cachet\Integrations\Exceptions\Autoloader\UpdateFailedException
+     *
+     * @return void
      */
     public function update();
 }

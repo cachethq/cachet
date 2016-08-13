@@ -11,8 +11,8 @@
 
 namespace CachetHQ\Cachet\Integrations\Core;
 
-use CachetHQ\Cachet\Integrations\Contracts\Plugins as PluginsContract;
 use CachetHQ\Cachet\Integrations\Contracts\Autoloader as AutoloaderContract;
+use CachetHQ\Cachet\Integrations\Contracts\Plugins as PluginsContract;
 use CachetHQ\Cachet\Integrations\Exceptions\Autoloader\UpdateFailedException;
 use CachetHQ\Cachet\Models\Plugin;
 use Illuminate\Contracts\Filesystem\Filesystem;
@@ -53,9 +53,9 @@ class Plugins implements PluginsContract
      *
      * @param \CachetHQ\Cachet\Models\Plugin $plugin
      *
-     * @return void
-     *
      * @throws \CachetHQ\Cachet\Integrations\Exceptions\Plugins\PluginFailedToEnableException
+     *
+     * @return void
      */
     public function enable(Plugin $plugin)
     {
@@ -69,9 +69,9 @@ class Plugins implements PluginsContract
      *
      * @param \CachetHQ\Cachet\Models\Plugin $plugin
      *
-     * @return void
-     *
      * @throws \CachetHQ\Cachet\Integrations\Exceptions\Plugins\PluginFailedToDisableException
+     *
+     * @return void
      */
     public function disable(Plugin $plugin)
     {

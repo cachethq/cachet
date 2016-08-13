@@ -110,6 +110,10 @@ class PluginController extends Controller
                 $package,
                 $version
             ));
+        } catch (PluginFailedToInstallException $e) {
+            return Redirect::route('dashboard.plugins.install')
+                ->withInput(Binput::all())
+                ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.plugins.install.failure')));
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.plugins.install')
                 ->withInput(Binput::all())
@@ -184,7 +188,7 @@ class PluginController extends Controller
      */
     public function disablePluginAction(Plugin $plugin)
     {
-        if (! $plugin->enabled) {
+        if (!$plugin->enabled) {
             // @todo: message saying already not enabled
             return Redirect::route('dashboard.plugins.index', ['enabled' => 'no']);
         }

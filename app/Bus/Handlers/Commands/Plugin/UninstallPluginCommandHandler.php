@@ -12,8 +12,8 @@
 namespace CachetHQ\Cachet\Bus\Handlers\Commands\Plugin;
 
 use CachetHQ\Cachet\Bus\Commands\Plugin\UninstallPluginCommand;
+use CachetHQ\Cachet\Bus\Events\Plugin\PluginWasUninstalledEvent;
 use CachetHQ\Cachet\Bus\Events\Plugin\PluginWillBeUninstalledEvent;
-use CachetHQ\Cachet\Bus\Events\Plugin\PluginWasUninstalldEvent;
 use CachetHQ\Cachet\Models\Plugin;
 use Illuminate\Contracts\Filesystem\Factory as FilesystemManager;
 

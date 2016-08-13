@@ -25,22 +25,22 @@ interface Packages
      * @param string $package
      * @param string $version
      *
-     * @return array
-     *
      * @throws \CachetHQ\Cachet\Integrations\Exceptions\Packages\IncorrectPackageTypeException
      * @throws \CachetHQ\Cachet\Integrations\Exceptions\Packages\PackageNotFoundException
      * @throws \CachetHQ\Cachet\Integrations\Exceptions\Packages\PackageVersionUnsatisfiedException
+     *
+     * @return array
      */
     public function find($vendor, $package, $version);
 
     /**
      * Downloads a package to a folder.
      *
-     * @param  array  $package
-     *
-     * @return void
+     * @param array $package
      *
      * @throws \CachetHQ\Cachet\Integrations\Exceptions\Packages\PackageDownloadErrorException
+     *
+     * @return void
      */
     public function download(array $package);
 }
