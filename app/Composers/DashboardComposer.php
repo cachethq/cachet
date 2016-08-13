@@ -33,7 +33,7 @@ class DashboardComposer
         $view->withIncidentTemplateCount(IncidentTemplate::count());
         $view->withComponentCount(Component::all()->count());
         $view->withSubscriberCount(Subscriber::isVerified()->count());
-        $view->withPluginCount(Plugin::count());
+        $view->withPluginCount(Plugin::enabled()->count());
 
         $view->withTabs($this->getTabs($view->getData()));
     }
