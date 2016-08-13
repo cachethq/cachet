@@ -85,7 +85,7 @@ class EventServiceProvider extends ServiceProvider
             //
         ],
         'CachetHQ\Cachet\Bus\Events\Plugin\PluginWasDisabledEvent' => [
-            //
+            'CachetHQ\Cachet\Bus\Handlers\Events\Plugin\DisablePluginMigrationsHandler',
         ],
         'CachetHQ\Cachet\Bus\Events\Plugin\PluginWasEnabledEvent' => [
             //
@@ -100,7 +100,7 @@ class EventServiceProvider extends ServiceProvider
             //
         ],
         'CachetHQ\Cachet\Bus\Events\Plugin\PluginWillBeEnabledEvent' => [
-            //
+            'CachetHQ\Cachet\Bus\Handlers\Events\Plugin\EnablePluginMigrationsHandler',
         ],
         'CachetHQ\Cachet\Bus\Events\Plugin\PluginWillBeInstalledEvent' => [
             //

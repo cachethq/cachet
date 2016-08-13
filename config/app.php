@@ -186,6 +186,7 @@ return [
         'CachetHQ\Cachet\Foundation\Providers\ConfigServiceProvider',
         'CachetHQ\Cachet\Foundation\Providers\IntegrationServiceProvider',
         'CachetHQ\Cachet\Foundation\Providers\EventServiceProvider',
+        'CachetHQ\Cachet\Foundation\Providers\MigrationServiceProvider',
         'CachetHQ\Cachet\Foundation\Providers\RepositoryServiceProvider',
         'CachetHQ\Cachet\Foundation\Providers\RouteServiceProvider',
         'CachetHQ\Cachet\Foundation\Providers\ScheduleServiceProvider',
