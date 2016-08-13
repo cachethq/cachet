@@ -25,7 +25,8 @@ if (!function_exists('set_active')) {
      */
     function set_active($path, array $classes = [], $active = 'active')
     {
-        if (Request::is($path)) {
+        $filtered = array_filter((array) $path, 'Request::is');
+        if (!empty($filtered)) {
             $classes[] = $active;
         }
 
