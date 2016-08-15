@@ -11,7 +11,7 @@
 
 namespace CachetHQ\Cachet\Bus\Handlers\Events\Component;
 
-use CachetHQ\Cachet\Bus\Events\Component\ComponentWasUpdatedEvent;
+use CachetHQ\Cachet\Bus\Events\Component\ComponentStatusWasUpdatedEvent;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Subscriber;
 use Illuminate\Contracts\Mail\MailQueue;
@@ -51,11 +51,11 @@ class SendComponentUpdateEmailNotificationHandler
     /**
      * Handle the event.
      *
-     * @param \CachetHQ\Cachet\Bus\Events\Component\ComponentWasUpdatedEvent $event
+     * @param \CachetHQ\Cachet\Bus\Events\Component\ComponentStatusWasUpdatedEvent $event
      *
      * @return void
      */
-    public function handle(ComponentWasUpdatedEvent $event)
+    public function handle(ComponentStatusWasUpdatedEvent $event)
     {
         $component = $event->component;
 
