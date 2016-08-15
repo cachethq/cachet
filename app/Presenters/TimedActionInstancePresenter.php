@@ -23,14 +23,16 @@ use McCool\LaravelAutoPresenter\BasePresenter;
  */
 class TimedActionInstancePresenter extends BasePresenter implements Arrayable
 {
+    use TimestampsTrait;
+
     /**
      * Present formatted date time.
      *
      * @return string
      */
-    public function created_at()
+    public function completed_at()
     {
-        return app(DateFactory::class)->make($this->wrappedObject->created_at, $this->wrappedObject->instance->timezone)->toDateTimeString();
+        return app(DateFactory::class)->make($this->wrappedObject->completed_at, $this->wrappedObject->action->timezone);
     }
 
     /**
@@ -38,9 +40,34 @@ class TimedActionInstancePresenter extends BasePresenter implements Arrayable
      *
      * @return string
      */
-    public function updated_at()
+    public function started_at()
     {
-        return app(DateFactory::class)->make($this->wrappedObject->updated_at, $this->wrappedObject->instance->timezone)->toDateTimeString();
+        return app(DateFactory::class)->make($this->wrappedObject->started_at, $this->wrappedObject->action->timezone);
+    }
+
+    /**
+     * Present formatted date time.
+     *
+     * @return string
+     */
+    public function ended_at()
+    {
+        $startAt = $this->wrappedObject->started_at->addSeconds($this->wrappedObject->action->window_length);
+
+        return app(DateFactory::class)->make($startAt, $this->wrappedObject->action->timezone);
+    }
+
+    /**
+     * Present formatted date time.
+     *
+     * @return string
+     */
+    public function target_completed_at()
+    {
+        $endAt = $this->wrappedObject->started_at->addSeconds($this->wrappedObject->action->window_lenth);
+        $targettedAt = $endAt->addSeconds($this->wrappedObject->completion_latency);
+
+        return app(DateFactory::class)->make($targettedAt, $this->wrappedObject->action->timezone);
     }
 
     /**
@@ -66,9 +93,12 @@ class TimedActionInstancePresenter extends BasePresenter implements Arrayable
     public function toArray()
     {
         return array_merge($this->wrappedObject->toArray(), [
-            'did_complete_on_time' => $this->did_complete_on_time(),
-            'created_at'           => $this->created_at(),
-            'updated_at'           => $this->updated_at(),
+            // 'did_complete_on_time' => $this->did_complete_on_time(),
+            'created_at'              => $this->created_at(),
+            'updated_at'              => $this->updated_at(),
+            'ended_at'                => $this->ended_at(),
+            'completed_at'            => $this->completed_at(),
+            'target_completed_at'     => $this->target_completed_at(),
         ]);
     }
 }

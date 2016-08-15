@@ -15,15 +15,17 @@ use AltThree\Validator\ValidatingTrait;
 use CachetHQ\Cachet\Actions\Window;
 use CachetHQ\Cachet\Models\Traits\SearchableTrait;
 use CachetHQ\Cachet\Models\Traits\SortableTrait;
+use CachetHQ\Cachet\Presenters\TimedActionInstancePresenter;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use McCool\LaravelAutoPresenter\HasPresenter;
 
 /**
  * This is the timed action instance model.
  *
  * @author James Brooks <james@alt-three.com>
  */
-class TimedActionInstance extends Model
+class TimedActionInstance extends Model implements HasPresenter
 {
     use SearchableTrait, SortableTrait, ValidatingTrait;
 
@@ -104,7 +106,7 @@ class TimedActionInstance extends Model
      */
     public function action()
     {
-        return $this->belongsTo(TimedAction::class);
+        return $this->belongsTo(TimedAction::class, 'timed_action_id', 'id');
     }
 
     /**
@@ -153,5 +155,15 @@ class TimedActionInstance extends Model
     public function getIsCompletedAttribute()
     {
         return $this->completed_at !== null;
+    }
+
+    /**
+     * Get the presenter class.
+     *
+     * @return string
+     */
+    public function getPresenterClass()
+    {
+        return TimedActionInstancePresenter::class;
     }
 }

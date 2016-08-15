@@ -45,7 +45,7 @@
                         <select name="timed_action_group_id" id="group" class="form-control">
                             <option value="0">&mdash;</option>
                             @foreach($groups as $group)
-                            <option value="{{ $group->id }}">{{ $group->name }}</option>
+                            <option value="{{ $group->id }}" {{ $group->id === $action->timed_action_group_id ? "selected" : null }}>{{ $group->name }}</option>
                             @endforeach
                         </select>
                     </div>

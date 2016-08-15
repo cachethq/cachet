@@ -180,16 +180,16 @@ class StatusPageController extends AbstractApiController
      */
     public function getActions(TimedAction $action)
     {
-        $actionData = [];
-
         $instances = $action->instances()->where('started_at', '>=', Carbon::now()->subDays(30))->orderBy('created_at', 'desc')->limit(30)->get();
-
         $items = [];
 
         foreach (AutoPresenter::decorate($instances)->reverse() as $instance) {
             $items[$instance->started_at->format('Y-m-d H:i')] = [
-                'time_taken'   => $instance->is_completed ? $instance->started_at->diffInSeconds($instance->completed_at) : 0,
-                'completed_at' => $instance->is_completed ? $instance->completed_at->format('H:i') : null,
+                'time_taken'           => $instance->is_completed ? $instance->started_at->diffInSeconds($instance->completed_at) : 0,
+                'started_at'           => $instance->started_at->format('Y-m-d H:i'),
+                'ended_at'             => $instance->ended_at->format('Y-m-d H:i'),
+                'completed_at'         => $instance->is_completed ? $instance->completed_at->format('Y-m-d H:i') : null,
+                'target_completed_at'  => $instance->target_completed_at->format('Y-m-d H:i'),
             ];
         }
 
