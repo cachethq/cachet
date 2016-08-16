@@ -115,6 +115,7 @@ class IncidentController extends Controller
                 Binput::get('component_id'),
                 Binput::get('component_status'),
                 Binput::get('notify', false),
+                Binput::get('stickied', false),
                 Binput::get('created_at'),
                 null,
                 null
@@ -240,6 +241,7 @@ class IncidentController extends Controller
                 Binput::get('component_id'),
                 Binput::get('component_status'),
                 Binput::get('notify', true),
+                Binput::get('stickied', false),
                 Binput::get('created_at'),
                 null,
                 null

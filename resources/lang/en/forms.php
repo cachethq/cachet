@@ -53,6 +53,9 @@ return [
         'incident_time'      => 'When did this incident occur?',
         'notify_subscribers' => 'Notify subscribers?',
         'visibility'         => 'Incident Visibility',
+        'stick_status'       => 'Stick Incident',
+        'stickied'           => 'Stickied',
+        'not_stickied'       => 'Not Stickied',
         'public'             => 'Viewable by public',
         'logged_in_only'     => 'Only visible to logged in users',
         'templates'          => [

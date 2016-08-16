@@ -32,6 +32,7 @@ class Incident extends Model implements HasPresenter
      */
     protected $casts = [
         'visible'      => 'int',
+        'stickied'     => 'int',
         'scheduled_at' => 'date',
         'deleted_at'   => 'date',
     ];
@@ -46,6 +47,7 @@ class Incident extends Model implements HasPresenter
         'name',
         'status',
         'visible',
+        'stickied',
         'message',
         'scheduled_at',
         'created_at',
@@ -62,6 +64,7 @@ class Incident extends Model implements HasPresenter
         'name'         => 'required',
         'status'       => 'required|int',
         'visible'      => 'required|bool',
+        'stickied'     => 'bool',
         'message'      => 'required',
     ];
 
@@ -76,6 +79,7 @@ class Incident extends Model implements HasPresenter
         'name',
         'status',
         'visible',
+        'stickied',
     ];
 
     /**
@@ -88,6 +92,7 @@ class Incident extends Model implements HasPresenter
         'name',
         'status',
         'visible',
+        'stickied',
         'message',
     ];
 
@@ -111,6 +116,18 @@ class Incident extends Model implements HasPresenter
     public function scopeVisible(Builder $query)
     {
         return $query->where('visible', 1);
+    }
+
+    /**
+     * Finds all stickied incidents.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeStickied(Builder $query)
+    {
+        return $query->where('stickied', true);
     }
 
     /**

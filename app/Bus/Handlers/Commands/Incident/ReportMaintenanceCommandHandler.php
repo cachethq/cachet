@@ -54,6 +54,7 @@ class ReportMaintenanceCommandHandler
             'scheduled_at' => $scheduledAt,
             'status'       => 0,
             'visible'      => 1,
+            'stickied'     => false,
         ]);
 
         $maintenanceEvent->notify = (bool) $command->notify;
