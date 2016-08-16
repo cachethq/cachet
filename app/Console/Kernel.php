@@ -39,6 +39,6 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('cachet:beacon')->twiceDaily('00:00', '12:00');
+        $schedule->command('cachet:beacon')->twiceDaily(0, 12);
     }
 }
