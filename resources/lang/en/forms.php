@@ -96,7 +96,7 @@ return [
         'description'        => 'Description',
         'start_at'           => 'Instance creation schedule start date/time',
         'timezone'           => 'Timezone',
-        'window_length'      => 'Instance creation schedule frequency (in seconds)',
+        'window_length'      => 'Instance creation schedule interval (in seconds)',
         'completion_latency' => 'Instance target completion latency (in seconds)',
         'group'              => 'Group',
         'active'             => 'Active?',

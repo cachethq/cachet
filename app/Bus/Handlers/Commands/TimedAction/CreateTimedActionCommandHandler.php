@@ -60,7 +60,7 @@ class CreateTimedActionCommandHandler
             'visible'               => $command->visible,
             'start_at'              => $this->dates->create($format, $command->start_at),
             'timezone'              => $command->timezone,
-            'window_length'         => $command->window_length,
+            'schedule_interval'         => $command->schedule_interval,
             'completion_latency'    => $command->completion_latency,
             'timed_action_group_id' => $command->timed_action_group_id,
         ]);

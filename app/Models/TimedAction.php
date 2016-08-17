@@ -44,7 +44,7 @@ class TimedAction extends Model implements HasPresenter
         'visible'               => 'bool',
         'start_at'              => 'date',
         'timezone'              => 'string',
-        'window_length'         => 'int',
+        'schedule_interval'         => 'int',
         'completion_latency'    => 'int',
         'timed_action_group_id' => 'int',
     ];
@@ -62,7 +62,7 @@ class TimedAction extends Model implements HasPresenter
         'visible',
         'start_at',
         'timezone',
-        'window_length',
+        'schedule_interval',
         'completion_latency',
         'created_at',
         'updated_at',
@@ -81,7 +81,7 @@ class TimedAction extends Model implements HasPresenter
         'active'                => 'bool',
         'visible'               => 'bool',
         'timezone'              => 'string|required',
-        'window_length'         => 'int|required',
+        'schedule_interval'         => 'int|required',
         'completion_latency'    => 'int|required',
     ];
 
@@ -98,7 +98,7 @@ class TimedAction extends Model implements HasPresenter
         'visible',
         'start_at',
         'timezone',
-        'window_length',
+        'schedule_interval',
         'completion_latency',
         'created_at',
         'updated_at',
@@ -119,7 +119,7 @@ class TimedAction extends Model implements HasPresenter
         'visible',
         'start_at',
         'timezone',
-        'window_length',
+        'schedule_interval',
         'completion_latency',
         'created_at',
         'updated_at',
@@ -191,11 +191,11 @@ class TimedAction extends Model implements HasPresenter
      */
     public function validate()
     {
-        if ($this->window_length < 120) {
+        if ($this->schedule_interval < 120) {
             throw new ValidationException('The window length must be at least 120 seconds.');
         }
 
-        if ($this->completion_latency > $this->window_length) {
+        if ($this->completion_latency > $this->schedule_interval) {
             throw new ValidationException('The completion latency must equal to or less than the window length.');
         }
     }

@@ -73,8 +73,8 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="action-window_length">{{ trans('forms.actions.window_length') }}</label>
-                        <input type="number" min="0" class="form-control" name="window_length" id="action-window_length" disabled value="{{ $action->window_length }}">
+                        <label for="action-schedule_interval">{{ trans('forms.actions.schedule_interval') }}</label>
+                        <input type="number" min="0" class="form-control" name="schedule_interval" id="action-schedule_interval" disabled value="{{ $action->schedule_interval }}">
                     </div>
                     <div class="form-group">
                         <label for="action-completion_latency">{{ trans('forms.actions.completion_latency') }}</label>

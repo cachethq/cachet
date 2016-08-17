@@ -65,7 +65,7 @@ final class CreateTimedActionCommand
      *
      * @var int
      */
-    public $window_length;
+    public $schedule_interval;
 
     /**
      * How often the action should be completed.
@@ -90,13 +90,13 @@ final class CreateTimedActionCommand
      * @param bool     $visible
      * @param string   $start_at
      * @param string   $timezone
-     * @param int      $window_length
+     * @param int      $schedule_interval
      * @param int      $completion_latency
      * @param int|null $timed_action_group_id
      *
      * @return void
      */
-    public function __construct($name, $description, $active, $visible, $start_at, $timezone, $window_length, $completion_latency, $timed_action_group_id = null)
+    public function __construct($name, $description, $active, $visible, $start_at, $timezone, $schedule_interval, $completion_latency, $timed_action_group_id = null)
     {
         $this->name = $name;
         $this->description = $description;
@@ -104,7 +104,7 @@ final class CreateTimedActionCommand
         $this->active = $active;
         $this->visible = $visible;
         $this->timezone = $timezone;
-        $this->window_length = $window_length;
+        $this->schedule_interval = $schedule_interval;
         $this->completion_latency = $completion_latency;
         $this->timed_action_group_id = $timed_action_group_id;
     }

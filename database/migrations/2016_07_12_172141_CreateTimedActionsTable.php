@@ -31,7 +31,7 @@ class CreateTimedActionsTable extends Migration
             $table->boolean('visible')->default(false);
             $table->timestamp('start_at');
             $table->string('timezone');
-            $table->integer('window_length')->unsigned(); // In seconds
+            $table->integer('schedule_interval')->unsigned(); // In seconds
             $table->integer('completion_latency')->unsigned()->default(0); // In seconds
             $table->timestamps();
             $table->softDeletes();

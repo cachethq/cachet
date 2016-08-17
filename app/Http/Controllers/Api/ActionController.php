@@ -147,7 +147,7 @@ class ActionController extends AbstractApiController
                 Binput::get('visible', true),
                 Binput::get('start_at'),
                 Binput::get('timezone'),
-                Binput::get('window_length'),
+                Binput::get('schedule_interval'),
                 Binput::get('completion_latency'),
                 Binput::get('timed_action_group_id')
             ));

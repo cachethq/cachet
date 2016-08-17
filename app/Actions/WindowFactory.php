@@ -32,7 +32,7 @@ class WindowFactory
      */
     public function next(TimedAction $action)
     {
-        return new Window($this->nextWindowStart($action), $action->window_length);
+        return new Window($this->nextWindowStart($action), $action->schedule_interval);
     }
 
     /**
@@ -46,7 +46,7 @@ class WindowFactory
      */
     public function current(TimedAction $action)
     {
-        return new Window($this->currentWindowStart($action), $action->window_length);
+        return new Window($this->currentWindowStart($action), $action->schedule_interval);
     }
 
     /**
@@ -62,13 +62,13 @@ class WindowFactory
     {
         $now = Carbon::now();
 
-        $diff = $now->diffInSeconds($action->start_at->copy()->addSeconds($action->window_length), false);
+        $diff = $now->diffInSeconds($action->start_at->copy()->addSeconds($action->schedule_interval), false);
 
         if ($diff > 0) {
             throw new ActionNotMaturedException("The timed action is only due to mature in {$diff} seconds");
         }
 
-        $offset = -$diff % $action->window_length;
+        $offset = -$diff % $action->schedule_interval;
 
         return $now->copy()->subSeconds($offset);
     }
@@ -84,7 +84,7 @@ class WindowFactory
      */
     protected function currentWindowStart(TimedAction $action)
     {
-        $start = $this->nextWindowStart($action)->subSeconds($action->window_length);
+        $start = $this->nextWindowStart($action)->subSeconds($action->schedule_interval);
 
         $diff = Carbon::now()->diffInSeconds($start, false);
 

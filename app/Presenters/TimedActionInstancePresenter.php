@@ -52,7 +52,7 @@ class TimedActionInstancePresenter extends BasePresenter implements Arrayable
      */
     public function ended_at()
     {
-        $startAt = $this->wrappedObject->started_at->addSeconds($this->wrappedObject->action->window_length);
+        $startAt = $this->wrappedObject->started_at->addSeconds($this->wrappedObject->action->schedule_interval);
 
         return app(DateFactory::class)->make($startAt, $this->wrappedObject->action->timezone);
     }
