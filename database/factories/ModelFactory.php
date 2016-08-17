@@ -128,7 +128,7 @@ $factory->define(TimedAction::class, function ($faker) {
         'description'           => $faker->sentence(),
         'active'                => true,
         'timezone'              => $faker->timezone,
-        'window_length'         => 3600,
+        'schedule_interval'     => 3600,
         'completion_latency'    => 1800,
         'start_at'              => Carbon::now()->subHours(4),
     ];
