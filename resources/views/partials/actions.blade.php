@@ -61,9 +61,13 @@
                         lineTension: 0,
                         data: _.map(chartData, function (data, index) {
                             var startAt = moment(chartKeys[index]);
-                            var completedAt = moment(startAt.format('YYYY-MM-DD')+' '+data.completed_at.split(' ')[1]).subtract();
+                            if (data.completed_at) {
+                                var completedAt = moment(startAt.format('YYYY-MM-DD')+' '+data.completed_at.split(' ')[1]).subtract();
 
-                            return completedAt.diff(startAt, 'seconds');
+                                return completedAt.diff(startAt, 'seconds');
+                            }
+
+                            return 0; // TODO: Make this the max value.
                         }),
                         fill: false,
                         backgroundColor: "{{ $theme_metrics }}",
@@ -107,7 +111,11 @@
                     tooltips: {
                         callbacks: {
                             beforeLabel: function (tooltipItem, data) {
-                                return 'Completed at: '+ yLabels[tooltipItem.index];
+                                if (yLabels[tooltipItem.index]) {
+                                    return 'Completed at: '+ yLabels[tooltipItem.index];
+                                } else {
+                                    return 'Did not complete.';
+                                }
                             },
                             label: function(tooltipItem, data) {
                                 // We can safely assume use of index 0
