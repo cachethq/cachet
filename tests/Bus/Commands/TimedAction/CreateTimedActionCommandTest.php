@@ -30,15 +30,15 @@ class CreateTimedActionCommandTest extends AbstractTestCase
     protected function getObjectAndParams()
     {
         $params = [
-            'name'                  => 'Daily KPIs',
-            'description'           => 'Send the daily KPIs to the bosses.',
-            'start_at'              => Carbon::now()->toDateTimeString(),
-            'active'                => true,
-            'visible'               => true,
-            'timezone'              => 'Europe/London',
+            'name'                      => 'Daily KPIs',
+            'description'               => 'Send the daily KPIs to the bosses.',
+            'start_at'                  => Carbon::now()->toDateTimeString(),
+            'active'                    => true,
+            'visible'                   => true,
+            'timezone'                  => 'Europe/London',
             'schedule_interval'         => 3600,
-            'completion_latency'    => 360,
-            'timed_action_group_id' => new TimedActionGroup(),
+            'completion_latency'        => 360,
+            'timed_action_group_id'     => new TimedActionGroup(),
         ];
 
         $object = new CreateTimedActionCommand(

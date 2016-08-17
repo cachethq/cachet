@@ -54,15 +54,15 @@ class CreateTimedActionCommandHandler
         $format = substr_count($command->start_at, ':') === 2 ? 'Y-m-d H:i:s' : 'd/m/Y H:i';
 
         $timedAction = TimedAction::create([
-            'name'                  => $command->name,
-            'description'           => $command->description,
-            'active'                => $command->active,
-            'visible'               => $command->visible,
-            'start_at'              => $this->dates->create($format, $command->start_at),
-            'timezone'              => $command->timezone,
+            'name'                      => $command->name,
+            'description'               => $command->description,
+            'active'                    => $command->active,
+            'visible'                   => $command->visible,
+            'start_at'                  => $this->dates->create($format, $command->start_at),
+            'timezone'                  => $command->timezone,
             'schedule_interval'         => $command->schedule_interval,
-            'completion_latency'    => $command->completion_latency,
-            'timed_action_group_id' => $command->timed_action_group_id,
+            'completion_latency'        => $command->completion_latency,
+            'timed_action_group_id'     => $command->timed_action_group_id,
         ]);
 
         event(new TimedActionWasAddedEvent($timedAction));

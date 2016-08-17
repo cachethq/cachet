@@ -37,16 +37,16 @@ class TimedAction extends Model implements HasPresenter
      * @var string[]
      */
     protected $casts = [
-        'id'                    => 'int',
-        'name'                  => 'string',
-        'description'           => 'string',
-        'active'                => 'bool',
-        'visible'               => 'bool',
-        'start_at'              => 'date',
-        'timezone'              => 'string',
+        'id'                        => 'int',
+        'name'                      => 'string',
+        'description'               => 'string',
+        'active'                    => 'bool',
+        'visible'                   => 'bool',
+        'start_at'                  => 'date',
+        'timezone'                  => 'string',
         'schedule_interval'         => 'int',
-        'completion_latency'    => 'int',
-        'timed_action_group_id' => 'int',
+        'completion_latency'        => 'int',
+        'timed_action_group_id'     => 'int',
     ];
 
     /**
@@ -75,14 +75,14 @@ class TimedAction extends Model implements HasPresenter
      * @var string[]
      */
     public $rules = [
-        'name'                  => 'string|required',
-        'timed_action_group_id' => 'int',
-        'description'           => 'string',
-        'active'                => 'bool',
-        'visible'               => 'bool',
-        'timezone'              => 'string|required',
+        'name'                      => 'string|required',
+        'timed_action_group_id'     => 'int',
+        'description'               => 'string',
+        'active'                    => 'bool',
+        'visible'                   => 'bool',
+        'timezone'                  => 'string|required',
         'schedule_interval'         => 'int|required',
-        'completion_latency'    => 'int|required',
+        'completion_latency'        => 'int|required',
     ];
 
     /**
