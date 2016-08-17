@@ -192,11 +192,11 @@ class TimedAction extends Model implements HasPresenter
     public function validate()
     {
         if ($this->schedule_interval < 120) {
-            throw new ValidationException('The window length must be at least 120 seconds.');
+            throw new ValidationException('The schedule interval must be at least 120 seconds.');
         }
 
         if ($this->completion_latency > $this->schedule_interval) {
-            throw new ValidationException('The completion latency must equal to or less than the window length.');
+            throw new ValidationException('The completion latency must equal to or less than the schedule interval.');
         }
     }
 

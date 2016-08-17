@@ -197,7 +197,7 @@ class ActionController extends AbstractApiController
             $instance = dispatch(new UpdateTimedActionInstanceCommand(
                 $instance,
                 Binput::get('message', null),
-                Binput::get('created_at', null)
+                Binput::get('completed_at', null)
             ));
         } catch (QueryException $e) {
             throw new BadRequestHttpException();
