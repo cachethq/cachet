@@ -11,8 +11,9 @@
 
 namespace CachetHQ\Cachet\Foundation\Providers;
 
-use Illuminate\View\Compilers\BladeCompiler;
+use CachetHQ\Cachet\Services\Modules\Renderer as ModulesRenderer;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\View\Compilers\BladeCompiler;
 
 class ModuleServiceProvider extends ServiceProvider
 {
@@ -44,7 +45,7 @@ class ModuleServiceProvider extends ServiceProvider
             'components' => 30000,
             'metrics'    => 40000,
             'scheduled'  => 50000,
-            'timeline'   => 60000,
+            'timeline'   => 60000,
         ],
     ];
 
@@ -56,26 +57,17 @@ class ModuleServiceProvider extends ServiceProvider
     public function boot(BladeCompiler $blade)
     {
         $blade->directive('modules', function ($group = null) {
-            $code = [
-                'foreach (array_numeric_sort($modules) as $group => $parts) {',
-                    'foreach (array_numeric_sort($parts) as $part) {',
-                        'if (empty($part[\'partial\'])) {',
-                            'continue;',
-                        '}',
-
-                        '$params = array_except(get_defined_vars(), [\'__data\', \'__path\']);',
-                        '$params = array_merge(array_get($part, \'parameters\', []), $params);',
-                        'echo $__env->make($part[\'partial\'], $params)->render();',
-                    '}',
-                '}',
-            ];
-
-            if ($group) {
-                $code[0] = 'if (!empty($modules['.$group.'])) {'.PHP_EOL;
-                $code[0] .= '$parts = $modules['.$group.'];';
-            }
-
-            return '<?php '.implode(PHP_EOL, $code).'?>';
+            return sprintf(
+                '<?php echo $app->call(\'%s@%s\', [
+                    \'factory\' => $__env,
+                    \'data\'    => array_except(get_defined_vars(), array(\'__data\', \'__path\')),
+                    \'modules\' => $modules,
+                    \'group\'   => %s,
+                ]); ?>',
+                ModulesRenderer::class,
+                'renderModules',
+                $group === null ? 'null' : $group
+            );
         });
     }
 

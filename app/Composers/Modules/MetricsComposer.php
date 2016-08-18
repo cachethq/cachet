@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Composers;
+namespace CachetHQ\Cachet\Composers\Modules;
 
 use CachetHQ\Cachet\Models\Metric;
 use Illuminate\Contracts\Config\Repository;
