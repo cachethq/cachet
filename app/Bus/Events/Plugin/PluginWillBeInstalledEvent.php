@@ -34,7 +34,7 @@ final class PluginWillBeInstalledEvent implements PluginEventInterface
      *
      * @return void
      */
-    public function __construct(string $name)
+    public function __construct($name)
     {
         $this->name = $name;
     }
