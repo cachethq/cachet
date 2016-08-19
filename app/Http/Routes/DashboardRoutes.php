@@ -185,6 +185,21 @@ class DashboardRoutes
                     });
                 });
 
+                $router->group(['as' => 'plugins.', 'prefix' => 'plugins'], function (Registrar $router) {
+                    $router->get('/', [
+                        'as'   => 'index',
+                        'uses' => 'PluginController@showPlugins',
+                    ]);
+                    $router->get('install', [
+                        'as'   => 'install',
+                        'uses' => 'PluginController@showInstallPlugin',
+                    ]);
+                    $router->post('install', 'PluginController@installPluginAction');
+                    $router->delete('{plugin}/uninstall', 'PluginController@uninstallPluginAction');
+                    $router->get('{plugin}/enable', 'PluginController@enablePluginAction');
+                    $router->get('{plugin}/disable', 'PluginController@disablePluginAction');
+                });
+
                 $router->group(['as' => 'settings.', 'prefix' => 'settings'], function (Registrar $router) {
                     $router->get('setup', [
                         'as'   => 'setup',

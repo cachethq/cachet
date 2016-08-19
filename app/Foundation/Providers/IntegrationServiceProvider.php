@@ -11,16 +11,22 @@
 
 namespace CachetHQ\Cachet\Foundation\Providers;
 
+use CachetHQ\Cachet\Integrations\Contracts\Autoloader as AutoloaderContract;
 use CachetHQ\Cachet\Integrations\Contracts\Beacon as BeaconContract;
 use CachetHQ\Cachet\Integrations\Contracts\Credits as CreditsContract;
 use CachetHQ\Cachet\Integrations\Contracts\Feed as FeedContract;
+use CachetHQ\Cachet\Integrations\Contracts\Packages as PackagesContract;
+use CachetHQ\Cachet\Integrations\Contracts\Plugins as PluginsContract;
 use CachetHQ\Cachet\Integrations\Contracts\Releases as ReleasesContract;
 use CachetHQ\Cachet\Integrations\Contracts\System as SystemContract;
+use CachetHQ\Cachet\Integrations\Core\Autoloader;
 use CachetHQ\Cachet\Integrations\Core\Beacon;
 use CachetHQ\Cachet\Integrations\Core\Credits;
 use CachetHQ\Cachet\Integrations\Core\Feed;
+use CachetHQ\Cachet\Integrations\Core\Plugins;
 use CachetHQ\Cachet\Integrations\Core\System;
 use CachetHQ\Cachet\Integrations\GitHub\Releases;
+use CachetHQ\Cachet\Integrations\Packagist\Packages;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Support\ServiceProvider;
 
@@ -42,6 +48,10 @@ class IntegrationServiceProvider extends ServiceProvider
         $this->registerCredits();
         $this->registerFeed();
         $this->registerSystem();
+
+        $this->registerAutoloader();
+        $this->registerPackages();
+        $this->registerPlugins();
 
         $this->registerReleases();
     }
@@ -97,6 +107,48 @@ class IntegrationServiceProvider extends ServiceProvider
     {
         $this->app->singleton(SystemContract::class, function (Container $app) {
             return new System();
+        });
+    }
+
+    /**
+     * Register the autoloader class.
+     *
+     * @return void
+     */
+    protected function registerAutoloader()
+    {
+        $this->app->singleton(AutoloaderContract::class, function ($app) {
+            return new Autoloader();
+        });
+    }
+
+    /**
+     * Register the packages class.
+     *
+     * @return void
+     */
+    protected function registerPackages()
+    {
+        $this->app->singleton(PackagesContract::class, function ($app) {
+            $cache = $app['cache.store'];
+            $filesystem = $app['filesystem']->disk('plugins');
+
+            return new Packages($cache, $filesystem);
+        });
+    }
+
+    /**
+     * Register the plugins class.
+     *
+     * @return void
+     */
+    protected function registerPlugins()
+    {
+        $this->app->singleton(PluginsContract::class, function ($app) {
+            $filesystem = $app['filesystem']->disk('plugins');
+            $autoloader = $app[AutoloaderContract::class];
+
+            return new Plugins($filesystem, $autoloader);
         });
     }
 

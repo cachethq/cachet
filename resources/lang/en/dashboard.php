@@ -186,6 +186,19 @@ return [
         ],
     ],
 
+    // Plugins
+    'plugins' => [
+        'plugins'  => 'Plugins',
+        'enabled'  => 'Enabled',
+        'disabled' => 'Disabled',
+        'install'  => [
+            'title'   => 'Install a plugin',
+            'message' => 'You should install a plugin.',
+            'success' => 'Plugin installed.',
+            'failure' => 'Something went wrong with the plugin, please try again.',
+        ],
+    ],
+
     // Settings
     'settings' => [
         'settings'  => 'Settings',

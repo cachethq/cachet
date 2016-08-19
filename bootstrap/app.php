@@ -28,6 +28,8 @@ $app->singleton('Illuminate\Contracts\Console\Kernel', 'CachetHQ\Cachet\Console\
 
 $app->singleton('Illuminate\Contracts\Debug\ExceptionHandler', 'GrahamCampbell\Exceptions\ExceptionHandler');
 
+$app->singleton('Illuminate\Foundation\Bootstrap\LoadConfiguration', 'CachetHQ\Cachet\Foundation\Bootstrap\LoadConfiguration');
+
 /*
 |--------------------------------------------------------------------------
 | Return The Application

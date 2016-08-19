@@ -25,7 +25,8 @@ if (!function_exists('set_active')) {
      */
     function set_active($path, array $classes = [], $active = 'active')
     {
-        if (Request::is($path)) {
+        $filtered = array_filter((array) $path, 'Request::is');
+        if (!empty($filtered)) {
             $classes[] = $active;
         }
 
@@ -113,5 +114,53 @@ if (!function_exists('color_contrast')) {
         $yiq = (($r * 100) + ($g * 400) + ($b * 114)) / 1000;
 
         return ($yiq >= 128) ? 'black' : 'white';
+    }
+}
+
+if (!function_exists('plugin_path')) {
+    /**
+     * Get the path to the plugins folder.
+     *
+     * @param bool   $enabled
+     * @param string $vendor
+     * @param string $package
+     *
+     * @return string
+     */
+    function plugin_path($enabled = null, $vendor = null, $package = null)
+    {
+        $path = base_path('plugins');
+        if ($enabled === null) {
+            return $path;
+        }
+
+        $path .= DIRECTORY_SEPARATOR.($enabled ? 'enabled' : 'disabled');
+        if ($vendor === null) {
+            return $path;
+        }
+
+        $path .= DIRECTORY_SEPARATOR.$vendor;
+        if ($package === null) {
+            return $path;
+        }
+
+        return $path.DIRECTORY_SEPARATOR.$package;
+    }
+}
+
+if (!function_exists('array_numeric_sort')) {
+    /**
+     * Numerically sort an array based on a specific key.
+     *
+     * @param array  $array
+     * @param string $key
+     *
+     * @return array
+     */
+    function array_numeric_sort(array $array = [], $key = 'order')
+    {
+        return array_sort($array, function ($a, $b) use ($key) {
+            return array_get($a, $key, PHP_INT_MAX) - array_get($b, $key, PHP_INT_MAX);
+        });
     }
 }
