@@ -16,8 +16,6 @@ use CachetHQ\Cachet\Integrations\Contracts\Plugins as PluginsContract;
 use CachetHQ\Cachet\Integrations\Exceptions\Autoloader\UpdateFailedException;
 use CachetHQ\Cachet\Integrations\Exceptions\Plugins\PluginFailedToDisableException;
 use CachetHQ\Cachet\Integrations\Exceptions\Plugins\PluginFailedToEnableException;
-use CachetHQ\Cachet\Integrations\Exceptions\Plugins\PluginFailedToInstallException;
-use CachetHQ\Cachet\Integrations\Exceptions\Plugins\PluginFailedToUninstallException;
 use CachetHQ\Cachet\Models\Plugin;
 use Illuminate\Contracts\Filesystem\Filesystem;
 use Illuminate\Support\Facades\Artisan;
@@ -63,7 +61,9 @@ class Plugins implements PluginsContract
      */
     public function enable(Plugin $plugin)
     {
-        $this->movePlugin($plugin, 'disabled', 'enabled');
+        if (!$this->movePlugin($plugin, 'disabled', 'enabled')) {
+            throw new PluginFailedToEnableException();
+        }
 
         $plugin->update(['enabled' => true]);
     }
@@ -79,7 +79,9 @@ class Plugins implements PluginsContract
      */
     public function disable(Plugin $plugin)
     {
-        $this->movePlugin($plugin, 'enabled', 'disabled');
+        if (!$this->movePlugin($plugin, 'enabled', 'disabled')) {
+            throw new PluginFailedToDisableException();
+        }
 
         $plugin->update(['enabled' => false]);
     }
@@ -115,7 +117,7 @@ class Plugins implements PluginsContract
             $this->clearCaches();
             $this->autoloader->update();
 
-            throw new PluginFailedToEnableException();
+            return false;
         }
 
         set_time_limit(ini_get('max_execution_time'));
