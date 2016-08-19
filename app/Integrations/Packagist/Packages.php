@@ -19,7 +19,7 @@ use CachetHQ\Cachet\Integrations\Exceptions\Packages\PackageNotFoundException;
 use CachetHQ\Cachet\Integrations\Exceptions\Packages\PackageVersionUnsatisfiedException;
 use Composer\Semver\Semver;
 use GuzzleHttp\Client;
-use GuzzleHttp\GuzzleException;
+use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Contracts\Cache\Repository;
 use Illuminate\Contracts\Filesystem\Filesystem;
 use ZipArchive;
