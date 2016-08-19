@@ -43,12 +43,14 @@ class Component extends Model implements HasPresenter
      * @var string[]
      */
     protected $casts = [
-        'order'       => 'int',
-        'group_id'    => 'int',
+        'name'        => 'string',
         'description' => 'string',
+        'status'      => 'int',
+        'order'       => 'int',
         'link'        => 'string',
-        'deleted_at'  => 'date',
+        'group_id'    => 'int',
         'enabled'     => 'bool',
+        'deleted_at'  => 'date',
     ];
 
     /**
