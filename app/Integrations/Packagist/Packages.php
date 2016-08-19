@@ -171,7 +171,7 @@ class Packages implements PackagesContract
         $meta = stream_get_meta_data($temp);
         $path = $meta['uri'];
 
-        ($zip = new ZipArchive())->open($path);
+        with($zip = new ZipArchive())->open($path);
 
         $root = $zip->getNameIndex(0);
 
