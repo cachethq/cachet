@@ -131,7 +131,7 @@ if (!function_exists('array_numeric_sort')) {
             $a = array_get($a, $key, PHP_INT_MAX);
             $b = array_get($b, $key, PHP_INT_MAX);
 
-            $default = PHP_MAJOR_VERSION < 7 && !defined('HHVM_VERSION') ? 1 : 0;
+            $default = PHP_MAJOR_VERSION < 7 ? 1 : 0;
 
             return $a < $b ? -1 : ($a === $b ? $default : 1);
         });
