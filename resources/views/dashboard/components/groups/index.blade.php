@@ -17,9 +17,9 @@
         </div>
         @include('dashboard.partials.errors')
         <div class="row">
-            <div class="col-sm-12 striped-list" id="component-group-list">
+            <div class="col-sm-12 striped-list" data-orderable-list="/dashboard/api/components/groups/order">
                 @forelse($groups as $group)
-                <div class="row striped-list-item" data-group-id="{{ $group->id }}">
+                <div class="row striped-list-item" data-orderable-id="{{ $group->id }}">
                     <div class="col-xs-6">
                         <h4>
                             @if($groups->count() > 1)
