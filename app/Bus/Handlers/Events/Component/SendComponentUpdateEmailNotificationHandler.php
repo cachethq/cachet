@@ -15,7 +15,6 @@ use CachetHQ\Cachet\Bus\Events\Component\ComponentStatusWasUpdatedEvent;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Subscriber;
 use Illuminate\Contracts\Mail\MailQueue;
-use Illuminate\Mail\Message;
 use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
 
 class SendComponentUpdateEmailNotificationHandler
@@ -106,7 +105,7 @@ class SendComponentUpdateEmailNotificationHandler
         $this->mailer->queue([
             'html' => 'emails.components.update-html',
             'text' => 'emails.components.update-text',
-        ], $mail, function (Message $message) use ($mail) {
+        ], $mail, function ($message) use ($mail) {
             $message->to($mail['email'])->subject($mail['subject']);
         });
     }

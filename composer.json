@@ -52,7 +52,8 @@
         "mockery/mockery": "0.9.5",
         "phpunit/phpunit": "4.8.21",
         "symfony/css-selector": "^3.0",
-        "symfony/dom-crawler": "^3.0"
+        "symfony/dom-crawler": "^3.0",
+        "tightenco/mailthief": "^0.2.3"
     },
     "autoload": {
         "classmap": [

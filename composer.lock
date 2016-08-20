@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8d282ec03bf68113417ee4eab7c0f4c5",
-    "content-hash": "b14ade2d704e51ad7f42c91377880304",
+    "hash": "b1e057f0b4af58332cab28ae468d8604",
+    "content-hash": "a964c95bed00a5dd448362afa7818d51",
     "packages": [
         {
             "name": "alt-three/badger",
@@ -5559,6 +5559,47 @@
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
             "time": "2016-07-17 14:02:08"
+        },
+        {
+            "name": "tightenco/mailthief",
+            "version": "v0.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tightenco/mailthief.git",
+                "reference": "274d4129ad8ad80cd122ab5448f31f1bb554fa8a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tightenco/mailthief/zipball/274d4129ad8ad80cd122ab5448f31f1bb554fa8a",
+                "reference": "274d4129ad8ad80cd122ab5448f31f1bb554fa8a",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/mail": "^5.1",
+                "illuminate/view": "^5.1"
+            },
+            "require-dev": {
+                "mockery/mockery": "^0.9.5",
+                "phpunit/phpunit": "^5.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MailThief\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Adam Wathan",
+                    "email": "adam.wathan@gmail.com"
+                }
+            ],
+            "description": "A fake Mailer for Laravel applications that takes the pain out of testing mail.",
+            "time": "2016-08-03 17:38:40"
         },
         {
             "name": "webmozart/assert",
