@@ -13,6 +13,12 @@ namespace CachetHQ\Cachet\Bus\Events\Component;
 
 use CachetHQ\Cachet\Models\Component;
 
+/**
+ * This is the component was added event.
+ *
+ * @author James Brooks <james@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
+ */
 final class ComponentWasAddedEvent implements ComponentEventInterface
 {
     /**

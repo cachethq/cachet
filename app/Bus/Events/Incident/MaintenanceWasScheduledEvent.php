@@ -11,8 +11,18 @@
 
 namespace CachetHQ\Cachet\Bus\Events\Incident;
 
+use CachetHQ\Cachet\Annotations\HandlerAnnotation;
 use CachetHQ\Cachet\Models\Incident;
 
+/**
+ * This is the maintenance was scheduled event class.
+ *
+ * @HandlerAnnotation("CachetHQ\Cachet\Bus\Handlers\Events\Incident\SendMaintenanceEmailNotificationHandler")
+ *
+ * @author Joe Cohen <joe@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
+ * @author James Brooks <james@alt-three.com>
+ */
 final class MaintenanceWasScheduledEvent implements IncidentEventInterface
 {
     /**

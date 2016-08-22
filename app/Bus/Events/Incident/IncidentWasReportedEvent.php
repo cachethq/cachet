@@ -11,8 +11,18 @@
 
 namespace CachetHQ\Cachet\Bus\Events\Incident;
 
+use CachetHQ\Cachet\Annotations\HandlerAnnotation;
 use CachetHQ\Cachet\Models\Incident;
 
+/**
+ * This is the incident was reported event class.
+ *
+ * @HandlerAnnotation("CachetHQ\Cachet\Bus\Handlers\Events\Incident\SendIncidentEmailNotificationHandler")
+ *
+ * @author James Brooks <james@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
+ * @author Joe Cohen <joe@alt-three.com>
+ */
 final class IncidentWasReportedEvent implements IncidentEventInterface
 {
     /**

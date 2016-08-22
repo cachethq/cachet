@@ -11,8 +11,18 @@
 
 namespace CachetHQ\Cachet\Bus\Events\User;
 
+use CachetHQ\Cachet\Annotations\HandlerAnnotation;
 use CachetHQ\Cachet\Models\Invite;
 
+/**
+ * This is the user was invited event class.
+ *
+ * @HandlerAnnotation("CachetHQ\Cachet\Bus\Handlers\Events\User\SendInviteUserEmailHandler")
+ *
+ * @author Joe Cohen <joe@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
+ * @author James Brooks <james@alt-three.com>
+ */
 final class UserWasInvitedEvent implements UserEventInterface
 {
     /**
