@@ -1,6 +1,18 @@
 // Import boostrap variables including default color palette and fonts
 @import "./node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_variables";
 
+$bs-datetimepicker-timepicker-font-size: 1.2em !default;
+$bs-datetimepicker-active-bg: $cachet-green !default;
+$bs-datetimepicker-active-color: $btn-primary-color !default;
+$bs-datetimepicker-border-radius: $border-radius-base !default;
+$bs-datetimepicker-btn-hover-bg: $cachet-gray-light !default;
+$bs-datetimepicker-disabled-color: $cachet-gray !default;
+$bs-datetimepicker-alternate-color: $cachet-gray !default;
+$bs-datetimepicker-secondary-border-color: #ccc !default;
+$bs-datetimepicker-secondary-border-color-rgba: rgba(0, 0, 0, 0.2) !default;
+$bs-datetimepicker-primary-border-color: white !default;
+$bs-datetimepicker-text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25) !default;
+
 .bootstrap-datetimepicker-widget {
     list-style: none;
 
@@ -33,8 +45,8 @@
             &:before {
                 border-left: 7px solid transparent;
                 border-right: 7px solid transparent;
-                border-bottom: 7px solid #ccc;
-                border-bottom-color: rgba(0, 0, 0, 0.2);
+                border-bottom: 7px solid $bs-datetimepicker-secondary-border-color;
+                border-bottom-color: $bs-datetimepicker-secondary-border-color-rgba;
                 top: -7px;
                 left: 7px;
             }
@@ -42,7 +54,7 @@
             &:after {
                 border-left: 6px solid transparent;
                 border-right: 6px solid transparent;
-                border-bottom: 6px solid white;
+                border-bottom: 6px solid $bs-datetimepicker-primary-border-color;
                 top: -6px;
                 left: 8px;
             }
@@ -52,8 +64,8 @@
             &:before {
                 border-left: 7px solid transparent;
                 border-right: 7px solid transparent;
-                border-top: 7px solid #ccc;
-                border-top-color: rgba(0, 0, 0, 0.2);
+                border-top: 7px solid $bs-datetimepicker-secondary-border-color;
+                border-top-color: $bs-datetimepicker-secondary-border-color-rgba;
                 bottom: -7px;
                 left: 6px;
             }
@@ -61,7 +73,7 @@
             &:after {
                 border-left: 6px solid transparent;
                 border-right: 6px solid transparent;
-                border-top: 6px solid white;
+                border-top: 6px solid $bs-datetimepicker-primary-border-color;
                 bottom: -6px;
                 left: 7px;
             }
@@ -95,7 +107,7 @@
     .timepicker-hour, .timepicker-minute, .timepicker-second {
         width: 54px;
         font-weight: bold;
-        font-size: 1.2em;
+        font-size: $bs-datetimepicker-timepicker-font-size;
         margin: 0;
     }
 
@@ -179,7 +191,7 @@
         & td,
         & th {
             text-align: center;
-            border-radius: $border-radius-base;
+            border-radius: $bs-datetimepicker-border-radius;
         }
 
         & th {
@@ -194,7 +206,7 @@
             &.disabled,
             &.disabled:hover {
                 background: none;
-                color: $gray-light;
+                color: $bs-datetimepicker-disabled-color;
                 cursor: not-allowed;
             }
 
@@ -213,7 +225,7 @@
             cursor: pointer;
 
             &:hover {
-                background: $gray-lighter;
+                background: $bs-datetimepicker-btn-hover-bg;
             }
         }
 
@@ -226,7 +238,7 @@
                 font-size: .8em;
                 height: 20px;
                 line-height: 20px;
-                color: $gray-light;
+                color: $bs-datetimepicker-alternate-color;
             }
 
             &.day {
@@ -239,13 +251,13 @@
             &.hour:hover,
             &.minute:hover,
             &.second:hover {
-                background: $gray-lighter;
+                background: $bs-datetimepicker-btn-hover-bg;
                 cursor: pointer;
             }
 
             &.old,
             &.new {
-                color: $gray-light;
+                color: $bs-datetimepicker-alternate-color;
             }
 
             &.today {
@@ -254,9 +266,10 @@
                 &:before {
                     content: '';
                     display: inline-block;
-                    border: 0 0 7px 7px solid transparent;
-                    border-bottom-color: $cachet-primary;
-                    border-top-color: rgba(0, 0, 0, 0.2);
+                    border: solid transparent;
+                    border-width: 0 0 7px 7px;
+                    border-bottom-color: $bs-datetimepicker-active-bg;
+                    border-top-color: $bs-datetimepicker-secondary-border-color-rgba;
                     position: absolute;
                     bottom: 4px;
                     right: 4px;
@@ -265,9 +278,9 @@
 
             &.active,
             &.active:hover {
-                background-color: $cachet-primary;
-                color: $btn-primary-color;
-                text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+                background-color: $bs-datetimepicker-active-bg;
+                color: $bs-datetimepicker-active-color;
+                text-shadow: $bs-datetimepicker-text-shadow;
             }
 
             &.active.today:before {
@@ -277,7 +290,7 @@
             &.disabled,
             &.disabled:hover {
                 background: none;
-                color: $gray-light;
+                color: $bs-datetimepicker-disabled-color;
                 cursor: not-allowed;
             }
 
@@ -288,26 +301,26 @@
                 line-height: 54px;
                 margin: 2px 1.5px;
                 cursor: pointer;
-                border-radius: $border-radius-base;
+                border-radius: $bs-datetimepicker-border-radius;
 
                 &:hover {
-                    background: $gray-lighter;
+                    background: $bs-datetimepicker-btn-hover-bg;
                 }
 
                 &.active {
-                    background-color: $cachet-primary;
-                    color: $btn-primary-color;
-                    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+                    background-color: $bs-datetimepicker-active-bg;
+                    color: $bs-datetimepicker-active-color;
+                    text-shadow: $bs-datetimepicker-text-shadow;
                 }
 
                 &.old {
-                    color: $gray-light;
+                    color: $bs-datetimepicker-alternate-color;
                 }
 
                 &.disabled,
                 &.disabled:hover {
                     background: none;
-                    color: $gray-light;
+                    color: $bs-datetimepicker-disabled-color;
                     cursor: not-allowed;
                 }
             }
