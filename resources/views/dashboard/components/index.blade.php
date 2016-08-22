@@ -17,9 +17,9 @@
         </div>
         @include('dashboard.partials.errors')
         <div class="row">
-            <div class="col-sm-12 striped-list" id="component-list">
+            <div class="col-sm-12 striped-list" data-orderable-list="/dashboard/api/components/order">
                 @forelse($components as $component)
-                <div class="row striped-list-item {{ !$component->enabled ? 'bg-warning' : null }}" data-component-id="{{ $component->id }}">
+                <div class="row striped-list-item {{ !$component->enabled ? 'bg-warning' : null }}" data-orderable-id="{{ $component->id }}">
                     <div class="col-xs-6">
                         <h4>
                             @if($components->count() > 1)
