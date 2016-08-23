@@ -4,7 +4,7 @@
 [![Build Status](https://img.shields.io/travis/CachetHQ/Cachet/2.4.svg?style=flat-square)](https://travis-ci.org/CachetHQ/Cachet)
 [![Software License](https://img.shields.io/badge/license-BSD3-brightgreen.svg?style=flat-square)](LICENSE)
 [![Crowdin](https://d322cqt584bo4o.cloudfront.net/cachet/localized.svg)](http://translate.cachethq.io/project/cachet)
-[![Packagist](https://img.shields.io/packagist/v/cachethq/cachet.svg?style=flat-square)](https://packagist.org/packages/cachethq/cachet)
+[![Latest Release]https://img.shields.io/github/release/cachethq/cachet.svg?style=flat-square)](https://github.com/CachetHQ/Cachet/releases)
 
 ![Screenshot](https://cachethq.io/img/main-interface.jpg)
 
@@ -82,10 +82,6 @@ To test out the demo, you may login to the [Dashboard](https://demo.cachethq.io/
 - **Password:** `test123`
 
 The demo is reset every half hour.
-
-### Release Notes
-
-We list releases on the [Releases page](https://github.com/CachetHQ/Cachet/releases) of the [Cachet GitHub repository](https://github.com/CachetHQ/Cachet). On the Releases page, you can also find the release notes for each release.
 
 ## Translations
 
