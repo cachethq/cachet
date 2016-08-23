@@ -233,7 +233,7 @@ return [
     'login' => [
         'login'      => 'Login',
         'logged_in'  => 'You\'re logged in.',
-        'welcome'    => 'Welcome Back!',
+        'welcome'    => 'Welcome back!',
         'two-factor' => 'Please enter your token.',
     ],
 
@@ -259,16 +259,16 @@ return [
 
     // Welcome modal
     'welcome' => [
-        'welcome' => 'Welcome to your new Status page!',
-        'message' => 'Your status page is almost ready! You might want to configure these extra settings',
-        'close'   => 'Take me straight to my dashboard',
+        'welcome' => 'Welcome to your new status page, :username!',
+        'message' => 'You\'re almost ready but you might want to configure these extra settings first...',
+        'close'   => 'I\'m good thanks!',
         'steps'   => [
-            'component'  => 'Create components',
-            'incident'   => 'Create incidents',
-            'customize'  => 'Customize',
-            'team'       => 'Add users',
-            'api'        => 'Generate API token',
-            'two-factor' => 'Two Factor Authentication',
+            'component'  => 'Add your components',
+            'incident'   => 'Create an incident',
+            'customize'  => 'Customize your page',
+            'team'       => 'Add your team',
+            'api'        => 'Generate an API token',
+            'two-factor' => 'Setup Two Factor Authentication',
         ],
     ],
 

@@ -1,4 +1,3 @@
-<!-- First time welcome Modal -->
 <div class="modal fade" id="welcome-modal" tabindex="-1" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -7,7 +6,7 @@
             </div>
             <div class="modal-body">
                 <header>
-                    {{ trans('dashboard.welcome.welcome') }}
+                    {{ trans('dashboard.welcome.welcome', ['username' => $current_user->username]) }}
                 </header>
 
                 <p>
@@ -38,18 +37,18 @@
                     <div class="row">
                         <div class="col-md-4 animated fadeInDown">
                             <a href="{{ route('dashboard.team.add') }}">
-                                <i class="ion  ion-ios-people"></i>
+                                <i class="ion ion-ios-people"></i>
                                 {{ trans('dashboard.welcome.steps.team') }}
                             </a>
                         </div>
                         <div class="col-md-4 animated fadeInDown two">
-                            <a href="{{ route('dashboard.user') }}">
+                            <a href="{{ route('dashboard.user.user') }}">
                                 <i class="ion ion-code-working"></i>
                                 {{ trans('dashboard.welcome.steps.api') }}
                             </a>
                         </div>
                         <div class="col-md-4 animated fadeInDown three">
-                            <a href="{{ route('dashboard.user') }}">
+                            <a href="{{ route('dashboard.user.user') }}">
                                 <i class="ion ion-unlocked"></i>
                                 {{ trans('dashboard.welcome.steps.two-factor') }}
                             </a>
@@ -65,3 +64,9 @@
         </div>
     </div>
 </div>
+
+<script>
+(function() {
+    $('#welcome-modal').modal('show');
+}());
+</script>

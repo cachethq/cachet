@@ -87,12 +87,7 @@
         @endif
     </div>
 </div>
-@if(Session::get('setup.done'))
+@if ($welcome_user)
 @include('dashboard.partials.welcome-modal')
-<script>
-(function() {
-    $('#welcome-modal').modal('show');
-}());
-</script>
 @endif
 @stop

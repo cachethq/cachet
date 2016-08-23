@@ -11,17 +11,24 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
+use CachetHQ\Cachet\Bus\Commands\User\WelcomeUserCommand;
 use CachetHQ\Cachet\Integrations\Contracts\Feed;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\Subscriber;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 use Jenssegers\Date\Date;
 
+/**
+ * This is the dashboard controller class.
+ *
+ * @author James Brooks <james@alt-three.com>
+ */
 class DashboardController extends Controller
 {
     /**
@@ -83,6 +90,11 @@ class DashboardController extends Controller
         $componentGroups = ComponentGroup::whereIn('id', $usedComponentGroups)->orderBy('order')->get();
         $ungroupedComponents = Component::enabled()->where('group_id', 0)->orderBy('order')->orderBy('created_at')->get();
 
+        $welcomeUser = !Auth::user()->welcomed;
+        if ($welcomeUser) {
+            dispatch(new WelcomeUserCommand(Auth::user()));
+        }
+
         $entries = null;
         if ($feed = $this->feed->latest()) {
             $entries = array_slice($feed->channel->item, 0, 5);
@@ -95,7 +107,8 @@ class DashboardController extends Controller
             ->withSubscribers($subscribers)
             ->withEntries($entries)
             ->withComponentGroups($componentGroups)
-            ->withUngroupedComponents($ungroupedComponents);
+            ->withUngroupedComponents($ungroupedComponents)
+            ->withWelcomeUser($welcomeUser);
     }
 
     /**

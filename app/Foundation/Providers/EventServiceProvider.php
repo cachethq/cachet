@@ -138,5 +138,8 @@ class EventServiceProvider extends ServiceProvider
         'CachetHQ\Cachet\Bus\Events\User\UserWasRemovedEvent' => [
             //
         ],
+        'CachetHQ\Cachet\Bus\Events\User\UserWasWelcomedEvent' => [
+            //
+        ],
     ];
 }

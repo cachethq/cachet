@@ -21,6 +21,11 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Hash;
 
+/**
+ * This is the user model.
+ *
+ * @author James Brooks <james@alt-three.com>
+ */
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract
 {
     use Authenticatable, CanResetPassword, ValidatingTrait;
@@ -40,6 +45,15 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     const LEVEL_USER = 2;
 
     /**
+     * The model's attributes.
+     *
+     * @var string[]
+     */
+    protected $attributes = [
+        'welcomed' => false,
+    ];
+
+    /**
      * The attributes that should be casted to native types.
      *
      * @var string[]
@@ -51,6 +65,23 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         'api_key'           => 'string',
         'active'            => 'bool',
         'level'             => 'int',
+        'welcomed'          => 'bool',
+    ];
+
+    /**
+     * The fillable properties.
+     *
+     * @var string[]
+     */
+    protected $fillable = [
+        'username',
+        'password',
+        'google_2fa_secret',
+        'email',
+        'api_key',
+        'active',
+        'level',
+        'welcomed',
     ];
 
     /**
