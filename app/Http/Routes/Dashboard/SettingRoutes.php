@@ -68,6 +68,10 @@ class SettingRoutes
                 'as'   => 'credits',
                 'uses' => 'SettingsController@showCreditsView',
             ]);
+            $router->get('log', [
+                'as'   => 'log',
+                'uses' => 'SettingsController@showLogView',
+            ]);
             $router->post('/', 'SettingsController@postSettings');
         });
     }

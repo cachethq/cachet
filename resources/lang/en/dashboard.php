@@ -197,6 +197,9 @@ return [
         'analytics' => [
             'analytics' => 'Analytics',
         ],
+        'log' => [
+            'log' => 'Log',
+        ],
         'localization' => [
             'localization' => 'Localization',
         ],
