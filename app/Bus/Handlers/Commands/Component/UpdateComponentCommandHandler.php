@@ -28,12 +28,14 @@ class UpdateComponentCommandHandler
     public function handle(UpdateComponentCommand $command)
     {
         $component = $command->component;
-
-        if ($command->status && $component->status !== $command->status) {
-            event(new ComponentStatusWasUpdatedEvent($component, $component->status, $command->status));
-        }
+        $component_status_old = $component->status;
 
         $component->update($this->filter($command));
+        $component_status_new = $component->status;
+
+        if ($component_status_old !== $component_status_new) {
+            event(new ComponentStatusWasUpdatedEvent($component, $component_status_old, $component_status_new));
+        }
 
         event(new ComponentWasUpdatedEvent($component));
 
