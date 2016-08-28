@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "933809cc55f1f2e2e2695dd728059f9e",
-    "content-hash": "e8e67f276e9ae4fc12e82e0e8f757a61",
+    "hash": "cfd3622f33928917617a1154e4e3a34a",
+    "content-hash": "610bfbe8bb927252831d3ec61d2a78d0",
     "packages": [
         {
             "name": "alt-three/badger",
@@ -325,16 +325,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.19.0",
+            "version": "3.19.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "204337efe872a0207781089833de0f8594fc5fd7"
+                "reference": "3cb90413129da42c9d3289d542bee0ae1049892c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/204337efe872a0207781089833de0f8594fc5fd7",
-                "reference": "204337efe872a0207781089833de0f8594fc5fd7",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/3cb90413129da42c9d3289d542bee0ae1049892c",
+                "reference": "3cb90413129da42c9d3289d542bee0ae1049892c",
                 "shasum": ""
             },
             "require": {
@@ -401,7 +401,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2016-08-16 20:55:18"
+            "time": "2016-08-23 20:58:48"
         },
         {
             "name": "backup-manager/backup-manager",
@@ -569,16 +569,16 @@
         },
         {
             "name": "barryvdh/laravel-cors",
-            "version": "v0.8.1",
+            "version": "v0.8.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvdh/laravel-cors.git",
-                "reference": "1998c8c7295d167cb744bbc45fbefad9b86b836c"
+                "reference": "bc7f40a71221b46d24971da7f0230ed4a75a18c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-cors/zipball/1998c8c7295d167cb744bbc45fbefad9b86b836c",
-                "reference": "1998c8c7295d167cb744bbc45fbefad9b86b836c",
+                "url": "https://api.github.com/repos/barryvdh/laravel-cors/zipball/bc7f40a71221b46d24971da7f0230ed4a75a18c6",
+                "reference": "bc7f40a71221b46d24971da7f0230ed4a75a18c6",
                 "shasum": ""
             },
             "require": {
@@ -588,7 +588,7 @@
                 "symfony/http-kernel": "~2.7|~3.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^5.2"
+                "phpunit/phpunit": "^4.8|^5.2"
             },
             "type": "library",
             "extra": {
@@ -618,7 +618,7 @@
                 "crossdomain",
                 "laravel"
             ],
-            "time": "2016-06-22 06:36:34"
+            "time": "2016-08-11 08:46:01"
         },
         {
             "name": "christian-riesen/base32",
@@ -1904,16 +1904,16 @@
         },
         {
             "name": "jenssegers/date",
-            "version": "v3.2.2",
+            "version": "v3.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jenssegers/date.git",
-                "reference": "2550344143b9de9b4b4ecbe64477d6eed5717b84"
+                "reference": "e57b9c943498967674d9baf73846060be899b604"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jenssegers/date/zipball/2550344143b9de9b4b4ecbe64477d6eed5717b84",
-                "reference": "2550344143b9de9b4b4ecbe64477d6eed5717b84",
+                "url": "https://api.github.com/repos/jenssegers/date/zipball/e57b9c943498967674d9baf73846060be899b604",
+                "reference": "e57b9c943498967674d9baf73846060be899b604",
                 "shasum": ""
             },
             "require": {
@@ -1957,7 +1957,7 @@
                 "time",
                 "translation"
             ],
-            "time": "2016-06-05 16:39:48"
+            "time": "2016-08-16 07:32:29"
         },
         {
             "name": "jeremeamia/SuperClosure",
@@ -2950,21 +2950,21 @@
         },
         {
             "name": "rcrowe/twigbridge",
-            "version": "v0.9.2",
+            "version": "v0.9.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rcrowe/TwigBridge.git",
-                "reference": "78a4b7da75042660258a3269751c259eee81c34a"
+                "reference": "6226d33331bbb1cdf64593a786f7efd1670200a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rcrowe/TwigBridge/zipball/78a4b7da75042660258a3269751c259eee81c34a",
-                "reference": "78a4b7da75042660258a3269751c259eee81c34a",
+                "url": "https://api.github.com/repos/rcrowe/TwigBridge/zipball/6226d33331bbb1cdf64593a786f7efd1670200a7",
+                "reference": "6226d33331bbb1cdf64593a786f7efd1670200a7",
                 "shasum": ""
             },
             "require": {
-                "illuminate/support": "5.0.*|5.1.*|5.2.*",
-                "illuminate/view": "5.0.*|5.1.*|5.2.*",
+                "illuminate/support": "5.0.*|5.1.*|5.2.*|5.3.*",
+                "illuminate/view": "5.0.*|5.1.*|5.2.*|5.3.*",
                 "php": ">=5.4.0",
                 "twig/twig": "~1.15|~2.0"
             },
@@ -3010,7 +3010,7 @@
                 "laravel",
                 "twig"
             ],
-            "time": "2016-02-22 07:48:48"
+            "time": "2016-05-01 16:43:38"
         },
         {
             "name": "roumen/feed",
@@ -5251,23 +5251,23 @@
         },
         {
             "name": "sebastian/environment",
-            "version": "1.3.7",
+            "version": "1.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/environment.git",
-                "reference": "4e8f0da10ac5802913afc151413bc8c53b6c2716"
+                "reference": "be2c607e43ce4c89ecd60e75c6a85c126e754aea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/4e8f0da10ac5802913afc151413bc8c53b6c2716",
-                "reference": "4e8f0da10ac5802913afc151413bc8c53b6c2716",
+                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/be2c607e43ce4c89ecd60e75c6a85c126e754aea",
+                "reference": "be2c607e43ce4c89ecd60e75c6a85c126e754aea",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3"
+                "php": "^5.3.3 || ^7.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.4"
+                "phpunit/phpunit": "^4.8 || ^5.0"
             },
             "type": "library",
             "extra": {
@@ -5297,7 +5297,7 @@
                 "environment",
                 "hhvm"
             ],
-            "time": "2016-05-17 03:18:57"
+            "time": "2016-08-18 05:49:44"
         },
         {
             "name": "sebastian/exporter",
