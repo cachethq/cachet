@@ -10,6 +10,8 @@
         background: darken($background, 5%);
         border-color: darken($background, 10%);
         color: $color;
+        outline: none;
+        outline-offset: 0;
     }
 
     &.disabled,

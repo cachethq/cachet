@@ -372,15 +372,21 @@ $(function() {
     }
 });
 
-function askConfirmation(callback) {
+function askConfirmation(callback, cancellCallback) {
     swal({
         type: "warning",
         title: "Confirm your action",
         text: "Are you sure you want to do this?",
+        buttonsStyling: false,
+        reverseButtons: true,
         confirmButtonText: "Yes",
-        confirmButtonColor: "#FF6F6F",
-        showCancelButton: true
-    }, function() {
-        callback();
+        confirmButtonClass: "btn btn-lg btn-danger",
+        cancelButtonClass: "btn btn-lg btn-default",
+        showCancelButton: true,
+        focusCancel: true
+    }).then(() => {
+        if (_.isFunction(callback)) callback();
+    }, () => {
+        if (_.isFunction(cancellCallback)) cancellCallback();
     });
 }
