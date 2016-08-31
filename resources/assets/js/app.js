@@ -372,7 +372,7 @@ $(function() {
     }
 });
 
-function askConfirmation(callback, cancellCallback) {
+function askConfirmation(callback, cancelCallback) {
     swal({
         type: "warning",
         title: "Confirm your action",
@@ -384,9 +384,9 @@ function askConfirmation(callback, cancellCallback) {
         cancelButtonClass: "btn btn-lg btn-default",
         showCancelButton: true,
         focusCancel: true
-    }).then(() => {
+    }).then(function () {
         if (_.isFunction(callback)) callback();
-    }, () => {
-        if (_.isFunction(cancellCallback)) cancellCallback();
+    }, function () {
+        if (_.isFunction(cancelCallback)) cancelCallback();
     });
 }
