@@ -5,9 +5,7 @@
 @section('content')
 <div class="setup-page">
     <div class="text-center">
-        <img class="logo" height="50" src="/img/cachet-logo.svg" alt="Cachet">
-        <h4>{{ trans('setup.title') }}</h4>
-        <br>
+        <img class="logo" height="90" src="{{ asset('img/cachet-logo.svg') }}" alt="{{ trans('setup.title') }}">
     </div>
     <div class="col-xs-12 col-xs-offset-0 col-sm-8 col-sm-offset-2">
         <div class="steps">
