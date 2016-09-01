@@ -203,16 +203,16 @@
         },
         {
             "name": "alt-three/throttle",
-            "version": "v1.0.6",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/AltThree/Throttle.git",
-                "reference": "f5d7fdca53b82f4607aa1f58738fe370106c5b62"
+                "reference": "3e4d57e8c61f02521b91cd911e0173710be0c1bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/AltThree/Throttle/zipball/f5d7fdca53b82f4607aa1f58738fe370106c5b62",
-                "reference": "f5d7fdca53b82f4607aa1f58738fe370106c5b62",
+                "url": "https://api.github.com/repos/AltThree/Throttle/zipball/3e4d57e8c61f02521b91cd911e0173710be0c1bb",
+                "reference": "3e4d57e8c61f02521b91cd911e0173710be0c1bb",
                 "shasum": ""
             },
             "require": {
@@ -227,7 +227,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0-dev"
+                    "dev-master": "1.1-dev"
                 }
             },
             "autoload": {
@@ -261,7 +261,7 @@
                 "rate limiter",
                 "throttle"
             ],
-            "time": "2016-06-03 22:24:41"
+            "time": "2016-08-26 21:13:17"
         },
         {
             "name": "alt-three/validator",
@@ -325,16 +325,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.19.2",
+            "version": "3.19.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "3cb90413129da42c9d3289d542bee0ae1049892c"
+                "reference": "1fdf5ec8743575a01d5953a84cd1d9438ce36d1a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/3cb90413129da42c9d3289d542bee0ae1049892c",
-                "reference": "3cb90413129da42c9d3289d542bee0ae1049892c",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/1fdf5ec8743575a01d5953a84cd1d9438ce36d1a",
+                "reference": "1fdf5ec8743575a01d5953a84cd1d9438ce36d1a",
                 "shasum": ""
             },
             "require": {
@@ -401,7 +401,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2016-08-23 20:58:48"
+            "time": "2016-08-30 17:56:50"
         },
         {
             "name": "backup-manager/backup-manager",
@@ -1904,16 +1904,16 @@
         },
         {
             "name": "jenssegers/date",
-            "version": "v3.2.3",
+            "version": "v3.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jenssegers/date.git",
-                "reference": "e57b9c943498967674d9baf73846060be899b604"
+                "reference": "53cefb19ca0b8c314adce4c7ec79333333c9edc4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jenssegers/date/zipball/e57b9c943498967674d9baf73846060be899b604",
-                "reference": "e57b9c943498967674d9baf73846060be899b604",
+                "url": "https://api.github.com/repos/jenssegers/date/zipball/53cefb19ca0b8c314adce4c7ec79333333c9edc4",
+                "reference": "53cefb19ca0b8c314adce4c7ec79333333c9edc4",
                 "shasum": ""
             },
             "require": {
@@ -1957,7 +1957,7 @@
                 "time",
                 "translation"
             ],
-            "time": "2016-08-16 07:32:29"
+            "time": "2016-08-31 07:50:37"
         },
         {
             "name": "jeremeamia/SuperClosure",
@@ -4048,16 +4048,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.24.1",
+            "version": "v1.24.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "3566d311a92aae4deec6e48682dc5a4528c4a512"
+                "reference": "33093f6e310e6976baeac7b14f3a6ec02f2d79b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/3566d311a92aae4deec6e48682dc5a4528c4a512",
-                "reference": "3566d311a92aae4deec6e48682dc5a4528c4a512",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/33093f6e310e6976baeac7b14f3a6ec02f2d79b7",
+                "reference": "33093f6e310e6976baeac7b14f3a6ec02f2d79b7",
                 "shasum": ""
             },
             "require": {
@@ -4105,20 +4105,20 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2016-05-30 09:11:59"
+            "time": "2016-09-01 17:50:53"
         },
         {
             "name": "vlucas/phpdotenv",
-            "version": "v2.3.0",
+            "version": "v2.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vlucas/phpdotenv.git",
-                "reference": "9ca5644c536654e9509b9d257f53c58630eb2a6a"
+                "reference": "3cc116adbe4b11be5ec557bf1d24dc5e3a21d18c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/9ca5644c536654e9509b9d257f53c58630eb2a6a",
-                "reference": "9ca5644c536654e9509b9d257f53c58630eb2a6a",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/3cc116adbe4b11be5ec557bf1d24dc5e3a21d18c",
+                "reference": "3cc116adbe4b11be5ec557bf1d24dc5e3a21d18c",
                 "shasum": ""
             },
             "require": {
@@ -4130,7 +4130,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.3-dev"
+                    "dev-master": "2.4-dev"
                 }
             },
             "autoload": {
@@ -4155,22 +4155,22 @@
                 "env",
                 "environment"
             ],
-            "time": "2016-06-14 14:14:52"
+            "time": "2016-09-01 10:05:43"
         }
     ],
     "packages-dev": [
         {
             "name": "alt-three/testbench",
-            "version": "v1.8.1",
+            "version": "v1.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/AltThree/TestBench.git",
-                "reference": "35c6e02a36a14e6fb2084adf22922d78d04424af"
+                "reference": "51b9d3aa9b2cd6d00ee72e018089df4c60913825"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/AltThree/TestBench/zipball/35c6e02a36a14e6fb2084adf22922d78d04424af",
-                "reference": "35c6e02a36a14e6fb2084adf22922d78d04424af",
+                "url": "https://api.github.com/repos/AltThree/TestBench/zipball/51b9d3aa9b2cd6d00ee72e018089df4c60913825",
+                "reference": "51b9d3aa9b2cd6d00ee72e018089df4c60913825",
                 "shasum": ""
             },
             "require": {
@@ -4188,7 +4188,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.8-dev"
+                    "dev-master": "1.9-dev"
                 }
             },
             "autoload": {
@@ -4220,7 +4220,7 @@
                 "TestBench",
                 "app"
             ],
-            "time": "2016-07-29 18:38:43"
+            "time": "2016-08-25 14:09:25"
         },
         {
             "name": "doctrine/instantiator",
