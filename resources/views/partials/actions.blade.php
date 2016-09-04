@@ -100,6 +100,7 @@
                     scales: {
                         yAxes: [{
                             ticks: {
+                                stepSize: 3600,
                                 min: 0,
                                 callback: function (value, index, values) {
                                     var time = moment();
