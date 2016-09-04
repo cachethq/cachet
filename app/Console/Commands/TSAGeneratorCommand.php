@@ -46,7 +46,7 @@ class TSAGeneratorCommand extends Command
      */
     public function fire()
     {
-        foreach (TimedAction::all() as $action) {
+        foreach (TimedAction::active()->get() as $action) {
             try {
                 $window = app(WindowFactory::class)->next($action);
             } catch (ActionExceptionInterface $e) {
