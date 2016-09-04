@@ -62,7 +62,7 @@
                         data: _.map(chartData, function (data, index) {
                             var startAt = moment(chartKeys[index]);
                             if (data.completed_at) {
-                                var completedAt = moment(startAt.format('YYYY-MM-DD')+' '+data.completed_at.split(' ')[1]).subtract();
+                                var completedAt = moment(startAt.format('YYYY-MM-DD')+' '+data.completed_at.split(' ')[1]);
 
                                 return completedAt.diff(startAt, 'seconds');
                             }
@@ -72,7 +72,21 @@
                         fill: false,
                         backgroundColor: "{{ $theme_metrics }}",
                         borderColor: "{{ color_darken($theme_metrics, -0.1) }}",
-                        pointBackgroundColor: "{{ color_darken($theme_metrics, -0.1) }}",
+                        pointBackgroundColor: _.map(chartData, function (data, index) {
+                            var startAt = moment(chartKeys[index]);
+                            if (data.completed_at) {
+                                var completedAt = moment(startAt.format('YYYY-MM-DD')+' '+data.completed_at.split(' ')[1]);
+                                var targettedAt = moment(startAt.format('YYYY-MM-DD')).add($el.data('completion-latency'), 's');
+
+                                if (completedAt.isAfter(targettedAt, 'hour')) {
+                                    return "{{ color_darken($theme_yellows, -0.1) }}";
+                                }
+
+                                return "{{ color_darken($theme_metrics, -0.1) }}";
+                            }
+
+                            return "{{ color_darken($theme_reds, -0.1) }}";
+                        }),
                         pointBorderColor: "{{ color_darken($theme_metrics, -0.1) }}",
                         pointHoverBackgroundColor: "{{ color_darken($theme_metrics, -0.2) }}",
                         pointHoverBorderColor: "{{ color_darken($theme_metrics, -0.2) }}",
