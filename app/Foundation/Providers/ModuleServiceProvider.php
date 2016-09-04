@@ -46,9 +46,11 @@ class ModuleServiceProvider extends ServiceProvider
             'status'     => 20000,
             'components' => 30000,
             'metrics'    => 40000,
-            'scheduled'  => 50000,
-            'stickied'   => 60000,
-            'timeline'   => 70000,
+            'actions'    => 50000,
+            'scheduled'  => 60000,
+            'stickied'   => 70000,
+            'scheduled'  => 80000,
+            'timeline'   => 90000,
         ],
     ];
 

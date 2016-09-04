@@ -11,7 +11,6 @@
 
 namespace CachetHQ\Cachet\Foundation\Providers;
 
-use CachetHQ\Cachet\Composers\ActionsComposer;
 use CachetHQ\Cachet\Composers\AppComposer;
 use CachetHQ\Cachet\Composers\CurrentUserComposer;
 use CachetHQ\Cachet\Composers\DashboardComposer;
@@ -39,9 +38,6 @@ class ComposerServiceProvider extends ServiceProvider
     {
         $factory->composer('*', AppComposer::class);
         $factory->composer('*', CurrentUserComposer::class);
-        $factory->composer(['index'], MetricsComposer::class);
-        $factory->composer(['index'], ActionsComposer::class);
-        $factory->composer(['index', 'single-incident', 'subscribe', 'signup'], StatusPageComposer::class);
         $factory->composer(['index', 'single-incident', 'subscribe.*', 'signup', 'dashboard.settings.theme', 'emails.*'], ThemeComposer::class);
         $factory->composer('dashboard.*', DashboardComposer::class);
         $factory->composer('*', ModuleComposer::class);
