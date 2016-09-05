@@ -43,9 +43,9 @@ class ActionController extends AbstractApiController
         $actions->search(Binput::except(['sort', 'order', 'per_page']));
 
         if ($createdAfter = Binput::get('created_after')) {
-            $actions->whereDate('created_at', '>', Carbon::createFromFormat('Y-m-d', $createdAfter)->toDateString());
+            $actions->whereDate('created_at', '>=', Carbon::createFromFormat('Y-m-d', $createdAfter)->toDateString());
         } elseif ($createdBefore = Binput::get('created_before')) {
-            $actions->whereDate('created_at', '<', Carbon::createFromFormat('Y-m-d', $createdAfter)->toDateString());
+            $actions->whereDate('created_at', '<=', Carbon::createFromFormat('Y-m-d', $createdAfter)->toDateString());
         }
 
         if ($sortBy = Binput::get('sort')) {
