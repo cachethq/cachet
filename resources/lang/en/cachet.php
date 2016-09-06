@@ -30,6 +30,7 @@ return [
         'past'          => 'Past Incidents',
         'previous_week' => 'Previous week',
         'next_week'     => 'Next week',
+        'stickied'      => 'Stickied Incidents',
         'scheduled'     => 'Scheduled Maintenance',
         'scheduled_at'  => ', scheduled :timestamp',
         'status'        => [

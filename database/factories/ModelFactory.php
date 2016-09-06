@@ -40,10 +40,11 @@ $factory->define(ComponentGroup::class, function ($faker) {
 
 $factory->define(Incident::class, function ($faker) {
     return [
-        'name'    => $faker->sentence(),
-        'message' => $faker->paragraph(),
-        'status'  => random_int(1, 4),
-        'visible' => 1,
+        'name'     => $faker->sentence(),
+        'message'  => $faker->paragraph(),
+        'status'   => random_int(1, 4),
+        'visible'  => 1,
+        'stickied' => false,
     ];
 });
 

@@ -19,6 +19,7 @@ use CachetHQ\Cachet\Composers\Modules\ComponentsComposer as ComponentsModuleComp
 use CachetHQ\Cachet\Composers\Modules\MetricsComposer as MetricsModuleComposer;
 use CachetHQ\Cachet\Composers\Modules\ScheduledComposer as ScheduledModuleComposer;
 use CachetHQ\Cachet\Composers\Modules\StatusComposer as StatusModuleComposer;
+use CachetHQ\Cachet\Composers\Modules\StickiedComposer as StickiedModuleComposer;
 use CachetHQ\Cachet\Composers\Modules\TimelineComposer as TimelineModuleComposer;
 use CachetHQ\Cachet\Composers\ThemeComposer;
 use CachetHQ\Cachet\Composers\TimezoneLocaleComposer;
@@ -43,6 +44,7 @@ class ComposerServiceProvider extends ServiceProvider
         $factory->composer('*', ModuleComposer::class);
         $factory->composer('partials.modules.components', ComponentsModuleComposer::class);
         $factory->composer('partials.modules.metrics', MetricsModuleComposer::class);
+        $factory->composer('partials.modules.stickied', StickiedModuleComposer::class);
         $factory->composer('partials.modules.scheduled', ScheduledModuleComposer::class);
         $factory->composer('partials.modules.status', StatusModuleComposer::class);
         $factory->composer('partials.modules.timeline', TimelineModuleComposer::class);
