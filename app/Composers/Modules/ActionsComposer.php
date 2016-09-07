@@ -30,7 +30,7 @@ class ActionsComposer
      */
     public function compose(View $view)
     {
-        $actions = TimedAction::active()->get();
+        $actions = TimedAction::visible()->get();
 
         $view->withActions($actions);
     }

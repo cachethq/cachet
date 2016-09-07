@@ -171,6 +171,18 @@ class TimedAction extends Model implements HasPresenter
     }
 
     /**
+     * Scope timed actions to visible actions.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeVisible(Builder $query)
+    {
+        return $query->where('visible', true);
+    }
+
+    /**
      * Scope timed actions to started.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
