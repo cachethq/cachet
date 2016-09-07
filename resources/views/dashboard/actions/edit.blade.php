@@ -57,7 +57,7 @@
 
                     <div class="form-group">
                         <label for="action-start_at">{{ trans('forms.actions.start_at') }}</label>
-                        <input type="text" class="form-control" name="start_at" id="action-start_at" disabled value="{{ $action->start_at }}" rel="datepicker">
+                        <input type="text" class="form-control" name="start_at" id="action-start_at" disabled value="{{ $action->start_at }}">
                     </div>
                     <div class="form-group">
                         <label>{{ trans('forms.actions.timezone') }}</label>
@@ -74,7 +74,7 @@
                     </div>
                     <div class="form-group">
                         <label for="action-schedule_interval">{{ trans('forms.actions.schedule_interval') }}</label>
-                        <input type="number" min="0" class="form-control" name="schedule_interval" id="action-schedule_interval" disabled value="{{ $action->schedule_interval }}">
+                        <input type="number" min="0" class="form-control" name="schedule_interval" id="action-schedule_interval" disabled value="{{ $action->window_length }}">
                     </div>
                     <div class="form-group">
                         <label for="action-completion_latency">{{ trans('forms.actions.completion_latency') }}</label>
