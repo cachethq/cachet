@@ -105,6 +105,7 @@
                                 callback: function (value, index, values) {
                                     var time = moment();
                                     time.hours(0);
+                                    time.minutes(0);
                                     time.seconds(0);
 
                                     return time.add(value, 'seconds').format('HH:mm');
