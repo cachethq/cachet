@@ -37,6 +37,7 @@ class ApiRoutes
             'prefix'     => 'dashboard/api',
         ], function (Registrar $router) {
             $router->get('incidents/templates', 'ApiController@getIncidentTemplate');
+            $router->post('actions/groups/order', 'ApiController@postUpdateActionGroupOrder');
             $router->post('components/groups/order', 'ApiController@postUpdateComponentGroupOrder');
             $router->post('components/order', 'ApiController@postUpdateComponentOrder');
             $router->post('components/{component}', 'ApiController@postUpdateComponent');

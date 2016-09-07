@@ -89,7 +89,7 @@ class ActionController extends Controller
      */
     public function showActionGroups()
     {
-        $groups = TimedActionGroup::orderBy('created_at')->get();
+        $groups = TimedActionGroup::orderBy('id')->get();
 
         $this->subMenu['groups']['active'] = true;
 
