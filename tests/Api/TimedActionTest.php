@@ -36,7 +36,9 @@ class TimedActionTest extends AbstractApiTestCase
         $action = factory(TimedAction::class)->create();
 
         $this->get('/api/v1/actions');
-        $this->seeJson($action->toArray());
+        $this->seeJson([
+            'id' => $action->id,
+        ]);
     }
 
     public function testGetAction()
@@ -46,7 +48,9 @@ class TimedActionTest extends AbstractApiTestCase
         $action = factory(TimedAction::class)->create();
 
         $this->get('/api/v1/actions/'.$action->id);
-        $this->seeJson($action->toArray());
+        $this->seeJson([
+            'id' => $action->id,
+        ]);
     }
 
     public function testGetActionInstances()
@@ -59,7 +63,9 @@ class TimedActionTest extends AbstractApiTestCase
         ]);
 
         $this->get('/api/v1/actions/'.$action->id.'/instances');
-        $this->seeJson($instance->toArray());
+        $this->seeJson([
+            'id' => $instance->id,
+        ]);
     }
 
     public function testGetActionInstance()
@@ -69,7 +75,9 @@ class TimedActionTest extends AbstractApiTestCase
         $instance = factory(TimedActionInstance::class)->create();
 
         $this->get('/api/v1/actions/'.$instance->timed_action_id.'/instances/'.$instance->id);
-        $this->seeJson($instance->toArray());
+        $this->seeJson([
+            'id' => $instance->id,
+        ]);
     }
 
     public function testPostAction()
@@ -81,7 +89,7 @@ class TimedActionTest extends AbstractApiTestCase
         ]);
 
         $this->post('/api/v1/actions/', $action->toArray());
-        $this->seeJson($action->toArray());
+        $this->assertResponseOk();
     }
 
     public function testPutAction()
@@ -95,6 +103,7 @@ class TimedActionTest extends AbstractApiTestCase
         $this->put('/api/v1/actions/'.$action->id, [
             'name' => 'Test',
         ]);
+        $this->assertResponseOk();
         $this->seeJson(['name' => 'Test']);
     }
 
@@ -109,6 +118,9 @@ class TimedActionTest extends AbstractApiTestCase
         ]);
 
         $this->put('/api/v1/actions/'.$action->id.'/instances/'.$instance->id, ['message' => 'foo']);
-        $this->seeJson($instance->toArray());
+        $this->seeJson([
+            'id'      => $instance->id,
+            'message' => 'foo',
+        ]);
     }
 }
