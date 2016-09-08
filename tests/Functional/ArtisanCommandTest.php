@@ -39,4 +39,11 @@ class ArtisanCommandTest extends AbstractTestCase
     {
         $this->assertSame(0, $this->app->make(Kernel::class)->call('cachet:beacon'));
     }
+
+    public function testPlugins()
+    {
+        $this->assertSame(0, $this->app->make(Kernel::class)->call('cachet:plugins'));
+        $this->assertSame(0, $this->app->make(Kernel::class)->call('cachet:plugins', ['--enabled' => true]));
+        $this->assertSame(0, $this->app->make(Kernel::class)->call('cachet:plugins', ['--disabled' => true]));
+    }
 }

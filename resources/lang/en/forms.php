@@ -117,6 +117,23 @@ return [
         ],
     ],
 
+    // Plugins form fields
+    'plugins' => [
+        'name'        => 'Name',
+        'vendor'      => 'Vendor',
+        'package'     => 'Package',
+        'description' => 'Description',
+        'link'        => 'Link',
+        'version'     => 'Version',
+        'enabled'     => 'Plugin enabled?',
+        'actions'     => [
+            'install'   => 'Install',
+            'uninstall' => 'Uninstall',
+            'enable'    => 'Enable',
+            'disable'   => 'Disable',
+        ],
+    ],
+
     // Settings
     'settings' => [
         // Application setup

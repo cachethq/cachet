@@ -82,6 +82,13 @@ To test out the demo, you may login to the [Dashboard](https://demo.cachethq.io/
 - **Password:** `test123`
 
 The demo is reset every half hour.
+<<<<<<< HEAD
+=======
+
+### Release Notes
+
+We list releases on the [Releases page](https://github.com/CachetHQ/Cachet/releases) of the [Cachet GitHub repository](https://github.com/CachetHQ/Cachet). On the Releases page, you can also find the release notes for each release.
+>>>>>>> e0f071024495c0aa2983ad928beed67f396c18a6
 
 ## Translations
 
