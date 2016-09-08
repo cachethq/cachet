@@ -19,7 +19,7 @@
         <div class="row">
             <div class="col-sm-12 striped-list" id="plugin-list">
                 @forelse($plugins as $plugin)
-                <div class="row striped-list-item {{ !$plugin->enabled ? 'bg-warning' : null }}" data-plugin-id="{{ $plugin->id }}">
+                <div class="row striped-list-item" data-plugin-id="{{ $plugin->id }}">
                     <div class="col-xs-6">
                         <h4>
                             @if($plugins->count() > 1)
@@ -32,8 +32,12 @@
                         @endif
                     </div>
                     <div class="col-xs-6 text-right">
+                    @if($plugin->enabled)
+                        <a href="/dashboard/plugins/{{ $plugin->id }}/disable" class="btn btn-default">{{ trans('forms.plugins.actions.disable') }}</a>
+                    @else
                         <a href="/dashboard/plugins/{{ $plugin->id }}/enable" class="btn btn-default">{{ trans('forms.plugins.actions.enable') }}</a>
                         <a href="/dashboard/plugins/{{ $plugin->id }}/uninstall" class="btn btn-danger confirm-action" data-method="DELETE">{{ trans('forms.plugins.actions.uninstall') }}</a>
+                    @endif
                     </div>
                 </div>
                 @empty

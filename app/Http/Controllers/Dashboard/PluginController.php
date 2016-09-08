@@ -16,10 +16,10 @@ use CachetHQ\Cachet\Bus\Commands\Plugin\DisablePluginCommand;
 use CachetHQ\Cachet\Bus\Commands\Plugin\EnablePluginCommand;
 use CachetHQ\Cachet\Bus\Commands\Plugin\InstallPluginCommand;
 use CachetHQ\Cachet\Bus\Commands\Plugin\UninstallPluginCommand;
-use CachetHQ\Cachet\Integrations\Exceptions\PluginFailedToDisableException;
-use CachetHQ\Cachet\Integrations\Exceptions\PluginFailedToEnableException;
-use CachetHQ\Cachet\Integrations\Exceptions\PluginFailedToInstallException;
-use CachetHQ\Cachet\Integrations\Exceptions\PluginFailedToUninstallException;
+use CachetHQ\Cachet\Integrations\Exceptions\Plugins\PluginFailedToDisableException;
+use CachetHQ\Cachet\Integrations\Exceptions\Plugins\PluginFailedToEnableException;
+use CachetHQ\Cachet\Integrations\Exceptions\Plugins\PluginFailedToInstallException;
+use CachetHQ\Cachet\Integrations\Exceptions\Plugins\PluginFailedToUninstallException;
 use CachetHQ\Cachet\Models\Plugin;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
@@ -110,6 +110,10 @@ class PluginController extends Controller
                 $package,
                 $version
             ));
+        } catch (PluginFailedToInstallException $e) {
+            return Redirect::route('dashboard.plugins.install')
+                ->withInput(Binput::all())
+                ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.plugins.install.failure')));
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.plugins.install')
                 ->withInput(Binput::all())
@@ -184,7 +188,7 @@ class PluginController extends Controller
      */
     public function disablePluginAction(Plugin $plugin)
     {
-        if (! $plugin->enabled) {
+        if (!$plugin->enabled) {
             // @todo: message saying already not enabled
             return Redirect::route('dashboard.plugins.index', ['enabled' => 'no']);
         }

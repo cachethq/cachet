@@ -25,8 +25,8 @@ use CachetHQ\Cachet\Integrations\Core\Credits;
 use CachetHQ\Cachet\Integrations\Core\Feed;
 use CachetHQ\Cachet\Integrations\Core\Plugins;
 use CachetHQ\Cachet\Integrations\Core\System;
-use CachetHQ\Cachet\Integrations\Packagist\Packages;
 use CachetHQ\Cachet\Integrations\GitHub\Releases;
+use CachetHQ\Cachet\Integrations\Packagist\Packages;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Support\ServiceProvider;
 
@@ -118,7 +118,7 @@ class IntegrationServiceProvider extends ServiceProvider
     protected function registerAutoloader()
     {
         $this->app->singleton(AutoloaderContract::class, function ($app) {
-            return new Autoloader;
+            return new Autoloader();
         });
     }
 

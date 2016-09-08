@@ -11,10 +11,14 @@
 
 namespace CachetHQ\Cachet\Integrations\Core;
 
-use CachetHQ\Cachet\Integrations\Contracts\Plugins as PluginsContract;
 use CachetHQ\Cachet\Integrations\Contracts\Autoloader as AutoloaderContract;
+use CachetHQ\Cachet\Integrations\Contracts\Plugins as PluginsContract;
+use CachetHQ\Cachet\Integrations\Exceptions\Autoloader\UpdateFailedException;
+use CachetHQ\Cachet\Integrations\Exceptions\Plugins\PluginFailedToDisableException;
+use CachetHQ\Cachet\Integrations\Exceptions\Plugins\PluginFailedToEnableException;
 use CachetHQ\Cachet\Models\Plugin;
 use Illuminate\Contracts\Filesystem\Filesystem;
+use Illuminate\Support\Facades\Artisan;
 
 class Plugins implements PluginsContract
 {
@@ -51,14 +55,15 @@ class Plugins implements PluginsContract
      *
      * @param \CachetHQ\Cachet\Models\Plugin $plugin
      *
-     * @return void
-     *
      * @throws \CachetHQ\Cachet\Integrations\Exceptions\Plugins\PluginFailedToEnableException
+     *
+     * @return void
      */
     public function enable(Plugin $plugin)
     {
-        $this->filesystem->move("disabled/{$plugin->name}", "enabled/{$plugin->name}");
-        $this->autoloader->dump();
+        if (!$this->movePlugin($plugin, 'disabled', 'enabled')) {
+            throw new PluginFailedToEnableException();
+        }
 
         $plugin->update(['enabled' => true]);
     }
@@ -68,12 +73,64 @@ class Plugins implements PluginsContract
      *
      * @param \CachetHQ\Cachet\Models\Plugin $plugin
      *
-     * @return void
-     *
      * @throws \CachetHQ\Cachet\Integrations\Exceptions\Plugins\PluginFailedToDisableException
+     *
+     * @return void
      */
     public function disable(Plugin $plugin)
     {
-        // ...
+        if (!$this->movePlugin($plugin, 'enabled', 'disabled')) {
+            throw new PluginFailedToDisableException();
+        }
+
+        $plugin->update(['enabled' => false]);
+    }
+
+    /**
+     * Move a plugin.
+     *
+     * @param \CachetHQ\Cachet\Models\Plugin $plugin
+     * @param string                         $from
+     * @param string                         $to
+     *
+     * @return void
+     */
+    protected function movePlugin(Plugin $plugin, $from, $to)
+    {
+        set_time_limit(60 * 15);
+
+        $this->filesystem->move(
+            "${from}/{$plugin->name}",
+            "${to}/{$plugin->name}"
+        );
+
+        $this->clearCaches();
+
+        try {
+            $this->autoloader->update();
+        } catch (UpdateFailedException $e) {
+            $this->filesystem->move(
+                "${to}/{$plugin->name}",
+                "${from}/{$plugin->name}"
+            );
+
+            $this->clearCaches();
+            $this->autoloader->update();
+
+            return false;
+        }
+
+        set_time_limit(ini_get('max_execution_time'));
+    }
+
+    /**
+     * Clear the caches.
+     *
+     * @return void
+     */
+    protected function clearCaches()
+    {
+        Artisan::call('config:clear');
+        Artisan::call('route:clear');
     }
 }

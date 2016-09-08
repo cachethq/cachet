@@ -12,7 +12,7 @@
 namespace CachetHQ\Cachet\Integrations\Core;
 
 use CachetHQ\Cachet\Integrations\Contracts\Autoloader as AutoloaderContract;
-use CachetHQ\Cachet\Integrations\Exceptions\Autoloader\DumpFailedException;
+use CachetHQ\Cachet\Integrations\Exceptions\Autoloader\UpdateFailedException;
 use Symfony\Component\Process\Process;
 
 class Autoloader implements AutoloaderContract
@@ -35,22 +35,20 @@ class Autoloader implements AutoloaderContract
     }
 
     /**
-     * Dumps the autoloader.
+     * Updates the autoloader.
+     *
+     * @throws \CachetHQ\Cachet\Integrations\Exceptions\Autoloader\UpdateFailedException
      *
      * @return void
-     *
-     * @throws \CachetHQ\Cachet\Integrations\Exceptions\Autoloader\DumpFailedException
      */
-    public function dump()
+    public function update()
     {
         $process = $this->createProcess();
 
-        $process->setCommandLine("{$this->composer} dump-autoload");
+        $process->setCommandLine("{$this->composer} update --lock");
 
-        try {
-            $process->mustRun();
-        } catch (Exception $e) {
-            throw new DumpFailedException;
+        if ($process->run() !== 0) {
+            throw new UpdateFailedException();
         }
     }
 

@@ -26,7 +26,7 @@ Cachet is a beautiful and powerful open source status page system.
 ## Requirements
 
 - PHP 5.5.9+ or newer
-- Apache or Nginx server
+- HTTP server with PHP support (eg: Apache, Nginx, Caddy)
 - [Composer](https://getcomposer.org)
 
 ## I'm looking to contribute to this awesome project!
@@ -81,7 +81,7 @@ To test out the demo, you may login to the [Dashboard](https://demo.cachethq.io/
 - **Username:** `test` or `test@test.com`
 - **Password:** `test123`
 
-The demo is reset every half an hour.
+The demo is reset every half hour.
 
 ### Release Notes
 

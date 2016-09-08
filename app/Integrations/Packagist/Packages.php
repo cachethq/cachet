@@ -19,7 +19,7 @@ use CachetHQ\Cachet\Integrations\Exceptions\Packages\PackageNotFoundException;
 use CachetHQ\Cachet\Integrations\Exceptions\Packages\PackageVersionUnsatisfiedException;
 use Composer\Semver\Semver;
 use GuzzleHttp\Client;
-use GuzzleHttp\GuzzleException;
+use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Contracts\Cache\Repository;
 use Illuminate\Contracts\Filesystem\Filesystem;
 use ZipArchive;
@@ -93,19 +93,19 @@ class Packages implements PackagesContract
      * @param string $package
      * @param string $version
      *
-     * @return array
-     *
      * @throws \CachetHQ\Cachet\Integrations\Exceptions\Packages\IncorrectPackageTypeException
      * @throws \CachetHQ\Cachet\Integrations\Exceptions\Packages\PackageNotFoundException
      * @throws \CachetHQ\Cachet\Integrations\Exceptions\Packages\PackageVersionUnsatisfiedException
+     *
+     * @return array
      */
     public function find($vendor, $package, $version)
     {
         $url = sprintf($this->url, urlencode($vendor), urlencode($package));
         $package = $this->getPackagistResource($url, null);
 
-        if ($package === null || ! isset($package['package'])) {
-            throw new PackageNotFoundException;
+        if ($package === null || !isset($package['package'])) {
+            throw new PackageNotFoundException();
         }
 
         $package = $package['package'];
@@ -115,13 +115,13 @@ class Packages implements PackagesContract
         $versions = Semver::satisfiedBy($versions, $version);
 
         if (empty($versions)) {
-            throw new PackageVersionUnsatisfiedException;
+            throw new PackageVersionUnsatisfiedException();
         }
 
         $package = $package['versions'][$versions[0]];
 
         if ($package['type'] !== 'cachet-plugin') {
-            throw new IncorrectPackageTypeException;
+            throw new IncorrectPackageTypeException();
         }
 
         $package['link'] = sprintf($this->link, $package['name'], urlencode($package['version']));
@@ -132,12 +132,12 @@ class Packages implements PackagesContract
     /**
      * Downloads a package to a folder.
      *
-     * @param  array  $package
-     *
-     * @return void
+     * @param array $package
      *
      * @throws \CachetHQ\Cachet\Integrations\Exceptions\Packages\PackageAlreadyDownloadedException
      * @throws \CachetHQ\Cachet\Integrations\Exceptions\Packages\PackageDownloadErrorException
+     *
+     * @return void
      */
     public function download(array $package)
     {
@@ -146,12 +146,12 @@ class Packages implements PackagesContract
             $this->filesystem->exists("enabled/{$package['name']}") ||
             $this->filesystem->exists($dir)
         ) {
-            throw new PackageAlreadyDownloadedException;
+            throw new PackageAlreadyDownloadedException();
         }
 
         // Currently only support zip.
         if ($package['dist']['type'] !== 'zip') {
-            throw new PackageDownloadErrorException;
+            throw new PackageDownloadErrorException();
         }
 
         $temp = tmpfile();
@@ -161,7 +161,7 @@ class Packages implements PackagesContract
         } catch (GuzzleException $e) {
             fclose($temp);
 
-            throw new PackageDownloadErrorException;
+            throw new PackageDownloadErrorException();
         }
 
         $this->filesystem->createDir(dirname($dir));
@@ -171,7 +171,7 @@ class Packages implements PackagesContract
         $meta = stream_get_meta_data($temp);
         $path = $meta['uri'];
 
-        ($zip = new ZipArchive)->open($path);
+        with($zip = new ZipArchive())->open($path);
 
         $root = $zip->getNameIndex(0);
 
@@ -186,8 +186,8 @@ class Packages implements PackagesContract
     /**
      * Get a packagist resource.
      *
-     * @param  string  $url
-     * @param  integer $cache
+     * @param string $url
+     * @param int    $cache
      *
      * @return array|null
      */
@@ -200,7 +200,7 @@ class Packages implements PackagesContract
                 return json_decode((new Client())->get($url)->getBody(), true);
             });
         } catch (GuzzleException $e) {
-            return null;
+            return;
         }
     }
 }

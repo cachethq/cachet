@@ -16,66 +16,19 @@
             </a>
         </div>
         <ul>
-            <li {!! set_active('dashboard') !!}>
-                <a href="{{ route('dashboard.index') }}">
-                    <i class="ion ion-speedometer"></i>
-                    <span>{{ trans('dashboard.dashboard') }}</span>
+        @foreach(array_numeric_sort($tabs) as $tab)
+            <li {!! set_active($tab['active']) !!}>
+                <a href="{{ $tab['url'] }}">
+                @if($tab['icon'])
+                    <i class="{{ $tab['icon'] }}"></i>
+                @endif
+                    <span>{{ $tab['title'] }}</span>
+                @if(!empty($tab['label']))
+                    <span class="label {{ $tab['label']['class'] }}">{{ $tab['label']['text'] }}</span>
+                @endif
                 </a>
             </li>
-            <li {!! set_active('dashboard/incidents*') !!} {!! set_active('dashboard/schedule*') !!}>
-                <a href="{{ route('dashboard.incidents.index') }}">
-                    <i class="ion ion-ios-information-outline"></i>
-                    <span>{{ trans('dashboard.incidents.incidents') }}</span>
-                    <span class="label label-info">{{ $incident_count }}</span>
-                </a>
-            </li>
-            <li {!! set_active('dashboard/templates*') !!}>
-                <a href="{{ route('dashboard.templates.index') }}">
-                    <i class="ion ion-ios-paper-outline"></i>
-                    <span>{{ trans('dashboard.incidents.incident-templates') }}</span>
-                    <span class="label label-info">{{ $incident_template_count }}</span>
-                </a>
-            </li>
-            <li {!! set_active('dashboard/components*') !!}>
-                <a href="{{ route('dashboard.components.index') }}">
-                    <i class="ion ion-ios-browsers-outline"></i>
-                    <span>{{ trans('dashboard.components.components') }}</span>
-                    <span class="label label-info">{{ $component_count }}</span>
-                </a>
-            </li>
-            <li {!! set_active('dashboard/metrics*') !!}>
-                <a href="{{ route('dashboard.metrics.index') }}">
-                    <i class="ion ion-ios-pie-outline"></i>
-                    <span>{{ trans('dashboard.metrics.metrics') }}</span>
-                </a>
-            </li>
-            <li {!! set_active('dashboard/subscribers*') !!}>
-                <a href="{{ route('dashboard.subscribers.index') }}">
-                    <i class="ion ion-ios-email-outline"></i>
-                    <span>{{ trans('dashboard.subscribers.subscribers') }}</span>
-                    <span class="label label-info">{{ $subscriber_count }}</span>
-                </a>
-            </li>
-            <li {!! set_active('dashboard/team*') !!}>
-                <a href="{{ route('dashboard.team.index') }}">
-                    <i class="ion ion-ios-people-outline"></i>
-                    <span>{{ trans('dashboard.team.team') }}</span>
-                </a>
-            </li>
-            <li {!! set_active('dashboard/plugins*') !!}>
-                <a href="{{ route('dashboard.plugins.index') }}">
-                    <i class="ion ion-ios-color-filter-outline"></i>
-                    <span>{{ trans('dashboard.plugins.plugins') }}</span>
-                </a>
-            </li>
-            <li {!! set_active('dashboard/settings*') !!}>
-                <a href="{{ route('dashboard.settings.setup') }}">
-                    <i class="ion ion-ios-gear-outline"></i>
-                    <span>
-                        {{ trans('dashboard.settings.settings') }}
-                    </span>
-                </a>
-            </li>
+        @endforeach
         </ul>
         <div class="bottom-menu-sidebar">
             <ul>

@@ -12,8 +12,8 @@
 namespace CachetHQ\Cachet\Bus\Handlers\Commands\Plugin;
 
 use CachetHQ\Cachet\Bus\Commands\Plugin\EnablePluginCommand;
-use CachetHQ\Cachet\Bus\Events\Plugin\PluginWillEnableEvent;
 use CachetHQ\Cachet\Bus\Events\Plugin\PluginWasEnabledEvent;
+use CachetHQ\Cachet\Bus\Events\Plugin\PluginWillBeEnabledEvent;
 use CachetHQ\Cachet\Integrations\Contracts\Plugins;
 use CachetHQ\Cachet\Models\Plugin;
 
@@ -47,6 +47,10 @@ class EnablePluginCommandHandler
      */
     public function handle(EnablePluginCommand $command)
     {
+        event(new PluginWillBeEnabledEvent($command->plugin));
+
         $this->plugins->enable($command->plugin);
+
+        event(new PluginWasEnabledEvent($command->plugin));
     }
 }
