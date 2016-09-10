@@ -30,6 +30,16 @@ use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
  */
 class ComponentGroupController extends AbstractApiController
 {
+    protected $guard;
+
+    /**
+     * @param Guard $guard
+     */
+    public function __construct(Guard $guard)
+    {
+        $this->guard = $guard;
+    }
+
     /**
      * Get all groups.
      *
@@ -39,7 +49,7 @@ class ComponentGroupController extends AbstractApiController
     {
         $groups = ComponentGroup::visible();
 
-        if (app(Guard::class)->check()) {
+        if ($this->guard->check()) {
             $groups = ComponentGroup::query();
         }
 
@@ -80,8 +90,7 @@ class ComponentGroupController extends AbstractApiController
                 Binput::get('name'),
                 Binput::get('order', 0),
                 Binput::get('collapsed', 0),
-                Binput::get('visible', 2),
-                app(Guard::class)->user()->getKey()
+                Binput::get('visible', 2)
             ));
         } catch (QueryException $e) {
             throw new BadRequestHttpException();
@@ -105,8 +114,7 @@ class ComponentGroupController extends AbstractApiController
                 Binput::get('name'),
                 Binput::get('order'),
                 Binput::get('collapsed'),
-                Binput::get('visible'),
-                app(Guard::class)->user()->getKey()
+                Binput::get('visible')
             ));
         } catch (QueryException $e) {
             throw new BadRequestHttpException();

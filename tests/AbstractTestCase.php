@@ -62,11 +62,7 @@ abstract class AbstractTestCase extends TestCase
      */
     protected function signIn(User $user = null)
     {
-        if ($user) {
-            $this->user = $user;
-        } elseif (!$this->user) {
-            $this->user = $this->createUser();
-        }
+        $this->user = $user ?: $this->createUser();
 
         $this->be($this->user);
 

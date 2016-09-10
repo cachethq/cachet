@@ -36,7 +36,6 @@
                             <option value="1">{{ trans('forms.components.groups.visibility_public') }}</option>
                         </select>
                     </div>
-
                 </fieldset>
 
                 <div class="btn-group">
