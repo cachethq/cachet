@@ -44,7 +44,7 @@ class TimedAction extends Model implements HasPresenter
         'visible'                   => 'bool',
         'start_at'                  => 'date',
         'timezone'                  => 'string',
-        'window_length'         => 'int',
+        'window_length'             => 'int',
         'completion_latency'        => 'int',
         'timed_action_group_id'     => 'int',
     ];
@@ -81,7 +81,7 @@ class TimedAction extends Model implements HasPresenter
         'active'                    => 'bool',
         'visible'                   => 'bool',
         'timezone'                  => 'string|required',
-        'window_length'         => 'int|required',
+        'window_length'             => 'int|required',
         'completion_latency'        => 'int|required',
     ];
 
