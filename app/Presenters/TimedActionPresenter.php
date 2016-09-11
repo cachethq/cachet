@@ -66,6 +66,18 @@ class TimedActionPresenter extends BasePresenter implements Arrayable
     }
 
     /**
+     * Return the offset of the time.
+     *
+     * @return string
+     */
+    public function timezone_offset()
+    {
+        $offset = app(DateFactory::class)->make($this->wrappedObject->created_at, $this->wrappedObject->timezone)->getOffset();
+
+        return $offset / 60;
+    }
+
+    /**
      * Convert the presenter instance to an array.
      *
      * @return string[]
@@ -73,9 +85,10 @@ class TimedActionPresenter extends BasePresenter implements Arrayable
     public function toArray()
     {
         return array_merge($this->wrappedObject->toArray(), [
-            'group_name' => $this->group_name(),
-            'created_at' => $this->created_at(),
-            'updated_at' => $this->updated_at(),
+            'timezone_offset' => $this->timezone_offset(),
+            'group_name'      => $this->group_name(),
+            'created_at'      => $this->created_at(),
+            'updated_at'      => $this->updated_at(),
         ]);
     }
 }
