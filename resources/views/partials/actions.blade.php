@@ -89,6 +89,7 @@
                                 stepSize: 3600,
                                 min: 0,
                                 callback: function (value, index, values) {
+                                    console.log(value, index, values)
                                     var time = moment();
                                     time.hours(0);
                                     time.minutes(0);
@@ -112,6 +113,9 @@
                     },
                     tooltips: {
                         callbacks: {
+                            title: function (tooltipItem, data) {
+                                return null;
+                            },
                             beforeLabel: function (tooltipItem, data) {
                                 if (yLabels[tooltipItem.index]) {
                                     return 'Completed at: '+ yLabels[tooltipItem.index];
