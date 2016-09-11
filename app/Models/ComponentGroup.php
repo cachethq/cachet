@@ -17,6 +17,7 @@ use CachetHQ\Cachet\Models\Traits\SortableTrait;
 use CachetHQ\Cachet\Presenters\ComponentGroupPresenter;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection;
 use McCool\LaravelAutoPresenter\HasPresenter;
 
 class ComponentGroup extends Model implements HasPresenter
@@ -172,5 +173,24 @@ class ComponentGroup extends Model implements HasPresenter
     public function scopeVisible(Builder $query)
     {
         return $query->where('visible', self::VISIBLE_PUBLIC);
+    }
+
+    /**
+     * Finds all used and visible component groups.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @param \Illuminate\Support\Collection        $usedComponentGroups
+     * @param bool                                  $isAuthenticated
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeVisibleUsed(Builder $query, Collection $usedComponentGroups, $isAuthenticated)
+    {
+        if (!$isAuthenticated) {
+            $query->visible();
+        }
+
+        return $query->whereIn('id', $usedComponentGroups)
+            ->orderBy('order');
     }
 }

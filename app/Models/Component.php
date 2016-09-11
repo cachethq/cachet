@@ -189,6 +189,35 @@ class Component extends Model implements HasPresenter
     }
 
     /**
+     * Finds all ungroupped components.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeUngroupped(Builder $query)
+    {
+        return $query->enabled()
+            ->where('group_id', 0)
+            ->orderBy('order')
+            ->orderBy('created_at');
+    }
+
+    /**
+     * Finds all used component groups.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeUsedGroups(Builder $query)
+    {
+        return $query->enabled()
+            ->where('group_id', '>', 0)
+            ->groupBy('group_id');
+    }
+
+    /**
      * Returns all of the tags on this component.
      *
      * @return string

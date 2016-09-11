@@ -34,21 +34,12 @@ class ComponentsComposer
     public function compose(View $view)
     {
         // Component & Component Group lists.
-        $usedComponentGroups = Component::enabled()->where('group_id', '>', 0)
-            ->groupBy('group_id')
-            ->pluck('group_id');
-        $componentGroupsBuilder = ComponentGroup::visible();
-        if (app(Guard::class)->check()) {
-            $componentGroupsBuilder = ComponentGroup::query();
-        }
-        $componentGroups = $componentGroupsBuilder->whereIn('id', $usedComponentGroups)
-            ->orderBy('order')
-            ->get();
-        $ungroupedComponents = Component::enabled()
-            ->where('group_id', 0)
-            ->orderBy('order')
-            ->orderBy('created_at')
-            ->get();
+        $usedComponentGroups = Component::usedGroups()->pluck('group_id');
+        $componentGroups = ComponentGroup::visibleUsed(
+            $usedComponentGroups,
+            app(Guard::class)->check()
+        )->get();
+        $ungroupedComponents = Component::ungroupped()->get();
 
         $view->withComponentGroups($componentGroups)
             ->withUngroupedComponents($ungroupedComponents);
