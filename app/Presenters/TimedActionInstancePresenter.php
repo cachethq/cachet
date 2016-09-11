@@ -64,7 +64,7 @@ class TimedActionInstancePresenter extends BasePresenter implements Arrayable
      */
     public function target_completed_at()
     {
-        $endAt = $this->wrappedObject->started_at->addSeconds($this->wrappedObject->action->window_lenth);
+        $endAt = $this->ended_at();
         $targettedAt = $endAt->addSeconds($this->wrappedObject->completion_latency);
 
         return app(DateFactory::class)->make($targettedAt, $this->wrappedObject->action->timezone);
