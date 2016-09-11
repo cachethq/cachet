@@ -74,7 +74,7 @@
                     </div>
                     <div class="form-group">
                         <label for="action-schedule_interval">{{ trans('forms.actions.schedule_interval') }}</label>
-                        <input type="number" min="0" class="form-control" name="schedule_interval" id="action-schedule_interval" disabled value="{{ $action->window_length }}">
+                        <input type="number" min="0" class="form-control" name="schedule_interval" id="action-schedule_interval" disabled value="{{ $action->schedule_interval }}">
                     </div>
                     <div class="form-group">
                         <label for="action-completion_latency">{{ trans('forms.actions.completion_latency') }}</label>
