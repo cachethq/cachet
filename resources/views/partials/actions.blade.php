@@ -62,12 +62,10 @@
                         data: _.map(chartData, function (data, index) {
                             var startAt = moment(chartKeys[index]);
                             if (data.completed_at) {
-                                var completedAt = moment(startAt.format('YYYY-MM-DD')+' '+data.completed_at.split(' ')[1]);
-
-                                return completedAt.diff(startAt, 'seconds');
+                                return data.time_taken;
                             }
 
-                            return 0; // TODO: Make this the max value.
+                            return _.max(chartData, function (item) { return item.time_taken; }).time_taken + result.data.action.completion_latency;
                         }),
                         fill: false,
                         backgroundColor: "{{ $theme_metrics }}",
@@ -101,7 +99,7 @@
                         xAxes: [{
                             ticks: {
                                 callback: function (value, index, values) {
-                                    return chartKeys[index];
+                                    return _.keys(data)[index]
                                 }
                             },
                             scaleLabel: {
