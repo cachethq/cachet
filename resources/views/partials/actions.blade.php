@@ -10,7 +10,7 @@
         </strong>
     </div>
     <div class="panel-body">
-        <canvas id="action-{{ $action->id }}" data-start-at="{{ $action->start_at }}" data-completion-latency="{{ $action->completion_latency }}" data-action-id="{{ $action->id }}" height="160" width="600"></canvas>
+        <canvas id="action-{{ $action->id }}" data-start-at="{{ $action->start_at }}" data-completion-latency="{{ $action->completion_latency }}" data-action-id="{{ $action->id }}" height="180" width="600"></canvas>
     </div>
 </div>
 @endforeach
