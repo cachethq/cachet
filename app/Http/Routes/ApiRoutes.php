@@ -55,12 +55,11 @@ class ApiRoutes
                 $router->get('actions', 'ActionController@getActions');
                 $router->get('actions/{timed_action}', 'ActionController@getAction');
                 $router->get('actions/{timed_action}/instances', 'ActionController@getActionInstances');
-                $router->get('actions/{timed_action}/instances/current', 'ActionController@getCurrentActionInstance');
-                $router->get('actions/{timed_action}/instances/next', 'ActionController@getNextActionInstance');
                 $router->get('actions/{timed_action}/instances/{timed_action_instance}', 'ActionController@getActionInstance');
                 $router->get('subscribers', 'SubscriberController@getSubscribers');
 
                 $router->post('actions', 'ActionController@postActions');
+                $router->post('actions/{timed_action}/instances', 'ActionController@postActionInstances');
                 $router->post('components', 'ComponentController@postComponents');
                 $router->post('components/groups', 'ComponentGroupController@postGroups');
                 $router->post('incidents', 'IncidentController@postIncidents');

@@ -73,38 +73,6 @@ class ActionController extends AbstractApiController
     }
 
     /**
-     * Get the current instance from the dates provided.
-     *
-     * @param \CachetHQ\Cachet\Models\TimedAction $action
-     *
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function getCurrentActionInstance(TimedAction $action)
-    {
-        $window = app(WindowFactory::class)->current($action);
-
-        $instance = TimedActionInstance::afterWindow($window)->first();
-
-        return $this->item($instance);
-    }
-
-    /**
-     * Get the next instance from the dates provided.
-     *
-     * @param \CachetHQ\Cachet\Models\TimedAction $action
-     *
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function getNextActionInstance(TimedAction $action)
-    {
-        $window = app(WindowFactory::class)->next($action);
-
-        $instance = TimedActionInstance::afterWindow($window)->first();
-
-        return $this->item($instance);
-    }
-
-    /**
      * Get all action instances.
      *
      * @param \CachetHQ\Cachet\Models\TimedAction $action
@@ -140,7 +108,7 @@ class ActionController extends AbstractApiController
     }
 
     /**
-     * Create a new timed action instance.
+     * Create a new timed action.
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -188,6 +156,36 @@ class ActionController extends AbstractApiController
         }
 
         return $this->item($action);
+    }
+
+    /**
+     * Create a new timed action instance.
+     *
+     * @param \CachetHQ\Cachet\Models\TimedAction $action
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function postActionInstances(TimedAction $action)
+    {
+        $instance = TimedActionInstance::whereDate('started_at', Binput::get('started_at'))->first();
+
+        if (!$instance) {
+            throw new BadRequestHttpException('Bad instance start time provided.');
+        }
+
+        try {
+            $instance = dispatch(new UpdateTimedActionInstanceCommand(
+                $instance,
+                Binput::get('message', null),
+                Binput::get('completed_at', null)
+            ));
+        } catch (QueryException $e) {
+            throw new BadRequestHttpException();
+        } catch (ActionExceptionInterface $e) {
+            throw new BadRequestHttpException($e->getMessage());
+        }
+
+        return $this->item($instance);
     }
 
     /**
