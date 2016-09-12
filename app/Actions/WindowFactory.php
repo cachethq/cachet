@@ -110,6 +110,6 @@ class WindowFactory
     {
         $temp = $date->copy()->setTimezone($timezone);
 
-        return $temp->getOffset() > $temp->copy()->subMonths(6)->getOffset()) ? $date->addHour() : $date;
+        return $temp->getOffset() > $temp->copy()->subMonths(6)->getOffset() ? $date->addHour() : $date;
     }
 }
