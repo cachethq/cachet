@@ -12,7 +12,6 @@
 namespace CachetHQ\Cachet\Http\Controllers\Api;
 
 use CachetHQ\Cachet\Actions\ActionExceptionInterface;
-use CachetHQ\Cachet\Actions\WindowFactory;
 use CachetHQ\Cachet\Bus\Commands\TimedAction\CreateTimedActionCommand;
 use CachetHQ\Cachet\Bus\Commands\TimedAction\DeleteTimedActionCommand;
 use CachetHQ\Cachet\Bus\Commands\TimedAction\UpdateTimedActionCommand;
