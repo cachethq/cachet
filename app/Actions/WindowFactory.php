@@ -13,6 +13,7 @@ namespace CachetHQ\Cachet\Actions;
 
 use CachetHQ\Cachet\Models\TimedAction;
 use Carbon\Carbon;
+use DateTimeInterface;
 
 /**
  * This is the window factory class.
@@ -70,7 +71,9 @@ class WindowFactory
 
         $offset = -$diff % $action->schedule_interval;
 
-        return $now->copy()->subSeconds($offset);
+        $next = $now->copy()->subSeconds($offset);
+
+        return $this->accountForSummerTime($next);
     }
 
     /**
@@ -92,6 +95,21 @@ class WindowFactory
             throw new ActionNotStartedException("The timed action is only due to start in {$diff} seconds");
         }
 
-        return $start;
+        return $this->accountForSummerTime($start);
+    }
+
+    /**
+     * Account for summer time.
+     *
+     * @param \DateTimeInterface $date
+     * @param string             $timezone
+     *
+     * @return \DateTimeInterface
+     */
+    protected function accountForSummerTime(DateTimeInterface $date, $timezone)
+    {
+        $temp = $date->copy()->setTimezone($timezone);
+
+        return $temp->getOffset() > $temp->copy()->subMonths(6)->getOffset()) ? $date->addHour() : $date;
     }
 }
