@@ -89,12 +89,12 @@
                                 stepSize: 3600,
                                 min: 0,
                                 callback: function (value, index, values) {
-                                    var time = moment();
-                                    time.hours(0);
+                                    var time = moment(chartKeys[index]).tz("{{ $action->timezone }}");
                                     time.minutes(0);
                                     time.seconds(0);
+                                    time.add(value, 'seconds')
 
-                                    return time.add(value, 'seconds').format('HH:mm');
+                                    return time.format('HH:mm');
                                 }
                             }
                         }],
