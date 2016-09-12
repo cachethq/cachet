@@ -38,7 +38,7 @@
         "graham-campbell/markdown": "^6.1",
         "guzzlehttp/guzzle": "^6.2.1",
         "jenssegers/date": "^3.2",
-        "laravel/framework": "5.2.43",
+        "laravel/framework": "5.2.45",
         "mccool/laravel-auto-presenter": "^4.3",
         "pragmarx/google2fa": "^0.7.1",
         "predis/predis": "^1.1",
