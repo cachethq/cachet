@@ -23,7 +23,7 @@
                     </div>
                     <div class="form-group">
                         <label for="action-description">{{ trans('forms.actions.description') }}</label>
-                        <textarea rows="4" class="form-control" name="description" id="action-description" value="{{ Binput::old('description') }}"></textarea>
+                        <textarea rows="4" class="form-control" name="description" id="action-description">{{ Binput::old('description') }}</textarea>
                     </div>
                     <div class="form-group">
                         <label for="action-start_at">{{ trans('forms.actions.start_at') }}</label>
