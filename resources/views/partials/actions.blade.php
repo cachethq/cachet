@@ -87,7 +87,7 @@
                                 stepSize: 3600,
                                 min: 0,
                                 callback: function (value, index, values) {
-                                    var time = moment(chartKeys[index]).tz("{{ $action->timezone }}");
+                                    var time = moment(chartKeys[index]);
                                     time.minutes(0);
                                     time.seconds(0);
                                     time.add(value, 'seconds')
