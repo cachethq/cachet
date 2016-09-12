@@ -101,7 +101,7 @@
                         xAxes: [{
                             ticks: {
                                 callback: function (value, index, values) {
-                                    return _.keys(data)[index]
+                                    return chartKeys[index];
                                 }
                             },
                             scaleLabel: {
