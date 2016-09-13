@@ -74,7 +74,7 @@ final class UpdateComponentGroupCommand
      * @param string                                 $name
      * @param int                                    $order
      * @param int                                    $collapsed
-     * @param into                                   $visible
+     * @param int                                    $visible
      *
      * @return void
      */

@@ -54,15 +54,24 @@ class DashboardController extends Controller
     protected $feed;
 
     /**
+     * The user session object.
+     *
+     * @var \Illuminate\Contracts\Auth\Guard
+     */
+    protected $guard;
+
+    /**
      * Creates a new dashboard controller instance.
      *
      * @param \CachetHQ\Cachet\Integrations\Feed $feed
+     * @param \Illuminate\Contracts\Auth\Guard   $guard
      *
      * @return void
      */
-    public function __construct(Feed $feed)
+    public function __construct(Feed $feed, Guard $guard)
     {
         $this->feed = $feed;
+        $this->guard = $guard;
         $this->startDate = new Date();
         $this->dateTimeZone = Config::get('cachet.timezone');
     }
@@ -89,12 +98,8 @@ class DashboardController extends Controller
         $subscribers = $this->getSubscribers();
 
         // Component & Component Group lists.
-        $usedComponentGroups = Component::usedGroups()->pluck('group_id');
-        $componentGroups = ComponentGroup::visibleUsed(
-            $usedComponentGroups,
-            app(Guard::class)->check()
-        )->get();
-        $ungroupedComponents = Component::ungroupped()->get();
+        $groupedComponents = $this->getVisibleGroupedComponents();
+        $ungroupedComponents = Component::ungrouped()->get();
 
         $welcomeUser = !Auth::user()->welcomed;
         if ($welcomeUser) {
@@ -112,7 +117,7 @@ class DashboardController extends Controller
             ->withIncidents($incidents)
             ->withSubscribers($subscribers)
             ->withEntries($entries)
-            ->withComponentGroups($componentGroups)
+            ->withComponentGroups($groupedComponents)
             ->withUngroupedComponents($ungroupedComponents)
             ->withWelcomeUser($welcomeUser);
     }
@@ -179,5 +184,23 @@ class DashboardController extends Controller
         }, SORT_REGULAR, false);
 
         return $allSubscribers;
+    }
+
+    /**
+     * Get visible grouped components.
+     *
+     * @return \Illuminate\Support\Collection
+     */
+    protected function getVisibleGroupedComponents()
+    {
+        $componentGroupsBuilder = ComponentGroup::visible();
+        if ($this->guard->check()) {
+            $componentGroupsBuilder = ComponentGroup::query();
+        }
+
+        $usedComponentGroups = Component::grouped()->pluck('group_id');
+
+        return $componentGroupsBuilder->used($usedComponentGroups)
+            ->get();
     }
 }

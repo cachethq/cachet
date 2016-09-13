@@ -25,6 +25,25 @@ use Illuminate\Contracts\View\View;
 class ComponentsComposer
 {
     /**
+     * The user session object.
+     *
+     * @var \Illuminate\Contracts\Auth\Guard
+     */
+    protected $guard;
+
+    /**
+     * Creates a new Components composer instance.
+     *
+     * @param \Illuminate\Contracts\Auth\Guard $guard
+     *
+     * @return void
+     */
+    public function __construct(Guard $guard)
+    {
+        $this->guard = $guard;
+    }
+
+    /**
      * Index page view composer.
      *
      * @param \Illuminate\Contracts\View\View $view
@@ -34,14 +53,28 @@ class ComponentsComposer
     public function compose(View $view)
     {
         // Component & Component Group lists.
-        $usedComponentGroups = Component::usedGroups()->pluck('group_id');
-        $componentGroups = ComponentGroup::visibleUsed(
-            $usedComponentGroups,
-            app(Guard::class)->check()
-        )->get();
-        $ungroupedComponents = Component::ungroupped()->get();
+        $groupedComponents = $this->getVisibleGroupedComponents();
+        $ungroupedComponents = Component::ungrouped()->get();
 
-        $view->withComponentGroups($componentGroups)
+        $view->withComponentGroups($groupedComponents)
             ->withUngroupedComponents($ungroupedComponents);
+    }
+
+    /**
+     * Get visible grouped components.
+     *
+     * @return \Illuminate\Support\Collection
+     */
+    protected function getVisibleGroupedComponents()
+    {
+        $componentGroupsBuilder = ComponentGroup::visible();
+        if ($this->guard->check()) {
+            $componentGroupsBuilder = ComponentGroup::query();
+        }
+
+        $usedComponentGroups = Component::grouped()->pluck('group_id');
+
+        return $componentGroupsBuilder->used($usedComponentGroups)
+            ->get();
     }
 }

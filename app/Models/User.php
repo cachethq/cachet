@@ -227,7 +227,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     }
 
     /**
-     * An user has component groups.
+     * A user has many component groups.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */

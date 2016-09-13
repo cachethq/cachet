@@ -33,10 +33,10 @@ $factory->define(Component::class, function ($faker) {
 
 $factory->define(ComponentGroup::class, function ($faker) {
     return [
-        'name'       => $faker->words(2, true),
-        'order'      => 0,
-        'collapsed'  => random_int(0, 3),
-        'visible'    => $faker->boolean(),
+        'name'      => $faker->words(2, true),
+        'order'     => 0,
+        'collapsed' => random_int(0, 3),
+        'visible'   => $faker->boolean(),
     ];
 });
 

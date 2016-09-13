@@ -189,13 +189,13 @@ class Component extends Model implements HasPresenter
     }
 
     /**
-     * Finds all ungroupped components.
+     * Finds all ungrouped components.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
      *
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function scopeUngroupped(Builder $query)
+    public function scopeUngrouped(Builder $query)
     {
         return $query->enabled()
             ->where('group_id', 0)
@@ -204,13 +204,13 @@ class Component extends Model implements HasPresenter
     }
 
     /**
-     * Finds all used component groups.
+     * Finds all grouped components.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
      *
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function scopeUsedGroups(Builder $query)
+    public function scopeGrouped(Builder $query)
     {
         return $query->enabled()
             ->where('group_id', '>', 0)

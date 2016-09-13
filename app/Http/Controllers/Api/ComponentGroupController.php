@@ -30,10 +30,17 @@ use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
  */
 class ComponentGroupController extends AbstractApiController
 {
+    /**
+     * The user session object.
+     *
+     * @var \Illuminate\Contracts\Auth\Guard
+     */
     protected $guard;
 
     /**
-     * @param Guard $guard
+     * Creates a new component group controller instance.
+     *
+     * @param \Illuminate\Contracts\Auth\Guard $guard
      */
     public function __construct(Guard $guard)
     {
@@ -90,7 +97,7 @@ class ComponentGroupController extends AbstractApiController
                 Binput::get('name'),
                 Binput::get('order', 0),
                 Binput::get('collapsed', 0),
-                Binput::get('visible', 2)
+                Binput::get('visible', ComponentGroup::VISIBLE_LOGGED_IN)
             ));
         } catch (QueryException $e) {
             throw new BadRequestHttpException();

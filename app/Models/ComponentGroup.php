@@ -176,20 +176,15 @@ class ComponentGroup extends Model implements HasPresenter
     }
 
     /**
-     * Finds all used and visible component groups.
+     * Finds all used component groups.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
      * @param \Illuminate\Support\Collection        $usedComponentGroups
-     * @param bool                                  $isAuthenticated
      *
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function scopeVisibleUsed(Builder $query, Collection $usedComponentGroups, $isAuthenticated)
+    public function scopeUsed(Builder $query, Collection $usedComponentGroups)
     {
-        if (!$isAuthenticated) {
-            $query->visible();
-        }
-
         return $query->whereIn('id', $usedComponentGroups)
             ->orderBy('order');
     }

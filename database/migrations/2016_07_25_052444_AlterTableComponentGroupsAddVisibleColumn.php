@@ -26,7 +26,6 @@ class AlterTableComponentGroupsAddVisibleColumn extends Migration
             $table->integer('visible')->after('order')->unsigned()->default(0);
 
             $table->index('visible');
-            $table->engine = 'InnoDB';
         });
     }
 
