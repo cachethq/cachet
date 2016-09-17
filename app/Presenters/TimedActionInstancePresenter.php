@@ -30,19 +30,9 @@ class TimedActionInstancePresenter extends BasePresenter implements Arrayable
      *
      * @return string
      */
-    public function completed_at()
-    {
-        return app(DateFactory::class)->make($this->wrappedObject->completed_at, $this->wrappedObject->action->timezone);
-    }
-
-    /**
-     * Present formatted date time.
-     *
-     * @return string
-     */
     public function started_at()
     {
-        return app(DateFactory::class)->make($this->wrappedObject->started_at, $this->wrappedObject->action->timezone);
+        return app(DateFactory::class)->make($this->wrappedObject->started_at)->toDateTimeString();
     }
 
     /**
@@ -52,9 +42,9 @@ class TimedActionInstancePresenter extends BasePresenter implements Arrayable
      */
     public function ended_at()
     {
-        $startAt = $this->wrappedObject->started_at->addSeconds($this->wrappedObject->action->schedule_interval);
+        $end = $this->wrappedObject->started_at->addSeconds($this->wrappedObject->action->schedule_interval);
 
-        return app(DateFactory::class)->make($startAt, $this->wrappedObject->action->timezone);
+        return app(DateFactory::class)->make($end)->toDateTimeString();
     }
 
     /**
@@ -64,25 +54,9 @@ class TimedActionInstancePresenter extends BasePresenter implements Arrayable
      */
     public function target_completed_at()
     {
-        $endAt = $this->ended_at();
-        $targettedAt = $endAt->addSeconds($this->wrappedObject->completion_latency);
+        $targetted = $this->ended_at()->addSeconds($this->wrappedObject->completion_latency);
 
-        return app(DateFactory::class)->make($targettedAt, $this->wrappedObject->action->timezone);
-    }
-
-    /**
-     * Did the instance get completed at the expected time, within the completion latency?
-     *
-     * @return string
-     */
-    public function did_complete_on_time()
-    {
-        $action = $this->wrappedObject->action;
-
-        $actionStartDate = app(DateFactory::class)->make($action->created_at)->setTimezone($this->wrappedObject->timezone);
-        $nowDate = app(DateFactory::class)->make();
-
-        return $date->toDateTimeString();
+        return app(DateFactory::class)->make($target)->toDateTimeString();
     }
 
     /**
@@ -93,7 +67,6 @@ class TimedActionInstancePresenter extends BasePresenter implements Arrayable
     public function toArray()
     {
         return array_merge($this->wrappedObject->toArray(), [
-            // 'did_complete_on_time' => $this->did_complete_on_time(),
             'created_at'              => $this->created_at(),
             'updated_at'              => $this->updated_at(),
             'ended_at'                => $this->ended_at(),
