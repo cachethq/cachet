@@ -40,6 +40,16 @@ class TimedActionInstancePresenter extends BasePresenter implements Arrayable
      *
      * @return string
      */
+    public function completed_at()
+    {
+        return app(DateFactory::class)->make($this->wrappedObject->completed_at)->toDateTimeString();
+    }
+
+    /**
+     * Present formatted date time.
+     *
+     * @return string
+     */
     public function ended_at()
     {
         $end = $this->wrappedObject->started_at->addSeconds($this->wrappedObject->action->schedule_interval);
@@ -54,7 +64,7 @@ class TimedActionInstancePresenter extends BasePresenter implements Arrayable
      */
     public function target_completed_at()
     {
-        $targetted = $this->ended_at()->addSeconds($this->wrappedObject->completion_latency);
+        $target = $this->wrappedObject->started_at->addSeconds($this->wrappedObject->action->schedule_interval + $this->wrappedObject->completion_latency);
 
         return app(DateFactory::class)->make($target)->toDateTimeString();
     }

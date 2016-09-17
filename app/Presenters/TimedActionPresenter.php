@@ -44,7 +44,7 @@ class TimedActionPresenter extends BasePresenter implements Arrayable
     {
         $offset = app(DateFactory::class)->make($this->wrappedObject->created_at, $this->wrappedObject->timezone)->getOffset();
 
-        return $offset / 60;
+        return $offset / 3600;
     }
 
     /**
