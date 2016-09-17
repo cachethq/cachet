@@ -63,8 +63,8 @@ class StatusPageControllerTest extends AbstractTestCase
      */
     protected function setupPublicAndNonPublicComponentGroups()
     {
-        $this->createAComponentGroupAndAddAComponent(self::COMPONENT_GROUP_1_NAME, ComponentGroup::VISIBLE_PUBLIC)
-            ->createAComponentGroupAndAddAComponent(self::COMPONENT_GROUP_2_NAME, ComponentGroup::VISIBLE_LOGGED_IN);
+        $this->createAComponentGroupAndAddAComponent(self::COMPONENT_GROUP_1_NAME, ComponentGroup::VISIBLE_GUEST)
+            ->createAComponentGroupAndAddAComponent(self::COMPONENT_GROUP_2_NAME, ComponentGroup::VISIBLE_AUTHENTICATED);
 
         factory(Setting::class)->create();
 

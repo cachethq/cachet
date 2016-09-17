@@ -23,7 +23,10 @@ class AlterTableComponentGroupsAddVisibleColumn extends Migration
     public function up()
     {
         Schema::table('component_groups', function (Blueprint $table) {
-            $table->integer('visible')->after('order')->unsigned()->default(0);
+            $table->tinyInteger('visible')
+                ->after('order')
+                ->unsigned()
+                ->default(\CachetHQ\Cachet\Models\ComponentGroup::VISIBLE_AUTHENTICATED);
 
             $table->index('visible');
         });

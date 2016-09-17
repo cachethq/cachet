@@ -49,7 +49,7 @@ final class UpdateComponentGroupCommand
     public $collapsed;
 
     /**
-     * To whom should the component group be visible?
+     * Is the component visible to public?
      *
      * @var int
      */
@@ -61,10 +61,10 @@ final class UpdateComponentGroupCommand
      * @var string[]
      */
     public $rules = [
-        'name'       => 'string',
-        'order'      => 'int',
-        'collapsed'  => 'int|between:0,3',
-        'visible'    => 'bool',
+        'name'      => 'string',
+        'order'     => 'int',
+        'collapsed' => 'int|between:0,3',
+        'visible'   => 'bool',
     ];
 
     /**

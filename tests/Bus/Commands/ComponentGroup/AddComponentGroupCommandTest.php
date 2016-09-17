@@ -33,7 +33,7 @@ class AddComponentGroupCommandTest extends AbstractTestCase
             'name'      => 'Test',
             'order'     => 0,
             'collapsed' => 1,
-            'visible'   => ComponentGroup::VISIBLE_LOGGED_IN,
+            'visible'   => ComponentGroup::VISIBLE_AUTHENTICATED,
         ];
 
         $object = new AddComponentGroupCommand(

@@ -28,7 +28,7 @@ class ComponentGroupTest extends AbstractApiTestCase
     public function testGetGroups()
     {
         $groups = factory('CachetHQ\Cachet\Models\ComponentGroup', 3)
-            ->create(['visible' => ComponentGroup::VISIBLE_PUBLIC]);
+            ->create(['visible' => ComponentGroup::VISIBLE_GUEST]);
 
         $this->get('/api/v1/components/groups');
         $this->seeJson(['id' => $groups[0]->id]);
@@ -66,9 +66,9 @@ class ComponentGroupTest extends AbstractApiTestCase
             'name'      => 'Foo',
             'order'     => 1,
             'collapsed' => 1,
-            'visible'   => ComponentGroup::VISIBLE_PUBLIC,
+            'visible'   => ComponentGroup::VISIBLE_GUEST,
         ]);
-        $this->seeJson(['name' => 'Foo', 'order' => 1, 'collapsed' => 1, 'visible' => ComponentGroup::VISIBLE_PUBLIC]);
+        $this->seeJson(['name' => 'Foo', 'order' => 1, 'collapsed' => 1, 'visible' => ComponentGroup::VISIBLE_GUEST]);
         $this->assertResponseOk();
     }
 
@@ -132,8 +132,8 @@ class ComponentGroupTest extends AbstractApiTestCase
      */
     protected function createComponentGroups()
     {
-        $this->createComponentGroup(self::COMPONENT_GROUP_1_NAME, ComponentGroup::VISIBLE_PUBLIC)
-            ->createComponentGroup(self::COMPONENT_GROUP_2_NAME, ComponentGroup::VISIBLE_LOGGED_IN);
+        $this->createComponentGroup(self::COMPONENT_GROUP_1_NAME, ComponentGroup::VISIBLE_GUEST)
+            ->createComponentGroup(self::COMPONENT_GROUP_2_NAME, ComponentGroup::VISIBLE_AUTHENTICATED);
 
         return $this;
     }

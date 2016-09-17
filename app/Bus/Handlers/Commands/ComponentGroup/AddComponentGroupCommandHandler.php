@@ -27,10 +27,10 @@ class AddComponentGroupCommandHandler
     public function handle(AddComponentGroupCommand $command)
     {
         $group = ComponentGroup::create([
-            'name'       => $command->name,
-            'order'      => $command->order,
-            'collapsed'  => $command->collapsed,
-            'visible'    => $command->visible,
+            'name'      => $command->name,
+            'order'     => $command->order,
+            'collapsed' => $command->collapsed,
+            'visible'   => $command->visible,
         ]);
 
         event(new ComponentGroupWasAddedEvent($group));

@@ -97,8 +97,7 @@ class DashboardController extends Controller
         $incidents = $this->getIncidents();
         $subscribers = $this->getSubscribers();
 
-        // Component & Component Group lists.
-        $groupedComponents = $this->getVisibleGroupedComponents();
+        $componentGroups = $this->getVisibleGroupedComponents();
         $ungroupedComponents = Component::ungrouped()->get();
 
         $welcomeUser = !Auth::user()->welcomed;
@@ -117,7 +116,7 @@ class DashboardController extends Controller
             ->withIncidents($incidents)
             ->withSubscribers($subscribers)
             ->withEntries($entries)
-            ->withComponentGroups($groupedComponents)
+            ->withComponentGroups($componentGroups)
             ->withUngroupedComponents($ungroupedComponents)
             ->withWelcomeUser($welcomeUser);
     }
@@ -193,9 +192,9 @@ class DashboardController extends Controller
      */
     protected function getVisibleGroupedComponents()
     {
-        $componentGroupsBuilder = ComponentGroup::visible();
-        if ($this->guard->check()) {
-            $componentGroupsBuilder = ComponentGroup::query();
+        $componentGroupsBuilder = ComponentGroup::query();
+        if (!$this->guard->check()) {
+            $componentGroupsBuilder = ComponentGroup::visible();
         }
 
         $usedComponentGroups = Component::grouped()->pluck('group_id');

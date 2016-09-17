@@ -25,18 +25,18 @@ class ComponentGroup extends Model implements HasPresenter
     use SearchableTrait, SortableTrait, ValidatingTrait;
 
     /**
-     * Viewable only logged in users.
+     * Viewable only authenticated users.
      *
      * @var int
      */
-    const VISIBLE_LOGGED_IN = 0;
+    const VISIBLE_AUTHENTICATED = 0;
 
     /**
      * Viewable by public.
      *
      * @var int
      */
-    const VISIBLE_PUBLIC = 1;
+    const VISIBLE_GUEST = 1;
 
     /**
      * The model's attributes.
@@ -44,9 +44,9 @@ class ComponentGroup extends Model implements HasPresenter
      * @var string
      */
     protected $attributes = [
-        'order'      => 0,
-        'collapsed'  => 0,
-        'visible'    => 0,
+        'order'     => 0,
+        'collapsed' => 0,
+        'visible'   => 0,
     ];
 
     /**
@@ -55,10 +55,10 @@ class ComponentGroup extends Model implements HasPresenter
      * @var string[]
      */
     protected $casts = [
-        'name'       => 'string',
-        'order'      => 'int',
-        'collapsed'  => 'int',
-        'visible'    => 'int',
+        'name'      => 'string',
+        'order'     => 'int',
+        'collapsed' => 'int',
+        'visible'   => 'int',
     ];
 
     /**
@@ -74,10 +74,10 @@ class ComponentGroup extends Model implements HasPresenter
      * @var string[]
      */
     public $rules = [
-        'name'       => 'required|string',
-        'order'      => 'int',
-        'collapsed'  => 'int',
-        'visible'    => 'bool',
+        'name'      => 'required|string',
+        'order'     => 'int',
+        'collapsed' => 'int',
+        'visible'   => 'bool',
     ];
 
     /**
@@ -172,7 +172,7 @@ class ComponentGroup extends Model implements HasPresenter
      */
     public function scopeVisible(Builder $query)
     {
-        return $query->where('visible', self::VISIBLE_PUBLIC);
+        return $query->where('visible', self::VISIBLE_GUEST);
     }
 
     /**

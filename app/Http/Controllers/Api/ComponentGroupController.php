@@ -54,10 +54,9 @@ class ComponentGroupController extends AbstractApiController
      */
     public function getGroups()
     {
-        $groups = ComponentGroup::visible();
-
-        if ($this->guard->check()) {
-            $groups = ComponentGroup::query();
+        $groups = ComponentGroup::query();
+        if (!$this->guard->check()) {
+            $groups = ComponentGroup::visible();
         }
 
         $groups->search(Binput::except(['sort', 'order', 'per_page']));
@@ -97,7 +96,7 @@ class ComponentGroupController extends AbstractApiController
                 Binput::get('name'),
                 Binput::get('order', 0),
                 Binput::get('collapsed', 0),
-                Binput::get('visible', ComponentGroup::VISIBLE_LOGGED_IN)
+                Binput::get('visible', ComponentGroup::VISIBLE_AUTHENTICATED)
             ));
         } catch (QueryException $e) {
             throw new BadRequestHttpException();

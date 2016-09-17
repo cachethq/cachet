@@ -32,7 +32,7 @@ class ComponentsComposer
     protected $guard;
 
     /**
-     * Creates a new Components composer instance.
+     * Creates a new components composer instance.
      *
      * @param \Illuminate\Contracts\Auth\Guard $guard
      *
@@ -52,11 +52,10 @@ class ComponentsComposer
      */
     public function compose(View $view)
     {
-        // Component & Component Group lists.
-        $groupedComponents = $this->getVisibleGroupedComponents();
+        $componentGroups = $this->getVisibleGroupedComponents();
         $ungroupedComponents = Component::ungrouped()->get();
 
-        $view->withComponentGroups($groupedComponents)
+        $view->withComponentGroups($componentGroups)
             ->withUngroupedComponents($ungroupedComponents);
     }
 
@@ -67,9 +66,9 @@ class ComponentsComposer
      */
     protected function getVisibleGroupedComponents()
     {
-        $componentGroupsBuilder = ComponentGroup::visible();
-        if ($this->guard->check()) {
-            $componentGroupsBuilder = ComponentGroup::query();
+        $componentGroupsBuilder = ComponentGroup::query();
+        if (!$this->guard->check()) {
+            $componentGroupsBuilder->visible();
         }
 
         $usedComponentGroups = Component::grouped()->pluck('group_id');
