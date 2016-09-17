@@ -13,7 +13,7 @@ namespace CachetHQ\Cachet\Actions;
 
 use CachetHQ\Cachet\Models\TimedAction;
 use Carbon\Carbon;
-use DateTimeInterface;
+use DateTimeZone;
 
 /**
  * This is the window factory class.
@@ -101,15 +101,36 @@ class WindowFactory
     /**
      * Account for summer time.
      *
-     * @param \DateTimeInterface $date
-     * @param string             $timezone
+     * @param \CachetHQ\Cachet\Models\TimedAction $action
+     * @param \Carbon\Carbon                      $date
      *
-     * @return \DateTimeInterface
+     * @return \Carbon\Carbon
      */
-    protected function accountForSummerTime(DateTimeInterface $date, $timezone)
+    protected function accountForSummerTime(TimedAction $action, Carbon $date)
     {
-        $temp = $date->copy()->setTimezone($timezone);
+        $original = $action->copy()->setTimezone($action->timezone);
+        $next = $date->copy()->setTimezone($action->timezone);
 
-        return $temp->getOffset() > $temp->copy()->subMonths(6)->getOffset() ? $date->addHour() : $date;
+        return $date->copy()->addHours($this->getOffset($original, $next));
+    }
+
+    /**
+     * Get the offset in hours to apply to the given time.
+     *
+     * This takes into account that an action could have been created in
+     * daylight saving time, and we need to subtract an hour, or the fact that
+     * it might not have been and we need to add one. Of course, the case that
+     * the offset is zero is possible too.
+     *
+     * @param \Carbon\Carbon $original
+     * @param \Carbon\Carbon $next
+     *
+     * @return void
+     */
+    public function getOffset(Carbon $original, Carbon $next)
+    {
+        $seconds = DateTimeZone::getOffset($forward->copy()->addHours(2)) - DateTimeZone::getOffset($original);
+
+        return $seconds / 3600;
     }
 }
