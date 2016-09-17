@@ -28,45 +28,45 @@ class TimedActionInstancePresenter extends BasePresenter implements Arrayable
     /**
      * Present formatted date time.
      *
-     * @return string
+     * @return \Carbon\Carbon
      */
     public function started_at()
     {
-        return app(DateFactory::class)->make($this->wrappedObject->started_at)->toDateTimeString();
+        return app(DateFactory::class)->make($this->wrappedObject->started_at);
     }
 
     /**
      * Present formatted date time.
      *
-     * @return string
+     * @return \Carbon\Carbon
      */
     public function completed_at()
     {
-        return app(DateFactory::class)->make($this->wrappedObject->completed_at)->toDateTimeString();
+        return app(DateFactory::class)->make($this->wrappedObject->completed_at);
     }
 
     /**
      * Present formatted date time.
      *
-     * @return string
+     * @return \Carbon\Carbon
      */
     public function ended_at()
     {
         $end = $this->wrappedObject->started_at->addSeconds($this->wrappedObject->action->schedule_interval);
 
-        return app(DateFactory::class)->make($end)->toDateTimeString();
+        return app(DateFactory::class)->make($end);
     }
 
     /**
      * Present formatted date time.
      *
-     * @return string
+     * @return \Carbon\Carbon
      */
     public function target_completed_at()
     {
         $target = $this->wrappedObject->started_at->addSeconds($this->wrappedObject->action->schedule_interval + $this->wrappedObject->completion_latency);
 
-        return app(DateFactory::class)->make($target)->toDateTimeString();
+        return app(DateFactory::class)->make($target);
     }
 
     /**
@@ -77,11 +77,11 @@ class TimedActionInstancePresenter extends BasePresenter implements Arrayable
     public function toArray()
     {
         return array_merge($this->wrappedObject->toArray(), [
-            'created_at'              => $this->created_at(),
-            'updated_at'              => $this->updated_at(),
-            'ended_at'                => $this->ended_at(),
-            'completed_at'            => $this->completed_at(),
-            'target_completed_at'     => $this->target_completed_at(),
+            'created_at'          => $this->created_at(),
+            'updated_at'          => $this->updated_at(),
+            'completed_at'        => $this->completed_at(),
+            'ended_at'            => $this->ended_at()->toDateTimeString(),
+            'target_completed_at' => $this->target_completed_at()->toDateTimeString(),
         ]);
     }
 }
