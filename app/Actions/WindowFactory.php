@@ -108,7 +108,7 @@ class WindowFactory
      */
     protected function accountForSummerTime(TimedAction $action, Carbon $date)
     {
-        $original = $action->copy()->setTimezone($action->timezone);
+        $original = $action->start_at->copy()->setTimezone($action->timezone);
         $next = $date->copy()->setTimezone($action->timezone);
 
         return $date->copy()->addHours($this->getOffset($original, $next));
