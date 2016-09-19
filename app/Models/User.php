@@ -225,14 +225,4 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     {
         return trim($this->google_2fa_secret) !== '';
     }
-
-    /**
-     * A user has many component groups.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function componentGroups()
-    {
-        return $this->hasMany(ComponentGroup::class);
-    }
 }
