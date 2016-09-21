@@ -62,6 +62,8 @@ class SubscribeSubscriberCommandHandler
             event(new SubscriberHasSubscribedEvent($subscriber));
         }
 
+        $subscriber->load('subscriptions');
+
         return $subscriber;
     }
 }
