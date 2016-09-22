@@ -45,7 +45,7 @@ class MySqlRepository extends AbstractMetricRepository implements MetricInterfac
 
         $value = 0;
 
-        $points = DB::select("SELECT {$queryType} FROM {$this->getTableName()} m INNER JOIN metric_points mp ON m.id = mp.metric_id WHERE m.id = :metricId AND DATE_FORMAT(mp.`created_at`, '%Y%m%d%H%i') = :timeInterval GROUP BY HOUR(mp.`created_at`), MINUTE(mp.`created_at`)", [
+        $points = DB::select("SELECT {$queryType} FROM {$this->getTableName()->metrics_base} m INNER JOIN {$this->getTableName()->metric_points} mp ON m.id = mp.metric_id WHERE m.id = :metricId AND DATE_FORMAT(mp.`created_at`, '%Y%m%d%H%i') = :timeInterval GROUP BY HOUR(mp.`created_at`), MINUTE(mp.`created_at`)", [
             'metricId'     => $metric->id,
             'timeInterval' => $timeInterval,
         ]);
@@ -82,7 +82,7 @@ class MySqlRepository extends AbstractMetricRepository implements MetricInterfac
 
         $value = 0;
 
-        $points = DB::select("SELECT {$queryType} FROM {$this->getTableName()} m INNER JOIN metric_points mp ON m.id = mp.metric_id WHERE m.id = :metricId AND DATE_FORMAT(mp.`created_at`, '%Y%m%d%H') = :hourInterval GROUP BY HOUR(mp.`created_at`)", [
+        $points = DB::select("SELECT {$queryType} FROM {$this->getTableName()->metrics_base} m INNER JOIN {$this->getTableName()->metric_points} mp ON m.id = mp.metric_id WHERE m.id = :metricId AND DATE_FORMAT(mp.`created_at`, '%Y%m%d%H') = :hourInterval GROUP BY HOUR(mp.`created_at`)", [
             'metricId'     => $metric->id,
             'hourInterval' => $hourInterval,
         ]);
@@ -117,7 +117,7 @@ class MySqlRepository extends AbstractMetricRepository implements MetricInterfac
 
         $value = 0;
 
-        $points = DB::select("SELECT {$queryType} FROM {$this->getTableName()} m INNER JOIN metric_points mp ON m.id = mp.metric_id WHERE m.id = :metricId AND mp.`created_at` BETWEEN DATE_SUB(mp.`created_at`, INTERVAL 1 WEEK) AND DATE_ADD(NOW(), INTERVAL 1 DAY) AND DATE_FORMAT(mp.`created_at`, '%Y%m%d') = :timeInterval GROUP BY DATE_FORMAT(mp.`created_at`, '%Y%m%d')", [
+        $points = DB::select("SELECT {$queryType} FROM {$this->getTableName()->metrics_base} m INNER JOIN {$this->getTableName()->metric_points} mp ON m.id = mp.metric_id WHERE m.id = :metricId AND mp.`created_at` BETWEEN DATE_SUB(mp.`created_at`, INTERVAL 1 WEEK) AND DATE_ADD(NOW(), INTERVAL 1 DAY) AND DATE_FORMAT(mp.`created_at`, '%Y%m%d') = :timeInterval GROUP BY DATE_FORMAT(mp.`created_at`, '%Y%m%d')", [
             'metricId'     => $metric->id,
             'timeInterval' => $dateTime->format('Ymd'),
         ]);
