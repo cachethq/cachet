@@ -73,7 +73,7 @@ class WindowFactory
 
         $next = $now->copy()->subSeconds($offset);
 
-        return $this->accountForSummerTime($next);
+        return $this->accountForSummerTime($action, $next);
     }
 
     /**
@@ -95,7 +95,7 @@ class WindowFactory
             throw new ActionNotStartedException("The timed action is only due to start in {$diff} seconds");
         }
 
-        return $this->accountForSummerTime($start);
+        return $this->accountForSummerTime($action, $start);
     }
 
     /**
