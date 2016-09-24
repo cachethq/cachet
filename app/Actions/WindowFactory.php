@@ -108,10 +108,11 @@ class WindowFactory
      */
     protected function accountForSummerTime(TimedAction $action, Carbon $date)
     {
+        $timezone = new DateTimeZone($action->timezone);
         $original = $action->start_at->copy()->setTimezone($action->timezone);
         $next = $date->copy()->setTimezone($action->timezone);
 
-        return $date->copy()->addHours($this->getOffset($original, $next));
+        return $date->copy()->addHours($this->getOffset($timezone, $original, $next));
     }
 
     /**
@@ -122,14 +123,15 @@ class WindowFactory
      * it might not have been and we need to add one. Of course, the case that
      * the offset is zero is possible too.
      *
+     * @param \DateTimeZone  $timezone
      * @param \Carbon\Carbon $original
      * @param \Carbon\Carbon $next
      *
-     * @return void
+     * @return int
      */
-    public function getOffset(Carbon $original, Carbon $next)
+    public function getOffset(DateTimeZone $timezone, Carbon $original, Carbon $next)
     {
-        $seconds = DateTimeZone::getOffset($forward->copy()->addHours(2)) - DateTimeZone::getOffset($original);
+        $seconds = $timezone->getOffset($forward->copy()->addHours(2)) - $timezone->getOffset($original);
 
         return $seconds / 3600;
     }
