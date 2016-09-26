@@ -131,7 +131,7 @@ class WindowFactory
      */
     public function getOffset(DateTimeZone $timezone, Carbon $original, Carbon $next)
     {
-        $seconds = $timezone->getOffset($forward->copy()->addHours(2)) - $timezone->getOffset($original);
+        $seconds = $timezone->getOffset($next->copy()->addHours(2)) - $timezone->getOffset($original);
 
         return $seconds / 3600;
     }
