@@ -59,6 +59,11 @@ class SendComponentUpdateEmailNotificationHandler
     {
         $component = $event->component;
 
+        // Don't email anything if the status hasn't changed.
+        if ($event->original_status === $event->new_status) {
+            return;
+        }
+
         // First notify all global subscribers.
         $globalSubscribers = $this->subscriber->isVerified()->isGlobal()->get();
 
