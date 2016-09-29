@@ -28,7 +28,7 @@ class ComponentStatusWasUpdatedEventTest extends AbstractComponentEventTestCase
 
     protected function getObjectAndParams()
     {
-        $params = ['component' => new Component(), 'original_status' => 1, 'new_status' => 1];
+        $params = ['component' => new Component(), 'original_status' => 1, 'new_status' => 2];
         $object = new ComponentStatusWasUpdatedEvent($params['component'], $params['original_status'], $params['new_status']);
 
         return compact('params', 'object');
