@@ -253,8 +253,8 @@ EINCIDENT;
                 'stickied'     => false,
             ],
             [
-                'name'         => 'Stickied to the top',
-                'message'      => 'Will be forever hanged here.',
+                'name'         => 'Sticked incidents!',
+                'message'      => 'Need to continually notify your customers of an incident? You can stick incidents to the top!',
                 'status'       => 1,
                 'component_id' => 1,
                 'scheduled_at' => null,
