@@ -77,12 +77,12 @@
                             @foreach($components_in_groups as $group)
                             <optgroup label="{{ $group->name }}">
                                 @foreach($group->components as $component)
-                                <option value=""{{ $component->id }}">{{ $component->name }}</option>
+                                <option value="{{ $component->id }}">{{ $component->name }}</option>
                                 @endforeach
                             </optgroup>
                             @endforeach
                             @foreach($components_out_groups as $component)
-                            <option value=""{{ $component->id }}">{{ $component->name }}</option>
+                            <option value="{{ $component->id }}">{{ $component->name }}</option>
                             @endforeach
                         </select>
                         <span class='help-block'>{{ trans('forms.optional') }}</span>
