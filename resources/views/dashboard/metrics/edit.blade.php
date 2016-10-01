@@ -14,7 +14,7 @@
     <div class="row">
         <div class="col-md-12">
             @include('dashboard.partials.errors')
-            <form class='form-vertical' name='MetricsForm' role='form' method='POST'>
+            <form class="form-vertical" name="MetricsForm" role="form" method="POST">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <fieldset>
                     <div class="form-group">
@@ -70,8 +70,8 @@
 
                 <input type="hidden" name="id" value={{$metric->id}}>
 
-                <div class='form-group'>
-                    <div class='btn-group'>
+                <div class="form-group">
+                    <div class="btn-group">
                         <button type="submit" class="btn btn-success">{{ trans('forms.update') }}</button>
                         <a class="btn btn-default" href="{{ route('dashboard.metrics.index') }}">{{ trans('forms.cancel') }}</a>
                     </div>

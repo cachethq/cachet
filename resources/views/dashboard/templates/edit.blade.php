@@ -42,7 +42,7 @@
                 </div>
                 @endif
 
-                <form class='form-vertical' name='IncidentTemplateForm' role='form' method='POST'>
+                <form class="form-vertical" name="IncidentTemplateForm" role="form" method="POST">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <fieldset>
                         <div class="form-group">

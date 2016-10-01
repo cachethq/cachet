@@ -57,14 +57,14 @@
                     </div>
                     <div class="form-group">
                         <label for="incident-name">{{ trans('forms.incidents.visibility') }}</label>
-                        <select name='visible' class="form-control">
-                            <option value='1' selected>{{ trans('forms.incidents.public') }}</option>
-                            <option value='0'>{{ trans('forms.incidents.logged_in_only') }}</option>
+                        <select name="visible" class="form-control">
+                            <option value="1" selected>{{ trans('forms.incidents.public') }}</option>
+                            <option value="0">{{ trans('forms.incidents.logged_in_only') }}</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="incident-name">{{ trans('forms.incidents.stick_status') }}</label>
-                        <select name='stickied' class="form-control">
+                        <select name="stickied" class="form-control">
                             <option value='1'>{{ trans('forms.incidents.stickied') }}</option>
                             <option value='0' selected>{{ trans('forms.incidents.not_stickied') }}</option>
                         </select>
@@ -72,17 +72,17 @@
                     @if(!$components_in_groups->isEmpty() || !$components_out_groups->isEmpty())
                     <div class="form-group">
                         <label>{{ trans('forms.incidents.component') }}</label>
-                        <select name='component_id' class='form-control'>
-                            <option value='0' selected></option>
+                        <select name="component_id" class="form-control">
+                            <option value="0" selected></option>
                             @foreach($components_in_groups as $group)
                             <optgroup label="{{ $group->name }}">
                                 @foreach($group->components as $component)
-                                <option value='{{ $component->id }}'>{{ $component->name }}</option>
+                                <option value=""{{ $component->id }}">{{ $component->name }}</option>
                                 @endforeach
                             </optgroup>
                             @endforeach
                             @foreach($components_out_groups as $component)
-                            <option value='{{ $component->id }}'>{{ $component->name }}</option>
+                            <option value=""{{ $component->id }}">{{ $component->name }}</option>
                             @endforeach
                         </select>
                         <span class='help-block'>{{ trans('forms.optional') }}</span>
@@ -106,7 +106,7 @@
                     </div>
                     <div class="form-group">
                         <label>{{ trans('forms.incidents.message') }}</label>
-                        <div class='markdown-control'>
+                        <div class="markdown-control">
                             <textarea name="message" class="form-control autosize" rows="5" required>{{ Binput::old('message') }}</textarea>
                         </div>
                     </div>
