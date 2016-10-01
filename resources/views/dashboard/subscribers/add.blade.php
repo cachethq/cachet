@@ -19,7 +19,7 @@
             <div class="form-group">
                 <label>{{ trans('forms.user.email') }}</label>
                 <textarea rows="5" class="form-control" name="email" required>{{ Binput::old('email') }}</textarea>
-                <span class="help-block">{{ trans('dashboard.subscribers.add.help') }}</p>
+                <span class="help-block">{{ trans('dashboard.subscribers.add.help') }}</span>
             </div>
             </fieldset>
 
