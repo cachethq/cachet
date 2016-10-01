@@ -172,7 +172,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     public function getGravatarAttribute($size = 200)
     {
-        return sprintf('https://www.gravatar.com/avatar/%s?size=%d', md5($this->email), $size);
+        return sprintf('https://www.gravatar.com/avatar/%s?size=%d', md5(strtolower($this->email)), $size);
     }
 
     /**
