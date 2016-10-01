@@ -134,6 +134,7 @@
     function pointColor(cData, cKeys, $el) {
         return _.map(cData, function (data, index) {
             var startAt = moment(cKeys[index]);
+            var targetCompletedAt = moment(cData[index].target_completed_at);
             if (data.completed_at) {
                 var completedAt = moment(startAt.format('YYYY-MM-DD')+' '+data.completed_at.split(' ')[1]);
                 var targettedAt = moment(startAt.format('YYYY-MM-DD')).add($el.data('completion-latency'), 's');
