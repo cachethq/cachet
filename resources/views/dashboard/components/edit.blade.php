@@ -25,7 +25,7 @@
                         <label for="component-status">{{ trans('forms.components.status') }}</label>
                         <select name="component[status]" class="form-control">
                             @foreach(trans('cachet.components.status') as $statusID => $status)
-                            <option value="{{ $statusID }}" {{ $statusID === $component->status ? "selected" : "" }}>{{ $status }}</option>
+                            <option value="{{ $statusID }}" {{ $statusID === $component->status ? 'selected' : "" }}>{{ $status }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -59,7 +59,7 @@
                     <div class="checkbox">
                         <label>
                             <input type="hidden" value="0" name="component[enabled]">
-                            <input type="checkbox" value="1" name="component[enabled]" {{ $component->enabled ? "checked" : null }}>
+                            <input type="checkbox" value="1" name="component[enabled]" {{ $component->enabled ? 'checked' : null }}>
                             {{ trans('forms.components.enabled') }}
                         </label>
                     </div>
