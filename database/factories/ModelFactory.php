@@ -15,6 +15,7 @@ use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentTemplate;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\MetricPoint;
+use CachetHQ\Cachet\Models\Setting;
 use CachetHQ\Cachet\Models\Subscriber;
 use CachetHQ\Cachet\Models\Subscription;
 use CachetHQ\Cachet\Models\User;
@@ -35,6 +36,7 @@ $factory->define(ComponentGroup::class, function ($faker) {
         'name'      => $faker->words(2, true),
         'order'     => 0,
         'collapsed' => random_int(0, 3),
+        'visible'   => $faker->boolean(),
     ];
 });
 
@@ -74,6 +76,13 @@ $factory->define(MetricPoint::class, function ($faker) {
         'metric_id' => factory(Metric::class)->create()->id,
         'value'     => random_int(1, 100),
         'counter'   => 1,
+    ];
+});
+
+$factory->define(Setting::class, function ($faker) {
+    return [
+       'name'  => 'app_name',
+       'value' => 'Cachet Test Demo',
     ];
 });
 

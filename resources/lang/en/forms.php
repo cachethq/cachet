@@ -77,11 +77,14 @@ return [
         'enabled'     => 'Component enabled?',
 
         'groups' => [
-            'name'               => 'Name',
-            'collapsing'         => 'Choose visibility of the group',
-            'visible'            => 'Always expanded',
-            'collapsed'          => 'Collapse the group by default',
-            'collapsed_incident' => 'Collapse the group, but expand if there are issues',
+            'name'                     => 'Name',
+            'collapsing'               => 'Expand/Collapse options',
+            'visible'                  => 'Always expanded',
+            'collapsed'                => 'Collapse the group by default',
+            'collapsed_incident'       => 'Collapse the group, but expand if there are issues',
+            'visibility'               => 'Visibility',
+            'visibility_public'        => 'Visible to public',
+            'visibility_authenticated' => 'Visible only to logged in users',
         ],
     ],
 

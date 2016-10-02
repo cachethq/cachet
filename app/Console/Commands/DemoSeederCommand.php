@@ -106,10 +106,12 @@ class DemoSeederCommand extends Command
                 'name'      => 'Websites',
                 'order'     => 1,
                 'collapsed' => 0,
+                'visible'   => ComponentGroup::VISIBLE_AUTHENTICATED,
             ], [
                 'name'      => 'Alt Three',
                 'order'     => 2,
                 'collapsed' => 1,
+                'visible'   => ComponentGroup::VISIBLE_GUEST,
             ],
         ];
 

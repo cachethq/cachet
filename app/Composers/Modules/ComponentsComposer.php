@@ -13,6 +13,7 @@ namespace CachetHQ\Cachet\Composers\Modules;
 
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
+use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\View\View;
 
 /**
@@ -24,6 +25,25 @@ use Illuminate\Contracts\View\View;
 class ComponentsComposer
 {
     /**
+     * The user session object.
+     *
+     * @var \Illuminate\Contracts\Auth\Guard
+     */
+    protected $guard;
+
+    /**
+     * Creates a new components composer instance.
+     *
+     * @param \Illuminate\Contracts\Auth\Guard $guard
+     *
+     * @return void
+     */
+    public function __construct(Guard $guard)
+    {
+        $this->guard = $guard;
+    }
+
+    /**
      * Index page view composer.
      *
      * @param \Illuminate\Contracts\View\View $view
@@ -32,12 +52,28 @@ class ComponentsComposer
      */
     public function compose(View $view)
     {
-        // Component & Component Group lists.
-        $usedComponentGroups = Component::enabled()->where('group_id', '>', 0)->groupBy('group_id')->pluck('group_id');
-        $componentGroups = ComponentGroup::whereIn('id', $usedComponentGroups)->orderBy('order')->get();
-        $ungroupedComponents = Component::enabled()->where('group_id', 0)->orderBy('order')->orderBy('created_at')->get();
+        $componentGroups = $this->getVisibleGroupedComponents();
+        $ungroupedComponents = Component::ungrouped()->get();
 
         $view->withComponentGroups($componentGroups)
             ->withUngroupedComponents($ungroupedComponents);
+    }
+
+    /**
+     * Get visible grouped components.
+     *
+     * @return \Illuminate\Support\Collection
+     */
+    protected function getVisibleGroupedComponents()
+    {
+        $componentGroupsBuilder = ComponentGroup::query();
+        if (!$this->guard->check()) {
+            $componentGroupsBuilder->visible();
+        }
+
+        $usedComponentGroups = Component::grouped()->pluck('group_id');
+
+        return $componentGroupsBuilder->used($usedComponentGroups)
+            ->get();
     }
 }
