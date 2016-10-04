@@ -17,3 +17,9 @@
 }
 
 @import "modules/stats";
+
+
+#circles-check dates
+body.status-page .timeline .moment .status-icon.status-4, body.status-page .timeline .moment .status-icon.status-3, body.status-page .timeline .moment .status-icon.status-2, body.status-page .timeline .moment .status-icon.status-1 {
+	border: 1px solid #7266ba;	
+}
