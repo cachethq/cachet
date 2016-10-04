@@ -85,6 +85,9 @@ body.status-page {
     .alert {
         font-size: 1.2em;
         font-weight: 600;
+        .alert-success {
+            border-color: #7ED321;
+        }
     }
 
     .timeline {
@@ -162,6 +165,7 @@ body.status-page {
                 position: absolute;
                 left: 25px;
                 top: 14px;
+                border: 1px solid #7266ba;
                 .icon {
                     position: absolute;
                     top: 7px;
@@ -335,9 +339,11 @@ body.status-page {
         line-height: 30px;
         text-align: center;
         text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+        background: #353535;
 
         .btn {
             text-shadow: none;
+            color: #FFF;
         }
 
         .icons {
