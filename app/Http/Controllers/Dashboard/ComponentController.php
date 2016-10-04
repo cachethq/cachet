@@ -237,7 +237,7 @@ class ComponentController extends Controller
     {
         dispatch(new RemoveComponentGroupCommand($group));
 
-        return Redirect::route('dashboard.components.index')
+        return Redirect::route('dashboard.components.groups')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.components.delete.success')));
     }
 
