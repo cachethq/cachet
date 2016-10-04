@@ -23,3 +23,11 @@
 body.status-page .timeline .moment .status-icon.status-4, body.status-page .timeline .moment .status-icon.status-3, body.status-page .timeline .moment .status-icon.status-2, body.status-page .timeline .moment .status-icon.status-1 {
 	border: 1px solid #7266ba;	
 }
+
+#footer changes
+body.status-page footer {
+    background: #353535;
+}
+body.status-page footer p, body.status-page footer .btn {
+    color: #FFF;
+}
