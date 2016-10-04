@@ -88,4 +88,15 @@ return [
     */
 
     'skip_subscriber_verification' => false,
+
+   /*
+    |--------------------------------------------------------------------------
+    | Only disrupted days
+    |--------------------------------------------------------------------------
+    |
+    | Whether to only show days with incidents, or each day in the timeline.
+    |
+    */
+
+    'only_disrupted_days' => false,
 ];

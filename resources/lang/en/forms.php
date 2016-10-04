@@ -139,6 +139,7 @@ return [
             'automatic_localization'       => 'Automatically localise your status page to your visitor\'s language?',
             'enable_external_dependencies' => 'Enable Third Party Dependencies (Google Fonts, Trackers, etc...)',
             'show_timezone'                => 'Show the timezone the status page is running in.',
+            'only_disrupted_days'          => 'Only show days containing incidents in the timeline?',
         ],
         'analytics' => [
             'analytics_google'       => 'Google Analytics code',

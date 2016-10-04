@@ -90,11 +90,13 @@ class StatusPageController extends AbstractApiController
         });
 
         // Add in days that have no incidents
-        foreach ($incidentDays as $i) {
-            $date = app(DateFactory::class)->make($startDate)->subDays($i);
+        if (Config::get('setting.only_disrupted_days') === false) {
+            foreach ($incidentDays as $i) {
+                $date = app(DateFactory::class)->make($startDate)->subDays($i);
 
-            if (!isset($allIncidents[$date->toDateString()])) {
-                $allIncidents[$date->toDateString()] = [];
+                if (!isset($allIncidents[$date->toDateString()])) {
+                    $allIncidents[$date->toDateString()] = [];
+                }
             }
         }
 
