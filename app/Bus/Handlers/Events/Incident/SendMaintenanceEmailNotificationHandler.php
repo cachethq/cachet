@@ -15,6 +15,7 @@ use CachetHQ\Cachet\Bus\Events\Incident\MaintenanceWasScheduledEvent;
 use CachetHQ\Cachet\Models\Subscriber;
 use Illuminate\Contracts\Mail\MailQueue;
 use Illuminate\Mail\Message;
+use stdClass;
 use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
 
 class SendMaintenanceEmailNotificationHandler
@@ -56,6 +57,18 @@ class SendMaintenanceEmailNotificationHandler
      */
     public function handle(MaintenanceWasScheduledEvent $event)
     {
+        // Notify directly specified e-mail addresses
+        $directNotifications = explode(",", $event->incident->directNotify);
+        foreach($directNotifications as $email){
+            if (filter_var($email, FILTER_VALIDATE_EMAIL)){
+                $addressee = new stdClass;
+                $addressee->email = $email;
+                $addressee->token = '';
+                $addressee->verify_code = '';
+                $this->notify($event, $addressee);
+            }
+        }
+
         if (!$event->incident->notify) {
             return false;
         }
@@ -104,7 +117,6 @@ class SendMaintenanceEmailNotificationHandler
     {
         $incident = AutoPresenter::decorate($event->incident);
         $component = AutoPresenter::decorate($event->incident->component);
-
         $mail = [
             'email'   => $subscriber->email,
             'subject' => trans('cachet.subscriber.email.maintenance.subject', [
