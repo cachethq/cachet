@@ -11,21 +11,22 @@
 
 namespace CachetHQ\Tests\Cachet\Api;
 
-use CachetHQ\Tests\Cachet\AbstractTestCase;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
-
-class ComponentTest extends AbstractTestCase
+/**
+ * This is the component test class.
+ *
+ * @author James Brooks <james@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
+ */
+class ComponentTest extends AbstractApiTestCase
 {
-    use DatabaseMigrations;
-
     public function testGetComponents()
     {
         $components = factory('CachetHQ\Cachet\Models\Component', 3)->create();
 
         $this->get('/api/v1/components');
-        $this->seeJson(['id' => (string) $components[0]->id]);
-        $this->seeJson(['id' => (string) $components[1]->id]);
-        $this->seeJson(['id' => (string) $components[2]->id]);
+        $this->seeJson(['id' => $components[0]->id]);
+        $this->seeJson(['id' => $components[1]->id]);
+        $this->seeJson(['id' => $components[2]->id]);
         $this->assertResponseOk();
     }
 
@@ -61,8 +62,42 @@ class ComponentTest extends AbstractTestCase
             'link'        => 'http://example.com',
             'order'       => 1,
             'group_id'    => 1,
+            'enabled'     => true,
         ]);
         $this->seeJson(['name' => 'Foo']);
+        $this->assertResponseOk();
+    }
+
+    public function testPostComponentWithoutEnabledField()
+    {
+        $this->beUser();
+
+        $this->post('/api/v1/components', [
+            'name'        => 'Foo',
+            'description' => 'Bar',
+            'status'      => 1,
+            'link'        => 'http://example.com',
+            'order'       => 1,
+            'group_id'    => 1,
+        ]);
+        $this->seeJson(['name' => 'Foo', 'enabled' => true]);
+        $this->assertResponseOk();
+    }
+
+    public function testPostDisabledComponent()
+    {
+        $this->beUser();
+
+        $this->post('/api/v1/components', [
+            'name'        => 'Foo',
+            'description' => 'Bar',
+            'status'      => 1,
+            'link'        => 'http://example.com',
+            'order'       => 1,
+            'group_id'    => 1,
+            'enabled'     => 0,
+        ]);
+        $this->seeJson(['name' => 'Foo', 'enabled' => false]);
         $this->assertResponseOk();
     }
 

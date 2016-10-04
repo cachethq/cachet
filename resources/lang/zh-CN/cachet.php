@@ -12,86 +12,133 @@
 return [
     // Components
     'components' => [
-        'status' => [
-            1 => '正常运转',
-            2 => '性能问题',
-            3 => '部分停运',
-            4 => '严重停转',
+        'last_updated' => '最后更新 :timestamp',
+        'status'       => [
+            1 => '运行正常',
+            2 => '负载较高',
+            3 => 'Partial Outage',
+            4 => 'Major Outage',
+        ],
+        'group' => [
+            'other' => '其他组件',
         ],
     ],
 
     // Incidents
     'incidents' => [
-        'none'          => '没有已报告的事件。',
-        'past'          => '过去的事件',
+        'none'          => '无故障报告',
+        'past'          => '历史状态',
         'previous_week' => '前一周',
         'next_week'     => '后一周',
-        'none'          => '没有已报告的事件。',
-        'scheduled'     => '计划维护',
-        'scheduled_at'  => '，计划于 :timestamp',
+        'scheduled'     => 'Scheduled Maintenance',
+        'scheduled_at'  => ', scheduled :timestamp',
         'status'        => [
-            0 => '计划中的', // TODO: Hopefully remove this.
-            1 => '调查中',
-            2 => '已定位',
-            3 => '观察中',
-            4 => '已修复',
+            0 => '计划中', // TODO: Hopefully remove this.
+            1 => '确认中',
+            2 => '修复中',
+            3 => '已更新',
+            4 => '已解决',
         ],
     ],
 
     // Service Status
     'service' => [
-        'good' => '所有系统正常运转。',
-        'bad'  => '一些系统出了问题。',
+        'good'  => '[0,1] 系统工作正常|[2,Inf] 所有系统工作正常',
+        'bad'   => '[0,1] 一个系统出现了问题|[2,Inf] 一些系统出现了问题',
+        'major' => '[0,1] 一个系统出现重大故障|[2,Inf] 一些系统出现重大故障',
     ],
 
     'api' => [
-        'regenerate' => '重新生成 API 密钥',
-        'revoke'     => '吊销 API 密钥',
+        'regenerate' => 'Regenerate API Key',
+        'revoke'     => '注销 API 密钥',
     ],
 
     // Metrics
     'metrics' => [
         'filter' => [
-            'hourly'  => '每小时的',
-            'daily'   => '每日的',
-            'monthly' => '每月的',
+            'last_hour' => '上个小时',
+            'hourly'    => '最近12小时',
+            'weekly'    => '周',
+            'monthly'   => '月',
         ],
     ],
 
     // Subscriber
     'subscriber' => [
         'subscribe' => '订阅最新的更新。',
-        'button'    => '订阅',
-        'email'     => [
-            'subscribe'    => '订阅电子邮件更新。',
-            'subscribed'   => '你已经订阅电子邮件通知，请检查您的电子邮件，确认您的订阅。',
-            'verified'     => '您的电子邮件订阅已确认。谢谢！',
-            'unsubscribe'  => '取消电子邮件订阅。',
-            'unsubscribed' => '您的电子邮件订阅已被取消。',
-            'failure'      => '邮件订阅失败。',
-            'verify'       => [
-                'text'           => '请确认您的 :app_name 电子邮件订阅。\\n:link\\n此致，:app_name',
-                'html-preheader' => '请确认您的 :app_name 状态更新邮件订阅。',
-                'html'           => '<p>请确认您的 :app_name 电子邮件订阅。</p><p><a href=":link">:link</a></p><p>此致，:app_name</p>',
+        'button'    => 'Subscribe',
+        'manage'    => [
+            'no_subscriptions' => '您当前已订阅所有更新。',
+            'my_subscriptions' => '您当前已订阅下列更新',
+        ],
+        'email' => [
+            'subscribe'          => 'Subscribe to email updates.',
+            'subscribed'         => '您已经订阅电子邮件通知，请检查您的电子邮件，确认您的订阅。',
+            'verified'           => 'Your email subscription has been confirmed. Thank you!',
+            'manage'             => '管理您的订阅',
+            'unsubscribe'        => '取消电子邮件订阅。',
+            'unsubscribed'       => 'Your email subscription has been cancelled.',
+            'failure'            => 'Something went wrong with the subscription.',
+            'already-subscribed' => '无法订阅，因为这个邮箱地址 ( :email ) 已经在订阅列表中了。',
+            'verify'             => [
+                'text'   => "请确认您的 :app_name 状态更新邮件订阅。\n:link",
+                'html'   => '<p>请确认您的 :app_name 状态更新邮件订阅。</p>',
+                'button' => '确认订阅',
             ],
             'maintenance' => [
-                'text'           => '新的维护计划已被安排在 :app_name 上。\\n此致，:app_name',
-                'html-preheader' => '新的维护计划已被安排在 :app_name 上。',
-                'html'           => '<p>新的维护计划已被安排在 :app_name 上。</p><p>此致，:app_name</p>',
+                'subject' => '[计划维护] :name',
             ],
             'incident' => [
-                'text'           => ':app_name 有新事件报告。\\n此致，:app_name',
-                'html-preheader' => ':app_name 有新事件报告。',
-                'html'           => '<p>:app_name 有新事件报告。</p><p>此致，:app_name</p>',
+                'subject' => '[新事件] :status: :name',
+            ],
+            'component' => [
+                'subject'       => '组件状态更新',
+                'text'          => '组件 :component_name 的状态已经更新。:component_name 现在的状态为 :component_human_status。\n谢谢, :app_name',
+                'html'          => '<p>组件 :component_name 有状态变更。:component_name 当前 :component_human_status。</p><p>谢谢, :app_name</p>',
+                'tooltip-title' => '订阅来自 component_name 的更新',
             ],
         ],
     ],
 
+    'users' => [
+        'email' => [
+            'invite' => [
+                'text' => "您已被邀请加入 :app_name 团队的状态页, 请点击以下链接进行注册。\n:link\n谢谢, :app_name",
+                'html' => '<p>您已被邀请加入 :app_name 团队的状态页, 请点击以下链接进行注册。</p><p><a href=":link">:link</a></p><p>谢谢, :app_name</p>',
+            ],
+        ],
+    ],
+
+    'signup' => [
+        'title'    => '注册',
+        'username' => 'Username',
+        'email'    => '电子邮箱',
+        'password' => 'Password',
+        'success'  => '您的账号已注册成功。',
+        'failure'  => '注册失败。',
+    ],
+
+    'system' => [
+        'update' => '有新版的Cachet可用，您可以<a href="https://docs.cachethq.io/docs/updating-cachet">点击这里</a>获取更新咨询',
+    ],
+
+    // Modal
+    'modal' => [
+        'close'     => '关闭',
+        'subscribe' => [
+            'title'  => '订阅组件状态更新',
+            'body'   => '请输入您用于接收订阅该组件更新通知的电子邮箱。如果您已经订阅，您应已收到关于这个组件的一系列电子邮件。',
+            'button' => 'Subscribe',
+        ],
+    ],
+
     // Other
-    'powered_by'      => ':app 应用状态页面由 <a href="https://cachethq.io">Cachet</a>提供支持。',
-    'about_this_site' => '关于此站点',
-    'rss-feed'        => 'RSS 订阅',
-    'atom-feed'       => 'Atom 订阅',
-    'feed'            => '状态源',
+    'home'            => '主屏幕',
+    'description'     => '始终保持对 :app 服务状态的关注。',
+    'powered_by'      => '由 <a href="https://cachethq.io" class="links">Cachet</a> 驱动。',
+    'about_this_site' => '关于我们',
+    'rss-feed'        => 'RSS',
+    'atom-feed'       => 'Atom',
+    'feed'            => 'Status Feed',
 
 ];

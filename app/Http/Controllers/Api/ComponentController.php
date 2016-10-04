@@ -11,12 +11,15 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Api;
 
+use CachetHQ\Cachet\Bus\Commands\Component\AddComponentCommand;
+use CachetHQ\Cachet\Bus\Commands\Component\RemoveComponentCommand;
+use CachetHQ\Cachet\Bus\Commands\Component\UpdateComponentCommand;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Tag;
-use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Contracts\Auth\Guard;
-use Illuminate\Http\Request;
+use Illuminate\Database\QueryException;
+use Illuminate\Support\Facades\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 class ComponentController extends AbstractApiController
@@ -24,15 +27,27 @@ class ComponentController extends AbstractApiController
     /**
      * Get all components.
      *
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function getComponents(Request $request)
+    public function getComponents()
     {
-        $components = Component::paginate(Binput::get('per_page', 20));
+        if (app(Guard::class)->check()) {
+            $components = Component::query();
+        } else {
+            $components = Component::enabled();
+        }
 
-        return $this->paginator($components, $request);
+        $components->search(Binput::except(['sort', 'order', 'per_page']));
+
+        if ($sortBy = Binput::get('sort')) {
+            $direction = Binput::has('order') && Binput::get('order') == 'desc';
+
+            $components->sort($sortBy, $direction);
+        }
+
+        $components = $components->paginate(Binput::get('per_page', 20));
+
+        return $this->paginator($components, Request::instance());
     }
 
     /**
@@ -40,7 +55,7 @@ class ComponentController extends AbstractApiController
      *
      * @param \CachetHQ\Cachet\Models\Component $component
      *
-     * @return \CachetHQ\Cachet\Models\Component
+     * @return \Illuminate\Http\JsonResponse
      */
     public function getComponent(Component $component)
     {
@@ -50,21 +65,21 @@ class ComponentController extends AbstractApiController
     /**
      * Create a new component.
      *
-     * @param \Illuminate\Contracts\Auth\Guard $auth
-     *
-     * @return \CachetHQ\Cachet\Models\Component
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function postComponents(Guard $auth)
+    public function postComponents()
     {
-        $componentData = Binput::except('tags');
-
         try {
-            $component = Component::create($componentData);
-        } catch (Exception $e) {
-            throw new BadRequestHttpException();
-        }
-
-        if (!$component->isValid()) {
+            $component = dispatch(new AddComponentCommand(
+                Binput::get('name'),
+                Binput::get('description'),
+                Binput::get('status'),
+                Binput::get('link'),
+                Binput::get('order'),
+                Binput::get('group_id'),
+                (bool) Binput::get('enabled', true)
+            ));
+        } catch (QueryException $e) {
             throw new BadRequestHttpException();
         }
 
@@ -88,15 +103,24 @@ class ComponentController extends AbstractApiController
     /**
      * Update an existing component.
      *
-     * @param \CachetHQ\Cachet\Models\Componet $component
+     * @param \CachetHQ\Cachet\Models\Component $component
      *
-     * @return \CachetHQ\Cachet\Models\Component
+     * @return \Illuminate\Http\JsonResponse
      */
     public function putComponent(Component $component)
     {
-        $component->update(Binput::except('tags'));
-
-        if (!$component->isValid('updating')) {
+        try {
+            dispatch(new UpdateComponentCommand(
+                $component,
+                Binput::get('name'),
+                Binput::get('description'),
+                Binput::get('status'),
+                Binput::get('link'),
+                Binput::get('order'),
+                Binput::get('group_id'),
+                (bool) Binput::get('enabled', true)
+            ));
+        } catch (QueryException $e) {
             throw new BadRequestHttpException();
         }
 
@@ -105,9 +129,7 @@ class ComponentController extends AbstractApiController
 
             // For every tag, do we need to create it?
             $componentTags = array_map(function ($taggable) use ($component) {
-                return Tag::firstOrCreate([
-                    'name' => $taggable,
-                ])->id;
+                return Tag::firstOrCreate(['name' => $taggable])->id;
             }, $tags);
 
             $component->tags()->sync($componentTags);
@@ -125,7 +147,7 @@ class ComponentController extends AbstractApiController
      */
     public function deleteComponent(Component $component)
     {
-        $component->delete();
+        dispatch(new RemoveComponentCommand($component));
 
         return $this->noContent();
     }

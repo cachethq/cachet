@@ -11,54 +11,53 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Api;
 
-use CachetHQ\Cachet\Events\CustomerHasSubscribedEvent;
+use CachetHQ\Cachet\Bus\Commands\Subscriber\SubscribeSubscriberCommand;
+use CachetHQ\Cachet\Bus\Commands\Subscriber\UnsubscribeSubscriberCommand;
+use CachetHQ\Cachet\Bus\Commands\Subscriber\UnsubscribeSubscriptionCommand;
 use CachetHQ\Cachet\Models\Subscriber;
-use Exception;
+use CachetHQ\Cachet\Models\Subscription;
 use GrahamCampbell\Binput\Facades\Binput;
-use Illuminate\Http\Request;
+use Illuminate\Contracts\Config\Repository;
+use Illuminate\Database\QueryException;
+use Illuminate\Support\Facades\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
+/**
+ * This is the subscriber controller class.
+ *
+ * @author James Brooks <james@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
+ */
 class SubscriberController extends AbstractApiController
 {
     /**
      * Get all subscribers.
      *
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function getSubscribers(Request $request)
+    public function getSubscribers()
     {
         $subscribers = Subscriber::paginate(Binput::get('per_page', 20));
 
-        return $this->paginator($subscribers, $request);
+        return $this->paginator($subscribers, Request::instance());
     }
 
     /**
      * Create a new subscriber.
      *
-     * @return \CachetHQ\Cachet\Models\Subscriber
+     * @return \Illuminate\Http\JsonResponse
      */
     public function postSubscribers()
     {
-        $subscriberData = Binput::except('verify');
+        $verified = Binput::get('verify', app(Repository::class)->get('setting.skip_subscriber_verification'));
 
         try {
-            $subscriber = Subscriber::create($subscriberData);
-        } catch (Exception $e) {
+            $subscriber = dispatch(new SubscribeSubscriberCommand(Binput::get('email'), $verified, Binput::get('components')));
+        } catch (QueryException $e) {
             throw new BadRequestHttpException();
         }
 
-        if ($subscriber->isValid()) {
-            // If we're auto-verifying the subscriber, don't bother with this event.
-            if (!(Binput::get('verify'))) {
-                event(new CustomerHasSubscribedEvent($subscriber));
-            }
-
-            return $this->item($subscriber);
-        }
-
-        throw new BadRequestHttpException();
+        return $this->item($subscriber);
     }
 
     /**
@@ -70,7 +69,21 @@ class SubscriberController extends AbstractApiController
      */
     public function deleteSubscriber(Subscriber $subscriber)
     {
-        $subscriber->delete();
+        dispatch(new UnsubscribeSubscriberCommand($subscriber));
+
+        return $this->noContent();
+    }
+
+    /**
+     * Delete a subscriber.
+     *
+     * @param \CachetHQ\Cachet\Models\Subscriber $subscriber
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function deleteSubscription(Subscription $subscriber)
+    {
+        dispatch(new UnsubscribeSubscriptionCommand($subscriber));
 
         return $this->noContent();
     }

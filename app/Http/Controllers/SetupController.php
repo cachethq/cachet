@@ -11,19 +11,21 @@
 
 namespace CachetHQ\Cachet\Http\Controllers;
 
-use CachetHQ\Cachet\Models\Setting;
 use CachetHQ\Cachet\Models\User;
+use CachetHQ\Cachet\Settings\Repository;
+use Dotenv\Dotenv;
+use Dotenv\Exception\InvalidPathException;
 use GrahamCampbell\Binput\Facades\Binput;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Response;
-use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\View;
 
-class SetupController extends AbstractController
+class SetupController extends Controller
 {
     /**
      * Array of cache drivers.
@@ -40,11 +42,68 @@ class SetupController extends AbstractController
     ];
 
     /**
-     * Create a new setup controller instance.
+     * Array of cache drivers.
+     *
+     * @var string[]
+     */
+    protected $mailDrivers = [
+        'smtp'     => 'SMTP',
+        'mail'     => 'Mail',
+        'sendmail' => 'Sendmail',
+        'mailgun'  => 'Mailgun',
+        'mandrill' => 'Mandrill',
+        // 'ses'       => 'Amazon SES', this will be available only if aws/aws-sdk-php is installed
+        'sparkpost' => 'SparkPost',
+        'log'       => 'Log (Testing)',
+    ];
+
+    /**
+     * Array of step1 rules.
+     *
+     * @var string[]
+     */
+    protected $rulesStep1;
+
+    /**
+     * Array of step2 rules.
+     *
+     * @var string[]
+     */
+    protected $rulesStep2;
+
+    /**
+     * Array of step3 rules.
+     *
+     * @var string[]
+     */
+    protected $rulesStep3;
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
      */
     public function __construct()
     {
-        $this->beforeFilter('csrf', ['only' => ['postCachet']]);
+        $this->rulesStep1 = [
+            'env.cache_driver'   => 'required|in:'.implode(',', array_keys($this->cacheDrivers)),
+            'env.session_driver' => 'required|in:'.implode(',', array_keys($this->cacheDrivers)),
+            'env.mail_driver'    => 'required|in:'.implode(',', array_keys($this->mailDrivers)),
+        ];
+
+        $this->rulesStep2 = [
+            'settings.app_name'     => 'required',
+            'settings.app_domain'   => 'required',
+            'settings.app_timezone' => 'required',
+            'settings.app_locale'   => 'required',
+            'settings.show_support' => 'bool',
+        ];
+
+        $this->rulesStep3 = [
+            'user.username' => ['required', 'regex:/\A(?!.*[:;]-\))[ -~]+\z/'],
+            'user.email'    => 'email|required',
+            'user.password' => 'required',
+        ];
     }
 
     /**
@@ -54,16 +113,24 @@ class SetupController extends AbstractController
      */
     public function getIndex()
     {
-        // If we've copied the .env.example file, then we should try and reset it.
-        if (getenv('APP_KEY') === 'SomeRandomString') {
-            $this->keyGenerate();
+        $supportedLanguages = Request::getLanguages();
+        $userLanguage = Config::get('app.locale');
+
+        foreach ($supportedLanguages as $language) {
+            $language = str_replace('_', '-', $language);
+
+            if (isset($this->langs[$language])) {
+                $userLanguage = $language;
+                break;
+            }
         }
 
-        return View::make('setup')->with([
-            'page_title'   => trans('setup.setup'),
-            'cacheDrivers' => $this->cacheDrivers,
-            'appUrl'       => Request::root(),
-        ]);
+        return View::make('setup')
+            ->withPageTitle(trans('setup.setup'))
+            ->withCacheDrivers($this->cacheDrivers)
+            ->withMailDrivers($this->mailDrivers)
+            ->withUserLanguage($userLanguage)
+            ->withAppUrl(Request::root());
     }
 
     /**
@@ -75,16 +142,21 @@ class SetupController extends AbstractController
     {
         $postData = Binput::all();
 
-        $v = Validator::make($postData, [
-            'env.cache_driver'   => 'required|in:'.implode(',', array_keys($this->cacheDrivers)),
-            'env.session_driver' => 'required|in:'.implode(',', array_keys($this->cacheDrivers)),
-        ]);
+        $v = Validator::make($postData, $this->rulesStep1);
+
+        $v->sometimes('env.mail_host', 'required', function ($input) {
+            return $input->mail_driver === 'smtp';
+        });
+
+        $v->sometimes(['env.mail_address', 'env.mail_username', 'env.mail_password'], 'required', function ($input) {
+            return $input->mail_driver !== 'log';
+        });
 
         if ($v->passes()) {
             return Response::json(['status' => 1]);
-        } else {
-            return Response::json(['errors' => $v->messages()], 400);
         }
+
+        return Response::json(['errors' => $v->getMessageBag()], 400);
     }
 
     /**
@@ -96,21 +168,13 @@ class SetupController extends AbstractController
     {
         $postData = Binput::all();
 
-        $v = Validator::make($postData, [
-            'env.cache_driver'      => 'required|in:'.implode(',', array_keys($this->cacheDrivers)),
-            'env.session_driver'    => 'required|in:'.implode(',', array_keys($this->cacheDrivers)),
-            'settings.app_name'     => 'required',
-            'settings.app_domain'   => 'required',
-            'settings.app_timezone' => 'required',
-            'settings.app_locale'   => 'required',
-            'settings.show_support' => 'boolean',
-        ]);
+        $v = Validator::make($postData, $this->rulesStep1 + $this->rulesStep2);
 
         if ($v->passes()) {
             return Response::json(['status' => 1]);
-        } else {
-            return Response::json(['errors' => $v->messages()], 400);
         }
+
+        return Response::json(['errors' => $v->getMessageBag()], 400);
     }
 
     /**
@@ -122,18 +186,7 @@ class SetupController extends AbstractController
     {
         $postData = Binput::all();
 
-        $v = Validator::make($postData, [
-            'env.cache_driver'      => 'required|in:'.implode(',', array_keys($this->cacheDrivers)),
-            'env.session_driver'    => 'required|in:'.implode(',', array_keys($this->cacheDrivers)),
-            'settings.app_name'     => 'required',
-            'settings.app_domain'   => 'required',
-            'settings.app_timezone' => 'required',
-            'settings.app_locale'   => 'required',
-            'settings.show_support' => 'boolean',
-            'user.username'         => ['required', 'regex:/\A(?!.*[:;]-\))[ -~]+\z/'],
-            'user.email'            => 'email|required',
-            'user.password'         => 'required',
-        ]);
+        $v = Validator::make($postData, $this->rulesStep1 + $this->rulesStep2 + $this->rulesStep3);
 
         if ($v->passes()) {
             // Pull the user details out.
@@ -143,18 +196,17 @@ class SetupController extends AbstractController
                 'username' => $userDetails['username'],
                 'email'    => $userDetails['email'],
                 'password' => $userDetails['password'],
-                'level'    => 1,
+                'level'    => User::LEVEL_ADMIN,
             ]);
 
             Auth::login($user);
 
+            $setting = app(Repository::class);
+
             $settings = array_pull($postData, 'settings');
 
             foreach ($settings as $settingName => $settingValue) {
-                Setting::create([
-                    'name'  => $settingName,
-                    'value' => $settingValue,
-                ]);
+                $setting->set($settingName, $settingValue);
             }
 
             $envData = array_pull($postData, 'env');
@@ -164,20 +216,18 @@ class SetupController extends AbstractController
                 $this->writeEnv($envKey, $envValue);
             }
 
-            Session::flash('setup.done', true);
-
             if (Request::ajax()) {
                 return Response::json(['status' => 1]);
             }
 
             return Redirect::to('dashboard');
-        } else {
-            if (Request::ajax()) {
-                return Response::json(['errors' => $v->messages()], 400);
-            }
-
-            return Redirect::back()->withInput()->with('errors', $v->messages());
         }
+
+        if (Request::ajax()) {
+            return Response::json(['errors' => $v->getMessageBag()], 400);
+        }
+
+        return Redirect::route('setup.index')->withInput()->withErrors($v->getMessageBag());
     }
 
     /**
@@ -185,32 +235,26 @@ class SetupController extends AbstractController
      *
      * @param string $key
      * @param mixed  $value
+     *
+     * @return void
      */
     protected function writeEnv($key, $value)
     {
-        static $path = null;
+        $dir = app()->environmentPath();
+        $file = app()->environmentFile();
+        $path = "{$dir}/{$file}";
 
-        if ($path === null || ($path !== null && file_exists($path))) {
-            $path = base_path('.env');
+        try {
+            (new Dotenv($dir, $file))->load();
+
+            $envKey = strtoupper($key);
+            $envValue = env($envKey) ?: 'null';
+
             file_put_contents($path, str_replace(
-                getenv(strtoupper($key)), $value, file_get_contents($path)
+                $envKey.'='.$envValue, $envKey.'='.$value, file_get_contents($path)
             ));
+        } catch (InvalidPathException $e) {
+            //
         }
-    }
-
-    /**
-     * Generate the app.key value.
-     */
-    protected function keyGenerate()
-    {
-        $key = str_random(42);
-
-        $path = base_path('.env');
-
-        file_put_contents($path, str_replace(
-            Config::get('app.key'), $key, file_get_contents($path)
-        ));
-
-        Config::set('app.key', $key);
     }
 }

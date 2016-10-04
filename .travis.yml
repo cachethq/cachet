@@ -4,16 +4,15 @@ php:
   - 5.5.9
   - 5.5
   - 5.6
-  - hhvm
+  - 7.0
+  - 7.1
 
 sudo: false
 
-install: travis_retry composer install --no-interaction --ignore-platform-reqs --no-scripts --prefer-source
+before_install:
+  - cp .env.example .env
+  - if [[ $TRAVIS_PHP_VERSION != 7.1 ]] ; then phpenv config-rm xdebug.ini; fi
 
-script:
-  - bash -c 'if [ "$TRAVIS_PHP_VERSION" == "hhvm" ]; then vendor/bin/phpunit; fi;'
-  - bash -c 'if [ "$TRAVIS_PHP_VERSION" != "hhvm" ]; then vendor/bin/phpunit --coverage-clover build/logs/clover.xml; fi;'
+install: travis_retry composer install --no-interaction --no-scripts --prefer-source --no-suggest
 
-after_script:
-  - bash -c 'if [ "$TRAVIS_PHP_VERSION" != "hhvm" ]; then wget https://scrutinizer-ci.com/ocular.phar; fi;'
-  - bash -c 'if [ "$TRAVIS_PHP_VERSION" != "hhvm" ]; then php ocular.phar code-coverage:upload --format=php-clover build/logs/clover.xml; fi;'
+script: vendor/bin/phpunit

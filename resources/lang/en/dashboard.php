@@ -21,14 +21,18 @@ return [
         'incident-create-template' => 'Create Template',
         'incident-templates'       => 'Incident Templates',
         'add'                      => [
-            'title'   => 'Add an incident',
+            'title'   => 'Report an incident',
             'success' => 'Incident added.',
-            'failure' => 'Something went wrong with the incident.',
+            'failure' => 'There was an error adding the incident, please try again.',
         ],
         'edit' => [
             'title'   => 'Edit an incident',
             'success' => 'Incident updated.',
-            'failure' => 'Something went wrong with the incident.',
+            'failure' => 'There was an error editing the incident, please try again.',
+        ],
+        'delete' => [
+            'success' => 'The incident has been deleted and will not show on your status page.',
+            'failure' => 'The incident could not be deleted, please try again.',
         ],
 
         // Incident templates
@@ -36,13 +40,18 @@ return [
             'title' => 'Incident Templates',
             'add'   => [
                 'title'   => 'Create an incident template',
-                'success' => 'Template created.',
+                'message' => 'You should add an incident template.',
+                'success' => 'Your new incident template has been created.',
                 'failure' => 'Something went wrong with the incident template.',
             ],
             'edit' => [
-                'title'   => 'Edit template',
-                'success' => 'Template has been updated!',
+                'title'   => 'Edit Template',
+                'success' => 'The incident template has been updated.',
                 'failure' => 'Something went wrong updating the incident template',
+            ],
+            'delete' => [
+                'success' => 'The incident template has been deleted.',
+                'failure' => 'The incident template could not be deleted, please try again.',
             ],
         ],
     ],
@@ -50,20 +59,21 @@ return [
     // Incident Maintenance
     'schedule' => [
         'schedule'     => 'Scheduled Maintenance',
+        'logged'       => '{0} There are no schedules, good work.|You have logged one schedule.|You have reported <strong>:count</strong> schedules.',
         'scheduled_at' => 'Scheduled at :timestamp',
         'add'          => [
             'title'   => 'Add Scheduled Maintenance',
             'success' => 'Schedule added.',
-            'failure' => 'Something went wrong adding the schedule.',
+            'failure' => 'Something went wrong adding the schedule, please try again.',
         ],
         'edit' => [
             'title'   => 'Edit Scheduled Maintenance',
             'success' => 'Schedule has been updated!',
-            'failure' => 'Something went wrong editing the schedule.',
+            'failure' => 'Something went wrong editing the schedule, please try again.',
         ],
         'delete' => [
-            'success' => 'The schedule has been deleted and will not show on your status page.',
-            'failure' => 'The schedule could not be deleted. Please try again.',
+            'success' => 'The scheduled maintenance has been deleted and will not show on your status page.',
+            'failure' => 'The scheduled maintenance could not be deleted, please try again.',
         ],
     ],
 
@@ -76,12 +86,16 @@ return [
             'title'   => 'Add a component',
             'message' => 'You should add a component.',
             'success' => 'Component created.',
-            'failure' => 'Something went wrong with the component.',
+            'failure' => 'Something went wrong with the component group, please try again.',
         ],
         'edit' => [
             'title'   => 'Edit a component',
             'success' => 'Component updated.',
-            'failure' => 'Something went wrong with the component.',
+            'failure' => 'Something went wrong with the component group, please try again.',
+        ],
+        'delete' => [
+            'success' => 'The component has been deleted!',
+            'failure' => 'The component could not be deleted, please try again.',
         ],
 
         // Component groups
@@ -91,12 +105,16 @@ return [
             'add'           => [
                 'title'   => 'Add a component group',
                 'success' => 'Component group added.',
-                'failure' => 'Something went wrong with the component group.',
+                'failure' => 'Something went wrong with the component group, please try again.',
             ],
             'edit' => [
                 'title'   => 'Edit a component group',
                 'success' => 'Component group updated.',
-                'failure' => 'Something went wrong with the component group.',
+                'failure' => 'Something went wrong with the component group, please try again.',
+            ],
+            'delete' => [
+                'success' => 'Component group has been deleted!',
+                'failure' => 'The component group could not be deleted, please try again.',
             ],
         ],
     ],
@@ -106,30 +124,38 @@ return [
         'metrics' => 'Metrics',
         'add'     => [
             'title'   => 'Create a metric',
+            'message' => 'You should add a metric.',
             'success' => 'Metric created.',
-            'failure' => 'Something went wrong with the metric.',
+            'failure' => 'Something went wrong with the metric, please try again.',
         ],
         'edit' => [
             'title'   => 'Edit a metric',
             'success' => 'Metric updated.',
-            'failure' => 'Something went wrong with the metric.',
+            'failure' => 'Something went wrong with the metric, please try again.',
+        ],
+        'delete' => [
+            'success' => 'The metric has been deleted and will no longer display on your status page.',
+            'failure' => 'The metric could not be deleted, please try again.',
         ],
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'  => 'Subscribers',
-        'description'  => 'Subscribers will receive email updates when incidents are created.',
-        'verified'     => 'Verified',
-        'not_verified' => 'Not Verified',
-        'add'          => [
+        'subscribers'      => 'Subscribers',
+        'description'      => 'Subscribers will receive email updates when incidents are created or components are updated.',
+        'verified'         => 'Verified',
+        'not_verified'     => 'Not verified',
+        'subscriber'       => ':email, subscribed :date',
+        'no_subscriptions' => 'Subscribed to all updates',
+        'add'              => [
             'title'   => 'Add a new subscriber',
-            'success' => 'Subscriber added.',
-            'failure' => 'Something went wrong with the component.',
+            'success' => 'Subscriber has been added!',
+            'failure' => 'Something went wrong adding the subscriber, please try again.',
+            'help'    => 'Enter each subscriber on a new line.',
         ],
         'edit' => [
             'title'   => 'Update subscriber',
-            'success' => 'Subscriber updated.',
-            'failure' => 'Something went wrong when updating.',
+            'success' => 'Subscriber has been updated!',
+            'failure' => 'Something went wrong editing the subscriber, please try again.',
         ],
     ],
 
@@ -142,12 +168,21 @@ return [
         'add'         => [
             'title'   => 'Add a new team member',
             'success' => 'Team member added.',
-            'failure' => 'Something went wrong with the component.',
+            'failure' => 'The team member could not be added, please try again.',
         ],
         'edit' => [
             'title'   => 'Update profile',
             'success' => 'Profile updated.',
-            'failure' => 'Something went wrong when updating.',
+            'failure' => 'Something went wrong updating the profile, please try again.',
+        ],
+        'delete' => [
+            'success' => 'Team member has been deleted and will no longer have access to the dashboard!',
+            'failure' => 'The team member could not be added, please try again.',
+        ],
+        'invite' => [
+            'title'   => 'Invite a new team member',
+            'success' => 'An invite has been sent',
+            'failure' => 'The invite could not be sent, please try again.',
         ],
     ],
 
@@ -158,6 +193,20 @@ return [
             'app-setup'   => 'Application Setup',
             'images-only' => 'Only images may be uploaded.',
             'too-big'     => 'The file you uploaded is too big. Upload an image smaller than :size',
+        ],
+        'analytics' => [
+            'analytics' => 'Analytics',
+        ],
+        'log' => [
+            'log' => 'Log',
+        ],
+        'localization' => [
+            'localization' => 'Localization',
+        ],
+        'customization' => [
+            'customization' => 'Customization',
+            'header'        => 'Custom Header HTML',
+            'footer'        => 'Custom Footer HTML',
         ],
         'security' => [
             'security'   => 'Security',
@@ -173,13 +222,21 @@ return [
             'success' => 'Settings saved.',
             'failure' => 'Settings could not be saved.',
         ],
+        'credits' => [
+            'credits'       => 'Credits',
+            'contributors'  => 'Contributors',
+            'license'       => 'Cachet is a BSD-3-licensed open source project, released by <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
+            'backers-title' => 'Backers & Sponsors',
+            'backers'       => 'If you\'d like to support future development, check out the <a href="https://patreon.com/jbrooksuk" target="_blank">Cachet Patreon</a> campaign.',
+            'thank-you'     => 'Thank you to each and every one of the :count contributors.',
+        ],
     ],
 
     // Login
     'login' => [
         'login'      => 'Login',
         'logged_in'  => 'You\'re logged in.',
-        'welcome'    => 'Welcome Back!',
+        'welcome'    => 'Welcome back!',
         'two-factor' => 'Please enter your token.',
     ],
 
@@ -195,18 +252,26 @@ return [
         'whoops'        => 'Whoops.',
     ],
 
+    // Widgets
+    'widgets' => [
+        'support'          => 'Support Cachet',
+        'support_subtitle' => 'Check out our <strong><a href="https://patreon.com/jbrooksuk" target="_blank">Patreon</a></strong> page!',
+        'news'             => 'Latest News',
+        'news_subtitle'    => 'Get the latest update',
+    ],
+
     // Welcome modal
     'welcome' => [
-        'welcome' => 'Welcome to Cachet',
-        'message' => 'Your status page is almost ready! You might want to configure these extra settings',
-        'close'   => 'Just go straight to my dashboard',
+        'welcome' => 'Welcome to your new status page, :username!',
+        'message' => 'You\'re almost ready but you might want to configure these extra settings first...',
+        'close'   => 'I\'m good thanks!',
         'steps'   => [
-            'component'  => 'Create components',
-            'incident'   => 'Create incidents',
-            'customize'  => 'Customize',
-            'team'       => 'Add users',
-            'api'        => 'Generate API token',
-            'two-factor' => 'Two Factor Authentication',
+            'component'  => 'Add your components',
+            'incident'   => 'Create an incident',
+            'customize'  => 'Customize your page',
+            'team'       => 'Add your team',
+            'api'        => 'Generate an API token',
+            'two-factor' => 'Setup Two Factor Authentication',
         ],
     ],
 

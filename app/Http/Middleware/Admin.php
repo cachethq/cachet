@@ -13,6 +13,7 @@ namespace CachetHQ\Cachet\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
+use Illuminate\Http\Request;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class Admin
@@ -28,6 +29,8 @@ class Admin
      * Create a new admin middleware instance.
      *
      * @param \Illuminate\Contracts\Auth\Guard $auth
+     *
+     * @return void
      */
     public function __construct(Guard $auth)
     {
@@ -35,14 +38,14 @@ class Admin
     }
 
     /**
-     * We're verifying that the current user is logged in to Cachet and is an admin level.
+     * Handle an incoming request.
      *
      * @param \Illuminate\Http\Request $request
      * @param \Closure                 $next
      *
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle(Request $request, Closure $next)
     {
         if (!$this->auth->check() || ($this->auth->check() && !$this->auth->user()->isAdmin)) {
             throw new HttpException(401);

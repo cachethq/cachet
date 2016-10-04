@@ -9,9 +9,7 @@
  * file that was distributed with this source code.
  */
 
-$app = new Illuminate\Foundation\Application(
-    realpath(__DIR__.'/../')
-);
+$app = new Illuminate\Foundation\Application(realpath(__DIR__.'/../'));
 
 /*
 |--------------------------------------------------------------------------
@@ -24,20 +22,11 @@ $app = new Illuminate\Foundation\Application(
 |
 */
 
-$app->singleton(
-    'Illuminate\Contracts\Http\Kernel',
-    'CachetHQ\Cachet\Http\Kernel'
-);
+$app->singleton('Illuminate\Contracts\Http\Kernel', 'CachetHQ\Cachet\Http\Kernel');
 
-$app->singleton(
-    'Illuminate\Contracts\Console\Kernel',
-    'CachetHQ\Cachet\Console\Kernel'
-);
+$app->singleton('Illuminate\Contracts\Console\Kernel', 'CachetHQ\Cachet\Console\Kernel');
 
-$app->singleton(
-    'Illuminate\Contracts\Debug\ExceptionHandler',
-    'CachetHQ\Cachet\Exceptions\Handler'
-);
+$app->singleton('Illuminate\Contracts\Debug\ExceptionHandler', 'GrahamCampbell\Exceptions\ExceptionHandler');
 
 /*
 |--------------------------------------------------------------------------

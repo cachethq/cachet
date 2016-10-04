@@ -1,7 +1,7 @@
 {
     "name": "cachethq/cachet",
-    "description": "An open source status page system written in PHP",
-    "keywords": ["status", "page", "updates", "cachet", "Cachet", "Cachet HQ", "CachetHQ"],
+    "description": "An open source status page system, for everyone.",
+    "keywords": ["laravel", "cachet", "alt-three", "status", "page"],
     "type": "project",
     "license": "BSD-3-Clause",
     "authors": [
@@ -19,34 +19,48 @@
         }
     ],
     "require": {
-        "php": "^5.5.9",
-        "laravel/framework": "~5.1.16",
-        "alt-three/emoji": "^1.2",
-        "barryvdh/laravel-cors": "^0.5",
+        "php": ">=5.5.9",
+        "ext-xml": "*",
+        "alt-three/badger": "^3.1",
+        "alt-three/bus": "^1.1",
+        "alt-three/emoji": "^3.1",
+        "alt-three/throttle": "^1.0",
+        "alt-three/validator": "^1.5",
+        "aws/aws-sdk-php": "^3.7",
+        "backup-manager/laravel": "^1.1",
+        "barryvdh/laravel-cors": "^0.8",
         "doctrine/dbal": "^2.5",
-        "fideloper/proxy": "^3.0",
-        "graham-campbell/binput": "^3.2",
-        "graham-campbell/markdown": "^4.0",
-        "graham-campbell/throttle": "^4.1",
-        "graham-campbell/exceptions": "^4.0",
-        "guzzlehttp/guzzle": "^6.0.2",
-        "jenssegers/date": "^3.0",
-        "mccool/laravel-auto-presenter": "^3.1",
-        "pragmarx/google2fa": "^0.5",
-        "roumen/feed": "^2.9",
-        "watson/validating": "^1.0"
+        "fedeisas/laravel-mail-css-inliner": "^1.5",
+        "fideloper/proxy": "^3.1",
+        "graham-campbell/binput": "^3.4",
+        "graham-campbell/core": "^5.1",
+        "graham-campbell/exceptions": "^8.6",
+        "graham-campbell/markdown": "^6.1",
+        "guzzlehttp/guzzle": "^6.2.1",
+        "jenssegers/date": "^3.2",
+        "laravel/framework": "5.2.45",
+        "mccool/laravel-auto-presenter": "^4.3",
+        "pragmarx/google2fa": "^0.7.1",
+        "predis/predis": "^1.1",
+        "rcrowe/twigbridge": "^0.9.2",
+        "roumen/feed": "^2.10.4"
     },
     "require-dev": {
-        "fzaninotto/faker": "^1.5",
-        "mockery/mockery": "^0.9.4",
-        "phpunit/phpunit": "^4.7.6"
+        "alt-three/testbench": "^1.8",
+        "filp/whoops": "^2.1",
+        "fzaninotto/faker": "^1.6",
+        "graham-campbell/testbench-core": "^1.1",
+        "mockery/mockery": "0.9.5",
+        "phpunit/phpunit": "4.8.21",
+        "symfony/css-selector": "^3.0",
+        "symfony/dom-crawler": "^3.0"
     },
     "autoload": {
         "classmap": [
             "database"
         ],
         "files": [
-            "app/Http/helpers.php"
+            "app/helpers.php"
         ],
         "psr-4": {
             "CachetHQ\\Cachet\\": "app/"
@@ -58,35 +72,35 @@
         }
     },
     "scripts": {
-        "pre-install-cmd": [
-            "rm -f compiled.php config.php routes.php services.json"
-        ],
-        "post-install-cmd": [
-            "php artisan optimize --force",
-            "php artisan config:cache",
-            "php artisan route:cache",
-            "chmod -R 755 storage"
-        ],
-        "pre-update-cmd": [
-            "rm -f compiled.php config.php routes.php services.json"
-        ],
-        "post-update-cmd": [
-            "php artisan optimize --force",
-            "php artisan config:cache",
-            "php artisan route:cache",
-            "chmod -R 755 storage"
-        ],
-        "post-create-project-cmd": [
+        "post-root-package-install": [
             "php -r \"copy('.env.example', '.env');\"",
             "php artisan key:generate"
+        ],
+        "post-create-project-cmd": [
+            "php artisan key:generate"
+        ],
+        "post-install-cmd": [
+            "Illuminate\\Foundation\\ComposerScripts::postInstall",
+            "php artisan optimize --force",
+            "php artisan config:cache",
+            "php artisan route:cache"
+        ],
+        "post-update-cmd": [
+            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
+            "php artisan optimize --force",
+            "php artisan config:cache",
+            "php artisan route:cache"
         ]
     },
     "config": {
+        "platform": {
+            "php": "5.5.9"
+        },
         "preferred-install": "dist"
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.2-dev"
+            "dev-master": "2.4-dev"
         }
     },
     "minimum-stability": "dev",

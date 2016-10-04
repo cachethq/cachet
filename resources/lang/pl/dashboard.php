@@ -11,185 +11,264 @@
 
 return [
 
-    'dashboard' => 'Panel sterowania',
+    'dashboard' => 'Dashboard',
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Incydenty i kalendarz',
-        'incidents'                => 'Incydenty',
-        'logged'                   => '{0} Brak incydentów, gratulacje.| Zapisałeś jeden incydent.|Zapisałeś <strong>:count</strong> incydentów.',
-        'incident-create-template' => 'Utwórz szablon',
-        'incident-templates'       => 'Szablony incydentów',
+        'title'                    => 'Ereignisse &amp; Termine',
+        'incidents'                => 'Vorfälle',
+        'logged'                   => '{0} Es gibt keine Vorfälle, gute Arbeit.|Du hast einen Vorfall gemeldet.|Du hast <strong>:count</strong> Vorfälle gemeldet.',
+        'incident-create-template' => 'Vorlage erstellen',
+        'incident-templates'       => 'Vorfall Vorlagen',
         'add'                      => [
-            'title'   => 'Dodaj incydent',
-            'success' => 'Incydent dodany.',
-            'failure' => 'Coś poszło nie tak z incydentem.',
+            'title'   => 'Vorfall hinzufügen',
+            'success' => 'Dodano zdarzenie.',
+            'failure' => 'Wystąpił błąd podczas dodawania wydarzenia, proszę spróbować ponownie.',
         ],
         'edit' => [
-            'title'   => 'Aktualizuj incydent',
-            'success' => 'Incydent zaktualizowany.',
-            'failure' => 'Coś poszło nie tak z incydentem.',
+            'title'   => 'Vorfall bearbeiten',
+            'success' => 'Vorfall aktualisiert.',
+            'failure' => 'Wystąpił błąd podczas edytowania wydarzenia, proszę spróbować ponownie.',
+        ],
+        'delete' => [
+            'success' => 'Wydarzenie zostało usunięte i nie będzie widoczne na stronie statusu.',
+            'failure' => 'Wydarzenie nie mogło zostać usunięte, proszę spróbować ponownie.',
         ],
 
         // Incident templates
         'templates' => [
-            'title' => 'Szablony incydentów',
+            'title' => 'Vorfall Vorlagen',
             'add'   => [
-                'title'   => 'Stwórz szablon incydentu.',
-                'success' => 'Szablon utworzony.',
-                'failure' => 'Coś poszło nie tak z szablonem incydentu.',
+                'title'   => 'Vorfallvorlage erstellen',
+                'message' => 'Powinieneś dodać szablon wydarzenia.',
+                'success' => 'Twój nowy szablon wydarzenia został utworzony.',
+                'failure' => 'Coś poszło nie tak z szablonem wydarzenia.',
             ],
             'edit' => [
-                'title'   => 'Edytuj szablon',
-                'success' => 'Szablon został zaktualizowany!',
-                'failure' => 'Coś poszło nie tak przy aktualizacji szablonu.',
+                'title'   => 'Vorlage bearbeiten',
+                'success' => 'Szablon wydarzenia został zaktualizowany.',
+                'failure' => 'Coś poszło nie tak podczas aktualizacji szablonu wydarzenia',
+            ],
+            'delete' => [
+                'success' => 'Szablon wydarzenia został usunięty.',
+                'failure' => 'Szablon wydarzenia nie mógł zostać usunięty, proszę spróbować ponownie.',
             ],
         ],
     ],
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => 'Zaplanowana przerwa',
-        'scheduled_at' => 'Zaplanowana data :timestamp',
+        'schedule'     => 'Geplante Wartungen',
+        'logged'       => '{0} Nie ma żadnych harmonogramów, dobra robota.|Posiadasz jeden harmonogram.|Zgłoszono <strong>:count</strong> harmonogramów.',
+        'scheduled_at' => 'Geplant am :timestamp',
         'add'          => [
-            'title'   => 'Dodaj planową przerwę',
-            'success' => 'Zaplanowana przerwa dodana.',
-            'failure' => 'Coś poszło nie tak przy dodawaniu przerwy.',
+            'title'   => 'Zaplanuj prace konserwatorskie',
+            'success' => 'Dodano harmonogram.',
+            'failure' => 'Coś poszło nie tak podczas planowania, proszę spróbować ponownie.',
         ],
         'edit' => [
-            'title'   => 'Aktualizuj zaplanowaną przerwę',
-            'success' => 'Przerwa zaktualizowana!',
-            'failure' => 'Coś poszło nie tak przy aktualizacji przerwy.',
+            'title'   => 'Edytuj prace konserwatorskie',
+            'success' => 'Harmonogram został zaktualizowany!',
+            'failure' => 'Coś poszło nie tak podczas edytowania harmonogramu, proszę spróbować ponownie.',
         ],
         'delete' => [
-            'success' => 'Przerwa została skasowana i nie będzie pokazywana na stronie statusowej.',
-            'failure' => 'Nie można było skasować przerwy. Spróbuj ponownie.',
+            'success' => 'Zaplanowane prace konserwatorskie zostały usunięte i nie będą wyświetlane na stronie statusu.',
+            'failure' => 'Zaplanowane prace konserwatorskie nie mogły zostać usunięte, proszę spróbować ponownie.',
         ],
     ],
 
     // Components
     'components' => [
-        'components'         => 'Komponenty',
-        'component_statuses' => 'Statusy komponentów',
-        'listed_group'       => 'Zgrupowane pod :name',
+        'components'         => 'Komponenten',
+        'component_statuses' => 'Komponentenstatus',
+        'listed_group'       => 'Gruppiert unter :name',
         'add'                => [
-            'title'   => 'Dodaj komponent',
-            'message' => 'Powinieneś doddać komponent.',
-            'success' => 'Komponent utworzony.',
-            'failure' => 'Coś poszło nie tak przy tworzeniu komponentu.',
+            'title'   => 'Komponente hinzufügen',
+            'message' => 'Sie sollten eine Komponente erstellen.',
+            'success' => 'Utworzono komponent.',
+            'failure' => 'Coś poszło nie tak z komponentem, proszę spróbować ponownie.',
         ],
         'edit' => [
-            'title'   => 'Edytuj komponent',
-            'success' => 'Komponent zaktualizowany.',
-            'failure' => 'Coś poszło nie tak przy aktualizacji komponent.',
+            'title'   => 'Komponente bearbeiten',
+            'success' => 'Zaktualizowano komponent.',
+            'failure' => 'Coś poszło nie tak z komponentem, proszę spróbować ponownie.',
+        ],
+        'delete' => [
+            'success' => 'Komponent został usunięty!',
+            'failure' => 'Komponent nie mógł zostać usunięty, proszę spróbować ponownie.',
         ],
 
         // Component groups
         'groups' => [
-            'groups'        => 'Grupa komponenów|Grupy komponentów',
-            'no_components' => 'You should add a component group.',
+            'groups'        => 'Komponentgruppe|Komponentgruppen',
+            'no_components' => 'Sie sollten eine Komponentengruppe hinzufügen.',
             'add'           => [
-                'title'   => 'Dodaj grupę komponentów',
-                'success' => 'Grupa komponentów utworzona.',
-                'failure' => 'Coś poszło nie tak przy tworzeniu grupy.',
+                'title'   => 'Eine Komponentengruppe hinzufügen',
+                'success' => 'Dodano grupę komponentów.',
+                'failure' => 'Coś poszło nie tak z grupą komponentów, proszę spróbować ponownie.',
             ],
             'edit' => [
-                'title'   => 'Edytuj grupę komponentów',
-                'success' => 'Grupa komponentów zaktualizaowana.',
-                'failure' => 'Coś poszło nie tak przy aktualizacji grupy.',
+                'title'   => 'Komponentengruppe bearbeiten',
+                'success' => 'Zaktualizowano grupę komponentów.',
+                'failure' => 'Coś poszło nie tak z grupą komponentów, proszę spróbować ponownie.',
+            ],
+            'delete' => [
+                'success' => 'Grupa komponentów została usunięta!',
+                'failure' => 'Grupa komponentów nie mogła zostać usunięta, proszę spróbować ponownie.',
             ],
         ],
     ],
 
     // Metrics
     'metrics' => [
-        'metrics' => 'Metryki',
+        'metrics' => 'Metriken',
         'add'     => [
-            'title'   => 'Utwórz metrykę',
-            'success' => 'Metryka utworzona.',
-            'failure' => 'Coś poszło nie tak z tworzeniem metryki.',
+            'title'   => 'Metrik erstellen',
+            'message' => 'Powinieneś dodać metrykę.',
+            'success' => 'Utworzono metrykę.',
+            'failure' => 'Coś poszło nie tak z metryką, proszę próbować ponownie.',
         ],
         'edit' => [
-            'title'   => 'Edytuj metrykę',
-            'success' => 'Metryka zaktualizowana.',
-            'failure' => 'Coś poszło nie tak przy aktualizacji metryki.',
+            'title'   => 'Metrik bearbeiten',
+            'success' => 'Zaktualizowano metrykę.',
+            'failure' => 'Coś poszło nie tak z metryką, proszę próbować ponownie.',
+        ],
+        'delete' => [
+            'success' => 'Metryka została usunięta i nie będzie wyświetlana na stronie statusu.',
+            'failure' => 'Metryka nie mogła zostać usunięta, proszę spróbować ponownie.',
+        ],
+    ],
+    // Subscribers
+    'subscribers' => [
+        'subscribers'      => 'Abonnenten',
+        'description'      => 'Subskrybenci będą otrzymywać powiadomienia, gdy wydarzenia zostaną utworzone lub komponenty zaktualizowane.',
+        'verified'         => 'Verifiziert',
+        'not_verified'     => 'Nicht verifiziert',
+        'subscriber'       => ':email, subskrybowany :data',
+        'no_subscriptions' => 'Zapisano do wszystkich aktualizacji',
+        'add'              => [
+            'title'   => 'Einen neuen Abonnenten hinzufügen',
+            'success' => 'Abonnent hinzugefügt.',
+            'failure' => 'Coś poszło nie tak podczas dodawania subskrybenta, proszę spróbować ponownie.',
+            'help'    => 'Wpisz każdego subskrybenta w nowym wierszu.',
+        ],
+        'edit' => [
+            'title'   => 'Abonnent aktualisieren',
+            'success' => 'Abonnent aktualisiert.',
+            'failure' => 'Coś poszło nie tak podczas edytowania subskrybenta, proszę spróbować ponownie.',
         ],
     ],
 
     // Team
     'team' => [
-        'team'        => 'Zespół',
-        'member'      => 'Członek',
+        'team'        => 'Team',
+        'member'      => 'Mitglied',
         'profile'     => 'Profil',
-        'description' => 'Członkowie zespołu będą mogli dodawać i modyfikować komponenty i incydenty.',
+        'description' => 'Teammitglieder werden die M&ouml;glichkeit haben, Komponente sowie Vorf&auml;lle hinzuzuf&uuml;gen und zu ver&auml;ndern.',
         'add'         => [
-            'title'   => 'Dodaj nowego członka zespołu',
+            'title'   => 'Neues Teammitglied hinzufügen',
             'success' => 'Dodano członka zespołu.',
-            'failure' => 'Coś poszło nie tak z dodawaniem do zespołu.',
+            'failure' => 'Członek zespołu nie mógł zostać dodany, proszę spróbować ponownie.',
         ],
         'edit' => [
-            'title'   => 'Aktualizuj profil',
-            'success' => 'Profil zaktualizowany.',
-            'failure' => 'Coś poszło nie tak przy aktualizacji.',
+            'title'   => 'Profil aktualisieren',
+            'success' => 'Zaktualizowano profil.',
+            'failure' => 'Coś poszło nie tak podczas aktualizacji profilu, proszę spróbować ponownie.',
+        ],
+        'delete' => [
+            'success' => 'Benutzer aktualisiert.',
+            'failure' => 'Członek zespołu nie mógł zostać dodany, proszę spróbować ponownie.',
+        ],
+        'invite' => [
+            'title'   => 'Zaproś nowego członka zespołu',
+            'success' => 'Zaproszenie zostało wysłane',
+            'failure' => 'Zaproszenie nie mogło zostać wysłane, proszę spróbować ponownie.',
         ],
     ],
 
     // Settings
     'settings' => [
-        'settings'  => 'Ustawienia',
+        'settings'  => 'Einstellungen',
         'app-setup' => [
-            'app-setup'   => 'Ustawienia aplikacji',
-            'images-only' => 'Można wgrywać tylko pliki graficzne.',
-            'too-big'     => 'Wgrany plik jest zbyt duży. Wgraj plik mnijeszy niż :size',
+            'app-setup'   => 'Anwendungsinstallation',
+            'images-only' => 'Es können nur Bilder hochgeladen werden.',
+            'too-big'     => 'Die von Ihnen hochgeladene Datei ist zu groß. Laden Sie ein Bild welches kleiner als :size ist hoch',
+        ],
+        'analytics' => [
+            'analytics' => 'Analytics',
+        ],
+        'localization' => [
+            'localization' => 'Localization',
+        ],
+        'customization' => [
+            'customization' => 'Dostosowywanie',
+            'header'        => 'Niestandardowy nagłówek HTML',
+            'footer'        => 'Niestandardowa stopka HTML',
         ],
         'security' => [
-            'security'   => 'Bezpieczeństwo',
-            'two-factor' => 'Użytkownicy bez autentykacji dwuetapowej',
+            'security'   => 'Sicherheit',
+            'two-factor' => 'Nutzer ohne Zwei-Faktor-Authentifizierung',
         ],
         'stylesheet' => [
             'stylesheet' => 'Stylesheet',
         ],
         'theme' => [
-            'theme' => 'Skórka',
+            'theme' => 'Theme',
         ],
         'edit' => [
-            'success' => 'Ustawienia zapisane.',
-            'failure' => 'Ustawienia nie mogły być zapisane.',
+            'success' => 'Einstellungen gespeichert.',
+            'failure' => 'Einstellungen konnten nicht gespeichert werden.',
+        ],
+        'credits' => [
+            'credits'       => 'Credits',
+            'contributors'  => 'Contributors',
+            'license'       => 'Cachet is a BSD-3-licensed open source project, released by <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
+            'backers-title' => 'Backers & Sponsors',
+            'backers'       => 'If you\'d like to support future development, check out the <a href="https://patreon.com/jbrooksuk" target="_blank">Cachet Patreon</a> campaign.',
+            'thank-you'     => 'Thank you to each and every one of the :count contributors.',
         ],
     ],
 
     // Login
     'login' => [
-        'login'      => 'Zaloguj',
-        'logged_in'  => 'Jesteś zalogowany.',
-        'welcome'    => 'Witam ponownie!',
-        'two-factor' => 'Wpisz swój kod.',
+        'login'      => 'Anmelden',
+        'logged_in'  => 'Sie sind angemeldet.',
+        'welcome'    => 'Willkommen zurück!',
+        'two-factor' => 'Bitte geben Sie Ihren Token ein.',
     ],
 
     // Sidebar footer
-    'help'        => 'Pomoc',
-    'status_page' => 'Strona statusu',
-    'logout'      => 'Wyloguj',
+    'help'        => 'Hilfe',
+    'status_page' => 'Statusseite',
+    'logout'      => 'Abmelden',
 
     // Notifications
     'notifications' => [
-        'notifications' => 'Powiadomienia',
-        'awesome'       => 'Super.',
-        'whoops'        => 'Ojej.',
+        'notifications' => 'Benachrichtigungen',
+        'awesome'       => 'Großartig.',
+        'whoops'        => 'Hoppla.',
+    ],
+
+    // Widgets
+    'widgets' => [
+        'support'          => 'Support Cachet',
+        'support_subtitle' => 'Check out our <strong><a href="https://patreon.com/jbrooksuk" target="_blank">Patreon</a></strong> page!',
+        'news'             => 'Latest News',
+        'news_subtitle'    => 'Get the latest updates',
     ],
 
     // Welcome modal
     'welcome' => [
-        'welcome' => 'Witamy w Cachet',
-        'message' => 'Twoja strona statusowa jest już prawie gotowa! Możesz skonfigurować dodatkowe ustawienia',
-        'close'   => 'Przejdź do mojego panelu',
+        'welcome' => 'Witamy w nowym statusie strony!',
+        'message' => 'Ihre Statusseite ist fast fertig! Vielleicht möchten Sie diese zusätzlichen Einstellungen konfigurieren',
+        'close'   => 'Przejdź prosto do panelu głównego',
         'steps'   => [
-            'component'  => 'Utwórz komponenty',
-            'incident'   => 'Utwórz incydenty',
-            'customize'  => 'Personalizacja',
-            'team'       => 'Dodaj użytkowników',
-            'api'        => 'Wygeneruj token API',
-            'two-factor' => 'Autentykacja dwuetapowa',
+            'component'  => 'Komponenten erstellen',
+            'incident'   => 'Vorfälle erstellen',
+            'customize'  => 'Personalisieren',
+            'team'       => 'Benutzer hinzufügen',
+            'api'        => 'API Token generieren',
+            'two-factor' => 'Zwei-Faktor-Authentifizierung',
         ],
     ],
 

@@ -13,38 +13,47 @@ return [
 
     // Setup form fields
     'setup' => [
-        'email'            => 'E-mailadres',
+        'email'            => 'E-mail',
         'username'         => 'Gebruikersnaam',
         'password'         => 'Wachtwoord',
-        'site_name'        => 'Nama site',
-        'site_domain'      => 'Domein site',
-        'site_timezone'    => 'Selecteer je tijdzone',
-        'site_locale'      => 'Selecteer je taal',
-        'enable_google2fa' => 'Google\'\s authenticatie in twee stappen inschakelen',
+        'site_name'        => 'Site naam',
+        'site_domain'      => 'Site Domein',
+        'site_timezone'    => 'Selecteer uw tijdzone',
+        'site_locale'      => 'Selecteer uw taal',
+        'enable_google2fa' => 'Schakel Google twee factor authenticatie in',
+        'cache_driver'     => 'Cache Driver',
+        'session_driver'   => 'Sessie Driver',
     ],
 
     // Login form fields
     'login' => [
-        'email'         => 'E-mailadres',
+        'login'         => 'Gebruikersnaam of e-mail',
+        'email'         => 'E-mail',
         'password'      => 'Wachtwoord',
-        '2fauth'        => 'Authenticatiecode',
-        'invalid'       => 'Ongeldig e-mailadres of wachtwoord',
-        'invalid-token' => 'Ongeldige token',
-        'cookies'       => 'You must enable cookies to login.',
+        '2fauth'        => 'Authenticatie Code',
+        'invalid'       => 'Ongeldige gebruikersnaam of wachtwoord',
+        'invalid-token' => 'Ongeldig token',
+        'cookies'       => 'U moet cookies inschakelen om in te loggen.',
+        'rate-limit'    => 'Snelheids limiet overschreden.',
     ],
 
     // Incidents form fields
     'incidents' => [
-        'name'         => 'Naam',
-        'status'       => 'Status',
-        'component'    => 'Component',
-        'message'      => 'Bericht',
-        'message-help' => 'Je mag ook Markdown gebruiken.',
-        'scheduled_at' => 'Voor wanneer is het onderhoud gepland?',
-
-        'templates' => [
+        'name'               => 'Naam',
+        'status'             => 'Status',
+        'component'          => 'Onderdeel',
+        'message'            => 'Boodschap',
+        'message-help'       => 'U kan ook gebruik maken van Markdown.',
+        'scheduled_at'       => 'Voor wanneer is het onderhoud gepland?',
+        'incident_time'      => 'Wanneer heeft dit incident plaatsgevonden?',
+        'notify_subscribers' => 'Houd abonnees op de hoogte?',
+        'visibility'         => 'Incident Zichtbaarheid',
+        'public'             => 'Zichtbaar voor publiek',
+        'logged_in_only'     => 'Alleen zichtbaar voor ingelogde gebruikers',
+        'templates'          => [
             'name'     => 'Naam',
             'template' => 'Sjabloon',
+            'twig'     => 'Incident Templates kunnen gebruik maken van de <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a> template taal.',
         ],
     ],
 
@@ -53,13 +62,18 @@ return [
         'name'        => 'Naam',
         'status'      => 'Status',
         'group'       => 'Groep',
-        'description' => 'Beschrijving',
+        'description' => 'Omschrijving',
         'link'        => 'Link',
         'tags'        => 'Tags',
         'tags-help'   => 'Komma gescheiden.',
+        'enabled'     => 'Component ingeschakeld?',
 
         'groups' => [
-            'name' => 'Naam',
+            'name'               => 'Naam',
+            'collapsing'         => 'Kies de zichtbaarheid van de groep',
+            'visible'            => 'Altijd uitgevouwen',
+            'collapsed'          => 'Vouw de groep standaard samen',
+            'collapsed_incident' => 'De groep samenvouwen, maar uitklappen als er problemen zijn.',
         ],
     ],
 
@@ -71,9 +85,12 @@ return [
         'description-help' => 'Je mag ook Markdown gebruiken.',
         'display-chart'    => 'Grafiek tonen op statuspagina?',
         'default-value'    => 'Standaardwaarde',
-        'calc_type'        => 'Berekening van metingen',
+        'calc_type'        => 'Berekening van de metingen',
         'type_sum'         => 'Som',
         'type_avg'         => 'Gemiddelde',
+        'places'           => 'Decimalen',
+        'default_view'     => 'Standaardweergave',
+        'threshold'        => 'Hoeveel minuten tussen de metrische punten?',
 
         'points' => [
             'value' => 'Waarde',
@@ -84,43 +101,71 @@ return [
     'settings' => [
         /// Application setup
         'app-setup' => [
-            'site-name'              => 'Naam site',
-            'site-url'               => 'URL site',
-            'site-timezone'          => 'Tijdzone site',
-            'site-locale'            => 'Taal site',
-            'date-format'            => 'Datumformaat',
+            'site-name'              => 'Site naam',
+            'site-url'               => 'Site URL',
             'display-graphs'         => 'Grafieken tonen op statuspagina?',
             'about-this-page'        => 'Over deze pagina',
-            'days-of-incidents'      => 'Hoeveel dagen van incidenten tonen?',
-            'banner'                 => 'Bannerafbeelding',
-            'banner-help'            => 'Het wordt aangeraden om geen bestanden groter dan 930px breed te uploaden.',
-            'analytics_google'       => 'Google Analytics code',
-            'analytics_gosquared'    => 'GoSquared Analytics code',
-            'analytics_piwik_url'    => 'URL of your Piwik instance (without http(s)://)',
-            'analytics_piwik_siteid' => 'Piwik\'s site id',
+            'days-of-incidents'      => 'Hoeveel dagen moeten incidenten getoond worden?',
+            'banner'                 => 'Banner afbeelding',
+            'banner-help'            => 'Het wordt aanbevolen dat u geen bestanden upload die breeder zijn dan 930px.',
+            'subscribers'            => 'Bezoekers toestaan om te abonneren op e-mail notificaties?',
+            'automatic_localization' => 'Stel de taal van de bezoeker in als standaardtaal voor deze bezoeker?',
+        ],
+        'analytics' => [
+            'analytics_google'       => 'Google Analytics-code',
+            'analytics_gosquared'    => 'GoSquared Analytics-code',
+            'analytics_piwik_url'    => 'URL van je Piwik installatie (zonder http(s)://)',
+            'analytics_piwik_siteid' => 'Site-id van Piwik',
+        ],
+        'localization' => [
+            'site-timezone'        => 'Website tijdzone',
+            'site-locale'          => 'Taal van de site',
+            'date-format'          => 'Datum formaat',
+            'incident-date-format' => 'Incident tijdsaanduiding',
         ],
         'security' => [
             'allowed-domains'      => 'Toegestane domeinen',
-            'allowed-domains-help' => 'Komma gescheiden. Het domein dat hierboven is ingesteld wordt standaard automatisch toegestaan.',
+            'allowed-domains-help' => 'Door komma\'s gescheiden. Het hierboven ingestelde domein is automatisch standaard toegelaten.',
         ],
         'stylesheet' => [
-            'custom-css' => 'Aangepaste stylesheet',
+            'custom-css' => 'Aangepaste Stylesheet',
         ],
         'theme' => [
-            'background-color' => 'Achtergrondkleur',
-            'text-color'       => 'Tekstkleur',
-            'dashboard-login'  => 'Show dashboard button in the footer?',
+            'background-color'        => 'Achtergrondkleur',
+            'background-fills'        => 'Achtergrond opvulling (components, incidents, footer)',
+            'banner-background-color' => 'Banner achtergrond kleur',
+            'banner-padding'          => 'Banner padding',
+            'fullwidth-banner'        => 'Volledige breedte van de banner aanzetten?',
+            'text-color'              => 'Tekstkleur',
+            'dashboard-login'         => 'Laat dashboard knop zien in de footer?',
+            'reds'                    => 'Rood (voor errors)',
+            'blues'                   => 'Blauw (voor informatie)',
+            'greens'                  => 'Groen (voor succes)',
+            'yellows'                 => 'Geel (voor waarschuwingen)',
+            'oranges'                 => 'Oranje (voor notificaties)',
+            'metrics'                 => 'Metrics opvulling',
+            'links'                   => 'Links',
         ],
     ],
 
     'user' => [
         'username'       => 'Gebruikersnaam',
-        'email'          => 'E-mailadres',
+        'email'          => 'E-mail',
         'password'       => 'Wachtwoord',
         'api-token'      => 'API-token',
         'api-token-help' => 'Het opnieuw genereren van je API-token zorgt ervoor dat bestaande applicaties geen toegang meer hebben tot Cachet.',
-        '2fa'            => [
-            'help' => 'Het inschakelen van authenticatie in twee stappen verbetert de beveiliging van je account. Je zult <a href="https://support.google.com/accounts/answer/1066447?hl=en">Google Authenticator</a> of een soortgelijke app op je mobiele apparaat moeten downloaden. Wanneer je inlogt, zal je worden gevraagd om een token op te geven die gegenereerd is door de app.',
+        'gravatar'       => 'Verander je profielfoto op Gravatar.',
+        'user_level'     => 'Gebruikersniveau',
+        'levels'         => [
+            'admin' => 'Beheerder',
+            'user'  => 'Gebruiker',
+        ],
+        '2fa' => [
+            'help' => 'Het inschakelen van two-factor authenticatie verhoogt de veiligheid van uw account. U zult een applicatie zoals <a href="https://support.google.com/accounts/answer/1066447?hl=en">Google Authenticator</a> of een vergelijkbare applicatie moeten downloaden op uw mobiele apparaat. Wanneer u inlogt wordt u gevraagd om een token in te voeren welke door de applicatie wordt gegenereerd.',
+        ],
+        'team' => [
+            'description' => 'Nodig je teamleden uit door hier hun e-mailadres in te vullen.',
+            'email'       => 'E-mail #:id',
         ],
     ],
 
@@ -134,6 +179,8 @@ return [
     'submit' => 'Versturen',
     'cancel' => 'Annuleren',
     'remove' => 'Verwijderen',
+    'invite' => 'Uitnodigen',
+    'signup' => 'Registreer',
 
     // Other
     'optional' => '* Optioneel',

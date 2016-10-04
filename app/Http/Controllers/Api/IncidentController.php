@@ -11,13 +11,14 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Api;
 
-use CachetHQ\Cachet\Events\IncidentHasReportedEvent;
-use CachetHQ\Cachet\Facades\Setting;
+use CachetHQ\Cachet\Bus\Commands\Incident\RemoveIncidentCommand;
+use CachetHQ\Cachet\Bus\Commands\Incident\ReportIncidentCommand;
+use CachetHQ\Cachet\Bus\Commands\Incident\UpdateIncidentCommand;
 use CachetHQ\Cachet\Models\Incident;
-use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Contracts\Auth\Guard;
-use Illuminate\Http\Request;
+use Illuminate\Database\QueryException;
+use Illuminate\Support\Facades\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 class IncidentController extends AbstractApiController
@@ -25,19 +26,25 @@ class IncidentController extends AbstractApiController
     /**
      * Get all incidents.
      *
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     * @param \Illuminate\Contracts\Auth\Guard          $auth
-     *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function getIncidents(Request $request, Guard $auth)
+    public function getIncidents()
     {
-        $incidentVisiblity = $auth->check() ? 0 : 1;
+        $incidentVisibility = app(Guard::class)->check() ? 0 : 1;
 
-        $incidents = Incident::where('visible', '>=', $incidentVisiblity)
-            ->paginate(Binput::get('per_page', 20));
+        $incidents = Incident::where('visible', '>=', $incidentVisibility);
 
-        return $this->paginator($incidents, $request);
+        $incidents->search(Binput::except(['sort', 'order', 'per_page']));
+
+        if ($sortBy = Binput::get('sort')) {
+            $direction = Binput::has('order') && Binput::get('order') == 'desc';
+
+            $incidents->sort($sortBy, $direction);
+        }
+
+        $incidents = $incidents->paginate(Binput::get('per_page', 20));
+
+        return $this->paginator($incidents, Request::instance());
     }
 
     /**
@@ -45,7 +52,7 @@ class IncidentController extends AbstractApiController
      *
      * @param \CachetHQ\Cachet\Models\Incident $incident
      *
-     * @return \CachetHQ\Cachet\Models\Incident
+     * @return \Illuminate\Http\JsonResponse
      */
     public function getIncident(Incident $incident)
     {
@@ -55,68 +62,72 @@ class IncidentController extends AbstractApiController
     /**
      * Create a new incident.
      *
-     * @param \Illuminate\Contracts\Auth\Guard $auth
-     *
-     * @return \CachetHQ\Cachet\Models\Incident
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function postIncidents(Guard $auth)
+    public function postIncidents()
     {
-        $incidentData = Binput::all();
-
-        if (!array_has($incidentData, 'visible')) {
-            $incidentData['visible'] = 1;
-        }
-
         try {
-            $incident = Incident::create($incidentData);
-        } catch (Exception $e) {
+            $incident = dispatch(new ReportIncidentCommand(
+                Binput::get('name'),
+                Binput::get('status'),
+                Binput::get('message'),
+                Binput::get('visible', true),
+                Binput::get('component_id'),
+                Binput::get('component_status'),
+                Binput::get('notify', true),
+                Binput::get('stickied', false),
+                Binput::get('created_at'),
+                Binput::get('template'),
+                Binput::get('vars')
+            ));
+        } catch (QueryException $e) {
             throw new BadRequestHttpException();
         }
 
-        $isEnabled = (bool) Setting::get('enable_subscribers', false);
-        $mailAddress = env('MAIL_ADDRESS', false);
-        $mailFrom = env('MAIL_NAME', false);
-        $subscribersEnabled = $isEnabled && $mailAddress && $mailFrom;
-
-        if (array_get($incidentData, 'notify') && $subscribersEnabled) {
-            event(new IncidentHasReportedEvent($incident));
-        }
-
-        if ($incident->isValid()) {
-            return $this->item($incident);
-        }
-
-        throw new BadRequestHttpException();
+        return $this->item($incident);
     }
 
     /**
      * Update an existing incident.
      *
-     * @param \CachetHQ\Cachet\Models\Inicdent $incident
+     * @param \CachetHQ\Cachet\Models\Incident $incident
      *
-     * @return \CachetHQ\Cachet\Models\Incident
+     * @return \Illuminate\Http\JsonResponse
      */
     public function putIncident(Incident $incident)
     {
-        $incident->update(Binput::all());
-
-        if ($incident->isValid('updating')) {
-            return $this->item($incident);
+        try {
+            $incident = dispatch(new UpdateIncidentCommand(
+                $incident,
+                Binput::get('name'),
+                Binput::get('status'),
+                Binput::get('message'),
+                Binput::get('visible', true),
+                Binput::get('component_id'),
+                Binput::get('component_status'),
+                Binput::get('notify', true),
+                Binput::get('stickied', false),
+                Binput::get('created_at'),
+                Binput::get('template'),
+                Binput::get('vars')
+            ));
+        } catch (QueryException $e) {
+            throw new BadRequestHttpException();
         }
 
-        throw new BadRequestHttpException();
+        return $this->item($incident);
     }
 
     /**
      * Delete an existing incident.
      *
-     * @param \CachetHQ\Cachet\Models\Inicdent $incident
+     * @param \CachetHQ\Cachet\Models\Incident $incident
      *
      * @return \Illuminate\Http\JsonResponse
      */
     public function deleteIncident(Incident $incident)
     {
-        $incident->delete();
+        dispatch(new RemoveIncidentCommand($incident));
 
         return $this->noContent();
     }

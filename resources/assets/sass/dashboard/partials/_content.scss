@@ -1,0 +1,119 @@
+body.dashboard {
+    .page-content {
+        width: 100%;
+        .content-wrapper {
+            padding-top: 20px;
+            padding-left: 40px;
+            padding-right: 40px;
+            &.header-fixed {
+                margin-top: 60px;
+            }
+        }
+        .header {
+            position: relative;
+            top: 0;
+            left: 0;
+            color: #333;
+            background-color: #fff;
+            padding: 22px 40px;
+            width: 100%;
+            height: 70px;
+            font-size: 1.2em;
+            border-bottom: 1px solid #eee;
+            z-index: 99;
+            &.sub-header {
+                padding: 8px 2px;
+                height: 50px;
+            }
+            &.fixed {
+                position: fixed;
+                padding-left: 270px;
+            }
+            input, button, .btn {
+                position: relative;
+                top: -4px;
+            }
+            input {
+                width: 20%;
+            }
+
+            + .row {
+                margin-top: 23px;
+            }
+
+            h3 {
+                color: #444;
+                margin-top: 0;
+                text-transform: uppercase;
+            }
+            .ion {
+                margin-right: 2px;
+            }
+        }
+
+        .sub-header {
+            font-weight: 300;
+            text-transform: uppercase;
+            a {
+               text-transform: none;
+            }
+        }
+
+        .striped-list {
+            .striped-list-item {
+                border-bottom: 1px solid #f0f0f0;
+                padding: 8px 0;
+            }
+        }
+
+        .drag-handle {
+            cursor: move;
+        }
+
+        .user-grid {
+            .user {
+                img {
+                    border-radius: 5px;
+                    margin-bottom: 15px;
+                    border: 0;
+                }
+
+                .name {
+                    font-weight: 600;
+                }
+
+                .email {
+                    color: #444;
+                    margin-top: 4px;
+                }
+            }
+        }
+    }
+
+    // Header media queries
+    @media (max-width: $screen-xs-max) {
+        .page-content {
+            .content-wrapper {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            .header {
+                padding-left: 20px;
+                padding-right: 20px;
+                &.fixed {
+                    padding-left: 20px;
+                    padding-right: 20px;
+                }
+            }
+        }
+    }
+
+    @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+        .page-content {
+            .header.fixed {
+                padding-left: 120px;
+            }
+        }
+    }
+
+}

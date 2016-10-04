@@ -1,0 +1,47 @@
+body.login {
+    .form-bg {
+        border-radius: 10px;
+        margin: auto;
+        margin-top: 60px;
+        padding: 30px;
+        width: 320px;
+        border: 1px solid rgba(0,0,0,.1);
+        box-shadow: 0 20px 30px rgba(0,0,0,.2);
+        background-color: white;
+    }
+
+    .logo {
+        margin-bottom: 30px;
+
+        img {
+            margin: 0 auto;
+        }
+    }
+
+    .login-input {
+        height: 45px;
+    }
+
+    i {
+        font-size: 22px;
+    }
+
+    .btn {
+        &.btn-white {
+            background-color: white;
+            transition: background-color 0.5s ease;
+
+            &.btn-trans {
+                background-color: transparent;
+                border: 1px solid white;
+                border-radius: 4px;
+                color: white;
+
+                &:hover {
+                    background-color: white;
+                    color: $cachet-green;
+                }
+            }
+        }
+    }
+}

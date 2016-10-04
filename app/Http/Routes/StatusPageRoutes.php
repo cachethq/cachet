@@ -13,24 +13,39 @@ namespace CachetHQ\Cachet\Http\Routes;
 
 use Illuminate\Contracts\Routing\Registrar;
 
+/**
+ * This is the status page routes class.
+ *
+ * @author James Brooks <james@alt-three.com>
+ */
 class StatusPageRoutes
 {
     /**
      * Define the status page routes.
      *
      * @param \Illuminate\Contracts\Routing\Registrar $router
+     *
+     * @return void
      */
     public function map(Registrar $router)
     {
-        // Prevent access until the app is setup.
-        $router->group(['middleware' => 'app.hasSetting', 'setting' => 'app_name'], function ($router) {
+        $router->group(['middleware' => ['web', 'ready', 'localize']], function (Registrar $router) {
             $router->get('/', [
                 'as'   => 'status-page',
-                'uses' => 'HomeController@showIndex',
+                'uses' => 'StatusPageController@showIndex',
             ]);
 
-            $router->get('/atom/{component_group?}', 'AtomController@feedAction');
-            $router->get('/rss/{component_group?}', 'RssController@feedAction');
+            $router->get('incident/{incident}', [
+                'as'   => 'incident',
+                'uses' => 'StatusPageController@showIncident',
+            ]);
+
+            $router->get('metrics/{metric}', [
+                'as'   => 'metrics',
+                'uses' => 'StatusPageController@getMetrics',
+            ]);
+
+            $router->get('component/{component}/shield', 'StatusPageController@showComponentBadge');
         });
     }
 }

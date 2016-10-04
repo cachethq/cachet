@@ -9,61 +9,106 @@
  * file that was distributed with this source code.
  */
 
+use CachetHQ\Cachet\Models\Component;
+use CachetHQ\Cachet\Models\ComponentGroup;
+use CachetHQ\Cachet\Models\Incident;
+use CachetHQ\Cachet\Models\IncidentTemplate;
+use CachetHQ\Cachet\Models\Metric;
+use CachetHQ\Cachet\Models\MetricPoint;
+use CachetHQ\Cachet\Models\Setting;
+use CachetHQ\Cachet\Models\Subscriber;
+use CachetHQ\Cachet\Models\Subscription;
+use CachetHQ\Cachet\Models\User;
 use Carbon\Carbon;
 
-$factory->define('CachetHQ\Cachet\Models\User', function ($faker) {
-    return [
-        'username'       => $faker->userName,
-        'email'          => $faker->email,
-        'password'       => str_random(10),
-        'remember_token' => str_random(10),
-        'api_key'        => str_random(20),
-        'active'         => true,
-        'level'          => 1,
-    ];
-});
-
-$factory->define('CachetHQ\Cachet\Models\Component', function ($faker) {
+$factory->define(Component::class, function ($faker) {
     return [
         'name'        => $faker->sentence(),
         'description' => $faker->paragraph(),
         'link'        => $faker->url(),
-        'status'      => 1,
+        'status'      => random_int(1, 4),
         'order'       => 0,
     ];
 });
 
-$factory->define('CachetHQ\Cachet\Models\Incident', function ($faker) {
+$factory->define(ComponentGroup::class, function ($faker) {
     return [
-        'name'    => $faker->sentence(),
-        'message' => $faker->paragraph(),
-        'status'  => 1,
-        'visible' => 1,
+        'name'      => $faker->words(2, true),
+        'order'     => 0,
+        'collapsed' => random_int(0, 3),
+        'visible'   => $faker->boolean(),
     ];
 });
 
-$factory->define('CachetHQ\Cachet\Models\Metric', function ($faker) {
+$factory->define(Incident::class, function ($faker) {
+    return [
+        'name'     => $faker->sentence(),
+        'message'  => $faker->paragraph(),
+        'status'   => random_int(1, 4),
+        'visible'  => 1,
+        'stickied' => false,
+    ];
+});
+
+$factory->define(IncidentTemplate::class, function ($faker) {
+    return [
+        'name'     => 'Test Template',
+        'slug'     => 'test-template',
+        'template' => "Name: {{ name }},\nMessage: {{ message }}",
+    ];
+});
+
+$factory->define(Metric::class, function ($faker) {
     return [
         'name'          => $faker->sentence(),
         'suffix'        => $faker->word(),
         'description'   => $faker->paragraph(),
         'default_value' => 1,
-        'calc_type'     => 1,
-        'display_chart' => 1,
+        'places'        => 2,
+        'calc_type'     => $faker->boolean(),
+        'display_chart' => $faker->boolean(),
+        'threshold'     => 5,
     ];
 });
 
-$factory->define('CachetHQ\Cachet\Models\MetricPoint', function ($faker) {
+$factory->define(MetricPoint::class, function ($faker) {
     return [
-        'metric_id' => 1,
-        'value'     => rand(1, 100),
+        'metric_id' => factory(Metric::class)->create()->id,
+        'value'     => random_int(1, 100),
+        'counter'   => 1,
     ];
 });
 
-$factory->define('CachetHQ\Cachet\Models\Subscriber', function ($faker) {
+$factory->define(Setting::class, function ($faker) {
     return [
-        'email'       => $faker->email,
+       'name'  => 'app_name',
+       'value' => 'Cachet Test Demo',
+    ];
+});
+
+$factory->define(Subscriber::class, function ($faker) {
+    return [
+        'email'       => $faker->safeEmail,
         'verify_code' => 'Mqr80r2wJtxHCW5Ep4azkldFfIwHhw98M9HF04dn0z',
         'verified_at' => Carbon::now(),
+    ];
+});
+
+$factory->define(Subscription::class, function ($faker) {
+    return [
+        'subscriber_id' => factory(Subscriber::class)->create()->id,
+        'component_id'  => factory(Component::class)->create()->id,
+    ];
+});
+
+$factory->define(User::class, function ($faker) {
+    return [
+        'username'       => $faker->userName,
+        'email'          => $faker->safeEmail,
+        'password'       => str_random(10),
+        'remember_token' => str_random(10),
+        'api_key'        => str_random(20),
+        'active'         => true,
+        'level'          => 1,
     ];
 });

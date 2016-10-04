@@ -12,19 +12,20 @@
 namespace CachetHQ\Cachet\Http\Middleware;
 
 use Closure;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
 class SubscribersConfigured
 {
     /**
-     * We're verifying that subscribers is both enabled and configured.
+     * Handle an incoming request.
      *
      * @param \Illuminate\Http\Request $request
      * @param \Closure                 $next
      *
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle(Request $request, Closure $next)
     {
         if (!subscribers_enabled()) {
             return Redirect::route('status-page');

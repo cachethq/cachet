@@ -11,22 +11,26 @@
 
 namespace CachetHQ\Cachet\Models;
 
+use AltThree\Validator\ValidatingTrait;
 use CachetHQ\Cachet\Presenters\SubscriberPresenter;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use McCool\LaravelAutoPresenter\HasPresenter;
-use Watson\Validating\ValidatingTrait;
 
 class Subscriber extends Model implements HasPresenter
 {
     use ValidatingTrait;
 
     /**
-     * The validation rules.
+     * The attributes that should be casted to native types.
      *
      * @var string[]
      */
-    protected $rules = [
-        'email' => 'required|email|unique:subscribers',
+    protected $casts = [
+        'email'       => 'string',
+        'verify_code' => 'string',
+        'verified_at' => 'date',
+        'global'      => 'bool',
     ];
 
     /**
@@ -37,21 +41,20 @@ class Subscriber extends Model implements HasPresenter
     protected $fillable = ['email'];
 
     /**
-     * The attributes that should be mutated to dates.
-     *
-     * @var array
-     */
-    protected $dates = ['verified_at'];
-
-    /**
-     * The attributes that should be casted to native types.
+     * The validation rules.
      *
      * @var string[]
      */
-    protected $casts = [
-        'email'       => 'string',
-        'verify_code' => 'string',
+    public $rules = [
+        'email' => 'required|email',
     ];
+
+    /**
+     * The relations to eager load on every query.
+     *
+     * @var string[]
+     */
+    protected $with = ['subscriptions'];
 
     /**
      * Overrides the models boot method.
@@ -68,13 +71,62 @@ class Subscriber extends Model implements HasPresenter
     }
 
     /**
+     * Get the subscriptions relation.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function subscriptions()
+    {
+        return $this->hasMany(Subscription::class);
+    }
+
+    /**
+     * Scope verified subscribers.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeIsVerified(Builder $query)
+    {
+        return $query->whereNotNull('verified_at');
+    }
+
+    /**
+     * Scope global subscribers.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeIsGlobal(Builder $query)
+    {
+        return $query->where('global', true);
+    }
+
+    /**
+     * Finds all verified subscriptions for a component.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @param int                                   $component_id
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeForComponent(Builder $query, $component_id)
+    {
+        return $query->select('subscribers.*')
+            ->join('subscriptions', 'subscribers.id', '=', 'subscriptions.subscriber_id')
+            ->where('subscriptions.component_id', $component_id);
+    }
+
+    /**
      * Determines if the subscriber is verified.
      *
      * @return bool
      */
-    public function verified()
+    public function getIsVerifiedAttribute()
     {
-        return !is_null($this->verified_at);
+        return $this->verified_at !== null;
     }
 
     /**

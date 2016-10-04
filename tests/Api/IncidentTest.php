@@ -11,21 +11,22 @@
 
 namespace CachetHQ\Tests\Cachet\Api;
 
-use CachetHQ\Tests\Cachet\AbstractTestCase;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
-
-class IncidentTest extends AbstractTestCase
+/**
+ * This is the incident test class.
+ *
+ * @author James Brooks <james@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
+ */
+class IncidentTest extends AbstractApiTestCase
 {
-    use DatabaseMigrations;
-
     public function testGetIncidents()
     {
         $incidents = factory('CachetHQ\Cachet\Models\Incident', 3)->create();
 
         $this->get('/api/v1/incidents');
-        $this->seeJson(['id' => (string) $incidents[0]->id]);
-        $this->seeJson(['id' => (string) $incidents[1]->id]);
-        $this->seeJson(['id' => (string) $incidents[2]->id]);
+        $this->seeJson(['id' => $incidents[0]->id]);
+        $this->seeJson(['id' => $incidents[1]->id]);
+        $this->seeJson(['id' => $incidents[2]->id]);
         $this->assertResponseOk();
     }
 
@@ -54,13 +55,55 @@ class IncidentTest extends AbstractTestCase
         $this->beUser();
 
         $this->post('/api/v1/incidents', [
-            'name'    => 'Foo',
-            'message' => 'Lorem ipsum dolor sit amet',
-            'status'  => 1,
-            'visible' => 1,
+            'name'     => 'Foo',
+            'message'  => 'Lorem ipsum dolor sit amet',
+            'status'   => 1,
+            'visible'  => 1,
+            'stickied' => false,
         ]);
         $this->seeJson(['name' => 'Foo']);
         $this->assertResponseOk();
+    }
+
+    public function testPostIncidentWithComponentStatus()
+    {
+        $component = factory('CachetHQ\Cachet\Models\Component')->create();
+
+        $this->beUser();
+
+        $this->post('/api/v1/incidents', [
+            'name'             => 'Foo',
+            'message'          => 'Lorem ipsum dolor sit amet',
+            'status'           => 1,
+            'component_id'     => $component->id,
+            'component_status' => 1,
+            'visible'          => 1,
+            'stickied'         => false,
+        ]);
+        $this->seeJson(['name' => 'Foo']);
+        $this->assertResponseOk();
+    }
+
+    public function testCreateIncidentWithTemplate()
+    {
+        $template = factory('CachetHQ\Cachet\Models\IncidentTemplate')->create();
+        $this->beUser();
+
+        $this->post('/api/v1/incidents', [
+            'name'     => 'Foo',
+            'status'   => 1,
+            'visible'  => 1,
+            'stickied' => false,
+            'template' => $template->slug,
+            'vars'     => [
+                'name'    => 'Foo',
+                'message' => 'Hello there this is a foo!',
+            ],
+        ]);
+        $this->seeJson([
+            'name'    => 'Foo',
+            'message' => "Name: Foo,\nMessage: Hello there this is a foo!",
+        ]);
     }
 
     public function testGetNewIncident()
@@ -81,6 +124,27 @@ class IncidentTest extends AbstractTestCase
             'name' => 'Foo',
         ]);
         $this->seeJson(['name' => 'Foo']);
+        $this->assertResponseOk();
+    }
+
+    public function testPutIncidentWithTemplate()
+    {
+        $this->beUser();
+        $template = factory('CachetHQ\Cachet\Models\IncidentTemplate')->create();
+        $component = factory('CachetHQ\Cachet\Models\Incident')->create();
+
+        $this->put('/api/v1/incidents/1', [
+            'name'     => 'Foo',
+            'template' => $template->slug,
+            'vars'     => [
+                'name'    => 'Foo',
+                'message' => 'Hello there this is a foo!',
+            ],
+        ]);
+        $this->seeJson([
+            'name'    => 'Foo',
+            'message' => "Name: Foo,\nMessage: Hello there this is a foo!",
+        ]);
         $this->assertResponseOk();
     }
 

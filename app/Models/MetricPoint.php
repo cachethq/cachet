@@ -11,39 +11,83 @@
 
 namespace CachetHQ\Cachet\Models;
 
+use AltThree\Validator\ValidatingTrait;
 use CachetHQ\Cachet\Presenters\MetricPointPresenter;
 use Illuminate\Database\Eloquent\Model;
 use McCool\LaravelAutoPresenter\HasPresenter;
-use Watson\Validating\ValidatingTrait;
 
 class MetricPoint extends Model implements HasPresenter
 {
     use ValidatingTrait;
 
     /**
+     * The model's attributes.
+     *
+     * @var string[]
+     */
+    protected $attributes = [
+        'value'   => 0,
+        'counter' => 1,
+    ];
+
+    /**
+     * The attributes that should be casted to native types.
+     *
+     * @var string[]
+     */
+    protected $casts = [
+        'metric_id' => 'int',
+        'value'     => 'float',
+        'counter'   => 'int',
+    ];
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var string[]
      */
-    protected $fillable = ['metric_id', 'value', 'created_at'];
+    protected $fillable = [
+        'metric_id',
+        'value',
+        'counter',
+        'created_at',
+    ];
 
     /**
      * The validation rules.
      *
      * @var string[]
      */
-    protected $rules = [
+    public $rules = [
         'value' => 'numeric|required',
     ];
 
     /**
-     * A metric point belongs to a metric unit.
+     * Get the metric relation.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function metric()
     {
-        return $this->belongsTo(Metric::class, 'id', 'metric_id');
+        return $this->belongsTo(Metric::class);
+    }
+
+    /**
+     * Override the value attribute.
+     *
+     * @param mixed $value
+     *
+     * @return float
+     */
+    public function getActiveValueAttribute($value)
+    {
+        if ($this->metric->calc_type === Metric::CALC_SUM) {
+            return round((float) $value * $this->counter, $this->metric->places);
+        } elseif ($this->metric->calc_type === Metric::CALC_AVG) {
+            return round((float) $value * $this->counter, $this->metric->places);
+        }
+
+        return round((float) $value, $this->metric->places);
     }
 
     /**

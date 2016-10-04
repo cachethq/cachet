@@ -14,6 +14,7 @@ namespace CachetHQ\Cachet\Http\Middleware;
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 
 class RedirectIfAuthenticated
 {
@@ -28,6 +29,8 @@ class RedirectIfAuthenticated
      * Create a new redirect if authenticated middleware instance.
      *
      * @param \Illuminate\Contracts\Auth\Guard $auth
+     *
+     * @return void
      */
     public function __construct(Guard $auth)
     {
@@ -42,10 +45,10 @@ class RedirectIfAuthenticated
      *
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle(Request $request, Closure $next)
     {
         if ($this->auth->check()) {
-            return new RedirectResponse(route('dashboard'));
+            return new RedirectResponse(route('dashboard.index'));
         }
 
         return $next($request);
