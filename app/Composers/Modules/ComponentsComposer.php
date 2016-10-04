@@ -15,6 +15,7 @@ use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\View\View;
+use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
 
 /**
  * This is the status page composer.
@@ -54,6 +55,9 @@ class ComponentsComposer
     {
         $componentGroups = $this->getVisibleGroupedComponents();
         $ungroupedComponents = Component::ungrouped()->get();
+
+        $componentGroups = AutoPresenter::decorate($componentGroups)
+            ->sortByDesc('lowest_status');
 
         $view->withComponentGroups($componentGroups)
             ->withUngroupedComponents($ungroupedComponents);
