@@ -42,6 +42,13 @@ final class ReportMaintenanceCommand
     public $timestamp;
 
     /**
+     * Comma separated list of e-mails to send notifications to.
+     *
+     * @var string
+     */
+    public $directNotify;
+
+    /**
      * The validation rules.
      *
      * @var string[]
@@ -56,18 +63,20 @@ final class ReportMaintenanceCommand
     /**
      * Create a new report maintenance command instance.
      *
-     * @param string $name
-     * @param string $message
-     * @param bool   $notify
-     * @param string $timestamp
+     * @param string      $name
+     * @param string      $message
+     * @param bool        $notify
+     * @param string      $timestamp
+     * @param string|null $directNotify
      *
      * @return void
      */
-    public function __construct($name, $message, $notify, $timestamp)
+    public function __construct($name, $message, $notify, $timestamp, $directNotify = null)
     {
         $this->name = $name;
         $this->message = $message;
         $this->notify = $notify;
         $this->timestamp = $timestamp;
+        $this->directNotify = $directNotify;
     }
 }

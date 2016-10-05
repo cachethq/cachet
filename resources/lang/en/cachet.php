@@ -67,9 +67,10 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe' => 'Subscribe to get the updates',
-        'button'    => 'Subscribe',
-        'manage'    => [
+        'subscribe'   => 'Subscribe to get the updates',
+        'button'      => 'Subscribe',
+        'is_verified' => 'Subscriber is verified',
+        'manage'      => [
             'no_subscriptions' => 'You\'re currently subscribed to all updates.',
             'my_subscriptions' => 'You\'re currently subscribed to the following updates.',
         ],

@@ -15,6 +15,7 @@
     <tr>
 </table>
 
+@if($has_manage_link)
 <table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0">
     <tr>
         <td align="center">
@@ -29,7 +30,9 @@
         </td>
     </tr>
 </table>
+@endif
 
+@if($has_unsubscribe_link)
 <table class="body-sub" align="center">
     <tr>
         <td align="center">
@@ -37,4 +40,5 @@
         </td>
     </tr>
 </table>
+@endif
 @stop

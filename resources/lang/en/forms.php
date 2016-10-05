@@ -54,6 +54,7 @@ return [
         'scheduled_at'       => 'When to schedule the maintenance for?',
         'incident_time'      => 'When did this incident occur?',
         'notify_subscribers' => 'Notify subscribers?',
+        'notify_directly'    => 'Inform the following:',
         'visibility'         => 'Incident Visibility',
         'stick_status'       => 'Stick Incident',
         'stickied'           => 'Stickied',
@@ -202,7 +203,8 @@ return [
     ],
 
     'general' => [
-        'timezone' => 'Select Timezone',
+        'timezone'        => 'Select Timezone',
+        'comma_separated' => 'Separate E-Mail addresses with a comma',
     ],
 
     // Buttons
