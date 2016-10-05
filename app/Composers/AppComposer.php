@@ -78,5 +78,6 @@ class AppComposer
         $view->withTimezone($this->dates->getTimezone());
         $view->withSiteTitle($this->config->get('setting.app_name'));
         $view->withFontSubset($this->config->get('langs.'.$this->config->get('app.locale').'.subset', 'latin'));
+        $view->withOnlyDisruptedDays($this->config->get('setting.only_disrupted_days'));
     }
 }
