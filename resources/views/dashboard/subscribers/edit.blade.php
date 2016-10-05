@@ -39,19 +39,21 @@
                 <div class="row">
                     <div class="col-xs-12">
                         @foreach($components_in_groups as $group)
-                        <div class="panel panel-default">
-                            <div class="panel-heading">{{ $group->name }}</div>
-                            <div class="panel-body">
-                                @foreach($group->components as $component)
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" value="{{ $component->id }}" name="components[]" @if($subscriber_subscriptions->search($component->id))checked @endif>
-                                            {{ $component->name }}
-                                        </label>
-                                    </div>
-                                @endforeach
+                            @if($group->components->count())
+                            <div class="panel panel-default">
+                                <div class="panel-heading">{{ $group->name }}</div>
+                                <div class="panel-body">
+                                    @foreach($group->components as $component)
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" value="{{ $component->id }}" name="components[]" @if($subscriber_subscriptions->search($component->id))checked @endif>
+                                                {{ $component->name }}
+                                            </label>
+                                        </div>
+                                    @endforeach
+                                </div>
                             </div>
-                        </div>
+                            @endif
                     @endforeach
                     </div>
                 </div>
