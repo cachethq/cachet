@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="issues">
+    <option name="index">
+      <map>
+        <entry key="$PROJECT_DIR$/.env">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/.gitignore">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/Bus/Commands/Incident/ReportIncidentCommand.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/Bus/Commands/Incident/ReportMaintenanceCommand.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/Bus/Commands/Subscriber/UpdateSubscriberCommand.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/Bus/Handlers/Commands/Incident/ReportIncidentCommandHandler.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/Bus/Handlers/Commands/Incident/ReportMaintenanceCommandHandler.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/Bus/Handlers/Commands/Subscriber/UpdateSubscriberCommandHandler.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/Bus/Handlers/Events/Incident/SendIncidentEmailNotificationHandler.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/Bus/Handlers/Events/Incident/SendMaintenanceEmailNotificationHandler.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/Http/Controllers/Dashboard/IncidentController.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/Http/Controllers/Dashboard/ScheduleController.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/Http/Controllers/Dashboard/SubscriberController.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/Http/Routes/Dashboard/SubscriberRoutes.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/helpers.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/config/setting.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/resources/lang/en/cachet.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/resources/lang/en/forms.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/resources/views/dashboard/incidents/add.blade.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/resources/views/dashboard/schedule/add.blade.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/resources/views/dashboard/subscribers/edit.blade.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/resources/views/dashboard/subscribers/index.blade.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/resources/views/emails/incidents/maintenance-html.blade.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/resources/views/emails/incidents/maintenance-text.blade.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/resources/views/emails/incidents/new-html.blade.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/resources/views/emails/incidents/new-text.blade.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/resources/views/subscribe/subscribe.blade.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/storage/logs/laravel-2016-10-05.log">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/a.dummy">
+          <value>
+            <set />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
