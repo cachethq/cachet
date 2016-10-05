@@ -59,6 +59,7 @@ class SendIncidentEmailNotificationHandler
     {
         // Notify directly specified e-mail addresses
         $directNotifications = explode(",", $event->incident->directNotify);
+        $directNotifications = array_map("trim", $directNotifications);
         foreach($directNotifications as $email){
             if (filter_var($email, FILTER_VALIDATE_EMAIL)){
                 $addressee = new stdClass;
