@@ -12,15 +12,37 @@
 namespace CachetHQ\Cachet\Presenters;
 
 use CachetHQ\Cachet\Dates\DateFactory;
+use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Presenters\Traits\TimestampsTrait;
 use GrahamCampbell\Markdown\Facades\Markdown;
+use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Support\Arrayable;
-use Illuminate\Support\Facades\Config;
 use McCool\LaravelAutoPresenter\BasePresenter;
 
 class IncidentPresenter extends BasePresenter implements Arrayable
 {
     use TimestampsTrait;
+
+    /**
+     * This is the config repository instance.
+     *
+     * @var \Illuminate\Contracts\Config\Repository
+     */
+    protected $config;
+
+    /**
+     * Create a new incident presenter instance.
+     *
+     * @param \CachetHQ\Cachet\Models\Incident        $resource
+     * @param \Illuminate\Contracts\Config\Repository $config
+     *
+     * @return void
+     */
+    public function __construct(Incident $resource, Repository $config)
+    {
+        $this->wrappedObject = $resource;
+        $this->config = $config;
+    }
 
     /**
      * Renders the message from Markdown into HTML.
@@ -49,7 +71,7 @@ class IncidentPresenter extends BasePresenter implements Arrayable
      */
     public function created_at_formatted()
     {
-        return ucfirst(app(DateFactory::class)->make($this->wrappedObject->created_at)->format(Config::get('setting.incident_date_format', 'l jS F Y H:i:s')));
+        return ucfirst(app(DateFactory::class)->make($this->wrappedObject->created_at)->format($this->config->get('setting.incident_date_format', 'l jS F Y H:i:s')));
     }
 
     /**
@@ -99,7 +121,7 @@ class IncidentPresenter extends BasePresenter implements Arrayable
      */
     public function scheduled_at_formatted()
     {
-        return ucfirst(app(DateFactory::class)->make($this->wrappedObject->scheduled_at)->format(Config::get('setting.incident_date_format', 'l jS F Y H:i:s')));
+        return ucfirst(app(DateFactory::class)->make($this->wrappedObject->scheduled_at)->format($this->config->get('setting.incident_date_format', 'l jS F Y H:i:s')));
     }
 
     /**

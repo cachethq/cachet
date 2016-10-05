@@ -12,14 +12,36 @@
 namespace CachetHQ\Cachet\Presenters;
 
 use CachetHQ\Cachet\Dates\DateFactory;
+use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Presenters\Traits\TimestampsTrait;
+use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Support\Arrayable;
-use Illuminate\Support\Facades\Config;
 use McCool\LaravelAutoPresenter\BasePresenter;
 
 class ComponentPresenter extends BasePresenter implements Arrayable
 {
     use TimestampsTrait;
+
+    /**
+     * This is the config repository instance.
+     *
+     * @var \Illuminate\Contracts\Config\Repository
+     */
+    protected $config;
+
+    /**
+     * Create a new component presenter instance.
+     *
+     * @param \CachetHQ\Cachet\Models\Component       $resource
+     * @param \Illuminate\Contracts\Config\Repository $config
+     *
+     * @return void
+     */
+    public function __construct(Component $resource, Repository $config)
+    {
+        $this->wrappedObject = $resource;
+        $this->config = $config;
+    }
 
     /**
      * Returns the override class name for theming.
@@ -63,7 +85,7 @@ class ComponentPresenter extends BasePresenter implements Arrayable
      */
     public function updated_at_formatted()
     {
-        return ucfirst(app(DateFactory::class)->make($this->wrappedObject->updated_at)->format(Config::get('setting.incident_date_format', 'l jS F Y H:i:s')));
+        return ucfirst(app(DateFactory::class)->make($this->wrappedObject->updated_at)->format($this->config->get('setting.incident_date_format', 'l jS F Y H:i:s')));
     }
 
     /**
