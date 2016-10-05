@@ -78,7 +78,7 @@ class SettingRoutes
             ]);
             $router->post('/', 'SettingsController@postSettings');
 
-            $router->get('email', [
+            $router->post('email', [
                 'as'   => 'email-post',
                 'uses' => 'SettingsController@postEmailSetup',
             ]);
