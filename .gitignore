@@ -2,3 +2,5 @@
 node_modules
 phpunit.xml
 vendor
+.idea
+composer.lock
