@@ -18,7 +18,7 @@ use Illuminate\Contracts\View\View;
 use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
 
 /**
- * This is the status page composer.
+ * This is the components composer.
  *
  * @author James Brooks <james@alt-three.com>
  * @author Connor S. Parks <connor@connorvg.tv>
@@ -45,7 +45,7 @@ class ComponentsComposer
     }
 
     /**
-     * Index page view composer.
+     * Bind data to the view.
      *
      * @param \Illuminate\Contracts\View\View $view
      *
