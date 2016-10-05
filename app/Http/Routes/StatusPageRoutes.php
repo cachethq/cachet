@@ -45,6 +45,11 @@ class StatusPageRoutes
                 'uses' => 'StatusPageController@getMetrics',
             ]);
 
+            $router->get('group/{componentGroup}', [
+                'as'   => 'component-status-page',
+                'uses' => 'StatusPageController@showIndex',
+            ]);
+
             $router->get('component/{component}/shield', 'StatusPageController@showComponentBadge');
         });
     }

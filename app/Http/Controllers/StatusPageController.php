@@ -15,6 +15,7 @@ use AltThree\Badger\Facades\Badger;
 use CachetHQ\Cachet\Dates\DateFactory;
 use CachetHQ\Cachet\Http\Controllers\Api\AbstractApiController;
 use CachetHQ\Cachet\Models\Component;
+use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Repositories\Metric\MetricRepository;
@@ -50,9 +51,10 @@ class StatusPageController extends AbstractApiController
     /**
      * Displays the status page.
      *
+     * @param ComponentGroup $componentGroup
      * @return \Illuminate\View\View
      */
-    public function showIndex()
+    public function showIndex(ComponentGroup $componentGroup)
     {
         $today = Date::now();
         $startDate = Date::now();
@@ -104,6 +106,7 @@ class StatusPageController extends AbstractApiController
         }, SORT_REGULAR, true)->all();
 
         return View::make('index')
+            ->with('componentGroup', $componentGroup)
             ->withDaysToShow($daysToShow)
             ->withAllIncidents($allIncidents)
             ->withCanPageForward((bool) $today->gt($startDate))
