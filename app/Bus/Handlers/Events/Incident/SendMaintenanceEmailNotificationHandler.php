@@ -122,16 +122,18 @@ class SendMaintenanceEmailNotificationHandler
             'subject' => trans('cachet.subscriber.email.maintenance.subject', [
                 'name' => $incident->name,
             ]),
-            'has_component'    => ($event->incident->component) ? true : false,
-            'component_name'   => $component ? $component->name : null,
-            'name'             => $incident->name,
-            'timestamp'        => $incident->scheduled_at_formatted,
-            'status'           => $incident->human_status,
-            'html_content'     => $incident->formattedMessage,
-            'text_content'     => $incident->message,
-            'token'            => $subscriber->token,
-            'manage_link'      => route('subscribe.manage', ['code' => $subscriber->verify_code]),
-            'unsubscribe_link' => route('subscribe.unsubscribe', ['code' => $subscriber->verify_code]),
+            'has_component'        => ($event->incident->component) ? true : false,
+            'component_name'       => $component ? $component->name : null,
+            'name'                 => $incident->name,
+            'timestamp'            => $incident->scheduled_at_formatted,
+            'status'               => $incident->human_status,
+            'html_content'         => $incident->formattedMessage,
+            'text_content'         => $incident->message,
+            'token'                => $subscriber->token,
+            'has_manage_link'      => $subscriber->verify_code,
+            'has_unsubscribe_link' => $subscriber->verify_code,
+            'manage_link'          => route('subscribe.manage', ['code' => $subscriber->verify_code]),
+            'unsubscribe_link'     => route('subscribe.unsubscribe', ['code' => $subscriber->verify_code]),
         ];
 
         $this->mailer->queue([
