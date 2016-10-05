@@ -58,6 +58,7 @@ class ReportMaintenanceCommandHandler
         ]);
 
         $maintenanceEvent->notify = (bool) $command->notify;
+        $maintenanceEvent->directNotify = $command->directNotify;
 
         event(new MaintenanceWasScheduledEvent($maintenanceEvent));
 
