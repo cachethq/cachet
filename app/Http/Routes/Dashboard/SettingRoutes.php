@@ -48,6 +48,10 @@ class SettingRoutes
                 'as'   => 'localization',
                 'uses' => 'SettingsController@showLocalizationView',
             ]);
+            $router->get('email', [
+                'as'   => 'email',
+                'uses' => 'SettingsController@showEmailSetupView',
+            ]);
             $router->get('security', [
                 'as'   => 'security',
                 'uses' => 'SettingsController@showSecurityView',
@@ -73,6 +77,11 @@ class SettingRoutes
                 'uses' => 'SettingsController@showLogView',
             ]);
             $router->post('/', 'SettingsController@postSettings');
+
+            $router->get('email', [
+                'as'   => 'email-post',
+                'uses' => 'SettingsController@postEmailSetup',
+            ]);
         });
     }
 }

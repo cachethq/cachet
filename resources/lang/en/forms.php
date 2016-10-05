@@ -25,9 +25,12 @@ return [
         'session_driver'   => 'Session Driver',
         'mail_driver'      => 'Mail Driver',
         'mail_host'        => 'Mail Host',
+        'mail_port'        => 'Mail Port',
         'mail_address'     => 'Mail From Address',
+        'mail_name'     => 'Mail From Name',
         'mail_username'    => 'Mail Username',
         'mail_password'    => 'Mail Password',
+        'mail_encryption'  => 'Mail Encryption',
     ],
 
     // Login form fields
@@ -214,6 +217,7 @@ return [
     'remove' => 'Remove',
     'invite' => 'Invite',
     'signup' => 'Sign Up',
+    'verify' => 'Verify',
 
     // Other
     'optional' => '* Optional',
