@@ -15,6 +15,7 @@ use CachetHQ\Cachet\Bus\Events\Incident\MaintenanceWasScheduledEvent;
 use CachetHQ\Cachet\Models\Subscriber;
 use Illuminate\Contracts\Mail\MailQueue;
 use Illuminate\Mail\Message;
+use stdClass;
 use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
 
 class SendMaintenanceEmailNotificationHandler
@@ -56,6 +57,19 @@ class SendMaintenanceEmailNotificationHandler
      */
     public function handle(MaintenanceWasScheduledEvent $event)
     {
+        // Notify directly specified e-mail addresses
+        $directNotifications = explode(",", $event->incident->directNotify);
+        $directNotifications = array_map("trim", $directNotifications);
+        foreach($directNotifications as $email){
+            if (filter_var($email, FILTER_VALIDATE_EMAIL)){
+                $addressee = new stdClass;
+                $addressee->email = $email;
+                $addressee->token = '';
+                $addressee->verify_code = '';
+                $this->notify($event, $addressee);
+            }
+        }
+
         if (!$event->incident->notify) {
             return false;
         }
@@ -104,22 +118,23 @@ class SendMaintenanceEmailNotificationHandler
     {
         $incident = AutoPresenter::decorate($event->incident);
         $component = AutoPresenter::decorate($event->incident->component);
-
         $mail = [
             'email'   => $subscriber->email,
             'subject' => trans('cachet.subscriber.email.maintenance.subject', [
                 'name' => $incident->name,
             ]),
-            'has_component'    => ($event->incident->component) ? true : false,
-            'component_name'   => $component ? $component->name : null,
-            'name'             => $incident->name,
-            'timestamp'        => $incident->scheduled_at_formatted,
-            'status'           => $incident->human_status,
-            'html_content'     => $incident->formattedMessage,
-            'text_content'     => $incident->message,
-            'token'            => $subscriber->token,
-            'manage_link'      => route('subscribe.manage', ['code' => $subscriber->verify_code]),
-            'unsubscribe_link' => route('subscribe.unsubscribe', ['code' => $subscriber->verify_code]),
+            'has_component'        => ($event->incident->component) ? true : false,
+            'component_name'       => $component ? $component->name : null,
+            'name'                 => $incident->name,
+            'timestamp'            => $incident->scheduled_at_formatted,
+            'status'               => $incident->human_status,
+            'html_content'         => $incident->formattedMessage,
+            'text_content'         => $incident->message,
+            'token'                => $subscriber->token,
+            'has_manage_link'      => $subscriber->verify_code,
+            'has_unsubscribe_link' => $subscriber->verify_code,
+            'manage_link'          => route('subscribe.manage', ['code' => $subscriber->verify_code]),
+            'unsubscribe_link'     => route('subscribe.unsubscribe', ['code' => $subscriber->verify_code]),
         ];
 
         $this->mailer->queue([

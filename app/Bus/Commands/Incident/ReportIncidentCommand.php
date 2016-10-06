@@ -91,6 +91,13 @@ final class ReportIncidentCommand
     public $template_vars;
 
     /**
+     * Comma separated list of E-Mail addresses
+     *
+     * @var string
+     */
+    public $notify_direct;
+
+    /**
      * The validation rules.
      *
      * @var string[]
@@ -122,10 +129,11 @@ final class ReportIncidentCommand
      * @param string|null $incident_date
      * @param string|null $template
      * @param array|null  $template_vars
+     * @param string      $notify_direct
      *
      * @return void
      */
-    public function __construct($name, $status, $message, $visible, $component_id, $component_status, $notify, $stickied, $incident_date, $template, array $template_vars = null)
+    public function __construct($name, $status, $message, $visible, $component_id, $component_status, $notify, $stickied, $incident_date, $template, array $template_vars = null, $notify_direct = null)
     {
         $this->name = $name;
         $this->status = $status;
@@ -138,5 +146,6 @@ final class ReportIncidentCommand
         $this->incident_date = $incident_date;
         $this->template = $template;
         $this->template_vars = $template_vars;
+        $this->directNotify = $notify_direct;
     }
 }

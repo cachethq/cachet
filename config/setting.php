@@ -35,6 +35,18 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Enable direct notifications
+    |--------------------------------------------------------------------------
+    |
+    | Whether to allow admin to send e-mail directly to people when submitting
+    | scheduled maintenance incidents by providing addressee email
+    |
+    */
+
+    'enable_direct_notifications' => true,
+
+    /*
+    |--------------------------------------------------------------------------
     | Automatic Localization
     |--------------------------------------------------------------------------
     |
@@ -54,7 +66,7 @@ return [
     |
     */
 
-    'show_support' => true,
+    'show_support' => false,
 
     /*
      |--------------------------------------------------------------------------

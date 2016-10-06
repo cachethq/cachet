@@ -8,9 +8,13 @@
 ({{ $component_name }})
 @endif
 
+@if($has_manage_link)
 {!! trans('cachet.subscriber.email.manage') !!} {{ $manage_link }}
+@endif
 
+@if($has_unsubscribe_link)
 {!! trans('cachet.subscriber.email.unsuscribe') !!} {{ $unsubscribe_link }}
+@endif
 
 @if($show_support)
 {!! trans('cachet.powered_by', ['app' => $app_name]) !!}
