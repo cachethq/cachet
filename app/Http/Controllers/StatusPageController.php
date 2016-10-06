@@ -18,7 +18,6 @@ use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\Metric;
-use CachetHQ\Cachet\Models\Schedule;
 use CachetHQ\Cachet\Repositories\Metric\MetricRepository;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
@@ -87,10 +86,16 @@ class StatusPageController extends AbstractApiController
 
         $incidentVisibility = Auth::check() ? 0 : 1;
 
-        $allIncidents = Incident::where('visible', '>=', $incidentVisibility)->whereBetween('occurred_at', [
+        // Find all the visible incidents, taking into account if the component group is defined and the day limits.
+        $allIncidentsQuery = Incident::where('visible', '>=', $incidentVisibility);
+        if ($componentGroup->exists) {
+            $allIncidentsQuery->whereIn('component_id', $componentGroup->components()->pluck('id'));
+        }
+        $allIncidentsQuery->whereBetween('occurred_at', [
             $startDate->copy()->subDays($daysToShow)->format('Y-m-d').' 00:00:00',
             $startDate->format('Y-m-d').' 23:59:59',
-        ])->orderBy('occurred_at', 'desc')->get()->groupBy(function (Incident $incident) {
+        ])->orderBy('occurred_at', 'desc');
+        $allIncidents = $allIncidentsQuery->get()->groupBy(function (Incident $incident) {
             return app(DateFactory::class)->make($incident->occurred_at)->toDateString();
         });
 
