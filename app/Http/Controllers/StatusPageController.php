@@ -84,10 +84,16 @@ class StatusPageController extends AbstractApiController
 
         $incidentVisibility = Auth::check() ? 0 : 1;
 
-        $allIncidents = Incident::notScheduled()->where('visible', '>=', $incidentVisibility)->whereBetween('created_at', [
+        // Find all the visible incidents, taking into account if the component group is defined and the day limits.
+        $allIncidentsQuery = Incident::notScheduled();
+        if ($componentGroup->exists) {
+            $allIncidentsQuery->whereIn('component_id', $componentGroup->components()->pluck('id'));
+        }
+        $allIncidentsQuery->where('visible', '>=', $incidentVisibility)->whereBetween('created_at', [
             $startDate->copy()->subDays($daysToShow)->format('Y-m-d').' 00:00:00',
             $startDate->format('Y-m-d').' 23:59:59',
-        ])->orderBy('scheduled_at', 'desc')->orderBy('created_at', 'desc')->get()->groupBy(function (Incident $incident) {
+        ])->orderBy('scheduled_at', 'desc')->orderBy('created_at', 'desc');
+        $allIncidents = $allIncidentsQuery->get()->groupBy(function (Incident $incident) {
             return app(DateFactory::class)->make($incident->is_scheduled ? $incident->scheduled_at : $incident->created_at)->toDateString();
         });
 
