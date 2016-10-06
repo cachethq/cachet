@@ -104,6 +104,7 @@ return [
     'metrics' => [
         'name'             => 'Name',
         'suffix'           => 'Suffix',
+        'component'        => 'Component',
         'description'      => 'Description',
         'description-help' => 'You may also use Markdown.',
         'display-chart'    => 'Display chart on status page?',

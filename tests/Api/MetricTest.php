@@ -63,6 +63,7 @@ class MetricTest extends AbstractApiTestCase
             'places'        => 0,
             'view'          => 0,
             'threshold'     => 5,
+            'component_id'  => 0,
             'order'         => 1,
         ]);
         $this->seeJson(['name' => 'Foo']);

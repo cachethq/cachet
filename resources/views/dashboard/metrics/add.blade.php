@@ -31,6 +31,25 @@
                             <textarea name="metric[description]" class="form-control" rows="5">{{ Binput::old('metric.description') }}</textarea>
                         </div>
                     </div>
+                    @if(!$components_in_groups->isEmpty() || !$components_out_groups->isEmpty())
+                        <div class="form-group">
+                            <label>{{ trans('forms.metrics.component') }}</label>
+                            <select name='metric[component_id]' class='form-control'>
+                                <option value='0' selected></option>
+                                @foreach($components_in_groups as $group)
+                                    <optgroup label="{{ $group->name }}">
+                                        @foreach($group->components as $component)
+                                            <option value='{{ $component->id }}'>{{ $component->name }}</option>
+                                        @endforeach
+                                    </optgroup>
+                                @endforeach
+                                @foreach($components_out_groups as $component)
+                                    <option value='{{ $component->id }}'>{{ $component->name }}</option>
+                                @endforeach
+                            </select>
+                            <span class='help-block'>{{ trans('forms.optional') }}</span>
+                        </div>
+                    @endif
                     <div class="form-group">
                         <label>{{ trans('forms.metrics.calc_type') }}</label>
                         <select name="metric[calc_type]" class="form-control" required>

@@ -86,6 +86,13 @@ final class UpdateMetricCommand
     public $threshold;
 
     /**
+     * The component id the metric belongs to.
+     *
+     * @var int
+     */
+    public $component_id;
+
+    /**
      * The order of which to place the metric in.
      *
      * @var int|null
@@ -108,6 +115,7 @@ final class UpdateMetricCommand
         'places'        => 'numeric|between:0,4',
         'default_view'  => 'numeric|between:0,4',
         'threshold'     => 'numeric|between:0,10',
+        'component_id'  => 'int',
         'order'         => 'int',
     ];
 
@@ -124,11 +132,12 @@ final class UpdateMetricCommand
      * @param int                            $places
      * @param int                            $default_view
      * @param int                            $threshold
+     * @param int                            $component_id
      * @param int|null                       $order
      *
      * @return void
      */
-    public function __construct(Metric $metric, $name, $suffix, $description, $default_value, $calc_type, $display_chart, $places, $default_view, $threshold, $order = null)
+    public function __construct(Metric $metric, $name, $suffix, $description, $default_value, $calc_type, $display_chart, $places, $default_view, $threshold, $component_id, $order = null)
     {
         $this->metric = $metric;
         $this->name = $name;
@@ -140,6 +149,7 @@ final class UpdateMetricCommand
         $this->places = $places;
         $this->default_view = $default_view;
         $this->threshold = $threshold;
+        $this->component_id = $component_id;
         $this->order = $order;
     }
 }
