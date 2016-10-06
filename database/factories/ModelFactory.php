@@ -79,6 +79,7 @@ $factory->define(Metric::class, function ($faker) {
         'calc_type'     => $faker->boolean(),
         'display_chart' => $faker->boolean(),
         'threshold'     => 5,
+        'component_id'  => 0,
     ];
 });
 
