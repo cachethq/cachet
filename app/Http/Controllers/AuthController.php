@@ -22,7 +22,6 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\View;
-use Illuminate\Support\Str;
 use PragmaRX\Google2FA\Vendor\Laravel\Facade as Google2FA;
 
 class AuthController extends Controller
@@ -48,7 +47,7 @@ class AuthController extends Controller
         $loginData = Binput::only(['username', 'password']);
 
         // Login with username or email.
-        $loginKey = Str::contains($loginData['username'], '@') ? 'email' : 'username';
+        $loginKey = filter_var($loginData['username'], FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
         $loginData[$loginKey] = array_pull($loginData, 'username');
 
         // Validate login credentials.
