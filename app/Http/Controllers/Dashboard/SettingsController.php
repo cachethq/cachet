@@ -19,6 +19,7 @@ use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Lang;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\View;
@@ -81,6 +82,12 @@ class SettingsController extends Controller
                 'title'  => trans('dashboard.settings.analytics.analytics'),
                 'url'    => route('dashboard.settings.analytics'),
                 'icon'   => 'ion-stats-bars',
+                'active' => false,
+            ],
+            'log' => [
+                'title'  => trans('dashboard.settings.log.log'),
+                'url'    => route('dashboard.settings.log'),
+                'icon'   => 'ion-document-text',
                 'active' => false,
             ],
             'credits' => [
@@ -241,6 +248,22 @@ class SettingsController extends Controller
             ->withBackers($backers)
             ->withContributors($contributors)
             ->withSubMenu($this->subMenu);
+    }
+
+    /**
+     * Show the most recent log.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function showLogView()
+    {
+        $this->subMenu['log']['active'] = true;
+
+        $log = Log::getMonolog();
+
+        $logContents = file_get_contents($log->getHandlers()[0]->getUrl());
+
+        return View::make('dashboard.settings.log')->withLog($logContents)->withSubMenu($this->subMenu);
     }
 
     /**

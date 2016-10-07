@@ -22,7 +22,6 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Response;
-use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\View;
 
@@ -48,11 +47,11 @@ class SetupController extends Controller
      * @var string[]
      */
     protected $mailDrivers = [
-        'smtp'      => 'SMTP',
-        'mail'      => 'Mail',
-        'sendmail'  => 'Sendmail',
-        'mailgun'   => 'Mailgun',
-        'mandrill'  => 'Mandrill',
+        'smtp'     => 'SMTP',
+        'mail'     => 'Mail',
+        'sendmail' => 'Sendmail',
+        'mailgun'  => 'Mailgun',
+        'mandrill' => 'Mandrill',
         // 'ses'       => 'Amazon SES', this will be available only if aws/aws-sdk-php is installed
         'sparkpost' => 'SparkPost',
         'log'       => 'Log (Testing)',
@@ -216,8 +215,6 @@ class SetupController extends Controller
             foreach ($envData as $envKey => $envValue) {
                 $this->writeEnv($envKey, $envValue);
             }
-
-            Session::flash('setup.done', true);
 
             if (Request::ajax()) {
                 return Response::json(['status' => 1]);

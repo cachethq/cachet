@@ -106,9 +106,9 @@ class SendMaintenanceEmailNotificationHandler
         $component = AutoPresenter::decorate($event->incident->component);
 
         $mail = [
-            'email'            => $subscriber->email,
-            'subject'          => trans('cachet.subscriber.email.maintenance.subject', [
-                'name'   => $incident->name,
+            'email'   => $subscriber->email,
+            'subject' => trans('cachet.subscriber.email.maintenance.subject', [
+                'name' => $incident->name,
             ]),
             'has_component'    => ($event->incident->component) ? true : false,
             'component_name'   => $component ? $component->name : null,

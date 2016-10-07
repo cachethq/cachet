@@ -40,6 +40,13 @@ final class AddComponentGroupCommand
     public $collapsed;
 
     /**
+     * Is the component visible to public?
+     *
+     * @var int
+     */
+    public $visible;
+
+    /**
      * The validation rules.
      *
      * @var string[]
@@ -48,6 +55,7 @@ final class AddComponentGroupCommand
         'name'      => 'required|string',
         'order'     => 'int',
         'collapsed' => 'int|between:0,3',
+        'visible'   => 'bool',
     ];
 
     /**
@@ -56,13 +64,15 @@ final class AddComponentGroupCommand
      * @param string $name
      * @param int    $order
      * @param int    $collapsed
+     * @param int    $visible
      *
      * @return void
      */
-    public function __construct($name, $order, $collapsed)
+    public function __construct($name, $order, $collapsed, $visible)
     {
         $this->name = $name;
         $this->order = (int) $order;
         $this->collapsed = $collapsed;
+        $this->visible = (int) $visible;
     }
 }

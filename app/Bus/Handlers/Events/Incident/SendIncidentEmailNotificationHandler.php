@@ -106,8 +106,8 @@ class SendIncidentEmailNotificationHandler
         $component = AutoPresenter::decorate($event->incident->component);
 
         $mail = [
-            'email'            => $subscriber->email,
-            'subject'          => trans('cachet.subscriber.email.incident.subject', [
+            'email'   => $subscriber->email,
+            'subject' => trans('cachet.subscriber.email.incident.subject', [
                 'status' => $incident->human_status,
                 'name'   => $incident->name,
             ]),

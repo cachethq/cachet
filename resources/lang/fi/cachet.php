@@ -103,8 +103,8 @@ return [
     'users' => [
         'email' => [
             'invite' => [
-                'text'           => "Sinut on kutsuttu ryhmään :app_name tila sivulle, rekisteröi tästä: \n:link\n. Kiitos, :app_name",
-                'html'           => '<p>You have been invited to the team :app_name status page, to sign up follow the next link.</p><p><a href=":link">:link</a></p><p>Thank you, :app_name</p>',
+                'text' => "Sinut on kutsuttu ryhmään :app_name tila sivulle, rekisteröi tästä: \n:link\n. Kiitos, :app_name",
+                'html' => '<p>You have been invited to the team :app_name status page, to sign up follow the next link.</p><p><a href=":link">:link</a></p><p>Thank you, :app_name</p>',
             ],
         ],
     ],

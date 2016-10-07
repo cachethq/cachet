@@ -10,7 +10,6 @@
 
 <script>
 (function() {
-    console.log(document.getElementById('cm-editor'));
     var editor = CodeMirror.fromTextArea(document.getElementById('cm-editor'), {
         lineNumbers: true,
         mode: 'twig',
@@ -43,7 +42,7 @@
                 </div>
                 @endif
 
-                <form class='form-vertical' name='IncidentTemplateForm' role='form' method='POST'>
+                <form class="form-vertical" name="IncidentTemplateForm" role="form" method="POST">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <fieldset>
                         <div class="form-group">

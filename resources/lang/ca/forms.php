@@ -118,10 +118,10 @@ return [
             'analytics_piwik_siteid' => 'Identificador de lloc del Piwik',
         ],
         'localization' => [
-            'site-timezone'          => 'Seleccioneu el fus horari',
-            'site-locale'            => 'Idioma del lloc',
-            'date-format'            => 'Format de la data',
-            'incident-date-format'   => 'Format del fus horari dels incidents',
+            'site-timezone'        => 'Seleccioneu el fus horari',
+            'site-locale'          => 'Idioma del lloc',
+            'date-format'          => 'Format de la data',
+            'incident-date-format' => 'Format del fus horari dels incidents',
         ],
         'security' => [
             'allowed-domains'      => 'Dominis permesos',

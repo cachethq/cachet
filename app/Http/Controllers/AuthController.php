@@ -11,15 +11,24 @@
 
 namespace CachetHQ\Cachet\Http\Controllers;
 
+use CachetHQ\Cachet\Bus\Events\User\UserFailedTwoAuthEvent;
+use CachetHQ\Cachet\Bus\Events\User\UserLoggedInEvent;
+use CachetHQ\Cachet\Bus\Events\User\UserLoggedOutEvent;
+use CachetHQ\Cachet\Bus\Events\User\UserPassedTwoAuthEvent;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Request;
+use Illuminate\Session\Store;
 use Illuminate\Support\Facades\Session;
+
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Str;
 use PragmaRX\Google2FA\Vendor\Laravel\Facade as Google2FA;
+use CachetHQ\Cachet\Models\User;
+use Illuminate\Session\FileSessionHandler;
+use Illuminate\Filesystem\Filesystem;
 
 class AuthController extends Controller
 {
@@ -53,6 +62,7 @@ class AuthController extends Controller
             Auth::once($loginData);
             // Do we have Two Factor Auth enabled?
             if (Auth::user()->hasTwoFactor) {
+
                 // Temporarily store the user.
                 Session::put('2fa_id', Auth::user()->id);
 
@@ -61,6 +71,8 @@ class AuthController extends Controller
 
             // We probably want to add support for "Remember me" here.
             Auth::attempt($loginData);
+
+            event(new UserLoggedInEvent(Auth::user()));
 
             return Redirect::intended('dashboard');
         }
@@ -79,6 +91,57 @@ class AuthController extends Controller
     {
         return View::make('auth.two-factor-auth');
     }
+    
+     /**
+     * Function to add TwoFactor Google Auth to an existing user
+     **/
+     
+     public function generateSecretKey(){
+         
+         $user = User::find(1);
+        
+         $key = Google2FA::generateSecretKey();
+         $user->google_2fa_secret=$key;
+
+         $user->update();
+
+
+     }
+     
+    /**
+     * function to show qr code for 2fa auth
+     * 
+     *  @return \Illuminate\View\View
+     **/
+    public function showQrCode(){
+        
+        $session = Session::getFacadeRoot();
+    
+        //3W4XMX5WYUDRSJDE
+
+       if ($userId = $session->pull('2fa_id')) {
+            // Maybe a temp login here.
+            $secret = Binput::get('secret');
+            Auth::loginUsingId($userId);
+            $user = Auth::user();
+            
+            $google2fa_url = Google2FA::getQRCodeGoogleUrl(
+                                        'Cachet',
+                                        $user->email,
+                                        $user->get2faSecretKey()
+                                        );
+        return View::make('auth.two-factor-auth-code', array(
+            'google_2fa_url' => $google2fa_url)
+            );
+       }
+       
+               return Redirect::route('auth.login')->withError(trans('forms.login.invalid-token'));
+
+        
+     }
+     
+
+
 
     /**
      * Validates the Two Factor token.
@@ -90,17 +153,29 @@ class AuthController extends Controller
     public function postTwoFactor()
     {
         // Check that we have a session.
-        if ($userId = Session::pull('2fa_id')) {
+
+        $session = Session::getFacadeRoot();
+    
+       if ($userId = $session->pull('2fa_id')) {
             $code = Binput::get('code');
 
             // Maybe a temp login here.
             Auth::loginUsingId($userId);
+            $user = Auth::user();
 
-            $valid = Google2FA::verifyKey(Auth::user()->google_2fa_secret, $code);
+            $google_2Fa_secret = $user->get2faSecretKey();
+            $valid = Google2FA::verifyKey($google_2Fa_secret, $code);
+            
 
             if ($valid) {
+                event(new UserPassedTwoAuthEvent(Auth::user()));
+
+                event(new UserLoggedInEvent(Auth::user()));
+
                 return Redirect::intended('dashboard');
             } else {
+                event(new UserFailedTwoAuthEvent(Auth::user()));
+
                 // Failed login, log back out.
                 Auth::logout();
 
@@ -109,6 +184,7 @@ class AuthController extends Controller
         }
 
         return Redirect::route('auth.login')->withError(trans('forms.login.invalid-token'));
+        
     }
 
     /**
@@ -118,6 +194,8 @@ class AuthController extends Controller
      */
     public function logoutAction()
     {
+        event(new UserLoggedOutEvent(Auth::user()));
+
         Auth::logout();
 
         return Redirect::to('/');

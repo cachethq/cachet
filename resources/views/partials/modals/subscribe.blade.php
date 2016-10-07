@@ -12,7 +12,6 @@
                         <div class="form-group">
                             <input class="form-control" type="email" name="email" placeholder="hello@alt-three.com">
                         </div>
-                    </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">{{ trans("cachet.modal.close") }}</button>

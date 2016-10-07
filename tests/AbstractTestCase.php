@@ -11,6 +11,9 @@
 
 namespace CachetHQ\Tests\Cachet;
 
+use CachetHQ\Cachet\Models\User;
+use CachetHQ\Cachet\Settings\Cache;
+use CachetHQ\Cachet\Settings\Repository;
 use Illuminate\Contracts\Console\Kernel;
 use Illuminate\Foundation\Testing\TestCase;
 
@@ -29,6 +32,13 @@ abstract class AbstractTestCase extends TestCase
     protected $baseUrl = 'http://localhost';
 
     /**
+     * Test actor.
+     *
+     * @var User
+     */
+    protected $user;
+
+    /**
      * Creates the application.
      *
      * @return \Illuminate\Foundation\Application
@@ -40,5 +50,57 @@ abstract class AbstractTestCase extends TestCase
         $app->make(Kernel::class)->bootstrap();
 
         return $app;
+    }
+
+    /**
+     * Sign in an user if it's the case.
+     *
+     * @param User|null $user
+     *
+     * @return AbstractTestCase
+     */
+    protected function signIn(User $user = null)
+    {
+        $this->user = $user ?: $this->createUser();
+
+        $this->be($this->user);
+
+        return $this;
+    }
+
+    /**
+     * Create and return a new user.
+     *
+     * @param array $properties
+     *
+     * @return User
+     */
+    protected function createUser($properties = [])
+    {
+        return factory(User::class)->create($properties);
+    }
+
+    /**
+     * Set up the needed configuration to be able to run the tests.
+     *
+     * @return AbstractTestCase
+     */
+    protected function setupConfig()
+    {
+        $env = $this->app->environment();
+        $repo = $this->app->make(Repository::class);
+        $cache = $this->app->make(Cache::class);
+        $loaded = $cache->load($env);
+
+        if ($loaded === false) {
+            $loaded = $repo->all();
+            $cache->store($env, $loaded);
+        }
+
+        $settings = array_merge($this->app->config->get('setting'), $loaded);
+
+        $this->app->config->set('setting', $settings);
+
+        return $this;
     }
 }

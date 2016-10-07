@@ -20,6 +20,7 @@ return [
         'logged'                   => '{0} There are no incidents, good work.|You have logged one incident.|You have reported <strong>:count</strong> incidents.',
         'incident-create-template' => 'Create Template',
         'incident-templates'       => 'Incident Templates',
+        'updates'                  => '{0} Zero Updates|One Update|:count Updates',
         'add'                      => [
             'title'   => 'Report an incident',
             'success' => 'Incident added.',
@@ -33,6 +34,10 @@ return [
         'delete' => [
             'success' => 'The incident has been deleted and will not show on your status page.',
             'failure' => 'The incident could not be deleted, please try again.',
+        ],
+        'update' => [
+            'title'    => 'Create new incident update',
+            'subtitle' => 'Add an update to <strong>:incident</strong>',
         ],
 
         // Incident templates
@@ -197,6 +202,9 @@ return [
         'analytics' => [
             'analytics' => 'Analytics',
         ],
+        'log' => [
+            'log' => 'Log',
+        ],
         'localization' => [
             'localization' => 'Localization',
         ],
@@ -233,7 +241,7 @@ return [
     'login' => [
         'login'      => 'Login',
         'logged_in'  => 'You\'re logged in.',
-        'welcome'    => 'Welcome Back!',
+        'welcome'    => 'Welcome back!',
         'two-factor' => 'Please enter your token.',
     ],
 
@@ -259,16 +267,16 @@ return [
 
     // Welcome modal
     'welcome' => [
-        'welcome' => 'Welcome to your new Status page!',
-        'message' => 'Your status page is almost ready! You might want to configure these extra settings',
-        'close'   => 'Take me straight to my dashboard',
+        'welcome' => 'Welcome to your new status page, :username!',
+        'message' => 'You\'re almost ready but you might want to configure these extra settings first...',
+        'close'   => 'I\'m good thanks!',
         'steps'   => [
-            'component'  => 'Create components',
-            'incident'   => 'Create incidents',
-            'customize'  => 'Customize',
-            'team'       => 'Add users',
-            'api'        => 'Generate API token',
-            'two-factor' => 'Two Factor Authentication',
+            'component'  => 'Add your components',
+            'incident'   => 'Create an incident',
+            'customize'  => 'Customize your page',
+            'team'       => 'Add your team',
+            'api'        => 'Generate an API token',
+            'two-factor' => 'Setup Two Factor Authentication',
         ],
     ],
 

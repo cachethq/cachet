@@ -237,7 +237,7 @@ class ComponentController extends Controller
     {
         dispatch(new RemoveComponentGroupCommand($group));
 
-        return Redirect::route('dashboard.components.index')
+        return Redirect::route('dashboard.components.groups')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.components.delete.success')));
     }
 
@@ -277,7 +277,8 @@ class ComponentController extends Controller
             $group = dispatch(new AddComponentGroupCommand(
                 Binput::get('name'),
                 Binput::get('order', 0),
-                Binput::get('collapsed')
+                Binput::get('collapsed'),
+                Binput::get('visible')
             ));
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.components.groups.add')
@@ -304,7 +305,8 @@ class ComponentController extends Controller
                 $group,
                 Binput::get('name'),
                 $group->order,
-                Binput::get('collapsed')
+                Binput::get('collapsed'),
+                Binput::get('visible')
             ));
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.components.groups.edit', ['id' => $group->id])

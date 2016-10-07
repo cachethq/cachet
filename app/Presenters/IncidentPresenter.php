@@ -23,6 +23,19 @@ class IncidentPresenter extends BasePresenter implements Arrayable
     use TimestampsTrait;
 
     /**
+     * Inciden icon lookup.
+     *
+     * @var array
+     */
+    protected $icons = [
+        0 => 'icon ion-android-calendar', // Scheduled
+        1 => 'icon ion-flag oranges', // Investigating
+        2 => 'icon ion-alert yellows', // Identified
+        3 => 'icon ion-eye blues', // Watching
+        4 => 'icon ion-checkmark greens', // Fixed
+    ];
+
+    /**
      * Renders the message from Markdown into HTML.
      *
      * @return string
@@ -30,6 +43,16 @@ class IncidentPresenter extends BasePresenter implements Arrayable
     public function formattedMessage()
     {
         return Markdown::convertToHtml($this->wrappedObject->message);
+    }
+
+    /**
+     * Return the raw text of the message, even without Markdown.
+     *
+     * @return string
+     */
+    public function raw_message()
+    {
+        return strip_tags($this->formattedMessage());
     }
 
     /**
@@ -157,19 +180,8 @@ class IncidentPresenter extends BasePresenter implements Arrayable
      */
     public function icon()
     {
-        switch ($this->wrappedObject->status) {
-            case 0: // Scheduled
-                return 'icon ion-android-calendar';
-            case 1: // Investigating
-                return 'icon ion-flag oranges';
-            case 2: // Identified
-                return 'icon ion-alert yellows';
-            case 3: // Watching
-                return 'icon ion-eye blues';
-            case 4: // Fixed
-                return 'icon ion-checkmark greens';
-            default: // Something actually broke, this shouldn't happen.
-                return '';
+        if (isset($this->icons[$this->wrappedObject->status])) {
+            return $this->icons[$this->wrappedObject->status];
         }
     }
 
@@ -184,6 +196,88 @@ class IncidentPresenter extends BasePresenter implements Arrayable
     }
 
     /**
+     * Returns the latest update.
+     *
+     * @return int|null
+     */
+    public function latest_status()
+    {
+        if ($update = $this->latest()) {
+            return $update->status;
+        }
+
+        return $this->wrappedObject->status;
+    }
+
+    /**
+     * Returns the latest update.
+     *
+     * @return string|null
+     */
+    public function latest_human_status()
+    {
+        if ($update = $this->latest()) {
+            return trans('cachet.incidents.status.'.$update->status);
+        }
+
+        return $this->human_status();
+    }
+
+    /**
+     * Present the latest icon.
+     *
+     * @return string
+     */
+    public function latest_icon()
+    {
+        if ($update = $this->latest()) {
+            if (isset($this->icons[$update->status])) {
+                return $this->icons[$update->status];
+            }
+        }
+
+        return $this->icon();
+    }
+
+    /**
+     * Fetch the latest incident update.
+     *
+     * @return \CachetHQ\Cachet\Models\IncidentUpdate|void
+     */
+    public function latest()
+    {
+        if ($update = $this->wrappedObject->updates()->orderBy('created_at', 'desc')->first()) {
+            return $update;
+        }
+    }
+
+    /**
+     * Get the incident permalink.
+     *
+     * @return string
+     */
+    public function permalink()
+    {
+        return route('incident', $this->wrappedObject->id);
+    }
+
+    /**
+     * The duration since the last update (in seconds).
+     *
+     * @return int
+     */
+    public function duration()
+    {
+        if ($update = $this->latest()) {
+            dd($update->created_at->diffInSeconds($this->wrappedObject->created_at));
+
+            return $this->wrappedObject->created_at->diffInSeconds($update->created_at);
+        }
+
+        return 0;
+    }
+
+    /**
      * Convert the presenter instance to an array.
      *
      * @return string[]
@@ -191,10 +285,16 @@ class IncidentPresenter extends BasePresenter implements Arrayable
     public function toArray()
     {
         return array_merge($this->wrappedObject->toArray(), [
-            'human_status' => $this->human_status(),
-            'scheduled_at' => $this->scheduled_at(),
-            'created_at'   => $this->created_at(),
-            'updated_at'   => $this->updated_at(),
+            'human_status'        => $this->human_status(),
+            'latest_update_id'    => $this->latest() ? $this->latest()->id : null,
+            'latest_status'       => $this->latest_status(),
+            'latest_human_status' => $this->latest_human_status(),
+            'latest_icon'         => $this->latest_icon(),
+            'permalink'           => $this->permalink(),
+            'duration'            => $this->duration(),
+            'scheduled_at'        => $this->scheduled_at(),
+            'created_at'          => $this->created_at(),
+            'updated_at'          => $this->updated_at(),
         ]);
     }
 }

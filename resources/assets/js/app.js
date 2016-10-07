@@ -161,63 +161,38 @@ $(function() {
         }
     });
 
-    // Sortable components.
-    var componentList = document.getElementById("component-list");
-    if (componentList) {
-        new Sortable(componentList, {
-            group: "omega",
-            handle: ".drag-handle",
+    // Sortable models.
+    var orderableLists = document.querySelectorAll('[data-orderable-list]');
+
+    $.each(orderableLists, function (k, list) {
+        var url = $(list).data('orderableList');
+        var notifier = new Cachet.Notifier();
+
+        new Sortable(list, {
+            group: 'omega',
+            handle: '.drag-handle',
             onUpdate: function() {
-                var orderedComponentIds = $.map($('#component-list .striped-list-item'), function(elem) {
-                    return $(elem).data('component-id');
+                var orderedIds = $.map(list.querySelectorAll('[data-orderable-id]'), function(elem) {
+                    return $(elem).data('orderable-id');
                 });
 
                 $.ajax({
                     async: true,
-                    url: '/dashboard/api/components/order',
+                    url: url,
                     type: 'POST',
                     data: {
-                        ids: orderedComponentIds
+                        ids: orderedIds
                     },
                     success: function() {
-                        (new Cachet.Notifier()).notify('Component orders updated.', 'success');
+                        notifier.notify('Ordering updated.', 'success');
                     },
                     error: function() {
-                        (new Cachet.Notifier()).notify('Component orders not updated.', 'error');
+                        notifier.notify('Ordering not updated.', 'error');
                     }
                 });
             }
         });
-    }
-
-    // Sortable Component Groups
-    var componentGroupList = document.getElementById("component-group-list");
-    if (componentGroupList) {
-        new Sortable(componentGroupList, {
-            group: "omega",
-            handle: ".drag-handle",
-            onUpdate: function() {
-                var orderedComponentGroupsIds = $.map(
-                    $('#component-group-list .striped-list-item'),
-                    function(elem) {
-                        return $(elem).data('group-id');
-                    }
-                );
-                $.ajax({
-                    async: true,
-                    url: '/dashboard/api/components/groups/order',
-                    type: 'POST',
-                    data: {ids: orderedComponentGroupsIds},
-                    success: function() {
-                        (new Cachet.Notifier()).notify('Component groups order has been updated.', 'success');
-                    },
-                    error: function() {
-                        (new Cachet.Notifier()).notify('Component groups order could not be updated.', 'error');
-                    }
-                });
-            }
-        });
-    }
+    });
 
     // Toggle inline component statuses.
     $('form.component-inline').on('click', 'input[type=radio]', function() {
@@ -397,15 +372,21 @@ $(function() {
     }
 });
 
-function askConfirmation(callback) {
+function askConfirmation(callback, cancelCallback) {
     swal({
         type: "warning",
         title: "Confirm your action",
         text: "Are you sure you want to do this?",
+        buttonsStyling: false,
+        reverseButtons: true,
         confirmButtonText: "Yes",
-        confirmButtonColor: "#FF6F6F",
-        showCancelButton: true
-    }, function() {
-        callback();
+        confirmButtonClass: "btn btn-lg btn-danger",
+        cancelButtonClass: "btn btn-lg btn-default",
+        showCancelButton: true,
+        focusCancel: true
+    }).then(function () {
+        if (_.isFunction(callback)) callback();
+    }, function () {
+        if (_.isFunction(cancelCallback)) cancelCallback();
     });
 }

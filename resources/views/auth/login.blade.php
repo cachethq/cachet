@@ -10,7 +10,7 @@
                 <img src="{{ asset('/img/cachet-logo@2x.png') }}" class="img-responsive">
             </div>
 
-            <form method="POST" action="{{ route('auth.login', [], false) }}" accept-charset="UTF-8" autocomplete="off" name="{{ str_random(10) }}">
+            <form method="POST" action="{{ url('auth/login') }}" accept-charset="UTF-8" autocomplete="off" name="{{ str_random(10) }}">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                 @if(Session::has('error'))
@@ -36,7 +36,7 @@
                                 </span>
                             </a>
                         </div>
-                        <div class="col-xs-10">
+                        <div class="col-xs-9 col-xs-push-1">
                             <button type="submit" class="btn btn-success btn-lg btn-block btn-trans">{{ trans('dashboard.login.login') }}</button>
                         </div>
                     </div>

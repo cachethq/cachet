@@ -118,10 +118,10 @@ return [
             'analytics_piwik_siteid' => 'Id de tu sitio Piwik',
         ],
         'localization' => [
-            'site-timezone'          => 'Zona horaria del sitio',
-            'site-locale'            => 'Idioma del sitio',
-            'date-format'            => 'Formato de la fecha',
-            'incident-date-format'   => 'Formato de fecha de incidente',
+            'site-timezone'        => 'Zona horaria del sitio',
+            'site-locale'          => 'Idioma del sitio',
+            'date-format'          => 'Formato de la fecha',
+            'incident-date-format' => 'Formato de fecha de incidente',
         ],
         'security' => [
             'allowed-domains'      => 'Dominios permitidos',

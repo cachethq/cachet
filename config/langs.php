@@ -11,35 +11,35 @@
 
 return [
     // Enabled langs
-    'af'    => [
+    'af' => [
         'name'   => 'Afrikaans',
         'subset' => 'latin',
     ],
-    'ar'    => [
+    'ar' => [
         'name'   => 'Arabic',
         'subset' => 'latin',
     ],
-    'ca'    => [
+    'ca' => [
         'name'   => 'Catalan',
         'subset' => 'latin',
     ],
-    'cs'    => [
+    'cs' => [
         'name'   => 'Czech',
         'subset' => 'latin,latin-ext',
     ],
-    'da'    => [
+    'da' => [
         'name'   => 'Danish',
         'subset' => 'latin,latin-ext',
     ],
-    'de'    => [
+    'de' => [
         'name'   => 'Deutsch',
         'subset' => 'latin,latin-ext',
     ],
-    'el'    => [
+    'el' => [
         'name'   => 'Greek',
         'subset' => 'greek,greek-ext',
     ],
-    'en'    => [
+    'en' => [
         'name'   => 'English',
         'subset' => 'latin',
     ],
@@ -47,55 +47,55 @@ return [
         'name'   => 'CrowdIn - InContext Localization',
         'subset' => 'latin',
     ],
-    'es'    => [
+    'es' => [
         'name'   => 'Español',
         'subset' => 'latin,latin-ext',
     ],
-    'fa'    => [
+    'fa' => [
         'name'   => 'Persian',
         'subset' => 'latin',
     ],
-    'fi'    => [
+    'fi' => [
         'name'   => 'Finnish',
         'subset' => 'latin,latin-ext',
     ],
-    'fr'    => [
+    'fr' => [
         'name'   => 'Français',
         'subset' => 'latin,latin-ext',
     ],
-    'he'    => [
+    'he' => [
         'name'   => 'Hebrew',
         'subset' => 'latin',
     ],
-    'hu'    => [
+    'hu' => [
         'name'   => 'Hungarian',
         'subset' => 'latin,latin-ext',
     ],
-    'id'    => [
+    'id' => [
         'name'   => 'Indonesian',
         'subset' => 'latin',
     ],
-    'it'    => [
+    'it' => [
         'name'   => 'Italiano',
         'subset' => 'latin,latin-ext',
     ],
-    'ja'    => [
+    'ja' => [
         'name'   => 'Japanese',
         'subset' => 'latin',
     ],
-    'ko'    => [
+    'ko' => [
         'name'   => '한글',
         'subset' => 'latin',
     ],
-    'nl'    => [
+    'nl' => [
         'name'   => 'Nederlands',
         'subset' => 'latin,latin-ext',
     ],
-    'no'    => [
+    'no' => [
         'name'   => 'Norwegian',
         'subset' => 'latin,latin-ext',
     ],
-    'pl'    => [
+    'pl' => [
         'name'   => 'Polski',
         'subset' => 'latin,latin-ext',
     ],
@@ -107,19 +107,19 @@ return [
         'name'   => 'Portuguese, Portugal',
         'subset' => 'latin,latin-ext',
     ],
-    'ro'    => [
+    'ro' => [
         'name'   => 'Romanian',
         'subset' => 'latin,latin-ext',
     ],
-    'ru'    => [
+    'ru' => [
         'name'   => 'Русский',
         'subset' => 'latin,cyrillic',
     ],
-    'sq'    => [
+    'sq' => [
         'name'   => 'Albanian',
         'subset' => 'latin,latin-ext',
     ],
-    'sr'    => [
+    'sr' => [
         'name'   => 'Sebrian (Cyrillic)',
         'subset' => 'latin,cyrillic,cyrillic-ext',
     ],
@@ -127,15 +127,15 @@ return [
         'name'   => 'Swedish',
         'subset' => 'latin,latin-ext',
     ],
-    'tr'    => [
+    'tr' => [
         'name'   => 'Turkish',
         'subset' => 'latin,latin-ext',
     ],
-    'uk'    => [
+    'uk' => [
         'name'   => 'Ukranian',
         'subset' => 'latin,cyrillic-ext',
     ],
-    'vi'    => [
+    'vi' => [
         'name'   => 'Vietnamese',
         'subset' => 'latin,vietnamese',
     ],

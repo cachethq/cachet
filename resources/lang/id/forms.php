@@ -118,10 +118,10 @@ return [
             'analytics_piwik_siteid' => 'ID situs Piwik',
         ],
         'localization' => [
-            'site-timezone'          => 'Zona Waktu',
-            'site-locale'            => 'Bahasa',
-            'date-format'            => 'Format Tanggal',
-            'incident-date-format'   => 'Format Waktu Insiden',
+            'site-timezone'        => 'Zona Waktu',
+            'site-locale'          => 'Bahasa',
+            'date-format'          => 'Format Tanggal',
+            'incident-date-format' => 'Format Waktu Insiden',
         ],
         'security' => [
             'allowed-domains'      => 'Domain yang dibolehkan',

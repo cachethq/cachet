@@ -71,7 +71,7 @@ class Subscriber extends Model implements HasPresenter
     }
 
     /**
-     * A subscriber has many subscriptions.
+     * Get the subscriptions relation.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */

@@ -86,10 +86,6 @@ class MetricPointTest extends AbstractApiTestCase
 
     public function testPostMetricPointTimestampTimezone()
     {
-        if (defined('HHVM_VERSION')) {
-            $this->markTestSkipped('Timezones are broken on HHVM.');
-        }
-
         $this->beUser();
 
         // prevent tests breaking due to rolling into the next second

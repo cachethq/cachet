@@ -63,6 +63,13 @@ final class ReportIncidentCommand
     public $notify;
 
     /**
+     * Whether to stick the incident on top.
+     *
+     * @var bool
+     */
+    public $stickied;
+
+    /**
      * The date at which the incident occurred.
      *
      * @var string|null
@@ -96,6 +103,7 @@ final class ReportIncidentCommand
         'component_id'     => 'int|required_with:component_status',
         'component_status' => 'int|min:1|max:4|required_with:component_id',
         'notify'           => 'bool',
+        'stickied'         => 'bool',
         'incident_date'    => 'string',
         'template'         => 'string',
     ];
@@ -110,13 +118,14 @@ final class ReportIncidentCommand
      * @param int         $component_id
      * @param int         $component_status
      * @param bool        $notify
+     * @param bool        $stickied
      * @param string|null $incident_date
      * @param string|null $template
      * @param array|null  $template_vars
      *
      * @return void
      */
-    public function __construct($name, $status, $message, $visible, $component_id, $component_status, $notify, $incident_date, $template, array $template_vars = null)
+    public function __construct($name, $status, $message, $visible, $component_id, $component_status, $notify, $stickied, $incident_date, $template, array $template_vars = null)
     {
         $this->name = $name;
         $this->status = $status;
@@ -125,6 +134,7 @@ final class ReportIncidentCommand
         $this->component_id = $component_id;
         $this->component_status = $component_status;
         $this->notify = $notify;
+        $this->stickied = $stickied;
         $this->incident_date = $incident_date;
         $this->template = $template;
         $this->template_vars = $template_vars;
