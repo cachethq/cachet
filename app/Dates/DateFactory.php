@@ -14,6 +14,12 @@ namespace CachetHQ\Cachet\Dates;
 use DateTimeZone;
 use Jenssegers\Date\Date;
 
+/**
+ * This is the date factory class.
+ *
+ * @author Graham Campbell <graham@alt-three.com>
+ * @author James Brooks <james@alt-three.com>
+ */
 class DateFactory
 {
     /**

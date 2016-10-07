@@ -35,7 +35,7 @@
                         <select name="env[cache_driver]" class="form-control" required>
                             <option disabled>{{ trans('forms.setup.cache_driver') }}</option>
                             @foreach($cache_drivers as $driver => $driverName)
-                            <option value="{{ $driver }}" {{ Binput::old('env.cache_driver') == $driver ? "selected" : null }}>{{ $driverName }}</option>
+                            <option value="{{ $driver }}" {{ Binput::old('env.cache_driver') == $driver || $driver === "file" ? "selected" : null }}>{{ $driverName }}</option>
                             @endforeach
                         </select>
                         @if($errors->has('env.cache_driver'))
@@ -47,7 +47,7 @@
                         <select name="env[session_driver]" class="form-control" required>
                             <option disabled>{{ trans('forms.setup.session_driver') }}</option>
                             @foreach($cache_drivers as $driver => $driverName)
-                            <option value="{{ $driver }}" {{ Binput::old('env.session_driver') == $driver ? "selected" : null }}>{{ $driverName }}</option>
+                            <option value="{{ $driver }}" {{ Binput::old('env.session_driver') == $driver || $driver === "file" ? "selected" : null }}>{{ $driverName }}</option>
                             @endforeach
                         </select>
                         @if($errors->has('env.session_driver'))
@@ -59,7 +59,7 @@
                         <select name="env[mail_driver]" class="form-control" required>
                             <option disabled>{{ trans('forms.setup.mail_driver') }}</option>
                             @foreach($mail_drivers as $driver => $driverName)
-                            <option value="{{ $driver }}" {{ Binput::old('env.mail_driver') == $driver ? "selected" : null }}>{{ $driverName }}</option>
+                            <option value="{{ $driver }}" {{ Binput::old('env.mail_driver') == $driver || $driver === "log" ? "selected" : null }}>{{ $driverName }}</option>
                             @endforeach
                         </select>
                         @if($errors->has('env.mail_driver'))
