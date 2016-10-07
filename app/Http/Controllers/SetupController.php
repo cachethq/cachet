@@ -125,7 +125,7 @@ class SetupController extends Controller
             }
         }
 
-        return View::make('setup')
+        return View::make('setup.index')
             ->withPageTitle(trans('setup.setup'))
             ->withCacheDrivers($this->cacheDrivers)
             ->withMailDrivers($this->mailDrivers)
