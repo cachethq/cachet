@@ -108,7 +108,7 @@ class SubscriberController extends Controller
                 dispatch(new SubscribeSubscriberCommand($subscriber, $verified));
             }
         } catch (ValidationException $e) {
-            
+
             return Redirect::route('dashboard.subscribers.add')
                 ->withInput(Binput::all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.subscribers.add.failure')))
