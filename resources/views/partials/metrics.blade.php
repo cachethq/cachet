@@ -5,6 +5,9 @@
         <div class="row">
             <div class="col-xs-10">
                 <strong>
+                    @if($metric->component)
+                        <span class="label label-default">{{ $metric->component->name }}</span>
+                    @endif
                     {{ $metric->name }}
                     @if($metric->description)
                     <i class="ion ion-ios-help-outline" data-toggle="tooltip" data-title="{{ $metric->description }}"></i>
