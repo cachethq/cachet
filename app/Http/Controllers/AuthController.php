@@ -56,6 +56,7 @@ class AuthController extends Controller
             Auth::once($loginData);
 
             if (Auth::user()->hasTwoFactor) {
+
                 Session::put('2fa_id', Auth::user()->id);
 
                 return cachet_redirect('auth.two-factor');
@@ -82,6 +83,27 @@ class AuthController extends Controller
     {
         return View::make('auth.two-factor-auth');
     }
+    
+     /**
+     * Function to add TwoFactor Google Auth to an existing user
+     **/
+     
+     public function generateSecretKey(){
+         
+         $user = User::find(1);
+        
+         $key = Google2FA::generateSecretKey();
+         $user->google_2fa_secret=$key;
+
+         $user->update();
+
+
+     }
+     
+ 
+     
+
+
 
     /**
      * Validates the Two Factor token.
@@ -98,6 +120,7 @@ class AuthController extends Controller
 
             // Maybe a temp login here.
             Auth::loginUsingId($userId);
+            $user = Auth::user();
 
             $user = Auth::user();
 
