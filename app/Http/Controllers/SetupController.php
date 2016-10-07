@@ -25,6 +25,13 @@ use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\View;
 
+/**
+ * This is the setup controller.
+ *
+ * @author James Brooks <james@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
+ * @author Joseph Cohen <joe@alt-three.com>
+ */
 class SetupController extends Controller
 {
     /**
@@ -125,7 +132,7 @@ class SetupController extends Controller
             }
         }
 
-        return View::make('setup')
+        return View::make('setup.index')
             ->withPageTitle(trans('setup.setup'))
             ->withCacheDrivers($this->cacheDrivers)
             ->withMailDrivers($this->mailDrivers)
@@ -145,11 +152,11 @@ class SetupController extends Controller
         $v = Validator::make($postData, $this->rulesStep1);
 
         $v->sometimes('env.mail_host', 'required', function ($input) {
-            return $input->mail_driver === 'smtp';
+            return $input->env['mail_driver'] === 'smtp';
         });
 
         $v->sometimes(['env.mail_address', 'env.mail_username', 'env.mail_password'], 'required', function ($input) {
-            return $input->mail_driver !== 'log';
+            return $input->env['mail_driver'] !== 'log';
         });
 
         if ($v->passes()) {

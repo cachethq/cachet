@@ -325,16 +325,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.19.12",
+            "version": "3.19.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "5d5697c7bc9ab22ce718afb51e5496d0c5cb8778"
+                "reference": "57b0efed8fcf5d8c854bc1c26cf4a685af9108d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/5d5697c7bc9ab22ce718afb51e5496d0c5cb8778",
-                "reference": "5d5697c7bc9ab22ce718afb51e5496d0c5cb8778",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/57b0efed8fcf5d8c854bc1c26cf4a685af9108d9",
+                "reference": "57b0efed8fcf5d8c854bc1c26cf4a685af9108d9",
                 "shasum": ""
             },
             "require": {
@@ -401,7 +401,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2016-09-29 21:07:49"
+            "time": "2016-10-06 21:17:44"
         },
         {
             "name": "backup-manager/backup-manager",
@@ -1904,16 +1904,16 @@
         },
         {
             "name": "jenssegers/date",
-            "version": "v3.2.5",
+            "version": "v3.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jenssegers/date.git",
-                "reference": "e4d2b95009354756932cd12e40e3cbb18d20d88c"
+                "reference": "ce421c34d7d3be22f3afccaae3718cb58f82a488"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jenssegers/date/zipball/e4d2b95009354756932cd12e40e3cbb18d20d88c",
-                "reference": "e4d2b95009354756932cd12e40e3cbb18d20d88c",
+                "url": "https://api.github.com/repos/jenssegers/date/zipball/ce421c34d7d3be22f3afccaae3718cb58f82a488",
+                "reference": "ce421c34d7d3be22f3afccaae3718cb58f82a488",
                 "shasum": ""
             },
             "require": {
@@ -1957,7 +1957,7 @@
                 "time",
                 "translation"
             ],
-            "time": "2016-09-14 08:53:13"
+            "time": "2016-10-06 13:59:12"
         },
         {
             "name": "jeremeamia/SuperClosure",
@@ -4057,16 +4057,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.26.0",
+            "version": "v1.26.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "81c2b5fd36581370c7731387f05dcdb577050513"
+                "reference": "a09d8ee17ac1cfea29ed60c83960ad685c6a898d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/81c2b5fd36581370c7731387f05dcdb577050513",
-                "reference": "81c2b5fd36581370c7731387f05dcdb577050513",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/a09d8ee17ac1cfea29ed60c83960ad685c6a898d",
+                "reference": "a09d8ee17ac1cfea29ed60c83960ad685c6a898d",
                 "shasum": ""
             },
             "require": {
@@ -4114,7 +4114,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2016-10-02 16:19:13"
+            "time": "2016-10-05 18:57:41"
         },
         {
             "name": "vlucas/phpdotenv",

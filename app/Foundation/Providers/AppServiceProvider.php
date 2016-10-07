@@ -21,7 +21,7 @@ use Illuminate\Support\Str;
  * This is the app service provider.
  *
  * @author James Brooks <james@alt-three.com>
- * @author Joe Cohen <joe@alt-three.com>
+ * @author Joseph Cohen <joe@alt-three.com>
  * @author Graham Campbell <graham@alt-three.com>
  */
 class AppServiceProvider extends ServiceProvider
