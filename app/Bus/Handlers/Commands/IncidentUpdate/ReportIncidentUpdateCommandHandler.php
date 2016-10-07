@@ -44,7 +44,7 @@ class ReportIncidentUpdateCommandHandler
 
         // Update the original incident with the new status.
         dispatch(new UpdateIncidentCommand(
-            $incident,
+            $command->incident,
             null,
             $command->status,
             null,
