@@ -21,7 +21,7 @@
     <title>{{ $page_title or $site_title }}</title>
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&subset={{ $font_subset }}" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="{{ elixir('dist/css/all.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('build/dist/css/all.css') }}">
     @yield('css')
 
     @include('partials.crowdin')
@@ -30,5 +30,5 @@
         var Global = {};
         Global.locale = '{{ $app_locale }}';
     </script>
-    <script src="{{ elixir('dist/js/all.js') }}"></script>
+    <script src="{{ secure_asset('build/dist/js/all.js') }}"></script>
 </head>

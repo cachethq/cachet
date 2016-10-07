@@ -28,7 +28,7 @@
                             <h3>{{ trans('dashboard.login.two-factor') }}</h3>
                         </div>
                         <br>
-                        <form method="POST" action="/auth/2fa" accept-charset="UTF-8">
+                        <form method="POST" action="2fa" accept-charset="UTF-8">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                             <fieldset>

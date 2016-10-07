@@ -169,4 +169,14 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     {
         return trim($this->google_2fa_secret) !== '';
     }
+    
+    /**
+     * Returns google 2fa secret key.
+     *
+     * @return bool
+     */
+    public function get2faSecretKey()
+    {
+        return $this->google_2fa_secret;
+    }
 }
