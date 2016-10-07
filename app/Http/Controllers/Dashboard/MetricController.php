@@ -134,9 +134,7 @@ class MetricController extends Controller
     {
         return View::make('dashboard.metrics.edit')
             ->withPageTitle(trans('dashboard.metrics.edit.title').' - '.trans('dashboard.dashboard'))
-            ->withMetric($metric)
-            ->withComponentsInGroups(ComponentGroup::with('components')->get())
-            ->withComponentsOutGroups(Component::where('group_id', 0)->get());
+            ->withMetric($metric);
     }
 
     /**
@@ -159,8 +157,7 @@ class MetricController extends Controller
                 Binput::get('display_chart', null, false),
                 Binput::get('places', null, false),
                 Binput::get('default_view', null, false),
-                Binput::get('threshold', null, false),
-                Binput::get('component_id', null, false)
+                Binput::get('threshold', null, false)
             ));
         } catch (ValidationException $e) {
             return cachet_redirect('dashboard.metrics.edit', [$metric->id])
