@@ -63,7 +63,7 @@ class MetricPoint extends Model implements HasPresenter
     ];
 
     /**
-     * A metric point belongs to a metric unit.
+     * Get the metric relation.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

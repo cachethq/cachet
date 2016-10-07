@@ -18,10 +18,12 @@ use CachetHQ\Cachet\Bus\Commands\Subscriber\UnsubscribeSubscriptionCommand;
 use CachetHQ\Cachet\Bus\Commands\Subscriber\UpdateSubscriberSubscriptionCommand;
 use CachetHQ\Cachet\Bus\Commands\Subscriber\VerifySubscriberCommand;
 use CachetHQ\Cachet\Models\Component;
+use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Subscriber;
 use CachetHQ\Cachet\Models\Subscription;
 use GrahamCampbell\Binput\Facades\Binput;
 use GrahamCampbell\Markdown\Facades\Markdown;
+use Illuminate\Contracts\Config\Repository;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Redirect;
@@ -56,10 +58,9 @@ class SubscribeController extends Controller
     {
         $email = Binput::get('email');
         $subscriptions = Binput::get('subscriptions');
+        $verified = app(Repository::class)->get('setting.skip_subscriber_verification');
 
         try {
-            $verified = false;
-
             $subscription = dispatch(new SubscribeSubscriberCommand($email, $verified));
         } catch (ValidationException $e) {
             return Redirect::route('status-page')
@@ -68,12 +69,12 @@ class SubscribeController extends Controller
                 ->withErrors($e->getMessageBag());
         }
 
-        $message = $subscription->is_verified ?
-            trans('cachet.subscriber.email.already-subscribed', ['email' => $email]) :
-            trans('cachet.subscriber.email.subscribed');
+        if ($subscription->is_verified) {
+            return Redirect::route('status-page')->withSuccess(trans('cachet.subscriber.email.already-subscribed', ['email' => $email]));
+        }
 
         return Redirect::route('subscribe.manage', $subscription->verify_code)
-            ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), $message));
+            ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('cachet.subscriber.email.subscribed')));
     }
 
     /**
@@ -147,15 +148,19 @@ class SubscribeController extends Controller
         }
 
         $subscriber = Subscriber::where('verify_code', '=', $code)->first();
+        $usedComponentGroups = Component::enabled()->where('group_id', '>', 0)->groupBy('group_id')->pluck('group_id');
+        $componentGroups = ComponentGroup::whereIn('id', $usedComponentGroups)->orderBy('order')->get();
+        $ungroupedComponents = Component::enabled()->where('group_id', 0)->orderBy('order')->orderBy('created_at')->get();
 
         if (!$subscriber) {
             throw new BadRequestHttpException();
         }
 
         return View::make('subscribe.manage')
-            ->withComponents(Component::all())
+            ->withUngroupedComponents($ungroupedComponents)
             ->withSubscriber($subscriber)
-            ->withSubscriptions($subscriber->subscriptions->pluck('component_id')->all());
+            ->withSubscriptions($subscriber->subscriptions->pluck('component_id')->all())
+            ->withComponentGroups($componentGroups);
     }
 
     /**
@@ -180,8 +185,6 @@ class SubscribeController extends Controller
         try {
             dispatch(new UpdateSubscriberSubscriptionCommand($subscriber, Binput::get('subscriptions')));
         } catch (ValidationException $e) {
-            dd($e->getMessageBag());
-
             return Redirect::route('subscribe.manage', $subscriber->verify_code)
                 ->withInput(Binput::all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('cachet.subscriber.email.failure')))

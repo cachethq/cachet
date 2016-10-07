@@ -53,6 +53,9 @@ return [
         'incident_time'      => 'When did this incident occur?',
         'notify_subscribers' => 'Notify subscribers?',
         'visibility'         => 'Incident Visibility',
+        'stick_status'       => 'Stick Incident',
+        'stickied'           => 'Stickied',
+        'not_stickied'       => 'Not Stickied',
         'public'             => 'Viewable by public',
         'logged_in_only'     => 'Only visible to logged in users',
         'templates'          => [
@@ -74,11 +77,29 @@ return [
         'enabled'     => 'Component enabled?',
 
         'groups' => [
-            'name'               => 'Name',
-            'collapsing'         => 'Choose visibility of the group',
-            'visible'            => 'Always expanded',
-            'collapsed'          => 'Collapse the group by default',
-            'collapsed_incident' => 'Collapse the group, but expand if there are issues',
+            'name'                     => 'Name',
+            'collapsing'               => 'Expand/Collapse options',
+            'visible'                  => 'Always expanded',
+            'collapsed'                => 'Collapse the group by default',
+            'collapsed_incident'       => 'Collapse the group, but expand if there are issues',
+            'visibility'               => 'Visibility',
+            'visibility_public'        => 'Visible to public',
+            'visibility_authenticated' => 'Visible only to logged in users',
+        ],
+    ],
+
+    // Action form fields
+    'actions' => [
+        'name'               => 'Name',
+        'description'        => 'Description',
+        'start_at'           => 'Schedule start time',
+        'timezone'           => 'Timezone',
+        'schedule_frequency' => 'Schedule frequency (in seconds)',
+        'completion_latency' => 'Completion latency (in seconds)',
+        'group'              => 'Group',
+        'active'             => 'Active?',
+        'groups'             => [
+            'name' => 'Group Name',
         ],
     ],
 
@@ -104,17 +125,21 @@ return [
 
     // Settings
     'settings' => [
-        /// Application setup
+        // Application setup
         'app-setup' => [
-            'site-name'              => 'Site Name',
-            'site-url'               => 'Site URL',
-            'display-graphs'         => 'Display graphs on status page?',
-            'about-this-page'        => 'About this page',
-            'days-of-incidents'      => 'How many days of incidents to show?',
-            'banner'                 => 'Banner Image',
-            'banner-help'            => "It's recommended that you upload files no bigger than 930px wide .",
-            'subscribers'            => 'Allow people to signup to email notifications?',
-            'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
+            'site-name'                    => 'Site Name',
+            'site-url'                     => 'Site URL',
+            'display-graphs'               => 'Display graphs on status page?',
+            'about-this-page'              => 'About this page',
+            'days-of-incidents'            => 'How many days of incidents to show?',
+            'banner'                       => 'Banner Image',
+            'banner-help'                  => "It's recommended that you upload files no bigger than 930px wide .",
+            'subscribers'                  => 'Allow people to signup to email notifications?',
+            'skip_subscriber_verification' => 'Skip verifying of users? (Be warned, you could be spammed)',
+            'automatic_localization'       => 'Automatically localise your status page to your visitor\'s language?',
+            'enable_external_dependencies' => 'Enable Third Party Dependencies (Google Fonts, Trackers, etc...)',
+            'show_timezone'                => 'Show the timezone the status page is running in.',
+            'only_disrupted_days'          => 'Only show days containing incidents in the timeline?',
         ],
         'analytics' => [
             'analytics_google'       => 'Google Analytics code',
@@ -136,12 +161,12 @@ return [
             'custom-css' => 'Custom Stylesheet',
         ],
         'theme' => [
-            'background-color'        => 'Background Color',
+            'background-color'        => 'Background color',
             'background-fills'        => 'Background fills (components, incidents, footer)',
             'banner-background-color' => 'Banner background color',
             'banner-padding'          => 'Banner padding',
             'fullwidth-banner'        => 'Enable fullwidth banner?',
-            'text-color'              => 'Text Color',
+            'text-color'              => 'Text color',
             'dashboard-login'         => 'Show dashboard button in the footer?',
             'reds'                    => 'Red (used for errors)',
             'blues'                   => 'Blue (used for information)',
@@ -172,6 +197,10 @@ return [
             'description' => 'Invite your team members by entering their email addresses here.',
             'email'       => 'Email #:id',
         ],
+    ],
+
+    'general' => [
+        'timezone' => 'Select Timezone',
     ],
 
     // Buttons

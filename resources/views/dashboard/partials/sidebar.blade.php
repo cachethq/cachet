@@ -10,7 +10,7 @@
         </div>
         <div class="clearfix"></div>
         <div class="quick-add-incident">
-            <a class="btn btn-block btn-primary uppercase" href="{{ route('dashboard.incidents.add') }}">
+            <a class="btn btn-block btn-info" href="{{ route('dashboard.incidents.add') }}">
                 <i class="ion ion-android-checkmark-circle visible-sm"></i>
                 <span class="hidden-sm">{{ trans('dashboard.incidents.add.title') }}</span>
             </a>

@@ -11,6 +11,10 @@
 
 namespace CachetHQ\Cachet\Http\Controllers;
 
+use CachetHQ\Cachet\Bus\Events\User\UserFailedTwoAuthEvent;
+use CachetHQ\Cachet\Bus\Events\User\UserLoggedInEvent;
+use CachetHQ\Cachet\Bus\Events\User\UserLoggedOutEvent;
+use CachetHQ\Cachet\Bus\Events\User\UserPassedTwoAuthEvent;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -67,6 +71,8 @@ class AuthController extends Controller
 
             // We probably want to add support for "Remember me" here.
             Auth::attempt($loginData);
+
+            event(new UserLoggedInEvent(Auth::user()));
 
             return Redirect::intended('dashboard');
         }
@@ -161,8 +167,14 @@ class AuthController extends Controller
             $google_2Fa_secret = $user->get2faSecretKey();
             $valid = Google2FA::verifyKey($google_2Fa_secret, $code);
             if ($valid) {
+                event(new UserPassedTwoAuthEvent(Auth::user()));
+
+                event(new UserLoggedInEvent(Auth::user()));
+
                 return Redirect::intended('dashboard');
             } else {
+                event(new UserFailedTwoAuthEvent(Auth::user()));
+
                 // Failed login, log back out.
                 Auth::logout();
 
@@ -181,6 +193,8 @@ class AuthController extends Controller
      */
     public function logoutAction()
     {
+        event(new UserLoggedOutEvent(Auth::user()));
+
         Auth::logout();
 
         return Redirect::to('/');

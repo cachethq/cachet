@@ -16,6 +16,7 @@ use CachetHQ\Cachet\Bus\Commands\ComponentGroup\RemoveComponentGroupCommand;
 use CachetHQ\Cachet\Bus\Commands\ComponentGroup\UpdateComponentGroupCommand;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use GrahamCampbell\Binput\Facades\Binput;
+use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
@@ -30,6 +31,23 @@ use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 class ComponentGroupController extends AbstractApiController
 {
     /**
+     * The user session object.
+     *
+     * @var \Illuminate\Contracts\Auth\Guard
+     */
+    protected $guard;
+
+    /**
+     * Creates a new component group controller instance.
+     *
+     * @param \Illuminate\Contracts\Auth\Guard $guard
+     */
+    public function __construct(Guard $guard)
+    {
+        $this->guard = $guard;
+    }
+
+    /**
      * Get all groups.
      *
      * @return \Illuminate\Http\JsonResponse
@@ -37,11 +55,14 @@ class ComponentGroupController extends AbstractApiController
     public function getGroups()
     {
         $groups = ComponentGroup::query();
+        if (!$this->guard->check()) {
+            $groups = ComponentGroup::visible();
+        }
 
         $groups->search(Binput::except(['sort', 'order', 'per_page']));
 
         if ($sortBy = Binput::get('sort')) {
-            $direction = Binput::has('order') && Binput::get('order') == 'desc';
+            $direction = Binput::get('order', 'asc');
 
             $groups->sort($sortBy, $direction);
         }
@@ -74,7 +95,8 @@ class ComponentGroupController extends AbstractApiController
             $group = dispatch(new AddComponentGroupCommand(
                 Binput::get('name'),
                 Binput::get('order', 0),
-                Binput::get('collapsed', 0)
+                Binput::get('collapsed', 0),
+                Binput::get('visible', ComponentGroup::VISIBLE_AUTHENTICATED)
             ));
         } catch (QueryException $e) {
             throw new BadRequestHttpException();
@@ -97,7 +119,8 @@ class ComponentGroupController extends AbstractApiController
                 $group,
                 Binput::get('name'),
                 Binput::get('order'),
-                Binput::get('collapsed')
+                Binput::get('collapsed'),
+                Binput::get('visible')
             ));
         } catch (QueryException $e) {
             throw new BadRequestHttpException();

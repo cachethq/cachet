@@ -65,9 +65,10 @@ class ReportIncidentCommandHandler
     public function handle(ReportIncidentCommand $command)
     {
         $data = [
-            'name'    => $command->name,
-            'status'  => $command->status,
-            'visible' => $command->visible,
+            'name'     => $command->name,
+            'status'   => $command->status,
+            'visible'  => $command->visible,
+            'stickied' => $command->stickied,
         ];
 
         if ($command->template) {

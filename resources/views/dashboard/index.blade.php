@@ -18,8 +18,7 @@
 
     <div class="row">
       <div class="col-md-12">
-          <h4 class="sub-header">{{ trans('dashboard.components.component_statuses') }}</h4>
-          <div class="section-components">
+          <div class="section-components no-select">
               @if(!$component_groups->isEmpty() || !$ungrouped_components->isEmpty())
               @include('dashboard.partials.components')
               @else
@@ -62,9 +61,9 @@
     <div class="row">
         <div class="col-sm-12 col-lg-6">
             <div class="stats-widget">
-                <div class='stats-top'>
-                    <span class='stats-value'>{{ trans('dashboard.widgets.support') }}</span>
-                    <span class='stats-label'>{!! trans('dashboard.widgets.support_subtitle') !!}</span>
+                <div class="stats-top">
+                    <span class="stats-value">{{ trans('dashboard.widgets.support') }}</span>
+                    <span class="stats-label">{!! trans('dashboard.widgets.support_subtitle') !!}</span>
                 </div>
             </div>
         </div>
@@ -88,12 +87,7 @@
         @endif
     </div>
 </div>
-@if(Session::get('setup.done'))
+@if ($welcome_user)
 @include('dashboard.partials.welcome-modal')
-<script>
-(function() {
-    $('#welcome-modal').modal('show');
-}());
-</script>
 @endif
 @stop

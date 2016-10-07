@@ -11,11 +11,10 @@
 
 namespace CachetHQ\Cachet\Bus\Handlers\Events\Component;
 
-use CachetHQ\Cachet\Bus\Events\Component\ComponentWasUpdatedEvent;
+use CachetHQ\Cachet\Bus\Events\Component\ComponentStatusWasUpdatedEvent;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Subscriber;
 use Illuminate\Contracts\Mail\MailQueue;
-use Illuminate\Mail\Message;
 use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
 
 class SendComponentUpdateEmailNotificationHandler
@@ -51,13 +50,18 @@ class SendComponentUpdateEmailNotificationHandler
     /**
      * Handle the event.
      *
-     * @param \CachetHQ\Cachet\Bus\Events\Component\ComponentWasUpdatedEvent $event
+     * @param \CachetHQ\Cachet\Bus\Events\Component\ComponentStatusWasUpdatedEvent $event
      *
      * @return void
      */
-    public function handle(ComponentWasUpdatedEvent $event)
+    public function handle(ComponentStatusWasUpdatedEvent $event)
     {
         $component = $event->component;
+
+        // Don't email anything if the status hasn't changed.
+        if ($event->original_status === $event->new_status) {
+            return;
+        }
 
         // First notify all global subscribers.
         $globalSubscribers = $this->subscriber->isVerified()->isGlobal()->get();
@@ -106,7 +110,7 @@ class SendComponentUpdateEmailNotificationHandler
         $this->mailer->queue([
             'html' => 'emails.components.update-html',
             'text' => 'emails.components.update-text',
-        ], $mail, function (Message $message) use ($mail) {
+        ], $mail, function ($message) use ($mail) {
             $message->to($mail['email'])->subject($mail['subject']);
         });
     }

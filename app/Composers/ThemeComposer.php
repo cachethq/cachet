@@ -11,11 +11,30 @@
 
 namespace CachetHQ\Cachet\Composers;
 
+use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\View\View;
-use Illuminate\Support\Facades\Config;
 
 class ThemeComposer
 {
+    /**
+     * The illuminate config instance.
+     *
+     * @var \Illuminate\Contracts\Config\Repository
+     */
+    protected $config;
+
+    /**
+     * Create a new theme composer.
+     *
+     * @param \Illuminate\Contracts\Config\Repository $config
+     *
+     * @return void
+     */
+    public function __construct(Repository $config)
+    {
+        $this->config = $config;
+    }
+
     /**
      * Bind data to the view.
      *
@@ -26,17 +45,17 @@ class ThemeComposer
     public function compose(View $view)
     {
         // Theme colors.
-        $view->withThemeBackgroundColor(Config::get('setting.style_background_color', '#F0F3F4'));
-        $view->withThemeBackgroundFills(Config::get('setting.style_background_fills', '#FFFFFF'));
-        $view->withThemeBannerBackgroundColor(Config::get('setting.style_banner_background_color', ''));
-        $view->withThemeBannerPadding(Config::get('setting.style_banner_padding', '40px 0'));
-        $view->withThemeTextColor(Config::get('setting.style_text_color', '#333333'));
-        $view->withThemeReds(Config::get('setting.style_reds', '#ff6f6f'));
-        $view->withThemeBlues(Config::get('setting.style_blues', '#3498db'));
-        $view->withThemeGreens(Config::get('setting.style_greens', '#7ED321'));
-        $view->withThemeYellows(Config::get('setting.style_yellows', '#F7CA18'));
-        $view->withThemeOranges(Config::get('setting.style_oranges', '#FF8800'));
-        $view->withThemeMetrics(Config::get('setting.style_metrics', '#0dccc0'));
-        $view->withThemeLinks(Config::get('setting.style_links', '#7ED321'));
+        $view->withThemeBackgroundColor($this->config->get('setting.style_background_color', '#F0F3F4'));
+        $view->withThemeBackgroundFills($this->config->get('setting.style_background_fills', '#FFFFFF'));
+        $view->withThemeBannerBackgroundColor($this->config->get('setting.style_banner_background_color', ''));
+        $view->withThemeBannerPadding($this->config->get('setting.style_banner_padding', '40px 0'));
+        $view->withThemeTextColor($this->config->get('setting.style_text_color', '#333333'));
+        $view->withThemeReds($this->config->get('setting.style_reds', '#ff6f6f'));
+        $view->withThemeBlues($this->config->get('setting.style_blues', '#3498db'));
+        $view->withThemeGreens($this->config->get('setting.style_greens', '#7ED321'));
+        $view->withThemeYellows($this->config->get('setting.style_yellows', '#F7CA18'));
+        $view->withThemeOranges($this->config->get('setting.style_oranges', '#FF8800'));
+        $view->withThemeMetrics($this->config->get('setting.style_metrics', '#0dccc0'));
+        $view->withThemeLinks($this->config->get('setting.style_links', '#7ED321'));
     }
 }

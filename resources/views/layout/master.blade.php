@@ -46,8 +46,10 @@
 
     <title>{{ $site_title }}</title>
 
+    @if($enable_external_dependencies)
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&subset={{ $font_subset }}" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="{{ elixir('dist/css/all.css') }}">
+    @endif
+    <link rel="stylesheet" href="{{ elixir('dist/css/app.css') }}">
 
     @include('partials.stylesheet')
 

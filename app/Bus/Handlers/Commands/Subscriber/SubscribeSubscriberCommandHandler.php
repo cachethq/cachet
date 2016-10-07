@@ -44,23 +44,25 @@ class SubscribeSubscriberCommandHandler
 
         // Decide what to subscribe the subscriber to.
         if ($subscriptions = $command->subscriptions) {
-            $subscriptions = Component::whereIn('id', $subscriptions);
+            $components = Component::whereIn('id', $subscriptions)->get();
         } else {
-            $subscriptions = Component::all();
+            $components = Component::all();
         }
 
-        foreach ($subscriptions as $component) {
+        $components->map(function ($component) use ($subscriber) {
             Subscription::create([
                 'subscriber_id' => $subscriber->id,
                 'component_id'  => $component->id,
             ]);
-        }
+        });
 
         if ($command->verified) {
             dispatch(new VerifySubscriberCommand($subscriber));
         } else {
             event(new SubscriberHasSubscribedEvent($subscriber));
         }
+
+        $subscriber->load('subscriptions');
 
         return $subscriber;
     }

@@ -28,10 +28,12 @@ return [
     'incidents' => [
         'none'          => 'No incidents reported',
         'past'          => 'Past Incidents',
-        'previous_week' => 'Previous Week',
-        'next_week'     => 'Next Week',
+        'previous_week' => 'Previous week',
+        'next_week'     => 'Next week',
+        'stickied'      => 'Stickied Incidents',
         'scheduled'     => 'Scheduled Maintenance',
         'scheduled_at'  => ', scheduled :timestamp',
+        'posted'        => 'Posted :timestamp',
         'status'        => [
             0 => 'Scheduled', // TODO: Hopefully remove this.
             1 => 'Investigating',
@@ -45,7 +47,7 @@ return [
     'service' => [
         'good'  => '[0,1] System operational|[2,Inf] All systems are operational',
         'bad'   => '[0,1] The system is currently experiencing issues|[2,Inf] Some systems are experiencing issues',
-        'major' => '[0,1] The service experiencing a major outage|[2,Inf] Some systems are experiencing a major outage',
+        'major' => '[0,1] The service is experiencing a major outage|[2,Inf] Some systems are experiencing a major outage',
     ],
 
     'api' => [
@@ -65,7 +67,7 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe' => 'Subscribe to get the most recent updates',
+        'subscribe' => 'Subscribe to get the updates',
         'button'    => 'Subscribe',
         'manage'    => [
             'no_subscriptions' => 'You\'re currently subscribed to all updates.',
@@ -136,6 +138,7 @@ return [
     'home'            => 'Home',
     'description'     => 'Stay up to date with the latest service updates from :app.',
     'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
+    'timezone'        => 'Times are shown in :timezone.',
     'about_this_site' => 'About This Site',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',
