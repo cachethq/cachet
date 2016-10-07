@@ -156,7 +156,6 @@ class AuthController extends Controller
 
         $session = Session::getFacadeRoot();
     
-
        if ($userId = $session->pull('2fa_id')) {
             $code = Binput::get('code');
 
@@ -166,6 +165,8 @@ class AuthController extends Controller
 
             $google_2Fa_secret = $user->get2faSecretKey();
             $valid = Google2FA::verifyKey($google_2Fa_secret, $code);
+            
+
             if ($valid) {
                 event(new UserPassedTwoAuthEvent(Auth::user()));
 
