@@ -25,6 +25,13 @@ use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\View;
 
+/**
+ * This is the setup controller.
+ *
+ * @author James Brooks <james@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
+ * @author Joseph Cohen <joe@alt-three.com>
+ */
 class SetupController extends Controller
 {
     /**
