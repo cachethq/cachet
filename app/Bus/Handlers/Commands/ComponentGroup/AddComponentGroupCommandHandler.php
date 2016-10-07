@@ -30,6 +30,7 @@ class AddComponentGroupCommandHandler
             'name'      => $command->name,
             'order'     => $command->order,
             'collapsed' => $command->collapsed,
+            'visible'   => $command->visible,
         ]);
 
         event(new ComponentGroupWasAddedEvent($group));

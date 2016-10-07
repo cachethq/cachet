@@ -48,6 +48,15 @@ class EventServiceProvider extends ServiceProvider
         'CachetHQ\Cachet\Bus\Events\Component\ComponentWasUpdatedEvent' => [
             //
         ],
+        'CachetHQ\Cachet\Bus\Events\IncidentUpdate\IncidentUpdateWasRemovedEvent' => [
+            //
+        ],
+        'CachetHQ\Cachet\Bus\Events\IncidentUpdate\IncidentUpdateWasReportedEvent' => [
+            //
+        ],
+        'CachetHQ\Cachet\Bus\Events\IncidentUpdate\IncidentUpdateWasUpdatedEvent' => [
+            //
+        ],
         'CachetHQ\Cachet\Bus\Events\Incident\IncidentWasRemovedEvent' => [
             //
         ],

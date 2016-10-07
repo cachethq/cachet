@@ -14,7 +14,7 @@ namespace CachetHQ\Cachet\Composers\Modules;
 use Illuminate\Contracts\View\View;
 
 /**
- * This is the status page composer.
+ * This is the timeline composer.
  *
  * @author James Brooks <james@alt-three.com>
  * @author Connor S. Parks <connor@connorvg.tv>
@@ -22,7 +22,7 @@ use Illuminate\Contracts\View\View;
 class TimelineComposer
 {
     /**
-     * Index page view composer.
+     * Bind data to the view.
      *
      * @param \Illuminate\Contracts\View\View $view
      *

@@ -61,9 +61,9 @@
     <div class="row">
         <div class="col-sm-12 col-lg-6">
             <div class="stats-widget">
-                <div class='stats-top'>
-                    <span class='stats-value'>{{ trans('dashboard.widgets.support') }}</span>
-                    <span class='stats-label'>{!! trans('dashboard.widgets.support_subtitle') !!}</span>
+                <div class="stats-top">
+                    <span class="stats-value">{{ trans('dashboard.widgets.support') }}</span>
+                    <span class="stats-label">{!! trans('dashboard.widgets.support_subtitle') !!}</span>
                 </div>
             </div>
         </div>

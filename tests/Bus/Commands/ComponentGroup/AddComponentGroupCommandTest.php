@@ -14,6 +14,7 @@ namespace CachetHQ\Tests\Cachet\Bus\Commands\ComponentGroup;
 use AltThree\TestBench\CommandTrait;
 use CachetHQ\Cachet\Bus\Commands\ComponentGroup\AddComponentGroupCommand;
 use CachetHQ\Cachet\Bus\Handlers\Commands\ComponentGroup\AddComponentGroupCommandHandler;
+use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 
 /**
@@ -28,9 +29,16 @@ class AddComponentGroupCommandTest extends AbstractTestCase
 
     protected function getObjectAndParams()
     {
-        $params = ['name' => 'Test', 'order' => 0, 'collapsed' => 1];
+        $params = [
+            'name'      => 'Test',
+            'order'     => 0,
+            'collapsed' => 1,
+            'visible'   => ComponentGroup::VISIBLE_AUTHENTICATED,
+        ];
 
-        $object = new AddComponentGroupCommand($params['name'], $params['order'], $params['collapsed']);
+        $object = new AddComponentGroupCommand(
+            $params['name'], $params['order'], $params['collapsed'], $params['visible']
+        );
 
         return compact('params', 'object');
     }

@@ -49,6 +49,13 @@ final class UpdateComponentGroupCommand
     public $collapsed;
 
     /**
+     * Is the component visible to public?
+     *
+     * @var int
+     */
+    public $visible;
+
+    /**
      * The validation rules.
      *
      * @var string[]
@@ -57,6 +64,7 @@ final class UpdateComponentGroupCommand
         'name'      => 'string',
         'order'     => 'int',
         'collapsed' => 'int|between:0,3',
+        'visible'   => 'bool',
     ];
 
     /**
@@ -66,14 +74,16 @@ final class UpdateComponentGroupCommand
      * @param string                                 $name
      * @param int                                    $order
      * @param int                                    $collapsed
+     * @param int                                    $visible
      *
      * @return void
      */
-    public function __construct(ComponentGroup $group, $name, $order, $collapsed)
+    public function __construct(ComponentGroup $group, $name, $order, $collapsed, $visible)
     {
         $this->group = $group;
         $this->name = $name;
         $this->order = (int) $order;
         $this->collapsed = $collapsed;
+        $this->visible = (int) $visible;
     }
 }

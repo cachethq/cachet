@@ -117,6 +117,17 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="hidden" value="0" name="only_disrupted_days">
+                                        <input type="checkbox" value="1" name="only_disrupted_days" {{ $only_disrupted_days ? 'checked' : null }}>
+                                        {{ trans('forms.settings.app-setup.only_disrupted_days') }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
                     </fieldset>
 
                     <div class="row">

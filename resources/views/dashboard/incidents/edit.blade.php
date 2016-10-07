@@ -24,22 +24,22 @@
                     <div class="form-group">
                         <label for="incident-name">{{ trans('forms.incidents.status') }}</label><br>
                         <label class="radio-inline">
-                            <input type="radio" name="status" value="1" {{ ($incident->status == 1) ? "checked=checked" : "" }}>
+                            <input type="radio" name="status" value="1" {{ ($incident->status == 1) ? "checked='checked'" : "" }}>
                             <i class="ion ion-flag"></i>
                             {{ trans('cachet.incidents.status')[1] }}
                         </label>
                         <label class="radio-inline">
-                            <input type="radio" name="status" value="2" {{ ($incident->status == 2) ? "checked=checked" : "" }}>
+                            <input type="radio" name="status" value="2" {{ ($incident->status == 2) ? "checked='checked'" : "" }}>
                             <i class="ion ion-alert-circled"></i>
                             {{ trans('cachet.incidents.status')[2] }}
                         </label>
                         <label class="radio-inline">
-                            <input type="radio" name="status" value="3" {{ ($incident->status == 3) ? "checked=checked" : "" }}>
+                            <input type="radio" name="status" value="3" {{ ($incident->status == 3) ? "checked='checked'" : "" }}>
                             <i class="ion ion-eye"></i>
                             {{ trans('cachet.incidents.status')[3] }}
                         </label>
                         <label class="radio-inline">
-                            <input type="radio" name="status" value="4" {{ ($incident->status == 4) ? "checked=checked" : "" }}>
+                            <input type="radio" name="status" value="4" {{ ($incident->status == 4) ? "checked='checked'" : "" }}>
                             <i class="ion ion-checkmark"></i>
                             {{ trans('cachet.incidents.status')[4] }}
                         </label>
@@ -47,19 +47,19 @@
                     <div class="form-group">
                         <label for="incident-visibility">{{ trans('forms.incidents.visibility') }}</label>
                         <select name="visible" id="incident-visibility" class="form-control">
-                            <option value='1' {{ $incident->visible === 1 ? 'selected' : null }}>{{ trans('forms.incidents.public') }}</option>
-                            <option value='0' {{ $incident->visible === 0 ? 'selected' : null }}>{{ trans('forms.incidents.logged_in_only') }}</option>
+                            <option value="1" {{ $incident->visible === 1 ? 'selected' : null }}>{{ trans('forms.incidents.public') }}</option>
+                            <option value="0" {{ $incident->visible === 0 ? 'selected' : null }}>{{ trans('forms.incidents.logged_in_only') }}</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="incident-stick">{{ trans('forms.incidents.stick_status') }}</label>
                         <select name="stickied" id="incident-stick" class="form-control">
-                            <option value='1' {{ $incident->stickied === 1 ? 'selected' : null }}>{{ trans('forms.incidents.stickied') }}</option>
-                            <option value='0' {{ $incident->stickied === 0 ? 'selected' : null }}>{{ trans('forms.incidents.not_stickied') }}</option>
+                            <option value="1" {{ $incident->stickied === 1 ? 'selected' : null }}>{{ trans('forms.incidents.stickied') }}</option>
+                            <option value="0" {{ $incident->stickied === 0 ? 'selected' : null }}>{{ trans('forms.incidents.not_stickied') }}</option>
                         </select>
                     </div>
                     @if($incident->component)
-                    <div class="form-group" id='component-status'>
+                    <div class="form-group" id="component-status">
                         <div class="panel panel-default">
                             <div class="panel-heading"><strong>{{ $incident->component->name }}</strong></div>
                             <div class="panel-body">
