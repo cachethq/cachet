@@ -37,7 +37,7 @@ class UpdateSubscriberCommandHandler
 
         if (!$subscriber->is_verified && $command->verified) {
             $subscriber->verified_at = Carbon::now();
-        } elseif (!$command->verified){
+        } elseif (!$command->verified) {
             $subscriber->verified_at = null;
         }
         $subscriber->save();
