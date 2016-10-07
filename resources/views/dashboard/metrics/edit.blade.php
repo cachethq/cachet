@@ -31,6 +31,12 @@
                             <textarea name="description" class="form-control" rows="5">{{ $metric->description }}</textarea>
                         </div>
                     </div>
+                    @if($metric->component)
+                        <div class="form-group">
+                            <label for="metric-component">{{ trans('forms.metrics.component') }}</label>
+                            <input type="text" class="form-control" name="metric-cmoponent" id="metric-cmoponent" readonly value="{{ $metric->component->name }}">
+                        </div>
+                    @endif
                     <div class="form-group">
                         <label>{{ trans('forms.metrics.calc_type') }}</label>
                         <select name="calc_type" class="form-control" required>

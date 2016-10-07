@@ -122,6 +122,16 @@ class Metric extends Model implements HasPresenter
     ];
 
     /**
+     * Get the component relation.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function component()
+    {
+        return $this->belongsTo(Component::class, 'component_id', 'id');
+    }
+
+    /**
      * Get the points relation.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
