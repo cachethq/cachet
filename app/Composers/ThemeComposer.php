@@ -14,6 +14,12 @@ namespace CachetHQ\Cachet\Composers;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\View\View;
 
+/**
+ * This is the theme composer.
+ *
+ * @author James Brooks <james@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
+ */
 class ThemeComposer
 {
     /**

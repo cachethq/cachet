@@ -14,10 +14,10 @@ return [
     'components' => [
         'last_updated' => 'Ostatnia aktualizacja :timestamp',
         'status'       => [
-            1 => 'Funktionsfähig',
-            2 => 'Leistungsprobleme',
-            3 => 'Teilweiser Ausfall',
-            4 => 'Schwerer Ausfall',
+            1 => 'Działa',
+            2 => 'Kłopoty wydajnościowe',
+            3 => 'Pojedyncze awarie',
+            4 => 'Awaria',
         ],
         'group' => [
             'other' => 'Pozostałe komponenty',
@@ -27,17 +27,17 @@ return [
     // Incidents
     'incidents' => [
         'none'          => 'Brak zgłoszonych incydentów',
-        'past'          => 'Vergangene Vorfälle',
-        'previous_week' => 'Vorherige Woche',
-        'next_week'     => 'Nächste Woche',
-        'scheduled'     => 'Geplante Wartungen',
-        'scheduled_at'  => ', geplant :timestamp',
+        'past'          => 'Stare incydenty',
+        'previous_week' => 'Poprzedni tydzień',
+        'next_week'     => 'Następny tydzień',
+        'scheduled'     => 'Zaplanowana konserwacja',
+        'scheduled_at'  => ', zaplanowana na :timestamp',
         'status'        => [
-            0 => 'Geplant', // TODO: Hopefully remove this.
-            1 => 'Untersuchungen laufen',
-            2 => 'Identifiziert',
-            3 => 'Unter Beobachtung',
-            4 => 'Behoben',
+            0 => 'Zaplanowana', // TODO: Hopefully remove this.
+            1 => 'Rozpoznawanie',
+            2 => 'Zidentyfikowane',
+            3 => 'Obserwacja',
+            4 => 'Naprawione',
         ],
     ],
 
