@@ -10,6 +10,7 @@
  */
 
 namespace CachetHQ\Cachet\Bus\Commands\Subscriber;
+
 use CachetHQ\Cachet\Models\Subscriber;
 
 /**

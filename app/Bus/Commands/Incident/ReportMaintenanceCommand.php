@@ -42,7 +42,7 @@ final class ReportMaintenanceCommand
     public $timestamp;
 
     /**
-     * Comma separated list of e-mails to send notifications to
+     * Comma separated list of e-mails to send notifications to.
      *
      * @var string
      */
@@ -71,7 +71,7 @@ final class ReportMaintenanceCommand
      *
      * @return void
      */
-    public function __construct($name, $message, $notify, $timestamp, $directNotify)
+    public function __construct($name, $message, $notify, $timestamp, $directNotify = false)
     {
         $this->name = $name;
         $this->message = $message;

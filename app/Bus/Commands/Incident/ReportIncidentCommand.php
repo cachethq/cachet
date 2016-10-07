@@ -91,7 +91,7 @@ final class ReportIncidentCommand
     public $template_vars;
 
     /**
-     * Comma separated list of E-Mail addresses
+     * Comma separated list of E-Mail addresses.
      *
      * @var string
      */

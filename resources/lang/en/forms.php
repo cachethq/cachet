@@ -204,7 +204,7 @@ return [
 
     'general' => [
         'timezone'        => 'Select Timezone',
-        'comma_separated' => 'Separate E-Mail addresses with a comma'
+        'comma_separated' => 'Separate E-Mail addresses with a comma',
     ],
 
     // Buttons

@@ -13,10 +13,6 @@ namespace CachetHQ\Cachet\Bus\Handlers\Commands\Subscriber;
 
 use CachetHQ\Cachet\Bus\Commands\Subscriber\UpdateSubscriberCommand;
 use CachetHQ\Cachet\Bus\Commands\Subscriber\UpdateSubscriberSubscriptionCommand;
-use CachetHQ\Cachet\Bus\Events\Subscriber\SubscriberHasUpdatedSubscriptionsEvent;
-use CachetHQ\Cachet\Models\Component;
-use CachetHQ\Cachet\Models\Subscriber;
-use CachetHQ\Cachet\Models\Subscription;
 use Carbon\Carbon;
 
 /**
@@ -39,9 +35,9 @@ class UpdateSubscriberCommandHandler
 
         $subscriber->email = $command->email;
 
-        if (!$subscriber->is_verified && $command->verified){
+        if (!$subscriber->is_verified && $command->verified) {
             $subscriber->verified_at = Carbon::now();
-        }elseif(!$command->verified){
+        } elseif (!$command->verified) {
             $subscriber->verified_at = null;
         }
         $subscriber->save();

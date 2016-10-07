@@ -124,11 +124,11 @@
                     </div>
                     @endif
                     @if(direct_notifications_enabled())
-                        <div class="form-group">
-                            <label>{{ trans('forms.incidents.notify_directly') }}</label>
-                            <input type="text" name="notify_direct" class="form-control">
-                            <span class="help-block">{{ trans('forms.general.comma_separated') }}</span>
-                        </div>
+                    <div class="form-group">
+                        <label>{{ trans('forms.incidents.notify_directly') }}</label>
+                        <input type="text" name="notify_direct" class="form-control">
+                        <span class="help-block">{{ trans('forms.general.comma_separated') }}</span>
+                    </div>
                     @endif
                 </fieldset>
 

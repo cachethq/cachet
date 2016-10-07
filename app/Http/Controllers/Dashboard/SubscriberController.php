@@ -13,11 +13,11 @@ namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
 use AltThree\Validator\ValidationException;
 use CachetHQ\Cachet\Bus\Commands\Subscriber\SubscribeSubscriberCommand;
-use CachetHQ\Cachet\Bus\Commands\Subscriber\UpdateSubscriberCommand;
 use CachetHQ\Cachet\Bus\Commands\Subscriber\UnsubscribeSubscriberCommand;
+use CachetHQ\Cachet\Bus\Commands\Subscriber\UpdateSubscriberCommand;
 use CachetHQ\Cachet\Models\Component;
-use CachetHQ\Cachet\Models\Subscriber;
 use CachetHQ\Cachet\Models\ComponentGroup;
+use CachetHQ\Cachet\Models\Subscriber;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Routing\Controller;
@@ -61,6 +61,7 @@ class SubscriberController extends Controller
         return View::make('dashboard.subscribers.edit')
             ->withPageTitle(trans('dashboard.subscribers.edit.title').' - '.trans('dashboard.dashboard'))
             ->withSubscriber($subscriber)
+            ->withSubscriberSubscriptions($subscriber->subscriptions->lists('component_id', 'component_id'))
             ->withComponentsOutGroups(Component::where('group_id', 0)->get())
             ->withComponentsInGroups(ComponentGroup::with('components')->get());
     }
@@ -79,7 +80,7 @@ class SubscriberController extends Controller
                 $subscriber,
                 Binput::get('email'),
                 Binput::get('is_verified'),
-                Binput::get("components")
+                Binput::get('components')
             ));
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.subscribers.edit', ['id' => $subscriber->id])
