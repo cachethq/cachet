@@ -16,6 +16,13 @@ use DateTimeZone;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\View\View;
 
+/**
+ * This is the timezone locale composer.
+ *
+ * @author Joseph Cohen <joe@alt-three.com>
+ * @author James Brooks <james@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
+ */
 class TimezoneLocaleComposer
 {
     /**
@@ -57,6 +64,7 @@ class TimezoneLocaleComposer
         $langs = call_user_func_array('array_merge', $langs);
 
         $regions = [
+            'UTC'        => DateTimeZone::UTC,
             'Africa'     => DateTimeZone::AFRICA,
             'America'    => DateTimeZone::AMERICA,
             'Antarctica' => DateTimeZone::ANTARCTICA,
@@ -66,7 +74,6 @@ class TimezoneLocaleComposer
             'Europe'     => DateTimeZone::EUROPE,
             'Indian'     => DateTimeZone::INDIAN,
             'Pacific'    => DateTimeZone::PACIFIC,
-            'UTC'        => DateTimeZone::UTC,
         ];
 
         $timezones = [];
@@ -78,10 +85,12 @@ class TimezoneLocaleComposer
                 // Lets sample the time there right now
                 $time = new DateTime(null, new DateTimeZone($timezone));
 
-                $ampm = $time->format('H') > 12 ? ' ('.$time->format('g:i a').')' : '';
-
-                // Remove region name and add a sample time
-                $timezones[$name][$timezone] = substr($timezone, strlen($name) + 1).' - '.$time->format('H:i').$ampm;
+                if ($timezone !== 'UTC') {
+                    // Remove region name and add a sample time
+                    $timezones[$name][$timezone] = substr($timezone, strlen($name) + 1).' - '.$time->format('H:i');
+                } else {
+                    $timezones[$name][$timezone] = 'UTC - '.$time->format('H:i');
+                }
 
                 $timezones[$name] = str_replace('_', ' ', $timezones[$name]);
             }
