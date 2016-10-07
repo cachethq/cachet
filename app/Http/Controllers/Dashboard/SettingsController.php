@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
+use CachetHQ\Cachet\Bus\Commands\System\SetupMailCommand;
 use CachetHQ\Cachet\Integrations\Contracts\Credits;
 use CachetHQ\Cachet\Models\User;
 use CachetHQ\Cachet\Settings\Repository;
@@ -33,23 +34,7 @@ class SettingsController extends Controller
      * @var array
      */
     protected $subMenu = [];
-
-
-    /**
-     * Array of mail drivers.
-     *
-     * @var string[]
-     */
-    protected $mailDrivers = [
-        'smtp'     => 'SMTP',
-        'mail'     => 'Mail',
-        'sendmail' => 'Sendmail',
-        'mailgun'  => 'Mailgun',
-        'mandrill' => 'Mandrill',
-        'sparkpost' => 'SparkPost',
-        'log'       => 'Log (Testing)',
-    ];
-
+    
     /**
      * Creates a new settings controller instance.
      *
@@ -194,8 +179,7 @@ class SettingsController extends Controller
 
         return View::make('dashboard.settings.email-setup')
             ->withPageTitle(trans('dashboard.settings.email.email').' - '.trans('dashboard.dashboard'))
-            ->withSubMenu($this->subMenu)
-            ->withMailDrivers($this->mailDrivers);
+            ->withSubMenu($this->subMenu);
     }
 
 
@@ -404,6 +388,13 @@ class SettingsController extends Controller
 
     public function postEmailSetup()
     {
-        
+        $config = Binput::all();
+        unset($config['_token']);
+        try {
+            dispatch(new SetupMailCommand($config));
+            return Redirect::back()->withSuccess(trans('dashboard.settings.edit.success'));
+        } catch (\Swift_TransportException $e) {
+            return Redirect::back()->withErrors($e->getMessage());
+        }
     }
 }

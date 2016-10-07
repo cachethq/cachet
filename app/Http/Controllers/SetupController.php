@@ -213,7 +213,7 @@ class SetupController extends Controller
 
             // Write the env to the .env file.
             foreach ($envData as $envKey => $envValue) {
-                $this->writeEnv($envKey, $envValue);
+                write_env($envKey, $envValue);
             }
 
             if (Request::ajax()) {
@@ -230,31 +230,5 @@ class SetupController extends Controller
         return Redirect::route('setup.index')->withInput()->withErrors($v->getMessageBag());
     }
 
-    /**
-     * Writes to the .env file with given parameters.
-     *
-     * @param string $key
-     * @param mixed  $value
-     *
-     * @return void
-     */
-    protected function writeEnv($key, $value)
-    {
-        $dir = app()->environmentPath();
-        $file = app()->environmentFile();
-        $path = "{$dir}/{$file}";
-
-        try {
-            (new Dotenv($dir, $file))->load();
-
-            $envKey = strtoupper($key);
-            $envValue = env($envKey) ?: 'null';
-
-            file_put_contents($path, str_replace(
-                $envKey.'='.$envValue, $envKey.'='.$value, file_get_contents($path)
-            ));
-        } catch (InvalidPathException $e) {
-            //
-        }
-    }
+   
 }

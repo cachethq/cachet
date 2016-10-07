@@ -21,9 +21,9 @@
                             <div class="col-xs-12">
                                 <div class="form-group">
                                     <label>{{ trans('forms.setup.mail_driver') }}</label>
-                                    <select name="app_locale" class="form-control" required>
+                                    <select name="mail_driver" class="form-control" required>
                                         @foreach($mail_drivers as $key => $driver)
-                                            <option value="{{ $key }}" @if( config('mail.driver') === $key) selected @endif>
+                                            <option value="{{ $key }}" @if( $mail_config['driver'] === $key) selected @endif>
                                                 {{ $driver }}
                                             </option>
                                         @endforeach
@@ -38,7 +38,7 @@
                                     <label>
                                         {{ trans('forms.setup.mail_host') }}
                                     </label>
-                                    <input type="text" class="form-control" name="mail_host" value="{{ config('mail.host') }}">
+                                    <input type="text" class="form-control" name="mail_host" value="{{ $mail_config['host'] }}">
                                 </div>
                             </div>
                         </div>
@@ -49,7 +49,7 @@
                                     <label>
                                         {{ trans('forms.setup.mail_port') }}
                                     </label>
-                                    <input type="text" class="form-control" name="mail_port" value="{{ config('mail.port') }}">
+                                    <input type="text" class="form-control" name="mail_port" value="{{  $mail_config['port'] }}">
                                 </div>
                             </div>
                         </div>
@@ -60,7 +60,7 @@
                                     <label>
                                         {{ trans('forms.setup.mail_username') }}
                                     </label>
-                                    <input type="text" class="form-control" name="mail_username" value="{{ config('mail.username') }}">
+                                    <input type="text" class="form-control" name="mail_username" value="{{  $mail_config['username'] }}">
                                 </div>
                             </div>
                         </div>
@@ -71,7 +71,7 @@
                                     <label>
                                         {{ trans('forms.setup.mail_password') }}
                                     </label>
-                                    <input type="password" class="form-control" name="mail_password" value="{{ config('mail.password') }}">
+                                    <input type="password" class="form-control" name="mail_password" value="{{  $mail_config['password'] }}">
                                 </div>
                             </div>
                         </div>
@@ -80,7 +80,7 @@
                             <div class="col-xs-12">
                                 <div class="form-group">
                                     <label> {{ trans('forms.setup.mail_address') }}</label>
-                                    <input type="text" class="form-control" name="mail_address" value="{{ config('mail.from.address') }}">
+                                    <input type="text" class="form-control" name="mail_address" value="{{  $mail_config['from']['address'] }}">
 
                                 </div>
                             </div>
@@ -90,7 +90,7 @@
                             <div class="col-xs-12">
                                 <div class="form-group">
                                     <label> {{ trans('forms.setup.mail_name') }}</label>
-                                    <input type="text" class="form-control" name="mail_name" value="{{ config('mail.from.name') }}">
+                                    <input type="text" class="form-control" name="mail_name" value="{{ $mail_config['from']['name'] }}">
 
                                 </div>
                             </div>
@@ -100,7 +100,7 @@
                             <div class="col-xs-12">
                                 <div class="form-group">
                                     <label> {{ trans('forms.setup.mail_encryption') }}</label>
-                                    <input type="text" class="form-control" name="mail_encryption" value="{{ config('mail.encryption') }}">
+                                    <input type="text" class="form-control" name="mail_encryption" value="{{ $mail_config['encryption'] }}">
 
                                 </div>
                             </div>
@@ -113,7 +113,6 @@
                         <div class="col-xs-12">
                             <div class="form-group">
                                 <div class="btn-group">
-                                    <button type="submit" name="verify" class="btn btn-info">{{ trans('forms.verify') }}</button>
                                     <button type="submit" name="save" class="btn btn-success">{{ trans('forms.save') }}</button>
                                 </div>
                             </div>

@@ -14,6 +14,7 @@ namespace CachetHQ\Cachet\Foundation\Providers;
 use CachetHQ\Cachet\Composers\AppComposer;
 use CachetHQ\Cachet\Composers\CurrentUserComposer;
 use CachetHQ\Cachet\Composers\DashboardComposer;
+use CachetHQ\Cachet\Composers\MailConfigComposer;
 use CachetHQ\Cachet\Composers\ModuleComposer;
 use CachetHQ\Cachet\Composers\Modules\ComponentsComposer as ComponentsModuleComposer;
 use CachetHQ\Cachet\Composers\Modules\MetricsComposer as MetricsModuleComposer;
@@ -48,6 +49,7 @@ class ComposerServiceProvider extends ServiceProvider
         $factory->composer('partials.modules.scheduled', ScheduledModuleComposer::class);
         $factory->composer('partials.modules.status', StatusModuleComposer::class);
         $factory->composer('partials.modules.timeline', TimelineModuleComposer::class);
+        $factory->composer('dashboard.settings.email-setup', MailConfigComposer::class);
     }
 
     /**
