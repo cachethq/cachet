@@ -42,7 +42,7 @@ final class ReportMaintenanceCommand
     public $timestamp;
 
     /**
-     * Comma separated list of e-mails to send notifications to
+     * Comma separated list of e-mails to send notifications to.
      *
      * @var string
      */
