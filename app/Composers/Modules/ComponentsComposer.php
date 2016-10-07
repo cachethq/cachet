@@ -38,16 +38,23 @@ class ComponentsComposer
         $componentGroup = $viewdata['componentGroup'];
 
         // Component & Component Group lists.
+        $usedComponentGroups = Component::enabled()->where('group_id', '>', 0)->groupBy('group_id')->pluck('group_id');
+        $allComponentGroups = ComponentGroup::whereIn('id', $usedComponentGroups)->orderBy('order')->get();
         if ($componentGroup->exists) {
             $componentGroups = ComponentGroup::where('id', $componentGroup->id)->orderBy('order')->get();
-            $ungroupedComponents = new Collection();
-        } else {
-            $usedComponentGroups = Component::enabled()->where('group_id', '>', 0)->groupBy('group_id')->pluck('group_id');
-            $componentGroups = ComponentGroup::whereIn('id', $usedComponentGroups)->orderBy('order')->get();
-            $ungroupedComponents = Component::enabled()->where('group_id', 0)->orderBy('order')->orderBy('created_at')->get();
-        }
 
-        $view->withComponentGroups($componentGroups)
-            ->withUngroupedComponents($ungroupedComponents);
+            $view->withAllComponentGroups($allComponentGroups)
+                 ->withComponentGroups($componentGroups)
+                 ->withUngroupedComponents(new Collection())
+                 ->withComponentGroupSelected($componentGroup);
+
+        } else {
+            $ungroupedComponents = Component::enabled()->where('group_id', 0)->orderBy('order')->orderBy('created_at')->get();
+
+            $view->withAllComponentGroups($allComponentGroups)
+                 ->withComponentGroups($allComponentGroups)
+                 ->withUngroupedComponents($ungroupedComponents)
+                 ->withComponentGroupSelected(null);
+        }
     }
 }
