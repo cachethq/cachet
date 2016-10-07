@@ -17,6 +17,12 @@ use CachetHQ\Cachet\Models\IncidentTemplate;
 use CachetHQ\Cachet\Models\Subscriber;
 use Illuminate\Contracts\View\View;
 
+/**
+ * This is the dashboard composer.
+ *
+ * @author James Brooks <james@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
+ */
 class DashboardComposer
 {
     /**

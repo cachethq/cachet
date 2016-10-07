@@ -33,6 +33,7 @@ return [
         'stickied'      => 'Stickied Incidents',
         'scheduled'     => 'Scheduled Maintenance',
         'scheduled_at'  => ', scheduled :timestamp',
+        'posted'        => 'Posted :timestamp',
         'status'        => [
             0 => 'Scheduled', // TODO: Hopefully remove this.
             1 => 'Investigating',

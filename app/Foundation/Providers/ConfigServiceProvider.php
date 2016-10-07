@@ -23,7 +23,7 @@ use Jenssegers\Date\Date;
  *
  * @author James Brooks <james@alt-three.com>
  * @author Graham Campbell <graham@alt-three.com>
- * @author Joe Cohen <joe@alt-three.com>
+ * @author Joseph Cohen <joe@alt-three.com>
  */
 class ConfigServiceProvider extends ServiceProvider
 {

@@ -38,16 +38,14 @@ class StatusPageControllerTest extends AbstractTestCase
             ->setupConfig();
     }
 
-    /** @test */
-    public function on_index_only_public_component_groups_are_shown_to_a_guest()
+    public function testIndexShowsOnlyPublicComponentGroupsToGues()
     {
         $this->visit('/')
             ->see(self::COMPONENT_GROUP_1_NAME)
             ->dontSee(self::COMPONENT_GROUP_2_NAME);
     }
 
-    /** @test */
-    public function on_index_all_component_groups_are_displayed_to_logged_in_users()
+    public function testIndexShowsAllComponentGroupsToLoggedInUsers()
     {
         $this->signIn();
 
