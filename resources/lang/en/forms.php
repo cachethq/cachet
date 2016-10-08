@@ -41,6 +41,7 @@ return [
         'invalid-token' => 'Invalid token',
         'cookies'       => 'You must enable cookies to login.',
         'rate-limit'    => 'Rate limit exceeded.',
+        'remember_me'   => 'Remember me',
     ],
 
     // Incidents form fields
