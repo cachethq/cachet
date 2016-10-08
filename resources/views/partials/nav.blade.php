@@ -19,7 +19,7 @@
                         <li><a href="{{ route('auth.logout') }}">{{ trans('dashboard.logout') }}</a></li>
                     </ul>
                 </li>
-                @elseif(Config::get('setting.dashboard_login_link'))
+                @elseif($dashboard_link)
                 <li><a href="/dashboard">{{ trans('dashboard.dashboard') }}</a></li>
                 @endif
             </ul>
