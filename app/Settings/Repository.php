@@ -22,6 +22,15 @@ use CachetHQ\Cachet\Models\Setting;
 class Repository
 {
     /**
+     * Array of numerical settings that are not bools.
+     *
+     * @var string[]
+     */
+    const NOT_BOOL = [
+        'app_incident_days',
+    ];
+
+    /**
      * The eloquent model instance.
      *
      * @var \CachetHQ\Cachet\Models\Setting
@@ -54,7 +63,9 @@ class Repository
      */
     public function all()
     {
-        return $this->model->all(['name', 'value'])->pluck('value', 'name')->toArray();
+        return $this->model->all(['name', 'value'])->pluck('value', 'name')->map(function ($value, $name) {
+            return $this->castSetting($name, $value);
+        })->toArray();
     }
 
     /**
@@ -87,7 +98,7 @@ class Repository
     public function get($name, $default = null)
     {
         if ($setting = $this->model->where('name', $name)->first()) {
-            return $setting->value;
+            return $this->castSetting($name, $setting->value);
         }
 
         return $default;
@@ -127,5 +138,26 @@ class Repository
     public function stale()
     {
         return $this->stale;
+    }
+
+    /**
+     * Cast setting as the applicable type.
+     *
+     * @param string $key
+     * @param string $value
+     *
+     * @return mixed
+     */
+    protected function castSetting($key, $value)
+    {
+        if (is_null($value)) {
+            return $value;
+        }
+
+        if (!in_array($key, self::NOT_BOOL) && in_array($value, ['0', '1'])) {
+            return (bool) $value;
+        }
+
+        return $value;
     }
 }
