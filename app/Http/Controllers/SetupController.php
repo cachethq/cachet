@@ -70,12 +70,12 @@ class SetupController extends Controller
      * @var string[]
      */
     protected $queueDrivers = [
-        "null"       => "None",
-        "sync"       => "Synchronous",
-        "database"   => "Database",
-        "beanstalkd" => "Beanstalk",
-        "sqs"        => "Amazon SQS",
-        "redis"      => "Redis",
+        'null'       => 'None',
+        'sync'       => 'Synchronous',
+        'database'   => 'Database',
+        'beanstalkd' => 'Beanstalk',
+        'sqs'        => 'Amazon SQS',
+        'redis'      => 'Redis',
     ];
 
     /**
