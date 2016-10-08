@@ -7,7 +7,7 @@
     <tr>
         <td>
             <p class="compressed">
-                <strong>{!! $status !!} @if($has_component) ({{ $component_name }}) @endif</strong>
+                <strong>{!! $status !!}</strong>
                 {!! $html_content !!}
                 {!! $timestamp !!}
             </p>
