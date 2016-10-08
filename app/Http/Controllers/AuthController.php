@@ -44,26 +44,25 @@ class AuthController extends Controller
      */
     public function postLogin()
     {
-        $loginData = Binput::only(['username', 'password']);
+        $loginData = Binput::only(['username', 'password', 'remember_me']);
 
         // Login with username or email.
         $loginKey = filter_var($loginData['username'], FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
         $loginData[$loginKey] = array_pull($loginData, 'username');
 
+        $rememberUser = array_pull($loginData, 'remember_me') === '1';
+
         // Validate login credentials.
         if (Auth::validate($loginData)) {
-            // Log the user in for one request.
             Auth::once($loginData);
-            // Do we have Two Factor Auth enabled?
+
             if (Auth::user()->hasTwoFactor) {
-                // Temporarily store the user.
                 Session::put('2fa_id', Auth::user()->id);
 
                 return Redirect::route('auth.two-factor');
             }
 
-            // We probably want to add support for "Remember me" here.
-            Auth::attempt($loginData);
+            Auth::attempt($loginData, $rememberUser);
 
             event(new UserLoggedInEvent(Auth::user()));
 
