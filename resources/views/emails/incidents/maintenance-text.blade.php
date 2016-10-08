@@ -4,9 +4,6 @@
 {!! $text_content !!}
 {!! $timestamp !!}
 
-@if($has_component)
-({{ $component_name }})
-@endif
 {!! trans('cachet.subscriber.email.manage') !!} {{ $manage_link }}
 
 {!! trans('cachet.subscriber.email.unsubscribe') !!} {{ $unsubscribe_link }}

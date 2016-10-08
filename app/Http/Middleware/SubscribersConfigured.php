@@ -15,6 +15,12 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
+/**
+ * This is the subscribers configured middleware class.
+ *
+ * @author James Brooks <james@alt-three.com>
+ * @author Graham Campbell <james@alt-three.com>
+ */
 class SubscribersConfigured
 {
     /**

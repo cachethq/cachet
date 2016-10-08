@@ -17,6 +17,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Redirect;
 
+/**
+ * This is the ready for use middleware class.
+ *
+ * @author Graham Campbell <james@alt-three.com>
+ * @author James Brooks <james@alt-three.com>
+ * @author Joseph Cohen <joe@alt-three.com>
+ */
 class ReadyForUse
 {
     /**
