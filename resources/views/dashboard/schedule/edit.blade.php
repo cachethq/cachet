@@ -14,7 +14,7 @@
     <div class="row">
         <div class="col-md-12">
             @include('dashboard.partials.errors')
-            <form class='form-vertical' name='ScheduleForm' role='form' method='POST' autocomplete="off">
+            <form class="form-vertical" name="ScheduleForm" role="form" method='POST' autocomplete="off">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <input type="hidden" name="incident[visible]" value="1">
                 <fieldset>
