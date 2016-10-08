@@ -1,10 +1,10 @@
 <div class="sidebar">
     <div class="sidebar-inner">
         <div class="profile">
-            <a href="{{ url('dashboard/user') }}">
+            <a href="{{ route('dashboard.user.user') }}">
                 <span class="avatar"><img src="{{ $current_user->gravatar }}"></span>
             </a>
-            <a href="{{ url('dashboard/user') }}">
+            <a href="{{ route('dashboard.user.user') }}">
                 <h4 class="username">{{ $current_user->username }}</h4>
             </a>
         </div>
