@@ -22,6 +22,7 @@ return [
         'site_locale'      => 'Select your language',
         'enable_google2fa' => 'Enable Google Two Factor Authentication',
         'cache_driver'     => 'Cache Driver',
+        'queue_driver'     => 'Queue Driver',
         'session_driver'   => 'Session Driver',
         'mail_driver'      => 'Mail Driver',
         'mail_host'        => 'Mail Host',
