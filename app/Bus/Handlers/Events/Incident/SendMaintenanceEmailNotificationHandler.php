@@ -110,8 +110,6 @@ class SendMaintenanceEmailNotificationHandler
             'subject' => trans('cachet.subscriber.email.maintenance.subject', [
                 'name' => $incident->name,
             ]),
-            'has_component'    => ($event->incident->component) ? true : false,
-            'component_name'   => $component ? $component->name : null,
             'name'             => $incident->name,
             'timestamp'        => $incident->scheduled_at_formatted,
             'status'           => $incident->human_status,
