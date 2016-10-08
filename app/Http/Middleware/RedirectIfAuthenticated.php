@@ -16,6 +16,13 @@ use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
+/**
+ * This is the redirect if authenticated middleware class.
+ *
+ * @author Graham Campbell <james@alt-three.com>
+ * @author Joseph Cohen <joe@alt-three.com>
+ * @author James Brooks <james@alt-three.com>
+ */
 class RedirectIfAuthenticated
 {
     /**

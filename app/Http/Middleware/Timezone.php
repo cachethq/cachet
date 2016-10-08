@@ -15,6 +15,12 @@ use Closure;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Http\Request;
 
+/**
+ * This is the timezone middleware class.
+ *
+ * @author James Brooks <james@alt-three.com>
+ * @author Graham Campbell <james@alt-three.com>
+ */
 class Timezone
 {
     /**

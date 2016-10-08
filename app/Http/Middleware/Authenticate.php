@@ -16,6 +16,13 @@ use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
+/**
+ * This is the authenticate middleware class.
+ *
+ * @author Joseph Cohen <joe@alt-three.com>
+ * @author Graham Campbell <james@alt-three.com>
+ * @author James Brooks <james@alt-three.com>
+ */
 class Authenticate
 {
     /**
