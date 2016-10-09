@@ -195,6 +195,20 @@ class TimedAction extends Model implements HasPresenter
     }
 
     /**
+     * Finds all ungrouped actions.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeUngrouped(Builder $query)
+    {
+        return $query
+            ->where('timed_action_group_id', 0)
+            ->orderBy('created_at');
+    }
+
+    /**
      * Validate the model.
      *
      * @throws \AltThree\Validator\ValidationException

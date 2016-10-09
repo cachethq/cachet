@@ -1,5 +1,24 @@
-@if($actions->count() > 0)
-@foreach($actions as $action)
+@if($action_groups->count() > 0)
+@foreach($action_groups as $group)
+<ul class="list-group">
+    @if($group->active_actions->count())
+    <li class="list-group-item group-name">
+        <i class="{{ $group->collapse_class }} group-toggle"></i>
+        <strong>{{ $group->name }}</strong>
+    </li>
+    @endif
+
+    <div class="group-items {{ $group->is_collapsed ? "hide" : null }}">
+        @foreach($group->active_actions->get() as $action)
+        @include('partials.action', compact($action))
+        @endforeach
+    </div>
+</ul>
+@endforeach
+@endif
+
+@if($ungrouped_actions->count() > 0)
+@foreach($ungrouped_actions as $action)
 <div class="panel panel-default">
     <div class="panel-heading">
         <strong>

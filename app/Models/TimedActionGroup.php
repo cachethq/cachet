@@ -62,4 +62,14 @@ class TimedActionGroup extends Model
     {
         return $this->hasMany(TimedAction::class);
     }
+
+    /**
+     * Get all active actions.
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function active_actions()
+    {
+        return $this->actions()->active();
+    }
 }

@@ -12,6 +12,7 @@
 namespace CachetHQ\Cachet\Composers\Modules;
 
 use CachetHQ\Cachet\Models\TimedAction;
+use CachetHQ\Cachet\Models\TimedActionGroup;
 use Illuminate\Contracts\View\View;
 
 /**
@@ -32,6 +33,10 @@ class ActionsComposer
     {
         $actions = TimedAction::visible()->get();
 
-        $view->withActions($actions);
+        $actionGroups = TimedActionGroup::orderBy('order')->get();
+        $ungroupedActions = TimedAction::visible()->ungrouped()->get();
+
+        $view->withActionGroups($actionGroups)
+            ->withUngroupedActions($ungroupedActions);
     }
 }
