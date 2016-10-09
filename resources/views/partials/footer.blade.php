@@ -23,7 +23,7 @@
                     @endif
                     @if($current_user)
                     <li>
-                        <a class="btn btn-link" href="/auth/logout">{{ trans('dashboard.logout') }}</a>
+                        <a class="btn btn-link" href="{{ route('auth.logout') }}">{{ trans('dashboard.logout') }}</a>
                     </li>
                     @endif
                     <li>
