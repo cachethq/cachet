@@ -16,6 +16,13 @@ use Illuminate\Config\Repository;
 use Illuminate\Http\Request;
 use Jenssegers\Date\Date;
 
+/**
+ * This is the localize middleware class.
+ *
+ * @author James Brooks <james@alt-three.com>
+ * @author Joseph Cohen <joe@alt-three.com>
+ * @author Graham Campbell <james@alt-three.com>
+ */
 class Localize
 {
     /**

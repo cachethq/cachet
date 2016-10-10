@@ -14,7 +14,7 @@
     <div class="row">
         <div class="col-md-12">
             @include('dashboard.partials.errors')
-            <form class='form-vertical' name='ScheduleForm' role='form' method='POST' autocomplete="off">
+            <form class="form-vertical" name="ScheduleForm" role="form" method="POST" autocomplete="off">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <input type="hidden" name="visible" value="1">
                 <fieldset>
@@ -35,7 +35,7 @@
                     </div>
                     <div class="form-group">
                         <label>{{ trans('forms.incidents.message') }}</label>
-                        <div class='markdown-control'>
+                        <div class="markdown-control">
                             <textarea name="message" class="form-control autosize" rows="5" required>{{ Binput::old('incident.message') }}</textarea>
                         </div>
                     </div>

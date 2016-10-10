@@ -36,7 +36,7 @@
                     <div class="col-xs-3">
                         @if($subscriber->subscriptions->count() > 0)
                         {!! $subscriber->subscriptions->map(function ($subscription) {
-                            return '<span class="label label-primary">'.$subscription->component->name.'</span>';
+                            return sprintf('<span class="label label-primary">%s</span>', $subscription->component->name);
                         })->implode(' ') !!}
                         @else
                         <p>{{ trans('dashboard.subscribers.no_subscriptions') }}</p>
