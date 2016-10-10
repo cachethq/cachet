@@ -31,7 +31,7 @@
                     @endif
                     <div class="form-group">
                         <label for="incident-name">{{ trans('forms.incidents.name') }}</label>
-                        <input type="text" class="form-control" name="incident[name]" id="incident-name" required value="{{ $schedule->name }}">
+                        <input type="text" class="form-control" name="incident[name]" id="incident-name" required value="{{ $schedule->name }}" placeholder="{{ trans('forms.incidents.name') }}">
                     </div>
                     <div class="form-group">
                         <label>{{ trans('forms.incidents.message') }}</label>
@@ -41,7 +41,7 @@
                     </div>
                     <div class="form-group">
                         <label>{{ trans('forms.incidents.scheduled_at') }}</label>
-                        <input type="text" name="incident[scheduled_at]" class="form-control" rel="datepicker" value="{{ $schedule->scheduled_at_datetimepicker }}" required>
+                        <input type="text" name="incident[scheduled_at]" class="form-control" rel="datepicker" value="{{ $schedule->scheduled_at_datetimepicker }}" required placeholder="{{ trans('forms.incidents.scheduled_at') }}">
                     </div>
                 </fieldset>
 

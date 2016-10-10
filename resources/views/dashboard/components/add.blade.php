@@ -19,7 +19,7 @@
                 <fieldset>
                     <div class="form-group">
                         <label for="component-name">{{ trans('forms.components.name') }}</label>
-                        <input type="text" class="form-control" name="component[name]" id="component-name" required>
+                        <input type="text" class="form-control" name="component[name]" id="component-name" required placeholder="{{ trans('forms.components.name') }}">
                     </div>
                     <div class="form-group">
                         <label for="component-status">{{ trans('forms.components.status') }}</label>
@@ -31,7 +31,7 @@
                     </div>
                     <div class="form-group">
                         <label>{{ trans('forms.components.description') }}</label>
-                        <textarea name="component[description]" class="form-control" rows="5"></textarea>
+                        <textarea name="component[description]" class="form-control" rows="5" placeholder="{{ trans('forms.components.description') }}"></textarea>
                     </div>
                     @if($groups->count() > 0)
                     <div class="form-group">
@@ -49,11 +49,11 @@
                     <hr>
                     <div class="form-group">
                         <label>{{ trans('forms.components.link') }}</label>
-                        <input type="text" name="component[link]" class="form-control">
+                        <input type="text" name="component[link]" class="form-control" placeholder="{{ trans('forms.components.link') }}">
                     </div>
                     <div class="form-group">
                         <label>{{ trans('forms.components.tags') }}</label>
-                        <input name="component[tags]" class="form-control">
+                        <input name="component[tags]" class="form-control" placeholder="{{ trans('forms.components.tags') }}">
                         <span class="help-block">{{ trans('forms.components.tags-help') }}</span>
                     </div>
                     <div class="checkbox">
