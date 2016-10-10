@@ -21,7 +21,7 @@
                             <div class="col-xs-12">
                                 <div class="form-group">
                                     <label>{{ trans('forms.settings.app-setup.site-name') }}</label>
-                                    <input type="text" class="form-control" name="app_name" value="{{ $app_name }}" required>
+                                    <input type="text" class="form-control" name="app_name" value="{{ $app_name }}" required placeholder="{{ trans('forms.settings.app-setup.site-name') }}">
                                 </div>
                             </div>
                         </div>
@@ -29,7 +29,7 @@
                             <div class="col-xs-12">
                                 <div class="form-group">
                                     <label>{{ trans('forms.settings.app-setup.site-url') }}</label>
-                                    <input type="text" class="form-control" name="app_domain" value="{{ $app_domain }}" required>
+                                    <input type="text" class="form-control" name="app_domain" value="{{ $app_domain }}" required placeholder="{{ trans('forms.settings.app-setup.site-url') }}">
                                 </div>
                             </div>
                         </div>
@@ -38,7 +38,7 @@
                                 <div class="form-group">
                                     <label>{{ trans('forms.settings.app-setup.about-this-page') }}</label>
                                     <div class='markdown-control'>
-                                        <textarea name="app_about" class="form-control autosize" rows="4">{{ $raw_app_about }}</textarea>
+                                        <textarea name="app_about" class="form-control autosize" rows="4" placeholder="{{ trans('forms.settings.app-setup.about-this-page') }}">{{ $raw_app_about }}</textarea>
                                     </div>
                                 </div>
                             </div>
@@ -47,7 +47,7 @@
                             <div class="col-xs-12">
                                 <div class="form-group">
                                     <label>{{ trans('forms.settings.app-setup.days-of-incidents') }}</label>
-                                    <input type="number" max="100" name="app_incident_days" class="form-control" value="{{ Config::get('setting.app_incident_days', 7) }}">
+                                    <input type="number" max="100" name="app_incident_days" class="form-control" value="{{ Config::get('setting.app_incident_days', 7) }}" placeholder="{{ trans('forms.settings.app-setup.days-of-incidents') }}">
                                 </div>
                             </div>
                         </div>

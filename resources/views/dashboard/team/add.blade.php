@@ -18,15 +18,15 @@
                 <fieldset>
                     <div class="form-group">
                         <label>{{ trans('forms.user.username') }}</label>
-                        <input type="text" class="form-control" name="username" value="{{ Binput::old('username') }}" required>
+                        <input type="text" class="form-control" name="username" value="{{ Binput::old('username') }}" required placeholder="{{ trans('forms.user.username') }}">
                     </div>
                     <div class="form-group">
                         <label>{{ trans('forms.user.email') }}</label>
-                        <input type="email" class="form-control" name="email" value="{{ Binput::old('email') }}" required>
+                        <input type="email" class="form-control" name="email" value="{{ Binput::old('email') }}" required placeholder="{{ trans('forms.user.email') }}">
                     </div>
                     <div class="form-group">
                         <label>{{ trans('forms.user.password') }}</label>
-                        <input type="password" class="form-control password-strength" name="password" value="">
+                        <input type="password" class="form-control password-strength" name="password" value="" placeholder="{{ trans('forms.user.password') }}">
                         <div class="strengthify-wrapper"></div>
                     </div>
                     @if($current_user->isAdmin)

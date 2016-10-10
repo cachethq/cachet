@@ -54,7 +54,7 @@
                                         {{ trans('forms.settings.localization.incident-date-format') }}
                                         <a href="http://php.net/manual/en/function.date.php" target="_blank"><i class="ion ion-help-circled"></i></a>
                                     </label>
-                                    <input type="text" class="form-control" name="incident_date_format" value="{{ Config::get('setting.incident_date_format') ?: 'l jS F Y H:i:s' }}">
+                                    <input type="text" class="form-control" name="incident_date_format" value="{{ Config::get('setting.incident_date_format') ?: 'l jS F Y H:i:s' }}" placeholder="{{ trans('forms.settings.localization.incident-date-format') }}">
                                 </div>
                             </div>
                         </div>

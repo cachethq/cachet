@@ -85,7 +85,7 @@
                     </div>
                     <div class="form-group">
                         <label>{{ trans('forms.setup.mail_host') }} (optional)</label>
-                        <input type="text" class="form-control" name="env[mail_host]" value="{{ Binput::old('env.mail_host', $mail_config['host']) }}">
+                        <input type="text" class="form-control" name="env[mail_host]" value="{{ Binput::old('env.mail_host', $mail_config['host']) }}" placeholder="{{ trans('forms.setup.mail_host') }}">
                         @if($errors->has('env.mail_host'))
                         <span class="text-danger">{{ $errors->first('env.mail_host') }}</span>
                         @endif
@@ -99,14 +99,14 @@
                     </div>
                     <div class="form-group">
                         <label>{{ trans('forms.setup.mail_username') }}</label>
-                        <input type="text" class="form-control" name="env[mail_username]" value="{{ Binput::old('env.mail_username', $mail_config['username']) }}">
+                        <input type="text" class="form-control" name="env[mail_username]" value="{{ Binput::old('env.mail_username', $mail_config['username']) }}" placeholder="{{ trans('forms.setup.mail_username') }}">
                         @if($errors->has('env.mail_username'))
                         <span class="text-danger">{{ $errors->first('env.mail_username') }}</span>
                         @endif
                     </div>
                     <div class="form-group">
                         <label>{{ trans('forms.setup.mail_password') }}</label>
-                        <input type="password" class="form-control" name="env[mail_password]" value="{{ Binput::old('env.mail_password', $mail_config['password']) }}" autocomplete="off">
+                        <input type="password" class="form-control" name="env[mail_password]" value="{{ Binput::old('env.mail_password', $mail_config['password']) }}" autocomplete="off" placeholder="{{ trans('forms.setup.mail_password') }}">
                         @if($errors->has('env.mail_password'))
                         <span class="text-danger">{{ $errors->first('env.mail_password') }}</span>
                         @endif

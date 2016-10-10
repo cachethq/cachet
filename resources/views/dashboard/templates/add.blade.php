@@ -38,11 +38,11 @@
                 <fieldset>
                     <div class="form-group">
                         <label for="template-name">{{ trans('forms.incidents.templates.name') }}</label>
-                        <input type="text" class="form-control" name="template[name]" id="template-name" required>
+                        <input type="text" class="form-control" name="template[name]" id="template-name" required placeholder="{{ trans('forms.incidents.templates.name') }}">
                     </div>
                     <div class="form-group">
                         <label>{{ trans('forms.incidents.templates.template') }}</label>
-                        <textarea name="template[template]" id="cm-editor" class="form-control" rows="8"></textarea>
+                        <textarea name="template[template]" id="cm-editor" class="form-control" rows="8" placeholder="{{ trans('forms.incidents.templates.template') }}"></textarea>
                         <span class="help-block">{!! trans('forms.incidents.templates.twig') !!}</span>
                     </div>
                 </fieldset>
