@@ -71,7 +71,7 @@ final class ReportMaintenanceCommand
      *
      * @return void
      */
-    public function __construct($name, $message, $notify, $timestamp, $directNotify)
+    public function __construct($name, $message, $notify, $timestamp, $directNotify = false)
     {
         $this->name = $name;
         $this->message = $message;
