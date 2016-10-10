@@ -61,6 +61,7 @@ class SubscriberController extends Controller
         return View::make('dashboard.subscribers.edit')
             ->withPageTitle(trans('dashboard.subscribers.edit.title').' - '.trans('dashboard.dashboard'))
             ->withSubscriber($subscriber)
+            ->withSubscriberSubscriptions($subscriber->subscriptions->lists("component_id", "component_id"))
             ->withComponentsOutGroups(Component::where('group_id', 0)->get())
             ->withComponentsInGroups(ComponentGroup::with('components')->get());
     }
