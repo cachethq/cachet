@@ -19,16 +19,16 @@
                 <fieldset>
                     <div class="form-group">
                         <label for="metric-name">{{ trans('forms.metrics.name') }}</label>
-                        <input type="text" class="form-control" name="metric[name]" id="metric-name" required value="{{ Binput::old('metric.name') }}">
+                        <input type="text" class="form-control" name="metric[name]" id="metric-name" required value="{{ Binput::old('metric.name') }}" placeholder="{{ trans('forms.metrics.name') }}">
                     </div>
                     <div class="form-group">
                         <label for="metric-suffix">{{ trans('forms.metrics.suffix') }}</label>
-                        <input type="text" class="form-control" name="metric[suffix]" id="metric-suffix" required value="{{ Binput::old('metric.suffix') }}">
+                        <input type="text" class="form-control" name="metric[suffix]" id="metric-suffix" required value="{{ Binput::old('metric.suffix') }}" placeholder="{{ trans('forms.metrics.suffix') }}">
                     </div>
                     <div class="form-group">
                         <label>{{ trans('forms.metrics.description') }}</label>
                         <div class='markdown-control'>
-                            <textarea name="metric[description]" class="form-control" rows="5">{{ Binput::old('metric.description') }}</textarea>
+                            <textarea name="metric[description]" class="form-control" rows="5" placeholder="{{ trans('forms.metrics.description') }}">{{ Binput::old('metric.description') }}</textarea>
                         </div>
                     </div>
                     <div class="form-group">
@@ -49,15 +49,15 @@
                     </div>
                     <div class="form-group">
                         <label for="metric-default_value">{{ trans('forms.metrics.default-value') }}</label>
-                        <input type="number" class="form-control" name="metric[default_value]" id="metric-default_value" value="{{ Binput::old('metric.default_value') }}">
+                        <input type="number" class="form-control" name="metric[default_value]" id="metric-default_value" value="{{ Binput::old('metric.default_value') }}" placeholder="{{ trans('forms.metrics.default-value') }}">
                     </div>
                     <div class="form-group">
                         <label for="metric-places">{{ trans('forms.metrics.places') }}</label>
-                        <input type="number" min="0" max="4" class="form-control" name="metric[places]" id="metric-places" required value="{{ Binput::old('metric.places') }}">
+                        <input type="number" min="0" max="4" class="form-control" name="metric[places]" id="metric-places" required value="{{ Binput::old('metric.places') }}" placeholder="{{ trans('forms.metrics.places') }}">
                     </div>
                     <div class="form-group">
                         <label for="metric-places">{{ trans('forms.metrics.threshold') }}</label>
-                        <input type="number" min="0" max="100" class="form-control" name="metric[threshold]" id="metric-threshold" required value="{{ Binput::old('metric.threshold') }}">
+                        <input type="number" min="0" max="100" class="form-control" name="metric[threshold]" id="metric-threshold" required value="{{ Binput::old('metric.threshold') }}" placeholder="{{ trans('forms.metrics.threshold') }}">
                     </div>
                     <div class="checkbox">
                         <label>

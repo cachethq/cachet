@@ -19,7 +19,7 @@
                 <fieldset>
                     <div class="form-group">
                         <label>{{ trans('forms.components.groups.name') }}</label>
-                        <input type="text" class="form-control" name="name" id="group-name" required>
+                        <input type="text" class="form-control" name="name" id="group-name" required placeholder="{{ trans('forms.components.groups.name') }}">
                     </div>
                     <div class="form-group">
                         <label>{{ trans('forms.components.groups.collapsing') }}</label>
