@@ -65,8 +65,8 @@
                     <div class="form-group">
                         <label for="incident-name">{{ trans('forms.incidents.stick_status') }}</label>
                         <select name="stickied" class="form-control">
-                            <option value='1'>{{ trans('forms.incidents.stickied') }}</option>
-                            <option value='0' selected>{{ trans('forms.incidents.not_stickied') }}</option>
+                            <option value="1">{{ trans('forms.incidents.stickied') }}</option>
+                            <option value="0" selected>{{ trans('forms.incidents.not_stickied') }}</option>
                         </select>
                     </div>
                     @if(!$components_in_groups->isEmpty() || !$components_out_groups->isEmpty())

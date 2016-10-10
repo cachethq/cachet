@@ -222,6 +222,7 @@ EINCIDENT;
         ];
 
         Incident::truncate();
+        IncidentUpdate::truncate();
 
         foreach ($defaultIncidents as $defaultIncident) {
             $incident = Incident::create($defaultIncident);

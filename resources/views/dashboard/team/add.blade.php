@@ -41,7 +41,7 @@
                 </fieldset>
 
                 <div class="form-group">
-                    <div class='btn-group'>
+                    <div class="btn-group">
                         <button type="submit" class="btn btn-success">{{ trans('forms.add') }}</button>
                         <a class="btn btn-default" href="{{ route('dashboard.team.index') }}">{{ trans('forms.cancel') }}</a>
                     </div>

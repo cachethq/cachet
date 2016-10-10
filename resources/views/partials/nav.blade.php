@@ -15,12 +15,12 @@
                     </a>
                     <ul class="dropdown-menu arrow">
                         <li><a href="{{ route('dashboard.incidents.add') }}">{{ trans('dashboard.incidents.add.title') }}</a></li>
-                        <li><a href="/dashboard">{{ trans('dashboard.dashboard') }}</a></li>
+                        <li><a href="{{ route('dashboard.index') }}">{{ trans('dashboard.dashboard') }}</a></li>
                         <li><a href="{{ route('auth.logout') }}">{{ trans('dashboard.logout') }}</a></li>
                     </ul>
                 </li>
-                @elseif(Config::get('setting.dashboard_login_link'))
-                <li><a href="/dashboard">{{ trans('dashboard.dashboard') }}</a></li>
+                @elseif($dashboard_link)
+                <li><a href="{{ route('dashboard.index') }}">{{ trans('dashboard.dashboard') }}</a></li>
                 @endif
             </ul>
         </div>

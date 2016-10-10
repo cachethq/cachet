@@ -49,7 +49,7 @@
                     </div>
                 </fieldset>
 
-                <input type="hidden" name="incident_id" value={{ $incident->id }}>
+                <input type="hidden" name="incident_id" value="{{ $incident->id }}">
 
                 <div class="form-group">
                     <div class="btn-group">
