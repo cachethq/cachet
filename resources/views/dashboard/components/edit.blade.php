@@ -19,7 +19,7 @@
                 <fieldset>
                     <div class="form-group">
                         <label for="incident-name">{{ trans('forms.components.name') }}</label>
-                        <input type="text" class="form-control" name="component[name]" id="component-name" required value="{{ $component->name }}">
+                        <input type="text" class="form-control" name="component[name]" id="component-name" required value="{{ $component->name }}" placeholder="{{ trans('forms.components.name') }}">
                     </div>
                     <div class="form-group">
                         <label for="component-status">{{ trans('forms.components.status') }}</label>
@@ -31,7 +31,7 @@
                     </div>
                     <div class="form-group">
                         <label>{{ trans('forms.components.description') }}</label>
-                        <textarea name="component[description]" class="form-control" rows="5">{{ $component->description }}</textarea>
+                        <textarea name="component[description]" class="form-control" rows="5" placeholder="{{ trans('forms.components.description') }}">{{ $component->description }}</textarea>
                     </div>
                     @if($groups->count() > 0)
                     <div class="form-group">
@@ -49,11 +49,11 @@
                     <hr>
                     <div class="form-group">
                         <label>{{ trans('forms.components.link') }}</label>
-                        <input type="text" name="component[link]" class="form-control" value="{{ $component->link }}">
+                        <input type="text" name="component[link]" class="form-control" value="{{ $component->link }}" placeholder="{{ trans('forms.components.link') }}">
                     </div>
                     <div class="form-group">
                         <label>{{ trans('forms.components.tags') }}</label>
-                        <input name="component[tags]" class="form-control" value="{{ $component->tagsList }}">
+                        <input name="component[tags]" class="form-control" value="{{ $component->tagsList }}" placeholder="{{ trans('forms.components.tags') }}">
                         <span class="help-block">{{ trans('forms.components.tags-help') }}</span>
                     </div>
                     <div class="checkbox">

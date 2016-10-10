@@ -30,7 +30,7 @@
                     @endif
                     <div class="form-group">
                         <label for="incident-name">{{ trans('forms.incidents.name') }}</label>
-                        <input type="text" class="form-control" name="name" id="incident-name" required value="{{ Binput::old('name') }}">
+                        <input type="text" class="form-control" name="name" id="incident-name" required value="{{ Binput::old('name') }}" placeholder="{{ trans('forms.incidents.name') }}">
                     </div>
                     <div class="form-group">
                         <label for="incident-name">{{ trans('forms.incidents.status') }}</label><br>
@@ -112,7 +112,7 @@
                     </div>
                     <div class="form-group">
                         <label>{{ trans('forms.incidents.incident_time') }}</label> <small class="text-muted">{{ trans('forms.optional') }}</small>
-                        <input type="text" name="created_at" class="form-control" rel="datepicker-any">
+                        <input type="text" name="created_at" class="form-control" rel="datepicker-any" placeholder="{{ trans('forms.optional') }}">
                     </div>
                     <input type="hidden" name="notify" value="0">
                     @if(subscribers_enabled())

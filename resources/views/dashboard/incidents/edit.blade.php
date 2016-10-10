@@ -19,7 +19,7 @@
                 <fieldset>
                     <div class="form-group">
                         <label for="incident-name">{{ trans('forms.incidents.name') }}</label>
-                        <input type="text" class="form-control" name="name" id="incident-name" required value="{{$incident->name}}">
+                        <input type="text" class="form-control" name="name" id="incident-name" required value="{{$incident->name}}" placeholder="{{ trans('forms.incidents.name') }}">
                     </div>
                     <div class="form-group">
                         <label for="incident-name">{{ trans('forms.incidents.status') }}</label><br>
@@ -85,7 +85,7 @@
                     </div>
                     <div class="form-group">
                         <label>{{ trans('forms.incidents.incident_time') }}</label> <small class="text-muted">{{ trans('forms.optional') }}</small>
-                        <input type="text" name="created_at" class="form-control" rel="datepicker-any" value="{{ $incident->created_at_datetimepicker }}">
+                        <input type="text" name="created_at" class="form-control" rel="datepicker-any" value="{{ $incident->created_at_datetimepicker }}" placeholder="{{ trans('forms.optional') }}">
                     </div>
                 </fieldset>
 
