@@ -22,6 +22,7 @@ return [
         'site_locale'      => 'Select your language',
         'enable_google2fa' => 'Enable Google Two Factor Authentication',
         'cache_driver'     => 'Cache Driver',
+        'queue_driver'     => 'Queue Driver',
         'session_driver'   => 'Session Driver',
         'mail_driver'      => 'Mail Driver',
         'mail_host'        => 'Mail Host',
@@ -40,6 +41,7 @@ return [
         'invalid-token' => 'Invalid token',
         'cookies'       => 'You must enable cookies to login.',
         'rate-limit'    => 'Rate limit exceeded.',
+        'remember_me'   => 'Remember me',
     ],
 
     // Incidents form fields

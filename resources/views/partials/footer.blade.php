@@ -16,14 +16,14 @@
             </div>
             <div class="col-sm-8">
                 <ul class="list-inline">
-                    @if($current_user || Config::get('setting.dashboard_login_link'))
+                    @if($current_user || $dashboard_link)
                     <li>
                         <a class="btn btn-link" href="/dashboard">{{ trans('dashboard.dashboard') }}</a>
                     </li>
                     @endif
                     @if($current_user)
                     <li>
-                        <a class="btn btn-link" href="/auth/logout">{{ trans('dashboard.logout') }}</a>
+                        <a class="btn btn-link" href="{{ route('auth.logout') }}">{{ trans('dashboard.logout') }}</a>
                     </li>
                     @endif
                     <li>
