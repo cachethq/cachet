@@ -143,6 +143,36 @@ return [
             'failure' => 'The metric could not be deleted, please try again.',
         ],
     ],
+
+    // Time Sensitive Actions
+    'actions' => [
+        'actions'       => 'Time Sensitive Actions',
+        'action_groups' => 'Time Sensitive Action Groups',
+        'add'           => [
+            'title'   => 'Add new action',
+            'success' => 'Time sensitive action created.',
+            'failure' => 'Something went wrong with the time sensitive action, please try again.',
+        ],
+        'edit' => [
+            'title'   => 'Edit action',
+            'success' => 'Time sensitive action updated.',
+            'failure' => 'Something went wrong with the time sensitive action, please try again.',
+        ],
+        'groups' => [
+            'none' => 'You should add a group!',
+            'add'  => [
+                'title'   => 'Add new group',
+                'success' => 'Time sensitive action group created.',
+                'failure' => 'Something went wrong with the time sensitive action group, please try again.',
+            ],
+            'edit' => [
+                'title'   => 'Edit group',
+                'success' => 'Time sensitive action group updated.',
+                'failure' => 'Something went wrong with the time sensitive action group, please try again.',
+            ],
+        ],
+    ],
+
     // Subscribers
     'subscribers' => [
         'subscribers'      => 'Subscribers',

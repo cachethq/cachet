@@ -49,6 +49,12 @@
                     <span>{{ trans('dashboard.metrics.metrics') }}</span>
                 </a>
             </li>
+            <li {!! set_active('dashboard/actions*') !!}>
+                <a href="{{ route('dashboard.actions.index') }}">
+                    <i class="ion ion-ios-bolt-outline"></i>
+                    <span>{{ trans('dashboard.actions.actions') }}</span>
+                </a>
+            </li>
             <li {!! set_active('dashboard/subscribers*') !!}>
                 <a href="{{ route('dashboard.subscribers.index') }}">
                     <i class="ion ion-ios-email-outline"></i>

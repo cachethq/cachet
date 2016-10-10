@@ -19,6 +19,9 @@ use CachetHQ\Cachet\Models\MetricPoint;
 use CachetHQ\Cachet\Models\Setting;
 use CachetHQ\Cachet\Models\Subscriber;
 use CachetHQ\Cachet\Models\Subscription;
+use CachetHQ\Cachet\Models\TimedAction;
+use CachetHQ\Cachet\Models\TimedActionGroup;
+use CachetHQ\Cachet\Models\TimedActionInstance;
 use CachetHQ\Cachet\Models\User;
 use Carbon\Carbon;
 
@@ -108,6 +111,38 @@ $factory->define(Subscription::class, function ($faker) {
     return [
         'subscriber_id' => factory(Subscriber::class)->create()->id,
         'component_id'  => factory(Component::class)->create()->id,
+    ];
+});
+
+$factory->define(TimedActionGroup::class, function ($faker) {
+    return [
+        'name'  => $faker->sentence,
+        'order' => 0,
+    ];
+});
+
+$factory->define(TimedAction::class, function ($faker) {
+    return [
+        'name'                  => $faker->sentence(2),
+        'timed_action_group_id' => factory(TimedActionGroup::class)->create()->id,
+        'description'           => $faker->sentence(),
+        'active'                => true,
+        'timezone'              => $faker->timezone,
+        'schedule_interval'     => 3600,
+        'completion_latency'    => 1800,
+        'start_at'              => Carbon::now()->subHours(4),
+    ];
+});
+
+$factory->define(TimedActionInstance::class, function ($faker) {
+    $startedAt = Carbon::now();
+    $completedAt = Carbon::now()->addMinutes(30);
+
+    return [
+        'timed_action_id' => factory(TimedAction::class)->create()->id,
+        'message'         => $faker->sentence(),
+        'started_at'      => $startedAt,
+        'completed_at'    => $completedAt,
     ];
 });
 

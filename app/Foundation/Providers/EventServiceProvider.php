@@ -117,6 +117,12 @@ class EventServiceProvider extends ServiceProvider
         'CachetHQ\Cachet\Bus\Events\System\SystemWasUpdatedEvent' => [
             //
         ],
+        'CachetHQ\Cachet\Bus\Events\TimedAction\TimedActionWasAddedEvent' => [
+            //
+        ],
+        'CachetHQ\Cachet\Bus\Events\TimedAction\TimedActionWasUpdatedEvent' => [
+            //
+        ],
         'CachetHQ\Cachet\Bus\Events\User\UserDisabledTwoAuthEvent' => [
             //
         ],

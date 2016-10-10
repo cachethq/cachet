@@ -13,10 +13,12 @@ namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
 use CachetHQ\Cachet\Bus\Commands\Component\UpdateComponentCommand;
 use CachetHQ\Cachet\Bus\Commands\ComponentGroup\UpdateComponentGroupCommand;
+use CachetHQ\Cachet\Bus\Commands\TimedAction\UpdateTimedActionGroupCommand;
 use CachetHQ\Cachet\Http\Controllers\Api\AbstractApiController;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\IncidentTemplate;
+use CachetHQ\Cachet\Models\TimedActionGroup;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\QueryException;
@@ -106,6 +108,28 @@ class ApiController extends AbstractApiController
         }
 
         return $this->collection(ComponentGroup::query()->orderBy('order')->get());
+    }
+
+    /**
+     * Updates the order of timed action groups.
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function postUpdateActionGroupOrder()
+    {
+        $groupData = Binput::get('ids');
+
+        foreach ($groupData as $order => $groupId) {
+            $group = TimedActionGroup::find($groupId);
+
+            dispatch(new UpdateTimedActionGroupCommand(
+                $group,
+                $group->name,
+                $order + 1
+            ));
+        }
+
+        return $this->collection(TimedActionGroup::query()->orderBy('order')->get());
     }
 
     /**

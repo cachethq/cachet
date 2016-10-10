@@ -15,6 +15,7 @@ use CachetHQ\Cachet\Composers\AppComposer;
 use CachetHQ\Cachet\Composers\CurrentUserComposer;
 use CachetHQ\Cachet\Composers\DashboardComposer;
 use CachetHQ\Cachet\Composers\ModuleComposer;
+use CachetHQ\Cachet\Composers\Modules\ActionsComposer as ActionsModuleComposer;
 use CachetHQ\Cachet\Composers\Modules\ComponentsComposer as ComponentsModuleComposer;
 use CachetHQ\Cachet\Composers\Modules\MetricsComposer as MetricsModuleComposer;
 use CachetHQ\Cachet\Composers\Modules\ScheduledComposer as ScheduledModuleComposer;
@@ -39,15 +40,15 @@ class ComposerServiceProvider extends ServiceProvider
         $factory->composer('*', CurrentUserComposer::class);
         $factory->composer(['index', 'single-incident', 'subscribe.*', 'signup', 'dashboard.settings.theme', 'emails.*'], ThemeComposer::class);
         $factory->composer('dashboard.*', DashboardComposer::class);
-        $factory->composer(['setup.*', 'dashboard.settings.localization'], TimezoneLocaleComposer::class);
-
         $factory->composer('*', ModuleComposer::class);
+        $factory->composer('partials.modules.actions', ActionsModuleComposer::class);
         $factory->composer('partials.modules.components', ComponentsModuleComposer::class);
         $factory->composer('partials.modules.metrics', MetricsModuleComposer::class);
         $factory->composer('partials.modules.stickied', StickiedModuleComposer::class);
         $factory->composer('partials.modules.scheduled', ScheduledModuleComposer::class);
         $factory->composer('partials.modules.status', StatusModuleComposer::class);
         $factory->composer('partials.modules.timeline', TimelineModuleComposer::class);
+        $factory->composer(['setup.*', 'dashboard.actions.*', 'dashboard.settings.localization'], TimezoneLocaleComposer::class);
     }
 
     /**

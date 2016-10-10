@@ -17,7 +17,7 @@ use CachetHQ\Cachet\Integrations\Contracts\System;
 /**
  * This is the general api controller.
  *
- * @author James Brooks <james@bluebaytravel.co.uk>
+ * @author James Brooks <james@alt-three.com>
  */
 class GeneralController extends AbstractApiController
 {

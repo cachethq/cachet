@@ -94,12 +94,13 @@ return [
     'actions' => [
         'name'               => 'Name',
         'description'        => 'Description',
-        'start_at'           => 'Schedule start time',
+        'start_at'           => 'Instance creation schedule start date/time',
         'timezone'           => 'Timezone',
-        'schedule_frequency' => 'Schedule frequency (in seconds)',
-        'completion_latency' => 'Completion latency (in seconds)',
+        'schedule_interval'  => 'Instance creation schedule interval (in seconds)',
+        'completion_latency' => 'Instance target completion latency (in seconds)',
         'group'              => 'Group',
         'active'             => 'Active?',
+        'visible'            => 'Visible on the status page?',
         'groups'             => [
             'name' => 'Group Name',
         ],
