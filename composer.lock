@@ -4,7 +4,6 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "beb947157999db1d55d9af092dd81f37",
     "content-hash": "89a23d2b2505160bda9ead17b9b0c0d4",
     "packages": [
         {
@@ -325,16 +324,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.19.13",
+            "version": "3.19.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "57b0efed8fcf5d8c854bc1c26cf4a685af9108d9"
+                "reference": "5d5697c7bc9ab22ce718afb51e5496d0c5cb8778"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/57b0efed8fcf5d8c854bc1c26cf4a685af9108d9",
-                "reference": "57b0efed8fcf5d8c854bc1c26cf4a685af9108d9",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/5d5697c7bc9ab22ce718afb51e5496d0c5cb8778",
+                "reference": "5d5697c7bc9ab22ce718afb51e5496d0c5cb8778",
                 "shasum": ""
             },
             "require": {
@@ -401,7 +400,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2016-10-06 21:17:44"
+            "time": "2016-09-29 21:07:49"
         },
         {
             "name": "backup-manager/backup-manager",
@@ -1904,16 +1903,16 @@
         },
         {
             "name": "jenssegers/date",
-            "version": "v3.2.6",
+            "version": "v3.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jenssegers/date.git",
-                "reference": "ce421c34d7d3be22f3afccaae3718cb58f82a488"
+                "reference": "e4d2b95009354756932cd12e40e3cbb18d20d88c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jenssegers/date/zipball/ce421c34d7d3be22f3afccaae3718cb58f82a488",
-                "reference": "ce421c34d7d3be22f3afccaae3718cb58f82a488",
+                "url": "https://api.github.com/repos/jenssegers/date/zipball/e4d2b95009354756932cd12e40e3cbb18d20d88c",
+                "reference": "e4d2b95009354756932cd12e40e3cbb18d20d88c",
                 "shasum": ""
             },
             "require": {
@@ -1957,7 +1956,7 @@
                 "time",
                 "translation"
             ],
-            "time": "2016-10-06 13:59:12"
+            "time": "2016-09-14 08:53:13"
         },
         {
             "name": "jeremeamia/SuperClosure",

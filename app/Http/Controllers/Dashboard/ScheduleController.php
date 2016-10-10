@@ -98,7 +98,8 @@ class ScheduleController extends Controller
                 Binput::get('name'),
                 Binput::get('message'),
                 Binput::get('notify'),
-                Binput::get('scheduled_at')
+                Binput::get('scheduled_at'),
+                Binput::get('notify_direct')
             ));
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.schedule.add')

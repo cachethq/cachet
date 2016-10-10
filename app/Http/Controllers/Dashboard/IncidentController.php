@@ -136,7 +136,8 @@ class IncidentController extends Controller
                 Binput::get('stickied', false),
                 Binput::get('created_at'),
                 null,
-                null
+                null,
+                Binput::get('notify_direct')
             ));
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.incidents.add')

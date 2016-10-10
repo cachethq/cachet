@@ -43,6 +43,9 @@
                         @endif
                     </div>
                     <div class="col-xs-3 text-right">
+                        @if($current_user->isAdmin && subscribers_enabled())
+                            <a href="/dashboard/subscribers/{{ $subscriber->id }}/edit" class="btn btn-default">{{ trans('forms.edit') }}</a>
+                        @endif
                         <a href="/dashboard/subscribers/{{ $subscriber->id }}/delete" class="btn btn-danger confirm-action" data-method='DELETE'>{{ trans('forms.delete') }}</a>
                     </div>
                 </div>

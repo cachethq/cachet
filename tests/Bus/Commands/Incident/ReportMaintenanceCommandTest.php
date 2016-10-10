@@ -29,17 +29,19 @@ class ReportMaintenanceCommandTest extends AbstractTestCase
     protected function getObjectAndParams()
     {
         $params = [
-            'name'      => 'Test',
-            'message'   => 'Foo bar baz',
-            'notify'    => false,
-            'timestamp' => '2020-12-30 00:00:01',
+            'name'          => 'Test',
+            'message'       => 'Foo bar baz',
+            'notify'        => false,
+            'timestamp'     => '2020-12-30 00:00:01',
+            'direct_notify' => false,
         ];
 
         $object = new ReportMaintenanceCommand(
             $params['name'],
             $params['message'],
             $params['notify'],
-            $params['timestamp']
+            $params['timestamp'],
+            $params['direct_notify']
         );
 
         return compact('params', 'object');

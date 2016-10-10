@@ -101,6 +101,7 @@ class ReportIncidentCommandHandler
         }
 
         $incident->notify = (bool) $command->notify;
+        $incident->directNotify = $command->directNotify;
 
         event(new IncidentWasReportedEvent($incident));
 

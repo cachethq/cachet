@@ -44,6 +44,14 @@ class SubscriberRoutes
                 'as'   => 'add',
                 'uses' => 'SubscriberController@showAddSubscriber',
             ]);
+            $router->get('{subscriber}/edit', [
+                'as'   => 'edit',
+                'uses' => 'SubscriberController@showEditSubscriber',
+            ]);
+            $router->post('{subscriber}/edit', [
+                'as'   => 'edit',
+                'uses' => 'SubscriberController@updateSubscriberAction',
+            ]);
             $router->post('add', 'SubscriberController@createSubscriberAction');
             $router->delete('{subscriber}/delete', 'SubscriberController@deleteSubscriberAction');
         });
