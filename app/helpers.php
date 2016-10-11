@@ -9,6 +9,8 @@
  * file that was distributed with this source code.
  */
 
+use Dotenv\Dotenv;
+use Dotenv\Exception\InvalidPathException;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Request;
 use Jenssegers\Date\Date;
@@ -137,5 +139,35 @@ if (!function_exists('array_numeric_sort')) {
         });
 
         return $array;
+    }
+}
+
+if (!function_exists('write_env')) {
+    /**
+     * Writes to the .env file with given parameters.
+     *
+     * @param string $key
+     * @param mixed  $value
+     *
+     * @return void
+     */
+    function write_env($key, $value)
+    {
+        $dir = app()->environmentPath();
+        $file = app()->environmentFile();
+        $path = "{$dir}/{$file}";
+
+        try {
+            (new Dotenv($dir, $file))->load();
+
+            $envKey = strtoupper($key);
+            $envValue = env($envKey) ?: 'null';
+            
+            file_put_contents($path, str_replace(
+                $envKey.'='.$envValue, $envKey.'='.$value, file_get_contents($path)
+            ));
+        } catch (InvalidPathException $e) {
+            //
+        }
     }
 }

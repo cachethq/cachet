@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
+use CachetHQ\Cachet\Bus\Commands\System\SetupMailCommand;
 use CachetHQ\Cachet\Integrations\Contracts\Credits;
 use CachetHQ\Cachet\Models\User;
 use CachetHQ\Cachet\Settings\Repository;
@@ -33,7 +34,7 @@ class SettingsController extends Controller
      * @var array
      */
     protected $subMenu = [];
-
+    
     /**
      * Creates a new settings controller instance.
      *
@@ -70,6 +71,12 @@ class SettingsController extends Controller
                 'title'  => trans('dashboard.settings.localization.localization'),
                 'url'    => route('dashboard.settings.localization'),
                 'icon'   => 'ion-earth',
+                'active' => false,
+            ],
+            'email' => [
+                'title'  => trans('dashboard.settings.email.email'),
+                'url'    => route('dashboard.settings.email'),
+                'icon'   => 'ion-at',
                 'active' => false,
             ],
             'security' => [
@@ -158,6 +165,23 @@ class SettingsController extends Controller
             ->withPageTitle(trans('dashboard.settings.localization.localization').' - '.trans('dashboard.dashboard'))
             ->withSubMenu($this->subMenu);
     }
+
+    /**
+     * Shows the settings email view.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function showEmailSetupView()
+    {
+        $this->subMenu['email']['active'] = true;
+
+        Session::flash('redirect_to', $this->subMenu['email']['url']);
+
+        return View::make('dashboard.settings.email-setup')
+            ->withPageTitle(trans('dashboard.settings.email.email').' - '.trans('dashboard.dashboard'))
+            ->withSubMenu($this->subMenu);
+    }
+
 
     /**
      * Shows the settings customization view.
@@ -360,5 +384,17 @@ class SettingsController extends Controller
 
         // Store the banner type.
         $setting->set('app_banner_type', $file->getMimeType());
+    }
+
+    public function postEmailSetup()
+    {
+        $config = Binput::all();
+        unset($config['_token']);
+        try {
+            dispatch(new SetupMailCommand($config));
+            return Redirect::back()->withSuccess(trans('dashboard.settings.edit.success'));
+        } catch (\Swift_TransportException $e) {
+            return Redirect::back()->withErrors($e->getMessage());
+        }
     }
 }
