@@ -33,7 +33,6 @@ class ApiRoutes
         $router->group([
             'middleware' => ['web', 'auth'],
             'namespace'  => 'Dashboard',
-            'as'         => 'dashboard.api.',
             'prefix'     => 'dashboard/api',
         ], function (Registrar $router) {
             $router->get('incidents/templates', 'ApiController@getIncidentTemplate');

@@ -19,7 +19,6 @@ use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\MetricPoint;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
-use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 
 class MetricController extends Controller
@@ -83,13 +82,13 @@ class MetricController extends Controller
                 $metricData['threshold']
             ));
         } catch (ValidationException $e) {
-            return Redirect::route('dashboard.metrics.add')
+            return cachet_route('dashboard.metrics.create')
                 ->withInput(Binput::all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.metrics.add.failure')))
                 ->withErrors($e->getMessageBag());
         }
 
-        return Redirect::route('dashboard.metrics.index')
+        return cachet_route('dashboard.metrics')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.metrics.add.success')));
     }
 
@@ -115,7 +114,7 @@ class MetricController extends Controller
     {
         dispatch(new RemoveMetricCommand($metric));
 
-        return Redirect::route('dashboard.metrics.index')
+        return cachet_route('dashboard.metrics')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.metrics.delete.success')));
     }
 
@@ -156,13 +155,13 @@ class MetricController extends Controller
                 Binput::get('threshold', null, false)
             ));
         } catch (ValidationException $e) {
-            return Redirect::route('dashboard.metrics.edit', ['id' => $metric->id])
+            return cachet_route('dashboard.metrics.edit', [$metric->id])
                 ->withInput(Binput::all())
                 ->withTitle(sprintf('<strong>%s</strong>', trans('dashboard.notifications.whoops')))
                 ->withErrors($e->getMessageBag());
         }
 
-        return Redirect::route('dashboard.metrics.edit', ['id' => $metric->id])
+        return cachet_route('dashboard.metrics.edit', [$metric->id])
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.metrics.edit.success')));
     }
 }

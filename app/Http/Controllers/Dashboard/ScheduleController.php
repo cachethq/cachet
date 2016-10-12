@@ -18,7 +18,6 @@ use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentTemplate;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
-use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\MessageBag;
 use Jenssegers\Date\Date;
@@ -42,13 +41,13 @@ class ScheduleController extends Controller
         $this->subMenu = [
             'incidents' => [
                 'title'  => trans('dashboard.incidents.incidents'),
-                'url'    => route('dashboard.incidents.index'),
+                'url'    => cachet_route('dashboard.incidents'),
                 'icon'   => 'ion-android-checkmark-circle',
                 'active' => false,
             ],
             'schedule' => [
                 'title'  => trans('dashboard.schedule.schedule'),
-                'url'    => route('dashboard.schedule.index'),
+                'url'    => cachet_route('dashboard.schedule'),
                 'icon'   => 'ion-android-calendar',
                 'active' => true,
             ],
@@ -101,13 +100,13 @@ class ScheduleController extends Controller
                 Binput::get('scheduled_at')
             ));
         } catch (ValidationException $e) {
-            return Redirect::route('dashboard.schedule.add')
+            return cachet_route('dashboard.schedule.create')
                 ->withInput(Binput::all())
                 ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.schedule.add.failure')))
                 ->withErrors($e->getMessageBag());
         }
 
-        return Redirect::route('dashboard.schedule.index')
+        return cachet_route('dashboard.schedule')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.schedule.add.success')));
     }
 
@@ -146,7 +145,7 @@ class ScheduleController extends Controller
             $messageBag = new MessageBag();
             $messageBag->add('scheduled_at', trans('validation.date', ['attribute' => 'scheduled time you supplied']));
 
-            return Redirect::route('dashboard.schedule.edit', ['id' => $schedule->id])->withErrors($messageBag);
+            return cachet_route('dashboard.schedule.edit', [$schedule->id])->withErrors($messageBag);
         }
 
         $scheduleData['scheduled_at'] = $scheduledAt;
@@ -156,13 +155,13 @@ class ScheduleController extends Controller
         try {
             $schedule->update($scheduleData);
         } catch (ValidationException $e) {
-            return Redirect::route('dashboard.schedule.edit', ['id' => $schedule->id])
+            return cachet_route('dashboard.schedule.edit', [$schedule->id])
                 ->withInput(Binput::all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.schedule.edit.failure')))
                 ->withErrors($e->getMessageBag());
         }
 
-        return Redirect::route('dashboard.schedule.edit', ['id' => $schedule->id])
+        return cachet_route('dashboard.schedule.edit', [$schedule->id])
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.schedule.edit.success')));
     }
 
@@ -177,7 +176,7 @@ class ScheduleController extends Controller
     {
         $schedule->delete();
 
-        return Redirect::route('dashboard.schedule.index')
+        return cachet_route('dashboard.schedule')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.schedule.delete.success')));
     }
 }

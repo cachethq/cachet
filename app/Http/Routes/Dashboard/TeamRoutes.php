@@ -33,28 +33,44 @@ class TeamRoutes
         $router->group([
             'middleware' => ['web', 'auth'],
             'namespace'  => 'Dashboard',
-            'as'         => 'dashboard.team.',
             'prefix'     => 'dashboard/team',
         ], function (Registrar $router) {
             $router->get('/', [
-                'as'   => 'index',
+                'as'   => 'get:dashboard.team',
                 'uses' => 'TeamController@showTeamView',
             ]);
 
             $router->group(['middleware' => 'admin'], function (Registrar $router) {
-                $router->get('add', [
-                    'as'   => 'add',
+                $router->get('create', [
+                    'as'   => 'get:dashboard.team.create',
                     'uses' => 'TeamController@showAddTeamMemberView',
                 ]);
+                $router->post('create', [
+                    'as'   => 'post:dashboard.team.create',
+                    'uses' => 'TeamController@postAddUser',
+                ]);
+
                 $router->get('invite', [
-                    'as'   => 'invite',
+                    'as'   => 'get:dashboard.team.invite',
                     'uses' => 'TeamController@showInviteTeamMemberView',
                 ]);
-                $router->get('{user}', ['as' => 'edit', 'uses' => 'TeamController@showTeamMemberView']);
-                $router->post('add', 'TeamController@postAddUser');
-                $router->post('invite', 'TeamController@postInviteUser');
-                $router->post('{user}', 'TeamController@postUpdateUser');
-                $router->delete('{user}/delete', 'TeamController@deleteUser');
+                $router->post('invite', [
+                    'as'   => 'post:dashboard.team.invite',
+                    'uses' => 'TeamController@postInviteUser',
+                ]);
+
+                $router->get('{user}', [
+                    'as'   => 'get:dashboard.team.edit',
+                    'uses' => 'TeamController@showTeamMemberView',
+                ]);
+                $router->post('{user}', [
+                    'as'   => 'post::dashboard.team.edit',
+                    'uses' => 'TeamController@postUpdateUser',
+                ]);
+                $router->delete('{user}', [
+                    'as'   => 'delete:dashboard.team.delete',
+                    'uses' => 'TeamController@deleteUser',
+                ]);
             });
         });
     }

@@ -13,7 +13,7 @@
     <div class="row">
         <div class="col-sm-12">
         @include('dashboard.partials.errors')
-        <form name="SubscriberForm" class="form-vertical" role="form" action="/dashboard/subscribers/add" method="POST">
+        <form name="SubscriberForm" class="form-vertical" role="form" action="{{ cachet_route('dashboard.subscribers.create', [], 'post') }}" method="POST">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <fieldset>
             <div class="form-group">
@@ -26,7 +26,7 @@
             <div class="form-group">
                 <div class="btn-group">
                     <button type="submit" class="btn btn-success">{{ trans('forms.add') }}</button>
-                    <a class="btn btn-default" href="{{ route('dashboard.subscribers.index') }}">{{ trans('forms.cancel') }}</a>
+                    <a class="btn btn-default" href="{{ cachet_route('dashboard.subscribers') }}">{{ trans('forms.cancel') }}</a>
                 </div>
             </div>
         </form>
