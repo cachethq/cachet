@@ -82,13 +82,13 @@ class MetricController extends Controller
                 $metricData['threshold']
             ));
         } catch (ValidationException $e) {
-            return cachet_route('dashboard.metrics.create')
+            return cachet_redirect('dashboard.metrics.create')
                 ->withInput(Binput::all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.metrics.add.failure')))
                 ->withErrors($e->getMessageBag());
         }
 
-        return cachet_route('dashboard.metrics')
+        return cachet_redirect('dashboard.metrics')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.metrics.add.success')));
     }
 
@@ -114,7 +114,7 @@ class MetricController extends Controller
     {
         dispatch(new RemoveMetricCommand($metric));
 
-        return cachet_route('dashboard.metrics')
+        return cachet_redirect('dashboard.metrics')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.metrics.delete.success')));
     }
 
@@ -155,13 +155,13 @@ class MetricController extends Controller
                 Binput::get('threshold', null, false)
             ));
         } catch (ValidationException $e) {
-            return cachet_route('dashboard.metrics.edit', [$metric->id])
+            return cachet_redirect('dashboard.metrics.edit', [$metric->id])
                 ->withInput(Binput::all())
                 ->withTitle(sprintf('<strong>%s</strong>', trans('dashboard.notifications.whoops')))
                 ->withErrors($e->getMessageBag());
         }
 
-        return cachet_route('dashboard.metrics.edit', [$metric->id])
+        return cachet_redirect('dashboard.metrics.edit', [$metric->id])
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.metrics.edit.success')));
     }
 }

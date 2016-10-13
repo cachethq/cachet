@@ -82,7 +82,7 @@ class DashboardController extends Controller
      */
     public function redirectAdmin()
     {
-        return cachet_route('dashboard');
+        return cachet_redirect('dashboard');
     }
 
     /**
