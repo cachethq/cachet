@@ -76,7 +76,7 @@ class SignupController extends Controller
                 User::LEVEL_USER
             ));
         } catch (ValidationException $e) {
-            return cachet_route('signup.invite', [$invite->code])
+            return cachet_redirect('signup.invite', [$invite->code])
                 ->withInput(Binput::except('password'))
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('cachet.signup.failure')))
                 ->withErrors($e->getMessageBag());
@@ -84,7 +84,7 @@ class SignupController extends Controller
 
         dispatch(new ClaimInviteCommand($invite));
 
-        return cachet_route('status-page')
+        return cachet_redirect('status-page')
             ->withSuccess(sprintf('<strong>%s</strong> %s', trans('dashboard.notifications.awesome'), trans('cachet.signup.success')));
     }
 }

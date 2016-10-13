@@ -61,13 +61,13 @@ class SubscriberController extends Controller
                 dispatch(new SubscribeSubscriberCommand($subscriber, $verified));
             }
         } catch (ValidationException $e) {
-            return cachet_route('dashboard.subscribers.create')
+            return cachet_redirect('dashboard.subscribers.create')
                 ->withInput(Binput::all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.subscribers.add.failure')))
                 ->withErrors($e->getMessageBag());
         }
 
-        return cachet_route('dashboard.subscribers.create')
+        return cachet_redirect('dashboard.subscribers.create')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.subscribers.add.success')));
     }
 
@@ -84,6 +84,6 @@ class SubscriberController extends Controller
     {
         dispatch(new UnsubscribeSubscriberCommand($subscriber));
 
-        return cachet_route('dashboard.subscribers');
+        return cachet_redirect('dashboard.subscribers');
     }
 }

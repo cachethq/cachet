@@ -100,13 +100,13 @@ class ScheduleController extends Controller
                 Binput::get('scheduled_at')
             ));
         } catch (ValidationException $e) {
-            return cachet_route('dashboard.schedule.create')
+            return cachet_redirect('dashboard.schedule.create')
                 ->withInput(Binput::all())
                 ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.schedule.add.failure')))
                 ->withErrors($e->getMessageBag());
         }
 
-        return cachet_route('dashboard.schedule')
+        return cachet_redirect('dashboard.schedule')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.schedule.add.success')));
     }
 
@@ -145,7 +145,7 @@ class ScheduleController extends Controller
             $messageBag = new MessageBag();
             $messageBag->add('scheduled_at', trans('validation.date', ['attribute' => 'scheduled time you supplied']));
 
-            return cachet_route('dashboard.schedule.edit', [$schedule->id])->withErrors($messageBag);
+            return cachet_redirect('dashboard.schedule.edit', [$schedule->id])->withErrors($messageBag);
         }
 
         $scheduleData['scheduled_at'] = $scheduledAt;
@@ -155,13 +155,13 @@ class ScheduleController extends Controller
         try {
             $schedule->update($scheduleData);
         } catch (ValidationException $e) {
-            return cachet_route('dashboard.schedule.edit', [$schedule->id])
+            return cachet_redirect('dashboard.schedule.edit', [$schedule->id])
                 ->withInput(Binput::all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.schedule.edit.failure')))
                 ->withErrors($e->getMessageBag());
         }
 
-        return cachet_route('dashboard.schedule.edit', [$schedule->id])
+        return cachet_redirect('dashboard.schedule.edit', [$schedule->id])
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.schedule.edit.success')));
     }
 
@@ -176,7 +176,7 @@ class ScheduleController extends Controller
     {
         $schedule->delete();
 
-        return cachet_route('dashboard.schedule')
+        return cachet_redirect('dashboard.schedule')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.schedule.delete.success')));
     }
 }

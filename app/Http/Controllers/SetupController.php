@@ -267,14 +267,14 @@ class SetupController extends Controller
                 return Response::json(['status' => 1]);
             }
 
-            return cachet_route('dashboard');
+            return cachet_redirect('dashboard');
         }
 
         if (Request::ajax()) {
             return Response::json(['errors' => $v->getMessageBag()], 400);
         }
 
-        return cachet_route('setup')->withInput()->withErrors($v->getMessageBag());
+        return cachet_redirect('setup')->withInput()->withErrors($v->getMessageBag());
     }
 
     /**
