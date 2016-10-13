@@ -193,7 +193,7 @@ class Incident extends Model implements HasPresenter
      */
     public function scopeScheduled(Builder $query)
     {
-        return $query->where('status', 0)->where('scheduled_at', '>=', Carbon::now()->toDateTimeString());
+        return $query->where('status', 0)->where('scheduled_at', '>=', Carbon::now());
     }
 
     /**
@@ -207,7 +207,7 @@ class Incident extends Model implements HasPresenter
     {
         return $query->where('status', '>', 0)->orWhere(function ($query) {
             $query->where('status', 0)->where(function ($query) {
-                $query->whereNull('scheduled_at')->orWhere('scheduled_at', '<=', Carbon::now()->toDateTimeString());
+                $query->whereNull('scheduled_at')->orWhere('scheduled_at', '<=', Carbon::now());
             });
         });
     }
