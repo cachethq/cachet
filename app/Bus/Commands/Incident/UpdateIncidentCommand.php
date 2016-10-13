@@ -130,11 +130,11 @@ final class UpdateIncidentCommand
      * @param bool                             $stickied
      * @param string|null                      $incident_date
      * @param string|null                      $template
-     * @param array|null                       $template_vars
+     * @param array                            $template_vars
      *
      * @return void
      */
-    public function __construct(Incident $incident, $name, $status, $message, $visible, $component_id, $component_status, $notify, $stickied, $incident_date, $template, array $template_vars = null)
+    public function __construct(Incident $incident, $name, $status, $message, $visible, $component_id, $component_status, $notify, $stickied, $incident_date, $template, array $template_vars = [])
     {
         $this->incident = $incident;
         $this->name = $name;

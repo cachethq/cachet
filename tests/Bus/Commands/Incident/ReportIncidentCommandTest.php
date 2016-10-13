@@ -39,7 +39,7 @@ class ReportIncidentCommandTest extends AbstractTestCase
             'stickied'         => false,
             'incident_date'    => null,
             'template'         => null,
-            'template_vars'    => null,
+            'template_vars'    => [],
         ];
 
         $object = new ReportIncidentCommand(
