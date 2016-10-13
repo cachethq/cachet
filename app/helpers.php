@@ -156,3 +156,24 @@ if (!function_exists('cachet_route')) {
         return app('url')->route("{$domain}::{$method}:{$name}", $parameters, true);
     }
 }
+
+if (!function_exists('cachet_redirect')) {
+    /**
+     * Create a new redirect response to a named route, which resides in a given domain.
+     *
+     * @param  string  $name
+     * @param  array   $parameters
+     * @param  int     $status
+     * @param  array   $headers
+     * @param string   $method
+     * @param string   $domain
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    function cachet_redirect($name, $parameters = [], $status = 302, $headers = [], $method = 'get', $domain = 'core')
+    {
+        $url = cachet_route($name, $parameters, $method, $domain);
+
+        return app('redirect')->to($url, $status, $headers);
+    }
+}

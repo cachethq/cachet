@@ -62,17 +62,17 @@ class SubscribeController extends Controller
         try {
             $subscription = dispatch(new SubscribeSubscriberCommand($email, $verified));
         } catch (ValidationException $e) {
-            return cachet_route('status-page')
+            return cachet_redirect('status-page')
                 ->withInput(Binput::all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('cachet.subscriber.email.failure')))
                 ->withErrors($e->getMessageBag());
         }
 
         if ($subscription->is_verified) {
-            return cachet_route('status-page')->withSuccess(trans('cachet.subscriber.email.already-subscribed', ['email' => $email]));
+            return cachet_redirect('status-page')->withSuccess(trans('cachet.subscriber.email.already-subscribed', ['email' => $email]));
         }
 
-        return cachet_route('subscribe.manage', $subscription->verify_code)
+        return cachet_redirect('subscribe.manage', $subscription->verify_code)
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('cachet.subscriber.email.subscribed')));
     }
 
@@ -99,7 +99,7 @@ class SubscribeController extends Controller
             dispatch(new VerifySubscriberCommand($subscriber));
         }
 
-        return cachet_route('status-page')
+        return cachet_redirect('status-page')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('cachet.subscriber.email.verified')));
     }
 
@@ -129,7 +129,7 @@ class SubscribeController extends Controller
             dispatch(new UnsubscribeSubscriberCommand($subscriber, $subscription));
         }
 
-        return cachet_route('status-page')
+        return cachet_redirect('status-page')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('cachet.subscriber.email.unsubscribed')));
     }
 
@@ -184,13 +184,13 @@ class SubscribeController extends Controller
         try {
             dispatch(new UpdateSubscriberSubscriptionCommand($subscriber, Binput::get('subscriptions')));
         } catch (ValidationException $e) {
-            return cachet_route('subscribe.manage', $subscriber->verify_code)
+            return cachet_redirect('subscribe.manage', $subscriber->verify_code)
                 ->withInput(Binput::all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('cachet.subscriber.email.failure')))
                 ->withErrors($e->getMessageBag());
         }
 
-        return cachet_route('subscribe.manage', $subscriber->verify_code)
+        return cachet_redirect('subscribe.manage', $subscriber->verify_code)
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('cachet.subscriber.email.subscribed')));
     }
 }

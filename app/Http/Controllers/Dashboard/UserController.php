@@ -58,13 +58,13 @@ class UserController extends Controller
         try {
             Auth::user()->update($userData);
         } catch (ValidationException $e) {
-            return cachet_route('dashboard.user')
+            return cachet_redirect('dashboard.user')
                 ->withInput($userData)
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.team.edit.failure')))
                 ->withErrors($e->getMessageBag());
         }
 
-        return cachet_route('dashboard.user')
+        return cachet_redirect('dashboard.user')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.team.edit.success')));
     }
 
@@ -82,6 +82,6 @@ class UserController extends Controller
 
         event(new UserRegeneratedApiTokenEvent($user));
 
-        return cachet_route('dashboard.user');
+        return cachet_redirect('dashboard.user');
     }
 }
