@@ -161,12 +161,12 @@ if (!function_exists('cachet_redirect')) {
     /**
      * Create a new redirect response to a named route, which resides in a given domain.
      *
-     * @param  string  $name
-     * @param  array   $parameters
-     * @param  int     $status
-     * @param  array   $headers
-     * @param string   $method
-     * @param string   $domain
+     * @param string $name
+     * @param array  $parameters
+     * @param int    $status
+     * @param array  $headers
+     * @param string $method
+     * @param string $domain
      *
      * @return \Illuminate\Http\RedirectResponse
      */
