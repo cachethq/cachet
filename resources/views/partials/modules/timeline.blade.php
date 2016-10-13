@@ -10,14 +10,14 @@
     <ul class="pager">
         @if($can_page_backward)
         <li class="previous">
-            <a href="{{ route('status-page') }}?start_date={{ $previous_date }}" class="links">
+            <a href="{{ cachet_route('status-page') }}?start_date={{ $previous_date }}" class="links">
                 <span aria-hidden="true">&larr;</span> {{ trans('cachet.incidents.previous_week') }}
             </a>
         </li>
         @endif
         @if($can_page_forward)
         <li class="next">
-            <a href="{{ route('status-page') }}?start_date={{ $next_date }}" class="links">
+            <a href="{{ cachet_route('status-page') }}?start_date={{ $next_date }}" class="links">
                 {{ trans('cachet.incidents.next_week') }} <span aria-hidden="true">&rarr;</span>
             </a>
         </li>

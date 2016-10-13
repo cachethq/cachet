@@ -13,7 +13,7 @@
         </div>
         <div class="row">
             <div class="col-sm-12">
-                <form id="settings-form" name="SettingsForm" class="form-vertical" role="form" action="/dashboard/settings" method="POST">
+                <form id="settings-form" name="SettingsForm" class="form-vertical" role="form" action="{{ cachet_route('dashboard.settings', [], 'post') }}" method="POST">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     @include('dashboard.partials.errors')
                     <fieldset>

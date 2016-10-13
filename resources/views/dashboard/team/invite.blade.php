@@ -13,7 +13,7 @@
     <div class="row">
         <div class="col-sm-12">
             @include('dashboard.partials.errors')
-            <form name="UserForm" class="form-vertical" role="form" action="/dashboard/team/invite" method="POST">
+            <form name="UserForm" class="form-vertical" role="form" action="{{ cachet_route('dashboard.team.invite', [], 'post') }}" method="POST">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <fieldset>
                     <div class="form-group">
@@ -37,7 +37,7 @@
                 <div class="form-group">
                     <div class="btn-group">
                         <button type="submit" class="btn btn-success">{{ trans('forms.invite') }}</button>
-                        <a class="btn btn-default" href="{{ route('dashboard.team.index') }}">{{ trans('forms.cancel') }}</a>
+                        <a class="btn btn-default" href="{{ cachet_route('dashboard.team') }}">{{ trans('forms.cancel') }}</a>
                     </div>
                 </div>
             </form>

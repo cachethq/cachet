@@ -21,7 +21,6 @@ use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 use Jenssegers\Date\Date;
 
@@ -83,7 +82,7 @@ class DashboardController extends Controller
      */
     public function redirectAdmin()
     {
-        return Redirect::route('dashboard.index');
+        return cachet_route('dashboard');
     }
 
     /**

@@ -18,7 +18,6 @@ use CachetHQ\Cachet\Models\Subscriber;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Routing\Controller;
-use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 
 class SubscriberController extends Controller
@@ -62,13 +61,13 @@ class SubscriberController extends Controller
                 dispatch(new SubscribeSubscriberCommand($subscriber, $verified));
             }
         } catch (ValidationException $e) {
-            return Redirect::route('dashboard.subscribers.add')
+            return cachet_route('dashboard.subscribers.create')
                 ->withInput(Binput::all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.subscribers.add.failure')))
                 ->withErrors($e->getMessageBag());
         }
 
-        return Redirect::route('dashboard.subscribers.add')
+        return cachet_route('dashboard.subscribers.create')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.subscribers.add.success')));
     }
 
@@ -85,6 +84,6 @@ class SubscriberController extends Controller
     {
         dispatch(new UnsubscribeSubscriberCommand($subscriber));
 
-        return Redirect::route('dashboard.subscribers.index');
+        return cachet_route('dashboard.subscribers');
     }
 }

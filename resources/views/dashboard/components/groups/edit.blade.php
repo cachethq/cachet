@@ -40,7 +40,7 @@
 
                 <div class="btn-group">
                     <button type="submit" class="btn btn-success">{{ trans('forms.save') }}</button>
-                    <a class="btn btn-default" href="{{ route('dashboard.components.groups') }}">{{ trans('forms.cancel') }}</a>
+                    <a class="btn btn-default" href="{{ cachet_route('dashboard.components.groups') }}">{{ trans('forms.cancel') }}</a>
                 </div>
             </form>
         </div>

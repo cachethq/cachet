@@ -19,7 +19,6 @@ use CachetHQ\Cachet\Models\User;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 use PragmaRX\Google2FA\Vendor\Laravel\Facade as Google2FA;
 
@@ -59,13 +58,13 @@ class UserController extends Controller
         try {
             Auth::user()->update($userData);
         } catch (ValidationException $e) {
-            return Redirect::route('dashboard.user')
+            return cachet_route('dashboard.user')
                 ->withInput($userData)
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.team.edit.failure')))
                 ->withErrors($e->getMessageBag());
         }
 
-        return Redirect::route('dashboard.user')
+        return cachet_route('dashboard.user')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.team.edit.success')));
     }
 
@@ -83,6 +82,6 @@ class UserController extends Controller
 
         event(new UserRegeneratedApiTokenEvent($user));
 
-        return Redirect::route('dashboard.user');
+        return cachet_route('dashboard.user');
     }
 }

@@ -58,17 +58,17 @@ class AuthController extends Controller
             if (Auth::user()->hasTwoFactor) {
                 Session::put('2fa_id', Auth::user()->id);
 
-                return Redirect::route('auth.two-factor');
+                return cachet_route('auth.two-factor');
             }
 
             Auth::attempt($loginData, $rememberUser);
 
             event(new UserLoggedInEvent(Auth::user()));
 
-            return Redirect::intended('dashboard');
+            return Redirect::intended(cachet_route('dashboard'));
         }
 
-        return Redirect::route('auth.login')
+        return cachet_route('auth.login')
             ->withInput(Binput::except('password'))
             ->withError(trans('forms.login.invalid'));
     }
@@ -113,11 +113,11 @@ class AuthController extends Controller
                 // Failed login, log back out.
                 Auth::logout();
 
-                return Redirect::route('auth.login')->withError(trans('forms.login.invalid-token'));
+                return cachet_route('auth.login')->withError(trans('forms.login.invalid-token'));
             }
         }
 
-        return Redirect::route('auth.login')->withError(trans('forms.login.invalid-token'));
+        return cachet_route('auth.login')->withError(trans('forms.login.invalid-token'));
     }
 
     /**

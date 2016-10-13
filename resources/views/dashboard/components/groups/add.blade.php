@@ -14,7 +14,7 @@
     <div class="row">
         <div class="col-sm-12">
             @include('dashboard.partials.errors')
-            <form name="CreateComponentGroupForm" class="form-vertical" role="form" action="/dashboard/components/groups/add" method="POST">
+            <form name="CreateComponentGroupForm" class="form-vertical" role="form" action="{{ cachet_route('dashboard.components.groups.create', [], 'post') }}" method="POST">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <fieldset>
                     <div class="form-group">
@@ -40,7 +40,7 @@
 
                 <div class="btn-group">
                     <button type="submit" class="btn btn-success">{{ trans('forms.add') }}</button>
-                    <a class="btn btn-default" href="{{ route('dashboard.components.groups') }}">{{ trans('forms.cancel') }}</a>
+                    <a class="btn btn-default" href="{{ cachet_route('dashboard.components.groups') }}">{{ trans('forms.cancel') }}</a>
                 </div>
             </form>
         </div>

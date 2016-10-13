@@ -23,7 +23,6 @@ use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Tag;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
-use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 
 class ComponentController extends Controller
@@ -45,13 +44,13 @@ class ComponentController extends Controller
         $this->subMenu = [
             'components' => [
                 'title'  => trans('dashboard.components.components'),
-                'url'    => route('dashboard.components.index'),
+                'url'    => cachet_route('dashboard.components'),
                 'icon'   => 'ion-ios-browsers',
                 'active' => false,
             ],
             'groups' => [
                 'title'  => trans_choice('dashboard.components.groups.groups', 2),
-                'url'    => route('dashboard.components.groups'),
+                'url'    => cachet_route('dashboard.components.groups'),
                 'icon'   => 'ion-folder',
                 'active' => false,
             ],
@@ -138,7 +137,7 @@ class ComponentController extends Controller
                 $componentData['enabled']
             ));
         } catch (ValidationException $e) {
-            return Redirect::route('dashboard.components.edit', ['id' => $component->id])
+            return cachet_route('dashboard.components.edit', [$component->id])
                 ->withInput(Binput::all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.components.edit.failure')))
                 ->withErrors($e->getMessageBag());
@@ -154,7 +153,7 @@ class ComponentController extends Controller
 
         $component->tags()->sync($componentTags);
 
-        return Redirect::route('dashboard.components.edit', ['id' => $component->id])
+        return cachet_route('dashboard.components.edit', [$component->id])
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.components.edit.success')));
     }
 
@@ -191,7 +190,7 @@ class ComponentController extends Controller
                 $componentData['enabled']
             ));
         } catch (ValidationException $e) {
-            return Redirect::route('dashboard.components.add')
+            return cachet_route('dashboard.components.create')
                 ->withInput(Binput::all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.components.add.failure')))
                 ->withErrors($e->getMessageBag());
@@ -207,7 +206,7 @@ class ComponentController extends Controller
 
         $component->tags()->sync($componentTags);
 
-        return Redirect::route('dashboard.components.index')
+        return cachet_route('dashboard.components')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.components.add.success')));
     }
 
@@ -222,7 +221,7 @@ class ComponentController extends Controller
     {
         dispatch(new RemoveComponentCommand($component));
 
-        return Redirect::route('dashboard.components.index')
+        return cachet_route('dashboard.components')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.components.delete.success')));
     }
 
@@ -237,7 +236,7 @@ class ComponentController extends Controller
     {
         dispatch(new RemoveComponentGroupCommand($group));
 
-        return Redirect::route('dashboard.components.groups')
+        return cachet_route('dashboard.components.groups')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.components.delete.success')));
     }
 
@@ -281,13 +280,13 @@ class ComponentController extends Controller
                 Binput::get('visible')
             ));
         } catch (ValidationException $e) {
-            return Redirect::route('dashboard.components.groups.add')
+            return cachet_route('dashboard.components.groups.create')
                 ->withInput(Binput::all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.components.groups.add.failure')))
                 ->withErrors($e->getMessageBag());
         }
 
-        return Redirect::route('dashboard.components.groups')
+        return cachet_route('dashboard.components.groups')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.components.groups.add.success')));
     }
 
@@ -309,13 +308,13 @@ class ComponentController extends Controller
                 Binput::get('visible')
             ));
         } catch (ValidationException $e) {
-            return Redirect::route('dashboard.components.groups.edit', ['id' => $group->id])
+            return cachet_route('dashboard.components.groups.edit', [$group->id])
                 ->withInput(Binput::all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.components.groups.edit.failure')))
                 ->withErrors($e->getMessageBag());
         }
 
-        return Redirect::route('dashboard.components.groups.edit', ['id' => $group->id])
+        return cachet_route('dashboard.components.groups.edit', [$group->id])
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.components.groups.edit.success')));
     }
 }

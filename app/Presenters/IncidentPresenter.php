@@ -258,7 +258,7 @@ class IncidentPresenter extends BasePresenter implements Arrayable
      */
     public function permalink()
     {
-        return route('incident', $this->wrappedObject->id);
+        return cachet_route('incident', [$this->wrappedObject->id]);
     }
 
     /**

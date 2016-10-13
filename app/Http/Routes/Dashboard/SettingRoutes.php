@@ -33,46 +33,49 @@ class SettingRoutes
         $router->group([
             'middleware' => ['web', 'auth'],
             'namespace'  => 'Dashboard',
-            'as'         => 'dashboard.settings.',
             'prefix'     => 'dashboard/settings',
         ], function (Registrar $router) {
             $router->get('setup', [
-                'as'   => 'setup',
+                'as'   => 'get:dashboard.settings.setup',
                 'uses' => 'SettingsController@showSetupView',
             ]);
             $router->get('analytics', [
-                'as'   => 'analytics',
+                'as'   => 'get:dashboard.settings.analytics',
                 'uses' => 'SettingsController@showAnalyticsView',
             ]);
             $router->get('localization', [
-                'as'   => 'localization',
+                'as'   => 'get:dashboard.settings.localization',
                 'uses' => 'SettingsController@showLocalizationView',
             ]);
             $router->get('security', [
-                'as'   => 'security',
+                'as'   => 'get:dashboard.settings.security',
                 'uses' => 'SettingsController@showSecurityView',
             ]);
             $router->get('theme', [
-                'as'   => 'theme',
+                'as'   => 'get:dashboard.settings.theme',
                 'uses' => 'SettingsController@showThemeView',
             ]);
             $router->get('stylesheet', [
-                'as'   => 'stylesheet',
+                'as'   => 'get:dashboard.settings.stylesheet',
                 'uses' => 'SettingsController@showStylesheetView',
             ]);
             $router->get('customization', [
-                'as'   => 'customization',
+                'as'   => 'get:dashboard.settings.customization',
                 'uses' => 'SettingsController@showCustomizationView',
             ]);
             $router->get('credits', [
-                'as'   => 'credits',
+                'as'   => 'get:dashboard.settings.credits',
                 'uses' => 'SettingsController@showCreditsView',
             ]);
             $router->get('log', [
-                'as'   => 'log',
+                'as'   => 'get:dashboard.settings.log',
                 'uses' => 'SettingsController@showLogView',
             ]);
-            $router->post('/', 'SettingsController@postSettings');
+
+            $router->post('/', [
+                'as'   => 'post:dashboard.settings',
+                'uses' => 'SettingsController@postSettings',
+            ]);
         });
     }
 }

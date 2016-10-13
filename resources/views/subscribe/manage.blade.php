@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="pull-right">
-    <p><a class="btn btn-success btn-outline" href="/"><i class="ion ion-home"></i></a></p>
+    <p><a class="btn btn-success btn-outline" href="{{ cachet_route('status-page') }}"><i class="ion ion-home"></i></a></p>
 </div>
 
 <div class="clearfix"></div>
@@ -18,7 +18,7 @@
                 Manage notifications for {{ $subscriber->email }}
             </p>
         </div>
-        <form action="{{ route('subscribe.manage', $subscriber->verify_code) }}" method="post">
+        <form action="{{ cachet_route('subscribe.manage', [$subscriber->verify_code], 'post') }}" method="post">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             @if(!$component_groups->isEmpty() || !$ungrouped_components->isEmpty())
             @if($component_groups->count() > 0)
@@ -29,9 +29,9 @@
                         <i class="{{ $componentGroup->collapse_class_with_subscriptions($subscriptions) }} group-toggle"></i>
                         <strong>{{ $componentGroup->name }}</strong>
                         <div class="pull-right text-muted small">
-                            <a href="#" class="select-group" id="select-all-{{$componentGroup->id}}">Select All</a>
+                            <a href="javascript: void(0);" class="select-group" id="select-all-{{$componentGroup->id}}">Select All</a>
                             &nbsp;|&nbsp;
-                            <a href="#" class="deselect-group" id="deselect-all-{{$componentGroup->id}}">Deselect All</a>
+                            <a href="javascript: void(0);" class="deselect-group" id="deselect-all-{{$componentGroup->id}}">Deselect All</a>
                         </div>
                     </div>
                     <div class="form-group group-items {{ $componentGroup->has_subscriber($subscriptions) ? null : "hide" }}">

@@ -18,23 +18,23 @@
                 <ul class="list-inline">
                     @if($current_user || $dashboard_link)
                     <li>
-                        <a class="btn btn-link" href="/dashboard">{{ trans('dashboard.dashboard') }}</a>
+                        <a class="btn btn-link" href="{{ cachet_route('dashboard') }}">{{ trans('dashboard.dashboard') }}</a>
                     </li>
                     @endif
                     @if($current_user)
                     <li>
-                        <a class="btn btn-link" href="{{ route('auth.logout') }}">{{ trans('dashboard.logout') }}</a>
+                        <a class="btn btn-link" href="{{ cachet_route('auth.logout') }}">{{ trans('dashboard.logout') }}</a>
                     </li>
                     @endif
                     <li>
-                        <a class="btn btn-link" href="{{ route('feed.rss') }}">{{ trans('cachet.rss-feed') }}</a>
+                        <a class="btn btn-link" href="{{ cachet_route('feed.rss') }}">{{ trans('cachet.rss-feed') }}</a>
                     </li>
                     <li>
-                        <a class="btn btn-link" href="{{ route('feed.atom') }}">{{ trans('cachet.atom-feed') }}</a>
+                        <a class="btn btn-link" href="{{ cachet_route('feed.atom') }}">{{ trans('cachet.atom-feed') }}</a>
                     </li>
                     @if(subscribers_enabled())
                     <li>
-                        <a class="btn btn-success btn-outline" href="{{ route('subscribe.subscribe') }}">{{ trans('cachet.subscriber.button') }}</a>
+                        <a class="btn btn-success btn-outline" href="{{ cachet_route('subscribe') }}">{{ trans('cachet.subscriber.button') }}</a>
                     </li>
                     @endif
                 </ul>
