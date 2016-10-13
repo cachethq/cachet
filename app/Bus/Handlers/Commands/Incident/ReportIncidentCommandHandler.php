@@ -11,14 +11,15 @@
 
 namespace CachetHQ\Cachet\Bus\Handlers\Commands\Incident;
 
+use CachetHQ\Cachet\Bus\Commands\Component\UpdateComponentCommand;
 use CachetHQ\Cachet\Bus\Commands\Incident\ReportIncidentCommand;
 use CachetHQ\Cachet\Bus\Events\Incident\IncidentWasReportedEvent;
 use CachetHQ\Cachet\Dates\DateFactory;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentTemplate;
-use Twig_Loader_String;
 use TwigBridge\Bridge;
+use Twig_Loader_String;
 
 /**
  * This is the report incident command handler.
@@ -94,10 +95,17 @@ class ReportIncidentCommandHandler
         $incident = Incident::create($data);
 
         // Update the component.
-        if ($command->component_id) {
-            Component::find($command->component_id)->update([
-                'status' => $command->component_status,
-            ]);
+        if ($component = Component::find($command->component_id)) {
+            dispatch(new UpdateComponentCommand(
+                Component::find($command),
+                null,
+                null,
+                $command->component_status,
+                null,
+                null,
+                null,
+                null
+            ));
         }
 
         $incident->notify = (bool) $command->notify;
