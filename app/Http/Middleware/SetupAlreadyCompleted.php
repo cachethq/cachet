@@ -14,7 +14,6 @@ namespace CachetHQ\Cachet\Http\Middleware;
 use Closure;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redirect;
 
 /**
  * This is the setup already completed middelware class.
@@ -55,7 +54,7 @@ class SetupAlreadyCompleted
     public function handle(Request $request, Closure $next)
     {
         if ($this->config->get('setting.app_name')) {
-            return Redirect::route('dashboard.index');
+            return cachet_route('dashboard');
         }
 
         return $next($request);

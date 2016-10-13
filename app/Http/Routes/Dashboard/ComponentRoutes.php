@@ -33,39 +33,61 @@ class ComponentRoutes
         $router->group([
             'middleware' => ['web', 'auth'],
             'namespace'  => 'Dashboard',
-            'as'         => 'dashboard.components.',
             'prefix'     => 'dashboard/components',
         ], function (Registrar $router) {
             $router->get('/', [
-                'as'   => 'index',
+                'as'   => 'get:dashboard.components',
                 'uses' => 'ComponentController@showComponents',
             ]);
-            $router->get('add', [
-                'as'   => 'add',
+
+            $router->get('create', [
+                'as'   => 'get:dashboard.components.create',
                 'uses' => 'ComponentController@showAddComponent',
             ]);
-            $router->post('add', 'ComponentController@createComponentAction');
+            $router->post('create', [
+                'as'   => 'post:dashboard.components.create',
+                'uses' => 'ComponentController@createComponentAction',
+            ]);
+
             $router->get('groups', [
-                'as'   => 'groups',
+                'as'   => 'get:dashboard.components.groups',
                 'uses' => 'ComponentController@showComponentGroups',
             ]);
-            $router->get('groups/add', [
-                'as'   => 'groups.add',
+
+            $router->get('groups/create', [
+                'as'   => 'get:dashboard.components.groups.create',
                 'uses' => 'ComponentController@showAddComponentGroup',
             ]);
-            $router->get('groups/edit/{component_group}', [
-                'as'   => 'groups.edit',
+            $router->post('groups/create', [
+                'as'   => 'post:dashboard.components.groups.create',
+                'uses' => 'ComponentController@postAddComponentGroup',
+            ]);
+
+            $router->get('groups/{component_group}', [
+                'as'   => 'get:dashboard.components.groups.edit',
                 'uses' => 'ComponentController@showEditComponentGroup',
             ]);
-            $router->post('groups/edit/{component_group}', 'ComponentController@updateComponentGroupAction');
-            $router->delete('groups/{component_group}/delete', 'ComponentController@deleteComponentGroupAction');
-            $router->post('groups/add', 'ComponentController@postAddComponentGroup');
-            $router->get('{component}/edit', [
-                'as'   => 'edit',
+            $router->post('groups/{component_group}', [
+                'as'   => 'post:dashboard.components.groups.edit',
+                'uses' => 'ComponentController@updateComponentGroupAction',
+            ]);
+            $router->delete('groups/{component_group}', [
+                'as'   => 'delete:dashboard.components.groups.delete',
+                'uses' => 'ComponentController@deleteComponentGroupAction',
+            ]);
+
+            $router->get('{component}', [
+                'as'   => 'get:dashboard.components.edit',
                 'uses' => 'ComponentController@showEditComponent',
             ]);
-            $router->delete('{component}/delete', 'ComponentController@deleteComponentAction');
-            $router->post('{component}/edit', 'ComponentController@updateComponentAction');
+            $router->post('{component}', [
+                'as'   => 'post:dashboard.components.edit',
+                'uses' => 'ComponentController@updateComponentAction',
+            ]);
+            $router->delete('{component}', [
+                'as'   => 'delete:dashboard.components.delete',
+                'uses' => 'ComponentController@deleteComponentAction',
+            ]);
         });
     }
 }

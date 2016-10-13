@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="pull-right">
-    <p><a class="btn btn-success btn-outline" href="/"><i class="ion ion-home"></i></a></p>
+    <p><a class="btn btn-success btn-outline" href="{{ cachet_route('status-page') }}"><i class="ion ion-home"></i></a></p>
 </div>
 
 <div class="clearfix"></div>
@@ -26,7 +26,7 @@
         <strong>{{ trans('cachet.signup.title') }}</strong>
     </div>
     <div class="panel-body">
-        <form action="{{ route('signup.invite', ['code' => $code]) }}" method="post" class="form">
+        <form action="{{ cachet_route('signup.invite', ['code' => $code]) }}" method="post" class="form">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <div class="form-group">
                 <label for="username">{{ trans('cachet.signup.username') }}</label>

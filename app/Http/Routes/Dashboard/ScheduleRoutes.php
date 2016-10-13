@@ -33,25 +33,32 @@ class ScheduleRoutes
         $router->group([
             'middleware' => ['web', 'auth'],
             'namespace'  => 'Dashboard',
-            'as'         => 'dashboard.schedule.',
             'prefix'     => 'dashboard/schedule',
         ], function (Registrar $router) {
             $router->get('/', [
-                'as'   => 'index',
+                'as'   => 'get:dashboard.schedule',
                 'uses' => 'ScheduleController@showIndex',
             ]);
-            $router->get('add', [
-                'as'   => 'add',
+
+            $router->get('create', [
+                'as'   => 'get:dashboard.schedule.create',
                 'uses' => 'ScheduleController@showAddSchedule',
             ]);
-            $router->post('add', 'ScheduleController@addScheduleAction');
-            $router->get('{incident}/edit', [
-                'as'   => 'edit',
+            $router->post('create', [
+                'as'   => 'post:dashboard.schedule.create',
+                'uses' => 'ScheduleController@addScheduleAction',
+            ]);
+
+            $router->get('{incident}', [
+                'as'   => 'get:dashboard.schedule.edit',
                 'uses' => 'ScheduleController@showEditSchedule',
             ]);
-            $router->post('{incident}/edit', 'ScheduleController@editScheduleAction');
-            $router->delete('{incident}/delete', [
-                'as'   => 'delete',
+            $router->post('{incident}', [
+                'as'   => 'post:dashboard.schedule.edit',
+                'uses' => 'ScheduleController@editScheduleAction',
+            ]);
+            $router->delete('{incident}', [
+                'as'   => 'delete:dashboard.schedule.delete',
                 'uses' => 'ScheduleController@deleteScheduleAction',
             ]);
         });

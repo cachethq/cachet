@@ -19,7 +19,6 @@ use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Validator;
@@ -268,14 +267,14 @@ class SetupController extends Controller
                 return Response::json(['status' => 1]);
             }
 
-            return Redirect::to('dashboard');
+            return cachet_route('dashboard');
         }
 
         if (Request::ajax()) {
             return Response::json(['errors' => $v->getMessageBag()], 400);
         }
 
-        return Redirect::route('setup.index')->withInput()->withErrors($v->getMessageBag());
+        return cachet_route('setup')->withInput()->withErrors($v->getMessageBag());
     }
 
     /**

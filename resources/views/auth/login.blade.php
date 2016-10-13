@@ -10,7 +10,7 @@
                 <img src="{{ asset('/img/cachet-logo@2x.png') }}" class="img-responsive">
             </div>
 
-            <form method="POST" action="{{ route('auth.login', [], false) }}" accept-charset="UTF-8" autocomplete="off" name="{{ str_random(10) }}">
+            <form method="POST" action="{{ cachet_route('auth.login', [], 'post') }}" accept-charset="UTF-8" autocomplete="off" name="{{ str_random(10) }}">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                 @if(Session::has('error'))
@@ -36,7 +36,7 @@
                 <div class="form-group">
                     <div class="row">
                         <div class="col-xs-2">
-                            <a class="btn btn-default btn-lg btn-trans" href="{{ route('status-page') }}">
+                            <a class="btn btn-default btn-lg btn-trans" href="{{ cachet_route('status-page') }}">
                                 <span class="text-center">
                                     <i class="ion ion-home"></i>
                                 </span>

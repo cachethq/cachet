@@ -14,6 +14,13 @@ namespace CachetHQ\Cachet\Foundation\Providers;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Routing\Router;
 
+/**
+ * This is the route service provider.
+ *
+ * @author James Brooks <james@alt-three.com>
+ * @author Joseph Cohen <joe@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
+ */
 class RouteServiceProvider extends ServiceProvider
 {
     /**
@@ -67,7 +74,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map(Router $router)
     {
-        $router->group(['namespace' => $this->namespace], function (Router $router) {
+        $router->group(['namespace' => $this->namespace, 'as' => 'core::'], function (Router $router) {
             $path = app_path('Http/Routes');
 
             foreach (glob("{$path}/*{,/*}.php", GLOB_BRACE) as $file) {

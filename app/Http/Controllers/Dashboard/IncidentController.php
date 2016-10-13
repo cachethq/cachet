@@ -23,7 +23,6 @@ use CachetHQ\Cachet\Models\IncidentTemplate;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Routing\Controller;
-use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 
 /**
@@ -61,13 +60,13 @@ class IncidentController extends Controller
         $this->subMenu = [
             'incidents' => [
                 'title'  => trans('dashboard.incidents.incidents'),
-                'url'    => route('dashboard.incidents.index'),
+                'url'    => cachet_route('dashboard.incidents'),
                 'icon'   => 'ion-android-checkmark-circle',
                 'active' => true,
             ],
             'schedule' => [
                 'title'  => trans('dashboard.schedule.schedule'),
-                'url'    => route('dashboard.schedule.index'),
+                'url'    => cachet_route('dashboard.schedule'),
                 'icon'   => 'ion-android-calendar',
                 'active' => false,
             ],
@@ -139,13 +138,13 @@ class IncidentController extends Controller
                 null
             ));
         } catch (ValidationException $e) {
-            return Redirect::route('dashboard.incidents.add')
+            return cachet_route('dashboard.incidents.create')
                 ->withInput(Binput::all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.incidents.add.failure')))
                 ->withErrors($e->getMessageBag());
         }
 
-        return Redirect::route('dashboard.incidents.index')
+        return cachet_route('dashboard.incidents')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.incidents.add.success')));
     }
 
@@ -185,7 +184,7 @@ class IncidentController extends Controller
     {
         $template->delete();
 
-        return Redirect::route('dashboard.templates.index')
+        return cachet_route('dashboard.templates')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.incidents.templates.delete.success')));
     }
 
@@ -199,13 +198,13 @@ class IncidentController extends Controller
         try {
             IncidentTemplate::create(Binput::get('template'));
         } catch (ValidationException $e) {
-            return Redirect::route('dashboard.templates.add')
+            return cachet_route('dashboard.templates.create')
                 ->withInput(Binput::all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.incidents.templates.add.failure')))
                 ->withErrors($e->getMessageBag());
         }
 
-        return Redirect::route('dashboard.templates.index')
+        return cachet_route('dashboard.templates')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.incidents.templates.add.success')));
     }
 
@@ -220,7 +219,7 @@ class IncidentController extends Controller
     {
         dispatch(new RemoveIncidentCommand($incident));
 
-        return Redirect::route('dashboard.incidents.index')
+        return cachet_route('dashboard.incidents')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.incidents.delete.success')));
     }
 
@@ -265,7 +264,7 @@ class IncidentController extends Controller
                 null
             ));
         } catch (ValidationException $e) {
-            return Redirect::route('dashboard.incidents.edit', ['id' => $incident->id])
+            return cachet_route('dashboard.incidents.edit', ['id' => $incident->id])
                 ->withInput(Binput::all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.incidents.templates.edit.failure')))
                 ->withErrors($e->getMessageBag());
@@ -275,7 +274,7 @@ class IncidentController extends Controller
             $incident->component->update(['status' => Binput::get('component_status')]);
         }
 
-        return Redirect::route('dashboard.incidents.edit', ['id' => $incident->id])
+        return cachet_route('dashboard.incidents.edit', ['id' => $incident->id])
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.incidents.edit.success')));
     }
 
@@ -291,12 +290,12 @@ class IncidentController extends Controller
         try {
             $template->update(Binput::get('template'));
         } catch (ValidationException $e) {
-            return Redirect::route('dashboard.templates.edit', ['id' => $template->id])
+            return cachet_route('dashboard.templates.edit', ['id' => $template->id])
                 ->withUpdatedTemplate($template)
                 ->withTemplateErrors($e->getMessageBag()->getErrors());
         }
 
-        return Redirect::route('dashboard.templates.edit', ['id' => $template->id])
+        return cachet_route('dashboard.templates.edit', ['id' => $template->id])
             ->withUpdatedTemplate($template);
     }
 
@@ -329,13 +328,13 @@ class IncidentController extends Controller
                 $this->auth->user()
             ));
         } catch (ValidationException $e) {
-            return Redirect::route('dashboard.incidents.update', ['id' => $incident->id])
+            return cachet_route('dashboard.incidents.update', ['id' => $incident->id])
                 ->withInput(Binput::all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.incidents.templates.edit.failure')))
                 ->withErrors($e->getMessageBag());
         }
 
-        return Redirect::route('dashboard.incidents.index')
+        return cachet_route('dashboard.incidents')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.incidents.delete.success')));
     }
 }
