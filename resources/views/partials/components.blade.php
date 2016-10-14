@@ -64,7 +64,7 @@
 
     // Show the current selected component group in the dropdown
     @if($component_group_selected)
-        $('.filters').find('a[data-toggle=dropdown] span.filter').text('{{ $component_group_selected->name }}');
+        $('.section-filters').find('a[data-toggle=dropdown] span.filter').text('{{ $component_group_selected->name }}');
     @endif
 }());
 </script>
