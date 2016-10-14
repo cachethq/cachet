@@ -1,6 +1,6 @@
 @if($component_groups->count() > 0)
-    <div class="filters">
-        <div class="dropdown pull-right">
+    <div class="section-filters">
+        <div class="dropdown">
             Display component groups:
             <a href="javascript: void(0);" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                 <span class="filter">All</span>
