@@ -11,14 +11,15 @@
 
 namespace CachetHQ\Cachet\Bus\Handlers\Commands\Incident;
 
+use CachetHQ\Cachet\Bus\Commands\Component\UpdateComponentCommand;
 use CachetHQ\Cachet\Bus\Commands\Incident\UpdateIncidentCommand;
 use CachetHQ\Cachet\Bus\Events\Incident\IncidentWasUpdatedEvent;
 use CachetHQ\Cachet\Dates\DateFactory;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentTemplate;
-use Twig_Loader_String;
-use TwigBridge\Bridge;
+use Twig_Environment;
+use Twig_Loader_Array;
 
 /**
  * This is the update incident command handler.
@@ -35,24 +36,15 @@ class UpdateIncidentCommandHandler
     protected $dates;
 
     /**
-     * The twig bridge instance.
-     *
-     * @var \TwigBridge\Bridge
-     */
-    protected $twig;
-
-    /**
      * Create a new update incident command handler instance.
      *
      * @param \CachetHQ\Cachet\Dates\DateFactory $dates
-     * @param \TwigBridge\Bridge                 $twig
      *
      * @return void
      */
-    public function __construct(DateFactory $dates, Bridge $twig)
+    public function __construct(DateFactory $dates)
     {
         $this->dates = $dates;
-        $this->twig = $twig;
     }
 
     /**
@@ -64,8 +56,8 @@ class UpdateIncidentCommandHandler
      */
     public function handle(UpdateIncidentCommand $command)
     {
-        if ($command->template) {
-            $command->message = $this->parseIncidentTemplate($command->template, $command->template_vars);
+        if ($template = IncidentTemplate::where('slug', $command->template)->first()) {
+            $command->message = $this->parseTemplate($template, $command);
         }
 
         $incident = $command->incident;
@@ -82,10 +74,17 @@ class UpdateIncidentCommandHandler
         }
 
         // Update the component.
-        if ($command->component_id) {
-            Component::find($command->component_id)->update([
-                'status' => $command->component_status,
-            ]);
+        if ($component = Component::find($command->component_id)) {
+            dispatch(new UpdateComponentCommand(
+                Component::find($command->component_id),
+                null,
+                null,
+                $command->component_status,
+                null,
+                null,
+                null,
+                null
+            ));
         }
 
         event(new IncidentWasUpdatedEvent($incident));
@@ -121,16 +120,30 @@ class UpdateIncidentCommandHandler
     /**
      * Compiles an incident template into an incident message.
      *
-     * @param string $templateSlug
-     * @param array  $vars
+     * @param \CachetHQ\Cachet\Models\IncidentTemplate                     $template
+     * @param \CachetHQ\Cachet\Bus\Commands\Incident\UpdateIncidentCommand $command
      *
      * @return string
      */
-    protected function parseIncidentTemplate($templateSlug, $vars)
+    protected function parseTemplate(IncidentTemplate $template, UpdateIncidentCommand $command)
     {
-        $this->twig->setLoader(new Twig_Loader_String());
-        $template = IncidentTemplate::forSlug($templateSlug)->first();
+        $env = new Twig_Environment(new Twig_Loader_Array([]));
+        $template = $env->createTemplate($template->template);
 
-        return $this->twig->render($template->template, $vars);
+        $vars = array_merge($command->template_vars, [
+            'incident' => [
+                'name'             => $command->name,
+                'status'           => $command->status,
+                'message'          => $command->message,
+                'visible'          => $command->visible,
+                'notify'           => $command->notify,
+                'stickied'         => $command->stickied,
+                'incident_date'    => $command->incident_date,
+                'component'        => Component::find($command->component_id) ?: null,
+                'component_status' => $command->component_status,
+            ],
+        ]);
+
+        return $template->render($vars);
     }
 }
