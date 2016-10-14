@@ -18,8 +18,8 @@ use CachetHQ\Cachet\Dates\DateFactory;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentTemplate;
-use Twig_Loader_Array;
 use Twig_Environment;
+use Twig_Loader_Array;
 
 /**
  * This is the update incident command handler.

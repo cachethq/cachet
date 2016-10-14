@@ -141,7 +141,7 @@ class IncidentTest extends AbstractApiTestCase
         ]);
         $this->seeJson([
             'name'    => 'Foo',
-            'message' => "Hello there this is a foo in my Foo!",
+            'message' => 'Hello there this is a foo in my Foo!',
         ]);
         $this->assertResponseOk();
     }
