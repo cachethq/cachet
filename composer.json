@@ -42,7 +42,7 @@
         "mccool/laravel-auto-presenter": "^4.3",
         "pragmarx/google2fa": "^0.7.1",
         "predis/predis": "^1.1",
-        "rcrowe/twigbridge": "^0.9.2",
+        "twig/twig": "^2.0.0",
         "roumen/feed": "^2.10.4"
     },
     "require-dev": {
@@ -53,7 +53,8 @@
         "mockery/mockery": "0.9.5",
         "phpunit/phpunit": "4.8.21",
         "symfony/css-selector": "^3.0",
-        "symfony/dom-crawler": "^3.0"
+        "symfony/dom-crawler": "^3.0",
+        "tightenco/mailthief": "^0.2.3"
     },
     "autoload": {
         "classmap": [

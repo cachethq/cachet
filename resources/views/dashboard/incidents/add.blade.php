@@ -30,7 +30,7 @@
                     @endif
                     <div class="form-group">
                         <label for="incident-name">{{ trans('forms.incidents.name') }}</label>
-                        <input type="text" class="form-control" name="name" id="incident-name" required value="{{ Binput::old('name') }}">
+                        <input type="text" class="form-control" name="name" id="incident-name" required value="{{ Binput::old('name') }}" placeholder="{{ trans('forms.incidents.name') }}">
                     </div>
                     <div class="form-group">
                         <label for="incident-name">{{ trans('forms.incidents.status') }}</label><br>
@@ -57,32 +57,32 @@
                     </div>
                     <div class="form-group">
                         <label for="incident-name">{{ trans('forms.incidents.visibility') }}</label>
-                        <select name='visible' class="form-control">
-                            <option value='1' selected>{{ trans('forms.incidents.public') }}</option>
-                            <option value='0'>{{ trans('forms.incidents.logged_in_only') }}</option>
+                        <select name="visible" class="form-control">
+                            <option value="1" selected>{{ trans('forms.incidents.public') }}</option>
+                            <option value="0">{{ trans('forms.incidents.logged_in_only') }}</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="incident-name">{{ trans('forms.incidents.stick_status') }}</label>
-                        <select name='stickied' class="form-control">
-                            <option value='1'>{{ trans('forms.incidents.stickied') }}</option>
-                            <option value='0' selected>{{ trans('forms.incidents.not_stickied') }}</option>
+                        <select name="stickied" class="form-control">
+                            <option value="1">{{ trans('forms.incidents.stickied') }}</option>
+                            <option value="0" selected>{{ trans('forms.incidents.not_stickied') }}</option>
                         </select>
                     </div>
                     @if(!$components_in_groups->isEmpty() || !$components_out_groups->isEmpty())
                     <div class="form-group">
                         <label>{{ trans('forms.incidents.component') }}</label>
-                        <select name='component_id' class='form-control'>
-                            <option value='0' selected></option>
+                        <select name="component_id" class="form-control">
+                            <option value="0" selected></option>
                             @foreach($components_in_groups as $group)
                             <optgroup label="{{ $group->name }}">
                                 @foreach($group->components as $component)
-                                <option value='{{ $component->id }}'>{{ $component->name }}</option>
+                                <option value="{{ $component->id }}">{{ $component->name }}</option>
                                 @endforeach
                             </optgroup>
                             @endforeach
                             @foreach($components_out_groups as $component)
-                            <option value='{{ $component->id }}'>{{ $component->name }}</option>
+                            <option value="{{ $component->id }}">{{ $component->name }}</option>
                             @endforeach
                         </select>
                         <span class='help-block'>{{ trans('forms.optional') }}</span>
@@ -106,13 +106,13 @@
                     </div>
                     <div class="form-group">
                         <label>{{ trans('forms.incidents.message') }}</label>
-                        <div class='markdown-control'>
+                        <div class="markdown-control">
                             <textarea name="message" class="form-control autosize" rows="5" required>{{ Binput::old('message') }}</textarea>
                         </div>
                     </div>
                     <div class="form-group">
                         <label>{{ trans('forms.incidents.incident_time') }}</label> <small class="text-muted">{{ trans('forms.optional') }}</small>
-                        <input type="text" name="created_at" class="form-control" rel="datepicker-any">
+                        <input type="text" name="created_at" class="form-control" rel="datepicker-any" placeholder="{{ trans('forms.optional') }}">
                     </div>
                     <input type="hidden" name="notify" value="0">
                     @if(subscribers_enabled())
@@ -128,7 +128,7 @@
                 <div class="form-group">
                     <div class="btn-group">
                         <button type="submit" class="btn btn-success">{{ trans('forms.add') }}</button>
-                        <a class="btn btn-default" href="{{ route('dashboard.incidents.index') }}">{{ trans('forms.cancel') }}</a>
+                        <a class="btn btn-default" href="{{ cachet_route('dashboard.incidents') }}">{{ trans('forms.cancel') }}</a>
                     </div>
                 </div>
             </form>

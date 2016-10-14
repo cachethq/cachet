@@ -14,6 +14,13 @@ namespace CachetHQ\Cachet\Composers;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Auth;
 
+/**
+ * This is the current user composer.
+ *
+ * @author Joseph Cohen <joe@alt-three.com>
+ * @author James Brooks <james@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
+ */
 class CurrentUserComposer
 {
     /**

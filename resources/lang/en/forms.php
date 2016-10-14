@@ -22,6 +22,7 @@ return [
         'site_locale'      => 'Select your language',
         'enable_google2fa' => 'Enable Google Two Factor Authentication',
         'cache_driver'     => 'Cache Driver',
+        'queue_driver'     => 'Queue Driver',
         'session_driver'   => 'Session Driver',
         'mail_driver'      => 'Mail Driver',
         'mail_host'        => 'Mail Host',
@@ -40,6 +41,7 @@ return [
         'invalid-token' => 'Invalid token',
         'cookies'       => 'You must enable cookies to login.',
         'rate-limit'    => 'Rate limit exceeded.',
+        'remember_me'   => 'Remember me',
     ],
 
     // Incidents form fields
@@ -77,11 +79,14 @@ return [
         'enabled'     => 'Component enabled?',
 
         'groups' => [
-            'name'               => 'Name',
-            'collapsing'         => 'Choose visibility of the group',
-            'visible'            => 'Always expanded',
-            'collapsed'          => 'Collapse the group by default',
-            'collapsed_incident' => 'Collapse the group, but expand if there are issues',
+            'name'                     => 'Name',
+            'collapsing'               => 'Expand/Collapse options',
+            'visible'                  => 'Always expanded',
+            'collapsed'                => 'Collapse the group by default',
+            'collapsed_incident'       => 'Collapse the group, but expand if there are issues',
+            'visibility'               => 'Visibility',
+            'visibility_public'        => 'Visible to public',
+            'visibility_authenticated' => 'Visible only to logged in users',
         ],
     ],
 
@@ -137,6 +142,7 @@ return [
             'automatic_localization'       => 'Automatically localise your status page to your visitor\'s language?',
             'enable_external_dependencies' => 'Enable Third Party Dependencies (Google Fonts, Trackers, etc...)',
             'show_timezone'                => 'Show the timezone the status page is running in.',
+            'only_disrupted_days'          => 'Only show days containing incidents in the timeline?',
         ],
         'analytics' => [
             'analytics_google'       => 'Google Analytics code',

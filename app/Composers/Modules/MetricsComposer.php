@@ -15,6 +15,12 @@ use CachetHQ\Cachet\Models\Metric;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\View\View;
 
+/**
+ * This is the metrics composer.
+ *
+ * @author James Brooks <james@alt-three.com>
+ * @author Connor S. Parks <connor@connorvg.tv>
+ */
 class MetricsComposer
 {
     /**
@@ -25,7 +31,7 @@ class MetricsComposer
     protected $config;
 
     /**
-     * Create a new metrics composer.
+     * Create a new metrics composer instance.
      *
      * @param \Illuminate\Contracts\Config\Repository $config
      *
@@ -37,7 +43,7 @@ class MetricsComposer
     }
 
     /**
-     * Metrics view composer.
+     * Bind data to the view.
      *
      * @param \Illuminate\Contracts\View\View $view
      *

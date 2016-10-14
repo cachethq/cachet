@@ -15,7 +15,6 @@ use CachetHQ\Cachet\Bus\Events\Component\ComponentStatusWasUpdatedEvent;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Subscriber;
 use Illuminate\Contracts\Mail\MailQueue;
-use Illuminate\Mail\Message;
 use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
 
 class SendComponentUpdateEmailNotificationHandler
@@ -106,12 +105,12 @@ class SendComponentUpdateEmailNotificationHandler
         ];
 
         $mail['email'] = $subscriber->email;
-        $mail['manage_link'] = route('subscribe.manage', ['code' => $subscriber->verify_code]);
+        $mail['manage_link'] = cachet_route('subscribe.manage', [$subscriber->verify_code]);
 
         $this->mailer->queue([
             'html' => 'emails.components.update-html',
             'text' => 'emails.components.update-text',
-        ], $mail, function (Message $message) use ($mail) {
+        ], $mail, function ($message) use ($mail) {
             $message->to($mail['email'])->subject($mail['subject']);
         });
     }

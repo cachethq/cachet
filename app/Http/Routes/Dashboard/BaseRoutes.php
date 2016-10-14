@@ -30,12 +30,15 @@ class BaseRoutes
      */
     public function map(Registrar $router)
     {
-        $router->group(['middleware' => ['web', 'auth'], 'namespace' => 'Dashboard'], function (Registrar $router) {
+        $router->group([
+            'middleware' => ['web', 'auth'],
+            'namespace'  => 'Dashboard',
+        ], function (Registrar $router) {
             $router->get('admin', 'DashboardController@redirectAdmin');
 
-            $router->group(['prefix' => 'dashboard', 'as' => 'dashboard.'], function (Registrar $router) {
+            $router->group(['prefix' => 'dashboard'], function (Registrar $router) {
                 $router->get('/', [
-                    'as'   => 'index',
+                    'as'   => 'get:dashboard',
                     'uses' => 'DashboardController@showDashboard',
                 ]);
             });

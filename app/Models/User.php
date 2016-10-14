@@ -18,7 +18,6 @@ use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Hash;
 
 /**
@@ -106,8 +105,8 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      * @var string[]
      */
     public $rules = [
-        'username' => ['required', 'regex:/\A(?!.*[:;]-\))[ -~]+\z/', 'unique:users,username'],
-        'email'    => 'required|email|unique:users,email',
+        'username' => ['required', 'regex:/\A(?!.*[:;]-\))[ -~]+\z/'],
+        'email'    => 'required|email',
         'password' => 'required',
     ];
 
@@ -172,7 +171,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     public function getGravatarAttribute($size = 200)
     {
-        return sprintf('https://www.gravatar.com/avatar/%s?size=%d', md5($this->email), $size);
+        return sprintf('https://www.gravatar.com/avatar/%s?size=%d', md5(strtolower($this->email)), $size);
     }
 
     /**
@@ -187,11 +186,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     public static function findByApiToken($token, $columns = ['*'])
     {
-        $user = static::where('api_key', $token)->first($columns);
-
-        if (!$user) {
-            throw new ModelNotFoundException();
-        }
+        $user = static::where('api_key', $token)->firstOrFail($columns);
 
         return $user;
     }

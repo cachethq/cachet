@@ -13,8 +13,13 @@ namespace CachetHQ\Cachet\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redirect;
 
+/**
+ * This is the subscribers configured middleware class.
+ *
+ * @author James Brooks <james@alt-three.com>
+ * @author Graham Campbell <james@alt-three.com>
+ */
 class SubscribersConfigured
 {
     /**
@@ -28,7 +33,7 @@ class SubscribersConfigured
     public function handle(Request $request, Closure $next)
     {
         if (!subscribers_enabled()) {
-            return Redirect::route('status-page');
+            return cachet_route('status-page');
         }
 
         return $next($request);

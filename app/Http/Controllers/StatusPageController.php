@@ -93,16 +93,18 @@ class StatusPageController extends AbstractApiController
             $startDate->copy()->subDays($daysToShow)->format('Y-m-d').' 00:00:00',
             $startDate->format('Y-m-d').' 23:59:59',
         ])->orderBy('scheduled_at', 'desc')->orderBy('created_at', 'desc');
-        $allIncidents = $allIncidentsQuery->get()->groupBy(function (Incident $incident) {
+        $allIncidents = $allIncidentsQuery->get()->load('updates')->groupBy(function (Incident $incident) {
             return app(DateFactory::class)->make($incident->is_scheduled ? $incident->scheduled_at : $incident->created_at)->toDateString();
         });
 
         // Add in days that have no incidents
-        foreach ($incidentDays as $i) {
-            $date = app(DateFactory::class)->make($startDate)->subDays($i);
+        if (Config::get('setting.only_disrupted_days') === false) {
+            foreach ($incidentDays as $i) {
+                $date = app(DateFactory::class)->make($startDate)->subDays($i);
 
-            if (!isset($allIncidents[$date->toDateString()])) {
-                $allIncidents[$date->toDateString()] = [];
+                if (!isset($allIncidents[$date->toDateString()])) {
+                    $allIncidents[$date->toDateString()] = [];
+                }
             }
         }
 

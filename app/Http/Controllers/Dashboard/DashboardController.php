@@ -17,10 +17,10 @@ use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\Subscriber;
+use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 use Jenssegers\Date\Date;
 
@@ -53,15 +53,24 @@ class DashboardController extends Controller
     protected $feed;
 
     /**
+     * The user session object.
+     *
+     * @var \Illuminate\Contracts\Auth\Guard
+     */
+    protected $guard;
+
+    /**
      * Creates a new dashboard controller instance.
      *
      * @param \CachetHQ\Cachet\Integrations\Feed $feed
+     * @param \Illuminate\Contracts\Auth\Guard   $guard
      *
      * @return void
      */
-    public function __construct(Feed $feed)
+    public function __construct(Feed $feed, Guard $guard)
     {
         $this->feed = $feed;
+        $this->guard = $guard;
         $this->startDate = new Date();
         $this->dateTimeZone = Config::get('cachet.timezone');
     }
@@ -73,7 +82,7 @@ class DashboardController extends Controller
      */
     public function redirectAdmin()
     {
-        return Redirect::route('dashboard.index');
+        return cachet_redirect('dashboard');
     }
 
     /**
@@ -86,9 +95,9 @@ class DashboardController extends Controller
         $components = Component::orderBy('order')->get();
         $incidents = $this->getIncidents();
         $subscribers = $this->getSubscribers();
-        $usedComponentGroups = Component::enabled()->where('group_id', '>', 0)->groupBy('group_id')->pluck('group_id');
-        $componentGroups = ComponentGroup::whereIn('id', $usedComponentGroups)->orderBy('order')->get();
-        $ungroupedComponents = Component::enabled()->where('group_id', 0)->orderBy('order')->orderBy('created_at')->get();
+
+        $componentGroups = $this->getVisibleGroupedComponents();
+        $ungroupedComponents = Component::ungrouped()->get();
 
         $welcomeUser = !Auth::user()->welcomed;
         if ($welcomeUser) {
@@ -173,5 +182,23 @@ class DashboardController extends Controller
         }, SORT_REGULAR, false);
 
         return $allSubscribers;
+    }
+
+    /**
+     * Get visible grouped components.
+     *
+     * @return \Illuminate\Support\Collection
+     */
+    protected function getVisibleGroupedComponents()
+    {
+        $componentGroupsBuilder = ComponentGroup::query();
+        if (!$this->guard->check()) {
+            $componentGroupsBuilder = ComponentGroup::visible();
+        }
+
+        $usedComponentGroups = Component::grouped()->pluck('group_id');
+
+        return $componentGroupsBuilder->used($usedComponentGroups)
+            ->get();
     }
 }

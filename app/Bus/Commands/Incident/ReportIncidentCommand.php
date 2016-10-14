@@ -11,6 +11,12 @@
 
 namespace CachetHQ\Cachet\Bus\Commands\Incident;
 
+/**
+ * This is the report incident command.
+ *
+ * @author Joseph Cohen <joe@alt-three.com>
+ * @author James Brooks <james@alt-three.com>
+ */
 final class ReportIncidentCommand
 {
     /**
@@ -121,11 +127,11 @@ final class ReportIncidentCommand
      * @param bool        $stickied
      * @param string|null $incident_date
      * @param string|null $template
-     * @param array|null  $template_vars
+     * @param array       $template_vars
      *
      * @return void
      */
-    public function __construct($name, $status, $message, $visible, $component_id, $component_status, $notify, $stickied, $incident_date, $template, array $template_vars = null)
+    public function __construct($name, $status, $message, $visible, $component_id, $component_status, $notify, $stickied, $incident_date, $template, array $template_vars = [])
     {
         $this->name = $name;
         $this->status = $status;

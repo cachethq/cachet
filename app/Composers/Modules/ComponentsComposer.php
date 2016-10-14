@@ -13,11 +13,12 @@ namespace CachetHQ\Cachet\Composers\Modules;
 
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
+use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Collection;
 
 /**
- * This is the status page composer.
+ * This is the components composer.
  *
  * @author James Brooks <james@alt-three.com>
  * @author Connor S. Parks <connor@connorvg.tv>
@@ -25,7 +26,26 @@ use Illuminate\Database\Eloquent\Collection;
 class ComponentsComposer
 {
     /**
-     * Index page view composer.
+     * The user session object.
+     *
+     * @var \Illuminate\Contracts\Auth\Guard
+     */
+    protected $guard;
+
+    /**
+     * Creates a new components composer instance.
+     *
+     * @param \Illuminate\Contracts\Auth\Guard $guard
+     *
+     * @return void
+     */
+    public function __construct(Guard $guard)
+    {
+        $this->guard = $guard;
+    }
+
+    /**
+     * Bind data to the view.
      *
      * @param \Illuminate\Contracts\View\View $view
      *
@@ -56,5 +76,23 @@ class ComponentsComposer
                  ->withUngroupedComponents($ungroupedComponents)
                  ->withComponentGroupSelected(null);
         }
+    }
+
+    /**
+     * Get visible grouped components.
+     *
+     * @return \Illuminate\Support\Collection
+     */
+    protected function getVisibleGroupedComponents()
+    {
+        $componentGroupsBuilder = ComponentGroup::query();
+        if (!$this->guard->check()) {
+            $componentGroupsBuilder->visible();
+        }
+
+        $usedComponentGroups = Component::grouped()->pluck('group_id');
+
+        return $componentGroupsBuilder->used($usedComponentGroups)
+            ->get();
     }
 }
