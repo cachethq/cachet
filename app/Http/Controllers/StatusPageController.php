@@ -54,6 +54,7 @@ class StatusPageController extends AbstractApiController
      * Displays the status page.
      *
      * @param ComponentGroup $componentGroup
+     *
      * @return \Illuminate\View\View
      */
     public function showIndex(ComponentGroup $componentGroup)

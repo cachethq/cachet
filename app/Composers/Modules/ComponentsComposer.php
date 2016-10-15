@@ -81,6 +81,8 @@ class ComponentsComposer
     /**
      * Get visible grouped components.
      *
+     * @param int|null $componentGroupId
+     *
      * @return \Illuminate\Support\Collection
      */
     protected function getVisibleGroupedComponents()
