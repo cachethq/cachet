@@ -66,7 +66,6 @@ class ComponentsComposer
                  ->withComponentGroups($componentGroups)
                  ->withUngroupedComponents(new Collection())
                  ->withComponentGroupSelected($componentGroup);
-
         } else {
             $ungroupedComponents = Component::ungrouped()->get();
 
@@ -81,6 +80,7 @@ class ComponentsComposer
      * Get visible grouped components.
      *
      * @param int|null $componentGroupId
+     *
      * @return \Illuminate\Support\Collection
      */
     protected function getVisibleGroupedComponents($componentGroupId = null)
