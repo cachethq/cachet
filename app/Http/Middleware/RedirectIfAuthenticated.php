@@ -16,6 +16,13 @@ use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
+/**
+ * This is the redirect if authenticated middleware class.
+ *
+ * @author Graham Campbell <james@alt-three.com>
+ * @author Joseph Cohen <joe@alt-three.com>
+ * @author James Brooks <james@alt-three.com>
+ */
 class RedirectIfAuthenticated
 {
     /**
@@ -48,7 +55,7 @@ class RedirectIfAuthenticated
     public function handle(Request $request, Closure $next)
     {
         if ($this->auth->check()) {
-            return new RedirectResponse(route('dashboard.index'));
+            return new RedirectResponse(cachet_route('dashboard'));
         }
 
         return $next($request);

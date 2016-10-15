@@ -19,7 +19,7 @@
                 <fieldset>
                     <div class="form-group">
                         <label>{{ trans('forms.components.groups.name') }}</label>
-                        <input type="text" class="form-control" name="name" id="group-name" value="{{ $group->name }}" required>
+                        <input type="text" class="form-control" name="name" id="group-name" value="{{ $group->name }}" required placeholder="{{ trans('forms.components.groups.name') }}">
                     </div>
                     <div class="form-group">
                         <label>{{ trans('forms.components.groups.collapsing') }}</label>
@@ -40,7 +40,7 @@
 
                 <div class="btn-group">
                     <button type="submit" class="btn btn-success">{{ trans('forms.save') }}</button>
-                    <a class="btn btn-default" href="{{ route('dashboard.components.groups') }}">{{ trans('forms.cancel') }}</a>
+                    <a class="btn btn-default" href="{{ cachet_route('dashboard.components.groups') }}">{{ trans('forms.cancel') }}</a>
                 </div>
             </form>
         </div>

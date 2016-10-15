@@ -10,7 +10,7 @@
             <span class="uppercase">
                 <i class="ion ion-android-calendar"></i> {{ trans('dashboard.schedule.schedule') }}
             </span>
-            <a class="btn btn-md btn-success pull-right" href="{{ route('dashboard.schedule.add') }}">
+            <a class="btn btn-md btn-success pull-right" href="{{ cachet_route('dashboard.schedule.create') }}">
                 {{ trans('dashboard.schedule.add.title') }}
             </a>
             <div class="clearfix"></div>
@@ -32,8 +32,8 @@
                             @endif
                         </div>
                         <div class="col-xs-6 text-right">
-                            <a href="/dashboard/schedule/{{ $incident->id }}/edit" class="btn btn-default">{{ trans('forms.edit') }}</a>
-                            <a href="/dashboard/schedule/{{ $incident->id }}/delete" class="btn btn-danger confirm-action" data-method='DELETE'>{{ trans('forms.delete') }}</a>
+                            <a href="{{ cachet_route('dashboard.schedule.edit', [$incident->id]) }}" class="btn btn-default">{{ trans('forms.edit') }}</a>
+                            <a href="{{ cachet_route('dashboard.schedule.delete', [$incident->id], 'delete') }}" class="btn btn-danger confirm-action" data-method='DELETE'>{{ trans('forms.delete') }}</a>
                         </div>
                     </div>
                     @endforeach

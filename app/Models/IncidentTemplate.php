@@ -12,7 +12,6 @@
 namespace CachetHQ\Cachet\Models;
 
 use AltThree\Validator\ValidatingTrait;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
@@ -27,6 +26,7 @@ class IncidentTemplate extends Model
      */
     protected $casts = [
         'name'     => 'string',
+        'slug'     => 'string',
         'template' => 'string',
     ];
 
@@ -35,7 +35,7 @@ class IncidentTemplate extends Model
      *
      * @var string[]
      */
-    protected $fillable = ['name', 'template'];
+    protected $fillable = ['name', 'slug', 'template'];
 
     /**
      * The validation rules.
@@ -43,8 +43,9 @@ class IncidentTemplate extends Model
      * @var string[]
      */
     public $rules = [
-        'name'     => 'required',
-        'template' => 'required',
+        'name'     => 'required|string',
+        'slug'     => 'string',
+        'template' => 'required|string',
     ];
 
     /**
@@ -55,20 +56,24 @@ class IncidentTemplate extends Model
         parent::boot();
 
         self::saving(function ($template) {
-            $template->slug = Str::slug($template->name);
+            if (!$template->slug) {
+                $template->slug = Str::slug($template->name);
+            }
         });
     }
 
     /**
      * Finds a template by the slug.
      *
-     * @param \Illuminate\Database\Query\Builder $query
-     * @param string                             $slug
+     * @param string   $slug
+     * @param string[] $columns
      *
      * @return \Illuminate\Database\Query\Builder
      */
-    public function scopeForSlug(Builder $query, $slug)
+    public static function forSlug($slug, $columns = ['*'])
     {
-        return $query->where('slug', $slug);
+        $template = static::where('slug', $slug)->firstOrFail($columns);
+
+        return $template;
     }
 }

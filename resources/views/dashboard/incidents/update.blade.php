@@ -49,12 +49,12 @@
                     </div>
                 </fieldset>
 
-                <input type="hidden" name="incident_id" value={{ $incident->id }}>
+                <input type="hidden" name="incident_id" value="{{ $incident->id }}">
 
                 <div class="form-group">
                     <div class="btn-group">
                         <button type="submit" class="btn btn-success">{{ trans('forms.update') }}</button>
-                        <a class="btn btn-default" href="{{ route('dashboard.incidents.index') }}">{{ trans('forms.cancel') }}</a>
+                        <a class="btn btn-default" href="{{ cachet_route('dashboard.incidents') }}">{{ trans('forms.cancel') }}</a>
                     </div>
                 </div>
             </form>

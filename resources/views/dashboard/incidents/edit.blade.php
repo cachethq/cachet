@@ -19,7 +19,7 @@
                 <fieldset>
                     <div class="form-group">
                         <label for="incident-name">{{ trans('forms.incidents.name') }}</label>
-                        <input type="text" class="form-control" name="name" id="incident-name" required value="{{$incident->name}}">
+                        <input type="text" class="form-control" name="name" id="incident-name" required value="{{$incident->name}}" placeholder="{{ trans('forms.incidents.name') }}">
                     </div>
                     <div class="form-group">
                         <label for="incident-name">{{ trans('forms.incidents.status') }}</label><br>
@@ -85,7 +85,7 @@
                     </div>
                     <div class="form-group">
                         <label>{{ trans('forms.incidents.incident_time') }}</label> <small class="text-muted">{{ trans('forms.optional') }}</small>
-                        <input type="text" name="created_at" class="form-control" rel="datepicker-any" value="{{ $incident->created_at_datetimepicker }}">
+                        <input type="text" name="created_at" class="form-control" rel="datepicker-any" value="{{ $incident->created_at_datetimepicker }}" placeholder="{{ trans('forms.optional') }}">
                     </div>
                 </fieldset>
 
@@ -94,7 +94,7 @@
                 <div class="form-group">
                     <div class="btn-group">
                         <button type="submit" class="btn btn-success">{{ trans('forms.update') }}</button>
-                        <a class="btn btn-default" href="{{ route('dashboard.incidents.index') }}">{{ trans('forms.cancel') }}</a>
+                        <a class="btn btn-default" href="{{ cachet_route('dashboard.incidents') }}">{{ trans('forms.cancel') }}</a>
                     </div>
                 </div>
             </form>

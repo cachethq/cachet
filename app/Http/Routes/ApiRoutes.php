@@ -29,7 +29,11 @@ class ApiRoutes
      */
     public function map(Registrar $router)
     {
-        $router->group(['namespace' => 'Api', 'prefix' => 'api/v1', 'middleware' => ['api']], function (Registrar $router) {
+        $router->group([
+            'namespace'  => 'Api',
+            'prefix'     => 'api/v1',
+            'middleware' => ['api'],
+        ], function (Registrar $router) {
             $router->group(['middleware' => ['auth.api']], function (Registrar $router) {
                 $router->get('ping', 'GeneralController@ping');
                 $router->get('version', 'GeneralController@version');

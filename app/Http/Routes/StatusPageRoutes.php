@@ -29,23 +29,28 @@ class StatusPageRoutes
      */
     public function map(Registrar $router)
     {
-        $router->group(['middleware' => ['web', 'ready', 'localize']], function (Registrar $router) {
+        $router->group([
+            'middleware' => ['web', 'ready', 'localize'],
+        ], function (Registrar $router) {
             $router->get('/', [
-                'as'   => 'status-page',
+                'as'   => 'get:status-page',
                 'uses' => 'StatusPageController@showIndex',
             ]);
 
-            $router->get('incident/{incident}', [
-                'as'   => 'incident',
+            $router->get('incidents/{incident}', [
+                'as'   => 'get:incident',
                 'uses' => 'StatusPageController@showIncident',
             ]);
 
             $router->get('metrics/{metric}', [
-                'as'   => 'metrics',
+                'as'   => 'get:metric',
                 'uses' => 'StatusPageController@getMetrics',
             ]);
 
-            $router->get('component/{component}/shield', 'StatusPageController@showComponentBadge');
+            $router->get('component/{component}/shield', [
+                'as'   => 'get:component_shield',
+                'uses' => 'StatusPageController@showComponentBadge',
+            ]);
         });
     }
 }

@@ -7,8 +7,8 @@
     <meta name="env" content="{{ app('env') }}">
     <meta name="token" content="{{ csrf_token() }}">
 
-    <link rel="alternate" type="application/atom+xml" href="/atom" title="{{ $site_title }} - Atom Feed">
-    <link rel="alternate" type="application/rss+xml" href="/rss" title="{{ $site_title }} - RSS Feed">
+    <link rel="alternate" type="application/atom+xml" href="{{ cachet_route('feed.atom') }}" title="{{ $site_title }} - Atom Feed">
+    <link rel="alternate" type="application/rss+xml" href="{{ cachet_route('feed.rss') }}" title="{{ $site_title }} - RSS Feed">
 
     <!-- Mobile friendliness -->
     <meta name="HandheldFriendly" content="True">

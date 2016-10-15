@@ -130,20 +130,18 @@ class IncidentTest extends AbstractApiTestCase
     public function testPutIncidentWithTemplate()
     {
         $this->beUser();
-        $template = factory('CachetHQ\Cachet\Models\IncidentTemplate')->create();
+        $template = factory('CachetHQ\Cachet\Models\IncidentTemplate')->create([
+            'template' => 'Hello there this is a foo in my {{ incident.name }}!',
+        ]);
         $component = factory('CachetHQ\Cachet\Models\Incident')->create();
 
         $this->put('/api/v1/incidents/1', [
             'name'     => 'Foo',
             'template' => $template->slug,
-            'vars'     => [
-                'name'    => 'Foo',
-                'message' => 'Hello there this is a foo!',
-            ],
         ]);
         $this->seeJson([
             'name'    => 'Foo',
-            'message' => "Name: Foo,\nMessage: Hello there this is a foo!",
+            'message' => 'Hello there this is a foo in my Foo!',
         ]);
         $this->assertResponseOk();
     }

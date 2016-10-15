@@ -14,12 +14,12 @@
     <div class="row">
         <div class="col-sm-12">
             @include('dashboard.partials.errors')
-            <form name="CreateComponentForm" class="form-vertical" role="form" action="/dashboard/components/add" method="POST">
+            <form name="CreateComponentForm" class="form-vertical" role="form" action="{{ cachet_route('dashboard.components.create', [], 'post') }}" method="POST">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <fieldset>
                     <div class="form-group">
                         <label for="component-name">{{ trans('forms.components.name') }}</label>
-                        <input type="text" class="form-control" name="component[name]" id="component-name" required>
+                        <input type="text" class="form-control" name="component[name]" id="component-name" required placeholder="{{ trans('forms.components.name') }}">
                     </div>
                     <div class="form-group">
                         <label for="component-status">{{ trans('forms.components.status') }}</label>
@@ -31,7 +31,7 @@
                     </div>
                     <div class="form-group">
                         <label>{{ trans('forms.components.description') }}</label>
-                        <textarea name="component[description]" class="form-control" rows="5"></textarea>
+                        <textarea name="component[description]" class="form-control" rows="5" placeholder="{{ trans('forms.components.description') }}"></textarea>
                     </div>
                     @if($groups->count() > 0)
                     <div class="form-group">
@@ -49,11 +49,11 @@
                     <hr>
                     <div class="form-group">
                         <label>{{ trans('forms.components.link') }}</label>
-                        <input type="text" name="component[link]" class="form-control">
+                        <input type="text" name="component[link]" class="form-control" placeholder="{{ trans('forms.components.link') }}">
                     </div>
                     <div class="form-group">
                         <label>{{ trans('forms.components.tags') }}</label>
-                        <input name="component[tags]" class="form-control">
+                        <input name="component[tags]" class="form-control" placeholder="{{ trans('forms.components.tags') }}">
                         <span class="help-block">{{ trans('forms.components.tags-help') }}</span>
                     </div>
                     <div class="checkbox">
@@ -69,7 +69,7 @@
 
                 <div class="btn-group">
                     <button type="submit" class="btn btn-success">{{ trans('forms.create') }}</button>
-                    <a class="btn btn-default" href="{{ route('dashboard.components.index') }}">{{ trans('forms.cancel') }}</a>
+                    <a class="btn btn-default" href="{{ cachet_route('dashboard.components') }}">{{ trans('forms.cancel') }}</a>
                 </div>
             </form>
         </div>

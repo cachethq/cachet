@@ -18,7 +18,6 @@ use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Hash;
 
 /**
@@ -187,11 +186,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     public static function findByApiToken($token, $columns = ['*'])
     {
-        $user = static::where('api_key', $token)->first($columns);
-
-        if (!$user) {
-            throw new ModelNotFoundException();
-        }
+        $user = static::where('api_key', $token)->firstOrFail($columns);
 
         return $user;
     }

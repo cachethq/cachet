@@ -14,7 +14,7 @@
     <div class="row">
         <div class="col-md-12">
             @include('dashboard.partials.errors')
-            <form class='form-vertical' name='ScheduleForm' role='form' method='POST' autocomplete="off">
+            <form class="form-vertical" name="ScheduleForm" role="form" method='POST' autocomplete="off">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <input type="hidden" name="incident[visible]" value="1">
                 <fieldset>
@@ -31,7 +31,7 @@
                     @endif
                     <div class="form-group">
                         <label for="incident-name">{{ trans('forms.incidents.name') }}</label>
-                        <input type="text" class="form-control" name="incident[name]" id="incident-name" required value="{{ $schedule->name }}">
+                        <input type="text" class="form-control" name="incident[name]" id="incident-name" required value="{{ $schedule->name }}" placeholder="{{ trans('forms.incidents.name') }}">
                     </div>
                     <div class="form-group">
                         <label>{{ trans('forms.incidents.message') }}</label>
@@ -41,14 +41,14 @@
                     </div>
                     <div class="form-group">
                         <label>{{ trans('forms.incidents.scheduled_at') }}</label>
-                        <input type="text" name="incident[scheduled_at]" class="form-control" rel="datepicker" value="{{ $schedule->scheduled_at_datetimepicker }}" required>
+                        <input type="text" name="incident[scheduled_at]" class="form-control" rel="datepicker" value="{{ $schedule->scheduled_at_datetimepicker }}" required placeholder="{{ trans('forms.incidents.scheduled_at') }}">
                     </div>
                 </fieldset>
 
                 <div class="form-group">
                     <div class="btn-group">
                         <button type="submit" class="btn btn-success">{{ trans('forms.save') }}</button>
-                        <a class="btn btn-default" href="{{ route('dashboard.schedule.index') }}">{{ trans('forms.cancel') }}</a>
+                        <a class="btn btn-default" href="{{ cachet_route('dashboard.schedule') }}">{{ trans('forms.cancel') }}</a>
                     </div>
                 </div>
             </form>
