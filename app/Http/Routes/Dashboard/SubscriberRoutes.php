@@ -50,7 +50,7 @@ class SubscriberRoutes
             ]);
 
             $router->delete('{subscriber}/delete', [
-                'as'   => 'delete:dashbpard.subscribers.delete',
+                'as'   => 'delete:dashboard.subscribers.delete',
                 'uses' => 'SubscriberController@deleteSubscriberAction',
             ]);
         });
