@@ -56,6 +56,15 @@ class AuthRoutes
                 'uses'       => 'AuthController@postTwoFactor',
             ]);
 
+            $router->get('2fasecret', [
+                'as' => 'two-factor-generate-secret',
+                'uses' => 'AuthController@generateSecretKey'
+            ]);
+             
+            $router->get('2fasecret-show', [
+                 'as' => 'two-factor-auth',
+                 'uses' => 'AuthController@showQrCode'
+             ]);
             $router->get('logout', [
                 'as'         => 'get:auth.logout',
                 'uses'       => 'AuthController@logoutAction',
