@@ -81,7 +81,10 @@ class StatusPageController extends AbstractApiController
         }
 
         $incidentVisibility = Auth::check() ? 0 : 1;
+        
+        $subscribers_enabled = subscribers_enabled();
 
+        
         $allIncidents = Incident::notScheduled()->where('visible', '>=', $incidentVisibility)->whereBetween('created_at', [
             $startDate->copy()->subDays($daysToShow)->format('Y-m-d').' 00:00:00',
             $startDate->format('Y-m-d').' 23:59:59',
@@ -111,7 +114,8 @@ class StatusPageController extends AbstractApiController
             ->withCanPageForward((bool) $today->gt($startDate))
             ->withCanPageBackward(Incident::notScheduled()->where('created_at', '<', $startDate->format('Y-m-d'))->count() > 0)
             ->withPreviousDate($startDate->copy()->subDays($daysToShow)->toDateString())
-            ->withNextDate($startDate->copy()->addDays($daysToShow)->toDateString());
+            ->withNextDate($startDate->copy()->addDays($daysToShow)->toDateString())
+            ->withSubscribersEnabled($subscribers_enabled);
     }
 
     /**
