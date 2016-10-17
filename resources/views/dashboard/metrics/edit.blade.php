@@ -32,10 +32,10 @@
                         </div>
                     </div>
                     @if($metric->component)
-                        <div class="form-group">
-                            <label for="metric-component">{{ trans('forms.metrics.component') }}</label>
-                            <input type="text" class="form-control" name="metric-cmoponent" id="metric-cmoponent" readonly value="{{ $metric->component->name }}">
-                        </div>
+                    <div class="form-group">
+                        <label for="metric-component">{{ trans('forms.metrics.component') }}</label>
+                        <input type="text" class="form-control" name="metric-cmoponent" id="metric-cmoponent" readonly value="{{ $metric->component->name }}">
+                    </div>
                     @endif
                     <div class="form-group">
                         <label>{{ trans('forms.metrics.calc_type') }}</label>
