@@ -48,7 +48,7 @@ class SendSubscriberVerificationEmailHandler
         $mail = [
             'email'   => $event->subscriber->email,
             'subject' => 'Confirm your subscription.',
-            'link'    => route('subscribe.verify', ['code' => $event->subscriber->verify_code]),
+            'link'    => cachet_route('subscribe.verify', ['code' => $event->subscriber->verify_code]),
         ];
 
         $this->mailer->queue([
