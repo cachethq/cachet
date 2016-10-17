@@ -11,7 +11,7 @@
             <span class="caret"></span>
         </a>
         <ul class="dropdown-menu dropdown-menu-right">
-            <li><a href="{{ cachet_route('status-page') }}" data-filter-component="0">All</a></li>
+            <li><a href="{{ cachet_route('status-page') }}">All</a></li>
             @foreach($all_component_groups as $componentGroup)
             <li><a href="{{ cachet_route('component-status-page', [$componentGroup->id]) }}">{{ $componentGroup->name }}</a></li>
             @endforeach
