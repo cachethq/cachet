@@ -6,6 +6,7 @@
 
     <meta name="env" content="{{ app('env') }}">
     <meta name="token" content="{{ csrf_token() }}">
+    <meta name="locale" content="{{ $app_locale }}">
 
     <link rel="alternate" type="application/atom+xml" href="{{ cachet_route('feed.atom') }}" title="{{ $site_title }} - Atom Feed">
     <link rel="alternate" type="application/rss+xml" href="{{ cachet_route('feed.rss') }}" title="{{ $site_title }} - RSS Feed">
@@ -61,11 +62,8 @@
     </style>
     @endif
 
-    <script type="text/javascript">
-        var Global = {};
-        Global.locale = '{{ $app_locale }}';
-    </script>
-    <script src="{{ elixir('dist/js/all.js') }}"></script>
+    <script src="{{ elixir('dist/js/vendors.js') }}"></script>
+    <script src="{{ elixir('dist/js/app.js') }}"></script>
 </head>
 <body class="status-page @yield('bodyClass')">
     @yield('outer-content')
