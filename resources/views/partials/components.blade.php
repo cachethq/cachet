@@ -1,19 +1,23 @@
 @if($component_groups->count() > 0)
-    <div class="section-filters">
-        <div class="dropdown">
-            Display component groups:
-            <a href="javascript: void(0);" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+<div class="section-filters">
+    <div class="dropdown">
+        Display component groups:
+        <a href="javascript: void(0);" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+            @if($component_group_selected)
+                <span class="filter">{{ $component_group_selected->name }}</span>
+            @else
                 <span class="filter">All</span>
-                <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu dropdown-menu-right">
-                <li><a href="#" data-filter-component="0">All</a></li>
-                @foreach($all_component_groups as $componentGroup)
-                    <li><a href="#" data-filter-component="{{ $componentGroup->id }}">{{ $componentGroup->name }}</a></li>
-                @endforeach
-            </ul>
-        </div>
+            @endif
+            <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-right">
+            <li><a href="/" data-filter-component="0">All</a></li>
+            @foreach($all_component_groups as $componentGroup)
+            <li><a href="/group/{{ $componentGroup->id }}">{{ $componentGroup->name }}</a></li>
+            @endforeach
+        </ul>
     </div>
+</div>
 @endif
 
 @if($component_groups->count() > 0)
@@ -47,24 +51,3 @@
     @endforeach
 </ul>
 @endif
-
-<script>
-(function () {
-    $('a[data-filter-component]').on('click', function(e) {
-        var $this = $(this);
-        var baseUrl = window.location.protocol + "//" + window.location.host + "/";
-        var componentId = $this.attr('data-filter-component');
-
-        if (componentId > 0) {
-            window.location = baseUrl + 'group/' + componentId;
-        } else {
-            window.location = baseUrl;
-        }
-    });
-
-    // Show the current selected component group in the dropdown
-    @if($component_group_selected)
-        $('.section-filters').find('a[data-toggle=dropdown] span.filter').text('{{ $component_group_selected->name }}');
-    @endif
-}());
-</script>

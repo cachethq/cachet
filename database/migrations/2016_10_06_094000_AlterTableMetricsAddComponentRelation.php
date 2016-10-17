@@ -21,7 +21,7 @@ class AlterTableMetricsAddComponentRelation extends Migration
     public function up()
     {
         Schema::table('metrics', function (Blueprint $table) {
-            $table->integer('component_id')->default(0);
+            $table->integer('component_id')->after('order')->default(0);
         });
     }
 

@@ -6,7 +6,7 @@
             <div class="col-xs-10">
                 <strong>
                     @if($metric->component)
-                        <span class="label label-default">{{ $metric->component->name }}</span>
+                    <span class="label label-default">{{ $metric->component->name }}</span>
                     @endif
                     {{ $metric->name }}
                     @if($metric->description)
