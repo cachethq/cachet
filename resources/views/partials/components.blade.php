@@ -4,9 +4,9 @@
         Display component groups:
         <a href="javascript: void(0);" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
             @if($component_group_selected)
-                <span class="filter">{{ $component_group_selected->name }}</span>
+            <span class="filter">{{ $component_group_selected->name }}</span>
             @else
-                <span class="filter">All</span>
+            <span class="filter">All</span>
             @endif
             <span class="caret"></span>
         </a>
