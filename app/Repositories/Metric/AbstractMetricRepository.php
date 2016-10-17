@@ -58,6 +58,11 @@ abstract class AbstractMetricRepository
         $connection = $this->config->get('database.connections.'.$driver);
         $prefix = $connection['prefix'];
 
-        return $prefix.'metrics';
+        $return = (object) [
+                        'metrics_base'  => $prefix.'metrics',
+                        'metric_points' => $prefix.'metric_points'
+        ];
+
+        return $return;
     }
 }
