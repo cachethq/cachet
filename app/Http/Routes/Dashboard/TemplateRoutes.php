@@ -58,7 +58,7 @@ class TemplateRoutes
                 'uses' => 'IncidentController@editTemplateAction',
             ]);
             $router->delete('{incident_template}', [
-                'as'   => 'delete::dashboard.templates.delete',
+                'as'   => 'delete:dashboard.templates.delete',
                 'uses' => 'IncidentController@deleteTemplateAction',
             ]);
         });
