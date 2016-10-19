@@ -21,6 +21,13 @@ use Illuminate\Contracts\Routing\Registrar;
 class AuthRoutes
 {
     /**
+     * Defines if these routes are for the browser.
+     *
+     * @var bool
+     */
+    public static $browser = true;
+
+    /**
      * Define the auth routes.
      *
      * @param \Illuminate\Contracts\Routing\Registrar $router
@@ -30,7 +37,7 @@ class AuthRoutes
     public function map(Registrar $router)
     {
         $router->group([
-            'middleware' => ['web', 'ready'],
+            'middleware' => ['ready'],
             'prefix'     => 'auth',
         ], function (Registrar $router) {
             $router->get('login', [

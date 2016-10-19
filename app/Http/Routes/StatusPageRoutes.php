@@ -21,6 +21,13 @@ use Illuminate\Contracts\Routing\Registrar;
 class StatusPageRoutes
 {
     /**
+     * Defines if these routes are for the browser.
+     *
+     * @var bool
+     */
+    public static $browser = true;
+
+    /**
      * Define the status page routes.
      *
      * @param \Illuminate\Contracts\Routing\Registrar $router
@@ -30,7 +37,7 @@ class StatusPageRoutes
     public function map(Registrar $router)
     {
         $router->group([
-            'middleware' => ['web', 'ready', 'localize'],
+            'middleware' => ['ready', 'localize'],
         ], function (Registrar $router) {
             $router->get('/', [
                 'as'   => 'get:status-page',

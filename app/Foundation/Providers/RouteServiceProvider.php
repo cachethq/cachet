@@ -11,8 +11,17 @@
 
 namespace CachetHQ\Cachet\Foundation\Providers;
 
+use Barryvdh\Cors\HandleCors;
+use CachetHQ\Cachet\Http\Middleware\Acceptable;
+use CachetHQ\Cachet\Http\Middleware\Timezone;
+use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
+use Illuminate\Cookie\Middleware\EncryptCookies;
+use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Routing\Router;
+use Illuminate\Session\Middleware\StartSession;
+use Illuminate\View\Middleware\ShareErrorsFromSession;
 
 /**
  * This is the route service provider.
@@ -35,34 +44,36 @@ class RouteServiceProvider extends ServiceProvider
     /**
      * Define the route model bindings, pattern filters, etc.
      *
+     * @return void
+     */
+    public function boot()
+    {
+        parent::boot();
+
+        $this->app->call([$this, 'bind']);
+    }
+
+    /**
+     * Define the bindings for the application.
+     *
      * @param \Illuminate\Routing\Router $router
      *
      * @return void
      */
-    public function boot(Router $router)
+    public function bind(Router $router)
     {
-        parent::boot($router);
-
-        $this->registerBindings();
-    }
-
-    /**
-     * Register model bindings.
-     *
-     * @return void
-     */
-    protected function registerBindings()
-    {
-        $this->app->router->model('component', 'CachetHQ\Cachet\Models\Component');
-        $this->app->router->model('component_group', 'CachetHQ\Cachet\Models\ComponentGroup');
-        $this->app->router->model('incident', 'CachetHQ\Cachet\Models\Incident');
-        $this->app->router->model('incident_template', 'CachetHQ\Cachet\Models\IncidentTemplate');
-        $this->app->router->model('metric', 'CachetHQ\Cachet\Models\Metric');
-        $this->app->router->model('metric_point', 'CachetHQ\Cachet\Models\MetricPoint');
-        $this->app->router->model('setting', 'CachetHQ\Cachet\Models\Setting');
-        $this->app->router->model('subscriber', 'CachetHQ\Cachet\Models\Subscriber');
-        $this->app->router->model('subscription', 'CachetHQ\Cachet\Models\Subscription');
-        $this->app->router->model('user', 'CachetHQ\Cachet\Models\User');
+        $router->model('component', 'CachetHQ\Cachet\Models\Component');
+        $router->model('component_group', 'CachetHQ\Cachet\Models\ComponentGroup');
+        $router->model('incident', 'CachetHQ\Cachet\Models\Incident');
+        $router->model('incident_template', 'CachetHQ\Cachet\Models\IncidentTemplate');
+        $router->model('incident_update', 'CachetHQ\Cachet\Models\IncidentUpdate');
+        $router->model('metric', 'CachetHQ\Cachet\Models\Metric');
+        $router->model('metric_point', 'CachetHQ\Cachet\Models\MetricPoint');
+        $router->model('setting', 'CachetHQ\Cachet\Models\Setting');
+        $router->model('subscriber', 'CachetHQ\Cachet\Models\Subscriber');
+        $router->model('subscription', 'CachetHQ\Cachet\Models\Subscription');
+        $router->model('tag', 'CachetHQ\Cachet\Models\Tag');
+        $router->model('user', 'CachetHQ\Cachet\Models\User');
     }
 
     /**
@@ -82,8 +93,60 @@ class RouteServiceProvider extends ServiceProvider
                 $class = str_replace('/', '\\', $class);
                 $class = substr($class, 0, -4);
 
-                $this->app->make("CachetHQ\\Cachet\\Http\\Routes${class}")->map($router);
+                $routes = $this->app->make("CachetHQ\\Cachet\\Http\\Routes${class}");
+
+                if ($routes::$browser) {
+                    $this->mapForBrowser($router, $routes);
+                } else {
+                    $this->mapOtherwise($router, $routes);
+                }
             }
+        });
+    }
+
+    /**
+     * Wrap the routes in the browser specific middleware.
+     *
+     * @param \Illuminate\Routing\Router $router
+     * @param object                     $routes
+     *
+     * @return void
+     */
+    protected function mapForBrowser(Router $router, $routes)
+    {
+        $middleware = [
+            EncryptCookies::class,
+            AddQueuedCookiesToResponse::class,
+            StartSession::class,
+            ShareErrorsFromSession::class,
+            VerifyCsrfToken::class,
+            SubstituteBindings::class,
+        ];
+
+        $router->group(['middleware' => $middleware], function (Router $router) use ($routes) {
+            $routes->map($router);
+        });
+    }
+
+    /**
+     * Wrap the routes in the basic middleware.
+     *
+     * @param \Illuminate\Routing\Router $router
+     * @param object                     $routes
+     *
+     * @return void
+     */
+    protected function mapOtherwise(Router $router, $routes)
+    {
+        $middleware = [
+            HandleCors::class,
+            SubstituteBindings::class,
+            Acceptable::class,
+            Timezone::class,
+        ];
+
+        $router->group(['middleware' => $middleware], function (Router $router) use ($routes) {
+            $routes->map($router);
         });
     }
 }

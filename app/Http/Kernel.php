@@ -26,35 +26,13 @@ class Kernel extends HttpKernel
     ];
 
     /**
-     * The application's route middleware groups.
-     *
-     * @var array
-     */
-    protected $middlewareGroups = [
-        'web' => [
-            'Illuminate\Cookie\Middleware\EncryptCookies',
-            'Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse',
-            'Illuminate\Session\Middleware\StartSession',
-            'Illuminate\View\Middleware\ShareErrorsFromSession',
-            \Illuminate\Routing\Middleware\SubstituteBindings::class,
-            'Illuminate\Foundation\Http\Middleware\VerifyCsrfToken',
-        ],
-        'api' => [
-            'Barryvdh\Cors\HandleCors',
-            'CachetHQ\Cachet\Http\Middleware\Acceptable',
-            'CachetHQ\Cachet\Http\Middleware\Timezone',
-        ],
-    ];
-
-    /**
      * The application's route middleware.
      *
      * @var array
      */
     protected $routeMiddleware = [
         'admin'       => 'CachetHQ\Cachet\Http\Middleware\Admin',
-        'bindings'    => \Illuminate\Routing\Middleware\SubstituteBindings::class,
-        'can'         => \Illuminate\Auth\Middleware\Authorize::class,
+        'can'         => 'Illuminate\Auth\Middleware\Authorize',
         'auth.api'    => 'CachetHQ\Cachet\Http\Middleware\ApiAuthentication',
         'guest'       => 'CachetHQ\Cachet\Http\Middleware\RedirectIfAuthenticated',
         'localize'    => 'CachetHQ\Cachet\Http\Middleware\Localize',

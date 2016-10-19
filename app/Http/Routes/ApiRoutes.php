@@ -21,6 +21,13 @@ use Illuminate\Contracts\Routing\Registrar;
 class ApiRoutes
 {
     /**
+     * Defines if these routes are for the browser.
+     *
+     * @var bool
+     */
+    public static $browser = false;
+
+    /**
      * Define the api routes.
      *
      * @param \Illuminate\Contracts\Routing\Registrar $router
@@ -32,7 +39,6 @@ class ApiRoutes
         $router->group([
             'namespace'  => 'Api',
             'prefix'     => 'api/v1',
-            'middleware' => ['api'],
         ], function (Registrar $router) {
             $router->group(['middleware' => ['auth.api']], function (Registrar $router) {
                 $router->get('ping', 'GeneralController@ping');
