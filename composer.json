@@ -1,7 +1,13 @@
 {
     "name": "cachethq/cachet",
     "description": "An open source status page system, for everyone.",
-    "keywords": ["laravel", "cachet", "alt-three", "status", "page"],
+    "keywords": [
+        "laravel",
+        "cachet",
+        "alt-three",
+        "status",
+        "page"
+    ],
     "type": "project",
     "license": "BSD-3-Clause",
     "authors": [
@@ -19,7 +25,7 @@
         }
     ],
     "require": {
-        "php": ">=5.5.9",
+        "php": ">=5.6.4",
         "ext-xml": "*",
         "alt-three/badger": "^3.1",
         "alt-three/bus": "^1.1",
@@ -38,7 +44,7 @@
         "graham-campbell/markdown": "^6.1",
         "guzzlehttp/guzzle": "^6.2.1",
         "jenssegers/date": "^3.2",
-        "laravel/framework": "5.2.45",
+        "laravel/framework": "5.3.*",
         "mccool/laravel-auto-presenter": "^4.3",
         "pragmarx/google2fa": "^0.7.1",
         "predis/predis": "^1.1",
