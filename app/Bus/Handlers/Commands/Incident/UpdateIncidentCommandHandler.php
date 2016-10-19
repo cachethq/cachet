@@ -56,7 +56,7 @@ class UpdateIncidentCommandHandler
      */
     public function handle(UpdateIncidentCommand $command)
     {
-        if ($template = IncidentTemplate::where('slug', $command->template)->first()) {
+        if ($template = IncidentTemplate::where('slug', '=', $command->template)->first()) {
             $command->message = $this->parseTemplate($template, $command);
         }
 

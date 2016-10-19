@@ -269,8 +269,6 @@ class IncidentPresenter extends BasePresenter implements Arrayable
     public function duration()
     {
         if ($update = $this->latest()) {
-            dd($update->created_at->diffInSeconds($this->wrappedObject->created_at));
-
             return $this->wrappedObject->created_at->diffInSeconds($update->created_at);
         }
 

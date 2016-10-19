@@ -89,7 +89,7 @@ class SubscribeController extends Controller
             throw new NotFoundHttpException();
         }
 
-        $subscriber = Subscriber::where('verify_code', $code)->first();
+        $subscriber = Subscriber::where('verify_code', '=', $code)->first();
 
         if (!$subscriber) {
             throw new BadRequestHttpException();
@@ -149,7 +149,7 @@ class SubscribeController extends Controller
         $subscriber = Subscriber::where('verify_code', '=', $code)->first();
         $usedComponentGroups = Component::enabled()->where('group_id', '>', 0)->groupBy('group_id')->pluck('group_id');
         $componentGroups = ComponentGroup::whereIn('id', $usedComponentGroups)->orderBy('order')->get();
-        $ungroupedComponents = Component::enabled()->where('group_id', 0)->orderBy('order')->orderBy('created_at')->get();
+        $ungroupedComponents = Component::enabled()->where('group_id', '=', 0)->orderBy('order')->orderBy('created_at')->get();
 
         if (!$subscriber) {
             throw new BadRequestHttpException();
