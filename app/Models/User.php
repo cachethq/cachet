@@ -12,10 +12,8 @@
 namespace CachetHQ\Cachet\Models;
 
 use AltThree\Validator\ValidatingTrait;
-use Illuminate\Auth\Authenticatable;
-use Illuminate\Auth\Passwords\CanResetPassword;
-use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
-use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Hash;
@@ -25,10 +23,9 @@ use Illuminate\Support\Facades\Hash;
  *
  * @author James Brooks <james@alt-three.com>
  */
-class User extends Model implements AuthenticatableContract, CanResetPasswordContract
+class User extends Authenticatable
 {
-    use Notifiable;
-    use Authenticatable, CanResetPassword, ValidatingTrait;
+    use Notifiable, ValidatingTrait;
 
     /**
      * The admin level of user.
@@ -134,7 +131,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     public function scopeAdmins(Builder $query)
     {
-        return $query->where('level', self::LEVEL_ADMIN);
+        return $query->where('level', '=', self::LEVEL_ADMIN);
     }
 
     /**
@@ -146,7 +143,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     public function scopeActive(Builder $query)
     {
-        return $query->where('active', true);
+        return $query->where('active', '=', true);
     }
 
     /**
