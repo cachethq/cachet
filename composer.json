@@ -28,7 +28,7 @@
         "php": ">=5.6.4",
         "ext-xml": "*",
         "alt-three/badger": "^3.1",
-        "alt-three/bus": "^1.1",
+        "alt-three/bus": "^2.0",
         "alt-three/emoji": "^3.1",
         "alt-three/throttle": "^1.0",
         "alt-three/validator": "^1.5",
@@ -40,7 +40,7 @@
         "fideloper/proxy": "^3.1",
         "graham-campbell/binput": "^3.4",
         "graham-campbell/core": "^5.1",
-        "graham-campbell/exceptions": "^8.6",
+        "graham-campbell/exceptions": "^9.1",
         "graham-campbell/markdown": "^6.1",
         "guzzlehttp/guzzle": "^6.2.1",
         "jenssegers/date": "^3.2",
@@ -52,15 +52,15 @@
         "roumen/feed": "^2.10.4"
     },
     "require-dev": {
-        "alt-three/testbench": "^1.8",
+        "alt-three/testbench": "^1.9",
         "filp/whoops": "^2.1",
         "fzaninotto/faker": "^1.6",
         "graham-campbell/testbench-core": "^1.1",
         "mockery/mockery": "0.9.5",
-        "phpunit/phpunit": "4.8.21",
-        "symfony/css-selector": "^3.0",
-        "symfony/dom-crawler": "^3.0",
-        "tightenco/mailthief": "^0.2.3"
+        "phpunit/phpunit": "~5.0",
+        "symfony/css-selector": "^3.1",
+        "symfony/dom-crawler": "^3.1",
+        "tightenco/mailthief": "^0.3.2"
     },
     "autoload": {
         "classmap": [
@@ -100,9 +100,6 @@
         ]
     },
     "config": {
-        "platform": {
-            "php": "5.5.9"
-        },
         "preferred-install": "dist"
     },
     "extra": {

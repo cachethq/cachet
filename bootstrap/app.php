@@ -26,7 +26,7 @@ $app->singleton('Illuminate\Contracts\Http\Kernel', 'CachetHQ\Cachet\Http\Kernel
 
 $app->singleton('Illuminate\Contracts\Console\Kernel', 'CachetHQ\Cachet\Console\Kernel');
 
-$app->singleton('Illuminate\Contracts\Debug\ExceptionHandler', 'GrahamCampbell\Exceptions\ExceptionHandler');
+$app->singleton('Illuminate\Contracts\Debug\ExceptionHandler', 'GrahamCampbell\Exceptions\NewExceptionHandler');
 
 /*
 |--------------------------------------------------------------------------
