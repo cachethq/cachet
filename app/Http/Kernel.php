@@ -53,8 +53,8 @@ class Kernel extends HttpKernel
      */
     protected $routeMiddleware = [
         'admin'       => 'CachetHQ\Cachet\Http\Middleware\Admin',
-        'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
-        'can' => \Illuminate\Auth\Middleware\Authorize::class,
+        'bindings'    => \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        'can'         => \Illuminate\Auth\Middleware\Authorize::class,
         'auth.api'    => 'CachetHQ\Cachet\Http\Middleware\ApiAuthentication',
         'guest'       => 'CachetHQ\Cachet\Http\Middleware\RedirectIfAuthenticated',
         'localize'    => 'CachetHQ\Cachet\Http\Middleware\Localize',

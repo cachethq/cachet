@@ -1,15 +1,14 @@
 <?php
 
 /*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| This file is where you may define all of the routes that are handled
-| by your application. Just tell Laravel the URIs it should respond
-| to using a Closure or controller method. Build something great!
-|
-*/
+ * This file is part of Cachet.
+ *
+ * (c) Alt Three Services Limited
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 
 Route::get('/', function () {
     return view('welcome');
