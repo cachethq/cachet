@@ -36,6 +36,7 @@ class Kernel extends HttpKernel
             'Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse',
             'Illuminate\Session\Middleware\StartSession',
             'Illuminate\View\Middleware\ShareErrorsFromSession',
+            \Illuminate\Routing\Middleware\SubstituteBindings::class,
             'Illuminate\Foundation\Http\Middleware\VerifyCsrfToken',
         ],
         'api' => [
@@ -52,7 +53,8 @@ class Kernel extends HttpKernel
      */
     protected $routeMiddleware = [
         'admin'       => 'CachetHQ\Cachet\Http\Middleware\Admin',
-        'auth'        => 'CachetHQ\Cachet\Http\Middleware\Authenticate',
+        'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'auth.api'    => 'CachetHQ\Cachet\Http\Middleware\ApiAuthentication',
         'guest'       => 'CachetHQ\Cachet\Http\Middleware\RedirectIfAuthenticated',
         'localize'    => 'CachetHQ\Cachet\Http\Middleware\Localize',
