@@ -53,9 +53,9 @@ final class AddComponentGroupCommand
      */
     public $rules = [
         'name'      => 'required|string',
-        'order'     => 'int',
-        'collapsed' => 'int|between:0,3',
-        'visible'   => 'bool',
+        'order'     => 'required|int',
+        'collapsed' => 'required|int|between:0,3',
+        'visible'   => 'required|bool',
     ];
 
     /**

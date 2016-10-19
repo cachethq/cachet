@@ -105,15 +105,15 @@ final class UpdateIncidentCommand
      * @var string[]
      */
     public $rules = [
-        'name'             => 'string',
-        'status'           => 'int|min:0|max:4',
-        'message'          => 'string',
-        'visible'          => 'bool',
-        'component_id'     => 'int',
-        'component_status' => 'int|min:1|max:4|required_with:component_id',
-        'notify'           => 'bool',
-        'stickied'         => 'bool',
-        'template'         => 'string',
+        'name'             => 'nullable|string',
+        'status'           => 'nullable|int|min:0|max:4',
+        'message'          => 'nullable|string',
+        'visible'          => 'nullable|bool',
+        'component_id'     => 'nullable|int',
+        'component_status' => 'nullable|int|min:1|max:4|required_with:component_id',
+        'notify'           => 'nullable|bool',
+        'stickied'         => 'nullable|bool',
+        'template'         => 'nullable|string',
     ];
 
     /**

@@ -69,12 +69,12 @@ final class AddComponentCommand
      */
     public $rules = [
         'name'        => 'required|string',
-        'description' => 'string',
-        'status'      => 'int|min:1|max:4',
-        'link'        => 'url',
-        'order'       => 'int',
-        'group_id'    => 'int',
-        'enabled'     => 'bool',
+        'description' => 'required|string',
+        'status'      => 'required|int|min:1|max:4',
+        'link'        => 'nullable|url',
+        'order'       => 'nullable|int',
+        'group_id'    => 'nullable|int',
+        'enabled'     => 'nullable|bool',
     ];
 
     /**
