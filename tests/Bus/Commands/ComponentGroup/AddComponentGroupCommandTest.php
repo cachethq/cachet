@@ -37,7 +37,10 @@ class AddComponentGroupCommandTest extends AbstractTestCase
         ];
 
         $object = new AddComponentGroupCommand(
-            $params['name'], $params['order'], $params['collapsed'], $params['visible']
+            $params['name'],
+            $params['order'],
+            $params['collapsed'],
+            $params['visible']
         );
 
         return compact('params', 'object');
