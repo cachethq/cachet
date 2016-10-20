@@ -31,7 +31,7 @@ return [
         'previous_week' => 'Semaine précédente',
         'next_week'     => 'Semaine suivante',
         'scheduled'     => 'Maintenance Planifiée',
-        'scheduled_at'  => ', planifé à :timestamp',
+        'scheduled_at'  => ', planifié à :timestamp',
         'status'        => [
             0 => 'Planifié', // TODO: Hopefully remove this.
             1 => 'Enquête en cours',
@@ -45,7 +45,7 @@ return [
     'service' => [
         'good'  => '[0,1] Système opérationnel|[2,Inf] Tous les systèmes sont opérationnels',
         'bad'   => '[0,1] Le système rencontre actuellement des problèmes|[2,Inf] Certains systèmes rencontrent des problèmes',
-        'major' => '[0,1] Le service rencontre une panne majeure|[2,Inf] Certains systèmes rencontrent une panne majeure',
+        'major' => '[0,1] Le service rencontre une panne majeure|[2,Inf] Certains services rencontrent une panne majeure',
     ],
 
     'api' => [
@@ -103,7 +103,7 @@ return [
     'users' => [
         'email' => [
             'invite' => [
-                'text' => "Vous avez été invité à la page de statut de l'équipe :app_name , veuillez suivre le lien suivant pour vous inscire \n:link\nMerci, :app_name",
+                'text' => "Vous avez été invité à la page de statut de l'équipe :app_name , veuillez suivre le lien suivant pour vous inscrire \n:link\nMerci, :app_name",
                 'html' => '<p>Vous avez été invité à la page de statut de l\'équipe :app_name, veuillez suivre le lien suivant pour vous inscrire.</p><p><a href=":link">:link</a></p><p>Merci, :app_name</p>',
             ],
         ],
