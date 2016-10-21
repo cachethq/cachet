@@ -48,7 +48,7 @@
         "mccool/laravel-auto-presenter": "^4.3",
         "pragmarx/google2fa": "^0.7.1",
         "predis/predis": "^1.1",
-        "twig/twig": "^2.0.0",
+        "twig/twig": "^1.26.1",
         "roumen/feed": "^2.10.4"
     },
     "require-dev": {
@@ -107,6 +107,6 @@
             "dev-master": "2.4-dev"
         }
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true
 }

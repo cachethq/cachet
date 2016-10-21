@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5a7e54d0da7f958d0057a97ac64427c8",
-    "content-hash": "2a7a2bd52a0c36b10a94d14cfabc5643",
+    "hash": "fca8fc5b2e78a82f98a0bfa85672b87f",
+    "content-hash": "d60fff17875690a829a28ad77b35e68d",
     "packages": [
         {
             "name": "alt-three/badger",
@@ -4073,21 +4073,20 @@
         },
         {
             "name": "twig/twig",
-            "version": "dev-master",
+            "version": "v1.26.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "2e10b897baf423686d535612d3383b0db0afad79"
+                "reference": "a09d8ee17ac1cfea29ed60c83960ad685c6a898d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/2e10b897baf423686d535612d3383b0db0afad79",
-                "reference": "2e10b897baf423686d535612d3383b0db0afad79",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/a09d8ee17ac1cfea29ed60c83960ad685c6a898d",
+                "reference": "a09d8ee17ac1cfea29ed60c83960ad685c6a898d",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.5",
-                "symfony/polyfill-mbstring": "~1.0"
+                "php": ">=5.2.7"
             },
             "require-dev": {
                 "symfony/debug": "~2.7",
@@ -4096,7 +4095,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.0-dev"
+                    "dev-master": "1.26-dev"
                 }
             },
             "autoload": {
@@ -4131,7 +4130,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2016-10-20 15:18:42"
+            "time": "2016-10-05 18:57:41"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -5927,7 +5926,7 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
