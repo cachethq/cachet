@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c3c6022ad01788ba2c4700b8249c0f49",
-    "content-hash": "3e0ab66e320fd7d0d90505defa71e014",
+    "hash": "5a7e54d0da7f958d0057a97ac64427c8",
+    "content-hash": "2a7a2bd52a0c36b10a94d14cfabc5643",
     "packages": [
         {
             "name": "alt-three/badger",
@@ -326,16 +326,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.19.17",
+            "version": "3.19.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "089ce29c428ce330b8e9eba8bbe8f2bdbb8b8af5"
+                "reference": "d9004dac4bd7f5405952f963da3bcf986295a4de"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/089ce29c428ce330b8e9eba8bbe8f2bdbb8b8af5",
-                "reference": "089ce29c428ce330b8e9eba8bbe8f2bdbb8b8af5",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/d9004dac4bd7f5405952f963da3bcf986295a4de",
+                "reference": "d9004dac4bd7f5405952f963da3bcf986295a4de",
                 "shasum": ""
             },
             "require": {
@@ -402,7 +402,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2016-10-18 20:29:12"
+            "time": "2016-10-20 20:21:56"
         },
         {
             "name": "backup-manager/backup-manager",
@@ -1336,16 +1336,16 @@
         },
         {
             "name": "graham-campbell/binput",
-            "version": "v3.4.0",
+            "version": "v3.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Binput.git",
-                "reference": "814bcce1c012fbdf3a8275eef45e5d84ad01239d"
+                "reference": "2da3554abbb6585ed09183a68a09a2f3c8bfbfb1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Binput/zipball/814bcce1c012fbdf3a8275eef45e5d84ad01239d",
-                "reference": "814bcce1c012fbdf3a8275eef45e5d84ad01239d",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Binput/zipball/2da3554abbb6585ed09183a68a09a2f3c8bfbfb1",
+                "reference": "2da3554abbb6585ed09183a68a09a2f3c8bfbfb1",
                 "shasum": ""
             },
             "require": {
@@ -1363,7 +1363,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.4-dev"
+                    "dev-master": "3.5-dev"
                 }
             },
             "autoload": {
@@ -1395,7 +1395,7 @@
                 "laravel",
                 "security"
             ],
-            "time": "2016-04-26 14:18:44"
+            "time": "2016-10-21 10:11:30"
         },
         {
             "name": "graham-campbell/core",
@@ -2217,16 +2217,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.31",
+            "version": "1.0.32",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "521a233642773505222a5dd53231ccf5b0607d5a"
+                "reference": "1b5c4a0031697f46e779a9d1b309c2e1b24daeab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/521a233642773505222a5dd53231ccf5b0607d5a",
-                "reference": "521a233642773505222a5dd53231ccf5b0607d5a",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/1b5c4a0031697f46e779a9d1b309c2e1b24daeab",
+                "reference": "1b5c4a0031697f46e779a9d1b309c2e1b24daeab",
                 "shasum": ""
             },
             "require": {
@@ -2296,7 +2296,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2016-10-19 13:15:54"
+            "time": "2016-10-19 20:38:46"
         },
         {
             "name": "mccool/laravel-auto-presenter",
@@ -4077,12 +4077,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "b255b5185e303b54e6f1bb68ee4329f3cfd54965"
+                "reference": "2e10b897baf423686d535612d3383b0db0afad79"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/b255b5185e303b54e6f1bb68ee4329f3cfd54965",
-                "reference": "b255b5185e303b54e6f1bb68ee4329f3cfd54965",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/2e10b897baf423686d535612d3383b0db0afad79",
+                "reference": "2e10b897baf423686d535612d3383b0db0afad79",
                 "shasum": ""
             },
             "require": {
@@ -4131,7 +4131,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2016-10-18 00:56:57"
+            "time": "2016-10-20 15:18:42"
         },
         {
             "name": "vlucas/phpdotenv",
