@@ -110,7 +110,7 @@ final class UpdateIncidentCommand
         'message'          => 'nullable|string',
         'visible'          => 'nullable|bool',
         'component_id'     => 'nullable|int',
-        'component_status' => 'nullable|int|min:1|max:4|required_with:component_id',
+        'component_status' => 'nullable|int|min:0|max:4|required_with:component_id',
         'notify'           => 'nullable|bool',
         'stickied'         => 'nullable|bool',
         'template'         => 'nullable|string',

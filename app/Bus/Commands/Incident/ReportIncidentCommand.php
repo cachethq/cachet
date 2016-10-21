@@ -107,7 +107,7 @@ final class ReportIncidentCommand
         'message'          => 'required|string',
         'visible'          => 'nullable|bool',
         'component_id'     => 'nullable|required_with:component_status|int',
-        'component_status' => 'nullable|required_with:component_id|int|min:1|max:4',
+        'component_status' => 'nullable|required_with:component_id|int|min:0|max:4',
         'notify'           => 'nullable|bool',
         'stickied'         => 'required|bool',
         'incident_date'    => 'nullable|string',

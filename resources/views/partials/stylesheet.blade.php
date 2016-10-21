@@ -12,6 +12,7 @@ p, strong { color: {{ $theme_text_color }} !important; }
 .greens { color: {{ $theme_greens }} !important; }
 .yellows { color: {{ $theme_yellows }} !important; }
 .oranges { color: {{ $theme_oranges }} !important; }
+.greys { color: {{ $theme_greys }} !important; }
 .metrics { color: {{ $theme_metrics }} !important; }
 .links { color: {{ $theme_links }} !important; }
 
