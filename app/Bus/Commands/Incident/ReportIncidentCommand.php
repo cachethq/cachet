@@ -104,14 +104,14 @@ final class ReportIncidentCommand
     public $rules = [
         'name'             => 'required|string',
         'status'           => 'required|int|min:0|max:4',
-        'message'          => 'string',
-        'visible'          => 'bool',
-        'component_id'     => 'int|required_with:component_status',
-        'component_status' => 'int|min:1|max:4|required_with:component_id',
-        'notify'           => 'bool',
-        'stickied'         => 'bool',
-        'incident_date'    => 'string',
-        'template'         => 'string',
+        'message'          => 'required|string',
+        'visible'          => 'nullable|bool',
+        'component_id'     => 'nullable|required_with:component_status|int',
+        'component_status' => 'nullable|required_with:component_id|int|min:1|max:4',
+        'notify'           => 'nullable|bool',
+        'stickied'         => 'required|bool',
+        'incident_date'    => 'nullable|string',
+        'template'         => 'nullable|string',
     ];
 
     /**

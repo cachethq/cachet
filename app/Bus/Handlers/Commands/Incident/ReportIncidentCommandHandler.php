@@ -63,7 +63,7 @@ class ReportIncidentCommandHandler
             'stickied' => $command->stickied,
         ];
 
-        if ($template = IncidentTemplate::where('slug', $command->template)->first()) {
+        if ($template = IncidentTemplate::where('slug', '=', $command->template)->first()) {
             $data['message'] = $this->parseTemplate($template, $command);
         } else {
             $data['message'] = $command->message;

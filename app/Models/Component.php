@@ -75,9 +75,12 @@ class Component extends Model implements HasPresenter
      * @var string[]
      */
     public $rules = [
-        'name'   => 'required|string',
-        'status' => 'int|required',
-        'link'   => 'url',
+        'name'     => 'required|string',
+        'status'   => 'required|int',
+        'order'    => 'nullable|int',
+        'group_id' => 'nullable|int',
+        'link'     => 'nullable|url',
+        'enabled'  => 'required|bool',
     ];
 
     /**
@@ -148,7 +151,7 @@ class Component extends Model implements HasPresenter
      */
     public function scopeStatus(Builder $query, $status)
     {
-        return $query->where('status', $status);
+        return $query->where('status', '=', $status);
     }
 
     /**
@@ -173,7 +176,7 @@ class Component extends Model implements HasPresenter
      */
     public function scopeEnabled(Builder $query)
     {
-        return $query->where('enabled', true);
+        return $query->where('enabled', '=', true);
     }
 
     /**
@@ -185,7 +188,7 @@ class Component extends Model implements HasPresenter
      */
     public function scopeDisabled(Builder $query)
     {
-        return $query->where('enabled', false);
+        return $query->where('enabled', '=', false);
     }
 
     /**
@@ -198,7 +201,7 @@ class Component extends Model implements HasPresenter
     public function scopeUngrouped(Builder $query)
     {
         return $query->enabled()
-            ->where('group_id', 0)
+            ->where('group_id', '=', 0)
             ->orderBy('order')
             ->orderBy('created_at');
     }

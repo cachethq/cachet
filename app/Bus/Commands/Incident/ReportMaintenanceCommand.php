@@ -48,9 +48,9 @@ final class ReportMaintenanceCommand
      */
     public $rules = [
         'name'      => 'required|string',
-        'message'   => 'string',
-        'notify'    => 'bool',
-        'timestamp' => 'string',
+        'message'   => 'required|string',
+        'notify'    => 'nullable|bool',
+        'timestamp' => 'required|string',
     ];
 
     /**

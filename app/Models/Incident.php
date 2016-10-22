@@ -69,7 +69,7 @@ class Incident extends Model implements HasPresenter
      */
     protected $casts = [
         'visible'      => 'int',
-        'stickied'     => 'int',
+        'stickied'     => 'bool',
         'scheduled_at' => 'date',
         'deleted_at'   => 'date',
     ];
@@ -97,12 +97,12 @@ class Incident extends Model implements HasPresenter
      * @var string[]
      */
     public $rules = [
-        'component_id' => 'int',
-        'name'         => 'required',
+        'component_id' => 'nullable|int',
+        'name'         => 'required|string',
         'status'       => 'required|int',
         'visible'      => 'required|bool',
-        'stickied'     => 'bool',
-        'message'      => 'required',
+        'stickied'     => 'required|bool',
+        'message'      => 'required|string',
     ];
 
     /**
@@ -169,7 +169,7 @@ class Incident extends Model implements HasPresenter
      */
     public function scopeVisible(Builder $query)
     {
-        return $query->where('visible', 1);
+        return $query->where('visible', '=', 1);
     }
 
     /**
@@ -181,7 +181,7 @@ class Incident extends Model implements HasPresenter
      */
     public function scopeStickied(Builder $query)
     {
-        return $query->where('stickied', true);
+        return $query->where('stickied', '=', true);
     }
 
     /**
@@ -193,7 +193,7 @@ class Incident extends Model implements HasPresenter
      */
     public function scopeScheduled(Builder $query)
     {
-        return $query->where('status', 0)->where('scheduled_at', '>=', Carbon::now());
+        return $query->where('status', '=', 0)->where('scheduled_at', '>=', Carbon::now());
     }
 
     /**
@@ -206,7 +206,7 @@ class Incident extends Model implements HasPresenter
     public function scopeNotScheduled(Builder $query)
     {
         return $query->where('status', '>', 0)->orWhere(function ($query) {
-            $query->where('status', 0)->where(function ($query) {
+            $query->where('status', '=', 0)->where(function ($query) {
                 $query->whereNull('scheduled_at')->orWhere('scheduled_at', '<=', Carbon::now());
             });
         });

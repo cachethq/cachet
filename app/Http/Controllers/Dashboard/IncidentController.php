@@ -100,7 +100,7 @@ class IncidentController extends Controller
         return View::make('dashboard.incidents.add')
             ->withPageTitle(trans('dashboard.incidents.add.title').' - '.trans('dashboard.dashboard'))
             ->withComponentsInGroups(ComponentGroup::with('components')->get())
-            ->withComponentsOutGroups(Component::where('group_id', 0)->get())
+            ->withComponentsOutGroups(Component::where('group_id', '=', 0)->get())
             ->withIncidentTemplates(IncidentTemplate::all());
     }
 
@@ -236,7 +236,7 @@ class IncidentController extends Controller
             ->withPageTitle(trans('dashboard.incidents.edit.title').' - '.trans('dashboard.dashboard'))
             ->withIncident($incident)
             ->withComponentsInGroups(ComponentGroup::with('components')->get())
-            ->withComponentsOutGroups(Component::where('group_id', 0)->get());
+            ->withComponentsOutGroups(Component::where('group_id', '=', 0)->get());
     }
 
     /**

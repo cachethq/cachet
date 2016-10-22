@@ -81,7 +81,7 @@ class Repository
         $this->stale = true;
 
         if ($value === null) {
-            $this->model->where('name', $name)->delete();
+            $this->model->where('name', '=', $name)->delete();
         } else {
             $this->model->updateOrCreate(compact('name'), compact('value'));
         }
@@ -97,7 +97,7 @@ class Repository
      */
     public function get($name, $default = null)
     {
-        if ($setting = $this->model->where('name', $name)->first()) {
+        if ($setting = $this->model->where('name', '=', $name)->first()) {
             return $this->castSetting($name, $setting->value);
         }
 
@@ -115,7 +115,7 @@ class Repository
     {
         $this->stale = true;
 
-        $this->model->where('name', $name)->delete();
+        $this->model->where('name', '=', $name)->delete();
     }
 
     /**

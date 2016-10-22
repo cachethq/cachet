@@ -101,7 +101,7 @@ class Subscriber extends Model implements HasPresenter
      */
     public function scopeIsGlobal(Builder $query)
     {
-        return $query->where('global', true);
+        return $query->where('global', '=', true);
     }
 
     /**
@@ -116,7 +116,7 @@ class Subscriber extends Model implements HasPresenter
     {
         return $query->select('subscribers.*')
             ->join('subscriptions', 'subscribers.id', '=', 'subscriptions.subscriber_id')
-            ->where('subscriptions.component_id', $component_id);
+            ->where('subscriptions.component_id', '=', $component_id);
     }
 
     /**

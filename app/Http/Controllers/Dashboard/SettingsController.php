@@ -200,7 +200,7 @@ class SettingsController extends Controller
     {
         $this->subMenu['security']['active'] = true;
 
-        $unsecureUsers = User::whereNull('google_2fa_secret')->orWhere('google_2fa_secret', '')->get();
+        $unsecureUsers = User::whereNull('google_2fa_secret')->orWhere('google_2fa_secret', '=', '')->get();
 
         Session::flash('redirect_to', $this->subMenu['security']['url']);
 

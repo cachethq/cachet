@@ -34,7 +34,7 @@ abstract class AbstractTestCase extends TestCase
     /**
      * Test actor.
      *
-     * @var User
+     * @var \CachetHQ\Cachet\Models\User
      */
     protected $user;
 
@@ -57,7 +57,7 @@ abstract class AbstractTestCase extends TestCase
      *
      * @param User|null $user
      *
-     * @return AbstractTestCase
+     * @return \CachetHQ\Tests\Cachet\AbstractTestCase
      */
     protected function signIn(User $user = null)
     {
@@ -73,7 +73,7 @@ abstract class AbstractTestCase extends TestCase
      *
      * @param array $properties
      *
-     * @return User
+     * @return \CachetHQ\Cachet\Models\User
      */
     protected function createUser($properties = [])
     {
@@ -83,7 +83,7 @@ abstract class AbstractTestCase extends TestCase
     /**
      * Set up the needed configuration to be able to run the tests.
      *
-     * @return AbstractTestCase
+     * @return \CachetHQ\Tests\Cachet\AbstractTestCase
      */
     protected function setupConfig()
     {

@@ -36,7 +36,7 @@ class SubscribeSubscriberCommandHandler
      */
     public function handle(SubscribeSubscriberCommand $command)
     {
-        if ($subscriber = Subscriber::where('email', $command->email)->first()) {
+        if ($subscriber = Subscriber::where('email', '=', $command->email)->first()) {
             return $subscriber;
         }
 

@@ -27,10 +27,14 @@ class MetricPresenter extends BasePresenter implements Arrayable
     public function view_name()
     {
         switch ($this->wrappedObject->default_view) {
-            case 0: return 'last_hour';
-            case 1: return 'today';
-            case 2: return 'week';
-            case 3: return 'month';
+            case 0:
+                return 'last_hour';
+            case 1:
+                return 'today';
+            case 2:
+                return 'week';
+            case 3:
+                return 'month';
         }
     }
 
@@ -52,10 +56,14 @@ class MetricPresenter extends BasePresenter implements Arrayable
     public function trans_string_name()
     {
         switch ($this->wrappedObject->default_view) {
-            case 0: return 'last_hour';
-            case 1: return 'hourly';
-            case 2: return 'weekly';
-            case 3: return 'monthly';
+            case 0:
+                return 'last_hour';
+            case 1:
+                return 'hourly';
+            case 2:
+                return 'weekly';
+            case 3:
+                return 'monthly';
         }
     }
 

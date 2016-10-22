@@ -119,7 +119,7 @@ class ApiController extends AbstractApiController
     {
         $templateSlug = Binput::get('slug');
 
-        if ($template = IncidentTemplate::where('slug', $templateSlug)->first()) {
+        if ($template = IncidentTemplate::where('slug', '=', $templateSlug)->first()) {
             return $template;
         }
 

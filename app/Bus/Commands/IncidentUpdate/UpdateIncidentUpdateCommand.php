@@ -55,10 +55,8 @@ final class UpdateIncidentUpdateCommand
      * @var string[]
      */
     public $rules = [
-        'update'  => 'required',
-        'status'  => 'int|min:1|max:4',
-        'message' => 'string',
-        'user'    => 'required',
+        'status'  => 'nullable|int|min:1|max:4',
+        'message' => 'nullable|string',
     ];
 
     /**
