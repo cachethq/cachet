@@ -14,12 +14,12 @@
     <div class="row">
         <div class="col-sm-12">
             @include('dashboard.partials.errors')
-            <form name="CreateComponentGroupForm" class="form-vertical" role="form" action="/dashboard/components/groups/add" method="POST">
+            <form name="CreateComponentGroupForm" class="form-vertical" role="form" action="{{ cachet_route('dashboard.components.groups.create', [], 'post') }}" method="POST">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <fieldset>
                     <div class="form-group">
                         <label>{{ trans('forms.components.groups.name') }}</label>
-                        <input type="text" class="form-control" name="name" id="group-name" required>
+                        <input type="text" class="form-control" name="name" id="group-name" required placeholder="{{ trans('forms.components.groups.name') }}">
                     </div>
                     <div class="form-group">
                         <label>{{ trans('forms.components.groups.collapsing') }}</label>
@@ -29,11 +29,18 @@
                             <option value="2">{{ trans('forms.components.groups.collapsed_incident') }}</option>
                         </select>
                     </div>
+                    <div class="form-group">
+                        <label>{{ trans('forms.components.groups.visibility') }}</label>
+                        <select name="collapsed" class="form-control" required>
+                            <option value="0">{{ trans('forms.components.groups.visibility_authenticated') }}</option>
+                            <option value="1">{{ trans('forms.components.groups.visibility_public') }}</option>
+                        </select>
+                    </div>
                 </fieldset>
 
                 <div class="btn-group">
                     <button type="submit" class="btn btn-success">{{ trans('forms.add') }}</button>
-                    <a class="btn btn-default" href="{{ route('dashboard.components.groups') }}">{{ trans('forms.cancel') }}</a>
+                    <a class="btn btn-default" href="{{ cachet_route('dashboard.components.groups') }}">{{ trans('forms.cancel') }}</a>
                 </div>
             </form>
         </div>

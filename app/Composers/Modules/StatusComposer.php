@@ -15,7 +15,7 @@ use CachetHQ\Cachet\Integrations\Contracts\System;
 use Illuminate\Contracts\View\View;
 
 /**
- * This is the status page composer.
+ * This is the status composer.
  *
  * @author James Brooks <james@alt-three.com>
  * @author Connor S. Parks <connor@connorvg.tv>
@@ -30,7 +30,7 @@ class StatusComposer
     protected $system;
 
     /**
-     * Create a new status page composer instance.
+     * Create a new status composer instance.
      *
      * @param \CachetHQ\Cachet\Integrations\Contracts\System $system
      *
@@ -42,7 +42,7 @@ class StatusComposer
     }
 
     /**
-     * Index page view composer.
+     * Bind data to the view.
      *
      * @param \Illuminate\Contracts\View\View $view
      *

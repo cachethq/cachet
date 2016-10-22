@@ -21,6 +21,13 @@ use Illuminate\Contracts\Routing\Registrar;
 class SignupRoutes
 {
     /**
+     * Defines if these routes are for the browser.
+     *
+     * @var bool
+     */
+    public static $browser = true;
+
+    /**
      * Define the signup routes.
      *
      * @param \Illuminate\Contracts\Routing\Registrar $router
@@ -29,13 +36,17 @@ class SignupRoutes
      */
     public function map(Registrar $router)
     {
-        $router->group(['middleware' => ['web', 'ready', 'guest'], 'as' => 'signup.'], function (Registrar $router) {
-            $router->get('signup/invite/{code}', [
-                'as'   => 'invite',
+        $router->group([
+            'middleware' => ['ready', 'guest'],
+            'prefix'     => 'signup',
+        ], function (Registrar $router) {
+            $router->get('invite/{code}', [
+                'as'   => 'get:signup.invite',
                 'uses' => 'SignupController@getSignup',
             ]);
 
-            $router->post('signup/invite/{code}', [
+            $router->post('invite/{code}', [
+                'as'   => 'post:signup.invite',
                 'uses' => 'SignupController@postSignup',
             ]);
         });

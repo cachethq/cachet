@@ -15,6 +15,11 @@ use CachetHQ\Cachet\Services\Modules\Manager;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\View;
 
+/**
+ * This is the module composer.
+ *
+ * @author Connor S. Parks <connor@connorvg.tv>
+ */
 class ModuleComposer
 {
     /**

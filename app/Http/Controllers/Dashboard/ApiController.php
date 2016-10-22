@@ -100,7 +100,8 @@ class ApiController extends AbstractApiController
                 $group,
                 $group->name,
                 $order + 1,
-                $group->collapsed
+                $group->collapsed,
+                $group->visible
             ));
         }
 
@@ -118,7 +119,7 @@ class ApiController extends AbstractApiController
     {
         $templateSlug = Binput::get('slug');
 
-        if ($template = IncidentTemplate::where('slug', $templateSlug)->first()) {
+        if ($template = IncidentTemplate::where('slug', '=', $templateSlug)->first()) {
             return $template;
         }
 

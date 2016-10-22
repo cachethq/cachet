@@ -1,5 +1,5 @@
 @extends('layout.master')
 
 @section('content')
-    @modules
+@modules
 @stop

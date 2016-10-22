@@ -17,6 +17,13 @@ use CachetHQ\Cachet\Console\Commands\DemoSeederCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
+/**
+ * This is the console kernel class.
+ *
+ * @author Graham Campbell <graham@alt-three.com>
+ * @author Joseph Cohen <joe@alt-three.com>
+ * @author James Brooks <james@alt-three.com>
+ */
 class Kernel extends ConsoleKernel
 {
     /**

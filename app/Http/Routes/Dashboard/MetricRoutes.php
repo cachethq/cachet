@@ -22,6 +22,13 @@ use Illuminate\Contracts\Routing\Registrar;
 class MetricRoutes
 {
     /**
+     * Defines if these routes are for the browser.
+     *
+     * @var bool
+     */
+    public static $browser = true;
+
+    /**
      * Define the dashboard metric routes.
      *
      * @param \Illuminate\Contracts\Routing\Registrar $router
@@ -31,26 +38,36 @@ class MetricRoutes
     public function map(Registrar $router)
     {
         $router->group([
-            'middleware' => ['web', 'auth'],
+            'middleware' => ['auth'],
             'namespace'  => 'Dashboard',
-            'as'         => 'dashboard.metrics.',
             'prefix'     => 'dashboard/metrics',
         ], function (Registrar $router) {
             $router->get('/', [
-                'as'   => 'index',
+                'as'   => 'get:dashboard.metrics',
                 'uses' => 'MetricController@showMetrics',
             ]);
-            $router->get('add', [
-                'as'   => 'add',
+
+            $router->get('create', [
+                'as'   => 'get:dashboard.metrics.create',
                 'uses' => 'MetricController@showAddMetric',
             ]);
-            $router->post('add', 'MetricController@createMetricAction');
-            $router->delete('{metric}/delete', 'MetricController@deleteMetricAction');
-            $router->get('{metric}/edit', [
-                'as'   => 'edit',
+            $router->post('create', [
+                'as'   => 'post:dashboard.metrics.create',
+                'uses' => 'MetricController@createMetricAction',
+            ]);
+
+            $router->get('{metric}', [
+                'as'   => 'get:dashboard.metrics.edit',
                 'uses' => 'MetricController@showEditMetricAction',
             ]);
-            $router->post('{metric}/edit', 'MetricController@editMetricAction');
+            $router->post('{metric}', [
+                'as'   => 'post:dashboard.metrics.edit',
+                'uses' => 'MetricController@editMetricAction',
+            ]);
+            $router->delete('{metric}', [
+                'as'   => 'delete:dashboard.metrics.delete',
+                'uses' => 'MetricController@deleteMetricAction',
+            ]);
         });
     }
 }

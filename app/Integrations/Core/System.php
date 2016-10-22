@@ -53,8 +53,11 @@ class System implements SystemContract
                 return $incident->status > 0;
             });
             $incidentCount = $incidents->count();
+            $unresolvedCount = $incidents->filter(function ($incident) {
+                return !$incident->is_resolved;
+            })->count();
 
-            if ($incidentCount === 0 || ($incidentCount >= 1 && (int) $incidents->first()->status === 4)) {
+            if ($incidentCount === 0 || ($incidentCount >= 1 && $unresolvedCount === 0)) {
                 $status = [
                     'system_status'  => 'success',
                     'system_message' => trans_choice('cachet.service.good', $totalComponents),

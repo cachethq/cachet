@@ -53,8 +53,8 @@ final class AddUserCommand
      */
     public $rules = [
         'username' => 'required|string',
-        'password' => 'string',
-        'level'    => 'int',
+        'password' => 'required|string',
+        'level'    => 'required|int',
     ];
 
     /**

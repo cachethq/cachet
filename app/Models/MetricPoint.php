@@ -59,7 +59,7 @@ class MetricPoint extends Model implements HasPresenter
      * @var string[]
      */
     public $rules = [
-        'value' => 'numeric|required',
+        'value' => 'required|numeric',
     ];
 
     /**

@@ -105,15 +105,15 @@ final class UpdateIncidentCommand
      * @var string[]
      */
     public $rules = [
-        'name'             => 'string',
-        'status'           => 'int|min:0|max:4',
-        'message'          => 'string',
-        'visible'          => 'bool',
-        'component_id'     => 'int',
-        'component_status' => 'int|min:1|max:4|required_with:component_id',
-        'notify'           => 'bool',
-        'stickied'         => 'bool',
-        'template'         => 'string',
+        'name'             => 'nullable|string',
+        'status'           => 'nullable|int|min:0|max:4',
+        'message'          => 'nullable|string',
+        'visible'          => 'nullable|bool',
+        'component_id'     => 'nullable|int',
+        'component_status' => 'nullable|int|min:1|max:4|required_with:component_id',
+        'notify'           => 'nullable|bool',
+        'stickied'         => 'nullable|bool',
+        'template'         => 'nullable|string',
     ];
 
     /**
@@ -130,11 +130,11 @@ final class UpdateIncidentCommand
      * @param bool                             $stickied
      * @param string|null                      $incident_date
      * @param string|null                      $template
-     * @param array|null                       $template_vars
+     * @param array                            $template_vars
      *
      * @return void
      */
-    public function __construct(Incident $incident, $name, $status, $message, $visible, $component_id, $component_status, $notify, $stickied, $incident_date, $template, array $template_vars = null)
+    public function __construct(Incident $incident, $name, $status, $message, $visible, $component_id, $component_status, $notify, $stickied, $incident_date, $template, array $template_vars = [])
     {
         $this->incident = $incident;
         $this->name = $name;

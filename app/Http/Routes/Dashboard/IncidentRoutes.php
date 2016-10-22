@@ -22,6 +22,13 @@ use Illuminate\Contracts\Routing\Registrar;
 class IncidentRoutes
 {
     /**
+     * Defines if these routes are for the browser.
+     *
+     * @var bool
+     */
+    public static $browser = true;
+
+    /**
      * Define the dashboard incident routes.
      *
      * @param \Illuminate\Contracts\Routing\Registrar $router
@@ -31,29 +38,45 @@ class IncidentRoutes
     public function map(Registrar $router)
     {
         $router->group([
-            'middleware' => ['web', 'auth'],
+            'middleware' => ['auth'],
             'namespace'  => 'Dashboard',
-            'as'         => 'dashboard.incidents.',
             'prefix'     => 'dashboard/incidents',
         ], function (Registrar $router) {
             $router->get('/', [
-                'as'   => 'index',
+                'as'   => 'get:dashboard.incidents',
                 'uses' => 'IncidentController@showIncidents',
             ]);
-            $router->get('add', [
-                'as'   => 'add',
+
+            $router->get('create', [
+                'as'   => 'get:dashboard.incidents.create',
                 'uses' => 'IncidentController@showAddIncident',
             ]);
-            $router->post('add', 'IncidentController@createIncidentAction');
-            $router->delete('{incident}/delete', [
-                'as'   => 'delete',
-                'uses' => 'IncidentController@deleteIncidentAction',
+            $router->post('create', [
+                'as'   => 'post:dashboard.incidents.create',
+                'uses' => 'IncidentController@createIncidentAction',
             ]);
-            $router->get('{incident}/edit', [
-                'as'   => 'edit',
+
+            $router->get('{incident}', [
+                'as'   => 'get:dashboard.incidents.edit',
                 'uses' => 'IncidentController@showEditIncidentAction',
             ]);
-            $router->post('{incident}/edit', 'IncidentController@editIncidentAction');
+            $router->post('{incident}', [
+                'as'   => 'post:dashboard.incidents.edit',
+                'uses' => 'IncidentController@editIncidentAction',
+            ]);
+            $router->delete('{incident}', [
+                'as'   => 'delete:dashboard.incidents.delete',
+                'uses' => 'IncidentController@deleteIncidentAction',
+            ]);
+
+            $router->get('{incident}/updates', [
+                'as'   => 'get:dashboard.incidents.updates',
+                'uses' => 'IncidentController@showIncidentUpdateAction',
+            ]);
+            $router->post('{incident}/updates', [
+                'as'   => 'post:dashboard.incidents.updates',
+                'uses' => 'IncidentController@createIncidentUpdateAction',
+            ]);
         });
     }
 }

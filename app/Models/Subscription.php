@@ -45,8 +45,8 @@ class Subscription extends Model
      * @var string[]
      */
     public $rules = [
-        'subscriber_id' => 'int|required',
-        'component_id'  => 'int',
+        'subscriber_id' => 'required|int',
+        'component_id'  => 'nullable|int',
     ];
 
     /**
@@ -79,7 +79,7 @@ class Subscription extends Model
      */
     public function scopeForSubscriber(Builder $query, $subscriber_id)
     {
-        return $query->where('subscriber_id', $subscriber_id);
+        return $query->where('subscriber_id', '=', $subscriber_id);
     }
 
     /**
@@ -92,7 +92,7 @@ class Subscription extends Model
      */
     public function scopeForComponent(Builder $query, $component_id)
     {
-        return $query->where('component_id', $component_id);
+        return $query->where('component_id', '=', $component_id);
     }
 
     /**
@@ -108,7 +108,7 @@ class Subscription extends Model
         return $query->select('subscriptions.*')
             ->join('subscribers', 'subscriptions.subscriber_id', '=', 'subscribers.id')
             ->where(function ($query) {
-                $query->where('subscriptions.component_id', $component_id)
+                $query->where('subscriptions.component_id', '=', $component_id)
                     ->orWhere('subscribers.global');
             })
             ->whereNotNull('subscribers.verified_at');

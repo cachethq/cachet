@@ -22,6 +22,13 @@ use Illuminate\Contracts\Routing\Registrar;
 class ApiRoutes
 {
     /**
+     * Defines if these routes are for the browser.
+     *
+     * @var bool
+     */
+    public static $browser = true;
+
+    /**
      * Define the dashboard api routes.
      *
      * @param \Illuminate\Contracts\Routing\Registrar $router
@@ -31,9 +38,8 @@ class ApiRoutes
     public function map(Registrar $router)
     {
         $router->group([
-            'middleware' => ['web', 'auth'],
+            'middleware' => ['auth'],
             'namespace'  => 'Dashboard',
-            'as'         => 'dashboard.api.',
             'prefix'     => 'dashboard/api',
         ], function (Registrar $router) {
             $router->get('incidents/templates', 'ApiController@getIncidentTemplate');

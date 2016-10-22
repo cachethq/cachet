@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="pull-right">
-    <p><a class="btn btn-success btn-outline" href="/"><i class="ion ion-home"></i></a></p>
+    <p><a class="btn btn-success btn-outline" href="{{ cachet_route('status-page') }}"><i class="ion ion-home"></i></a></p>
 </div>
 
 <div class="clearfix"></div>
@@ -14,7 +14,7 @@
         <div class="panel panel-default">
             <div class="panel-heading">{{ trans('cachet.subscriber.subscribe') }}</div>
             <div class="panel-body">
-                <form action="{{ route('subscribe.subscribe', [], false) }}" method="POST" class="form">
+                <form action="{{ cachet_route('subscribe', [], 'post') }}" method="POST" class="form">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <div class="form-group">
                         <input class="form-control" type="email" name="email">

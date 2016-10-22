@@ -82,6 +82,7 @@ class SubscriberTest extends AbstractApiTestCase
         $this->assertResponseOk();
         $this->seeHeader('Content-Type', 'application/json');
         $this->seeJson(['email' => 'support@alt-three.com']);
+        $this->seeJsonStructure(['data' => ['subscriptions' => []]]);
     }
 
     public function testDeleteSubscriber()
