@@ -63,6 +63,7 @@ class ApiRoutes
 
             $router->group(['middleware' => ['auth.api:true']], function (Registrar $router) {
                 $router->get('subscribers', 'SubscriberController@getSubscribers');
+                $router->get('plugins', 'PluginController@getPlugins');
 
                 $router->post('components', 'ComponentController@postComponents');
                 $router->post('components/groups', 'ComponentGroupController@postGroups');
