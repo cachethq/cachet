@@ -89,13 +89,13 @@ class Parser implements ParserContract
         try {
             $config = Yaml::parse($config);
         } catch (ParseException $e) {
-            return null;
+            return;
         }
 
         try {
             return $this->parsePluginDefinition($directory, $config);
         } catch (Exception $e) {
-            return null;
+            return;
         }
     }
 
@@ -149,7 +149,7 @@ class Parser implements ParserContract
         $email = array_get($author, 'email');
 
         if (empty($name) || empty($email)) {
-            return null;
+            return;
         }
 
         return new Author($name, $email);
@@ -194,7 +194,7 @@ class Parser implements ParserContract
         $version = array_get($author, 'version');
 
         if (empty($vendor) || empty($name) || empty($constraint) || empty($version)) {
-            return null;
+            return;
         }
 
         return new Dependency($vendor, $name, $constraint, $this->parseVersion($version));
