@@ -164,7 +164,7 @@ class Parser implements ParserContract
      */
     protected function parseVersion($version)
     {
-        return new Version(1, 0, 0, 'dev');
+        return Version::from($version);
     }
 
     /**

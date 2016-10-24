@@ -11,6 +11,8 @@
 
 namespace CachetHQ\Cachet\Services\Plugins\Definition;
 
+use Composer\Semver\VersionParser;
+
 /**
  * This is the plugin version class.
  *
@@ -18,6 +20,13 @@ namespace CachetHQ\Cachet\Services\Plugins\Definition;
  */
 class Version
 {
+    /**
+     * The version string extractor regex.
+     *
+     * @var string
+     */
+    const MATCHER = '/(?<=^[Vv]|^)(?:(?<major>(?:0|[1-9](?:(?:0|[1-9])+)*))[.](?<minor>(?:0|[1-9](?:(?:0|[1-9])+)*))[.](?<patch>(?:0|[1-9](?:(?:0|[1-9])+)*))[.](?<internal>(?:0|[1-9](?:(?:0|[1-9])+)*))(?:-(?<meta>(?:(?:(?:[A-Za-z]|-)(?:(?:(?:0|[1-9])|(?:[A-Za-z]|-))+)?|(?:(?:(?:0|[1-9])|(?:[A-Za-z]|-))+)(?:[A-Za-z]|-)(?:(?:(?:0|[1-9])|(?:[A-Za-z]|-))+)?)|(?:0|[1-9](?:(?:0|[1-9])+)*))(?:[.](?:(?:(?:[A-Za-z]|-)(?:(?:(?:0|[1-9])|(?:[A-Za-z]|-))+)?|(?:(?:(?:0|[1-9])|(?:[A-Za-z]|-))+)(?:[A-Za-z]|-)(?:(?:(?:0|[1-9])|(?:[A-Za-z]|-))+)?)|(?:0|[1-9](?:(?:0|[1-9])+)*)))*))?(?:[+](?<build>(?:(?:(?:[A-Za-z]|-)(?:(?:(?:0|[1-9])|(?:[A-Za-z]|-))+)?|(?:(?:(?:0|[1-9])|(?:[A-Za-z]|-))+)(?:[A-Za-z]|-)(?:(?:(?:0|[1-9])|(?:[A-Za-z]|-))+)?)|(?:(?:0|[1-9])+))(?:[.](?:(?:(?:[A-Za-z]|-)(?:(?:(?:0|[1-9])|(?:[A-Za-z]|-))+)?|(?:(?:(?:0|[1-9])|(?:[A-Za-z]|-))+)(?:[A-Za-z]|-)(?:(?:(?:0|[1-9])|(?:[A-Za-z]|-))+)?)|(?:(?:0|[1-9])+)))*))?)$/';
+
     /**
      * The major version part.
      *
@@ -116,5 +125,52 @@ class Version
             $this->patch,
             $this->meta
         );
+    }
+
+    /**
+     * Extract the version from a string.
+     *
+     * @param string $version
+     *
+     * @return \CachetHQ\Cachet\Services\Plugins\Definition\Version|null
+     */
+    public static function from($version)
+    {
+        $version = self::normalize($version);
+
+        if ($version === null) {
+            return;
+        }
+
+        $matches = [];
+
+        if (preg_match(self::MATCHER, $version, $matches) !== 1) {
+            return null;
+        }
+
+        return new Version(
+            $matches['major'],
+            $matches['minor'],
+            $matches['patch'],
+            $matches['meta']
+        );
+    }
+
+    /**
+     * Normalizes a version string.
+     *
+     * @param string $version
+     *
+     * @return string|null
+     */
+    protected static function normalize($version)
+    {
+        $parser = new VersionParser();
+
+        try {
+            return $parser->normalize($version);
+        } catch (UnexpectedValueException $e) {
+            // ...
+        }
     }
 }
