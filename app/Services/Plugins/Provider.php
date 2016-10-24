@@ -11,7 +11,7 @@
 
 namespace CachetHQ\Cachet\Services\Plugins;
 
-use CachetHQ\Cachet\Services\Plugins\Contracts\Container;
+use CachetHQ\Cachet\Services\Plugins\Contracts\Container as ContainerContract;
 use CachetHQ\Cachet\Services\Plugins\Contracts\Provider as ProviderContract;
 use CachetHQ\Cachet\Services\Plugins\Definition\Plugin;
 use Illuminate\Contracts\Container\Container as Application;
@@ -47,7 +47,7 @@ class Provider implements ProviderContract
      *
      * @return void
      */
-    public function register(Container $plugins)
+    public function register(ContainerContract $plugins)
     {
         $plugins->enabled()->each(function (Plugin $plugin) {
             $this->registerAutoloader($plugin);
