@@ -47,6 +47,13 @@ class Plugin
     protected $version;
 
     /**
+     * The plugin's providers.
+     *
+     * @var \CachetHQ\Cachet\Services\Plugins\Definition\Provider[]
+     */
+    protected $providers;
+
+    /**
      * The plugin's dependencies.
      *
      * @var \CachetHQ\Cachet\Services\Plugins\Definition\Dependency[]
@@ -67,17 +74,79 @@ class Plugin
      * @param string                                                    $name
      * @param \CachetHQ\Cachet\Services\Plugins\Definition\Author[]     $authors
      * @param \CachetHQ\Cachet\Services\Plugins\Definition\Version      $version
+     * @param \CachetHQ\Cachet\Services\Plugins\Definition\Provider[]   $providers
      * @param \CachetHQ\Cachet\Services\Plugins\Definition\Dependency[] $dependencies
      * @param bool                                                      $enabled
      */
-    public function __construct($vendor, $name, $authors, $version, $dependencies, $enabled)
+    public function __construct($vendor, $name, $authors, $version, $providers, $dependencies, $enabled)
     {
         $this->vendor = $vendor;
         $this->name = $name;
         $this->authors = $authors;
         $this->version = $version;
+        $this->providers = $providers;
         $this->dependencies = $dependencies;
         $this->enabled = $enabled;
+    }
+
+    /**
+     * Get the plugin's vendor.
+     *
+     * @return string
+     */
+    public function getVendor()
+    {
+        return $this->vendor;
+    }
+
+    /**
+     * Get the plugin's name.
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Get the plugin's authors.
+     *
+     * @return \CachetHQ\Cachet\Services\Plugins\Definition\Author[]
+     */
+    public function getAuthors()
+    {
+        return $this->authors;
+    }
+
+    /**
+     * Get the plugin's version.
+     *
+     * @return \CachetHQ\Cachet\Services\Plugins\Definition\Version
+     */
+    public function getVersion()
+    {
+        return $this->version;
+    }
+
+    /**
+     * Get the plugin's providers.
+     *
+     * @return \CachetHQ\Cachet\Services\Plugins\Definition\Provider[]
+     */
+    public function getProviders()
+    {
+        return $this->providers;
+    }
+
+    /**
+     * Get the plugin's dependencies.
+     *
+     * @return \CachetHQ\Cachet\Services\Plugins\Definition\Dependency[]
+     */
+    public function getDependencies()
+    {
+        return $this->dependencies;
     }
 
     /**
@@ -112,5 +181,20 @@ class Plugin
     public function isDisabled()
     {
         return !$this->enabled;
+    }
+
+    /**
+     * Get the plugin as a string.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return sprintf(
+            '%s/%s v%s',
+            $this->vendor,
+            $this->name,
+            $this->version
+        );
     }
 }

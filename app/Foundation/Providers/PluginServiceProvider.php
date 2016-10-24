@@ -94,7 +94,7 @@ class PluginServiceProvider extends ServiceProvider
     protected function registerProvider()
     {
         $this->app->singleton(ProviderContract::class, function (Application $app) {
-            return new Provider();
+            return new Provider($app);
         });
     }
 

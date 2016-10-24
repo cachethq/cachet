@@ -13,6 +13,7 @@ namespace CachetHQ\Cachet\Services\Plugins;
 
 use CachetHQ\Cachet\Services\Plugins\Contracts\Container;
 use CachetHQ\Cachet\Services\Plugins\Contracts\Provider as ProviderContract;
+use Illuminate\Contracts\Container\Container as Application;
 
 /**
  * This is the plugin provider contract.
@@ -21,6 +22,23 @@ use CachetHQ\Cachet\Services\Plugins\Contracts\Provider as ProviderContract;
  */
 class Provider implements ProviderContract
 {
+    /**
+     * The application container.
+     *
+     * @var \Illuminate\Contracts\Container\Container
+     */
+    protected $app;
+
+    /**
+     * Create a new provider object.
+     *
+     * @param \Illuminate\Contracts\Container\Container $app
+     */
+    public function __construct(Application $app)
+    {
+        $this->app = $app;
+    }
+
     /**
      * Register the plugins.
      *
@@ -44,7 +62,16 @@ class Provider implements ProviderContract
      */
     protected function registerPlugin(Plugin $plugin)
     {
-        // ...
+        $providers = $plugin->getProviders();
+
+        foreach ($providers as $provider) {
+            $provider = $this->app->make(
+                $provider,
+                ['app' => $this->app]
+            );
+
+            $this->app->register($provider);
+        }
     }
 
     /**
@@ -70,6 +97,6 @@ class Provider implements ProviderContract
      */
     protected function bootPlugin(Plugin $plugin)
     {
-        // ...
+        // @todo
     }
 }
