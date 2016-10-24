@@ -159,7 +159,7 @@ return [
         'Illuminate\Foundation\Providers\FoundationServiceProvider',
         'Illuminate\Hashing\HashServiceProvider',
         'Illuminate\Mail\MailServiceProvider',
-        Illuminate\Notifications\NotificationServiceProvider::class,
+        'Illuminate\Notifications\NotificationServiceProvider',
         'Illuminate\Pagination\PaginationServiceProvider',
         'Illuminate\Pipeline\PipelineServiceProvider',
         'Illuminate\Queue\QueueServiceProvider',
@@ -192,6 +192,7 @@ return [
         /*
          * Application Service Providers...
          */
+        'CachetHQ\Cachet\Foundation\Providers\PluginServiceProvider',
         'CachetHQ\Cachet\Foundation\Providers\AppServiceProvider',
         'CachetHQ\Cachet\Foundation\Providers\ComposerServiceProvider',
         'CachetHQ\Cachet\Foundation\Providers\ConsoleServiceProvider',
@@ -233,7 +234,7 @@ return [
         'Lang'         => 'Illuminate\Support\Facades\Lang',
         'Log'          => 'Illuminate\Support\Facades\Log',
         'Mail'         => 'Illuminate\Support\Facades\Mail',
-        'Notification' => Illuminate\Support\Facades\Notification::class,
+        'Notification' => 'Illuminate\Support\Facades\Notification',
         'Password'     => 'Illuminate\Support\Facades\Password',
         'Queue'        => 'Illuminate\Support\Facades\Queue',
         'Redirect'     => 'Illuminate\Support\Facades\Redirect',

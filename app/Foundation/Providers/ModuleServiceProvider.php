@@ -31,6 +31,7 @@ class ModuleServiceProvider extends ServiceProvider
             ['group' => 'stickied', 'partial' => 'partials.modules.stickied'],
             ['group' => 'scheduled', 'partial' => 'partials.modules.scheduled'],
             ['group' => 'timeline', 'partial' => 'partials.modules.timeline'],
+            ['group' => 'plugins', 'partial' => 'partials.modules.plugins'],
         ],
     ];
 
@@ -48,6 +49,7 @@ class ModuleServiceProvider extends ServiceProvider
             'scheduled'  => 50000,
             'stickied'   => 60000,
             'timeline'   => 70000,
+            'plugins'    => 80000,
         ],
     ];
 
