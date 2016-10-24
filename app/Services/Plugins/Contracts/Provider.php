@@ -11,8 +11,6 @@
 
 namespace CachetHQ\Cachet\Services\Plugins\Contracts;
 
-use CachetHQ\Cachet\Services\Plugins\Contracts\Container;
-
 /**
  * This is the plugin provider contract.
  *

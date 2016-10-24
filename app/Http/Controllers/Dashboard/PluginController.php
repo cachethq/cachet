@@ -11,9 +11,7 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
-use AltThree\Validator\ValidationException;
 use CachetHQ\Cachet\Services\Plugins\Contracts\Container as PluginsContainer;
-use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\View;
 

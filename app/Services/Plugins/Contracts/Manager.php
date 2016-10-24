@@ -25,9 +25,9 @@ interface Manager
      *
      * @param \App\Services\Plugins\Definition\Plugin $plugin
      *
-     * @return void
-     *
      * @throws \App\Services\Plugins\Exceptions\InstallFailedException
+     *
+     * @return void
      */
     public function install(Plugin $plugin);
 
@@ -36,9 +36,9 @@ interface Manager
      *
      * @param \App\Services\Plugins\Definition\Plugin $plugin
      *
-     * @return void
-     *
      * @throws \App\Services\Plugins\Exceptions\UninstallFailedException
+     *
+     * @return void
      */
     public function uninstall(Plugin $plugin);
 
@@ -47,9 +47,9 @@ interface Manager
      *
      * @param \App\Services\Plugins\Definition\Plugin $plugin
      *
-     * @return void
-     *
      * @throws \App\Services\Plugins\Exceptions\EnableFailedException
+     *
+     * @return void
      */
     public function enable(Plugin $plugin);
 
@@ -58,9 +58,9 @@ interface Manager
      *
      * @param \App\Services\Plugins\Definition\Plugin $plugin
      *
-     * @return void
-     *
      * @throws \App\Services\Plugins\Exceptions\DisableFailedException
+     *
+     * @return void
      */
     public function disable(Plugin $plugin);
 }

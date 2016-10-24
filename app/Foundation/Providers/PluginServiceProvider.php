@@ -11,10 +11,10 @@
 
 namespace CachetHQ\Cachet\Foundation\Providers;
 
+use CachetHQ\Cachet\Services\Plugins\Container;
 use CachetHQ\Cachet\Services\Plugins\Contracts\Container as ContainerContract;
 use CachetHQ\Cachet\Services\Plugins\Contracts\Manager as ManagerContract;
 use CachetHQ\Cachet\Services\Plugins\Contracts\Provider as ProviderContract;
-use CachetHQ\Cachet\Services\Plugins\Container;
 use CachetHQ\Cachet\Services\Plugins\Manager;
 use CachetHQ\Cachet\Services\Plugins\Provider;
 use Illuminate\Contracts\Container\Container as Application;
