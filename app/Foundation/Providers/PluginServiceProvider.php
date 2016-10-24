@@ -99,8 +99,6 @@ class PluginServiceProvider extends ServiceProvider
             $plugins = $finder->retrieve();
             $plugins = $parser->from($plugins);
 
-            dd($plugins);
-
             return new Container($plugins);
         });
     }
