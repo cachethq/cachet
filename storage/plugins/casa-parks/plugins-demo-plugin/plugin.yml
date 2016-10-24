@@ -1,0 +1,7 @@
+authors:
+  - { name: "Connor S. Parks", email: "contact@connorvg.tv" }
+
+version: 1.0.0-dev
+
+providers:
+  - CasaParks\PluginsDemoPlugin\Providers\PluginsDemoPluginServiceProvider

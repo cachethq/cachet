@@ -13,11 +13,16 @@ namespace CachetHQ\Cachet\Foundation\Providers;
 
 use CachetHQ\Cachet\Services\Plugins\Container;
 use CachetHQ\Cachet\Services\Plugins\Contracts\Container as ContainerContract;
+use CachetHQ\Cachet\Services\Plugins\Contracts\Finder as FinderContract;
 use CachetHQ\Cachet\Services\Plugins\Contracts\Manager as ManagerContract;
+use CachetHQ\Cachet\Services\Plugins\Contracts\Parser as ParserContract;
 use CachetHQ\Cachet\Services\Plugins\Contracts\Provider as ProviderContract;
+use CachetHQ\Cachet\Services\Plugins\Finder;
 use CachetHQ\Cachet\Services\Plugins\Manager;
+use CachetHQ\Cachet\Services\Plugins\Parser;
 use CachetHQ\Cachet\Services\Plugins\Provider;
 use Illuminate\Contracts\Container\Container as Application;
+use Illuminate\Contracts\Filesystem\Factory as Filesystem;
 use Illuminate\Support\ServiceProvider;
 
 /**
@@ -44,10 +49,40 @@ class PluginServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->registerFinder();
+        $this->registerParser();
         $this->registerContainer();
         $this->registerManager();
         $this->registerProvider();
         $this->registerPlugins();
+    }
+
+    /**
+     * Register the plugin finder.
+     *
+     * @return void
+     */
+    protected function registerFinder()
+    {
+        $this->app->singleton(FinderContract::class, function (Application $app) {
+            $files = $app->make(Filesystem::class)->drive('plugins');
+
+            return new Finder($files);
+        });
+    }
+
+    /**
+     * Register the plugin parser.
+     *
+     * @return void
+     */
+    protected function registerParser()
+    {
+        $this->app->singleton(ParserContract::class, function (Application $app) {
+            $files = $app->make(Filesystem::class)->drive('plugins');
+
+            return new Parser($files);
+        });
     }
 
     /**
@@ -58,7 +93,15 @@ class PluginServiceProvider extends ServiceProvider
     protected function registerContainer()
     {
         $this->app->singleton(ContainerContract::class, function (Application $app) {
-            return new Container();
+            $finder = $app->make(FinderContract::class);
+            $parser = $app->make(ParserContract::class);
+
+            $plugins = $finder->retrieve();
+            $plugins = $parser->from($plugins);
+
+            dd($plugins);
+
+            return new Container($plugins);
         });
     }
 
@@ -70,7 +113,7 @@ class PluginServiceProvider extends ServiceProvider
     protected function registerManager()
     {
         $this->app->singleton(ManagerContract::class, function (Application $app) {
-            $container = $this->app->make(ContainerContract::class);
+            $container = $app->make(ContainerContract::class);
 
             return new Manager($container);
         });

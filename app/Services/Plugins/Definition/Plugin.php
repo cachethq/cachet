@@ -78,8 +78,15 @@ class Plugin
      * @param \CachetHQ\Cachet\Services\Plugins\Definition\Dependency[] $dependencies
      * @param bool                                                      $enabled
      */
-    public function __construct($vendor, $name, $authors, $version, $providers, $dependencies, $enabled)
-    {
+    public function __construct(
+        $vendor,
+        $name,
+        $authors,
+        Version $version,
+        $providers,
+        $dependencies,
+        $enabled
+    ) {
         $this->vendor = $vendor;
         $this->name = $name;
         $this->authors = $authors;

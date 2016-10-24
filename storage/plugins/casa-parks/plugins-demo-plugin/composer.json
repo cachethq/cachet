@@ -1,0 +1,19 @@
+{
+    "name": "casa-parks/plugins-demo-plugin",
+    "description": "A demo plugin.",
+    "type": "plugins-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Connor S. Parks",
+            "email": "contact@connorvg.tv"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "CasaParks\\PluginsDemoPlugin\\": "src/"
+        }
+    },
+    "require": {}
+}
