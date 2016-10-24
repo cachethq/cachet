@@ -4,4 +4,4 @@ authors:
 version: 1.0.0-dev
 
 providers:
-  - CasaParks\PluginsDemoPlugin\Providers\PluginsDemoPluginServiceProvider
+  - CasaParks\PluginsDemoPlugin\Providers\DemoPluginServiceProvider

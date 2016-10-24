@@ -1,6 +1,6 @@
 <?php
 
-namespace CasaParks\PluginsDemoPlugin\Services;
+namespace CasaParks\PluginsDemoPlugin\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
