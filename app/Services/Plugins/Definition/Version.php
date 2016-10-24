@@ -145,10 +145,10 @@ class Version
         $matches = [];
 
         if (preg_match(self::MATCHER, $version, $matches) !== 1) {
-            return null;
+            return;
         }
 
-        return new Version(
+        return new self(
             $matches['major'],
             $matches['minor'],
             $matches['patch'],
