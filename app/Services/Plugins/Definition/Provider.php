@@ -30,7 +30,7 @@ class Provider
      *
      * @param string $class
      */
-    public function __construct($name)
+    public function __construct($class)
     {
         $this->class = $class;
     }

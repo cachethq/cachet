@@ -13,6 +13,7 @@ namespace CachetHQ\Cachet\Services\Plugins;
 
 use CachetHQ\Cachet\Services\Plugins\Contracts\Container;
 use CachetHQ\Cachet\Services\Plugins\Contracts\Provider as ProviderContract;
+use CachetHQ\Cachet\Services\Plugins\Definition\Plugin;
 use Illuminate\Contracts\Container\Container as Application;
 
 /**
@@ -49,8 +50,32 @@ class Provider implements ProviderContract
     public function register(Container $plugins)
     {
         $plugins->enabled()->each(function (Plugin $plugin) {
+            $this->registerAutoloader($plugin);
             $this->registerPlugin($plugin);
         });
+    }
+
+    /**
+     * Register the plugin's autoloader.
+     *
+     * @param \CachetHQ\Cachet\Services\Plugins\Definition\Plugin $plugin
+     *
+     * @return void
+     */
+    protected function registerAutoloader(Plugin $plugin)
+    {
+        $autoload = sprintf(
+            '%s/%s/%s/vendor/autoload.php',
+            storage_path('plugins'),
+            $plugin->getVendor(),
+            $plugin->getName()
+        );
+
+        if (!file_exists($autoload)) {
+            return;
+        }
+
+        require_once $autoload;
     }
 
     /**
@@ -66,37 +91,11 @@ class Provider implements ProviderContract
 
         foreach ($providers as $provider) {
             $provider = $this->app->make(
-                $provider,
+                $provider->getClass(),
                 ['app' => $this->app]
             );
 
             $this->app->register($provider);
         }
-    }
-
-    /**
-     * Boot the plugins.
-     *
-     * @param \CachetHQ\Cachet\Services\Plugins\Contracts\Container $container
-     *
-     * @return void
-     */
-    public function boot(Container $plugins)
-    {
-        $plugins->enabled()->each(function (Plugin $plugin) {
-            $this->bootPlugin($plugin);
-        });
-    }
-
-    /**
-     * Boot the plugin.
-     *
-     * @param \CachetHQ\Cachet\Services\Plugins\Definition\Plugin $plugin
-     *
-     * @return void
-     */
-    protected function bootPlugin(Plugin $plugin)
-    {
-        // @todo
     }
 }

@@ -26,13 +26,4 @@ interface Provider
      * @return void
      */
     public function register(Container $container);
-
-    /**
-     * Boot the plugins.
-     *
-     * @param \CachetHQ\Cachet\Services\Plugins\Contracts\Container $container
-     *
-     * @return void
-     */
-    public function boot(Container $container);
 }

@@ -34,17 +34,7 @@ class PluginServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->bootPlugins();
-    }
-
-    /**
-     * Boot the plugins.
-     *
-     * @return void
-     */
-    protected function bootPlugins()
-    {
-        $this->app->call(ProviderContract::class.'@boot');
+        // ...
     }
 
     /**
