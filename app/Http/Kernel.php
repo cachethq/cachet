@@ -33,7 +33,7 @@ class Kernel extends HttpKernel
     protected $routeMiddleware = [
         'admin'       => 'CachetHQ\Cachet\Http\Middleware\Admin',
         'can'         => 'Illuminate\Auth\Middleware\Authorize',
-        'auth'        => 'Illuminate\Auth\Middleware\Authenticate',
+        'auth'        => 'CachetHQ\Cachet\Http\Middleware\Authenticate',
         'auth.api'    => 'CachetHQ\Cachet\Http\Middleware\ApiAuthentication',
         'guest'       => 'CachetHQ\Cachet\Http\Middleware\RedirectIfAuthenticated',
         'localize'    => 'CachetHQ\Cachet\Http\Middleware\Localize',
