@@ -12,6 +12,7 @@
 namespace CachetHQ\Cachet\Services\Plugins\Definition;
 
 use Composer\Semver\VersionParser;
+use UnexpectedValueException;
 
 /**
  * This is the plugin version class.
