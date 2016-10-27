@@ -33,8 +33,8 @@ class StickiedComposer
      */
     public function compose(View $view)
     {
-        $stickiedIncidents = Incident::stickied()->orderBy('scheduled_at', 'desc')->orderBy('created_at', 'desc')->get()->groupBy(function (Incident $incident) {
-            return app(DateFactory::class)->make($incident->is_scheduled ? $incident->scheduled_at : $incident->created_at)->toDateString();
+        $stickiedIncidents = Incident::stickied()->orderBy('scheduled_at', 'desc')->orderBy('occurred_at', 'desc')->get()->groupBy(function (Incident $incident) {
+            return app(DateFactory::class)->make($incident->is_scheduled ? $incident->scheduled_at : $incident->occurred_at)->toDateString();
         });
         $view->withStickiedIncidents($stickiedIncidents);
     }

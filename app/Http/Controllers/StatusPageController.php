@@ -82,11 +82,11 @@ class StatusPageController extends AbstractApiController
 
         $incidentVisibility = Auth::check() ? 0 : 1;
 
-        $allIncidents = Incident::notScheduled()->where('visible', '>=', $incidentVisibility)->whereBetween('created_at', [
+        $allIncidents = Incident::notScheduled()->where('visible', '>=', $incidentVisibility)->whereBetween('occurred_at', [
             $startDate->copy()->subDays($daysToShow)->format('Y-m-d').' 00:00:00',
             $startDate->format('Y-m-d').' 23:59:59',
-        ])->orderBy('scheduled_at', 'desc')->orderBy('created_at', 'desc')->get()->load('updates')->groupBy(function (Incident $incident) {
-            return app(DateFactory::class)->make($incident->is_scheduled ? $incident->scheduled_at : $incident->created_at)->toDateString();
+        ])->orderBy('scheduled_at', 'desc')->orderBy('occurred_at', 'desc')->get()->groupBy(function (Incident $incident) {
+            return app(DateFactory::class)->make($incident->is_scheduled ? $incident->scheduled_at : $incident->occurred_at)->toDateString();
         });
 
         // Add in days that have no incidents
@@ -109,7 +109,7 @@ class StatusPageController extends AbstractApiController
             ->withDaysToShow($daysToShow)
             ->withAllIncidents($allIncidents)
             ->withCanPageForward((bool) $today->gt($startDate))
-            ->withCanPageBackward(Incident::notScheduled()->where('created_at', '<', $startDate->format('Y-m-d'))->count() > 0)
+            ->withCanPageBackward(Incident::notScheduled()->where('occurred_at', '<', $startDate->format('Y-m-d'))->count() > 0)
             ->withPreviousDate($startDate->copy()->subDays($daysToShow)->toDateString())
             ->withNextDate($startDate->copy()->addDays($daysToShow)->toDateString());
     }

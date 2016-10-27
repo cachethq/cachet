@@ -56,6 +56,56 @@ class IncidentPresenter extends BasePresenter implements Arrayable
     }
 
     /**
+     * Present formatted occurred_at date time.
+     *
+     * @return string
+     */
+    public function occurred_at()
+    {
+        return app(DateFactory::class)->make($this->wrappedObject->occurred_at)->toDateTimeString();
+    }
+
+    /**
+     * Present diff for humans date time.
+     *
+     * @return string
+     */
+    public function occurred_at_diff()
+    {
+        return app(DateFactory::class)->make($this->wrappedObject->occurred_at)->diffForHumans();
+    }
+
+    /**
+     * Present formatted date time.
+     *
+     * @return string
+     */
+    public function occurred_at_formatted()
+    {
+        return ucfirst(app(DateFactory::class)->make($this->wrappedObject->occurred_at)->format(Config::get('setting.incident_date_format', 'l jS F Y H:i:s')));
+    }
+
+    /**
+     * Formats the occurred_at time ready to be used by bootstrap-datetimepicker.
+     *
+     * @return string
+     */
+    public function occurred_at_datetimepicker()
+    {
+        return app(DateFactory::class)->make($this->wrappedObject->occurred_at)->format('Y-m-d H:i');
+    }
+
+    /**
+     * Present formatted date time.
+     *
+     * @return string
+     */
+    public function occurred_at_iso()
+    {
+        return app(DateFactory::class)->make($this->wrappedObject->occurred_at)->toISO8601String();
+    }
+
+    /**
      * Present diff for humans date time.
      *
      * @return string
@@ -73,16 +123,6 @@ class IncidentPresenter extends BasePresenter implements Arrayable
     public function created_at_formatted()
     {
         return ucfirst(app(DateFactory::class)->make($this->wrappedObject->created_at)->format(Config::get('setting.incident_date_format', 'l jS F Y H:i:s')));
-    }
-
-    /**
-     * Formats the created_at time ready to be used by bootstrap-datetimepicker.
-     *
-     * @return string
-     */
-    public function created_at_datetimepicker()
-    {
-        return app(DateFactory::class)->make($this->wrappedObject->created_at)->format('d/m/Y H:i');
     }
 
     /**
@@ -156,7 +196,7 @@ class IncidentPresenter extends BasePresenter implements Arrayable
             return $this->scheduled_at_formatted;
         }
 
-        return $this->created_at_formatted;
+        return $this->occurred_at_formatted;
     }
 
     /**
@@ -170,7 +210,7 @@ class IncidentPresenter extends BasePresenter implements Arrayable
             return $this->scheduled_at_iso;
         }
 
-        return $this->created_at_iso;
+        return $this->occurred_at_iso;
     }
 
     /**
@@ -269,7 +309,7 @@ class IncidentPresenter extends BasePresenter implements Arrayable
     public function duration()
     {
         if ($update = $this->latest()) {
-            return $this->wrappedObject->created_at->diffInSeconds($update->created_at);
+            return $this->wrappedObject->created_at->diffInSeconds($update->occurred_at);
         }
 
         return 0;
@@ -291,6 +331,7 @@ class IncidentPresenter extends BasePresenter implements Arrayable
             'permalink'           => $this->permalink(),
             'duration'            => $this->duration(),
             'scheduled_at'        => $this->scheduled_at(),
+            'occurred_at'         => $this->occurred_at(),
             'created_at'          => $this->created_at(),
             'updated_at'          => $this->updated_at(),
         ]);

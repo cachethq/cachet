@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-<h1>{{ $incident->name }} <small>{{ formatted_date($incident->created_at) }}</small></h1>
+<h1>{{ $incident->name }} <small>{{ formatted_date($incident->occurred_at) }}</small></h1>
 
 <hr>
 
