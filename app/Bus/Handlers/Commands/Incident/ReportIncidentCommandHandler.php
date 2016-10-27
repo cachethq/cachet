@@ -19,7 +19,6 @@ use CachetHQ\Cachet\Dates\DateFactory;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentTemplate;
-use Carbon\Carbon;
 use Twig_Environment;
 use Twig_Loader_Array;
 
