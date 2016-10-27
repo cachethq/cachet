@@ -1,12 +1,12 @@
 # Contribution Guidelines
 
-## Creating issues
+### Creating issues
 
 Feature requests and bug reports should be made by using the [issue tracker](https://github.com/cachethq/Cachet/issues). Support questions should be directed to our support email; [support@alt-three.com](mailto:support@alt-three.com?subject=Cachet Support).
 
 **Always be respectful.** Organization members reserve the right to lock topics if they feel necessary.
 
-## Languages
+### Languages
 
 Any non-English translations must be made on the [Cachet CrowdIn](https://translate.cachethq.io) project. This makes syncing translations much easier.
 
