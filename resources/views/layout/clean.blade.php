@@ -8,6 +8,7 @@
 
     <meta name="env" content="{{ app('env') }}">
     <meta name="token" content="{{ csrf_token() }}">
+    <meta name="locale" content="{{ $app_locale }}">
 
     <link rel="icon" type="image/png" href="/img/favicon.ico">
     <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
@@ -30,11 +31,8 @@
 
     @include('partials.crowdin')
 
-    <script type="text/javascript">
-        var Global = {};
-        Global.locale = '{{ $app_locale }}';
-    </script>
-    <script src="{{ elixir('dist/js/all.js') }}"></script>
+    <script src="{{ elixir('dist/js/vendors.js') }}"></script>
+    <script src="{{ elixir('dist/js/dashboard.js') }}"></script>
 </head>
 
 <body class="@yield('bodyClass')">

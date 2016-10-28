@@ -28,13 +28,15 @@ elixir((mix) => {
             'node_modules/chart.js/dist/Chart.js',
             'node_modules/jquery-sparkline/jquery.sparkline.js',
             'node_modules/sweetalert2/dist/sweetalert2.js',
-            'resources/assets/js/password-strength.js',
-            'resources/assets/js/app.js',
-            'resources/assets/js/**/*.js'
-        ], 'public/dist/js/all.js', './')
+            'resources/assets/js/password-strength.js'
+        ], 'public/dist/js/vendors.js', './')
+        .webpack('dashboard.js', 'public/dist/js/dashboard.js')
+        .webpack('app.js', 'public/dist/js/app.js')
         .version([
             'public/dist/css/dashboard.css',
             'public/dist/css/app.css',
-            'public/dist/js/all.js'
+            'public/dist/js/vendors.js',
+            'public/dist/js/dashboard.js',
+            'public/dist/js/app.js'
         ]);
 });
