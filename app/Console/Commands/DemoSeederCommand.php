@@ -21,6 +21,7 @@ use CachetHQ\Cachet\Models\MetricPoint;
 use CachetHQ\Cachet\Models\Subscriber;
 use CachetHQ\Cachet\Models\User;
 use CachetHQ\Cachet\Settings\Repository;
+use Carbon\Carbon;
 use DateInterval;
 use DateTime;
 use Illuminate\Console\Command;
@@ -209,6 +210,7 @@ EINCIDENT;
                 'scheduled_at' => null,
                 'visible'      => 1,
                 'stickied'     => false,
+                'occurred_at'  => Carbon::now(),
             ],
             [
                 'name'         => 'This is an unresolved incident',
@@ -218,6 +220,7 @@ EINCIDENT;
                 'scheduled_at' => null,
                 'visible'      => 1,
                 'stickied'     => false,
+                'occurred_at'  => Carbon::now(),
             ],
         ];
 

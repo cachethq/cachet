@@ -52,7 +52,7 @@ return [
         'message'            => 'Message',
         'message-help'       => 'You may also use Markdown.',
         'scheduled_at'       => 'When to schedule the maintenance for?',
-        'incident_time'      => 'When did this incident occur?',
+        'occurred_at'        => 'When did this incident occur?',
         'notify_subscribers' => 'Notify subscribers?',
         'visibility'         => 'Incident Visibility',
         'stick_status'       => 'Stick Incident',

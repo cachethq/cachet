@@ -114,7 +114,7 @@ class SendIncidentEmailNotificationHandler
             'has_component'    => ($event->incident->component) ? true : false,
             'component_name'   => $component ? $component->name : null,
             'name'             => $incident->name,
-            'timestamp'        => $incident->created_at_formatted,
+            'timestamp'        => $incident->occurred_at_formatted,
             'status'           => $incident->human_status,
             'html_content'     => $incident->formattedMessage,
             'text_content'     => $incident->message,

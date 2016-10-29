@@ -84,12 +84,10 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>{{ trans('forms.incidents.incident_time') }}</label> <small class="text-muted">{{ trans('forms.optional') }}</small>
-                        <input type="text" name="created_at" class="form-control" rel="datepicker-any" value="{{ $incident->created_at_datetimepicker }}" placeholder="{{ trans('forms.optional') }}">
+                        <label>{{ trans('forms.incidents.occurred_at') }}</label> <small class="text-muted">{{ trans('forms.optional') }}</small>
+                        <input type="text" name="occurred_at" class="form-control" rel="datepicker-custom" data-date-format="YYYY-MM-DD HH:mm" value="{{ $incident->occurred_at_datetimepicker }}" placeholder="{{ trans('forms.optional') }}">
                     </div>
                 </fieldset>
-
-                <input type="hidden" name="id" value={{$incident->id}}>
 
                 <div class="form-group">
                     <div class="btn-group">

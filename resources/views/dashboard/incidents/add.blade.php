@@ -111,8 +111,8 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>{{ trans('forms.incidents.incident_time') }}</label> <small class="text-muted">{{ trans('forms.optional') }}</small>
-                        <input type="text" name="created_at" class="form-control" rel="datepicker-any" placeholder="{{ trans('forms.optional') }}">
+                        <label>{{ trans('forms.incidents.occurred_at') }}</label> <small class="text-muted">{{ trans('forms.optional') }}</small>
+                        <input type="text" name="occurred_at" class="form-control" rel="datepicker-custom" data-date-format="YYYY-MM-DD HH:mm" placeholder="{{ trans('forms.optional') }}">
                     </div>
                     <input type="hidden" name="notify" value="0">
                     @if(subscribers_enabled())

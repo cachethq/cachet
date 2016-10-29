@@ -21,6 +21,13 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use McCool\LaravelAutoPresenter\HasPresenter;
 
+/**
+ * This is the incident model.
+ *
+ * @author James Brooks <james@alt-three.com>
+ * @author Joseph Cohen <joseph@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
+ */
 class Incident extends Model implements HasPresenter
 {
     use SearchableTrait, SoftDeletes, SortableTrait, ValidatingTrait;
@@ -71,6 +78,7 @@ class Incident extends Model implements HasPresenter
         'visible'      => 'int',
         'stickied'     => 'bool',
         'scheduled_at' => 'date',
+        'occurred_at'  => 'date',
         'deleted_at'   => 'date',
     ];
 
@@ -87,6 +95,7 @@ class Incident extends Model implements HasPresenter
         'stickied',
         'message',
         'scheduled_at',
+        'occurred_at',
         'created_at',
         'updated_at',
     ];
@@ -131,6 +140,7 @@ class Incident extends Model implements HasPresenter
         'visible',
         'stickied',
         'message',
+        'occurred_at',
     ];
 
     /**

@@ -127,11 +127,11 @@ class DashboardController extends Controller
      */
     protected function getIncidents()
     {
-        $allIncidents = Incident::notScheduled()->whereBetween('created_at', [
+        $allIncidents = Incident::notScheduled()->whereBetween('occurred_at', [
             $this->startDate->copy()->subDays(30)->format('Y-m-d').' 00:00:00',
             $this->startDate->format('Y-m-d').' 23:59:59',
-        ])->orderBy('created_at', 'desc')->get()->groupBy(function (Incident $incident) {
-            return (new Date($incident->created_at))
+        ])->orderBy('occurred_at', 'desc')->get()->groupBy(function (Incident $incident) {
+            return (new Date($incident->occurred_at))
                 ->setTimezone($this->dateTimeZone)->toDateString();
         });
 
