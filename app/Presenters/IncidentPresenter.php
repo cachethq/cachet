@@ -46,7 +46,7 @@ class IncidentPresenter extends BasePresenter implements Arrayable
      * Create a new presenter.
      *
      * @param \CachetHQ\Cachet\Dates\DateFactory $dates
-     * @param \CachetHQ\Cachet\Models\Incident  $resource
+     * @param \CachetHQ\Cachet\Models\Incident   $resource
      *
      * @return void
      */
