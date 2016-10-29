@@ -12,7 +12,15 @@
 namespace CachetHQ\Cachet\Presenters\Traits;
 
 use CachetHQ\Cachet\Dates\DateFactory;
+use Illuminate\Support\Facades\Config;
 
+/**
+ * This is the timestamps trait.
+ *
+ * @author Joseph Cohen <joe@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
+ * @author James Brooks <james@alt-three.com>
+ */
 trait TimestampsTrait
 {
     /**
@@ -43,5 +51,15 @@ trait TimestampsTrait
     public function deleted_at()
     {
         return app(DateFactory::class)->make($this->wrappedObject->deleted_at)->toDateTimeString();
+    }
+
+    /**
+     * Get the incident date format setting, or fallback to a sane default.
+     *
+     * @return string
+     */
+    protected function incidentDateFormat()
+    {
+        return Config::get('setting.incident_date_format', 'l jS F Y H:i:s');
     }
 }
