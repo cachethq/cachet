@@ -158,66 +158,12 @@ class IncidentPresenter extends BasePresenter implements Arrayable
     }
 
     /**
-     * Present formatted date time.
-     *
-     * @return string
-     */
-    public function scheduled_at()
-    {
-        return $this->dates->make($this->wrappedObject->scheduled_at)->toDateTimeString();
-    }
-
-    /**
-     * Present diff for humans date time.
-     *
-     * @return string
-     */
-    public function scheduled_at_diff()
-    {
-        return $this->dates->make($this->wrappedObject->scheduled_at)->diffForHumans();
-    }
-
-    /**
-     * Present formatted date time.
-     *
-     * @return string
-     */
-    public function scheduled_at_formatted()
-    {
-        return ucfirst($this->dates->make($this->wrappedObject->scheduled_at)->format($this->incidentDateFormat()));
-    }
-
-    /**
-     * Present formatted date time.
-     *
-     * @return string
-     */
-    public function scheduled_at_iso()
-    {
-        return $this->dates->make($this->wrappedObject->scheduled_at)->toISO8601String();
-    }
-
-    /**
-     * Formats the scheduled_at time ready to be used by bootstrap-datetimepicker.
-     *
-     * @return string
-     */
-    public function scheduled_at_datetimepicker()
-    {
-        return $this->dates->make($this->wrappedObject->scheduled_at)->format('d/m/Y H:i');
-    }
-
-    /**
      * Returns a formatted timestamp for use within the timeline.
      *
      * @return string
      */
     public function timestamp_formatted()
     {
-        if ($this->wrappedObject->is_scheduled) {
-            return $this->scheduled_at_formatted;
-        }
-
         return $this->occurred_at_formatted;
     }
 
@@ -228,10 +174,6 @@ class IncidentPresenter extends BasePresenter implements Arrayable
      */
     public function timestamp_iso()
     {
-        if ($this->wrappedObject->is_scheduled) {
-            return $this->scheduled_at_iso;
-        }
-
         return $this->occurred_at_iso;
     }
 
@@ -352,7 +294,6 @@ class IncidentPresenter extends BasePresenter implements Arrayable
             'latest_icon'         => $this->latest_icon(),
             'permalink'           => $this->permalink(),
             'duration'            => $this->duration(),
-            'scheduled_at'        => $this->scheduled_at(),
             'occurred_at'         => $this->occurred_at(),
             'created_at'          => $this->created_at(),
             'updated_at'          => $this->updated_at(),

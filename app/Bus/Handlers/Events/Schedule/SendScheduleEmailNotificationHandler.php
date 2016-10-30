@@ -9,15 +9,20 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Handlers\Events\Incident;
+namespace CachetHQ\Cachet\Bus\Handlers\Events\Schedule;
 
-use CachetHQ\Cachet\Bus\Events\Incident\MaintenanceWasScheduledEvent;
+use CachetHQ\Cachet\Bus\Events\Schedule\ScheduleEventInterface;
 use CachetHQ\Cachet\Models\Subscriber;
 use Illuminate\Contracts\Mail\MailQueue;
 use Illuminate\Mail\Message;
 use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
 
-class SendMaintenanceEmailNotificationHandler
+/**
+ * This is the send schedule event notification handler.
+ *
+ * @author James Brooks <james@alt-three.com>
+ */
+class SendScheduleEmailNotificationHandler
 {
     /**
      * The mailer instance.
@@ -50,30 +55,17 @@ class SendMaintenanceEmailNotificationHandler
     /**
      * Handle the event.
      *
-     * @param \CachetHQ\Cachet\Bus\Events\MaintenanceWasScheduledEvent $event
+     * @param \CachetHQ\Cachet\Bus\Events\Schedule\ScheduleEventInterface $event
      *
      * @return void
      */
-    public function handle(MaintenanceWasScheduledEvent $event)
+    public function handle(ScheduleEventInterface $event)
     {
-        if (!$event->incident->notify) {
-            return false;
-        }
-
-        // Only send emails for public incidents.
-        if ($event->incident->visible === 0) {
-            return;
-        }
-
         // First notify all global subscribers.
         $globalSubscribers = $this->subscriber->isVerified()->isGlobal()->get();
 
         foreach ($globalSubscribers as $subscriber) {
             $this->notify($event, $subscriber);
-        }
-
-        if (!$event->incident->component) {
-            return;
         }
 
         $notified = $globalSubscribers->pluck('id')->all();
@@ -95,12 +87,12 @@ class SendMaintenanceEmailNotificationHandler
     /**
      * Send notification to subscriber.
      *
-     * @param \CachetHQ\Cachet\Bus\Events\MaintenanceWasScheduledEvent $event
-     * @param \CachetHQ\Cachet\Models\Subscriber                       $subscriber
+     * @param \CachetHQ\Cachet\Bus\Events\Schedule\ScheduleEventInterface $event
+     * @param \CachetHQ\Cachet\Models\Subscriber                          $subscriber
      *
      * @return \Illuminate\Database\Eloquent\Collection
      */
-    public function notify(MaintenanceWasScheduledEvent $event, $subscriber)
+    public function notify(ScheduleEventInterface $event, $subscriber)
     {
         $incident = AutoPresenter::decorate($event->incident);
         $component = AutoPresenter::decorate($event->incident->component);

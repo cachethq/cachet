@@ -51,7 +51,6 @@ return [
         'component'          => 'Component',
         'message'            => 'Message',
         'message-help'       => 'You may also use Markdown.',
-        'scheduled_at'       => 'When to schedule the maintenance for?',
         'occurred_at'        => 'When did this incident occur?',
         'notify_subscribers' => 'Notify subscribers?',
         'visibility'         => 'Incident Visibility',
@@ -61,6 +60,20 @@ return [
         'public'             => 'Viewable by public',
         'logged_in_only'     => 'Only visible to logged in users',
         'templates'          => [
+            'name'     => 'Name',
+            'template' => 'Template',
+            'twig'     => 'Incident Templates can make use of the <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a> templating language.',
+        ],
+    ],
+
+    'schedules' => [
+        'name'         => 'Name',
+        'status'       => 'Status',
+        'message'      => 'Message',
+        'message-help' => 'You may also use Markdown.',
+        'scheduled_at' => 'When is this maintenance scheduled for?',
+        'completed_at' => 'When did this maintenance complete?',
+        'templates'    => [
             'name'     => 'Name',
             'template' => 'Template',
             'twig'     => 'Incident Templates can make use of the <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a> templating language.',

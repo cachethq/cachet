@@ -57,22 +57,6 @@ class IncidentController extends Controller
     {
         $this->auth = $auth;
 
-        $this->subMenu = [
-            'incidents' => [
-                'title'  => trans('dashboard.incidents.incidents'),
-                'url'    => cachet_route('dashboard.incidents'),
-                'icon'   => 'ion-android-checkmark-circle',
-                'active' => true,
-            ],
-            'schedule' => [
-                'title'  => trans('dashboard.schedule.schedule'),
-                'url'    => cachet_route('dashboard.schedule'),
-                'icon'   => 'ion-android-calendar',
-                'active' => false,
-            ],
-        ];
-
-        View::share('sub_menu', $this->subMenu);
         View::share('sub_title', trans('dashboard.incidents.title'));
     }
 
@@ -83,7 +67,7 @@ class IncidentController extends Controller
      */
     public function showIncidents()
     {
-        $incidents = Incident::notScheduled()->orderBy('created_at', 'desc')->get();
+        $incidents = Incident::orderBy('created_at', 'desc')->get();
 
         return View::make('dashboard.incidents.index')
             ->withPageTitle(trans('dashboard.incidents.incidents').' - '.trans('dashboard.dashboard'))

@@ -22,7 +22,7 @@
                     <span>{{ trans('dashboard.dashboard') }}</span>
                 </a>
             </li>
-            <li {!! set_active('dashboard/incidents*') !!} {!! set_active('dashboard/schedule*') !!}>
+            <li {!! set_active('dashboard/incidents*') !!}>
                 <a href="{{ cachet_route('dashboard.incidents') }}">
                     <i class="ion ion-ios-information-outline"></i>
                     <span>{{ trans('dashboard.incidents.incidents') }}</span>
@@ -34,6 +34,13 @@
                     <i class="ion ion-ios-paper-outline"></i>
                     <span>{{ trans('dashboard.incidents.incident-templates') }}</span>
                     <span class="label label-info">{{ $incident_template_count }}</span>
+                </a>
+            </li>
+            <li {!! set_active('dashboard/schedule*') !!}>
+                <a href="{{ cachet_route('dashboard.schedule') }}">
+                    <i class="ion ion-android-calendar"></i>
+                    <span>{{ trans('dashboard.schedule.schedule') }}</span>
+                    <span class="label label-info">{{ $schedule_count }}</span>
                 </a>
             </li>
             <li {!! set_active('dashboard/components*') !!}>

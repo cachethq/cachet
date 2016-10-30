@@ -28,6 +28,7 @@ class CreateSchedulesTable extends Migration
             $table->longText('message')->nullable()->default(null);
             $table->tinyInteger('status')->unsigned()->default(0);
             $table->timestamp('scheduled_at');
+            $table->timestamp('completed_at')->nullable()->default(null);
             $table->timestamps();
         });
     }
