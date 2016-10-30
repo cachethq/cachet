@@ -26,7 +26,7 @@
                         <div class="col-xs-6">
                             <strong>{{ $incident->name }}</strong>
                             <br>
-                            {{ trans('dashboard.schedule.scheduled_at', ['timestamp' => $incident->scheduled_at_iso]) }}
+                            {{ trans('dashboard.schedule.scheduled_at', ['timestamp' => $incident->scheduled_at_formatted]) }}
                             @if($incident->message)
                             <p><small>{{ Str::words($incident->message, 5) }}</small></p>
                             @endif

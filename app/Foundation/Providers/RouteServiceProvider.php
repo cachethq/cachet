@@ -69,6 +69,7 @@ class RouteServiceProvider extends ServiceProvider
         $router->model('incident_update', 'CachetHQ\Cachet\Models\IncidentUpdate');
         $router->model('metric', 'CachetHQ\Cachet\Models\Metric');
         $router->model('metric_point', 'CachetHQ\Cachet\Models\MetricPoint');
+        $router->model('schedule', 'CachetHQ\Cachet\Models\Schedule');
         $router->model('setting', 'CachetHQ\Cachet\Models\Setting');
         $router->model('subscriber', 'CachetHQ\Cachet\Models\Subscriber');
         $router->model('subscription', 'CachetHQ\Cachet\Models\Subscription');

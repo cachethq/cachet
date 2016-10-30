@@ -36,11 +36,19 @@ return [
         'scheduled_at'  => ', scheduled :timestamp',
         'posted'        => 'Posted :timestamp',
         'status'        => [
-            0 => 'Scheduled', // TODO: Hopefully remove this.
             1 => 'Investigating',
             2 => 'Identified',
             3 => 'Watching',
             4 => 'Fixed',
+        ],
+    ],
+
+    // Schedule
+    'schedules' => [
+        'status' => [
+            0 => 'Upcoming',
+            1 => 'In Progress',
+            2 => 'Complete',
         ],
     ],
 

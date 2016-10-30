@@ -56,15 +56,15 @@ class ScheduleRoutes
                 'uses' => 'ScheduleController@addScheduleAction',
             ]);
 
-            $router->get('{incident}', [
+            $router->get('{schedule}', [
                 'as'   => 'get:dashboard.schedule.edit',
                 'uses' => 'ScheduleController@showEditSchedule',
             ]);
-            $router->post('{incident}', [
+            $router->post('{schedule}', [
                 'as'   => 'post:dashboard.schedule.edit',
                 'uses' => 'ScheduleController@editScheduleAction',
             ]);
-            $router->delete('{incident}', [
+            $router->delete('{schedule}', [
                 'as'   => 'delete:dashboard.schedule.delete',
                 'uses' => 'ScheduleController@deleteScheduleAction',
             ]);
