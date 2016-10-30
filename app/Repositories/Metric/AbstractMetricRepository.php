@@ -53,13 +53,27 @@ abstract class AbstractMetricRepository
      *
      * @return string
      */
-    protected function getTableName()
+    protected function getMetricsTable()
     {
         $driver = $this->config->get('database.default');
         $connection = $this->config->get('database.connections.'.$driver);
         $prefix = $connection['prefix'];
 
         return $prefix.'metrics';
+    }
+
+    /**
+     * Get the metric points table name.
+     *
+     * @return string
+     */
+    protected function getMetricPointsTable()
+    {
+        $driver = $this->config->get('database.default');
+        $connection = $this->config->get('database.connections.'.$driver);
+        $prefix = $connection['prefix'];
+
+        return $prefix.'metric_points';
     }
 
     /**
@@ -72,11 +86,11 @@ abstract class AbstractMetricRepository
     protected function getQueryType(Metric $metric)
     {
         if (!isset($metric->calc_type) || $metric->calc_type == Metric::CALC_SUM) {
-            return 'sum(metric_points.value * metric_points.counter) AS value';
+            return "sum({$this->getMetricPointsTable()}.value * {$this->getMetricPointsTable()}.counter) AS value";
         } elseif ($metric->calc_type == Metric::CALC_AVG) {
-            return 'avg(metric_points.value * metric_points.counter) AS value';
+            return "avg({$this->getMetricPointsTable()}.value * {$this->getMetricPointsTable()}.counter) AS value";
         } else {
-            return 'sum(metric_points.value * metric_points.counter) AS value';
+            return "sum({$this->getMetricPointsTable()}.value * {$this->getMetricPointsTable()}.counter) AS value";
         }
     }
 

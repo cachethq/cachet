@@ -33,7 +33,7 @@ class PgSqlRepository extends AbstractMetricRepository implements MetricInterfac
     public function getPointsSinceMinutes(Metric $metric, $minutes)
     {
         $queryType = $this->getQueryType($metric);
-        $points = DB::select("SELECT to_char(metric_points.created_at, 'HH24:MI') AS key, {$queryType} FROM {$this->getTableName()} INNER JOIN metric_points ON metrics.id = metric_points.metric_id WHERE metrics.id = :metricId AND metric_points.created_at >= (NOW() - INTERVAL '{$minutes}' MINUTE) GROUP BY to_char(metric_points.created_at, 'HH24:MI') ORDER BY to_char(metric_points.created_at, 'HH24:MI')", [
+        $points = DB::select("SELECT to_char({$this->getMetricPointsTable()}.created_at, 'HH24:MI') AS key, {$queryType} FROM {$this->getMetricsTable()} INNER JOIN {$this->getMetricPointsTable()} ON metrics.id = {$this->getMetricPointsTable()}.metric_id WHERE metrics.id = :metricId AND {$this->getMetricPointsTable()}.created_at >= (NOW() - INTERVAL '{$minutes}' MINUTE) GROUP BY to_char({$this->getMetricPointsTable()}.created_at, 'HH24:MI') ORDER BY to_char({$this->getMetricPointsTable()}.created_at, 'HH24:MI')", [
             'metricId' => $metric->id,
         ]);
 
@@ -51,7 +51,7 @@ class PgSqlRepository extends AbstractMetricRepository implements MetricInterfac
     public function getPointsSinceHour(Metric $metric, $hour)
     {
         $queryType = $this->getQueryType($metric);
-        $points = DB::select("SELECT to_char(metric_points.created_at, 'HH24:00') AS key, {$queryType} FROM {$this->getTableName()} INNER JOIN metric_points ON metrics.id = metric_points.metric_id WHERE metrics.id = :metricId AND metric_points.created_at >= (NOW() - INTERVAL '{$hour}' HOUR) GROUP BY to_char(metric_points.created_at, 'HH24:00') ORDER BY to_char(metric_points.created_at, 'HH24:00')", [
+        $points = DB::select("SELECT to_char({$this->getMetricPointsTable()}.created_at, 'HH24:00') AS key, {$queryType} FROM {$this->getMetricsTable()} INNER JOIN {$this->getMetricPointsTable()} ON metrics.id = {$this->getMetricPointsTable()}.metric_id WHERE metrics.id = :metricId AND {$this->getMetricPointsTable()}.created_at >= (NOW() - INTERVAL '{$hour}' HOUR) GROUP BY to_char({$this->getMetricPointsTable()}.created_at, 'HH24:00') ORDER BY to_char({$this->getMetricPointsTable()}.created_at, 'HH24:00')", [
             'metricId' => $metric->id,
         ]);
 
@@ -69,7 +69,7 @@ class PgSqlRepository extends AbstractMetricRepository implements MetricInterfac
     public function getPointsSinceDay(Metric $metric, $day)
     {
         $queryType = $this->getQueryType($metric);
-        $points = DB::select("SELECT DATE(metric_points.created_at) AS key, {$queryType} FROM {$this->getTableName()} INNER JOIN metric_points ON metrics.id = metric_points.metric_id WHERE metrics.id = :metricId AND metric_points.created_at >= (DATE(NOW()) - INTERVAL '{$day}' DAY) GROUP BY DATE(metric_points.created_at) ORDER BY DATE(metric_points.created_at)", [
+        $points = DB::select("SELECT DATE({$this->getMetricPointsTable()}.created_at) AS key, {$queryType} FROM {$this->getMetricsTable()} INNER JOIN {$this->getMetricPointsTable()} ON metrics.id = {$this->getMetricPointsTable()}.metric_id WHERE metrics.id = :metricId AND {$this->getMetricPointsTable()}.created_at >= (DATE(NOW()) - INTERVAL '{$day}' DAY) GROUP BY DATE({$this->getMetricPointsTable()}.created_at) ORDER BY DATE({$this->getMetricPointsTable()}.created_at)", [
             'metricId' => $metric->id,
         ]);
 

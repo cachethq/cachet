@@ -33,7 +33,7 @@ class SqliteRepository extends AbstractMetricRepository implements MetricInterfa
     public function getPointsSinceMinutes(Metric $metric, $minutes)
     {
         $queryType = $this->getQueryType($metric);
-        $points = DB::select("SELECT strftime('%H:%M', metric_points.`created_at`) AS `key`, {$queryType} FROM {$this->getTableName()} INNER JOIN metric_points ON metrics.id = metric_points.metric_id WHERE metrics.id = :metricId AND metric_points.`created_at` >= datetime('now', '-{$minutes} minutes') GROUP BY strftime('%H', metric_points.`created_at`), strftime('%M', metric_points.`created_at`) ORDER BY metric_points.`created_at`", [
+        $points = DB::select("SELECT strftime('%H:%M', {$this->getMetricPointsTable()}.`created_at`) AS `key`, {$queryType} FROM {$this->getMetricsTable()} INNER JOIN {$this->getMetricPointsTable()} ON metrics.id = {$this->getMetricPointsTable()}.metric_id WHERE metrics.id = :metricId AND {$this->getMetricPointsTable()}.`created_at` >= datetime('now', '-{$minutes} minutes') GROUP BY strftime('%H', {$this->getMetricPointsTable()}.`created_at`), strftime('%M', {$this->getMetricPointsTable()}.`created_at`) ORDER BY {$this->getMetricPointsTable()}.`created_at`", [
             'metricId' => $metric->id,
         ]);
 
@@ -51,7 +51,7 @@ class SqliteRepository extends AbstractMetricRepository implements MetricInterfa
     public function getPointsSinceHour(Metric $metric, $hour)
     {
         $queryType = $this->getQueryType($metric);
-        $points = DB::select("SELECT strftime('%H:00', metric_points.`created_at`) AS `key`, {$queryType} FROM {$this->getTableName()} INNER JOIN metric_points ON metrics.id = metric_points.metric_id WHERE metrics.id = :metricId AND metric_points.`created_at` >= datetime('now', '-{$hour} hours') GROUP BY strftime('%H', metric_points.`created_at`) ORDER BY metric_points.`created_at`", [
+        $points = DB::select("SELECT strftime('%H:00', {$this->getMetricPointsTable()}.`created_at`) AS `key`, {$queryType} FROM {$this->getMetricsTable()} INNER JOIN {$this->getMetricPointsTable()} ON metrics.id = {$this->getMetricPointsTable()}.metric_id WHERE metrics.id = :metricId AND {$this->getMetricPointsTable()}.`created_at` >= datetime('now', '-{$hour} hours') GROUP BY strftime('%H', {$this->getMetricPointsTable()}.`created_at`) ORDER BY {$this->getMetricPointsTable()}.`created_at`", [
             'metricId' => $metric->id,
         ]);
 
@@ -69,7 +69,7 @@ class SqliteRepository extends AbstractMetricRepository implements MetricInterfa
     public function getPointsSinceDay(Metric $metric, $day)
     {
         $queryType = $this->getQueryType($metric);
-        $points = DB::select("SELECT strftime('%Y-%m-%d', metric_points.`created_at`) AS `key`, {$queryType} FROM {$this->getTableName()} INNER JOIN metric_points ON metrics.id = metric_points.metric_id WHERE metrics.id = :metricId AND metric_points.`created_at` >= datetime('now', '-{$day} days') GROUP BY DATE(metric_points.`created_at`) ORDER BY metric_points.`created_at`", [
+        $points = DB::select("SELECT strftime('%Y-%m-%d', {$this->getMetricPointsTable()}.`created_at`) AS `key`, {$queryType} FROM {$this->getMetricsTable()} INNER JOIN {$this->getMetricPointsTable()} ON metrics.id = {$this->getMetricPointsTable()}.metric_id WHERE metrics.id = :metricId AND {$this->getMetricPointsTable()}.`created_at` >= datetime('now', '-{$day} days') GROUP BY DATE({$this->getMetricPointsTable()}.`created_at`) ORDER BY {$this->getMetricPointsTable()}.`created_at`", [
             'metricId' => $metric->id,
         ]);
 
