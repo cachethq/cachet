@@ -1,0 +1,24 @@
+@import "vendors";
+
+// Styles for partials
+@import "dashboard/partials/base";
+@import "dashboard/partials/wrapper";
+@import "dashboard/partials/navbar";
+@import "dashboard/partials/sidebar";
+@import "dashboard/partials/content";
+@import "dashboard/partials/modals";
+
+// Styles for specific page
+@import "dashboard/pages/login";
+@import "dashboard/pages/setup";
+@import "dashboard/pages/dashboard";
+
+// Styles for plugins
+@import "plugins/jquery.minicolors";
+@import "plugins/github-markdown";
+@import "plugins/sweetalert";
+@import "plugins/messenger";
+@import "plugins/animate";
+@import "plugins/bootstrap-datetimepicker/bootstrap-datetimepicker";
+@import "plugins/password-strength";
+@import "plugins/sortable";

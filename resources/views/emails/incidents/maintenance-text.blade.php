@@ -1,11 +1,13 @@
-{!! trans('cachet.subscriber.email.maintenance.text', ['app_name' => Setting::get('app_name')]) !!}
+{!! $name !!}
 
 {!! $status !!}
+{!! $text_content !!}
+{!! $timestamp !!}
 
-{!! $textContent !!}
+{!! trans('cachet.subscriber.email.manage') !!} {{ $manage_link }}
 
-@if(Setting::get('show_support'))
-{!! trans('cachet.powered_by', ['app' => Setting::get('app_name')]) !!}
+{!! trans('cachet.subscriber.email.unsubscribe') !!} {{ $unsubscribe_link }}
+
+@if($show_support)
+{!! trans('cachet.powered_by', ['app' => $app_name]) !!}
 @endif
-
-{!! trans('cachet.subscriber.email.unsubscribe') !!} {{ $unsubscribeLink }}

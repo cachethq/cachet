@@ -11,11 +11,14 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Api;
 
+use CachetHQ\Cachet\Bus\Commands\Metric\AddMetricPointCommand;
+use CachetHQ\Cachet\Bus\Commands\Metric\RemoveMetricPointCommand;
+use CachetHQ\Cachet\Bus\Commands\Metric\UpdateMetricPointCommand;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\MetricPoint;
-use Carbon\Carbon;
-use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
+use Illuminate\Database\QueryException;
+use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 class MetricPointController extends AbstractApiController
 {
@@ -25,7 +28,7 @@ class MetricPointController extends AbstractApiController
      * @param \CachetHQ\Cachet\Models\Metric      $metric
      * @param \CachetHQ\Cachet\Models\MetricPoint $metricPoint
      *
-     * @return \CachetHQ\Cachet\Models\MetricPoint
+     * @return \Illuminate\Http\JsonResponse
      */
     public function getMetricPoints(Metric $metric, MetricPoint $metricPoint)
     {
@@ -37,21 +40,17 @@ class MetricPointController extends AbstractApiController
      *
      * @param \CachetHQ\Cachet\Models\Metric $metric
      *
-     * @return \CachetHQ\Cachet\Models\MetricPoint
+     * @return \Illuminate\Http\JsonResponse
      */
     public function postMetricPoints(Metric $metric)
     {
-        $metricPointData = Binput::all();
-        $metricPointData['metric_id'] = $metric->id;
-
-        if ($timestamp = array_pull($metricPointData, 'timestamp')) {
-            $pointTimestamp = Carbon::createFromFormat('U', $timestamp);
-            $metricPointData['created_at'] = $pointTimestamp->format('Y-m-d H:i:s');
-        }
-
         try {
-            $metricPoint = MetricPoint::create($metricPointData);
-        } catch (Exception $e) {
+            $metricPoint = dispatch(new AddMetricPointCommand(
+                $metric,
+                Binput::get('value'),
+                Binput::get('timestamp')
+            ));
+        } catch (QueryException $e) {
             throw new BadRequestHttpException();
         }
 
@@ -64,19 +63,16 @@ class MetricPointController extends AbstractApiController
      * @param \CachetHQ\Cachet\Models\Metric      $metric
      * @param \CachetHQ\Cachet\Models\MetircPoint $metricPoint
      *
-     * @return \CachetHQ\Cachet\Models\MetricPoint
+     * @return \Illuminate\Http\JsonResponse
      */
     public function putMetricPoint(Metric $metric, MetricPoint $metricPoint)
     {
-        $metricPointData = Binput::all();
-        $metricPointData['metric_id'] = $metric->id;
-
-        if ($timestamp = array_pull($metricPointData, 'timestamp')) {
-            $pointTimestamp = Carbon::createFromFormat('U', $timestamp);
-            $metricPointData['created_at'] = $pointTimestamp->format('Y-m-d H:i:s');
-        }
-
-        $metricPoint->update($metricPointData);
+        $metricPoint = dispatch(new UpdateMetricPointCommand(
+            $metricPoint,
+            $metric,
+            Binput::get('value'),
+            Binput::get('timestamp')
+        ));
 
         return $this->item($metricPoint);
     }
@@ -87,11 +83,11 @@ class MetricPointController extends AbstractApiController
      * @param \CachetHQ\Cachet\Models\Metric      $metric
      * @param \CachetHQ\Cachet\Models\MetricPoint $metricPoint
      *
-     * @return \Dingo\Api\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function deleteMetricPoint(Metric $metric, MetricPoint $metricPoint)
     {
-        $metricPoint->delete();
+        dispatch(new RemoveMetricPointCommand($metricPoint));
 
         return $this->noContent();
     }

@@ -1,0 +1,34 @@
+@import "palette";
+
+$ionicons-font-path: "../../../fonts" !default;
+@import "./node_modules/ionicons/scss/ionicons";
+
+@import "modules/bootstrap";
+
+html {
+    position: relative;
+    min-height: 100%;
+    -webkit-font-smoothing: antialiased;
+    // always show up-down scrollbar to prevent content from jumping left/right
+    // depending on whether the page is taller than 100% of viewport height
+    overflow-y: scroll;
+}
+
+body {
+    margin-bottom: 60px;
+    padding-bottom: 60px;
+}
+
+@import "helpers";
+
+// Module overrides
+@import "modules/tabs";
+@import "modules/forms";
+@import "modules/well";
+@import "modules/alerts";
+@import "modules/panels";
+@import "modules/btns";
+@import "modules/pager";
+
+// Error pages can have their own overrides.
+@import "errors";

@@ -13,6 +13,7 @@ return [
     'setup'             => 'Instalasi',
     'title'             => 'Instalasi Cachet',
     'service_details'   => 'Detail Layanan',
+    'env_setup'         => 'Setup lingkungan',
     'status_page_setup' => 'Penyiapan Halaman Status',
     'show_support'      => 'Tunjukkan dukungan untuk Cachet? <small>Tampilkan catatan di bawah halaman yang bertaut ke situs Cachet.</small>',
     'admin_account'     => 'Akun Administrator',

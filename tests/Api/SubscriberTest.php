@@ -11,13 +11,14 @@
 
 namespace CachetHQ\Tests\Cachet\Api;
 
-use CachetHQ\Tests\Cachet\AbstractTestCase;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
-
-class SubscriberTest extends AbstractTestCase
+/**
+ * This is the subscriber test class.
+ *
+ * @author James Brooks <james@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
+ */
+class SubscriberTest extends AbstractApiTestCase
 {
-    use DatabaseMigrations;
-
     public function testGetSubscribersUnauthenticated()
     {
         $this->get('/api/v1/subscribers');
@@ -40,14 +41,14 @@ class SubscriberTest extends AbstractTestCase
     {
         $this->beUser();
 
-        $this->expectsEvents('CachetHQ\Cachet\Events\CustomerHasSubscribedEvent');
+        $this->expectsEvents('CachetHQ\Cachet\Bus\Events\Subscriber\SubscriberHasSubscribedEvent');
 
         $this->post('/api/v1/subscribers', [
-            'email' => 'james@cachethq.io',
+            'email' => 'support@alt-three.com',
         ]);
         $this->assertResponseOk();
         $this->seeHeader('Content-Type', 'application/json');
-        $this->seeJson(['email' => 'james@cachethq.io']);
+        $this->seeJson(['email' => 'support@alt-three.com']);
     }
 
     public function testCreateSubscriberAutoVerified()
@@ -55,12 +56,33 @@ class SubscriberTest extends AbstractTestCase
         $this->beUser();
 
         $this->post('/api/v1/subscribers', [
-            'email'  => 'james@cachethq.io',
+            'email'  => 'support@alt-three.com',
             'verify' => true,
         ]);
         $this->assertResponseOk();
         $this->seeHeader('Content-Type', 'application/json');
-        $this->seeJson(['email' => 'james@cachethq.io']);
+        $this->seeJson(['email' => 'support@alt-three.com']);
+    }
+
+    public function testCreateSubscriberWithSubscriptions()
+    {
+        $this->beUser();
+
+        factory('CachetHQ\Cachet\Models\Component', 3)->create();
+
+        $this->post('/api/v1/subscribers', [
+            'email'         => 'support@alt-three.com',
+            'verify'        => true,
+            'subscriptions' => [
+                1,
+                2,
+                3,
+            ],
+        ]);
+        $this->assertResponseOk();
+        $this->seeHeader('Content-Type', 'application/json');
+        $this->seeJson(['email' => 'support@alt-three.com']);
+        $this->seeJsonStructure(['data' => ['subscriptions' => []]]);
     }
 
     public function testDeleteSubscriber()
@@ -69,6 +91,15 @@ class SubscriberTest extends AbstractTestCase
 
         $subscriber = factory('CachetHQ\Cachet\Models\Subscriber')->create();
         $this->delete("/api/v1/subscribers/{$subscriber->id}");
+        $this->assertResponseStatus(204);
+    }
+
+    public function testDeleteSubscription()
+    {
+        $this->beUser();
+
+        $subscription = factory('CachetHQ\Cachet\Models\Subscription')->create();
+        $this->delete("/api/v1/subscriptions/{$subscription->id}");
         $this->assertResponseStatus(204);
     }
 }

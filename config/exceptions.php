@@ -26,8 +26,10 @@ return [
     */
 
     'transformers' => [
+        'GrahamCampbell\Exceptions\Transformers\AuthTransformer',
         'GrahamCampbell\Exceptions\Transformers\CsrfTransformer',
-        'CachetHQ\Cachet\Exceptions\Transformers\ModelNotFoundTransformer',
+        'GrahamCampbell\Exceptions\Transformers\ModelTransformer',
+        'CachetHQ\Cachet\Foundation\Exceptions\Transformers\BusTransformer',
     ],
 
     /*
@@ -45,7 +47,9 @@ return [
     */
 
     'displayers' => [
-        'CachetHQ\Cachet\Exceptions\Displayers\RedirectDisplayer',
+        'CachetHQ\Cachet\Foundation\Exceptions\Displayers\JsonValidationDisplayer',
+        'CachetHQ\Cachet\Foundation\Exceptions\Displayers\RedirectDisplayer',
+        'CachetHQ\Cachet\Foundation\Exceptions\Displayers\ThrottleDisplayer',
         'GrahamCampbell\Exceptions\Displayers\DebugDisplayer',
         'GrahamCampbell\Exceptions\Displayers\HtmlDisplayer',
         'GrahamCampbell\Exceptions\Displayers\JsonDisplayer',
@@ -69,7 +73,7 @@ return [
         'GrahamCampbell\Exceptions\Filters\VerboseFilter',
         'GrahamCampbell\Exceptions\Filters\CanDisplayFilter',
         'GrahamCampbell\Exceptions\Filters\ContentTypeFilter',
-        'CachetHQ\Cachet\Exceptions\Filters\ApiFilter',
+        'CachetHQ\Cachet\Foundation\Exceptions\Filters\ApiFilter',
     ],
 
     /*
@@ -99,8 +103,9 @@ return [
     */
 
     'levels' => [
-        'Illuminate\Session\TokenMismatchException'                     => 'notice',
+        'Illuminate\Auth\Access\AuthorizationException'                 => 'warning',
         'Illuminate\Database\Eloquent\ModelNotFoundException'           => 'warning',
+        'Illuminate\Session\TokenMismatchException'                     => 'notice',
         'Symfony\Component\HttpKernel\Exception\HttpExceptionInterface' => 'warning',
         'Symfony\Component\Debug\Exception\FatalErrorException'         => 'critical',
         'Exception'                                                     => 'error',

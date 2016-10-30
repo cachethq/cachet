@@ -17,6 +17,15 @@ use Illuminate\Support\Str;
 class Tag extends Model
 {
     /**
+     * The attributes that should be casted to native types.
+     *
+     * @var string[]
+     */
+    protected $casts = [
+        'name' => 'string',
+    ];
+
+    /**
      * The fillable properties.
      *
      * @var string[]
@@ -36,7 +45,7 @@ class Tag extends Model
     }
 
     /**
-     * Tags can have many components.
+     * Get the components relation.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */

@@ -1,25 +1,47 @@
-<footer>
+@if($app_footer)
+{!! $app_footer !!}
+@else
+<footer class="footer">
     <div class="container">
         <div class="row">
-            <div class="col-sm-6">
-                @if(Setting::get('show_support'))
-                <p>{!! trans('cachet.powered_by', ['app' => Setting::get('app_name')]) !!}</p>
+            <div class="col-sm-4">
+                @if($show_support)
+                <p>
+                    {!! trans('cachet.powered_by') !!}
+                    @if($show_timezone)
+                    {{ trans('cachet.timezone', ['timezone' => $timezone]) }}
+                    @endif
+                </p>
                 @endif
             </div>
-            <div class="col-sm-6">
-                <div class="icons">
-                    @if($loggedUser || Setting::get('dashboard_login_link'))
-                    <a href="/dashboard" class="icon-link"><i class="ion-levels"></i> {{ trans('dashboard.dashboard') }}</a>
+            <div class="col-sm-8">
+                <ul class="list-inline">
+                    @if($current_user || Config::get('setting.dashboard_login_link'))
+                    <li>
+                        <a class="btn btn-link" href="/dashboard">{{ trans('dashboard.dashboard') }}</a>
+                    </li>
                     @endif
-                    @if($loggedUser)
-                    <a href="/auth/logout" class="icon-link"><i class="ion-android-exit"></i> {{ trans('dashboard.logout') }}</a>
+                    @if($current_user)
+                    <li>
+                        <a class="btn btn-link" href="/auth/logout">{{ trans('dashboard.logout') }}</a>
+                    </li>
                     @endif
-                    <a href="/rss" class="icon-link rss"><i class="ion-social-rss"></i> {{ trans('cachet.rss-feed') }}</a>
-                    <a href="/atom" class="icon-link rss"><i class="ion-social-rss"></i> {{ trans('cachet.atom-feed') }}</a>
-                </div>
+                    <li>
+                        <a class="btn btn-link" href="{{ route('feed.rss') }}">{{ trans('cachet.rss-feed') }}</a>
+                    </li>
+                    <li>
+                        <a class="btn btn-link" href="{{ route('feed.atom') }}">{{ trans('cachet.atom-feed') }}</a>
+                    </li>
+                    @if(subscribers_enabled())
+                    <li>
+                        <a class="btn btn-success btn-outline" href="{{ route('subscribe.subscribe') }}">{{ trans('cachet.subscriber.button') }}</a>
+                    </li>
+                    @endif
+                </ul>
             </div>
         </div>
     </div>
 </footer>
+@endif
 
 @include("partials.analytics")

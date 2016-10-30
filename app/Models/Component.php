@@ -11,26 +11,46 @@
 
 namespace CachetHQ\Cachet\Models;
 
+use AltThree\Validator\ValidatingTrait;
+use CachetHQ\Cachet\Models\Traits\SearchableTrait;
+use CachetHQ\Cachet\Models\Traits\SortableTrait;
 use CachetHQ\Cachet\Presenters\ComponentPresenter;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use McCool\LaravelAutoPresenter\HasPresenter;
-use Watson\Validating\ValidatingTrait;
 
 class Component extends Model implements HasPresenter
 {
-    use SoftDeletes, ValidatingTrait;
+    use SearchableTrait, SoftDeletes, SortableTrait, ValidatingTrait;
 
     /**
-     * The validation rules.
+     * List of attributes that have default values.
+     *
+     * @var mixed[]
+     */
+    protected $attributes = [
+        'order'       => 0,
+        'group_id'    => 0,
+        'description' => '',
+        'link'        => '',
+        'enabled'     => true,
+    ];
+
+    /**
+     * The attributes that should be casted to native types.
      *
      * @var string[]
      */
-    protected $rules = [
-        'name'   => 'required|string',
-        'status' => 'integer|required',
-        'link'   => 'url',
+    protected $casts = [
+        'name'        => 'string',
+        'description' => 'string',
+        'status'      => 'int',
+        'order'       => 'int',
+        'link'        => 'string',
+        'group_id'    => 'int',
+        'enabled'     => 'bool',
+        'deleted_at'  => 'date',
     ];
 
     /**
@@ -46,29 +66,50 @@ class Component extends Model implements HasPresenter
         'link',
         'order',
         'group_id',
+        'enabled',
     ];
 
     /**
-     * List of attributes that have default values.
+     * The validation rules.
      *
-     * @var mixed[]
+     * @var string[]
      */
-    protected $attributes = [
-        'order'       => 0,
-        'group_id'    => 0,
-        'description' => '',
-        'link'        => '',
+    public $rules = [
+        'name'   => 'required|string',
+        'status' => 'int|required',
+        'link'   => 'url',
     ];
 
     /**
-     * The attributes that should be mutated to dates.
+     * The searchable fields.
      *
-     * @var array
+     * @var string[]
      */
-    protected $dates = ['deleted_at'];
+    protected $searchable = [
+        'id',
+        'name',
+        'status',
+        'order',
+        'group_id',
+        'enabled',
+    ];
 
     /**
-     * Components can belong to a group.
+     * The sortable fields.
+     *
+     * @var string[]
+     */
+    protected $sortable = [
+        'id',
+        'name',
+        'status',
+        'order',
+        'group_id',
+        'enabled',
+    ];
+
+    /**
+     * Get the group relation.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -78,7 +119,7 @@ class Component extends Model implements HasPresenter
     }
 
     /**
-     * Lookup all of the incidents reported on the component.
+     * Get the incidents relation.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
@@ -88,7 +129,7 @@ class Component extends Model implements HasPresenter
     }
 
     /**
-     * Components can have many tags.
+     * Get the tags relation.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
@@ -124,13 +165,56 @@ class Component extends Model implements HasPresenter
     }
 
     /**
-     * Looks up the human readable version of the status.
+     * Finds all components which are enabled.
      *
-     * @return string
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function getHumanStatusAttribute()
+    public function scopeEnabled(Builder $query)
     {
-        return trans('cachet.components.status.'.$this->status);
+        return $query->where('enabled', true);
+    }
+
+    /**
+     * Finds all components which are disabled.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeDisabled(Builder $query)
+    {
+        return $query->where('enabled', false);
+    }
+
+    /**
+     * Finds all ungrouped components.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeUngrouped(Builder $query)
+    {
+        return $query->enabled()
+            ->where('group_id', 0)
+            ->orderBy('order')
+            ->orderBy('created_at');
+    }
+
+    /**
+     * Finds all grouped components.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeGrouped(Builder $query)
+    {
+        return $query->enabled()
+            ->where('group_id', '>', 0)
+            ->groupBy('group_id');
     }
 
     /**

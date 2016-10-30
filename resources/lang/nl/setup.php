@@ -11,12 +11,13 @@
 
 return [
     'setup'             => 'Installatie',
-    'title'             => 'Installatie Cachet',
-    'service_details'   => 'Servicedetails',
+    'title'             => 'Installeer Cachet',
+    'service_details'   => 'Service Details',
+    'env_setup'         => 'Omgevingsconfiguratie',
     'status_page_setup' => 'Installatie statuspagina',
     'show_support'      => 'Steun voor Cachet tonen?',
     'admin_account'     => 'Beheerdersaccount',
-    'complete_setup'    => 'Installatie voltooien',
-    'completed'         => 'Cachet is met succes geconfigureerd!',
-    'finish_setup'      => 'Ga naar dashboard',
+    'complete_setup'    => 'Voltooi Installatie',
+    'completed'         => 'Cachet is succesvol geconfigureerd!',
+    'finish_setup'      => 'Ga naar het dashboard',
 ];

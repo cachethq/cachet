@@ -11,7 +11,7 @@
 
 return [
     'setup'             => 'Setup',
-    'title'             => 'Setup Cachet',
+    'title'             => 'Install Cachet',
     'service_details'   => 'Service Details',
     'env_setup'         => 'Environment Setup',
     'status_page_setup' => 'Status Page Setup',

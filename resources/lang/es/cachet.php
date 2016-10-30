@@ -12,23 +12,28 @@
 return [
     // Components
     'components' => [
-        'status' => [
+        'last_updated' => 'Última actualización :timestamp',
+        'status'       => [
             1 => 'Operacional',
             2 => 'Problemas de rendimiento',
             3 => 'Interrupción parcial',
             4 => 'Interrupción mayor',
         ],
+        'group' => [
+            'other' => 'Otros componentes',
+        ],
     ],
 
     // Incidents
     'incidents' => [
-        'none'          => 'No hay ninguna incidencia reportada.',
-        'past'          => 'Incidentes anteriores',
+        'none'          => 'Ningún incidente reportado',
+        'past'          => 'Incidencias anteriores',
         'previous_week' => 'Semana anterior',
-        'next_week'     => 'Siguiente semana',
-        'none'          => 'No hay ninguna incidencia reportada.',
+        'next_week'     => 'Semana siguiente',
+        'scheduled'     => 'Mantenimiento programado',
+        'scheduled_at'  => ', programado para :timestamp',
         'status'        => [
-            0 => '',
+            0 => 'Programado', // TODO: Hopefully remove this.
             1 => 'Investigando',
             2 => 'Identificado',
             3 => 'Observando',
@@ -38,8 +43,9 @@ return [
 
     // Service Status
     'service' => [
-        'good' => 'Todos los sistemas funcionando.',
-        'bad'  => 'Algunos sistemas están experimentando problemas.',
+        'good'  => '[0,1] Sistema operativo | [2,Inf] Todos los sistemas están operativos',
+        'bad'   => '[0,1] El sistema está actualmente experimentando problemas | [2,Inf] Algunos sistemas están experimentando problemas',
+        'major' => '[0,1] El servicio está experimentando una interrupción mayor | [2, Inf] Algunos sistemas están experimentando una interrupción mayor',
     ],
 
     'api' => [
@@ -50,46 +56,89 @@ return [
     // Metrics
     'metrics' => [
         'filter' => [
-            'hourly'  => 'Hourly',
-            'daily'   => 'Daily',
-            'monthly' => 'Monthly',
+            'last_hour' => 'Última hora',
+            'hourly'    => 'Últimas 12 horas',
+            'weekly'    => 'Semana',
+            'monthly'   => 'Mes',
         ],
     ],
 
     // Subscriber
     'subscriber' => [
-        'subscribe' => 'Subscribe to get the most recent updates.',
-        'button'    => 'Subscribe',
-        'email'     => [
-            'subscribe'    => 'Subscribe to email updates.',
-            'subscribed'   => 'You\'ve been subscribed to email notifications, please check your email to confirm your subscription.',
-            'verified'     => 'Your email subscription has been confirmed. Thank you!',
-            'unsubscribe'  => 'Unsuscribe from email updates.',
-            'unsubscribed' => 'Your email subscription has been cancelled.',
-            'failure'      => 'Something went wrong with the subscription.',
-            'verify'       => [
-                'text'           => "Please confirm your email subscription to :app_name status updates.\n:link\nThank you, :app_name",
-                'html-preheader' => 'Please confirm your email subscription to :app_name status updates.',
-                'html'           => '<p>Please confirm your email subscription to :app_name status updates.</p><p><a href=":link">:link</a></p><p>Thank you, :app_name</p>',
+        'subscribe' => 'Suscríbete para obtener las actualizaciones más recientes',
+        'button'    => 'Suscríbete',
+        'manage'    => [
+            'no_subscriptions' => 'Actualmente estás suscrito a todas las actualizaciones.',
+            'my_subscriptions' => 'Actualmente estás suscrito a las siguientes actualizaciones.',
+        ],
+        'email' => [
+            'subscribe'          => 'Suscríbete para recibir actualizaciones por correo electrónico.',
+            'subscribed'         => 'Te has subscrito a las notificaciones por correo electrónico, por favor verifica tu correo electrónico para confirmar tu subscripción.',
+            'verified'           => 'Tu subscripción por correo electrónico ha sido confirmada. Gracias!',
+            'manage'             => 'Administre su suscripción',
+            'unsubscribe'        => 'Darse de baja de alertas.',
+            'unsubscribed'       => 'Tu subscripción de correo electrónico ha sido cancelada.',
+            'failure'            => 'Algo salió mal con la subscripción.',
+            'already-subscribed' => 'No se puede suscribir :email porque ya esta suscrito.',
+            'verify'             => [
+                'text'   => "Por favor confirme su subscripcion por correo a las actualizaciones de estado de :app_name.\n:link",
+                'html'   => '<p>Por favor confirme su suscripción por correo a las actualizaciones de estado de :app_name.</p>',
+                'button' => 'Confirme su suscripción',
             ],
             'maintenance' => [
-                'text'           => "New maintenance has been scheduled on :app_name.\nThank you, :app_name",
-                'html-preheader' => 'New maintenance has been scheduled on :app_name.',
-                'html'           => '<p>New maintenance has been scheduled on :app_name.</p><p>Thank you, :app_name</p>',
+                'subject' => '[Mantenimiento programado] :name',
             ],
             'incident' => [
-                'text'           => "New incident has been reported on :app_name.\nThank you, :app_name",
-                'html-preheader' => 'New incident has been reported on :app_name.',
-                'html'           => '<p>New incident has been reported on :app_name.</p><p>Thank you, :app_name</p>',
+                'subject' => '[Nuevo incidente] :status: :name',
+            ],
+            'component' => [
+                'subject'       => 'Actualización de estado del componente',
+                'text'          => 'El componente :component_name ha cambiado de estado. El componente está ahora :component_human_status.\nGracias, :app_name',
+                'html'          => '<p>El componente :component_name ha cambiado de estado. El componente ahora está :component_human_status.</p><p>Gracias, :app_name</p>',
+                'tooltip-title' => 'Subscribirse a las notificaciones de :component_name.',
             ],
         ],
     ],
 
+    'users' => [
+        'email' => [
+            'invite' => [
+                'text' => "Te han invitado a la página de estado del equipo de :app_name, para registrarte sigue este enlace.\n:link\nGracias, :app_name",
+                'html' => '<p>Has sido invitado a la página de estado del equipo :app_name, para inscribirte sigue el siguiente enlace.</p><p><a href=":link">:link</a></p><p>Gracias, :app_name</p>',
+            ],
+        ],
+    ],
+
+    'signup' => [
+        'title'    => 'Registrarse',
+        'username' => 'Nombre de usario',
+        'email'    => 'Correo electrónico',
+        'password' => 'Contraseña',
+        'success'  => 'Tu cuenta ha sido creada.',
+        'failure'  => 'Hubo algún error al registrarse.',
+    ],
+
+    'system' => [
+        'update' => 'Hay disponible una versión de Cachet más nueva. Puedes aprender sobre cómo actualizarla <a href="https://docs.cachethq.io/docs/updating-cachet">aquí</a>!',
+    ],
+
+    // Modal
+    'modal' => [
+        'close'     => 'Cerrar',
+        'subscribe' => [
+            'title'  => 'Subscribirse a actualizaciones de componentes',
+            'body'   => 'Introduce tu dirección de correo electrónico para subscribirte a las actualizaciones de este componente. Si ya estás subscrito, ya recibirás los correos electrónicos para este componente.',
+            'button' => 'Suscríbete',
+        ],
+    ],
+
     // Other
-    'powered_by'      => ':app La página de estado es alimentada por <a href="https://cachethq.github.io">Cachet</a>.',
+    'home'            => 'Inicio',
+    'description'     => 'Mantente informado con las últimas actualizaciones de servicio de :app.',
+    'powered_by'      => 'La página de estado de :app está proporcionada por <a href="https://cachethq.io">Cachet</a>.',
     'about_this_site' => 'Acerca de este sitio',
-    'rss-feed'        => 'Feed RSS',
-    'atom-feed'       => 'Atom Feed',
+    'rss-feed'        => 'RSS',
+    'atom-feed'       => 'Atom',
     'feed'            => 'Estado del Feed',
 
 ];

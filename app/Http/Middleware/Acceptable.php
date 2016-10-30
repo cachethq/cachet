@@ -12,8 +12,15 @@
 namespace CachetHQ\Cachet\Http\Middleware;
 
 use Closure;
+use Illuminate\Http\Request;
 use Symfony\Component\HttpKernel\Exception\NotAcceptableHttpException;
 
+/**
+ * This is the acceptable middleware class.
+ *
+ * @author Graham Campbell <james@alt-three.com>
+ * @author James Brooks <james@alt-three.com>
+ */
 class Acceptable
 {
     /**
@@ -21,13 +28,13 @@ class Acceptable
      *
      * @param \Illuminate\Http\Request $request
      * @param \Closure                 $next
-     * @param string                   $type
+     * @param string|null              $type
      *
      * @return mixed
      */
-    public function handle($request, Closure $next, $type)
+    public function handle(Request $request, Closure $next, $type = null)
     {
-        if (!$request->accepts($type)) {
+        if (!$request->accepts($type ?: 'application/json')) {
             throw new NotAcceptableHttpException();
         }
 

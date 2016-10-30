@@ -13,8 +13,16 @@ namespace CachetHQ\Cachet\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
+use Illuminate\Http\Request;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
+/**
+ * This is the authenticate middleware class.
+ *
+ * @author Joseph Cohen <joe@alt-three.com>
+ * @author Graham Campbell <james@alt-three.com>
+ * @author James Brooks <james@alt-three.com>
+ */
 class Authenticate
 {
     /**
@@ -28,6 +36,8 @@ class Authenticate
      * Create a new authenticate middleware instance.
      *
      * @param \Illuminate\Contracts\Auth\Guard $auth
+     *
+     * @return void
      */
     public function __construct(Guard $auth)
     {
@@ -42,7 +52,7 @@ class Authenticate
      *
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle(Request $request, Closure $next)
     {
         if ($this->auth->guest()) {
             throw new HttpException(401);

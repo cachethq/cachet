@@ -22,13 +22,17 @@ return [
         'incident-templates'       => '문제 템플릿',
         'add'                      => [
             'title'   => '문제 추가',
-            'success' => '문제가 추가되었습니다.',
-            'failure' => '추가 중 문제가 발생했습니다.',
+            'success' => 'Incident added.',
+            'failure' => 'There was an error adding the incident, please try again.',
         ],
         'edit' => [
             'title'   => '문제 수정',
             'success' => '문제가 수정되었습니다.',
-            'failure' => '수정 중 문제가 발생했습니다.',
+            'failure' => 'There was an error editing the incident, please try again.',
+        ],
+        'delete' => [
+            'success' => 'The incident has been deleted and will not show on your status page.',
+            'failure' => 'The incident could not be deleted, please try again.',
         ],
 
         // Incident templates
@@ -36,34 +40,40 @@ return [
             'title' => '문제 템플릿',
             'add'   => [
                 'title'   => '문제 템플릿 생성하기',
-                'success' => '템플릿이 생성되었습니다.',
-                'failure' => '템플릿 생성 중 문제가 발생했습니다.',
+                'message' => 'You should add an incident template.',
+                'success' => 'Your new incident template has been created.',
+                'failure' => 'Something went wrong with the incident template.',
             ],
             'edit' => [
                 'title'   => '문제 템플릿 수정',
-                'success' => '템플릿이 수정되었습니다!',
-                'failure' => '템플릿 수정 중 문제가 발생했습니다.',
+                'success' => 'The incident template has been updated.',
+                'failure' => 'Something went wrong updating the incident template',
+            ],
+            'delete' => [
+                'success' => 'The incident template has been deleted.',
+                'failure' => 'The incident template could not be deleted, please try again.',
             ],
         ],
     ],
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => '예정된 유지 관리',
+        'schedule'     => '예약 된 유지 관리',
+        'logged'       => '{0} There are no schedules, good work.|You have logged one schedule.|You have reported <strong>:count</strong> schedules.',
         'scheduled_at' => ':timestamp 에 예정됨',
         'add'          => [
-            'title'   => '예정 된 유지 관리 추가',
-            'success' => '예정이 추가되었습니다.',
-            'failure' => '예정 추가 중 문제가 발생습니다.',
+            'title'   => 'Add Scheduled Maintenance',
+            'success' => 'Schedule added.',
+            'failure' => 'Something went wrong adding the schedule, please try again.',
         ],
         'edit' => [
-            'title'   => '예정 된 유지 관리 수정',
-            'success' => '예정이 수정되었습니다!',
-            'failure' => '예정 수정 중 문제가 발생했습니다.',
+            'title'   => 'Edit Scheduled Maintenance',
+            'success' => 'Schedule has been updated!',
+            'failure' => 'Something went wrong editing the schedule, please try again.',
         ],
         'delete' => [
-            'success' => '예정이 삭제되었습니다. 상태 페이지에 표시되지 않습니다.',
-            'failure' => '일정을 삭제할 수 없습니다. 다시 시도 하십시오.',
+            'success' => 'The scheduled maintenance has been deleted and will not show on your status page.',
+            'failure' => 'The scheduled maintenance could not be deleted, please try again.',
         ],
     ],
 
@@ -75,13 +85,17 @@ return [
         'add'                => [
             'title'   => '구성요소 추가',
             'message' => '구성요소를 추가해야 합니다.',
-            'success' => '구성요소가 추가되었습니다.',
-            'failure' => '구성요소 생성 중 문제가 발생했습니다.',
+            'success' => 'Component created.',
+            'failure' => 'Something went wrong with the component, please try again.',
         ],
         'edit' => [
             'title'   => '구성요소 수정',
-            'success' => '구성요소가 수정되었습니다.',
-            'failure' => '구성요소 수정 중 문제가 발생했습니다.',
+            'success' => 'Component updated.',
+            'failure' => 'Something went wrong with the component, please try again.',
+        ],
+        'delete' => [
+            'success' => 'The component has been deleted!',
+            'failure' => 'The component could not be deleted, please try again.',
         ],
 
         // Component groups
@@ -90,13 +104,17 @@ return [
             'no_components' => '구성 요소 그룹을 추가 해야 합니다.',
             'add'           => [
                 'title'   => '구성요소 그룹 추가',
-                'success' => '구성요소 그룹 추가되었습니다',
-                'failure' => '구성요소 그룹 추가 중 문제가 발생했습니다.',
+                'success' => 'Component group added.',
+                'failure' => 'Something went wrong with the component group, please try again.',
             ],
             'edit' => [
                 'title'   => '구성요소 그룹 수정',
-                'success' => '구성요소 그룹이 수정되었습니다.',
-                'failure' => '구성요소 그룹 수정 중 문제가 발생했습니다.',
+                'success' => 'Component group updated.',
+                'failure' => 'Something went wrong with the component group, please try again.',
+            ],
+            'delete' => [
+                'success' => 'Component group has been deleted!',
+                'failure' => 'The component group could not be deleted, please try again.',
             ],
         ],
     ],
@@ -106,13 +124,38 @@ return [
         'metrics' => '통계',
         'add'     => [
             'title'   => '통계 추가',
-            'success' => '통계가 추가되었습니다.',
-            'failure' => '통계 추가 중 문제가 발생했습니다.',
+            'message' => 'You should add a metric.',
+            'success' => 'Metric created.',
+            'failure' => 'Something went wrong with the metric, please try again.',
         ],
         'edit' => [
             'title'   => '통계 수정',
-            'success' => '통계가 수정되었습니다.',
-            'failure' => '통계 수정 중 문제가 발생했습니다.',
+            'success' => 'Metric updated.',
+            'failure' => 'Something went wrong with the metric, please try again.',
+        ],
+        'delete' => [
+            'success' => 'The metric has been deleted and will no longer display on your status page.',
+            'failure' => 'The metric could not be deleted, please try again.',
+        ],
+    ],
+    // Subscribers
+    'subscribers' => [
+        'subscribers'      => '구독자',
+        'description'      => 'Subscribers will receive email updates when incidents are created or components are updated.',
+        'verified'         => '인증됨',
+        'not_verified'     => '인증되지 않음',
+        'subscriber'       => ':email, subscribed :date',
+        'no_subscriptions' => 'Subscribed to all updates',
+        'add'              => [
+            'title'   => '구독자 추가',
+            'success' => '구독자가 추가됨.',
+            'failure' => 'Something went wrong adding the subscriber, please try again.',
+            'help'    => 'Enter each subscriber on a new line.',
+        ],
+        'edit' => [
+            'title'   => '구독자 업데이트',
+            'success' => '구독자가 업데이트됨.',
+            'failure' => 'Something went wrong editing the subscriber, please try again.',
         ],
     ],
 
@@ -124,13 +167,22 @@ return [
         'description' => '팀 멤버는 구성요소와 문제를 추가하고 수정 할 수 있습니다.',
         'add'         => [
             'title'   => '새 팀 멤버 추가',
-            'success' => '팀 멤버가 추가되었습니다',
-            'failure' => '멤버 추가 중에 문제가 발생했습니다.',
+            'success' => 'Team member added.',
+            'failure' => 'The team member could not be added, please try again.',
         ],
         'edit' => [
             'title'   => '프로필 수정',
-            'success' => '프로필이 수정되었습니다.',
-            'failure' => '프로필 수정 중 문제가 생겼습니다.',
+            'success' => 'Profile updated.',
+            'failure' => 'Something went wrong updating the profile, please try again.',
+        ],
+        'delete' => [
+            'success' => '사용자 삭제',
+            'failure' => 'The team member could not be added, please try again.',
+        ],
+        'invite' => [
+            'title'   => '새 팀 멤버 초대하기',
+            'success' => '사용자가 초대되었습니다.',
+            'failure' => 'The invite could not be sent, please try again.',
         ],
     ],
 
@@ -141,6 +193,17 @@ return [
             'app-setup'   => '애플리케이션 설정',
             'images-only' => '이미지만 업로드 할 수 있습니다.',
             'too-big'     => '업로드 한 파일이 너무 큽니다. :size 보다 작은 이미지를 올려주세요.',
+        ],
+        'analytics' => [
+            'analytics' => 'Analytics',
+        ],
+        'localization' => [
+            'localization' => 'Localization',
+        ],
+        'customization' => [
+            'customization' => 'Customization',
+            'header'        => 'Custom Header HTML',
+            'footer'        => 'Custom Footer HTML',
         ],
         'security' => [
             'security'   => '보안',
@@ -155,6 +218,14 @@ return [
         'edit' => [
             'success' => '설정이 저장되었습니다.',
             'failure' => '설정을 저장할 수 없습니다.',
+        ],
+        'credits' => [
+            'credits'       => 'Credits',
+            'contributors'  => 'Contributors',
+            'license'       => 'Cachet is a BSD-3-licensed open source project, released by <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
+            'backers-title' => 'Backers & Sponsors',
+            'backers'       => 'If you\'d like to support future development, check out the <a href="https://patreon.com/jbrooksuk" target="_blank">Cachet Patreon</a> campaign.',
+            'thank-you'     => 'Thank you to each and every one of the :count contributors.',
         ],
     ],
 
@@ -178,11 +249,19 @@ return [
         'whoops'        => '이런...',
     ],
 
+    // Widgets
+    'widgets' => [
+        'support'          => 'Support Cachet',
+        'support_subtitle' => 'Check out our <strong><a href="https://patreon.com/jbrooksuk" target="_blank">Patreon</a></strong> page!',
+        'news'             => 'Latest News',
+        'news_subtitle'    => 'Get the latest updates',
+    ],
+
     // Welcome modal
     'welcome' => [
-        'welcome' => 'Cachet에 오신 것을 환영 합니다',
+        'welcome' => 'Welcome to your new status page!',
         'message' => '상태 페이지는 거의 다 준비 되었습니다! 추가 설정을 해보세요',
-        'close'   => '내 대시보드로 바로 가기',
+        'close'   => 'Take me straight to my dashboard',
         'steps'   => [
             'component'  => '구성요소 만들기',
             'incident'   => '문제 만들기',

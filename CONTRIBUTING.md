@@ -8,9 +8,7 @@ Feature requests and bug reports should be made by using the [issue tracker](htt
 
 ## Languages
 
-When needing to add labels, placeholders or general text, you **must not** write directly into the source file, rather make use of the `./resources/lang/` directory.
-
-Always provide the English translation and copy your English string to all other languages - making sure that the indentation and alignment of the arrays are updated.
+Any non-English translations must be made on the [Cachet CrowdIn](https://translate.cachethq.io) project. This makes syncing translations much easier.
 
 ## Coding Standards
 
@@ -59,7 +57,7 @@ class Foo extends Bar
 
 If you're still unsure, then take a look at existing code.
 
-## Introduction into to Git and GitHub
+## Introduction into Git and GitHub
 
 If you are new to Git, GitHub and the whole open source software community, welcome! Here are some resources for getting started and understanding what it's all about.
 

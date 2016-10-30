@@ -10,13 +10,14 @@
  */
 
 return [
-    'setup'             => 'Setup',
-    'title'             => 'Setup Cachet',
-    'service_details'   => 'Service Details',
-    'status_page_setup' => 'Setup der Status-Seite',
+    'setup'             => 'Installation',
+    'title'             => 'Cachet installieren',
+    'service_details'   => 'Servicedetails',
+    'env_setup'         => 'Einrichtung der Systemumgebung',
+    'status_page_setup' => 'Statusseite einrichten',
     'show_support'      => 'Möchten Sie Cachet unterstützen?',
-    'admin_account'     => 'Administrator-Account',
-    'complete_setup'    => 'Setup abschließen',
-    'completed'         => 'Cachet wurde erfolgreich eingerichtet!',
-    'finish_setup'      => 'Zum Dashboard',
+    'admin_account'     => 'Administrator Konto',
+    'complete_setup'    => 'Installation abschließen',
+    'completed'         => 'Cachet wurde erfolgreich konfiguriert!',
+    'finish_setup'      => 'Zum Dashboard wechseln',
 ];

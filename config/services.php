@@ -23,25 +23,27 @@ return [
     |
     */
 
+   'github' => [
+        'token' => env('GITHUB_TOKEN'),
+    ],
+
     'mailgun' => [
-        'domain' => '',
-        'secret' => '',
+        'domain' => env('MAIL_USERNAME'),
+        'secret' => env('MAIL_PASSWORD'),
     ],
 
     'mandrill' => [
-        'secret' => '',
+        'secret' => env('MAIL_PASSWORD'),
     ],
 
     'ses' => [
-        'key'    => '',
-        'secret' => '',
+        'key'    => env('MAIL_USERNAME'),
+        'secret' => env('MAIL_PASSWORD'),
         'region' => 'us-east-1',
     ],
 
-    'stripe' => [
-        'model'  => 'CachetHQ\Cachet\Models\User',
-        'key'    => '',
-        'secret' => '',
+    'sparkpost' => [
+        'secret' => env('MAIL_PASSWORD'),
     ],
 
 ];

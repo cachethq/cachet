@@ -11,28 +11,67 @@
 
 namespace CachetHQ\Cachet\Models;
 
+use AltThree\Validator\ValidatingTrait;
+use CachetHQ\Cachet\Models\Traits\SearchableTrait;
+use CachetHQ\Cachet\Models\Traits\SortableTrait;
 use CachetHQ\Cachet\Presenters\IncidentPresenter;
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use McCool\LaravelAutoPresenter\HasPresenter;
-use Watson\Validating\ValidatingTrait;
 
 class Incident extends Model implements HasPresenter
 {
-    use SoftDeletes, ValidatingTrait;
+    use SearchableTrait, SoftDeletes, SortableTrait, ValidatingTrait;
 
     /**
-     * The validation rules.
+     * Status for incident being investigated.
+     *
+     * @var int
+     */
+    const INVESTIGATING = 1;
+
+    /**
+     * Status for incident having been identified.
+     *
+     * @var int
+     */
+    const IDENTIFIED = 2;
+
+    /**
+     * Status for incident being watched.
+     *
+     * @var int
+     */
+    const WATCHED = 3;
+
+    /**
+     * Status for incident now being fixed.
+     *
+     * @var int
+     */
+    const FIXED = 4;
+
+    /**
+     * The accessors to append to the model's array form.
      *
      * @var string[]
      */
-    protected $rules = [
-        'component_id' => 'integer',
-        'name'         => 'required',
-        'status'       => 'required|integer',
-        'visible'      => 'required|boolean',
-        'message'      => 'required',
+    protected $appends = [
+        'is_resolved',
+    ];
+
+    /**
+     * The attributes that should be casted to native types.
+     *
+     * @var string[]
+     */
+    protected $casts = [
+        'visible'      => 'int',
+        'stickied'     => 'int',
+        'scheduled_at' => 'date',
+        'deleted_at'   => 'date',
     ];
 
     /**
@@ -45,6 +84,7 @@ class Incident extends Model implements HasPresenter
         'name',
         'status',
         'visible',
+        'stickied',
         'message',
         'scheduled_at',
         'created_at',
@@ -52,68 +92,56 @@ class Incident extends Model implements HasPresenter
     ];
 
     /**
-     * The accessors to append to the model's serialized form.
+     * The validation rules.
      *
      * @var string[]
      */
-    protected $appends = ['human_status'];
-
-    /**
-     * The attributes that should be mutated to dates.
-     *
-     * @var string[]
-     */
-    protected $dates = ['scheduled_at', 'deleted_at'];
-
-    /**
-     * The attributes that should be casted to native types.
-     *
-     * @var string[]
-     */
-    protected $casts = [
-        'visible' => 'integer',
+    public $rules = [
+        'component_id' => 'int',
+        'name'         => 'required',
+        'status'       => 'required|int',
+        'visible'      => 'required|bool',
+        'stickied'     => 'bool',
+        'message'      => 'required',
     ];
 
     /**
-     * Finds all visible incidents.
+     * The searchable fields.
      *
-     * @param \Illuminate\Database\Eloquent\Builder $query
-     *
-     * @return \Illuminate\Database\Eloquent\Builder
+     * @var string[]
      */
-    public function scopeVisible($query)
-    {
-        return $query->where('visible', 1);
-    }
+    protected $searchable = [
+        'id',
+        'component_id',
+        'name',
+        'status',
+        'visible',
+        'stickied',
+    ];
 
     /**
-     * Finds all scheduled incidents (maintenance).
+     * The sortable fields.
      *
-     * @param \Illuminate\Database\Eloquent\Builder $query
-     *
-     * @return \Illuminate\Database\Eloquent\Builder
+     * @var string[]
      */
-    public function scopeScheduled($query)
-    {
-        return $query->where('status', 0)->where('scheduled_at', '>=', Carbon::now());
-    }
+    protected $sortable = [
+        'id',
+        'name',
+        'status',
+        'visible',
+        'stickied',
+        'message',
+    ];
 
     /**
-     * Finds all non-scheduled incidents.
+     * The relations to eager load on every query.
      *
-     * @param \Illuminate\Database\Eloquent\Builder $query
-     *
-     * @return \Illuminate\Database\Eloquent\Builder
+     * @var string[]
      */
-    public function scopeNotScheduled($query)
-    {
-        return $query->where(function ($query) {
-            return $query->whereNull('scheduled_at')->orWhere('scheduled_at', '<=', Carbon::now());
-        });
-    }
+    protected $with = ['updates'];
 
     /**
-     * An incident belongs to a component.
+     * Get the component relation.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -123,15 +151,65 @@ class Incident extends Model implements HasPresenter
     }
 
     /**
-     * Returns a human readable version of the status.
+     * Get the updates relation.
      *
-     * @return string
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function getHumanStatusAttribute()
+    public function updates()
     {
-        $statuses = trans('cachet.incidents.status');
+        return $this->hasMany(IncidentUpdate::class)->orderBy('created_at', 'desc');
+    }
 
-        return $statuses[$this->status];
+    /**
+     * Finds all visible incidents.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeVisible(Builder $query)
+    {
+        return $query->where('visible', 1);
+    }
+
+    /**
+     * Finds all stickied incidents.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeStickied(Builder $query)
+    {
+        return $query->where('stickied', true);
+    }
+
+    /**
+     * Finds all scheduled incidents (maintenance).
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeScheduled(Builder $query)
+    {
+        return $query->where('status', 0)->where('scheduled_at', '>=', Carbon::now()->toDateTimeString());
+    }
+
+    /**
+     * Finds all non-scheduled incidents.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeNotScheduled(Builder $query)
+    {
+        return $query->where('status', '>', 0)->orWhere(function ($query) {
+            $query->where('status', 0)->where(function ($query) {
+                $query->whereNull('scheduled_at')->orWhere('scheduled_at', '<=', Carbon::now()->toDateTimeString());
+            });
+        });
     }
 
     /**
@@ -142,6 +220,20 @@ class Incident extends Model implements HasPresenter
     public function getIsScheduledAttribute()
     {
         return $this->getOriginal('scheduled_at') !== null;
+    }
+
+    /**
+     * Is the incident resolved?
+     *
+     * @return bool
+     */
+    public function getIsResolvedAttribute()
+    {
+        if ($updates = $this->updates->first()) {
+            return $updates->status === self::FIXED;
+        }
+
+        return $this->status === self::FIXED;
     }
 
     /**

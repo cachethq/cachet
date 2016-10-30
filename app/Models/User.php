@@ -11,29 +11,85 @@
 
 namespace CachetHQ\Cachet\Models;
 
+use AltThree\Validator\ValidatingTrait;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Hash;
-use Watson\Validating\ValidatingTrait;
 
+/**
+ * This is the user model.
+ *
+ * @author James Brooks <james@alt-three.com>
+ */
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract
 {
     use Authenticatable, CanResetPassword, ValidatingTrait;
 
     /**
-     * The validation rules.
+     * The admin level of user.
+     *
+     * @var int
+     */
+    const LEVEL_ADMIN = 1;
+
+    /**
+     * The general level of user.
+     *
+     * @var int
+     */
+    const LEVEL_USER = 2;
+
+    /**
+     * The model's attributes.
      *
      * @var string[]
      */
-    protected $rules = [
-        'username' => ['required', 'regex:/\A(?!.*[:;]-\))[ -~]+\z/', 'unique:users'],
-        'email'    => 'required|email|unique:users',
-        'password' => 'required',
+    protected $attributes = [
+        'welcomed' => false,
     ];
+
+    /**
+     * The attributes that should be casted to native types.
+     *
+     * @var string[]
+     */
+    protected $casts = [
+        'username'          => 'string',
+        'email'             => 'string',
+        'google_2fa_secret' => 'string',
+        'api_key'           => 'string',
+        'active'            => 'bool',
+        'level'             => 'int',
+        'welcomed'          => 'bool',
+    ];
+
+    /**
+     * The fillable properties.
+     *
+     * @var string[]
+     */
+    protected $fillable = [
+        'username',
+        'password',
+        'google_2fa_secret',
+        'email',
+        'api_key',
+        'active',
+        'level',
+        'welcomed',
+    ];
+
+    /**
+     * The properties that cannot be mass assigned.
+     *
+     * @var string[]
+     */
+    protected $guarded = [];
 
     /**
      * The hidden properties.
@@ -45,11 +101,15 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     protected $hidden = ['password', 'remember_token', 'google_2fa_secret'];
 
     /**
-     * The properties that cannot be mass assigned.
+     * The validation rules.
      *
      * @var string[]
      */
-    protected $guarded = [];
+    public $rules = [
+        'username' => ['required', 'regex:/\A(?!.*[:;]-\))[ -~]+\z/'],
+        'email'    => 'required|email',
+        'password' => 'required',
+    ];
 
     /**
      * Overrides the models boot method.
@@ -63,6 +123,30 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
                 $user->api_key = self::generateApiKey();
             }
         });
+    }
+
+    /**
+     * Scope all admin users.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeAdmins(Builder $query)
+    {
+        return $query->where('level', self::LEVEL_ADMIN);
+    }
+
+    /**
+     * Scope all active users.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeActive(Builder $query)
+    {
+        return $query->where('active', true);
     }
 
     /**
@@ -88,7 +172,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     public function getGravatarAttribute($size = 200)
     {
-        return sprintf('https://www.gravatar.com/avatar/%s?size=%d', md5($this->email), $size);
+        return sprintf('https://www.gravatar.com/avatar/%s?size=%d', md5(strtolower($this->email)), $size);
     }
 
     /**
@@ -129,7 +213,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     public function getIsAdminAttribute()
     {
-        return $this->level == 1;
+        return $this->level == self::LEVEL_ADMIN;
     }
 
     /**
