@@ -14,7 +14,7 @@ namespace CachetHQ\Tests\Cachet\Bus\Events\Schedule;
 use CachetHQ\Cachet\Bus\Events\Schedule\ScheduleWasCreatedEvent;
 use CachetHQ\Cachet\Models\Schedule;
 
-class ScheduleWasAddedEventTest extends AbstractScheduleEventTestCase
+class ScheduleWasCreatedEventTest extends AbstractScheduleEventTestCase
 {
     protected function objectHasHandlers()
     {
