@@ -31,20 +31,22 @@ use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
 class StatusPageController extends AbstractApiController
 {
     /**
+     * The metric repository instance.
+     *
      * @var \CachetHQ\Cachet\Repositories\Metric\MetricRepository
      */
-    protected $metricRepository;
+    protected $metrics;
 
     /**
      * Construct a new status page controller instance.
      *
-     * @param \CachetHQ\Cachet\Repositories\Metric\MetricRepository $metricRepository
+     * @param \CachetHQ\Cachet\Repositories\Metric\MetricRepository $metrics
      *
      * @return void
      */
-    public function __construct(MetricRepository $metricRepository)
+    public function __construct(MetricRepository $metrics)
     {
-        $this->metricRepository = $metricRepository;
+        $this->metrics = $metrics;
     }
 
     /**
@@ -141,16 +143,16 @@ class StatusPageController extends AbstractApiController
 
         switch ($type) {
             case 'last_hour':
-                $metricData = $this->metricRepository->listPointsLastHour($metric);
+                $metricData = $this->metrics->listPointsLastHour($metric);
                 break;
             case 'today':
-                $metricData = $this->metricRepository->listPointsToday($metric);
+                $metricData = $this->metrics->listPointsToday($metric);
                 break;
             case 'week':
-                $metricData = $this->metricRepository->listPointsForWeek($metric);
+                $metricData = $this->metrics->listPointsForWeek($metric);
                 break;
             case 'month':
-                $metricData = $this->metricRepository->listPointsForMonth($metric);
+                $metricData = $this->metrics->listPointsForMonth($metric);
                 break;
         }
 
