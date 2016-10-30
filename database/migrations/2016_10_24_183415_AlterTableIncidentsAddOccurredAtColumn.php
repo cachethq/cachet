@@ -28,7 +28,7 @@ class AlterTableIncidentsAddOccurredAtColumn extends Migration
         });
 
         // We need a better way of handling data migrations...
-        DB::update('UPDATE incidents SET `occurred_at` = `created_at`');
+        DB::update('UPDATE incidents SET occurred_at = created_at');
     }
 
     /**
