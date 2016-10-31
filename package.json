@@ -9,17 +9,17 @@
     "chart.js": "^2.2.0",
     "eonasdan-bootstrap-datetimepicker": "~4.17",
     "github-markdown-css": "^2.3.0",
-    "ionicons": "~2.0",
+    "ionicons": "~3.0.0",
     "jquery-minicolors": "^2.1.10",
     "jquery-serializeobject": "^1.0.0",
     "jquery-sparkline": "^2.3.2",
-    "jquery": "~2.2",
+    "jquery": "~3.1.1",
     "livestamp": "git+https://github.com/mattbradley/livestampjs.git#develop",
     "lodash": "^4.12.0",
     "messenger": "git+https://github.com/HubSpot/messenger.git",
     "moment": "^2.13.0",
     "sortablejs": "^1.4.2",
-    "sweetalert2": "^4.0.4"
+    "sweetalert2": "^5.3.8"
   },
   "private": true
 }
