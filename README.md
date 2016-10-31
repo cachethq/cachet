@@ -71,11 +71,12 @@ We use these extra dependencies to develop Cachet:
 - Gulp
 - Git
 
-Once cloned to your local machine, you'll need some demo data! Run `php artisan cachet:seed` to get the demo installation on the go.
+Once cloned to your local machine, you'll need some demo data! 
+Run `php artisan cachet:seed` to get the demo installation on the go.
 
 ## Installation, Upgrades and Documentation
 
-You can now find our documentation at [https://docs.cachethq.io](https://docs.cachethq.io).
+You can now find our documentation [here](https://docs.cachethq.io).
 
 - [Installing Cachet](https://docs.cachethq.io/docs/installing-cachet)
 - [Getting started with Docker](https://docs.cachethq.io/docs/get-started-with-docker)
