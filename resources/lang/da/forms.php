@@ -34,6 +34,7 @@ return [
         'invalid'       => 'Ugyldigt brugernavn eller adgangskode',
         'invalid-token' => 'Ugyldig token',
         'cookies'       => 'Du skal tillade cookies for at logge ind.',
+        'rate-limit'    => 'Rate limit exceeded.',
     ],
 
     // Incidents form fields
@@ -89,6 +90,7 @@ return [
         'type_avg'         => 'Gennemsnit',
         'places'           => 'Antal decimaler',
         'default_view'     => 'Standardvisning',
+        'threshold'        => 'How many minutes of threshold between metric points?',
 
         'points' => [
             'value' => 'Værdi',
@@ -107,6 +109,7 @@ return [
             'banner'                 => 'Banner billede',
             'banner-help'            => 'Det anbefales ikke at uploade billeder bredere end 930px.',
             'subscribers'            => 'Tillad folk at tilmelde sig email underretninger?',
+            'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
         ],
         'analytics' => [
             'analytics_google'       => 'Google Analytics kode',
@@ -115,10 +118,10 @@ return [
             'analytics_piwik_siteid' => 'Piwik\'s site id',
         ],
         'localization' => [
-            'site-timezone'          => 'Tidszone',
-            'site-locale'            => 'Sprog på siden',
-            'date-format'            => 'Datoformat',
-            'incident-date-format'   => 'Datoformat for hændelser',
+            'site-timezone'        => 'Tidszone',
+            'site-locale'          => 'Sprog på siden',
+            'date-format'          => 'Datoformat',
+            'incident-date-format' => 'Datoformat for hændelser',
         ],
         'security' => [
             'allowed-domains'      => 'Tilladte domæner',

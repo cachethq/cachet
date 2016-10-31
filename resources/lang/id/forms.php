@@ -34,6 +34,7 @@ return [
         'invalid'       => 'Invalid username or password',
         'invalid-token' => 'Token tidak benar',
         'cookies'       => 'Mohon aktifkan cookies untuk login.',
+        'rate-limit'    => 'Rate limit exceeded.',
     ],
 
     // Incidents form fields
@@ -89,6 +90,7 @@ return [
         'type_avg'         => 'Rata-rata',
         'places'           => 'Digit Desimal',
         'default_view'     => 'Default view',
+        'threshold'        => 'How many minutes of threshold between metric points?',
 
         'points' => [
             'value' => 'Nilai',
@@ -107,6 +109,7 @@ return [
             'banner'                 => 'Banner Image',
             'banner-help'            => 'Disarankan gambar yang anda unggah tidak lebih lebar dari 930px.',
             'subscribers'            => 'Bolehkan pengunjung mendaftar notifikasi email?',
+            'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
         ],
         'analytics' => [
             'analytics_google'       => 'Kode Google Analytics',
@@ -115,10 +118,10 @@ return [
             'analytics_piwik_siteid' => 'ID situs Piwik',
         ],
         'localization' => [
-            'site-timezone'          => 'Zona Waktu',
-            'site-locale'            => 'Bahasa',
-            'date-format'            => 'Format Tanggal',
-            'incident-date-format'   => 'Format Waktu Insiden',
+            'site-timezone'        => 'Zona Waktu',
+            'site-locale'          => 'Bahasa',
+            'date-format'          => 'Format Tanggal',
+            'incident-date-format' => 'Format Waktu Insiden',
         ],
         'security' => [
             'allowed-domains'      => 'Domain yang dibolehkan',

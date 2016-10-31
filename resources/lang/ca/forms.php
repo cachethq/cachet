@@ -34,6 +34,7 @@ return [
         'invalid'       => 'El nom d\'usuari o contrasenya no és vàlid',
         'invalid-token' => 'Token invàlid',
         'cookies'       => 'Heu d\'habilitar les galetes (cookies) per poder iniciar sessió.',
+        'rate-limit'    => 'Rate limit exceeded.',
     ],
 
     // Incidents form fields
@@ -89,6 +90,7 @@ return [
         'type_avg'         => 'Mitjana',
         'places'           => 'Nombre de decimals',
         'default_view'     => 'Vista per defecte',
+        'threshold'        => 'How many minutes of threshold between metric points?',
 
         'points' => [
             'value' => 'Valor',
@@ -107,6 +109,7 @@ return [
             'banner'                 => 'Imatge del banner',
             'banner-help'            => "Es recomana que no carregueu arxius més grans de 930 píxels d'ample.",
             'subscribers'            => 'Permetre el registre per a notificacions per correu electrònic?',
+            'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
         ],
         'analytics' => [
             'analytics_google'       => 'Codi de Google Analytics',
@@ -115,10 +118,10 @@ return [
             'analytics_piwik_siteid' => 'Identificador de lloc del Piwik',
         ],
         'localization' => [
-            'site-timezone'          => 'Seleccioneu el fus horari',
-            'site-locale'            => 'Idioma del lloc',
-            'date-format'            => 'Format de la data',
-            'incident-date-format'   => 'Format del fus horari dels incidents',
+            'site-timezone'        => 'Seleccioneu el fus horari',
+            'site-locale'          => 'Idioma del lloc',
+            'date-format'          => 'Format de la data',
+            'incident-date-format' => 'Format del fus horari dels incidents',
         ],
         'security' => [
             'allowed-domains'      => 'Dominis permesos',

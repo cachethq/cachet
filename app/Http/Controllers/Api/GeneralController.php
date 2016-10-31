@@ -11,6 +11,14 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Api;
 
+use CachetHQ\Cachet\Integrations\Contracts\Releases;
+use CachetHQ\Cachet\Integrations\Contracts\System;
+
+/**
+ * This is the general api controller.
+ *
+ * @author James Brooks <james@bluebaytravel.co.uk>
+ */
 class GeneralController extends AbstractApiController
 {
     /**
@@ -30,6 +38,23 @@ class GeneralController extends AbstractApiController
      */
     public function version()
     {
-        return $this->item(CACHET_VERSION);
+        $latest = app()->make(Releases::class)->latest();
+
+        return $this->setMetaData([
+            'on_latest' => version_compare(CACHET_VERSION, $latest['tag_name']) === 1,
+            'latest'    => $latest,
+        ])->item(CACHET_VERSION);
+    }
+
+    /**
+     * Get the system status message.
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function status()
+    {
+        $system = app()->make(System::class)->getStatus();
+
+        return $this->item($system['system_message']);
     }
 }

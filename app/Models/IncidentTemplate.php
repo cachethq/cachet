@@ -12,6 +12,7 @@
 namespace CachetHQ\Cachet\Models;
 
 use AltThree\Validator\ValidatingTrait;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
@@ -66,7 +67,7 @@ class IncidentTemplate extends Model
      *
      * @return \Illuminate\Database\Query\Builder
      */
-    public function scopeForSlug($query, $slug)
+    public function scopeForSlug(Builder $query, $slug)
     {
         return $query->where('slug', $slug);
     }

@@ -33,7 +33,7 @@ final class SubscribeSubscriberCommand
     public $verified;
 
     /**
-     * The subscriptions that we want to add.
+     * The list of subscriptions to set the subscriber up with.
      *
      * @var array|null
      */
@@ -53,7 +53,7 @@ final class SubscribeSubscriberCommand
      *
      * @param string     $email
      * @param bool       $verified
-     * @param null|array $subscriptions
+     * @param array|null $subscriptions
      *
      * @return void
      */

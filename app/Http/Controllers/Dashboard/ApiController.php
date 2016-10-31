@@ -11,34 +11,46 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
-use CachetHQ\Cachet\GitHub\Release;
+use CachetHQ\Cachet\Bus\Commands\Component\UpdateComponentCommand;
+use CachetHQ\Cachet\Bus\Commands\ComponentGroup\UpdateComponentGroupCommand;
+use CachetHQ\Cachet\Http\Controllers\Api\AbstractApiController;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\IncidentTemplate;
-use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
-use Illuminate\Routing\Controller;
-use Illuminate\Support\Facades\Response;
+use Illuminate\Database\QueryException;
+use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
-class ApiController extends Controller
+class ApiController extends AbstractApiController
 {
     /**
      * Updates a component with the entered info.
      *
      * @param \CachetHQ\Cachet\Models\Component $component
      *
-     * @throws \Exception
+     * @throws \Symfony\Component\HttpKernel\Exception\BadRequestHttpException
      *
      * @return \CachetHQ\Cachet\Models\Component
      */
     public function postUpdateComponent(Component $component)
     {
-        if (!$component->update(Binput::except(['_token']))) {
-            throw new Exception(trans('dashboard.components.edit.failure'));
+        try {
+            dispatch(new UpdateComponentCommand(
+                $component,
+                $component->name,
+                $component->description,
+                Binput::get('status'),
+                $component->link,
+                $component->order,
+                $component->group_id,
+                $component->enabled
+            ));
+        } catch (QueryException $e) {
+            throw new BadRequestHttpException();
         }
 
-        return $component;
+        return $this->item($component);
     }
 
     /**
@@ -51,11 +63,25 @@ class ApiController extends Controller
         $componentData = Binput::get('ids');
 
         foreach ($componentData as $order => $componentId) {
-            // Ordering should be 1-based, data comes in 0-based
-            Component::find($componentId)->update(['order' => $order + 1]);
+            try {
+                $component = Component::find($componentId);
+
+                dispatch(new UpdateComponentCommand(
+                    $component,
+                    $component->name,
+                    $component->description,
+                    $component->status,
+                    $component->link,
+                    $order + 1,
+                    $component->group_id,
+                    $component->enabled
+                ));
+            } catch (QueryException $e) {
+                throw new BadRequestHttpException();
+            }
         }
 
-        return $componentData;
+        return $this->collection(Component::query()->orderBy('order')->get());
     }
 
     /**
@@ -68,10 +94,17 @@ class ApiController extends Controller
         $groupData = Binput::get('ids');
 
         foreach ($groupData as $order => $groupId) {
-            ComponentGroup::find($groupId)->update(['order' => $order + 1]);
+            $group = ComponentGroup::find($groupId);
+
+            dispatch(new UpdateComponentGroupCommand(
+                $group,
+                $group->name,
+                $order + 1,
+                $group->collapsed
+            ));
         }
 
-        return $groupData;
+        return $this->collection(ComponentGroup::query()->orderBy('order')->get());
     }
 
     /**
@@ -90,21 +123,5 @@ class ApiController extends Controller
         }
 
         throw new ModelNotFoundException("Incident template for $templateSlug could not be found.");
-    }
-
-    /**
-     * Checks if Cachet is up to date.
-     *
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function checkVersion()
-    {
-        $latest = app(Release::class)->latest();
-
-        return Response::json([
-            'cachet_version' => CACHET_VERSION,
-            'latest_version' => $latest,
-            'is_latest'      => version_compare(CACHET_VERSION, $latest) === 1,
-        ]);
     }
 }

@@ -14,7 +14,7 @@ return [
     'title'             => 'إعداد Cachet',
     'service_details'   => 'تفاصيل الخدمة',
     'env_setup'         => 'إعداد البيئة',
-    'status_page_setup' => 'Status page setup',
+    'status_page_setup' => 'Status Page Setup',
     'show_support'      => 'Show support for Cachet?',
     'admin_account'     => 'حساب المدير',
     'complete_setup'    => 'إكمال الإعداد',

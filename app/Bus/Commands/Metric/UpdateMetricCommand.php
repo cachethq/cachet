@@ -79,6 +79,20 @@ final class UpdateMetricCommand
     public $default_view;
 
     /**
+     * The threshold to buffer the metric points in.
+     *
+     * @var int
+     */
+    public $threshold;
+
+    /**
+     * The order of which to place the metric in.
+     *
+     * @var int|null
+     */
+    public $order;
+
+    /**
      * The validation rules.
      *
      * @var string[]
@@ -93,6 +107,8 @@ final class UpdateMetricCommand
         'display_chart' => 'int',
         'places'        => 'numeric|between:0,4',
         'default_view'  => 'numeric|between:0,4',
+        'threshold'     => 'numeric|between:0,10',
+        'order'         => 'int',
     ];
 
     /**
@@ -107,10 +123,12 @@ final class UpdateMetricCommand
      * @param int                            $display_chart
      * @param int                            $places
      * @param int                            $default_view
+     * @param int                            $threshold
+     * @param int|null                       $order
      *
      * @return void
      */
-    public function __construct(Metric $metric, $name, $suffix, $description, $default_value, $calc_type, $display_chart, $places, $default_view)
+    public function __construct(Metric $metric, $name, $suffix, $description, $default_value, $calc_type, $display_chart, $places, $default_view, $threshold, $order = null)
     {
         $this->metric = $metric;
         $this->name = $name;
@@ -121,5 +139,7 @@ final class UpdateMetricCommand
         $this->display_chart = $display_chart;
         $this->places = $places;
         $this->default_view = $default_view;
+        $this->threshold = $threshold;
+        $this->order = $order;
     }
 }

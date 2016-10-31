@@ -120,12 +120,12 @@ $(function() {
         var $option = $(this).find('option:selected');
         var $componentStatus = $('#component-status');
 
-        if ($option.val() !== '') {
+        if (parseInt($option.val(), 10) !== 0) {
             if ($componentStatus.hasClass('hidden')) {
                 $componentStatus.removeClass('hidden');
-            } else {
-                $componentStatus.addClass('hidden');
             }
+        } else {
+            $componentStatus.addClass('hidden');
         }
     });
 
@@ -277,6 +277,24 @@ $(function() {
         $this.next('.group-items').toggleClass('hide');
     });
 
+    $('.select-group').on('click', function () {
+        var $parentGroup = $(this).closest('ul.list-group');
+        $parentGroup.find('input[type=checkbox]').prop('checked', true);
+        $parentGroup.find('.group-items').removeClass('hide')
+        $parentGroup.find('.group-toggle').addClass('ion-ios-minus-outline').removeClass('ion-ios-plus-outline');
+        event.stopPropagation();
+        return false;
+    });
+
+    $('.deselect-group').on('click', function () {
+        var $parentGroup = $(this).closest('ul.list-group');
+        $parentGroup.find('input[type=checkbox]').prop('checked', false);
+        $parentGroup.find('.group-items').addClass('hide');
+        $parentGroup.find('.group-toggle').removeClass('ion-ios-minus-outline').addClass('ion-ios-plus-outline');
+        event.stopPropagation();
+        return false;
+    });
+
     // Setup wizard
     $('.wizard-next').on('click', function () {
         var $form   = $('#setup-form'),
@@ -370,30 +388,13 @@ $(function() {
         $.ajax({
             async: true,
             dataType: 'json',
-            url: '/dashboard/api/system/version',
+            url: '/api/v1/version',
         }).done(function (result) {
-            if (result.is_latest == false) {
+            if (result.meta.on_latest === false) {
                 $('#update-alert').removeClass('hidden');
             }
         });
     }
-
-    // Open a modal.
-    $('#subscribe-modal')
-        .on('show.bs.modal', function (event) {
-            var $button = $(event.relatedTarget);
-            var $modal = $(this);
-            $modal.find('#subscribe-modal-id').val($button.data('component-id'));
-        })
-        .on('hidden.bs.modal', function (event) {
-            var $modal = $(this);
-            $modal.find('#subscribe-modal-id').val('');
-        });
-
-    // Focus on any modals.
-    $('.modal').on('shown.bs.modal', function () {
-        $(this).find('input[type=text]').focus();
-    });
 });
 
 function askConfirmation(callback) {

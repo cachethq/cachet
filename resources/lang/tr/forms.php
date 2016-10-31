@@ -34,6 +34,7 @@ return [
         'invalid'       => 'Kullanıcı adı veya parola hatalı',
         'invalid-token' => 'Geçersiz jeton',
         'cookies'       => 'Oturum açabilmek yapabilmek için çerezleri açmalısınız.',
+        'rate-limit'    => 'Rate limit exceeded.',
     ],
 
     // Incidents form fields
@@ -89,6 +90,7 @@ return [
         'type_avg'         => 'Ortalama',
         'places'           => 'Decimal places',
         'default_view'     => 'Default view',
+        'threshold'        => 'How many minutes of threshold between metric points?',
 
         'points' => [
             'value' => 'Değer',
@@ -107,6 +109,7 @@ return [
             'banner'                 => 'Banner Image',
             'banner-help'            => "It's recommended that you upload files no bigger than 930px wide .",
             'subscribers'            => 'Allow people to signup to email notifications?',
+            'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
         ],
         'analytics' => [
             'analytics_google'       => 'Google Analytics code',
@@ -115,10 +118,10 @@ return [
             'analytics_piwik_siteid' => 'Piwik\'s site id',
         ],
         'localization' => [
-            'site-timezone'          => 'Site timezone',
-            'site-locale'            => 'Site language',
-            'date-format'            => 'Date format',
-            'incident-date-format'   => 'Incident timestamp format',
+            'site-timezone'        => 'Site timezone',
+            'site-locale'          => 'Site language',
+            'date-format'          => 'Date format',
+            'incident-date-format' => 'Incident timestamp format',
         ],
         'security' => [
             'allowed-domains'      => 'Allowed domains',

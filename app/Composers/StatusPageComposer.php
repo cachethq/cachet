@@ -11,13 +11,38 @@
 
 namespace CachetHQ\Cachet\Composers;
 
+use CachetHQ\Cachet\Integrations\Core\System;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Incident;
 use Illuminate\Contracts\View\View;
 
+/**
+ * This is the status page composer.
+ *
+ * @author James Brooks <james@alt-three.com>
+ */
 class StatusPageComposer
 {
+    /**
+     * The system instance.
+     *
+     * @var \CachetHQ\Cachet\Integrations\Contracts\System
+     */
+    protected $system;
+
+    /**
+     * Create a new status page composer instance.
+     *
+     * @param \CachetHQ\Cachet\Integrations\Contracts\System $system
+     *
+     * @return void
+     */
+    public function __construct(System $system)
+    {
+        $this->system = $system;
+    }
+
     /**
      * Index page view composer.
      *
@@ -27,40 +52,7 @@ class StatusPageComposer
      */
     public function compose(View $view)
     {
-        $totalComponents = Component::enabled()->count();
-        $majorOutages = Component::enabled()->status(4)->count();
-        $isMajorOutage = $totalComponents ? ($majorOutages / $totalComponents) >= 0.5 : false;
-
-        // Default data
-        $withData = [
-            'system_status'  => 'info',
-            'system_message' => trans_choice('cachet.service.bad', $totalComponents),
-            'favicon'        => 'favicon-high-alert',
-        ];
-
-        if ($isMajorOutage) {
-            $withData = [
-                'system_status'  => 'danger',
-                'system_message' => trans_choice('cachet.service.major', $totalComponents),
-                'favicon'        => 'favicon-high-alert',
-            ];
-        } elseif (Component::enabled()->notStatus(1)->count() === 0) {
-            // If all our components are ok, do we have any non-fixed incidents?
-            $incidents = Incident::notScheduled()->orderBy('created_at', 'desc')->get();
-            $incidentCount = $incidents->count();
-
-            if ($incidentCount === 0 || ($incidentCount >= 1 && (int) $incidents->first()->status === 4)) {
-                $withData = [
-                    'system_status'  => 'success',
-                    'system_message' => trans_choice('cachet.service.good', $totalComponents),
-                    'favicon'        => 'favicon',
-                ];
-            }
-        } else {
-            if (Component::enabled()->whereIn('status', [2, 3])->count() > 0) {
-                $withData['favicon'] = 'favicon-medium-alert';
-            }
-        }
+        $status = $this->system->getStatus();
 
         // Scheduled maintenance code.
         $scheduledMaintenance = Incident::scheduled()->orderBy('scheduled_at')->get();
@@ -70,7 +62,7 @@ class StatusPageComposer
         $componentGroups = ComponentGroup::whereIn('id', $usedComponentGroups)->orderBy('order')->get();
         $ungroupedComponents = Component::enabled()->where('group_id', 0)->orderBy('order')->orderBy('created_at')->get();
 
-        $view->with($withData)
+        $view->with($status)
             ->withComponentGroups($componentGroups)
             ->withUngroupedComponents($ungroupedComponents)
             ->withScheduledMaintenance($scheduledMaintenance);

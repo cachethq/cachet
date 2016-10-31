@@ -12,6 +12,7 @@
 namespace CachetHQ\Tests\Cachet\Foundation\Providers;
 
 use AltThree\TestBench\ServiceProviderTrait;
+use CachetHQ\Cachet\Dates\DateFactory;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 
 /**
@@ -22,4 +23,9 @@ use CachetHQ\Tests\Cachet\AbstractTestCase;
 class AppServiceProviderTest extends AbstractTestCase
 {
     use ServiceProviderTrait;
+
+    public function testDateFactoryIsInjectable()
+    {
+        $this->assertIsInjectable(DateFactory::class);
+    }
 }

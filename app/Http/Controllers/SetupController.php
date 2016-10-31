@@ -12,6 +12,7 @@
 namespace CachetHQ\Cachet\Http\Controllers;
 
 use CachetHQ\Cachet\Models\User;
+use CachetHQ\Cachet\Settings\Repository;
 use Dotenv\Dotenv;
 use Dotenv\Exception\InvalidPathException;
 use GrahamCampbell\Binput\Facades\Binput;
@@ -39,6 +40,22 @@ class SetupController extends Controller
         'database'  => 'Database',
         'memcached' => 'Memcached',
         'redis'     => 'Redis',
+    ];
+
+    /**
+     * Array of cache drivers.
+     *
+     * @var string[]
+     */
+    protected $mailDrivers = [
+        'smtp'     => 'SMTP',
+        'mail'     => 'Mail',
+        'sendmail' => 'Sendmail',
+        'mailgun'  => 'Mailgun',
+        'mandrill' => 'Mandrill',
+        // 'ses'       => 'Amazon SES', this will be available only if aws/aws-sdk-php is installed
+        'sparkpost' => 'SparkPost',
+        'log'       => 'Log (Testing)',
     ];
 
     /**
@@ -72,6 +89,7 @@ class SetupController extends Controller
         $this->rulesStep1 = [
             'env.cache_driver'   => 'required|in:'.implode(',', array_keys($this->cacheDrivers)),
             'env.session_driver' => 'required|in:'.implode(',', array_keys($this->cacheDrivers)),
+            'env.mail_driver'    => 'required|in:'.implode(',', array_keys($this->mailDrivers)),
         ];
 
         $this->rulesStep2 = [
@@ -96,11 +114,6 @@ class SetupController extends Controller
      */
     public function getIndex()
     {
-        // If we've copied the .env.example file, then we should try and reset it.
-        if (strlen(Config::get('app.key')) !== 32) {
-            $this->keyGenerate();
-        }
-
         $supportedLanguages = Request::getLanguages();
         $userLanguage = Config::get('app.locale');
 
@@ -116,6 +129,7 @@ class SetupController extends Controller
         return View::make('setup')
             ->withPageTitle(trans('setup.setup'))
             ->withCacheDrivers($this->cacheDrivers)
+            ->withMailDrivers($this->mailDrivers)
             ->withUserLanguage($userLanguage)
             ->withAppUrl(Request::root());
     }
@@ -130,6 +144,14 @@ class SetupController extends Controller
         $postData = Binput::all();
 
         $v = Validator::make($postData, $this->rulesStep1);
+
+        $v->sometimes('env.mail_host', 'required', function ($input) {
+            return $input->mail_driver === 'smtp';
+        });
+
+        $v->sometimes(['env.mail_address', 'env.mail_username', 'env.mail_password'], 'required', function ($input) {
+            return $input->mail_driver !== 'log';
+        });
 
         if ($v->passes()) {
             return Response::json(['status' => 1]);
@@ -180,7 +202,7 @@ class SetupController extends Controller
 
             Auth::login($user);
 
-            $setting = app('setting');
+            $setting = app(Repository::class);
 
             $settings = array_pull($postData, 'settings');
 
@@ -228,33 +250,14 @@ class SetupController extends Controller
         try {
             (new Dotenv($dir, $file))->load();
 
+            $envKey = strtoupper($key);
+            $envValue = env($envKey) ?: 'null';
+
             file_put_contents($path, str_replace(
-                env(strtoupper($key)), $value, file_get_contents($path)
+                $envKey.'='.$envValue, $envKey.'='.$value, file_get_contents($path)
             ));
         } catch (InvalidPathException $e) {
             //
         }
-    }
-
-    /**
-     * Generate the app.key value.
-     *
-     * @return void
-     */
-    protected function keyGenerate()
-    {
-        $key = str_random(32);
-
-        $dir = app()->environmentPath();
-        $file = app()->environmentFile();
-        $path = "{$dir}/{$file}";
-
-        (new Dotenv($dir, $file))->load();
-
-        file_put_contents($path, str_replace(
-            Config::get('app.key'), $key, file_get_contents($path)
-        ));
-
-        Config::set('app.key', $key);
     }
 }

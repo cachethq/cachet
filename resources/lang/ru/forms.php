@@ -34,6 +34,7 @@ return [
         'invalid'       => 'Неверное имя пользователя или пароль',
         'invalid-token' => 'Неверный токен',
         'cookies'       => 'Необходимо включить cookies для входа.',
+        'rate-limit'    => 'Ограничение скорости превышено.',
     ],
 
     // Incidents form fields
@@ -89,6 +90,7 @@ return [
         'type_avg'         => 'Среднее значение',
         'places'           => 'Количество цифр после точки',
         'default_view'     => 'Представление по умолчанию',
+        'threshold'        => 'Количество минут между метрическими точками?',
 
         'points' => [
             'value' => 'Значение',
@@ -107,6 +109,7 @@ return [
             'banner'                 => 'Картинка-баннер',
             'banner-help'            => 'Рекомендуется загружать картинки не больше 930 пикс. в ширину.',
             'subscribers'            => 'Разрешить посетителям подписываться на email-уведомления?',
+            'automatic_localization' => 'Автоматически переводить сайт на язык посетителя?',
         ],
         'analytics' => [
             'analytics_google'       => 'Код Google Analytics',
@@ -115,10 +118,10 @@ return [
             'analytics_piwik_siteid' => 'Идентификатор сайта в Piwik',
         ],
         'localization' => [
-            'site-timezone'          => 'Часовой пояс сайта',
-            'site-locale'            => 'Язык сайта',
-            'date-format'            => 'Формат даты',
-            'incident-date-format'   => 'Формат даты и времени для инцидента',
+            'site-timezone'        => 'Часовой пояс сайта',
+            'site-locale'          => 'Язык сайта',
+            'date-format'          => 'Формат даты',
+            'incident-date-format' => 'Формат даты и времени для инцидента',
         ],
         'security' => [
             'allowed-domains'      => 'Разрешённые домены',

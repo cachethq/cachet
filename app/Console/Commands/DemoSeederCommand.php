@@ -17,9 +17,9 @@ use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentTemplate;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\MetricPoint;
-use CachetHQ\Cachet\Models\Setting;
 use CachetHQ\Cachet\Models\Subscriber;
 use CachetHQ\Cachet\Models\User;
+use CachetHQ\Cachet\Settings\Repository;
 use DateInterval;
 use DateTime;
 use Illuminate\Console\Command;
@@ -48,6 +48,27 @@ class DemoSeederCommand extends Command
      * @var string
      */
     protected $description = 'Seeds Cachet with demo data.';
+
+    /**
+     * The settings repository.
+     *
+     * @var \CachetHQ\Cache\Settings\Repository
+     */
+    protected $settings;
+
+    /**
+     * Create a new demo seeder command instance.
+     *
+     * @param \CachetHQ\Cache\Settings\Repository $settings
+     *
+     * @return void
+     */
+    public function __construct(Repository $settings)
+    {
+        parent::__construct();
+
+        $this->settings = $settings;
+    }
 
     /**
      * Execute the console command.
@@ -142,6 +163,13 @@ class DemoSeederCommand extends Command
                 'order'       => 1,
                 'group_id'    => 2,
                 'link'        => 'https://styleci.io',
+            ], [
+                'name'        => 'Patreon Page',
+                'description' => 'Support future development of Cachet.',
+                'status'      => 1,
+                'order'       => 0,
+                'group_id'    => 0,
+                'link'        => 'https://patreon.com/jbrooksuk',
             ],
         ];
 
@@ -293,42 +321,45 @@ EINCIDENT;
     {
         $defaultSettings = [
             [
-                'name'  => 'app_name',
+                'key'   => 'app_name',
                 'value' => 'Cachet Demo',
             ], [
-                'name'  => 'app_domain',
+                'key'   => 'app_domain',
                 'value' => 'https://demo.cachethq.io',
             ], [
-                'name'  => 'show_support',
+                'key'   => 'show_support',
                 'value' => '1',
             ], [
-                'name'  => 'app_locale',
+                'key'   => 'app_locale',
                 'value' => 'en',
             ], [
-                'name'  => 'app_timezone',
+                'key'   => 'app_timezone',
                 'value' => 'Europe/London',
             ], [
-                'name'  => 'app_incident_days',
+                'key'   => 'app_incident_days',
                 'value' => '7',
             ], [
-                'name'  => 'app_analytics',
+                'key'   => 'app_analytics',
                 'value' => 'UA-58442674-3',
             ], [
-                'name'  => 'app_analytics_gs',
+                'key'   => 'app_analytics_gs',
                 'value' => 'GSN-712462-P',
             ], [
-                'name'  => 'display_graphs',
+                'key'   => 'display_graphs',
                 'value' => '1',
             ], [
-                'name'  => 'app_about',
+                'key'   => 'app_about',
                 'value' => 'This is the demo instance of [Cachet](https://cachethq.io?ref=demo). The open source status page system, for everyone. An [Alt Three](https://alt-three.com) product.',
+            ], [
+                'key'   => 'enable_subscribers',
+                'value' => '0',
             ],
         ];
 
-        Setting::truncate();
+        $this->settings->clear();
 
         foreach ($defaultSettings as $setting) {
-            Setting::create($setting);
+            $this->settings->set($setting['key'], $setting['value']);
         }
     }
 

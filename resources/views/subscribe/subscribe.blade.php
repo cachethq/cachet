@@ -9,18 +9,22 @@
 
 @include('dashboard.partials.errors')
 
-<div class="panel panel-meassage">
-    <div class="panel-heading">
-        <strong>{{ trans('cachet.subscriber.subscribe') }}</strong>
-    </div>
-    <div class="panel-body">
-        <form action="{{ route('subscribe.subscribe', [], false) }}" method="post" class="form">
-            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <div class="form-group">
-                <input class="form-control" type="email" name="email">
+<div class="row">
+    <div class="col-xs-12 col-lg-offset-2 col-lg-8">
+        <div class="panel panel-meassage">
+            <div class="panel-heading">
+                <h2>{{ trans('cachet.subscriber.subscribe') }}</h2>
             </div>
-            <button type="submit" class="btn btn-success">{{ trans('cachet.subscriber.button') }}</button>
-        </form>
+            <div class="panel-body">
+                <form action="{{ route('subscribe.subscribe', [], false) }}" method="post" class="form">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <div class="form-group">
+                        <input class="form-control" type="email" name="email">
+                    </div>
+                    <button type="submit" class="btn btn-success">{{ trans('cachet.subscriber.button') }}</button>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
 @stop

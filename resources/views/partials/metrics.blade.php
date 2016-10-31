@@ -25,9 +25,7 @@
         </div>
         <div class="row">
             <div class="col-xs-12">
-                <div>
-                    <canvas id="metric-{{ $metric->id }}" data-metric-name="{{ $metric->name }}" data-metric-suffix="{{ $metric->suffix }}" data-metric-id="{{ $metric->id }}" data-metric-group="{{ $metric->view_name }}" height="160" width="600"></canvas>
-                </div>
+                <canvas id="metric-{{ $metric->id }}" data-metric-name="{{ $metric->name }}" data-metric-suffix="{{ $metric->suffix }}" data-metric-id="{{ $metric->id }}" data-metric-group="{{ $metric->view_name }}" data-metric-precision="{{ $metric->places }}" height="160" width="600"></canvas>
             </div>
         </div>
     </li>
@@ -83,7 +81,6 @@
                 data: {
                     labels: _.keys(data),
                     datasets: [{
-                        label: result.data.metric.name,
                         data: _.values(data),
                         backgroundColor: "{{ $theme_metrics }}",
                         borderColor: "{{ color_darken($theme_metrics, -0.1) }}",
@@ -99,6 +96,7 @@
                             ticks: {
                                 beginAtZero: true,
                                 suggestedMax: 0.1,
+                                // fixedStepSize: result.data.metric.places,
                                 callback: function(tickValue, index, ticks) {
                                     var delta = ticks[1] - ticks[0];
 
@@ -127,8 +125,8 @@
                     },
                     tooltips: {
                         callbacks: {
-                            afterLabel: function(tooltipItem, data) {
-                                return " " + result.data.metric.suffix;
+                            label: function(tooltipItem, data) {
+                                return tooltipItem.yLabel + ' ' + result.data.metric.suffix;
                             }
                         }
                     }

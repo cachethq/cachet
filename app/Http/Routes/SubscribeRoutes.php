@@ -44,6 +44,11 @@ class SubscribeRoutes
                 'uses' => 'SubscribeController@showManage',
             ]);
 
+            $router->post('subscribe/manage/{code}', [
+                'as'   => 'manage',
+                'uses' => 'SubscribeController@postManage',
+            ]);
+
             $router->get('subscribe/verify/{code}', [
                 'as'   => 'verify',
                 'uses' => 'SubscribeController@getVerify',

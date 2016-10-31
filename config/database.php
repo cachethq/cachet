@@ -76,25 +76,15 @@ return [
         ],
 
         'pgsql' => [
-            'driver'    => 'pgsql',
-            'host'      => env('DB_HOST', null),
-            'database'  => env('DB_DATABASE', null),
-            'username'  => env('DB_USERNAME', null),
-            'password'  => env('DB_PASSWORD', null),
-            'port'      => env('DB_PORT', '5432'),
-            'charset'   => 'utf8',
-            'prefix'    => env('DB_PREFIX', null),
-            'schema'    => env('DB_SCHEMA', 'public'),
-        ],
-
-        'sqlsrv' => [
-            'driver'    => 'sqlsrv',
-            'host'      => env('DB_HOST', null),
-            'database'  => env('DB_DATABASE', null),
-            'username'  => env('DB_USERNAME', null),
-            'password'  => env('DB_PASSWORD', null),
-            'port'      => env('DB_PORT', null),
-            'prefix'    => env('DB_PREFIX', null),
+            'driver'   => 'pgsql',
+            'host'     => env('DB_HOST', null),
+            'database' => env('DB_DATABASE', null),
+            'username' => env('DB_USERNAME', null),
+            'password' => env('DB_PASSWORD', null),
+            'port'     => env('DB_PORT', '5432'),
+            'charset'  => 'utf8',
+            'prefix'   => env('DB_PREFIX', null),
+            'schema'   => env('DB_SCHEMA', 'public'),
         ],
 
     ],
@@ -131,6 +121,7 @@ return [
             'host'     => env('REDIS_HOST', '127.0.0.1'),
             'port'     => env('REDIS_PORT', 6379),
             'database' => env('REDIS_DATABASE', 0),
+            'password' => env('REDIS_PASSWORD', null),
         ],
 
     ],

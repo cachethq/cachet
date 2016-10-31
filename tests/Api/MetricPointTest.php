@@ -29,9 +29,12 @@ class MetricPointTest extends AbstractApiTestCase
         ]);
 
         $this->get("/api/v1/metrics/{$metric->id}/points");
+
         $this->seeJson(['id' => $metricPoint[0]->id]);
         $this->seeJson(['id' => $metricPoint[1]->id]);
         $this->seeJson(['id' => $metricPoint[2]->id]);
+
+        $this->assertResponseOk();
     }
 
     public function testPostMetricPointUnauthorized()
@@ -55,7 +58,10 @@ class MetricPointTest extends AbstractApiTestCase
         ]);
 
         $this->post("/api/v1/metrics/{$metric->id}/points", $metricPoint->toArray());
+
         $this->seeJson(['value' => $metricPoint->value]);
+
+        $this->assertResponseOk();
     }
 
     public function testPostMetricPointTimestamp()
@@ -72,7 +78,10 @@ class MetricPointTest extends AbstractApiTestCase
         $postData['timestamp'] = $timestamp;
 
         $this->post("/api/v1/metrics/{$metric->id}/points", $postData);
+
         $this->seeJson(['value' => $metricPoint->value, 'created_at' => $datetime]);
+
+        $this->assertResponseOk();
     }
 
     public function testPostMetricPointTimestampTimezone()
@@ -96,7 +105,10 @@ class MetricPointTest extends AbstractApiTestCase
         $postData['timestamp'] = $datetime->timestamp;
 
         $this->post("/api/v1/metrics/{$metric->id}/points", $postData, ['Time-Zone' => $timezone]);
+
         $this->seeJson(['value' => $metricPoint->value, 'created_at' => $datetime->toDateTimeString()]);
+
+        $this->assertResponseOk();
     }
 
     public function testPutMetricPoint()
@@ -106,10 +118,14 @@ class MetricPointTest extends AbstractApiTestCase
         $metricPoint = factory('CachetHQ\Cachet\Models\MetricPoint')->create([
             'metric_id' => $metric->id,
         ]);
+
         $this->put("/api/v1/metrics/{$metric->id}/points/{$metricPoint->id}", [
             'value' => 999,
         ]);
+
         $this->seeJson(['value' => 999]);
+
+        $this->assertResponseOk();
     }
 
     public function testDeleteMetricPoint()
@@ -119,7 +135,9 @@ class MetricPointTest extends AbstractApiTestCase
         $metricPoint = factory('CachetHQ\Cachet\Models\MetricPoint')->create([
             'metric_id' => $metric->id,
         ]);
+
         $this->delete("/api/v1/metrics/{$metric->id}/points/{$metricPoint->id}");
+
         $this->assertResponseStatus(204);
     }
 }

@@ -50,7 +50,7 @@ class Subscription extends Model
     ];
 
     /**
-     * A subscription belongs to a subscriber.
+     * Get the subscriber relation.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -60,7 +60,7 @@ class Subscription extends Model
     }
 
     /**
-     * A subscription has one component.
+     * Get the component relation.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
@@ -107,7 +107,10 @@ class Subscription extends Model
     {
         return $query->select('subscriptions.*')
             ->join('subscribers', 'subscriptions.subscriber_id', '=', 'subscribers.id')
-            ->where('component_id', $component_id)
+            ->where(function ($query) {
+                $query->where('subscriptions.component_id', $component_id)
+                    ->orWhere('subscribers.global');
+            })
             ->whereNotNull('subscribers.verified_at');
     }
 }

@@ -51,7 +51,7 @@ class UpdateMetricPointCommandHandler
 
         $data = [
             'metric_id' => $metric->id,
-            'value'     => $command->value,
+            'value'     => (float) $command->value,
         ];
 
         if ($createdAt) {

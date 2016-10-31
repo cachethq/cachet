@@ -20,7 +20,7 @@ return [
             4 => 'قطعی بزرگ',
         ],
         'group' => [
-            'other' => 'Other Components',
+            'other' => 'کامپوننت‌های دیگر',
         ],
     ],
 
@@ -30,7 +30,7 @@ return [
         'past'          => 'حوادث گذشته',
         'previous_week' => 'هفته گذشته',
         'next_week'     => 'هفته ی آتی',
-        'scheduled'     => 'Scheduled Maintenance',
+        'scheduled'     => 'تعمیرات زمان‌بندی شده',
         'scheduled_at'  => '، برنامه ریزی شده :timestamp',
         'status'        => [
             0 => 'برنامه ریزی شده', // TODO: Hopefully remove this.
@@ -49,8 +49,8 @@ return [
     ],
 
     'api' => [
-        'regenerate' => 'Regenerate API Key',
-        'revoke'     => 'Revoke API Key',
+        'regenerate' => 'ساخت مجدد کلید API',
+        'revoke'     => 'غیرفعال نمودن کلید API',
     ],
 
     // Metrics
@@ -65,42 +65,38 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe' => 'Subscribe to get the most recent updates',
-        'button'    => 'Subscribe',
+        'subscribe' => 'مشترک شوید تا از آخرین به‌روزرسانی‌ها آگاه شوید',
+        'button'    => 'اشتراک اطلاع‌رسانی',
         'manage'    => [
-            'no_subscriptions' => 'You\'re currently subscribed to all updates.',
-            'my_subscriptions' => 'You\'re currently subscribed to the following updates.',
+            'no_subscriptions' => 'در حال حاضر شما برای همه به‌روزرسانی‌ها مشترک هستید.',
+            'my_subscriptions' => 'در حال حاضر شما برای این به‌روزرسانی‌ها مشترک هستید.',
         ],
         'email' => [
-            'subscribe'          => 'Subscribe to email updates.',
-            'subscribed'         => 'You\'ve been subscribed to email notifications, please check your email to confirm your subscription.',
-            'verified'           => 'Your email subscription has been confirmed. Thank you!',
-            'manage'             => 'Manage your subscription.',
-            'unsubscribe'        => 'Unsubscribe from email updates.',
-            'unsubscribed'       => 'Your email subscription has been cancelled.',
-            'failure'            => 'Something went wrong with the subscription.',
-            'already-subscribed' => 'Cannot subscribe :email because they\'re already subscribed.',
+            'subscribe'          => 'اشتراک در به‌روزرسانی‌های ایمیلی.',
+            'subscribed'         => 'شما در اطلاع‌رسانی‌های ایمیلی مشترک هستید، لطفا ایمیل خود را جهت تایید اشتراک، کنترل نمایید.',
+            'verified'           => 'ایمیل اشتراک شما با موفقیت تایید شد. با تشکر!',
+            'manage'             => 'Manage your subscription',
+            'unsubscribe'        => 'لغو اشتراک ایمیلی برای به‌روزرسانی‌ها.',
+            'unsubscribed'       => 'اشتراک ایمیلی شما لغو گردید.',
+            'failure'            => 'هنگام عضویت اشتراک خطایی رخ داد.',
+            'already-subscribed' => 'امکان مشترک شدن :email وجود ندارد، زیرا در حال حاضر این ایمیل مشترک می‌باشد.',
             'verify'             => [
-                'text'           => "Please confirm your email subscription to :app_name status updates.\n:link\nThank you, :app_name",
-                'html-preheader' => 'Please confirm your email subscription to :app_name status updates.',
-                'html'           => '<p>Please confirm your email subscription to :app_name status updates.</p><p><a href=":link">:link</a></p><p>Thank you, :app_name</p>',
+                'text'   => "Please confirm your email subscription to :app_name status updates.\n:link",
+                'html'   => '<p>Please confirm your email subscription to :app_name status updates.</p>',
+                'button' => 'Confirm Subscription',
             ],
             'maintenance' => [
-                'text'           => "New maintenance has been scheduled on :app_name.\nThank you, :app_name",
-                'html-preheader' => 'New maintenance has been scheduled on :app_name.',
-                'html'           => '<p>New maintenance has been scheduled on :app_name.</p>',
+                'subject' => '[Maintenance Scheduled] :name',
             ],
             'incident' => [
-                'text'           => "New incident has been reported on :app_name.\nThank you, :app_name",
-                'html-preheader' => 'New incident has been reported on :app_name.',
-                'html'           => '<p>New incident has been reported on :app_name.</p><p>Thank you, :app_name</p>',
+                'subject' => '[New Incident] :status: :name',
             ],
             'component' => [
-                'subject'        => 'Component Status Update',
-                'text'           => 'The component :component_name has seen a status change. The component is now at :component_human_status.\nThank you, :app_name',
-                'html-preheader' => 'Component Update from :app_name',
-                'html'           => '<p>The component :component_name has seen a status change. The component is now at :component_human_status.</p><p>Thank you, :app_name</p>',
-                'tooltip-title'  => 'Subscribe to notifications for :component_name.',
+                'subject' => 'به‌روزرسانی وضعیت کامپوننت',
+                'text'    => 'کامپوننت :component یک تغییر وضعیت دارد. این کامپوننت هم‌اکنون در حالت :component_human_status قرار دارد.\n
+با تشکر، :app_name',
+                'html'          => '<p> کامپوننت با نام :component_name یک تغییر وضعیت دارد. کامپوننت هم‌اکنون در حالت :component_human_status قرار دارد. </p><p> با تشکر :app_name </p>',
+                'tooltip-title' => 'Subscribe to notifications for :component_name.',
             ],
         ],
     ],
@@ -108,9 +104,8 @@ return [
     'users' => [
         'email' => [
             'invite' => [
-                'text'           => "You have been invited to the team :app_name status page, to sign up follow the next link.\n:link\nThank you, :app_name",
-                'html-preheader' => 'You have been invited to the team :app_name.',
-                'html'           => '<p>You have been invited to the team :app_name status page, to sign up follow the next link.</p><p><a href=":link">:link</a></p><p>Thank you, :app_name</p>',
+                'text' => "You have been invited to the team :app_name status page, to sign up follow the next link.\n:link\nThank you, :app_name",
+                'html' => '<p>You have been invited to the team :app_name status page, to sign up follow the next link.</p><p><a href=":link">:link</a></p><p>Thank you, :app_name</p>',
             ],
         ],
     ],
@@ -134,17 +129,17 @@ return [
         'subscribe' => [
             'title'  => 'Subscribe to component updates',
             'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll already receive emails for this component.',
-            'button' => 'Subscribe',
+            'button' => 'اشتراک اطلاع‌رسانی',
         ],
     ],
 
     // Other
     'home'            => 'خانه',
     'description'     => 'Stay up to date with the latest service updates from :app.',
-    'powered_by'      => ':app Status Page is powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
+    'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
     'about_this_site' => 'درباره این سایت',
     'rss-feed'        => 'خوراک (RSS)',
     'atom-feed'       => 'خوراک (Atom)',
-    'feed'            => 'Status Feed',
+    'feed'            => 'فید (خوراک) وضعیت',
 
 ];

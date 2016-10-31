@@ -34,6 +34,7 @@ return [
         'invalid'       => 'Invalid username or password',
         'invalid-token' => 'Neplatný token',
         'cookies'       => 'Pro přihlášení je třeba povolit soubory cookie.',
+        'rate-limit'    => 'Rate limit exceeded.',
     ],
 
     // Incidents form fields
@@ -89,6 +90,7 @@ return [
         'type_avg'         => 'Průměr',
         'places'           => 'Decimal places',
         'default_view'     => 'Default view',
+        'threshold'        => 'How many minutes of threshold between metric points?',
 
         'points' => [
             'value' => 'Hodnota',
@@ -107,6 +109,7 @@ return [
             'banner'                 => 'Banner Image',
             'banner-help'            => 'Doručuje se nenahrávat soubory větší než 930 pixelů na šířku.',
             'subscribers'            => 'Umožnit lidem, aby se přihlašovali k odběru e-mailových upozornění?',
+            'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
         ],
         'analytics' => [
             'analytics_google'       => 'Google Analytics code',
@@ -115,10 +118,10 @@ return [
             'analytics_piwik_siteid' => 'Piwik\'s site id',
         ],
         'localization' => [
-            'site-timezone'          => 'Site timezone',
-            'site-locale'            => 'Site language',
-            'date-format'            => 'Date format',
-            'incident-date-format'   => 'Incident timestamp format',
+            'site-timezone'        => 'Site timezone',
+            'site-locale'          => 'Site language',
+            'date-format'          => 'Date format',
+            'incident-date-format' => 'Incident timestamp format',
         ],
         'security' => [
             'allowed-domains'      => 'Allowed domains',

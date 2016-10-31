@@ -28,17 +28,7 @@ class SubscriberPresenter extends BasePresenter implements Arrayable
      */
     public function verified_at()
     {
-        return app(DateFactory::class)->make($this->wrappedObject->verified_at)->toDateTimeString();
-    }
-
-    /**
-     * Present formatted subscribed date.
-     *
-     * @return string
-     */
-    public function subscribed_at()
-    {
-        return ucfirst(app(DateFactory::class)->make($this->wrappedObject->subscribed_at)->format(Config::get('setting.incident_date_format', 'l jS F Y H:i:s')));
+        return ucfirst(app(DateFactory::class)->make($this->wrappedObject->verified_at)->format(Config::get('setting.incident_date_format', 'l jS F Y H:i:s')));
     }
 
     /**

@@ -34,6 +34,7 @@ return [
         'invalid'       => 'Ongeldige gebruikersnaam of wachtwoord',
         'invalid-token' => 'Ongeldig token',
         'cookies'       => 'U moet cookies inschakelen om in te loggen.',
+        'rate-limit'    => 'Snelheids limiet overschreden.',
     ],
 
     // Incidents form fields
@@ -89,6 +90,7 @@ return [
         'type_avg'         => 'Gemiddelde',
         'places'           => 'Decimalen',
         'default_view'     => 'Standaardweergave',
+        'threshold'        => 'Hoeveel minuten tussen de metrische punten?',
 
         'points' => [
             'value' => 'Waarde',
@@ -107,6 +109,7 @@ return [
             'banner'                 => 'Banner afbeelding',
             'banner-help'            => 'Het wordt aanbevolen dat u geen bestanden upload die breeder zijn dan 930px.',
             'subscribers'            => 'Bezoekers toestaan om te abonneren op e-mail notificaties?',
+            'automatic_localization' => 'Stel de taal van de bezoeker in als standaardtaal voor deze bezoeker?',
         ],
         'analytics' => [
             'analytics_google'       => 'Google Analytics-code',
@@ -115,10 +118,10 @@ return [
             'analytics_piwik_siteid' => 'Site-id van Piwik',
         ],
         'localization' => [
-            'site-timezone'          => 'Website tijdzone',
-            'site-locale'            => 'Taal van de site',
-            'date-format'            => 'Datum formaat',
-            'incident-date-format'   => 'Incident tijdsaanduiding',
+            'site-timezone'        => 'Website tijdzone',
+            'site-locale'          => 'Taal van de site',
+            'date-format'          => 'Datum formaat',
+            'incident-date-format' => 'Incident tijdsaanduiding',
         ],
         'security' => [
             'allowed-domains'      => 'Toegestane domeinen',

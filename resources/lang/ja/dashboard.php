@@ -22,7 +22,7 @@ return [
         'incident-templates'       => 'インシデント・テンプレート',
         'add'                      => [
             'title'   => 'インシデントの報告',
-            'success' => 'Incident added.',
+            'success' => 'インシデントが追加されました。',
             'failure' => 'There was an error adding the incident, please try again.',
         ],
         'edit' => [
@@ -150,6 +150,7 @@ return [
             'title'   => '購読者の追加',
             'success' => 'Subscriber has been added!',
             'failure' => 'Something went wrong adding the subscriber, please try again.',
+            'help'    => 'Enter each subscriber on a new line.',
         ],
         'edit' => [
             'title'   => '購読者の更新',
@@ -218,6 +219,14 @@ return [
             'success' => '設定が保存されました。',
             'failure' => '設定が保存できませんでした。',
         ],
+        'credits' => [
+            'credits'       => 'Credits',
+            'contributors'  => 'Contributors',
+            'license'       => 'Cachet is a BSD-3-licensed open source project, released by <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
+            'backers-title' => 'Backers & Sponsors',
+            'backers'       => 'If you\'d like to support future development, check out the <a href="https://patreon.com/jbrooksuk" target="_blank">Cachet Patreon</a> campaign.',
+            'thank-you'     => 'Thank you to each and every one of the :count contributors.',
+        ],
     ],
 
     // Login
@@ -238,6 +247,14 @@ return [
         'notifications' => '通知',
         'awesome'       => 'Awesome.',
         'whoops'        => 'おおっと',
+    ],
+
+    // Widgets
+    'widgets' => [
+        'support'          => 'Support Cachet',
+        'support_subtitle' => 'Check out our <strong><a href="https://patreon.com/jbrooksuk" target="_blank">Patreon</a></strong> page!',
+        'news'             => 'Latest News',
+        'news_subtitle'    => 'Get the latest updates',
     ],
 
     // Welcome modal

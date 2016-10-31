@@ -93,13 +93,13 @@ class ComponentGroup extends Model implements HasPresenter
     protected $with = ['enabled_components', 'enabled_components_lowest'];
 
     /**
-     * A group can have many components.
+     * Get the components relation.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function components()
     {
-        return $this->hasMany(Component::class, 'group_id', 'id');
+        return $this->hasMany(Component::class, 'group_id', 'id')->orderBy('order');
     }
 
     /**

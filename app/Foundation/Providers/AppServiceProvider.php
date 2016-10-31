@@ -12,10 +12,18 @@
 namespace CachetHQ\Cachet\Foundation\Providers;
 
 use AltThree\Bus\Dispatcher;
+use CachetHQ\Cachet\Bus\Middleware\UseDatabaseTransactions;
 use CachetHQ\Cachet\Dates\DateFactory;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 
+/**
+ * This is the app service provider.
+ *
+ * @author James Brooks <james@alt-three.com>
+ * @author Joe Cohen <joe@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
+ */
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -28,6 +36,8 @@ class AppServiceProvider extends ServiceProvider
         $dispatcher->mapUsing(function ($command) {
             return Dispatcher::simpleMapping($command, 'CachetHQ\Cachet\Bus', 'CachetHQ\Cachet\Bus\Handlers');
         });
+
+        $dispatcher->pipeThrough([UseDatabaseTransactions::class]);
 
         Str::macro('canonicalize', function ($url) {
             return preg_replace('/([^\/])$/', '$1/', $url);
@@ -52,8 +62,8 @@ class AppServiceProvider extends ServiceProvider
     protected function registerDateFactory()
     {
         $this->app->singleton(DateFactory::class, function ($app) {
-            $appTimezone = $app->config->get('app.timezone');
-            $cacheTimezone = $app->config->get('cachet.timezone');
+            $appTimezone = $app['config']->get('app.timezone');
+            $cacheTimezone = $app['config']->get('cachet.timezone');
 
             return new DateFactory($appTimezone, $cacheTimezone);
         });

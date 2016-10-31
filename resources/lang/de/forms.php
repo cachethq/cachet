@@ -34,6 +34,7 @@ return [
         'invalid'       => 'Ungültiger Benutzername oder Passwort',
         'invalid-token' => 'Token ist ungültig',
         'cookies'       => 'Sie müssen Cookies aktivieren um sich anzumelden.',
+        'rate-limit'    => 'Maximale Anzahl von Bewertungen erreicht.',
     ],
 
     // Incidents form fields
@@ -89,6 +90,7 @@ return [
         'type_avg'         => 'Durchschnitt',
         'places'           => 'Nachkommastellen',
         'default_view'     => 'Standardansicht',
+        'threshold'        => 'Wie viele Minuten soll der Abstand zwischen den Messpunkten sein?',
 
         'points' => [
             'value' => 'Wert',
@@ -107,6 +109,7 @@ return [
             'banner'                 => 'Banner Bild',
             'banner-help'            => 'Es wird empfohlen, dass Sie keine Dateien die breiter als 930 Pixel sind hochladen .',
             'subscribers'            => 'Personen die Anmeldung für E-Mail-Benachrichtigung erlauben?',
+            'automatic_localization' => 'Die Status-Seite automatisch auf die Sprache deiner Besucher anpassen?',
         ],
         'analytics' => [
             'analytics_google'       => 'Google Analytics Code',
@@ -115,10 +118,10 @@ return [
             'analytics_piwik_siteid' => 'Piwik\'s Seiten-ID',
         ],
         'localization' => [
-            'site-timezone'          => 'Zeitzone ihrer Seite',
-            'site-locale'            => 'Sprache ihrer Seite',
-            'date-format'            => 'Datumsformat',
-            'incident-date-format'   => 'Vorfall Zeitstempel-Format',
+            'site-timezone'        => 'Zeitzone ihrer Seite',
+            'site-locale'          => 'Sprache ihrer Seite',
+            'date-format'          => 'Datumsformat',
+            'incident-date-format' => 'Vorfall Zeitstempel-Format',
         ],
         'security' => [
             'allowed-domains'      => 'Erlaubte Domains',

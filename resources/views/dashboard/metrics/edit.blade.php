@@ -55,6 +55,10 @@
                             <label for="metric-places">{{ trans('forms.metrics.places') }}</label>
                             <input type="number" min="0" max="4" class="form-control" name="places" id="metric-places" required value="{{ $metric->places }}">
                         </div>
+                        <div class="form-group">
+                            <label for="metric-places">{{ trans('forms.metrics.threshold') }}</label>
+                            <input type="number" min="0" max="100" class="form-control" name="threshold" id="metric-threshold" required value="{{ $metric->threshold }}">
+                        </div>
                         <div class="checkbox">
                             <label>
                                 <input type="hidden" value="0" name="display_chart">

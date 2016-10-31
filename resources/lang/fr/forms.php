@@ -34,6 +34,7 @@ return [
         'invalid'       => 'Nom d\'utilisateur ou mot de passe incorrect',
         'invalid-token' => 'Jeton invalide',
         'cookies'       => 'Vous devez activer les cookies pour vous connecter.',
+        'rate-limit'    => 'Limite de tentatives atteinte.',
     ],
 
     // Incidents form fields
@@ -89,6 +90,7 @@ return [
         'type_avg'         => 'Moyenne',
         'places'           => 'Nombre de chiffres après la virgule',
         'default_view'     => 'Vue par défaut',
+        'threshold'        => 'Quel intervalle en minutes entre chaque point de métrique ?',
 
         'points' => [
             'value' => 'Valeur',
@@ -107,6 +109,7 @@ return [
             'banner'                 => 'Image d\'en-tête',
             'banner-help'            => 'Il est recommandé de téléchargez un fichier ne dépassant pas 930px de large .',
             'subscribers'            => 'Permettre aux personnes de s\'inscrire aux notifications par e-mail ?',
+            'automatic_localization' => 'Traduire automatiquement votre page de statut dans la langue du visiteur ?',
         ],
         'analytics' => [
             'analytics_google'       => 'Code de Google Analytics',
@@ -115,10 +118,10 @@ return [
             'analytics_piwik_siteid' => 'Id du site de Piwik',
         ],
         'localization' => [
-            'site-timezone'          => 'Fuseau horaire du site',
-            'site-locale'            => 'Langue du site',
-            'date-format'            => 'Format de la date',
-            'incident-date-format'   => 'Format de la date de l\'incident',
+            'site-timezone'        => 'Fuseau horaire du site',
+            'site-locale'          => 'Langue du site',
+            'date-format'          => 'Format de la date',
+            'incident-date-format' => 'Format de la date de l\'incident',
         ],
         'security' => [
             'allowed-domains'      => 'Domaines autorisés',

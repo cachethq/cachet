@@ -16,6 +16,7 @@ use Illuminate\Auth\Authenticatable;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Hash;
@@ -91,6 +92,30 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
                 $user->api_key = self::generateApiKey();
             }
         });
+    }
+
+    /**
+     * Scope all admin users.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeAdmins(Builder $query)
+    {
+        return $query->where('level', self::LEVEL_ADMIN);
+    }
+
+    /**
+     * Scope all active users.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeActive(Builder $query)
+    {
+        return $query->where('active', true);
     }
 
     /**

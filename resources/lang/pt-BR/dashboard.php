@@ -59,21 +59,21 @@ return [
     // Incident Maintenance
     'schedule' => [
         'schedule'     => 'Manutenção Agendada',
-        'logged'       => '{0} There are no schedules, good work.|You have logged one schedule.|You have reported <strong>:count</strong> schedules.',
+        'logged'       => '{0} Não existem agendamentos, bom trabalho.|Você introduziu um agendamento.|Você reportou <strong>:count</strong> agendamentos.',
         'scheduled_at' => 'Agendada em :timestamp',
         'add'          => [
-            'title'   => 'Add Scheduled Maintenance',
-            'success' => 'Schedule added.',
-            'failure' => 'Something went wrong adding the schedule, please try again.',
+            'title'   => 'Adicionar manutenção programada',
+            'success' => 'Programação adicionada.',
+            'failure' => 'Ocorreu um problema ao adicionar a programação, por favor tente novamente.',
         ],
         'edit' => [
-            'title'   => 'Edit Scheduled Maintenance',
-            'success' => 'Schedule has been updated!',
-            'failure' => 'Something went wrong editing the schedule, please try again.',
+            'title'   => 'Edite a manutenção agendada',
+            'success' => 'A programação foi atualizada!',
+            'failure' => 'Ocorreu um problema ao editar a programação, por favor tente novamente.',
         ],
         'delete' => [
-            'success' => 'The scheduled maintenance has been deleted and will not show on your status page.',
-            'failure' => 'The scheduled maintenance could not be deleted, please try again.',
+            'success' => 'A manutenção programada foi excluída e não aparecerá na sua página de status.',
+            'failure' => 'A manutenção programada não pode ser excluída, por favor tente novamente.',
         ],
     ],
 
@@ -83,19 +83,19 @@ return [
         'component_statuses' => 'Status do componente',
         'listed_group'       => 'Agrupados sob :name',
         'add'                => [
-            'title'   => 'Add a component',
+            'title'   => 'Adicionar componente',
             'message' => 'Você deve adicionar um componente.',
-            'success' => 'Component created.',
-            'failure' => 'Something went wrong with the component, please try again.',
+            'success' => 'Componente criado.',
+            'failure' => 'Algo deu errado com o componente, por favor tente novamente.',
         ],
         'edit' => [
-            'title'   => 'Edit a component',
-            'success' => 'Component updated.',
-            'failure' => 'Something went wrong with the component, please try again.',
+            'title'   => 'Editar um componente',
+            'success' => 'Componente atualizado.',
+            'failure' => 'Algo deu errado com o componente, por favor tente novamente.',
         ],
         'delete' => [
-            'success' => 'The component has been deleted!',
-            'failure' => 'The component could not be deleted, please try again.',
+            'success' => 'O componente foi excluído!',
+            'failure' => 'O componente não pode ser excluído. Por favor tente de novo.',
         ],
 
         // Component groups
@@ -103,18 +103,18 @@ return [
             'groups'        => 'Grupo de componente|Grupos de componente',
             'no_components' => 'Você deve adicionar um componente à um grupo.',
             'add'           => [
-                'title'   => 'Add a component group',
-                'success' => 'Component group added.',
-                'failure' => 'Something went wrong with the component group, please try again.',
+                'title'   => 'Adicionar um grupo de componentes',
+                'success' => 'Grupo de componentes adicionado.',
+                'failure' => 'Algo deu errado com o grupo de componentes, por favor tente novamente.',
             ],
             'edit' => [
-                'title'   => 'Edit a component group',
-                'success' => 'Component group updated.',
-                'failure' => 'Something went wrong with the component group, please try again.',
+                'title'   => 'Editar um grupo de componentes',
+                'success' => 'Grupo de componentes atualizado.',
+                'failure' => 'Algo deu errado com o grupo de componentes, por favor tente novamente.',
             ],
             'delete' => [
-                'success' => 'Component group has been deleted!',
-                'failure' => 'The component group could not be deleted, please try again.',
+                'success' => 'O grupo de componentes foi excluído!',
+                'failure' => 'O grupo de componentes não pode ser excluído, por favor tente novamente.',
             ],
         ],
     ],
@@ -123,38 +123,39 @@ return [
     'metrics' => [
         'metrics' => 'Metricas',
         'add'     => [
-            'title'   => 'Create a metric',
-            'message' => 'You should add a metric.',
-            'success' => 'Metric created.',
-            'failure' => 'Something went wrong with the metric, please try again.',
+            'title'   => 'Criar uma métrica',
+            'message' => 'Você deveria adicionar uma métrica.',
+            'success' => 'Métrica criada.',
+            'failure' => 'Algo deu errado com a métrica, por favor tente novamente.',
         ],
         'edit' => [
-            'title'   => 'Edit a metric',
-            'success' => 'Metric updated.',
-            'failure' => 'Something went wrong with the metric, please try again.',
+            'title'   => 'Editar uma métrica',
+            'success' => 'Métrica atualizada.',
+            'failure' => 'Algo deu errado com a métrica, por favor tente novamente.',
         ],
         'delete' => [
-            'success' => 'The metric has been deleted and will no longer display on your status page.',
-            'failure' => 'The metric could not be deleted, please try again.',
+            'success' => 'A métrica foi excluída e não será mais exibida na sua página de status.',
+            'failure' => 'A métrica não pode ser excluída, por favor tente novamente.',
         ],
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'      => 'Inscritos',
-        'description'      => 'Subscribers will receive email updates when incidents are created or components are updated.',
+        'subscribers'      => 'Assinantes',
+        'description'      => 'Assinantes vão receber atualizações de e-mail quando incidentes criados ou componentes atualizados.',
         'verified'         => 'Verificado',
         'not_verified'     => 'Não verificado',
-        'subscriber'       => ':email, subscribed :date',
-        'no_subscriptions' => 'Subscribed to all updates',
+        'subscriber'       => ':email, inscreveu-se em :date',
+        'no_subscriptions' => 'Inscrito em todas as atualizações',
         'add'              => [
-            'title'   => 'Add a new subscriber',
+            'title'   => 'Adicionar um novo assinante',
             'success' => 'Inscrito adicionado.',
-            'failure' => 'Something went wrong adding the subscriber, please try again.',
+            'failure' => 'Algo deu errado adicionando o assinante, por favor tente novamente.',
+            'help'    => 'Insira cada assinante em uma nova linha.',
         ],
         'edit' => [
-            'title'   => 'Update subscriber',
+            'title'   => 'Atualizar assinante',
             'success' => 'Inscrito atualizado.',
-            'failure' => 'Something went wrong editing the subscriber, please try again.',
+            'failure' => 'Algo deu errado editando o assinante, por favor tente novamente.',
         ],
     ],
 
@@ -165,23 +166,23 @@ return [
         'profile'     => 'Perfil	',
         'description' => 'Membros da equipe serão capazes de adicionar, modificar &amp; editar componentes e incidentes.',
         'add'         => [
-            'title'   => 'Add a new team member',
-            'success' => 'Team member added.',
-            'failure' => 'The team member could not be added, please try again.',
+            'title'   => 'Adicionar um novo membro da equipe',
+            'success' => 'Membro da equipe adicionado.',
+            'failure' => 'Membro da equipe não pôde ser adicionado, por favor tente novamente.',
         ],
         'edit' => [
-            'title'   => 'Update profile',
-            'success' => 'Profile updated.',
-            'failure' => 'Something went wrong updating the profile, please try again.',
+            'title'   => 'Atualizar perfil',
+            'success' => 'Perfil atualizado.',
+            'failure' => 'Algo deu errado atualizando o perfil, por favor tente novamente.',
         ],
         'delete' => [
-            'success' => 'Team member has been deleted and will no longer have access to the dashboard!',
-            'failure' => 'The team member could not be added, please try again.',
+            'success' => 'O membro da equipe foi excluído e não conseguirá mais acessar o painel de controle!',
+            'failure' => 'Membro da equipe não pôde ser adicionado, por favor tente novamente.',
         ],
         'invite' => [
-            'title'   => 'Invite a new team member',
-            'success' => 'An invite has been sent',
-            'failure' => 'The invite could not be sent, please try again.',
+            'title'   => 'Convidar um novo membro para a equipe',
+            'success' => 'Convite enviado',
+            'failure' => 'O convite não pôde ser enviado, por favor tente novamente.',
         ],
     ],
 
@@ -194,15 +195,15 @@ return [
             'too-big'     => 'O arquivo que você carregou é muito grande. Envie uma imagem inferior à :size',
         ],
         'analytics' => [
-            'analytics' => 'Analytics',
+            'analytics' => 'Estatísticas',
         ],
         'localization' => [
-            'localization' => 'Localization',
+            'localization' => 'Idioma',
         ],
         'customization' => [
-            'customization' => 'Customization',
-            'header'        => 'Custom Header HTML',
-            'footer'        => 'Custom Footer HTML',
+            'customization' => 'Personalização',
+            'header'        => 'HTML de cabeçalho personalizado',
+            'footer'        => 'HTML de rodapé personalizado',
         ],
         'security' => [
             'security'   => 'Segurança',
@@ -217,6 +218,14 @@ return [
         'edit' => [
             'success' => 'Configurações salvas.',
             'failure' => 'Não foi possível salvar as configurações.',
+        ],
+        'credits' => [
+            'credits'       => 'Créditos',
+            'contributors'  => 'Colaboradores',
+            'license'       => 'Cachet é um projeto de código aberto com licença BSD-3, lançado pela <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank"> Alt Three Services Limited</a>.',
+            'backers-title' => 'Apoiadores e Patrocinadores',
+            'backers'       => 'Se você deseja apoiar o desenvolvimento, confira a campanha do <a href="https://patreon.com/jbrooksuk" target="_blank">Cachet no Pantreon</a>.',
+            'thank-you'     => 'Agradeço a cada um dos :count colaboradores.',
         ],
     ],
 
@@ -240,11 +249,19 @@ return [
         'whoops'        => 'Opa.',
     ],
 
+    // Widgets
+    'widgets' => [
+        'support'          => 'Ajude o Cachet',
+        'support_subtitle' => 'Confira nossa campanha no <strong><a href="https://patreon.com/jbrooksuk" target="_blank">Patreon</a></strong>!',
+        'news'             => 'Últimas Notícias',
+        'news_subtitle'    => 'Receba as últimas atualizações',
+    ],
+
     // Welcome modal
     'welcome' => [
-        'welcome' => 'Welcome to your status page!',
+        'welcome' => 'Bem-vindo à sua nova página de status!',
         'message' => 'Sua página de status está quase pronta! Tavez vocë queira checar essas configurações extras',
-        'close'   => 'Take me straight to my dashboard',
+        'close'   => 'Me leve direto para o meu painel de controle',
         'steps'   => [
             'component'  => 'Criar componentes',
             'incident'   => 'Criar incidentes',

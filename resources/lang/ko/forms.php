@@ -34,6 +34,7 @@ return [
         'invalid'       => 'Invalid username or password',
         'invalid-token' => '잘못된 토큰n',
         'cookies'       => '로그인 하려면 쿠키를 활성화 해야 합니다.',
+        'rate-limit'    => 'Rate limit exceeded.',
     ],
 
     // Incidents form fields
@@ -89,6 +90,7 @@ return [
         'type_avg'         => '평균',
         'places'           => 'Decimal places',
         'default_view'     => 'Default view',
+        'threshold'        => 'How many minutes of threshold between metric points?',
 
         'points' => [
             'value' => '값',
@@ -107,6 +109,7 @@ return [
             'banner'                 => 'Banner Image',
             'banner-help'            => '가로가 930 픽셀보다 작은 이미지를 업로드 하는 것을 권장합니다.',
             'subscribers'            => '이메일 알림을 받기 위한 회원가입 허용',
+            'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
         ],
         'analytics' => [
             'analytics_google'       => 'Google Analytics 코드',
@@ -115,10 +118,10 @@ return [
             'analytics_piwik_siteid' => 'Piwik 사이트 id',
         ],
         'localization' => [
-            'site-timezone'          => '사이트 시간대',
-            'site-locale'            => '사이트 언어',
-            'date-format'            => '날짜 형식',
-            'incident-date-format'   => '문제 Timestamp 형식',
+            'site-timezone'        => '사이트 시간대',
+            'site-locale'          => '사이트 언어',
+            'date-format'          => '날짜 형식',
+            'incident-date-format' => '문제 Timestamp 형식',
         ],
         'security' => [
             'allowed-domains'      => '허용된 도메인',

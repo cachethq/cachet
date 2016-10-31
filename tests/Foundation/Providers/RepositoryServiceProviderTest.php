@@ -12,6 +12,7 @@
 namespace CachetHQ\Tests\Cachet\Foundation\Providers;
 
 use AltThree\TestBench\ServiceProviderTrait;
+use CachetHQ\Cachet\Repositories\Metric\MetricRepository;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 
 /**
@@ -22,4 +23,9 @@ use CachetHQ\Tests\Cachet\AbstractTestCase;
 class RepositoryServiceProviderTest extends AbstractTestCase
 {
     use ServiceProviderTrait;
+
+    public function testMetricRepositoryIsInjectable()
+    {
+        $this->assertIsInjectable(MetricRepository::class);
+    }
 }

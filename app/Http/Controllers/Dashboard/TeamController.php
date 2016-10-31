@@ -12,8 +12,8 @@
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
 use AltThree\Validator\ValidationException;
-use CachetHQ\Cachet\Bus\Commands\User\AddTeamMemberCommand;
-use CachetHQ\Cachet\Bus\Commands\User\InviteTeamMemberCommand;
+use CachetHQ\Cachet\Bus\Commands\User\AddUserCommand;
+use CachetHQ\Cachet\Bus\Commands\User\InviteUserCommand;
 use CachetHQ\Cachet\Bus\Commands\User\RemoveUserCommand;
 use CachetHQ\Cachet\Models\User;
 use GrahamCampbell\Binput\Facades\Binput;
@@ -81,7 +81,7 @@ class TeamController extends Controller
     public function postAddUser()
     {
         try {
-            dispatch(new AddTeamMemberCommand(
+            dispatch(new AddUserCommand(
                 Binput::get('username'),
                 Binput::get('password'),
                 Binput::get('email'),
@@ -130,7 +130,7 @@ class TeamController extends Controller
     public function postInviteUser()
     {
         try {
-            dispatch(new InviteTeamMemberCommand(
+            dispatch(new InviteUserCommand(
                 array_unique(array_filter((array) Binput::get('emails')))
             ));
         } catch (ValidationException $e) {

@@ -150,6 +150,7 @@ return [
             'title'   => 'Добавить нового подписчика',
             'success' => 'Подписчик добавлен!',
             'failure' => 'Что-то пошло не так при добавлении подписчика, пожалуйста, повторите ещё раз.',
+            'help'    => 'Enter each subscriber on a new line.',
         ],
         'edit' => [
             'title'   => 'Обновить подписчика',
@@ -218,6 +219,14 @@ return [
             'success' => 'Настройки сохранены.',
             'failure' => 'Не удаётся сохранить настройки.',
         ],
+        'credits' => [
+            'credits'       => 'Разработчики',
+            'contributors'  => 'Разработчики',
+            'license'       => 'Cachet is a BSD-3-licensed open source project, released by <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
+            'backers-title' => 'Партнеры & спонсоры',
+            'backers'       => 'If you\'d like to support future development, check out the <a href="https://patreon.com/jbrooksuk" target="_blank">Cachet Patreon</a> campaign.',
+            'thank-you'     => 'Thank you to each and every one of the :count contributors.',
+        ],
     ],
 
     // Login
@@ -238,6 +247,14 @@ return [
         'notifications' => 'Уведомления',
         'awesome'       => 'Отлично.',
         'whoops'        => 'Ой-ой!',
+    ],
+
+    // Widgets
+    'widgets' => [
+        'support'          => 'Поддержать Cachet',
+        'support_subtitle' => 'Check out our <strong><a href="https://patreon.com/jbrooksuk" target="_blank">Patreon</a></strong> page!',
+        'news'             => 'Последние новости',
+        'news_subtitle'    => 'Проверить обновления',
     ],
 
     // Welcome modal

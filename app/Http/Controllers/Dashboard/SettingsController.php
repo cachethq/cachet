@@ -11,7 +11,9 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
+use CachetHQ\Cachet\Integrations\Contracts\Credits;
 use CachetHQ\Cachet\Models\User;
+use CachetHQ\Cachet\Settings\Repository;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
@@ -79,6 +81,12 @@ class SettingsController extends Controller
                 'title'  => trans('dashboard.settings.analytics.analytics'),
                 'url'    => route('dashboard.settings.analytics'),
                 'icon'   => 'ion-stats-bars',
+                'active' => false,
+            ],
+            'credits' => [
+                'title'  => trans('dashboard.settings.credits.credits'),
+                'url'    => route('dashboard.settings.credits'),
+                'icon'   => 'ion-ios-list',
                 'active' => false,
             ],
             'about' => [
@@ -212,15 +220,37 @@ class SettingsController extends Controller
     }
 
     /**
+     * Show the credits view.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function showCreditsView()
+    {
+        $this->subMenu['credits']['active'] = true;
+
+        $credits = app(Credits::class)->latest();
+
+        $backers = $credits['backers'];
+        $contributors = $credits['contributors'];
+
+        shuffle($backers);
+        shuffle($contributors);
+
+        return View::make('dashboard.settings.credits')
+            ->withPageTitle(trans('dashboard.settings.credits.credits').' - '.trans('dashboard.dashboard'))
+            ->withBackers($backers)
+            ->withContributors($contributors)
+            ->withSubMenu($this->subMenu);
+    }
+
+    /**
      * Updates the status page settings.
      *
      * @return \Illuminate\View\View
      */
     public function postSettings()
     {
-        $redirectUrl = Session::get('redirect_to', route('dashboard.settings.setup'));
-
-        $setting = app('setting');
+        $setting = app(Repository::class);
 
         if (Binput::get('remove_banner') === '1') {
             $setting->set('app_banner', null);
@@ -245,29 +275,7 @@ class SettingsController extends Controller
         }
 
         if (Binput::hasFile('app_banner')) {
-            $file = Binput::file('app_banner');
-
-            // Image Validation.
-            // Image size in bytes.
-            $maxSize = $file->getMaxFilesize();
-
-            if ($file->getSize() > $maxSize) {
-                return Redirect::to($redirectUrl)->withErrors(trans('dashboard.settings.app-setup.too-big', ['size' => $maxSize]));
-            }
-
-            if (!$file->isValid() || $file->getError()) {
-                return Redirect::to($redirectUrl)->withErrors($file->getErrorMessage());
-            }
-
-            if (!Str::startsWith($file->getMimeType(), 'image/')) {
-                return Redirect::to($redirectUrl)->withErrors(trans('dashboard.settings.app-setup.images-only'));
-            }
-
-            // Store the banner.
-            $setting->set('app_banner', base64_encode(file_get_contents($file->getRealPath())));
-
-            // Store the banner type.
-            $setting->set('app_banner_type', $file->getMimeType());
+            $this->handleUpdateBanner($setting);
         }
 
         $excludedParams = [
@@ -287,13 +295,47 @@ class SettingsController extends Controller
                 $setting->set($settingName, $settingValue);
             }
         } catch (Exception $e) {
-            return Redirect::to($redirectUrl)->withErrors(trans('dashboard.settings.edit.failure'));
+            return Redirect::back()->withErrors(trans('dashboard.settings.edit.failure'));
         }
 
         if (Binput::has('app_locale')) {
             Lang::setLocale(Binput::get('app_locale'));
         }
 
-        return Redirect::to($redirectUrl)->withSuccess(trans('dashboard.settings.edit.success'));
+        return Redirect::back()->withSuccess(trans('dashboard.settings.edit.success'));
+    }
+
+    /**
+     * Handle updating of the banner image.
+     *
+     * @param \CachetHQ\Cachet\Settings\Repository $setting
+     *
+     * @return void
+     */
+    protected function handleUpdateBanner(Repository $setting)
+    {
+        $file = Binput::file('app_banner');
+
+        // Image Validation.
+        // Image size in bytes.
+        $maxSize = $file->getMaxFilesize();
+
+        if ($file->getSize() > $maxSize) {
+            return Redirect::to($redirectUrl)->withErrors(trans('dashboard.settings.app-setup.too-big', ['size' => $maxSize]));
+        }
+
+        if (!$file->isValid() || $file->getError()) {
+            return Redirect::to($redirectUrl)->withErrors($file->getErrorMessage());
+        }
+
+        if (!Str::startsWith($file->getMimeType(), 'image/')) {
+            return Redirect::to($redirectUrl)->withErrors(trans('dashboard.settings.app-setup.images-only'));
+        }
+
+        // Store the banner.
+        $setting->set('app_banner', base64_encode(file_get_contents($file->getRealPath())));
+
+        // Store the banner type.
+        $setting->set('app_banner_type', $file->getMimeType());
     }
 }

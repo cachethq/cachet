@@ -25,7 +25,7 @@ class Timezone
     protected $config;
 
     /**
-     * Creates a new release instance.
+     * Creates a new timezone middleware instance.
      *
      * @param \Illuminate\Contracts\Config\Repository $config
      *

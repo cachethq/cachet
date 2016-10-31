@@ -15,6 +15,7 @@ use CachetHQ\Cachet\Bus\Commands\Metric\AddMetricPointCommand;
 use CachetHQ\Cachet\Bus\Events\Metric\MetricPointWasAddedEvent;
 use CachetHQ\Cachet\Dates\DateFactory;
 use CachetHQ\Cachet\Models\MetricPoint;
+use Carbon\Carbon;
 
 class AddMetricPointCommandHandler
 {
@@ -49,19 +50,35 @@ class AddMetricPointCommandHandler
         $metric = $command->metric;
         $createdAt = $command->created_at;
 
-        $data = [
-            'metric_id' => $metric->id,
-            'value'     => $command->value,
-        ];
+        // Do we have an existing point with the same value?
+        $point = $this->findOrCreatePoint($command);
 
-        if ($createdAt) {
-            $data['created_at'] = $this->dates->create('U', $createdAt)->format('Y-m-d H:i:s');
+        $point->increment('counter', 1);
+
+        event(new MetricPointWasAddedEvent($point));
+
+        return $point;
+    }
+
+    protected function findOrCreatePoint(AddMetricPointCommand $command)
+    {
+        $buffer = Carbon::now()->subMinutes($command->metric->threshold);
+        $point = MetricPoint::where('metric_id', $command->metric->id)->where('value', $command->value)->where('created_at', '>=', $buffer)->first();
+
+        if ($point) {
+            return $point;
         }
 
-        $metricPoint = MetricPoint::create($data);
+        $data = [
+            'metric_id' => $command->metric->id,
+            'value'     => $command->value,
+            'counter'   => 0,
+        ];
 
-        event(new MetricPointWasAddedEvent($metricPoint));
+        if ($command->created_at) {
+            $data['created_at'] = $this->dates->create('U', $command->created_at)->format('Y-m-d H:i:s');
+        }
 
-        return $metricPoint;
+        return MetricPoint::create($data);
     }
 }

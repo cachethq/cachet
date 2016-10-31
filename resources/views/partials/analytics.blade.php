@@ -1,3 +1,4 @@
+@if($enable_external_dependencies)
 @if($app_analytics)
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -14,12 +15,10 @@
   arguments)};d=s.createElement(q);q=s.getElementsByTagName(q)[0];
   d.src='https://d1l6p2sc9645hc.cloudfront.net/tracker.js';q.parentNode.
   insertBefore(d,q)}(window,document,'script','_gs');
-
   _gs('{{ $app_analytics_go_squared }}');
 </script>
 @endif
 @if($app_analytics_piwik_url)
-<!-- Piwik -->
 <script type="text/javascript">
   var _paq = _paq || [];
   _paq.push(['trackPageView']);
@@ -33,4 +32,5 @@
   })();
 </script>
 <noscript><p><img src="https://{{ $app_analytics_piwik_url }}/piwik.php?idsite={{ $app_analytics_piwik_site_id }}" style="border:0;" alt="" /></p></noscript>
+@endif
 @endif

@@ -23,6 +23,11 @@ return [
         'enable_google2fa' => 'Enable Google Two Factor Authentication',
         'cache_driver'     => 'Cache Driver',
         'session_driver'   => 'Session Driver',
+        'mail_driver'      => 'Mail Driver',
+        'mail_host'        => 'Mail Host',
+        'mail_address'     => 'Mail From Address',
+        'mail_username'    => 'Mail Username',
+        'mail_password'    => 'Mail Password',
     ],
 
     // Login form fields
@@ -34,6 +39,7 @@ return [
         'invalid'       => 'Invalid username or password',
         'invalid-token' => 'Invalid token',
         'cookies'       => 'You must enable cookies to login.',
+        'rate-limit'    => 'Rate limit exceeded.',
     ],
 
     // Incidents form fields
@@ -76,6 +82,21 @@ return [
         ],
     ],
 
+    // Action form fields
+    'actions' => [
+        'name'               => 'Name',
+        'description'        => 'Description',
+        'start_at'           => 'Schedule start time',
+        'timezone'           => 'Timezone',
+        'schedule_frequency' => 'Schedule frequency (in seconds)',
+        'completion_latency' => 'Completion latency (in seconds)',
+        'group'              => 'Group',
+        'active'             => 'Active?',
+        'groups'             => [
+            'name' => 'Group Name',
+        ],
+    ],
+
     // Metric form fields
     'metrics' => [
         'name'             => 'Name',
@@ -89,6 +110,7 @@ return [
         'type_avg'         => 'Average',
         'places'           => 'Decimal places',
         'default_view'     => 'Default view',
+        'threshold'        => 'How many minutes of threshold between metric points?',
 
         'points' => [
             'value' => 'Value',
@@ -97,16 +119,20 @@ return [
 
     // Settings
     'settings' => [
-        /// Application setup
+        // Application setup
         'app-setup' => [
-            'site-name'              => 'Site Name',
-            'site-url'               => 'Site URL',
-            'display-graphs'         => 'Display graphs on status page?',
-            'about-this-page'        => 'About this page',
-            'days-of-incidents'      => 'How many days of incidents to show?',
-            'banner'                 => 'Banner Image',
-            'banner-help'            => "It's recommended that you upload files no bigger than 930px wide .",
-            'subscribers'            => 'Allow people to signup to email notifications?',
+            'site-name'                    => 'Site Name',
+            'site-url'                     => 'Site URL',
+            'display-graphs'               => 'Display graphs on status page?',
+            'about-this-page'              => 'About this page',
+            'days-of-incidents'            => 'How many days of incidents to show?',
+            'banner'                       => 'Banner Image',
+            'banner-help'                  => "It's recommended that you upload files no bigger than 930px wide .",
+            'subscribers'                  => 'Allow people to signup to email notifications?',
+            'skip_subscriber_verification' => 'Skip verifying of users? (Be warned, you could be spammed)',
+            'automatic_localization'       => 'Automatically localise your status page to your visitor\'s language?',
+            'enable_external_dependencies' => 'Enable Third Party Dependencies (Google Fonts, Trackers, etc...)',
+            'show_timezone'                => 'Show the timezone the status page is running in.',
         ],
         'analytics' => [
             'analytics_google'       => 'Google Analytics code',
@@ -115,10 +141,10 @@ return [
             'analytics_piwik_siteid' => 'Piwik\'s site id',
         ],
         'localization' => [
-            'site-timezone'          => 'Site timezone',
-            'site-locale'            => 'Site language',
-            'date-format'            => 'Date format',
-            'incident-date-format'   => 'Incident timestamp format',
+            'site-timezone'        => 'Site timezone',
+            'site-locale'          => 'Site language',
+            'date-format'          => 'Date format',
+            'incident-date-format' => 'Incident timestamp format',
         ],
         'security' => [
             'allowed-domains'      => 'Allowed domains',
@@ -164,6 +190,10 @@ return [
             'description' => 'Invite your team members by entering their email addresses here.',
             'email'       => 'Email #:id',
         ],
+    ],
+
+    'general' => [
+        'timezone' => 'Select Timezone',
     ],
 
     // Buttons

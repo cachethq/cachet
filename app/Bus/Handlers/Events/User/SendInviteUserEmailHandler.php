@@ -46,9 +46,9 @@ class SendInviteUserEmailHandler
     public function handle(UserWasInvitedEvent $event)
     {
         $mail = [
-            'email'    => $event->invite->email,
-            'subject'  => 'You have been invited.',
-            'link'     => route('signup.invite', ['code' => $event->invite->code]),
+            'email'   => $event->invite->email,
+            'subject' => 'You have been invited.',
+            'link'    => route('signup.invite', ['code' => $event->invite->code]),
         ];
 
         $this->mailer->queue([

@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Cachet\Dates;
 
+use DateTimeZone;
 use Jenssegers\Date\Date;
 
 class DateFactory
@@ -87,5 +88,18 @@ class DateFactory
     public function make($time = null)
     {
         return (new Date($time))->setTimezone($this->cachetTimezone);
+    }
+
+    /**
+     * Return the abbreviated timezone.
+     *
+     * @return string
+     */
+    public function getTimezone()
+    {
+        $dateTime = new Date();
+        $dateTime->setTimeZone(new DateTimeZone($this->cachetTimezone));
+
+        return $dateTime->format('T');
     }
 }

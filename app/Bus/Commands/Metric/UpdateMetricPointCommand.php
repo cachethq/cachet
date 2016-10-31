@@ -14,6 +14,11 @@ namespace CachetHQ\Cachet\Bus\Commands\Metric;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\MetricPoint;
 
+/**
+ * This is the update metric point command.
+ *
+ * @author James Brooks <james@alt-three.com>
+ */
 final class UpdateMetricPointCommand
 {
     /**
@@ -33,7 +38,7 @@ final class UpdateMetricPointCommand
     /**
      * The metric point value.
      *
-     * @var int
+     * @var float
      */
     public $value;
 
@@ -50,7 +55,7 @@ final class UpdateMetricPointCommand
      * @var string[]
      */
     public $rules = [
-        'value'      => 'int',
+        'value'      => 'numeric',
         'created_at' => 'string',
     ];
 
@@ -59,7 +64,7 @@ final class UpdateMetricPointCommand
      *
      * @param \CachetHQ\Cachet\Models\MetricPoint $point
      * @param \CachetHQ\Cachet\Models\Metric      $metric
-     * @param int                                 $value
+     * @param float                               $value
      * @param string                              $created_at
      *
      * @return void

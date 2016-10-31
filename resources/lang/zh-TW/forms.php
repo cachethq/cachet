@@ -34,6 +34,7 @@ return [
         'invalid'       => 'Invalid username or password',
         'invalid-token' => '錯誤的驗證碼',
         'cookies'       => '您必須啟用 cookies 來進行登錄。',
+        'rate-limit'    => 'Rate limit exceeded.',
     ],
 
     // Incidents form fields
@@ -89,6 +90,7 @@ return [
         'type_avg'         => '平均',
         'places'           => '小數點位數',
         'default_view'     => 'Default view',
+        'threshold'        => 'How many minutes of threshold between metric points?',
 
         'points' => [
             'value' => '值',
@@ -107,6 +109,7 @@ return [
             'banner'                 => 'Banner Image',
             'banner-help'            => '橫幅寬度建議少於 930px 。',
             'subscribers'            => '允許用戶訂閱郵件通知嗎?',
+            'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
         ],
         'analytics' => [
             'analytics_google'       => 'Google Analytics 代碼',
@@ -115,10 +118,10 @@ return [
             'analytics_piwik_siteid' => 'Piwik 的站點 id',
         ],
         'localization' => [
-            'site-timezone'          => '站點時區',
-            'site-locale'            => '站點語言',
-            'date-format'            => '日期格式',
-            'incident-date-format'   => '事件的時間戳格式',
+            'site-timezone'        => '站點時區',
+            'site-locale'          => '站點語言',
+            'date-format'          => '日期格式',
+            'incident-date-format' => '事件的時間戳格式',
         ],
         'security' => [
             'allowed-domains'      => '允許的域',

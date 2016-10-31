@@ -34,6 +34,7 @@ return [
         'invalid'       => 'crwdns652:0crwdne652:0',
         'invalid-token' => 'crwdns384:0crwdne384:0',
         'cookies'       => 'crwdns480:0crwdne480:0',
+        'rate-limit'    => 'crwdns781:0crwdne781:0',
     ],
 
     // Incidents form fields
@@ -89,6 +90,7 @@ return [
         'type_avg'         => 'crwdns477:0crwdne477:0',
         'places'           => 'crwdns590:0crwdne590:0',
         'default_view'     => 'crwdns655:0crwdne655:0',
+        'threshold'        => 'crwdns725:0crwdne725:0',
 
         'points' => [
             'value' => 'crwdns471:0crwdne471:0',
@@ -107,6 +109,7 @@ return [
             'banner'                 => 'crwdns717:0crwdne717:0',
             'banner-help'            => 'crwdns405:0crwdne405:0',
             'subscribers'            => 'crwdns513:0crwdne513:0',
+            'automatic_localization' => 'crwdns726:0crwdne726:0',
         ],
         'analytics' => [
             'analytics_google'       => 'crwdns591:0crwdne591:0',
@@ -115,10 +118,10 @@ return [
             'analytics_piwik_siteid' => 'crwdns594:0crwdne594:0',
         ],
         'localization' => [
-            'site-timezone'          => 'crwdns595:0crwdne595:0',
-            'site-locale'            => 'crwdns596:0crwdne596:0',
-            'date-format'            => 'crwdns597:0crwdne597:0',
-            'incident-date-format'   => 'crwdns598:0crwdne598:0',
+            'site-timezone'        => 'crwdns595:0crwdne595:0',
+            'site-locale'          => 'crwdns596:0crwdne596:0',
+            'date-format'          => 'crwdns597:0crwdne597:0',
+            'incident-date-format' => 'crwdns598:0crwdne598:0',
         ],
         'security' => [
             'allowed-domains'      => 'crwdns599:0crwdne599:0',

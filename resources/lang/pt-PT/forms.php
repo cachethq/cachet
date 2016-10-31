@@ -34,6 +34,7 @@ return [
         'invalid'       => 'Nome de utilizador ou palavra-passe inválidos',
         'invalid-token' => 'Token inválido',
         'cookies'       => 'Deverá activar cookies para efectuar autenticação.',
+        'rate-limit'    => 'Rate limit exceeded.',
     ],
 
     // Incidents form fields
@@ -89,6 +90,7 @@ return [
         'type_avg'         => 'Média',
         'places'           => 'Casas Decimais',
         'default_view'     => 'Vista por defeito',
+        'threshold'        => 'How many minutes of threshold between metric points?',
 
         'points' => [
             'value' => 'Valor',
@@ -107,6 +109,7 @@ return [
             'banner'                 => 'Banner Image',
             'banner-help'            => 'É recomendável que você faça upload de arquivos menores que 930px .',
             'subscribers'            => 'Permitir que as pessoas subscrevam as notificações?',
+            'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
         ],
         'analytics' => [
             'analytics_google'       => 'Código do Google Analytics',
@@ -115,10 +118,10 @@ return [
             'analytics_piwik_siteid' => 'ID do site Piwik',
         ],
         'localization' => [
-            'site-timezone'          => 'Fuso horário do site',
-            'site-locale'            => 'Idioma do site',
-            'date-format'            => 'Formato da Data',
-            'incident-date-format'   => 'Formato da Hora do Incidente',
+            'site-timezone'        => 'Fuso horário do site',
+            'site-locale'          => 'Idioma do site',
+            'date-format'          => 'Formato da Data',
+            'incident-date-format' => 'Formato da Hora do Incidente',
         ],
         'security' => [
             'allowed-domains'      => 'Domínios permitidos',

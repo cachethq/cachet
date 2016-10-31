@@ -66,6 +66,17 @@
                                 <div class="col-xs-12">
                                     <div class="checkbox">
                                         <label>
+                                            <input type="hidden" value="0" name="skip_subscriber_verification">
+                                            <input type="checkbox" value="1" name="skip_subscriber_verification" {{ Config::get('setting.skip_subscriber_verification') ? 'checked' : null }}>
+                                            {{ trans('forms.settings.app-setup.skip_subscriber_verification') }}
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="checkbox">
+                                        <label>
                                             <input type="hidden" value="0" name="display_graphs">
                                             <input type="checkbox" value="1" name="display_graphs" {{ $app_graphs ? 'checked' : null }}>
                                             {{ trans('forms.settings.app-setup.display-graphs') }}
@@ -80,6 +91,28 @@
                                             <input type="hidden" value="0" name="show_support">
                                             <input type="checkbox" value="1" name="show_support" {{ $show_support ? 'checked' : null }}>
                                             {{ trans('setup.show_support') }}
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="hidden" value="0" name="enable_external_dependencies">
+                                            <input type="checkbox" value="1" name="enable_external_dependencies" {{ $enable_external_dependencies ? 'checked' : null }}>
+                                            {{ trans('forms.settings.app-setup.enable_external_dependencies') }}
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="hidden" value="0" name="show_timezone">
+                                            <input type="checkbox" value="1" name="show_timezone" {{ $show_timezone ? 'checked' : null }}>
+                                            {{ trans('forms.settings.app-setup.show_timezone') }}
                                         </label>
                                     </div>
                                 </div>

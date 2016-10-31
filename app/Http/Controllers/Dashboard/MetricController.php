@@ -31,7 +31,7 @@ class MetricController extends Controller
      */
     public function showMetrics()
     {
-        $metrics = Metric::orderBy('created_at', 'desc')->get();
+        $metrics = Metric::orderBy('order')->orderBy('id')->get();
 
         return View::make('dashboard.metrics.index')
             ->withPageTitle(trans('dashboard.metrics.metrics').' - '.trans('dashboard.dashboard'))
@@ -79,7 +79,8 @@ class MetricController extends Controller
                 $metricData['calc_type'],
                 $metricData['display_chart'],
                 $metricData['places'],
-                $metricData['default_view']
+                $metricData['default_view'],
+                $metricData['threshold']
             ));
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.metrics.add')
@@ -151,7 +152,8 @@ class MetricController extends Controller
                 Binput::get('calc_type', null, false),
                 Binput::get('display_chart', null, false),
                 Binput::get('places', null, false),
-                Binput::get('default_view', null, false)
+                Binput::get('default_view', null, false),
+                Binput::get('threshold', null, false)
             ));
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.metrics.edit', ['id' => $metric->id])

@@ -49,6 +49,7 @@ return [
     'displayers' => [
         'CachetHQ\Cachet\Foundation\Exceptions\Displayers\JsonValidationDisplayer',
         'CachetHQ\Cachet\Foundation\Exceptions\Displayers\RedirectDisplayer',
+        'CachetHQ\Cachet\Foundation\Exceptions\Displayers\ThrottleDisplayer',
         'GrahamCampbell\Exceptions\Displayers\DebugDisplayer',
         'GrahamCampbell\Exceptions\Displayers\HtmlDisplayer',
         'GrahamCampbell\Exceptions\Displayers\JsonDisplayer',

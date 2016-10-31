@@ -107,7 +107,7 @@ class Component extends Model implements HasPresenter
     ];
 
     /**
-     * Components can belong to a group.
+     * Get the group relation.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -117,7 +117,7 @@ class Component extends Model implements HasPresenter
     }
 
     /**
-     * Lookup all of the incidents reported on the component.
+     * Get the incidents relation.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
@@ -127,7 +127,7 @@ class Component extends Model implements HasPresenter
     }
 
     /**
-     * Components can have many tags.
+     * Get the tags relation.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */

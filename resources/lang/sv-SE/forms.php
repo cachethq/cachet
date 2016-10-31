@@ -34,6 +34,7 @@ return [
         'invalid'       => 'Ogiltigt användarnamn eller lösenord',
         'invalid-token' => 'Ogiltig nyckel',
         'cookies'       => 'Du måste aktivera cookies för att kunna logga in.',
+        'rate-limit'    => 'Rate limit exceeded.',
     ],
 
     // Incidents form fields
@@ -89,6 +90,7 @@ return [
         'type_avg'         => 'Medelvärde',
         'places'           => 'Decimalplatser',
         'default_view'     => 'Standardvy',
+        'threshold'        => 'How many minutes of threshold between metric points?',
 
         'points' => [
             'value' => 'Värde',
@@ -107,6 +109,7 @@ return [
             'banner'                 => 'Banner Image',
             'banner-help'            => 'Vi rekommenderar att du inte laddar upp bilder som är bredare än 930 px.',
             'subscribers'            => 'Tillåt att registrera sig för notifikationer via e-post?',
+            'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
         ],
         'analytics' => [
             'analytics_google'       => 'Google Analytics-kod',
@@ -115,10 +118,10 @@ return [
             'analytics_piwik_siteid' => 'Piwik\'s sajt-id',
         ],
         'localization' => [
-            'site-timezone'          => 'Webbplatsens tidszon',
-            'site-locale'            => 'Webbplatsspråk',
-            'date-format'            => 'Datumformat',
-            'incident-date-format'   => 'Händelsens tidsstämpelformat',
+            'site-timezone'        => 'Webbplatsens tidszon',
+            'site-locale'          => 'Webbplatsspråk',
+            'date-format'          => 'Datumformat',
+            'incident-date-format' => 'Händelsens tidsstämpelformat',
         ],
         'security' => [
             'allowed-domains'      => 'Tillåtna domäner',

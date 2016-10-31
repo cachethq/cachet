@@ -6,6 +6,7 @@ body.status-page {
     padding-top: 0;
     @endif
 }
+p, strong { color: {{ $theme_text_color }} !important; }
 .reds { color: {{ $theme_reds }} !important; }
 .blues { color: {{ $theme_blues }} !important; }
 .greens { color: {{ $theme_greens }} !important; }

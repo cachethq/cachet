@@ -12,6 +12,9 @@
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
 use AltThree\Validator\ValidationException;
+use CachetHQ\Cachet\Bus\Events\User\UserDisabledTwoAuthEvent;
+use CachetHQ\Cachet\Bus\Events\User\UserEnabledTwoAuthEvent;
+use CachetHQ\Cachet\Bus\Events\User\UserRegeneratedApiTokenEvent;
 use CachetHQ\Cachet\Models\User;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
@@ -46,8 +49,10 @@ class UserController extends Controller
 
         // Let's enable/disable auth
         if ($enable2FA && !Auth::user()->hasTwoFactor) {
+            event(new UserEnabledTwoAuthEvent(Auth::user()));
             $userData['google_2fa_secret'] = Google2FA::generateSecretKey();
         } elseif (!$enable2FA) {
+            event(new UserDisabledTwoAuthEvent(Auth::user()));
             $userData['google_2fa_secret'] = '';
         }
 
@@ -75,6 +80,8 @@ class UserController extends Controller
     {
         $user->api_key = User::generateApiKey();
         $user->save();
+
+        event(new UserRegeneratedApiTokenEvent($user));
 
         return Redirect::route('dashboard.user');
     }

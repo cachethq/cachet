@@ -40,6 +40,28 @@
         padding-top: 10px;
     }
 
+    .stats-body {
+        margin-top: -20px;
+        padding-top: 10px;
+
+        .list-group {
+            border: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+
+            .list-group-item {
+                border-right: none;
+                border-left: none;
+
+                border-color: #eee;
+
+                &:last-child {
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+
     .stats-bottom {
         border-top: #eee 1px solid;
         color: #777;

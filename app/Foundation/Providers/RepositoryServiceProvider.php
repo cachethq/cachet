@@ -16,8 +16,15 @@ use CachetHQ\Cachet\Repositories\Metric\MetricRepository;
 use CachetHQ\Cachet\Repositories\Metric\MySqlRepository as MetricMySqlRepository;
 use CachetHQ\Cachet\Repositories\Metric\PgSqlRepository as MetricPgSqlRepository;
 use CachetHQ\Cachet\Repositories\Metric\SqliteRepository as MetricSqliteRepository;
+use Illuminate\Contracts\Config\Repository as ConfigRepository;
+use Illuminate\Contracts\Container\Container;
 use Illuminate\Support\ServiceProvider;
 
+/**
+ * This is the repository service provider.
+ *
+ * @author James Brooks <james@alt-three.com>
+ */
 class RepositoryServiceProvider extends ServiceProvider
 {
     /**
@@ -37,22 +44,21 @@ class RepositoryServiceProvider extends ServiceProvider
      */
     protected function registerMetricRepository()
     {
-        $this->app->singleton('cachet.metricrepository', function ($app) {
-            $dbDriver = $app['config']->get('database.default');
+        $this->app->singleton(MetricRepository::class, function (Container $app) {
+            $config = $app->make(ConfigRepository::class);
+            $driver = $config->get('database.default');
 
-            if ($dbDriver == 'mysql') {
-                $repository = new MetricMySqlRepository();
-            } elseif ($dbDriver == 'pgsql') {
-                $repository = new MetricPgSqlRepository();
-            } elseif ($dbDriver == 'sqlite') {
-                $repository = new MetricSqliteRepository();
+            if ($driver == 'mysql') {
+                $repository = new MetricMySqlRepository($config);
+            } elseif ($driver == 'pgsql') {
+                $repository = new MetricPgSqlRepository($config);
+            } elseif ($driver == 'sqlite') {
+                $repository = new MetricSqliteRepository($config);
             }
 
             $dates = $app->make(DateFactory::class);
 
             return new MetricRepository($repository, $dates);
         });
-
-        $this->app->alias('cachet.metricrepository', MetricRepository::class);
     }
 }

@@ -12,7 +12,7 @@
 return [
     // Components
     'components' => [
-        'last_updated' => 'Última atualização: timestamp',
+        'last_updated' => 'Última atualização :timestamp',
         'status'       => [
             1 => 'Operacional',
             2 => 'Problemas de performance',
@@ -75,32 +75,27 @@ return [
             'subscribe'          => 'Inscreva-se para atualizações via e-mail.',
             'subscribed'         => 'Inscrição realizada com sucesso! Por favor verifique o e-mail que enviamos à você para confirmar sua inscrição.',
             'verified'           => 'Sua inscrição foi confirmada! Obrigado!',
-            'manage'             => 'Gerencie sua assinatura.',
+            'manage'             => 'Gerencie sua assinatura',
             'unsubscribe'        => 'Não desejo mais receber notificações via e-mail.',
             'unsubscribed'       => 'Sua inscrição foi cancelada.',
             'failure'            => 'Ocorreu um problema na sua inscrição.',
             'already-subscribed' => 'Impossível inscrever :email pois já se encontra inscrito.',
             'verify'             => [
-                'text'           => "Por favor confirme seu e-mail para receber as atualizações do :app_name .\n:link\nAtenciosamente, :app_name",
-                'html-preheader' => 'Por favor confirme seu e-mail para receber as atualizações do :app_name.',
-                'html'           => '<p>Por favor confirme seu cadastro para receber atualizações do :app_name.</p><p><a href=":link">:link</a></p><p>Atenciosamente, :app_name</p>',
+                'text'   => "Por favor, confirme sua assinatura de e-mail para receber atualizações de status de :app_name. \n:link",
+                'html'   => '<p>Por favor, confirme sua assinatura de e-mail para receber atualizações de status de :app_name.</p>',
+                'button' => 'Confirmar inscrição',
             ],
             'maintenance' => [
-                'text'           => "Uma manutenção do aplicativo :app_name foi agendada. \n Atenciosamente, :app_name",
-                'html-preheader' => 'Uma manutenção do aplicativo :app_name foi agendada.',
-                'html'           => '<p>Uma nova manutenção para o aplicativo :app_name foi agendada.</p>',
+                'subject' => '[Manutenção Programada] :name',
             ],
             'incident' => [
-                'text'           => "Um novo incidente foi reportado no aplicativo :app_name.\n Atenciosamente, :app_name",
-                'html-preheader' => 'Um novo incidente foi reportado no aplicativo :app_name.',
-                'html'           => '<p>Um novo incidente foi reportado no aplicativo :app_name. </p><p> Obrigado, :app_name</p>',
+                'subject' => '[Novo incidente] :status: :name',
             ],
             'component' => [
-                'subject'        => 'Atualização do Estado do Componente',
-                'text'           => 'O componente :component_name teve uma mudança de estado. O componente está agora em :component_human_status.\nObrigado, :app_name',
-                'html-preheader' => 'Atualização de Componente de :app_name',
-                'html'           => '<p>O componente :component_name teve uma mudança de estado. O componente está agora em :component_human_status.</p><p>Obrigado, :app_name</p>',
-                'tooltip-title'  => 'Inscrever-se as notificações de :component_name.',
+                'subject'       => 'Atualização do Estado do Componente',
+                'text'          => 'O componente :component_name teve uma mudança de estado. O componente está agora em :component_human_status.\nObrigado, :app_name',
+                'html'          => '<p>O componente :component_name teve uma mudança de estado. O componente está agora em :component_human_status.</p><p>Obrigado, :app_name</p>',
+                'tooltip-title' => 'Inscrever-se as notificações de :component_name.',
             ],
         ],
     ],
@@ -108,9 +103,8 @@ return [
     'users' => [
         'email' => [
             'invite' => [
-                'text'           => "Você foi convidado para a página de status da equipe :app_name, para se inscrever siga o próximo link.\n:link\nObrigado,: app_name",
-                'html-preheader' => 'Você foi convidado para a equipe: app_name.',
-                'html'           => '<p>Você foi convidado para a página de status da equipe :app_name, para se inscrever siga o seguinte link.</p> <p><a href=":link">:link</a></p> <p>Obrigado, :app_name</p>',
+                'text' => "Você foi convidado para a página de status da equipe :app_name, para se inscrever siga o próximo link.\n:link\nObrigado,: app_name",
+                'html' => '<p>Você foi convidado para a página de status da equipe :app_name, para se inscrever siga o seguinte link.</p> <p><a href=":link">:link</a></p> <p>Obrigado, :app_name</p>',
             ],
         ],
     ],
@@ -141,7 +135,7 @@ return [
     // Other
     'home'            => 'Início',
     'description'     => 'Mantenha-se atualizado com as últimas atualizações de serviço de: app.',
-    'powered_by'      => ':app Página de Status é promovida por <a href="https://cachethq.io" class="links"> Cachet</a>.',
+    'powered_by'      => 'Desenvolvido por <a href="https://cachethq.io" class="links">Cachet</a>.',
     'about_this_site' => 'Sobre este Site',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',
