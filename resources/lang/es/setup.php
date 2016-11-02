@@ -13,11 +13,11 @@ return [
     'setup'             => 'Configurar',
     'title'             => 'Configurar Cachet',
     'service_details'   => 'Detalles del servicio',
-    'env_setup'         => 'Configuracion de entorno',
+    'env_setup'         => 'Configuración de entorno',
     'status_page_setup' => 'Configuración de la página de estado',
     'show_support'      => '¿Deseas mostrar tu apoyo a Cachet?',
     'admin_account'     => 'Cuenta de administrador',
     'complete_setup'    => 'Completar configuración',
     'completed'         => '¡Cachet se ha configurado correctamente!',
-    'finish_setup'      => 'Ir a Panel de control',
+    'finish_setup'      => 'Ir al Panel de control',
 ];
