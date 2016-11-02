@@ -43,6 +43,17 @@ body.status-page {
         }
     }
 
+    .dropdown-menu {
+        .group a {
+            font-weight: 600;
+            color: $cachet-gray-darker;
+        }
+
+        .grouped a {
+            margin-left: 15px;
+        }
+    }
+
     .help-icon {
         cursor: help;
     }
@@ -405,14 +416,6 @@ body.status-page {
     .section-filters {
         padding-bottom: 10px;
         text-align: right;
-    }
-
-    ul.dropdown-menu li.group a {
-        font-weight: 600;
-        color: #444;
-    }
-    ul.dropdown-menu li.grouped a {
-        margin-left: 15px;
     }
 
     .navbar-custom {
