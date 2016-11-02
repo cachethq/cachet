@@ -23,7 +23,7 @@ return [
         ],
         'group' => [
             'other'  => 'Other Components',
-            'single' => 'Component'
+            'single' => 'Component',
         ],
     ],
 
