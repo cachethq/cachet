@@ -53,25 +53,30 @@ class ComponentsComposer
      */
     public function compose(View $view)
     {
-        // Get the component group if it's defined.
+        // Get the component/group if it's defined.
         $viewdata = $view->getData();
+        $component = $viewdata['component'];
         $componentGroup = $viewdata['componentGroup'];
 
         // Component & Component Group lists.
         $allComponentGroups = $this->getVisibleGroupedComponents();
-        if ($componentGroup->exists) {
-            $componentGroups = $this->getVisibleGroupedComponents($componentGroup->id);
-
+        if ($component->exists) {
             $view->withAllComponentGroups($allComponentGroups)
-                 ->withComponentGroups($componentGroups)
-                 ->withUngroupedComponents(new Collection())
+                 ->withComponentGroups(new Collection())
+                 ->withUngroupedComponents(Component::ungrouped()->get())
+                 ->withComponentSelected($component)
+                 ->withComponentGroupSelected(null);
+        } elseif ($componentGroup->exists) {
+            $view->withAllComponentGroups($allComponentGroups)
+                 ->withComponentGroups($this->getVisibleGroupedComponents($componentGroup->id))
+                 ->withUngroupedComponents(Component::ungrouped()->get())
+                 ->withComponentSelected(null)
                  ->withComponentGroupSelected($componentGroup);
         } else {
-            $ungroupedComponents = Component::ungrouped()->get();
-
             $view->withAllComponentGroups($allComponentGroups)
                  ->withComponentGroups($allComponentGroups)
-                 ->withUngroupedComponents($ungroupedComponents)
+                 ->withUngroupedComponents(Component::ungrouped()->get())
+                 ->withComponentSelected(null)
                  ->withComponentGroupSelected(null);
         }
     }
@@ -90,6 +95,25 @@ class ComponentsComposer
         } else {
             $componentGroupsBuilder = ComponentGroup::query();
         }
+
+        if (!$this->guard->check()) {
+            $componentGroupsBuilder->visible();
+        }
+
+        $usedComponentGroups = Component::grouped()->pluck('group_id');
+
+        return $componentGroupsBuilder->used($usedComponentGroups)
+            ->get();
+    }
+
+    /**
+     * Get visible grouped components.
+     *
+     * @return \Illuminate\Support\Collection
+     */
+    protected function getVisibleComponents()
+    {
+        $componentGroupsBuilder = ComponentGroup::query();
 
         if (!$this->guard->check()) {
             $componentGroupsBuilder->visible();

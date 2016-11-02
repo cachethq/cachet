@@ -52,10 +52,11 @@ class StatusPageController extends AbstractApiController
      * Displays the status page.
      *
      * @param ComponentGroup $componentGroup
+     * @param Component      $component
      *
      * @return \Illuminate\View\View
      */
-    public function showIndex(ComponentGroup $componentGroup)
+    public function showIndex(ComponentGroup $componentGroup, Component $component)
     {
         $today = Date::now();
         $startDate = Date::now();
@@ -85,9 +86,11 @@ class StatusPageController extends AbstractApiController
 
         $incidentVisibility = Auth::check() ? 0 : 1;
 
-        // Find all the visible incidents, taking into account if the component group is defined and the day limits.
+        // Find all the visible incidents, taking into account if the component/group is defined and the day limits.
         $allIncidentsQuery = Incident::notScheduled();
-        if ($componentGroup->exists) {
+        if ($component->exists) {
+            $allIncidentsQuery->where('component_id', '=', $component->id);
+        } elseif ($componentGroup->exists) {
             $allIncidentsQuery->whereIn('component_id', $componentGroup->components()->pluck('id'));
         }
         $allIncidentsQuery->where('visible', '>=', $incidentVisibility)->whereBetween('created_at', [
@@ -115,6 +118,7 @@ class StatusPageController extends AbstractApiController
         }, SORT_REGULAR, true)->all();
 
         return View::make('index')
+            ->with('component', $component)
             ->with('componentGroup', $componentGroup)
             ->withDaysToShow($daysToShow)
             ->withAllIncidents($allIncidents)
