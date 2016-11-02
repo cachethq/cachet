@@ -80,8 +80,8 @@ return [
     // Components
     'components' => [
         'components'         => 'Componentes',
-        'component_statuses' => 'Estatus de los componentes',
-        'listed_group'       => 'Agrupado bajo :nombre',
+        'component_statuses' => 'Estado de los componentes',
+        'listed_group'       => 'Agrupados bajo :nombre',
         'add'                => [
             'title'   => 'Agregar componente',
             'message' => 'Deberías agregar un componente.',
@@ -147,14 +147,14 @@ return [
         'subscriber'       => ':email, suscrito :date',
         'no_subscriptions' => 'Suscrito a todas las actualizaciones',
         'add'              => [
-            'title'   => 'Agregar un nuevo subscriptor',
-            'success' => 'Subscriptor agregado.',
+            'title'   => 'Agregar un nuevo suscriptor',
+            'success' => 'Suscriptor agregado.',
             'failure' => 'Algo salió mal al agregar el suscriptor, por favor, inténtelo de nuevo.',
-            'help'    => 'Agregue cada subscriptor en una línea nueva.',
+            'help'    => 'Agregue cada suscriptor en una línea nueva.',
         ],
         'edit' => [
-            'title'   => 'Actualizar subscriptor',
-            'success' => 'Subscriptor actualizado.',
+            'title'   => 'Actualizar suscriptor',
+            'success' => 'Suscriptor actualizado.',
             'failure' => 'Algo salió mal al editar el suscriptor, por favor, inténtelo de nuevo.',
         ],
     ],
@@ -195,7 +195,7 @@ return [
             'too-big'     => 'El archivo subido es demasiado grande. Sube una imagen con tamaño menor a: tamaño',
         ],
         'analytics' => [
-            'analytics' => 'Analytics',
+            'analytics' => 'Analíticas',
         ],
         'localization' => [
             'localization' => 'Localización',
