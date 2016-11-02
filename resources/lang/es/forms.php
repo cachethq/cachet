@@ -33,7 +33,7 @@ return [
         '2fauth'        => 'Código de Autenticación',
         'invalid'       => 'Nombre de usuario o contraseña incorrecto',
         'invalid-token' => 'Token inválido',
-        'cookies'       => 'Usted debe habilitar cookies para logearse o iniciar sesion.',
+        'cookies'       => 'Usted debe habilitar cookies para iniciar sesion.',
         'rate-limit'    => 'Límite de transferencia excedido.',
     ],
 
@@ -44,8 +44,8 @@ return [
         'component'          => 'Componente',
         'message'            => 'Mensaje',
         'message-help'       => 'También puedes usar Markdown.',
-        'scheduled_at'       => '¿Cuando planificar el mantenimiento de?',
-        'incident_time'      => '¿Cuando ocurrió este incidente?',
+        'scheduled_at'       => '¿Cuándo planificar el mantenimiento de?',
+        'incident_time'      => '¿Cuándo ocurrió este incidente?',
         'notify_subscribers' => '¿Notificar a los suscriptores?',
         'visibility'         => 'Visibilidad del incidente',
         'public'             => 'Visible por el público',
@@ -60,7 +60,7 @@ return [
     // Components form fields
     'components' => [
         'name'        => 'Nombre',
-        'status'      => 'Estatus',
+        'status'      => 'Estado',
         'group'       => 'Grupo',
         'description' => 'Descripción',
         'link'        => 'Enlace',
@@ -108,7 +108,7 @@ return [
             'days-of-incidents'      => '¿Cuántos días de incidentes mostrar?',
             'banner'                 => 'Imagen del banner',
             'banner-help'            => 'Se recomienda subir una imagen no más grande de 930px de ancho .',
-            'subscribers'            => '¿Permitir a la gente inscribirse mediante noficiacion por correo electronico?',
+            'subscribers'            => '¿Permitir a la gente inscribirse mediante noficiación por correo electronico?',
             'automatic_localization' => '¿Traducir automáticamente la página de estado según el lenguaje del visitante?',
         ],
         'analytics' => [
@@ -154,7 +154,7 @@ return [
         'password'       => 'Contraseña',
         'api-token'      => 'API Token',
         'api-token-help' => 'Regenerando tu token de API evitaras que las aplicaciones existentes puedan acceder a Cachet.',
-        'gravatar'       => 'Change your profile picture at Gravatar.',
+        'gravatar'       => 'Cambiar tu foto de perfil en Gravatar.',
         'user_level'     => 'Nivel de usuario',
         'levels'         => [
             'admin' => 'Administrador',
