@@ -1,9 +1,10 @@
-@if($component_groups->count() > 0)
 <div class="section-filters">
     <div class="dropdown">
-        Display component groups:
+        {{ trans('cachet.components.filter') }}
         <a href="javascript: void(0);" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-            @if($component_group_selected)
+            @if($component_selected)
+            <span class="filter">{{ $component_selected->name }}</span>
+            @elseif($component_group_selected)
             <span class="filter">{{ $component_group_selected->name }}</span>
             @else
             <span class="filter">All</span>
@@ -13,12 +14,17 @@
         <ul class="dropdown-menu dropdown-menu-right">
             <li><a href="{{ cachet_route('status-page') }}">All</a></li>
             @foreach($all_component_groups as $componentGroup)
-            <li><a href="{{ cachet_route('component-status-page', [$componentGroup->id]) }}">{{ $componentGroup->name }}</a></li>
+            <li class="group"><a href="{{ cachet_route('group-status-page', [$componentGroup->id]) }}">{{ $componentGroup->name }}</a></li>
+            @foreach($componentGroup->enabled_components()->orderBy('order')->get() as $component)
+            <li class="grouped"><a href="{{ cachet_route('component-status-page', [$component->id]) }}">{{ $component->name }}</a></li>
+            @endforeach
+            @endforeach
+            @foreach($ungrouped_components as $component)
+            <li><a href="{{ cachet_route('component-status-page', [$component->id]) }}">{{ $component->name }}</a></li>
             @endforeach
         </ul>
     </div>
 </div>
-@endif
 
 @if($component_groups->count() > 0)
 @foreach($component_groups as $componentGroup)
@@ -43,11 +49,18 @@
 @endforeach
 @endif
 
-@if($ungrouped_components->count() > 0)
+@if($ungrouped_components->count() > 0 && !$component_selected && !$component_group_selected)
 <ul class="list-group components">
     <li class="list-group-item group-name"><strong>{{ trans('cachet.components.group.other') }}</strong></li>
     @foreach($ungrouped_components as $component)
     @include('partials.component', compact($component))
     @endforeach
+</ul>
+@endif
+
+@if($component_selected)
+<ul class="list-group components">
+    <li class="list-group-item group-name"><strong>{{ trans('cachet.components.group.single') }}</strong></li>
+    @include('partials.component', compact($component = $component_selected))
 </ul>
 @endif

@@ -53,27 +53,31 @@ class ComponentsComposer
      */
     public function compose(View $view)
     {
-        // Get the component group if it's defined.
+        // Get the component/group if it's defined.
         $viewdata = $view->getData();
+        $component = $viewdata['component'];
         $componentGroup = $viewdata['componentGroup'];
 
         // Component & Component Group lists.
-        $usedComponentGroups = Component::enabled()->where('group_id', '>', 0)->groupBy('group_id')->pluck('group_id');
-        $allComponentGroups = ComponentGroup::whereIn('id', $usedComponentGroups)->orderBy('order')->get();
-        if ($componentGroup->exists) {
-            $componentGroups = ComponentGroup::where('id', $componentGroup->id)->orderBy('order')->get();
-
+        $allComponentGroups = $this->getVisibleGroupedComponents();
+        if ($component->exists) {
             $view->withAllComponentGroups($allComponentGroups)
-                 ->withComponentGroups($componentGroups)
-                 ->withUngroupedComponents(new Collection())
+                 ->withComponentGroups(new Collection())
+                 ->withUngroupedComponents(Component::ungrouped()->get())
+                 ->withComponentSelected($component)
+                 ->withComponentGroupSelected(null);
+        } elseif ($componentGroup->exists) {
+            $view->withAllComponentGroups($allComponentGroups)
+                 ->withComponentGroups($this->getVisibleGroupedComponents($componentGroup->id))
+                 ->withUngroupedComponents(Component::ungrouped()->get())
+                 ->withComponentSelected(null)
                  ->withComponentGroupSelected($componentGroup);
 
         } else {
-            $ungroupedComponents = Component::enabled()->where('group_id', 0)->orderBy('order')->orderBy('created_at')->get();
-
             $view->withAllComponentGroups($allComponentGroups)
                  ->withComponentGroups($allComponentGroups)
-                 ->withUngroupedComponents($ungroupedComponents)
+                 ->withUngroupedComponents(Component::ungrouped()->get())
+                 ->withComponentSelected(null)
                  ->withComponentGroupSelected(null);
         }
     }
@@ -85,9 +89,14 @@ class ComponentsComposer
      *
      * @return \Illuminate\Support\Collection
      */
-    protected function getVisibleGroupedComponents()
+    protected function getVisibleGroupedComponents($componentGroupId = null)
     {
-        $componentGroupsBuilder = ComponentGroup::query();
+        if ($componentGroupId) {
+            $componentGroupsBuilder = ComponentGroup::where('id', $componentGroupId);
+        } else {
+            $componentGroupsBuilder = ComponentGroup::query();
+        }
+
         if (!$this->guard->check()) {
             $componentGroupsBuilder->visible();
         }

@@ -60,7 +60,12 @@ class StatusPageRoutes
             ]);
 
             $router->get('group/{componentGroup}', [
-                'as'   => 'component-status-page',
+                'as'   => 'get:group-status-page',
+                'uses' => 'StatusPageController@showIndex',
+            ]);
+
+            $router->get('component/{component}', [
+                'as'   => 'get:component-status-page',
                 'uses' => 'StatusPageController@showIndex',
             ]);
 

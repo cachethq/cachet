@@ -402,6 +402,19 @@ body.status-page {
         margin-top: 40px;
     }
 
+    .section-filters {
+        padding-bottom: 10px;
+        text-align: right;
+    }
+
+    ul.dropdown-menu li.group a {
+        font-weight: 600;
+        color: #444;
+    }
+    ul.dropdown-menu li.grouped a {
+        margin-left: 15px;
+    }
+
     .navbar-custom {
         padding-top: 10px;
         padding-bottom: 10px;
