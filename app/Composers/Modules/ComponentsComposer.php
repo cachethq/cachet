@@ -72,7 +72,6 @@ class ComponentsComposer
                  ->withUngroupedComponents(Component::ungrouped()->get())
                  ->withComponentSelected(null)
                  ->withComponentGroupSelected($componentGroup);
-
         } else {
             $view->withAllComponentGroups($allComponentGroups)
                  ->withComponentGroups($allComponentGroups)
