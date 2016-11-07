@@ -36,10 +36,10 @@ class IncidentPresenter extends BasePresenter implements Arrayable
      */
     protected $icons = [
         0 => 'icon ion-android-calendar', // Scheduled
-        1 => 'icon ion-flag oranges', // Investigating
-        2 => 'icon ion-alert yellows', // Identified
-        3 => 'icon ion-eye blues', // Watching
-        4 => 'icon ion-checkmark greens', // Fixed
+        1 => 'icon ion-alert-circled', // Investigating
+        2 => 'icon ion-bug', // Identified
+        3 => 'icon ion-eye', // Watching
+        4 => 'icon ion-checkmark-circled greens', // Fixed
     ];
 
     /**

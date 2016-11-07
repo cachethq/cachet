@@ -1,0 +1,45 @@
+%component-item {
+    background-color: #fff;
+    font-size: 1.1em;
+    padding: 15px;
+}
+
+.components-group {
+    border: 1px solid $cachet_gray_light;
+    list-style: none;
+    padding-left: 0;
+
+    i {
+        padding-right: 10px;
+    }
+}
+
+.components-group__name {
+    @extend %component-item;
+    background-color: $cachet_gray_light;
+    font-size: 1.3em;
+    padding: {
+        top: 0.6em;
+        bottom: 0.6em;
+    }
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.components-group__item {
+    @extend %component-item;
+
+    a {
+        color: $cachet-base-dark !important;
+    }
+}
+
+.components-group__status {
+    font-weight: 500;
+    text-transform: uppercase;
+}

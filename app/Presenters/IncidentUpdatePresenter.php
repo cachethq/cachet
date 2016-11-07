@@ -27,6 +27,19 @@ class IncidentUpdatePresenter extends BasePresenter implements Arrayable
     use TimestampsTrait;
 
     /**
+     * Inciden icon lookup.
+     *
+     * @var array
+     */
+    protected $icons = [
+        0 => 'icon ion-android-calendar', // Scheduled
+        1 => 'icon ion-alert-circled', // Investigating
+        2 => 'icon ion-bug', // Identified
+        3 => 'icon ion-eye', // Watching
+        4 => 'icon ion-checkmark-circled greens', // Fixed
+    ];
+
+    /**
      * Renders the message from Markdown into HTML.
      *
      * @return string
@@ -121,17 +134,8 @@ class IncidentUpdatePresenter extends BasePresenter implements Arrayable
      */
     public function icon()
     {
-        switch ($this->wrappedObject->status) {
-            case 1: // Investigating
-                return 'icon ion-flag oranges';
-            case 2: // Identified
-                return 'icon ion-alert yellows';
-            case 3: // Watching
-                return 'icon ion-eye blues';
-            case 4: // Fixed
-                return 'icon ion-checkmark greens';
-            default: // Something actually broke, this shouldn't happen.
-                return '';
+        if (isset($this->icons[$this->wrappedObject->status])) {
+            return $this->icons[$this->wrappedObject->status];
         }
     }
 

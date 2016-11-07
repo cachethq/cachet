@@ -1,5 +1,6 @@
 // Bootstrap variable overrides and custom variables
 @import "variables";
+@import "./node_modules/bootswatch/lumen/variables";
 
 // Core variables and mixins
 @import "./node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
@@ -50,3 +51,5 @@
 // Utility classes
 @import "./node_modules/bootstrap-sass/assets/stylesheets/bootstrap/utilities";
 @import "./node_modules/bootstrap-sass/assets/stylesheets/bootstrap/responsive-utilities";
+
+@import "./node_modules/bootswatch/lumen/bootswatch";
