@@ -1,0 +1,52 @@
+.incidents {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.incident {
+    border: 1px solid #373737;
+    padding: 30px
+}
+
+.incident--divided {
+    margin-bottom: 20px;
+}
+
+.incidents__date {
+    color: #ABABAB;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.incident__name {
+    margin-bottom: 30px !important;
+
+    i {
+        margin-right: 5px;
+    }
+}
+
+.incident-updates {
+    i {
+        width: 15px;
+    }
+}
+
+.incident-update {
+    font-size: 15px;
+    line-height: 22px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.incident-update__time {
+    color: #b3b3b3;
+}
+
+.incident-update__status {
+    margin-right: 5px;
+
+    i {
+        margin-right: 5px;
+    }
+}

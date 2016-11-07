@@ -1,0 +1,60 @@
+footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 60px;
+    padding: 30px 0 60px 0;
+    border-top: 1px solid $cachet_gray_light;
+    color: $cachet-gray-darker;
+    font-size: 13px;
+    line-height: 30px;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+
+    .btn {
+        text-shadow: none;
+    }
+
+    .icons {
+        a.icon-link {
+            display: inline-block;
+            min-width: 30px;
+            height: 30px;
+            border-radius: 3px;
+            background-color: $cachet-gray-darker;
+            text-align: center;
+            color: $cachet_gray_light;
+            transition: all 0.15s;
+            padding: 0 10px 0 10px;
+
+            &.rss {
+                background-color: $cachet-orange;
+            }
+
+            &:hover {
+                text-decoration: none;
+                background-color: darken($cachet-gray-darker, 10%);
+            }
+        }
+    }
+
+    .list-inline > li {
+        padding-right: 0;
+    }
+
+    @media (min-width: 768px) {
+        text-align: left;
+
+        .list-inline {
+            text-align: right;
+            > li {
+                padding-right: 0;
+            }
+        }
+
+        .icons {
+            margin-top: 0;
+            text-align: right;
+        }
+    }
+}

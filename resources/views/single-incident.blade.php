@@ -7,39 +7,38 @@
 @stop
 
 @section('content')
-<h1>{{ $incident->name }} <small>{{ $incident->occurred_at_formatted }}</small></h1>
-
-<hr>
+<h1>
+    <i class="{{ $incident->latest_icon }}"></i>
+    {{ $incident->name }} <small>{{ formatted_date($incident->created_at) }}</small>
+</h1>
 
 <div class="markdown-body">
     {!! $incident->formatted_message !!}
 </div>
 
+<hr>
+
 @if($incident->updates)
-<div class="timeline">
-    <div class="content-wrapper">
-        @foreach ($incident->updates as $index => $update)
-        <div class="moment {{ $index === 0 ? 'first' : null }}" id="update-{{ $update->id }}">
-            <div class="row event clearfix">
-                <div class="col-sm-1">
-                    <div class="status-icon status-{{ $update->status }}" data-toggle="tooltip" title="{{ $update->human_status }}" data-placement="left">
-                        <i class="{{ $update->icon }}"></i>
-                    </div>
+<div class="incidents">
+    @foreach ($incident->updates as $index => $update)
+    <div class="incident incident--divided" id="update-{{ $update->id }}">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="incidents__date">
+                    {{ $update->timestamp_formatted }}
                 </div>
-                <div class="col-xs-10 col-xs-offset-2 col-sm-11 col-sm-offset-0">
-                    <div class="panel panel-message incident">
-                        <div class="panel-body">
-                            <div class="markdown-body">
-                                {!! $update->formatted_message !!}
-                            </div>
-                        </div>
-                        <div class="panel-footer"><small>{{ trans('cachet.incidents.posted', ['timestamp' => $update->created_at_diff]) }}</small></div>
-                    </div>
+                <h3>
+                    <i class="{{ $update->icon }}"></i>
+                    {{ $update->human_status }}
+                </h3>
+                <hr>
+                <div class="markdown-body">
+                    {!! $update->formatted_message !!}
                 </div>
             </div>
         </div>
-        @endforeach
     </div>
+    @endforeach
 </div>
 @endif
 @stop

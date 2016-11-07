@@ -1,6 +1,11 @@
 @if($days_to_show > 0 && $all_incidents)
 <div class="section-timeline">
-    <h1>{{ trans('cachet.incidents.past') }}</h1>
+    <div class="section-timeline__header">
+        <h2>
+            <i class="icon ion-android-alarm-clock"></i>
+            {{ trans('cachet.incidents.past') }}
+        </h2>
+    </div>
     @foreach($all_incidents as $date => $incidents)
     @include('partials.incidents', [compact($date), compact($incidents)])
     @endforeach
