@@ -16,9 +16,8 @@
     {!! $incident->formatted_message !!}
 </div>
 
-<hr>
-
 @if($incident->updates)
+<hr>
 <div class="incidents">
     @foreach ($incident->updates as $index => $update)
     <div class="incident incident--divided" id="update-{{ $update->id }}">
