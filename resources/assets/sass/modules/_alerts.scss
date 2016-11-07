@@ -1,6 +1,8 @@
 .alert {
     border-radius: 4px;
     background: $cachet_yellow;
+    padding-top: 20px;
+    padding-bottom: 20px;
 
     &.alert-success {
         background-color: $cachet_green;
