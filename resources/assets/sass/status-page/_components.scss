@@ -17,7 +17,9 @@
 .components-group__name {
     @extend %component-item;
     background-color: $cachet_gray_light;
-    font-size: 1.3em;
+    color: $cachet_gray_darker;
+    text-transform: uppercase;
+    font-size: 1.1em;
     padding: {
         top: 0.6em;
         bottom: 0.6em;
