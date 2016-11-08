@@ -49,6 +49,17 @@ class AuthRoutes
                 'as'   => 'get:auth.two-factor',
                 'uses' => 'AuthController@showTwoFactorAuth',
             ]);
+            
+            $router->get('2fasecret', [
+                'as' => 'two-factor-generate-secret',
+                'uses' => 'AuthController@generateSecretKey'
+            ]);
+            
+            $router->get('2fasecret-show', [
+                'as' => 'two-factor-auth',
+                'uses' => 'AuthController@showQrCode'
+            ]);
+
 
             $router->post('2fa', [
                 'as'         => 'post:auth.two-factor',
