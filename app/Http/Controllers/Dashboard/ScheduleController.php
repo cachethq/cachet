@@ -83,7 +83,7 @@ class ScheduleController extends Controller
         try {
             dispatch(new CreateScheduleCommand(
                 Binput::get('name'),
-                Binput::get('message'),
+                Binput::get('message', null, false, false),
                 Binput::get('status', Schedule::UPCOMING),
                 Binput::get('scheduled_at'),
                 Binput::get('completed_at'),
