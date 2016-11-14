@@ -50,7 +50,7 @@ class System implements SystemContract
         } elseif ($enabledScope->notStatus(1)->count() === 0) {
             // If all our components are ok, do we have any non-fixed incidents?
             $incidents = Incident::orderBy('occurred_at', 'desc')->get()->filter(function ($incident) {
-                return $incident->status > 0;
+                return $incident->status !== Incident::FIXED;
             });
             $incidentCount = $incidents->count();
             $unresolvedCount = $incidents->filter(function ($incident) {
