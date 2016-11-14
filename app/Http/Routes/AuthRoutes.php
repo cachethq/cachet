@@ -66,21 +66,13 @@ class AuthRoutes
                 'middleware' => ['throttle:10,10'],
                 'uses'       => 'AuthController@postTwoFactor',
             ]);
-
-            $router->get('2fasecret', [
-                'as' => 'two-factor-generate-secret',
-                'uses' => 'AuthController@generateSecretKey'
-            ]);
-             
-            $router->get('2fasecret-show', [
-                 'as' => 'get:auth.two-factor-auth',
-                 'uses' => 'AuthController@generateTwoFa'
-             ]);
-            $router->get('logout', [
+            
+                        $router->get('logout', [
                 'as'         => 'get:auth.logout',
                 'uses'       => 'AuthController@logoutAction',
                 'middleware' => 'auth',
             ]);
+           
         });
     }
 }
