@@ -70,7 +70,7 @@ class IncidentController extends AbstractApiController
             $incident = dispatch(new ReportIncidentCommand(
                 Binput::get('name'),
                 Binput::get('status'),
-                Binput::get('message'),
+                Binput::get('message', null, false, false),
                 Binput::get('visible', true),
                 Binput::get('component_id'),
                 Binput::get('component_status'),
