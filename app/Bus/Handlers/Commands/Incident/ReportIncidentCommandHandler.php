@@ -19,6 +19,7 @@ use CachetHQ\Cachet\Dates\DateFactory;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentTemplate;
+use Carbon\Carbon;
 use Twig_Environment;
 use Twig_Loader_Array;
 
@@ -78,10 +79,12 @@ class ReportIncidentCommandHandler
         // The incident occurred at a different time.
         if ($occurredAt = $command->occurred_at) {
             if ($date = $this->dates->create('Y-m-d H:i', $occurredAt)) {
-                $incident->fill(['occurred_at' => $date]);
+                $data['occurred_at'] = $date;
             } else {
                 throw new InvalidIncidentTimestampException("Unable to pass timestamp {$occurredAt}");
             }
+        } else {
+            $data['occurred_at'] = Carbon::now();
         }
 
         // Create the incident
