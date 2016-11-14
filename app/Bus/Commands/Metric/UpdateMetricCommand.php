@@ -98,17 +98,17 @@ final class UpdateMetricCommand
      * @var string[]
      */
     public $rules = [
-        'name'          => 'string',
-        'suffix'        => 'string',
-        'description'   => 'string',
-        'display_chart' => 'bool',
-        'default_value' => 'numeric',
-        'calc_type'     => 'int|in:0,1',
-        'display_chart' => 'int',
-        'places'        => 'numeric|between:0,4',
-        'default_view'  => 'numeric|between:0,4',
-        'threshold'     => 'numeric|between:0,10',
-        'order'         => 'int',
+        'name'          => 'nullable|string',
+        'suffix'        => 'nullable|string',
+        'description'   => 'nullable|string',
+        'display_chart' => 'nullable|bool',
+        'default_value' => 'nullable|numeric',
+        'calc_type'     => 'nullable|int|in:0,1',
+        'display_chart' => 'nullable|int',
+        'places'        => 'nullable|numeric|between:0,4',
+        'default_view'  => 'nullable|numeric|between:0,4',
+        'threshold'     => 'nullable|numeric|between:0,10',
+        'order'         => 'nullable|int',
     ];
 
     /**

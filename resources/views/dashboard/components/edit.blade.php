@@ -66,7 +66,7 @@
                 </fieldset>
 
                 <input type="hidden" name="component[user_id]" value="{{ $component->agent_id || $current_user->id }}">
-                <input type="hidden" name="component[order]" value="{{ $component->order || 0 }}">
+                <input type="hidden" name="component[order]" value="{{ $component->order ?: 0 }}">
 
                 <div class="btn-group">
                     <button type="submit" class="btn btn-success">{{ trans('forms.save') }}</button>

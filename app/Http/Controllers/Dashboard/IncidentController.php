@@ -57,22 +57,6 @@ class IncidentController extends Controller
     {
         $this->auth = $auth;
 
-        $this->subMenu = [
-            'incidents' => [
-                'title'  => trans('dashboard.incidents.incidents'),
-                'url'    => cachet_route('dashboard.incidents'),
-                'icon'   => 'ion-android-checkmark-circle',
-                'active' => true,
-            ],
-            'schedule' => [
-                'title'  => trans('dashboard.schedule.schedule'),
-                'url'    => cachet_route('dashboard.schedule'),
-                'icon'   => 'ion-android-calendar',
-                'active' => false,
-            ],
-        ];
-
-        View::share('sub_menu', $this->subMenu);
         View::share('sub_title', trans('dashboard.incidents.title'));
     }
 
@@ -83,7 +67,7 @@ class IncidentController extends Controller
      */
     public function showIncidents()
     {
-        $incidents = Incident::notScheduled()->orderBy('created_at', 'desc')->get();
+        $incidents = Incident::orderBy('created_at', 'desc')->get();
 
         return View::make('dashboard.incidents.index')
             ->withPageTitle(trans('dashboard.incidents.incidents').' - '.trans('dashboard.dashboard'))
@@ -100,7 +84,7 @@ class IncidentController extends Controller
         return View::make('dashboard.incidents.add')
             ->withPageTitle(trans('dashboard.incidents.add.title').' - '.trans('dashboard.dashboard'))
             ->withComponentsInGroups(ComponentGroup::with('components')->get())
-            ->withComponentsOutGroups(Component::where('group_id', 0)->get())
+            ->withComponentsOutGroups(Component::where('group_id', '=', 0)->get())
             ->withIncidentTemplates(IncidentTemplate::all());
     }
 
@@ -133,7 +117,7 @@ class IncidentController extends Controller
                 Binput::get('component_status'),
                 Binput::get('notify', false),
                 Binput::get('stickied', false),
-                Binput::get('created_at'),
+                Binput::get('occurred_at'),
                 null,
                 []
             ));
@@ -236,7 +220,7 @@ class IncidentController extends Controller
             ->withPageTitle(trans('dashboard.incidents.edit.title').' - '.trans('dashboard.dashboard'))
             ->withIncident($incident)
             ->withComponentsInGroups(ComponentGroup::with('components')->get())
-            ->withComponentsOutGroups(Component::where('group_id', 0)->get());
+            ->withComponentsOutGroups(Component::where('group_id', '=', 0)->get());
     }
 
     /**
@@ -259,7 +243,7 @@ class IncidentController extends Controller
                 Binput::get('component_status'),
                 Binput::get('notify', true),
                 Binput::get('stickied', false),
-                Binput::get('created_at'),
+                Binput::get('occurred_at'),
                 null,
                 []
             ));

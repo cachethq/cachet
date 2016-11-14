@@ -21,6 +21,13 @@ use Illuminate\Contracts\Routing\Registrar;
 class SubscribeRoutes
 {
     /**
+     * Defines if these routes are for the browser.
+     *
+     * @var bool
+     */
+    public static $browser = true;
+
+    /**
      * Define the subscribe routes.
      *
      * @param \Illuminate\Contracts\Routing\Registrar $router
@@ -30,7 +37,7 @@ class SubscribeRoutes
     public function map(Registrar $router)
     {
         $router->group([
-            'middleware' => ['web', 'ready', 'localize', 'subscribers'],
+            'middleware' => ['ready', 'localize', 'subscribers'],
         ], function (Registrar $router) {
             $router->get('subscribe', [
                 'as'   => 'get:subscribe',

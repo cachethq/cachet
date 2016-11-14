@@ -22,6 +22,13 @@ use Illuminate\Contracts\Routing\Registrar;
 class BaseRoutes
 {
     /**
+     * Defines if these routes are for the browser.
+     *
+     * @var bool
+     */
+    public static $browser = true;
+
+    /**
      * Define the dashboard base routes.
      *
      * @param \Illuminate\Contracts\Routing\Registrar $router
@@ -31,7 +38,7 @@ class BaseRoutes
     public function map(Registrar $router)
     {
         $router->group([
-            'middleware' => ['web', 'auth'],
+            'middleware' => ['auth'],
             'namespace'  => 'Dashboard',
         ], function (Registrar $router) {
             $router->get('admin', 'DashboardController@redirectAdmin');

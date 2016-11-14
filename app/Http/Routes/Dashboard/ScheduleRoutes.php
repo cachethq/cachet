@@ -22,6 +22,13 @@ use Illuminate\Contracts\Routing\Registrar;
 class ScheduleRoutes
 {
     /**
+     * Defines if these routes are for the browser.
+     *
+     * @var bool
+     */
+    public static $browser = true;
+
+    /**
      * Define the dashboard schedule routes.
      *
      * @param \Illuminate\Contracts\Routing\Registrar $router
@@ -31,7 +38,7 @@ class ScheduleRoutes
     public function map(Registrar $router)
     {
         $router->group([
-            'middleware' => ['web', 'auth'],
+            'middleware' => ['auth'],
             'namespace'  => 'Dashboard',
             'prefix'     => 'dashboard/schedule',
         ], function (Registrar $router) {
@@ -49,15 +56,15 @@ class ScheduleRoutes
                 'uses' => 'ScheduleController@addScheduleAction',
             ]);
 
-            $router->get('{incident}', [
+            $router->get('{schedule}', [
                 'as'   => 'get:dashboard.schedule.edit',
                 'uses' => 'ScheduleController@showEditSchedule',
             ]);
-            $router->post('{incident}', [
+            $router->post('{schedule}', [
                 'as'   => 'post:dashboard.schedule.edit',
                 'uses' => 'ScheduleController@editScheduleAction',
             ]);
-            $router->delete('{incident}', [
+            $router->delete('{schedule}', [
                 'as'   => 'delete:dashboard.schedule.delete',
                 'uses' => 'ScheduleController@deleteScheduleAction',
             ]);

@@ -298,7 +298,9 @@ class SetupController extends Controller
             $envValue = env($envKey) ?: 'null';
 
             file_put_contents($path, str_replace(
-                $envKey.'='.$envValue, $envKey.'='.$value, file_get_contents($path)
+                $envKey.'='.$envValue,
+                $envKey.'='.$value,
+                file_get_contents($path)
             ));
         } catch (InvalidPathException $e) {
             //

@@ -63,7 +63,7 @@ class AddMetricPointCommandHandler
     protected function findOrCreatePoint(AddMetricPointCommand $command)
     {
         $buffer = Carbon::now()->subMinutes($command->metric->threshold);
-        $point = MetricPoint::where('metric_id', $command->metric->id)->where('value', $command->value)->where('created_at', '>=', $buffer)->first();
+        $point = MetricPoint::where('metric_id', '=', $command->metric->id)->where('value', '=', $command->value)->where('created_at', '>=', $buffer)->first();
 
         if ($point) {
             return $point;

@@ -19,7 +19,7 @@
     "messenger": "git+https://github.com/HubSpot/messenger.git",
     "moment": "^2.13.0",
     "sortablejs": "^1.4.2",
-    "sweetalert2": "^4.0.4"
+    "sweetalert2": "^6.0.1"
   },
   "private": true
 }

@@ -12,16 +12,20 @@
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
 use AltThree\Validator\ValidationException;
-use CachetHQ\Cachet\Bus\Commands\Incident\ReportMaintenanceCommand;
-use CachetHQ\Cachet\Dates\DateFactory;
-use CachetHQ\Cachet\Models\Incident;
+use CachetHQ\Cachet\Bus\Commands\Schedule\CreateScheduleCommand;
+use CachetHQ\Cachet\Bus\Commands\Schedule\DeleteScheduleCommand;
+use CachetHQ\Cachet\Bus\Commands\Schedule\UpdateScheduleCommand;
 use CachetHQ\Cachet\Models\IncidentTemplate;
+use CachetHQ\Cachet\Models\Schedule;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\View;
-use Illuminate\Support\MessageBag;
-use Jenssegers\Date\Date;
 
+/**
+ * This is the schedule controller class.
+ *
+ * @author James Brooks <james@alt-three.com>
+ */
 class ScheduleController extends Controller
 {
     /**
@@ -38,23 +42,7 @@ class ScheduleController extends Controller
      */
     public function __construct()
     {
-        $this->subMenu = [
-            'incidents' => [
-                'title'  => trans('dashboard.incidents.incidents'),
-                'url'    => cachet_route('dashboard.incidents'),
-                'icon'   => 'ion-android-checkmark-circle',
-                'active' => false,
-            ],
-            'schedule' => [
-                'title'  => trans('dashboard.schedule.schedule'),
-                'url'    => cachet_route('dashboard.schedule'),
-                'icon'   => 'ion-android-calendar',
-                'active' => true,
-            ],
-        ];
-
-        View::share('sub_menu', $this->subMenu);
-        View::share('sub_title', trans('dashboard.incidents.title'));
+        View::share('sub_title', trans('dashboard.schedule.title'));
     }
 
     /**
@@ -64,7 +52,7 @@ class ScheduleController extends Controller
      */
     public function showIndex()
     {
-        $schedule = Incident::scheduled()->orderBy('created_at')->get();
+        $schedule = Schedule::orderBy('created_at')->get();
 
         return View::make('dashboard.schedule.index')
             ->withPageTitle(trans('dashboard.schedule.schedule').' - '.trans('dashboard.dashboard'))
@@ -86,18 +74,20 @@ class ScheduleController extends Controller
     }
 
     /**
-     * Creates a new scheduled maintenance "incident".
+     * Creates a new scheduled maintenance.
      *
      * @return \Illuminate\Http\RedirectResponse
      */
     public function addScheduleAction()
     {
         try {
-            $incident = dispatch(new ReportMaintenanceCommand(
+            dispatch(new CreateScheduleCommand(
                 Binput::get('name'),
                 Binput::get('message'),
-                Binput::get('notify'),
-                Binput::get('scheduled_at')
+                Binput::get('status', Schedule::UPCOMING),
+                Binput::get('scheduled_at'),
+                Binput::get('completed_at'),
+                Binput::get('components', [])
             ));
         } catch (ValidationException $e) {
             return cachet_redirect('dashboard.schedule.create')
@@ -113,11 +103,11 @@ class ScheduleController extends Controller
     /**
      * Shows the edit schedule maintenance form.
      *
-     * @param \CachetHQ\Cachet\Models\Incident $schedule
+     * @param \CachetHQ\Cachet\Models\Schedule $schedule
      *
      * @return \Illuminate\View\View
      */
-    public function showEditSchedule(Incident $schedule)
+    public function showEditSchedule(Schedule $schedule)
     {
         $incidentTemplates = IncidentTemplate::all();
 
@@ -130,30 +120,22 @@ class ScheduleController extends Controller
     /**
      * Updates the given incident.
      *
-     * @param \CachetHQ\Cachet\Models\Incident $schedule
+     * @param \CachetHQ\Cachet\Models\Schedule $schedule
      *
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function editScheduleAction(Incident $schedule)
+    public function editScheduleAction(Schedule $schedule)
     {
-        $scheduleData = Binput::get('incident');
-
-        // Parse the schedule date.
-        $scheduledAt = app(DateFactory::class)->create('d/m/Y H:i', $scheduleData['scheduled_at']);
-
-        if ($scheduledAt->isPast()) {
-            $messageBag = new MessageBag();
-            $messageBag->add('scheduled_at', trans('validation.date', ['attribute' => 'scheduled time you supplied']));
-
-            return cachet_redirect('dashboard.schedule.edit', [$schedule->id])->withErrors($messageBag);
-        }
-
-        $scheduleData['scheduled_at'] = $scheduledAt;
-        // Bypass the incident.status field.
-        $scheduleData['status'] = 0;
-
         try {
-            $schedule->update($scheduleData);
+            $schedule = dispatch(new UpdateScheduleCommand(
+                $schedule,
+                Binput::get('name', null),
+                Binput::get('message', null),
+                Binput::get('status', null),
+                Binput::get('scheduled_at', null),
+                Binput::get('completed_at', null),
+                Binput::get('components', [])
+            ));
         } catch (ValidationException $e) {
             return cachet_redirect('dashboard.schedule.edit', [$schedule->id])
                 ->withInput(Binput::all())
@@ -168,13 +150,13 @@ class ScheduleController extends Controller
     /**
      * Deletes a given schedule.
      *
-     * @param \CachetHQ\Cachet\Models\Incident $schedule
+     * @param \CachetHQ\Cachet\Models\Schedule $schedule
      *
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function deleteScheduleAction(Incident $schedule)
+    public function deleteScheduleAction(Schedule $schedule)
     {
-        $schedule->delete();
+        dispatch(new DeleteScheduleCommand($schedule));
 
         return cachet_redirect('dashboard.schedule')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.schedule.delete.success')));

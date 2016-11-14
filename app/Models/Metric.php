@@ -94,12 +94,11 @@ class Metric extends Model implements HasPresenter
     public $rules = [
         'name'          => 'required',
         'suffix'        => 'required',
-        'display_chart' => 'bool',
-        'default_value' => 'numeric',
-        'places'        => 'numeric|between:0,4',
-        'default_view'  => 'numeric|between:0,3',
-        'threshold'     => 'numeric|between:0,10',
-        'threshold'     => 'int',
+        'display_chart' => 'required|bool',
+        'default_value' => 'required|numeric',
+        'places'        => 'required|numeric|between:0,4',
+        'default_view'  => 'required|numeric|between:0,3',
+        'threshold'     => 'required|numeric|between:0,10',
     ];
 
     /**
@@ -135,7 +134,7 @@ class Metric extends Model implements HasPresenter
      */
     public function scopeDisplayable(Builder $query)
     {
-        return $query->where('display_chart', 1);
+        return $query->where('display_chart', '=', true);
     }
 
     /**
@@ -145,7 +144,7 @@ class Metric extends Model implements HasPresenter
      */
     public function getShouldDisplayAttribute()
     {
-        return $this->display_chart === 1;
+        return $this->display_chart;
     }
 
     /**

@@ -58,7 +58,7 @@ class ModuleServiceProvider extends ServiceProvider
      */
     public function boot(BladeCompiler $blade)
     {
-        $blade->directive('modules', function ($group = null) {
+        $blade->directive('modules', function ($group) {
             return sprintf(
                 '<?php echo $app->call(\'%s@%s\', [
                     \'factory\' => $__env,
@@ -68,7 +68,7 @@ class ModuleServiceProvider extends ServiceProvider
                 ]); ?>',
                 ModulesRenderer::class,
                 'renderModules',
-                $group === null ? 'null' : $group
+                empty($group) ? 'null' : $group
             );
         });
     }

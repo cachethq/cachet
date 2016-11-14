@@ -11,7 +11,7 @@
 
 namespace CachetHQ\Cachet\Composers\Modules;
 
-use CachetHQ\Cachet\Models\Incident;
+use CachetHQ\Cachet\Models\Schedule;
 use Illuminate\Contracts\View\View;
 
 /**
@@ -31,7 +31,7 @@ class ScheduledComposer
      */
     public function compose(View $view)
     {
-        $scheduledMaintenance = Incident::scheduled()->orderBy('scheduled_at')->get();
+        $scheduledMaintenance = Schedule::futureSchedules()->orderBy('scheduled_at')->get();
 
         $view->withScheduledMaintenance($scheduledMaintenance);
     }

@@ -13,9 +13,9 @@ namespace CachetHQ\Cachet\Foundation\Providers;
 
 use CachetHQ\Cachet\Dates\DateFactory;
 use CachetHQ\Cachet\Repositories\Metric\MetricRepository;
-use CachetHQ\Cachet\Repositories\Metric\MySqlRepository as MetricMySqlRepository;
-use CachetHQ\Cachet\Repositories\Metric\PgSqlRepository as MetricPgSqlRepository;
-use CachetHQ\Cachet\Repositories\Metric\SqliteRepository as MetricSqliteRepository;
+use CachetHQ\Cachet\Repositories\Metric\MySqlRepository;
+use CachetHQ\Cachet\Repositories\Metric\PgSqlRepository;
+use CachetHQ\Cachet\Repositories\Metric\SqliteRepository;
 use Illuminate\Contracts\Config\Repository as ConfigRepository;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Support\ServiceProvider;
@@ -46,14 +46,11 @@ class RepositoryServiceProvider extends ServiceProvider
     {
         $this->app->singleton(MetricRepository::class, function (Container $app) {
             $config = $app->make(ConfigRepository::class);
-            $driver = $config->get('database.default');
 
-            if ($driver == 'mysql') {
-                $repository = new MetricMySqlRepository($config);
-            } elseif ($driver == 'pgsql') {
-                $repository = new MetricPgSqlRepository($config);
-            } elseif ($driver == 'sqlite') {
-                $repository = new MetricSqliteRepository($config);
+            switch ($config->get('database.default')) {
+                case 'mysql': $repository = new MySqlRepository($config); break;
+                case 'pgsql': $repository = new PgSqlRepository($config); break;
+                case 'sqlite': $repository = new SqliteRepository($config); break;
             }
 
             $dates = $app->make(DateFactory::class);

@@ -14,6 +14,7 @@ return [
     'components' => [
         'last_updated' => 'Last updated :timestamp',
         'status'       => [
+            0 => 'Unknown',
             1 => 'Operational',
             2 => 'Performance Issues',
             3 => 'Partial Outage',
@@ -35,7 +36,6 @@ return [
         'scheduled_at'  => ', scheduled :timestamp',
         'posted'        => 'Posted :timestamp',
         'status'        => [
-            0 => 'Scheduled', // TODO: Hopefully remove this.
             1 => 'Investigating',
             2 => 'Identified',
             3 => 'Watching',
@@ -43,11 +43,20 @@ return [
         ],
     ],
 
+    // Schedule
+    'schedules' => [
+        'status' => [
+            0 => 'Upcoming',
+            1 => 'In Progress',
+            2 => 'Complete',
+        ],
+    ],
+
     // Service Status
     'service' => [
         'good'  => '[0,1] System operational|[2,Inf] All systems are operational',
-        'bad'   => '[0,1] The system is currently experiencing issues|[2,Inf] Some systems are experiencing issues',
-        'major' => '[0,1] The service is experiencing a major outage|[2,Inf] Some systems are experiencing a major outage',
+        'bad'   => '[0,1] The system is experiencing issues|[2,Inf] Some systems are experiencing issues',
+        'major' => '[0,1] The system is experiencing major issues|[2,Inf] Some systems are experiencing major issues',
     ],
 
     'api' => [

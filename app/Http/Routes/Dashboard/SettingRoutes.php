@@ -22,6 +22,13 @@ use Illuminate\Contracts\Routing\Registrar;
 class SettingRoutes
 {
     /**
+     * Defines if these routes are for the browser.
+     *
+     * @var bool
+     */
+    public static $browser = true;
+
+    /**
      * Define the dashboard setting routes.
      *
      * @param \Illuminate\Contracts\Routing\Registrar $router
@@ -31,7 +38,7 @@ class SettingRoutes
     public function map(Registrar $router)
     {
         $router->group([
-            'middleware' => ['web', 'auth'],
+            'middleware' => ['auth'],
             'namespace'  => 'Dashboard',
             'prefix'     => 'dashboard/settings',
         ], function (Registrar $router) {
