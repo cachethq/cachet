@@ -22,6 +22,13 @@ use Illuminate\Contracts\Routing\Registrar;
 class ComponentRoutes
 {
     /**
+     * Defines if these routes are for the browser.
+     *
+     * @var bool
+     */
+    public static $browser = true;
+
+    /**
      * Define the dashboard component routes.
      *
      * @param \Illuminate\Contracts\Routing\Registrar $router
@@ -31,7 +38,7 @@ class ComponentRoutes
     public function map(Registrar $router)
     {
         $router->group([
-            'middleware' => ['web', 'auth'],
+            'middleware' => ['auth'],
             'namespace'  => 'Dashboard',
             'prefix'     => 'dashboard/components',
         ], function (Registrar $router) {

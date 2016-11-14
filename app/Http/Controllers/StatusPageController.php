@@ -17,6 +17,7 @@ use CachetHQ\Cachet\Http\Controllers\Api\AbstractApiController;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\Metric;
+use CachetHQ\Cachet\Models\Schedule;
 use CachetHQ\Cachet\Repositories\Metric\MetricRepository;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
@@ -31,20 +32,22 @@ use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
 class StatusPageController extends AbstractApiController
 {
     /**
+     * The metric repository instance.
+     *
      * @var \CachetHQ\Cachet\Repositories\Metric\MetricRepository
      */
-    protected $metricRepository;
+    protected $metrics;
 
     /**
      * Construct a new status page controller instance.
      *
-     * @param \CachetHQ\Cachet\Repositories\Metric\MetricRepository $metricRepository
+     * @param \CachetHQ\Cachet\Repositories\Metric\MetricRepository $metrics
      *
      * @return void
      */
-    public function __construct(MetricRepository $metricRepository)
+    public function __construct(MetricRepository $metrics)
     {
-        $this->metricRepository = $metricRepository;
+        $this->metrics = $metrics;
     }
 
     /**
@@ -82,11 +85,11 @@ class StatusPageController extends AbstractApiController
 
         $incidentVisibility = Auth::check() ? 0 : 1;
 
-        $allIncidents = Incident::notScheduled()->where('visible', '>=', $incidentVisibility)->whereBetween('created_at', [
+        $allIncidents = Incident::where('visible', '>=', $incidentVisibility)->whereBetween('occurred_at', [
             $startDate->copy()->subDays($daysToShow)->format('Y-m-d').' 00:00:00',
             $startDate->format('Y-m-d').' 23:59:59',
-        ])->orderBy('scheduled_at', 'desc')->orderBy('created_at', 'desc')->get()->load('updates')->groupBy(function (Incident $incident) {
-            return app(DateFactory::class)->make($incident->is_scheduled ? $incident->scheduled_at : $incident->created_at)->toDateString();
+        ])->orderBy('occurred_at', 'desc')->get()->groupBy(function (Incident $incident) {
+            return app(DateFactory::class)->make($incident->occurred_at)->toDateString();
         });
 
         // Add in days that have no incidents
@@ -109,7 +112,7 @@ class StatusPageController extends AbstractApiController
             ->withDaysToShow($daysToShow)
             ->withAllIncidents($allIncidents)
             ->withCanPageForward((bool) $today->gt($startDate))
-            ->withCanPageBackward(Incident::notScheduled()->where('created_at', '<', $startDate->format('Y-m-d'))->count() > 0)
+            ->withCanPageBackward(Incident::where('occurred_at', '<', $startDate->format('Y-m-d'))->count() > 0)
             ->withPreviousDate($startDate->copy()->subDays($daysToShow)->toDateString())
             ->withNextDate($startDate->copy()->addDays($daysToShow)->toDateString());
     }
@@ -123,8 +126,19 @@ class StatusPageController extends AbstractApiController
      */
     public function showIncident(Incident $incident)
     {
-        return View::make('single-incident')
-            ->withIncident($incident);
+        return View::make('single-incident')->withIncident($incident);
+    }
+
+    /**
+     * Show a single schedule.
+     *
+     * @param \CachetHQ\Cachet\Models\Schedule $schedule
+     *
+     * @return \Illuminate\View\View
+     */
+    public function showSchedule(Schedule $schedule)
+    {
+        return View::make('single-schedule')->withSchedule($schedule);
     }
 
     /**
@@ -141,16 +155,16 @@ class StatusPageController extends AbstractApiController
 
         switch ($type) {
             case 'last_hour':
-                $metricData = $this->metricRepository->listPointsLastHour($metric);
+                $metricData = $this->metrics->listPointsLastHour($metric);
                 break;
             case 'today':
-                $metricData = $this->metricRepository->listPointsToday($metric);
+                $metricData = $this->metrics->listPointsToday($metric);
                 break;
             case 'week':
-                $metricData = $this->metricRepository->listPointsForWeek($metric);
+                $metricData = $this->metrics->listPointsForWeek($metric);
                 break;
             case 'month':
-                $metricData = $this->metricRepository->listPointsForMonth($metric);
+                $metricData = $this->metrics->listPointsForMonth($metric);
                 break;
         }
 

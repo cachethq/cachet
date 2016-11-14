@@ -14,6 +14,7 @@ namespace CachetHQ\Cachet\Bus\Handlers\Commands\Incident;
 use CachetHQ\Cachet\Bus\Commands\Component\UpdateComponentCommand;
 use CachetHQ\Cachet\Bus\Commands\Incident\UpdateIncidentCommand;
 use CachetHQ\Cachet\Bus\Events\Incident\IncidentWasUpdatedEvent;
+use CachetHQ\Cachet\Bus\Exceptions\Incident\InvalidIncidentTimestampException;
 use CachetHQ\Cachet\Dates\DateFactory;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
@@ -56,22 +57,24 @@ class UpdateIncidentCommandHandler
      */
     public function handle(UpdateIncidentCommand $command)
     {
-        if ($template = IncidentTemplate::where('slug', $command->template)->first()) {
+        if ($template = IncidentTemplate::where('slug', '=', $command->template)->first()) {
             $command->message = $this->parseTemplate($template, $command);
         }
 
         $incident = $command->incident;
-        $incident->update($this->filter($command));
+        $incident->fill($this->filter($command));
 
         // The incident occurred at a different time.
-        if ($command->incident_date) {
-            $incidentDate = $this->dates->create('d/m/Y H:i', $command->incident_date);
-
-            $incident->update([
-                'created_at' => $incidentDate,
-                'updated_at' => $incidentDate,
-            ]);
+        if ($occurredAt = $command->occurred_at) {
+            if ($date = $this->dates->create('Y-m-d H:i', $occurredAt)) {
+                $incident->fill(['occurred_at' => $date]);
+            } else {
+                throw new InvalidIncidentTimestampException("Unable to pass timestamp {$occurredAt}");
+            }
         }
+
+        // Rather than making lots of updates, just fill and save.
+        $incident->save();
 
         // Update the component.
         if ($component = Component::find($command->component_id)) {
@@ -138,7 +141,7 @@ class UpdateIncidentCommandHandler
                 'visible'          => $command->visible,
                 'notify'           => $command->notify,
                 'stickied'         => $command->stickied,
-                'incident_date'    => $command->incident_date,
+                'occurred_at'      => $command->occurred_at,
                 'component'        => Component::find($command->component_id) ?: null,
                 'component_status' => $command->component_status,
             ],

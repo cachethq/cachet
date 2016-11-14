@@ -48,9 +48,9 @@ final class SignupUserCommand
      */
     public $rules = [
         'username' => 'required|string',
-        'password' => 'string',
+        'password' => 'required|string',
         'email'    => 'required|string|email',
-        'level'    => 'int',
+        'level'    => 'required|int',
     ];
 
     /**

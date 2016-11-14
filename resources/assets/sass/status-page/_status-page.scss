@@ -272,8 +272,13 @@ body.status-page {
             }
 
             p, time {
+                &:not(:last-child) {
+                    margin-bottom: 10px;
+                }
+            }
+
+            time {
                 margin-bottom: 0;
-                line-height: 1.3em;
             }
 
             i.icon {

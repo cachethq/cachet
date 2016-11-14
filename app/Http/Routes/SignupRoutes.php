@@ -21,6 +21,13 @@ use Illuminate\Contracts\Routing\Registrar;
 class SignupRoutes
 {
     /**
+     * Defines if these routes are for the browser.
+     *
+     * @var bool
+     */
+    public static $browser = true;
+
+    /**
      * Define the signup routes.
      *
      * @param \Illuminate\Contracts\Routing\Registrar $router
@@ -30,7 +37,7 @@ class SignupRoutes
     public function map(Registrar $router)
     {
         $router->group([
-            'middleware' => ['web', 'ready', 'guest'],
+            'middleware' => ['ready', 'guest'],
             'prefix'     => 'signup',
         ], function (Registrar $router) {
             $router->get('invite/{code}', [

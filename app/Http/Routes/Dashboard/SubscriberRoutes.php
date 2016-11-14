@@ -22,6 +22,13 @@ use Illuminate\Contracts\Routing\Registrar;
 class SubscriberRoutes
 {
     /**
+     * Defines if these routes are for the browser.
+     *
+     * @var bool
+     */
+    public static $browser = true;
+
+    /**
      * Define the dashboard subscriber routes.
      *
      * @param \Illuminate\Contracts\Routing\Registrar $router
@@ -31,7 +38,7 @@ class SubscriberRoutes
     public function map(Registrar $router)
     {
         $router->group([
-            'middleware' => ['web', 'auth'],
+            'middleware' => ['auth'],
             'namespace'  => 'Dashboard',
             'prefix'     => 'dashboard/subscribers',
         ], function (Registrar $router) {
@@ -50,7 +57,7 @@ class SubscriberRoutes
             ]);
 
             $router->delete('{subscriber}/delete', [
-                'as'   => 'delete:dashbpard.subscribers.delete',
+                'as'   => 'delete:dashboard.subscribers.delete',
                 'uses' => 'SubscriberController@deleteSubscriberAction',
             ]);
         });

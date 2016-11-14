@@ -46,7 +46,7 @@ class ManagerTest extends AbstractTestCase
         $manager = m::mock('CachetHQ\Cachet\Services\Modules\Manager[groupModules]');
         $manager->shouldReceive('groupModules')->once()->passthru();
 
-        $grouped = $manager->groupModules($this->getModules(), $this->getGroups());
+        $grouped = $manager->groupModules($this->getModules(), $this->getModuleGroups());
 
         $this->assertSame($this->getGroupedModulesWithOrders(), $grouped);
     }
@@ -84,7 +84,7 @@ class ManagerTest extends AbstractTestCase
         ];
     }
 
-    protected function getGroups()
+    protected function getModuleGroups()
     {
         return [
             'one' => 1,

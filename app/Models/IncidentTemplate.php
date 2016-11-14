@@ -44,7 +44,7 @@ class IncidentTemplate extends Model
      */
     public $rules = [
         'name'     => 'required|string',
-        'slug'     => 'string',
+        'slug'     => 'required|string',
         'template' => 'required|string',
     ];
 
@@ -72,7 +72,7 @@ class IncidentTemplate extends Model
      */
     public static function forSlug($slug, $columns = ['*'])
     {
-        $template = static::where('slug', $slug)->firstOrFail($columns);
+        $template = static::where('slug', '=', $slug)->firstOrFail($columns);
 
         return $template;
     }

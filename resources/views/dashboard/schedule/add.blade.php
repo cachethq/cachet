@@ -16,11 +16,10 @@
             @include('dashboard.partials.errors')
             <form class="form-vertical" name="ScheduleForm" role="form" method="POST" autocomplete="off">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                <input type="hidden" name="visible" value="1">
                 <fieldset>
                     @if($incident_templates->count() > 0)
                     <div class="form-group">
-                        <label for="incident-template">{{ trans('forms.incidents.templates.template') }}</label>
+                        <label for="incident-template">{{ trans('forms.schedules.templates.template') }}</label>
                         <select class="form-control" name="template">
                             <option selected></option>
                             @foreach($incident_templates as $tpl)
@@ -30,27 +29,32 @@
                     </div>
                     @endif
                     <div class="form-group">
-                        <label for="incident-name">{{ trans('forms.incidents.name') }}</label>
-                        <input type="text" class="form-control" name="name" id="incident-name" required value="{{ Binput::old('incident.name') }}" placeholder="{{ trans('forms.incidents.name') }}">
+                        <label for="incident-name">{{ trans('forms.schedules.name') }}</label>
+                        <input type="text" class="form-control" name="name" id="incident-name" required value="{{ Binput::old('name') }}" placeholder="{{ trans('forms.schedules.name') }}">
                     </div>
                     <div class="form-group">
-                        <label>{{ trans('forms.incidents.message') }}</label>
+                        <label>{{ trans('forms.schedules.status') }}</label><br>
+                        @foreach(trans('cachet.schedules.status') as $id => $status)
+                        <label class="radio-inline">
+                            <input type="radio" name="status" value="{{ $id }}" {{ $id === 0 ? 'checked="checked"' : null }}>
+                            {{ $status }}
+                        </label>
+                        @endforeach
+                    </div>
+                    <div class="form-group">
+                        <label>{{ trans('forms.schedules.message') }}</label>
                         <div class="markdown-control">
-                            <textarea name="message" class="form-control autosize" rows="5" required placeholder="{{ trans('forms.incidents.message') }}">{{ Binput::old('incident.message') }}</textarea>
+                            <textarea name="message" class="form-control autosize" rows="5" required placeholder="{{ trans('forms.schedules.message') }}">{{ Binput::old('message') }}</textarea>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>{{ trans('forms.incidents.scheduled_at') }}</label>
-                        <input type="text" name="scheduled_at" class="form-control" rel="datepicker" required placeholder="{{ trans('forms.incidents.scheduled_at') }}">
+                        <label>{{ trans('forms.schedules.scheduled_at') }}</label>
+                        <input type="text" name="scheduled_at" class="form-control" rel="datepicker-custom" data-date-format="YYYY-MM-DD HH:mm" required placeholder="{{ trans('forms.schedules.scheduled_at') }}">
                     </div>
-                    @if(subscribers_enabled())
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox" name="notify" value="1" checked="{{ Binput::old('incident.message', 'checked') }}">
-                            {{ trans('forms.incidents.notify_subscribers') }}
-                        </label>
+                    <div class="form-group">
+                        <label>{{ trans('forms.schedules.scheduled_at') }}</label>
+                        <input type="text" name="completed_at" class="form-control" rel="datepicker-custom" data-date-format="YYYY-MM-DD HH:mm" placeholder="{{ trans('forms.schedules.scheduled_at') }}">
                     </div>
-                    @endif
                 </fieldset>
 
                 <div class="form-group">

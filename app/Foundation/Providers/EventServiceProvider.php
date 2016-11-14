@@ -16,7 +16,7 @@ use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvi
 class EventServiceProvider extends ServiceProvider
 {
     /**
-     * The event handler mappings for the application.
+     * The event listener mappings for the application.
      *
      * @var array
      */
@@ -69,9 +69,6 @@ class EventServiceProvider extends ServiceProvider
         'CachetHQ\Cachet\Bus\Events\Incident\IncidentWasRemovedEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Bus\Events\Incident\MaintenanceWasScheduledEvent' => [
-            'CachetHQ\Cachet\Bus\Handlers\Events\Incident\SendMaintenanceEmailNotificationHandler',
-        ],
         'CachetHQ\Cachet\Bus\Events\Invite\InviteWasClaimedEvent' => [
             //
         ],
@@ -91,6 +88,15 @@ class EventServiceProvider extends ServiceProvider
             //
         ],
         'CachetHQ\Cachet\Bus\Events\Metric\MetricWasUpdatedEvent' => [
+            //
+        ],
+        'CachetHQ\Cachet\Bus\Events\Schedule\ScheduleWasCreatedEvent' => [
+            // 'CachetHQ\Cachet\Bus\Handlers\Events\Schedule\SendScheduleEmailNotificationHandler',
+        ],
+        'CachetHQ\Cachet\Bus\Events\Schedule\ScheduleWasRemovedEvent' => [
+            //
+        ],
+        'CachetHQ\Cachet\Bus\Events\Schedule\ScheduleWasUpdatedEvent' => [
             //
         ],
         'CachetHQ\Cachet\Bus\Events\Subscriber\SubscriberHasSubscribedEvent' => [
