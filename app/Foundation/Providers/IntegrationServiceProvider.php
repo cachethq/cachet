@@ -96,7 +96,9 @@ class IntegrationServiceProvider extends ServiceProvider
     protected function registerSystem()
     {
         $this->app->singleton(SystemContract::class, function (Container $app) {
-            return new System();
+            $config = $app['config'];
+
+            return new System($config);
         });
     }
 

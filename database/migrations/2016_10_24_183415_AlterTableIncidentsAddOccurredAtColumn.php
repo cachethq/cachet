@@ -9,6 +9,7 @@
  * file that was distributed with this source code.
  */
 
+use CachetHQ\Cachet\Integrations\Contracts\System;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;
@@ -28,7 +29,10 @@ class AlterTableIncidentsAddOccurredAtColumn extends Migration
         });
 
         // We need a better way of handling data migrations...
-        DB::update('UPDATE incidents SET occurred_at = created_at');
+        $system = app(System::class);
+        $prefix = $system->getTablePrefix();
+
+        DB::update("UPDATE {$prefix}incidents SET occurred_at = created_at");
     }
 
     /**

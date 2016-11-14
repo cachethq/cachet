@@ -9,6 +9,7 @@
  * file that was distributed with this source code.
  */
 
+use CachetHQ\Cachet\Integrations\Contracts\System;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;
@@ -24,7 +25,9 @@ class AlterTableIncidentsRemoveScheduledColumns extends Migration
     public function up()
     {
         // We need a better way of handling data migrations...
-        DB::update('INSERT INTO schedules (name, message, scheduled_at, created_at, updated_at) SELECT name, message, scheduled_at, created_at, updated_at FROM incidents WHERE scheduled_at IS NOT NULL');
+        $system = app(System::class);
+        $prefix = $system->getTablePrefix();
+        DB::update("INSERT INTO {$prefix}schedules (name, message, scheduled_at, created_at, updated_at) SELECT name, message, scheduled_at, created_at, updated_at FROM {$prefix}incidents WHERE scheduled_at IS NOT NULL");
 
         DB::table('incidents')->whereNotNull('scheduled_at')->delete();
 
