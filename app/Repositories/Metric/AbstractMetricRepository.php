@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Cachet\Repositories\Metric;
 
+use CachetHQ\Cachet\Integrations\Contracts\System;
 use CachetHQ\Cachet\Models\Metric;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Support\Collection;
@@ -55,9 +56,7 @@ abstract class AbstractMetricRepository
      */
     protected function getMetricsTable()
     {
-        $driver = $this->config->get('database.default');
-        $connection = $this->config->get('database.connections.'.$driver);
-        $prefix = $connection['prefix'];
+        $prefix = app(System::class)->getTablePrefix();
 
         return $prefix.'metrics';
     }
@@ -69,9 +68,7 @@ abstract class AbstractMetricRepository
      */
     protected function getMetricPointsTable()
     {
-        $driver = $this->config->get('database.default');
-        $connection = $this->config->get('database.connections.'.$driver);
-        $prefix = $connection['prefix'];
+        $prefix = app(System::class)->getTablePrefix();
 
         return $prefix.'metric_points';
     }
