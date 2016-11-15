@@ -30,7 +30,7 @@ return [
         'past'          => 'Past Incidents',
         'previous_week' => 'Previous week',
         'next_week'     => 'Next week',
-        'stickied'      => 'Stickied Incidents',
+        'Ongoing'      => 'Ongoing Incidents',
         'scheduled'     => 'Scheduled Maintenance',
         'scheduled_at'  => ', scheduled :timestamp',
         'posted'        => 'Posted :timestamp',
@@ -39,7 +39,7 @@ return [
             1 => 'Investigating',
             2 => 'Identified',
             3 => 'Watching',
-            4 => 'Fixed',
+            4 => 'Resolved',
         ],
     ],
 
