@@ -49,6 +49,7 @@ class Metric extends Model implements HasPresenter
         'places'        => 2,
         'default_view'  => 1,
         'threshold'     => 5,
+        'component_id'  => 0,
         'order'         => 0,
     ];
 
@@ -65,6 +66,7 @@ class Metric extends Model implements HasPresenter
         'places'        => 'int',
         'default_view'  => 'int',
         'threshold'     => 'int',
+        'component_id'  => 'int',
         'order'         => 'int',
     ];
 
@@ -83,6 +85,7 @@ class Metric extends Model implements HasPresenter
         'places',
         'default_view',
         'threshold',
+        'component_id',
         'order',
     ];
 
@@ -98,6 +101,7 @@ class Metric extends Model implements HasPresenter
         'default_value' => 'required|numeric',
         'places'        => 'required|numeric|between:0,4',
         'default_view'  => 'required|numeric|between:0,3',
+        'component_id'  => 'required|int',
         'threshold'     => 'required|numeric|between:0,10',
     ];
 
@@ -112,8 +116,19 @@ class Metric extends Model implements HasPresenter
         'display_chart',
         'default_value',
         'calc_type',
+        'component_id',
         'order',
     ];
+
+    /**
+     * Get the component relation.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function component()
+    {
+        return $this->belongsTo(Component::class, 'component_id', 'id');
+    }
 
     /**
      * Get the points relation.

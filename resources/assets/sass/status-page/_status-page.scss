@@ -43,6 +43,17 @@ body.status-page {
         }
     }
 
+    .dropdown-menu {
+        .group a {
+            font-weight: 600;
+            color: $cachet-gray-darker;
+        }
+
+        .grouped a {
+            margin-left: 15px;
+        }
+    }
+
     .help-icon {
         cursor: help;
     }
@@ -402,6 +413,11 @@ body.status-page {
         margin-top: 40px;
     }
 
+    .section-filters {
+        padding-bottom: 10px;
+        text-align: right;
+    }
+
     .navbar-custom {
         padding-top: 10px;
         padding-bottom: 10px;
@@ -420,6 +436,69 @@ body.status-page {
 
             &:hover {
                 background-color: transparent;
+            }
+        }
+    }
+
+    .historical-charts {
+        margin-top: 10px;
+        color: $cachet-gray-darker;
+
+        .transition-chart {
+            padding: 2rem;
+
+            .chart-title {
+                font-size: 0.85em;
+                font-weight: bold;
+                color: $cachet-gray-darker !important;
+                text-align: center;
+            }
+
+            .legend-column {
+                width: 6em;
+            }
+
+            .progress {
+                margin-bottom: 0;
+
+                .progress-bar label {
+                    width: 100%;
+                    height: 100%;
+                    margin: 0;
+                    padding: 0;
+                }
+            }
+        }
+
+        .chart-pager {
+            margin-top: 32px;
+
+            a {
+                font-size: 0.8em;
+                color: $cachet-gray-darker !important;
+                text-decoration: none;
+            }
+        }
+    }
+
+    .transition-tooltip {
+        font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+        font-size: 0.9em;
+
+        .status-title {
+            padding: 8px 0;
+        }
+
+        dt {
+            margin-top: 8px;
+        }
+
+        ul {
+            padding: 0 0 0 18px;
+
+            li {
+                padding: 0;
+                margin: 0;
             }
         }
     }

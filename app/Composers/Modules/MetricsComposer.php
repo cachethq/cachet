@@ -51,9 +51,20 @@ class MetricsComposer
      */
     public function compose(View $view)
     {
+        // Get the component/group if it's defined.
+        $viewdata = $view->getData();
+        $component = $viewdata['component'];
+        $componentGroup = $viewdata['componentGroup'];
+
         $metrics = null;
         if ($displayMetrics = $this->config->get('setting.display_graphs')) {
-            $metrics = Metric::displayable()->orderBy('order')->orderBy('id')->get();
+            if ($component->exists) {
+                $metrics = Metric::displayable()->where('component_id', '=', $component->id)->orderBy('order')->orderBy('id')->get();
+            } elseif ($componentGroup->exists) {
+                $metrics = Metric::displayable()->whereIn('component_id', $componentGroup->components()->pluck('id'))->orderBy('order')->orderBy('id')->get();
+            } else {
+                $metrics = Metric::displayable()->orderBy('order')->orderBy('id')->get();
+            }
         }
 
         $view->withDisplayMetrics($displayMetrics)

@@ -13,7 +13,9 @@ namespace CachetHQ\Cachet\Bus\Handlers\Commands\Component;
 
 use CachetHQ\Cachet\Bus\Commands\Component\AddComponentCommand;
 use CachetHQ\Cachet\Bus\Events\Component\ComponentWasAddedEvent;
+use CachetHQ\Cachet\Bus\Events\ComponentGroup\ComponentGroupStatusWasUpdatedEvent;
 use CachetHQ\Cachet\Models\Component;
+use CachetHQ\Cachet\Models\ComponentGroup;
 
 class AddComponentCommandHandler
 {
@@ -30,13 +32,18 @@ class AddComponentCommandHandler
 
         event(new ComponentWasAddedEvent($component));
 
+        // Trigger the event for when the component group status is updated.
+        if ($command->group_id) {
+            event(new ComponentGroupStatusWasUpdatedEvent((new ComponentGroup())->find($command->group_id)));
+        }
+
         return $component;
     }
 
     /**
      * Filter the command data.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\Incident\AddComponentCommand $command
+     * @param \CachetHQ\Cachet\Bus\Commands\Component\AddComponentCommand $command
      *
      * @return array
      */

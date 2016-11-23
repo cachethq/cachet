@@ -12,6 +12,7 @@
 return [
     // Components
     'components' => [
+        'filter'       => 'Display component:',
         'last_updated' => 'Last updated :timestamp',
         'status'       => [
             0 => 'Unknown',
@@ -21,7 +22,8 @@ return [
             4 => 'Major Outage',
         ],
         'group' => [
-            'other' => 'Other Components',
+            'other'  => 'Other Components',
+            'single' => 'Component',
         ],
     ],
 
@@ -72,6 +74,25 @@ return [
             'weekly'    => 'Week',
             'monthly'   => 'Month',
         ],
+    ],
+
+    // Status Transitions
+    'status_transitions' => [
+        'transition_chart' => [
+            'title'   => 'Status Transitions',
+            'tooltip' => [
+                'from_date'  => 'From Date',
+                'to_date'    => 'To Date',
+                'duration'   => 'Duration',
+                'components' => 'Components Summary',
+            ],
+        ],
+        'availability_chart' => [
+            'title'   => 'Availability',
+            'y_label' => 'Percentage',
+        ],
+        'previous_week' => 'Previous week',
+        'next_week'     => 'Next week',
     ],
 
     // Subscriber

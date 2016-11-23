@@ -28,7 +28,7 @@ class EventServiceProvider extends ServiceProvider
             //
         ],
         'CachetHQ\Cachet\Bus\Events\ComponentGroup\ComponentGroupWasAddedEvent' => [
-            //
+            'CachetHQ\Cachet\Bus\Handlers\Events\GroupStatusTransition\StartGroupStatusTransitionHandler',
         ],
         'CachetHQ\Cachet\Bus\Events\ComponentGroup\ComponentGroupWasRemovedEvent' => [
             //
@@ -36,11 +36,15 @@ class EventServiceProvider extends ServiceProvider
         'CachetHQ\Cachet\Bus\Events\ComponentGroup\ComponentGroupWasUpdatedEvent' => [
             //
         ],
+        'CachetHQ\Cachet\Bus\Events\ComponentGroup\ComponentGroupStatusWasUpdatedEvent' => [
+            'CachetHQ\Cachet\Bus\Handlers\Events\GroupStatusTransition\ReportGroupStatusTransitionHandler',
+        ],
         'CachetHQ\Cachet\Bus\Events\Component\ComponentStatusWasUpdatedEvent' => [
             'CachetHQ\Cachet\Bus\Handlers\Events\Component\SendComponentUpdateEmailNotificationHandler',
+            'CachetHQ\Cachet\Bus\Handlers\Events\ComponentStatusTransition\ReportComponentStatusTransitionHandler',
         ],
         'CachetHQ\Cachet\Bus\Events\Component\ComponentWasAddedEvent' => [
-            //
+            'CachetHQ\Cachet\Bus\Handlers\Events\ComponentStatusTransition\StartComponentStatusTransitionHandler',
         ],
         'CachetHQ\Cachet\Bus\Events\Component\ComponentWasRemovedEvent' => [
             'CachetHQ\Cachet\Bus\Handlers\Events\Component\CleanupComponentSubscriptionsHandler',
@@ -64,9 +68,6 @@ class EventServiceProvider extends ServiceProvider
             'CachetHQ\Cachet\Bus\Handlers\Events\Incident\SendIncidentEmailNotificationHandler',
         ],
         'CachetHQ\Cachet\Bus\Events\Incident\IncidentWasUpdatedEvent' => [
-            //
-        ],
-        'CachetHQ\Cachet\Bus\Events\Incident\IncidentWasRemovedEvent' => [
             //
         ],
         'CachetHQ\Cachet\Bus\Events\Invite\InviteWasClaimedEvent' => [

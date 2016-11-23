@@ -38,6 +38,7 @@ class AddMetricCommandTest extends AbstractTestCase
             'places'        => 0,
             'default_view'  => 0,
             'threshold'     => 0,
+            'component_id'  => 0,
             'order'         => 0,
         ];
 
@@ -51,6 +52,7 @@ class AddMetricCommandTest extends AbstractTestCase
             $params['places'],
             $params['default_view'],
             $params['threshold'],
+            $params['component_id'],
             $params['order']
         );
 

@@ -15,6 +15,9 @@ use AltThree\Badger\Facades\Badger;
 use CachetHQ\Cachet\Dates\DateFactory;
 use CachetHQ\Cachet\Http\Controllers\Api\AbstractApiController;
 use CachetHQ\Cachet\Models\Component;
+use CachetHQ\Cachet\Models\ComponentGroup;
+use CachetHQ\Cachet\Models\ComponentStatusTransition;
+use CachetHQ\Cachet\Models\GroupStatusTransition;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\Schedule;
@@ -53,9 +56,12 @@ class StatusPageController extends AbstractApiController
     /**
      * Displays the status page.
      *
+     * @param \CachetHQ\Cachet\Models\ComponentGroup $componentGroup
+     * @param \CachetHQ\Cachet\Models\Component      $component
+     *
      * @return \Illuminate\View\View
      */
-    public function showIndex()
+    public function showIndex(ComponentGroup $componentGroup, Component $component)
     {
         $today = Date::now();
         $startDate = Date::now();
@@ -85,10 +91,20 @@ class StatusPageController extends AbstractApiController
 
         $incidentVisibility = Auth::check() ? 0 : 1;
 
-        $allIncidents = Incident::where('visible', '>=', $incidentVisibility)->whereBetween('occurred_at', [
+        // Create the query for visible incidents, taking into account if the component/group is defined and the day limits.
+        $allIncidentsQuery = Incident::where('visible', '>=', $incidentVisibility);
+        if ($component->exists) {
+            $allIncidentsQuery->where('component_id', '=', $component->id);
+        } elseif ($componentGroup->exists) {
+            $allIncidentsQuery->whereIn('component_id', $componentGroup->components()->pluck('id'));
+        }
+        $allIncidentsQuery->whereBetween('occurred_at', [
             $startDate->copy()->subDays($daysToShow)->format('Y-m-d').' 00:00:00',
             $startDate->format('Y-m-d').' 23:59:59',
-        ])->orderBy('occurred_at', 'desc')->get()->groupBy(function (Incident $incident) {
+        ])->orderBy('occurred_at', 'desc');
+
+        // Find all the visible incidents.
+        $allIncidents = $allIncidentsQuery->get()->groupBy(function (Incident $incident) {
             return app(DateFactory::class)->make($incident->occurred_at)->toDateString();
         });
 
@@ -109,6 +125,8 @@ class StatusPageController extends AbstractApiController
         }, SORT_REGULAR, true)->all();
 
         return View::make('index')
+            ->with('component', $component)
+            ->with('componentGroup', $componentGroup)
             ->withDaysToShow($daysToShow)
             ->withAllIncidents($allIncidents)
             ->withCanPageForward((bool) $today->gt($startDate))
@@ -209,5 +227,67 @@ class StatusPageController extends AbstractApiController
         );
 
         return Response::make($badge, 200, ['Content-Type' => 'image/svg+xml']);
+    }
+
+    /**
+     * Return all the status transitions between two dates for the component.
+     *
+     * @param \CachetHQ\Cachet\Models\Component $component
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function getComponentStatusTransitions(Component $component)
+    {
+        $fromDate = date('Y-m-d H:i:s', strtotime(Binput::get('from')));
+        $toDate = date('Y-m-d H:i:s', strtotime(Binput::get('to')));
+
+        // Get the status transition between the dates defined.
+        $statusTransitions = ComponentStatusTransition::where('component_id', '=', $component->id)
+            ->whereBetween('created_at', [$fromDate, $toDate])
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        // Get the previous status transition to the dates queried.
+        $previousStatusTransitions = ComponentStatusTransition::where('component_id', '=', $component->id)
+            ->where('created_at', '<', $fromDate)
+            ->orderBy('created_at', 'desc')
+            ->take(1)
+            ->get();
+
+        return $this->item([
+            'transitions'         => $statusTransitions,
+            'previous_transition' => $previousStatusTransitions,
+        ]);
+    }
+
+    /**
+     * Return all the status transitions between two dates for the component group.
+     *
+     * @param \CachetHQ\Cachet\Models\ComponentGroup $componentGroup
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function getComponentGroupStatusTransitions(ComponentGroup $componentGroup)
+    {
+        $fromDate = date('Y-m-d H:i:s', strtotime(Binput::get('from')));
+        $toDate = date('Y-m-d H:i:s', strtotime(Binput::get('to')));
+
+        // Get the status transition between the dates defined.
+        $statusTransitions = GroupStatusTransition::where('component_group_id', '=', $componentGroup->id)
+            ->whereBetween('created_at', [$fromDate, $toDate])
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        // Get the previous status transition to the dates queried.
+        $previousStatusTransitions = GroupStatusTransition::where('component_group_id', '=', $componentGroup->id)
+            ->where('created_at', '<', $fromDate)
+            ->orderBy('created_at', 'desc')
+            ->take(1)
+            ->get();
+
+        return $this->item([
+            'transitions'         => $statusTransitions,
+            'previous_transition' => $previousStatusTransitions,
+        ]);
     }
 }

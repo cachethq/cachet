@@ -13,6 +13,8 @@ namespace CachetHQ\Cachet\Bus\Handlers\Commands\Component;
 
 use CachetHQ\Cachet\Bus\Commands\Component\RemoveComponentCommand;
 use CachetHQ\Cachet\Bus\Events\Component\ComponentWasRemovedEvent;
+use CachetHQ\Cachet\Bus\Events\ComponentGroup\ComponentGroupStatusWasUpdatedEvent;
+use CachetHQ\Cachet\Models\ComponentGroup;
 
 class RemoveComponentCommandHandler
 {
@@ -30,5 +32,10 @@ class RemoveComponentCommandHandler
         event(new ComponentWasRemovedEvent($component));
 
         $component->delete();
+
+        // Trigger the event for when the component is deleted.
+        if ($component->group_id) {
+            event(new ComponentGroupStatusWasUpdatedEvent((new ComponentGroup())->find($component->group_id)));
+        }
     }
 }
