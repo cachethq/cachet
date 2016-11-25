@@ -14,7 +14,6 @@ namespace CachetHQ\Cachet\Subscribers;
 use CachetHQ\Cachet\Bus\Events\System\SystemWasInstalledEvent;
 use CachetHQ\Cachet\Bus\Events\System\SystemWasResetEvent;
 use CachetHQ\Cachet\Bus\Events\System\SystemWasUpdatedEvent;
-use CachetHQ\Cachet\Settings\Cache;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Console\Command;
@@ -30,13 +29,6 @@ use Illuminate\Contracts\Events\Dispatcher;
 class CommandSubscriber
 {
     /**
-     * The settings cache instance.
-     *
-     * @var \CachetHQ\Cachet\Settings\Cache
-     */
-    protected $cache;
-
-    /**
      * The config repository instance.
      *
      * @var \Illuminate\Contracts\Config\Repository
@@ -46,14 +38,12 @@ class CommandSubscriber
     /**
      * Create a new command subscriber instance.
      *
-     * @param \CachetHQ\Cachet\Settings\Cache         $cache
      * @param \Illuminate\Contracts\Config\Repository $config
      *
      * @return void
      */
-    public function __construct(Cache $cache, Repository $config)
+    public function __construct(Repository $config)
     {
-        $this->cache = $cache;
         $this->config = $config;
     }
 
@@ -128,12 +118,6 @@ class CommandSubscriber
      */
     protected function handleMainCommand(Command $command)
     {
-        $command->line('Clearing settings cache...');
-
-        $this->cache->clear();
-
-        $command->line('Settings cache cleared!');
-
         // SQLite does not backup.
         if ($this->config->get('database.default') === 'sqlite') {
             $command->line('Backup skipped: SQLite is not supported.');
