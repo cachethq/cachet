@@ -12,6 +12,7 @@
 namespace CachetHQ\Cachet\Bus\Handlers\Commands\User;
 
 use CachetHQ\Cachet\Bus\Commands\User\GenerateApiTokenCommand;
+use CachetHQ\Cachet\Bus\Events\User\UserRegeneratedApiTokenEvent;
 use CachetHQ\Cachet\Models\User;
 
 class GenerateApiTokenCommandHandler
@@ -27,9 +28,8 @@ class GenerateApiTokenCommandHandler
     {
         $user = $command->user;
 
-        $user->api_key = User::generateApiKey();
-        $user->save();
+        $user->update(['api_key' => User::generateApiKey()]);
 
-        //event(new GeneratedApiTokenEvent($user));
+        event(new UserRegeneratedApiTokenEvent($user));
     }
 }
