@@ -41,6 +41,18 @@
     <div class="wrapper">
         @include('dashboard.partials.sidebar')
         <div class="page-content">
+            @if(!$is_writeable)
+            <div class="content-wrapper">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="alert alert-info">
+                            {!! trans('dashboard.writeable_settings') !!}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @endif
+
             @yield('content')
         </div>
     </div>

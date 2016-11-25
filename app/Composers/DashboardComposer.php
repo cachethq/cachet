@@ -40,5 +40,6 @@ class DashboardComposer
         $view->withIncidentTemplateCount(IncidentTemplate::count());
         $view->withScheduleCount(Schedule::count());
         $view->withSubscriberCount(Subscriber::isVerified()->count());
+        $view->withIsWriteable(is_writeable(app()->bootstrapPath().'/cachet'));
     }
 }

@@ -11,7 +11,8 @@
 
 return [
 
-    'dashboard' => 'Dashboard',
+    'dashboard'          => 'Dashboard',
+    'writeable_settings' => 'The Cachet settings directory is not writeable. Please make sure that <code>./bootstrap/cachet</code> is writeable by the web server.',
 
     // Incidents
     'incidents' => [
