@@ -60,6 +60,13 @@ class AddMetricPointCommandHandler
         return $point;
     }
 
+    /**
+     * Find or create a metric point.
+     *
+     * @param \CachetHQ\Cachet\Bus\Commands\Metric\AddMetricPointCommand $command
+     *
+     * @return \CachetHQ\Cachet\Models\MetricPoint
+     */
     protected function findOrCreatePoint(AddMetricPointCommand $command)
     {
         $buffer = Carbon::now()->subMinutes($command->metric->threshold);
