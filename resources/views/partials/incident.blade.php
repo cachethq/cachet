@@ -20,7 +20,7 @@
         </small>
     </div>
     <div class="panel-body markdown-body">
-        {!! $incident->formattedMessage !!}
+        {!! $incident->formatted_message !!}
     </div>
     @if($incident->updates->count())
     <div class="list-group">

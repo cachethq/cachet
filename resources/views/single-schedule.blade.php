@@ -24,7 +24,7 @@
                             <strong>{{ $schedule->name }}</strong>{{ trans("cachet.incidents.scheduled_at", ["timestamp" => $schedule->scheduled_at_diff]) }}
                         </div>
                         <div class="panel-body">
-                            {!! $schedule->formattedMessage !!}
+                            {!! $schedule->formatted_message !!}
                         </div>
                     </div>
                 </div>

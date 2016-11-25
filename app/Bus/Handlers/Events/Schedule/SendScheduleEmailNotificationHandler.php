@@ -105,7 +105,7 @@ class SendScheduleEmailNotificationHandler
             'name'             => $incident->name,
             'timestamp'        => $incident->scheduled_at_formatted,
             'status'           => $incident->human_status,
-            'html_content'     => $incident->formattedMessage,
+            'html_content'     => $incident->formatted_message,
             'text_content'     => $incident->message,
             'token'            => $subscriber->token,
             'manage_link'      => cachet_route('subscribe.manage', [$subscriber->verify_code]),

@@ -54,7 +54,7 @@ class SchedulePresenter extends BasePresenter implements Arrayable
      *
      * @return string
      */
-    public function formattedMessage()
+    public function formatted_message()
     {
         return Markdown::convertToHtml($this->wrappedObject->message);
     }
