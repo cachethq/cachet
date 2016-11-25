@@ -30,8 +30,7 @@ class VerifySubscriberCommandHandler
         $subscriber = $command->subscriber;
 
         // Mark the subscriber as verified.
-        $subscriber->verified_at = Carbon::now();
-        $subscriber->save();
+        $subscriber->update(['verified_at' => Carbon::now()]);
 
         event(new SubscriberHasVerifiedEvent($subscriber));
     }
