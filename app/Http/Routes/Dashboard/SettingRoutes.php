@@ -78,6 +78,18 @@ class SettingRoutes
                 'as'   => 'get:dashboard.settings.log',
                 'uses' => 'SettingsController@showLogView',
             ]);
+            $router->get('mail', [
+                'as'   => 'get:dashboard.settings.mail',
+                'uses' => 'SettingsController@showMailView',
+            ]);
+            $router->post('mail', [
+                'as'   => 'post:dashboard.settings.mail',
+                'uses' => 'SettingsController@postMail',
+            ]);
+            $router->post('mail/test', [
+                'as'   => 'post:dashboard.settings.mail.test',
+                'uses' => 'SettingsController@testMail',
+            ]);
 
             $router->post('/', [
                 'as'   => 'post:dashboard.settings',

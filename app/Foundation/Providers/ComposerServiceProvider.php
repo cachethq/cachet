@@ -21,6 +21,7 @@ use CachetHQ\Cachet\Composers\Modules\ScheduledComposer as ScheduledModuleCompos
 use CachetHQ\Cachet\Composers\Modules\StatusComposer as StatusModuleComposer;
 use CachetHQ\Cachet\Composers\Modules\StickiedComposer as StickiedModuleComposer;
 use CachetHQ\Cachet\Composers\Modules\TimelineComposer as TimelineModuleComposer;
+use CachetHQ\Cachet\Composers\SettingsComposer;
 use CachetHQ\Cachet\Composers\ThemeComposer;
 use CachetHQ\Cachet\Composers\TimezoneLocaleComposer;
 use Illuminate\Contracts\View\Factory;
@@ -48,6 +49,7 @@ class ComposerServiceProvider extends ServiceProvider
         $factory->composer('partials.modules.scheduled', ScheduledModuleComposer::class);
         $factory->composer('partials.modules.status', StatusModuleComposer::class);
         $factory->composer('partials.modules.timeline', TimelineModuleComposer::class);
+        $factory->composer(['dashboard.settings.mail', 'setup.*'], SettingsComposer::class);
     }
 
     /**

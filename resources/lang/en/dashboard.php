@@ -214,6 +214,14 @@ return [
             'header'        => 'Custom Header HTML',
             'footer'        => 'Custom Footer HTML',
         ],
+        'mail' => [
+            'mail' => 'Mail',
+            'test' => 'Test',
+            'email' => [
+                'subject' => 'Test notification from Cachet',
+                'body'    => 'This is a test notification from Cachet.',
+            ],
+        ],
         'security' => [
             'security'   => 'Security',
             'two-factor' => 'Users without two-factor authentication',
