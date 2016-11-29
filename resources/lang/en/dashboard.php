@@ -215,8 +215,8 @@ return [
             'footer'        => 'Custom Footer HTML',
         ],
         'mail' => [
-            'mail' => 'Mail',
-            'test' => 'Test',
+            'mail'  => 'Mail',
+            'test'  => 'Test',
             'email' => [
                 'subject' => 'Test notification from Cachet',
                 'body'    => 'This is a test notification from Cachet.',

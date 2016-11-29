@@ -11,11 +11,6 @@
 
 namespace CachetHQ\Cachet\Composers;
 
-use CachetHQ\Cachet\Models\Component;
-use CachetHQ\Cachet\Models\Incident;
-use CachetHQ\Cachet\Models\IncidentTemplate;
-use CachetHQ\Cachet\Models\Schedule;
-use CachetHQ\Cachet\Models\Subscriber;
 use Illuminate\Contracts\View\View;
 
 /**

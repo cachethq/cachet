@@ -297,7 +297,7 @@ class SettingsController extends Controller
         dispatch(new TestMailCommand(Auth::user()));
 
         return cachet_redirect('dashboard.settings.mail')
-            ->withSuccess(trans('dashboard.notifications.awesome'));;
+            ->withSuccess(trans('dashboard.notifications.awesome'));
     }
 
     /**
