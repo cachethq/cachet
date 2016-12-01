@@ -48,7 +48,7 @@ class SendInviteUserEmailHandler
         $mail = [
             'email'   => $event->invite->email,
             'subject' => 'You have been invited.',
-            'link'    => route('signup.invite', ['code' => $event->invite->code]),
+            'link'    => cachet_route('signup.invite', [$event->invite->code]),
         ];
 
         $this->mailer->queue([

@@ -24,7 +24,7 @@
               @else
               <ul class="list-group components">
                   <li class="list-group-item">
-                      <a href="{{ route('dashboard.components.add') }}">{{ trans('dashboard.components.add.message') }}</a>
+                      <a href="{{ cachet_route('dashboard.components.create') }}">{{ trans('dashboard.components.add.message') }}</a>
                   </li>
               </ul>
               @endif
@@ -36,7 +36,7 @@
         <div class="col-sm-12 col-lg-6">
             <div class="stats-widget">
                 <div class="stats-top">
-                    <span class="stats-value"><a href="{{ route('dashboard.incidents.index') }}">{{ $incidents->map(function($incident) { return count($incident); })->sum() }}</a></span>
+                    <span class="stats-value"><a href="{{ cachet_route('dashboard.incidents') }}">{{ $incidents->map(function($incident) { return count($incident); })->sum() }}</a></span>
                     <span class="stats-label">{{ trans('dashboard.incidents.incidents') }}</span>
                 </div>
                 <div class="stats-chart">
@@ -48,7 +48,7 @@
         <div class="col-sm-12 col-lg-6">
             <div class="stats-widget">
                 <div class="stats-top">
-                    <span class="stats-value"><a href="{{ route('dashboard.subscribers.index') }}">{{ $subscribers->map(function($subscribers) { return count($subscribers); })->sum() }}</a></span>
+                    <span class="stats-value"><a href="{{ cachet_route('dashboard.subscribers') }}">{{ $subscribers->map(function($subscribers) { return count($subscribers); })->sum() }}</a></span>
                     <span class="stats-label">{{ trans('dashboard.subscribers.subscribers') }}</span>
                 </div>
                 <div class="stats-chart">

@@ -18,6 +18,11 @@ use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Str;
 
+/**
+ * This is the feed controller.
+ *
+ * @author James Brooks <james@alt-three.com>
+ */
 class FeedController extends Controller
 {
     /**
@@ -80,12 +85,12 @@ class FeedController extends Controller
     {
         if ($group->exists) {
             $group->components->map(function ($component) use ($isRss) {
-                $component->incidents()->visible()->orderBy('created_at', 'desc')->get()->map(function ($incident) use ($isRss) {
+                $component->incidents()->visible()->orderBy('occurred_at', 'desc')->get()->map(function ($incident) use ($isRss) {
                     $this->feedAddItem($incident, $isRss);
                 });
             });
         } else {
-            Incident::visible()->orderBy('created_at', 'desc')->get()->map(function ($incident) use ($isRss) {
+            Incident::visible()->orderBy('occurred_at', 'desc')->get()->map(function ($incident) use ($isRss) {
                 $this->feedAddItem($incident, $isRss);
             });
         }
@@ -104,8 +109,8 @@ class FeedController extends Controller
         $this->feed->add(
             $incident->name,
             Config::get('setting.app_name'),
-            Str::canonicalize(route('incident', ['id' => $incident->id])),
-            $isRss ? $incident->created_at->toRssString() : $incident->created_at->toAtomString(),
+            Str::canonicalize(cachet_route('incident', [$incident->id])),
+            $isRss ? $incident->occurred_at->toRssString() : $incident->occurred_at->toAtomString(),
             $isRss ? $incident->message : Markdown::convertToHtml($incident->message)
         );
     }

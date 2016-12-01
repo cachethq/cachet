@@ -32,7 +32,7 @@ class IncidentUpdatePresenter extends BasePresenter implements Arrayable
      *
      * @return string
      */
-    public function formattedMessage()
+    public function formatted_message()
     {
         return Markdown::convertToHtml($this->wrappedObject->message);
     }
@@ -44,7 +44,7 @@ class IncidentUpdatePresenter extends BasePresenter implements Arrayable
      */
     public function raw_message()
     {
-        return strip_tags($this->formattedMessage());
+        return strip_tags($this->formatted_message());
     }
 
     /**
@@ -153,7 +153,7 @@ class IncidentUpdatePresenter extends BasePresenter implements Arrayable
      */
     public function permalink()
     {
-        return route('incident', ['incident' => $this->wrappedObject->incident]).'#update-'.$this->wrappedObject->id;
+        return cachet_route('incident', [$this->wrappedObject->incident]).'#update-'.$this->wrappedObject->id;
     }
 
     /**

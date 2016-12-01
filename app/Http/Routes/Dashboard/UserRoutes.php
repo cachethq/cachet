@@ -22,6 +22,13 @@ use Illuminate\Contracts\Routing\Registrar;
 class UserRoutes
 {
     /**
+     * Defines if these routes are for the browser.
+     *
+     * @var bool
+     */
+    public static $browser = true;
+
+    /**
      * Define the dashboard user routes.
      *
      * @param \Illuminate\Contracts\Routing\Registrar $router
@@ -31,17 +38,23 @@ class UserRoutes
     public function map(Registrar $router)
     {
         $router->group([
-            'middleware' => ['web', 'auth'],
+            'middleware' => ['auth'],
             'namespace'  => 'Dashboard',
-            'as'         => 'dashboard.user.',
             'prefix'     => 'dashboard/user',
         ], function (Registrar $router) {
             $router->get('/', [
-                'as'   => 'user',
+                'as'   => 'get:dashboard.user',
                 'uses' => 'UserController@showUser',
             ]);
-            $router->post('/', 'UserController@postUser');
-            $router->get('{user}/api/regen', 'UserController@regenerateApiKey');
+            $router->post('/', [
+                'as'   => 'post:dashboard.user',
+                'uses' => 'UserController@postUser',
+            ]);
+
+            $router->get('{user}/api/regen', [
+                'as'   => 'get:dashboard.user.api.regen',
+                'uses' => 'UserController@regenerateApiKey',
+            ]);
         });
     }
 }

@@ -19,7 +19,6 @@ use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Validator;
@@ -65,6 +64,20 @@ class SetupController extends Controller
     ];
 
     /**
+     * Array of queue drivers.
+     *
+     * @var string[]
+     */
+    protected $queueDrivers = [
+        'null'       => 'None',
+        'sync'       => 'Synchronous',
+        'database'   => 'Database',
+        'beanstalkd' => 'Beanstalk',
+        'sqs'        => 'Amazon SQS',
+        'redis'      => 'Redis',
+    ];
+
+    /**
      * Array of step1 rules.
      *
      * @var string[]
@@ -95,6 +108,7 @@ class SetupController extends Controller
         $this->rulesStep1 = [
             'env.cache_driver'   => 'required|in:'.implode(',', array_keys($this->cacheDrivers)),
             'env.session_driver' => 'required|in:'.implode(',', array_keys($this->cacheDrivers)),
+            'env.queue_driver'   => 'required|in:'.implode(',', array_keys($this->queueDrivers)),
             'env.mail_driver'    => 'required|in:'.implode(',', array_keys($this->mailDrivers)),
         ];
 
@@ -132,12 +146,38 @@ class SetupController extends Controller
             }
         }
 
+        // Since .env may already be configured, we should show that data!
+        $cacheConfig = [
+            'driver' => Config::get('cache.default'),
+        ];
+
+        $sessionConfig = [
+            'driver' => Config::get('session.driver'),
+        ];
+
+        $queueConfig = [
+            'driver' => Config::get('queue.default'),
+        ];
+
+        $mailConfig = [
+            'driver'   => Config::get('mail.driver'),
+            'host'     => Config::get('mail.host'),
+            'from'     => Config::get('mail.from'),
+            'username' => Config::get('mail.username'),
+            'password' => Config::get('mail.password'),
+        ];
+
         return View::make('setup.index')
             ->withPageTitle(trans('setup.setup'))
             ->withCacheDrivers($this->cacheDrivers)
+            ->withQueueDrivers($this->queueDrivers)
             ->withMailDrivers($this->mailDrivers)
             ->withUserLanguage($userLanguage)
-            ->withAppUrl(Request::root());
+            ->withAppUrl(Request::root())
+            ->withCacheConfig($cacheConfig)
+            ->withSessionConfig($sessionConfig)
+            ->withQueueConfig($queueConfig)
+            ->withMailConfig($mailConfig);
     }
 
     /**
@@ -227,14 +267,14 @@ class SetupController extends Controller
                 return Response::json(['status' => 1]);
             }
 
-            return Redirect::to('dashboard');
+            return cachet_redirect('dashboard');
         }
 
         if (Request::ajax()) {
             return Response::json(['errors' => $v->getMessageBag()], 400);
         }
 
-        return Redirect::route('setup.index')->withInput()->withErrors($v->getMessageBag());
+        return cachet_redirect('setup')->withInput()->withErrors($v->getMessageBag());
     }
 
     /**
@@ -258,7 +298,9 @@ class SetupController extends Controller
             $envValue = env($envKey) ?: 'null';
 
             file_put_contents($path, str_replace(
-                $envKey.'='.$envValue, $envKey.'='.$value, file_get_contents($path)
+                $envKey.'='.$envValue,
+                $envKey.'='.$value,
+                file_get_contents($path)
             ));
         } catch (InvalidPathException $e) {
             //

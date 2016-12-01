@@ -10,7 +10,7 @@
             <span class="uppercase">
                 <i class="ion ion-ios-browsers-outline"></i> {{ trans('dashboard.components.components') }}
             </span>
-            <a class="btn btn-md btn-success pull-right" href="{{ route('dashboard.components.add') }}">
+            <a class="btn btn-md btn-success pull-right" href="{{ cachet_route('dashboard.components.create') }}">
                 {{ trans('dashboard.components.add.title') }}
             </a>
             <div class="clearfix"></div>
@@ -35,8 +35,8 @@
                         @endif
                     </div>
                     <div class="col-xs-6 text-right">
-                        <a href="/dashboard/components/{{ $component->id }}/edit" class="btn btn-default">{{ trans('forms.edit') }}</a>
-                        <a href="/dashboard/components/{{ $component->id }}/delete" class="btn btn-danger confirm-action" data-method="DELETE">{{ trans('forms.delete') }}</a>
+                        <a href="{{ cachet_route('dashboard.components.edit', [$component->id]) }}" class="btn btn-default">{{ trans('forms.edit') }}</a>
+                        <a href="{{ cachet_route('dashboard.components.delete', [$component->id], 'delete') }}" class="btn btn-danger confirm-action" data-method="DELETE">{{ trans('forms.delete') }}</a>
                     </div>
                 </div>
                 @empty

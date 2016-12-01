@@ -31,4 +31,11 @@ interface System
      * @return string
      */
     public function getVersion();
+
+    /**
+     * Get the table prefix.
+     *
+     * @return string
+     */
+    public function getTablePrefix();
 }

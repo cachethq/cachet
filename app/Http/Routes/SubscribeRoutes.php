@@ -21,6 +21,13 @@ use Illuminate\Contracts\Routing\Registrar;
 class SubscribeRoutes
 {
     /**
+     * Defines if these routes are for the browser.
+     *
+     * @var bool
+     */
+    public static $browser = true;
+
+    /**
      * Define the subscribe routes.
      *
      * @param \Illuminate\Contracts\Routing\Registrar $router
@@ -29,33 +36,34 @@ class SubscribeRoutes
      */
     public function map(Registrar $router)
     {
-        $router->group(['middleware' => ['web', 'ready', 'localize', 'subscribers'], 'as' => 'subscribe.'], function (Registrar $router) {
+        $router->group([
+            'middleware' => ['ready', 'localize', 'subscribers'],
+        ], function (Registrar $router) {
             $router->get('subscribe', [
-                'as'   => 'subscribe',
+                'as'   => 'get:subscribe',
                 'uses' => 'SubscribeController@showSubscribe',
             ]);
-
             $router->post('subscribe', [
+                'as'   => 'post:subscribe',
                 'uses' => 'SubscribeController@postSubscribe',
             ]);
 
             $router->get('subscribe/manage/{code}', [
-                'as'   => 'manage',
+                'as'   => 'get:subscribe.manage',
                 'uses' => 'SubscribeController@showManage',
             ]);
-
             $router->post('subscribe/manage/{code}', [
-                'as'   => 'manage',
+                'as'   => 'post:subscribe.manage',
                 'uses' => 'SubscribeController@postManage',
             ]);
 
             $router->get('subscribe/verify/{code}', [
-                'as'   => 'verify',
+                'as'   => 'get:subscribe.verify',
                 'uses' => 'SubscribeController@getVerify',
             ]);
 
             $router->get('unsubscribe/{code}/{subscription?}', [
-                'as'   => 'unsubscribe',
+                'as'   => 'get:subscribe.unsubscribe',
                 'uses' => 'SubscribeController@getUnsubscribe',
             ]);
         });

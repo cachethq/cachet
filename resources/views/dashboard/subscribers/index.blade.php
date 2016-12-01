@@ -9,7 +9,7 @@
         <i class="ion ion-ios-email-outline"></i> {{ trans('dashboard.subscribers.subscribers') }}
     </span>
     @if($current_user->isAdmin && subscribers_enabled())
-    <a class="btn btn-md btn-success pull-right" href="{{ route('dashboard.subscribers.add') }}">
+    <a class="btn btn-md btn-success pull-right" href="{{ cachet_route('dashboard.subscribers.create') }}">
         {{ trans('dashboard.subscribers.add.title') }}
     </a>
     @endif
@@ -36,14 +36,14 @@
                     <div class="col-xs-3">
                         @if($subscriber->subscriptions->count() > 0)
                         {!! $subscriber->subscriptions->map(function ($subscription) {
-                            return '<span class="label label-primary">'.$subscription->component->name.'</span>';
+                            return sprintf('<span class="label label-primary">%s</span>', $subscription->component->name);
                         })->implode(' ') !!}
                         @else
                         <p>{{ trans('dashboard.subscribers.no_subscriptions') }}</p>
                         @endif
                     </div>
                     <div class="col-xs-3 text-right">
-                        <a href="/dashboard/subscribers/{{ $subscriber->id }}/delete" class="btn btn-danger confirm-action" data-method='DELETE'>{{ trans('forms.delete') }}</a>
+                        <a href="{{ cachet_route('dashboard.subscribers.delete', [$subscriber->id], 'delete') }}" class="btn btn-danger confirm-action" data-method='DELETE'>{{ trans('forms.delete') }}</a>
                     </div>
                 </div>
                 @endforeach

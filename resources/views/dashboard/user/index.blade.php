@@ -13,7 +13,7 @@
     <div class="row">
         <div class="col-sm-12">
             @include('dashboard.partials.errors')
-            <form name="UserForm" class="form-vertical" role="form" action="/dashboard/user" method="POST">
+            <form name="UserForm" class="form-vertical" role="form" action="{{ cachet_route('dashboard.user', [], 'post') }}" method="POST">
                 {!! csrf_field() !!}
                 <fieldset>
                     <div class="row">
@@ -23,23 +23,23 @@
                             </div>
                             <div class="form-group">
                                 <label>{{ trans('forms.user.username') }}</label>
-                                <input type="text" class="form-control" name="username" value="{{ $current_user->username }}" required>
+                                <input type="text" class="form-control" name="username" value="{{ $current_user->username }}" required placeholder="{{ trans('forms.user.username') }}">
                             </div>
                             <div class="form-group">
                                 <label>{{ trans('forms.user.email') }}</label>
-                                <input type="email" class="form-control" name="email" value="{{ $current_user->email }}" required>
+                                <input type="email" class="form-control" name="email" value="{{ $current_user->email }}" required placeholder="{{ trans('forms.user.email') }}">
                             </div>
                             <div class="form-group">
                                 <label>{{ trans('forms.user.password') }}</label>
-                                <input type="password" class="form-control password-strength" name="password" value="">
+                                <input type="password" class="form-control password-strength" name="password" value="" placeholder="{{ trans('forms.user.password') }}">
                                 <div class="strengthify-wrapper"></div>
                             </div>
                             <hr>
                             <div class="form-group">
                                 <label>{{ trans('forms.user.api-token') }}</label>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" name="api_key" disabled value="{{ $current_user->api_key }}">
-                                    <a href="/dashboard/user/{{ $current_user->id }}/api/regen" class="input-group-addon btn btn-danger">{{ trans('cachet.api.regenerate') }}</a>
+                                    <input type="text" class="form-control" name="api_key" readonly value="{{ $current_user->api_key }}" placeholder="{{ trans('forms.user.api-token') }}">
+                                    <a href="{{ cachet_route('dashboard.user.api.regen', [$current_user->id]) }}" class="input-group-addon btn btn-danger">{{ trans('cachet.api.regenerate') }}</a>
                                 </div>
                                 <span class="help-block">{{ trans('forms.user.api-token-help') }}</span>
                             </div>

@@ -22,6 +22,13 @@ use Illuminate\Contracts\Routing\Registrar;
 class ScheduleRoutes
 {
     /**
+     * Defines if these routes are for the browser.
+     *
+     * @var bool
+     */
+    public static $browser = true;
+
+    /**
      * Define the dashboard schedule routes.
      *
      * @param \Illuminate\Contracts\Routing\Registrar $router
@@ -31,27 +38,34 @@ class ScheduleRoutes
     public function map(Registrar $router)
     {
         $router->group([
-            'middleware' => ['web', 'auth'],
+            'middleware' => ['auth'],
             'namespace'  => 'Dashboard',
-            'as'         => 'dashboard.schedule.',
             'prefix'     => 'dashboard/schedule',
         ], function (Registrar $router) {
             $router->get('/', [
-                'as'   => 'index',
+                'as'   => 'get:dashboard.schedule',
                 'uses' => 'ScheduleController@showIndex',
             ]);
-            $router->get('add', [
-                'as'   => 'add',
+
+            $router->get('create', [
+                'as'   => 'get:dashboard.schedule.create',
                 'uses' => 'ScheduleController@showAddSchedule',
             ]);
-            $router->post('add', 'ScheduleController@addScheduleAction');
-            $router->get('{incident}/edit', [
-                'as'   => 'edit',
+            $router->post('create', [
+                'as'   => 'post:dashboard.schedule.create',
+                'uses' => 'ScheduleController@addScheduleAction',
+            ]);
+
+            $router->get('{schedule}', [
+                'as'   => 'get:dashboard.schedule.edit',
                 'uses' => 'ScheduleController@showEditSchedule',
             ]);
-            $router->post('{incident}/edit', 'ScheduleController@editScheduleAction');
-            $router->delete('{incident}/delete', [
-                'as'   => 'delete',
+            $router->post('{schedule}', [
+                'as'   => 'post:dashboard.schedule.edit',
+                'uses' => 'ScheduleController@editScheduleAction',
+            ]);
+            $router->delete('{schedule}', [
+                'as'   => 'delete:dashboard.schedule.delete',
                 'uses' => 'ScheduleController@deleteScheduleAction',
             ]);
         });

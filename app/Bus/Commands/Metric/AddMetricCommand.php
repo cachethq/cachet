@@ -91,15 +91,15 @@ final class AddMetricCommand
     public $rules = [
         'name'          => 'required|string',
         'suffix'        => 'required|string',
-        'description'   => 'string',
-        'display_chart' => 'bool',
-        'default_value' => 'int',
-        'calc_type'     => 'int',
-        'display_chart' => 'int',
-        'places'        => 'int|between:0,4',
-        'default_view'  => 'int|between:0,3',
-        'threshold'     => 'numeric|between:0,10',
-        'order'         => 'int',
+        'description'   => 'nullable|string',
+        'display_chart' => 'nullable|bool',
+        'default_value' => 'required|int',
+        'calc_type'     => 'required|int',
+        'display_chart' => 'nullable|int',
+        'places'        => 'nullable|int|between:0,4',
+        'default_view'  => 'required|int|between:0,3',
+        'threshold'     => 'nullable|numeric|between:0,10',
+        'order'         => 'nullable|int',
     ];
 
     /**

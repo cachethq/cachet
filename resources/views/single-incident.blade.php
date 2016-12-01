@@ -7,12 +7,12 @@
 @stop
 
 @section('content')
-<h1>{{ $incident->name }} <small>{{ formatted_date($incident->created_at) }}</small></h1>
+<h1>{{ $incident->name }} <small>{{ $incident->occurred_at_formatted }}</small></h1>
 
 <hr>
 
 <div class="markdown-body">
-    {!! $incident->formattedMessage !!}
+    {!! $incident->formatted_message !!}
 </div>
 
 @if($incident->updates)
@@ -30,7 +30,7 @@
                     <div class="panel panel-message incident">
                         <div class="panel-body">
                             <div class="markdown-body">
-                                {!! $update->formattedMessage !!}
+                                {!! $update->formatted_message !!}
                             </div>
                         </div>
                         <div class="panel-footer"><small>{{ trans('cachet.incidents.posted', ['timestamp' => $update->created_at_diff]) }}</small></div>

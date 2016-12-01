@@ -21,6 +21,13 @@ use Illuminate\Contracts\Routing\Registrar;
 class FeedRoutes
 {
     /**
+     * Defines if these routes are for the browser.
+     *
+     * @var bool
+     */
+    public static $browser = true;
+
+    /**
      * Define the status page routes.
      *
      * @param \Illuminate\Contracts\Routing\Registrar $router
@@ -29,13 +36,16 @@ class FeedRoutes
      */
     public function map(Registrar $router)
     {
-        $router->group(['middleware' => ['web', 'ready']], function (Registrar $router) {
+        $router->group([
+            'middleware' => ['ready'],
+        ], function (Registrar $router) {
             $router->get('/atom/{component_group?}', [
-                'as'   => 'feed.atom',
+                'as'   => 'get:feed.atom',
                 'uses' => 'FeedController@atomAction',
             ]);
+
             $router->get('/rss/{component_group?}', [
-                'as'   => 'feed.rss',
+                'as'   => 'get:feed.rss',
                 'uses' => 'FeedController@rssAction',
             ]);
         });

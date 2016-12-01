@@ -114,13 +114,13 @@ class SendIncidentEmailNotificationHandler
             'has_component'    => ($event->incident->component) ? true : false,
             'component_name'   => $component ? $component->name : null,
             'name'             => $incident->name,
-            'timestamp'        => $incident->created_at_formatted,
+            'timestamp'        => $incident->occurred_at_formatted,
             'status'           => $incident->human_status,
-            'html_content'     => $incident->formattedMessage,
+            'html_content'     => $incident->formatted_message,
             'text_content'     => $incident->message,
             'token'            => $subscriber->token,
-            'manage_link'      => route('subscribe.manage', ['code' => $subscriber->verify_code]),
-            'unsubscribe_link' => route('subscribe.unsubscribe', ['code' => $subscriber->verify_code]),
+            'manage_link'      => cachet_route('subscribe.manage', [$subscriber->verify_code]),
+            'unsubscribe_link' => cachet_route('subscribe.unsubscribe', [$subscriber->verify_code]),
         ];
 
         $this->mailer->queue([

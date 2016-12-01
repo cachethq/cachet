@@ -10,7 +10,7 @@
             <span class="uppercase">
                 <i class="ion  ion-ios-keypad"></i> {{ trans_choice('dashboard.components.groups.groups', 2) }}
             </span>
-            <a class="btn btn-md btn-success pull-right" href="{{ route('dashboard.components.groups.add') }}">
+            <a class="btn btn-md btn-success pull-right" href="{{ cachet_route('dashboard.components.groups.create') }}">
                 {{ trans('dashboard.components.groups.add.title') }}
             </a>
             <div class="clearfix"></div>
@@ -30,8 +30,8 @@
                         </h4>
                     </div>
                     <div class="col-xs-6 text-right">
-                        <a href="{{ route('dashboard.components.groups.edit', [$group->id]) }}" class="btn btn-default">{{ trans('forms.edit') }}</a>
-                        <a href="/dashboard/components/groups/{{ $group->id }}/delete" class="btn btn-danger confirm-action" data-method="DELETE">{{ trans('forms.delete') }}</a>
+                        <a href="{{ cachet_route('dashboard.components.groups.edit', [$group->id]) }}" class="btn btn-default">{{ trans('forms.edit') }}</a>
+                        <a href="{{ cachet_route('dashboard.components.groups.delete', [$group->id], 'delete') }}" class="btn btn-danger confirm-action" data-method="DELETE">{{ trans('forms.delete') }}</a>
                     </div>
                 </div>
                 @empty

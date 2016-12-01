@@ -55,7 +55,7 @@ class ReportIncidentUpdateCommandHandler
             null,
             null,
             null,
-            null
+            []
         ));
 
         event(new IncidentUpdateWasReportedEvent($update));

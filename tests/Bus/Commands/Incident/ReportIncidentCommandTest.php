@@ -37,9 +37,9 @@ class ReportIncidentCommandTest extends AbstractTestCase
             'component_status' => 1,
             'notify'           => false,
             'stickied'         => false,
-            'incident_date'    => null,
+            'occurred_at'      => null,
             'template'         => null,
-            'template_vars'    => null,
+            'template_vars'    => [],
         ];
 
         $object = new ReportIncidentCommand(
@@ -51,7 +51,7 @@ class ReportIncidentCommandTest extends AbstractTestCase
             $params['component_status'],
             $params['notify'],
             $params['stickied'],
-            $params['incident_date'],
+            $params['occurred_at'],
             $params['template'],
             $params['template_vars']
         );

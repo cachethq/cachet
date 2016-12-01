@@ -21,7 +21,6 @@ use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 use Jenssegers\Date\Date;
 
@@ -83,7 +82,7 @@ class DashboardController extends Controller
      */
     public function redirectAdmin()
     {
-        return Redirect::route('dashboard.index');
+        return cachet_redirect('dashboard');
     }
 
     /**
@@ -128,11 +127,11 @@ class DashboardController extends Controller
      */
     protected function getIncidents()
     {
-        $allIncidents = Incident::notScheduled()->whereBetween('created_at', [
+        $allIncidents = Incident::whereBetween('occurred_at', [
             $this->startDate->copy()->subDays(30)->format('Y-m-d').' 00:00:00',
             $this->startDate->format('Y-m-d').' 23:59:59',
-        ])->orderBy('created_at', 'desc')->get()->groupBy(function (Incident $incident) {
-            return (new Date($incident->created_at))
+        ])->orderBy('occurred_at', 'desc')->get()->groupBy(function (Incident $incident) {
+            return (new Date($incident->occurred_at))
                 ->setTimezone($this->dateTimeZone)->toDateString();
         });
 

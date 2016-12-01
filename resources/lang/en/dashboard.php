@@ -11,7 +11,8 @@
 
 return [
 
-    'dashboard' => 'Dashboard',
+    'dashboard'          => 'Dashboard',
+    'writeable_settings' => 'The Cachet settings directory is not writeable. Please make sure that <code>./bootstrap/cachet</code> is writeable by the web server.',
 
     // Incidents
     'incidents' => [
@@ -212,6 +213,14 @@ return [
             'customization' => 'Customization',
             'header'        => 'Custom Header HTML',
             'footer'        => 'Custom Footer HTML',
+        ],
+        'mail' => [
+            'mail'  => 'Mail',
+            'test'  => 'Test',
+            'email' => [
+                'subject' => 'Test notification from Cachet',
+                'body'    => 'This is a test notification from Cachet.',
+            ],
         ],
         'security' => [
             'security'   => 'Security',

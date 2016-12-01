@@ -75,9 +75,9 @@ class ComponentGroup extends Model implements HasPresenter
      */
     public $rules = [
         'name'      => 'required|string',
-        'order'     => 'int',
-        'collapsed' => 'int',
-        'visible'   => 'bool',
+        'order'     => 'required|int',
+        'collapsed' => 'required|int',
+        'visible'   => 'required|bool',
     ];
 
     /**
@@ -172,7 +172,7 @@ class ComponentGroup extends Model implements HasPresenter
      */
     public function scopeVisible(Builder $query)
     {
-        return $query->where('visible', self::VISIBLE_GUEST);
+        return $query->where('visible', '=', self::VISIBLE_GUEST);
     }
 
     /**

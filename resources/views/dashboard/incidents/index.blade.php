@@ -10,7 +10,7 @@
             <span class="uppercase">
                 <i class="ion ion-ios-information-outline"></i> {{ trans('dashboard.incidents.incidents') }}
             </span>
-            <a class="btn btn-md btn-success pull-right" href="{{ route('dashboard.incidents.add') }}">
+            <a class="btn btn-md btn-success pull-right" href="{{ cachet_route('dashboard.incidents.create') }}">
                 {{ trans('dashboard.incidents.add.title') }}
             </a>
             <div class="clearfix"></div>
@@ -30,9 +30,9 @@
                             @endif
                         </div>
                         <div class="col-xs-6 text-right">
-                            <a href="/dashboard/incidents/{{ $incident->id }}/edit" class="btn btn-default">{{ trans('forms.edit') }}</a>
-                            <a href="/dashboard/incidents/{{ $incident->id }}/update" class="btn btn-info">{{ trans('forms.update') }}</a>
-                            <a href="/dashboard/incidents/{{ $incident->id }}/delete" class="btn btn-danger confirm-action" data-method='DELETE'>{{ trans('forms.delete') }}</a>
+                            <a href="{{ cachet_route('dashboard.incidents.edit', [$incident->id]) }}" class="btn btn-default">{{ trans('forms.edit') }}</a>
+                            <a href="{{ cachet_route('dashboard.incidents.updates', [$incident->id]) }}" class="btn btn-info">{{ trans('forms.update') }}</a>
+                            <a href="{{ cachet_route('dashboard.incidents.delete', [$incident->id], 'delete') }}" class="btn btn-danger confirm-action" data-method='DELETE'>{{ trans('forms.delete') }}</a>
                         </div>
                     </div>
                     @endforeach

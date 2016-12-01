@@ -70,15 +70,15 @@ class IncidentController extends AbstractApiController
             $incident = dispatch(new ReportIncidentCommand(
                 Binput::get('name'),
                 Binput::get('status'),
-                Binput::get('message'),
+                Binput::get('message', null, false, false),
                 Binput::get('visible', true),
                 Binput::get('component_id'),
                 Binput::get('component_status'),
                 Binput::get('notify', true),
                 Binput::get('stickied', false),
-                Binput::get('created_at'),
+                Binput::get('occurred_at'),
                 Binput::get('template'),
-                Binput::get('vars')
+                Binput::get('vars', [])
             ));
         } catch (QueryException $e) {
             throw new BadRequestHttpException();
@@ -107,9 +107,9 @@ class IncidentController extends AbstractApiController
                 Binput::get('component_status'),
                 Binput::get('notify', true),
                 Binput::get('stickied', false),
-                Binput::get('created_at'),
+                Binput::get('occurred_at'),
                 Binput::get('template'),
-                Binput::get('vars')
+                Binput::get('vars', [])
             ));
         } catch (QueryException $e) {
             throw new BadRequestHttpException();

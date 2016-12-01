@@ -22,6 +22,7 @@ return [
         'site_locale'      => 'Select your language',
         'enable_google2fa' => 'Enable Google Two Factor Authentication',
         'cache_driver'     => 'Cache Driver',
+        'queue_driver'     => 'Queue Driver',
         'session_driver'   => 'Session Driver',
         'mail_driver'      => 'Mail Driver',
         'mail_host'        => 'Mail Host',
@@ -40,6 +41,7 @@ return [
         'invalid-token' => 'Invalid token',
         'cookies'       => 'You must enable cookies to login.',
         'rate-limit'    => 'Rate limit exceeded.',
+        'remember_me'   => 'Remember me',
     ],
 
     // Incidents form fields
@@ -49,8 +51,7 @@ return [
         'component'          => 'Component',
         'message'            => 'Message',
         'message-help'       => 'You may also use Markdown.',
-        'scheduled_at'       => 'When to schedule the maintenance for?',
-        'incident_time'      => 'When did this incident occur?',
+        'occurred_at'        => 'When did this incident occur?',
         'notify_subscribers' => 'Notify subscribers?',
         'visibility'         => 'Incident Visibility',
         'stick_status'       => 'Stick Incident',
@@ -59,6 +60,20 @@ return [
         'public'             => 'Viewable by public',
         'logged_in_only'     => 'Only visible to logged in users',
         'templates'          => [
+            'name'     => 'Name',
+            'template' => 'Template',
+            'twig'     => 'Incident Templates can make use of the <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a> templating language.',
+        ],
+    ],
+
+    'schedules' => [
+        'name'         => 'Name',
+        'status'       => 'Status',
+        'message'      => 'Message',
+        'message-help' => 'You may also use Markdown.',
+        'scheduled_at' => 'When is this maintenance scheduled for?',
+        'completed_at' => 'When did this maintenance complete?',
+        'templates'    => [
             'name'     => 'Name',
             'template' => 'Template',
             'twig'     => 'Incident Templates can make use of the <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a> templating language.',
