@@ -26,9 +26,9 @@ class ModuleServiceProvider extends ServiceProvider
         'index' => [
             ['group' => 'messages', 'partial' => 'partials.modules.messages'],
             ['group' => 'status', 'partial' => 'partials.modules.status'],
+            ['group' => 'stickied', 'partial' => 'partials.modules.stickied'],
             ['group' => 'components', 'partial' => 'partials.modules.components'],
             ['group' => 'metrics', 'partial' => 'partials.modules.metrics'],
-            ['group' => 'stickied', 'partial' => 'partials.modules.stickied'],
             ['group' => 'scheduled', 'partial' => 'partials.modules.scheduled'],
             ['group' => 'timeline', 'partial' => 'partials.modules.timeline'],
         ],
