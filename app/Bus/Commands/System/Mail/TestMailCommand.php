@@ -18,7 +18,7 @@ use CachetHQ\Cachet\Models\User;
  *
  * @author James Brooks <james@alt-three.com>
  */
-class TestMailCommand
+final class TestMailCommand
 {
     /**
      * The user to send the notification to.

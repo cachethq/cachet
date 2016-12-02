@@ -16,7 +16,7 @@ namespace CachetHQ\Cachet\Bus\Commands\System\Config;
  *
  * @author James Brooks <james@alt-three.com>
  */
-class UpdateConfigCommand
+final class UpdateConfigCommand
 {
     /**
      * This is the config key/values array.
