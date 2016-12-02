@@ -18,12 +18,13 @@
                 <ul class="list-inline">
                     @if($current_user || $dashboard_link)
                     <li>
-                        <a class="btn btn-link" href="{{ cachet_route('dashboard') }}">{{ trans('dashboard.dashboard') }}</a>
+                       <a class="btn btn-link" href="{{ cachet_route('dashboard') }}">{{ trans('dashboard.dashboard') }}</a>
                     </li>
                     @endif
                     @if($current_user)
                     <li>
                         <a class="btn btn-link" href="{{ cachet_route('auth.logout') }}">{{ trans('dashboard.logout') }}</a>
+
                     </li>
                     @endif
                     <li>
@@ -32,7 +33,7 @@
                     <li>
                         <a class="btn btn-link" href="{{ cachet_route('feed.atom') }}">{{ trans('cachet.atom-feed') }}</a>
                     </li>
-                    @if(subscribers_enabled())
+                    @if($subscribers_enabled)
                     <li>
                         <a class="btn btn-success btn-outline" href="{{ cachet_route('subscribe') }}">{{ trans('cachet.subscriber.button') }}</a>
                     </li>
