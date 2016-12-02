@@ -12,50 +12,7 @@ Any non-English translations must be made on the [Cachet CrowdIn](https://transl
 
 ## Coding Standards
 
-Please follow existing coding standards:
-
-```php
-<?php
-
-namespace CachetHQ\Cachet\Controller;
-
-use CachetHQ\Cachet\Bar;
-
-class Foo extends Bar
-{
-    public function baz()
-    {
-        if ($condition) {
-        }
-    }
-}
-
-```
-
-- At least one newline separating `namespace`, `use`, `function` and `class` declarations.
-- Spaces around operators, loops, conditions and control blocks:
-    ```php
-    <?php
-    use \Exception;
-
-    if ($condition === (10 + 2)) {
-        try {
-            throw Exception("Something went wrong...");
-        } catch (Exception $e) {
-            // Do something here.
-        }
-    }
-    ```
-- Braces on a new line following: `namespace`, `use`, `function` and `class`.
-- PHP constants should be in lowercase; `true`, `false` and `null`.
-- Defined constants should always be in uppercase.
-- Never leave trailing spaces at the end of a line.
-- Files should end with one blank line.
-- Do not use `# Bash` style comments.
-- Always add or update Docblocs to functions.
-- We use [StyleCI](https://styleci.io) to automatically check code standards in Pull Requests. If your PR fails the CI check, then apply the supplied patch and re-push.
-
-If you're still unsure, then take a look at existing code.
+Please follow existing coding standards. Pull Requests are checked and can be fixed by [StyleCI](https://styleci.io).
 
 ## Introduction into Git and GitHub
 
