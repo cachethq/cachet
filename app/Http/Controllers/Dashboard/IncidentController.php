@@ -182,7 +182,7 @@ class IncidentController extends Controller
         try {
             IncidentTemplate::create([
                 'name'     => Binput::get('name'),
-                'template' => Binput::get('template', null, false, false)
+                'template' => Binput::get('template', null, false, false),
             ]);
         } catch (ValidationException $e) {
             return cachet_redirect('dashboard.templates.create')
