@@ -54,7 +54,7 @@ class SetupAlreadyCompleted
     public function handle(Request $request, Closure $next)
     {
         if ($this->config->get('setting.app_name')) {
-            return cachet_route('dashboard');
+            return cachet_redirect('dashboard');
         }
 
         return $next($request);

@@ -33,7 +33,7 @@ class SubscribersConfigured
     public function handle(Request $request, Closure $next)
     {
         if (!subscribers_enabled()) {
-            return cachet_route('status-page');
+            return cachet_redirect('status-page');
         }
 
         return $next($request);
