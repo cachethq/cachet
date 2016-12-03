@@ -12,7 +12,6 @@
 namespace CachetHQ\Cachet\Http\Middleware;
 
 use Closure;
-use Exception;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Http\Request;
 
