@@ -14,8 +14,6 @@ namespace CachetHQ\Cachet\Http\Controllers;
 use CachetHQ\Cachet\Bus\Commands\System\Config\UpdateConfigCommand;
 use CachetHQ\Cachet\Models\User;
 use CachetHQ\Cachet\Settings\Repository;
-use Dotenv\Dotenv;
-use Dotenv\Exception\InvalidPathException;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
