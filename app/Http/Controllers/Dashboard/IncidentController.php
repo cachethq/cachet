@@ -180,7 +180,10 @@ class IncidentController extends Controller
     public function createIncidentTemplateAction()
     {
         try {
-            IncidentTemplate::create(Binput::get('template'));
+            IncidentTemplate::create([
+                'name'     => Binput::get('name'),
+                'template' => Binput::get('template', null, false, false)
+            ]);
         } catch (ValidationException $e) {
             return cachet_redirect('dashboard.templates.create')
                 ->withInput(Binput::all())

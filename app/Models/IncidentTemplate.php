@@ -44,7 +44,6 @@ class IncidentTemplate extends Model
      */
     public $rules = [
         'name'     => 'required|string',
-        'slug'     => 'required|string',
         'template' => 'required|string',
     ];
 
