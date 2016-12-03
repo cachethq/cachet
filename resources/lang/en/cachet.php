@@ -12,6 +12,7 @@
 return [
     // Components
     'components' => [
+        'filter'       => 'Display component:',
         'last_updated' => 'Last updated :timestamp',
         'status'       => [
             0 => 'Unknown',
@@ -21,7 +22,8 @@ return [
             4 => 'Major Outage',
         ],
         'group' => [
-            'other' => 'Other Components',
+            'other'  => 'Other Components',
+            'single' => 'Component',
         ],
     ],
 

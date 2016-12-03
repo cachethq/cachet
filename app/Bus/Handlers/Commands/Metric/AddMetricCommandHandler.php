@@ -36,6 +36,7 @@ class AddMetricCommandHandler
             'places'        => $command->places,
             'default_view'  => $command->default_view,
             'threshold'     => $command->threshold,
+            'component_id'  => $command->component_id,
             'order'         => $command->order,
         ]);
 

@@ -43,6 +43,17 @@ body.status-page {
         }
     }
 
+    .dropdown-menu {
+        .group a {
+            font-weight: 600;
+            color: $cachet-gray-darker;
+        }
+
+        .grouped a {
+            margin-left: 15px;
+        }
+    }
+
     .help-icon {
         cursor: help;
     }
@@ -400,6 +411,11 @@ body.status-page {
     // Individual section styling.
     .section-timeline, .section-components, .section-metrics, .section-scheduled {
         margin-top: 40px;
+    }
+
+    .section-filters {
+        padding-bottom: 10px;
+        text-align: right;
     }
 
     .navbar-custom {

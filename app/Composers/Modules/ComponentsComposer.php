@@ -15,6 +15,7 @@ use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\View\View;
+use Illuminate\Database\Eloquent\Collection;
 
 /**
  * This is the components composer.
@@ -52,21 +53,49 @@ class ComponentsComposer
      */
     public function compose(View $view)
     {
-        $componentGroups = $this->getVisibleGroupedComponents();
-        $ungroupedComponents = Component::ungrouped()->get();
+        // Get the component/group if it's defined.
+        $viewdata = $view->getData();
+        $component = $viewdata['component'];
+        $componentGroup = $viewdata['componentGroup'];
 
-        $view->withComponentGroups($componentGroups)
-            ->withUngroupedComponents($ungroupedComponents);
+        // Component & Component Group lists.
+        $allComponentGroups = $this->getVisibleGroupedComponents();
+        if ($component->exists) {
+            $view->withAllComponentGroups($allComponentGroups)
+                 ->withComponentGroups(new Collection())
+                 ->withUngroupedComponents(Component::ungrouped()->get())
+                 ->withComponentSelected($component)
+                 ->withComponentGroupSelected(null);
+        } elseif ($componentGroup->exists) {
+            $view->withAllComponentGroups($allComponentGroups)
+                 ->withComponentGroups($this->getVisibleGroupedComponents($componentGroup->id))
+                 ->withUngroupedComponents(Component::ungrouped()->get())
+                 ->withComponentSelected(null)
+                 ->withComponentGroupSelected($componentGroup);
+        } else {
+            $view->withAllComponentGroups($allComponentGroups)
+                 ->withComponentGroups($allComponentGroups)
+                 ->withUngroupedComponents(Component::ungrouped()->get())
+                 ->withComponentSelected(null)
+                 ->withComponentGroupSelected(null);
+        }
     }
 
     /**
      * Get visible grouped components.
      *
+     * @param int|null $componentGroupId
+     *
      * @return \Illuminate\Support\Collection
      */
-    protected function getVisibleGroupedComponents()
+    protected function getVisibleGroupedComponents($componentGroupId = null)
     {
-        $componentGroupsBuilder = ComponentGroup::query();
+        if ($componentGroupId) {
+            $componentGroupsBuilder = ComponentGroup::where('id', $componentGroupId);
+        } else {
+            $componentGroupsBuilder = ComponentGroup::query();
+        }
+
         if (!$this->guard->check()) {
             $componentGroupsBuilder->visible();
         }

@@ -15,6 +15,8 @@ use AltThree\Validator\ValidationException;
 use CachetHQ\Cachet\Bus\Commands\Metric\AddMetricCommand;
 use CachetHQ\Cachet\Bus\Commands\Metric\RemoveMetricCommand;
 use CachetHQ\Cachet\Bus\Commands\Metric\UpdateMetricCommand;
+use CachetHQ\Cachet\Models\Component;
+use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\MetricPoint;
 use GrahamCampbell\Binput\Facades\Binput;
@@ -45,6 +47,8 @@ class MetricController extends Controller
     public function showAddMetric()
     {
         return View::make('dashboard.metrics.add')
+            ->withComponentsInGroups(ComponentGroup::with('components')->get())
+            ->withComponentsOutGroups(Component::where('group_id', 0)->get())
             ->withPageTitle(trans('dashboard.metrics.add.title').' - '.trans('dashboard.dashboard'));
     }
 
@@ -79,7 +83,8 @@ class MetricController extends Controller
                 $metricData['display_chart'],
                 $metricData['places'],
                 $metricData['default_view'],
-                $metricData['threshold']
+                $metricData['threshold'],
+                $metricData['component_id']
             ));
         } catch (ValidationException $e) {
             return cachet_redirect('dashboard.metrics.create')

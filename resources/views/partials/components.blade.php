@@ -1,3 +1,7 @@
+<div class="section-filters">
+    @include('partials.components_filter')
+</div>
+
 @if($component_groups->count() > 0)
 @foreach($component_groups as $componentGroup)
 <ul class="list-group components">
@@ -21,11 +25,18 @@
 @endforeach
 @endif
 
-@if($ungrouped_components->count() > 0)
+@if($ungrouped_components->count() > 0 && !$component_selected && !$component_group_selected)
 <ul class="list-group components">
     <li class="list-group-item group-name"><strong>{{ trans('cachet.components.group.other') }}</strong></li>
     @foreach($ungrouped_components as $component)
     @include('partials.component', compact($component))
     @endforeach
+</ul>
+@endif
+
+@if($component_selected)
+<ul class="list-group components">
+    <li class="list-group-item group-name"><strong>{{ trans('cachet.components.group.single') }}</strong></li>
+    @include('partials.component', compact($component = $component_selected))
 </ul>
 @endif
