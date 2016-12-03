@@ -89,7 +89,7 @@ class DashboardDisplayer implements DisplayerInterface
      */
     protected function render(array $info)
     {
-        return $this->view->make("errors.dashboard.{$info['code']}", $info)->render();
+        return $this->view->make("dashboard.errors.{$info['code']}", $info)->render();
     }
 
     /**
