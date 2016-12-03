@@ -47,11 +47,12 @@ return [
     */
 
     'displayers' => [
+        'CachetHQ\Cachet\Foundation\Exceptions\Displayers\DashboardDisplayer',
         'CachetHQ\Cachet\Foundation\Exceptions\Displayers\JsonValidationDisplayer',
         'CachetHQ\Cachet\Foundation\Exceptions\Displayers\RedirectDisplayer',
         'CachetHQ\Cachet\Foundation\Exceptions\Displayers\ThrottleDisplayer',
         'GrahamCampbell\Exceptions\Displayers\DebugDisplayer',
-        'GrahamCampbell\Exceptions\Displayers\HtmlDisplayer',
+        'CachetHQ\Cachet\Foundation\Exceptions\Displayers\HtmlDisplayer',
         'GrahamCampbell\Exceptions\Displayers\JsonDisplayer',
         'GrahamCampbell\Exceptions\Displayers\JsonApiDisplayer',
     ],
@@ -88,7 +89,7 @@ return [
     |
     */
 
-    'default' => 'GrahamCampbell\Exceptions\Displayers\HtmlDisplayer',
+    'default' => 'CachetHQ\Cachet\Foundation\Exceptions\Displayers\HtmlDisplayer',
 
     /*
     |--------------------------------------------------------------------------
