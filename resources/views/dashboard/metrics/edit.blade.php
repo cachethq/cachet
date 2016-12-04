@@ -66,6 +66,14 @@
                             {{ trans('forms.metrics.display-chart') }}
                         </label>
                     </div>
+                    <div class="form-group">
+                        <label>{{ trans('forms.metrics.visibility') }}</label>
+                        <select name="visible" class="form-control" required>
+                            <option value="0" {{ $metric->visible === 0 ? 'selected' : null }}>{{ trans('forms.metrics.visibility_authenticated') }}</option>
+                            <option value="1" {{ $metric->visible === 1 ? 'selected' : null }}>{{ trans('forms.metrics.visibility_public') }}</option>
+                            <option value="2" {{ $metric->visible === 2 ? 'selected' : null }}>{{ trans('forms.metrics.visibility_hidden') }}</option>
+                        </select>
+                    </div>
                 </fieldset>
 
                 <input type="hidden" name="id" value={{$metric->id}}>

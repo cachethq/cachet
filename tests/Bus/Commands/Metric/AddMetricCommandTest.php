@@ -39,6 +39,7 @@ class AddMetricCommandTest extends AbstractTestCase
             'default_view'  => 0,
             'threshold'     => 0,
             'order'         => 0,
+            'visible'       => 1,
         ];
 
         $object = new AddMetricCommand(
@@ -51,7 +52,8 @@ class AddMetricCommandTest extends AbstractTestCase
             $params['places'],
             $params['default_view'],
             $params['threshold'],
-            $params['order']
+            $params['order'],
+            $params['visible']
         );
 
         return compact('params', 'object');

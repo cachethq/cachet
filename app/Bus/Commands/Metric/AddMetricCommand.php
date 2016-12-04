@@ -84,6 +84,13 @@ final class AddMetricCommand
     public $order;
 
     /**
+     * The visibility of the metric.
+     *
+     * @var int
+     */
+    public $visible;
+
+    /**
      * The validation rules.
      *
      * @var string[]
@@ -100,6 +107,7 @@ final class AddMetricCommand
         'default_view'  => 'required|int|between:0,3',
         'threshold'     => 'nullable|numeric|between:0,10',
         'order'         => 'nullable|int',
+        'visible'       => 'required|int|between:0,2',
     ];
 
     /**
@@ -115,10 +123,11 @@ final class AddMetricCommand
      * @param int    $default_view
      * @param int    $threshold
      * @param int    $order
+     * @param int    $visible
      *
      * @return void
      */
-    public function __construct($name, $suffix, $description, $default_value, $calc_type, $display_chart, $places, $default_view, $threshold, $order = 0)
+    public function __construct($name, $suffix, $description, $default_value, $calc_type, $display_chart, $places, $default_view, $threshold, $order = 0, $visible = 1)
     {
         $this->name = $name;
         $this->suffix = $suffix;
@@ -130,5 +139,6 @@ final class AddMetricCommand
         $this->default_view = $default_view;
         $this->threshold = $threshold;
         $this->order = $order;
+        $this->visible = $visible;
     }
 }
