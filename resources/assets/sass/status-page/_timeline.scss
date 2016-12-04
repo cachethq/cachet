@@ -1,0 +1,18 @@
+.section-timeline {
+
+}
+
+.section-timeline__header {
+    background-color: $cachet_gray_light;
+    color: $cachet_gray_darker;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    margin-bottom: 0;
+
+    h2 {
+        font-size: 15px;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+}
