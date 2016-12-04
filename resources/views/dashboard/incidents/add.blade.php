@@ -115,7 +115,7 @@
                         <input type="text" name="occurred_at" class="form-control" rel="datepicker-custom" data-date-format="YYYY-MM-DD HH:mm" placeholder="{{ trans('forms.optional') }}">
                     </div>
                     <input type="hidden" name="notify" value="0">
-                    @if(subscribers_enabled())
+                    @if($enable_subscribers)
                     <div class="checkbox">
                         <label>
                             <input type="checkbox" name="notify" value="1" checked="{{ Binput::old('notify', 'checked') }}">

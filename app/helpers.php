@@ -51,22 +51,6 @@ if (!function_exists('formatted_date')) {
     }
 }
 
-if (!function_exists('subscribers_enabled')) {
-    /**
-     * Is the subscriber functionality enabled and configured.
-     *
-     * @return bool
-     */
-    function subscribers_enabled()
-    {
-        $isEnabled = Config::get('setting.enable_subscribers', false);
-        $mailAddress = Config::get('mail.from.address', false);
-        $mailFrom = Config::get('mail.from.name', false);
-
-        return $isEnabled && $mailAddress && $mailFrom;
-    }
-}
-
 if (!function_exists('color_darken')) {
     /**
      * Darken a color.

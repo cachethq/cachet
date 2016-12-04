@@ -8,7 +8,7 @@
     <span class="uppercase">
         <i class="ion ion-ios-email-outline"></i> {{ trans('dashboard.subscribers.subscribers') }}
     </span>
-    @if($current_user->isAdmin && subscribers_enabled())
+    @if($current_user->isAdmin && $enable_subscribers)
     <a class="btn btn-md btn-success pull-right" href="{{ cachet_route('dashboard.subscribers.create') }}">
         {{ trans('dashboard.subscribers.add.title') }}
     </a>
