@@ -55,6 +55,7 @@ class UpdateMetricCommandHandler
             'default_view'  => $command->default_view,
             'threshold'     => $command->threshold,
             'order'         => $command->order,
+            'visible'       => $command->visible,
         ];
 
         return array_filter($params, function ($val) {

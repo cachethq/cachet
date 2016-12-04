@@ -37,6 +37,7 @@ class AddMetricCommandHandler
             'default_view'  => $command->default_view,
             'threshold'     => $command->threshold,
             'order'         => $command->order,
+            'visible'       => $command->visible,
         ]);
 
         event(new MetricWasAddedEvent($metric));
