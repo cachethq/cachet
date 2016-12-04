@@ -44,7 +44,7 @@ class AlterTableIncidentsRemoveScheduledColumns extends Migration
     public function down()
     {
         Schema::table('incidents', function (Blueprint $table) {
-            $table->timestamp('scheduled_at')->after('user_id')->nullable()->default(null);
+            $table->timestamp('scheduled_at')->before('created_at')->nullable()->default(null);
         });
     }
 }
