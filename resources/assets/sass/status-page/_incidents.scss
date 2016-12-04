@@ -1,5 +1,7 @@
 .incidents {
-    margin-top: 20px;
+    :not(:first-child) {
+        margin-top: 20px;
+    }
     margin-bottom: 20px;
 }
 

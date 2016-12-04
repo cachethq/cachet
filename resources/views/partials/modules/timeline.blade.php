@@ -6,6 +6,7 @@
             {{ trans('cachet.incidents.past') }}
         </h2>
     </div>
+
     @foreach($all_incidents as $date => $incidents)
     @include('partials.incidents', [compact($date), compact($incidents)])
     @endforeach
