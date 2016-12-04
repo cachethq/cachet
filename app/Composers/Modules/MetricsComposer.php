@@ -42,7 +42,7 @@ class MetricsComposer
      * Create a new metrics composer instance.
      *
      * @param \Illuminate\Contracts\Config\Repository $config
-     * @param \Illuminate\Contracts\Auth\Guard $guard
+     * @param \Illuminate\Contracts\Auth\Guard        $guard
      *
      * @return void
      */
