@@ -31,7 +31,7 @@ class AlterTableIncidentsDropUserIdColumn extends Migration
     public function down()
     {
         Schema::table('incidents', function (Blueprint $table) {
-            $table->integer('user_id')->unsigned()->after('message');
+            $table->integer('user_id')->unsigned()->nullable()->default(null)->after('message');
         });
     }
 }

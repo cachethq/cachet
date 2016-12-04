@@ -31,7 +31,7 @@ class AlterTableComponentsDropUserIdColumn extends Migration
     public function down()
     {
         Schema::table('components', function (Blueprint $table) {
-            $table->integer('user_id')->unsigned()->after('group_id');
+            $table->integer('user_id')->unsigned()->nullable()->default(null)->after('group_id');
         });
     }
 }
