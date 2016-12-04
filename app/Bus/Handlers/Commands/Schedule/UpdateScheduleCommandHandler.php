@@ -75,7 +75,7 @@ class UpdateScheduleCommandHandler
             'status'  => $command->status,
         ];
 
-        if ($scheduleddAt = $command->scheduled_at) {
+        if ($scheduledAt = $command->scheduled_at) {
             $params['scheduled_at'] = $this->dates->create('Y-m-d H:i', $scheduledAt);
         }
 
