@@ -84,6 +84,31 @@ class ComponentTest extends AbstractApiTestCase
         $this->assertResponseOk();
     }
 
+    public function testPostComponentWithMetaData()
+    {
+        $this->beUser();
+
+        $this->post('/api/v1/components', [
+            'name'        => 'Foo',
+            'description' => 'Bar',
+            'status'      => 1,
+            'link'        => 'http://example.com',
+            'order'       => 1,
+            'group_id'    => 1,
+            'enabled'     => true,
+            'meta'        => [
+                'uuid' => '172ff3fb-41f7-49d3-8bcd-f57b53627fa0',
+            ],
+        ]);
+
+        $this->seeJson([
+            'meta' => [
+                'uuid' => '172ff3fb-41f7-49d3-8bcd-f57b53627fa0',
+            ],
+        ]);
+        $this->assertResponseOk();
+    }
+
     public function testPostDisabledComponent()
     {
         $this->beUser();
@@ -119,6 +144,31 @@ class ComponentTest extends AbstractApiTestCase
             'name' => 'Foo',
         ]);
         $this->seeJson(['name' => 'Foo']);
+        $this->assertResponseOk();
+    }
+
+    public function testPutComponentWithMetaData()
+    {
+        $this->beUser();
+        $component = factory('CachetHQ\Cachet\Models\Component')->create([
+            'meta' => [
+                'uuid' => '172ff3fb-41f7-49d3-8bcd-f57b53627fa0',
+            ],
+        ]);
+
+        $this->put('/api/v1/components/1', [
+            'meta' => [
+                'uuid' => '172ff3fb-41f7-49d3-8bcd-f57b53627fa0',
+                'foo'  => 'bar',
+            ],
+        ]);
+
+        $this->seeJson([
+            'meta' => [
+                'uuid' => '172ff3fb-41f7-49d3-8bcd-f57b53627fa0',
+                'foo'  => 'bar',
+            ],
+        ]);
         $this->assertResponseOk();
     }
 

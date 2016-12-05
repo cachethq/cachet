@@ -36,6 +36,7 @@ class AddComponentCommandTest extends AbstractTestCase
             'order'       => 0,
             'group_id'    => 0,
             'enabled'     => true,
+            'meta'        => null,
         ];
         $object = new AddComponentCommand(
             $params['name'],
@@ -44,7 +45,8 @@ class AddComponentCommandTest extends AbstractTestCase
             $params['link'],
             $params['order'],
             $params['group_id'],
-            $params['enabled']
+            $params['enabled'],
+            $params['meta']
         );
 
         return compact('params', 'object');

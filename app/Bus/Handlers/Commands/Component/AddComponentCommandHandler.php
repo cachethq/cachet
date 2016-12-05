@@ -50,6 +50,7 @@ class AddComponentCommandHandler
             'enabled'     => $command->enabled,
             'order'       => $command->order,
             'group_id'    => $command->group_id,
+            'meta'        => $command->meta,
         ];
 
         return array_filter($params, function ($val) {
