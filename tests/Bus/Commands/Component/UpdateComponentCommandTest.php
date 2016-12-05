@@ -38,6 +38,7 @@ class UpdateComponentCommandTest extends AbstractTestCase
             'order'       => 0,
             'group_id'    => 0,
             'enabled'     => true,
+            'meta'        => null,
         ];
 
         $object = new UpdateComponentCommand(
@@ -48,7 +49,8 @@ class UpdateComponentCommandTest extends AbstractTestCase
             $params['link'],
             $params['order'],
             $params['group_id'],
-            $params['enabled']
+            $params['enabled'],
+            $params['meta']
         );
 
         return compact('params', 'object');

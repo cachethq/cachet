@@ -72,6 +72,13 @@ final class UpdateComponentCommand
     public $enabled;
 
     /**
+     * JSON meta data for the component.
+     *
+     * @var string|null
+     */
+    public $meta;
+
+    /**
      * The validation rules.
      *
      * @var string[]
@@ -84,6 +91,7 @@ final class UpdateComponentCommand
         'order'       => 'nullable|int',
         'group_id'    => 'nullable|int',
         'enabled'     => 'nullable|bool',
+        'meta'        => 'nullable|string',
     ];
 
     /**
@@ -97,10 +105,11 @@ final class UpdateComponentCommand
      * @param int                               $order
      * @param int                               $group_id
      * @param bool                              $enabled
+     * @param string|null                       $meta
      *
      * @return void
      */
-    public function __construct(Component $component, $name, $description, $status, $link, $order, $group_id, $enabled)
+    public function __construct(Component $component, $name, $description, $status, $link, $order, $group_id, $enabled, $meta)
     {
         $this->component = $component;
         $this->name = $name;
@@ -110,5 +119,6 @@ final class UpdateComponentCommand
         $this->order = $order;
         $this->group_id = $group_id;
         $this->enabled = $enabled;
+        $this->meta = $meta;
     }
 }
