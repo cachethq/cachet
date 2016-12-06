@@ -43,10 +43,10 @@ class ModuleServiceProvider extends ServiceProvider
         'index' => [
             'messages'   => 10000,
             'status'     => 20000,
-            'components' => 30000,
-            'metrics'    => 40000,
-            'scheduled'  => 50000,
-            'stickied'   => 60000,
+            'stickied'   => 30000,
+            'components' => 40000,
+            'metrics'    => 50000,
+            'scheduled'  => 60000,
             'timeline'   => 70000,
         ],
     ];
