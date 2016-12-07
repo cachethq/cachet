@@ -68,7 +68,7 @@
                     </div>
                     <div class="form-group">
                         <label>{{ trans('forms.metrics.visibility') }}</label>
-                        <select name="visible" class="form-control" required>
+                        <select name="metric[visible]" class="form-control" required>
                             <option value="0">{{ trans('forms.metrics.visibility_authenticated') }}</option>
                             <option value="1">{{ trans('forms.metrics.visibility_public') }}</option>
                             <option value="2">{{ trans('forms.metrics.visibility_hidden') }}</option>
