@@ -39,7 +39,7 @@ return [
             1 => 'Investigating',
             2 => 'Identified',
             3 => 'Watching',
-            4 => 'Resolved',
+            4 => 'Test',
         ],
     ],
 
