@@ -142,6 +142,21 @@ class Metric extends Model implements HasPresenter
     ];
 
     /**
+     * Overrides the models boot method.
+     *
+     * @return void
+     */
+    public static function boot()
+    {
+        parent::boot();
+
+        // When deleting a metric, delete the points too.
+        self::deleting(function ($model) {
+            $model->points()->delete();
+        });
+    }
+
+    /**
      * Get the points relation.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
