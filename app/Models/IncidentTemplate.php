@@ -49,6 +49,8 @@ class IncidentTemplate extends Model
 
     /**
      * Overrides the models boot method.
+     *
+     * @return void
      */
     public static function boot()
     {

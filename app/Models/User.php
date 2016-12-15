@@ -110,6 +110,8 @@ class User extends Authenticatable
 
     /**
      * Overrides the models boot method.
+     *
+     * @return void
      */
     public static function boot()
     {

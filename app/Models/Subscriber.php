@@ -58,6 +58,8 @@ class Subscriber extends Model implements HasPresenter
 
     /**
      * Overrides the models boot method.
+     *
+     * @return void
      */
     public static function boot()
     {
