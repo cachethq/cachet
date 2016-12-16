@@ -124,6 +124,16 @@ class ComponentGroup extends Model implements HasPresenter
     }
 
     /**
+     * Get the components relation unordered.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function unordered_components()
+    {
+        return $this->hasMany(Component::class, 'group_id', 'id');
+    }
+
+    /**
      * Get the incidents relation.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasManyThrough
@@ -150,7 +160,7 @@ class ComponentGroup extends Model implements HasPresenter
      */
     public function enabled_components_lowest()
     {
-        return $this->components()->enabled()->orderBy('status', 'desc');
+        return $this->unordered_components()->enabled()->orderBy('status', 'desc');
     }
 
     /**
