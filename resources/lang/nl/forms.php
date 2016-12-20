@@ -16,13 +16,13 @@ return [
         'email'            => 'E-mail',
         'username'         => 'Gebruikersnaam',
         'password'         => 'Wachtwoord',
-        'site_name'        => 'Site naam',
-        'site_domain'      => 'Site Domein',
+        'site_name'        => 'Sitenaam',
+        'site_domain'      => 'Site-domeinnaam',
         'site_timezone'    => 'Selecteer uw tijdzone',
         'site_locale'      => 'Selecteer uw taal',
-        'enable_google2fa' => 'Schakel Google twee factor authenticatie in',
-        'cache_driver'     => 'Cache Driver',
-        'session_driver'   => 'Sessie Driver',
+        'enable_google2fa' => 'Schakel Google tweefactorauthenticatie in',
+        'cache_driver'     => 'Cachedriver',
+        'session_driver'   => 'Sessiedriver',
     ],
 
     // Login form fields
@@ -30,11 +30,11 @@ return [
         'login'         => 'Gebruikersnaam of e-mail',
         'email'         => 'E-mail',
         'password'      => 'Wachtwoord',
-        '2fauth'        => 'Authenticatie Code',
+        '2fauth'        => 'Authenticatiecode',
         'invalid'       => 'Ongeldige gebruikersnaam of wachtwoord',
         'invalid-token' => 'Ongeldig token',
         'cookies'       => 'U moet cookies inschakelen om in te loggen.',
-        'rate-limit'    => 'Snelheids limiet overschreden.',
+        'rate-limit'    => 'Snelheidslimiet overschreden.',
     ],
 
     // Incidents form fields
@@ -43,17 +43,17 @@ return [
         'status'             => 'Status',
         'component'          => 'Onderdeel',
         'message'            => 'Boodschap',
-        'message-help'       => 'U kan ook gebruik maken van Markdown.',
+        'message-help'       => 'U kunt ook gebruik maken van Markdown.',
         'scheduled_at'       => 'Voor wanneer is het onderhoud gepland?',
         'incident_time'      => 'Wanneer heeft dit incident plaatsgevonden?',
         'notify_subscribers' => 'Houd abonnees op de hoogte?',
-        'visibility'         => 'Incident Zichtbaarheid',
-        'public'             => 'Zichtbaar voor publiek',
+        'visibility'         => 'Incidentzichtbaarheid',
+        'public'             => 'Publiek zichtbaar',
         'logged_in_only'     => 'Alleen zichtbaar voor ingelogde gebruikers',
         'templates'          => [
             'name'     => 'Naam',
             'template' => 'Sjabloon',
-            'twig'     => 'Incident Templates kunnen gebruik maken van de <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a> template taal.',
+            'twig'     => 'Incidentsjablonen kunnen gebruik maken van de <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a> templatetaal.',
         ],
     ],
 
@@ -65,7 +65,7 @@ return [
         'description' => 'Omschrijving',
         'link'        => 'Link',
         'tags'        => 'Tags',
-        'tags-help'   => 'Komma gescheiden.',
+        'tags-help'   => 'Kommagescheiden.',
         'enabled'     => 'Component ingeschakeld?',
 
         'groups' => [
@@ -90,7 +90,7 @@ return [
         'type_avg'         => 'Gemiddelde',
         'places'           => 'Decimalen',
         'default_view'     => 'Standaardweergave',
-        'threshold'        => 'Hoeveel minuten tussen de metrische punten?',
+        'threshold'        => 'Hoeveel minuten tussen de meetpunten?',
 
         'points' => [
             'value' => 'Waarde',
@@ -101,14 +101,14 @@ return [
     'settings' => [
         /// Application setup
         'app-setup' => [
-            'site-name'              => 'Site naam',
-            'site-url'               => 'Site URL',
+            'site-name'              => 'Sitenaam',
+            'site-url'               => 'Site-URL',
             'display-graphs'         => 'Grafieken tonen op statuspagina?',
             'about-this-page'        => 'Over deze pagina',
             'days-of-incidents'      => 'Hoeveel dagen moeten incidenten getoond worden?',
-            'banner'                 => 'Banner afbeelding',
+            'banner'                 => 'Bannerafbeelding',
             'banner-help'            => 'Het wordt aanbevolen dat u geen bestanden upload die breeder zijn dan 930px.',
-            'subscribers'            => 'Bezoekers toestaan om te abonneren op e-mail notificaties?',
+            'subscribers'            => 'Bezoekers toestaan om te abonneren op e-mail-notificaties?',
             'automatic_localization' => 'Stel de taal van de bezoeker in als standaardtaal voor deze bezoeker?',
         ],
         'analytics' => [
@@ -118,10 +118,10 @@ return [
             'analytics_piwik_siteid' => 'Site-id van Piwik',
         ],
         'localization' => [
-            'site-timezone'        => 'Website tijdzone',
+            'site-timezone'        => 'Website-tijdzone',
             'site-locale'          => 'Taal van de site',
-            'date-format'          => 'Datum formaat',
-            'incident-date-format' => 'Incident tijdsaanduiding',
+            'date-format'          => 'Datumformaat',
+            'incident-date-format' => 'Tijdsaanduiding incident',
         ],
         'security' => [
             'allowed-domains'      => 'Toegestane domeinen',
@@ -133,7 +133,7 @@ return [
         'theme' => [
             'background-color'        => 'Achtergrondkleur',
             'background-fills'        => 'Achtergrond opvulling (components, incidents, footer)',
-            'banner-background-color' => 'Banner achtergrond kleur',
+            'banner-background-color' => 'Banner achtergrondkleur',
             'banner-padding'          => 'Banner padding',
             'fullwidth-banner'        => 'Volledige breedte van de banner aanzetten?',
             'text-color'              => 'Tekstkleur',
@@ -143,7 +143,7 @@ return [
             'greens'                  => 'Groen (voor succes)',
             'yellows'                 => 'Geel (voor waarschuwingen)',
             'oranges'                 => 'Oranje (voor notificaties)',
-            'metrics'                 => 'Metrics opvulling',
+            'metrics'                 => 'Metrics-opvulling',
             'links'                   => 'Links',
         ],
     ],
@@ -161,7 +161,7 @@ return [
             'user'  => 'Gebruiker',
         ],
         '2fa' => [
-            'help' => 'Het inschakelen van two-factor authenticatie verhoogt de veiligheid van uw account. U zult een applicatie zoals <a href="https://support.google.com/accounts/answer/1066447?hl=en">Google Authenticator</a> of een vergelijkbare applicatie moeten downloaden op uw mobiele apparaat. Wanneer u inlogt wordt u gevraagd om een token in te voeren welke door de applicatie wordt gegenereerd.',
+            'help' => 'Het inschakelen van two-factorauthenticatie verhoogt de veiligheid van uw account. U zult een applicatie zoals <a href="https://support.google.com/accounts/answer/1066447?hl=en">Google Authenticator</a> of een vergelijkbare applicatie moeten downloaden op uw mobiele apparaat. Wanneer u inlogt wordt u gevraagd om een token in te voeren die door de applicatie is gegenereerd.',
         ],
         'team' => [
             'description' => 'Nodig je teamleden uit door hier hun e-mailadres in te vullen.',
