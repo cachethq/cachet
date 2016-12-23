@@ -38,7 +38,11 @@ class Subscriber extends Model implements HasPresenter
      *
      * @var string[]
      */
-    protected $fillable = ['email'];
+    protected $fillable = [
+        'email',
+        'verified_at',
+        'global',
+    ];
 
     /**
      * The validation rules.
