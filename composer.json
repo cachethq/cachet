@@ -45,10 +45,11 @@
         "guzzlehttp/guzzle": "^6.2.1",
         "laravel/framework": "5.3.*",
         "mccool/laravel-auto-presenter": "^4.3",
+        "nexmo/client": "@beta",
         "pragmarx/google2fa": "^0.7.1",
         "predis/predis": "^1.1",
-        "twig/twig": "^1.26.1",
-        "roumen/feed": "^2.10.4"
+        "roumen/feed": "^2.10.4",
+        "twig/twig": "^1.26.1"
     },
     "require-dev": {
         "alt-three/testbench": "^1.9",
