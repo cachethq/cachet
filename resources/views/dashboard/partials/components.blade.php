@@ -1,13 +1,13 @@
 @if($component_groups->count() > 0)
-@foreach($component_groups as $componentGroup)
-@if($componentGroup->enabled_components->count() > 0)
+@foreach($component_groups as $component_group)
+@if($component_group->enabled_components)
 <ul class="list-group components">
     <li class="list-group-item group-name">
-        <i class="{{ $componentGroup->collapse_class }} group-toggle"></i>
-        <span class="component-group-name">{{ $componentGroup->name }}</span>
+        <i class="{{ $component_group->collapse_class }} group-toggle"></i>
+        <span class="component-group-name">{{ $component_group->name }}</span>
     </li>
-    <div class="group-items {{ $componentGroup->is_collapsed ? "hide" : null }}">
-        @foreach($componentGroup->enabled_components()->orderBy('order')->get() as $component)
+    <div class="group-items {{ $component_group->is_collapsed ? "hide" : null }}">
+        @foreach($component_group->enabled_components()->orderBy('order')->get() as $component)
         @include('dashboard.partials.component', compact($component))
         @endforeach
     </div>
