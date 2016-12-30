@@ -23,14 +23,23 @@ final class IncidentWasReportedEvent implements IncidentEventInterface
     public $incident;
 
     /**
+     * Whether to notify that the incident was reported.
+     *
+     * @var bool
+     */
+    public $notify;
+
+    /**
      * Create a new incident has reported event instance.
      *
      * @param \CachetHQ\Cachet\Models\Incident $incident
+     * @param bool                             $notify
      *
      * @return void
      */
-    public function __construct(Incident $incident)
+    public function __construct(Incident $incident, $notify)
     {
         $this->incident = $incident;
+        $this->notify = $notify;
     }
 }

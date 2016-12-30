@@ -14,6 +14,7 @@ namespace CachetHQ\Cachet\Bus\Handlers\Commands\User;
 use CachetHQ\Cachet\Bus\Commands\User\InviteUserCommand;
 use CachetHQ\Cachet\Bus\Events\User\UserWasInvitedEvent;
 use CachetHQ\Cachet\Models\Invite;
+use CachetHQ\Cachet\Notifications\User\InviteUserNotification;
 
 /**
  * This is the invite user command handler.
@@ -35,6 +36,8 @@ class InviteUserCommandHandler
             $invite = Invite::create([
                 'email' => $email,
             ]);
+
+            $invite->notify(new InviteUserNotification());
 
             event(new UserWasInvitedEvent($invite));
         }

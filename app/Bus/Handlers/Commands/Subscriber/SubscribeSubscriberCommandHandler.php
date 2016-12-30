@@ -17,6 +17,7 @@ use CachetHQ\Cachet\Bus\Events\Subscriber\SubscriberHasSubscribedEvent;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Subscriber;
 use CachetHQ\Cachet\Models\Subscription;
+use CachetHQ\Cachet\Notifications\Subscriber\VerifySubscriptionNotification;
 
 /**
  * This is the subscribe subscriber command handler.
@@ -59,6 +60,8 @@ class SubscribeSubscriberCommandHandler
         if ($command->verified) {
             dispatch(new VerifySubscriberCommand($subscriber));
         } else {
+            $subscriber->notify(new VerifySubscriptionNotification());
+
             event(new SubscriberHasSubscribedEvent($subscriber));
         }
 

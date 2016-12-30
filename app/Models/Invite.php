@@ -12,9 +12,18 @@
 namespace CachetHQ\Cachet\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
 
+/**
+ * This is the invite class.
+ *
+ * @author Joseph Cohen <joe@alt-three.com>
+ * @author James Brooks <james@alt-three.com>
+ */
 class Invite extends Model
 {
+    use Notifiable;
+
     /**
      * The attributes that should be casted to native types.
      *
@@ -42,19 +51,9 @@ class Invite extends Model
 
         self::creating(function ($invite) {
             if (!$invite->code) {
-                $invite->code = self::generateInviteCode();
+                $invite->code = str_random(20);
             }
         });
-    }
-
-    /**
-     * Returns an invite code.
-     *
-     * @return string
-     */
-    public static function generateInviteCode()
-    {
-        return str_random(20);
     }
 
     /**

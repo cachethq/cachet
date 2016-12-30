@@ -9,14 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Handlers\Events\Component;
+namespace CachetHQ\Cachet\Bus\Handlers\Events\IncidentUpdate;
 
-use CachetHQ\Cachet\Bus\Events\Component\ComponentStatusWasUpdatedEvent;
-use CachetHQ\Cachet\Models\Component;
+use CachetHQ\Cachet\Bus\Events\IncidentUpdate\IncidentUpdateWasReportedEvent;
 use CachetHQ\Cachet\Models\Subscriber;
-use CachetHQ\Cachet\Notifications\Component\ComponentStatusChangedNotification;
+use CachetHQ\Cachet\Notifications\IncidentUpdate\IncidentUpdatedNotification;
 
-class SendComponentUpdateEmailNotificationHandler
+class SendIncidentUpdateEmailNotificationHandler
 {
     /**
      * The subscriber instance.
@@ -40,39 +39,42 @@ class SendComponentUpdateEmailNotificationHandler
     /**
      * Handle the event.
      *
-     * @param \CachetHQ\Cachet\Bus\Events\Component\ComponentStatusWasUpdatedEvent $event
+     * @param \CachetHQ\Cachet\Bus\Events\IncidentUpdate\IncidentUpdateWasReportedEvent $event
      *
      * @return void
      */
-    public function handle(ComponentStatusWasUpdatedEvent $event)
+    public function handle(IncidentUpdateWasReportedEvent $event)
     {
-        $component = $event->component;
+        $update = $event->update;
+        $incident = $update->incident;
 
-        // Don't email anything if the status hasn't changed.
-        if ($event->original_status === $event->new_status) {
+        // Only send emails for public incidents.
+        if (!$incident->visible) {
             return;
         }
 
         // First notify all global subscribers.
         $globalSubscribers = $this->subscriber->isVerified()->isGlobal()->get();
 
-        $globalSubscribers->map(function ($subscriber) use ($component, $event) {
-            $subscriber->notify(new ComponentStatusChangedNotification($component, $event->new_status));
+        $globalSubscribers->map(function ($subscriber) use ($update) {
+            $subscriber->notify(new IncidentUpdatedNotification($update));
         });
+
+        if (!$incident->component) {
+            return;
+        }
 
         $notified = $globalSubscribers->pluck('id')->all();
 
         // Notify the remaining component specific subscribers.
         $componentSubscribers = $this->subscriber
             ->isVerified()
-            ->forComponent($component->id)
+            ->forComponent($incident->component->id)
             ->get()
             ->reject(function ($subscriber) use ($notified) {
                 return in_array($subscriber->id, $notified);
+            })->map(function ($subscriber) use ($incident) {
+                $subscriber->notify(new IncidentUpdatedNotification($incident));
             });
-
-        $componentSubscribers->map(function ($subscriber) use ($component, $event) {
-            $subscriber->notify(new ComponentStatusChangedNotification($component, $event->new_status));
-        });
     }
 }
