@@ -44,6 +44,11 @@ class StatusPageRoutes
                 'uses' => 'StatusPageController@showIndex',
             ]);
 
+            $router->get('history/{year}/{month?}', [
+                'as'   => 'get:history',
+                'uses' => 'StatusPageController@showHistory',
+            ]);
+
             $router->get('incidents/{incident}', [
                 'as'   => 'get:incident',
                 'uses' => 'StatusPageController@showIncident',

@@ -19,6 +19,7 @@ use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\Schedule;
 use CachetHQ\Cachet\Repositories\Metric\MetricRepository;
+use Carbon\Carbon;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
@@ -108,6 +109,25 @@ class StatusPageController extends AbstractApiController
             ->withCanPageBackward(Incident::where('occurred_at', '<', $startDate->format('Y-m-d'))->count() > 0)
             ->withPreviousDate($startDate->copy()->subDays($daysToShow)->toDateString())
             ->withNextDate($startDate->copy()->addDays($daysToShow)->toDateString());
+    }
+
+    /**
+     * Show the history of incidents over time.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function showHistory($year, $month = null)
+    {
+        $startDate = Carbon::createFromDate($year, $month, 1);
+        $endDate = $startDate->copy()->endOfMonth();
+        $incidentVisibility = Auth::check() ? 0 : 1;
+
+        $allIncidents = Incident::where('visible', '>=', $incidentVisibility)->whereBetween('occurred_at', [
+            $startDate->toDateString().' 00:00:00',
+            $endDate->toDateString().' 23:59:59',
+        ])->orderBy('occurred_at', 'desc')->get()->groupBy(function (Incident $incident) {
+            return app(DateFactory::class)->make($incident->occurred_at)->toDateString();
+        });
     }
 
     /**
