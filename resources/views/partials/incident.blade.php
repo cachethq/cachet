@@ -49,7 +49,7 @@
                 {!! $incident->formattedMessage !!}
             </span>
             <small class="incident-update__time">
-                {{ $update->timestamp_formatted }}
+                {{ $incident->timestamp_formatted }}
             </small>
         </div>
     </div>
