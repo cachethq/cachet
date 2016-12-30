@@ -86,17 +86,6 @@ class StatusPageController extends AbstractApiController
             return app(DateFactory::class)->make($incident->occurred_at)->toDateString();
         });
 
-        // Add in days that have no incidents
-        if (Config::get('setting.only_disrupted_days') === false) {
-            foreach ($incidentDays as $i) {
-                $date = app(DateFactory::class)->make($startDate)->subDays($i);
-
-                if (!isset($allIncidents[$date->toDateString()])) {
-                    $allIncidents[$date->toDateString()] = [];
-                }
-            }
-        }
-
         // Sort the array so it takes into account the added days
         $allIncidents = $allIncidents->sortBy(function ($value, $key) {
             return strtotime($key);
