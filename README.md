@@ -33,13 +33,13 @@ Cachet is a beautiful and powerful open source status page system.
 
 Sweet, we're always looking for contributions that improve Cachet! It's easy to get started and you don't even need to know how to write a single line of code!
 
-### Contributing as a non-developer/non-designer
+#### Contributing as a non-developer/non-designer
 
 We're always looking for new [translations](#translations).
 
 Of course bug reports, feature requests and [documentation](https://docs.cachethq.io) are always appreciated.
 
-### Contributing as a designer
+#### Contributing as a designer
 
 As Cachet gains new features, the design and ideas that were once a perfect fit need updating and in some cases designing from scratch. This is where you come in! Fancy giving Cachet a lick of paint? Sweet!
 
@@ -53,7 +53,7 @@ To get started you can do the following:
 
 If you're making a lot of changes, you'll find that running `gulp watch` will make life easier for you!
 
-### Contributing as a developer
+#### Contributing as a developer
 
 Built using [Laravel](https://laravel.com).
 
@@ -74,7 +74,7 @@ Here are some useful quick links:
 - [Installing Cachet](https://docs.cachethq.io/docs/installing-cachet)
 - [Getting started with Docker](https://docs.cachethq.io/docs/get-started-with-docker)
 
-### Demo Account
+#### Demo Account
 
 To test out the demo, you may login to the [Dashboard](https://demo.cachethq.io/dashboard) with the following:
 
