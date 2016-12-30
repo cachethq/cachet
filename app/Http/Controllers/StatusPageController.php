@@ -75,17 +75,10 @@ class StatusPageController extends AbstractApiController
             }
         }
 
-        $daysToShow = Config::get('setting.app_incident_days', 0) - 1;
-        if ($daysToShow < 0) {
-            $daysToShow = 0;
-            $incidentDays = [];
-        } else {
-            $incidentDays = range(0, $daysToShow);
-        }
+        $daysToShow = max(0, (int) Config::get('setting.app_incident_days', 0) - 1);
+        $incidentDays = range(0, $daysToShow);
 
-        $incidentVisibility = Auth::check() ? 0 : 1;
-
-        $allIncidents = Incident::where('visible', '>=', $incidentVisibility)->whereBetween('occurred_at', [
+        $allIncidents = Incident::where('visible', '>=', (int) !Auth::check())->whereBetween('occurred_at', [
             $startDate->copy()->subDays($daysToShow)->format('Y-m-d').' 00:00:00',
             $startDate->format('Y-m-d').' 23:59:59',
         ])->orderBy('occurred_at', 'desc')->get()->groupBy(function (Incident $incident) {
@@ -106,7 +99,7 @@ class StatusPageController extends AbstractApiController
         // Sort the array so it takes into account the added days
         $allIncidents = $allIncidents->sortBy(function ($value, $key) {
             return strtotime($key);
-        }, SORT_REGULAR, true)->all();
+        }, SORT_REGULAR, true);
 
         return View::make('index')
             ->withDaysToShow($daysToShow)
