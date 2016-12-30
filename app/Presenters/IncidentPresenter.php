@@ -164,7 +164,7 @@ class IncidentPresenter extends BasePresenter implements Arrayable
      */
     public function timestamp_formatted()
     {
-        return $this->occurred_at_formatted;
+        return $this->wrappedObject->occurred_at->diffForHumans();
     }
 
     /**

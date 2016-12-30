@@ -6,10 +6,6 @@ elixir((mix) => {
             'node_modules/jquery-minicolors/jquery.minicolors.css',
             'resources/assets/sass/plugins/_jquery.minicolors.scss'
         )
-        .copy(
-            'node_modules/github-markdown-css/github-markdown.css',
-            'resources/assets/sass/plugins/_github-markdown.scss'
-        )
         .copy('node_modules/ionicons/fonts', 'public/fonts')
         .sass('dashboard.scss', 'public/dist/css/dashboard.css')
         .sass('app.scss', 'public/dist/css/app.css')

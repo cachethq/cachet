@@ -110,7 +110,7 @@ class IncidentUpdatePresenter extends BasePresenter implements Arrayable
             return $this->scheduled_at_formatted;
         }
 
-        return $this->created_at_formatted;
+        return $this->wrappedObject->created_at->diffForHumans();
     }
 
     /**

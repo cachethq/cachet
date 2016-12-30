@@ -1,13 +1,17 @@
 .incidents {
-    :not(:first-child) {
+    margin-bottom: 20px;
+    &:first-child {
         margin-top: 20px;
     }
-    margin-bottom: 20px;
 }
 
 .incident {
     border: 1px solid #373737;
-    padding: 30px
+    padding: 30px;
+
+    + .incident {
+        border-top: none;
+    }
 }
 
 .incident--divided {
@@ -21,24 +25,63 @@
 }
 
 .incident__name {
-    margin-bottom: 30px !important;
+    display: flex;
+    max-width: 100%;
+    // margin-bottom: 30px !important;
 
-    i {
-        margin-right: 5px;
+    .incident__name-link {
+        flex-grow: 1;
+        font-size: 25px;
+        font-weight: 700;
+    }
+
+    .incident__name-icon {
+        font-size: 25px;
     }
 }
 
 .incident-updates {
+    display: flex;
+    flex-direction: column;
     i {
         width: 15px;
     }
 }
 
 .incident-update {
+    display: flex;
+    flex-direction: row;
+    align-content: space-around;
+
     font-size: 15px;
     line-height: 22px;
     margin-top: 15px;
     margin-bottom: 15px;
+
+    .incident-update__icon {
+        padding-right: 5px;
+    }
+
+    // Maybe hide this on mobile and show the icon instead?
+    .incident-update__status {
+        font-weight: 700;
+        min-width: 15%;
+        display: none;
+
+        @include breakpoint('medium') {
+            display: block;
+        }
+    }
+
+    .incident-update__message {
+        text-align: left;
+        flex-grow: 2;
+    }
+
+    .incident-update__timestamp {
+        text-align: right;
+        color: #b3b3b3;
+    }
 }
 
 .incident-update__time {
