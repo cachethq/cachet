@@ -1,4 +1,4 @@
-# Cachet
+##Cachet
 
 [![StyleCI](https://styleci.io/repos/26730195/shield)](https://styleci.io/repos/26730195/)
 [![Build Status](https://img.shields.io/travis/CachetHQ/Cachet/2.4.svg?style=flat-square)](https://travis-ci.org/CachetHQ/Cachet)
@@ -7,11 +7,11 @@
 [![Latest Release](https://img.shields.io/github/release/cachethq/cachet.svg?style=flat-square)](https://github.com/CachetHQ/Cachet/releases)
 
 ![Screenshot](https://cachethq.io/img/main-interface.jpg)
-
+It is a project named Cachet. <br> 
 Cachet is a beautiful and powerful open source status page system.
-
+<br>
 ## Features
-
+<br>
 - List your services components
 - Log incidents
 - Apply custom CSS to the status page
@@ -32,7 +32,7 @@ Cachet is a beautiful and powerful open source status page system.
 ## I'm looking to contribute to this awesome project!
 
 Sweet, we're always looking for contributions that improve Cachet! It's easy to get started and you don't even need to know how to write a single line of code!
-
+<br>
 ### Contributing as a non-developer/non-designer
 
 We're always looking for new [translations](#translations).
