@@ -107,6 +107,13 @@ class Component extends Model implements HasPresenter
     ];
 
     /**
+     * The relations to eager load on every query.
+     *
+     * @var string[]
+     */
+    protected $with = ['tags'];
+
+    /**
      * Components can belong to a group.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
