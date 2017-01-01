@@ -21,6 +21,8 @@ class AlterTableComponentsDropUserIdColumn extends Migration
     public function up()
     {
         Schema::table('components', function (Blueprint $table) {
+            $table->dropIndex('components_user_id_index');
+
             $table->dropColumn('user_id');
         });
     }
@@ -30,6 +32,10 @@ class AlterTableComponentsDropUserIdColumn extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('components', function (Blueprint $table) {
+            $table->integer('user_id')->unsigned()->after('group_id');
+
+            $table->index('user_id');
+        });
     }
 }

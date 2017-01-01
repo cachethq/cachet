@@ -24,7 +24,7 @@ class CreateMetricPointsTable extends Migration
             $table->engine = 'InnoDB';
 
             $table->increments('id');
-            $table->integer('metric_id');
+            $table->integer('metric_id')->unsigned();
             $table->decimal('value', 10, 3);
             $table->timestamps();
 

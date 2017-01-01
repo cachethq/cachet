@@ -25,12 +25,12 @@ class CreateComponentsTable extends Migration
 
             $table->increments('id');
             $table->string('name');
-            $table->text('description');
-            $table->text('link');
-            $table->integer('status');
-            $table->integer('order');
-            $table->integer('group_id');
-            $table->integer('user_id');
+            $table->text('description')->nullable()->default(null);
+            $table->text('link')->nullable()->default(null);
+            $table->tinyInteger('status')->unsigned();
+            $table->integer('order')->unsigned();
+            $table->integer('group_id')->unsigned();
+            $table->integer('user_id')->unsigned();
             $table->timestamps();
             $table->softDeletes();
 

@@ -30,7 +30,7 @@ class CreateUsersTable extends Migration
             $table->string('email');
             $table->string('api_key');
             $table->boolean('active')->default(1);
-            $table->tinyInteger('level')->default(2);
+            $table->tinyInteger('level')->unsigned()->default(2);
             $table->timestamps();
 
             $table->index('remember_token');

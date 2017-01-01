@@ -23,7 +23,7 @@ class AlterTableComponentGroupsAddCollapsedColumn extends Migration
     public function up()
     {
         Schema::table('component_groups', function (Blueprint $table) {
-            $table->boolean('collapsed')->after('order')->default(false);
+            $table->boolean('collapsed')->default(false)->after('order');
         });
     }
 

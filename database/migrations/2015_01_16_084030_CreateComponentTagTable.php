@@ -24,8 +24,8 @@ class CreateComponentTagTable extends Migration
             $table->engine = 'InnoDB';
 
             $table->increments('id');
-            $table->integer('component_id');
-            $table->integer('tag_id');
+            $table->integer('component_id')->unsigned();
+            $table->integer('tag_id')->unsigned();
 
             $table->index('component_id');
             $table->index('tag_id');

@@ -26,9 +26,9 @@ class CreateMetricsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('suffix');
-            $table->text('description');
+            $table->text('description')->nullable()->default(null);
             $table->decimal('default_value', 10, 3);
-            $table->tinyInteger('calc_type');
+            $table->tinyInteger('calc_type')->unsigned();
             $table->boolean('display_chart')->default(1);
             $table->timestamps();
 
