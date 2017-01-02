@@ -16,7 +16,7 @@ return [
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Incidents &amp; Schedule',
+        'title'                    => 'Tapahtumat &amp; ajastaminen',
         'incidents'                => 'Tapahtumat',
         'logged'                   => '{0} There are no incidents, good work.|You have logged one incident.|You have reported <strong>:count</strong> incidents.',
         'incident-create-template' => 'Luo mallipohja',
@@ -170,7 +170,7 @@ return [
         'team'        => 'Ryhmä',
         'member'      => 'Jäsen',
         'profile'     => 'Profiili',
-        'description' => 'Team Members will be able to add, modify &amp; edit components and incidents.',
+        'description' => 'Käyttäjä voi luoda, muokata &amp; komponentteja ja tapahtumia.',
         'add'         => [
             'title'   => 'Lisää uusi käyttäjä',
             'success' => 'Käyttäjä on lisätty.',
