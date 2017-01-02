@@ -11,7 +11,8 @@
 
 return [
 
-    'dashboard' => 'Dashboard',
+    'dashboard'          => 'Dashboard',
+    'writeable_settings' => 'The Cachet settings directory is not writeable. Please make sure that <code>./bootstrap/cachet</code> is writeable by the web server.',
 
     // Incidents
     'incidents' => [
@@ -20,9 +21,10 @@ return [
         'logged'                   => '{0} Não existem incidentes, bom trabalho.|Você registrou um incidente.|Você reportou <strong>:count</strong> incidentes.',
         'incident-create-template' => 'Criar template',
         'incident-templates'       => 'Template de incidentes',
+        'updates'                  => '{0} Zero Updates|One Update|:count Updates',
         'add'                      => [
             'title'   => 'Adicionar um incidente',
-            'success' => 'Incident added.',
+            'success' => 'Incidente adicionado.',
             'failure' => 'There was an error adding the incident, please try again.',
         ],
         'edit' => [
@@ -33,6 +35,10 @@ return [
         'delete' => [
             'success' => 'O incidente foi apagado e não será mais mostrado na sua página de estado.',
             'failure' => 'The incident could not be deleted, please try again.',
+        ],
+        'update' => [
+            'title'    => 'Create new incident update',
+            'subtitle' => 'Add an update to <strong>:incident</strong>',
         ],
 
         // Incident templates
@@ -62,13 +68,13 @@ return [
         'logged'       => '{0} Não existem agendamentos, bom trabalho.|Você introduziu um agendamento.|Você reportou <strong>:count</strong> agendamentos.',
         'scheduled_at' => 'Agendada em :timestamp',
         'add'          => [
-            'title'   => 'Add Scheduled Maintenance',
-            'success' => 'Schedule added.',
+            'title'   => 'Adicionar Manutenção Agendada',
+            'success' => 'Agendamento adicionado.',
             'failure' => 'Something went wrong adding the schedule, please try again.',
         ],
         'edit' => [
-            'title'   => 'Edit Scheduled Maintenance',
-            'success' => 'Schedule has been updated!',
+            'title'   => 'Editar Manutenção Agendada',
+            'success' => 'Agendamento actualizado com sucesso!',
             'failure' => 'Something went wrong editing the schedule, please try again.',
         ],
         'delete' => [
@@ -86,12 +92,12 @@ return [
             'title'   => 'Adicionar um Componente',
             'message' => 'Você deve adicionar um componente.',
             'success' => 'Component created.',
-            'failure' => 'Something went wrong with the component, please try again.',
+            'failure' => 'Something went wrong with the component group, please try again.',
         ],
         'edit' => [
             'title'   => 'Editar um Componente',
             'success' => 'Component updated.',
-            'failure' => 'Something went wrong with the component, please try again.',
+            'failure' => 'Something went wrong with the component group, please try again.',
         ],
         'delete' => [
             'success' => 'O componente foi apagado!',
@@ -172,7 +178,7 @@ return [
         ],
         'edit' => [
             'title'   => 'Atualizar Perfil',
-            'success' => 'Profile updated.',
+            'success' => 'Perfil actualizado.',
             'failure' => 'Something went wrong updating the profile, please try again.',
         ],
         'delete' => [
@@ -197,13 +203,24 @@ return [
         'analytics' => [
             'analytics' => 'Analítica',
         ],
+        'log' => [
+            'log' => 'Log',
+        ],
         'localization' => [
             'localization' => 'Localização',
         ],
         'customization' => [
-            'customization' => 'Customization',
-            'header'        => 'Custom Header HTML',
-            'footer'        => 'Custom Footer HTML',
+            'customization' => 'Personalização',
+            'header'        => 'HTML do Header Personalizado',
+            'footer'        => 'HTML do Footer Personalizado',
+        ],
+        'mail' => [
+            'mail'  => 'Mail',
+            'test'  => 'Test',
+            'email' => [
+                'subject' => 'Test notification from Cachet',
+                'body'    => 'This is a test notification from Cachet.',
+            ],
         ],
         'security' => [
             'security'   => 'Segurança',
@@ -220,10 +237,10 @@ return [
             'failure' => 'Não foi possível salvar as configurações.',
         ],
         'credits' => [
-            'credits'       => 'Credits',
-            'contributors'  => 'Contributors',
-            'license'       => 'Cachet is a BSD-3-licensed open source project, released by <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
-            'backers-title' => 'Backers & Sponsors',
+            'credits'       => 'Créditos',
+            'contributors'  => 'Contribuidores',
+            'license'       => 'Cachet é um projecto open source licenciado com base no BSD-3, disponibilizado pela <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
+            'backers-title' => 'Apoios & Patrocinadores',
             'backers'       => 'If you\'d like to support future development, check out the <a href="https://patreon.com/jbrooksuk" target="_blank">Cachet Patreon</a> campaign.',
             'thank-you'     => 'Thank you to each and every one of the :count contributors.',
         ],
@@ -253,15 +270,15 @@ return [
     'widgets' => [
         'support'          => 'Support Cachet',
         'support_subtitle' => 'Check out our <strong><a href="https://patreon.com/jbrooksuk" target="_blank">Patreon</a></strong> page!',
-        'news'             => 'Latest News',
-        'news_subtitle'    => 'Get the latest updates',
+        'news'             => 'Últimas Notícias',
+        'news_subtitle'    => 'Obter uma actualização',
     ],
 
     // Welcome modal
     'welcome' => [
         'welcome' => 'Bem vindo à sua página de estado!',
         'message' => 'Sua página de status está quase pronta! Tavez vocë queira checar essas configurações extras',
-        'close'   => 'Take me straight to my dashboard',
+        'close'   => 'Voltar ao Dashboard',
         'steps'   => [
             'component'  => 'Criar componentes',
             'incident'   => 'Criar incidentes',
