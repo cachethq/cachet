@@ -16,7 +16,7 @@ return [
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Incidents &amp; Schedule',
+        'title'                    => 'Incidenten &amp; planning',
         'incidents'                => 'Incidenten',
         'logged'                   => '{0} Proficiat, er zijn geen incidenten.|Er heeft zich één incident voorgedaan.|Er zijn <strong>:count</strong> incidenten gerapporteerd.',
         'incident-create-template' => 'Maak template',
@@ -170,7 +170,7 @@ return [
         'team'        => 'Team',
         'member'      => 'Lid',
         'profile'     => 'Profiel',
-        'description' => 'Team Members will be able to add, modify &amp; edit components and incidents.',
+        'description' => 'Teamleden zullen onderdelen en incidenten kunnen aanpassen &amp; toevoegen.',
         'add'         => [
             'title'   => 'Voeg een nieuw teamlid toe',
             'success' => 'Teamlid toegevoegd.',
