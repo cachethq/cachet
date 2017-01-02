@@ -16,7 +16,7 @@ return [
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Incidents &amp; Schedule',
+        'title'                    => 'Incidents &amp; Planification',
         'incidents'                => 'Incidents',
         'logged'                   => '{0} Aucun incident, bon travail.|Vous avez un incident signalé.|Vous avez  <strong>:count</strong> incidents signalés.',
         'incident-create-template' => 'Créer un modèle',
@@ -170,7 +170,7 @@ return [
         'team'        => 'Équipe',
         'member'      => 'Membre',
         'profile'     => 'Profil utilisateur',
-        'description' => 'Team Members will be able to add, modify &amp; edit components and incidents.',
+        'description' => 'Les membres de l\'équipe pourront ajouter &amp; modifier les composants et les incidents.',
         'add'         => [
             'title'   => 'Ajouter un nouveau membre de l\'équipe',
             'success' => 'Membre de l\'équipe a ajouté.',
