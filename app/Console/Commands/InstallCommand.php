@@ -11,11 +11,7 @@
 
 namespace CachetHQ\Cachet\Console\Commands;
 
-use CachetHQ\Cachet\Bus\Commands\System\Config\UpdateConfigCommand;
-use CachetHQ\Cachet\Bus\Jobs\System\SendBeaconJob;
-use CachetHQ\Cachet\Composers\SettingsComposer;
 use CachetHQ\Cachet\Settings\Repository;
-use Doctrine\DBAL\Driver\PDOException;
 use Dotenv\Dotenv;
 use Dotenv\Exception\InvalidPathException;
 use Illuminate\Console\Command;
