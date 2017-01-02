@@ -9,21 +9,21 @@
     "packages": [
         {
             "name": "alt-three/badger",
-            "version": "v3.1.0",
+            "version": "v3.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/AltThree/Badger.git",
-                "reference": "c5de4afcefcc0dd6576d2ae4bd5d5e83fb0cb8d9"
+                "reference": "c4cd7140aed3554ba4b8c44a877d400d6e5e3554"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/AltThree/Badger/zipball/c5de4afcefcc0dd6576d2ae4bd5d5e83fb0cb8d9",
-                "reference": "c5de4afcefcc0dd6576d2ae4bd5d5e83fb0cb8d9",
+                "url": "https://api.github.com/repos/AltThree/Badger/zipball/c4cd7140aed3554ba4b8c44a877d400d6e5e3554",
+                "reference": "c4cd7140aed3554ba4b8c44a877d400d6e5e3554",
                 "shasum": ""
             },
             "require": {
-                "illuminate/contracts": "5.1.*|5.2.*|5.3.*",
-                "illuminate/support": "5.1.*|5.2.*|5.3.*",
+                "illuminate/contracts": "5.1.*|5.2.*|5.3.*|5.4.*",
+                "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*",
                 "php": ">=5.5.9"
             },
             "require-dev": {
@@ -33,7 +33,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.1-dev"
+                    "dev-master": "3.2-dev"
                 }
             },
             "autoload": {
@@ -67,28 +67,28 @@
                 "shield",
                 "svg"
             ],
-            "time": "2016-04-22 17:23:42"
+            "time": "2017-01-01 12:36:28"
         },
         {
             "name": "alt-three/bus",
-            "version": "v2.0.0",
+            "version": "v2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/AltThree/Bus.git",
-                "reference": "cf98cf46654491c4f9f286ab32dd72fb6eb446cc"
+                "reference": "a71bafc3d56fd8e980ecd31447a75fd846494539"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/AltThree/Bus/zipball/cf98cf46654491c4f9f286ab32dd72fb6eb446cc",
-                "reference": "cf98cf46654491c4f9f286ab32dd72fb6eb446cc",
+                "url": "https://api.github.com/repos/AltThree/Bus/zipball/a71bafc3d56fd8e980ecd31447a75fd846494539",
+                "reference": "a71bafc3d56fd8e980ecd31447a75fd846494539",
                 "shasum": ""
             },
             "require": {
-                "illuminate/bus": "5.3.*",
-                "illuminate/container": "5.3.*",
-                "illuminate/contracts": "5.3.*",
-                "illuminate/pipeline": "5.3.*",
-                "illuminate/support": "5.3.*",
+                "illuminate/bus": "5.3.*|5.4.*",
+                "illuminate/container": "5.3.*|5.4.*",
+                "illuminate/contracts": "5.3.*|5.4.*",
+                "illuminate/pipeline": "5.3.*|5.4.*",
+                "illuminate/support": "5.3.*|5.4.*",
                 "php": ">=5.6.4"
             },
             "require-dev": {
@@ -99,7 +99,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.0-dev"
+                    "dev-master": "2.1-dev"
                 }
             },
             "autoload": {
@@ -137,7 +137,7 @@
                 "command bus",
                 "job"
             ],
-            "time": "2016-08-25 10:38:17"
+            "time": "2017-01-01 12:37:11"
         },
         {
             "name": "alt-three/emoji",
@@ -204,21 +204,21 @@
         },
         {
             "name": "alt-three/throttle",
-            "version": "v1.1.0",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/AltThree/Throttle.git",
-                "reference": "3e4d57e8c61f02521b91cd911e0173710be0c1bb"
+                "reference": "bda58993b1818b943f1738661af692a639c4aa5e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/AltThree/Throttle/zipball/3e4d57e8c61f02521b91cd911e0173710be0c1bb",
-                "reference": "3e4d57e8c61f02521b91cd911e0173710be0c1bb",
+                "url": "https://api.github.com/repos/AltThree/Throttle/zipball/bda58993b1818b943f1738661af692a639c4aa5e",
+                "reference": "bda58993b1818b943f1738661af692a639c4aa5e",
                 "shasum": ""
             },
             "require": {
-                "illuminate/cache": "5.2.*|5.3.*",
-                "illuminate/http": "5.2.*|5.3.*",
+                "illuminate/cache": "5.2.*|5.3.*|5.4.*",
+                "illuminate/http": "5.2.*|5.3.*|5.4.*",
                 "php": ">=5.5.9"
             },
             "require-dev": {
@@ -228,7 +228,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1-dev"
+                    "dev-master": "1.2-dev"
                 }
             },
             "autoload": {
@@ -262,25 +262,25 @@
                 "rate limiter",
                 "throttle"
             ],
-            "time": "2016-08-26 21:13:17"
+            "time": "2017-01-01 12:37:29"
         },
         {
             "name": "alt-three/validator",
-            "version": "v1.5.0",
+            "version": "v1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/AltThree/Validator.git",
-                "reference": "fbfe733bac9614edc2c09f8dea7ee3ce465402bb"
+                "reference": "d61966e8f703643197f957816c765306bcf27664"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/AltThree/Validator/zipball/fbfe733bac9614edc2c09f8dea7ee3ce465402bb",
-                "reference": "fbfe733bac9614edc2c09f8dea7ee3ce465402bb",
+                "url": "https://api.github.com/repos/AltThree/Validator/zipball/d61966e8f703643197f957816c765306bcf27664",
+                "reference": "d61966e8f703643197f957816c765306bcf27664",
                 "shasum": ""
             },
             "require": {
-                "illuminate/contracts": "5.1.*|5.2.*|5.3.*",
-                "illuminate/support": "5.1.*|5.2.*|5.3.*",
+                "illuminate/contracts": "5.1.*|5.2.*|5.3.*|5.4.*",
+                "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*",
                 "php": ">=5.5.9",
                 "psr/log": "^1.0"
             },
@@ -290,7 +290,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.5-dev"
+                    "dev-master": "1.6-dev"
                 }
             },
             "autoload": {
@@ -322,20 +322,20 @@
                 "logging",
                 "validator"
             ],
-            "time": "2016-04-22 17:26:22"
+            "time": "2017-01-01 12:36:20"
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.20.11",
+            "version": "3.20.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "39d122b903813da2f53312fd3146acaa83a6d9f6"
+                "reference": "8725e67cb77b057b55596b4468ce9a1a95c5fe96"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/39d122b903813da2f53312fd3146acaa83a6d9f6",
-                "reference": "39d122b903813da2f53312fd3146acaa83a6d9f6",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/8725e67cb77b057b55596b4468ce9a1a95c5fe96",
+                "reference": "8725e67cb77b057b55596b4468ce9a1a95c5fe96",
                 "shasum": ""
             },
             "require": {
@@ -402,7 +402,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2016-12-22 20:47:16"
+            "time": "2016-12-30 00:41:36"
         },
         {
             "name": "backup-manager/backup-manager",
@@ -764,16 +764,16 @@
         },
         {
             "name": "doctrine/annotations",
-            "version": "v1.3.0",
+            "version": "v1.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/annotations.git",
-                "reference": "30e07cf03edc3cd3ef579d0dd4dd8c58250799a5"
+                "reference": "bd4461328621bde0ae6b1b2675fbc6aca4ceb558"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/annotations/zipball/30e07cf03edc3cd3ef579d0dd4dd8c58250799a5",
-                "reference": "30e07cf03edc3cd3ef579d0dd4dd8c58250799a5",
+                "url": "https://api.github.com/repos/doctrine/annotations/zipball/bd4461328621bde0ae6b1b2675fbc6aca4ceb558",
+                "reference": "bd4461328621bde0ae6b1b2675fbc6aca4ceb558",
                 "shasum": ""
             },
             "require": {
@@ -828,7 +828,7 @@
                 "docblock",
                 "parser"
             ],
-            "time": "2016-10-24 11:45:47"
+            "time": "2016-12-30 15:59:45"
         },
         {
             "name": "doctrine/cache",
@@ -1336,23 +1336,23 @@
         },
         {
             "name": "graham-campbell/binput",
-            "version": "v3.5.0",
+            "version": "v3.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Binput.git",
-                "reference": "2da3554abbb6585ed09183a68a09a2f3c8bfbfb1"
+                "reference": "9b2873184bf77bb6ee478d79d0da21427b70164e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Binput/zipball/2da3554abbb6585ed09183a68a09a2f3c8bfbfb1",
-                "reference": "2da3554abbb6585ed09183a68a09a2f3c8bfbfb1",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Binput/zipball/9b2873184bf77bb6ee478d79d0da21427b70164e",
+                "reference": "9b2873184bf77bb6ee478d79d0da21427b70164e",
                 "shasum": ""
             },
             "require": {
                 "graham-campbell/security": "^3.5",
-                "illuminate/contracts": "5.1.*|5.2.*|5.3.*",
-                "illuminate/http": "5.1.*|5.2.*|5.3.*",
-                "illuminate/support": "5.1.*|5.2.*|5.3.*",
+                "illuminate/contracts": "5.1.*|5.2.*|5.3.*|5.4.*",
+                "illuminate/http": "5.1.*|5.2.*|5.3.*|5.4.*",
+                "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*",
                 "php": ">=5.5.9"
             },
             "require-dev": {
@@ -1363,7 +1363,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.5-dev"
+                    "dev-master": "3.6-dev"
                 }
             },
             "autoload": {
@@ -1395,26 +1395,26 @@
                 "laravel",
                 "security"
             ],
-            "time": "2016-10-21 10:11:30"
+            "time": "2017-01-01 13:34:01"
         },
         {
             "name": "graham-campbell/core",
-            "version": "v5.1.0",
+            "version": "v5.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Core.git",
-                "reference": "9ca45b4d0f9bde7084ffac6ca3337af153340790"
+                "reference": "a71bce94a1ea904479774f43236ec9531fd4348c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Core/zipball/9ca45b4d0f9bde7084ffac6ca3337af153340790",
-                "reference": "9ca45b4d0f9bde7084ffac6ca3337af153340790",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Core/zipball/a71bce94a1ea904479774f43236ec9531fd4348c",
+                "reference": "a71bce94a1ea904479774f43236ec9531fd4348c",
                 "shasum": ""
             },
             "require": {
-                "illuminate/console": "5.1.*|5.2.*|5.3.*",
-                "illuminate/contracts": "5.1.*|5.2.*|5.3.*",
-                "illuminate/support": "5.1.*|5.2.*|5.3.*",
+                "illuminate/console": "5.1.*|5.2.*|5.3.*|5.4.*",
+                "illuminate/contracts": "5.1.*|5.2.*|5.3.*|5.4.*",
+                "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*",
                 "php": ">=5.5.9"
             },
             "require-dev": {
@@ -1425,7 +1425,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "5.1-dev"
+                    "dev-master": "5.2-dev"
                 }
             },
             "autoload": {
@@ -1455,25 +1455,25 @@
                 "laravel",
                 "starter"
             ],
-            "time": "2016-05-25 09:22:06"
+            "time": "2017-01-01 13:08:24"
         },
         {
             "name": "graham-campbell/exceptions",
-            "version": "v9.1.0",
+            "version": "v9.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Exceptions.git",
-                "reference": "8e106aba52f7ef69360035e872b5f7a0a94bf06b"
+                "reference": "8030d35e5cd9c8ead1d13db92198ec9b0e232369"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Exceptions/zipball/8e106aba52f7ef69360035e872b5f7a0a94bf06b",
-                "reference": "8e106aba52f7ef69360035e872b5f7a0a94bf06b",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Exceptions/zipball/8030d35e5cd9c8ead1d13db92198ec9b0e232369",
+                "reference": "8030d35e5cd9c8ead1d13db92198ec9b0e232369",
                 "shasum": ""
             },
             "require": {
-                "illuminate/contracts": "5.1.*|5.2.*|5.3.*",
-                "illuminate/support": "5.1.*|5.2.*|5.3.*",
+                "illuminate/contracts": "5.1.*|5.2.*|5.3.*|5.4.*",
+                "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*",
                 "paragonie/random_compat": "^1.1|^2.0",
                 "php": ">=5.5.9",
                 "psr/log": "^1.0",
@@ -1492,7 +1492,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "9.1-dev"
+                    "dev-master": "9.2-dev"
                 }
             },
             "autoload": {
@@ -1524,7 +1524,7 @@
                 "laravel",
                 "whoops"
             ],
-            "time": "2016-08-19 08:58:30"
+            "time": "2017-01-01 13:18:54"
         },
         {
             "name": "graham-campbell/markdown",
@@ -1590,21 +1590,21 @@
         },
         {
             "name": "graham-campbell/security",
-            "version": "v3.6.0",
+            "version": "v3.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Security.git",
-                "reference": "07d4ec2658582032afe225928bde883474e2a543"
+                "reference": "48d92c56581142d776cf2c5a0185a4319c6eb063"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Security/zipball/07d4ec2658582032afe225928bde883474e2a543",
-                "reference": "07d4ec2658582032afe225928bde883474e2a543",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Security/zipball/48d92c56581142d776cf2c5a0185a4319c6eb063",
+                "reference": "48d92c56581142d776cf2c5a0185a4319c6eb063",
                 "shasum": ""
             },
             "require": {
-                "illuminate/contracts": "5.1.*|5.2.*|5.3.*",
-                "illuminate/support": "5.1.*|5.2.*|5.3.*",
+                "illuminate/contracts": "5.1.*|5.2.*|5.3.*|5.4.*",
+                "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*",
                 "php": ">=5.5.9"
             },
             "require-dev": {
@@ -1614,7 +1614,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.6-dev"
+                    "dev-master": "3.7-dev"
                 }
             },
             "autoload": {
@@ -1643,7 +1643,7 @@
                 "laravel",
                 "security"
             ],
-            "time": "2016-04-26 14:29:04"
+            "time": "2017-01-01 13:20:49"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -1905,16 +1905,16 @@
         },
         {
             "name": "jenssegers/date",
-            "version": "v3.2.7",
+            "version": "v3.2.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jenssegers/date.git",
-                "reference": "b842ccbba7f22bc532e5bb9fa94ccb78d503584a"
+                "reference": "ad55257ae655af540e055c0fcd48bc3ec1962ec4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jenssegers/date/zipball/b842ccbba7f22bc532e5bb9fa94ccb78d503584a",
-                "reference": "b842ccbba7f22bc532e5bb9fa94ccb78d503584a",
+                "url": "https://api.github.com/repos/jenssegers/date/zipball/ad55257ae655af540e055c0fcd48bc3ec1962ec4",
+                "reference": "ad55257ae655af540e055c0fcd48bc3ec1962ec4",
                 "shasum": ""
             },
             "require": {
@@ -1958,7 +1958,7 @@
                 "time",
                 "translation"
             ],
-            "time": "2016-10-21 20:32:13"
+            "time": "2017-01-02 09:21:15"
         },
         {
             "name": "jeremeamia/SuperClosure",
@@ -3143,23 +3143,24 @@
         },
         {
             "name": "swiftmailer/swiftmailer",
-            "version": "v5.4.4",
+            "version": "v5.4.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "545ce9136690cea74f98f86fbb9c92dd9ab1a756"
+                "reference": "cd142238a339459b10da3d8234220963f392540c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/545ce9136690cea74f98f86fbb9c92dd9ab1a756",
-                "reference": "545ce9136690cea74f98f86fbb9c92dd9ab1a756",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/cd142238a339459b10da3d8234220963f392540c",
+                "reference": "cd142238a339459b10da3d8234220963f392540c",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
             "require-dev": {
-                "mockery/mockery": "~0.9.1"
+                "mockery/mockery": "~0.9.1",
+                "symfony/phpunit-bridge": "~3.2"
             },
             "type": "library",
             "extra": {
@@ -3192,7 +3193,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2016-11-24 01:01:23"
+            "time": "2016-12-29 10:02:40"
         },
         {
             "name": "symfony/console",
@@ -4189,16 +4190,16 @@
     "packages-dev": [
         {
             "name": "alt-three/testbench",
-            "version": "v1.11.2",
+            "version": "v1.11.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/AltThree/TestBench.git",
-                "reference": "c67aac05c817777e6b42cc161c381bf27bb66266"
+                "reference": "41921bae1a2228785fa54dc3b2fa206e484e5f79"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/AltThree/TestBench/zipball/c67aac05c817777e6b42cc161c381bf27bb66266",
-                "reference": "c67aac05c817777e6b42cc161c381bf27bb66266",
+                "url": "https://api.github.com/repos/AltThree/TestBench/zipball/41921bae1a2228785fa54dc3b2fa206e484e5f79",
+                "reference": "41921bae1a2228785fa54dc3b2fa206e484e5f79",
                 "shasum": ""
             },
             "require": {
@@ -4248,7 +4249,7 @@
                 "TestBench",
                 "app"
             ],
-            "time": "2016-12-13 20:30:09"
+            "time": "2017-01-01 12:36:00"
         },
         {
             "name": "doctrine/instantiator",
@@ -4306,16 +4307,16 @@
         },
         {
             "name": "filp/whoops",
-            "version": "2.1.4",
+            "version": "2.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filp/whoops.git",
-                "reference": "3f5cbd0e6a2fc17bc40b0238025ef1ff4c8c3efa"
+                "reference": "2abce9d956589122c6443d6265f01cf7e9388e3c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filp/whoops/zipball/3f5cbd0e6a2fc17bc40b0238025ef1ff4c8c3efa",
-                "reference": "3f5cbd0e6a2fc17bc40b0238025ef1ff4c8c3efa",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/2abce9d956589122c6443d6265f01cf7e9388e3c",
+                "reference": "2abce9d956589122c6443d6265f01cf7e9388e3c",
                 "shasum": ""
             },
             "require": {
@@ -4362,7 +4363,7 @@
                 "whoops",
                 "zf2"
             ],
-            "time": "2016-10-11 15:32:23"
+            "time": "2016-12-26 16:13:31"
         },
         {
             "name": "fzaninotto/faker",
@@ -4414,16 +4415,16 @@
         },
         {
             "name": "graham-campbell/testbench-core",
-            "version": "v1.1.1",
+            "version": "v1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-TestBench-Core.git",
-                "reference": "407e8cff5568ab95c4788ed5f7633e54be712de1"
+                "reference": "9dcc8fe7feb891e4c7ffb85d7bc316de9699cf41"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-TestBench-Core/zipball/407e8cff5568ab95c4788ed5f7633e54be712de1",
-                "reference": "407e8cff5568ab95c4788ed5f7633e54be712de1",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-TestBench-Core/zipball/9dcc8fe7feb891e4c7ffb85d7bc316de9699cf41",
+                "reference": "9dcc8fe7feb891e4c7ffb85d7bc316de9699cf41",
                 "shasum": ""
             },
             "require": {
@@ -4470,7 +4471,7 @@
                 "testbench-core",
                 "testing"
             ],
-            "time": "2016-01-30 13:57:27"
+            "time": "2017-01-01 13:06:17"
         },
         {
             "name": "hamcrest/hamcrest-php",
@@ -5079,16 +5080,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "5.7.4",
+            "version": "5.7.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "af91da3f2671006ff5d0628023de3b7ac4d1ef09"
+                "reference": "50fd2be8f3e23e91da825f36f08e5f9633076ffe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/af91da3f2671006ff5d0628023de3b7ac4d1ef09",
-                "reference": "af91da3f2671006ff5d0628023de3b7ac4d1ef09",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/50fd2be8f3e23e91da825f36f08e5f9633076ffe",
+                "reference": "50fd2be8f3e23e91da825f36f08e5f9633076ffe",
                 "shasum": ""
             },
             "require": {
@@ -5157,7 +5158,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2016-12-13 16:19:44"
+            "time": "2016-12-28 07:18:51"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
