@@ -11,7 +11,8 @@
 
 return [
 
-    'dashboard' => 'Översiktspanel',
+    'dashboard'          => 'Översiktspanel',
+    'writeable_settings' => 'The Cachet settings directory is not writeable. Please make sure that <code>./bootstrap/cachet</code> is writeable by the web server.',
 
     // Incidents
     'incidents' => [
@@ -20,9 +21,10 @@ return [
         'logged'                   => '{0} Det finns inga händelser, bra jobbat!|Du har skapat en händelse.|Du har skapat <strong>:count</strong> händelser.',
         'incident-create-template' => 'Skapa mall',
         'incident-templates'       => 'Händelsemallar',
+        'updates'                  => '{0} Zero Updates|One Update|:count Updates',
         'add'                      => [
             'title'   => 'Lägg till händelse',
-            'success' => 'Incident added.',
+            'success' => 'Incident skapad.',
             'failure' => 'There was an error adding the incident, please try again.',
         ],
         'edit' => [
@@ -33,6 +35,10 @@ return [
         'delete' => [
             'success' => 'Händelsen har tagits bort och kommer inte visas på din statussida.',
             'failure' => 'The incident could not be deleted, please try again.',
+        ],
+        'update' => [
+            'title'    => 'Create new incident update',
+            'subtitle' => 'Add an update to <strong>:incident</strong>',
         ],
 
         // Incident templates
@@ -85,13 +91,13 @@ return [
         'add'                => [
             'title'   => 'Lägg till en komponent',
             'message' => 'Du borde lägga till en komponent.',
-            'success' => 'Component created.',
-            'failure' => 'Something went wrong with the component, please try again.',
+            'success' => 'Komponent skapad.',
+            'failure' => 'Something went wrong with the component group, please try again.',
         ],
         'edit' => [
             'title'   => 'Redigera komponent',
-            'success' => 'Component updated.',
-            'failure' => 'Something went wrong with the component, please try again.',
+            'success' => 'Komponenten har uppdaterats.',
+            'failure' => 'Something went wrong with the component group, please try again.',
         ],
         'delete' => [
             'success' => 'Komponenten har tagits bort!',
@@ -167,12 +173,12 @@ return [
         'description' => 'Teammedlemmar kommer kunna lägga till, ändra &amp; redigera komponenter och händelser.',
         'add'         => [
             'title'   => 'Lägg till en ny teammedlem',
-            'success' => 'Team member added.',
+            'success' => 'Gruppmedlem tilllagd.',
             'failure' => 'The team member could not be added, please try again.',
         ],
         'edit' => [
             'title'   => 'Uppdatera profil',
-            'success' => 'Profile updated.',
+            'success' => 'Profil uppdaterad.',
             'failure' => 'Something went wrong updating the profile, please try again.',
         ],
         'delete' => [
@@ -197,6 +203,9 @@ return [
         'analytics' => [
             'analytics' => 'Analys',
         ],
+        'log' => [
+            'log' => 'Log',
+        ],
         'localization' => [
             'localization' => 'Platsanpassning',
         ],
@@ -204,6 +213,14 @@ return [
             'customization' => 'Customization',
             'header'        => 'Custom Header HTML',
             'footer'        => 'Custom Footer HTML',
+        ],
+        'mail' => [
+            'mail'  => 'Mail',
+            'test'  => 'Test',
+            'email' => [
+                'subject' => 'Test notification from Cachet',
+                'body'    => 'This is a test notification from Cachet.',
+            ],
         ],
         'security' => [
             'security'   => 'Säkerhet',
@@ -220,8 +237,8 @@ return [
             'failure' => 'Inställningarna kunde inte sparas.',
         ],
         'credits' => [
-            'credits'       => 'Credits',
-            'contributors'  => 'Contributors',
+            'credits'       => 'Tack till',
+            'contributors'  => 'Medverkande',
             'license'       => 'Cachet is a BSD-3-licensed open source project, released by <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
             'backers-title' => 'Backers & Sponsors',
             'backers'       => 'If you\'d like to support future development, check out the <a href="https://patreon.com/jbrooksuk" target="_blank">Cachet Patreon</a> campaign.',
@@ -254,14 +271,14 @@ return [
         'support'          => 'Support Cachet',
         'support_subtitle' => 'Check out our <strong><a href="https://patreon.com/jbrooksuk" target="_blank">Patreon</a></strong> page!',
         'news'             => 'Latest News',
-        'news_subtitle'    => 'Get the latest updates',
+        'news_subtitle'    => 'Get the latest update',
     ],
 
     // Welcome modal
     'welcome' => [
         'welcome' => 'Välkommen till din statussida!',
         'message' => 'Din statussida är nästan redo. Du kan vilja konfigerara de här extra inställningarna',
-        'close'   => 'Take me straight to my dashboard',
+        'close'   => 'I\'m good thanks!',
         'steps'   => [
             'component'  => 'Skapa komponenter',
             'incident'   => 'Skapa händelser',

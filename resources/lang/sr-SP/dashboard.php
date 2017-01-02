@@ -11,25 +11,25 @@
 
 return [
 
-    'dashboard'          => '儀表板',
+    'dashboard'          => 'Dashboard',
     'writeable_settings' => 'The Cachet settings directory is not writeable. Please make sure that <code>./bootstrap/cachet</code> is writeable by the web server.',
 
     // Incidents
     'incidents' => [
-        'title'                    => '事件與排程',
-        'incidents'                => '事件',
-        'logged'                   => '{0} 做得好，沒有任何事件。|你記錄了一個事件。|你回報了 <strong>:count</strong> 個事件。',
-        'incident-create-template' => '新增模板',
-        'incident-templates'       => '事件模板',
+        'title'                    => 'Incidents &amp; Schedule',
+        'incidents'                => 'Incidents',
+        'logged'                   => '{0} There are no incidents, good work.|You have logged one incident.|You have reported <strong>:count</strong> incidents.',
+        'incident-create-template' => 'Create Template',
+        'incident-templates'       => 'Incident Templates',
         'updates'                  => '{0} Zero Updates|One Update|:count Updates',
         'add'                      => [
-            'title'   => '添加事件',
+            'title'   => 'Report an incident',
             'success' => 'Incident added.',
             'failure' => 'There was an error adding the incident, please try again.',
         ],
         'edit' => [
-            'title'   => '編輯事件',
-            'success' => '事件更新成功。',
+            'title'   => 'Edit an incident',
+            'success' => 'Incident updated.',
             'failure' => 'There was an error editing the incident, please try again.',
         ],
         'delete' => [
@@ -43,15 +43,15 @@ return [
 
         // Incident templates
         'templates' => [
-            'title' => '事件模板',
+            'title' => 'Incident Templates',
             'add'   => [
-                'title'   => '添加事件模板',
+                'title'   => 'Create an incident template',
                 'message' => 'You should add an incident template.',
                 'success' => 'Your new incident template has been created.',
                 'failure' => 'Something went wrong with the incident template.',
             ],
             'edit' => [
-                'title'   => '編輯模板',
+                'title'   => 'Edit Template',
                 'success' => 'The incident template has been updated.',
                 'failure' => 'Something went wrong updating the incident template',
             ],
@@ -64,9 +64,9 @@ return [
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => '排程維護',
+        'schedule'     => 'Scheduled Maintenance',
         'logged'       => '{0} There are no schedules, good work.|You have logged one schedule.|You have reported <strong>:count</strong> schedules.',
-        'scheduled_at' => '排程於 :timestamp',
+        'scheduled_at' => 'Scheduled at :timestamp',
         'add'          => [
             'title'   => 'Add Scheduled Maintenance',
             'success' => 'Schedule added.',
@@ -85,17 +85,17 @@ return [
 
     // Components
     'components' => [
-        'components'         => '組件',
-        'component_statuses' => '組件狀態',
-        'listed_group'       => '屬於:name組',
+        'components'         => 'Components',
+        'component_statuses' => 'Component Statuses',
+        'listed_group'       => 'Grouped under :name',
         'add'                => [
-            'title'   => '添加組件',
-            'message' => '你應該先新增一個組件。',
+            'title'   => 'Add a component',
+            'message' => 'You should add a component.',
             'success' => 'Component created.',
             'failure' => 'Something went wrong with the component group, please try again.',
         ],
         'edit' => [
-            'title'   => '編輯組件',
+            'title'   => 'Edit a component',
             'success' => 'Component updated.',
             'failure' => 'Something went wrong with the component group, please try again.',
         ],
@@ -106,15 +106,15 @@ return [
 
         // Component groups
         'groups' => [
-            'groups'        => '組件組|組件組',
-            'no_components' => '您應添加壹個組件分組。',
+            'groups'        => 'Component group|Component groups',
+            'no_components' => 'You should add a component group.',
             'add'           => [
-                'title'   => '添加組件分組',
+                'title'   => 'Add a component group',
                 'success' => 'Component group added.',
                 'failure' => 'Something went wrong with the component group, please try again.',
             ],
             'edit' => [
-                'title'   => '編輯組件分組',
+                'title'   => 'Edit a component group',
                 'success' => 'Component group updated.',
                 'failure' => 'Something went wrong with the component group, please try again.',
             ],
@@ -127,15 +127,15 @@ return [
 
     // Metrics
     'metrics' => [
-        'metrics' => '效能度量',
+        'metrics' => 'Metrics',
         'add'     => [
-            'title'   => '添加圖表',
+            'title'   => 'Create a metric',
             'message' => 'You should add a metric.',
             'success' => 'Metric created.',
             'failure' => 'Something went wrong with the metric, please try again.',
         ],
         'edit' => [
-            'title'   => '編輯圖表',
+            'title'   => 'Edit a metric',
             'success' => 'Metric updated.',
             'failure' => 'Something went wrong with the metric, please try again.',
         ],
@@ -146,68 +146,68 @@ return [
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'      => '訂閱者',
+        'subscribers'      => 'Subscribers',
         'description'      => 'Subscribers will receive email updates when incidents are created or components are updated.',
-        'verified'         => '已認證',
-        'not_verified'     => '未認證',
+        'verified'         => 'Verified',
+        'not_verified'     => 'Not verified',
         'subscriber'       => ':email, subscribed :date',
         'no_subscriptions' => 'Subscribed to all updates',
         'add'              => [
-            'title'   => '添加訂閱者',
-            'success' => '訂閱者已添加成功.',
+            'title'   => 'Add a new subscriber',
+            'success' => 'Subscriber has been added!',
             'failure' => 'Something went wrong adding the subscriber, please try again.',
             'help'    => 'Enter each subscriber on a new line.',
         ],
         'edit' => [
-            'title'   => '更新訂閱者',
-            'success' => '訂閱者信息已更新.',
+            'title'   => 'Update subscriber',
+            'success' => 'Subscriber has been updated!',
             'failure' => 'Something went wrong editing the subscriber, please try again.',
         ],
     ],
 
     // Team
     'team' => [
-        'team'        => '團隊',
-        'member'      => '成員',
-        'profile'     => '個人檔案',
-        'description' => '團隊成員可以新增、修改、或更新組件和事件。',
+        'team'        => 'Team',
+        'member'      => 'Member',
+        'profile'     => 'Profile',
+        'description' => 'Team Members will be able to add, modify &amp; edit components and incidents.',
         'add'         => [
-            'title'   => '添加團隊成員',
+            'title'   => 'Add a new team member',
             'success' => 'Team member added.',
             'failure' => 'The team member could not be added, please try again.',
         ],
         'edit' => [
-            'title'   => '更新配置文件',
+            'title'   => 'Update profile',
             'success' => 'Profile updated.',
             'failure' => 'Something went wrong updating the profile, please try again.',
         ],
         'delete' => [
-            'success' => '團隊成員已刪除.',
+            'success' => 'Team member has been deleted and will no longer have access to the dashboard!',
             'failure' => 'The team member could not be added, please try again.',
         ],
         'invite' => [
-            'title'   => '邀請團隊成員',
-            'success' => '團隊成員已邀請成功.',
+            'title'   => 'Invite a new team member',
+            'success' => 'An invite has been sent',
             'failure' => 'The invite could not be sent, please try again.',
         ],
     ],
 
     // Settings
     'settings' => [
-        'settings'  => '設定',
+        'settings'  => 'Settings',
         'app-setup' => [
-            'app-setup'   => '應用程式設定',
-            'images-only' => '你只能上載圖片。',
-            'too-big'     => '檔案大小過大。請嘗試上載一張大小小於 :size 的圖片。',
+            'app-setup'   => 'Application Setup',
+            'images-only' => 'Only images may be uploaded.',
+            'too-big'     => 'The file you uploaded is too big. Upload an image smaller than :size',
         ],
         'analytics' => [
-            'analytics' => '第三方統計',
+            'analytics' => 'Analytics',
         ],
         'log' => [
             'log' => 'Log',
         ],
         'localization' => [
-            'localization' => '國際化',
+            'localization' => 'Localization',
         ],
         'customization' => [
             'customization' => 'Customization',
@@ -223,18 +223,18 @@ return [
             ],
         ],
         'security' => [
-            'security'   => '安全',
-            'two-factor' => '下列用戶未使用雙重認證',
+            'security'   => 'Security',
+            'two-factor' => 'Users without two-factor authentication',
         ],
         'stylesheet' => [
-            'stylesheet' => '樣式表',
+            'stylesheet' => 'Stylesheet',
         ],
         'theme' => [
-            'theme' => '主題',
+            'theme' => 'Theme',
         ],
         'edit' => [
-            'success' => '設定已儲存。',
-            'failure' => '設定儲存失敗。',
+            'success' => 'Settings saved.',
+            'failure' => 'Settings could not be saved.',
         ],
         'credits' => [
             'credits'       => 'Credits',
@@ -248,22 +248,22 @@ return [
 
     // Login
     'login' => [
-        'login'      => '登入',
-        'logged_in'  => '你已經登錄。',
-        'welcome'    => '歡迎回來！',
-        'two-factor' => '請輸入驗證碼。',
+        'login'      => 'Login',
+        'logged_in'  => 'You\'re logged in.',
+        'welcome'    => 'Welcome back!',
+        'two-factor' => 'Please enter your token.',
     ],
 
     // Sidebar footer
-    'help'        => '幫助',
-    'status_page' => '狀態頁',
-    'logout'      => '登出',
+    'help'        => 'Help',
+    'status_page' => 'Status Page',
+    'logout'      => 'Logout',
 
     // Notifications
     'notifications' => [
-        'notifications' => '通知',
-        'awesome'       => '太好了。',
-        'whoops'        => '唉呀。',
+        'notifications' => 'Notifications',
+        'awesome'       => 'Awesome.',
+        'whoops'        => 'Whoops.',
     ],
 
     // Widgets
@@ -277,15 +277,15 @@ return [
     // Welcome modal
     'welcome' => [
         'welcome' => 'Welcome to your new status page, :username!',
-        'message' => '你的狀態頁快準備好了！不過你也許先想調整一下以下設定。',
+        'message' => 'You\'re almost ready but you might want to configure these extra settings first...',
         'close'   => 'I\'m good thanks!',
         'steps'   => [
-            'component'  => '新增組件',
-            'incident'   => '新增事件',
-            'customize'  => '定制化',
-            'team'       => '新增用戶',
-            'api'        => '生成 API 密鑰',
-            'two-factor' => '雙因素身份驗證',
+            'component'  => 'Add your components',
+            'incident'   => 'Create an incident',
+            'customize'  => 'Customize your page',
+            'team'       => 'Add your team',
+            'api'        => 'Generate an API token',
+            'two-factor' => 'Setup Two Factor Authentication',
         ],
     ],
 

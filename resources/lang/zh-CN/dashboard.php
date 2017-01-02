@@ -11,7 +11,8 @@
 
 return [
 
-    'dashboard' => '控制台',
+    'dashboard'          => '控制台',
+    'writeable_settings' => 'The Cachet settings directory is not writeable. Please make sure that <code>./bootstrap/cachet</code> is writeable by the web server.',
 
     // Incidents
     'incidents' => [
@@ -20,6 +21,7 @@ return [
         'logged'                   => '{0} 当前没有故障信息|您已经记录了一个故障|您已经报告了 <strong>:count</strong> 个故障',
         'incident-create-template' => 'Create Template',
         'incident-templates'       => '故障模板',
+        'updates'                  => '{0} 0 个更新|1 个更新|:count 个更新',
         'add'                      => [
             'title'   => '添加故障',
             'success' => '故障已添加',
@@ -34,10 +36,14 @@ return [
             'success' => '故障已删除并将不会出现在状态页中',
             'failure' => '无法删除该故障，请再试一次。',
         ],
+        'update' => [
+            'title'    => '添加故障更新',
+            'subtitle' => '给 <strong>:incident</strong> 故障添加一个更新',
+        ],
 
         // Incident templates
         'templates' => [
-            'title' => '事件模板',
+            'title' => '故障模板',
             'add'   => [
                 'title'   => '添加故障模板',
                 'message' => '你应该增加一个故障模板',
@@ -58,7 +64,7 @@ return [
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => '计划维护',
+        'schedule'     => 'Scheduled Maintenance',
         'logged'       => '{0} 现在没有维护计划，好样的。|你已经记录下 1 个维护计划|你已经报告了 <strong>:count</strong> 个维护计划',
         'scheduled_at' => 'Scheduled at :timestamp',
         'add'          => [
@@ -105,12 +111,12 @@ return [
             'add'           => [
                 'title'   => '添加组件分组',
                 'success' => '分组已添加。',
-                'failure' => '分组更新失败，请重试。',
+                'failure' => '组件更新失败，请稍后再试。',
             ],
             'edit' => [
                 'title'   => '编辑组件分组',
                 'success' => '分组已更新。',
-                'failure' => '分组更新失败，请重试。',
+                'failure' => '组件更新失败，请稍后再试。',
             ],
             'delete' => [
                 'success' => '组建分组已删除。',
@@ -123,7 +129,7 @@ return [
     'metrics' => [
         'metrics' => 'Metrics',
         'add'     => [
-            'title'   => '添加图表',
+            'title'   => '创建图表',
             'message' => '你应该添加一个图表。',
             'success' => '图表已创建。',
             'failure' => '添加图表时出错了，请再试一次。',
@@ -197,6 +203,9 @@ return [
         'analytics' => [
             'analytics' => '第三方统计',
         ],
+        'log' => [
+            'log' => '日志',
+        ],
         'localization' => [
             'localization' => '本地化',
         ],
@@ -204,6 +213,14 @@ return [
             'customization' => '自定义',
             'header'        => '自定义页眉 HTML',
             'footer'        => '自定义页脚 HTML',
+        ],
+        'mail' => [
+            'mail'  => 'Mail',
+            'test'  => 'Test',
+            'email' => [
+                'subject' => 'Test notification from Cachet',
+                'body'    => 'This is a test notification from Cachet.',
+            ],
         ],
         'security' => [
             'security'   => '安全设置',
