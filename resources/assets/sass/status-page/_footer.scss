@@ -2,10 +2,14 @@ footer {
     position: absolute;
     width: 100%;
     bottom: 0;
-    color: $cachet-gray-darker;
-    font-size: 13px;
+    color: $cachet-base-medium;
+    font-size: 17px;
     line-height: 30px;
-    text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+    text-transform: uppercase;
+
+    a {
+        font-weight: 700;
+    }
 
     .container {
         height: 60px;

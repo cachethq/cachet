@@ -5,7 +5,7 @@
 }
 
 .components-group {
-    border: 1px solid $cachet_gray_light;
+    border: 1px solid #E3E2E2;
     list-style: none;
     padding-left: 0;
 
@@ -16,21 +16,24 @@
 
 .components-group__name {
     @extend %component-item;
-    background-color: $cachet_gray_light;
-    color: $cachet_gray_darker;
+    background-color: #E7E7E7;
+    color: #ABABAB !important;
+    font-weight: bold;
     text-transform: uppercase;
     font-size: 1.1em;
     padding: {
-        top: 0.6em;
-        bottom: 0.6em;
+        top: 0.8em;
+        bottom: 0.8em;
     }
     cursor: pointer;
     -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
+
+    &:hover {
+        .group-toggle {
+            color: #5e5e5e;
+        }
+    }
 }
 
 .components-group__item {
@@ -39,6 +42,10 @@
     a {
         color: $cachet-base-dark !important;
     }
+}
+
+.components-group__icon {
+    font-size: 0.8em;
 }
 
 .components-group__status {

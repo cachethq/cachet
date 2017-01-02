@@ -1,5 +1,7 @@
 <li class="components-group__item {{ $component->group_id ? "sub-component" : "component" }}">
-    <i class="ion ion-ios-circle-filled text-component-{{ $component->status }} {{ $component->status_color }}" data-toggle="tooltip" title="{{ $component->human_status }}"></i>
+    <span class="components-group__icon">
+        <i class="ion ion-ios-circle-filled text-component-{{ $component->status }} {{ $component->status_color }}" data-toggle="tooltip" title="{{ $component->human_status }}"></i>
+    </span>
     @if($component->link)
     <a href="{{ $component->link }}" target="_blank" class="links">{{ $component->name }}</a>
     @else

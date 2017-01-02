@@ -20,6 +20,7 @@
 </div>
 
 <div class="incident-updates">
+    <!-- The incident updates -->
     @if($incident->updates->count())
     @foreach($incident->updates as $update)
     <div class="incident-update">
@@ -33,28 +34,13 @@
             {!! $update->formatted_message !!}
         </div>
         <div class="incident-update__time">
-            {{ $update->timestamp_formatted }}
+            <a href="{{ cachet_route('incident', [$incident]) }}#{{ $update->id }}">{{ $update->timestamp_formatted }}</a>
         </div>
     </div>
     @endforeach
     @endif
 
-    {{-- <div class="row">
-        <div class="col-sm-12">
-            <div class="incident-update__status text-uppercase pull-left">
-                <i class="{{ $incident->icon }}" title="{{ $incident->human_status }}" data-toggle="tooltip"></i>
-                <strong>{{ $incident->human_status }}</strong>
-                -
-            </div>
-            <span class="markdown-body">
-                {!! $incident->formatted_message !!}
-            </span>
-            <small class="incident-update__time">
-                {{ $incident->timestamp_formatted }}
-            </small>
-        </div>
-    </div> --}}
-
+    <!-- The original incident -->
     <div class="incident-update">
         <div class="incident-update__icon">
             <i class="{{ $incident->icon }}" title="{{ $incident->human_status }}" data-toggle="tooltip"></i>
@@ -66,7 +52,7 @@
             {!! $incident->formatted_message !!}
         </div>
         <div class="incident-update__time">
-            {{ $incident->timestamp_formatted }}
+            <a href="{{ cachet_route('incident', [$incident]) }}">{{ $incident->timestamp_formatted }}</a>
         </div>
     </div>
 </div>

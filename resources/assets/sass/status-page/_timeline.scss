@@ -3,16 +3,17 @@
 }
 
 .section-timeline__header {
-    background-color: $cachet_gray_light;
-    color: $cachet_gray_darker;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 20px;
-    margin-bottom: 0;
-
-    h1 {
-        font-size: 15px;
-        text-transform: uppercase;
-        font-weight: 700;
+    padding: 15px;
+    background-color: #E7E7E7;
+    color: #ABABAB !important;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.1em;
+    padding: {
+        top: 0.8em;
+        bottom: 0.8em;
     }
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    user-select: none;
 }

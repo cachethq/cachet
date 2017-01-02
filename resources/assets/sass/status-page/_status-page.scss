@@ -1,15 +1,11 @@
 body {
-    padding-top: 40px;
+    // padding-top: 40px;
     font-family: $base-font-family;
     background-color: #F0F3F4;
     color: #5a5a5a;
     font-size: 1.4em;
     font-weight: $base-font-weight;
     -webkit-font-smoothing: antialiased;
-
-    &.no-padding {
-        padding-top: 0 !important;
-    }
 
     hr {
         margin-top: 10px;
@@ -67,12 +63,15 @@ body {
         max-width: 960px;
     }
 
-    .page-header {
-        margin-top: 10px;
-    }
-
     .app-banner {
-        margin-bottom: 30px;
+        vertical-align: middle;
+
+        .app-banner--text {
+            margin-left: 1.2em;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 1.8em;
+        }
     }
 
     .about-app {
@@ -95,27 +94,5 @@ body {
     // Individual section styling.
     .section-timeline, .section-components, .section-metrics, .section-scheduled {
         margin-top: 40px;
-    }
-
-    .navbar-custom {
-        padding-top: 10px;
-        padding-bottom: 10px;
-        width: 100%;
-        border-radius: 0px;
-        margin-bottom: 10px;
-
-        a.navbar-brand {
-            font-size: 30px;
-            font-weight: 600;
-        }
-
-        .navbar-nav li a {
-            color: $cachet-base-dark;
-            font-size: 1.7rem;
-
-            &:hover {
-                background-color: transparent;
-            }
-        }
     }
 }

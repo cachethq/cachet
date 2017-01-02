@@ -2,10 +2,8 @@
 body.status-page {
     background-color: {{ $theme_background_color }};
     color: {{ $theme_text_color }};
-    @if($app_banner)
-    padding-top: 0;
-    @endif
 }
+
 p, strong { color: {{ $theme_text_color }} !important; }
 .reds { color: {{ $theme_reds }} !important; }
 .blues { color: {{ $theme_blues }} !important; }
@@ -118,8 +116,5 @@ p, strong { color: {{ $theme_text_color }} !important; }
 .panel.panel-message:after {
     border-left-color: {{ $theme_background_fills }} !important;
     border-right-color: {{ $theme_background_fills }} !important;
-}
-.footer a {
-    color: {{ $theme_text_color }};
 }
 </style>

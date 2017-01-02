@@ -2,10 +2,6 @@
 
 @section('bodyClass', 'no-padding')
 
-@section('outer-content')
-@include('partials.nav')
-@stop
-
 @section('content')
 <h1>
     <i class="{{ $incident->latest_icon }}"></i>
