@@ -39,25 +39,6 @@ use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
 class StatusPageController extends AbstractApiController
 {
     /**
-     * The metric repository instance.
-     *
-     * @var \CachetHQ\Cachet\Repositories\Metric\MetricRepository
-     */
-    protected $metrics;
-
-    /**
-     * Construct a new status page controller instance.
-     *
-     * @param \CachetHQ\Cachet\Repositories\Metric\MetricRepository $metrics
-     *
-     * @return void
-     */
-    public function __construct(MetricRepository $metrics)
-    {
-        $this->metrics = $metrics;
-    }
-
-    /**
      * Displays the status page.
      *
      * @return \Illuminate\View\View
@@ -150,22 +131,15 @@ class StatusPageController extends AbstractApiController
      */
     public function getMetrics(Metric $metric)
     {
-        $metricData = [];
         $type = Binput::get('filter', 'last_hour');
+        $metrics = app(MetricRepository::class);
 
         switch ($type) {
-            case 'last_hour':
-                $metricData = $this->metrics->listPointsLastHour($metric);
-                break;
-            case 'today':
-                $metricData = $this->metrics->listPointsToday($metric);
-                break;
-            case 'week':
-                $metricData = $this->metrics->listPointsForWeek($metric);
-                break;
-            case 'month':
-                $metricData = $this->metrics->listPointsForMonth($metric);
-                break;
+            case 'last_hour': $metricData = $metrics->listPointsLastHour($metric); break;
+            case 'today': $metricData = $metrics->listPointsToday($metric); break;
+            case 'week': $metricData = $metrics->listPointsForWeek($metric); break;
+            case 'month': $metricData = $metrics->listPointsForMonth($metric); break;
+            default: $metricData = [];
         }
 
         return $this->item([
