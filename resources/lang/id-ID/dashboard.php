@@ -16,7 +16,7 @@ return [
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Incidents &amp; Schedule',
+        'title'                    => 'Insiden &amp; Penjadwalan',
         'incidents'                => 'Insiden',
         'logged'                   => '{0} Tidak ada insiden, bagus.|Anda mencatat satu insiden.|Anda sudah melaporkan <strong>:count</strong> insiden.',
         'incident-create-template' => 'Buat Template',
@@ -170,7 +170,7 @@ return [
         'team'        => 'Tim',
         'member'      => 'Anggota',
         'profile'     => 'Profil',
-        'description' => 'Team Members will be able to add, modify &amp; edit components and incidents.',
+        'description' => 'Anggota Tim akan bisa menambahkan, mengubah &amp; mengedit komponen dan insiden.',
         'add'         => [
             'title'   => 'Tambahkan Anggota Tim',
             'success' => 'Anggota Tim sudah ditambahkan.',
