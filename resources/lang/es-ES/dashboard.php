@@ -16,7 +16,7 @@ return [
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Incidents &amp; Schedule',
+        'title'                    => 'Incidencias y horario',
         'incidents'                => 'Incidentes',
         'logged'                   => '{0} No hay incidencias, ¡buen trabajo!|Has registrado una incidencia.|Has reportado <strong>:count</strong> incidencias.',
         'incident-create-template' => 'Crear plantilla',
@@ -170,7 +170,7 @@ return [
         'team'        => 'Equipo',
         'member'      => 'Miembro',
         'profile'     => 'Perfil',
-        'description' => 'Team Members will be able to add, modify &amp; edit components and incidents.',
+        'description' => 'Los miembros del equipo será capaces de añadir, modificar y editar componentes e incidentes.',
         'add'         => [
             'title'   => 'Añadir a un nuevo miembro de equipo',
             'success' => 'Miembro del equipo agregado.',
