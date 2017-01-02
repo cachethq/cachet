@@ -158,21 +158,13 @@ class StatusPageController extends AbstractApiController
     public function showComponentBadge(Component $component)
     {
         $component = AutoPresenter::decorate($component);
-        $color = null;
 
         switch ($component->status_color) {
-            case 'reds':
-                $color = Config::get('setting.style_reds', '#ff6f6f');
-                break;
-            case 'blues':
-                $color = Config::get('setting.style_blues', '#3498db');
-                break;
-            case 'greens':
-                $color = Config::get('setting.style_greens', '#7ED321');
-                break;
-            case 'yellows':
-                $color = Config::get('setting.style_yellows', '#F7CA18');
-                break;
+            case 'reds': $color = Config::get('setting.style_reds', '#FF6F6F'); break;
+            case 'blues': $color = Config::get('setting.style_blues', '#3498DB'); break;
+            case 'greens': $color = Config::get('setting.style_greens', '#7ED321'); break;
+            case 'yellows': $color = Config::get('setting.style_yellows', '#F7CA18'); break;
+            default: $color = null;
         }
 
         $badge = Badger::generate(
