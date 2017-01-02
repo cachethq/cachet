@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Cachet\Console\Commands;
 
+use CachetHQ\Cachet\Models\User;
 use Dotenv\Dotenv;
 use Dotenv\Exception\InvalidPathException;
 use Illuminate\Console\Command;
@@ -72,6 +73,7 @@ class InstallCommand extends Command
             $this->configureCachet();
         }
 
+<<<<<<< HEAD
         $this->line('Installing Cachet...');
 
         $this->events->fire('command.installing', $this);
@@ -85,6 +87,15 @@ class InstallCommand extends Command
         $this->events->fire('command.linkstorage', $this);
         $this->events->fire('command.extrastuff', $this);
         $this->events->fire('command.installed', $this);
+=======
+        $this->configureEnvironmentFile();
+        $this->configureKey();
+        $this->configureDatabase();
+        $this->configureDrivers();
+        $this->configureMail();
+        $this->configureCachet();
+        $this->configureUser();
+>>>>>>> Add user on cachet install command
 
         $this->info('Cachet is installed ⚡');
     }
@@ -139,9 +150,15 @@ class InstallCommand extends Command
         ], $default);
 
         $config['DB_DRIVER'] = $this->choice('Which database driver do you want to use?', [
+<<<<<<< HEAD
             'mysql'      => 'MySQL',
             'pgsql'      => 'PostgreSQL',
             'sqlite'     => 'SQLite',
+=======
+            'mysql'  => 'MySQL',
+            'pgsql'  => 'PostgreSQL',
+            'sqlite' => 'SQLite',
+>>>>>>> Add user on cachet install command
         ], $config['DB_DRIVER']);
 
         if ($config['DB_DRIVER'] === 'sqlite') {
@@ -313,9 +330,11 @@ class InstallCommand extends Command
     /**
      * Configure Cachet.
      *
+     * @param array $config
+     *
      * @return void
      */
-    protected function configureCachet()
+    protected function configureCachet(array $config = [])
     {
         $config = [];
         if ($this->confirm('Do you wish to use Cachet Beacon?')) {
@@ -330,6 +349,27 @@ class InstallCommand extends Command
         foreach ($config as $setting => $value) {
             $this->writeEnv($setting, $value);
         }
+    }
+
+    /**
+     * Configure the fisrt user.
+     *
+     * @return void
+     */
+    protected function configureUser()
+    {
+        if (!$this->confirm('Do you want to create an admin user?')) {
+            return;
+        }
+
+        $user = [
+            'username' => $this->ask('Please enter your username'),
+            'email'    => $this->ask('Please enter your email'),
+            'password' => $this->secret('Please enter your password'),
+            'level'    => User::LEVEL_ADMIN,
+        ];
+
+        User::create($user);
     }
 
     /**
