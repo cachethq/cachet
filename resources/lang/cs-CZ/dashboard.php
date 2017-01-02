@@ -16,7 +16,7 @@ return [
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Incidents &amp; Schedule',
+        'title'                    => 'Incidenty &amp; Plán',
         'incidents'                => 'Incidenty',
         'logged'                   => '{0} Nejsou hlášeny žádné incidenty, dobrá práce. | Zapsali jste jeden incident. | Nahlásili jste <strong>:count</strong> incident(y).',
         'incident-create-template' => 'Vytvořit šablonu',
@@ -170,7 +170,7 @@ return [
         'team'        => 'Tým',
         'member'      => 'Člen',
         'profile'     => 'Profil',
-        'description' => 'Team Members will be able to add, modify &amp; edit components and incidents.',
+        'description' => 'Členové týmu budou schopni přidat nebo upravit komponenty a incidenty.',
         'add'         => [
             'title'   => 'Přidat nového člena týmu',
             'success' => 'Nový člen týmu byl přidán.',
