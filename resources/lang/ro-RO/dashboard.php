@@ -16,7 +16,7 @@ return [
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Incidents &amp; Schedule',
+        'title'                    => 'Incidente &amp; Planificare',
         'incidents'                => 'Incidente',
         'logged'                   => '{0} Nu sunt incidente, bravo! | Ai adăugat un incident. | Ai raportat <strong>:count</strong> incidente.',
         'incident-create-template' => 'Crează şablon',
@@ -170,7 +170,7 @@ return [
         'team'        => 'Echipa',
         'member'      => 'Membru',
         'profile'     => 'Profil',
-        'description' => 'Team Members will be able to add, modify &amp; edit components and incidents.',
+        'description' => 'Membrii echipei vor avea posibilitatea să adauge, modifice &amp; actualiza componentele și incidentele.',
         'add'         => [
             'title'   => 'Adaugă un nou membru la echipă',
             'success' => 'Un nou membru a fost adăugat la echipă.',
