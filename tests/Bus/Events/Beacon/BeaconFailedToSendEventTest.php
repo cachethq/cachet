@@ -22,7 +22,7 @@ class BeaconFailedToSendEventTest extends AbstractBeaconEventTestCase
 {
     protected function objectHasHandlers()
     {
-        return false;
+        return true;
     }
 
     protected function getObjectAndParams()

@@ -22,7 +22,7 @@ class EventServiceProvider extends ServiceProvider
      */
     protected $listen = [
         'CachetHQ\Cachet\Bus\Events\Beacon\BeaconFailedToSendEvent' => [
-            //
+            'CachetHQ\Cachet\Bus\Handlers\Events\Beacon\LogBeaconFailedHandler',
         ],
         'CachetHQ\Cachet\Bus\Events\Beacon\BeaconWasSentEvent' => [
             //
