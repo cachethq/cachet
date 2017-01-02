@@ -29,6 +29,13 @@ use Illuminate\Support\Facades\View;
 use Jenssegers\Date\Date;
 use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
 
+/**
+ * This is the status page controller class.
+ *
+ * @author James Brooks <james@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
+ * @author Joseph Cohen <joe@alt-three.com>
+ */
 class StatusPageController extends AbstractApiController
 {
     /**
