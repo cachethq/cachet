@@ -16,7 +16,7 @@ return [
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Incidents &amp; Schedule',
+        'title'                    => 'Περιστατικά &amp; Πρόγραμμα',
         'incidents'                => 'Περιστατικά',
         'logged'                   => '{0} Δεν υπάρχουν περιστατικά, καλλή δουλειά.|Έχετε καταγράψει ένα περιστατικό.|Έχετε ανάφερει <strong>:count</strong> περιστατικά.',
         'incident-create-template' => 'Δημιουργία προτύπου',
@@ -170,7 +170,7 @@ return [
         'team'        => 'Ομάδα',
         'member'      => 'Member',
         'profile'     => 'Profile',
-        'description' => 'Team Members will be able to add, modify &amp; edit components and incidents.',
+        'description' => 'Team Members will be able to add, modify & edit components and incidents.',
         'add'         => [
             'title'   => 'Add a new team member',
             'success' => 'Team member added.',
