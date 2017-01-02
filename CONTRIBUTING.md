@@ -2,17 +2,17 @@
 
 ## Creating issues
 
-Feature requests and bug reports should be made by using the [issue tracker](https://github.com/cachethq/Cachet/issues). Support questions should be directed to our support email; [support@alt-three.com](mailto:support@alt-three.com?subject=Cachet Support).
+We track feature requests and bug reports on the [issue tracker](https://github.com/cachethq/Cachet/issues). Please send support requests to our support email; [support@alt-three.com](mailto:support@alt-three.com?subject=Cachet Support).
 
-**Always be respectful.** Organization members reserve the right to lock topics if they feel necessary.
+**Always be respectful.** Organisation members reserve the right to lock topics if they feel necessary.
 
 ## Languages
 
-Any non-English translations must be made on the [Cachet CrowdIn](https://translate.cachethq.io) project. This makes syncing translations much easier.
+Please submit non-English translations to the [Cachet CrowdIn](https://translate.cachethq.io) project. This makes syncing translations much easier.
 
 ## Coding Standards
 
-Please follow existing coding standards. Pull Requests are checked and can be fixed by [StyleCI](https://styleci.io).
+Please try to follow existing coding standards. [StyleCI](https://styleci.io) will analyse and fix any discrepancies in coding standards.
 
 ## Introduction into Git and GitHub
 
@@ -21,7 +21,7 @@ If you are new to Git, GitHub and the whole open source software community, welc
 - [Try Git](https://try.github.io/levels/1/challenges/1) by Code School
 - [GitHub Help](https://help.github.com)
 
-If you're not particularly fond of the command line, you can get one of GitHub's free GUI desktop apps:
+If you're not fond of the command line, you can get one of GitHub's free GUI desktop apps:
 
 - [GitHub for Mac](https://github.com/blog/1510-installing-git-from-github-for-mac)
 - [GitHub for Windows](https://github.com/blog/1127-github-for-windows)
