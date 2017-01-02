@@ -39,7 +39,7 @@ class DemoMetricPointSeederCommand extends Command
      *
      * @var string
      */
-    protected $description = 'Seeds the demo Cachet metrics with points.';
+    protected $description = 'Seeds the demo Cachet metrics with points';
 
     /**
      * Execute the console command.

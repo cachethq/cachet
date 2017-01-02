@@ -50,7 +50,7 @@ class DemoSeederCommand extends Command
      *
      * @var string
      */
-    protected $description = 'Seeds Cachet with demo data.';
+    protected $description = 'Seeds Cachet with demo data';
 
     /**
      * The settings repository.
