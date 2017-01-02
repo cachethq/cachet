@@ -16,7 +16,7 @@ return [
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Incidents &amp; Schedule',
+        'title'                    => 'Hændelser &amp; Planlagte',
         'incidents'                => 'Incidents',
         'logged'                   => '{0} Ingen åbne hændelser.|Der er en åben hændelse.|Der er <strong>:count</strong> åbne hændelser.',
         'incident-create-template' => 'Create Template',
@@ -170,7 +170,7 @@ return [
         'team'        => 'Brugere',
         'member'      => 'Bruger',
         'profile'     => 'Profile',
-        'description' => 'Team Members will be able to add, modify &amp; edit components and incidents.',
+        'description' => 'Brugere kan oprette og rette komponenter og hændelser.',
         'add'         => [
             'title'   => 'Tilføj bruger',
             'success' => 'Bruger tilføjet.',
