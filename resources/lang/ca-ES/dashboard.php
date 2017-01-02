@@ -16,7 +16,7 @@ return [
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Incidents &amp; Schedule',
+        'title'                    => 'Incidències i manteniments',
         'incidents'                => 'Incidències',
         'logged'                   => '{0} There are no incidents, good work.|You have logged one incident.|You have reported <strong>:count</strong> incidents.',
         'incident-create-template' => 'Crear plantilla',
@@ -170,7 +170,7 @@ return [
         'team'        => 'Equip',
         'member'      => 'Membre',
         'profile'     => 'Perfil',
-        'description' => 'Team Members will be able to add, modify &amp; edit components and incidents.',
+        'description' => 'Els membres de l\'equip podran afegir i modificar tant components com incidències.',
         'add'         => [
             'title'   => 'Afegit un nou membre a l\'equip',
             'success' => 'Membre de l\'equip afegit.',
