@@ -11,7 +11,6 @@
 
 namespace CachetHQ\Cachet\Console\Commands;
 
-use CachetHQ\Cachet\Settings\Repository;
 use Dotenv\Dotenv;
 use Dotenv\Exception\InvalidPathException;
 use Illuminate\Console\Command;
@@ -36,27 +35,6 @@ class InstallCommand extends Command
      * @var string
      */
     protected $description = 'Install Cachet';
-
-    /**
-     * The settings repository.
-     *
-     * @var \CachetHQ\Cache\Settings\Repository
-     */
-    protected $settings;
-
-    /**
-     * Create a new demo seeder command instance.
-     *
-     * @param \CachetHQ\Cache\Settings\Repository $settings
-     *
-     * @return void
-     */
-    public function __construct(Repository $settings)
-    {
-        parent::__construct();
-
-        $this->settings = $settings;
-    }
 
     /**
      * Execute the console command.
