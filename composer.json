@@ -43,7 +43,6 @@
         "graham-campbell/exceptions": "^9.1",
         "graham-campbell/markdown": "^6.1",
         "guzzlehttp/guzzle": "^6.2.1",
-        "jenssegers/date": "^3.2",
         "laravel/framework": "5.3.*",
         "mccool/laravel-auto-presenter": "^4.3",
         "pragmarx/google2fa": "^0.7.1",

@@ -17,12 +17,12 @@ use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\Subscriber;
+use Carbon\Carbon;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\View;
-use Jenssegers\Date\Date;
 
 /**
  * This is the dashboard controller class.
@@ -34,7 +34,7 @@ class DashboardController extends Controller
     /**
      * Start date.
      *
-     * @var \Jenssegers\Date\Date
+     * @var \Carbon\Carbon
      */
     protected $startDate;
 
@@ -71,7 +71,7 @@ class DashboardController extends Controller
     {
         $this->feed = $feed;
         $this->guard = $guard;
-        $this->startDate = new Date();
+        $this->startDate = Carbon::now();
         $this->dateTimeZone = Config::get('cachet.timezone');
     }
 
@@ -131,13 +131,13 @@ class DashboardController extends Controller
             $this->startDate->copy()->subDays(30)->format('Y-m-d').' 00:00:00',
             $this->startDate->format('Y-m-d').' 23:59:59',
         ])->orderBy('occurred_at', 'desc')->get()->groupBy(function (Incident $incident) {
-            return (new Date($incident->occurred_at))
+            return (new Carbon($incident->occurred_at))
                 ->setTimezone($this->dateTimeZone)->toDateString();
         });
 
         // Add in days that have no incidents
         foreach (range(0, 30) as $i) {
-            $date = (new Date($this->startDate))->setTimezone($this->dateTimeZone)->subDays($i);
+            $date = (new Carbon($this->startDate))->setTimezone($this->dateTimeZone)->subDays($i);
 
             if (!isset($allIncidents[$date->toDateString()])) {
                 $allIncidents[$date->toDateString()] = [];
@@ -163,13 +163,13 @@ class DashboardController extends Controller
             $this->startDate->copy()->subDays(30)->format('Y-m-d').' 00:00:00',
             $this->startDate->format('Y-m-d').' 23:59:59',
         ])->orderBy('created_at', 'desc')->get()->groupBy(function (Subscriber $incident) {
-            return (new Date($incident->created_at))
+            return (new Carbon($incident->created_at))
                 ->setTimezone($this->dateTimeZone)->toDateString();
         });
 
         // Add in days that have no incidents
         foreach (range(0, 30) as $i) {
-            $date = (new Date($this->startDate))->setTimezone($this->dateTimeZone)->subDays($i);
+            $date = (new Carbon($this->startDate))->setTimezone($this->dateTimeZone)->subDays($i);
 
             if (!isset($allSubscribers[$date->toDateString()])) {
                 $allSubscribers[$date->toDateString()] = [];

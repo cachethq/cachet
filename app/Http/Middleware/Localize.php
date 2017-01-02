@@ -11,10 +11,10 @@
 
 namespace CachetHQ\Cachet\Http\Middleware;
 
+use Carbon\Carbon;
 use Closure;
 use Illuminate\Config\Repository;
 use Illuminate\Http\Request;
-use Jenssegers\Date\Date;
 
 /**
  * This is the localize middleware class.
@@ -28,7 +28,7 @@ class Localize
     /**
      * Array of languages Cachet can use.
      *
-     * @var array
+     * @var string[]
      */
     protected $langs;
 
@@ -79,7 +79,7 @@ class Localize
         }
 
         app('translator')->setLocale($userLanguage);
-        Date::setLocale($userLanguage);
+        Carbon::setLocale($userLanguage);
 
         return $next($request);
     }
