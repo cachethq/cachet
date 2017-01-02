@@ -16,7 +16,7 @@ return [
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Incidents &amp; Schedule',
+        'title'                    => 'インシデント &amp; スケジュール',
         'incidents'                => 'インシデント',
         'logged'                   => '{0} 良いですね。インシデントはありません。|インシデントを1件登録しました。|あなたはインシデントを <strong>:count 件</strong> 報告しています。',
         'incident-create-template' => 'テンプレートの作成',
@@ -170,7 +170,7 @@ return [
         'team'        => 'チーム',
         'member'      => 'メンバー',
         'profile'     => 'プロフィール',
-        'description' => 'Team Members will be able to add, modify &amp; edit components and incidents.',
+        'description' => 'Team Members will be able to add, modify & edit components and incidents.',
         'add'         => [
             'title'   => '新しいチームメンバーを追加する',
             'success' => 'Team member added.',
