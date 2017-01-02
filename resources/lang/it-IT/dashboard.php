@@ -16,7 +16,7 @@ return [
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Incidents &amp; Schedule',
+        'title'                    => 'Segnalazioni &amp; Pianificazione',
         'incidents'                => 'Incidenti',
         'logged'                   => '{0} Non ci sono segnalazioni, ottimo lavoro.|Hai notificato una segnalazione.|Hai notificato <strong>:count</strong> segnalazioni.',
         'incident-create-template' => 'Crea Modello',
@@ -170,7 +170,7 @@ return [
         'team'        => 'Gruppo',
         'member'      => 'Membro',
         'profile'     => 'Profilo',
-        'description' => 'Team Members will be able to add, modify &amp; edit components and incidents.',
+        'description' => 'I membri del gruppo potranno aggiungere, modificare ed editare componenti e segnalazioni.',
         'add'         => [
             'title'   => 'Aggiungi un nuovo membro del gruppo',
             'success' => 'Membro del gruppo aggiunto.',
