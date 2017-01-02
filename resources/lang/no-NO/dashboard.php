@@ -16,7 +16,7 @@ return [
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Incidents &amp; Schedule',
+        'title'                    => 'Hendelser &amp; Tidsplan',
         'incidents'                => 'Hendelser',
         'logged'                   => '{0} Det er ingen hendelser, bra jobbet.|Du har en logget hendelse.|Du har rapportert <strong>:count</strong> hendelser.',
         'incident-create-template' => 'Opprett mal',
@@ -170,7 +170,7 @@ return [
         'team'        => 'Team',
         'member'      => 'Bruker',
         'profile'     => 'Profil',
-        'description' => 'Team Members will be able to add, modify &amp; edit components and incidents.',
+        'description' => 'Gruppemedlemmer kan legge til, endre &amp; redigere komponenter og hendelser.',
         'add'         => [
             'title'   => 'Legge til nytt gruppemedlem',
             'success' => 'Gruppemedlem lagt til.',
