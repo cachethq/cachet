@@ -16,7 +16,7 @@ return [
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Incidents &amp; Schedule',
+        'title'                    => '문제 및 예정',
         'incidents'                => '문제',
         'logged'                   => '{0} 아무 문제가 없습니다, 잘하고 있어요.|하나의 문제에 대한 로깅이 있습니다.|<strong>:count</strong> 개의 문제가 리포트 되었습니다.',
         'incident-create-template' => '템플릿 생성',
@@ -170,7 +170,7 @@ return [
         'team'        => '팀',
         'member'      => '멤버',
         'profile'     => '프로필',
-        'description' => 'Team Members will be able to add, modify &amp; edit components and incidents.',
+        'description' => '팀 멤버는 구성요소와 문제를 추가하고 수정 할 수 있습니다.',
         'add'         => [
             'title'   => '새 팀 멤버 추가',
             'success' => '팀 멤버가 추가되었습니다',
