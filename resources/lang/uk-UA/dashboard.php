@@ -16,24 +16,24 @@ return [
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Incidentes &amp; Agendamentos',
-        'incidents'                => 'Ocorrências',
-        'logged'                   => '{0} Não existem incidentes, bom trabalho.|Você registrou um incidente.|Você reportou <strong>:count</strong> incidentes.',
-        'incident-create-template' => 'Criar template',
-        'incident-templates'       => 'Template de incidentes',
+        'title'                    => 'Incidents &amp; Schedule',
+        'incidents'                => 'Incidents',
+        'logged'                   => '{0} There are no incidents, good work.|You have logged one incident.|You have reported <strong>:count</strong> incidents.',
+        'incident-create-template' => 'Create Template',
+        'incident-templates'       => 'Incident Templates',
         'updates'                  => '{0} Zero Updates|One Update|:count Updates',
         'add'                      => [
-            'title'   => 'Adicionar um incidente',
-            'success' => 'Incidente adicionado.',
+            'title'   => 'Report an incident',
+            'success' => 'Incident added.',
             'failure' => 'There was an error adding the incident, please try again.',
         ],
         'edit' => [
-            'title'   => 'Editar um incidente',
-            'success' => 'Incidente atualizado.',
+            'title'   => 'Edit an incident',
+            'success' => 'Incident updated.',
             'failure' => 'There was an error editing the incident, please try again.',
         ],
         'delete' => [
-            'success' => 'O incidente foi apagado e não será mais mostrado na sua página de estado.',
+            'success' => 'The incident has been deleted and will not show on your status page.',
             'failure' => 'The incident could not be deleted, please try again.',
         ],
         'update' => [
@@ -43,20 +43,20 @@ return [
 
         // Incident templates
         'templates' => [
-            'title' => 'Template de incidentes',
+            'title' => 'Incident Templates',
             'add'   => [
-                'title'   => 'Criar um modelo de incidente',
-                'message' => 'Adicione um esboço de incidente.',
+                'title'   => 'Create an incident template',
+                'message' => 'You should add an incident template.',
                 'success' => 'Your new incident template has been created.',
                 'failure' => 'Something went wrong with the incident template.',
             ],
             'edit' => [
-                'title'   => 'Editar Modelo',
+                'title'   => 'Edit Template',
                 'success' => 'The incident template has been updated.',
                 'failure' => 'Something went wrong updating the incident template',
             ],
             'delete' => [
-                'success' => 'O esboço de incidente foi apagado.',
+                'success' => 'The incident template has been deleted.',
                 'failure' => 'The incident template could not be deleted, please try again.',
             ],
         ],
@@ -64,17 +64,17 @@ return [
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => 'Manutenção Agendada',
-        'logged'       => '{0} Não existem agendamentos, bom trabalho.|Você introduziu um agendamento.|Você reportou <strong>:count</strong> agendamentos.',
-        'scheduled_at' => 'Agendada em :timestamp',
+        'schedule'     => 'Scheduled Maintenance',
+        'logged'       => '{0} There are no schedules, good work.|You have logged one schedule.|You have reported <strong>:count</strong> schedules.',
+        'scheduled_at' => 'Scheduled at :timestamp',
         'add'          => [
-            'title'   => 'Adicionar Manutenção Agendada',
-            'success' => 'Agendamento adicionado.',
+            'title'   => 'Add Scheduled Maintenance',
+            'success' => 'Schedule added.',
             'failure' => 'Something went wrong adding the schedule, please try again.',
         ],
         'edit' => [
-            'title'   => 'Editar Manutenção Agendada',
-            'success' => 'Agendamento actualizado com sucesso!',
+            'title'   => 'Edit Scheduled Maintenance',
+            'success' => 'Schedule has been updated!',
             'failure' => 'Something went wrong editing the schedule, please try again.',
         ],
         'delete' => [
@@ -85,41 +85,41 @@ return [
 
     // Components
     'components' => [
-        'components'         => 'Componentes',
-        'component_statuses' => 'Status do componente',
-        'listed_group'       => 'Agrupado em :name',
+        'components'         => 'Components',
+        'component_statuses' => 'Component Statuses',
+        'listed_group'       => 'Grouped under :name',
         'add'                => [
-            'title'   => 'Adicionar um Componente',
-            'message' => 'Você deve adicionar um componente.',
+            'title'   => 'Add a component',
+            'message' => 'You should add a component.',
             'success' => 'Component created.',
             'failure' => 'Something went wrong with the component group, please try again.',
         ],
         'edit' => [
-            'title'   => 'Editar um Componente',
+            'title'   => 'Edit a component',
             'success' => 'Component updated.',
             'failure' => 'Something went wrong with the component group, please try again.',
         ],
         'delete' => [
-            'success' => 'O componente foi apagado!',
+            'success' => 'The component has been deleted!',
             'failure' => 'The component could not be deleted, please try again.',
         ],
 
         // Component groups
         'groups' => [
-            'groups'        => 'Grupo de componente|Grupos de componente',
-            'no_components' => 'Deverá adicionar um grupo de componente.',
+            'groups'        => 'Component group|Component groups',
+            'no_components' => 'You should add a component group.',
             'add'           => [
-                'title'   => 'Adicionar um grupo de componentes',
+                'title'   => 'Add a component group',
                 'success' => 'Component group added.',
                 'failure' => 'Something went wrong with the component group, please try again.',
             ],
             'edit' => [
-                'title'   => 'Editar um grupo de Componentes',
+                'title'   => 'Edit a component group',
                 'success' => 'Component group updated.',
                 'failure' => 'Something went wrong with the component group, please try again.',
             ],
             'delete' => [
-                'success' => 'O grupo de componentes foi apagado!',
+                'success' => 'Component group has been deleted!',
                 'failure' => 'The component group could not be deleted, please try again.',
             ],
         ],
@@ -127,92 +127,92 @@ return [
 
     // Metrics
     'metrics' => [
-        'metrics' => 'Metricas',
+        'metrics' => 'Metrics',
         'add'     => [
-            'title'   => 'Criar uma métrica',
-            'message' => 'Adicione uma métrica.',
+            'title'   => 'Create a metric',
+            'message' => 'You should add a metric.',
             'success' => 'Metric created.',
             'failure' => 'Something went wrong with the metric, please try again.',
         ],
         'edit' => [
-            'title'   => 'Editar uma métrica',
+            'title'   => 'Edit a metric',
             'success' => 'Metric updated.',
             'failure' => 'Something went wrong with the metric, please try again.',
         ],
         'delete' => [
-            'success' => 'A métrica foi apagada e não será mais mostrada na sua página de estado.',
+            'success' => 'The metric has been deleted and will no longer display on your status page.',
             'failure' => 'The metric could not be deleted, please try again.',
         ],
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'      => 'Assinantes',
+        'subscribers'      => 'Subscribers',
         'description'      => 'Subscribers will receive email updates when incidents are created or components are updated.',
-        'verified'         => 'Verificado',
-        'not_verified'     => 'Não Verificado',
+        'verified'         => 'Verified',
+        'not_verified'     => 'Not verified',
         'subscriber'       => ':email, subscribed :date',
         'no_subscriptions' => 'Subscribed to all updates',
         'add'              => [
-            'title'   => 'Adicionar um novo assinante',
-            'success' => 'Assinante adicionado.',
+            'title'   => 'Add a new subscriber',
+            'success' => 'Subscriber has been added!',
             'failure' => 'Something went wrong adding the subscriber, please try again.',
             'help'    => 'Enter each subscriber on a new line.',
         ],
         'edit' => [
-            'title'   => 'Actualizar Assinante',
-            'success' => 'Assinante atualizado.',
+            'title'   => 'Update subscriber',
+            'success' => 'Subscriber has been updated!',
             'failure' => 'Something went wrong editing the subscriber, please try again.',
         ],
     ],
 
     // Team
     'team' => [
-        'team'        => 'Equipe',
-        'member'      => 'Membro',
-        'profile'     => 'Perfil	',
-        'description' => 'Membros da equipe serão capazes de adicionar, modificar &amp; editar componentes e incidentes.',
+        'team'        => 'Team',
+        'member'      => 'Member',
+        'profile'     => 'Profile',
+        'description' => 'Team Members will be able to add, modify &amp; edit components and incidents.',
         'add'         => [
-            'title'   => 'Adicionar um novo membro de equipa',
+            'title'   => 'Add a new team member',
             'success' => 'Team member added.',
             'failure' => 'The team member could not be added, please try again.',
         ],
         'edit' => [
-            'title'   => 'Atualizar Perfil',
-            'success' => 'Perfil actualizado.',
+            'title'   => 'Update profile',
+            'success' => 'Profile updated.',
             'failure' => 'Something went wrong updating the profile, please try again.',
         ],
         'delete' => [
-            'success' => 'Utilizador apagado.',
+            'success' => 'Team member has been deleted and will no longer have access to the dashboard!',
             'failure' => 'The team member could not be added, please try again.',
         ],
         'invite' => [
-            'title'   => 'Convidar um novo membro de equipa',
-            'success' => 'Os utilizadores convidados.',
+            'title'   => 'Invite a new team member',
+            'success' => 'An invite has been sent',
             'failure' => 'The invite could not be sent, please try again.',
         ],
     ],
 
     // Settings
     'settings' => [
-        'settings'  => 'Configurações',
+        'settings'  => 'Settings',
         'app-setup' => [
-            'app-setup'   => 'Instalação do aplicativo',
-            'images-only' => 'Somente imagens podem ser carregadas.',
-            'too-big'     => 'O arquivo que você carregou é muito grande. Envie uma imagem inferior à :size',
+            'app-setup'   => 'Application Setup',
+            'images-only' => 'Only images may be uploaded.',
+            'too-big'     => 'The file you uploaded is too big. Upload an image smaller than :size',
         ],
         'analytics' => [
-            'analytics' => 'Analítica',
+            'analytics' => 'Analytics',
         ],
         'log' => [
             'log' => 'Log',
         ],
         'localization' => [
-            'localization' => 'Localização',
+            'localization' => 'Localization',
         ],
         'customization' => [
-            'customization' => 'Personalização',
-            'header'        => 'HTML do Header Personalizado',
-            'footer'        => 'HTML do Footer Personalizado',
+            'customization' => 'Customization',
+            'header'        => 'Custom Header HTML',
+            'footer'        => 'Custom Footer HTML',
         ],
         'mail' => [
             'mail'  => 'Mail',
@@ -223,24 +223,24 @@ return [
             ],
         ],
         'security' => [
-            'security'   => 'Segurança',
-            'two-factor' => 'Utilizados sem factor de dupla autenticação',
+            'security'   => 'Security',
+            'two-factor' => 'Users without two-factor authentication',
         ],
         'stylesheet' => [
-            'stylesheet' => 'Folha de estilo',
+            'stylesheet' => 'Stylesheet',
         ],
         'theme' => [
-            'theme' => 'Tema',
+            'theme' => 'Theme',
         ],
         'edit' => [
-            'success' => 'Configurações salvas.',
-            'failure' => 'Não foi possível salvar as configurações.',
+            'success' => 'Settings saved.',
+            'failure' => 'Settings could not be saved.',
         ],
         'credits' => [
-            'credits'       => 'Créditos',
-            'contributors'  => 'Contribuidores',
-            'license'       => 'Cachet é um projecto open source licenciado com base no BSD-3, disponibilizado pela <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
-            'backers-title' => 'Apoios & Patrocinadores',
+            'credits'       => 'Credits',
+            'contributors'  => 'Contributors',
+            'license'       => 'Cachet is a BSD-3-licensed open source project, released by <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
+            'backers-title' => 'Backers & Sponsors',
             'backers'       => 'If you\'d like to support future development, check out the <a href="https://patreon.com/jbrooksuk" target="_blank">Cachet Patreon</a> campaign.',
             'thank-you'     => 'Thank you to each and every one of the :count contributors.',
         ],
@@ -248,44 +248,44 @@ return [
 
     // Login
     'login' => [
-        'login'      => 'Entrar',
-        'logged_in'  => 'Você está logado.',
-        'welcome'    => 'Bem-vindo de volta!',
-        'two-factor' => 'Por favor insira o seu token.',
+        'login'      => 'Login',
+        'logged_in'  => 'You\'re logged in.',
+        'welcome'    => 'Welcome back!',
+        'two-factor' => 'Please enter your token.',
     ],
 
     // Sidebar footer
-    'help'        => 'Ajuda',
-    'status_page' => 'Página de status',
-    'logout'      => 'Sair',
+    'help'        => 'Help',
+    'status_page' => 'Status Page',
+    'logout'      => 'Logout',
 
     // Notifications
     'notifications' => [
-        'notifications' => 'Notificações',
-        'awesome'       => 'Excelente.',
-        'whoops'        => 'Opa.',
+        'notifications' => 'Notifications',
+        'awesome'       => 'Awesome.',
+        'whoops'        => 'Whoops.',
     ],
 
     // Widgets
     'widgets' => [
         'support'          => 'Support Cachet',
         'support_subtitle' => 'Check out our <strong><a href="https://patreon.com/jbrooksuk" target="_blank">Patreon</a></strong> page!',
-        'news'             => 'Últimas Notícias',
-        'news_subtitle'    => 'Obter uma actualização',
+        'news'             => 'Latest News',
+        'news_subtitle'    => 'Get the latest update',
     ],
 
     // Welcome modal
     'welcome' => [
-        'welcome' => 'Bem vindo à sua página de estado!',
-        'message' => 'Sua página de status está quase pronta! Tavez vocë queira checar essas configurações extras',
-        'close'   => 'Voltar ao Dashboard',
+        'welcome' => 'Welcome to your new status page, :username!',
+        'message' => 'You\'re almost ready but you might want to configure these extra settings first...',
+        'close'   => 'I\'m good thanks!',
         'steps'   => [
-            'component'  => 'Criar componentes',
-            'incident'   => 'Criar incidentes',
-            'customize'  => 'Personalizar',
-            'team'       => 'Adicionar usuários',
-            'api'        => 'Gerar token de API',
-            'two-factor' => 'Autenticação de 2 Factores',
+            'component'  => 'Add your components',
+            'incident'   => 'Create an incident',
+            'customize'  => 'Customize your page',
+            'team'       => 'Add your team',
+            'api'        => 'Generate an API token',
+            'two-factor' => 'Setup Two Factor Authentication',
         ],
     ],
 

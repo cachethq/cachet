@@ -11,7 +11,8 @@
 
 return [
 
-    'dashboard' => 'Dashboard',
+    'dashboard'          => 'Dashboard',
+    'writeable_settings' => 'The Cachet settings directory is not writeable. Please make sure that <code>./bootstrap/cachet</code> is writeable by the web server.',
 
     // Incidents
     'incidents' => [
@@ -20,6 +21,7 @@ return [
         'logged'                   => '{0} Não existem incidentes, bom trabalho.|Você registrou um incidente.|Você reportou <strong>:count</strong> incidentes.',
         'incident-create-template' => 'Criar template',
         'incident-templates'       => 'Template de incidentes',
+        'updates'                  => '{0} Nenhuma Atualização|Uma Atualização|:contagem de Atualizações',
         'add'                      => [
             'title'   => 'Relatar um incidente',
             'success' => 'Incidente adicionado.',
@@ -33,6 +35,10 @@ return [
         'delete' => [
             'success' => 'O incidente foi excluído e não aparecerá na sua página de status.',
             'failure' => 'O incidente não pode ser excluído, por favor tente novamente.',
+        ],
+        'update' => [
+            'title'    => 'Crie uma nova atualização de incidente',
+            'subtitle' => 'Adicione uma atualização ao <strong>:incidente</strong>',
         ],
 
         // Incident templates
@@ -105,12 +111,12 @@ return [
             'add'           => [
                 'title'   => 'Adicionar um grupo de componentes',
                 'success' => 'Grupo de componentes adicionado.',
-                'failure' => 'Algo deu errado com o grupo de componentes, por favor tente novamente.',
+                'failure' => 'Algo deu errado com o componente, por favor tente novamente.',
             ],
             'edit' => [
                 'title'   => 'Editar um grupo de componentes',
                 'success' => 'Grupo de componentes atualizado.',
-                'failure' => 'Algo deu errado com o grupo de componentes, por favor tente novamente.',
+                'failure' => 'Algo deu errado com o componente, por favor tente novamente.',
             ],
             'delete' => [
                 'success' => 'O grupo de componentes foi excluído!',
@@ -197,6 +203,9 @@ return [
         'analytics' => [
             'analytics' => 'Estatísticas',
         ],
+        'log' => [
+            'log' => 'Registro de eventos',
+        ],
         'localization' => [
             'localization' => 'Idioma',
         ],
@@ -204,6 +213,14 @@ return [
             'customization' => 'Personalização',
             'header'        => 'HTML de cabeçalho personalizado',
             'footer'        => 'HTML de rodapé personalizado',
+        ],
+        'mail' => [
+            'mail'  => 'Mail',
+            'test'  => 'Test',
+            'email' => [
+                'subject' => 'Test notification from Cachet',
+                'body'    => 'This is a test notification from Cachet.',
+            ],
         ],
         'security' => [
             'security'   => 'Segurança',
