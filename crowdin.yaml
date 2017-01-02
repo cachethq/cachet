@@ -3,5 +3,7 @@ files:
     source: '/resources/lang/en/*.php'
     translation: '/resources/lang/%locale%/%original_file_name%'
     languages_mapping:
-      locale:
+      two_letters_code:
         'en-ES': 'es'
+        'fa-IR': 'fa'
+        'ko-KR': 'kr'
