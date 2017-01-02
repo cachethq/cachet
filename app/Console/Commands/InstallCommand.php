@@ -56,7 +56,7 @@ class InstallCommand extends Command
         $this->configureMail();
         $this->configureCachet();
 
-        $this->success('Cachet is installed ⚡');
+        $this->info('Cachet is installed ⚡');
     }
 
     /**
