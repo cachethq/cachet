@@ -11,15 +11,17 @@
 
 return [
 
-    'dashboard' => 'Dashboard',
+    'dashboard'          => 'Dashboard',
+    'writeable_settings' => 'The Cachet settings directory is not writeable. Please make sure that <code>./bootstrap/cachet</code> is writeable by the web server.',
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Ereignisse &amp; Termine',
+        'title'                    => 'Incidents &amp; Schedule',
         'incidents'                => 'Vorfälle',
         'logged'                   => '{0} Es gibt keine Vorfälle, gute Arbeit.|Du hast einen Vorfall gemeldet.|Du hast <strong>:count</strong> Vorfälle gemeldet.',
         'incident-create-template' => 'Vorlage erstellen',
         'incident-templates'       => 'Vorfall Vorlagen',
+        'updates'                  => '{0} Zero aktualizacji|Jedna aktualizacja|:count aktualizacji',
         'add'                      => [
             'title'   => 'Vorfall hinzufügen',
             'success' => 'Dodano zdarzenie.',
@@ -33,6 +35,10 @@ return [
         'delete' => [
             'success' => 'Wydarzenie zostało usunięte i nie będzie widoczne na stronie statusu.',
             'failure' => 'Wydarzenie nie mogło zostać usunięte, proszę spróbować ponownie.',
+        ],
+        'update' => [
+            'title'    => 'Utwórz nową aktualizację zdarzenia',
+            'subtitle' => 'Dodaj aktualizację do <strong>:incident</strong>',
         ],
 
         // Incident templates
@@ -105,12 +111,12 @@ return [
             'add'           => [
                 'title'   => 'Eine Komponentengruppe hinzufügen',
                 'success' => 'Dodano grupę komponentów.',
-                'failure' => 'Coś poszło nie tak z grupą komponentów, proszę spróbować ponownie.',
+                'failure' => 'Coś poszło nie tak z komponentem, proszę spróbować ponownie.',
             ],
             'edit' => [
                 'title'   => 'Komponentengruppe bearbeiten',
                 'success' => 'Zaktualizowano grupę komponentów.',
-                'failure' => 'Coś poszło nie tak z grupą komponentów, proszę spróbować ponownie.',
+                'failure' => 'Coś poszło nie tak z komponentem, proszę spróbować ponownie.',
             ],
             'delete' => [
                 'success' => 'Grupa komponentów została usunięta!',
@@ -164,7 +170,7 @@ return [
         'team'        => 'Team',
         'member'      => 'Mitglied',
         'profile'     => 'Profil',
-        'description' => 'Teammitglieder werden die M&ouml;glichkeit haben, Komponente sowie Vorf&auml;lle hinzuzuf&uuml;gen und zu ver&auml;ndern.',
+        'description' => 'Team Members will be able to add, modify &amp; edit components and incidents.',
         'add'         => [
             'title'   => 'Neues Teammitglied hinzufügen',
             'success' => 'Dodano członka zespołu.',
@@ -197,6 +203,9 @@ return [
         'analytics' => [
             'analytics' => 'Analytics',
         ],
+        'log' => [
+            'log' => 'Logi',
+        ],
         'localization' => [
             'localization' => 'Localization',
         ],
@@ -204,6 +213,14 @@ return [
             'customization' => 'Dostosowywanie',
             'header'        => 'Niestandardowy nagłówek HTML',
             'footer'        => 'Niestandardowa stopka HTML',
+        ],
+        'mail' => [
+            'mail'  => 'Mail',
+            'test'  => 'Test',
+            'email' => [
+                'subject' => 'Test notification from Cachet',
+                'body'    => 'This is a test notification from Cachet.',
+            ],
         ],
         'security' => [
             'security'   => 'Sicherheit',
@@ -220,12 +237,12 @@ return [
             'failure' => 'Einstellungen konnten nicht gespeichert werden.',
         ],
         'credits' => [
-            'credits'       => 'Credits',
-            'contributors'  => 'Contributors',
-            'license'       => 'Cachet is a BSD-3-licensed open source project, released by <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
-            'backers-title' => 'Backers & Sponsors',
-            'backers'       => 'If you\'d like to support future development, check out the <a href="https://patreon.com/jbrooksuk" target="_blank">Cachet Patreon</a> campaign.',
-            'thank-you'     => 'Thank you to each and every one of the :count contributors.',
+            'credits'       => 'Autorzy',
+            'contributors'  => 'Współtwórcy',
+            'license'       => 'Catchet jest otwartym źródłem z licencją BSD utworzonym przez <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
+            'backers-title' => 'Patronaci i sponsorzy',
+            'backers'       => 'Jeśli chciałbyś wspomóc przyszły rozwój sprawdź kampanię <a href="https://patreon.com/jbrooksuk" target="_blank">Cachet Patreon</a>.',
+            'thank-you'     => 'Dziękujemy każdemu :count współtwórcy.',
         ],
     ],
 
@@ -251,10 +268,10 @@ return [
 
     // Widgets
     'widgets' => [
-        'support'          => 'Support Cachet',
-        'support_subtitle' => 'Check out our <strong><a href="https://patreon.com/jbrooksuk" target="_blank">Patreon</a></strong> page!',
-        'news'             => 'Latest News',
-        'news_subtitle'    => 'Get the latest updates',
+        'support'          => 'Wspomóż Cachet',
+        'support_subtitle' => 'Sprawdź również naszą stronę na <strong><a href="https://patreon.com/jbrooksuk" target="_blank">Patreon</a></strong>!',
+        'news'             => 'Aktualności',
+        'news_subtitle'    => 'Pobierz najnowszą aktualizację',
     ],
 
     // Welcome modal
