@@ -12,9 +12,7 @@
     </li>
 
     <div class="group-items {{ $componentGroup->is_collapsed ? "hide" : null }}">
-        @foreach($componentGroup->enabled_components()->orderBy('order')->get() as $component)
-        @include('partials.component', compact($component))
-        @endforeach
+        @each('partials.component', $componentGroup->enabled_components()->orderBy('order')->get(), 'component')
     </div>
     @endif
 </ul>
@@ -23,9 +21,14 @@
 
 @if($ungrouped_components->count() > 0)
 <ul class="list-group components">
-    <li class="list-group-item group-name"><strong>{{ trans('cachet.components.group.other') }}</strong></li>
-    @foreach($ungrouped_components as $component)
-    @include('partials.component', compact($component))
-    @endforeach
+    <li class="list-group-item group-name">
+        <strong>{{ trans('cachet.components.group.other') }}</strong>
+
+        <div class="pull-right">
+            <i class="ion ion-ios-circle-filled text-component-{{ $ungrouped_components->max('status') }} {{ $ungrouped_components->sortByDesc('status')->first()->status_color }}" data-toggle="tooltip" title="{{ $ungrouped_components->sortByDesc('status')->first()->human_status }}"></i>
+        </div>
+    </li>
+
+    @each('partials.component', $ungrouped_components, 'component')
 </ul>
 @endif
