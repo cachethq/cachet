@@ -16,7 +16,7 @@ return [
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Incidents &amp; Schedule',
+        'title'                    => 'Incidensek &amp; Ütemezés',
         'incidents'                => 'Incidensek',
         'logged'                   => '{0} Nincs semmilyen incidens, szép munka.|Ön egy incidenst jelentett.|Ön összesen <strong>:count</strong> incidenst jelentett.',
         'incident-create-template' => 'Sablon létrehozása',
@@ -170,7 +170,7 @@ return [
         'team'        => 'Csapat',
         'member'      => 'Tag',
         'profile'     => 'Profil',
-        'description' => 'Team Members will be able to add, modify &amp; edit components and incidents.',
+        'description' => 'Csapattagoknak joguk lesz hozzáadni és szerkeszteni komponenseket és incidenseket.',
         'add'         => [
             'title'   => 'Új csapattag hozzáadása',
             'success' => 'Csapattag hozzáadva.',
