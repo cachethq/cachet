@@ -16,7 +16,7 @@ return [
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Incidents &amp; Schedule',
+        'title'                    => 'Инциденты и плановые работы',
         'incidents'                => 'Инциденты',
         'logged'                   => '{0} Нет инцидентов, отличная работа!|У вас зарегистрирован <strong>:count</strong> инцидент.|У вас зарегистрировано <strong>:count</strong> инцидента.|У вас зарегистрировано <strong>:count</strong> инцидентов.',
         'incident-create-template' => 'Создать шаблон',
@@ -170,7 +170,7 @@ return [
         'team'        => 'Команда',
         'member'      => 'Участник',
         'profile'     => 'Профиль',
-        'description' => 'Team Members will be able to add, modify &amp; edit components and incidents.',
+        'description' => 'Участники команды смогут добавлять и изменять компоненты и инциденты.',
         'add'         => [
             'title'   => 'Добавить нового участника команды',
             'success' => 'Участник команды добавлен.',
