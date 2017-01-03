@@ -88,6 +88,12 @@ class ConfigServiceProvider extends ServiceProvider
         }
 
         $this->app->config->set('cors.paths.api/v1/*.allowedOrigins', $allowedOrigins);
+
+        // Set the mail from address.
+        if (!$this->app->config->get('mail.from.address')) {
+            $url = parse_url($appDomain)['host'];
+            $this->app->config->set('mail.from.address', "notify@{$url}");
+        }
     }
 
     /**
