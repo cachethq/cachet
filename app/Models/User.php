@@ -81,6 +81,8 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
     /**
      * Overrides the models boot method.
+     *
+     * @return void
      */
     public static function boot()
     {
@@ -91,6 +93,16 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
                 $user->api_key = self::generateApiKey();
             }
         });
+    }
+
+    /**
+     * The team the user belongs to.
+     *
+     * @return \CachetHQ\Cachet\Models\Team
+     */
+    public function team()
+    {
+        return $this->hasOne(TeamUser::class)->first()->team();
     }
 
     /**
