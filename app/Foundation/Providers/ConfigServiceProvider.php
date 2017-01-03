@@ -91,8 +91,11 @@ class ConfigServiceProvider extends ServiceProvider
 
         // Set the mail from address.
         if (!$this->app->config->get('mail.from.address')) {
-            $url = parse_url($appDomain)['host'];
-            $this->app->config->set('mail.from.address', "notify@{$url}");
+            $url = parse_url($appDomain);
+
+            if (isset($url['host'])) {
+                $this->app->config->set('mail.from.address', "notify@{$url['host']}");
+            }
         }
 
         // Set the mail from name.
