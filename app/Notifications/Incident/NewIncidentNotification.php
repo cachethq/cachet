@@ -63,7 +63,7 @@ class NewIncidentNotification extends Notification
     /**
      * Get the mail representation of the notification.
      *
-     * @param  mixed $notifiable
+     * @param mixed $notifiable
      *
      * @return \Illuminate\Notifications\Messages\MailMessage
      */
@@ -136,7 +136,7 @@ class NewIncidentNotification extends Notification
                                         'ID'   => "#{$this->incident->id}",
                                         'Link' => $this->incident->permalink,
                                     ]))
-                                   ->footer(trans('cachet.subscriber.unsubscribe', ['link' => cachet_route('subscribe.unsubscribe', $notifiable->verify_code)]));;
+                                   ->footer(trans('cachet.subscriber.unsubscribe', ['link' => cachet_route('subscribe.unsubscribe', $notifiable->verify_code)]));
                     });
     }
 }

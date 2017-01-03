@@ -18,7 +18,6 @@ use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Messages\NexmoMessage;
 use Illuminate\Notifications\Messages\SlackMessage;
 use Illuminate\Notifications\Notification;
-use Illuminate\Support\Facades\Config;
 use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
 
 /**
@@ -64,7 +63,7 @@ class IncidentUpdatedNotification extends Notification
     /**
      * Get the mail representation of the notification.
      *
-     * @param  mixed $notifiable
+     * @param mixed $notifiable
      *
      * @return \Illuminate\Notifications\Messages\MailMessage
      */
@@ -144,7 +143,7 @@ class IncidentUpdatedNotification extends Notification
                                         'ID'   => "#{$this->update->id}",
                                         'Link' => $this->update->permalink,
                                     ]))
-                                   ->footer(trans('cachet.subscriber.unsubscribe', ['link' => cachet_route('subscribe.unsubscribe', $notifiable->verify_code)]));;
+                                   ->footer(trans('cachet.subscriber.unsubscribe', ['link' => cachet_route('subscribe.unsubscribe', $notifiable->verify_code)]));
                     });
     }
 }

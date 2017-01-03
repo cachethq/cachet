@@ -62,7 +62,7 @@ class NewScheduleNotification extends Notification
     /**
      * Get the mail representation of the notification.
      *
-     * @param  mixed $notifiable
+     * @param mixed $notifiable
      *
      * @return \Illuminate\Notifications\Messages\MailMessage
      */
@@ -120,7 +120,7 @@ class NewScheduleNotification extends Notification
                                         'ID'     => "#{$this->schedule->id}",
                                         'Status' => $this->schedule->human_status,
                                     ]))
-                                   ->footer(trans('cachet.subscriber.unsubscribe', ['link' => cachet_route('subscribe.unsubscribe', $notifiable->verify_code)]));;
+                                   ->footer(trans('cachet.subscriber.unsubscribe', ['link' => cachet_route('subscribe.unsubscribe', $notifiable->verify_code)]));
                     });
     }
 }

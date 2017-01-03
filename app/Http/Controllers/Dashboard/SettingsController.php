@@ -12,7 +12,6 @@
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
 use CachetHQ\Cachet\Bus\Commands\System\Config\UpdateConfigCommand;
-use CachetHQ\Cachet\Bus\Commands\System\Mail\TestMailCommand;
 use CachetHQ\Cachet\Integrations\Contracts\Credits;
 use CachetHQ\Cachet\Models\User;
 use CachetHQ\Cachet\Notifications\System\SystemTestNotification;
