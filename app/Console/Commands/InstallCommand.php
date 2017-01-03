@@ -362,6 +362,12 @@ class InstallCommand extends Command
             return;
         }
 
+        // We need to refresh the config to get access to the newly connected database.
+        $this->getFreshConfiguration();
+
+        // Now we need to install the application.
+        $this->call('app:install');
+
         $user = [
             'username' => $this->ask('Please enter your username'),
             'email'    => $this->ask('Please enter your email'),
@@ -410,6 +416,18 @@ class InstallCommand extends Command
         }
 
         $this->table(['Setting', 'Value'], $configRows);
+    }
+
+    /**
+     * Boot a fresh copy of the application configuration.
+     *
+     * @return void
+     */
+    protected function getFreshConfiguration()
+    {
+        $app = require $this->laravel->bootstrapPath().'/app.php';
+
+        $app->make('Illuminate\Contracts\Console\Kernel')->bootstrap();
     }
 
     /**
