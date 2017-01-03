@@ -58,20 +58,24 @@ class ConfigServiceProvider extends ServiceProvider
             //
         }
 
+        // Set the app url.
         if ($appDomain = $this->app->config->get('setting.app_domain')) {
             $this->app->config->set('app.url', $appDomain);
         }
 
+        // Set the locale.
         if ($appLocale = $this->app->config->get('setting.app_locale')) {
             $this->app->config->set('app.locale', $appLocale);
             $this->app->translator->setLocale($appLocale);
             Carbon::setLocale($appLocale);
         }
 
+        // Set the timezone.
         if ($appTimezone = $this->app->config->get('setting.app_timezone')) {
             $this->app->config->set('cachet.timezone', $appTimezone);
         }
 
+        // Set allowed domains for CORS.
         $allowedOrigins = $this->app->config->get('cors.defaults.allowedOrigins');
 
         if ($allowedDomains = $this->app->config->get('setting.allowed_domains')) {
