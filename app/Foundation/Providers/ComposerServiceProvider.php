@@ -38,7 +38,7 @@ class ComposerServiceProvider extends ServiceProvider
     {
         $factory->composer('*', AppComposer::class);
         $factory->composer('*', CurrentUserComposer::class);
-        $factory->composer(['index', 'single-incident', 'subscribe.*', 'signup', 'dashboard.settings.theme'], ThemeComposer::class);
+        $factory->composer(['index', 'single-incident', 'subscribe.*', 'signup', 'dashboard.settings.theme', 'notifications::email'], ThemeComposer::class);
         $factory->composer('dashboard.*', DashboardComposer::class);
         $factory->composer(['setup.*', 'dashboard.settings.localization'], TimezoneLocaleComposer::class);
 
