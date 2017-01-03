@@ -28,6 +28,7 @@
                                     </div>
                                     <input type="hidden" name="remove_banner" value="0">
                                     @endif
+                                    <input type="hidden" value="0" name="remove_banner">
                                     <input type="file" name="app_banner" class="form-control">
                                     <span class="help-block">{{ trans('forms.settings.app-setup.banner-help') }}</span>
                                 </div>
