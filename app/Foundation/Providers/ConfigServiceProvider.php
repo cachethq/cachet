@@ -97,7 +97,10 @@ class ConfigServiceProvider extends ServiceProvider
 
         // Set the mail from name.
         if (!$this->app->config->get('mail.from.name')) {
-            $this->app->config->set('mail.from.name', $this->app->config->get('app.name'));
+            $this->app->config->set(
+                'mail.from.name',
+                $this->app->config->get('setting.app_name', $this->app->config->get('app.name'))
+            );
         }
     }
 
