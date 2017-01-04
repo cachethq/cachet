@@ -62,7 +62,9 @@ class Subscriber extends Model implements HasPresenter
      * @var string[]
      */
     public $rules = [
-        'email' => 'email',
+        'email'             => 'nullable|email',
+        'phone_number'      => 'nullable|string',
+        'slack_webhook_url' => 'nullable|url',
     ];
 
     /**
