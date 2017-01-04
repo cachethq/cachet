@@ -142,11 +142,11 @@ return [
     |
     */
 
-    'providers' => array_filter([
+    'providers' => [
 
-        /*
-         * Laravel Framework Service Providers...
-         */
+        'GrahamCampbell\Exceptions\ExceptionsServiceProvider',
+        'Bugsnag\BugsnagLaravel\BugsnagServiceProvider',
+        'AltThree\Logger\LoggerServiceProvider',
         'Illuminate\Auth\AuthServiceProvider',
         'Illuminate\Broadcasting\BroadcastServiceProvider',
         'AltThree\Bus\BusServiceProvider',
@@ -169,10 +169,6 @@ return [
         'Illuminate\Translation\TranslationServiceProvider',
         'Illuminate\Validation\ValidationServiceProvider',
         'Illuminate\View\ViewServiceProvider',
-
-        /*
-         * Packages Service Providers...
-         */
         'AltThree\Badger\BadgerServiceProvider',
         'AltThree\Emoji\EmojiServiceProvider',
         'BackupManager\Laravel\Laravel5ServiceProvider',
@@ -180,7 +176,6 @@ return [
         'Fedeisas\LaravelMailCssInliner\LaravelMailCssInlinerServiceProvider',
         'Fideloper\Proxy\TrustedProxyServiceProvider',
         'GrahamCampbell\Binput\BinputServiceProvider',
-        'GrahamCampbell\Exceptions\ExceptionsServiceProvider',
         'GrahamCampbell\Core\CoreServiceProvider',
         'GrahamCampbell\Markdown\MarkdownServiceProvider',
         'GrahamCampbell\Security\SecurityServiceProvider',
@@ -201,7 +196,7 @@ return [
         'CachetHQ\Cachet\Foundation\Providers\RepositoryServiceProvider',
         'CachetHQ\Cachet\Foundation\Providers\RouteServiceProvider',
 
-    ]),
+    ],
 
     /*
     |--------------------------------------------------------------------------
