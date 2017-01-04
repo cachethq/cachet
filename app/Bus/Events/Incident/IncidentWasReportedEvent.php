@@ -37,7 +37,7 @@ final class IncidentWasReportedEvent implements IncidentEventInterface
      *
      * @return void
      */
-    public function __construct(Incident $incident, $notify)
+    public function __construct(Incident $incident, $notify = false)
     {
         $this->incident = $incident;
         $this->notify = $notify;

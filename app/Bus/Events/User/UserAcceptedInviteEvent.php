@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Cachet\Bus\Events\User;
 
+use CachetHQ\Cachet\Models\Invite;
 use CachetHQ\Cachet\Models\User;
 
 /**
