@@ -50,7 +50,7 @@ class SubscribeSubscriberCommandHandler
             $components = Component::all();
         }
 
-        $components->map(function ($component) use ($subscriber) {
+        $components->each(function ($component) use ($subscriber) {
             Subscription::create([
                 'subscriber_id' => $subscriber->id,
                 'component_id'  => $component->id,
@@ -61,9 +61,9 @@ class SubscribeSubscriberCommandHandler
             dispatch(new VerifySubscriberCommand($subscriber));
         } else {
             $subscriber->notify(new VerifySubscriptionNotification());
-
-            event(new SubscriberHasSubscribedEvent($subscriber));
         }
+
+        event(new SubscriberHasSubscribedEvent($subscriber));
 
         $subscriber->load('subscriptions');
 
