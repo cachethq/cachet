@@ -83,15 +83,8 @@ class ComponentStatusChangedNotification extends Notification
             'new_status' => trans("cachet.components.status.{$this->status}"),
         ]);
 
-        if ($this->status <= 1) {
-            $status = 'success';
-        } else {
-            $status = 'error';
-        }
-
         return (new MailMessage())
                     ->subject(trans('notifications.component.status_update.subject'))
-                    ->$status()
                     ->greeting(trans('notifications.component.status_update.title'))
                     ->line($content)
                     ->action('View Component', $this->component->link);
