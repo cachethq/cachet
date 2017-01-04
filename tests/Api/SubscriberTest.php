@@ -55,6 +55,8 @@ class SubscriberTest extends AbstractApiTestCase
     {
         $this->beUser();
 
+        $this->expectsEvents('CachetHQ\Cachet\Bus\Events\Subscriber\SubscriberHasSubscribedEvent');
+
         $this->post('/api/v1/subscribers', [
             'email'  => 'support@alt-three.com',
             'verify' => true,
