@@ -74,15 +74,8 @@ class IncidentUpdatedNotification extends Notification
             'time' => $this->update->created_at_diff,
         ]);
 
-        if ($this->update->status === Incident::FIXED) {
-            $status = 'success';
-        } else {
-            $status = 'error';
-        }
-
         return (new MailMessage())
                     ->subject(trans('notifications.incident.update.subject'))
-                    ->$status()
                     ->greeting(trans('notifications.incident.update.title', [
                         'name'       => $this->update->incident->name,
                         'new_status' => $this->update->human_status,
