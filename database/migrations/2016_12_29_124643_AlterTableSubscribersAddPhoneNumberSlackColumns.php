@@ -23,6 +23,7 @@ class AlterTableSubscribersAddPhoneNumberSlackColumns extends Migration
     public function up()
     {
         Schema::table('subscribers', function (Blueprint $table) {
+            $table->string('email')->nullable()->default(null)->change();
             $table->string('phone_number')->nullable()->default(null)->after('verify_code');
             $table->string('slack_webhook_url')->nullable()->default(null)->after('phone_number');
         });
