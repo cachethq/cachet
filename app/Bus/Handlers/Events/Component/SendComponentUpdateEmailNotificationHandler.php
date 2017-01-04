@@ -56,7 +56,7 @@ class SendComponentUpdateEmailNotificationHandler
         // First notify all global subscribers.
         $globalSubscribers = $this->subscriber->isVerified()->isGlobal()->get();
 
-        $globalSubscribers->map(function ($subscriber) use ($component, $event) {
+        $globalSubscribers->each(function ($subscriber) use ($component, $event) {
             $subscriber->notify(new ComponentStatusChangedNotification($component, $event->new_status));
         });
 
@@ -71,7 +71,7 @@ class SendComponentUpdateEmailNotificationHandler
                 return in_array($subscriber->id, $notified);
             });
 
-        $componentSubscribers->map(function ($subscriber) use ($component, $event) {
+        $componentSubscribers->each(function ($subscriber) use ($component, $event) {
             $subscriber->notify(new ComponentStatusChangedNotification($component, $event->new_status));
         });
     }

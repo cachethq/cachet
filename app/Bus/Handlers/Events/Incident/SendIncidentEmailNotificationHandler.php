@@ -59,7 +59,7 @@ class SendIncidentEmailNotificationHandler
         // First notify all global subscribers.
         $globalSubscribers = $this->subscriber->isVerified()->isGlobal()->get();
 
-        $globalSubscribers->map(function ($subscriber) use ($incident) {
+        $globalSubscribers->each(function ($subscriber) use ($incident) {
             $subscriber->notify(new NewIncidentNotification($incident));
         });
 
@@ -76,7 +76,7 @@ class SendIncidentEmailNotificationHandler
             ->get()
             ->reject(function ($subscriber) use ($notified) {
                 return in_array($subscriber->id, $notified);
-            })->map(function ($subscriber) use ($incident) {
+            })->each(function ($subscriber) use ($incident) {
                 $subscriber->notify(new NewIncidentNotification($incident));
             });
     }
