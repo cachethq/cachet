@@ -35,10 +35,12 @@ class Subscriber extends Model implements HasPresenter
      * @var string[]
      */
     protected $casts = [
-        'email'       => 'string',
-        'verify_code' => 'string',
-        'verified_at' => 'date',
-        'global'      => 'bool',
+        'email'             => 'string',
+        'phone_number'      => 'string',
+        'slack_webhook_url' => 'string',
+        'verify_code'       => 'string',
+        'verified_at'       => 'date',
+        'global'            => 'bool',
     ];
 
     /**
@@ -48,6 +50,8 @@ class Subscriber extends Model implements HasPresenter
      */
     protected $fillable = [
         'email',
+        'phone_number',
+        'slack_webhook_url',
         'verified_at',
         'global',
     ];
@@ -58,7 +62,7 @@ class Subscriber extends Model implements HasPresenter
      * @var string[]
      */
     public $rules = [
-        'email' => 'required|email',
+        'email' => 'email',
     ];
 
     /**
