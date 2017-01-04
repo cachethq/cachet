@@ -177,7 +177,6 @@ return [
         AltThree\Emoji\EmojiServiceProvider::class,
         BackupManager\Laravel\Laravel5ServiceProvider::class,
         Barryvdh\Cors\ServiceProvider::class,
-        Fedeisas\LaravelMailCssInliner\LaravelMailCssInlinerServiceProvider::class,
         Fideloper\Proxy\TrustedProxyServiceProvider::class,
         GrahamCampbell\Binput\BinputServiceProvider::class,
         GrahamCampbell\Exceptions\ExceptionsServiceProvider::class,

@@ -36,7 +36,6 @@
         "backup-manager/laravel": "^1.1",
         "barryvdh/laravel-cors": "^0.8",
         "doctrine/dbal": "^2.5",
-        "fedeisas/laravel-mail-css-inliner": "^1.5",
         "fideloper/proxy": "^3.1",
         "graham-campbell/binput": "^3.5",
         "graham-campbell/core": "^5.1",
