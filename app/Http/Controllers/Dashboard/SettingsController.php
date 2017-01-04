@@ -12,9 +12,9 @@
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
 use CachetHQ\Cachet\Bus\Commands\System\Config\UpdateConfigCommand;
-use CachetHQ\Cachet\Bus\Commands\System\Mail\TestMailCommand;
 use CachetHQ\Cachet\Integrations\Contracts\Credits;
 use CachetHQ\Cachet\Models\User;
+use CachetHQ\Cachet\Notifications\System\SystemTestNotification;
 use CachetHQ\Cachet\Settings\Repository;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
@@ -294,7 +294,7 @@ class SettingsController extends Controller
      */
     public function testMail()
     {
-        dispatch(new TestMailCommand(Auth::user()));
+        Auth::user()->notify(new SystemTestNotification());
 
         return cachet_redirect('dashboard.settings.mail')
             ->withSuccess(trans('dashboard.notifications.awesome'));

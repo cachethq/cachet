@@ -18,7 +18,7 @@ class IncidentUpdateWasReportedEventTest extends AbstractIncidentUpdateEventTest
 {
     protected function objectHasHandlers()
     {
-        return false;
+        return true;
     }
 
     protected function getObjectAndParams()

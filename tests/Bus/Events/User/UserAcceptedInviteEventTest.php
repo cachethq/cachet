@@ -11,15 +11,16 @@
 
 namespace CachetHQ\Tests\Cachet\Bus\Events\User;
 
-use CachetHQ\Cachet\Bus\Events\User\UserWasInvitedEvent;
+use CachetHQ\Cachet\Bus\Events\User\UserAcceptedInviteEvent;
 use CachetHQ\Cachet\Models\Invite;
+use CachetHQ\Cachet\Models\User;
 
 /**
- * This is the user was invited event test class.
+ * This is the user accepted invite event test class.
  *
  * @author James Brooks <james@alt-three.com>
  */
-class UserWasInvitedEventTest extends AbstractUserEventTestCase
+class UserAcceptedInviteEventTest extends AbstractUserEventTestCase
 {
     protected function objectHasHandlers()
     {
@@ -28,8 +29,11 @@ class UserWasInvitedEventTest extends AbstractUserEventTestCase
 
     protected function getObjectAndParams()
     {
-        $params = ['invite' => new Invite()];
-        $object = new UserWasInvitedEvent($params['invite']);
+        $params = [
+            'user'   => new User(),
+            'invite' => new Invite(),
+        ];
+        $object = new UserAcceptedInviteEvent($params['user'], $params['invite']);
 
         return compact('params', 'object');
     }

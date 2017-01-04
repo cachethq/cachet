@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Handlers\Events\Incident;
+namespace CachetHQ\Cachet\Bus\Handlers\Events\IncidentUpdate;
 
-use CachetHQ\Cachet\Bus\Events\Incident\IncidentWasReportedEvent;
+use CachetHQ\Cachet\Bus\Events\IncidentUpdate\IncidentUpdateWasReportedEvent;
 use CachetHQ\Cachet\Models\Subscriber;
-use CachetHQ\Cachet\Notifications\Incident\NewIncidentNotification;
+use CachetHQ\Cachet\Notifications\IncidentUpdate\IncidentUpdatedNotification;
 
-class SendIncidentEmailNotificationHandler
+class SendIncidentUpdateEmailNotificationHandler
 {
     /**
      * The subscriber instance.
@@ -39,17 +39,14 @@ class SendIncidentEmailNotificationHandler
     /**
      * Handle the event.
      *
-     * @param \CachetHQ\Cachet\Bus\Events\Incident\IncidentWasReportedEvent $event
+     * @param \CachetHQ\Cachet\Bus\Events\IncidentUpdate\IncidentUpdateWasReportedEvent $event
      *
      * @return void
      */
-    public function handle(IncidentWasReportedEvent $event)
+    public function handle(IncidentUpdateWasReportedEvent $event)
     {
-        $incident = $event->incident;
-
-        if (!$event->notify) {
-            return false;
-        }
+        $update = $event->update;
+        $incident = $update->incident;
 
         // Only send emails for public incidents.
         if (!$incident->visible) {
@@ -59,8 +56,8 @@ class SendIncidentEmailNotificationHandler
         // First notify all global subscribers.
         $globalSubscribers = $this->subscriber->isVerified()->isGlobal()->get();
 
-        $globalSubscribers->each(function ($subscriber) use ($incident) {
-            $subscriber->notify(new NewIncidentNotification($incident));
+        $globalSubscribers->each(function ($subscriber) use ($update) {
+            $subscriber->notify(new IncidentUpdatedNotification($update));
         });
 
         if (!$incident->component) {
@@ -77,7 +74,7 @@ class SendIncidentEmailNotificationHandler
             ->reject(function ($subscriber) use ($notified) {
                 return in_array($subscriber->id, $notified);
             })->each(function ($subscriber) use ($incident) {
-                $subscriber->notify(new NewIncidentNotification($incident));
+                $subscriber->notify(new IncidentUpdatedNotification($incident));
             });
     }
 }
