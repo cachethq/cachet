@@ -11,6 +11,8 @@
 
 namespace CachetHQ\Tests\Cachet\Api;
 
+use Illuminate\Support\Facades\Notification;
+
 /**
  * This is the subscriber test class.
  *
@@ -41,6 +43,8 @@ class SubscriberTest extends AbstractApiTestCase
     {
         $this->beUser();
 
+        Notification::fake();
+
         $this->expectsEvents('CachetHQ\Cachet\Bus\Events\Subscriber\SubscriberHasSubscribedEvent');
 
         $this->post('/api/v1/subscribers', [
@@ -54,6 +58,8 @@ class SubscriberTest extends AbstractApiTestCase
     public function testCreateSubscriberAutoVerified()
     {
         $this->beUser();
+
+        Notification::fake();
 
         $this->expectsEvents('CachetHQ\Cachet\Bus\Events\Subscriber\SubscriberHasSubscribedEvent');
 
