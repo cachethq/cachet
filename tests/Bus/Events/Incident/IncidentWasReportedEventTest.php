@@ -32,7 +32,7 @@ class IncidentWasReportedEventTest extends AbstractIncidentEventTestCase
             'incident' => new Incident(),
             'notify'   => true,
         ];
-        $object = new IncidentWasReportedEvent($params['incident']);
+        $object = new IncidentWasReportedEvent($params['incident'], $params['notify']);
 
         return compact('params', 'object');
     }

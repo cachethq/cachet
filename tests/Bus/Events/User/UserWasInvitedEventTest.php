@@ -23,7 +23,7 @@ class UserWasInvitedEventTest extends AbstractUserEventTestCase
 {
     protected function objectHasHandlers()
     {
-        return true;
+        return false;
     }
 
     protected function getObjectAndParams()

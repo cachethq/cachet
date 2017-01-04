@@ -18,7 +18,7 @@ class SubscriberHasSubscribedEventTest extends AbstractSubscriberEventTestCase
 {
     protected function objectHasHandlers()
     {
-        return true;
+        return false;
     }
 
     protected function getObjectAndParams()
