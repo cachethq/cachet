@@ -77,7 +77,8 @@ class NewScheduleNotification extends Notification
                     ->subject(trans('notifications.schedule.new.subject'))
                     ->greeting(trans('notifications.schedule.new.title'))
                     ->line($content)
-                    ->action('View Component', $this->schedule->link);
+                    ->action('View Schedule', cachet_route('schedule', [$this->schedule]))
+                    ->line(trans('cachet.subscriber.unsubscribe', ['link' => cachet_route('subscribe.unsubscribe', $notifiable->verify_code)]));
     }
 
     /**

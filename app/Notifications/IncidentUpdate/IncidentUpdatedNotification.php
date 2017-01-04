@@ -81,7 +81,8 @@ class IncidentUpdatedNotification extends Notification
                         'new_status' => $this->update->human_status,
                     ]))
                     ->line($content)
-                    ->action('View Component', $this->update->link);
+                    ->action('View Incident', cachet_route('incident', [$this->update->incident]))
+                    ->line(trans('cachet.subscriber.unsubscribe', ['link' => cachet_route('subscribe.unsubscribe', $notifiable->verify_code)]));
     }
 
     /**

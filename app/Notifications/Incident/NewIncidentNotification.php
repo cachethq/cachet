@@ -73,18 +73,12 @@ class NewIncidentNotification extends Notification
             'name' => $this->incident->name,
         ]);
 
-        if ($this->incident->status === Incident::FIXED) {
-            $status = 'success';
-        } else {
-            $status = 'error';
-        }
-
         return (new MailMessage())
                     ->subject(trans('notifications.incident.new.subject'))
-                    ->$status()
                     ->greeting(trans('notifications.incident.new.title', ['app_name' => Config::get('setting.app_name')]))
                     ->line($content)
-                    ->action('View Component', $this->incident->link);
+                    ->action('View Incident', cachet_route('incident', [$this->incident]))
+                    ->line(trans('cachet.subscriber.unsubscribe', ['link' => cachet_route('subscribe.unsubscribe', $notifiable->verify_code)]));
     }
 
     /**
