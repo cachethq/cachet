@@ -14,8 +14,9 @@ return [
     'components' => [
         'last_updated' => '最后更新 :timestamp',
         'status'       => [
+            0 => '未知',
             1 => '运行正常',
-            2 => '负载较高',
+            2 => '性能问题',
             3 => 'Partial Outage',
             4 => 'Major Outage',
         ],
@@ -28,16 +29,26 @@ return [
     'incidents' => [
         'none'          => '无故障报告',
         'past'          => '历史状态',
-        'previous_week' => '前一周',
-        'next_week'     => '后一周',
+        'previous_week' => '上一周',
+        'next_week'     => '下一周',
+        'stickied'      => '已关注的故障',
         'scheduled'     => 'Scheduled Maintenance',
         'scheduled_at'  => ', scheduled :timestamp',
+        'posted'        => '发布于 :timestamp',
         'status'        => [
-            0 => '计划中', // TODO: Hopefully remove this.
             1 => '确认中',
             2 => '修复中',
             3 => '已更新',
             4 => '已解决',
+        ],
+    ],
+
+    // Schedule
+    'schedules' => [
+        'status' => [
+            0 => '即将进行',
+            1 => '正在进行',
+            2 => '已完成',
         ],
     ],
 
@@ -65,9 +76,10 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe' => '订阅最新的更新。',
-        'button'    => 'Subscribe',
-        'manage'    => [
+        'subscribe'   => '订阅最新的更新。',
+        'unsubscribe' => 'Unsubscribe at :link',
+        'button'      => 'Subscribe',
+        'manage'      => [
             'no_subscriptions' => '您当前已订阅所有更新。',
             'my_subscriptions' => '您当前已订阅下列更新',
         ],
@@ -80,40 +92,14 @@ return [
             'unsubscribed'       => 'Your email subscription has been cancelled.',
             'failure'            => 'Something went wrong with the subscription.',
             'already-subscribed' => '无法订阅，因为这个邮箱地址 ( :email ) 已经在订阅列表中了。',
-            'verify'             => [
-                'text'   => "请确认您的 :app_name 状态更新邮件订阅。\n:link",
-                'html'   => '<p>请确认您的 :app_name 状态更新邮件订阅。</p>',
-                'button' => '确认订阅',
-            ],
-            'maintenance' => [
-                'subject' => '[计划维护] :name',
-            ],
-            'incident' => [
-                'subject' => '[新事件] :status: :name',
-            ],
-            'component' => [
-                'subject'       => '组件状态更新',
-                'text'          => '组件 :component_name 的状态已经更新。:component_name 现在的状态为 :component_human_status。\n谢谢, :app_name',
-                'html'          => '<p>组件 :component_name 有状态变更。:component_name 当前 :component_human_status。</p><p>谢谢, :app_name</p>',
-                'tooltip-title' => '订阅来自 component_name 的更新',
-            ],
-        ],
-    ],
-
-    'users' => [
-        'email' => [
-            'invite' => [
-                'text' => "您已被邀请加入 :app_name 团队的状态页, 请点击以下链接进行注册。\n:link\n谢谢, :app_name",
-                'html' => '<p>您已被邀请加入 :app_name 团队的状态页, 请点击以下链接进行注册。</p><p><a href=":link">:link</a></p><p>谢谢, :app_name</p>',
-            ],
         ],
     ],
 
     'signup' => [
         'title'    => '注册',
-        'username' => 'Username',
+        'username' => '用户名',
         'email'    => '电子邮箱',
-        'password' => 'Password',
+        'password' => '密码',
         'success'  => '您的账号已注册成功。',
         'failure'  => '注册失败。',
     ],
@@ -136,6 +122,7 @@ return [
     'home'            => '主屏幕',
     'description'     => '始终保持对 :app 服务状态的关注。',
     'powered_by'      => '由 <a href="https://cachethq.io" class="links">Cachet</a> 驱动。',
+    'timezone'        => '时间将以 :timezone 时区显示。',
     'about_this_site' => '关于我们',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',
