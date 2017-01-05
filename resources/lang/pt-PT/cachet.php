@@ -12,15 +12,16 @@
 return [
     // Components
     'components' => [
-        'last_updated' => 'Last updated :timestamp',
+        'last_updated' => 'Ultima actualização :timestamp',
         'status'       => [
+            0 => 'Unknown',
             1 => 'Operacional',
             2 => 'Problemas de performance',
             3 => 'Indisponibilidade parcial',
             4 => 'Indisponibilidade total',
         ],
         'group' => [
-            'other' => 'Other Components',
+            'other' => 'Outros componentes',
         ],
     ],
 
@@ -29,15 +30,25 @@ return [
         'none'          => 'Nenhum incidente reportado',
         'past'          => 'Incidentes anteriores',
         'previous_week' => 'Semana anterior',
-        'next_week'     => 'Próxima semana',
+        'next_week'     => 'Próxima Semana',
+        'stickied'      => 'Stickied Incidents',
         'scheduled'     => 'Manutenção Agendada',
         'scheduled_at'  => ', agendada :timestamp',
+        'posted'        => 'Posted :timestamp',
         'status'        => [
-            0 => 'Agendada', // TODO: Hopefully remove this.
             1 => 'Investigando',
             2 => 'Identificado',
             3 => 'Observando',
             4 => 'Resolvido',
+        ],
+    ],
+
+    // Schedule
+    'schedules' => [
+        'status' => [
+            0 => 'Upcoming',
+            1 => 'In Progress',
+            2 => 'Complete',
         ],
     ],
 
@@ -65,47 +76,22 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe' => 'Inscreva-se para obter as atualizações mais recentes',
-        'button'    => 'Subscrever',
-        'manage'    => [
-            'no_subscriptions' => 'You\'re currently subscribed to all updates.',
-            'my_subscriptions' => 'You\'re currently subscribed to the following updates.',
+        'subscribe'   => 'Inscreva-se para obter as atualizações mais recentes',
+        'unsubscribe' => 'Unsubscribe at :link',
+        'button'      => 'Subscrever',
+        'manage'      => [
+            'no_subscriptions' => 'Actualmente está subscrito para todas as actualizações.',
+            'my_subscriptions' => 'Actualmente está subscrito para as seguintes actualizações.',
         ],
         'email' => [
             'subscribe'          => 'Subscrever actualizações via email.',
             'subscribed'         => 'Subscreveu as notificações por e-mail, por favor verifique o seu e-mail para confirmar a subscrição.',
             'verified'           => 'A sua subscrição por e-mail foi confirmada. Obrigado!',
-            'manage'             => 'Manage your subscription',
+            'manage'             => 'Gerir as suas subscrições',
             'unsubscribe'        => 'Remover subscrição de e-mail.',
             'unsubscribed'       => 'A sua subscrição de e-mail foi cancelada.',
             'failure'            => 'Algo correu mal com a sua subscrição.',
             'already-subscribed' => 'Não posso subscrever :email pois já se encontra subscrito.',
-            'verify'             => [
-                'text'   => "Please confirm your email subscription to :app_name status updates.\n:link",
-                'html'   => '<p>Please confirm your email subscription to :app_name status updates.</p>',
-                'button' => 'Confirm Subscription',
-            ],
-            'maintenance' => [
-                'subject' => '[Maintenance Scheduled] :name',
-            ],
-            'incident' => [
-                'subject' => '[New Incident] :status: :name',
-            ],
-            'component' => [
-                'subject'       => 'Atualização do Estado do Componente',
-                'text'          => 'O componente :component_name teve uma mudança de estado. O componente está agora em :component_human_status.\nObrigado, :app_name',
-                'html'          => '<p>O componente :component_name teve uma mudança de estado. O componente está agora em :component_human_status.</p><p>Obrigado, :app_name</p>',
-                'tooltip-title' => 'Subscrever a notificações de :component_name.',
-            ],
-        ],
-    ],
-
-    'users' => [
-        'email' => [
-            'invite' => [
-                'text' => "Você foi convidado para a equipa :app_name página de status, para se inscrever siga o próximo link.\n:link\nObrigado, :app_name",
-                'html' => '<p>Foi convidado para a equipa :app_name página de status, para se inscrever siga o seguinte link.</p> <p><a href=":link">:link</a></p> <p>Obrigado, :app_name</p>',
-            ],
         ],
     ],
 
@@ -133,9 +119,10 @@ return [
     ],
 
     // Other
-    'home'            => 'Home',
-    'description'     => 'Stay up to date with the latest service updates from :app.',
-    'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
+    'home'            => 'Início',
+    'description'     => 'Mantenha-se actualizado relativamente às alterações de serviço do :app.',
+    'powered_by'      => 'Suportado por <a href="https://cachethq.io" class="links">Cachet</a>.',
+    'timezone'        => 'Times are shown in :timezone.',
     'about_this_site' => 'Sobre este Site',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',
