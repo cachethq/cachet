@@ -14,6 +14,7 @@ return [
     'components' => [
         'last_updated' => 'Última atualização :timestamp',
         'status'       => [
+            0 => 'Unknown',
             1 => 'Operacional',
             2 => 'Problemas de performance',
             3 => 'Indisponibilidade parcial',
@@ -28,16 +29,26 @@ return [
     'incidents' => [
         'none'          => 'Nenhum incidente reportado',
         'past'          => 'Incidentes anteriores',
-        'previous_week' => 'Semana anterior',
+        'previous_week' => 'Última semana',
         'next_week'     => 'Próxima semana',
+        'stickied'      => 'Incidentes fixados',
         'scheduled'     => 'Manutenção Agendada',
         'scheduled_at'  => ', agendada :timestamp',
+        'posted'        => 'Postado :timestamp',
         'status'        => [
-            0 => 'Agendado', // TODO: Hopefully remove this.
             1 => 'Investigando',
             2 => 'Identificado',
             3 => 'Observando',
             4 => 'Resolvido',
+        ],
+    ],
+
+    // Schedule
+    'schedules' => [
+        'status' => [
+            0 => 'Upcoming',
+            1 => 'In Progress',
+            2 => 'Complete',
         ],
     ],
 
@@ -65,9 +76,10 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe' => 'Inscreva-se para obter as atualizações mais recentes',
-        'button'    => 'Inscreva-se',
-        'manage'    => [
+        'subscribe'   => 'Inscreva-se para obter as atualizações mais recentes',
+        'unsubscribe' => 'Unsubscribe at :link',
+        'button'      => 'Inscreva-se',
+        'manage'      => [
             'no_subscriptions' => 'Você está atualmente inscrito a todas as atualizações.',
             'my_subscriptions' => 'Você está atualmente inscrito para as seguintes atualizações.',
         ],
@@ -80,32 +92,6 @@ return [
             'unsubscribed'       => 'Sua inscrição foi cancelada.',
             'failure'            => 'Ocorreu um problema na sua inscrição.',
             'already-subscribed' => 'Impossível inscrever :email pois já se encontra inscrito.',
-            'verify'             => [
-                'text'   => "Por favor, confirme sua assinatura de e-mail para receber atualizações de status de :app_name. \n:link",
-                'html'   => '<p>Por favor, confirme sua assinatura de e-mail para receber atualizações de status de :app_name.</p>',
-                'button' => 'Confirmar inscrição',
-            ],
-            'maintenance' => [
-                'subject' => '[Manutenção Programada] :name',
-            ],
-            'incident' => [
-                'subject' => '[Novo incidente] :status: :name',
-            ],
-            'component' => [
-                'subject'       => 'Atualização do Estado do Componente',
-                'text'          => 'O componente :component_name teve uma mudança de estado. O componente está agora em :component_human_status.\nObrigado, :app_name',
-                'html'          => '<p>O componente :component_name teve uma mudança de estado. O componente está agora em :component_human_status.</p><p>Obrigado, :app_name</p>',
-                'tooltip-title' => 'Inscrever-se as notificações de :component_name.',
-            ],
-        ],
-    ],
-
-    'users' => [
-        'email' => [
-            'invite' => [
-                'text' => "Você foi convidado para a página de status da equipe :app_name, para se inscrever siga o próximo link.\n:link\nObrigado,: app_name",
-                'html' => '<p>Você foi convidado para a página de status da equipe :app_name, para se inscrever siga o seguinte link.</p> <p><a href=":link">:link</a></p> <p>Obrigado, :app_name</p>',
-            ],
         ],
     ],
 
@@ -136,6 +122,7 @@ return [
     'home'            => 'Início',
     'description'     => 'Mantenha-se atualizado com as últimas atualizações de serviço de: app.',
     'powered_by'      => 'Desenvolvido por <a href="https://cachethq.io" class="links">Cachet</a>.',
+    'timezone'        => 'Horário é mostrado em :timezone.',
     'about_this_site' => 'Sobre este Site',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',
