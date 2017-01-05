@@ -16,6 +16,7 @@ use Dotenv\Dotenv;
 use Dotenv\Exception\InvalidPathException;
 use Illuminate\Console\Command;
 use Illuminate\Contracts\Events\Dispatcher;
+use Illuminate\Contracts\Console\Kernel;
 
 /**
  * This is the install command class.
@@ -71,9 +72,9 @@ class InstallCommand extends Command
             $this->configureDrivers();
             $this->configureMail();
             $this->configureCachet();
+            $this->configureUser();
         }
 
-<<<<<<< HEAD
         $this->line('Installing Cachet...');
 
         $this->events->fire('command.installing', $this);
@@ -87,15 +88,6 @@ class InstallCommand extends Command
         $this->events->fire('command.linkstorage', $this);
         $this->events->fire('command.extrastuff', $this);
         $this->events->fire('command.installed', $this);
-=======
-        $this->configureEnvironmentFile();
-        $this->configureKey();
-        $this->configureDatabase();
-        $this->configureDrivers();
-        $this->configureMail();
-        $this->configureCachet();
-        $this->configureUser();
->>>>>>> Add user on cachet install command
 
         $this->info('Cachet is installed ⚡');
     }
@@ -150,15 +142,9 @@ class InstallCommand extends Command
         ], $default);
 
         $config['DB_DRIVER'] = $this->choice('Which database driver do you want to use?', [
-<<<<<<< HEAD
             'mysql'      => 'MySQL',
             'pgsql'      => 'PostgreSQL',
             'sqlite'     => 'SQLite',
-=======
-            'mysql'  => 'MySQL',
-            'pgsql'  => 'PostgreSQL',
-            'sqlite' => 'SQLite',
->>>>>>> Add user on cachet install command
         ], $config['DB_DRIVER']);
 
         if ($config['DB_DRIVER'] === 'sqlite') {
@@ -329,7 +315,7 @@ class InstallCommand extends Command
 
     /**
      * Configure Cachet.
-     *
+     * 
      * @param array $config
      *
      * @return void
@@ -352,7 +338,7 @@ class InstallCommand extends Command
     }
 
     /**
-     * Configure the fisrt user.
+     * Configure the first user.
      *
      * @return void
      */
@@ -364,17 +350,17 @@ class InstallCommand extends Command
 
         // We need to refresh the config to get access to the newly connected database.
         $this->getFreshConfiguration();
-
+        
         // Now we need to install the application.
-        $this->call('app:install');
-
+        // $this->call('cachet:install');
+        
         $user = [
             'username' => $this->ask('Please enter your username'),
             'email'    => $this->ask('Please enter your email'),
             'password' => $this->secret('Please enter your password'),
             'level'    => User::LEVEL_ADMIN,
         ];
-
+        
         User::create($user);
     }
 
@@ -426,8 +412,7 @@ class InstallCommand extends Command
     protected function getFreshConfiguration()
     {
         $app = require $this->laravel->bootstrapPath().'/app.php';
-
-        $app->make('Illuminate\Contracts\Console\Kernel')->bootstrap();
+         $app->make(Kernel::class)->bootstrap();
     }
 
     /**
