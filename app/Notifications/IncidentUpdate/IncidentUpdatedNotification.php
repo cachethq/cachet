@@ -70,7 +70,7 @@ class IncidentUpdatedNotification extends Notification
     public function toMail($notifiable)
     {
         $content = trans('notifications.incident.update.content', [
-            'name' => $this->update->name,
+            'name' => $this->update->incident->name,
             'time' => $this->update->created_at_diff,
         ]);
 
