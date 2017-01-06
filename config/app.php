@@ -175,6 +175,7 @@ return [
          */
         AltThree\Badger\BadgerServiceProvider::class,
         AltThree\Emoji\EmojiServiceProvider::class,
+        AltThree\Logger\LoggerServiceProvider::class,
         BackupManager\Laravel\Laravel5ServiceProvider::class,
         Barryvdh\Cors\ServiceProvider::class,
         Fideloper\Proxy\TrustedProxyServiceProvider::class,
