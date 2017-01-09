@@ -47,9 +47,9 @@ class VerifySubscriptionNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage())
-                    ->subject(trans('notifications.subscriber.verify.subject'))
-                    ->greeting(trans('notifications.subscriber.verify.title', ['app_name' => Config::get('setting.app_name')]))
-                    ->action(trans('notifications.subscriber.verify.action'), cachet_route('subscribe.verify', ['code' => $notifiable->verify_code]))
-                    ->line(trans('notifications.subscriber.verify.content', ['app_name' => Config::get('setting.app_name')]));
+                    ->subject(trans('notifications.subscriber.verify.mail.subject'))
+                    ->greeting(trans('notifications.subscriber.verify.mail.title', ['app_name' => Config::get('setting.app_name')]))
+                    ->action(trans('notifications.subscriber.verify.mail.action'), cachet_route('subscribe.verify', ['code' => $notifiable->verify_code]))
+                    ->line(trans('notifications.subscriber.verify.mail.content', ['app_name' => Config::get('setting.app_name')]));
     }
 }

@@ -69,19 +69,19 @@ class IncidentUpdatedNotification extends Notification
      */
     public function toMail($notifiable)
     {
-        $content = trans('notifications.incident.update.content', [
+        $content = trans('notifications.incident.update.mail.content', [
             'name' => $this->update->incident->name,
             'time' => $this->update->created_at_diff,
         ]);
 
         return (new MailMessage())
-                    ->subject(trans('notifications.incident.update.subject'))
-                    ->greeting(trans('notifications.incident.update.title', [
+                    ->subject(trans('notifications.incident.update.mail.subject'))
+                    ->greeting(trans('notifications.incident.update.mail.title', [
                         'name'       => $this->update->incident->name,
                         'new_status' => $this->update->human_status,
                     ]))
                     ->line($content)
-                    ->action('View Incident', cachet_route('incident', [$this->update->incident]))
+                    ->action(trans('notifications.incident.update.mail.action'), cachet_route('incident', [$this->update->incident]))
                     ->line(trans('cachet.subscriber.unsubscribe', ['link' => cachet_route('subscribe.unsubscribe', $notifiable->verify_code)]));
     }
 
@@ -94,7 +94,7 @@ class IncidentUpdatedNotification extends Notification
      */
     public function toNexmo($notifiable)
     {
-        $content = trans('notifications.incident.update.content', [
+        $content = trans('notifications.incident.update.sms.content', [
             'name' => $this->update->incident->name,
         ]);
 
@@ -110,7 +110,7 @@ class IncidentUpdatedNotification extends Notification
      */
     public function toSlack($notifiable)
     {
-        $content = trans('notifications.incident.update.content', [
+        $content = trans('notifications.incident.update.slack.content', [
             'name' => $this->update->incident->name,
         ]);
 
@@ -126,12 +126,12 @@ class IncidentUpdatedNotification extends Notification
 
         return (new SlackMessage())
                     ->$status()
-                    ->content(trans('notifications.incident.update.title', [
-                        'name'       => $this->update->incident->name,
-                        'new_status' => $this->update->human_status,
-                    ]))
+                    ->content($content)
                     ->attachment(function ($attachment) use ($content) {
-                        $attachment->title($content)
+                        $attachment->title(trans('notifications.incident.update.slack.title', [
+                                        'name'       => $this->update->incident->name,
+                                        'new_status' => $this->update->human_status,
+                                    ]))
                                    ->timestamp($this->update->getWrappedObject()->created_at)
                                    ->fields(array_filter([
                                         'ID'   => "#{$this->update->id}",
