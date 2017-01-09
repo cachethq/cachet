@@ -105,7 +105,7 @@ class NewIncidentNotification extends Notification
     public function toSlack($notifiable)
     {
         $content = trans('notifications.incident.new.slack.content', [
-            'app_name' => Config::get('setting.app_name')
+            'app_name' => Config::get('setting.app_name'),
         ]);
 
         $status = 'info';
