@@ -40,7 +40,7 @@ class ComponentStatusWasUpdatedEventTest extends AbstractComponentEventTestCase
         $this->app['events']->fire(new ComponentStatusWasUpdatedEvent($component, 1, 2));
 
         $this->seeMessageFor($subscriber->email);
-        $this->seeMessageWithSubject(trans('notifications.component.status_update.subject'));
+        $this->seeMessageWithSubject(trans('notifications.component.status_update.mail.subject'));
 
         $message = $this->getMailer()->lastMessage();
 

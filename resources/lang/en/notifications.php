@@ -68,7 +68,7 @@ return [
                 'action'  => 'View',
             ],
             'slack' => [
-                'title'   => 'New Schedule Created!.'
+                'title'   => 'New Schedule Created!',
                 'content' => ':name was scheduled for :date',
             ],
             'sms' => [
