@@ -77,17 +77,17 @@ class ComponentStatusChangedNotification extends Notification
      */
     public function toMail($notifiable)
     {
-        $content = trans('notifications.component.status_update.content', [
+        $content = trans('notifications.component.status_update.mail.content', [
             'name'       => $this->component->name,
             'old_status' => $this->component->human_status,
             'new_status' => trans("cachet.components.status.{$this->status}"),
         ]);
 
         return (new MailMessage())
-                    ->subject(trans('notifications.component.status_update.subject'))
-                    ->greeting(trans('notifications.component.status_update.title'))
+                    ->subject(trans('notifications.component.status_update.mail.subject'))
+                    ->greeting(trans('notifications.component.status_update.mail.title'))
                     ->line($content)
-                    ->action('View', cachet_route('status-page'))
+                    ->action(trans('notifications.component.status_update.mail.action'), cachet_route('status-page'))
                     ->line(trans('cachet.subscriber.unsubscribe', ['link' => cachet_route('subscribe.unsubscribe', $notifiable->verify_code)]));
     }
 
@@ -100,7 +100,7 @@ class ComponentStatusChangedNotification extends Notification
      */
     public function toNexmo($notifiable)
     {
-        $content = trans('notifications.component.status_update.content', [
+        $content = trans('notifications.component.status_update.sms.content', [
             'name'       => $this->component->name,
             'old_status' => $this->component->human_status,
             'new_status' => trans("cachet.components.status.{$this->status}"),
@@ -118,7 +118,7 @@ class ComponentStatusChangedNotification extends Notification
      */
     public function toSlack($notifiable)
     {
-        $content = trans('notifications.component.status_update.content', [
+        $content = trans('notifications.component.status_update.slack.content', [
             'name'       => $this->component->name,
             'old_status' => $this->component->human_status,
             'new_status' => trans("cachet.components.status.{$this->status}"),
@@ -136,7 +136,7 @@ class ComponentStatusChangedNotification extends Notification
 
         return (new SlackMessage())
                     ->$status()
-                    ->content(trans('notifications.component.status_update.title'))
+                    ->content(trans('notifications.component.status_update.slack.title'))
                     ->attachment(function ($attachment) use ($content, $notifiable) {
                         $attachment->title($content, cachet_route('status-page'))
                                    ->fields(array_filter([

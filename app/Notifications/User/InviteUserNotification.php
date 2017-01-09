@@ -47,9 +47,9 @@ class InviteUserNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage())
-                    ->subject(trans('notifications.user.invite.subject'))
-                    ->greeting(trans('notifications.user.invite.title', ['app_name' => Config::get('setting.app_name')]))
-                    ->action(trans('notifications.user.invite.action'), cachet_route('signup.invite', [$notifiable->code]))
-                    ->line(trans('notifications.user.invite.content', ['app_name' => Config::get('setting.app_name')]));
+                    ->subject(trans('notifications.user.invite.mail.subject'))
+                    ->greeting(trans('notifications.user.invite.mail.title', ['app_name' => Config::get('setting.app_name')]))
+                    ->action(trans('notifications.user.invite.mail.action'), cachet_route('signup.invite', [$notifiable->code]))
+                    ->line(trans('notifications.user.invite.mail.content', ['app_name' => Config::get('setting.app_name')]));
     }
 }

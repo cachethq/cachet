@@ -69,15 +69,15 @@ class NewIncidentNotification extends Notification
      */
     public function toMail($notifiable)
     {
-        $content = trans('notifications.incident.new.content', [
+        $content = trans('notifications.incident.new.mail.content', [
             'name' => $this->incident->name,
         ]);
 
         return (new MailMessage())
-                    ->subject(trans('notifications.incident.new.subject'))
-                    ->greeting(trans('notifications.incident.new.title', ['app_name' => Config::get('setting.app_name')]))
+                    ->subject(trans('notifications.incident.new.mail.subject'))
+                    ->greeting(trans('notifications.incident.new.mail.greeting', ['app_name' => Config::get('setting.app_name')]))
                     ->line($content)
-                    ->action('View Incident', cachet_route('incident', [$this->incident]))
+                    ->action(trans('notifications.incident.new.mail.action'), cachet_route('incident', [$this->incident]))
                     ->line(trans('cachet.subscriber.unsubscribe', ['link' => cachet_route('subscribe.unsubscribe', $notifiable->verify_code)]));
     }
 
@@ -90,11 +90,9 @@ class NewIncidentNotification extends Notification
      */
     public function toNexmo($notifiable)
     {
-        $content = trans('notifications.incident.new.content', [
+        return (new NexmoMessage())->content(trans('notifications.incident.new.sms.content', [
             'name' => $this->incident->name,
-        ]);
-
-        return (new NexmoMessage())->content($content);
+        ]));
     }
 
     /**
@@ -106,8 +104,8 @@ class NewIncidentNotification extends Notification
      */
     public function toSlack($notifiable)
     {
-        $content = trans('notifications.incident.new.content', [
-            'name' => $this->incident->name,
+        $content = trans('notifications.incident.new.slack.content', [
+            'app_name' => Config::get('setting.app_name')
         ]);
 
         $status = 'info';
@@ -122,9 +120,9 @@ class NewIncidentNotification extends Notification
 
         return (new SlackMessage())
                     ->$status()
-                    ->content(trans('notifications.incident.new.title', ['app_name' => Config::get('setting.app_name')]))
+                    ->content($content)
                     ->attachment(function ($attachment) use ($content) {
-                        $attachment->title($content)
+                        $attachment->title(trans('notifications.incident.new.slack.title', [$this->incident->name]))
                                    ->timestamp($this->incident->getWrappedObject()->occurred_at)
                                    ->fields(array_filter([
                                         'ID'   => "#{$this->incident->id}",

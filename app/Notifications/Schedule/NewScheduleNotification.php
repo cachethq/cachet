@@ -68,16 +68,16 @@ class NewScheduleNotification extends Notification
      */
     public function toMail($notifiable)
     {
-        $content = trans('notifications.schedule.new.content', [
+        $content = trans('notifications.schedule.new.mail.content', [
             'name' => $this->schedule->name,
             'date' => $this->schedule->scheduled_at_formatted,
         ]);
 
         return (new MailMessage())
-                    ->subject(trans('notifications.schedule.new.subject'))
-                    ->greeting(trans('notifications.schedule.new.title'))
+                    ->subject(trans('notifications.schedule.new.mail.subject'))
+                    ->greeting(trans('notifications.schedule.new.mail.title'))
                     ->line($content)
-                    ->action('View Schedule', cachet_route('schedule', [$this->schedule]))
+                    ->action(trans('notifications.schedule.new.mail.action'), cachet_route('schedule', [$this->schedule]))
                     ->line(trans('cachet.subscriber.unsubscribe', ['link' => cachet_route('subscribe.unsubscribe', $notifiable->verify_code)]));
     }
 
@@ -90,7 +90,7 @@ class NewScheduleNotification extends Notification
      */
     public function toNexmo($notifiable)
     {
-        $content = trans('notifications.schedule.new.content', [
+        $content = trans('notifications.schedule.new.sms.content', [
             'name' => $this->schedule->name,
             'date' => $this->schedule->scheduled_at_formatted,
         ]);
@@ -107,13 +107,13 @@ class NewScheduleNotification extends Notification
      */
     public function toSlack($notifiable)
     {
-        $content = trans('notifications.schedule.new.content', [
+        $content = trans('notifications.schedule.new.slack.content', [
             'name' => $this->schedule->name,
             'date' => $this->schedule->scheduled_at_formatted,
         ]);
 
         return (new SlackMessage())
-                    ->content(trans('notifications.schedule.new.title'))
+                    ->content(trans('notifications.schedule.new.slack.title'))
                     ->attachment(function ($attachment) use ($content) {
                         $attachment->title($content)
                                    ->timestamp($this->schedule->getWrappedObject()->scheduled_at)

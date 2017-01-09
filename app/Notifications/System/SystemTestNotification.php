@@ -46,8 +46,8 @@ class SystemTestNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage())
-                    ->subject(trans('notifications.system.test.subject'))
-                    ->greeting(trans('notifications.system.test.title'))
-                    ->line(trans('notifications.system.test.content'));
+                    ->subject(trans('notifications.system.test.mail.subject'))
+                    ->greeting(trans('notifications.system.test.mail.title'))
+                    ->line(trans('notifications.system.test.mail.content'));
     }
 }
