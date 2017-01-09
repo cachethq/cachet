@@ -10,7 +10,6 @@
  */
 
 return [
-    // Enabled langs
     'af' => [
         'name'   => 'Afrikaans',
         'subset' => 'latin',
@@ -85,6 +84,10 @@ return [
     ],
     'ko' => [
         'name'   => '한글',
+        'subset' => 'latin',
+    ],
+    'ms' => [
+        'name'   => 'Malay',
         'subset' => 'latin',
     ],
     'nl' => [

@@ -81,7 +81,7 @@ class ComponentGroupPresenter extends BasePresenter implements Arrayable
 
         return $this->wrappedObject->components->filter(function ($component) {
             return $component->status > 1;
-        })->count() === 0;
+        })->isEmpty();
     }
 
     /**

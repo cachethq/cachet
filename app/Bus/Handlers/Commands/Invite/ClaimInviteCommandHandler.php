@@ -28,8 +28,7 @@ class ClaimInviteCommandHandler
     {
         $invite = $command->invite;
 
-        $invite->claimed_at = Carbon::now();
-        $invite->save();
+        $invite->update(['claimed_at' => Carbon::now()]);
 
         event(new InviteWasClaimedEvent($invite));
     }

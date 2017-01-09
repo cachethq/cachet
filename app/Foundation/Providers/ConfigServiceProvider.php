@@ -14,9 +14,9 @@ namespace CachetHQ\Cachet\Foundation\Providers;
 use CachetHQ\Cachet\Models\Setting as SettingModel;
 use CachetHQ\Cachet\Settings\Cache;
 use CachetHQ\Cachet\Settings\Repository;
+use Carbon\Carbon;
 use Exception;
 use Illuminate\Support\ServiceProvider;
-use Jenssegers\Date\Date;
 
 /**
  * This is the config service provider class.
@@ -58,20 +58,24 @@ class ConfigServiceProvider extends ServiceProvider
             //
         }
 
+        // Set the app url.
         if ($appDomain = $this->app->config->get('setting.app_domain')) {
             $this->app->config->set('app.url', $appDomain);
         }
 
+        // Set the locale.
         if ($appLocale = $this->app->config->get('setting.app_locale')) {
             $this->app->config->set('app.locale', $appLocale);
             $this->app->translator->setLocale($appLocale);
-            Date::setLocale($appLocale);
+            Carbon::setLocale($appLocale);
         }
 
+        // Set the timezone.
         if ($appTimezone = $this->app->config->get('setting.app_timezone')) {
             $this->app->config->set('cachet.timezone', $appTimezone);
         }
 
+        // Set allowed domains for CORS.
         $allowedOrigins = $this->app->config->get('cors.defaults.allowedOrigins');
 
         if ($allowedDomains = $this->app->config->get('setting.allowed_domains')) {
@@ -84,6 +88,23 @@ class ConfigServiceProvider extends ServiceProvider
         }
 
         $this->app->config->set('cors.paths.api/v1/*.allowedOrigins', $allowedOrigins);
+
+        // Set the mail from address.
+        if (!$this->app->config->get('mail.from.address')) {
+            $url = parse_url($appDomain);
+
+            if (isset($url['host'])) {
+                $this->app->config->set('mail.from.address', "notify@{$url['host']}");
+            }
+        }
+
+        // Set the mail from name.
+        if (!$this->app->config->get('mail.from.name')) {
+            $this->app->config->set(
+                'mail.from.name',
+                $this->app->config->get('setting.app_name', $this->app->config->get('app.name'))
+            );
+        }
     }
 
     /**

@@ -28,8 +28,11 @@ class IncidentWasReportedEventTest extends AbstractIncidentEventTestCase
 
     protected function getObjectAndParams()
     {
-        $params = ['incident' => new Incident()];
-        $object = new IncidentWasReportedEvent($params['incident']);
+        $params = [
+            'incident' => new Incident(),
+            'notify'   => true,
+        ];
+        $object = new IncidentWasReportedEvent($params['incident'], $params['notify']);
 
         return compact('params', 'object');
     }

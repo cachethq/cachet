@@ -63,6 +63,13 @@ final class AddComponentCommand
     public $enabled;
 
     /**
+     * JSON meta data for the component.
+     *
+     * @var string|null
+     */
+    public $meta;
+
+    /**
      * The validation rules.
      *
      * @var string[]
@@ -75,22 +82,24 @@ final class AddComponentCommand
         'order'       => 'nullable|int',
         'group_id'    => 'nullable|int',
         'enabled'     => 'nullable|bool',
+        'meta'        => 'nullable|string',
     ];
 
     /**
      * Create a new add component command instance.
      *
-     * @param string $name
-     * @param string $description
-     * @param int    $status
-     * @param string $link
-     * @param int    $order
-     * @param int    $group_id
-     * @param bool   $enabled
+     * @param string      $name
+     * @param string      $description
+     * @param int         $status
+     * @param string      $link
+     * @param int         $order
+     * @param int         $group_id
+     * @param bool        $enabled
+     * @param string|null $meta
      *
      * @return void
      */
-    public function __construct($name, $description, $status, $link, $order, $group_id, $enabled)
+    public function __construct($name, $description, $status, $link, $order, $group_id, $enabled, $meta)
     {
         $this->name = $name;
         $this->description = $description;
@@ -99,5 +108,6 @@ final class AddComponentCommand
         $this->order = $order;
         $this->group_id = $group_id;
         $this->enabled = $enabled;
+        $this->meta = $meta;
     }
 }

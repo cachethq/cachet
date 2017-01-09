@@ -14,6 +14,7 @@ namespace CachetHQ\Cachet\Integrations\Core;
 use CachetHQ\Cachet\Integrations\Contracts\System as SystemContract;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
+use Illuminate\Contracts\Config\Repository;
 
 /**
  * This is the core system class.
@@ -22,6 +23,25 @@ use CachetHQ\Cachet\Models\Incident;
  */
 class System implements SystemContract
 {
+    /**
+     * The illuminate config instance.
+     *
+     * @var \Illuminate\Contracts\Config\Repository
+     */
+    protected $config;
+
+    /**
+     * Create a new system instance.
+     *
+     * @param \Illuminate\Contracts\Config\Repository $config
+     *
+     * @return void
+     */
+    public function __construct(Repository $config)
+    {
+        $this->config = $config;
+    }
+
     /**
      * Get the entire system status.
      *
@@ -49,8 +69,8 @@ class System implements SystemContract
             ];
         } elseif ($enabledScope->notStatus(1)->count() === 0) {
             // If all our components are ok, do we have any non-fixed incidents?
-            $incidents = Incident::notScheduled()->orderBy('created_at', 'desc')->get()->filter(function ($incident) {
-                return $incident->status > 0;
+            $incidents = Incident::orderBy('occurred_at', 'desc')->get()->filter(function ($incident) {
+                return $incident->status !== Incident::FIXED;
             });
             $incidentCount = $incidents->count();
             $unresolvedCount = $incidents->filter(function ($incident) {
@@ -79,5 +99,17 @@ class System implements SystemContract
     public function getVersion()
     {
         return CACHET_VERSION;
+    }
+
+    /**
+     * Get the table prefix.
+     *
+     * @return string
+     */
+    public function getTablePrefix()
+    {
+        $driver = $this->config->get('database.default');
+
+        return $this->config->get("database.connections.{$driver}.prefix");
     }
 }

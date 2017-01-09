@@ -33,7 +33,7 @@ class BeaconCommand extends Command
      *
      * @var string
      */
-    protected $description = 'Communicate with the Cachet Beacon.';
+    protected $description = 'Communicate with the Cachet Beacon server';
 
     /**
      * Execute the console command.

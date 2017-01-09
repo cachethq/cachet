@@ -35,7 +35,7 @@ class AlterTableMetricsAddDefaultViewColumn extends Migration
     public function down()
     {
         Schema::table('metrics', function (Blueprint $table) {
-            //
+            $table->dropColumn('default_view');
         });
     }
 }

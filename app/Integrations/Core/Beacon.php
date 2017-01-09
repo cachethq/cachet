@@ -111,7 +111,6 @@ class Beacon implements BeaconContract
                 'json'    => $payload,
             ]);
         } catch (Exception $e) {
-            // TODO: Log a warning that the beacon could not be sent.
             event(new BeaconFailedToSendEvent());
 
             return;

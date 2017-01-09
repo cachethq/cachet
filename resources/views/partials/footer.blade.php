@@ -32,7 +32,7 @@
                     <li>
                         <a class="btn btn-link" href="{{ cachet_route('feed.atom') }}">{{ trans('cachet.atom-feed') }}</a>
                     </li>
-                    @if(subscribers_enabled())
+                    @if($enable_subscribers)
                     <li>
                         <a class="btn btn-success btn-outline" href="{{ cachet_route('subscribe') }}">{{ trans('cachet.subscriber.button') }}</a>
                     </li>

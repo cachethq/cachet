@@ -15,7 +15,6 @@ use CachetHQ\Cachet\Dates\DateFactory;
 use CachetHQ\Cachet\Presenters\Traits\TimestampsTrait;
 use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Contracts\Support\Arrayable;
-use Illuminate\Support\Facades\Config;
 use McCool\LaravelAutoPresenter\BasePresenter;
 
 /**
@@ -32,7 +31,7 @@ class IncidentUpdatePresenter extends BasePresenter implements Arrayable
      *
      * @return string
      */
-    public function formattedMessage()
+    public function formatted_message()
     {
         return Markdown::convertToHtml($this->wrappedObject->message);
     }
@@ -44,7 +43,7 @@ class IncidentUpdatePresenter extends BasePresenter implements Arrayable
      */
     public function raw_message()
     {
-        return strip_tags($this->formattedMessage());
+        return strip_tags($this->formatted_message());
     }
 
     /**
@@ -64,7 +63,7 @@ class IncidentUpdatePresenter extends BasePresenter implements Arrayable
      */
     public function created_at_formatted()
     {
-        return ucfirst(app(DateFactory::class)->make($this->wrappedObject->created_at)->format(Config::get('setting.incident_date_format', 'l jS F Y H:i:s')));
+        return ucfirst(app(DateFactory::class)->make($this->wrappedObject->created_at)->format($this->incidentDateFormat()));
     }
 
     /**

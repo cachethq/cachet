@@ -57,22 +57,6 @@ class IncidentController extends Controller
     {
         $this->auth = $auth;
 
-        $this->subMenu = [
-            'incidents' => [
-                'title'  => trans('dashboard.incidents.incidents'),
-                'url'    => cachet_route('dashboard.incidents'),
-                'icon'   => 'ion-android-checkmark-circle',
-                'active' => true,
-            ],
-            'schedule' => [
-                'title'  => trans('dashboard.schedule.schedule'),
-                'url'    => cachet_route('dashboard.schedule'),
-                'icon'   => 'ion-android-calendar',
-                'active' => false,
-            ],
-        ];
-
-        View::share('sub_menu', $this->subMenu);
         View::share('sub_title', trans('dashboard.incidents.title'));
     }
 
@@ -83,7 +67,7 @@ class IncidentController extends Controller
      */
     public function showIncidents()
     {
-        $incidents = Incident::notScheduled()->orderBy('created_at', 'desc')->get();
+        $incidents = Incident::orderBy('created_at', 'desc')->get();
 
         return View::make('dashboard.incidents.index')
             ->withPageTitle(trans('dashboard.incidents.incidents').' - '.trans('dashboard.dashboard'))
@@ -127,13 +111,13 @@ class IncidentController extends Controller
             $incident = dispatch(new ReportIncidentCommand(
                 Binput::get('name'),
                 Binput::get('status'),
-                Binput::get('message'),
+                Binput::get('message', null, false, false),
                 Binput::get('visible', true),
                 Binput::get('component_id'),
                 Binput::get('component_status'),
                 Binput::get('notify', false),
                 Binput::get('stickied', false),
-                Binput::get('created_at'),
+                Binput::get('occurred_at'),
                 null,
                 []
             ));
@@ -196,7 +180,10 @@ class IncidentController extends Controller
     public function createIncidentTemplateAction()
     {
         try {
-            IncidentTemplate::create(Binput::get('template'));
+            IncidentTemplate::create([
+                'name'     => Binput::get('name'),
+                'template' => Binput::get('template', null, false, false),
+            ]);
         } catch (ValidationException $e) {
             return cachet_redirect('dashboard.templates.create')
                 ->withInput(Binput::all())
@@ -259,7 +246,7 @@ class IncidentController extends Controller
                 Binput::get('component_status'),
                 Binput::get('notify', true),
                 Binput::get('stickied', false),
-                Binput::get('created_at'),
+                Binput::get('occurred_at'),
                 null,
                 []
             ));

@@ -5,3 +5,5 @@ files:
     languages_mapping:
       locale:
         'en-ES': 'es'
+        'fa-IR': 'fa'
+        'ko-KR': 'kr'

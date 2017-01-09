@@ -11,8 +11,8 @@
 
 namespace CachetHQ\Cachet\Dates;
 
+use Carbon\Carbon;
 use DateTimeZone;
-use Jenssegers\Date\Date;
 
 /**
  * This is the date factory class.
@@ -62,7 +62,7 @@ class DateFactory
      */
     public function create($format, $time)
     {
-        return Date::createFromFormat($format, $time, $this->cachetTimezone)->setTimezone($this->appTimezone);
+        return Carbon::createFromFormat($format, $time, $this->cachetTimezone)->setTimezone($this->appTimezone);
     }
 
     /**
@@ -79,7 +79,7 @@ class DateFactory
      */
     public function createNormalized($format, $time)
     {
-        return Date::createFromFormat($format, $time)->setTimezone($this->appTimezone);
+        return Carbon::createFromFormat($format, $time)->setTimezone($this->appTimezone);
     }
 
     /**
@@ -93,7 +93,7 @@ class DateFactory
      */
     public function make($time = null)
     {
-        return (new Date($time))->setTimezone($this->cachetTimezone);
+        return Carbon::parse($time)->setTimezone($this->cachetTimezone);
     }
 
     /**
@@ -103,7 +103,7 @@ class DateFactory
      */
     public function getTimezone()
     {
-        $dateTime = new Date();
+        $dateTime = new Carbon();
         $dateTime->setTimeZone(new DateTimeZone($this->cachetTimezone));
 
         return $dateTime->format('T');

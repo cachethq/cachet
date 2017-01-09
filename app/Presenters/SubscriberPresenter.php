@@ -14,7 +14,6 @@ namespace CachetHQ\Cachet\Presenters;
 use CachetHQ\Cachet\Dates\DateFactory;
 use CachetHQ\Cachet\Presenters\Traits\TimestampsTrait;
 use Illuminate\Contracts\Support\Arrayable;
-use Illuminate\Support\Facades\Config;
 use McCool\LaravelAutoPresenter\BasePresenter;
 
 class SubscriberPresenter extends BasePresenter implements Arrayable
@@ -28,7 +27,7 @@ class SubscriberPresenter extends BasePresenter implements Arrayable
      */
     public function verified_at()
     {
-        return ucfirst(app(DateFactory::class)->make($this->wrappedObject->verified_at)->format(Config::get('setting.incident_date_format', 'l jS F Y H:i:s')));
+        return ucfirst(app(DateFactory::class)->make($this->wrappedObject->verified_at)->format($this->incidentDateFormat()));
     }
 
     /**

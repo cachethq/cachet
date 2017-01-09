@@ -134,7 +134,8 @@ class ComponentController extends Controller
                 $componentData['link'],
                 $componentData['order'],
                 $componentData['group_id'],
-                $componentData['enabled']
+                $componentData['enabled'],
+                null // Meta data cannot be supplied through the dashboard yet.
             ));
         } catch (ValidationException $e) {
             return cachet_redirect('dashboard.components.edit', [$component->id])
@@ -187,7 +188,8 @@ class ComponentController extends Controller
                 $componentData['link'],
                 $componentData['order'],
                 $componentData['group_id'],
-                $componentData['enabled']
+                $componentData['enabled'],
+                null // Meta data cannot be supplied through the dashboard yet.
             ));
         } catch (ValidationException $e) {
             return cachet_redirect('dashboard.components.create')

@@ -76,11 +76,11 @@ final class ReportIncidentCommand
     public $stickied;
 
     /**
-     * The date at which the incident occurred.
+     * The date at which the incident occurred at.
      *
      * @var string|null
      */
-    public $incident_date;
+    public $occurred_at;
 
     /**
      * A given incident template.
@@ -110,7 +110,7 @@ final class ReportIncidentCommand
         'component_status' => 'nullable|required_with:component_id|int|min:0|max:4',
         'notify'           => 'nullable|bool',
         'stickied'         => 'required|bool',
-        'incident_date'    => 'nullable|string',
+        'occurred_at'      => 'nullable|string',
         'template'         => 'nullable|string',
     ];
 
@@ -125,13 +125,13 @@ final class ReportIncidentCommand
      * @param int         $component_status
      * @param bool        $notify
      * @param bool        $stickied
-     * @param string|null $incident_date
+     * @param string|null $occurred_at
      * @param string|null $template
      * @param array       $template_vars
      *
      * @return void
      */
-    public function __construct($name, $status, $message, $visible, $component_id, $component_status, $notify, $stickied, $incident_date, $template, array $template_vars = [])
+    public function __construct($name, $status, $message, $visible, $component_id, $component_status, $notify, $stickied, $occurred_at, $template, array $template_vars = [])
     {
         $this->name = $name;
         $this->status = $status;
@@ -141,7 +141,7 @@ final class ReportIncidentCommand
         $this->component_status = $component_status;
         $this->notify = $notify;
         $this->stickied = $stickied;
-        $this->incident_date = $incident_date;
+        $this->occurred_at = $occurred_at;
         $this->template = $template;
         $this->template_vars = $template_vars;
     }

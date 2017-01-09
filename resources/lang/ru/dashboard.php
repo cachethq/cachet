@@ -11,15 +11,17 @@
 
 return [
 
-    'dashboard' => 'Панель управления',
+    'dashboard'          => 'Панель управления',
+    'writeable_settings' => 'The Cachet settings directory is not writeable. Please make sure that <code>./bootstrap/cachet</code> is writeable by the web server.',
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Инциденты и плановые работы',
+        'title'                    => 'Incidents &amp; Schedule',
         'incidents'                => 'Инциденты',
         'logged'                   => '{0} Нет инцидентов, отличная работа!|У вас зарегистрирован <strong>:count</strong> инцидент.|У вас зарегистрировано <strong>:count</strong> инцидента.|У вас зарегистрировано <strong>:count</strong> инцидентов.',
         'incident-create-template' => 'Создать шаблон',
         'incident-templates'       => 'Шаблоны инцидентов',
+        'updates'                  => '{0} Zero Updates|One Update|:count Updates',
         'add'                      => [
             'title'   => 'Добавить инцидент',
             'success' => 'Инцидент добавлен.',
@@ -33,6 +35,10 @@ return [
         'delete' => [
             'success' => 'Инцидент удалён и больше не будет отображаться на статусной странице.',
             'failure' => 'Инцидент не может быть уделён, пожалуйста, попробуйте ещё раз.',
+        ],
+        'update' => [
+            'title'    => 'Create new incident update',
+            'subtitle' => 'Добавить обновление к <strong>:incident</strong>',
         ],
 
         // Incident templates
@@ -105,12 +111,12 @@ return [
             'add'           => [
                 'title'   => 'Добавить группу компонентов',
                 'success' => 'Группа компонентов добавлена.',
-                'failure' => 'Что-то не так с группой компонентов, пожалуйста, повторите ещё раз.',
+                'failure' => 'Что-то не так с компонентом, пожалуйста, повторите ещё раз.',
             ],
             'edit' => [
                 'title'   => 'Изменить группу компонентов',
                 'success' => 'Группа компонентов обновлена.',
-                'failure' => 'Что-то не так с группой компонентов, пожалуйста, повторите ещё раз.',
+                'failure' => 'Что-то не так с компонентом, пожалуйста, повторите ещё раз.',
             ],
             'delete' => [
                 'success' => 'Группа компонентов удалена!',
@@ -150,7 +156,7 @@ return [
             'title'   => 'Добавить нового подписчика',
             'success' => 'Подписчик добавлен!',
             'failure' => 'Что-то пошло не так при добавлении подписчика, пожалуйста, повторите ещё раз.',
-            'help'    => 'Enter each subscriber on a new line.',
+            'help'    => 'Введите каждого подписчика с новой строки.',
         ],
         'edit' => [
             'title'   => 'Обновить подписчика',
@@ -164,7 +170,7 @@ return [
         'team'        => 'Команда',
         'member'      => 'Участник',
         'profile'     => 'Профиль',
-        'description' => 'Участники команды смогут добавлять и изменять компоненты и инциденты.',
+        'description' => 'Team Members will be able to add, modify &amp; edit components and incidents.',
         'add'         => [
             'title'   => 'Добавить нового участника команды',
             'success' => 'Участник команды добавлен.',
@@ -197,6 +203,9 @@ return [
         'analytics' => [
             'analytics' => 'Аналитика',
         ],
+        'log' => [
+            'log' => 'Журнал',
+        ],
         'localization' => [
             'localization' => 'Региональные настройки',
         ],
@@ -204,6 +213,14 @@ return [
             'customization' => 'Пользовательские настройки',
             'header'        => 'Верхний колонтитул HTML',
             'footer'        => 'Нижний колонтитул HTML',
+        ],
+        'mail' => [
+            'mail'  => 'Mail',
+            'test'  => 'Test',
+            'email' => [
+                'subject' => 'Test notification from Cachet',
+                'body'    => 'This is a test notification from Cachet.',
+            ],
         ],
         'security' => [
             'security'   => 'Безопасность',
@@ -221,11 +238,11 @@ return [
         ],
         'credits' => [
             'credits'       => 'Разработчики',
-            'contributors'  => 'Разработчики',
-            'license'       => 'Cachet is a BSD-3-licensed open source project, released by <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
-            'backers-title' => 'Партнеры & спонсоры',
-            'backers'       => 'If you\'d like to support future development, check out the <a href="https://patreon.com/jbrooksuk" target="_blank">Cachet Patreon</a> campaign.',
-            'thank-you'     => 'Thank you to each and every one of the :count contributors.',
+            'contributors'  => 'Контрибьюторы',
+            'license'       => 'Cachet - это проект с открытым исходным кодом по лицензии BSD-3, разрабатываемый компанией <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
+            'backers-title' => 'Партнеры и спонсоры',
+            'backers'       => 'Если вы хотите поддержать будущую разработку, присоединяйтесь к сбору средств в <a href="https://patreon.com/jbrooksuk" target="_blank">Cachet Patreon</a>.',
+            'thank-you'     => 'Спасибо всем нашим :count контрибьюторам.',
         ],
     ],
 
@@ -252,7 +269,7 @@ return [
     // Widgets
     'widgets' => [
         'support'          => 'Поддержать Cachet',
-        'support_subtitle' => 'Check out our <strong><a href="https://patreon.com/jbrooksuk" target="_blank">Patreon</a></strong> page!',
+        'support_subtitle' => 'Посетите нашу страницу на <strong><a href="https://patreon.com/jbrooksuk" target="_blank">Patreon</a></strong>!',
         'news'             => 'Последние новости',
         'news_subtitle'    => 'Проверить обновления',
     ],

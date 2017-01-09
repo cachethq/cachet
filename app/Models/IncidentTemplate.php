@@ -44,12 +44,13 @@ class IncidentTemplate extends Model
      */
     public $rules = [
         'name'     => 'required|string',
-        'slug'     => 'required|string',
         'template' => 'required|string',
     ];
 
     /**
      * Overrides the models boot method.
+     *
+     * @return void
      */
     public static function boot()
     {

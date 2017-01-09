@@ -14,10 +14,12 @@ namespace CachetHQ\Cachet\Bus\Handlers\Commands\Incident;
 use CachetHQ\Cachet\Bus\Commands\Component\UpdateComponentCommand;
 use CachetHQ\Cachet\Bus\Commands\Incident\ReportIncidentCommand;
 use CachetHQ\Cachet\Bus\Events\Incident\IncidentWasReportedEvent;
+use CachetHQ\Cachet\Bus\Exceptions\Incident\InvalidIncidentTimestampException;
 use CachetHQ\Cachet\Dates\DateFactory;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentTemplate;
+use Carbon\Carbon;
 use Twig_Environment;
 use Twig_Loader_Array;
 
@@ -75,11 +77,14 @@ class ReportIncidentCommandHandler
         }
 
         // The incident occurred at a different time.
-        if ($command->incident_date) {
-            $incidentDate = $this->dates->create('d/m/Y H:i', $command->incident_date);
-
-            $data['created_at'] = $incidentDate;
-            $data['updated_at'] = $incidentDate;
+        if ($occurredAt = $command->occurred_at) {
+            if ($date = $this->dates->create('Y-m-d H:i', $occurredAt)) {
+                $data['occurred_at'] = $date;
+            } else {
+                throw new InvalidIncidentTimestampException("Unable to pass timestamp {$occurredAt}");
+            }
+        } else {
+            $data['occurred_at'] = Carbon::now();
         }
 
         // Create the incident
@@ -95,13 +100,12 @@ class ReportIncidentCommandHandler
                 null,
                 null,
                 null,
+                null,
                 null
             ));
         }
 
-        $incident->notify = (bool) $command->notify;
-
-        event(new IncidentWasReportedEvent($incident));
+        event(new IncidentWasReportedEvent($incident, (bool) $command->notify));
 
         return $incident;
     }
@@ -127,7 +131,7 @@ class ReportIncidentCommandHandler
                 'visible'          => $command->visible,
                 'notify'           => $command->notify,
                 'stickied'         => $command->stickied,
-                'incident_date'    => $command->incident_date,
+                'occurred_at'      => $command->occurred_at,
                 'component'        => Component::find($command->component_id) ?: null,
                 'component_status' => $command->component_status,
             ],

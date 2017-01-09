@@ -14,18 +14,10 @@ namespace CachetHQ\Cachet\Bus\Handlers\Events\Component;
 use CachetHQ\Cachet\Bus\Events\Component\ComponentStatusWasUpdatedEvent;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Subscriber;
-use Illuminate\Contracts\Mail\MailQueue;
-use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
+use CachetHQ\Cachet\Notifications\Component\ComponentStatusChangedNotification;
 
 class SendComponentUpdateEmailNotificationHandler
 {
-    /**
-     * The mailer instance.
-     *
-     * @var \Illuminate\Contracts\Mail\Mailer
-     */
-    protected $mailer;
-
     /**
      * The subscriber instance.
      *
@@ -36,14 +28,12 @@ class SendComponentUpdateEmailNotificationHandler
     /**
      * Create a new send incident email notification handler.
      *
-     * @param \Illuminate\Contracts\Mail\Mailer  $mailer
      * @param \CachetHQ\Cachet\Models\Subscriber $subscriber
      *
      * @return void
      */
-    public function __construct(MailQueue $mailer, Subscriber $subscriber)
+    public function __construct(Subscriber $subscriber)
     {
-        $this->mailer = $mailer;
         $this->subscriber = $subscriber;
     }
 
@@ -66,9 +56,9 @@ class SendComponentUpdateEmailNotificationHandler
         // First notify all global subscribers.
         $globalSubscribers = $this->subscriber->isVerified()->isGlobal()->get();
 
-        foreach ($globalSubscribers as $subscriber) {
-            $this->notify($component, $subscriber);
-        }
+        $globalSubscribers->each(function ($subscriber) use ($component, $event) {
+            $subscriber->notify(new ComponentStatusChangedNotification($component, $event->new_status));
+        });
 
         $notified = $globalSubscribers->pluck('id')->all();
 
@@ -81,37 +71,8 @@ class SendComponentUpdateEmailNotificationHandler
                 return in_array($subscriber->id, $notified);
             });
 
-        foreach ($componentSubscribers as $subscriber) {
-            $this->notify($component, $subscriber);
-        }
-    }
-
-    /**
-     * Send notification to subscriber.
-     *
-     * @param \CachetHQ\Cachet\Models\Component  $component
-     * @param \CachetHQ\Cachet\Models\Subscriber $subscriber
-     *
-     * @return \Illuminate\Database\Eloquent\Collection
-     */
-    public function notify(Component $component, Subscriber $subscriber)
-    {
-        $component = AutoPresenter::decorate($component);
-
-        $mail = [
-            'subject'                => trans('cachet.subscriber.email.component.subject'),
-            'component_name'         => $component->name,
-            'component_human_status' => $component->human_status,
-        ];
-
-        $mail['email'] = $subscriber->email;
-        $mail['manage_link'] = cachet_route('subscribe.manage', [$subscriber->verify_code]);
-
-        $this->mailer->queue([
-            'html' => 'emails.components.update-html',
-            'text' => 'emails.components.update-text',
-        ], $mail, function ($message) use ($mail) {
-            $message->to($mail['email'])->subject($mail['subject']);
+        $componentSubscribers->each(function ($subscriber) use ($component, $event) {
+            $subscriber->notify(new ComponentStatusChangedNotification($component, $event->new_status));
         });
     }
 }

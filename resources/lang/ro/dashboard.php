@@ -11,47 +11,53 @@
 
 return [
 
-    'dashboard' => 'Dashboard',
+    'dashboard'          => 'Panou de control',
+    'writeable_settings' => 'The Cachet settings directory is not writeable. Please make sure that <code>./bootstrap/cachet</code> is writeable by the web server.',
 
     // Incidents
     'incidents' => [
         'title'                    => 'Incidents &amp; Schedule',
-        'incidents'                => 'Incidents',
-        'logged'                   => '{0} There are no incidents, good work.|You have logged one incident.|You have reported <strong>:count</strong> incidents.',
-        'incident-create-template' => 'Create Template',
-        'incident-templates'       => 'Incident Templates',
+        'incidents'                => 'Incidente',
+        'logged'                   => '{0} Nu sunt incidente, bravo! | Ai adăugat un incident. | Ai raportat <strong>:count</strong> incidente.',
+        'incident-create-template' => 'Crează şablon',
+        'incident-templates'       => 'Şabloane incident',
+        'updates'                  => '{0} Nicio actualizare|O actualizare|:count Actualizări',
         'add'                      => [
-            'title'   => 'Report an incident',
-            'success' => 'Incident added.',
-            'failure' => 'There was an error adding the incident, please try again.',
+            'title'   => 'Raportează un incident',
+            'success' => 'Incidentul a fost adăugat.',
+            'failure' => 'A avut loc o eroare la adăugarea incidentului, vă rugăm să încercaţi din nou.',
         ],
         'edit' => [
-            'title'   => 'Edit an incident',
-            'success' => 'Incident updated.',
-            'failure' => 'There was an error editing the incident, please try again.',
+            'title'   => 'Editează un incident',
+            'success' => 'Incidentul a fost actualizat.',
+            'failure' => 'A avut loc o eroare la actualizarea incidentului, vă rugăm să încercaţi din nou.',
         ],
         'delete' => [
-            'success' => 'The incident has been deleted and will not show on your status page.',
-            'failure' => 'The incident could not be deleted, please try again.',
+            'success' => 'Incidentul a fost şters şi nu va mai apărea pe pagina de status.',
+            'failure' => 'Incidentul nu a putut fi şters, vă rugăm încercaţi din nou.',
+        ],
+        'update' => [
+            'title'    => 'Adaugă o nouă actualizare a incidentului',
+            'subtitle' => 'Adaugă o actualizare la <strong>:incident</strong>',
         ],
 
         // Incident templates
         'templates' => [
-            'title' => 'Incident Templates',
+            'title' => 'Şabloane incident',
             'add'   => [
-                'title'   => 'Create an incident template',
-                'message' => 'You should add an incident template.',
-                'success' => 'Your new incident template has been created.',
-                'failure' => 'Something went wrong with the incident template.',
+                'title'   => 'Adaugă un nou şablon pentru incident',
+                'message' => 'Trebuie să adaugi un şablon pentru incident.',
+                'success' => 'Noul şablon pentru incident a fost creat.',
+                'failure' => 'Ceva nu a funcționat legat de șablonul incidentului.',
             ],
             'edit' => [
-                'title'   => 'Edit Template',
-                'success' => 'The incident template has been updated.',
-                'failure' => 'Something went wrong updating the incident template',
+                'title'   => 'Editare Şablon',
+                'success' => 'Şablonul incidentului a fost actualizat.',
+                'failure' => 'Ceva nu a funcționat legat de actualizarea șablonului incidentului',
             ],
             'delete' => [
-                'success' => 'The incident template has been deleted.',
-                'failure' => 'The incident template could not be deleted, please try again.',
+                'success' => 'Şablonul incidentului a fost şters.',
+                'failure' => 'Şablonul incidentului nu a putut fi şters, vă rugăm încercaţi din nou.',
             ],
         ],
     ],
@@ -59,216 +65,227 @@ return [
     // Incident Maintenance
     'schedule' => [
         'schedule'     => 'Întreținere programată',
-        'logged'       => '{0} There are no schedules, good work.|You have logged one schedule.|You have reported <strong>:count</strong> schedules.',
-        'scheduled_at' => 'Scheduled at :timestamp',
+        'logged'       => '{0} Nu există programări, bravo.|Ai o singură programare.|Ai <strong>:count</strong> programări.',
+        'scheduled_at' => 'Programat la :timestamp',
         'add'          => [
-            'title'   => 'Add Scheduled Maintenance',
-            'success' => 'Schedule added.',
-            'failure' => 'Something went wrong adding the schedule, please try again.',
+            'title'   => 'Adăugaţi Programare Mentenanţă',
+            'success' => 'Programare adăugată.',
+            'failure' => 'Ceva nu a funcționat legat de adăugarea unei programări, vă rugăm încercați din nou.',
         ],
         'edit' => [
-            'title'   => 'Edit Scheduled Maintenance',
-            'success' => 'Schedule has been updated!',
-            'failure' => 'Something went wrong editing the schedule, please try again.',
+            'title'   => 'Modificați Programarea Mentenanței',
+            'success' => 'Programarea a fost actualizată!',
+            'failure' => 'Ceva nu a funcționat legat de modificarea programării, vă rugăm încercați din nou.',
         ],
         'delete' => [
-            'success' => 'The scheduled maintenance has been deleted and will not show on your status page.',
-            'failure' => 'The scheduled maintenance could not be deleted, please try again.',
+            'success' => 'Programarea mentenanței a fost ștearsă și nu va mai apărea pe pagina dvs. de stare.',
+            'failure' => 'Programarea mentenanței nu a putut fi ștearsă, vă rugăm încercați din nou.',
         ],
     ],
 
     // Components
     'components' => [
-        'components'         => 'Components',
-        'component_statuses' => 'Component Statuses',
-        'listed_group'       => 'Grouped under :name',
+        'components'         => 'Componente',
+        'component_statuses' => 'Stările Componentei',
+        'listed_group'       => 'Grupat ca :name',
         'add'                => [
-            'title'   => 'Add a component',
-            'message' => 'You should add a component.',
-            'success' => 'Component created.',
-            'failure' => 'Something went wrong with the component, please try again.',
+            'title'   => 'Adăugați o componentă',
+            'message' => 'Ar trebui să adăugați o componentă.',
+            'success' => 'Componenta a fost creată.',
+            'failure' => 'Ceva nu a funcționat legat de grupul de componente, vă rugăm încercați din nou.',
         ],
         'edit' => [
-            'title'   => 'Edit a component',
-            'success' => 'Component updated.',
-            'failure' => 'Something went wrong with the component, please try again.',
+            'title'   => 'Modificați o componentă',
+            'success' => 'Componenta a fost actualizată.',
+            'failure' => 'Ceva nu a funcționat legat de grupul de componente, vă rugăm încercați din nou.',
         ],
         'delete' => [
-            'success' => 'The component has been deleted!',
-            'failure' => 'The component could not be deleted, please try again.',
+            'success' => 'Componenta a fost ștearsă!',
+            'failure' => 'Component nu a putut fi ștearsă, vă rugăm încercați din nou.',
         ],
 
         // Component groups
         'groups' => [
-            'groups'        => 'Component group|Component groups',
-            'no_components' => 'You should add a component group.',
+            'groups'        => 'Group de componente|Grupuri de componente',
+            'no_components' => 'Ar trebui să adăugați un grup de componente.',
             'add'           => [
-                'title'   => 'Add a component group',
-                'success' => 'Component group added.',
-                'failure' => 'Something went wrong with the component group, please try again.',
+                'title'   => 'Adăugați un grup de componente',
+                'success' => 'Grupul de componente a fost adăugat.',
+                'failure' => 'Ceva nu a funcționat legat de grupul de componente, vă rugăm încercați din nou.',
             ],
             'edit' => [
-                'title'   => 'Edit a component group',
-                'success' => 'Component group updated.',
-                'failure' => 'Something went wrong with the component group, please try again.',
+                'title'   => 'Modificați un grup de componente',
+                'success' => 'Grupul de componente a fost actualizat.',
+                'failure' => 'Ceva nu a funcționat legat de grupul de componente, vă rugăm încercați din nou.',
             ],
             'delete' => [
-                'success' => 'Component group has been deleted!',
-                'failure' => 'The component group could not be deleted, please try again.',
+                'success' => 'Grupul de componente a fost șters!',
+                'failure' => 'Grupul de componente nu a putut fi șters, vă rugăm încercați din nou.',
             ],
         ],
     ],
 
     // Metrics
     'metrics' => [
-        'metrics' => 'Metrics',
+        'metrics' => 'Măsurători',
         'add'     => [
-            'title'   => 'Create a metric',
-            'message' => 'You should add a metric.',
-            'success' => 'Metric created.',
-            'failure' => 'Something went wrong with the metric, please try again.',
+            'title'   => 'Adaugă o măsurătoare',
+            'message' => 'Ar trebui să adaugi o măsurătoare.',
+            'success' => 'Măsurătoarea a fost creată.',
+            'failure' => 'Ceva nu a funcționat legat de măsurătoare, vă rugăm încercați din nou.',
         ],
         'edit' => [
-            'title'   => 'Edit a metric',
-            'success' => 'Metric updated.',
-            'failure' => 'Something went wrong with the metric, please try again.',
+            'title'   => 'Modificați o măsurătoare',
+            'success' => 'Măsurătoarea a fost actualizată.',
+            'failure' => 'Ceva nu a funcționat legat de măsurătoare, vă rugăm încercați din nou.',
         ],
         'delete' => [
-            'success' => 'The metric has been deleted and will no longer display on your status page.',
-            'failure' => 'The metric could not be deleted, please try again.',
+            'success' => 'Măsurătoarea a fost ștearsă și nu va mai apărea pe pagina dvs. de stare.',
+            'failure' => 'Măsurătoarea nu a putut fi ștearsă, vă rugăm încercați din nou.',
         ],
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'      => 'Subscribers',
-        'description'      => 'Subscribers will receive email updates when incidents are created or components are updated.',
-        'verified'         => 'Verified',
-        'not_verified'     => 'Not verified',
-        'subscriber'       => ':email, subscribed :date',
-        'no_subscriptions' => 'Subscribed to all updates',
+        'subscribers'      => 'Abonați',
+        'description'      => 'Abonații vor primi actualizări prin email când incidente noi sunt adăugate sau componentele sunt actualizate.',
+        'verified'         => 'Verificat',
+        'not_verified'     => 'Neverificat',
+        'subscriber'       => ':email, abonat la :date',
+        'no_subscriptions' => 'Ați fost abonat la toate actualizările',
         'add'              => [
-            'title'   => 'Add a new subscriber',
-            'success' => 'Subscriber has been added!',
-            'failure' => 'Something went wrong adding the subscriber, please try again.',
-            'help'    => 'Enter each subscriber on a new line.',
+            'title'   => 'Adaugă un nou abonat',
+            'success' => 'Abonatul a fost adăugat!',
+            'failure' => 'Ceva nu a funcționat legat de adăugarea abonatului, vă rugăm încercați din nou.',
+            'help'    => 'Introduceți fiecare abonat pe o nouă linie.',
         ],
         'edit' => [
-            'title'   => 'Update subscriber',
-            'success' => 'Subscriber has been updated!',
-            'failure' => 'Something went wrong editing the subscriber, please try again.',
+            'title'   => 'Actualizează abonatul',
+            'success' => 'Abonatul a fost actualizat!',
+            'failure' => 'Ceva nu a funcționat legat de modificarea abonatului, vă rugăm încercați din nou.',
         ],
     ],
 
     // Team
     'team' => [
-        'team'        => 'Team',
-        'member'      => 'Member',
-        'profile'     => 'Profile',
+        'team'        => 'Echipa',
+        'member'      => 'Membru',
+        'profile'     => 'Profil',
         'description' => 'Team Members will be able to add, modify &amp; edit components and incidents.',
         'add'         => [
-            'title'   => 'Add a new team member',
-            'success' => 'Team member added.',
-            'failure' => 'The team member could not be added, please try again.',
+            'title'   => 'Adaugă un nou membru la echipă',
+            'success' => 'Un nou membru a fost adăugat la echipă.',
+            'failure' => 'Un nou membru nu a putut fi adăugat la echipă, vă rugăm încercați din nou.',
         ],
         'edit' => [
-            'title'   => 'Update profile',
-            'success' => 'Profile updated.',
-            'failure' => 'Something went wrong updating the profile, please try again.',
+            'title'   => 'Actualizați profilul',
+            'success' => 'Profilul a fost actualizat.',
+            'failure' => 'Ceva nu a funcționat legat de actualizarea profilului, vă rugăm încercați din nou.',
         ],
         'delete' => [
-            'success' => 'Team member has been deleted and will no longer have access to the dashboard!',
-            'failure' => 'The team member could not be added, please try again.',
+            'success' => 'Membrul echipei a fost șters și nu va mai avea acces la panoul de control!',
+            'failure' => 'Un nou membru nu a putut fi adăugat la echipă, vă rugăm încercați din nou.',
         ],
         'invite' => [
-            'title'   => 'Invite a new team member',
-            'success' => 'An invite has been sent',
-            'failure' => 'The invite could not be sent, please try again.',
+            'title'   => 'Invită un nou membru în echipă',
+            'success' => 'Invitația a fost trimisă',
+            'failure' => 'Invitația nu a putut fi trimisă, vă rugăm încercați din nou.',
         ],
     ],
 
     // Settings
     'settings' => [
-        'settings'  => 'Settings',
+        'settings'  => 'Setări',
         'app-setup' => [
-            'app-setup'   => 'Application Setup',
-            'images-only' => 'Only images may be uploaded.',
-            'too-big'     => 'The file you uploaded is too big. Upload an image smaller than :size',
+            'app-setup'   => 'Instalarea Aplicației',
+            'images-only' => 'Puteți urca doar imagini.',
+            'too-big'     => 'Fișierul urcat este prea mare. Urcați o imagine mai mică de :size',
         ],
         'analytics' => [
-            'analytics' => 'Analytics',
+            'analytics' => 'Analize',
+        ],
+        'log' => [
+            'log' => 'Jurnal',
         ],
         'localization' => [
-            'localization' => 'Localization',
+            'localization' => 'Localizare',
         ],
         'customization' => [
-            'customization' => 'Customization',
-            'header'        => 'Custom Header HTML',
-            'footer'        => 'Custom Footer HTML',
+            'customization' => 'Personalizare',
+            'header'        => 'Header HTML Personalizat',
+            'footer'        => 'Footer HTML Personalizat',
+        ],
+        'mail' => [
+            'mail'  => 'Mail',
+            'test'  => 'Test',
+            'email' => [
+                'subject' => 'Test notification from Cachet',
+                'body'    => 'This is a test notification from Cachet.',
+            ],
         ],
         'security' => [
-            'security'   => 'Security',
-            'two-factor' => 'Users without two-factor authentication',
+            'security'   => 'Securitate',
+            'two-factor' => 'Utilizatori care nu folosesc autentificare two-factor',
         ],
         'stylesheet' => [
-            'stylesheet' => 'Stylesheet',
+            'stylesheet' => 'Listă de stiluri',
         ],
         'theme' => [
-            'theme' => 'Theme',
+            'theme' => 'Tema',
         ],
         'edit' => [
-            'success' => 'Settings saved.',
-            'failure' => 'Settings could not be saved.',
+            'success' => 'Setările au fost salvate.',
+            'failure' => 'Setările nu au putut fi salvate.',
         ],
         'credits' => [
-            'credits'       => 'Credits',
-            'contributors'  => 'Contributors',
-            'license'       => 'Cachet is a BSD-3-licensed open source project, released by <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
-            'backers-title' => 'Backers & Sponsors',
-            'backers'       => 'If you\'d like to support future development, check out the <a href="https://patreon.com/jbrooksuk" target="_blank">Cachet Patreon</a> campaign.',
-            'thank-you'     => 'Thank you to each and every one of the :count contributors.',
+            'credits'       => 'Autori',
+            'contributors'  => 'Contribuitori',
+            'license'       => 'Cachet este un proiect open source cu licență BSD-3, realizat de <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
+            'backers-title' => 'Susținători & Sponsori',
+            'backers'       => 'Dacă vreți să susțineți dezvoltarea proiectului, vizitați pagina de campanie <a href="https://patreon.com/jbrooksuk" target="_blank">Cachet Patreon</a>.',
+            'thank-you'     => 'Mulțumim tuturor celor :count contribuitori.',
         ],
     ],
 
     // Login
     'login' => [
-        'login'      => 'Login',
-        'logged_in'  => 'You\'re logged in.',
-        'welcome'    => 'Welcome Back!',
-        'two-factor' => 'Please enter your token.',
+        'login'      => 'Autentificare',
+        'logged_in'  => 'Ești autentificat.',
+        'welcome'    => 'Bine ai revenit!',
+        'two-factor' => 'Te rog introdu token-ul tău.',
     ],
 
     // Sidebar footer
-    'help'        => 'Help',
-    'status_page' => 'Status Page',
-    'logout'      => 'Logout',
+    'help'        => 'Ajutor',
+    'status_page' => 'Pagina de Stare',
+    'logout'      => 'Deconectează-te',
 
     // Notifications
     'notifications' => [
-        'notifications' => 'Notifications',
-        'awesome'       => 'Awesome.',
-        'whoops'        => 'Whoops.',
+        'notifications' => 'Notificări',
+        'awesome'       => 'Minunat.',
+        'whoops'        => 'Hopa.',
     ],
 
     // Widgets
     'widgets' => [
-        'support'          => 'Support Cachet',
-        'support_subtitle' => 'Check out our <strong><a href="https://patreon.com/jbrooksuk" target="_blank">Patreon</a></strong> page!',
-        'news'             => 'Latest News',
-        'news_subtitle'    => 'Get the latest updates',
+        'support'          => 'Susțineți Cachet',
+        'support_subtitle' => 'Vizitați pagina noastră pe <strong><a href="https://patreon.com/jbrooksuk" target="_blank">Patreon</a></strong>!',
+        'news'             => 'Ultimele Știri',
+        'news_subtitle'    => 'Obţineţi cea mai recentă actualizare',
     ],
 
     // Welcome modal
     'welcome' => [
-        'welcome' => 'Welcome to your new status page!',
-        'message' => 'Your status page is almost ready! You might want to configure these extra settings',
-        'close'   => 'Take me straight to my dashboard',
+        'welcome' => 'Bun venit pe noua pagină de Stare!',
+        'message' => 'Pagina de stare este aproape gata! S-ar putea să doriți să configurați aceste setări suplimentare',
+        'close'   => 'Du-mă direct la panoul de control',
         'steps'   => [
-            'component'  => 'Create components',
-            'incident'   => 'Create incidents',
-            'customize'  => 'Customize',
-            'team'       => 'Add users',
-            'api'        => 'Generate API token',
-            'two-factor' => 'Two Factor Authentication',
+            'component'  => 'Creează componente',
+            'incident'   => 'Creează incidente',
+            'customize'  => 'Personalizează',
+            'team'       => 'Adaugă utilizatori',
+            'api'        => 'Generează un token pentru API',
+            'two-factor' => 'Autentificare Two Factor',
         ],
     ],
 

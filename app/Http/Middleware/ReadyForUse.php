@@ -11,11 +11,9 @@
 
 namespace CachetHQ\Cachet\Http\Middleware;
 
+use CachetHQ\Cachet\Settings\Repository;
 use Closure;
-use Exception;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Facades\Redirect;
 
 /**
  * This is the ready for use middleware class.
@@ -27,6 +25,25 @@ use Illuminate\Support\Facades\Redirect;
 class ReadyForUse
 {
     /**
+     * The settings repository instance.
+     *
+     * @var \CachetHQ\Cachet\Settings\Repository
+     */
+    protected $settings;
+
+    /**
+     * Creates a new setup already completed middleware instance.
+     *
+     * @param \CachetHQ\Cachet\Settings\Repository $settings
+     *
+     * @return void
+     */
+    public function __construct(Repository $settings)
+    {
+        $this->settings = $settings;
+    }
+
+    /**
      * Handle an incoming request.
      *
      * @param \Illuminate\Http\Request $request
@@ -36,12 +53,8 @@ class ReadyForUse
      */
     public function handle(Request $request, Closure $next)
     {
-        try {
-            if (!Config::get('setting.app_name')) {
-                return Redirect::to('setup');
-            }
-        } catch (Exception $e) {
-            return Redirect::to('setup');
+        if (!$this->settings->get('app_name')) {
+            return cachet_redirect('setup');
         }
 
         return $next($request);

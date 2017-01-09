@@ -11,15 +11,17 @@
 
 return [
 
-    'dashboard' => '대시보드',
+    'dashboard'          => '대시보드',
+    'writeable_settings' => 'The Cachet settings directory is not writeable. Please make sure that <code>./bootstrap/cachet</code> is writeable by the web server.',
 
     // Incidents
     'incidents' => [
-        'title'                    => '문제 및 예정',
+        'title'                    => 'Incidents &amp; Schedule',
         'incidents'                => '문제',
         'logged'                   => '{0} 아무 문제가 없습니다, 잘하고 있어요.|하나의 문제에 대한 로깅이 있습니다.|<strong>:count</strong> 개의 문제가 리포트 되었습니다.',
         'incident-create-template' => '템플릿 생성',
         'incident-templates'       => '문제 템플릿',
+        'updates'                  => '{0} Zero Updates|One Update|:count Updates',
         'add'                      => [
             'title'   => '문제 추가',
             'success' => 'Incident added.',
@@ -33,6 +35,10 @@ return [
         'delete' => [
             'success' => 'The incident has been deleted and will not show on your status page.',
             'failure' => 'The incident could not be deleted, please try again.',
+        ],
+        'update' => [
+            'title'    => 'Create new incident update',
+            'subtitle' => 'Add an update to <strong>:incident</strong>',
         ],
 
         // Incident templates
@@ -58,17 +64,17 @@ return [
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => '예약 된 유지 관리',
+        'schedule'     => '예정된 유지 보수',
         'logged'       => '{0} There are no schedules, good work.|You have logged one schedule.|You have reported <strong>:count</strong> schedules.',
         'scheduled_at' => ':timestamp 에 예정됨',
         'add'          => [
             'title'   => 'Add Scheduled Maintenance',
-            'success' => 'Schedule added.',
+            'success' => '일정이 추가되었습니다.',
             'failure' => 'Something went wrong adding the schedule, please try again.',
         ],
         'edit' => [
             'title'   => 'Edit Scheduled Maintenance',
-            'success' => 'Schedule has been updated!',
+            'success' => '일정이 업데이트 되었습니다!',
             'failure' => 'Something went wrong editing the schedule, please try again.',
         ],
         'delete' => [
@@ -85,13 +91,13 @@ return [
         'add'                => [
             'title'   => '구성요소 추가',
             'message' => '구성요소를 추가해야 합니다.',
-            'success' => 'Component created.',
-            'failure' => 'Something went wrong with the component, please try again.',
+            'success' => '구성요소가 생성되었습니다.',
+            'failure' => 'Something went wrong with the component group, please try again.',
         ],
         'edit' => [
             'title'   => '구성요소 수정',
-            'success' => 'Component updated.',
-            'failure' => 'Something went wrong with the component, please try again.',
+            'success' => '구성요소가 수정되었습니다.',
+            'failure' => 'Something went wrong with the component group, please try again.',
         ],
         'delete' => [
             'success' => 'The component has been deleted!',
@@ -104,16 +110,16 @@ return [
             'no_components' => '구성 요소 그룹을 추가 해야 합니다.',
             'add'           => [
                 'title'   => '구성요소 그룹 추가',
-                'success' => 'Component group added.',
+                'success' => '구성요소 그룹이 추가되었습니다.',
                 'failure' => 'Something went wrong with the component group, please try again.',
             ],
             'edit' => [
                 'title'   => '구성요소 그룹 수정',
-                'success' => 'Component group updated.',
+                'success' => '구성요소 그룹이 수정되었습니다.',
                 'failure' => 'Something went wrong with the component group, please try again.',
             ],
             'delete' => [
-                'success' => 'Component group has been deleted!',
+                'success' => '구성 요소 그룹이 삭제 되었습니다!',
                 'failure' => 'The component group could not be deleted, please try again.',
             ],
         ],
@@ -164,15 +170,15 @@ return [
         'team'        => '팀',
         'member'      => '멤버',
         'profile'     => '프로필',
-        'description' => '팀 멤버는 구성요소와 문제를 추가하고 수정 할 수 있습니다.',
+        'description' => 'Team Members will be able to add, modify &amp; edit components and incidents.',
         'add'         => [
             'title'   => '새 팀 멤버 추가',
-            'success' => 'Team member added.',
+            'success' => '팀 멤버가 추가되었습니다',
             'failure' => 'The team member could not be added, please try again.',
         ],
         'edit' => [
             'title'   => '프로필 수정',
-            'success' => 'Profile updated.',
+            'success' => '프로필이 수정되었습니다.',
             'failure' => 'Something went wrong updating the profile, please try again.',
         ],
         'delete' => [
@@ -197,13 +203,24 @@ return [
         'analytics' => [
             'analytics' => 'Analytics',
         ],
+        'log' => [
+            'log' => 'Log',
+        ],
         'localization' => [
             'localization' => 'Localization',
         ],
         'customization' => [
-            'customization' => 'Customization',
-            'header'        => 'Custom Header HTML',
-            'footer'        => 'Custom Footer HTML',
+            'customization' => '사용자 설정',
+            'header'        => '사용자 지정 헤더 HTML',
+            'footer'        => '사용자 지정 바닥글 HTML',
+        ],
+        'mail' => [
+            'mail'  => 'Mail',
+            'test'  => 'Test',
+            'email' => [
+                'subject' => 'Test notification from Cachet',
+                'body'    => 'This is a test notification from Cachet.',
+            ],
         ],
         'security' => [
             'security'   => '보안',
@@ -220,8 +237,8 @@ return [
             'failure' => '설정을 저장할 수 없습니다.',
         ],
         'credits' => [
-            'credits'       => 'Credits',
-            'contributors'  => 'Contributors',
+            'credits'       => '제작진',
+            'contributors'  => '도움 주신 분들',
             'license'       => 'Cachet is a BSD-3-licensed open source project, released by <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
             'backers-title' => 'Backers & Sponsors',
             'backers'       => 'If you\'d like to support future development, check out the <a href="https://patreon.com/jbrooksuk" target="_blank">Cachet Patreon</a> campaign.',
@@ -254,14 +271,14 @@ return [
         'support'          => 'Support Cachet',
         'support_subtitle' => 'Check out our <strong><a href="https://patreon.com/jbrooksuk" target="_blank">Patreon</a></strong> page!',
         'news'             => 'Latest News',
-        'news_subtitle'    => 'Get the latest updates',
+        'news_subtitle'    => 'Get the latest update',
     ],
 
     // Welcome modal
     'welcome' => [
-        'welcome' => 'Welcome to your new status page!',
+        'welcome' => 'Welcome to your new status page, :username!',
         'message' => '상태 페이지는 거의 다 준비 되었습니다! 추가 설정을 해보세요',
-        'close'   => 'Take me straight to my dashboard',
+        'close'   => 'I\'m good thanks!',
         'steps'   => [
             'component'  => '구성요소 만들기',
             'incident'   => '문제 만들기',

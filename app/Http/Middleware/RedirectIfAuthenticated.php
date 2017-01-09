@@ -13,7 +13,6 @@ namespace CachetHQ\Cachet\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 /**
@@ -55,7 +54,7 @@ class RedirectIfAuthenticated
     public function handle(Request $request, Closure $next)
     {
         if ($this->auth->check()) {
-            return new RedirectResponse(cachet_route('dashboard'));
+            return cachet_redirect('dashboard');
         }
 
         return $next($request);

@@ -161,6 +161,20 @@ $(function() {
         }
     });
 
+    $('input[rel=datepicker-custom]').datetimepicker({
+        sideBySide: true,
+        icons: {
+            time: 'ion-clock',
+            date: 'ion-android-calendar',
+            up: 'ion-ios-arrow-up',
+            down: 'ion-ios-arrow-down',
+            previous: 'ion-ios-arrow-left',
+            next: 'ion-ios-arrow-right',
+            today: 'ion-android-home',
+            clear: 'ion-trash-a',
+        }
+    });
+
     // Sortable models.
     var orderableLists = document.querySelectorAll('[data-orderable-list]');
 
@@ -370,23 +384,24 @@ $(function() {
             }
         });
     }
+
+    function askConfirmation(callback, cancelCallback) {
+        swal({
+            type: "warning",
+            title: "Confirm your action",
+            text: "Are you sure you want to do this?",
+            buttonsStyling: false,
+            reverseButtons: true,
+            confirmButtonText: "Yes",
+            confirmButtonClass: "btn btn-lg btn-danger",
+            cancelButtonClass: "btn btn-lg btn-default",
+            showCancelButton: true,
+            focusCancel: true
+        }).then(function () {
+            if (_.isFunction(callback)) callback();
+        }, function () {
+            if (_.isFunction(cancelCallback)) cancelCallback();
+        });
+    }
 });
 
-function askConfirmation(callback, cancelCallback) {
-    swal({
-        type: "warning",
-        title: "Confirm your action",
-        text: "Are you sure you want to do this?",
-        buttonsStyling: false,
-        reverseButtons: true,
-        confirmButtonText: "Yes",
-        confirmButtonClass: "btn btn-lg btn-danger",
-        cancelButtonClass: "btn btn-lg btn-default",
-        showCancelButton: true,
-        focusCancel: true
-    }).then(function () {
-        if (_.isFunction(callback)) callback();
-    }, function () {
-        if (_.isFunction(cancelCallback)) cancelCallback();
-    });
-}

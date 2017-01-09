@@ -58,7 +58,10 @@ class TimezoneLocaleComposer
         $langs = array_map(function ($lang) use ($enabledLangs) {
             $locale = basename($lang);
 
-            return [$locale => $enabledLangs[$locale]];
+            return [$locale => array_get($enabledLangs, $locale, [
+                'name'   => $locale,
+                'subset' => null,
+            ])];
         }, glob(base_path('resources/lang').'/*'));
 
         $langs = call_user_func_array('array_merge', $langs);

@@ -83,8 +83,6 @@ class MetricPoint extends Model implements HasPresenter
     {
         if ($this->metric->calc_type === Metric::CALC_SUM) {
             return round((float) $value * $this->counter, $this->metric->places);
-        } elseif ($this->metric->calc_type === Metric::CALC_AVG) {
-            return round((float) $value * $this->counter, $this->metric->places);
         }
 
         return round((float) $value, $this->metric->places);

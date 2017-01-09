@@ -106,7 +106,7 @@ return [
         'Illuminate\Auth\Access\AuthorizationException'                 => 'warning',
         'Illuminate\Database\Eloquent\ModelNotFoundException'           => 'warning',
         'Illuminate\Session\TokenMismatchException'                     => 'notice',
-        'Symfony\Component\HttpKernel\Exception\HttpExceptionInterface' => 'warning',
+        'Symfony\Component\HttpKernel\Exception\HttpExceptionInterface' => 'notice',
         'Symfony\Component\Debug\Exception\FatalErrorException'         => 'critical',
         'Exception'                                                     => 'error',
     ],

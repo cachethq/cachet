@@ -15,11 +15,19 @@ use AltThree\Validator\ValidatingTrait;
 use CachetHQ\Cachet\Presenters\SubscriberPresenter;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
 use McCool\LaravelAutoPresenter\HasPresenter;
 
+/**
+ * This is the subscriber model.
+ *
+ * @author Joseph Cohen <joe@alt-three.com>
+ * @author James Brooks <james@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
+ */
 class Subscriber extends Model implements HasPresenter
 {
-    use ValidatingTrait;
+    use Notifiable, ValidatingTrait;
 
     /**
      * The attributes that should be casted to native types.
@@ -27,10 +35,12 @@ class Subscriber extends Model implements HasPresenter
      * @var string[]
      */
     protected $casts = [
-        'email'       => 'string',
-        'verify_code' => 'string',
-        'verified_at' => 'date',
-        'global'      => 'bool',
+        'email'             => 'string',
+        'phone_number'      => 'string',
+        'slack_webhook_url' => 'string',
+        'verify_code'       => 'string',
+        'verified_at'       => 'date',
+        'global'            => 'bool',
     ];
 
     /**
@@ -38,7 +48,13 @@ class Subscriber extends Model implements HasPresenter
      *
      * @var string[]
      */
-    protected $fillable = ['email'];
+    protected $fillable = [
+        'email',
+        'phone_number',
+        'slack_webhook_url',
+        'verified_at',
+        'global',
+    ];
 
     /**
      * The validation rules.
@@ -46,7 +62,9 @@ class Subscriber extends Model implements HasPresenter
      * @var string[]
      */
     public $rules = [
-        'email' => 'required|email',
+        'email'             => 'nullable|email',
+        'phone_number'      => 'nullable|string',
+        'slack_webhook_url' => 'nullable|url',
     ];
 
     /**
@@ -58,6 +76,8 @@ class Subscriber extends Model implements HasPresenter
 
     /**
      * Overrides the models boot method.
+     *
+     * @return void
      */
     public static function boot()
     {
@@ -137,6 +157,26 @@ class Subscriber extends Model implements HasPresenter
     public static function generateVerifyCode()
     {
         return str_random(42);
+    }
+
+    /**
+     * Route notifications for the Nexmo channel.
+     *
+     * @return string
+     */
+    public function routeNotificationForNexmo()
+    {
+        return $this->phone_number;
+    }
+
+    /**
+     * Route notifications for the Slack channel.
+     *
+     * @return string
+     */
+    public function routeNotificationForSlack()
+    {
+        return $this->slack_webhook_url;
     }
 
     /**
