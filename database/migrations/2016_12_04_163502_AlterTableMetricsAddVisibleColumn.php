@@ -23,7 +23,7 @@ class AlterTableMetricsAddVisibleColumn extends Migration
     public function up()
     {
         Schema::table('metrics', function (Blueprint $table) {
-            $table->boolean('visible')->after('order')->default(1);
+            $table->unsignedTinyInteger('visible')->after('order')->default(1);
 
             $table->index('visible');
         });
