@@ -51,21 +51,30 @@ final class ComponentStatusWasUpdatedEvent implements ActionInterface, Component
     public $new_status;
 
     /**
+     * If silent, we won't notify.
+     *
+     * @var bool
+     */
+    public $silent;
+
+    /**
      * Create a new component was updated event instance.
      *
      * @param \CachetHQ\Cachet\Models\User      $user
      * @param \CachetHQ\Cachet\Models\Component $component
      * @param int                               $original_status
      * @param int                               $new_status
+     * @param bool                              $silent
      *
      * @return void
      */
-    public function __construct(User $user, Component $component, $original_status, $new_status)
+    public function __construct(User $user, Component $component, $original_status, $new_status, $silent)
     {
         $this->user = $user;
         $this->component = $component;
         $this->original_status = $original_status;
         $this->new_status = $new_status;
+        $this->silent = $silent;
     }
 
     /**

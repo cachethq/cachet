@@ -40,7 +40,7 @@ class ComponentStatusWasUpdatedEventTest extends AbstractComponentEventTestCase
 
         $subscriber->subscriptions()->create(['component_id' => $component->id]);
 
-        $this->app['events']->fire(new ComponentStatusWasUpdatedEvent($user, $component, 1, 2));
+        $this->app['events']->fire(new ComponentStatusWasUpdatedEvent($user, $component, 1, 2, false));
 
         $this->seeMessageFor($subscriber->email);
         $this->seeMessageWithSubject(trans('notifications.component.status_update.mail.subject'));
@@ -58,12 +58,19 @@ class ComponentStatusWasUpdatedEventTest extends AbstractComponentEventTestCase
 
     protected function getObjectAndParams()
     {
-        $params = ['user' => new User(), 'component' => new Component(), 'original_status' => 1, 'new_status' => 2];
+        $params = [
+            'user'            => new User(),
+            'component'       => new Component(),
+            'original_status' => 1,
+            'new_status'      => 2,
+            'silent'          => false
+        ];
         $object = new ComponentStatusWasUpdatedEvent(
             $params['user'],
             $params['component'],
             $params['original_status'],
-            $params['new_status']
+            $params['new_status'],
+            $params['silent']
         );
 
         return compact('params', 'object');

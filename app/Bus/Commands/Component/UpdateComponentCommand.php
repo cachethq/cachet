@@ -79,6 +79,13 @@ final class UpdateComponentCommand
     public $meta;
 
     /**
+     * If this is true, we won't notify subscribers of the change.
+     *
+     * @var bool
+     */
+    public $silent;
+
+    /**
      * The validation rules.
      *
      * @var string[]
@@ -92,6 +99,7 @@ final class UpdateComponentCommand
         'group_id'    => 'nullable|int',
         'enabled'     => 'nullable|bool',
         'meta'        => 'nullable|string',
+        'silent'      => 'nullable|bool',
     ];
 
     /**
@@ -106,10 +114,11 @@ final class UpdateComponentCommand
      * @param int                               $group_id
      * @param bool                              $enabled
      * @param string|null                       $meta
+     * @param bool                              $silent
      *
      * @return void
      */
-    public function __construct(Component $component, $name, $description, $status, $link, $order, $group_id, $enabled, $meta)
+    public function __construct(Component $component, $name, $description, $status, $link, $order, $group_id, $enabled, $meta, $silent)
     {
         $this->component = $component;
         $this->name = $name;
@@ -120,5 +129,6 @@ final class UpdateComponentCommand
         $this->group_id = $group_id;
         $this->enabled = $enabled;
         $this->meta = $meta;
+        $this->silent = $silent;
     }
 }
