@@ -10,8 +10,8 @@
             @endif />
           {{ $component->name }}
         </label>
+        @if($component->description)
+        <i class="ion ion-ios-help-outline help-icon" data-toggle="tooltip" data-title="{{ $component->description }}" data-container="body"></i>
+        @endif
     </div>
-    @if($component->description)
-    <i class="ion ion-ios-help-outline help-icon" data-toggle="tooltip" data-title="{{ $component->description }}" data-container="body"></i>
-    @endif
 </li>
