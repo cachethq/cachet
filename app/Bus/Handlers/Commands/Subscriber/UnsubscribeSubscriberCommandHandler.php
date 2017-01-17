@@ -15,6 +15,13 @@ use CachetHQ\Cachet\Bus\Commands\Subscriber\UnsubscribeSubscriberCommand;
 use CachetHQ\Cachet\Bus\Events\Subscriber\SubscriberHasUnsubscribedEvent;
 use CachetHQ\Cachet\Models\Subscriber;
 
+/**
+ * This is the unsubscribe subscriber command class.
+ *
+ * @author Joseph Cohem <joe@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
+ * @author James Brooks <james@alt-three.com>
+ */
 class UnsubscribeSubscriberCommandHandler
 {
     /**
@@ -28,8 +35,12 @@ class UnsubscribeSubscriberCommandHandler
     {
         $subscriber = $command->subscriber;
 
+        // First remove subscriptions.
+        $subscriber->subscriptions()->delete();
+
         event(new SubscriberHasUnsubscribedEvent($subscriber));
 
+        // Then remove the subscriber.
         $subscriber->delete();
     }
 }
