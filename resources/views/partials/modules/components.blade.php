@@ -1,4 +1,4 @@
-@if(!$component_groups->isEmpty() || !$ungrouped_components->isEmpty())
+@if($component_groups->isNotEmpty() || $ungrouped_components->isNotEmpty())
 <div class="section-components">
     @include('partials.components')
 </div>
