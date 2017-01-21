@@ -1,7 +1,7 @@
-@if($component_groups->count() > 0)
+@if($component_groups->isNotEmpty())
 @foreach($component_groups as $componentGroup)
 <ul class="list-group components">
-    @if($componentGroup->enabled_components->count() > 0)
+    @if($componentGroup->enabled_components->isNotEmpty())
     <li class="list-group-item group-name">
         <i class="{{ $componentGroup->collapse_class_with_subscriptions($subscriptions) }} group-toggle"></i>
         <strong>{{ $componentGroup->name }}</strong>
@@ -21,7 +21,7 @@
 @endforeach
 @endif
 
-@if($ungrouped_components->count() > 0)
+@if($ungrouped_components->isNotEmpty())
 <ul class="list-group components">
     <li class="list-group-item group-name">
         <strong>{{ trans('cachet.components.group.other') }}</strong>

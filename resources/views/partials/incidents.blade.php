@@ -30,7 +30,7 @@
                         <div class="panel-body markdown-body">
                             {!! $incident->formatted_message !!}
                         </div>
-                        @if($incident->updates->count())
+                        @if($incident->updates->isNotEmpty())
                         <div class="list-group">
                             @foreach($incident->updates as $update)
                             <a class="list-group-item" href="{{ $update->permalink }}">
