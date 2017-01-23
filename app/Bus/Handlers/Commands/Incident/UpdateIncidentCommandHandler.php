@@ -86,6 +86,7 @@ class UpdateIncidentCommandHandler
                 null,
                 null,
                 null,
+                null,
                 null
             ));
         }
