@@ -1,3 +1,40 @@
+@if ($component_groups->isNotEmpty())
+@foreach ($component_groups as $group)
+<div class="panel panel-dark panel--group panel--components">
+    <div class="panel-heading">
+        <div class="panel__icon">
+            <i class="ion-ios-circle-filled"></i>
+        </div>
+        <h3 class="panel-title uppercase">{{ $group->name }}</h3>
+        <p class="panel__subtitle text-uppercase">New component description feature!</p>
+        <div class="panel__toolbar no-select">
+            <ul class="list-inline">
+                <li><a href="#"><span class="glyphicon glyphicon-chevron-down"></span></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="list-group">
+            <div class="list-group-item component component--status-1">
+                <div class="component__icon">
+                    <span class="glyphicon glyphicon-ok"></span>
+                </div>
+                <div class="component__name">
+                    Blog
+                </div>
+                <div class="component__link hidden-xs">
+                    <a href="https://blog.alt-three.com">https://blog.alt-three.com</a>
+                </div>
+                <div class="component__status">
+                    Operational
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endforeach
+@endif
+
 @if($component_groups->isNotEmpty())
 @foreach($component_groups as $componentGroup)
 <ul class="list-group components">

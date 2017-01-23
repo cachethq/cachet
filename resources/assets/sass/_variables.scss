@@ -1,0 +1,101 @@
+// Colors
+$black:        hsl(0, 0%, 4%);
+$black-bis:    hsl(0, 0%, 7%);
+$black-ter:    hsl(0, 0%, 14%);
+
+$grey-darker:  hsl(0, 0%, 21%);
+$grey-dark:    hsl(0, 0%, 29%);
+$grey:         hsl(0, 0%, 48%);
+$grey-light:   hsl(0, 0%, 71%);
+$grey-lighter: hsl(0, 0%, 86%);
+
+$white-ter:    hsl(0, 0%, 96%);
+$white-bis:    hsl(0, 0%, 98%);
+$white:        hsl(0, 0%, 100%);
+
+$orange:       hsl(14,  100%, 53%);
+$yellow:       hsl(50, 100%, 50%);
+$green:        hsl(89, 73%, 48%);
+$blue:         hsl(208, 98%, 43%);
+$red:          hsl(2, 64%, 58%);
+
+// Typography
+$family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$family-monospace: "Inconsolata", "Consolas", "Monaco", monospace;
+
+$size-1: 3.5rem;
+$size-2: 2.75rem;
+$size-3: 2rem;
+$size-4: 1.5rem;
+$size-5: 1.25rem;
+$size-6: 14px;
+$size-7: 0.75rem;
+
+$weight-light: 300;
+$weight-normal: 400;
+$weight-semibold: 500;
+$weight-bold: 700;
+
+// Primary colors
+
+$primary: $green;
+
+$info: $blue;
+$success: $green;
+$warning: $yellow;
+$danger: $red;
+
+$light: $white-ter;
+$dark: $grey-darker;
+
+// General colors
+$background: $white-ter;
+
+$border: $grey-lighter;
+$border-hover: $grey-light;
+
+// Text colors
+$text: $grey-dark;
+$text-light: $grey;
+$text-strong: $grey-darker;
+
+// Code colors
+$code: $red;
+$code-background: $background;
+
+$pre: $text;
+$pre-background: $background;
+
+// Link colors
+$link: $primary;
+$link-visited: $primary;
+
+$link-hover: $grey-darker;
+$link-hover-border: $grey-light;
+
+$link-focus: $grey-darker;
+$link-focus-border: $primary;
+
+$link-active: $grey-darker;
+$link-active-border: $grey-dark;
+
+// Typography
+$family-primary: $family-sans-serif;
+$family-code: $family-monospace;
+
+$size-small: $size-7;
+$size-normal: 1rem;
+$size-medium: $size-5;
+$size-large: $size-4;
+
+// Lists
+$colors: (light, $white-bis, rgba(0, 0, 0, 0.4)),
+         (dark, $dark, rgba(255, 255, 255, 0.9)),
+         (primary, $primary, rgba(255, 255, 255, 0.9)),
+         (info, $info, rgba(255, 255, 255, 0.9)),
+         (success, $success, rgba(255, 255, 255, 0.9)),
+         (warning, $warning, rgba(255, 255, 255, 0.9)),
+         (danger, $danger, rgba(255, 255, 255, 0.9))
+;
+
+$sizes: $size-1 $size-2 $size-3 $size-4 $size-5 $size-6;
