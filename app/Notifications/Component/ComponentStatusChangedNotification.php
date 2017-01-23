@@ -85,7 +85,7 @@ class ComponentStatusChangedNotification extends Notification
 
         return (new MailMessage())
                     ->subject(trans('notifications.component.status_update.mail.subject'))
-                    ->greeting(trans('notifications.component.status_update.mail.title'))
+                    ->greeting(trans('notifications.component.status_update.mail.subject'))
                     ->line($content)
                     ->action(trans('notifications.component.status_update.mail.action'), cachet_route('status-page'))
                     ->line(trans('cachet.subscriber.unsubscribe', ['link' => cachet_route('subscribe.unsubscribe', $notifiable->verify_code)]));
@@ -136,7 +136,7 @@ class ComponentStatusChangedNotification extends Notification
 
         return (new SlackMessage())
                     ->$status()
-                    ->content(trans('notifications.component.status_update.slack.title'))
+                    ->content(trans('notifications.component.status_update.slack.subject'))
                     ->attachment(function ($attachment) use ($content, $notifiable) {
                         $attachment->title($content, cachet_route('status-page'))
                                    ->fields(array_filter([
