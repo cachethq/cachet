@@ -1,4 +1,4 @@
+/node_modules
+/vendor
 .env
-node_modules
 phpunit.xml
-vendor
