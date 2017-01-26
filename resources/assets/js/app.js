@@ -34,7 +34,7 @@ $(function() {
     });
 
     // Autosizing of textareas.
-    autosize($('textarea.autosize'));
+    // autosize($('textarea.autosize'));
 
     // Mock the DELETE form requests.
     $('[data-method]').not(".disabled").append(function() {
