@@ -12,7 +12,7 @@
 namespace CachetHQ\Cachet\Http\Controllers;
 
 use AltThree\Badger\Facades\Badger;
-use CachetHQ\Cachet\Dates\DateFactory;
+use CachetHQ\Cachet\Services\Dates\DateFactory;
 use CachetHQ\Cachet\Http\Controllers\Api\AbstractApiController;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;

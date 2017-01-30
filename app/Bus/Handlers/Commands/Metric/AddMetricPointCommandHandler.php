@@ -13,7 +13,7 @@ namespace CachetHQ\Cachet\Bus\Handlers\Commands\Metric;
 
 use CachetHQ\Cachet\Bus\Commands\Metric\AddMetricPointCommand;
 use CachetHQ\Cachet\Bus\Events\Metric\MetricPointWasAddedEvent;
-use CachetHQ\Cachet\Dates\DateFactory;
+use CachetHQ\Cachet\Services\Dates\DateFactory;
 use CachetHQ\Cachet\Models\MetricPoint;
 use Carbon\Carbon;
 
@@ -22,14 +22,14 @@ class AddMetricPointCommandHandler
     /**
      * The date factory instance.
      *
-     * @var \CachetHQ\Cachet\Dates\DateFactory
+     * @var \CachetHQ\Cachet\Services\Dates\DateFactory
      */
     protected $dates;
 
     /**
      * Create a new add metric point command handler instance.
      *
-     * @param \CachetHQ\Cachet\Dates\DateFactory $dates
+     * @param \CachetHQ\Cachet\Services\Dates\DateFactory $dates
      *
      * @return void
      */

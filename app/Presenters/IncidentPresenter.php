@@ -11,7 +11,7 @@
 
 namespace CachetHQ\Cachet\Presenters;
 
-use CachetHQ\Cachet\Dates\DateFactory;
+use CachetHQ\Cachet\Services\Dates\DateFactory;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Presenters\Traits\TimestampsTrait;
 use GrahamCampbell\Markdown\Facades\Markdown;
@@ -25,7 +25,7 @@ class IncidentPresenter extends BasePresenter implements Arrayable
     /**
      * The date factory instance.
      *
-     * @var \CachetHQ\Cachet\Dates\DateFactory
+     * @var \CachetHQ\Cachet\Services\Dates\DateFactory
      */
     protected $dates;
 
@@ -45,7 +45,7 @@ class IncidentPresenter extends BasePresenter implements Arrayable
     /**
      * Create a new presenter.
      *
-     * @param \CachetHQ\Cachet\Dates\DateFactory $dates
+     * @param \CachetHQ\Cachet\Services\Dates\DateFactory $dates
      * @param \CachetHQ\Cachet\Models\Incident   $resource
      *
      * @return void

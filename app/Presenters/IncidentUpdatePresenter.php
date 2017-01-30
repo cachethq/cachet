@@ -11,7 +11,7 @@
 
 namespace CachetHQ\Cachet\Presenters;
 
-use CachetHQ\Cachet\Dates\DateFactory;
+use CachetHQ\Cachet\Services\Dates\DateFactory;
 use CachetHQ\Cachet\Presenters\Traits\TimestampsTrait;
 use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Contracts\Support\Arrayable;

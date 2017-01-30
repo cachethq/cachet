@@ -13,7 +13,7 @@ namespace CachetHQ\Cachet\Foundation\Providers;
 
 use AltThree\Bus\Dispatcher;
 use CachetHQ\Cachet\Bus\Middleware\UseDatabaseTransactions;
-use CachetHQ\Cachet\Dates\DateFactory;
+use CachetHQ\Cachet\Services\Dates\DateFactory;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 

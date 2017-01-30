@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Dates;
+namespace CachetHQ\Cachet\Services\Dates;
 
 use Carbon\Carbon;
 use DateTimeZone;

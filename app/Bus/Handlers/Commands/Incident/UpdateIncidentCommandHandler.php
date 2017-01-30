@@ -15,7 +15,7 @@ use CachetHQ\Cachet\Bus\Commands\Component\UpdateComponentCommand;
 use CachetHQ\Cachet\Bus\Commands\Incident\UpdateIncidentCommand;
 use CachetHQ\Cachet\Bus\Events\Incident\IncidentWasUpdatedEvent;
 use CachetHQ\Cachet\Bus\Exceptions\Incident\InvalidIncidentTimestampException;
-use CachetHQ\Cachet\Dates\DateFactory;
+use CachetHQ\Cachet\Services\Dates\DateFactory;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentTemplate;
@@ -32,14 +32,14 @@ class UpdateIncidentCommandHandler
     /**
      * The date factory instance.
      *
-     * @var \CachetHQ\Cachet\Dates\DateFactory
+     * @var \CachetHQ\Cachet\Services\Dates\DateFactory
      */
     protected $dates;
 
     /**
      * Create a new update incident command handler instance.
      *
-     * @param \CachetHQ\Cachet\Dates\DateFactory $dates
+     * @param \CachetHQ\Cachet\Services\Dates\DateFactory $dates
      *
      * @return void
      */

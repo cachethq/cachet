@@ -11,7 +11,7 @@
 
 namespace CachetHQ\Cachet\Foundation\Providers;
 
-use CachetHQ\Cachet\Dates\DateFactory;
+use CachetHQ\Cachet\Services\Dates\DateFactory;
 use CachetHQ\Cachet\Repositories\Metric\MetricRepository;
 use CachetHQ\Cachet\Repositories\Metric\MySqlRepository;
 use CachetHQ\Cachet\Repositories\Metric\PgSqlRepository;

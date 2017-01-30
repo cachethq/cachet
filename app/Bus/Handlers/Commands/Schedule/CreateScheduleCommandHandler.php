@@ -13,7 +13,7 @@ namespace CachetHQ\Cachet\Bus\Handlers\Commands\Schedule;
 
 use CachetHQ\Cachet\Bus\Commands\Schedule\CreateScheduleCommand;
 use CachetHQ\Cachet\Bus\Events\Schedule\ScheduleWasCreatedEvent;
-use CachetHQ\Cachet\Dates\DateFactory;
+use CachetHQ\Cachet\Services\Dates\DateFactory;
 use CachetHQ\Cachet\Models\Schedule;
 
 /**
@@ -26,14 +26,14 @@ class CreateScheduleCommandHandler
     /**
      * The date factory instance.
      *
-     * @var \CachetHQ\Cachet\Dates\DateFactory
+     * @var \CachetHQ\Cachet\Services\Dates\DateFactory
      */
     protected $dates;
 
     /**
      * Create a new update schedule command handler instance.
      *
-     * @param \CachetHQ\Cachet\Dates\DateFactory $dates
+     * @param \CachetHQ\Cachet\Services\Dates\DateFactory $dates
      *
      * @return void
      */

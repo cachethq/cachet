@@ -11,7 +11,7 @@
 
 namespace CachetHQ\Cachet\Presenters\Traits;
 
-use CachetHQ\Cachet\Dates\DateFactory;
+use CachetHQ\Cachet\Services\Dates\DateFactory;
 use Illuminate\Support\Facades\Config;
 
 /**

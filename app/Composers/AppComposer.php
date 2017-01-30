@@ -11,7 +11,7 @@
 
 namespace CachetHQ\Cachet\Composers;
 
-use CachetHQ\Cachet\Dates\DateFactory;
+use CachetHQ\Cachet\Services\Dates\DateFactory;
 use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\View\View;
@@ -27,7 +27,7 @@ class AppComposer
     /**
      * The date factory instance.
      *
-     * @var \CachetHQ\Cachet\Dates\DateFactory
+     * @var \CachetHQ\Cachet\Services\Dates\DateFactory
      */
     protected $dates;
 
@@ -41,7 +41,7 @@ class AppComposer
     /**
      * Create a new app composer instance.
      *
-     * @param \CachetHQ\Cachet\Dates\DateFactory      $dates
+     * @param \CachetHQ\Cachet\Services\Dates\DateFactory      $dates
      * @param \Illuminate\Contracts\Config\Repository $config
      *
      * @return void
