@@ -11,8 +11,8 @@
 
 namespace CachetHQ\Cachet\Presenters;
 
-use CachetHQ\Cachet\Services\Dates\DateFactory;
 use CachetHQ\Cachet\Presenters\Traits\TimestampsTrait;
+use CachetHQ\Cachet\Services\Dates\DateFactory;
 use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Contracts\Support\Arrayable;
 use McCool\LaravelAutoPresenter\BasePresenter;

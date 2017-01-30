@@ -15,10 +15,10 @@ use CachetHQ\Cachet\Bus\Commands\Component\UpdateComponentCommand;
 use CachetHQ\Cachet\Bus\Commands\Incident\UpdateIncidentCommand;
 use CachetHQ\Cachet\Bus\Events\Incident\IncidentWasUpdatedEvent;
 use CachetHQ\Cachet\Bus\Exceptions\Incident\InvalidIncidentTimestampException;
-use CachetHQ\Cachet\Services\Dates\DateFactory;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentTemplate;
+use CachetHQ\Cachet\Services\Dates\DateFactory;
 use Twig_Environment;
 use Twig_Loader_Array;
 

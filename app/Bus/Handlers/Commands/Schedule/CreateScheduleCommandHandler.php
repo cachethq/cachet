@@ -13,8 +13,8 @@ namespace CachetHQ\Cachet\Bus\Handlers\Commands\Schedule;
 
 use CachetHQ\Cachet\Bus\Commands\Schedule\CreateScheduleCommand;
 use CachetHQ\Cachet\Bus\Events\Schedule\ScheduleWasCreatedEvent;
-use CachetHQ\Cachet\Services\Dates\DateFactory;
 use CachetHQ\Cachet\Models\Schedule;
+use CachetHQ\Cachet\Services\Dates\DateFactory;
 
 /**
  * This is the create schedule command handler.

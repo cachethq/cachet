@@ -13,8 +13,8 @@ namespace CachetHQ\Cachet\Bus\Handlers\Commands\Metric;
 
 use CachetHQ\Cachet\Bus\Commands\Metric\AddMetricPointCommand;
 use CachetHQ\Cachet\Bus\Events\Metric\MetricPointWasAddedEvent;
-use CachetHQ\Cachet\Services\Dates\DateFactory;
 use CachetHQ\Cachet\Models\MetricPoint;
+use CachetHQ\Cachet\Services\Dates\DateFactory;
 use Carbon\Carbon;
 
 class AddMetricPointCommandHandler

@@ -11,9 +11,9 @@
 
 namespace CachetHQ\Cachet\Presenters;
 
-use CachetHQ\Cachet\Services\Dates\DateFactory;
 use CachetHQ\Cachet\Models\Schedule;
 use CachetHQ\Cachet\Presenters\Traits\TimestampsTrait;
+use CachetHQ\Cachet\Services\Dates\DateFactory;
 use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Contracts\Support\Arrayable;
 use McCool\LaravelAutoPresenter\BasePresenter;
@@ -38,7 +38,7 @@ class SchedulePresenter extends BasePresenter implements Arrayable
      * Create a new presenter.
      *
      * @param \CachetHQ\Cachet\Services\Dates\DateFactory $dates
-     * @param \CachetHQ\Cachet\Models\Schedule   $resource
+     * @param \CachetHQ\Cachet\Models\Schedule            $resource
      *
      * @return void
      */

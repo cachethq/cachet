@@ -41,8 +41,8 @@ class AppComposer
     /**
      * Create a new app composer instance.
      *
-     * @param \CachetHQ\Cachet\Services\Dates\DateFactory      $dates
-     * @param \Illuminate\Contracts\Config\Repository $config
+     * @param \CachetHQ\Cachet\Services\Dates\DateFactory $dates
+     * @param \Illuminate\Contracts\Config\Repository     $config
      *
      * @return void
      */
