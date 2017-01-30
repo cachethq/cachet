@@ -53,8 +53,6 @@ class IncidentPresenter extends BasePresenter implements Arrayable
     public function __construct(DateFactory $dates, Incident $resource)
     {
         $this->dates = $dates;
-
-        parent::__construct($resource);
     }
 
     /**
