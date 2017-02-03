@@ -171,7 +171,7 @@ class DemoSeederCommand extends Command
                 'link'        => 'https://styleci.io',
             ], [
                 'name'        => 'GitHub',
-                'description' => null,
+                'description' => '',
                 'status'      => 1,
                 'order'       => 0,
                 'group_id'    => 0,
