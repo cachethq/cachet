@@ -170,12 +170,12 @@ class DemoSeederCommand extends Command
                 'group_id'    => 2,
                 'link'        => 'https://styleci.io',
             ], [
-                'name'        => 'Patreon Page',
-                'description' => 'Support future development of Cachet.',
+                'name'        => 'GitHub',
+                'description' => null,
                 'status'      => 1,
                 'order'       => 0,
                 'group_id'    => 0,
-                'link'        => 'https://patreon.com/jbrooksuk',
+                'link'        => 'https://github.com/CachetHQ/Cachet',
             ],
         ];
 
