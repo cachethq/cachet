@@ -2227,16 +2227,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.33",
+            "version": "1.0.34",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "5c7f98498b12d47f9de90ec9186a90000125777c"
+                "reference": "469ad53c13ea19a0e54e3e5d70f61227ddcc0299"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/5c7f98498b12d47f9de90ec9186a90000125777c",
-                "reference": "5c7f98498b12d47f9de90ec9186a90000125777c",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/469ad53c13ea19a0e54e3e5d70f61227ddcc0299",
+                "reference": "469ad53c13ea19a0e54e3e5d70f61227ddcc0299",
                 "shasum": ""
             },
             "require": {
@@ -2306,7 +2306,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2017-01-23T10:32:09+00:00"
+            "time": "2017-01-30T17:41:17+00:00"
         },
         {
             "name": "mccool/laravel-auto-presenter",
@@ -6076,16 +6076,16 @@
         },
         {
             "name": "tightenco/mailthief",
-            "version": "v0.3.3",
+            "version": "v0.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tightenco/mailthief.git",
-                "reference": "9e073e4cf63fd9425eb85278352380faa83d72af"
+                "reference": "b9ea841ad2c679dcf2aed200aca306f57ca9ea56"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tightenco/mailthief/zipball/9e073e4cf63fd9425eb85278352380faa83d72af",
-                "reference": "9e073e4cf63fd9425eb85278352380faa83d72af",
+                "url": "https://api.github.com/repos/tightenco/mailthief/zipball/b9ea841ad2c679dcf2aed200aca306f57ca9ea56",
+                "reference": "b9ea841ad2c679dcf2aed200aca306f57ca9ea56",
                 "shasum": ""
             },
             "require": {
@@ -6114,7 +6114,7 @@
                 }
             ],
             "description": "A fake Mailer for Laravel applications that takes the pain out of testing mail.",
-            "time": "2016-11-30T16:49:35+00:00"
+            "time": "2017-01-30T17:27:29+00:00"
         },
         {
             "name": "webmozart/assert",
