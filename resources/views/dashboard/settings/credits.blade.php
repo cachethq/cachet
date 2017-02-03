@@ -19,18 +19,6 @@
 
                 <hr>
 
-                <h4>{{ trans('dashboard.settings.credits.backers-title') }}</h4>
-
-                <p>{!! trans('dashboard.settings.credits.backers') !!}</p>
-
-                <ul>
-                    @foreach($backers as $backer)
-                    <li>{{ $backer['name'] }}</li>
-                    @endforeach
-                </ul>
-
-                <hr>
-
                 <h4>{{ trans('dashboard.settings.credits.contributors') }}</h4>
 
                 <p>{{ trans('dashboard.settings.credits.thank-you', ['count' => count($contributors)]) }}</p>
