@@ -348,6 +348,8 @@ EINCIDENT;
             ],
         ];
 
+        Schedule::truncate();
+
         foreach ($defaultSchedules as $schedule) {
             Schedule::create($schedule);
         }
