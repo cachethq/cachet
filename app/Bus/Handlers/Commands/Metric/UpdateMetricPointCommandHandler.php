@@ -14,9 +14,17 @@ namespace CachetHQ\Cachet\Bus\Handlers\Commands\Metric;
 use CachetHQ\Cachet\Bus\Commands\Metric\UpdateMetricPointCommand;
 use CachetHQ\Cachet\Bus\Events\Metric\MetricPointWasUpdatedEvent;
 use CachetHQ\Cachet\Services\Dates\DateFactory;
+use Illuminate\Contracts\Auth\Guard;
 
 class UpdateMetricPointCommandHandler
 {
+    /**
+     * The authentication guard instance.
+     *
+     * @var \Illuminate\Contracts\Auth\Guard
+     */
+    protected $auth;
+
     /**
      * The date factory instance.
      *
@@ -27,12 +35,14 @@ class UpdateMetricPointCommandHandler
     /**
      * Create a new update metric point command handler instance.
      *
+     * @param \Illuminate\Contracts\Auth\Guard   $auth
      * @param \CachetHQ\Cachet\Services\Dates\DateFactory $dates
      *
      * @return void
      */
-    public function __construct(DateFactory $dates)
+    public function __construct(Guard $auth, DateFactory $dates)
     {
+        $this->auth = $auth;
         $this->dates = $dates;
     }
 
@@ -60,7 +70,7 @@ class UpdateMetricPointCommandHandler
 
         $point->update($data);
 
-        event(new MetricPointWasUpdatedEvent($point));
+        event(new MetricPointWasUpdatedEvent($this->auth->user(), $point));
 
         return $point;
     }

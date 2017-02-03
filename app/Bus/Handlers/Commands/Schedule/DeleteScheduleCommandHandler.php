@@ -13,6 +13,7 @@ namespace CachetHQ\Cachet\Bus\Handlers\Commands\Schedule;
 
 use CachetHQ\Cachet\Bus\Commands\Schedule\DeleteScheduleCommand;
 use CachetHQ\Cachet\Bus\Events\Schedule\ScheduleWasRemovedEvent;
+use Illuminate\Contracts\Auth\Guard;
 
 /**
  * This is the delete schedule command handler.
@@ -21,6 +22,25 @@ use CachetHQ\Cachet\Bus\Events\Schedule\ScheduleWasRemovedEvent;
  */
 class DeleteScheduleCommandHandler
 {
+    /**
+     * The authentication guard instance.
+     *
+     * @var \Illuminate\Contracts\Auth\Guard
+     */
+    protected $auth;
+
+    /**
+     * Create a new delete schedule command handler instance.
+     *
+     * @param \Illuminate\Contracts\Auth\Guard $auth
+     *
+     * @return void
+     */
+    public function __construct(Guard $auth)
+    {
+        $this->auth = $auth;
+    }
+
     /**
      * Handle the delete schedule command.
      *
@@ -32,7 +52,7 @@ class DeleteScheduleCommandHandler
     {
         $schedule = $command->schedule;
 
-        event(new ScheduleWasRemovedEvent($schedule));
+        event(new ScheduleWasRemovedEvent($this->auth->user(), $schedule));
 
         $schedule->delete();
     }

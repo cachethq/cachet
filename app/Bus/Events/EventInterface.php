@@ -11,6 +11,12 @@
 
 namespace CachetHQ\Cachet\Bus\Events;
 
+/**
+ * This is the event interface.
+ *
+ * @author Graham Campbell <graham@alt-three.com>
+ * @author James Brooks <james@alt-three.com>
+ */
 interface EventInterface
 {
     //

@@ -21,6 +21,9 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
+        'CachetHQ\Cachet\Bus\Events\ActionInterface' => [
+            'CachetHQ\Cachet\Bus\Handlers\Events\ActionStorageHandler',
+        ],
         'CachetHQ\Cachet\Bus\Events\Beacon\BeaconFailedToSendEvent' => [
             'CachetHQ\Cachet\Bus\Handlers\Events\Beacon\LogBeaconFailedHandler',
         ],

@@ -15,6 +15,7 @@ use CachetHQ\Cachet\Bus\Commands\Incident\UpdateIncidentCommand;
 use CachetHQ\Cachet\Bus\Commands\IncidentUpdate\ReportIncidentUpdateCommand;
 use CachetHQ\Cachet\Bus\Events\IncidentUpdate\IncidentUpdateWasReportedEvent;
 use CachetHQ\Cachet\Models\IncidentUpdate;
+use Illuminate\Contracts\Auth\Guard;
 
 /**
  * This is the report incident update command handler.
@@ -23,6 +24,25 @@ use CachetHQ\Cachet\Models\IncidentUpdate;
  */
 class ReportIncidentUpdateCommandHandler
 {
+    /**
+     * The authentication guard instance.
+     *
+     * @var \Illuminate\Contracts\Auth\Guard
+     */
+    protected $auth;
+
+    /**
+     * Create a new report incident update command handler instance.
+     *
+     * @param \Illuminate\Contracts\Auth\Guard $auth
+     *
+     * @return void
+     */
+    public function __construct(Guard $auth)
+    {
+        $this->auth = $auth;
+    }
+
     /**
      * Handle the report incident command.
      *
@@ -58,7 +78,7 @@ class ReportIncidentUpdateCommandHandler
             []
         ));
 
-        event(new IncidentUpdateWasReportedEvent($update));
+        event(new IncidentUpdateWasReportedEvent($this->auth->user(), $update));
 
         return $update;
     }

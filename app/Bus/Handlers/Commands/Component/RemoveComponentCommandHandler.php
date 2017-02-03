@@ -13,9 +13,29 @@ namespace CachetHQ\Cachet\Bus\Handlers\Commands\Component;
 
 use CachetHQ\Cachet\Bus\Commands\Component\RemoveComponentCommand;
 use CachetHQ\Cachet\Bus\Events\Component\ComponentWasRemovedEvent;
+use Illuminate\Contracts\Auth\Guard;
 
 class RemoveComponentCommandHandler
 {
+    /**
+     * The authentication guard instance.
+     *
+     * @var \Illuminate\Contracts\Auth\Guard
+     */
+    protected $auth;
+
+    /**
+     * Create a new remove component command handler instance.
+     *
+     * @param \Illuminate\Contracts\Auth\Guard $auth
+     *
+     * @return void
+     */
+    public function __construct(Guard $auth)
+    {
+        $this->auth = $auth;
+    }
+
     /**
      * Handle the remove component command.
      *
@@ -27,7 +47,7 @@ class RemoveComponentCommandHandler
     {
         $component = $command->component;
 
-        event(new ComponentWasRemovedEvent($component));
+        event(new ComponentWasRemovedEvent($this->auth->user(), $component));
 
         $component->delete();
     }

@@ -11,10 +11,19 @@
 
 namespace CachetHQ\Cachet\Bus\Events\Metric;
 
+use CachetHQ\Cachet\Bus\Events\ActionInterface;
 use CachetHQ\Cachet\Models\Metric;
+use CachetHQ\Cachet\Models\User;
 
-final class MetricWasAddedEvent implements MetricEventInterface
+final class MetricWasAddedEvent implements ActionInterface, MetricEventInterface
 {
+    /**
+     * The user who added the metric.
+     *
+     * @var \CachetHQ\Cachet\Models\User
+     */
+    public $user;
+
     /**
      * The metric that was added.
      *
@@ -25,12 +34,14 @@ final class MetricWasAddedEvent implements MetricEventInterface
     /**
      * Create a new metric was added event instance.
      *
+     * @param \CachetHQ\Cachet\Models\User   $user
      * @param \CachetHQ\Cachet\Models\Metric $metric
      *
      * @return void
      */
-    public function __construct(Metric $metric)
+    public function __construct(User $user, Metric $metric)
     {
+        $this->user = $user;
         $this->metric = $metric;
     }
 
@@ -42,5 +53,18 @@ final class MetricWasAddedEvent implements MetricEventInterface
     public function __toString()
     {
         return 'Metric was added.';
+    }
+
+    /**
+     * Get the event action.
+     *
+     * @return array
+     */
+    public function getAction()
+    {
+        return [
+            'user'        => $this->user,
+            'description' => (string) $this,
+        ];
     }
 }

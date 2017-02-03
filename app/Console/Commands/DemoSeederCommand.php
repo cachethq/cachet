@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Cachet\Console\Commands;
 
+use CachetHQ\Cachet\Models\Action;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Incident;
@@ -84,6 +85,7 @@ class DemoSeederCommand extends Command
             return;
         }
 
+        $this->seedActions();
         $this->seedComponentGroups();
         $this->seedComponents();
         $this->seedIncidents();
@@ -96,6 +98,16 @@ class DemoSeederCommand extends Command
         $this->seedUsers();
 
         $this->info('Database seeded with demo data successfully!');
+    }
+
+    /**
+     * Seed the actions table.
+     *
+     * @return void
+     */
+    protected function seedActions()
+    {
+        Action::truncate();
     }
 
     /**

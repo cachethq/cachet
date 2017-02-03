@@ -11,10 +11,19 @@
 
 namespace CachetHQ\Cachet\Bus\Events\Metric;
 
+use CachetHQ\Cachet\Bus\Events\ActionInterface;
 use CachetHQ\Cachet\Models\MetricPoint;
+use CachetHQ\Cachet\Models\User;
 
-final class MetricPointWasUpdatedEvent implements MetricEventInterface
+final class MetricPointWasUpdatedEvent implements ActionInterface, MetricEventInterface
 {
+    /**
+     * The user who updated the metric point.
+     *
+     * @var \CachetHQ\Cachet\Models\User
+     */
+    public $user;
+
     /**
      * The metric point that was updated.
      *
@@ -25,12 +34,14 @@ final class MetricPointWasUpdatedEvent implements MetricEventInterface
     /**
      * Create a new metric point was updated event instance.
      *
+     * @param \CachetHQ\Cachet\Models\User        $user
      * @param \CachetHQ\Cachet\Models\MetricPoint $metricPoint
      *
      * @return void
      */
-    public function __construct(MetricPoint $metricPoint)
+    public function __construct(User $user, MetricPoint $metricPoint)
     {
+        $this->user = $user;
         $this->metricPoint = $metricPoint;
     }
 
@@ -42,5 +53,18 @@ final class MetricPointWasUpdatedEvent implements MetricEventInterface
     public function __toString()
     {
         return 'Metric Point was updated.';
+    }
+
+    /**
+     * Get the event action.
+     *
+     * @return array
+     */
+    public function getAction()
+    {
+        return [
+            'user'        => $this->user,
+            'description' => (string) $this,
+        ];
     }
 }

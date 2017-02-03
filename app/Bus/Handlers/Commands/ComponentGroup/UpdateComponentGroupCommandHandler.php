@@ -13,9 +13,29 @@ namespace CachetHQ\Cachet\Bus\Handlers\Commands\ComponentGroup;
 
 use CachetHQ\Cachet\Bus\Commands\ComponentGroup\UpdateComponentGroupCommand;
 use CachetHQ\Cachet\Bus\Events\ComponentGroup\ComponentGroupWasUpdatedEvent;
+use Illuminate\Contracts\Auth\Guard;
 
 class UpdateComponentGroupCommandHandler
 {
+    /**
+     * The authentication guard instance.
+     *
+     * @var \Illuminate\Contracts\Auth\Guard
+     */
+    protected $auth;
+
+    /**
+     * Create a new update component command handler instance.
+     *
+     * @param \Illuminate\Contracts\Auth\Guard $auth
+     *
+     * @return void
+     */
+    public function __construct(Guard $auth)
+    {
+        $this->auth = $auth;
+    }
+
     /**
      * Handle the update component group command.
      *
@@ -28,7 +48,7 @@ class UpdateComponentGroupCommandHandler
         $group = $command->group;
         $group->update($this->filter($command));
 
-        event(new ComponentGroupWasUpdatedEvent($group));
+        event(new ComponentGroupWasUpdatedEvent($this->auth->user(), $group));
 
         return $group;
     }

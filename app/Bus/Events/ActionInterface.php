@@ -9,17 +9,20 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Events\Component;
-
-use CachetHQ\Cachet\Bus\Events\EventInterface;
+namespace CachetHQ\Cachet\Bus\Events;
 
 /**
- * This is the component event interface.
+ * This is the action interface.
  *
  * @author Graham Campbell <graham@alt-three.com>
  * @author James Brooks <james@alt-three.com>
  */
-interface ComponentEventInterface extends EventInterface
+interface ActionInterface
 {
-    //
+    /**
+     * Get the event action.
+     *
+     * @return array
+     */
+    public function getAction();
 }

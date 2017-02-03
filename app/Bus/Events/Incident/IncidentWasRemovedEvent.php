@@ -11,10 +11,19 @@
 
 namespace CachetHQ\Cachet\Bus\Events\Incident;
 
+use CachetHQ\Cachet\Bus\Events\ActionInterface;
 use CachetHQ\Cachet\Models\Incident;
+use CachetHQ\Cachet\Models\User;
 
-final class IncidentWasRemovedEvent implements IncidentEventInterface
+final class IncidentWasRemovedEvent implements ActionInterface, IncidentEventInterface
 {
+    /**
+     * The user who removed the event.
+     *
+     * @var \CachetHQ\Cachet\Models\User
+     */
+    public $user;
+
     /**
      * The incident that has been removed.
      *
@@ -25,12 +34,14 @@ final class IncidentWasRemovedEvent implements IncidentEventInterface
     /**
      * Create a new incident was removed event instance.
      *
+     * @param \CachetHQ\Cachet\Models\User     $user
      * @param \CachetHQ\Cachet\Models\Incident $incident
      *
      * @return void
      */
-    public function __construct(Incident $incident)
+    public function __construct(User $user, Incident $incident)
     {
+        $this->user = $user;
         $this->incident = $incident;
     }
 
@@ -42,5 +53,18 @@ final class IncidentWasRemovedEvent implements IncidentEventInterface
     public function __toString()
     {
         return 'Incident was removed.';
+    }
+
+    /**
+     * Get the event action.
+     *
+     * @return array
+     */
+    public function getAction()
+    {
+        return [
+            'user'        => $this->user,
+            'description' => (string) $this,
+        ];
     }
 }

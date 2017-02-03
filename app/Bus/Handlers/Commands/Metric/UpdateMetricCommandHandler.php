@@ -14,9 +14,29 @@ namespace CachetHQ\Cachet\Bus\Handlers\Commands\Metric;
 use CachetHQ\Cachet\Bus\Commands\Metric\UpdateMetricCommand;
 use CachetHQ\Cachet\Bus\Events\Metric\MetricWasUpdatedEvent;
 use CachetHQ\Cachet\Models\Metric;
+use Illuminate\Contracts\Auth\Guard;
 
 class UpdateMetricCommandHandler
 {
+    /**
+     * The authentication guard instance.
+     *
+     * @var \Illuminate\Contracts\Auth\Guard
+     */
+    protected $auth;
+
+    /**
+     * Create a new update metric command handler instance.
+     *
+     * @param \Illuminate\Contracts\Auth\Guard $auth
+     *
+     * @return void
+     */
+    public function __construct(Guard $auth)
+    {
+        $this->auth = $auth;
+    }
+
     /**
      * Handle the update metric command.
      *
@@ -30,7 +50,7 @@ class UpdateMetricCommandHandler
 
         $metric->update($this->filter($command));
 
-        event(new MetricWasUpdatedEvent($metric));
+        event(new MetricWasUpdatedEvent($this->auth->user(), $metric));
 
         return $metric;
     }

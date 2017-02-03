@@ -15,9 +15,29 @@ use CachetHQ\Cachet\Bus\Commands\Component\UpdateComponentCommand;
 use CachetHQ\Cachet\Bus\Events\Component\ComponentStatusWasUpdatedEvent;
 use CachetHQ\Cachet\Bus\Events\Component\ComponentWasUpdatedEvent;
 use CachetHQ\Cachet\Models\Component;
+use Illuminate\Contracts\Auth\Guard;
 
 class UpdateComponentCommandHandler
 {
+    /**
+     * The authentication guard instance.
+     *
+     * @var \Illuminate\Contracts\Auth\Guard
+     */
+    protected $auth;
+
+    /**
+     * Create a new update component command handler instance.
+     *
+     * @param \Illuminate\Contracts\Auth\Guard $auth
+     *
+     * @return void
+     */
+    public function __construct(Guard $auth)
+    {
+        $this->auth = $auth;
+    }
+
     /**
      * Handle the update component command.
      *
@@ -30,11 +50,11 @@ class UpdateComponentCommandHandler
         $component = $command->component;
         $originalStatus = $component->status;
 
-        event(new ComponentStatusWasUpdatedEvent($component, $originalStatus, $command->status));
+        event(new ComponentStatusWasUpdatedEvent($this->auth->user(), $component, $originalStatus, $command->status));
 
         $component->update($this->filter($command));
 
-        event(new ComponentWasUpdatedEvent($component));
+        event(new ComponentWasUpdatedEvent($this->auth->user(), $component));
 
         return $component;
     }

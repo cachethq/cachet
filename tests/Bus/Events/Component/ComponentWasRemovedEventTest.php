@@ -13,6 +13,7 @@ namespace CachetHQ\Tests\Cachet\Bus\Events\Component;
 
 use CachetHQ\Cachet\Bus\Events\Component\ComponentWasRemovedEvent;
 use CachetHQ\Cachet\Models\Component;
+use CachetHQ\Cachet\Models\User;
 
 class ComponentWasRemovedEventTest extends AbstractComponentEventTestCase
 {
@@ -23,8 +24,8 @@ class ComponentWasRemovedEventTest extends AbstractComponentEventTestCase
 
     protected function getObjectAndParams()
     {
-        $params = ['component' => new Component()];
-        $object = new ComponentWasRemovedEvent($params['component']);
+        $params = ['user' => new User(), 'component' => new Component()];
+        $object = new ComponentWasRemovedEvent($params['user'], $params['component']);
 
         return compact('params', 'object');
     }

@@ -13,6 +13,7 @@ namespace CachetHQ\Tests\Cachet\Bus\Events\Schedule;
 
 use CachetHQ\Cachet\Bus\Events\Schedule\ScheduleWasUpdatedEvent;
 use CachetHQ\Cachet\Models\Schedule;
+use CachetHQ\Cachet\Models\User;
 
 class ScheduleWasUpdatedEventTest extends AbstractScheduleEventTestCase
 {
@@ -23,8 +24,8 @@ class ScheduleWasUpdatedEventTest extends AbstractScheduleEventTestCase
 
     protected function getObjectAndParams()
     {
-        $params = ['schedule' => new Schedule()];
-        $object = new ScheduleWasUpdatedEvent($params['schedule']);
+        $params = ['user' => new User(), 'schedule' => new Schedule()];
+        $object = new ScheduleWasUpdatedEvent($params['user'], $params['schedule']);
 
         return compact('params', 'object');
     }

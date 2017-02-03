@@ -13,6 +13,7 @@ namespace CachetHQ\Cachet\Bus\Handlers\Commands\IncidentUpdate;
 
 use CachetHQ\Cachet\Bus\Commands\IncidentUpdate\UpdateIncidentUpdateCommand;
 use CachetHQ\Cachet\Bus\Events\IncidentUpdate\IncidentUpdateWasUpdatedEvent;
+use Illuminate\Contracts\Auth\Guard;
 
 /**
  * This is the update incident update command handler.
@@ -21,6 +22,25 @@ use CachetHQ\Cachet\Bus\Events\IncidentUpdate\IncidentUpdateWasUpdatedEvent;
  */
 class UpdateIncidentUpdateCommandHandler
 {
+    /**
+     * The authentication guard instance.
+     *
+     * @var \Illuminate\Contracts\Auth\Guard
+     */
+    protected $auth;
+
+    /**
+     * Create a new update incident update command handler instance.
+     *
+     * @param \Illuminate\Contracts\Auth\Guard $auth
+     *
+     * @return void
+     */
+    public function __construct(Guard $auth)
+    {
+        $this->auth = $auth;
+    }
+
     /**
      * Handle the update incident update command.
      *
@@ -32,7 +52,7 @@ class UpdateIncidentUpdateCommandHandler
     {
         $command->update->update($this->filter($command));
 
-        event(new IncidentUpdateWasUpdatedEvent($command->update));
+        event(new IncidentUpdateWasUpdatedEvent($this->auth->user(), $command->update));
 
         return $command->update;
     }

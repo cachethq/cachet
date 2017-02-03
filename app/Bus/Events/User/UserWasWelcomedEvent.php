@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Cachet\Bus\Events\User;
 
+use CachetHQ\Cachet\Bus\Events\ActionInterface;
 use CachetHQ\Cachet\Models\User;
 
 /**
@@ -18,7 +19,7 @@ use CachetHQ\Cachet\Models\User;
  *
  * @author James Brooks <james@alt-three.com>
  */
-final class UserWasWelcomedEvent implements UserEventInterface
+final class UserWasWelcomedEvent implements ActionInterface, UserEventInterface
 {
     /**
      * The user.
@@ -47,5 +48,18 @@ final class UserWasWelcomedEvent implements UserEventInterface
     public function __toString()
     {
         return 'User was welcomed.';
+    }
+
+    /**
+     * Get the event action.
+     *
+     * @return array
+     */
+    public function getAction()
+    {
+        return [
+            'user'        => $this->user,
+            'description' => (string) $this,
+        ];
     }
 }

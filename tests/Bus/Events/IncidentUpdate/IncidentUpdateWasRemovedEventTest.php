@@ -13,6 +13,7 @@ namespace CachetHQ\Tests\Cachet\Bus\Events\IncidentUpdate;
 
 use CachetHQ\Cachet\Bus\Events\IncidentUpdate\IncidentUpdateWasRemovedEvent;
 use CachetHQ\Cachet\Models\IncidentUpdate;
+use CachetHQ\Cachet\Models\User;
 
 class IncidentUpdateWasRemovedEventTest extends AbstractIncidentUpdateEventTestCase
 {
@@ -23,8 +24,8 @@ class IncidentUpdateWasRemovedEventTest extends AbstractIncidentUpdateEventTestC
 
     protected function getObjectAndParams()
     {
-        $params = ['update' => new IncidentUpdate()];
-        $object = new IncidentUpdateWasRemovedEvent($params['update']);
+        $params = ['user' => new User(), 'update' => new IncidentUpdate()];
+        $object = new IncidentUpdateWasRemovedEvent($params['user'], $params['update']);
 
         return compact('params', 'object');
     }

@@ -11,10 +11,19 @@
 
 namespace CachetHQ\Cachet\Bus\Events\ComponentGroup;
 
+use CachetHQ\Cachet\Bus\Events\ActionInterface;
 use CachetHQ\Cachet\Models\ComponentGroup;
+use CachetHQ\Cachet\Models\User;
 
-final class ComponentGroupWasUpdatedEvent implements ComponentGroupEventInterface
+final class ComponentGroupWasUpdatedEvent implements ActionInterface, ComponentGroupEventInterface
 {
+    /**
+     * The user who updated the component group.
+     *
+     * @var \CachetHQ\Cachet\Models\User
+     */
+    public $user;
+
     /**
      * The component group that was updated.
      *
@@ -25,12 +34,14 @@ final class ComponentGroupWasUpdatedEvent implements ComponentGroupEventInterfac
     /**
      * Create a new component group was updated event instance.
      *
+     * @param \CachetHQ\Cachet\Models\User           $user
      * @param \CachetHQ\Cachet\Models\ComponentGroup $group
      *
      * @return void
      */
-    public function __construct(ComponentGroup $group)
+    public function __construct(User $user, ComponentGroup $group)
     {
+        $this->user = $user;
         $this->group = $group;
     }
 
@@ -42,5 +53,18 @@ final class ComponentGroupWasUpdatedEvent implements ComponentGroupEventInterfac
     public function __toString()
     {
         return 'Component Group was updated.';
+    }
+
+    /**
+     * Get the event action.
+     *
+     * @return array
+     */
+    public function getAction()
+    {
+        return [
+            'user'        => $this->user,
+            'description' => (string) $this,
+        ];
     }
 }

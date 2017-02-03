@@ -13,6 +13,7 @@ namespace CachetHQ\Tests\Cachet\Bus\Events\ComponentGroup;
 
 use CachetHQ\Cachet\Bus\Events\ComponentGroup\ComponentGroupWasUpdatedEvent;
 use CachetHQ\Cachet\Models\ComponentGroup;
+use CachetHQ\Cachet\Models\User;
 
 class ComponentGroupWasUpdatedEventTest extends AbstractComponentGroupEventTestCase
 {
@@ -23,8 +24,8 @@ class ComponentGroupWasUpdatedEventTest extends AbstractComponentGroupEventTestC
 
     protected function getObjectAndParams()
     {
-        $params = ['group' => new ComponentGroup()];
-        $object = new ComponentGroupWasUpdatedEvent($params['group']);
+        $params = ['user' => new User(), 'group' => new ComponentGroup()];
+        $object = new ComponentGroupWasUpdatedEvent($params['user'], $params['group']);
 
         return compact('params', 'object');
     }

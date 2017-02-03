@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Cachet\Bus\Events\User;
 
+use CachetHQ\Cachet\Bus\Events\ActionInterface;
 use CachetHQ\Cachet\Models\User;
 
 /**
@@ -18,7 +19,7 @@ use CachetHQ\Cachet\Models\User;
  *
  * @author James Brooks <james@alt-three.com>
  */
-final class UserPassedTwoAuthEvent implements UserEventInterface
+final class UserPassedTwoAuthEvent implements ActionInterface, UserEventInterface
 {
     /**
      * The user that passed two auth.
@@ -47,5 +48,18 @@ final class UserPassedTwoAuthEvent implements UserEventInterface
     public function __toString()
     {
         return 'User passed two-factor authentication.';
+    }
+
+    /**
+     * Get the event action.
+     *
+     * @return array
+     */
+    public function getAction()
+    {
+        return [
+            'user'        => $this->user,
+            'description' => (string) $this,
+        ];
     }
 }

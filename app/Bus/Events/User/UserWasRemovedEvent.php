@@ -11,9 +11,10 @@
 
 namespace CachetHQ\Cachet\Bus\Events\User;
 
+use CachetHQ\Cachet\Bus\Events\ActionInterface;
 use CachetHQ\Cachet\Models\User;
 
-final class UserWasRemovedEvent implements UserEventInterface
+final class UserWasRemovedEvent implements ActionInterface, UserEventInterface
 {
     /**
      * The user that has been removed.
@@ -42,5 +43,18 @@ final class UserWasRemovedEvent implements UserEventInterface
     public function __toString()
     {
         return 'User was removed.';
+    }
+
+    /**
+     * Get the event action.
+     *
+     * @return array
+     */
+    public function getAction()
+    {
+        return [
+            'user'        => $this->user,
+            'description' => (string) $this,
+        ];
     }
 }
