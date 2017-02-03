@@ -1408,16 +1408,16 @@
         },
         {
             "name": "graham-campbell/core",
-            "version": "v5.3.0",
+            "version": "v5.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Core.git",
-                "reference": "e90ad42f93fc28408458fcc7bfc74b9370ebddc7"
+                "reference": "8dcd1ab051498036263b20e0b3a615829c9a947d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Core/zipball/e90ad42f93fc28408458fcc7bfc74b9370ebddc7",
-                "reference": "e90ad42f93fc28408458fcc7bfc74b9370ebddc7",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Core/zipball/8dcd1ab051498036263b20e0b3a615829c9a947d",
+                "reference": "8dcd1ab051498036263b20e0b3a615829c9a947d",
                 "shasum": ""
             },
             "require": {
@@ -1464,7 +1464,7 @@
                 "laravel",
                 "starter"
             ],
-            "time": "2017-01-19T19:54:10+00:00"
+            "time": "2017-02-03T21:48:15+00:00"
         },
         {
             "name": "graham-campbell/exceptions",
