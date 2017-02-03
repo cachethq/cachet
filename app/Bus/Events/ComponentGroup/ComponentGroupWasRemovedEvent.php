@@ -33,4 +33,14 @@ final class ComponentGroupWasRemovedEvent implements ComponentGroupEventInterfac
     {
         $this->group = $group;
     }
+
+    /**
+     * Get the event description.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return 'Component Group was removed.';
+    }
 }

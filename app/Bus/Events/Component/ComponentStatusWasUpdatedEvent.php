@@ -56,4 +56,14 @@ final class ComponentStatusWasUpdatedEvent implements ComponentEventInterface
         $this->original_status = $original_status;
         $this->new_status = $new_status;
     }
+
+    /**
+     * Get the event description.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return 'Component status was updated.';
+    }
 }

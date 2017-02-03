@@ -18,5 +18,13 @@ namespace CachetHQ\Cachet\Bus\Events\Beacon;
  */
 final class BeaconFailedToSendEvent implements BeaconEventInterface
 {
-    //
+    /**
+     * Get the event description.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return 'Beacon failed to send.';
+    }
 }

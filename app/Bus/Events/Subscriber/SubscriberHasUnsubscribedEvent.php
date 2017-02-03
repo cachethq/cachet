@@ -33,4 +33,14 @@ final class SubscriberHasUnsubscribedEvent implements SubscriberEventInterface
     {
         $this->subscriber = $subscriber;
     }
+
+    /**
+     * Get the event description.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return 'Subscriber has unsubscribed.';
+    }
 }

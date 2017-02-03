@@ -33,4 +33,14 @@ final class MetricWasUpdatedEvent implements MetricEventInterface
     {
         $this->metric = $metric;
     }
+
+    /**
+     * Get the event description.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return 'Metric was updated.';
+    }
 }

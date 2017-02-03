@@ -42,4 +42,14 @@ final class IncidentWasReportedEvent implements IncidentEventInterface
         $this->incident = $incident;
         $this->notify = $notify;
     }
+
+    /**
+     * Get the event description.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return 'Incident was reported.';
+    }
 }

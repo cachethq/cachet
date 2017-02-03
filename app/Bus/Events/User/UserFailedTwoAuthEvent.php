@@ -38,4 +38,14 @@ final class UserFailedTwoAuthEvent implements UserEventInterface
     {
         $this->user = $user;
     }
+
+    /**
+     * Get the event description.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return 'User failed two-factor authentication.';
+    }
 }

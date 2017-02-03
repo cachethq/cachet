@@ -38,4 +38,14 @@ final class UserPassedTwoAuthEvent implements UserEventInterface
     {
         $this->user = $user;
     }
+
+    /**
+     * Get the event description.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return 'User passed two-factor authentication.';
+    }
 }

@@ -33,4 +33,14 @@ final class ComponentWasRemovedEvent implements ComponentEventInterface
     {
         $this->component = $component;
     }
+
+    /**
+     * Get the event description.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return 'Component was removed.';
+    }
 }

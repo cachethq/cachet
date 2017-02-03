@@ -38,4 +38,14 @@ final class IncidentUpdateWasReportedEvent implements IncidentUpdateEventInterfa
     {
         $this->update = $update;
     }
+
+    /**
+     * Get the event description.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return 'Incident Update was reported.';
+    }
 }

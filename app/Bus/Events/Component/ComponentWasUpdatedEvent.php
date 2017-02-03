@@ -13,6 +13,12 @@ namespace CachetHQ\Cachet\Bus\Events\Component;
 
 use CachetHQ\Cachet\Models\Component;
 
+/**
+ * This is the component was updated event class.
+ *
+ * @author James Brooks <james@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
+ */
 final class ComponentWasUpdatedEvent implements ComponentEventInterface
 {
     /**
@@ -32,5 +38,15 @@ final class ComponentWasUpdatedEvent implements ComponentEventInterface
     public function __construct(Component $component)
     {
         $this->component = $component;
+    }
+
+    /**
+     * Get the event description.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return 'Component was updated.';
     }
 }

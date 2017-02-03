@@ -38,4 +38,14 @@ final class SubscriberHasUpdatedSubscriptionsEvent implements SubscriberEventInt
     {
         $this->subscriber = $subscriber;
     }
+
+    /**
+     * Get the event description.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return 'Subscriber has updated subscription.';
+    }
 }

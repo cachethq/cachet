@@ -18,5 +18,13 @@ namespace CachetHQ\Cachet\Bus\Events\System;
  */
 final class SystemWasInstalledEvent implements SystemEventInterface
 {
-    //
+    /**
+     * Get the event description.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return 'System was installed.';
+    }
 }

@@ -33,4 +33,14 @@ final class UserWasInvitedEvent implements UserEventInterface
     {
         $this->invite = $invite;
     }
+
+    /**
+     * Get the event description.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return 'User was invited.';
+    }
 }

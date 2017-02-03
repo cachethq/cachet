@@ -33,4 +33,14 @@ final class MetricPointWasAddedEvent implements MetricEventInterface
     {
         $this->metricPoint = $metricPoint;
     }
+
+    /**
+     * Get the event description.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return 'Metric Point was added.';
+    }
 }

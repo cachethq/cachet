@@ -48,4 +48,14 @@ final class UserAcceptedInviteEvent implements UserEventInterface
         $this->user = $user;
         $this->invite = $invite;
     }
+
+    /**
+     * Get the event description.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return 'User accepted invite.';
+    }
 }

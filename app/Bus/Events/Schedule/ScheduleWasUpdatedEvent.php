@@ -38,4 +38,14 @@ final class ScheduleWasUpdatedEvent implements ScheduleEventInterface
     {
         $this->schedule = $schedule;
     }
+
+    /**
+     * Get the event description.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return 'Schedule was updated.';
+    }
 }

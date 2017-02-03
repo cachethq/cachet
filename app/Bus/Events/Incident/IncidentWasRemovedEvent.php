@@ -33,4 +33,14 @@ final class IncidentWasRemovedEvent implements IncidentEventInterface
     {
         $this->incident = $incident;
     }
+
+    /**
+     * Get the event description.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return 'Incident was removed.';
+    }
 }
