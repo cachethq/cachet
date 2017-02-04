@@ -47,7 +47,7 @@ class UpdateIncidentCommandHandler
     /**
      * Create a new update incident command handler instance.
      *
-     * @param \Illuminate\Contracts\Auth\Guard   $auth
+     * @param \Illuminate\Contracts\Auth\Guard            $auth
      * @param \CachetHQ\Cachet\Services\Dates\DateFactory $dates
      *
      * @return void
