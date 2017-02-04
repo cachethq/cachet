@@ -14,9 +14,29 @@ namespace CachetHQ\Cachet\Bus\Handlers\Commands\Component;
 use CachetHQ\Cachet\Bus\Commands\Component\AddComponentCommand;
 use CachetHQ\Cachet\Bus\Events\Component\ComponentWasAddedEvent;
 use CachetHQ\Cachet\Models\Component;
+use Illuminate\Contracts\Auth\Guard;
 
 class AddComponentCommandHandler
 {
+    /**
+     * The authentication guard instance.
+     *
+     * @var \Illuminate\Contracts\Auth\Guard
+     */
+    protected $auth;
+
+    /**
+     * Create a new remove component command handler instance.
+     *
+     * @param \Illuminate\Contracts\Auth\Guard $auth
+     *
+     * @return void
+     */
+    public function __construct(Guard $auth)
+    {
+        $this->auth = $auth;
+    }
+
     /**
      * Handle the add component command.
      *
@@ -28,7 +48,7 @@ class AddComponentCommandHandler
     {
         $component = Component::create($this->filter($command));
 
-        event(new ComponentWasAddedEvent($component));
+        event(new ComponentWasAddedEvent($this->auth->user(), $component));
 
         return $component;
     }

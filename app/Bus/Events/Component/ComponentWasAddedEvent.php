@@ -11,10 +11,19 @@
 
 namespace CachetHQ\Cachet\Bus\Events\Component;
 
+use CachetHQ\Cachet\Bus\Events\ActionInterface;
 use CachetHQ\Cachet\Models\Component;
+use CachetHQ\Cachet\Models\User;
 
-final class ComponentWasAddedEvent implements ComponentEventInterface
+final class ComponentWasAddedEvent implements ActionInterface, ComponentEventInterface
 {
+    /**
+     * The user who added the component.
+     *
+     * @var \CachetHQ\Cachet\Models\User
+     */
+    public $user;
+
     /**
      * The component that was added.
      *
@@ -25,12 +34,14 @@ final class ComponentWasAddedEvent implements ComponentEventInterface
     /**
      * Create a new component was added event instance.
      *
+     * @param \CachetHQ\Cachet\Models\User      $user
      * @param \CachetHQ\Cachet\Models\Component $component
      *
      * @return void
      */
-    public function __construct(Component $component)
+    public function __construct(User $user, Component $component)
     {
+        $this->user = $user;
         $this->component = $component;
     }
 
@@ -42,5 +53,18 @@ final class ComponentWasAddedEvent implements ComponentEventInterface
     public function __toString()
     {
         return 'Component was added.';
+    }
+
+    /**
+     * Get the event action.
+     *
+     * @return array
+     */
+    public function getAction()
+    {
+        return [
+            'user'        => $this->user,
+            'description' => (string) $this,
+        ];
     }
 }

@@ -11,10 +11,19 @@
 
 namespace CachetHQ\Cachet\Bus\Events\Incident;
 
+use CachetHQ\Cachet\Bus\Events\ActionInterface;
 use CachetHQ\Cachet\Models\Incident;
+use CachetHQ\Cachet\Models\User;
 
-final class IncidentWasReportedEvent implements IncidentEventInterface
+final class IncidentWasReportedEvent implements ActionInterface, IncidentEventInterface
 {
+    /**
+     * The user who reported the event.
+     *
+     * @var \CachetHQ\Cachet\Models\User
+     */
+    public $user;
+
     /**
      * The incident that has been reported.
      *
@@ -32,13 +41,15 @@ final class IncidentWasReportedEvent implements IncidentEventInterface
     /**
      * Create a new incident has reported event instance.
      *
+     * @param \CachetHQ\Cachet\Models\User     $user
      * @param \CachetHQ\Cachet\Models\Incident $incident
      * @param bool                             $notify
      *
      * @return void
      */
-    public function __construct(Incident $incident, $notify = false)
+    public function __construct(User $user, Incident $incident, $notify = false)
     {
+        $this->user = $user;
         $this->incident = $incident;
         $this->notify = $notify;
     }
@@ -51,5 +62,18 @@ final class IncidentWasReportedEvent implements IncidentEventInterface
     public function __toString()
     {
         return 'Incident was reported.';
+    }
+
+    /**
+     * Get the event action.
+     *
+     * @return array
+     */
+    public function getAction()
+    {
+        return [
+            'user'        => $this->user,
+            'description' => (string) $this,
+        ];
     }
 }

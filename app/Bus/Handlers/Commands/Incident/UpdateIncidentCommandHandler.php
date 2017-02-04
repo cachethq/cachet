@@ -19,6 +19,7 @@ use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentTemplate;
 use CachetHQ\Cachet\Services\Dates\DateFactory;
+use Illuminate\Contracts\Auth\Guard;
 use Twig_Environment;
 use Twig_Loader_Array;
 
@@ -30,6 +31,13 @@ use Twig_Loader_Array;
 class UpdateIncidentCommandHandler
 {
     /**
+     * The authentication guard instance.
+     *
+     * @var \Illuminate\Contracts\Auth\Guard
+     */
+    protected $auth;
+
+    /**
      * The date factory instance.
      *
      * @var \CachetHQ\Cachet\Services\Dates\DateFactory
@@ -39,12 +47,14 @@ class UpdateIncidentCommandHandler
     /**
      * Create a new update incident command handler instance.
      *
+     * @param \Illuminate\Contracts\Auth\Guard            $auth
      * @param \CachetHQ\Cachet\Services\Dates\DateFactory $dates
      *
      * @return void
      */
-    public function __construct(DateFactory $dates)
+    public function __construct(Guard $auth, DateFactory $dates)
     {
+        $this->auth = $auth;
         $this->dates = $dates;
     }
 
@@ -91,7 +101,7 @@ class UpdateIncidentCommandHandler
             ));
         }
 
-        event(new IncidentWasUpdatedEvent($incident));
+        event(new IncidentWasUpdatedEvent($this->auth->user(), $incident));
 
         return $incident;
     }

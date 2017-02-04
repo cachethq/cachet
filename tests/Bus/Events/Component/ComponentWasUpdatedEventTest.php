@@ -13,6 +13,7 @@ namespace CachetHQ\Tests\Cachet\Bus\Events\Component;
 
 use CachetHQ\Cachet\Bus\Events\Component\ComponentWasUpdatedEvent;
 use CachetHQ\Cachet\Models\Component;
+use CachetHQ\Cachet\Models\User;
 
 class ComponentWasUpdatedEventTest extends AbstractComponentEventTestCase
 {
@@ -23,8 +24,8 @@ class ComponentWasUpdatedEventTest extends AbstractComponentEventTestCase
 
     protected function getObjectAndParams()
     {
-        $params = ['component' => new Component()];
-        $object = new ComponentWasUpdatedEvent($params['component']);
+        $params = ['user' => new User(), 'component' => new Component()];
+        $object = new ComponentWasUpdatedEvent($params['user'], $params['component']);
 
         return compact('params', 'object');
     }

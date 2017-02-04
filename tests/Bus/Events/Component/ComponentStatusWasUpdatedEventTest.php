@@ -13,6 +13,7 @@ namespace CachetHQ\Tests\Cachet\Bus\Events\Component;
 
 use CachetHQ\Cachet\Bus\Events\Component\ComponentStatusWasUpdatedEvent;
 use CachetHQ\Cachet\Models\Component;
+use CachetHQ\Cachet\Models\User;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use MailThief\Testing\InteractsWithMail;
 
@@ -27,6 +28,8 @@ class ComponentStatusWasUpdatedEventTest extends AbstractComponentEventTestCase
 
     public function testComponentUpdateEmailWasSent()
     {
+        $user = factory('CachetHQ\Cachet\Models\User')->create();
+
         $component = factory('CachetHQ\Cachet\Models\Component')->create([
             'status' => 2,
         ]);
@@ -37,7 +40,7 @@ class ComponentStatusWasUpdatedEventTest extends AbstractComponentEventTestCase
 
         $subscriber->subscriptions()->create(['component_id' => $component->id]);
 
-        $this->app['events']->fire(new ComponentStatusWasUpdatedEvent($component, 1, 2));
+        $this->app['events']->fire(new ComponentStatusWasUpdatedEvent($user, $component, 1, 2));
 
         $this->seeMessageFor($subscriber->email);
         $this->seeMessageWithSubject(trans('notifications.component.status_update.mail.subject'));
@@ -55,8 +58,13 @@ class ComponentStatusWasUpdatedEventTest extends AbstractComponentEventTestCase
 
     protected function getObjectAndParams()
     {
-        $params = ['component' => new Component(), 'original_status' => 1, 'new_status' => 2];
-        $object = new ComponentStatusWasUpdatedEvent($params['component'], $params['original_status'], $params['new_status']);
+        $params = ['user' => new User(), 'component' => new Component(), 'original_status' => 1, 'new_status' => 2];
+        $object = new ComponentStatusWasUpdatedEvent(
+            $params['user'],
+            $params['component'],
+            $params['original_status'],
+            $params['new_status']
+        );
 
         return compact('params', 'object');
     }

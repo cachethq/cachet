@@ -16,9 +16,17 @@ use CachetHQ\Cachet\Bus\Events\Metric\MetricPointWasAddedEvent;
 use CachetHQ\Cachet\Models\MetricPoint;
 use CachetHQ\Cachet\Services\Dates\DateFactory;
 use Carbon\Carbon;
+use Illuminate\Contracts\Auth\Guard;
 
 class AddMetricPointCommandHandler
 {
+    /**
+     * The authentication guard instance.
+     *
+     * @var \Illuminate\Contracts\Auth\Guard
+     */
+    protected $auth;
+
     /**
      * The date factory instance.
      *
@@ -29,12 +37,14 @@ class AddMetricPointCommandHandler
     /**
      * Create a new add metric point command handler instance.
      *
+     * @param \Illuminate\Contracts\Auth\Guard            $auth
      * @param \CachetHQ\Cachet\Services\Dates\DateFactory $dates
      *
      * @return void
      */
-    public function __construct(DateFactory $dates)
+    public function __construct(Guard $auth, DateFactory $dates)
     {
+        $this->auth = $auth;
         $this->dates = $dates;
     }
 
@@ -55,7 +65,7 @@ class AddMetricPointCommandHandler
 
         $point->increment('counter', 1);
 
-        event(new MetricPointWasAddedEvent($point));
+        event(new MetricPointWasAddedEvent($this->auth->user(), $point));
 
         return $point;
     }

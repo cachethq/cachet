@@ -11,10 +11,24 @@
 
 namespace CachetHQ\Cachet\Bus\Events\Component;
 
+use CachetHQ\Cachet\Bus\Events\ActionInterface;
 use CachetHQ\Cachet\Models\Component;
+use CachetHQ\Cachet\Models\User;
 
-final class ComponentWasRemovedEvent implements ComponentEventInterface
+/**
+ * This is the component was removed event class.
+ *
+ * @author James Brooks <james@alt-three.com>
+ */
+final class ComponentWasRemovedEvent implements ActionInterface, ComponentEventInterface
 {
+    /**
+     * The user who removed the component.
+     *
+     * @var \CachetHQ\Cachet\Models\User
+     */
+    public $user;
+
     /**
      * The component that was removed.
      *
@@ -25,12 +39,14 @@ final class ComponentWasRemovedEvent implements ComponentEventInterface
     /**
      * Create a new component was removed event instance.
      *
+     * @param \CachetHQ\Cachet\Models\User      $user
      * @param \CachetHQ\Cachet\Models\Component $component
      *
      * @return void
      */
-    public function __construct(Component $component)
+    public function __construct(User $user, Component $component)
     {
+        $this->user = $user;
         $this->component = $component;
     }
 
@@ -42,5 +58,18 @@ final class ComponentWasRemovedEvent implements ComponentEventInterface
     public function __toString()
     {
         return 'Component was removed.';
+    }
+
+    /**
+     * Get the event action.
+     *
+     * @return array
+     */
+    public function getAction()
+    {
+        return [
+            'user'        => $this->user,
+            'description' => (string) $this,
+        ];
     }
 }

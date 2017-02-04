@@ -15,6 +15,7 @@ use CachetHQ\Cachet\Bus\Commands\Schedule\UpdateScheduleCommand;
 use CachetHQ\Cachet\Bus\Events\Schedule\ScheduleWasUpdatedEvent;
 use CachetHQ\Cachet\Models\Schedule;
 use CachetHQ\Cachet\Services\Dates\DateFactory;
+use Illuminate\Contracts\Auth\Guard;
 
 /**
  * This is the update schedule command handler.
@@ -23,6 +24,13 @@ use CachetHQ\Cachet\Services\Dates\DateFactory;
  */
 class UpdateScheduleCommandHandler
 {
+    /**
+     * The authentication guard instance.
+     *
+     * @var \Illuminate\Contracts\Auth\Guard
+     */
+    protected $auth;
+
     /**
      * The date factory instance.
      *
@@ -33,12 +41,14 @@ class UpdateScheduleCommandHandler
     /**
      * Create a new update schedule command handler instance.
      *
+     * @param \Illuminate\Contracts\Auth\Guard            $auth
      * @param \CachetHQ\Cachet\Services\Dates\DateFactory $dates
      *
      * @return void
      */
-    public function __construct(DateFactory $dates)
+    public function __construct(Guard $auth, DateFactory $dates)
     {
+        $this->auth = $auth;
         $this->dates = $dates;
     }
 
@@ -55,7 +65,7 @@ class UpdateScheduleCommandHandler
 
         $schedule->update($this->filter($command));
 
-        event(new ScheduleWasUpdatedEvent($schedule));
+        event(new ScheduleWasUpdatedEvent($this->auth->user(), $schedule));
 
         return $schedule;
     }

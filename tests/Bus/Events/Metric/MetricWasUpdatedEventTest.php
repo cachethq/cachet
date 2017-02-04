@@ -13,6 +13,7 @@ namespace CachetHQ\Tests\Cachet\Bus\Events\Metric;
 
 use CachetHQ\Cachet\Bus\Events\Metric\MetricWasUpdatedEvent;
 use CachetHQ\Cachet\Models\Metric;
+use CachetHQ\Cachet\Models\User;
 
 class MetricWasUpdatedEventTest extends AbstractMetricEventTestCase
 {
@@ -23,8 +24,8 @@ class MetricWasUpdatedEventTest extends AbstractMetricEventTestCase
 
     protected function getObjectAndParams()
     {
-        $params = ['metric' => new Metric()];
-        $object = new MetricWasUpdatedEvent($params['metric']);
+        $params = ['user' => new User(), 'metric' => new Metric()];
+        $object = new MetricWasUpdatedEvent($params['user'], $params['metric']);
 
         return compact('params', 'object');
     }

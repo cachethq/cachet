@@ -13,6 +13,7 @@ namespace CachetHQ\Cachet\Bus\Handlers\Commands\IncidentUpdate;
 
 use CachetHQ\Cachet\Bus\Commands\IncidentUpdate\RemoveIncidentUpdateCommand;
 use CachetHQ\Cachet\Bus\Events\IncidentUpdate\IncidentUpdateWasRemovedEvent;
+use Illuminate\Contracts\Auth\Guard;
 
 /**
  * This is the remove incident update command handler.
@@ -21,6 +22,25 @@ use CachetHQ\Cachet\Bus\Events\IncidentUpdate\IncidentUpdateWasRemovedEvent;
  */
 class RemoveIncidentUpdateCommandHandler
 {
+    /**
+     * The authentication guard instance.
+     *
+     * @var \Illuminate\Contracts\Auth\Guard
+     */
+    protected $auth;
+
+    /**
+     * Create a new remove incident update command handler instance.
+     *
+     * @param \Illuminate\Contracts\Auth\Guard $auth
+     *
+     * @return void
+     */
+    public function __construct(Guard $auth)
+    {
+        $this->auth = $auth;
+    }
+
     /**
      * Handle the remove incident update command.
      *
@@ -32,7 +52,7 @@ class RemoveIncidentUpdateCommandHandler
     {
         $update = $command->incidentUpdate;
 
-        event(new IncidentUpdateWasRemovedEvent($update));
+        event(new IncidentUpdateWasRemovedEvent($this->auth->user(), $update));
 
         $update->delete();
     }

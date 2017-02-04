@@ -11,15 +11,24 @@
 
 namespace CachetHQ\Cachet\Bus\Events\Component;
 
+use CachetHQ\Cachet\Bus\Events\ActionInterface;
 use CachetHQ\Cachet\Models\Component;
+use CachetHQ\Cachet\Models\User;
 
 /**
  * This is the component status was updated event.
  *
  * @author James Brooks <james@alt-three.com>
  */
-final class ComponentStatusWasUpdatedEvent implements ComponentEventInterface
+final class ComponentStatusWasUpdatedEvent implements ActionInterface, ComponentEventInterface
 {
+    /**
+     * The user who updated the component.
+     *
+     * @var \CachetHQ\Cachet\Models\User
+     */
+    public $user;
+
     /**
      * The component that was updated.
      *
@@ -44,14 +53,16 @@ final class ComponentStatusWasUpdatedEvent implements ComponentEventInterface
     /**
      * Create a new component was updated event instance.
      *
+     * @param \CachetHQ\Cachet\Models\User      $user
      * @param \CachetHQ\Cachet\Models\Component $component
      * @param int                               $original_status
      * @param int                               $new_status
      *
      * @return void
      */
-    public function __construct(Component $component, $original_status, $new_status)
+    public function __construct(User $user, Component $component, $original_status, $new_status)
     {
+        $this->user = $user;
         $this->component = $component;
         $this->original_status = $original_status;
         $this->new_status = $new_status;
@@ -65,5 +76,18 @@ final class ComponentStatusWasUpdatedEvent implements ComponentEventInterface
     public function __toString()
     {
         return 'Component status was updated.';
+    }
+
+    /**
+     * Get the event action.
+     *
+     * @return array
+     */
+    public function getAction()
+    {
+        return [
+            'user'        => $this->user,
+            'description' => (string) $this,
+        ];
     }
 }

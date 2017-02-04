@@ -13,9 +13,29 @@ namespace CachetHQ\Cachet\Bus\Handlers\Commands\ComponentGroup;
 
 use CachetHQ\Cachet\Bus\Commands\ComponentGroup\RemoveComponentGroupCommand;
 use CachetHQ\Cachet\Bus\Events\ComponentGroup\ComponentGroupWasRemovedEvent;
+use Illuminate\Contracts\Auth\Guard;
 
 class RemoveComponentGroupCommandHandler
 {
+    /**
+     * The authentication guard instance.
+     *
+     * @var \Illuminate\Contracts\Auth\Guard
+     */
+    protected $auth;
+
+    /**
+     * Create a new remove component group command handler instance.
+     *
+     * @param \Illuminate\Contracts\Auth\Guard $auth
+     *
+     * @return void
+     */
+    public function __construct(Guard $auth)
+    {
+        $this->auth = $auth;
+    }
+
     /**
      * Handle the remove component group command.
      *
@@ -27,7 +47,7 @@ class RemoveComponentGroupCommandHandler
     {
         $group = $command->group;
 
-        event(new ComponentGroupWasRemovedEvent($group));
+        event(new ComponentGroupWasRemovedEvent($this->auth->user(), $group));
 
         // Remove the group id from all component.
         $group->components->map(function ($component) {

@@ -13,6 +13,12 @@ namespace CachetHQ\Cachet\Bus\Events\Incident;
 
 use CachetHQ\Cachet\Bus\Events\EventInterface;
 
+/**
+ * This is the incident event interface.
+ *
+ * @author Graham Campbell <graham@alt-three.com>
+ * @author James Brooks <james@alt-three.com>
+ */
 interface IncidentEventInterface extends EventInterface
 {
     //

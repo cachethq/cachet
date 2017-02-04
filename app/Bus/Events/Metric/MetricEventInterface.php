@@ -13,6 +13,12 @@ namespace CachetHQ\Cachet\Bus\Events\Metric;
 
 use CachetHQ\Cachet\Bus\Events\EventInterface;
 
+/**
+ * This is the metric event interface.
+ *
+ * @author Graham Campbell <graham@alt-three.com>
+ * @author James Brooks <james@alt-three.com>
+ */
 interface MetricEventInterface extends EventInterface
 {
     //

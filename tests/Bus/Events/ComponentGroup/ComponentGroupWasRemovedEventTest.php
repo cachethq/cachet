@@ -13,6 +13,7 @@ namespace CachetHQ\Tests\Cachet\Bus\Events\ComponentGroup;
 
 use CachetHQ\Cachet\Bus\Events\ComponentGroup\ComponentGroupWasRemovedEvent;
 use CachetHQ\Cachet\Models\ComponentGroup;
+use CachetHQ\Cachet\Models\User;
 
 class ComponentGroupWasRemovedEventTest extends AbstractComponentGroupEventTestCase
 {
@@ -23,8 +24,8 @@ class ComponentGroupWasRemovedEventTest extends AbstractComponentGroupEventTestC
 
     protected function getObjectAndParams()
     {
-        $params = ['group' => new ComponentGroup()];
-        $object = new ComponentGroupWasRemovedEvent($params['group']);
+        $params = ['user' => new User(), 'group' => new ComponentGroup()];
+        $object = new ComponentGroupWasRemovedEvent($params['user'], $params['group']);
 
         return compact('params', 'object');
     }
