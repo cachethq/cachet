@@ -11,8 +11,8 @@
 
 namespace CachetHQ\Cachet\Composers\Modules;
 
-use CachetHQ\Cachet\Dates\DateFactory;
 use CachetHQ\Cachet\Models\Incident;
+use CachetHQ\Cachet\Services\Dates\DateFactory;
 use Illuminate\Contracts\View\View;
 
 /**

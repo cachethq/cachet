@@ -12,13 +12,13 @@
 namespace CachetHQ\Cachet\Http\Controllers;
 
 use AltThree\Badger\Facades\Badger;
-use CachetHQ\Cachet\Dates\DateFactory;
 use CachetHQ\Cachet\Http\Controllers\Api\AbstractApiController;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\Schedule;
 use CachetHQ\Cachet\Repositories\Metric\MetricRepository;
+use CachetHQ\Cachet\Services\Dates\DateFactory;
 use Carbon\Carbon;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;

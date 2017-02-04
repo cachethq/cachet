@@ -13,21 +13,21 @@ namespace CachetHQ\Cachet\Bus\Handlers\Commands\Metric;
 
 use CachetHQ\Cachet\Bus\Commands\Metric\UpdateMetricPointCommand;
 use CachetHQ\Cachet\Bus\Events\Metric\MetricPointWasUpdatedEvent;
-use CachetHQ\Cachet\Dates\DateFactory;
+use CachetHQ\Cachet\Services\Dates\DateFactory;
 
 class UpdateMetricPointCommandHandler
 {
     /**
      * The date factory instance.
      *
-     * @var \CachetHQ\Cachet\Dates\DateFactory
+     * @var \CachetHQ\Cachet\Services\Dates\DateFactory
      */
     protected $dates;
 
     /**
      * Create a new update metric point command handler instance.
      *
-     * @param \CachetHQ\Cachet\Dates\DateFactory $dates
+     * @param \CachetHQ\Cachet\Services\Dates\DateFactory $dates
      *
      * @return void
      */

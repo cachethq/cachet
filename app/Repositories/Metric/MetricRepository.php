@@ -11,8 +11,8 @@
 
 namespace CachetHQ\Cachet\Repositories\Metric;
 
-use CachetHQ\Cachet\Dates\DateFactory;
 use CachetHQ\Cachet\Models\Metric;
+use CachetHQ\Cachet\Services\Dates\DateFactory;
 use DateInterval;
 
 /**
@@ -32,7 +32,7 @@ class MetricRepository
     /**
      * The date factory instance.
      *
-     * @var \CachetHQ\Cachet\Dates\DateFactory
+     * @var \CachetHQ\Cachet\Services\Dates\DateFactory
      */
     protected $dates;
 
@@ -40,7 +40,7 @@ class MetricRepository
      * Create a new metric repository class.
      *
      * @param \CachetHQ\Cachet\Repositories\Metric\MetricInterface $repository
-     * @param \CachetHQ\Cachet\Dates\DateFactory                   $dates
+     * @param \CachetHQ\Cachet\Services\Dates\DateFactory          $dates
      *
      * @return void
      */
