@@ -55,7 +55,7 @@ abstract class AbstractTestCase extends TestCase
     /**
      * Sign in an user if it's the case.
      *
-     * @param User|null $user
+     * @param \CachetHQ\Cachet\Models\User|null $user
      *
      * @return \CachetHQ\Tests\Cachet\AbstractTestCase
      */
