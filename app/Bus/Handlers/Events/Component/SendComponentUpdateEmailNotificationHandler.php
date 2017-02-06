@@ -48,6 +48,11 @@ class SendComponentUpdateEmailNotificationHandler
     {
         $component = $event->component;
 
+        // If we're silent, then don't send this.
+        if ($event->silent) {
+            return;
+        }
+
         // Don't email anything if the status hasn't changed.
         if ($event->original_status === $event->new_status) {
             return;

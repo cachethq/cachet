@@ -50,7 +50,7 @@ class UpdateComponentCommandHandler
         $component = $command->component;
         $originalStatus = $component->status;
 
-        event(new ComponentStatusWasUpdatedEvent($this->auth->user(), $component, $originalStatus, $command->status));
+        event(new ComponentStatusWasUpdatedEvent($this->auth->user(), $component, $originalStatus, $command->status, $command->silent));
 
         $component->update($this->filter($command));
 
