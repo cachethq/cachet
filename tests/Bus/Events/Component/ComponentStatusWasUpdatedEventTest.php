@@ -63,7 +63,7 @@ class ComponentStatusWasUpdatedEventTest extends AbstractComponentEventTestCase
             'component'       => new Component(),
             'original_status' => 1,
             'new_status'      => 2,
-            'silent'          => false
+            'silent'          => false,
         ];
         $object = new ComponentStatusWasUpdatedEvent(
             $params['user'],
