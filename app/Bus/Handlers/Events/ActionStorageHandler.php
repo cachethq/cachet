@@ -40,7 +40,7 @@ class ActionStorageHandler
             'description' => $data['description'],
         ];
 
-        if ($data['information'] ?? null) {
+        if (isset($data['information'])) {
             $action['information'] = $data['information'];
         }
 
