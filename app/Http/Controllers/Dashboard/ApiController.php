@@ -46,7 +46,7 @@ class ApiController extends AbstractApiController
                 $component->group_id,
                 $component->enabled,
                 $component->meta,
-                false,
+                false
             ));
         } catch (QueryException $e) {
             throw new BadRequestHttpException();
