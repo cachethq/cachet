@@ -45,7 +45,8 @@ class ApiController extends AbstractApiController
                 $component->order,
                 $component->group_id,
                 $component->enabled,
-                $component->meta
+                $component->meta,
+                false,
             ));
         } catch (QueryException $e) {
             throw new BadRequestHttpException();
@@ -76,7 +77,8 @@ class ApiController extends AbstractApiController
                     $order + 1,
                     $component->group_id,
                     $component->enabled,
-                    $component->meta
+                    $component->meta,
+                    true
                 ));
             } catch (QueryException $e) {
                 throw new BadRequestHttpException();
