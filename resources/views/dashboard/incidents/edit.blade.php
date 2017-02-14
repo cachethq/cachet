@@ -54,8 +54,8 @@
                     <div class="form-group">
                         <label for="incident-stick">{{ trans('forms.incidents.stick_status') }}</label>
                         <select name="stickied" id="incident-stick" class="form-control">
-                            <option value="1" {{ $incident->stickied === 1 ? 'selected' : null }}>{{ trans('forms.incidents.stickied') }}</option>
-                            <option value="0" {{ $incident->stickied === 0 ? 'selected' : null }}>{{ trans('forms.incidents.not_stickied') }}</option>
+                            <option value="1" {{ $incident->stickied ? 'selected' : null }}>{{ trans('forms.incidents.stickied') }}</option>
+                            <option value="0" {{ !$incident->stickied ? 'selected' : null }}>{{ trans('forms.incidents.not_stickied') }}</option>
                         </select>
                     </div>
                     @if($incident->component)
