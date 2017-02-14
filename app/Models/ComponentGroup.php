@@ -77,7 +77,7 @@ class ComponentGroup extends Model implements HasPresenter
         'name'      => 'required|string',
         'order'     => 'required|int',
         'collapsed' => 'required|int',
-        'visible'   => 'required|bool',
+        'visible'   => 'required|int',
     ];
 
     /**
