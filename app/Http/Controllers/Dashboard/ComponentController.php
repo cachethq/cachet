@@ -135,7 +135,8 @@ class ComponentController extends Controller
                 $componentData['order'],
                 $componentData['group_id'],
                 $componentData['enabled'],
-                null // Meta data cannot be supplied through the dashboard yet.
+                null, // Meta data cannot be supplied through the dashboard yet.
+                true // Silent since we're not really making changes to the component (this should be optional)
             ));
         } catch (ValidationException $e) {
             return cachet_redirect('dashboard.components.edit', [$component->id])
