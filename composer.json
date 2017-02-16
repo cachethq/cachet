@@ -54,12 +54,12 @@
         "twig/twig": "^1.26.1"
     },
     "require-dev": {
-        "alt-three/testbench": "^1.9",
+        "alt-three/testbench": "^1.11",
         "filp/whoops": "^2.1",
         "fzaninotto/faker": "^1.6",
         "graham-campbell/testbench-core": "^1.1",
-        "mockery/mockery": "0.9.5",
-        "phpunit/phpunit": "~5.0",
+        "mockery/mockery": "0.9.7",
+        "phpunit/phpunit": "5.7.6",
         "symfony/css-selector": "^3.1",
         "symfony/dom-crawler": "^3.1",
         "tightenco/mailthief": "^0.3.2"
