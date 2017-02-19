@@ -608,7 +608,7 @@ es6-iterator@2:
     es5-ext "^0.10.7"
     es6-symbol "3"
 
-es6-promise@latest:
+es6-promise@^4.0.5:
   version "4.0.5"
   resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-4.0.5.tgz#7882f30adde5b240ccfa7f7d78c548330951ae42"
 
@@ -1728,11 +1728,7 @@ lodash@4.11.2:
   version "4.11.2"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.11.2.tgz#d6b4338b110a58e21dae5cebcfdbbfd2bc4cdb3b"
 
-lodash@^4.0.0:
-  version "4.17.2"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.2.tgz#34a3055babe04ce42467b607d700072c7ff6bf42"
-
-lodash@^4.17.4:
+lodash@^4.0.0, lodash@^4.17.4:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
@@ -1888,13 +1884,9 @@ moment-timezone@^0.4.0:
   dependencies:
     moment ">= 2.6.0"
 
-"moment@>= 2.6.0", moment@^2.10, moment@^2.17.1:
+"moment@>= 2.6.0", moment@^2.10, moment@^2.10.6, moment@^2.17.1:
   version "2.17.1"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.17.1.tgz#fed9506063f36b10f066c8b59a144d7faebe1d82"
-
-moment@^2.10.6:
-  version "2.17.0"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.17.0.tgz#a4c292e02aac5ddefb29a6eed24f51938dd3b74f"
 
 ms@0.7.1:
   version "0.7.1"
@@ -2615,11 +2607,11 @@ supports-color@^3.1.2:
   dependencies:
     has-flag "^1.0.0"
 
-sweetalert2@^6.0.1:
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-6.2.0.tgz#510cb833e3e0a5cc2d05fe6b4ee52e51db29863c"
+sweetalert2@^6.4.2:
+  version "6.4.2"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-6.4.2.tgz#0505b3acaf812af1ad04f00980a83625508e3d61"
   dependencies:
-    es6-promise latest
+    es6-promise "^4.0.5"
 
 tar@^2.0.0:
   version "2.2.1"
