@@ -20,6 +20,11 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use McCool\LaravelAutoPresenter\HasPresenter;
 
+/**
+ * This is the component group model class.
+ *
+ * @author James Brooks <james@alt-three.com>
+ */
 class ComponentGroup extends Model implements HasPresenter
 {
     use SearchableTrait, SortableTrait, ValidatingTrait;
