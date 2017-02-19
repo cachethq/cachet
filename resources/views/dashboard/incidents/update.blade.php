@@ -21,22 +21,22 @@
                     <div class="form-group">
                         <label for="incident-name">{{ trans('forms.incidents.status') }}</label><br>
                         <label class="radio-inline">
-                            <input type="radio" name="status" value="1">
+                            <input type="radio" name="status" value="1" required>
                             <i class="icon ion-flag"></i>
                             {{ trans('cachet.incidents.status')[1] }}
                         </label>
                         <label class="radio-inline">
-                            <input type="radio" name="status" value="2">
+                            <input type="radio" name="status" value="2" required>
                             <i class="icon ion-alert-circled"></i>
                             {{ trans('cachet.incidents.status')[2] }}
                         </label>
                         <label class="radio-inline">
-                            <input type="radio" name="status" value="3">
+                            <input type="radio" name="status" value="3" required>
                             <i class="icon ion-eye"></i>
                             {{ trans('cachet.incidents.status')[3] }}
                         </label>
                         <label class="radio-inline">
-                            <input type="radio" name="status" value="4">
+                            <input type="radio" name="status" value="4" required>
                             <i class="icon ion-checkmark"></i>
                             {{ trans('cachet.incidents.status')[4] }}
                         </label>
