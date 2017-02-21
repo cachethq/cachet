@@ -30,7 +30,7 @@ class IncidentPresenter extends BasePresenter implements Arrayable
     protected $dates;
 
     /**
-     * Inciden icon lookup.
+     * Incident icon lookup.
      *
      * @var array
      */
