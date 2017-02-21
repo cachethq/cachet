@@ -1,7 +1,7 @@
 @if($component_groups->isNotEmpty() || $ungrouped_components->isNotEmpty())
 <div class="section-components">
     @foreach ($component_groups as $group)
-    <div class="panel panel-dark panel--group panel--components">
+    <div class="panel panel-info panel--group panel--components">
         <div class="panel-heading">
             <div class="panel__icon">
                 <i class="ion-ios-circle-filled"></i>
@@ -10,7 +10,7 @@
             <p class="panel__subtitle text-uppercase">New component description feature!</p>
             <div class="panel__toolbar no-select">
                 <ul class="list-inline">
-                    <li><a href="#"><span class="glyphicon glyphicon-chevron-down"></span></a></li>
+                    <li><a href="#"><i class="ion-chevron-down"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -18,7 +18,7 @@
             <div class="list-group">
                 <div class="list-group-item component component--status-1">
                     <div class="component__icon">
-                        <span class="glyphicon glyphicon-ok"></span>
+                        <i class="glyphicon glyphicon-ok"></i>
                     </div>
                     <div class="component__name">
                         Blog
@@ -40,6 +40,7 @@
         @if($componentGroup->enabled_components->isNotEmpty())
         <li class="list-group-item group-name">
             <i class="{{ $componentGroup->collapse_class }} group-toggle"></i>
+
             <strong>{{ $componentGroup->name }}</strong>
 
             <div class="pull-right">
