@@ -28,7 +28,7 @@ $factory->define(Component::class, function ($faker) {
         'name'        => $faker->sentence(),
         'description' => $faker->paragraph(),
         'link'        => $faker->url(),
-        'status'      => random_int(1, 4),
+        'status'      => mt_rand(1, 4),
         'order'       => 0,
     ];
 });
@@ -37,7 +37,7 @@ $factory->define(ComponentGroup::class, function ($faker) {
     return [
         'name'      => $faker->words(2, true),
         'order'     => 0,
-        'collapsed' => random_int(0, 3),
+        'collapsed' => mt_rand(0, 4),
         'visible'   => $faker->boolean(),
     ];
 });
@@ -46,7 +46,7 @@ $factory->define(Incident::class, function ($faker) {
     return [
         'name'     => $faker->sentence(),
         'message'  => $faker->paragraph(),
-        'status'   => random_int(1, 4),
+        'status'   => mt_rand(1, 4),
         'visible'  => 1,
         'stickied' => false,
     ];
@@ -64,7 +64,7 @@ $factory->define(IncidentUpdate::class, function ($faker) {
     return [
         'incident_id' => factory(Incident::class)->create()->id,
         'message'     => $faker->paragraph(),
-        'status'      => random_int(1, 4),
+        'status'      => mt_rand(1, 4),
         'user_id'     => factory(User::class)->create()->id,
     ];
 });
@@ -85,7 +85,7 @@ $factory->define(Metric::class, function ($faker) {
 $factory->define(MetricPoint::class, function ($faker) {
     return [
         'metric_id' => factory(Metric::class)->create()->id,
-        'value'     => random_int(1, 100),
+        'value'     => mt_rand(1, 100),
         'counter'   => 1,
     ];
 });

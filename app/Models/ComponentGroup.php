@@ -81,8 +81,8 @@ class ComponentGroup extends Model implements HasPresenter
     public $rules = [
         'name'      => 'required|string',
         'order'     => 'required|int',
-        'collapsed' => 'required|int',
-        'visible'   => 'required|int',
+        'collapsed' => 'required|int|between:0,4',
+        'visible'   => 'required|bool',
     ];
 
     /**

@@ -63,7 +63,7 @@ final class UpdateComponentGroupCommand
     public $rules = [
         'name'      => 'nullable|string',
         'order'     => 'nullable|int',
-        'collapsed' => 'nullable|int|between:0,3',
+        'collapsed' => 'nullable|int|between:0,4',
         'visible'   => 'nullable|bool',
     ];
 
