@@ -70,8 +70,8 @@ class IncidentUpdatedNotification extends Notification
     public function toMail($notifiable)
     {
         $content = trans('notifications.incident.update.mail.content', [
-            'name' => $this->update->incident->name,
-            'time' => $this->update->created_at_diff,
+            'name'    => $this->update->incident->name,
+            'time'    => $this->update->created_at_diff,
         ]);
 
         return (new MailMessage())
@@ -82,6 +82,7 @@ class IncidentUpdatedNotification extends Notification
                     ]))
                     ->line($content)
                     ->action(trans('notifications.incident.update.mail.action'), cachet_route('incident', [$this->update->incident]))
+                    ->line($this->update->message)
                     ->line(trans('cachet.subscriber.unsubscribe', ['link' => cachet_route('subscribe.unsubscribe', $notifiable->verify_code)]));
     }
 
@@ -111,7 +112,8 @@ class IncidentUpdatedNotification extends Notification
     public function toSlack($notifiable)
     {
         $content = trans('notifications.incident.update.slack.content', [
-            'name' => $this->update->incident->name,
+            'name'       => $this->update->incident->name,
+            'new_status' => $this->update->human_status,
         ]);
 
         $status = 'info';
@@ -127,7 +129,7 @@ class IncidentUpdatedNotification extends Notification
         return (new SlackMessage())
                     ->$status()
                     ->content($content)
-                    ->attachment(function ($attachment) use ($content) {
+                    ->attachment(function ($attachment) use ($content, $notifiable) {
                         $attachment->title(trans('notifications.incident.update.slack.title', [
                                         'name'       => $this->update->incident->name,
                                         'new_status' => $this->update->human_status,

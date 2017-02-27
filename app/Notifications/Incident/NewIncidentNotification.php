@@ -78,6 +78,7 @@ class NewIncidentNotification extends Notification
                     ->greeting(trans('notifications.incident.new.mail.greeting', ['app_name' => Config::get('setting.app_name')]))
                     ->line($content)
                     ->action(trans('notifications.incident.new.mail.action'), cachet_route('incident', [$this->incident]))
+                    ->line($this->incident->message)
                     ->line(trans('cachet.subscriber.unsubscribe', ['link' => cachet_route('subscribe.unsubscribe', $notifiable->verify_code)]));
     }
 
@@ -121,7 +122,7 @@ class NewIncidentNotification extends Notification
         return (new SlackMessage())
                     ->$status()
                     ->content($content)
-                    ->attachment(function ($attachment) use ($content) {
+                    ->attachment(function ($attachment) use ($content, $notifiable) {
                         $attachment->title(trans('notifications.incident.new.slack.title', [$this->incident->name]))
                                    ->timestamp($this->incident->getWrappedObject()->occurred_at)
                                    ->fields(array_filter([
