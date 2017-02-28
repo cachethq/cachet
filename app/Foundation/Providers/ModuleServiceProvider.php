@@ -26,9 +26,9 @@ class ModuleServiceProvider extends ServiceProvider
         'index' => [
             ['group' => 'messages', 'partial' => 'partials.modules.messages'],
             ['group' => 'status', 'partial' => 'partials.modules.status'],
+            ['group' => 'stickied', 'partial' => 'partials.modules.stickied'],
             ['group' => 'components', 'partial' => 'partials.modules.components'],
             ['group' => 'metrics', 'partial' => 'partials.modules.metrics'],
-            ['group' => 'stickied', 'partial' => 'partials.modules.stickied'],
             ['group' => 'scheduled', 'partial' => 'partials.modules.scheduled'],
             ['group' => 'timeline', 'partial' => 'partials.modules.timeline'],
         ],
@@ -43,10 +43,10 @@ class ModuleServiceProvider extends ServiceProvider
         'index' => [
             'messages'   => 10000,
             'status'     => 20000,
-            'components' => 30000,
-            'metrics'    => 40000,
-            'scheduled'  => 50000,
-            'stickied'   => 60000,
+            'stickied'   => 30000,
+            'components' => 40000,
+            'metrics'    => 50000,
+            'scheduled'  => 60000,
             'timeline'   => 70000,
         ],
     ];

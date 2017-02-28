@@ -43,9 +43,9 @@ class ComposerServiceProvider extends ServiceProvider
         $factory->composer(['setup.*', 'dashboard.settings.localization'], TimezoneLocaleComposer::class);
 
         $factory->composer('*', ModuleComposer::class);
+        $factory->composer('partials.modules.stickied', StickiedModuleComposer::class);
         $factory->composer('partials.modules.components', ComponentsModuleComposer::class);
         $factory->composer('partials.modules.metrics', MetricsModuleComposer::class);
-        $factory->composer('partials.modules.stickied', StickiedModuleComposer::class);
         $factory->composer('partials.modules.scheduled', ScheduledModuleComposer::class);
         $factory->composer('partials.modules.status', StatusModuleComposer::class);
         $factory->composer('partials.modules.timeline', TimelineModuleComposer::class);
