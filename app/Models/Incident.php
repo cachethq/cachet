@@ -199,10 +199,10 @@ class Incident extends Model implements HasPresenter
     public function getIsResolvedAttribute()
     {
         if ($updates = $this->updates->first()) {
-            return $updates->status === self::FIXED;
+            return intVal($updates->status) === self::FIXED;
         }
 
-        return $this->status === self::FIXED;
+        return intVal($this->status) === self::FIXED;
     }
 
     /**
