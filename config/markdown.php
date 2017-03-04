@@ -39,7 +39,10 @@ return [
     |
     */
 
-    'extensions' => env('CACHET_EMOJI', false) ? ['AltThree\Emoji\EmojiExtension'] : [],
+    'extensions' => array_filter([
+        'CachetHQ\Cachet\Services\Markdown\Twitter\Extension',
+        env('CACHET_EMOJI', false) ? 'AltThree\Emoji\EmojiExtension' : null,
+    ]),
 
     /*
     |--------------------------------------------------------------------------
