@@ -55,6 +55,9 @@ class GeneralController extends AbstractApiController
     {
         $system = app()->make(System::class)->getStatus();
 
-        return $this->item($system['system_message']);
+        return $this->item([
+            'status'  => $system['system_status'],
+            'message' => $system['system_message']
+        ]);
     }
 }
