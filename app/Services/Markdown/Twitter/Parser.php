@@ -11,9 +11,9 @@
 
 namespace CachetHQ\Cachet\Services\Markdown\Twitter;
 
-use League\CommonMark\InlineParserContext;
 use League\CommonMark\Inline\Element\Link;
 use League\CommonMark\Inline\Parser\AbstractInlineParser;
+use League\CommonMark\InlineParserContext;
 
 /**
  * This is the parser class.
@@ -23,7 +23,7 @@ use League\CommonMark\Inline\Parser\AbstractInlineParser;
 class Parser extends AbstractInlineParser
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getCharacters()
     {
@@ -31,7 +31,7 @@ class Parser extends AbstractInlineParser
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function parse(InlineParserContext $inlineContext)
     {
@@ -52,8 +52,8 @@ class Parser extends AbstractInlineParser
             return false;
         }
 
-        $profileUrl = 'https://twitter.com/' . $handle;
-        $inlineContext->getContainer()->appendChild(new Link($profileUrl, '@' . $handle));
+        $profileUrl = 'https://twitter.com/'.$handle;
+        $inlineContext->getContainer()->appendChild(new Link($profileUrl, '@'.$handle));
 
         return true;
     }
