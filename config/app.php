@@ -191,6 +191,7 @@ return [
         /*
          * Application Service Providers...
          */
+        CachetHQ\Cachet\Foundation\Providers\PluginServiceProvider::class,
         CachetHQ\Cachet\Foundation\Providers\AppServiceProvider::class,
         CachetHQ\Cachet\Foundation\Providers\ComposerServiceProvider::class,
         CachetHQ\Cachet\Foundation\Providers\ConsoleServiceProvider::class,

@@ -1,0 +1,3 @@
+[submodule "storage/plugins/casa-parks/plugins-demo-plugin"]
+	path = storage/plugins/casa-parks/plugins-demo-plugin
+	url = https://github.com/casa-parks/plugins-demo-plugin.git
