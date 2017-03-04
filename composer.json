@@ -29,8 +29,10 @@
         "ext-xml": "*",
         "alt-three/badger": "^3.1",
         "alt-three/bus": "^2.0",
-        "alt-three/emoji": "^3.1",
+        "alt-three/emoji": "^4.1",
+        "alt-three/logger": "^1.3",
         "alt-three/throttle": "^1.0",
+        "alt-three/twitter": "^1.0",
         "alt-three/validator": "^1.5",
         "aws/aws-sdk-php": "^3.7",
         "backup-manager/laravel": "^1.1",
@@ -40,7 +42,7 @@
         "graham-campbell/binput": "^3.5",
         "graham-campbell/core": "^5.1",
         "graham-campbell/exceptions": "^9.1",
-        "graham-campbell/markdown": "^6.1",
+        "graham-campbell/markdown": "^7.1",
         "guzzlehttp/guzzle": "^6.2.1",
         "laravel/framework": "5.3.*",
         "mccool/laravel-auto-presenter": "^4.3",
@@ -48,8 +50,7 @@
         "pragmarx/google2fa": "^0.7.1",
         "predis/predis": "^1.1",
         "roumen/feed": "^2.10.4",
-        "twig/twig": "^1.26.1",
-        "alt-three/logger": "^1.3"
+        "twig/twig": "^1.26.1"
     },
     "require-dev": {
         "alt-three/testbench": "^1.9",
