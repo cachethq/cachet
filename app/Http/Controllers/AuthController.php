@@ -94,7 +94,7 @@ class AuthController extends Controller
     {
         // Check that we have a session.
         if ($userId = Session::pull('2fa_id')) {
-            $code = Binput::get('code');
+            $code = str_replace(' ', '', Binput::get('code'));
 
             // Maybe a temp login here.
             Auth::loginUsingId($userId);
