@@ -11,10 +11,16 @@
 
 namespace CachetHQ\Cachet\Bus\Events\User;
 
-use CachetHQ\Cachet\Bus\Events\ActionInterface;
 use CachetHQ\Cachet\Models\Invite;
 
-final class UserWasInvitedEvent implements ActionInterface, UserEventInterface
+/**
+ * This is the user was invited event class.
+ *
+ * @author Joseph Cohen <joealt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
+ * @author James Brooks <james@alt-three.com>
+ */
+final class UserWasInvitedEvent implements UserEventInterface
 {
     /**
      * The invite that has been added.
@@ -43,18 +49,5 @@ final class UserWasInvitedEvent implements ActionInterface, UserEventInterface
     public function __toString()
     {
         return 'User was invited.';
-    }
-
-    /**
-     * Get the event action.
-     *
-     * @return array
-     */
-    public function getAction()
-    {
-        return [
-            'user'        => $this->user,
-            'description' => (string) $this,
-        ];
     }
 }
