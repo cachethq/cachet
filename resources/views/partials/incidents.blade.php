@@ -1,8 +1,8 @@
 <h4>{{ formatted_date($date) }}</h4>
 <div class="timeline">
     <div class="content-wrapper">
-        @forelse($incidents as $incidentID => $incident)
-        <div class="moment {{ $incidentID === 0 ? 'first' : null }}">
+        @forelse($incidents as $incident)
+        <div class="moment {{ $loop->first ? 'first' : null }}">
             <div class="row event clearfix">
                 <div class="col-sm-1">
                     <div class="status-icon status-{{ $incident->latest_human_status }}" data-toggle="tooltip" title="{{ $incident->latest_human_status }}" data-placement="left">
