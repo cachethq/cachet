@@ -11,14 +11,14 @@
         @if($can_page_backward)
         <li class="previous">
             <a href="{{ cachet_route('status-page') }}?start_date={{ $previous_date }}" class="links">
-                <span aria-hidden="true">&larr;</span> {{ trans('cachet.incidents.previous_week') }}
+                <span aria-hidden="true">&larr;</span> {{ trans('pagination.previous') }}
             </a>
         </li>
         @endif
         @if($can_page_forward)
         <li class="next">
             <a href="{{ cachet_route('status-page') }}?start_date={{ $next_date }}" class="links">
-                {{ trans('cachet.incidents.next_week') }} <span aria-hidden="true">&rarr;</span>
+                {{ trans('pagination.next') }} <span aria-hidden="true">&rarr;</span>
             </a>
         </li>
         @endif
