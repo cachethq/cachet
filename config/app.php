@@ -185,6 +185,7 @@ return [
         GrahamCampbell\Core\CoreServiceProvider::class,
         GrahamCampbell\Markdown\MarkdownServiceProvider::class,
         GrahamCampbell\Security\SecurityServiceProvider::class,
+        Jenssegers\Date\DateServiceProvider::class,
         McCool\LaravelAutoPresenter\AutoPresenterServiceProvider::class,
         PragmaRX\Google2FA\Vendor\Laravel\ServiceProvider::class,
         Roumen\Feed\FeedServiceProvider::class,

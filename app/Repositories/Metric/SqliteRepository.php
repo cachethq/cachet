@@ -13,6 +13,7 @@ namespace CachetHQ\Cachet\Repositories\Metric;
 
 use CachetHQ\Cachet\Models\Metric;
 use Illuminate\Support\Facades\DB;
+use Jenssegers\Date\Date;
 
 /**
  * This is the sqlite repository class.
