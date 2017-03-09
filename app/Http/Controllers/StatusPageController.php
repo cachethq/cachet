@@ -19,7 +19,6 @@ use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\Schedule;
 use CachetHQ\Cachet\Repositories\Metric\MetricRepository;
 use CachetHQ\Cachet\Services\Dates\DateFactory;
-use Carbon\Carbon;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
@@ -27,6 +26,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\View;
+use Jenssegers\Date\Date;
 use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
 
 /**
@@ -45,14 +45,14 @@ class StatusPageController extends AbstractApiController
      */
     public function showIndex()
     {
-        $today = Carbon::now();
-        $startDate = Carbon::now();
+        $today = Date::now();
+        $startDate = Date::now();
 
         // Check if we have another starting date
         if (Binput::has('start_date')) {
             try {
                 // If date provided is valid
-                $oldDate = Carbon::createFromFormat('Y-m-d', Binput::get('start_date'));
+                $oldDate = Date::createFromFormat('Y-m-d', Binput::get('start_date'));
 
                 // If trying to get a future date fallback to today
                 if ($today->gt($oldDate)) {

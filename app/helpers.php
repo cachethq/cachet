@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-use Carbon\Carbon;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Request;
+use Jenssegers\Date\Date;
 
 if (!function_exists('set_active')) {
     /**
@@ -47,7 +47,7 @@ if (!function_exists('formatted_date')) {
     {
         $dateFormat = Config::get('setting.date_format', 'jS F Y');
 
-        return Carbon::parse($date)->format($dateFormat);
+        return (new Date($date))->format($dateFormat);
     }
 }
 
