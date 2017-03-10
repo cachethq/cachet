@@ -270,7 +270,11 @@ class SettingsController extends Controller
 
         $log = Log::getMonolog();
 
-        $logContents = file_get_contents($log->getHandlers()[0]->getUrl());
+        if (file_exists($path = $log->getHandlers()[0]->getUrl())) {
+            $logContents = file_get_contents($path);
+        } else {
+            $logContents = '';
+        }
 
         return View::make('dashboard.settings.log')->withLog($logContents)->withSubMenu($this->subMenu);
     }
