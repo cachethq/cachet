@@ -81,7 +81,7 @@ return [
             'failure'            => 'Etwas ist mit dem Abonnement schief gelaufen.',
             'already-subscribed' => 'Abonnement für :email konnte nicht registriert werden, da die E-Mail Adresse schon registriert ist.',
             'verify'             => [
-                'text'   => "Bitte bestätige die E-Mail-Benachrichtigungen unter :app_name status updates.\n:link",
+                'text'   => "Bitte bestätige deine E-Mail-Benachrichtigungen unter :app_name status updates.\n:link",
                 'html'   => '<p>Bitte bestätige deine E-Mail-Benachrichtigung unter :app_name status updates.</p>',
                 'button' => 'Abonnement bestätigen',
             ],
@@ -92,9 +92,9 @@ return [
                 'subject' => '[Neuer Vorfall] :status: :name',
             ],
             'component' => [
-                'subject'       => 'Komponent Status Update',
-                'text'          => 'Der Komponent :component_name hatte eine Status-Änderung. Der Komponent befindet sich nun im :component_human_status.\nDanke, :app_name',
-                'html'          => '<p>Der Komponent :component_name hatte eine Status-Änderung. Der Komponent befindet sich nun im :component_human_status.</p><p>Danke, :app_name</p>',
+                'subject'       => 'Statusänderung Komponente',
+                'text'          => ':component_name hatte eine Statusänderung. Die Komponente befindet sich nun im :component_human_status.\nDanke, :app_name',
+                'html'          => '<p>:component_name hatte eine Statusänderung. Die Komponente befindet sich nun im :component_human_status.</p><p>Danke, :app_name</p>',
                 'tooltip-title' => 'Neuigkeiten für :component_name abonnieren.',
             ],
         ],
