@@ -12,54 +12,54 @@
 return [
     'component' => [
         'status_update' => [
-            'subject' => 'Component Status Updated',
-            'title'   => 'A component\'s status was updated!',
-            'content' => ':name status changed from :old_status to :new_status.',
+            'subject' => 'Zaktualizowano komponent statusu',
+            'title'   => 'Komponent statusu został zaktualizowany!',
+            'content' => ':name status zmienił się z :old_status na :new_status.',
         ],
     ],
     'incident' => [
         'new' => [
-            'subject' => 'New Incident Reported',
-            'content' => ':name was reported',
-            'title'   => 'A new incident was reported at :app_name status page.',
-            'action'  => 'View',
+            'subject' => 'Nowy incydent został zgłoszony',
+            'content' => ':name został zgłoszony',
+            'title'   => 'Nowy incydent został zgłoszony dla :app_name.',
+            'action'  => 'Zobacz',
         ],
         'update' => [
-            'subject' => 'Incident Updated',
-            'content' => ':name was updated',
-            'title'   => ':name was updated to :new_status',
-            'action'  => 'View',
+            'subject' => 'Zaktualizowano incydent',
+            'content' => ':name został zaktualizowany',
+            'title'   => ':name zmienił status na :new_status',
+            'action'  => 'Zobacz',
         ],
     ],
     'schedule' => [
         'new' => [
-            'subject' => 'New Schedule Created',
-            'content' => ':name was scheduled for :date',
-            'title'   => 'A new scheduled maintenance was created.',
-            'action'  => 'View',
+            'subject' => 'Utworzono nowy harmonogram',
+            'content' => ':name został zaplanowany na :date',
+            'title'   => 'Nowa zaplanowana konserwacja została utworzona.',
+            'action'  => 'Zobacz',
         ],
     ],
     'subscriber' => [
         'verify' => [
-            'subject' => 'Verify Your Subscription',
-            'content' => 'Click to verify your subscription to :app_name status page.',
-            'title'   => 'Verify your subscription to :app_name status page.',
-            'action'  => 'Verify',
+            'subject' => 'Sprawdź swoją subskrypcję',
+            'content' => 'Kliknij, aby zaktualizować swoją subskrypcję dla :app_name.',
+            'title'   => 'Zweryfikuj swoją subskrypcję dla :app_name.',
+            'action'  => 'Weryfikuj',
         ],
     ],
     'system' => [
         'test' => [
-            'subject' => 'Ping from Cachet!',
-            'content' => 'This is a test notification from Cachet!',
+            'subject' => 'Powiadomienie z Cachet!',
+            'content' => 'To jest testowe powiadomienie z Cachet!',
             'title'   => '🔔',
         ],
     ],
     'user' => [
         'invite' => [
-            'subject' => 'Your invitation is inside...',
-            'content' => 'You have been invited to join :app_name status page.',
-            'title'   => 'You\'re invited to join :app_name status page.',
-            'action'  => 'Accept',
+            'subject' => 'Twoje zaproszenie jest w środku...',
+            'content' => 'Zostałeś zaproszony do dołączenia do :app_name.',
+            'title'   => 'Zostałeś zaproszony do dołączenia do :app_name.',
+            'action'  => 'Akceptuj',
         ],
     ],
 ];
