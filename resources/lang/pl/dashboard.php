@@ -45,57 +45,57 @@ return [
         'templates' => [
             'title' => 'Szablony zdarzeń',
             'add'   => [
-                'title'   => 'Vorfallvorlage erstellen',
-                'message' => 'Powinieneś dodać szablon wydarzenia.',
-                'success' => 'Twój nowy szablon wydarzenia został utworzony.',
-                'failure' => 'Coś poszło nie tak z szablonem wydarzenia.',
+                'title'   => 'Utwórz szablon zdarzenia',
+                'message' => 'Powinieneś dodać szablon zdarzenia.',
+                'success' => 'Twój nowy szablon zdarzenia został utworzony.',
+                'failure' => 'Coś poszło nie tak z szablonem zdarzenia.',
             ],
             'edit' => [
-                'title'   => 'Vorlage bearbeiten',
-                'success' => 'Szablon wydarzenia został zaktualizowany.',
-                'failure' => 'Coś poszło nie tak podczas aktualizacji szablonu wydarzenia',
+                'title'   => 'Edytuj szablon zdarzenia',
+                'success' => 'Szablon zdarzenia został zaktualizowany.',
+                'failure' => 'Coś poszło nie tak podczas aktualizacji szablonu zdarzenia',
             ],
             'delete' => [
-                'success' => 'Szablon wydarzenia został usunięty.',
-                'failure' => 'Szablon wydarzenia nie mógł zostać usunięty, proszę spróbować ponownie.',
+                'success' => 'Szablon zdarzenia został usunięty.',
+                'failure' => 'Szablon zdarzenia nie mógł zostać usunięty, proszę spróbować ponownie.',
             ],
         ],
     ],
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => 'Geplante Wartungen',
-        'logged'       => '{0} Nie ma żadnych harmonogramów, dobra robota.|Posiadasz jeden harmonogram.|Zgłoszono <strong>:count</strong> harmonogramów.',
-        'scheduled_at' => 'Geplant am :timestamp',
+        'schedule'     => 'Zaplanowana konserwacja',
+        'logged'       => '{0} Nie ma żadnych zaplanowanych konserwacji.|Posiadasz jedną zaplanowaną konserwację.|Zgłoszono <strong>:count</strong> zaplanowanych konserwacji.',
+        'scheduled_at' => 'Zaplanowane na :timestamp',
         'add'          => [
-            'title'   => 'Zaplanuj prace konserwatorskie',
+            'title'   => 'Zaplanuj prace konserwacyjne',
             'success' => 'Dodano harmonogram.',
             'failure' => 'Coś poszło nie tak podczas planowania, proszę spróbować ponownie.',
         ],
         'edit' => [
-            'title'   => 'Edytuj prace konserwatorskie',
+            'title'   => 'Edytuj prace konserwacyjne',
             'success' => 'Harmonogram został zaktualizowany!',
             'failure' => 'Coś poszło nie tak podczas edytowania harmonogramu, proszę spróbować ponownie.',
         ],
         'delete' => [
-            'success' => 'Zaplanowane prace konserwatorskie zostały usunięte i nie będą wyświetlane na stronie statusu.',
-            'failure' => 'Zaplanowane prace konserwatorskie nie mogły zostać usunięte, proszę spróbować ponownie.',
+            'success' => 'Zaplanowane prace konserwacyjne zostały usunięte i nie będą wyświetlane na stronie statusu.',
+            'failure' => 'Zaplanowane prace konserwacyjne nie mogły zostać usunięte, proszę spróbować ponownie.',
         ],
     ],
 
     // Components
     'components' => [
-        'components'         => 'Komponenten',
-        'component_statuses' => 'Komponentenstatus',
-        'listed_group'       => 'Gruppiert unter :name',
+        'components'         => 'Komponenty',
+        'component_statuses' => 'Komponenty statusu',
+        'listed_group'       => 'Zgrupowane w :name',
         'add'                => [
-            'title'   => 'Komponente hinzufügen',
-            'message' => 'Sie sollten eine Komponente erstellen.',
+            'title'   => 'Dodaj komponent',
+            'message' => 'Musisz dodać komponent.',
             'success' => 'Utworzono komponent.',
             'failure' => 'Coś poszło nie tak z komponentem, proszę spróbować ponownie.',
         ],
         'edit' => [
-            'title'   => 'Komponente bearbeiten',
+            'title'   => 'Edytuj komponent',
             'success' => 'Zaktualizowano komponent.',
             'failure' => 'Coś poszło nie tak z komponentem, proszę spróbować ponownie.',
         ],
