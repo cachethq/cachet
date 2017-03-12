@@ -27,11 +27,11 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => 'Brak zgłoszonych incydentów',
-        'past'          => 'Wcześniejsze incydenty',
+        'none'          => 'Brak zgłoszonych zdarzeń',
+        'past'          => 'Wcześniejsze zdarzenia',
         'previous_week' => 'Poprzedni tydzień',
         'next_week'     => 'W przyszłym tygodniu',
-        'stickied'      => 'Przyklejone incydenty',
+        'stickied'      => 'Przypięte zdarzenia',
         'scheduled'     => 'Zaplanowana konserwacja',
         'scheduled_at'  => ' na :timestamp',
         'posted'        => 'Opublikowano :timestamp',
