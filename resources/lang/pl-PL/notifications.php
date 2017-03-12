@@ -57,8 +57,8 @@ return [
     'user' => [
         'invite' => [
             'subject' => 'Twoje zaproszenie jest w środku...',
-            'content' => 'Zostałeś zaproszony do dołączenia do :app_name.',
-            'title'   => 'Zostałeś zaproszony do dołączenia do :app_name.',
+            'content' => 'Otrzymałeś zaproszenie do :app_name.',
+            'title'   => 'Otrzymałeś zaproszenie do :app_name.',
             'action'  => 'Akceptuj',
         ],
     ],
