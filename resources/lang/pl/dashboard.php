@@ -11,30 +11,30 @@
 
 return [
 
-    'dashboard'          => 'Dashboard',
-    'writeable_settings' => 'The Cachet settings directory is not writeable. Please make sure that <code>./bootstrap/cachet</code> is writeable by the web server.',
+    'dashboard'          => 'Pulpit',
+    'writeable_settings' => 'Nie można zapisać zmian w pliku konfiguracyjnym. Proszę sprawdzić uprawnienia do katalogu <code>./bootstrap/cachet</code>, serwer www musi mieć możliwość zapisu w tym katalogu.',
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Incidents &amp; Schedule',
-        'incidents'                => 'Vorfälle',
-        'logged'                   => '{0} Es gibt keine Vorfälle, gute Arbeit.|Du hast einen Vorfall gemeldet.|Du hast <strong>:count</strong> Vorfälle gemeldet.',
-        'incident-create-template' => 'Vorlage erstellen',
-        'incident-templates'       => 'Vorfall Vorlagen',
+        'title'                    => 'Zdarzenia i harmonogramy',
+        'incidents'                => 'Zdarzenia',
+        'logged'                   => '{0} Nie ma żadnych zgłoszonych zdarzeń.|Masz jedno zgłoszone zdarzenie.|Masz zgłoszonych <strong>:count</strong> zdarzeń.',
+        'incident-create-template' => 'Utwórz szablon',
+        'incident-templates'       => 'Szablon zdarzenia',
         'updates'                  => '{0} Zero aktualizacji|Jedna aktualizacja|:count aktualizacji',
         'add'                      => [
-            'title'   => 'Vorfall hinzufügen',
+            'title'   => 'Zgłoś zdarzenie',
             'success' => 'Dodano zdarzenie.',
-            'failure' => 'Wystąpił błąd podczas dodawania wydarzenia, proszę spróbować ponownie.',
+            'failure' => 'Wystąpił błąd podczas dodawania zdarzenia, proszę spróbować ponownie.',
         ],
         'edit' => [
-            'title'   => 'Vorfall bearbeiten',
-            'success' => 'Vorfall aktualisiert.',
-            'failure' => 'Wystąpił błąd podczas edytowania wydarzenia, proszę spróbować ponownie.',
+            'title'   => 'Edytuj zdarzenie',
+            'success' => 'Zmieniono zdarzenie.',
+            'failure' => 'Wystąpił błąd podczas edytowania zdarzenia, proszę spróbować ponownie.',
         ],
         'delete' => [
-            'success' => 'Wydarzenie zostało usunięte i nie będzie widoczne na stronie statusu.',
-            'failure' => 'Wydarzenie nie mogło zostać usunięte, proszę spróbować ponownie.',
+            'success' => 'Zdarzenie zostało usunięte i nie będzie widoczne na stronie statusu.',
+            'failure' => 'Zdarzenie nie mogło zostać usunięte, proszę spróbować ponownie.',
         ],
         'update' => [
             'title'    => 'Utwórz nową aktualizację zdarzenia',
@@ -43,7 +43,7 @@ return [
 
         // Incident templates
         'templates' => [
-            'title' => 'Vorfall Vorlagen',
+            'title' => 'Szablony zdarzeń',
             'add'   => [
                 'title'   => 'Vorfallvorlage erstellen',
                 'message' => 'Powinieneś dodać szablon wydarzenia.',
