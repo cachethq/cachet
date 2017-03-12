@@ -105,7 +105,7 @@ return [
             'site-url'               => 'Adres URL strony',
             'display-graphs'         => 'Czy wyświetlać wykresy na stronie statusu?',
             'about-this-page'        => 'Informacje o tej stronie',
-            'days-of-incidents'      => 'Z ilu ostatnich dni pokazywać incydenty?',
+            'days-of-incidents'      => 'Z ilu ostatnich dni pokazywać zdarzenia?',
             'banner'                 => 'Baner',
             'banner-help'            => 'Zaleca się, aby przesyłać pliki nie większe niż 930px szerokości',
             'subscribers'            => 'Czy pozwalać na subskrypcje e-mail?',
@@ -121,7 +121,7 @@ return [
             'site-timezone'        => 'Strefa czasowa',
             'site-locale'          => 'Język strony',
             'date-format'          => 'Format daty',
-            'incident-date-format' => 'Format daty przy incydentach',
+            'incident-date-format' => 'Format daty przy zdarzeniach',
         ],
         'security' => [
             'allowed-domains'      => 'Zaakceptowane domeny',
