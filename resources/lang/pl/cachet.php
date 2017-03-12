@@ -67,7 +67,7 @@ return [
     'subscriber' => [
         'subscribe'   => 'Zapisz się, aby uzyskać najnowsze aktualizacje',
         'button'      => 'Subskrybuj',
-        'manage'    => [
+        'manage'      => [
             'no_subscriptions' => 'Jesteś obecnie zapisany na wszystkie aktualizacje.',
             'my_subscriptions' => 'Jesteś obecnie zapisany na poniższe aktualizacje.',
         ],
