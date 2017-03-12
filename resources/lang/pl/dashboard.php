@@ -106,15 +106,15 @@ return [
 
         // Component groups
         'groups' => [
-            'groups'        => 'Komponentgruppe|Komponentgruppen',
-            'no_components' => 'Sie sollten eine Komponentengruppe hinzufügen.',
+            'groups'        => 'Grupa komponentu|Grupy komponentów',
+            'no_components' => 'Musisz utworzyć grupę komponentów.',
             'add'           => [
-                'title'   => 'Eine Komponentengruppe hinzufügen',
+                'title'   => 'Dodaj grupę komponentów',
                 'success' => 'Dodano grupę komponentów.',
                 'failure' => 'Coś poszło nie tak z komponentem, proszę spróbować ponownie.',
             ],
             'edit' => [
-                'title'   => 'Komponentengruppe bearbeiten',
+                'title'   => 'Edytuj grupę komponentów',
                 'success' => 'Zaktualizowano grupę komponentów.',
                 'failure' => 'Coś poszło nie tak z komponentem, proszę spróbować ponownie.',
             ],
@@ -127,15 +127,15 @@ return [
 
     // Metrics
     'metrics' => [
-        'metrics' => 'Metriken',
+        'metrics' => 'Metryka',
         'add'     => [
-            'title'   => 'Metrik erstellen',
+            'title'   => 'Utwórz metrykę',
             'message' => 'Powinieneś dodać metrykę.',
             'success' => 'Utworzono metrykę.',
             'failure' => 'Coś poszło nie tak z metryką, proszę próbować ponownie.',
         ],
         'edit' => [
-            'title'   => 'Metrik bearbeiten',
+            'title'   => 'Edytuj metrykę',
             'success' => 'Zaktualizowano metrykę.',
             'failure' => 'Coś poszło nie tak z metryką, proszę próbować ponownie.',
         ],
@@ -146,43 +146,43 @@ return [
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'      => 'Abonnenten',
+        'subscribers'      => 'Subskrybenci',
         'description'      => 'Subskrybenci będą otrzymywać powiadomienia, gdy wydarzenia zostaną utworzone lub komponenty zaktualizowane.',
-        'verified'         => 'Verifiziert',
-        'not_verified'     => 'Nicht verifiziert',
+        'verified'         => 'Zweryfikowany',
+        'not_verified'     => 'Nie zweryfikowany',
         'subscriber'       => ':email, subskrybowany :data',
         'no_subscriptions' => 'Zapisano do wszystkich aktualizacji',
         'add'              => [
-            'title'   => 'Einen neuen Abonnenten hinzufügen',
-            'success' => 'Abonnent hinzugefügt.',
+            'title'   => 'Dodaj nowego subskrybenta',
+            'success' => 'Subskrybent został dodany.',
             'failure' => 'Coś poszło nie tak podczas dodawania subskrybenta, proszę spróbować ponownie.',
             'help'    => 'Wpisz każdego subskrybenta w nowym wierszu.',
         ],
         'edit' => [
-            'title'   => 'Abonnent aktualisieren',
-            'success' => 'Abonnent aktualisiert.',
+            'title'   => 'Edytuj subskrybenta',
+            'success' => 'Dane subskrybenta zostały zmienione.',
             'failure' => 'Coś poszło nie tak podczas edytowania subskrybenta, proszę spróbować ponownie.',
         ],
     ],
 
     // Team
     'team' => [
-        'team'        => 'Team',
-        'member'      => 'Mitglied',
+        'team'        => 'Zespół',
+        'member'      => 'Członkowie',
         'profile'     => 'Profil',
-        'description' => 'Team Members will be able to add, modify &amp; edit components and incidents.',
+        'description' => 'Członkowie zespołu będą mogli dodawać, modyfikować i edytować komponenty i zdarzenia.',
         'add'         => [
-            'title'   => 'Neues Teammitglied hinzufügen',
+            'title'   => 'Dodaj nowego członka zespołu',
             'success' => 'Dodano członka zespołu.',
             'failure' => 'Członek zespołu nie mógł zostać dodany, proszę spróbować ponownie.',
         ],
         'edit' => [
-            'title'   => 'Profil aktualisieren',
+            'title'   => 'Aktualizuj dane członka zespołu',
             'success' => 'Zaktualizowano profil.',
             'failure' => 'Coś poszło nie tak podczas aktualizacji profilu, proszę spróbować ponownie.',
         ],
         'delete' => [
-            'success' => 'Benutzer aktualisiert.',
+            'success' => 'Usuń członka zespołu.',
             'failure' => 'Członek zespołu nie mógł zostać dodany, proszę spróbować ponownie.',
         ],
         'invite' => [
@@ -194,11 +194,11 @@ return [
 
     // Settings
     'settings' => [
-        'settings'  => 'Einstellungen',
+        'settings'  => 'Ustawienia',
         'app-setup' => [
-            'app-setup'   => 'Anwendungsinstallation',
-            'images-only' => 'Es können nur Bilder hochgeladen werden.',
-            'too-big'     => 'Die von Ihnen hochgeladene Datei ist zu groß. Laden Sie ein Bild welches kleiner als :size ist hoch',
+            'app-setup'   => 'Instalacja aplikacji',
+            'images-only' => 'Tylko obrazy mogą zostać wgrane.',
+            'too-big'     => 'Przesłany plik jest zbyt duży. Prześlij obraz mniejszych rozmiarów niż :size',
         ],
         'analytics' => [
             'analytics' => 'Analytics',
@@ -207,7 +207,7 @@ return [
             'log' => 'Logi',
         ],
         'localization' => [
-            'localization' => 'Localization',
+            'localization' => 'Lokalizacja',
         ],
         'customization' => [
             'customization' => 'Dostosowywanie',
@@ -218,23 +218,23 @@ return [
             'mail'  => 'Mail',
             'test'  => 'Test',
             'email' => [
-                'subject' => 'Test notification from Cachet',
-                'body'    => 'This is a test notification from Cachet.',
+                'subject' => 'Testowe powiadomienie z Cachet',
+                'body'    => 'To jest testowe powiadomienie z Cachet.',
             ],
         ],
         'security' => [
-            'security'   => 'Sicherheit',
-            'two-factor' => 'Nutzer ohne Zwei-Faktor-Authentifizierung',
+            'security'   => 'Bezpieczeństwo',
+            'two-factor' => 'Użytkownicy bez uwierzytelniania dwuskładnikowego',
         ],
         'stylesheet' => [
-            'stylesheet' => 'Stylesheet',
+            'stylesheet' => 'Style',
         ],
         'theme' => [
-            'theme' => 'Theme',
+            'theme' => 'Szablony',
         ],
         'edit' => [
-            'success' => 'Einstellungen gespeichert.',
-            'failure' => 'Einstellungen konnten nicht gespeichert werden.',
+            'success' => 'Ustawienia zostały zapisane.',
+            'failure' => 'Wystąpił błąd podczas zapisywania ustawień.',
         ],
         'credits' => [
             'credits'       => 'Autorzy',
@@ -248,10 +248,10 @@ return [
 
     // Login
     'login' => [
-        'login'      => 'Anmelden',
-        'logged_in'  => 'Sie sind angemeldet.',
-        'welcome'    => 'Willkommen zurück!',
-        'two-factor' => 'Bitte geben Sie Ihren Token ein.',
+        'login'      => 'Logowanie',
+        'logged_in'  => 'Zostałeś zalogowany.',
+        'welcome'    => 'Witaj ponownie!',
+        'two-factor' => 'Wpisz kod weryfikacji dwuskładnikowej.',
     ],
 
     // Sidebar footer
@@ -261,9 +261,9 @@ return [
 
     // Notifications
     'notifications' => [
-        'notifications' => 'Benachrichtigungen',
-        'awesome'       => 'Großartig.',
-        'whoops'        => 'Hoppla.',
+        'notifications' => 'Powiadomienia',
+        'awesome'       => 'Niesamowite.',
+        'whoops'        => 'Ups.',
     ],
 
     // Widgets
@@ -277,15 +277,15 @@ return [
     // Welcome modal
     'welcome' => [
         'welcome' => 'Witamy w nowym statusie strony!',
-        'message' => 'Ihre Statusseite ist fast fertig! Vielleicht möchten Sie diese zusätzlichen Einstellungen konfigurieren',
+        'message' => 'Wszystko jest już prawie gotowe, ale może zechcesz skonfigurować najpierw te dodatkowe ustawienia:',
         'close'   => 'Przejdź prosto do panelu głównego',
         'steps'   => [
-            'component'  => 'Komponenten erstellen',
-            'incident'   => 'Vorfälle erstellen',
-            'customize'  => 'Personalisieren',
-            'team'       => 'Benutzer hinzufügen',
-            'api'        => 'API Token generieren',
-            'two-factor' => 'Zwei-Faktor-Authentifizierung',
+            'component'  => 'Dodaj komponent',
+            'incident'   => 'Utwórz zdarzenie',
+            'customize'  => 'Ustawienia strony statusu',
+            'team'       => 'Dodaj członków zespołu',
+            'api'        => 'Wygeneruj klucz API',
+            'two-factor' => 'Skonfiguruj uwierzytelnianie dwuskładnikowe',
         ],
     ],
 
