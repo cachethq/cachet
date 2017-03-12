@@ -19,13 +19,13 @@ return [
     ],
     'incident' => [
         'new' => [
-            'subject' => 'Nowy incydent został zgłoszony',
+            'subject' => 'Nowe zdarzenie został zgłoszony',
             'content' => ':name został zgłoszony',
-            'title'   => 'Nowy incydent został zgłoszony dla :app_name.',
+            'title'   => 'Nowe zdarzenie zostało dodane dla :app_name.',
             'action'  => 'Zobacz',
         ],
         'update' => [
-            'subject' => 'Zaktualizowano incydent',
+            'subject' => 'Zaktualizowano zdarzenie',
             'content' => ':name został zaktualizowany',
             'title'   => ':name zmienił status na :new_status',
             'action'  => 'Zobacz',
