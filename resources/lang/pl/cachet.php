@@ -26,8 +26,8 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => 'Brak zgłoszonych incydentów',
-        'past'          => 'Wcześniejsze incydenty',
+        'none'          => 'Brak zgłoszonych zdarzeń',
+        'past'          => 'Wcześniejsze zdarzenia',
         'previous_week' => 'Poprzedni tydzień',
         'next_week'     => 'W przyszłym tygodniu',
         'scheduled'     => 'Zaplanowana konserwacja',
@@ -89,7 +89,7 @@ return [
                 'subject' => '[Planowana konserwacja] :name',
             ],
             'incident' => [
-                'subject' => '[Nowy incydent] :status: :name',
+                'subject' => '[Nowe zdarzenie] :status: :name',
             ],
             'component' => [
                 'subject'       => 'Aktualizacje komponentu',
