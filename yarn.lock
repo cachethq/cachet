@@ -2461,9 +2461,9 @@ sort-keys@^1.0.0:
   dependencies:
     is-plain-obj "^1.0.0"
 
-sortablejs@^1.4.2:
-  version "1.4.2"
-  resolved "https://registry.yarnpkg.com/sortablejs/-/sortablejs-1.4.2.tgz#10df66054e1d1dcb538d7eaedaeaf692232c8d0d"
+sortablejs@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/sortablejs/-/sortablejs-1.5.1.tgz#efae13b84c677f3b3d3f4f8e46c7e05fc6acb525"
 
 source-map-resolve@^0.3.0:
   version "0.3.1"
@@ -2607,9 +2607,9 @@ supports-color@^3.1.2:
   dependencies:
     has-flag "^1.0.0"
 
-sweetalert2@^6.4.2:
-  version "6.4.2"
-  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-6.4.2.tgz#0505b3acaf812af1ad04f00980a83625508e3d61"
+sweetalert2@^6.4.4:
+  version "6.4.4"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-6.4.4.tgz#c681059c28fbc184a69f37ce1b6449862cbc64e9"
   dependencies:
     es6-promise "^4.0.5"
 
