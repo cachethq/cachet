@@ -14,6 +14,8 @@ elixir((mix) => {
         .sass('dashboard.scss', 'public/dist/css/dashboard.css')
         .sass('app.scss', 'public/dist/css/app.css')
         .scripts([
+            'node_modules/es5-shim/es5-shim.js',
+            'node_modules/es5-shim/es5-sham.js',
             'node_modules/jquery/dist/jquery.min.js',
             'node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js',
             'node_modules/moment/min/moment-with-locales.min.js',

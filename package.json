@@ -6,6 +6,7 @@
     "bootstrap-sass": "^3.3.6",
     "chart.js": "^2.4.0",
     "eonasdan-bootstrap-datetimepicker": "^4.17.46",
+    "es5-shim": "^4.5.9",
     "github-markdown-css": "^2.3.0",
     "gulp": "~3.9.1",
     "ionicons": "~2.0",
