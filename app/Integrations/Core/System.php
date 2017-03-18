@@ -50,8 +50,8 @@ class System implements SystemContract
     public function getStatus()
     {
         $enabledScope = Component::enabled();
-        $totalComponents = $enabledScope->count();
-        $majorOutages = $enabledScope->status(4)->count();
+        $totalComponents = (clone $enabledScope)->count();
+        $majorOutages = (clone $enabledScope)->status(4)->count();
         $isMajorOutage = $totalComponents ? ($majorOutages / $totalComponents) >= 0.5 : false;
 
         // Default data
