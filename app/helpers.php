@@ -9,9 +9,24 @@
  * file that was distributed with this source code.
  */
 
+use CachetHQ\Cachet\Settings\Repository;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Request;
 use Jenssegers\Date\Date;
+
+if (!function_exists('setting')) {
+    /**
+     * Get a setting, or the default value.
+     *
+     * @param string $name
+     * @param mixed  $default
+     *
+     * @return mixed
+     */
+    function setting($name, $default = null) {
+        return app(Repository::class)->get($name, $default);
+    }
+}
 
 if (!function_exists('set_active')) {
     /**
