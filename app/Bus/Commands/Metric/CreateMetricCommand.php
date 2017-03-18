@@ -111,7 +111,7 @@ final class CreateMetricCommand
         'display_chart' => 'nullable|int',
         'places'        => 'nullable|int|between:0,4',
         'default_view'  => 'required|int|between:0,3',
-        'threshold'     => 'nullable|numeric|between:0,10',
+        'threshold'     => 'required|int',
         'order'         => 'nullable|int',
         'visible'       => 'required|int|between:0,2',
     ];
