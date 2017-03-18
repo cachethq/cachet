@@ -11,18 +11,18 @@
 
 namespace CachetHQ\Tests\Cachet\Bus\Events\Component;
 
-use CachetHQ\Cachet\Bus\Events\Component\ComponentStatusWasUpdatedEvent;
+use CachetHQ\Cachet\Bus\Events\Component\ComponentStatusWasChangedEvent;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\User;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use MailThief\Testing\InteractsWithMail;
 
 /**
- * This is the component status was updated event test.
+ * This is the component status was changed event test.
  *
  * @author James Brooks <james@alt-three.com>
  */
-class ComponentStatusWasUpdatedEventTest extends AbstractComponentEventTestCase
+class ComponentStatusWasChangedEventTest extends AbstractComponentEventTestCase
 {
     use DatabaseMigrations, InteractsWithMail;
 
@@ -40,7 +40,7 @@ class ComponentStatusWasUpdatedEventTest extends AbstractComponentEventTestCase
 
         $subscriber->subscriptions()->create(['component_id' => $component->id]);
 
-        $this->app['events']->fire(new ComponentStatusWasUpdatedEvent($user, $component, 1, 2, false));
+        $this->app['events']->fire(new ComponentStatusWasChangedEvent($user, $component, 1, 2, false));
 
         $this->seeMessageFor($subscriber->email);
         $this->seeMessageWithSubject(trans('notifications.component.status_update.mail.subject'));
@@ -65,7 +65,7 @@ class ComponentStatusWasUpdatedEventTest extends AbstractComponentEventTestCase
             'new_status'      => 2,
             'silent'          => false,
         ];
-        $object = new ComponentStatusWasUpdatedEvent(
+        $object = new ComponentStatusWasChangedEvent(
             $params['user'],
             $params['component'],
             $params['original_status'],

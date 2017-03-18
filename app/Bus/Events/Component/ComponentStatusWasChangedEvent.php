@@ -16,21 +16,21 @@ use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\User;
 
 /**
- * This is the component status was updated event.
+ * This is the component status was changed event.
  *
  * @author James Brooks <james@alt-three.com>
  */
-final class ComponentStatusWasUpdatedEvent implements ActionInterface, ComponentEventInterface
+final class ComponentStatusWasChangedEvent implements ActionInterface, ComponentEventInterface
 {
     /**
-     * The user who updated the component.
+     * The user who changed the component.
      *
      * @var \CachetHQ\Cachet\Models\User
      */
     public $user;
 
     /**
-     * The component that was updated.
+     * The component that was changed.
      *
      * @var \CachetHQ\Cachet\Models\Component
      */
@@ -84,7 +84,7 @@ final class ComponentStatusWasUpdatedEvent implements ActionInterface, Component
      */
     public function __toString()
     {
-        return 'Component status was updated.';
+        return 'Component status was changed.';
     }
 
     /**

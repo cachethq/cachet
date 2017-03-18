@@ -12,7 +12,7 @@
 namespace CachetHQ\Cachet\Bus\Handlers\Commands\Component;
 
 use CachetHQ\Cachet\Bus\Commands\Component\UpdateComponentCommand;
-use CachetHQ\Cachet\Bus\Events\Component\ComponentStatusWasUpdatedEvent;
+use CachetHQ\Cachet\Bus\Events\Component\ComponentStatusWasChangedEvent;
 use CachetHQ\Cachet\Bus\Events\Component\ComponentWasUpdatedEvent;
 use CachetHQ\Cachet\Models\Component;
 use Illuminate\Contracts\Auth\Guard;
@@ -50,7 +50,7 @@ class UpdateComponentCommandHandler
         $component = $command->component;
         $originalStatus = $component->status;
 
-        event(new ComponentStatusWasUpdatedEvent($this->auth->user(), $component, $originalStatus, $command->status, $command->silent));
+        event(new ComponentStatusWasChangedEvent($this->auth->user(), $component, $originalStatus, $command->status, $command->silent));
 
         $component->update($this->filter($command));
 
