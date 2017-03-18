@@ -23,7 +23,8 @@ if (!function_exists('setting')) {
      *
      * @return mixed
      */
-    function setting($name, $default = null) {
+    function setting($name, $default = null)
+    {
         return app(Repository::class)->get($name, $default);
     }
 }
