@@ -9,40 +9,35 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Events\Metric;
+namespace CachetHQ\Cachet\Bus\Events\User;
 
 use CachetHQ\Cachet\Bus\Events\ActionInterface;
-use CachetHQ\Cachet\Models\MetricPoint;
 use CachetHQ\Cachet\Models\User;
 
-final class MetricPointWasAddedEvent implements ActionInterface, MetricEventInterface
+/**
+ * This is the user was created event class.
+ *
+ * @author James Brooks <james@alt-three.com>
+ */
+final class UserWasCreatedEvent implements ActionInterface, UserEventInterface
 {
     /**
-     * The user who added the metric point.
+     * The user that has been added.
      *
      * @var \CachetHQ\Cachet\Models\User
      */
     public $user;
 
     /**
-     * The metric point that was added.
+     * Create a new user was added event instance.
      *
-     * @var \CachetHQ\Cachet\Models\MetricPoint
-     */
-    public $metricPoint;
-
-    /**
-     * Create a new metric point was added event instance.
-     *
-     * @param \CachetHQ\Cachet\Models\User        $user
-     * @param \CachetHQ\Cachet\Models\MetricPoint $metricPoint
+     * @param \CachetHQ\Cachet\Models\User $user
      *
      * @return void
      */
-    public function __construct(User $user, MetricPoint $metricPoint)
+    public function __construct(User $user)
     {
         $this->user = $user;
-        $this->metricPoint = $metricPoint;
     }
 
     /**
@@ -52,7 +47,7 @@ final class MetricPointWasAddedEvent implements ActionInterface, MetricEventInte
      */
     public function __toString()
     {
-        return 'Metric Point was added.';
+        return 'User was added.';
     }
 
     /**

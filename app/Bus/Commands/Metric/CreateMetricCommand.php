@@ -11,7 +11,13 @@
 
 namespace CachetHQ\Cachet\Bus\Commands\Metric;
 
-final class AddMetricCommand
+/**
+ * This is the create metric command class.
+ *
+ * @author Joseph Cohen <joe@alt-three.com>
+ * @author James Brooks <james@alt-three.com>
+ */
+final class CreateMetricCommand
 {
     /**
      * The metric name.

@@ -11,12 +11,17 @@
 
 namespace CachetHQ\Cachet\Bus\Handlers\Commands\Component;
 
-use CachetHQ\Cachet\Bus\Commands\Component\AddComponentCommand;
-use CachetHQ\Cachet\Bus\Events\Component\ComponentWasAddedEvent;
+use CachetHQ\Cachet\Bus\Commands\Component\CreateComponentCommand;
+use CachetHQ\Cachet\Bus\Events\Component\ComponentWasCreatedEvent;
 use CachetHQ\Cachet\Models\Component;
 use Illuminate\Contracts\Auth\Guard;
 
-class AddComponentCommandHandler
+/**
+ * This is the add component command handler class.
+ *
+ * @author James Brooks <james@alt-three.com>
+ */
+class CreateComponentCommandHandler
 {
     /**
      * The authentication guard instance.
@@ -40,15 +45,15 @@ class AddComponentCommandHandler
     /**
      * Handle the add component command.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\Component\AddComponentCommand $command
+     * @param \CachetHQ\Cachet\Bus\Commands\Component\CreateComponentCommand $command
      *
      * @return \CachetHQ\Cachet\Models\Component
      */
-    public function handle(AddComponentCommand $command)
+    public function handle(CreateComponentCommand $command)
     {
         $component = Component::create($this->filter($command));
 
-        event(new ComponentWasAddedEvent($this->auth->user(), $component));
+        event(new ComponentWasCreatedEvent($this->auth->user(), $component));
 
         return $component;
     }
@@ -56,11 +61,11 @@ class AddComponentCommandHandler
     /**
      * Filter the command data.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\Incident\AddComponentCommand $command
+     * @param \CachetHQ\Cachet\Bus\Commands\Incident\CreateComponentCommand $command
      *
      * @return array
      */
-    protected function filter(AddComponentCommand $command)
+    protected function filter(CreateComponentCommand $command)
     {
         $params = [
             'name'        => $command->name,

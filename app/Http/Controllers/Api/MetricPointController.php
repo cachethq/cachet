@@ -11,7 +11,7 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Api;
 
-use CachetHQ\Cachet\Bus\Commands\Metric\AddMetricPointCommand;
+use CachetHQ\Cachet\Bus\Commands\Metric\CreateMetricPointCommand;
 use CachetHQ\Cachet\Bus\Commands\Metric\RemoveMetricPointCommand;
 use CachetHQ\Cachet\Bus\Commands\Metric\UpdateMetricPointCommand;
 use CachetHQ\Cachet\Models\Metric;
@@ -45,7 +45,7 @@ class MetricPointController extends AbstractApiController
     public function postMetricPoints(Metric $metric)
     {
         try {
-            $metricPoint = dispatch(new AddMetricPointCommand(
+            $metricPoint = dispatch(new CreateMetricPointCommand(
                 $metric,
                 Binput::get('value'),
                 Binput::get('timestamp')

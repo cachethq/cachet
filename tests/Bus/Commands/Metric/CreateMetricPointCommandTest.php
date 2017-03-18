@@ -12,25 +12,25 @@
 namespace CachetHQ\Tests\Cachet\Bus\Commands\Metric;
 
 use AltThree\TestBench\CommandTrait;
-use CachetHQ\Cachet\Bus\Commands\Metric\AddMetricPointCommand;
-use CachetHQ\Cachet\Bus\Handlers\Commands\Metric\AddMetricPointCommandHandler;
+use CachetHQ\Cachet\Bus\Commands\Metric\CreateMetricPointCommand;
+use CachetHQ\Cachet\Bus\Handlers\Commands\Metric\CreateMetricPointCommandHandler;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 
 /**
- * This is the add metric point command test class.
+ * This is the create metric point command test class.
  *
  * @author James Brooks <james@alt-three.com>
  * @author Graham Campbell <graham@alt-three.com>
  */
-class AddMetricPointCommandTest extends AbstractTestCase
+class CreateMetricPointCommandTest extends AbstractTestCase
 {
     use CommandTrait;
 
     protected function getObjectAndParams()
     {
         $params = ['metric' => new Metric(), 'value' => 1, 'created_at' => '2020-12-30 12:00:00'];
-        $object = new AddMetricPointCommand($params['metric'], $params['value'], $params['created_at']);
+        $object = new CreateMetricPointCommand($params['metric'], $params['value'], $params['created_at']);
 
         return compact('params', 'object');
     }
@@ -42,6 +42,6 @@ class AddMetricPointCommandTest extends AbstractTestCase
 
     protected function getHandlerClass()
     {
-        return AddMetricPointCommandHandler::class;
+        return CreateMetricPointCommandHandler::class;
     }
 }

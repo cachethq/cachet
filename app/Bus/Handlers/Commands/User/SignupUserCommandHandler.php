@@ -12,7 +12,7 @@
 namespace CachetHQ\Cachet\Bus\Handlers\Commands\User;
 
 use CachetHQ\Cachet\Bus\Commands\User\SignupUserCommand;
-use CachetHQ\Cachet\Bus\Events\User\UserWasAddedEvent;
+use CachetHQ\Cachet\Bus\Events\User\UserWasCreatedEvent;
 use CachetHQ\Cachet\Models\User;
 
 class SignupUserCommandHandler
@@ -33,7 +33,7 @@ class SignupUserCommandHandler
             'level'    => User::LEVEL_USER,
         ]);
 
-        event(new UserWasAddedEvent($user));
+        event(new UserWasCreatedEvent($user));
 
         return $user;
     }

@@ -11,7 +11,7 @@
 
 namespace CachetHQ\Tests\Cachet\Bus\Events\Metric;
 
-use CachetHQ\Cachet\Bus\Events\Metric\MetricPointWasAddedEvent;
+use CachetHQ\Cachet\Bus\Events\Metric\MetricPointWasCreatedEvent;
 use CachetHQ\Cachet\Models\MetricPoint;
 use CachetHQ\Cachet\Models\User;
 
@@ -20,7 +20,7 @@ use CachetHQ\Cachet\Models\User;
  *
  * @author James Brooks <james@alt-three.com>
  */
-class MetricPointWasAddedEventTest extends AbstractMetricEventTestCase
+class MetricPointWasCreatedEventTest extends AbstractMetricEventTestCase
 {
     protected function objectHasHandlers()
     {
@@ -30,7 +30,7 @@ class MetricPointWasAddedEventTest extends AbstractMetricEventTestCase
     protected function getObjectAndParams()
     {
         $params = ['user' => new User(), 'metricPoint' => new MetricPoint()];
-        $object = new MetricPointWasAddedEvent($params['user'], $params['metricPoint']);
+        $object = new MetricPointWasCreatedEvent($params['user'], $params['metricPoint']);
 
         return compact('params', 'object');
     }

@@ -12,18 +12,18 @@
 namespace CachetHQ\Tests\Cachet\Bus\Commands\ComponentGroup;
 
 use AltThree\TestBench\CommandTrait;
-use CachetHQ\Cachet\Bus\Commands\ComponentGroup\AddComponentGroupCommand;
-use CachetHQ\Cachet\Bus\Handlers\Commands\ComponentGroup\AddComponentGroupCommandHandler;
+use CachetHQ\Cachet\Bus\Commands\ComponentGroup\CreateComponentGroupCommand;
+use CachetHQ\Cachet\Bus\Handlers\Commands\ComponentGroup\CreateComponentGroupCommandHandler;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 
 /**
- * This is the add component group command test class.
+ * This is the create component group command test class.
  *
  * @author James Brooks <james@alt-three.com>
  * @author Graham Campbell <graham@alt-three.com>
  */
-class AddComponentGroupCommandTest extends AbstractTestCase
+class CreateComponentGroupCommandTest extends AbstractTestCase
 {
     use CommandTrait;
 
@@ -36,7 +36,7 @@ class AddComponentGroupCommandTest extends AbstractTestCase
             'visible'   => ComponentGroup::VISIBLE_AUTHENTICATED,
         ];
 
-        $object = new AddComponentGroupCommand(
+        $object = new CreateComponentGroupCommand(
             $params['name'],
             $params['order'],
             $params['collapsed'],
@@ -53,6 +53,6 @@ class AddComponentGroupCommandTest extends AbstractTestCase
 
     protected function getHandlerClass()
     {
-        return AddComponentGroupCommandHandler::class;
+        return CreateComponentGroupCommandHandler::class;
     }
 }

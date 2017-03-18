@@ -12,8 +12,8 @@
 namespace CachetHQ\Tests\Cachet\Bus\Commands\User;
 
 use AltThree\TestBench\CommandTrait;
-use CachetHQ\Cachet\Bus\Commands\User\AddUserCommand;
-use CachetHQ\Cachet\Bus\Handlers\Commands\User\AddUserCommandHandler;
+use CachetHQ\Cachet\Bus\Commands\User\CreateUserCommand;
+use CachetHQ\Cachet\Bus\Handlers\Commands\User\CreateUserCommandHandler;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 
 /**
@@ -22,7 +22,7 @@ use CachetHQ\Tests\Cachet\AbstractTestCase;
  * @author James Brooks <james@alt-three.com>
  * @author Graham Campbell <graham@alt-three.com>
  */
-class AddUserCommandTest extends AbstractTestCase
+class CreateUserCommandTest extends AbstractTestCase
 {
     use CommandTrait;
 
@@ -35,7 +35,7 @@ class AddUserCommandTest extends AbstractTestCase
             'level'    => 1,
         ];
 
-        $object = new AddUserCommand(
+        $object = new CreateUserCommand(
             $params['username'],
             $params['password'],
             $params['email'],
@@ -52,6 +52,6 @@ class AddUserCommandTest extends AbstractTestCase
 
     protected function getHandlerClass()
     {
-        return AddUserCommandHandler::class;
+        return CreateUserCommandHandler::class;
     }
 }

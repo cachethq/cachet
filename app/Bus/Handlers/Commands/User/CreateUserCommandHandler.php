@@ -11,25 +11,25 @@
 
 namespace CachetHQ\Cachet\Bus\Handlers\Commands\User;
 
-use CachetHQ\Cachet\Bus\Commands\User\AddUserCommand;
-use CachetHQ\Cachet\Bus\Events\User\UserWasAddedEvent;
+use CachetHQ\Cachet\Bus\Commands\User\CreateUserCommand;
+use CachetHQ\Cachet\Bus\Events\User\UserWasCreatedEvent;
 use CachetHQ\Cachet\Models\User;
 
 /**
- * This is the add user command handler.
+ * This is the create user command handler.
  *
  * @author James Brooks <james@alt-three.com>
  */
-class AddUserCommandHandler
+class CreateUserCommandHandler
 {
     /**
      * Handle the add user command.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\User\AddUserCommand $command
+     * @param \CachetHQ\Cachet\Bus\Commands\User\CreateUserCommand $command
      *
      * @return \CachetHQ\Cachet\Models\User
      */
-    public function handle(AddUserCommand $command)
+    public function handle(CreateUserCommand $command)
     {
         $user = User::create([
             'username' => $command->username,
@@ -38,7 +38,7 @@ class AddUserCommandHandler
             'level'    => $command->level,
         ]);
 
-        event(new UserWasAddedEvent($user));
+        event(new UserWasCreatedEvent($user));
 
         return $user;
     }

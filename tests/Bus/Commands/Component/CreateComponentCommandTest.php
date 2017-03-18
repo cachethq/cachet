@@ -12,17 +12,17 @@
 namespace CachetHQ\Tests\Cachet\Bus\Commands\Component;
 
 use AltThree\TestBench\CommandTrait;
-use CachetHQ\Cachet\Bus\Commands\Component\AddComponentCommand;
-use CachetHQ\Cachet\Bus\Handlers\Commands\Component\AddComponentCommandHandler;
+use CachetHQ\Cachet\Bus\Commands\Component\CreateComponentCommand;
+use CachetHQ\Cachet\Bus\Handlers\Commands\Component\CreateComponentCommandHandler;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 
 /**
- * This is the add component command test class.
+ * This is the create component command test class.
  *
  * @author James Brooks <james@alt-three.com>
  * @author Graham Campbell <graham@alt-three.com>
  */
-class AddComponentCommandTest extends AbstractTestCase
+class CreateComponentCommandTest extends AbstractTestCase
 {
     use CommandTrait;
 
@@ -38,7 +38,7 @@ class AddComponentCommandTest extends AbstractTestCase
             'enabled'     => true,
             'meta'        => null,
         ];
-        $object = new AddComponentCommand(
+        $object = new CreateComponentCommand(
             $params['name'],
             $params['description'],
             $params['status'],
@@ -59,6 +59,6 @@ class AddComponentCommandTest extends AbstractTestCase
 
     protected function getHandlerClass()
     {
-        return AddComponentCommandHandler::class;
+        return CreateComponentCommandHandler::class;
     }
 }

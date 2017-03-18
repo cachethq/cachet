@@ -12,11 +12,11 @@
 namespace CachetHQ\Cachet\Bus\Commands\ComponentGroup;
 
 /**
- * This is the add component group command.
+ * This is the create component group command.
  *
  * @author James Brooks <james@alt-three.com>
  */
-final class AddComponentGroupCommand
+final class CreateComponentGroupCommand
 {
     /**
      * The component group name.

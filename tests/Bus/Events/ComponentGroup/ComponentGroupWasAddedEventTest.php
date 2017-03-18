@@ -11,11 +11,11 @@
 
 namespace CachetHQ\Tests\Cachet\Bus\Events\ComponentGroup;
 
-use CachetHQ\Cachet\Bus\Events\ComponentGroup\ComponentGroupWasAddedEvent;
+use CachetHQ\Cachet\Bus\Events\ComponentGroup\ComponentGroupWasCreatedEvent;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\User;
 
-class ComponentGroupWasAddedEventTest extends AbstractComponentGroupEventTestCase
+class ComponentGroupWasCreatedEventTest extends AbstractComponentGroupEventTestCase
 {
     protected function objectHasHandlers()
     {
@@ -25,7 +25,7 @@ class ComponentGroupWasAddedEventTest extends AbstractComponentGroupEventTestCas
     protected function getObjectAndParams()
     {
         $params = ['user' => new User(), 'group' => new ComponentGroup()];
-        $object = new ComponentGroupWasAddedEvent($params['user'], $params['group']);
+        $object = new ComponentGroupWasCreatedEvent($params['user'], $params['group']);
 
         return compact('params', 'object');
     }

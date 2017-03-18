@@ -11,7 +11,7 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Api;
 
-use CachetHQ\Cachet\Bus\Commands\ComponentGroup\AddComponentGroupCommand;
+use CachetHQ\Cachet\Bus\Commands\ComponentGroup\CreateComponentGroupCommand;
 use CachetHQ\Cachet\Bus\Commands\ComponentGroup\RemoveComponentGroupCommand;
 use CachetHQ\Cachet\Bus\Commands\ComponentGroup\UpdateComponentGroupCommand;
 use CachetHQ\Cachet\Models\ComponentGroup;
@@ -92,7 +92,7 @@ class ComponentGroupController extends AbstractApiController
     public function postGroups()
     {
         try {
-            $group = dispatch(new AddComponentGroupCommand(
+            $group = dispatch(new CreateComponentGroupCommand(
                 Binput::get('name'),
                 Binput::get('order', 0),
                 Binput::get('collapsed', 0),

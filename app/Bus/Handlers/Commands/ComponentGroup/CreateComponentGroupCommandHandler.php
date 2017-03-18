@@ -11,12 +11,12 @@
 
 namespace CachetHQ\Cachet\Bus\Handlers\Commands\ComponentGroup;
 
-use CachetHQ\Cachet\Bus\Commands\ComponentGroup\AddComponentGroupCommand;
-use CachetHQ\Cachet\Bus\Events\ComponentGroup\ComponentGroupWasAddedEvent;
+use CachetHQ\Cachet\Bus\Commands\ComponentGroup\CreateComponentGroupCommand;
+use CachetHQ\Cachet\Bus\Events\ComponentGroup\ComponentGroupWasCreatedEvent;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use Illuminate\Contracts\Auth\Guard;
 
-class AddComponentGroupCommandHandler
+class CreateComponentGroupCommandHandler
 {
     /**
      * The authentication guard instance.
@@ -26,7 +26,7 @@ class AddComponentGroupCommandHandler
     protected $auth;
 
     /**
-     * Create a new add component group command handler instance.
+     * Create a new create component group command handler instance.
      *
      * @param \Illuminate\Contracts\Auth\Guard $auth
      *
@@ -38,13 +38,13 @@ class AddComponentGroupCommandHandler
     }
 
     /**
-     * Handle the add component group command.
+     * Handle the create component group command.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\ComponentGroup\AddComponentGroupCommand $command
+     * @param \CachetHQ\Cachet\Bus\Commands\ComponentGroup\CreateComponentGroupCommand $command
      *
      * @return \CachetHQ\Cachet\Models\ComponentGroup
      */
-    public function handle(AddComponentGroupCommand $command)
+    public function handle(CreateComponentGroupCommand $command)
     {
         $group = ComponentGroup::create([
             'name'      => $command->name,
@@ -53,7 +53,7 @@ class AddComponentGroupCommandHandler
             'visible'   => $command->visible,
         ]);
 
-        event(new ComponentGroupWasAddedEvent($this->auth->user(), $group));
+        event(new ComponentGroupWasCreatedEvent($this->auth->user(), $group));
 
         return $group;
     }

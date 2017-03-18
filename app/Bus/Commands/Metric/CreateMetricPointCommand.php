@@ -13,7 +13,13 @@ namespace CachetHQ\Cachet\Bus\Commands\Metric;
 
 use CachetHQ\Cachet\Models\Metric;
 
-final class AddMetricPointCommand
+/**
+ * This is the create metric point command class.
+ *
+ * @author Joseph Cohen <joe@alt-three.com>
+ * @author James Brooks <james@alt-three.com>
+ */
+final class CreateMetricPointCommand
 {
     /**
      * The metric to add.

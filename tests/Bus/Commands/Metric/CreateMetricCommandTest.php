@@ -12,17 +12,17 @@
 namespace CachetHQ\Tests\Cachet\Bus\Commands\Metric;
 
 use AltThree\TestBench\CommandTrait;
-use CachetHQ\Cachet\Bus\Commands\Metric\AddMetricCommand;
-use CachetHQ\Cachet\Bus\Handlers\Commands\Metric\AddMetricCommandHandler;
+use CachetHQ\Cachet\Bus\Commands\Metric\CreateMetricCommand;
+use CachetHQ\Cachet\Bus\Handlers\Commands\Metric\CreateMetricCommandHandler;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 
 /**
- * This is the add metric command test class.
+ * This is the create metric command test class.
  *
  * @author James Brooks <james@alt-three.com>
  * @author Graham Campbell <graham@alt-three.com>
  */
-class AddMetricCommandTest extends AbstractTestCase
+class CreateMetricCommandTest extends AbstractTestCase
 {
     use CommandTrait;
 
@@ -42,7 +42,7 @@ class AddMetricCommandTest extends AbstractTestCase
             'visible'       => 1,
         ];
 
-        $object = new AddMetricCommand(
+        $object = new CreateMetricCommand(
             $params['name'],
             $params['suffix'],
             $params['description'],
@@ -66,6 +66,6 @@ class AddMetricCommandTest extends AbstractTestCase
 
     protected function getHandlerClass()
     {
-        return AddMetricCommandHandler::class;
+        return CreateMetricCommandHandler::class;
     }
 }

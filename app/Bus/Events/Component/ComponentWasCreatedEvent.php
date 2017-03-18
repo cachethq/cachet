@@ -9,40 +9,45 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Events\Metric;
+namespace CachetHQ\Cachet\Bus\Events\Component;
 
 use CachetHQ\Cachet\Bus\Events\ActionInterface;
-use CachetHQ\Cachet\Models\Metric;
+use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\User;
 
-final class MetricWasAddedEvent implements ActionInterface, MetricEventInterface
+/**
+ * This is the component was created event class.
+ *
+ * @author James Brooks <james@alt-three.com>
+ */
+final class ComponentWasCreatedEvent implements ActionInterface, ComponentEventInterface
 {
     /**
-     * The user who added the metric.
+     * The user who added the component.
      *
      * @var \CachetHQ\Cachet\Models\User
      */
     public $user;
 
     /**
-     * The metric that was added.
+     * The component that was added.
      *
-     * @var \CachetHQ\Cachet\Models\Metric
+     * @var \CachetHQ\Cachet\Models\Component
      */
-    public $metric;
+    public $component;
 
     /**
-     * Create a new metric was added event instance.
+     * Create a new component was added event instance.
      *
-     * @param \CachetHQ\Cachet\Models\User   $user
-     * @param \CachetHQ\Cachet\Models\Metric $metric
+     * @param \CachetHQ\Cachet\Models\User      $user
+     * @param \CachetHQ\Cachet\Models\Component $component
      *
      * @return void
      */
-    public function __construct(User $user, Metric $metric)
+    public function __construct(User $user, Component $component)
     {
         $this->user = $user;
-        $this->metric = $metric;
+        $this->component = $component;
     }
 
     /**
@@ -52,7 +57,7 @@ final class MetricWasAddedEvent implements ActionInterface, MetricEventInterface
      */
     public function __toString()
     {
-        return 'Metric was added.';
+        return 'Component was added.';
     }
 
     /**

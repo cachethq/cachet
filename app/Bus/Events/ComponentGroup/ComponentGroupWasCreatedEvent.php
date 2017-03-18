@@ -9,40 +9,45 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Events\Component;
+namespace CachetHQ\Cachet\Bus\Events\ComponentGroup;
 
 use CachetHQ\Cachet\Bus\Events\ActionInterface;
-use CachetHQ\Cachet\Models\Component;
+use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\User;
 
-final class ComponentWasAddedEvent implements ActionInterface, ComponentEventInterface
+/**
+ * This is the component group was created event class.
+ *
+ * @author James Brooks <james@alt-three.com>
+ */
+final class ComponentGroupWasCreatedEvent implements ActionInterface, ComponentGroupEventInterface
 {
     /**
-     * The user who added the component.
+     * The user who added the component group.
      *
      * @var \CachetHQ\Cachet\Models\User
      */
     public $user;
 
     /**
-     * The component that was added.
+     * The component group that was added.
      *
-     * @var \CachetHQ\Cachet\Models\Component
+     * @var \CachetHQ\Cachet\Models\ComponentGroup
      */
-    public $component;
+    public $group;
 
     /**
-     * Create a new component was added event instance.
+     * Create a new component group was added event instance.
      *
-     * @param \CachetHQ\Cachet\Models\User      $user
-     * @param \CachetHQ\Cachet\Models\Component $component
+     * @param \CachetHQ\Cachet\Models\User           $group
+     * @param \CachetHQ\Cachet\Models\ComponentGroup $group
      *
      * @return void
      */
-    public function __construct(User $user, Component $component)
+    public function __construct(User $user, ComponentGroup $group)
     {
         $this->user = $user;
-        $this->component = $component;
+        $this->group = $group;
     }
 
     /**
@@ -52,7 +57,7 @@ final class ComponentWasAddedEvent implements ActionInterface, ComponentEventInt
      */
     public function __toString()
     {
-        return 'Component was added.';
+        return 'Component Group was added.';
     }
 
     /**

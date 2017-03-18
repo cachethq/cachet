@@ -9,30 +9,45 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Events\User;
+namespace CachetHQ\Cachet\Bus\Events\Metric;
 
 use CachetHQ\Cachet\Bus\Events\ActionInterface;
+use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\User;
 
-final class UserWasAddedEvent implements ActionInterface, UserEventInterface
+/**
+ * This is the metric was created event class.
+ *
+ * @author James Brooks <james@alt-three.com>
+ */
+final class MetricWasCreatedEvent implements ActionInterface, MetricEventInterface
 {
     /**
-     * The user that has been added.
+     * The user who added the metric.
      *
      * @var \CachetHQ\Cachet\Models\User
      */
     public $user;
 
     /**
-     * Create a new user was added event instance.
+     * The metric that was added.
      *
-     * @param \CachetHQ\Cachet\Models\User $user
+     * @var \CachetHQ\Cachet\Models\Metric
+     */
+    public $metric;
+
+    /**
+     * Create a new metric was added event instance.
+     *
+     * @param \CachetHQ\Cachet\Models\User   $user
+     * @param \CachetHQ\Cachet\Models\Metric $metric
      *
      * @return void
      */
-    public function __construct(User $user)
+    public function __construct(User $user, Metric $metric)
     {
         $this->user = $user;
+        $this->metric = $metric;
     }
 
     /**
@@ -42,7 +57,7 @@ final class UserWasAddedEvent implements ActionInterface, UserEventInterface
      */
     public function __toString()
     {
-        return 'User was added.';
+        return 'Metric was added.';
     }
 
     /**

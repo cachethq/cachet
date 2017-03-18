@@ -11,7 +11,12 @@
 
 namespace CachetHQ\Cachet\Bus\Commands\Component;
 
-final class AddComponentCommand
+/**
+ * This is the create component command class.
+ *
+ * @author James Brooks <james@alt-three.com>
+ */
+final class CreateComponentCommand
 {
     /**
      * The component name.

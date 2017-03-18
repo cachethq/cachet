@@ -9,40 +9,45 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Events\ComponentGroup;
+namespace CachetHQ\Cachet\Bus\Events\Metric;
 
 use CachetHQ\Cachet\Bus\Events\ActionInterface;
-use CachetHQ\Cachet\Models\ComponentGroup;
+use CachetHQ\Cachet\Models\MetricPoint;
 use CachetHQ\Cachet\Models\User;
 
-final class ComponentGroupWasAddedEvent implements ActionInterface, ComponentGroupEventInterface
+/**
+ * This is the metric point was created event class.
+ *
+ * @author James Brooks <james@alt-three.com>
+ */
+final class MetricPointWasCreatedEvent implements ActionInterface, MetricEventInterface
 {
     /**
-     * The user who added the component group.
+     * The user who added the metric point.
      *
      * @var \CachetHQ\Cachet\Models\User
      */
     public $user;
 
     /**
-     * The component group that was added.
+     * The metric point that was added.
      *
-     * @var \CachetHQ\Cachet\Models\ComponentGroup
+     * @var \CachetHQ\Cachet\Models\MetricPoint
      */
-    public $group;
+    public $metricPoint;
 
     /**
-     * Create a new component group was added event instance.
+     * Create a new metric point was added event instance.
      *
-     * @param \CachetHQ\Cachet\Models\User           $group
-     * @param \CachetHQ\Cachet\Models\ComponentGroup $group
+     * @param \CachetHQ\Cachet\Models\User        $user
+     * @param \CachetHQ\Cachet\Models\MetricPoint $metricPoint
      *
      * @return void
      */
-    public function __construct(User $user, ComponentGroup $group)
+    public function __construct(User $user, MetricPoint $metricPoint)
     {
         $this->user = $user;
-        $this->group = $group;
+        $this->metricPoint = $metricPoint;
     }
 
     /**
@@ -52,7 +57,7 @@ final class ComponentGroupWasAddedEvent implements ActionInterface, ComponentGro
      */
     public function __toString()
     {
-        return 'Component Group was added.';
+        return 'Metric Point was added.';
     }
 
     /**

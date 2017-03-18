@@ -11,14 +11,14 @@
 
 namespace CachetHQ\Cachet\Bus\Handlers\Commands\Metric;
 
-use CachetHQ\Cachet\Bus\Commands\Metric\AddMetricPointCommand;
-use CachetHQ\Cachet\Bus\Events\Metric\MetricPointWasAddedEvent;
+use CachetHQ\Cachet\Bus\Commands\Metric\CreateMetricPointCommand;
+use CachetHQ\Cachet\Bus\Events\Metric\MetricPointWasCreatedEvent;
 use CachetHQ\Cachet\Models\MetricPoint;
 use CachetHQ\Cachet\Services\Dates\DateFactory;
 use Carbon\Carbon;
 use Illuminate\Contracts\Auth\Guard;
 
-class AddMetricPointCommandHandler
+class CreateMetricPointCommandHandler
 {
     /**
      * The authentication guard instance.
@@ -51,11 +51,11 @@ class AddMetricPointCommandHandler
     /**
      * Handle the add metric point command.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\Metric\AddMetricPointCommand $command
+     * @param \CachetHQ\Cachet\Bus\Commands\Metric\CreateMetricPointCommand $command
      *
      * @return \CachetHQ\Cachet\Models\MetricPoint
      */
-    public function handle(AddMetricPointCommand $command)
+    public function handle(CreateMetricPointCommand $command)
     {
         $metric = $command->metric;
         $createdAt = $command->created_at;
@@ -65,7 +65,7 @@ class AddMetricPointCommandHandler
 
         $point->increment('counter', 1);
 
-        event(new MetricPointWasAddedEvent($this->auth->user(), $point));
+        event(new MetricPointWasCreatedEvent($this->auth->user(), $point));
 
         return $point;
     }
@@ -73,11 +73,11 @@ class AddMetricPointCommandHandler
     /**
      * Find or create a metric point.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\Metric\AddMetricPointCommand $command
+     * @param \CachetHQ\Cachet\Bus\Commands\Metric\CreateMetricPointCommand $command
      *
      * @return \CachetHQ\Cachet\Models\MetricPoint
      */
-    protected function findOrCreatePoint(AddMetricPointCommand $command)
+    protected function findOrCreatePoint(CreateMetricPointCommand $command)
     {
         $buffer = Carbon::now()->subMinutes($command->metric->threshold);
 

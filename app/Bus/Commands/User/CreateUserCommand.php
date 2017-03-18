@@ -12,11 +12,11 @@
 namespace CachetHQ\Cachet\Bus\Commands\User;
 
 /**
- * This is the add user command.
+ * This is the create user command.
  *
  * @author James Brooks <james@alt-three.com>
  */
-final class AddUserCommand
+final class CreateUserCommand
 {
     /**
      * The user username.

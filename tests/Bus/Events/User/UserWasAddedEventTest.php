@@ -11,7 +11,7 @@
 
 namespace CachetHQ\Tests\Cachet\Bus\Events\User;
 
-use CachetHQ\Cachet\Bus\Events\User\UserWasAddedEvent;
+use CachetHQ\Cachet\Bus\Events\User\UserWasCreatedEvent;
 use CachetHQ\Cachet\Models\User;
 
 /**
@@ -19,7 +19,7 @@ use CachetHQ\Cachet\Models\User;
  *
  * @author Graham Campbell <graham@alt-three.com>
  */
-class UserWasAddedEventTest extends AbstractUserEventTestCase
+class UserWasCreatedEventTest extends AbstractUserEventTestCase
 {
     protected function objectHasHandlers()
     {
@@ -29,7 +29,7 @@ class UserWasAddedEventTest extends AbstractUserEventTestCase
     protected function getObjectAndParams()
     {
         $params = ['user' => new User()];
-        $object = new UserWasAddedEvent($params['user']);
+        $object = new UserWasCreatedEvent($params['user']);
 
         return compact('params', 'object');
     }

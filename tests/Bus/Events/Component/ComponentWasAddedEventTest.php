@@ -11,11 +11,11 @@
 
 namespace CachetHQ\Tests\Cachet\Bus\Events\Component;
 
-use CachetHQ\Cachet\Bus\Events\Component\ComponentWasAddedEvent;
+use CachetHQ\Cachet\Bus\Events\Component\ComponentWasCreatedEvent;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\User;
 
-class ComponentWasAddedEventTest extends AbstractComponentEventTestCase
+class ComponentWasCreatedEventTest extends AbstractComponentEventTestCase
 {
     protected function objectHasHandlers()
     {
@@ -25,7 +25,7 @@ class ComponentWasAddedEventTest extends AbstractComponentEventTestCase
     protected function getObjectAndParams()
     {
         $params = ['user' => new User(), 'component' => new Component()];
-        $object = new ComponentWasAddedEvent($params['user'], $params['component']);
+        $object = new ComponentWasCreatedEvent($params['user'], $params['component']);
 
         return compact('params', 'object');
     }

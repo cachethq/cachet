@@ -11,12 +11,12 @@
 
 namespace CachetHQ\Cachet\Bus\Handlers\Commands\Metric;
 
-use CachetHQ\Cachet\Bus\Commands\Metric\AddMetricCommand;
-use CachetHQ\Cachet\Bus\Events\Metric\MetricWasAddedEvent;
+use CachetHQ\Cachet\Bus\Commands\Metric\CreateMetricCommand;
+use CachetHQ\Cachet\Bus\Events\Metric\MetricWasCreatedEvent;
 use CachetHQ\Cachet\Models\Metric;
 use Illuminate\Contracts\Auth\Guard;
 
-class AddMetricCommandHandler
+class CreateMetricCommandHandler
 {
     /**
      * The authentication guard instance.
@@ -40,11 +40,11 @@ class AddMetricCommandHandler
     /**
      * Handle the add metric command.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\Metric\AddMetricCommand $command
+     * @param \CachetHQ\Cachet\Bus\Commands\Metric\CreateMetricCommand $command
      *
      * @return \CachetHQ\Cachet\Models\Metric
      */
-    public function handle(AddMetricCommand $command)
+    public function handle(CreateMetricCommand $command)
     {
         $metric = Metric::create([
             'name'          => $command->name,
@@ -60,7 +60,7 @@ class AddMetricCommandHandler
             'visible'       => $command->visible,
         ]);
 
-        event(new MetricWasAddedEvent($this->auth->user(), $metric));
+        event(new MetricWasCreatedEvent($this->auth->user(), $metric));
 
         return $metric;
     }
