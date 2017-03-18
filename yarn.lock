@@ -600,6 +600,10 @@ es5-ext@^0.10.7, es5-ext@~0.10.11, es5-ext@~0.10.2:
     es6-iterator "2"
     es6-symbol "~3.1"
 
+es5-shim@^4.5.9:
+  version "4.5.9"
+  resolved "https://registry.yarnpkg.com/es5-shim/-/es5-shim-4.5.9.tgz#2a1e2b9e583ff5fed0c20a3ee2cbf3f75230a5c0"
+
 es6-iterator@2:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/es6-iterator/-/es6-iterator-2.0.0.tgz#bd968567d61635e33c0b80727613c9cb4b096bac"
