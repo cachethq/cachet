@@ -12,18 +12,18 @@
 namespace CachetHQ\Tests\Cachet\Bus\Commands\IncidentUpdate;
 
 use AltThree\TestBench\CommandTrait;
-use CachetHQ\Cachet\Bus\Commands\IncidentUpdate\ReportIncidentUpdateCommand;
-use CachetHQ\Cachet\Bus\Handlers\Commands\IncidentUpdate\ReportIncidentUpdateCommandHandler;
+use CachetHQ\Cachet\Bus\Commands\IncidentUpdate\CreateIncidentUpdateCommand;
+use CachetHQ\Cachet\Bus\Handlers\Commands\IncidentUpdate\CreateIncidentUpdateCommandHandler;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\User;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 
 /**
- * This is the report incident update command test class.
+ * This is the create incident update command test class.
  *
  * @author James Brooks <james@alt-three.com>
  */
-class ReportIncidentUpdateCommandTest extends AbstractTestCase
+class CreateIncidentUpdateCommandTest extends AbstractTestCase
 {
     use CommandTrait;
 
@@ -35,7 +35,7 @@ class ReportIncidentUpdateCommandTest extends AbstractTestCase
             'message'  => 'Foo',
             'user'     => new User(),
         ];
-        $object = new ReportIncidentUpdateCommand($params['incident'], $params['status'], $params['message'], $params['user']);
+        $object = new CreateIncidentUpdateCommand($params['incident'], $params['status'], $params['message'], $params['user']);
 
         return compact('params', 'object');
     }
@@ -47,6 +47,6 @@ class ReportIncidentUpdateCommandTest extends AbstractTestCase
 
     protected function getHandlerClass()
     {
-        return ReportIncidentUpdateCommandHandler::class;
+        return CreateIncidentUpdateCommandHandler::class;
     }
 }

@@ -60,11 +60,11 @@ class EventServiceProvider extends ServiceProvider
         'CachetHQ\Cachet\Bus\Events\IncidentUpdate\IncidentUpdateWasUpdatedEvent' => [
             //
         ],
+        'CachetHQ\Cachet\Bus\Events\Incident\IncidentWasCreatedEvent' => [
+            'CachetHQ\Cachet\Bus\Handlers\Events\Incident\SendIncidentEmailNotificationHandler',
+        ],
         'CachetHQ\Cachet\Bus\Events\Incident\IncidentWasRemovedEvent' => [
             //
-        ],
-        'CachetHQ\Cachet\Bus\Events\Incident\IncidentWasReportedEvent' => [
-            'CachetHQ\Cachet\Bus\Handlers\Events\Incident\SendIncidentEmailNotificationHandler',
         ],
         'CachetHQ\Cachet\Bus\Events\Incident\IncidentWasUpdatedEvent' => [
             //

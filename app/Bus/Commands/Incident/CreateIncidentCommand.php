@@ -12,12 +12,12 @@
 namespace CachetHQ\Cachet\Bus\Commands\Incident;
 
 /**
- * This is the report incident command.
+ * This is the create incident command.
  *
  * @author Joseph Cohen <joe@alt-three.com>
  * @author James Brooks <james@alt-three.com>
  */
-final class ReportIncidentCommand
+final class CreateIncidentCommand
 {
     /**
      * The incident name.
@@ -115,7 +115,7 @@ final class ReportIncidentCommand
     ];
 
     /**
-     * Create a new report incident command instance.
+     * Create a new create incident command instance.
      *
      * @param string      $name
      * @param int         $status

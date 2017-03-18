@@ -11,8 +11,8 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Api;
 
+use CachetHQ\Cachet\Bus\Commands\Incident\CreateIncidentCommand;
 use CachetHQ\Cachet\Bus\Commands\Incident\RemoveIncidentCommand;
-use CachetHQ\Cachet\Bus\Commands\Incident\ReportIncidentCommand;
 use CachetHQ\Cachet\Bus\Commands\Incident\UpdateIncidentCommand;
 use CachetHQ\Cachet\Models\Incident;
 use GrahamCampbell\Binput\Facades\Binput;
@@ -67,7 +67,7 @@ class IncidentController extends AbstractApiController
     public function postIncidents()
     {
         try {
-            $incident = dispatch(new ReportIncidentCommand(
+            $incident = dispatch(new CreateIncidentCommand(
                 Binput::get('name'),
                 Binput::get('status'),
                 Binput::get('message', null, false, false),

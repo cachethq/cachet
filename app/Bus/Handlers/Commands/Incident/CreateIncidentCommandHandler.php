@@ -12,8 +12,8 @@
 namespace CachetHQ\Cachet\Bus\Handlers\Commands\Incident;
 
 use CachetHQ\Cachet\Bus\Commands\Component\UpdateComponentCommand;
-use CachetHQ\Cachet\Bus\Commands\Incident\ReportIncidentCommand;
-use CachetHQ\Cachet\Bus\Events\Incident\IncidentWasReportedEvent;
+use CachetHQ\Cachet\Bus\Commands\Incident\CreateIncidentCommand;
+use CachetHQ\Cachet\Bus\Events\Incident\IncidentWasCreatedEvent;
 use CachetHQ\Cachet\Bus\Exceptions\Incident\InvalidIncidentTimestampException;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
@@ -25,11 +25,11 @@ use Twig_Environment;
 use Twig_Loader_Array;
 
 /**
- * This is the report incident command handler.
+ * This is the create incident command handler.
  *
  * @author James Brooks <james@alt-three.com>
  */
-class ReportIncidentCommandHandler
+class CreateIncidentCommandHandler
 {
     /**
      * The authentication guard instance.
@@ -46,7 +46,7 @@ class ReportIncidentCommandHandler
     protected $dates;
 
     /**
-     * Create a new report incident command handler instance.
+     * Create a new create incident command handler instance.
      *
      * @param \Illuminate\Contracts\Auth\Guard            $auth
      * @param \CachetHQ\Cachet\Services\Dates\DateFactory $dates
@@ -60,13 +60,13 @@ class ReportIncidentCommandHandler
     }
 
     /**
-     * Handle the report incident command.
+     * Handle the create incident command.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\Incident\ReportIncidentCommand $command
+     * @param \CachetHQ\Cachet\Bus\Commands\Incident\CreateIncidentCommand $command
      *
      * @return \CachetHQ\Cachet\Models\Incident
      */
-    public function handle(ReportIncidentCommand $command)
+    public function handle(CreateIncidentCommand $command)
     {
         $data = [
             'name'     => $command->name,
@@ -116,7 +116,7 @@ class ReportIncidentCommandHandler
             ));
         }
 
-        event(new IncidentWasReportedEvent($this->auth->user(), $incident, (bool) $command->notify));
+        event(new IncidentWasCreatedEvent($this->auth->user(), $incident, (bool) $command->notify));
 
         return $incident;
     }
@@ -125,11 +125,11 @@ class ReportIncidentCommandHandler
      * Compiles an incident template into an incident message.
      *
      * @param \CachetHQ\Cachet\Models\IncidentTemplate                     $template
-     * @param \CachetHQ\Cachet\Bus\Commands\Incident\ReportIncidentCommand $command
+     * @param \CachetHQ\Cachet\Bus\Commands\Incident\CreateIncidentCommand $command
      *
      * @return string
      */
-    protected function parseTemplate(IncidentTemplate $template, ReportIncidentCommand $command)
+    protected function parseTemplate(IncidentTemplate $template, CreateIncidentCommand $command)
     {
         $env = new Twig_Environment(new Twig_Loader_Array([]));
         $template = $env->createTemplate($template->template);

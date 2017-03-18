@@ -11,16 +11,16 @@
 
 namespace CachetHQ\Tests\Cachet\Bus\Events\Incident;
 
-use CachetHQ\Cachet\Bus\Events\Incident\IncidentWasReportedEvent;
+use CachetHQ\Cachet\Bus\Events\Incident\IncidentWasCreatedEvent;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\User;
 
 /**
- * This is the incident was reported event test class.
+ * This is the incident was created event test class.
  *
  * @author James Brooks <james@alt-three.com>
  */
-class IncidentWasReportedEventTest extends AbstractIncidentEventTestCase
+class IncidentWasCreatedEventTest extends AbstractIncidentEventTestCase
 {
     protected function objectHasHandlers()
     {
@@ -34,7 +34,7 @@ class IncidentWasReportedEventTest extends AbstractIncidentEventTestCase
             'incident' => new Incident(),
             'notify'   => true,
         ];
-        $object = new IncidentWasReportedEvent($params['user'], $params['incident'], $params['notify']);
+        $object = new IncidentWasCreatedEvent($params['user'], $params['incident'], $params['notify']);
 
         return compact('params', 'object');
     }

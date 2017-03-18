@@ -12,17 +12,17 @@
 namespace CachetHQ\Tests\Cachet\Bus\Commands\Incident;
 
 use AltThree\TestBench\CommandTrait;
-use CachetHQ\Cachet\Bus\Commands\Incident\ReportIncidentCommand;
-use CachetHQ\Cachet\Bus\Handlers\Commands\Incident\ReportIncidentCommandHandler;
+use CachetHQ\Cachet\Bus\Commands\Incident\CreateIncidentCommand;
+use CachetHQ\Cachet\Bus\Handlers\Commands\Incident\CreateIncidentCommandHandler;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 
 /**
- * This is the add incident command test class.
+ * This is the create incident command test class.
  *
  * @author James Brooks <james@alt-three.com>
  * @author Graham Campbell <graham@alt-three.com>
  */
-class ReportIncidentCommandTest extends AbstractTestCase
+class CreateIncidentCommandTest extends AbstractTestCase
 {
     use CommandTrait;
 
@@ -42,7 +42,7 @@ class ReportIncidentCommandTest extends AbstractTestCase
             'template_vars'    => [],
         ];
 
-        $object = new ReportIncidentCommand(
+        $object = new CreateIncidentCommand(
             $params['name'],
             $params['status'],
             $params['message'],
@@ -66,6 +66,6 @@ class ReportIncidentCommandTest extends AbstractTestCase
 
     protected function getHandlerClass()
     {
-        return ReportIncidentCommandHandler::class;
+        return CreateIncidentCommandHandler::class;
     }
 }

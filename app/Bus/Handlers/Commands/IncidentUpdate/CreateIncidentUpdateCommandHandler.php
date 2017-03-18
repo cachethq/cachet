@@ -12,7 +12,7 @@
 namespace CachetHQ\Cachet\Bus\Handlers\Commands\IncidentUpdate;
 
 use CachetHQ\Cachet\Bus\Commands\Incident\UpdateIncidentCommand;
-use CachetHQ\Cachet\Bus\Commands\IncidentUpdate\ReportIncidentUpdateCommand;
+use CachetHQ\Cachet\Bus\Commands\IncidentUpdate\CreateIncidentUpdateCommand;
 use CachetHQ\Cachet\Bus\Events\IncidentUpdate\IncidentUpdateWasReportedEvent;
 use CachetHQ\Cachet\Models\IncidentUpdate;
 use Illuminate\Contracts\Auth\Guard;
@@ -22,7 +22,7 @@ use Illuminate\Contracts\Auth\Guard;
  *
  * @author James Brooks <james@alt-three.com>
  */
-class ReportIncidentUpdateCommandHandler
+class CreateIncidentUpdateCommandHandler
 {
     /**
      * The authentication guard instance.
@@ -46,11 +46,11 @@ class ReportIncidentUpdateCommandHandler
     /**
      * Handle the report incident command.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\IncidentUpdate\ReportIncidentUpdateCommand $command
+     * @param \CachetHQ\Cachet\Bus\Commands\IncidentUpdate\CreateIncidentUpdateCommand $command
      *
      * @return \CachetHQ\Cachet\Models\IncidentUpdate
      */
-    public function handle(ReportIncidentUpdateCommand $command)
+    public function handle(CreateIncidentUpdateCommand $command)
     {
         $data = [
             'incident_id' => $command->incident->id,

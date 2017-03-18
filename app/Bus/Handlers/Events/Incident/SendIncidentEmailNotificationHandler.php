@@ -11,7 +11,7 @@
 
 namespace CachetHQ\Cachet\Bus\Handlers\Events\Incident;
 
-use CachetHQ\Cachet\Bus\Events\Incident\IncidentWasReportedEvent;
+use CachetHQ\Cachet\Bus\Events\Incident\IncidentWasCreatedEvent;
 use CachetHQ\Cachet\Models\Subscriber;
 use CachetHQ\Cachet\Notifications\Incident\NewIncidentNotification;
 
@@ -39,11 +39,11 @@ class SendIncidentEmailNotificationHandler
     /**
      * Handle the event.
      *
-     * @param \CachetHQ\Cachet\Bus\Events\Incident\IncidentWasReportedEvent $event
+     * @param \CachetHQ\Cachet\Bus\Events\Incident\IncidentWasCreatedEvent $event
      *
      * @return void
      */
-    public function handle(IncidentWasReportedEvent $event)
+    public function handle(IncidentWasCreatedEvent $event)
     {
         $incident = $event->incident;
 

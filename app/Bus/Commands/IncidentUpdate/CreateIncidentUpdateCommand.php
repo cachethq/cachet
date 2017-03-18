@@ -19,7 +19,7 @@ use CachetHQ\Cachet\Models\User;
  *
  * @author James Brooks <james@alt-three.com>
  */
-final class ReportIncidentUpdateCommand
+final class CreateIncidentUpdateCommand
 {
     /**
      * The incident.

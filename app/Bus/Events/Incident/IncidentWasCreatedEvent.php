@@ -15,7 +15,7 @@ use CachetHQ\Cachet\Bus\Events\ActionInterface;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\User;
 
-final class IncidentWasReportedEvent implements ActionInterface, IncidentEventInterface
+final class IncidentWasCreatedEvent implements ActionInterface, IncidentEventInterface
 {
     /**
      * The user who reported the event.

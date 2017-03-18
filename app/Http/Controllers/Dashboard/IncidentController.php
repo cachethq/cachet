@@ -12,10 +12,10 @@
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
 use AltThree\Validator\ValidationException;
+use CachetHQ\Cachet\Bus\Commands\Incident\CreateIncidentCommand;
 use CachetHQ\Cachet\Bus\Commands\Incident\RemoveIncidentCommand;
-use CachetHQ\Cachet\Bus\Commands\Incident\ReportIncidentCommand;
 use CachetHQ\Cachet\Bus\Commands\Incident\UpdateIncidentCommand;
-use CachetHQ\Cachet\Bus\Commands\IncidentUpdate\ReportIncidentUpdateCommand;
+use CachetHQ\Cachet\Bus\Commands\IncidentUpdate\CreateIncidentUpdateCommand;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Incident;
@@ -108,7 +108,7 @@ class IncidentController extends Controller
     public function createIncidentAction()
     {
         try {
-            $incident = dispatch(new ReportIncidentCommand(
+            $incident = dispatch(new CreateIncidentCommand(
                 Binput::get('name'),
                 Binput::get('status'),
                 Binput::get('message', null, false, false),
@@ -308,7 +308,7 @@ class IncidentController extends Controller
     public function createIncidentUpdateAction(Incident $incident)
     {
         try {
-            $incident = dispatch(new ReportIncidentUpdateCommand(
+            $incident = dispatch(new CreateIncidentUpdateCommand(
                 $incident,
                 Binput::get('status'),
                 Binput::get('message'),
