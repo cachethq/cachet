@@ -17,7 +17,7 @@ use CachetHQ\Cachet\Bus\Handlers\Commands\User\CreateUserCommandHandler;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 
 /**
- * This is the add user command test class.
+ * This is the create user command test class.
  *
  * @author James Brooks <james@alt-three.com>
  * @author Graham Campbell <graham@alt-three.com>

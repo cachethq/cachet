@@ -23,7 +23,7 @@ use CachetHQ\Cachet\Models\Invite;
 final class UserWasInvitedEvent implements UserEventInterface
 {
     /**
-     * The invite that has been added.
+     * The invite that has been created.
      *
      * @var \CachetHQ\Cachet\Models\Invite
      */

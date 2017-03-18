@@ -16,7 +16,7 @@ use CachetHQ\Cachet\Models\MetricPoint;
 use CachetHQ\Cachet\Models\User;
 
 /**
- * This is the metric point was added event test class.
+ * This is the metric point was created event test class.
  *
  * @author James Brooks <james@alt-three.com>
  */

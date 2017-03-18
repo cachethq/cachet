@@ -47,7 +47,7 @@ final class UserWasCreatedEvent implements ActionInterface, UserEventInterface
      */
     public function __toString()
     {
-        return 'User was added.';
+        return 'User was created.';
     }
 
     /**

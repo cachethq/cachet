@@ -15,9 +15,10 @@ use CachetHQ\Cachet\Bus\Events\User\UserWasCreatedEvent;
 use CachetHQ\Cachet\Models\User;
 
 /**
- * This is the user was added event test class.
+ * This is the user was created event test class.
  *
  * @author Graham Campbell <graham@alt-three.com>
+ * @author James Brooks <james@alt-three.com>
  */
 class UserWasCreatedEventTest extends AbstractUserEventTestCase
 {
