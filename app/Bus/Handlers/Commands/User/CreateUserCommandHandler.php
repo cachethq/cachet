@@ -11,26 +11,31 @@
 
 namespace CachetHQ\Cachet\Bus\Handlers\Commands\User;
 
-use CachetHQ\Cachet\Bus\Commands\User\SignupUserCommand;
+use CachetHQ\Cachet\Bus\Commands\User\CreateUserCommand;
 use CachetHQ\Cachet\Bus\Events\User\UserWasCreatedEvent;
 use CachetHQ\Cachet\Models\User;
 
-class SignupUserCommandHandler
+/**
+ * This is the create user command handler.
+ *
+ * @author James Brooks <james@alt-three.com>
+ */
+class CreateUserCommandHandler
 {
     /**
-     * Handle the signup user command.
+     * Handle the add user command.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\User\SignupUserCommand $command
+     * @param \CachetHQ\Cachet\Bus\Commands\User\CreateUserCommand $command
      *
      * @return \CachetHQ\Cachet\Models\User
      */
-    public function handle(SignupUserCommand $command)
+    public function handle(CreateUserCommand $command)
     {
         $user = User::create([
             'username' => $command->username,
             'password' => $command->password,
             'email'    => $command->email,
-            'level'    => User::LEVEL_USER,
+            'level'    => $command->level,
         ]);
 
         event(new UserWasCreatedEvent($user));

@@ -12,7 +12,7 @@
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
 use AltThree\Validator\ValidationException;
-use CachetHQ\Cachet\Bus\Commands\Metric\AddMetricCommand;
+use CachetHQ\Cachet\Bus\Commands\Metric\CreateMetricCommand;
 use CachetHQ\Cachet\Bus\Commands\Metric\RemoveMetricCommand;
 use CachetHQ\Cachet\Bus\Commands\Metric\UpdateMetricCommand;
 use CachetHQ\Cachet\Models\Metric;
@@ -70,7 +70,7 @@ class MetricController extends Controller
         $metricData = Binput::get('metric');
 
         try {
-            dispatch(new AddMetricCommand(
+            dispatch(new CreateMetricCommand(
                 $metricData['name'],
                 $metricData['suffix'],
                 $metricData['description'],

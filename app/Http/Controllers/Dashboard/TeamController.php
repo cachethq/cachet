@@ -12,7 +12,7 @@
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
 use AltThree\Validator\ValidationException;
-use CachetHQ\Cachet\Bus\Commands\User\AddUserCommand;
+use CachetHQ\Cachet\Bus\Commands\User\CreateUserCommand;
 use CachetHQ\Cachet\Bus\Commands\User\InviteUserCommand;
 use CachetHQ\Cachet\Bus\Commands\User\RemoveUserCommand;
 use CachetHQ\Cachet\Models\User;
@@ -80,7 +80,7 @@ class TeamController extends Controller
     public function postAddUser()
     {
         try {
-            dispatch(new AddUserCommand(
+            dispatch(new CreateUserCommand(
                 Binput::get('username'),
                 Binput::get('password'),
                 Binput::get('email'),
