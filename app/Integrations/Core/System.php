@@ -49,9 +49,8 @@ class System implements SystemContract
      */
     public function getStatus()
     {
-        $enabledScope = Component::enabled();
-        $totalComponents = (clone $enabledScope)->count();
-        $majorOutages = (clone $enabledScope)->status(4)->count();
+        $totalComponents = Component::enabled()->count();
+        $majorOutages = Component::enabled()->status(4)->count();
         $isMajorOutage = $totalComponents ? ($majorOutages / $totalComponents) >= 0.5 : false;
 
         // Default data
@@ -67,7 +66,7 @@ class System implements SystemContract
                 'system_message' => trans_choice('cachet.service.major', $totalComponents),
                 'favicon'        => 'favicon-high-alert',
             ];
-        } elseif ($enabledScope->notStatus(1)->count() === 0) {
+        } elseif (Component::enabled()->notStatus(1)->count() === 0) {
             // If all our components are ok, do we have any non-fixed incidents?
             $incidents = Incident::orderBy('occurred_at', 'desc')->get()->filter(function ($incident) {
                 return $incident->status !== Incident::FIXED;
@@ -84,7 +83,7 @@ class System implements SystemContract
                     'favicon'        => 'favicon',
                 ];
             }
-        } elseif ($enabledScope->whereIn('status', [2, 3])->count() > 0) {
+        } elseif (Component::enabled()->whereIn('status', [2, 3])->count() > 0) {
             $status['favicon'] = 'favicon-medium-alert';
         }
 
