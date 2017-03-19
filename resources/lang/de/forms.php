@@ -27,7 +27,7 @@ return [
 
     // Login form fields
     'login' => [
-        'login'         => 'Username oder E-Mail',
+        'login'         => 'Benutzername oder E-Mail',
         'email'         => 'E-Mail',
         'password'      => 'Passwort',
         '2fauth'        => 'Authentifizierungscode',
@@ -53,7 +53,7 @@ return [
         'templates'          => [
             'name'     => 'Name',
             'template' => 'Vorlage',
-            'twig'     => 'Vorfall Vorlagen können den <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a> Syntax nutzen.',
+            'twig'     => 'Vorfall-Vorlagen können den <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a> Syntax nutzen.',
         ],
     ],
 
@@ -66,7 +66,7 @@ return [
         'link'        => 'Link',
         'tags'        => 'Schlagwörter',
         'tags-help'   => 'Durch Kommata trennen.',
-        'enabled'     => 'Component enabled?',
+        'enabled'     => 'Komponent aktiviert?',
 
         'groups' => [
             'name'               => 'Name',
@@ -90,7 +90,7 @@ return [
         'type_avg'         => 'Durchschnitt',
         'places'           => 'Nachkommastellen',
         'default_view'     => 'Standardansicht',
-        'threshold'        => 'Wie viele Minuten soll der Abstand zwischen den Messpunkten sein?',
+        'threshold'        => 'Wie viele Minuten soll der Abstand zwischen den Messpunkten betragen?',
 
         'points' => [
             'value' => 'Wert',
@@ -102,7 +102,7 @@ return [
         /// Application setup
         'app-setup' => [
             'site-name'              => 'Seitenname',
-            'site-url'               => 'URL ihrer Seite',
+            'site-url'               => 'URL Ihrer Seite',
             'display-graphs'         => 'Graphen auf der Statusseite anzeigen?',
             'about-this-page'        => 'Über diese Seite',
             'days-of-incidents'      => 'Wie viele Tage mit Vorfällen sollen gezeigt werden?',
@@ -154,7 +154,7 @@ return [
         'password'       => 'Passwort',
         'api-token'      => 'API Token',
         'api-token-help' => 'Wenn sie ihren API-Token neu generieren, können bestehende Anwendungen nicht mehr auf Cachet zugreifen.',
-        'gravatar'       => 'Change your profile picture at Gravatar.',
+        'gravatar'       => 'Ändern Sie Ihr Profilbild auf Gravatar.',
         'user_level'     => 'Benutzerebene',
         'levels'         => [
             'admin' => 'Admin',
@@ -164,8 +164,8 @@ return [
             'help' => 'Die Zwei-Faktor-Authentifizierung erhöht die Sicherheit Ihres Kontos. Sie benötigen <a href="https://support.google.com/accounts/answer/1066447?hl=en">Google Authenticator</a> oder eine ähnliche App auf Ihrem Mobilgerät. Beim Anmelden werden sie aufgefordert, einen Token einzugeben, der von der App generiert wird.',
         ],
         'team' => [
-            'description' => 'Invite your team members by entering their email addresses here.',
-            'email'       => 'Email #:id',
+            'description' => 'Laden Sie Ihre Teammitglieder ein, indem Sie hier ihre E-Mail-Adressen eingeben.',
+            'email'       => 'E-Mail #:id',
         ],
     ],
 
