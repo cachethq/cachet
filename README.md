@@ -57,7 +57,7 @@ If you'd like to contribute translations, please check out our [CrowdIn project]
 
 ## Professional Installation Service
 
-We offer a professional installation service. To find out more, email us at [support@alt-three.com](mailto:support@alt-three.com?Cachet Installation)
+We offer a professional installation service. To find out more, email us at [support@alt-three.com](mailto:support@alt-three.com?Cachet%20Installation)
 
 ## Security Vulnerabilities
 
