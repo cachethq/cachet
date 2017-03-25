@@ -50,7 +50,7 @@
         "nexmo/client": "@beta",
         "pragmarx/google2fa": "^0.7.1",
         "predis/predis": "^1.1",
-        "roumen/feed": "^2.10.4",
+        "roumen/feed": "^2.10",
         "twig/twig": "^1.26.1"
     },
     "require-dev": {
