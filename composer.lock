@@ -3396,16 +3396,16 @@
         },
         {
             "name": "roumen/feed",
-            "version": "v2.10.4",
+            "version": "v2.10.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RoumenDamianoff/laravel-feed.git",
-                "reference": "900594412cab37515b2b53c8953af1201024e48d"
+                "reference": "ffbdb58f2ef41c7cb5d3bcd0aec2273e8eabc58b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RoumenDamianoff/laravel-feed/zipball/900594412cab37515b2b53c8953af1201024e48d",
-                "reference": "900594412cab37515b2b53c8953af1201024e48d",
+                "url": "https://api.github.com/repos/RoumenDamianoff/laravel-feed/zipball/ffbdb58f2ef41c7cb5d3bcd0aec2273e8eabc58b",
+                "reference": "ffbdb58f2ef41c7cb5d3bcd0aec2273e8eabc58b",
                 "shasum": ""
             },
             "require": {
@@ -3429,7 +3429,7 @@
             "authors": [
                 {
                     "name": "Roumen Damianoff",
-                    "email": "roumen@dawebs.com",
+                    "email": "roumen@crimsson.com",
                     "homepage": "https://roumen.it",
                     "role": "Developer"
                 }
@@ -3443,7 +3443,7 @@
                 "laravel",
                 "rss"
             ],
-            "time": "2016-07-17T13:06:35+00:00"
+            "time": "2017-03-22T17:31:36+00:00"
         },
         {
             "name": "simplesoftwareio/simple-qrcode",
