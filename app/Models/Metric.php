@@ -221,7 +221,7 @@ class Metric extends Model implements HasPresenter
         $messages = [];
 
         if (60 % $this->threshold !== 0) {
-            $messages[] = 'Threshold must be divisible by 60.';
+            $messages[] = 'Threshold must divide by 60.';
         }
 
         if ($messages) {
