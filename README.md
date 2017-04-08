@@ -1,4 +1,4 @@
-<p align="center"><img src="/public/img/cachet-logo@2x.png"></p>
+<p align="center"><img src="https://demo.cachethq.io/img/cachet-logo.svg" width="50%"></p>
 
 <p align="center">
 <a href="https://styleci.io/repos/26730195/"><img src="https://styleci.io/repos/26730195/shield" alt="StyleCI"></a>
