@@ -38,7 +38,7 @@ class StatusPageControllerTest extends AbstractTestCase
             ->setupConfig();
     }
 
-    public function testIndexShowsOnlyPublicComponentGroupsToGues()
+    public function testIndexShowsOnlyPublicComponentGroupsToGuests()
     {
         $this->visit('/')
             ->see(self::COMPONENT_GROUP_1_NAME)
