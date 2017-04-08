@@ -114,7 +114,7 @@ final class UpdateMetricCommand
         'display_chart' => 'nullable|int',
         'places'        => 'nullable|numeric|between:0,4',
         'default_view'  => 'nullable|numeric|between:0,4',
-        'threshold'     => 'nullable|numeric|between:0,10',
+        'threshold'     => 'nullable|int',
         'order'         => 'nullable|int',
         'visible'       => 'required|int|between:0,2',
     ];
