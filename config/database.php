@@ -64,6 +64,7 @@ return [
         'mysql' => [
             'driver'    => 'mysql',
             'host'      => env('DB_HOST', null),
+            'unix_socket' => env('DB_UNIX_SOCKET', null),
             'database'  => env('DB_DATABASE', null),
             'username'  => env('DB_USERNAME', null),
             'password'  => env('DB_PASSWORD', null),
