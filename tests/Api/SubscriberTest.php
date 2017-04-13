@@ -73,7 +73,7 @@ class SubscriberTest extends AbstractApiTestCase
         $this->post('/api/v1/subscribers', [
             'email'         => 'support@alt-three.com',
             'verify'        => true,
-            'components' => [
+            'components'    => [
                 1,
                 3,
             ],
