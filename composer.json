@@ -64,6 +64,9 @@
         "symfony/dom-crawler": "^3.1",
         "tightenco/mailthief": "^0.3.2"
     },
+    "suggest": {
+        "ext-apc": "APC Support cache driver."
+    },
     "autoload": {
         "classmap": [
             "database"
