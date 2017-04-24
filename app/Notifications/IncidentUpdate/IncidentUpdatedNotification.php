@@ -32,7 +32,7 @@ class IncidentUpdatedNotification extends Notification
     /**
      * The incident update.
      *
-     * @var \CachetHQ\Cachet\Models\Incident
+     * @var \CachetHQ\Cachet\Models\IncidentUpdate
      */
     protected $update;
 

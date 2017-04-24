@@ -73,8 +73,8 @@ class SendIncidentUpdateEmailNotificationHandler
             ->get()
             ->reject(function ($subscriber) use ($notified) {
                 return in_array($subscriber->id, $notified);
-            })->each(function ($subscriber) use ($incident) {
-                $subscriber->notify(new IncidentUpdatedNotification($incident));
+            })->each(function ($subscriber) use ($update) {
+                $subscriber->notify(new IncidentUpdatedNotification($update));
             });
     }
 }
