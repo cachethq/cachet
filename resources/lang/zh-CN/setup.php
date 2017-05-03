@@ -11,13 +11,13 @@
 
 return [
     'setup'             => '设置',
-    'title'             => '安装 Cachet',
-    'service_details'   => '服务细节',
-    'env_setup'         => '环境设置',
-    'status_page_setup' => '状态页面设置',
-    'show_support'      => '您想支持Cachet么?',
+    'title'             => '开始安装',
+    'service_details'   => '服务器',
+    'env_setup'         => '环境配置',
+    'status_page_setup' => '页面模板',
+    'show_support'      => '显示 Cachet 技术支持',
     'admin_account'     => '管理员帐户',
     'complete_setup'    => '设置完成',
-    'completed'         => 'Cachet已成功配置！',
-    'finish_setup'      => '前往控制面板',
+    'completed'         => '一切准备就绪！',
+    'finish_setup'      => '查看站点概要',
 ];
