@@ -14,10 +14,10 @@ return [
     'components' => [
         'last_updated' => 'Ostatnia aktualizacja :timestamp',
         'status'       => [
-            1 => 'Funktionsfähig',
-            2 => 'Leistungsprobleme',
-            3 => 'Teilweiser Ausfall',
-            4 => 'Schwerer Ausfall',
+            1 => 'Działa',
+            2 => 'Problemy z wydajnością',
+            3 => 'Potencjalna awaria',
+            4 => 'Awaria',
         ],
         'group' => [
             'other' => 'Pozostałe komponenty',
@@ -26,18 +26,18 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => 'Brak zgłoszonych incydentów',
-        'past'          => 'Vergangene Vorfälle',
-        'previous_week' => 'Vorherige Woche',
-        'next_week'     => 'Nächste Woche',
-        'scheduled'     => 'Geplante Wartungen',
-        'scheduled_at'  => ', geplant :timestamp',
+        'none'          => 'Brak zgłoszonych zdarzeń',
+        'past'          => 'Wcześniejsze zdarzenia',
+        'previous_week' => 'Poprzedni tydzień',
+        'next_week'     => 'W przyszłym tygodniu',
+        'scheduled'     => 'Zaplanowana konserwacja',
+        'scheduled_at'  => ' na :timestamp',
         'status'        => [
-            0 => 'Geplant', // TODO: Hopefully remove this.
-            1 => 'Untersuchungen laufen',
-            2 => 'Identifiziert',
-            3 => 'Unter Beobachtung',
-            4 => 'Behoben',
+            0 => 'Zaplanowane', // TODO: Hopefully remove this.
+            1 => 'Poszukiwanie przyczyny',
+            2 => 'Zidentyfikowane',
+            3 => 'Monitorowanie',
+            4 => 'Naprawione',
         ],
     ],
 
@@ -45,51 +45,51 @@ return [
     'service' => [
         'good'  => '[0,1] System działa poprawnie|[2,Inf] Wszystkie systemy działają poprawnie',
         'bad'   => '[0,1] W systemie obecnie występują problemy|[2,Inf] W niektórych systemach występują problemy',
-        'major' => '[0,1] Usługa jest poważnie przeciążona|[2,Inf] Niektóre systemy są poważnie przeciążone',
+        'major' => '[0,1] Występuje poważna awaria z usługą|[2,Inf] Występuje poważna awaria w działaniu niektórych usług',
     ],
 
     'api' => [
-        'regenerate' => 'API-Schlüssel neu generieren',
-        'revoke'     => 'API-Schlüssel widerrufen',
+        'regenerate' => 'Ponownie wygeneruj klucz API',
+        'revoke'     => 'Dezaktywuj klucz API',
     ],
 
     // Metrics
     'metrics' => [
         'filter' => [
             'last_hour' => 'Ostatnia godzina',
-            'hourly'    => 'Letzte 12 Stunden',
-            'weekly'    => 'Wöchentlich',
-            'monthly'   => 'Monatlich',
+            'hourly'    => 'Ostatnie 12 godzin',
+            'weekly'    => 'Tydzień',
+            'monthly'   => 'Miesiąc',
         ],
     ],
 
     // Subscriber
     'subscriber' => [
-        'subscribe' => 'Abonnieren Sie um die neuesten Updates zu erhalten.',
-        'button'    => 'Abonnieren',
-        'manage'    => [
+        'subscribe'   => 'Zapisz się, aby uzyskać najnowsze aktualizacje',
+        'button'      => 'Subskrybuj',
+        'manage'      => [
             'no_subscriptions' => 'Jesteś obecnie zapisany na wszystkie aktualizacje.',
             'my_subscriptions' => 'Jesteś obecnie zapisany na poniższe aktualizacje.',
         ],
         'email' => [
-            'subscribe'          => 'Aktualisierungen per E-Mail abonnieren.',
-            'subscribed'         => 'Sie haben E-Mail-Benachrichtigungen abonniert, überprüfen Sie bitte Ihre E-Mail, um Ihr Abonnement zu bestätigen.',
-            'verified'           => 'Ihre E-Mail-Abonnement ist bestätigt worden. Danke!',
-            'manage'             => 'Manage your subscription',
-            'unsubscribe'        => 'Von E-Mail-Updates deabonnieren.',
-            'unsubscribed'       => 'Ihre E-Mail-Abonnement wurde gekündigt.',
-            'failure'            => 'Etwas ist mit dem Abonnement schief gelaufen.',
-            'already-subscribed' => 'Subskrypcja niemożliwa, :email jest już zapisany.',
+            'subscribe'          => 'Subskrybuj aktualizacje przez e-mail.',
+            'subscribed'         => 'Twój adres e-mail został dodany na listę subskrybentów. Sprawdź e-mail, aby potwierdzić subskrypcję.',
+            'verified'           => 'Twoja subskrypcja została poprawnie zatwierdzona.',
+            'manage'             => 'Zarządzanie subskrypcją',
+            'unsubscribe'        => 'Wypisz się z subskrypcji e-mail.',
+            'unsubscribed'       => 'Twój adres e-mail został usunięty z listy subskrybentów.',
+            'failure'            => 'Coś poszło nie tak z subskrypcją.',
+            'already-subscribed' => 'Nie można zapisać się na subskrypcję, :email jest już zapisany.',
             'verify'             => [
-                'text'   => "Please confirm your email subscription to :app_name status updates.\n:link",
-                'html'   => '<p>Please confirm your email subscription to :app_name status updates.</p>',
-                'button' => 'Confirm Subscription',
+                'text'   => "Prosimy o potwierdzenie subskrypcji z :app_name.\n:link",
+                'html'   => '<p>Potwierdź swoją subskrypcję e-mail dla :app_name.</p>',
+                'button' => 'Potwierdzam subskrypcję',
             ],
             'maintenance' => [
-                'subject' => '[Maintenance Scheduled] :name',
+                'subject' => '[Planowana konserwacja] :name',
             ],
             'incident' => [
-                'subject' => '[New Incident] :status: :name',
+                'subject' => '[Nowe zdarzenie] :status: :name',
             ],
             'component' => [
                 'subject'       => 'Aktualizacje komponentu',
@@ -111,15 +111,15 @@ return [
 
     'signup' => [
         'title'    => 'Zarejestruj się',
-        'username' => 'Benutzername',
-        'email'    => 'E-Mail',
-        'password' => 'Passwort',
+        'username' => 'Login',
+        'email'    => 'E-mail',
+        'password' => 'Hasło',
         'success'  => 'Twoje konto zostało utworzone.',
         'failure'  => 'Coś poszło nie tak w trakcje rejestracji.',
     ],
 
     'system' => [
-        'update' => 'Nowsza wersja Cachet\'a jest dostępna. Kliknij <a href="https://docs.cachethq.io/docs/updating-cachet">tutaj</a>, aby dowiedzieć się jak dokonać aktualizacji!',
+        'update' => 'Nowsza wersja Cachet jest dostępna. Kliknij <a href="https://docs.cachethq.io/docs/updating-cachet">tutaj</a>, aby dowiedzieć się jak dokonać aktualizacji!',
     ],
 
     // Modal
@@ -128,7 +128,7 @@ return [
         'subscribe' => [
             'title'  => 'Subskrybuj aktualizacje komponentu',
             'body'   => 'Podaj swój adres email w celu subskrypcji aktualizacji dla tego komponentu. Jeśli byłeś już zapisany, otrzymujesz aktualizacje dla tego komponentu.',
-            'button' => 'Abonnieren',
+            'button' => 'Subskrybuj',
         ],
     ],
 
@@ -136,7 +136,7 @@ return [
     'home'            => 'Strona Główna',
     'description'     => 'Bądź na bieżąco z aktualizacjami z :app.',
     'powered_by'      => 'Obsługiwany przez <a href="https://cachethq.io" class="links">Cachet</a>.',
-    'about_this_site' => 'Über diese Seite',
+    'about_this_site' => 'Informacje o tej stronie',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',
     'feed'            => 'Status-Feed',
