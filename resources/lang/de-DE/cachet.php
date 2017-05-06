@@ -27,15 +27,13 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => 'Es liegen keine Ereignisse vor',
-        'past'          => 'Vergangene Ereignisse',
-        'previous_week' => 'Vorherige Woche',
-        'next_week'     => 'Nächste Woche',
-        'stickied'      => 'Angepinnte Vorfälle',
-        'scheduled'     => 'Geplante Wartungen',
-        'scheduled_at'  => ', geplant :timestamp',
-        'posted'        => 'Veröffentlicht :timestamp',
-        'status'        => [
+        'none'         => 'Es liegen keine Ereignisse vor',
+        'past'         => 'Vergangene Ereignisse',
+        'stickied'     => 'Angepinnte Vorfälle',
+        'scheduled'    => 'Geplante Wartungen',
+        'scheduled_at' => ', geplant :timestamp',
+        'posted'       => 'Veröffentlicht :timestamp',
+        'status'       => [
             1 => 'Untersuchungen laufen',
             2 => 'Identifiziert',
             3 => 'Unter Beobachtung',
@@ -77,7 +75,7 @@ return [
     // Subscriber
     'subscriber' => [
         'subscribe'   => 'Abonnieren Sie um die neuesten Updates zu erhalten.',
-        'unsubscribe' => 'Unsubscribe at :link',
+        'unsubscribe' => 'Deabonnieren unter :link',
         'button'      => 'Abonnieren',
         'manage'      => [
             'no_subscriptions' => 'Du hast im Augenblick alle Updates abonniert.',
