@@ -39,7 +39,7 @@ class ScheduleTest extends AbstractApiTestCase
 
         $this->assertResponseOk();
 
-        $this->seeJson($schedule->toArray());
+        $this->seeJson(['name' => $schedule->name]);
     }
 
     public function testCreateSchedule()
