@@ -11,11 +11,14 @@
 
 namespace CachetHQ\Cachet\Bus\Handlers\Commands\Schedule;
 
+use AltThree\Validator\ValidationException;
 use CachetHQ\Cachet\Bus\Commands\Schedule\CreateScheduleCommand;
 use CachetHQ\Cachet\Bus\Events\Schedule\ScheduleWasCreatedEvent;
 use CachetHQ\Cachet\Models\Schedule;
 use CachetHQ\Cachet\Services\Dates\DateFactory;
 use Illuminate\Contracts\Auth\Guard;
+use Illuminate\Support\MessageBag;
+use InvalidArgumentException;
 
 /**
  * This is the create schedule command handler.
@@ -61,9 +64,13 @@ class CreateScheduleCommandHandler
      */
     public function handle(CreateScheduleCommand $command)
     {
-        $schedule = Schedule::create($this->filter($command));
+        try {
+            $schedule = Schedule::create($this->filter($command));
 
-        event(new ScheduleWasCreatedEvent($this->auth->user(), $schedule));
+            event(new ScheduleWasCreatedEvent($this->auth->user(), $schedule));
+        } catch (InvalidArgumentException $e) {
+            throw new ValidationException(new MessageBag([$e->getMessage()]));
+        }
 
         return $schedule;
     }

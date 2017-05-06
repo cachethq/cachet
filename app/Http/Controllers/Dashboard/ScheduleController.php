@@ -92,7 +92,7 @@ class ScheduleController extends Controller
         } catch (ValidationException $e) {
             return cachet_redirect('dashboard.schedule.create')
                 ->withInput(Binput::all())
-                ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.schedule.add.failure')))
+                ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.schedule.edit.failure')))
                 ->withErrors($e->getMessageBag());
         }
 
