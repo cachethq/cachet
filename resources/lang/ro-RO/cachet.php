@@ -27,15 +27,13 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => 'Nici un incident raportat',
-        'past'          => 'Incidente anterioare',
-        'previous_week' => 'Săptămâna Anterioară',
-        'next_week'     => 'Săptămâna Următoare',
-        'stickied'      => 'Incidente fixate',
-        'scheduled'     => 'Întreținere programată',
-        'scheduled_at'  => ', programată: timestamp',
-        'posted'        => 'Publicat :timestamp',
-        'status'        => [
+        'none'         => 'Nici un incident raportat',
+        'past'         => 'Incidente anterioare',
+        'stickied'     => 'Incidente fixate',
+        'scheduled'    => 'Întreținere programată',
+        'scheduled_at' => ', programată: timestamp',
+        'posted'       => 'Publicat :timestamp',
+        'status'       => [
             1 => 'Sub investigație',
             2 => 'Identificat',
             3 => 'Sub observație',
