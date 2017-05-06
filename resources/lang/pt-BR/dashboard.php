@@ -12,7 +12,7 @@
 return [
 
     'dashboard'          => 'Dashboard',
-    'writeable_settings' => 'The Cachet settings directory is not writeable. Please make sure that <code>./bootstrap/cachet</code> is writeable by the web server.',
+    'writeable_settings' => 'O diretório configurações do Cachet não é gravável. Certifique-se de que<code>./bootstrap/cachet</code> é gravável pelo servidor web.',
 
     // Incidents
     'incidents' => [
@@ -39,6 +39,7 @@ return [
         'update' => [
             'title'    => 'Crie uma nova atualização de incidente',
             'subtitle' => 'Adicione uma atualização ao <strong>:incidente</strong>',
+            'success'  => 'Update added.',
         ],
 
         // Incident templates
@@ -215,11 +216,11 @@ return [
             'footer'        => 'HTML de rodapé personalizado',
         ],
         'mail' => [
-            'mail'  => 'Mail',
-            'test'  => 'Test',
+            'mail'  => 'E-Mail',
+            'test'  => 'Teste',
             'email' => [
-                'subject' => 'Test notification from Cachet',
-                'body'    => 'This is a test notification from Cachet.',
+                'subject' => 'Notificação de teste do Cachet',
+                'body'    => 'Esta é uma notificação de teste do Cachet.',
             ],
         ],
         'security' => [
