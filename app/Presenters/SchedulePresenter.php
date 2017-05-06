@@ -210,7 +210,7 @@ class SchedulePresenter extends BasePresenter implements Arrayable
      */
     public function completed_at_datetimepicker()
     {
-        if ($this->wrappedObject->completed_at !== '0000-00-00 00:00:00') {
+        if ($this->wrappedObject->completed_at) {
             return $this->dates->make($this->wrappedObject->completed_at)->format('Y-m-d H:i');
         }
     }
