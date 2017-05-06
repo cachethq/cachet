@@ -14,7 +14,7 @@ return [
     'components' => [
         'last_updated' => 'Последнее обновление :timestamp',
         'status'       => [
-            0 => 'Unknown',
+            0 => 'Неизвестный',
             1 => 'Работает',
             2 => 'Падение производительности',
             3 => 'Перебои в работе',
@@ -27,15 +27,13 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => 'Без происшествий',
-        'past'          => 'Последние инциденты',
-        'previous_week' => 'Предыдущая неделя',
-        'next_week'     => 'Следующая неделя',
-        'stickied'      => 'Stickied Incidents',
-        'scheduled'     => 'Плановые работы',
-        'scheduled_at'  => ', запланированы :timestamp',
-        'posted'        => 'Отправлено :timestamp',
-        'status'        => [
+        'none'         => 'Без происшествий',
+        'past'         => 'Последние инциденты',
+        'stickied'     => 'Stickied инциденты',
+        'scheduled'    => 'Плановые работы',
+        'scheduled_at' => ', запланированы :timestamp',
+        'posted'       => 'Отправлено :timestamp',
+        'status'       => [
             1 => 'Проводим анализ проблемы',
             2 => 'Причина определена',
             3 => 'Под наблюдением',
@@ -46,9 +44,9 @@ return [
     // Schedule
     'schedules' => [
         'status' => [
-            0 => 'Upcoming',
-            1 => 'In Progress',
-            2 => 'Complete',
+            0 => 'Будущие',
+            1 => 'Выполняется',
+            2 => 'Завершено',
         ],
     ],
 
@@ -77,7 +75,7 @@ return [
     // Subscriber
     'subscriber' => [
         'subscribe'   => 'Подпишитесь, чтобы получать информацию об изменениях',
-        'unsubscribe' => 'Unsubscribe at :link',
+        'unsubscribe' => 'Отписаться от :link',
         'button'      => 'Подписаться',
         'manage'      => [
             'no_subscriptions' => 'Вы подписаны на все изменения.',
