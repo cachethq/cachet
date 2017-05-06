@@ -14,7 +14,7 @@ return [
     'components' => [
         'last_updated' => 'Última atualização :timestamp',
         'status'       => [
-            0 => 'Unknown',
+            0 => 'Desconhecido',
             1 => 'Operacional',
             2 => 'Problemas de performance',
             3 => 'Indisponibilidade parcial',
@@ -27,15 +27,13 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => 'Nenhum incidente reportado',
-        'past'          => 'Incidentes anteriores',
-        'previous_week' => 'Última semana',
-        'next_week'     => 'Próxima semana',
-        'stickied'      => 'Incidentes fixados',
-        'scheduled'     => 'Manutenção Agendada',
-        'scheduled_at'  => ', agendada :timestamp',
-        'posted'        => 'Postado :timestamp',
-        'status'        => [
+        'none'         => 'Nenhum incidente reportado',
+        'past'         => 'Incidentes anteriores',
+        'stickied'     => 'Incidentes Persistentes',
+        'scheduled'    => 'Manutenção Agendada',
+        'scheduled_at' => ', agendada :timestamp',
+        'posted'       => 'Postado :timestamp',
+        'status'       => [
             1 => 'Investigando',
             2 => 'Identificado',
             3 => 'Observando',
@@ -46,9 +44,9 @@ return [
     // Schedule
     'schedules' => [
         'status' => [
-            0 => 'Upcoming',
-            1 => 'In Progress',
-            2 => 'Complete',
+            0 => 'Em breve',
+            1 => 'Em Progresso',
+            2 => 'Concluído',
         ],
     ],
 
@@ -77,7 +75,7 @@ return [
     // Subscriber
     'subscriber' => [
         'subscribe'   => 'Inscreva-se para obter as atualizações mais recentes',
-        'unsubscribe' => 'Unsubscribe at :link',
+        'unsubscribe' => 'Cancelar inscrição em: link',
         'button'      => 'Inscreva-se',
         'manage'      => [
             'no_subscriptions' => 'Você está atualmente inscrito a todas as atualizações.',
@@ -122,7 +120,7 @@ return [
     'home'            => 'Início',
     'description'     => 'Mantenha-se atualizado com as últimas atualizações de serviço de: app.',
     'powered_by'      => 'Desenvolvido por <a href="https://cachethq.io" class="links">Cachet</a>.',
-    'timezone'        => 'Horário é mostrado em :timezone.',
+    'timezone'        => 'Horários são exibidos em :timezone.',
     'about_this_site' => 'Sobre este Site',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',
