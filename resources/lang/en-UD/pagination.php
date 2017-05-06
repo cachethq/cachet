@@ -22,7 +22,7 @@ return [
     |
     */
 
-    'previous' => 'crwdns89:0crwdne89:0',
-    'next'     => 'crwdns90:0crwdne90:0',
+    'previous' => 'crwdns1393:0crwdne1393:0',
+    'next'     => 'crwdns1394:0crwdne1394:0',
 
 ];
