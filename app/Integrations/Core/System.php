@@ -13,7 +13,6 @@ namespace CachetHQ\Cachet\Integrations\Core;
 
 use CachetHQ\Cachet\Integrations\Contracts\System as SystemContract;
 use CachetHQ\Cachet\Models\Component;
-use CachetHQ\Cachet\Models\Incident;
 use Illuminate\Contracts\Config\Repository;
 
 /**
