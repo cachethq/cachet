@@ -92,7 +92,7 @@ class CreateScheduleCommandHandler
         ];
 
         $availableParams = array_filter($params, function ($val) {
-            return $val !== null;
+            return $val !== null && $val !== '';
         });
 
         return $availableParams;

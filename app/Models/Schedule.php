@@ -19,6 +19,11 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use McCool\LaravelAutoPresenter\HasPresenter;
 
+/**
+ * This is the schedule class.
+ *
+ * @author James Brooks <james@alt-three.com>
+ */
 class Schedule extends Model implements HasPresenter
 {
     use SearchableTrait, SortableTrait, ValidatingTrait;
@@ -43,6 +48,16 @@ class Schedule extends Model implements HasPresenter
      * @var int
      */
     const COMPLETE = 2;
+
+    /**
+     * The model's attributes.
+     *
+     * @var string[]
+     */
+    protected $attributes = [
+        'status'       => self::UPCOMING,
+        'completed_at' => null,
+    ];
 
     /**
      * The attributes that should be casted to native types.
