@@ -28,11 +28,12 @@
                         </select>
                     </div>
                     @endif
-                    <div class="form-group">
+                    <div class="form-group {{ $errors->has('name') ? 'has-error' : null }}">
                         <label for="incident-name">{{ trans('forms.schedules.name') }}</label>
                         <input type="text" class="form-control" name="name" id="incident-name" required value="{{ Binput::old('name') }}" placeholder="{{ trans('forms.schedules.name') }}">
+                        @if($errors->has('name'))<span class="help-block">{{ $errors->first('name') }}</span>@endif
                     </div>
-                    <div class="form-group">
+                    <div class="form-group {{ $errors->has('status') ? 'has-error' : null }}">
                         <label>{{ trans('forms.schedules.status') }}</label><br>
                         @foreach(trans('cachet.schedules.status') as $id => $status)
                         <label class="radio-inline">
@@ -40,20 +41,24 @@
                             {{ $status }}
                         </label>
                         @endforeach
+                        @if($errors->has('status'))<span class="help-block">{{ $errors->first('status') }}</span>@endif
                     </div>
-                    <div class="form-group">
+                    <div class="form-group {{ $errors->has('message') ? 'has-error' : null }}">
                         <label>{{ trans('forms.schedules.message') }}</label>
                         <div class="markdown-control">
                             <textarea name="message" class="form-control autosize" rows="5" required placeholder="{{ trans('forms.schedules.message') }}">{{ Binput::old('message') }}</textarea>
                         </div>
+                        @if($errors->has('message'))<span class="help-block">{{ $errors->first('message') }}</span>@endif
                     </div>
-                    <div class="form-group">
+                    <div class="form-group {{ $errors->has('scheduled_at') ? 'has-error' : null }}">
                         <label>{{ trans('forms.schedules.scheduled_at') }}</label>
                         <input type="text" name="scheduled_at" class="form-control" rel="datepicker-custom" data-date-format="YYYY-MM-DD HH:mm" required placeholder="{{ trans('forms.schedules.scheduled_at') }}">
+                        @if($errors->has('scheduled_at'))<span class="help-block">{{ $errors->first('scheduled_at') }}</span>@endif
                     </div>
-                    <div class="form-group">
+                    <div class="form-group {{ $errors->has('completed_at') ? 'has-error' : null }}">
                         <label>{{ trans('forms.schedules.completed_at') }}</label>
                         <input type="text" name="completed_at" class="form-control" rel="datepicker-custom" data-date-format="YYYY-MM-DD HH:mm" placeholder="{{ trans('forms.schedules.completed_at') }}">
+                        @if($errors->has('completed_at'))<span class="help-block">{{ $errors->first('completed_at') }}</span>@endif
                     </div>
                 </fieldset>
 

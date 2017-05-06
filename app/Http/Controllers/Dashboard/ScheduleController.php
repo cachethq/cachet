@@ -15,10 +15,11 @@ use AltThree\Validator\ValidationException;
 use CachetHQ\Cachet\Bus\Commands\Schedule\CreateScheduleCommand;
 use CachetHQ\Cachet\Bus\Commands\Schedule\DeleteScheduleCommand;
 use CachetHQ\Cachet\Bus\Commands\Schedule\UpdateScheduleCommand;
+use CachetHQ\Cachet\Http\Controllers\AbstractController;
 use CachetHQ\Cachet\Models\IncidentTemplate;
 use CachetHQ\Cachet\Models\Schedule;
 use GrahamCampbell\Binput\Facades\Binput;
-use Illuminate\Routing\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
 
 /**
@@ -26,7 +27,7 @@ use Illuminate\Support\Facades\View;
  *
  * @author James Brooks <james@alt-three.com>
  */
-class ScheduleController extends Controller
+class ScheduleController extends AbstractController
 {
     /**
      * Stores the sub-sidebar tree list.
@@ -78,8 +79,17 @@ class ScheduleController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function addScheduleAction()
+    public function addScheduleAction(Request $request)
     {
+        $this->validate($request, [
+            'name'         => 'required|string',
+            'message'      => 'nullable|string',
+            'status'       => 'required|min:0|max:2',
+            'scheduled_at' => 'required|date_format:Y-m-d H:i',
+            'completed_at' => 'nullable|date_format:Y-m-d H:i',
+            'components'   => 'nullable|array',
+        ]);
+
         try {
             dispatch(new CreateScheduleCommand(
                 Binput::get('name'),
