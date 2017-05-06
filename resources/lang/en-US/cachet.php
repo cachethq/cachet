@@ -27,15 +27,13 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => 'No incidents reported',
-        'past'          => 'Past Incidents',
-        'previous_week' => 'Previous Week',
-        'next_week'     => 'Next Week',
-        'stickied'      => 'Stickied Incidents',
-        'scheduled'     => 'Scheduled Maintenance',
-        'scheduled_at'  => ', scheduled :timestamp',
-        'posted'        => 'Posted :timestamp',
-        'status'        => [
+        'none'         => 'No incidents reported',
+        'past'         => 'Past Incidents',
+        'stickied'     => 'Stickied Incidents',
+        'scheduled'    => 'Scheduled Maintenance',
+        'scheduled_at' => ', scheduled :timestamp',
+        'posted'       => 'Posted :timestamp',
+        'status'       => [
             1 => 'Investigating',
             2 => 'Identified',
             3 => 'Watching',
@@ -47,7 +45,7 @@ return [
     'schedules' => [
         'status' => [
             0 => 'Upcoming',
-            1 => 'In Progress',
+            1 => 'In progress',
             2 => 'Complete',
         ],
     ],
