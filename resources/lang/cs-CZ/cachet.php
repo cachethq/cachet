@@ -14,7 +14,7 @@ return [
     'components' => [
         'last_updated' => 'Poslední aktualizace :timestamp',
         'status'       => [
-            0 => 'Unknown',
+            0 => 'Neznámý',
             1 => 'V provozu',
             2 => 'Problémy s výkonem',
             3 => 'Částečný výpadek',
@@ -27,15 +27,13 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => 'Nejsou nahlášeny žádné incidenty',
-        'past'          => 'Minulé incidenty',
-        'previous_week' => 'Předchozí týden',
-        'next_week'     => 'Příští týden',
-        'stickied'      => 'Připnuté incidenty',
-        'scheduled'     => 'Plánovaná odstávka',
-        'scheduled_at'  => ', plánované na :timestamp',
-        'posted'        => 'Publikováno :timestamp',
-        'status'        => [
+        'none'         => 'Nejsou nahlášeny žádné incidenty',
+        'past'         => 'Minulé incidenty',
+        'stickied'     => 'Připnuté incidenty',
+        'scheduled'    => 'Plánovaná odstávka',
+        'scheduled_at' => ', plánované na :timestamp',
+        'posted'       => 'Publikováno :timestamp',
+        'status'       => [
             1 => 'Zkoumání příčiny',
             2 => 'Problém identifikován',
             3 => 'Sledování',
@@ -46,9 +44,9 @@ return [
     // Schedule
     'schedules' => [
         'status' => [
-            0 => 'Upcoming',
-            1 => 'In Progress',
-            2 => 'Complete',
+            0 => 'Blížící se',
+            1 => 'Probíhající',
+            2 => 'Hotovo',
         ],
     ],
 
@@ -77,7 +75,7 @@ return [
     // Subscriber
     'subscriber' => [
         'subscribe'   => 'Přihlásit se k odběru upozornění',
-        'unsubscribe' => 'Unsubscribe at :link',
+        'unsubscribe' => 'Odhlásit se na :link',
         'button'      => 'Přihlásit',
         'manage'      => [
             'no_subscriptions' => 'Aktuálně jsi přihlášen(a) ke všem upozorněním.',
