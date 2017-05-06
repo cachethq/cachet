@@ -32,12 +32,12 @@ return [
             'mail' => [
                 'subject'  => 'Neuer Vorfall gemeldet',
                 'greeting' => 'Ein neuer Vorfall wurde auf der :app_name Status Seite gemeldet.',
-                'content'  => 'Incident :name was reported',
+                'content'  => 'Vorfall: Name wurde gemeldet',
                 'action'   => 'Anzeigen',
             ],
             'slack' => [
-                'title'   => 'Incident :name Reported',
-                'content' => 'A new incident was reported at :app_name',
+                'title'   => 'Vorfall: :name wurde gemeldet',
+                'content' => 'Ein neuer Vorfall wurde auf der :app_name Status Seite gemeldet',
             ],
             'sms' => [
                 'content' => 'Ein neuer Vorfall wurde auf der :app_name Status Seite gemeldet.',
@@ -45,52 +45,52 @@ return [
         ],
         'update' => [
             'mail' => [
-                'subject' => 'Incident Updated',
-                'content' => ':name was updated',
-                'title'   => ':name was updated to :new_status',
+                'subject' => 'Vorfall aktualisiert',
+                'content' => ':name wurde aktualisiert',
+                'title'   => ':name wurde auf :new_status aktualisiert',
                 'action'  => 'Anzeigen',
             ],
             'slack' => [
-                'title'   => ':name Updated',
-                'content' => ':name was updated to :new_status',
+                'title'   => ':name wurde aktualisiert',
+                'content' => ':name wurde auf :new_status aktualisiert',
             ],
             'sms' => [
-                'content' => 'Incident :name was updated',
+                'content' => 'Vorfall :name wurde aktualisiert',
             ],
         ],
     ],
     'schedule' => [
         'new' => [
             'mail' => [
-                'subject' => 'New Schedule Created',
-                'content' => ':name was scheduled for :date',
-                'title'   => 'A new scheduled maintenance was created.',
+                'subject' => 'Neuer Zeitplan erstellt',
+                'content' => ':name wurde für :date geplant',
+                'title'   => 'Eine neue geplante Wartung wurde erstellt.',
                 'action'  => 'Anzeigen',
             ],
             'slack' => [
-                'title'   => 'New Schedule Created!',
-                'content' => ':name was scheduled for :date',
+                'title'   => 'Neuer wurde Zeitplan erstellt!',
+                'content' => ':name wurde für :date geplant',
             ],
             'sms' => [
-                'content' => ':name was scheduled for :date',
+                'content' => ':name wurde für :date geplant',
             ],
         ],
     ],
     'subscriber' => [
         'verify' => [
             'mail' => [
-                'subject' => 'Verify Your Subscription',
-                'content' => 'Click to verify your subscription to :app_name status page.',
-                'title'   => 'Verify your subscription to :app_name status page.',
-                'action'  => 'Verify',
+                'subject' => 'Bitte bestätigen Sie Ihr Abonnement',
+                'content' => 'Klicken Sie, um Ihr Abonnement von :app_name Statusseite zu bestätigen.',
+                'title'   => 'Bestätigen Sie Ihr Abonnement für die :app_name Statusseite.',
+                'action'  => 'Bestätigen',
             ],
         ],
     ],
     'system' => [
         'test' => [
             'mail' => [
-                'subject' => 'Ping from Cachet!',
-                'content' => 'This is a test notification from Cachet!',
+                'subject' => 'Ping von Cachet!',
+                'content' => 'Dies ist eine Test-Benachrichtigung von Cachet!',
                 'title'   => '🔔',
             ],
         ],
@@ -98,10 +98,10 @@ return [
     'user' => [
         'invite' => [
             'mail' => [
-                'subject' => 'Your invitation is inside...',
-                'content' => 'You have been invited to join :app_name status page.',
-                'title'   => 'You\'re invited to join :app_name status page.',
-                'action'  => 'Accept',
+                'subject' => 'Ihre Einladung wartet auf Sie...',
+                'content' => 'Sie wurden eingeladen um der :app_name Statusseite beizutreten.',
+                'title'   => 'Sie wurden eingeladen um der :app_name Statusseite beizutreten.',
+                'action'  => 'Akzeptieren',
             ],
         ],
     ],
