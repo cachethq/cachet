@@ -13,34 +13,34 @@ return [
     'component' => [
         'status_update' => [
             'mail' => [
-                'subject'  => 'Component Status Updated',
-                'greeting' => 'A component\'s status was updated!',
-                'content'  => ':name status changed from :old_status to :new_status.',
-                'action'   => 'View',
+                'subject'  => 'Status der Komponente aktualisiert',
+                'greeting' => 'Ein Komponentenstatus wurde aktualisiert!',
+                'content'  => ':name Status wurde von :old_status zu :new_status geändert.',
+                'action'   => 'Anzeigen',
             ],
             'slack' => [
-                'title'   => 'Component Status Updated',
-                'content' => ':name status changed from :old_status to :new_status.',
+                'title'   => 'Status der Komponente aktualisiert',
+                'content' => ':name Status wurde von :old_status zu :new_status geändert.',
             ],
             'sms' => [
-                'content' => ':name status changed from :old_status to :new_status.',
+                'content' => ':name Status wurde von :old_status zu :new_status geändert.',
             ],
         ],
     ],
     'incident' => [
         'new' => [
             'mail' => [
-                'subject'  => 'New Incident Reported',
-                'greeting' => 'A new incident was reported at :app_name.',
+                'subject'  => 'Neuer Vorfall gemeldet',
+                'greeting' => 'Ein neuer Vorfall wurde auf der :app_name Status Seite gemeldet.',
                 'content'  => 'Incident :name was reported',
-                'action'   => 'View',
+                'action'   => 'Anzeigen',
             ],
             'slack' => [
                 'title'   => 'Incident :name Reported',
                 'content' => 'A new incident was reported at :app_name',
             ],
             'sms' => [
-                'content' => 'A new incident was reported at :app_name.',
+                'content' => 'Ein neuer Vorfall wurde auf der :app_name Status Seite gemeldet.',
             ],
         ],
         'update' => [
@@ -48,7 +48,7 @@ return [
                 'subject' => 'Incident Updated',
                 'content' => ':name was updated',
                 'title'   => ':name was updated to :new_status',
-                'action'  => 'View',
+                'action'  => 'Anzeigen',
             ],
             'slack' => [
                 'title'   => ':name Updated',
@@ -65,7 +65,7 @@ return [
                 'subject' => 'New Schedule Created',
                 'content' => ':name was scheduled for :date',
                 'title'   => 'A new scheduled maintenance was created.',
-                'action'  => 'View',
+                'action'  => 'Anzeigen',
             ],
             'slack' => [
                 'title'   => 'New Schedule Created!',
