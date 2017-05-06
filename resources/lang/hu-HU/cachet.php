@@ -27,15 +27,13 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => 'Nincs incidens jelentve',
-        'past'          => 'Múltbeli incidensek',
-        'previous_week' => 'Előző hét',
-        'next_week'     => 'Következő hét',
-        'stickied'      => 'Kitűzőtt Incidensek',
-        'scheduled'     => 'Ütemezett karbantartás',
-        'scheduled_at'  => ', ütemezett :timestamp',
-        'posted'        => 'Közzétéve :timestamp',
-        'status'        => [
+        'none'         => 'Nincs incidens jelentve',
+        'past'         => 'Múltbeli incidensek',
+        'stickied'     => 'Kitűzőtt Incidensek',
+        'scheduled'    => 'Ütemezett karbantartás',
+        'scheduled_at' => ', ütemezett :timestamp',
+        'posted'       => 'Közzétéve :timestamp',
+        'status'       => [
             1 => 'Kivizsgálás',
             2 => 'Azonosítva',
             3 => 'Megfigyelés',
