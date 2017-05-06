@@ -27,15 +27,13 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => 'No s\'han registrat incidents',
-        'past'          => 'Incidents anteriors',
-        'previous_week' => 'Setmana Anterior',
-        'next_week'     => 'Següent Setmana',
-        'stickied'      => 'Stickied Incidents',
-        'scheduled'     => 'Interrupció programada',
-        'scheduled_at'  => ', programat',
-        'posted'        => 'Posted :timestamp',
-        'status'        => [
+        'none'         => 'No s\'han registrat incidents',
+        'past'         => 'Incidents anteriors',
+        'stickied'     => 'Stickied Incidents',
+        'scheduled'    => 'Interrupció programada',
+        'scheduled_at' => ', programat',
+        'posted'       => 'Posted :timestamp',
+        'status'       => [
             1 => 'Investigant',
             2 => 'Identificat',
             3 => 'En observació',
