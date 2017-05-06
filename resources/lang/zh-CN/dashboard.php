@@ -11,15 +11,17 @@
 
 return [
 
-    'dashboard' => '控制台',
+    'dashboard'          => '控制台',
+    'writeable_settings' => 'Cachet 设置目录无法写入。请确认 <code>./bootstrap/cachet</code> 文件夹可被服务器写入。',
 
     // Incidents
     'incidents' => [
         'title'                    => '故障和维护计划',
-        'incidents'                => 'Incidents',
+        'incidents'                => '事件',
         'logged'                   => '{0} 当前没有故障信息|您已经记录了一个故障|您已经报告了 <strong>:count</strong> 个故障',
-        'incident-create-template' => 'Create Template',
+        'incident-create-template' => '创建模板',
         'incident-templates'       => '故障模板',
+        'updates'                  => '{0} 0 个更新|1 个更新|:count 个更新',
         'add'                      => [
             'title'   => '添加故障',
             'success' => '故障已添加',
@@ -34,10 +36,15 @@ return [
             'success' => '故障已删除并将不会出现在状态页中',
             'failure' => '无法删除该故障，请再试一次。',
         ],
+        'update' => [
+            'title'    => '添加故障更新',
+            'subtitle' => '给 <strong>:incident</strong> 故障添加一个更新',
+            'success'  => 'Update added.',
+        ],
 
         // Incident templates
         'templates' => [
-            'title' => '事件模板',
+            'title' => '故障模板',
             'add'   => [
                 'title'   => '添加故障模板',
                 'message' => '你应该增加一个故障模板',
@@ -60,7 +67,7 @@ return [
     'schedule' => [
         'schedule'     => '计划维护',
         'logged'       => '{0} 现在没有维护计划，好样的。|你已经记录下 1 个维护计划|你已经报告了 <strong>:count</strong> 个维护计划',
-        'scheduled_at' => 'Scheduled at :timestamp',
+        'scheduled_at' => '计划在 :timestamp',
         'add'          => [
             'title'   => '添加维护计划',
             'success' => '维护计划已添加。',
@@ -79,9 +86,9 @@ return [
 
     // Components
     'components' => [
-        'components'         => 'Components',
-        'component_statuses' => 'Component Statuses',
-        'listed_group'       => 'Grouped under :name',
+        'components'         => '组件',
+        'component_statuses' => '组件状态',
+        'listed_group'       => '根据 :name 分组',
         'add'                => [
             'title'   => '添加组件',
             'message' => '没有组件，马上添加一个吧',
@@ -105,12 +112,12 @@ return [
             'add'           => [
                 'title'   => '添加组件分组',
                 'success' => '分组已添加。',
-                'failure' => '分组更新失败，请重试。',
+                'failure' => '组件更新失败，请稍后再试。',
             ],
             'edit' => [
                 'title'   => '编辑组件分组',
                 'success' => '分组已更新。',
-                'failure' => '分组更新失败，请重试。',
+                'failure' => '组件更新失败，请稍后再试。',
             ],
             'delete' => [
                 'success' => '组建分组已删除。',
@@ -121,9 +128,9 @@ return [
 
     // Metrics
     'metrics' => [
-        'metrics' => 'Metrics',
+        'metrics' => '图表',
         'add'     => [
-            'title'   => '添加图表',
+            'title'   => '创建图表',
             'message' => '你应该添加一个图表。',
             'success' => '图表已创建。',
             'failure' => '添加图表时出错了，请再试一次。',
@@ -161,9 +168,9 @@ return [
 
     // Team
     'team' => [
-        'team'        => 'Team',
-        'member'      => 'Member',
-        'profile'     => 'Profile',
+        'team'        => '团队',
+        'member'      => '成员',
+        'profile'     => '用户信息',
         'description' => '团队成员可维护组件和故障信息。',
         'add'         => [
             'title'   => '添加团队成员',
@@ -188,39 +195,50 @@ return [
 
     // Settings
     'settings' => [
-        'settings'  => 'Settings',
+        'settings'  => '系统设置',
         'app-setup' => [
-            'app-setup'   => '网站设置',
-            'images-only' => 'Only images may be uploaded.',
+            'app-setup'   => '常规选项',
+            'images-only' => '只能上传图像。',
             'too-big'     => '您上传的文件太大了。上传的图像大小应小于:size',
         ],
         'analytics' => [
             'analytics' => '第三方统计',
         ],
+        'log' => [
+            'log' => '日志',
+        ],
         'localization' => [
-            'localization' => '本地化',
+            'localization' => '时间和语言',
         ],
         'customization' => [
-            'customization' => '自定义',
+            'customization' => '个性定制',
             'header'        => '自定义页眉 HTML',
             'footer'        => '自定义页脚 HTML',
         ],
+        'mail' => [
+            'mail'  => '邮件',
+            'test'  => '测试',
+            'email' => [
+                'subject' => 'Cachet 通知测试',
+                'body'    => '这是来自 Cachet 的测试通知邮件。',
+            ],
+        ],
         'security' => [
             'security'   => '安全设置',
-            'two-factor' => 'Users without two-factor authentication',
+            'two-factor' => '没有启用双因素身份验证的用户',
         ],
         'stylesheet' => [
-            'stylesheet' => '自定义样式',
+            'stylesheet' => '附加样式',
         ],
         'theme' => [
-            'theme' => 'Theme',
+            'theme' => '主题外观',
         ],
         'edit' => [
-            'success' => 'Settings saved.',
-            'failure' => 'Settings could not be saved.',
+            'success' => '设置已保存。',
+            'failure' => '无法保存设置。',
         ],
         'credits' => [
-            'credits'       => '团队',
+            'credits'       => '关于开发团队',
             'contributors'  => '贡献者',
             'license'       => 'Cachet 是 <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a> 开发的一个开源项目，使用 BSD-3 授权。',
             'backers-title' => '后勤力量和赞助商',
@@ -233,19 +251,19 @@ return [
     'login' => [
         'login'      => '登录',
         'logged_in'  => '您已登录',
-        'welcome'    => 'Welcome Back!',
-        'two-factor' => 'Please enter your token.',
+        'welcome'    => '欢迎回来！',
+        'two-factor' => '请输入您的双重验证码。',
     ],
 
     // Sidebar footer
-    'help'        => 'Help',
+    'help'        => '帮助',
     'status_page' => '状态页',
     'logout'      => '退出',
 
     // Notifications
     'notifications' => [
-        'notifications' => 'Notifications',
-        'awesome'       => 'Awesome.',
+        'notifications' => '通知',
+        'awesome'       => '太棒了！',
         'whoops'        => '抱歉，',
     ],
 
@@ -260,13 +278,13 @@ return [
     // Welcome modal
     'welcome' => [
         'welcome' => '欢迎来到你的状态页！',
-        'message' => 'Your status page is almost ready! You might want to configure these extra settings',
+        'message' => '您的状态页面即将准备好了！您可能想要配置这些额外的设置',
         'close'   => '带我直接进入控制台',
         'steps'   => [
             'component'  => '添加组件',
             'incident'   => '添加故障',
             'customize'  => '主题设置',
-            'team'       => 'Add users',
+            'team'       => '添加用户',
             'api'        => '生成 API Token',
             'two-factor' => '双因素身份验证',
         ],
