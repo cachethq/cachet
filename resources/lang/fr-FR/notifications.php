@@ -13,24 +13,24 @@ return [
     'component' => [
         'status_update' => [
             'mail' => [
-                'subject'  => 'Component Status Updated',
-                'greeting' => 'A component\'s status was updated!',
-                'content'  => ':name status changed from :old_status to :new_status.',
+                'subject'  => 'Le statut du composant a été mis à jour',
+                'greeting' => 'Le statut d’un composant a été mis à jour !',
+                'content'  => 'Le statut de :name est passé de :old_status à :new_status.',
                 'action'   => 'View',
             ],
             'slack' => [
-                'title'   => 'Component Status Updated',
-                'content' => ':name status changed from :old_status to :new_status.',
+                'title'   => 'Le statut du composant a été mis à jour',
+                'content' => 'Le statut de :name est passé de :old_status à :new_status.',
             ],
             'sms' => [
-                'content' => ':name status changed from :old_status to :new_status.',
+                'content' => 'Le statut de :name est passé de :old_status à :new_status.',
             ],
         ],
     ],
     'incident' => [
         'new' => [
             'mail' => [
-                'subject'  => 'New Incident Reported',
+                'subject'  => 'Nouvel incident signalé',
                 'greeting' => 'A new incident was reported at :app_name.',
                 'content'  => 'Incident :name was reported',
                 'action'   => 'View',
