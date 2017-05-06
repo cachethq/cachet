@@ -27,15 +27,13 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => 'Inga händelser har rapporterats',
-        'past'          => 'Tidigare händelser',
-        'previous_week' => 'Föregående vecka',
-        'next_week'     => 'Nästa vecka',
-        'stickied'      => 'Fästa incidenter',
-        'scheduled'     => 'Planerat underhåll',
-        'scheduled_at'  => ', schemalagda: tidsstämpel',
-        'posted'        => 'Upplagd :timestamp',
-        'status'        => [
+        'none'         => 'Inga händelser har rapporterats',
+        'past'         => 'Tidigare händelser',
+        'stickied'     => 'Fästa incidenter',
+        'scheduled'    => 'Planerat underhåll',
+        'scheduled_at' => ', schemalagda: tidsstämpel',
+        'posted'       => 'Upplagd :timestamp',
+        'status'       => [
             1 => 'Undersöker',
             2 => 'Identifierat',
             3 => 'Bevakar',
@@ -77,7 +75,7 @@ return [
     // Subscriber
     'subscriber' => [
         'subscribe'   => 'Prenumerera för att få de senaste uppdateringarna',
-        'unsubscribe' => 'Unsubscribe at :link',
+        'unsubscribe' => 'Avsluta prenumerationen på: länk',
         'button'      => 'Prenumerera',
         'manage'      => [
             'no_subscriptions' => 'Du prenumererar på alla uppdateringar.',
