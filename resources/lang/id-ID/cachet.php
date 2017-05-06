@@ -14,7 +14,7 @@ return [
     'components' => [
         'last_updated' => 'Update terakhir :timestamp',
         'status'       => [
-            0 => 'Unknown',
+            0 => 'Tidak diketahui',
             1 => 'Operasional',
             2 => 'Masalah Kinerja',
             3 => 'Gagal Sebagian',
@@ -27,15 +27,13 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => 'Tidak ada insiden yang dilaporkan',
-        'past'          => 'Insiden sebelumnya',
-        'previous_week' => 'Pekan sebelumnya',
-        'next_week'     => 'Pekan selanjutnya',
-        'stickied'      => 'Insiden sticky',
-        'scheduled'     => 'Jadwal Pemeliharaan',
-        'scheduled_at'  => ', dijadwalkan pada :timestamp',
-        'posted'        => 'Dikirim: timestamp',
-        'status'        => [
+        'none'         => 'Tidak ada insiden yang dilaporkan',
+        'past'         => 'Insiden sebelumnya',
+        'stickied'     => 'Insiden sticky',
+        'scheduled'    => 'Jadwal Pemeliharaan',
+        'scheduled_at' => ', dijadwalkan pada :timestamp',
+        'posted'       => 'Dikirim: timestamp',
+        'status'       => [
             1 => 'Investigasi',
             2 => 'Teridentifikasi',
             3 => 'Dimonitor',
@@ -46,9 +44,9 @@ return [
     // Schedule
     'schedules' => [
         'status' => [
-            0 => 'Upcoming',
-            1 => 'In Progress',
-            2 => 'Complete',
+            0 => 'Mendatang',
+            1 => 'Sedang berlangsung',
+            2 => 'Selesai',
         ],
     ],
 
@@ -77,7 +75,7 @@ return [
     // Subscriber
     'subscriber' => [
         'subscribe'   => 'Ikuti newsletter untuk mendapat update terbaru.',
-        'unsubscribe' => 'Unsubscribe at :link',
+        'unsubscribe' => 'Berhenti berlangganan pada :link',
         'button'      => 'Daftar',
         'manage'      => [
             'no_subscriptions' => 'Anda saat ini terdaftar untuk semua update.',
