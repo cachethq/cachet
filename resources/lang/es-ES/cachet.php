@@ -14,7 +14,7 @@ return [
     'components' => [
         'last_updated' => 'Última actualización :timestamp',
         'status'       => [
-            0 => 'Unknown',
+            0 => 'Desconocido',
             1 => 'Operacional',
             2 => 'Problemas de rendimiento',
             3 => 'Interrupción parcial',
@@ -27,15 +27,13 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => 'Ningún incidente reportado',
-        'past'          => 'Incidencias anteriores',
-        'previous_week' => 'Semana anterior',
-        'next_week'     => 'Semana siguiente',
-        'stickied'      => 'Incidentes pegados',
-        'scheduled'     => 'Mantenimiento programado',
-        'scheduled_at'  => ', programado para :timestamp',
-        'posted'        => 'Publicado :timestamp',
-        'status'        => [
+        'none'         => 'Ningún incidente reportado',
+        'past'         => 'Incidencias anteriores',
+        'stickied'     => 'Incidentes anclados',
+        'scheduled'    => 'Mantenimiento programado',
+        'scheduled_at' => ', programado para :timestamp',
+        'posted'       => 'Publicado :timestamp',
+        'status'       => [
             1 => 'Investigando',
             2 => 'Identificado',
             3 => 'Observando',
@@ -46,9 +44,9 @@ return [
     // Schedule
     'schedules' => [
         'status' => [
-            0 => 'Upcoming',
-            1 => 'In Progress',
-            2 => 'Complete',
+            0 => 'Próximamente',
+            1 => 'En progreso',
+            2 => 'Completo',
         ],
     ],
 
@@ -77,7 +75,7 @@ return [
     // Subscriber
     'subscriber' => [
         'subscribe'   => 'Suscríbete para obtener las actualizaciones más recientes',
-        'unsubscribe' => 'Unsubscribe at :link',
+        'unsubscribe' => 'Darse de baja en :link',
         'button'      => 'Suscríbete',
         'manage'      => [
             'no_subscriptions' => 'Actualmente estás suscrito a todas las actualizaciones.',
@@ -122,7 +120,7 @@ return [
     'home'            => 'Inicio',
     'description'     => 'Mantente informado con las últimas actualizaciones de servicio de :app.',
     'powered_by'      => 'La página de estado de :app está proporcionada por <a href="https://cachethq.io">Cachet</a>.',
-    'timezone'        => 'Las horarios son mostrados en :timezone.',
+    'timezone'        => 'Los horarios son mostrados en :timezone.',
     'about_this_site' => 'Acerca de este sitio',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',
