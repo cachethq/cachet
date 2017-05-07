@@ -39,7 +39,7 @@ return [
         'update' => [
             'title'    => 'Maak een nieuwe incident update',
             'subtitle' => 'Voeg een update toe aan <strong>:incident</strong>',
-            'success'  => 'Update added.',
+            'success'  => 'Update toegevoegd.',
         ],
 
         // Incident templates
