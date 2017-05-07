@@ -13,27 +13,27 @@ return [
     'component' => [
         'status_update' => [
             'mail' => [
-                'subject'  => 'Component Status Updated',
-                'greeting' => 'A component\'s status was updated!',
-                'content'  => ':name status changed from :old_status to :new_status.',
-                'action'   => 'View',
+                'subject'  => 'Component status bijgewerkt',
+                'greeting' => 'De status van een component is bijgewerkt!',
+                'content'  => ':name status is veranderd van :old_status naar :new_status.',
+                'action'   => 'Tonen',
             ],
             'slack' => [
-                'title'   => 'Component Status Updated',
-                'content' => ':name status changed from :old_status to :new_status.',
+                'title'   => 'Component status bijgewerkt',
+                'content' => ':name status is veranderd van :old_status naar :new_status.',
             ],
             'sms' => [
-                'content' => ':name status changed from :old_status to :new_status.',
+                'content' => ':name status is veranderd van :old_status naar :new_status.',
             ],
         ],
     ],
     'incident' => [
         'new' => [
             'mail' => [
-                'subject'  => 'New Incident Reported',
+                'subject'  => 'Nieuw incident gemeld',
                 'greeting' => 'A new incident was reported at :app_name.',
                 'content'  => 'Incident :name was reported',
-                'action'   => 'View',
+                'action'   => 'Tonen',
             ],
             'slack' => [
                 'title'   => 'Incident :name Reported',
@@ -48,7 +48,7 @@ return [
                 'subject' => 'Incident Updated',
                 'content' => ':name was updated',
                 'title'   => ':name was updated to :new_status',
-                'action'  => 'View',
+                'action'  => 'Tonen',
             ],
             'slack' => [
                 'title'   => ':name Updated',
@@ -65,7 +65,7 @@ return [
                 'subject' => 'New Schedule Created',
                 'content' => ':name was scheduled for :date',
                 'title'   => 'A new scheduled maintenance was created.',
-                'action'  => 'View',
+                'action'  => 'Tonen',
             ],
             'slack' => [
                 'title'   => 'New Schedule Created!',
