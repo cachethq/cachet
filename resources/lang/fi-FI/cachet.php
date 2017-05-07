@@ -14,7 +14,7 @@ return [
     'components' => [
         'last_updated' => 'Viimeksi päivitetty :timestamp',
         'status'       => [
-            0 => 'Unknown',
+            0 => 'Tuntematon',
             1 => 'Toiminnassa',
             2 => 'Suorituskykyyn liittyviä ongelmia',
             3 => 'Osittainen katkos',
@@ -27,15 +27,13 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => 'Ei raportoitavia tapauksia',
-        'past'          => 'Aikaisemmat tapahtumat',
-        'previous_week' => 'Edellinen viikko',
-        'next_week'     => 'Seuraava viikko',
-        'stickied'      => 'Stickied Incidents',
-        'scheduled'     => 'Ajastettu tapahtuma',
-        'scheduled_at'  => ', ajoitettu :timestamp',
-        'posted'        => 'Posted :timestamp',
-        'status'        => [
+        'none'         => 'Ei raportoitavia tapauksia',
+        'past'         => 'Aikaisemmat tapahtumat',
+        'stickied'     => 'Stickied Incidents',
+        'scheduled'    => 'Ajastettu tapahtuma',
+        'scheduled_at' => ', ajoitettu :timestamp',
+        'posted'       => 'Posted :timestamp',
+        'status'       => [
             1 => 'Tutkitaan',
             2 => 'Tunnistettu',
             3 => 'Valvotaan',
@@ -46,9 +44,9 @@ return [
     // Schedule
     'schedules' => [
         'status' => [
-            0 => 'Upcoming',
+            0 => 'Tulossa',
             1 => 'In Progress',
-            2 => 'Complete',
+            2 => 'Valmis',
         ],
     ],
 

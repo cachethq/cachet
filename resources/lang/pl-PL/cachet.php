@@ -14,7 +14,7 @@ return [
     'components' => [
         'last_updated' => 'Ostatnia aktualizacja :timestamp',
         'status'       => [
-            0 => 'Unknown',
+            0 => 'Nieznane',
             1 => 'Funktionsfähig',
             2 => 'Leistungsprobleme',
             3 => 'Teilweiser Ausfall',
@@ -27,15 +27,13 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => 'Brak zgłoszonych incydentów',
-        'past'          => 'Vergangene Vorfälle',
-        'previous_week' => 'Poprzedni tydzień',
-        'next_week'     => 'W przyszłym tygodniu',
-        'stickied'      => 'Przyklejone incydenty',
-        'scheduled'     => 'Geplante Wartungen',
-        'scheduled_at'  => ', geplant :timestamp',
-        'posted'        => 'Opublikowano :timestamp',
-        'status'        => [
+        'none'         => 'Brak zgłoszonych incydentów',
+        'past'         => 'Vergangene Vorfälle',
+        'stickied'     => 'Przyklejone zdarzenia',
+        'scheduled'    => 'Geplante Wartungen',
+        'scheduled_at' => ', geplant :timestamp',
+        'posted'       => 'Opublikowano :timestamp',
+        'status'       => [
             1 => 'Untersuchungen laufen',
             2 => 'Identifiziert',
             3 => 'Unter Beobachtung',
@@ -46,9 +44,9 @@ return [
     // Schedule
     'schedules' => [
         'status' => [
-            0 => 'Upcoming',
-            1 => 'In Progress',
-            2 => 'Complete',
+            0 => 'Nadchodzące',
+            1 => 'W toku',
+            2 => 'Zakończone',
         ],
     ],
 
@@ -56,7 +54,7 @@ return [
     'service' => [
         'good'  => '[0,1] System działa poprawnie|[2,Inf] Wszystkie systemy działają poprawnie',
         'bad'   => '[0,1] W systemie obecnie występują problemy|[2,Inf] W niektórych systemach występują problemy',
-        'major' => '[0,1] Usługa jest poważnie przeciążona|[2,Inf] Niektóre systemy są poważnie przeciążone',
+        'major' => '[0,1] System jest poważnie przeciążony|[2,Inf] Niektóre systemy są poważnie przeciążone',
     ],
 
     'api' => [
@@ -77,7 +75,7 @@ return [
     // Subscriber
     'subscriber' => [
         'subscribe'   => 'Abonnieren Sie um die neuesten Updates zu erhalten.',
-        'unsubscribe' => 'Unsubscribe at :link',
+        'unsubscribe' => 'Wypisz się na :link',
         'button'      => 'Abonnieren',
         'manage'      => [
             'no_subscriptions' => 'Jesteś obecnie zapisany na wszystkie aktualizacje.',

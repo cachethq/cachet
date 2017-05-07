@@ -27,15 +27,13 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => 'No incidents reported',
-        'past'          => 'Past Incidents',
-        'previous_week' => 'Previous week',
-        'next_week'     => 'Next week',
-        'stickied'      => 'Stickied Incidents',
-        'scheduled'     => 'תחזוקה מתוזמנת',
-        'scheduled_at'  => ', scheduled :timestamp',
-        'posted'        => 'Posted :timestamp',
-        'status'        => [
+        'none'         => 'No incidents reported',
+        'past'         => 'Past Incidents',
+        'stickied'     => 'Stickied Incidents',
+        'scheduled'    => 'תחזוקה מתוזמנת',
+        'scheduled_at' => ', scheduled :timestamp',
+        'posted'       => 'Posted :timestamp',
+        'status'       => [
             1 => 'Investigating',
             2 => 'מזוהה',
             3 => 'צופה',

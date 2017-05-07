@@ -27,15 +27,13 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => 'Δεν υπάρχουν περιστατικά',
-        'past'          => 'Προηγούμενα περιστατικά',
-        'previous_week' => 'Previous week',
-        'next_week'     => 'Next week',
-        'stickied'      => 'Stickied Incidents',
-        'scheduled'     => 'Προγραμματισμένη Συντήρηση',
-        'scheduled_at'  => ', προγραμματισμένη :timestamp',
-        'posted'        => 'Posted :timestamp',
-        'status'        => [
+        'none'         => 'Δεν υπάρχουν περιστατικά',
+        'past'         => 'Προηγούμενα περιστατικά',
+        'stickied'     => 'Stickied Incidents',
+        'scheduled'    => 'Προγραμματισμένη Συντήρηση',
+        'scheduled_at' => ', προγραμματισμένη :timestamp',
+        'posted'       => 'Posted :timestamp',
+        'status'       => [
             1 => 'Διερευνάται',
             2 => 'Προσδιορίστηκε',
             3 => 'Παρακολούθηση',

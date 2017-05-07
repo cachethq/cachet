@@ -27,15 +27,13 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => 'Geen incidenten gemeld',
-        'past'          => 'Oude incidenten',
-        'previous_week' => 'Vorige week',
-        'next_week'     => 'Volgende week',
-        'stickied'      => 'Vastgezette incidenten',
-        'scheduled'     => 'Gepland onderhoud',
-        'scheduled_at'  => ', gepland :timestamp',
-        'posted'        => 'Geplaatst op :timestamp',
-        'status'        => [
+        'none'         => 'Geen incidenten gemeld',
+        'past'         => 'Oude incidenten',
+        'stickied'     => 'Uitgelichte incidenten',
+        'scheduled'    => 'Gepland onderhoud',
+        'scheduled_at' => ', gepland :timestamp',
+        'posted'       => 'Geplaatst op :timestamp',
+        'status'       => [
             1 => 'In onderzoek',
             2 => 'Geïdentificeerd',
             3 => 'Aan het opvolgen',
@@ -77,7 +75,7 @@ return [
     // Subscriber
     'subscriber' => [
         'subscribe'   => 'Abonneer voor de meest recente updates',
-        'unsubscribe' => 'Unsubscribe at :link',
+        'unsubscribe' => 'Meld je af op :link',
         'button'      => 'Abonneren',
         'manage'      => [
             'no_subscriptions' => 'Je bent momenteel geabonneerd op alle updates.',

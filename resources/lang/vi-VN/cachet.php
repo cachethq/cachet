@@ -27,15 +27,13 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => 'Không có báo cáo về sự số nào',
-        'past'          => 'Sự số trong quá khứ',
-        'previous_week' => 'Previous week',
-        'next_week'     => 'Next week',
-        'stickied'      => 'Stickied Incidents',
-        'scheduled'     => 'Bảo trì định kỳ',
-        'scheduled_at'  => ', định kỳ :timestamp',
-        'posted'        => 'Posted :timestamp',
-        'status'        => [
+        'none'         => 'Không có báo cáo về sự số nào',
+        'past'         => 'Sự số trong quá khứ',
+        'stickied'     => 'Stickied Incidents',
+        'scheduled'    => 'Bảo trì định kỳ',
+        'scheduled_at' => ', định kỳ :timestamp',
+        'posted'       => 'Posted :timestamp',
+        'status'       => [
             1 => 'Đang điều tra',
             2 => 'Xác định',
             3 => 'Đang xem',

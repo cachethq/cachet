@@ -27,15 +27,13 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => '沒有任何報告',
-        'past'          => '過去的事件',
-        'previous_week' => '上一週',
-        'next_week'     => '下一週',
-        'stickied'      => 'Stickied Incidents',
-        'scheduled'     => '排程維護',
-        'scheduled_at'  => '，於:timestamp',
-        'posted'        => 'Posted :timestamp',
-        'status'        => [
+        'none'         => '沒有任何報告',
+        'past'         => 'Past Incidents',
+        'stickied'     => 'Stickied 事件',
+        'scheduled'    => '排程維護',
+        'scheduled_at' => '，於:timestamp',
+        'posted'       => '簽名時間戳',
+        'status'       => [
             1 => '調查中',
             2 => '已辨明',
             3 => '警戒中',

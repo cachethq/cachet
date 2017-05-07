@@ -27,15 +27,13 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => 'هیچ حادثه ای گزارش نشده است',
-        'past'          => 'حوادث گذشته',
-        'previous_week' => 'هفته گذشته',
-        'next_week'     => 'هفته آینده',
-        'stickied'      => 'Stickied Incidents',
-        'scheduled'     => 'تعمیرات زمان‌بندی شده',
-        'scheduled_at'  => '، برنامه ریزی شده :timestamp',
-        'posted'        => 'Posted :timestamp',
-        'status'        => [
+        'none'         => 'هیچ حادثه ای گزارش نشده است',
+        'past'         => 'حوادث گذشته',
+        'stickied'     => 'Stickied Incidents',
+        'scheduled'    => 'تعمیرات زمان‌بندی شده',
+        'scheduled_at' => '، برنامه ریزی شده :timestamp',
+        'posted'       => 'Posted :timestamp',
+        'status'       => [
             1 => 'در دست بررسی',
             2 => 'شناسایی شده',
             3 => 'در دست بررسی تغييرات',
@@ -77,7 +75,7 @@ return [
     // Subscriber
     'subscriber' => [
         'subscribe'   => 'مشترک شوید تا از آخرین به‌روزرسانی‌ها آگاه شوید',
-        'unsubscribe' => 'Unsubscribe at :link',
+        'unsubscribe' => 'لغو عضویت در: لینک',
         'button'      => 'اشتراک اطلاع‌رسانی',
         'manage'      => [
             'no_subscriptions' => 'در حال حاضر شما برای همه به‌روزرسانی‌ها مشترک هستید.',
