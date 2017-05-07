@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Cachet\Presenters;
 
+use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Presenters\Traits\TimestampsTrait;
 use CachetHQ\Cachet\Services\Dates\DateFactory;
 use Illuminate\Contracts\Support\Arrayable;
@@ -19,6 +20,33 @@ use McCool\LaravelAutoPresenter\BasePresenter;
 class ComponentPresenter extends BasePresenter implements Arrayable
 {
     use TimestampsTrait;
+
+    /**
+     * Icon lookup.
+     *
+     * @var array
+     */
+    protected $icons = [
+        Component::UNKNOWN        => 'ion-help', // Unknown
+        Component::OPERATIONAL    => 'ion-checkmark', // Operational
+        Component::ISSUES         => 'ion-asterisk', // Issues
+        Component::PARTIAL_OUTAGE => 'ion-alert', // Partial Outage
+        Component::MAJOR_OUTAGE   => 'ion-alert-circled', // Major Outage
+    ];
+
+    /**
+     * Present the status with an icon.
+     *
+     * @return string
+     */
+    public function icon()
+    {
+        $status = $this->wrappedObject->status;
+
+        if (isset($this->icons[$status])) {
+            return $this->icons[$status];
+        }
+    }
 
     /**
      * Returns the override class name for theming.

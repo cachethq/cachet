@@ -68,14 +68,16 @@
     <script src="{{ elixir('dist/js/all.js') }}"></script>
 </head>
 <body class="status-page @yield('bodyClass')">
-    @yield('outer-content')
-
-    @include('partials.banner')
-
     <div class="container">
-        @yield('content')
-    </div>
+        <div id="wrapper">
+            @yield('outer-content')
 
-    @include('partials.footer')
+            @include('partials.banner')
+
+            @yield('content')
+
+            @include('partials.footer')
+        </div>
+    </div>
 </body>
 </html>

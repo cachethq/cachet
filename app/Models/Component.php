@@ -25,6 +25,41 @@ class Component extends Model implements HasPresenter
     use SearchableTrait, SoftDeletes, SortableTrait, ValidatingTrait;
 
     /**
+     * Status for being unknown.
+     *
+     * @var int
+     */
+    const UNKNOWN = 0;
+
+    /**
+     * Status for being operational.
+     *
+     * @var int
+     */
+    const OPERATIONAL = 1;
+
+    /**
+     * Status for an issue.
+     *
+     * @var int
+     */
+    const ISSUES = 2;
+
+    /**
+     * Status for a partial outage.
+     *
+     * @var int
+     */
+    const PARTIAL_OUTAGE = 3;
+
+    /**
+     * Status for a major outage.
+     *
+     * @var int
+     */
+    const MAJOR_OUTAGE = 4;
+
+    /**
      * List of attributes that have default values.
      *
      * @var mixed[]

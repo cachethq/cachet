@@ -1,8 +1,15 @@
-<li class="list-group-item {{ $component->group_id ? "sub-component" : "component" }}">
+<li class="list-group-item component--status-1">
+    <div class="component__icon">
+        {{ $component->icon }}
+        <i class="{{ $component->icon }}"></i>
+    </div>
+
+    <div class="component__name">{{ $component->name }}</div>
+
     @if($component->link)
-    <a href="{{ $component->link }}" target="_blank" class="links">{{ $component->name }}</a>
-    @else
-    {{ $component->name }}
+    <div class="component__link hidden-xs">
+        <a href="{{ $component->link }}" target="_blank" class="links">{{ $component->link }}</a>
+    </div>
     @endif
 
     @if($component->description)
