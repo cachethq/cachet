@@ -39,7 +39,7 @@ return [
         'update' => [
             'title'    => 'Vorfall-Update erstellen',
             'subtitle' => 'Ein Update zu <strong>:incident</strong> hinzufügen',
-            'success'  => 'Aktualisierung hinzugefügt.',
+            'success'  => 'Vorfall aktualisiert.',
         ],
 
         // Incident templates
