@@ -43,3 +43,7 @@
 </div>
 @endif
 @stop
+
+@section('bottom-content')
+@include('partials.footer')
+@stop
