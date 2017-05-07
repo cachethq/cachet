@@ -50,6 +50,7 @@ return [
         'CachetHQ\Cachet\Foundation\Exceptions\Displayers\JsonValidationDisplayer',
         'CachetHQ\Cachet\Foundation\Exceptions\Displayers\RedirectDisplayer',
         'CachetHQ\Cachet\Foundation\Exceptions\Displayers\ThrottleDisplayer',
+        'CachetHQ\Cachet\Foundation\Exceptions\Displayers\MaintenanceDisplayer',
         'GrahamCampbell\Exceptions\Displayers\DebugDisplayer',
         'GrahamCampbell\Exceptions\Displayers\HtmlDisplayer',
         'GrahamCampbell\Exceptions\Displayers\JsonDisplayer',
