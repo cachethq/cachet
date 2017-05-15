@@ -28,10 +28,12 @@ return [
     'incidents' => [
         'none'          => 'Nessun incidente segnalato',
         'past'          => 'Problemi passati',
-        'previous_week' => 'Settimana Precedente',
-        'next_week'     => 'Prossima Settimana',
+        'previous_week' => 'Settimana precedente',
+        'next_week'     => 'Settimana successiva',
+        'stickied'      => 'Incidenti fissati',
         'scheduled'     => 'Manutenzione programmata',
         'scheduled_at'  => ', programmata il :timestamp',
+        'posted'        => 'Postato :timestamp',
         'status'        => [
             0 => 'Programmata', // TODO: Hopefully remove this.
             1 => 'Analisi',
@@ -45,7 +47,7 @@ return [
     'service' => [
         'good'  => '[0,1] Sistema operativo|[2,Inf] Tutti i sistemi sono operativi',
         'bad'   => '[0,1] Il sistema al momento presenta problemi|[2,Inf] Alcuni sistemi presentano problemi',
-        'major' => '[0,1] Il servizio presenta presenta un grave problema|[2,Inf] Alcuni sistemi presentano un grave problema',
+        'major' => '[0,1] Il servizio presenta un grave problema|[2,Inf] Alcuni sistemi presentano un grave problema',
     ],
 
     'api' => [
@@ -65,37 +67,37 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe' => 'Iscriviti per ricevere gli aggiornamenti più recenti',
+        'subscribe' => 'Iscriviti per ricevere gli aggiornamenti',
         'button'    => 'Iscriviti',
         'manage'    => [
             'no_subscriptions' => 'Sei attualmente iscritto a tutti gli aggiornamenti.',
-            'my_subscriptions' => 'Sei attualmente iscritto ai seguenti suggerimenti.',
+            'my_subscriptions' => 'Sei attualmente iscritto ai seguenti aggiornamenti.',
         ],
         'email' => [
             'subscribe'          => 'Iscriviti agli aggiornamenti via email.',
-            'subscribed'         => 'Ti sei appena iscritto agli aggiornamenti email, controlla la tua casella per confermare la sottoscrizione',
+            'subscribed'         => 'Ti sei iscritto agli aggiornamenti via email, controlla la tua casella per confermare la sottoscrizione.',
             'verified'           => 'La tua iscrizione &egrave; stata confermata. Grazie!',
             'manage'             => 'Gestisci la tua iscrizione',
-            'unsubscribe'        => 'Annulla l\'iscrizione agli aggiornamenti email.',
-            'unsubscribed'       => 'La tua iscrizione &egrave; stata rimossa.',
+            'unsubscribe'        => 'Annulla l\'iscrizione agli aggiornamenti via email.',
+            'unsubscribed'       => 'La tua iscrizione &egrave; stata cancellata.',
             'failure'            => 'Qualcosa è andato storto con l\'iscrizione.',
-            'already-subscribed' => 'Non è possibile iscrivere :email perchè risulta già iscritto.',
+            'already-subscribed' => 'Impossibile iscrivere :email perchè risulta già registrata.',
             'verify'             => [
-                'text'   => "Conferma l'iscrizione a :app_name. \n:link",
-                'html'   => 'Per favore conferma la tua iscrizione tramite email su :app_name',
+                'text'   => "Conferma la tua iscrizione agli aggiornamenti di :app_name. \n:link",
+                'html'   => '<p>Conferma la tua iscrizione agli aggiornamenti di :app_name.</p>',
                 'button' => 'Conferma iscrizione',
             ],
             'maintenance' => [
                 'subject' => '[Manutenzione programmata] :name',
             ],
             'incident' => [
-                'subject' => '[Nuova segnalazione] :status: :name',
+                'subject' => '[Nuovo incidente] :status: :name',
             ],
             'component' => [
-                'subject'       => 'Aggiornamento di stato del componente',
-                'text'          => 'Lo stato del componente: :component_name è cambiato. Il nuovo stato del componente è :component_human_status.\nGrazie, :app_name',
+                'subject'       => 'Aggiornamento stato del componente',
+                'text'          => 'Lo stato del componente :component_name è cambiato. Il nuovo stato del componente è :component_human_status.\nGrazie, :app_name',
                 'html'          => '<p>Lo stato del componente :component_name è cambiato. Il nuovo stato del componente è :component_human_status.</p><p>Grazie, :app_name</p>',
-                'tooltip-title' => 'Iscriviti alle notifiche di :component_name.',
+                'tooltip-title' => 'Iscriviti agli aggiornamenti di :component_name.',
             ],
         ],
     ],
@@ -103,15 +105,15 @@ return [
     'users' => [
         'email' => [
             'invite' => [
-                'text' => "Sei stato invitato nel team :app_name status page, per iscriverti segui il prossimo link.\n:link\nGrazie, :app_name",
-                'html' => '<p>Sei stato invitato nel team :app_name status page, per iscriverti segui il prossimo link.</p><p><a href=":link">:link</a></p><p>Grazie, :app_name</p>',
+                'text' => "Sei stato invitato nel team :app_name, per iscriverti segui il link successivo.\n:link\nGrazie, :app_name",
+                'html' => '<p>Sei stato invitato nel team :app_name, per iscriverti segui il link successivo.</p><p><a href=":link">:link</a></p><p>Grazie, :app_name</p>',
             ],
         ],
     ],
 
     'signup' => [
         'title'    => 'Registrati',
-        'username' => 'Nome Utente',
+        'username' => 'Username',
         'email'    => 'Email',
         'password' => 'Password',
         'success'  => 'Il tuo account è stato creato.',
@@ -119,7 +121,7 @@ return [
     ],
 
     'system' => [
-        'update' => 'E\' disponibile una nuova versione di Cachet. Scopri come fare <a href="https://docs.cachethq.io/docs/updating-cachet">qui</a>!',
+        'update' => 'E\' disponibile una nuova versione di Cachet. Scopri come aggiornare <a href="https://docs.cachethq.io/docs/updating-cachet">qui</a>!',
     ],
 
     // Modal
@@ -127,7 +129,7 @@ return [
         'close'     => 'Chiudi',
         'subscribe' => [
             'title'  => 'Iscriviti agli aggiornamenti dei componenti',
-            'body'   => 'Inserisci il tuo indirizzo e-mail per iscriverti agli aggiornamenti di questo componente. Se sei già iscritto, riceverai già email relative a questo componente.',
+            'body'   => 'Inserisci il tuo indirizzo email per iscriverti agli aggiornamenti di questo componente. Se sei già iscritto, riceverai già email relative a questo componente.',
             'button' => 'Iscriviti',
         ],
     ],
@@ -136,6 +138,7 @@ return [
     'home'            => 'Home',
     'description'     => 'Resta informato sugli ultimi aggiornamenti dei servizi di :app.',
     'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links"> Cachet</a>.',
+    'timezone'        => 'Gli orari vengono mostrati in :timezone.',
     'about_this_site' => 'Informazioni sul sito',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',
