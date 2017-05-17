@@ -28,7 +28,7 @@ You can now [join our Slack community!](http://cachethq-slack.herokuapp.com)
 
 ## Requirements
 
-- PHP 5.5.9+ or newer
+- PHP 5.6.4+ or newer
 - HTTP server with PHP support (eg: Apache, Nginx, Caddy)
 - [Composer](https://getcomposer.org)
 - A supported database: MySQL, PostgreSQL or SQLite
