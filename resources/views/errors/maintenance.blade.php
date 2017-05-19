@@ -6,7 +6,7 @@
         <strong>Under Maintenance</strong>
     </div>
     <div class="panel-body">
-        <p>We're currently under maintnenance, come back shortly.</p>
+        <p>We're currently under maintenance, come back shortly.</p>
     </div>
 </div>
 @stop
