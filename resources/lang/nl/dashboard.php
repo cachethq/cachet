@@ -18,8 +18,8 @@ return [
         'title'                    => 'Incidenten &amp; planning',
         'incidents'                => 'Incidenten',
         'logged'                   => '{0} Proficiat, er zijn geen incidenten.|Er heeft zich één incident voorgedaan.|Er zijn <strong>:count</strong> incidenten gerapporteerd.',
-        'incident-create-template' => 'Maak template',
-        'incident-templates'       => 'Incident Sjablonen',
+        'incident-create-template' => 'Maak sjabloon',
+        'incident-templates'       => 'Incidentsjablonen',
         'add'                      => [
             'title'   => 'Meld een incident',
             'success' => 'Incident toegevoegd.',
@@ -37,21 +37,21 @@ return [
 
         // Incident templates
         'templates' => [
-            'title' => 'Incident Sjablonen',
+            'title' => 'Incidentsjablonen',
             'add'   => [
-                'title'   => 'Creëer een incident template',
-                'message' => 'Voeg een incident template toe.',
-                'success' => 'Je nieuwe incident template is aangemaakt.',
-                'failure' => 'Er is iets misgegaan met de incident template.',
+                'title'   => 'Creëer een incidentsjabloon',
+                'message' => 'Voeg een incidentsjabloon toe.',
+                'success' => 'Uw nieuwe incidentsjabloon is aangemaakt.',
+                'failure' => 'Er is iets misgegaan met de incidentsjabloon.',
             ],
             'edit' => [
                 'title'   => 'Wijzig template',
-                'success' => 'De incident template is bijgewerkt.',
-                'failure' => 'Er is een fout opgetreden bij het wijzigen van het incident template',
+                'success' => 'De incidentsjabloon is bijgewerkt.',
+                'failure' => 'Er is een fout opgetreden bij het wijzigen van het incidentsjabloon',
             ],
             'delete' => [
-                'success' => 'De incident template is verwijderd.',
-                'failure' => 'De incident template kon niet worden verwijderd, probeer het opnieuw.',
+                'success' => 'De incidentsjabloon is verwijderd.',
+                'failure' => 'De incidentsjabloon kon niet worden verwijderd, probeer het opnieuw.',
             ],
         ],
     ],
@@ -72,7 +72,7 @@ return [
             'failure' => 'Er ging iets mis met het wijzigen van het geplande onderhoud, probeer het opnieuw.',
         ],
         'delete' => [
-            'success' => 'De planning is verwijderd en zal niet worden getoond op jouw statuspagina.',
+            'success' => 'De planning is verwijderd en zal niet worden getoond op de statuspagina.',
             'failure' => 'De planning kon niet worden verwijderd, probeer het opnieuw.',
         ],
     ],
@@ -86,12 +86,12 @@ return [
             'title'   => 'Voeg een component toe',
             'message' => 'Gelieve een onderdeel toe te voegen.',
             'success' => 'Onderdeel aangemaakt.',
-            'failure' => 'Er ging iets mis met de component group, probeer het opnieuw.',
+            'failure' => 'Er ging iets mis met de component, probeer het opnieuw.',
         ],
         'edit' => [
             'title'   => 'Wijzig een component',
             'success' => 'Onderdeel bijgewerkt.',
-            'failure' => 'Er ging iets mis met de component group, probeer het opnieuw.',
+            'failure' => 'Er ging iets mis met de component, probeer het opnieuw.',
         ],
         'delete' => [
             'success' => 'Het component is verwijderd!',
@@ -100,7 +100,7 @@ return [
 
         // Component groups
         'groups' => [
-            'groups'        => 'Onderdeel groep|Onderdeel groepen',
+            'groups'        => 'Componentgroep|Componentgroepen',
             'no_components' => 'U moet een componentgroep toevoegen.',
             'add'           => [
                 'title'   => 'Componentgroep toevoegen',
@@ -141,7 +141,7 @@ return [
     // Subscribers
     'subscribers' => [
         'subscribers'      => 'Abonnees',
-        'description'      => 'Abonnees ontvangen een email update wanneer er incidenten zijn gemaakt of componenten worden bijgewerkt.',
+        'description'      => 'Abonnees ontvangen een e-mail-update wanneer er incidenten zijn gemaakt of componenten worden bijgewerkt.',
         'verified'         => 'Geverifiëerd',
         'not_verified'     => 'Niet geverifiëerd',
         'subscriber'       => ':email, geabonneerd op :date',
@@ -190,7 +190,7 @@ return [
     'settings' => [
         'settings'  => 'Instellingen',
         'app-setup' => [
-            'app-setup'   => 'Applicatie Installatie',
+            'app-setup'   => 'Applicatie-installatie',
             'images-only' => 'Alleen afbeeldingen kunnen worden geüpload.',
             'too-big'     => 'Het bestand dat u heeft geüpload is te groot. Upload een afbeelding kleiner dan :size',
         ],
@@ -198,12 +198,12 @@ return [
             'analytics' => 'Analyses',
         ],
         'localization' => [
-            'localization' => 'Lokalisatie',
+            'localization' => 'Localisatie',
         ],
         'customization' => [
             'customization' => 'Aanpassing',
-            'header'        => 'Aangepaste Header HTML',
-            'footer'        => 'Aangepaste voettekst HTML',
+            'header'        => 'Aangepaste koptekst-HTML',
+            'footer'        => 'Aangepaste voettekst-HTML',
         ],
         'security' => [
             'security'   => 'Beveiliging',
@@ -224,7 +224,7 @@ return [
             'contributors'  => 'Bijdragers',
             'license'       => 'Cachet is een BSD-3-gelicentieerd opensourceproject, uitgebracht door <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank"> Alt Three Services Limited</a>.',
             'backers-title' => 'Donateurs & Sponsoren',
-            'backers'       => 'Als u de toekomstige ontwikkeling wilt ondersteunen, bezoek de <a href="https://patreon.com/jbrooksuk" target="_blank"> Cachet Patreon</a>-campagne.',
+            'backers'       => 'Als u de toekomstige ontwikkeling wilt ondersteunen, bezoek de <a href="https://patreon.com/jbrooksuk" target="_blank">Cachet Patreon</a>-campagne.',
             'thank-you'     => 'Dank aan de :count verschillende medewerkers.',
         ],
     ],
@@ -252,7 +252,7 @@ return [
     // Widgets
     'widgets' => [
         'support'          => 'Ondersteuning Cachet',
-        'support_subtitle' => 'Kijk op onze <strong><a href="https://patreon.com/jbrooksuk" target="_blank"> Patreon</a></strong> pagina!',
+        'support_subtitle' => 'Kijk op onze <strong><a href="https://patreon.com/jbrooksuk" target="_blank">Patreon</a></strong>-pagina!',
         'news'             => 'Laatste nieuws',
         'news_subtitle'    => 'Ontvang de nieuwste updates',
     ],
