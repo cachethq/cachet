@@ -20,6 +20,7 @@ return [
         'logged'                   => '{0} Proficiat, er zijn geen incidenten.|Er heeft zich één incident voorgedaan.|Er zijn <strong>:count</strong> incidenten gerapporteerd.',
         'incident-create-template' => 'Maak template',
         'incident-templates'       => 'Incident Sjablonen',
+        'updates'                  => '{0} Geen updates|Eén update|:count updates',
         'add'                      => [
             'title'   => 'Meld een incident',
             'success' => 'Incident toegevoegd.',
@@ -34,7 +35,11 @@ return [
             'success' => 'Het incident is verwijderd en zal niet meer worden weergegeven op de statuspagina.',
             'failure' => 'Het incident kon niet worden verwijderd, probeer het opnieuw.',
         ],
-
+        'update' => [
+            'title'    => 'Nieuwe update toevoegen aan incident',
+            'subtitle' => 'Een update toevoegen aan <strong>:incident</strong>',
+        ],
+    
         // Incident templates
         'templates' => [
             'title' => 'Incident Sjablonen',
