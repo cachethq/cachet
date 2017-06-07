@@ -1,5 +1,7 @@
 @extends('layout.master')
 
+@section('title', $schedule->name.' | '.$site_title)
+
 @section('bodyClass', 'no-padding')
 
 @section('outer-content')

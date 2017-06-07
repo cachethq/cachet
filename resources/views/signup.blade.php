@@ -1,5 +1,7 @@
 @extends('layout.master')
 
+@section('title', trans('cachet.signup.title').' | '.$site_title)
+
 @section('content')
 <div class="pull-right">
     <p><a class="btn btn-success btn-outline" href="{{ cachet_route('status-page') }}"><i class="ion ion-home"></i></a></p>

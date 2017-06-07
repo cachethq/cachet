@@ -1,5 +1,7 @@
 @extends('layout.master')
 
+@section('title', $incident->name.' | '.$site_title)
+
 @section('bodyClass', 'no-padding')
 
 @section('outer-content')
