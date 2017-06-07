@@ -16,6 +16,12 @@ use Exception;
 use GuzzleHttp\Client;
 use Illuminate\Contracts\Cache\Repository;
 
+/**
+ * This is the credits class.
+ *
+ * @author Graham Campbell <graham@alt-three.com>
+ * @author James Brooks <james@alt-three.com>
+ */
 class Credits implements CreditsContract
 {
     /**
