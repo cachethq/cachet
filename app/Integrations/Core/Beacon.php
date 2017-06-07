@@ -14,6 +14,7 @@ namespace CachetHQ\Cachet\Integrations\Core;
 use CachetHQ\Cachet\Bus\Events\Beacon\BeaconFailedToSendEvent;
 use CachetHQ\Cachet\Bus\Events\Beacon\BeaconWasSentEvent;
 use CachetHQ\Cachet\Integrations\Contracts\Beacon as BeaconContract;
+use CachetHQ\Cachet\Models\Action;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\Metric;
@@ -101,6 +102,7 @@ class Beacon implements BeaconContract
                 'incidents'  => Incident::all()->count(),
                 'metrics'    => Metric::all()->count(),
                 'users'      => User::all()->count(),
+                'actions'    => Action::all()->count(),
             ],
         ];
 
