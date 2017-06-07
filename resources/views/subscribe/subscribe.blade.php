@@ -17,7 +17,7 @@
                 <form action="{{ cachet_route('subscribe', [], 'post') }}" method="POST" class="form">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <div class="form-group">
-                        <input class="form-control" type="email" name="email">
+                        <input class="form-control" type="email" name="email" placeholder="email@example.com">
                     </div>
                     <button type="submit" class="btn btn-success">{{ trans('cachet.subscriber.button') }}</button>
                 </form>
