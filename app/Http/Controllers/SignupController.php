@@ -17,6 +17,7 @@ use CachetHQ\Cachet\Bus\Commands\User\SignupUserCommand;
 use CachetHQ\Cachet\Models\Invite;
 use CachetHQ\Cachet\Models\User;
 use GrahamCampbell\Binput\Facades\Binput;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\View;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
@@ -29,6 +30,7 @@ class SignupController extends Controller
      *
      * @param string|null $code
      *
+     * @throws \Illuminate\Database\Eloquent\ModelNotFoundException
      * @return \Illuminate\View\View
      */
     public function getSignup($code = null)
@@ -40,7 +42,7 @@ class SignupController extends Controller
         $invite = Invite::where('code', '=', $code)->first();
 
         if (!$invite || $invite->is_claimed) {
-            throw new BadRequestHttpException();
+            throw new ModelNotFoundException();
         }
 
         return View::make('signup')
@@ -54,6 +56,7 @@ class SignupController extends Controller
      *
      * @param string|null $code
      *
+     * @throws \Illuminate\Database\Eloquent\ModelNotFoundException
      * @return \Illuminate\View\View
      */
     public function postSignup($code = null)
@@ -65,7 +68,7 @@ class SignupController extends Controller
         $invite = Invite::where('code', '=', $code)->first();
 
         if (!$invite || $invite->is_claimed) {
-            throw new BadRequestHttpException();
+            throw new ModelNotFoundException();
         }
 
         try {
