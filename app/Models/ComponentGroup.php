@@ -155,7 +155,7 @@ class ComponentGroup extends Model implements HasPresenter
      */
     public function enabled_components_lowest()
     {
-        return $this->components()->enabled()->orderBy('status', 'desc');
+        return $this->hasMany(Component::class, 'group_id', 'id')->enabled()->orderBy('status', 'desc');
     }
 
     /**
