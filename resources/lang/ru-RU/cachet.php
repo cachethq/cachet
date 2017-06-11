@@ -28,6 +28,7 @@ return [
     // Incidents
     'incidents' => [
         'none'         => 'Без происшествий',
+        'current'      => 'Incidents',
         'past'         => 'Последние инциденты',
         'stickied'     => 'Stickied инциденты',
         'scheduled'    => 'Плановые работы',

@@ -26,12 +26,14 @@
                         <a class="btn btn-link" href="{{ cachet_route('auth.logout') }}">{{ trans('dashboard.logout') }}</a>
                     </li>
                     @endif
+                    @if($enable_feeds)
                     <li>
                         <a class="btn btn-link" href="{{ cachet_route('feed.rss') }}">{{ trans('cachet.rss-feed') }}</a>
                     </li>
                     <li>
                         <a class="btn btn-link" href="{{ cachet_route('feed.atom') }}">{{ trans('cachet.atom-feed') }}</a>
                     </li>
+                    @endif
                     @if($enable_subscribers)
                     <li>
                         <a class="btn btn-success btn-outline" href="{{ cachet_route('subscribe') }}">{{ trans('cachet.subscriber.button') }}</a>

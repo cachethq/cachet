@@ -28,6 +28,7 @@ return [
     // Incidents
     'incidents' => [
         'none'         => 'Ei raportoitavia tapauksia',
+        'current'      => 'Incidents',
         'past'         => 'Aikaisemmat tapahtumat',
         'stickied'     => 'Stickied Incidents',
         'scheduled'    => 'Ajastettu tapahtuma',

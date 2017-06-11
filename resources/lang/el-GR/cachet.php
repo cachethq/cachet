@@ -28,6 +28,7 @@ return [
     // Incidents
     'incidents' => [
         'none'         => 'Δεν υπάρχουν περιστατικά',
+        'current'      => 'Incidents',
         'past'         => 'Προηγούμενα περιστατικά',
         'stickied'     => 'Stickied Incidents',
         'scheduled'    => 'Προγραμματισμένη Συντήρηση',

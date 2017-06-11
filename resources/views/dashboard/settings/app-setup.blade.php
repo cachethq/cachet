@@ -53,6 +53,28 @@
                         </div>
                         <div class="row">
                             <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label for="timeline_header">{{ trans('forms.settings.app-setup.timeline_header') }}</label>
+                                    <select name="timeline_header" id="timeline_header" class="form-control">
+                                        <option value="current" {{ Config::get('setting.timeline_header') === 'current' ? 'selected' : null }}>{{ trans('forms.incidents.current') }}</option>
+                                        <option value="past" {{ Config::get('setting.timeline_header') === 'past' ? 'selected' : null }}>{{ trans('forms.incidents.past') }}</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="hidden" value="0" name="enable_feeds">
+                                        <input type="checkbox" value="1" name="enable_feeds" {{ Config::get('setting.enable_feeds') ? 'checked' : null }}>
+                                        {{ trans('forms.settings.app-setup.feeds') }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
                                 <div class="checkbox">
                                     <label>
                                         <input type="hidden" value="0" name="enable_subscribers">
@@ -124,6 +146,17 @@
                                         <input type="hidden" value="0" name="only_disrupted_days">
                                         <input type="checkbox" value="1" name="only_disrupted_days" {{ $only_disrupted_days ? 'checked' : null }}>
                                         {{ trans('forms.settings.app-setup.only_disrupted_days') }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="hidden" value="0" name="enable_history">
+                                        <input type="checkbox" value="1" name="enable_history" {{ $enable_history ? 'checked' : null }}>
+                                        {{ trans('forms.settings.app-setup.enable_history') }}
                                     </label>
                                 </div>
                             </div>

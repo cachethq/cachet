@@ -108,6 +108,7 @@ return [
             'days-of-incidents'      => 'How many days of incidents to show?',
             'banner'                 => 'Banner Image',
             'banner-help'            => "It's recommended that you upload files no bigger than 930px wide .",
+            'feeds'                  => 'Allow RSS/Atom feeds to be generated?',
             'subscribers'            => 'Allow people to signup to email notifications?',
             'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
         ],

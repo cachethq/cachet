@@ -28,6 +28,7 @@ return [
     // Incidents
     'incidents' => [
         'none'         => 'هیچ حادثه ای گزارش نشده است',
+        'current'      => 'Incidents',
         'past'         => 'حوادث گذشته',
         'stickied'     => 'Stickied Incidents',
         'scheduled'    => 'تعمیرات زمان‌بندی شده',

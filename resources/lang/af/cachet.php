@@ -27,6 +27,7 @@ return [
     // Incidents
     'incidents' => [
         'none'          => 'No incidents reported',
+        'current'       => 'Voorvalle',
         'past'          => 'Vorige Voorvalle',
         'previous_week' => 'Vorige Week',
         'next_week'     => 'Volgende Week',

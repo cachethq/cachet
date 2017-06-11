@@ -27,6 +27,7 @@ return [
     // Incidents
     'incidents' => [
         'none'          => 'No incidents reported',
+        'current'      => 'Incidents',
         'past'          => '이전 문제',
         'previous_week' => '전 주',
         'next_week'     => '다음 주',

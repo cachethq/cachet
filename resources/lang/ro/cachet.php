@@ -27,6 +27,7 @@ return [
     // Incidents
     'incidents' => [
         'none'          => 'No incidents reported',
+        'current'      => 'Incidents',
         'past'          => 'Incidente anterioare',
         'previous_week' => 'Săptămâna anterioară',
         'next_week'     => 'Săptămâna viitoare',

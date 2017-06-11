@@ -27,6 +27,7 @@ return [
     // Incidents
     'incidents' => [
         'none'          => 'Hiçbir olay raporlanmadı',
+        'current'      => 'Incidents',
         'past'          => 'Geçmiş Olaylar',
         'previous_week' => 'Geçen Hafta',
         'next_week'     => 'Gelecek Hafta',

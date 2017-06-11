@@ -108,6 +108,7 @@ return [
             'days-of-incidents'      => 'Wie viele Tage mit Vorfällen sollen gezeigt werden?',
             'banner'                 => 'Banner Bild',
             'banner-help'            => 'Es wird empfohlen, dass Sie keine Dateien die breiter als 930 Pixel sind hochladen .',
+            'feeds'                  => 'Lassen Sie RSS / Atom-Feeds generieren?',
             'subscribers'            => 'Personen die Anmeldung für E-Mail-Benachrichtigung erlauben?',
             'automatic_localization' => 'Die Status-Seite automatisch auf die Sprache deiner Besucher anpassen?',
         ],

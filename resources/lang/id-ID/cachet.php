@@ -28,6 +28,7 @@ return [
     // Incidents
     'incidents' => [
         'none'         => 'Tidak ada insiden yang dilaporkan',
+        'current'      => 'Incidents',
         'past'         => 'Insiden sebelumnya',
         'stickied'     => 'Insiden sticky',
         'scheduled'    => 'Jadwal Pemeliharaan',

@@ -85,6 +85,7 @@ class AppComposer
         $view->withSiteTitle($this->config->get('setting.app_name'));
         $view->withFontSubset($this->config->get('langs.'.$this->config->get('app.locale').'.subset', 'latin'));
         $view->withOnlyDisruptedDays($this->config->get('setting.only_disrupted_days'));
+        $view->withEnableHistory($this->config->get('setting.enable_history'));
         $view->withDashboardLink($this->config->get('setting.dashboard_login_link'));
         $view->withEnableSubscribers($this->config->get('setting.enable_subscribers'));
     }

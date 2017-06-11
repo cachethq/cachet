@@ -28,6 +28,7 @@ return [
     // Incidents
     'incidents' => [
         'none'         => 'No s\'han registrat incidents',
+        'current'      => 'Incidents',
         'past'         => 'Incidents anteriors',
         'stickied'     => 'Stickied Incidents',
         'scheduled'    => 'Interrupció programada',

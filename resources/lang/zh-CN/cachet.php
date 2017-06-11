@@ -28,6 +28,7 @@ return [
     // Incidents
     'incidents' => [
         'none'         => '无故障报告',
+        'current'      => 'Incidents',
         'past'         => '历史状态',
         'stickied'     => '已关注的故障',
         'scheduled'    => '计划维护',

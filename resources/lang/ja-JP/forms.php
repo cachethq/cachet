@@ -55,6 +55,8 @@ return [
         'notify_subscribers' => 'Notify subscribers?',
         'visibility'         => 'Incident Visibility',
         'stick_status'       => 'Stick Incident',
+        'current'            => 'Incidents',
+        'past'               => 'Past Incidents',
         'stickied'           => 'Stickied',
         'not_stickied'       => 'Not Stickied',
         'public'             => 'Viewable by public',
@@ -159,6 +161,9 @@ return [
             'enable_external_dependencies' => 'Enable Third Party Dependencies (Google Fonts, Trackers, etc...)',
             'show_timezone'                => 'Show the timezone the status page is running in.',
             'only_disrupted_days'          => 'Only show days containing incidents in the timeline?',
+            'feeds'                        => 'Enable RSS/Atom feeds?',
+            'enable_history'               => 'Allow incidents outside of current window to be viewed?',
+            'timeline_header'              => 'Timeline header'
         ],
         'analytics' => [
             'analytics_google'       => 'Google Analytics code',

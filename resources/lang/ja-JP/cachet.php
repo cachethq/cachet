@@ -28,6 +28,7 @@ return [
     // Incidents
     'incidents' => [
         'none'         => 'インシデントはありません',
+        'current'      => 'Incidents',
         'past'         => '過去のインシデント',
         'stickied'     => 'Stickied Incidents',
         'scheduled'    => '計画メンテナンス',

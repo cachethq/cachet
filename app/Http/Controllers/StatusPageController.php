@@ -49,7 +49,7 @@ class StatusPageController extends AbstractApiController
         $startDate = Date::now();
 
         // Check if we have another starting date
-        if (Binput::has('start_date')) {
+        if (Config::get('setting.enable_history') === true && Binput::has('start_date')) {
             try {
                 // If date provided is valid
                 $oldDate = Date::createFromFormat('Y-m-d', Binput::get('start_date'));
@@ -61,6 +61,8 @@ class StatusPageController extends AbstractApiController
             } catch (Exception $e) {
                 // Fallback to today
             }
+
+
         }
 
         $daysToShow = max(0, (int) Config::get('setting.app_incident_days', 0) - 1);
@@ -95,7 +97,10 @@ class StatusPageController extends AbstractApiController
             ->withCanPageForward((bool) $today->gt($startDate))
             ->withCanPageBackward(Incident::where('occurred_at', '<', $startDate->format('Y-m-d'))->count() > 0)
             ->withPreviousDate($startDate->copy()->subDays($daysToShow)->toDateString())
-            ->withNextDate($startDate->copy()->addDays($daysToShow)->toDateString());
+            ->withNextDate($startDate->copy()->addDays($daysToShow)->toDateString())
+            ->withEnableFeeds(Config::get('setting.enable_feeds'))
+            ->withEnableHistory(Config::get('setting.enable_history'))
+            ->withTimelineHeader(Config::get('setting.timeline_header'));
     }
 
     /**

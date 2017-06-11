@@ -108,6 +108,7 @@ return [
             'days-of-incidents'      => 'Hvor mange dage skal der vises hændelser for?',
             'banner'                 => 'Banner billede',
             'banner-help'            => 'Det anbefales ikke at uploade billeder bredere end 930px.',
+            'feeds'                  => 'Tillad, at RSS / Atom-feeds genereres?'
             'subscribers'            => 'Tillad folk at tilmelde sig email underretninger?',
             'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
         ],

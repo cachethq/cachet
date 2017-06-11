@@ -108,6 +108,7 @@ return [
             'days-of-incidents'      => 'Quants de dies d\'incidents voleu veure?',
             'banner'                 => 'Imatge del banner',
             'banner-help'            => "Es recomana que no carregueu arxius més grans de 930 píxels d'ample.",
+            'feeds'                  => 'Permetre feeds RSS / Atom que es generi?',
             'subscribers'            => 'Permetre el registre per a notificacions per correu electrònic?',
             'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
         ],

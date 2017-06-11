@@ -27,6 +27,7 @@ return [
     // Incidents
     'incidents' => [
         'none'          => 'Không có báo cáo về sự số nào',
+        'current'       => 'Incidents',
         'past'          => 'Sự số trong quá khứ',
         'previous_week' => 'Tuần trước',
         'next_week'     => 'Tuần sau',

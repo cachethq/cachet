@@ -108,6 +108,7 @@ return [
             'days-of-incidents'      => 'Kolik dní incidentů zobrazovat?',
             'banner'                 => 'Banner Image',
             'banner-help'            => 'Doručuje se nenahrávat soubory větší než 930 pixelů na šířku.',
+            'feeds'                  => 'Umožnit generování zdrojů RSS / Atom?'
             'subscribers'            => 'Umožnit lidem, aby se přihlašovali k odběru e-mailových upozornění?',
             'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
         ],

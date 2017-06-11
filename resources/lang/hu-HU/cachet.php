@@ -28,6 +28,7 @@ return [
     // Incidents
     'incidents' => [
         'none'         => 'Nincs incidens jelentve',
+        'current'      => 'Incidents',
         'past'         => 'Múltbeli incidensek',
         'stickied'     => 'Kitűzőtt Incidensek',
         'scheduled'    => 'Ütemezett karbantartás',

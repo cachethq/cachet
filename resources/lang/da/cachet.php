@@ -27,6 +27,7 @@ return [
     // Incidents
     'incidents' => [
         'none'          => 'Ingen hændelser er rapporteret',
+        'current'       => 'Hændelser',
         'past'          => 'Tidligere hændelser',
         'previous_week' => 'Forrige uge',
         'next_week'     => 'Næste uge',

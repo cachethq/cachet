@@ -28,6 +28,7 @@ return [
     // Incidents
     'incidents' => [
         'none'         => '아무 문제도 보고되지 않음',
+        'current'      => 'Incidents',
         'past'         => '이전 문제',
         'stickied'     => 'Stickied Incidents',
         'scheduled'    => '예정된 유지 보수',

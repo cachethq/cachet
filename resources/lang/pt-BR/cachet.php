@@ -28,6 +28,7 @@ return [
     // Incidents
     'incidents' => [
         'none'         => 'Nenhum incidente reportado',
+        'current'      => 'Incidents',
         'past'         => 'Incidentes anteriores',
         'stickied'     => 'Incidentes Persistentes',
         'scheduled'    => 'Manutenção Agendada',

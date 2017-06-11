@@ -28,6 +28,7 @@ return [
     // Incidents
     'incidents' => [
         'none'         => 'Hiçbir olay raporlanmadı',
+        'current'      => 'Incidents',
         'past'         => 'Geçmiş Olaylar',
         'stickied'     => 'Yapıştırılmış Olaylar',
         'scheduled'    => 'Zamanlanmış bakım',

@@ -27,6 +27,7 @@ return [
     // Incidents
     'incidents' => [
         'none'          => 'インシデントはありません',
+        'current'      => 'Incidents',
         'past'          => '過去のインシデント',
         'previous_week' => '前の週',
         'next_week'     => '次の週',

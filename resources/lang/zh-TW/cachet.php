@@ -28,6 +28,7 @@ return [
     // Incidents
     'incidents' => [
         'none'         => '沒有任何報告',
+        'current'      => 'Incidents',
         'past'         => 'Past Incidents',
         'stickied'     => 'Stickied 事件',
         'scheduled'    => '排程維護',

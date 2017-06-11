@@ -28,6 +28,7 @@ return [
     // Incidents
     'incidents' => [
         'none'         => 'لا توجد حالات تم الإبلاغ عنها',
+        'current'      => 'Incidents',
         'past'         => 'حالات سابقة',
         'stickied'     => 'حالات مثبتة',
         'scheduled'    => 'صيانة مجدولة',

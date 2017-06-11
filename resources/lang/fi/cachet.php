@@ -27,6 +27,7 @@ return [
     // Incidents
     'incidents' => [
         'none'          => 'Ei raportoitavia tapauksia',
+        'current'      => 'Incidents',
         'past'          => 'Aikaisemmat tapahtumat',
         'previous_week' => 'Edellinen viikko',
         'next_week'     => 'Seuraava viikko',

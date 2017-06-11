@@ -28,6 +28,7 @@ return [
     // Incidents
     'incidents' => [
         'none'         => 'Nici un incident raportat',
+        'current'      => 'Incidents',
         'past'         => 'Incidente anterioare',
         'stickied'     => 'Incidente fixate',
         'scheduled'    => 'Întreținere programată',

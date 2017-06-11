@@ -28,6 +28,7 @@ return [
     // Incidents
     'incidents' => [
         'none'         => 'Inga händelser har rapporterats',
+        'current'      => 'Incidents',
         'past'         => 'Tidigare händelser',
         'stickied'     => 'Fästa incidenter',
         'scheduled'    => 'Planerat underhåll',

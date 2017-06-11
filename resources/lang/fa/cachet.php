@@ -27,6 +27,7 @@ return [
     // Incidents
     'incidents' => [
         'none'          => 'هیچ حادثه ای گزارش نشده است',
+        'current'      => 'Incidents',
         'past'          => 'حوادث گذشته',
         'previous_week' => 'هفته گذشته',
         'next_week'     => 'هفته ی آتی',

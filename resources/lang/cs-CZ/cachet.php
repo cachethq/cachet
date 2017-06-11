@@ -28,6 +28,7 @@ return [
     // Incidents
     'incidents' => [
         'none'         => 'Nejsou nahlášeny žádné incidenty',
+        'current'      => 'Incidents',
         'past'         => 'Minulé incidenty',
         'stickied'     => 'Připnuté incidenty',
         'scheduled'    => 'Plánovaná odstávka',

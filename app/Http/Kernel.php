@@ -39,6 +39,7 @@ class Kernel extends HttpKernel
         'localize'    => 'CachetHQ\Cachet\Http\Middleware\Localize',
         'ready'       => 'CachetHQ\Cachet\Http\Middleware\ReadyForUse',
         'setup'       => 'CachetHQ\Cachet\Http\Middleware\SetupAlreadyCompleted',
+        'feeds'       => 'CachetHQ\Cachet\Http\Middleware\FeedsConfigured',
         'subscribers' => 'CachetHQ\Cachet\Http\Middleware\SubscribersConfigured',
         'throttle'    => 'AltThree\Throttle\ThrottlingMiddleware',
     ];

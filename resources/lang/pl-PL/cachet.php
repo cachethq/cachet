@@ -28,6 +28,7 @@ return [
     // Incidents
     'incidents' => [
         'none'         => 'Brak zgłoszonych incydentów',
+        'current'      => 'Incidents',
         'past'         => 'Vergangene Vorfälle',
         'stickied'     => 'Przyklejone zdarzenia',
         'scheduled'    => 'Geplante Wartungen',
