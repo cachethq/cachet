@@ -16,4 +16,4 @@ install: travis_retry composer install --no-interaction --no-scripts --prefer-so
 notifications:
   email: false
 
-script: vendor/bin/phpunit
+script: vendor/bin/paratest -p 4 --max-batch-size 256

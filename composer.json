@@ -55,6 +55,7 @@
     },
     "require-dev": {
         "alt-three/testbench": "^1.11",
+        "brianium/paratest": "^0.15.0",
         "filp/whoops": "^2.1",
         "fzaninotto/faker": "^1.6",
         "graham-campbell/testbench-core": "^1.1",
