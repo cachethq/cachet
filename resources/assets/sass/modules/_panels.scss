@@ -1,15 +1,15 @@
 .panel-danger {
-  @include panel-variant($cachet_dark-red, white, $cachet-red, $cachet_dark-red);
+  @include card-variant($cachet_dark-red, white);
 }
 
 .panel-success {
-  @include panel-variant($cachet_dark-green, white, $cachet-green, $cachet_dark-green);
+  @include card-variant($cachet_dark-green, white);
 }
 
 .panel-info {
-  @include panel-variant($cachet_dark-blue, white, $cachet-blue, $cachet_dark-blue);
+  @include card-variant($cachet_dark-blue, white);
 }
 
 .panel-warning {
-  @include panel-variant($cachet_dark-yellow, $panel-warning-text, $cachet-yellow, $cachet_dark-yellow);
+  @include card-variant($cachet_dark-yellow, $alert-warning-text);
 }

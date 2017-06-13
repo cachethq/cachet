@@ -52,10 +52,10 @@ body.dashboard {
                 @extend .text-center;
                 padding: 10px;
                 i {
-                    @extend .visible-sm;
+                    // @extend .visible-sm-up;
                 }
                 span {
-                    @extend .hidden-sm;
+                    // @extend .hidden-sm-down;
                 }
             }
             ul {
@@ -124,12 +124,12 @@ body.dashboard {
             }
             & > ul > li > a {
                 & > span {
-                    @extend .hidden-sm;
+                    // @extend .hidden-sm;
                 }
             }
         }
         .bottom-menu-sidebar {
-            @extend .hidden-sm;
+            // @extend .hidden-sm;
             position: fixed;
             bottom: 0;
             width: 237px;
@@ -153,7 +153,7 @@ body.dashboard {
     }
 
     // Sidebar media queries
-    @media (min-width: $screen-xs-max) {
+    @include media-breakpoint-only(xs) {
         .sidebar {
             width: $sidebar-normal-width;
         }
@@ -163,7 +163,7 @@ body.dashboard {
         }
     }
 
-    @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    @include media-breakpoint-down(sm) {
         .sidebar {
             width: 80px;
             left: 150px;
@@ -272,7 +272,7 @@ body.dashboard {
     }
 
     // Sub-sidebar media queries
-    @media (max-width: $screen-xs-max) {
+    @include media-breakpoint-only(xs) {
         .sub-sidebar {
             position: relative;
             margin-left: 0;
@@ -286,7 +286,7 @@ body.dashboard {
 
     }
 
-    @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    @include media-breakpoint-down(sm) {
         .sub-sidebar {
             margin-left: 80px;
             width: 25%;

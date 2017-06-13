@@ -8,7 +8,11 @@
   -webkit-text-size-adjust: 100%;
   line-height: 1.5;
   color: #24292e;
+<<<<<<< ours
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+=======
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+>>>>>>> theirs
   font-size: 16px;
   line-height: 1.5;
   word-wrap: break-word;
@@ -53,11 +57,19 @@
 
 .markdown-body .pl-v,
 .markdown-body .pl-smw {
+<<<<<<< ours
   color: #e36209;
 }
 
 .markdown-body .pl-bu {
   color: #b31d28;
+=======
+  color: #ed6a43;
+}
+
+.markdown-body .pl-bu {
+  color: #b52a1d;
+>>>>>>> theirs
 }
 
 .markdown-body .pl-ii {
@@ -68,6 +80,15 @@
 .markdown-body .pl-c2 {
   color: #fafbfc;
   background-color: #d73a49;
+}
+
+.markdown-body .pl-c2::before {
+  content: "^M";
+}
+
+.markdown-body .pl-c2 {
+  color: #f8f8f8;
+  background-color: #b52a1d;
 }
 
 .markdown-body .pl-c2::before {
@@ -120,6 +141,16 @@
   background-color: #005cc5;
 }
 
+.markdown-body .pl-mc {
+  color: #ef9700;
+  background-color: #ffe3b4;
+}
+
+.markdown-body .pl-mi2 {
+  color: #d8d8d8;
+  background-color: #808080;
+}
+
 .markdown-body .pl-mdr {
   font-weight: bold;
   color: #6f42c1;
@@ -136,6 +167,19 @@
 .markdown-body .pl-corl {
   text-decoration: underline;
   color: #032f62;
+}
+
+.markdown-body .pl-ba {
+  color: #595e62;
+}
+
+.markdown-body .pl-sg {
+  color: #c0c0c0;
+}
+
+.markdown-body .pl-corl {
+  text-decoration: underline;
+  color: #183691;
 }
 
 .markdown-body .octicon {
@@ -669,11 +713,19 @@
   line-height: 10px;
   color: #444d56;
   vertical-align: middle;
+<<<<<<< ours
   background-color: #fafbfc;
   border: solid 1px #d1d5da;
   border-bottom-color: #c6cbd1;
   border-radius: 3px;
   box-shadow: inset 0 -1px 0 #c6cbd1;
+=======
+  background-color: #fcfcfc;
+  border: solid 1px #c6cbd1;
+  border-bottom-color: #959da5;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #959da5;
+>>>>>>> theirs
 }
 
 .markdown-body :checked+.radio-label {

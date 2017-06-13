@@ -43,7 +43,7 @@ textarea {
 }
 
 .component-inline {
-    @media (max-width: $screen-xs-max) {
+    @include media-breakpoint-down(sm) {
         .radio-items {
             text-align: left;
             .radio-inline {
