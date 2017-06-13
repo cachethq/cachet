@@ -61,6 +61,7 @@ class ComponentGroup extends Model implements HasPresenter
      */
     protected $casts = [
         'name'      => 'string',
+        'slug'      => 'string',
         'order'     => 'int',
         'collapsed' => 'int',
         'visible'   => 'int',
@@ -71,7 +72,13 @@ class ComponentGroup extends Model implements HasPresenter
      *
      * @var string[]
      */
-    protected $fillable = ['name', 'order', 'collapsed', 'visible'];
+    protected $fillable = [
+        'name',
+        'slug',
+        'order',
+        'collapsed',
+        'visible',
+    ];
 
     /**
      * The validation rules.
@@ -80,6 +87,7 @@ class ComponentGroup extends Model implements HasPresenter
      */
     public $rules = [
         'name'      => 'required|string',
+        'slug'      => 'required|string',
         'order'     => 'required|int',
         'collapsed' => 'required|int|between:0,4',
         'visible'   => 'required|bool',
@@ -93,6 +101,7 @@ class ComponentGroup extends Model implements HasPresenter
     protected $searchable = [
         'id',
         'name',
+        'slug',
         'order',
         'collapsed',
         'visible',
@@ -106,6 +115,7 @@ class ComponentGroup extends Model implements HasPresenter
     protected $sortable = [
         'id',
         'name',
+        'slug',
         'order',
         'collapsed',
         'visible',
@@ -192,5 +202,15 @@ class ComponentGroup extends Model implements HasPresenter
     {
         return $query->whereIn('id', $usedComponentGroups)
             ->orderBy('order');
+    }
+
+    /**
+     * Get the route key for the model.
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'slug';
     }
 }
