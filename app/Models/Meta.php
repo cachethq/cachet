@@ -37,6 +37,18 @@ class Meta extends Model
     ];
 
     /**
+     * The fillable properties.
+     *
+     * @var string[]
+     */
+    protected $fillable = [
+        'key',
+        'value',
+        'meta_id',
+        'meta_type',
+    ];
+
+    /**
      * The validation rules.
      *
      * @var string[]
