@@ -59,8 +59,9 @@
         "fzaninotto/faker": "^1.6",
         "graham-campbell/testbench-core": "^1.1",
         "laravel/browser-kit-testing": "^1.0",
-        "mockery/mockery": "0.9.7",
-        "phpunit/phpunit": "5.7.6",
+        "mockery/mockery": "0.9.5",
+        "nikic/php-parser": "^3.0",
+        "phpunit/phpunit": "5.7.20",
         "symfony/css-selector": "^3.1",
         "symfony/dom-crawler": "^3.1",
         "tightenco/mailthief": "^0.3.2"
