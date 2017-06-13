@@ -154,4 +154,24 @@ class IncidentTest extends AbstractApiTestCase
         $this->delete('/api/v1/incidents/1');
         $this->assertResponseStatus(204);
     }
+
+    public function testCreateIncidentWithMeta()
+    {
+        $this->beUser();
+
+        $this->post('/api/v1/incidents', [
+            'name'    => 'Foo',
+            'message' => 'Lorem ipsum dolor sit amet',
+            'status'  => 1,
+            'meta'    => [
+                'id' => 123456789,
+            ],
+        ]);
+        $this->seeJson([
+            'meta' => [
+                'id' => 123456789,
+            ],
+        ]);
+        $this->assertResponseOk();
+    }
 }

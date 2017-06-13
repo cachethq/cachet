@@ -18,6 +18,7 @@ use CachetHQ\Cachet\Bus\Exceptions\Incident\InvalidIncidentTimestampException;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentTemplate;
+use CachetHQ\Cachet\Models\Meta;
 use CachetHQ\Cachet\Services\Dates\DateFactory;
 use Carbon\Carbon;
 use Illuminate\Contracts\Auth\Guard;
@@ -99,6 +100,18 @@ class CreateIncidentCommandHandler
 
         // Create the incident
         $incident = Incident::create($data);
+
+        // Store any meta?
+        if ($meta = $command->meta) {
+            foreach ($meta as $key => $value) {
+                Meta::create([
+                    'key'       => $key,
+                    'value'     => $value,
+                    'meta_type' => 'incidents',
+                    'meta_id'   => $incident->id,
+                ]);
+            }
+        }
 
         // Update the component.
         if ($component = Component::find($command->component_id)) {
