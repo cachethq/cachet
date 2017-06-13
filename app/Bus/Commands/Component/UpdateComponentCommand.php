@@ -123,7 +123,7 @@ final class UpdateComponentCommand
         $this->component = $component;
         $this->name = $name;
         $this->description = $description;
-        $this->status = (int) $status;
+        $this->status = $status;
         $this->link = $link;
         $this->order = $order;
         $this->group_id = $group_id;
