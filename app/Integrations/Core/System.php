@@ -13,7 +13,6 @@ namespace CachetHQ\Cachet\Integrations\Core;
 
 use CachetHQ\Cachet\Integrations\Contracts\System as SystemContract;
 use CachetHQ\Cachet\Models\Component;
-use CachetHQ\Cachet\Models\Incident;
 use Illuminate\Contracts\Config\Repository;
 
 /**
@@ -66,23 +65,6 @@ class System implements SystemContract
                 'system_message' => trans_choice('cachet.service.major', $totalComponents),
                 'favicon'        => 'favicon-high-alert',
             ];
-        } elseif (Component::enabled()->notStatus(1)->count() === 0) {
-            // If all our components are ok, do we have any non-fixed incidents?
-            $incidents = Incident::orderBy('occurred_at', 'desc')->get()->filter(function ($incident) {
-                return $incident->status !== Incident::FIXED;
-            });
-            $incidentCount = $incidents->count();
-            $unresolvedCount = $incidents->filter(function ($incident) {
-                return !$incident->is_resolved;
-            })->count();
-
-            if ($incidentCount === 0 || ($incidentCount >= 1 && $unresolvedCount === 0)) {
-                $status = [
-                    'system_status'  => 'success',
-                    'system_message' => trans_choice('cachet.service.good', $totalComponents),
-                    'favicon'        => 'favicon',
-                ];
-            }
         } elseif (Component::enabled()->whereIn('status', [2, 3])->count() > 0) {
             $status['favicon'] = 'favicon-medium-alert';
         }
