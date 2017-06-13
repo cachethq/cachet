@@ -40,6 +40,7 @@ class CreateIncidentCommandTest extends AbstractTestCase
             'occurred_at'      => null,
             'template'         => null,
             'template_vars'    => [],
+            'meta'             => [],
         ];
 
         $object = new CreateIncidentCommand(
@@ -53,7 +54,8 @@ class CreateIncidentCommandTest extends AbstractTestCase
             $params['stickied'],
             $params['occurred_at'],
             $params['template'],
-            $params['template_vars']
+            $params['template_vars'],
+            $params['meta']
         );
 
         return compact('params', 'object');

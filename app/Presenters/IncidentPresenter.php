@@ -280,6 +280,16 @@ class IncidentPresenter extends BasePresenter implements Arrayable
     }
 
     /**
+     * Return the meta in a key value pair.
+     *
+     * @return array
+     */
+    public function meta()
+    {
+        return $this->wrappedObject->meta->pluck('value', 'key')->all();
+    }
+
+    /**
      * Convert the presenter instance to an array.
      *
      * @return string[]
@@ -294,6 +304,7 @@ class IncidentPresenter extends BasePresenter implements Arrayable
             'latest_icon'         => $this->latest_icon(),
             'permalink'           => $this->permalink(),
             'duration'            => $this->duration(),
+            'meta'                => $this->meta(),
             'occurred_at'         => $this->occurred_at(),
             'created_at'          => $this->created_at(),
             'updated_at'          => $this->updated_at(),

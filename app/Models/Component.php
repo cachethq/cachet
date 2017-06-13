@@ -135,6 +135,16 @@ class Component extends Model implements HasPresenter
     }
 
     /**
+     * Get all of the meta relation.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
+     */
+    public function meta()
+    {
+        return $this->morphMany(Meta::class, 'meta');
+    }
+
+    /**
      * Get the tags relation.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany

@@ -145,7 +145,10 @@ class Incident extends Model implements HasPresenter
      *
      * @var string[]
      */
-    protected $with = ['updates'];
+    protected $with = [
+        'meta',
+        'updates',
+    ];
 
     /**
      * Get the component relation.
@@ -155,6 +158,16 @@ class Incident extends Model implements HasPresenter
     public function component()
     {
         return $this->belongsTo(Component::class, 'component_id', 'id');
+    }
+
+    /**
+     * Get all of the meta relation.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
+     */
+    public function meta()
+    {
+        return $this->morphMany(Meta::class, 'meta');
     }
 
     /**
