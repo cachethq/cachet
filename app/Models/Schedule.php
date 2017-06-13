@@ -132,6 +132,26 @@ class Schedule extends Model implements HasPresenter
     protected $with = ['components'];
 
     /**
+     * Get the components relation.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function components()
+    {
+        return $this->hasMany(ScheduleComponent::class);
+    }
+
+    /**
+     * Get all of the meta relation.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
+     */
+    public function meta()
+    {
+        return $this->morphMany(Meta::class, 'meta');
+    }
+
+    /**
      * Scopes schedules to those in the future.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
@@ -153,16 +173,6 @@ class Schedule extends Model implements HasPresenter
     public function scopePastSchedules($query)
     {
         return $query->where('status', '<', self::COMPLETE)->where('scheduled_at', '<=', Carbon::now());
-    }
-
-    /**
-     * Get the components relation.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function components()
-    {
-        return $this->hasMany(ScheduleComponent::class);
     }
 
     /**
