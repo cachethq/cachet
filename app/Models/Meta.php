@@ -68,7 +68,7 @@ class Meta extends Model
      */
     protected $table = 'meta';
 
-    /**
+   /**
     * Get all of the owning meta models.
     *
     * @return \Illuminate\Database\Eloquent\Relations\MorphTo
