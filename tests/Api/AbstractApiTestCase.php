@@ -14,18 +14,22 @@ namespace CachetHQ\Tests\Cachet\Api;
 use CachetHQ\Cachet\Models\User;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Laravel\BrowserKitTesting\Concerns\MakesHttpRequests;
 
 /**
  * This is the abstract api test case class.
  *
  * @author Graham Campbell <graham@alt-three.com>
+ * @author James Brooks <james@alt-three.com>
  */
 abstract class AbstractApiTestCase extends AbstractTestCase
 {
-    use DatabaseMigrations;
+    use MakesHttpRequests, DatabaseMigrations;
 
     /**
      * Become a user.
+     *
+     * @return void
      */
     protected function beUser()
     {
