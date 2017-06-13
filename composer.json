@@ -45,8 +45,8 @@
         "graham-campbell/markdown": "^7.1",
         "guzzlehttp/guzzle": "^6.2.1",
         "jenssegers/date": "^3.2",
-        "laravel/framework": "5.3.*",
-        "mccool/laravel-auto-presenter": "^4.3",
+        "laravel/framework": "^5.4",
+        "mccool/laravel-auto-presenter": "^5.0",
         "nexmo/client": "@beta",
         "pragmarx/google2fa": "^0.7.1",
         "predis/predis": "^1.1",
@@ -54,12 +54,14 @@
         "twig/twig": "^1.26.1"
     },
     "require-dev": {
-        "alt-three/testbench": "^1.9",
+        "alt-three/testbench": "^1.11",
         "filp/whoops": "^2.1",
         "fzaninotto/faker": "^1.6",
         "graham-campbell/testbench-core": "^1.1",
+        "laravel/browser-kit-testing": "^1.0",
         "mockery/mockery": "0.9.5",
-        "phpunit/phpunit": "~5.0",
+        "nikic/php-parser": "^3.0",
+        "phpunit/phpunit": "5.7.20",
         "symfony/css-selector": "^3.1",
         "symfony/dom-crawler": "^3.1",
         "tightenco/mailthief": "^0.3.2"
@@ -113,6 +115,6 @@
             "dev-master": "2.4-dev"
         }
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true
 }

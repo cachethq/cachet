@@ -45,8 +45,6 @@ class SchedulePresenter extends BasePresenter implements Arrayable
     public function __construct(DateFactory $dates, Schedule $resource)
     {
         $this->dates = $dates;
-
-        parent::__construct($resource);
     }
 
     /**
