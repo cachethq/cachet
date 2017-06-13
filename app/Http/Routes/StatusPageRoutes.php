@@ -44,6 +44,11 @@ class StatusPageRoutes
                 'uses' => 'StatusPageController@showIndex',
             ]);
 
+            $router->get('groups/{component_group}', [
+                'as'   => 'get:incident',
+                'uses' => 'StatusPageController@showGroup',
+            ]);
+
             $router->get('incidents/{incident}', [
                 'as'   => 'get:incident',
                 'uses' => 'StatusPageController@showIncident',

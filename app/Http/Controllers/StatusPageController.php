@@ -14,6 +14,7 @@ namespace CachetHQ\Cachet\Http\Controllers;
 use AltThree\Badger\Facades\Badger;
 use CachetHQ\Cachet\Http\Controllers\Api\AbstractApiController;
 use CachetHQ\Cachet\Models\Component;
+use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\Schedule;
@@ -90,6 +91,69 @@ class StatusPageController extends AbstractApiController
         }, SORT_REGULAR, true);
 
         return View::make('index')
+            ->withDaysToShow($daysToShow)
+            ->withAllIncidents($allIncidents)
+            ->withCanPageForward((bool) $today->gt($startDate))
+            ->withCanPageBackward(Incident::where('occurred_at', '<', $startDate->format('Y-m-d'))->count() > 0)
+            ->withPreviousDate($startDate->copy()->subDays($daysToShow)->toDateString())
+            ->withNextDate($startDate->copy()->addDays($daysToShow)->toDateString());
+    }
+
+    /**
+     * Shows all incidents for a given group.
+     *
+     * @param \CachetHQ\Cachet\Models\ComponentGroup $group
+     *
+     * @return \Illuminate\View\View
+     */
+    public function showGroup(ComponentGroup $group)
+    {
+        $today = Date::now();
+        $startDate = Date::now();
+
+        // Check if we have another starting date
+        if (Binput::has('start_date')) {
+            try {
+                // If date provided is valid
+                $oldDate = Date::createFromFormat('Y-m-d', Binput::get('start_date'));
+
+                // If trying to get a future date fallback to today
+                if ($today->gt($oldDate)) {
+                    $startDate = $oldDate;
+                }
+            } catch (Exception $e) {
+                // Fallback to today
+            }
+        }
+
+        $daysToShow = max(0, (int) Config::get('setting.app_incident_days', 0) - 1);
+        $incidentDays = range(0, $daysToShow);
+
+        $allIncidents = Incident::where('visible', '>=', (int) !Auth::check())->whereBetween('occurred_at', [
+            $startDate->copy()->subDays($daysToShow)->format('Y-m-d').' 00:00:00',
+            $startDate->format('Y-m-d').' 23:59:59',
+        ])->orderBy('occurred_at', 'desc')->get()->groupBy(function (Incident $incident) {
+            return app(DateFactory::class)->make($incident->occurred_at)->toDateString();
+        });
+
+        // Add in days that have no incidents
+        if (Config::get('setting.only_disrupted_days') === false) {
+            foreach ($incidentDays as $i) {
+                $date = app(DateFactory::class)->make($startDate)->subDays($i);
+
+                if (!isset($allIncidents[$date->toDateString()])) {
+                    $allIncidents[$date->toDateString()] = [];
+                }
+            }
+        }
+
+        // Sort the array so it takes into account the added days
+        $allIncidents = $allIncidents->sortBy(function ($value, $key) {
+            return strtotime($key);
+        }, SORT_REGULAR, true);
+
+        return View::make('group')
+            ->withGroup($group)
             ->withDaysToShow($daysToShow)
             ->withAllIncidents($allIncidents)
             ->withCanPageForward((bool) $today->gt($startDate))
