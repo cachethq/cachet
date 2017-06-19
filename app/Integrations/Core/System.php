@@ -42,7 +42,7 @@ class System implements SystemContract
      * Create a new system instance.
      *
      * @param \Illuminate\Contracts\Config\Repository $config
-     * @param \Illuminate\Contracts\Auth\Guard.       $auth
+     * @param \Illuminate\Contracts\Auth\Guard        $auth
      *
      * @return void
      */
