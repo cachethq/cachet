@@ -18,7 +18,6 @@
     "eonasdan-bootstrap-datetimepicker": "^4.17.46",
     "es5-shim": "^4.5.9",
     "github-markdown-css": "^2.3.0",
-    "gulp": "~3.9.1",
     "ionicons": "~2.0",
     "jquery": "~2.2",
     "jquery-minicolors": "^2.1.10",

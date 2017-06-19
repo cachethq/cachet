@@ -49,12 +49,12 @@ You'll need to install Node.js, Bower and Gulp.
 To get started you can do the following:
 
 1. Install Node.js and our dev dependencies.
-2. Run `gulp`
+2. Run `npm run dev`
 3. Make your changes to the SCSS files in `./resources/assets/sass/`
 
-If you're making a lot of changes, you'll find that running `gulp watch` will make life easier for you!
+If you're making a lot of changes, you'll find that running `npm run watch` will make life easier for you!
 
-When you're happy with your changes, please run `gulp --production` to minify the assets.
+When you're happy with your changes, please run `npm run prod` to minify the assets.
 
 ## Contributing as a developer
 
