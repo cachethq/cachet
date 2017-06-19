@@ -49,7 +49,7 @@
     @if($enable_external_dependencies)
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&subset={{ $font_subset }}" rel="stylesheet" type="text/css">
     @endif
-    <link rel="stylesheet" href="{{ elixir('dist/css/app.css') }}">
+    <link rel="stylesheet" href="{{ mix('dist/css/app.css') }}">
 
     @include('partials.stylesheet')
 
@@ -65,7 +65,7 @@
         var Global = {};
         Global.locale = '{{ $app_locale }}';
     </script>
-    <script src="{{ elixir('dist/js/all.js') }}"></script>
+    <script src="{{ mix('dist/js/all.js') }}"></script>
 </head>
 <body class="status-page @yield('bodyClass')">
     @yield('outer-content')
