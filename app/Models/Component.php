@@ -193,6 +193,23 @@ class Component extends Model implements HasPresenter
     }
 
     /**
+     * Find all components which are within visible groups.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @param bool                                  $authenticated
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeAuthenticated(Builder $query, $authenticated)
+    {
+        return $query->when(!$authenticated, function (Builder $query) {
+            return $query->whereDoesntHave('group', function (Builder $query) {
+                $query->where('visible', ComponentGroup::VISIBLE_AUTHENTICATED);
+            });
+        });
+    }
+
+    /**
      * Finds all components which are disabled.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query

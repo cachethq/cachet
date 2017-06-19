@@ -14,6 +14,7 @@ namespace CachetHQ\Cachet\Integrations\Core;
 use CachetHQ\Cachet\Integrations\Contracts\System as SystemContract;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
+use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Config\Repository;
 
 /**
@@ -31,15 +32,24 @@ class System implements SystemContract
     protected $config;
 
     /**
+     * The illuminate guard instance.
+     *
+     * @var \Illuminate\Contracts\Auth\Guard
+     */
+    protected $auth;
+
+    /**
      * Create a new system instance.
      *
      * @param \Illuminate\Contracts\Config\Repository $config
+     * @param \Illuminate\Contracts\Auth\Guard        $auth
      *
      * @return void
      */
-    public function __construct(Repository $config)
+    public function __construct(Repository $config, Guard $auth)
     {
         $this->config = $config;
+        $this->auth = $auth;
     }
 
     /**
@@ -49,8 +59,10 @@ class System implements SystemContract
      */
     public function getStatus()
     {
-        $totalComponents = Component::enabled()->count();
-        $majorOutages = Component::enabled()->status(4)->count();
+        $includePrivate = $this->auth->check();
+
+        $totalComponents = Component::enabled()->authenticated($includePrivate)->count();
+        $majorOutages = Component::enabled()->authenticated($includePrivate)->status(4)->count();
         $isMajorOutage = $totalComponents ? ($majorOutages / $totalComponents) >= 0.5 : false;
 
         // Default data
@@ -66,7 +78,7 @@ class System implements SystemContract
                 'system_message' => trans_choice('cachet.service.major', $totalComponents),
                 'favicon'        => 'favicon-high-alert',
             ];
-        } elseif (Component::enabled()->notStatus(1)->count() === 0) {
+        } elseif (Component::enabled()->authenticated($includePrivate)->notStatus(1)->count() === 0) {
             // If all our components are ok, do we have any non-fixed incidents?
             $incidents = Incident::orderBy('occurred_at', 'desc')->get()->filter(function ($incident) {
                 return $incident->status !== Incident::FIXED;
@@ -83,7 +95,7 @@ class System implements SystemContract
                     'favicon'        => 'favicon',
                 ];
             }
-        } elseif (Component::enabled()->whereIn('status', [2, 3])->count() > 0) {
+        } elseif (Component::enabled()->authenticated($includePrivate)->whereIn('status', [2, 3])->count() > 0) {
             $status['favicon'] = 'favicon-medium-alert';
         }
 

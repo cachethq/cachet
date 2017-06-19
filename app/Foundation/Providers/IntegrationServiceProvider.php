@@ -97,8 +97,9 @@ class IntegrationServiceProvider extends ServiceProvider
     {
         $this->app->singleton(SystemContract::class, function (Container $app) {
             $config = $app['config'];
+            $auth = $app['auth.driver'];
 
-            return new System($config);
+            return new System($config, $auth);
         });
     }
 
