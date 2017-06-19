@@ -326,16 +326,16 @@
         },
         {
             "name": "alt-three/twitter",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/AltThree/Twitter.git",
-                "reference": "b4e4a33bc76f8e444359fd772bb4f063a21a578f"
+                "reference": "2a00a4d416cb97f2ad4e20bb5a31fe02b6a19aab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/AltThree/Twitter/zipball/b4e4a33bc76f8e444359fd772bb4f063a21a578f",
-                "reference": "b4e4a33bc76f8e444359fd772bb4f063a21a578f",
+                "url": "https://api.github.com/repos/AltThree/Twitter/zipball/2a00a4d416cb97f2ad4e20bb5a31fe02b6a19aab",
+                "reference": "2a00a4d416cb97f2ad4e20bb5a31fe02b6a19aab",
                 "shasum": ""
             },
             "require": {
@@ -385,7 +385,7 @@
                 "parser",
                 "twitter"
             ],
-            "time": "2017-03-03T21:19:20+00:00"
+            "time": "2017-06-01T22:25:39+00:00"
         },
         {
             "name": "alt-three/validator",
@@ -449,16 +449,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.29.4",
+            "version": "3.29.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "f714ebbcc23945b1c9b4b0e5fdc339cef33dedf6"
+                "reference": "76540001ff938c072db5367a7c945296984b999b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/f714ebbcc23945b1c9b4b0e5fdc339cef33dedf6",
-                "reference": "f714ebbcc23945b1c9b4b0e5fdc339cef33dedf6",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/76540001ff938c072db5367a7c945296984b999b",
+                "reference": "76540001ff938c072db5367a7c945296984b999b",
                 "shasum": ""
             },
             "require": {
@@ -525,7 +525,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2017-06-13T17:38:41+00:00"
+            "time": "2017-06-16T17:29:33+00:00"
         },
         {
             "name": "backup-manager/backup-manager",
@@ -1910,16 +1910,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.4.26",
+            "version": "v5.4.27",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "a7ebbfab64111e24f8e584db64e2be9279ded357"
+                "reference": "66f5e1b37cbd66e730ea18850ded6dc0ad570404"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/a7ebbfab64111e24f8e584db64e2be9279ded357",
-                "reference": "a7ebbfab64111e24f8e584db64e2be9279ded357",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/66f5e1b37cbd66e730ea18850ded6dc0ad570404",
+                "reference": "66f5e1b37cbd66e730ea18850ded6dc0ad570404",
                 "shasum": ""
             },
             "require": {
@@ -2035,7 +2035,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2017-06-13T18:58:49+00:00"
+            "time": "2017-06-15T19:08:25+00:00"
         },
         {
             "name": "lcobucci/jwt",
@@ -2311,16 +2311,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "1.22.1",
+            "version": "1.23.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "1e044bc4b34e91743943479f1be7a1d5eb93add0"
+                "reference": "fd8c787753b3a2ad11bc60c063cff1358a32a3b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/1e044bc4b34e91743943479f1be7a1d5eb93add0",
-                "reference": "1e044bc4b34e91743943479f1be7a1d5eb93add0",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/fd8c787753b3a2ad11bc60c063cff1358a32a3b4",
+                "reference": "fd8c787753b3a2ad11bc60c063cff1358a32a3b4",
                 "shasum": ""
             },
             "require": {
@@ -2341,7 +2341,7 @@
                 "phpunit/phpunit-mock-objects": "2.3.0",
                 "ruflin/elastica": ">=0.90 <3.0",
                 "sentry/sentry": "^0.13",
-                "swiftmailer/swiftmailer": "~5.3"
+                "swiftmailer/swiftmailer": "^5.3|^6.0"
             },
             "suggest": {
                 "aws/aws-sdk-php": "Allow sending log messages to AWS services like DynamoDB",
@@ -2385,7 +2385,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2017-03-13T07:08:03+00:00"
+            "time": "2017-06-19T01:22:40+00:00"
         },
         {
             "name": "mtdowling/cron-expression",
