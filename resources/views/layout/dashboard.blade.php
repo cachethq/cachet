@@ -25,7 +25,7 @@
     @if($enable_external_dependencies)
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&subset={{ $font_subset }}" rel="stylesheet" type="text/css">
     @endif
-    <link rel="stylesheet" href="{{ elixir('dist/css/dashboard.css') }}">
+    <link rel="stylesheet" href="{{ mix('dist/css/dashboard/dashboard.css') }}">
     @yield('css')
 
     @include('partials.crowdin')
@@ -34,7 +34,7 @@
         var Global = {};
         Global.locale = '{{ $app_locale }}';
     </script>
-    <script src="{{ elixir('dist/js/all.js') }}"></script>
+    <script src="{{ mix('dist/js/all.js') }}"></script>
 </head>
 
 <body class="dashboard">
