@@ -29,9 +29,9 @@ class IncidentUpdateTest extends AbstractApiTestCase
 
         $this->assertResponseOk();
 
-        $this->seeJson(['id' => $updates[0]->id]);
-        $this->seeJson(['id' => $updates[1]->id]);
-        $this->seeJson(['id' => $updates[2]->id]);
+        $this->seeJsonContains(['id' => $updates[0]->id]);
+        $this->seeJsonContains(['id' => $updates[1]->id]);
+        $this->seeJsonContains(['id' => $updates[2]->id]);
     }
 
     public function testGetInvalidIncidentUpdate()
@@ -71,7 +71,7 @@ class IncidentUpdateTest extends AbstractApiTestCase
 
         $this->assertResponseOk();
 
-        $this->seeJson(['incident_id' => $incident->id]);
+        $this->seeJsonContains(['incident_id' => $incident->id]);
     }
 
     public function testPutIncidentUpdate()
@@ -86,7 +86,7 @@ class IncidentUpdateTest extends AbstractApiTestCase
 
         $this->assertResponseOk();
 
-        $this->seeJson(['message' => 'Message updated :smile:']);
+        $this->seeJsonContains(['message' => 'Message updated :smile:']);
     }
 
     public function testDeleteIncidentUpdate()

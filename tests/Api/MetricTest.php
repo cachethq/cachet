@@ -24,9 +24,9 @@ class MetricTest extends AbstractApiTestCase
         $metrics = factory('CachetHQ\Cachet\Models\Metric', 3)->create();
 
         $this->get('/api/v1/metrics');
-        $this->seeJson(['id' => $metrics[0]->id]);
-        $this->seeJson(['id' => $metrics[1]->id]);
-        $this->seeJson(['id' => $metrics[2]->id]);
+        $this->seeJsonContains(['id' => $metrics[0]->id]);
+        $this->seeJsonContains(['id' => $metrics[1]->id]);
+        $this->seeJsonContains(['id' => $metrics[2]->id]);
         $this->assertResponseOk();
     }
 
@@ -65,7 +65,7 @@ class MetricTest extends AbstractApiTestCase
             'threshold'     => 5,
             'order'         => 1,
         ]);
-        $this->seeJson(['name' => 'Foo']);
+        $this->seeJsonContains(['name' => 'Foo']);
         $this->assertResponseOk();
     }
 
@@ -74,7 +74,7 @@ class MetricTest extends AbstractApiTestCase
         $incident = factory('CachetHQ\Cachet\Models\Metric')->create();
 
         $this->get('/api/v1/metrics/1');
-        $this->seeJson(['name' => $incident->name]);
+        $this->seeJsonContains(['name' => $incident->name]);
         $this->assertResponseOk();
     }
 
@@ -87,7 +87,7 @@ class MetricTest extends AbstractApiTestCase
             'name' => 'Foo',
             'view' => 2,
         ]);
-        $this->seeJson(['name' => 'Foo', 'default_view' => 2]);
+        $this->seeJsonContains(['name' => 'Foo', 'default_view' => 2]);
         $this->assertResponseOk();
     }
 

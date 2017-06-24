@@ -22,7 +22,7 @@ class GeneralTest extends AbstractApiTestCase
     public function testGetPing()
     {
         $this->get('/api/v1/ping');
-        $this->seeJson(['data' => 'Pong!']);
+        $this->seeJsonContains(['data' => 'Pong!']);
         $this->assertResponseOk();
         $this->seeHeader('Content-Type', 'application/json');
     }
