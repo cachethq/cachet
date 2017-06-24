@@ -23,6 +23,7 @@ use CachetHQ\Cachet\Models\Subscriber;
 use CachetHQ\Cachet\Models\Subscription;
 use GrahamCampbell\Binput\Facades\Binput;
 use GrahamCampbell\Markdown\Facades\Markdown;
+use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Config;
@@ -37,6 +38,25 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
  */
 class SubscribeController extends Controller
 {
+    /**
+     * The illuminate guard instance.
+     *
+     * @var \Illuminate\Contracts\Auth\Guard
+     */
+    protected $auth;
+
+    /**
+     * Create a new subscribe controller instance.
+     *
+     * @param \Illuminate\Contracts\Auth\Guard $auth
+     *
+     * @return void
+     */
+    public function __construct(Guard $auth)
+    {
+        $this->auth = $auth;
+    }
+
     /**
      * Show the subscribe by email page.
      *
@@ -146,10 +166,12 @@ class SubscribeController extends Controller
             throw new NotFoundHttpException();
         }
 
+        $includePrivate = $this->auth->check();
+
         $subscriber = Subscriber::where('verify_code', '=', $code)->first();
-        $usedComponentGroups = Component::enabled()->where('group_id', '>', 0)->groupBy('group_id')->pluck('group_id');
+        $usedComponentGroups = Component::enabled()->authenticated($includePrivate)->where('group_id', '>', 0)->groupBy('group_id')->pluck('group_id');
         $componentGroups = ComponentGroup::whereIn('id', $usedComponentGroups)->orderBy('order')->get();
-        $ungroupedComponents = Component::enabled()->where('group_id', '=', 0)->orderBy('order')->orderBy('created_at')->get();
+        $ungroupedComponents = Component::enabled()->authenticated($includePrivate)->where('group_id', '=', 0)->orderBy('order')->orderBy('created_at')->get();
 
         if (!$subscriber) {
             throw new BadRequestHttpException();
