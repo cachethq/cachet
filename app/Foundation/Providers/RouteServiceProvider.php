@@ -89,7 +89,10 @@ class RouteServiceProvider extends ServiceProvider
         $router->group(['namespace' => $this->namespace, 'as' => 'core::'], function (Router $router) {
             $path = app_path('Http/Routes');
 
-            foreach (glob("{$path}/*{,/*}.php", GLOB_BRACE) as $file) {
+            $globBrace = defined('GLOB_BRACE') ? GLOB_BRACE : 0;
+            $globFlag = $globBrace;
+
+            foreach (glob("{$path}/*{,/*}.php", $globFlag) as $file) {
                 $class = substr($file, strlen($path));
                 $class = str_replace('/', '\\', $class);
                 $class = substr($class, 0, -4);
