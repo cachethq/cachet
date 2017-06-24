@@ -108,7 +108,7 @@ class ComponentGroupTest extends AbstractApiTestCase
         $this->createComponentGroups();
 
         $this->get('/api/v1/components/groups')
-            ->seeJsonContains(['name' => self::COMPONENT_GROUP_1_NAME]);;
+            ->seeJsonContains(['name' => self::COMPONENT_GROUP_1_NAME]);
         $this->assertResponseOk();
     }
 
