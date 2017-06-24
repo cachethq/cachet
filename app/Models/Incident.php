@@ -76,7 +76,7 @@ class Incident extends Model implements HasPresenter
     protected $casts = [
         'visible'     => 'int',
         'stickied'    => 'bool',
-        'occurred_at' => 'date',
+        'occurred_at' => 'datetime',
         'deleted_at'  => 'date',
     ];
 
