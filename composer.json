@@ -54,6 +54,7 @@
         "twig/twig": "^1.26.1"
     },
     "require-dev": {
+        "ext-sqlite3": "*",
         "alt-three/testbench": "^1.11",
         "brianium/paratest": "^0.15.0",
         "filp/whoops": "^2.1",
