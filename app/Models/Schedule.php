@@ -68,8 +68,8 @@ class Schedule extends Model implements HasPresenter
         'name'         => 'string',
         'message'      => 'string',
         'status'       => 'int',
-        'scheduled_at' => 'date',
-        'completed_at' => 'date',
+        'scheduled_at' => 'datetime',
+        'completed_at' => 'datetime',
     ];
 
     /**
