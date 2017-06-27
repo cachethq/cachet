@@ -120,7 +120,7 @@ return [
     |
     */
 
-    'enable_history' => false,
+    'enable_history' => true,
 
 
    /*
