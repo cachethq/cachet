@@ -53,6 +53,7 @@ class UpdateComponentCommandHandler
         event(new ComponentStatusWasChangedEvent($this->auth->user(), $component, $originalStatus, $command->status, $command->silent));
 
         $component->update($this->filter($command));
+        $component->touch();
 
         event(new ComponentWasUpdatedEvent($this->auth->user(), $component));
 
