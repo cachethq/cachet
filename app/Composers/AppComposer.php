@@ -88,5 +88,6 @@ class AppComposer
         $view->withEnableHistory($this->config->get('setting.enable_history'));
         $view->withDashboardLink($this->config->get('setting.dashboard_login_link'));
         $view->withEnableSubscribers($this->config->get('setting.enable_subscribers'));
+        $view->withEnableFeeds($this->config->get('setting.enable_feeds'));
     }
 }
