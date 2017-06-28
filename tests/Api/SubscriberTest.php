@@ -81,9 +81,8 @@ class SubscriberTest extends AbstractApiTestCase
         $this->post('/api/v1/subscribers', [
             'email'         => 'support@alt-three.com',
             'verify'        => true,
-            'subscriptions' => [
+            'components'    => [
                 1,
-                2,
                 3,
             ],
         ]);
@@ -91,6 +90,11 @@ class SubscriberTest extends AbstractApiTestCase
         $this->seeHeader('Content-Type', 'application/json');
         $this->seeJsonContains(['email' => 'support@alt-three.com']);
         $this->seeJsonStructure(['data' => ['subscriptions' => []]]);
+
+        $data = $this->decodeResponseJson();
+        $this->assertCount(2, $data['data']['subscriptions']);
+        $this->assertEquals(1, $data['data']['subscriptions'][0]['component_id']);
+        $this->assertEquals(3, $data['data']['subscriptions'][1]['component_id']);
     }
 
     public function testDeleteSubscriber()

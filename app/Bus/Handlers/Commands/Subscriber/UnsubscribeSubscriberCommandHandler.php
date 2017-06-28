@@ -13,7 +13,6 @@ namespace CachetHQ\Cachet\Bus\Handlers\Commands\Subscriber;
 
 use CachetHQ\Cachet\Bus\Commands\Subscriber\UnsubscribeSubscriberCommand;
 use CachetHQ\Cachet\Bus\Events\Subscriber\SubscriberHasUnsubscribedEvent;
-use CachetHQ\Cachet\Models\Subscriber;
 
 /**
  * This is the unsubscribe subscriber command class.

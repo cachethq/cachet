@@ -13,7 +13,4 @@ before_install:
 
 install: travis_retry composer install --no-interaction --no-suggest
 
-notifications:
-  email: false
-
 script: vendor/bin/paratest -p 4 --max-batch-size 256

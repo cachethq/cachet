@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "24ddfebd513bb6f48357ccd4ccf065c3",
+    "content-hash": "c54768ae2bf05cf41daedaeecdef7b63",
     "packages": [
         {
             "name": "alt-three/badger",
@@ -595,16 +595,16 @@
         },
         {
             "name": "backup-manager/laravel",
-            "version": "1.1.2",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/backup-manager/laravel.git",
-                "reference": "a94b98cd3033c8e5c5958dc3640bf05b0f2df636"
+                "reference": "df53f9c9d8c6be5d7a2638f45d54b8fb7bc51e2b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/backup-manager/laravel/zipball/a94b98cd3033c8e5c5958dc3640bf05b0f2df636",
-                "reference": "a94b98cd3033c8e5c5958dc3640bf05b0f2df636",
+                "url": "https://api.github.com/repos/backup-manager/laravel/zipball/df53f9c9d8c6be5d7a2638f45d54b8fb7bc51e2b",
+                "reference": "df53f9c9d8c6be5d7a2638f45d54b8fb7bc51e2b",
                 "shasum": ""
             },
             "require": {
@@ -647,7 +647,7 @@
                 }
             ],
             "description": "Database backup manager seamlessly integrated with Laravel 4 or 5 with user-definable procedures and support for S3, Dropbox, FTP, SFTP, and more.",
-            "time": "2016-11-15T11:11:05+00:00"
+            "time": "2017-05-15T13:05:54+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -4748,16 +4748,16 @@
         },
         {
             "name": "mockery/mockery",
-            "version": "0.9.5",
+            "version": "0.9.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mockery/mockery.git",
-                "reference": "4db079511a283e5aba1b3c2fb19037c645e70fc2"
+                "reference": "6fdb61243844dc924071d3404bb23994ea0b6856"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mockery/mockery/zipball/4db079511a283e5aba1b3c2fb19037c645e70fc2",
-                "reference": "4db079511a283e5aba1b3c2fb19037c645e70fc2",
+                "url": "https://api.github.com/repos/mockery/mockery/zipball/6fdb61243844dc924071d3404bb23994ea0b6856",
+                "reference": "6fdb61243844dc924071d3404bb23994ea0b6856",
                 "shasum": ""
             },
             "require": {
@@ -4809,7 +4809,7 @@
                 "test double",
                 "testing"
             ],
-            "time": "2016-05-22T21:52:33+00:00"
+            "time": "2017-02-28T12:52:32+00:00"
         },
         {
             "name": "myclabs/deep-copy",
@@ -6223,6 +6223,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "backup-manager/laravel": 20,
         "nexmo/client": 10
     },
     "prefer-stable": true,
