@@ -1,17 +1,17 @@
 language: php
 
+sudo: false
+
 php:
   - 5.6
   - 7.0
   - 7.1
 
-sudo: false
-
 before_install:
   - cp .env.example .env
-  - if [[ $TRAVIS_PHP_VERSION != 7.1 ]] ; then phpenv config-rm xdebug.ini; fi
+  - phpenv config-rm xdebug.ini
 
-install: travis_retry composer install --no-interaction --no-scripts --no-suggest
+install: travis_retry composer install --no-interaction --no-suggest
 
 notifications:
   email: false
