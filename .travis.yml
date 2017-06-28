@@ -12,13 +12,8 @@ php:
   - 7.1
   - hhvm
 
-before_install:
-  - cp .env.example .env
-  - if [[ $TRAVIS_PHP_VERSION == hhvm ]]; then echo 'hhvm.jit = false' >> /etc/hhvm/php.ini; fi
+before_install: cp .env.example .env
 
-install: travis_retry composer install --no-interaction --no-suggest
-
-notifications:
-  email: false
+install: travis_retry composer install --no-interaction --no-scripts --prefer-source
 
 script: vendor/bin/phpunit
