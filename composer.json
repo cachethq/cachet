@@ -28,7 +28,7 @@
         "alt-three/throttle": "^1.0",
         "alt-three/validator": "^1.5",
         "aws/aws-sdk-php": "^3.7",
-        "backup-manager/laravel": "^1.1",
+        "backup-manager/laravel": "dev-master#df53f9c9d8c6be5d7a2638f45d54b8fb7bc51e2b",
         "barryvdh/laravel-cors": "^0.8",
         "doctrine/dbal": "^2.5",
         "fedeisas/laravel-mail-css-inliner": "^1.5",
@@ -49,7 +49,7 @@
         "filp/whoops": "^2.1",
         "fzaninotto/faker": "^1.6",
         "graham-campbell/testbench-core": "^1.1",
-        "mockery/mockery": "0.9.5",
+        "mockery/mockery": "0.9.9",
         "phpunit/phpunit": "4.8.21",
         "symfony/css-selector": "^3.0",
         "symfony/dom-crawler": "^3.0"
