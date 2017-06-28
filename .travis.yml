@@ -22,4 +22,4 @@ install: travis_retry composer install --no-interaction --no-suggest
 notifications:
   email: false
 
-script: vendor/bin/phpunit
+script: vendor/bin/phpunit --verbose --debug
