@@ -57,7 +57,7 @@ class GeneralController extends AbstractApiController
 
         return $this->item([
             'status'  => $system['system_status'],
-            'message' => $system['system_message']
+            'message' => $system['system_message'],
         ]);
     }
 }
