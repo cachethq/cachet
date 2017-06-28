@@ -31,9 +31,9 @@ class ComponentGroupTest extends AbstractApiTestCase
             ->create(['visible' => ComponentGroup::VISIBLE_GUEST]);
 
         $this->get('/api/v1/components/groups');
-        $this->seeJson(['id' => $groups[0]->id]);
-        $this->seeJson(['id' => $groups[1]->id]);
-        $this->seeJson(['id' => $groups[2]->id]);
+        $this->seeJsonContains(['id' => $groups[0]->id]);
+        $this->seeJsonContains(['id' => $groups[1]->id]);
+        $this->seeJsonContains(['id' => $groups[2]->id]);
         $this->assertResponseOk();
     }
 
@@ -68,7 +68,7 @@ class ComponentGroupTest extends AbstractApiTestCase
             'collapsed' => 1,
             'visible'   => ComponentGroup::VISIBLE_GUEST,
         ]);
-        $this->seeJson(['name' => 'Foo', 'order' => 1, 'collapsed' => 1, 'visible' => ComponentGroup::VISIBLE_GUEST]);
+        $this->seeJsonContains(['name' => 'Foo', 'order' => 1, 'collapsed' => 1, 'visible' => ComponentGroup::VISIBLE_GUEST]);
         $this->assertResponseOk();
     }
 
@@ -77,7 +77,7 @@ class ComponentGroupTest extends AbstractApiTestCase
         $group = factory('CachetHQ\Cachet\Models\ComponentGroup')->create();
 
         $this->get('/api/v1/components/groups/1');
-        $this->seeJson(['name' => $group->name]);
+        $this->seeJsonContains(['name' => $group->name]);
         $this->assertResponseOk();
     }
 
@@ -89,7 +89,7 @@ class ComponentGroupTest extends AbstractApiTestCase
         $this->put('/api/v1/components/groups/1', [
             'name' => 'Lorem Ipsum Groupous',
         ]);
-        $this->seeJson(['name' => 'Lorem Ipsum Groupous']);
+        $this->seeJsonContains(['name' => 'Lorem Ipsum Groupous']);
         $this->assertResponseOk();
     }
 
@@ -108,8 +108,7 @@ class ComponentGroupTest extends AbstractApiTestCase
         $this->createComponentGroups();
 
         $this->get('/api/v1/components/groups')
-            ->seeJson(['name' => self::COMPONENT_GROUP_1_NAME])
-            ->dontSeeJson(['name' => self::COMPONENT_GROUP_2_NAME]);
+            ->seeJsonContains(['name' => self::COMPONENT_GROUP_1_NAME]);
         $this->assertResponseOk();
     }
 
@@ -120,8 +119,8 @@ class ComponentGroupTest extends AbstractApiTestCase
             ->signIn();
 
         $this->get('/api/v1/components/groups')
-            ->seeJson(['name' => self::COMPONENT_GROUP_1_NAME])
-            ->seeJson(['name' => self::COMPONENT_GROUP_2_NAME]);
+            ->seeJsonContains(['name' => self::COMPONENT_GROUP_1_NAME])
+            ->seeJsonContains(['name' => self::COMPONENT_GROUP_2_NAME]);
         $this->assertResponseOk();
     }
 

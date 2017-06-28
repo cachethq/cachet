@@ -24,9 +24,9 @@ class IncidentTest extends AbstractApiTestCase
         $incidents = factory('CachetHQ\Cachet\Models\Incident', 3)->create();
 
         $this->get('/api/v1/incidents');
-        $this->seeJson(['id' => $incidents[0]->id]);
-        $this->seeJson(['id' => $incidents[1]->id]);
-        $this->seeJson(['id' => $incidents[2]->id]);
+        $this->seeJsonContains(['id' => $incidents[0]->id]);
+        $this->seeJsonContains(['id' => $incidents[1]->id]);
+        $this->seeJsonContains(['id' => $incidents[2]->id]);
         $this->assertResponseOk();
     }
 
@@ -61,7 +61,7 @@ class IncidentTest extends AbstractApiTestCase
             'visible'  => 1,
             'stickied' => false,
         ]);
-        $this->seeJson(['name' => 'Foo']);
+        $this->seeJsonContains(['name' => 'Foo']);
         $this->assertResponseOk();
     }
 
@@ -80,7 +80,7 @@ class IncidentTest extends AbstractApiTestCase
             'visible'          => 1,
             'stickied'         => false,
         ]);
-        $this->seeJson(['name' => 'Foo']);
+        $this->seeJsonContains(['name' => 'Foo']);
         $this->assertResponseOk();
     }
 
@@ -100,7 +100,7 @@ class IncidentTest extends AbstractApiTestCase
                 'message' => 'Hello there this is a foo!',
             ],
         ]);
-        $this->seeJson([
+        $this->seeJsonContains([
             'name'    => 'Foo',
             'message' => "Name: Foo,\nMessage: Hello there this is a foo!",
         ]);
@@ -111,7 +111,7 @@ class IncidentTest extends AbstractApiTestCase
         $incident = factory('CachetHQ\Cachet\Models\Incident')->create();
 
         $this->get('/api/v1/incidents/1');
-        $this->seeJson(['name' => $incident->name]);
+        $this->seeJsonContains(['name' => $incident->name]);
         $this->assertResponseOk();
     }
 
@@ -123,7 +123,7 @@ class IncidentTest extends AbstractApiTestCase
         $this->put('/api/v1/incidents/1', [
             'name' => 'Foo',
         ]);
-        $this->seeJson(['name' => 'Foo']);
+        $this->seeJsonContains(['name' => 'Foo']);
         $this->assertResponseOk();
     }
 
@@ -139,7 +139,7 @@ class IncidentTest extends AbstractApiTestCase
             'name'     => 'Foo',
             'template' => $template->slug,
         ]);
-        $this->seeJson([
+        $this->seeJsonContains([
             'name'    => 'Foo',
             'message' => 'Hello there this is a foo in my Foo!',
         ]);
@@ -167,7 +167,7 @@ class IncidentTest extends AbstractApiTestCase
                 'id' => 123456789,
             ],
         ]);
-        $this->seeJson([
+        $this->seeJsonContains([
             'meta' => [
                 'id' => 123456789,
             ],

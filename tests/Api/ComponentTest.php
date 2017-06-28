@@ -24,9 +24,9 @@ class ComponentTest extends AbstractApiTestCase
         $components = factory('CachetHQ\Cachet\Models\Component', 3)->create();
 
         $this->get('/api/v1/components');
-        $this->seeJson(['id' => $components[0]->id]);
-        $this->seeJson(['id' => $components[1]->id]);
-        $this->seeJson(['id' => $components[2]->id]);
+        $this->seeJsonContains(['id' => $components[0]->id]);
+        $this->seeJsonContains(['id' => $components[1]->id]);
+        $this->seeJsonContains(['id' => $components[2]->id]);
         $this->assertResponseOk();
     }
 
@@ -64,7 +64,7 @@ class ComponentTest extends AbstractApiTestCase
             'group_id'    => 1,
             'enabled'     => true,
         ]);
-        $this->seeJson(['name' => 'Foo']);
+        $this->seeJsonContains(['name' => 'Foo']);
         $this->assertResponseOk();
     }
 
@@ -80,7 +80,7 @@ class ComponentTest extends AbstractApiTestCase
             'order'       => 1,
             'group_id'    => 1,
         ]);
-        $this->seeJson(['name' => 'Foo', 'enabled' => true]);
+        $this->seeJsonContains(['name' => 'Foo', 'enabled' => true]);
         $this->assertResponseOk();
     }
 
@@ -101,7 +101,7 @@ class ComponentTest extends AbstractApiTestCase
             ],
         ]);
 
-        $this->seeJson([
+        $this->seeJsonContains([
             'meta' => [
                 'uuid' => '172ff3fb-41f7-49d3-8bcd-f57b53627fa0',
             ],
@@ -122,7 +122,7 @@ class ComponentTest extends AbstractApiTestCase
             'group_id'    => 1,
             'enabled'     => 0,
         ]);
-        $this->seeJson(['name' => 'Foo', 'enabled' => false]);
+        $this->seeJsonContains(['name' => 'Foo', 'enabled' => false]);
         $this->assertResponseOk();
     }
 
@@ -131,7 +131,7 @@ class ComponentTest extends AbstractApiTestCase
         $component = factory('CachetHQ\Cachet\Models\Component')->create();
 
         $this->get('/api/v1/components/1');
-        $this->seeJson(['name' => $component->name]);
+        $this->seeJsonContains(['name' => $component->name]);
         $this->assertResponseOk();
     }
 
@@ -143,7 +143,7 @@ class ComponentTest extends AbstractApiTestCase
         $this->put('/api/v1/components/1', [
             'name' => 'Foo',
         ]);
-        $this->seeJson(['name' => 'Foo']);
+        $this->seeJsonContains(['name' => 'Foo']);
         $this->assertResponseOk();
     }
 
@@ -163,7 +163,7 @@ class ComponentTest extends AbstractApiTestCase
             ],
         ]);
 
-        $this->seeJson([
+        $this->seeJsonContains([
             'meta' => [
                 'uuid' => '172ff3fb-41f7-49d3-8bcd-f57b53627fa0',
                 'foo'  => 'bar',

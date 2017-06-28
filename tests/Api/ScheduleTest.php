@@ -26,9 +26,9 @@ class ScheduleTest extends AbstractApiTestCase
 
         $this->assertResponseOk();
 
-        $this->seeJson(['id' => $schedules[0]->id]);
-        $this->seeJson(['id' => $schedules[1]->id]);
-        $this->seeJson(['id' => $schedules[2]->id]);
+        $this->seeJsonContains(['id' => $schedules[0]->id]);
+        $this->seeJsonContains(['id' => $schedules[1]->id]);
+        $this->seeJsonContains(['id' => $schedules[2]->id]);
     }
 
     public function testGetSchedule()
@@ -39,7 +39,7 @@ class ScheduleTest extends AbstractApiTestCase
 
         $this->assertResponseOk();
 
-        $this->seeJson(['name' => $schedule->name]);
+        $this->seeJsonContains(['name' => $schedule->name]);
     }
 
     public function testCreateSchedule()
@@ -55,9 +55,10 @@ class ScheduleTest extends AbstractApiTestCase
 
         $this->post('/api/v1/schedules/', $schedule);
 
-        $this->assertResponseOk();
+        array_forget($schedule, 'scheduled_at');
 
-        $this->seeJson(array_forget($schedule, 'scheduled_at'));
+        $this->assertResponseOk();
+        $this->seeJsonContains($schedule);
     }
 
     public function testUpdateSchedule()
@@ -72,7 +73,7 @@ class ScheduleTest extends AbstractApiTestCase
 
         $this->assertResponseOk();
 
-        $this->seeJson(['name' => 'Updated schedule']);
+        $this->seeJsonContains(['name' => 'Updated schedule']);
     }
 
     public function testDeleteSchedule()
