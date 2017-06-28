@@ -28,9 +28,9 @@ return [
     // Incidents
     'incidents' => [
         'none'         => 'Ei raportoitavia tapauksia',
-        'current'      => 'Incidents',
+        'current'      => 'Tapahtumat',
         'past'         => 'Aikaisemmat tapahtumat',
-        'stickied'     => 'Stickied Incidents',
+        'stickied'     => 'Stickied tapahtumat',
         'scheduled'    => 'Ajastettu tapahtuma',
         'scheduled_at' => ', ajoitettu :timestamp',
         'posted'       => 'Posted :timestamp',
@@ -53,9 +53,10 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] järjestelmät ovat toiminnassa| [2, Inf] Kaikki järjestelmät ovat toiminnassa',
-        'bad'   => '[0,1] järjestelmässä on tällä hetkellä ongelmia| [2, Inf] Joissakin järjestelmissä on ongelmia',
-        'major' => '[0,1] Palvelussa on merkittävä katkos| [2, Inf] Joissakin järjestelmissä on merkittävä katkoksia',
+        'good'    => '[0,1] järjestelmät ovat toiminnassa| [2, Inf] Kaikki järjestelmät ovat toiminnassa',
+        'bad'     => '[0,1] järjestelmässä on tällä hetkellä ongelmia| [2, Inf] Joissakin järjestelmissä on ongelmia',
+        'major'   => '[0,1] Palvelussa on merkittävä katkos| [2, Inf] Joissakin järjestelmissä on merkittävä katkoksia',
+        'updated' => 'Päivitetty',
     ],
 
     'api' => [

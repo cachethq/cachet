@@ -44,9 +44,10 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] System funktioniert|[2,Inf] Alle Systeme funktionieren',
-        'bad'   => '[0,1] System hat momentan Probleme|[2,Inf] Mehrere Systeme haben momentan Probleme',
-        'major' => '[0,1] System hat ein schwerwiegendes Problem|[2,Inf] Mehrere Systeme haben ein schwerwiegendes Problem',
+        'good'    => '[0,1] System funktioniert|[2,Inf] Alle Systeme funktionieren',
+        'bad'     => '[0,1] System hat momentan Probleme|[2,Inf] Mehrere Systeme haben momentan Probleme',
+        'major'   => '[0,1] System hat ein schwerwiegendes Problem|[2,Inf] Mehrere Systeme haben ein schwerwiegendes Problem',
+        'updated' => 'Aktualisiert',
     ],
 
     'api' => [

@@ -28,7 +28,7 @@ return [
     // Incidents
     'incidents' => [
         'none'         => 'Hiçbir olay raporlanmadı',
-        'current'      => 'Incidents',
+        'current'      => 'Olayları',
         'past'         => 'Geçmiş Olaylar',
         'stickied'     => 'Yapıştırılmış Olaylar',
         'scheduled'    => 'Zamanlanmış bakım',
@@ -53,9 +53,10 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] Sistem çalışır durumda| [2, Inf] Tüm sistemler çalışır durumda',
-        'bad'   => '[0,1] Sistemde şu anda sorunlar yaşanıyor [2, Inf] Bazı sistemlerde sorunlar yaşanıyor',
-        'major' => '[0,1] Bu serviste büyük bir kesinti yaşıyoruz [2, Inf] Bazı sistemlerde büyük bir kesintisi yaşıyoruz',
+        'good'    => '[0,1] Sistem çalışır durumda| [2, Inf] Tüm sistemler çalışır durumda',
+        'bad'     => '[0,1] Sistemde şu anda sorunlar yaşanıyor [2, Inf] Bazı sistemlerde sorunlar yaşanıyor',
+        'major'   => '[0,1] Bu serviste büyük bir kesinti yaşıyoruz [2, Inf] Bazı sistemlerde büyük bir kesintisi yaşıyoruz',
+        'updated' => 'Güncellenmiş',
     ],
 
     'api' => [

@@ -89,5 +89,6 @@ class AppComposer
         $view->withDashboardLink($this->config->get('setting.dashboard_login_link'));
         $view->withEnableSubscribers($this->config->get('setting.enable_subscribers'));
         $view->withEnableFeeds($this->config->get('setting.enable_feeds'));
+        $view->withShowSystemUpdated($this->config->get('setting.show_system_updated'));
     }
 }

@@ -159,6 +159,10 @@ return [
             'enable_external_dependencies' => 'Povolit závislosti třetích stran (Google písma, Trackery, atd...)',
             'show_timezone'                => 'Zobrazit časové pásmo, ve které je zobrazena stavová stránka.',
             'only_disrupted_days'          => 'Zobrazit na časové ose pouze dny, kdy došlo k incidentu?',
+            'show_system_updated'          => 'Show last updated in system status?'
+            'enable_history'               => 'Allow incidents outside of current window to be viewed?',
+            'show_system_updated'          => 'Show last updated in system status?',
+            'timeline_header'              => 'Timeline header'
         ],
         'analytics' => [
             'analytics_google'       => 'Kód pro Google Analytics',

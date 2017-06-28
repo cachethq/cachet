@@ -159,6 +159,10 @@ return [
             'enable_external_dependencies' => 'Enable Third Party Dependencies (Google Fonts, Trackers, etc...)',
             'show_timezone'                => 'Näytä aikavyöhyke tilat sivulla.',
             'only_disrupted_days'          => 'Only show days containing incidents in the timeline?',
+            'show_system_updated'          => 'Show last updated in system status?'
+            'enable_history'               => 'Allow incidents outside of current window to be viewed?',
+            'show_system_updated'          => 'Show last updated in system status?',
+            'timeline_header'              => 'Timeline header'
         ],
         'analytics' => [
             'analytics_google'       => 'Google Analytics seurantakoodi',

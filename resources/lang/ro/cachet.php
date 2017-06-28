@@ -27,7 +27,7 @@ return [
     // Incidents
     'incidents' => [
         'none'          => 'No incidents reported',
-        'current'      => 'Incidents',
+        'current'       => 'Incidente',
         'past'          => 'Incidente anterioare',
         'previous_week' => 'Săptămâna anterioară',
         'next_week'     => 'Săptămâna viitoare',
@@ -47,6 +47,7 @@ return [
         'good'  => '[0,1] System operational|[2,Inf] All systems are operational',
         'bad'   => '[0,1] The system is currently experiencing issues|[2,Inf] Some systems are experiencing issues',
         'major' => '[0,1] The service is experiencing a major outage|[2,Inf] Some systems are experiencing a major outage',
+        'updated' => 'Updated',
     ],
 
     'api' => [

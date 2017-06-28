@@ -27,7 +27,7 @@ return [
     // Incidents
     'incidents' => [
         'none'          => 'Ningún incidente reportado',
-        'current'      => 'Incidents',
+        'current'       => 'Incidencias',
         'past'          => 'Incidencias anteriores',
         'previous_week' => 'Semana anterior',
         'next_week'     => 'Semana siguiente',
@@ -44,9 +44,10 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] Sistema operativo | [2,Inf] Todos los sistemas están operativos',
-        'bad'   => '[0,1] El sistema está actualmente experimentando problemas | [2,Inf] Algunos sistemas están experimentando problemas',
-        'major' => '[0,1] El servicio está experimentando una interrupción mayor | [2, Inf] Algunos sistemas están experimentando una interrupción mayor',
+        'good'    => '[0,1] Sistema operativo | [2,Inf] Todos los sistemas están operativos',
+        'bad'     => '[0,1] El sistema está actualmente experimentando problemas | [2,Inf] Algunos sistemas están experimentando problemas',
+        'major'   => '[0,1] El servicio está experimentando una interrupción mayor | [2, Inf] Algunos sistemas están experimentando una interrupción mayor',
+        'updated' => 'Actualizado',
     ],
 
     'api' => [

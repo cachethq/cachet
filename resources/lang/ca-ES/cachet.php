@@ -53,9 +53,10 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] Sistema en funcionament | [2, Inf] Tots els sistemes estan en funcionament',
-        'bad'   => '[0,1] Actualment el sistema està experimentant problemes| [2, Inf] Alguns sistemes estan experimentant problemes',
-        'major' => '[0,1] El servei està experimentant una interrupció major| [2, Inf] Alguns sistemes estan experimentant una interrupció major',
+        'good'    => '[0,1] Sistema en funcionament | [2, Inf] Tots els sistemes estan en funcionament',
+        'bad'     => '[0,1] Actualment el sistema està experimentant problemes| [2, Inf] Alguns sistemes estan experimentant problemes',
+        'major'   => '[0,1] El servei està experimentant una interrupció major| [2, Inf] Alguns sistemes estan experimentant una interrupció major',
+        'updated' => 'Actualitzat',
     ],
 
     'api' => [

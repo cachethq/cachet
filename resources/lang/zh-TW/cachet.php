@@ -28,9 +28,9 @@ return [
     // Incidents
     'incidents' => [
         'none'         => '沒有任何報告',
-        'current'      => 'Incidents',
-        'past'         => 'Past Incidents',
-        'stickied'     => 'Stickied 事件',
+        'current'      => '事故',
+        'past'         => '過去事故',
+        'stickied'     => '粘連事件',
         'scheduled'    => '排程維護',
         'scheduled_at' => '，於:timestamp',
         'posted'       => '簽名時間戳',
@@ -45,17 +45,18 @@ return [
     // Schedule
     'schedules' => [
         'status' => [
-            0 => 'Upcoming',
-            1 => 'In Progress',
-            2 => 'Complete',
+            0 => '即將到來',
+            1 => '進行中',
+            2 => '完成',
         ],
     ],
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] 系統運作正常|[2,Inf] 所有系統運作正常',
-        'bad'   => '[0,1] 系統目前發生異常情形。|[2,Inf] 部分系統發生異常情形。',
-        'major' => '[0,1] 一個系統出現重大故障|[2,Inf] 一些系統出現重大故障',
+        'good'    => '[0,1] 系統運作正常|[2,Inf] 所有系統運作正常',
+        'bad'     => '[0,1] 系統目前發生異常情形。|[2,Inf] 部分系統發生異常情形。',
+        'major'   => '[0,1] 一個系統出現重大故障|[2,Inf] 一些系統出現重大故障',
+        'updated' => '更新',
     ],
 
     'api' => [

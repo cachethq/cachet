@@ -28,9 +28,9 @@ return [
     // Incidents
     'incidents' => [
         'none'         => 'Nincs incidens jelentve',
-        'current'      => 'Incidents',
+        'current'      => 'Incidensek',
         'past'         => 'Múltbeli incidensek',
-        'stickied'     => 'Kitűzőtt Incidensek',
+        'stickied'     => 'Kitűzőtt incidensek',
         'scheduled'    => 'Ütemezett karbantartás',
         'scheduled_at' => ', ütemezett :timestamp',
         'posted'       => 'Közzétéve :timestamp',
@@ -53,9 +53,10 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] Rendszer üzemképes|[2,Inf] Az összes rendszer üzemképes',
-        'bad'   => '[0,1] A rendszer problémát észlelt|[2,Inf] Több rendszer problémát észlelt',
-        'major' => '[0,1] A szolgáltatás jelenleg nem elérhető|[2,Inf] Több szolgáltatás nem elérhető',
+        'good'    => '[0,1] Rendszer üzemképes|[2,Inf] Az összes rendszer üzemképes',
+        'bad'     => '[0,1] A rendszer problémát észlelt|[2,Inf] Több rendszer problémát észlelt',
+        'major'   => '[0,1] A szolgáltatás jelenleg nem elérhető|[2,Inf] Több szolgáltatás nem elérhető',
+        'updated' => 'Korszerűsített',
     ],
 
     'api' => [

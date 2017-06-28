@@ -45,6 +45,7 @@
         "graham-campbell/markdown": "^7.1",
         "guzzlehttp/guzzle": "^6.2.1",
         "jenssegers/date": "^3.2",
+        "jimmiw/php-time-ago": "^2.0",
         "laravel/framework": "5.3.*",
         "mccool/laravel-auto-presenter": "^4.3",
         "nexmo/client": "@beta",

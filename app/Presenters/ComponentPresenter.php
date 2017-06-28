@@ -67,6 +67,16 @@ class ComponentPresenter extends BasePresenter implements Arrayable
     }
 
     /**
+     * Present formatted date time.
+     *
+     * @return string
+     */
+    public function updated_at_time_ago()
+    {
+        return app(DateFactory::class)->getTimeAgo($this->wrappedObject->updated_at);
+    }
+
+    /**
      * Convert the presenter instance to an array.
      *
      * @return string[]

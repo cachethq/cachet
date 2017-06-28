@@ -14,7 +14,7 @@ return [
     'components' => [
         'last_updated' => '最終更新 :timestamp',
         'status'       => [
-            0 => 'Unknown',
+            0 => '未知の',
             1 => '稼働中',
             2 => 'パフォーマンスに関する問題あり',
             3 => '一部停止中',
@@ -28,9 +28,9 @@ return [
     // Incidents
     'incidents' => [
         'none'         => 'インシデントはありません',
-        'current'      => 'Incidents',
+        'current'      => 'インシデント',
         'past'         => '過去のインシデント',
-        'stickied'     => 'Stickied Incidents',
+        'stickied'     => '固着した事件',
         'scheduled'    => '計画メンテナンス',
         'scheduled_at' => ', 予定日時 :timestamp',
         'posted'       => '投稿日時 :timestamp',
@@ -45,17 +45,18 @@ return [
     // Schedule
     'schedules' => [
         'status' => [
-            0 => 'Upcoming',
-            1 => 'In Progress',
-            2 => 'Complete',
+            0 => '今後の予定',
+            1 => '進行中',
+            2 => 'コンプリート',
         ],
     ],
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] System operational|[2,Inf] All systems are operational',
-        'bad'   => '[0,1] The system is experiencing issues|[2,Inf] Some systems are experiencing issues',
-        'major' => '[0,1] The system is experiencing major issues|[2,Inf] Some systems are experiencing major issues',
+        'good'    => '[0,1] システム運用|[2,Inf] すべてのシステムが動作可能',
+        'bad'     => '[0,1] システムに問題が発生しています|[2,Inf] 一部のシステムで問題が発生しています',
+        'major'   => '[0,1] システムに重大な問題が発生しています|[2,Inf] 一部のシステムで重大な問題が発生している',
+        'updated' => '更新しました',
     ],
 
     'api' => [

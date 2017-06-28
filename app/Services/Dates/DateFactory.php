@@ -12,7 +12,9 @@
 namespace CachetHQ\Cachet\Services\Dates;
 
 use DateTimeZone;
+use Illuminate\Support\Facades\Lang;
 use Jenssegers\Date\Date;
+use Westsworld\TimeAgo;
 
 /**
  * This is the date factory class.
@@ -107,5 +109,16 @@ class DateFactory
         $dateTime->setTimeZone(new DateTimeZone($this->cachetTimezone));
 
         return $dateTime->format('T');
+    }
+
+    /**
+     * Return the time ago.
+     *
+     * @return string
+     */
+    public function getTimeAgo($time)
+    {
+        $timeAgo = new TimeAgo($this->cachetTimezone, Lang::getLocale());
+        return $timeAgo->inWords($this->make($time));
     }
 }

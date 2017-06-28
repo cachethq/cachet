@@ -53,9 +53,10 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] sistem operasional | [2, Inf] Semua sistem operasional',
-        'bad'   => '[0,1] sistem ini sedang mengalami masalah | [2, Inf] Beberapa sistem mengalami masalah',
-        'major' => '[0,1] Layanan mengalami outage besar | [2, Inf] Beberapa sistem mengalami outage besar',
+        'good'    => '[0,1] sistem operasional | [2, Inf] Semua sistem operasional',
+        'bad'     => '[0,1] sistem ini sedang mengalami masalah | [2, Inf] Beberapa sistem mengalami masalah',
+        'major'   => '[0,1] Layanan mengalami outage besar | [2, Inf] Beberapa sistem mengalami outage besar',
+        'updated' => 'Diperbarui',
     ],
 
     'api' => [

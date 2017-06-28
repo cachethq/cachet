@@ -27,7 +27,7 @@ return [
     // Incidents
     'incidents' => [
         'none'          => 'Ei raportoitavia tapauksia',
-        'current'      => 'Incidents',
+        'current'       => 'Tapahtumat',
         'past'          => 'Aikaisemmat tapahtumat',
         'previous_week' => 'Edellinen viikko',
         'next_week'     => 'Seuraava viikko',
@@ -44,9 +44,10 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] järjestelmät ovat toiminnassa| [2, Inf] Kaikki järjestelmät ovat toiminnassa',
-        'bad'   => '[0,1] järjestelmä on tällä hetkellä ongelmia| [2, Inf] Joissakin järjestelmissä on ongelmia',
-        'major' => '[0,1] Palveluissa on katkoksia| [2, Inf] Joissakin järjestelmissä on merkittävä katkoksia',
+        'good'    => '[0,1] järjestelmät ovat toiminnassa| [2, Inf] Kaikki järjestelmät ovat toiminnassa',
+        'bad'     => '[0,1] järjestelmä on tällä hetkellä ongelmia| [2, Inf] Joissakin järjestelmissä on ongelmia',
+        'major'   => '[0,1] Palveluissa on katkoksia| [2, Inf] Joissakin järjestelmissä on merkittävä katkoksia',
+        'updated' => 'Päivitetty ',
     ],
 
     'api' => [

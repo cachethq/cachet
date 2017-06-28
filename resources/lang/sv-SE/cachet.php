@@ -28,7 +28,7 @@ return [
     // Incidents
     'incidents' => [
         'none'         => 'Inga händelser har rapporterats',
-        'current'      => 'Incidents',
+        'current'      => 'Incidenter',
         'past'         => 'Tidigare händelser',
         'stickied'     => 'Fästa incidenter',
         'scheduled'    => 'Planerat underhåll',
@@ -53,9 +53,10 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] Systemet fungerar |[2,Inf] Alla system fungerar',
-        'bad'   => '[0,1] Systemet har för närvarande problem|[2,Inf] Vissa system har problem',
-        'major' => '[0,1] Stora störningar på tjänsten [2,Inf] Stora störningar på vissa system',
+        'good'    => '[0,1] Systemet fungerar |[2,Inf] Alla system fungerar',
+        'bad'     => '[0,1] Systemet har för närvarande problem|[2,Inf] Vissa system har problem',
+        'major'   => '[0,1] Stora störningar på tjänsten [2,Inf] Stora störningar på vissa system',
+        'updated' => 'Uppdaterad',
     ],
 
     'api' => [

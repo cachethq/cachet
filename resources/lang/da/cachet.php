@@ -44,9 +44,10 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] Systemet virker|[2,Inf] Alle systemer virker',
-        'bad'   => '[0,1] Systemet har i øjeblikket problemer|[2,Inf] Nogle systemer har i øjeblikket problemer',
-        'major' => '[0,1] Systemet har i øjeblikket store problemer|[2,Inf] Nogle systemer har i øjeblikket store problemer',
+        'good'    => '[0,1] Systemet virker|[2,Inf] Alle systemer virker',
+        'bad'     => '[0,1] Systemet har i øjeblikket problemer|[2,Inf] Nogle systemer har i øjeblikket problemer',
+        'major'   => '[0,1] Systemet har i øjeblikket store problemer|[2,Inf] Nogle systemer har i øjeblikket store problemer',
+        'updated' => 'Opdateret',
     ],
 
     'api' => [

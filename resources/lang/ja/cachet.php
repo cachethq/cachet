@@ -27,7 +27,7 @@ return [
     // Incidents
     'incidents' => [
         'none'          => 'インシデントはありません',
-        'current'      => 'Incidents',
+        'current'       => 'インシデント',
         'past'          => '過去のインシデント',
         'previous_week' => '前の週',
         'next_week'     => '次の週',
@@ -44,9 +44,10 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] System operational|[2,Inf] All systems are operational',
-        'bad'   => '[0,1] The system is currently experiencing issues|[2,Inf] Some systems are experiencing issues',
-        'major' => '[0,1] The service is experiencing a major outage|[2,Inf] Some systems are experiencing a major outage',
+        'good'    => '[0,1] システム運用|[2,Inf] すべてのシステムが動作可能',
+        'bad'     => '[0,1] システムに問題が発生しています|[2,Inf] 一部のシステムで問題が発生しています',
+        'major'   => '[0,1] システムに重大な問題が発生しています|[2,Inf] 一部のシステムで重大な問題が発生している',
+        'updated' => '更新しました',
     ],
 
     'api' => [

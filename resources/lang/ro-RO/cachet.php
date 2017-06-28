@@ -28,7 +28,7 @@ return [
     // Incidents
     'incidents' => [
         'none'         => 'Nici un incident raportat',
-        'current'      => 'Incidents',
+        'current'      => 'Incidente',
         'past'         => 'Incidente anterioare',
         'stickied'     => 'Incidente fixate',
         'scheduled'    => 'Întreținere programată',
@@ -53,9 +53,10 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] Sistem operaţional|[2,Inf] Toate sistemele sunt operaţionale',
-        'bad'   => '[0,1] Sistemul se confruntă cu probleme|[2,Inf] Unele sisteme se confruntă cu probleme',
-        'major' => '[0,1] Serviciul se confruntă cu o întrerupere a funcționării majoră| [2, Inf] Unele sisteme se confruntă cu întreruperi de funcţionare majore',
+        'good'    => '[0,1] Sistem operaţional|[2,Inf] Toate sistemele sunt operaţionale',
+        'bad'     => '[0,1] Sistemul se confruntă cu probleme|[2,Inf] Unele sisteme se confruntă cu probleme',
+        'major'   => '[0,1] Serviciul se confruntă cu o întrerupere a funcționării majoră| [2, Inf] Unele sisteme se confruntă cu întreruperi de funcţionare majore',
+        'updated' => 'Actualizat',
     ],
 
     'api' => [

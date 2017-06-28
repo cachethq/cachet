@@ -159,6 +159,10 @@ return [
             'enable_external_dependencies' => 'Activează dependențe terțe (Fonturi Google, Trackere, etc...)',
             'show_timezone'                => 'Afișează fusul orar în care rulează pagina de stare.',
             'only_disrupted_days'          => 'Afișează doar zile care conțin incidente în cronologie?',
+            'show_system_updated'          => 'Show last updated in system status?'
+            'enable_history'               => 'Allow incidents outside of current window to be viewed?',
+            'show_system_updated'          => 'Show last updated in system status?',
+            'timeline_header'              => 'Timeline header'
         ],
         'analytics' => [
             'analytics_google'       => 'Cod Google Analytics',

@@ -14,6 +14,7 @@ namespace CachetHQ\Cachet\Integrations\Core;
 use CachetHQ\Cachet\Integrations\Contracts\System as SystemContract;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
+use CachetHQ\Cachet\Services\Dates\DateFactory;
 use Illuminate\Contracts\Config\Repository;
 
 /**
@@ -86,6 +87,9 @@ class System implements SystemContract
         } elseif (Component::enabled()->whereIn('status', [2, 3])->count() > 0) {
             $status['favicon'] = 'favicon-medium-alert';
         }
+
+//        $status['system_updated'] = Component::enabled()->orderBy('updated_at', 'desc')->first()->updated_at_time_ago;
+        $status['system_updated'] = app(DateFactory::class)->getTimeAgo(Component::enabled()->orderBy('updated_at', 'desc')->first()->updated_at);
 
         return $status;
     }

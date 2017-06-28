@@ -159,6 +159,10 @@ return [
             'enable_external_dependencies' => 'Schakel afhankelijkheden van derden in (Google Fonts, Trackers, etc...)',
             'show_timezone'                => 'Toon de tijdzone waarin de statuspagina staat.',
             'only_disrupted_days'          => 'Alleen dagen met incidenten op de tijdlijn tonen?',
+            'show_system_updated'          => 'Show last updated in system status?'
+            'enable_history'               => 'Allow incidents outside of current window to be viewed?',
+            'show_system_updated'          => 'Show last updated in system status?',
+            'timeline_header'              => 'Timeline header'
         ],
         'analytics' => [
             'analytics_google'       => 'Google Analytics-code',

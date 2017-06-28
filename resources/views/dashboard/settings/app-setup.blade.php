@@ -161,6 +161,17 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="hidden" value="0" name="show_system_updated">
+                                        <input type="checkbox" value="1" name="show_system_updated" {{ $show_system_updated ? 'checked' : null }}>
+                                        {{ trans('forms.settings.app-setup.show_system_updated') }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
                     </fieldset>
 
                     <div class="row">
