@@ -143,6 +143,6 @@ return [
     |
     */
 
-    'show_system_updated' => 'true',
+    'show_system_updated' => 'false',
 
 ];
