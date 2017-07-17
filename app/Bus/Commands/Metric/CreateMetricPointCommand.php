@@ -57,7 +57,7 @@ final class CreateMetricPointCommand
      *
      * @param \CachetHQ\Cachet\Models\Metric $metric
      * @param int                            $value
-     * @param int                         $created_at
+     * @param int                            $created_at
      *
      * @return void
      */

@@ -93,14 +93,14 @@ final class CreateComponentCommand
     /**
      * Create a new add component command instance.
      *
-     * @param string      $name
-     * @param string      $description
-     * @param int         $status
-     * @param string      $link
-     * @param int         $order
-     * @param int         $group_id
-     * @param bool        $enabled
-     * @param array|null  $meta
+     * @param string     $name
+     * @param string     $description
+     * @param int        $status
+     * @param string     $link
+     * @param int        $order
+     * @param int        $group_id
+     * @param bool       $enabled
+     * @param array|null $meta
      *
      * @return void
      */
