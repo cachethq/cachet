@@ -74,7 +74,7 @@ final class UpdateComponentCommand
     /**
      * JSON meta data for the component.
      *
-     * @var string|null
+     * @var array|null
      */
     public $meta;
 
@@ -98,7 +98,7 @@ final class UpdateComponentCommand
         'order'       => 'nullable|int',
         'group_id'    => 'nullable|int',
         'enabled'     => 'nullable|bool',
-        'meta'        => 'nullable|string',
+        'meta'        => 'nullable|array',
         'silent'      => 'nullable|bool',
     ];
 
@@ -113,7 +113,7 @@ final class UpdateComponentCommand
      * @param int                               $order
      * @param int                               $group_id
      * @param bool                              $enabled
-     * @param string|null                       $meta
+     * @param array|null                        $meta
      * @param bool                              $silent
      *
      * @return void

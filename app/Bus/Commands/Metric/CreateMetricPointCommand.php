@@ -38,7 +38,7 @@ final class CreateMetricPointCommand
     /**
      * The metric point created at.
      *
-     * @var string
+     * @var int
      */
     public $created_at;
 
@@ -49,7 +49,7 @@ final class CreateMetricPointCommand
      */
     public $rules = [
         'value'      => 'required|numeric',
-        'created_at' => 'required|string',
+        'created_at' => 'nullable|int',
     ];
 
     /**
@@ -57,7 +57,7 @@ final class CreateMetricPointCommand
      *
      * @param \CachetHQ\Cachet\Models\Metric $metric
      * @param int                            $value
-     * @param string                         $created_at
+     * @param int                         $created_at
      *
      * @return void
      */

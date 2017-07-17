@@ -70,7 +70,7 @@ final class CreateComponentCommand
     /**
      * JSON meta data for the component.
      *
-     * @var string|null
+     * @var array|null
      */
     public $meta;
 
@@ -87,7 +87,7 @@ final class CreateComponentCommand
         'order'       => 'nullable|int',
         'group_id'    => 'nullable|int',
         'enabled'     => 'nullable|bool',
-        'meta'        => 'nullable|string',
+        'meta'        => 'nullable|array',
     ];
 
     /**
@@ -100,7 +100,7 @@ final class CreateComponentCommand
      * @param int         $order
      * @param int         $group_id
      * @param bool        $enabled
-     * @param string|null $meta
+     * @param array|null  $meta
      *
      * @return void
      */
