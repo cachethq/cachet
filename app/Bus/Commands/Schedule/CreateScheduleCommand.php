@@ -71,7 +71,7 @@ final class CreateScheduleCommand
         'status'       => 'required|int|min:0|max:2',
         'scheduled_at' => 'required|string',
         'completed_at' => 'nullable|string',
-        'components'   => 'required|array',
+        'components'   => 'nullable|array',
     ];
 
     /**
@@ -86,7 +86,7 @@ final class CreateScheduleCommand
      *
      * @return void
      */
-    public function __construct($name, $message, $status, $scheduled_at, $completed_at, array $components)
+    public function __construct($name, $message, $status, $scheduled_at, $completed_at, array $components = [])
     {
         $this->name = $name;
         $this->message = $message;

@@ -70,7 +70,6 @@ class MetricPointTest extends AbstractApiTestCase
 
         $metric = factory('CachetHQ\Cachet\Models\Metric')->create();
         $timestamp = 1434369116;
-        $datetime = '2015-06-15 11:51:56';
         $metricPoint = factory('CachetHQ\Cachet\Models\MetricPoint')->make([
             'metric_id' => $metric->id,
         ]);
@@ -79,7 +78,10 @@ class MetricPointTest extends AbstractApiTestCase
 
         $this->post("/api/v1/metrics/{$metric->id}/points", $postData);
 
-        $this->seeJsonContains(['value' => $metricPoint->value, 'created_at' => $datetime]);
+        $this->seeJsonContains([
+            'value'      => $metricPoint->value,
+            'created_at' => date('Y-m-d H:i:s', 1434369116),
+        ]);
 
         $this->assertResponseOk();
     }
