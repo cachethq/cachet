@@ -26,7 +26,9 @@ mix
     .options({
         processCssUrls: false
     })
+    .js('resources/assets/js/app.js', 'public/dist/js')
     .scripts([
+        'public/dist/js/app.js',
         'node_modules/es5-shim/es5-shim.js',
         'node_modules/es5-shim/es5-sham.js',
         'node_modules/jquery/dist/jquery.min.js',
@@ -44,7 +46,7 @@ mix
         'node_modules/livestamp/livestamp.js',
         'node_modules/jquery-serializeobject/jquery.serializeObject.js',
         'resources/assets/js/password-strength.js',
-        'resources/assets/js/app.js',
+        'resources/assets/js/cachet.js',
     ], 'public/dist/js/all.js')
 
 if (mix.config.inProduction) {
