@@ -73,7 +73,7 @@
                     <div class="form-group">
                         <label>{{ trans('forms.incidents.component') }}</label>
                         <select name="component_id" class="form-control">
-                            <option value="0" selected></option>
+                            <option value="" selected></option>
                             @foreach($components_in_groups as $group)
                             <optgroup label="{{ $group->name }}">
                                 @foreach($group->components as $component)
