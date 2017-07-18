@@ -34,7 +34,9 @@
                         @endif
                     </div>
                     <div class="col-xs-3">
-                        @if($subscriber->subscriptions->count() > 0)
+                        @if($subscriber->global)
+                        <p>{{ trans('dashboard.subscribers.global') }}</p>
+                        @elseif($subscriber->subscriptions->isNotEmpty())
                         {!! $subscriber->subscriptions->map(function ($subscription) {
                             return sprintf('<span class="label label-primary">%s</span>', $subscription->component->name);
                         })->implode(' ') !!}

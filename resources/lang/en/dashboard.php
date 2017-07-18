@@ -153,6 +153,7 @@ return [
         'not_verified'     => 'Not verified',
         'subscriber'       => ':email, subscribed :date',
         'no_subscriptions' => 'Subscribed to all updates',
+        'global'           => 'Globally subscribed',
         'add'              => [
             'title'   => 'Add a new subscriber',
             'success' => 'Subscriber has been added!',
