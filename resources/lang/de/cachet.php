@@ -14,10 +14,10 @@ return [
     'components' => [
         'last_updated' => 'Letztes Update :timestamp',
         'status'       => [
-            1 => 'Funktionsfähig',
+            1 => 'Optimal',
             2 => 'Leistungsprobleme',
-            3 => 'Teilweiser Ausfall',
-            4 => 'Schwerer Ausfall',
+            3 => 'Eingeschränkt Verfügbar',
+            4 => 'Nicht Verfügbar',
         ],
         'group' => [
             'other' => 'Andere Komponenten',
@@ -65,24 +65,24 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe' => 'Abonnieren Sie um die neuesten Updates zu erhalten.',
+        'subscribe' => 'Abonnieren Sie, um die neuesten Updates zu Ausfällen und Wartungsarbeiten von Komponenten erhalten.',
         'button'    => 'Abonnieren',
         'manage'    => [
-            'no_subscriptions' => 'Du hast im Augenblick alle Updates abonniert.',
-            'my_subscriptions' => 'Du hast im Augenblick folgende Updates abonniert.',
+            'no_subscriptions' => 'Sie haben im Augenblick alle Komponenten abonniert.',
+            'my_subscriptions' => 'Sie haben im Augenblick folgende Komponenten abonniert.',
         ],
         'email' => [
             'subscribe'          => 'Aktualisierungen per E-Mail abonnieren.',
             'subscribed'         => 'Sie haben E-Mail-Benachrichtigungen abonniert, überprüfen Sie bitte Ihre E-Mail, um Ihr Abonnement zu bestätigen.',
             'verified'           => 'Ihre E-Mail-Abonnement ist bestätigt worden. Danke!',
-            'manage'             => 'Verwalte deine Abonnements',
+            'manage'             => 'Verwalten Sie Ihre Abonnements',
             'unsubscribe'        => 'Von E-Mail-Updates deabonnieren.',
-            'unsubscribed'       => 'Ihre E-Mail-Abonnement wurde gekündigt.',
+            'unsubscribed'       => 'Ihr E-Mail-Abonnement wurde gekündigt.',
             'failure'            => 'Etwas ist mit dem Abonnement schief gelaufen.',
-            'already-subscribed' => 'Abonnement für :email konnte nicht registriert werden, da die E-Mail Adresse schon registriert ist.',
+            'already-subscribed' => 'Abonnement für :email konnte nicht registriert werden, da die E-Mail Adresse bereits registriert ist.',
             'verify'             => [
-                'text'   => "Bitte bestätige die E-Mail-Benachrichtigungen unter :app_name status updates.\n:link",
-                'html'   => '<p>Bitte bestätige deine E-Mail-Benachrichtigung unter :app_name status updates.</p>',
+                'text'   => "Bitte bestätigen Sie Ihre E-Mail-Benachrichtigungen unter :app_name status updates.\n:link",
+                'html'   => '<p>Bitte bestätigen Sie Ihre E-Mail-Benachrichtigung unter :app_name status updates.</p>',
                 'button' => 'Abonnement bestätigen',
             ],
             'maintenance' => [
@@ -93,9 +93,9 @@ return [
             ],
             'component' => [
                 'subject'       => 'Komponent Status Update',
-                'text'          => 'Der Komponent :component_name hatte eine Status-Änderung. Der Komponent befindet sich nun im :component_human_status.\nDanke, :app_name',
-                'html'          => '<p>Der Komponent :component_name hatte eine Status-Änderung. Der Komponent befindet sich nun im :component_human_status.</p><p>Danke, :app_name</p>',
-                'tooltip-title' => 'Neuigkeiten für :component_name abonnieren.',
+                'text'          => 'Der Komponent :component_name hatte eine Status-Änderung. Der Komponent befindet sich nun im Status ":component_human_status".\nDanke, :app_name',
+                'html'          => '<p>Der Komponent :component_name hatte eine Status-Änderung. Der Komponent befindet sich nun im  Status ":component_human_status."</p><p>Danke, :app_name</p>',
+                'tooltip-title' => 'Updates für :component_name abonnieren.',
             ],
         ],
     ],
@@ -103,8 +103,8 @@ return [
     'users' => [
         'email' => [
             'invite' => [
-                'text' => "Du wurdest in das Team :app_name Status Seite eingeladen. Um dich zu registrieren klicke den Link.\n:link\nDanke, :app_name",
-                'html' => '<p>Du wurdest in das Team :app_name Status Seite eingeladen. Um dich zu registrieren klicke den Link.</p><p><a href=":link">:link</a></p><p>Danke, :app_name</p>',
+                'text' => "Sie wurden in das Statusseiten-Team von :app_name eingeladen. Um Dich zu registrieren klicke den Link.\n:link\nDanke, :app_name",
+                'html' => '<p>Sie wurden in das Statusseiten-Team von :app_name eingeladen. Um Dich zu registrieren klicke den Link.</p><p><a href=":link">:link</a></p><p>Danke, :app_name</p>',
             ],
         ],
     ],
@@ -115,19 +115,19 @@ return [
         'email'    => 'E-Mail',
         'password' => 'Passwort',
         'success'  => 'Ihr Konto wurde erfolgreich erstellt.',
-        'failure'  => 'Mit der Registrierung ist etwas schief gelaufen.',
+        'failure'  => 'Bei der Registrierung ist ein Fehler aufgetreten..',
     ],
 
     'system' => [
-        'update' => 'Es ist eine neuere Version von Cachet verfügbar. Lerne <a href="https://docs.cachethq.io/docs/updating-cachet">hier</a>!, wie du updaten kannst!',
+        'update' => 'Es ist eine neue Version von Cachet verfügbar. Lerne <a href="https://docs.cachethq.io/docs/updating-cachet">hier</a>, wie du updaten kannst!',
     ],
 
     // Modal
     'modal' => [
         'close'     => 'Schließen',
         'subscribe' => [
-            'title'  => 'Abonniere die Komponenten-Updates',
-            'body'   => 'Gib deine E-Mail Adresse ein, um Updates für diesen Komponenten zu erhalten. Wenn du bereits abonniert bist, erhälst du schon Updates für diesen Komponenten.',
+            'title'  => 'Abonnieren Sie die Komponenten-Updates',
+            'body'   => 'Geben Sie Ihre E-Mail Adresse ein, um Updates für diesen Komponenten zu erhalten. Wenn Sie den Komponenten bereits abonniert haben, erhalten Sie bereits Updates für diesen Komponenten.',
             'button' => 'Abonnieren',
         ],
     ],
