@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Bus\Exceptions\Incident;
+namespace CachetHQ\Cachet\Bus\Exceptions\Schedule;
 
-use Exception;
+use CachetHQ\Cachet\Bus\Exceptions\ExceptionInterface;
 
 /**
- * This is the invalid incident timestamp exception.
+ * This is the schedule exception interface.
  *
  * @author James Brooks <james@alt-three.com>
  */
-class InvalidIncidentTimestampException extends Exception implements IncidentExceptionInterface
+interface ScheduleExceptionInterface extends ExceptionInterface
 {
     //
 }

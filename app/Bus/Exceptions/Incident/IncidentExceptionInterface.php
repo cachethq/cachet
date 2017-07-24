@@ -11,14 +11,14 @@
 
 namespace CachetHQ\Cachet\Bus\Exceptions\Incident;
 
-use Exception;
+use CachetHQ\Cachet\Bus\Exceptions\ExceptionInterface;
 
 /**
- * This is the invalid incident timestamp exception.
+ * This is the incident exception interface.
  *
  * @author James Brooks <james@alt-three.com>
  */
-class InvalidIncidentTimestampException extends Exception implements IncidentExceptionInterface
+interface IncidentExceptionInterface extends ExceptionInterface
 {
     //
 }
