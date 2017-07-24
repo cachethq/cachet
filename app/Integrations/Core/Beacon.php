@@ -18,6 +18,8 @@ use CachetHQ\Cachet\Models\Action;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\Metric;
+use CachetHQ\Cachet\Models\Schedule;
+use CachetHQ\Cachet\Models\Tag;
 use CachetHQ\Cachet\Models\User;
 use CachetHQ\Cachet\Settings\Repository as Setting;
 use Exception;
@@ -103,6 +105,8 @@ class Beacon implements BeaconContract
                 'metrics'    => Metric::all()->count(),
                 'users'      => User::all()->count(),
                 'actions'    => Action::all()->count(),
+                'tags'       => Tag::all()->count(),
+                'schedules'  => Schedule::all()->count(),
             ],
         ];
 
