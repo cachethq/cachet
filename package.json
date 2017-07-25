@@ -32,5 +32,9 @@
     "sortablejs": "^1.5.1",
     "sweetalert2": "^6.6.6"
   },
-  "private": true
+  "private": true,
+  "dependencies": {
+    "axios": "^0.16.2",
+    "vue": "^2.4.2"
+  }
 }
