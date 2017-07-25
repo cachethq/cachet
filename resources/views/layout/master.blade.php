@@ -29,11 +29,11 @@
     <meta name="msapplication-TileImage" content="{{ asset('/img/favicon.png') }}" />
 
     @if (isset($favicon))
-    <link rel="icon" type="image/png" href="/img/{{ $favicon }}.ico">
-    <link rel="shortcut icon" href="/img/{{ $favicon }}.png" type="image/x-icon">
+    <link rel="icon" href="{{ asset("/img/{$favicon}.ico") }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset("/img/{$favicon}.png") }}" type="image/png">
     @else
-    <link rel="icon" type="image/png" href="/img/favicon.ico">
-    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+    <link rel="icon" href="{{ asset('/img/favicon.ico') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('/img/favicon.png') }}" type="image/png">
     @endif
 
     <link rel="apple-touch-icon" href="{{ asset('/img/apple-touch-icon.png') }}">
