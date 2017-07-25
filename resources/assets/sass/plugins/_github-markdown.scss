@@ -7,38 +7,38 @@
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   line-height: 1.5;
-  color: #333;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color: #24292e;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 16px;
   line-height: 1.5;
   word-wrap: break-word;
 }
 
 .markdown-body .pl-c {
-  color: #969896;
+  color: #6a737d;
 }
 
 .markdown-body .pl-c1,
 .markdown-body .pl-s .pl-v {
-  color: #0086b3;
+  color: #005cc5;
 }
 
 .markdown-body .pl-e,
 .markdown-body .pl-en {
-  color: #795da3;
+  color: #6f42c1;
 }
 
 .markdown-body .pl-smi,
 .markdown-body .pl-s .pl-s1 {
-  color: #333;
+  color: #24292e;
 }
 
 .markdown-body .pl-ent {
-  color: #63a35c;
+  color: #22863a;
 }
 
 .markdown-body .pl-k {
-  color: #a71d5d;
+  color: #d73a49;
 }
 
 .markdown-body .pl-s,
@@ -48,69 +48,94 @@
 .markdown-body .pl-sr .pl-cce,
 .markdown-body .pl-sr .pl-sre,
 .markdown-body .pl-sr .pl-sra {
-  color: #183691;
+  color: #032f62;
 }
 
-.markdown-body .pl-v {
-  color: #ed6a43;
+.markdown-body .pl-v,
+.markdown-body .pl-smw {
+  color: #e36209;
 }
 
-.markdown-body .pl-id {
-  color: #b52a1d;
+.markdown-body .pl-bu {
+  color: #b31d28;
 }
 
 .markdown-body .pl-ii {
-  color: #f8f8f8;
-  background-color: #b52a1d;
+  color: #fafbfc;
+  background-color: #b31d28;
+}
+
+.markdown-body .pl-c2 {
+  color: #fafbfc;
+  background-color: #d73a49;
+}
+
+.markdown-body .pl-c2::before {
+  content: "^M";
 }
 
 .markdown-body .pl-sr .pl-cce {
   font-weight: bold;
-  color: #63a35c;
+  color: #22863a;
 }
 
 .markdown-body .pl-ml {
-  color: #693a17;
+  color: #735c0f;
 }
 
 .markdown-body .pl-mh,
 .markdown-body .pl-mh .pl-en,
 .markdown-body .pl-ms {
   font-weight: bold;
-  color: #1d3e81;
-}
-
-.markdown-body .pl-mq {
-  color: #008080;
+  color: #005cc5;
 }
 
 .markdown-body .pl-mi {
   font-style: italic;
-  color: #333;
+  color: #24292e;
 }
 
 .markdown-body .pl-mb {
   font-weight: bold;
-  color: #333;
+  color: #24292e;
 }
 
 .markdown-body .pl-md {
-  color: #bd2c00;
-  background-color: #ffecec;
+  color: #b31d28;
+  background-color: #ffeef0;
 }
 
 .markdown-body .pl-mi1 {
-  color: #55a532;
-  background-color: #eaffea;
+  color: #22863a;
+  background-color: #f0fff4;
+}
+
+.markdown-body .pl-mc {
+  color: #e36209;
+  background-color: #ffebda;
+}
+
+.markdown-body .pl-mi2 {
+  color: #f6f8fa;
+  background-color: #005cc5;
 }
 
 .markdown-body .pl-mdr {
   font-weight: bold;
-  color: #795da3;
+  color: #6f42c1;
 }
 
-.markdown-body .pl-mo {
-  color: #1d3e81;
+.markdown-body .pl-ba {
+  color: #586069;
+}
+
+.markdown-body .pl-sg {
+  color: #959da5;
+}
+
+.markdown-body .pl-corl {
+  text-decoration: underline;
+  color: #032f62;
 }
 
 .markdown-body .octicon {
@@ -188,12 +213,11 @@
 }
 
 .markdown-body a {
-  color: #4078c0;
+  color: #0366d6;
   text-decoration: none;
 }
 
-.markdown-body a:hover,
-.markdown-body a:active {
+.markdown-body a:hover {
   text-decoration: underline;
 }
 
@@ -207,7 +231,7 @@
   overflow: hidden;
   background: transparent;
   border: 0;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #dfe2e5;
 }
 
 .markdown-body hr::before {
@@ -304,23 +328,46 @@
 }
 
 .markdown-body code {
-  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
   font-size: 12px;
 }
 
 .markdown-body pre {
   margin-top: 0;
   margin-bottom: 0;
-  font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font: 12px "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
 }
 
 .markdown-body .octicon {
   vertical-align: text-bottom;
 }
 
-.markdown-body input {
-  -webkit-font-feature-settings: "liga" 0;
-  font-feature-settings: "liga" 0;
+.markdown-body .pl-0 {
+  padding-left: 0 !important;
+}
+
+.markdown-body .pl-1 {
+  padding-left: 4px !important;
+}
+
+.markdown-body .pl-2 {
+  padding-left: 8px !important;
+}
+
+.markdown-body .pl-3 {
+  padding-left: 16px !important;
+}
+
+.markdown-body .pl-4 {
+  padding-left: 24px !important;
+}
+
+.markdown-body .pl-5 {
+  padding-left: 32px !important;
+}
+
+.markdown-body .pl-6 {
+  padding-left: 40px !important;
 }
 
 .markdown-body::before {
@@ -373,14 +420,14 @@
   height: 0.25em;
   padding: 0;
   margin: 24px 0;
-  background-color: #e7e7e7;
+  background-color: #e1e4e8;
   border: 0;
 }
 
 .markdown-body blockquote {
   padding: 0 1em;
-  color: #777;
-  border-left: 0.25em solid #ddd;
+  color: #6a737d;
+  border-left: 0.25em solid #dfe2e5;
 }
 
 .markdown-body blockquote>:first-child {
@@ -396,13 +443,13 @@
   padding: 3px 5px;
   font-size: 11px;
   line-height: 10px;
-  color: #555;
+  color: #444d56;
   vertical-align: middle;
-  background-color: #fcfcfc;
-  border: solid 1px #ccc;
-  border-bottom-color: #bbb;
+  background-color: #fafbfc;
+  border: solid 1px #c6cbd1;
+  border-bottom-color: #959da5;
   border-radius: 3px;
-  box-shadow: inset 0 -1px 0 #bbb;
+  box-shadow: inset 0 -1px 0 #959da5;
 }
 
 .markdown-body h1,
@@ -423,7 +470,7 @@
 .markdown-body h4 .octicon-link,
 .markdown-body h5 .octicon-link,
 .markdown-body h6 .octicon-link {
-  color: #000;
+  color: #1b1f23;
   vertical-align: middle;
   visibility: hidden;
 }
@@ -449,13 +496,13 @@
 .markdown-body h1 {
   padding-bottom: 0.3em;
   font-size: 2em;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #eaecef;
 }
 
 .markdown-body h2 {
   padding-bottom: 0.3em;
   font-size: 1.5em;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #eaecef;
 }
 
 .markdown-body h3 {
@@ -472,7 +519,7 @@
 
 .markdown-body h6 {
   font-size: 0.85em;
-  color: #777;
+  color: #6a737d;
 }
 
 .markdown-body ul,
@@ -505,7 +552,7 @@
   margin-top: 16px;
   font-size: 1em;
   font-style: italic;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .markdown-body dl dd {
@@ -520,22 +567,22 @@
 }
 
 .markdown-body table th {
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .markdown-body table th,
 .markdown-body table td {
   padding: 6px 13px;
-  border: 1px solid #ddd;
+  border: 1px solid #dfe2e5;
 }
 
 .markdown-body table tr {
   background-color: #fff;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #c6cbd1;
 }
 
 .markdown-body table tr:nth-child(2n) {
-  background-color: #f8f8f8;
+  background-color: #f6f8fa;
 }
 
 .markdown-body img {
@@ -550,7 +597,7 @@
   padding-bottom: 0.2em;
   margin: 0;
   font-size: 85%;
-  background-color: rgba(0,0,0,0.04);
+  background-color: rgba(27,31,35,0.05);
   border-radius: 3px;
 }
 
@@ -589,7 +636,7 @@
   overflow: auto;
   font-size: 85%;
   line-height: 1.45;
-  background-color: #f7f7f7;
+  background-color: #f6f8fa;
   border-radius: 3px;
 }
 
@@ -610,57 +657,29 @@
   content: normal;
 }
 
-.markdown-body .pl-0 {
-  padding-left: 0 !important;
-}
-
-.markdown-body .pl-1 {
-  padding-left: 3px !important;
-}
-
-.markdown-body .pl-2 {
-  padding-left: 6px !important;
-}
-
-.markdown-body .pl-3 {
-  padding-left: 12px !important;
-}
-
-.markdown-body .pl-4 {
-  padding-left: 24px !important;
-}
-
-.markdown-body .pl-5 {
-  padding-left: 36px !important;
-}
-
-.markdown-body .pl-6 {
-  padding-left: 48px !important;
-}
-
 .markdown-body .full-commit .btn-outline:not(:disabled):hover {
-  color: #4078c0;
-  border: 1px solid #4078c0;
+  color: #005cc5;
+  border-color: #005cc5;
 }
 
 .markdown-body kbd {
   display: inline-block;
   padding: 3px 5px;
-  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font: 11px "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
   line-height: 10px;
-  color: #555;
+  color: #444d56;
   vertical-align: middle;
-  background-color: #fcfcfc;
-  border: solid 1px #ccc;
-  border-bottom-color: #bbb;
+  background-color: #fafbfc;
+  border: solid 1px #d1d5da;
+  border-bottom-color: #c6cbd1;
   border-radius: 3px;
-  box-shadow: inset 0 -1px 0 #bbb;
+  box-shadow: inset 0 -1px 0 #c6cbd1;
 }
 
 .markdown-body :checked+.radio-label {
   position: relative;
   z-index: 1;
-  border-color: #4078c0;
+  border-color: #0366d6;
 }
 
 .markdown-body .task-list-item {
