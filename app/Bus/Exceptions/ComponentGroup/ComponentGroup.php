@@ -18,7 +18,7 @@ use CachetHQ\Cachet\Bus\Exceptions\ExceptionInterface;
  *
  * @author James Brooks <james@alt-three.com>
  */
-interface ComponentGroupExceptionInterface extends ExceptionInterface
+interface ComponentGroup extends ExceptionInterface
 {
     //
 }
