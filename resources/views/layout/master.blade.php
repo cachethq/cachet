@@ -65,17 +65,21 @@
         var Global = {};
         Global.locale = '{{ $app_locale }}';
     </script>
-    <script src="{{ mix('dist/js/all.js') }}"></script>
 </head>
+
 <body class="status-page @yield('bodyClass')">
-    @yield('outer-content')
+    <div id="app">
+        @yield('outer-content')
 
-    @include('partials.banner')
+        @include('partials.banner')
 
-    <div class="container">
-        @yield('content')
+        <div class="container">
+            @yield('content')
+        </div>
+
+        @yield('bottom-content')
     </div>
 
-    @yield('bottom-content')
+    <script src="{{ mix('dist/js/all.js') }}"></script>
 </body>
 </html>
