@@ -31,6 +31,7 @@ class IncidentComponent extends Model
     protected $casts = [
         'incident_id'  => 'int',
         'component_id' => 'int',
+        'status_id'    => 'int',
     ];
 
     /**
@@ -41,6 +42,7 @@ class IncidentComponent extends Model
     protected $fillable = [
         'incident_id',
         'component_id',
+        'status_id',
     ];
 
     /**
@@ -51,6 +53,7 @@ class IncidentComponent extends Model
     public $rules = [
         'incident_id'  => 'required|int',
         'component_id' => 'required|int',
+        'status_id'    => 'required|int',
     ];
 
     /**

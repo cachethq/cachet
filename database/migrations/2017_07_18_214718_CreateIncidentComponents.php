@@ -26,6 +26,7 @@ class CreateIncidentComponents extends Migration
             $table->increments('id');
             $table->integer('incident_id')->unsigned()->index();
             $table->integer('component_id')->unsigned()->index();
+            $table->integer('status_id')->unsigned()->index();
             $table->timestamps();
         });
     }
