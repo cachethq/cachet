@@ -1,4 +1,4 @@
-(function() {
+$(function() {
     // Ajax Setup
     $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
         var token;
@@ -100,14 +100,18 @@
         $(".wrapper").toggleClass("toggled");
     });
 
-    $('.color-code').minicolors({
-        control: 'hue',
-        defaultValue: $(this).val() || '',
-        inline: false,
-        letterCase: 'lowercase',
-        opacity: false,
-        position: 'bottom left',
-        theme: 'bootstrap'
+    $('.color-code').each(function() {
+        var $this = $(this);
+
+        $this.minicolors({
+            control: 'hue',
+            defaultValue: $this.val() || '',
+            inline: false,
+            letterCase: 'lowercase',
+            opacity: false,
+            position: 'bottom left',
+            theme: 'bootstrap'
+        });
     });
 
     $('[data-toggle="tooltip"]').tooltip();
@@ -403,4 +407,4 @@
             if (_.isFunction(cancelCallback)) cancelCallback();
         });
     }
-}());
+});
