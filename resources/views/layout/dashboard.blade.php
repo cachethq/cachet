@@ -37,7 +37,7 @@
     <script src="{{ mix('dist/js/all.js') }}"></script>
 </head>
 
-<body class="dashboard">
+<body class="dashboard" id="app">
     <div class="wrapper">
         @include('dashboard.partials.sidebar')
         <div class="page-content">
