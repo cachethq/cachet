@@ -99,16 +99,18 @@ class AuthController extends Controller
             // Maybe a temp login here.
             Auth::loginUsingId($userId);
 
-            $valid = Google2FA::verifyKey(Auth::user()->google_2fa_secret, $code);
+            $user = Auth::user();
+
+            $valid = Google2FA::verifyKey($user->google_2fa_secret, $code);
 
             if ($valid) {
-                event(new UserPassedTwoAuthEvent(Auth::user()));
+                event(new UserPassedTwoAuthEvent($user));
 
-                event(new UserLoggedInEvent(Auth::user()));
+                event(new UserLoggedInEvent($user));
 
                 return Redirect::intended('dashboard');
             } else {
-                event(new UserFailedTwoAuthEvent(Auth::user()));
+                event(new UserFailedTwoAuthEvent($user));
 
                 // Failed login, log back out.
                 Auth::logout();
