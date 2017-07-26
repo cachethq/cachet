@@ -25,7 +25,13 @@ if (!function_exists('setting')) {
      */
     function setting($name, $default = null)
     {
-        return app(Repository::class)->get($name, $default);
+        static $settings = [];
+
+        if (isset($settings[$name])) {
+            return $settings[$name];
+        }
+
+        return $settings[$name] = app(Repository::class)->get($name, $default);
     }
 }
 
