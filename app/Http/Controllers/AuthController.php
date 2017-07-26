@@ -133,6 +133,6 @@ class AuthController extends Controller
 
         Auth::logout();
 
-        return Redirect::to('/');
+        return cachet_redirect('status-page');
     }
 }
