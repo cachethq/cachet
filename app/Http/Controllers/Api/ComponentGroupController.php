@@ -52,7 +52,7 @@ class ComponentGroupController extends AbstractApiController
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function getGroups()
+    public function index()
     {
         $groups = ComponentGroup::query();
         if (!$this->guard->check()) {
@@ -79,7 +79,7 @@ class ComponentGroupController extends AbstractApiController
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function getGroup(ComponentGroup $group)
+    public function show(ComponentGroup $group)
     {
         return $this->item($group);
     }
@@ -89,7 +89,7 @@ class ComponentGroupController extends AbstractApiController
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function postGroups()
+    public function store()
     {
         try {
             $group = dispatch(new CreateComponentGroupCommand(
@@ -112,7 +112,7 @@ class ComponentGroupController extends AbstractApiController
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function putGroup(ComponentGroup $group)
+    public function update(ComponentGroup $group)
     {
         try {
             $group = dispatch(new UpdateComponentGroupCommand(
@@ -136,7 +136,7 @@ class ComponentGroupController extends AbstractApiController
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function deleteGroup(ComponentGroup $group)
+    public function destroy(ComponentGroup $group)
     {
         dispatch(new RemoveComponentGroupCommand($group));
 

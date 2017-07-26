@@ -29,7 +29,7 @@ class ComponentController extends AbstractApiController
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function getComponents()
+    public function index()
     {
         if (app(Guard::class)->check()) {
             $components = Component::query();
@@ -57,7 +57,7 @@ class ComponentController extends AbstractApiController
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function getComponent(Component $component)
+    public function show(Component $component)
     {
         return $this->item($component);
     }
@@ -67,7 +67,7 @@ class ComponentController extends AbstractApiController
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function postComponents()
+    public function store()
     {
         try {
             $component = dispatch(new CreateComponentCommand(
@@ -108,7 +108,7 @@ class ComponentController extends AbstractApiController
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function putComponent(Component $component)
+    public function update(Component $component)
     {
         try {
             dispatch(new UpdateComponentCommand(
@@ -148,7 +148,7 @@ class ComponentController extends AbstractApiController
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function deleteComponent(Component $component)
+    public function destroy(Component $component)
     {
         dispatch(new RemoveComponentCommand($component));
 

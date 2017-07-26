@@ -27,7 +27,7 @@ class MetricController extends AbstractApiController
      *
      * @return \Illuminate\Database\Eloquent\Collection
      */
-    public function getMetrics()
+    public function index()
     {
         $metrics = Metric::query();
 
@@ -49,23 +49,9 @@ class MetricController extends AbstractApiController
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function getMetric(Metric $metric)
+    public function show(Metric $metric)
     {
         return $this->item($metric);
-    }
-
-    /**
-     * Get all metric points.
-     *
-     * @param \CachetHQ\Cachet\Models\Metric $metric
-     *
-     * @return \Illuminate\Database\Eloquent\Collection
-     */
-    public function getMetricPoints(Metric $metric)
-    {
-        $points = $metric->points()->paginate(Binput::get('per_page', 20));
-
-        return $this->paginator($points, Request::instance());
     }
 
     /**
@@ -73,7 +59,7 @@ class MetricController extends AbstractApiController
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function postMetrics()
+    public function store()
     {
         try {
             $metric = dispatch(new CreateMetricCommand(
@@ -103,7 +89,7 @@ class MetricController extends AbstractApiController
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function putMetric(Metric $metric)
+    public function update(Metric $metric)
     {
         try {
             $metric = dispatch(new UpdateMetricCommand(
@@ -134,7 +120,7 @@ class MetricController extends AbstractApiController
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function deleteMetric(Metric $metric)
+    public function destroy(Metric $metric)
     {
         dispatch(new RemoveMetricCommand($metric));
 

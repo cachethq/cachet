@@ -18,6 +18,7 @@ use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\MetricPoint;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Database\QueryException;
+use Illuminate\Support\Facades\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 class MetricPointController extends AbstractApiController
@@ -30,9 +31,11 @@ class MetricPointController extends AbstractApiController
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function getMetricPoints(Metric $metric, MetricPoint $metricPoint)
+    public function index(Metric $metric, MetricPoint $metricPoint)
     {
-        return $this->item($metricPoint);
+        $points = $metric->points()->paginate(Binput::get('per_page', 20));
+
+        return $this->paginator($points, Request::instance());
     }
 
     /**
@@ -42,7 +45,7 @@ class MetricPointController extends AbstractApiController
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function postMetricPoints(Metric $metric)
+    public function store(Metric $metric)
     {
         try {
             $metricPoint = dispatch(new CreateMetricPointCommand(
@@ -65,7 +68,7 @@ class MetricPointController extends AbstractApiController
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function putMetricPoint(Metric $metric, MetricPoint $metricPoint)
+    public function update(Metric $metric, MetricPoint $metricPoint)
     {
         $metricPoint = dispatch(new UpdateMetricPointCommand(
             $metricPoint,
@@ -85,7 +88,7 @@ class MetricPointController extends AbstractApiController
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function deleteMetricPoint(Metric $metric, MetricPoint $metricPoint)
+    public function destroy(Metric $metric, MetricPoint $metricPoint)
     {
         dispatch(new RemoveMetricPointCommand($metricPoint));
 

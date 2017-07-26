@@ -45,54 +45,54 @@ class ApiRoutes
                 $router->get('version', 'GeneralController@version');
                 $router->get('status', 'GeneralController@status');
 
-                $router->get('components', 'ComponentController@getComponents');
-                $router->get('components/groups', 'ComponentGroupController@getGroups');
-                $router->get('components/groups/{component_group}', 'ComponentGroupController@getGroup');
-                $router->get('components/{component}', 'ComponentController@getComponent');
+                $router->get('components', 'ComponentController@index');
+                $router->get('components/groups', 'ComponentGroupController@index');
+                $router->get('components/groups/{component_group}', 'ComponentGroupController@show');
+                $router->get('components/{component}', 'ComponentController@show');
 
-                $router->get('incidents', 'IncidentController@getIncidents');
-                $router->get('incidents/{incident}', 'IncidentController@getIncident');
+                $router->get('incidents', 'IncidentController@index');
+                $router->get('incidents/{incident}', 'IncidentController@show');
 
-                $router->get('incidents/{incident}/updates', 'IncidentUpdateController@getIncidentUpdates');
-                $router->get('incidents/{incident}/updates/{update}', 'IncidentUpdateController@getIncidentUpdate');
+                $router->get('incidents/{incident}/updates', 'IncidentUpdateController@index');
+                $router->get('incidents/{incident}/updates/{update}', 'IncidentUpdateController@show');
 
-                $router->get('metrics', 'MetricController@getMetrics');
-                $router->get('metrics/{metric}', 'MetricController@getMetric');
-                $router->get('metrics/{metric}/points', 'MetricController@getMetricPoints');
+                $router->get('metrics', 'MetricController@index');
+                $router->get('metrics/{metric}', 'MetricController@show');
+                $router->get('metrics/{metric}/points', 'MetricPointController@index');
 
-                $router->get('schedules', 'ScheduleController@getSchedules');
-                $router->get('schedules/{schedule}', 'ScheduleController@getSchedule');
+                $router->get('schedules', 'ScheduleController@index');
+                $router->get('schedules/{schedule}', 'ScheduleController@show');
             });
 
             $router->group(['middleware' => ['auth.api:true']], function (Registrar $router) {
-                $router->get('subscribers', 'SubscriberController@getSubscribers');
+                $router->get('subscribers', 'SubscriberController@index');
 
-                $router->post('components', 'ComponentController@postComponents');
-                $router->post('components/groups', 'ComponentGroupController@postGroups');
-                $router->post('incidents', 'IncidentController@postIncidents');
-                $router->post('incidents/{incident}/updates', 'IncidentUpdateController@postIncidentUpdate');
-                $router->post('metrics', 'MetricController@postMetrics');
-                $router->post('metrics/{metric}/points', 'MetricPointController@postMetricPoints');
-                $router->post('schedules', 'ScheduleController@postSchedule');
-                $router->post('subscribers', 'SubscriberController@postSubscribers');
+                $router->post('components', 'ComponentController@store');
+                $router->post('components/groups', 'ComponentGroupController@store');
+                $router->post('incidents', 'IncidentController@store');
+                $router->post('incidents/{incident}/updates', 'IncidentUpdateController@store');
+                $router->post('metrics', 'MetricController@store');
+                $router->post('metrics/{metric}/points', 'MetricPointController@store');
+                $router->post('schedules', 'ScheduleController@store');
+                $router->post('subscribers', 'SubscriberController@store');
 
-                $router->put('components/groups/{component_group}', 'ComponentGroupController@putGroup');
-                $router->put('components/{component}', 'ComponentController@putComponent');
-                $router->put('incidents/{incident}', 'IncidentController@putIncident');
-                $router->put('incidents/{incident}/updates/{update}', 'IncidentUpdateController@putIncidentUpdate');
-                $router->put('metrics/{metric}', 'MetricController@putMetric');
-                $router->put('metrics/{metric}/points/{metric_point}', 'MetricPointController@putMetricPoint');
-                $router->put('schedules/{schedule}', 'ScheduleController@putSchedule');
+                $router->put('components/groups/{component_group}', 'ComponentGroupController@update');
+                $router->put('components/{component}', 'ComponentController@update');
+                $router->put('incidents/{incident}', 'IncidentController@update');
+                $router->put('incidents/{incident}/updates/{update}', 'IncidentUpdateController@update');
+                $router->put('metrics/{metric}', 'MetricController@update');
+                $router->put('metrics/{metric}/points/{metric_point}', 'MetricPointController@update');
+                $router->put('schedules/{schedule}', 'ScheduleController@update');
 
-                $router->delete('components/groups/{component_group}', 'ComponentGroupController@deleteGroup');
-                $router->delete('components/{component}', 'ComponentController@deleteComponent');
-                $router->delete('incidents/{incident}', 'IncidentController@deleteIncident');
-                $router->delete('incidents/{incident}/updates/{update}', 'IncidentUpdateController@deleteIncidentUpdate');
-                $router->delete('metrics/{metric}', 'MetricController@deleteMetric');
-                $router->delete('metrics/{metric}/points/{metric_point}', 'MetricPointController@deleteMetricPoint');
-                $router->delete('schedules/{schedule}', 'ScheduleController@deleteSchedule');
-                $router->delete('subscribers/{subscriber}', 'SubscriberController@deleteSubscriber');
-                $router->delete('subscriptions/{subscription}', 'SubscriberController@deleteSubscription');
+                $router->delete('components/groups/{component_group}', 'ComponentGroupController@destroy');
+                $router->delete('components/{component}', 'ComponentController@destroy');
+                $router->delete('incidents/{incident}', 'IncidentController@destroy');
+                $router->delete('incidents/{incident}/updates/{update}', 'IncidentUpdateController@destroy');
+                $router->delete('metrics/{metric}', 'MetricController@destroy');
+                $router->delete('metrics/{metric}/points/{metric_point}', 'MetricPointController@destroy');
+                $router->delete('schedules/{schedule}', 'ScheduleController@destroy');
+                $router->delete('subscribers/{subscriber}', 'SubscriberController@destroy');
+                $router->delete('subscriptions/{subscription}', 'SubscriptionController@destroy');
             });
         });
     }
