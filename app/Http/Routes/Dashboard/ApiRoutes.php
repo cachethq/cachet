@@ -26,7 +26,7 @@ class ApiRoutes
      *
      * @var bool
      */
-    public static $browser = true;
+    public static $browser = false;
 
     /**
      * Define the dashboard api routes.
