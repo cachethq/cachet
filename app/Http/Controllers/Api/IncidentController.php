@@ -28,7 +28,7 @@ class IncidentController extends AbstractApiController
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function getIncidents()
+    public function index()
     {
         $incidentVisibility = app(Guard::class)->check() ? 0 : 1;
 
@@ -54,7 +54,7 @@ class IncidentController extends AbstractApiController
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function getIncident(Incident $incident)
+    public function show(Incident $incident)
     {
         return $this->item($incident);
     }
@@ -64,7 +64,7 @@ class IncidentController extends AbstractApiController
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function postIncidents()
+    public function store()
     {
         try {
             $incident = dispatch(new CreateIncidentCommand(
@@ -95,7 +95,7 @@ class IncidentController extends AbstractApiController
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function putIncident(Incident $incident)
+    public function update(Incident $incident)
     {
         try {
             $incident = dispatch(new UpdateIncidentCommand(
@@ -126,7 +126,7 @@ class IncidentController extends AbstractApiController
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function deleteIncident(Incident $incident)
+    public function destroy(Incident $incident)
     {
         dispatch(new RemoveIncidentCommand($incident));
 
