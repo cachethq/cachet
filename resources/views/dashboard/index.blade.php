@@ -36,7 +36,7 @@
         <div class="col-sm-12 col-lg-6">
             <div class="stats-widget">
                 <div class="stats-top">
-                    <span class="stats-value"><a href="{{ cachet_route('dashboard.incidents') }}">{{ $incidents->map(function($incident) { return count($incident); })->sum() }}</a></span>
+                    <span class="stats-value"><a href="{{ cachet_route('dashboard.incidents') }}">{{ $incidents->reduce(function($carry, $incident) { return $carry + count($incident); }) }}</a></span>
                     <span class="stats-label">{{ trans('dashboard.incidents.incidents') }}</span>
                 </div>
                 <div class="stats-chart">
@@ -48,7 +48,7 @@
         <div class="col-sm-12 col-lg-6">
             <div class="stats-widget">
                 <div class="stats-top">
-                    <span class="stats-value"><a href="{{ cachet_route('dashboard.subscribers') }}">{{ $subscribers->map(function($subscribers) { return count($subscribers); })->sum() }}</a></span>
+                    <span class="stats-value"><a href="{{ cachet_route('dashboard.subscribers') }}">{{ $subscribers->reduce(function($carry, $subscribers) { return $carry + count($subscribers); }) }}</a></span>
                     <span class="stats-label">{{ trans('dashboard.subscribers.subscribers') }}</span>
                 </div>
                 <div class="stats-chart">
