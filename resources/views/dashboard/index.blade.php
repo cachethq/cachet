@@ -87,7 +87,6 @@
         @endif
     </div>
 </div>
-@if ($welcome_user)
-@include('dashboard.partials.welcome-modal')
-@endif
+
+@includeWhen($welcome_user, 'dashboard.partials.welcome-modal')
 @stop
