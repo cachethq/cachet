@@ -42,9 +42,18 @@ Here are some useful quick links:
 - [Installing Cachet](https://docs.cachethq.io/docs/installing-cachet)
 - [Getting started with Docker](https://docs.cachethq.io/docs/get-started-with-docker)
 
-### Demo Account
+### Demo
 
 To test out the demo, you may login to the [Dashboard](https://demo.cachethq.io/dashboard) with the following:
+
+- **Username:** `test` or `test@test.com`
+- **Password:** `test123`
+
+> The demo resets every 30 minutes.
+
+### v2.4 Demo
+
+To test out the demo, you may login to the [Dashboard](https://dev.cachethq.io/dashboard) with the following:
 
 - **Username:** `test` or `test@test.com`
 - **Password:** `test123`
