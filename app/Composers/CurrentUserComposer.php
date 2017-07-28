@@ -15,7 +15,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Auth;
 
 /**
- * This is the current user composer.
+ * This is the current user composer class.
  *
  * @author Joseph Cohen <joe@alt-three.com>
  * @author James Brooks <james@alt-three.com>

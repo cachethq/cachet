@@ -15,7 +15,7 @@ use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\View\View;
 
 /**
- * This is the theme composer.
+ * This is the theme composer class.
  *
  * @author James Brooks <james@alt-three.com>
  * @author Graham Campbell <graham@alt-three.com>

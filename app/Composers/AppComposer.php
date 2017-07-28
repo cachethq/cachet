@@ -17,7 +17,7 @@ use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\View\View;
 
 /**
- * This is the app composer.
+ * This is the app composer class.
  *
  * @author James Brooks <james@alt-three.com>
  * @author Graham Campbell <graham@alt-three.com>

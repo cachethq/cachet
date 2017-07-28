@@ -17,7 +17,7 @@ use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\View\View;
 
 /**
- * This is the timezone locale composer.
+ * This is the timezone locale composer class.
  *
  * @author Joseph Cohen <joe@alt-three.com>
  * @author James Brooks <james@alt-three.com>

@@ -14,7 +14,7 @@ namespace CachetHQ\Cachet\Composers;
 use Illuminate\Contracts\View\View;
 
 /**
- * This is the settings composer.
+ * This is the settings composer class.
  *
  * @author James Brooks <james@alt-three.com>
  */
