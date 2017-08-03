@@ -18,9 +18,7 @@
                             <h3>{{ trans('dashboard.login.two-factor') }}</h3>
                         </div>
                         <br>
-                        <form method="POST" action="2fa" accept-charset="UTF-8">
-                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-
+                <form method="POST" action="{{ cachet_route('auth.two-factor', [], 'post') }}" accept-charset="UTF-8">                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <fieldset>
                                 @if(Session::has('error'))
                                 <p class="text-danger">{{ Session::get('error') }}</p>

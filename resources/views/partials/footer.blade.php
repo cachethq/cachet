@@ -18,7 +18,7 @@
                 <ul class="list-inline">
                     @if($current_user || $dashboard_link)
                     <li>
-                        <a class="btn btn-link" href="dashboard">{{ trans('dashboard.dashboard') }}</a>
+                       <a class="btn btn-link" href="{{ cachet_route('dashboard') }}">{{ trans('dashboard.dashboard') }}</a>
                     </li>
                     @endif
                     @if($current_user)
