@@ -76,6 +76,7 @@ class MetricController extends AbstractApiController
     public function postMetrics()
     {
         try {
+           
             $metric = dispatch(new AddMetricCommand(
                 Binput::get('name'),
                 Binput::get('suffix'),

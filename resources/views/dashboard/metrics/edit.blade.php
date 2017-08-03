@@ -14,7 +14,7 @@
     <div class="row">
         <div class="col-md-12">
             @include('dashboard.partials.errors')
-            <form class="form-vertical" name="MetricsForm" role="form" method="POST">
+            <form class="form-vertical" name="MetricsForm" role="form" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <fieldset>
                     <div class="form-group">
@@ -67,6 +67,11 @@
                         </label>
                     </div>
                 </fieldset>
+                <label class="btn btn-default btn-file">Upload JSON Metrics
+                    <input type="file" name="points" style="visibility:hidden;">
+                </label>
+                
+                
 
                 <input type="hidden" name="id" value={{$metric->id}}>
 

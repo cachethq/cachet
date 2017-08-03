@@ -21,6 +21,7 @@ use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\View;
 
+
 class MetricController extends Controller
 {
     /**
@@ -60,37 +61,7 @@ class MetricController extends Controller
             ->withMetrics(MetricPoint::all());
     }
 
-    /**
-     * Creates a new metric.
-     *
-     * @return \Illuminate\Http\RedirectResponse
-     */
-    public function createMetricAction()
-    {
-        $metricData = Binput::get('metric');
-
-        try {
-            dispatch(new AddMetricCommand(
-                $metricData['name'],
-                $metricData['suffix'],
-                $metricData['description'],
-                $metricData['default_value'],
-                $metricData['calc_type'],
-                $metricData['display_chart'],
-                $metricData['places'],
-                $metricData['default_view'],
-                $metricData['threshold']
-            ));
-        } catch (ValidationException $e) {
-            return cachet_redirect('dashboard.metrics.create')
-                ->withInput(Binput::all())
-                ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.metrics.add.failure')))
-                ->withErrors($e->getMessageBag());
-        }
-
-        return cachet_redirect('dashboard.metrics')
-            ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.metrics.add.success')));
-    }
+   
 
     /**
      * Shows the add metric point view.
@@ -141,8 +112,23 @@ class MetricController extends Controller
      */
     public function editMetricAction(Metric $metric)
     {
-        try {
-            dispatch(new UpdateMetricCommand(
+        
+         try {
+             $file = array('points' => Binput::file("points"));
+             $json = @file_get_contents($file['points']);
+             
+            if($json !== false) {
+            
+            $jsonIterator = json_decode($json);
+        
+            foreach ($jsonIterator as $key['points'] => $val) {
+            
+                $points = app('CachetHQ\Cachet\Http\Controllers\Api\MetricPointController')->postMetricPoints($metric,$val);
+            
+           
+                }
+            }
+               dispatch(new UpdateMetricCommand(
                 $metric,
                 Binput::get('name', null, false),
                 Binput::get('suffix', null, false),
@@ -154,7 +140,12 @@ class MetricController extends Controller
                 Binput::get('default_view', null, false),
                 Binput::get('threshold', null, false)
             ));
-        } catch (ValidationException $e) {
+                
+        
+             
+         }
+         
+        catch (ValidationException $e) {
             return cachet_redirect('dashboard.metrics.edit', [$metric->id])
                 ->withInput(Binput::all())
                 ->withTitle(sprintf('<strong>%s</strong>', trans('dashboard.notifications.whoops')))
@@ -162,6 +153,6 @@ class MetricController extends Controller
         }
 
         return cachet_redirect('dashboard.metrics.edit', [$metric->id])
-            ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.metrics.edit.success')));
+            ->withSuccess(sprintf('%s %s %s', trans('dashboard.notifications.awesome'), trans('dashboard.metrics.edit.success'), $points ?? 'metric points updated' ));
     }
 }

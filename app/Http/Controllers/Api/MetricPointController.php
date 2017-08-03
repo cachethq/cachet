@@ -17,6 +17,7 @@ use CachetHQ\Cachet\Bus\Commands\Metric\UpdateMetricPointCommand;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\MetricPoint;
 use GrahamCampbell\Binput\Facades\Binput;
+use App\Http\Controllers\Input;
 use Illuminate\Database\QueryException;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
@@ -39,12 +40,30 @@ class MetricPointController extends AbstractApiController
      * Create a new metric point.
      *
      * @param \CachetHQ\Cachet\Models\Metric $metric
-     *
+     * @param array $json
+     * 
      * @return \Illuminate\Http\JsonResponse
      */
-    public function postMetricPoints(Metric $metric)
+    public function postMetricPoints(Metric $metric,$json=null)
     {
-        try {
+        if($json!=null){
+            
+            $c = count($json);
+            try {
+                    for($i=0; $i<$c; $i++){
+                        
+                        $metricPoint = new MetricPoint;
+                        $metricPoint->value = floatval($json[$i]->value);
+                        $metricPoint->created_at = $json[$i]->timestamp;
+                        $metricPoint->metric_id = $metric->id;
+                        $metricPoint->save();
+                    }
+            } catch (QueryException $e) {
+                throw new BadRequestHttpException();
+            }
+        }
+        else {
+             try {
             $metricPoint = dispatch(new AddMetricPointCommand(
                 $metric,
                 Binput::get('value'),
@@ -53,10 +72,17 @@ class MetricPointController extends AbstractApiController
         } catch (QueryException $e) {
             throw new BadRequestHttpException();
         }
+            
+        }
+        
+       
 
         return $this->item($metricPoint);
     }
 
+   
+
+     
     /**
      * Updates a metric point.
      *

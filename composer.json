@@ -28,7 +28,7 @@
         "php": ">=5.6.4",
         "ext-xml": "*",
         "alt-three/badger": "^3.1",
-        "alt-three/bus": "^2.0",
+        "alt-three/bus": "^2.0.0",
         "alt-three/emoji": "^3.1",
         "alt-three/throttle": "^1.0",
         "alt-three/validator": "^1.5",

@@ -4,10 +4,14 @@
     </IfModule>
 
     RewriteEngine On
-    RewriteBase /Cachet/public
+    RewriteBase /cachet_test/Cachet/public
+    
     # Redirect Trailing Slashes If Not A Folder...
     RewriteCond %{THE_REQUEST} ^GET.*index\.php [NC]
     RewriteCond %{REQUEST_URI} !/system/.* [NC]
+
+
+
     RewriteRule (.*?)index\.php/*(.*) /$1$2 [R=301,NE,L]
 
     #RewriteRule ^(.*)/$ /$1 [L,R=301]

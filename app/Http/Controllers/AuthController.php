@@ -50,8 +50,7 @@ class AuthController extends Controller
       */
     public function postLogin()
          {
-    $loginData = Binput::only(['username', 'password']);
-
+         $loginData = Binput::only(['username', 'password']);
         // Login with username or email.
         $loginKey = Str::contains($loginData['username'], '@') ? 'email' : 'username';
         $loginData[$loginKey] = array_pull($loginData, 'username');
@@ -66,7 +65,7 @@ class AuthController extends Controller
                 // Temporarily store the user.
                 Session::put('2fa_id', Auth::user()->id);
 
-                return Redirect::route('auth.two-factor');
+                return cachet_redirect('auth.two-factor');
             }
 
             // We probably want to add support for "Remember me" here.
@@ -77,7 +76,7 @@ class AuthController extends Controller
             return Redirect::intended('dashboard');
         }
 
-        return Redirect::route('auth.login')
+        return cachet_redirect('auth.login')
             ->withInput(Binput::except('password'))
             ->withError(trans('forms.login.invalid'));
     }
@@ -114,13 +113,13 @@ class AuthController extends Controller
      *  @return \Illuminate\View\View
      **/
     public function showQrCode(){
-        
+
         $session = Session::getFacadeRoot();
     
-        //3W4XMX5WYUDRSJDE
 
        if ($userId = $session->pull('2fa_id')) {
             // Maybe a temp login here.
+            
             $secret = Binput::get('secret');
             Auth::loginUsingId($userId);
             $user = Auth::user();
@@ -137,7 +136,7 @@ class AuthController extends Controller
        
                return Redirect::route('auth.login')->withError(trans('forms.login.invalid-token'));
 
-        
+    
      }
      
 
@@ -159,127 +158,23 @@ class AuthController extends Controller
        if ($userId = $session->pull('2fa_id')) {
             $code = Binput::get('code');
 
-            // Maybe a temp login here.
-            Auth::loginUsingId($userId);
-            $user = Auth::user();
-
-            $google_2Fa_secret = $user->get2faSecretKey();
-            $valid = Google2FA::verifyKey($google_2Fa_secret, $code);
-            
-
+           Auth::loginUsingId($userId);
+            $valid = Google2FA::verifyKey(Auth::user()->google_2fa_secret, $code);
             if ($valid) {
                 event(new UserPassedTwoAuthEvent(Auth::user()));
-
                 event(new UserLoggedInEvent(Auth::user()));
-    
-                return Redirect::intended(cachet_route('dashboard'));
+                return Redirect::intended('dashboard');
+            } else {
+                event(new UserFailedTwoAuthEvent(Auth::user()));
+                // Failed login, log back out.
+                Auth::logout();
+                return cachet_redirect('auth.login')->withError(trans('forms.login.invalid-token'));
             }
-    
-            return cachet_redirect('auth.login')
-                ->withInput(Binput::except('password'))
-                ->withError(trans('forms.login.invalid'));
-        }
-    
-        /**
-         * Shows the two-factor-auth view.
-         *
-         * @return \Illuminate\View\View
-         */
-        public function showTwoFactorAuth()
-        {
-            return View::make('auth.two-factor-auth');
-        }
+       }
         
-        
-        /**
-         * generate Qr Code for 2Fa
-         * 
-         *  @return \Illuminate\View\View
-         */
-        
-        public function generateTwoFa(){
-            Auth::user()->google_2fa_secret;
-            $session = Session::getFacadeRoot();
-            
+        return cachet_redirect('auth.login')->withError(trans('forms.login.invalid-token'));
+    }
      
-     
-        if ($userId = $session->pull('2fa_id')) {
-     
-                 // Maybe a temp login here.
-                $secret = Binput::get('secret');
-                Auth::loginUsingId($userId);
-                $user = Auth::user();
-                 
-                $google2fa_url = Google2FA::getQRCodeGoogleUrl(
-                                             'Cachet',
-                                             $user->email,
-                                             $user->get2faSecretKey()
-                                             );
-                return View::make('auth.two-factor-auth-code', array(
-                 'google_2fa_url' => $google2fa_url)
-                 );
-            }
-            
-            return Redirect::route('auth.login')->withError(trans('forms.login.invalid-token'));
-            
-        }
-        /**
-          * Function to add TwoFactor Google Auth to an existing user
-          **/
-          
-    public function generateSecretKey(){
-          
-        $user = Auth::user();
-        $key = Google2FA::generateSecretKey();
-        $user->google_2fa_secret=$key;
- 
-        $user->update();
- 
- 
-        }
-          
-      
-    
-         
-     
-       
-    
-        /**
-         * Validates the Two Factor token.
-         *
-         * This feels very hacky, but we have to juggle authentication and codes.
-         *
-         * @return \Illuminate\Http\RedirectResponse
-         */
-        public function postTwoFactor()
-        {
-            // Check that we have a session.
-            if ($userId = Session::pull('2fa_id')) {
-                $code = Binput::get('code');
-    
-                // Maybe a temp login here.
-                Auth::loginUsingId($userId);
-    
-                $valid = Google2FA::verifyKey(Auth::user()->google_2fa_secret, $code);
-                if ($valid) {
-                    event(new UserPassedTwoAuthEvent(Auth::user()));
-    
-                    event(new UserLoggedInEvent(Auth::user()));
-    
-                    return Redirect::intended('dashboard');
-                } else {
-                    event(new UserFailedTwoAuthEvent(Auth::user()));
-    
-                    // Failed login, log back out.
-                    Auth::logout();
-    
-                    return cachet_redirect('auth.login')->withError(trans('forms.login.invalid-token'));
-                }
-            }
-    
-            return cachet_redirect('auth.login')->withError(trans('forms.login.invalid-token'));
-        }
-    
         /**
          * Logs the user out, deleting their session etc.
          *

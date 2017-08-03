@@ -73,6 +73,7 @@ class ApiRoutes
                 $router->post('incidents/{incident}/updates', 'IncidentUpdateController@postIncidentUpdate');
                 $router->post('metrics', 'MetricController@postMetrics');
                 $router->post('metrics/{metric}/points', 'MetricPointController@postMetricPoints');
+
                 $router->post('schedules', 'ScheduleController@postSchedule');
                 $router->post('subscribers', 'SubscriberController@postSubscribers');
 

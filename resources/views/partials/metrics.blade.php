@@ -69,7 +69,7 @@
 
         var chart = charts[metricId];
 
-        $.getJSON('/metrics/'+metricId, { filter: metricGroup }).done(function (result) {
+        $.getJSON('metrics/'+metricId, { filter: metricGroup }).done(function (result) {
             var data = result.data.items;
 
             if (chart.chart !== null) {
@@ -95,8 +95,8 @@
                         yAxes: [{
                             ticks: {
                                 beginAtZero: true,
-                                suggestedMax: 0.1,
-                                // fixedStepSize: result.data.metric.places,
+                                suggestedMax: 10,
+                                fixedStepSize: 1,
                                 callback: function(tickValue, index, ticks) {
                                     var delta = ticks[1] - ticks[0];
 
