@@ -19,7 +19,7 @@ $(function () {
         },
         statusCode: {
             401: function () {
-                window.location.href = '/';
+                window.location.href = '/auth/login';
             },
             403: function () {
                 window.location.href = '/';
