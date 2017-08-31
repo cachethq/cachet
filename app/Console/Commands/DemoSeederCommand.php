@@ -394,6 +394,9 @@ EINCIDENT;
                 'key'   => 'app_incident_days',
                 'value' => '7',
             ], [
+                'key'   => 'app_refresh_rate',
+                'value' => '0',
+            ], [
                 'key'   => 'app_analytics',
                 'value' => 'UA-58442674-3',
             ], [
