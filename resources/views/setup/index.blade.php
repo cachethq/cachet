@@ -212,6 +212,7 @@
                 <hr >
                 <div class="form-group text-center">
                     <input type="hidden" name="settings[app_incident_days]" value="7" >
+                    <input type="hidden" name="settings[app_refresh_rate]" value="0" >
                     <span class="wizard-next btn btn-info" data-current-block="3" data-next-block="2">
                         {{ trans('pagination.previous') }}
                     </span>
