@@ -106,6 +106,13 @@ $factory->define(Setting::class, function ($faker) {
     ];
 });
 
+$factory->define(Setting::class, function ($faker) {
+    return [
+       'name'  => 'app_refresh_rate',
+       'value' => '0',
+    ];
+});
+
 $factory->define(Subscriber::class, function ($faker) {
     return [
         'email'       => $faker->safeEmail,
