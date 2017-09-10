@@ -37,7 +37,7 @@
         "aws/aws-sdk-php": "^3.7",
         "backup-manager/laravel": "dev-master#df53f9c9d8c6be5d7a2638f45d54b8fb7bc51e2b",
         "barryvdh/laravel-cors": "^0.8",
-        "doctrine/dbal": "~2.5",
+        "doctrine/dbal": "2.5.13",
         "fideloper/proxy": "^3.1",
         "graham-campbell/binput": "^3.5",
         "graham-campbell/core": "^5.1",
