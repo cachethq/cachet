@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "426a9e8c5ccee09a6022b9e7503bda02",
+    "content-hash": "1b91e148a5444bc6bfca93350e1ebc8d",
     "packages": [
         {
             "name": "alt-three/badger",
@@ -1464,21 +1464,21 @@
         },
         {
             "name": "graham-campbell/exceptions",
-            "version": "v8.8.0",
+            "version": "v9.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Exceptions.git",
-                "reference": "e93f725d3637625897fe6ec30dc454cb23adb331"
+                "reference": "d5eaa36169ad651b9f3d8f8d2ed218743b89013d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Exceptions/zipball/e93f725d3637625897fe6ec30dc454cb23adb331",
-                "reference": "e93f725d3637625897fe6ec30dc454cb23adb331",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Exceptions/zipball/d5eaa36169ad651b9f3d8f8d2ed218743b89013d",
+                "reference": "d5eaa36169ad651b9f3d8f8d2ed218743b89013d",
                 "shasum": ""
             },
             "require": {
-                "illuminate/contracts": "5.1.*|5.2.*|5.3.*",
-                "illuminate/support": "5.1.*|5.2.*|5.3.*",
+                "illuminate/contracts": "5.1.*|5.2.*|5.3.*|5.4.*",
+                "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*",
                 "paragonie/random_compat": "^1.1|^2.0",
                 "php": ">=5.5.9",
                 "psr/log": "^1.0",
@@ -1497,7 +1497,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "8.7-dev"
+                    "dev-master": "9.4-dev"
                 }
             },
             "autoload": {
@@ -1529,7 +1529,7 @@
                 "laravel",
                 "whoops"
             ],
-            "time": "2016-07-31T14:54:35+00:00"
+            "time": "2017-09-10T16:49:31+00:00"
         },
         {
             "name": "graham-campbell/markdown",

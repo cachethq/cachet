@@ -34,7 +34,7 @@
         "fideloper/proxy": "^3.1",
         "graham-campbell/binput": "^3.4",
         "graham-campbell/core": "^5.1",
-        "graham-campbell/exceptions": "^8.6",
+        "graham-campbell/exceptions": "^9.4",
         "graham-campbell/markdown": "^6.1",
         "guzzlehttp/guzzle": "^6.2.1",
         "jenssegers/date": "^3.2",
