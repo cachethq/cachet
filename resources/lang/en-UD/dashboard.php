@@ -251,8 +251,6 @@ return [
 
     // Widgets
     'widgets' => [
-        'support'          => 'crwdns771:0crwdne771:0',
-        'support_subtitle' => 'crwdns772:0crwdne772:0',
         'news'             => 'crwdns773:0crwdne773:0',
         'news_subtitle'    => 'crwdns774:0crwdne774:0',
     ],

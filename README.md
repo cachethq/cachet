@@ -95,7 +95,7 @@ If you'd like to contribute translations, please check out our [CrowdIn project]
 
 ## Show your support
 
-Cachet is a BSD-3-licensed open source project. If you'd like to support future development, check out the [Patreon campaign](https://patreon.com/jbrooksuk).
+Cachet is a BSD-3-licensed open source project.
 
 ## Professional Installation Service
 

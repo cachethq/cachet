@@ -224,7 +224,7 @@ return [
             'contributors'  => '贡献者',
             'license'       => 'Cachet 是 <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a> 开发的一个开源项目，使用 BSD-3 授权。',
             'backers-title' => '后勤力量和赞助商',
-            'backers'       => '如果您想为后续的开发提供支持，请查看 <a href="https://patreon.com/jbrooksuk" target="_blank">Cachet Patreon</a>。',
+            'backers'       => 'If you\'d like to support future development, check out the CrowdIn and GitHub.',
             'thank-you'     => '感谢您和 :count 位贡献者们',
         ],
     ],
@@ -251,8 +251,6 @@ return [
 
     // Widgets
     'widgets' => [
-        'support'          => '支持 Cachet',
-        'support_subtitle' => '查看我们的 <strong><a href="https://patreon.com/jbrooksuk" target="_blank">Patreon</a></strong> 页面！',
         'news'             => '最新消息',
         'news_subtitle'    => '获取最近的更新',
     ],

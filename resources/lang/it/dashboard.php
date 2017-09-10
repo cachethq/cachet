@@ -224,7 +224,7 @@ return [
             'contributors'  => 'Collaboratori',
             'license'       => 'Cachet è un progetto open source con licenza BSD-3, rilasciato da <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank"> Alt tre Services Limited</a>.',
             'backers-title' => 'Sostenitori e sponsor',
-            'backers'       => 'Se si desidera sostenere lo sviluppo futuro, scopri la campagna <a href="https://patreon.com/jbrooksuk" target="_blank">Cachet Patreon</a>.',
+            'backers'       => 'If you\'d like to support future development, check out the CrowdIn and GitHub.',
             'thank-you'     => 'Grazie a tutti i :count contributori.',
         ],
     ],
@@ -251,8 +251,6 @@ return [
 
     // Widgets
     'widgets' => [
-        'support'          => 'Supporta Cachet',
-        'support_subtitle' => 'Visita la nostra pagina <strong><a href="https://patreon.com/jbrooksuk" target="_blank"> Patreon</a></strong>!',
         'news'             => 'Utime notizie',
         'news_subtitle'    => 'Ottieni l\'aggiornamento più recente',
     ],
