@@ -57,7 +57,7 @@ class IncidentUpdatedNotification extends Notification
      */
     public function via($notifiable)
     {
-        return ['mail', 'nexmo', 'slack'];
+        return ['mail', 'slack', \SwisscomSMS::class];
     }
 
     /**
@@ -142,4 +142,23 @@ class IncidentUpdatedNotification extends Notification
                                    ->footer(trans('cachet.subscriber.unsubscribe', ['link' => cachet_route('subscribe.unsubscribe', $notifiable->verify_code)]));
                     });
     }
+
+    /**
+     * @param $notifiable
+     */
+    public function toSwisscomSMS($notifiable)
+    {
+        $content = trans('notifications.incident.update.sms.content', [
+            'name' => $this->update->incident->name,
+        ]);
+
+        dd($content);
+
+        return [
+            "to" => "diogo",
+            "from" => "sbd",
+            "content" => $content
+        ];
+    }
+
 }

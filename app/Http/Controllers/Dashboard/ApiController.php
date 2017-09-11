@@ -35,6 +35,9 @@ class ApiController extends AbstractApiController
      */
     public function postUpdateComponent(Component $component)
     {
+
+        dd("Hello");
+
         try {
             dispatch(new UpdateComponentCommand(
                 $component,

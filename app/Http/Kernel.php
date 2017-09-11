@@ -42,4 +42,12 @@ class Kernel extends HttpKernel
         'subscribers' => 'CachetHQ\Cachet\Http\Middleware\SubscribersConfigured',
         'throttle'    => 'AltThree\Throttle\ThrottlingMiddleware',
     ];
+
+    protected $middlewareGroups = [
+        'api' => [
+            '\App\Http\Middleware\EncryptCookies::class',
+            '\Illuminate\Session\Middleware\StartSession::class',
+
+        ],
+    ];
 }

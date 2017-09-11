@@ -25,7 +25,7 @@
         }
     ],
     "require": {
-        "php": ">=5.6.4",
+        "php": ">=7.1.0",
         "ext-xml": "*",
         "alt-three/badger": "^3.1",
         "alt-three/bus": "^2.0",
@@ -89,20 +89,6 @@
         }
     },
     "scripts": {
-        "post-root-package-install": [
-            "php -r \"file_exists('.env') || copy('.env.example', '.env');\""
-        ],
-        "post-create-project-cmd": [
-            "php artisan key:generate"
-        ],
-        "post-install-cmd": [
-            "Illuminate\\Foundation\\ComposerScripts::postInstall",
-            "php artisan optimize"
-        ],
-        "post-update-cmd": [
-            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
-            "php artisan optimize"
-        ]
     },
     "config": {
         "preferred-install": "dist",
