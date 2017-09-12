@@ -15,6 +15,8 @@ use CachetHQ\Cachet\Repositories\Metric\MetricRepository;
 use CachetHQ\Cachet\Repositories\Metric\MySqlRepository;
 use CachetHQ\Cachet\Repositories\Metric\PgSqlRepository;
 use CachetHQ\Cachet\Repositories\Metric\SqliteRepository;
+use CachetHQ\Cachet\Repositories\Uptime\UpTimePgSqlRepository;
+use CachetHQ\Cachet\Repositories\Uptime\UpTimeRepository;
 use CachetHQ\Cachet\Services\Dates\DateFactory;
 use Illuminate\Contracts\Config\Repository as ConfigRepository;
 use Illuminate\Contracts\Container\Container;
@@ -35,6 +37,7 @@ class RepositoryServiceProvider extends ServiceProvider
     public function register()
     {
         $this->registerMetricRepository();
+        $this->registerUpTimeRepository();
     }
 
     /**
@@ -56,6 +59,26 @@ class RepositoryServiceProvider extends ServiceProvider
             $dates = $app->make(DateFactory::class);
 
             return new MetricRepository($repository, $dates);
+        });
+    }
+
+    /**
+     * Register the metric repository.
+     *
+     * @return void
+     */
+    protected function registerUpTimeRepository()
+    {
+        $this->app->singleton(UpTimeRepository::class, function (Container $app) {
+            $config = $app->make(ConfigRepository::class);
+
+            switch ($config->get('database.default')) {
+                case 'pgsql': $repository = new UpTimePgSqlRepository($config); break;
+            }
+
+            $dates = $app->make(DateFactory::class);
+
+            return new UpTimeRepository($repository, $dates);
         });
     }
 }

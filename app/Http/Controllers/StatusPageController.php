@@ -18,6 +18,7 @@ use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\Schedule;
 use CachetHQ\Cachet\Repositories\Metric\MetricRepository;
+use CachetHQ\Cachet\Repositories\Uptime\UpTimeRepository;
 use CachetHQ\Cachet\Services\Dates\DateFactory;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
@@ -146,6 +147,12 @@ class StatusPageController extends AbstractApiController
             'metric' => $metric->toArray(),
             'items'  => $metricData,
         ]);
+    }
+
+
+    public function getUpTime(Component $component){
+        $upTimes = app(UpTimeRepository::class);
+        echo $upTimes->ComponentUpTimeForLastHours($component, 24);
     }
 
     /**
