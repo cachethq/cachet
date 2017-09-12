@@ -37,6 +37,7 @@ class ApiFilter
             }
         }
 
+        
         return array_values($displayers);
     }
 }

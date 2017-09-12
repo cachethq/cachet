@@ -17,6 +17,7 @@ use CachetHQ\Cachet\Bus\Commands\Metric\UpdateMetricPointCommand;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\MetricPoint;
 use GrahamCampbell\Binput\Facades\Binput;
+use App\Http\Controllers\Input;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
@@ -49,6 +50,7 @@ class MetricPointController extends AbstractApiController
     public function store(Metric $metric, $json)
     {
        
+
         if($json!=null){
             $c = sizeof($json);
             
@@ -69,17 +71,22 @@ class MetricPointController extends AbstractApiController
         else {
              try {
                 $metricPoint = dispatch(new AddMetricPointCommand(
-                $metric,
-                Binput::get('value'),
-                Binput::get('timestamp')
-            ));
-        } catch (QueryException $e) {
+                                $metric,
+                                Binput::get('value'),
+                                Binput::get('timestamp')
+                                ));
+                 } catch (QueryException $e) {
             throw new BadRequestHttpException();
+            }
+            
         }
-
-        return $this->item($metricPoint);
+        
+       return $this->item($metricPoint);
     }
 
+   
+
+     
     /**
      * Updates a metric point.
      *

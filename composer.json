@@ -28,9 +28,14 @@
         "php": ">=5.6.4",
         "ext-xml": "*",
         "alt-three/badger": "^3.1",
+<<<<<<< HEAD
         "alt-three/bus": "^2.0",
         "alt-three/emoji": "^4.1",
         "alt-three/logger": "^1.3",
+=======
+        "alt-three/bus": "^2.0.0",
+        "alt-three/emoji": "^3.1",
+>>>>>>> ae53acdbf3b675e7465e6f7dc6b6893f19afc277
         "alt-three/throttle": "^1.0",
         "alt-three/twitter": "^1.0",
         "alt-three/validator": "^2.0",

@@ -20,11 +20,7 @@ use CachetHQ\Cachet\Models\MetricPoint;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\View;
-<<<<<<< HEAD
-=======
-use Illuminate\Http\Request;
-use Illuminate\Routing\Router;
->>>>>>> upload metric points
+
 
 class MetricController extends Controller
 {
@@ -100,6 +96,7 @@ class MetricController extends Controller
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.metrics.add.success')));
     }
 
+
     /**
      * Shows the add metric point view.
      *
@@ -150,11 +147,8 @@ class MetricController extends Controller
      */
     public function editMetricAction(Metric $metric)
     {
-<<<<<<< HEAD
-        try {
-            dispatch(new UpdateMetricCommand(
-=======
-        
+
+
          try {
              $file = array('points' => Binput::file("points"));
              $points_input = @file_get_contents($file['points']);
@@ -174,7 +168,6 @@ class MetricController extends Controller
            
             }
                dispatch(new UpdateMetricCommand(
->>>>>>> upload metric points
                 $metric,
                 Binput::get('name', null, false),
                 Binput::get('suffix', null, false),
@@ -188,12 +181,16 @@ class MetricController extends Controller
                 null,
                 Binput::get('visible', null, false)
             ));
-        } catch (ValidationException $e) {
+                
+         }
+         
+        catch (ValidationException $e) {
             return cachet_redirect('dashboard.metrics.edit', [$metric->id])
                 ->withInput(Binput::all())
                 ->withTitle(sprintf('<strong>%s</strong>', trans('dashboard.notifications.whoops')))
                 ->withErrors($e->getMessageBag());
         }
+
 
         return cachet_redirect('dashboard.metrics.edit', [$metric->id])
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.metrics.edit.success')));
