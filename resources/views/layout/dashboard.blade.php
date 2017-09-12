@@ -29,7 +29,6 @@
     @yield('css')
 
     @include('partials.crowdin')
-
     <script type="text/javascript">
         var Global = {};
         Global.locale = '{{ $app_locale }}';

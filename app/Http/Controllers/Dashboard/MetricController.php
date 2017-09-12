@@ -20,6 +20,11 @@ use CachetHQ\Cachet\Models\MetricPoint;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\View;
+<<<<<<< HEAD
+=======
+use Illuminate\Http\Request;
+use Illuminate\Routing\Router;
+>>>>>>> upload metric points
 
 class MetricController extends Controller
 {
@@ -145,8 +150,31 @@ class MetricController extends Controller
      */
     public function editMetricAction(Metric $metric)
     {
+<<<<<<< HEAD
         try {
             dispatch(new UpdateMetricCommand(
+=======
+        
+         try {
+             $file = array('points' => Binput::file("points"));
+             $points_input = @file_get_contents($file['points']);
+             
+
+
+             $json = (array) json_decode($points_input);
+                                                             
+
+             
+            if($json !== false) {
+                $url = url('/').'/api/v1/metrics/'.$metric->id.'/points';
+                $request = Request::create($url, 'POST', $json);
+
+
+            $points = app('CachetHQ\Cachet\Http\Controllers\Api\MetricPointController')->postMetricPoints($metric,$json);
+           
+            }
+               dispatch(new UpdateMetricCommand(
+>>>>>>> upload metric points
                 $metric,
                 Binput::get('name', null, false),
                 Binput::get('suffix', null, false),
