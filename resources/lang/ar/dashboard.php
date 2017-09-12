@@ -161,18 +161,18 @@ return [
 
     // Team
     'team' => [
-        'team'        => 'Team',
-        'member'      => 'Member',
-        'profile'     => 'Profile',
+        'team'        => 'فريق',
+        'member'      => 'عضو',
+        'profile'     => 'الملف الشخصى',
         'description' => 'Team Members will be able to add, modify &amp; edit components and incidents.',
         'add'         => [
-            'title'   => 'Add a new team member',
-            'success' => 'Team member added.',
+            'title'   => 'إضافة عضو جديد إلى الفريق',
+            'success' => 'تم إضافة العضو إلى الفريق',
             'failure' => 'The team member could not be added, please try again.',
         ],
         'edit' => [
-            'title'   => 'Update profile',
-            'success' => 'Profile updated.',
+            'title'   => 'تحديث الملف الشخصى',
+            'success' => 'تم تحديث الملف الشخصى',
             'failure' => 'Something went wrong updating the profile, please try again.',
         ],
         'delete' => [
@@ -188,7 +188,7 @@ return [
 
     // Settings
     'settings' => [
-        'settings'  => 'Settings',
+        'settings'  => 'الإعدادات',
         'app-setup' => [
             'app-setup'   => 'Application Setup',
             'images-only' => 'Only images may be uploaded.',
@@ -206,7 +206,7 @@ return [
             'footer'        => 'Custom Footer HTML',
         ],
         'security' => [
-            'security'   => 'Security',
+            'security'   => 'الحماية',
             'two-factor' => 'Users without two-factor authentication',
         ],
         'stylesheet' => [
@@ -231,16 +231,16 @@ return [
 
     // Login
     'login' => [
-        'login'      => 'Login',
-        'logged_in'  => 'You\'re logged in.',
-        'welcome'    => 'Welcome Back!',
-        'two-factor' => 'Please enter your token.',
+        'login'      => 'تسجيل الدخول',
+        'logged_in'  => 'تم تسجيل الدخول',
+        'welcome'    => 'مرحبا بعودتك!',
+        'two-factor' => 'من فضلك قم بإدخال ال token الخاص بك.',
     ],
 
     // Sidebar footer
-    'help'        => 'Help',
-    'status_page' => 'Status Page',
-    'logout'      => 'Logout',
+    'help'        => 'مساعدة',
+    'status_page' => 'صفحة الحالات',
+    'logout'      => 'تسجيل الخروج',
 
     // Notifications
     'notifications' => [
@@ -251,10 +251,10 @@ return [
 
     // Widgets
     'widgets' => [
-        'support'          => 'Support Cachet',
+        'support'          => 'إدعم Cachet',
         'support_subtitle' => 'Check out our <strong><a href="https://patreon.com/jbrooksuk" target="_blank">Patreon</a></strong> page!',
-        'news'             => 'Latest News',
-        'news_subtitle'    => 'Get the latest updates',
+        'news'             => 'أخر الأخبار',
+        'news_subtitle'    => 'الحصول على اخر التحديثات',
     ],
 
     // Welcome modal
