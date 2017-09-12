@@ -20,7 +20,8 @@ use CachetHQ\Cachet\Models\MetricPoint;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\View;
-
+use Illuminate\Http\Request;
+use Illuminate\Routing\Router;
 
 class MetricController extends Controller
 {
@@ -115,18 +116,21 @@ class MetricController extends Controller
         
          try {
              $file = array('points' => Binput::file("points"));
-             $json = @file_get_contents($file['points']);
+             $points_input = @file_get_contents($file['points']);
+             
+
+
+             $json = (array) json_decode($points_input);
+                                                             
+
              
             if($json !== false) {
-            
-            $jsonIterator = json_decode($json);
-        
-            foreach ($jsonIterator as $key['points'] => $val) {
-            
-                $points = app('CachetHQ\Cachet\Http\Controllers\Api\MetricPointController')->postMetricPoints($metric,$val);
-            
+                $url = url('/').'/api/v1/metrics/'.$metric->id.'/points';
+                $request = Request::create($url, 'POST', $json);
+
+
+            $points = app('CachetHQ\Cachet\Http\Controllers\Api\MetricPointController')->postMetricPoints($metric,$json);
            
-                }
             }
                dispatch(new UpdateMetricCommand(
                 $metric,

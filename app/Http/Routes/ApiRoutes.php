@@ -62,11 +62,18 @@ class ApiRoutes
 
                 $router->get('schedules', 'ScheduleController@getSchedules');
                 $router->get('schedules/{schedule}', 'ScheduleController@getSchedule');
+                
+            
+                $router->get('comments','CommentController@index');
+                $router->get('comments/{comment}','CommentController@show');
+
+
             });
 
             $router->group(['middleware' => ['auth.api:true']], function (Registrar $router) {
+                
                 $router->get('subscribers', 'SubscriberController@getSubscribers');
-
+                $router->post('comments','CommentController@store');
                 $router->post('components', 'ComponentController@postComponents');
                 $router->post('components/groups', 'ComponentGroupController@postGroups');
                 $router->post('incidents', 'IncidentController@postIncidents');

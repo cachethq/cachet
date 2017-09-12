@@ -20,6 +20,7 @@ use GrahamCampbell\Binput\Facades\Binput;
 use App\Http\Controllers\Input;
 use Illuminate\Database\QueryException;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
+use Illuminate\Http\Request;
 
 class MetricPointController extends AbstractApiController
 {
@@ -44,11 +45,23 @@ class MetricPointController extends AbstractApiController
      * 
      * @return \Illuminate\Http\JsonResponse
      */
-    public function postMetricPoints(Metric $metric,$json=null)
+    public function postMetricPoints(Metric $metric, $json)
     {
+        
+        /*
+         if(0 !== sizeof($request->json()->all())){
+
+            $data = $request->json()->all();
+
+         } else {
+
+             $data = (array) $request->input();
+             die(var_dump(Binput));
+         }*/
+
         if($json!=null){
+            $c = sizeof($json);
             
-            $c = count($json);
             try {
                     for($i=0; $i<$c; $i++){
                         
@@ -59,7 +72,8 @@ class MetricPointController extends AbstractApiController
                         $metricPoint->save();
                     }
             } catch (QueryException $e) {
-                throw new BadRequestHttpException();
+                
+                throw new BadRequestHttpException('error post mettic points');
             }
         }
         else {
