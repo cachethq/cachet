@@ -157,6 +157,7 @@ class StatusPageController extends AbstractApiController
 
         switch ($type){
             case 'last_hours': $data = $upTimes->ComponentUpTimesForLastHours($component, 48); break;
+            case 'last_days': $data = $upTimes->ComponentUpTimeForLastDays($component, 60); break;
         }
 
         return $this->item($data);

@@ -48,18 +48,6 @@ use Illuminate\Support\Facades\DB;
 
 class UpTimePgSqlRepository extends AbstractUpTimeRepository implements UpTimeInterface
 {
-
-    /**
-     * @param Component $component
-     * @param $days
-     * @return mixed
-     * @internal param $componentId
-     */
-    public function getComponentUpTimeSinceDays(Component $component, $days)
-    {
-        // TODO: Implement getComponentUpTimeSinceDays() method.
-    }
-
     /**
      * @param Component $component
      * @param $toDate

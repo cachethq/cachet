@@ -19,13 +19,6 @@ interface UpTimeInterface
 
     /**
      * @param Component $component
-     * @param $days
-     * @return mixed
-     */
-    public function getComponentUpTimeSinceDays(Component $component, $days );
-
-    /**
-     * @param Component $component
      * @param $toDate
      * @param null $fromDate
      * @return mixed

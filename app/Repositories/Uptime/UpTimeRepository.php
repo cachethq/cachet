@@ -59,7 +59,7 @@ class UpTimeRepository
                     $fromDate->format("'Y-m-d H:i:s'")
                 );
 
-            $upTimes[$fromDate->format('Y-m-d H:i:s')] = (24.0 - $downTime) * 100.0;
+            $upTimes[$toDate->format('Y-m-d')] = (24.0 - $downTime) / 24.0 * 100.0;
             $fromDate = clone $toDate;
             $toDate->modify("-1 day");
         }
