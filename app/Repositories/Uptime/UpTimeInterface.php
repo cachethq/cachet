@@ -21,15 +21,14 @@ interface UpTimeInterface
      * @param Component $component
      * @param $days
      * @return mixed
-     * @internal param $componentId
      */
     public function getComponentUpTimeSinceDays(Component $component, $days );
 
     /**
      * @param Component $component
-     * @param $hours
+     * @param $toDate
+     * @param null $fromDate
      * @return mixed
-     * @internal param $componentId
      */
-    public function getComponentUpTimeSinceHours(Component $component, $hours );
+    public function getComponentUpTimeSinceHours(Component $component, $toDate, $fromDate = null);
 }

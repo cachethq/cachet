@@ -1,6 +1,10 @@
 <?php
 
 namespace CachetHQ\Cachet\Repositories\Uptime;
+use DateInterval;
+use DateTime;
+use DateTimeZone;
+use Jenssegers\Date\Date;
 
 
 /**
@@ -16,6 +20,9 @@ class UpTimeRepository
 
     private $repository;
 
+
+    private $userTimeZone = "Europe/Berlin"; // TODO: adapt this automatically
+
     /**
      * UpTimeRepository constructor.
      * @param $repository
@@ -27,11 +34,37 @@ class UpTimeRepository
 
 
     /**
-     * @param $componentId
+     * @param $component
      * @param $days
+     * @return array
+     * @internal param $componentId
      */
-    public function ComponentUpTimeForLastDays($componentId, $days){
+    public function ComponentUpTimeForLastDays($component, $days){
+        $fromDate = new DateTime();
+        $fromDate->setTimezone(new DateTimeZone($this->userTimeZone));
+        $toDate = DateTime::createFromFormat("H-m", $fromDate->format("H-m"));
 
+        // 1st iteration : substract hours and minutes ex: Wed: 14:37 -> compute uptime for last 14:37 hours
+        // 2nd iteration: uptime for Tuesday ( 24H ), Monday ( 24H ) etc...
+
+        $upTimes = [];
+
+        for($i = 1; $i <= $days; $i ++){
+
+            $downTime = $this
+                ->repository
+                ->getComponentUpTimeSinceHours(
+                    $component,
+                    $toDate->format('Y-m-d H:i:s'),
+                    $fromDate->format("'Y-m-d H:i:s'")
+                );
+
+            $upTimes[$fromDate->format('Y-m-d H:i:s')] = (24.0 - $downTime) * 100.0;
+            $fromDate = clone $toDate;
+            $toDate->modify("-1 day");
+        }
+
+        return $upTimes;
     }
 
 
@@ -41,8 +74,34 @@ class UpTimeRepository
      * @return mixed
      * @internal param $componentId
      */
-    public function ComponentUpTimeForLastHours($component, $hours){
-        $downTimeHours = $this->repository->getComponentUpTimeSinceHours($component, $hours);
-        return ($hours - $downTimeHours) / $hours * 100.0;
+    public function ComponentUpTimesForLastHours($component, $hours){
+
+        $fromDate = new DateTime();
+        $fromDate->setTimezone(new DateTimeZone($this->userTimeZone));
+        $toDate = DateTime::createFromFormat("H",$fromDate->format("H"));
+
+        // TODO: add seconds
+
+        // 1st iteration : substract minutes ex: 14:37 -> compute uptime for 37 minutes
+        // 2nd iteration: uptime for 13:00 to 14:00, 3th 12:00 to 13:00 etc...
+
+        $upTimes = [];
+
+        for($i = 1; $i <= $hours; $i ++){
+
+            $downTime = $this
+                ->repository
+                ->getComponentUpTimeSinceHours(
+                    $component,
+                    $toDate->format('Y-m-d H:i:s'),
+                    $fromDate->format("'Y-m-d H:i:s'")
+                );
+
+            $upTimes[$fromDate->format('Y-m-d H:i:s')] = (1.0 - $downTime) * 100.0;
+            $fromDate = clone $toDate;
+            $toDate->modify("-1 hour");
+        }
+
+        return $upTimes;
     }
 }

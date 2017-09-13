@@ -151,8 +151,15 @@ class StatusPageController extends AbstractApiController
 
 
     public function getUpTime(Component $component){
+        $type = Binput::get('filter', 'last_hours');
+
         $upTimes = app(UpTimeRepository::class);
-        echo $upTimes->ComponentUpTimeForLastHours($component, 24);
+
+        switch ($type){
+            case 'last_hours': $data = $upTimes->ComponentUpTimesForLastHours($component, 48); break;
+        }
+
+        return $this->item($data);
     }
 
     /**
