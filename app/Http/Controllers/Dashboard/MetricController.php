@@ -160,11 +160,10 @@ class MetricController extends Controller
 
              
             if($json !== false) {
-                $url = url('/').'/api/v1/metrics/'.$metric->id.'/points';
-                $request = Request::create($url, 'POST', $json);
+                
 
 
-            $points = app('CachetHQ\Cachet\Http\Controllers\Api\MetricPointController')->postMetricPoints($metric,$json);
+            $points = app('CachetHQ\Cachet\Http\Controllers\Api\MetricPointController')->store($metric,$json);
            
             }
                dispatch(new UpdateMetricCommand(

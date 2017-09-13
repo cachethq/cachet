@@ -95,8 +95,7 @@ class StatusPageController extends AbstractApiController
             ->withCanPageForward((bool) $today->gt($startDate))
             ->withCanPageBackward(Incident::where('occurred_at', '<', $startDate->format('Y-m-d'))->count() > 0)
             ->withPreviousDate($startDate->copy()->subDays($daysToShow)->toDateString())
-            ->withNextDate($startDate->copy()->addDays($daysToShow)->toDateString())
-            ->withSubscribersEnabled($subscribers_enabled);
+            ->withNextDate($startDate->copy()->addDays($daysToShow)->toDateString());
     }
 
     /**

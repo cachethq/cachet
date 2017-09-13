@@ -21,7 +21,6 @@ use App\Http\Controllers\Input;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
-use Illuminate\Http\Request;
 
 class MetricPointController extends AbstractApiController
 {
@@ -70,11 +69,11 @@ class MetricPointController extends AbstractApiController
         }
         else {
              try {
-                $metricPoint = dispatch(new AddMetricPointCommand(
-                                $metric,
-                                Binput::get('value'),
-                                Binput::get('timestamp')
-                                ));
+                $metricPoint = dispatch(new CreateMetricPointCommand(
+                $metric,
+                Binput::get('value'),
+                Binput::get('timestamp')
+            ));
                  } catch (QueryException $e) {
             throw new BadRequestHttpException();
             }
