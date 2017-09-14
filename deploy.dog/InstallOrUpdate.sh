@@ -10,10 +10,9 @@ if [ ! -f ../../../shared/deploy.dog.cachet-key ]; then
     # Generate new key
     KEY=$(php artisan key:generate --show)
     KEY=(${KEY[@]})
-    KEY="${KEY}[0]"
 
     # Add key into .env file
-    sed -i "s/DDREPLACECACHETKEY/$KEY/" .env
+    sed -i "s/DDREPLACECACHETKEY/$(echo $KEY | sed -e 's/\\/\\\\/g; s/\//\\\//g; s/&/\\\&/g')/" .env
 
     # Install Cachet
     php artisan app:install
@@ -27,7 +26,7 @@ else
 
     # Add key into .env file
     KEY=$(head -n 1 ../../../shared/deploy.dog.cachet-key)
-    sed -i "s/DDREPLACECACHETKEY/$KEY/" .env
+    sed -i "s/DDREPLACECACHETKEY/$(echo $KEY | sed -e 's/\\/\\\\/g; s/\//\\\//g; s/&/\\\&/g')/" .env
 
     # Upgrade Cachet
     php artisan down
