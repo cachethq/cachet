@@ -89,8 +89,6 @@ class UpTimeRepository
         $fromDate = $dates["fromDate"];
         $toDate = $dates["toDate"];
 
-        // TODO: add seconds
-
         // 1st iteration : substract minutes ex: 14:37 -> compute uptime for 37 minutes
         // 2nd iteration: uptime for 13:00 to 14:00, 3th 12:00 to 13:00 etc...
 
@@ -104,7 +102,7 @@ class UpTimeRepository
                     $toDate->getTimestamp(),
                     $fromDate->getTimestamp()
                 );
-            $upTimes[$fromDate->format('Y-m-d H:i:s')] = (1.0 - $downTime) * 100.0;
+            $upTimes[$fromDate->format('Y-m-d H:i')] = (1.0 - $downTime) * 100.0;
             $fromDate = clone $toDate;
             $toDate->modify("-1 hour");
         }
