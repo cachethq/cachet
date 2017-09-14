@@ -26,6 +26,13 @@ interface System
     public function getStatus();
 
     /**
+     * Determine if Cachet has any open maintenance windows.
+     *
+     * @return bool
+     */
+    public function underMaintenance();
+
+    /**
      * Get the cachet version.
      *
      * @return string
