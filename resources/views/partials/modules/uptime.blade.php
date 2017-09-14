@@ -1,9 +1,9 @@
 <h1>Uptimes</h1>
-<div class="section-metrics section-uptime">
+<div class="section-uptime">
     @if($component_groups->count() > 0)
         <ul class="list-group">
             @foreach($component_groups as $group)
-                <li class="list-group-item metric" data-metric-id="{{ $group->id }}">
+                <li class="list-group-item uptime" data-uptime-id="{{ $group->id }}">
                     <div class="graph-container">
                         <div class="row">
                             <div class="col-xs-10">
@@ -24,7 +24,7 @@
 
                         <div class="row">
                             <div class="col-xs-12">
-                                <canvas id="metric-group-{{ $group->id }}" data-is-group="true" data-metric-name="{{ $group->name }}" data-metric-components="" data-metric-id="{{ $group->id }}" data-metric-group="last_days" height="160" width="600"></canvas>
+                                <canvas id="uptime-group-{{ $group->id }}" data-is-group="true" data-uptime-name="{{ $group->name }}" data-uptime-components="" data-uptime-id="{{ $group->id }}" data-uptime-group="last_days" height="160" width="600"></canvas>
                             </div>
                         </div>
 
@@ -59,7 +59,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-xs-12">
-                                        <canvas id="metric-component-{{ $component->id }}" data-is-group="false" data-metric-name="{{ $component->name }}" data-metric-components="" data-metric-id="{{ $component->id }}" data-metric-group="last_days" height="160" width="600"></canvas>
+                                        <canvas id="uptime-component-{{ $component->id }}" data-is-group="false" data-uptime-name="{{ $component->name }}" data-uptime-components="" data-uptime-id="{{ $component->id }}" data-uptime-group="last_days" height="160" width="600"></canvas>
                                     </div>
                                 </div>
                             </div>
@@ -86,7 +86,7 @@
 
 
                 Chart.defaults.global.elements.point.hitRadius = 10;
-                Chart.defaults.global.responsiveAnimationDuration = 1500;
+                Chart.defaults.global.responsiveAnimationDuration = 1000;
                 Chart.defaults.global.legend.display = false;
 
                 var charts = {};
@@ -97,22 +97,22 @@
                     $li = $this.parents('.graph-container');
                     $li.find('a[data-toggle=dropdown] span.filter').text($this.text());
                     $canvas = $li.find('canvas');
-                    $canvas.data('metric-group', $this.data('filter-type'));
+                    $canvas.data('uptime-group', $this.data('filter-type'));
                     drawChart($canvas);
                 });
 
-                var canvasGroup = $('canvas[data-metric-id]');
+                var canvasGroup = $('canvas[data-uptime-id]');
 
                 canvasGroup.each(function() {
                     drawChart($(this));
                 });
 
                 function drawChart($el) {
-                    var metricId = $el.data('metric-id');
-                    var metricGroup = $el.data('metric-group');
+                    var uptimeId = $el.data('uptime-id');
+                    var uptimeGroup = $el.data('uptime-group');
                     var isGroupComponent = $el.data('is-group');
-                    var name = $el.data("metric-name");
-                    var id = isGroupComponent ? "metric-group-" + metricId : "metric-component-" + metricId;
+                    var name = $el.data("uptime-name");
+                    var id = isGroupComponent ? "uptime-group-" + uptimeId : "uptime-component-" + uptimeId;
 
                     if(!isGroupComponent){
                         $el.parents('.graph-container').css("padding",32);
@@ -127,7 +127,7 @@
 
                     var chart = charts[id];
 
-                    $.getJSON('/uptimes_' + ( isGroupComponent ? "group/" : "component/") + metricId, { filter: metricGroup }).done(function (result) {
+                    $.getJSON('/uptimes_' + ( isGroupComponent ? "group/" : "component/") + uptimeId, { filter: uptimeGroup }).done(function (result) {
                         var data = result.data.items;
                         var labels = result.data.labels;
                         if (chart.chart !== null) {
@@ -137,7 +137,7 @@
                             type: 'bar',
                             data: {
                                 labels: labels.map(function(d){
-                                    return metricGroup === "last_hours" ? moment(d).format("HH:ss") : moment(d).format("dd, Do");
+                                    return uptimeGroup === "last_hours" ? moment(d).format("HH:ss") : moment(d).format("dd, Do");
                                 }),
                                 datasets:[{
                                     data: Object.values(data).map(function (e) {
