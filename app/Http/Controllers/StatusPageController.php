@@ -14,6 +14,7 @@ namespace CachetHQ\Cachet\Http\Controllers;
 use AltThree\Badger\Facades\Badger;
 use CachetHQ\Cachet\Http\Controllers\Api\AbstractApiController;
 use CachetHQ\Cachet\Models\Component;
+use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\Schedule;
@@ -161,6 +162,30 @@ class StatusPageController extends AbstractApiController
         }
 
         return $this->item($data);
+    }
+
+    public function getUpTimeByGroup(ComponentGroup $group){
+        $type = Binput::get('filter', 'last_hours');
+
+        $upTimes = app(UpTimeRepository::class);
+
+        $data = [];
+        $components = $group->components()->get();
+        switch ($type){
+            case 'last_hours':
+                foreach ($components as $component)
+                    $data[$component->name] = $upTimes->ComponentUpTimesForLastHours($component, 48);
+                break;
+            case 'last_days':
+                foreach ($components as $component)
+                    $data[$component->name] = $upTimes->ComponentUpTimeForLastDays($component, 30);
+                break;
+        }
+
+        return $this->item([
+            "items" => $data,
+            "labels" => array_keys(reset($data))
+        ]);
     }
 
     /**

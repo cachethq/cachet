@@ -6,6 +6,7 @@ namespace CachetHQ\Cachet\Repositories\Uptime;
 
 
 use CachetHQ\Cachet\Models\Component;
+use DateTime;
 use Illuminate\Support\Facades\DB;
 
 /**
@@ -15,62 +16,46 @@ use Illuminate\Support\Facades\DB;
  * Time: 13:40
  */
 
-/**
- * Class UpTimePgSqlRepository
- * @package CachetHQ\Cachet\Repositories\Uptime
- *
- * SELECT
-        component_id,
-        down_time_hours
-        FROM (
-        SELECT
-        incident_id,
-        COUNT(id),
-        EXTRACT(
-        EPOCH
-        FROM (MAX(incident_updates.updated_at)) - MIN(incident_updates.updated_at)
-        ) / 3600.0 AS down_time_hours
-        FROM
-        incident_updates
-        WHERE
-        updated_at > current_timestamp - INTERVAL '2 day '
-        AND
-        updated_at < current_timestamp - INTERVAL '0 day '
-        GROUP BY
-        incident_id
-        ) AS updates
-        JOIN
-        incidents ON updates.incident_id = incidents.id
-        WHERE component_id = 1
-
-
- */
-
 class UpTimePgSqlRepository extends AbstractUpTimeRepository implements UpTimeInterface
 {
     /**
      * @param Component $component
-     * @param $toDate
-     * @param bool $fromDate
+     * @param $toDateEpoch
+     * @param bool $fromDateEpoch
      * @return mixed
      */
-    public function getComponentUpTimeSinceHours(Component $component, $toDate, $fromDate = false)
+    public function getComponentUpTimeSinceHours(Component $component, $toDateEpoch, $fromDateEpoch = false)
     {
 
-        $tillQuery = $fromDate ? " AND updated_at < {$fromDate} " : "";
-
-        $downTimeHours = DB::select(
-            "SELECT  component_id,  down_time_hours FROM ( SELECT incident_id, COUNT(id), EXTRACT( EPOCH FROM ( MAX( incident_updates.updated_at) ) - MIN(incident_updates.updated_at) ) / 3600.0 AS down_time_hours FROM incident_updates WHERE updated_at > '{$toDate}' {$tillQuery} GROUP BY incident_id ) AS updates JOIN incidents ON updates.incident_id = incidents.id WHERE component_id = :componentId",
+        $result = DB::select(
+            "SELECT component_id, down_time_hours,EXTRACT (EPOCH FROM max_time) as max_time, EXTRACT (EPOCH FROM min_time) as min_time FROM ( SELECT incident_id, COUNT(id), EXTRACT( EPOCH FROM ( MAX( incident_updates.updated_at) ) - MIN(incident_updates.updated_at) ) / 3600.0 AS down_time_hours, MAX(incident_updates.updated_at) as max_time, MIN(incident_updates.updated_at) as min_time FROM incident_updates GROUP BY incident_id ) AS updates JOIN incidents ON updates.incident_id = incidents.id WHERE component_id = :componentId",
             [
                 "componentId" => $component->id
             ]
         );
 
-        if(empty($downTimeHours))
+
+        if(empty($result))
             return 0;
         else
-            return array_reduce($downTimeHours, function($i, $obj) {
-                return $i + $obj->down_time_hours;
+            return array_reduce($result, function($i, $obj) use ($toDateEpoch, $fromDateEpoch) {
+
+                $minDateEpoch = $obj->min_time;
+                $maxDateEpoch = $obj->max_time;
+
+                // TODO: find a more elegant way to do this
+                if($minDateEpoch < $toDateEpoch && $fromDateEpoch < $maxDateEpoch){
+                    return $i + ($fromDateEpoch - $toDateEpoch) / 3600.0;
+                }
+                else if($fromDateEpoch - $minDateEpoch <= ($fromDateEpoch - $toDateEpoch) && $fromDateEpoch - $minDateEpoch > 0){
+                    return $i + ($fromDateEpoch - $minDateEpoch) / 3600.0;
+                }
+                else if($maxDateEpoch - $toDateEpoch <= ($fromDateEpoch - $toDateEpoch) && $maxDateEpoch - $toDateEpoch > 0){
+                    return $i + ($maxDateEpoch - $toDateEpoch)/ 3600.0;
+                }
+                else {
+                    return $i;
+                }
             });
     }
 }

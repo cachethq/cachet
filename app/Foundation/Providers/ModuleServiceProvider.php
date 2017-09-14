@@ -28,6 +28,7 @@ class ModuleServiceProvider extends ServiceProvider
             ['group' => 'status', 'partial' => 'partials.modules.status'],
             ['group' => 'components', 'partial' => 'partials.modules.components'],
             ['group' => 'metrics', 'partial' => 'partials.modules.metrics'],
+            ['group' => 'uptime', 'partial' => 'partials.modules.uptime'],
             ['group' => 'stickied', 'partial' => 'partials.modules.stickied'],
             ['group' => 'scheduled', 'partial' => 'partials.modules.scheduled'],
             ['group' => 'timeline', 'partial' => 'partials.modules.timeline'],

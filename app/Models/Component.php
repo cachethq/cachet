@@ -20,6 +20,9 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use McCool\LaravelAutoPresenter\HasPresenter;
 
+/**
+ * @property mixed id
+ */
 class Component extends Model implements HasPresenter
 {
     use SearchableTrait, SoftDeletes, SortableTrait, ValidatingTrait;
