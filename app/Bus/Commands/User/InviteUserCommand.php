@@ -31,7 +31,7 @@ final class InviteUserCommand
      * @var string[]
      */
     public $rules = [
-        'emails' => 'required|array|email',
+        'emails.*' => 'required|email',
     ];
 
     /**

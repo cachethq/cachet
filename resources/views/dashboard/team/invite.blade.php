@@ -18,19 +18,19 @@
                 <fieldset>
                     <div class="form-group">
                         <label>{{ trans('forms.user.team.description') }}</label>
-                        <input type="email" class="form-control" name="emails[]" placeholder="{{ trans('forms.user.team.email', ['id' => 1]) }}" required>
+                        <input type="email" class="form-control" name="emails[]" value="{{ Binput::old('emails')[0] }}" placeholder="{{ trans('forms.user.team.email', ['id' => 1]) }}" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control" name="emails[]" placeholder="{{ trans('forms.user.team.email', ['id' => 2]) }}">
+                        <input type="email" class="form-control" name="emails[]" value="{{ Binput::old('emails')[1] }}" placeholder="{{ trans('forms.user.team.email', ['id' => 2]) }}">
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control" name="emails[]" placeholder="{{ trans('forms.user.team.email', ['id' => 3]) }}">
+                        <input type="email" class="form-control" name="emails[]" value="{{ Binput::old('emails')[2] }}" placeholder="{{ trans('forms.user.team.email', ['id' => 3]) }}">
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control" name="emails[]" placeholder="{{ trans('forms.user.team.email', ['id' => 4]) }}">
+                        <input type="email" class="form-control" name="emails[]" value="{{ Binput::old('emails')[3] }}" placeholder="{{ trans('forms.user.team.email', ['id' => 4]) }}">
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control" name="emails[]" placeholder="{{ trans('forms.user.team.email', ['id' => 5]) }}">
+                        <input type="email" class="form-control" name="emails[]" value="{{ Binput::old('emails')[4] }}" placeholder="{{ trans('forms.user.team.email', ['id' => 5]) }}">
                     </div>
                 </fieldset>
 

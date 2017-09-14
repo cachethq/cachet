@@ -18,7 +18,13 @@
 <div class="content-wrapper header-fixed">
     <div class="row">
         <div class="col-sm-12">
-            <p class="lead">{{ trans('dashboard.subscribers.description') }}</p>
+            <p class="lead">
+                @if($enable_subscribers)
+                {{ trans('dashboard.subscribers.description') }}
+                @else
+                {{ trans('dashboard.subscribers.description_disabled') }}
+                @endif
+            </p>
 
             <div class="striped-list">
                 @foreach($subscribers as $subscriber)

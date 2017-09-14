@@ -63,6 +63,17 @@
 
     <script type="text/javascript">
         var Global = {};
+
+        var refreshRate = parseInt("{{ $app_refresh_rate }}");
+
+        function refresh() {
+                window.location.reload(true);
+        }
+
+        if(refreshRate > 0) {
+                setTimeout(refresh, refreshRate * 1000);
+        }
+
         Global.locale = '{{ $app_locale }}';
     </script>
     <script src="{{ mix('dist/js/all.js') }}"></script>
