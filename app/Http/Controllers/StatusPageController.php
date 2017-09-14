@@ -40,6 +40,12 @@ use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
  */
 class StatusPageController extends AbstractApiController
 {
+
+
+
+    const LAST_DAYS = 30;
+    const LAST_HOURS = 48;
+
     /**
      * Displays the status page.
      *
@@ -150,41 +156,64 @@ class StatusPageController extends AbstractApiController
         ]);
     }
 
-
+    /**
+     * @param Component $component
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function getUpTime(Component $component){
         $type = Binput::get('filter', 'last_hours');
 
         $upTimes = app(UpTimeRepository::class);
 
-        switch ($type){
-            case 'last_hours': $data = $upTimes->ComponentUpTimesForLastHours($component, 48); break;
-            case 'last_days': $data = $upTimes->ComponentUpTimeForLastDays($component, 60); break;
-        }
-
-        return $this->item($data);
-    }
-
-    public function getUpTimeByGroup(ComponentGroup $group){
-        $type = Binput::get('filter', 'last_hours');
-
-        $upTimes = app(UpTimeRepository::class);
-
         $data = [];
-        $components = $group->components()->get();
         switch ($type){
             case 'last_hours':
-                foreach ($components as $component)
-                    $data[$component->name] = $upTimes->ComponentUpTimesForLastHours($component, 48);
+                $data = $upTimes->ComponentUpTimesForLastHours($component, self::LAST_HOURS);
                 break;
             case 'last_days':
-                foreach ($components as $component)
-                    $data[$component->name] = $upTimes->ComponentUpTimeForLastDays($component, 30);
+                $data = $upTimes->ComponentUpTimeForLastDays($component, self::LAST_DAYS);
                 break;
         }
 
         return $this->item([
             "items" => $data,
-            "labels" => array_keys(reset($data))
+            "labels" => array_keys($data)
+        ]);
+    }
+
+    /**
+     * @param ComponentGroup $group
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function getUpTimeByGroup(ComponentGroup $group){
+        $type = Binput::get('filter', 'last_hours');
+        $upTimes = app(UpTimeRepository::class);
+        $averages = [];
+        $components = $group->components()->get();
+
+        switch ($type){
+            case 'last_hours':
+                foreach ($components as $component)
+                    foreach ($upTimes->ComponentUpTimesForLastHours($component, self::LAST_HOURS) as $hour => $percentage){
+                        isset($averages[$hour]) ? $averages[$hour] += $percentage : $averages[$hour] = $percentage;
+                    }
+                break;
+            case 'last_days':
+                foreach ($components as $component)
+                    foreach ($upTimes->ComponentUpTimeForLastDays($component, self::LAST_DAYS) as $day => $percentage){
+                        $averages[$day] = isset($averages[$day]) ? $averages[$day] + $percentage : $percentage;
+                    }
+                break;
+        }
+
+        $averages = array_map(function($e) use ($components){
+            return $e / count($components);
+        },$averages);
+
+
+        return $this->item([
+            "items" => $averages,
+            "labels" => array_keys($averages)
         ]);
     }
 
