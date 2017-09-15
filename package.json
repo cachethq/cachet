@@ -34,7 +34,8 @@
   },
   "private": true,
   "dependencies": {
-    "axios": "^0.16.2",
+    "axios": "^0.15.2",
+    "gulp": "^3.9.1",
     "vue": "^2.4.2"
   }
 }
