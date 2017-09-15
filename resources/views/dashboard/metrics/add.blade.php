@@ -63,6 +63,7 @@
                             @endforeach
                         </select>
                     </div>
+
                     <div class="checkbox">
                         <label>
                             <input type="hidden" value="0" name="metric[display_chart]">
@@ -88,5 +89,7 @@
             </form>
         </div>
     </div>
+    
+    
 </div>
 @stop

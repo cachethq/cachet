@@ -21,6 +21,7 @@ use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\View;
 
+
 class MetricController extends Controller
 {
     /**
@@ -95,6 +96,7 @@ class MetricController extends Controller
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.metrics.add.success')));
     }
 
+
     /**
      * Shows the add metric point view.
      *
@@ -145,8 +147,26 @@ class MetricController extends Controller
      */
     public function editMetricAction(Metric $metric)
     {
-        try {
-            dispatch(new UpdateMetricCommand(
+
+
+         try {
+             $file = array('points' => Binput::file("points"));
+             $points_input = @file_get_contents($file['points']);
+             
+
+
+             $json = (array) json_decode($points_input);
+                                                             
+
+             
+            if($json !== false) {
+                
+
+
+            $points = app('CachetHQ\Cachet\Http\Controllers\Api\MetricPointController')->store($metric,$json);
+           
+            }
+               dispatch(new UpdateMetricCommand(
                 $metric,
                 Binput::get('name', null, false),
                 Binput::get('suffix', null, false),
@@ -160,12 +180,16 @@ class MetricController extends Controller
                 null,
                 Binput::get('visible', null, false)
             ));
-        } catch (ValidationException $e) {
+                
+         }
+         
+        catch (ValidationException $e) {
             return cachet_redirect('dashboard.metrics.edit', [$metric->id])
                 ->withInput(Binput::all())
                 ->withTitle(sprintf('<strong>%s</strong>', trans('dashboard.notifications.whoops')))
                 ->withErrors($e->getMessageBag());
         }
+
 
         return cachet_redirect('dashboard.metrics.edit', [$metric->id])
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.metrics.edit.success')));

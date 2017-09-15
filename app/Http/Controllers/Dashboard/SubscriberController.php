@@ -58,7 +58,9 @@ class SubscriberController extends Controller
             $subscribers = preg_split("/\r\n|\n|\r/", Binput::get('email'));
 
             foreach ($subscribers as $subscriber) {
+
                 dispatch(new SubscribeSubscriberCommand($subscriber, $verified));
+            
             }
         } catch (ValidationException $e) {
             return cachet_redirect('dashboard.subscribers.create')
@@ -66,7 +68,6 @@ class SubscriberController extends Controller
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.subscribers.add.failure')))
                 ->withErrors($e->getMessageBag());
         }
-
         return cachet_redirect('dashboard.subscribers.create')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.subscribers.add.success')));
     }

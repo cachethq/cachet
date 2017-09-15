@@ -17,6 +17,7 @@ use CachetHQ\Cachet\Bus\Commands\Metric\UpdateMetricPointCommand;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\MetricPoint;
 use GrahamCampbell\Binput\Facades\Binput;
+use App\Http\Controllers\Input;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
@@ -42,24 +43,49 @@ class MetricPointController extends AbstractApiController
      * Create a new metric point.
      *
      * @param \CachetHQ\Cachet\Models\Metric $metric
-     *
+     * @param $json
      * @return \Illuminate\Http\JsonResponse
      */
-    public function store(Metric $metric)
+    public function store(Metric $metric, $json)
     {
-        try {
-            $metricPoint = dispatch(new CreateMetricPointCommand(
+       
+
+        if($json!=null){
+            $c = sizeof($json);
+            
+            try {
+                    for($i=0; $i<$c; $i++){
+                        
+                        $metricPoint = new MetricPoint;
+                        $metricPoint->value = floatval($json[$i]->value);
+                        $metricPoint->created_at = $json[$i]->timestamp;
+                        $metricPoint->metric_id = $metric->id;
+                        $metricPoint->save();
+                    }
+            } catch (QueryException $e) {
+                
+                throw new BadRequestHttpException('error post mettic points');
+            }
+        }
+        else {
+             try {
+                $metricPoint = dispatch(new CreateMetricPointCommand(
                 $metric,
                 Binput::get('value'),
                 Binput::get('timestamp')
             ));
-        } catch (QueryException $e) {
+                 } catch (QueryException $e) {
             throw new BadRequestHttpException();
+            }
+            
         }
-
-        return $this->item($metricPoint);
+        
+       return $this->item($metricPoint);
     }
 
+   
+
+     
     /**
      * Updates a metric point.
      *
