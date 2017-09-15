@@ -91,7 +91,7 @@ body.dashboard {
     }
 
     // Header media queries
-    @media (max-width: $screen-xs-max) {
+    @include media-breakpoint-only(xs) {
         .page-content {
             .content-wrapper {
                 padding-left: 20px;
@@ -108,7 +108,7 @@ body.dashboard {
         }
     }
 
-    @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    @include media-breakpoint-down(sm) {
         .page-content {
             .header.fixed {
                 padding-left: 120px;

@@ -3,7 +3,7 @@ body.status-page {
     font-family: $base-font-family;
     background-color: #F0F3F4;
     color: #333333;
-    font-size: 1.4em;
+    // font-size: 1.4em;
     font-weight: $base-font-weight;
     -webkit-font-smoothing: antialiased;
 
@@ -38,7 +38,7 @@ body.status-page {
     .tooltip {
         .tooltip-inner {
             padding: 8px 12px;
-            font-size: 14px;
+            // font-size: 14px;
             word-wrap: break-word;
         }
     }
@@ -78,12 +78,12 @@ body.status-page {
     .about-app {
         margin-bottom: 40px;
         p {
-            font-size: 1.2em;
+            // font-size: 1.2em;
         }
     }
 
     .alert {
-        font-size: 1.2em;
+        // font-size: 1.2em;
         font-weight: 600;
     }
 
@@ -95,42 +95,9 @@ body.status-page {
         h3 {
             margin-top: 30px;
             margin-bottom: 40px;
-            font-size: 22px;
+            // font-size: 22px;
             small {
                 margin-left: 15px;
-            }
-        }
-
-        .panel {
-            .panel-body {
-                h1 {
-                    margin-top: 0;
-                    margin-bottom: 4px;
-                    font-size: 2em;
-                }
-                h2 {
-                    margin-top: 0;
-                    margin-bottom: 4px;
-                    font-size: 1.8em;
-                }
-                h3 {
-                    margin-top: 0;
-                    margin-bottom: 4px;
-                    font-size: 1.6em;
-                }
-                h4 {
-                    margin-top: 0;
-                    margin-bottom: 4px;
-                    font-size: 1.4em;
-                }
-                h5 {
-                    margin-top: 0;
-                    margin-bottom: 4px;
-                    font-size: 1.2em;
-                }
-                p {
-                    margin: 0;
-                }
             }
         }
 
@@ -225,19 +192,13 @@ body.status-page {
                     }
                 }
 
-                .panel-heading {
-                    strong {
-                        font-size: 1.1em;
-                    }
-                }
-
                 .panel-body {
                     border-top: 1px solid #eee;
                     p {
                         &:not(:last-child) {
                             margin-bottom: 10px;
                         }
-                        font-size: 1.1em;
+                        // font-size: 1.1em;
                     }
                 }
             }
@@ -258,7 +219,7 @@ body.status-page {
             border-radius: 0;
             background-color: #ffffff;
             border: 1px solid $cachet_gray_light;
-            font-size: 1.1em;
+            // font-size: 1.1em;
             padding: 15px 15px;
 
             a {
@@ -282,7 +243,7 @@ body.status-page {
             }
 
             i.icon {
-                font-size: 21px;
+                // font-size: 21px;
                 line-height: 24px;
                 text-align: center;
                 display: inline-block;
@@ -410,13 +371,13 @@ body.status-page {
         margin-bottom: 10px;
 
         a.navbar-brand {
-            font-size: 30px;
+            // font-size: 30px;
             font-weight: 600;
         }
 
         .navbar-nav li a {
             color: $cachet-base-dark;
-            font-size: 1.7rem;
+            // font-size: 1.7rem;
 
             &:hover {
                 background-color: transparent;
