@@ -35,27 +35,6 @@ class UpTimePgSqlRepository extends AbstractUpTimeRepository implements UpTimeIn
         );
 
 
-        if(empty($result))
-            return 0;
-        else
-            return array_reduce($result, function($i, $obj) use ($toDateEpoch, $fromDateEpoch) {
-
-                $minDateEpoch = $obj->min_time;
-                $maxDateEpoch = $obj->max_time;
-
-                // TODO: find a more elegant way to do this
-                if($minDateEpoch < $toDateEpoch && $fromDateEpoch < $maxDateEpoch){
-                    return $i + ($fromDateEpoch - $toDateEpoch) / 3600.0;
-                }
-                else if($fromDateEpoch - $minDateEpoch <= ($fromDateEpoch - $toDateEpoch) && $fromDateEpoch - $minDateEpoch > 0){
-                    return $i + ($fromDateEpoch - $minDateEpoch) / 3600.0;
-                }
-                else if($maxDateEpoch - $toDateEpoch <= ($fromDateEpoch - $toDateEpoch) && $maxDateEpoch - $toDateEpoch > 0){
-                    return $i + ($maxDateEpoch - $toDateEpoch)/ 3600.0;
-                }
-                else {
-                    return $i;
-                }
-            });
+        return $this->getHoursOverlapping($result,$toDateEpoch,$fromDateEpoch);
     }
 }

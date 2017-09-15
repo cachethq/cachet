@@ -3,6 +3,7 @@
 namespace CachetHQ\Cachet\Repositories\Uptime;
 use DateTime;
 use DateTimeZone;
+use Illuminate\Support\Facades\DB;
 
 
 /**

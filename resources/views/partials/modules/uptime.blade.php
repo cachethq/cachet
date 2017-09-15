@@ -108,26 +108,26 @@
                 });
 
                 function drawChart($el) {
-                    var uptimeId = $el.data('uptime-id');
-                    var uptimeGroup = $el.data('uptime-group');
+                    var upTimeId = $el.data('uptime-id');
+                    var upTimeGroup = $el.data('uptime-group');
                     var isGroupComponent = $el.data('is-group');
                     var name = $el.data("uptime-name");
-                    var id = isGroupComponent ? "uptime-group-" + uptimeId : "uptime-component-" + uptimeId;
+                    var chartId = isGroupComponent ? "uptime-group-" + upTimeId : "uptime-component-" + upTimeId;
 
                     if(!isGroupComponent){
                         $el.parents('.graph-container').css("padding",32);
                     }
 
-                    if (typeof charts[id] === 'undefined') {
-                        charts[id] = {
-                            context: document.getElementById(id).getContext("2d"),
+                    if (typeof charts[chartId] === 'undefined') {
+                        charts[chartId] = {
+                            context: document.getElementById(chartId).getContext("2d"),
                             chart: null
                         };
                     }
 
-                    var chart = charts[id];
+                    var chart = charts[chartId];
 
-                    $.getJSON('/uptimes_' + ( isGroupComponent ? "group/" : "component/") + uptimeId, { filter: uptimeGroup }).done(function (result) {
+                    $.getJSON('/uptimes_' + ( isGroupComponent ? "group/" : "component/") + upTimeId, { filter: upTimeGroup }).done(function (result) {
                         var data = result.data.items;
                         var labels = result.data.labels;
                         if (chart.chart !== null) {
@@ -137,7 +137,7 @@
                             type: 'bar',
                             data: {
                                 labels: labels.map(function(d){
-                                    return uptimeGroup === "last_hours" ? moment(d).format("HH:ss") : moment(d).format("dd, Do");
+                                    return upTimeGroup === "last_hours" ? moment(d).format("HH:ss") : moment(d).format("dd, Do");
                                 }),
                                 datasets:[{
                                     data: Object.values(data).map(function (e) {

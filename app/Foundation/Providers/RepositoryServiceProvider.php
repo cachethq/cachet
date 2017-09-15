@@ -21,6 +21,7 @@ use CachetHQ\Cachet\Services\Dates\DateFactory;
 use Illuminate\Contracts\Config\Repository as ConfigRepository;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Support\ServiceProvider;
+use UpTimeMySqlRepository;
 
 /**
  * This is the repository service provider.
@@ -74,11 +75,12 @@ class RepositoryServiceProvider extends ServiceProvider
 
             switch ($config->get('database.default')) {
                 case 'pgsql': $repository = new UpTimePgSqlRepository($config); break;
+                case 'mysql': $repository = new UpTimeMysqlRepository($config); break;
             }
 
             $dates = $app->make(DateFactory::class);
 
-            return new UpTimeRepository($repository, $dates);
+            return new UpTimeRepository($repository);
         });
     }
 }
