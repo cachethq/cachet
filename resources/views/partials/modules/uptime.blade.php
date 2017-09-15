@@ -81,6 +81,9 @@
                         elemToShow.hide("fast");
                     }else{
                         elemToShow.show("fast");
+                        elemToShow.find("canvas").each(function(){
+                            drawChart($(this));
+                        })
                     }
                 });
 
@@ -103,9 +106,15 @@
 
                 var canvasGroup = $('canvas[data-uptime-id]');
 
+
                 canvasGroup.each(function() {
-                    drawChart($(this));
+                    var groupParent = $(this).parents('.group-uptime-container');
+                    if(groupParent.html() == undefined || groupParent.is(":visible")){
+                        drawChart($(this));
+                    }
                 });
+
+
 
                 function drawChart($el) {
                     var upTimeId = $el.data('uptime-id');
