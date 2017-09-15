@@ -64,9 +64,3 @@
         </div>
     </div>
 </div>
-
-<script>
-(function() {
-    $('#welcome-modal').modal('show');
-}());
-</script>
