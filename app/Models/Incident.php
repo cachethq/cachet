@@ -89,6 +89,7 @@ class Incident extends Model implements HasPresenter
         'component_id',
         'name',
         'status',
+        'component_status',
         'visible',
         'stickied',
         'message',

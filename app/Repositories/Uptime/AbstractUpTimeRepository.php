@@ -19,6 +19,9 @@ class AbstractUpTimeRepository
 
     protected $config;
 
+
+    const DOWN_TIME_STATUSES = [4];
+
     /**
      * AbstractUpTimeRepository constructor.
      * @param Repository $config
