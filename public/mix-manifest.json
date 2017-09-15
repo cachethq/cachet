@@ -1,9 +1,10 @@
 {
-  "/dist/js/app.js": "/dist/js/app.55a4b921a0bbdaf794a6.js",
-  "/mix.js": "/mix.46bdcf356e69eb1117ec.js",
-  "/dist/css/dashboard/dashboard.css": "/dist/css/dashboard/dashboard.d62a8b6468ab8c9bca396ab8f6cde506.css",
-  "/dist/css/app.css": "/dist/css/app.feac6a0c1283b11117bc898e9697488a.css",
-  "/dist/js/all.js": "/dist/js/all.933ef52c701c02556f3b7fa32b0d5f5d.js",
-  "/dist/js/vendor.js": "/dist/js/vendor.de6049da06819ff051e8.js",
-  "/dist/js/manifest.js": "/dist/js/manifest.d41d8cd98f00b204e980.js"
+    "/dist/js/app.js": "/dist/js/app.js",
+    "/dist/css/dashboard/dashboard.css": "/dist/css/dashboard/dashboard.css",
+    "/dist/css/app.css": "/dist/css/app.css",
+    "/dist/js/vendor.js": "/dist/js/vendor.js",
+    "/dist/js/manifest.js": "/dist/js/manifest.js",
+    "/resources/assets/sass/plugins/_jquery.minicolors.scss": "/resources/assets/sass/plugins/_jquery.minicolors.scss",
+    "/resources/assets/sass/plugins/_github-markdown.scss": "/resources/assets/sass/plugins/_github-markdown.scss",
+    "/dist/js/all.js": "/dist/js/all.js"
 }
