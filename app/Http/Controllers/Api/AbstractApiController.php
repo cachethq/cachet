@@ -141,7 +141,7 @@ abstract class AbstractApiController extends Controller
     {
         foreach ($request->query as $key => $value) {
             if ($key != 'page') {
-                $paginator->addQuery($key, $value);
+                $paginator->appends($key, $value);
             }
         }
 
