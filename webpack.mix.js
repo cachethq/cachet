@@ -26,7 +26,7 @@ mix
     .options({
         processCssUrls: false
     })
-    .js('resources/assets/js/app.js', 'public/dist/js')
+    .js('resources/assets/js/app.js', 'public/dist/js').extract(['vue'])
     .scripts([
         'public/dist/js/app.js',
         'node_modules/es5-shim/es5-shim.js',

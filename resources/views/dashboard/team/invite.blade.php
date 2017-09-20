@@ -10,38 +10,36 @@
     </span>
 </div>
 <div class="content-wrapper">
-    <div class="row">
-        <div class="col-sm-12">
-            @include('dashboard.partials.errors')
-            <form name="UserForm" class="form-vertical" role="form" action="{{ cachet_route('dashboard.team.invite', [], 'post') }}" method="POST">
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                <fieldset>
-                    <div class="form-group">
-                        <label>{{ trans('forms.user.team.description') }}</label>
-                        <input type="email" class="form-control" name="emails[]" value="{{ Binput::old('emails')[0] }}" placeholder="{{ trans('forms.user.team.email', ['id' => 1]) }}" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" class="form-control" name="emails[]" value="{{ Binput::old('emails')[1] }}" placeholder="{{ trans('forms.user.team.email', ['id' => 2]) }}">
-                    </div>
-                    <div class="form-group">
-                        <input type="email" class="form-control" name="emails[]" value="{{ Binput::old('emails')[2] }}" placeholder="{{ trans('forms.user.team.email', ['id' => 3]) }}">
-                    </div>
-                    <div class="form-group">
-                        <input type="email" class="form-control" name="emails[]" value="{{ Binput::old('emails')[3] }}" placeholder="{{ trans('forms.user.team.email', ['id' => 4]) }}">
-                    </div>
-                    <div class="form-group">
-                        <input type="email" class="form-control" name="emails[]" value="{{ Binput::old('emails')[4] }}" placeholder="{{ trans('forms.user.team.email', ['id' => 5]) }}">
-                    </div>
-                </fieldset>
+    <invite-team inline-template>
+        <div class="row">
+            <div class="col-sm-12">
+                @include('dashboard.partials.errors')
+                <form name="UserForm" class="form-vertical" role="form" action="{{ cachet_route('dashboard.team.invite', [], 'post') }}" method="POST">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <fieldset>
+                        <div class="form-group">
+                            <label>{{ trans('forms.user.team.description') }}</label>
+                        </div>
+                        <div class="form-group" v-for="(email, index) in emails">
+                            <div :class="{ 'input-group': canRemove }">
+                                <input type="email" class="form-control" name="emails[]" placeholder="{{ trans('forms.user.team.email') }}" v-model="email.email">
+                                <span class="input-group-btn" v-if="canRemove">
+                                    <button type="button" @click="remove(index)" class="btn btn-danger">Remove</button>
+                                </span>
+                            </div>
+                        </div>
+                    </fieldset>
 
-                <div class="form-group">
-                    <div class="btn-group">
-                        <button type="submit" class="btn btn-success">{{ trans('forms.invite') }}</button>
-                        <a class="btn btn-default" href="{{ cachet_route('dashboard.team') }}">{{ trans('forms.cancel') }}</a>
+                    <div class="form-group">
+                        <div class="btn-group">
+                            <button type="submit" class="btn btn-success">{{ trans('forms.invite') }}</button>
+                            <a class="btn btn-default" href="{{ cachet_route('dashboard.team') }}">{{ trans('forms.cancel') }}</a>
+                            <button type="button" @click="add" class="btn btn-primary">Add</button>
+                        </div>
                     </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
-    </div>
+    </invite-team>
 </div>
 @stop

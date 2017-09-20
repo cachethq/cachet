@@ -23,7 +23,7 @@
     <title>{{ $page_title or $site_title }}</title>
 
     @if($enable_external_dependencies)
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&subset={{ $font_subset }}" rel="stylesheet" type="text/css">
+    {{-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&subset={{ $font_subset }}" rel="stylesheet" type="text/css"> --}}
     @endif
     <link rel="stylesheet" href="{{ mix('dist/css/dashboard/dashboard.css') }}">
     @yield('css')
@@ -34,12 +34,16 @@
         var Global = {};
         Global.locale = '{{ $app_locale }}';
     </script>
-    <script src="{{ mix('dist/js/all.js') }}"></script>
+
+    <script src="{{ mix('dist/js/manifest.js') }}"></script>
+    <script src="{{ mix('dist/js/vendor.js') }}"></script>
 </head>
 
 <body class="@yield('bodyClass')">
-    <div class="content">
+    <div class="content" id="app">
         @yield('content')
     </div>
 </body>
+@yield('js')
+<script src="{{ mix('dist/js/all.js') }}"></script>
 </html>
