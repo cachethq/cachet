@@ -3,7 +3,7 @@ $(function () {
     $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
         var token;
         if (! options.crossDomain) {
-            token = $('meta[name="token"]').attr('content');
+            token = window.Global.csrfToken;
             if (token) {
                 jqXHR.setRequestHeader('X-CSRF-Token', token);
             }
@@ -232,7 +232,7 @@ $(function () {
     });
 
     // Incident management
-    $('select[name=template]').on('change', function () {
+    /*$('select[name=template]').on('change', function () {
         var $this = $(this).find('option:selected'),
             slug   = $this.val();
 
@@ -254,7 +254,7 @@ $(function () {
                 }
             });
         }
-    });
+    });*/
 
     // Banner removal JS
     $('#remove-banner').on('click', function (){

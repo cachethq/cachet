@@ -215,7 +215,7 @@ return [
         ],
         'team' => [
             'description' => 'Invite your team members by entering their email addresses here.',
-            'email'       => 'Email #:id',
+            'email'       => 'Your Team Members Email Address',
         ],
     ],
 

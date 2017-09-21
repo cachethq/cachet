@@ -22,6 +22,12 @@
 
     <title>{{ $page_title or $site_title }}</title>
 
+    <script>
+        window.Global = {}
+        Global.locale = '{{ $app_locale }}';
+        Global.csrfToken = '{{ csrf_token() }}';
+    </script>
+
     @if($enable_external_dependencies)
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&subset={{ $font_subset }}" rel="stylesheet" type="text/css">
     @endif
@@ -30,15 +36,12 @@
 
     @include('partials.crowdin')
 
-    <script type="text/javascript">
-        var Global = {};
-        Global.locale = '{{ $app_locale }}';
-    </script>
-    <script src="{{ mix('dist/js/all.js') }}"></script>
+    <script src="{{ mix('dist/js/manifest.js') }}"></script>
+    <script src="{{ mix('dist/js/vendor.js') }}"></script>
 </head>
 
 <body class="dashboard">
-    <div class="wrapper">
+    <div class="wrapper" id="app">
         @include('dashboard.partials.sidebar')
         <div class="page-content">
             @if(!$is_writeable)
@@ -56,6 +59,7 @@
             @yield('content')
         </div>
     </div>
-    @yield('js')
 </body>
+@yield('js')
+<script src="{{ mix('dist/js/all.js') }}"></script>
 </html>
