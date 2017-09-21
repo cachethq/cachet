@@ -8,15 +8,7 @@ use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentUpdate;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 use Carbon\Carbon;
-use function foo\func;
-use Illuminate\Foundation\Testing\WithoutMiddleware;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
-
-use Illuminate\Support\Facades\DB;
-use PHPUnit_Framework_TestCase as TestCase;
-
-
 
 class UpTimesTests extends AbstractTestCase
 {
@@ -30,13 +22,23 @@ class UpTimesTests extends AbstractTestCase
 
     const MAX_N_FAKE_INCIDENTS_PER_GROUPS = 1;
 
-    const MAX_N_UPDATES_PER_INCIDENTS = 3;
+    const N_HOURS = 48;
+
+    const SCENARIOS = [
+        25,
+        50,
+        75,
+    ];
+
+    private $scenariosMapping = [];
 
     public function testUpTimesPercentagesAreCorrect(){
 
         $groups = $this->createFakeComponentsWithGroup();
 
         $this->createFakeIncidentsOverTime($groups);
+
+        $this->checkIncidentsPercentages($groups);
     }
 
     private function createFakeComponentsWithGroup(){
@@ -46,7 +48,7 @@ class UpTimesTests extends AbstractTestCase
             ->create(['visible' => ComponentGroup::VISIBLE_GUEST])
             ->each(function($u) {
 
-                foreach (range(0,self::N_COMPONENTS_PER_GROUPS) as $i)
+                foreach (range(0,self::N_COMPONENTS_PER_GROUPS-1) as $i)
                     $u->components()
                         ->save(
                             factory(Component::class)->make()
@@ -60,39 +62,74 @@ class UpTimesTests extends AbstractTestCase
     private function createFakeIncidentsOverTime($groups){
         $groups->each(function($g){
 
+            $scenario = array_random(self::SCENARIOS);
+
+            $this->scenariosMapping[$g->id] = $scenario;
+
+            $nHoursToBeDown = self::N_HOURS * ($scenario/100);
+
+            echo "Hours to be down ".$nHoursToBeDown."\n";
+
+            $nHoursToBeDownPerComponent = $nHoursToBeDown / $g->components()->count();
+
+            echo "Hours to be down per component ".$nHoursToBeDownPerComponent."\n";
+
             $g->components()
-                ->each(function($c){
+                ->each(function($c) use ($nHoursToBeDownPerComponent) {
 
+                $nIncidents = random_int(1, self::MAX_N_FAKE_INCIDENTS_PER_GROUPS);
 
-                $nIncidents = random_int(0, self::MAX_N_FAKE_INCIDENTS_PER_GROUPS);
+                $nHoursToBeDownPerIncidents = $nHoursToBeDownPerComponent / $nIncidents;
 
-                foreach(range(0, $nIncidents) as $_){
+                echo "Hours to be down per incident ".$nHoursToBeDownPerIncidents."\n";
+
+                foreach(range(0, $nIncidents-1) as $_){
                     $c->incidents()
                         ->save(factory(Incident::class)->make([
-                            "component_status" => random_int(1,4)
+                            "component_status" => 4
                         ]));
                 }
 
 
                 $c->incidents()
-                    ->each(function ($i){
-                        $nUpdates = random_int(0, self::MAX_N_UPDATES_PER_INCIDENTS);
+                    ->each(function ($i) use ($nHoursToBeDownPerIncidents) {
 
-                        foreach (range(0, $nUpdates) as $_){
-                            $i->updates()
-                                ->save(factory(IncidentUpdate::class)
-                                ->make([
-                                    "updated_at" => Carbon::now()->subHours(random_int(1,48))
-                                ]));
-                        }
+                        $date = Carbon::now();
 
+                        $i->updates()
+                            ->save(factory(IncidentUpdate::class)
+                            ->make([
+                                "updated_at" => $date->addHours($nHoursToBeDownPerIncidents)
+                            ]));
                 });
 
             });
+
         });
     }
 
-    private function checkIncidentsPercentages(){
+    private function checkIncidentsPercentages($groups){
+
+        $sum = 0;
+
+        $groups->each(function($g) use ($sum) {
+
+            $groupData = $this->getJson("uptimes_group/".$g->id)->decodeResponseJson();
+
+            $items = $groupData["data"]["items"];
+
+            $downTimeToBeExpectedPerc = $this->scenariosMapping[$g->id];
+
+            array_map(function($i){
+                $this->assertGreaterThanOrEqual(0, $i);
+                $this->assertLessThanOrEqual(100, $i);
+            }, $items);
+
+            $percentageUp = array_sum($items) / count($items);
+
+            $this->assertEquals($downTimeToBeExpectedPerc, 100.0 - $percentageUp);
+
+        });
 
     }
 

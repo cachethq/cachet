@@ -1,6 +1,27 @@
 {
+  "COMPOSER_VENDOR_DIR": "{BUILD_DIR}/vendor",
   "WEBDIR": "public",
-  "COMPOSER_VENDOR_DIR": "vendor",
+  "LIBDIR": "./",
   "PHP_VERSION": "{PHP_70_LATEST}",
-  "PHP_EXTENSIONS": [ "bz2", "zlib", "openssl", "tokenizer", "curl", "mcrypt", "mbstring", "pdo", "pdo_mysql"]
+  "PHP_EXTENSIONS": [
+    "pdo",
+    "pdo_mysql",
+    "redis",
+    "bz2",
+    "zlib",
+    "curl",
+    "mcrypt",
+    "mbstring",
+    "json",
+    "tokenizer",
+    "spl",
+    "reflection",
+    "dom"
+  ],
+  "COMPOSER_INSTALL_OPTIONS": [
+    "--no-interaction",
+    "--no-dev",
+    "--no-progress",
+    "--prefer-dist"
+  ]
 }
