@@ -186,28 +186,32 @@
                             },
                             options: {
                                 onClick: function(event,array){
-                                  array.map(function(e){
-                                      if(e._datasetIndex === 1){
-                                          var incidentsIds = Object.values(incidents)[e._index];
-                                          if(incidentsIds.length > 0){
-                                              var modal = $('#incidentsModal');
-                                              modal.modal('toggle');
-                                              modal.find(".table-body").html(incidentsIds.map(function(e){
+                                  array
+                                  .filter(function(e){
+                                      return e._datasetIndex === 1
+                                  })
+                                  .map(function(e){
+                                      var incidentsIds = Object.values(incidents)[e._index];
+                                      if(incidentsIds && incidentsIds.length > 0){
+                                          var modal = $('#incidentsModal');
+                                          modal.modal('toggle');
+                                          modal
+                                          .find(".table-body")
+                                          .html(
+                                              incidentsIds.map(function(e){
                                                   var minDateFormatted = moment.unix(e.min_date).format("Do MMM, HH:m");
                                                   var maxDateFormatted = moment.unix(e.max_date).format("Do MMM, HH:m");
                                                   var url = "{{route('core::get:incident',["id"=>""])}}/"+e.id;
                                                   var name = '<p><a target="_blank" href="'+url+'">' + e.name +"</a></p>";
                                                   return "<tr>"
-                                                            + "<td>"+name+"</td>"
-                                                            + "<td>0</td>"
-                                                            + "<td>0</td>"
-                                                            + "<td>"+minDateFormatted+"</td>"
-                                                            + "<td>"+maxDateFormatted+"</td>"
-                                                          + "</tr>"
-                                              }).reduce(function(a,b){
-                                                  return a.toString() + b.toString();
-                                              }));
-                                          }
+                                                    + "<td>"+name+"</td>"
+                                                    + "<td>"+e.updates+"</td>"
+                                                    + "<td>"+e.down_time_hours.toFixed(1)+" h</td>"
+                                                    + "<td>"+minDateFormatted+"</td>"
+                                                    + "<td>"+maxDateFormatted+"</td>"
+                                                  + "</tr>"
+                                              }).join()
+                                          );
                                       }
                                   });
                                 },
@@ -273,8 +277,8 @@
                         <tr>
                             <th>Name</th>
                             <th>Updates</th>
-                            <th>Down time</th>
-                            <th>Started at</th>
+                            <th>DownTime</th>
+                            <th>Occurred</th>
                             <th>Last update</th>
                         </tr>
                         </thead>

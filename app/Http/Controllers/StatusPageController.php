@@ -195,10 +195,18 @@ class StatusPageController extends AbstractApiController
 
         switch ($type){
             case 'last_hours':
-                foreach ($components as $component)
-                    foreach ($upTimes->ComponentUpTimesForLastHours($component, self::LAST_HOURS)["upTimes"] as $hour => $percentage){
+                foreach ($components as $component) {
+                    $data = $upTimes->ComponentUpTimesForLastHours($component, self::LAST_HOURS);
+                    foreach ($data["upTimes"] as $hour => $percentage) {
                         isset($averages[$hour]) ? $averages[$hour] += $percentage : $averages[$hour] = $percentage;
+
+                        if (isset($incidentsIds[$hour]))
+                            $incidentsIds[$hour] = array_merge($incidentsIds[$hour], $data["incidentsIds"][$hour]);
+                        else
+                            $incidentsIds[$hour] = $data["incidentsIds"][$hour];
+
                     }
+                }
                 break;
             case 'last_days':
                 foreach ($components as $component) {

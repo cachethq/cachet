@@ -107,7 +107,7 @@ class UpTimeRepository
 
             if($downTime > 1.0 ) $downTime = 1.0;
             $key = $this->getDateLabel($toDate, 'Y-m-d H:00:00');
-            $upTimes[$this->getDateLabel($toDate, 'Y-m-d H:00:00')] = (1.0 - $downTime["downTimeHours"]) * 100.0;
+            $upTimes[$key] = (1.0 - $downTime["downTimeHours"]) * 100.0;
             $incidentsIds[$key] = $downTime["incidentsIds"];
             $fromDate = clone $toDate;
             $toDate->modify("-1 hour");

@@ -52,10 +52,12 @@ class AbstractUpTimeRepository
      */
     protected function getDownTimesHoursAndIncidentsId($result, $toDateEpoch, $fromDateEpoch){
         $downTimeHours = $this->getHours($result,$toDateEpoch,$fromDateEpoch);
-        $incidentsIds = array_map(function($e){
+        $incidentsIds = array_map(function($e) use ($toDateEpoch,$fromDateEpoch){
             return [
                 "id" => $e->id,
                 "name" => $e->name,
+                "down_time_hours" => $this->getHoursOverlapping($e,$toDateEpoch,$fromDateEpoch),
+                "updates" => $e->updates,
                 "min_date" => $e->min_time,
                 "max_date" => $e->max_time,
             ];
