@@ -24,7 +24,6 @@
      putenv('DB_PASSWORD=' . $mariaDbConnection->password);
      putenv('APP_ENV=production');
      putenv('APP_DEBUG=false');
-     //putenv('APP_KEY=CFENV!!!');
    }
    catch (Exception $e) {
      dd($e->getMessage());

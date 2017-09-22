@@ -1,5 +1,18 @@
 <h1>Uptimes</h1>
 <div class="section-uptime">
+    <div>
+        <strong>See data for</strong>
+        <a href="#" role="button" class="btn btn-primary">Current time</a>
+
+        <a href="#" role="button" class="btn btn-default">Q1</a>
+
+        <a href="#" role="button" class="btn btn-default">Q2</a>
+
+        <a href="#" role="button" class="btn btn-default">Q3</a>
+
+        <a href="#" role="button" class="btn btn-default">Q4</a>
+    </div>
+    <br>
     @if($component_groups->count() > 0)
         <ul class="list-group">
             @foreach($component_groups as $group)
@@ -33,7 +46,7 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <p class="text-center">
-                                <a class="per-component-graph-trigger" data-show-graphs="uptime-graph-per-component-group-{{$group->id}}">Toggle graphs per component</a>
+                                <a class="per-component-graph-trigger btn btn-info" role="button" data-show-graphs="uptime-graph-per-component-group-{{$group->id}}">Show graphs per component</a>
                             </p>
                         </div>
                     </div>
@@ -79,18 +92,21 @@
 
                     if(elemToShow.is(':visible')){
                         elemToShow.hide("fast");
+                        $(this).html("Show graphs per component");
                     }else{
                         elemToShow.show("fast");
                         elemToShow.find("canvas").each(function(){
                             drawChart($(this));
-                        })
+                        });
+                        $(this).html("Hide graphs per component");
                     }
                 });
 
 
                 Chart.defaults.global.elements.point.hitRadius = 10;
-                Chart.defaults.global.responsiveAnimationDuration = 1000;
+                Chart.defaults.global.responsiveAnimationDuration = 0;
                 Chart.defaults.global.legend.display = false;
+
 
                 var charts = {};
 
@@ -136,6 +152,7 @@
 
                     var chart = charts[chartId];
 
+
                     $.getJSON('/uptimes_' + ( isGroupComponent ? "group/" : "component/") + upTimeId, { filter: upTimeGroup }).done(function (result) {
                         var data = result.data.items;
                         var labels = result.data.labels;
@@ -153,7 +170,7 @@
                                         return e.toFixed(1);
                                     }),
                                     label: name + " Up Time",
-                                    backgroundColor:"rgba(46, 204, 113,.3)",
+                                    backgroundColor:"rgba(46, 204, 113,.7)",
                                     borderColor:"rgba(46, 204, 113,1.0)",
                                     borderWidth:1
                                 },{
@@ -161,7 +178,7 @@
                                         return (100-e).toFixed(1);
                                     }),
                                     label: name +" Down Time",
-                                    backgroundColor:"rgba(231, 76, 60,.3)",
+                                    backgroundColor:"rgba(231, 76, 60,.7)",
                                     borderColor:"rgba(231, 76, 60,1.0)",
                                     borderWidth:1,
                                 }]
@@ -180,7 +197,7 @@
                                             },
                                             min:0,
                                             max: 100,
-                                            stepSize:25
+                                            stepSize:50
                                         }
                                     }]
                                 }
@@ -191,4 +208,13 @@
             }());
         </script>
     @endif
+    <div>
+        <strong>Export Data in </strong>
+        <a href="#" role="button" class="btn btn-default">CSV</a>
+
+        <a href="#" role="button" class="btn btn-default">Excel</a>
+
+        <a href="#" role="button" class="btn btn-default">PNG</a>
+    </div>
+
 </div>

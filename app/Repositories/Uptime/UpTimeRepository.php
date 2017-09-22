@@ -49,13 +49,9 @@ class UpTimeRepository
      */
     public function ComponentUpTimeForLastDays($component, $days){
 
-
-        // TODO: Here we should take the day at midnight
-        $dates = $this->getStartDates("H-m");
+        $dates = $this->getStartDates("Y-m-d H-m");
         $fromDate = $dates["fromDate"];
         $toDate = $dates["toDate"];
-
-
 
         // 1st iteration : substract hours and minutes ex: Wed: 14:37 -> compute uptime for last 14:37 hours
         // 2nd iteration: uptime for Tuesday ( 24H ), Monday ( 24H ) etc...
@@ -63,6 +59,17 @@ class UpTimeRepository
         $upTimes = [];
 
         for($i = 1; $i <= $days; $i ++){
+
+            $diff = $fromDate->diff($toDate);
+
+            $periodInHours = $diff->h > 0 ? $diff->h : 24.0;
+
+            if($periodInHours == 24.0){
+                $fromDate->setTime(0,0,0);
+                $toDate->setTime(0,0,0);
+            }
+
+
             $downTime = $this
                 ->repository
                 ->getComponentUpTimeSinceHours(
@@ -71,7 +78,7 @@ class UpTimeRepository
                     $fromDate->getTimestamp()
                 );
 
-            $upTimes[$toDate->format('Y-m-d')] = (24.0 - $downTime) / 24.0 * 100.0;
+            $upTimes[$toDate->format('Y-m-d')] = ($periodInHours - $downTime) / $periodInHours * 100.0;
             $fromDate = clone $toDate;
             $toDate->modify("-1 day");
         }
