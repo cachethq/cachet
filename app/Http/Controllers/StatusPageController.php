@@ -176,8 +176,9 @@ class StatusPageController extends AbstractApiController
         }
 
         return $this->item([
-            "items" => $data,
-            "labels" => array_keys($data)
+            "items" => $data["upTimes"],
+            "labels" => array_keys($data["upTimes"]),
+            "incidentsIds" => $data["incidentsIds"]
         ]);
     }
 
@@ -189,20 +190,29 @@ class StatusPageController extends AbstractApiController
         $type = Binput::get('filter', 'last_hours');
         $upTimes = app(UpTimeRepository::class);
         $averages = [];
+        $incidentsIds = [];
         $components = $group->components()->get();
 
         switch ($type){
             case 'last_hours':
                 foreach ($components as $component)
-                    foreach ($upTimes->ComponentUpTimesForLastHours($component, self::LAST_HOURS) as $hour => $percentage){
+                    foreach ($upTimes->ComponentUpTimesForLastHours($component, self::LAST_HOURS)["upTimes"] as $hour => $percentage){
                         isset($averages[$hour]) ? $averages[$hour] += $percentage : $averages[$hour] = $percentage;
                     }
                 break;
             case 'last_days':
-                foreach ($components as $component)
-                    foreach ($upTimes->ComponentUpTimeForLastDays($component, self::LAST_DAYS) as $day => $percentage){
+                foreach ($components as $component) {
+                    $data = $upTimes->ComponentUpTimeForLastDays($component, self::LAST_DAYS);
+                    foreach ($data["upTimes"] as $day => $percentage) {
                         $averages[$day] = isset($averages[$day]) ? $averages[$day] + $percentage : $percentage;
+
+                        if(isset($incidentsIds[$day]))
+                            $incidentsIds[$day] = array_merge($incidentsIds[$day],  $data["incidentsIds"][$day]);
+                        else
+                            $incidentsIds[$day] = $data["incidentsIds"][$day];
                     }
+
+                }
                 break;
         }
 
@@ -213,7 +223,8 @@ class StatusPageController extends AbstractApiController
 
         return $this->item([
             "items" => $averages,
-            "labels" => array_keys($averages)
+            "labels" => array_keys($averages),
+            "incidentsIds" => $incidentsIds
         ]);
     }
 

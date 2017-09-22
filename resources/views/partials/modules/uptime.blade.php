@@ -156,6 +156,7 @@
                     $.getJSON('/uptimes_' + ( isGroupComponent ? "group/" : "component/") + upTimeId, { filter: upTimeGroup }).done(function (result) {
                         var data = result.data.items;
                         var labels = result.data.labels;
+                        var incidents = result.data.incidentsIds;
                         if (chart.chart !== null) {
                             chart.chart.destroy();
                         }
@@ -184,6 +185,45 @@
                                 }]
                             },
                             options: {
+                                onClick: function(event,array){
+                                  array.map(function(e){
+                                      if(e._datasetIndex === 1){
+                                          var incidentsIds = Object.values(incidents)[e._index];
+                                          if(incidentsIds.length > 0){
+                                              var modal = $('#incidentsModal');
+                                              modal.modal('toggle');
+                                              modal.find(".table-body").html(incidentsIds.map(function(e){
+                                                  var minDateFormatted = moment.unix(e.min_date).format("Do MMM, HH:m");
+                                                  var maxDateFormatted = moment.unix(e.max_date).format("Do MMM, HH:m");
+                                                  var url = "{{route('core::get:incident',["id"=>""])}}/"+e.id;
+                                                  var name = '<p><a target="_blank" href="'+url+'">' + e.name +"</a></p>";
+                                                  return "<tr>"
+                                                            + "<td>"+name+"</td>"
+                                                            + "<td>0</td>"
+                                                            + "<td>0</td>"
+                                                            + "<td>"+minDateFormatted+"</td>"
+                                                            + "<td>"+maxDateFormatted+"</td>"
+                                                          + "</tr>"
+                                              }).reduce(function(a,b){
+                                                  return a.toString() + b.toString();
+                                              }));
+                                          }
+                                      }
+                                  });
+                                },
+                                tooltips: {
+                                    enabled: true,
+                                    mode: 'single',
+                                    callbacks: {
+                                        label: function(tooltipItems, data) {
+                                            var nIncidents = 0;
+                                            if(tooltipItems.datasetIndex === 1){
+                                                nIncidents = Object.values(incidents)[tooltipItems.index].length;
+                                            }
+                                            return tooltipItems.yLabel + "% Of "+ (tooltipItems.datasetIndex === 1 ? "Down Time " : "Up Time, ") + nIncidents + " Incidents";
+                                        }
+                                    }
+                                },
 
                                 scales: {
                                     xAxes: [{
@@ -215,6 +255,35 @@
         <a href="#" role="button" class="btn btn-default">Excel</a>
 
         <a href="#" role="button" class="btn btn-default">PNG</a>
+    </div>
+
+
+    <div class="modal" id="incidentsModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <strong class="modal-title">Incidents list</strong>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Updates</th>
+                            <th>Down time</th>
+                            <th>Started at</th>
+                            <th>Last update</th>
+                        </tr>
+                        </thead>
+                        <tbody class="table-body">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
 
 </div>

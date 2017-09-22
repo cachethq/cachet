@@ -48,18 +48,49 @@ class AbstractUpTimeRepository
      * @param $result
      * @param $toDateEpoch
      * @param $fromDateEpoch
+     * @return array
+     */
+    protected function getDownTimesHoursAndIncidentsId($result, $toDateEpoch, $fromDateEpoch){
+        $downTimeHours = $this->getHours($result,$toDateEpoch,$fromDateEpoch);
+        $incidentsIds = array_map(function($e){
+            return [
+                "id" => $e->id,
+                "name" => $e->name,
+                "min_date" => $e->min_time,
+                "max_date" => $e->max_time,
+            ];
+        }, array_filter($result, function ($e) use ($toDateEpoch,$fromDateEpoch){
+            return $this->getHoursOverlapping($e,$toDateEpoch,$fromDateEpoch) > 0;
+        }));
+        return compact("downTimeHours","incidentsIds");
+    }
+
+    /**
+     * @param $row
+     * @param $toDateEpoch
+     * @param $fromDateEpoch
+     * @return float
+     */
+    protected function getHoursOverlapping($row,$toDateEpoch,$fromDateEpoch){
+        $minDateEpoch = $row->min_time;
+        $maxDateEpoch = $row->max_time;
+        return max(
+            min($maxDateEpoch,$fromDateEpoch) - max($toDateEpoch,$minDateEpoch) + 1, 0
+        ) / 3600.0;
+    }
+
+    /**
+     * @param $result
+     * @param $toDateEpoch
+     * @param $fromDateEpoch
      * @return int|mixed
      */
-    protected function getHoursOverlapping($result, $toDateEpoch, $fromDateEpoch){
+    protected function getHours($result, $toDateEpoch, $fromDateEpoch){
         if(empty($result))
             return 0;
         else
             return array_reduce($result, function($i, $obj) use ($toDateEpoch, $fromDateEpoch) {
-                $minDateEpoch = $obj->min_time;
-                $maxDateEpoch = $obj->max_time;
-                return $i + max(
-                    min($maxDateEpoch,$fromDateEpoch) - max($toDateEpoch,$minDateEpoch) + 1, 0
-                ) / 3600.0;
+                return $i + $this->getHoursOverlapping($obj,$toDateEpoch,$fromDateEpoch);
             });
     }
 

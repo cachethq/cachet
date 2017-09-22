@@ -29,6 +29,6 @@ class UpTimeMySqlRepository extends AbstractUpTimeRepository implements UpTimeIn
             ]
         );
 
-        return $this->getHoursOverlapping($result,$toDateEpoch,$fromDateEpoch);
+        return $this->getDownTimesHoursAndIncidentsId($result, $toDateEpoch, $fromDateEpoch);
     }
 }

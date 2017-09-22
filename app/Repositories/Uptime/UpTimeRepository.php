@@ -51,6 +51,7 @@ class UpTimeRepository
         // 2nd iteration: uptime for Tuesday ( 24H ), Monday ( 24H ) etc...
 
         $upTimes = [];
+        $incidentsIds = [];
 
         $periodInHours = 24.0;
 
@@ -63,12 +64,14 @@ class UpTimeRepository
                     $fromDate->getTimestamp()
                 );
 
-            $upTimes[$toDate->format('Y-m-d')] = ($periodInHours - $downTime) / $periodInHours * 100.0;
+            $key = $toDate->format('Y-m-d');
+            $upTimes[$key] = ($periodInHours - $downTime["downTimeHours"]) / $periodInHours * 100.0;
+            $incidentsIds[$key] = $downTime["incidentsIds"];
             $fromDate = clone $toDate;
             $toDate->modify("-1 day");
         }
 
-        return $upTimes;
+        return compact("upTimes","incidentsIds");
     }
 
 
@@ -90,6 +93,7 @@ class UpTimeRepository
         // 2nd iteration: uptime for 13:00 to 14:00, 3th 12:00 to 13:00 etc...
 
         $upTimes = [];
+        $incidentsIds = [];
 
         for($i = 1; $i <= $hours; $i ++){
 
@@ -102,11 +106,13 @@ class UpTimeRepository
                 );
 
             if($downTime > 1.0 ) $downTime = 1.0;
-            $upTimes[$this->getDateLabel($toDate, 'Y-m-d H:00:00')] = (1.0 - $downTime) * 100.0;
+            $key = $this->getDateLabel($toDate, 'Y-m-d H:00:00');
+            $upTimes[$this->getDateLabel($toDate, 'Y-m-d H:00:00')] = (1.0 - $downTime["downTimeHours"]) * 100.0;
+            $incidentsIds[$key] = $downTime["incidentsIds"];
             $fromDate = clone $toDate;
             $toDate->modify("-1 hour");
         }
-        return $upTimes;
+        return compact("upTimes","incidentsIds");
     }
 
     /**
