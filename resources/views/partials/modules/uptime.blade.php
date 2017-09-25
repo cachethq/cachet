@@ -11,6 +11,7 @@
         <a href="#" role="button" class="btn btn-default">Q3</a>
 
         <a href="#" role="button" class="btn btn-default">Q4</a>
+
     </div>
     <br>
     @if($component_groups->count() > 0)
@@ -223,6 +224,9 @@
                                             var nIncidents = 0;
                                             if(tooltipItems.datasetIndex === 1){
                                                 nIncidents = Object.values(incidents)[tooltipItems.index].length;
+                                                $('html,body').css('cursor','pointer');
+                                            }else{
+                                                $('html,body').css('cursor','default');
                                             }
                                             return tooltipItems.yLabel + "% Of "+ (tooltipItems.datasetIndex === 1 ? "Down Time " : "Up Time, ") + nIncidents + " Incidents";
                                         }

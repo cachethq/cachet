@@ -5,6 +5,8 @@
 namespace CachetHQ\Cachet\Repositories\Uptime;
 
 
+use CachetHQ\Cachet\Models\Component;
+use CachetHQ\Cachet\Models\Incident;
 use Carbon\Carbon;
 use DateTime;
 use Illuminate\Config\Repository;
@@ -23,6 +25,8 @@ class AbstractUpTimeRepository
 
 
     const DOWN_TIME_STATUSES = [4];
+
+    protected $currentComponent;
 
     /**
      * AbstractUpTimeRepository constructor.
@@ -43,6 +47,7 @@ class AbstractUpTimeRepository
         $prefix = app(System::class)->getTablePrefix();
         return $prefix."incident_update";
     }
+
 
     /**
      * @param $result
@@ -74,8 +79,8 @@ class AbstractUpTimeRepository
      * @return float
      */
     protected function getHoursOverlapping($row,$toDateEpoch,$fromDateEpoch){
-        $minDateEpoch = $row->min_time;
-        $maxDateEpoch = $row->max_time;
+        $minDateEpoch = $row->min_time ;
+        $maxDateEpoch = $row->max_time !== NULL ? $row->max_time : Carbon::now()->getTimestamp();
         return max(
             min($maxDateEpoch,$fromDateEpoch) - max($toDateEpoch,$minDateEpoch) + 1, 0
         ) / 3600.0;
@@ -88,12 +93,13 @@ class AbstractUpTimeRepository
      * @return int|mixed
      */
     protected function getHours($result, $toDateEpoch, $fromDateEpoch){
-        if(empty($result))
+        if(empty($result)) {
             return 0;
-        else
-            return array_reduce($result, function($i, $obj) use ($toDateEpoch, $fromDateEpoch) {
-                return $i + $this->getHoursOverlapping($obj,$toDateEpoch,$fromDateEpoch);
+        } else {
+            return array_reduce($result, function ($i, $obj) use ($toDateEpoch, $fromDateEpoch) {
+                return $i + $this->getHoursOverlapping($obj, $toDateEpoch, $fromDateEpoch);
             });
+        }
     }
 
 }

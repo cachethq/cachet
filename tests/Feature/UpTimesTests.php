@@ -30,9 +30,13 @@ class UpTimesTests extends AbstractTestCase
         75,
     ];
 
+    private $baseDate;
+
     private $scenariosMapping = [];
 
     public function testUpTimesPercentagesAreCorrect(){
+
+        $this->baseDate = Carbon::now()->subHours(30);
 
         $groups = $this->createFakeComponentsWithGroup();
 
@@ -86,7 +90,8 @@ class UpTimesTests extends AbstractTestCase
                 foreach(range(0, $nIncidents-1) as $_){
                     $c->incidents()
                         ->save(factory(Incident::class)->make([
-                            "component_status" => 4
+                            "component_status" => 4,
+                            "occurred_at" => $this->baseDate
                         ]));
                 }
 
@@ -94,13 +99,18 @@ class UpTimesTests extends AbstractTestCase
                 $c->incidents()
                     ->each(function ($i) use ($nHoursToBeDownPerIncidents) {
 
-                        $date = Carbon::now();
+                        $date = clone $this->baseDate;
+                        $date->addHours($nHoursToBeDownPerIncidents);
+
+                        echo $this->baseDate->toDateTimeString()."\n";
+                        echo $date->toDateTimeString();
+                        echo "\n================";
 
                         $i->updates()
-                            ->save(factory(IncidentUpdate::class)
-                            ->make([
-                                "updated_at" => $date->addHours($nHoursToBeDownPerIncidents)
-                            ]));
+                            ->save(factory(IncidentUpdate::class)->make([
+                                    "created_at" => $date,
+                                    "updated_at" => $date
+                                ]));
                 });
 
             });
@@ -120,10 +130,13 @@ class UpTimesTests extends AbstractTestCase
 
             $downTimeToBeExpectedPerc = $this->scenariosMapping[$g->id];
 
+            //Checks that values are conform percentages
             array_map(function($i){
                 $this->assertGreaterThanOrEqual(0, $i);
                 $this->assertLessThanOrEqual(100, $i);
             }, $items);
+
+            //print_r($items);
 
             $percentageUp = array_sum($items) / count($items);
 
