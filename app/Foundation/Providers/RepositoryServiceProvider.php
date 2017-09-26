@@ -15,13 +15,13 @@ use CachetHQ\Cachet\Repositories\Metric\MetricRepository;
 use CachetHQ\Cachet\Repositories\Metric\MySqlRepository;
 use CachetHQ\Cachet\Repositories\Metric\PgSqlRepository;
 use CachetHQ\Cachet\Repositories\Metric\SqliteRepository;
+use CachetHQ\Cachet\Repositories\Uptime\UpTimeMySqlRepository;
 use CachetHQ\Cachet\Repositories\Uptime\UpTimePgSqlRepository;
 use CachetHQ\Cachet\Repositories\Uptime\UpTimeRepository;
 use CachetHQ\Cachet\Services\Dates\DateFactory;
 use Illuminate\Contracts\Config\Repository as ConfigRepository;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Support\ServiceProvider;
-use UpTimeMySqlRepository;
 
 /**
  * This is the repository service provider.
@@ -77,8 +77,6 @@ class RepositoryServiceProvider extends ServiceProvider
                 case 'pgsql': $repository = new UpTimePgSqlRepository($config); break;
                 case 'mysql': $repository = new UpTimeMysqlRepository($config); break;
             }
-
-            $dates = $app->make(DateFactory::class);
 
             return new UpTimeRepository($repository);
         });

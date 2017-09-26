@@ -21,7 +21,9 @@ use CachetHQ\Cachet\Models\Schedule;
 use CachetHQ\Cachet\Repositories\Metric\MetricRepository;
 use CachetHQ\Cachet\Repositories\Uptime\UpTimeRepository;
 use CachetHQ\Cachet\Services\Dates\DateFactory;
+use CachetHQ\Cachet\Services\Excel\ExcelUpTimesExporter;
 use Exception;
+use function foo\func;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -156,13 +158,8 @@ class StatusPageController extends AbstractApiController
         ]);
     }
 
-    /**
-     * @param Component $component
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function getUpTime(Component $component){
-        $type = Binput::get('filter', 'last_hours');
 
+    private function fetchUpTime($type, $component){
         $upTimes = app(UpTimeRepository::class);
 
         $data = [];
@@ -175,19 +172,23 @@ class StatusPageController extends AbstractApiController
                 break;
         }
 
-        return $this->item([
+        return [
             "items" => $data["upTimes"],
             "labels" => array_keys($data["upTimes"]),
             "incidentsIds" => $data["incidentsIds"]
-        ]);
+        ];
     }
 
     /**
-     * @param ComponentGroup $group
+     * @param Component $component
      * @return \Illuminate\Http\JsonResponse
      */
-    public function getUpTimeByGroup(ComponentGroup $group){
+    public function getUpTime(Component $component){
         $type = Binput::get('filter', 'last_hours');
+        return $this->item($this->fetchUpTime($type,$component));
+    }
+
+    private function fetchUpTimeByGroup($type, $group){
         $upTimes = app(UpTimeRepository::class);
         $averages = [];
         $incidentsIds = [];
@@ -228,12 +229,42 @@ class StatusPageController extends AbstractApiController
             return $e / count($components);
         },$averages);
 
-
-        return $this->item([
+        return [
             "items" => $averages,
             "labels" => array_keys($averages),
             "incidentsIds" => $incidentsIds
-        ]);
+        ];
+    }
+
+    /**
+     * @param ComponentGroup $group
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function getUpTimeByGroup(ComponentGroup $group){
+        $type = Binput::get('filter', 'last_hours');
+        return $this->item($this->fetchUpTimeByGroup($type, $group));
+    }
+
+
+    public function createExcel(){
+        $data = [
+            "groups" => ComponentGroup::get()->map(function($g){
+                return [
+                    "name" => $g->name,
+                    "id" => $g->id,
+                    "data" => $this->fetchUpTimeByGroup("last_hours",$g),
+                    "components" => $g->components()->get()->map(function ($c){
+                        return [
+                            "name" => $c->name,
+                            "id" => $c->id,
+                            "data" => $this->fetchUpTime("last_hours",$c)
+                        ];
+                    })
+                ];
+            })
+        ];
+        ExcelUpTimesExporter::createFile($data);
+        return $this->item(["noop"]);
     }
 
     /**

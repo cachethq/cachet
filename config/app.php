@@ -205,6 +205,11 @@ return [
         CachetHQ\Cachet\Foundation\Providers\RepositoryServiceProvider::class,
         CachetHQ\Cachet\Foundation\Providers\RouteServiceProvider::class,
 
+        /*
+         * Excel
+         */
+        Maatwebsite\Excel\ExcelServiceProvider::class
+
     ]),
 
     /*
@@ -255,6 +260,7 @@ return [
         'View'         => Illuminate\Support\Facades\View::class,
         'Binput'       => GrahamCampbell\Binput\Facades\Binput::class,
         'Str'          => Illuminate\Support\Str::class,
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class
 
     ],
 
