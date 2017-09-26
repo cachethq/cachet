@@ -165,7 +165,7 @@
                             type: 'bar',
                             data: {
                                 labels: labels.map(function(d){
-                                    return upTimeGroup === "last_hours" ? moment(d).format("HH:ss") : moment(d).format("dd, Do");
+                                    return upTimeGroup === "last_hours" ? moment(d).format("dd, HH:ss") : moment(d).format("dd, Do MMM");
                                 }),
                                 datasets:[{
                                     data: Object.values(data).map(function (e) {
@@ -201,12 +201,13 @@
                                           .html(
                                               incidentsIds.map(function(e){
                                                   var minDateFormatted = moment.unix(e.min_date).format("Do MMM, HH:m");
-                                                  var maxDateFormatted = moment.unix(e.max_date).format("Do MMM, HH:m");
+                                                  var maxDateFormatted = e.max_date > 0  ? moment.unix(e.max_date).format("Do MMM, HH:m") : "-";
                                                   var url = "{{route('core::get:incident',["id"=>""])}}/"+e.id;
                                                   var name = '<p><a target="_blank" href="'+url+'">' + e.name +"</a></p>";
+                                                  var nUpdates = e.updates !== null ? e.updates : 0;
                                                   return "<tr>"
                                                     + "<td>"+name+"</td>"
-                                                    + "<td>"+e.updates+"</td>"
+                                                    + "<td>"+nUpdates+"</td>"
                                                     + "<td>"+e.down_time_hours.toFixed(1)+" h</td>"
                                                     + "<td>"+minDateFormatted+"</td>"
                                                     + "<td>"+maxDateFormatted+"</td>"

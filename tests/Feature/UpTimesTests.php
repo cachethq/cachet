@@ -32,7 +32,8 @@ class UpTimesTests extends AbstractTestCase
 
     private $baseDate;
 
-    private $scenariosMapping = [];
+    private $scenariosGroupMapping = [];
+    private $scenariosComponentMapping = [];
 
     public function testUpTimesPercentagesAreCorrect(){
 
@@ -81,6 +82,8 @@ class UpTimesTests extends AbstractTestCase
             $g->components()
                 ->each(function($c) use ($nHoursToBeDownPerComponent) {
 
+                $this->scenariosComponentMapping[$c->id] = $nHoursToBeDownPerComponent / self::N_HOURS * 100;
+
                 $nIncidents = random_int(1, self::MAX_N_FAKE_INCIDENTS_PER_GROUPS);
 
                 $nHoursToBeDownPerIncidents = $nHoursToBeDownPerComponent / $nIncidents;
@@ -102,10 +105,6 @@ class UpTimesTests extends AbstractTestCase
                         $date = clone $this->baseDate;
                         $date->addHours($nHoursToBeDownPerIncidents);
 
-                        echo $this->baseDate->toDateTimeString()."\n";
-                        echo $date->toDateTimeString();
-                        echo "\n================";
-
                         $i->updates()
                             ->save(factory(IncidentUpdate::class)->make([
                                     "created_at" => $date,
@@ -124,7 +123,26 @@ class UpTimesTests extends AbstractTestCase
 
         $groups->each(function($g) use ($sum) {
 
-            $groupData = $this->getJson("uptimes_group/".$g->id)->decodeResponseJson();
+            $g->components()->each(function($c) {
+
+                $groupData = $this->getJson("uptimes_component/".$c->id)->decodeResponseJson();
+
+                $items = $groupData["data"]["items"];
+
+                $downTimeToBeExpectedPerc = $this->scenariosComponentMapping[$c->id];
+
+                //Checks that values are conform percentages
+                array_map(function($i){
+                    $this->assertGreaterThanOrEqual(0, $i);
+                    $this->assertLessThanOrEqual(100, $i);
+                }, $items);
+
+                $percentageUp = array_sum($items) / count($items);
+
+                $this->assertEquals(round($downTimeToBeExpectedPerc), round(100.0 - $percentageUp));
+            });
+
+            /*$groupData = $this->getJson("uptimes_group/".$g->id)->decodeResponseJson();
 
             $items = $groupData["data"]["items"];
 
@@ -136,11 +154,9 @@ class UpTimesTests extends AbstractTestCase
                 $this->assertLessThanOrEqual(100, $i);
             }, $items);
 
-            //print_r($items);
-
             $percentageUp = array_sum($items) / count($items);
 
-            $this->assertEquals($downTimeToBeExpectedPerc, 100.0 - $percentageUp);
+            $this->assertEquals(round($downTimeToBeExpectedPerc), round(100.0 - $percentageUp));*/
 
         });
 

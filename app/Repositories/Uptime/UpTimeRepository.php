@@ -105,8 +105,6 @@ class UpTimeRepository
                     $fromDate->getTimestamp()
                 );
 
-
-
             if($downTime["downTimeHours"] > 1.0 ){
                 $downTime["downTimeHours"] = 1.0;
             }

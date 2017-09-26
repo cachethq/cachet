@@ -7,6 +7,7 @@ namespace CachetHQ\Cachet\Repositories\Uptime;
 
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
+use CachetHQ\Cachet\Models\IncidentUpdate;
 use Carbon\Carbon;
 use DateTime;
 use Illuminate\Config\Repository;
@@ -25,6 +26,7 @@ class AbstractUpTimeRepository
 
 
     const DOWN_TIME_STATUSES = [4];
+    const FIXED_UPDATE_STATUS_ID = 4;
 
     protected $currentComponent;
 
@@ -62,7 +64,7 @@ class AbstractUpTimeRepository
                 "id" => $e->id,
                 "name" => $e->name,
                 "down_time_hours" => $this->getHoursOverlapping($e,$toDateEpoch,$fromDateEpoch),
-                "updates" => $e->updates,
+                "updates" => IncidentUpdate::where("incident_id",$e->id)->count(),
                 "min_date" => $e->min_time,
                 "max_date" => $e->max_time,
             ];
