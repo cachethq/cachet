@@ -21,10 +21,11 @@ use CachetHQ\Cachet\Models\Schedule;
 use CachetHQ\Cachet\Repositories\Metric\MetricRepository;
 use CachetHQ\Cachet\Repositories\Uptime\UpTimeRepository;
 use CachetHQ\Cachet\Services\Dates\DateFactory;
-use CachetHQ\Cachet\Services\Excel\ExcelUpTimesExporter;
+use CachetHQ\Cachet\Services\Excel\UpTimesExporter;
 use Exception;
 use function foo\func;
 use GrahamCampbell\Binput\Facades\Binput;
+use HttpResponse;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
@@ -246,7 +247,9 @@ class StatusPageController extends AbstractApiController
     }
 
 
-    public function createExcel(){
+    public function exportToFile(){
+        $format = Binput::get('format', 'xlsx');
+        $days = Binput::get('days','48');
         $data = [
             "groups" => ComponentGroup::get()->map(function($g){
                 return [
@@ -263,8 +266,8 @@ class StatusPageController extends AbstractApiController
                 ];
             })
         ];
-        ExcelUpTimesExporter::createFile($data);
-        return $this->item(["noop"]);
+        UpTimesExporter::createFile($data, $days,$format);
+        return HttpResponse::status(200);
     }
 
     /**

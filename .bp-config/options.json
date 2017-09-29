@@ -16,7 +16,8 @@
     "tokenizer",
     "spl",
     "reflection",
-    "dom"
+    "dom",
+    "gd"
   ],
   "COMPOSER_INSTALL_OPTIONS": [
     "--no-interaction",

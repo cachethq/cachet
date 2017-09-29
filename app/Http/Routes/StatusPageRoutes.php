@@ -70,9 +70,9 @@ class StatusPageRoutes
                 'uses' => 'StatusPageController@getUptimeByGroup',
             ]);
 
-            $router->get('excel', [
-                'as'   => 'get:excelExport',
-                'uses' => 'StatusPageController@createExcel',
+            $router->get('export', [
+                'as'   => 'get:fileExport',
+                'uses' => 'StatusPageController@exportToFile',
             ]);
 
             $router->get('component/{component}/shield', [

@@ -200,8 +200,8 @@
                                           .find(".table-body")
                                           .html(
                                               incidentsIds.map(function(e){
-                                                  var minDateFormatted = moment.unix(e.min_date).format("Do MMM, HH:m");
-                                                  var maxDateFormatted = e.max_date > 0  ? moment.unix(e.max_date).format("Do MMM, HH:m") : "-";
+                                                  var minDateFormatted = moment.unix(e.min_date).format("Do MMM, HH:mm");
+                                                  var maxDateFormatted = e.max_date > 0  ? moment.unix(e.max_date).format("Do MMM, HH:mm") : "-";
                                                   var url = "{{route('core::get:incident',["id"=>""])}}/"+e.id;
                                                   var name = '<p><a target="_blank" href="'+url+'">' + e.name +"</a></p>";
                                                   var nUpdates = e.updates !== null ? e.updates : 0;
@@ -259,16 +259,14 @@
     @endif
     <div>
         <strong>Export Data in </strong>
-        <a href="#" role="button" class="btn btn-default">CSV</a>
+        <a href="/export/?format=csv" role="button" class="btn btn-default ">CSV</a>
 
-        <a href="#" role="button" class="btn btn-default">Excel</a>
-
-        <a href="#" role="button" class="btn btn-default">PNG</a>
+        <a href="/export/?format=xlsx" role="button" class="btn btn-default">Excel</a>
     </div>
 
 
     <div class="modal" id="incidentsModal">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog" role="document" style="width: 1200px">
             <div class="modal-content">
                 <div class="modal-header">
                     <strong class="modal-title">Incidents list</strong>
