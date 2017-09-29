@@ -89,12 +89,10 @@ class RouteServiceProvider extends ServiceProvider
         $router->group(['namespace' => $this->namespace, 'as' => 'core::'], function (Router $router) {
             $path = app_path('Http/Routes');
 
-            // GLOB_BRACE is defined as 0, check the source!
-            // https://github.com/php/php-src/blob/31e4afe3c3654f9c5ab2eafa3a02c62d41c58b47/ext/standard/dir.c#L154-L158
-            $globBrace = defined('GLOB_BRACE') ? GLOB_BRACE : 0;
-            $globFlag = $globBrace;
+            $AllFileIterator = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($path));
+            $PhpFileIterator = new \RegexIterator($AllFileIterator, '/^.+\.php$/i', \RecursiveRegexIterator::GET_MATCH);
 
-            foreach (glob("{$path}/*{,/*}.php", $globFlag) as $file) {
+            foreach ($PhpFileIterator as $file => $object) {
                 $class = substr($file, strlen($path));
                 $class = str_replace('/', '\\', $class);
                 $class = substr($class, 0, -4);
