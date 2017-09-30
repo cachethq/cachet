@@ -70,7 +70,7 @@ class ReportIncidentCommandHandler
             'visible' => $command->visible,
         ];
 
-        if ($command->template) {
+        if (IncidentTemplate::where('slug', '=', $command->template)->first()) {
             $data['message'] = $this->parseIncidentTemplate($command->template, $command->template_vars);
         } else {
             $data['message'] = $command->message;
