@@ -1,3 +1,4 @@
+<script>
 module.exports = {
     props: ['welcome-user'],
     mounted () {
@@ -14,3 +15,4 @@ module.exports = {
         }
     }
 }
+</script>

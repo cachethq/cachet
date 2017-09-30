@@ -13,9 +13,10 @@ namespace CachetHQ\Cachet\Presenters;
 
 use CachetHQ\Cachet\Presenters\Traits\TimestampsTrait;
 use Illuminate\Contracts\Support\Arrayable;
+use Illuminate\Contracts\Support\Jsonable;
 use McCool\LaravelAutoPresenter\BasePresenter;
 
-class MetricPresenter extends BasePresenter implements Arrayable
+class MetricPresenter extends BasePresenter implements Arrayable, Jsonable
 {
     use TimestampsTrait;
 
@@ -71,5 +72,18 @@ class MetricPresenter extends BasePresenter implements Arrayable
             'updated_at'        => $this->updated_at(),
             'default_view_name' => $this->default_view_name(),
         ]);
+    }
+
+    /**
+     * Convert the object to its JSON representation.
+     *
+     * @param  int  $options
+     * @return string
+     */
+    public function toJson($options = 0)
+    {
+        $json = json_encode($this->toArray(), $options);
+
+        return $json;
     }
 }
