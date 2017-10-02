@@ -35,8 +35,6 @@ class UpTimesExporter {
      */
     private static function createChartForComponent($sheetName,$componentName,$currentIndex,$currentIndexEnd,$length){
 
-
-
         //	Set the Labels for each data series we want to plot
         //		Datatype
         //		Cell reference for data
@@ -180,7 +178,13 @@ class UpTimesExporter {
 
 
                     collect(self::$indexes)->map(function($i) use ($length, $sheet) {
-                        $chart = self::createChartForComponent($i["sheetName"], $i["componentName"],$i["currentIndex"],$i["currentIndexEnd"],$length);
+                        $chart = self::createChartForComponent(
+                            $i["sheetName"],
+                            $i["componentName"],
+                            $i["currentIndex"],
+                            $i["currentIndexEnd"],
+                            $length
+                        );
                         $sheet->addChart($chart);
                         $sheet->row($i["currentIndex"]-1, function($row) {
                             // call cell manipulation methods

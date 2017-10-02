@@ -205,12 +205,15 @@
                                                   var url = "{{route('core::get:incident',["id"=>""])}}/"+e.id;
                                                   var name = '<p><a target="_blank" href="'+url+'">' + e.name +"</a></p>";
                                                   var nUpdates = e.updates !== null ? e.updates : 0;
+                                                  var fixedAt = moment.unix(e.fixed_at).format("Do MMM, HH:mm");
+                                                  var isFixed = e.fixed ? "Yes ( "+fixedAt+" ) ":"No";
                                                   return "<tr>"
                                                     + "<td>"+name+"</td>"
                                                     + "<td>"+nUpdates+"</td>"
                                                     + "<td>"+e.down_time_hours.toFixed(1)+" h</td>"
                                                     + "<td>"+minDateFormatted+"</td>"
                                                     + "<td>"+maxDateFormatted+"</td>"
+                                                    + "<td>"+isFixed+"</td>"
                                                   + "</tr>"
                                               }).join()
                                           );
@@ -283,6 +286,7 @@
                             <th>DownTime</th>
                             <th>Occurred</th>
                             <th>Last update</th>
+                            <th>Fixed</th>
                         </tr>
                         </thead>
                         <tbody class="table-body">

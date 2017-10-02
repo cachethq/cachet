@@ -23,10 +23,8 @@ use CachetHQ\Cachet\Repositories\Uptime\UpTimeRepository;
 use CachetHQ\Cachet\Services\Dates\DateFactory;
 use CachetHQ\Cachet\Services\Excel\UpTimesExporter;
 use Exception;
-use function foo\func;
 use GrahamCampbell\Binput\Facades\Binput;
 use HttpResponse;
-use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Response;
@@ -267,7 +265,7 @@ class StatusPageController extends AbstractApiController
             })
         ];
         UpTimesExporter::createFile($data, $days,$format);
-        return HttpResponse::status(200);
+        return back();
     }
 
     /**

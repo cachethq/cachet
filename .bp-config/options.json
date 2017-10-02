@@ -17,7 +17,8 @@
     "spl",
     "reflection",
     "dom",
-    "gd"
+    "gd",
+    "zip"
   ],
   "COMPOSER_INSTALL_OPTIONS": [
     "--no-interaction",

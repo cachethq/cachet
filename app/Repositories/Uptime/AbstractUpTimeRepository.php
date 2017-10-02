@@ -60,11 +60,17 @@ class AbstractUpTimeRepository
     protected function getDownTimesHoursAndIncidentsId($result, $toDateEpoch, $fromDateEpoch){
         $downTimeHours = $this->getHours($result,$toDateEpoch,$fromDateEpoch);
         $incidentsIds = array_map(function($e) use ($toDateEpoch,$fromDateEpoch){
+
+            $incidentUpdates = IncidentUpdate::where("incident_id",$e->id);
+            $fixedUpdate = $incidentUpdates->where("incident_updates.status",4);
+            $fixedUpdateExists = $fixedUpdate->exists();
             return [
                 "id" => $e->id,
                 "name" => $e->name,
                 "down_time_hours" => $this->getHoursOverlapping($e,$toDateEpoch,$fromDateEpoch),
-                "updates" => IncidentUpdate::where("incident_id",$e->id)->count(),
+                "updates" => $incidentUpdates->count(),
+                "fixed" => $fixedUpdateExists,
+                "fixed_at" => $fixedUpdateExists ? $fixedUpdate->first()->created_at->getTimeStamp() : NULL,
                 "min_date" => $e->min_time,
                 "max_date" => $e->max_time,
             ];
