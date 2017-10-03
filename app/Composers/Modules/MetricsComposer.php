@@ -16,6 +16,7 @@ use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\View\View;
 
+
 /**
  * This is the metrics composer.
  *
@@ -62,10 +63,12 @@ class MetricsComposer
     public function compose(View $view)
     {
         $displayMetrics = $this->config->get('setting.display_graphs');
+        $metricsFilterSelectable = $this->config->get('setting.metrics_filter_selectable');
         $metrics = $this->getVisibleMetrics($displayMetrics);
 
         $view->withDisplayMetrics($displayMetrics)
-            ->withMetrics($metrics);
+             ->withMetrics($metrics)
+             ->withMetricsFilterSelectable($metricsFilterSelectable);
     }
 
     /**

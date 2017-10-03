@@ -15,6 +15,9 @@
                 </div>
                 <div class="col-xs-2">
                     <div class="dropdown pull-right">
+                        @if(!$metrics_filter_selectable)
+                        <a href="javascript: void(0);" class="btn btn-default disabled"><span class='filter' disabled>{{ trans('cachet.metrics.filter.'.$metric->trans_string_name) }}</span></a>
+                        @else
                         <a href="javascript: void(0);" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class='filter'>{{ trans('cachet.metrics.filter.'.$metric->trans_string_name) }}</span> <span class="caret"></span></a>
                         <ul class="dropdown-menu dropdown-menu-right">
                             <li><a href="#" data-filter-type="last_hour">{{ trans('cachet.metrics.filter.last_hour') }}</a></li>
@@ -22,6 +25,7 @@
                             <li><a href="#" data-filter-type="week">{{ trans('cachet.metrics.filter.weekly') }}</a></li>
                             <li><a href="#" data-filter-type="month">{{ trans('cachet.metrics.filter.monthly') }}</a></li>
                         </ul>
+                        @endif
                     </div>
                 </div>
             </div>

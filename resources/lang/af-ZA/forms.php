@@ -161,6 +161,7 @@ return [
             'only_disrupted_days'          => 'Only show days containing incidents in the timeline?',
             'enable_history'               => 'Allow incidents outside of current window to be viewed?',
             'show_system_updated'          => 'Show last updated in system status?',
+            'metrics_filter_selectable'    => 'Allow user selectable metrics filter?',
             'timeline_header'              => 'Timeline header'
         ],
         'analytics' => [

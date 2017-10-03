@@ -110,6 +110,17 @@
                             <div class="col-xs-12">
                                 <div class="checkbox">
                                     <label>
+                                        <input type="hidden" value="0" name="metrics_filter_selectable">
+                                        <input type="checkbox" value="1" name="metrics_filter_selectable" {{ $metrics_filter_selectable ? 'checked' : null }}>
+                                        {{ trans('forms.settings.app-setup.metrics_filter_selectable') }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="checkbox">
+                                    <label>
                                         <input type="hidden" value="0" name="show_support">
                                         <input type="checkbox" value="1" name="show_support" {{ $show_support ? 'checked' : null }}>
                                         {{ trans('setup.show_support') }}

@@ -143,6 +143,17 @@ return [
     |
     */
 
-    'show_system_updated' => 'false',
+    'show_system_updated' => false,
+
+   /*
+    |--------------------------------------------------------------------------
+    | Metrics filter selectable
+    |--------------------------------------------------------------------------
+    |
+    | Enable metrics filter selection
+    |
+    */
+
+    'metrics_filter_selectable' => false,
 
 ];
