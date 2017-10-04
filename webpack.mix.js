@@ -46,7 +46,8 @@ mix
         'node_modules/jquery-serializeobject/jquery.serializeObject.js',
         'resources/assets/js/password-strength.js',
         'resources/assets/js/cachet.js',
-    ], 'public/dist/js/all.js')
+    ], 'public/dist/js/all.js');
+
 
 if (mix.config.inProduction) {
     mix.version();

@@ -51,6 +51,9 @@
     @endif
     <link rel="stylesheet" href="{{ mix('dist/css/app.css') }}">
 
+    <!-- Need this to make datepickers work-->
+    <link rel="stylesheet" href="{{ mix('dist/css/dashboard/dashboard.css') }}">
+
     @include('partials.stylesheet')
 
     @include('partials.crowdin')
@@ -89,6 +92,7 @@
     </div>
 
     @yield('bottom-content')
+
 </body>
 <script src="{{ mix('dist/js/all.js') }}"></script>
 </html>

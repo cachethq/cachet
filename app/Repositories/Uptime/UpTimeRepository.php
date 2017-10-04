@@ -1,6 +1,8 @@
 <?php
 
 namespace CachetHQ\Cachet\Repositories\Uptime;
+use CachetHQ\Cachet\Models\Component;
+use Carbon\Carbon;
 use DateTime;
 use DateTimeZone;
 use Illuminate\Support\Facades\DB;
@@ -30,6 +32,52 @@ class UpTimeRepository
     public function __construct(UpTimeInterface $repository)
     {
         $this->repository = $repository;
+    }
+
+
+    /**
+     * @param $component
+     * @param $fromDate
+     * @param $toDate
+     * @param $tickInHours
+     * @return array
+     */
+    public function ComponentUpTimeFor(Component $component, Carbon $fromDate, Carbon $toDate, $tickInHours){
+
+        $upTimes = [];
+
+        $incidentsIds = [];
+
+        $fromDateTmp = clone $fromDate;
+
+        $fromDate->addHours($tickInHours);
+
+        $iterations = ($fromDate->getTimestamp() - $toDate->getTimestamp()) / 3600.0 / $tickInHours;
+
+        $toDate = $fromDateTmp;
+
+        foreach(range(0,$iterations-1) as $_){
+            $downTime = $this
+                ->repository
+                ->getComponentUpTimeSinceHours(
+                    $component,
+                    $toDate->getTimestamp(),
+                    $fromDate->getTimestamp()
+                );
+
+            if($downTime["downTimeHours"] > $tickInHours ){
+                $downTime["downTimeHours"] = $tickInHours;
+            }
+
+            $key = $toDate->format('Y-m-d H:i:s');
+            $upTimes[$key] = ($tickInHours - $downTime["downTimeHours"]) / $tickInHours * 100.0;
+            $incidentsIds[$key] = $downTime["incidentsIds"];
+            $fromDate = clone $toDate;
+            $toDate->subHours($tickInHours);
+        }
+
+        return compact("upTimes","incidentsIds");
+
     }
 
 

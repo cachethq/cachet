@@ -38,6 +38,7 @@
         "backup-manager/laravel": "dev-master#df53f9c9d8c6be5d7a2638f45d54b8fb7bc51e2b",
         "barryvdh/laravel-cors": "^0.8",
         "doctrine/dbal": "2.5.13",
+        "dompdf/dompdf": "0.6.1",
         "fideloper/proxy": "^3.1",
         "graham-campbell/binput": "^3.5",
         "graham-campbell/core": "^5.1",
@@ -48,11 +49,13 @@
         "laravel/framework": "^5.4",
         "maatwebsite/excel": "^2.1",
         "mccool/laravel-auto-presenter": "^5.0",
+        "mpdf/mpdf": "6.1.0",
         "nexmo/client": "@beta",
         "phpoffice/phpexcel": "^1.8",
         "pragmarx/google2fa": "^0.7.1",
         "predis/predis": "^1.1",
         "roumen/feed": "^2.10",
+        "tecnick.com/tcpdf": "~6.0",
         "twig/twig": "^1.26.1"
     },
     "require-dev": {

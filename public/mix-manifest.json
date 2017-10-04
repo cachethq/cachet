@@ -1,7 +1,8 @@
 {
-  "/dist/js/app.js": "/dist/js/app.cfbd9cb6c12f19644c43.js",
-  "/mix.js": "/mix.46bdcf356e69eb1117ec.js",
-  "/dist/css/dashboard/dashboard.css": "/dist/css/dashboard/dashboard.d62a8b6468ab8c9bca396ab8f6cde506.css",
-  "/dist/css/app.css": "/dist/css/app.feac6a0c1283b11117bc898e9697488a.css",
-  "/dist/js/all.js": "/dist/js/all.8578cbc7a83e3d41eda6acd902945f13.js"
+  "/dist/js/app.js": "/dist/js/app.js",
+  "/mix.js": "/mix.js",
+  "/dist/css/dashboard/dashboard.css": "/dist/css/dashboard/dashboard.css",
+  "/dist/css/app.css": "/dist/css/app.css",
+  "/dist/js/all.js": "/dist/js/all.js",
+  "/dist/js/date-polyfill.js": "/dist/js/date-polyfill.js"
 }

@@ -22,12 +22,13 @@ use CachetHQ\Cachet\Repositories\Metric\MetricRepository;
 use CachetHQ\Cachet\Repositories\Uptime\UpTimeRepository;
 use CachetHQ\Cachet\Services\Dates\DateFactory;
 use CachetHQ\Cachet\Services\Excel\UpTimesExporter;
+use Carbon\Carbon;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
-use HttpResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\View;
 use Jenssegers\Date\Date;
 use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
@@ -158,18 +159,31 @@ class StatusPageController extends AbstractApiController
     }
 
 
-    private function fetchUpTime($type, $component){
+    private function fetchUpTime($type, $component, $range){
         $upTimes = app(UpTimeRepository::class);
+        $fromDate = Carbon::createFromFormat("Y-m-d H:i", $range["fromDate"]);
+        $toDate = Carbon::createFromFormat("Y-m-d H:i", $range["toDate"]);
+        $hours = 0;
 
-        $data = [];
         switch ($type){
             case 'last_hours':
-                $data = $upTimes->ComponentUpTimesForLastHours($component, self::LAST_HOURS);
+                $fromDate->setTime($fromDate->hour,0,0);
+                $toDate->setTime($toDate->hour,0,0);
+                $hours = 1.0;
                 break;
             case 'last_days':
-                $data = $upTimes->ComponentUpTimeForLastDays($component, self::LAST_DAYS);
+                $fromDate->setTime(0,0,0);
+                $toDate->setTime(0,0,0);
+                $hours = 24.0;
                 break;
         }
+
+        $data = $upTimes->ComponentUpTimeFor(
+            $component,
+            $fromDate,
+            $toDate,
+            $hours
+        );
 
         return [
             "items" => $data["upTimes"],
@@ -178,13 +192,51 @@ class StatusPageController extends AbstractApiController
         ];
     }
 
+
+    private function createDates($range, $type){
+        $today = Carbon::now();
+        $range = [];
+        $range["fromDate"] = $today->format("Y-m-d H:00");
+
+        switch ($type){
+            case 'last_days':
+                $range["toDate"] = $today
+                    ->subDays(self::LAST_DAYS)
+                    ->format("Y-m-d H:00");
+                break;
+            case 'last_hours':
+                $range["toDate"] = $today
+                    ->subHours(self::LAST_HOURS)
+                    ->format("Y-m-d H:00");
+                break;
+        }
+        return $range;
+    }
+
     /**
      * @param Component $component
      * @return \Illuminate\Http\JsonResponse
      */
     public function getUpTime(Component $component){
         $type = Binput::get('filter', 'last_hours');
-        return $this->item($this->fetchUpTime($type,$component));
+        $range = Binput::get('range', NULL);
+
+        if($range !== NULL && $range !== "" ){
+            $rangeValidation = Validator::make($range, $rules = [
+                'fromDate'      => 'date|date_format:Y-m-d H:00|after:toDate',
+                'toDate'        => 'date|date_format:Y-m-d H:00|before:fromDate',
+            ]);
+            if(!$rangeValidation->passes()){
+                return Response::json(
+                    $rangeValidation->errors(),
+                    400
+                );
+            }
+        }else {
+            $range = $this->createDates($range, $type);
+        }
+
+        return $this->item($this->fetchUpTime($type,$component,$range));
     }
 
     private function fetchUpTimeByGroup($type, $group){
@@ -192,6 +244,7 @@ class StatusPageController extends AbstractApiController
         $averages = [];
         $incidentsIds = [];
         $components = $group->components()->get();
+
 
         switch ($type){
             case 'last_hours':
@@ -248,6 +301,12 @@ class StatusPageController extends AbstractApiController
     public function exportToFile(){
         $format = Binput::get('format', 'xlsx');
         $days = Binput::get('days','48');
+
+        //Ensure that the user doesn't put any kind of format
+        if(!collect(["csv", "xlsx"])->contains($format)){
+            $format = "csv";
+        }
+
         $data = [
             "groups" => ComponentGroup::get()->map(function($g){
                 return [

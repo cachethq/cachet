@@ -2,16 +2,9 @@
 <div class="section-uptime">
     <div>
         <strong>See data for</strong>
-        <a href="#" role="button" class="btn btn-primary">Current time</a>
+        <button id="btn-current-time-range" class="btn btn-primary">Current time</button>
 
-        <a href="#" role="button" class="btn btn-default">Q1</a>
-
-        <a href="#" role="button" class="btn btn-default">Q2</a>
-
-        <a href="#" role="button" class="btn btn-default">Q3</a>
-
-        <a href="#" role="button" class="btn btn-default">Q4</a>
-
+        <button id="btn-specify-date-range" class="btn btn-default">Specify a date range</button>
     </div>
     <br>
     @if($component_groups->count() > 0)
@@ -85,6 +78,9 @@
         <script>
             (function () {
 
+                var dateRange = null;
+
+                $('.dropdown-toggle').dropdown();
 
                 $(".group-uptime-container").hide();
 
@@ -101,6 +97,65 @@
                         });
                         $(this).html("Hide graphs per component");
                     }
+                });
+
+                $("#btn-specify-date-range").on("click",function(){
+
+                    var modal = $("#dateRangeModal");
+                    modal.modal('toggle');
+                    modal.find("input[type=submit]").removeAttr('disabled');
+
+                    $('#to-date, #from-date').datetimepicker({
+                        format: "YYYY-MM-DD H:00",
+                        sideBySide:true,
+                        icons: {
+                            time: 'ion-clock',
+                            date: 'ion-android-calendar',
+                            up: 'ion-ios-arrow-up',
+                            down: 'ion-ios-arrow-down',
+                            previous: 'ion-ios-arrow-left',
+                            next: 'ion-ios-arrow-right',
+                            today: 'ion-android-home',
+                            clear: 'ion-trash-a',
+                        }
+                    });
+
+                    $("#to-date").on("dp.change", function (e) {
+                       $('#from-date').data("DateTimePicker").minDate(e.date);
+                    });
+
+                    $("#from-date").on("dp.change", function (e) {
+                       $('#to-date').data("DateTimePicker").maxDate(e.date);
+                    });
+
+                });
+
+                $("#btn-current-time-range").on("click",function(){
+                    dateRange = null;
+                    $(this)
+                        .removeClass("btn-default")
+                        .addClass("btn-primary");
+                    $("#btn-specify-date-range")
+                        .removeClass("btn-primary")
+                        .addClass("btn-default");
+                    drawVisibleCharts();
+                });
+
+                $("body").on("submit","#date-range-form",function(e){
+                    e.preventDefault();
+                    dateRange = {
+                        fromDate:$("#from-date").val(),
+                        toDate:$("#to-date").val()
+                    };
+                    $("#btn-specify-date-range")
+                        .removeClass("btn-default")
+                        .addClass("btn-primary");
+                    $("#btn-current-time-range")
+                        .removeClass("btn-primary")
+                        .addClass("btn-default");
+                    $("#dateRangeModal").modal('toggle');
+
+                    drawVisibleCharts();
                 });
 
 
@@ -121,17 +176,18 @@
                     drawChart($canvas);
                 });
 
-                var canvasGroup = $('canvas[data-uptime-id]');
 
+                drawVisibleCharts();
 
-                canvasGroup.each(function() {
-                    var groupParent = $(this).parents('.group-uptime-container');
-                    if(groupParent.html() == undefined || groupParent.is(":visible")){
-                        drawChart($(this));
-                    }
-                });
-
-
+                function drawVisibleCharts(){
+                    var canvasGroup = $('canvas[data-uptime-id]');
+                    canvasGroup.each(function() {
+                        var groupParent = $(this).parents('.group-uptime-container');
+                        if(groupParent.html() == undefined || groupParent.is(":visible")){
+                            drawChart($(this));
+                        }
+                    });
+                }
 
                 function drawChart($el) {
                     var upTimeId = $el.data('uptime-id');
@@ -154,7 +210,7 @@
                     var chart = charts[chartId];
 
 
-                    $.getJSON('/uptimes_' + ( isGroupComponent ? "group/" : "component/") + upTimeId, { filter: upTimeGroup }).done(function (result) {
+                    $.getJSON('/uptimes_' + ( isGroupComponent ? "group/" : "component/") + upTimeId, { filter: upTimeGroup, range:dateRange }).done(function (result) {
                         var data = result.data.items;
                         var labels = result.data.labels;
                         var incidents = result.data.incidentsIds;
@@ -165,7 +221,7 @@
                             type: 'bar',
                             data: {
                                 labels: labels.map(function(d){
-                                    return upTimeGroup === "last_hours" ? moment(d).format("dd, HH:ss") : moment(d).format("dd, Do MMM");
+                                    return upTimeGroup === "last_hours" ? moment(d).format("dd, Do MMM HH:ss") : moment(d).format("dd, Do MMM");
                                 }),
                                 datasets:[{
                                     data: Object.values(data).map(function (e) {
@@ -293,6 +349,45 @@
                         </tbody>
                     </table>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="dateRangeModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <strong class="modal-title">Date range</strong>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="date-range-form">
+                    <div class="modal-body">
+                        <div class="row">
+
+                            <div class="col-md-6">
+                                Start from
+                            </div>
+
+                            <div class="col-md-6">
+                                <input id="from-date" required type="text" rel="datepicker-onlydate">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                Go back to
+                            </div>
+
+                            <div class="col-md-6">
+                                <input id="to-date" required type="text" rel="datepicker-onlydate">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" class="btn btn-primary" value="Save"/>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

@@ -2,9 +2,7 @@
 
 
 namespace CachetHQ\Cachet\Services\Excel;
-
 use Maatwebsite\Excel\Facades\Excel;
-use Mockery\Exception;
 use PHPExcel_Chart;
 use PHPExcel_Chart_DataSeries;
 use PHPExcel_Chart_DataSeriesValues;
@@ -16,10 +14,10 @@ class UpTimesExporter {
 
     private static $fields = [
         "Date Time",
-        "UpTime %",
-        "DownTime %"
+        "UpTime",
+        "DownTime",
+        "Incidents"
     ];
-
 
 
     private static $indexes = [];
@@ -30,18 +28,11 @@ class UpTimesExporter {
      * @param $currentIndex
      * @param $currentIndexEnd
      * @param $length
-     * @return PHPExcel_Chart
+     * @return array
      * @internal param $componentData
      */
-    private static function createChartForComponent($sheetName,$componentName,$currentIndex,$currentIndexEnd,$length){
+    private static function createChartsForComponent($sheetName,$componentName,$currentIndex,$currentIndexEnd,$length){
 
-        //	Set the Labels for each data series we want to plot
-        //		Datatype
-        //		Cell reference for data
-        //		Format Code
-        //		Number of datapoints in series
-        //		Data values
-        //		Data Marker
         $dataSeriesLabels = [
 	        new PHPExcel_Chart_DataSeriesValues(
 	            'String',
@@ -55,13 +46,7 @@ class UpTimesExporter {
                 NULL, 1
             ),
         ];
-        //	Set the X-Axis Labels
-        //		Datatype
-        //		Cell reference for data
-        //		Format Code
-        //		Number of datapoints in series
-        //		Data values
-        //		Data Marker
+
         $xAxisTickValues = array(
             new PHPExcel_Chart_DataSeriesValues(
                 'String',
@@ -70,78 +55,134 @@ class UpTimesExporter {
                 $length
             ),
         );
-        //	Set the Data values for each data series we want to plot
-        //		Datatype
-        //		Cell reference for data
-        //		Format Code
-        //		Number of datapoints in series
-        //		Data values
-        //		Data Marker
-        $dataSeriesValues = array(
+
+
+        $dataSeriesValuesUpTimes = array(
             new PHPExcel_Chart_DataSeriesValues(
                 'Number',
                 "'$sheetName'".'!C'.$currentIndex.':C'.$currentIndexEnd,
-                "0.00%",
+                NULL,
                 $length
             ),
             new PHPExcel_Chart_DataSeriesValues(
                 'Number',
                 "'$sheetName'".'!D'.$currentIndex.':D'.$currentIndexEnd,
-                "0.00%",
+                NULL,
                 $length
             ),
         );
 
-
-        $series = new PHPExcel_Chart_DataSeries(
-            PHPExcel_Chart_DataSeries::TYPE_BARCHART,
-            PHPExcel_Chart_DataSeries::GROUPING_STACKED,
-            range(0, count($dataSeriesValues)-1),
-            $dataSeriesLabels,
-            $xAxisTickValues,
-            $dataSeriesValues
+        $dataSeriesValueIncidents = array(
+            new PHPExcel_Chart_DataSeriesValues(
+                'Number',
+                "'$sheetName'".'!E'.$currentIndex.':E'.$currentIndexEnd,
+                NULL,
+                $length
+            ),
         );
 
-        $plotArea = new PHPExcel_Chart_PlotArea(NULL, array($series));
-        $legend = new PHPExcel_Chart_Legend(
+        $seriesUpTimes = new PHPExcel_Chart_DataSeries(
+            PHPExcel_Chart_DataSeries::TYPE_BARCHART,
+            PHPExcel_Chart_DataSeries::GROUPING_PERCENT_STACKED,
+            range(0, count($dataSeriesValuesUpTimes)-1),
+            $dataSeriesLabels,
+            $xAxisTickValues,
+            $dataSeriesValuesUpTimes
+        );
+
+
+        $seriesIncidents = new PHPExcel_Chart_DataSeries(
+            PHPExcel_Chart_DataSeries::TYPE_BARCHART,
+            PHPExcel_Chart_DataSeries::GROUPING_STANDARD,
+            range(0, count($dataSeriesValueIncidents)-1),
+            $dataSeriesLabels,
+            $xAxisTickValues,
+            $dataSeriesValueIncidents
+        );
+
+
+
+        $plotAreaUpTimes = new PHPExcel_Chart_PlotArea(NULL, array($seriesUpTimes));
+
+        $plotAreaIncidents = new PHPExcel_Chart_PlotArea(NULL, array($seriesIncidents));
+
+
+        $legendUpTimes = new PHPExcel_Chart_Legend(
             PHPExcel_Chart_Legend::POSITION_RIGHT,
             NULL,
             false
         );
-        $title = new PHPExcel_Chart_Title($componentName);
-        $yAxisLabel = new PHPExcel_Chart_Title('');
 
 
-        $chart = new PHPExcel_Chart(
-            "chart_$sheetName\_$componentName",
-            $title,
-            $legend,
-            $plotArea,
+        $legendIncidents = new PHPExcel_Chart_Legend(
+            PHPExcel_Chart_Legend::POSITION_RIGHT,
+            NULL,
+            false
+        );
+
+        $titleUpTimes = new PHPExcel_Chart_Title("$componentName Up and Down Times");
+        $titleIncidents = new PHPExcel_Chart_Title("$componentName Incidents");
+
+        $yAxisLabelUpTimes = new PHPExcel_Chart_Title('%');
+        $yAxisLabelIncidents= new PHPExcel_Chart_Title('Incidents');
+
+        $chartUpTimes = new PHPExcel_Chart(
+            "chart_$sheetName\_$componentName\_uptimes",
+            $titleUpTimes,
+            $legendUpTimes,
+            $plotAreaUpTimes,
             true,
             0,
             NULL,
-            $yAxisLabel
+            $yAxisLabelUpTimes
+        );
+        $chartIncidents = new PHPExcel_Chart(
+            "chart_$sheetName\_$componentName\_incidents",
+            $titleIncidents,
+            $legendIncidents,
+            $plotAreaIncidents,
+            true,
+            0,
+            NULL,
+            $yAxisLabelIncidents
         );
 
-        $chart->setTopLeftPosition('H'.($currentIndex));
-        $chart->setBottomRightPosition('V'.($currentIndex+25));
-        return $chart;
+        $chartUpTimes->getChartAxisY()->setAxisNumberProperties(\PHPExcel_Chart_Axis::FORMAT_CODE_PERCENTAGE);
+        $chartIncidents->getChartAxisY()->setAxisNumberProperties('0');
+
+
+        $chartUpTimes->setTopLeftPosition('H'.($currentIndex));
+        $chartUpTimes->setBottomRightPosition('V'.($currentIndex+20));
+        $chartIncidents->setTopLeftPosition('H'.($currentIndex+21));
+        $chartIncidents->setBottomRightPosition('V'.($currentIndex+41));
+
+        return [$chartUpTimes,$chartIncidents];
 
     }
 
+    /**
+     * @param $data
+     * @param $length
+     * @param string $format
+     */
     public static function createFile($data, $length, $format="xlsx"){
 
-        Excel::create('Filename', function($excel) use ($length, $data) {
+        Excel::create('Filename', function($excel) use ($format, $length, $data) {
 
-
-            $data["groups"]->each(function ($g) use ($length, $data, $excel) {
+            $data["groups"]->each(function ($g) use ($format, $length, $data, $excel) {
 
                 self::$indexes = [];
 
-                $excel->sheet($g["name"], function($sheet) use ($length, $g, $data) {
+                $excel->sheet($g["name"], function($sheet) use ($format, $length, $g, $data) {
 
                     // Won't auto generate heading columns
                     $sheet->fromArray(null, null, 'A1', false, false);
+
+                    // We had the group header to get an avg of all components
+                    $g["components"]->prepend([
+                        "name" => $g["name"],
+                        "data" => $g["data"]
+                    ]);
 
                     $rows = $g["components"]->map(function ($c, $componentIndex) use ($length, $sheet, $g) {
 
@@ -157,12 +198,15 @@ class UpTimesExporter {
                         ];
 
 
+                        //dd($c);
+
                         return collect($c["data"]["items"])->map(function($data,$key) use ($c) {
                             return collect([
                                 "",
                                 $key,
-                                round($data,2),
-                                round(100-$data,2)
+                                round($data/100.0,2),
+                                round(1.0-$data/100.0,2),
+                                count($c["data"]["incidentsIds"][$key])
                             ]);
                         })
                         ->prepend(array_prepend(self::$fields,$c["name"]))
@@ -174,20 +218,32 @@ class UpTimesExporter {
                         $rows
                     );
 
-                    $sheet->setAutoSize(true);
+                    $sheet->setAutoSize(
+                        true
+                    );
 
 
                     collect(self::$indexes)->map(function($i) use ($length, $sheet) {
-                        $chart = self::createChartForComponent(
+
+
+                        $sheet->setColumnFormat(array(
+                            "C".($i["currentIndex"]).":D".$i["currentIndexEnd"] => '0.0%',
+                        ));
+
+                        $charts = self::createChartsForComponent(
                             $i["sheetName"],
                             $i["componentName"],
                             $i["currentIndex"],
                             $i["currentIndexEnd"],
                             $length
                         );
-                        $sheet->addChart($chart);
+
+                        array_map(function($c) use ($sheet) {
+                            $sheet->addChart($c);
+                        },$charts);
+
+
                         $sheet->row($i["currentIndex"]-1, function($row) {
-                            // call cell manipulation methods
                             $row->setBackground('#3498db');
                             $row->setFontColor("#FFFFFF");
                             $row->setFontWeight('bold');

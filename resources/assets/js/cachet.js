@@ -1,4 +1,5 @@
 $(function () {
+
     // Ajax Setup
     $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
         var token;

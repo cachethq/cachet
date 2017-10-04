@@ -1,7 +1,8 @@
 /**
  * Polyfill promises.
  */
-const Promise = require('promise')
+const Promise = require('promise');
+
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -27,6 +28,7 @@ window.axios.defaults.headers.common = {
      * or customize the JavaScript scaffolding to fit your unique needs.
      */
 
+<<<<<<< HEAD
     new Vue({
         el: '#app',
         data () {
@@ -50,3 +52,10 @@ window.axios.defaults.headers.common = {
         }
     })
 })()
+=======
+const app = new Vue({
+    el: '#app'
+});
+
+
+>>>>>>> 923c237a... date range integration, some code refactoring
