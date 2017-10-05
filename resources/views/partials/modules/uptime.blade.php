@@ -159,6 +159,15 @@
                 });
 
 
+                $("body").on("click",".export-btn", function(e){
+                  e.preventDefault();
+                  var pararms = $.param({
+                        format: $(this).data("format"),
+                        range: dateRange
+                  });
+                  window.location= "/export?"+pararms;
+                });
+
                 Chart.defaults.global.elements.point.hitRadius = 10;
                 Chart.defaults.global.responsiveAnimationDuration = 0;
                 Chart.defaults.global.legend.display = false;
@@ -318,9 +327,9 @@
     @endif
     <div>
         <strong>Export Data in </strong>
-        <a href="/export/?format=csv" role="button" class="btn btn-default ">CSV</a>
+        <button role="button" data-format="csv" class="btn btn-default export-btn">CSV</button>
 
-        <a href="/export/?format=xlsx" role="button" class="btn btn-default">Excel</a>
+        <button role="button" data-format="xlsx" class="btn btn-default export-btn">Excel</button>
     </div>
 
 

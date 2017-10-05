@@ -159,7 +159,7 @@ class StatusPageController extends AbstractApiController
     }
 
 
-    private function fetchUpTime($type, $component, $range){
+    private function fetchUpTime($type, $components, $range){
         $upTimes = app(UpTimeRepository::class);
         $fromDate = Carbon::createFromFormat("Y-m-d H:i", $range["fromDate"]);
         $toDate = Carbon::createFromFormat("Y-m-d H:i", $range["toDate"]);
@@ -178,8 +178,8 @@ class StatusPageController extends AbstractApiController
                 break;
         }
 
-        $data = $upTimes->ComponentUpTimeFor(
-            $component,
+        $data = $upTimes->ComponentsUpTimeFor(
+            $components,
             $fromDate,
             $toDate,
             $hours
@@ -213,80 +213,30 @@ class StatusPageController extends AbstractApiController
         return $range;
     }
 
+    private function getDateRange($type){
+      $range = Binput::get('range', NULL);
+
+      if($range !== NULL && $range !== "" ){
+          $rangeValidation = Validator::make($range, $rules = [
+              'fromDate'      => 'date|date_format:Y-m-d H:00|after:toDate',
+              'toDate'        => 'date|date_format:Y-m-d H:00|before:fromDate',
+          ])->validate();
+          return $range;
+      }else {
+          return $this->createDates($range, $type);
+      }
+    }
+
     /**
      * @param Component $component
      * @return \Illuminate\Http\JsonResponse
      */
     public function getUpTime(Component $component){
         $type = Binput::get('filter', 'last_hours');
-        $range = Binput::get('range', NULL);
-
-        if($range !== NULL && $range !== "" ){
-            $rangeValidation = Validator::make($range, $rules = [
-                'fromDate'      => 'date|date_format:Y-m-d H:00|after:toDate',
-                'toDate'        => 'date|date_format:Y-m-d H:00|before:fromDate',
-            ]);
-            if(!$rangeValidation->passes()){
-                return Response::json(
-                    $rangeValidation->errors(),
-                    400
-                );
-            }
-        }else {
-            $range = $this->createDates($range, $type);
-        }
-
-        return $this->item($this->fetchUpTime($type,$component,$range));
+        $range = $this->getDateRange($type);
+        return $this->item($this->fetchUpTime($type,collect([$component]),$range));
     }
 
-    private function fetchUpTimeByGroup($type, $group){
-        $upTimes = app(UpTimeRepository::class);
-        $averages = [];
-        $incidentsIds = [];
-        $components = $group->components()->get();
-
-
-        switch ($type){
-            case 'last_hours':
-                foreach ($components as $component) {
-                    $data = $upTimes->ComponentUpTimesForLastHours($component, self::LAST_HOURS);
-                    foreach ($data["upTimes"] as $hour => $percentage) {
-                        isset($averages[$hour]) ? $averages[$hour] += $percentage : $averages[$hour] = $percentage;
-
-                        if (isset($incidentsIds[$hour]))
-                            $incidentsIds[$hour] = array_merge($incidentsIds[$hour], $data["incidentsIds"][$hour]);
-                        else
-                            $incidentsIds[$hour] = $data["incidentsIds"][$hour];
-
-                    }
-                }
-                break;
-            case 'last_days':
-                foreach ($components as $component) {
-                    $data = $upTimes->ComponentUpTimeForLastDays($component, self::LAST_DAYS);
-                    foreach ($data["upTimes"] as $day => $percentage) {
-                        $averages[$day] = isset($averages[$day]) ? $averages[$day] + $percentage : $percentage;
-
-                        if(isset($incidentsIds[$day]))
-                            $incidentsIds[$day] = array_merge($incidentsIds[$day],  $data["incidentsIds"][$day]);
-                        else
-                            $incidentsIds[$day] = $data["incidentsIds"][$day];
-                    }
-
-                }
-                break;
-        }
-
-        $averages = array_map(function($e) use ($components){
-            return $e / count($components);
-        },$averages);
-
-        return [
-            "items" => $averages,
-            "labels" => array_keys($averages),
-            "incidentsIds" => $incidentsIds
-        ];
-    }
 
     /**
      * @param ComponentGroup $group
@@ -294,36 +244,36 @@ class StatusPageController extends AbstractApiController
      */
     public function getUpTimeByGroup(ComponentGroup $group){
         $type = Binput::get('filter', 'last_hours');
-        return $this->item($this->fetchUpTimeByGroup($type, $group));
+        $range = $this->getDateRange($type);
+        return $this->item($this->fetchUpTime($type,$group->components()->get(),$range));
     }
 
 
     public function exportToFile(){
         $format = Binput::get('format', 'xlsx');
-        $days = Binput::get('days','48');
-
-        //Ensure that the user doesn't put any kind of format
-        if(!collect(["csv", "xlsx"])->contains($format)){
-            $format = "csv";
-        }
-
+        $range = $this->getDateRange("last_hours");
+        //Prepare data for export ...
         $data = [
-            "groups" => ComponentGroup::get()->map(function($g){
+            "groups" => ComponentGroup::get()->map(function($g) use ($range) {
                 return [
                     "name" => $g->name,
                     "id" => $g->id,
-                    "data" => $this->fetchUpTimeByGroup("last_hours",$g),
-                    "components" => $g->components()->get()->map(function ($c){
+                    "data" => $this->fetchUpTime("last_hours",$g->components()->get(), $range),
+                    "components" => $g->components()->get()->map(function ($c) use ($range){
                         return [
                             "name" => $c->name,
                             "id" => $c->id,
-                            "data" => $this->fetchUpTime("last_hours",$c)
+                            "data" => $this->fetchUpTime("last_hours",collect([$c]), $range)
                         ];
                     })
                 ];
             })
         ];
-        UpTimesExporter::createFile($data, $days,$format);
+        UpTimesExporter::createFile(
+          $data,
+          $range,
+          $format
+        );
         return back();
     }
 

@@ -9,6 +9,7 @@ use PHPExcel_Chart_DataSeriesValues;
 use PHPExcel_Chart_Legend;
 use PHPExcel_Chart_PlotArea;
 use PHPExcel_Chart_Title;
+use Carbon\Carbon;
 
 class UpTimesExporter {
 
@@ -162,10 +163,17 @@ class UpTimesExporter {
 
     /**
      * @param $data
-     * @param $length
+     * @param $range
      * @param string $format
      */
-    public static function createFile($data, $length, $format="xlsx"){
+    public static function createFile($data, $range, $format="xlsx"){
+
+        $length = (
+          Carbon::createFromFormat("Y-m-d H:i",$range["fromDate"])->getTimeStamp()
+          -
+          Carbon::createFromFormat("Y-m-d H:i",$range["toDate"])->getTimeStamp()
+        ) / 3600.0 + 1;
+
 
         Excel::create('Filename', function($excel) use ($format, $length, $data) {
 
@@ -264,4 +272,3 @@ class UpTimesExporter {
         })->export($format);
     }
 }
-

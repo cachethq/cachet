@@ -28,8 +28,6 @@ class AbstractUpTimeRepository
     const DOWN_TIME_STATUSES = [4];
     const FIXED_UPDATE_STATUS_ID = 4;
 
-    protected $currentComponent;
-
     /**
      * AbstractUpTimeRepository constructor.
      * @param Repository $config
@@ -59,8 +57,9 @@ class AbstractUpTimeRepository
      */
     protected function getDownTimesHoursAndIncidentsId($result, $toDateEpoch, $fromDateEpoch){
         $downTimeHours = $this->getHours($result,$toDateEpoch,$fromDateEpoch);
-        $incidentsIds = array_map(function($e) use ($toDateEpoch,$fromDateEpoch){
-
+        $incidentsIds = collect($result)->filter(function ($e) use ($toDateEpoch,$fromDateEpoch){
+            return $this->getHoursOverlapping($e,$toDateEpoch,$fromDateEpoch) > 0;
+        })->map(function($e) use ($toDateEpoch,$fromDateEpoch){
             $incidentUpdates = IncidentUpdate::where("incident_id",$e->id);
             $fixedUpdate = $incidentUpdates->where("incident_updates.status",4);
             $fixedUpdateExists = $fixedUpdate->exists();
@@ -74,9 +73,7 @@ class AbstractUpTimeRepository
                 "min_date" => $e->min_time,
                 "max_date" => $e->max_time,
             ];
-        }, array_filter($result, function ($e) use ($toDateEpoch,$fromDateEpoch){
-            return $this->getHoursOverlapping($e,$toDateEpoch,$fromDateEpoch) > 0;
-        }));
+        });
         return compact("downTimeHours","incidentsIds");
     }
 
@@ -101,13 +98,13 @@ class AbstractUpTimeRepository
      * @return int|mixed
      */
     protected function getHours($result, $toDateEpoch, $fromDateEpoch){
-        if(empty($result)) {
-            return 0;
-        } else {
-            return array_reduce($result, function ($i, $obj) use ($toDateEpoch, $fromDateEpoch) {
-                return $i + $this->getHoursOverlapping($obj, $toDateEpoch, $fromDateEpoch);
-            });
-        }
+
+      //We return the sum instead of the avg here, because we need to take the up hours in count
+      return collect($result)->groupBy('component_id')->map(function($r) use ($toDateEpoch, $fromDateEpoch){
+          return $r->reduce(function ($i, $obj) use ($toDateEpoch, $fromDateEpoch) {
+              return $i + $this->getHoursOverlapping($obj, $toDateEpoch, $fromDateEpoch);
+          },0);
+      })->sum();
     }
 
 }

@@ -18,10 +18,10 @@ interface UpTimeInterface
 {
 
     /**
-     * @param Component $component
+     * @param $component
      * @param $toDate
      * @param null $fromDate
      * @return mixed
      */
-    public function getComponentUpTimeSinceHours(Component $component, $toDate, $fromDate = null);
+    public function getComponentUpTimeSinceHours($components, $toDate, $fromDate = null);
 }

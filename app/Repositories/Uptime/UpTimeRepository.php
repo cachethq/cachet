@@ -42,7 +42,7 @@ class UpTimeRepository
      * @param $tickInHours
      * @return array
      */
-    public function ComponentUpTimeFor(Component $component, Carbon $fromDate, Carbon $toDate, $tickInHours){
+    public function ComponentsUpTimeFor($components, Carbon $fromDate, Carbon $toDate, $tickInHours){
 
         $upTimes = [];
 
@@ -60,10 +60,13 @@ class UpTimeRepository
             $downTime = $this
                 ->repository
                 ->getComponentUpTimeSinceHours(
-                    $component,
+                    $components,
                     $toDate->getTimestamp(),
                     $fromDate->getTimestamp()
                 );
+
+            //If there's many components (ex group) we take an avg
+            $downTime["downTimeHours"]  = $downTime["downTimeHours"] / $components->count();
 
             if($downTime["downTimeHours"] > $tickInHours ){
                 $downTime["downTimeHours"] = $tickInHours;
@@ -79,94 +82,6 @@ class UpTimeRepository
         return compact("upTimes","incidentsIds");
 
     }
-
-
-    /**
-     * @param $component
-     * @param $days
-     * @return array
-     * @internal param $componentId
-     */
-    public function ComponentUpTimeForLastDays($component, $days){
-
-        $fromDate = new DateTime("now");
-        $toDate = new DateTime("now");
-        $toDate->setTime(0,0,0);
-        $fromDate->setTime(0,0,0);
-        $fromDate->modify("+1 day");
-
-        // 1st iteration : substract hours and minutes ex: Wed: 14:37 -> compute uptime for last 14:37 hours
-        // 2nd iteration: uptime for Tuesday ( 24H ), Monday ( 24H ) etc...
-
-        $upTimes = [];
-        $incidentsIds = [];
-
-        $periodInHours = 24.0;
-
-        for($i = 1; $i <= $days; $i ++){
-            $downTime = $this
-                ->repository
-                ->getComponentUpTimeSinceHours(
-                    $component,
-                    $toDate->getTimestamp(),
-                    $fromDate->getTimestamp()
-                );
-
-            $key = $toDate->format('Y-m-d');
-            $upTimes[$key] = ($periodInHours - $downTime["downTimeHours"]) / $periodInHours * 100.0;
-            $incidentsIds[$key] = $downTime["incidentsIds"];
-            $fromDate = clone $toDate;
-            $toDate->modify("-1 day");
-        }
-
-        return compact("upTimes","incidentsIds");
-    }
-
-
-    /**
-     * @param $component
-     * @param $hours
-     * @return mixed
-     * @internal param $componentId
-     */
-    public function ComponentUpTimesForLastHours($component, $hours){
-
-        $fromDate = new DateTime("now");
-        $toDate = new DateTime("now");
-        $fromDate->modify("+1 hour");
-        $fromDate->setTime($fromDate->format("H"),0,0);
-        $toDate->setTime($toDate->format("H"),0,0);
-
-        // 1st iteration : substract minutes ex: 14:37 -> compute uptime for 37 minutes
-        // 2nd iteration: uptime for 13:00 to 14:00, 3th 12:00 to 13:00 etc...
-
-        $upTimes = [];
-        $incidentsIds = [];
-
-        for($i = 1; $i <= $hours; $i ++){
-
-            $downTime = $this
-                ->repository
-                ->getComponentUpTimeSinceHours(
-                    $component,
-                    $toDate->getTimestamp(),
-                    $fromDate->getTimestamp()
-                );
-
-            if($downTime["downTimeHours"] > 1.0 ){
-                $downTime["downTimeHours"] = 1.0;
-            }
-
-            $key = $this->getDateLabel($toDate, 'Y-m-d H:i:s');
-            $upTimes[$key] = (1.0 - $downTime["downTimeHours"]) * 100.0;
-            $incidentsIds[$key] = $downTime["incidentsIds"];
-            $fromDate = clone $toDate;
-            $toDate->modify("-1 hour");
-        }
-
-        return compact("upTimes","incidentsIds");
-    }
-
     /**
      * @param $date
      * @param $format
