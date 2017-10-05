@@ -1,8 +1,8 @@
 {
+    "/dist/js/vendor.js": "/dist/js/vendor.js",
     "/dist/js/app.js": "/dist/js/app.js",
     "/dist/css/dashboard/dashboard.css": "/dist/css/dashboard/dashboard.css",
     "/dist/css/app.css": "/dist/css/app.css",
-    "/dist/js/vendor.js": "/dist/js/vendor.js",
     "/dist/js/manifest.js": "/dist/js/manifest.js",
     "/resources/assets/sass/plugins/_jquery.minicolors.scss": "/resources/assets/sass/plugins/_jquery.minicolors.scss",
     "/resources/assets/sass/plugins/_github-markdown.scss": "/resources/assets/sass/plugins/_github-markdown.scss",

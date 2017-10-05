@@ -42,10 +42,11 @@ window.axios.defaults.headers.common = {
             }
         },
         components: {
-            'setup': require('./components/Setup.js'),
-            'dashboard': require('./components/dashboard/Dashboard.js'),
-            'report-incident': require('./components/dashboard/ReportIncident.js'),
-            'invite-team': require('./components/dashboard/InviteTeam.js'),
+            'setup': require('./components/Setup'),
+            'dashboard': require('./components/dashboard/Dashboard'),
+            'report-incident': require('./components/dashboard/ReportIncident'),
+            'invite-team': require('./components/dashboard/InviteTeam'),
+            'metric-chart': require('./components/status-page/Metric'),
         }
     })
 })()
