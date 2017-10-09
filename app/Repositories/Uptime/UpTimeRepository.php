@@ -56,6 +56,8 @@ class UpTimeRepository
 
         $toDate = $fromDateTmp;
 
+        $avaibility = 0;
+
         foreach(range(0,$iterations-1) as $_){
             $downTime = $this
                 ->repository
@@ -72,6 +74,8 @@ class UpTimeRepository
                 $downTime["downTimeHours"] = $tickInHours;
             }
 
+            $avaibility += $downTime["downTimeHours"];
+
             $key = $toDate->format('Y-m-d H:i:s');
             $upTimes[$key] = ($tickInHours - $downTime["downTimeHours"]) / $tickInHours * 100.0;
             $incidentsIds[$key] = $downTime["incidentsIds"];
@@ -79,7 +83,11 @@ class UpTimeRepository
             $toDate->subHours($tickInHours);
         }
 
-        return compact("upTimes","incidentsIds");
+        //dd($incidentsIds);
+
+        $avaibility = (($tickInHours * $iterations)- $avaibility) / ($tickInHours * $iterations);
+
+        return compact("upTimes","incidentsIds","avaibility");
 
     }
     /**

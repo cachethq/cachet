@@ -42,12 +42,6 @@ use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
  */
 class StatusPageController extends AbstractApiController
 {
-
-
-
-    const LAST_DAYS = 30;
-    const LAST_HOURS = 48;
-
     /**
      * Displays the status page.
      *
@@ -156,125 +150,6 @@ class StatusPageController extends AbstractApiController
             'metric' => $metric->toArray(),
             'items'  => $metricData,
         ]);
-    }
-
-
-    private function fetchUpTime($type, $components, $range){
-        $upTimes = app(UpTimeRepository::class);
-        $fromDate = Carbon::createFromFormat("Y-m-d H:i", $range["fromDate"]);
-        $toDate = Carbon::createFromFormat("Y-m-d H:i", $range["toDate"]);
-        $hours = 0;
-
-        switch ($type){
-            case 'last_hours':
-                $fromDate->setTime($fromDate->hour,0,0);
-                $toDate->setTime($toDate->hour,0,0);
-                $hours = 1.0;
-                break;
-            case 'last_days':
-                $fromDate->setTime(0,0,0);
-                $toDate->setTime(0,0,0);
-                $hours = 24.0;
-                break;
-        }
-
-        $data = $upTimes->ComponentsUpTimeFor(
-            $components,
-            $fromDate,
-            $toDate,
-            $hours
-        );
-
-        return [
-            "items" => $data["upTimes"],
-            "labels" => array_keys($data["upTimes"]),
-            "incidentsIds" => $data["incidentsIds"]
-        ];
-    }
-
-
-    private function createDates($range, $type){
-        $today = Carbon::now();
-        $range = [];
-        $range["fromDate"] = $today->format("Y-m-d H:00");
-
-        switch ($type){
-            case 'last_days':
-                $range["toDate"] = $today
-                    ->subDays(self::LAST_DAYS)
-                    ->format("Y-m-d H:00");
-                break;
-            case 'last_hours':
-                $range["toDate"] = $today
-                    ->subHours(self::LAST_HOURS)
-                    ->format("Y-m-d H:00");
-                break;
-        }
-        return $range;
-    }
-
-    private function getDateRange($type){
-      $range = Binput::get('range', NULL);
-
-      if($range !== NULL && $range !== "" ){
-          $rangeValidation = Validator::make($range, $rules = [
-              'fromDate'      => 'date|date_format:Y-m-d H:00|after:toDate',
-              'toDate'        => 'date|date_format:Y-m-d H:00|before:fromDate',
-          ])->validate();
-          return $range;
-      }else {
-          return $this->createDates($range, $type);
-      }
-    }
-
-    /**
-     * @param Component $component
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function getUpTime(Component $component){
-        $type = Binput::get('filter', 'last_hours');
-        $range = $this->getDateRange($type);
-        return $this->item($this->fetchUpTime($type,collect([$component]),$range));
-    }
-
-
-    /**
-     * @param ComponentGroup $group
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function getUpTimeByGroup(ComponentGroup $group){
-        $type = Binput::get('filter', 'last_hours');
-        $range = $this->getDateRange($type);
-        return $this->item($this->fetchUpTime($type,$group->components()->get(),$range));
-    }
-
-
-    public function exportToFile(){
-        $format = Binput::get('format', 'xlsx');
-        $range = $this->getDateRange("last_hours");
-        //Prepare data for export ...
-        $data = [
-            "groups" => ComponentGroup::get()->map(function($g) use ($range) {
-                return [
-                    "name" => $g->name,
-                    "id" => $g->id,
-                    "data" => $this->fetchUpTime("last_hours",$g->components()->get(), $range),
-                    "components" => $g->components()->get()->map(function ($c) use ($range){
-                        return [
-                            "name" => $c->name,
-                            "id" => $c->id,
-                            "data" => $this->fetchUpTime("last_hours",collect([$c]), $range)
-                        ];
-                    })
-                ];
-            })
-        ];
-        UpTimesExporter::createFile(
-          $data,
-          $range,
-          $format
-        );
-        return back();
     }
 
     /**

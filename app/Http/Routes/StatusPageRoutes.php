@@ -62,17 +62,17 @@ class StatusPageRoutes
 
             $router->get('uptimes_component/{component}', [
                 'as'   => 'get:upTime',
-                'uses' => 'StatusPageController@getUpTime',
+                'uses' => 'UpTimesController@getUpTime',
             ]);
 
             $router->get('uptimes_group/{component_group}', [
                 'as'   => 'get:upTime',
-                'uses' => 'StatusPageController@getUptimeByGroup',
+                'uses' => 'UpTimesController@getUptimeByGroup',
             ]);
 
             $router->get('export', [
                 'as'   => 'get:fileExport',
-                'uses' => 'StatusPageController@exportToFile',
+                'uses' => 'UpTimesController@exportToFile',
             ]);
 
             $router->get('component/{component}/shield', [

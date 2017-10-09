@@ -61,7 +61,7 @@ class AbstractUpTimeRepository
             return $this->getHoursOverlapping($e,$toDateEpoch,$fromDateEpoch) > 0;
         })->map(function($e) use ($toDateEpoch,$fromDateEpoch){
             $incidentUpdates = IncidentUpdate::where("incident_id",$e->id);
-            $fixedUpdate = $incidentUpdates->where("incident_updates.status",4);
+            $fixedUpdate = $incidentUpdates->where("incident_updates.status", 4);
             $fixedUpdateExists = $fixedUpdate->exists();
             return [
                 "id" => $e->id,
@@ -73,7 +73,9 @@ class AbstractUpTimeRepository
                 "min_date" => $e->min_time,
                 "max_date" => $e->max_time,
             ];
-        });
+        })->values();
+
+        //dd($incidentsIds);
         return compact("downTimeHours","incidentsIds");
     }
 

@@ -31,7 +31,7 @@ class UpTimeComposer
     protected $guard;
 
     /**
-     * Create a new metrics composer instance.
+     * Create a new uptimes composer instance.
      *
      * @param \Illuminate\Contracts\Config\Repository $config
      * @param \Illuminate\Contracts\Auth\Guard        $guard
@@ -54,7 +54,10 @@ class UpTimeComposer
     public function compose(View $view)
     {
         $componentGroups = $this->getVisibleGroupedComponents();
-        $view->withComponentGroups($componentGroups);
+        $displayUpTimes = $this->config->get('setting.display_uptimes');
+
+        $view->withComponentGroups($componentGroups)
+        ->with('display_uptimes',$displayUpTimes);
     }
 
     /**

@@ -1,3 +1,4 @@
+@if($display_uptimes)
 <h1>Uptimes</h1>
 <div class="section-uptime">
     <div>
@@ -15,7 +16,7 @@
                         <div class="row">
                             <div class="col-xs-10">
                                 <strong>
-                                    {{ $group->name }}
+                                    {{ $group->name }} <span id="avaibility-group-{{ $group->id }}"></span>
                                 </strong>
                             </div>
                             <div class="col-xs-2">
@@ -51,7 +52,7 @@
                                 <div class="row">
                                     <div class="col-xs-10">
                                         <strong>
-                                            {{ $component->name }}
+                                            {{ $component->name }} <span id="avaibility-component-{{ $component->id }}"></span>
                                         </strong>
                                     </div>
                                     <div class="col-xs-2">
@@ -126,6 +127,7 @@
 
                     $("#from-date").on("dp.change", function (e) {
                        $('#to-date').data("DateTimePicker").maxDate(e.date);
+                       $(this).data("DateTimePicker").maxDate(new Date()); // Can go in the future
                     });
 
                 });
@@ -172,8 +174,56 @@
                 Chart.defaults.global.responsiveAnimationDuration = 0;
                 Chart.defaults.global.legend.display = false;
 
+                //Bar from today have a different colors, as the day isn't finished
+                Chart.pluginService.register({
+                  beforeUpdate: function(chartInstance) {
+                    var labels = chartInstance.data.labels;
+                    chartInstance.data.datasets.filter(function(dataset){
+                      return dataset.id === "up_time";
+                    })
+                    .forEach(function(dataset) {
+                      dataset.backgroundColor = dataset.data.map(function(data, index) {
+                        var currentLabel = labels[index];
+                        return moment(
+                          currentLabel,
+                          "dd, Do MMM"
+                        ).isSame(
+                          new Date(),
+                          "day"
+                        ) ? colors.today.background : colors.uptime.background;
+                      });
+                      dataset.borderColor = dataset.data.map(function(data, index) {
+                        var currentLabel = labels[index];
+                        return moment(
+                          currentLabel,
+                          "dd, Do MMM"
+                        ).isSame(
+                          new Date(),
+                          "day"
+                        ) ? colors.today.border : colors.uptime.border;
+                      });
+                    });
+                  }
+                });
+
 
                 var charts = {};
+
+                // TODO be able to config this from dashboard
+                var colors = {
+                  uptime:{
+                    background:"rgba(46, 204, 113,.7)",
+                    border:"rgba(46, 204, 113,1.0)",
+                  },
+                  downtime:{
+                    background:"rgba(231, 76, 60, .7)",
+                    border:"rgba(231, 76, 60, 1.0)",
+                  },
+                  today:{
+                    background:"rgba(200, 200, 200, .7)",
+                    border:"rgba(200,200,200,1.0)"
+                  }
+                };
 
                 $('a[data-filter-type]').on('click', function(e) {
                     e.preventDefault();
@@ -223,9 +273,15 @@
                         var data = result.data.items;
                         var labels = result.data.labels;
                         var incidents = result.data.incidentsIds;
+                        var avaibility = result.data.avaibility;
+
+                        $("#avaibility-" + (isGroupComponent ? "group-" : "component-") + upTimeId).html((avaibility*100).toFixed(2) + " %");
+
+
                         if (chart.chart !== null) {
                             chart.chart.destroy();
                         }
+
                         chart.chart = new Chart(chart.context, {
                             type: 'bar',
                             data: {
@@ -233,20 +289,22 @@
                                     return upTimeGroup === "last_hours" ? moment(d).format("dd, Do MMM HH:ss") : moment(d).format("dd, Do MMM");
                                 }),
                                 datasets:[{
+                                    id: "up_time",
                                     data: Object.values(data).map(function (e) {
                                         return e.toFixed(1);
                                     }),
                                     label: name + " Up Time",
-                                    backgroundColor:"rgba(46, 204, 113,.7)",
-                                    borderColor:"rgba(46, 204, 113,1.0)",
+                                    backgroundColor:colors.uptime.background,
+                                    borderColor:colors.uptime.border,
                                     borderWidth:1
                                 },{
+                                    id: "down_time",
                                     data: Object.values(data).map(function (e) {
                                         return (100-e).toFixed(1);
                                     }),
                                     label: name +" Down Time",
-                                    backgroundColor:"rgba(231, 76, 60,.7)",
-                                    borderColor:"rgba(231, 76, 60,1.0)",
+                                    backgroundColor:colors.downtime.background,
+                                    borderColor:colors.downtime.border,
                                     borderWidth:1,
                                 }]
                             },
@@ -257,7 +315,11 @@
                                       return e._datasetIndex === 1
                                   })
                                   .map(function(e){
-                                      var incidentsIds = Object.values(incidents)[e._index];
+                                      console.log(e);
+                                      var incidentsIds = Object.values(
+                                        incidents
+                                      )[e._index];
+                                      
                                       if(incidentsIds && incidentsIds.length > 0){
                                           var modal = $('#incidentsModal');
                                           modal.modal('toggle');
@@ -376,20 +438,20 @@
                         <div class="row">
 
                             <div class="col-md-6">
-                                Start from
-                            </div>
-
-                            <div class="col-md-6">
-                                <input id="from-date" required type="text" rel="datepicker-onlydate">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                Go back to
+                                min date
                             </div>
 
                             <div class="col-md-6">
                                 <input id="to-date" required type="text" rel="datepicker-onlydate">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                max date
+                            </div>
+
+                            <div class="col-md-6">
+                                <input id="from-date" required type="text" rel="datepicker-onlydate">
                             </div>
                         </div>
                     </div>
@@ -400,5 +462,5 @@
             </div>
         </div>
     </div>
-
 </div>
+@endif

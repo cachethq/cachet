@@ -11,6 +11,11 @@ use PHPExcel_Chart_PlotArea;
 use PHPExcel_Chart_Title;
 use Carbon\Carbon;
 
+/**
+ * Class to exports uptime date to csv, execl...
+ *
+ * @author Diogo Ferreira Venancio <diogo.ferreiravenancio@swisscom.com>
+ */
 class UpTimesExporter {
 
     private static $fields = [
@@ -204,9 +209,6 @@ class UpTimesExporter {
                             "currentIndex" => $currentIndex,
                             "currentIndexEnd" => $currentIndexEnd
                         ];
-
-
-                        //dd($c);
 
                         return collect($c["data"]["items"])->map(function($data,$key) use ($c) {
                             return collect([
