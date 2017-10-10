@@ -47,6 +47,7 @@
         "guzzlehttp/guzzle": "^6.2.1",
         "jenssegers/date": "^3.2",
         "laravel/framework": "^5.4",
+        "laravel/tinker": "^1.0",
         "maatwebsite/excel": "^2.1",
         "mccool/laravel-auto-presenter": "^5.0",
         "mpdf/mpdf": "6.1.0",

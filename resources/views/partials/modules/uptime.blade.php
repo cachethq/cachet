@@ -235,7 +235,6 @@
                     drawChart($canvas);
                 });
 
-
                 drawVisibleCharts();
 
                 function drawVisibleCharts(){
@@ -272,11 +271,10 @@
                     $.getJSON('/uptimes_' + ( isGroupComponent ? "group/" : "component/") + upTimeId, { filter: upTimeGroup, range:dateRange }).done(function (result) {
                         var data = result.data.items;
                         var labels = result.data.labels;
-                        var incidents = result.data.incidentsIds;
+                        var incidents = result.data.incidents;
                         var avaibility = result.data.avaibility;
 
                         $("#avaibility-" + (isGroupComponent ? "group-" : "component-") + upTimeId).html((avaibility*100).toFixed(2) + " %");
-
 
                         if (chart.chart !== null) {
                             chart.chart.destroy();
@@ -315,11 +313,10 @@
                                       return e._datasetIndex === 1
                                   })
                                   .map(function(e){
-                                      console.log(e);
                                       var incidentsIds = Object.values(
                                         incidents
                                       )[e._index];
-                                      
+
                                       if(incidentsIds && incidentsIds.length > 0){
                                           var modal = $('#incidentsModal');
                                           modal.modal('toggle');

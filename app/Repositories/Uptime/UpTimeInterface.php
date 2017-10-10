@@ -3,9 +3,8 @@
 
 namespace CachetHQ\Cachet\Repositories\Uptime;
 
-
 use CachetHQ\Cachet\Models\Component;
-
+use Illuminate\Support\Collection;
 
 /**
  * Created by PhpStorm.
@@ -23,5 +22,5 @@ interface UpTimeInterface
      * @param null $fromDate
      * @return mixed
      */
-    public function getComponentUpTimeSinceHours($components, $toDate, $fromDate = null);
+    public function getComponentsIncidentsAndUpdates(Collection $components);
 }

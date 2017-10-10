@@ -70,6 +70,11 @@ class StatusPageRoutes
                 'uses' => 'UpTimesController@getUptimeByGroup',
             ]);
 
+            $router->get('test_builder',[
+                'as'   => 'get:test_builder',
+                'uses' => 'UpTimesController@testQueryBuilder'
+            ]);
+
             $router->get('export', [
                 'as'   => 'get:fileExport',
                 'uses' => 'UpTimesController@exportToFile',

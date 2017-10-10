@@ -30,9 +30,10 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\DB;
 use Jenssegers\Date\Date;
 use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
-
+use CachetHQ\Cachet\Models\IncidentUpdate;
 /**
  * This is the uptimes controller endpoint.
  *
@@ -40,9 +41,13 @@ use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
  */
 class UpTimesController extends AbstractApiController {
 
+  //TODO: this should be in config
   const LAST_DAYS = 30;
   const LAST_HOURS = 48;
 
+  /**
+   * Fetches uptime for the given components and the date range
+   */
   private function fetchUpTime($type, $components, $range){
       $upTimes = app(UpTimeRepository::class);
       $fromDate = Carbon::createFromFormat("Y-m-d H:i", $range["fromDate"]);
@@ -73,12 +78,14 @@ class UpTimesController extends AbstractApiController {
       return [
           "items" => array_reverse($data["upTimes"]),
           "labels" => array_reverse(array_keys($data["upTimes"])),
-          "incidentsIds" => array_reverse($data["incidentsIds"]),
+          "incidents" => array_reverse($data["incidents"]),
           "avaibility" => $data["avaibility"]
       ];
   }
 
-
+  /**
+  * Create a date range from the current time
+  */
   private function createDates($range, $type){
       $today = Carbon::now();
       $range = [];
@@ -98,6 +105,9 @@ class UpTimesController extends AbstractApiController {
       return $range;
   }
 
+  /**
+  * Checks if the given date range is valid, if not creates a new one
+  */
   private function getDateRange($type){
     $range = Binput::get('range', NULL);
     if($range !== NULL && $range !== "" ){
@@ -133,6 +143,9 @@ class UpTimesController extends AbstractApiController {
   }
 
 
+  /*
+  * Exports data to CSV or XLSX
+  */
   public function exportToFile(){
       $format = Binput::get('format', 'xlsx');
       $range = $this->getDateRange("last_hours");
