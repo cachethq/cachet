@@ -1,11 +1,11 @@
 @if($display_uptimes)
-<h1>Uptimes</h1>
+<h1>{{trans('uptimes.uptimes')}}</h1>
 <div class="section-uptime">
     <div>
-        <strong>See data for</strong>
-        <button id="btn-current-time-range" class="btn btn-primary">Current time</button>
+        <strong>{{trans('uptimes.see_data_for_range')}}</strong>
+        <button id="btn-current-time-range" class="btn btn-primary">{{trans('uptimes.current_time')}}</button>
 
-        <button id="btn-specify-date-range" class="btn btn-default">Specify a date range</button>
+        <button id="btn-specify-date-range" class="btn btn-default">{{trans('uptimes.date_range')}}</button>
     </div>
     <br>
     @if($component_groups->count() > 0)
@@ -23,8 +23,8 @@
                                 <div class="dropdown pull-right">
                                     <a href="javascript: void(0);" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class='filter'>Scope</span> <span class="caret"></span></a>
                                     <ul class="dropdown-menu dropdown-menu-right">
-                                        <li><a href="#" data-filter-type="last_hours">last hours</a></li>
-                                        <li><a href="#" data-filter-type="last_days">last days</a></li>
+                                        <li><a href="#" data-filter-type="last_hours">{{trans('uptimes.scope_hourly')}}</a></li>
+                                        <li><a href="#" data-filter-type="last_days">{{trans('uptimes.scope_daily')}}</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -59,8 +59,8 @@
                                         <div class="dropdown pull-right">
                                             <a href="javascript: void(0);" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class='filter'>Scope</span> <span class="caret"></span></a>
                                             <ul class="dropdown-menu dropdown-menu-right">
-                                                <li><a href="#" data-filter-type="last_hours">last hours</a></li>
-                                                <li><a href="#" data-filter-type="last_days">last days</a></li>
+                                                <li><a href="#" data-filter-type="last_hours">{{trans('uptimes.scope_hourly')}}</a></li>
+                                                <li><a href="#" data-filter-type="last_days">{{trans('uptimes.scope_daily')}}</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -385,7 +385,7 @@
         </script>
     @endif
     <div>
-        <strong>Export Data in </strong>
+        <strong>{{trans('uptimes.export_data')}}</strong>
         <button role="button" data-format="csv" class="btn btn-default export-btn">CSV</button>
 
         <button role="button" data-format="xlsx" class="btn btn-default export-btn">Excel</button>
@@ -396,7 +396,7 @@
         <div class="modal-dialog" role="document" style="width: 1200px">
             <div class="modal-content">
                 <div class="modal-header">
-                    <strong class="modal-title">Incidents list</strong>
+                    <strong class="modal-title">{{trans('uptimes.incident_list')}}</strong>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -405,12 +405,12 @@
                     <table class="table">
                         <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Updates</th>
-                            <th>DownTime</th>
-                            <th>Occurred</th>
-                            <th>Last update</th>
-                            <th>Fixed</th>
+                            <th>{{trans('uptimes.incident_list_name')}}</th>
+                            <th>{{trans('uptimes.incident_list_updates')}}</th>
+                            <th>{{trans('uptimes.incident_list_downtime')}}</th>
+                            <th>{{trans('uptimes.incident_list_occured')}}</th>
+                            <th>{{trans('uptimes.incident_list_last_update')}}</th>
+                            <th>{{trans('uptimes.incident_list_fixed')}}</th>
                         </tr>
                         </thead>
                         <tbody class="table-body">
@@ -425,7 +425,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <strong class="modal-title">Date range</strong>
+                    <strong class="modal-title">{{trans('uptimes.date_range_modal')}}</strong>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -435,7 +435,7 @@
                         <div class="row">
 
                             <div class="col-md-6">
-                                min date
+                                {{trans('uptimes.date_range_modal_min_date')}}
                             </div>
 
                             <div class="col-md-6">
@@ -444,7 +444,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-6">
-                                max date
+                                {{trans('uptimes.date_range_modal_max_date')}}
                             </div>
 
                             <div class="col-md-6">
