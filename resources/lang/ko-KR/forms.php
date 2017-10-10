@@ -198,6 +198,7 @@ return [
             'yellows'                 => '노랑 (알림에 사용됨)',
             'oranges'                 => '주황 (공지에 사용됨)',
             'metrics'                 => 'Metrics fill',
+            'metrics-opacity'         => 'Metrics fill opacity',
             'links'                   => '링크',
         ],
     ],

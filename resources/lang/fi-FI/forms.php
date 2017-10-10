@@ -198,6 +198,7 @@ return [
             'yellows'                 => 'Keltainen (käytetään varoituksissa)',
             'oranges'                 => 'Oranssi (käytetään huomautuksissa)',
             'metrics'                 => 'Metrics fill',
+            'metrics-opacity'         => 'Metrics fill opacity',
             'links'                   => 'Linkit',
         ],
     ],

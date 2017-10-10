@@ -130,6 +130,17 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <div class="form-group">
+                                    <label>{{ trans('forms.settings.theme.metrics-opacity') }}</label>
+                                    <div class="input-group mb-2 mb-sm-0">
+                                        <input type="text" class="form-control" name="style.metrics_opacity" value="{{ $theme_metrics_opacity }}">
+                                        <span class="input-group-addon">%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <hr>
                         <div class="row">
                             <div class="col-sm-12">

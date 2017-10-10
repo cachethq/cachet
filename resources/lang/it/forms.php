@@ -144,6 +144,7 @@ return [
             'yellows'                 => 'Giallo (utilizzato per gli avvisi)',
             'oranges'                 => 'Orange (usato per notifiche)',
             'metrics'                 => 'Metrics fill',
+            'metrics-opacity'         => 'Metrics fill opacity',
             'links'                   => 'Collegamenti',
         ],
     ],

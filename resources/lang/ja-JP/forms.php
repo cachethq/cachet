@@ -200,6 +200,7 @@ return [
             'yellows'                 => 'イエロー（アラート表示に使用されます）',
             'oranges'                 => 'オレンジ（通知表示に使用されます）',
             'metrics'                 => 'Metrics fill',
+            'metrics-opacity'         => 'Metrics fill opacity',
             'links'                   => 'リンク',
         ],
     ],

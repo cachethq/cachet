@@ -198,6 +198,7 @@ return [
             'yellows'                 => 'Yellow (used for alerts)',
             'oranges'                 => 'Orange (used for notices)',
             'metrics'                 => 'Metrics fill',
+            'metrics-opacity'         => 'Metrics fill opacity',
             'links'                   => 'Links',
         ],
     ],

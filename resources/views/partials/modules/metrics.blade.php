@@ -88,7 +88,7 @@
                         labels: _.keys(data),
                         datasets: [{
                             data: _.values(data),
-                            backgroundColor: "{{ $theme_metrics }}",
+                            backgroundColor: "{{ color_opacity($theme_metrics, $theme_metrics_opacity / 100) }}",
                             borderColor: "{{ color_darken($theme_metrics, -0.1) }}",
                             pointBackgroundColor: "{{ color_darken($theme_metrics, -0.1) }}",
                             pointBorderColor: "{{ color_darken($theme_metrics, -0.1) }}",

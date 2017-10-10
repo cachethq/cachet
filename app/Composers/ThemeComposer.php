@@ -62,6 +62,7 @@ class ThemeComposer
         $view->withThemeOranges($this->config->get('setting.style_oranges', '#FF8800'));
         $view->withThemeGreys($this->config->get('setting.style_greys', '#888888'));
         $view->withThemeMetrics($this->config->get('setting.style_metrics', '#0DCCC0'));
+        $view->withThemeMetricsOpacity($this->config->get('setting.style_metrics_opacity', '100'));
         $view->withThemeLinks($this->config->get('setting.style_links', '#7ED321'));
     }
 }

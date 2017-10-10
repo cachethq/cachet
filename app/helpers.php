@@ -116,6 +116,33 @@ if (!function_exists('color_contrast')) {
     }
 }
 
+if (!function_exists('color_opacity')) {
+    /**
+     * Change colour opacity.
+     *
+     * @param string $hexcolor
+     *
+     * @return string
+     */
+    function color_opacity($hexcolor, $opacity = false)
+    {
+        $r = hexdec(substr($hexcolor, 0, 2));
+        $g = hexdec(substr($hexcolor, 2, 2));
+        $b = hexdec(substr($hexcolor, 4, 2));
+
+        if ($opacity) {
+        	if (abs($opacity) > 1) {
+        		$opacity = 1.0;
+        	}
+        	$rgb = 'rgba('.$r.','.$g.','.$b.','.$opacity.')';
+        } else {
+        	$rgb = 'rgb('.$r.','.$g.','.$b.')';
+        }
+
+        return $rgb;
+    }
+}
+
 if (!function_exists('array_numeric_sort')) {
     /**
      * Numerically sort an array based on a specific key.
