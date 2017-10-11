@@ -63,7 +63,7 @@ class DashboardController extends Controller
      * Creates a new dashboard controller instance.
      *
      * @param \CachetHQ\Cachet\Integrations\Contracts\Feed $feed
-     * @param \Illuminate\Contracts\Auth\Guard   $guard
+     * @param \Illuminate\Contracts\Auth\Guard             $guard
      *
      * @return void
      */
