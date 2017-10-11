@@ -9,3 +9,6 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 .env
+.env.prod
+.env.dev
+/.bp-config

@@ -65,7 +65,7 @@ class ComponentStatusChangedNotification extends Notification
      */
     public function via($notifiable)
     {
-        return ['mail', 'slack'];
+        return ['mail','nexmo', 'slack'];
     }
 
     /**
