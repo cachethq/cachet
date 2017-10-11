@@ -135,7 +135,7 @@
                                 <div class="form-group">
                                     <label>{{ trans('forms.settings.theme.metrics-opacity') }}</label>
                                     <div class="input-group mb-2 mb-sm-0">
-                                        <input type="text" class="form-control" name="style.metrics_opacity" value="{{ $theme_metrics_opacity }}">
+                                        <input type="number" min="1" max="100" class="form-control" name="style.metrics_opacity" value="{{ $theme_metrics_opacity }}">
                                         <span class="input-group-addon">%</span>
                                     </div>
                                 </div>
