@@ -89,7 +89,7 @@ class AbstractUpTimeRepository
      */
     protected function getHoursOverlapping($row, $toDateEpoch, $fromDateEpoch)
     {
-        $minDateEpoch = $row->min_time ;
+        $minDateEpoch = $row->min_time;
         $maxDateEpoch = $row->max_time !== null ? $row->max_time : Carbon::now()->getTimestamp();
 
         return max(

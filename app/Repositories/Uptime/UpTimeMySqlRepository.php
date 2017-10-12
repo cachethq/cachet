@@ -17,12 +17,12 @@ use Illuminate\Support\Facades\DB;
 class UpTimeMySqlRepository extends AbstractUpTimeRepository implements UpTimeInterface
 {
     /**
-    * @param Collection $component
-    * @param $toDateEpoch
-    * @param bool $fromDateEpoch
-    *
-    * @return mixed
-    */
+     * @param Collection $component
+     * @param $toDateEpoch
+     * @param bool $fromDateEpoch
+     *
+     * @return mixed
+     */
     public function getComponentsIncidentsAndUpdates(Collection $components)
     {
         return DB::select(

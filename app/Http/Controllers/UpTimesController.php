@@ -35,7 +35,7 @@ class UpTimesController extends AbstractApiController
     const LAST_HOURS = 48;
 
     /**
-     * Fetches uptime for the given components and the date range
+     * Fetches uptime for the given components and the date range.
      */
     private function fetchUpTime($type, $components, $range)
     {
@@ -69,12 +69,12 @@ class UpTimesController extends AbstractApiController
             'items'       => array_reverse($data['upTimes']),
             'labels'      => array_reverse(array_keys($data['upTimes'])),
             'incidents'   => array_reverse($data['incidents']),
-            'avaibility'  => $data['avaibility']
+            'avaibility'  => $data['avaibility'],
         ];
     }
 
     /**
-     * Create a date range from the current time
+     * Create a date range from the current time.
      */
     private function createDates($range, $type)
     {
@@ -98,12 +98,12 @@ class UpTimesController extends AbstractApiController
     }
 
     /**
-     * Checks if the given date range is valid, if not creates a new one
+     * Checks if the given date range is valid, if not creates a new one.
      */
     private function getDateRange($type)
     {
         $range = Binput::get('range', null);
-        if ($range !== null && $range !== '' ) {
+        if ($range !== null && $range !== '') {
             $rangeValidation = Validator::make($range, $rules = [
                 'fromDate'      => 'date|date_format:Y-m-d H:00|after:toDate',
                 'toDate'        => 'date|date_format:Y-m-d H:00|before:fromDate',
@@ -129,10 +129,10 @@ class UpTimesController extends AbstractApiController
     }
 
     /**
-    * @param ComponentGroup $group
-    *
-    * @return \Illuminate\Http\JsonResponse
-    */
+     * @param ComponentGroup $group
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function getUpTimeByGroup(ComponentGroup $group)
     {
         $type = Binput::get('filter', 'last_hours');
@@ -143,7 +143,7 @@ class UpTimesController extends AbstractApiController
 
 
     /**
-     * Exports data to CSV or XLSX
+     * Exports data to CSV or XLSX.
      */
     public function exportToFile()
     {
@@ -161,7 +161,7 @@ class UpTimesController extends AbstractApiController
                       return [
                           'name' => $c->name,
                           'id'   => $c->id,
-                          'data' => $this->fetchUpTime('last_hours', collect([$c]), $range)
+                          'data' => $this->fetchUpTime('last_hours', collect([$c]), $range),
                       ];
                   }),
               ];

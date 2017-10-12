@@ -243,7 +243,7 @@ class UpTimesExporter
                             $i['componentName'],
                             $i['currentIndex'],
                             $i['currentIndexEnd'],
-                            $length,
+                            $length
                         );
 
                         array_map(function ($c) use ($sheet) {
