@@ -30,14 +30,13 @@ use Jenssegers\Date\Date;
  */
 class UpTimesController extends AbstractApiController
 {
-
     // TODO: this should be in config
     const LAST_DAYS = 30;
     const LAST_HOURS = 48;
 
     /**
-    * Fetches uptime for the given components and the date range
-    */
+     * Fetches uptime for the given components and the date range
+     */
     private function fetchUpTime($type, $components, $range)
     {
         $upTimes = app(UpTimeRepository::class);
@@ -45,7 +44,7 @@ class UpTimesController extends AbstractApiController
         $toDate = Carbon::createFromFormat('Y-m-d H:i', $range['toDate']);
         $hours = 0;
 
-        switch ($type){
+        switch ($type) {
             case 'last_hours':
                 $fromDate->setTime($fromDate->hour, 0, 0);
                 $toDate->setTime($toDate->hour, 0, 0);
@@ -67,22 +66,22 @@ class UpTimesController extends AbstractApiController
 
         // Reverse the arrays to have it today right and last day left
         return [
-            "items"       => array_reverse($data["upTimes"]),
-            "labels"      => array_reverse(array_keys($data["upTimes"])),
-            "incidents"   => array_reverse($data["incidents"]),
-            "avaibility"  => $data["avaibility"]
+            'items'       => array_reverse($data['upTimes']),
+            'labels'      => array_reverse(array_keys($data['upTimes'])),
+            'incidents'   => array_reverse($data['incidents']),
+            'avaibility'  => $data['avaibility']
         ];
     }
 
     /**
-    * Create a date range from the current time
-    */
+     * Create a date range from the current time
+     */
     private function createDates($range, $type)
     {
         $today = Carbon::now();
         $range = [];
         $range['fromDate'] = $today->format('Y-m-d H:00');
-        switch ($type){
+        switch ($type) {
             case 'last_days':
               $range['toDate'] = $today
                 ->subDays(self::LAST_DAYS)
@@ -94,31 +93,33 @@ class UpTimesController extends AbstractApiController
                 ->format('Y-m-d H:00');
             break;
         }
+
         return $range;
     }
 
     /**
-    * Checks if the given date range is valid, if not creates a new one
-    */
+     * Checks if the given date range is valid, if not creates a new one
+     */
     private function getDateRange($type)
     {
         $range = Binput::get('range', null);
-        if($range !== null && $range !== '' ){
+        if ($range !== null && $range !== '' ) {
             $rangeValidation = Validator::make($range, $rules = [
                 'fromDate'      => 'date|date_format:Y-m-d H:00|after:toDate',
                 'toDate'        => 'date|date_format:Y-m-d H:00|before:fromDate',
             ])->validate();
 
             return $range;
-        }else {
+        } else {
             return $this->createDates($range, $type);
         }
     }
 
     /**
-    * @param Component $component
-    * @return \Illuminate\Http\JsonResponse
-    */
+     * @param Component $component
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function getUpTime(Component $component)
     {
         $type = Binput::get('filter', 'last_hours');
@@ -127,9 +128,9 @@ class UpTimesController extends AbstractApiController
         return $this->item($this->fetchUpTime($type, collect([$component]), $range));
     }
 
-
     /**
     * @param ComponentGroup $group
+    *
     * @return \Illuminate\Http\JsonResponse
     */
     public function getUpTimeByGroup(ComponentGroup $group)
@@ -142,8 +143,8 @@ class UpTimesController extends AbstractApiController
 
 
     /**
-    * Exports data to CSV or XLSX
-    */
+     * Exports data to CSV or XLSX
+     */
     public function exportToFile()
     {
         $format = Binput::get('format', 'xlsx');
@@ -151,18 +152,18 @@ class UpTimesController extends AbstractApiController
 
         //Prepare data for export ...
         $data = [
-          "groups" => ComponentGroup::get()->map(function($g) use ($range) {
+          'groups' => ComponentGroup::get()->map(function($g) use ($range) {
               return [
-                  "name"       => $g->name,
-                  "id"         => $g->id,
-                  "data"       => $this->fetchUpTime('last_hours', $g->components()->get(), $range),
-                  "components" => $g->components()->get()->map(function ($c) use ($range){
+                  'name'       => $g->name,
+                  'id'         => $g->id,
+                  'data'       => $this->fetchUpTime('last_hours', $g->components()->get(), $range),
+                  'components' => $g->components()->get()->map(function ($c) use ($range){
                       return [
-                          "name" => $c->name,
-                          "id"   => $c->id,
-                          "data" => $this->fetchUpTime('last_hours', collect([$c]), $range)
+                          'name' => $c->name,
+                          'id'   => $c->id,
+                          'data' => $this->fetchUpTime('last_hours', collect([$c]), $range)
                       ];
-                  })
+                  }),
               ];
           })
         ];
@@ -175,5 +176,4 @@ class UpTimesController extends AbstractApiController
 
         return back();
     }
-
 }

@@ -24,7 +24,6 @@ use Jenssegers\Date\Date;
  */
 class UpTimeRepository
 {
-
     private $repository;
 
     private $userTimeZone = 'Europe/Berlin'; // TODO: adapt this automatically
@@ -38,7 +37,6 @@ class UpTimeRepository
     {
         $this->repository = $repository;
     }
-
 
     /**
      * @param $component
@@ -72,7 +70,7 @@ class UpTimeRepository
         $incidentsAndUpdates = $this->repository->getComponentsIncidentsAndUpdates($components);
 
         //For each time chunk, we compute the downtime and the avaibility
-        foreach(range(0,$iterations - 1) as $_){
+        foreach (range(0,$iterations - 1) as $_){
             $downTime = $this
                 ->repository
                 ->getDownTimesHoursAndIncidents(
@@ -84,7 +82,7 @@ class UpTimeRepository
             //If there's many components (ex group) we take an avg
             $downTime['downTimeHours'] = $downTime['downTimeHours'] / $components->count();
 
-            if($downTime['downTimeHours'] > $tickInHours ) {
+            if ($downTime['downTimeHours'] > $tickInHours ) {
                 $downTime['downTimeHours'] = $tickInHours;
             }
 

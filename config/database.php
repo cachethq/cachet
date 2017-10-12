@@ -9,8 +9,8 @@
  * file that was distributed with this source code.
  */
 
- $cfEnv = @$_ENV['VCAP_SERVICES'];
- if (isset($cfEnv)) {
+$cfEnv = @$_ENV['VCAP_SERVICES'];
+if (isset($cfEnv)) {
     try {
         $vcapServices = json_decode($_ENV['VCAP_SERVICES']);
         $mariaDbConnection = head($vcapServices->mariadb)->credentials;
@@ -28,7 +28,7 @@
     catch (Exception $e) {
         dd($e->getMessage());
     }
- }
+}
 
 return [
 

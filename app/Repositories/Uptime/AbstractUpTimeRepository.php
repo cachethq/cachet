@@ -1,4 +1,5 @@
 <?php
+
 /*
  * This file is part of Cachet.
  *
@@ -57,9 +58,9 @@ class AbstractUpTimeRepository
     public function getDownTimesHoursAndIncidents($result, $toDateEpoch, $fromDateEpoch)
     {
         $downTimeHours = $this->getHours($result, $toDateEpoch, $fromDateEpoch);
-        $incidents = collect($result)->filter(function ($e) use ($toDateEpoch, $fromDateEpoch){
+        $incidents = collect($result)->filter(function ($e) use ($toDateEpoch, $fromDateEpoch) {
             return $this->getHoursOverlapping($e, $toDateEpoch, $fromDateEpoch) > 0;
-        })->map(function($e) use ($toDateEpoch, $fromDateEpoch){
+        })->map(function ($e) use ($toDateEpoch, $fromDateEpoch){
             $incidentUpdates = IncidentUpdate::where('incident_id', $e->id);
             $fixedUpdate = $incidentUpdates->where('incident_updates.status', self::FIXED_UPDATE_STATUS_ID);
             $fixedUpdateExists = $fixedUpdate->exists();
@@ -88,7 +89,6 @@ class AbstractUpTimeRepository
      */
     protected function getHoursOverlapping($row, $toDateEpoch, $fromDateEpoch)
     {
-
         $minDateEpoch = $row->min_time ;
         $maxDateEpoch = $row->max_time !== null ? $row->max_time : Carbon::now()->getTimestamp();
 
@@ -104,14 +104,14 @@ class AbstractUpTimeRepository
      *
      * @return int|mixed
      */
-    protected function getHours($result, $toDateEpoch, $fromDateEpoch){
+    protected function getHours($result, $toDateEpoch, $fromDateEpoch)
+    {
 
         //We return the sum instead of the avg here, because we need to take the up hours in count
-        return collect($result)->groupBy('component_id')->map(function($r) use ($toDateEpoch, $fromDateEpoch){
+        return collect($result)->groupBy('component_id')->map(function ($r) use ($toDateEpoch, $fromDateEpoch) {
             return $r->reduce(function ($i, $obj) use ($toDateEpoch, $fromDateEpoch) {
                 return $i + $this->getHoursOverlapping($obj, $toDateEpoch, $fromDateEpoch);
             }, 0);
         })->sum();
     }
-
 }

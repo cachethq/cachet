@@ -260,7 +260,7 @@ return [
         'View'         => Illuminate\Support\Facades\View::class,
         'Binput'       => GrahamCampbell\Binput\Facades\Binput::class,
         'Str'          => Illuminate\Support\Str::class,
-        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+        'Excel'        => Maatwebsite\Excel\Facades\Excel::class,
 
     ],
 

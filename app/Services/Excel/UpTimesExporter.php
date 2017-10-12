@@ -114,8 +114,8 @@ class UpTimesExporter
             $dataSeriesValueIncidents
         );
 
-        $plotAreaUpTimes = new PHPExcel_Chart_PlotArea(null, [$seriesUpTimes));
-        $plotAreaIncidents = new PHPExcel_Chart_PlotArea(null, [$seriesIncidents));
+        $plotAreaUpTimes = new PHPExcel_Chart_PlotArea(null, [$seriesUpTimes]);
+        $plotAreaIncidents = new PHPExcel_Chart_PlotArea(null, [$seriesIncidents]);
 
         $legendUpTimes = new PHPExcel_Chart_Legend(
             PHPExcel_Chart_Legend::POSITION_RIGHT,
