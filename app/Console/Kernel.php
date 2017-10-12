@@ -39,7 +39,7 @@ class Kernel extends ConsoleKernel
         DemoSeederCommand::class,
         InstallCommand::class,
         VersionCommand::class,
-        \Laravel\Tinker\Console\TinkerCommand::class
+        \Laravel\Tinker\Console\TinkerCommand::class,
     ];
 
     /**

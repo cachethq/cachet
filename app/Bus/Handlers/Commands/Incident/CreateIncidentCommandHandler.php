@@ -98,8 +98,8 @@ class CreateIncidentCommandHandler
             $data['occurred_at'] = Carbon::now();
         }
 
-        // For uptimes
-        $data["component_status"] = $command->component_status;
+        // For uptimes, what was the state of the component when the incident was created ?
+        $data['component_status'] = $command->component_status;
 
         // Create the incident
         $incident = Incident::create($data);

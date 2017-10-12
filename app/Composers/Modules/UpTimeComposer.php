@@ -1,18 +1,20 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: taafedi5
- * Date: 13.09.17
- * Time: 13:54
+/*
+ * This file is part of Cachet.
+ *
+ * (c) Alt Three Services Limited
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace CachetHQ\Cachet\Composers\Modules;
 
+use CachetHQ\Cachet\Models\Component;
+use CachetHQ\Cachet\Models\ComponentGroup;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\View\View;
-use CachetHQ\Cachet\Models\Component;
-use CachetHQ\Cachet\Models\ComponentGroup;
 
 class UpTimeComposer
 {
@@ -57,7 +59,7 @@ class UpTimeComposer
         $displayUpTimes = $this->config->get('setting.display_uptimes');
 
         $view->withComponentGroups($componentGroups)
-        ->with('display_uptimes',$displayUpTimes);
+             ->with('display_uptimes', $displayUpTimes);
     }
 
     /**

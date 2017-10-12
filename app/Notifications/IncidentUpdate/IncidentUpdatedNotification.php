@@ -57,7 +57,7 @@ class IncidentUpdatedNotification extends Notification
      */
     public function via($notifiable)
     {
-        return ['mail','nexmo', 'slack'];
+        return ['mail', 'nexmo', 'slack'];
     }
 
     /**
