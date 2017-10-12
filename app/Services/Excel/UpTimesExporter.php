@@ -124,7 +124,6 @@ class UpTimesExporter
             false
         );
 
-
         $legendIncidents = new PHPExcel_Chart_Legend(
             PHPExcel_Chart_Legend::POSITION_RIGHT,
             null,
@@ -166,7 +165,6 @@ class UpTimesExporter
         $chartIncidents->setBottomRightPosition('V'.($currentIndex + 41));
 
         return [$chartUpTimes, $chartIncidents];
-
     }
 
     /**
@@ -247,7 +245,6 @@ class UpTimesExporter
                             $sheet->addChart($c);
                         }, $charts);
 
-
                         $sheet->row($i['currentIndex'] - 1, function ($row) {
                             $row->setBackground('#3498db');
                             $row->setFontColor('#FFFFFF');
@@ -263,7 +260,6 @@ class UpTimesExporter
                             $cell->setFontSize(24);
                             $cell->setBackground('#2980b9');
                         });
-
                     });
                 });
             });
