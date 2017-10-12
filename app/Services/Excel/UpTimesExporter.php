@@ -228,7 +228,6 @@ class UpTimesExporter
                     );
 
                     collect(self::$indexes)->map(function ($i) use ($length, $sheet) {
-
                         $sheet->setColumnFormat([
                             'C'.($i['currentIndex']).':D'.$i['currentIndexEnd'] => '0.0%',
                         ]);
