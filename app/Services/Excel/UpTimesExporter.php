@@ -174,7 +174,7 @@ class UpTimesExporter
      * @param $range
      * @param string $format
      */
-    public static function createFile($data, $range, $format='xlsx')
+    public static function createFile($data, $range, $format = 'xlsx')
     {
         $length = (
           Carbon::createFromFormat('Y-m-d H:i', $range['fromDate'])->getTimeStamp()
