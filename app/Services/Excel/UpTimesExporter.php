@@ -44,6 +44,7 @@ class UpTimesExporter
      * @param $length
      *
      * @return array
+     *
      * @internal param $componentData
      */
     private static function createChartsForComponent($sheetName, $componentName, $currentIndex, $currentIndexEnd, $length)
@@ -134,7 +135,7 @@ class UpTimesExporter
         $titleIncidents = new PHPExcel_Chart_Title("$componentName Incidents");
 
         $yAxisLabelUpTimes = new PHPExcel_Chart_Title('%');
-        $yAxisLabelIncidents= new PHPExcel_Chart_Title('Incidents');
+        $yAxisLabelIncidents = new PHPExcel_Chart_Title('Incidents');
 
         $chartUpTimes = new PHPExcel_Chart(
             "chart_$sheetName\_$componentName\_uptimes",
@@ -173,19 +174,16 @@ class UpTimesExporter
      * @param $range
      * @param string $format
      */
-    public static function createFile($data, $range, $format='xlsx'){
-
+    public static function createFile($data, $range, $format='xlsx')
+    {
         $length = (
           Carbon::createFromFormat('Y-m-d H:i', $range['fromDate'])->getTimeStamp()
           -
           Carbon::createFromFormat('Y-m-d H:i', $range['toDate'])->getTimeStamp()
         ) / 3600.0 + 1;
 
-
         Excel::create('Filename', function ($excel) use ($format, $length, $data) {
-
             $data['groups']->each(function ($g) use ($format, $length, $data, $excel) {
-
                 self::$indexes = [];
 
                 $excel->sheet($g['name'], function ($sheet) use ($format, $length, $g, $data) {
@@ -200,7 +198,6 @@ class UpTimesExporter
                     ]);
 
                     $rows = $g['components']->map(function ($c, $componentIndex) use ($length, $sheet, $g) {
-
                         $currentIndex = ($componentIndex * ($length + 1) + 2);
                         $currentIndexEnd = ($currentIndex + $length - 1);
 
@@ -217,7 +214,7 @@ class UpTimesExporter
                                 $key,
                                 round($data / 100.0, 2),
                                 round(1.0 - $data / 100.0, 2),
-                                count($c['data']['incidents'][$key])
+                                count($c['data']['incidents'][$key]),
                             ]);
                         })
                         ->prepend(array_prepend(self::$fields, $c['name']))
@@ -253,13 +250,13 @@ class UpTimesExporter
 
                         $sheet->row($i['currentIndex'] - 1, function ($row) {
                             $row->setBackground('#3498db');
-                            $row->setFontColor("#FFFFFF");
+                            $row->setFontColor('#FFFFFF');
                             $row->setFontWeight('bold');
                         });
 
                         $sheet->mergeCells('A'.($i['currentIndex'] - 1).':A'.$i['currentIndexEnd']);
 
-                        $sheet->cell('A'.($i['currentIndex'] - 1), function ($cell){
+                        $sheet->cell('A'.($i['currentIndex'] - 1), function ($cell) {
                             $cell->setAlignment('center');
                             $cell->setValignment('center');
                             $cell->setTextRotation(90);

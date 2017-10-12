@@ -39,14 +39,12 @@ class AbstractUpTimeRepository
         return $prefix.'incidents';
     }
 
-
     protected function getIncidentsUpdatesTable()
     {
         $prefix = app(System::class)->getTablePrefix();
 
         return $prefix.'incident_update';
     }
-
 
     /**
      * @param $result
@@ -60,7 +58,7 @@ class AbstractUpTimeRepository
         $downTimeHours = $this->getHours($result, $toDateEpoch, $fromDateEpoch);
         $incidents = collect($result)->filter(function ($e) use ($toDateEpoch, $fromDateEpoch) {
             return $this->getHoursOverlapping($e, $toDateEpoch, $fromDateEpoch) > 0;
-        })->map(function ($e) use ($toDateEpoch, $fromDateEpoch){
+        })->map(function ($e) use ($toDateEpoch, $fromDateEpoch) {
             $incidentUpdates = IncidentUpdate::where('incident_id', $e->id);
             $fixedUpdate = $incidentUpdates->where('incident_updates.status', self::FIXED_UPDATE_STATUS_ID);
             $fixedUpdateExists = $fixedUpdate->exists();

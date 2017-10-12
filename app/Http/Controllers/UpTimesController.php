@@ -141,7 +141,6 @@ class UpTimesController extends AbstractApiController
         return $this->item($this->fetchUpTime($type, $group->components()->get(), $range));
     }
 
-
     /**
      * Exports data to CSV or XLSX.
      */
@@ -152,12 +151,12 @@ class UpTimesController extends AbstractApiController
 
         //Prepare data for export ...
         $data = [
-          'groups' => ComponentGroup::get()->map(function($g) use ($range) {
+          'groups' => ComponentGroup::get()->map(function ($g) use ($range) {
               return [
                   'name'       => $g->name,
                   'id'         => $g->id,
                   'data'       => $this->fetchUpTime('last_hours', $g->components()->get(), $range),
-                  'components' => $g->components()->get()->map(function ($c) use ($range){
+                  'components' => $g->components()->get()->map(function ($c) use ($range) {
                       return [
                           'name' => $c->name,
                           'id'   => $c->id,
@@ -165,7 +164,7 @@ class UpTimesController extends AbstractApiController
                       ];
                   }),
               ];
-          })
+          }),
         ];
 
         UpTimesExporter::createFile(

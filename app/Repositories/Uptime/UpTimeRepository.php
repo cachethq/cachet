@@ -70,7 +70,7 @@ class UpTimeRepository
         $incidentsAndUpdates = $this->repository->getComponentsIncidentsAndUpdates($components);
 
         //For each time chunk, we compute the downtime and the avaibility
-        foreach (range(0, $iterations - 1) as $_){
+        foreach (range(0, $iterations - 1) as $_) {
             $downTime = $this
                 ->repository
                 ->getDownTimesHoursAndIncidents(
