@@ -26,5 +26,5 @@ return [
   'date_range_modal'            => 'Custom date range',
   'date_range_modal_min_date'   => 'min date',
   'date_range_modal_max_date'   => 'max date',
-  'export_data'                 => 'Export data in'
+  'export_data'                 => 'Export data in',
 ];

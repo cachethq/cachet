@@ -17,11 +17,11 @@
 
         putenv('DB_CONNECTION=mysql');
         putenv('DB_DRIVER=mysql');
-        putenv('DB_HOST=' . $mariaDbConnection->host);
-        putenv('DB_PORT=' . $mariaDbConnection->port);
-        putenv('DB_DATABASE=' . $mariaDbConnection->database);
-        putenv('DB_USERNAME=' . $mariaDbConnection->username);
-        putenv('DB_PASSWORD=' . $mariaDbConnection->password);
+        putenv('DB_HOST='.$mariaDbConnection->host);
+        putenv('DB_PORT='.$mariaDbConnection->port);
+        putenv('DB_DATABASE='.$mariaDbConnection->database);
+        putenv('DB_USERNAME='.$mariaDbConnection->username);
+        putenv('DB_PASSWORD='.$mariaDbConnection->password);
         putenv('APP_ENV=production');
         putenv('APP_DEBUG=false');
     }

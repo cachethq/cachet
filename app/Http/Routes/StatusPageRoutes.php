@@ -59,7 +59,6 @@ class StatusPageRoutes
                 'uses' => 'StatusPageController@getMetrics',
             ]);
 
-
             $router->get('uptimes_component/{component}', [
                 'as'   => 'get:upTime',
                 'uses' => 'UpTimesController@getUpTime',

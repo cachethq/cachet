@@ -1,4 +1,5 @@
 <?php
+
 /*
  * This file is part of Cachet.
  *
@@ -15,7 +16,6 @@ use Illuminate\Support\Facades\DB;
 
 class UpTimeMySqlRepository extends AbstractUpTimeRepository implements UpTimeInterface
 {
-
   /**
    * @param Collection $component
    * @param $toDateEpoch

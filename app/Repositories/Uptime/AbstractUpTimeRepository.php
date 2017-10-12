@@ -34,6 +34,7 @@ class AbstractUpTimeRepository
     protected function getIncidentsTable()
     {
         $prefix = app(System::class)->getTablePrefix();
+
         return $prefix.'incidents';
     }
 
@@ -41,6 +42,7 @@ class AbstractUpTimeRepository
     protected function getIncidentsUpdatesTable()
     {
         $prefix = app(System::class)->getTablePrefix();
+
         return $prefix.'incident_update';
     }
 
@@ -56,11 +58,12 @@ class AbstractUpTimeRepository
     {
         $downTimeHours = $this->getHours($result, $toDateEpoch, $fromDateEpoch);
         $incidents = collect($result)->filter(function ($e) use ($toDateEpoch, $fromDateEpoch){
-            return $this->getHoursOverlapping($e,$toDateEpoch, $fromDateEpoch) > 0;
+            return $this->getHoursOverlapping($e, $toDateEpoch, $fromDateEpoch) > 0;
         })->map(function($e) use ($toDateEpoch, $fromDateEpoch){
             $incidentUpdates = IncidentUpdate::where('incident_id', $e->id);
             $fixedUpdate = $incidentUpdates->where('incident_updates.status', self::FIXED_UPDATE_STATUS_ID);
             $fixedUpdateExists = $fixedUpdate->exists();
+
             return [
                 'id'                => $e->id,
                 'name'              => $e->name,
@@ -85,8 +88,10 @@ class AbstractUpTimeRepository
      */
     protected function getHoursOverlapping($row, $toDateEpoch, $fromDateEpoch)
     {
+
         $minDateEpoch = $row->min_time ;
         $maxDateEpoch = $row->max_time !== null ? $row->max_time : Carbon::now()->getTimestamp();
+
         return max(
             min($maxDateEpoch, $fromDateEpoch) - max($toDateEpoch, $minDateEpoch) + 1, 0
         ) / 3600.0;
@@ -101,12 +106,12 @@ class AbstractUpTimeRepository
      */
     protected function getHours($result, $toDateEpoch, $fromDateEpoch){
 
-      //We return the sum instead of the avg here, because we need to take the up hours in count
-      return collect($result)->groupBy('component_id')->map(function($r) use ($toDateEpoch, $fromDateEpoch){
-          return $r->reduce(function ($i, $obj) use ($toDateEpoch, $fromDateEpoch) {
-              return $i + $this->getHoursOverlapping($obj, $toDateEpoch, $fromDateEpoch);
-          }, 0);
-      })->sum();
+        //We return the sum instead of the avg here, because we need to take the up hours in count
+        return collect($result)->groupBy('component_id')->map(function($r) use ($toDateEpoch, $fromDateEpoch){
+            return $r->reduce(function ($i, $obj) use ($toDateEpoch, $fromDateEpoch) {
+                return $i + $this->getHoursOverlapping($obj, $toDateEpoch, $fromDateEpoch);
+            }, 0);
+        })->sum();
     }
 
 }

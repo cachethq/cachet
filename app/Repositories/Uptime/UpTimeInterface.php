@@ -1,4 +1,5 @@
 <?php
+
 /*
  * This file is part of Cachet.
  *
@@ -14,7 +15,6 @@ use Illuminate\Support\Collection;
 
 interface UpTimeInterface
 {
-
     /**
      * @param $component
      * @param $toDate

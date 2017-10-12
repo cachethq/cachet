@@ -27,14 +27,12 @@ use PHPExcel_Chart_Title;
  */
 class UpTimesExporter
 {
-
     private static $fields = [
         'Date Time',
         'UpTime',
         'DownTime',
-        'Incidents'
+        'Incidents',
     ];
-
 
     private static $indexes = [];
 
@@ -48,33 +46,33 @@ class UpTimesExporter
      * @return array
      * @internal param $componentData
      */
-    private static function createChartsForComponent($sheetName, $componentName, $currentIndex, $currentIndexEnd, $length){
-
+    private static function createChartsForComponent($sheetName, $componentName, $currentIndex, $currentIndexEnd, $length)
+    {
         $dataSeriesLabels = [
-	        new PHPExcel_Chart_DataSeriesValues(
-	            'String',
+            new PHPExcel_Chart_DataSeriesValues(
+                'String',
                 "'$sheetName'".'!$C$'.($currentIndex - 1),
                 null,
                 1
             ),
-	        new PHPExcel_Chart_DataSeriesValues(
-	            'String',
+            new PHPExcel_Chart_DataSeriesValues(
+                'String',
                 "'$sheetName'".'!$D$'.($currentIndex - 1),
                 null,
                 1
             ),
         ];
 
-        $xAxisTickValues = array(
+        $xAxisTickValues = [
             new PHPExcel_Chart_DataSeriesValues(
                 'String',
                 "'$sheetName'".'!B'.$currentIndex.':B'.$currentIndexEnd,
                 null,
                 $length
             ),
-        );
+        ];
 
-        $dataSeriesValuesUpTimes = array(
+        $dataSeriesValuesUpTimes = [
             new PHPExcel_Chart_DataSeriesValues(
                 'Number',
                 "'$sheetName'".'!C'.$currentIndex.':C'.$currentIndexEnd,
@@ -87,16 +85,16 @@ class UpTimesExporter
                 null,
                 $length
             ),
-        );
+        ];
 
-        $dataSeriesValueIncidents = array(
+        $dataSeriesValueIncidents = [
             new PHPExcel_Chart_DataSeriesValues(
                 'Number',
                 "'$sheetName'".'!E'.$currentIndex.':E'.$currentIndexEnd,
                 null,
                 $length
             ),
-        );
+        ];
 
         $seriesUpTimes = new PHPExcel_Chart_DataSeries(
             PHPExcel_Chart_DataSeries::TYPE_BARCHART,
@@ -116,8 +114,8 @@ class UpTimesExporter
             $dataSeriesValueIncidents
         );
 
-        $plotAreaUpTimes = new PHPExcel_Chart_PlotArea(null, array($seriesUpTimes));
-        $plotAreaIncidents = new PHPExcel_Chart_PlotArea(null, array($seriesIncidents));
+        $plotAreaUpTimes = new PHPExcel_Chart_PlotArea(null, [$seriesUpTimes));
+        $plotAreaIncidents = new PHPExcel_Chart_PlotArea(null, [$seriesIncidents));
 
         $legendUpTimes = new PHPExcel_Chart_Legend(
             PHPExcel_Chart_Legend::POSITION_RIGHT,
@@ -184,13 +182,13 @@ class UpTimesExporter
         ) / 3600.0 + 1;
 
 
-        Excel::create('Filename', function($excel) use ($format, $length, $data) {
+        Excel::create('Filename', function ($excel) use ($format, $length, $data) {
 
             $data['groups']->each(function ($g) use ($format, $length, $data, $excel) {
 
                 self::$indexes = [];
 
-                $excel->sheet($g['name'], function($sheet) use ($format, $length, $g, $data) {
+                $excel->sheet($g['name'], function ($sheet) use ($format, $length, $g, $data) {
 
                     // Won't auto generate heading columns
                     $sheet->fromArray(null, null, 'A1', false, false);
@@ -198,7 +196,7 @@ class UpTimesExporter
                     // We had the group header to get an avg of all components
                     $g['components']->prepend([
                         'name' => $g['name'],
-                        'data' => $g['data']
+                        'data' => $g['data'],
                     ]);
 
                     $rows = $g['components']->map(function ($c, $componentIndex) use ($length, $sheet, $g) {
@@ -210,10 +208,10 @@ class UpTimesExporter
                             'sheetName'       => $g['name'],
                             'componentName'   => $c['name'],
                             'currentIndex'    => $currentIndex,
-                            'currentIndexEnd' => $currentIndexEnd
+                            'currentIndexEnd' => $currentIndexEnd,
                         ];
 
-                        return collect($c['data']['items'])->map(function($data, $key) use ($c) {
+                        return collect($c['data']['items'])->map(function ($data, $key) use ($c) {
                             return collect([
                                 '',
                                 $key,
@@ -222,7 +220,7 @@ class UpTimesExporter
                                 count($c['data']['incidents'][$key])
                             ]);
                         })
-                        ->prepend(array_prepend(self::$fields,$c["name"]))
+                        ->prepend(array_prepend(self::$fields, $c['name']))
                         ->values();
                     })->flatten(1)->toArray();
 
@@ -234,26 +232,26 @@ class UpTimesExporter
                         true
                     );
 
-                    collect(self::$indexes)->map(function($i) use ($length, $sheet) {
+                    collect(self::$indexes)->map(function ($i) use ($length, $sheet) {
 
-                        $sheet->setColumnFormat(array(
+                        $sheet->setColumnFormat([
                             'C'.($i['currentIndex']).':D'.$i['currentIndexEnd'] => '0.0%',
-                        ));
+                        ]);
 
                         $charts = self::createChartsForComponent(
                             $i['sheetName'],
                             $i['componentName'],
                             $i['currentIndex'],
                             $i['currentIndexEnd'],
-                            $length
+                            $length,
                         );
 
-                        array_map(function($c) use ($sheet) {
+                        array_map(function ($c) use ($sheet) {
                             $sheet->addChart($c);
                         }, $charts);
 
 
-                        $sheet->row($i['currentIndex'] - 1, function($row) {
+                        $sheet->row($i['currentIndex'] - 1, function ($row) {
                             $row->setBackground('#3498db');
                             $row->setFontColor("#FFFFFF");
                             $row->setFontWeight('bold');
@@ -261,7 +259,7 @@ class UpTimesExporter
 
                         $sheet->mergeCells('A'.($i['currentIndex'] - 1).':A'.$i['currentIndexEnd']);
 
-                        $sheet->cell('A'.($i['currentIndex'] - 1), function($cell){
+                        $sheet->cell('A'.($i['currentIndex'] - 1), function ($cell){
                             $cell->setAlignment('center');
                             $cell->setValignment('center');
                             $cell->setTextRotation(90);
