@@ -46,6 +46,7 @@ mix
         'node_modules/jquery-serializeobject/jquery.serializeObject.js',
         'resources/assets/js/password-strength.js',
         'resources/assets/js/cachet.js',
+        'resources/assets/js/uptimes.js'
     ], 'public/dist/js/all.js');
 
 

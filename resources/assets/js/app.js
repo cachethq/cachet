@@ -28,7 +28,6 @@ window.axios.defaults.headers.common = {
      * or customize the JavaScript scaffolding to fit your unique needs.
      */
 
-<<<<<<< HEAD
     new Vue({
         el: '#app',
         data () {
@@ -52,10 +51,3 @@ window.axios.defaults.headers.common = {
         }
     })
 })()
-=======
-const app = new Vue({
-    el: '#app'
-});
-
-
->>>>>>> 923c237a... date range integration, some code refactoring

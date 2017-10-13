@@ -58,7 +58,7 @@ class UpTimeComposer
     {
         $componentGroups = $this->getVisibleGroupedComponents();
         $displayUpTimes = $this->config->get('setting.display_uptimes');
-
+        
         $view->withComponentGroups($componentGroups)
              ->with('display_uptimes', $displayUpTimes);
     }
