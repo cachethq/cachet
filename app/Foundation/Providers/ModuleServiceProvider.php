@@ -48,7 +48,7 @@ class ModuleServiceProvider extends ServiceProvider
             'uptime'     => 35000,
             'metrics'    => 40000,
             'scheduled'  => 50000,
-            'stickied'   => 31000,
+            'stickied'   => 60000,
             'timeline'   => 70000,
         ],
     ];

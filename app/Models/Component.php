@@ -21,7 +21,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use McCool\LaravelAutoPresenter\HasPresenter;
 
 /**
- * @property mixed id
+ * This is the component model class.
+ * 
  */
 class Component extends Model implements HasPresenter
 {

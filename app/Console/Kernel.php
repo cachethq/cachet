@@ -18,6 +18,7 @@ use CachetHQ\Cachet\Console\Commands\InstallCommand;
 use CachetHQ\Cachet\Console\Commands\VersionCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Laravel\Tinker\Console\TinkerCommand;
 
 /**
  * This is the console kernel class.
@@ -39,7 +40,7 @@ class Kernel extends ConsoleKernel
         DemoSeederCommand::class,
         InstallCommand::class,
         VersionCommand::class,
-        \Laravel\Tinker\Console\TinkerCommand::class,
+        TinkerCommand::class,
     ];
 
     /**
