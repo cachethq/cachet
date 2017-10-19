@@ -23,7 +23,7 @@ class AddComponentStatusToIncidents extends Migration
     public function up()
     {
         Schema::table('incidents', function (Blueprint $table) {
-            $table->integer('component_status')->default(1);
+            $table->integer('component_status')->unsigned()->default(1);
         });
     }
 
