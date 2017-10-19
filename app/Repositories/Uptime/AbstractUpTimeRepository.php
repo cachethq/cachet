@@ -39,10 +39,12 @@ class AbstractUpTimeRepository
      */
     const FIXED_UPDATE_STATUS_ID = 4;
 
-    /**
-     * AbstractUpTimeRepository constructor.
+     /**
+     * Create a new abstract uptime repository instance.
      *
-     * @param Repository $config
+     * @param \Illuminate\Contracts\Config\Repository $config
+     *
+     * @return void
      */
     public function __construct(Repository $config)
     {
