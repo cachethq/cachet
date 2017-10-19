@@ -63,8 +63,8 @@ class StatusPageController extends AbstractApiController
             }
         }
 
-        $daysToShow = max(0, (int) Config::get('setting.app_incident_days', 0) - 1);
-        $incidentDays = range(0, $daysToShow);
+        $appIncidentDays = (int) Config::get('setting.app_incident_days', 1);
+        $incidentDays = array_pad([], $daysToShow, null);
 
         $allIncidents = Incident::where('visible', '>=', (int) !Auth::check())->whereBetween('occurred_at', [
             $startDate->copy()->subDays($daysToShow)->format('Y-m-d').' 00:00:00',
@@ -75,7 +75,7 @@ class StatusPageController extends AbstractApiController
 
         // Add in days that have no incidents
         if (Config::get('setting.only_disrupted_days') === false) {
-            foreach ($incidentDays as $i) {
+            foreach ($incidentDays as $i => $day) {
                 $date = app(DateFactory::class)->make($startDate)->subDays($i);
 
                 if (!isset($allIncidents[$date->toDateString()])) {
