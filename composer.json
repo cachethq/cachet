@@ -38,7 +38,6 @@
         "backup-manager/laravel": "dev-master#df53f9c9d8c6be5d7a2638f45d54b8fb7bc51e2b",
         "barryvdh/laravel-cors": "^0.8",
         "doctrine/dbal": "2.5.13",
-        "dompdf/dompdf": "0.6.1",
         "fideloper/proxy": "^3.1",
         "graham-campbell/binput": "^3.5",
         "graham-campbell/core": "^5.1",
@@ -48,15 +47,12 @@
         "jenssegers/date": "^3.2",
         "laravel/framework": "^5.4",
         "laravel/tinker": "^1.0",
-        "maatwebsite/excel": "^2.1",
+        "maatwebsite/excel": "~2.1.0",
         "mccool/laravel-auto-presenter": "^5.0",
-        "mpdf/mpdf": "6.1.0",
         "nexmo/client": "@beta",
-        "phpoffice/phpexcel": "^1.8",
         "pragmarx/google2fa": "^0.7.1",
         "predis/predis": "^1.1",
         "roumen/feed": "^2.10",
-        "tecnick.com/tcpdf": "~6.0",
         "twig/twig": "^1.26.1"
     },
     "require-dev": {
@@ -95,23 +91,18 @@
     },
     "scripts": {
         "post-root-package-install": [
-            "php -r \"copy('.env.example', '.env');\"",
-            "php artisan key:generate"
+            "php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],
         "post-create-project-cmd": [
             "php artisan key:generate"
         ],
         "post-install-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postInstall",
-            "php artisan optimize --force",
-            "php artisan config:cache",
-            "php artisan route:cache"
+            "php artisan optimize"
         ],
         "post-update-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postUpdate",
-            "php artisan optimize --force",
-            "php artisan config:cache",
-            "php artisan route:cache"
+            "php artisan optimize"
         ]
     },
     "config": {
@@ -121,7 +112,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "2.5-dev"
+            "dev-master": "2.4-dev"
         }
     },
     "minimum-stability": "dev",
