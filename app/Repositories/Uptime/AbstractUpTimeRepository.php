@@ -39,7 +39,7 @@ class AbstractUpTimeRepository
      */
     const FIXED_UPDATE_STATUS_ID = 4;
 
-     /**
+    /**
      * Create a new abstract uptime repository instance.
      *
      * @param \Illuminate\Contracts\Config\Repository $config
@@ -108,8 +108,7 @@ class AbstractUpTimeRepository
     }
 
     /**
-     * Returns the overlapping time between an incident (Start till Fixed update or till now)
-     * and the current time chunck (For instance 8pm to 9pm).
+     * Returns the overlapping time between an incident (Start till Fixed update or till now) and the current time chunck (For instance 8pm to 9pm).
      * 
      * @param $row
      * @param $toDateEpoch
