@@ -109,7 +109,7 @@ class AbstractUpTimeRepository
 
     /**
      * Returns the overlapping time between an incident (Start till Fixed update or till now) and the current time chunck (For instance 8pm to 9pm).
-     * 
+     *
      * @param $row
      * @param $toDateEpoch
      * @param $fromDateEpoch
