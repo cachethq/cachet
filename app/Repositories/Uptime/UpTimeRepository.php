@@ -25,15 +25,14 @@ use Jenssegers\Date\Date;
 class UpTimeRepository
 {
     /**
-     * The UpTime repository
+     * The UpTime repository.
      *
      * @var UpTimeInterface
      */
     private $repository;
 
     /**
-     * User time zone
-     * 
+     * User time zone.
      */
     private $userTimeZone;
 

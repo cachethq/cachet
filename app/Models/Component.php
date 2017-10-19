@@ -22,7 +22,6 @@ use McCool\LaravelAutoPresenter\HasPresenter;
 
 /**
  * This is the component model class.
- * 
  */
 class Component extends Model implements HasPresenter
 {

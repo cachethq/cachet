@@ -30,12 +30,12 @@ class AbstractUpTimeRepository
     protected $config;
 
     /**
-     * Component's statuses that count as down time
+     * Component's statuses that count as down time.
      */
     const DOWN_TIME_STATUSES = [4];
 
     /**
-     * ID of the Incident update's status "FIXED"
+     * ID of the Incident update's status "FIXED".
      */
     const FIXED_UPDATE_STATUS_ID = 4;
 
@@ -108,7 +108,7 @@ class AbstractUpTimeRepository
     /**
      * 
      * Returns the overlapping time between an incident (Start till Fixed update or till now)
-     *  and the current time chunck (For instance 8pm to 9pm)
+     *  and the current time chunck (For instance 8pm to 9pm).
      * 
      * @param $row
      * @param $toDateEpoch
