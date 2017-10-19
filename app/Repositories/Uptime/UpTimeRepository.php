@@ -24,18 +24,28 @@ use Jenssegers\Date\Date;
  */
 class UpTimeRepository
 {
+    /**
+     * The UpTime repository
+     *
+     * @var UpTimeInterface
+     */
     private $repository;
 
-    private $userTimeZone = 'Europe/Berlin'; // TODO: adapt this automatically
+    /**
+     * User time zone
+     * 
+     */
+    private $userTimeZone;
 
     /**
      * UpTimeRepository constructor.
      *
-     * @param $repository
+     * @param CachetHQ\Cachet\Repositories\Uptime\repository
      */
     public function __construct(UpTimeInterface $repository)
     {
         $this->repository = $repository;
+        $this->userTimeZone = config('app.timezone');
     }
 
     /**
