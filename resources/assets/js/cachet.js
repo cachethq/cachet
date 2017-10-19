@@ -120,18 +120,6 @@ $(function () {
         $(this).parents('div.alert').addClass('hide');
     });
 
-    $('form[name=IncidentForm] select[name=component_id]').on('change', function () {
-        var $option = $(this).find('option:selected');
-        var $componentStatus = $('#component-status');
-
-        if (parseInt($option.val(), 10) !== 0) {
-            if ($componentStatus.hasClass('hidden')) {
-                $componentStatus.removeClass('hidden');
-            }
-        } else {
-            $componentStatus.addClass('hidden');
-        }
-    });
 
     // Date picker.
     $('input[rel=datepicker]').datetimepicker({

@@ -89,7 +89,7 @@
                             <span class='help-block'>{{ trans('forms.optional') }}</span>
                         </div>
                         @endif
-                        <div class="form-group hidden" id="component-status" v-if="component.id">
+                        <div class="form-group" id="component-status" v-if="component.id">
                             <div class="panel panel-default">
                                 <div class="panel-body">
                                     <div class="radio-items">
