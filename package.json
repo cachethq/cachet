@@ -35,8 +35,5 @@
     "sweetalert2": "^6.8.0",
     "vue": "^2.4.4"
   },
-  "private": true,
-  "dependencies": {
-    "vue-loader": "^13.3.0"
-  }
+  "private": true
 }
