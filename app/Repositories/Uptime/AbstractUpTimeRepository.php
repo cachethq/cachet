@@ -13,13 +13,30 @@ namespace CachetHQ\Cachet\Repositories\Uptime;
 
 use CachetHQ\Cachet\Models\IncidentUpdate;
 use Carbon\Carbon;
-use Illuminate\Config\Repository;
+use Illuminate\Contracts\Config\Repository;
 
+/**
+ * This is the abstract UpTime repository class.
+ *
+ * @author Diogo Ferreira Venancio <Diogo.FerreiraVenancio@swisscom.com>
+ */
 class AbstractUpTimeRepository
 {
+    /**
+     * The illuminate config repository.
+     *
+     * @var \Illuminate\Contracts\Config\Repository
+     */
     protected $config;
 
+    /**
+     * Component's statuses that count as down time
+     */
     const DOWN_TIME_STATUSES = [4];
+
+    /**
+     * ID of the Incident update's status "FIXED"
+     */
     const FIXED_UPDATE_STATUS_ID = 4;
 
     /**
@@ -32,6 +49,11 @@ class AbstractUpTimeRepository
         $this->config = $config;
     }
 
+    /**
+     * Get the Incidents table name.
+     *
+     * @return string
+     */
     protected function getIncidentsTable()
     {
         $prefix = app(System::class)->getTablePrefix();
@@ -39,6 +61,11 @@ class AbstractUpTimeRepository
         return $prefix.'incidents';
     }
 
+    /**
+     * Get the IncidentsUpdates table name.
+     *
+     * @return string
+     */
     protected function getIncidentsUpdatesTable()
     {
         $prefix = app(System::class)->getTablePrefix();
@@ -79,6 +106,10 @@ class AbstractUpTimeRepository
     }
 
     /**
+     * 
+     * Returns the overlapping time between an incident (Start till Fixed update or till now)
+     *  and the current time chunck (For instance 8pm to 9pm)
+     * 
      * @param $row
      * @param $toDateEpoch
      * @param $fromDateEpoch
