@@ -1,7 +1,7 @@
 /**
  * Polyfill promises.
  */
-const Promise = require('promise');
+const Promise = require('promise')
 
 
 /**
