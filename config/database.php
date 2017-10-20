@@ -9,26 +9,6 @@
  * file that was distributed with this source code.
  */
 
-$cfEnv = @$_ENV['VCAP_SERVICES'];
-if (isset($cfEnv)) {
-    try {
-        $vcapServices = json_decode($_ENV['VCAP_SERVICES']);
-        $mariaDbConnection = head($vcapServices->mariadb)->credentials;
-
-        putenv('DB_CONNECTION=mysql');
-        putenv('DB_DRIVER=mysql');
-        putenv('DB_HOST='.$mariaDbConnection->host);
-        putenv('DB_PORT='.$mariaDbConnection->port);
-        putenv('DB_DATABASE='.$mariaDbConnection->database);
-        putenv('DB_USERNAME='.$mariaDbConnection->username);
-        putenv('DB_PASSWORD='.$mariaDbConnection->password);
-        putenv('APP_ENV=production');
-        putenv('APP_DEBUG=false');
-    } catch (Exception $e) {
-        dd($e->getMessage());
-    }
-}
-
 return [
 
     /*
