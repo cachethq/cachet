@@ -17,6 +17,7 @@ use CachetHQ\Cachet\Repositories\Metric\PgSqlRepository;
 use CachetHQ\Cachet\Repositories\Metric\SqliteRepository;
 use CachetHQ\Cachet\Repositories\Uptime\UpTimeMySqlRepository;
 use CachetHQ\Cachet\Repositories\Uptime\UpTimePgSqlRepository;
+use CachetHQ\Cachet\Repositories\Uptime\UpTimeSqliteRepository;
 use CachetHQ\Cachet\Repositories\Uptime\UpTimeRepository;
 use CachetHQ\Cachet\Services\Dates\DateFactory;
 use Illuminate\Contracts\Config\Repository as ConfigRepository;
@@ -76,6 +77,7 @@ class RepositoryServiceProvider extends ServiceProvider
             switch ($config->get('database.default')) {
                 case 'pgsql': $repository = new UpTimePgSqlRepository($config); break;
                 case 'mysql': $repository = new UpTimeMysqlRepository($config); break;
+                case 'sqlite': $repository = new UpTimeSqliteRepository($config); break;
             }
 
             return new UpTimeRepository($repository);
