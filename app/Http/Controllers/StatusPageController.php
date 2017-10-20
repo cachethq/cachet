@@ -64,10 +64,10 @@ class StatusPageController extends AbstractApiController
         }
 
         $appIncidentDays = (int) Config::get('setting.app_incident_days', 1);
-        $incidentDays = array_pad([], $daysToShow, null);
+        $incidentDays = array_pad([], $appIncidentDays, null);
 
         $allIncidents = Incident::where('visible', '>=', (int) !Auth::check())->whereBetween('occurred_at', [
-            $startDate->copy()->subDays($daysToShow)->format('Y-m-d').' 00:00:00',
+            $startDate->copy()->subDays($appIncidentDays)->format('Y-m-d').' 00:00:00',
             $startDate->format('Y-m-d').' 23:59:59',
         ])->orderBy('occurred_at', 'desc')->get()->groupBy(function (Incident $incident) {
             return app(DateFactory::class)->make($incident->occurred_at)->toDateString();
@@ -90,12 +90,12 @@ class StatusPageController extends AbstractApiController
         }, SORT_REGULAR, true);
 
         return View::make('index')
-            ->withDaysToShow($daysToShow)
+            ->withDaysToShow($appIncidentDays)
             ->withAllIncidents($allIncidents)
             ->withCanPageForward((bool) $today->gt($startDate))
             ->withCanPageBackward(Incident::where('occurred_at', '<', $startDate->format('Y-m-d'))->count() > 0)
-            ->withPreviousDate($startDate->copy()->subDays($daysToShow)->toDateString())
-            ->withNextDate($startDate->copy()->addDays($daysToShow)->toDateString());
+            ->withPreviousDate($startDate->copy()->subDays($appIncidentDays)->toDateString())
+            ->withNextDate($startDate->copy()->addDays($appIncidentDays)->toDateString());
     }
 
     /**
