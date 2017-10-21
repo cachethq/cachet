@@ -69,9 +69,6 @@ class EventServiceProvider extends ServiceProvider
         'CachetHQ\Cachet\Bus\Events\Incident\IncidentWasUpdatedEvent' => [
             //
         ],
-        'CachetHQ\Cachet\Bus\Events\Incident\IncidentWasRemovedEvent' => [
-            //
-        ],
         'CachetHQ\Cachet\Bus\Events\Invite\InviteWasClaimedEvent' => [
             //
         ],
