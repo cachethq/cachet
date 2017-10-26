@@ -67,12 +67,12 @@ final class CreateIncidentUpdateCommand
      * @var string[]
      */
     public $rules = [
-        'incident' => 'required',
-        'status'   => 'required|int|min:1|max:4',
-        'message'  => 'required|string',
+        'incident'         => 'required',
+        'status'           => 'required|int|min:1|max:4',
+        'message'          => 'required|string',
         'component_id'     => 'nullable|required_with:component_status|int',
         'component_status' => 'nullable|required_with:component_id|int|min:0|max:4',
-        'user'     => 'required',
+        'user'             => 'required',
     ];
 
     /**
