@@ -339,6 +339,8 @@ class IncidentController extends Controller
                 $incident,
                 Binput::get('status'),
                 Binput::get('message'),
+                Binput::get('component_id'),
+                Binput::get('component_status'),
                 $this->auth->user()
             ));
         } catch (ValidationException $e) {
