@@ -23,7 +23,7 @@ return [
     | within TrustedProxy to trust any proxy; a requirement when you cannot
     | know the address of your proxy (e.g. if using Rackspace balancers).
     |
-    | By default, we are trusting CloudFlare only.
+    | By default, we are trusting local IPs and CloudFlare only.
     |
     */
 
@@ -50,6 +50,12 @@ return [
         '2803:f800::/32',
         '2c0f:f248::/32',
         '2a06:98c0::/29',
+
+        // Local IPs
+        '10.0.0.0/8',
+        '172.16.0.0/12',
+        '192.168.0.0/16',
+        'fc00::/7',
     ],
 
     /*
