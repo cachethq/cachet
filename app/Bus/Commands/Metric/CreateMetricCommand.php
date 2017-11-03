@@ -105,7 +105,6 @@ final class CreateMetricCommand
         'name'          => 'required|string',
         'suffix'        => 'required|string',
         'description'   => 'nullable|string',
-        'display_chart' => 'nullable|bool',
         'default_value' => 'required|int',
         'calc_type'     => 'required|int',
         'display_chart' => 'nullable|int',

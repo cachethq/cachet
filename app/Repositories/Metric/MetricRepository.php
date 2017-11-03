@@ -71,7 +71,7 @@ class MetricRepository
             $pointKey = $dateTime->sub(new DateInterval('PT1M'))->format('H:i');
         }
 
-        return $points->sortBy(function ($point, $key) use ($points) {
+        return $points->sortBy(function ($point, $key) {
             return $key;
         });
     }
@@ -98,7 +98,7 @@ class MetricRepository
             $pointKey = $dateTime->sub(new DateInterval('PT1H'))->format('H:00');
         }
 
-        return $points->sortBy(function ($point, $key) use ($points) {
+        return $points->sortBy(function ($point, $key) {
             return $key;
         });
     }
@@ -124,7 +124,7 @@ class MetricRepository
             $pointKey = $dateTime->sub(new DateInterval('P1D'))->format('Y-m-d');
         }
 
-        return $points->sortBy(function ($point, $key) use ($points) {
+        return $points->sortBy(function ($point, $key) {
             return $key;
         });
     }
@@ -151,7 +151,7 @@ class MetricRepository
             $pointKey = $dateTime->sub(new DateInterval('P1D'))->format('Y-m-d');
         }
 
-        return $points->sortBy(function ($point, $key) use ($points) {
+        return $points->sortBy(function ($point, $key) {
             return $key;
         });
     }

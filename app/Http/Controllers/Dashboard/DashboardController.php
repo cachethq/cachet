@@ -48,7 +48,7 @@ class DashboardController extends Controller
     /**
      * The feed integration.
      *
-     * @var \CachetHQ\Cachet\Integrations\Feed
+     * @var \CachetHQ\Cachet\Integrations\Contracts\Feed
      */
     protected $feed;
 
@@ -62,8 +62,8 @@ class DashboardController extends Controller
     /**
      * Creates a new dashboard controller instance.
      *
-     * @param \CachetHQ\Cachet\Integrations\Feed $feed
-     * @param \Illuminate\Contracts\Auth\Guard   $guard
+     * @param \CachetHQ\Cachet\Integrations\Contracts\Feed $feed
+     * @param \Illuminate\Contracts\Auth\Guard             $guard
      *
      * @return void
      */
