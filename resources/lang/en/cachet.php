@@ -41,6 +41,13 @@ return [
         ],
     ],
 
+    // History
+    'history' => [
+        'title'         => 'Incident History',
+        'previous_page' => 'Previous Page',
+        'next_page'     => 'Next Page',
+    ],
+
     // Service Status
     'service' => [
         'good'  => '[0,1] System operational|[2,Inf] All systems are operational',

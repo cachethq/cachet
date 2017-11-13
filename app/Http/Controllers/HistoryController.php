@@ -45,11 +45,19 @@ class HistoryController extends Controller
      */
     public function showHistory()
     {
+        $page = 1;
+        $canPageBackward = true;
+        $monthsToShow = 5; //TODO put this in config
+
+        //Pagination
+        if (Binput::has('page')) {
+            $pageProvided = Binput::get('page'); //TODO name convention
+            if($pageProvided >= 1) $page = $pageProvided;
+        }
+
         //CHECK IF SHOULD BE VISIBLE
         //TODO needs middleware auth?
         $incidentVisibility = Auth::check() ? 0 : 1;
-
-        $monthsToShow = 12; //TODO put this in config
 
         $allIncidents = Incident::notScheduled()->where('visible', '>=', $incidentVisibility)
         ->orderBy('scheduled_at', 'desc')->orderBy('created_at', 'desc')->get()
@@ -58,9 +66,24 @@ class HistoryController extends Controller
         })
         ->groupBy(function ($value, $key) { //group by month
             return app(DateFactory::class)->make($key)->format('F Y');
-        }, true)->slice(0, $monthsToShow);
+        }, true);
+
+        // show last page if page would be empty, define if page backward is possible
+        $monthCount = count($allIncidents);
+        $minNecessaryMonth = ($page - 1) * $monthsToShow;
+        if($monthCount <= $minNecessaryMonth) {
+            $page = intdiv($monthCount, $monthsToShow) + 1;
+            $canPageBackward = false;
+        } else if($monthCount <= $minNecessaryMonth + $monthsToShow) {
+            $canPageBackward = false;
+        }
+
+        $allIncidents = $allIncidents->forPage($page, $monthsToShow);
 
         return View::make('history.history')
-            ->withAllIncidents($allIncidents); //TODO add page forward/backward
+            ->withAllIncidents($allIncidents)
+            ->withCanPageForward($page > 1)
+            ->withCanPageBackward($canPageBackward)
+            ->withPage($page); //TODO add page forward/backward
     }
 }
