@@ -53,6 +53,14 @@
                             </div>
                             <div class="row">
                                 <div class="col-xs-12">
+                                    <div class="form-group">
+                                        <label>{{ trans('forms.settings.app-setup.months-of-incidents') }}</label>
+                                        <input type="number" max="100" name="app_history_months" class="form-control" value="{{ Config::get('setting.app_history_months', 6) }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12">
                                     <div class="checkbox">
                                         <label>
                                             <input type="hidden" value="0" name="enable_subscribers">

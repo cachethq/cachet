@@ -20,7 +20,6 @@ class HistoryRoutes
      */
     public function map(Registrar $router)
     {
-        //more middleware needed?
         $router->group(['middleware' => ['web'], 'as' => 'history.'], function (Registrar $router) {
             $router->get('history', [
                 'as' => 'history',
