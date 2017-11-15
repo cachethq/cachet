@@ -59,7 +59,7 @@ class HistoryController extends Controller
         if ($monthCount <= $minNecessaryMonth) {
             $page = intdiv($monthCount, $monthsToShow) + 1;
             $canPageBackward = false;
-        } elseif($monthCount <= $minNecessaryMonth + $monthsToShow) {
+        } elseif ($monthCount <= $minNecessaryMonth + $monthsToShow) {
             $canPageBackward = false;
         }
 
