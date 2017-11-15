@@ -29,7 +29,7 @@ class HistoryRoutes
      */
     public function map(Registrar $router)
     {
-        $router->group(['middleware' => ['web'], 'as' => 'history.'], function (Registrar $router) {
+        $router->group(['middleware' => ['web']], function (Registrar $router) {
             $router->get('history', [
                 'as'   => 'history',
                 'uses' => 'HistoryController@showHistory',
