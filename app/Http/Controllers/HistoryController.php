@@ -1,15 +1,23 @@
 <?php
 
+/*
+ * This file is part of Cachet.
+ *
+ * (c) Alt Three Services Limited
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace CachetHQ\Cachet\Http\Controllers;
 
-use GrahamCampbell\Binput\Facades\Binput;
-use Illuminate\Routing\Controller;
-use Illuminate\Support\Facades\View;
 use CachetHQ\Cachet\Dates\DateFactory;
 use CachetHQ\Cachet\Models\Incident;
+use GrahamCampbell\Binput\Facades\Binput;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
-use Jenssegers\Date\Date;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\View;
 
 /**
  * This is the history controller.
@@ -48,10 +56,10 @@ class HistoryController extends Controller
         // show last page if page would be empty, define if page backward is possible
         $monthCount = count($allIncidents);
         $minNecessaryMonth = ($page - 1) * $monthsToShow;
-        if($monthCount <= $minNecessaryMonth) {
+        if ($monthCount <= $minNecessaryMonth) {
             $page = intdiv($monthCount, $monthsToShow) + 1;
             $canPageBackward = false;
-        } else if($monthCount <= $minNecessaryMonth + $monthsToShow) {
+        } elseif($monthCount <= $minNecessaryMonth + $monthsToShow) {
             $canPageBackward = false;
         }
 
