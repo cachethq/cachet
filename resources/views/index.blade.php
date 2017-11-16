@@ -54,6 +54,13 @@
         </li>
         @endif
     </ul>
+    <ul class="pager">
+        <li class="center-text">
+            <a href="{{ route('history') }}" class="links">
+                <span aria-hidden="true">&#128338;</span> {{ trans('cachet.history.title') }}
+            </a>
+        </li>
+    </ul>
 </nav>
 @endif
 
