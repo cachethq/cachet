@@ -46,14 +46,14 @@
     <ul class="pager">
         @if($can_page_backward)
         <li class="previous">
-            <a href="{{ route('history') }}?page={{ $page + 1 }}" class="links">
+            <a href="{{ route('history') }}?page={{ $page + 1 }}{{ isset($filtered_component) ? '&filter=' . $filtered_component->id : '' }}" class="links">
                 <span aria-hidden="true">&larr;</span> {{ trans('cachet.history.previous_page') }}
             </a>
         </li>
         @endif
         @if($can_page_forward)
         <li class="next">
-            <a href="{{ route('history') }}?page={{ $page - 1 }}" class="links">
+            <a href="{{ route('history') }}?page={{ $page - 1 }}{{ isset($filtered_component) ? '&filter=' . $filtered_component->id : '' }}" class="links">
                 {{ trans('cachet.history.next_page') }} <span aria-hidden="true">&rarr;</span>
             </a>
         </li>
