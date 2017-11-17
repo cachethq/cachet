@@ -18,7 +18,9 @@
         <ul class="dropdown-menu">
             <li><a href="#" data-component-id="-1">{{ trans('cachet.history.show_all') }}</a></li>
             @foreach($components_in_groups as $group)
-                <li><a><strong>{{ $group->name }}</strong></a></li>
+                @if(!$group->components->isEmpty())
+                    <li><a><strong>{{ $group->name }}</strong></a></li>
+                @endif
                 @foreach($group->components as $component)
                     <li><a href="#" data-component-id="{{ $component->id }}" class="in-group">{{ $component->name }}</a></li>
                 @endforeach
