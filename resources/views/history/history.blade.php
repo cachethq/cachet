@@ -9,23 +9,25 @@
 
 @include('dashboard.partials.errors')
 
-<div class="dropdown">
-    <a href="javascript: void(0);" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-        <span class='filter'>{{ isset($filtered_component) ? $filtered_component->name : trans('cachet.history.filter') }}</span>
-        <span class="caret"></span>
-    </a>
-    <ul class="dropdown-menu">
-        <li><a href="#" data-component-id="-1"><em>{{ trans('cachet.history.dont_filter') }}</em></a></li>
-        @foreach($components_in_groups as $group)
-            <li><a><strong>{{ $group->name }}</strong></a></li>
-            @foreach($group->components as $component)
-                <li><a href="#" data-component-id="{{ $component->id }}" style="padding-left: 2em;">{{ $component->name }}</a></li>
+<div class="section-filter">
+    <div class="dropdown">
+        <a href="javascript: void(0);" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+            <span class='filter'>{{ isset($filtered_component) ? $filtered_component->name : trans('cachet.history.show_all') }}</span>
+            <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            <li><a href="#" data-component-id="-1">{{ trans('cachet.history.show_all') }}</a></li>
+            @foreach($components_in_groups as $group)
+                <li><a><strong>{{ $group->name }}</strong></a></li>
+                @foreach($group->components as $component)
+                    <li><a href="#" data-component-id="{{ $component->id }}" class="in-group">{{ $component->name }}</a></li>
+                @endforeach
             @endforeach
-        @endforeach
-        @foreach($components_out_groups as $component)
-            <li><a href="#" data-component-id="{{ $component->id }}">{{ $component->name }}</a></li>
-        @endforeach
-    </ul>
+            @foreach($components_out_groups as $component)
+                <li><a href="#" data-component-id="{{ $component->id }}">{{ $component->name }}</a></li>
+            @endforeach
+        </ul>
+    </div>
 </div>
 
 <div class="section-timeline">

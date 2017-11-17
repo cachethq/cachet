@@ -56,6 +56,9 @@ class HistoryController extends Controller
         $allIncidents = $query->get()->groupBy(function (Incident $incident) { // group by day
             return app(DateFactory::class)->make($incident->is_scheduled ? $incident->scheduled_at : $incident->created_at)->toDateString();
         })
+        ->sortByDesc(function ($value, $key) { // group by month
+            return $key;
+        })
         ->groupBy(function ($value, $key) { // group by month
             return app(DateFactory::class)->make($key)->format('F Y');
         }, true);
