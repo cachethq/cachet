@@ -46,6 +46,8 @@ return [
         'title'         => 'Incident History',
         'previous_page' => 'Previous Page',
         'next_page'     => 'Next Page',
+        'filter'       => 'Choose component to filter by',
+        'dont_filter'   => 'Don\'t filter',
     ],
 
     // Service Status

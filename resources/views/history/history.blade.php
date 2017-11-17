@@ -9,14 +9,35 @@
 
 @include('dashboard.partials.errors')
 
+<div class="dropdown">
+    <a href="javascript: void(0);" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+        <span class='filter'>{{ isset($filtered_component) ? $filtered_component->name : trans('cachet.history.filter') }}</span>
+        <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+        <li><a href="#" data-component-id="-1"><em>{{ trans('cachet.history.dont_filter') }}</em></a></li>
+        @foreach($components_in_groups as $group)
+            <li><a><strong>{{ $group->name }}</strong></a></li>
+            @foreach($group->components as $component)
+                <li><a href="#" data-component-id="{{ $component->id }}" style="padding-left: 2em;">{{ $component->name }}</a></li>
+            @endforeach
+        @endforeach
+        @foreach($components_out_groups as $component)
+            <li><a href="#" data-component-id="{{ $component->id }}">{{ $component->name }}</a></li>
+        @endforeach
+    </ul>
+</div>
+
 <div class="section-timeline">
     <h1>{{ trans('cachet.history.title') }}</h1>
-    @foreach($all_incidents as $month => $incidents_month)
+    @forelse($all_incidents as $month => $incidents_month)
         <h3>{{ $month }}</h3>
         @foreach($incidents_month as $date => $incidents)
         @include('partials.incidents', [compact($date), compact($incidents)])
         @endforeach
-    @endforeach
+    @empty
+        <p>{{ trans('cachet.incidents.none') }}</p>
+    @endforelse
 </div>
 
 <nav>
@@ -37,4 +58,23 @@
         @endif
     </ul>
 </nav>
+
+<script>
+(function () {
+    $('a[data-component-id]').on('click', function(e) {
+        e.preventDefault();
+
+        var $this = $(this), $li;
+
+        $dropdown = $this.parents('.dropdown');
+        $dropdown.find('a[data-toggle=dropdown] span.filter').text($this.text());
+
+        if($this.attr('data-component-id') === '-1') {
+            window.location.href = '{{ route('history') }}';
+        } else {
+            window.location.href = '{{ route('history') }}?filter=' + $this.attr('data-component-id');
+        }
+    });
+}());
+</script>
 @stop

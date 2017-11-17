@@ -13,6 +13,8 @@ namespace CachetHQ\Cachet\Http\Controllers;
 
 use CachetHQ\Cachet\Dates\DateFactory;
 use CachetHQ\Cachet\Models\Incident;
+use CachetHQ\Cachet\Models\ComponentGroup;
+use CachetHQ\Cachet\Models\Component;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -36,6 +38,7 @@ class HistoryController extends Controller
         $page = 1;
         $canPageBackward = true;
         $monthsToShow = Config::get('setting.app_history_months', 0);
+        $filteredComponent = null;
 
         // Pagination
         if (Binput::has('page')) {
@@ -44,9 +47,13 @@ class HistoryController extends Controller
 
         $incidentVisibility = Auth::check() ? 0 : 1;
 
-        $allIncidents = Incident::notScheduled()->where('visible', '>=', $incidentVisibility)
-        ->orderBy('scheduled_at', 'desc')->orderBy('created_at', 'desc')->get()
-        ->groupBy(function (Incident $incident) { // group by day
+        $query = Incident::notScheduled()->where('visible', '>=', $incidentVisibility)
+        ->orderBy('scheduled_at', 'desc')->orderBy('created_at', 'desc');
+        if (Binput::has('filter')) {
+            $query = $query->where('component_id', Binput::get('filter'));
+            $filteredComponent = Component::where('id', Binput::get('filter'))->first();
+        }
+        $allIncidents = $query->get()->groupBy(function (Incident $incident) { // group by day
             return app(DateFactory::class)->make($incident->is_scheduled ? $incident->scheduled_at : $incident->created_at)->toDateString();
         })
         ->groupBy(function ($value, $key) { // group by month
@@ -69,6 +76,9 @@ class HistoryController extends Controller
             ->withAllIncidents($allIncidents)
             ->withCanPageForward($page > 1)
             ->withCanPageBackward($canPageBackward)
-            ->withPage($page);
+            ->withPage($page)
+            ->withComponentsInGroups(ComponentGroup::with('components')->get())
+            ->withComponentsOutGroups(Component::where('group_id', 0)->get())
+            ->withFilteredComponent($filteredComponent);
     }
 }
