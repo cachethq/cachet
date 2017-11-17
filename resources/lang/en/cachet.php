@@ -46,7 +46,7 @@ return [
         'title'         => 'Incident History',
         'previous_page' => 'Previous Page',
         'next_page'     => 'Next Page',
-        'show_all'   => 'Show all',
+        'show_all'      => 'Show all',
     ],
 
     // Service Status

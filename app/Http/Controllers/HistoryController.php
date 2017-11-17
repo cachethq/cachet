@@ -12,9 +12,9 @@
 namespace CachetHQ\Cachet\Http\Controllers;
 
 use CachetHQ\Cachet\Dates\DateFactory;
-use CachetHQ\Cachet\Models\Incident;
-use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Component;
+use CachetHQ\Cachet\Models\ComponentGroup;
+use CachetHQ\Cachet\Models\Incident;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
