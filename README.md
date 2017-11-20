@@ -71,3 +71,5 @@ We offer a professional installation service. To find out more, email us at [sup
 ## Security Vulnerabilities
 
 If you discover a security vulnerability within Cachet, please send an e-mail to us at support@alt-three.com. We handle all security vulnerabilities on a case-by-case basis.
+
+[![Code Sponsor](https://app.codesponsor.io/embed/oXAjpsUCYWoeAmu16PWpWd7s/CachetHQ/Cachet.svg)](https://app.codesponsor.io/link/oXAjpsUCYWoeAmu16PWpWd7s/CachetHQ/Cachet)
