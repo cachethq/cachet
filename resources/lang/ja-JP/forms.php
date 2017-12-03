@@ -152,7 +152,7 @@ return [
             'about-this-page'              => 'このページについて',
             'days-of-incidents'            => '何日間のインシデントを表示しますか？',
             'banner'                       => 'バナー画像',
-            'banner-help'                  => "横幅が930px以内の画像をアップロードしてください。",
+            'banner-help'                  => '横幅が930px以内の画像をアップロードしてください。',
             'subscribers'                  => 'Allow people to signup to email notifications?',
             'skip_subscriber_verification' => 'Skip verifying of users? (Be warned, you could be spammed)',
             'automatic_localization'       => 'Automatically localise your status page to your visitor\'s language?',

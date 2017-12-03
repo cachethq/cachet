@@ -152,7 +152,7 @@ return [
             'about-this-page'              => 'crwdns1193:0crwdne1193:0',
             'days-of-incidents'            => 'crwdns1194:0crwdne1194:0',
             'banner'                       => 'crwdns1195:0crwdne1195:0',
-            'banner-help'                  => "crwdns1196:0crwdne1196:0",
+            'banner-help'                  => 'crwdns1196:0crwdne1196:0',
             'subscribers'                  => 'crwdns1197:0crwdne1197:0',
             'skip_subscriber_verification' => 'crwdns1198:0crwdne1198:0',
             'automatic_localization'       => 'crwdns1199:0crwdne1199:0',
