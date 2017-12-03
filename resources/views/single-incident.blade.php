@@ -35,7 +35,14 @@
                                 {!! $update->formatted_message !!}
                             </div>
                         </div>
-                        <div class="panel-footer"><small>{{ trans('cachet.incidents.posted', ['timestamp' => $update->created_at_diff]) }}</small></div>
+                        <div class="panel-footer">
+                            <small>
+                                <span data-toggle="tooltip" title="
+                                    {{ trans('cachet.incidents.posted_at', ['timestamp' => $update->created_at_formatted]) }}">
+                                    {{ trans('cachet.incidents.posted', ['timestamp' => $update->created_at_diff]) }}
+                                </span>
+                            </small>
+                        </div>
                     </div>
                 </div>
             </div>
