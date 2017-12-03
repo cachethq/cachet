@@ -131,7 +131,7 @@ class StatusPageController extends AbstractApiController
      */
     public function getMetrics(Metric $metric)
     {
-        $type = Binput::get('filter', 'last_hour');
+        $type = Binput::get('filter', AutoPresenter::decorate($metric)->view_name);
         $metrics = app(MetricRepository::class);
 
         switch ($type) {
