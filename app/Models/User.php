@@ -12,18 +12,20 @@
 namespace CachetHQ\Cachet\Models;
 
 use AltThree\Validator\ValidatingTrait;
+use CachetHQ\Cachet\Presenters\UserPresenter;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Hash;
+use McCool\LaravelAutoPresenter\HasPresenter;
 
 /**
  * This is the user model.
  *
  * @author James Brooks <james@alt-three.com>
  */
-class User extends Authenticatable
+class User extends Authenticatable implements HasPresenter
 {
     use Notifiable, ValidatingTrait;
 
@@ -163,18 +165,6 @@ class User extends Authenticatable
     }
 
     /**
-     * Returns a Gravatar URL for the users email address.
-     *
-     * @param int $size
-     *
-     * @return string
-     */
-    public function getGravatarAttribute($size = 200)
-    {
-        return sprintf('https://www.gravatar.com/avatar/%s?size=%d', md5(strtolower($this->email)), $size);
-    }
-
-    /**
      * Find by api_key, or throw an exception.
      *
      * @param string   $token
@@ -219,5 +209,15 @@ class User extends Authenticatable
     public function getHasTwoFactorAttribute()
     {
         return trim($this->google_2fa_secret) !== '';
+    }
+
+    /**
+     * Get the presenter class.
+     *
+     * @return string
+     */
+    public function getPresenterClass()
+    {
+        return UserPresenter::class;
     }
 }

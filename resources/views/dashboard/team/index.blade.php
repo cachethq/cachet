@@ -29,7 +29,7 @@
                 @foreach($team_members as $member)
                 <div class="user col-sm-3 col-xs-6">
                     <a href="@if($current_user->id == $member->id) {{ url('dashboard/user') }} @else /dashboard/team/{{ $member->id }} @endif">
-                        <img src="{{ $member->gravatar }}">
+                        <img src="{{ $member->avatar }}">
                     </a>
                     <div class="name">{{ $member->username }}</div>
                     <div class="email">{{ $member->email }}</div>
