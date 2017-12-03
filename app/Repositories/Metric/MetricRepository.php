@@ -61,7 +61,7 @@ class MetricRepository
     {
         $dateTime = $this->dates->make();
         $pointKey = $dateTime->format('H:i');
-        $points = $this->repository->getPointsSinceMinutes($metric, 60)->pluck('value', 'key');
+        $points = $this->repository->getPointsSinceMinutes($metric, 60)->pluck('value', 'key')->take(60);
 
         for ($i = 0; $i <= 60; $i++) {
             if (!$points->has($pointKey)) {
