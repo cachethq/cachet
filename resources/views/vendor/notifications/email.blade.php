@@ -71,7 +71,7 @@ $style = [
                     <tr>
                         <td style="{{ $style['email-masthead'] }}">
                             <a style="{{ $fontFamily }} {{ $style['email-masthead_name'] }}" href="{{ url('/') }}" target="_blank">
-                                {{ {{ setting('app_name', config('app.name')) }} }}
+                                {{ setting('app_name', config('app.name')) }}
                             </a>
                         </td>
                     </tr>
