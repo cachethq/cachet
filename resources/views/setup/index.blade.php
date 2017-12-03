@@ -86,9 +86,9 @@
                             <span class="text-danger">{{ $errors->first('env.mail_driver') }}</span>
                             @endif
                         </div>
-                        <div class="form-group" v-if="mail.requiresHost">
-                            <label>{{ trans('forms.setup.mail_host') }} (optional)</label>
-                            <input type="text" class="form-control" name="env[mail_host]" value="{{ Binput::old('env.mail_host', $mail_config['host']) }}" placeholder="{{ trans('forms.setup.mail_host') }}">
+                        <div class="form-group">
+                            <label>{{ trans('forms.setup.mail_host') }}</label>
+                            <input type="text" class="form-control" name="env[mail_host]" value="{{ Binput::old('env.mail_host', $mail_config['host']) }}" placeholder="{{ trans('forms.setup.mail_host') }}" :required="mail.requiresHost">
                             @if($errors->has('env.mail_host'))
                             <span class="text-danger">{{ $errors->first('env.mail_host') }}</span>
                             @endif
@@ -100,16 +100,16 @@
                             <span class="text-danger">{{ $errors->first('env.mail_address') }}</span>
                             @endif
                         </div>
-                        <div class="form-group" v-if="mail.requiresUsername">
+                        <div class="form-group">
                             <label>{{ trans('forms.setup.mail_username') }}</label>
-                            <input type="text" class="form-control" name="env[mail_username]" value="{{ Binput::old('env.mail_username', $mail_config['username']) }}" placeholder="{{ trans('forms.setup.mail_username') }}">
+                            <input type="text" class="form-control" name="env[mail_username]" value="{{ Binput::old('env.mail_username', $mail_config['username']) }}" placeholder="{{ trans('forms.setup.mail_username') }}" :required="mail.requiresUsername">
                             @if($errors->has('env.mail_username'))
                             <span class="text-danger">{{ $errors->first('env.mail_username') }}</span>
                             @endif
                         </div>
-                        <div class="form-group" v-if="mail.requiresPassword">
+                        <div class="form-group">
                             <label>{{ trans('forms.setup.mail_password') }}</label>
-                            <input type="password" class="form-control" name="env[mail_password]" value="{{ Binput::old('env.mail_password', $mail_config['password']) }}" autocomplete="off" placeholder="{{ trans('forms.setup.mail_password') }}">
+                            <input type="password" class="form-control" name="env[mail_password]" value="{{ Binput::old('env.mail_password', $mail_config['password']) }}" autocomplete="off" placeholder="{{ trans('forms.setup.mail_password') }}" :required="mail.requiresUsername">
                             @if($errors->has('env.mail_password'))
                             <span class="text-danger">{{ $errors->first('env.mail_password') }}</span>
                             @endif

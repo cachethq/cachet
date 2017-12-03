@@ -152,7 +152,7 @@ return [
             'about-this-page'              => 'Sobre esta página',
             'days-of-incidents'            => 'Quantos dias de incidentes para mostrar?',
             'banner'                       => 'Imagem de Banner',
-            'banner-help'                  => 'É recomendável que você faça upload de arquivos menores que 930px .',
+            'banner-help'                  => "É recomendável que você faça upload de arquivos menores que 930px .",
             'subscribers'                  => 'Permitir que as pessoas subscrevam as notificações?',
             'skip_subscriber_verification' => 'Skip verifying of users? (Be warned, you could be spammed)',
             'automatic_localization'       => 'Mostrar automaticamente a tradução conforme a língua do browser do visitante?',

@@ -151,7 +151,6 @@ return [
             'display-graphs'               => 'Display graphs on status page?',
             'about-this-page'              => 'About this page',
             'days-of-incidents'            => 'How many days of incidents to show?',
-            'time_before_refresh'          => 'Status page refresh rate (in seconds).',
             'banner'                       => 'Banner Image',
             'banner-help'                  => "It's recommended that you upload files no bigger than 930px wide .",
             'subscribers'                  => 'Allow people to signup to email notifications?',

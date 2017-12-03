@@ -152,7 +152,7 @@ return [
             'about-this-page'              => 'Sobre esta página',
             'days-of-incidents'            => '¿Cuántos días de incidentes mostrar?',
             'banner'                       => 'Imagen del banner',
-            'banner-help'                  => 'Se recomienda subir una imagen no más grande de 930px de ancho .',
+            'banner-help'                  => "Se recomienda subir una imagen no más grande de 930px de ancho .",
             'subscribers'                  => '¿Permitir a la gente inscribirse mediante noficiacion por correo electronico?',
             'skip_subscriber_verification' => '¿Omitir verificación de usuarios? (Advertencia, podrías ser spammeado)',
             'automatic_localization'       => '¿Traducir automáticamente la página de estado según el lenguaje del visitante?',

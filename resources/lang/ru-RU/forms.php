@@ -152,7 +152,7 @@ return [
             'about-this-page'              => 'Об этой странице',
             'days-of-incidents'            => 'За сколько дней показывать инциденты?',
             'banner'                       => 'Картинка-баннер',
-            'banner-help'                  => 'Рекомендуется загружать картинки не больше 930 пикс. в ширину.',
+            'banner-help'                  => "Рекомендуется загружать картинки не больше 930 пикс. в ширину.",
             'subscribers'                  => 'Разрешить посетителям подписываться на email-уведомления?',
             'skip_subscriber_verification' => 'Skip verifying of users? (Be warned, you could be spammed)',
             'automatic_localization'       => 'Автоматически переводить вашу статусную страницу на язык посетителя?',
