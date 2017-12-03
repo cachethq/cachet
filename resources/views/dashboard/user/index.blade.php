@@ -19,7 +19,7 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
-                                <a href="https://gravatar.com"><img src="{{ $current_user->gravatar }}" class="img-responsive img-thumbnail" title="{{ trans('forms.user.gravatar') }}" data-toggle="tooltip"></a>
+                                <a href="https://gravatar.com"><img src="{{ $current_user->avatar }}" class="img-responsive img-thumbnail" title="{{ trans('forms.user.gravatar') }}" data-toggle="tooltip"></a>
                             </div>
                             <div class="form-group">
                                 <label>{{ trans('forms.user.username') }}</label>

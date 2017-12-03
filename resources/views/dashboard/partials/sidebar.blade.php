@@ -2,7 +2,7 @@
     <div class="sidebar-inner">
         <div class="profile">
             <a href="{{ cachet_route('dashboard.user') }}">
-                <span class="avatar"><img src="{{ $current_user->gravatar }}"></span>
+                <span class="avatar"><img src="{{ $current_user->avatar }}"></span>
             </a>
             <a href="{{ cachet_route('dashboard.user') }}">
                 <h4 class="username">{{ $current_user->username }}</h4>
