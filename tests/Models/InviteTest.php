@@ -23,6 +23,6 @@ class InviteTest extends AbstractTestCase
 {
     public function testValidation()
     {
-        $this->assertFalse(property_exists(new Invite(), 'rules'));
+        $this->assertClassNotHasAttribute('rules', Invite::class);
     }
 }
