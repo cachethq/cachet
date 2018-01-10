@@ -423,4 +423,8 @@ body.status-page {
             }
         }
     }
+    //Display inline the incident update message.
+    .incident-update-item > p {
+        display: inline-block;
+    }
 }
