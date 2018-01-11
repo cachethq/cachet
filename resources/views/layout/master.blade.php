@@ -19,7 +19,7 @@
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="{{ $site_title }}">
-    <meta property="og:image" content="/img/favicon.png">
+    <meta property="og:image" content="/img/ogimage.png">
     <meta property="og:description" content="{{ trans('cachet.description', ['app' => $app_name]) }}">
 
     <!-- Mobile IE allows us to activate ClearType technology for smoothing fonts for easy reading -->
