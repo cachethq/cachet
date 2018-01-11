@@ -275,7 +275,7 @@ class SettingsController extends Controller
 
         collect($log->getHandlers())->reject(function ($handler) {
             return $handler instanceof SyslogHandler;
-        })->each(function ($handler) use ($logContents) {
+        })->each(function ($handler) use (&$logContents, $log) {
             if (file_exists($path = $log->getHandlers()[0]->getUrl())) {
                 $logContents = file_get_contents($path);
             }
