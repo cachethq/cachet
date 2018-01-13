@@ -41,7 +41,19 @@ final class CreateIncidentUpdateCommand
      * @var string
      */
     public $message;
+    /**
+     * The incident component.
+     *
+     * @var int
+     */
+    public $component_id;
 
+    /**
+     * The component status.
+     *
+     * @var int
+     */
+    public $component_status;
     /**
      * The user.
      *
@@ -55,10 +67,12 @@ final class CreateIncidentUpdateCommand
      * @var string[]
      */
     public $rules = [
-        'incident' => 'required',
-        'status'   => 'required|int|min:1|max:4',
-        'message'  => 'required|string',
-        'user'     => 'required',
+        'incident'         => 'required',
+        'status'           => 'required|int|min:1|max:4',
+        'message'          => 'required|string',
+        'component_id'     => 'nullable|required_with:component_status|int',
+        'component_status' => 'nullable|required_with:component_id|int|min:0|max:4',
+        'user'             => 'required',
     ];
 
     /**
@@ -71,11 +85,13 @@ final class CreateIncidentUpdateCommand
      *
      * @return void
      */
-    public function __construct(Incident $incident, $status, $message, User $user)
+    public function __construct(Incident $incident, $status, $message, $component_id, $component_status, User $user)
     {
         $this->incident = $incident;
         $this->status = $status;
         $this->message = $message;
+        $this->component_id = $component_id;
+        $this->component_status = $component_status;
         $this->user = $user;
     }
 }
