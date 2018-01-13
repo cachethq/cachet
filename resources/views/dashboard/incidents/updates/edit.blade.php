@@ -6,15 +6,14 @@
         <i class="icon ion-navicon"></i>
     </div>
     <span class="uppercase">
-        <i class="icon ion-android-alert"></i> {{ trans('dashboard.incidents.incidents') }}
+        <i class="ion ion-ios-information-outline"></i> {{ trans('dashboard.incidents.incidents') }}
     </span>
-    &gt; <small>{{ trans('dashboard.incidents.update.title') }}</small>
+    &gt; <small>{{ trans('dashboard.incidents.updates.title', ['incident' => $incident->name]) }}</small> &gt; <small>{{ trans('dashboard.incidents.updates.edit.title') }}</small>
 </div>
 <div class="content-wrapper">
     <div class="row">
         <div class="col-md-12">
             @include('dashboard.partials.errors')
-            <p class="lead">{{ trans('dashboard.incidents.updates.edit.title') }}</p>
             <form class="form-vertical" name="IncidentUpdateForm" role="form" method="POST" autocomplete="off">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <fieldset>
