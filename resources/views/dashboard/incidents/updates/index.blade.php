@@ -6,9 +6,9 @@
     <div class="content-wrapper">
         <div class="header sub-header">
             <span class="uppercase">
-                <i class="ion ion-ios-information-outline"></i> {{ trans('dashboard.incidents.updates.title') }}
+                <i class="ion ion-ios-information-outline"></i> {{ trans('dashboard.incidents.updates.title', ['incident' => Str::words($incident->name, 5)]) }}
             </span>
-            <a class="btn btn-md btn-success pull-right" href="{{ cachet_route('dashboard.incidents.updates.create', [$incident]) }}">
+            <a class="btn btn-md btn-success pull-right" href="{{ cachet_route('dashboard.incidents.updates.create', [$incident->id]) }}">
                 {{ trans('dashboard.incidents.update.title') }}
             </a>
             <div class="clearfix"></div>

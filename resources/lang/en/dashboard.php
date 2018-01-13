@@ -22,7 +22,7 @@ return [
         'incident-create-template' => 'Create Template',
         'incident-templates'       => 'Incident Templates',
         'updates'                  => [
-            'title'   => 'Incident updates',
+            'title'   => 'Incident updates for :incident',
             'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,Inf] Several Updates',
         ],
         'add'                      => [
