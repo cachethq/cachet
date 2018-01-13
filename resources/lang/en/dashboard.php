@@ -24,6 +24,16 @@ return [
         'updates'                  => [
             'title'   => 'Incident updates for :incident',
             'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,Inf] Several Updates',
+            'add'   => [
+                'title'   => 'Create new incident update',
+                'success' => 'Your new incident update has been created.',
+                'failure' => 'Something went wrong with the incident update.',
+            ],
+            'edit' => [
+                'title'   => 'Edit incident update',
+                'success' => 'The incident update has been updated.',
+                'failure' => 'Something went wrong updating the incident update',
+            ],
         ],
         'add'                      => [
             'title'   => 'Report an incident',
@@ -38,11 +48,6 @@ return [
         'delete' => [
             'success' => 'The incident has been deleted and will not show on your status page.',
             'failure' => 'The incident could not be deleted, please try again.',
-        ],
-        'update' => [
-            'title'    => 'Create new incident update',
-            'subtitle' => 'Add an update to <strong>:incident</strong>',
-            'success'  => 'Update added.',
         ],
 
         // Incident templates

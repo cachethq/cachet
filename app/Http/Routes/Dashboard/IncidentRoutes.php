@@ -81,6 +81,15 @@ class IncidentRoutes
                 'as'   => 'post:dashboard.incidents.updates.create',
                 'uses' => 'IncidentController@createIncidentUpdateAction',
             ]);
+            $router->get('{incident}/updates/{incident_update}', [
+                'as'   => 'get:dashboard.incidents.updates.edit',
+                'uses' => 'IncidentController@showEditIncidentUpdateAction',
+            ]);
+            $router->post('{incident}/updates/{incident_update}', [
+                'as'   => 'post:dashboard.incidents.updates.edit',
+                'uses' => 'IncidentController@editIncidentUpdateAction',
+            ]);
+
         });
     }
 }

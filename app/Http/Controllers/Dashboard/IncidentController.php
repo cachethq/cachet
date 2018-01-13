@@ -16,6 +16,7 @@ use CachetHQ\Cachet\Bus\Commands\Incident\CreateIncidentCommand;
 use CachetHQ\Cachet\Bus\Commands\Incident\RemoveIncidentCommand;
 use CachetHQ\Cachet\Bus\Commands\Incident\UpdateIncidentCommand;
 use CachetHQ\Cachet\Bus\Commands\IncidentUpdate\CreateIncidentUpdateCommand;
+use CachetHQ\Cachet\Bus\Commands\IncidentUpdate\UpdateIncidentUpdateCommand;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Incident;
@@ -322,7 +323,7 @@ class IncidentController extends Controller
     public function createIncidentUpdateAction(Incident $incident)
     {
         try {
-            $incident = dispatch(new CreateIncidentUpdateCommand(
+            $incidentUpdate = dispatch(new CreateIncidentUpdateCommand(
                 $incident,
                 Binput::get('status'),
                 Binput::get('message'),
@@ -331,11 +332,55 @@ class IncidentController extends Controller
         } catch (ValidationException $e) {
             return cachet_redirect('dashboard.incidents.updates.create', ['id' => $incident->id])
                 ->withInput(Binput::all())
-                ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.incidents.templates.edit.failure')))
+                ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.incidents.updates.add.failure')))
                 ->withErrors($e->getMessageBag());
         }
 
         return cachet_redirect('dashboard.incidents')
-            ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.incidents.update.success')));
+            ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.incidents.updates.success')));
+    }
+
+
+    /**
+     * Shows the edit incident view.
+     *
+     * @param \CachetHQ\Cachet\Models\Incident $incident
+     * @param \CachetHQ\Cachet\Models\IncidentUpdate $incidentUpdate
+     *
+     * @return \Illuminate\View\View
+     */
+    public function showEditIncidentUpdateAction(Incident $incident, IncidentUpdate $incidentUpdate)
+    {
+        return View::make('dashboard.incidents.updates.edit')
+            ->withIncident($incident)
+            ->withUpdate($incidentUpdate);
+    }
+
+    /**
+     * Edit an incident.
+     *
+     * @param \CachetHQ\Cachet\Models\Incident $incident
+     * @param \CachetHQ\Cachet\Models\IncidentUpdate $incidentUpdate
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function editIncidentUpdateAction(Incident $incident, IncidentUpdate $incidentUpdate)
+    {
+        try {
+            $incidentUpdate = dispatch(new UpdateIncidentUpdateCommand(
+                $incidentUpdate,
+                Binput::get('status'),
+                Binput::get('message'),
+                $this->auth->user()
+            ));
+        } catch (ValidationException $e) {
+            return cachet_redirect('dashboard.incidents.updates.edit', ['incident' => $incident->id, 'incident_update' => $incidentUpdate->id])
+                ->withInput(Binput::all())
+                ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.incidents.updates.edit.failure')))
+                ->withErrors($e->getMessageBag());
+        }
+
+        return cachet_redirect('dashboard.incidents.updates', ['incident' => $incident->id])
+            ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.incidents.updates.edit.success')));
     }
 }
