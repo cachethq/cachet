@@ -309,7 +309,7 @@ class IncidentController extends Controller
      */
     public function showCreateIncidentUpdateAction(Incident $incident)
     {
-        return View::make('dashboard.incidents.update')->withIncident($incident);
+        return View::make('dashboard.incidents.updates.add')->withIncident($incident);
     }
 
     /**
