@@ -89,7 +89,6 @@ class IncidentRoutes
                 'as'   => 'post:dashboard.incidents.updates.edit',
                 'uses' => 'IncidentController@editIncidentUpdateAction',
             ]);
-
         });
     }
 }

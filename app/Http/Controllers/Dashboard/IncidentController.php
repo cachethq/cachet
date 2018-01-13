@@ -298,6 +298,7 @@ class IncidentController extends Controller
     public function showIncidentUpdates(Incident $incident)
     {
         $updates = IncidentUpdate::byIncident($incident)->orderBy('created_at', 'desc')->get();
+
         return View::make('dashboard.incidents.updates.index')->withIncident($incident)->withUpdates($updates);
     }
 
@@ -340,11 +341,10 @@ class IncidentController extends Controller
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.incidents.updates.success')));
     }
 
-
     /**
      * Shows the edit incident view.
      *
-     * @param \CachetHQ\Cachet\Models\Incident $incident
+     * @param \CachetHQ\Cachet\Models\Incident       $incident
      * @param \CachetHQ\Cachet\Models\IncidentUpdate $incidentUpdate
      *
      * @return \Illuminate\View\View
@@ -357,9 +357,9 @@ class IncidentController extends Controller
     }
 
     /**
-     * Edit an incident.
+     * Edit an incident update.
      *
-     * @param \CachetHQ\Cachet\Models\Incident $incident
+     * @param \CachetHQ\Cachet\Models\Incident       $incident
      * @param \CachetHQ\Cachet\Models\IncidentUpdate $incidentUpdate
      *
      * @return \Illuminate\Http\RedirectResponse

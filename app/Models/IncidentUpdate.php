@@ -78,7 +78,7 @@ class IncidentUpdate extends Model implements HasPresenter
      * Scope all by incident.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
-     * @param \CachetHQ\Cachet\Models\Incident $incident
+     * @param \CachetHQ\Cachet\Models\Incident      $incident
      *
      * @return \Illuminate\Database\Eloquent\Builder
      */

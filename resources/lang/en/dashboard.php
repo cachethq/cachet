@@ -24,7 +24,7 @@ return [
         'updates'                  => [
             'title'   => 'Incident updates for :incident',
             'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,Inf] Several Updates',
-            'add'   => [
+            'add'     => [
                 'title'   => 'Create new incident update',
                 'success' => 'Your new incident update has been created.',
                 'failure' => 'Something went wrong with the incident update.',
