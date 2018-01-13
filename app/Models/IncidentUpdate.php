@@ -14,6 +14,7 @@ namespace CachetHQ\Cachet\Models;
 use AltThree\Validator\ValidatingTrait;
 use CachetHQ\Cachet\Models\Traits\SortableTrait;
 use CachetHQ\Cachet\Presenters\IncidentUpdatePresenter;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use McCool\LaravelAutoPresenter\HasPresenter;
 
@@ -72,6 +73,19 @@ class IncidentUpdate extends Model implements HasPresenter
         'status',
         'user_id',
     ];
+
+    /**
+     * Scope all by incident.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @param \CachetHQ\Cachet\Models\Incident $incident
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeByIncident(Builder $query, Incident $incident)
+    {
+        return $query->where('incident_id', '=', $incident->id);
+    }
 
     /**
      * Get the incident relation.

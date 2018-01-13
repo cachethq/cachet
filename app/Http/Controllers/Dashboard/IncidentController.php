@@ -20,6 +20,7 @@ use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentTemplate;
+use CachetHQ\Cachet\Models\IncidentUpdate;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Routing\Controller;
@@ -293,7 +294,20 @@ class IncidentController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function showIncidentUpdateAction(Incident $incident)
+    public function showIncidentUpdates(Incident $incident)
+    {
+        $updates = IncidentUpdate::byIncident($incident)->orderBy('created_at', 'desc')->get();
+        return View::make('dashboard.incidents.updates.index')->withIncident($incident)->withUpdates($updates);
+    }
+
+    /**
+     * Shows the incident update form.
+     *
+     * @param \CachetHQ\Cachet\Models\Incident $incident
+     *
+     * @return \Illuminate\View\View
+     */
+    public function showCreateIncidentUpdateAction(Incident $incident)
     {
         return View::make('dashboard.incidents.update')->withIncident($incident);
     }
@@ -315,7 +329,7 @@ class IncidentController extends Controller
                 $this->auth->user()
             ));
         } catch (ValidationException $e) {
-            return cachet_redirect('dashboard.incidents.updates', ['id' => $incident->id])
+            return cachet_redirect('dashboard.incidents.updates.create', ['id' => $incident->id])
                 ->withInput(Binput::all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.incidents.templates.edit.failure')))
                 ->withErrors($e->getMessageBag());
