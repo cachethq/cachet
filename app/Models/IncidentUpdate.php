@@ -14,7 +14,6 @@ namespace CachetHQ\Cachet\Models;
 use AltThree\Validator\ValidatingTrait;
 use CachetHQ\Cachet\Models\Traits\SortableTrait;
 use CachetHQ\Cachet\Presenters\IncidentUpdatePresenter;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use McCool\LaravelAutoPresenter\HasPresenter;
 

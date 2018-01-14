@@ -32,9 +32,9 @@
                     <div class="panel panel-message incident">
                         <div class="panel-body">
                             @if($current_user)
-                                <div class="pull-right btn-group">
-                                    <a href="{{ cachet_route('dashboard.incidents.updates.edit', ['incident' => $incident, 'incident_update' => $update]) }}" class="btn btn-default">{{ trans('forms.edit') }}</a>
-                                </div>
+                            <div class="pull-right btn-group">
+                                <a href="{{ cachet_route('dashboard.incidents.updates.edit', ['incident' => $incident, 'incident_update' => $update]) }}" class="btn btn-default">{{ trans('forms.edit') }}</a>
+                            </div>
                             @endif
                             <div class="markdown-body">
                                 {!! $update->formatted_message !!}
