@@ -25,7 +25,7 @@
                 @foreach($updates as $update)
                 <div class="row striped-list-item">
                     <div class="col-xs-6">
-                        <a href="{{ cachet_route('dashboard.incidents.updates.edit', ['incident' => $incident, 'incident_update' => $update]) }}"><strong>{{ Str::words($update->message, 8) }}</strong></a>
+                        <strong>{{ Str::words($update->message, 8) }}</strong>
                         <p><small>{{ trans('cachet.incidents.posted', ['timestamp' => $update->created_at_diff]) }}</small></p>
                     </div>
                     <div class="col-xs-6 text-right">
