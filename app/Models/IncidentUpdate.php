@@ -75,19 +75,6 @@ class IncidentUpdate extends Model implements HasPresenter
     ];
 
     /**
-     * Scope all by incident.
-     *
-     * @param \Illuminate\Database\Eloquent\Builder $query
-     * @param \CachetHQ\Cachet\Models\Incident      $incident
-     *
-     * @return \Illuminate\Database\Eloquent\Builder
-     */
-    public function scopeByIncident(Builder $query, Incident $incident)
-    {
-        return $query->where('incident_id', '=', $incident->id);
-    }
-
-    /**
      * Get the incident relation.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

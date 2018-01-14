@@ -297,9 +297,7 @@ class IncidentController extends Controller
      */
     public function showIncidentUpdates(Incident $incident)
     {
-        $updates = IncidentUpdate::byIncident($incident)->orderBy('created_at', 'desc')->get();
-
-        return View::make('dashboard.incidents.updates.index')->withIncident($incident)->withUpdates($updates);
+        return View::make('dashboard.incidents.updates.index')->withIncident($incident);
     }
 
     /**

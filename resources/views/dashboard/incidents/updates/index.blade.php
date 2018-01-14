@@ -22,7 +22,7 @@
             @include('dashboard.partials.errors')
 
             <div class="striped-list">
-                @foreach($updates as $update)
+                @foreach($incident->updates as $update)
                 <div class="row striped-list-item">
                     <div class="col-xs-6">
                         <strong>{{ Str::words($update->message, 8) }}</strong>
