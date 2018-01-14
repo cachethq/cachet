@@ -9,13 +9,14 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/mode/twig/twig.min.js"></script>
 
 <script>
-(function() {
-    var editor = CodeMirror.fromTextArea(document.getElementById('cm-editor'), {
-        lineNumbers: true,
-        mode: 'twig',
-        lineWrapping: true
-    });
-}());
+//Initializes the editor only once the DOM is loaded.
+window.addEventListener("DOMContentLoaded", function(e) {
+     var editor = CodeMirror.fromTextArea(document.getElementById('cm-editor'), {
+         lineNumbers: true,
+         mode: 'twig',
+         lineWrapping: true
+     });
+});
 </script>
 @stop
 
