@@ -116,7 +116,8 @@ module.exports = {
             if (this.chart !== null) {
                 this.chart.destroy()
             }
-
+            //Used in tooltip callback where this.metric is not the same.
+            var metric = this.metric;
             this.chart = new Chart(this.context, {
                 type: 'line',
                 data: {
@@ -164,15 +165,14 @@ module.exports = {
                             }
                         }]
                     },
-                },
-                tooltips: {
-                    callbacks: {
-                        label: function(tooltipItem, data) {
-                            return tooltipItem.yLabel + ' ' + result.data.metric.suffix
+                    tooltips: {
+                        callbacks: {
+                            label: function(tooltipItem, data) {
+                                return tooltipItem.yLabel + ' ' + metric.suffix;
+                            }
                         }
                     }
-                }
-            })
+            }})
         }
     }
 }
