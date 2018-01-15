@@ -28,7 +28,7 @@
 
                                 <div class="form-group">
                                     <label class="sr-only">{{ trans('forms.login.2fauth') }}</label>
-                                    <input type="text" name="code" class="form-control" placeholder="{{ trans('forms.login.2fauth') }}" required>
+                                    <input type="text" name="code" class="form-control" placeholder="{{ trans('forms.login.2fauth') }}" required autofocus>
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-info btn-lg btn-block btn-trans">{{ trans('dashboard.login.login') }}</button>
