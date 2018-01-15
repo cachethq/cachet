@@ -33,7 +33,7 @@ class SqliteRepository extends AbstractMetricRepository implements MetricInterfa
     public function getPointsSinceMinutes(Metric $metric, $minutes)
     {
         $queryType = $this->getQueryType($metric);
-        $points = DB::select("SELECT strftime('%H:%M', {$this->getMetricPointsTable()}.`created_at`) AS `key`, {$queryType} " .
+        $points = DB::select("SELECT strftime('%Y-%m-%d %H:%M', {$this->getMetricPointsTable()}.`created_at`) AS `key`, {$queryType} " .
             "FROM {$this->getMetricsTable()} " .
             "INNER JOIN {$this->getMetricPointsTable()} ON {$this->getMetricsTable()}.id = {$this->getMetricPointsTable()}.metric_id " .
             "WHERE {$this->getMetricsTable()}.id = :metricId " .
@@ -58,7 +58,7 @@ class SqliteRepository extends AbstractMetricRepository implements MetricInterfa
     public function getPointsSinceHour(Metric $metric, $hour)
     {
         $queryType = $this->getQueryType($metric);
-        $points = DB::select("SELECT strftime('%H:00', {$this->getMetricPointsTable()}.`created_at`) AS `key`, {$queryType} " .
+        $points = DB::select("SELECT strftime('%Y-%m-%d %H:00', {$this->getMetricPointsTable()}.`created_at`) AS `key`, {$queryType} " .
             "FROM {$this->getMetricsTable()} INNER JOIN {$this->getMetricPointsTable()} ON {$this->getMetricsTable()}.id = {$this->getMetricPointsTable()}.metric_id " .
             "WHERE {$this->getMetricsTable()}.id = :metricId " .
             "AND {$this->getMetricPointsTable()}.`created_at` >= datetime('now', '-{$hour} hours') " .

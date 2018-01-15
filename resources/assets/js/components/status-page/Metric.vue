@@ -118,10 +118,23 @@ module.exports = {
             }
             //Used in tooltip callback where this.metric is not the same.
             var metric = this.metric;
+            /*
+             * Datetimes are used as keys instead of just time in order to
+             * improve ordering of labels in "Last 12 hours", so we cut the
+             * labels.
+             * This cutting is done only if there is an hour in the string, so
+             * if the view by day is set it doesn't fail.
+             */
+            var data_keys = _.keys(this.data);
+            if (0 < data_keys.length && data_keys[0].length > 10) {
+                for (var i = 0; i < data_keys.length; i++) {
+                    data_keys[i] = data_keys[i].substr(11);
+                }
+            }
             this.chart = new Chart(this.context, {
                 type: 'line',
                 data: {
-                    labels: _.keys(this.data),
+                    labels: data_keys,
                     datasets: [{
                         data: _.values(this.data),
                         // backgroundColor: "{{ $theme_metrics }}",
