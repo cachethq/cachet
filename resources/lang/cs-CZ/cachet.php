@@ -33,6 +33,7 @@ return [
         'scheduled'    => 'Plánovaná odstávka',
         'scheduled_at' => ', plánované na :timestamp',
         'posted'       => 'Publikováno :timestamp',
+        'posted_at'    => 'Posted at :timestamp',
         'status'       => [
             1 => 'Zkoumání příčiny',
             2 => 'Problém identifikován',
