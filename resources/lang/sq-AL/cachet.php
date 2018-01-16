@@ -33,6 +33,7 @@ return [
         'scheduled'    => 'Mirëmbajtje planifikuar',
         'scheduled_at' => ', planifiko :timestamp',
         'posted'       => 'Posted :timestamp',
+        'posted_at'    => 'Posted at :timestamp',
         'status'       => [
             1 => 'Hetimin',
             2 => 'Identifikohet',
@@ -75,7 +76,7 @@ return [
     // Subscriber
     'subscriber' => [
         'subscribe'   => 'Subscribe to get the updates',
-        'unsubscribe' => 'Unsubscribe at :link',
+        'unsubscribe' => 'Anullo abonimin',
         'button'      => 'Subscribe',
         'manage'      => [
             'no_subscriptions' => 'You\'re currently subscribed to all updates.',
