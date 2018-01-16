@@ -33,6 +33,7 @@ return [
         'scheduled'    => 'تعمیرات زمان‌بندی شده',
         'scheduled_at' => '، برنامه ریزی شده :timestamp',
         'posted'       => 'Posted :timestamp',
+        'posted_at'    => 'Posted at :timestamp',
         'status'       => [
             1 => 'در دست بررسی',
             2 => 'شناسایی شده',
