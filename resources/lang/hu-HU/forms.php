@@ -153,7 +153,7 @@ return [
             'days-of-incidents'            => 'Mennyi incidens legyen látható?',
             'time_before_refresh'          => 'Status page refresh rate (in seconds).',
             'banner'                       => 'Banner kép',
-            'banner-help'                  => "Nem ajánlott 930 pixelnél szélesebb képet feltölteni.",
+            'banner-help'                  => 'Nem ajánlott 930 pixelnél szélesebb képet feltölteni.',
             'subscribers'                  => 'Emberek regisztrálhatnak email értesítésekre?',
             'skip_subscriber_verification' => 'Felhasználó-ellenőrzés kihagyása? (Vigyázat, spam üzeneteket eredményezhet)',
             'automatic_localization'       => 'Állapot oldal automatikus lokalizálása a látogató nyelvén?',

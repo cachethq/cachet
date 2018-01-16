@@ -153,7 +153,7 @@ return [
             'days-of-incidents'            => 'چند روز از رویداد‌ها نمایش داده شوند؟',
             'time_before_refresh'          => 'Status page refresh rate (in seconds).',
             'banner'                       => 'تصویر بنر',
-            'banner-help'                  => "پیشنهاد می‌شود که شما تصاویری با پهنای بیشتر از 930px آپلود نکنید.",
+            'banner-help'                  => 'پیشنهاد می‌شود که شما تصاویری با پهنای بیشتر از 930px آپلود نکنید.',
             'subscribers'                  => 'آیا به کاربران اجازه ثبت‌‌نام برای اعلان‌های ایمیلی داده شود؟',
             'skip_subscriber_verification' => 'Skip verifying of users? (Be warned, you could be spammed)',
             'automatic_localization'       => 'به صورت خودکار صفحه وضعیت به زبان مشاهده‌کنندگان تغییر زبان دهد؟',

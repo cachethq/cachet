@@ -153,7 +153,7 @@ return [
             'days-of-incidents'            => 'Câte zile de incidente vreţi să fie afişate?',
             'time_before_refresh'          => 'Status page refresh rate (in seconds).',
             'banner'                       => 'Imagine Banner',
-            'banner-help'                  => "Este recomandat să încărcaţi fişiere cu lăţimea nu mai mare de 930px.",
+            'banner-help'                  => 'Este recomandat să încărcaţi fişiere cu lăţimea nu mai mare de 930px.',
             'subscribers'                  => 'Permiteţi vizitatorilor să se aboneze la notificări prin email?',
             'skip_subscriber_verification' => 'Omite verificarea utilizatorilor? (Avertizare, poți primi spam)',
             'automatic_localization'       => 'Schimbaţi automat limba pentru pagina de stare în funcţie de limba vizitatorului?',

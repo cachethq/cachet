@@ -153,7 +153,7 @@ return [
             'days-of-incidents'            => 'Hur många dagar av händelser ska visas?',
             'time_before_refresh'          => 'Status page refresh rate (in seconds).',
             'banner'                       => 'Bannerbild',
-            'banner-help'                  => "Vi rekommenderar att du inte laddar upp bilder som är bredare än 930 px.",
+            'banner-help'                  => 'Vi rekommenderar att du inte laddar upp bilder som är bredare än 930 px.',
             'subscribers'                  => 'Tillåt att registrera sig för notifikationer via e-post?',
             'skip_subscriber_verification' => 'Skip verifying of users? (Be warned, you could be spammed)',
             'automatic_localization'       => 'Automatically localise your status page to your visitor\'s language?',

@@ -153,7 +153,7 @@ return [
             'days-of-incidents'            => 'Kaç gün olay gösterebilirim?',
             'time_before_refresh'          => 'Status page refresh rate (in seconds).',
             'banner'                       => 'Afiş Resmi',
-            'banner-help'                  => "930 pikselden daha büyük olmayan dosyaları yüklemeniz önerilir.",
+            'banner-help'                  => '930 pikselden daha büyük olmayan dosyaları yüklemeniz önerilir.',
             'subscribers'                  => 'Kullanıcıların e-posta bildirimlerine kaydolmasına izin verilsin mi?',
             'skip_subscriber_verification' => 'Kullanıcıların doğrulama işlemini atla? (Dikkat et, spam gönderildi)',
             'automatic_localization'       => 'Durum sayfanızı otomatik olarak ziyaretçinin diline yerelleştirir misin?',

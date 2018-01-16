@@ -153,7 +153,7 @@ return [
             'days-of-incidents'            => 'Monenko päivän ajalta tapaukset näytetään?',
             'time_before_refresh'          => 'Status page refresh rate (in seconds).',
             'banner'                       => 'Bannerikuva',
-            'banner-help'                  => "On suositeltavaa, ettet lataa yli 930px leveitä kuvia.",
+            'banner-help'                  => 'On suositeltavaa, ettet lataa yli 930px leveitä kuvia.',
             'subscribers'                  => 'Salli käyttäjien tilata sähköpostitilaukset?',
             'skip_subscriber_verification' => 'Skip verifying of users? (Be warned, you could be spammed)',
             'automatic_localization'       => 'Lokalisoidaanko statussivu automaattisesti kävijän kielen mukaan?',
