@@ -21,7 +21,20 @@ return [
         'logged'                   => '{0} No hay incidencias, ¡buen trabajo!|Has registrado una incidencia.|Has reportado <strong>:count</strong> incidencias.',
         'incident-create-template' => 'Crear plantilla',
         'incident-templates'       => 'Plantillas de incidente',
-        'updates'                  => '{0} Cero actualizaciones|Una actualización|:count actualizaciones',
+        'updates'                  => [
+            'title'   => 'Incident updates for :incident',
+            'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
+            'add'     => [
+                'title'   => 'Crea una nueva actualización de incidente',
+                'success' => 'Your new incident update has been created.',
+                'failure' => 'Something went wrong with the incident update.',
+            ],
+            'edit' => [
+                'title'   => 'Edit incident update',
+                'success' => 'The incident update has been updated.',
+                'failure' => 'Something went wrong updating the incident update',
+            ],
+        ],
         'add'                      => [
             'title'   => 'Reportar incidente',
             'success' => 'Incidente agregado.',
@@ -35,11 +48,6 @@ return [
         'delete' => [
             'success' => 'El incidente se ha eliminado y no se mostrará en tu página de estado.',
             'failure' => 'El incidente no se pudo eliminar, por favor intente de nuevo.',
-        ],
-        'update' => [
-            'title'    => 'Crea una nueva actualización de incidente',
-            'subtitle' => 'Agrega una actualización a <strong>:incident</strong>',
-            'success'  => 'Update added.',
         ],
 
         // Incident templates
@@ -147,13 +155,15 @@ return [
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'      => 'Suscriptores',
-        'description'      => 'Los suscriptores recibirán actualizaciones por correo electrónico cuando se creen incidentes o se actualicen componentes.',
-        'verified'         => 'Verificado',
-        'not_verified'     => 'No confirmado',
-        'subscriber'       => ':email, suscrito :date',
-        'no_subscriptions' => 'Suscrito a todas las actualizaciones',
-        'add'              => [
+        'subscribers'          => 'Suscriptores',
+        'description'          => 'Los suscriptores recibirán actualizaciones por correo electrónico cuando se creen incidentes o se actualicen componentes.',
+        'description_disabled' => 'To use this feature, you need allow people to signup for notifications.',
+        'verified'             => 'Verificado',
+        'not_verified'         => 'No confirmado',
+        'subscriber'           => ':email, suscrito :date',
+        'no_subscriptions'     => 'Suscrito a todas las actualizaciones',
+        'global'               => 'Globally subscribed',
+        'add'                  => [
             'title'   => 'Agregar un nuevo subscriptor',
             'success' => 'Subscriptor agregado.',
             'failure' => 'Algo salió mal al agregar el suscriptor, por favor, inténtelo de nuevo.',
