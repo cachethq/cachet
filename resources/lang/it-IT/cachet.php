@@ -21,7 +21,7 @@ return [
             4 => 'Interruzione del servizio',
         ],
         'group' => [
-            'other' => 'Altri Componenti',
+            'other' => 'Altri componenti',
         ],
     ],
 
@@ -33,6 +33,7 @@ return [
         'scheduled'    => 'Manutenzione programmata',
         'scheduled_at' => ', programmata il :timestamp',
         'posted'       => 'Pubblicato :timestamp',
+        'posted_at'    => 'Posted at :timestamp',
         'status'       => [
             1 => 'Analisi',
             2 => 'Identificato',
@@ -44,9 +45,9 @@ return [
     // Schedule
     'schedules' => [
         'status' => [
-            0 => 'In Arrivo',
+            0 => 'In arrivo',
             1 => 'In corso',
-            2 => 'Completo',
+            2 => 'Completato',
         ],
     ],
 
