@@ -27,12 +27,12 @@ return [
             'add'     => [
                 'title'   => 'Créer une mise à jour d\'incident',
                 'success' => 'Votre nouvelle mise à jour d\'incident a été créée.',
-                'failure' => 'Something went wrong with the incident update.',
+                'failure' => 'Un problème est survenu lors de la mise à jour de l\'incident.',
             ],
             'edit' => [
-                'title'   => 'Edit incident update',
-                'success' => 'The incident update has been updated.',
-                'failure' => 'Something went wrong updating the incident update',
+                'title'   => 'Éditer la mise à jour de l\'incident',
+                'success' => 'La mise à jour de l\'incident a été mise à jour.',
+                'failure' => 'Un problème est survenu lors de la mise à jour de l\'incident',
             ],
         ],
         'add'                      => [
@@ -157,12 +157,12 @@ return [
     'subscribers' => [
         'subscribers'          => 'Abonnés',
         'description'          => 'Les abonnés recevront des notifications par e-mail lorsque des incidents sont créés ou des composants sont mis à jour.',
-        'description_disabled' => 'To use this feature, you need allow people to signup for notifications.',
+        'description_disabled' => 'Pour utiliser cette fonctionnalité, vous devez autoriser les utilisateurs de s\'abonner aux notifications.',
         'verified'             => 'Vérifié',
         'not_verified'         => 'Non vérifié',
         'subscriber'           => ':email, abonné à :date',
         'no_subscriptions'     => 'Souscrire à toutes les mises à jour',
-        'global'               => 'Globally subscribed',
+        'global'               => 'Abonné globalement',
         'add'                  => [
             'title'   => 'Ajouter un abonné',
             'success' => 'L\'abonné a été ajouté !',
