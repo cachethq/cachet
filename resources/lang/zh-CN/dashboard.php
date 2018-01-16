@@ -21,7 +21,20 @@ return [
         'logged'                   => '{0} 当前没有故障信息|您已经记录了一个故障|您已经报告了 <strong>:count</strong> 个故障',
         'incident-create-template' => '创建模板',
         'incident-templates'       => '故障模板',
-        'updates'                  => '{0} 0 个更新|1 个更新|:count 个更新',
+        'updates'                  => [
+            'title'   => 'Incident updates for :incident',
+            'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
+            'add'     => [
+                'title'   => '添加故障更新',
+                'success' => 'Your new incident update has been created.',
+                'failure' => 'Something went wrong with the incident update.',
+            ],
+            'edit' => [
+                'title'   => 'Edit incident update',
+                'success' => 'The incident update has been updated.',
+                'failure' => 'Something went wrong updating the incident update',
+            ],
+        ],
         'add'                      => [
             'title'   => '添加故障',
             'success' => '故障已添加',
@@ -35,11 +48,6 @@ return [
         'delete' => [
             'success' => '故障已删除并将不会出现在状态页中',
             'failure' => '无法删除该故障，请再试一次。',
-        ],
-        'update' => [
-            'title'    => '添加故障更新',
-            'subtitle' => '给 <strong>:incident</strong> 故障添加一个更新',
-            'success'  => 'Update added.',
         ],
 
         // Incident templates
@@ -147,13 +155,15 @@ return [
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'      => '通知',
-        'description'      => '有新增故障或有组件更新时，订阅者将会收到邮件提醒。',
-        'verified'         => '已认证',
-        'not_verified'     => '未认证',
-        'subscriber'       => ':email, 订阅于 :date',
-        'no_subscriptions' => '已订阅全部更新',
-        'add'              => [
+        'subscribers'          => '通知',
+        'description'          => '有新增故障或有组件更新时，订阅者将会收到邮件提醒。',
+        'description_disabled' => 'To use this feature, you need allow people to signup for notifications.',
+        'verified'             => '已认证',
+        'not_verified'         => '未认证',
+        'subscriber'           => ':email, 订阅于 :date',
+        'no_subscriptions'     => '已订阅全部更新',
+        'global'               => 'Globally subscribed',
+        'add'                  => [
             'title'   => '添加邮件订阅',
             'success' => '邮件订阅已添加成功。',
             'failure' => '无法添加订阅者，请稍后再试。',
