@@ -21,7 +21,20 @@ return [
         'logged'                   => '{0} Proficiat, er zijn geen incidenten.|Er heeft zich één incident voorgedaan.|Er zijn <strong>:count</strong> incidenten gerapporteerd.',
         'incident-create-template' => 'Maak template',
         'incident-templates'       => 'Incident Sjablonen',
-        'updates'                  => '{0} Geen updates|Één update|:count updates',
+        'updates'                  => [
+            'title'   => 'Incident updates for :incident',
+            'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
+            'add'     => [
+                'title'   => 'Maak een nieuwe incident update',
+                'success' => 'Your new incident update has been created.',
+                'failure' => 'Something went wrong with the incident update.',
+            ],
+            'edit' => [
+                'title'   => 'Edit incident update',
+                'success' => 'The incident update has been updated.',
+                'failure' => 'Something went wrong updating the incident update',
+            ],
+        ],
         'add'                      => [
             'title'   => 'Meld een incident',
             'success' => 'Incident toegevoegd.',
@@ -35,11 +48,6 @@ return [
         'delete' => [
             'success' => 'Het incident is verwijderd en zal niet meer worden weergegeven op de statuspagina.',
             'failure' => 'Het incident kon niet worden verwijderd, probeer het opnieuw.',
-        ],
-        'update' => [
-            'title'    => 'Maak een nieuwe incident update',
-            'subtitle' => 'Voeg een update toe aan <strong>:incident</strong>',
-            'success'  => 'Update added.',
         ],
 
         // Incident templates
@@ -147,13 +155,15 @@ return [
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'      => 'Abonnees',
-        'description'      => 'Abonnees ontvangen een email update wanneer er incidenten zijn gemaakt of componenten worden bijgewerkt.',
-        'verified'         => 'Geverifiëerd',
-        'not_verified'     => 'Niet geverifiëerd',
-        'subscriber'       => ':email, geabonneerd op :date',
-        'no_subscriptions' => 'Geabonneerd op alle updates',
-        'add'              => [
+        'subscribers'          => 'Abonnees',
+        'description'          => 'Abonnees ontvangen een email update wanneer er incidenten zijn gemaakt of componenten worden bijgewerkt.',
+        'description_disabled' => 'To use this feature, you need allow people to signup for notifications.',
+        'verified'             => 'Geverifiëerd',
+        'not_verified'         => 'Niet geverifiëerd',
+        'subscriber'           => ':email, geabonneerd op :date',
+        'no_subscriptions'     => 'Geabonneerd op alle updates',
+        'global'               => 'Globally subscribed',
+        'add'                  => [
             'title'   => 'Voeg een nieuwe abonnee toe',
             'success' => 'Abonnee is toegevoegd!',
             'failure' => 'Er ging iets mis met het toevoegen van de abonnee, probeer het opnieuw.',
