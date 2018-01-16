@@ -30,10 +30,10 @@ return [
         'none'         => 'Ingen hændelser er rapporteret',
         'past'         => 'Tidligere hændelser',
         'stickied'     => 'Låst hændelse',
-        'scheduled'    => 'Planlagt vedligeholdelse',
+        'scheduled'    => 'Vedligeholdelse',
         'scheduled_at' => ', planlagt til :timestamp',
         'posted'       => 'Sendt :timestamp',
-        'posted_at'    => 'Posted at :timestamp',
+        'posted_at'    => 'Indsendt :timestamp',
         'status'       => [
             1 => 'Undersøger',
             2 => 'Identificeret',
@@ -54,8 +54,8 @@ return [
     // Service Status
     'service' => [
         'good'  => '[0,1] Systemet virker|[2,Inf] Alle systemer virker',
-        'bad'   => '[0,1] Systemet har i øjeblikket problemer|[2,Inf] Nogle systemer har i øjeblikket problemer',
-        'major' => '[0,1] Systemet har i øjeblikket store problemer|[2,Inf] Nogle systemer har i øjeblikket store problemer',
+        'bad'   => '[0,1] Systemet har i øjeblikket problemer|[2,*] Nogle systemer har i øjeblikket problemer',
+        'major' => '[0,1] Systemet har i øjeblikket store problemer|[2,*] Nogle systemer har i øjeblikket store problemer',
     ],
 
     'api' => [
@@ -76,7 +76,7 @@ return [
     // Subscriber
     'subscriber' => [
         'subscribe'   => 'Tilmeld dig for at få de seneste opdateringer',
-        'unsubscribe' => 'Afmeld via :link',
+        'unsubscribe' => 'Afmeld via: link',
         'button'      => 'Abonner',
         'manage'      => [
             'no_subscriptions' => 'Du abonner i øjeblikket på alle opdateringer.',
