@@ -15,7 +15,7 @@ return [
     'setup' => [
         'email'            => 'Adresse e-mail',
         'username'         => 'Nom d\'utilisateur',
-        'password'         => 'Mot de passe ',
+        'password'         => 'Mot de passe',
         'site_name'        => 'Nom du site',
         'site_domain'      => 'Nom de domaine du site',
         'site_timezone'    => 'Choisissez votre fuseau horaire',
@@ -35,7 +35,7 @@ return [
     'login' => [
         'login'         => 'Nom d\'utilisateur ou e-mail',
         'email'         => 'Adresse e-mail',
-        'password'      => 'Mot de passe ',
+        'password'      => 'Mot de passe',
         '2fauth'        => 'Code d\'authentification',
         'invalid'       => 'Nom d\'utilisateur ou mot de passe incorrect',
         'invalid-token' => 'Jeton invalide',
@@ -93,7 +93,7 @@ return [
 
         'groups' => [
             'name'                     => 'Nom',
-            'collapsing'               => 'Etendre/Réduire les options',
+            'collapsing'               => 'Afficher/Cacher les options',
             'visible'                  => 'Toujours déplier',
             'collapsed'                => 'Réduire le groupe par défaut',
             'collapsed_incident'       => 'Réduire le groupe par défaut, mais déplier s\'il y a des incidents',
@@ -107,7 +107,7 @@ return [
     'actions' => [
         'name'               => 'Nom',
         'description'        => 'Description',
-        'start_at'           => 'Heure de début de la planification',
+        'start_at'           => 'Heure de début planifiée',
         'timezone'           => 'Fuseau horaire',
         'schedule_frequency' => 'Fréquence de planification (en secondes)',
         'completion_latency' => 'Délai d’achèvement (en secondes)',
@@ -151,14 +151,15 @@ return [
             'display-graphs'               => 'Afficher les graphiques sur la page de statut ?',
             'about-this-page'              => 'À propos de cette page',
             'days-of-incidents'            => 'Combien de jours d\'incidents à montrer ?',
+            'time_before_refresh'          => 'Status page refresh rate (in seconds).',
             'banner'                       => 'Image d\'en-tête',
-            'banner-help'                  => 'Il est recommandé de téléchargez un fichier ne dépassant pas 930px de large .',
+            'banner-help'                  => "Il est recommandé de téléchargez un fichier ne dépassant pas 930px de large .",
             'subscribers'                  => 'Permettre aux personnes de s\'inscrire aux notifications par e-mail ?',
             'skip_subscriber_verification' => 'Ne pas vérifier les utilisateurs ? (Attention, vous pourriez être spammé)',
             'automatic_localization'       => 'Traduire automatiquement votre page de statut dans la langue du visiteur ?',
             'enable_external_dependencies' => 'Activer les dépendances tierces (Google Fonts, Trackers, etc...)',
             'show_timezone'                => 'Afficher le fuseau horaire sur la page de statut.',
-            'only_disrupted_days'          => 'Afficher uniquement les jours contenant des incidents dans la ligne de temps ?',
+            'only_disrupted_days'          => 'Afficher uniquement les jours contenant des incidents dans la timeline ?',
         ],
         'analytics' => [
             'analytics_google'       => 'Code de Google Analytics',
@@ -200,7 +201,7 @@ return [
     'user' => [
         'username'       => 'Nom d\'utilisateur',
         'email'          => 'Adresse e-mail',
-        'password'       => 'Mot de passe ',
+        'password'       => 'Mot de passe',
         'api-token'      => 'Jeton de l\'API',
         'api-token-help' => 'Régénérer votre jeton API empêchera les applications existantes d\'accéder à Cachet.',
         'gravatar'       => 'Change your profile picture at Gravatar.',
@@ -223,17 +224,18 @@ return [
     ],
 
     // Buttons
-    'add'    => 'Ajouter',
-    'save'   => 'Enregistrer',
-    'update' => 'Mettre à jour',
-    'create' => 'Créer',
-    'edit'   => 'Modifier',
-    'delete' => 'Supprimer',
-    'submit' => 'Envoyer',
-    'cancel' => 'Annuler',
-    'remove' => 'Enlever',
-    'invite' => 'Inviter',
-    'signup' => 'Inscription',
+    'add'            => 'Ajouter',
+    'save'           => 'Enregistrer',
+    'update'         => 'Mettre à jour',
+    'create'         => 'Créer',
+    'edit'           => 'Modifier',
+    'delete'         => 'Supprimer',
+    'submit'         => 'Envoyer',
+    'cancel'         => 'Annuler',
+    'remove'         => 'Enlever',
+    'invite'         => 'Inviter',
+    'signup'         => 'Inscription',
+    'manage_updates' => 'Manage Updates',
 
     // Other
     'optional' => '* Optionnel',
