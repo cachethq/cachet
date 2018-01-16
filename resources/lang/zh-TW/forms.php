@@ -153,7 +153,7 @@ return [
             'days-of-incidents'            => '顯示多少天前的事件？',
             'time_before_refresh'          => 'Status page refresh rate (in seconds).',
             'banner'                       => 'Banner Image',
-            'banner-help'                  => '橫幅寬度建議少於 930px 。',
+            'banner-help'                  => "橫幅寬度建議少於 930px 。",
             'subscribers'                  => '允許用戶訂閱郵件通知嗎?',
             'skip_subscriber_verification' => 'Skip verifying of users? (Be warned, you could be spammed)',
             'automatic_localization'       => 'Automatically localise your status page to your visitor\'s language?',
