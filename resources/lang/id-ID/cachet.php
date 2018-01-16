@@ -30,10 +30,10 @@ return [
         'none'         => 'Tidak ada insiden yang dilaporkan',
         'past'         => 'Insiden sebelumnya',
         'stickied'     => 'Insiden sticky',
-        'scheduled'    => 'Jadwal Pemeliharaan',
+        'scheduled'    => 'Pemeliharaan',
         'scheduled_at' => ', dijadwalkan pada :timestamp',
         'posted'       => 'Dikirim: timestamp',
-        'posted_at'    => 'Posted at :timestamp',
+        'posted_at'    => 'Dikirim: :timestamp',
         'status'       => [
             1 => 'Investigasi',
             2 => 'Teridentifikasi',
@@ -53,9 +53,9 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] sistem operasional | [2, Inf] Semua sistem operasional',
-        'bad'   => '[0,1] sistem ini sedang mengalami masalah | [2, Inf] Beberapa sistem mengalami masalah',
-        'major' => '[0,1] Layanan mengalami outage besar | [2, Inf] Beberapa sistem mengalami outage besar',
+        'good'  => '[0,1]Sistem operasional|[2,*] Semua sistem operasional',
+        'bad'   => '[0,1]Sistem ini sedang mengalami masalah|[2,*]Beberapa sistem mengalami masalah',
+        'major' => '[0,1]Sistem mengalami masalah besar|[2,*]Beberapa sistem mengalami masalah besar',
     ],
 
     'api' => [
@@ -76,7 +76,7 @@ return [
     // Subscriber
     'subscriber' => [
         'subscribe'   => 'Ikuti newsletter untuk mendapat update terbaru.',
-        'unsubscribe' => 'Berhenti berlangganan pada :link',
+        'unsubscribe' => 'Berhenti berlangganan: :link',
         'button'      => 'Daftar',
         'manage'      => [
             'no_subscriptions' => 'Anda saat ini terdaftar untuk semua update.',
