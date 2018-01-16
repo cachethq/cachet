@@ -22,7 +22,7 @@ return [
         'incident-create-template' => 'Créer un modèle',
         'incident-templates'       => 'Modèles d\'incident',
         'updates'                  => [
-            'title'   => 'Incident updates for :incident',
+            'title'   => 'Incident mis à jour pour : incident',
             'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
             'add'     => [
                 'title'   => 'Créer une mise à jour d\'incident',
