@@ -21,7 +21,20 @@ return [
         'logged'                   => '{0} Нет инцидентов, отличная работа!|У вас зарегистрирован <strong>:count</strong> инцидент.|У вас зарегистрировано <strong>:count</strong> инцидента.|У вас зарегистрировано <strong>:count</strong> инцидентов.',
         'incident-create-template' => 'Создать шаблон',
         'incident-templates'       => 'Шаблоны инцидентов',
-        'updates'                  => '{0} Нет обновлений|Одно обновление|:count обновлений',
+        'updates'                  => [
+            'title'   => 'Incident updates for :incident',
+            'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
+            'add'     => [
+                'title'   => 'Создать новое обновление инцидента',
+                'success' => 'Your new incident update has been created.',
+                'failure' => 'Something went wrong with the incident update.',
+            ],
+            'edit' => [
+                'title'   => 'Edit incident update',
+                'success' => 'The incident update has been updated.',
+                'failure' => 'Something went wrong updating the incident update',
+            ],
+        ],
         'add'                      => [
             'title'   => 'Добавить инцидент',
             'success' => 'Инцидент добавлен.',
@@ -35,11 +48,6 @@ return [
         'delete' => [
             'success' => 'Инцидент удалён и больше не будет отображаться на статусной странице.',
             'failure' => 'Инцидент не может быть уделён, пожалуйста, попробуйте ещё раз.',
-        ],
-        'update' => [
-            'title'    => 'Создать новое обновление инцидента',
-            'subtitle' => 'Добавить обновление к <strong>:incident</strong>',
-            'success'  => 'Update added.',
         ],
 
         // Incident templates
@@ -147,13 +155,15 @@ return [
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'      => 'Подписчики',
-        'description'      => 'Подписчики будут получать уведомления по электронной почте при добавлении инцидентов или изменении статусов компонентов.',
-        'verified'         => 'Подтверждён',
-        'not_verified'     => 'Не подтверждён',
-        'subscriber'       => ':email, подписан :date',
-        'no_subscriptions' => 'Подписан на все обновления',
-        'add'              => [
+        'subscribers'          => 'Подписчики',
+        'description'          => 'Подписчики будут получать уведомления по электронной почте при добавлении инцидентов или изменении статусов компонентов.',
+        'description_disabled' => 'To use this feature, you need allow people to signup for notifications.',
+        'verified'             => 'Подтверждён',
+        'not_verified'         => 'Не подтверждён',
+        'subscriber'           => ':email, подписан :date',
+        'no_subscriptions'     => 'Подписан на все обновления',
+        'global'               => 'Globally subscribed',
+        'add'                  => [
             'title'   => 'Добавить нового подписчика',
             'success' => 'Подписчик добавлен!',
             'failure' => 'Что-то пошло не так при добавлении подписчика, пожалуйста, повторите ещё раз.',
