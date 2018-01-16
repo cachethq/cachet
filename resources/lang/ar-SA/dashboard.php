@@ -21,7 +21,20 @@ return [
         'logged'                   => '{0} There are no incidents, good work.|You have logged one incident.|You have reported <strong>:count</strong> incidents.',
         'incident-create-template' => 'إنشاء قالب',
         'incident-templates'       => 'قوالب الحالات',
-        'updates'                  => '{0} لا توجد تحديثات | تحديث واحد | :count تحديثات',
+        'updates'                  => [
+            'title'   => 'Incident updates for :incident',
+            'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
+            'add'     => [
+                'title'   => 'إنشاء تحديث حالة جديد',
+                'success' => 'Your new incident update has been created.',
+                'failure' => 'Something went wrong with the incident update.',
+            ],
+            'edit' => [
+                'title'   => 'Edit incident update',
+                'success' => 'The incident update has been updated.',
+                'failure' => 'Something went wrong updating the incident update',
+            ],
+        ],
         'add'                      => [
             'title'   => 'الإبلاغ عن حالة',
             'success' => 'تم إضافة الحالة.',
@@ -36,11 +49,6 @@ return [
             'success' => 'تم حذف الحالة و لن تظهر في صفحة الحالة الخاصة بك.',
             'failure' => 'حدث خلل أثناء حذف الحالة، الرجاء المحاولة مرة أخرى.',
         ],
-        'update' => [
-            'title'    => 'إنشاء تحديث حالة جديد',
-            'subtitle' => 'إضافة تحديث إلى <strong>:incident</strong>',
-            'success'  => 'Update added.',
-        ],
 
         // Incident templates
         'templates' => [
@@ -52,7 +60,7 @@ return [
                 'failure' => 'Something went wrong with the incident template.',
             ],
             'edit' => [
-                'title'   => 'Edit Template',
+                'title'   => 'تغيير النموذج',
                 'success' => 'The incident template has been updated.',
                 'failure' => 'Something went wrong updating the incident template',
             ],
@@ -147,13 +155,15 @@ return [
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'      => 'Subscribers',
-        'description'      => 'Subscribers will receive email updates when incidents are created or components are updated.',
-        'verified'         => 'Verified',
-        'not_verified'     => 'Not verified',
-        'subscriber'       => ':email, subscribed :date',
-        'no_subscriptions' => 'Subscribed to all updates',
-        'add'              => [
+        'subscribers'          => 'المشتركين',
+        'description'          => 'Subscribers will receive email updates when incidents are created or components are updated.',
+        'description_disabled' => 'To use this feature, you need allow people to signup for notifications.',
+        'verified'             => 'Verified',
+        'not_verified'         => 'Not verified',
+        'subscriber'           => ':email, subscribed :date',
+        'no_subscriptions'     => 'Subscribed to all updates',
+        'global'               => 'Globally subscribed',
+        'add'                  => [
             'title'   => 'Add a new subscriber',
             'success' => 'Subscriber has been added!',
             'failure' => 'Something went wrong adding the subscriber, please try again.',
@@ -168,7 +178,7 @@ return [
 
     // Team
     'team' => [
-        'team'        => 'Team',
+        'team'        => 'فريق',
         'member'      => 'Member',
         'profile'     => 'Profile',
         'description' => 'Team Members will be able to add, modify & edit components and incidents.',

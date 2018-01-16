@@ -13,95 +13,95 @@ return [
     'component' => [
         'status_update' => [
             'mail' => [
-                'subject'  => 'Component Status Updated',
-                'greeting' => 'A component\'s status was updated!',
-                'content'  => ':name status changed from :old_status to :new_status.',
-                'action'   => 'View',
+                'subject'  => 'Statusi i komponentit u azhornua',
+                'greeting' => 'Statusi i nje komponenti u azhornua!',
+                'content'  => 'Status i :name u ndryshua nga :old_status ne :new_status.',
+                'action'   => 'Shiko',
             ],
             'slack' => [
-                'title'   => 'Component Status Updated',
-                'content' => ':name status changed from :old_status to :new_status.',
+                'title'   => 'Statusi i komponentit u azhornua',
+                'content' => 'Status i :name u ndryshua nga :old_status ne :new_status.',
             ],
             'sms' => [
-                'content' => ':name status changed from :old_status to :new_status.',
+                'content' => 'Status i :name u ndryshua nga :old_status ne :new_status.',
             ],
         ],
     ],
     'incident' => [
         'new' => [
             'mail' => [
-                'subject'  => 'New Incident Reported',
-                'greeting' => 'A new incident was reported at :app_name.',
-                'content'  => 'Incident :name was reported',
-                'action'   => 'View',
+                'subject'  => 'U raportua incident i ri',
+                'greeting' => 'New incident i ri u raportua ne :app_name.',
+                'content'  => 'Incidenti :name u raportua',
+                'action'   => 'Shiko',
             ],
             'slack' => [
-                'title'   => 'Incident :name Reported',
-                'content' => 'A new incident was reported at :app_name',
+                'title'   => 'Incidenti :name u raportua',
+                'content' => 'Nje incident i ri u raportua ne :app_name',
             ],
             'sms' => [
-                'content' => 'A new incident was reported at :app_name.',
+                'content' => 'New incident i ri u raportua ne :app_name.',
             ],
         ],
         'update' => [
             'mail' => [
-                'subject' => 'Incident Updated',
-                'content' => ':name was updated',
-                'title'   => ':name was updated to :new_status',
-                'action'  => 'View',
+                'subject' => 'U azhornua nje incident',
+                'content' => ':name u azhornua',
+                'title'   => ':name u azhornua ne :new_status',
+                'action'  => 'Shiko',
             ],
             'slack' => [
-                'title'   => ':name Updated',
-                'content' => ':name was updated to :new_status',
+                'title'   => ':name u azhornua',
+                'content' => ':name u azhornua ne :new_status',
             ],
             'sms' => [
-                'content' => 'Incident :name was updated',
+                'content' => 'Incidenti :name u azhornua',
             ],
         ],
     ],
     'schedule' => [
         'new' => [
             'mail' => [
-                'subject' => 'New Schedule Created',
-                'content' => ':name was scheduled for :date',
-                'title'   => 'A new scheduled maintenance was created.',
-                'action'  => 'View',
+                'subject' => 'Nje prenotim i ri u krijua',
+                'content' => ':name u prenotua per :date',
+                'title'   => 'Nje orar i ri mirembajtjeje u krijua.',
+                'action'  => 'Shiko',
             ],
             'slack' => [
-                'title'   => 'New Schedule Created!',
-                'content' => ':name was scheduled for :date',
+                'title'   => 'New prenotim i ri u krijua!',
+                'content' => ':name u prenotua per :date',
             ],
             'sms' => [
-                'content' => ':name was scheduled for :date',
+                'content' => ':name u prenotua per :date',
             ],
         ],
     ],
     'subscriber' => [
         'verify' => [
             'mail' => [
-                'subject' => 'Verify Your Subscription',
-                'content' => 'Click to verify your subscription to :app_name status page.',
-                'title'   => 'Verify your subscription to :app_name status page.',
-                'action'  => 'Verify',
+                'subject' => 'Verifikoni abonimin tuaj',
+                'content' => 'Kliko per te verifikuar abonimin ne faqen e statusit te :app_name.',
+                'title'   => 'Verifiko abonimin tuaj ne faqen e statusit te :app_name.',
+                'action'  => 'Verifiko',
             ],
         ],
     ],
     'system' => [
         'test' => [
             'mail' => [
-                'subject' => 'Ping from Cachet!',
-                'content' => 'This is a test notification from Cachet!',
-                'title'   => '🔔',
+                'subject' => 'Ping nga Cachet!',
+                'content' => 'Ky eshte nje njoftim prove nga Cachet!',
+                'title'   => 'Zile',
             ],
         ],
     ],
     'user' => [
         'invite' => [
             'mail' => [
-                'subject' => 'Your invitation is inside...',
-                'content' => 'You have been invited to join :app_name status page.',
-                'title'   => 'You\'re invited to join :app_name status page.',
-                'action'  => 'Accept',
+                'subject' => 'Ftesa juaj eshte brenda...',
+                'content' => 'Jeni ftuar per tu bashkuar faqes se statusit te :app_name.',
+                'title'   => 'Ftesa juaj per tu bashkuar faqes se statusit te :app_name.',
+                'action'  => 'Pranoj',
             ],
         ],
     ],

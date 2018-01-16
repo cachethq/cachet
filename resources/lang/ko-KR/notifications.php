@@ -13,13 +13,13 @@ return [
     'component' => [
         'status_update' => [
             'mail' => [
-                'subject'  => 'Component Status Updated',
-                'greeting' => 'A component\'s status was updated!',
+                'subject'  => '구성요소 상태 업데이트됨',
+                'greeting' => '구성요소의 상태가 업데이트 됐습니다!',
                 'content'  => ':name status changed from :old_status to :new_status.',
-                'action'   => 'View',
+                'action'   => '보기',
             ],
             'slack' => [
-                'title'   => 'Component Status Updated',
+                'title'   => '구성요소 상태 업데이트됨',
                 'content' => ':name status changed from :old_status to :new_status.',
             ],
             'sms' => [
@@ -30,10 +30,10 @@ return [
     'incident' => [
         'new' => [
             'mail' => [
-                'subject'  => 'New Incident Reported',
+                'subject'  => '신규 문제가 보고 됐습니다.',
                 'greeting' => 'A new incident was reported at :app_name.',
                 'content'  => 'Incident :name was reported',
-                'action'   => 'View',
+                'action'   => '보기',
             ],
             'slack' => [
                 'title'   => 'Incident :name Reported',
@@ -45,10 +45,10 @@ return [
         ],
         'update' => [
             'mail' => [
-                'subject' => 'Incident Updated',
+                'subject' => '문제 보고',
                 'content' => ':name was updated',
                 'title'   => ':name was updated to :new_status',
-                'action'  => 'View',
+                'action'  => '보기',
             ],
             'slack' => [
                 'title'   => ':name Updated',
@@ -62,13 +62,13 @@ return [
     'schedule' => [
         'new' => [
             'mail' => [
-                'subject' => 'New Schedule Created',
+                'subject' => '신규 일정이 생성됨',
                 'content' => ':name was scheduled for :date',
                 'title'   => 'A new scheduled maintenance was created.',
-                'action'  => 'View',
+                'action'  => '보기',
             ],
             'slack' => [
-                'title'   => 'New Schedule Created!',
+                'title'   => '신규 일정이 생성됨!',
                 'content' => ':name was scheduled for :date',
             ],
             'sms' => [
@@ -79,18 +79,18 @@ return [
     'subscriber' => [
         'verify' => [
             'mail' => [
-                'subject' => 'Verify Your Subscription',
+                'subject' => '구독 인증을 해주세요.',
                 'content' => 'Click to verify your subscription to :app_name status page.',
                 'title'   => 'Verify your subscription to :app_name status page.',
-                'action'  => 'Verify',
+                'action'  => '인증',
             ],
         ],
     ],
     'system' => [
         'test' => [
             'mail' => [
-                'subject' => 'Ping from Cachet!',
-                'content' => 'This is a test notification from Cachet!',
+                'subject' => 'Cachet에서 온 핑!',
+                'content' => 'Cachet에서 보내는 테스트 알림 입니다!',
                 'title'   => '🔔',
             ],
         ],
@@ -98,10 +98,10 @@ return [
     'user' => [
         'invite' => [
             'mail' => [
-                'subject' => 'Your invitation is inside...',
-                'content' => 'You have been invited to join :app_name status page.',
+                'subject' => '초대장이 안에 있습니다...',
+                'content' => '초대 받았습니다 : app_name 상태 페이지.',
                 'title'   => 'You\'re invited to join :app_name status page.',
-                'action'  => 'Accept',
+                'action'  => '수락하기',
             ],
         ],
     ],

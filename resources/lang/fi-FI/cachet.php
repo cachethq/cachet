@@ -33,6 +33,7 @@ return [
         'scheduled'    => 'Ajastettu tapahtuma',
         'scheduled_at' => ', ajoitettu :timestamp',
         'posted'       => 'Posted :timestamp',
+        'posted_at'    => 'Posted at :timestamp',
         'status'       => [
             1 => 'Tutkitaan',
             2 => 'Tunnistettu',

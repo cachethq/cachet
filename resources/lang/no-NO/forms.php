@@ -41,7 +41,7 @@ return [
         'invalid-token' => 'Ugyldig token',
         'cookies'       => 'Du må aktivere informasjonskapsler for å logge inn.',
         'rate-limit'    => 'Hyppighetsgrense overskredet.',
-        'remember_me'   => 'Remember me',
+        'remember_me'   => 'Husk meg',
     ],
 
     // Incidents form fields
@@ -51,7 +51,7 @@ return [
         'component'          => 'Komponent',
         'message'            => 'Melding',
         'message-help'       => 'Du kan også bruke Markdown.',
-        'occurred_at'        => 'When did this incident occur?',
+        'occurred_at'        => 'Når inntraff denne hendelsen?',
         'notify_subscribers' => 'Varsle abonnenter?',
         'visibility'         => 'Hendelsens synlighet',
         'stick_status'       => 'Lim hendelsen',
@@ -134,8 +134,8 @@ return [
         'threshold'                => 'Hvor mange minutter på terskel mellom metriske punkter?',
         'visibility'               => 'Synlighet',
         'visibility_authenticated' => 'Visible to authenticated users',
-        'visibility_public'        => 'Visible to everybody',
-        'visibility_hidden'        => 'Always hidden',
+        'visibility_public'        => 'Synlig for alle',
+        'visibility_hidden'        => 'Alltid skjult',
 
         'points' => [
             'value' => 'Verdi',
@@ -151,6 +151,7 @@ return [
             'display-graphs'               => 'Vis grafer på statussiden?',
             'about-this-page'              => 'Om denne siden',
             'days-of-incidents'            => 'Hvor mange dagers hendelser vises?',
+            'time_before_refresh'          => 'Status page refresh rate (in seconds).',
             'banner'                       => 'Bannerbilde',
             'banner-help'                  => 'Det anbefales at du ikke laster opp bilder bredere enn 930 piksler.',
             'subscribers'                  => 'Tillatt brukere å melde seg inn for epostvarslinger?',
@@ -223,17 +224,18 @@ return [
     ],
 
     // Buttons
-    'add'    => 'Legg til',
-    'save'   => 'Lagre',
-    'update' => 'Oppdater',
-    'create' => 'Opprett',
-    'edit'   => 'Rediger',
-    'delete' => 'Slett',
-    'submit' => 'Send',
-    'cancel' => 'Avbryt',
-    'remove' => 'Fjern',
-    'invite' => 'Inviter',
-    'signup' => 'Registerer deg',
+    'add'            => 'Legg til',
+    'save'           => 'Lagre',
+    'update'         => 'Oppdater',
+    'create'         => 'Opprett',
+    'edit'           => 'Rediger',
+    'delete'         => 'Slett',
+    'submit'         => 'Send',
+    'cancel'         => 'Avbryt',
+    'remove'         => 'Fjern',
+    'invite'         => 'Inviter',
+    'signup'         => 'Registerer deg',
+    'manage_updates' => 'Manage Updates',
 
     // Other
     'optional' => '* Valgfritt',

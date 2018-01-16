@@ -21,7 +21,20 @@ return [
         'logged'                   => '{0} Hiç olay yok, tebrikler. |Bir olay rapor ettiniz.|<strong>:count</strong> olay rapor ettiniz.',
         'incident-create-template' => 'Şablon Oluştur',
         'incident-templates'       => 'Olay Şablonları',
-        'updates'                  => '{0} Sıfır Güncelleme | Bir Güncelleme |:count Güncelleme',
+        'updates'                  => [
+            'title'   => 'Incident updates for :incident',
+            'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
+            'add'     => [
+                'title'   => 'Yeni olay güncellemesi oluştur',
+                'success' => 'Your new incident update has been created.',
+                'failure' => 'Something went wrong with the incident update.',
+            ],
+            'edit' => [
+                'title'   => 'Edit incident update',
+                'success' => 'The incident update has been updated.',
+                'failure' => 'Something went wrong updating the incident update',
+            ],
+        ],
         'add'                      => [
             'title'   => 'Olay Ekle',
             'success' => 'Olay eklendi.',
@@ -35,11 +48,6 @@ return [
         'delete' => [
             'success' => 'Olay silindi ve durum sayfanızda bir daha gösterilmeyecek.',
             'failure' => 'Olay silinemedi, lütfen tekrar deneyin.',
-        ],
-        'update' => [
-            'title'    => 'Yeni olay güncellemesi oluştur',
-            'subtitle' => '<strong>:incident</strong> için güncelleme ekkleyin',
-            'success'  => 'Update added.',
         ],
 
         // Incident templates
@@ -97,26 +105,26 @@ return [
         ],
         'edit' => [
             'title'   => 'Bileşen düzenle',
-            'success' => 'Component updated.',
+            'success' => 'Bileşen güncellendi.',
             'failure' => 'Bileşenlerle ilgili bir şeyler yanlış gitti, lütfen daha sonra tekrar deneyin.',
         ],
         'delete' => [
-            'success' => 'The component has been deleted!',
-            'failure' => 'The component could not be deleted, please try again.',
+            'success' => 'Bileşen silindi!',
+            'failure' => 'Bileşen silinemedi, lütfen tekrar deneyin.',
         ],
 
         // Component groups
         'groups' => [
-            'groups'        => 'Component group|Component groups',
-            'no_components' => 'You should add a component group.',
+            'groups'        => 'Bileşen grubu|Bileşen grupları',
+            'no_components' => 'Bir bileşen grubu eklemeniz gerekir.',
             'add'           => [
-                'title'   => 'Add a component group',
-                'success' => 'Component group added.',
+                'title'   => 'Bir bileşen grubu ekle',
+                'success' => 'Bileşen grubu eklendi.',
                 'failure' => 'Bileşenlerle ilgili bir şeyler yanlış gitti, lütfen daha sonra tekrar deneyin.',
             ],
             'edit' => [
-                'title'   => 'Edit a component group',
-                'success' => 'Component group updated.',
+                'title'   => 'Bileşen grubunu düzenle',
+                'success' => 'Bileşen grubu güncellendi.',
                 'failure' => 'Bileşenlerle ilgili bir şeyler yanlış gitti, lütfen daha sonra tekrar deneyin.',
             ],
             'delete' => [
@@ -132,161 +140,163 @@ return [
         'add'     => [
             'title'   => 'Bir ölçü oluştur',
             'message' => 'Bir ölçü eklemelisiniz.',
-            'success' => 'Metric created.',
+            'success' => 'Metrik oluşturuldu.',
             'failure' => 'Something went wrong with the metric, please try again.',
         ],
         'edit' => [
-            'title'   => 'Edit a metric',
-            'success' => 'Metric updated.',
+            'title'   => 'Bir metrik düzenle',
+            'success' => 'Metrik güncellendi.',
             'failure' => 'Something went wrong with the metric, please try again.',
         ],
         'delete' => [
-            'success' => 'The metric has been deleted and will no longer display on your status page.',
-            'failure' => 'The metric could not be deleted, please try again.',
+            'success' => 'Metrik silindi ve artık durum sayfanızda gösterilmeyecek.',
+            'failure' => 'Metrik silinemedi, lütfen tekrar deneyin.',
         ],
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'      => 'Subscribers',
-        'description'      => 'Subscribers will receive email updates when incidents are created or components are updated.',
-        'verified'         => 'Verified',
-        'not_verified'     => 'Not verified',
-        'subscriber'       => ':email, subscribed :date',
-        'no_subscriptions' => 'Subscribed to all updates',
-        'add'              => [
-            'title'   => 'Add a new subscriber',
-            'success' => 'Subscriber has been added!',
-            'failure' => 'Something went wrong adding the subscriber, please try again.',
-            'help'    => 'Enter each subscriber on a new line.',
+        'subscribers'          => 'Aboneler',
+        'description'          => 'Aboneler, olaylar oluşturulduğunda veya bileşenler güncellendiğinde e-posta güncellemelerini alacaktır.',
+        'description_disabled' => 'To use this feature, you need allow people to signup for notifications.',
+        'verified'             => 'Onaylanmış',
+        'not_verified'         => 'Doğrulanmadı',
+        'subscriber'           => ':email, abone oldu :date',
+        'no_subscriptions'     => 'Güncellemeler için abone ol',
+        'global'               => 'Globally subscribed',
+        'add'                  => [
+            'title'   => 'Yeni abone ekleme',
+            'success' => 'Abone eklendi!',
+            'failure' => 'Abone eklerken bir şeyler yanlış gitti, lütfen tekrar deneyin.',
+            'help'    => 'Her bir aboneyi yeni bir hatta girin.',
         ],
         'edit' => [
-            'title'   => 'Update subscriber',
-            'success' => 'Subscriber has been updated!',
-            'failure' => 'Something went wrong editing the subscriber, please try again.',
+            'title'   => 'Aboneleri güncelle',
+            'success' => 'Aboneler güncellendi!',
+            'failure' => 'Abone eklerken bir şeyler yanlış gitti, lütfen tekrar deneyin.',
         ],
     ],
 
     // Team
     'team' => [
-        'team'        => 'Team',
-        'member'      => 'Member',
-        'profile'     => 'Profile',
-        'description' => 'Team Members will be able to add, modify & edit components and incidents.',
+        'team'        => 'Takım',
+        'member'      => 'Üye',
+        'profile'     => 'Profil',
+        'description' => 'Ekip Üyeleri bileşenleri ve olayları ekleyebilir, değiştirebilir ve düzenleyebilir.',
         'add'         => [
-            'title'   => 'Add a new team member',
-            'success' => 'Team member added.',
-            'failure' => 'The team member could not be added, please try again.',
+            'title'   => 'Yeni ekip üyesi ekle',
+            'success' => 'Ekip üyesi eklendi.',
+            'failure' => 'Ekip üyesi eklenemedi, lütfen tekrar deneyin.',
         ],
         'edit' => [
-            'title'   => 'Update profile',
-            'success' => 'Profile updated.',
-            'failure' => 'Something went wrong updating the profile, please try again.',
+            'title'   => 'Profili Güncelle',
+            'success' => 'Profil güncellendi.',
+            'failure' => 'Profili güncelleme işlemi sırasında bir sorun oluştu, lütfen tekrar deneyin.',
         ],
         'delete' => [
-            'success' => 'Team member has been deleted and will no longer have access to the dashboard!',
-            'failure' => 'The team member could not be added, please try again.',
+            'success' => 'Ekip üyesi silindi ve artık gösterge tablosuna erişimi yok!',
+            'failure' => 'Ekip üyesi eklenemedi, lütfen tekrar deneyin.',
         ],
         'invite' => [
-            'title'   => 'Invite a new team member',
-            'success' => 'An invite has been sent',
-            'failure' => 'The invite could not be sent, please try again.',
+            'title'   => 'Yeni bir ekip üyesi davet et',
+            'success' => 'Bir davet gönderildi',
+            'failure' => 'Davet gönderilemedi, lütfen tekrar deneyin.',
         ],
     ],
 
     // Settings
     'settings' => [
-        'settings'  => 'Settings',
+        'settings'  => 'Ayarlar',
         'app-setup' => [
-            'app-setup'   => 'Application Setup',
-            'images-only' => 'Only images may be uploaded.',
-            'too-big'     => 'The file you uploaded is too big. Upload an image smaller than :size',
+            'app-setup'   => 'Uygulama kurulumu',
+            'images-only' => 'Yalnızca resimler yüklenebilir.',
+            'too-big'     => 'Yüklediğiniz dosya çok büyük. Boyutundan küçük bir resim yükleyin',
         ],
         'analytics' => [
-            'analytics' => 'Analytics',
+            'analytics' => 'Analitik',
         ],
         'log' => [
-            'log' => 'Log',
+            'log' => 'Giriş',
         ],
         'localization' => [
-            'localization' => 'Localization',
+            'localization' => 'Yerelleştirme',
         ],
         'customization' => [
-            'customization' => 'Customization',
-            'header'        => 'Custom Header HTML',
-            'footer'        => 'Custom Footer HTML',
+            'customization' => 'Özelleştirme',
+            'header'        => 'Özel Başlık HTML',
+            'footer'        => 'Özel Altbilgi HTML',
         ],
         'mail' => [
-            'mail'  => 'Mail',
-            'test'  => 'Test',
+            'mail'  => 'Posta',
+            'test'  => 'Ölçek',
             'email' => [
-                'subject' => 'Test notification from Cachet',
-                'body'    => 'This is a test notification from Cachet.',
+                'subject' => 'Önbellekten sınama bildirimi',
+                'body'    => 'Bu, Cachet\'den gelen bir test bildirimidir.',
             ],
         ],
         'security' => [
-            'security'   => 'Security',
-            'two-factor' => 'Users without two-factor authentication',
+            'security'   => 'Güvenlik',
+            'two-factor' => 'İki faktörlü kimlik doğrulaması olmayan kullanıcılar',
         ],
         'stylesheet' => [
-            'stylesheet' => 'Stylesheet',
+            'stylesheet' => 'Stil',
         ],
         'theme' => [
-            'theme' => 'Theme',
+            'theme' => 'Tema',
         ],
         'edit' => [
-            'success' => 'Settings saved.',
-            'failure' => 'Settings could not be saved.',
+            'success' => 'Ayarlar kaydedildi.',
+            'failure' => 'Ayarlar kaydedilemedi.',
         ],
         'credits' => [
-            'credits'       => 'Credits',
-            'contributors'  => 'Contributors',
-            'license'       => 'Cachet is a BSD-3-licensed open source project, released by <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
-            'backers-title' => 'Backers & Sponsors',
-            'backers'       => 'If you\'d like to support future development, check out the <a href="https://patreon.com/jbrooksuk" target="_blank">Cachet Patreon</a> campaign.',
-            'thank-you'     => 'Thank you to each and every one of the :count contributors.',
+            'credits'       => 'Kredi',
+            'contributors'  => 'Katkıda bulunanlar',
+            'license'       => 'Cachet, <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank"> Alt Üç\'te yayınlanan BSD-3 lisanslı bir açık kaynak projesidir, tarafından yayımlı </a>.',
+            'backers-title' => 'Destekçiler ve Sponsorlar',
+            'backers'       => 'Gelecekteki gelişimi desteklemek isterseniz <a href="https://patreon.com/jbrooksuk" target="_blank"> Cachet Patreon </a> kampanyasına göz atın.',
+            'thank-you'     => 'Her biri için teşekkür ederim: katılımcıları sayın.',
         ],
     ],
 
     // Login
     'login' => [
-        'login'      => 'Login',
-        'logged_in'  => 'You\'re logged in.',
-        'welcome'    => 'Welcome back!',
-        'two-factor' => 'Please enter your token.',
+        'login'      => 'Oturum aç',
+        'logged_in'  => 'Giriş yaptın.',
+        'welcome'    => 'Tekrar Hoşgeldin!',
+        'two-factor' => 'Lütfen tokeni giriniz.',
     ],
 
     // Sidebar footer
-    'help'        => 'Help',
-    'status_page' => 'Status Page',
-    'logout'      => 'Logout',
+    'help'        => 'Yardım',
+    'status_page' => 'Durum sayfası',
+    'logout'      => 'Çıkış yap',
 
     // Notifications
     'notifications' => [
-        'notifications' => 'Notifications',
-        'awesome'       => 'Awesome.',
-        'whoops'        => 'Whoops.',
+        'notifications' => 'Bildirimler',
+        'awesome'       => 'Harika.',
+        'whoops'        => 'Hay aksi.',
     ],
 
     // Widgets
     'widgets' => [
-        'support'          => 'Support Cachet',
-        'support_subtitle' => 'Check out our <strong><a href="https://patreon.com/jbrooksuk" target="_blank">Patreon</a></strong> page!',
-        'news'             => 'Latest News',
-        'news_subtitle'    => 'Get the latest update',
+        'support'          => 'Destek Bildirimi',
+        'support_subtitle' => '<Strong> <a href="https://patreon.com/jbrooksuk" target="_blank"> Patreon </a> </ strong> sayfamızı ziyaret edin!',
+        'news'             => 'Son Haberler',
+        'news_subtitle'    => 'En son güncellemeyi edinin',
     ],
 
     // Welcome modal
     'welcome' => [
-        'welcome' => 'Welcome to your new status page, :username!',
-        'message' => 'You\'re almost ready but you might want to configure these extra settings first...',
-        'close'   => 'I\'m good thanks!',
+        'welcome' => 'Yeni durum sayfanıza hoş geldiniz,: kullanıcı adı!',
+        'message' => 'Neredeyse hazırsınız ancak ilk önce bu ek ayarları yapılandırmak isteyebilirsiniz...',
+        'close'   => 'İyiyim teşekkürler!',
         'steps'   => [
-            'component'  => 'Add your components',
-            'incident'   => 'Create an incident',
-            'customize'  => 'Customize your page',
-            'team'       => 'Add your team',
-            'api'        => 'Generate an API token',
-            'two-factor' => 'Setup Two Factor Authentication',
+            'component'  => 'Bileşenlerinizi ekleyin',
+            'incident'   => 'Olay oluşturma',
+            'customize'  => 'Sayfanı özelleştir',
+            'team'       => 'Ekibine ekle',
+            'api'        => 'Bir API belirteci oluşturma',
+            'two-factor' => 'İki Faktör Kimlik Doğrulamasını Ayarlayın',
         ],
     ],
 

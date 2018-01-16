@@ -21,7 +21,20 @@ return [
         'logged'                   => '{0} Tidak ada insiden, bagus.|Anda mencatat satu insiden.|Anda sudah melaporkan <strong>:count</strong> insiden.',
         'incident-create-template' => 'Buat Template',
         'incident-templates'       => 'Template Insiden',
-        'updates'                  => '{0} Nol Update|Satu Update|:count Update',
+        'updates'                  => [
+            'title'   => 'Incident updates for :incident',
+            'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
+            'add'     => [
+                'title'   => 'Buat update insiden baru',
+                'success' => 'Your new incident update has been created.',
+                'failure' => 'Something went wrong with the incident update.',
+            ],
+            'edit' => [
+                'title'   => 'Edit incident update',
+                'success' => 'The incident update has been updated.',
+                'failure' => 'Something went wrong updating the incident update',
+            ],
+        ],
         'add'                      => [
             'title'   => 'Tambahkan Insiden',
             'success' => 'Insiden sudah ditambahkan.',
@@ -35,11 +48,6 @@ return [
         'delete' => [
             'success' => 'Insiden sudah dihapus dan tidak akan ditampilkan pada halaman status anda.',
             'failure' => 'Insiden tidak dapat dihapus, silakan coba lagi.',
-        ],
-        'update' => [
-            'title'    => 'Buat update insiden baru',
-            'subtitle' => 'Menambahkan update ke <strong>:incident</strong>',
-            'success'  => 'Update added.',
         ],
 
         // Incident templates
@@ -147,13 +155,15 @@ return [
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'      => 'Berlangganan',
-        'description'      => 'Pelanggan akan menerima update email ketika insiden dibuat atau komponen diperbarui.',
-        'verified'         => 'Terverifikasi',
-        'not_verified'     => 'Belum Diverifikasi',
-        'subscriber'       => ':email, berlangganan :date',
-        'no_subscriptions' => 'Berlangganan semua update',
-        'add'              => [
+        'subscribers'          => 'Berlangganan',
+        'description'          => 'Pelanggan akan menerima update email ketika insiden dibuat atau komponen diperbarui.',
+        'description_disabled' => 'To use this feature, you need allow people to signup for notifications.',
+        'verified'             => 'Terverifikasi',
+        'not_verified'         => 'Belum Diverifikasi',
+        'subscriber'           => ':email, berlangganan :date',
+        'no_subscriptions'     => 'Berlangganan semua update',
+        'global'               => 'Globally subscribed',
+        'add'                  => [
             'title'   => 'Tambah Pelanggan Baru',
             'success' => 'Pelanggan sudah ditambahkan.',
             'failure' => 'Ada masalah saat menambah langganan, silakan coba lagi.',

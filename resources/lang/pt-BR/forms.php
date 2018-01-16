@@ -41,7 +41,7 @@ return [
         'invalid-token' => 'Token inválido',
         'cookies'       => 'Você deve habilitar os cookies do navegador para logar.',
         'rate-limit'    => 'Limite de acesso excedido.',
-        'remember_me'   => 'Lembre-me',
+        'remember_me'   => 'Lembrar-me',
     ],
 
     // Incidents form fields
@@ -71,7 +71,7 @@ return [
         'status'       => 'Status',
         'message'      => 'Mensagem',
         'message-help' => 'Você também pode usar o Markdown.',
-        'scheduled_at' => 'Quando é essa manutenção programada para?',
+        'scheduled_at' => 'Está manutenção foi programada para quando?',
         'completed_at' => 'Quando essa manutenção foi concluída?',
         'templates'    => [
             'name'     => 'Nome',
@@ -151,6 +151,7 @@ return [
             'display-graphs'               => 'Exibir gráficos na página de status?',
             'about-this-page'              => 'Sobre esta página',
             'days-of-incidents'            => 'Quantos dias de incidentes para mostrar?',
+            'time_before_refresh'          => 'Status page refresh rate (in seconds).',
             'banner'                       => 'Imagem do banner',
             'banner-help'                  => 'É recomendável que você faça upload de arquivos menores que 930px .',
             'subscribers'                  => 'Permitir que outras pessoas se cadastrem para notificações via e-mail?',
@@ -223,17 +224,18 @@ return [
     ],
 
     // Buttons
-    'add'    => 'Adicionar',
-    'save'   => 'Salvar',
-    'update' => 'Atualizar',
-    'create' => 'Criar',
-    'edit'   => 'Editar',
-    'delete' => 'Apagar',
-    'submit' => 'Enviar',
-    'cancel' => 'Cancelar',
-    'remove' => 'Remover',
-    'invite' => 'Convite',
-    'signup' => 'Cadastrar-se',
+    'add'            => 'Adicionar',
+    'save'           => 'Salvar',
+    'update'         => 'Atualizar',
+    'create'         => 'Criar',
+    'edit'           => 'Editar',
+    'delete'         => 'Apagar',
+    'submit'         => 'Enviar',
+    'cancel'         => 'Cancelar',
+    'remove'         => 'Remover',
+    'invite'         => 'Convite',
+    'signup'         => 'Cadastrar-se',
+    'manage_updates' => 'Manage Updates',
 
     // Other
     'optional' => '* Opcional',
