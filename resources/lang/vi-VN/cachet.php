@@ -14,7 +14,7 @@ return [
     'components' => [
         'last_updated' => 'Lần cập nhật cuối :timestamp',
         'status'       => [
-            0 => 'Unknown',
+            0 => 'Không biết',
             1 => 'Hoạt động',
             2 => 'Vấn đề hiệu suất',
             3 => 'Ngưng hoạt động một phần',
@@ -28,11 +28,12 @@ return [
     // Incidents
     'incidents' => [
         'none'         => 'Không có báo cáo về sự số nào',
-        'past'         => 'Sự số trong quá khứ',
-        'stickied'     => 'Stickied Incidents',
+        'past'         => 'Các sự số trong quá khứ',
+        'stickied'     => 'Sự cố Stickied',
         'scheduled'    => 'Bảo trì định kỳ',
         'scheduled_at' => ', định kỳ :timestamp',
-        'posted'       => 'Posted :timestamp',
+        'posted'       => 'Đã đăng :timestamp',
+        'posted_at'    => 'Posted at :timestamp',
         'status'       => [
             1 => 'Đang điều tra',
             2 => 'Xác định',
@@ -44,9 +45,9 @@ return [
     // Schedule
     'schedules' => [
         'status' => [
-            0 => 'Upcoming',
-            1 => 'In Progress',
-            2 => 'Complete',
+            0 => 'Sắp tới',
+            1 => 'Đang xử lý',
+            2 => 'Hoàn thành',
         ],
     ],
 
@@ -65,8 +66,8 @@ return [
     // Metrics
     'metrics' => [
         'filter' => [
-            'last_hour' => 'Last Hour',
-            'hourly'    => 'Last 12 Hours',
+            'last_hour' => 'Giờ trước',
+            'hourly'    => '12 giờ trước',
             'weekly'    => 'Tuần',
             'monthly'   => 'Tháng',
         ],
@@ -74,22 +75,22 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'   => 'Subscribe to get the updates',
+        'subscribe'   => 'Đăng ký để nhận các thông báo cập nhật',
         'unsubscribe' => 'Unsubscribe at :link',
         'button'      => 'Đăng ký',
         'manage'      => [
-            'no_subscriptions' => 'You\'re currently subscribed to all updates.',
-            'my_subscriptions' => 'You\'re currently subscribed to the following updates.',
+            'no_subscriptions' => 'Bạn hiện đã đăng ký nhận tất cả các thông báo cập nhật.',
+            'my_subscriptions' => 'Bạn hiện đã đăng ký nhận các thông báo cập nhật sau.',
         ],
         'email' => [
-            'subscribe'          => 'Subscribe to email updates.',
-            'subscribed'         => 'You\'ve been subscribed to email notifications, please check your email to confirm your subscription.',
-            'verified'           => 'Your email subscription has been confirmed. Thank you!',
-            'manage'             => 'Manage your subscription',
-            'unsubscribe'        => 'Unsubscribe from email updates.',
-            'unsubscribed'       => 'Your email subscription has been cancelled.',
-            'failure'            => 'Something went wrong with the subscription.',
-            'already-subscribed' => 'Cannot subscribe :email because they\'re already subscribed.',
+            'subscribe'          => 'Đăng ký nhận thông báo cập nhật qua email.',
+            'subscribed'         => 'Bạn đã đăng ký nhận email thông báo cập nhật, xin vui lòng kiểm tra email của bạn để xác nhận.',
+            'verified'           => 'Đăng ký email của bạn đã được xác nhận. Cảm ơn bạn!',
+            'manage'             => 'Quản lý đăng ký',
+            'unsubscribe'        => 'Hủy đăng ký thông báo cập nhật qua email.',
+            'unsubscribed'       => 'Đăng ký email của bạn đã bị hủy bỏ.',
+            'failure'            => 'Có lỗi xảy ra khi đăng ký nhận thông báo cập nhật.',
+            'already-subscribed' => 'Không thể đăng ký :email bởi vì họ đã đăng ký.',
         ],
     ],
 
