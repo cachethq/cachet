@@ -151,9 +151,9 @@ return [
             'display-graphs'               => 'Afficher les graphiques sur la page de statut ?',
             'about-this-page'              => 'À propos de cette page',
             'days-of-incidents'            => 'Combien de jours d\'incidents à montrer ?',
-            'time_before_refresh'          => 'Status page refresh rate (in seconds).',
+            'time_before_refresh'          => 'Fréquence de rafraîchissement de la page de statut (en secondes).',
             'banner'                       => 'Image d\'en-tête',
-            'banner-help'                  => 'Il est recommandé de téléchargez un fichier ne dépassant pas 930px de large .',
+            'banner-help'                  => "Il est recommandé de téléchargez un fichier ne dépassant pas 930px de large .",
             'subscribers'                  => 'Permettre aux personnes de s\'inscrire aux notifications par e-mail ?',
             'skip_subscriber_verification' => 'Ne pas vérifier les utilisateurs ? (Attention, vous pourriez être spammé)',
             'automatic_localization'       => 'Traduire automatiquement votre page de statut dans la langue du visiteur ?',
@@ -235,7 +235,7 @@ return [
     'remove'         => 'Enlever',
     'invite'         => 'Inviter',
     'signup'         => 'Inscription',
-    'manage_updates' => 'Manage Updates',
+    'manage_updates' => 'Gérer les mises à jour',
 
     // Other
     'optional' => '* Optionnel',
