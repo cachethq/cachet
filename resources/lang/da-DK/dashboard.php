@@ -22,7 +22,7 @@ return [
         'incident-create-template' => 'Create Template',
         'incident-templates'       => 'Incident Templates',
         'updates'                  => [
-            'title'   => 'Incident updates for :incident',
+            'title'   => 'Hændelsesopdateringer til :hændelse',
             'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
             'add'     => [
                 'title'   => 'Opret ny hændelsesopdatering',
@@ -73,7 +73,7 @@ return [
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => 'Planlagt vedligeholdelse',
+        'schedule'     => 'Vedligeholdelse',
         'logged'       => '{0} Der er intet planlagt.|Der er 1 planlagt.|Der er <strong>:count</strong> planlagte.',
         'scheduled_at' => 'Planlagt til :timestamp',
         'add'          => [
