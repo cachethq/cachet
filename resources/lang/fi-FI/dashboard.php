@@ -21,7 +21,20 @@ return [
         'logged'                   => '{0} There are no incidents, good work.|You have logged one incident.|You have reported <strong>:count</strong> incidents.',
         'incident-create-template' => 'Luo mallipohja',
         'incident-templates'       => 'Tapahtumamalli',
-        'updates'                  => '{0} Zero Updates|One Update|:count Updates',
+        'updates'                  => [
+            'title'   => 'Incident updates for :incident',
+            'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
+            'add'     => [
+                'title'   => 'Luo tapahtuma malli',
+                'success' => 'Your new incident update has been created.',
+                'failure' => 'Something went wrong with the incident update.',
+            ],
+            'edit' => [
+                'title'   => 'Edit incident update',
+                'success' => 'The incident update has been updated.',
+                'failure' => 'Something went wrong updating the incident update',
+            ],
+        ],
         'add'                      => [
             'title'   => 'Ilmoita tapahtuma',
             'success' => 'Tapahtuma lisätty.',
@@ -35,11 +48,6 @@ return [
         'delete' => [
             'success' => 'Tapaus on poistettu ja ei näytetä tila-sivulla.',
             'failure' => 'The incident could not be deleted, please try again.',
-        ],
-        'update' => [
-            'title'    => 'Luo tapahtuma malli',
-            'subtitle' => 'Add an update to <strong>:incident</strong>',
-            'success'  => 'Update added.',
         ],
 
         // Incident templates
@@ -147,13 +155,15 @@ return [
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'      => 'Tilaajat',
-        'description'      => 'Tilaajat saavat sähköposti päivityksiä kun tapahtumia luodaan tai komponentteja päivitetään.',
-        'verified'         => 'Vahvistettu',
-        'not_verified'     => 'Ei todennettu',
-        'subscriber'       => ':email, subscribed :date',
-        'no_subscriptions' => 'Tilaa kaikki päivitykset',
-        'add'              => [
+        'subscribers'          => 'Tilaajat',
+        'description'          => 'Tilaajat saavat sähköposti päivityksiä kun tapahtumia luodaan tai komponentteja päivitetään.',
+        'description_disabled' => 'To use this feature, you need allow people to signup for notifications.',
+        'verified'             => 'Vahvistettu',
+        'not_verified'         => 'Ei todennettu',
+        'subscriber'           => ':email, subscribed :date',
+        'no_subscriptions'     => 'Tilaa kaikki päivitykset',
+        'global'               => 'Globally subscribed',
+        'add'                  => [
             'title'   => 'Lisää uusi tilaaja',
             'success' => 'Tilaaja lisätty.',
             'failure' => 'Jotakin meni vikaan lisäessä uutta tilaajaa, ole hyvä ja yritä uudelleen.',
