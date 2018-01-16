@@ -23,6 +23,6 @@ class TagTest extends AbstractTestCase
 {
     public function testValidation()
     {
-        $this->assertFalse(property_exists(new Tag(), 'rules'));
+        $this->assertClassNotHasAttribute('rules', Tag::class);
     }
 }
