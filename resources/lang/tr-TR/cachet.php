@@ -33,6 +33,7 @@ return [
         'scheduled'    => 'Zamanlanmış bakım',
         'scheduled_at' => ',zamanlanmış :zamandilimi',
         'posted'       => ':timestamp gönderildi',
+        'posted_at'    => 'Posted at :timestamp',
         'status'       => [
             1 => 'İnceleniyor',
             2 => 'Tanımlandı',
@@ -75,7 +76,7 @@ return [
     // Subscriber
     'subscriber' => [
         'subscribe'   => 'Güncellemeleri almak için abone olun',
-        'unsubscribe' => 'Unsubscribe at :link',
+        'unsubscribe' => 'Adresindeki aboneliği iptal et :link',
         'button'      => 'Abone ol',
         'manage'      => [
             'no_subscriptions' => 'Şu anda tüm güncellemeleri abone oldunuz.',
@@ -111,16 +112,16 @@ return [
         'close'     => 'Kapat',
         'subscribe' => [
             'title'  => 'Bileşen güncellemelerine abone ol',
-            'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll already receive emails for this component.',
+            'body'   => 'Bu içeriğin güncellemelerine abone olmak için e-mail adresinizi giriniz. Eğer zaten aboneyseniz, bu içerikle ilgili zaten e-mailler alacaksınız.',
             'button' => 'Abone ol',
         ],
     ],
 
     // Other
     'home'            => 'Ana Sayfa',
-    'description'     => 'Stay up to date with the latest service updates from :app.',
-    'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
-    'timezone'        => 'Times are shown in :timezone.',
+    'description'     => 'Şu uygulamalardaki en son hizmet güncellemeleri ile güncel kalın.',
+    'powered_by'      => '<a href="https://cachethq.io" class="links"> Önbellek </a> kaynaklı.',
+    'timezone'        => 'Saatler, saat diliminde gösterilir.',
     'about_this_site' => 'Bu Site hakkında',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',
