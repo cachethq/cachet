@@ -11,8 +11,8 @@
 
 return [
 
-    'dashboard'          => 'Műszerfal',
-    'writeable_settings' => 'The Cachet settings directory is not writeable. Please make sure that <code>./bootstrap/cachet</code> is writeable by the web server.',
+    'dashboard'          => 'Irányítópult',
+    'writeable_settings' => 'A Cachet beállítás mappája nem írható. Kérjük győződjön meg róla, hogy a <code>./bootstrap/cachet</code> mapp írható a webszerver által.',
 
     // Incidents
     'incidents' => [
@@ -21,7 +21,20 @@ return [
         'logged'                   => '{0} Nincs semmilyen incidens, szép munka.|Ön egy incidenst jelentett.|Ön összesen <strong>:count</strong> incidenst jelentett.',
         'incident-create-template' => 'Sablon létrehozása',
         'incident-templates'       => 'Incidens Sablonok',
-        'updates'                  => '{0} Zero Updates|One Update|:count Updates',
+        'updates'                  => [
+            'title'   => 'Incident updates for :incident',
+            'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
+            'add'     => [
+                'title'   => 'Új incidens frissítés létrehozása',
+                'success' => 'Your new incident update has been created.',
+                'failure' => 'Something went wrong with the incident update.',
+            ],
+            'edit' => [
+                'title'   => 'Edit incident update',
+                'success' => 'The incident update has been updated.',
+                'failure' => 'Something went wrong updating the incident update',
+            ],
+        ],
         'add'                      => [
             'title'   => 'Incidens jelentése',
             'success' => 'Incidens létrehozva.',
@@ -35,11 +48,6 @@ return [
         'delete' => [
             'success' => 'Az incidens törölve lett és nem fog többé megjelenni.',
             'failure' => 'Az incidenst nem lehetett törölni, kérjük próbálja újra.',
-        ],
-        'update' => [
-            'title'    => 'Create new incident update',
-            'subtitle' => 'Add an update to <strong>:incident</strong>',
-            'success'  => 'Update added.',
         ],
 
         // Incident templates
@@ -147,13 +155,15 @@ return [
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'      => 'Feliratkozók',
-        'description'      => 'A feliratkozók email értesítést kapnak ha incidensek lesznek létrehozva vagy komponensek lesznek frissítve.',
-        'verified'         => 'Megerősítve',
-        'not_verified'     => 'Nincs megerősítve',
-        'subscriber'       => ':email, feliratkozott: :date',
-        'no_subscriptions' => 'Feliratkozva az összes frissítésre',
-        'add'              => [
+        'subscribers'          => 'Feliratkozók',
+        'description'          => 'A feliratkozók email értesítést kapnak ha incidensek lesznek létrehozva vagy komponensek lesznek frissítve.',
+        'description_disabled' => 'To use this feature, you need allow people to signup for notifications.',
+        'verified'             => 'Megerősítve',
+        'not_verified'         => 'Nincs megerősítve',
+        'subscriber'           => ':email, feliratkozott: :date',
+        'no_subscriptions'     => 'Feliratkozva az összes frissítésre',
+        'global'               => 'Globally subscribed',
+        'add'                  => [
             'title'   => 'Új feliratkozó hozzáadása',
             'success' => 'Feliratkozó létrehozva!',
             'failure' => 'Hiba történt a feliratkozó hozzáadásakor, kérjük próbálja újra.',
@@ -205,7 +215,7 @@ return [
             'analytics' => 'Analízis',
         ],
         'log' => [
-            'log' => 'Log',
+            'log' => 'Napló',
         ],
         'localization' => [
             'localization' => 'Lokalizáció',
@@ -216,11 +226,11 @@ return [
             'footer'        => 'Egyéni lábjegyzet HTML',
         ],
         'mail' => [
-            'mail'  => 'Mail',
-            'test'  => 'Test',
+            'mail'  => 'Lelevelezés',
+            'test'  => 'Teszt',
             'email' => [
-                'subject' => 'Test notification from Cachet',
-                'body'    => 'This is a test notification from Cachet.',
+                'subject' => 'Cachet teszt értesítés',
+                'body'    => 'Ez egy Cachet teszt értesítés.',
             ],
         ],
         'security' => [
