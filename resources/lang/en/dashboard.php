@@ -18,7 +18,7 @@ return [
     'incidents' => [
         'title'                    => 'Incidents & Maintenance',
         'incidents'                => 'Incidents',
-        'logged'                   => '{0} There are no incidents, good work.|[1] You have logged one incident.|[2, Inf] You have reported <strong>:count</strong> incidents.',
+        'logged'                   => '{0} There are no incidents, good work.|[1] You have logged one incident.|[2,*] You have reported <strong>:count</strong> incidents.',
         'incident-create-template' => 'Create Template',
         'incident-templates'       => 'Incident Templates',
         'updates'                  => [
@@ -74,7 +74,7 @@ return [
     // Incident Maintenance
     'schedule' => [
         'schedule'     => 'Maintenance',
-        'logged'       => '{0} There has been no Maintenance, good work.|[1] You have logged one schedule.|[2,Inf] You have reported <strong>:count</strong> schedules.',
+        'logged'       => '{0} There has been no Maintenance, good work.|[1] You have logged one schedule.|[2,*] You have reported <strong>:count</strong> schedules.',
         'scheduled_at' => 'Scheduled at :timestamp',
         'add'          => [
             'title'   => 'Add Maintenance',
