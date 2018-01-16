@@ -23,10 +23,10 @@ return [
         'incident-templates'       => 'Modèles d\'incident',
         'updates'                  => [
             'title'   => 'Incident mis à jour pour : incident',
-            'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
+            'count'   => '{0} Aucune mise à jour|[1] Une mise à jour|[2] Deux mises à jour|[3,*] Plusieurs mises à jour',
             'add'     => [
                 'title'   => 'Créer une mise à jour d\'incident',
-                'success' => 'Your new incident update has been created.',
+                'success' => 'Votre nouvelle mise à jour d\'incident a été créée.',
                 'failure' => 'Something went wrong with the incident update.',
             ],
             'edit' => [
