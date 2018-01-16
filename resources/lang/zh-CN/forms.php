@@ -153,7 +153,7 @@ return [
             'days-of-incidents'            => '显示多少天的故障？',
             'time_before_refresh'          => 'Status page refresh rate (in seconds).',
             'banner'                       => '横幅图像',
-            'banner-help'                  => "建议上传文件宽度不大于 930 像素。",
+            'banner-help'                  => '建议上传文件宽度不大于 930 像素。',
             'subscribers'                  => '允许用户订阅邮件通知',
             'skip_subscriber_verification' => '是否跳过用户邮件验证？(小心，这可能会被滥用)',
             'automatic_localization'       => '根据访客的系统语言自动本地化状态页面',
