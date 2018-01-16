@@ -33,6 +33,7 @@ return [
         'scheduled'    => 'Planerat underhåll',
         'scheduled_at' => ', schemalagda: tidsstämpel',
         'posted'       => 'Upplagd :timestamp',
+        'posted_at'    => 'Posted at :timestamp',
         'status'       => [
             1 => 'Undersöker',
             2 => 'Identifierat',
