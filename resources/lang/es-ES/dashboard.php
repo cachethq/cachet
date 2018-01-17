@@ -22,17 +22,17 @@ return [
         'incident-create-template' => 'Crear plantilla',
         'incident-templates'       => 'Plantillas de incidente',
         'updates'                  => [
-            'title'   => 'Incident updates for :incident',
-            'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
+            'title'   => 'Actualizaciones de incidentes para :incident',
+            'count'   => '{0} cero actualizaciones |[1] una actualización |[2] dos actualizaciones | [3 *] Varias actualizaciones',
             'add'     => [
                 'title'   => 'Crea una nueva actualización de incidente',
-                'success' => 'Your new incident update has been created.',
-                'failure' => 'Something went wrong with the incident update.',
+                'success' => 'Su nueva plantilla de incidentes ha sido creada.',
+                'failure' => 'Algo salió mal con la actualización del incidente.',
             ],
             'edit' => [
-                'title'   => 'Edit incident update',
-                'success' => 'The incident update has been updated.',
-                'failure' => 'Something went wrong updating the incident update',
+                'title'   => 'Editar actualización del incidente',
+                'success' => 'La actualización del incidente ha sido actualizada.',
+                'failure' => 'Algo salió mal al actualizar la actualización del incidente',
             ],
         ],
         'add'                      => [
