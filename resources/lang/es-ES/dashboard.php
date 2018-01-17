@@ -157,7 +157,7 @@ return [
     'subscribers' => [
         'subscribers'          => 'Suscriptores',
         'description'          => 'Los suscriptores recibirán actualizaciones por correo electrónico cuando se creen incidentes o se actualicen componentes.',
-        'description_disabled' => 'To use this feature, you need allow people to signup for notifications.',
+        'description_disabled' => 'Para utilizar esta función, necesita permitir a las personas registrarse a las notificaciones.',
         'verified'             => 'Verificado',
         'not_verified'         => 'No confirmado',
         'subscriber'           => ':email, suscrito :date',
