@@ -22,7 +22,7 @@ return [
         'incident-create-template' => 'Vorlage erstellen',
         'incident-templates'       => 'Vorfall Vorlagen',
         'updates'                  => [
-            'title'   => 'Incident updates for :incident',
+            'title'   => 'Aktualizacje incydentu dla :incident',
             'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
             'add'     => [
                 'title'   => 'Utwórz nową aktualizację zdarzenia',
