@@ -162,7 +162,7 @@ return [
         'not_verified'         => 'No confirmado',
         'subscriber'           => ':email, suscrito :date',
         'no_subscriptions'     => 'Suscrito a todas las actualizaciones',
-        'global'               => 'Globally subscribed',
+        'global'               => 'Suscrito a todo',
         'add'                  => [
             'title'   => 'Agregar un nuevo subscriptor',
             'success' => 'Subscriptor agregado.',
