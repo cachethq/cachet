@@ -14,7 +14,7 @@ return [
     'components' => [
         'last_updated' => 'Ostatnia aktualizacja :timestamp',
         'status'       => [
-            0 => 'Nieznane',
+            0 => 'Nieznany',
             1 => 'Funktionsfähig',
             2 => 'Leistungsprobleme',
             3 => 'Teilweiser Ausfall',
@@ -33,6 +33,7 @@ return [
         'scheduled'    => 'Geplante Wartungen',
         'scheduled_at' => ', geplant :timestamp',
         'posted'       => 'Opublikowano :timestamp',
+        'posted_at'    => 'Posted at :timestamp',
         'status'       => [
             1 => 'Untersuchungen laufen',
             2 => 'Identifiziert',
@@ -45,7 +46,7 @@ return [
     'schedules' => [
         'status' => [
             0 => 'Nadchodzące',
-            1 => 'W toku',
+            1 => 'W trakcie',
             2 => 'Zakończone',
         ],
     ],
@@ -95,9 +96,9 @@ return [
 
     'signup' => [
         'title'    => 'Zarejestruj się',
-        'username' => 'Benutzername',
+        'username' => 'Nazwa Użytkownika',
         'email'    => 'E-Mail',
-        'password' => 'Passwort',
+        'password' => 'Hasło',
         'success'  => 'Twoje konto zostało utworzone.',
         'failure'  => 'Coś poszło nie tak w trakcje rejestracji.',
     ],

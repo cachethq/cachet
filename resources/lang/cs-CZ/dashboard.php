@@ -21,7 +21,20 @@ return [
         'logged'                   => '{0} Nejsou hlášeny žádné incidenty, dobrá práce. | Zapsali jste jeden incident. | Nahlásili jste <strong>:count</strong> incident(y).',
         'incident-create-template' => 'Vytvořit šablonu',
         'incident-templates'       => 'Šablony incidentů',
-        'updates'                  => '{0} Žádné Novinky|Jedna Novinka|:count Novinek',
+        'updates'                  => [
+            'title'   => 'Incident updates for :incident',
+            'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
+            'add'     => [
+                'title'   => 'Vytvořit novou zprávu k události',
+                'success' => 'Your new incident update has been created.',
+                'failure' => 'Something went wrong with the incident update.',
+            ],
+            'edit' => [
+                'title'   => 'Edit incident update',
+                'success' => 'The incident update has been updated.',
+                'failure' => 'Something went wrong updating the incident update',
+            ],
+        ],
         'add'                      => [
             'title'   => 'Nahlásit incident',
             'success' => 'Incident byl přidán.',
@@ -35,11 +48,6 @@ return [
         'delete' => [
             'success' => 'Událost byla odstraněna a už se nebude zobrazovat na stavové stránce.',
             'failure' => 'Událost se nepodařilo smazat, opakujte akci.',
-        ],
-        'update' => [
-            'title'    => 'Vytvořit novou zprávu k události',
-            'subtitle' => 'Aktualizace k <strong>:incident</strong>',
-            'success'  => 'Update added.',
         ],
 
         // Incident templates
@@ -147,13 +155,15 @@ return [
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'      => 'Odběratelé',
-        'description'      => 'Odběratelé obdrží aktualizace e-mailem, pokuď dojde ke vzniku incidentu.',
-        'verified'         => 'Ověřeno',
-        'not_verified'     => 'Neověřeno',
-        'subscriber'       => ': e-mail, přihlášen: datum',
-        'no_subscriptions' => 'Přihlášeno k zasílání všech aktualizací',
-        'add'              => [
+        'subscribers'          => 'Odběratelé',
+        'description'          => 'Odběratelé obdrží aktualizace e-mailem, pokuď dojde ke vzniku incidentu.',
+        'description_disabled' => 'To use this feature, you need allow people to signup for notifications.',
+        'verified'             => 'Ověřeno',
+        'not_verified'         => 'Neověřeno',
+        'subscriber'           => ': e-mail, přihlášen: datum',
+        'no_subscriptions'     => 'Přihlášeno k zasílání všech aktualizací',
+        'global'               => 'Globally subscribed',
+        'add'                  => [
             'title'   => 'Přidat nového odběratele',
             'success' => 'Odběratel přidán.',
             'failure' => 'Něco se pokazilo při přidávání odběratele, opakujte akci.',

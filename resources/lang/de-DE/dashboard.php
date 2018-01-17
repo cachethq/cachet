@@ -21,7 +21,20 @@ return [
         'logged'                   => '{0} Es gibt keine Ereignisse, gute Arbeit.|Du hast ein Ereignis gemeldet.|Du hast <strong>:count</strong> Ereignisse gemeldet.',
         'incident-create-template' => 'Vorlage erstellen',
         'incident-templates'       => 'Ereignis Vorlagen',
-        'updates'                  => '{0} Keine Updates|Ein Update|:count Updates',
+        'updates'                  => [
+            'title'   => 'Incident updates for :incident',
+            'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
+            'add'     => [
+                'title'   => 'Vorfall-Update erstellen',
+                'success' => 'Your new incident update has been created.',
+                'failure' => 'Something went wrong with the incident update.',
+            ],
+            'edit' => [
+                'title'   => 'Edit incident update',
+                'success' => 'The incident update has been updated.',
+                'failure' => 'Something went wrong updating the incident update',
+            ],
+        ],
         'add'                      => [
             'title'   => 'Ereignis hinzufügen',
             'success' => 'Ereignis hinzugefügt.',
@@ -35,11 +48,6 @@ return [
         'delete' => [
             'success' => 'Das Ereignis wurde gelöscht und wird nicht mehr angezeigt.',
             'failure' => 'Die Störung konnte nicht gelöscht werden. Bitte versuche es erneut.',
-        ],
-        'update' => [
-            'title'    => 'Vorfall-Update erstellen',
-            'subtitle' => 'Ein Update zu <strong>:incident</strong> hinzufügen',
-            'success'  => 'Update added.',
         ],
 
         // Incident templates
@@ -147,13 +155,15 @@ return [
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'      => 'Abonnenten',
-        'description'      => 'Abonnenten erhalten E-Mail Updates, wenn Vorfälle erstellt oder Komponenten bearbeitet werden.',
-        'verified'         => 'Bestätigt',
-        'not_verified'     => 'Nicht Bestätigt',
-        'subscriber'       => ':email, abonniert am :date',
-        'no_subscriptions' => 'Aktualisierungen per E-Mail abonnieren',
-        'add'              => [
+        'subscribers'          => 'Abonnenten',
+        'description'          => 'Abonnenten erhalten E-Mail Updates, wenn Vorfälle erstellt oder Komponenten bearbeitet werden.',
+        'description_disabled' => 'To use this feature, you need allow people to signup for notifications.',
+        'verified'             => 'Bestätigt',
+        'not_verified'         => 'Nicht Bestätigt',
+        'subscriber'           => ':email, abonniert am :date',
+        'no_subscriptions'     => 'Aktualisierungen per E-Mail abonnieren',
+        'global'               => 'Globally subscribed',
+        'add'                  => [
             'title'   => 'Einen neuen Abonnenten hinzufügen',
             'success' => 'Abonnent hinzugefügt.',
             'failure' => 'Etwas lief schief dem dem Hinzufügen eines Abonnenten. Bitte versuchen Sie es erneut.',

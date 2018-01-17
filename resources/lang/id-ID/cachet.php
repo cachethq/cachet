@@ -33,6 +33,7 @@ return [
         'scheduled'    => 'Jadwal Pemeliharaan',
         'scheduled_at' => ', dijadwalkan pada :timestamp',
         'posted'       => 'Dikirim: timestamp',
+        'posted_at'    => 'Posted at :timestamp',
         'status'       => [
             1 => 'Investigasi',
             2 => 'Teridentifikasi',

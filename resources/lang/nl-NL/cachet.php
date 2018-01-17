@@ -33,6 +33,7 @@ return [
         'scheduled'    => 'Gepland onderhoud',
         'scheduled_at' => ', gepland :timestamp',
         'posted'       => 'Geplaatst op :timestamp',
+        'posted_at'    => 'Posted at :timestamp',
         'status'       => [
             1 => 'In onderzoek',
             2 => 'Geïdentificeerd',
@@ -75,7 +76,7 @@ return [
     // Subscriber
     'subscriber' => [
         'subscribe'   => 'Abonneer voor de meest recente updates',
-        'unsubscribe' => 'Meld je af op :link',
+        'unsubscribe' => 'Meld je af via :link',
         'button'      => 'Abonneren',
         'manage'      => [
             'no_subscriptions' => 'Je bent momenteel geabonneerd op alle updates.',

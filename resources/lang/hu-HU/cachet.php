@@ -14,7 +14,7 @@ return [
     'components' => [
         'last_updated' => 'Utoljára frissítve: :timestamp',
         'status'       => [
-            0 => 'Unknown',
+            0 => 'Ismeretlen',
             1 => 'Működik',
             2 => 'Teljesítmény problémák',
             3 => 'Részleges leállás',
@@ -31,12 +31,13 @@ return [
         'past'         => 'Múltbeli incidensek',
         'stickied'     => 'Kitűzőtt Incidensek',
         'scheduled'    => 'Ütemezett karbantartás',
-        'scheduled_at' => ', ütemezett :timestamp',
+        'scheduled_at' => ', ütemezve: :timestamp',
         'posted'       => 'Közzétéve :timestamp',
+        'posted_at'    => 'Posted at :timestamp',
         'status'       => [
-            1 => 'Kivizsgálás',
+            1 => 'Kivizsgálás alatt',
             2 => 'Azonosítva',
-            3 => 'Megfigyelés',
+            3 => 'Megfigyelés alatt',
             4 => 'Javítva',
         ],
     ],
@@ -44,9 +45,9 @@ return [
     // Schedule
     'schedules' => [
         'status' => [
-            0 => 'Upcoming',
-            1 => 'In Progress',
-            2 => 'Complete',
+            0 => 'Közelgő',
+            1 => 'Folyamatban',
+            2 => 'Befejezve',
         ],
     ],
 
@@ -84,9 +85,9 @@ return [
         'email' => [
             'subscribe'          => 'Feliratkozás e-mail értesítésekre.',
             'subscribed'         => 'Ön feliratkozott e-mailen, kérjük ellenőrizze e-mail fiókját a véglegesítéshez.',
-            'verified'           => 'Feliratkozásod megerősítve. Köszönjük!',
+            'verified'           => 'Feliratkozása megerősítve. Köszönjük!',
             'manage'             => 'Feliratkozás kezelése',
-            'unsubscribe'        => 'E-mail értesítések kikapcsolása.',
+            'unsubscribe'        => 'Leiratkozás az e-mail értesítésekről.',
             'unsubscribed'       => 'E-mail feliratkozás törölve.',
             'failure'            => 'Hiba történt a feliratkozással.',
             'already-subscribed' => ':email már fel van iratkozva.',
@@ -103,7 +104,7 @@ return [
     ],
 
     'system' => [
-        'update' => 'Cachet frissítések találhatók! <a href="https://docs.cachethq.io/docs/updating-cachet">Itt</a> olvashatsz utána, hogyan kell frissíteni.',
+        'update' => 'Elérhető egy újabb Cachet verzió! <a href="https://docs.cachethq.io/docs/updating-cachet">Itt</a> olvashat utána a frissítés menetének.',
     ],
 
     // Modal
@@ -119,8 +120,8 @@ return [
     // Other
     'home'            => 'Kezdőoldal',
     'description'     => 'Maradjon mindig naprakész :app legújabb frissítéseivel.',
-    'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
-    'timezone'        => 'Alkalmazott időzóna: :timezone.',
+    'powered_by'      => 'A motorháztető alatt a <a href="https://cachethq.io" class="links">Cachet</a> dolgozik.',
+    'timezone'        => 'Időzóna: :timezone.',
     'about_this_site' => 'A webhelyről',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',

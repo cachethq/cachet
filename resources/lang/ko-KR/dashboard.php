@@ -21,7 +21,20 @@ return [
         'logged'                   => '{0} 아무 문제가 없습니다, 잘하고 있어요.|하나의 문제에 대한 로깅이 있습니다.|<strong>:count</strong> 개의 문제가 리포트 되었습니다.',
         'incident-create-template' => '템플릿 생성',
         'incident-templates'       => '문제 템플릿',
-        'updates'                  => '{0} 0 업데이트 | 1 업데이트 |: count 업데이트',
+        'updates'                  => [
+            'title'   => 'Incident updates for :incident',
+            'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
+            'add'     => [
+                'title'   => 'Create new incident update',
+                'success' => 'Your new incident update has been created.',
+                'failure' => 'Something went wrong with the incident update.',
+            ],
+            'edit' => [
+                'title'   => 'Edit incident update',
+                'success' => 'The incident update has been updated.',
+                'failure' => 'Something went wrong updating the incident update',
+            ],
+        ],
         'add'                      => [
             'title'   => '문제 추가',
             'success' => 'Incident added.',
@@ -35,11 +48,6 @@ return [
         'delete' => [
             'success' => '문제가 삭제되었습니다. 그리고 상태 페이지에 표시되지 않습니다.',
             'failure' => 'The incident could not be deleted, please try again.',
-        ],
-        'update' => [
-            'title'    => 'Create new incident update',
-            'subtitle' => 'Add an update to <strong>:incident</strong>',
-            'success'  => 'Update added.',
         ],
 
         // Incident templates
@@ -147,13 +155,15 @@ return [
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'      => '구독자',
-        'description'      => 'Subscribers will receive email updates when incidents are created or components are updated.',
-        'verified'         => '인증됨',
-        'not_verified'     => '인증되지 않음',
-        'subscriber'       => ':email, subscribed :date',
-        'no_subscriptions' => 'Subscribed to all updates',
-        'add'              => [
+        'subscribers'          => '구독자',
+        'description'          => 'Subscribers will receive email updates when incidents are created or components are updated.',
+        'description_disabled' => 'To use this feature, you need allow people to signup for notifications.',
+        'verified'             => '인증됨',
+        'not_verified'         => '인증되지 않음',
+        'subscriber'           => ':email, subscribed :date',
+        'no_subscriptions'     => 'Subscribed to all updates',
+        'global'               => 'Globally subscribed',
+        'add'                  => [
             'title'   => '구독자 추가',
             'success' => '구독자가 추가됨.',
             'failure' => 'Something went wrong adding the subscriber, please try again.',
@@ -205,7 +215,7 @@ return [
             'analytics' => 'Analytics',
         ],
         'log' => [
-            'log' => 'Log',
+            'log' => '로그',
         ],
         'localization' => [
             'localization' => 'Localization',
@@ -216,8 +226,8 @@ return [
             'footer'        => '사용자 지정 바닥글 HTML',
         ],
         'mail' => [
-            'mail'  => 'Mail',
-            'test'  => 'Test',
+            'mail'  => '이메일',
+            'test'  => '테스트',
             'email' => [
                 'subject' => 'Test notification from Cachet',
                 'body'    => 'This is a test notification from Cachet.',
@@ -269,9 +279,9 @@ return [
 
     // Widgets
     'widgets' => [
-        'support'          => 'Support Cachet',
+        'support'          => 'Cachet 지원하기',
         'support_subtitle' => 'Check out our <strong><a href="https://patreon.com/jbrooksuk" target="_blank">Patreon</a></strong> page!',
-        'news'             => 'Latest News',
+        'news'             => '최신 뉴스',
         'news_subtitle'    => 'Get the latest update',
     ],
 
@@ -279,7 +289,7 @@ return [
     'welcome' => [
         'welcome' => 'Welcome to your new status page, :username!',
         'message' => '상태 페이지는 거의 다 준비 되었습니다! 추가 설정을 해보세요',
-        'close'   => 'I\'m good thanks!',
+        'close'   => '괜찮습니다.',
         'steps'   => [
             'component'  => '구성요소 만들기',
             'incident'   => '문제 만들기',
