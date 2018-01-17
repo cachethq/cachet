@@ -16,22 +16,22 @@ return [
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Ereignisse &amp; Termine',
+        'title'                    => 'Incydenty i Konserwacja',
         'incidents'                => 'Vorfälle',
         'logged'                   => '{0} Es gibt keine Vorfälle, gute Arbeit.|Du hast einen Vorfall gemeldet.|Du hast <strong>:count</strong> Vorfälle gemeldet.',
         'incident-create-template' => 'Vorlage erstellen',
         'incident-templates'       => 'Vorfall Vorlagen',
         'updates'                  => [
             'title'   => 'Aktualizacje incydentu dla :incident',
-            'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
+            'count'   => '{0} Zero Aktualizacji|[1] Jedna Aktualizacja|[2] Dwie Aktualizacje|[3,*] Kilka Aktualizacji',
             'add'     => [
                 'title'   => 'Utwórz nową aktualizację zdarzenia',
                 'success' => 'Your new incident update has been created.',
-                'failure' => 'Something went wrong with the incident update.',
+                'failure' => 'Coś poszło nie tak z aktualizacją incydentu.',
             ],
             'edit' => [
-                'title'   => 'Edit incident update',
-                'success' => 'The incident update has been updated.',
+                'title'   => 'Edytuj aktualizację incydentu',
+                'success' => 'Aktualizacja incydentu została zaktualizowana.',
                 'failure' => 'Something went wrong updating the incident update',
             ],
         ],
@@ -157,12 +157,12 @@ return [
     'subscribers' => [
         'subscribers'          => 'Abonnenten',
         'description'          => 'Subskrybenci będą otrzymywać powiadomienia, gdy wydarzenia zostaną utworzone lub komponenty zaktualizowane.',
-        'description_disabled' => 'To use this feature, you need allow people to signup for notifications.',
+        'description_disabled' => 'Aby korzystać z tej funkcji, musisz pozwolić ludziom na rejestrację dla powiadomień.',
         'verified'             => 'Verifiziert',
         'not_verified'         => 'Nicht verifiziert',
         'subscriber'           => ':email, subskrybowany :data',
         'no_subscriptions'     => 'Zapisano do wszystkich aktualizacji',
-        'global'               => 'Globally subscribed',
+        'global'               => 'Globalnie subskrybowane',
         'add'                  => [
             'title'   => 'Einen neuen Abonnenten hinzufügen',
             'success' => 'Abonnent hinzugefügt.',
