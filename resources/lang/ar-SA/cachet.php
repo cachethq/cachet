@@ -33,6 +33,7 @@ return [
         'scheduled'    => 'صيانة مجدولة',
         'scheduled_at' => ', مجدولة :timestamp',
         'posted'       => 'تم الإرسال :timestamp',
+        'posted_at'    => 'Posted at :timestamp',
         'status'       => [
             1 => 'تحقيق',
             2 => 'تم التعرف عليه',

@@ -29,10 +29,11 @@ return [
     'incidents' => [
         'none'         => 'Nenhum incidente reportado',
         'past'         => 'Incidentes anteriores',
-        'stickied'     => 'Incidentes Persistentes',
+        'stickied'     => 'Incidentes Fixados',
         'scheduled'    => 'Manutenção Agendada',
         'scheduled_at' => ', agendada :timestamp',
         'posted'       => 'Postado :timestamp',
+        'posted_at'    => 'Posted at :timestamp',
         'status'       => [
             1 => 'Investigando',
             2 => 'Identificado',

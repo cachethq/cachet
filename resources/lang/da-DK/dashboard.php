@@ -21,7 +21,20 @@ return [
         'logged'                   => '{0} Ingen åbne hændelser.|Der er en åben hændelse.|Der er <strong>:count</strong> åbne hændelser.',
         'incident-create-template' => 'Create Template',
         'incident-templates'       => 'Incident Templates',
-        'updates'                  => '{0} Nul opdateringer | Én opdatering |:count opdateringer',
+        'updates'                  => [
+            'title'   => 'Incident updates for :incident',
+            'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
+            'add'     => [
+                'title'   => 'Opret ny hændelsesopdatering',
+                'success' => 'Your new incident update has been created.',
+                'failure' => 'Something went wrong with the incident update.',
+            ],
+            'edit' => [
+                'title'   => 'Edit incident update',
+                'success' => 'The incident update has been updated.',
+                'failure' => 'Something went wrong updating the incident update',
+            ],
+        ],
         'add'                      => [
             'title'   => 'Opret hændelse',
             'success' => 'Hændelse tilføjet.',
@@ -35,11 +48,6 @@ return [
         'delete' => [
             'success' => 'Hændelsen er blevet slettet og vil ikke blive vist på din statusside.',
             'failure' => 'Hændelsen kunne ikke slettes. Prøv venligst igen.',
-        ],
-        'update' => [
-            'title'    => 'Opret ny hændelsesopdatering',
-            'subtitle' => 'Tilføj en opdatering til <strong>:incident</strong>',
-            'success'  => 'Update added.',
         ],
 
         // Incident templates
@@ -147,13 +155,15 @@ return [
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'      => 'Subscribers',
-        'description'      => 'Abonnenter vil modtage notifikationer når hændelser oprettes eller komponenter opdateres.',
-        'verified'         => 'Bekræftet',
-        'not_verified'     => 'Ej bekræftet',
-        'subscriber'       => ':email, abonnerede :date',
-        'no_subscriptions' => 'Abonnere på alle opdateringer',
-        'add'              => [
+        'subscribers'          => 'Subscribers',
+        'description'          => 'Abonnenter vil modtage notifikationer når hændelser oprettes eller komponenter opdateres.',
+        'description_disabled' => 'To use this feature, you need allow people to signup for notifications.',
+        'verified'             => 'Bekræftet',
+        'not_verified'         => 'Ej bekræftet',
+        'subscriber'           => ':email, abonnerede :date',
+        'no_subscriptions'     => 'Abonnere på alle opdateringer',
+        'global'               => 'Globally subscribed',
+        'add'                  => [
             'title'   => 'Tilføj abonnent',
             'success' => 'Subscriber added.',
             'failure' => 'Noget gik galt under forsøget på at tilføje en abonnent. Prøv venligst igen.',

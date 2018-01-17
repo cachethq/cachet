@@ -33,6 +33,7 @@ return [
         'scheduled'    => 'Запланована перерва у роботі',
         'scheduled_at' => ', заплановано на :timestamp',
         'posted'       => 'Опубліковано :timestamp',
+        'posted_at'    => 'Posted at :timestamp',
         'status'       => [
             1 => 'Розслідування',
             2 => 'Ідентифікований',

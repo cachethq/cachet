@@ -14,7 +14,7 @@ return [
     'components' => [
         'last_updated' => 'Sist oppdatert :timestamp',
         'status'       => [
-            0 => 'Unknown',
+            0 => 'Ukjent',
             1 => 'Ingen problemer',
             2 => 'Ytelsesproblemer',
             3 => 'Delvis brudd',
@@ -33,6 +33,7 @@ return [
         'scheduled'    => 'Planlagt vedlikehold',
         'scheduled_at' => ', planlagt :timestamp',
         'posted'       => 'Skrevet :timestamp',
+        'posted_at'    => 'Posted at :timestamp',
         'status'       => [
             1 => 'Undersøkes',
             2 => 'Identifisert',
@@ -45,8 +46,8 @@ return [
     'schedules' => [
         'status' => [
             0 => 'Upcoming',
-            1 => 'In Progress',
-            2 => 'Complete',
+            1 => 'Pågår',
+            2 => 'Fullført',
         ],
     ],
 

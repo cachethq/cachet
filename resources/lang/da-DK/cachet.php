@@ -29,10 +29,11 @@ return [
     'incidents' => [
         'none'         => 'Ingen hændelser er rapporteret',
         'past'         => 'Tidligere hændelser',
-        'stickied'     => 'Stickied Incidents',
+        'stickied'     => 'Låst hændelse',
         'scheduled'    => 'Planlagt vedligeholdelse',
         'scheduled_at' => ', planlagt til :timestamp',
         'posted'       => 'Sendt :timestamp',
+        'posted_at'    => 'Posted at :timestamp',
         'status'       => [
             1 => 'Undersøger',
             2 => 'Identificeret',
@@ -120,7 +121,7 @@ return [
     'home'            => 'Hjem',
     'description'     => 'Hold dig opdateret med de seneste opdateringer fra :app.',
     'powered_by'      => 'Drevet af <a href="https://cachethq.io" class="links"> Cachet</a>.',
-    'timezone'        => 'Klokkeslæt angives som :timezone.',
+    'timezone'        => 'Klokkeslæt vises i :timezone.',
     'about_this_site' => 'Om denne side',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',

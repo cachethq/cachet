@@ -12,7 +12,7 @@
 return [
 
     'dashboard'          => 'Dashboard',
-    'writeable_settings' => 'O diretório configurações do Cachet não é gravável. Certifique-se de que<code>./bootstrap/cachet</code> é gravável pelo servidor web.',
+    'writeable_settings' => 'O diretório de configurações do Cachet não é gravável. Certifique-se de que<code>./bootstrap/cachet</code> é gravável pelo servidor web.',
 
     // Incidents
     'incidents' => [
@@ -21,7 +21,20 @@ return [
         'logged'                   => '{0} Não existem incidentes, bom trabalho.|Você registrou um incidente.|Você reportou <strong>:count</strong> incidentes.',
         'incident-create-template' => 'Criar template',
         'incident-templates'       => 'Template de incidentes',
-        'updates'                  => '{0} Nenhuma Atualização|Uma Atualização|:contagem de Atualizações',
+        'updates'                  => [
+            'title'   => 'Incident updates for :incident',
+            'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
+            'add'     => [
+                'title'   => 'Crie uma nova atualização de incidente',
+                'success' => 'Your new incident update has been created.',
+                'failure' => 'Something went wrong with the incident update.',
+            ],
+            'edit' => [
+                'title'   => 'Edit incident update',
+                'success' => 'The incident update has been updated.',
+                'failure' => 'Something went wrong updating the incident update',
+            ],
+        ],
         'add'                      => [
             'title'   => 'Relatar um incidente',
             'success' => 'Incidente adicionado.',
@@ -35,11 +48,6 @@ return [
         'delete' => [
             'success' => 'O incidente foi excluído e não aparecerá na sua página de status.',
             'failure' => 'O incidente não pode ser excluído, por favor tente novamente.',
-        ],
-        'update' => [
-            'title'    => 'Crie uma nova atualização de incidente',
-            'subtitle' => 'Adicione uma atualização ao <strong>:incidente</strong>',
-            'success'  => 'Update added.',
         ],
 
         // Incident templates
@@ -147,13 +155,15 @@ return [
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'      => 'Assinantes',
-        'description'      => 'Assinantes vão receber atualizações de e-mail quando incidentes criados ou componentes atualizados.',
-        'verified'         => 'Verificado',
-        'not_verified'     => 'Não verificado',
-        'subscriber'       => ':email, inscreveu-se em :date',
-        'no_subscriptions' => 'Inscrito em todas as atualizações',
-        'add'              => [
+        'subscribers'          => 'Assinantes',
+        'description'          => 'Assinantes vão receber atualizações de e-mail quando incidentes criados ou componentes atualizados.',
+        'description_disabled' => 'To use this feature, you need allow people to signup for notifications.',
+        'verified'             => 'Verificado',
+        'not_verified'         => 'Não verificado',
+        'subscriber'           => ':email, inscreveu-se em :date',
+        'no_subscriptions'     => 'Inscrito em todas as atualizações',
+        'global'               => 'Globally subscribed',
+        'add'                  => [
             'title'   => 'Adicionar um novo assinante',
             'success' => 'Inscrito adicionado.',
             'failure' => 'Algo deu errado adicionando o assinante, por favor tente novamente.',
@@ -205,7 +215,7 @@ return [
             'analytics' => 'Estatísticas',
         ],
         'log' => [
-            'log' => 'Registro de eventos',
+            'log' => 'Log',
         ],
         'localization' => [
             'localization' => 'Idioma',

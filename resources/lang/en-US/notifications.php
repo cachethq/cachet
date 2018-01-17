@@ -32,11 +32,11 @@ return [
             'mail' => [
                 'subject'  => 'New Incident Reported',
                 'greeting' => 'A new incident was reported at :app_name.',
-                'content'  => 'Incident :name was reported',
+                'content'  => 'Incident :name was updated',
                 'action'   => 'View',
             ],
             'slack' => [
-                'title'   => 'Incident :name Reported',
+                'title'   => 'Incident :name was reported',
                 'content' => 'A new incident was reported at :app_name',
             ],
             'sms' => [
@@ -55,7 +55,7 @@ return [
                 'content' => ':name was updated to :new_status',
             ],
             'sms' => [
-                'content' => 'Incident :name was updated',
+                'content' => 'Incident :name was reported',
             ],
         ],
     ],

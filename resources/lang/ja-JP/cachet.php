@@ -14,7 +14,7 @@ return [
     'components' => [
         'last_updated' => '最終更新 :timestamp',
         'status'       => [
-            0 => 'Unknown',
+            0 => '不明',
             1 => '稼働中',
             2 => 'パフォーマンスに関する問題あり',
             3 => '一部停止中',
@@ -33,6 +33,7 @@ return [
         'scheduled'    => '計画メンテナンス',
         'scheduled_at' => ', 予定日時 :timestamp',
         'posted'       => '投稿日時 :timestamp',
+        'posted_at'    => 'Posted at :timestamp',
         'status'       => [
             1 => '調査中',
             2 => '特定済み',
@@ -46,7 +47,7 @@ return [
         'status' => [
             0 => 'Upcoming',
             1 => 'In Progress',
-            2 => 'Complete',
+            2 => '完了',
         ],
     ],
 
@@ -75,7 +76,7 @@ return [
     // Subscriber
     'subscriber' => [
         'subscribe'   => '最新のアップデート情報を購読する',
-        'unsubscribe' => 'Unsubscribe at :link',
+        'unsubscribe' => '登録解除はこちら :link',
         'button'      => '購読',
         'manage'      => [
             'no_subscriptions' => 'You\'re currently subscribed to all updates.',

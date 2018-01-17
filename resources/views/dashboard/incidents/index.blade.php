@@ -22,14 +22,14 @@
                     @foreach($incidents as $incident)
                     <div class="row striped-list-item">
                         <div class="col-xs-6">
-                            <i class="{{ $incident->icon }}"></i> <a href="{{ cachet_route('dashboard.incidents.edit', [$incident->id]) }}"><strong>{{ $incident->name }}</strong></a> <span class="badge badge-info">{{ trans_choice('dashboard.incidents.updates', $incident->updates()->count()) }}</span>
+                            <i class="{{ $incident->icon }}"></i> <strong>{{ $incident->name }}</strong> <span class="badge badge-info">{{ trans_choice('dashboard.incidents.updates.count', $incident->updates()->count()) }}</span>
                             @if($incident->message)
                             <p><small>{{ Str::words($incident->message, 5) }}</small></p>
                             @endif
                         </div>
                         <div class="col-xs-6 text-right">
+                            <a href="{{ cachet_route('dashboard.incidents.updates', [$incident->id]) }}" class="btn btn-info">{{ trans('forms.manage_updates') }}</a>
                             <a href="{{ cachet_route('dashboard.incidents.edit', [$incident->id]) }}" class="btn btn-default">{{ trans('forms.edit') }}</a>
-                            <a href="{{ cachet_route('dashboard.incidents.updates', [$incident->id]) }}" class="btn btn-info">{{ trans('forms.update') }}</a>
                             <a href="{{ cachet_route('dashboard.incidents.delete', [$incident->id], 'delete') }}" class="btn btn-danger confirm-action" data-method='DELETE'>{{ trans('forms.delete') }}</a>
                         </div>
                     </div>

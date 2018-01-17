@@ -12,7 +12,7 @@
 return [
 
     'dashboard'          => 'Bảng điều khiển',
-    'writeable_settings' => 'The Cachet settings directory is not writeable. Please make sure that <code>./bootstrap/cachet</code> is writeable by the web server.',
+    'writeable_settings' => 'Thư mục cài đặt Cachet không phải là có thể ghi. Hãy chắc chắn rằng <code>./bootstrap/cachet</code> là có thể ghi bởi máy chủ web.',
 
     // Incidents
     'incidents' => [
@@ -21,7 +21,20 @@ return [
         'logged'                   => '{0} Không có sự cố nào, làm việc tốt.|Bạn có một sự cố được ghi nhận.|Bạn có <strong>:count</strong> sự cố được báo cáo.',
         'incident-create-template' => 'Tạo template',
         'incident-templates'       => 'Mẫu sự cố',
-        'updates'                  => '{0} Zero Updates|One Update|:count Updates',
+        'updates'                  => [
+            'title'   => 'Incident updates for :incident',
+            'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
+            'add'     => [
+                'title'   => 'Tạo bản cập nhật sự cố mới',
+                'success' => 'Your new incident update has been created.',
+                'failure' => 'Something went wrong with the incident update.',
+            ],
+            'edit' => [
+                'title'   => 'Edit incident update',
+                'success' => 'The incident update has been updated.',
+                'failure' => 'Something went wrong updating the incident update',
+            ],
+        ],
         'add'                      => [
             'title'   => 'Thêm một sự cố',
             'success' => 'Sự cố đã được thêm.',
@@ -33,13 +46,8 @@ return [
             'failure' => 'Có một lỗi xảy ra khi đang lưu Sự Cố, xin vui lòng thử lại.',
         ],
         'delete' => [
-            'success' => 'The incident has been deleted and will not show on your status page.',
-            'failure' => 'The incident could not be deleted, please try again.',
-        ],
-        'update' => [
-            'title'    => 'Create new incident update',
-            'subtitle' => 'Add an update to <strong>:incident</strong>',
-            'success'  => 'Update added.',
+            'success' => 'Sự cố đã bị xoá và sẽ không hiển thị trên trang tình trạng của bạn.',
+            'failure' => 'Sự cố không thể xóa, hãy thử một lần nữa.',
         ],
 
         // Incident templates
@@ -47,18 +55,18 @@ return [
             'title' => 'Mẫu sự cố',
             'add'   => [
                 'title'   => 'Tạo ra một khuôn mẫu khi gặp sự cố',
-                'message' => 'You should add an incident template.',
-                'success' => 'Your new incident template has been created.',
-                'failure' => 'Something went wrong with the incident template.',
+                'message' => 'Bạn nên thêm một mẫu sự cố.',
+                'success' => 'Mẫu sự cố mới của bạn đã được tạo.',
+                'failure' => 'Có lỗi xảy ra với mẫu sự cố.',
             ],
             'edit' => [
                 'title'   => 'Sửa mẫu',
-                'success' => 'The incident template has been updated.',
-                'failure' => 'Something went wrong updating the incident template',
+                'success' => 'Mẫu sự cố đã được cập nhật.',
+                'failure' => 'Có lỗi xảy ra khi cập nhật mẫu sự cố',
             ],
             'delete' => [
-                'success' => 'The incident template has been deleted.',
-                'failure' => 'The incident template could not be deleted, please try again.',
+                'success' => 'Mẫu sự cố đã bị xoá.',
+                'failure' => 'Mẫu sự cố không thể xóa, hãy thử một lần nữa.',
             ],
         ],
     ],
@@ -88,40 +96,40 @@ return [
     'components' => [
         'components'         => 'Components',
         'component_statuses' => 'Component Statuses',
-        'listed_group'       => 'Grouped under :name',
+        'listed_group'       => 'Nhóm theo :name',
         'add'                => [
             'title'   => 'Thêm một thành phần',
             'message' => 'Bạn cần thêm một component.',
-            'success' => 'Component created.',
-            'failure' => 'Something went wrong with the component group, please try again.',
+            'success' => 'Thành phần đã được tạo.',
+            'failure' => 'Có lỗi xảy ra với nhóm thành phần, vui lòng thử lại.',
         ],
         'edit' => [
             'title'   => 'Chỉnh sửa một thành phần',
-            'success' => 'Component updated.',
-            'failure' => 'Something went wrong with the component group, please try again.',
+            'success' => 'Thành phần đã được cập nhật.',
+            'failure' => 'Có lỗi xảy ra với nhóm thành phần, vui lòng thử lại.',
         ],
         'delete' => [
-            'success' => 'The component has been deleted!',
-            'failure' => 'The component could not be deleted, please try again.',
+            'success' => 'Thành phần đã bị xóa!',
+            'failure' => 'Chưa xóa được thành phần, vui lòng thử lại.',
         ],
 
         // Component groups
         'groups' => [
             'groups'        => 'Component group|Component groups',
-            'no_components' => 'You should add a component group.',
+            'no_components' => 'Bạn nên thêm một nhóm thành phần.',
             'add'           => [
-                'title'   => 'Add a component group',
-                'success' => 'Component group added.',
-                'failure' => 'Something went wrong with the component group, please try again.',
+                'title'   => 'Thêm một nhóm thành phần',
+                'success' => 'Nhóm thành phần đã được tạo.',
+                'failure' => 'Có lỗi xảy ra với nhóm thành phần, vui lòng thử lại.',
             ],
             'edit' => [
-                'title'   => 'Edit a component group',
-                'success' => 'Component group updated.',
-                'failure' => 'Something went wrong with the component group, please try again.',
+                'title'   => 'Chỉnh sửa một nhóm thành phần',
+                'success' => 'Nhóm thành phần đã được cập nhật.',
+                'failure' => 'Có lỗi xảy ra với nhóm thành phần, vui lòng thử lại.',
             ],
             'delete' => [
-                'success' => 'Component group has been deleted!',
-                'failure' => 'The component group could not be deleted, please try again.',
+                'success' => 'Nhóm thành phần đã bị xóa!',
+                'failure' => 'Không xóa được nhóm thành phần, vui lòng thử lại.',
             ],
         ],
     ],
@@ -130,8 +138,8 @@ return [
     'metrics' => [
         'metrics' => 'Các số liệu',
         'add'     => [
-            'title'   => 'Create a metric',
-            'message' => 'You should add a metric.',
+            'title'   => 'Tạo một thước đo',
+            'message' => 'Bạn nên thêm một thước đo.',
             'success' => 'Metric created.',
             'failure' => 'Something went wrong with the metric, please try again.',
         ],
@@ -147,13 +155,15 @@ return [
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'      => 'Subscribers',
-        'description'      => 'Subscribers will receive email updates when incidents are created or components are updated.',
-        'verified'         => 'Đã xác nhận',
-        'not_verified'     => 'Chưa xác nhận',
-        'subscriber'       => ':email, subscribed :date',
-        'no_subscriptions' => 'Subscribed to all updates',
-        'add'              => [
+        'subscribers'          => 'Subscribers',
+        'description'          => 'Subscribers will receive email updates when incidents are created or components are updated.',
+        'description_disabled' => 'To use this feature, you need allow people to signup for notifications.',
+        'verified'             => 'Đã xác nhận',
+        'not_verified'         => 'Chưa xác nhận',
+        'subscriber'           => ':email, đã đăng ký :date',
+        'no_subscriptions'     => 'Subscribed to all updates',
+        'global'               => 'Globally subscribed',
+        'add'                  => [
             'title'   => 'Add a new subscriber',
             'success' => 'Subscriber has been added!',
             'failure' => 'Something went wrong adding the subscriber, please try again.',

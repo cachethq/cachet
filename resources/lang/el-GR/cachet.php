@@ -12,9 +12,9 @@
 return [
     // Components
     'components' => [
-        'last_updated' => 'Last updated :timestamp',
+        'last_updated' => 'Τελευταία ενημέρωση :timestamp',
         'status'       => [
-            0 => 'Unknown',
+            0 => 'Άγνωστο',
             1 => 'Λειτουργικό',
             2 => 'Προβλήματα επιδόσης',
             3 => 'Μερική Διακοπή',
@@ -32,7 +32,8 @@ return [
         'stickied'     => 'Stickied Incidents',
         'scheduled'    => 'Προγραμματισμένη Συντήρηση',
         'scheduled_at' => ', προγραμματισμένη :timestamp',
-        'posted'       => 'Posted :timestamp',
+        'posted'       => 'Αναρτήθηκε :timestamp',
+        'posted_at'    => 'Posted at :timestamp',
         'status'       => [
             1 => 'Διερευνάται',
             2 => 'Προσδιορίστηκε',
@@ -45,7 +46,7 @@ return [
     'schedules' => [
         'status' => [
             0 => 'Upcoming',
-            1 => 'In Progress',
+            1 => 'Σε εξέλιξη',
             2 => 'Complete',
         ],
     ],
@@ -85,7 +86,7 @@ return [
             'subscribe'          => 'Εγγραφή στις ενημερώσεις μέσω email.',
             'subscribed'         => 'Έχετε εγγραφεί στις ενημερώσεις μέσω email, παρακαλώ ελέγξτε το email σας για να επιβεβαιώσετε την εγγραφή σας.',
             'verified'           => 'Η εγγραφή σας έχει επιβεβαιωθεί. Ευχαριστούμε!',
-            'manage'             => 'Manage your subscription',
+            'manage'             => 'Διαχειριστείτε τη συνδρομή σας',
             'unsubscribe'        => 'Διαγραφή από τις ενημερώσεις μέσω email.',
             'unsubscribed'       => 'Η εγγραφή σας έχει ακυρωθεί.',
             'failure'            => 'Προέκυψε ένα σφάλμα σχετικά με την εγγραφή.',
@@ -120,7 +121,7 @@ return [
     'home'            => 'Home',
     'description'     => 'Stay up to date with the latest service updates from :app.',
     'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
-    'timezone'        => 'Times are shown in :timezone.',
+    'timezone'        => 'Η ώρα προβάλλεται σε ζώνη :timezone.',
     'about_this_site' => 'Σχετικά με αυτόν τον ιστότοπο',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',

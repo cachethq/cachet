@@ -16,7 +16,7 @@ return [
                 'subject'  => 'Component Status Updated',
                 'greeting' => 'A component\'s status was updated!',
                 'content'  => ':name status changed from :old_status to :new_status.',
-                'action'   => 'View',
+                'action'   => 'Vis',
             ],
             'slack' => [
                 'title'   => 'Component Status Updated',
@@ -33,7 +33,7 @@ return [
                 'subject'  => 'New Incident Reported',
                 'greeting' => 'A new incident was reported at :app_name.',
                 'content'  => 'Incident :name was reported',
-                'action'   => 'View',
+                'action'   => 'Vis',
             ],
             'slack' => [
                 'title'   => 'Incident :name Reported',
@@ -45,13 +45,13 @@ return [
         ],
         'update' => [
             'mail' => [
-                'subject' => 'Incident Updated',
+                'subject' => 'Hendelse oppdatert',
                 'content' => ':name was updated',
                 'title'   => ':name was updated to :new_status',
-                'action'  => 'View',
+                'action'  => 'Vis',
             ],
             'slack' => [
-                'title'   => ':name Updated',
+                'title'   => ':name oppdatert',
                 'content' => ':name was updated to :new_status',
             ],
             'sms' => [
@@ -65,7 +65,7 @@ return [
                 'subject' => 'New Schedule Created',
                 'content' => ':name was scheduled for :date',
                 'title'   => 'A new scheduled maintenance was created.',
-                'action'  => 'View',
+                'action'  => 'Vis',
             ],
             'slack' => [
                 'title'   => 'New Schedule Created!',
@@ -82,7 +82,7 @@ return [
                 'subject' => 'Verify Your Subscription',
                 'content' => 'Click to verify your subscription to :app_name status page.',
                 'title'   => 'Verify your subscription to :app_name status page.',
-                'action'  => 'Verify',
+                'action'  => 'Bekreft',
             ],
         ],
     ],
@@ -101,7 +101,7 @@ return [
                 'subject' => 'Your invitation is inside...',
                 'content' => 'You have been invited to join :app_name status page.',
                 'title'   => 'You\'re invited to join :app_name status page.',
-                'action'  => 'Accept',
+                'action'  => 'Aksepter',
             ],
         ],
     ],

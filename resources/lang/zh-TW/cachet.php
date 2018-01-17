@@ -12,27 +12,28 @@
 return [
     // Components
     'components' => [
-        'last_updated' => '最後更新',
+        'last_updated' => '最後更新： :timestamp',
         'status'       => [
-            0 => 'Unknown',
+            0 => '未知',
             1 => '正常',
             2 => '效能問題',
             3 => '部分停止運作',
             4 => '停止運作',
         ],
         'group' => [
-            'other' => '其他组件',
+            'other' => '其他元件',
         ],
     ],
 
     // Incidents
     'incidents' => [
-        'none'         => '沒有任何報告',
-        'past'         => 'Past Incidents',
+        'none'         => '沒有故障報告',
+        'past'         => '過往事件',
         'stickied'     => 'Stickied 事件',
         'scheduled'    => '排程維護',
         'scheduled_at' => '，於:timestamp',
         'posted'       => '簽名時間戳',
+        'posted_at'    => 'Posted at :timestamp',
         'status'       => [
             1 => '調查中',
             2 => '已辨明',
@@ -44,9 +45,9 @@ return [
     // Schedule
     'schedules' => [
         'status' => [
-            0 => 'Upcoming',
-            1 => 'In Progress',
-            2 => 'Complete',
+            0 => '預定事項',
+            1 => '處理中',
+            2 => '已解決',
         ],
     ],
 
@@ -68,17 +69,17 @@ return [
             'last_hour' => '一小時前',
             'hourly'    => '最近12小時',
             'weekly'    => '週',
-            'monthly'   => '月',
+            'monthly'   => '月份',
         ],
     ],
 
     // Subscriber
     'subscriber' => [
-        'subscribe'   => '訂閱最新的狀態更新。',
-        'unsubscribe' => 'Unsubscribe at :link',
+        'subscribe'   => '訂閱以獲取最新的更新。',
+        'unsubscribe' => '取消訂閱: :link',
         'button'      => '訂閱',
         'manage'      => [
-            'no_subscriptions' => '您目前已安裝所有的更新。',
+            'no_subscriptions' => '您目前已訂閱所有的更新。',
             'my_subscriptions' => '您目前已安裝下列更新',
         ],
         'email' => [

@@ -13,84 +13,84 @@ return [
     'component' => [
         'status_update' => [
             'mail' => [
-                'subject'  => 'Component Status Updated',
-                'greeting' => 'A component\'s status was updated!',
-                'content'  => ':name status changed from :old_status to :new_status.',
-                'action'   => 'View',
+                'subject'  => 'Component status bijgewerkt',
+                'greeting' => 'De status van een component is bijgewerkt!',
+                'content'  => ':name status is veranderd van :old_status naar :new_status.',
+                'action'   => 'Tonen',
             ],
             'slack' => [
-                'title'   => 'Component Status Updated',
-                'content' => ':name status changed from :old_status to :new_status.',
+                'title'   => 'Component status bijgewerkt',
+                'content' => ':name status is veranderd van :old_status naar :new_status.',
             ],
             'sms' => [
-                'content' => ':name status changed from :old_status to :new_status.',
+                'content' => ':name status is veranderd van :old_status naar :new_status.',
             ],
         ],
     ],
     'incident' => [
         'new' => [
             'mail' => [
-                'subject'  => 'New Incident Reported',
-                'greeting' => 'A new incident was reported at :app_name.',
-                'content'  => 'Incident :name was reported',
-                'action'   => 'View',
+                'subject'  => 'Nieuw incident gemeld',
+                'greeting' => 'Er is een nieuw incident gemeld voor :app_name.',
+                'content'  => 'Incident :name is gerapporteerd',
+                'action'   => 'Tonen',
             ],
             'slack' => [
-                'title'   => 'Incident :name Reported',
-                'content' => 'A new incident was reported at :app_name',
+                'title'   => 'Incident :name is gerapporteerd',
+                'content' => 'Er is een nieuw incident gemeld voor :app_name',
             ],
             'sms' => [
-                'content' => 'A new incident was reported at :app_name.',
+                'content' => 'Er is een nieuw incident gemeld voor :app_name.',
             ],
         ],
         'update' => [
             'mail' => [
-                'subject' => 'Incident Updated',
-                'content' => ':name was updated',
-                'title'   => ':name was updated to :new_status',
-                'action'  => 'View',
+                'subject' => 'Incident bijgewerkt',
+                'content' => ':name is bijgewerkt',
+                'title'   => ':name is bijgewerkt naar :new_status',
+                'action'  => 'Tonen',
             ],
             'slack' => [
-                'title'   => ':name Updated',
-                'content' => ':name was updated to :new_status',
+                'title'   => ':name is bijgewerkt',
+                'content' => ':name is bijgewerkt naar :new_status',
             ],
             'sms' => [
-                'content' => 'Incident :name was updated',
+                'content' => 'Incident :name is bijgewerkt',
             ],
         ],
     ],
     'schedule' => [
         'new' => [
             'mail' => [
-                'subject' => 'New Schedule Created',
-                'content' => ':name was scheduled for :date',
-                'title'   => 'A new scheduled maintenance was created.',
-                'action'  => 'View',
+                'subject' => 'Nieuw tijdschema aangemaakt',
+                'content' => ':name is ingepland voor :date',
+                'title'   => 'Nieuw gepland onderhoud aangemaakt.',
+                'action'  => 'Tonen',
             ],
             'slack' => [
-                'title'   => 'New Schedule Created!',
-                'content' => ':name was scheduled for :date',
+                'title'   => 'Nieuw tijdschema aangemaakt!',
+                'content' => ':name is ingepland voor :date',
             ],
             'sms' => [
-                'content' => ':name was scheduled for :date',
+                'content' => ':name is ingepland voor :date',
             ],
         ],
     ],
     'subscriber' => [
         'verify' => [
             'mail' => [
-                'subject' => 'Verify Your Subscription',
-                'content' => 'Click to verify your subscription to :app_name status page.',
-                'title'   => 'Verify your subscription to :app_name status page.',
-                'action'  => 'Verify',
+                'subject' => 'Bevestig je inschrijving',
+                'content' => 'Klik om je inschrijving op :app_name statuspagina te bevestigen.',
+                'title'   => 'Bevestig je inschrijving voor de :app_name statuspagina.',
+                'action'  => 'Verifiëren',
             ],
         ],
     ],
     'system' => [
         'test' => [
             'mail' => [
-                'subject' => 'Ping from Cachet!',
-                'content' => 'This is a test notification from Cachet!',
+                'subject' => 'Ping van Cachet!',
+                'content' => 'Dit is een testnotificatie van Cachet!',
                 'title'   => '🔔',
             ],
         ],
@@ -98,10 +98,10 @@ return [
     'user' => [
         'invite' => [
             'mail' => [
-                'subject' => 'Your invitation is inside...',
-                'content' => 'You have been invited to join :app_name status page.',
-                'title'   => 'You\'re invited to join :app_name status page.',
-                'action'  => 'Accept',
+                'subject' => 'Je uitnodiging zit in deze mail...',
+                'content' => 'Je bent uitgenodigd voor de :app_name statuspagina.',
+                'title'   => 'Je bent uitgenodigd voor :app_name statuspagina.',
+                'action'  => 'Accepteer',
             ],
         ],
     ],

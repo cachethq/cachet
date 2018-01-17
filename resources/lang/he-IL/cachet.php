@@ -33,6 +33,7 @@ return [
         'scheduled'    => 'תחזוקה מתוזמנת',
         'scheduled_at' => ', scheduled :timestamp',
         'posted'       => 'Posted :timestamp',
+        'posted_at'    => 'Posted at :timestamp',
         'status'       => [
             1 => 'Investigating',
             2 => 'מזוהה',

@@ -21,7 +21,20 @@ return [
         'logged'                   => '{0} Det er ingen hendelser, bra jobbet.|Du har en logget hendelse.|Du har rapportert <strong>:count</strong> hendelser.',
         'incident-create-template' => 'Opprett mal',
         'incident-templates'       => 'Hendelsesmaler',
-        'updates'                  => '{0} null oppdateringer | Én oppdatering |: telle oppdateringer',
+        'updates'                  => [
+            'title'   => 'Incident updates for :incident',
+            'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
+            'add'     => [
+                'title'   => 'Opprett ny hendelseoppdatering',
+                'success' => 'Your new incident update has been created.',
+                'failure' => 'Something went wrong with the incident update.',
+            ],
+            'edit' => [
+                'title'   => 'Edit incident update',
+                'success' => 'The incident update has been updated.',
+                'failure' => 'Something went wrong updating the incident update',
+            ],
+        ],
         'add'                      => [
             'title'   => 'Rapportere en hendelse',
             'success' => 'Hendelse lagt til.',
@@ -35,11 +48,6 @@ return [
         'delete' => [
             'success' => 'Hendelsen er slettet og vil ikke vises på statussiden din.',
             'failure' => 'Hendelsen kunne ikke slettes, prøv igjen.',
-        ],
-        'update' => [
-            'title'    => 'Opprett ny hendelseoppdatering',
-            'subtitle' => 'Legge til oppdatering av <strong>: hendelsen</strong>',
-            'success'  => 'Update added.',
         ],
 
         // Incident templates
@@ -147,13 +155,15 @@ return [
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'      => 'Abonnenter',
-        'description'      => 'Abonnenter mottar e-postoppdateringer når hendelser opprettes eller komponenter er oppdatert.',
-        'verified'         => 'Verifisert',
-        'not_verified'     => 'Ikke verifisert',
-        'subscriber'       => ': e-post, abonnert: dato',
-        'no_subscriptions' => 'Abonnerer på alle oppdateringer',
-        'add'              => [
+        'subscribers'          => 'Abonnenter',
+        'description'          => 'Abonnenter mottar e-postoppdateringer når hendelser opprettes eller komponenter er oppdatert.',
+        'description_disabled' => 'To use this feature, you need allow people to signup for notifications.',
+        'verified'             => 'Verifisert',
+        'not_verified'         => 'Ikke verifisert',
+        'subscriber'           => ': e-post, abonnert: dato',
+        'no_subscriptions'     => 'Abonnerer på alle oppdateringer',
+        'global'               => 'Globally subscribed',
+        'add'                  => [
             'title'   => 'Legge til en ny abonnent',
             'success' => 'Abonnenten er lagt til!',
             'failure' => 'Noe gikk galt med å legge til abonnenten, prøv igjen.',
@@ -216,7 +226,7 @@ return [
             'footer'        => 'Egendefinert bunntekst HTML',
         ],
         'mail' => [
-            'mail'  => 'Mail',
+            'mail'  => 'E-post',
             'test'  => 'Test',
             'email' => [
                 'subject' => 'Test notification from Cachet',
