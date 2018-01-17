@@ -21,7 +21,20 @@ return [
         'logged'                   => '{0} Es gibt keine Vorfälle, gute Arbeit.|Du hast einen Vorfall gemeldet.|Du hast <strong>:count</strong> Vorfälle gemeldet.',
         'incident-create-template' => 'Vorlage erstellen',
         'incident-templates'       => 'Vorfall Vorlagen',
-        'updates'                  => '{0} Zero aktualizacji|Jedna aktualizacja|:count aktualizacji',
+        'updates'                  => [
+            'title'   => 'Incident updates for :incident',
+            'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
+            'add'     => [
+                'title'   => 'Utwórz nową aktualizację zdarzenia',
+                'success' => 'Your new incident update has been created.',
+                'failure' => 'Something went wrong with the incident update.',
+            ],
+            'edit' => [
+                'title'   => 'Edit incident update',
+                'success' => 'The incident update has been updated.',
+                'failure' => 'Something went wrong updating the incident update',
+            ],
+        ],
         'add'                      => [
             'title'   => 'Vorfall hinzufügen',
             'success' => 'Dodano zdarzenie.',
@@ -35,11 +48,6 @@ return [
         'delete' => [
             'success' => 'Wydarzenie zostało usunięte i nie będzie widoczne na stronie statusu.',
             'failure' => 'Wydarzenie nie mogło zostać usunięte, proszę spróbować ponownie.',
-        ],
-        'update' => [
-            'title'    => 'Utwórz nową aktualizację zdarzenia',
-            'subtitle' => 'Dodaj aktualizację do <strong>:incident</strong>',
-            'success'  => 'Update added.',
         ],
 
         // Incident templates
@@ -147,13 +155,15 @@ return [
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'      => 'Abonnenten',
-        'description'      => 'Subskrybenci będą otrzymywać powiadomienia, gdy wydarzenia zostaną utworzone lub komponenty zaktualizowane.',
-        'verified'         => 'Verifiziert',
-        'not_verified'     => 'Nicht verifiziert',
-        'subscriber'       => ':email, subskrybowany :data',
-        'no_subscriptions' => 'Zapisano do wszystkich aktualizacji',
-        'add'              => [
+        'subscribers'          => 'Abonnenten',
+        'description'          => 'Subskrybenci będą otrzymywać powiadomienia, gdy wydarzenia zostaną utworzone lub komponenty zaktualizowane.',
+        'description_disabled' => 'To use this feature, you need allow people to signup for notifications.',
+        'verified'             => 'Verifiziert',
+        'not_verified'         => 'Nicht verifiziert',
+        'subscriber'           => ':email, subskrybowany :data',
+        'no_subscriptions'     => 'Zapisano do wszystkich aktualizacji',
+        'global'               => 'Globally subscribed',
+        'add'                  => [
             'title'   => 'Einen neuen Abonnenten hinzufügen',
             'success' => 'Abonnent hinzugefügt.',
             'failure' => 'Coś poszło nie tak podczas dodawania subskrybenta, proszę spróbować ponownie.',

@@ -21,7 +21,20 @@ return [
         'logged'                   => '{0} Nu sunt incidente, bravo! | Ai adăugat un incident. | Ai raportat <strong>:count</strong> incidente.',
         'incident-create-template' => 'Crează şablon',
         'incident-templates'       => 'Şabloane incident',
-        'updates'                  => '{0} Nicio actualizare|O actualizare|:count Actualizări',
+        'updates'                  => [
+            'title'   => 'Incident updates for :incident',
+            'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
+            'add'     => [
+                'title'   => 'Adaugă o nouă actualizare a incidentului',
+                'success' => 'Your new incident update has been created.',
+                'failure' => 'Something went wrong with the incident update.',
+            ],
+            'edit' => [
+                'title'   => 'Edit incident update',
+                'success' => 'The incident update has been updated.',
+                'failure' => 'Something went wrong updating the incident update',
+            ],
+        ],
         'add'                      => [
             'title'   => 'Raportează un incident',
             'success' => 'Incidentul a fost adăugat.',
@@ -35,11 +48,6 @@ return [
         'delete' => [
             'success' => 'Incidentul a fost şters şi nu va mai apărea pe pagina de status.',
             'failure' => 'Incidentul nu a putut fi şters, vă rugăm încercaţi din nou.',
-        ],
-        'update' => [
-            'title'    => 'Adaugă o nouă actualizare a incidentului',
-            'subtitle' => 'Adaugă o actualizare la <strong>:incident</strong>',
-            'success'  => 'Update added.',
         ],
 
         // Incident templates
@@ -147,13 +155,15 @@ return [
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'      => 'Abonați',
-        'description'      => 'Abonații vor primi actualizări prin email când incidente noi sunt adăugate sau componentele sunt actualizate.',
-        'verified'         => 'Verificat',
-        'not_verified'     => 'Neverificat',
-        'subscriber'       => ':email, abonat la :date',
-        'no_subscriptions' => 'Ați fost abonat la toate actualizările',
-        'add'              => [
+        'subscribers'          => 'Abonați',
+        'description'          => 'Abonații vor primi actualizări prin email când incidente noi sunt adăugate sau componentele sunt actualizate.',
+        'description_disabled' => 'To use this feature, you need allow people to signup for notifications.',
+        'verified'             => 'Verificat',
+        'not_verified'         => 'Neverificat',
+        'subscriber'           => ':email, abonat la :date',
+        'no_subscriptions'     => 'Ați fost abonat la toate actualizările',
+        'global'               => 'Globally subscribed',
+        'add'                  => [
             'title'   => 'Adaugă un nou abonat',
             'success' => 'Abonatul a fost adăugat!',
             'failure' => 'Ceva nu a funcționat legat de adăugarea abonatului, vă rugăm încercați din nou.',

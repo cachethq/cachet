@@ -30,9 +30,10 @@ return [
         'none'         => 'crwdns884:0crwdne884:0',
         'past'         => 'crwdns885:0crwdne885:0',
         'stickied'     => 'crwdns888:0crwdne888:0',
-        'scheduled'    => 'crwdns889:0crwdne889:0',
+        'scheduled'    => 'crwdns1395:0crwdne1395:0',
         'scheduled_at' => 'crwdns890:0crwdne890:0',
         'posted'       => 'crwdns891:0crwdne891:0',
+        'posted_at'    => 'crwdns1396:0crwdne1396:0',
         'status'       => [
             1 => 'crwdns892:0crwdne892:0',
             2 => 'crwdns893:0crwdne893:0',
@@ -52,9 +53,9 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => 'crwdns899:0crwdne899:0',
-        'bad'   => 'crwdns900:0crwdne900:0',
-        'major' => 'crwdns901:0crwdne901:0',
+        'good'  => 'crwdns1397:0crwdne1397:0',
+        'bad'   => 'crwdns1398:0crwdne1398:0',
+        'major' => 'crwdns1399:0crwdne1399:0',
     ],
 
     'api' => [

@@ -14,7 +14,7 @@ return [
     'components' => [
         'last_updated' => 'Последнее обновление :timestamp',
         'status'       => [
-            0 => 'Неизвестный',
+            0 => 'Неизвестно',
             1 => 'Работает',
             2 => 'Падение производительности',
             3 => 'Перебои в работе',
@@ -29,10 +29,11 @@ return [
     'incidents' => [
         'none'         => 'Без происшествий',
         'past'         => 'Последние инциденты',
-        'stickied'     => 'Stickied инциденты',
+        'stickied'     => 'Закрепленные инциденты',
         'scheduled'    => 'Плановые работы',
         'scheduled_at' => ', запланированы :timestamp',
-        'posted'       => 'Отправлено :timestamp',
+        'posted'       => 'Опубликовано :timestamp',
+        'posted_at'    => 'Posted at :timestamp',
         'status'       => [
             1 => 'Проводим анализ проблемы',
             2 => 'Причина определена',
@@ -120,7 +121,7 @@ return [
     'home'            => 'Главный экран',
     'description'     => 'Будьте в курсе последних новостей о состоянии сервиса от :app.',
     'powered_by'      => 'Работает на <a href="https://cachethq.io" class="links">Cachet</a>.',
-    'timezone'        => 'Время указано в :timezone.',
+    'timezone'        => 'Время показано по :timezone.',
     'about_this_site' => 'Об этом сайте',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',

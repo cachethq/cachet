@@ -21,7 +21,20 @@ return [
         'logged'                   => '{0} Non ci sono segnalazioni, ottimo lavoro.|Hai notificato una segnalazione.|Hai notificato <strong>:count</strong> segnalazioni.',
         'incident-create-template' => 'Crea Modello',
         'incident-templates'       => 'Modelli di segnalazione',
-        'updates'                  => '{0} Zero Aggiornamenti|Un Aggiornamento|:count Aggiornamenti',
+        'updates'                  => [
+            'title'   => 'Incident updates for :incident',
+            'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
+            'add'     => [
+                'title'   => 'Crea nuovo aggiornamento incidente',
+                'success' => 'Your new incident update has been created.',
+                'failure' => 'Something went wrong with the incident update.',
+            ],
+            'edit' => [
+                'title'   => 'Edit incident update',
+                'success' => 'The incident update has been updated.',
+                'failure' => 'Something went wrong updating the incident update',
+            ],
+        ],
         'add'                      => [
             'title'   => 'Riporta un problema',
             'success' => 'Segnalazione aggiunta.',
@@ -35,11 +48,6 @@ return [
         'delete' => [
             'success' => 'La segnalazione è stata eliminata e non verrà visualizzata sulla tua pagina di stato.',
             'failure' => 'Non è stato possibile eliminare la segnalazione, si prega di riprovare.',
-        ],
-        'update' => [
-            'title'    => 'Crea nuovo aggiornamento incidente',
-            'subtitle' => 'Aggiungere un aggiornamento a <strong>:incident</strong>',
-            'success'  => 'Update added.',
         ],
 
         // Incident templates
@@ -147,13 +155,15 @@ return [
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'      => 'Iscritti',
-        'description'      => 'Gli iscritti riceveranno aggiornamenti via email quando vengono create le segnalazioni o vengono aggiornati i componenti vengono.',
-        'verified'         => 'Verificato',
-        'not_verified'     => 'Non Verificato',
-        'subscriber'       => ': email, iscritta :date',
-        'no_subscriptions' => 'Iscritto a tutti gli aggiornamenti',
-        'add'              => [
+        'subscribers'          => 'Iscritti',
+        'description'          => 'Gli iscritti riceveranno aggiornamenti via email quando vengono create le segnalazioni o vengono aggiornati i componenti vengono.',
+        'description_disabled' => 'To use this feature, you need allow people to signup for notifications.',
+        'verified'             => 'Verificato',
+        'not_verified'         => 'Non Verificato',
+        'subscriber'           => ': email, iscritta :date',
+        'no_subscriptions'     => 'Iscritto a tutti gli aggiornamenti',
+        'global'               => 'Globally subscribed',
+        'add'                  => [
             'title'   => 'Aggiungi un nuovo iscritto',
             'success' => 'L\'iscritto è stato aggiunto!',
             'failure' => 'Qualcosa è andato storto con l\'aggiunta dell\'iscritto, si prega di riprovare.',

@@ -33,6 +33,7 @@ return [
         'scheduled'    => 'Geplante Wartungen',
         'scheduled_at' => ', geplant :timestamp',
         'posted'       => 'Veröffentlicht :timestamp',
+        'posted_at'    => 'Posted at :timestamp',
         'status'       => [
             1 => 'Untersuchungen laufen',
             2 => 'Identifiziert',
@@ -75,7 +76,7 @@ return [
     // Subscriber
     'subscriber' => [
         'subscribe'   => 'Abonnieren Sie um die neuesten Updates zu erhalten.',
-        'unsubscribe' => 'Deabonnieren unter :link',
+        'unsubscribe' => 'Unter :link abbestellen',
         'button'      => 'Abonnieren',
         'manage'      => [
             'no_subscriptions' => 'Du hast im Augenblick alle Updates abonniert.',

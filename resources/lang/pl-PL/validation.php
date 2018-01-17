@@ -38,7 +38,7 @@ return [
     ],
     'boolean'        => ':attribute musi być prawdą lub fałszem.',
     'confirmed'      => ':attribute potwierdzenie nie zgadza się.',
-    'date'           => ':attribute nie zawiera prawidłowej daty.',
+    'date'           => ':attribute nie jest prawidłową datą.',
     'date_format'    => ':attribute nie pasuje do formatu :format.',
     'different'      => ':attribute musi być różne od :other.',
     'digits'         => ':attribute musi składać się z :digits cyfr.',

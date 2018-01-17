@@ -23,6 +23,6 @@ class SettingTest extends AbstractTestCase
 {
     public function testValidation()
     {
-        $this->assertFalse(property_exists(new Setting(), 'rules'));
+        $this->assertClassNotHasAttribute('rules', Setting::class);
     }
 }

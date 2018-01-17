@@ -13,74 +13,74 @@ return [
     'component' => [
         'status_update' => [
             'mail' => [
-                'subject'  => 'Component Status Updated',
-                'greeting' => 'A component\'s status was updated!',
-                'content'  => ':name status changed from :old_status to :new_status.',
-                'action'   => 'View',
+                'subject'  => 'Trạng thái của Thành phần đã được cập nhật',
+                'greeting' => 'Trạng thái của Cấu phần đã được cập nhật!',
+                'content'  => 'Trạng thái của :name đã đổi từ :old_status sang :new_status.',
+                'action'   => 'Xem',
             ],
             'slack' => [
-                'title'   => 'Component Status Updated',
-                'content' => ':name status changed from :old_status to :new_status.',
+                'title'   => 'Trạng thái của Thành phần đã được cập nhật',
+                'content' => 'Trạng thái của :name đã đổi từ :old_status sang :new_status.',
             ],
             'sms' => [
-                'content' => ':name status changed from :old_status to :new_status.',
+                'content' => 'Trạng thái của :name đã đổi từ :old_status sang :new_status.',
             ],
         ],
     ],
     'incident' => [
         'new' => [
             'mail' => [
-                'subject'  => 'New Incident Reported',
-                'greeting' => 'A new incident was reported at :app_name.',
-                'content'  => 'Incident :name was reported',
-                'action'   => 'View',
+                'subject'  => 'Sự cố mới đã được báo cáo',
+                'greeting' => 'Một sự cố mới được báo cáo tại :app_name.',
+                'content'  => 'Sự cố :name đã được báo cáo',
+                'action'   => 'Xem',
             ],
             'slack' => [
-                'title'   => 'Incident :name Reported',
-                'content' => 'A new incident was reported at :app_name',
+                'title'   => 'Sự cố :name đã được báo cáo',
+                'content' => 'Một sự cố mới được báo cáo tại :app_name',
             ],
             'sms' => [
-                'content' => 'A new incident was reported at :app_name.',
+                'content' => 'Một sự cố mới được báo cáo tại :app_name.',
             ],
         ],
         'update' => [
             'mail' => [
-                'subject' => 'Incident Updated',
-                'content' => ':name was updated',
-                'title'   => ':name was updated to :new_status',
-                'action'  => 'View',
+                'subject' => 'Sự cố đã cập nhật',
+                'content' => ':name đã được cập nhật',
+                'title'   => ':name đã được cập nhật tới :new_status',
+                'action'  => 'Xem',
             ],
             'slack' => [
-                'title'   => ':name Updated',
-                'content' => ':name was updated to :new_status',
+                'title'   => ':name đã được cập nhật',
+                'content' => ':name đã được cập nhật tới :new_status',
             ],
             'sms' => [
-                'content' => 'Incident :name was updated',
+                'content' => 'Sự cố :name đã được Cập Nhật',
             ],
         ],
     ],
     'schedule' => [
         'new' => [
             'mail' => [
-                'subject' => 'New Schedule Created',
-                'content' => ':name was scheduled for :date',
-                'title'   => 'A new scheduled maintenance was created.',
-                'action'  => 'View',
+                'subject' => 'Lịch mới đã được tạo',
+                'content' => ':name được đặt lịch vào :date',
+                'title'   => 'Lịch bảo trì mới đã được tạo.',
+                'action'  => 'Xem',
             ],
             'slack' => [
-                'title'   => 'New Schedule Created!',
-                'content' => ':name was scheduled for :date',
+                'title'   => 'Lịch mới đã được tạo!',
+                'content' => ':name được đặt lịch vào :date',
             ],
             'sms' => [
-                'content' => ':name was scheduled for :date',
+                'content' => ':name được đặt lịch vào :date',
             ],
         ],
     ],
     'subscriber' => [
         'verify' => [
             'mail' => [
-                'subject' => 'Verify Your Subscription',
-                'content' => 'Click to verify your subscription to :app_name status page.',
+                'subject' => 'Xác minh đăng ký của bạn',
+                'content' => 'Nhấn vào đây để xác nhận đăng ký của bạn tại trang trạng thái :app_name.',
                 'title'   => 'Verify your subscription to :app_name status page.',
                 'action'  => 'Verify',
             ],
@@ -98,7 +98,7 @@ return [
     'user' => [
         'invite' => [
             'mail' => [
-                'subject' => 'Your invitation is inside...',
+                'subject' => 'Lời mời của bạn là bên trong...',
                 'content' => 'You have been invited to join :app_name status page.',
                 'title'   => 'You\'re invited to join :app_name status page.',
                 'action'  => 'Accept',

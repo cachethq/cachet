@@ -21,7 +21,20 @@ return [
         'logged'                   => '{0} Aucun incident, bon travail.|Vous avez un incident signalé.|Vous avez  <strong>:count</strong> incidents signalés.',
         'incident-create-template' => 'Créer un modèle',
         'incident-templates'       => 'Modèles d\'incident',
-        'updates'                  => '{0} Aucune mise à jour|Une mise à jour|:count mises à jour',
+        'updates'                  => [
+            'title'   => 'Incident updates for :incident',
+            'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
+            'add'     => [
+                'title'   => 'Créer une mise à jour d\'incident',
+                'success' => 'Your new incident update has been created.',
+                'failure' => 'Something went wrong with the incident update.',
+            ],
+            'edit' => [
+                'title'   => 'Edit incident update',
+                'success' => 'The incident update has been updated.',
+                'failure' => 'Something went wrong updating the incident update',
+            ],
+        ],
         'add'                      => [
             'title'   => 'Ajouter un incident',
             'success' => 'Incident ajouté.',
@@ -35,11 +48,6 @@ return [
         'delete' => [
             'success' => 'L\'incident a été supprimé et ne sera pas affiché sur votre page de statut.',
             'failure' => 'L\'incident n\'a pas pu être supprimé. Veuillez réessayer.',
-        ],
-        'update' => [
-            'title'    => 'Créer une mise à jour d\'incident',
-            'subtitle' => 'Ajouter une mise à jour à <strong>:incident</strong>',
-            'success'  => 'Update added.',
         ],
 
         // Incident templates
@@ -147,13 +155,15 @@ return [
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'      => 'Abonnés',
-        'description'      => 'Les abonnés recevront des notifications par e-mail lorsque des incidents sont créés ou des composants sont mis à jour.',
-        'verified'         => 'Vérifié',
-        'not_verified'     => 'Non vérifié',
-        'subscriber'       => ':email, abonné à :date',
-        'no_subscriptions' => 'Souscrire à toutes les mises à jour',
-        'add'              => [
+        'subscribers'          => 'Abonnés',
+        'description'          => 'Les abonnés recevront des notifications par e-mail lorsque des incidents sont créés ou des composants sont mis à jour.',
+        'description_disabled' => 'To use this feature, you need allow people to signup for notifications.',
+        'verified'             => 'Vérifié',
+        'not_verified'         => 'Non vérifié',
+        'subscriber'           => ':email, abonné à :date',
+        'no_subscriptions'     => 'Souscrire à toutes les mises à jour',
+        'global'               => 'Globally subscribed',
+        'add'                  => [
             'title'   => 'Ajouter un abonné',
             'success' => 'L\'abonné a été ajouté !',
             'failure' => 'Une erreur s\'est produite lors de l\'ajout de l\'abonné. Veuillez réessayer.',
@@ -216,7 +226,7 @@ return [
             'footer'        => 'Pied de page HTML personnalisé',
         ],
         'mail' => [
-            'mail'  => 'Courrier',
+            'mail'  => 'Courriel',
             'test'  => 'Test',
             'email' => [
                 'subject' => 'Tester la notification depuis Cachet',

@@ -33,6 +33,7 @@ return [
         'scheduled'    => '计划维护',
         'scheduled_at' => '，计划于 :timestamp',
         'posted'       => '发布于 :timestamp',
+        'posted_at'    => 'Posted at :timestamp',
         'status'       => [
             1 => '确认中',
             2 => '修复中',
