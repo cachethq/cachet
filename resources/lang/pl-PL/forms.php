@@ -151,9 +151,9 @@ return [
             'display-graphs'               => 'Pokazać wykresy na stronie statusu?',
             'about-this-page'              => 'Informacje o tej stronie',
             'days-of-incidents'            => 'Z ilu ostatnich dni pokazywać incydenty?',
-            'time_before_refresh'          => 'Status page refresh rate (in seconds).',
+            'time_before_refresh'          => 'Częstotliwość odświeżania strony statusu (w sekundach).',
             'banner'                       => 'Baner',
-            'banner-help'                  => 'Zaleca się, aby przesyłać pliki nie większe niż 930px szerokości.',
+            'banner-help'                  => "Zaleca się, aby przesyłać pliki nie większe niż 930px szerokości.",
             'subscribers'                  => 'Czy zezwolić użytkownikom na subskrypcje e-mail w celu otrzymywania powiadomień?',
             'skip_subscriber_verification' => 'Pominąć weryfikację użytkowników? (Ostrzeżenie: możesz otrzymać spam)',
             'automatic_localization'       => 'Automatycznie tłumaczyć twoją stronę statusu na język odwiedzającego?',
@@ -215,7 +215,7 @@ return [
         ],
         'team' => [
             'description' => 'Zaproś nowych członków do swojego zespołu. Wpisz ich adresy e-mail tutaj.',
-            'email'       => 'Email #:id',
+            'email'       => 'Adres Email Członków Zespołu',
         ],
     ],
 
@@ -235,7 +235,7 @@ return [
     'remove'         => 'Skasuj',
     'invite'         => 'Zaproś',
     'signup'         => 'Zarejestruj się',
-    'manage_updates' => 'Manage Updates',
+    'manage_updates' => 'Zarządzaj Aktualizacjami',
 
     // Other
     'optional' => '* Opcjonalnie',
