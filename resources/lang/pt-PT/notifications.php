@@ -15,15 +15,15 @@ return [
             'mail' => [
                 'subject'  => 'Estado do Componente Atualizado',
                 'greeting' => 'O estado de um componente foi atualizado!',
-                'content'  => ':name status changed from :old_status to :new_status.',
+                'content'  => 'estado :name mudou de :old_status para :new_status.',
                 'action'   => 'Ver',
             ],
             'slack' => [
                 'title'   => 'Estado do Componente Atualizado',
-                'content' => ':name status changed from :old_status to :new_status.',
+                'content' => 'estado :name mudou de :old_status para :new_status.',
             ],
             'sms' => [
-                'content' => ':name status changed from :old_status to :new_status.',
+                'content' => 'estado :name mudou de :old_status para :new_status.',
             ],
         ],
     ],
@@ -31,16 +31,16 @@ return [
         'new' => [
             'mail' => [
                 'subject'  => 'Novo Incidente Reportado',
-                'greeting' => 'A new incident was reported at :app_name.',
-                'content'  => 'Incident :name was reported',
+                'greeting' => 'Novo incidente reportado na :app_name.',
+                'content'  => 'O incidente :name foi reportado',
                 'action'   => 'Ver',
             ],
             'slack' => [
                 'title'   => 'Incidente: name Relatado',
-                'content' => 'A new incident was reported at :app_name',
+                'content' => 'Um novo incidente reportado na :app_name',
             ],
             'sms' => [
-                'content' => 'A new incident was reported at :app_name.',
+                'content' => 'Novo incidente reportado na :app_name.',
             ],
         ],
         'update' => [
@@ -64,7 +64,7 @@ return [
             'mail' => [
                 'subject' => 'Novo Horário Criado',
                 'content' => ':name foi agendado para :date',
-                'title'   => 'A new scheduled maintenance was created.',
+                'title'   => 'Foi criada uma nova manutenção programada.',
                 'action'  => 'Ver',
             ],
             'slack' => [
@@ -80,8 +80,8 @@ return [
         'verify' => [
             'mail' => [
                 'subject' => 'Verifique A Sua Subscricao',
-                'content' => 'Click to verify your subscription to :app_name status page.',
-                'title'   => 'Verify your subscription to :app_name status page.',
+                'content' => 'Clique para verificar a sua subscrição para a página de status :app_name.',
+                'title'   => 'Verifique a sua subscrição para a página de status :app_name.',
                 'action'  => 'Verificar',
             ],
         ],
@@ -90,7 +90,7 @@ return [
         'test' => [
             'mail' => [
                 'subject' => 'Ping do Cachet!',
-                'content' => 'This is a test notification from Cachet!',
+                'content' => 'Isto é uma notificação de teste do Cachet!',
                 'title'   => '🔔',
             ],
         ],
@@ -100,7 +100,7 @@ return [
             'mail' => [
                 'subject' => 'O seu convite está dentro...',
                 'content' => 'Você foi convidado para se juntar :app_name pagina de status.',
-                'title'   => 'You\'re invited to join :app_name status page.',
+                'title'   => 'Você foi convidado para a página de status da :app_name .',
                 'action'  => 'Aceitar',
             ],
         ],
