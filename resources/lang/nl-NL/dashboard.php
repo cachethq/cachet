@@ -22,7 +22,7 @@ return [
         'incident-create-template' => 'Maak template',
         'incident-templates'       => 'Incident Sjablonen',
         'updates'                  => [
-            'title'   => 'Incident updates for :incident',
+            'title'   => 'Incident updates voor :incident',
             'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
             'add'     => [
                 'title'   => 'Maak een nieuwe incident update',
