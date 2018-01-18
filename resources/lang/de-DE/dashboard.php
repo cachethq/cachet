@@ -23,16 +23,16 @@ return [
         'incident-templates'       => 'Ereignis Vorlagen',
         'updates'                  => [
             'title'   => 'Vorfall Updates für :incident',
-            'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
+            'count'   => '{0} 0 Updates|[1] Ein Update|[2] Zwei Updates|[3,*] Mehrere Updates',
             'add'     => [
                 'title'   => 'Vorfall-Update erstellen',
-                'success' => 'Your new incident update has been created.',
-                'failure' => 'Something went wrong with the incident update.',
+                'success' => 'Dein Vorfall Update wurde erstellt.',
+                'failure' => 'Etwas ist mit dem Vorfall Update schief gelaufen.',
             ],
             'edit' => [
                 'title'   => 'Vorfall Update bearbeiten',
                 'success' => 'Vorfall Update wurde aktualisiert.',
-                'failure' => 'Aktualisierung des Vorfall Updates fehlgeschlagen',
+                'failure' => 'Etwas ist mit dem Aktualisieren des Vorfall Updates schief gelaufen',
             ],
         ],
         'add'                      => [
