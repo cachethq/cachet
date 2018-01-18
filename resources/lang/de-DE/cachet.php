@@ -33,7 +33,7 @@ return [
         'scheduled'    => 'Geplante Wartungen',
         'scheduled_at' => ', geplant :timestamp',
         'posted'       => 'Veröffentlicht :timestamp',
-        'posted_at'    => 'Posted at :timestamp',
+        'posted_at'    => 'Veröffentlicht am :timestamp',
         'status'       => [
             1 => 'Untersuchungen laufen',
             2 => 'Identifiziert',
