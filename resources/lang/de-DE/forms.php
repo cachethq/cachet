@@ -151,9 +151,9 @@ return [
             'display-graphs'               => 'Graphen auf der Statusseite anzeigen?',
             'about-this-page'              => 'Über diese Seite',
             'days-of-incidents'            => 'Wie viele Tage mit Vorfällen sollen gezeigt werden?',
-            'time_before_refresh'          => 'Status page refresh rate (in seconds).',
+            'time_before_refresh'          => 'Aktualisierungsrate der Statusseite (in Sekunden).',
             'banner'                       => 'Banner Bild',
-            'banner-help'                  => 'Es wird empfohlen, dass Sie keine Dateien die breiter als 930 Pixel sind hochladen .',
+            'banner-help'                  => "Es wird empfohlen, dass Sie keine Dateien die breiter als 930 Pixel sind hochladen .",
             'subscribers'                  => 'Personen die Anmeldung für E-Mail-Benachrichtigung erlauben?',
             'skip_subscriber_verification' => 'Verifizierung der Nutzer überspringen? (Warnung, du könntest gespammt werden)',
             'automatic_localization'       => 'Die Status-Seite automatisch auf die Sprache deiner Besucher anpassen?',
@@ -235,7 +235,7 @@ return [
     'remove'         => 'Entfernen',
     'invite'         => 'Einladen',
     'signup'         => 'Registrieren',
-    'manage_updates' => 'Manage Updates',
+    'manage_updates' => 'Updates verwalten',
 
     // Other
     'optional' => '* optional',
