@@ -22,7 +22,7 @@ return [
         'incident-create-template' => 'Vorlage erstellen',
         'incident-templates'       => 'Ereignis Vorlagen',
         'updates'                  => [
-            'title'   => 'Incident updates for :incident',
+            'title'   => 'Vorfall Updates für :incident',
             'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
             'add'     => [
                 'title'   => 'Vorfall-Update erstellen',
@@ -30,9 +30,9 @@ return [
                 'failure' => 'Something went wrong with the incident update.',
             ],
             'edit' => [
-                'title'   => 'Edit incident update',
-                'success' => 'The incident update has been updated.',
-                'failure' => 'Something went wrong updating the incident update',
+                'title'   => 'Vorfall Update bearbeiten',
+                'success' => 'Vorfall Update wurde aktualisiert.',
+                'failure' => 'Aktualisierung des Vorfall Updates fehlgeschlagen',
             ],
         ],
         'add'                      => [
@@ -157,7 +157,7 @@ return [
     'subscribers' => [
         'subscribers'          => 'Abonnenten',
         'description'          => 'Abonnenten erhalten E-Mail Updates, wenn Vorfälle erstellt oder Komponenten bearbeitet werden.',
-        'description_disabled' => 'To use this feature, you need allow people to signup for notifications.',
+        'description_disabled' => 'Um diese Funktion nutzen zu können, müssen Sie zulassen, dass sich Personen für Benachrichtigungen anmelden dürfen.',
         'verified'             => 'Bestätigt',
         'not_verified'         => 'Nicht Bestätigt',
         'subscriber'           => ':email, abonniert am :date',
