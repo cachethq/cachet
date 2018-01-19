@@ -16,14 +16,14 @@ return [
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Ereignisse &amp; Termine',
+        'title'                    => 'Vorfälle & Wartungsarbeiten',
         'incidents'                => 'Ereignisse',
-        'logged'                   => '{0} Es gibt keine Ereignisse, gute Arbeit.|Du hast ein Ereignis gemeldet.|Du hast <strong>:count</strong> Ereignisse gemeldet.',
+        'logged'                   => '{0} Es gibt keine Vorfälle, gute Arbeit.|[1] Du hast ein Vorfall gemeldet.|[2,*] Du hast <strong>:count</strong> Vorfälle gemeldet.',
         'incident-create-template' => 'Vorlage erstellen',
         'incident-templates'       => 'Ereignis Vorlagen',
         'updates'                  => [
-            'title'   => 'Vorfall Updates für :incident',
-            'count'   => '{0} 0 Updates|[1] Ein Update|[2] Zwei Updates|[3,*] Mehrere Updates',
+            'title'   => 'Vorfall Aktualisiert für :incident',
+            'count'   => '{0} 0 Aktualisierungen|[1] Eine Aktualisierung|[2] Zwei Aktualisierungen|[3,*] Mehrere Aktualisierungen',
             'add'     => [
                 'title'   => 'Vorfall-Update erstellen',
                 'success' => 'Dein Vorfall Update wurde erstellt.',
