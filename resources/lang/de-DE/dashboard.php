@@ -26,12 +26,12 @@ return [
             'count'   => '{0} 0 Aktualisierungen|[1] Eine Aktualisierung|[2] Zwei Aktualisierungen|[3,*] Mehrere Aktualisierungen',
             'add'     => [
                 'title'   => 'Vorfall-Update erstellen',
-                'success' => 'Dein Vorfall Update wurde erstellt.',
-                'failure' => 'Etwas ist mit dem Vorfall Update schief gelaufen.',
+                'success' => 'Deine neue Vorfall Aktualisierung wurde erstellt.',
+                'failure' => 'Etwas ist schief gelaufen mit der Vorfall Aktualisierung.',
             ],
             'edit' => [
-                'title'   => 'Vorfall Update bearbeiten',
-                'success' => 'Vorfall Update wurde aktualisiert.',
+                'title'   => 'Bearbeite Vorfall Aktualisierung',
+                'success' => 'Vorfall wurde aktualisiert.',
                 'failure' => 'Etwas ist mit dem Aktualisieren des Vorfall Updates schief gelaufen',
             ],
         ],
