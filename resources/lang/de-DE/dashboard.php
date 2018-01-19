@@ -73,7 +73,7 @@ return [
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => 'Geplante Wartungen',
+        'schedule'     => 'Wartungsarbeiten',
         'logged'       => '{0} Es gibt keine Zeitpläne, gute Arbeit.|Du hast einen Zeitplan erstellt.|Du hast <strong>:count</strong> Zeitpläne gemeldet.',
         'scheduled_at' => 'Geplant am :timestamp',
         'add'          => [
@@ -162,7 +162,7 @@ return [
         'not_verified'         => 'Nicht Bestätigt',
         'subscriber'           => ':email, abonniert am :date',
         'no_subscriptions'     => 'Aktualisierungen per E-Mail abonnieren',
-        'global'               => 'Globally subscribed',
+        'global'               => 'Weltweit abonniert',
         'add'                  => [
             'title'   => 'Einen neuen Abonnenten hinzufügen',
             'success' => 'Abonnent hinzugefügt.',
