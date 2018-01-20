@@ -151,9 +151,9 @@ return [
             'display-graphs'               => 'Visualizzare i grafici nella pagina di stato?',
             'about-this-page'              => 'Informazioni sulla pagina',
             'days-of-incidents'            => 'Quanti giorni di segnalazioni mostrare?',
-            'time_before_refresh'          => 'Status page refresh rate (in seconds).',
+            'time_before_refresh'          => 'Frequenza di aggiornamento della pagina di stato (in secondi).',
             'banner'                       => 'Immagine del banner',
-            'banner-help'                  => 'È consigliabile caricare file larghi non più di 930px.',
+            'banner-help'                  => "È consigliabile caricare file larghi non più di 930px.",
             'subscribers'                  => 'Permettere alle persone di iscriversi alle notifiche via email?',
             'skip_subscriber_verification' => 'Skip verifica degli utenti? (Attenzione, potreste ricevere spam)',
             'automatic_localization'       => 'Tradurre automaticamente la tua pagina di stato nella lingua del visitatore?',
@@ -235,7 +235,7 @@ return [
     'remove'         => 'Rimuovi',
     'invite'         => 'Invita',
     'signup'         => 'Registrati',
-    'manage_updates' => 'Manage Updates',
+    'manage_updates' => 'Gestisci gli aggiornamenti',
 
     // Other
     'optional' => '* Opzionale',
