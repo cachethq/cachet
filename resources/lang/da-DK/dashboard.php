@@ -16,9 +16,9 @@ return [
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Hændelser &amp; Planlagte',
+        'title'                    => 'Hændelser og Vedligehold',
         'incidents'                => 'Incidents',
-        'logged'                   => '{0} Ingen åbne hændelser.|Der er en åben hændelse.|Der er <strong>:count</strong> åbne hændelser.',
+        'logged'                   => '{0} Ingen åbne hændelser.|[1] Der er én åben hændelse.|[2.*] Der er <strong>:count</strong> åbne hændelser.',
         'incident-create-template' => 'Create Template',
         'incident-templates'       => 'Incident Templates',
         'updates'                  => [
@@ -26,13 +26,13 @@ return [
             'count'   => '{0} Nul opdateringer |[1] Én opdatering |[2] To opdateringer | [3, *] Flere opdateringer',
             'add'     => [
                 'title'   => 'Opret ny hændelsesopdatering',
-                'success' => 'Your new incident update has been created.',
-                'failure' => 'Something went wrong with the incident update.',
+                'success' => 'Din nye hændelsesopdatering er oprettet.',
+                'failure' => 'En fejl opstod med hændelsesopdateringen.',
             ],
             'edit' => [
-                'title'   => 'Edit incident update',
-                'success' => 'The incident update has been updated.',
-                'failure' => 'Something went wrong updating the incident update',
+                'title'   => 'Redigér hændelsesopdatering',
+                'success' => 'Hændelsesopdateringen er blevet opdateret.',
+                'failure' => 'En fejl opstod under opdateringen af hændelsesopdateringen',
             ],
         ],
         'add'                      => [
@@ -157,12 +157,12 @@ return [
     'subscribers' => [
         'subscribers'          => 'Subscribers',
         'description'          => 'Abonnenter vil modtage notifikationer når hændelser oprettes eller komponenter opdateres.',
-        'description_disabled' => 'To use this feature, you need allow people to signup for notifications.',
+        'description_disabled' => 'For at bruge denne funktion skal du tillader folk at tilmelde sig notifikationer.',
         'verified'             => 'Bekræftet',
         'not_verified'         => 'Ej bekræftet',
         'subscriber'           => ':email, abonnerede :date',
         'no_subscriptions'     => 'Abonnere på alle opdateringer',
-        'global'               => 'Globally subscribed',
+        'global'               => 'Globalt tilmeldt',
         'add'                  => [
             'title'   => 'Tilføj abonnent',
             'success' => 'Subscriber added.',
