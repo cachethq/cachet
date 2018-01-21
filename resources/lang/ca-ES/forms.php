@@ -49,6 +49,7 @@ return [
         'name'               => 'Nom',
         'status'             => 'Estat',
         'component'          => 'Component',
+        'component_status'   => 'Component Status',
         'message'            => 'Missatge',
         'message-help'       => 'També podeu fer servir Markdown.',
         'occurred_at'        => 'Quan va succeir aquest incident?',
