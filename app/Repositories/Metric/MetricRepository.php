@@ -96,8 +96,8 @@ class MetricRepository
             }
 
             $pointKey = $dateTime->sub(new DateInterval('PT1H'))->format('Y-m-d H:00');
-
         }
+
         return $points->sortBy(function ($point, $key) {
             return $key;
         });
