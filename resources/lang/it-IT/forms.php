@@ -154,7 +154,7 @@ return [
             'days-of-incidents'            => 'Quanti giorni di segnalazioni mostrare?',
             'time_before_refresh'          => 'Frequenza di aggiornamento della pagina di stato (in secondi).',
             'banner'                       => 'Immagine del banner',
-            'banner-help'                  => "È consigliabile caricare file larghi non più di 930px.",
+            'banner-help'                  => 'È consigliabile caricare file larghi non più di 930px.',
             'subscribers'                  => 'Permettere alle persone di iscriversi alle notifiche via email?',
             'skip_subscriber_verification' => 'Skip verifica degli utenti? (Attenzione, potreste ricevere spam)',
             'automatic_localization'       => 'Tradurre automaticamente la tua pagina di stato nella lingua del visitatore?',
