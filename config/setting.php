@@ -33,6 +33,19 @@ return [
 
     'enable_subscribers' => true,
 
+
+    /*
+    |--------------------------------------------------------------------------
+    | Suppress notifications while in maintenance
+    |--------------------------------------------------------------------------
+    |
+    | Whether to suppress notification channels when an issue is created during
+    | planned or in-progress maintenance periods.
+    |
+    */
+
+    'suppress_notifications_in_maintenance' => true,
+
     /*
     |--------------------------------------------------------------------------
     | Automatic Localization

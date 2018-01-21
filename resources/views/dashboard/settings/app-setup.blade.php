@@ -72,6 +72,17 @@
                             <div class="col-xs-12">
                                 <div class="checkbox">
                                     <label>
+                                        <input type="hidden" value="0" name="suppress_notifications_in_maintenance">
+                                        <input type="checkbox" value="1" name="suppress_notifications_in_maintenance" {{ Config::get('setting.suppress_notifications_in_maintenance') ? 'checked' : null }}>
+                                        {{ trans('forms.settings.app-setup.suppress_notifications_in_maintenance') }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="checkbox">
+                                    <label>
                                         <input type="hidden" value="0" name="skip_subscriber_verification">
                                         <input type="checkbox" value="1" name="skip_subscriber_verification" {{ Config::get('setting.skip_subscriber_verification') ? 'checked' : null }}>
                                         {{ trans('forms.settings.app-setup.skip_subscriber_verification') }}
