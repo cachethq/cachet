@@ -115,7 +115,7 @@ class System implements SystemContract
             return true;
         }
 
-        return !$this->config->get('suppress_notifications_in_maintenance');
+        return !$this->config->get('setting.suppress_notifications_in_maintenance');
     }
 
     /**
