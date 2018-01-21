@@ -17,6 +17,7 @@ use CachetHQ\Cachet\Bus\Commands\Incident\RemoveIncidentCommand;
 use CachetHQ\Cachet\Bus\Commands\Incident\UpdateIncidentCommand;
 use CachetHQ\Cachet\Bus\Commands\IncidentUpdate\CreateIncidentUpdateCommand;
 use CachetHQ\Cachet\Bus\Commands\IncidentUpdate\UpdateIncidentUpdateCommand;
+use CachetHQ\Cachet\Integrations\Contracts\System;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Incident;
@@ -49,15 +50,23 @@ class IncidentController extends Controller
     protected $auth;
 
     /**
+     * The system instance.
+     *
+     * @var \CachetHQ\Cachet\Integrations\Contracts\System
+     */
+    protected $system;
+
+    /**
      * Creates a new incident controller instance.
      *
      * @param \Illuminate\Contracts\Auth\Guard $auth
      *
      * @return void
      */
-    public function __construct(Guard $auth)
+    public function __construct(Guard $auth, System $system)
     {
         $this->auth = $auth;
+        $this->system = $system;
 
         View::share('sub_title', trans('dashboard.incidents.title'));
     }
@@ -87,6 +96,7 @@ class IncidentController extends Controller
             ->withPageTitle(trans('dashboard.incidents.add.title').' - '.trans('dashboard.dashboard'))
             ->withComponentsInGroups(ComponentGroup::with('components')->get())
             ->withComponentsOutGroups(Component::where('group_id', '=', 0)->get())
+            ->withNotificationsEnabled($this->system->canNotifySubscribers())
             ->withIncidentTemplates(IncidentTemplate::all());
     }
 
@@ -225,7 +235,8 @@ class IncidentController extends Controller
             ->withPageTitle(trans('dashboard.incidents.edit.title').' - '.trans('dashboard.dashboard'))
             ->withIncident($incident)
             ->withComponentsInGroups(ComponentGroup::with('components')->get())
-            ->withComponentsOutGroups(Component::where('group_id', '=', 0)->get());
+            ->withComponentsOutGroups(Component::where('group_id', '=', 0)->get())
+            ->withNotificationsEnabled($this->system->canNotifySubscribers());
     }
 
     /**
@@ -309,7 +320,9 @@ class IncidentController extends Controller
      */
     public function showCreateIncidentUpdateAction(Incident $incident)
     {
-        return View::make('dashboard.incidents.updates.add')->withIncident($incident);
+        return View::make('dashboard.incidents.updates.add')
+            ->withIncident($incident)
+            ->withNotificationsEnabled($this->system->canNotifySubscribers());
     }
 
     /**
@@ -351,7 +364,8 @@ class IncidentController extends Controller
     {
         return View::make('dashboard.incidents.updates.edit')
             ->withIncident($incident)
-            ->withUpdate($incidentUpdate);
+            ->withUpdate($incidentUpdate)
+            ->withNotificationsEnabled($this->system->canNotifySubscribers());
     }
 
     /**

@@ -14,6 +14,7 @@ namespace CachetHQ\Cachet\Integrations\Core;
 use CachetHQ\Cachet\Integrations\Contracts\System as SystemContract;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
+use CachetHQ\Cachet\Models\Schedule;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Config\Repository;
 
@@ -100,6 +101,21 @@ class System implements SystemContract
         }
 
         return $status;
+    }
+
+    /**
+     * Determine if Cachet is allowed to send notifications to users, subscribers or third party tools.
+     *
+     * @return bool
+     */
+    public function canNotifySubscribers()
+    {
+        $maintenancePeriods = Schedule::inProgress()->count();
+        if ($maintenancePeriods === 0) {
+            return true;
+        }
+
+        return !$this->config->get('setting.suppress_notifications_in_maintenance');
     }
 
     /**

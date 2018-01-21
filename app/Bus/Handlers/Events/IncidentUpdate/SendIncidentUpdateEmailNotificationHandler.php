@@ -12,11 +12,19 @@
 namespace CachetHQ\Cachet\Bus\Handlers\Events\IncidentUpdate;
 
 use CachetHQ\Cachet\Bus\Events\IncidentUpdate\IncidentUpdateWasReportedEvent;
+use CachetHQ\Cachet\Integrations\Contracts\System;
 use CachetHQ\Cachet\Models\Subscriber;
 use CachetHQ\Cachet\Notifications\IncidentUpdate\IncidentUpdatedNotification;
 
 class SendIncidentUpdateEmailNotificationHandler
 {
+    /**
+     * The system instance.
+     *
+     * @var \CachetHQ\Cachet\Integrations\Contracts\System
+     */
+    protected $system;
+
     /**
      * The subscriber instance.
      *
@@ -27,12 +35,14 @@ class SendIncidentUpdateEmailNotificationHandler
     /**
      * Create a new send incident email notification handler.
      *
-     * @param \CachetHQ\Cachet\Models\Subscriber $subscriber
+     * @param \CachetHQ\Cachet\Integrations\Contracts\System $system
+     * @param \CachetHQ\Cachet\Models\Subscriber             $subscriber
      *
      * @return void
      */
-    public function __construct(Subscriber $subscriber)
+    public function __construct(System $system, Subscriber $subscriber)
     {
+        $this->system = $system;
         $this->subscriber = $subscriber;
     }
 
@@ -48,8 +58,8 @@ class SendIncidentUpdateEmailNotificationHandler
         $update = $event->update;
         $incident = $update->incident;
 
-        // Only send emails for public incidents.
-        if (!$incident->visible) {
+        // Only send emails for public incidents while the system is not under scheduled maintenance.
+        if (!$incident->visible || !$this->system->canNotifySubscribers()) {
             return;
         }
 

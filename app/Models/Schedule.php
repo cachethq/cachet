@@ -16,6 +16,7 @@ use CachetHQ\Cachet\Models\Traits\SearchableTrait;
 use CachetHQ\Cachet\Models\Traits\SortableTrait;
 use CachetHQ\Cachet\Presenters\SchedulePresenter;
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use McCool\LaravelAutoPresenter\HasPresenter;
 
@@ -149,6 +150,20 @@ class Schedule extends Model implements HasPresenter
     public function meta()
     {
         return $this->morphMany(Meta::class, 'meta');
+    }
+
+    /**
+     * Scope schedules that are in progress.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeInProgress(Builder $query)
+    {
+        return $query->where('scheduled_at', '<=', Carbon::now())->where('status', '!=', self::COMPLETE)->where(function ($query) {
+            $query->whereNull('completed_at')->orWhere('completed_at', '>', Carbon::now());
+        });
     }
 
     /**

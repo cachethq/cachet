@@ -13,6 +13,11 @@
 <div class="content-wrapper">
     <div class="row">
         <div class="col-md-12">
+            @if(!$notifications_enabled)
+            <div class="alert alert-info" role="alert">
+                {{ trans('forms.incidents.notify_disabled') }}
+            </div>
+            @endif
             @include('dashboard.partials.errors')
             <report-incident inline-template>
                 <form class="form-vertical" name="IncidentForm" role="form" method="POST" autocomplete="off">
@@ -115,6 +120,7 @@
                             <label>{{ trans('forms.incidents.occurred_at') }}</label> <small class="text-muted">{{ trans('forms.optional') }}</small>
                             <input type="text" name="occurred_at" class="form-control" rel="datepicker-custom" data-date-format="YYYY-MM-DD HH:mm" placeholder="{{ trans('forms.optional') }}">
                         </div>
+                        @if($notifications_enabled)
                         <input type="hidden" name="notify" value="0">
                         <div class="checkbox">
                             <label>
@@ -122,6 +128,7 @@
                                 {{ trans('forms.incidents.notify_subscribers') }}
                             </label>
                         </div>
+                        @endif
                     </fieldset>
 
                     <div class="form-group">

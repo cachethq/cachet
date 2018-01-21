@@ -12,12 +12,20 @@
 namespace CachetHQ\Cachet\Bus\Handlers\Events\Component;
 
 use CachetHQ\Cachet\Bus\Events\Component\ComponentStatusWasChangedEvent;
+use CachetHQ\Cachet\Integrations\Contracts\System;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Subscriber;
 use CachetHQ\Cachet\Notifications\Component\ComponentStatusChangedNotification;
 
 class SendComponentUpdateEmailNotificationHandler
 {
+    /**
+     * The system instance.
+     *
+     * @var \CachetHQ\Cachet\Integrations\Contracts\System
+     */
+    protected $system;
+
     /**
      * The subscriber instance.
      *
@@ -32,8 +40,9 @@ class SendComponentUpdateEmailNotificationHandler
      *
      * @return void
      */
-    public function __construct(Subscriber $subscriber)
+    public function __construct(System $system, Subscriber $subscriber)
     {
+        $this->system = $system;
         $this->subscriber = $subscriber;
     }
 
@@ -48,8 +57,8 @@ class SendComponentUpdateEmailNotificationHandler
     {
         $component = $event->component;
 
-        // If we're silent, then don't send this.
-        if ($event->silent) {
+        // If we're silent or the notifications are suppressed don't send this.
+        if ($event->silent || !$this->system->canNotifySubscribers()) {
             return;
         }
 

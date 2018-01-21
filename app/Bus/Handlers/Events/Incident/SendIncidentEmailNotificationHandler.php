@@ -12,11 +12,19 @@
 namespace CachetHQ\Cachet\Bus\Handlers\Events\Incident;
 
 use CachetHQ\Cachet\Bus\Events\Incident\IncidentWasCreatedEvent;
+use CachetHQ\Cachet\Integrations\Contracts\System;
 use CachetHQ\Cachet\Models\Subscriber;
 use CachetHQ\Cachet\Notifications\Incident\NewIncidentNotification;
 
 class SendIncidentEmailNotificationHandler
 {
+    /**
+     * The system instance.
+     *
+     * @var \CachetHQ\Cachet\Integrations\Contracts\System
+     */
+    protected $system;
+
     /**
      * The subscriber instance.
      *
@@ -27,12 +35,14 @@ class SendIncidentEmailNotificationHandler
     /**
      * Create a new send incident email notification handler.
      *
-     * @param \CachetHQ\Cachet\Models\Subscriber $subscriber
+     * @param \CachetHQ\Cachet\Integrations\Contracts\System $system
+     * @param \CachetHQ\Cachet\Models\Subscriber             $subscriber
      *
      * @return void
      */
-    public function __construct(Subscriber $subscriber)
+    public function __construct(System $system, Subscriber $subscriber)
     {
+        $this->system = $system;
         $this->subscriber = $subscriber;
     }
 
@@ -47,7 +57,7 @@ class SendIncidentEmailNotificationHandler
     {
         $incident = $event->incident;
 
-        if (!$event->notify) {
+        if (!$event->notify || !$this->system->canNotifySubscribers()) {
             return false;
         }
 

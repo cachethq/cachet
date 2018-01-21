@@ -26,6 +26,13 @@ interface System
     public function getStatus();
 
     /**
+     * Determine if Cachet is allowed to send notifications to users, subscribers or third party tools.
+     *
+     * @return bool
+     */
+    public function canNotifySubscribers();
+
+    /**
      * Get the cachet version.
      *
      * @return string
