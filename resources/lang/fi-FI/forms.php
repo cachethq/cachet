@@ -155,7 +155,7 @@ return [
             'days-of-incidents'                     => 'Monenko päivän ajalta tapaukset näytetään?',
             'time_before_refresh'                   => 'Status page refresh rate (in seconds).',
             'banner'                                => 'Bannerikuva',
-            'banner-help'                           => "On suositeltavaa, ettet lataa yli 930px leveitä kuvia.",
+            'banner-help'                           => 'On suositeltavaa, ettet lataa yli 930px leveitä kuvia.',
             'subscribers'                           => 'Salli käyttäjien tilata sähköpostitilaukset?',
             'suppress_notifications_in_maintenance' => 'Suppress notifications when incident occurs during maintenance period?',
             'skip_subscriber_verification'          => 'Skip verifying of users? (Be warned, you could be spammed)',

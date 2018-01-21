@@ -155,7 +155,7 @@ return [
             'days-of-incidents'                     => 'Hvor mange dage skal der vises hændelser for?',
             'time_before_refresh'                   => 'Status page refresh rate (in seconds).',
             'banner'                                => 'Banner billede',
-            'banner-help'                           => "Det anbefales ikke at uploade billeder bredere end 930px.",
+            'banner-help'                           => 'Det anbefales ikke at uploade billeder bredere end 930px.',
             'subscribers'                           => 'Tillad folk at tilmelde sig email underretninger?',
             'suppress_notifications_in_maintenance' => 'Suppress notifications when incident occurs during maintenance period?',
             'skip_subscriber_verification'          => 'Spring verificering af brugere over? (Husk på, du kan blive spammet)',
