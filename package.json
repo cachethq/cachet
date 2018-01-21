@@ -10,7 +10,7 @@
     "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "devDependencies": {
-    "animate-sass": "git+https://github.com/tgdev/animate-sass.git",
+    "animate-sass": "^0.8.2",
     "autosize": "^3.0.20",
     "axios": "^0.15.2",
     "bootstrap-sass": "^3.3.6",
