@@ -33,13 +33,12 @@ return [
 
     'enable_subscribers' => true,
 
-
     /*
     |--------------------------------------------------------------------------
     | Suppress notifications while in maintenance
     |--------------------------------------------------------------------------
     |
-    | Whether to suppress notification channels when an issue is created during
+    | Whether to suppress notification channels if an issue is created during
     | planned or in-progress maintenance periods.
     |
     */

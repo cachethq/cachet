@@ -36,7 +36,7 @@ class SendIncidentUpdateEmailNotificationHandler
      * Create a new send incident email notification handler.
      *
      * @param \CachetHQ\Cachet\Integrations\Contracts\System $system
-     * @param \CachetHQ\Cachet\Models\Subscriber $subscriber
+     * @param \CachetHQ\Cachet\Models\Subscriber             $subscriber
      *
      * @return void
      */
