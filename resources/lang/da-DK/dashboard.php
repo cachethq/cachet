@@ -23,7 +23,7 @@ return [
         'incident-templates'       => 'Incident Templates',
         'updates'                  => [
             'title'   => 'Hændelsesopdateringer til :hændelse',
-            'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
+            'count'   => '{0} Nul opdateringer |[1] Én opdatering |[2] To opdateringer | [3, *] Flere opdateringer',
             'add'     => [
                 'title'   => 'Opret ny hændelsesopdatering',
                 'success' => 'Your new incident update has been created.',
