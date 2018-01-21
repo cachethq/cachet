@@ -350,8 +350,8 @@ class IncidentController extends Controller
                 ->withErrors($e->getMessageBag());
         }
 
-        if ($incident->incident->component) {
-            $incident->incident->component->update(['status' => Binput::get('component_status')]);
+        if ($incident->component) {
+            $incident->component->update(['status' => Binput::get('component_status')]);
         }
 
         return cachet_redirect('dashboard.incidents')
