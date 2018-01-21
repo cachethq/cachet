@@ -72,7 +72,7 @@
                         </div>
                         @if(!$components_in_groups->isEmpty() || !$components_out_groups->isEmpty())
                         <div class="form-group">
-                            <label>{{ trans('forms.incidents.component') }}</label>
+                            <label>{{ trans('forms.incidents.component') }}</label> <small class="text-muted">{{ trans('forms.optional') }}</small>
                             <select name="component_id" class="form-control" v-model="component.id">
                                 <option value="" selected></option>
                                 @foreach($components_in_groups as $group)
@@ -86,10 +86,10 @@
                                 <option value="{{ $component->id }}">{{ $component->name }}</option>
                                 @endforeach
                             </select>
-                            <span class='help-block'>{{ trans('forms.optional') }}</span>
                         </div>
                         @endif
                         <div class="form-group" id="component-status" v-if="component.id">
+                            <label>{{ trans('forms.incidents.component_status') }}</label>
                             <div class="panel panel-default">
                                 <div class="panel-body">
                                     <div class="radio-items">
