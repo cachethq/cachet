@@ -155,7 +155,7 @@ return [
             'days-of-incidents'                     => 'Hoeveel dagen moeten incidenten getoond worden?',
             'time_before_refresh'                   => 'Status page refresh rate (in seconds).',
             'banner'                                => 'Banner afbeelding',
-            'banner-help'                           => "Het wordt aanbevolen dat u geen bestanden upload die breeder zijn dan 930px.",
+            'banner-help'                           => 'Het wordt aanbevolen dat u geen bestanden upload die breeder zijn dan 930px.',
             'subscribers'                           => 'Bezoekers toestaan om te abonneren op e-mail notificaties?',
             'suppress_notifications_in_maintenance' => 'Suppress notifications when incident occurs during maintenance period?',
             'skip_subscriber_verification'          => 'Verificatie van gebruikers overslaan? (Let op, je kunt gespamd worden)',

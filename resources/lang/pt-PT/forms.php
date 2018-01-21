@@ -155,7 +155,7 @@ return [
             'days-of-incidents'                     => 'Quantos dias de incidentes para mostrar?',
             'time_before_refresh'                   => 'Status page refresh rate (in seconds).',
             'banner'                                => 'Imagem de Banner',
-            'banner-help'                           => "É recomendável que você faça upload de arquivos menores que 930px .",
+            'banner-help'                           => 'É recomendável que você faça upload de arquivos menores que 930px .',
             'subscribers'                           => 'Permitir que as pessoas subscrevam as notificações?',
             'suppress_notifications_in_maintenance' => 'Suppress notifications when incident occurs during maintenance period?',
             'skip_subscriber_verification'          => 'Skip verifying of users? (Be warned, you could be spammed)',

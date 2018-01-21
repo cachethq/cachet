@@ -155,7 +155,7 @@ return [
             'days-of-incidents'                     => 'Kolik dní incidentů zobrazovat?',
             'time_before_refresh'                   => 'Status page refresh rate (in seconds).',
             'banner'                                => 'Obrázek banneru',
-            'banner-help'                           => "Doručuje se nenahrávat soubory větší než 930 pixelů na šířku.",
+            'banner-help'                           => 'Doručuje se nenahrávat soubory větší než 930 pixelů na šířku.',
             'subscribers'                           => 'Umožnit lidem, aby se přihlašovali k odběru e-mailových upozornění?',
             'suppress_notifications_in_maintenance' => 'Suppress notifications when incident occurs during maintenance period?',
             'skip_subscriber_verification'          => 'Přestat ověřovat uživatele? (Pozor na spammery)',

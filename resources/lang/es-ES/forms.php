@@ -155,7 +155,7 @@ return [
             'days-of-incidents'                     => '¿Cuántos días de incidentes mostrar?',
             'time_before_refresh'                   => 'Tasa de actualización de la página de estado (en segundos).',
             'banner'                                => 'Imagen del banner',
-            'banner-help'                           => "Se recomienda subir una imagen no más grande de 930px de ancho .",
+            'banner-help'                           => 'Se recomienda subir una imagen no más grande de 930px de ancho .',
             'subscribers'                           => '¿Permitir a la gente inscribirse mediante noficiacion por correo electronico?',
             'suppress_notifications_in_maintenance' => 'Suppress notifications when incident occurs during maintenance period?',
             'skip_subscriber_verification'          => '¿Omitir verificación de usuarios? (Advertencia, podrías ser spammeado)',
