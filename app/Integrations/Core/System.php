@@ -104,13 +104,18 @@ class System implements SystemContract
     }
 
     /**
-     * Determine if Cachet has any open maintenance windows.
+     * Determine if Cachet is allowed to send notifications to users, subscribers or third party tools.
      *
      * @return bool
      */
-    public function underMaintenance()
+    public function canNotifySubscribers()
     {
-        return Schedule::inProgress()->count() > 0;
+        $maintenancePeriods = Schedule::inProgress()->count();
+        if ($maintenancePeriods === 0) {
+            return true;
+        }
+
+        return !$this->config->get('suppress_notifications_in_maintenance');
     }
 
     /**

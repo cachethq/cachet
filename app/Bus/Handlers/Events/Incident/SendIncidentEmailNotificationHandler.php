@@ -55,14 +55,9 @@ class SendIncidentEmailNotificationHandler
      */
     public function handle(IncidentWasCreatedEvent $event)
     {
-        // Don't send incident updates if we're under maintenance.
-        if ($this->system->underMaintenance()) {
-            return false;
-        }
-
         $incident = $event->incident;
 
-        if (!$event->notify) {
+        if (!$event->notify || !$this->system->canNotifySubscribers()) {
             return false;
         }
 

@@ -55,15 +55,10 @@ class SendComponentUpdateEmailNotificationHandler
      */
     public function handle(ComponentStatusWasChangedEvent $event)
     {
-        // Don't send component status updates if we're under maintenance.
-        if ($this->system->underMaintenance()) {
-            return false;
-        }
-
         $component = $event->component;
 
-        // If we're silent, then don't send this.
-        if ($event->silent) {
+        // If we're silent or the notifications are suppressed don't send this.
+        if ($event->silent || !$this->system->canNotifySubscribers()) {
             return;
         }
 

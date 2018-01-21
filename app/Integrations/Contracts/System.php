@@ -26,11 +26,11 @@ interface System
     public function getStatus();
 
     /**
-     * Determine if Cachet has any open maintenance windows.
+     * Determine if Cachet is allowed to send notifications to users, subscribers or third party tools.
      *
      * @return bool
      */
-    public function underMaintenance();
+    public function canNotifySubscribers();
 
     /**
      * Get the cachet version.
