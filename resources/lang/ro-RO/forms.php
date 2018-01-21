@@ -49,6 +49,7 @@ return [
         'name'               => 'Nume',
         'status'             => 'Stare',
         'component'          => 'Componentă',
+        'component_status'   => 'Component Status',
         'message'            => 'Mesaj',
         'message-help'       => 'Puteţi utiliza şi Markdown.',
         'occurred_at'        => 'When did this incident occur?',

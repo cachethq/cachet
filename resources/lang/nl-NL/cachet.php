@@ -33,7 +33,7 @@ return [
         'scheduled'    => 'Gepland onderhoud',
         'scheduled_at' => ', gepland :timestamp',
         'posted'       => 'Geplaatst op :timestamp',
-        'posted_at'    => 'Posted at :timestamp',
+        'posted_at'    => 'Geplaatst op :timestamp',
         'status'       => [
             1 => 'In onderzoek',
             2 => 'Geïdentificeerd',

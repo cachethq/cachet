@@ -49,6 +49,7 @@ return [
         'name'               => '名前',
         'status'             => '状況',
         'component'          => 'コンポーネント',
+        'component_status'   => 'Component Status',
         'message'            => 'メッセージ',
         'message-help'       => 'You may also use Markdown.',
         'occurred_at'        => 'When did this incident occur?',

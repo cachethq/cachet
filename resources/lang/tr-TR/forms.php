@@ -49,6 +49,7 @@ return [
         'name'               => 'İsim',
         'status'             => 'Durum',
         'component'          => 'Bileşen',
+        'component_status'   => 'Component Status',
         'message'            => 'Mesaj',
         'message-help'       => 'Markdown işaretleri kullanabilirsiniz.',
         'occurred_at'        => 'Bu olay ne zaman meydana geldi?',

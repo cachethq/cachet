@@ -73,7 +73,7 @@ return [
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => 'Jadwal Pemeliharaan',
+        'schedule'     => 'Pemeliharaan',
         'logged'       => '{0} Tidak ada penjadwalan, mantap. | Anda mencatat satu jadwal. | Anda telah melaporkan <strong>:count</strong> jadwal.',
         'scheduled_at' => 'Dijadwalkan pada :timestamp',
         'add'          => [

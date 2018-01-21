@@ -49,6 +49,7 @@ return [
         'name'               => 'Naam',
         'status'             => 'Status',
         'component'          => 'Onderdeel',
+        'component_status'   => 'Component Status',
         'message'            => 'Boodschap',
         'message-help'       => 'U kan ook gebruik maken van Markdown.',
         'occurred_at'        => 'Wanneer heeft dit incident plaatsgevonden?',

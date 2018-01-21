@@ -49,6 +49,7 @@ return [
         'name'               => 'الاسم',
         'status'             => 'الحالة',
         'component'          => 'المكون',
+        'component_status'   => 'Component Status',
         'message'            => 'رسالة',
         'message-help'       => 'يمكنك إستخدام الـ Markdown.',
         'occurred_at'        => 'متى ظهرت هذه الحالة؟',

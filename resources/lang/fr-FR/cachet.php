@@ -33,7 +33,7 @@ return [
         'scheduled'    => 'Maintenance Planifiée',
         'scheduled_at' => ', planifé à :timestamp',
         'posted'       => 'Posté à :timestamp',
-        'posted_at'    => 'Posted at :timestamp',
+        'posted_at'    => 'Posté à : timestamp',
         'status'       => [
             1 => 'Enquête en cours',
             2 => 'Identifié',

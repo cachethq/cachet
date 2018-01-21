@@ -49,6 +49,7 @@ return [
         'name'               => 'Nazwa',
         'status'             => 'Status',
         'component'          => 'Komponent',
+        'component_status'   => 'Component Status',
         'message'            => 'Nachricht',
         'message-help'       => 'Można użyć również języka znaczników.',
         'occurred_at'        => 'Kiedy wystąpił incydent?',
@@ -151,7 +152,7 @@ return [
             'display-graphs'               => 'Pokazać wykresy na stronie statusu?',
             'about-this-page'              => 'Informacje o tej stronie',
             'days-of-incidents'            => 'Z ilu ostatnich dni pokazywać incydenty?',
-            'time_before_refresh'          => 'Status page refresh rate (in seconds).',
+            'time_before_refresh'          => 'Częstotliwość odświeżania strony statusu (w sekundach).',
             'banner'                       => 'Baner',
             'banner-help'                  => 'Zaleca się, aby przesyłać pliki nie większe niż 930px szerokości.',
             'subscribers'                  => 'Czy zezwolić użytkownikom na subskrypcje e-mail w celu otrzymywania powiadomień?',
@@ -215,7 +216,7 @@ return [
         ],
         'team' => [
             'description' => 'Zaproś nowych członków do swojego zespołu. Wpisz ich adresy e-mail tutaj.',
-            'email'       => 'Email #:id',
+            'email'       => 'Adres Email Członków Zespołu',
         ],
     ],
 
@@ -235,7 +236,7 @@ return [
     'remove'         => 'Skasuj',
     'invite'         => 'Zaproś',
     'signup'         => 'Zarejestruj się',
-    'manage_updates' => 'Manage Updates',
+    'manage_updates' => 'Zarządzaj Aktualizacjami',
 
     // Other
     'optional' => '* Opcjonalnie',

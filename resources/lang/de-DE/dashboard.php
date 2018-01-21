@@ -16,23 +16,23 @@ return [
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Ereignisse &amp; Termine',
+        'title'                    => 'Vorfälle & Wartungsarbeiten',
         'incidents'                => 'Ereignisse',
-        'logged'                   => '{0} Es gibt keine Ereignisse, gute Arbeit.|Du hast ein Ereignis gemeldet.|Du hast <strong>:count</strong> Ereignisse gemeldet.',
+        'logged'                   => '{0} Es gibt keine Vorfälle, gute Arbeit.|[1] Du hast ein Vorfall gemeldet.|[2,*] Du hast <strong>:count</strong> Vorfälle gemeldet.',
         'incident-create-template' => 'Vorlage erstellen',
         'incident-templates'       => 'Ereignis Vorlagen',
         'updates'                  => [
-            'title'   => 'Incident updates for :incident',
-            'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
+            'title'   => 'Vorfall Aktualisiert für :incident',
+            'count'   => '{0} 0 Aktualisierungen|[1] Eine Aktualisierung|[2] Zwei Aktualisierungen|[3,*] Mehrere Aktualisierungen',
             'add'     => [
                 'title'   => 'Vorfall-Update erstellen',
-                'success' => 'Your new incident update has been created.',
-                'failure' => 'Something went wrong with the incident update.',
+                'success' => 'Deine neue Vorfall Aktualisierung wurde erstellt.',
+                'failure' => 'Etwas ist schief gelaufen mit der Vorfall Aktualisierung.',
             ],
             'edit' => [
-                'title'   => 'Edit incident update',
-                'success' => 'The incident update has been updated.',
-                'failure' => 'Something went wrong updating the incident update',
+                'title'   => 'Bearbeite Vorfall Aktualisierung',
+                'success' => 'Vorfall wurde aktualisiert.',
+                'failure' => 'Etwas ist mit dem Aktualisieren des Vorfall Updates schief gelaufen',
             ],
         ],
         'add'                      => [
@@ -73,7 +73,7 @@ return [
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => 'Geplante Wartungen',
+        'schedule'     => 'Wartungsarbeiten',
         'logged'       => '{0} Es gibt keine Zeitpläne, gute Arbeit.|Du hast einen Zeitplan erstellt.|Du hast <strong>:count</strong> Zeitpläne gemeldet.',
         'scheduled_at' => 'Geplant am :timestamp',
         'add'          => [
@@ -157,12 +157,12 @@ return [
     'subscribers' => [
         'subscribers'          => 'Abonnenten',
         'description'          => 'Abonnenten erhalten E-Mail Updates, wenn Vorfälle erstellt oder Komponenten bearbeitet werden.',
-        'description_disabled' => 'To use this feature, you need allow people to signup for notifications.',
+        'description_disabled' => 'Um diese Funktion nutzen zu können, müssen Sie zulassen, dass sich Personen für Benachrichtigungen anmelden dürfen.',
         'verified'             => 'Bestätigt',
         'not_verified'         => 'Nicht Bestätigt',
         'subscriber'           => ':email, abonniert am :date',
         'no_subscriptions'     => 'Aktualisierungen per E-Mail abonnieren',
-        'global'               => 'Globally subscribed',
+        'global'               => 'Weltweit abonniert',
         'add'                  => [
             'title'   => 'Einen neuen Abonnenten hinzufügen',
             'success' => 'Abonnent hinzugefügt.',

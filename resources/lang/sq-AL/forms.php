@@ -49,6 +49,7 @@ return [
         'name'               => 'Emri',
         'status'             => 'Statusi',
         'component'          => 'Përbërësit',
+        'component_status'   => 'Component Status',
         'message'            => 'Mesazhi',
         'message-help'       => 'You may also use Markdown.',
         'occurred_at'        => 'When did this incident occur?',

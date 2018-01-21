@@ -22,17 +22,17 @@ return [
         'incident-create-template' => 'Crear plantilla',
         'incident-templates'       => 'Plantillas de incidente',
         'updates'                  => [
-            'title'   => 'Incident updates for :incident',
-            'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
+            'title'   => 'Actualizaciones de incidentes para :incident',
+            'count'   => '{0} cero actualizaciones |[1] una actualización |[2] dos actualizaciones | [3 *] Varias actualizaciones',
             'add'     => [
                 'title'   => 'Crea una nueva actualización de incidente',
-                'success' => 'Your new incident update has been created.',
-                'failure' => 'Something went wrong with the incident update.',
+                'success' => 'Su nueva plantilla de incidentes ha sido creada.',
+                'failure' => 'Algo salió mal con la actualización del incidente.',
             ],
             'edit' => [
-                'title'   => 'Edit incident update',
-                'success' => 'The incident update has been updated.',
-                'failure' => 'Something went wrong updating the incident update',
+                'title'   => 'Editar actualización del incidente',
+                'success' => 'La actualización del incidente ha sido actualizada.',
+                'failure' => 'Algo salió mal al actualizar la actualización del incidente',
             ],
         ],
         'add'                      => [
@@ -157,12 +157,12 @@ return [
     'subscribers' => [
         'subscribers'          => 'Suscriptores',
         'description'          => 'Los suscriptores recibirán actualizaciones por correo electrónico cuando se creen incidentes o se actualicen componentes.',
-        'description_disabled' => 'To use this feature, you need allow people to signup for notifications.',
+        'description_disabled' => 'Para utilizar esta función, necesita permitir a las personas registrarse a las notificaciones.',
         'verified'             => 'Verificado',
         'not_verified'         => 'No confirmado',
         'subscriber'           => ':email, suscrito :date',
         'no_subscriptions'     => 'Suscrito a todas las actualizaciones',
-        'global'               => 'Globally subscribed',
+        'global'               => 'Suscrito a todo',
         'add'                  => [
             'title'   => 'Agregar un nuevo subscriptor',
             'success' => 'Subscriptor agregado.',

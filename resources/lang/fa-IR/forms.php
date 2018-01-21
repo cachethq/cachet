@@ -49,6 +49,7 @@ return [
         'name'               => 'نام',
         'status'             => 'وضعیت',
         'component'          => 'کامپوننت',
+        'component_status'   => 'Component Status',
         'message'            => 'پیام',
         'message-help'       => 'شاید شما بخواهید از Markdown نیز استفاده کنید.',
         'occurred_at'        => 'When did this incident occur?',

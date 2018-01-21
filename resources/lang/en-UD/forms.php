@@ -49,6 +49,7 @@ return [
         'name'               => 'crwdns1123:0crwdne1123:0',
         'status'             => 'crwdns1124:0crwdne1124:0',
         'component'          => 'crwdns1125:0crwdne1125:0',
+        'component_status'   => 'crwdns1425:0crwdne1425:0',
         'message'            => 'crwdns1126:0crwdne1126:0',
         'message-help'       => 'crwdns1127:0crwdne1127:0',
         'occurred_at'        => 'crwdns1128:0crwdne1128:0',

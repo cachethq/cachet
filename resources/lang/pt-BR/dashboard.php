@@ -16,23 +16,23 @@ return [
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Incidentes &amp; Agenda',
+        'title'                    => 'Incidentes & Agendamentos',
         'incidents'                => 'Incidentes',
-        'logged'                   => '{0} Não existem incidentes, bom trabalho.|Você registrou um incidente.|Você reportou <strong>:count</strong> incidentes.',
+        'logged'                   => '{0} Não existem incidentes, bom trabalho.|[1] Você registrou um incidente.|[2,*] Você reportou <strong>:count</strong> incidentes.',
         'incident-create-template' => 'Criar template',
         'incident-templates'       => 'Template de incidentes',
         'updates'                  => [
-            'title'   => 'Incident updates for :incident',
-            'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
+            'title'   => 'Atualizações para o incidente :incident',
+            'count'   => '{0} Zero Atualizações|[1] Uma Atualização|[2] Duas Atualizações|[3,*] Várias Atualizações',
             'add'     => [
                 'title'   => 'Crie uma nova atualização de incidente',
-                'success' => 'Your new incident update has been created.',
-                'failure' => 'Something went wrong with the incident update.',
+                'success' => 'Seu novo incidente foi criado.',
+                'failure' => 'Algo deu errado com a atualização do incidente.',
             ],
             'edit' => [
-                'title'   => 'Edit incident update',
-                'success' => 'The incident update has been updated.',
-                'failure' => 'Something went wrong updating the incident update',
+                'title'   => 'Editar atualização do incidente',
+                'success' => 'O incidente foi atualizado.',
+                'failure' => 'Algo deu errado ao atualizar o incidente',
             ],
         ],
         'add'                      => [
@@ -73,12 +73,12 @@ return [
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => 'Manutenção Agendada',
-        'logged'       => '{0} Não existem agendamentos, bom trabalho.|Você introduziu um agendamento.|Você reportou <strong>:count</strong> agendamentos.',
+        'schedule'     => 'Manutenção',
+        'logged'       => '{0} Não existem agendamentos, bom trabalho.|[1] Você introduziu um agendamento.|[2,*] Você reportou <strong>:count</strong> agendamentos.',
         'scheduled_at' => 'Agendada em :timestamp',
         'add'          => [
             'title'   => 'Adicionar manutenção programada',
-            'success' => 'Programação adicionada.',
+            'success' => 'Agendamento adicionado.',
             'failure' => 'Ocorreu um problema ao adicionar a programação, por favor tente novamente.',
         ],
         'edit' => [
@@ -157,12 +157,12 @@ return [
     'subscribers' => [
         'subscribers'          => 'Assinantes',
         'description'          => 'Assinantes vão receber atualizações de e-mail quando incidentes criados ou componentes atualizados.',
-        'description_disabled' => 'To use this feature, you need allow people to signup for notifications.',
+        'description_disabled' => 'Para utilizar esse recurso, você precisa permitir que as pessoas se cadastrem para notificações.',
         'verified'             => 'Verificado',
         'not_verified'         => 'Não verificado',
         'subscriber'           => ':email, inscreveu-se em :date',
         'no_subscriptions'     => 'Inscrito em todas as atualizações',
-        'global'               => 'Globally subscribed',
+        'global'               => 'Inscrito globalmente',
         'add'                  => [
             'title'   => 'Adicionar um novo assinante',
             'success' => 'Inscrito adicionado.',

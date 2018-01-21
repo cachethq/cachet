@@ -49,6 +49,7 @@ return [
         'name'               => 'Nom',
         'status'             => 'Statut',
         'component'          => 'Composant',
+        'component_status'   => 'Statut des composants',
         'message'            => 'Message',
         'message-help'       => 'Vous pouvez également utiliser le format Markdown.',
         'occurred_at'        => 'Quand s\'est produit cet incident ?',
@@ -151,7 +152,7 @@ return [
             'display-graphs'               => 'Afficher les graphiques sur la page de statut ?',
             'about-this-page'              => 'À propos de cette page',
             'days-of-incidents'            => 'Combien de jours d\'incidents à montrer ?',
-            'time_before_refresh'          => 'Status page refresh rate (in seconds).',
+            'time_before_refresh'          => 'Fréquence de rafraîchissement de la page de statut (en secondes).',
             'banner'                       => 'Image d\'en-tête',
             'banner-help'                  => 'Il est recommandé de téléchargez un fichier ne dépassant pas 930px de large .',
             'subscribers'                  => 'Permettre aux personnes de s\'inscrire aux notifications par e-mail ?',
@@ -235,7 +236,7 @@ return [
     'remove'         => 'Enlever',
     'invite'         => 'Inviter',
     'signup'         => 'Inscription',
-    'manage_updates' => 'Manage Updates',
+    'manage_updates' => 'Gérer les mises à jour',
 
     // Other
     'optional' => '* Optionnel',

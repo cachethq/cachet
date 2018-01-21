@@ -49,6 +49,7 @@ return [
         'name'               => 'Navn',
         'status'             => 'Status',
         'component'          => 'Komponent',
+        'component_status'   => 'Component Status',
         'message'            => 'Melding',
         'message-help'       => 'Du kan også bruke Markdown.',
         'occurred_at'        => 'Når inntraff denne hendelsen?',

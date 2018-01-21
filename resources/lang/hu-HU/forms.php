@@ -49,6 +49,7 @@ return [
         'name'               => 'Név',
         'status'             => 'Státusz',
         'component'          => 'Komponens',
+        'component_status'   => 'Component Status',
         'message'            => 'Üzenet',
         'message-help'       => 'Használhatsz Markdown-t is.',
         'occurred_at'        => 'Mikor történt az incidens?',

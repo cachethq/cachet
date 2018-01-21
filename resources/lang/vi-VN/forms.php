@@ -49,6 +49,7 @@ return [
         'name'               => 'Tên',
         'status'             => 'Trạng thái',
         'component'          => 'Component',
+        'component_status'   => 'Component Status',
         'message'            => 'Tin nhắn',
         'message-help'       => 'Bạn cũng có thể sử dụng Markdown.',
         'occurred_at'        => 'Sự cố này đã xảy ra khi nào?',

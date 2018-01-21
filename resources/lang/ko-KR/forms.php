@@ -49,6 +49,7 @@ return [
         'name'               => '이름',
         'status'             => '상태',
         'component'          => '구성요소',
+        'component_status'   => 'Component Status',
         'message'            => '메시지',
         'message-help'       => 'Markdown을 사용할 수 있습니다.',
         'occurred_at'        => '문제가 언제 발생 했나요?',

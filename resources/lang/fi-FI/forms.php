@@ -49,6 +49,7 @@ return [
         'name'               => 'Nimi',
         'status'             => 'Tila',
         'component'          => 'Komponentti',
+        'component_status'   => 'Component Status',
         'message'            => 'Viesti',
         'message-help'       => 'You may also use Markdown.',
         'occurred_at'        => 'When did this incident occur?',

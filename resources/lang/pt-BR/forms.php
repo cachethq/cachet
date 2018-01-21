@@ -49,6 +49,7 @@ return [
         'name'               => 'Nome',
         'status'             => 'Status',
         'component'          => 'Componente',
+        'component_status'   => 'Component Status',
         'message'            => 'Mensagem',
         'message-help'       => 'Você também pode usar o Markdown.',
         'occurred_at'        => 'Quando esse incidente ocorreu?',
@@ -151,7 +152,7 @@ return [
             'display-graphs'               => 'Exibir gráficos na página de status?',
             'about-this-page'              => 'Sobre esta página',
             'days-of-incidents'            => 'Quantos dias de incidentes para mostrar?',
-            'time_before_refresh'          => 'Status page refresh rate (in seconds).',
+            'time_before_refresh'          => 'Tempo para atualizar a página de Status (em segundos).',
             'banner'                       => 'Imagem do banner',
             'banner-help'                  => 'É recomendável que você faça upload de arquivos menores que 930px .',
             'subscribers'                  => 'Permitir que outras pessoas se cadastrem para notificações via e-mail?',
@@ -215,7 +216,7 @@ return [
         ],
         'team' => [
             'description' => 'Convide membros da sua equipe através do endereço de e-mail aqui.',
-            'email'       => 'Email #:id',
+            'email'       => 'O Email do membro do seu time',
         ],
     ],
 
@@ -235,7 +236,7 @@ return [
     'remove'         => 'Remover',
     'invite'         => 'Convite',
     'signup'         => 'Cadastrar-se',
-    'manage_updates' => 'Manage Updates',
+    'manage_updates' => 'Gerenciar atualizações',
 
     // Other
     'optional' => '* Opcional',

@@ -49,6 +49,7 @@ return [
         'name'               => '名称',
         'status'             => '状态',
         'component'          => '组件',
+        'component_status'   => 'Component Status',
         'message'            => '描述',
         'message-help'       => '您可以使用Markdown语言。',
         'occurred_at'        => '这次故障是什么时候发生的？',

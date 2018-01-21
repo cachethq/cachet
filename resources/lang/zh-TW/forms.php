@@ -49,6 +49,7 @@ return [
         'name'               => '名稱',
         'status'             => '狀態',
         'component'          => '組件',
+        'component_status'   => 'Component Status',
         'message'            => '訊息',
         'message-help'       => '你可以使用 Markdown 。',
         'occurred_at'        => 'When did this incident occur?',

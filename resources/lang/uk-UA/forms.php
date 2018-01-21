@@ -49,6 +49,7 @@ return [
         'name'               => 'Ім’я',
         'status'             => 'Статус',
         'component'          => 'Компонент',
+        'component_status'   => 'Component Status',
         'message'            => 'Повідомлення',
         'message-help'       => 'Ви також можете використовувати Markdown.',
         'occurred_at'        => 'Коли цей інцидент відбувся?',

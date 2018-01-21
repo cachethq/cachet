@@ -49,6 +49,7 @@ return [
         'name'               => 'Nama',
         'status'             => 'Status',
         'component'          => 'Komponen',
+        'component_status'   => 'Component Status',
         'message'            => 'Pesan',
         'message-help'       => 'Anda juga bisa menggunakan Markdown.',
         'occurred_at'        => 'Kapan insiden ini terjadi?',

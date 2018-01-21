@@ -49,6 +49,7 @@ return [
         'name'               => 'Nombre',
         'status'             => 'Estado',
         'component'          => 'Componente',
+        'component_status'   => 'Component Status',
         'message'            => 'Mensaje',
         'message-help'       => 'También puedes usar Markdown.',
         'occurred_at'        => '¿Cuando ocurrió este incidente?',
@@ -151,7 +152,7 @@ return [
             'display-graphs'               => '¿Mostrar gráficas en la pagina de estado?',
             'about-this-page'              => 'Sobre esta página',
             'days-of-incidents'            => '¿Cuántos días de incidentes mostrar?',
-            'time_before_refresh'          => 'Status page refresh rate (in seconds).',
+            'time_before_refresh'          => 'Tasa de actualización de la página de estado (en segundos).',
             'banner'                       => 'Imagen del banner',
             'banner-help'                  => 'Se recomienda subir una imagen no más grande de 930px de ancho .',
             'subscribers'                  => '¿Permitir a la gente inscribirse mediante noficiacion por correo electronico?',
@@ -235,7 +236,7 @@ return [
     'remove'         => 'Remover',
     'invite'         => 'Invitar',
     'signup'         => 'Registrarse',
-    'manage_updates' => 'Manage Updates',
+    'manage_updates' => 'Administrar las actualizaciones',
 
     // Other
     'optional' => '* Opcional',
