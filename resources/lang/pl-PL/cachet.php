@@ -30,10 +30,10 @@ return [
         'none'         => 'Brak zgłoszonych incydentów',
         'past'         => 'Vergangene Vorfälle',
         'stickied'     => 'Przyklejone zdarzenia',
-        'scheduled'    => 'Geplante Wartungen',
+        'scheduled'    => 'Konserwacja',
         'scheduled_at' => ', geplant :timestamp',
         'posted'       => 'Opublikowano :timestamp',
-        'posted_at'    => 'Posted at :timestamp',
+        'posted_at'    => 'Opublikowano :timestamp',
         'status'       => [
             1 => 'Untersuchungen laufen',
             2 => 'Identifiziert',
