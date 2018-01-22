@@ -43,6 +43,7 @@
                                     </abbr>
                                 </small>
                                 <span class="ion-ios-arrow-right pull-right"></span>
+
                             </a>
                             @endforeach
                         </div>
