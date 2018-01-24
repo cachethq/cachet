@@ -30,10 +30,10 @@ return [
         'none'         => '无故障报告',
         'past'         => '历史状态',
         'stickied'     => '已关注的故障',
-        'scheduled'    => '计划维护',
+        'scheduled'    => '维护',
         'scheduled_at' => '，计划于 :timestamp',
         'posted'       => '发布于 :timestamp',
-        'posted_at'    => 'Posted at :timestamp',
+        'posted_at'    => '发布于 :timestamp',
         'status'       => [
             1 => '确认中',
             2 => '修复中',
@@ -53,9 +53,9 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] 系统工作正常|[2,Inf] 所有系统工作正常',
-        'bad'   => '[0,1] 一个系统出现了问题|[2,Inf] 一些系统出现了问题',
-        'major' => '[0,1] 一个系统出现重大故障|[2,Inf] 一些系统出现重大故障',
+        'good'  => '[0,1] 系统工作正常|[2,*] 所有系统工作正常',
+        'bad'   => '[0,1] 系统出现了问题|[2,*] 一些系统出现了问题',
+        'major' => '[0,1] 系统出现重大故障|[2,*] 一些系统出现重大故障',
     ],
 
     'api' => [
