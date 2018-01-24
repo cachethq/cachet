@@ -22,8 +22,8 @@ return [
         'incident-create-template' => '创建模板',
         'incident-templates'       => '故障模板',
         'updates'                  => [
-            'title'   => 'Incident updates for :incident',
-            'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
+            'title'   => '关于 :incident 事件的更新',
+            'count'   => '{0} 无更新|[1] 一个更新|[2] 2个更新|[3,*] 多个更新',
             'add'     => [
                 'title'   => '添加故障更新',
                 'success' => 'Your new incident update has been created.',
@@ -73,7 +73,7 @@ return [
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => '计划维护',
+        'schedule'     => '维护',
         'logged'       => '{0} 现在没有维护计划，好样的。|你已经记录下 1 个维护计划|你已经报告了 <strong>:count</strong> 个维护计划',
         'scheduled_at' => '计划在 :timestamp',
         'add'          => [
