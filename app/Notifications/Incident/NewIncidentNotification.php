@@ -79,7 +79,8 @@ class NewIncidentNotification extends Notification
                     ->line($content)
                     ->action(trans('notifications.incident.new.mail.action'), cachet_route('incident', [$this->incident]))
                     ->markdown($this->incident->message)
-                    ->line(trans('cachet.subscriber.manage.manage_at_link', ['link' => cachet_route('subscribe.manage',  $notifiable->verify_code)]))
+                    ->line(trans('cachet.subscriber.unsubscribe', ['link' => cachet_route('subscribe.unsubscribe', $notifiable->verify_code)]))
+                    ->line(trans('cachet.subscriber.manage.manage_at_link', ['link' => cachet_route('subscribe.manage',  $notifiable->verify_code)]));
     }
 
     /**
