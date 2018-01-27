@@ -177,8 +177,10 @@ return [
             'incident-date-format' => 'Incident timestamp format',
         ],
         'security' => [
-            'allowed-domains'      => 'Allowed domains',
-            'allowed-domains-help' => 'Comma separated. The domain set above is automatically allowed by default.',
+            'allowed-domains'           => 'Allowed domains',
+            'allowed-domains-help'      => 'Comma separated. The domain set above is automatically allowed by default.',
+            'always-authenticate'       => 'Always authenticate',
+            'always-authenticate-help'  => 'Require login to view any Cachet page',
         ],
         'stylesheet' => [
             'custom-css' => 'Custom Stylesheet',

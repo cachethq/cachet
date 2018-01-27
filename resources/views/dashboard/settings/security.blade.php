@@ -17,6 +17,18 @@
                     <fieldset>
                         <div class="row">
                             <div class="col-xs-12">
+                                <label>{{ trans('forms.settings.security.always-authenticate') }}</label>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="hidden" value="0" name="always_authenticate">
+                                        <input type="checkbox" value="1" name="always_authenticate" {{ Config::get('setting.always_authenticate') ? 'checked' : null }}>
+                                        {{ trans('forms.settings.security.always-authenticate-help') }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
                                 <div class="form-group">
                                     <label>{{ trans('forms.settings.security.allowed-domains') }}</label>
                                     <textarea class="form-control" name="allowed_domains" rows="5" placeholder="http://cachet.io, http://cachet.herokuapp.com">{{ Config::get('setting.allowed_domains') }}</textarea>

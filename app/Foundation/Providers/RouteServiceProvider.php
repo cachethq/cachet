@@ -13,7 +13,9 @@ namespace CachetHQ\Cachet\Foundation\Providers;
 
 use Barryvdh\Cors\HandleCors;
 use CachetHQ\Cachet\Http\Middleware\Acceptable;
+use CachetHQ\Cachet\Http\Middleware\Authenticate;
 use CachetHQ\Cachet\Http\Middleware\Timezone;
+use CachetHQ\Cachet\Http\Routes\AuthRoutes;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
@@ -126,6 +128,10 @@ class RouteServiceProvider extends ServiceProvider
             VerifyCsrfToken::class,
             SubstituteBindings::class,
         ];
+
+        if ($this->app['config']->get('setting.always_authenticate', false) && !$routes instanceof AuthRoutes) {
+            $middleware[] = Authenticate::class;
+        }
 
         $router->group(['middleware' => $middleware], function (Router $router) use ($routes) {
             $routes->map($router);
