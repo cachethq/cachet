@@ -62,4 +62,7 @@
 </body>
 @yield('js')
 <script src="{{ mix('dist/js/all.js') }}"></script>
+<script type="text/javascript">
+    window.apiKey = "{{ auth()->user()->api_key }}";
+</script>
 </html>
