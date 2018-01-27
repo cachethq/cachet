@@ -21,6 +21,7 @@ use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Log\Writer;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Redirect;
@@ -382,6 +383,10 @@ class SettingsController extends Controller
 
         if (Binput::has('app_locale')) {
             Lang::setLocale(Binput::get('app_locale'));
+        }
+
+        if (Binput::has('always_authenticate')) {
+            Artisan::call('route:cache');
         }
 
         return Redirect::back()->withSuccess(trans('dashboard.settings.edit.success'));
