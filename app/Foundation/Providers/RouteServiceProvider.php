@@ -167,6 +167,11 @@ class RouteServiceProvider extends ServiceProvider
             Timezone::class,
         ];
 
+        $applyAlwaysAuthenticate = $this->app['config']->get('setting.always_authenticate', false);
+        if ($applyAlwaysAuthenticate && !$this->isWhiteListedAuthRoute($routes)) {
+            $middleware[] = 'auth.api:true';
+        }
+
         $router->group(['middleware' => $middleware], function (Router $router) use ($routes) {
             $routes->map($router);
         });
