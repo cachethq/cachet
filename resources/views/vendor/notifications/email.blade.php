@@ -140,7 +140,7 @@ $style = [
 
                                         <!-- Salutation -->
                                         <p style="{{ $style['paragraph'] }}">
-                                            Regards,<br>{{ setting('app_name', config('app.name')) }} }}
+                                            Regards,<br>{{ setting('app_name', config('app.name')) }}
                                         </p>
 
                                         <!-- Sub Copy -->
@@ -176,7 +176,7 @@ $style = [
                                     <td style="{{ $fontFamily }} {{ $style['email-footer_cell'] }}">
                                         <p style="{{ $style['paragraph-sub'] }}">
                                             &copy; {{ date('Y') }}
-                                            <a style="{{ $style['anchor'] }}" href="{{ url('/') }}" target="_blank">{{ setting('app_name', config('app.name')) }} }}</a>.
+                                            <a style="{{ $style['anchor'] }}" href="{{ url('/') }}" target="_blank">{{ setting('app_name', config('app.name')) }}</a>.
                                             All rights reserved.
                                         </p>
                                     </td>
