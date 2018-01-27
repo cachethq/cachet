@@ -16,6 +16,8 @@ use CachetHQ\Cachet\Http\Middleware\Acceptable;
 use CachetHQ\Cachet\Http\Middleware\Authenticate;
 use CachetHQ\Cachet\Http\Middleware\Timezone;
 use CachetHQ\Cachet\Http\Routes\AuthRoutes;
+use CachetHQ\Cachet\Http\Routes\Setup\ApiRoutes;
+use CachetHQ\Cachet\Http\Routes\SetupRoutes;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
@@ -42,6 +44,15 @@ class RouteServiceProvider extends ServiceProvider
      * @var string
      */
     protected $namespace = 'CachetHQ\Cachet\Http\Controllers';
+
+    /**
+     * These are the route files that should always be available anonymously.
+     *
+     * When applying the always_authenticate feature, these routes will be skipped.
+     *
+     * @var string[]
+     */
+    protected $whitelistedAuthRoutes = [AuthRoutes::class, SetupRoutes::class, ApiRoutes::class];
 
     /**
      * Define the route model bindings, pattern filters, etc.
@@ -129,7 +140,8 @@ class RouteServiceProvider extends ServiceProvider
             SubstituteBindings::class,
         ];
 
-        if ($this->app['config']->get('setting.always_authenticate', false) && !$routes instanceof AuthRoutes) {
+        $applyAlwaysAuthenticate = $this->app['config']->get('setting.always_authenticate', false);
+        if ($applyAlwaysAuthenticate && !$this->isWhiteListedAuthRoute($routes)) {
             $middleware[] = Authenticate::class;
         }
 
@@ -158,5 +170,15 @@ class RouteServiceProvider extends ServiceProvider
         $router->group(['middleware' => $middleware], function (Router $router) use ($routes) {
             $routes->map($router);
         });
+    }
+
+    private function isWhiteListedAuthRoute($route)
+    {
+        foreach ($this->whitelistedAuthRoutes as $whitelistedRoute) {
+            if(is_a($route, $whitelistedRoute)) {
+                return true;
+            }
+        }
+        return false;
     }
 }
