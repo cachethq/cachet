@@ -102,6 +102,7 @@ class RouteServiceProvider extends ServiceProvider
         $router->group(['namespace' => $this->namespace, 'as' => 'core::'], function (Router $router) {
             $path = app_path('Http/Routes');
 
+            $applyAlwaysAuthenticate = $this->app['config']->get('setting.always_authenticate', false);
             $AllFileIterator = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($path));
             $PhpFileIterator = new \RegexIterator($AllFileIterator, '/^.+\.php$/i', \RecursiveRegexIterator::GET_MATCH);
 
@@ -113,9 +114,9 @@ class RouteServiceProvider extends ServiceProvider
                 $routes = $this->app->make("CachetHQ\\Cachet\\Http\\Routes${class}");
 
                 if ($routes::$browser) {
-                    $this->mapForBrowser($router, $routes);
+                    $this->mapForBrowser($router, $routes, $applyAlwaysAuthenticate);
                 } else {
-                    $this->mapOtherwise($router, $routes);
+                    $this->mapOtherwise($router, $routes, $applyAlwaysAuthenticate);
                 }
             }
         });
@@ -126,10 +127,11 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @param \Illuminate\Routing\Router $router
      * @param object                     $routes
+     * @param bool                       $applyAlwaysAuthenticate
      *
      * @return void
      */
-    protected function mapForBrowser(Router $router, $routes)
+    protected function mapForBrowser(Router $router, $routes, $applyAlwaysAuthenticate)
     {
         $middleware = [
             EncryptCookies::class,
@@ -140,7 +142,7 @@ class RouteServiceProvider extends ServiceProvider
             SubstituteBindings::class,
         ];
 
-        $applyAlwaysAuthenticate = $this->app['config']->get('setting.always_authenticate', false);
+
         if ($applyAlwaysAuthenticate && !$this->isWhiteListedAuthRoute($routes)) {
             $middleware[] = Authenticate::class;
         }
@@ -155,10 +157,11 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @param \Illuminate\Routing\Router $router
      * @param object                     $routes
+     * @param bool                       $applyAlwaysAuthenticate
      *
      * @return void
      */
-    protected function mapOtherwise(Router $router, $routes)
+    protected function mapOtherwise(Router $router, $routes, $applyAlwaysAuthenticate)
     {
         $middleware = [
             HandleCors::class,
@@ -167,7 +170,6 @@ class RouteServiceProvider extends ServiceProvider
             Timezone::class,
         ];
 
-        $applyAlwaysAuthenticate = $this->app['config']->get('setting.always_authenticate', false);
         if ($applyAlwaysAuthenticate && !$this->isWhiteListedAuthRoute($routes)) {
             $middleware[] = 'auth.api:true';
         }
@@ -177,10 +179,18 @@ class RouteServiceProvider extends ServiceProvider
         });
     }
 
-    private function isWhiteListedAuthRoute($route)
+    /**
+     * Validates if the route object is an instance of the whitelisted routes.
+     * A small workaround since we cant use multiple classes in a `instanceof` comparison
+     *
+     * @param object                     $routes
+     *
+     * @return bool
+     */
+    private function isWhiteListedAuthRoute($routes)
     {
         foreach ($this->whitelistedAuthRoutes as $whitelistedRoute) {
-            if(is_a($route, $whitelistedRoute)) {
+            if(is_a($routes, $whitelistedRoute)) {
                 return true;
             }
         }
