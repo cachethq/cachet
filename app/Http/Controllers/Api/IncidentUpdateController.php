@@ -78,6 +78,8 @@ class IncidentUpdateController extends AbstractApiController
                 $incident,
                 Binput::get('status'),
                 Binput::get('message'),
+                Binput::get('component_id'),
+                Binput::get('component_status'),
                 Auth::user()
             ));
         } catch (QueryException $e) {

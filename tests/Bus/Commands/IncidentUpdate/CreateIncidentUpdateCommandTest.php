@@ -35,7 +35,7 @@ class CreateIncidentUpdateCommandTest extends AbstractTestCase
             'message'  => 'Foo',
             'user'     => new User(),
         ];
-        $object = new CreateIncidentUpdateCommand($params['incident'], $params['status'], $params['message'], $params['user']);
+        $object = new CreateIncidentUpdateCommand($params['incident'], $params['status'], $params['message'], null, null, $params['user']);
 
         return compact('params', 'object');
     }
