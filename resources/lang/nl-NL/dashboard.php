@@ -23,16 +23,16 @@ return [
         'incident-templates'       => 'Incident Sjablonen',
         'updates'                  => [
             'title'   => 'Incident updates voor :incident',
-            'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
+            'count'   => '{0} Nul Updates |[1] Een Update |[2] Twee Updates | [3, *] Verscheidene Updates',
             'add'     => [
                 'title'   => 'Maak een nieuwe incident update',
-                'success' => 'Your new incident update has been created.',
-                'failure' => 'Something went wrong with the incident update.',
+                'success' => 'Je nieuwe incident template is aangemaakt.',
+                'failure' => 'Er is iets misgegaan met de incident template.',
             ],
             'edit' => [
-                'title'   => 'Edit incident update',
-                'success' => 'The incident update has been updated.',
-                'failure' => 'Something went wrong updating the incident update',
+                'title'   => 'Incident update bewerken',
+                'success' => 'De incident template is bijgewerkt.',
+                'failure' => 'Er is een fout opgetreden bij het wijzigen van de incident template',
             ],
         ],
         'add'                      => [
@@ -157,12 +157,12 @@ return [
     'subscribers' => [
         'subscribers'          => 'Abonnees',
         'description'          => 'Abonnees ontvangen een email update wanneer er incidenten zijn gemaakt of componenten worden bijgewerkt.',
-        'description_disabled' => 'To use this feature, you need allow people to signup for notifications.',
+        'description_disabled' => 'Om deze functie te gebruiken, moet u mensen aanmelden voor meldingen toestaan.',
         'verified'             => 'Geverifiëerd',
         'not_verified'         => 'Niet geverifiëerd',
         'subscriber'           => ':email, geabonneerd op :date',
         'no_subscriptions'     => 'Geabonneerd op alle updates',
-        'global'               => 'Globally subscribed',
+        'global'               => 'Globaal geabonneerd',
         'add'                  => [
             'title'   => 'Voeg een nieuwe abonnee toe',
             'success' => 'Abonnee is toegevoegd!',
