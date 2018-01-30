@@ -89,8 +89,7 @@ class ComponentStatusChangedNotification extends Notification
                     ->line($content)
                     ->action(trans('notifications.component.status_update.mail.action'), cachet_route('status-page'))
                     ->line(trans('cachet.subscriber.unsubscribe', ['link' => cachet_route('subscribe.unsubscribe', $notifiable->verify_code)]))
-                    //TODO: Translate the text below
-                    ->line('Manage your subscriptions at ' . cachet_route('subscribe.manage', $notifiable->verify_code));
+                    ->line(trans('cachet.subscriber.manage') . ' ' . cachet_route('subscribe.manage', $notifiable->verify_code));
     }
 
     /**
