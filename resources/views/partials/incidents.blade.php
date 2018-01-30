@@ -33,10 +33,17 @@
                         @if($incident->updates->isNotEmpty())
                         <div class="list-group">
                             @foreach($incident->updates as $update)
-                            <a class="list-group-item" href="{{ $update->permalink }}">
-                                <i class="{{ $update->icon }}" title="{{ $update->human_status }}" data-toggle="tooltip"></i> <strong>{{ Str::limit($update->raw_message, 20) }}</strong>
-                                <small>{{ $update->created_at_diff }}</small>
+                            <a class="list-group-item incident-update-item" href="{{ $update->permalink }}">
+                                <i class="{{ $update->icon }}" title="{{ $update->human_status }}" data-toggle="tooltip"></i>
+                                {!! $update->formatted_message !!}
+                                <small>
+                                    <abbr class="timeago links" data-toggle="tooltip"
+                                        data-placement="right" title="{{ $update->timestamp_formatted }}"
+                                        data-timeago="{{ $update->timestamp_iso }}">
+                                    </abbr>
+                                </small>
                                 <span class="ion-ios-arrow-right pull-right"></span>
+
                             </a>
                             @endforeach
                         </div>
