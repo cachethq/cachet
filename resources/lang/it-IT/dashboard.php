@@ -23,15 +23,15 @@ return [
         'incident-templates'       => 'Modelli di segnalazione',
         'updates'                  => [
             'title'   => 'Incident updates for :incident',
-            'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
+            'count'   => '{0} Zero aggiornamenti |[1] Un aggiornamento |[2] Due aggiornamenti | [3, *] Diversi aggiornamenti',
             'add'     => [
                 'title'   => 'Crea nuovo aggiornamento incidente',
                 'success' => 'Your new incident update has been created.',
-                'failure' => 'Something went wrong with the incident update.',
+                'failure' => 'Qualcosa è andato storto nell\'aggiornamento dell\'incidente.',
             ],
             'edit' => [
-                'title'   => 'Edit incident update',
-                'success' => 'The incident update has been updated.',
+                'title'   => 'Modifica aggiornamento incidente',
+                'success' => 'L\'aggiornamento dell\'incidente è stato aggiornato.',
                 'failure' => 'Something went wrong updating the incident update',
             ],
         ],
@@ -157,12 +157,12 @@ return [
     'subscribers' => [
         'subscribers'          => 'Iscritti',
         'description'          => 'Gli iscritti riceveranno aggiornamenti via email quando vengono create le segnalazioni o vengono aggiornati i componenti vengono.',
-        'description_disabled' => 'To use this feature, you need allow people to signup for notifications.',
+        'description_disabled' => 'Per utilizzare questa funzionalità, è necessario consentire alle persone l\'iscrizione alle notifiche.',
         'verified'             => 'Verificato',
         'not_verified'         => 'Non Verificato',
         'subscriber'           => ': email, iscritta :date',
         'no_subscriptions'     => 'Iscritto a tutti gli aggiornamenti',
-        'global'               => 'Globally subscribed',
+        'global'               => 'Iscritto a livello globale',
         'add'                  => [
             'title'   => 'Aggiungi un nuovo iscritto',
             'success' => 'L\'iscritto è stato aggiunto!',
