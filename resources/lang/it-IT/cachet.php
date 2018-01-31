@@ -33,7 +33,7 @@ return [
         'scheduled'    => 'Manutenzione programmata',
         'scheduled_at' => ', programmata il :timestamp',
         'posted'       => 'Pubblicato :timestamp',
-        'posted_at'    => 'Posted at :timestamp',
+        'posted_at'    => 'Pubblicato alle :timestamp',
         'status'       => [
             1 => 'Analisi',
             2 => 'Identificato',
