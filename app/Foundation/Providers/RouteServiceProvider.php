@@ -57,7 +57,7 @@ class RouteServiceProvider extends ServiceProvider
         AuthRoutes::class,
         SetupRoutes::class,
         ApiSystemRoutes::class,
-        ApiSetupRoutes::class
+        ApiSetupRoutes::class,
     ];
 
     /**
@@ -148,7 +148,6 @@ class RouteServiceProvider extends ServiceProvider
             SubstituteBindings::class,
         ];
 
-
         if ($applyAlwaysAuthenticate && !$this->isWhiteListedAuthRoute($routes)) {
             $middleware[] = Authenticate::class;
         }
@@ -187,19 +186,20 @@ class RouteServiceProvider extends ServiceProvider
 
     /**
      * Validates if the route object is an instance of the whitelisted routes.
-     * A small workaround since we cant use multiple classes in a `instanceof` comparison
+     * A small workaround since we cant use multiple classes in a `instanceof` comparison.
      *
-     * @param object                     $routes
+     * @param object $routes
      *
      * @return bool
      */
     private function isWhiteListedAuthRoute($routes)
     {
         foreach ($this->whitelistedAuthRoutes as $whitelistedRoute) {
-            if(is_a($routes, $whitelistedRoute)) {
+            if (is_a($routes, $whitelistedRoute)) {
                 return true;
             }
         }
+
         return false;
     }
 }
