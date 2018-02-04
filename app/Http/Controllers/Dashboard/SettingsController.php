@@ -386,7 +386,7 @@ class SettingsController extends Controller
         }
 
         if (Binput::has('always_authenticate')) {
-            Artisan::call('route:cache');
+            Artisan::call('route:clear');
         }
 
         return Redirect::back()->withSuccess(trans('dashboard.settings.edit.success'));
