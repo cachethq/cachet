@@ -15,8 +15,9 @@ use Barryvdh\Cors\HandleCors;
 use CachetHQ\Cachet\Http\Middleware\Acceptable;
 use CachetHQ\Cachet\Http\Middleware\Authenticate;
 use CachetHQ\Cachet\Http\Middleware\Timezone;
+use CachetHQ\Cachet\Http\Routes\ApiSystemRoutes;
 use CachetHQ\Cachet\Http\Routes\AuthRoutes;
-use CachetHQ\Cachet\Http\Routes\Setup\ApiRoutes;
+use CachetHQ\Cachet\Http\Routes\Setup\ApiRoutes as ApiSetupRoutes;
 use CachetHQ\Cachet\Http\Routes\SetupRoutes;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
@@ -52,7 +53,12 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string[]
      */
-    protected $whitelistedAuthRoutes = [AuthRoutes::class, SetupRoutes::class, ApiRoutes::class];
+    protected $whitelistedAuthRoutes = [
+        AuthRoutes::class,
+        SetupRoutes::class,
+        ApiSystemRoutes::class,
+        ApiSetupRoutes::class
+    ];
 
     /**
      * Define the route model bindings, pattern filters, etc.

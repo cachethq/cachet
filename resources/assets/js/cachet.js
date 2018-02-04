@@ -16,9 +16,6 @@ $(function () {
         beforeSend: function (xhr) {
             xhr.setRequestHeader('Accept', 'application/json');
             // xhr.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
-          if (typeof window.apiKey !== 'undefined') {
-            xhr.setRequestHeader('X-Cachet-Token', window.apiKey);
-          }
         },
         statusCode: {
             401: function () {
