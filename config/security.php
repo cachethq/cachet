@@ -31,6 +31,6 @@ return [
     | when authenticated.
     |
     */
-    'always_authenticate' => true,
+    'always_authenticate' => false,
 
 ];
