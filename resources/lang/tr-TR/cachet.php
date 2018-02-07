@@ -30,10 +30,10 @@ return [
         'none'         => 'Hiçbir olay raporlanmadı',
         'past'         => 'Geçmiş Olaylar',
         'stickied'     => 'Yapıştırılmış Olaylar',
-        'scheduled'    => 'Zamanlanmış bakım',
+        'scheduled'    => 'Bakım',
         'scheduled_at' => ',zamanlanmış :zamandilimi',
         'posted'       => ':timestamp gönderildi',
-        'posted_at'    => 'Posted at :timestamp',
+        'posted_at'    => 'Gönderim Zamanı :timestamp',
         'status'       => [
             1 => 'İnceleniyor',
             2 => 'Tanımlandı',
