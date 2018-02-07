@@ -22,7 +22,7 @@ return [
         'incident-create-template' => 'Şablon Oluştur',
         'incident-templates'       => 'Olay Şablonları',
         'updates'                  => [
-            'title'   => 'Incident updates for :incident',
+            'title'   => 'Olay güncellemeleri için: olay',
             'count'   => '{0} Sıfır güncelleştirmeleri |[1] Tek bir güncelleştirme |[2] İki güncelleştirme | [3, *] Birkaç güncelleştirme',
             'add'     => [
                 'title'   => 'Yeni olay güncellemesi oluştur',
@@ -73,7 +73,7 @@ return [
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => 'Zamanlanmış bakım',
+        'schedule'     => 'Bakım',
         'logged'       => '{0} Hiçbir olay yok, tebrikler. |Bir olayı raprladınız. | <strong>:count</strong> olayı raporladınız.',
         'scheduled_at' => ':timestamp zamanı için kaydedildi',
         'add'          => [
@@ -157,12 +157,12 @@ return [
     'subscribers' => [
         'subscribers'          => 'Aboneler',
         'description'          => 'Aboneler, olaylar oluşturulduğunda veya bileşenler güncellendiğinde e-posta güncellemelerini alacaktır.',
-        'description_disabled' => 'To use this feature, you need allow people to signup for notifications.',
+        'description_disabled' => 'Bu özelliği kullanmak için, kullanıcıların bildirimlere kayıt olmasına izin vermelisiniz.',
         'verified'             => 'Onaylanmış',
         'not_verified'         => 'Doğrulanmadı',
         'subscriber'           => ':email, abone oldu :date',
         'no_subscriptions'     => 'Güncellemeler için abone ol',
-        'global'               => 'Globally subscribed',
+        'global'               => 'Genel olarak abone olundu',
         'add'                  => [
             'title'   => 'Yeni abone ekleme',
             'success' => 'Abone eklendi!',
