@@ -23,16 +23,16 @@ return [
         'incident-templates'       => 'Olay Şablonları',
         'updates'                  => [
             'title'   => 'Incident updates for :incident',
-            'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
+            'count'   => '{0} Sıfır güncelleştirmeleri |[1] Tek bir güncelleştirme |[2] İki güncelleştirme | [3, *] Birkaç güncelleştirme',
             'add'     => [
                 'title'   => 'Yeni olay güncellemesi oluştur',
-                'success' => 'Your new incident update has been created.',
-                'failure' => 'Something went wrong with the incident update.',
+                'success' => 'Yeni olay güncelleştirmeniz oluşturuldu.',
+                'failure' => 'Olay şablonu güncellenirken bir şeyler ters gitti.',
             ],
             'edit' => [
-                'title'   => 'Edit incident update',
-                'success' => 'The incident update has been updated.',
-                'failure' => 'Something went wrong updating the incident update',
+                'title'   => 'Olay güncelleştirmeyi düzenle',
+                'success' => 'Olay güncelleştirme güncelleştirildi.',
+                'failure' => 'Olay şablonu güncellenirken bir şeyler ters gitti',
             ],
         ],
         'add'                      => [
