@@ -118,13 +118,13 @@ return [
     ],
 
     // Meta descriptions
-    'meta' =>  [
+    'meta' => [
         'description' => [
             'incident'  => 'Details and updates about the :name incident that occurred on :date',
             'schedule'  => 'Details about the scheduled maintenance period :name starting :startDate',
             'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
             'overview'  => 'Stay up to date with the latest service updates from :app.',
-        ]
+        ],
     ],
 
     // Other
