@@ -2,6 +2,8 @@
 
 @section('title', $incident->name.' | '.$site_title)
 
+@section('description', trans('cachet.meta.description.incident', ['name' => $incident->name, 'date' => $incident->occurred_at_formatted]))
+
 @section('bodyClass', 'no-padding')
 
 @section('outer-content')
