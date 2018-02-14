@@ -33,7 +33,7 @@ return [
         'scheduled'    => '計画メンテナンス',
         'scheduled_at' => ', 予定日時 :timestamp',
         'posted'       => '投稿日時 :timestamp',
-        'posted_at'    => 'Posted at :timestamp',
+        'posted_at'    => '掲載日時 :timestamp',
         'status'       => [
             1 => '調査中',
             2 => '特定済み',
@@ -53,9 +53,9 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] System operational|[2,Inf] All systems are operational',
-        'bad'   => '[0,1] The system is experiencing issues|[2,Inf] Some systems are experiencing issues',
-        'major' => '[0,1] The system is experiencing major issues|[2,Inf] Some systems are experiencing major issues',
+        'good'  => '[0,1]正常に稼動しています|[2,Inf]全システムが正常に稼動しています',
+        'bad'   => '[0,1]問題が発生しています|[2,Inf]一部システムにて問題が発生しています',
+        'major' => '[0, 1]システムで大きな問題が発生 |[2、*]いくつかのシステムの主要な問題が発生しています。',
     ],
 
     'api' => [
