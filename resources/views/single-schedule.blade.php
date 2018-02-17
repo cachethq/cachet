@@ -2,6 +2,8 @@
 
 @section('title', $schedule->name.' | '.$site_title)
 
+@section('description', trans('cachet.meta.description.schedule', ['name' => $schedule->name, 'startDate' => $schedule->scheduled_at_formatted]))
+
 @section('bodyClass', 'no-padding')
 
 @section('outer-content')
