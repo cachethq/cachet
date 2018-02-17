@@ -155,7 +155,7 @@ return [
             'days-of-incidents'                     => 'แสดงวันที่มีเหตุการณ์เกิดขึ้นกี่วัน?',
             'time_before_refresh'                   => 'Status page refresh rate (in seconds).',
             'banner'                                => 'ภาพแบนเนอร์',
-            'banner-help'                           => 'ขอแนะนำให้อัปโหลดไฟล์ที่ความกว้างไม่เกิน 930px',
+            'banner-help'                           => "ขอแนะนำให้อัปโหลดไฟล์ที่ความกว้างไม่เกิน 930px",
             'subscribers'                           => 'เปิดให้ทุกคนสามารถลงทะเบียนรับอีเมลแจ้งเตือน?',
             'suppress_notifications_in_maintenance' => 'Suppress notifications when incident occurs during maintenance period?',
             'skip_subscriber_verification'          => 'ข้ามการยืนยันตันตนผู้ใช้ (ระวัง! คุณอาจถูกสแปม)',
