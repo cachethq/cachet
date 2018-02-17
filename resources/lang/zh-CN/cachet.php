@@ -30,7 +30,7 @@ return [
         'none'         => '无故障报告',
         'past'         => '历史状态',
         'stickied'     => '已关注的故障',
-        'scheduled'    => '维护',
+        'scheduled'    => '计划维护',
         'scheduled_at' => '，计划于 :timestamp',
         'posted'       => '发布于 :timestamp',
         'posted_at'    => '发布于 :timestamp',
@@ -117,9 +117,18 @@ return [
         ],
     ],
 
+    // Meta descriptions
+    'meta' => [
+        'description' => [
+            'incident'  => 'Details and updates about the :name incident that occurred on :date',
+            'schedule'  => 'Details about the scheduled maintenance period :name starting :startDate',
+            'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
+            'overview'  => '始终保持对 :app 服务状态的关注。',
+        ],
+    ],
+
     // Other
     'home'            => '主屏幕',
-    'description'     => '始终保持对 :app 服务状态的关注。',
     'powered_by'      => '由 <a href="https://cachethq.io" class="links">Cachet</a> 驱动。',
     'timezone'        => '时间将以 :timezone 时区显示。',
     'about_this_site' => '关于我们',
