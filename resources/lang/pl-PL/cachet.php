@@ -117,9 +117,18 @@ return [
         ],
     ],
 
+    // Meta descriptions
+    'meta' => [
+        'description' => [
+            'incident'  => 'Details and updates about the :name incident that occurred on :date',
+            'schedule'  => 'Details about the scheduled maintenance period :name starting :startDate',
+            'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
+            'overview'  => 'Bądź na bieżąco z aktualizacjami z :app.',
+        ],
+    ],
+
     // Other
     'home'            => 'Strona Główna',
-    'description'     => 'Bądź na bieżąco z aktualizacjami z :app.',
     'powered_by'      => 'Obsługiwany przez <a href="https://cachethq.io" class="links">Cachet</a>.',
     'timezone'        => 'Czas według strefy :timezone.',
     'about_this_site' => 'Über diese Seite',
