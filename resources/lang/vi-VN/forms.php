@@ -155,7 +155,7 @@ return [
             'days-of-incidents'                     => 'Sự cố này sẽ hiển thị mấy ngày ?',
             'time_before_refresh'                   => 'Status page refresh rate (in seconds).',
             'banner'                                => 'Banner Image',
-            'banner-help'                           => 'Bạn nên upload ảnh có chiều rộng lớn hơn 930px',
+            'banner-help'                           => "Bạn nên upload ảnh có chiều rộng lớn hơn 930px",
             'subscribers'                           => 'Allow people to signup to email notifications?',
             'suppress_notifications_in_maintenance' => 'Suppress notifications when incident occurs during maintenance period?',
             'skip_subscriber_verification'          => 'Skip verifying of users? (Be warned, you could be spammed)',
