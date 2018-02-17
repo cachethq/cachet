@@ -117,9 +117,18 @@ return [
         ],
     ],
 
+    // Meta descriptions
+    'meta' => [
+        'description' => [
+            'incident'  => 'Details and updates about the :name incident that occurred on :date',
+            'schedule'  => 'Details about the scheduled maintenance period :name starting :startDate',
+            'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
+            'overview'  => 'Hold dig opdateret med de seneste opdateringer fra :app.',
+        ],
+    ],
+
     // Other
     'home'            => 'Hjem',
-    'description'     => 'Hold dig opdateret med de seneste opdateringer fra :app.',
     'powered_by'      => 'Drevet af <a href="https://cachethq.io" class="links"> Cachet</a>.',
     'timezone'        => 'Klokkeslæt vises i :timezone.',
     'about_this_site' => 'Om denne side',
