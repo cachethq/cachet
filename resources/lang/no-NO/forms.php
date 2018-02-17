@@ -155,7 +155,7 @@ return [
             'days-of-incidents'                     => 'Hvor mange dagers hendelser vises?',
             'time_before_refresh'                   => 'Status page refresh rate (in seconds).',
             'banner'                                => 'Bannerbilde',
-            'banner-help'                           => 'Det anbefales at du ikke laster opp bilder bredere enn 930 piksler.',
+            'banner-help'                           => "Det anbefales at du ikke laster opp bilder bredere enn 930 piksler.",
             'subscribers'                           => 'Tillatt brukere å melde seg inn for epostvarslinger?',
             'suppress_notifications_in_maintenance' => 'Suppress notifications when incident occurs during maintenance period?',
             'skip_subscriber_verification'          => 'Hopp over kontroll av brukere? (Vær advart, du kunne bli spammet)',
