@@ -155,7 +155,7 @@ return [
             'days-of-incidents'                     => 'Mennyi incidens legyen látható?',
             'time_before_refresh'                   => 'Status page refresh rate (in seconds).',
             'banner'                                => 'Banner kép',
-            'banner-help'                           => 'Nem ajánlott 930 pixelnél szélesebb képet feltölteni.',
+            'banner-help'                           => "Nem ajánlott 930 pixelnél szélesebb képet feltölteni.",
             'subscribers'                           => 'Emberek regisztrálhatnak email értesítésekre?',
             'suppress_notifications_in_maintenance' => 'Suppress notifications when incident occurs during maintenance period?',
             'skip_subscriber_verification'          => 'Felhasználó-ellenőrzés kihagyása? (Vigyázat, spam üzeneteket eredményezhet)',
