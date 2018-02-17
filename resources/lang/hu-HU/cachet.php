@@ -117,9 +117,18 @@ return [
         ],
     ],
 
+    // Meta descriptions
+    'meta' => [
+        'description' => [
+            'incident'  => 'Details and updates about the :name incident that occurred on :date',
+            'schedule'  => 'Details about the scheduled maintenance period :name starting :startDate',
+            'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
+            'overview'  => 'Maradjon mindig naprakész :app legújabb frissítéseivel.',
+        ],
+    ],
+
     // Other
     'home'            => 'Kezdőoldal',
-    'description'     => 'Maradjon mindig naprakész :app legújabb frissítéseivel.',
     'powered_by'      => 'A motorháztető alatt a <a href="https://cachethq.io" class="links">Cachet</a> dolgozik.',
     'timezone'        => 'Időzóna: :timezone.',
     'about_this_site' => 'A webhelyről',
