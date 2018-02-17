@@ -29,7 +29,7 @@ return [
     'incidents' => [
         'none'         => 'Geen incidenten gemeld',
         'past'         => 'Oude incidenten',
-        'stickied'     => 'Uitgelichte incidenten',
+        'stickied'     => 'Vastgezette incidenten',
         'scheduled'    => 'Gepland onderhoud',
         'scheduled_at' => ', gepland :timestamp',
         'posted'       => 'Geplaatst op :timestamp',
@@ -46,7 +46,7 @@ return [
     'schedules' => [
         'status' => [
             0 => 'Aankomend',
-            1 => 'Wordt uitgevoerd',
+            1 => 'In Behandeling',
             2 => 'Voltooid',
         ],
     ],
@@ -117,9 +117,18 @@ return [
         ],
     ],
 
+    // Meta descriptions
+    'meta' => [
+        'description' => [
+            'incident'  => 'Details and updates about the :name incident that occurred on :date',
+            'schedule'  => 'Details about the scheduled maintenance period :name starting :startDate',
+            'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
+            'overview'  => 'Blijf op de hoogte van de laatste service updates over :app.',
+        ],
+    ],
+
     // Other
     'home'            => 'Home',
-    'description'     => 'Blijf op de hoogte van de laatste service updates over :app.',
     'powered_by'      => 'Mogelijk gemaakt door <a href="https://cachethq.io" class="links">Cachet</a>.',
     'timezone'        => 'Tijden worden getoond in :timezone.',
     'about_this_site' => 'Over deze website',
