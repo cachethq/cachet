@@ -117,9 +117,18 @@ return [
         ],
     ],
 
+    // Meta descriptions
+    'meta' => [
+        'description' => [
+            'incident'  => 'crwdns1428:0crwdne1428:0',
+            'schedule'  => 'crwdns1429:0crwdne1429:0',
+            'subscribe' => 'crwdns1430:0crwdne1430:0',
+            'overview'  => 'crwdns1431:0crwdne1431:0',
+        ],
+    ],
+
     // Other
     'home'            => 'crwdns942:0crwdne942:0',
-    'description'     => 'crwdns943:0crwdne943:0',
     'powered_by'      => 'crwdns944:0crwdne944:0',
     'timezone'        => 'crwdns945:0crwdne945:0',
     'about_this_site' => 'crwdns946:0crwdne946:0',
