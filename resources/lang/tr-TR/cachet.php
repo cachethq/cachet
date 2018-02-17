@@ -117,9 +117,18 @@ return [
         ],
     ],
 
+    // Meta descriptions
+    'meta' => [
+        'description' => [
+            'incident'  => 'Details and updates about the :name incident that occurred on :date',
+            'schedule'  => 'Details about the scheduled maintenance period :name starting :startDate',
+            'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
+            'overview'  => 'Şu uygulamalardaki en son hizmet güncellemeleri ile güncel kalın.',
+        ],
+    ],
+
     // Other
     'home'            => 'Ana Sayfa',
-    'description'     => 'Şu uygulamalardaki en son hizmet güncellemeleri ile güncel kalın.',
     'powered_by'      => '<a href="https://cachethq.io" class="links"> Önbellek </a> kaynaklı.',
     'timezone'        => 'Saatler, saat diliminde gösterilir.',
     'about_this_site' => 'Bu Site hakkında',
