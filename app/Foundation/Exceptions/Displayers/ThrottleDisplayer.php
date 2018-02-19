@@ -49,7 +49,7 @@ class ThrottleDisplayer implements DisplayerInterface
      */
     public function display(Exception $exception, $id, $code, array $headers)
     {
-        return redirect()->route('auth.login')->withError(trans('forms.login.rate-limit'));
+        return cachet_redirect('auth.login')->withError(trans('forms.login.rate-limit'));
     }
 
     /**

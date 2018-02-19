@@ -1,5 +1,9 @@
 @extends('layout.master')
 
+@section('title',  trans('cachet.subscriber.subscribe'). " | ". $site_title))
+
+@section('description', trans('cachet.meta.description.subscribe', ['app' => $site_title]))
+
 @section('content')
 <div class="pull-right">
     <p><a class="btn btn-success btn-outline" href="{{ cachet_route('status-page') }}"><i class="ion ion-home"></i></a></p>
