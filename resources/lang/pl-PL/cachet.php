@@ -120,9 +120,9 @@ return [
     // Meta descriptions
     'meta' => [
         'description' => [
-            'incident'  => 'Details and updates about the :name incident that occurred on :date',
-            'schedule'  => 'Details about the scheduled maintenance period :name starting :startDate',
-            'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
+            'incident'  => 'Szczegóły i aktualizacje dotyczące zdarzenia :name, które wystąpiło :date',
+            'schedule'  => 'Szczegóły dotyczące zaplanowanej przerwy technicznej :name rozpoczynającej się :startDate',
+            'subscribe' => 'Zapisz się do :app, aby otrzymywać informacje i aktualizacje dotyczące zdarzeń i przerw technicznych',
             'overview'  => 'Bądź na bieżąco z aktualizacjami z :app.',
         ],
     ],
