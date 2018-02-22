@@ -120,7 +120,7 @@ return [
     // Meta descriptions
     'meta' => [
         'description' => [
-            'incident'  => 'Details and updates about the :name incident that occurred on :date',
+            'incident'  => 'Detaljer og opdateringer om hændelse :navn, der fandt sted på :dato',
             'schedule'  => 'Details about the scheduled maintenance period :name starting :startDate',
             'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
             'overview'  => 'Hold dig opdateret med de seneste opdateringer fra :app.',
