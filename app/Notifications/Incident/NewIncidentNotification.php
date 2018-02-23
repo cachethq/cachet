@@ -93,6 +93,7 @@ class NewIncidentNotification extends Notification
     {
         return (new NexmoMessage())->content(trans('notifications.incident.new.sms.content', [
             'name' => $this->incident->name,
+            'app_name' => Config::get('setting.app_name'),
         ]));
     }
 
