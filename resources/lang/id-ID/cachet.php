@@ -120,9 +120,9 @@ return [
     // Meta descriptions
     'meta' => [
         'description' => [
-            'incident'  => 'Details and updates about the :name incident that occurred on :date',
-            'schedule'  => 'Details about the scheduled maintenance period :name starting :startDate',
-            'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
+            'incident'  => 'Rincian dan update tentang insiden :name yang terjadi pada :date',
+            'schedule'  => 'Rincian tentang jadwal pemeliharaan :name mulai :startDate',
+            'subscribe' => 'Berlangganan :app untuk menerima update insiden dan jadwal pemeliharaan',
             'overview'  => 'Tetap up to date dengan layanan terbaru dari :app.',
         ],
     ],
