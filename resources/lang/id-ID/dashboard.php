@@ -22,16 +22,16 @@ return [
         'incident-create-template' => 'Buat Template',
         'incident-templates'       => 'Template Insiden',
         'updates'                  => [
-            'title'   => 'Incident updates for :incident',
-            'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
+            'title'   => 'Update insiden untuk :incident',
+            'count'   => '{0} Nol Update|[1] Satu Update|[2] Dua Update|[3,*] Beberapa Update',
             'add'     => [
                 'title'   => 'Buat update insiden baru',
-                'success' => 'Your new incident update has been created.',
-                'failure' => 'Something went wrong with the incident update.',
+                'success' => 'Update baru insiden anda berhasil dibuat.',
+                'failure' => 'Ada masalah dengan update insiden ini.',
             ],
             'edit' => [
-                'title'   => 'Edit incident update',
-                'success' => 'The incident update has been updated.',
+                'title'   => 'Edit update insiden',
+                'success' => 'Update insiden berhasil diupdate.',
                 'failure' => 'Something went wrong updating the incident update',
             ],
         ],
