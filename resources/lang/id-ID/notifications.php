@@ -14,7 +14,7 @@ return [
         'status_update' => [
             'mail' => [
                 'subject'  => 'Status Komponen Telah Diperbarui',
-                'greeting' => 'Status sebuah komponen telah diperbarui!',
+                'greeting' => 'Sebuah status komponen telah diperbarui!',
                 'content'  => 'Status :name telah berubah dari :old_status ke :new_status.',
                 'action'   => 'Lihat',
             ],
@@ -36,8 +36,8 @@ return [
                 'action'   => 'Lihat',
             ],
             'slack' => [
-                'title'   => 'Insiden: nama Dilaporkan',
-                'content' => 'Sebuah insiden baru dilaporkan di: applikasi_nama',
+                'title'   => 'Insiden :name Dilaporkan',
+                'content' => 'Sebuah insiden baru dilaporkan di :app_name',
             ],
             'sms' => [
                 'content' => 'Sebuah insiden baru dilaporkan di :app_name.',
@@ -46,33 +46,33 @@ return [
         'update' => [
             'mail' => [
                 'subject' => 'Insiden Diperbarui',
-                'content' => ':nama telah diperbarui',
-                'title'   => ':nama telah diperbarui ke :baru_status',
+                'content' => ':name telah diperbarui',
+                'title'   => ':name telah diperbarui menjadi :new_status',
                 'action'  => 'Lihat',
             ],
             'slack' => [
-                'title'   => ':nama Diperbarui',
-                'content' => ':nama telah diperbarui ke :baru_status',
+                'title'   => ':name Diperbarui',
+                'content' => ':name telah diperbarui menjadi :new_status',
             ],
             'sms' => [
-                'content' => 'Insiden: nama telah diperbarui',
+                'content' => 'Insiden :name telah diperbarui',
             ],
         ],
     ],
     'schedule' => [
         'new' => [
             'mail' => [
-                'subject' => 'Jadwal Baru Dibuat',
-                'content' => ':nama dijadwalkan untuk :tanggal',
+                'subject' => 'Jadwal Baru Sudah Dibuat',
+                'content' => ':name dijadwalkan pada :date',
                 'title'   => 'Pemeliharaan terjadwal baru telah dibuat.',
                 'action'  => 'Lihat',
             ],
             'slack' => [
-                'title'   => 'Jadwal Baru Dibuat!',
-                'content' => ':nama dijadwalkan untuk :tanggal',
+                'title'   => 'Jadwal Baru Sudah Dibuat!',
+                'content' => ':name dijadwalkan pada :date',
             ],
             'sms' => [
-                'content' => ':nama dijadwalkan untuk :tanggal',
+                'content' => ':name dijadwalkan pada :date',
             ],
         ],
     ],
@@ -80,9 +80,9 @@ return [
         'verify' => [
             'mail' => [
                 'subject' => 'Verifikasi Langganan Anda',
-                'content' => 'Klik untuk memverifikasi langganan Anda ke :halaman status aplikasi_nama.',
-                'title'   => 'Verifikasi langganan Anda ke :halaman status aplikasi_nama.',
-                'action'  => 'Memeriksa',
+                'content' => 'Klik untuk memverifikasi langganan Anda ke halaman status :app_name.',
+                'title'   => 'Verifikasi langganan Anda ke status halaman :app_name.',
+                'action'  => 'Verifikasi',
             ],
         ],
     ],
@@ -90,7 +90,7 @@ return [
         'test' => [
             'mail' => [
                 'subject' => 'Ping dari Cachet!',
-                'content' => 'Ini adalah pemberitahuan pengujian dari Cachet!',
+                'content' => 'Ini adalah test notifikasi dari Cachet!',
                 'title'   => '🔔',
             ],
         ],
@@ -99,9 +99,9 @@ return [
         'invite' => [
             'mail' => [
                 'subject' => 'Undangan kamu ada di dalamnya...',
-                'content' => 'Anda telah diundang untuk bergabung :halaman status aplikasi_nama.',
-                'title'   => 'Anda diundang untuk bergabung: halaman status aplikasi_nama.',
-                'action'  => 'Diterima',
+                'content' => 'Anda diundang untuk bergabung dalam halaman status :app_name.',
+                'title'   => 'Anda diundang untuk bergabung halaman status :app_name.',
+                'action'  => 'Terima',
             ],
         ],
     ],
