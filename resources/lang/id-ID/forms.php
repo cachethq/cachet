@@ -155,7 +155,7 @@ return [
             'days-of-incidents'                     => 'Berapa hari insiden akan ditampilkan?',
             'time_before_refresh'                   => 'Kecepatan refresh halaman status (dalam detik).',
             'banner'                                => 'Gambar Banner',
-            'banner-help'                           => "Disarankan gambar yang anda unggah tidak lebih lebar dari 930px.",
+            'banner-help'                           => 'Disarankan gambar yang anda unggah tidak lebih lebar dari 930px.',
             'subscribers'                           => 'Bolehkan pengunjung mendaftar notifikasi email?',
             'suppress_notifications_in_maintenance' => 'Paksa munculnya notifikasi ketika insiden terjadi saat periode pemeliharaan?',
             'skip_subscriber_verification'          => 'Lewatkan verifikasi user? (Hati-hati, anda bisa kena spam)',
