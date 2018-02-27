@@ -22,10 +22,22 @@ use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
+/**
+ * The Component API controller.
+ *
+ * @resource Component
+ */
 class ComponentController extends AbstractApiController
 {
     /**
      * Get all components.
+     *
+     * The following searchable keys are available:
+     * - `id`
+     * - `name`
+     * - `status`
+     * - `group_id`
+     * - `enabled`
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -53,6 +65,12 @@ class ComponentController extends AbstractApiController
     /**
      * Get a single component.
      *
+     * **Path params:**
+     *
+     * Name | Type | Description
+     * -----|------|------------
+     * component | int32 | The component identifier.
+     *
      * @param \CachetHQ\Cachet\Models\Component $component
      *
      * @return \Illuminate\Http\JsonResponse
@@ -64,6 +82,18 @@ class ComponentController extends AbstractApiController
 
     /**
      * Create a new component.
+     *
+     * **Body params:**
+     *
+     *  Name | Type | Description
+     *  -----|------|------------
+     *  name | string | Name of the component.
+     *  description| string | Description of the component.
+     *  status | int32` | Status of the component (Between 1 and 4).
+     *  link | string | A hyperlink to the component.
+     *  order | int32 | Order of the component.
+     *  group_id | int32 | The group identifier that the component is within.
+     *  enabled | boolean | Whether the component is enabled.
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -104,6 +134,23 @@ class ComponentController extends AbstractApiController
     /**
      * Update an existing component.
      *
+     * **Path params:**
+     *
+     * Name | Type | Description
+     * -----|------|------------
+     * component | int32 | The identifier of the component to update
+     *
+     * **Body params:**
+     *
+     * Name | Type | Description
+     * -----|------|------------
+     * name | string | Name of the component.
+     * status | int32 | Status of the component (between 1 and 4).
+     * link | string | A hyperlink to the component.
+     * order | int32 | Order of the component.
+     * group_id | int32 | The group id that the component is within.
+     * enabled | boolean | Whether the component is enabled.
+     *
      * @param \CachetHQ\Cachet\Models\Component $component
      *
      * @return \Illuminate\Http\JsonResponse
@@ -143,6 +190,12 @@ class ComponentController extends AbstractApiController
 
     /**
      * Delete an existing component.
+     *
+     * **Path params:**
+     *
+     * Name | Type | Description
+     * -----|------|------------
+     * component | int32 | Component ID.
      *
      * @param \CachetHQ\Cachet\Models\Component $component
      *
