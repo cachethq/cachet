@@ -18,11 +18,13 @@ use CachetHQ\Cachet\Integrations\Contracts\System;
  * This is the general api controller.
  *
  * @author James Brooks <james@bluebaytravel.co.uk>
+ *
+ * @resource General
  */
 class GeneralController extends AbstractApiController
 {
     /**
-     * Ping endpoint allows API consumers to check the version.
+     * Test that the API is responding to your requests.
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -32,7 +34,7 @@ class GeneralController extends AbstractApiController
     }
 
     /**
-     * Endpoint to show the Cachet version.
+     * Get the Cachet version.
      *
      * @return \Illuminate\Http\JsonResponse
      */
