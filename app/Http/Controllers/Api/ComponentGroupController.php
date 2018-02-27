@@ -22,11 +22,14 @@ use Illuminate\Support\Facades\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 /**
+ *
  * This is the component group controller.
  *
  * @author James Brooks <james@alt-three.com>
  * @author Graham Campbell <graham@alt-three.com>
  * @author Joseph Cohen <joe@alt-three.com>
+ *
+ * @resource ComponentGroup
  */
 class ComponentGroupController extends AbstractApiController
 {
@@ -49,6 +52,12 @@ class ComponentGroupController extends AbstractApiController
 
     /**
      * Get all groups.
+     *
+     * The following searche keys are available:
+     * - `id`
+     * - `name`
+     * - `collapsed`
+     * - `visible`
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -75,6 +84,12 @@ class ComponentGroupController extends AbstractApiController
     /**
      * Get a single group.
      *
+     * **Path params:**
+     * 
+     * Name | Type | Description
+     * -----|------|------------
+     * group | int32 | Component group identifier
+     *
      * @param \CachetHQ\Cachet\Models\ComponentGroup $group
      *
      * @return \Illuminate\Http\JsonResponse
@@ -86,6 +101,14 @@ class ComponentGroupController extends AbstractApiController
 
     /**
      * Create a new component group.
+     *
+     * **Body params:**
+     *
+     * Name | Type | Description
+     * -----|------|------------
+     * name | string | Name of the component group
+     * order | int32 | Order of the component group
+     * collapsed | int32 | Collapse the group? 0 = No. 1 = Yes. 2 = If a component is not Operational
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -107,6 +130,20 @@ class ComponentGroupController extends AbstractApiController
 
     /**
      * Update an existing group.
+     *
+     * **Path params:**
+     *
+     * Name | Type | Description
+     * -----|------|------------
+     * group | string | Component group ID
+     *
+     * **Body params:**
+     *
+     * Name | Type | Description
+     * -----|------|------------
+     * name | string | Name of the component group
+     * order | int32 | Order of the component group
+     * collapsed | int32 | Collapse the group? 0 = No. 1 = Yes. 2 = If a component is not Operational
      *
      * @param \CachetHQ\Cachet\Models\ComponentGroup $group
      *
@@ -131,6 +168,11 @@ class ComponentGroupController extends AbstractApiController
 
     /**
      * Delete an existing group.
+     *
+     * **Path params:**
+     *
+     * Name | Type | Description
+     * group | int32 | Component group ID
      *
      * @param \CachetHQ\Cachet\Models\ComponentGroup $group
      *

@@ -69,7 +69,7 @@ class ComponentController extends AbstractApiController
      *
      * Name | Type | Description
      * -----|------|------------
-     * component | int32 | The component identifier.
+     * component | int32 | The component identifier
      *
      * @param \CachetHQ\Cachet\Models\Component $component
      *
@@ -87,13 +87,13 @@ class ComponentController extends AbstractApiController
      *
      *  Name | Type | Description
      *  -----|------|------------
-     *  name | string | Name of the component.
-     *  description| string | Description of the component.
-     *  status | int32` | Status of the component (Between 1 and 4).
-     *  link | string | A hyperlink to the component.
-     *  order | int32 | Order of the component.
-     *  group_id | int32 | The group identifier that the component is within.
-     *  enabled | boolean | Whether the component is enabled.
+     *  name | string | Name of the component
+     *  description| string | Description of the component
+     *  status | int32` | Status of the component (Between 1 and 4)
+     *  link | string | A hyperlink to the component
+     *  order | int32 | Order of the component
+     *  group_id | int32 | The group identifier that the component is within
+     *  enabled | boolean | Whether the component is enabled
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -144,12 +144,12 @@ class ComponentController extends AbstractApiController
      *
      * Name | Type | Description
      * -----|------|------------
-     * name | string | Name of the component.
-     * status | int32 | Status of the component (between 1 and 4).
-     * link | string | A hyperlink to the component.
-     * order | int32 | Order of the component.
-     * group_id | int32 | The group id that the component is within.
-     * enabled | boolean | Whether the component is enabled.
+     * name | string | Name of the component
+     * status | int32 | Status of the component (between 1 and 4)
+     * link | string | A hyperlink to the component
+     * order | int32 | Order of the component
+     * group_id | int32 | The group id that the component is within
+     * enabled | boolean | Whether the component is enabled
      *
      * @param \CachetHQ\Cachet\Models\Component $component
      *
@@ -195,7 +195,7 @@ class ComponentController extends AbstractApiController
      *
      * Name | Type | Description
      * -----|------|------------
-     * component | int32 | Component ID.
+     * component | int32 | Component ID
      *
      * @param \CachetHQ\Cachet\Models\Component $component
      *
