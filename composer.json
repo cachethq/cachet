@@ -53,7 +53,8 @@
         "pragmarx/google2fa": "^0.7.1",
         "predis/predis": "^1.1",
         "roumen/feed": "^2.10",
-        "twig/twig": "^1.26.1"
+        "twig/twig": "^1.26.1",
+        "mpociot/laravel-apidoc-generator": "2.0"
     },
     "require-dev": {
         "ext-sqlite3": "*",
