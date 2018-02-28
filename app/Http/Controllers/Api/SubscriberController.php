@@ -43,6 +43,13 @@ class SubscriberController extends AbstractApiController
     /**
      * Create a new subscriber.
      *
+     * **Body params:**
+     *
+     * Name | Type | Required | Description
+     * email | string | Y | The email to subscribe
+     * verify | boolean | N | Whether it's needed to verify the email
+     * components | int[] | N | The components the email is subscribing
+     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function store()
@@ -60,6 +67,11 @@ class SubscriberController extends AbstractApiController
 
     /**
      * Delete a subscriber.
+     *
+     * **Path params:**
+     *
+     * Name | Type | Required | Description
+     * subscriber | int32 | Y | Subscriber ID
      *
      * @param \CachetHQ\Cachet\Models\Subscriber $subscriber
      *

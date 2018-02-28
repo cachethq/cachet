@@ -20,6 +20,11 @@ use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
+/**
+ * The Metric API controller.
+ *
+ * @resource Metric
+ */
 class MetricController extends AbstractApiController
 {
     /**
@@ -45,6 +50,11 @@ class MetricController extends AbstractApiController
     /**
      * Get a single metric.
      *
+     * **Path params:**
+     *
+     * Name | Type | Required | Description
+     * metric | int32 | Y | Metric ID
+     *
      * @param \CachetHQ\Cachet\Models\Metric $metric
      *
      * @return \Illuminate\Http\JsonResponse
@@ -56,6 +66,20 @@ class MetricController extends AbstractApiController
 
     /**
      * Create a new metric.
+     *
+     * **Body params:**
+     *
+     * Name | Type | Required | Description
+     * name | string | Y | Name of metric
+     * suffix | string | Y | Measurments in
+     * description | string | Y | Description of what the metric is measuring
+     * default_value | int32 | Y | The default value to use when a point is added
+     * display_chart | int32 | Y | Whether to display the chart on the status page
+     * calc_type | int32 | N | The calc type. 0 for sum, 1 for average
+     * default_view | int32 | N | The default view
+     * threshold | int32 | N | The threshold
+     * order | int32 | N | The order
+     * visible | int32 | N | Whether the graph should be visible
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -84,6 +108,26 @@ class MetricController extends AbstractApiController
 
     /**
      * Update an existing metric.
+     *
+     * **Path params:**
+     *
+     * Name | Type | Required | Description
+     * metric | int32 | Y | Metric ID
+     *
+     * **Body params:**
+     *
+     * Name | Type | Required | Description
+     * name | string | Y | Name of metric
+     * suffix | string | Y | Measurments in
+     * description | string | Y | Description of what the metric is measuring
+     * default_value | int32 | Y | The default value to use when a point is added
+     * display_chart | int32 | Y | Whether to display the chart on the status page
+     * calc_type | int32 | Y | Metric type. 0 for sum, 1 for average
+     * places | int32 | Y | Decimal places
+     * threshold | int32 | Y | Number of minutes of threshold between metric points
+     * order | int32 | Y | The order of the metric
+     * visible | int32 | Y | Whether the metrics should be visible on the status page
+     * default_view | int32 | N | The default view
      *
      * @param \CachetHQ\Cachet\Models\Metric $metric
      *
@@ -115,6 +159,11 @@ class MetricController extends AbstractApiController
 
     /**
      * Delete an existing metric.
+     *
+     * **Path params:**
+     *
+     * Name | Type | Required | Description
+     * metric | int32 | Required | int32
      *
      * @param \CachetHQ\Cachet\Models\Metric $metric
      *

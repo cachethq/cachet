@@ -21,10 +21,23 @@ use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
+/**
+ * The incident API controller.
+ *
+ * @resource Incident
+ */
 class IncidentController extends AbstractApiController
 {
     /**
      * Get all incidents.
+     *
+     * The following searchable keys are available:
+     * - `id`
+     * - `component_id`
+     * - `name`
+     * - `status`
+     * - `visible`
+     * - 
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -50,6 +63,12 @@ class IncidentController extends AbstractApiController
     /**
      * Get a single incident.
      *
+     * **Path Params:**
+     * 
+     * Name | Type | Required | Description
+     * -----|------|------------
+     * incident | int32 | Y | ID of the incident
+     *
      * @param \CachetHQ\Cachet\Models\Incident $incident
      *
      * @return \Illuminate\Http\JsonResponse
@@ -61,6 +80,22 @@ class IncidentController extends AbstractApiController
 
     /**
      * Create a new incident.
+     *
+     * **Body params:**
+     *
+     * Name | Type | Required | Description
+     * -----|------|------------
+     * name | string | Y | Name of the incident
+     * message | string | Y | A message (supporting Markdown) to explain more
+     * status | int32 | Y | Status of the incident
+     * component_id | int32 | Y | Component to update (required with component_status)
+     * component_status | int32 | Y | The status to update the given component with
+     * visible | int32 | N | Whether the incident is publicly visible
+     * notify | boolean | N | Whether to notify subscribers
+     * stickied | boolean | N |Should the incident be stickied
+     * template | string | The template slug to use
+     * vars | string[] | N | The variables to pass to the template
+     * meta | string[] | N | The meta
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -90,6 +125,26 @@ class IncidentController extends AbstractApiController
 
     /**
      * Update an existing incident.
+     *
+     * **Path params:**
+     *
+     * Name | Type | Required | Description
+     * incident | int32 | Y | ID of the incident
+     *
+     * **Body params:**
+     *
+     * Name | Type | Required | Description
+     * name | string | Y | Name of the incident
+     * message | string | Y | A message (supporting Markdown) to explain more
+     * status | int32 | Y | Status of the incident
+     * component_id | int32 | Y | Component to update (required for component_status)
+     * component_status | int32 | Y | The status to update the given component with
+     * occured_at | date | Y | When the incident occured
+     * template | int32 | Y | The template ID
+     * visible | int32 | N |Whether the incident is publicly visible
+     * notify | boolean | N | Whether to notify subscribers
+     * stickied | boolean | N | Whether the incident should be stikied
+     * vars | string[] | N | The variables to pass to the template
      *
      * @param \CachetHQ\Cachet\Models\Incident $incident
      *
@@ -121,6 +176,11 @@ class IncidentController extends AbstractApiController
 
     /**
      * Delete an existing incident.
+     *
+     * **Path params:**
+     *
+     * Name | Type | Required | Description
+     * incident | int32 | Y | Incident ID
      *
      * @param \CachetHQ\Cachet\Models\Incident $incident
      *

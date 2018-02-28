@@ -21,9 +21,11 @@ use Illuminate\Support\Facades\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 /**
- * This is the schedule controller.
+ * This is the schedule API controller.
  *
  * @author James Brooks <james@alt-three.com>
+ * 
+ * @resource Schedule
  */
 class ScheduleController extends AbstractApiController
 {
@@ -50,6 +52,11 @@ class ScheduleController extends AbstractApiController
     /**
      * Return a single schedule.
      *
+     * **Path params:**
+     *
+     * Name | Type | Required | Description
+     * schedule | int32 | Y | Schedule ID
+     *
      * @param \CachetHQ\Cachet\Models\Schedule $schedule
      *
      * @return \Illuminate\Http\JsonResponse
@@ -61,6 +68,16 @@ class ScheduleController extends AbstractApiController
 
     /**
      * Create a new schedule.
+     *
+     * **Body params:**
+     *
+     * Name | Type | Required | Description
+     * name | string | Y | Schedule name
+     * message | string | Y | Schedule message
+     * status | int32 | Y | Schedule status
+     * scheduled_at | date | Y | Date of the schedule
+     * completed_at | date | Y | Date when the scheduled is completed
+     * components | int[] | N | Components concerned by schedule
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -84,6 +101,21 @@ class ScheduleController extends AbstractApiController
 
     /**
      * Update a schedule.
+     *
+     * **Path params:**
+     *
+     * Name | Type | Required | Description
+     * schedule | int32 | Y | Schedule ID
+     *
+     * **Body params:**
+     *
+     * Name | Type | Required  | Description
+     * name | string | Y | Schedule name 
+     * message | string | Y | Schedule message
+     * status | int32 | Y | Schedule status
+     * scheduled_at |  date | Y | Schedule date
+     * completed_at | date | Y | Date when the schedule is completed
+     * components | int32 | N |Components concerned by the schedule
      *
      * @param \CachetHQ\Cachet\Models\Schedule $schedule
      *
@@ -110,6 +142,11 @@ class ScheduleController extends AbstractApiController
 
     /**
      * Delete a schedule.
+     *
+     * **Path params:**
+     *
+     * Name | Type | Required | Description
+     * schedule | int32 | Y | Schedule ID
      *
      * @param \CachetHQ\Cachet\Models\Schedule $schedule
      *

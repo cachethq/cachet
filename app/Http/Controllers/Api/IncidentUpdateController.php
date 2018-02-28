@@ -26,11 +26,17 @@ use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
  * This is the incident update controller.
  *
  * @author James Brooks <james@alt-three.com>
+ * @resource IncidentUpdate
  */
 class IncidentUpdateController extends AbstractApiController
 {
     /**
-     * Return all updates on the incident.
+     * Return all updates for the incident.
+     *
+     * **Path params:**
+     *
+     * Name | Type | Required | Description
+     * incident | int32 | Y | Incident ID
      *
      * @param \CachetHQ\Cachet\Models\Incident $incident
      *
@@ -54,6 +60,12 @@ class IncidentUpdateController extends AbstractApiController
     /**
      * Return a single incident update.
      *
+     * **Path params:**
+     *
+     * Name | Type | Required | Description
+     * incident | int32 | Y | Incident ID
+     * update | int32 | Y | Incident update ID
+     *
      * @param \CachetHQ\Cachet\Models\Incident       $incident
      * @param \CachetHQ\Cachet\Models\IncidentUpdate $update
      *
@@ -66,6 +78,19 @@ class IncidentUpdateController extends AbstractApiController
 
     /**
      * Create a new incident update.
+     *
+     * **Path params:**
+     *
+     * Name | Type | Required | Description
+     * incident | int32 | Y | Incident ID
+     *
+     * **Query params:**
+     *
+     * Name | Type | Required | Description
+     * status | int32 | Y | Incident status level
+     * message | string | Y | Incident update text
+     * component_id | int32 | Y | Component id
+     * component_status | int32 | Y | Component status
      *
      * @param \CachetHQ\Cachet\Models\Incident $incident
      *
@@ -92,6 +117,18 @@ class IncidentUpdateController extends AbstractApiController
     /**
      * Update an incident update.
      *
+     * **Path params:**
+     *
+     * Name | Type | Required | Description
+     * incident | int32 | Y | The incident the update belongs to
+     * update | int32 | Y | The incident update id
+     *
+     * **Query params:**
+     *
+     * Name | Type | Required | Description
+     * status | int32 | Y | The incident status flag
+     * message | string | Y | The update message
+     *
      * @param \CachetHQ\Cachet\Models\Incident       $incident
      * @param \CachetHQ\Cachet\Models\IncidentUpdate $update
      *
@@ -115,6 +152,12 @@ class IncidentUpdateController extends AbstractApiController
 
     /**
      * Create a new incident update.
+     *
+     * **Path params:**
+     *
+     * Name | Type | Required | Description
+     * incident | int32 | Y | Incident the update belongs to
+     * update | int32 | Y | The incident update ID to delete
      *
      * @param \CachetHQ\Cachet\Models\Incident       $incident
      * @param \CachetHQ\Cachet\Models\IncidentUpdate $update

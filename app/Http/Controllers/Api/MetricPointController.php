@@ -21,10 +21,20 @@ use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
+/**
+ * The MetricPoint API controller.
+ *
+ * @resource MetricPoint
+ */
 class MetricPointController extends AbstractApiController
 {
     /**
-     * Get a single metric point.
+     * Get all point for a metric.
+     *
+     * **Path params:**
+     *
+     * Name | Type | Required | Description
+     * metric | int32 | Y | Metric ID
      *
      * @param \CachetHQ\Cachet\Models\Metric      $metric
      * @param \CachetHQ\Cachet\Models\MetricPoint $metricPoint
@@ -40,6 +50,17 @@ class MetricPointController extends AbstractApiController
 
     /**
      * Create a new metric point.
+     *
+     * **Path params:**
+     *
+     * Name | Type | Required | Description
+     * metric | int32 | Y | Metric ID
+     *
+     * **Body params:**
+     *
+     * Name | Type | Required | Description
+     * value | double | Y | Value to plot on the metric graph
+     * timestamp | string | Y | Unix timestamp of when the point was measured
      *
      * @param \CachetHQ\Cachet\Models\Metric $metric
      *
@@ -63,6 +84,18 @@ class MetricPointController extends AbstractApiController
     /**
      * Updates a metric point.
      *
+     * **Path params:**
+     *
+     * Name | Type | Required | Description
+     * metric | int32 | Y | Metric ID
+     * metric_point | int32 | Y | Metric point ID
+     *
+     * **Body params:**
+     *
+     * Name | Type | Required | Description
+     * value | double | Y | The value to plot on the metric graph
+     * timestamp | string | Y | Unix timestamp of when the point was measured
+     *
      * @param \CachetHQ\Cachet\Models\Metric      $metric
      * @param \CachetHQ\Cachet\Models\MetircPoint $metricPoint
      *
@@ -82,6 +115,12 @@ class MetricPointController extends AbstractApiController
 
     /**
      * Destroys a metric point.
+     *
+     * **Path params:**
+     *
+     * Name | Type | Required | Description
+     * metric | int32 | Y | Metric ID
+     * point | int32 | Y | Metric point ID
      *
      * @param \CachetHQ\Cachet\Models\Metric      $metric
      * @param \CachetHQ\Cachet\Models\MetricPoint $metricPoint

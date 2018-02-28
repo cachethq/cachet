@@ -24,6 +24,11 @@ class SubscriptionController extends AbstractApiController
     /**
      * Delete a subscription.
      *
+     * **Path param:**
+     *
+     * Name | Type | Required | Description
+     * subscription | int32 | Y | Subscribtion ID
+     *
      * @param \CachetHQ\Cachet\Models\Subscription $subscription
      *
      * @return \Illuminate\Http\JsonResponse
