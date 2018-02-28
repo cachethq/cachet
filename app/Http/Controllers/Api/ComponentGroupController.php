@@ -86,9 +86,9 @@ class ComponentGroupController extends AbstractApiController
      *
      * **Path params:**
      * 
-     * Name | Type | Description
+     * Name | Type | Required | Description
      * -----|------|------------
-     * group | int32 | Component group identifier
+     * group | int32 | Y | Component group identifier
      *
      * @param \CachetHQ\Cachet\Models\ComponentGroup $group
      *
@@ -104,11 +104,12 @@ class ComponentGroupController extends AbstractApiController
      *
      * **Body params:**
      *
-     * Name | Type | Description
+     * Name | Type | Required | Description
      * -----|------|------------
-     * name | string | Name of the component group
-     * order | int32 | Order of the component group
-     * collapsed | int32 | Collapse the group? 0 = No. 1 = Yes. 2 = If a component is not Operational
+     * name | string | Y | Name of the component group
+     * order | int32 | N | Order of the component group
+     * collapsed | int32 | N | Collapse the group? 0 = No. 1 = Yes. 2 = If a component is not Operational
+     * visible | int32 | N | Whether the component is visible
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -133,17 +134,18 @@ class ComponentGroupController extends AbstractApiController
      *
      * **Path params:**
      *
-     * Name | Type | Description
+     * Name | Type | Required | Description
      * -----|------|------------
-     * group | string | Component group ID
+     * group | string | Y | Component group ID
      *
      * **Body params:**
      *
-     * Name | Type | Description
+     * Name | Type | Required | Description
      * -----|------|------------
-     * name | string | Name of the component group
-     * order | int32 | Order of the component group
-     * collapsed | int32 | Collapse the group? 0 = No. 1 = Yes. 2 = If a component is not Operational
+     * name | string | Y | Name of the component group
+     * order | int32 | Y | Order of the component group
+     * collapsed | int32 | Y | Collapse the group? 0 = No. 1 = Yes. 2 = If a component is not Operational
+     * visible | int32 | Y | Whether the component should be visible
      *
      * @param \CachetHQ\Cachet\Models\ComponentGroup $group
      *
@@ -171,8 +173,8 @@ class ComponentGroupController extends AbstractApiController
      *
      * **Path params:**
      *
-     * Name | Type | Description
-     * group | int32 | Component group ID
+     * Name | Type | Required | Description
+     * group | int32 | Y | Component group ID
      *
      * @param \CachetHQ\Cachet\Models\ComponentGroup $group
      *

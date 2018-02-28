@@ -67,9 +67,9 @@ class ComponentController extends AbstractApiController
      *
      * **Path params:**
      *
-     * Name | Type | Description
+     * Name | Type | Required | Description
      * -----|------|------------
-     * component | int32 | The component identifier
+     * component | int32 | Y | The component identifier
      *
      * @param \CachetHQ\Cachet\Models\Component $component
      *
@@ -85,15 +85,15 @@ class ComponentController extends AbstractApiController
      *
      * **Body params:**
      *
-     *  Name | Type | Description
+     *  Name | Type | Required | Description
      *  -----|------|------------
-     *  name | string | Name of the component
-     *  description| string | Description of the component
-     *  status | int32` | Status of the component (Between 1 and 4)
-     *  link | string | A hyperlink to the component
-     *  order | int32 | Order of the component
-     *  group_id | int32 | The group identifier that the component is within
-     *  enabled | boolean | Whether the component is enabled
+     *  name | string | Y | Name of the component
+     *  description| string | Y | Description of the component
+     *  status | int32` | Y | Status of the component (Between 1 and 4)
+     *  link | string | Y | A hyperlink to the component
+     *  order | int32 | Y | Order of the component
+     *  group_id | int32 | Y | The group identifier that the component is within
+     *  enabled | boolean | N | Whether the component is enabled
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -136,21 +136,21 @@ class ComponentController extends AbstractApiController
      *
      * **Path params:**
      *
-     * Name | Type | Description
+     * Name | Type | Required | Description
      * -----|------|------------
-     * component | int32 | The identifier of the component to update
+     * component | int32 | Y | The identifier of the component to update
      *
      * **Body params:**
      *
-     * Name | Type | Description
+     * Name | Type | Required | Description
      * -----|------|------------
-     * name | string | Name of the component
-     * status | int32 | Status of the component (between 1 and 4)
-     * link | string | A hyperlink to the component
-     * order | int32 | Order of the component
-     * group_id | int32 | The group id that the component is within
-     * enabled | boolean | Whether the component is enabled
-     *
+     * name | string | Y | Name of the component
+     * status | int32 | Y | Status of the component (between 1 and 4)
+     * link | string | Y | A hyperlink to the component
+     * order | int32 | Y | Order of the component
+     * group_id | int32 | Y | The group id that the component is within
+     * enabled | boolean | N | Whether the component is enabled
+     * 
      * @param \CachetHQ\Cachet\Models\Component $component
      *
      * @return \Illuminate\Http\JsonResponse
@@ -193,9 +193,9 @@ class ComponentController extends AbstractApiController
      *
      * **Path params:**
      *
-     * Name | Type | Description
+     * Name | Type | Required | Description
      * -----|------|------------
-     * component | int32 | Component ID
+     * component | int32 | Y | Component ID
      *
      * @param \CachetHQ\Cachet\Models\Component $component
      *
