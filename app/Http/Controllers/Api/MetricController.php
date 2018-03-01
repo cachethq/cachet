@@ -53,6 +53,7 @@ class MetricController extends AbstractApiController
      * **Path params:**
      *
      * Name | Type | Required | Description
+     * -----|------|----------|------------
      * metric | int32 | Y | Metric ID
      *
      * @param \CachetHQ\Cachet\Models\Metric $metric
@@ -70,6 +71,7 @@ class MetricController extends AbstractApiController
      * **Body params:**
      *
      * Name | Type | Required | Description
+     * -----|------|----------|------------
      * name | string | Y | Name of metric
      * suffix | string | Y | Measurments in
      * description | string | Y | Description of what the metric is measuring
@@ -112,11 +114,13 @@ class MetricController extends AbstractApiController
      * **Path params:**
      *
      * Name | Type | Required | Description
+     * -----|------|----------|------------
      * metric | int32 | Y | Metric ID
      *
      * **Body params:**
      *
      * Name | Type | Required | Description
+     * -----|------|----------|------------
      * name | string | Y | Name of metric
      * suffix | string | Y | Measurments in
      * description | string | Y | Description of what the metric is measuring
@@ -163,6 +167,7 @@ class MetricController extends AbstractApiController
      * **Path params:**
      *
      * Name | Type | Required | Description
+     * -----|------|----------|------------
      * metric | int32 | Required | int32
      *
      * @param \CachetHQ\Cachet\Models\Metric $metric

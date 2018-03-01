@@ -37,7 +37,6 @@ class IncidentController extends AbstractApiController
      * - `name`
      * - `status`
      * - `visible`
-     * - 
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -66,7 +65,7 @@ class IncidentController extends AbstractApiController
      * **Path Params:**
      * 
      * Name | Type | Required | Description
-     * -----|------|------------
+     * -----|------|------------|---------
      * incident | int32 | Y | ID of the incident
      *
      * @param \CachetHQ\Cachet\Models\Incident $incident
@@ -84,7 +83,7 @@ class IncidentController extends AbstractApiController
      * **Body params:**
      *
      * Name | Type | Required | Description
-     * -----|------|------------
+     * -----|------|------------|----------
      * name | string | Y | Name of the incident
      * message | string | Y | A message (supporting Markdown) to explain more
      * status | int32 | Y | Status of the incident
@@ -129,11 +128,13 @@ class IncidentController extends AbstractApiController
      * **Path params:**
      *
      * Name | Type | Required | Description
+     * -----|------|----------|------------
      * incident | int32 | Y | ID of the incident
      *
      * **Body params:**
      *
      * Name | Type | Required | Description
+     * -----|------|----------|------------
      * name | string | Y | Name of the incident
      * message | string | Y | A message (supporting Markdown) to explain more
      * status | int32 | Y | Status of the incident
@@ -180,6 +181,7 @@ class IncidentController extends AbstractApiController
      * **Path params:**
      *
      * Name | Type | Required | Description
+     * -----|------|---------|-------------
      * incident | int32 | Y | Incident ID
      *
      * @param \CachetHQ\Cachet\Models\Incident $incident

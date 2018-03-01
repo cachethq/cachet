@@ -34,6 +34,7 @@ class MetricPointController extends AbstractApiController
      * **Path params:**
      *
      * Name | Type | Required | Description
+     * -----|------|----------|------------
      * metric | int32 | Y | Metric ID
      *
      * @param \CachetHQ\Cachet\Models\Metric      $metric
@@ -54,11 +55,13 @@ class MetricPointController extends AbstractApiController
      * **Path params:**
      *
      * Name | Type | Required | Description
+     * -----|------|----------|------------
      * metric | int32 | Y | Metric ID
      *
      * **Body params:**
      *
      * Name | Type | Required | Description
+     * -----|------|----------|------------
      * value | double | Y | Value to plot on the metric graph
      * timestamp | string | Y | Unix timestamp of when the point was measured
      *
@@ -87,12 +90,14 @@ class MetricPointController extends AbstractApiController
      * **Path params:**
      *
      * Name | Type | Required | Description
+     * -----|------|----------|------------
      * metric | int32 | Y | Metric ID
      * metric_point | int32 | Y | Metric point ID
      *
      * **Body params:**
      *
      * Name | Type | Required | Description
+     * -----|------|----------|------------
      * value | double | Y | The value to plot on the metric graph
      * timestamp | string | Y | Unix timestamp of when the point was measured
      *
@@ -119,6 +124,7 @@ class MetricPointController extends AbstractApiController
      * **Path params:**
      *
      * Name | Type | Required | Description
+     * -----|------|----------|------------
      * metric | int32 | Y | Metric ID
      * point | int32 | Y | Metric point ID
      *

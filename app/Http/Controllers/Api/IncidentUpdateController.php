@@ -36,6 +36,7 @@ class IncidentUpdateController extends AbstractApiController
      * **Path params:**
      *
      * Name | Type | Required | Description
+     * -----|------|----------|------------
      * incident | int32 | Y | Incident ID
      *
      * @param \CachetHQ\Cachet\Models\Incident $incident
@@ -63,6 +64,7 @@ class IncidentUpdateController extends AbstractApiController
      * **Path params:**
      *
      * Name | Type | Required | Description
+     * -----|------|----------|-------------
      * incident | int32 | Y | Incident ID
      * update | int32 | Y | Incident update ID
      *
@@ -82,11 +84,13 @@ class IncidentUpdateController extends AbstractApiController
      * **Path params:**
      *
      * Name | Type | Required | Description
+     * -----|------|----------|------------
      * incident | int32 | Y | Incident ID
      *
      * **Query params:**
      *
      * Name | Type | Required | Description
+     * -----|------|----------|------------
      * status | int32 | Y | Incident status level
      * message | string | Y | Incident update text
      * component_id | int32 | Y | Component id
@@ -120,12 +124,14 @@ class IncidentUpdateController extends AbstractApiController
      * **Path params:**
      *
      * Name | Type | Required | Description
+     * -----|------|----------|------------
      * incident | int32 | Y | The incident the update belongs to
      * update | int32 | Y | The incident update id
      *
      * **Query params:**
      *
      * Name | Type | Required | Description
+     * -----|------|----------|------------
      * status | int32 | Y | The incident status flag
      * message | string | Y | The update message
      *
@@ -156,6 +162,7 @@ class IncidentUpdateController extends AbstractApiController
      * **Path params:**
      *
      * Name | Type | Required | Description
+     * -----|------|----------|------------
      * incident | int32 | Y | Incident the update belongs to
      * update | int32 | Y | The incident update ID to delete
      *

@@ -18,6 +18,8 @@ use CachetHQ\Cachet\Models\Subscription;
  * This is the subscription controller class.
  *
  * @author James Brooks <james@alt-three.com>
+ *
+ * @resource Subscription
  */
 class SubscriptionController extends AbstractApiController
 {
@@ -27,6 +29,7 @@ class SubscriptionController extends AbstractApiController
      * **Path param:**
      *
      * Name | Type | Required | Description
+     * -----|------|----------|------------
      * subscription | int32 | Y | Subscribtion ID
      *
      * @param \CachetHQ\Cachet\Models\Subscription $subscription

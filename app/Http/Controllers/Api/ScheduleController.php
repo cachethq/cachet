@@ -55,6 +55,7 @@ class ScheduleController extends AbstractApiController
      * **Path params:**
      *
      * Name | Type | Required | Description
+     * -----|------|----------|------------
      * schedule | int32 | Y | Schedule ID
      *
      * @param \CachetHQ\Cachet\Models\Schedule $schedule
@@ -72,6 +73,7 @@ class ScheduleController extends AbstractApiController
      * **Body params:**
      *
      * Name | Type | Required | Description
+     * -----|------|----------|------------
      * name | string | Y | Schedule name
      * message | string | Y | Schedule message
      * status | int32 | Y | Schedule status
@@ -105,11 +107,13 @@ class ScheduleController extends AbstractApiController
      * **Path params:**
      *
      * Name | Type | Required | Description
+     * -----|------|----------|------------
      * schedule | int32 | Y | Schedule ID
      *
      * **Body params:**
      *
-     * Name | Type | Required  | Description
+     * Name | Type | Required | Description
+     * -----|------|----------|------------
      * name | string | Y | Schedule name 
      * message | string | Y | Schedule message
      * status | int32 | Y | Schedule status
@@ -146,6 +150,7 @@ class ScheduleController extends AbstractApiController
      * **Path params:**
      *
      * Name | Type | Required | Description
+     * -----|------|----------|------------
      * schedule | int32 | Y | Schedule ID
      *
      * @param \CachetHQ\Cachet\Models\Schedule $schedule

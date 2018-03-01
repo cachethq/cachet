@@ -25,6 +25,8 @@ use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
  *
  * @author James Brooks <james@alt-three.com>
  * @author Graham Campbell <graham@alt-three.com>
+ *
+ * @resource Subscriber
  */
 class SubscriberController extends AbstractApiController
 {
@@ -46,6 +48,7 @@ class SubscriberController extends AbstractApiController
      * **Body params:**
      *
      * Name | Type | Required | Description
+     * -----|------|----------|------------
      * email | string | Y | The email to subscribe
      * verify | boolean | N | Whether it's needed to verify the email
      * components | int[] | N | The components the email is subscribing
@@ -71,6 +74,7 @@ class SubscriberController extends AbstractApiController
      * **Path params:**
      *
      * Name | Type | Required | Description
+     * -----|------|----------|------------
      * subscriber | int32 | Y | Subscriber ID
      *
      * @param \CachetHQ\Cachet\Models\Subscriber $subscriber
