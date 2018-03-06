@@ -226,6 +226,11 @@ return [
         'timezone' => 'Select Timezone',
     ],
 
+    'seo' => [
+        'title'        => 'SEO title',
+        'description'  => 'SEO description',
+    ],
+
     // Buttons
     'add'            => 'Add',
     'save'           => 'Save',
