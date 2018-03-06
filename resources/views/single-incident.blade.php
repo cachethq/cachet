@@ -1,8 +1,8 @@
 @extends('layout.master')
 
-@section('title', $incident->name.' | '.$site_title)
+@section('title', array_get($incident->meta, 'seo.title', $incident->name).' | '.$site_title)
 
-@section('description', trans('cachet.meta.description.incident', ['name' => $incident->name, 'date' => $incident->occurred_at_formatted]))
+@section('description', array_get($incident->meta, 'seo.description', trans('cachet.meta.description.incident', ['name' => $incident->name, 'date' => $incident->occurred_at_formatted])))
 
 @section('bodyClass', 'no-padding')
 
