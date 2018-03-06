@@ -262,7 +262,8 @@ class IncidentController extends Controller
                 Binput::get('stickied', false),
                 Binput::get('occurred_at'),
                 null,
-                []
+                [],
+                ['seo' => Binput::get('seo', [])]
             ));
         } catch (ValidationException $e) {
             return cachet_redirect('dashboard.incidents.edit', ['id' => $incident->id])
