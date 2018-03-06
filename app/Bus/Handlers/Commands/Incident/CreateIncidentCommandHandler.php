@@ -104,6 +104,10 @@ class CreateIncidentCommandHandler
         // Store any meta?
         if ($meta = $command->meta) {
             foreach ($meta as $key => $value) {
+                if (empty($value)) {
+                    continue;
+                }
+
                 Meta::create([
                     'key'       => $key,
                     'value'     => $value,
