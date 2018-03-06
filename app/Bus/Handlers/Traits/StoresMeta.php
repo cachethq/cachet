@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of Cachet.
+ *
+ * (c) Alt Three Services Limited
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace CachetHQ\Cachet\Bus\Handlers\Traits;
 
 use CachetHQ\Cachet\Models\Meta;
@@ -7,7 +16,7 @@ use CachetHQ\Cachet\Models\Meta;
 trait StoresMeta
 {
     /**
-     * Stores all Meta values of a model
+     * Stores all Meta values of a model.
      *
      * @param $meta
      * @param $type
@@ -26,15 +35,14 @@ trait StoresMeta
             }
 
             $meta = Meta::firstOrNew([
-                'key' => $key,
+                'key'       => $key,
                 'meta_type' => $type,
-                'meta_id' => $id,
+                'meta_id'   => $id,
             ]);
 
             $meta->value = $value;
 
             $meta->save();
         }
-
     }
 }
