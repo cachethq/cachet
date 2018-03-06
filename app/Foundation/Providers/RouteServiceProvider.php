@@ -19,6 +19,7 @@ use CachetHQ\Cachet\Http\Routes\ApiSystemRoutes;
 use CachetHQ\Cachet\Http\Routes\AuthRoutes;
 use CachetHQ\Cachet\Http\Routes\Setup\ApiRoutes as ApiSetupRoutes;
 use CachetHQ\Cachet\Http\Routes\SetupRoutes;
+use CachetHQ\Cachet\Http\Routes\SignupRoutes;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
@@ -56,6 +57,7 @@ class RouteServiceProvider extends ServiceProvider
     protected $whitelistedAuthRoutes = [
         AuthRoutes::class,
         SetupRoutes::class,
+        SignupRoutes::class,
         ApiSystemRoutes::class,
         ApiSetupRoutes::class,
     ];

@@ -11,9 +11,9 @@
 
 namespace CachetHQ\Tests\Cachet\Foundation\Providers;
 
-use CachetHQ\Cachet\Http\Middleware\Authenticate;
 use AltThree\TestBench\ServiceProviderTrait;
 use CachetHQ\Cachet\Foundation\Providers\RouteServiceProvider;
+use CachetHQ\Cachet\Http\Middleware\Authenticate;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 use Illuminate\Routing\Route;
 use Illuminate\Routing\RouteCollection;
@@ -37,7 +37,9 @@ class RouteServiceProviderTest extends AbstractTestCase
             'core::get:auth.login',
             'core::post:auth.login',
             'core::post:auth.two-factor',
-            'core::get:auth.logout'
+            'core::get:auth.logout',
+            'core::get:signup.invite',
+            'core::post:signup.invite',
         ];
 
         $this->assertRoutesDontHaveAuthMiddleware($loginRoutes, $this->bootRouter(true));
@@ -113,7 +115,6 @@ class RouteServiceProviderTest extends AbstractTestCase
         }
     }
 
-
     /**
      * When enabling the always authenticate setting, the core frontpage routes require authentication.
      */
@@ -127,8 +128,6 @@ class RouteServiceProviderTest extends AbstractTestCase
             'core::get:component_shield',
             'core::get:feed.atom',
             'core::get:feed.rss',
-            'core::get:signup.invite',
-            'core::post:signup.invite',
             'core::get:subscribe',
             'core::post:subscribe',
             'core::get:subscribe.manage',
@@ -154,8 +153,6 @@ class RouteServiceProviderTest extends AbstractTestCase
             'core::get:component_shield',
             'core::get:feed.atom',
             'core::get:feed.rss',
-            'core::get:signup.invite',
-            'core::post:signup.invite',
             'core::get:subscribe',
             'core::post:subscribe',
             'core::get:subscribe.manage',
@@ -170,7 +167,8 @@ class RouteServiceProviderTest extends AbstractTestCase
     /**
      * A helper method that will execute the RouteProvider's map function and return a clean router.
      *
-     * @param boolean $alwaysAuthenticate
+     * @param bool $alwaysAuthenticate
+     *
      * @return Router
      */
     private function bootRouter($alwaysAuthenticate)
@@ -181,6 +179,7 @@ class RouteServiceProviderTest extends AbstractTestCase
 
         $routeServiceProvider = new RouteServiceProvider($this->app);
         $routeServiceProvider->map($router);
+
         return $router;
     }
 
@@ -188,7 +187,7 @@ class RouteServiceProviderTest extends AbstractTestCase
      * Assertion helper that asserts if the authentication middleware has not been injected onto
      * the collection of named routes.
      *
-     * @param array $routeNames
+     * @param array  $routeNames
      * @param Router $router
      */
     private function assertRoutesDontHaveAuthMiddleware(array $routeNames, Router $router)
@@ -206,7 +205,7 @@ class RouteServiceProviderTest extends AbstractTestCase
      * Assertion helper that asserts if the authentication middleware has been injected onto
      * the collection of named routes.
      *
-     * @param array $routeNames
+     * @param array  $routeNames
      * @param Router $router
      */
     private function assertRoutesHaveAuthMiddleware(array $routeNames, Router $router)
