@@ -120,7 +120,7 @@ return [
     // Meta descriptions
     'meta' => [
         'description' => [
-            'incident'  => 'Details and updates about the :name incident that occurred on :date',
+            'incident'  => 'Details und Aktualisierung über den :name Vorfall, die am :date aufgetreten sind',
             'schedule'  => 'Details zu den geplanten Wartungszeitraum :name Beginn ab :startDate',
             'subscribe' => 'Abonniere :app um Updates von Vorfällen und geplanten Wartungszeiten zu erhalten',
             'overview'  => 'Bleiben sie auf dem Laufenden mit den neuesten Service-Updates von :app.',
