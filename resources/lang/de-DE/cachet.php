@@ -121,8 +121,8 @@ return [
     'meta' => [
         'description' => [
             'incident'  => 'Details and updates about the :name incident that occurred on :date',
-            'schedule'  => 'Details about the scheduled maintenance period :name starting :startDate',
-            'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
+            'schedule'  => 'Details zu den geplanten Wartungszeitraum :name Beginn ab :startDate',
+            'subscribe' => 'Abonniere :app um Updates von Vorfällen und geplanten Wartungszeiten zu erhalten',
             'overview'  => 'Bleiben sie auf dem Laufenden mit den neuesten Service-Updates von :app.',
         ],
     ],
