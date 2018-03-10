@@ -155,7 +155,7 @@ return [
             'days-of-incidents'                     => 'Wie viele Tage mit Vorfällen sollen gezeigt werden?',
             'time_before_refresh'                   => 'Aktualisierungsrate der Statusseite (in Sekunden).',
             'banner'                                => 'Banner Bild',
-            'banner-help'                           => "Es wird empfohlen, dass Sie keine Dateien die breiter als 930 Pixel sind hochladen .",
+            'banner-help'                           => 'Es wird empfohlen, dass Sie keine Dateien die breiter als 930 Pixel sind hochladen .',
             'subscribers'                           => 'Personen die Anmeldung für E-Mail-Benachrichtigung erlauben?',
             'suppress_notifications_in_maintenance' => 'Unterdrücken Sie Benachrichtigungen, wenn ein Vorfall während des Zeitraum der Wartungsarbeiten auftritt?',
             'skip_subscriber_verification'          => 'Verifizierung der Nutzer überspringen? (Warnung, du könntest gespammt werden)',
