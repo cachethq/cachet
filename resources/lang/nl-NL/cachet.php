@@ -120,8 +120,8 @@ return [
     // Meta descriptions
     'meta' => [
         'description' => [
-            'incident'  => 'Details and updates about the :name incident that occurred on :date',
-            'schedule'  => 'Details about the scheduled maintenance period :name starting :startDate',
+            'incident'  => 'Informatie betreffende het incident :name van :date',
+            'schedule'  => 'Informatie betreffende het onderhoud :name gepland op :startDate',
             'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
             'overview'  => 'Blijf op de hoogte van de laatste service updates over :app.',
         ],
