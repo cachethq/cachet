@@ -16,7 +16,7 @@ return [
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Incidenten &amp; planning',
+        'title'                    => 'Incidenten & planning',
         'incidents'                => 'Incidenten',
         'logged'                   => '{0} Proficiat, er zijn geen incidenten.|Er heeft zich één incident voorgedaan.|Er zijn <strong>:count</strong> incidenten gerapporteerd.',
         'incident-create-template' => 'Maak template',
@@ -78,17 +78,17 @@ return [
         'scheduled_at' => 'Gepland op :timestamp',
         'add'          => [
             'title'   => 'Gepland onderhoud toevoegen',
-            'success' => 'Planning toegevoegd.',
+            'success' => 'Gepland onderhoud toegevoegd.',
             'failure' => 'Er ging iets mis met het toevoegen van het geplande onderhoud, probeer het opnieuw.',
         ],
         'edit' => [
             'title'   => 'Gepland onderhoud bewerken',
-            'success' => 'Planning is bijgewerkt!',
+            'success' => 'Gepland onderhoud is bijgewerkt!',
             'failure' => 'Er ging iets mis met het wijzigen van het geplande onderhoud, probeer het opnieuw.',
         ],
         'delete' => [
-            'success' => 'De planning is verwijderd en zal niet worden getoond op jouw statuspagina.',
-            'failure' => 'De planning kon niet worden verwijderd, probeer het opnieuw.',
+            'success' => 'Het geplande onderhoud is verwijderd en zal niet worden getoond op de statuspagina.',
+            'failure' => 'Het geplande onderhoud kon niet worden verwijderd, probeer het opnieuw.',
         ],
     ],
 
