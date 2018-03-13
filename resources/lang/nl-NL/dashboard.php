@@ -23,7 +23,7 @@ return [
         'incident-templates'       => 'Incident Sjablonen',
         'updates'                  => [
             'title'   => 'Incident updates voor :incident',
-            'count'   => '{0} Nul Updates |[1] Een Update |[2] Twee Updates | [3, *] Verscheidene Updates',
+            'count'   => '{0} Geen updates |[1] Een update |[2] Twee updates | [3, *] Verscheidene updates',
             'add'     => [
                 'title'   => 'Maak een nieuwe incident update',
                 'success' => 'Je nieuwe incident template is aangemaakt.',
