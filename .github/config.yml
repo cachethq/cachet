@@ -1,0 +1,26 @@
+# Configuration for new-issue-welcome - https://github.com/behaviorbot/new-issue-welcome
+
+# Comment to be posted to on first time issues
+newIssueWelcomeComment: >
+  Thanks for opening your first issue here! Be sure to follow the issue template!
+
+# Configuration for new-pr-welcome - https://github.com/behaviorbot/new-pr-welcome
+
+# Comment to be posted to on PRs from first time contributors in your repository
+newPRWelcomeComment: >
+  Congratulations on opening your first Pull Request, this is a momentous day for you and us! :sparkles:
+
+  To help us out, please make sure that you've followed the below:
+
+  - Non-English translations should be submitted to https://translate.cachethq.io
+  - Documentation should be submitted to https://docs.cachethq.io
+  - Please make sure that all tests pass!
+  - Don't worry about StyleCI, it'll fix itself on merge.
+
+# Configuration for first-pr-merge - https://github.com/behaviorbot/first-pr-merge
+
+# Comment to be posted to on pull requests merged by a first time user
+firstPRMergeComment: >
+  Hooray! Your first Pull Request was merged, here's to many more :rocket:
+
+# It is recommend to include as many gifs and emojis as possible
