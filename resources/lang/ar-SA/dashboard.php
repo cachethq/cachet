@@ -79,11 +79,11 @@ return [
         'add'          => [
             'title'   => 'إضافة إجراء صيانة',
             'success' => 'تم إضافة إجراء الصيانة.',
-            'failure' => 'Something went wrong adding the schedule, please try again.',
+            'failure' => 'طرأ هناك خلل أثناء القيام بإضافة صيانة، يُرجى إعادة المحاولة.',
         ],
         'edit' => [
-            'title'   => 'Edit Scheduled Maintenance',
-            'success' => 'Schedule has been updated!',
+            'title'   => 'تعديل إجراء الصيانة المُبرمَجة',
+            'success' => 'تم تحديث الصيانة !',
             'failure' => 'Something went wrong editing the schedule, please try again.',
         ],
         'delete' => [
