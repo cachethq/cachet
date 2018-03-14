@@ -14,7 +14,7 @@ return [
     // Setup form fields
     'setup' => [
         'email'            => 'بريد إلكتروني',
-        'username'         => 'Username',
+        'username'         => 'إسم المستخدِم',
         'password'         => 'كلمة السر',
         'site_name'        => 'اسم الموقع',
         'site_domain'      => 'عنوان النطاق',
@@ -172,8 +172,8 @@ return [
         ],
         'localization' => [
             'site-timezone'        => 'Site timezone',
-            'site-locale'          => 'Site language',
-            'date-format'          => 'Date format',
+            'site-locale'          => 'لغة الموقع',
+            'date-format'          => 'تنسيق التاريخ',
             'incident-date-format' => 'Incident timestamp format',
         ],
         'security' => [
@@ -189,7 +189,7 @@ return [
             'banner-background-color' => 'Banner background color',
             'banner-padding'          => 'Banner padding',
             'fullwidth-banner'        => 'Enable fullwidth banner?',
-            'text-color'              => 'Text color',
+            'text-color'              => 'لون النص',
             'dashboard-login'         => 'Show dashboard button in the footer?',
             'reds'                    => 'Red (used for errors)',
             'blues'                   => 'Blue (used for information)',
@@ -197,12 +197,12 @@ return [
             'yellows'                 => 'Yellow (used for alerts)',
             'oranges'                 => 'Orange (used for notices)',
             'metrics'                 => 'Metrics fill',
-            'links'                   => 'Links',
+            'links'                   => 'الروابط',
         ],
     ],
 
     'user' => [
-        'username'       => 'Username',
+        'username'       => 'إسم المستخدِم',
         'email'          => 'بريد إلكتروني',
         'password'       => 'كلمة السر',
         'api-token'      => 'API Token',
@@ -210,7 +210,7 @@ return [
         'gravatar'       => 'Change your profile picture at Gravatar.',
         'user_level'     => 'User Level',
         'levels'         => [
-            'admin' => 'Admin',
+            'admin' => 'المدير',
             'user'  => 'User',
         ],
         '2fa' => [
@@ -228,18 +228,18 @@ return [
 
     // Buttons
     'add'            => 'Add',
-    'save'           => 'Save',
-    'update'         => 'Update',
-    'create'         => 'Create',
-    'edit'           => 'Edit',
-    'delete'         => 'Delete',
-    'submit'         => 'Submit',
-    'cancel'         => 'Cancel',
-    'remove'         => 'Remove',
-    'invite'         => 'Invite',
+    'save'           => 'حفظ',
+    'update'         => 'تحديث',
+    'create'         => 'إنشاء',
+    'edit'           => 'تعديل',
+    'delete'         => 'حذف',
+    'submit'         => 'إرسال',
+    'cancel'         => 'إلغاء',
+    'remove'         => 'إزالة',
+    'invite'         => 'دعوة',
     'signup'         => 'سجل',
-    'manage_updates' => 'Manage Updates',
+    'manage_updates' => 'إدارة التحديثات',
 
     // Other
-    'optional' => '* Optional',
+    'optional' => '* إختياري',
 ];
