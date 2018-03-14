@@ -22,17 +22,17 @@ return [
         'incident-create-template' => 'إنشاء قالب',
         'incident-templates'       => 'قوالب الأعطال',
         'updates'                  => [
-            'title'   => 'Incident updates for :incident',
+            'title'   => 'تحديثات حالة العَطَل :incident',
             'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
             'add'     => [
                 'title'   => 'إنشاء تحديث حالة جديد للعَطَل',
-                'success' => 'Your new incident update has been created.',
-                'failure' => 'Something went wrong with the incident update.',
+                'success' => 'تم إنشاء الحالة الجديدة المتعلقة بالعَطَل.',
+                'failure' => 'طرأ هناك خطأ في تحديث حالة العَطل.',
             ],
             'edit' => [
-                'title'   => 'Edit incident update',
-                'success' => 'The incident update has been updated.',
-                'failure' => 'Something went wrong updating the incident update',
+                'title'   => 'تعديل تحديث العَطل',
+                'success' => 'تم إنشاء تحديث للحالة المتعلقة بالعَطَل.',
+                'failure' => 'طرأ هناك خطأ في تحديث حالة العَطل',
             ],
         ],
         'add'                      => [
