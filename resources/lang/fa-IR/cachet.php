@@ -76,7 +76,7 @@ return [
     // Subscriber
     'subscriber' => [
         'subscribe'   => 'مشترک شوید تا از آخرین به‌روزرسانی‌ها آگاه شوید',
-        'unsubscribe' => 'لغو عضویت در: لینک',
+        'unsubscribe' => 'لغو عضویت در :link',
         'button'      => 'اشتراک اطلاع‌رسانی',
         'manage'      => [
             'no_subscriptions' => 'در حال حاضر شما برای همه به‌روزرسانی‌ها مشترک هستید.',
