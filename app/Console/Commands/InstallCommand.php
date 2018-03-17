@@ -30,11 +30,25 @@ class InstallCommand extends Command
     protected $name = 'cachet:install';
 
     /**
+     * The name and signature of the console command.
+     *
+     * @var string
+     */
+    protected $signature = 'cachet:install {--force}';
+
+    /**
      * The console command description.
      *
      * @var string
      */
     protected $description = 'Install Cachet';
+
+    /**
+     * Do we want to agree to all confirmations?
+     *
+     * @var bool
+     */
+    protected $force = false;
 
     /**
      * Execute the console command.
@@ -43,7 +57,11 @@ class InstallCommand extends Command
      */
     public function fire()
     {
-        if (!$this->confirm('Do you want to install Cachet?')) {
+        if ($this->option('force')) {
+            $this->force = true;
+        }
+
+        if (!$this->force && !$this->confirm('Do you want to install Cachet?')) {
             $this->line('Installation aborted. Goodbye!');
 
             return;
@@ -267,7 +285,7 @@ class InstallCommand extends Command
         // Format the settings ready to display them in the table.
         $this->formatConfigsTable($config);
 
-        if (!$this->confirm('Are these settings correct?')) {
+        if (!$this->force && !$this->confirm('Are these settings correct?')) {
             return $this->configureMail($config);
         }
 
@@ -283,7 +301,7 @@ class InstallCommand extends Command
      */
     protected function configureCachet()
     {
-        if ($this->confirm('Do you wish to use Cachet Beacon?')) {
+        if (!$this->force && $this->confirm('Do you wish to use Cachet Beacon?')) {
             $config['CACHET_BEACON'] = 'true';
         }
 
