@@ -18,21 +18,21 @@ return [
     'incidents' => [
         'title'                    => 'Insiden &amp; Penjadwalan',
         'incidents'                => 'Insiden',
-        'logged'                   => '{0} Tidak ada insiden, bagus.|Anda mencatat satu insiden.|Anda sudah melaporkan <strong>:count</strong> insiden.',
+        'logged'                   => '{0} Tidak ada insiden, bagus.|[1] Anda mencatat satu insiden.|[2,*] Anda melaporkan <strong>:count</strong> insiden.',
         'incident-create-template' => 'Buat Template',
         'incident-templates'       => 'Template Insiden',
         'updates'                  => [
-            'title'   => 'Incident updates for :incident',
-            'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
+            'title'   => 'Update insiden untuk :incident',
+            'count'   => '{0} Nol Update|[1] Satu Update|[2] Dua Update|[3,*] Beberapa Update',
             'add'     => [
                 'title'   => 'Buat update insiden baru',
-                'success' => 'Your new incident update has been created.',
-                'failure' => 'Something went wrong with the incident update.',
+                'success' => 'Update baru insiden anda berhasil dibuat.',
+                'failure' => 'Ada masalah dengan update insiden ini.',
             ],
             'edit' => [
-                'title'   => 'Edit incident update',
-                'success' => 'The incident update has been updated.',
-                'failure' => 'Something went wrong updating the incident update',
+                'title'   => 'Edit update insiden',
+                'success' => 'Update insiden berhasil diupdate.',
+                'failure' => 'Ada masalah saat memperbarui update insiden',
             ],
         ],
         'add'                      => [
@@ -74,7 +74,7 @@ return [
     // Incident Maintenance
     'schedule' => [
         'schedule'     => 'Pemeliharaan',
-        'logged'       => '{0} Tidak ada penjadwalan, mantap. | Anda mencatat satu jadwal. | Anda telah melaporkan <strong>:count</strong> jadwal.',
+        'logged'       => '{0} Tidak ada penjadwalan, mantap. | [1] Anda mencatat satu jadwal. | [2,*] Anda melaporkan <strong>:count</strong> jadwal.',
         'scheduled_at' => 'Dijadwalkan pada :timestamp',
         'add'          => [
             'title'   => 'Tambahkan Jadwal Pemeliharaan',
@@ -157,12 +157,12 @@ return [
     'subscribers' => [
         'subscribers'          => 'Berlangganan',
         'description'          => 'Pelanggan akan menerima update email ketika insiden dibuat atau komponen diperbarui.',
-        'description_disabled' => 'To use this feature, you need allow people to signup for notifications.',
+        'description_disabled' => 'Untuk menggunakan fitur ini, Anda perlu mengizinkan orang untuk mendaftar notifikasi.',
         'verified'             => 'Terverifikasi',
         'not_verified'         => 'Belum Diverifikasi',
         'subscriber'           => ':email, berlangganan :date',
         'no_subscriptions'     => 'Berlangganan semua update',
-        'global'               => 'Globally subscribed',
+        'global'               => 'Berlangganan secara global',
         'add'                  => [
             'title'   => 'Tambah Pelanggan Baru',
             'success' => 'Pelanggan sudah ditambahkan.',

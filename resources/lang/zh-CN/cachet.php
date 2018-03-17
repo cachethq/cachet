@@ -33,7 +33,7 @@ return [
         'scheduled'    => '计划维护',
         'scheduled_at' => '，计划于 :timestamp',
         'posted'       => '发布于 :timestamp',
-        'posted_at'    => 'Posted at :timestamp',
+        'posted_at'    => '发布于 :timestamp',
         'status'       => [
             1 => '确认中',
             2 => '修复中',
@@ -53,9 +53,9 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] 系统工作正常|[2,Inf] 所有系统工作正常',
-        'bad'   => '[0,1] 一个系统出现了问题|[2,Inf] 一些系统出现了问题',
-        'major' => '[0,1] 一个系统出现重大故障|[2,Inf] 一些系统出现重大故障',
+        'good'  => '[0,1] 系统工作正常|[2,*] 所有系统工作正常',
+        'bad'   => '[0,1] 系统出现了问题|[2,*] 一些系统出现了问题',
+        'major' => '[0,1] 系统出现重大故障|[2,*] 一些系统出现重大故障',
     ],
 
     'api' => [
@@ -117,9 +117,18 @@ return [
         ],
     ],
 
+    // Meta descriptions
+    'meta' => [
+        'description' => [
+            'incident'  => 'Details and updates about the :name incident that occurred on :date',
+            'schedule'  => 'Details about the scheduled maintenance period :name starting :startDate',
+            'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
+            'overview'  => '始终保持对 :app 服务状态的关注。',
+        ],
+    ],
+
     // Other
     'home'            => '主屏幕',
-    'description'     => '始终保持对 :app 服务状态的关注。',
     'powered_by'      => '由 <a href="https://cachethq.io" class="links">Cachet</a> 驱动。',
     'timezone'        => '时间将以 :timezone 时区显示。',
     'about_this_site' => '关于我们',

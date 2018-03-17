@@ -16,23 +16,23 @@ return [
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Incidenten &amp; planning',
+        'title'                    => 'Incidenten & planning',
         'incidents'                => 'Incidenten',
         'logged'                   => '{0} Proficiat, er zijn geen incidenten.|Er heeft zich één incident voorgedaan.|Er zijn <strong>:count</strong> incidenten gerapporteerd.',
         'incident-create-template' => 'Maak template',
         'incident-templates'       => 'Incident Sjablonen',
         'updates'                  => [
             'title'   => 'Incident updates voor :incident',
-            'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
+            'count'   => '{0} Geen updates |[1] Een update |[2] Twee updates | [3, *] Verscheidene updates',
             'add'     => [
                 'title'   => 'Maak een nieuwe incident update',
-                'success' => 'Your new incident update has been created.',
-                'failure' => 'Something went wrong with the incident update.',
+                'success' => 'Je nieuwe incident template is aangemaakt.',
+                'failure' => 'Er is iets misgegaan met de incident template.',
             ],
             'edit' => [
-                'title'   => 'Edit incident update',
-                'success' => 'The incident update has been updated.',
-                'failure' => 'Something went wrong updating the incident update',
+                'title'   => 'Incident update bewerken',
+                'success' => 'De incident template is bijgewerkt.',
+                'failure' => 'Er is een fout opgetreden bij het wijzigen van de incident template',
             ],
         ],
         'add'                      => [
@@ -78,17 +78,17 @@ return [
         'scheduled_at' => 'Gepland op :timestamp',
         'add'          => [
             'title'   => 'Gepland onderhoud toevoegen',
-            'success' => 'Planning toegevoegd.',
+            'success' => 'Gepland onderhoud toegevoegd.',
             'failure' => 'Er ging iets mis met het toevoegen van het geplande onderhoud, probeer het opnieuw.',
         ],
         'edit' => [
             'title'   => 'Gepland onderhoud bewerken',
-            'success' => 'Planning is bijgewerkt!',
+            'success' => 'Gepland onderhoud is bijgewerkt!',
             'failure' => 'Er ging iets mis met het wijzigen van het geplande onderhoud, probeer het opnieuw.',
         ],
         'delete' => [
-            'success' => 'De planning is verwijderd en zal niet worden getoond op jouw statuspagina.',
-            'failure' => 'De planning kon niet worden verwijderd, probeer het opnieuw.',
+            'success' => 'Het geplande onderhoud is verwijderd en zal niet worden getoond op de statuspagina.',
+            'failure' => 'Het geplande onderhoud kon niet worden verwijderd, probeer het opnieuw.',
         ],
     ],
 
@@ -157,12 +157,12 @@ return [
     'subscribers' => [
         'subscribers'          => 'Abonnees',
         'description'          => 'Abonnees ontvangen een email update wanneer er incidenten zijn gemaakt of componenten worden bijgewerkt.',
-        'description_disabled' => 'To use this feature, you need allow people to signup for notifications.',
+        'description_disabled' => 'Om deze functie te gebruiken, moet u mensen aanmelden voor meldingen toestaan.',
         'verified'             => 'Geverifiëerd',
         'not_verified'         => 'Niet geverifiëerd',
         'subscriber'           => ':email, geabonneerd op :date',
         'no_subscriptions'     => 'Geabonneerd op alle updates',
-        'global'               => 'Globally subscribed',
+        'global'               => 'Globaal geabonneerd',
         'add'                  => [
             'title'   => 'Voeg een nieuwe abonnee toe',
             'success' => 'Abonnee is toegevoegd!',

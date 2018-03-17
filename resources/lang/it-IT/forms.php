@@ -49,7 +49,7 @@ return [
         'name'               => 'Nome',
         'status'             => 'Stato',
         'component'          => 'Componente',
-        'component_status'   => 'Component Status',
+        'component_status'   => 'Stato dei componenti',
         'message'            => 'Messaggio',
         'message-help'       => 'Si può anche utilizzare il linguaggio di Markdown.',
         'occurred_at'        => 'Quando è accaduto questo incidente?',

@@ -22,17 +22,17 @@ return [
         'incident-create-template' => '创建模板',
         'incident-templates'       => '故障模板',
         'updates'                  => [
-            'title'   => 'Incident updates for :incident',
-            'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
+            'title'   => '关于 :incident 事件的更新',
+            'count'   => '{0} 无更新|[1] 一个更新|[2] 2个更新|[3,*] 多个更新',
             'add'     => [
                 'title'   => '添加故障更新',
-                'success' => 'Your new incident update has been created.',
-                'failure' => 'Something went wrong with the incident update.',
+                'success' => '您已创建新的故障更新。',
+                'failure' => '创建故障更新时出现了问题。',
             ],
             'edit' => [
-                'title'   => 'Edit incident update',
-                'success' => 'The incident update has been updated.',
-                'failure' => 'Something went wrong updating the incident update',
+                'title'   => '编辑故障更新',
+                'success' => '成功更新故障。',
+                'failure' => '修改故障更新时出现问题',
             ],
         ],
         'add'                      => [
@@ -157,12 +157,12 @@ return [
     'subscribers' => [
         'subscribers'          => '通知',
         'description'          => '有新增故障或有组件更新时，订阅者将会收到邮件提醒。',
-        'description_disabled' => 'To use this feature, you need allow people to signup for notifications.',
+        'description_disabled' => '要使用此功能，您需要允许通知订阅。',
         'verified'             => '已认证',
         'not_verified'         => '未认证',
         'subscriber'           => ':email, 订阅于 :date',
         'no_subscriptions'     => '已订阅全部更新',
-        'global'               => 'Globally subscribed',
+        'global'               => '全局订阅',
         'add'                  => [
             'title'   => '添加邮件订阅',
             'success' => '邮件订阅已添加成功。',

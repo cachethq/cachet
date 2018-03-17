@@ -30,10 +30,10 @@ return [
         'none'         => 'Hiçbir olay raporlanmadı',
         'past'         => 'Geçmiş Olaylar',
         'stickied'     => 'Yapıştırılmış Olaylar',
-        'scheduled'    => 'Zamanlanmış bakım',
+        'scheduled'    => 'Bakım',
         'scheduled_at' => ',zamanlanmış :zamandilimi',
         'posted'       => ':timestamp gönderildi',
-        'posted_at'    => 'Posted at :timestamp',
+        'posted_at'    => 'Gönderim Zamanı :timestamp',
         'status'       => [
             1 => 'İnceleniyor',
             2 => 'Tanımlandı',
@@ -117,9 +117,18 @@ return [
         ],
     ],
 
+    // Meta descriptions
+    'meta' => [
+        'description' => [
+            'incident'  => 'Details and updates about the :name incident that occurred on :date',
+            'schedule'  => 'Details about the scheduled maintenance period :name starting :startDate',
+            'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
+            'overview'  => 'Şu uygulamalardaki en son hizmet güncellemeleri ile güncel kalın.',
+        ],
+    ],
+
     // Other
     'home'            => 'Ana Sayfa',
-    'description'     => 'Şu uygulamalardaki en son hizmet güncellemeleri ile güncel kalın.',
     'powered_by'      => '<a href="https://cachethq.io" class="links"> Önbellek </a> kaynaklı.',
     'timezone'        => 'Saatler, saat diliminde gösterilir.',
     'about_this_site' => 'Bu Site hakkında',

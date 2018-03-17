@@ -117,9 +117,18 @@ return [
         ],
     ],
 
+    // Meta descriptions
+    'meta' => [
+        'description' => [
+            'incident'  => 'Details and updates about the :name incident that occurred on :date',
+            'schedule'  => 'Details about the scheduled maintenance period :name starting :startDate',
+            'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
+            'overview'  => 'Будьте в курсе последних новостей о состоянии сервиса от :app.',
+        ],
+    ],
+
     // Other
     'home'            => 'Главный экран',
-    'description'     => 'Будьте в курсе последних новостей о состоянии сервиса от :app.',
     'powered_by'      => 'Работает на <a href="https://cachethq.io" class="links">Cachet</a>.',
     'timezone'        => 'Время показано по :timezone.',
     'about_this_site' => 'Об этом сайте',

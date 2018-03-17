@@ -16,7 +16,7 @@ return [
                 'subject'  => 'Component Status Updated',
                 'greeting' => 'A component\'s status was updated!',
                 'content'  => ':name status changed from :old_status to :new_status.',
-                'action'   => 'View',
+                'action'   => 'Visa',
             ],
             'slack' => [
                 'title'   => 'Component Status Updated',
@@ -30,10 +30,10 @@ return [
     'incident' => [
         'new' => [
             'mail' => [
-                'subject'  => 'New Incident Reported',
+                'subject'  => 'Ny händelse rapporterad',
                 'greeting' => 'A new incident was reported at :app_name.',
                 'content'  => 'Incident :name was reported',
-                'action'   => 'View',
+                'action'   => 'Visa',
             ],
             'slack' => [
                 'title'   => 'Incident :name Reported',
@@ -48,7 +48,7 @@ return [
                 'subject' => 'Händelse uppdaterad',
                 'content' => ': namn uppdaterades',
                 'title'   => ':name uppdaterades till :new_status',
-                'action'  => 'View',
+                'action'  => 'Visa',
             ],
             'slack' => [
                 'title'   => ':name uppdaterat',
@@ -65,10 +65,10 @@ return [
                 'subject' => 'Nytt schema skapat',
                 'content' => ':name was scheduled for :date',
                 'title'   => 'A new scheduled maintenance was created.',
-                'action'  => 'View',
+                'action'  => 'Visa',
             ],
             'slack' => [
-                'title'   => 'New Schedule Created!',
+                'title'   => 'Nytt schema skapat!',
                 'content' => ':name was scheduled for :date',
             ],
             'sms' => [
@@ -79,9 +79,9 @@ return [
     'subscriber' => [
         'verify' => [
             'mail' => [
-                'subject' => 'Verify Your Subscription',
-                'content' => 'Click to verify your subscription to :app_name status page.',
-                'title'   => 'Verify your subscription to :app_name status page.',
+                'subject' => 'Bekräfta din prenumeration',
+                'content' => 'Klicka för att bekräfta din prenumeration på :app_name statussida.',
+                'title'   => 'Bekräfta din prenumeration för :app_name statussida.',
                 'action'  => 'Verifiera',
             ],
         ],
@@ -90,7 +90,7 @@ return [
         'test' => [
             'mail' => [
                 'subject' => 'Ping från Cachet!',
-                'content' => 'This is a test notification from Cachet!',
+                'content' => 'Detta är ett testmeddelande från Cachet!',
                 'title'   => '🔔',
             ],
         ],
@@ -98,10 +98,10 @@ return [
     'user' => [
         'invite' => [
             'mail' => [
-                'subject' => 'Your invitation is inside...',
+                'subject' => 'Din inbjudan är inuti...',
                 'content' => 'You have been invited to join :app_name status page.',
                 'title'   => 'You\'re invited to join :app_name status page.',
-                'action'  => 'Accept',
+                'action'  => 'Godkänn',
             ],
         ],
     ],

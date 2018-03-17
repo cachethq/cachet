@@ -117,9 +117,18 @@ return [
         ],
     ],
 
+    // Meta descriptions
+    'meta' => [
+        'description' => [
+            'incident'  => 'Details and updates about the :name incident that occurred on :date',
+            'schedule'  => 'Details about the scheduled maintenance period :name starting :startDate',
+            'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
+            'overview'  => 'ติดตามความเคลื่อนไหวล่าสุดของ :app',
+        ],
+    ],
+
     // Other
     'home'            => 'หน้าหลัก',
-    'description'     => 'ติดตามความเคลื่อนไหวล่าสุดของ :app',
     'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
     'timezone'        => 'โซนเวลา :timezone',
     'about_this_site' => 'เกี่ยวกับเว็บไซต์นี้',

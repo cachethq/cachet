@@ -117,9 +117,18 @@ return [
         ],
     ],
 
+    // Meta descriptions
+    'meta' => [
+        'description' => [
+            'incident'  => 'Detaljer og opdateringer om hændelse :navn, der fandt sted på :dato',
+            'schedule'  => 'Oplysninger om planlagt vedligeholdelse periode :name begynder :startDate',
+            'subscribe' => 'Abonner på :app for at modtage opdateringer af hændelser og planlagte vedligeholdelsesperioder',
+            'overview'  => 'Hold dig opdateret med de seneste opdateringer fra :app.',
+        ],
+    ],
+
     // Other
     'home'            => 'Hjem',
-    'description'     => 'Hold dig opdateret med de seneste opdateringer fra :app.',
     'powered_by'      => 'Drevet af <a href="https://cachethq.io" class="links"> Cachet</a>.',
     'timezone'        => 'Klokkeslæt vises i :timezone.',
     'about_this_site' => 'Om denne side',

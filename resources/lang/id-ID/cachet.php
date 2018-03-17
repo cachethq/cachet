@@ -117,9 +117,18 @@ return [
         ],
     ],
 
+    // Meta descriptions
+    'meta' => [
+        'description' => [
+            'incident'  => 'Rincian dan update tentang insiden :name yang terjadi pada :date',
+            'schedule'  => 'Rincian tentang jadwal pemeliharaan :name mulai :startDate',
+            'subscribe' => 'Berlangganan :app untuk menerima update insiden dan jadwal pemeliharaan',
+            'overview'  => 'Tetap up to date dengan layanan terbaru dari :app.',
+        ],
+    ],
+
     // Other
     'home'            => 'Depan',
-    'description'     => 'Tetap up to date dengan layanan terbaru dari :app.',
     'powered_by'      => 'Ditenagai oleh <a href="https://cachethq.io" class="links"> Cachet</a>.',
     'timezone'        => 'Waktu dalam :timezone.',
     'about_this_site' => 'Tentang situs ini',

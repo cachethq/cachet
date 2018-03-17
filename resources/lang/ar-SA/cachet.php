@@ -17,8 +17,8 @@ return [
             0 => 'مجهول',
             1 => 'تشغيل',
             2 => 'مشاكل أداء',
-            3 => 'انقطاع جزئي',
-            4 => 'انقطاع اساسي',
+            3 => 'إنقطاع جزئي',
+            4 => 'إنقطاع أساسي',
         ],
         'group' => [
             'other' => 'مكونات أخرى',
@@ -28,17 +28,17 @@ return [
     // Incidents
     'incidents' => [
         'none'         => 'لا توجد حالات تم الإبلاغ عنها',
-        'past'         => 'حالات سابقة',
-        'stickied'     => 'حالات مثبتة',
-        'scheduled'    => 'صيانة مجدولة',
+        'past'         => 'الأعطال السابقة',
+        'stickied'     => 'أعطال مثبتة',
+        'scheduled'    => 'صيانة',
         'scheduled_at' => ', مجدولة :timestamp',
         'posted'       => 'تم الإرسال :timestamp',
         'posted_at'    => 'Posted at :timestamp',
         'status'       => [
-            1 => 'تحقيق',
+            1 => 'عملية التحقق جارية',
             2 => 'تم التعرف عليه',
-            3 => 'مراقبة',
-            4 => 'تمّ اصلاحها',
+            3 => 'تحت المراقبة',
+            4 => 'تمّ إصلاحه',
         ],
     ],
 
@@ -80,27 +80,27 @@ return [
         'button'      => 'اشتراك',
         'manage'      => [
             'no_subscriptions' => 'أنت الآن مشترك للحصول على جميع التحديثات.',
-            'my_subscriptions' => 'أنت كنت مشترك حاليا بالتحديثات التالية.',
+            'my_subscriptions' => 'إنك مشترك حاليا في التحديثات التالية.',
         ],
         'email' => [
             'subscribe'          => 'إشترك في تحديثات البريد الإلكتروني.',
-            'subscribed'         => 'تم تسجيلك في تنبيهات البريد الإلكتروني، الرجاء تفقد بريدك الإلكتروني لتأكيد الإشتراك.',
-            'verified'           => 'تم تأكيد بريدك الإلكتروني. شكراً لك!',
-            'manage'             => 'تحكم في الاشتراكات الخاص بك',
-            'unsubscribe'        => 'إلغاء الإشتراك من تحديثات البريد الإلكتروني.',
+            'subscribed'         => 'تم تسجيلك في خدمة الإشعارات عبر البريد الإلكتروني، يُرجى تفقد بريدك الإلكتروني لتأكيد اشتراكك.',
+            'verified'           => 'تم تأكيد الإشتراك عبر بريدك الإلكتروني. شكراً لك !',
+            'manage'             => 'إدارة اشتراكاتك',
+            'unsubscribe'        => 'إلغاء الإشتراك من خدمة التحديثات عبر البريد الإلكتروني.',
             'unsubscribed'       => 'تم إلغاء إشتراك بريدك الإلكتروني.',
             'failure'            => 'حدث خلل أثناء الإشتراك.',
-            'already-subscribed' => 'لا يمكن الاشتراك: البريد الإلكتروني نظراً لأنها كنت الاشتراك مسبقاً.',
+            'already-subscribed' => 'لا يمكن الاشتراك عبر :emailلأنه مُشترك مِن قبل.',
         ],
     ],
 
     'signup' => [
-        'title'    => 'سجل',
-        'username' => 'Username',
+        'title'    => 'تسجيل حساب',
+        'username' => 'إسم المستخدِم',
         'email'    => 'بريد إلكتروني',
         'password' => 'كلمة السر',
         'success'  => 'Your account has been created.',
-        'failure'  => 'حدث خطأ مع الاشتراك.',
+        'failure'  => 'حدث خطأ أثناء عملية تسجيل الحساب.',
     ],
 
     'system' => [
@@ -109,7 +109,7 @@ return [
 
     // Modal
     'modal' => [
-        'close'     => 'Close',
+        'close'     => 'إغلاق',
         'subscribe' => [
             'title'  => 'Subscribe to component updates',
             'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll already receive emails for this component.',
@@ -117,9 +117,18 @@ return [
         ],
     ],
 
+    // Meta descriptions
+    'meta' => [
+        'description' => [
+            'incident'  => 'Details and updates about the :name incident that occurred on :date',
+            'schedule'  => 'Details about the scheduled maintenance period :name starting :startDate',
+            'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
+            'overview'  => 'Stay up to date with the latest service updates from :app.',
+        ],
+    ],
+
     // Other
     'home'            => 'Home',
-    'description'     => 'Stay up to date with the latest service updates from :app.',
     'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
     'timezone'        => 'Times are shown in :timezone.',
     'about_this_site' => 'About This Site',

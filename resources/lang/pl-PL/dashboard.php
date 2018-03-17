@@ -26,13 +26,13 @@ return [
             'count'   => '{0} Zero Aktualizacji|[1] Jedna Aktualizacja|[2] Dwie Aktualizacje|[3,*] Kilka Aktualizacji',
             'add'     => [
                 'title'   => 'Utwórz nową aktualizację zdarzenia',
-                'success' => 'Your new incident update has been created.',
+                'success' => 'Twoja aktualizacja o nowym zdarzeniu została utworzona.',
                 'failure' => 'Coś poszło nie tak z aktualizacją incydentu.',
             ],
             'edit' => [
                 'title'   => 'Edytuj aktualizację incydentu',
                 'success' => 'Aktualizacja incydentu została zaktualizowana.',
-                'failure' => 'Something went wrong updating the incident update',
+                'failure' => 'Coś poszło nie tak z aktualizacją zdarzenia',
             ],
         ],
         'add'                      => [
@@ -73,7 +73,7 @@ return [
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => 'Geplante Wartungen',
+        'schedule'     => 'Konserwacja',
         'logged'       => '{0} Nie ma żadnych harmonogramów, dobra robota.|Posiadasz jeden harmonogram.|Zgłoszono <strong>:count</strong> harmonogramów.',
         'scheduled_at' => 'Geplant am :timestamp',
         'add'          => [

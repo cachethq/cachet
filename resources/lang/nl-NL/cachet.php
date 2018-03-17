@@ -29,7 +29,7 @@ return [
     'incidents' => [
         'none'         => 'Geen incidenten gemeld',
         'past'         => 'Oude incidenten',
-        'stickied'     => 'Uitgelichte incidenten',
+        'stickied'     => 'Vastgezette incidenten',
         'scheduled'    => 'Gepland onderhoud',
         'scheduled_at' => ', gepland :timestamp',
         'posted'       => 'Geplaatst op :timestamp',
@@ -46,7 +46,7 @@ return [
     'schedules' => [
         'status' => [
             0 => 'Aankomend',
-            1 => 'Wordt uitgevoerd',
+            1 => 'In Behandeling',
             2 => 'Voltooid',
         ],
     ],
@@ -54,8 +54,8 @@ return [
     // Service Status
     'service' => [
         'good'  => '[0,1] Systeem operationeel|[2,Inf] Alle systemen zijn operationeel',
-        'bad'   => '[0,1] Het systeem ondervind momenteel problemen |[2,Inf] Sommige systemen ondervinden momenteel problemen',
-        'major' => '[0,1] De service ondervind momenteel a grote storing|[2,Inf] Sommige systemen ondervinden momenteel een grote storing',
+        'bad'   => '[0,1] Het systeem ondervindt momenteel problemen |[2,Inf] Sommige systemen ondervinden momenteel problemen',
+        'major' => '[0,1] De service ondervindt momenteel een grote storing|[2,Inf] Sommige systemen ondervinden momenteel een grote storing',
     ],
 
     'api' => [
@@ -117,9 +117,18 @@ return [
         ],
     ],
 
+    // Meta descriptions
+    'meta' => [
+        'description' => [
+            'incident'  => 'Informatie betreffende het incident :name van :date',
+            'schedule'  => 'Informatie betreffende het onderhoud :name gepland op :startDate',
+            'subscribe' => 'Abonneer je op :app om updates te ontvangen van incidenten en gepland onderhoud',
+            'overview'  => 'Blijf op de hoogte van de laatste service updates over :app.',
+        ],
+    ],
+
     // Other
     'home'            => 'Home',
-    'description'     => 'Blijf op de hoogte van de laatste service updates over :app.',
     'powered_by'      => 'Mogelijk gemaakt door <a href="https://cachethq.io" class="links">Cachet</a>.',
     'timezone'        => 'Tijden worden getoond in :timezone.',
     'about_this_site' => 'Over deze website',
