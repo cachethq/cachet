@@ -78,7 +78,7 @@ class NewIncidentNotification extends Notification
                     ->greeting(trans('notifications.incident.new.mail.greeting', ['app_name' => Config::get('setting.app_name')]))
                     ->line($content)
                     ->action(trans('notifications.incident.new.mail.action'), cachet_route('incident', [$this->incident]))
-                    ->line($this->incident->message)
+                    ->markdown($this->incident->message)
                     ->line(trans('cachet.subscriber.unsubscribe', ['link' => cachet_route('subscribe.unsubscribe', $notifiable->verify_code)]));
     }
 
