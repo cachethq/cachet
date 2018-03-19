@@ -151,7 +151,7 @@ final class UpdateIncidentCommand
      *
      * @return void
      */
-    public function __construct(Incident $incident, $name, $status, $message, $visible, $component_id, $component_status, $notify, $stickied, $occurred_at, $template, array $template_vars = [], $meta = [])
+    public function __construct(Incident $incident, $name, $status, $message, $visible, $component_id, $component_status, $notify, $stickied, $occurred_at, $template, array $template_vars = [], array $meta = [])
     {
         $this->incident = $incident;
         $this->name = $name;
