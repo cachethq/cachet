@@ -21,6 +21,10 @@ trait StoresMeta
      * @param $meta
      * @param $type
      * @param $id
+     *
+     * @return void
+     *
+     * @throws \Exception
      */
     public function storeMeta($meta, $type, $id)
     {
@@ -30,19 +34,22 @@ trait StoresMeta
         }
 
         foreach ($meta as $key => $value) {
-            if (empty($value)) {
-                continue;
-            }
-
             $meta = Meta::firstOrNew([
                 'key'       => $key,
                 'meta_type' => $type,
                 'meta_id'   => $id,
             ]);
 
-            $meta->value = $value;
+            if (!empty($value)) {
+                $meta->value = $value;
+                $meta->save();
+                continue;
+            }
 
-            $meta->save();
+            // The value is empty, remove the row
+            if($meta->exists) {
+                $meta->delete();
+            }
         }
     }
 }
