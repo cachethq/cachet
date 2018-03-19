@@ -13,12 +13,10 @@ namespace CachetHQ\Tests\Cachet\Functional\Bus\Commands\Incident;
 
 use CachetHQ\Cachet\Bus\Commands\Incident\CreateIncidentCommand;
 use CachetHQ\Cachet\Models\Incident;
-use CachetHQ\Cachet\Models\User;
 use CachetHQ\Cachet\Presenters\IncidentPresenter;
 use CachetHQ\Cachet\Settings\Repository as SettingsRepository;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Support\Facades\Auth;
 
 /**
  * This is the create incident command test class.
@@ -43,8 +41,9 @@ class MetaSeoTest extends AbstractTestCase
     /**
      * CreateIncidentCommandTest constructor.
      *
-     * @param null  $name
-     * @param array $data
+     * @param null   $name
+     * @param array  $data
+     * @param string $dataName
      */
     public function __construct($name = null, array $data = [], $dataName = '')
     {
@@ -60,6 +59,7 @@ class MetaSeoTest extends AbstractTestCase
     {
         parent::setUp();
         $this->app->make(SettingsRepository::class)->set('app_name', $this->appName);
+        $this->app->config->set('setting.app_name', $this->appName);
     }
 
     /**
@@ -153,14 +153,11 @@ class MetaSeoTest extends AbstractTestCase
     /**
      * @param array $meta
      *
-     * @return \Illuminate\Database\Eloquent\Model|static
+     * @return Incident
      */
     protected function createIncidentWithMeta(array $meta)
     {
-        $user = factory(User::class)->create();
-        $user->save();
-
-        Auth::login($user);
+        $this->signIn();
         $name = $this->fakerFactory->name;
         $message = $this->fakerFactory->sentence;
 
