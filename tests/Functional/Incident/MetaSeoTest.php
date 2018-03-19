@@ -68,17 +68,17 @@ class MetaSeoTest extends AbstractTestCase
      */
     public function testCustomSeoDescriptionOnIncidentPage()
     {
-        $description = $this->fakerFactory->sentence;
+        $expectedDescription = htmlspecialchars($this->fakerFactory->sentence);
 
-        $incident = $this->createIncidentWithMeta(['seo' => ['description' => $description]]);
+        $incident = $this->createIncidentWithMeta(['seo' => ['description' => $expectedDescription]]);
         $page = $this->get(sprintf('/incidents/%d', $incident->id))->response;
 
         $this->assertContains(
-            sprintf('<meta property="og:description" content="%s">', $description),
+            sprintf('<meta property="og:description" content="%s">', $expectedDescription),
             $page->content()
         );
         $this->assertContains(
-            sprintf('<meta name="description" content="%s">', $description),
+            sprintf('<meta name="description" content="%s">', $expectedDescription),
             $page->content()
         );
     }
@@ -89,7 +89,7 @@ class MetaSeoTest extends AbstractTestCase
      */
     public function testCustomSeoTitleOnIncidentPage()
     {
-        $title = $this->fakerFactory->title;
+        $title = htmlspecialchars($this->fakerFactory->title);
 
         $incident = $this->createIncidentWithMeta(['seo' => ['title' => $title]]);
         $page = $this->get(sprintf('/incidents/%d', $incident->id))->response;
@@ -116,7 +116,7 @@ class MetaSeoTest extends AbstractTestCase
 
         $expectedDescription = sprintf(
             'Details and updates about the %s incident that occurred on %s',
-            $incident->name,
+            htmlspecialchars($incident->name),
             $presenter->occurred_at_formatted
         );
 
@@ -139,7 +139,7 @@ class MetaSeoTest extends AbstractTestCase
     public function testNoCustomSeoTitleOnIncidentPage()
     {
         $incident = $this->createIncidentWithMeta([]);
-        $expectedTitle = sprintf('%s | %s', $incident->name, $this->appName);
+        $expectedTitle = sprintf('%s | %s', htmlspecialchars($incident->name), $this->appName);
 
         $page = $this->get(sprintf('/incidents/%d', $incident->id))->response;
 
