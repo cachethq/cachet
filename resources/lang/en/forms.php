@@ -227,8 +227,8 @@ return [
     ],
 
     'seo' => [
-        'title'        => 'SEO title',
-        'description'  => 'SEO description',
+        'title'        => 'SEO Title',
+        'description'  => 'SEO Description',
     ],
 
     // Buttons
