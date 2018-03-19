@@ -22,9 +22,9 @@ trait StoresMeta
      * @param $type
      * @param $id
      *
-     * @return void
-     *
      * @throws \Exception
+     *
+     * @return void
      */
     public function storeMeta($meta, $type, $id)
     {
@@ -47,7 +47,7 @@ trait StoresMeta
             }
 
             // The value is empty, remove the row
-            if($meta->exists) {
+            if ($meta->exists) {
                 $meta->delete();
             }
         }
