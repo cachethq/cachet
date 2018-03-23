@@ -397,6 +397,7 @@ class SettingsController extends Controller
     protected function handleUpdateBanner(Repository $setting)
     {
         $file = Binput::file('app_banner');
+        $redirectUrl = $this->subMenu['theme']['url'];
 
         // Image Validation.
         // Image size in bytes.
