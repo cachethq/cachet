@@ -78,7 +78,7 @@ return [
         'scheduled_at' => 'Gepland op :timestamp',
         'add'          => [
             'title'   => 'Gepland onderhoud toevoegen',
-            'success' => 'Gepland onderhoud toegevoegd.',
+            'success' => 'Onderhoud toegevoegd.',
             'failure' => 'Er ging iets mis met het toevoegen van het geplande onderhoud, probeer het opnieuw.',
         ],
         'edit' => [
