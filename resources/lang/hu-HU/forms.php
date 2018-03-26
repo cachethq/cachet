@@ -238,7 +238,7 @@ return [
     'remove'         => 'Törlés',
     'invite'         => 'Meghívás',
     'signup'         => 'Regisztráció',
-    'manage_updates' => 'Manage Updates',
+    'manage_updates' => 'Frissítések kezelése',
 
     // Other
     'optional' => '* Opcionális',
