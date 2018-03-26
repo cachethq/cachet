@@ -55,7 +55,7 @@ return [
     'service' => [
         'good'  => '[0,1] Systeem operationeel|[2,Inf] Alle systemen zijn operationeel',
         'bad'   => '[0,1] Het systeem ondervindt momenteel problemen |[2,Inf] Sommige systemen ondervinden momenteel problemen',
-        'major' => '[0,1] De service ondervindt momenteel een grote storing|[2,Inf] Sommige systemen ondervinden momenteel een grote storing',
+        'major' => '[0,1] Het systeem ondervindt momenteel een grote storing|[2,Inf] Sommige systemen ondervinden momenteel een grote storing',
     ],
 
     'api' => [
@@ -120,7 +120,7 @@ return [
     // Meta descriptions
     'meta' => [
         'description' => [
-            'incident'  => 'Informatie betreffende het incident :name van :date',
+            'incident'  => 'Informatie en updates over het :name incident van :date',
             'schedule'  => 'Informatie betreffende het onderhoud :name gepland op :startDate',
             'subscribe' => 'Abonneer je op :app om updates te ontvangen van incidenten en gepland onderhoud',
             'overview'  => 'Blijf op de hoogte van de laatste service updates over :app.',
