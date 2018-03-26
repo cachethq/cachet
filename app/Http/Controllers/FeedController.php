@@ -17,6 +17,7 @@ use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Str;
+use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
 
 /**
  * This is the feed controller.
@@ -106,12 +107,17 @@ class FeedController extends Controller
      */
     private function feedAddItem(Incident $incident, $isRss)
     {
+        $incident = AutoPresenter::decorate($incident);
+
         $this->feed->add(
             $incident->name,
             Config::get('setting.app_name'),
             Str::canonicalize(cachet_route('incident', [$incident->id])),
-            $isRss ? $incident->occurred_at->toRssString() : $incident->occurred_at->toAtomString(),
-            $isRss ? $incident->message : Markdown::convertToHtml($incident->message)
+            $isRss ? $incident->getWrappedObject()->occurred_at->toRssString() : $incident->getWrappedObject()->occurred_at->toAtomString(),
+            $isRss ? $incident->message : Markdown::convertToHtml($incident->message),
+            null,
+            [],
+            $isRss ? $incident->human_status : null
         );
     }
 }
