@@ -30,18 +30,19 @@ class SqliteRepository extends AbstractMetricRepository implements MetricInterfa
     public function getPointsLastHour(Metric $metric, $hour, $minute)
     {
         $dateTime = (new Date())->sub(new DateInterval('PT'.$hour.'H'))->sub(new DateInterval('PT'.$minute.'M'));
+        $metricPointsTableName = $this->getMetricPointsTableName();
 
         // Default metrics calculations.
         if (!isset($metric->calc_type) || $metric->calc_type == Metric::CALC_SUM) {
-            $queryType = 'sum(metric_points.value * metric_points.counter)';
+            $queryType = "sum($metricPointsTableName.value * $metricPointsTableName.counter)";
         } elseif ($metric->calc_type == Metric::CALC_AVG) {
-            $queryType = 'avg(metric_points.value * metric_points.counter)';
+            $queryType = "avg($metricPointsTableName.value * $metricPointsTableName.counter)";
         } else {
-            $queryType = 'sum(metric_points.value * metric_points.counter)';
+            $queryType = "sum($metricPointsTableName.value * $metricPointsTableName.counter)";
         }
 
         $value = 0;
-        $query = DB::select("select {$queryType} as value FROM {$this->getTableName()} m JOIN metric_points ON metric_points.metric_id = m.id WHERE m.id = :metricId AND strftime('%Y%m%d%H%M', metric_points.created_at) = :timeInterval GROUP BY strftime('%H%M', metric_points.created_at)", [
+        $query = DB::select("select {$queryType} as value FROM {$this->getTableName()} m JOIN $metricPointsTableName ON $metricPointsTableName.metric_id = m.id WHERE m.id = :metricId AND strftime('%Y%m%d%H%M', $metricPointsTableName.created_at) = :timeInterval GROUP BY strftime('%H%M', $metricPointsTableName.created_at)", [
             'metricId'     => $metric->id,
             'timeInterval' => $dateTime->format('YmdHi'),
         ]);
@@ -68,18 +69,19 @@ class SqliteRepository extends AbstractMetricRepository implements MetricInterfa
     public function getPointsByHour(Metric $metric, $hour)
     {
         $dateTime = (new Date())->sub(new DateInterval('PT'.$hour.'H'));
+        $metricPointsTableName = $this->getMetricPointsTableName();
 
         // Default metrics calculations.
         if (!isset($metric->calc_type) || $metric->calc_type == Metric::CALC_SUM) {
-            $queryType = 'sum(metric_points.value * metric_points.counter)';
+            $queryType = "sum($metricPointsTableName.value * $metricPointsTableName.counter)";
         } elseif ($metric->calc_type == Metric::CALC_AVG) {
-            $queryType = 'avg(metric_points.value * metric_points.counter)';
+            $queryType = "avg($metricPointsTableName.value * $metricPointsTableName.counter)";
         } else {
-            $queryType = 'sum(metric_points.value * metric_points.counter)';
+            $queryType = "sum($metricPointsTableName.value * $metricPointsTableName.counter)";
         }
 
         $value = 0;
-        $query = DB::select("select {$queryType} as value FROM {$this->getTableName()} m JOIN metric_points ON metric_points.metric_id = m.id WHERE m.id = :metricId AND strftime('%Y%m%d%H', metric_points.created_at) = :timeInterval GROUP BY strftime('%H', metric_points.created_at)", [
+        $query = DB::select("select {$queryType} as value FROM {$this->getTableName()} m JOIN $metricPointsTableName ON $metricPointsTableName.metric_id = m.id WHERE m.id = :metricId AND strftime('%Y%m%d%H', $metricPointsTableName.created_at) = :timeInterval GROUP BY strftime('%H', $metricPointsTableName.created_at)", [
             'metricId'     => $metric->id,
             'timeInterval' => $dateTime->format('YmdH'),
         ]);
@@ -105,18 +107,19 @@ class SqliteRepository extends AbstractMetricRepository implements MetricInterfa
     public function getPointsForDayInWeek(Metric $metric, $day)
     {
         $dateTime = (new Date())->sub(new DateInterval('P'.$day.'D'));
+        $metricPointsTableName = $this->getMetricPointsTableName();
 
         // Default metrics calculations.
         if (!isset($metric->calc_type) || $metric->calc_type == Metric::CALC_SUM) {
-            $queryType = 'sum(metric_points.value * metric_points.counter)';
+            $queryType = "sum($metricPointsTableName.value * $metricPointsTableName.counter)";
         } elseif ($metric->calc_type == Metric::CALC_AVG) {
-            $queryType = 'avg(metric_points.value * metric_points.counter)';
+            $queryType = "avg($metricPointsTableName.value * $metricPointsTableName.counter)";
         } else {
-            $queryType = 'sum(metric_points.value * metric_points.counter)';
+            $queryType = "sum($metricPointsTableName.value * $metricPointsTableName.counter)";
         }
 
         $value = 0;
-        $query = DB::select("select {$queryType} as value FROM {$this->getTableName()} m JOIN metric_points ON metric_points.metric_id = m.id WHERE m.id = :metricId AND metric_points.created_at > date('now', '-7 day') AND strftime('%Y%m%d', metric_points.created_at) = :timeInterval GROUP BY strftime('%Y%m%d', metric_points.created_at)", [
+        $query = DB::select("select {$queryType} as value FROM {$this->getTableName()} m JOIN $metricPointsTableName ON $metricPointsTableName.metric_id = m.id WHERE m.id = :metricId AND $metricPointsTableName.created_at > date('now', '-7 day') AND strftime('%Y%m%d', $metricPointsTableName.created_at) = :timeInterval GROUP BY strftime('%Y%m%d', $metricPointsTableName.created_at)", [
             'metricId'     => $metric->id,
             'timeInterval' => $dateTime->format('Ymd'),
         ]);

@@ -34,19 +34,20 @@ class PgSqlRepository extends AbstractMetricRepository implements MetricInterfac
      */
     public function getPointsLastHour(Metric $metric, $hour, $minute)
     {
+        $metricPointsTableName = $this->getMetricPointsTableName();
         $dateTime = (new Date())->sub(new DateInterval('PT'.$hour.'H'))->sub(new DateInterval('PT'.$minute.'M'));
 
         // Default metrics calculations.
         if (!isset($metric->calc_type) || $metric->calc_type == Metric::CALC_SUM) {
-            $queryType = 'sum(metric_points.value * metric_points.counter)';
+            $queryType = "sum($metricPointsTableName.value * $metricPointsTableName.counter)";
         } elseif ($metric->calc_type == Metric::CALC_AVG) {
-            $queryType = 'avg(metric_points.value * metric_points.counter)';
+            $queryType = "avg($metricPointsTableName.value * $metricPointsTableName.counter)";
         } else {
-            $queryType = 'sum(metric_points.value * metric_points.counter)';
+            $queryType = "sum($metricPointsTableName.value * $metricPointsTableName.counter)";
         }
 
         $value = 0;
-        $query = DB::select("select {$queryType} as value FROM {$this->getTableName()} m JOIN metric_points ON metric_points.metric_id = m.id WHERE m.id = :metricId AND to_char(metric_points.created_at, 'YYYYMMDDHH24MI') = :timeInterval GROUP BY to_char(metric_points.created_at, 'HHMI')", [
+        $query = DB::select("select {$queryType} as value FROM {$this->getTableName()} m JOIN $metricPointsTableName ON $metricPointsTableName.metric_id = m.id WHERE m.id = :metricId AND to_char($metricPointsTableName.created_at, 'YYYYMMDDHH24MI') = :timeInterval GROUP BY to_char($metricPointsTableName.created_at, 'HHMI')", [
             'metricId'     => $metric->id,
             'timeInterval' => $dateTime->format('YmdHi'),
         ]);
@@ -73,18 +74,19 @@ class PgSqlRepository extends AbstractMetricRepository implements MetricInterfac
     public function getPointsByHour(Metric $metric, $hour)
     {
         $dateTime = (new Date())->sub(new DateInterval('PT'.$hour.'H'));
+        $metricPointsTableName = $this->getMetricPointsTableName();
 
         // Default metrics calculations.
         if (!isset($metric->calc_type) || $metric->calc_type == Metric::CALC_SUM) {
-            $queryType = 'sum(metric_points.value * metric_points.counter)';
+            $queryType = "sum($metricPointsTableName.value * $metricPointsTableName.counter)";
         } elseif ($metric->calc_type == Metric::CALC_AVG) {
-            $queryType = 'avg(metric_points.value * metric_points.counter)';
+            $queryType = "avg($metricPointsTableName.value * $metricPointsTableName.counter)";
         } else {
-            $queryType = 'sum(metric_points.value * metric_points.counter)';
+            $queryType = "sum($metricPointsTableName.value * $metricPointsTableName.counter)";
         }
 
         $value = 0;
-        $query = DB::select("select {$queryType} as value FROM {$this->getTableName()} m JOIN metric_points ON metric_points.metric_id = m.id WHERE metric_points.metric_id = :metricId AND to_char(metric_points.created_at, 'YYYYMMDDHH24') = :timeInterval GROUP BY to_char(metric_points.created_at, 'H')", [
+        $query = DB::select("select {$queryType} as value FROM {$this->getTableName()} m JOIN $metricPointsTableName ON $metricPointsTableName.metric_id = m.id WHERE $metricPointsTableName.metric_id = :metricId AND to_char($metricPointsTableName.created_at, 'YYYYMMDDHH24') = :timeInterval GROUP BY to_char($metricPointsTableName.created_at, 'H')", [
             'metricId'     => $metric->id,
             'timeInterval' => $dateTime->format('YmdH'),
         ]);
@@ -110,6 +112,7 @@ class PgSqlRepository extends AbstractMetricRepository implements MetricInterfac
     public function getPointsForDayInWeek(Metric $metric, $day)
     {
         $dateTime = (new Date())->sub(new DateInterval('P'.$day.'D'));
+        $metricPointsTableName = $this->getMetricPointsTableName();
 
         if (!isset($metric->calc_type) || $metric->calc_type == Metric::CALC_SUM) {
             $queryType = 'sum(mp.value * mp.counter) AS value';
@@ -118,7 +121,7 @@ class PgSqlRepository extends AbstractMetricRepository implements MetricInterfac
         }
 
         $value = 0;
-        $points = DB::select("SELECT {$queryType} FROM {$this->getTableName()} m INNER JOIN metric_points mp ON m.id = mp.metric_id WHERE m.id = :metricId AND mp.created_at BETWEEN (mp.created_at - interval '1 week') AND (now() + interval '1 day') AND to_char(mp.created_at, 'YYYYMMDD') = :timeInterval GROUP BY to_char(mp.created_at, 'YYYYMMDD')", [
+        $points = DB::select("SELECT {$queryType} FROM {$this->getTableName()} m INNER JOIN $metricPointsTableName mp ON m.id = mp.metric_id WHERE m.id = :metricId AND mp.created_at BETWEEN (mp.created_at - interval '1 week') AND (now() + interval '1 day') AND to_char(mp.created_at, 'YYYYMMDD') = :timeInterval GROUP BY to_char(mp.created_at, 'YYYYMMDD')", [
             'metricId'     => $metric->id,
             'timeInterval' => $dateTime->format('Ymd'),
         ]);

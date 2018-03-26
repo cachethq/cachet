@@ -48,16 +48,37 @@ abstract class AbstractMetricRepository
     }
 
     /**
+     * Get the table names prefix.
+     *
+     * @return  string
+     */
+    protected function getPrefix()
+    {
+        $driver = $this->config->get('database.default');
+        $connection = $this->config->get('database.connections.'.$driver);
+        $prefix = $connection['prefix'];
+        return $prefix;
+    }
+
+    /**
      * Get the metrics table name.
      *
      * @return string
      */
     protected function getTableName()
     {
-        $driver = $this->config->get('database.default');
-        $connection = $this->config->get('database.connections.'.$driver);
-        $prefix = $connection['prefix'];
-
+        $prefix = $this->getPrefix();
         return $prefix.'metrics';
+    }
+
+    /**
+     * Get the metric points table name.
+     *
+     * @return  string
+     */
+    protected function getMetricPointsTableName()
+    {
+        $prefix = $this->getPrefix();
+        return $prefix.'metric_points';
     }
 }
