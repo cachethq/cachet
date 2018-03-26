@@ -38,7 +38,6 @@ class MySqlRepository extends AbstractMetricRepository implements MetricInterfac
         $timeInterval = $dateTime->format('YmdHi');
         $metricPointsTableName = $this->getMetricPointsTableName();
 
-
         if (!isset($metric->calc_type) || $metric->calc_type == Metric::CALC_SUM) {
             $queryType = 'SUM(mp.`value` * mp.`counter`) AS `value`';
         } elseif ($metric->calc_type == Metric::CALC_AVG) {
