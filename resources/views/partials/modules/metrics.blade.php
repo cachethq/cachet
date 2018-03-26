@@ -4,7 +4,7 @@
     <ul class="list-group">
         @foreach($metrics as $metric)
         <li class="list-group-item metric" data-metric-id="{{ $metric->id }}">
-            <metric-chart :metric="{{ $metric->toJson() }}"></metric-chart>
+            <metric-chart :metric="{{ $metric->toJson() }}" :theme-light="{{ json_encode($theme_metrics) }}" :theme="{{ json_encode(color_darken($theme_metrics, -0.1)) }}" :theme-dark="{{ json_encode(color_darken($theme_metrics, -0.2)) }}"></metric-chart>
         </li>
         @endforeach
     </ul>

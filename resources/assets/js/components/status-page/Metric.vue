@@ -42,6 +42,9 @@ Chart.defaults.global.legend.display = false
 module.exports = {
     props: [
         'metric',
+        'theme',
+        'theme-light',
+        'theme-dark'
     ],
     data () {
         return {
@@ -137,12 +140,12 @@ module.exports = {
                     labels: data_keys,
                     datasets: [{
                         data: _.values(this.data),
-                        // backgroundColor: "{{ $theme_metrics }}",
-                        // borderColor: "{{ color_darken($theme_metrics, -0.1) }}",
-                        // pointBackgroundColor: "{{ color_darken($theme_metrics, -0.1) }}",
-                        // pointBorderColor: "{{ color_darken($theme_metrics, -0.1) }}",
-                        // pointHoverBackgroundColor: "{{ color_darken($theme_metrics, -0.2) }}",
-                        // pointHoverBorderColor: "{{ color_darken($theme_metrics, -0.2) }}"
+                        backgroundColor: this.themeLight,
+                        borderColor: this.theme,
+                        pointBackgroundColor: this.theme,
+                        pointBorderColor: this.theme,
+                        pointHoverBackgroundColor: this.themeDark,
+                        pointHoverBorderColor: this.themeDark
                     }]
                 },
                 options: {
