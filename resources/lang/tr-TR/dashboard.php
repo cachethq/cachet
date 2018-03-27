@@ -35,6 +35,7 @@ return [
                 'failure' => 'Olay şablonu güncellenirken bir şeyler ters gitti',
             ],
         ],
+        'reported_by'              => 'Reported by :user',
         'add'                      => [
             'title'   => 'Olay Ekle',
             'success' => 'Olay eklendi.',
