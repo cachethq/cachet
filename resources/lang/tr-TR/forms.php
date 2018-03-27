@@ -155,7 +155,7 @@ return [
             'days-of-incidents'                     => 'Kaç gün olay gösterebilirim?',
             'time_before_refresh'                   => 'Durum sayfası yenileme hızı (saniye).',
             'banner'                                => 'Afiş Resmi',
-            'banner-help'                           => '930 pikselden daha büyük olmayan dosyaları yüklemeniz önerilir.',
+            'banner-help'                           => "930 pikselden daha büyük olmayan dosyaları yüklemeniz önerilir.",
             'subscribers'                           => 'Kullanıcıların e-posta bildirimlerine kaydolmasına izin verilsin mi?',
             'suppress_notifications_in_maintenance' => 'Bakım döneminde oluşacak olay bildirimleri kapatılsın mı?',
             'skip_subscriber_verification'          => 'Kullanıcıların doğrulama işlemini atla? (Dikkat et, spam gönderildi)',
