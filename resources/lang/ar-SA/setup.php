@@ -11,13 +11,13 @@
 
 return [
     'setup'             => 'تنصيب',
-    'title'             => 'إعداد Cachet',
+    'title'             => 'تنصيب Cachet',
     'service_details'   => 'تفاصيل الخدمة',
-    'env_setup'         => 'اعداد البيئة',
-    'status_page_setup' => 'حالة إعداد الصفحة',
-    'show_support'      => 'إظهار الدعم ل Cachet؟',
-    'admin_account'     => 'حساب المسؤول',
+    'env_setup'         => 'بيئة التنصيب',
+    'status_page_setup' => 'إعداد صفحة الحالة',
+    'show_support'      => 'إظهار الدعم لـ Cachet ؟',
+    'admin_account'     => 'حساب المدير',
     'complete_setup'    => 'إكمال الإعداد',
-    'completed'         => 'تم إعداد Cachet بنجاح!',
+    'completed'         => 'تم إعداد Cachet بنجاح !',
     'finish_setup'      => 'انتقل إلى لوحة التحكم',
 ];
