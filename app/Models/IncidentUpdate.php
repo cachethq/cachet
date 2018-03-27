@@ -84,6 +84,16 @@ class IncidentUpdate extends Model implements HasPresenter
     }
 
     /**
+     * Get the user relation.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    /**
      * Get the presenter class.
      *
      * @return string

@@ -74,6 +74,7 @@ class Incident extends Model implements HasPresenter
      * @var string[]
      */
     protected $casts = [
+        'user_id'     => 'int',
         'visible'     => 'int',
         'stickied'    => 'bool',
         'occurred_at' => 'datetime',
@@ -86,6 +87,7 @@ class Incident extends Model implements HasPresenter
      * @var string[]
      */
     protected $fillable = [
+        'user_id',
         'component_id',
         'name',
         'status',
@@ -103,6 +105,7 @@ class Incident extends Model implements HasPresenter
      * @var string[]
      */
     public $rules = [
+        'user_id'      => 'required|int',
         'component_id' => 'nullable|int',
         'name'         => 'required|string',
         'status'       => 'required|int',
@@ -118,6 +121,7 @@ class Incident extends Model implements HasPresenter
      */
     protected $searchable = [
         'id',
+        'user_id',
         'component_id',
         'name',
         'status',
@@ -132,6 +136,7 @@ class Incident extends Model implements HasPresenter
      */
     protected $sortable = [
         'id',
+        'user_id',
         'name',
         'status',
         'visible',
@@ -178,6 +183,16 @@ class Incident extends Model implements HasPresenter
     public function updates()
     {
         return $this->hasMany(IncidentUpdate::class)->orderBy('created_at', 'desc');
+    }
+
+    /**
+     * Get the user relation.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 
     /**

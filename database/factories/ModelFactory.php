@@ -45,6 +45,7 @@ $factory->define(ComponentGroup::class, function ($faker) {
 $factory->define(Incident::class, function ($faker) {
     return [
         'name'     => $faker->sentence(),
+        'user_id'  => factory(User::class)->create()->id,
         'message'  => $faker->paragraph(),
         'status'   => mt_rand(1, 4),
         'visible'  => 1,

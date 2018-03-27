@@ -70,6 +70,7 @@ class CreateIncidentCommandHandler
     public function handle(CreateIncidentCommand $command)
     {
         $data = [
+            'user_id'  => $this->auth->user()->id,
             'name'     => $command->name,
             'status'   => $command->status,
             'visible'  => $command->visible,
