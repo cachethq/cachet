@@ -155,7 +155,7 @@ return [
             'days-of-incidents'                     => 'Hur många dagar av händelser ska visas?',
             'time_before_refresh'                   => 'Status page refresh rate (in seconds).',
             'banner'                                => 'Bannerbild',
-            'banner-help'                           => 'Vi rekommenderar att du inte laddar upp bilder som är bredare än 930 px.',
+            'banner-help'                           => "Vi rekommenderar att du inte laddar upp bilder som är bredare än 930 px.",
             'subscribers'                           => 'Tillåt att registrera sig för notifikationer via e-post?',
             'suppress_notifications_in_maintenance' => 'Suppress notifications when incident occurs during maintenance period?',
             'skip_subscriber_verification'          => 'Skip verifying of users? (Be warned, you could be spammed)',
