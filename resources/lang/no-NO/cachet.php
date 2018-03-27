@@ -45,7 +45,7 @@ return [
     // Schedule
     'schedules' => [
         'status' => [
-            0 => 'Upcoming',
+            0 => 'Kommende',
             1 => 'Pågår',
             2 => 'Fullført',
         ],
@@ -81,6 +81,7 @@ return [
         'manage'      => [
             'no_subscriptions' => 'Du abonnerer for øyeblikket på alle oppdateringer.',
             'my_subscriptions' => 'Du abonnerer for øyeblikket på følgende oppdateringer.',
+            'manage_at_link'   => 'Manage your subscriptions at :link',
         ],
         'email' => [
             'subscribe'          => 'Abonner for å motta varslinger på e-post.',
