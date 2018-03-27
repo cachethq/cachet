@@ -81,6 +81,7 @@ return [
         'manage'      => [
             'no_subscriptions' => 'คุณติตตามทั้งหมดแล้ว',
             'my_subscriptions' => 'คุณติดตามข่าวสารเหล่านี้',
+            'manage_at_link'   => 'Manage your subscriptions at :link',
         ],
         'email' => [
             'subscribe'          => 'ติดตามข่าวสารทาง email',
