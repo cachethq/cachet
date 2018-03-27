@@ -81,6 +81,7 @@ return [
         'manage'      => [
             'no_subscriptions' => 'Şu anda tüm güncellemeleri abone oldunuz.',
             'my_subscriptions' => 'Şu an aşağıdaki güncellemelere abone oldunuz.',
+            'manage_at_link'   => 'Manage your subscriptions at :link',
         ],
         'email' => [
             'subscribe'          => 'Güncellemeler için abone ol.',
