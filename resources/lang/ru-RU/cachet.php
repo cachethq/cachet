@@ -81,6 +81,7 @@ return [
         'manage'      => [
             'no_subscriptions' => 'Вы подписаны на все изменения.',
             'my_subscriptions' => 'Вы подписаны на следующие изменения.',
+            'manage_at_link'   => 'Manage your subscriptions at :link',
         ],
         'email' => [
             'subscribe'          => 'Подписка на рассылку об изменениях.',
