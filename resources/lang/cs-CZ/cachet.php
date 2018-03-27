@@ -81,6 +81,7 @@ return [
         'manage'      => [
             'no_subscriptions' => 'Aktuálně jsi přihlášen(a) ke všem upozorněním.',
             'my_subscriptions' => 'Aktuálně jsi přihlášen(a) k následujícím upozorněním.',
+            'manage_at_link'   => 'Manage your subscriptions at :link',
         ],
         'email' => [
             'subscribe'          => 'Přihlásit se k zasílání upozornění e-mailem.',
