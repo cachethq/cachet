@@ -155,7 +155,7 @@ return [
             'days-of-incidents'                     => 'Quantos dias de incidentes para mostrar?',
             'time_before_refresh'                   => 'Tempo para atualizar a página de Status (em segundos).',
             'banner'                                => 'Imagem do banner',
-            'banner-help'                           => 'É recomendável que você faça upload de arquivos menores que 930px .',
+            'banner-help'                           => "É recomendável que você faça upload de arquivos menores que 930px .",
             'subscribers'                           => 'Permitir que outras pessoas se cadastrem para notificações via e-mail?',
             'suppress_notifications_in_maintenance' => 'Suprimir as notificações quando o incidente ocorre durante o período de manutenção?',
             'skip_subscriber_verification'          => 'Ignorar verificação de usuários? (Cuidado, você pode sofrer com spams)',
