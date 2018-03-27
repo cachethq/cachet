@@ -66,7 +66,7 @@ return [
     // Metrics
     'metrics' => [
         'filter' => [
-            'last_hour' => 'الساعة الأخيرة',
+            'last_hour' => 'آخِر ساعة',
             'hourly'    => 'آخر 12 ساعة',
             'weekly'    => 'أسبوع',
             'monthly'   => 'شهر',
@@ -81,6 +81,7 @@ return [
         'manage'      => [
             'no_subscriptions' => 'أنت الآن مشترك للحصول على جميع التحديثات.',
             'my_subscriptions' => 'إنك مشترك حاليا في التحديثات التالية.',
+            'manage_at_link'   => 'Manage your subscriptions at :link',
         ],
         'email' => [
             'subscribe'          => 'إشترك في تحديثات البريد الإلكتروني.',
