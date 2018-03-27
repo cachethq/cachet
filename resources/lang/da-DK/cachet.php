@@ -76,11 +76,12 @@ return [
     // Subscriber
     'subscriber' => [
         'subscribe'   => 'Tilmeld dig for at få de seneste opdateringer',
-        'unsubscribe' => 'Afmeld via: link',
+        'unsubscribe' => 'Afmeld via :link',
         'button'      => 'Abonner',
         'manage'      => [
             'no_subscriptions' => 'Du abonner i øjeblikket på alle opdateringer.',
             'my_subscriptions' => 'Du abonnere i øjeblikket på følgende opdateringer.',
+            'manage_at_link'   => 'Manage your subscriptions at :link',
         ],
         'email' => [
             'subscribe'          => 'Abonner på email opdateringer.',
