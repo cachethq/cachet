@@ -155,7 +155,7 @@ return [
             'days-of-incidents'                     => 'How many days of incidents to show?',
             'time_before_refresh'                   => 'Status page refresh rate (in seconds).',
             'banner'                                => 'Зображення банеру',
-            'banner-help'                           => 'Радимо завантажувати файли не більше, ніж 930 пiкселей у ширину.',
+            'banner-help'                           => "Радимо завантажувати файли не більше, ніж 930 пiкселей у ширину.",
             'subscribers'                           => 'Allow people to signup to email notifications?',
             'suppress_notifications_in_maintenance' => 'Suppress notifications when incident occurs during maintenance period?',
             'skip_subscriber_verification'          => 'Skip verifying of users? (Be warned, you could be spammed)',
