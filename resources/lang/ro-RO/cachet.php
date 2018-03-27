@@ -81,6 +81,7 @@ return [
         'manage'      => [
             'no_subscriptions' => 'Acum eşti abonat la toate actualizările.',
             'my_subscriptions' => 'Acum eşti abonat la următoarele actualizări.',
+            'manage_at_link'   => 'Manage your subscriptions at :link',
         ],
         'email' => [
             'subscribe'          => 'Abonează-te la actualizări prin email.',

@@ -81,6 +81,7 @@ return [
         'manage'      => [
             'no_subscriptions' => 'Olet tällä hetkellä tilannut kaikki ilmoitukset.',
             'my_subscriptions' => 'Olet tällä hetkellä tilannut seuraavat ilmoitukset.',
+            'manage_at_link'   => 'Manage your subscriptions at :link',
         ],
         'email' => [
             'subscribe'          => 'Tilaa sähköpostiin päivitykset.',

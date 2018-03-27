@@ -32,7 +32,7 @@ return [
     'before'     => ':attribute csak :date előtti dátum lehet.',
     'between'    => [
         'numeric' => ':attribute csak :min és :max között érvényes.',
-        'file'    => 'The :attribute must be between :min and :max kilobytes.',
+        'file'    => 'Az :attribute-nak :min -:max kilobájt között kell lennie.',
         'string'  => 'The :attribute must be between :min and :max characters.',
         'array'   => ':attribute csak :min és :max elem közötti lehet.',
     ],

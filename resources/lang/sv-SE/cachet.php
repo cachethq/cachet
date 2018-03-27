@@ -81,6 +81,7 @@ return [
         'manage'      => [
             'no_subscriptions' => 'Du prenumererar på alla uppdateringar.',
             'my_subscriptions' => 'Du prenumererar på följande uppdateringar.',
+            'manage_at_link'   => 'Manage your subscriptions at :link',
         ],
         'email' => [
             'subscribe'          => 'Prenumerera på epost-uppdateringar.',

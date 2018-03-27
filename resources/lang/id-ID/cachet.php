@@ -81,6 +81,7 @@ return [
         'manage'      => [
             'no_subscriptions' => 'Anda saat ini terdaftar untuk semua update.',
             'my_subscriptions' => 'Anda saat ini berlangganan update berikut.',
+            'manage_at_link'   => 'Manage your subscriptions at :link',
         ],
         'email' => [
             'subscribe'          => 'Langganan update email.',

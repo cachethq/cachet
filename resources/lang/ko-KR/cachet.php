@@ -81,6 +81,7 @@ return [
         'manage'      => [
             'no_subscriptions' => '당신은 모든 업데이트를 구독하고 있습니다',
             'my_subscriptions' => '당신은 다음 업데이트를 구독하고 있습니다',
+            'manage_at_link'   => 'Manage your subscriptions at :link',
         ],
         'email' => [
             'subscribe'          => '이메일 구독 신청.',

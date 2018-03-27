@@ -81,6 +81,7 @@ return [
         'manage'      => [
             'no_subscriptions' => 'Actualment estau subscrits a totes les actualitzacions.',
             'my_subscriptions' => 'Actualment estau subscrits a les següents actualitzacions.',
+            'manage_at_link'   => 'Manage your subscriptions at :link',
         ],
         'email' => [
             'subscribe'          => 'Subscriviu-vos a les actualitzacions del correu electrònic.',
