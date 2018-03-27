@@ -1,0 +1,34 @@
+tasks:
+  - name: build
+    commands:
+      - composer install --no-dev
+
+  - name: install_or_upgrade
+    commands:
+      - cd {{ deploydog_release_path }}/code && bash deploy.dog-Cachet-InstallOrUpdate.sh
+
+  - name: disable_maintenance_mode
+    commands:
+      - cd {{ deploydog_release_path }}/code && php artisan up
+
+buildConfig:
+  - stage: dev
+    dockerImage: deploydog/php-nodejs-web-build-tools:php{{ php_version }}_nodejs8
+    tasks:
+      - build
+    cacheDirectories:
+      - vendor
+
+deployConfig:
+  - stage: dev
+    group: web
+    directory: /var/www
+    postUploadTasks:
+      - install_or_upgrade
+    postSymlinkChangeTasks:
+      - disable_maintenance_mode
+    copyFiles:
+      - file: .env
+        destination: .env
+      - file: InstallOrUpdate.sh
+        destination: deploy.dog-Cachet-InstallOrUpdate.sh
