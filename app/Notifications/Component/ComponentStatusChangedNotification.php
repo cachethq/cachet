@@ -88,7 +88,8 @@ class ComponentStatusChangedNotification extends Notification
                     ->greeting(trans('notifications.component.status_update.mail.subject'))
                     ->line($content)
                     ->action(trans('notifications.component.status_update.mail.action'), cachet_route('status-page'))
-                    ->line(trans('cachet.subscriber.unsubscribe', ['link' => cachet_route('subscribe.unsubscribe', $notifiable->verify_code)]));
+                    ->line(trans('cachet.subscriber.unsubscribe', ['link' => cachet_route('subscribe.unsubscribe', $notifiable->verify_code)]))
+                    ->line(trans('cachet.subscriber.manage.manage_at_link', ['link' =>  cachet_route('subscribe.manage', $notifiable->verify_code)]));
     }
 
     /**
