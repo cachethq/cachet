@@ -81,6 +81,7 @@ return [
         'manage'      => [
             'no_subscriptions' => '您目前已訂閱所有的更新。',
             'my_subscriptions' => '您目前已安裝下列更新',
+            'manage_at_link'   => 'Manage your subscriptions at :link',
         ],
         'email' => [
             'subscribe'          => '訂閱 電子郵件 系統狀態更新。',
