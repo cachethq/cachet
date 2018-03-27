@@ -81,6 +81,7 @@ return [
         'manage'      => [
             'no_subscriptions' => 'Sei attualmente iscritto a tutti gli aggiornamenti.',
             'my_subscriptions' => 'Sei attualmente iscritto ai seguenti suggerimenti.',
+            'manage_at_link'   => 'Manage your subscriptions at :link',
         ],
         'email' => [
             'subscribe'          => 'Iscriviti agli aggiornamenti via email.',
