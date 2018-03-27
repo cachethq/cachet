@@ -155,7 +155,7 @@ return [
             'days-of-incidents'                     => 'Hoeveel dagen moeten incidenten getoond worden?',
             'time_before_refresh'                   => 'Status pagina ververs interval (in seconden).',
             'banner'                                => 'Banner afbeelding',
-            'banner-help'                           => "Het wordt aanbevolen dat u geen bestanden upload die breeder zijn dan 930px.",
+            'banner-help'                           => 'Het wordt aanbevolen dat u geen bestanden upload die breeder zijn dan 930px.',
             'subscribers'                           => 'Bezoekers toestaan om te abonneren op e-mail notificaties?',
             'suppress_notifications_in_maintenance' => 'Onderdruk meldingen wanneer incident tijdens de onderhoudingsperiode voordoet?',
             'skip_subscriber_verification'          => 'Verificatie van gebruikers overslaan? (Let op, je kunt gespamd worden)',

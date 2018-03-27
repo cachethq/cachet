@@ -155,7 +155,7 @@ return [
             'days-of-incidents'                     => 'Combien de jours d\'incidents à montrer ?',
             'time_before_refresh'                   => 'Fréquence de rafraîchissement de la page de statut (en secondes).',
             'banner'                                => 'Image d\'en-tête',
-            'banner-help'                           => "Il est recommandé de téléchargez un fichier ne dépassant pas 930px de large .",
+            'banner-help'                           => 'Il est recommandé de téléchargez un fichier ne dépassant pas 930px de large .',
             'subscribers'                           => 'Permettre aux personnes de s\'inscrire aux notifications par e-mail ?',
             'suppress_notifications_in_maintenance' => 'Supprimer les notifications lorsqu\'un incident se produit au cours de la période de maintenance ?',
             'skip_subscriber_verification'          => 'Ne pas vérifier les utilisateurs ? (Attention, vous pourriez être spammé)',
