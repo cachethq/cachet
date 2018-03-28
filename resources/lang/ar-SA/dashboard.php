@@ -35,7 +35,7 @@ return [
                 'failure' => 'طرأ هناك خطأ في تحديث حالة العَطل',
             ],
         ],
-        'reported_by'              => 'Reported by :user',
+        'reported_by'              => 'أبلَغَ عنه :user',
         'add'                      => [
             'title'   => 'الإبلاغ عن عَطَل',
             'success' => 'تم إضافة العَطَل.',
