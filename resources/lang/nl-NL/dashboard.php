@@ -35,7 +35,7 @@ return [
                 'failure' => 'Er is een fout opgetreden bij het wijzigen van de incident update',
             ],
         ],
-        'reported_by'              => 'Reported by :user',
+        'reported_by'              => 'Gemeld door: gebruiker',
         'add'                      => [
             'title'   => 'Meld een incident',
             'success' => 'Incident toegevoegd.',
