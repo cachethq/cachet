@@ -81,7 +81,7 @@ return [
         'manage'      => [
             'no_subscriptions' => 'Du hast im Augenblick alle Updates abonniert.',
             'my_subscriptions' => 'Du hast im Augenblick folgende Updates abonniert.',
-            'manage_at_link'   => 'Manage your subscriptions at :link',
+            'manage_at_link'   => 'Verwalte deine Abonnements :link',
         ],
         'email' => [
             'subscribe'          => 'Aktualisierungen per E-Mail abonnieren.',
