@@ -35,7 +35,7 @@ return [
                 'failure' => 'Coś poszło nie tak z aktualizacją zdarzenia',
             ],
         ],
-        'reported_by'              => 'Reported by :user',
+        'reported_by'              => 'Zgłoszone przez :user',
         'add'                      => [
             'title'   => 'Vorfall hinzufügen',
             'success' => 'Dodano zdarzenie.',
