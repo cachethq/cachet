@@ -33,7 +33,7 @@ return [
         'scheduled'    => 'Плановые работы',
         'scheduled_at' => ', запланированы :timestamp',
         'posted'       => 'Опубликовано :timestamp',
-        'posted_at'    => 'Posted at :timestamp',
+        'posted_at'    => 'Опубликовано в :timestamp',
         'status'       => [
             1 => 'Проводим анализ проблемы',
             2 => 'Причина определена',
@@ -81,7 +81,7 @@ return [
         'manage'      => [
             'no_subscriptions' => 'Вы подписаны на все изменения.',
             'my_subscriptions' => 'Вы подписаны на следующие изменения.',
-            'manage_at_link'   => 'Manage your subscriptions at :link',
+            'manage_at_link'   => 'Управляйте своими подписками в :link',
         ],
         'email' => [
             'subscribe'          => 'Подписка на рассылку об изменениях.',
