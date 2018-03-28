@@ -33,7 +33,7 @@ return [
         'scheduled'    => 'صيانة',
         'scheduled_at' => ', مجدولة :timestamp',
         'posted'       => 'تم الإرسال :timestamp',
-        'posted_at'    => 'Posted at :timestamp',
+        'posted_at'    => 'نُشِر على :timestamp',
         'status'       => [
             1 => 'عملية التحقق جارية',
             2 => 'تم التعرف عليه',
@@ -129,10 +129,10 @@ return [
     ],
 
     // Other
-    'home'            => 'Home',
+    'home'            => 'الرئيسية',
     'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
     'timezone'        => 'Times are shown in :timezone.',
-    'about_this_site' => 'About This Site',
+    'about_this_site' => 'عن هذا الموقع',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',
     'feed'            => 'Status Feed',
