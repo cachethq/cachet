@@ -122,7 +122,7 @@ return [
     'meta' => [
         'description' => [
             'incident'  => '有关于发生在 :date 的 :name 事件的细节与更新',
-            'schedule'  => 'Details about the scheduled maintenance period :name starting :startDate',
+            'schedule'  => '有关于计划维护时段 :name ，开始于 :startDate，的细节说明',
             'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
             'overview'  => '始终保持对 :app 服务状态的关注。',
         ],
