@@ -54,7 +54,7 @@ return [
         'message-help'       => 'También puedes usar Markdown.',
         'occurred_at'        => '¿Cuando ocurrió este incidente?',
         'notify_subscribers' => '¿Notificar a los suscriptores?',
-        'notify_disabled'    => 'Due to scheduled maintenance, notifications about this incident or its components will be suppressed.',
+        'notify_disabled'    => 'Debido al mantenimiento programado, las notificaciones sobre este incidente o sus componentes serán suprimidas.',
         'visibility'         => 'Visibilidad del incidente',
         'stick_status'       => 'Pega Incidente',
         'stickied'           => 'Fijado',

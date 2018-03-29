@@ -35,6 +35,7 @@ return [
                 'failure' => 'En fejl opstod under opdateringen af hændelsesopdateringen',
             ],
         ],
+        'reported_by'              => 'Anmeldt af bruger',
         'add'                      => [
             'title'   => 'Opret hændelse',
             'success' => 'Hændelse tilføjet.',

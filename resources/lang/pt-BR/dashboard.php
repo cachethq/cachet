@@ -35,6 +35,7 @@ return [
                 'failure' => 'Algo deu errado ao atualizar o incidente',
             ],
         ],
+        'reported_by'              => 'Reported by :user',
         'add'                      => [
             'title'   => 'Relatar um incidente',
             'success' => 'Incidente adicionado.',

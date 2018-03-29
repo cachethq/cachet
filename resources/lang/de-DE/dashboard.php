@@ -35,6 +35,7 @@ return [
                 'failure' => 'Etwas ist mit dem Aktualisieren des Vorfall Updates schief gelaufen',
             ],
         ],
+        'reported_by'              => 'Gemeldet von :user',
         'add'                      => [
             'title'   => 'Ereignis hinzufügen',
             'success' => 'Ereignis hinzugefügt.',

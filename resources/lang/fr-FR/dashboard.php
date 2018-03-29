@@ -35,6 +35,7 @@ return [
                 'failure' => 'Un problème est survenu lors de la mise à jour de l\'incident',
             ],
         ],
+        'reported_by'              => 'Reported by :user',
         'add'                      => [
             'title'   => 'Ajouter un incident',
             'success' => 'Incident ajouté.',

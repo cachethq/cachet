@@ -81,7 +81,7 @@ return [
         'manage'      => [
             'no_subscriptions' => 'Je bent momenteel geabonneerd op alle updates.',
             'my_subscriptions' => 'Je bent momenteel geabonneerd op de volgende updates.',
-            'manage_at_link'   => 'Manage your subscriptions at :link',
+            'manage_at_link'   => 'Beheer uw abonnementen op: link',
         ],
         'email' => [
             'subscribe'          => 'Abonneren op e-mail updates.',

@@ -81,7 +81,7 @@ return [
         'manage'      => [
             'no_subscriptions' => 'Du abonner i øjeblikket på alle opdateringer.',
             'my_subscriptions' => 'Du abonnere i øjeblikket på følgende opdateringer.',
-            'manage_at_link'   => 'Manage your subscriptions at :link',
+            'manage_at_link'   => 'Håndtér dine abonnementer via :link',
         ],
         'email' => [
             'subscribe'          => 'Abonner på email opdateringer.',

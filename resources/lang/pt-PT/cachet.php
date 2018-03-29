@@ -33,7 +33,7 @@ return [
         'scheduled'    => 'Manutenção Agendada',
         'scheduled_at' => ', agendada :timestamp',
         'posted'       => 'Publicado :timestamp',
-        'posted_at'    => 'Posted at :timestamp',
+        'posted_at'    => 'Publicado em :timestamp',
         'status'       => [
             1 => 'Investigando',
             2 => 'Identificado',
@@ -81,7 +81,7 @@ return [
         'manage'      => [
             'no_subscriptions' => 'Actualmente está subscrito para todas as actualizações.',
             'my_subscriptions' => 'Actualmente está subscrito para as seguintes actualizações.',
-            'manage_at_link'   => 'Manage your subscriptions at :link',
+            'manage_at_link'   => 'Edite as suas subscrições aqui :link',
         ],
         'email' => [
             'subscribe'          => 'Subscrever actualizações via email.',

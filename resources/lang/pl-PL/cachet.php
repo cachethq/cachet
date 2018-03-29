@@ -81,7 +81,7 @@ return [
         'manage'      => [
             'no_subscriptions' => 'Jesteś obecnie zapisany na wszystkie aktualizacje.',
             'my_subscriptions' => 'Jesteś obecnie zapisany na poniższe aktualizacje.',
-            'manage_at_link'   => 'Manage your subscriptions at :link',
+            'manage_at_link'   => 'Zarządzaj swoją subskrypcją na :link',
         ],
         'email' => [
             'subscribe'          => 'Aktualisierungen per E-Mail abonnieren.',

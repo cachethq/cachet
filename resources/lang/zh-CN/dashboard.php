@@ -35,6 +35,7 @@ return [
                 'failure' => '修改故障更新时出现问题',
             ],
         ],
+        'reported_by'              => 'Reported by :user',
         'add'                      => [
             'title'   => '添加故障',
             'success' => '故障已添加',
