@@ -19,7 +19,6 @@ use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\Schedule;
 use CachetHQ\Cachet\Repositories\Metric\MetricRepository;
 use CachetHQ\Cachet\Services\Dates\DateFactory;
-use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -72,8 +71,8 @@ class StatusPageController extends AbstractApiController
                                        ->orderBy('occurred_at', 'desc')
                                        ->get()
                                        ->map(function (Incident $incident) {
-                                            return app(DateFactory::class)->make($incident->occurred_at)->toDateString();
-                                      })->unique()
+                                           return app(DateFactory::class)->make($incident->occurred_at)->toDateString();
+                                       })->unique()
                                       ->values();
 
             $numIncidentDays = count($allIncidentDays);
