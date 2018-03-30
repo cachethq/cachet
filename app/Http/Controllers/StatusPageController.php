@@ -45,7 +45,7 @@ class StatusPageController extends AbstractApiController
      */
     public function showIndex()
     {
-        $only_disrupted_days = Config::get('setting.only_disrupted_days');
+        $onlyDisruptedDays = Config::get('setting.only_disrupted_days');
         $appIncidentDays = (int) Config::get('setting.app_incident_days', 1);
 
         // Used for the database query
@@ -57,7 +57,7 @@ class StatusPageController extends AbstractApiController
         $previousDate = null;
         $nextDate = null;
 
-        if ($only_disrupted_days) {
+        if ($onlyDisruptedDays) {
             // In this case, start_date GET parameter means the page
             $page = Binput::get('start_date', 0);
 
@@ -121,7 +121,7 @@ class StatusPageController extends AbstractApiController
             return app(DateFactory::class)->make($incident->occurred_at)->toDateString();
         });
 
-        if (!$only_disrupted_days) {
+        if (!$onlyDisruptedDays) {
             $incidentDays = array_pad([], $appIncidentDays, null);
 
             // Add in days that have no incidents
