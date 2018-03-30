@@ -48,9 +48,8 @@ class StatusPageController extends AbstractApiController
         $onlyDisruptedDays = Config::get('setting.only_disrupted_days');
         $appIncidentDays = (int) Config::get('setting.app_incident_days', 1);
 
-        // Used for the database query
-        $startDate = Date::now();
-        $endDate = Date::now();
+        $startDate = Date::createFromFormat('Y-m-d', Binput::get('start_date', Date::now()->toDateString()));
+        $endDate = $startDate->copy()->subDays($appIncidentDays);
 
         $canPageForward = false;
         $canPageBackward = false;
@@ -68,9 +67,14 @@ class StatusPageController extends AbstractApiController
             $page = (int) $page;
 
             $allIncidentDays = Incident::where('visible', '>=', (int) !Auth::check())
-            ->select('occurred_at')->distinct()->orderBy('occurred_at', 'desc')->get()->map(function (Incident $incident) {
-                return app(DateFactory::class)->make($incident->occurred_at)->toDateString();
-            })->unique()->values();
+                                       ->select('occurred_at')
+                                       ->distinct()
+                                       ->orderBy('occurred_at', 'desc')
+                                       ->get()
+                                       ->map(function (Incident $incident) {
+                                            return app(DateFactory::class)->make($incident->occurred_at)->toDateString();
+                                      })->unique()
+                                      ->values();
 
             $numIncidentDays = count($allIncidentDays);
             $numPages = round($numIncidentDays / $appIncidentDays);
@@ -87,36 +91,17 @@ class StatusPageController extends AbstractApiController
             $previousDate = $page + 1;
             $nextDate = $page - 1;
         } else {
-            $today = Date::now();
             $date = Date::now();
 
-            // Check if we have another starting date
-            if (Binput::has('start_date')) {
-                try {
-                    // If date provided is valid
-                    $oldDate = Date::createFromFormat('Y-m-d', Binput::get('start_date'));
-
-                    // If trying to get a future date fallback to today
-                    if ($today->gt($oldDate)) {
-                        $date = $oldDate;
-                    }
-                } catch (Exception $e) {
-                    // Fallback to today
-                }
-            }
-
-            $startDate = $date->copy()->subDays($appIncidentDays);
-            $endDate = $date->copy();
-
-            $canPageForward = (bool) $today->gt($date);
+            $canPageForward = (bool) $startDate->gt($date);
             $canPageBackward = Incident::where('occurred_at', '<', $date->format('Y-m-d'))->count() > 0;
             $previousDate = $date->copy()->subDays($appIncidentDays)->toDateString();
             $nextDate = $date->copy()->addDays($appIncidentDays)->toDateString();
         }
 
         $allIncidents = Incident::where('visible', '>=', (int) !Auth::check())->whereBetween('occurred_at', [
-            $startDate->format('Y-m-d').' 00:00:00',
-            $endDate->format('Y-m-d').' 23:59:59',
+            $endDate->format('Y-m-d').' 00:00:00',
+            $startDate->format('Y-m-d').' 23:59:59',
         ])->orderBy('occurred_at', 'desc')->get()->groupBy(function (Incident $incident) {
             return app(DateFactory::class)->make($incident->occurred_at)->toDateString();
         });
