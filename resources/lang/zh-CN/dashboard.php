@@ -18,12 +18,12 @@ return [
     'incidents' => [
         'title'                    => '故障和维护计划',
         'incidents'                => '事件',
-        'logged'                   => '{0} 当前没有故障信息|您已经记录了一个故障|您已经报告了 <strong>:count</strong> 个故障',
+        'logged'                   => '{0} There are no incidents, good work.|[1]You have logged one incident.|[2,*]You have reported <strong>:count</strong> incidents.',
         'incident-create-template' => '创建模板',
         'incident-templates'       => '故障模板',
         'updates'                  => [
             'title'   => '关于 :incident 事件的更新',
-            'count'   => '{0} 无更新|[1] 一个更新|[2] 2个更新|[3,*] 多个更新',
+            'count'   => '{0}Zero Updates|[1]One Update|[2]Two Updates|[3,*]Several Updates',
             'add'     => [
                 'title'   => '添加故障更新',
                 'success' => '您已创建新的故障更新。',
@@ -75,7 +75,7 @@ return [
     // Incident Maintenance
     'schedule' => [
         'schedule'     => '计划维护',
-        'logged'       => '{0} 现在没有维护计划，好样的。|你已经记录下 1 个维护计划|你已经报告了 <strong>:count</strong> 个维护计划',
+        'logged'       => '{0}There has been no Maintenance, good work.|[1]You have logged one schedule.|[2,*]You have reported <strong>:count</strong> schedules.',
         'scheduled_at' => '计划在 :timestamp',
         'add'          => [
             'title'   => '添加维护计划',
