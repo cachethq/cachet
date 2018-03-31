@@ -18,12 +18,12 @@ return [
     'incidents' => [
         'title'                    => 'Incidentes & Agendamentos',
         'incidents'                => 'Incidentes',
-        'logged'                   => '{0} Não existem incidentes, bom trabalho.|[1] Você registrou um incidente.|[2,*] Você reportou <strong>:count</strong> incidentes.',
+        'logged'                   => '{0} There are no incidents, good work.|[1]You have logged one incident.|[2,*]You have reported <strong>:count</strong> incidents.',
         'incident-create-template' => 'Criar template',
         'incident-templates'       => 'Template de incidentes',
         'updates'                  => [
             'title'   => 'Atualizações para o incidente :incident',
-            'count'   => '{0} Zero Atualizações|[1] Uma Atualização|[2] Duas Atualizações|[3,*] Várias Atualizações',
+            'count'   => '{0}Zero Updates|[1]One Update|[2]Two Updates|[3,*]Several Updates',
             'add'     => [
                 'title'   => 'Crie uma nova atualização de incidente',
                 'success' => 'Seu novo incidente foi criado.',
@@ -75,7 +75,7 @@ return [
     // Incident Maintenance
     'schedule' => [
         'schedule'     => 'Manutenção',
-        'logged'       => '{0} Não existem agendamentos, bom trabalho.|[1] Você introduziu um agendamento.|[2,*] Você reportou <strong>:count</strong> agendamentos.',
+        'logged'       => '{0}There has been no Maintenance, good work.|[1]You have logged one schedule.|[2,*]You have reported <strong>:count</strong> schedules.',
         'scheduled_at' => 'Agendada em :timestamp',
         'add'          => [
             'title'   => 'Adicionar manutenção programada',
