@@ -18,12 +18,12 @@ return [
     'incidents' => [
         'title'                    => 'Incydenty i Konserwacja',
         'incidents'                => 'Vorfälle',
-        'logged'                   => '{0} Es gibt keine Vorfälle, gute Arbeit.|Du hast einen Vorfall gemeldet.|Du hast <strong>:count</strong> Vorfälle gemeldet.',
+        'logged'                   => '{0} There are no incidents, good work.|[1]You have logged one incident.|[2,*]You have reported <strong>:count</strong> incidents.',
         'incident-create-template' => 'Vorlage erstellen',
         'incident-templates'       => 'Vorfall Vorlagen',
         'updates'                  => [
             'title'   => 'Aktualizacje incydentu dla :incident',
-            'count'   => '{0} Zero Aktualizacji|[1] Jedna Aktualizacja|[2] Dwie Aktualizacje|[3,*] Kilka Aktualizacji',
+            'count'   => '{0}Zero Updates|[1]One Update|[2]Two Updates|[3,*]Several Updates',
             'add'     => [
                 'title'   => 'Utwórz nową aktualizację zdarzenia',
                 'success' => 'Twoja aktualizacja o nowym zdarzeniu została utworzona.',
@@ -75,7 +75,7 @@ return [
     // Incident Maintenance
     'schedule' => [
         'schedule'     => 'Konserwacja',
-        'logged'       => '{0} Nie ma żadnych harmonogramów, dobra robota.|Posiadasz jeden harmonogram.|Zgłoszono <strong>:count</strong> harmonogramów.',
+        'logged'       => '{0}There has been no Maintenance, good work.|[1]You have logged one schedule.|[2,*]You have reported <strong>:count</strong> schedules.',
         'scheduled_at' => 'Geplant am :timestamp',
         'add'          => [
             'title'   => 'Zaplanuj prace konserwatorskie',
