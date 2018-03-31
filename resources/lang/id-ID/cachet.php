@@ -53,7 +53,7 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1]Sistem operasional|[2,*] Semua sistem operasional',
+        'good'  => '[0,1]System operational|[2,*]All systems are operational',
         'bad'   => '[0,1]Sistem ini sedang mengalami masalah|[2,*]Beberapa sistem mengalami masalah',
         'major' => '[0,1]Sistem mengalami masalah besar|[2,*]Beberapa sistem mengalami masalah besar',
     ],
