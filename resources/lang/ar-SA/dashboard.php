@@ -18,12 +18,12 @@ return [
     'incidents' => [
         'title'                    => 'الأعطال و الصيانة',
         'incidents'                => 'الأعطال',
-        'logged'                   => '{0} There are no incidents, good work.|You have logged one incident.|You have reported <strong>:count</strong> incidents.',
+        'logged'                   => '{0} There are no incidents, good work.|[1]You have logged one incident.|[2,*]You have reported <strong>:count</strong> incidents.',
         'incident-create-template' => 'إنشاء قالب',
         'incident-templates'       => 'قوالب الأعطال',
         'updates'                  => [
             'title'   => 'تحديثات حالة العَطَل :incident',
-            'count'   => '{0} لا تحديث|[1] تحديث واحد|[2] تحديثين|[3,*] عدة تحديثات',
+            'count'   => '{0}Zero Updates|[1]One Update|[2]Two Updates|[3,*]Several Updates',
             'add'     => [
                 'title'   => 'إنشاء تحديث حالة جديد للعَطَل',
                 'success' => 'تم إنشاء الحالة الجديدة المتعلقة بالعَطَل.',
@@ -75,7 +75,7 @@ return [
     // Incident Maintenance
     'schedule' => [
         'schedule'     => 'صيانة',
-        'logged'       => '{0} There are no schedules, good work.|You have logged one schedule.|You have reported <strong>:count</strong> schedules.',
+        'logged'       => '{0}There has been no Maintenance, good work.|[1]You have logged one schedule.|[2,*]You have reported <strong>:count</strong> schedules.',
         'scheduled_at' => 'مُبرمَجة على :timestamp',
         'add'          => [
             'title'   => 'إضافة إجراء صيانة',
