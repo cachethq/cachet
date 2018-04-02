@@ -18,12 +18,12 @@ return [
     'incidents' => [
         'title'                    => 'Incidenty &amp; Plán',
         'incidents'                => 'Incidenty',
-        'logged'                   => '{0} Nejsou hlášeny žádné incidenty, dobrá práce. | Zapsali jste jeden incident. | Nahlásili jste <strong>:count</strong> incident(y).',
+        'logged'                   => '{0} There are no incidents, good work.|[1]You have logged one incident.|[2,*]You have reported <strong>:count</strong> incidents.',
         'incident-create-template' => 'Vytvořit šablonu',
         'incident-templates'       => 'Šablony incidentů',
         'updates'                  => [
             'title'   => 'Incident updates for :incident',
-            'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
+            'count'   => '{0}Zero Updates|[1]One Update|[2]Two Updates|[3,*]Several Updates',
             'add'     => [
                 'title'   => 'Vytvořit novou zprávu k události',
                 'success' => 'Your new incident update has been created.',
@@ -75,7 +75,7 @@ return [
     // Incident Maintenance
     'schedule' => [
         'schedule'     => 'Plánovaná odstávka',
-        'logged'       => '{0} Žádná údržba není v plánu, skvělá práce.|Je v plánu jedna údržba.|Je v plánu <strong>:count</strong> údržb.',
+        'logged'       => '{0}There has been no Maintenance, good work.|[1]You have logged one schedule.|[2,*]You have reported <strong>:count</strong> schedules.',
         'scheduled_at' => 'Naplánováno na :timestamp',
         'add'          => [
             'title'   => 'Přidat plánovanou údržbu',

@@ -53,7 +53,7 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] Sistem operaţional|[2,Inf] Toate sistemele sunt operaţionale',
+        'good'  => '[0,1]System operational|[2,*]All systems are operational',
         'bad'   => '[0,1] Sistemul se confruntă cu probleme|[2,Inf] Unele sisteme se confruntă cu probleme',
         'major' => '[0,1] Serviciul se confruntă cu o întrerupere a funcționării majoră| [2, Inf] Unele sisteme se confruntă cu întreruperi de funcţionare majore',
     ],

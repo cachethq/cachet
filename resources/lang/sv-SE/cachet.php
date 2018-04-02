@@ -53,7 +53,7 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] Systemet fungerar |[2,Inf] Alla system fungerar',
+        'good'  => '[0,1]System operational|[2,*]All systems are operational',
         'bad'   => '[0,1] Systemet har för närvarande problem|[2,Inf] Vissa system har problem',
         'major' => '[0,1] Stora störningar på tjänsten [2,Inf] Stora störningar på vissa system',
     ],

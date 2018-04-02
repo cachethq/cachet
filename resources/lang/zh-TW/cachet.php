@@ -53,7 +53,7 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] 系統運作正常|[2,Inf] 所有系統運作正常',
+        'good'  => '[0,1]System operational|[2,*]All systems are operational',
         'bad'   => '[0,1] 系統目前發生異常情形。|[2,Inf] 部分系統發生異常情形。',
         'major' => '[0,1] 一個系統出現重大故障|[2,Inf] 一些系統出現重大故障',
     ],

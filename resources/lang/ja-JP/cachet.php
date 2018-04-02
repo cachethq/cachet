@@ -53,7 +53,7 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '全システムが正常に稼動しています',
+        'good'  => '[0,1]System operational|[2,*]All systems are operational',
         'bad'   => '一部のシステムに問題が発生しています',
         'major' => 'システムに深刻な問題が発生しています',
     ],

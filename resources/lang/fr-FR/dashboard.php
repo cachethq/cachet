@@ -18,12 +18,12 @@ return [
     'incidents' => [
         'title'                    => 'Incidents &amp; Planification',
         'incidents'                => 'Incidents',
-        'logged'                   => '{0} Aucun incident, bon travail.|Vous avez un incident signalé.|Vous avez  <strong>:count</strong> incidents signalés.',
+        'logged'                   => '{0} There are no incidents, good work.|[1]You have logged one incident.|[2,*]You have reported <strong>:count</strong> incidents.',
         'incident-create-template' => 'Créer un modèle',
         'incident-templates'       => 'Modèles d\'incident',
         'updates'                  => [
             'title'   => 'Incident mis à jour pour : incident',
-            'count'   => '{0} Aucune mise à jour|[1] Une mise à jour|[2] Deux mises à jour|[3,*] Plusieurs mises à jour',
+            'count'   => '{0}Zero Updates|[1]One Update|[2]Two Updates|[3,*]Several Updates',
             'add'     => [
                 'title'   => 'Créer une mise à jour d\'incident',
                 'success' => 'Votre nouvelle mise à jour d\'incident a été créée.',
@@ -75,7 +75,7 @@ return [
     // Incident Maintenance
     'schedule' => [
         'schedule'     => 'Maintenance Planifiée',
-        'logged'       => '{0} Aucune maintenance en cours, félicitations.|Vous avez une maintenance planifiée.|Vous avez <strong>:count</strong> maintenances planifiées.',
+        'logged'       => '{0}There has been no Maintenance, good work.|[1]You have logged one schedule.|[2,*]You have reported <strong>:count</strong> schedules.',
         'scheduled_at' => 'Planifiée à :timestamp',
         'add'          => [
             'title'   => 'Ajouter une maintenance planifiée',

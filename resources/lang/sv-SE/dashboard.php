@@ -18,12 +18,12 @@ return [
     'incidents' => [
         'title'                    => 'Händelser &amp; Schema',
         'incidents'                => 'Händelser',
-        'logged'                   => '{0} Det finns inga händelser, bra jobbat!|Du har skapat en händelse.|Du har skapat <strong>:count</strong> händelser.',
+        'logged'                   => '{0} There are no incidents, good work.|[1]You have logged one incident.|[2,*]You have reported <strong>:count</strong> incidents.',
         'incident-create-template' => 'Skapa mall',
         'incident-templates'       => 'Händelsemallar',
         'updates'                  => [
             'title'   => 'Incident updates for :incident',
-            'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
+            'count'   => '{0}Zero Updates|[1]One Update|[2]Two Updates|[3,*]Several Updates',
             'add'     => [
                 'title'   => 'Skapa en ny incidentuppdatering',
                 'success' => 'Your new incident update has been created.',
@@ -75,7 +75,7 @@ return [
     // Incident Maintenance
     'schedule' => [
         'schedule'     => 'Planerat underhåll',
-        'logged'       => '{0} Det finns inget schemalagt, bra jobbat!|Du har skapat ett schemalagt underhåll.|Du har skapat <strong>:count</strong> schemalagda underhåll.',
+        'logged'       => '{0}There has been no Maintenance, good work.|[1]You have logged one schedule.|[2,*]You have reported <strong>:count</strong> schedules.',
         'scheduled_at' => 'Schemalagd till: tidsstämpel',
         'add'          => [
             'title'   => 'Lägg till planerat underhåll',

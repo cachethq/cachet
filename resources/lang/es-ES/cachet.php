@@ -53,7 +53,7 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] Sistema operativo | [2,Inf] Todos los sistemas están operativos',
+        'good'  => '[0,1]System operational|[2,*]All systems are operational',
         'bad'   => '[0,1] El sistema está actualmente experimentando problemas | [2,Inf] Algunos sistemas están experimentando problemas',
         'major' => '[0,1] El servicio está experimentando una interrupción mayor | [2, Inf] Algunos sistemas están experimentando una interrupción mayor',
     ],

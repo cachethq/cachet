@@ -53,7 +53,7 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] Rendszer üzemképes|[2,Inf] Az összes rendszer üzemképes',
+        'good'  => '[0,1]System operational|[2,*]All systems are operational',
         'bad'   => '[0,1] A rendszer problémát észlelt|[2,Inf] Több rendszer problémát észlelt',
         'major' => '[0,1] A szolgáltatás jelenleg nem elérhető|[2,Inf] Több szolgáltatás nem elérhető',
     ],

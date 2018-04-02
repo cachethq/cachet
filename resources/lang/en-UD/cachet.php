@@ -53,7 +53,7 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => 'crwdns1397:0crwdne1397:0',
+        'good'  => 'crwdns1437:0crwdne1437:0',
         'bad'   => 'crwdns1398:0crwdne1398:0',
         'major' => 'crwdns1399:0crwdne1399:0',
     ],
