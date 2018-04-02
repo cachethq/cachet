@@ -188,7 +188,7 @@ return [
             'background-fills'        => 'Pozadí výplně (komponenty, incidenty, zápatí)',
             'banner-background-color' => 'Barva pozadí banneru',
             'banner-padding'          => 'Odsazení banneru',
-            'fullwidth-banner'        => 'Povolit banner přes celou obrazovku?',
+            'fullwidth-banner'        => 'Enable full width banner?',
             'text-color'              => 'Barva textu',
             'dashboard-login'         => 'Zobrazit tlačítko Řídící panel v zápatí?',
             'reds'                    => 'Červená (používané pro chyby)',
