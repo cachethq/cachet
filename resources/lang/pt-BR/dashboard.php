@@ -18,7 +18,7 @@ return [
     'incidents' => [
         'title'                    => 'Incidentes & Agendamentos',
         'incidents'                => 'Incidentes',
-        'logged'                   => '{0} There are no incidents, good work.|[1]You have logged one incident.|[2,*]You have reported <strong>:count</strong> incidents.',
+        'logged'                   => '{0}There are no incidents, good work.|[1]You have logged one incident.|[2,*]You have reported <strong>:count</strong> incidents.',
         'incident-create-template' => 'Criar template',
         'incident-templates'       => 'Template de incidentes',
         'updates'                  => [
