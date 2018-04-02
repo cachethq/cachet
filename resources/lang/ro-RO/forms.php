@@ -188,7 +188,7 @@ return [
             'background-fills'        => 'Gradient Fundal (componente, incidente, subsol)',
             'banner-background-color' => 'Culoarea de fundal pentru banner',
             'banner-padding'          => 'Spaţiere banner',
-            'fullwidth-banner'        => 'Activaţi banner pe toată lăţimea paginii?',
+            'fullwidth-banner'        => 'Enable full width banner?',
             'text-color'              => 'Culoare Text',
             'dashboard-login'         => 'Arătaţi butonul Dashboard în subsol?',
             'reds'                    => 'Roşu (utilizat pentru mesaje de eroare)',
