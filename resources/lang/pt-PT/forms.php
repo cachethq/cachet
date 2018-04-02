@@ -188,7 +188,7 @@ return [
             'background-fills'        => 'Preenchimento de Fundo (Componentes, Incidentes, Rodapé)',
             'banner-background-color' => 'Cor de Fundo do banner',
             'banner-padding'          => 'Espaçamento do Banner',
-            'fullwidth-banner'        => 'Habilitar largura completa do banner?',
+            'fullwidth-banner'        => 'Enable full width banner?',
             'text-color'              => 'Cor do Texto',
             'dashboard-login'         => 'Mostrar botão para painel no rodapé?',
             'reds'                    => 'Vermelho (Usado para erros)',
