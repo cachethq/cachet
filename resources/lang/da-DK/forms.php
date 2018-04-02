@@ -188,7 +188,7 @@ return [
             'background-fills'        => 'Baggrundsfyld (Komponenter, hændelser og footer)',
             'banner-background-color' => 'Baggrundsfarve bag banneret',
             'banner-padding'          => 'Banner Padding',
-            'fullwidth-banner'        => 'Slå fuldbrede bannere til?',
+            'fullwidth-banner'        => 'Enable full width banner?',
             'text-color'              => 'Tekstfarve',
             'dashboard-login'         => 'Vis oversigtsside ikon i bunden af siden?',
             'reds'                    => 'Rød (Brugt til fejl)',
