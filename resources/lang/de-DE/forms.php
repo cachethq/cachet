@@ -188,7 +188,7 @@ return [
             'background-fills'        => 'Hintergrunddateien (Komponenten, Vorfälle, Footer)',
             'banner-background-color' => 'Banner Background Color',
             'banner-padding'          => 'Banner Padding',
-            'fullwidth-banner'        => 'Enable fullwidth banner?',
+            'fullwidth-banner'        => 'Enable full width banner?',
             'text-color'              => 'Schriftfarbe',
             'dashboard-login'         => 'Dashboard-Button im Footer anzeigen?',
             'reds'                    => 'Rot (Genutzt für Fehler)',
