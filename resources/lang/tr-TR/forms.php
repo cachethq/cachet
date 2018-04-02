@@ -188,7 +188,7 @@ return [
             'background-fills'        => 'Arka plan dolguları (bileşenler, olaylar, altbilgi)',
             'banner-background-color' => 'Afiş arka plan rengi',
             'banner-padding'          => 'Afiş dolgusu',
-            'fullwidth-banner'        => 'Tam genişlikli afiş etkinleştirilsin mi?',
+            'fullwidth-banner'        => 'Enable full width banner?',
             'text-color'              => 'Metin rengi',
             'dashboard-login'         => 'Altbilgide gösterge paneli butonunu mu gösteriyorsunuz?',
             'reds'                    => 'Kırmızı (hatalar için kullanılır)',
