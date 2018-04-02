@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Cachet\Models;
 
+use AltThree\TestBench\ValidationTrait;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -20,6 +21,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Taggable extends Model
 {
+    use ValidationTrait;
+
     /**
      * The attributes that should be casted to native types.
      *
@@ -41,6 +44,17 @@ class Taggable extends Model
         'tag_id',
         'taggable_id',
         'taggable_type',
+    ];
+
+    /**
+     * The validation rules.
+     *
+     * @var string[]
+     */
+    public $rules = [
+        'tag_id'        => 'required|int',
+        'taggable_id'   => 'required|int',
+        'taggable_type' => 'required|string',
     ];
 
     /**
