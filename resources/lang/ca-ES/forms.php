@@ -188,7 +188,7 @@ return [
             'background-fills'        => 'Elements del fons (components, incidents, peu de pàgina)',
             'banner-background-color' => 'Color de fons del banner',
             'banner-padding'          => 'Farciment (padding) del banner',
-            'fullwidth-banner'        => 'Habilitar la màxima amplada del banner?',
+            'fullwidth-banner'        => 'Enable full width banner?',
             'text-color'              => 'Color del text',
             'dashboard-login'         => 'Mostrar el botó del dashboard al peu de pàgina?',
             'reds'                    => 'Vermell (utilitzat per trobar errors)',
