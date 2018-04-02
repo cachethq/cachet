@@ -188,7 +188,7 @@ return [
             'background-fills'        => 'Wypełnianie tła (komponenty, zdarzenia, stopka)',
             'banner-background-color' => 'Kolor tła pod banerem',
             'banner-padding'          => 'Odstęp banera',
-            'fullwidth-banner'        => 'Czy wyświetlać baner na pełnej szerokości?',
+            'fullwidth-banner'        => 'Enable full width banner?',
             'text-color'              => 'Kolor tekstu',
             'dashboard-login'         => 'Pokazywać przycisk panelu głównego w stopce?',
             'reds'                    => 'Czerwony (używany przy błędach)',
