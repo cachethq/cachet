@@ -54,6 +54,7 @@ class AppServiceProvider extends ServiceProvider
             'metrics'    => \CachetHQ\Cachet\Models\Metric::class,
             'schedules'  => \CachetHQ\Cachet\Models\Schedule::class,
             'subscriber' => \CachetHQ\Cachet\Models\Subscriber::class,
+            'tags'       => \CachetHQ\Cachet\Models\Tag::class,
         ]);
     }
 
