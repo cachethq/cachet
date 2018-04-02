@@ -188,7 +188,7 @@ return [
             'background-fills'        => 'เติมพื้นหลัง (ส่วนประกอบ เหตุการณ์ ด่านล่างเว็บ)',
             'banner-background-color' => 'สีพื้นหลังของแบนเนอร์',
             'banner-padding'          => 'Padding ของแบนเนอร์',
-            'fullwidth-banner'        => 'เปิดใช้งานการแบนเนอร์เต็มความกว้าง',
+            'fullwidth-banner'        => 'Enable full width banner?',
             'text-color'              => 'สีตัวอักษร',
             'dashboard-login'         => 'แสดงปุ่มแดชบอร์ดที่ด่านล่างของหน้าเว็บ',
             'reds'                    => 'สีแดง (ใช้สำหรับข้อผิดพลาด)',
