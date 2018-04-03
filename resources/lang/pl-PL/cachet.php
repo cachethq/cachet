@@ -55,7 +55,7 @@ return [
     'service' => [
         'good'  => '[0,1]System działa poprawnie|[2,*]Wszystkie systemy działają poprawnie',
         'bad'   => '[0,1] W systemie występują problemy|[2,Inf] W niektórych systemach występują problemy',
-        'major' => '[0,1] W system występują poważne problemy|[2,Inf] W niektórych systemach występują poważne problemy',
+        'major' => '[0,1] W systemie występują poważne problemy|[2,Inf] W niektórych systemach występują poważne problemy',
     ],
 
     'api' => [
