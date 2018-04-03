@@ -72,10 +72,10 @@ return [
     */
 
     'headers' => [
-        Request::HEADER_CLIENT_IP    => 'X_FORWARDED_FOR',
-        Request::HEADER_CLIENT_HOST  => 'X_FORWARDED_HOST',
-        Request::HEADER_CLIENT_PROTO => 'X_FORWARDED_PROTO',
-        Request::HEADER_CLIENT_PORT  => 'X_FORWARDED_PORT',
+        Request::HEADER_CLIENT_IP    => 'HTTP_X_FORWARDED_FOR',
+        Request::HEADER_CLIENT_HOST  => 'HTTP_X_FORWARDED_HOST',
+        Request::HEADER_CLIENT_PROTO => 'HTTP_X_FORWARDED_PROTO',
+        Request::HEADER_CLIENT_PORT  => 'HTTP_X_FORWARDED_PORT',
     ],
 
 ];
