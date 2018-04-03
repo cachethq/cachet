@@ -18,7 +18,7 @@ return [
     'incidents' => [
         'title'                    => 'Інциденти & розклад',
         'incidents'                => 'Інциденти',
-        'logged'                   => '{0} There are no incidents, good work.|[1]You have logged one incident.|[2,*]You have reported <strong>:count</strong> incidents.',
+        'logged'                   => '{0}There are no incidents, good work.|[1]You have logged one incident.|[2,*]You have reported <strong>:count</strong> incidents.',
         'incident-create-template' => 'Створити шаблон',
         'incident-templates'       => 'Шаблони Інцидентів',
         'updates'                  => [

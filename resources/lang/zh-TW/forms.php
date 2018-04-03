@@ -188,7 +188,7 @@ return [
             'background-fills'        => '區塊填充色(組件, 事件, 頁尾)',
             'banner-background-color' => '横幅背景色',
             'banner-padding'          => '横幅Padding值',
-            'fullwidth-banner'        => '横幅全寬？',
+            'fullwidth-banner'        => 'Enable full width banner?',
             'text-color'              => 'Text color',
             'dashboard-login'         => '在頁尾顯示 管理後臺 的入口？',
             'reds'                    => '紅（用於錯誤類提示)',

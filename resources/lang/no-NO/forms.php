@@ -188,7 +188,7 @@ return [
             'background-fills'        => 'Bakgrunnsfyll (komponenter, hendelser, bunntekst)',
             'banner-background-color' => 'Banner bakgrunnsfarge',
             'banner-padding'          => 'Banner padding',
-            'fullwidth-banner'        => 'Aktiver fullbredde banner?',
+            'fullwidth-banner'        => 'Enable full width banner?',
             'text-color'              => 'Tekstfarge',
             'dashboard-login'         => 'Vis dashboardknappen i bunnteksten?',
             'reds'                    => 'Rød (brukes for feil)',

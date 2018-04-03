@@ -188,7 +188,7 @@ return [
             'background-fills'        => 'پس زمینه پر (کامپوننت‌ها، رویداد‌ها، پایین صفحه)',
             'banner-background-color' => 'رنگ پس‌زمینه بنر',
             'banner-padding'          => 'فاصله‌های بنر',
-            'fullwidth-banner'        => 'آیا بنر با پهنای کامل فعال شود؟',
+            'fullwidth-banner'        => 'Enable full width banner?',
             'text-color'              => 'رنگ متن',
             'dashboard-login'         => 'کلید داشبود در پایین صفحه نمایش داده شود؟',
             'reds'                    => 'قرمز (مورد استفاده برای خطاها)',

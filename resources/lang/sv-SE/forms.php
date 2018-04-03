@@ -188,7 +188,7 @@ return [
             'background-fills'        => 'Bakgrundsfärg (komponenter, händelser, sidfot)',
             'banner-background-color' => 'Bakgrundsfärg för banner',
             'banner-padding'          => 'Bannerutfyllnad',
-            'fullwidth-banner'        => 'Aktivera fullbreddsbanner?',
+            'fullwidth-banner'        => 'Enable full width banner?',
             'text-color'              => 'Textfärg',
             'dashboard-login'         => 'Visa länk till översiktspanelen i sidfoten?',
             'reds'                    => 'Röd (används för fel)',

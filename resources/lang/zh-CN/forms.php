@@ -188,7 +188,7 @@ return [
             'background-fills'        => '区块填充色(组件, 故障, 页尾)',
             'banner-background-color' => '横幅背景',
             'banner-padding'          => '横幅图像边距',
-            'fullwidth-banner'        => '启用全宽横幅？',
+            'fullwidth-banner'        => 'Enable full width banner?',
             'text-color'              => '文字颜色',
             'dashboard-login'         => '在页尾显示 管理后台 的入口？',
             'reds'                    => '红 (用于错误类提示)',

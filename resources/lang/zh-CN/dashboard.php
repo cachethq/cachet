@@ -18,7 +18,7 @@ return [
     'incidents' => [
         'title'                    => '故障和维护计划',
         'incidents'                => '事件',
-        'logged'                   => '{0} There are no incidents, good work.|[1]You have logged one incident.|[2,*]You have reported <strong>:count</strong> incidents.',
+        'logged'                   => '{0}There are no incidents, good work.|[1]You have logged one incident.|[2,*]You have reported <strong>:count</strong> incidents.',
         'incident-create-template' => '创建模板',
         'incident-templates'       => '故障模板',
         'updates'                  => [

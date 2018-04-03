@@ -188,7 +188,7 @@ return [
             'background-fills'        => 'Background fills (components, incidents, footer)',
             'banner-background-color' => 'Banner background color',
             'banner-padding'          => 'Banner padding',
-            'fullwidth-banner'        => 'Enable fullwidth banner?',
+            'fullwidth-banner'        => 'Enable full width banner?',
             'text-color'              => 'Text color',
             'dashboard-login'         => 'ダッシュボードページへのリンクをフッター部分に表示しますか？',
             'reds'                    => 'レッド（エラー表示に使用されます）',

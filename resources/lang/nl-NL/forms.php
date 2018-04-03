@@ -188,7 +188,7 @@ return [
             'background-fills'        => 'Achtergrond opvulling (components, incidents, footer)',
             'banner-background-color' => 'Banner achtergrond kleur',
             'banner-padding'          => 'Banner padding',
-            'fullwidth-banner'        => 'Volledige breedte van de banner aanzetten?',
+            'fullwidth-banner'        => 'Enable full width banner?',
             'text-color'              => 'Tekstkleur',
             'dashboard-login'         => 'Laat dashboard knop zien in de footer?',
             'reds'                    => 'Rood (voor errors)',

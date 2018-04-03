@@ -188,7 +188,7 @@ return [
             'background-fills'        => 'Background fills (components, incidents, footer)',
             'banner-background-color' => 'Banner Background Color',
             'banner-padding'          => 'Banner Padding',
-            'fullwidth-banner'        => 'Enable fullwidth banner?',
+            'fullwidth-banner'        => 'Enable full width banner?',
             'text-color'              => '글자 색',
             'dashboard-login'         => 'Show dashboard button in the footer?',
             'reds'                    => '빨강 (에러에 사용됨)',

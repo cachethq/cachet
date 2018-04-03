@@ -188,7 +188,7 @@ return [
             'background-fills'        => 'Relleno del fondo (componentes, incidentes, pie)',
             'banner-background-color' => 'Color de fondo del banner',
             'banner-padding'          => 'Padding del banner',
-            'fullwidth-banner'        => '¿Habilitar banner de ancho completo?',
+            'fullwidth-banner'        => 'Enable full width banner?',
             'text-color'              => 'Color del texto',
             'dashboard-login'         => '¿Mostrar el botón de Panel de Control en el pie?',
             'reds'                    => 'Rojo (usado para errores)',

@@ -18,7 +18,7 @@ return [
     'incidents' => [
         'title'                    => 'Olaylar &amp; Zamanlama',
         'incidents'                => 'Olaylar',
-        'logged'                   => '{0} There are no incidents, good work.|[1]You have logged one incident.|[2,*]You have reported <strong>:count</strong> incidents.',
+        'logged'                   => '{0}There are no incidents, good work.|[1]You have logged one incident.|[2,*]You have reported <strong>:count</strong> incidents.',
         'incident-create-template' => 'Şablon Oluştur',
         'incident-templates'       => 'Olay Şablonları',
         'updates'                  => [

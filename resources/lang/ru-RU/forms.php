@@ -188,7 +188,7 @@ return [
             'background-fills'        => 'Заливка фона (компоненты, инциденты, «подвал»)',
             'banner-background-color' => 'Цвет фона для баннера',
             'banner-padding'          => 'Отступы баннера',
-            'fullwidth-banner'        => 'Включить баннер на всю ширину?',
+            'fullwidth-banner'        => 'Enable full width banner?',
             'text-color'              => 'Цвет текста',
             'dashboard-login'         => 'Отображать кнопку панели управления в «подвале»?',
             'reds'                    => 'Красный (для ошибок)',

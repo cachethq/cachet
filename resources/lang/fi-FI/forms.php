@@ -188,7 +188,7 @@ return [
             'background-fills'        => 'Taustaväri (komponentit, tapaukset, alatunniste)',
             'banner-background-color' => 'Bannerin taustaväri',
             'banner-padding'          => 'Bannerin tyhjä tila',
-            'fullwidth-banner'        => 'Käytetäänkö täyslevyistä banneria?',
+            'fullwidth-banner'        => 'Enable full width banner?',
             'text-color'              => 'Tekstin väri',
             'dashboard-login'         => 'Näytetäänkö hallintanäkymän linkki alatunnisteessa?',
             'reds'                    => 'Punainen (virheilmoituksia varten)',

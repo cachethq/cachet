@@ -188,7 +188,7 @@ return [
             'background-fills'        => 'Couleur de remplissage de l\'arrière-plan (composants, incidents, pied de page)',
             'banner-background-color' => 'Couleur d\'arrière-plan de l\'en-tête',
             'banner-padding'          => 'Marge de l\'en-tête',
-            'fullwidth-banner'        => 'Activer l\'en-tête en pleine largeur ?',
+            'fullwidth-banner'        => 'Enable full width banner?',
             'text-color'              => 'Couleur du texte',
             'dashboard-login'         => 'Afficher le bouton "Tableau de bord" dans le pied de page ?',
             'reds'                    => 'Rouge (utilisé pour les erreurs)',

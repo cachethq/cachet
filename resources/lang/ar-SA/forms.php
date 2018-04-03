@@ -188,7 +188,7 @@ return [
             'background-fills'        => 'Background fills (components, incidents, footer)',
             'banner-background-color' => 'Banner background color',
             'banner-padding'          => 'Banner padding',
-            'fullwidth-banner'        => 'Enable fullwidth banner?',
+            'fullwidth-banner'        => 'Enable full width banner?',
             'text-color'              => 'لون النص',
             'dashboard-login'         => 'Show dashboard button in the footer?',
             'reds'                    => 'الأحمر (يُستخدَم للأخطاء)',

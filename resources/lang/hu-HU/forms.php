@@ -188,7 +188,7 @@ return [
             'background-fills'        => 'Háttérszín kitöltés (komponensek, incidensek, lábjegyzet)',
             'banner-background-color' => 'Banner háttérszín',
             'banner-padding'          => 'Banner margó',
-            'fullwidth-banner'        => 'Teljes szélességű banner?',
+            'fullwidth-banner'        => 'Enable full width banner?',
             'text-color'              => 'Szöveg szín',
             'dashboard-login'         => 'Műszerfal gomb megjelenítése a lábjegyzetben?',
             'reds'                    => 'Piros (hibáknál)',

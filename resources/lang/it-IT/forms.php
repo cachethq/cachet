@@ -188,7 +188,7 @@ return [
             'background-fills'        => 'Riempimento sfondo (componenti, segnalazioni, footer)',
             'banner-background-color' => 'Colore di sfondo del banner',
             'banner-padding'          => 'Padding del banner',
-            'fullwidth-banner'        => 'Abilitare banner a piena larghezza?',
+            'fullwidth-banner'        => 'Enable full width banner?',
             'text-color'              => 'Colore del testo',
             'dashboard-login'         => 'Mostrare pulsante del pannello amministrativo nel footer?',
             'reds'                    => 'Rosso (utilizzato per gli errori)',

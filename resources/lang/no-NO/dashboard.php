@@ -18,7 +18,7 @@ return [
     'incidents' => [
         'title'                    => 'Hendelser &amp; Tidsplan',
         'incidents'                => 'Hendelser',
-        'logged'                   => '{0} There are no incidents, good work.|[1]You have logged one incident.|[2,*]You have reported <strong>:count</strong> incidents.',
+        'logged'                   => '{0}There are no incidents, good work.|[1]You have logged one incident.|[2,*]You have reported <strong>:count</strong> incidents.',
         'incident-create-template' => 'Opprett mal',
         'incident-templates'       => 'Hendelsesmaler',
         'updates'                  => [
