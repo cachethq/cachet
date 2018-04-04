@@ -59,7 +59,7 @@ trait StoresMeta
     /**
      * Determine if a Value is empty.
      *
-     * @param $values
+     * @param mixed $values
      *
      * @return array|mixed
      */
