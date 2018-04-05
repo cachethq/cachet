@@ -13,7 +13,13 @@ namespace CachetHQ\Cachet\Foundation\Providers;
 
 use Barryvdh\Cors\HandleCors;
 use CachetHQ\Cachet\Http\Middleware\Acceptable;
+use CachetHQ\Cachet\Http\Middleware\Authenticate;
 use CachetHQ\Cachet\Http\Middleware\Timezone;
+use CachetHQ\Cachet\Http\Routes\ApiSystemRoutes;
+use CachetHQ\Cachet\Http\Routes\AuthRoutes;
+use CachetHQ\Cachet\Http\Routes\Setup\ApiRoutes as ApiSetupRoutes;
+use CachetHQ\Cachet\Http\Routes\SetupRoutes;
+use CachetHQ\Cachet\Http\Routes\SignupRoutes;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
@@ -40,6 +46,21 @@ class RouteServiceProvider extends ServiceProvider
      * @var string
      */
     protected $namespace = 'CachetHQ\Cachet\Http\Controllers';
+
+    /**
+     * These are the route files that should always be available anonymously.
+     *
+     * When applying the always_authenticate feature, these routes will be skipped.
+     *
+     * @var string[]
+     */
+    protected $whitelistedAuthRoutes = [
+        AuthRoutes::class,
+        SetupRoutes::class,
+        SignupRoutes::class,
+        ApiSystemRoutes::class,
+        ApiSetupRoutes::class,
+    ];
 
     /**
      * Define the route model bindings, pattern filters, etc.
@@ -89,6 +110,7 @@ class RouteServiceProvider extends ServiceProvider
         $router->group(['namespace' => $this->namespace, 'as' => 'core::'], function (Router $router) {
             $path = app_path('Http/Routes');
 
+            $applyAlwaysAuthenticate = $this->app['config']->get('setting.always_authenticate', false);
             $AllFileIterator = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($path));
             $PhpFileIterator = new \RegexIterator($AllFileIterator, '/^.+\.php$/i', \RecursiveRegexIterator::GET_MATCH);
 
@@ -100,9 +122,9 @@ class RouteServiceProvider extends ServiceProvider
                 $routes = $this->app->make("CachetHQ\\Cachet\\Http\\Routes${class}");
 
                 if ($routes::$browser) {
-                    $this->mapForBrowser($router, $routes);
+                    $this->mapForBrowser($router, $routes, $applyAlwaysAuthenticate);
                 } else {
-                    $this->mapOtherwise($router, $routes);
+                    $this->mapOtherwise($router, $routes, $applyAlwaysAuthenticate);
                 }
             }
         });
@@ -113,10 +135,11 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @param \Illuminate\Routing\Router $router
      * @param object                     $routes
+     * @param bool                       $applyAlwaysAuthenticate
      *
      * @return void
      */
-    protected function mapForBrowser(Router $router, $routes)
+    protected function mapForBrowser(Router $router, $routes, $applyAlwaysAuthenticate)
     {
         $middleware = [
             EncryptCookies::class,
@@ -126,6 +149,10 @@ class RouteServiceProvider extends ServiceProvider
             VerifyCsrfToken::class,
             SubstituteBindings::class,
         ];
+
+        if ($applyAlwaysAuthenticate && !$this->isWhiteListedAuthRoute($routes)) {
+            $middleware[] = Authenticate::class;
+        }
 
         $router->group(['middleware' => $middleware], function (Router $router) use ($routes) {
             $routes->map($router);
@@ -137,10 +164,11 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @param \Illuminate\Routing\Router $router
      * @param object                     $routes
+     * @param bool                       $applyAlwaysAuthenticate
      *
      * @return void
      */
-    protected function mapOtherwise(Router $router, $routes)
+    protected function mapOtherwise(Router $router, $routes, $applyAlwaysAuthenticate)
     {
         $middleware = [
             HandleCors::class,
@@ -149,8 +177,31 @@ class RouteServiceProvider extends ServiceProvider
             Timezone::class,
         ];
 
+        if ($applyAlwaysAuthenticate && !$this->isWhiteListedAuthRoute($routes)) {
+            $middleware[] = 'auth.api:true';
+        }
+
         $router->group(['middleware' => $middleware], function (Router $router) use ($routes) {
             $routes->map($router);
         });
+    }
+
+    /**
+     * Validates if the route object is an instance of the whitelisted routes.
+     * A small workaround since we cant use multiple classes in a `instanceof` comparison.
+     *
+     * @param object $routes
+     *
+     * @return bool
+     */
+    private function isWhiteListedAuthRoute($routes)
+    {
+        foreach ($this->whitelistedAuthRoutes as $whitelistedRoute) {
+            if (is_a($routes, $whitelistedRoute)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

@@ -36,11 +36,13 @@
                 <div class="form-group">
                     <div class="row">
                         <div class="col-xs-2">
+                            @if(!config('setting.always_authenticate', false))
                             <a class="btn btn-default btn-lg btn-trans" href="{{ cachet_route('status-page') }}">
                                 <span class="text-center">
                                     <i class="ion ion-home"></i>
                                 </span>
                             </a>
+                            @endif
                         </div>
                         <div class="col-xs-9 col-xs-push-1">
                             <button type="submit" class="btn btn-success btn-lg btn-block btn-trans">{{ trans('dashboard.login.login') }}</button>
