@@ -92,4 +92,14 @@ class PgSqlRepository extends AbstractMetricRepository implements MetricInterfac
 
         return $this->mapResults($metric, $points);
     }
+
+    /**
+     * Return the percentile query.
+     *
+     * @return string
+     */
+    protected function getPercentileQuery()
+    {
+        return "percentile_disc(0.99) WITHIN GROUP (ORDER BY {$this->getMetricPointsTable()}.value) ";
+    }
 }

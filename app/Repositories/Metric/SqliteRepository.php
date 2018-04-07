@@ -31,19 +31,7 @@ class SqliteRepository extends AbstractMetricRepository implements MetricInterfa
      */
     public function getPointsSinceMinutes(Metric $metric, $minutes)
     {
-        $queryType = $this->getQueryType($metric);
-        $points = DB::select("SELECT strftime('%Y-%m-%d %H:%M', {$this->getMetricPointsTable()}.`created_at`) AS `key`, {$queryType} ".
-            "FROM {$this->getMetricsTable()} ".
-            "INNER JOIN {$this->getMetricPointsTable()} ON {$this->getMetricsTable()}.id = {$this->getMetricPointsTable()}.metric_id ".
-            "WHERE {$this->getMetricsTable()}.id = :metricId ".
-            "AND {$this->getMetricPointsTable()}.`created_at` >= datetime('now', 'localtime', '-{$minutes} minutes') ".
-            "AND {$this->getMetricPointsTable()}.`created_at` <= datetime('now', 'localtime') ".
-            "GROUP BY strftime('%H', {$this->getMetricPointsTable()}.`created_at`), strftime('%M', {$this->getMetricPointsTable()}.`created_at`) ".
-            "ORDER BY {$this->getMetricPointsTable()}.`created_at`", [
-            'metricId' => $metric->id,
-        ]);
-
-        return $this->mapResults($metric, $points);
+        return $this->getPointsSince($metric, $minutes, 'minutes', '%Y-%m-%d %H:%M');
     }
 
     /**
@@ -56,17 +44,7 @@ class SqliteRepository extends AbstractMetricRepository implements MetricInterfa
      */
     public function getPointsSinceHour(Metric $metric, $hour)
     {
-        $queryType = $this->getQueryType($metric);
-        $points = DB::select("SELECT strftime('%Y-%m-%d %H:00', {$this->getMetricPointsTable()}.`created_at`) AS `key`, {$queryType} ".
-            "FROM {$this->getMetricsTable()} INNER JOIN {$this->getMetricPointsTable()} ON {$this->getMetricsTable()}.id = {$this->getMetricPointsTable()}.metric_id ".
-            "WHERE {$this->getMetricsTable()}.id = :metricId ".
-            "AND {$this->getMetricPointsTable()}.`created_at` >= datetime('now', 'localtime', '-{$hour} hours') ".
-            "AND {$this->getMetricPointsTable()}.`created_at` <= datetime('now', 'localtime') ".
-            "GROUP BY strftime('%H', {$this->getMetricPointsTable()}.`created_at`) ORDER BY {$this->getMetricPointsTable()}.`created_at`", [
-            'metricId' => $metric->id,
-        ]);
-
-        return $this->mapResults($metric, $points);
+        return $this->getPointsSince($metric, $hour, 'hours', '%Y-%m-%d %H:00');
     }
 
     /**
@@ -79,17 +57,57 @@ class SqliteRepository extends AbstractMetricRepository implements MetricInterfa
      */
     public function getPointsSinceDay(Metric $metric, $day)
     {
-        $queryType = $this->getQueryType($metric);
-        $points = DB::select("SELECT strftime('%Y-%m-%d', {$this->getMetricPointsTable()}.`created_at`) AS `key`, {$queryType} ".
-            "FROM {$this->getMetricsTable()} INNER JOIN {$this->getMetricPointsTable()} ON {$this->getMetricsTable()}.id = {$this->getMetricPointsTable()}.metric_id ".
-            "WHERE {$this->getMetricsTable()}.id = :metricId ".
-            "AND {$this->getMetricPointsTable()}.`created_at` >= datetime('now', 'localtime', '-{$day} days') ".
-            "AND {$this->getMetricPointsTable()}.`created_at` <= datetime('now', 'localtime') ".
-            "GROUP BY DATE({$this->getMetricPointsTable()}.`created_at`) ".
-            "ORDER BY {$this->getMetricPointsTable()}.`created_at`", [
-            'metricId' => $metric->id,
-        ]);
+        return $this->getPointsSince($metric, $day, 'days', '%Y-%m-%d');
+    }
 
-        return $this->mapResults($metric, $points);
+    /**
+     * Returns metrics since given day.
+     *
+     * @param \CachetHQ\Cachet\Models\Metric $metric
+     * @param int                            $time
+     * @param string                         $timeUnit
+     * @param string                         $timeFormat
+     *
+     * @return \Illuminate\Support\Collection
+     */
+    private function getPointsSince(Metric $metric, $time, $timeUnit, $timeFormat)
+    {
+        if ($metric->calc_type == Metric::CALC_PERCENTILE) {
+            $points = [];
+            for ($i = 0; $i <= $time; $i++) {
+                $points = array_merge($points, DB::select("WITH points AS (SELECT * FROM {$this->getMetricPointsTable()} ".
+                    "WHERE {$this->getMetricPointsTable()}.metric_id = :metricId ".
+                    "AND strftime('{$timeFormat}', {$this->getMetricPointsTable()}.`created_at`) = strftime('{$timeFormat}', 'now', 'localtime', '-{$i} {$timeUnit}')) ".
+                    "SELECT strftime('{$timeFormat}', points.`created_at`) AS `key`, points.value AS value FROM points ".
+                    'ORDER BY value '.
+                    'LIMIT 1 OFFSET (SELECT COUNT(*) FROM points) * 99 / 100 - 1',
+                    ['metricId' => $metric->id]
+                ));
+            }
+
+            return $this->mapResults($metric, $points);
+        } else {
+            $queryType = $this->getQueryType($metric);
+            $points = DB::select("SELECT strftime('{$timeFormat}', {$this->getMetricPointsTable()}.`created_at`) AS `key`, {$queryType} ".
+                "FROM {$this->getMetricPointsTable()} ".
+                "WHERE {$this->getMetricPointsTable()}.metric_id = :metricId ".
+                "AND {$this->getMetricPointsTable()}.`created_at` >= datetime('now', 'localtime', '-{$time} {$timeUnit}') ".
+                "AND {$this->getMetricPointsTable()}.`created_at` <= datetime('now', 'localtime') ".
+                "GROUP BY strftime('{$timeFormat}', {$this->getMetricPointsTable()}.`created_at`) ".
+                "ORDER BY {$this->getMetricPointsTable()}.`created_at`", [
+                'metricId' => $metric->id,
+            ]);
+
+            return $this->mapResults($metric, $points);
+        }
+    }
+
+    /**
+     * Return the percentile query.
+     *
+     * @return string
+     */
+    protected function getPercentileQuery()
+    {
     }
 }

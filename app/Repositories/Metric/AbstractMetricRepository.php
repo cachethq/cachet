@@ -86,10 +86,19 @@ abstract class AbstractMetricRepository
             return "sum({$this->getMetricPointsTable()}.value * {$this->getMetricPointsTable()}.counter) AS value";
         } elseif ($metric->calc_type == Metric::CALC_AVG) {
             return "avg({$this->getMetricPointsTable()}.value) AS value";
+        } elseif ($metric->calc_type == Metric::CALC_PERCENTILE) {
+            return $this->getPercentileQuery();
         } else {
             return "sum({$this->getMetricPointsTable()}.value * {$this->getMetricPointsTable()}.counter) AS value";
         }
     }
+
+    /**
+     * Return the percentile query.
+     *
+     * @return string
+     */
+    abstract protected function getPercentileQuery();
 
     /**
      * Map the result set.

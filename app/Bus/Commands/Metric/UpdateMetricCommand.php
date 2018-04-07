@@ -109,7 +109,7 @@ final class UpdateMetricCommand
         'suffix'        => 'nullable|string',
         'description'   => 'nullable|string',
         'default_value' => 'nullable|numeric',
-        'calc_type'     => 'nullable|int|in:0,1',
+        'calc_type'     => 'nullable|int|between:0,2',
         'display_chart' => 'nullable|int',
         'places'        => 'nullable|numeric|between:0,4',
         'default_view'  => 'nullable|numeric|between:0,4',

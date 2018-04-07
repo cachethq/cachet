@@ -36,6 +36,7 @@
                         <select name="metric[calc_type]" class="form-control" required>
                             <option value="0" selected>{{ trans('forms.metrics.type_sum') }}</option>
                             <option value="1">{{ trans('forms.metrics.type_avg') }}</option>
+                            <option value="2">{{ trans('forms.metrics.type_percentile') }}</option>
                         </select>
                     </div>
                     <div class="form-group">

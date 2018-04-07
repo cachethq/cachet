@@ -39,6 +39,13 @@ class Metric extends Model implements HasPresenter
     const CALC_AVG = 1;
 
     /**
+     * The calculation type of the 99th percentile.
+     *
+     * @var int
+     */
+    const CALC_PERCENTILE = 2;
+
+    /**
      * Viewable only authenticated users.
      *
      * @var int

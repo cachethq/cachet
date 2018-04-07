@@ -94,4 +94,19 @@ class MySqlRepository extends AbstractMetricRepository implements MetricInterfac
 
         return $this->mapResults($metric, $points);
     }
+
+    /**
+     * Return the percentile query.
+     *
+     * @return string
+     */
+    protected function getPercentileQuery()
+    {
+        return 'SUBSTRING_INDEX('.
+            'SUBSTRING_INDEX('.
+                "GROUP_CONCAT({$this->getMetricPointsTable()}.value ORDER BY {$this->getMetricPointsTable()}.value SEPARATOR ','),".
+                "',', 99/100 * COUNT(*) + 1),".
+            "',', -1)".
+        'AS value ';
+    }
 }

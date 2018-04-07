@@ -131,6 +131,7 @@ return [
         'calc_type'                => 'Berekening van de metingen',
         'type_sum'                 => 'Som',
         'type_avg'                 => 'Gemiddelde',
+        'type_percentile'          => '99ste percentiel',
         'places'                   => 'Decimalen',
         'default_view'             => 'Standaardweergave',
         'threshold'                => 'Hoeveel minuten tussen de metrische punten?',

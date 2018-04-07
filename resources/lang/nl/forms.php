@@ -87,6 +87,7 @@ return [
         'default-value'    => 'Standaardwaarde',
         'calc_type'        => 'Berekening van de metingen',
         'type_sum'         => 'Som',
+        'type_percentile'  => '99ste percentiel',
         'type_avg'         => 'Gemiddelde',
         'places'           => 'Decimalen',
         'default_view'     => 'Standaardweergave',
