@@ -147,11 +147,11 @@ class Component extends Model implements HasPresenter
     /**
      * Get the tags relation.
      *
-     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
+     * @return \Illuminate\Database\Eloquent\Relations\MorphToMany
      */
     public function tags()
     {
-        return $this->morphMany(Taggable::class, 'taggable');
+        return $this->morphToMany(Taggable::class, 'taggable');
     }
 
     /**
