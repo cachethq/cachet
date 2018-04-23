@@ -357,6 +357,14 @@ class SettingsController extends Controller
             }
         }
 
+        if (isset($parameters['stylesheet'])) {
+            if ($stylesheet = Binput::get('stylesheet', null, false, false)) {
+                $setting->set('stylesheet', $stylesheet);
+            } else {
+                $setting->delete('stylesheet');
+            }
+        }
+
         if (Binput::hasFile('app_banner')) {
             $this->handleUpdateBanner($setting);
         }
@@ -367,6 +375,7 @@ class SettingsController extends Controller
             'remove_banner',
             'header',
             'footer',
+            'stylesheet',
         ];
 
         try {
