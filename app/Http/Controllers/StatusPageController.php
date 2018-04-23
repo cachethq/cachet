@@ -85,8 +85,8 @@ class StatusPageController extends AbstractApiController
             $selectedDays = $allIncidentDays->slice($page * $appIncidentDays, $appIncidentDays)->all();
 
             if (count($selectedDays) > 0) {
-                $startDate = Date::createFromFormat('Y-m-d', array_values(array_slice($selectedDays, -1))[0]);
-                $endDate = Date::createFromFormat('Y-m-d', array_values($selectedDays)[0]);
+                $startDate = Date::createFromFormat('Y-m-d', array_values($selectedDays)[0]);
+                $endDate = Date::createFromFormat('Y-m-d', array_values(array_slice($selectedDays, -1))[0]);
             }
 
             $canPageForward = $page > 0;
