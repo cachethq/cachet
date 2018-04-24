@@ -73,6 +73,20 @@ if (!function_exists('formatted_date')) {
     }
 }
 
+if (!function_exists('day_of_week')) {
+    /**
+     * Returns index of the day of the week.
+     *
+     * @param string $date
+     *
+     * @return \Jenssegers\Date\Date
+     */
+    function day_of_week($date)
+    {
+        return (new Date($date))->format('N');
+    }
+}
+
 if (!function_exists('color_darken')) {
     /**
      * Darken a color.
