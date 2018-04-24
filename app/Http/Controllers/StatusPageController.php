@@ -67,6 +67,10 @@ class StatusPageController extends AbstractApiController
 
             $allIncidentDays = Incident::where('visible', '>=', (int) !Auth::check())
                                        ->select('occurred_at')
+                                       ->whereBetween('occurred_at', [
+                                           $endDate->format('Y-m-d').' 00:00:00',
+                                           $startDate->format('Y-m-d').' 23:59:59',
+                                       ])
                                        ->distinct()
                                        ->orderBy('occurred_at', 'desc')
                                        ->get()
@@ -81,8 +85,8 @@ class StatusPageController extends AbstractApiController
             $selectedDays = $allIncidentDays->slice($page * $appIncidentDays, $appIncidentDays)->all();
 
             if (count($selectedDays) > 0) {
-                $startDate = Date::createFromFormat('Y-m-d', array_values(array_slice($selectedDays, -1))[0]);
-                $endDate = Date::createFromFormat('Y-m-d', array_values($selectedDays)[0]);
+                $startDate = Date::createFromFormat('Y-m-d', array_values($selectedDays)[0]);
+                $endDate = Date::createFromFormat('Y-m-d', array_values(array_slice($selectedDays, -1))[0]);
             }
 
             $canPageForward = $page > 0;
