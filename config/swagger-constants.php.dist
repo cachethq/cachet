@@ -1,0 +1,3 @@
+<?php
+
+define('API_HOST', 'status.mycompany.com');

@@ -189,10 +189,9 @@ return [
         Jenssegers\Date\DateServiceProvider::class,
         Laravel\Tinker\TinkerServiceProvider::class,
         Laravolt\Avatar\ServiceProvider::class,
-        McCool\LaravelAutoPresenter\AutoPresenterServiceProvider::class,
         PragmaRX\Google2FA\Vendor\Laravel\ServiceProvider::class,
         Roumen\Feed\FeedServiceProvider::class,
-        Mpociot\ApiDoc\ApiDocGeneratorServiceProvider::class,
+        L5Swagger\L5SwaggerServiceProvider::class,
 
         /*
          * Application Service Providers...

@@ -10,3 +10,5 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 .env
+config/swagger-constants.php
+storage/api-docs/

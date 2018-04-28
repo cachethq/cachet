@@ -37,6 +37,7 @@
         "aws/aws-sdk-php": "^3.7",
         "backup-manager/laravel": "dev-master#df53f9c9d8c6be5d7a2638f45d54b8fb7bc51e2b",
         "barryvdh/laravel-cors": "^0.8",
+        "darkaonline/l5-swagger": "~4.0",
         "doctrine/dbal": "2.5.13",
         "fideloper/proxy": "^3.1",
         "graham-campbell/binput": "^3.5",
@@ -48,13 +49,11 @@
         "laravel/framework": "^5.4",
         "laravel/tinker": "^1.0",
         "laravolt/avatar": "^1.8",
-        "mccool/laravel-auto-presenter": "^5.0",
         "nexmo/client": "@beta",
         "pragmarx/google2fa": "^0.7.1",
         "predis/predis": "^1.1",
         "roumen/feed": "^2.10",
-        "twig/twig": "^1.26.1",
-        "mpociot/laravel-apidoc-generator": "2.0"
+        "twig/twig": "^1.26.1"
     },
     "require-dev": {
         "ext-sqlite3": "*",

@@ -19,6 +19,17 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Response;
 use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
 
+/**
+ * @SWG\Swagger(
+ *   schemes={"https", "http"},
+ *   host="example.com",
+ *   basePath="/api/v1",
+ *   @SWG\Info(
+ *     title="Cachet API",
+ *     version="1.0.0"
+ *   )
+ * )
+ */
 abstract class AbstractApiController extends Controller
 {
     /**

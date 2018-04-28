@@ -32,12 +32,56 @@ class ComponentController extends AbstractApiController
     /**
      * Get all components.
      *
-     * The following searchable keys are available:
-     * - `id`
-     * - `name`
-     * - `status`
-     * - `group_id`
-     * - `enabled`
+     * @SWG\Get(
+     *   path="/components",
+     *   summary="List all components",
+     *   operationId="index",
+     *   tags={"Components"},
+     *   produces={"application/json"}, 
+     *   @SWG\Parameter(
+     *      description="ID of the component to filter",
+     *      in="query",
+     *      name="id",
+     *      required=false,
+     *      type="integer",
+     *      format="int64"
+     *   ),
+     *   @SWG\Parameter(
+     *      description="Name of the components to filter",
+     *      in="query",
+     *      name="name",
+     *      required=false,
+     *      type="string"
+     *   ),
+     *   @SWG\Parameter(
+     *      description="Status of components to filter",
+     *      in="query",
+     *      name="status",
+     *      required=false,
+     *      type="integer",
+     *      format="int64"
+     *   ),
+     *   @SWG\Parameter(
+     *      description="Group identifier of components to filter",
+     *      in="query",
+     *      name="group_id",
+     *      required=false,
+     *      type="integer",
+     *      format="int64"
+     *   ),
+     *   @SWG\Parameter(
+     *      description="If the components should be enabled or not, 1 or 0.",
+     *      in="query",
+     *      name="enabled",
+     *      required=false,
+     *      type="integer",
+     *      format="int64"
+     *   ),
+     *   @SWG\Response(
+     *      response=200,
+     *      description="A list with all components"
+     *   ),
+     * )
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -65,15 +109,27 @@ class ComponentController extends AbstractApiController
     /**
      * Get a single component.
      *
-     * **Path params:**
-     *
-     * Name | Type | Required | Description
-     * -----|------|------------
-     * component | int32 | Y | The component identifier
-     *
      * @param \CachetHQ\Cachet\Models\Component $component
      *
      * @return \Illuminate\Http\JsonResponse
+     *
+     * @SWG\Get(
+     *   path="/components/{component}",
+     *   summary="Get a single component",
+     *   tags={"Components"},
+     *   @SWG\Parameter(
+     *      description="ID of component to return",
+     *      in="path",
+     *      name="component",
+     *      required=true,
+     *      type="integer",
+     *      format="int64"
+     *  ),
+     *  @SWG\Response(
+     *      response=200,
+     *      description="A single component"
+     *   )
+     * )
      */
     public function show(Component $component)
     {
@@ -83,19 +139,73 @@ class ComponentController extends AbstractApiController
     /**
      * Create a new component.
      *
-     * **Body params:**
-     *
-     *  Name | Type | Required | Description
-     *  -----|------|------------
-     *  name | string | Y | Name of the component
-     *  description| string | Y | Description of the component
-     *  status | int32` | Y | Status of the component (Between 1 and 4)
-     *  link | string | Y | A hyperlink to the component
-     *  order | int32 | Y | Order of the component
-     *  group_id | int32 | Y | The group identifier that the component is within
-     *  enabled | boolean | N | Whether the component is enabled
-     *
      * @return \Illuminate\Http\JsonResponse
+     *
+     *
+     * @SWG\Post(
+     *   path="/components",
+     *   tags={"Components"},
+     *   operationId="store",
+     *   summary="Add a new component",
+     *   description="",
+     *   consumes={"multipart/form-data"},
+     *   produces={"application/json"},
+     *   @SWG\Parameter(
+     *      name="name",
+     *      in="formData",
+     *      type="string",
+     *      description="Name of the component",
+     *      required=true
+     *   ),
+     *   @SWG\Parameter(
+     *      name="description",
+     *      in="formData",
+     *      type="string",
+     *      description="Description of the component",
+     *      required=true
+     *   ),
+     *   @SWG\Parameter(
+     *      name="status",
+     *      in="formData",
+     *      type="integer",
+     *      description="Status of the component (between 1 and 4)",
+     *      required=true
+     *   ),
+     *   @SWG\Parameter(
+     *      name="link",
+     *      in="formData",
+     *      type="string",
+     *      description="A hyperlink to the component",
+     *      required=true
+     *   ),
+     *   @SWG\Parameter(
+     *      name="order",
+     *      in="formData",
+     *      type="integer",
+     *      description="Order of the component",
+     *      required=true
+     *   ),
+     *   @SWG\Parameter(
+     *      name="group_id",
+     *      in="formData",
+     *      type="integer",
+     *      description="Group identifier of the component",
+     *      required=true
+     *   ),
+     *   @SWG\Parameter(
+     *      name="enabled",
+     *      in="formData",
+     *      type="integer",
+     *      description="1 if the component is enabled, 0 otherwise.",
+     *      required=false
+     *   ),
+     *   @SWG\Response(
+     *      response=200,
+     *      description="Ok"
+     *   )
+     * )
+     *
+     *
      */
     public function store()
     {
@@ -134,26 +244,75 @@ class ComponentController extends AbstractApiController
     /**
      * Update an existing component.
      *
-     * **Path params:**
-     *
-     * Name | Type | Required | Description
-     * -----|------|------------
-     * component | int32 | Y | The identifier of the component to update
-     *
-     * **Body params:**
-     *
-     * Name | Type | Required | Description
-     * -----|------|------------
-     * name | string | Y | Name of the component
-     * status | int32 | Y | Status of the component (between 1 and 4)
-     * link | string | Y | A hyperlink to the component
-     * order | int32 | Y | Order of the component
-     * group_id | int32 | Y | The group id that the component is within
-     * enabled | boolean | N | Whether the component is enabled
-     * 
      * @param \CachetHQ\Cachet\Models\Component $component
      *
      * @return \Illuminate\Http\JsonResponse
+     *
+     *
+     * @SWG\Put(
+     *   path="/components/{component}",
+     *   tags={"Components"},
+     *   operationId="update",
+     *   summary="Update an existing component",
+     *   description="",
+     *   consumes={"multipart/form-data"},
+     *   produces={"application/json"},
+     *   @SWG\Parameter(
+     *      name="component",
+     *      in="path",
+     *      type="integer",
+     *      description="Identifier of the component to update",
+     *      required=true
+     *   ),
+     *   @SWG\Parameter(
+     *      name="name",
+     *      in="formData",
+     *      type="string",
+     *      description="Name of the component",
+     *      required=true
+     *   ),
+     *   @SWG\Parameter(
+     *      name="status",
+     *      in="formData",
+     *      type="integer",
+     *      description="Status of the component (between 1 and 4)",
+     *      required=true
+     *   ),
+     *   @SWG\Parameter(
+     *      name="link",
+     *      in="formData",
+     *      type="string",
+     *      description="A hyperlink of the component",
+     *      required=true
+     *   ),
+     *   @SWG\Parameter(
+     *      name="order",
+     *      in="formData",
+     *      type="integer",
+     *      description="The order of the component",
+     *      required=true
+     *   ),
+     *   @SWG\Parameter(
+     *      name="group_id",
+     *      in="formData",
+     *      type="integer",
+     *      description="The group id of the component",
+     *      required=true
+     *   ),
+     *   @SWG\Parameter(
+     *      name="enabled",
+     *      in="formData",
+     *      type="integer",
+     *      description="1 to enable the component, 0 otherwise",
+     *      required=false
+     *   ),
+     *   @SWG\Response(
+     *      response=200,
+     *      description="Ok"
+     *   )
+     * )
+     *
+     *
      */
     public function update(Component $component)
     {
@@ -200,6 +359,29 @@ class ComponentController extends AbstractApiController
      * @param \CachetHQ\Cachet\Models\Component $component
      *
      * @return \Illuminate\Http\JsonResponse
+     *
+     *
+     * @SWG\Delete(
+     *   path="/components/{component}",
+     *   summary="Deletes a component",
+     *   description="",
+     *   operationId="destroy",
+     *   tags={"Components"},
+     *   @SWG\Parameter(
+     *      description="Component id to delete",
+     *      in="path",
+     *      name="component",
+     *      required=true,
+     *      type="integer",
+     *      format="int64"
+     *   ),
+     *   @SWG\Response(
+     *      response=200,
+     *      description="Ok"
+     *   ),
+     * )
+     * 
+     * 
      */
     public function destroy(Component $component)
     {
