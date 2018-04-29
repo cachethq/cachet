@@ -34,53 +34,75 @@ class ComponentController extends AbstractApiController
      *
      * @SWG\Get(
      *   path="/components",
-     *   summary="List all components",
-     *   operationId="index",
+     *   summary="List all components.",
+     *   operationId="Component@index",
      *   tags={"Components"},
      *   produces={"application/json"}, 
      *   @SWG\Parameter(
-     *      description="ID of the component to filter",
-     *      in="query",
-     *      name="id",
-     *      required=false,
-     *      type="integer",
-     *      format="int64"
+     *     description="ID of the component to filter.",
+     *     in="query",
+     *     name="id",
+     *     required=false,
+     *     type="integer",
+     *     format="int64"
      *   ),
      *   @SWG\Parameter(
-     *      description="Name of the components to filter",
-     *      in="query",
-     *      name="name",
-     *      required=false,
-     *      type="string"
+     *     description="Name of the components to filter.",
+     *     in="query",
+     *     name="name",
+     *     required=false,
+     *     type="string"
      *   ),
      *   @SWG\Parameter(
-     *      description="Status of components to filter",
-     *      in="query",
-     *      name="status",
-     *      required=false,
-     *      type="integer",
-     *      format="int64"
+     *     description="Status of components to filter.",
+     *     in="query",
+     *     name="status",
+     *     required=false,
+     *     type="integer",
+     *     format="int64"
      *   ),
      *   @SWG\Parameter(
-     *      description="Group identifier of components to filter",
-     *      in="query",
-     *      name="group_id",
-     *      required=false,
-     *      type="integer",
-     *      format="int64"
+     *     description="Group identifier of components to filter.",
+     *     in="query",
+     *     name="group_id",
+     *     required=false,
+     *     type="integer",
+     *     format="int64"
      *   ),
      *   @SWG\Parameter(
-     *      description="If the components should be enabled or not, 1 or 0.",
-     *      in="query",
-     *      name="enabled",
-     *      required=false,
-     *      type="integer",
-     *      format="int64"
+     *     description="If the components should be enabled or not, 1 or 0.",
+     *     in="query",
+     *     name="enabled",
+     *     required=false,
+     *     type="integer",
+     *     format="int64"
+     *   ),
+     *   @SWG\Parameter(
+     *     description="The field on which sort the results.",
+     *     in="query",
+     *     name="sort",
+     *     required=false,
+     *     type="string"
+     *   ),
+     *   @SWG\Parameter(
+     *     description="The direction on which sort the results. 'asc' or 'desc'.",
+     *     in="query",
+     *     name="order",
+     *     required=false,
+     *     type="string"
+     *   ),
+     *   @SWG\Parameter(
+     *     description="The number of items to get. Default to 20.",
+     *     in="query",
+     *     name="per_page",
+     *     required=false,
+     *     type="integer",
+     *     format="int64"
      *   ),
      *   @SWG\Response(
-     *      response=200,
-     *      description="A list with all components"
-     *   ),
+     *     response=200,
+     *     description="A list with all components."
+     *   )
      * )
      *
      * @return \Illuminate\Http\JsonResponse
@@ -115,19 +137,20 @@ class ComponentController extends AbstractApiController
      *
      * @SWG\Get(
      *   path="/components/{component}",
-     *   summary="Get a single component",
+     *   summary="Get a single component.",
      *   tags={"Components"},
+     *   operationId="Component@show",
      *   @SWG\Parameter(
-     *      description="ID of component to return",
-     *      in="path",
-     *      name="component",
-     *      required=true,
-     *      type="integer",
-     *      format="int64"
+     *     description="ID of component to return.",
+     *     in="path",
+     *     name="component",
+     *     required=true,
+     *     type="integer",
+     *     format="int64"
      *  ),
      *  @SWG\Response(
-     *      response=200,
-     *      description="A single component"
+     *     response=200,
+     *     description="A single component."
      *   )
      * )
      */
@@ -145,63 +168,67 @@ class ComponentController extends AbstractApiController
      * @SWG\Post(
      *   path="/components",
      *   tags={"Components"},
-     *   operationId="store",
-     *   summary="Add a new component",
+     *   operationId="Component@store",
+     *   summary="Add a new component.",
      *   description="",
      *   consumes={"multipart/form-data"},
      *   produces={"application/json"},
      *   @SWG\Parameter(
-     *      name="name",
-     *      in="formData",
-     *      type="string",
-     *      description="Name of the component",
-     *      required=true
+     *     name="name",
+     *     in="formData",
+     *     type="string",
+     *     description="Name of the component.",
+     *     required=true
      *   ),
      *   @SWG\Parameter(
-     *      name="description",
-     *      in="formData",
-     *      type="string",
-     *      description="Description of the component",
-     *      required=true
+     *     name="description",
+     *     in="formData",
+     *     type="string",
+     *     description="Description of the component.",
+     *     required=true
      *   ),
      *   @SWG\Parameter(
-     *      name="status",
-     *      in="formData",
-     *      type="integer",
-     *      description="Status of the component (between 1 and 4)",
-     *      required=true
+     *     name="status",
+     *     in="formData",
+     *     type="integer",
+     *     description="Status of the component (between 1 and 4).",
+     *     required=true
      *   ),
      *   @SWG\Parameter(
-     *      name="link",
-     *      in="formData",
-     *      type="string",
-     *      description="A hyperlink to the component",
-     *      required=true
+     *     name="link",
+     *     in="formData",
+     *     type="string",
+     *     description="A hyperlink to the component.",
+     *     required=true
      *   ),
      *   @SWG\Parameter(
-     *      name="order",
-     *      in="formData",
-     *      type="integer",
-     *      description="Order of the component",
-     *      required=true
+     *     name="order",
+     *     in="formData",
+     *     type="integer",
+     *     description="Order of the component.",
+     *     required=true
      *   ),
      *   @SWG\Parameter(
-     *      name="group_id",
-     *      in="formData",
-     *      type="integer",
-     *      description="Group identifier of the component",
-     *      required=true
+     *     name="group_id",
+     *     in="formData",
+     *     type="integer",
+     *     description="Group identifier of the component.",
+     *     required=true
      *   ),
      *   @SWG\Parameter(
-     *      name="enabled",
-     *      in="formData",
-     *      type="integer",
-     *      description="1 if the component is enabled, 0 otherwise.",
-     *      required=false
+     *     name="enabled",
+     *     in="formData",
+     *     type="integer",
+     *     description="1 if the component is enabled, 0 otherwise.",
+     *     required=false
      *   ),
      *   @SWG\Response(
-     *      response=200,
-     *      description="Ok"
+     *     response=200,
+     *     description="The component."
+     *   ),
+     *   @SWG\Response(
+     *     response=400,
+     *     description="Invalid ccomponent."
      *   )
      * )
      *
@@ -252,63 +279,67 @@ class ComponentController extends AbstractApiController
      * @SWG\Put(
      *   path="/components/{component}",
      *   tags={"Components"},
-     *   operationId="update",
-     *   summary="Update an existing component",
+     *   operationId="Component@update",
+     *   summary="Update an existing component.",
      *   description="",
      *   consumes={"multipart/form-data"},
      *   produces={"application/json"},
      *   @SWG\Parameter(
-     *      name="component",
-     *      in="path",
-     *      type="integer",
-     *      description="Identifier of the component to update",
-     *      required=true
+     *     name="component",
+     *     in="path",
+     *     type="integer",
+     *     description="Identifier of the component to update.",
+     *     required=true
      *   ),
      *   @SWG\Parameter(
-     *      name="name",
-     *      in="formData",
-     *      type="string",
-     *      description="Name of the component",
-     *      required=true
+     *     name="name",
+     *     in="formData",
+     *     type="string",
+     *     description="Name of the component.",
+     *     required=true
      *   ),
      *   @SWG\Parameter(
-     *      name="status",
-     *      in="formData",
-     *      type="integer",
-     *      description="Status of the component (between 1 and 4)",
-     *      required=true
+     *     name="status",
+     *     in="formData",
+     *     type="integer",
+     *     description="Status of the component (between 1 and 4).",
+     *     required=true
      *   ),
      *   @SWG\Parameter(
-     *      name="link",
-     *      in="formData",
-     *      type="string",
-     *      description="A hyperlink of the component",
-     *      required=true
+     *     name="link",
+     *     in="formData",
+     *     type="string",
+     *     description="A hyperlink of the component.",
+     *     required=true
      *   ),
      *   @SWG\Parameter(
-     *      name="order",
-     *      in="formData",
-     *      type="integer",
-     *      description="The order of the component",
-     *      required=true
+     *     name="order",
+     *     in="formData",
+     *     type="integer",
+     *     description="The order of the component.",
+     *     required=true
      *   ),
      *   @SWG\Parameter(
-     *      name="group_id",
-     *      in="formData",
-     *      type="integer",
-     *      description="The group id of the component",
-     *      required=true
+     *     name="group_id",
+     *     in="formData",
+     *     type="integer",
+     *     description="The group id of the component.",
+     *     required=true
      *   ),
      *   @SWG\Parameter(
-     *      name="enabled",
-     *      in="formData",
-     *      type="integer",
-     *      description="1 to enable the component, 0 otherwise",
-     *      required=false
+     *     name="enabled",
+     *     in="formData",
+     *     type="integer",
+     *     description="1 to enable the component, 0 otherwise.",
+     *     required=false
      *   ),
      *   @SWG\Response(
-     *      response=200,
-     *      description="Ok"
+     *     response=200,
+     *     description="The component."
+     *   ),
+     *   @SWG\Response(
+     *     response=400,
+     *     description="Invalid component."
      *   )
      * )
      *
@@ -350,12 +381,6 @@ class ComponentController extends AbstractApiController
     /**
      * Delete an existing component.
      *
-     * **Path params:**
-     *
-     * Name | Type | Required | Description
-     * -----|------|------------
-     * component | int32 | Y | Component ID
-     *
      * @param \CachetHQ\Cachet\Models\Component $component
      *
      * @return \Illuminate\Http\JsonResponse
@@ -363,21 +388,21 @@ class ComponentController extends AbstractApiController
      *
      * @SWG\Delete(
      *   path="/components/{component}",
-     *   summary="Deletes a component",
+     *   summary="Deletes a component.",
      *   description="",
-     *   operationId="destroy",
+     *   operationId="Component@destroy",
      *   tags={"Components"},
      *   @SWG\Parameter(
-     *      description="Component id to delete",
-     *      in="path",
-     *      name="component",
-     *      required=true,
-     *      type="integer",
-     *      format="int64"
+     *     description="Component id to delete.",
+     *     in="path",
+     *     name="component",
+     *     required=true,
+     *     type="integer",
+     *     format="int64"
      *   ),
      *   @SWG\Response(
-     *      response=200,
-     *      description="Ok"
+     *     response=204,
+     *     description="Ok."
      *   ),
      * )
      * 
