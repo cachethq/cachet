@@ -53,13 +53,73 @@ class ComponentGroupController extends AbstractApiController
     /**
      * Get all groups.
      *
-     * The following searche keys are available:
-     * - `id`
-     * - `name`
-     * - `collapsed`
-     * - `visible`
-     *
      * @return \Illuminate\Http\JsonResponse
+     *
+     * @SWG\Get(
+     *   path="/components/groups",
+     *   summary="Get all component groups.",
+     *   tags={"Component groups"},
+     *   description="",
+     *   operationId="ComponentGroup@index",
+     *   produces={"application/json"},
+     *   @SWG\Parameter(
+     *     name="id",
+     *     in="query",
+     *     description="Id of the component groups to filter.",
+     *     required=false,
+     *     type="integer",
+     *     format="int64"
+     *   ),
+     *   @SWG\Parameter(
+     *     name="name",
+     *     in="query",
+     *     description="Name of the component groups to filter.",
+     *     required=false,
+     *     type="string"
+     *   ),
+     *   @SWG\Parameter(
+     *     name="collapsed",
+     *     in="query",
+     *     description="1 if the component groups to filter are collapsed, 0 otherwise.",
+     *     required=false,
+     *     type="integer",
+     *     format="int64"
+     *   ),
+     *   @SWG\Parameter(
+     *     name="visible",
+     *     in="query",
+     *     description="1 if the component groups to filter are visible, 0 otherwise.",
+     *     required=false,
+     *     type="integer",
+     *     format="int64"
+     *   ),
+     *   @SWG\Parameter(
+     *     description="The field on which sort the results.",
+     *     in="query",
+     *     name="sort",
+     *     required=false,
+     *     type="string"
+     *   ),
+     *   @SWG\Parameter(
+     *     description="The direction on which sort the results. 'asc' or 'desc'. Default 'asc'.",
+     *     in="query",
+     *     name="order",
+     *     required=false,
+     *     type="string"
+     *   ),
+     *   @SWG\Parameter(
+     *     description="The number of items to get. Default to 20.",
+     *     in="query",
+     *     name="per_page",
+     *     required=false,
+     *     type="integer",
+     *     format="int64"
+     *   ),
+     *   @SWG\Response(
+     *     response=200,
+     *     description="A list of component groups."
+     *   ),
+     * )
      */
     public function index()
     {
@@ -84,15 +144,34 @@ class ComponentGroupController extends AbstractApiController
     /**
      * Get a single group.
      *
-     * **Path params:**
-     * 
-     * Name | Type | Required | Description
-     * -----|------|------------
-     * group | int32 | Y | Component group identifier
-     *
      * @param \CachetHQ\Cachet\Models\ComponentGroup $group
      *
      * @return \Illuminate\Http\JsonResponse
+     *
+     * @SWG\Get(
+     *   path="/components/groups/{component_group}",
+     *   summary="Get a single component group.",
+     *   tags={"Component groups"},
+     *   description="",
+     *   operationId="ComponentGroup@show",
+     *   produces={"application/json"},
+     *   @SWG\Parameter(
+     *     name="component_group",
+     *     in="path",
+     *     description="Component group to filter.",
+     *     required=true,
+     *     type="integer",
+     *     format="int64"
+     *   ),
+     *   @SWG\Response(
+     *     response=200,
+     *     description="The component group."
+     *   ),
+     *   @SWG\Response(
+     *     response="404",
+     *     description="Component group not found.",
+     *   ),
+     * )
      */
     public function show(ComponentGroup $group)
     {
@@ -102,16 +181,56 @@ class ComponentGroupController extends AbstractApiController
     /**
      * Create a new component group.
      *
-     * **Body params:**
-     *
-     * Name | Type | Required | Description
-     * -----|------|------------
-     * name | string | Y | Name of the component group
-     * order | int32 | N | Order of the component group
-     * collapsed | int32 | N | Collapse the group? 0 = No. 1 = Yes. 2 = If a component is not Operational
-     * visible | int32 | N | Whether the component is visible
-     *
      * @return \Illuminate\Http\JsonResponse
+     *
+     * @SWG\Post(
+     *   path="/components/groups",
+     *   tags={"Component groups"},
+     *   operationId="ComponentGroup@store",
+     *   summary="Create a new component group.",
+     *   description="",
+     *   consumes={"application/x-www-form-urlencoded"},
+     *   produces={"application/json"},
+     *   @SWG\Parameter(
+     *     name="name",
+     *     in="formData",
+     *     type="string",
+     *     description="Name of the component group.",
+     *     required=true
+     *   ),
+     *   @SWG\Parameter(
+     *     name="order",
+     *     in="formData",
+     *     type="integer",
+     *     format="int64",
+     *     description="Order of the component group. Default to 0.",
+     *     required=false
+     *   ),
+     *   @SWG\Parameter(
+     *     name="collapsed",
+     *     in="formData",
+     *     type="integer",
+     *     format="int64",
+     *     description="1 of the component group should be collapsed, 0 otherwise. Default to 0.",
+     *     required=true
+     *   ),
+     *   @SWG\Parameter(
+     *     name="visible",
+     *     in="formData",
+     *     type="integer",
+     *     format="int64",
+     *     description="If the component should be visible or not. Default to visible only for authenticated.",
+     *     required=true
+     *   ),
+     *   @SWG\Response(
+     *     response=200,
+     *     description="The component group.",
+     *   ),
+     *   @SWG\Response(
+     *     response=400,
+     *     description="Component group invalid.",
+     *   )
+     * )
      */
     public function store()
     {
@@ -132,24 +251,66 @@ class ComponentGroupController extends AbstractApiController
     /**
      * Update an existing group.
      *
-     * **Path params:**
-     *
-     * Name | Type | Required | Description
-     * -----|------|------------
-     * group | string | Y | Component group ID
-     *
-     * **Body params:**
-     *
-     * Name | Type | Required | Description
-     * -----|------|------------
-     * name | string | Y | Name of the component group
-     * order | int32 | Y | Order of the component group
-     * collapsed | int32 | Y | Collapse the group? 0 = No. 1 = Yes. 2 = If a component is not Operational
-     * visible | int32 | Y | Whether the component should be visible
-     *
      * @param \CachetHQ\Cachet\Models\ComponentGroup $group
      *
      * @return \Illuminate\Http\JsonResponse
+     *
+     * @SWG\Put(
+     *   path="/components/groups/{component_group}",
+     *   tags={"Component groups"},
+     *   operationId="ComponentGroup@update",
+     *   summary="Update an existing component group.",
+     *   description="",
+     *   consumes={"application/x-www-form-urlencoded"},
+     *   produces={"application/json"},
+     *   @SWG\Parameter(
+     *     name="component_group",
+     *     in="path",
+     *     type="integer",
+     *     format="int64",
+     *     description="The identifier of the component group to update.",
+     *     required=true
+     *   ),
+     *   @SWG\Parameter(
+     *     name="name",
+     *     in="formData",
+     *     type="string",
+     *     description="The component group to update.",
+     *     required=true
+     *   ),
+     *   @SWG\Parameter(
+     *     name="order",
+     *     in="formData",
+     *     type="integer",
+     *     format="int64",
+     *     description="The order of the component group to update.",
+     *     required=true
+     *   ),
+     *   @SWG\Parameter(
+     *     name="collapsed",
+     *     in="formData",
+     *     type="integer",
+     *     format="int64",
+     *     description="1 of the component group should be collapsed, 0 otherwise.",
+     *     required=true
+     *   ),
+     *   @SWG\Parameter(
+     *     name="visible",
+     *     in="formData",
+     *     type="integer",
+     *     format="int64",
+     *     description="1 of the component group should be visible, 0 otherwise.",
+     *     required=true
+     *   ),
+     *   @SWG\Response(
+     *     response=200,
+     *     description="The component group."
+     *   ),
+     *   @SWG\Response(
+     *     response=400,
+     *     description="Component group invalid."
+     *   )
+     * )
      */
     public function update(ComponentGroup $group)
     {
@@ -171,14 +332,29 @@ class ComponentGroupController extends AbstractApiController
     /**
      * Delete an existing group.
      *
-     * **Path params:**
-     *
-     * Name | Type | Required | Description
-     * group | int32 | Y | Component group ID
-     *
      * @param \CachetHQ\Cachet\Models\ComponentGroup $group
      *
      * @return \Illuminate\Http\JsonResponse
+     *
+     * @SWG\Delete(
+     *   path="/components/groups/{component_group}",
+     *   summary="Delete a component group.",
+     *   description="",
+     *   operationId="ComponentGroup@destroy",
+     *   tags={"Component groups"},
+     *   @SWG\Parameter(
+     *     description="Component group id to delete.",
+     *     in="path",
+     *     name="component_group",
+     *     required=true,
+     *     type="integer",
+     *     format="int64"
+     *   ),
+     *   @SWG\Response(
+     *     response=204,
+     *     description="Ok."
+     *   )
+     * )
      */
     public function destroy(ComponentGroup $group)
     {
