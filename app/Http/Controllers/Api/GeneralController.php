@@ -27,6 +27,19 @@ class GeneralController extends AbstractApiController
      * Test that the API is responding to your requests.
      *
      * @return \Illuminate\Http\JsonResponse
+     *
+     * @SWG\Get(
+     *   path="/ping",
+     *   summary="Test that the API is responding to your requests.",
+     *   description="",
+     *   operationId="General@ping",
+     *   produces={"application/json"},
+     *   tags={"General"},
+     *   @SWG\Response(
+     *     response=200,
+     *     description="Ok.",
+     *   )
+     * )
      */
     public function ping()
     {
@@ -37,6 +50,19 @@ class GeneralController extends AbstractApiController
      * Get the Cachet version.
      *
      * @return \Illuminate\Http\JsonResponse
+     *
+     * @SWG\Get(
+     *   path="/version",
+     *   summary="Get the Cachet version.",
+     *   description="",
+     *   operationId="General@version",
+     *   produces={"application/json"},
+     *   tags={"General"},
+     *   @SWG\Response(
+     *     response=200,
+     *     description="Ok.",
+     *   )
+     * )
      */
     public function version()
     {
@@ -52,6 +78,19 @@ class GeneralController extends AbstractApiController
      * Get the system status message.
      *
      * @return \Illuminate\Http\JsonResponse
+     *
+     * @SWG\Get(
+     *   path="/status",
+     *   summary="Get the system status message.",
+     *   description="",
+     *   operationId="General@status",
+     *   produces={"application/json"},
+     *   tags={"General"},
+     *   @SWG\Response(
+     *     response=200,
+     *     description="Ok.",
+     *   )
+     * )
      */
     public function status()
     {
