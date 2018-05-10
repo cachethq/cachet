@@ -228,7 +228,7 @@ class ComponentController extends AbstractApiController
      *   ),
      *   @SWG\Response(
      *     response=400,
-     *     description="Invalid ccomponent."
+     *     description="Invalid component."
      *   )
      * )
      *
