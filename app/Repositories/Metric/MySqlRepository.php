@@ -12,6 +12,7 @@
 namespace CachetHQ\Cachet\Repositories\Metric;
 
 use CachetHQ\Cachet\Models\Metric;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 
 /**
@@ -33,7 +34,7 @@ class MySqlRepository extends AbstractMetricRepository implements MetricInterfac
     {
         $queryType = $this->getQueryType($metric);
 
-        $points = DB::select("SELECT DATE_FORMAT({$this->getMetricPointsTable()}.`created_at`, '%Y-%m-%d %H:%i') AS `key`, {$queryType} ".
+        $points = DB::select("SELECT DATE_FORMAT(CONVERT_TZ({$this->getMetricPointsTable()}.`created_at`, 'UTC', :tz), '%Y-%m-%d %H:%i') AS `key`, {$queryType} ".
             "FROM {$this->getMetricsTable()} INNER JOIN {$this->getMetricPointsTable()} ON {$this->getMetricsTable()}.id = {$this->getMetricPointsTable()}.metric_id ".
             "WHERE {$this->getMetricsTable()}.id = :metricId ".
             "AND {$this->getMetricPointsTable()}.`created_at` >= DATE_SUB(NOW(), INTERVAL :minutes MINUTE) ".
@@ -41,6 +42,7 @@ class MySqlRepository extends AbstractMetricRepository implements MetricInterfac
             "GROUP BY HOUR({$this->getMetricPointsTable()}.`created_at`), MINUTE({$this->getMetricPointsTable()}.`created_at`) ORDER BY {$this->getMetricPointsTable()}.`created_at`", [
             'metricId' => $metric->id,
             'minutes'  => $minutes,
+            'tz' => Config::get('app.timezone')
         ]);
 
         return $this->mapResults($metric, $points);
@@ -57,7 +59,7 @@ class MySqlRepository extends AbstractMetricRepository implements MetricInterfac
     public function getPointsSinceHour(Metric $metric, $hour)
     {
         $queryType = $this->getQueryType($metric);
-        $points = DB::select("SELECT DATE_FORMAT({$this->getMetricPointsTable()}.`created_at`, '%Y-%m-%d %H:00') AS `key`, {$queryType} ".
+        $points = DB::select("SELECT DATE_FORMAT(CONVERT_TZ({$this->getMetricPointsTable()}.`created_at`, 'UTC', :tz), '%Y-%m-%d %H:00') AS `key`, {$queryType} ".
             "FROM {$this->getMetricsTable()} INNER JOIN {$this->getMetricPointsTable()} ON {$this->getMetricsTable()}.id = {$this->getMetricPointsTable()}.metric_id ".
             "WHERE {$this->getMetricsTable()}.id = :metricId ".
             "AND {$this->getMetricPointsTable()}.`created_at` >= DATE_SUB(NOW(), INTERVAL :hour HOUR) ".
@@ -66,6 +68,7 @@ class MySqlRepository extends AbstractMetricRepository implements MetricInterfac
             "ORDER BY {$this->getMetricPointsTable()}.`created_at`", [
             'metricId' => $metric->id,
             'hour'     => $hour,
+            'tz' => Config::get('app.timezone')
         ]);
 
         return $this->mapResults($metric, $points);
@@ -82,7 +85,7 @@ class MySqlRepository extends AbstractMetricRepository implements MetricInterfac
     public function getPointsSinceDay(Metric $metric, $day)
     {
         $queryType = $this->getQueryType($metric);
-        $points = DB::select("SELECT DATE_FORMAT({$this->getMetricPointsTable()}.`created_at`, '%Y-%m-%d') AS `key`, {$queryType} ".
+        $points = DB::select("SELECT DATE_FORMAT(CONVERT_TZ({$this->getMetricPointsTable()}.`created_at`, 'UTC', :tz), '%Y-%m-%d') AS `key`, {$queryType} ".
             "FROM {$this->getMetricsTable()} INNER JOIN {$this->getMetricPointsTable()} ON {$this->getMetricsTable()}.id = {$this->getMetricPointsTable()}.metric_id ".
             "WHERE {$this->getMetricsTable()}.id = :metricId ".
             "AND {$this->getMetricPointsTable()}.`created_at` >= DATE_SUB(NOW(), INTERVAL :day DAY) ".
@@ -90,6 +93,7 @@ class MySqlRepository extends AbstractMetricRepository implements MetricInterfac
             "GROUP BY DATE({$this->getMetricPointsTable()}.`created_at`) ORDER BY {$this->getMetricPointsTable()}.`created_at`", [
             'metricId' => $metric->id,
             'day'      => $day,
+            'tz' => Config::get('app.timezone')
         ]);
 
         return $this->mapResults($metric, $points);
