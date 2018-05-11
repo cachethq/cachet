@@ -178,6 +178,16 @@ class Incident extends Model implements HasPresenter
     }
 
     /**
+     * Get the tags relation.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
+     */
+    public function tags()
+    {
+        return $this->morphMany(Taggable::class, 'taggable');
+    }
+
+    /**
      * Get the updates relation.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
