@@ -64,7 +64,6 @@ class Component extends Model implements HasPresenter
         'name',
         'description',
         'status',
-        'tags',
         'link',
         'order',
         'group_id',
@@ -147,11 +146,11 @@ class Component extends Model implements HasPresenter
     /**
      * Get the tags relation.
      *
-     * @return \Illuminate\Database\Eloquent\Relations\MorphToMany
+     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
      */
     public function tags()
     {
-        return $this->morphToMany(Taggable::class, 'taggable');
+        return $this->morphMany(Taggable::class, 'taggable');
     }
 
     /**
@@ -248,20 +247,6 @@ class Component extends Model implements HasPresenter
         return $query->enabled()
             ->where('group_id', '>', 0)
             ->groupBy('group_id');
-    }
-
-    /**
-     * Returns all of the tags on this component.
-     *
-     * @return string
-     */
-    public function getTagsListAttribute()
-    {
-        $tags = $this->tags->map(function ($tag) {
-            return $tag->name;
-        });
-
-        return implode(', ', $tags->toArray());
     }
 
     /**
