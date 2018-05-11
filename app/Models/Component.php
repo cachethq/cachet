@@ -14,6 +14,7 @@ namespace CachetHQ\Cachet\Models;
 use AltThree\Validator\ValidatingTrait;
 use CachetHQ\Cachet\Models\Traits\SearchableTrait;
 use CachetHQ\Cachet\Models\Traits\SortableTrait;
+use CachetHQ\Cachet\Models\Traits\Taggable;
 use CachetHQ\Cachet\Presenters\ComponentPresenter;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
@@ -22,7 +23,7 @@ use McCool\LaravelAutoPresenter\HasPresenter;
 
 class Component extends Model implements HasPresenter
 {
-    use SearchableTrait, SoftDeletes, SortableTrait, ValidatingTrait;
+    use SearchableTrait, SoftDeletes, SortableTrait, Taggable, ValidatingTrait;
 
     /**
      * List of attributes that have default values.
@@ -141,16 +142,6 @@ class Component extends Model implements HasPresenter
     public function meta()
     {
         return $this->morphMany(Meta::class, 'meta');
-    }
-
-    /**
-     * Get the tags relation.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
-     */
-    public function tags()
-    {
-        return $this->morphMany(Taggable::class, 'taggable');
     }
 
     /**
