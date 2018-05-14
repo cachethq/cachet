@@ -59,6 +59,14 @@
                         </div>
                         <div class="row">
                             <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label>{{ trans('forms.settings.app-setup.major_outage_rate') }}</label>
+                                    <input type="number" name="major_outage_rate" class="form-control" value="{{ Config::get('setting.major_outage_rate', 50) }}" placeholder="{{ trans('forms.settings.app-setup.major_outage_rate') }}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
                                 <div class="checkbox">
                                     <label>
                                         <input type="hidden" value="0" name="enable_subscribers">
