@@ -14,6 +14,7 @@ namespace CachetHQ\Cachet\Models;
 use AltThree\Validator\ValidatingTrait;
 use CachetHQ\Cachet\Models\Traits\SearchableTrait;
 use CachetHQ\Cachet\Models\Traits\SortableTrait;
+use CachetHQ\Cachet\Models\Traits\Taggable;
 use CachetHQ\Cachet\Presenters\IncidentPresenter;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
@@ -29,7 +30,7 @@ use McCool\LaravelAutoPresenter\HasPresenter;
  */
 class Incident extends Model implements HasPresenter
 {
-    use SearchableTrait, SoftDeletes, SortableTrait, ValidatingTrait;
+    use SearchableTrait, SoftDeletes, SortableTrait, Taggable, ValidatingTrait;
 
     /**
      * Status for incident being investigated.
