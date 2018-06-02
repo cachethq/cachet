@@ -33,15 +33,29 @@ class IncidentUpdateController extends AbstractApiController
     /**
      * Return all updates for the incident.
      *
-     * **Path params:**
-     *
-     * Name | Type | Required | Description
-     * -----|------|----------|------------
-     * incident | int32 | Y | Incident ID
-     *
      * @param \CachetHQ\Cachet\Models\Incident $incident
      *
      * @return \Illuminate\Http\JsonResponse
+     *
+     * @SWG\Get(
+     *   path="/incidents/{incident}/updates",
+     *   summary="List all updates for a component.",
+     *   operationId="IncidentUpdates@index",
+     *   tags={"IncidentUpdates"},
+     *   produces={"application/json"}, 
+     *   @SWG\Parameter(
+     *     description="ID of the incident to filter the updates.",
+     *     in="path",
+     *     name="incident",
+     *     required=true,
+     *     type="integer",
+     *     format="int64"
+     *   ),
+     *   @SWG\Response(
+     *     response=200,
+     *     description="A list with all incident updates for the given incident."
+     *   )
+     * )
      */
     public function index(Incident $incident)
     {
@@ -61,17 +75,37 @@ class IncidentUpdateController extends AbstractApiController
     /**
      * Return a single incident update.
      *
-     * **Path params:**
-     *
-     * Name | Type | Required | Description
-     * -----|------|----------|-------------
-     * incident | int32 | Y | Incident ID
-     * update | int32 | Y | Incident update ID
-     *
      * @param \CachetHQ\Cachet\Models\Incident       $incident
      * @param \CachetHQ\Cachet\Models\IncidentUpdate $update
      *
      * @return \Illuminate\Http\JsonResponse
+     *
+     * @SWG\Get(
+     *   path="/incidents/{incident}/updates/{update}",
+     *   summary="Get a single incident update.",
+     *   tags={"IncidentUpdates"},
+     *   operationId="IncidentUpdates@show",
+     *   @SWG\Parameter(
+     *     description="ID of incident.",
+     *     in="path",
+     *     name="incident",
+     *     required=true,
+     *     type="integer",
+     *     format="int64"
+     *  ),
+     *  @SWG\Parameter(
+     *     description="ID of update.",
+     *     in="path",
+     *     name="update",
+     *     required=true,
+     *     type="integer",
+     *     format="int64"
+     *  ),
+     *  @SWG\Response(
+     *     response=200,
+     *     description="A single incident update."
+     *   )
+     * )
      */
     public function show(Incident $incident, IncidentUpdate $update)
     {
@@ -81,24 +115,62 @@ class IncidentUpdateController extends AbstractApiController
     /**
      * Create a new incident update.
      *
-     * **Path params:**
-     *
-     * Name | Type | Required | Description
-     * -----|------|----------|------------
-     * incident | int32 | Y | Incident ID
-     *
-     * **Query params:**
-     *
-     * Name | Type | Required | Description
-     * -----|------|----------|------------
-     * status | int32 | Y | Incident status level
-     * message | string | Y | Incident update text
-     * component_id | int32 | Y | Component id
-     * component_status | int32 | Y | Component status
-     *
      * @param \CachetHQ\Cachet\Models\Incident $incident
      *
      * @return \Illuminate\Http\JsonResponse
+     *
+     * @SWG\Post(
+     *   path="/incidents/{incident}",
+     *   tags={"IncidentUpdates"},
+     *   operationId="IncidentUpdates@store",
+     *   summary="Add a new incident update.",
+     *   description="",
+     *   consumes={"multipart/form-data"},
+     *   produces={"application/json"},
+     *   @SWG\Parameter(
+     *     name="incident",
+     *     in="path",
+     *     type="integer",
+     *     description="ID of the incident.",
+     *     required=true
+     *   ),
+     *   @SWG\Parameter(
+     *     name="status",
+     *     in="formData",
+     *     type="integer",
+     *     description="Incident status level.",
+     *     required=true
+     *   ),
+     *   @SWG\Parameter(
+     *     name="message",
+     *     in="formData",
+     *     type="string",
+     *     description="Incident update text.",
+     *     required=true
+     *   ),
+     *   @SWG\Parameter(
+     *     name="component_id",
+     *     in="formData",
+     *     type="integer",
+     *     description="The ID of the component to update.",
+     *     required=true
+     *   ),
+     *   @SWG\Parameter(
+     *     name="component_status",
+     *     in="formData",
+     *     type="integer",
+     *     description="The component status.",
+     *     required=true
+     *   ),
+     *   @SWG\Response(
+     *     response=200,
+     *     description="The incident update."
+     *   ),
+     *   @SWG\Response(
+     *     response=400,
+     *     description="Invalid incident update."
+     *   )
+     * )
      */
     public function store(Incident $incident)
     {
@@ -121,24 +193,56 @@ class IncidentUpdateController extends AbstractApiController
     /**
      * Update an incident update.
      *
-     * **Path params:**
-     *
-     * Name | Type | Required | Description
-     * -----|------|----------|------------
-     * incident | int32 | Y | The incident the update belongs to
-     * update | int32 | Y | The incident update id
-     *
-     * **Query params:**
-     *
-     * Name | Type | Required | Description
-     * -----|------|----------|------------
-     * status | int32 | Y | The incident status flag
-     * message | string | Y | The update message
-     *
      * @param \CachetHQ\Cachet\Models\Incident       $incident
      * @param \CachetHQ\Cachet\Models\IncidentUpdate $update
      *
      * @return \Illuminate\Http\JsonResponse
+     *
+     * @SWG\Put(
+     *   path="/incidents/{incident}/updates/{update}",
+     *   tags={"IncidentUpdates"},
+     *   operationId="IncidentUpdates@update",
+     *   summary="Update an existing incident update.",
+     *   description="",
+     *   consumes={"multipart/form-data"},
+     *   produces={"application/json"},
+     *   @SWG\Parameter(
+     *     name="incident",
+     *     in="path",
+     *     type="integer",
+     *     description="Identifier of the incident.",
+     *     required=true
+     *   ),
+     *   @SWG\Parameter(
+     *     name="update",
+     *     in="path",
+     *     type="integer",
+     *     description="Identifier of the update.",
+     *     required=true
+     *   ),
+     *   @SWG\Parameter(
+     *     name="status",
+     *     in="formData",
+     *     type="string",
+     *     description="The incident status flag.",
+     *     required=true
+     *   ),
+     *   @SWG\Parameter(
+     *     name="message",
+     *     in="formData",
+     *     type="string",
+     *     description="The incident update text.",
+     *     required=true
+     *   ),
+     *   @SWG\Response(
+     *     response=200,
+     *     description="The incident update."
+     *   ),
+     *   @SWG\Response(
+     *     response=400,
+     *     description="Invalid incident update."
+     *   )
+     * )
      */
     public function update(Incident $incident, IncidentUpdate $update)
     {
@@ -159,17 +263,38 @@ class IncidentUpdateController extends AbstractApiController
     /**
      * Create a new incident update.
      *
-     * **Path params:**
-     *
-     * Name | Type | Required | Description
-     * -----|------|----------|------------
-     * incident | int32 | Y | Incident the update belongs to
-     * update | int32 | Y | The incident update ID to delete
-     *
      * @param \CachetHQ\Cachet\Models\Incident       $incident
      * @param \CachetHQ\Cachet\Models\IncidentUpdate $update
      *
      * @return \Illuminate\Http\JsonResponse
+     *
+     * @SWG\Delete(
+     *   path="/incidents/{incident}/updates/{update}",
+     *   summary="Deletes an incident update.",
+     *   description="",
+     *   operationId="IncidentUpdates@destroy",
+     *   tags={"IncidentUpdates"},
+     *   @SWG\Parameter(
+     *     description="Incident id.",
+     *     in="path",
+     *     name="incident",
+     *     required=true,
+     *     type="integer",
+     *     format="int64"
+     *   ),
+     *   @SWG\Parameter(
+     *     description="Incident update to delete.",
+     *     in="path",
+     *     name="update",
+     *     required=true,
+     *     type="integer",
+     *     format="int64"
+     *   ),
+     *   @SWG\Response(
+     *     response=204,
+     *     description="Ok."
+     *   ),
+     * )
      */
     public function destroy(Incident $incident, IncidentUpdate $update)
     {
