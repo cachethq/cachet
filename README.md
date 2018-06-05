@@ -41,6 +41,7 @@ Here are some useful quick links:
 
 - [Installing Cachet](https://docs.cachethq.io/docs/installing-cachet)
 - [Getting started with Docker](https://docs.cachethq.io/docs/get-started-with-docker)
+- [Installing Cachet on Windows](https://docs.cachethq.io/docs/installing-cachet-on-windows)
 
 ### Demo
 
