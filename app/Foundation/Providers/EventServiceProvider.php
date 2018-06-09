@@ -56,12 +56,14 @@ class EventServiceProvider extends ServiceProvider
         ],
         'CachetHQ\Cachet\Bus\Events\IncidentUpdate\IncidentUpdateWasReportedEvent' => [
             'CachetHQ\Cachet\Bus\Handlers\Events\IncidentUpdate\SendIncidentUpdateEmailNotificationHandler',
+            'CachetHQ\Cachet\Bus\Handlers\Events\IncidentUpdate\SendIncidentUpdateSlackNotificationHandler',
         ],
         'CachetHQ\Cachet\Bus\Events\IncidentUpdate\IncidentUpdateWasUpdatedEvent' => [
             //
         ],
         'CachetHQ\Cachet\Bus\Events\Incident\IncidentWasCreatedEvent' => [
             'CachetHQ\Cachet\Bus\Handlers\Events\Incident\SendIncidentEmailNotificationHandler',
+            'CachetHQ\Cachet\Bus\Handlers\Events\Incident\SendIncidentSlackNotificationHandler',
         ],
         'CachetHQ\Cachet\Bus\Events\Incident\IncidentWasRemovedEvent' => [
             //
