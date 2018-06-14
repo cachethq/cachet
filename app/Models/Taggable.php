@@ -11,7 +11,7 @@
 
 namespace CachetHQ\Cachet\Models;
 
-use AltThree\TestBench\ValidationTrait;
+use AltThree\Validator\ValidatingTrait;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -21,7 +21,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Taggable extends Model
 {
-    use ValidationTrait;
+    use ValidatingTrait;
 
     /**
      * The attributes that should be casted to native types.
