@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Composers\Modules;
+namespace CachetHQ\Cachet\Composers;
 
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Services\Dates\DateFactory;
