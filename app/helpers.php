@@ -122,30 +122,6 @@ if (!function_exists('color_contrast')) {
     }
 }
 
-if (!function_exists('array_numeric_sort')) {
-    /**
-     * Numerically sort an array based on a specific key.
-     *
-     * @param array  $array
-     * @param string $key
-     *
-     * @return array
-     */
-    function array_numeric_sort(array $array = [], $key = 'order')
-    {
-        uasort($array, function ($a, $b) use ($key) {
-            $a = array_get($a, $key, PHP_INT_MAX);
-            $b = array_get($b, $key, PHP_INT_MAX);
-
-            $default = PHP_MAJOR_VERSION < 7 ? 1 : 0;
-
-            return $a < $b ? -1 : ($a === $b ? $default : 1);
-        });
-
-        return $array;
-    }
-}
-
 if (!function_exists('cachet_route')) {
     /**
      * Generate a URL to a named route, which resides in a given domain.
