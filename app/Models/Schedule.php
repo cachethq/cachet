@@ -18,6 +18,7 @@ use CachetHQ\Cachet\Presenters\SchedulePresenter;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use McCool\LaravelAutoPresenter\HasPresenter;
 
 /**
@@ -27,7 +28,7 @@ use McCool\LaravelAutoPresenter\HasPresenter;
  */
 class Schedule extends Model implements HasPresenter
 {
-    use SearchableTrait, SortableTrait, ValidatingTrait;
+    use SearchableTrait, SoftDeletes, SortableTrait, ValidatingTrait;
 
     /**
      * The upcoming status.
