@@ -202,7 +202,6 @@ return [
         CachetHQ\Cachet\Foundation\Providers\ConfigServiceProvider::class,
         CachetHQ\Cachet\Foundation\Providers\EventServiceProvider::class,
         CachetHQ\Cachet\Foundation\Providers\IntegrationServiceProvider::class,
-        CachetHQ\Cachet\Foundation\Providers\ModuleServiceProvider::class,
         CachetHQ\Cachet\Foundation\Providers\RepositoryServiceProvider::class,
         CachetHQ\Cachet\Foundation\Providers\RouteServiceProvider::class,
 

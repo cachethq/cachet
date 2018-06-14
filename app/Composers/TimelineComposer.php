@@ -9,18 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Composers\Modules;
+namespace CachetHQ\Cachet\Composers;
 
-use CachetHQ\Cachet\Models\Schedule;
 use Illuminate\Contracts\View\View;
 
 /**
- * This is the scheduled composer.
+ * This is the timeline composer.
  *
  * @author James Brooks <james@alt-three.com>
  * @author Connor S. Parks <connor@connorvg.tv>
  */
-class ScheduledComposer
+class TimelineComposer
 {
     /**
      * Bind data to the view.
@@ -31,8 +30,6 @@ class ScheduledComposer
      */
     public function compose(View $view)
     {
-        $scheduledMaintenance = Schedule::futureSchedules()->orderBy('scheduled_at')->get();
-
-        $view->withScheduledMaintenance($scheduledMaintenance);
+        // ...
     }
 }
