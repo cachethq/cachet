@@ -179,6 +179,7 @@ return [
         AltThree\Twitter\TwitterServiceProvider::class,
         BackupManager\Laravel\Laravel5ServiceProvider::class,
         Barryvdh\Cors\ServiceProvider::class,
+        env('APP_DEBUG') ? Barryvdh\Debugbar\ServiceProvider::class : null,
         Fideloper\Proxy\TrustedProxyServiceProvider::class,
         GrahamCampbell\Binput\BinputServiceProvider::class,
         GrahamCampbell\Core\CoreServiceProvider::class,
