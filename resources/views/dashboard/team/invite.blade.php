@@ -13,7 +13,7 @@
     <invite-team inline-template>
         <div class="row">
             <div class="col-sm-12">
-                @include('dashboard.partials.errors')
+                @include('partials.errors')
                 <form name="UserForm" class="form-vertical" role="form" action="{{ cachet_route('dashboard.team.invite', [], 'post') }}" method="POST">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <fieldset>

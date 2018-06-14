@@ -13,7 +13,7 @@
             <div class="col-sm-12">
                 <form id="settings-form" name="SettingsForm" class="form-vertical" role="form" action="{{ cachet_route('dashboard.settings.mail', [], 'post') }}" method="POST" enctype="multipart/form-data">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    @include('dashboard.partials.errors')
+                    @include('partials.errors')
                     <fieldset>
                         <div class="form-group">
                             <label>{{ trans('forms.setup.mail_driver') }}</label>

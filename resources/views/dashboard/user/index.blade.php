@@ -12,7 +12,7 @@
 <div class="content-wrapper">
     <div class="row">
         <div class="col-sm-12">
-            @include('dashboard.partials.errors')
+            @include('partials.errors')
             <form name="UserForm" class="form-vertical" role="form" action="{{ cachet_route('dashboard.user', [], 'post') }}" method="POST">
                 {!! csrf_field() !!}
                 <fieldset>

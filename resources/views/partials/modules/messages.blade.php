@@ -1,3 +1,3 @@
 <div class="section-messages">
-    @include('dashboard.partials.errors')
+    @include('partials.errors')
 </div>

@@ -18,7 +18,7 @@
                 {{ trans('forms.incidents.notify_disabled') }}
             </div>
             @endif
-            @include('dashboard.partials.errors')
+            @include('partials.errors')
             <report-incident inline-template>
                 <form class="form-vertical" name="IncidentForm" role="form" method="POST" autocomplete="off">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">

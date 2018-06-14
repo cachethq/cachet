@@ -13,7 +13,7 @@
             </a>
             <div class="clearfix"></div>
         </div>
-        @include('dashboard.partials.errors')
+        @include('partials.errors')
         <div class="row">
             <div class="col-sm-12 striped-list" data-orderable-list="/dashboard/api/components/groups/order">
                 @forelse($groups as $group)

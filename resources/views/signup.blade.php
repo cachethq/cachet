@@ -21,7 +21,7 @@
 </div>
 @endif
 
-@include('dashboard.partials.errors')
+@include('partials.errors')
 
 <div class="panel panel-meassage">
     <div class="panel-heading">

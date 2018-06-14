@@ -19,7 +19,7 @@
     </div>
     <div class="row">
         <div class="col-sm-12">
-            @include('dashboard.partials.errors')
+            @include('partials.errors')
 
             <div class="striped-list">
                 @foreach($incident->updates as $update)
