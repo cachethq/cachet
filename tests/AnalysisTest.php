@@ -11,7 +11,7 @@
 
 namespace CachetHQ\Tests\Cachet;
 
-use AltThree\TestBench\AnalysisTrait;
+use GrahamCampbell\Analyzer\AnalysisTrait;
 use PHPUnit\Framework\TestCase;
 
 /**

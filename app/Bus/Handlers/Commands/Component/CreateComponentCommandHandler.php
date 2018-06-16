@@ -61,7 +61,7 @@ class CreateComponentCommandHandler
     /**
      * Filter the command data.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\Incident\CreateComponentCommand $command
+     * @param \CachetHQ\Cachet\Bus\Commands\Component\CreateComponentCommand $command
      *
      * @return array
      */

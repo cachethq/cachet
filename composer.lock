@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8143709266f0897adfd38abe722bdb4c",
+    "content-hash": "dbb0eed817a42b5ccad39e6085dfd101",
     "packages": [
         {
             "name": "alt-three/badger",
@@ -5060,34 +5060,33 @@
     "packages-dev": [
         {
             "name": "alt-three/testbench",
-            "version": "v1.11.3",
+            "version": "v4.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/AltThree/TestBench.git",
-                "reference": "41921bae1a2228785fa54dc3b2fa206e484e5f79"
+                "reference": "38c964dea94cef18c6a8a3bf6f18c2d641ea2cca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/AltThree/TestBench/zipball/41921bae1a2228785fa54dc3b2fa206e484e5f79",
-                "reference": "41921bae1a2228785fa54dc3b2fa206e484e5f79",
+                "url": "https://api.github.com/repos/AltThree/TestBench/zipball/38c964dea94cef18c6a8a3bf6f18c2d641ea2cca",
+                "reference": "38c964dea94cef18c6a8a3bf6f18c2d641ea2cca",
                 "shasum": ""
             },
             "require": {
-                "graham-campbell/testbench-core": "^1.1",
-                "php": ">=5.5.9"
+                "graham-campbell/testbench-core": "^3.0",
+                "php": "^7.0"
             },
             "require-dev": {
-                "nikic/php-parser": "^2.0|^3.0",
-                "phpunit/phpunit": "^4.8|^5.0"
+                "graham-campbell/analyzer": "^2.0",
+                "phpunit/phpunit": "^6.5|^7.0"
             },
             "suggest": {
-                "laravel/framework": "Enables the use of every trait.",
-                "nikic/php-parser": "Enables the use of the static analyzer."
+                "laravel/framework": "Enables the use of most traits."
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.11-dev"
+                    "dev-master": "4.0-dev"
                 }
             },
             "autoload": {
@@ -5101,16 +5100,8 @@
             ],
             "authors": [
                 {
-                    "name": "James Brooks",
-                    "email": "james@alt-three.com"
-                },
-                {
-                    "name": "Graham Campbell",
-                    "email": "graham@alt-three.com"
-                },
-                {
-                    "name": "Joseph Cohen",
-                    "email": "joe@alt-three.com"
+                    "name": "Alt Three",
+                    "email": "support@alt-three.com"
                 }
             ],
             "description": "Provides Some Testing Traits For Apps",
@@ -5119,7 +5110,7 @@
                 "TestBench",
                 "app"
             ],
-            "time": "2017-01-01T12:36:00+00:00"
+            "time": "2018-04-21T17:21:30+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -5355,24 +5346,83 @@
             "time": "2017-08-15T16:48:10+00:00"
         },
         {
-            "name": "graham-campbell/testbench-core",
-            "version": "v1.1.2",
+            "name": "graham-campbell/analyzer",
+            "version": "v2.0.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/GrahamCampbell/Laravel-TestBench-Core.git",
-                "reference": "9dcc8fe7feb891e4c7ffb85d7bc316de9699cf41"
+                "url": "https://github.com/GrahamCampbell/Analyzer.git",
+                "reference": "a9b4054282e725eebc09df3c1332e34e8febb101"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-TestBench-Core/zipball/9dcc8fe7feb891e4c7ffb85d7bc316de9699cf41",
-                "reference": "9dcc8fe7feb891e4c7ffb85d7bc316de9699cf41",
+                "url": "https://api.github.com/repos/GrahamCampbell/Analyzer/zipball/a9b4054282e725eebc09df3c1332e34e8febb101",
+                "reference": "a9b4054282e725eebc09df3c1332e34e8febb101",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.5.9"
+                "nikic/php-parser": "^2.0|^3.0",
+                "php": "^7.0",
+                "phpdocumentor/reflection-docblock": "4.2.*",
+                "phpdocumentor/type-resolver": "0.4.*"
             },
             "require-dev": {
-                "phpunit/phpunit": "^4.8|^5.0"
+                "phpunit/phpunit": "^6.5"
+            },
+            "suggest": {
+                "phpunit/phpunit": "Required to use the analysis trait."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GrahamCampbell\\Analyzer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Graham Campbell",
+                    "email": "graham@alt-three.com"
+                }
+            ],
+            "description": "Checks if referenced classes really exist.",
+            "keywords": [
+                "Graham Campbell",
+                "GrahamCampbell",
+                "analysis",
+                "analyzer",
+                "classes",
+                "testing"
+            ],
+            "time": "2018-01-01T19:57:19+00:00"
+        },
+        {
+            "name": "graham-campbell/testbench-core",
+            "version": "v3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/GrahamCampbell/Laravel-TestBench-Core.git",
+                "reference": "2f1fcb1871aa490fd46efbfcfd25f715a371e800"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-TestBench-Core/zipball/2f1fcb1871aa490fd46efbfcfd25f715a371e800",
+                "reference": "2f1fcb1871aa490fd46efbfcfd25f715a371e800",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "graham-campbell/analyzer": "^2.0",
+                "phpunit/phpunit": "^6.5"
             },
             "suggest": {
                 "illuminate/support": "Required to use the laravel trait.",
@@ -5382,7 +5432,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1-dev"
+                    "dev-master": "3.0-dev"
                 }
             },
             "autoload": {
@@ -5412,24 +5462,24 @@
                 "testbench-core",
                 "testing"
             ],
-            "time": "2017-01-01T13:06:17+00:00"
+            "time": "2018-01-02T16:16:42+00:00"
         },
         {
             "name": "hamcrest/hamcrest-php",
-            "version": "v1.2.2",
+            "version": "v2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hamcrest/hamcrest-php.git",
-                "reference": "b37020aa976fa52d3de9aa904aa2522dc518f79c"
+                "reference": "776503d3a8e85d4f9a1148614f95b7a608b046ad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hamcrest/hamcrest-php/zipball/b37020aa976fa52d3de9aa904aa2522dc518f79c",
-                "reference": "b37020aa976fa52d3de9aa904aa2522dc518f79c",
+                "url": "https://api.github.com/repos/hamcrest/hamcrest-php/zipball/776503d3a8e85d4f9a1148614f95b7a608b046ad",
+                "reference": "776503d3a8e85d4f9a1148614f95b7a608b046ad",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.2"
+                "php": "^5.3|^7.0"
             },
             "replace": {
                 "cordoval/hamcrest-php": "*",
@@ -5438,15 +5488,18 @@
             },
             "require-dev": {
                 "phpunit/php-file-iterator": "1.3.3",
-                "satooshi/php-coveralls": "dev-master"
+                "phpunit/phpunit": "~4.0",
+                "satooshi/php-coveralls": "^1.0"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
             "autoload": {
                 "classmap": [
                     "hamcrest"
-                ],
-                "files": [
-                    "hamcrest/Hamcrest.php"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -5457,7 +5510,7 @@
             "keywords": [
                 "test"
             ],
-            "time": "2015-05-11T14:41:42+00:00"
+            "time": "2016-01-20T08:20:44+00:00"
         },
         {
             "name": "maximebf/debugbar",
@@ -5522,30 +5575,31 @@
         },
         {
             "name": "mockery/mockery",
-            "version": "0.9.9",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mockery/mockery.git",
-                "reference": "6fdb61243844dc924071d3404bb23994ea0b6856"
+                "reference": "99e29d3596b16dabe4982548527d5ddf90232e99"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mockery/mockery/zipball/6fdb61243844dc924071d3404bb23994ea0b6856",
-                "reference": "6fdb61243844dc924071d3404bb23994ea0b6856",
+                "url": "https://api.github.com/repos/mockery/mockery/zipball/99e29d3596b16dabe4982548527d5ddf90232e99",
+                "reference": "99e29d3596b16dabe4982548527d5ddf90232e99",
                 "shasum": ""
             },
             "require": {
-                "hamcrest/hamcrest-php": "~1.1",
+                "hamcrest/hamcrest-php": "~2.0",
                 "lib-pcre": ">=7.0",
-                "php": ">=5.3.2"
+                "php": ">=5.6.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.0"
+                "phpdocumentor/phpdocumentor": "^2.9",
+                "phpunit/phpunit": "~5.7.10|~6.5"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.9.x-dev"
+                    "dev-master": "1.0.x-dev"
                 }
             },
             "autoload": {
@@ -5569,8 +5623,8 @@
                     "homepage": "http://davedevelopment.co.uk"
                 }
             ],
-            "description": "Mockery is a simple yet flexible PHP mock object framework for use in unit testing with PHPUnit, PHPSpec or any other testing framework. Its core goal is to offer a test double framework with a succinct API capable of clearly defining all possible object operations and interactions using a human readable Domain Specific Language (DSL). Designed as a drop in alternative to PHPUnit's phpunit-mock-objects library, Mockery is easy to integrate with PHPUnit and can operate alongside phpunit-mock-objects without the World ending.",
-            "homepage": "http://github.com/padraic/mockery",
+            "description": "Mockery is a simple yet flexible PHP mock object framework",
+            "homepage": "https://github.com/mockery/mockery",
             "keywords": [
                 "BDD",
                 "TDD",
@@ -5583,7 +5637,7 @@
                 "test double",
                 "testing"
             ],
-            "time": "2017-02-28T12:52:32+00:00"
+            "time": "2018-05-08T08:54:48+00:00"
         },
         {
             "name": "myclabs/deep-copy",
@@ -5791,16 +5845,16 @@
         },
         {
             "name": "phpdocumentor/reflection-docblock",
-            "version": "4.3.0",
+            "version": "4.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
-                "reference": "94fd0001232e47129dd3504189fa1c7225010d08"
+                "reference": "66465776cfc249844bde6d117abff1d22e06c2da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/94fd0001232e47129dd3504189fa1c7225010d08",
-                "reference": "94fd0001232e47129dd3504189fa1c7225010d08",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/66465776cfc249844bde6d117abff1d22e06c2da",
+                "reference": "66465776cfc249844bde6d117abff1d22e06c2da",
                 "shasum": ""
             },
             "require": {
@@ -5838,7 +5892,7 @@
                 }
             ],
             "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
-            "time": "2017-11-30T07:14:17+00:00"
+            "time": "2017-11-27T17:38:31+00:00"
         },
         {
             "name": "phpdocumentor/type-resolver",
