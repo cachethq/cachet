@@ -16,4 +16,8 @@
     font-size: 18px;
 }
 
+.list-group-item.group-name:hover {
+    cursor: pointer;
+}
+
 @import "modules/stats";
