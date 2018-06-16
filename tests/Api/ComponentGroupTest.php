@@ -45,7 +45,7 @@ class ComponentGroupTest extends AbstractApiTestCase
                 'enabled_components'        => $groups[0]->enabled_components,
                 'enabled_components_lowest' => $groups[0]->enabled_components_lowest,
                 'lowest_human_status'       => $groups[0]->lowest_human_status,
-            ]
+            ],
         ]);
         $response->assertJsonFragment([
             [
@@ -59,7 +59,7 @@ class ComponentGroupTest extends AbstractApiTestCase
                 'enabled_components'        => $groups[1]->enabled_components,
                 'enabled_components_lowest' => $groups[1]->enabled_components_lowest,
                 'lowest_human_status'       => $groups[1]->lowest_human_status,
-            ]
+            ],
         ]);
     }
 
