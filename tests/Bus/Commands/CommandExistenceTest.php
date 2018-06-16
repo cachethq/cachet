@@ -12,12 +12,13 @@
 namespace CachetHQ\Tests\Cachet\Bus\Commands;
 
 use AltThree\TestBench\ExistenceTrait;
-use PHPUnit_Framework_TestCase as TestCase;
+use PHPUnit\Framework\TestCase;
 
 /**
  * This is the command existence test class.
  *
  * @author Graham Campbell <graham@alt-three.com>
+ * @author James Brooks <james@alt-three.com>
  */
 class CommandExistenceTest extends TestCase
 {

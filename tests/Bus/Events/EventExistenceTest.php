@@ -12,7 +12,7 @@
 namespace CachetHQ\Tests\Cachet\Bus\Events;
 
 use AltThree\TestBench\ExistenceTrait;
-use PHPUnit_Framework_TestCase as TestCase;
+use PHPUnit\Framework\TestCase;
 
 /**
  * This is the event existence test class.
