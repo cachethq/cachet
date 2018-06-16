@@ -194,7 +194,7 @@ class Metric extends Model implements HasPresenter
      */
     public function scopeDisplayable(Builder $query)
     {
-        return $query->where('display_chart', '=', true)->where('visible', '!=', self::VISIBLE_HIDDEN);
+        return $query->where('display_chart', '=', true)->where('visible', '<>', self::VISIBLE_HIDDEN);
     }
 
     /**
