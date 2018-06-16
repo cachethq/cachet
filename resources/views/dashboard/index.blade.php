@@ -1,10 +1,15 @@
 @extends('layout.dashboard')
 
 @section('content')
-<div>
-    <div class="header">
-        <div class="sidebar-toggler visible-xs">
-            <i class="ion ion-navicon"></i>
+<dashboard inline-template :welcome-user="{{ $welcomeUser ? 'true' : 'false' }}">
+    <div>
+        <div class="header">
+            <div class="sidebar-toggler visible-xs">
+                <i class="ion ion-navicon"></i>
+            </div>
+            <span class="uppercase">
+                <i class="ion ion-speedometer"></i> {{ trans('dashboard.dashboard') }}
+            </span>
         </div>
         <span class="uppercase">
             <i class="ion ion-speedometer"></i> {{ trans('dashboard.dashboard') }}
@@ -20,7 +25,7 @@
         <div class="row">
           <div class="col-md-12">
               <div class="section-components no-select">
-                  @if(!$component_groups->isEmpty() || !$ungrouped_components->isEmpty())
+                  @if(!$componentGroups->isEmpty() || !$ungroupedComponents->isEmpty())
                   @include('dashboard.partials.components')
                   @else
                   <ul class="list-group components">
@@ -87,7 +92,7 @@
             </div>
             @endif
         </div>
+        @includeWhen($welcomeUser, 'dashboard.partials.welcome-modal')
     </div>
-    @includeWhen($welcome_user, 'dashboard.partials.welcome-modal')
 </div>
 @stop

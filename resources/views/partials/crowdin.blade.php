@@ -1,4 +1,4 @@
-@if($app_locale === 'en-UD' && $enable_external_dependencies)
+@if($appLocale === 'en-UD' && $enableExternalDependencies)
 <script type="text/javascript">
     var _jipt = [];
     _jipt.push(['project', 'cachet']);

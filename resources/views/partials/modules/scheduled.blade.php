@@ -1,4 +1,4 @@
-@if($scheduled_maintenance->isNotEmpty())
+@if($scheduledMaintenance->isNotEmpty())
 <div class="section-scheduled">
     @include('partials.schedule')
 </div>

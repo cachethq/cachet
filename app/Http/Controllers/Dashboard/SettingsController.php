@@ -116,8 +116,8 @@ class SettingsController extends Controller
         ];
 
         View::share([
-            'sub_title' => trans('dashboard.settings.settings'),
-            'sub_menu'  => $this->subMenu,
+            'subTitle' => trans('dashboard.settings.settings'),
+            'subMenu'  => $this->subMenu,
         ]);
     }
 

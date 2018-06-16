@@ -61,8 +61,8 @@ class ComponentController extends Controller
         ];
 
         View::share([
-            'sub_menu'  => $this->subMenu,
-            'sub_title' => trans_choice('dashboard.components.components', 2),
+            'subMenu'  => $this->subMenu,
+            'subTitle' => trans_choice('dashboard.components.components', 2),
         ]);
     }
 

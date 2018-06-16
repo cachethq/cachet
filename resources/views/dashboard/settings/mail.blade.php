@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="content-panel">
-    @includeWhen(isset($sub_menu), 'dashboard.partials.sub-sidebar')
+    @includeWhen(isset($subMenu), 'dashboard.partials.sub-sidebar')
     <div class="content-wrapper">
         <div class="header sub-header" id="application-setup">
             <span class="uppercase">
@@ -19,7 +19,7 @@
                             <label>{{ trans('forms.setup.mail_driver') }}</label>
                             <select name="config[mail_driver]" class="form-control" required>
                                 <option disabled>{{ trans('forms.setup.mail_driver') }}</option>
-                                @foreach($mail_drivers as $driver => $driverName)
+                                @foreach($mailDrivers as $driver => $driverName)
                                 <option value="{{ $driver }}" {{ Binput::old('config.mail_driver', $config['driver']) == $driver ? "selected" : null }}>{{ $driverName }}</option>
                                 @endforeach
                             </select>

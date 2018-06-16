@@ -65,7 +65,7 @@ class IncidentController extends Controller
         $this->auth = $auth;
         $this->system = $system;
 
-        View::share('sub_title', trans('dashboard.incidents.title'));
+        View::share('subTitle', trans('dashboard.incidents.title'));
     }
 
     /**

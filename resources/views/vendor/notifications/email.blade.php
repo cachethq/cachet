@@ -42,7 +42,7 @@ $style = [
 
     /* Type ------------------------------ */
 
-    'anchor' => "color: {$theme_links};",
+    'anchor' => "color: {$themeLinks};",
     'header-1' => 'margin-top: 0; color: #2F3133; font-size: 19px; font-weight: bold; text-align: left;',
     'paragraph' => 'margin-top: 0; color: #74787E; font-size: 16px; line-height: 1.5em;',
     'paragraph-sub' => 'margin-top: 0; color: #74787E; font-size: 12px; line-height: 1.5em;',
@@ -54,9 +54,9 @@ $style = [
                  background-color: #3869D4; border-radius: 3px; color: #ffffff; font-size: 15px; line-height: 25px;
                  text-align: center; text-decoration: none; -webkit-text-size-adjust: none;',
 
-    'button--green' => "background-color: {$theme_greens};",
-    'button--red' => "background-color: {$theme_reds};",
-    'button--blue' => "background-color: {$theme_blues};",
+    'button--green' => "background-color: {$themeGreens};",
+    'button--red' => "background-color: {$themeReds};",
+    'button--blue' => "background-color: {$themeBlues};",
 ];
 ?>
 

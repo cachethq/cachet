@@ -175,12 +175,9 @@ return [
          */
         AltThree\Badger\BadgerServiceProvider::class,
         AltThree\Emoji\EmojiServiceProvider::class,
-        AltThree\Logger\LoggerServiceProvider::class,
         AltThree\Twitter\TwitterServiceProvider::class,
-        BackupManager\Laravel\Laravel5ServiceProvider::class,
         Barryvdh\Cors\ServiceProvider::class,
         env('APP_DEBUG') ? Barryvdh\Debugbar\ServiceProvider::class : null,
-        Fideloper\Proxy\TrustedProxyServiceProvider::class,
         GrahamCampbell\Binput\BinputServiceProvider::class,
         GrahamCampbell\Exceptions\ExceptionsServiceProvider::class,
         GrahamCampbell\Markdown\MarkdownServiceProvider::class,
@@ -190,6 +187,7 @@ return [
         Laravolt\Avatar\ServiceProvider::class,
         McCool\LaravelAutoPresenter\AutoPresenterServiceProvider::class,
         PragmaRX\Google2FA\Vendor\Laravel\ServiceProvider::class,
+        Spatie\Backup\BackupServiceProvider::class,
         Roumen\Feed\FeedServiceProvider::class,
 
         /*

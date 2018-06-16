@@ -18,12 +18,12 @@
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <input type="hidden" name="visible" value="1">
                 <fieldset>
-                    @if($incident_templates->count() > 0)
+                    @if($incidentTemplates->count() > 0)
                     <div class="form-group">
                         <label for="incident-template">{{ trans('forms.schedules.templates.template') }}</label>
                         <select class="form-control" name="template">
                             <option selected></option>
-                            @foreach($incident_templates as $tpl)
+                            @foreach($incidentTemplates as $tpl)
                             <option value="{{ $tpl->slug }}">{{ $tpl->name }}</option>
                             @endforeach
                         </select>

@@ -42,7 +42,7 @@ class ScheduleController extends Controller
      */
     public function __construct()
     {
-        View::share('sub_title', trans('dashboard.schedule.title'));
+        View::share('subTitle', trans('dashboard.schedule.title'));
     }
 
     /**

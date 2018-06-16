@@ -13,7 +13,7 @@
 <div class="content-wrapper">
     <div class="row">
         <div class="col-md-12">
-            @if(!$notifications_enabled)
+            @if(!$notificationsEnabled)
                 <div class="alert alert-info" role="alert">
                     {{ trans('forms.incidents.notify_disabled') }}
                 </div>

@@ -39,8 +39,8 @@
                                     <label>{{ trans('forms.setup.cache_driver') }}</label>
                                     <select name="env[cache_driver]" class="form-control" required v-model="env.cache_driver">
                                         <option disabled>{{ trans('forms.setup.cache_driver') }}</option>
-                                        @foreach($cache_drivers as $driver => $driverName)
-                                        <option value="{{ $driver }}" {{ Binput::old('env.cache_driver', $cache_config['driver']) == $driver ? "selected" : null }}>{{ $driverName }}</option>
+                                        @foreach($cacheDrivers as $driver => $driverName)
+                                        <option value="{{ $driver }}" {{ Binput::old('env.cache_driver', $cacheConfig['driver']) == $driver ? "selected" : null }}>{{ $driverName }}</option>
                                         @endforeach
                                     </select>
                                     @if($errors->has('env.cache_driver'))
@@ -51,8 +51,8 @@
                                     <label>{{ trans('forms.setup.queue_driver') }}</label>
                                     <select name="env[queue_driver]" class="form-control" required v-model="env.queue_driver">
                                         <option disabled>{{ trans('forms.setup.queue_driver') }}</option>
-                                        @foreach($queue_drivers as $driver => $driverName)
-                                        <option value="{{ $driver }}" {{ Binput::old('env.queue_driver', $queue_config['driver']) == $driver ? "selected" : null }}>{{ $driverName }}</option>
+                                        @foreach($queueDrivers as $driver => $driverName)
+                                        <option value="{{ $driver }}" {{ Binput::old('env.queue_driver', $queueConfig['driver']) == $driver ? "selected" : null }}>{{ $driverName }}</option>
                                         @endforeach
                                     </select>
                                     @if($errors->has('env.queue_driver'))
@@ -63,8 +63,8 @@
                                     <label>{{ trans('forms.setup.session_driver') }}</label>
                                     <select name="env[session_driver]" class="form-control" required v-model="env.session_driver">
                                         <option disabled>{{ trans('forms.setup.session_driver') }}</option>
-                                        @foreach($cache_drivers as $driver => $driverName)
-                                        <option value="{{ $driver }}" {{ Binput::old('env.session_driver', $session_config['driver']) == $driver ? "selected" : null }}>{{ $driverName }}</option>
+                                        @foreach($cacheDrivers as $driver => $driverName)
+                                        <option value="{{ $driver }}" {{ Binput::old('env.session_driver', $sessionConfig['driver']) == $driver ? "selected" : null }}>{{ $driverName }}</option>
                                         @endforeach
                                     </select>
                                     @if($errors->has('env.session_driver'))
@@ -78,8 +78,8 @@
                             <label>{{ trans('forms.setup.mail_driver') }}</label>
                             <select name="env[mail_driver]" class="form-control" required v-model="env.mail_driver">
                                 <option disabled>{{ trans('forms.setup.mail_driver') }}</option>
-                                @foreach($mail_drivers as $driver => $driverName)
-                                <option value="{{ $driver }}" {{ Binput::old('env.mail_driver', $mail_config['driver']) == $driver ? "selected" : null }}>{{ $driverName }}</option>
+                                @foreach($mailDrivers as $driver => $driverName)
+                                <option value="{{ $driver }}" {{ Binput::old('env.mail_driver', $mailConfig['driver']) == $driver ? "selected" : null }}>{{ $driverName }}</option>
                                 @endforeach
                             </select>
                             @if($errors->has('env.mail_driver'))
@@ -88,28 +88,28 @@
                         </div>
                         <div class="form-group">
                             <label>{{ trans('forms.setup.mail_host') }}</label>
-                            <input type="text" class="form-control" name="env[mail_host]" value="{{ Binput::old('env.mail_host', $mail_config['host']) }}" placeholder="{{ trans('forms.setup.mail_host') }}" :required="mail.requiresHost">
+                            <input type="text" class="form-control" name="env[mail_host]" value="{{ Binput::old('env.mail_host', $mailConfig['host']) }}" placeholder="{{ trans('forms.setup.mail_host') }}" :required="mail.requiresHost">
                             @if($errors->has('env.mail_host'))
                             <span class="text-danger">{{ $errors->first('env.mail_host') }}</span>
                             @endif
                         </div>
                         <div class="form-group">
                             <label>{{ trans('forms.setup.mail_address') }}</label>
-                            <input type="text" class="form-control" name="env[mail_address]" value="{{ Binput::old('env.mail_address', $mail_config['from']['address']) }}" placeholder="notifications@alt-three.com">
+                            <input type="text" class="form-control" name="env[mail_address]" value="{{ Binput::old('env.mail_address', $mailConfig['from']['address']) }}" placeholder="notifications@alt-three.com">
                             @if($errors->has('env.mail_address'))
                             <span class="text-danger">{{ $errors->first('env.mail_address') }}</span>
                             @endif
                         </div>
                         <div class="form-group">
                             <label>{{ trans('forms.setup.mail_username') }}</label>
-                            <input type="text" class="form-control" name="env[mail_username]" value="{{ Binput::old('env.mail_username', $mail_config['username']) }}" placeholder="{{ trans('forms.setup.mail_username') }}" :required="mail.requiresUsername">
+                            <input type="text" class="form-control" name="env[mail_username]" value="{{ Binput::old('env.mail_username', $mailConfig['username']) }}" placeholder="{{ trans('forms.setup.mail_username') }}" :required="mail.requiresUsername">
                             @if($errors->has('env.mail_username'))
                             <span class="text-danger">{{ $errors->first('env.mail_username') }}</span>
                             @endif
                         </div>
                         <div class="form-group">
                             <label>{{ trans('forms.setup.mail_password') }}</label>
-                            <input type="password" class="form-control" name="env[mail_password]" value="{{ Binput::old('env.mail_password', $mail_config['password']) }}" autocomplete="off" placeholder="{{ trans('forms.setup.mail_password') }}" :required="mail.requiresUsername">
+                            <input type="password" class="form-control" name="env[mail_password]" value="{{ Binput::old('env.mail_password', $mailConfig['password']) }}" autocomplete="off" placeholder="{{ trans('forms.setup.mail_password') }}" :required="mail.requiresUsername">
                             @if($errors->has('env.mail_password'))
                             <span class="text-danger">{{ $errors->first('env.mail_password') }}</span>
                             @endif
@@ -161,7 +161,7 @@
                             <select name="settings[app_locale]" class="form-control" required>
                                 <option value="">Select Language</option>
                                 @foreach($langs as $key => $lang)
-                                <option value="{{ $key }}" @if(Binput::old('settings.app_locale') == $key || $user_language == $key) selected @endif>
+                                <option value="{{ $key }}" @if(Binput::old('settings.app_locale') == $key || $userLanguage == $key) selected @endif>
                                     {{ $lang['name'] }}
                                 </option>
                                 @endforeach

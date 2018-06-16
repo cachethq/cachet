@@ -50,6 +50,9 @@ class StatusComposer
      */
     public function compose(View $view)
     {
-        $view->with($this->system->getStatus());
+        $status = $this->system->getStatus();
+
+        $view->withSystemStatus(array_get($status, 'system_status'));
+        $view->withSystemMessage(array_get($status, 'system_message'));
     }
 }
