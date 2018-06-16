@@ -11,6 +11,10 @@
 
 namespace CachetHQ\Tests\Cachet\Api;
 
+use CachetHQ\Cachet\Bus\Events\Subscriber\SubscriberHasSubscribedEvent;
+use CachetHQ\Cachet\Models\Component;
+use CachetHQ\Cachet\Models\Subscriber;
+use CachetHQ\Cachet\Models\Subscription;
 use Illuminate\Support\Facades\Notification;
 
 /**
@@ -21,97 +25,104 @@ use Illuminate\Support\Facades\Notification;
  */
 class SubscriberTest extends AbstractApiTestCase
 {
-    public function testGetSubscribersUnauthenticated()
-    {
-        $this->get('/api/v1/subscribers');
-        $this->assertResponseStatus(401);
-        $this->seeHeader('Content-Type', 'application/json');
-    }
-
-    public function testGetSubscribers()
+    public function test_can_get_all_subscribers()
     {
         $this->beUser();
 
-        $subscriber = factory('CachetHQ\Cachet\Models\Subscriber')->create();
+        $subscriber = factory(Subscriber::class)->create();
 
-        $this->get('/api/v1/subscribers');
-        $this->seeHeader('Content-Type', 'application/json');
-        $this->assertResponseOk();
+        $response = $this->json('GET', '/api/v1/subscribers');
+
+        $response->assertStatus(200);
+        $response->assertHeader('Content-Type', 'application/json');
     }
 
-    public function testCreateSubscriber()
+    public function test_cannot_get_subscribers_without_authorization()
+    {
+        $response = $this->json('GET', '/api/v1/subscribers');
+
+        $response->assertStatus(401);
+        $response->assertHeader('Content-Type', 'application/json');
+    }
+
+    public function test_can_create_subscriber()
     {
         $this->beUser();
 
         Notification::fake();
 
-        $this->expectsEvents('CachetHQ\Cachet\Bus\Events\Subscriber\SubscriberHasSubscribedEvent');
+        $this->expectsEvents(SubscriberHasSubscribedEvent::class);
 
-        $this->post('/api/v1/subscribers', [
+        $response = $this->json('POST', '/api/v1/subscribers', [
             'email' => 'support@alt-three.com',
         ]);
-        $this->assertResponseOk();
-        $this->seeHeader('Content-Type', 'application/json');
-        $this->seeJsonContains(['email' => 'support@alt-three.com']);
+
+        $response->assertStatus(200);
+        $response->assertHeader('Content-Type', 'application/json');
+        $response->assertJsonFragment(['email' => 'support@alt-three.com']);
     }
 
-    public function testCreateSubscriberAutoVerified()
+    public function test_can_create_subscriber_automatically_verified()
     {
         $this->beUser();
 
         Notification::fake();
 
-        $this->expectsEvents('CachetHQ\Cachet\Bus\Events\Subscriber\SubscriberHasSubscribedEvent');
+        $this->expectsEvents(SubscriberHasSubscribedEvent::class);
 
-        $this->post('/api/v1/subscribers', [
+        $response = $this->json('POST', '/api/v1/subscribers', [
             'email'  => 'support@alt-three.com',
             'verify' => true,
         ]);
-        $this->assertResponseOk();
-        $this->seeHeader('Content-Type', 'application/json');
-        $this->seeJsonContains(['email' => 'support@alt-three.com']);
+
+        $response->assertStatus(200);
+        $response->assertHeader('Content-Type', 'application/json');
+        $response->assertJsonFragment(['email' => 'support@alt-three.com']);
     }
 
-    public function testCreateSubscriberWithSubscriptions()
+    public function test_can_create_subscriber_with_subscription()
     {
         $this->beUser();
 
-        factory('CachetHQ\Cachet\Models\Component', 3)->create();
+        factory(Component::class, 3)->create();
 
-        $this->post('/api/v1/subscribers', [
-            'email'         => 'support@alt-three.com',
-            'verify'        => true,
-            'components'    => [
+        $response = $this->json('POST', '/api/v1/subscribers', [
+            'email'      => 'support@alt-three.com',
+            'verify'     => true,
+            'components' => [
                 1,
                 3,
             ],
         ]);
-        $this->assertResponseOk();
-        $this->seeHeader('Content-Type', 'application/json');
-        $this->seeJsonContains(['email' => 'support@alt-three.com']);
-        $this->seeJsonStructure(['data' => ['subscriptions' => []]]);
 
-        $data = $this->decodeResponseJson();
+        $response->assertStatus(200);
+        $response->assertHeader('Content-Type', 'application/json');
+        $response->assertJsonFragment(['email' => 'support@alt-three.com']);
+
+        $data = $response->decodeResponseJson();
         $this->assertCount(2, $data['data']['subscriptions']);
         $this->assertEquals(1, $data['data']['subscriptions'][0]['component_id']);
         $this->assertEquals(3, $data['data']['subscriptions'][1]['component_id']);
     }
 
-    public function testDeleteSubscriber()
+    public function test_can_delete_subscriber()
     {
         $this->beUser();
 
-        $subscriber = factory('CachetHQ\Cachet\Models\Subscriber')->create();
-        $this->delete("/api/v1/subscribers/{$subscriber->id}");
-        $this->assertResponseStatus(204);
+        $subscriber = factory(Subscriber::class)->create();
+        $response = $this->json('DELETE', "/api/v1/subscribers/{$subscriber->id}");
+
+        $response->assertStatus(204);
     }
 
-    public function testDeleteSubscription()
+    public function test_can_delete_subscription()
     {
         $this->beUser();
 
-        $subscription = factory('CachetHQ\Cachet\Models\Subscription')->create();
-        $this->delete("/api/v1/subscriptions/{$subscription->id}");
-        $this->assertResponseStatus(204);
+        $subscription = factory(Subscription::class)->create();
+
+        $response = $this->json('DELETE', "/api/v1/subscriptions/{$subscription->id}");
+
+        $response->assertStatus(204);
     }
 }

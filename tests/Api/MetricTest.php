@@ -11,6 +11,8 @@
 
 namespace CachetHQ\Tests\Cachet\Api;
 
+use CachetHQ\Cachet\Models\Metric;
+
 /**
  * This is the metric test class.
  *
@@ -19,42 +21,43 @@ namespace CachetHQ\Tests\Cachet\Api;
  */
 class MetricTest extends AbstractApiTestCase
 {
-    public function testGetMetrics()
+    public function test_can_get_all_metrics()
     {
-        $metrics = factory('CachetHQ\Cachet\Models\Metric', 3)->create();
+        $metrics = factory(Metric::class, 3)->create();
 
-        $this->get('/api/v1/metrics');
-        $this->seeJsonContains(['id' => $metrics[0]->id]);
-        $this->seeJsonContains(['id' => $metrics[1]->id]);
-        $this->seeJsonContains(['id' => $metrics[2]->id]);
-        $this->assertResponseOk();
+        $response = $this->json('GET', '/api/v1/metrics');
+
+        $response->assertJsonFragment(['id' => $metrics[0]->id]);
+        $response->assertJsonFragment(['id' => $metrics[1]->id]);
+        $response->assertJsonFragment(['id' => $metrics[2]->id]);
+        $response->assertStatus(200);
     }
 
-    public function testGetInvalidMetric()
+    public function test_cannot_get_invalid_metric()
     {
-        $this->get('/api/v1/metrics/0');
-        $this->assertResponseStatus(404);
+        $response = $this->json('GET', '/api/v1/metrics/0');
+        $response->assertStatus(404);
     }
 
-    public function testPostMetricUnauthorized()
+    public function test_cannot_create_metric_without_authorization()
     {
-        $this->post('/api/v1/metrics');
-        $this->assertResponseStatus(401);
+        $response = $this->json('POST', '/api/v1/metrics');
+        $response->assertStatus(401);
     }
 
-    public function testPostMetricNoData()
+    public function test_cannot_create_metric_without_data()
     {
         $this->beUser();
 
-        $this->post('/api/v1/metrics');
-        $this->assertResponseStatus(400);
+        $response = $this->json('POST', '/api/v1/metrics');
+        $response->assertStatus(400);
     }
 
-    public function testPostMetric()
+    public function test_can_create_metric()
     {
         $this->beUser();
 
-        $this->post('/api/v1/metrics', [
+        $response = $this->json('POST', '/api/v1/metrics', [
             'name'          => 'Foo',
             'suffix'        => 'foo\'s per second',
             'description'   => 'Lorem ipsum dolor',
@@ -65,38 +68,42 @@ class MetricTest extends AbstractApiTestCase
             'threshold'     => 5,
             'order'         => 1,
         ]);
-        $this->seeJsonContains(['name' => 'Foo']);
-        $this->assertResponseOk();
+
+        $response->assertStatus(200);
+        $response->assertJsonFragment(['name' => 'Foo']);
     }
 
-    public function testGetNewMetric()
+    public function test_can_get_newly_created_metric()
     {
-        $incident = factory('CachetHQ\Cachet\Models\Metric')->create();
+        $incident = factory(Metric::class)->create();
 
-        $this->get('/api/v1/metrics/1');
-        $this->seeJsonContains(['name' => $incident->name]);
-        $this->assertResponseOk();
+        $response = $this->json('GET', '/api/v1/metrics/1');
+
+        $response->assertStatus(200);
+        $response->assertJsonFragment(['name' => $incident->name]);
     }
 
-    public function testPutMetric()
+    public function test_can_update_metric()
     {
         $this->beUser();
-        $metric = factory('CachetHQ\Cachet\Models\Metric')->create();
+        $metric = factory(Metric::class)->create();
 
-        $this->put('/api/v1/metrics/1', [
+        $response = $this->json('PUT', '/api/v1/metrics/1', [
             'name' => 'Foo',
             'view' => 2,
         ]);
-        $this->seeJsonContains(['name' => 'Foo', 'default_view' => 2]);
-        $this->assertResponseOk();
+
+        $response->assertStatus(200);
+        $response->assertJsonFragment(['name' => 'Foo', 'default_view' => 2]);
     }
 
-    public function testDeleteMetric()
+    public function test_can_delete_metric()
     {
         $this->beUser();
-        $metric = factory('CachetHQ\Cachet\Models\Metric')->create();
+        $metric = factory(Metric::class)->create();
 
-        $this->delete('/api/v1/metrics/1');
-        $this->assertResponseStatus(204);
+        $response = $this->json('DELETE', '/api/v1/metrics/1');
+
+        $response->assertStatus(204);
     }
 }

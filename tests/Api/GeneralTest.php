@@ -19,26 +19,27 @@ namespace CachetHQ\Tests\Cachet\Api;
  */
 class GeneralTest extends AbstractApiTestCase
 {
-    public function testGetPing()
+    public function test_can_ping()
     {
-        $this->get('/api/v1/ping');
-        $this->seeJsonContains(['data' => 'Pong!']);
-        $this->assertResponseOk();
-        $this->seeHeader('Content-Type', 'application/json');
+        $response = $this->json('GET', '/api/v1/ping');
+
+        $response->assertStatus(200);
+        $response->assertHeader('Content-Type', 'application/json');
+        $response->assertJsonFragment(['data' => 'Pong!']);
     }
 
-    public function testErrorPage()
+    public function test_see_error_page_for_unknown_endpoint()
     {
-        $this->get('/api/v1/not-found');
+        $response = $this->json('GET', '/api/v1/not-found');
 
-        $this->assertResponseStatus(404);
-        $this->seeHeader('Content-Type', 'application/json');
+        $response->assertStatus(404);
+        $response->assertHeader('Content-Type', 'application/json');
     }
 
-    public function testNotAcceptableContentType()
+    public function test_non_acceptable_content_type()
     {
-        $this->get('/api/v1/ping', ['HTTP_Accept' => 'text/html']);
+        $response = $this->json('GET', '/api/v1/ping', [], ['HTTP_Accept' => 'text/html']);
 
-        $this->assertResponseStatus(406);
+        $response->assertStatus(406);
     }
 }
