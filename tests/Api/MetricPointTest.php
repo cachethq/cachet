@@ -11,6 +11,8 @@
 
 namespace CachetHQ\Tests\Cachet\Api;
 
+use CachetHQ\Cachet\Models\Metric;
+use CachetHQ\Cachet\Models\MetricPoint;
 use Carbon\Carbon;
 
 /**
@@ -21,72 +23,70 @@ use Carbon\Carbon;
  */
 class MetricPointTest extends AbstractApiTestCase
 {
-    public function testGetMetricPoint()
+    public function test_can_get_all_metric_points()
     {
-        $metric = factory('CachetHQ\Cachet\Models\Metric')->create();
-        $metricPoint = factory('CachetHQ\Cachet\Models\MetricPoint', 3)->create([
+        $metric = factory(Metric::class)->create();
+        $metricPoint = factory(MetricPoint::class, 3)->create([
             'metric_id' => $metric->id,
         ]);
 
-        $this->get("/api/v1/metrics/{$metric->id}/points");
+        $response = $this->json('GET', "/api/v1/metrics/{$metric->id}/points");
 
-        $this->seeJsonContains(['id' => $metricPoint[0]->id]);
-        $this->seeJsonContains(['id' => $metricPoint[1]->id]);
-        $this->seeJsonContains(['id' => $metricPoint[2]->id]);
+        $response->assertJsonFragment(['id' => $metricPoint[0]->id]);
+        $response->assertJsonFragment(['id' => $metricPoint[1]->id]);
+        $response->assertJsonFragment(['id' => $metricPoint[2]->id]);
 
-        $this->assertResponseOk();
+        $response->assertStatus(200);
     }
 
-    public function testPostMetricPointUnauthorized()
+    public function test_cannot_create_metric_point_without_authorization()
     {
-        $metric = factory('CachetHQ\Cachet\Models\Metric')->create();
-        $metricPoint = factory('CachetHQ\Cachet\Models\MetricPoint')->create([
+        $metric = factory(Metric::class)->create();
+        $metricPoint = factory(MetricPoint::class)->create([
             'metric_id' => $metric->id,
         ]);
-        $this->post("/api/v1/metrics/{$metric->id}/points");
+        $response = $this->json('POST', "/api/v1/metrics/{$metric->id}/points");
 
-        $this->assertResponseStatus(401);
+        $response->assertStatus(401);
     }
 
-    public function testPostMetricPoint()
+    public function test_can_create_metric_point()
     {
         $this->beUser();
 
-        $metric = factory('CachetHQ\Cachet\Models\Metric')->create();
-        $metricPoint = factory('CachetHQ\Cachet\Models\MetricPoint')->make([
+        $metric = factory(Metric::class)->create();
+        $metricPoint = factory(MetricPoint::class)->make([
             'metric_id' => $metric->id,
         ]);
 
-        $this->post("/api/v1/metrics/{$metric->id}/points", $metricPoint->toArray());
+        $response = $this->json('POST', "/api/v1/metrics/{$metric->id}/points", $metricPoint->toArray());
 
-        $this->seeJsonContains(['value' => $metricPoint->value]);
-
-        $this->assertResponseOk();
+        $response->assertStatus(200);
+        $response->assertJsonFragment(['value' => $metricPoint->value]);
     }
 
-    public function testPostMetricPointTimestamp()
+    public function test_can_create_metric_point_with_timestamp()
     {
         $this->beUser();
 
-        $metric = factory('CachetHQ\Cachet\Models\Metric')->create();
+        $metric = factory(Metric::class)->create();
         $timestamp = 1434369116;
-        $metricPoint = factory('CachetHQ\Cachet\Models\MetricPoint')->make([
+        $metricPoint = factory(MetricPoint::class)->make([
             'metric_id' => $metric->id,
         ]);
         $postData = $metricPoint->toArray();
         $postData['timestamp'] = $timestamp;
 
-        $this->post("/api/v1/metrics/{$metric->id}/points", $postData);
+        $response = $this->json('POST', "/api/v1/metrics/{$metric->id}/points", $postData);
 
-        $this->seeJsonContains([
+        $response->assertStatus(200);
+        $response->assertJsonFragment([
             'value'      => $metricPoint->value,
             'created_at' => date('Y-m-d H:i:s', 1434369116),
         ]);
-
-        $this->assertResponseOk();
     }
 
-    public function testPostMetricPointTimestampTimezone()
+    public function test_can_create_metric_point_with_timestamp_timezone()
     {
         $this->beUser();
 
@@ -94,48 +94,46 @@ class MetricPointTest extends AbstractApiTestCase
         Carbon::setTestNow(Carbon::now());
 
         $timezone = 'America/Mexico_City';
-        $metric = factory('CachetHQ\Cachet\Models\Metric')->create();
+        $metric = factory(Metric::class)->create();
         $datetime = Carbon::now()->timezone($timezone);
-        $metricPoint = factory('CachetHQ\Cachet\Models\MetricPoint')->make([
+        $metricPoint = factory(MetricPoint::class)->make([
             'metric_id' => $metric->id,
         ]);
         $postData = $metricPoint->toArray();
         $postData['timestamp'] = $datetime->timestamp;
 
-        $this->post("/api/v1/metrics/{$metric->id}/points", $postData, ['Time-Zone' => $timezone]);
+        $response = $this->json('POST', "/api/v1/metrics/{$metric->id}/points", $postData, ['Time-Zone' => $timezone]);
 
-        $this->seeJsonContains(['value' => $metricPoint->value, 'created_at' => $datetime->toDateTimeString()]);
-
-        $this->assertResponseOk();
+        $response->assertStatus(200);
+        $response->assertJsonFragment(['value' => $metricPoint->value, 'created_at' => $datetime->toDateTimeString()]);
     }
 
-    public function testPutMetricPoint()
+    public function test_can_update_metric_point()
     {
         $this->beUser();
-        $metric = factory('CachetHQ\Cachet\Models\Metric')->create();
-        $metricPoint = factory('CachetHQ\Cachet\Models\MetricPoint')->create([
+        $metric = factory(Metric::class)->create();
+        $metricPoint = factory(MetricPoint::class)->create([
             'metric_id' => $metric->id,
         ]);
 
-        $this->put("/api/v1/metrics/{$metric->id}/points/{$metricPoint->id}", [
+        $response = $this->json('PUT', "/api/v1/metrics/{$metric->id}/points/{$metricPoint->id}", [
             'value' => 999,
         ]);
 
-        $this->seeJsonContains(['value' => 999]);
-
-        $this->assertResponseOk();
+        $response->assertStatus(200);
+        $response->assertJsonFragment(['value' => 999]);
     }
 
-    public function testDeleteMetricPoint()
+    public function test_can_delete_metric_point()
     {
         $this->beUser();
-        $metric = factory('CachetHQ\Cachet\Models\Metric')->create();
-        $metricPoint = factory('CachetHQ\Cachet\Models\MetricPoint')->create([
+        $metric = factory(Metric::class)->create();
+        $metricPoint = factory(MetricPoint::class)->create([
             'metric_id' => $metric->id,
         ]);
 
-        $this->delete("/api/v1/metrics/{$metric->id}/points/{$metricPoint->id}");
+        $response = $this->json('DELETE', "/api/v1/metrics/{$metric->id}/points/{$metricPoint->id}");
 
-        $this->assertResponseStatus(204);
+        $response->assertStatus(204);
     }
 }

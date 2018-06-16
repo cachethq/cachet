@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "83a7fb073c9dd90ffa9b6ddb056ab7e9",
+    "content-hash": "902bc48c3a37a1d269f457d015b1f06a",
     "packages": [
         {
             "name": "alt-three/badger",
@@ -5219,53 +5219,6 @@
                 "test"
             ],
             "time": "2015-05-11T14:41:42+00:00"
-        },
-        {
-            "name": "laravel/browser-kit-testing",
-            "version": "v2.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laravel/browser-kit-testing.git",
-                "reference": "23f1a7eefcbca0797305b236600aa5426c9528f2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laravel/browser-kit-testing/zipball/23f1a7eefcbca0797305b236600aa5426c9528f2",
-                "reference": "23f1a7eefcbca0797305b236600aa5426c9528f2",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.5.9",
-                "symfony/css-selector": "~3.1",
-                "symfony/dom-crawler": "~3.1"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Laravel\\BrowserKitTesting\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Taylor Otwell",
-                    "email": "taylor@laravel.com"
-                }
-            ],
-            "description": "Provides backwards compatibility for BrowserKit testing in Laravel 5.4.",
-            "keywords": [
-                "laravel",
-                "testing"
-            ],
-            "time": "2017-05-26T12:46:48+00:00"
         },
         {
             "name": "maximebf/debugbar",

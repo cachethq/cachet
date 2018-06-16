@@ -28,12 +28,16 @@ abstract class AbstractApiTestCase extends AbstractTestCase
     /**
      * Become a user.
      *
-     * @return void
+     * @return $this
      */
     protected function beUser()
     {
-        $this->user = factory(User::class)->create();
+        $this->user = factory(User::class)->create([
+            'username' => 'cachet-test',
+        ]);
 
         $this->be($this->user);
+
+        return $this;
     }
 }
