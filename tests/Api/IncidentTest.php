@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Tests\Cachet\Api;
 
+use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentTemplate;
 
@@ -76,7 +77,7 @@ class IncidentTest extends AbstractApiTestCase
 
     public function test_can_create_incident_with_component_status()
     {
-        $component = factory('CachetHQ\Cachet\Models\Component')->create();
+        $component = factory(Component::class)->create();
 
         $this->beUser();
 
