@@ -30,7 +30,7 @@ class ComponentGroupTest extends AbstractApiTestCase
         $groups = factory(ComponentGroup::class, 2)
             ->create(['visible' => ComponentGroup::VISIBLE_GUEST]);
 
-        $response = $this->json('GET', '/api/v1/components/groups');
+        $response = $this->json('GET', '/api/components/groups');
 
         $response->assertStatus(200);
         $response->assertJsonFragment([
@@ -65,14 +65,14 @@ class ComponentGroupTest extends AbstractApiTestCase
 
     public function test_cannot_get_invalid_component_group()
     {
-        $response = $this->json('GET', '/api/v1/components/groups/1');
+        $response = $this->json('GET', '/api/components/groups/1');
 
         $response->assertStatus(404);
     }
 
     public function test_cannot_create_component_group_without_authorization()
     {
-        $response = $this->json('POST', '/api/v1/components/groups');
+        $response = $this->json('POST', '/api/components/groups');
 
         $response->assertStatus(401);
     }
@@ -81,7 +81,7 @@ class ComponentGroupTest extends AbstractApiTestCase
     {
         $this->beUser();
 
-        $response = $this->json('POST', '/api/v1/components/groups');
+        $response = $this->json('POST', '/api/components/groups');
 
         $response->assertStatus(400);
     }
@@ -90,7 +90,7 @@ class ComponentGroupTest extends AbstractApiTestCase
     {
         $this->beUser();
 
-        $response = $this->json('POST', '/api/v1/components/groups', [
+        $response = $this->json('POST', '/api/components/groups', [
             'name'      => 'Foo',
             'order'     => 1,
             'collapsed' => 1,
@@ -110,7 +110,7 @@ class ComponentGroupTest extends AbstractApiTestCase
     {
         $group = factory(ComponentGroup::class)->create();
 
-        $response = $this->json('GET', '/api/v1/components/groups/1');
+        $response = $this->json('GET', '/api/components/groups/1');
 
         $response->assertStatus(200);
         $response->assertJsonFragment(['name' => $group->name]);
@@ -121,7 +121,7 @@ class ComponentGroupTest extends AbstractApiTestCase
         $this->beUser();
         $group = factory(ComponentGroup::class)->create();
 
-        $response = $this->json('PUT', '/api/v1/components/groups/1', [
+        $response = $this->json('PUT', '/api/components/groups/1', [
             'name' => 'Lorem Ipsum Groupous',
         ]);
 
@@ -134,7 +134,7 @@ class ComponentGroupTest extends AbstractApiTestCase
         $this->beUser();
         $group = factory(ComponentGroup::class)->create();
 
-        $response = $this->json('DELETE', '/api/v1/components/groups/1');
+        $response = $this->json('DELETE', '/api/components/groups/1');
 
         $response->assertStatus(204);
     }
@@ -143,7 +143,7 @@ class ComponentGroupTest extends AbstractApiTestCase
     {
         $this->createComponentGroups();
 
-        $response = $this->json('GET', '/api/v1/components/groups');
+        $response = $this->json('GET', '/api/components/groups');
 
         $response->assertStatus(200);
         $response->assertJsonFragment(['name' => self::COMPONENT_GROUP_1_NAME]);
@@ -154,7 +154,7 @@ class ComponentGroupTest extends AbstractApiTestCase
         $this->createComponentGroups()
             ->signIn();
 
-        $response = $this->json('GET', '/api/v1/components/groups');
+        $response = $this->json('GET', '/api/components/groups');
 
         $response->assertStatus(200);
         $response->assertJsonFragment(['name' => self::COMPONENT_GROUP_1_NAME]);

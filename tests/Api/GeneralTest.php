@@ -21,7 +21,7 @@ class GeneralTest extends AbstractApiTestCase
 {
     public function test_can_ping()
     {
-        $response = $this->json('GET', '/api/v1/ping');
+        $response = $this->json('GET', '/api/ping');
 
         $response->assertStatus(200);
         $response->assertHeader('Content-Type', 'application/json');
@@ -30,7 +30,7 @@ class GeneralTest extends AbstractApiTestCase
 
     public function test_see_error_page_for_unknown_endpoint()
     {
-        $response = $this->json('GET', '/api/v1/not-found');
+        $response = $this->json('GET', '/api/not-found');
 
         $response->assertStatus(404);
         $response->assertHeader('Content-Type', 'application/json');
@@ -38,7 +38,7 @@ class GeneralTest extends AbstractApiTestCase
 
     public function test_non_acceptable_content_type()
     {
-        $response = $this->json('GET', '/api/v1/ping', [], ['HTTP_Accept' => 'text/html']);
+        $response = $this->json('GET', '/api/ping', [], ['HTTP_Accept' => 'text/html']);
 
         $response->assertStatus(406);
     }

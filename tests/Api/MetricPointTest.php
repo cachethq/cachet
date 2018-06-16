@@ -30,7 +30,7 @@ class MetricPointTest extends AbstractApiTestCase
             'metric_id' => $metric->id,
         ]);
 
-        $response = $this->json('GET', "/api/v1/metrics/{$metric->id}/points");
+        $response = $this->json('GET', "/api/metrics/{$metric->id}/points");
 
         $response->assertJsonFragment(['id' => $metricPoint[0]->id]);
         $response->assertJsonFragment(['id' => $metricPoint[1]->id]);
@@ -45,7 +45,7 @@ class MetricPointTest extends AbstractApiTestCase
         $metricPoint = factory(MetricPoint::class)->create([
             'metric_id' => $metric->id,
         ]);
-        $response = $this->json('POST', "/api/v1/metrics/{$metric->id}/points");
+        $response = $this->json('POST', "/api/metrics/{$metric->id}/points");
 
         $response->assertStatus(401);
     }
@@ -59,7 +59,7 @@ class MetricPointTest extends AbstractApiTestCase
             'metric_id' => $metric->id,
         ]);
 
-        $response = $this->json('POST', "/api/v1/metrics/{$metric->id}/points", $metricPoint->toArray());
+        $response = $this->json('POST', "/api/metrics/{$metric->id}/points", $metricPoint->toArray());
 
         $response->assertStatus(200);
         $response->assertJsonFragment(['value' => $metricPoint->value]);
@@ -77,7 +77,7 @@ class MetricPointTest extends AbstractApiTestCase
         $postData = $metricPoint->toArray();
         $postData['timestamp'] = $timestamp;
 
-        $response = $this->json('POST', "/api/v1/metrics/{$metric->id}/points", $postData);
+        $response = $this->json('POST', "/api/metrics/{$metric->id}/points", $postData);
 
         $response->assertStatus(200);
         $response->assertJsonFragment([
@@ -102,7 +102,7 @@ class MetricPointTest extends AbstractApiTestCase
         $postData = $metricPoint->toArray();
         $postData['timestamp'] = $datetime->timestamp;
 
-        $response = $this->json('POST', "/api/v1/metrics/{$metric->id}/points", $postData, ['Time-Zone' => $timezone]);
+        $response = $this->json('POST', "/api/metrics/{$metric->id}/points", $postData, ['Time-Zone' => $timezone]);
 
         $response->assertStatus(200);
         $response->assertJsonFragment(['value' => $metricPoint->value, 'created_at' => $datetime->toDateTimeString()]);
@@ -116,7 +116,7 @@ class MetricPointTest extends AbstractApiTestCase
             'metric_id' => $metric->id,
         ]);
 
-        $response = $this->json('PUT', "/api/v1/metrics/{$metric->id}/points/{$metricPoint->id}", [
+        $response = $this->json('PUT', "/api/metrics/{$metric->id}/points/{$metricPoint->id}", [
             'value' => 999,
         ]);
 
@@ -132,7 +132,7 @@ class MetricPointTest extends AbstractApiTestCase
             'metric_id' => $metric->id,
         ]);
 
-        $response = $this->json('DELETE', "/api/v1/metrics/{$metric->id}/points/{$metricPoint->id}");
+        $response = $this->json('DELETE', "/api/metrics/{$metric->id}/points/{$metricPoint->id}");
 
         $response->assertStatus(204);
     }

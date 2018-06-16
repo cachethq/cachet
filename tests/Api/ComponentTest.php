@@ -25,7 +25,7 @@ class ComponentTest extends AbstractApiTestCase
     {
         $components = factory(Component::class, 3)->create();
 
-        $response = $this->json('GET', '/api/v1/components');
+        $response = $this->json('GET', '/api/components');
 
         $response->assertStatus(200);
         $response->assertJsonFragment(['id' => $components[0]->id]);
@@ -35,14 +35,14 @@ class ComponentTest extends AbstractApiTestCase
 
     public function test_cannot_get_invalid_component()
     {
-        $response = $this->json('GET', '/api/v1/components/1');
+        $response = $this->json('GET', '/api/components/1');
 
         $response->assertStatus(404);
     }
 
     public function test_cannot_create_component_without_authorization()
     {
-        $response = $this->json('POST', '/api/v1/components');
+        $response = $this->json('POST', '/api/components');
 
         $response->assertStatus(401);
     }
@@ -51,7 +51,7 @@ class ComponentTest extends AbstractApiTestCase
     {
         $this->beUser();
 
-        $response = $this->json('POST', '/api/v1/components');
+        $response = $this->json('POST', '/api/components');
 
         $response->assertStatus(400);
     }
@@ -60,7 +60,7 @@ class ComponentTest extends AbstractApiTestCase
     {
         $this->beUser();
 
-        $response = $this->json('POST', '/api/v1/components', [
+        $response = $this->json('POST', '/api/components', [
             'name'        => 'Foo',
             'description' => 'Bar',
             'status'      => 1,
@@ -78,7 +78,7 @@ class ComponentTest extends AbstractApiTestCase
     {
         $this->beUser();
 
-        $response = $this->json('POST', '/api/v1/components', [
+        $response = $this->json('POST', '/api/components', [
             'name'        => 'Foo',
             'description' => 'Bar',
             'status'      => 1,
@@ -95,7 +95,7 @@ class ComponentTest extends AbstractApiTestCase
     {
         $this->beUser();
 
-        $response = $this->json('POST', '/api/v1/components', [
+        $response = $this->json('POST', '/api/components', [
             'name'        => 'Foo',
             'description' => 'Bar',
             'status'      => 1,
@@ -122,7 +122,7 @@ class ComponentTest extends AbstractApiTestCase
     {
         $this->beUser();
 
-        $response = $this->json('POST', '/api/v1/components', [
+        $response = $this->json('POST', '/api/components', [
             'name'        => 'Foo',
             'description' => 'Bar',
             'status'      => 1,
@@ -140,7 +140,7 @@ class ComponentTest extends AbstractApiTestCase
     {
         $component = factory(Component::class)->create();
 
-        $response = $this->json('GET', '/api/v1/components/1');
+        $response = $this->json('GET', '/api/components/1');
 
         $response->assertStatus(200);
         $response->assertJsonFragment(['name' => $component->name]);
@@ -151,7 +151,7 @@ class ComponentTest extends AbstractApiTestCase
         $this->beUser();
         $component = factory(Component::class)->create();
 
-        $response = $this->json('PUT', '/api/v1/components/1', [
+        $response = $this->json('PUT', '/api/components/1', [
             'name' => 'Foo',
         ]);
 
@@ -168,7 +168,7 @@ class ComponentTest extends AbstractApiTestCase
             ],
         ]);
 
-        $response = $this->json('PUT', '/api/v1/components/1', [
+        $response = $this->json('PUT', '/api/components/1', [
             'meta' => [
                 'uuid' => '172ff3fb-41f7-49d3-8bcd-f57b53627fa0',
                 'foo'  => 'bar',
@@ -189,7 +189,7 @@ class ComponentTest extends AbstractApiTestCase
         $this->beUser();
         $component = factory(Component::class)->create();
 
-        $response = $this->delete('/api/v1/components/1');
+        $response = $this->delete('/api/components/1');
         $response->assertStatus(204);
     }
 }
