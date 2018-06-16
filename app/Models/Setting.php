@@ -16,6 +16,13 @@ use Illuminate\Database\Eloquent\Model;
 class Setting extends Model
 {
     /**
+     * List of attributes that have default values.
+     *
+     * @var string[]
+     */
+    protected $attributes = ['value' => ''];
+
+    /**
      * The attributes that should be casted to native types.
      *
      * @var string[]
@@ -31,11 +38,4 @@ class Setting extends Model
      * @var string[]
      */
     protected $fillable = ['name', 'value'];
-
-    /**
-     * List of attributes that have default values.
-     *
-     * @var string[]
-     */
-    protected $attributes = ['value' => ''];
 }

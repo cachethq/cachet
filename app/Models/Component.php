@@ -135,7 +135,7 @@ class Component extends Model implements HasPresenter
     }
 
     /**
-     * Get all of the meta relation.
+     * Get the meta relation.
      *
      * @return \Illuminate\Database\Eloquent\Relations\MorphMany
      */
