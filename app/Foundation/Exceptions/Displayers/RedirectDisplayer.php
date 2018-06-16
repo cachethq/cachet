@@ -47,7 +47,7 @@ class RedirectDisplayer implements DisplayerInterface
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function display(Exception $exception, $id, $code, array $headers)
+    public function display(Exception $exception, string $id, int $code, array $headers)
     {
         return redirect()->guest('auth/login');
     }
@@ -71,7 +71,7 @@ class RedirectDisplayer implements DisplayerInterface
      *
      * @return bool
      */
-    public function canDisplay(Exception $original, Exception $transformed, $code)
+    public function canDisplay(Exception $original, Exception $transformed, int $code)
     {
         $redirect = $transformed instanceof HttpExceptionInterface && $transformed->getStatusCode() === 401;
 

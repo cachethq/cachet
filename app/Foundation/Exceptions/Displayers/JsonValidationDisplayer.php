@@ -29,7 +29,7 @@ class JsonValidationDisplayer extends JsonDisplayer implements DisplayerInterfac
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function display(Exception $exception, $id, $code, array $headers)
+    public function display(Exception $exception, string $id, int $code, array $headers)
     {
         $info = $this->info->generate($exception, $id, 400);
 
@@ -47,7 +47,7 @@ class JsonValidationDisplayer extends JsonDisplayer implements DisplayerInterfac
      *
      * @return bool
      */
-    public function canDisplay(Exception $original, Exception $transformed, $code)
+    public function canDisplay(Exception $original, Exception $transformed, int $code)
     {
         return $transformed instanceof ValidationException;
     }
