@@ -31,7 +31,7 @@ class SubscriberTest extends AbstractApiTestCase
 
         $subscriber = factory(Subscriber::class)->create();
 
-        $response = $this->json('GET', '/api/v1/subscribers');
+        $response = $this->json('GET', '/api/subscribers');
 
         $response->assertStatus(200);
         $response->assertHeader('Content-Type', 'application/json');
@@ -39,7 +39,7 @@ class SubscriberTest extends AbstractApiTestCase
 
     public function test_cannot_get_subscribers_without_authorization()
     {
-        $response = $this->json('GET', '/api/v1/subscribers');
+        $response = $this->json('GET', '/api/subscribers');
 
         $response->assertStatus(401);
         $response->assertHeader('Content-Type', 'application/json');
@@ -53,7 +53,7 @@ class SubscriberTest extends AbstractApiTestCase
 
         $this->expectsEvents(SubscriberHasSubscribedEvent::class);
 
-        $response = $this->json('POST', '/api/v1/subscribers', [
+        $response = $this->json('POST', '/api/subscribers', [
             'email' => 'support@alt-three.com',
         ]);
 
@@ -70,7 +70,7 @@ class SubscriberTest extends AbstractApiTestCase
 
         $this->expectsEvents(SubscriberHasSubscribedEvent::class);
 
-        $response = $this->json('POST', '/api/v1/subscribers', [
+        $response = $this->json('POST', '/api/subscribers', [
             'email'  => 'support@alt-three.com',
             'verify' => true,
         ]);
@@ -86,7 +86,7 @@ class SubscriberTest extends AbstractApiTestCase
 
         factory(Component::class, 3)->create();
 
-        $response = $this->json('POST', '/api/v1/subscribers', [
+        $response = $this->json('POST', '/api/subscribers', [
             'email'      => 'support@alt-three.com',
             'verify'     => true,
             'components' => [
@@ -110,7 +110,7 @@ class SubscriberTest extends AbstractApiTestCase
         $this->beUser();
 
         $subscriber = factory(Subscriber::class)->create();
-        $response = $this->json('DELETE', "/api/v1/subscribers/{$subscriber->id}");
+        $response = $this->json('DELETE', "/api/subscribers/{$subscriber->id}");
 
         $response->assertStatus(204);
     }
@@ -121,7 +121,7 @@ class SubscriberTest extends AbstractApiTestCase
 
         $subscription = factory(Subscription::class)->create();
 
-        $response = $this->json('DELETE', "/api/v1/subscriptions/{$subscription->id}");
+        $response = $this->json('DELETE', "/api/subscriptions/{$subscription->id}");
 
         $response->assertStatus(204);
     }

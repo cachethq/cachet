@@ -24,7 +24,7 @@ class ScheduleTest extends AbstractApiTestCase
     {
         $schedules = factory(Schedule::class, 3)->create();
 
-        $response = $this->json('GET', '/api/v1/schedules');
+        $response = $this->json('GET', '/api/schedules');
 
         $response->assertStatus(200);
         $response->assertJsonFragment(['id' => $schedules[0]->id]);
@@ -36,7 +36,7 @@ class ScheduleTest extends AbstractApiTestCase
     {
         $schedule = factory(Schedule::class)->create();
 
-        $response = $this->json('GET', '/api/v1/schedules/'.$schedule->id);
+        $response = $this->json('GET', '/api/schedules/'.$schedule->id);
 
         $response->assertStatus(200);
         $response->assertJsonFragment(['name' => $schedule->name]);
@@ -53,7 +53,7 @@ class ScheduleTest extends AbstractApiTestCase
             'scheduled_at' => date('Y-m-d H:i'),
         ];
 
-        $response = $this->json('POST', '/api/v1/schedules/', $schedule);
+        $response = $this->json('POST', '/api/schedules/', $schedule);
 
         array_forget($schedule, 'scheduled_at');
 
@@ -67,7 +67,7 @@ class ScheduleTest extends AbstractApiTestCase
 
         $schedule = factory(Schedule::class)->create();
 
-        $response = $this->json('PUT', '/api/v1/schedules/'.$schedule->id, [
+        $response = $this->json('PUT', '/api/schedules/'.$schedule->id, [
             'name' => 'Updated schedule',
         ]);
 
@@ -80,7 +80,7 @@ class ScheduleTest extends AbstractApiTestCase
         $this->beUser();
         factory(Schedule::class)->create();
 
-        $response = $this->json('DELETE', '/api/v1/schedules/1');
+        $response = $this->json('DELETE', '/api/schedules/1');
 
         $response->assertStatus(204);
     }

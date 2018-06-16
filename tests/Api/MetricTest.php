@@ -25,7 +25,7 @@ class MetricTest extends AbstractApiTestCase
     {
         $metrics = factory(Metric::class, 3)->create();
 
-        $response = $this->json('GET', '/api/v1/metrics');
+        $response = $this->json('GET', '/api/metrics');
 
         $response->assertJsonFragment(['id' => $metrics[0]->id]);
         $response->assertJsonFragment(['id' => $metrics[1]->id]);
@@ -35,13 +35,13 @@ class MetricTest extends AbstractApiTestCase
 
     public function test_cannot_get_invalid_metric()
     {
-        $response = $this->json('GET', '/api/v1/metrics/0');
+        $response = $this->json('GET', '/api/metrics/0');
         $response->assertStatus(404);
     }
 
     public function test_cannot_create_metric_without_authorization()
     {
-        $response = $this->json('POST', '/api/v1/metrics');
+        $response = $this->json('POST', '/api/metrics');
         $response->assertStatus(401);
     }
 
@@ -49,7 +49,7 @@ class MetricTest extends AbstractApiTestCase
     {
         $this->beUser();
 
-        $response = $this->json('POST', '/api/v1/metrics');
+        $response = $this->json('POST', '/api/metrics');
         $response->assertStatus(400);
     }
 
@@ -57,7 +57,7 @@ class MetricTest extends AbstractApiTestCase
     {
         $this->beUser();
 
-        $response = $this->json('POST', '/api/v1/metrics', [
+        $response = $this->json('POST', '/api/metrics', [
             'name'          => 'Foo',
             'suffix'        => 'foo\'s per second',
             'description'   => 'Lorem ipsum dolor',
@@ -77,7 +77,7 @@ class MetricTest extends AbstractApiTestCase
     {
         $incident = factory(Metric::class)->create();
 
-        $response = $this->json('GET', '/api/v1/metrics/1');
+        $response = $this->json('GET', '/api/metrics/1');
 
         $response->assertStatus(200);
         $response->assertJsonFragment(['name' => $incident->name]);
@@ -88,7 +88,7 @@ class MetricTest extends AbstractApiTestCase
         $this->beUser();
         $metric = factory(Metric::class)->create();
 
-        $response = $this->json('PUT', '/api/v1/metrics/1', [
+        $response = $this->json('PUT', '/api/metrics/1', [
             'name' => 'Foo',
             'view' => 2,
         ]);
@@ -102,7 +102,7 @@ class MetricTest extends AbstractApiTestCase
         $this->beUser();
         $metric = factory(Metric::class)->create();
 
-        $response = $this->json('DELETE', '/api/v1/metrics/1');
+        $response = $this->json('DELETE', '/api/metrics/1');
 
         $response->assertStatus(204);
     }

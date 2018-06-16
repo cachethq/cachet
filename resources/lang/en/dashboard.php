@@ -56,7 +56,7 @@ return [
             'title' => 'Incident Templates',
             'add'   => [
                 'title'   => 'Create an incident template',
-                'message' => 'You should add an incident template.',
+                'message' => 'Create your first incident template.',
                 'success' => 'Your new incident template has been created.',
                 'failure' => 'Something went wrong with the incident template.',
             ],

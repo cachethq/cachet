@@ -28,7 +28,7 @@ class IncidentUpdateTest extends AbstractApiTestCase
             'incident_id' => $incident->id,
         ]);
 
-        $response = $this->json('GET', "/api/v1/incidents/{$incident->id}/updates");
+        $response = $this->json('GET', "/api/incidents/{$incident->id}/updates");
 
         $response->assertStatus(200);
 
@@ -39,7 +39,7 @@ class IncidentUpdateTest extends AbstractApiTestCase
 
     public function test_cannot_get_invalid_incident_update()
     {
-        $response = $this->json('GET', '/api/v1/incidents/1/updates/1');
+        $response = $this->json('GET', '/api/incidents/1/updates/1');
 
         $response->assertStatus(404);
     }
@@ -48,7 +48,7 @@ class IncidentUpdateTest extends AbstractApiTestCase
     {
         $incident = factory(Incident::class)->create();
 
-        $response = $this->json('POST', "/api/v1/incidents/{$incident->id}/updates");
+        $response = $this->json('POST', "/api/incidents/{$incident->id}/updates");
 
         $response->assertStatus(401);
     }
@@ -58,7 +58,7 @@ class IncidentUpdateTest extends AbstractApiTestCase
         $this->beUser();
         $incident = factory(Incident::class)->create();
 
-        $response = $this->json('POST', "/api/v1/incidents/{$incident->id}/updates");
+        $response = $this->json('POST', "/api/incidents/{$incident->id}/updates");
 
         $response->assertStatus(400);
     }
@@ -68,7 +68,7 @@ class IncidentUpdateTest extends AbstractApiTestCase
         $this->beUser();
         $incident = factory(Incident::class)->create();
 
-        $response = $this->json('POST', "/api/v1/incidents/{$incident->id}/updates", [
+        $response = $this->json('POST', "/api/incidents/{$incident->id}/updates", [
             'status'  => 4,
             'message' => 'Incident fixed!',
         ]);
@@ -83,7 +83,7 @@ class IncidentUpdateTest extends AbstractApiTestCase
         $incident = factory(Incident::class)->create();
         $update = factory(IncidentUpdate::class)->create();
 
-        $response = $this->json('PUT', "/api/v1/incidents/{$incident->id}/updates/{$update->id}", [
+        $response = $this->json('PUT', "/api/incidents/{$incident->id}/updates/{$update->id}", [
             'message' => 'Message updated :smile:',
         ]);
 
@@ -97,7 +97,7 @@ class IncidentUpdateTest extends AbstractApiTestCase
         $incident = factory(Incident::class)->create();
         $update = factory(IncidentUpdate::class)->create();
 
-        $response = $this->json('DELETE', "/api/v1/incidents/{$incident->id}/updates/{$update->id}");
+        $response = $this->json('DELETE', "/api/incidents/{$incident->id}/updates/{$update->id}");
 
         $response->assertStatus(204);
     }

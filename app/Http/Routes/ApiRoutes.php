@@ -37,8 +37,8 @@ class ApiRoutes
     public function map(Registrar $router)
     {
         $router->group([
-            'namespace'  => 'Api',
-            'prefix'     => 'api/v1',
+            'namespace' => 'Api',
+            'prefix'    => 'api',
         ], function (Registrar $router) {
             $router->group(['middleware' => ['auth.api']], function (Registrar $router) {
                 $router->get('components', 'ComponentController@index');

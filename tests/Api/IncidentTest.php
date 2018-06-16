@@ -27,7 +27,7 @@ class IncidentTest extends AbstractApiTestCase
     {
         $incidents = factory(Incident::class, 3)->create();
 
-        $response = $this->json('GET', '/api/v1/incidents');
+        $response = $this->json('GET', '/api/incidents');
 
         $response->assertStatus(200);
 
@@ -38,14 +38,14 @@ class IncidentTest extends AbstractApiTestCase
 
     public function test_cannot_get_invalid_component()
     {
-        $response = $this->json('GET', '/api/v1/incidents/0');
+        $response = $this->json('GET', '/api/incidents/0');
 
         $response->assertStatus(404);
     }
 
     public function test_cannot_create_incident_without_authorization()
     {
-        $response = $this->json('POST', '/api/v1/incidents');
+        $response = $this->json('POST', '/api/incidents');
 
         $response->assertStatus(401);
     }
@@ -54,7 +54,7 @@ class IncidentTest extends AbstractApiTestCase
     {
         $this->beUser();
 
-        $response = $this->json('POST', '/api/v1/incidents');
+        $response = $this->json('POST', '/api/incidents');
 
         $response->assertStatus(400);
     }
@@ -63,7 +63,7 @@ class IncidentTest extends AbstractApiTestCase
     {
         $this->beUser();
 
-        $response = $this->json('POST', '/api/v1/incidents', [
+        $response = $this->json('POST', '/api/incidents', [
             'name'     => 'Foo',
             'message'  => 'Lorem ipsum dolor sit amet',
             'status'   => 1,
@@ -81,7 +81,7 @@ class IncidentTest extends AbstractApiTestCase
 
         $this->beUser();
 
-        $response = $this->json('POST', '/api/v1/incidents', [
+        $response = $this->json('POST', '/api/incidents', [
             'name'             => 'Foo',
             'message'          => 'Lorem ipsum dolor sit amet',
             'status'           => 1,
@@ -100,7 +100,7 @@ class IncidentTest extends AbstractApiTestCase
         $template = factory(IncidentTemplate::class)->create();
         $this->beUser();
 
-        $response = $this->json('POST', '/api/v1/incidents', [
+        $response = $this->json('POST', '/api/incidents', [
             'name'     => 'Foo',
             'status'   => 1,
             'visible'  => 1,
@@ -123,7 +123,7 @@ class IncidentTest extends AbstractApiTestCase
     {
         $incident = factory(Incident::class)->create();
 
-        $response = $this->json('GET', '/api/v1/incidents/1');
+        $response = $this->json('GET', '/api/incidents/1');
 
         $response->assertStatus(200);
         $response->assertJsonFragment(['name' => $incident->name]);
@@ -134,7 +134,7 @@ class IncidentTest extends AbstractApiTestCase
         $this->beUser();
         $component = factory(Incident::class)->create();
 
-        $response = $this->json('PUT', '/api/v1/incidents/1', [
+        $response = $this->json('PUT', '/api/incidents/1', [
             'name' => 'Foo',
         ]);
 
@@ -150,7 +150,7 @@ class IncidentTest extends AbstractApiTestCase
         ]);
         $component = factory(Incident::class)->create();
 
-        $response = $this->json('PUT', '/api/v1/incidents/1', [
+        $response = $this->json('PUT', '/api/incidents/1', [
             'name'     => 'Foo',
             'template' => $template->slug,
         ]);
@@ -167,7 +167,7 @@ class IncidentTest extends AbstractApiTestCase
         $this->beUser();
         $component = factory(Incident::class)->create();
 
-        $response = $this->json('DELETE', '/api/v1/incidents/1');
+        $response = $this->json('DELETE', '/api/incidents/1');
 
         $response->assertStatus(204);
     }
@@ -176,7 +176,7 @@ class IncidentTest extends AbstractApiTestCase
     {
         $this->beUser();
 
-        $response = $this->json('POST', '/api/v1/incidents', [
+        $response = $this->json('POST', '/api/incidents', [
             'name'    => 'Foo',
             'message' => 'Lorem ipsum dolor sit amet',
             'status'  => 1,
