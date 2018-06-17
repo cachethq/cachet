@@ -98,7 +98,7 @@ return [
     'user' => [
         'invite' => [
             'mail' => [
-                'subject' => 'Je uitnodiging zit in deze mail...',
+                'subject' => 'Je uitnodiging zit in deze e-mail...',
                 'content' => 'Je bent uitgenodigd voor de :app_name statuspagina.',
                 'title'   => 'Je bent uitgenodigd voor :app_name statuspagina.',
                 'action'  => 'Accepteer',
