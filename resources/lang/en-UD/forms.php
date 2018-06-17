@@ -154,8 +154,9 @@ return [
             'about-this-page'                       => 'crwdns1193:0crwdne1193:0',
             'days-of-incidents'                     => 'crwdns1194:0crwdne1194:0',
             'time_before_refresh'                   => 'crwdns1434:0crwdne1434:0',
+            'major_outage_rate'                     => 'crwdns1444:0crwdne1444:0',
             'banner'                                => 'crwdns1195:0crwdne1195:0',
-            'banner-help'                           => 'crwdns1435:0crwdne1435:0',
+            'banner-help'                           => "crwdns1435:0crwdne1435:0",
             'subscribers'                           => 'crwdns1197:0crwdne1197:0',
             'suppress_notifications_in_maintenance' => 'crwdns1427:0crwdne1427:0',
             'skip_subscriber_verification'          => 'crwdns1198:0crwdne1198:0',
@@ -177,8 +178,10 @@ return [
             'incident-date-format' => 'crwdns1210:0crwdne1210:0',
         ],
         'security' => [
-            'allowed-domains'      => 'crwdns1211:0crwdne1211:0',
-            'allowed-domains-help' => 'crwdns1212:0crwdne1212:0',
+            'allowed-domains'           => 'crwdns1211:0crwdne1211:0',
+            'allowed-domains-help'      => 'crwdns1212:0crwdne1212:0',
+            'always-authenticate'       => 'crwdns1445:0crwdne1445:0',
+            'always-authenticate-help'  => 'crwdns1446:0crwdne1446:0',
         ],
         'stylesheet' => [
             'custom-css' => 'crwdns1213:0crwdne1213:0',
