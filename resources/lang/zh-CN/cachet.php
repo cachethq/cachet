@@ -53,7 +53,7 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1]System operational|[2,*]All systems are operational',
+        'good'  => '[0,1] 系统工作正常|[2,*] 所有系统工作正常',
         'bad'   => '[0,1] 系统出现了问题|[2,*] 一些系统出现了问题',
         'major' => '[0,1] 系统出现重大故障|[2,*] 一些系统出现重大故障',
     ],
@@ -123,7 +123,7 @@ return [
         'description' => [
             'incident'  => '有关于发生在 :date 的 :name 事件的细节与更新',
             'schedule'  => '有关于计划维护时段 :name ，开始于 :startDate，的细节说明',
-            'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
+            'subscribe' => '订阅 :app 以接收故障更新和定期维护信息',
             'overview'  => '始终保持对 :app 服务状态的关注。',
         ],
     ],
