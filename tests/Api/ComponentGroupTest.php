@@ -11,6 +11,9 @@
 
 namespace CachetHQ\Tests\Cachet\Api;
 
+use CachetHQ\Cachet\Bus\Events\ComponentGroup\ComponentGroupWasCreatedEvent;
+use CachetHQ\Cachet\Bus\Events\ComponentGroup\ComponentGroupWasRemovedEvent;
+use CachetHQ\Cachet\Bus\Events\ComponentGroup\ComponentGroupWasUpdatedEvent;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
 
@@ -72,6 +75,8 @@ class ComponentGroupTest extends AbstractApiTestCase
 
     public function test_cannot_create_component_group_without_authorization()
     {
+        $this->doesntExpectEvents(ComponentGroupWasCreatedEvent::class);
+
         $response = $this->json('POST', '/api/v1/components/groups');
 
         $response->assertStatus(401);
@@ -81,6 +86,8 @@ class ComponentGroupTest extends AbstractApiTestCase
     {
         $this->beUser();
 
+        $this->doesntExpectEvents(ComponentGroupWasCreatedEvent::class);
+
         $response = $this->json('POST', '/api/v1/components/groups');
 
         $response->assertStatus(400);
@@ -89,6 +96,8 @@ class ComponentGroupTest extends AbstractApiTestCase
     public function test_can_create_new_component_group()
     {
         $this->beUser();
+
+        $this->expectsEvents(ComponentGroupWasCreatedEvent::class);
 
         $response = $this->json('POST', '/api/v1/components/groups', [
             'name'      => 'Foo',
@@ -121,6 +130,8 @@ class ComponentGroupTest extends AbstractApiTestCase
         $this->beUser();
         $group = factory(ComponentGroup::class)->create();
 
+        $this->expectsEvents(ComponentGroupWasUpdatedEvent::class);
+
         $response = $this->json('PUT', '/api/v1/components/groups/1', [
             'name' => 'Lorem Ipsum Groupous',
         ]);
@@ -133,6 +144,8 @@ class ComponentGroupTest extends AbstractApiTestCase
     {
         $this->beUser();
         $group = factory(ComponentGroup::class)->create();
+
+        $this->expectsEvents(ComponentGroupWasRemovedEvent::class);
 
         $response = $this->json('DELETE', '/api/v1/components/groups/1');
 
