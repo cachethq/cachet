@@ -154,6 +154,7 @@ return [
             'about-this-page'                       => '이 페이지에 대하여',
             'days-of-incidents'                     => '몇 일 동안 사건을 표시하시겠습니까?',
             'time_before_refresh'                   => 'Status page refresh rate (in seconds)',
+            'major_outage_rate'                     => 'Major outage threshold (in %)',
             'banner'                                => '배너 이미지',
             'banner-help'                           => "It's recommended that you upload files no bigger than 930px wide",
             'subscribers'                           => '이메일 알림을 받기 위한 회원가입 허용',
@@ -177,8 +178,10 @@ return [
             'incident-date-format' => '문제 Timestamp 형식',
         ],
         'security' => [
-            'allowed-domains'      => '허용된 도메인',
-            'allowed-domains-help' => '쉼표로 구분. 위에 설정된 도메인은 기본적으로 자동 허용 됩니다.',
+            'allowed-domains'           => '허용된 도메인',
+            'allowed-domains-help'      => '쉼표로 구분. 위에 설정된 도메인은 기본적으로 자동 허용 됩니다.',
+            'always-authenticate'       => 'Always authenticate',
+            'always-authenticate-help'  => 'Require login to view any Cachet page',
         ],
         'stylesheet' => [
             'custom-css' => '커스텀 스타일시트',
