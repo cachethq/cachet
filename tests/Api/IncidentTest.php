@@ -11,6 +11,9 @@
 
 namespace CachetHQ\Tests\Cachet\Api;
 
+use CachetHQ\Cachet\Bus\Events\Incident\IncidentWasCreatedEvent;
+use CachetHQ\Cachet\Bus\Events\Incident\IncidentWasRemovedEvent;
+use CachetHQ\Cachet\Bus\Events\Incident\IncidentWasUpdatedEvent;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentTemplate;
@@ -45,6 +48,8 @@ class IncidentTest extends AbstractApiTestCase
 
     public function test_cannot_create_incident_without_authorization()
     {
+        $this->doesntExpectEvents(IncidentWasCreatedEvent::class);
+
         $response = $this->json('POST', '/api/v1/incidents');
 
         $response->assertStatus(401);
@@ -54,6 +59,8 @@ class IncidentTest extends AbstractApiTestCase
     {
         $this->beUser();
 
+        $this->doesntExpectEvents(IncidentWasCreatedEvent::class);
+
         $response = $this->json('POST', '/api/v1/incidents');
 
         $response->assertStatus(400);
@@ -62,6 +69,8 @@ class IncidentTest extends AbstractApiTestCase
     public function test_can_create_incident()
     {
         $this->beUser();
+
+        $this->expectsEvents(IncidentWasCreatedEvent::class);
 
         $response = $this->json('POST', '/api/v1/incidents', [
             'name'     => 'Foo',
@@ -81,6 +90,8 @@ class IncidentTest extends AbstractApiTestCase
 
         $this->beUser();
 
+        $this->expectsEvents(IncidentWasCreatedEvent::class);
+
         $response = $this->json('POST', '/api/v1/incidents', [
             'name'             => 'Foo',
             'message'          => 'Lorem ipsum dolor sit amet',
@@ -99,6 +110,8 @@ class IncidentTest extends AbstractApiTestCase
     {
         $template = factory(IncidentTemplate::class)->create();
         $this->beUser();
+
+        $this->expectsEvents(IncidentWasCreatedEvent::class);
 
         $response = $this->json('POST', '/api/v1/incidents', [
             'name'     => 'Foo',
@@ -132,7 +145,9 @@ class IncidentTest extends AbstractApiTestCase
     public function test_can_update_incident()
     {
         $this->beUser();
-        $component = factory(Incident::class)->create();
+        $incident = factory(Incident::class)->create();
+
+        $this->expectsEvents(IncidentWasUpdatedEvent::class);
 
         $response = $this->json('PUT', '/api/v1/incidents/1', [
             'name' => 'Foo',
@@ -148,7 +163,9 @@ class IncidentTest extends AbstractApiTestCase
         $template = factory(IncidentTemplate::class)->create([
             'template' => 'Hello there this is a foo in my {{ incident.name }}!',
         ]);
-        $component = factory(Incident::class)->create();
+        $incident = factory(Incident::class)->create();
+
+        $this->expectsEvents(IncidentWasUpdatedEvent::class);
 
         $response = $this->json('PUT', '/api/v1/incidents/1', [
             'name'     => 'Foo',
@@ -165,7 +182,9 @@ class IncidentTest extends AbstractApiTestCase
     public function test_can_delete_incident()
     {
         $this->beUser();
-        $component = factory(Incident::class)->create();
+        $incident = factory(Incident::class)->create();
+
+        $this->expectsEvents(IncidentWasRemovedEvent::class);
 
         $response = $this->json('DELETE', '/api/v1/incidents/1');
 
@@ -175,6 +194,8 @@ class IncidentTest extends AbstractApiTestCase
     public function test_can_create_incident_with_meta_data()
     {
         $this->beUser();
+
+        $this->expectsEvents(IncidentWasCreatedEvent::class);
 
         $response = $this->json('POST', '/api/v1/incidents', [
             'name'    => 'Foo',
