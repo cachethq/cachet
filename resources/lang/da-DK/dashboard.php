@@ -18,12 +18,12 @@ return [
     'incidents' => [
         'title'                    => 'Hændelser og Vedligehold',
         'incidents'                => 'Incidents',
-        'logged'                   => '{0}There are no incidents, good work.|[1]You have logged one incident.|[2,*]You have reported <strong>:count</strong> incidents.',
+        'logged'                   => '{0} Ingen åbne hændelser.|[1] Der er én åben hændelse.|[2.*] Der er <strong>:count</strong> åbne hændelser.',
         'incident-create-template' => 'Create Template',
         'incident-templates'       => 'Incident Templates',
         'updates'                  => [
             'title'   => 'Hændelsesopdateringer til :hændelse',
-            'count'   => '{0}Zero Updates|[1]One Update|[2]Two Updates|[3,*]Several Updates',
+            'count'   => '{0} Ingen opdateringer |[1] Én opdatering |[2] To opdateringer | [3,*] Flere opdateringer',
             'add'     => [
                 'title'   => 'Opret ny hændelsesopdatering',
                 'success' => 'Din nye hændelsesopdatering er oprettet.',
@@ -75,7 +75,7 @@ return [
     // Incident Maintenance
     'schedule' => [
         'schedule'     => 'Vedligeholdelse',
-        'logged'       => '{0}There has been no Maintenance, good work.|[1]You have logged one schedule.|[2,*]You have reported <strong>:count</strong> schedules.',
+        'logged'       => '{0} Der er ingen tidsplanlager.|[1]Der er 1 tidsplan.|[2,*]Der er anmeldt <strong>:count</strong> tidsplaner.',
         'scheduled_at' => 'Planlagt til :timestamp',
         'add'          => [
             'title'   => 'Tilføj planlagt vedligeholdelse',
