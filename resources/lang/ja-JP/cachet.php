@@ -28,9 +28,9 @@ return [
     // Incidents
     'incidents' => [
         'none'         => 'インシデントはありません',
-        'past'         => '過去のインシデント',
-        'stickied'     => 'Stickied Incidents',
-        'scheduled'    => '計画メンテナンス',
+        'past'         => 'インシデント履歴',
+        'stickied'     => 'ピン留めインシデント',
+        'scheduled'    => 'メンテナンス',
         'scheduled_at' => ', 予定日時 :timestamp',
         'posted'       => '投稿日時 :timestamp',
         'posted_at'    => '掲載日時 :timestamp',
@@ -45,15 +45,15 @@ return [
     // Schedule
     'schedules' => [
         'status' => [
-            0 => 'Upcoming',
-            1 => 'In Progress',
+            0 => '近日中',
+            1 => '進行中',
             2 => '完了',
         ],
     ],
 
     // Service Status
     'service' => [
-        'good'  => '[0,1]System operational|[2,*]All systems are operational',
+        'good'  => '全システムが正常に稼働しています',
         'bad'   => '一部のシステムに問題が発生しています',
         'major' => 'システムに深刻な問題が発生しています',
     ],
@@ -79,19 +79,19 @@ return [
         'unsubscribe' => '登録解除はこちら :link',
         'button'      => '購読',
         'manage'      => [
-            'no_subscriptions' => 'You\'re currently subscribed to all updates.',
-            'my_subscriptions' => 'You\'re currently subscribed to the following updates.',
-            'manage_at_link'   => 'Manage your subscriptions at :link',
+            'no_subscriptions' => '現在、すべてのアップデートを購読しています。',
+            'my_subscriptions' => '現在、以下のアップデートを購読しています。',
+            'manage_at_link'   => '購読の管理',
         ],
         'email' => [
             'subscribe'          => 'メールによるアップデート情報の購読',
             'subscribed'         => 'You\'ve been subscribed to email notifications, please check your email to confirm your subscription.',
-            'verified'           => 'Your email subscription has been confirmed. Thank you!',
-            'manage'             => 'Manage your subscription',
+            'verified'           => 'あなたのメール購読は確認されました。ありがとう！',
+            'manage'             => '購読の管理',
             'unsubscribe'        => 'Unsubscribe from email updates.',
-            'unsubscribed'       => 'Your email subscription has been cancelled.',
-            'failure'            => 'Something went wrong with the subscription.',
-            'already-subscribed' => 'Cannot subscribe :email because they\'re already subscribed.',
+            'unsubscribed'       => '電子メールの購読が取り消されました。',
+            'failure'            => '購読に何かが起きています。',
+            'already-subscribed' => '既に購読しているので :email の購読ができません。',
         ],
     ],
 
@@ -112,7 +112,7 @@ return [
     'modal' => [
         'close'     => '閉じる',
         'subscribe' => [
-            'title'  => 'Subscribe to component updates',
+            'title'  => 'コンポーネント更新の購読',
             'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll already receive emails for this component.',
             'button' => '購読',
         ],
@@ -129,7 +129,7 @@ return [
     ],
 
     // Other
-    'home'            => 'Home',
+    'home'            => 'ホーム',
     'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
     'timezone'        => 'Times are shown in :timezone.',
     'about_this_site' => 'このサイトについて',
