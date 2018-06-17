@@ -156,7 +156,7 @@ return [
             'time_before_refresh'                   => 'Frequência de atualização da página de status (em segundos)',
             'major_outage_rate'                     => 'Major outage threshold (in %)',
             'banner'                                => 'Imagem do banner',
-            'banner-help'                           => "É recomendado que você envie arquivos com largura até 930px",
+            'banner-help'                           => 'É recomendado que você envie arquivos com largura até 930px',
             'subscribers'                           => 'Permitir que outras pessoas se cadastrem para notificações via e-mail?',
             'suppress_notifications_in_maintenance' => 'Conter as notificações quando o incidente ocorrer durante o período de manutenção?',
             'skip_subscriber_verification'          => 'Ignorar verificação de usuários? (Cuidado, você pode sofrer com spams)',

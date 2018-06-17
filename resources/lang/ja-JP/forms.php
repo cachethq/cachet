@@ -156,7 +156,7 @@ return [
             'time_before_refresh'                   => 'ステータス ページ更新間隔 (秒)',
             'major_outage_rate'                     => 'Major outage threshold (in %)',
             'banner'                                => 'バナー画像',
-            'banner-help'                           => "横幅が930px以内の画像をアップロードしてください。",
+            'banner-help'                           => '横幅が930px以内の画像をアップロードしてください。',
             'subscribers'                           => 'Allow people to signup to email notifications?',
             'suppress_notifications_in_maintenance' => 'メンテナンス期間中にインシデントが発生したときの通知を抑制しますか?',
             'skip_subscriber_verification'          => 'Skip verifying of users? (Be warned, you could be spammed)',
