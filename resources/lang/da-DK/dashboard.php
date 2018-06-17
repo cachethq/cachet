@@ -75,7 +75,7 @@ return [
     // Incident Maintenance
     'schedule' => [
         'schedule'     => 'Vedligeholdelse',
-        'logged'       => '{0}There has been no Maintenance, good work.|[1]You have logged one schedule.|[2,*]You have reported <strong>:count</strong> schedules.',
+        'logged'       => '{0} Der er ingen tidsplanlager.|[1]Der er 1 tidsplan.|[2,*]Der er anmeldt <strong>:count</strong> tidsplaner.',
         'scheduled_at' => 'Planlagt til :timestamp',
         'add'          => [
             'title'   => 'Tilføj planlagt vedligeholdelse',
