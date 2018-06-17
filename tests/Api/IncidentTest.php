@@ -84,7 +84,28 @@ class IncidentTest extends AbstractApiTestCase
         $response->assertJsonFragment(['name' => 'Foo']);
     }
 
-    public function test_can_create_incident_with_component_status()
+    public function test_can_create_incident_with_component_no_status()
+    {
+        $component = factory(Component::class)->create();
+
+        $this->beUser();
+
+        $this->expectsEvents(IncidentWasCreatedEvent::class);
+
+        $response = $this->json('POST', '/api/v1/incidents', [
+            'name'             => 'Foo',
+            'message'          => 'Lorem ipsum dolor sit amet',
+            'status'           => 1,
+            'component_id'     => $component->id,
+            'visible'          => 1,
+            'stickied'         => false,
+        ]);
+
+        $response->assertStatus(200);
+        $response->assertJsonFragment(['name' => 'Foo']);
+    }
+
+    public function test_can_create_incident_with_component_and_status()
     {
         $component = factory(Component::class)->create();
 

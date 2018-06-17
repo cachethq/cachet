@@ -114,8 +114,8 @@ class CreateIncidentCommandHandler
             }
         }
 
-        // Update the component.
-        if ($component = Component::find($command->component_id)) {
+        // Update the component if we have a component and the status is set.
+        if ($component = Component::find($command->component_id) && $command->component_status) {
             dispatch(new UpdateComponentCommand(
                 Component::find($command->component_id),
                 null,
