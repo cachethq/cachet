@@ -18,20 +18,20 @@ return [
     'incidents' => [
         'title'                    => 'Vorfälle & Wartungsarbeiten',
         'incidents'                => 'Ereignisse',
-        'logged'                   => '{0}There are no incidents, good work.|[1]You have logged one incident.|[2,*]You have reported <strong>:count</strong> incidents.',
+        'logged'                   => '{0}Es gibt keine Ereignisse, gute Arbeit.|[1]Du hast ein Ereignis gemeldet.|[2,*]Du hast <strong>:count</strong> Ereignisse gemeldet.',
         'incident-create-template' => 'Vorlage erstellen',
         'incident-templates'       => 'Ereignis Vorlagen',
         'updates'                  => [
-            'title'   => 'Vorfall Aktualisiert für :incident',
-            'count'   => '{0}Zero Updates|[1]One Update|[2]Two Updates|[3,*]Several Updates',
+            'title'   => 'Vorfall Updates für :incident',
+            'count'   => '{0}Keine Updates|[1]Ein Update|[2]Zwei Updates|[3,*]Mehrere Updates',
             'add'     => [
                 'title'   => 'Vorfall-Update erstellen',
-                'success' => 'Deine neue Vorfall Aktualisierung wurde erstellt.',
-                'failure' => 'Etwas ist schief gelaufen mit der Vorfall Aktualisierung.',
+                'success' => 'Dein Vorfall Update wurde erstellt.',
+                'failure' => 'Etwas ist mit dem Vorfall Update schief gelaufen.',
             ],
             'edit' => [
-                'title'   => 'Bearbeite Vorfall Aktualisierung',
-                'success' => 'Vorfall wurde aktualisiert.',
+                'title'   => 'Vorfall Update bearbeiten',
+                'success' => 'Vorfall Update wurde aktualisiert.',
                 'failure' => 'Etwas ist mit dem Aktualisieren des Vorfall Updates schief gelaufen',
             ],
         ],
@@ -74,12 +74,12 @@ return [
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => 'Wartungsarbeiten',
-        'logged'       => '{0}There has been no Maintenance, good work.|[1]You have logged one schedule.|[2,*]You have reported <strong>:count</strong> schedules.',
+        'schedule'     => 'Geplante Wartungen',
+        'logged'       => '{0}Es gibt keine geplanten Wartungen, gute Arbeit.|[1]Du hast einen Eintrag erstellt.|[2,*]Du hast <strong>:count</strong> Einträge erstellt.',
         'scheduled_at' => 'Geplant am :timestamp',
         'add'          => [
             'title'   => 'Planmäßige Wartungsarbeiten hinzufügen',
-            'success' => 'Zeitplan hinzugefügt.',
+            'success' => 'Wartungsarbeiten hinzugefügt.',
             'failure' => 'Etwas lief schief mit dem Hinzufügen des Zeitplans. Bitte versuchen Sie es erneut.',
         ],
         'edit' => [
