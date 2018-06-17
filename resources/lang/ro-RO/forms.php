@@ -154,6 +154,7 @@ return [
             'about-this-page'                       => 'Despre această pagină',
             'days-of-incidents'                     => 'Câte zile de incidente vreţi să fie afişate?',
             'time_before_refresh'                   => 'Status page refresh rate (in seconds)',
+            'major_outage_rate'                     => 'Major outage threshold (in %)',
             'banner'                                => 'Imagine Banner',
             'banner-help'                           => "It's recommended that you upload files no bigger than 930px wide",
             'subscribers'                           => 'Permiteţi vizitatorilor să se aboneze la notificări prin email?',
@@ -177,8 +178,10 @@ return [
             'incident-date-format' => 'Formatul de timp al incidentului',
         ],
         'security' => [
-            'allowed-domains'      => 'Domenii permise',
-            'allowed-domains-help' => 'Separate prin virgulă. Domeniul configurat mai sus este automat permis implicit.',
+            'allowed-domains'           => 'Domenii permise',
+            'allowed-domains-help'      => 'Separate prin virgulă. Domeniul configurat mai sus este automat permis implicit.',
+            'always-authenticate'       => 'Always authenticate',
+            'always-authenticate-help'  => 'Require login to view any Cachet page',
         ],
         'stylesheet' => [
             'custom-css' => 'Personalizează Stilurile',
