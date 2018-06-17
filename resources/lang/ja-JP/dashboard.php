@@ -74,12 +74,12 @@ return [
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => '計画メンテナンス',
+        'schedule'     => 'メンテナンス',
         'logged'       => '{0}There has been no Maintenance, good work.|[1]You have logged one schedule.|[2,*]You have reported <strong>:count</strong> schedules.',
         'scheduled_at' => 'Scheduled at :timestamp',
         'add'          => [
-            'title'   => 'Add Scheduled Maintenance',
-            'success' => 'Schedule added.',
+            'title'   => '計画メンテナンス',
+            'success' => '計画メンテナンスが追加されました。',
             'failure' => 'Something went wrong adding the schedule, please try again.',
         ],
         'edit' => [
