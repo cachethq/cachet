@@ -56,7 +56,7 @@ return [
             'title' => 'crwdns968:0crwdne968:0',
             'add'   => [
                 'title'   => 'crwdns969:0crwdne969:0',
-                'message' => 'crwdns970:0crwdne970:0',
+                'message' => 'crwdns1443:0crwdne1443:0',
                 'success' => 'crwdns971:0crwdne971:0',
                 'failure' => 'crwdns972:0crwdne972:0',
             ],
