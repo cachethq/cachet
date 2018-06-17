@@ -30,7 +30,7 @@ return [
         'none'         => 'Es liegen keine Ereignisse vor',
         'past'         => 'Vergangene Ereignisse',
         'stickied'     => 'Angepinnte Vorfälle',
-        'scheduled'    => 'Wartungsarbeiten',
+        'scheduled'    => 'Geplante Wartungen',
         'scheduled_at' => ', geplant :timestamp',
         'posted'       => 'Veröffentlicht :timestamp',
         'posted_at'    => 'Veröffentlicht am :timestamp',
@@ -53,9 +53,9 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1]System operational|[2,*]All systems are operational',
-        'bad'   => '[0,1] Das System hat momentan Probleme|[2,Inf] Mehrere Systeme haben momentan Probleme',
-        'major' => '[0,1] Das System hat ein schwerwiegendes Problem|[2,Inf] Mehrere Systeme haben ein schwerwiegendes Problem',
+        'good'  => '[0,1]System funktioniert|[2,*]Alle Systeme funktionieren',
+        'bad'   => '[0,1] Das System hat momentan Probleme|[2,*] Mehrere Systeme haben momentan Probleme',
+        'major' => '[0,1] Das System hat ein schwerwiegendes Problem|[2,*] Mehrere Systeme haben ein schwerwiegendes Problem',
     ],
 
     'api' => [
@@ -81,7 +81,7 @@ return [
         'manage'      => [
             'no_subscriptions' => 'Du hast im Augenblick alle Updates abonniert.',
             'my_subscriptions' => 'Du hast im Augenblick folgende Updates abonniert.',
-            'manage_at_link'   => 'Verwalte deine Abonnements :link',
+            'manage_at_link'   => 'Verwalte deine Abonnements unter :link',
         ],
         'email' => [
             'subscribe'          => 'Aktualisierungen per E-Mail abonnieren.',

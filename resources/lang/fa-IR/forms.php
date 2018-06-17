@@ -154,6 +154,7 @@ return [
             'about-this-page'                       => 'درباره این صفحه',
             'days-of-incidents'                     => 'چند روز از رویداد‌ها نمایش داده شوند؟',
             'time_before_refresh'                   => 'Status page refresh rate (in seconds)',
+            'major_outage_rate'                     => 'Major outage threshold (in %)',
             'banner'                                => 'تصویر بنر',
             'banner-help'                           => "It's recommended that you upload files no bigger than 930px wide",
             'subscribers'                           => 'آیا به کاربران اجازه ثبت‌‌نام برای اعلان‌های ایمیلی داده شود؟',
@@ -177,8 +178,10 @@ return [
             'incident-date-format' => 'فرمت استمپ‌زمان (timestamp) رویداد',
         ],
         'security' => [
-            'allowed-domains'      => 'دامین‌های مجاز',
-            'allowed-domains-help' => 'جدا شده توسط کاما، دامین‌هایی که در بالا قرار دارند به صورت پیش‌فرض مجاز هستند.',
+            'allowed-domains'           => 'دامین‌های مجاز',
+            'allowed-domains-help'      => 'جدا شده توسط کاما، دامین‌هایی که در بالا قرار دارند به صورت پیش‌فرض مجاز هستند.',
+            'always-authenticate'       => 'Always authenticate',
+            'always-authenticate-help'  => 'Require login to view any Cachet page',
         ],
         'stylesheet' => [
             'custom-css' => 'برگه style سفارشی',

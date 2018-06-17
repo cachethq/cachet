@@ -13,13 +13,13 @@ return [
     'component' => [
         'status_update' => [
             'mail' => [
-                'subject'  => 'コンポーネント状況を更新しました',
-                'greeting' => 'コンポーネント状況を更新しました!',
+                'subject'  => 'コンポーネントの状況を更新しました',
+                'greeting' => 'コンポーネントの状況を更新しました!',
                 'content'  => ':nameの状況が:old_statusから:new_statusに変更しました。',
                 'action'   => '見て',
             ],
             'slack' => [
-                'title'   => 'コンポーネント状況を更新しました',
+                'title'   => 'コンポーネントの状況を更新しました',
                 'content' => ':nameの状況が:old_statusから:new_statusに変更しました。',
             ],
             'sms' => [

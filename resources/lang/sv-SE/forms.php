@@ -154,6 +154,7 @@ return [
             'about-this-page'                       => 'Om den här sidan',
             'days-of-incidents'                     => 'Hur många dagar av händelser ska visas?',
             'time_before_refresh'                   => 'Status page refresh rate (in seconds)',
+            'major_outage_rate'                     => 'Major outage threshold (in %)',
             'banner'                                => 'Bannerbild',
             'banner-help'                           => "It's recommended that you upload files no bigger than 930px wide",
             'subscribers'                           => 'Tillåt att registrera sig för notifikationer via e-post?',
@@ -177,8 +178,10 @@ return [
             'incident-date-format' => 'Händelsens tidsstämpelformat',
         ],
         'security' => [
-            'allowed-domains'      => 'Tillåtna domäner',
-            'allowed-domains-help' => 'Kommaseparerad. Domänerna ovan tillåts automatiskt som standard.',
+            'allowed-domains'           => 'Tillåtna domäner',
+            'allowed-domains-help'      => 'Kommaseparerad. Domänerna ovan tillåts automatiskt som standard.',
+            'always-authenticate'       => 'Always authenticate',
+            'always-authenticate-help'  => 'Require login to view any Cachet page',
         ],
         'stylesheet' => [
             'custom-css' => 'Anpassad stilmall',

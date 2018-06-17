@@ -53,7 +53,7 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1]System operational|[2,*]All systems are operational',
+        'good'  => '[0,1]Система работает в штатном режиме |[2,*]Все системы работают в штатном режиме',
         'bad'   => '[0,1] В системе есть неполадки|[2,Inf] В некоторых системах есть неполадки',
         'major' => '[0,1] Система не работает|[2,Inf] Некоторые системы не работают',
     ],
@@ -121,9 +121,9 @@ return [
     // Meta descriptions
     'meta' => [
         'description' => [
-            'incident'  => 'Details and updates about the :name incident that occurred on :date',
-            'schedule'  => 'Details about the scheduled maintenance period :name starting :startDate',
-            'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
+            'incident'  => 'Подробная информация и обновления о инциденте: :name, который произошел: :date',
+            'schedule'  => 'Подробная информация о запланированных технических работах: :name начинаются :startDate',
+            'subscribe' => 'Подписаться на :app для того, чтобы получать информацию о инцидентах и запланированных технических работах',
             'overview'  => 'Будьте в курсе последних новостей о состоянии сервиса от :app.',
         ],
     ],

@@ -154,6 +154,7 @@ return [
             'about-this-page'                       => 'Tentang halaman ini',
             'days-of-incidents'                     => 'Berapa hari insiden akan ditampilkan?',
             'time_before_refresh'                   => 'Status page refresh rate (in seconds)',
+            'major_outage_rate'                     => 'Major outage threshold (in %)',
             'banner'                                => 'Gambar Banner',
             'banner-help'                           => "It's recommended that you upload files no bigger than 930px wide",
             'subscribers'                           => 'Bolehkan pengunjung mendaftar notifikasi email?',
@@ -177,8 +178,10 @@ return [
             'incident-date-format' => 'Format Waktu Insiden',
         ],
         'security' => [
-            'allowed-domains'      => 'Domain yang dibolehkan',
-            'allowed-domains-help' => 'Pisahkan dengan koma. Domain yang ada di atas otomatis akan dibolehkan.',
+            'allowed-domains'           => 'Domain yang dibolehkan',
+            'allowed-domains-help'      => 'Pisahkan dengan koma. Domain yang ada di atas otomatis akan dibolehkan.',
+            'always-authenticate'       => 'Always authenticate',
+            'always-authenticate-help'  => 'Require login to view any Cachet page',
         ],
         'stylesheet' => [
             'custom-css' => 'Stylesheet Kustom',

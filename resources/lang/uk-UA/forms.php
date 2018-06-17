@@ -154,6 +154,7 @@ return [
             'about-this-page'                       => 'Інформація про цю сторінку',
             'days-of-incidents'                     => 'How many days of incidents to show?',
             'time_before_refresh'                   => 'Status page refresh rate (in seconds)',
+            'major_outage_rate'                     => 'Major outage threshold (in %)',
             'banner'                                => 'Зображення банеру',
             'banner-help'                           => "It's recommended that you upload files no bigger than 930px wide",
             'subscribers'                           => 'Allow people to signup to email notifications?',
@@ -177,8 +178,10 @@ return [
             'incident-date-format' => 'Incident timestamp format',
         ],
         'security' => [
-            'allowed-domains'      => 'Allowed domains',
-            'allowed-domains-help' => 'Comma separated. The domain set above is automatically allowed by default.',
+            'allowed-domains'           => 'Allowed domains',
+            'allowed-domains-help'      => 'Comma separated. The domain set above is automatically allowed by default.',
+            'always-authenticate'       => 'Always authenticate',
+            'always-authenticate-help'  => 'Require login to view any Cachet page',
         ],
         'stylesheet' => [
             'custom-css' => 'Custom Stylesheet',
@@ -238,7 +241,7 @@ return [
     'remove'         => 'Remove',
     'invite'         => 'Запросити',
     'signup'         => 'Зареєструйтесь',
-    'manage_updates' => 'Manage Updates',
+    'manage_updates' => 'Керування оновленнями',
 
     // Other
     'optional' => '* Optional',

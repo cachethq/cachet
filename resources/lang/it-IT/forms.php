@@ -154,6 +154,7 @@ return [
             'about-this-page'                       => 'Informazioni sulla pagina',
             'days-of-incidents'                     => 'Quanti giorni di segnalazioni mostrare?',
             'time_before_refresh'                   => 'Status page refresh rate (in seconds)',
+            'major_outage_rate'                     => 'Major outage threshold (in %)',
             'banner'                                => 'Immagine del banner',
             'banner-help'                           => "It's recommended that you upload files no bigger than 930px wide",
             'subscribers'                           => 'Permettere alle persone di iscriversi alle notifiche via email?',
@@ -177,8 +178,10 @@ return [
             'incident-date-format' => 'Formato timestamp della segnalazione',
         ],
         'security' => [
-            'allowed-domains'      => 'Domini consentiti',
-            'allowed-domains-help' => 'Separati da virgola. Il dominio impostato sopra è automaticamente consentito per impostazione predefinita.',
+            'allowed-domains'           => 'Domini consentiti',
+            'allowed-domains-help'      => 'Separati da virgola. Il dominio impostato sopra è automaticamente consentito per impostazione predefinita.',
+            'always-authenticate'       => 'Always authenticate',
+            'always-authenticate-help'  => 'Require login to view any Cachet page',
         ],
         'stylesheet' => [
             'custom-css' => 'Foglio di stile personalizzato',

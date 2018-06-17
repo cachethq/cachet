@@ -154,6 +154,7 @@ return [
             'about-this-page'                       => 'Om',
             'days-of-incidents'                     => 'Hvor mange dage skal der vises hændelser for?',
             'time_before_refresh'                   => 'Status page refresh rate (in seconds)',
+            'major_outage_rate'                     => 'Major outage threshold (in %)',
             'banner'                                => 'Banner billede',
             'banner-help'                           => "It's recommended that you upload files no bigger than 930px wide",
             'subscribers'                           => 'Tillad folk at tilmelde sig email underretninger?',
@@ -177,8 +178,10 @@ return [
             'incident-date-format' => 'Datoformat for hændelser',
         ],
         'security' => [
-            'allowed-domains'      => 'Tilladte domæner',
-            'allowed-domains-help' => 'Komma adskilt. Domænet ovenfor har automatisk adgang.',
+            'allowed-domains'           => 'Tilladte domæner',
+            'allowed-domains-help'      => 'Komma adskilt. Domænet ovenfor har automatisk adgang.',
+            'always-authenticate'       => 'Always authenticate',
+            'always-authenticate-help'  => 'Require login to view any Cachet page',
         ],
         'stylesheet' => [
             'custom-css' => 'Tilpasset CSS',

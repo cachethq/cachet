@@ -33,7 +33,7 @@ return [
         'scheduled'    => 'Plánovaná odstávka',
         'scheduled_at' => ', plánované na :timestamp',
         'posted'       => 'Publikováno :timestamp',
-        'posted_at'    => 'Posted at :timestamp',
+        'posted_at'    => 'Publikováno :timestamp',
         'status'       => [
             1 => 'Zkoumání příčiny',
             2 => 'Problém identifikován',
@@ -53,7 +53,7 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1]System operational|[2,*]All systems are operational',
+        'good'  => '[0,1] Služba je v provozu|[2,*]Všechny služby fungují bez problémů',
         'bad'   => '[0,1] Služba má problémy|[2,Inf] Některá ze služeb má problémy',
         'major' => '[0,1] Služba má celkový výpadek|[2,Inf] Některé služby mají celkový výpadek',
     ],
@@ -81,7 +81,7 @@ return [
         'manage'      => [
             'no_subscriptions' => 'Aktuálně jsi přihlášen(a) ke všem upozorněním.',
             'my_subscriptions' => 'Aktuálně jsi přihlášen(a) k následujícím upozorněním.',
-            'manage_at_link'   => 'Manage your subscriptions at :link',
+            'manage_at_link'   => 'Spravovat odběry na :link',
         ],
         'email' => [
             'subscribe'          => 'Přihlásit se k zasílání upozornění e-mailem.',
@@ -121,9 +121,9 @@ return [
     // Meta descriptions
     'meta' => [
         'description' => [
-            'incident'  => 'Details and updates about the :name incident that occurred on :date',
-            'schedule'  => 'Details about the scheduled maintenance period :name starting :startDate',
-            'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
+            'incident'  => 'Podrobnosti a aktuální informace o událost :name, ke které došlo :date',
+            'schedule'  => 'Podrobnosti o plánované údržbě :name od :startDate',
+            'subscribe' => 'Přihlaste se k odběru: app, abyste obdrželi aktualizace o událostech a plánované údržbě',
             'overview'  => 'Držte krok s nejnovějšími aktualizacemi od: app.',
         ],
     ],

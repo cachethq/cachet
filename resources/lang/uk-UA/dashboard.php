@@ -76,7 +76,7 @@ return [
     'schedule' => [
         'schedule'     => 'Запланована перерва у роботі',
         'logged'       => '{0}There has been no Maintenance, good work.|[1]You have logged one schedule.|[2,*]You have reported <strong>:count</strong> schedules.',
-        'scheduled_at' => 'Scheduled at :timestamp',
+        'scheduled_at' => 'Заплановано на :timestamp',
         'add'          => [
             'title'   => 'Add Scheduled Maintenance',
             'success' => 'Schedule added.',
