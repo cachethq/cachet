@@ -182,7 +182,6 @@ return [
         env('APP_DEBUG') ? Barryvdh\Debugbar\ServiceProvider::class : null,
         Fideloper\Proxy\TrustedProxyServiceProvider::class,
         GrahamCampbell\Binput\BinputServiceProvider::class,
-        GrahamCampbell\Core\CoreServiceProvider::class,
         GrahamCampbell\Exceptions\ExceptionsServiceProvider::class,
         GrahamCampbell\Markdown\MarkdownServiceProvider::class,
         GrahamCampbell\Security\SecurityServiceProvider::class,
