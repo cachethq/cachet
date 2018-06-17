@@ -1,8 +1,9 @@
 <script>
 module.exports = {
-    props: ['welcome-user'],
+    props: ['user'],
     mounted () {
-        if (this.welcomeUser) {
+        if (!this.user.welcomed) {
+            // @todo Replace this with a non-jquery alternative.
             $('#welcome-modal').modal('show');
         }
     },
