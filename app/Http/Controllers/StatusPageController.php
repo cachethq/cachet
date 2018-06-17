@@ -57,13 +57,7 @@ class StatusPageController extends AbstractApiController
 
         if ($onlyDisruptedDays) {
             // In this case, start_date GET parameter means the page
-            $page = Binput::get('start_date', 0);
-
-            if (!is_numeric($page)) {
-                $page = 0;
-            }
-
-            $page = (int) $page;
+            $page = (int) Binput::get('start_date', 0);
 
             $allIncidentDays = Incident::where('visible', '>=', (int) !Auth::check())
                                        ->select('occurred_at')
