@@ -25,6 +25,21 @@ class ArtisanCommandTest extends AbstractTestCase
 {
     use DatabaseMigrations;
 
+    public function testAppInstall()
+    {
+        $this->assertSame(0, $this->app->make(Kernel::class)->call('app:install');
+    }
+
+    public function testAppReset()
+    {
+        $this->assertSame(0, $this->app->make(Kernel::class)->call('app:reset');
+    }
+
+    public function testAppUpdate()
+    {
+        $this->assertSame(0, $this->app->make(Kernel::class)->call('app:update');
+    }
+
     public function testMigrations()
     {
         $this->assertSame(0, $this->app->make(Kernel::class)->call('migrate', ['--force' => true]));
