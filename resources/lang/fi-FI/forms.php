@@ -154,6 +154,7 @@ return [
             'about-this-page'                       => 'Tietoa tästä sivustosta',
             'days-of-incidents'                     => 'Monenko päivän ajalta tapaukset näytetään?',
             'time_before_refresh'                   => 'Status page refresh rate (in seconds)',
+            'major_outage_rate'                     => 'Major outage threshold (in %)',
             'banner'                                => 'Bannerikuva',
             'banner-help'                           => "It's recommended that you upload files no bigger than 930px wide",
             'subscribers'                           => 'Salli käyttäjien tilata sähköpostitilaukset?',
@@ -177,8 +178,10 @@ return [
             'incident-date-format' => 'Tapauksen aikaleiman muoto',
         ],
         'security' => [
-            'allowed-domains'      => 'Sallittu toimialueet',
-            'allowed-domains-help' => 'Pilkulla erotettuna. Edellä olevat toimialueet sallitaan automaattisesti oletuksena.',
+            'allowed-domains'           => 'Sallittu toimialueet',
+            'allowed-domains-help'      => 'Pilkulla erotettuna. Edellä olevat toimialueet sallitaan automaattisesti oletuksena.',
+            'always-authenticate'       => 'Always authenticate',
+            'always-authenticate-help'  => 'Require login to view any Cachet page',
         ],
         'stylesheet' => [
             'custom-css' => 'Mukautettu tyylisivu',
