@@ -119,7 +119,7 @@ class ComponentController extends AbstractApiController
                 Binput::get('link'),
                 Binput::get('order'),
                 Binput::get('group_id'),
-                (bool) Binput::get('enabled', true),
+                (bool) Binput::get('enabled'),
                 Binput::get('meta', null),
                 (bool) Binput::get('silent', false)
             ));
