@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Tests\Cachet\Api;
 
+use CachetHQ\Cachet\Bus\Events\Component\ComponentStatusWasChangedEvent;
 use CachetHQ\Cachet\Bus\Events\Component\ComponentWasCreatedEvent;
 use CachetHQ\Cachet\Bus\Events\Component\ComponentWasRemovedEvent;
 use CachetHQ\Cachet\Bus\Events\Component\ComponentWasUpdatedEvent;
@@ -174,6 +175,43 @@ class ComponentTest extends AbstractApiTestCase
 
         $response->assertStatus(200);
         $response->assertJsonFragment(['name' => 'Foo']);
+    }
+
+    public function test_can_update_component_without_status_change()
+    {
+        $this->beUser();
+        $component = factory(Component::class)->create();
+
+        $this->expectsEvents(ComponentWasUpdatedEvent::class);
+        $this->doesntExpectEvents(ComponentStatusWasChangedEvent::class);
+
+        $response = $this->json('PUT', '/api/v1/components/1', [
+            'name' => 'Foo',
+        ]);
+
+        $response->assertStatus(200);
+        $response->assertJsonFragment(['name' => 'Foo']);
+    }
+
+    public function test_can_update_component_with_status_change()
+    {
+        $this->beUser();
+        $component = factory(Component::class)->create([
+            'status' => 1,
+        ]);
+
+        $this->expectsEvents([
+            ComponentWasUpdatedEvent::class,
+            ComponentStatusWasChangedEvent::class,
+        ]);
+
+        $response = $this->json('PUT', '/api/v1/components/1', [
+            'name'   => 'Foo',
+            'status' => 2,
+        ]);
+
+        $response->assertStatus(200);
+        $response->assertJsonFragment(['name' => 'Foo', 'status' => 2]);
     }
 
     public function test_can_update_component_with_meta_data()
