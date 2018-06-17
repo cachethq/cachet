@@ -12,12 +12,7 @@
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
 use AltThree\Validator\ValidationException;
-use CachetHQ\Cachet\Bus\Commands\Incident\CreateIncidentCommand;
-use CachetHQ\Cachet\Bus\Commands\Incident\RemoveIncidentCommand;
-use CachetHQ\Cachet\Bus\Commands\Incident\UpdateIncidentCommand;
 use CachetHQ\Cachet\Integrations\Contracts\System;
-use CachetHQ\Cachet\Models\Component;
-use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentTemplate;
 use GrahamCampbell\Binput\Facades\Binput;
