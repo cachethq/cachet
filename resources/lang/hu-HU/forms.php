@@ -154,6 +154,7 @@ return [
             'about-this-page'                       => 'Erről az oldalról',
             'days-of-incidents'                     => 'Mennyi incidens legyen látható?',
             'time_before_refresh'                   => 'Status page refresh rate (in seconds)',
+            'major_outage_rate'                     => 'Major outage threshold (in %)',
             'banner'                                => 'Banner kép',
             'banner-help'                           => "It's recommended that you upload files no bigger than 930px wide",
             'subscribers'                           => 'Emberek regisztrálhatnak email értesítésekre?',
@@ -177,8 +178,10 @@ return [
             'incident-date-format' => 'Incidens időbélyeg formátuma',
         ],
         'security' => [
-            'allowed-domains'      => 'Engedélyezett domainek',
-            'allowed-domains-help' => 'Vesszővel elválasztott. A fenti domain alapértelmezés szerint engedélyezve van.',
+            'allowed-domains'           => 'Engedélyezett domainek',
+            'allowed-domains-help'      => 'Vesszővel elválasztott. A fenti domain alapértelmezés szerint engedélyezve van.',
+            'always-authenticate'       => 'Always authenticate',
+            'always-authenticate-help'  => 'Require login to view any Cachet page',
         ],
         'stylesheet' => [
             'custom-css' => 'Egyedi Stylesheet',
