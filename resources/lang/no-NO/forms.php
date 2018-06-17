@@ -154,6 +154,7 @@ return [
             'about-this-page'                       => 'Om denne siden',
             'days-of-incidents'                     => 'Hvor mange dagers hendelser vises?',
             'time_before_refresh'                   => 'Status page refresh rate (in seconds)',
+            'major_outage_rate'                     => 'Major outage threshold (in %)',
             'banner'                                => 'Bannerbilde',
             'banner-help'                           => "It's recommended that you upload files no bigger than 930px wide",
             'subscribers'                           => 'Tillatt brukere å melde seg inn for epostvarslinger?',
@@ -177,8 +178,10 @@ return [
             'incident-date-format' => 'Hendelse tidsstempelformat',
         ],
         'security' => [
-            'allowed-domains'      => 'Tillatte domener',
-            'allowed-domains-help' => 'Atskilt med komma. Domenet ovenfor tillates automatisk som standard.',
+            'allowed-domains'           => 'Tillatte domener',
+            'allowed-domains-help'      => 'Atskilt med komma. Domenet ovenfor tillates automatisk som standard.',
+            'always-authenticate'       => 'Always authenticate',
+            'always-authenticate-help'  => 'Require login to view any Cachet page',
         ],
         'stylesheet' => [
             'custom-css' => 'Tilpasset stilark',
