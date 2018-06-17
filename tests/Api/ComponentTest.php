@@ -11,6 +11,9 @@
 
 namespace CachetHQ\Tests\Cachet\Api;
 
+use CachetHQ\Cachet\Bus\Events\Component\ComponentWasCreatedEvent;
+use CachetHQ\Cachet\Bus\Events\Component\ComponentWasRemovedEvent;
+use CachetHQ\Cachet\Bus\Events\Component\ComponentWasUpdatedEvent;
 use CachetHQ\Cachet\Models\Component;
 
 /**
@@ -42,6 +45,8 @@ class ComponentTest extends AbstractApiTestCase
 
     public function test_cannot_create_component_without_authorization()
     {
+        $this->doesntExpectEvents(ComponentWasCreatedEvent::class);
+
         $response = $this->json('POST', '/api/v1/components');
 
         $response->assertStatus(401);
@@ -51,6 +56,8 @@ class ComponentTest extends AbstractApiTestCase
     {
         $this->beUser();
 
+        $this->doesntExpectEvents(ComponentWasCreatedEvent::class);
+
         $response = $this->json('POST', '/api/v1/components');
 
         $response->assertStatus(400);
@@ -59,6 +66,8 @@ class ComponentTest extends AbstractApiTestCase
     public function test_can_create_component()
     {
         $this->beUser();
+
+        $this->expectsEvents(ComponentWasCreatedEvent::class);
 
         $response = $this->json('POST', '/api/v1/components', [
             'name'        => 'Foo',
@@ -78,6 +87,8 @@ class ComponentTest extends AbstractApiTestCase
     {
         $this->beUser();
 
+        $this->expectsEvents(ComponentWasCreatedEvent::class);
+
         $response = $this->json('POST', '/api/v1/components', [
             'name'        => 'Foo',
             'description' => 'Bar',
@@ -94,6 +105,8 @@ class ComponentTest extends AbstractApiTestCase
     public function test_can_create_component_with_meta_data()
     {
         $this->beUser();
+
+        $this->expectsEvents(ComponentWasCreatedEvent::class);
 
         $response = $this->json('POST', '/api/v1/components', [
             'name'        => 'Foo',
@@ -121,6 +134,8 @@ class ComponentTest extends AbstractApiTestCase
     public function test_can_create_disabled_component()
     {
         $this->beUser();
+
+        $this->expectsEvents(ComponentWasCreatedEvent::class);
 
         $response = $this->json('POST', '/api/v1/components', [
             'name'        => 'Foo',
@@ -151,6 +166,8 @@ class ComponentTest extends AbstractApiTestCase
         $this->beUser();
         $component = factory(Component::class)->create();
 
+        $this->expectsEvents(ComponentWasUpdatedEvent::class);
+
         $response = $this->json('PUT', '/api/v1/components/1', [
             'name' => 'Foo',
         ]);
@@ -167,6 +184,8 @@ class ComponentTest extends AbstractApiTestCase
                 'uuid' => '172ff3fb-41f7-49d3-8bcd-f57b53627fa0',
             ],
         ]);
+
+        $this->expectsEvents(ComponentWasUpdatedEvent::class);
 
         $response = $this->json('PUT', '/api/v1/components/1', [
             'meta' => [
@@ -189,7 +208,9 @@ class ComponentTest extends AbstractApiTestCase
         $this->beUser();
         $component = factory(Component::class)->create();
 
-        $response = $this->delete('/api/v1/components/1');
+        $this->expectsEvents(ComponentWasRemovedEvent::class);
+
+        $response = $this->json('DELETE', '/api/v1/components/1');
         $response->assertStatus(204);
     }
 }
