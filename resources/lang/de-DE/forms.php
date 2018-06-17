@@ -154,7 +154,7 @@ return [
             'about-this-page'                       => 'Über diese Seite',
             'days-of-incidents'                     => 'Wie viele Tage mit Vorfällen sollen gezeigt werden?',
             'time_before_refresh'                   => 'Aktualisierungsrate der Statusseite (in Sekunden)',
-            'major_outage_rate'                     => 'Major outage threshold (in %)',
+            'major_outage_rate'                     => 'Grenzwert für schwerwiegende Ausfälle (in %)',
             'banner'                                => 'Banner Bild',
             'banner-help'                           => "Es wird empfohlen, dass Sie keine Dateien die breiter als 930 Pixel sind hochladen",
             'subscribers'                           => 'Personen die Anmeldung für E-Mail-Benachrichtigung erlauben?',
@@ -180,7 +180,7 @@ return [
         'security' => [
             'allowed-domains'           => 'Erlaubte Domains',
             'allowed-domains-help'      => 'Durch Kommata trennen. Die oben genannte Domain ist standardmäßig erlaubt.',
-            'always-authenticate'       => 'Always authenticate',
+            'always-authenticate'       => 'Immer anmelden',
             'always-authenticate-help'  => 'Anmeldung für alle Cachet Seiten erzwingen',
         ],
         'stylesheet' => [
