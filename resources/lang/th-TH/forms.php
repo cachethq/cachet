@@ -154,6 +154,7 @@ return [
             'about-this-page'                       => 'เกี่ยวกับหน้านี้',
             'days-of-incidents'                     => 'แสดงวันที่มีเหตุการณ์เกิดขึ้นกี่วัน?',
             'time_before_refresh'                   => 'Status page refresh rate (in seconds)',
+            'major_outage_rate'                     => 'Major outage threshold (in %)',
             'banner'                                => 'ภาพแบนเนอร์',
             'banner-help'                           => "It's recommended that you upload files no bigger than 930px wide",
             'subscribers'                           => 'เปิดให้ทุกคนสามารถลงทะเบียนรับอีเมลแจ้งเตือน?',
@@ -177,8 +178,10 @@ return [
             'incident-date-format' => 'รูปแบบเวลาของเหตุการณ์',
         ],
         'security' => [
-            'allowed-domains'      => 'โดเมนที่ได้รับอนุญาต',
-            'allowed-domains-help' => 'คั่นด้วยจุลภาค โดเมนที่กำหนดข้างต้นจะสามารถเข้าได้อัตโนมัติ โดยค่าเริ่มต้น',
+            'allowed-domains'           => 'โดเมนที่ได้รับอนุญาต',
+            'allowed-domains-help'      => 'คั่นด้วยจุลภาค โดเมนที่กำหนดข้างต้นจะสามารถเข้าได้อัตโนมัติ โดยค่าเริ่มต้น',
+            'always-authenticate'       => 'Always authenticate',
+            'always-authenticate-help'  => 'Require login to view any Cachet page',
         ],
         'stylesheet' => [
             'custom-css' => 'Custom Stylesheet',
