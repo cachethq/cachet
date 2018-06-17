@@ -154,6 +154,7 @@ return [
             'about-this-page'                       => 'Sobre aquest lloc',
             'days-of-incidents'                     => 'Quants de dies d\'incidents voleu veure?',
             'time_before_refresh'                   => 'Status page refresh rate (in seconds)',
+            'major_outage_rate'                     => 'Major outage threshold (in %)',
             'banner'                                => 'Imatge del banner',
             'banner-help'                           => "It's recommended that you upload files no bigger than 930px wide",
             'subscribers'                           => 'Permetre el registre per a notificacions per correu electrònic?',
@@ -177,8 +178,10 @@ return [
             'incident-date-format' => 'Format del fus horari dels incidents',
         ],
         'security' => [
-            'allowed-domains'      => 'Dominis permesos',
-            'allowed-domains-help' => 'Separats per comes. El domini especificat a dalt és automàticament permès per defecte.',
+            'allowed-domains'           => 'Dominis permesos',
+            'allowed-domains-help'      => 'Separats per comes. El domini especificat a dalt és automàticament permès per defecte.',
+            'always-authenticate'       => 'Always authenticate',
+            'always-authenticate-help'  => 'Require login to view any Cachet page',
         ],
         'stylesheet' => [
             'custom-css' => 'Full d\'estils personalitzats',
