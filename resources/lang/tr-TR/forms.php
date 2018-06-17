@@ -154,6 +154,7 @@ return [
             'about-this-page'                       => 'Hakkında',
             'days-of-incidents'                     => 'Kaç gün olay gösterebilirim?',
             'time_before_refresh'                   => 'Status page refresh rate (in seconds)',
+            'major_outage_rate'                     => 'Major outage threshold (in %)',
             'banner'                                => 'Afiş Resmi',
             'banner-help'                           => "It's recommended that you upload files no bigger than 930px wide",
             'subscribers'                           => 'Kullanıcıların e-posta bildirimlerine kaydolmasına izin verilsin mi?',
@@ -177,8 +178,10 @@ return [
             'incident-date-format' => 'Olay zaman damgası biçimi',
         ],
         'security' => [
-            'allowed-domains'      => 'İzin verilen alanlar',
-            'allowed-domains-help' => 'Virgülle ayrılmış. Yukarıda ayarlanan alana varsayılan olarak otomatik olarak izin verilir.',
+            'allowed-domains'           => 'İzin verilen alanlar',
+            'allowed-domains-help'      => 'Virgülle ayrılmış. Yukarıda ayarlanan alana varsayılan olarak otomatik olarak izin verilir.',
+            'always-authenticate'       => 'Always authenticate',
+            'always-authenticate-help'  => 'Require login to view any Cachet page',
         ],
         'stylesheet' => [
             'custom-css' => 'Özel Stil Sayfası',
