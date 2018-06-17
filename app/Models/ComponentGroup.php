@@ -99,7 +99,7 @@ class ComponentGroup extends Model implements HasPresenter
      */
     public function components()
     {
-        return $this->hasMany(Component::class, 'group_id', 'id')->orderBy('order');
+        return $this->hasMany(Component::class, 'group_id', 'id');
     }
 
     /**
@@ -119,7 +119,7 @@ class ComponentGroup extends Model implements HasPresenter
      */
     public function enabled_components()
     {
-        return $this->components()->enabled();
+        return $this->components()->enabled()->orderBy('order');
     }
 
     /**
