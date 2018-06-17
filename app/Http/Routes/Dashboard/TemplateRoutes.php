@@ -44,29 +44,29 @@ class TemplateRoutes
         ], function (Registrar $router) {
             $router->get('/', [
                 'as'   => 'get:dashboard.templates',
-                'uses' => 'IncidentController@showTemplates',
+                'uses' => 'IncidentTemplateController@showTemplates',
             ]);
 
             $router->get('create', [
                 'as'   => 'get:dashboard.templates.create',
-                'uses' => 'IncidentController@showAddIncidentTemplate',
+                'uses' => 'IncidentTemplateController@showAddIncidentTemplate',
             ]);
             $router->post('create', [
                 'as'   => 'post:dashboard.templates.create',
-                'uses' => 'IncidentController@createIncidentTemplateAction',
+                'uses' => 'IncidentTemplateController@createIncidentTemplateAction',
             ]);
 
             $router->get('{incident_template}', [
                 'as'   => 'get:dashboard.templates.edit',
-                'uses' => 'IncidentController@showEditTemplateAction',
+                'uses' => 'IncidentTemplateController@showEditTemplateAction',
             ]);
             $router->post('{incident_template}', [
                 'as'   => 'post:dashboard.templates.edit',
-                'uses' => 'IncidentController@editTemplateAction',
+                'uses' => 'IncidentTemplateController@editTemplateAction',
             ]);
             $router->delete('{incident_template}', [
                 'as'   => 'delete:dashboard.templates.delete',
-                'uses' => 'IncidentController@deleteTemplateAction',
+                'uses' => 'IncidentTemplateController@deleteTemplateAction',
             ]);
         });
     }
