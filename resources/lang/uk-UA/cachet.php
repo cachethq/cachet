@@ -75,10 +75,11 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'   => 'Підписатись на оновлення',
-        'unsubscribe' => 'Відписатись від :link',
-        'button'      => 'Підписатись',
-        'manage'      => [
+        'subscribe'           => 'Підписатись на оновлення',
+        'unsubscribe'         => 'Unsubscribe',
+        'button'              => 'Підписатись',
+        'manage_subscription' => 'Manage subscription',
+        'manage'              => [
             'no_subscriptions' => 'Наразі, ви підписані на всі оновлення.',
             'my_subscriptions' => 'Ви уже підписані до цих оновлень.',
             'manage_at_link'   => 'Manage your subscriptions at :link',
