@@ -75,10 +75,11 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'   => 'Εγγραφείτε για να λάβετε τις τελευταίες ενημερώσεις',
-        'unsubscribe' => 'Unsubscribe at :link',
-        'button'      => 'Εγγραφή',
-        'manage'      => [
+        'subscribe'           => 'Εγγραφείτε για να λάβετε τις τελευταίες ενημερώσεις',
+        'unsubscribe'         => 'Unsubscribe',
+        'button'              => 'Εγγραφή',
+        'manage_subscription' => 'Manage subscription',
+        'manage'              => [
             'no_subscriptions' => 'You\'re currently subscribed to all updates.',
             'my_subscriptions' => 'You\'re currently subscribed to the following updates.',
             'manage_at_link'   => 'Manage your subscriptions at :link',
