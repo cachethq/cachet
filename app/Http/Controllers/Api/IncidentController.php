@@ -321,7 +321,7 @@ class IncidentController extends AbstractApiController
      *   @SWG\Parameter(
      *     name="occured_at",
      *     in="formData",
-     *     type="date",
+     *     type="string",
      *     description="The date when the incident occured.",
      *     required=true
      *   ),
@@ -356,7 +356,8 @@ class IncidentController extends AbstractApiController
      *   @SWG\Parameter(
      *     name="vars",
      *     in="formData",
-     *     type="string[]",
+     *     type="array",
+     *     items="string",
      *     description="The variables to give to the template.",
      *     required=false
      *   ),
