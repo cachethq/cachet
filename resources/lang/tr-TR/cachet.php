@@ -75,10 +75,11 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'   => 'Güncellemeleri almak için abone olun',
-        'unsubscribe' => 'Adresindeki aboneliği iptal et :link',
-        'button'      => 'Abone ol',
-        'manage'      => [
+        'subscribe'           => 'Güncellemeleri almak için abone olun',
+        'unsubscribe'         => 'Unsubscribe',
+        'button'              => 'Abone ol',
+        'manage_subscription' => 'Manage subscription',
+        'manage'              => [
             'no_subscriptions' => 'Şu anda tüm güncellemeleri abone oldunuz.',
             'my_subscriptions' => 'Şu an aşağıdaki güncellemelere abone oldunuz.',
             'manage_at_link'   => 'Manage your subscriptions at :link',

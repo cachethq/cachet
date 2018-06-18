@@ -75,10 +75,11 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'   => 'Подпишитесь, чтобы получать информацию об изменениях',
-        'unsubscribe' => 'Отписаться от :link',
-        'button'      => 'Подписаться',
-        'manage'      => [
+        'subscribe'           => 'Подпишитесь, чтобы получать информацию об изменениях',
+        'unsubscribe'         => 'Unsubscribe',
+        'button'              => 'Подписаться',
+        'manage_subscription' => 'Manage subscription',
+        'manage'              => [
             'no_subscriptions' => 'Вы подписаны на все изменения.',
             'my_subscriptions' => 'Вы подписаны на следующие изменения.',
             'manage_at_link'   => 'Управляйте своими подписками в :link',

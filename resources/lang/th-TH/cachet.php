@@ -75,10 +75,11 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'   => 'สมัครเพื่อติดตามข่าวสาร',
-        'unsubscribe' => 'ยกเลิกการติดตาม :link',
-        'button'      => 'ติดตาม',
-        'manage'      => [
+        'subscribe'           => 'สมัครเพื่อติดตามข่าวสาร',
+        'unsubscribe'         => 'Unsubscribe',
+        'button'              => 'ติดตาม',
+        'manage_subscription' => 'Manage subscription',
+        'manage'              => [
             'no_subscriptions' => 'คุณติตตามทั้งหมดแล้ว',
             'my_subscriptions' => 'คุณติดตามข่าวสารเหล่านี้',
             'manage_at_link'   => 'Manage your subscriptions at :link',

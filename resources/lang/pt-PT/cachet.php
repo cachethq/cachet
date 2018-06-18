@@ -75,10 +75,11 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'   => 'Inscreva-se para obter as atualizações mais recentes',
-        'unsubscribe' => 'Subscrição cancelada em :link',
-        'button'      => 'Subscrever',
-        'manage'      => [
+        'subscribe'           => 'Inscreva-se para obter as atualizações mais recentes',
+        'unsubscribe'         => 'Unsubscribe',
+        'button'              => 'Subscrever',
+        'manage_subscription' => 'Manage subscription',
+        'manage'              => [
             'no_subscriptions' => 'Actualmente está subscrito para todas as actualizações.',
             'my_subscriptions' => 'Actualmente está subscrito para as seguintes actualizações.',
             'manage_at_link'   => 'Edite as suas subscrições aqui :link',

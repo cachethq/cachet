@@ -75,10 +75,11 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'   => 'Đăng ký để nhận các thông báo cập nhật',
-        'unsubscribe' => 'Unsubscribe at :link',
-        'button'      => 'Đăng ký',
-        'manage'      => [
+        'subscribe'           => 'Đăng ký để nhận các thông báo cập nhật',
+        'unsubscribe'         => 'Unsubscribe',
+        'button'              => 'Đăng ký',
+        'manage_subscription' => 'Manage subscription',
+        'manage'              => [
             'no_subscriptions' => 'Bạn hiện đã đăng ký nhận tất cả các thông báo cập nhật.',
             'my_subscriptions' => 'Bạn hiện đã đăng ký nhận các thông báo cập nhật sau.',
             'manage_at_link'   => 'Manage your subscriptions at :link',

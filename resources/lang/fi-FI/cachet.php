@@ -75,10 +75,11 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'   => 'Tilaa uusimmat päivitykset',
-        'unsubscribe' => 'Unsubscribe at :link',
-        'button'      => 'Tilaa',
-        'manage'      => [
+        'subscribe'           => 'Tilaa uusimmat päivitykset',
+        'unsubscribe'         => 'Unsubscribe',
+        'button'              => 'Tilaa',
+        'manage_subscription' => 'Manage subscription',
+        'manage'              => [
             'no_subscriptions' => 'Olet tällä hetkellä tilannut kaikki ilmoitukset.',
             'my_subscriptions' => 'Olet tällä hetkellä tilannut seuraavat ilmoitukset.',
             'manage_at_link'   => 'Manage your subscriptions at :link',

@@ -75,10 +75,11 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'   => 'crwdns908:0crwdne908:0',
-        'unsubscribe' => 'crwdns1352:0crwdne1352:0',
-        'button'      => 'crwdns909:0crwdne909:0',
-        'manage'      => [
+        'subscribe'           => 'crwdns908:0crwdne908:0',
+        'unsubscribe'         => 'crwdns1447:0crwdne1447:0',
+        'button'              => 'crwdns909:0crwdne909:0',
+        'manage_subscription' => 'crwdns1448:0crwdne1448:0',
+        'manage'              => [
             'no_subscriptions' => 'crwdns910:0crwdne910:0',
             'my_subscriptions' => 'crwdns911:0crwdne911:0',
             'manage_at_link'   => 'crwdns1432:0crwdne1432:0',

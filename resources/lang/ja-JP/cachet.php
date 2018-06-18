@@ -75,10 +75,11 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'   => '最新のアップデート情報を購読する',
-        'unsubscribe' => '登録解除はこちら :link',
-        'button'      => '購読',
-        'manage'      => [
+        'subscribe'           => '最新のアップデート情報を購読する',
+        'unsubscribe'         => 'Unsubscribe',
+        'button'              => '購読',
+        'manage_subscription' => 'Manage subscription',
+        'manage'              => [
             'no_subscriptions' => '現在、すべてのアップデートを購読しています。',
             'my_subscriptions' => '現在、以下のアップデートを購読しています。',
             'manage_at_link'   => '購読の管理',

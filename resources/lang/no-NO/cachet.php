@@ -75,10 +75,11 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'   => 'Abonner for å få de siste oppdateringene',
-        'unsubscribe' => 'Unsubscribe at :link',
-        'button'      => 'Abonner',
-        'manage'      => [
+        'subscribe'           => 'Abonner for å få de siste oppdateringene',
+        'unsubscribe'         => 'Unsubscribe',
+        'button'              => 'Abonner',
+        'manage_subscription' => 'Manage subscription',
+        'manage'              => [
             'no_subscriptions' => 'Du abonnerer for øyeblikket på alle oppdateringer.',
             'my_subscriptions' => 'Du abonnerer for øyeblikket på følgende oppdateringer.',
             'manage_at_link'   => 'Manage your subscriptions at :link',

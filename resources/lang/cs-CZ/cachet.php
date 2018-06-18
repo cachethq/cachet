@@ -75,10 +75,11 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'   => 'Přihlásit se k odběru upozornění',
-        'unsubscribe' => 'Odhlásit se na :link',
-        'button'      => 'Přihlásit',
-        'manage'      => [
+        'subscribe'           => 'Přihlásit se k odběru upozornění',
+        'unsubscribe'         => 'Unsubscribe',
+        'button'              => 'Přihlásit',
+        'manage_subscription' => 'Manage subscription',
+        'manage'              => [
             'no_subscriptions' => 'Aktuálně jsi přihlášen(a) ke všem upozorněním.',
             'my_subscriptions' => 'Aktuálně jsi přihlášen(a) k následujícím upozorněním.',
             'manage_at_link'   => 'Spravovat odběry na :link',
