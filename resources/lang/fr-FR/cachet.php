@@ -75,10 +75,11 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'   => 'Abonnez-vous pour obtenir les dernières mises à jour.',
-        'unsubscribe' => 'Se désinscrire :link',
-        'button'      => 'S\'abonner',
-        'manage'      => [
+        'subscribe'           => 'Abonnez-vous pour obtenir les dernières mises à jour.',
+        'unsubscribe'         => 'Unsubscribe',
+        'button'              => 'S\'abonner',
+        'manage_subscription' => 'Manage subscription',
+        'manage'              => [
             'no_subscriptions' => 'Vous êtes actuellement abonné à toutes les mises à jour.',
             'my_subscriptions' => 'Vous êtes actuellement abonné aux mises à jour suivantes.',
             'manage_at_link'   => 'Gérer vos abonnements à :link',
