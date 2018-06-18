@@ -154,7 +154,7 @@ return [
             'about-this-page'                       => 'À propos de cette page',
             'days-of-incidents'                     => 'Combien de jours d\'incidents à montrer ?',
             'time_before_refresh'                   => 'Fréquence de rafraîchissement de la page de statut (en secondes)',
-            'major_outage_rate'                     => 'Major outage threshold (in %)',
+            'major_outage_rate'                     => 'Seuil de panne majeure (en %)',
             'banner'                                => 'Image d\'en-tête',
             'banner-help'                           => "Il est recommandé de ne pas téléverser un fichier d'une largeur de plus 930px",
             'subscribers'                           => 'Permettre aux personnes de s\'inscrire aux notifications par e-mail ?',
@@ -180,7 +180,7 @@ return [
         'security' => [
             'allowed-domains'           => 'Domaines autorisés',
             'allowed-domains-help'      => 'Séparés par des virgules. Le domaine défini ci-dessus est automatiquement autorisé par défaut.',
-            'always-authenticate'       => 'Always authenticate',
+            'always-authenticate'       => 'Authentification nécessaire',
             'always-authenticate-help'  => 'Require login to view any Cachet page',
         ],
         'stylesheet' => [
