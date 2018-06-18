@@ -75,10 +75,11 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'   => '최신 업데이트를 받아 보기 위한 구독신청.',
-        'unsubscribe' => '탈퇴하기 :링크',
-        'button'      => '구독',
-        'manage'      => [
+        'subscribe'           => '최신 업데이트를 받아 보기 위한 구독신청.',
+        'unsubscribe'         => 'Unsubscribe',
+        'button'              => '구독',
+        'manage_subscription' => 'Manage subscription',
+        'manage'              => [
             'no_subscriptions' => '당신은 모든 업데이트를 구독하고 있습니다',
             'my_subscriptions' => '당신은 다음 업데이트를 구독하고 있습니다',
             'manage_at_link'   => ':link에서 구독을 관리할 수 있음',
