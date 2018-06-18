@@ -76,9 +76,9 @@ return [
     // Subscriber
     'subscriber' => [
         'subscribe'           => '最新のアップデート情報を購読する',
-        'unsubscribe'         => 'Unsubscribe',
+        'unsubscribe'         => '購読の解除',
         'button'              => '購読',
-        'manage_subscription' => 'Manage subscription',
+        'manage_subscription' => '購読の管理',
         'manage'              => [
             'no_subscriptions' => '現在、すべてのアップデートを購読しています。',
             'my_subscriptions' => '現在、以下のアップデートを購読しています。',
@@ -113,7 +113,7 @@ return [
     'modal' => [
         'close'     => '閉じる',
         'subscribe' => [
-            'title'  => 'コンポーネント更新の購読',
+            'title'  => 'コンポーネントのアップデート情報を購読する',
             'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll already receive emails for this component.',
             'button' => '購読',
         ],
