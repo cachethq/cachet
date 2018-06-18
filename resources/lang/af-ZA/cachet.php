@@ -75,10 +75,11 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'   => 'Teken in om opdaterings te kry',
-        'unsubscribe' => 'Unsubscribe at :link',
-        'button'      => 'Teken aan',
-        'manage'      => [
+        'subscribe'           => 'Teken in om opdaterings te kry',
+        'unsubscribe'         => 'Unsubscribe',
+        'button'              => 'Teken aan',
+        'manage_subscription' => 'Manage subscription',
+        'manage'              => [
             'no_subscriptions' => 'You\'re currently subscribed to all updates.',
             'my_subscriptions' => 'You\'re currently subscribed to the following updates.',
             'manage_at_link'   => 'Manage your subscriptions at :link',
