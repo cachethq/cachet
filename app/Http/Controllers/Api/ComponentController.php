@@ -37,6 +37,10 @@ class ComponentController extends AbstractApiController
             $components = Component::enabled();
         }
 
+        if ($tags = Binput::get('tags')) {
+            $components->withAnyTags($tags);
+        }
+
         $components->search(Binput::except(['sort', 'order', 'per_page']));
 
         if ($sortBy = Binput::get('sort')) {

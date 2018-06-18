@@ -14,7 +14,7 @@ namespace CachetHQ\Cachet\Models;
 use AltThree\Validator\ValidatingTrait;
 use CachetHQ\Cachet\Models\Traits\SearchableTrait;
 use CachetHQ\Cachet\Models\Traits\SortableTrait;
-use CachetHQ\Cachet\Models\Traits\Taggable;
+use CachetHQ\Cachet\Models\Traits\HasTags;
 use CachetHQ\Cachet\Presenters\ComponentPresenter;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
@@ -23,7 +23,7 @@ use McCool\LaravelAutoPresenter\HasPresenter;
 
 class Component extends Model implements HasPresenter
 {
-    use SearchableTrait, SoftDeletes, SortableTrait, Taggable, ValidatingTrait;
+    use HasTags, SearchableTrait, SoftDeletes, SortableTrait, ValidatingTrait;
 
     /**
      * List of attributes that have default values.

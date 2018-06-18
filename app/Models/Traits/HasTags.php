@@ -12,16 +12,15 @@
 namespace CachetHQ\Cachet\Models\Traits;
 
 use CachetHQ\Cachet\Models\Tag;
-use CachetHQ\Cachet\Models\Taggable as TaggableModel;
 use Illuminate\Database\Eloquent\Builder;
 use InvalidArgumentException;
 
 /**
- * This is the taggable trait.
+ * This is the has tags trait.
  *
  * @author James Brooks <james@alt-three.com>
  */
-trait Taggable
+trait HasTags
 {
     /**
      * Get the tags relation.
@@ -43,7 +42,7 @@ trait Taggable
     {
         $tags = static::convertToTags($tags);
 
-        return $tags->each(function ($tag) use ($query) {
+        $tags->each(function ($tag) use ($query) {
             $query->whereHas('tags', function (Builder $query) use ($tag) {
                 return $query->where('id', $tag ? $tag->id : 0);
             });
@@ -65,9 +64,7 @@ trait Taggable
         return $query->whereHas('tags', function (Builder $query) use ($tags) {
             $tagIds = $tags->pluck('id')->toArray();
 
-            // dd($tagIds);
-
-            $query->where('taggables.tag_id', '=', 1);
+            $query->whereIn('taggables.tag_id', $tagIds);
         });
     }
 
