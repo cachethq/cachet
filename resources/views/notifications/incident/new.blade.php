@@ -8,10 +8,8 @@
 @endcomponent
 
 Thanks,<br>
-{{ config('app.name') }}
+{{ Config::get('setting.app_name') }}
 
-@component('mail::subcopy')
-[{{ $unsubscribeText }}]({{ $unsubscribeUrl }}) &mdash; [{{ $manageSubscriptionText }}]({{ $manageSubscriptionUrl }})
-@endcomponent
+@include('notifications.partials.subscription')
 
 @endcomponent
