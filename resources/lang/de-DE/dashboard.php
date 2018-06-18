@@ -74,7 +74,7 @@ return [
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => 'Geplante Wartungen',
+        'schedule'     => 'Wartungsarbeiten',
         'logged'       => '{0}Es gibt keine geplanten Wartungen, gute Arbeit.|[1]Du hast einen Eintrag erstellt.|[2,*]Du hast <strong>:count</strong> Einträge erstellt.',
         'scheduled_at' => 'Geplant am :timestamp',
         'add'          => [
@@ -158,12 +158,12 @@ return [
     'subscribers' => [
         'subscribers'          => 'Abonnenten',
         'description'          => 'Abonnenten erhalten E-Mail Updates, wenn Vorfälle erstellt oder Komponenten bearbeitet werden.',
-        'description_disabled' => 'Um diese Funktion nutzen zu können, müssen Sie zulassen, dass sich Personen für Benachrichtigungen anmelden dürfen.',
+        'description_disabled' => 'Um diese Funktion nutzen zu können, musst du zulassen, dass sich Personen für Benachrichtigungen anmelden dürfen.',
         'verified'             => 'Bestätigt',
         'not_verified'         => 'Nicht Bestätigt',
         'subscriber'           => ':email, abonniert am :date',
         'no_subscriptions'     => 'Aktualisierungen per E-Mail abonnieren',
-        'global'               => 'Weltweit abonniert',
+        'global'               => 'Pauschal abonniert',
         'add'                  => [
             'title'   => 'Einen neuen Abonnenten hinzufügen',
             'success' => 'Abonnent hinzugefügt.',
