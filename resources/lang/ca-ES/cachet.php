@@ -75,10 +75,11 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'   => 'Subscriviu-vos per rebre les darreres actualitzacions',
-        'unsubscribe' => 'Unsubscribe at :link',
-        'button'      => 'Subscriviu-vos',
-        'manage'      => [
+        'subscribe'           => 'Subscriviu-vos per rebre les darreres actualitzacions',
+        'unsubscribe'         => 'Unsubscribe',
+        'button'              => 'Subscriviu-vos',
+        'manage_subscription' => 'Manage subscription',
+        'manage'              => [
             'no_subscriptions' => 'Actualment estau subscrits a totes les actualitzacions.',
             'my_subscriptions' => 'Actualment estau subscrits a les següents actualitzacions.',
             'manage_at_link'   => 'Manage your subscriptions at :link',
