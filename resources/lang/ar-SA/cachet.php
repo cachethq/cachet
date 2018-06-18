@@ -75,10 +75,11 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'   => 'إشترك للحصول على التحديثات',
-        'unsubscribe' => 'إلغاء الإشتراك في :link',
-        'button'      => 'اشتراك',
-        'manage'      => [
+        'subscribe'           => 'إشترك للحصول على التحديثات',
+        'unsubscribe'         => 'Unsubscribe',
+        'button'              => 'اشتراك',
+        'manage_subscription' => 'Manage subscription',
+        'manage'              => [
             'no_subscriptions' => 'أنت الآن مشترك للحصول على جميع التحديثات.',
             'my_subscriptions' => 'إنك مشترك حاليا في التحديثات التالية.',
             'manage_at_link'   => 'Manage your subscriptions at :link',
