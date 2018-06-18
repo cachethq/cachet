@@ -14,11 +14,13 @@ namespace CachetHQ\Cachet\Http\Controllers\Api;
 use CachetHQ\Cachet\Bus\Commands\Component\CreateComponentCommand;
 use CachetHQ\Cachet\Bus\Commands\Component\RemoveComponentCommand;
 use CachetHQ\Cachet\Bus\Commands\Component\UpdateComponentCommand;
+use CachetHQ\Cachet\Bus\Commands\Tag\ApplyTagCommand;
+use CachetHQ\Cachet\Bus\Commands\Tag\CreateTagCommand;
 use CachetHQ\Cachet\Models\Component;
-use CachetHQ\Cachet\Models\Tag;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Database\QueryException;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
@@ -89,17 +91,16 @@ class ComponentController extends AbstractApiController
         }
 
         if (Binput::has('tags')) {
+            $component->tags()->delete();
+
             // The component was added successfully, so now let's deal with the tags.
-            $tags = preg_split('/ ?, ?/', Binput::get('tags'));
-
-            // For every tag, do we need to create it?
-            $componentTags = array_map(function ($taggable) use ($component) {
-                return Tag::firstOrCreate([
-                    'name' => $taggable,
-                ])->id;
-            }, $tags);
-
-            $component->tags()->sync($componentTags);
+            Collection::make(preg_split('/ ?, ?/', $tags))->map(function ($tag) {
+                return trim($tag);
+            })->map(function ($tag) {
+                return dispatch(new CreateTagCommand($tag));
+            })->each(function ($tag) use ($component) {
+                dispatch(new ApplyTagCommand($component, $tag));
+            });
         }
 
         return $this->item($component);
@@ -132,14 +133,16 @@ class ComponentController extends AbstractApiController
         }
 
         if (Binput::has('tags')) {
-            $tags = preg_split('/ ?, ?/', Binput::get('tags'));
+            $component->tags()->delete();
 
-            // For every tag, do we need to create it?
-            $componentTags = array_map(function ($taggable) use ($component) {
-                return Tag::firstOrCreate(['name' => $taggable])->id;
-            }, $tags);
-
-            $component->tags()->sync($componentTags);
+            // The component was added successfully, so now let's deal with the tags.
+            Collection::make(preg_split('/ ?, ?/', $tags))->map(function ($tag) {
+                return trim($tag);
+            })->map(function ($tag) {
+                return dispatch(new CreateTagCommand($tag));
+            })->each(function ($tag) use ($component) {
+                dispatch(new ApplyTagCommand($component, $tag));
+            });
         }
 
         return $this->item($component);

@@ -53,7 +53,7 @@
                     </div>
                     <div class="form-group">
                         <label>{{ trans('forms.components.tags') }}</label>
-                        <input name="component[tags]" class="form-control" value="{{ $component->tagsList }}" placeholder="{{ trans('forms.components.tags') }}">
+                        <input name="component[tags]" class="form-control" value="{{ $component->tags->implode(', ') }}" placeholder="{{ trans('forms.components.tags') }}">
                         <span class="help-block">{{ trans('forms.components.tags-help') }}</span>
                     </div>
                     <div class="checkbox">
