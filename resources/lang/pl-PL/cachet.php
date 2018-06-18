@@ -75,10 +75,11 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'   => 'Abonnieren Sie um die neuesten Updates zu erhalten.',
-        'unsubscribe' => 'Wypisz się na :link',
-        'button'      => 'Abonnieren',
-        'manage'      => [
+        'subscribe'           => 'Abonnieren Sie um die neuesten Updates zu erhalten.',
+        'unsubscribe'         => 'Unsubscribe',
+        'button'              => 'Abonnieren',
+        'manage_subscription' => 'Manage subscription',
+        'manage'              => [
             'no_subscriptions' => 'Jesteś obecnie zapisany na wszystkie aktualizacje.',
             'my_subscriptions' => 'Jesteś obecnie zapisany na poniższe aktualizacje.',
             'manage_at_link'   => 'Zarządzaj swoją subskrypcją na :link',
