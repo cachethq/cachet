@@ -221,7 +221,7 @@ return [
         ],
         'team' => [
             'description' => 'Convide membros da sua equipe através do endereço de e-mail aqui.',
-            'email'       => 'Endereço de e-mail de membros de sua equipe',
+            'email'       => 'Endereço de e-mail dos membros da sua equipe',
         ],
     ],
 
