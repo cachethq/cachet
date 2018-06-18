@@ -30,9 +30,9 @@ return [
         'none'         => 'インシデントはありません',
         'past'         => 'インシデント履歴',
         'stickied'     => 'ピン留めインシデント',
-        'scheduled'    => 'メンテナンス',
+        'scheduled'    => '計画メンテナンス',
         'scheduled_at' => ', 予定日時 :timestamp',
-        'posted'       => '投稿日時 :timestamp',
+        'posted'       => '掲載日時 :timestamp',
         'posted_at'    => '掲載日時 :timestamp',
         'status'       => [
             1 => '調査中',
@@ -76,9 +76,9 @@ return [
     // Subscriber
     'subscriber' => [
         'subscribe'           => '最新のアップデート情報を購読する',
-        'unsubscribe'         => 'Unsubscribe',
+        'unsubscribe'         => '購読の解除',
         'button'              => '購読',
-        'manage_subscription' => 'Manage subscription',
+        'manage_subscription' => '購読の管理',
         'manage'              => [
             'no_subscriptions' => '現在、すべてのアップデートを購読しています。',
             'my_subscriptions' => '現在、以下のアップデートを購読しています。',
@@ -87,11 +87,11 @@ return [
         'email' => [
             'subscribe'          => 'メールによるアップデート情報の購読',
             'subscribed'         => 'You\'ve been subscribed to email notifications, please check your email to confirm your subscription.',
-            'verified'           => 'あなたのメール購読は確認されました。ありがとう！',
+            'verified'           => 'あなたのメール購読を確認しました。ありがとうございます！',
             'manage'             => '購読の管理',
             'unsubscribe'        => 'Unsubscribe from email updates.',
-            'unsubscribed'       => '電子メールの購読が取り消されました。',
-            'failure'            => '購読に何かが起きています。',
+            'unsubscribed'       => 'メールの購読が取り消されました。',
+            'failure'            => '購読に失敗しました。',
             'already-subscribed' => '既に購読しているので :email の購読ができません。',
         ],
     ],
@@ -113,7 +113,7 @@ return [
     'modal' => [
         'close'     => '閉じる',
         'subscribe' => [
-            'title'  => 'コンポーネント更新の購読',
+            'title'  => 'コンポーネントのアップデート情報を購読する',
             'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll already receive emails for this component.',
             'button' => '購読',
         ],

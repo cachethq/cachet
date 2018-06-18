@@ -76,9 +76,9 @@ return [
     // Subscriber
     'subscriber' => [
         'subscribe'           => 'Abonnez-vous pour obtenir les dernières mises à jour.',
-        'unsubscribe'         => 'Unsubscribe',
+        'unsubscribe'         => 'Se désabonner',
         'button'              => 'S\'abonner',
-        'manage_subscription' => 'Manage subscription',
+        'manage_subscription' => 'Gérer l\'abonnement',
         'manage'              => [
             'no_subscriptions' => 'Vous êtes actuellement abonné à toutes les mises à jour.',
             'my_subscriptions' => 'Vous êtes actuellement abonné aux mises à jour suivantes.',
