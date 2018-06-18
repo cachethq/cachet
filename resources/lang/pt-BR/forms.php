@@ -154,11 +154,11 @@ return [
             'about-this-page'                       => 'Sobre esta página',
             'days-of-incidents'                     => 'Quantos dias de incidentes para mostrar?',
             'time_before_refresh'                   => 'Frequência de atualização da página de status (em segundos)',
-            'major_outage_rate'                     => 'Major outage threshold (in %)',
+            'major_outage_rate'                     => 'Limite para indisponibilidade Maior (em %)',
             'banner'                                => 'Imagem do banner',
-            'banner-help'                           => 'É recomendado que você envie arquivos com largura até 930px',
+            'banner-help'                           => "Recomenda-se que você envie arquivos com até 930 pixels de largura",
             'subscribers'                           => 'Permitir que outras pessoas se cadastrem para notificações via e-mail?',
-            'suppress_notifications_in_maintenance' => 'Conter as notificações quando o incidente ocorrer durante o período de manutenção?',
+            'suppress_notifications_in_maintenance' => 'Não enviar notificações quando o incidente ocorrer durante o período de manutenção?',
             'skip_subscriber_verification'          => 'Ignorar verificação de usuários? (Cuidado, você pode sofrer com spams)',
             'automatic_localization'                => 'Localizar sua página de status de acordo com o idioma do visitante automaticamente?',
             'enable_external_dependencies'          => 'Ativar dependências de terceiros (Google Fonts, Trackers, etc...)',
@@ -180,8 +180,8 @@ return [
         'security' => [
             'allowed-domains'           => 'Domínios permitidos',
             'allowed-domains-help'      => 'Separados por vírgula. O domínio definido acima é permitido automaticamente por padrão.',
-            'always-authenticate'       => 'Always authenticate',
-            'always-authenticate-help'  => 'Require login to view any Cachet page',
+            'always-authenticate'       => 'Autenticar sempre',
+            'always-authenticate-help'  => 'Exigir login para ver qualquer página do sistema',
         ],
         'stylesheet' => [
             'custom-css' => 'Folha de estilos personalizada',
@@ -221,7 +221,7 @@ return [
         ],
         'team' => [
             'description' => 'Convide membros da sua equipe através do endereço de e-mail aqui.',
-            'email'       => 'Endereço de e-mail de membros de sua equipe',
+            'email'       => 'Endereço de e-mail dos membros da sua equipe',
         ],
     ],
 
