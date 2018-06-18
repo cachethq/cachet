@@ -13,7 +13,6 @@ namespace CachetHQ\Cachet\Models\Traits;
 
 use CachetHQ\Cachet\Models\Tag;
 use Illuminate\Database\Eloquent\Builder;
-use InvalidArgumentException;
 
 /**
  * This is the has tags trait.
@@ -69,7 +68,7 @@ trait HasTags
     }
 
     /**
-     * Convert a list of tags into a collection of \CachetHQ\Cachet\Models\Tag
+     * Convert a list of tags into a collection of \CachetHQ\Cachet\Models\Tag.
      *
      * @param array|\ArrayAccess $values
      *
