@@ -30,7 +30,7 @@ return [
         'none'         => 'Es liegen keine Ereignisse vor',
         'past'         => 'Vergangene Ereignisse',
         'stickied'     => 'Angepinnte Vorfälle',
-        'scheduled'    => 'Geplante Wartungen',
+        'scheduled'    => 'Wartungsarbeiten',
         'scheduled_at' => ', geplant :timestamp',
         'posted'       => 'Veröffentlicht :timestamp',
         'posted_at'    => 'Veröffentlicht am :timestamp',
@@ -76,13 +76,13 @@ return [
     // Subscriber
     'subscriber' => [
         'subscribe'           => 'Abonnieren Sie um die neuesten Updates zu erhalten.',
-        'unsubscribe'         => 'Unsubscribe',
+        'unsubscribe'         => 'Abmelden',
         'button'              => 'Abonnieren',
-        'manage_subscription' => 'Manage subscription',
+        'manage_subscription' => 'Abos verwalten',
         'manage'              => [
             'no_subscriptions' => 'Du hast im Augenblick alle Updates abonniert.',
             'my_subscriptions' => 'Du hast im Augenblick folgende Updates abonniert.',
-            'manage_at_link'   => 'Verwalte deine Abonnements unter :link',
+            'manage_at_link'   => 'Verwalte deine Abos unter :link',
         ],
         'email' => [
             'subscribe'          => 'Aktualisierungen per E-Mail abonnieren.',
