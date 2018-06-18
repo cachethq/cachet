@@ -137,7 +137,7 @@ return [
 
     // Metrics
     'metrics' => [
-        'metrics' => 'Metrics',
+        'metrics' => 'المقاييس',
         'add'     => [
             'title'   => 'Create a metric',
             'message' => 'You should add a metric.',
