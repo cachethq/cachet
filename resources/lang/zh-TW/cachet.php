@@ -75,10 +75,11 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'   => '訂閱以獲取最新的更新。',
-        'unsubscribe' => '取消訂閱: :link',
-        'button'      => '訂閱',
-        'manage'      => [
+        'subscribe'           => '訂閱以獲取最新的更新。',
+        'unsubscribe'         => 'Unsubscribe',
+        'button'              => '訂閱',
+        'manage_subscription' => 'Manage subscription',
+        'manage'              => [
             'no_subscriptions' => '您目前已訂閱所有的更新。',
             'my_subscriptions' => '您目前已安裝下列更新',
             'manage_at_link'   => '請至:link管理您的訂閱',
