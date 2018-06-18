@@ -75,10 +75,11 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'   => 'Kérjük iratkozzon fel a legújabb frissítésekért',
-        'unsubscribe' => 'Unsubscribe at :link',
-        'button'      => 'Feliratkozás',
-        'manage'      => [
+        'subscribe'           => 'Kérjük iratkozzon fel a legújabb frissítésekért',
+        'unsubscribe'         => 'Unsubscribe',
+        'button'              => 'Feliratkozás',
+        'manage_subscription' => 'Manage subscription',
+        'manage'              => [
             'no_subscriptions' => 'Minden frissítésre feliratkozva.',
             'my_subscriptions' => 'A következő frissítésekre feliratkozva.',
             'manage_at_link'   => 'Manage your subscriptions at :link',
