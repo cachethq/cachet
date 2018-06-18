@@ -156,7 +156,7 @@ return [
             'time_before_refresh'                   => 'Statussides opdateringshastighed (i sekunder)',
             'major_outage_rate'                     => 'Tærskel for større udfald (i %)',
             'banner'                                => 'Banner billede',
-            'banner-help'                           => "Det anbefales ikke at uploade billeder bredere end 930 pixels",
+            'banner-help'                           => 'Det anbefales ikke at uploade billeder bredere end 930 pixels',
             'subscribers'                           => 'Tillad folk at tilmelde sig email underretninger?',
             'suppress_notifications_in_maintenance' => 'Tilbagehold notifikationer, når hændelse opstår under en vedligeholdelsesperiode?',
             'skip_subscriber_verification'          => 'Spring verificering af brugere over? (Husk på, du kan blive spammet)',

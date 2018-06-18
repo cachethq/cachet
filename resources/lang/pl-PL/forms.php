@@ -156,7 +156,7 @@ return [
             'time_before_refresh'                   => 'Częstotliwość odświeżania strony statusu (w sekundach)',
             'major_outage_rate'                     => 'Major outage threshold (in %)',
             'banner'                                => 'Baner',
-            'banner-help'                           => "Zaleca się, aby przesyłać pliki nie większe niż 930px szerokości",
+            'banner-help'                           => 'Zaleca się, aby przesyłać pliki nie większe niż 930px szerokości',
             'subscribers'                           => 'Czy zezwolić użytkownikom na subskrypcje e-mail w celu otrzymywania powiadomień?',
             'suppress_notifications_in_maintenance' => 'Czy pomijać powiadomienia, kiedy zdarzenie wystąpiło podczas przerwy konserwacyjnej?',
             'skip_subscriber_verification'          => 'Pominąć weryfikację użytkowników? (Ostrzeżenie: możesz otrzymać spam)',
