@@ -75,10 +75,11 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'   => '订阅最新的更新。',
-        'unsubscribe' => '使用这个链接取消订阅： :link',
-        'button'      => '订阅',
-        'manage'      => [
+        'subscribe'           => '订阅最新的更新。',
+        'unsubscribe'         => 'Unsubscribe',
+        'button'              => '订阅',
+        'manage_subscription' => 'Manage subscription',
+        'manage'              => [
             'no_subscriptions' => '您当前已订阅所有更新。',
             'my_subscriptions' => '您当前已订阅下列更新',
             'manage_at_link'   => '在 :link 管理你的订阅',
