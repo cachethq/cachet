@@ -11,7 +11,10 @@
 
 namespace CachetHQ\Cachet\Models\Traits;
 
+use CachetHQ\Cachet\Models\Tag;
 use CachetHQ\Cachet\Models\Taggable as TaggableModel;
+use Illuminate\Database\Eloquent\Builder;
+use InvalidArgumentException;
 
 /**
  * This is the taggable trait.
@@ -23,10 +26,66 @@ trait Taggable
     /**
      * Get the tags relation.
      *
-     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
+     * @return \Illuminate\Database\Eloquent\Relations\MorphToMany
      */
     public function tags()
     {
-        return $this->morphMany(TaggableModel::class, 'taggable');
+        return $this->morphToMany(Tag::class, 'taggable');
+    }
+
+    /**
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @param array|\ArrayAccess                    $tags
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeWithAllTags(Builder $query, $tags)
+    {
+        $tags = static::convertToTags($tags);
+
+        return $tags->each(function ($tag) use ($query) {
+            $query->whereHas('tags', function (Builder $query) use ($tag) {
+                return $query->where('id', $tag ? $tag->id : 0);
+            });
+        });
+
+        return $query;
+    }
+
+    /**
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @param array|\ArrayAccess                    $tags
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeWithAnyTags(Builder $query, $tags)
+    {
+        $tags = static::convertToTags($tags);
+
+        return $query->whereHas('tags', function (Builder $query) use ($tags) {
+            $tagIds = $tags->pluck('id')->toArray();
+
+            // dd($tagIds);
+
+            $query->where('taggables.tag_id', '=', 1);
+        });
+    }
+
+    /**
+     * Convert a list of tags into a collection of \CachetHQ\Cachet\Models\Tag
+     *
+     * @param array|\ArrayAccess $values
+     *
+     * @return \Illuminate\Support\Collection
+     */
+    protected static function convertToTags($values)
+    {
+        return collect($values)->map(function ($value) {
+            if ($value instanceof Tag) {
+                return $value;
+            }
+
+            return Tag::where('slug', '=', $value)->first();
+        });
     }
 }
