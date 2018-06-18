@@ -75,10 +75,11 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'   => 'Prenumerera för att få de senaste uppdateringarna',
-        'unsubscribe' => 'Avsluta prenumerationen på: länk',
-        'button'      => 'Prenumerera',
-        'manage'      => [
+        'subscribe'           => 'Prenumerera för att få de senaste uppdateringarna',
+        'unsubscribe'         => 'Unsubscribe',
+        'button'              => 'Prenumerera',
+        'manage_subscription' => 'Manage subscription',
+        'manage'              => [
             'no_subscriptions' => 'Du prenumererar på alla uppdateringar.',
             'my_subscriptions' => 'Du prenumererar på följande uppdateringar.',
             'manage_at_link'   => 'Manage your subscriptions at :link',
