@@ -75,10 +75,11 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'   => 'Abonează-te pentru a primi cele mai recente actualizări',
-        'unsubscribe' => 'Dezabonare de la :link',
-        'button'      => 'Abonează-te',
-        'manage'      => [
+        'subscribe'           => 'Abonează-te pentru a primi cele mai recente actualizări',
+        'unsubscribe'         => 'Unsubscribe',
+        'button'              => 'Abonează-te',
+        'manage_subscription' => 'Manage subscription',
+        'manage'              => [
             'no_subscriptions' => 'Acum eşti abonat la toate actualizările.',
             'my_subscriptions' => 'Acum eşti abonat la următoarele actualizări.',
             'manage_at_link'   => 'Manage your subscriptions at :link',
