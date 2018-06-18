@@ -75,10 +75,11 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'   => 'Ikuti newsletter untuk mendapat update terbaru.',
-        'unsubscribe' => 'Berhenti berlangganan: :link',
-        'button'      => 'Daftar',
-        'manage'      => [
+        'subscribe'           => 'Ikuti newsletter untuk mendapat update terbaru.',
+        'unsubscribe'         => 'Unsubscribe',
+        'button'              => 'Daftar',
+        'manage_subscription' => 'Manage subscription',
+        'manage'              => [
             'no_subscriptions' => 'Anda saat ini terdaftar untuk semua update.',
             'my_subscriptions' => 'Anda saat ini berlangganan update berikut.',
             'manage_at_link'   => 'Manage your subscriptions at :link',
