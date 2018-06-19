@@ -181,7 +181,7 @@ return [
             'allowed-domains'           => 'Dominios permitidos',
             'allowed-domains-help'      => 'Separados por coma. El dominio establecido en la configuración del sitio formará automáticamente parte de los dominios permitidos.',
             'always-authenticate'       => 'Always authenticate',
-            'always-authenticate-help'  => 'Requieren inicio de sesión para ver cualquier página de Cachet',
+            'always-authenticate-help'  => 'Requerir login para ver cualquier página de Cachet',
         ],
         'stylesheet' => [
             'custom-css' => 'Hoja de estilo personalizada',
