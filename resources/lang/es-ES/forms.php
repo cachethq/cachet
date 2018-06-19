@@ -54,7 +54,7 @@ return [
         'message-help'       => 'También puedes usar Markdown.',
         'occurred_at'        => '¿Cuando ocurrió este incidente?',
         'notify_subscribers' => '¿Notificar a los suscriptores?',
-        'notify_disabled'    => 'Debido al mantenimiento programado, las notificaciones sobre este incidente o sus componentes serán suprimidas.',
+        'notify_disabled'    => 'Las notificaciones sobre este incidente o sus componentes serán suprimidas, debido a un mantenimiento programado.',
         'visibility'         => 'Visibilidad del incidente',
         'stick_status'       => 'Pega Incidente',
         'stickied'           => 'Fijado',
@@ -154,7 +154,7 @@ return [
             'about-this-page'                       => 'Sobre esta página',
             'days-of-incidents'                     => '¿Cuántos días de incidentes mostrar?',
             'time_before_refresh'                   => 'Tasa de actualización de la página de estado (en segundos)',
-            'major_outage_rate'                     => 'Major outage threshold (in %)',
+            'major_outage_rate'                     => 'Umbral de interrupción importante (en %)',
             'banner'                                => 'Imagen del banner',
             'banner-help'                           => "Se recomienda subir una imagen no más grande de 930px de ancho",
             'subscribers'                           => '¿Permitir a la gente inscribirse mediante noficiacion por correo electronico?',
@@ -180,7 +180,7 @@ return [
         'security' => [
             'allowed-domains'           => 'Dominios permitidos',
             'allowed-domains-help'      => 'Separados por coma. El dominio establecido en la configuración del sitio formará automáticamente parte de los dominios permitidos.',
-            'always-authenticate'       => 'Always authenticate',
+            'always-authenticate'       => 'Autenticar siempre',
             'always-authenticate-help'  => 'Requerir login para ver cualquier página de Cachet',
         ],
         'stylesheet' => [
@@ -241,7 +241,7 @@ return [
     'remove'         => 'Remover',
     'invite'         => 'Invitar',
     'signup'         => 'Registrarse',
-    'manage_updates' => 'Administrar las actualizaciones',
+    'manage_updates' => 'Administrar actualizaciones',
 
     // Other
     'optional' => '* Opcional',
