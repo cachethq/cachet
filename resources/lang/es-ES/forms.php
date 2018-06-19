@@ -156,7 +156,7 @@ return [
             'time_before_refresh'                   => 'Tasa de actualización de la página de estado (en segundos)',
             'major_outage_rate'                     => 'Major outage threshold (in %)',
             'banner'                                => 'Imagen del banner',
-            'banner-help'                           => 'Se recomienda subir una imagen no más grande de 930px de ancho',
+            'banner-help'                           => "Se recomienda subir una imagen no más grande de 930px de ancho",
             'subscribers'                           => '¿Permitir a la gente inscribirse mediante noficiacion por correo electronico?',
             'suppress_notifications_in_maintenance' => '¿Suprimir notificaciones cuando el incidente ocurra durante el período de mantenimiento?',
             'skip_subscriber_verification'          => '¿Omitir verificación de usuarios? (Advertencia, podrías ser spammeado)',
@@ -181,7 +181,7 @@ return [
             'allowed-domains'           => 'Dominios permitidos',
             'allowed-domains-help'      => 'Separados por coma. El dominio establecido en la configuración del sitio formará automáticamente parte de los dominios permitidos.',
             'always-authenticate'       => 'Always authenticate',
-            'always-authenticate-help'  => 'Require login to view any Cachet page',
+            'always-authenticate-help'  => 'Requieren inicio de sesión para ver cualquier página de Cachet',
         ],
         'stylesheet' => [
             'custom-css' => 'Hoja de estilo personalizada',
