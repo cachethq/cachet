@@ -1,5 +1,9 @@
 # Contribution Guidelines
 
+## Thank you
+
+Firstly, thank you for taking an interest in Cachet and for reading this guide.
+
 ## Creating issues
 
 We track feature requests and bug reports on the [issue tracker](https://github.com/cachethq/Cachet/issues). Please send support requests to our support email; [support@alt-three.com](mailto:support@alt-three.com?subject=Cachet%20Support).
