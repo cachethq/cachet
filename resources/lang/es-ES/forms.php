@@ -156,7 +156,7 @@ return [
             'time_before_refresh'                   => 'Tasa de actualización de la página de estado (en segundos)',
             'major_outage_rate'                     => 'Umbral de interrupción importante (en %)',
             'banner'                                => 'Imagen del banner',
-            'banner-help'                           => "Se recomienda subir una imagen no más grande de 930px de ancho",
+            'banner-help'                           => 'Se recomienda subir una imagen no más grande de 930px de ancho',
             'subscribers'                           => '¿Permitir a la gente inscribirse mediante noficiacion por correo electronico?',
             'suppress_notifications_in_maintenance' => '¿Suprimir notificaciones cuando el incidente ocurra durante el período de mantenimiento?',
             'skip_subscriber_verification'          => '¿Omitir verificación de usuarios? (Advertencia, podrías ser spammeado)',
