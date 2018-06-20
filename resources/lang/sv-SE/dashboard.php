@@ -12,7 +12,7 @@
 return [
 
     'dashboard'          => 'Översiktspanel',
-    'writeable_settings' => 'The Cachet settings directory is not writeable. Please make sure that <code>./bootstrap/cachet</code> is writeable by the web server.',
+    'writeable_settings' => 'Cachets inställningskatalog är inte skrivbar. Kontrollera att <code>./bootstrap/cachet</code> är skrivbar av webbservern.',
 
     // Incidents
     'incidents' => [
@@ -162,7 +162,7 @@ return [
         'verified'             => 'Bekräftad',
         'not_verified'         => 'Inte bekräftad',
         'subscriber'           => ':email, subscribed :date',
-        'no_subscriptions'     => 'Subscribed to all updates',
+        'no_subscriptions'     => 'Prenumererat på alla uppdateringar',
         'global'               => 'Globally subscribed',
         'add'                  => [
             'title'   => 'Lägg till en prenumerant',
@@ -252,7 +252,7 @@ return [
             'credits'       => 'Tack till',
             'contributors'  => 'Medverkande',
             'license'       => 'Cachet is a BSD-3-licensed open source project, released by <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
-            'backers-title' => 'Backers & Sponsors',
+            'backers-title' => 'Uppbackare & sponsorer',
             'backers'       => 'If you\'d like to support future development, check out the <a href="https://patreon.com/jbrooksuk" target="_blank">Cachet Patreon</a> campaign.',
             'thank-you'     => 'Thank you to each and every one of the :count contributors.',
         ],
