@@ -12,7 +12,9 @@ We track feature requests and bug reports on the [issue tracker](https://github.
 
 ## Languages
 
-Please submit non-English translations to the [Cachet CrowdIn](https://translate.cachethq.io) project. This makes syncing translations much easier.
+This project accepts **English translations** only. Translations will be updated automatically through the [CrowdIn](https://translate.cachethq.io) integration.
+
+Please submit alternative translations to the [Cachet CrowdIn](https://translate.cachethq.io) project. CrowdIn will automatically send a Pull Request with your updates in.
 
 ## Coding Standards
 
