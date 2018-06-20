@@ -30,7 +30,7 @@ trait TimestampsTrait
      */
     public function created_at()
     {
-        return app(DateFactory::class)->make($this->wrappedObject->created_at)->toDateTimeString();
+        return app(DateFactory::class)->make($this->wrappedObject->created_at)->format('c');
     }
 
     /**
@@ -40,7 +40,7 @@ trait TimestampsTrait
      */
     public function updated_at()
     {
-        return app(DateFactory::class)->make($this->wrappedObject->updated_at)->toDateTimeString();
+        return app(DateFactory::class)->make($this->wrappedObject->updated_at)->format('c');
     }
 
     /**
@@ -50,7 +50,7 @@ trait TimestampsTrait
      */
     public function deleted_at()
     {
-        return app(DateFactory::class)->make($this->wrappedObject->deleted_at)->toDateTimeString();
+        return app(DateFactory::class)->make($this->wrappedObject->deleted_at)->format('c');
     }
 
     /**
