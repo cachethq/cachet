@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "902bc48c3a37a1d269f457d015b1f06a",
+    "content-hash": "ef2413090182205d858e1e7db38f44fa",
     "packages": [
         {
             "name": "alt-three/badger",
@@ -449,16 +449,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.61.8",
+            "version": "3.61.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "7df3b62d06da6512c752b2fd224a65fc0d8c0cbe"
+                "reference": "6c6aaaede232d559b5f8b2d8af2b6fd13e490473"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/7df3b62d06da6512c752b2fd224a65fc0d8c0cbe",
-                "reference": "7df3b62d06da6512c752b2fd224a65fc0d8c0cbe",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/6c6aaaede232d559b5f8b2d8af2b6fd13e490473",
+                "reference": "6c6aaaede232d559b5f8b2d8af2b6fd13e490473",
                 "shasum": ""
             },
             "require": {
@@ -525,7 +525,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2018-06-15T21:48:00+00:00"
+            "time": "2018-06-20T20:08:58+00:00"
         },
         {
             "name": "backup-manager/backup-manager",
@@ -1528,67 +1528,6 @@
                 "security"
             ],
             "time": "2017-01-01T13:34:01+00:00"
-        },
-        {
-            "name": "graham-campbell/core",
-            "version": "v5.3.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/GrahamCampbell/Laravel-Core.git",
-                "reference": "27c0c9a0aa294dd06cfd2c6b15080c47f15bbb47"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Core/zipball/27c0c9a0aa294dd06cfd2c6b15080c47f15bbb47",
-                "reference": "27c0c9a0aa294dd06cfd2c6b15080c47f15bbb47",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/console": "5.1.*|5.2.*|5.3.*|5.4.*",
-                "illuminate/contracts": "5.1.*|5.2.*|5.3.*|5.4.*",
-                "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*",
-                "php": ">=5.5.9"
-            },
-            "require-dev": {
-                "graham-campbell/testbench": "^3.1",
-                "mockery/mockery": "^0.9.4",
-                "phpunit/phpunit": "^4.8|^5.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "5.3-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "GrahamCampbell\\Core\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Graham Campbell",
-                    "email": "graham@alt-three.com"
-                }
-            ],
-            "description": "Core Provides Some Extra Functionality For Laravel 5",
-            "keywords": [
-                "Graham Campbell",
-                "GrahamCampbell",
-                "Laravel Core",
-                "Laravel-Core",
-                "base",
-                "core",
-                "framework",
-                "laravel",
-                "starter"
-            ],
-            "abandoned": true,
-            "time": "2017-02-03T22:03:48+00:00"
         },
         {
             "name": "graham-campbell/exceptions",
