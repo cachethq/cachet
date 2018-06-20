@@ -76,9 +76,9 @@ return [
     // Subscriber
     'subscriber' => [
         'subscribe'           => 'Tilmeld dig for at få de seneste opdateringer',
-        'unsubscribe'         => 'Unsubscribe',
+        'unsubscribe'         => 'Opsige abonnement',
         'button'              => 'Abonner',
-        'manage_subscription' => 'Manage subscription',
+        'manage_subscription' => 'Administrer abonnement',
         'manage'              => [
             'no_subscriptions' => 'Du abonner i øjeblikket på alle opdateringer.',
             'my_subscriptions' => 'Du abonnere i øjeblikket på følgende opdateringer.',
