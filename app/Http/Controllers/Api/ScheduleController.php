@@ -34,7 +34,7 @@ class ScheduleController extends AbstractApiController
      */
     public function index()
     {
-        $schedule = Schedule::whereRaw('1 = 1');
+        $schedule = Schedule::query();
 
         if ($sortBy = Binput::get('sort')) {
             $direction = Binput::has('order') && Binput::get('order') == 'desc';
