@@ -38,3 +38,11 @@ Create a new component.
 - `group_id`
 - `enabled`
 - `meta`
+
+## `DELETE /api/v1/components/:id`
+
+Delete a component.
+
+### Params
+
+- `id`
