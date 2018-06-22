@@ -77,4 +77,4 @@ If you discover a security vulnerability within Cachet, please send an e-mail to
 
 Thank you to the following for [sponsoring](https://patreon.com/jbrooksuk) Cachet.
 
-![Exascale](/docs/images/sponsorships/excascale.jpg)
+![Exascale](/docs/images/sponsorships/exascale.jpg)
