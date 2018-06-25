@@ -42,26 +42,22 @@
 
 <body class="dashboard">
     <div class="wrapper" id="app">
-        <dashboard inline-template :user="{{ $currentUser }}">
-            <div>
-                @include('dashboard.partials.sidebar')
-                <div class="page-content">
-                    @if(!$isWriteable)
-                    <div class="content-wrapper">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="alert alert-info">
-                                    {!! trans('dashboard.writeable_settings') !!}
-                                </div>
-                            </div>
+        @include('dashboard.partials.sidebar')
+        <div class="page-content">
+            @if(!$isWriteable)
+            <div class="content-wrapper">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="alert alert-info">
+                            {!! trans('dashboard.writeable_settings') !!}
                         </div>
                     </div>
-                    @endif
-
-                    @yield('content')
                 </div>
             </div>
-        </dashboard>
+            @endif
+
+            @yield('content')
+        </div>
     </div>
 </body>
 @yield('js')
