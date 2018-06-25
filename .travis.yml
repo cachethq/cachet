@@ -14,7 +14,7 @@ before_install:
   - cp .env.example .env
   - phpenv config-rm xdebug.ini
 
-install: travis_retry composer install --no-interaction --no-suggest -o
+install: travis_retry composer install --no-interaction --no-suggest
 
 script:
   - if [ "$TRAVIS_PHP_VERSION" != "7.1" ]; then vendor/bin/phpunit; fi
