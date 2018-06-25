@@ -33,7 +33,7 @@ return [
         'scheduled'    => 'Ütemezett karbantartás',
         'scheduled_at' => ', ütemezve: :timestamp',
         'posted'       => 'Közzétéve :timestamp',
-        'posted_at'    => 'Posted at :timestamp',
+        'posted_at'    => 'Közzétéve :timestamp',
         'status'       => [
             1 => 'Kivizsgálás alatt',
             2 => 'Azonosítva',
@@ -53,7 +53,7 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1]System operational|[2,*]All systems are operational',
+        'good'  => '[0,1] Rendszer üzemképes|[2,Inf] Az összes rendszer üzemképes',
         'bad'   => '[0,1] A rendszer problémát észlelt|[2,Inf] Több rendszer problémát észlelt',
         'major' => '[0,1] A szolgáltatás jelenleg nem elérhető|[2,Inf] Több szolgáltatás nem elérhető',
     ],
@@ -76,9 +76,9 @@ return [
     // Subscriber
     'subscriber' => [
         'subscribe'           => 'Kérjük iratkozzon fel a legújabb frissítésekért',
-        'unsubscribe'         => 'Unsubscribe',
+        'unsubscribe'         => 'Leiratkozás',
         'button'              => 'Feliratkozás',
-        'manage_subscription' => 'Manage subscription',
+        'manage_subscription' => 'Feliratkozások kezelése',
         'manage'              => [
             'no_subscriptions' => 'Minden frissítésre feliratkozva.',
             'my_subscriptions' => 'A következő frissítésekre feliratkozva.',
