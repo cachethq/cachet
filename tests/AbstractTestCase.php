@@ -14,8 +14,6 @@ namespace CachetHQ\Tests\Cachet;
 use CachetHQ\Cachet\Models\User;
 use CachetHQ\Cachet\Settings\Cache;
 use CachetHQ\Cachet\Settings\Repository;
-use CachetHQ\Tests\Cachet\CreatesApplicationTrait;
-use Illuminate\Contracts\Console\Kernel;
 use Illuminate\Foundation\Testing\TestCase;
 
 /**
