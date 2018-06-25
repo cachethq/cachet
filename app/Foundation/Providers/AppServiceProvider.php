@@ -33,6 +33,8 @@ class AppServiceProvider extends ServiceProvider
      * Boot the service provider.
      *
      * @param \AltThree\Bus\Dispatcher $dispatcher
+     *
+     * @return void
      */
     public function boot(Dispatcher $dispatcher)
     {
