@@ -36,7 +36,7 @@ class ApiController extends AbstractApiController
     public function postUpdateComponent(Component $component)
     {
         try {
-            dispatch(new UpdateComponentCommand(
+            execute(new UpdateComponentCommand(
                 $component,
                 $component->name,
                 $component->description,
@@ -68,7 +68,7 @@ class ApiController extends AbstractApiController
             try {
                 $component = Component::find($componentId);
 
-                dispatch(new UpdateComponentCommand(
+                execute(new UpdateComponentCommand(
                     $component,
                     $component->name,
                     $component->description,
@@ -100,7 +100,7 @@ class ApiController extends AbstractApiController
         foreach ($groupData as $order => $groupId) {
             $group = ComponentGroup::find($groupId);
 
-            dispatch(new UpdateComponentGroupCommand(
+            execute(new UpdateComponentGroupCommand(
                 $group,
                 $group->name,
                 $order + 1,

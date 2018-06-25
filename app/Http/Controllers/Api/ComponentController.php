@@ -76,7 +76,7 @@ class ComponentController extends AbstractApiController
     public function store()
     {
         try {
-            $component = dispatch(new CreateComponentCommand(
+            $component = execute(new CreateComponentCommand(
                 Binput::get('name'),
                 Binput::get('description'),
                 Binput::get('status'),
@@ -97,9 +97,9 @@ class ComponentController extends AbstractApiController
             Collection::make(preg_split('/ ?, ?/', $tags))->map(function ($tag) {
                 return trim($tag);
             })->map(function ($tag) {
-                return dispatch(new CreateTagCommand($tag));
+                return execute(new CreateTagCommand($tag));
             })->each(function ($tag) use ($component) {
-                dispatch(new ApplyTagCommand($component, $tag));
+                execute(new ApplyTagCommand($component, $tag));
             });
         }
 
@@ -116,7 +116,7 @@ class ComponentController extends AbstractApiController
     public function update(Component $component)
     {
         try {
-            dispatch(new UpdateComponentCommand(
+            execute(new UpdateComponentCommand(
                 $component,
                 Binput::get('name'),
                 Binput::get('description'),
@@ -139,9 +139,9 @@ class ComponentController extends AbstractApiController
             Collection::make(preg_split('/ ?, ?/', $tags))->map(function ($tag) {
                 return trim($tag);
             })->map(function ($tag) {
-                return dispatch(new CreateTagCommand($tag));
+                return execute(new CreateTagCommand($tag));
             })->each(function ($tag) use ($component) {
-                dispatch(new ApplyTagCommand($component, $tag));
+                execute(new ApplyTagCommand($component, $tag));
             });
         }
 
@@ -157,7 +157,7 @@ class ComponentController extends AbstractApiController
      */
     public function destroy(Component $component)
     {
-        dispatch(new RemoveComponentCommand($component));
+        execute(new RemoveComponentCommand($component));
 
         return $this->noContent();
     }

@@ -67,7 +67,7 @@ class IncidentController extends AbstractApiController
     public function store()
     {
         try {
-            $incident = dispatch(new CreateIncidentCommand(
+            $incident = execute(new CreateIncidentCommand(
                 Binput::get('name'),
                 Binput::get('status'),
                 Binput::get('message', null, false, false),
@@ -98,7 +98,7 @@ class IncidentController extends AbstractApiController
     public function update(Incident $incident)
     {
         try {
-            $incident = dispatch(new UpdateIncidentCommand(
+            $incident = execute(new UpdateIncidentCommand(
                 $incident,
                 Binput::get('name'),
                 Binput::get('status'),
@@ -128,7 +128,7 @@ class IncidentController extends AbstractApiController
      */
     public function destroy(Incident $incident)
     {
-        dispatch(new RemoveIncidentCommand($incident));
+        execute(new RemoveIncidentCommand($incident));
 
         return $this->noContent();
     }

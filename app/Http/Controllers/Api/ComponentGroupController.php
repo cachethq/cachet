@@ -92,7 +92,7 @@ class ComponentGroupController extends AbstractApiController
     public function store()
     {
         try {
-            $group = dispatch(new CreateComponentGroupCommand(
+            $group = execute(new CreateComponentGroupCommand(
                 Binput::get('name'),
                 Binput::get('order', 0),
                 Binput::get('collapsed', 0),
@@ -115,7 +115,7 @@ class ComponentGroupController extends AbstractApiController
     public function update(ComponentGroup $group)
     {
         try {
-            $group = dispatch(new UpdateComponentGroupCommand(
+            $group = execute(new UpdateComponentGroupCommand(
                 $group,
                 Binput::get('name'),
                 Binput::get('order'),
@@ -138,7 +138,7 @@ class ComponentGroupController extends AbstractApiController
      */
     public function destroy(ComponentGroup $group)
     {
-        dispatch(new RemoveComponentGroupCommand($group));
+        execute(new RemoveComponentGroupCommand($group));
 
         return $this->noContent();
     }

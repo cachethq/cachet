@@ -319,7 +319,7 @@ class SettingsController extends Controller
     {
         $config = Binput::get('config');
 
-        dispatch(new UpdateConfigCommand($config));
+        execute(new UpdateConfigCommand($config));
 
         return cachet_redirect('dashboard.settings.mail')
             ->withInput(Binput::all())

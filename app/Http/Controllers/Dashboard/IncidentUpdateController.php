@@ -101,7 +101,7 @@ class IncidentUpdateController extends Controller
     public function createIncidentUpdateAction(Incident $incident)
     {
         try {
-            $incidentUpdate = dispatch(new CreateIncidentUpdateCommand(
+            $incidentUpdate = execute(new CreateIncidentUpdateCommand(
                 $incident,
                 Binput::get('status'),
                 Binput::get('message'),
@@ -151,7 +151,7 @@ class IncidentUpdateController extends Controller
     public function editIncidentUpdateAction(Incident $incident, IncidentUpdate $incidentUpdate)
     {
         try {
-            $incidentUpdate = dispatch(new UpdateIncidentUpdateCommand(
+            $incidentUpdate = execute(new UpdateIncidentUpdateCommand(
                 $incidentUpdate,
                 Binput::get('status'),
                 Binput::get('message'),

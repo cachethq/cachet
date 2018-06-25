@@ -116,7 +116,7 @@ class CreateIncidentCommandHandler
 
         // Update the component.
         if ($component = Component::find($command->component_id)) {
-            dispatch(new UpdateComponentCommand(
+            execute(new UpdateComponentCommand(
                 Component::find($command->component_id),
                 null,
                 null,

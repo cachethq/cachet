@@ -80,7 +80,7 @@ class TeamController extends Controller
     public function postAddUser()
     {
         try {
-            dispatch(new CreateUserCommand(
+            execute(new CreateUserCommand(
                 Binput::get('username'),
                 Binput::get('password'),
                 Binput::get('email'),
@@ -129,7 +129,7 @@ class TeamController extends Controller
     public function postInviteUser()
     {
         try {
-            dispatch(new InviteUserCommand(
+            execute(new InviteUserCommand(
                 array_unique(array_filter((array) Binput::get('emails')))
             ));
         } catch (ValidationException $e) {
@@ -152,7 +152,7 @@ class TeamController extends Controller
      */
     public function deleteUser(User $user)
     {
-        dispatch(new RemoveUserCommand($user));
+        execute(new RemoveUserCommand($user));
 
         return cachet_redirect('dashboard.team')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.team.delete.success')));
