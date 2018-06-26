@@ -28,6 +28,10 @@ class ThemeServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        if ($this->app->runningInConsole()) {
+            return;
+        }
+
         $this->loadViewsFrom(resource_path('views/vendor/theme'), 'theme');
 
         $themeWasCalled = app(ThemeWasCalled::class);
