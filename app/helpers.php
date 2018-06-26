@@ -10,6 +10,7 @@
  */
 
 use CachetHQ\Cachet\Settings\Repository;
+use CachetHQ\Cachet\Theme\ThemeManager;
 use Illuminate\Contracts\Bus\Dispatcher;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Request;
@@ -172,5 +173,21 @@ if (!function_exists('execute')) {
     function execute($command)
     {
         return app(Dispatcher::class)->dispatchNow($command);
+    }
+}
+
+if (!function_exists('theme_asset')) {
+    /**
+     * Get an asset from the public directory.
+     *
+     * @param string $asset
+     *
+     * @return string
+     */
+    function theme_asset($asset)
+    {
+        $theme = app(ThemeManager::class)->getActiveTheme();
+
+        return public_path($theme->getThemeSlug()).'/'.$asset;
     }
 }

@@ -29,6 +29,13 @@ class ThemeManager
     protected $themes = [];
 
     /**
+     * The active theme.
+     *
+     * @var \CachetHQ\Cachet\Theme\Manifest
+     */
+    protected $activeTheme;
+
+    /**
      * The app instance.
      *
      * @var \Illuminate\Contracts\Container\Container
@@ -45,6 +52,16 @@ class ThemeManager
     public function __construct(Container $app)
     {
         $this->app = $app;
+    }
+
+    /**
+     * Get the active theme.
+     *
+     * @return \CachetHQ\Cachet\Theme\Manifest|null
+     */
+    public function getActiveTheme()
+    {
+        return $this->activeTheme;
     }
 
     /**
@@ -72,10 +89,23 @@ class ThemeManager
             return false;
         }
 
+        $this->activeTheme = $this->themes[$theme];
+
+        // Load the views.
         $this->app['view']->prependNamespace('theme', [
-            realpath($this->themes[$theme]->getThemePath().'/views'),
+            realpath($this->activeTheme->getThemePath().'/views'),
             resource_path('views/vendor/theme'),
         ]);
+
+        // Load the public assets, if the theme has any.
+        if (is_dir($publicDir = realpath($this->activeTheme->getThemePath().'/public'))) {
+            if (!file_exists($linkDir = public_path('theme').'/'.$this->activeTheme->getThemeSlug())) {
+                $this->app['files']->link(
+                    $publicDir,
+                    $linkDir
+                );
+            }
+        }
 
         return true;
     }

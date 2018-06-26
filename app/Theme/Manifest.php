@@ -67,6 +67,16 @@ class Manifest
     }
 
     /**
+     * Get the theme name in slug format.
+     *
+     * @return string
+     */
+    public function getThemeSlug()
+    {
+        return str_replace('/', '-', $this->name);
+    }
+
+    /**
      * Retrieve data.
      *
      * @param string $key
