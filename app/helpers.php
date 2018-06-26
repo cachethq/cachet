@@ -180,14 +180,17 @@ if (!function_exists('theme_asset')) {
     /**
      * Get an asset from the public directory.
      *
-     * @param string $asset
+     * @param string    $path
+     * @param bool|null $secure
      *
      * @return string
      */
-    function theme_asset($asset)
+    function theme_asset($path, $secure = null)
     {
         $theme = app(ThemeManager::class)->getActiveTheme();
 
-        return public_path($theme->getThemeSlug()).'/'.$asset;
+        $path = "theme/{$theme->getThemeSlug()}/{$path}";
+
+        return app('url')->asset($path, $secure);
     }
 }
