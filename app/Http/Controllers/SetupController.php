@@ -258,7 +258,7 @@ class SetupController extends Controller
             $envData = array_pull($postData, 'env');
 
             // Write the env to the .env file.
-            dispatch(new UpdateConfigCommand($envData));
+            execute(new UpdateConfigCommand($envData));
 
             if (Request::ajax()) {
                 return Response::json(['status' => 1]);

@@ -61,8 +61,8 @@ class ComponentController extends Controller
         ];
 
         View::share([
-            'sub_menu'  => $this->subMenu,
-            'sub_title' => trans_choice('dashboard.components.components', 2),
+            'subMenu'  => $this->subMenu,
+            'subTitle' => trans_choice('dashboard.components.components', 2),
         ]);
     }
 
@@ -115,7 +115,7 @@ class ComponentController extends Controller
         $tags = array_pull($componentData, 'tags');
 
         try {
-            $component = dispatch(new UpdateComponentCommand(
+            $component = execute(new UpdateComponentCommand(
                 $component,
                 $componentData['name'],
                 $componentData['description'],
@@ -140,9 +140,9 @@ class ComponentController extends Controller
         Collection::make(preg_split('/ ?, ?/', $tags))->map(function ($tag) {
             return trim($tag);
         })->map(function ($tag) {
-            return dispatch(new CreateTagCommand($tag));
+            return execute(new CreateTagCommand($tag));
         })->each(function ($tag) use ($component) {
-            dispatch(new ApplyTagCommand($component, $tag));
+            execute(new ApplyTagCommand($component, $tag));
         });
 
         return cachet_redirect('dashboard.components.edit', [$component->id])
@@ -172,7 +172,7 @@ class ComponentController extends Controller
         $tags = array_pull($componentData, 'tags');
 
         try {
-            $component = dispatch(new CreateComponentCommand(
+            $component = execute(new CreateComponentCommand(
                 $componentData['name'],
                 $componentData['description'],
                 $componentData['status'],
@@ -193,9 +193,9 @@ class ComponentController extends Controller
         Collection::make(preg_split('/ ?, ?/', $tags))->map(function ($tag) {
             return trim($tag);
         })->map(function ($tag) {
-            return dispatch(new CreateTagCommand($tag));
+            return execute(new CreateTagCommand($tag));
         })->each(function ($tag) use ($component) {
-            dispatch(new ApplyTagCommand($component, $tag));
+            execute(new ApplyTagCommand($component, $tag));
         });
 
         return cachet_redirect('dashboard.components')
@@ -211,7 +211,7 @@ class ComponentController extends Controller
      */
     public function deleteComponentAction(Component $component)
     {
-        dispatch(new RemoveComponentCommand($component));
+        execute(new RemoveComponentCommand($component));
 
         return cachet_redirect('dashboard.components')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.components.delete.success')));

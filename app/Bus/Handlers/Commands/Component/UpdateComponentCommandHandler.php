@@ -64,7 +64,7 @@ class UpdateComponentCommandHandler
     /**
      * Filter the command data.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\Incident\UpdateComponentCommand $command
+     * @param \CachetHQ\Cachet\Bus\Commands\Component\UpdateComponentCommand $command
      *
      * @return array
      */

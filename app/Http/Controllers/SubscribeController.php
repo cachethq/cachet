@@ -80,7 +80,7 @@ class SubscribeController extends Controller
         $verified = app(Repository::class)->get('setting.skip_subscriber_verification');
 
         try {
-            $subscription = dispatch(new SubscribeSubscriberCommand($email, $verified));
+            $subscription = execute(new SubscribeSubscriberCommand($email, $verified));
         } catch (ValidationException $e) {
             return cachet_redirect('status-page')
                 ->withInput(Binput::all())
@@ -116,7 +116,7 @@ class SubscribeController extends Controller
         }
 
         if (!$subscriber->is_verified) {
-            dispatch(new VerifySubscriberCommand($subscriber));
+            execute(new VerifySubscriberCommand($subscriber));
         }
 
         return cachet_redirect('status-page')
@@ -144,9 +144,9 @@ class SubscribeController extends Controller
         }
 
         if ($subscription) {
-            dispatch(new UnsubscribeSubscriptionCommand(Subscription::forSubscriber($subscriber->id)->firstOrFail()));
+            execute(new UnsubscribeSubscriptionCommand(Subscription::forSubscriber($subscriber->id)->firstOrFail()));
         } else {
-            dispatch(new UnsubscribeSubscriberCommand($subscriber));
+            execute(new UnsubscribeSubscriberCommand($subscriber));
         }
 
         return cachet_redirect('status-page')
@@ -204,7 +204,7 @@ class SubscribeController extends Controller
         }
 
         try {
-            dispatch(new UpdateSubscriberSubscriptionCommand($subscriber, Binput::get('subscriptions')));
+            execute(new UpdateSubscriberSubscriptionCommand($subscriber, Binput::get('subscriptions')));
         } catch (ValidationException $e) {
             return cachet_redirect('subscribe.manage', $subscriber->verify_code)
                 ->withInput(Binput::all())

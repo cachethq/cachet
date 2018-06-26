@@ -62,7 +62,7 @@ class MetricController extends AbstractApiController
     public function store()
     {
         try {
-            $metric = dispatch(new CreateMetricCommand(
+            $metric = execute(new CreateMetricCommand(
                 Binput::get('name'),
                 Binput::get('suffix'),
                 Binput::get('description'),
@@ -92,7 +92,7 @@ class MetricController extends AbstractApiController
     public function update(Metric $metric)
     {
         try {
-            $metric = dispatch(new UpdateMetricCommand(
+            $metric = execute(new UpdateMetricCommand(
                 $metric,
                 Binput::get('name'),
                 Binput::get('suffix'),
@@ -122,7 +122,7 @@ class MetricController extends AbstractApiController
      */
     public function destroy(Metric $metric)
     {
-        dispatch(new RemoveMetricCommand($metric));
+        execute(new RemoveMetricCommand($metric));
 
         return $this->noContent();
     }

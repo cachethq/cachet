@@ -1,6 +1,6 @@
 @extends('layout.master')
 
-@section('title', $schedule->name.' | '.$site_title)
+@section('title', $schedule->name.' | '.$siteTitle)
 
 @section('description', trans('cachet.meta.description.schedule', ['name' => $schedule->name, 'startDate' => $schedule->scheduled_at_formatted]))
 

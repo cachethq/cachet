@@ -65,7 +65,7 @@ class IncidentController extends Controller
         $this->auth = $auth;
         $this->system = $system;
 
-        View::share('sub_title', trans('dashboard.incidents.title'));
+        View::share('subTitle', trans('dashboard.incidents.title'));
     }
 
     /**
@@ -117,7 +117,7 @@ class IncidentController extends Controller
     public function createIncidentAction()
     {
         try {
-            $incident = dispatch(new CreateIncidentCommand(
+            $incident = execute(new CreateIncidentCommand(
                 Binput::get('name'),
                 Binput::get('status'),
                 Binput::get('message', null, false, false),
@@ -213,7 +213,7 @@ class IncidentController extends Controller
      */
     public function deleteIncidentAction(Incident $incident)
     {
-        dispatch(new RemoveIncidentCommand($incident));
+        execute(new RemoveIncidentCommand($incident));
 
         return cachet_redirect('dashboard.incidents')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.incidents.delete.success')));
@@ -246,7 +246,7 @@ class IncidentController extends Controller
     public function editIncidentAction(Incident $incident)
     {
         try {
-            $incident = dispatch(new UpdateIncidentCommand(
+            $incident = execute(new UpdateIncidentCommand(
                 $incident,
                 Binput::get('name'),
                 Binput::get('status'),

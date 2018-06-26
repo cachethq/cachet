@@ -1,14 +1,14 @@
-@if($app_footer)
-{!! $app_footer !!}
+@if($appFooter)
+{!! $appFooter !!}
 @else
 <footer class="footer">
     <div class="container">
         <div class="row">
             <div class="col-sm-4">
-                @if($show_support)
+                @if($showSupport)
                 <p>
                     {!! trans('cachet.powered_by') !!}
-                    @if($show_timezone)
+                    @if($showTimezone)
                     {{ trans('cachet.timezone', ['timezone' => $timezone]) }}
                     @endif
                 </p>
@@ -16,12 +16,12 @@
             </div>
             <div class="col-sm-8">
                 <ul class="list-inline">
-                    @if($current_user || $dashboard_link)
+                    @if($currentUser || $dashboardLink)
                     <li>
                         <a class="btn btn-link" href="{{ cachet_route('dashboard') }}">{{ trans('dashboard.dashboard') }}</a>
                     </li>
                     @endif
-                    @if($current_user)
+                    @if($currentUser)
                     <li>
                         <a class="btn btn-link" href="{{ cachet_route('auth.logout') }}">{{ trans('dashboard.logout') }}</a>
                     </li>
@@ -32,7 +32,7 @@
                     <li>
                         <a class="btn btn-link" href="{{ cachet_route('feed.atom') }}">{{ trans('cachet.atom-feed') }}</a>
                     </li>
-                    @if($enable_subscribers)
+                    @if($enableSubscribers)
                     <li>
                         <a class="btn btn-success btn-outline" href="{{ cachet_route('subscribe') }}">{{ trans('cachet.subscriber.button') }}</a>
                     </li>

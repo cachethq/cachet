@@ -42,7 +42,7 @@ class ScheduleController extends Controller
      */
     public function __construct()
     {
-        View::share('sub_title', trans('dashboard.schedule.title'));
+        View::share('subTitle', trans('dashboard.schedule.title'));
     }
 
     /**
@@ -81,7 +81,7 @@ class ScheduleController extends Controller
     public function addScheduleAction()
     {
         try {
-            dispatch(new CreateScheduleCommand(
+            execute(new CreateScheduleCommand(
                 Binput::get('name'),
                 Binput::get('message', null, false, false),
                 Binput::get('status', Schedule::UPCOMING),
@@ -127,7 +127,7 @@ class ScheduleController extends Controller
     public function editScheduleAction(Schedule $schedule)
     {
         try {
-            $schedule = dispatch(new UpdateScheduleCommand(
+            $schedule = execute(new UpdateScheduleCommand(
                 $schedule,
                 Binput::get('name', null),
                 Binput::get('message', null),
@@ -156,7 +156,7 @@ class ScheduleController extends Controller
      */
     public function deleteScheduleAction(Schedule $schedule)
     {
-        dispatch(new DeleteScheduleCommand($schedule));
+        execute(new DeleteScheduleCommand($schedule));
 
         return cachet_redirect('dashboard.schedule')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.schedule.delete.success')));

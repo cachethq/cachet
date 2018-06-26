@@ -58,7 +58,7 @@ class SubscribeSubscriberCommandHandler
         });
 
         if ($command->verified) {
-            dispatch(new VerifySubscriberCommand($subscriber));
+            execute(new VerifySubscriberCommand($subscriber));
         } else {
             $subscriber->notify(new VerifySubscriptionNotification());
         }

@@ -17,7 +17,7 @@
         <div class="col-sm-12">
             @include('partials.errors')
             <div class="striped-list">
-                @forelse($incident_templates as $template)
+                @forelse($incidentTemplates as $template)
                 <div class="row striped-list-item">
                     <div class="col-xs-6">
                         <strong>{{ $template->name }}</strong>

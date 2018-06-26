@@ -18,12 +18,12 @@ use CachetHQ\Cachet\Notifications\System\SystemTestNotification;
 use CachetHQ\Cachet\Settings\Repository;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
-use Illuminate\Log\Writer;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Lang;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\View;
@@ -116,8 +116,8 @@ class SettingsController extends Controller
         ];
 
         View::share([
-            'sub_title' => trans('dashboard.settings.settings'),
-            'sub_menu'  => $this->subMenu,
+            'subTitle' => trans('dashboard.settings.settings'),
+            'subMenu'  => $this->subMenu,
         ]);
     }
 
@@ -270,7 +270,7 @@ class SettingsController extends Controller
     {
         $this->subMenu['log']['active'] = true;
 
-        $log = app(Writer::class)->getMonolog();
+        $log = Log::getLogger();
 
         $logContents = '';
 
@@ -319,7 +319,7 @@ class SettingsController extends Controller
     {
         $config = Binput::get('config');
 
-        dispatch(new UpdateConfigCommand($config));
+        execute(new UpdateConfigCommand($config));
 
         return cachet_redirect('dashboard.settings.mail')
             ->withInput(Binput::all())

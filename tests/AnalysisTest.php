@@ -11,18 +11,24 @@
 
 namespace CachetHQ\Tests\Cachet;
 
-use AltThree\TestBench\AnalysisTrait;
-use PHPUnit_Framework_TestCase as TestCase;
+use GrahamCampbell\Analyzer\AnalysisTrait;
+use PHPUnit\Framework\TestCase;
 
 /**
  * This is the analysis test class.
  *
  * @author Graham Campbell <graham@alt-three.com>
+ * @author James Brooks <james@alt-three.com>
  */
 class AnalysisTest extends TestCase
 {
     use AnalysisTrait;
 
+    /**
+     * Get the code paths to analyze.
+     *
+     * @return string[]
+     */
     protected function getPaths()
     {
         return [

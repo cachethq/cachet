@@ -1,23 +1,23 @@
-@if($days_to_show > 0 && $all_incidents)
+@if($daysToShow > 0 && $allIncidents)
 <div class="section-timeline">
     <h1>{{ trans('cachet.incidents.past') }}</h1>
-    @foreach($all_incidents as $date => $incidents)
+    @foreach($allIncidents as $date => $incidents)
     @include('partials.incidents', [compact($date), compact($incidents)])
     @endforeach
 </div>
 
 <nav>
     <ul class="pager">
-        @if($can_page_backward)
+        @if($canPageBackward)
         <li class="previous">
-            <a href="{{ cachet_route('status-page') }}?start_date={{ $previous_date }}" class="links">
+            <a href="{{ cachet_route('status-page') }}?start_date={{ $previousDate }}" class="links">
                 <span aria-hidden="true">&larr;</span> {{ trans('pagination.previous') }}
             </a>
         </li>
         @endif
-        @if($can_page_forward)
+        @if($canPageForward)
         <li class="next">
-            <a href="{{ cachet_route('status-page') }}?start_date={{ $next_date }}" class="links">
+            <a href="{{ cachet_route('status-page') }}?start_date={{ $nextDate }}" class="links">
                 {{ trans('pagination.next') }} <span aria-hidden="true">&rarr;</span>
             </a>
         </li>

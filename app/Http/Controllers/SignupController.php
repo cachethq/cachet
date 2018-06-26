@@ -69,7 +69,7 @@ class SignupController extends Controller
         }
 
         try {
-            dispatch(new SignupUserCommand(
+            execute(new SignupUserCommand(
                 Binput::get('username'),
                 Binput::get('password'),
                 Binput::get('email'),
@@ -82,7 +82,7 @@ class SignupController extends Controller
                 ->withErrors($e->getMessageBag());
         }
 
-        dispatch(new ClaimInviteCommand($invite));
+        execute(new ClaimInviteCommand($invite));
 
         return cachet_redirect('status-page')
             ->withSuccess(sprintf('<strong>%s</strong> %s', trans('dashboard.notifications.awesome'), trans('cachet.signup.success')));

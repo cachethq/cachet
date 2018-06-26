@@ -48,7 +48,7 @@ class MetricPointController extends AbstractApiController
     public function store(Metric $metric)
     {
         try {
-            $metricPoint = dispatch(new CreateMetricPointCommand(
+            $metricPoint = execute(new CreateMetricPointCommand(
                 $metric,
                 Binput::get('value'),
                 Binput::get('timestamp')
@@ -64,13 +64,13 @@ class MetricPointController extends AbstractApiController
      * Updates a metric point.
      *
      * @param \CachetHQ\Cachet\Models\Metric      $metric
-     * @param \CachetHQ\Cachet\Models\MetircPoint $metricPoint
+     * @param \CachetHQ\Cachet\Models\MetricPoint $metricPoint
      *
      * @return \Illuminate\Http\JsonResponse
      */
     public function update(Metric $metric, MetricPoint $metricPoint)
     {
-        $metricPoint = dispatch(new UpdateMetricPointCommand(
+        $metricPoint = execute(new UpdateMetricPointCommand(
             $metricPoint,
             $metric,
             Binput::get('value'),
@@ -90,7 +90,7 @@ class MetricPointController extends AbstractApiController
      */
     public function destroy(Metric $metric, MetricPoint $metricPoint)
     {
-        dispatch(new RemoveMetricPointCommand($metricPoint));
+        execute(new RemoveMetricPointCommand($metricPoint));
 
         return $this->noContent();
     }

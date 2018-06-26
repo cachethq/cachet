@@ -10,6 +10,7 @@
  */
 
 use CachetHQ\Cachet\Settings\Repository;
+use Illuminate\Contracts\Bus\Dispatcher;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Request;
 use Jenssegers\Date\Date;
@@ -157,5 +158,19 @@ if (!function_exists('cachet_redirect')) {
         $url = cachet_route($name, $parameters, $method, $domain);
 
         return app('redirect')->to($url, $status, $headers);
+    }
+}
+
+if (!function_exists('execute')) {
+    /**
+     * Send the given command to the dispatcher for execution.
+     *
+     * @param object $command
+     *
+     * @return void
+     */
+    function execute($command)
+    {
+        return app(Dispatcher::class)->dispatchNow($command);
     }
 }

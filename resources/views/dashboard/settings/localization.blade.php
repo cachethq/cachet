@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="content-panel">
-    @includeWhen(isset($sub_menu), 'dashboard.partials.sub-sidebar')
+    @includeWhen(isset($subMenu), 'dashboard.partials.sub-sidebar')
     <div class="content-wrapper">
         <div class="header sub-header" id="application-setup">
             <span class="uppercase">
@@ -63,7 +63,7 @@
                                     <select name="app_locale" class="form-control" required>
                                         <option value="">Select Language</option>
                                         @foreach($langs as $key => $lang)
-                                            <option value="{{ $key }}" @if($app_locale === $key) selected @endif>
+                                            <option value="{{ $key }}" @if($appLocale === $key) selected @endif>
                                                 {{ $lang['name'] }}
                                             </option>
                                         @endforeach
@@ -76,7 +76,7 @@
                                 <div class="checkbox">
                                     <label>
                                         <input type="hidden" value="0" name="automatic_localization">
-                                        <input type="checkbox" value="1" name="automatic_localization" {{ $automatic_localization ? 'checked' : null }}>
+                                        <input type="checkbox" value="1" name="automatic_localization" {{ $automaticLocalization ? 'checked' : null }}>
                                         {{ trans('forms.settings.app-setup.automatic_localization') }}
                                     </label>
                                 </div>
