@@ -171,6 +171,6 @@ if (!function_exists('execute')) {
      */
     function execute($command)
     {
-        app(Dispatcher::class)->execute($command);
+        return app(Dispatcher::class)->dispatchNow($command);
     }
 }
