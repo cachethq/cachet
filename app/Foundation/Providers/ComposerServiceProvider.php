@@ -35,18 +35,9 @@ class ComposerServiceProvider extends ServiceProvider
      */
     public function boot(Factory $factory)
     {
-        $factory->composer('theme::*', AppComposer::class);
+        $factory->composer('*', AppComposer::class);
+        $factory->composer('*', ThemeComposer::class);
         $factory->composer('theme::*', CurrentUserComposer::class);
-        $factory->composer([
-            'theme::index',
-            'theme::single-incident',
-            'theme::subscribe.*',
-            'theme::signup',
-            'theme::dashboard.settings.theme',
-            'theme::notifications::email',
-            'theme::single-schedule',
-            'theme::errors.*',
-        ], ThemeComposer::class);
         $factory->composer('theme::dashboard.*', DashboardComposer::class);
         $factory->composer([
             'theme::setup.*',
