@@ -56,7 +56,7 @@ class ThemeManager
      */
     public function registerTheme(Manifest $theme)
     {
-        $this->themes[$theme->getThemeId()] = $theme;
+        $this->themes[$theme->name] = $theme;
     }
 
     /**
