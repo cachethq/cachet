@@ -42,6 +42,6 @@ class BeaconCommand extends Command
      */
     public function fire()
     {
-        execute(new SendBeaconJob());
+        dispatch(new SendBeaconJob());
     }
 }
