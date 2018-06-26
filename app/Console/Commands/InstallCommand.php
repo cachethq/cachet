@@ -41,7 +41,7 @@ class InstallCommand extends Command
      *
      * @return void
      */
-    public function fire()
+    public function handle()
     {
         if (!$this->confirm('Do you want to install Cachet?')) {
             $this->line('Installation aborted. Goodbye!');
