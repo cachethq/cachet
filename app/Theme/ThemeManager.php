@@ -11,10 +11,8 @@
 
 namespace CachetHQ\Cachet\Theme;
 
-use CachetHQ\Cachet\Theme\Manifest;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Support\Manager;
-use InvalidArgumentException;
 
 /**
  * This is the theme manager class.
@@ -76,7 +74,7 @@ class ThemeManager
 
         $this->app['view']->prependNamespace('theme', [
             realpath($this->themes[$theme]->getThemePath().'/views'),
-            resource_path('views/vendor/theme')
+            resource_path('views/vendor/theme'),
         ]);
 
         return true;

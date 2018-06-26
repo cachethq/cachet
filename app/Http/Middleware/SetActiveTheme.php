@@ -15,7 +15,6 @@ use CachetHQ\Cachet\Settings\Repository;
 use CachetHQ\Cachet\Theme\ThemeManager;
 use Closure;
 use Illuminate\Http\Request;
-use Symfony\Component\HttpKernel\Exception\NotAcceptableHttpException;
 
 /**
  * This is the set active theme middleware class.
@@ -41,7 +40,7 @@ class SetActiveTheme
     /**
      * Create a new set active theme middleware instance.
      *
-     * @param \CachetHQ\Cachet\Theme\ThemeManager $themeManager
+     * @param \CachetHQ\Cachet\Theme\ThemeManager  $themeManager
      * @param \CachetHQ\Cachet\Settings\Repository $settings
      *
      * @return void

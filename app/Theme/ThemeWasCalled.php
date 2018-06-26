@@ -11,7 +11,6 @@
 
 namespace CachetHQ\Cachet\Theme;
 
-use CachetHQ\Cachet\Theme\Manifest;
 use Illuminate\Contracts\Container\Container;
 
 /**

@@ -45,12 +45,12 @@ class ComposerServiceProvider extends ServiceProvider
             'theme::dashboard.settings.theme',
             'theme::notifications::email',
             'theme::single-schedule',
-            'theme::errors.*'
+            'theme::errors.*',
         ], ThemeComposer::class);
         $factory->composer('theme::dashboard.*', DashboardComposer::class);
         $factory->composer([
             'theme::setup.*',
-            'theme::dashboard.settings.localization'
+            'theme::dashboard.settings.localization',
         ], TimezoneLocaleComposer::class);
 
         $factory->composer('theme::partials.modules.components', ComponentsComposer::class);

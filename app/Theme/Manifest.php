@@ -35,7 +35,7 @@ class Manifest
     /**
      * Create a new manifest instance.
      *
-     * @param array $data
+     * @param array  $data
      * @param string $path
      *
      * @return void
@@ -78,7 +78,5 @@ class Manifest
         if (array_key_exists($key, $this->data)) {
             return $this->data[$key];
         }
-
-        return null;
     }
 }
