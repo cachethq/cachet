@@ -18,6 +18,7 @@ use CachetHQ\Cachet\Http\Middleware\Authenticate;
 use CachetHQ\Cachet\Http\Middleware\Localize;
 use CachetHQ\Cachet\Http\Middleware\ReadyForUse;
 use CachetHQ\Cachet\Http\Middleware\RedirectIfAuthenticated;
+use CachetHQ\Cachet\Http\Middleware\SetActiveTheme;
 use CachetHQ\Cachet\Http\Middleware\SetupAlreadyCompleted;
 use CachetHQ\Cachet\Http\Middleware\SubscribersConfigured;
 use CachetHQ\Cachet\Http\Middleware\TrustProxies;
@@ -35,6 +36,7 @@ class Kernel extends HttpKernel
     protected $middleware = [
         TrustProxies::class,
         CheckForMaintenanceMode::class,
+        SetActiveTheme::class,
     ];
 
     /**
