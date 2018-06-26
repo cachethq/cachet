@@ -70,7 +70,7 @@ class IncidentTemplateController extends Controller
      */
     public function showTemplates()
     {
-        return View::make('dashboard.templates.index')
+        return View::make('theme::dashboard.templates.index')
             ->withPageTitle(trans('dashboard.incidents.templates.title').' - '.trans('dashboard.dashboard'))
             ->withIncidentTemplates(IncidentTemplate::all());
     }
@@ -82,7 +82,7 @@ class IncidentTemplateController extends Controller
      */
     public function showAddIncidentTemplate()
     {
-        return View::make('dashboard.templates.add')
+        return View::make('theme::dashboard.templates.add')
             ->withPageTitle(trans('dashboard.incidents.templates.add.title').' - '.trans('dashboard.dashboard'));
     }
 
@@ -95,7 +95,7 @@ class IncidentTemplateController extends Controller
      */
     public function showEditTemplateAction(IncidentTemplate $template)
     {
-        return View::make('dashboard.templates.edit')
+        return View::make('theme::dashboard.templates.edit')
             ->withPageTitle(trans('dashboard.incidents.templates.edit.title').' - '.trans('dashboard.dashboard'))
             ->withTemplate($template);
     }

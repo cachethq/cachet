@@ -77,7 +77,7 @@ class IncidentController extends Controller
     {
         $incidents = Incident::orderBy('created_at', 'desc')->get();
 
-        return View::make('dashboard.incidents.index')
+        return View::make('theme::dashboard.incidents.index')
             ->withPageTitle(trans('dashboard.incidents.incidents').' - '.trans('dashboard.dashboard'))
             ->withIncidents($incidents);
     }
@@ -89,7 +89,7 @@ class IncidentController extends Controller
      */
     public function showAddIncident()
     {
-        return View::make('dashboard.incidents.add')
+        return View::make('theme::dashboard.incidents.add')
             ->withPageTitle(trans('dashboard.incidents.add.title').' - '.trans('dashboard.dashboard'))
             ->withComponentsInGroups(ComponentGroup::with('components')->get())
             ->withComponentsOutGroups(Component::where('group_id', '=', 0)->get())
@@ -104,7 +104,7 @@ class IncidentController extends Controller
      */
     public function showTemplates()
     {
-        return View::make('dashboard.templates.index')
+        return View::make('theme::dashboard.templates.index')
             ->withPageTitle(trans('dashboard.incidents.templates.title').' - '.trans('dashboard.dashboard'))
             ->withIncidentTemplates(IncidentTemplate::all());
     }
@@ -148,7 +148,7 @@ class IncidentController extends Controller
      */
     public function showAddIncidentTemplate()
     {
-        return View::make('dashboard.templates.add')
+        return View::make('theme::dashboard.templates.add')
             ->withPageTitle(trans('dashboard.incidents.templates.add.title').' - '.trans('dashboard.dashboard'));
     }
 
@@ -161,7 +161,7 @@ class IncidentController extends Controller
      */
     public function showEditTemplateAction(IncidentTemplate $template)
     {
-        return View::make('dashboard.templates.edit')
+        return View::make('theme::dashboard.templates.edit')
             ->withPageTitle(trans('dashboard.incidents.templates.edit.title').' - '.trans('dashboard.dashboard'))
             ->withTemplate($template);
     }
@@ -228,7 +228,7 @@ class IncidentController extends Controller
      */
     public function showEditIncidentAction(Incident $incident)
     {
-        return View::make('dashboard.incidents.edit')
+        return View::make('theme::dashboard.incidents.edit')
             ->withPageTitle(trans('dashboard.incidents.edit.title').' - '.trans('dashboard.dashboard'))
             ->withIncident($incident)
             ->withComponentsInGroups(ComponentGroup::with('components')->get())

@@ -29,7 +29,7 @@ class SubscriberController extends Controller
      */
     public function showSubscribers()
     {
-        return View::make('dashboard.subscribers.index')
+        return View::make('theme::dashboard.subscribers.index')
             ->withPageTitle(trans('dashboard.subscribers.subscribers').' - '.trans('dashboard.dashboard'))
             ->withSubscribers(Subscriber::all());
     }
@@ -41,7 +41,7 @@ class SubscriberController extends Controller
      */
     public function showAddSubscriber()
     {
-        return View::make('dashboard.subscribers.add')
+        return View::make('theme::dashboard.subscribers.add')
             ->withPageTitle(trans('dashboard.subscribers.add.title').' - '.trans('dashboard.dashboard'));
     }
 

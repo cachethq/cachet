@@ -1,0 +1,61 @@
+@extends('theme::layout.master')
+
+@section('content')
+
+<div class="pull-right">
+    <p><a class="btn btn-success btn-outline" href="{{ cachet_route('status-page') }}"><i class="ion ion-home"></i></a></p>
+</div>
+
+<div class="clearfix"></div>
+
+@include('theme::partials.errors')
+
+<div class="row">
+    <div class="col-xs-12 col-lg-offset-2 col-lg-8">
+        <div class="text-center margin-bottom">
+            <h1>{{ $appName }} {{ trans('cachet.subscriber.manage.notifications') }}</h1>
+            <p>{{ trans('cachet.subscriber.manage.notifications_for') }} <strong>{{ $subscriber->email }}</strong></p>
+        </div>
+        <form action="{{ cachet_route('subscribe.manage', [$subscriber->verify_code], 'post') }}" method="post">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            @if($componentGroups->isNotEmpty() || $ungroupedComponents->isNotEmpty())
+            @foreach($componentGroups as $componentGroup)
+            <div class="list-group components">
+                @if($componentGroup->enabled_components->count() > 0)
+                <div class="list-group-item group-name">
+                    <i class="{{ $componentGroup->collapse_class_with_subscriptions($subscriptions) }} group-toggle"></i>
+                    <strong>{{ $componentGroup->name }}</strong>
+                    <div class="pull-right text-muted small">
+                        <a href="javascript: void(0);" class="select-group" id="select-all-{{$componentGroup->id}}">{{ trans('cachet.components.select_all') }}</a>
+                        &nbsp;|&nbsp;
+                        <a href="javascript: void(0);" class="deselect-group" id="deselect-all-{{$componentGroup->id}}">{{ trans('cachet.components.deselect_all') }}</a>
+                    </div>
+                </div>
+                @foreach($componentGroup->enabled_components()->orderBy('order')->get() as $component)
+                @include('theme::partials.component_input', compact($component))
+                @endforeach
+                @endif
+            </div>
+            @endforeach
+
+            @if($ungroupedComponents->isNotEmpty())
+            <ul class="list-group components">
+                <div class="list-group-item group-name">
+                    <strong>{{ trans('cachet.components.group.other') }}</strong>
+                </div>
+                @foreach($ungroupedComponents as $component)
+                @include('theme::partials.component_input', compact($component))
+                @endforeach
+            </ul>
+            @endif
+            @else
+            <p>{{ trans('cachet.subscriber.manage.no_subscriptions') }}</p>
+            @endif
+
+            <div class="text-right">
+                <button type="submit" class="btn btn-success">{{ trans('cachet.subscriber.manage.update_subscription') }}</button>
+            </div>
+        </form>
+    </div>
+</div>
+@stop

@@ -35,19 +35,31 @@ class ComposerServiceProvider extends ServiceProvider
      */
     public function boot(Factory $factory)
     {
-        $factory->composer('*', AppComposer::class);
-        $factory->composer('*', CurrentUserComposer::class);
-        $factory->composer(['index', 'single-incident', 'subscribe.*', 'signup', 'dashboard.settings.theme', 'notifications::email', 'single-schedule', 'errors.*'], ThemeComposer::class);
-        $factory->composer('dashboard.*', DashboardComposer::class);
-        $factory->composer(['setup.*', 'dashboard.settings.localization'], TimezoneLocaleComposer::class);
+        $factory->composer('theme::*', AppComposer::class);
+        $factory->composer('theme::*', CurrentUserComposer::class);
+        $factory->composer([
+            'theme::index',
+            'theme::single-incident',
+            'theme::subscribe.*',
+            'theme::signup',
+            'theme::dashboard.settings.theme',
+            'theme::notifications::email',
+            'theme::single-schedule',
+            'theme::errors.*'
+        ], ThemeComposer::class);
+        $factory->composer('theme::dashboard.*', DashboardComposer::class);
+        $factory->composer([
+            'theme::setup.*',
+            'theme::dashboard.settings.localization'
+        ], TimezoneLocaleComposer::class);
 
-        $factory->composer('partials.modules.components', ComponentsComposer::class);
-        $factory->composer('partials.modules.metrics', MetricsComposer::class);
-        $factory->composer('partials.modules.stickied', StickiedComposer::class);
-        $factory->composer('partials.modules.scheduled', ScheduledComposer::class);
-        $factory->composer('partials.modules.status', StatusComposer::class);
-        $factory->composer('partials.modules.timeline', TimelineComposer::class);
-        $factory->composer(['dashboard.settings.mail', 'setup.*'], SettingsComposer::class);
+        $factory->composer('theme::partials.modules.components', ComponentsComposer::class);
+        $factory->composer('theme::partials.modules.metrics', MetricsComposer::class);
+        $factory->composer('theme::partials.modules.stickied', StickiedComposer::class);
+        $factory->composer('theme::partials.modules.scheduled', ScheduledComposer::class);
+        $factory->composer('theme::partials.modules.status', StatusComposer::class);
+        $factory->composer('theme::partials.modules.timeline', TimelineComposer::class);
+        $factory->composer(['theme::dashboard.settings.mail', 'setup.*'], SettingsComposer::class);
     }
 
     /**

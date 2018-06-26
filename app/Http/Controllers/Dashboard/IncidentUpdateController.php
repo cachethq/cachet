@@ -74,7 +74,7 @@ class IncidentUpdateController extends Controller
      */
     public function showIncidentUpdates(Incident $incident)
     {
-        return View::make('dashboard.incidents.updates.index')->withIncident($incident);
+        return View::make('theme::dashboard.incidents.updates.index')->withIncident($incident);
     }
 
     /**
@@ -86,7 +86,7 @@ class IncidentUpdateController extends Controller
      */
     public function showCreateIncidentUpdateAction(Incident $incident)
     {
-        return View::make('dashboard.incidents.updates.add')
+        return View::make('theme::dashboard.incidents.updates.add')
             ->withIncident($incident)
             ->withNotificationsEnabled($this->system->canNotifySubscribers());
     }
@@ -134,7 +134,7 @@ class IncidentUpdateController extends Controller
      */
     public function showEditIncidentUpdateAction(Incident $incident, IncidentUpdate $incidentUpdate)
     {
-        return View::make('dashboard.incidents.updates.edit')
+        return View::make('theme::dashboard.incidents.updates.edit')
             ->withIncident($incident)
             ->withUpdate($incidentUpdate)
             ->withNotificationsEnabled($this->system->canNotifySubscribers());

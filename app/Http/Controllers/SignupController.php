@@ -43,7 +43,7 @@ class SignupController extends Controller
             throw new BadRequestHttpException();
         }
 
-        return View::make('signup')
+        return View::make('theme::signup')
             ->withCode($invite->code)
             ->withUsername(Binput::old('username'))
             ->withEmail(Binput::old('email', $invite->email));

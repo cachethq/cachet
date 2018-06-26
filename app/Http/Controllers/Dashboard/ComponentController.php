@@ -77,7 +77,7 @@ class ComponentController extends Controller
 
         $this->subMenu['components']['active'] = true;
 
-        return View::make('dashboard.components.index')
+        return View::make('theme::dashboard.components.index')
             ->withPageTitle(trans_choice('dashboard.components.components', 2).' - '.trans('dashboard.dashboard'))
             ->withComponents($components)
             ->withSubMenu($this->subMenu);
@@ -96,7 +96,7 @@ class ComponentController extends Controller
 
         $pageTitle = sprintf('"%s" - %s - %s', $component->name, trans('dashboard.components.edit.title'), trans('dashboard.dashboard'));
 
-        return View::make('dashboard.components.edit')
+        return View::make('theme::dashboard.components.edit')
             ->withPageTitle($pageTitle)
             ->withComponent($component)
             ->withGroups($groups);
@@ -156,7 +156,7 @@ class ComponentController extends Controller
      */
     public function showAddComponent()
     {
-        return View::make('dashboard.components.add')
+        return View::make('theme::dashboard.components.add')
             ->withPageTitle(trans('dashboard.components.add.title').' - '.trans('dashboard.dashboard'))
             ->withGroups(ComponentGroup::all());
     }

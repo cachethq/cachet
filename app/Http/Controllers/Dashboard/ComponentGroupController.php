@@ -72,7 +72,7 @@ class ComponentGroupController extends Controller
     {
         $this->subMenu['groups']['active'] = true;
 
-        return View::make('dashboard.components.groups.index')
+        return View::make('theme::dashboard.components.groups.index')
             ->withPageTitle(trans_choice('dashboard.components.groups.groups', 2).' - '.trans('dashboard.dashboard'))
             ->withGroups(ComponentGroup::orderBy('order')->get())
             ->withSubMenu($this->subMenu);
@@ -100,7 +100,7 @@ class ComponentGroupController extends Controller
      */
     public function showAddComponentGroup()
     {
-        return View::make('dashboard.components.groups.add')
+        return View::make('theme::dashboard.components.groups.add')
             ->withPageTitle(trans('dashboard.components.groups.add.title').' - '.trans('dashboard.dashboard'));
     }
 
@@ -113,7 +113,7 @@ class ComponentGroupController extends Controller
      */
     public function showEditComponentGroup(ComponentGroup $group)
     {
-        return View::make('dashboard.components.groups.edit')
+        return View::make('theme::dashboard.components.groups.edit')
             ->withPageTitle(trans('dashboard.components.groups.edit.title').' - '.trans('dashboard.dashboard'))
             ->withGroup($group);
     }

@@ -31,7 +31,7 @@ class TeamController extends Controller
     {
         $team = User::all();
 
-        return View::make('dashboard.team.index')
+        return View::make('theme::dashboard.team.index')
             ->withPageTitle(trans('dashboard.team.team').' - '.trans('dashboard.dashboard'))
             ->withTeamMembers($team);
     }
@@ -45,7 +45,7 @@ class TeamController extends Controller
      */
     public function showTeamMemberView(User $user)
     {
-        return View::make('dashboard.team.edit')
+        return View::make('theme::dashboard.team.edit')
             ->withPageTitle(trans('dashboard.team.edit.title').' - '.trans('dashboard.dashboard'))
             ->withUser($user);
     }
@@ -57,7 +57,7 @@ class TeamController extends Controller
      */
     public function showAddTeamMemberView()
     {
-        return View::make('dashboard.team.add')
+        return View::make('theme::dashboard.team.add')
             ->withPageTitle(trans('dashboard.team.add.title').' - '.trans('dashboard.dashboard'));
     }
 
@@ -68,7 +68,7 @@ class TeamController extends Controller
      */
     public function showInviteTeamMemberView()
     {
-        return View::make('dashboard.team.invite')
+        return View::make('theme::dashboard.team.invite')
             ->withPageTitle(trans('dashboard.team.invite.title').' - '.trans('dashboard.dashboard'));
     }
 

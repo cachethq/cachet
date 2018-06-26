@@ -32,7 +32,7 @@ class AuthController extends Controller
      */
     public function showLogin()
     {
-        return View::make('auth.login')
+        return View::make('theme::auth.login')
             ->withPageTitle(trans('dashboard.login.login'));
     }
 
@@ -80,7 +80,7 @@ class AuthController extends Controller
      */
     public function showTwoFactorAuth()
     {
-        return View::make('auth.two-factor-auth');
+        return View::make('theme::auth.two-factor-auth');
     }
 
     /**

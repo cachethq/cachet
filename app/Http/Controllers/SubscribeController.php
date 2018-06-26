@@ -64,7 +64,7 @@ class SubscribeController extends Controller
      */
     public function showSubscribe()
     {
-        return View::make('subscribe.subscribe')
+        return View::make('theme::subscribe.subscribe')
             ->withAboutApp(Markdown::convertToHtml(Config::get('setting.app_about')));
     }
 
@@ -177,7 +177,7 @@ class SubscribeController extends Controller
             throw new BadRequestHttpException();
         }
 
-        return View::make('subscribe.manage')
+        return View::make('theme::subscribe.manage')
             ->withUngroupedComponents($ungroupedComponents)
             ->withSubscriber($subscriber)
             ->withSubscriptions($subscriber->subscriptions->pluck('component_id')->all())

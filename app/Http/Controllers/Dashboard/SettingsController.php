@@ -132,7 +132,7 @@ class SettingsController extends Controller
 
         Session::flash('redirect_to', $this->subMenu['setup']['url']);
 
-        return View::make('dashboard.settings.app-setup')
+        return View::make('theme::dashboard.settings.app-setup')
             ->withPageTitle(trans('dashboard.settings.app-setup.app-setup').' - '.trans('dashboard.dashboard'))
             ->withSubMenu($this->subMenu)
             ->withRawAppAbout(Config::get('setting.app_about'));
@@ -149,7 +149,7 @@ class SettingsController extends Controller
 
         Session::flash('redirect_to', $this->subMenu['analytics']['url']);
 
-        return View::make('dashboard.settings.analytics')
+        return View::make('theme::dashboard.settings.analytics')
             ->withPageTitle(trans('dashboard.settings.analytics.analytics').' - '.trans('dashboard.dashboard'))
             ->withSubMenu($this->subMenu);
     }
@@ -165,7 +165,7 @@ class SettingsController extends Controller
 
         Session::flash('redirect_to', $this->subMenu['localization']['url']);
 
-        return View::make('dashboard.settings.localization')
+        return View::make('theme::dashboard.settings.localization')
             ->withPageTitle(trans('dashboard.settings.localization.localization').' - '.trans('dashboard.dashboard'))
             ->withSubMenu($this->subMenu);
     }
@@ -181,7 +181,7 @@ class SettingsController extends Controller
 
         Session::flash('redirect_to', $this->subMenu['customization']['url']);
 
-        return View::make('dashboard.settings.customization')
+        return View::make('theme::dashboard.settings.customization')
             ->withPageTitle(trans('dashboard.settings.customization.customization').' - '.trans('dashboard.dashboard'))
             ->withSubMenu($this->subMenu);
     }
@@ -197,7 +197,7 @@ class SettingsController extends Controller
 
         Session::flash('redirect_to', $this->subMenu['theme']['url']);
 
-        return View::make('dashboard.settings.theme')
+        return View::make('theme::dashboard.settings.theme')
             ->withPageTitle(trans('dashboard.settings.theme.theme').' - '.trans('dashboard.dashboard'))
             ->withSubMenu($this->subMenu);
     }
@@ -215,7 +215,7 @@ class SettingsController extends Controller
 
         Session::flash('redirect_to', $this->subMenu['security']['url']);
 
-        return View::make('dashboard.settings.security')
+        return View::make('theme::dashboard.settings.security')
             ->withPageTitle(trans('dashboard.settings.security.security').' - '.trans('dashboard.dashboard'))
             ->withSubMenu($this->subMenu)
             ->withUnsecureUsers($unsecureUsers);
@@ -232,7 +232,7 @@ class SettingsController extends Controller
 
         Session::flash('redirect_to', $this->subMenu['stylesheet']['url']);
 
-        return View::make('dashboard.settings.stylesheet')
+        return View::make('theme::dashboard.settings.stylesheet')
             ->withPageTitle(trans('dashboard.settings.stylesheet.stylesheet').' - '.trans('dashboard.dashboard'))
             ->withSubMenu($this->subMenu);
     }
@@ -254,7 +254,7 @@ class SettingsController extends Controller
         shuffle($backers);
         shuffle($contributors);
 
-        return View::make('dashboard.settings.credits')
+        return View::make('theme::dashboard.settings.credits')
             ->withPageTitle(trans('dashboard.settings.credits.credits').' - '.trans('dashboard.dashboard'))
             ->withBackers($backers)
             ->withContributors($contributors)
@@ -282,7 +282,7 @@ class SettingsController extends Controller
             }
         });
 
-        return View::make('dashboard.settings.log')->withLog($logContents)->withSubMenu($this->subMenu);
+        return View::make('theme::dashboard.settings.log')->withLog($logContents)->withSubMenu($this->subMenu);
     }
 
     /**
@@ -294,7 +294,7 @@ class SettingsController extends Controller
     {
         $this->subMenu['mail']['active'] = true;
 
-        return View::make('dashboard.settings.mail')->withConfig(Config::get('mail'));
+        return View::make('theme::dashboard.settings.mail')->withConfig(Config::get('mail'));
     }
 
     /**

@@ -166,7 +166,7 @@ class SetupController extends Controller
             'password' => Config::get('mail.password'),
         ];
 
-        return View::make('setup.index')
+        return View::make('theme::setup.index')
             ->withPageTitle(trans('setup.setup'))
             ->withCacheDrivers($this->cacheDrivers)
             ->withQueueDrivers($this->queueDrivers)

@@ -109,7 +109,7 @@ class DashboardController extends Controller
             $entries = array_slice($feed->channel->item, 0, 5);
         }
 
-        return View::make('dashboard.index')
+        return View::make('theme::dashboard.index')
             ->withPageTitle(trans('dashboard.dashboard'))
             ->withComponents($components)
             ->withIncidents($incidents)

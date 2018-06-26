@@ -31,7 +31,7 @@ class UserController extends Controller
      */
     public function showUser()
     {
-        return View::make('dashboard.user.index')
+        return View::make('theme::dashboard.user.index')
             ->withPageTitle(trans('dashboard.team.profile').' - '.trans('dashboard.dashboard'));
     }
 

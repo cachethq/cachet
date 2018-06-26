@@ -32,7 +32,7 @@ class MetricController extends Controller
     {
         $metrics = Metric::orderBy('order')->orderBy('id')->get();
 
-        return View::make('dashboard.metrics.index')
+        return View::make('theme::dashboard.metrics.index')
             ->withPageTitle(trans('dashboard.metrics.metrics').' - '.trans('dashboard.dashboard'))
             ->withMetrics($metrics);
     }
@@ -44,7 +44,7 @@ class MetricController extends Controller
      */
     public function showAddMetric()
     {
-        return View::make('dashboard.metrics.add')
+        return View::make('theme::dashboard.metrics.add')
             ->withPageTitle(trans('dashboard.metrics.add.title').' - '.trans('dashboard.dashboard'))
             ->withAcceptableThresholds(Metric::ACCEPTABLE_THRESHOLDS);
     }
@@ -56,7 +56,7 @@ class MetricController extends Controller
      */
     public function showMetricPoints()
     {
-        return View::make('dashboard.metrics.points.index')
+        return View::make('theme::dashboard.metrics.points.index')
             ->withPageTitle(trans('dashboard.metrics.points.title').' - '.trans('dashboard.dashboard'))
             ->withMetrics(MetricPoint::all());
     }
@@ -102,7 +102,7 @@ class MetricController extends Controller
      */
     public function showAddMetricPoint()
     {
-        return View::make('dashboard.metrics.points.add')
+        return View::make('theme::dashboard.metrics.points.add')
             ->withPageTitle(trans('dashboard.metrics.points.add.title').' - '.trans('dashboard.dashboard'));
     }
 
@@ -130,7 +130,7 @@ class MetricController extends Controller
      */
     public function showEditMetricAction(Metric $metric)
     {
-        return View::make('dashboard.metrics.edit')
+        return View::make('theme::dashboard.metrics.edit')
             ->withPageTitle(trans('dashboard.metrics.edit.title').' - '.trans('dashboard.dashboard'))
             ->withMetric($metric)
             ->withAcceptableThresholds(Metric::ACCEPTABLE_THRESHOLDS);

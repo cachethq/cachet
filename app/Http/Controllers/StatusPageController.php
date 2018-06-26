@@ -121,7 +121,7 @@ class StatusPageController extends AbstractApiController
             return strtotime($key);
         }, SORT_REGULAR, true);
 
-        return View::make('index')
+        return View::make('theme::index')
             ->withDaysToShow($appIncidentDays)
             ->withAllIncidents($allIncidents)
             ->withCanPageForward($canPageForward)
@@ -139,7 +139,7 @@ class StatusPageController extends AbstractApiController
      */
     public function showIncident(Incident $incident)
     {
-        return View::make('single-incident')->withIncident($incident);
+        return View::make('theme::single-incident')->withIncident($incident);
     }
 
     /**
@@ -151,7 +151,7 @@ class StatusPageController extends AbstractApiController
      */
     public function showSchedule(Schedule $schedule)
     {
-        return View::make('single-schedule')->withSchedule($schedule);
+        return View::make('theme::single-schedule')->withSchedule($schedule);
     }
 
     /**
