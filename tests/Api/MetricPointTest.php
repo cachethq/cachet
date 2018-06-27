@@ -78,11 +78,12 @@ class MetricPointTest extends AbstractApiTestCase
         $postData['timestamp'] = $timestamp;
 
         $response = $this->json('POST', "/api/v1/metrics/{$metric->id}/points", $postData);
+        $response->dump();
 
         $response->assertStatus(200);
         $response->assertJsonFragment([
             'value'      => $metricPoint->value,
-            'created_at' => date('Y-m-d H:i:s', 1434369116),
+            'created_at' => date('Y-m-d H:i:00', 1434369116),
         ]);
     }
 

@@ -92,13 +92,17 @@ class MetricPoint extends Model implements HasPresenter
     /**
      * Round the created at value into intervals of 30 seconds.
      *
-     * @param string $value
+     * @param string $createdAt
      *
-     * @return void
+     * @return string|void
      */
-    public function setCreatedAtAttribute($value)
+    public function setCreatedAtAttribute($createdAt)
     {
-        $timestamp = $value->format('U');
+        if (!$createdAt) return;
+
+        $createdAt = Carbon::parse($createdAt);
+
+        $timestamp = $createdAt->format('U');
         $timestamp = 30 * round($timestamp / 30);
 
         return Carbon::createFromFormat('U', $timestamp)->toDateTimeString();
