@@ -13,6 +13,7 @@ namespace CachetHQ\Cachet\Models;
 
 use AltThree\Validator\ValidatingTrait;
 use CachetHQ\Cachet\Presenters\MetricPointPresenter;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use McCool\LaravelAutoPresenter\HasPresenter;
 
@@ -86,6 +87,21 @@ class MetricPoint extends Model implements HasPresenter
         }
 
         return round((float) $value, $this->metric->places);
+    }
+
+    /**
+     * Round the created at value into intervals of 30 seconds.
+     *
+     * @param string $value
+     *
+     * @return void
+     */
+    public function setCreatedAtAttribute($value)
+    {
+        $timestamp = $value->format('U');
+        $timestamp = 30 * round($timestamp / 30);
+
+        return Carbon::createFromFormat('U', $timestamp)->toDateTimeString();
     }
 
     /**
