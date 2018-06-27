@@ -98,7 +98,9 @@ class MetricPoint extends Model implements HasPresenter
      */
     public function setCreatedAtAttribute($createdAt)
     {
-        if (!$createdAt) return;
+        if (!$createdAt) {
+            return;
+        }
 
         $createdAt = Carbon::parse($createdAt);
 
