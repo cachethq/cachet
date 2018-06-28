@@ -14,9 +14,17 @@ namespace CachetHQ\Cachet\Models;
 use AltThree\Validator\ValidatingTrait;
 use CachetHQ\Cachet\Presenters\MetricPointPresenter;
 use Carbon\Carbon;
+use DateTime;
 use Illuminate\Database\Eloquent\Model;
 use McCool\LaravelAutoPresenter\HasPresenter;
 
+/**
+ * This is the metric point model class.
+ *
+ * @author James Brooks <james@alt-three.com>
+ * @author Joseph Cohen <joe@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
+ */
 class MetricPoint extends Model implements HasPresenter
 {
     use ValidatingTrait;
@@ -102,7 +110,9 @@ class MetricPoint extends Model implements HasPresenter
             return;
         }
 
-        $createdAt = Carbon::parse($createdAt);
+        if (!$createdAt instanceof DateTime) {
+            $createdAt = Carbon::parse($createdAt);
+        }
 
         $timestamp = $createdAt->format('U');
         $timestamp = 30 * round($timestamp / 30);
