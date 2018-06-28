@@ -60,7 +60,6 @@ class MetricPointTest extends AbstractApiTestCase
         ]);
 
         $response = $this->json('POST', "/api/v1/metrics/{$metric->id}/points", $metricPoint->toArray());
-
         $response->assertStatus(200);
         $response->assertJsonFragment(['value' => $metricPoint->value]);
     }
@@ -78,7 +77,6 @@ class MetricPointTest extends AbstractApiTestCase
         $postData['timestamp'] = $timestamp;
 
         $response = $this->json('POST', "/api/v1/metrics/{$metric->id}/points", $postData);
-        $response->dump();
 
         $response->assertStatus(200);
         $response->assertJsonFragment([
