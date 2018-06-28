@@ -120,7 +120,7 @@ class Incident extends Model implements HasPresenter
      * @var string[]
      */
     public $rules = [
-        'user_id'       => 'required|int',
+        'user_id'       => 'nullable|int',
         'component_id'  => 'nullable|int',
         'name'          => 'required|string',
         'status'        => 'required|int',

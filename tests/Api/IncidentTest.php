@@ -179,6 +179,23 @@ class IncidentTest extends AbstractApiTestCase
         ]);
     }
 
+    public function test_can_update_incident_when_no_user_is_associated()
+    {
+        $incident = factory(Incident::class)->create(['user_id' => null]);
+        $this->beUser();
+        $this->expectsEvents(IncidentWasUpdatedEvent::class);
+
+        $response = $this->json('PUT', '/api/v1/incidents/1', [
+            'name'     => 'Updated incident name',
+        ]);
+
+        $response->assertStatus(200);
+        $response->assertJsonFragment([
+            'name'    => 'Updated incident name',
+            'user_id' => null,
+        ]);
+    }
+
     public function test_can_delete_incident()
     {
         $this->beUser();
