@@ -20,7 +20,7 @@
                                 <label>{{ trans('forms.settings.app-setup.banner') }}</label>
                                 @if($appBanner)
                                 <div id="banner-view" class="well">
-                                    <img src="data:{{ $app_banner_type }};base64,{{ $appBanner }}" style="max-width: 100%">
+                                    <img src="data:{{ $appBannerType }};base64,{{ $appBanner }}" style="max-width: 100%">
                                     <br><br>
                                     <button id="remove-banner" class="btn btn-danger">{{ trans('forms.remove') }}</button>
                                 </div>
