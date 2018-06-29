@@ -35,7 +35,7 @@
                             <div class="col-xs-12">
                                 <div class="form-group">
                                     <label>{{ trans('forms.settings.analytics.analytics_piwik_url') }}</label>
-                                    <input type="text" name="app_analytics_piwik_url" class="form-control" value="{{ $appAnalyticsPiwikURL }}" placeholder="{{ trans('forms.settings.analytics.analytics_piwik_url') }}">
+                                    <input type="text" name="app_analytics_piwik_url" class="form-control" value="{{ $appAnalyticsPiwikUrl }}" placeholder="{{ trans('forms.settings.analytics.analytics_piwik_url') }}">
                                 </div>
                             </div>
                         </div>
@@ -43,7 +43,7 @@
                             <div class="col-xs-12">
                                 <div class="form-group">
                                     <label>{{ trans('forms.settings.analytics.analytics_piwik_siteid') }}</label>
-                                    <input type="number" min="1" max="100" name="app_analytics_piwik_site_id" class="form-control" value="{{ $appAnalyticsPiwikSiteID }}" placeholder="{{ trans('forms.settings.analytics.analytics_piwik_siteid') }}">
+                                    <input type="number" min="1" max="100" name="app_analytics_piwik_site_id" class="form-control" value="{{ $appAnalyticsPiwikSiteId }}" placeholder="{{ trans('forms.settings.analytics.analytics_piwik_siteid') }}">
                                 </div>
                             </div>
                         </div>
