@@ -1,6 +1,9 @@
 <script>
 const Vue = require('vue');
 
+Vue.component('report-incident', require('./ReportIncident'));
+Vue.component('invite-team', require('./InviteTeam'));
+
 module.exports = {
     props: ['user'],
     mounted () {
@@ -16,10 +19,6 @@ module.exports = {
         fetchSubscriberTimeline () {
             //
         }
-    },
-    components: {
-        'report-incident': require('./ReportIncident'),
-        'invite-team': require('./InviteTeam'),
     }
 }
 </script>
