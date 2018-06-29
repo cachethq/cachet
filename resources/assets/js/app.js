@@ -20,6 +20,11 @@ window.axios.defaults.headers.common = {
     'X-Requested-With': 'XMLHttpRequest'
 };
 
+/**
+ * Flatpickr.
+ */
+const Flatpickr = require('flatpickr');
+
 ((win, doc) => {
     /**
      * Next, we will create a fresh Vue application instance and attach it to
@@ -42,6 +47,13 @@ window.axios.defaults.headers.common = {
                     updateAvailable: false,
                 }
             }
+        },
+        mounted () {
+            Flatpickr('.flatpickr');
+
+            Flatpickr('.flatpickr-time', {
+                enableTime: true
+            });
         },
         components: {
             'setup': require('./components/Setup'),

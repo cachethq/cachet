@@ -118,7 +118,7 @@
                         </div>
                         <div class="form-group">
                             <label>{{ trans('forms.incidents.occurred_at') }}</label> <small class="text-muted">{{ trans('forms.optional') }}</small>
-                            <input type="text" name="occurred_at" class="form-control" rel="datepicker-custom" data-date-format="YYYY-MM-DD HH:mm" placeholder="{{ trans('forms.optional') }}">
+                            <input type="text" name="occurred_at" class="form-control flatpickr-time" data-date-format="Y-m-d H:i" placeholder="{{ trans('forms.optional') }}">
                         </div>
                         @if($notificationsEnabled)
                         <input type="hidden" name="notify" value="0">

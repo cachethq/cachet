@@ -4,6 +4,7 @@ $ionicons-font-path: "../../../fonts" !default;
 @import "./node_modules/ionicons/scss/ionicons";
 
 @import "modules/bootstrap";
+@import "plugins/flatpickr";
 
 html {
     position: relative;

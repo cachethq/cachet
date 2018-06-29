@@ -50,11 +50,11 @@
                     </div>
                     <div class="form-group">
                         <label>{{ trans('forms.schedules.scheduled_at') }}</label>
-                        <input type="text" name="scheduled_at" class="form-control" rel="datepicker-custom" data-date-format="YYYY-MM-DD HH:mm" value="{{ $schedule->scheduled_at_datetimepicker }}" required placeholder="{{ trans('forms.schedules.scheduled_at') }}">
+                        <input type="text" name="scheduled_at" class="form-control flatpickr-time" data-date-format="Y-m-d H:i" value="{{ $schedule->scheduled_at_datetimepicker }}" required placeholder="{{ trans('forms.schedules.scheduled_at') }}">
                     </div>
                     <div class="form-group">
                         <label>{{ trans('forms.schedules.completed_at') }}</label>
-                        <input type="text" name="completed_at" class="form-control" rel="datepicker-custom" data-date-format="YYYY-MM-DD HH:mm" value="{{ $schedule->completed_at_datetimepicker }}" placeholder="{{ trans('forms.schedules.completed_at') }}">
+                        <input type="text" name="completed_at" class="form-control flatpickr-time" data-date-format="Y-m-d H:i" value="{{ $schedule->completed_at_datetimepicker }}" placeholder="{{ trans('forms.schedules.completed_at') }}">
                     </div>
                 </fieldset>
 

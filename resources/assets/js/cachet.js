@@ -133,52 +133,6 @@ $(function () {
         }
     });
 
-    // Date picker.
-    $('input[rel=datepicker]').datetimepicker({
-        format: "DD/MM/YYYY HH:mm",
-        minDate: new Date(), // Don't allow dates before today.
-        sideBySide: true,
-        icons: {
-            time: 'ion-clock',
-            date: 'ion-android-calendar',
-            up: 'ion-ios-arrow-up',
-            down: 'ion-ios-arrow-down',
-            previous: 'ion-ios-arrow-left',
-            next: 'ion-ios-arrow-right',
-            today: 'ion-android-home',
-            clear: 'ion-trash-a',
-        }
-    });
-
-    $('input[rel=datepicker-any]').datetimepicker({
-        format: "DD/MM/YYYY HH:mm",
-        sideBySide: true,
-        icons: {
-            time: 'ion-clock',
-            date: 'ion-android-calendar',
-            up: 'ion-ios-arrow-up',
-            down: 'ion-ios-arrow-down',
-            previous: 'ion-ios-arrow-left',
-            next: 'ion-ios-arrow-right',
-            today: 'ion-android-home',
-            clear: 'ion-trash-a',
-        }
-    });
-
-    $('input[rel=datepicker-custom]').datetimepicker({
-        sideBySide: true,
-        icons: {
-            time: 'ion-clock',
-            date: 'ion-android-calendar',
-            up: 'ion-ios-arrow-up',
-            down: 'ion-ios-arrow-down',
-            previous: 'ion-ios-arrow-left',
-            next: 'ion-ios-arrow-right',
-            today: 'ion-android-home',
-            clear: 'ion-trash-a',
-        }
-    });
-
     // Sortable models.
     var orderableLists = document.querySelectorAll('[data-orderable-list]');
 
