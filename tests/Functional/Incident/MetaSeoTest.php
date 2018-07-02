@@ -71,7 +71,7 @@ class MetaSeoTest extends AbstractTestCase
         $expectedDescription = htmlspecialchars($this->fakerFactory->sentence);
 
         $incident = $this->createIncidentWithMeta(['seo' => ['description' => $expectedDescription]]);
-        $page = $this->get(sprintf('/incidents/%d', $incident->id))->response;
+        $page = $this->get(sprintf('/incidents/%d', $incident->id));
 
         $this->assertContains(
             sprintf('<meta property="og:description" content="%s">', $expectedDescription),
@@ -92,7 +92,7 @@ class MetaSeoTest extends AbstractTestCase
         $title = htmlspecialchars($this->fakerFactory->title);
 
         $incident = $this->createIncidentWithMeta(['seo' => ['title' => $title]]);
-        $page = $this->get(sprintf('/incidents/%d', $incident->id))->response;
+        $page = $this->get(sprintf('/incidents/%d', $incident->id));
 
         $this->assertContains(
             sprintf('<meta property="og:title" content="%s | %s">', $title, $this->appName),
@@ -120,7 +120,7 @@ class MetaSeoTest extends AbstractTestCase
             $presenter->occurred_at_formatted
         );
 
-        $page = $this->get(sprintf('/incidents/%d', $incident->id))->response;
+        $page = $this->get(sprintf('/incidents/%d', $incident->id));
 
         $this->assertContains(
             sprintf('<meta property="og:description" content="%s">', $expectedDescription),
@@ -141,7 +141,7 @@ class MetaSeoTest extends AbstractTestCase
         $incident = $this->createIncidentWithMeta([]);
         $expectedTitle = sprintf('%s | %s', htmlspecialchars($incident->name), $this->appName);
 
-        $page = $this->get(sprintf('/incidents/%d', $incident->id))->response;
+        $page = $this->get(sprintf('/incidents/%d', $incident->id));
 
         $this->assertContains(
             sprintf('<meta property="og:title" content="%s">', $expectedTitle),
