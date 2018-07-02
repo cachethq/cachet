@@ -12,8 +12,6 @@
 namespace CachetHQ\Cachet\Console\Commands;
 
 use CachetHQ\Cachet\Models\MetricPoint;
-use DateInterval;
-use DateTime;
 use Illuminate\Console\Command;
 use Illuminate\Console\ConfirmableTrait;
 use Symfony\Component\Console\Input\InputOption;
