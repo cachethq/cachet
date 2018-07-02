@@ -283,6 +283,7 @@ class InstallCommand extends Command
      */
     protected function configureCachet()
     {
+        $config = [];
         if ($this->confirm('Do you wish to use Cachet Beacon?')) {
             $config['CACHET_BEACON'] = 'true';
         }
