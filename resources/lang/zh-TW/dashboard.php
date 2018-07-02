@@ -18,23 +18,24 @@ return [
     'incidents' => [
         'title'                    => '事件與排程',
         'incidents'                => '事件',
-        'logged'                   => '{0} 做得好，沒有任何事件。|你記錄了一個事件。|你回報了 <strong>:count</strong> 個事件。',
+        'logged'                   => '{0} 目前沒有任何事件。|[1]你記錄了一個事件。|[2,*]你回報了 <strong>:count</strong> 個事件。',
         'incident-create-template' => '新增模板',
         'incident-templates'       => '事件模板',
         'updates'                  => [
-            'title'   => 'Incident updates for :incident',
-            'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
+            'title'   => '事件「:incident」的後續',
+            'count'   => '{0}沒有更新 |[1]一個更新 |[2]兩個更新 |[3, *]多個更新',
             'add'     => [
                 'title'   => 'Create new incident update',
-                'success' => 'Your new incident update has been created.',
-                'failure' => 'Something went wrong with the incident update.',
+                'success' => '您已建立了一個事件的後續',
+                'failure' => '更新事件後續時遇到了一些問題',
             ],
             'edit' => [
-                'title'   => 'Edit incident update',
-                'success' => 'The incident update has been updated.',
+                'title'   => '編輯事件後續更新',
+                'success' => '事件後續已更新',
                 'failure' => 'Something went wrong updating the incident update',
             ],
         ],
+        'reported_by'              => '由:user回報',
         'add'                      => [
             'title'   => '添加事件',
             'success' => 'Incident added.',
@@ -73,8 +74,8 @@ return [
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => '排程維護',
-        'logged'       => '{0} There are no schedules, good work.|You have logged one schedule.|You have reported <strong>:count</strong> schedules.',
+        'schedule'     => '維護',
+        'logged'       => '{0}There has been no Maintenance, good work.|[1]You have logged one schedule.|[2,*]You have reported <strong>:count</strong> schedules.',
         'scheduled_at' => '排程於 :timestamp',
         'add'          => [
             'title'   => 'Add Scheduled Maintenance',
@@ -157,12 +158,12 @@ return [
     'subscribers' => [
         'subscribers'          => '訂閱者',
         'description'          => 'Subscribers will receive email updates when incidents are created or components are updated.',
-        'description_disabled' => 'To use this feature, you need allow people to signup for notifications.',
+        'description_disabled' => '要使用此功能, 您需要允許使用者註冊通知。',
         'verified'             => '已認證',
         'not_verified'         => '未認證',
         'subscriber'           => ':email, subscribed :date',
         'no_subscriptions'     => 'Subscribed to all updates',
-        'global'               => 'Globally subscribed',
+        'global'               => '全域訂閱',
         'add'                  => [
             'title'   => '添加訂閱者',
             'success' => '訂閱者已添加成功.',

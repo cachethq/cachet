@@ -63,7 +63,7 @@ class CreateIncidentUpdateCommandHandler
         $update = IncidentUpdate::create($data);
 
         // Update the original incident with the new status.
-        dispatch(new UpdateIncidentCommand(
+        execute(new UpdateIncidentCommand(
             $command->incident,
             null,
             $command->status,

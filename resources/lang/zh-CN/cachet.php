@@ -75,12 +75,14 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'   => '订阅最新的更新。',
-        'unsubscribe' => '使用这个链接取消订阅： :link',
-        'button'      => '订阅',
-        'manage'      => [
+        'subscribe'           => '订阅最新的更新。',
+        'unsubscribe'         => 'Unsubscribe',
+        'button'              => '订阅',
+        'manage_subscription' => 'Manage subscription',
+        'manage'              => [
             'no_subscriptions' => '您当前已订阅所有更新。',
             'my_subscriptions' => '您当前已订阅下列更新',
+            'manage_at_link'   => '在 :link 管理你的订阅',
         ],
         'email' => [
             'subscribe'          => '订阅电子邮件更新。',
@@ -120,9 +122,9 @@ return [
     // Meta descriptions
     'meta' => [
         'description' => [
-            'incident'  => 'Details and updates about the :name incident that occurred on :date',
-            'schedule'  => 'Details about the scheduled maintenance period :name starting :startDate',
-            'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
+            'incident'  => '有关于发生在 :date 的 :name 事件的细节与更新',
+            'schedule'  => '有关于计划维护时段 :name ，开始于 :startDate，的细节说明',
+            'subscribe' => '订阅 :app 以接收故障更新和定期维护信息',
             'overview'  => '始终保持对 :app 服务状态的关注。',
         ],
     ],

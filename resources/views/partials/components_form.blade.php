@@ -1,5 +1,5 @@
-@if($component_groups->isNotEmpty())
-@foreach($component_groups as $componentGroup)
+@if($componentGroups->isNotEmpty())
+@foreach($componentGroups as $componentGroup)
 <ul class="list-group components">
     @if($componentGroup->enabled_components->isNotEmpty())
     <li class="list-group-item group-name">
@@ -21,12 +21,12 @@
 @endforeach
 @endif
 
-@if($ungrouped_components->isNotEmpty())
+@if($ungroupedComponents->isNotEmpty())
 <ul class="list-group components">
     <li class="list-group-item group-name">
         <strong>{{ trans('cachet.components.group.other') }}</strong>
     </li>
-    @foreach($ungrouped_components as $component)
+    @foreach($ungroupedComponents as $component)
     @include('partials.component_input', compact($component))
     @endforeach
 </ul>

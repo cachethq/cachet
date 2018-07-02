@@ -16,9 +16,9 @@ return [
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Incidencias y horario',
+        'title'                    => 'Incidencias y mantenimiento',
         'incidents'                => 'Incidentes',
-        'logged'                   => '{0} No hay incidencias, ¡buen trabajo!|Has registrado una incidencia.|Has reportado <strong>:count</strong> incidencias.',
+        'logged'                   => '{0} No hay incidencias, ¡buen trabajo!|[1]Has registrado una incidencia.|[2,*]Has reportado <strong>:count</strong> incidencias.',
         'incident-create-template' => 'Crear plantilla',
         'incident-templates'       => 'Plantillas de incidente',
         'updates'                  => [
@@ -35,6 +35,7 @@ return [
                 'failure' => 'Algo salió mal al actualizar la actualización del incidente',
             ],
         ],
+        'reported_by'              => 'Informado por :user',
         'add'                      => [
             'title'   => 'Reportar incidente',
             'success' => 'Incidente agregado.',
@@ -74,7 +75,7 @@ return [
     // Incident Maintenance
     'schedule' => [
         'schedule'     => 'Mantenimiento programado',
-        'logged'       => '{0} No hay planificaciones, buen trabajo.|Has registrado una planificación.|Has registrado <strong>:count</strong> planificaciones.',
+        'logged'       => '{0} No ha habido mantenimiento, buen trabajo.|[1]Has registrado una planificación.|[2,*]Has registrado <strong>:count</strong> planificaciones.',
         'scheduled_at' => 'Programado para :timestamp',
         'add'          => [
             'title'   => 'Agregar mantenimiento programado',

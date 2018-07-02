@@ -12,7 +12,7 @@
 <div class="content-wrapper">
     <div class="row">
         <div class="col-sm-12">
-            @include('dashboard.partials.errors')
+            @include('partials.errors')
             <form name="UserForm" class="form-vertical" role="form" action="/dashboard/team/{{ $user->id }}" method="POST">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <fieldset>
@@ -26,10 +26,10 @@
                     </div>
                     <div class="form-group">
                         <label>{{ trans('forms.user.password') }}</label>
-                        <input type="password" class="form-control password-strength" name="password" value="" {{ !$current_user->isAdmin ? "disabled": "" }} placeholder="{{ trans('forms.user.password') }}">
+                        <input type="password" class="form-control password-strength" name="password" value="" {{ !$currentUser->isAdmin ? "disabled": "" }} placeholder="{{ trans('forms.user.password') }}">
                         <div class="strengthify-wrapper"></div>
                     </div>
-                    @if($current_user->isAdmin)
+                    @if($currentUser->isAdmin)
                     <div class="form-group">
                         <label>{{ trans('forms.user.user_level') }}</label>
                         <select name="level" class="form-control">
@@ -42,9 +42,9 @@
 
                 <div class="form-group">
                     <button type="submit" class="btn btn-success">{{ trans('forms.update') }}</button>
-                    @if($current_user->isAdmin)
+                    @if($currentUser->isAdmin)
                     <a class="btn btn-info" href="{{ cachet_route('dashboard.user.api.regen', [$user->id]) }}">{{ trans('cachet.api.revoke') }}</a>
-                    @if($current_user->id != $user->id)
+                    @if($currentUser->id != $user->id)
                     <a class="btn btn-danger confirm-action" href="{{ cachet_route('dashboard.team.delete', [$user->id], 'delete') }}" data-method="DELETE">{{ trans('forms.delete') }}</a>
                     @endif
                     @endif

@@ -34,7 +34,7 @@ class ScheduleController extends AbstractApiController
      */
     public function index()
     {
-        $schedule = Schedule::whereRaw('1 = 1');
+        $schedule = Schedule::query();
 
         if ($sortBy = Binput::get('sort')) {
             $direction = Binput::has('order') && Binput::get('order') == 'desc';
@@ -67,7 +67,7 @@ class ScheduleController extends AbstractApiController
     public function store()
     {
         try {
-            $schedule = dispatch(new CreateScheduleCommand(
+            $schedule = execute(new CreateScheduleCommand(
                 Binput::get('name'),
                 Binput::get('message', null, false, false),
                 Binput::get('status'),
@@ -92,7 +92,7 @@ class ScheduleController extends AbstractApiController
     public function update(Schedule $schedule)
     {
         try {
-            $schedule = dispatch(new UpdateScheduleCommand(
+            $schedule = execute(new UpdateScheduleCommand(
                 $schedule,
                 Binput::get('name'),
                 Binput::get('message'),
@@ -118,7 +118,7 @@ class ScheduleController extends AbstractApiController
     public function destroy(Schedule $schedule)
     {
         try {
-            dispatch(new DeleteScheduleCommand($schedule));
+            execute(new DeleteScheduleCommand($schedule));
         } catch (QueryException $e) {
             throw new BadRequestHttpException();
         }

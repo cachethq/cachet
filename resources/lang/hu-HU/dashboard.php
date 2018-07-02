@@ -18,12 +18,12 @@ return [
     'incidents' => [
         'title'                    => 'Incidensek &amp; Ütemezés',
         'incidents'                => 'Incidensek',
-        'logged'                   => '{0} Nincs semmilyen incidens, szép munka.|Ön egy incidenst jelentett.|Ön összesen <strong>:count</strong> incidenst jelentett.',
+        'logged'                   => '{0}There are no incidents, good work.|[1]You have logged one incident.|[2,*]You have reported <strong>:count</strong> incidents.',
         'incident-create-template' => 'Sablon létrehozása',
         'incident-templates'       => 'Incidens Sablonok',
         'updates'                  => [
             'title'   => 'Incident updates for :incident',
-            'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
+            'count'   => '{0}Zero Updates|[1]One Update|[2]Two Updates|[3,*]Several Updates',
             'add'     => [
                 'title'   => 'Új incidens frissítés létrehozása',
                 'success' => 'Your new incident update has been created.',
@@ -35,6 +35,7 @@ return [
                 'failure' => 'Something went wrong updating the incident update',
             ],
         ],
+        'reported_by'              => 'Reported by :user',
         'add'                      => [
             'title'   => 'Incidens jelentése',
             'success' => 'Incidens létrehozva.',
@@ -74,7 +75,7 @@ return [
     // Incident Maintenance
     'schedule' => [
         'schedule'     => 'Ütemezett karbantartás',
-        'logged'       => '{0} Nincs semmilyen ütemterv, szép munka.|Ön egy ütemtervet regisztrált.|Ön összesen <strong>:count</strong> ütemtervet regisztrált.',
+        'logged'       => '{0}There has been no Maintenance, good work.|[1]You have logged one schedule.|[2,*]You have reported <strong>:count</strong> schedules.',
         'scheduled_at' => 'Ütemezve: :timestamp',
         'add'          => [
             'title'   => 'Ütemezett Karbantartás létrehozása',

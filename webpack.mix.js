@@ -1,5 +1,7 @@
 let mix = require('laravel-mix');
 
+require('laravel-mix-purgecss')
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -23,6 +25,7 @@ mix
     .copyDirectory('node_modules/ionicons/fonts', 'public/fonts')
     .sass('resources/assets/sass/dashboard.scss', 'public/dist/css/dashboard')
     .sass('resources/assets/sass/app.scss', 'public/dist/css')
+    .purgeCss()
     .options({
         processCssUrls: false
     })
@@ -34,7 +37,6 @@ mix
         'node_modules/jquery/dist/jquery.min.js',
         'node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js',
         'node_modules/moment/min/moment-with-locales.min.js',
-        'node_modules/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
         'node_modules/lodash/lodash.min.js',
         'node_modules/autosize/dist/autosize.min.js',
         'node_modules/messenger/build/js/messenger.min.js',

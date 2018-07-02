@@ -15,16 +15,20 @@ use AltThree\Validator\ValidationException;
 use CachetHQ\Cachet\Bus\Commands\Component\CreateComponentCommand;
 use CachetHQ\Cachet\Bus\Commands\Component\RemoveComponentCommand;
 use CachetHQ\Cachet\Bus\Commands\Component\UpdateComponentCommand;
-use CachetHQ\Cachet\Bus\Commands\ComponentGroup\CreateComponentGroupCommand;
-use CachetHQ\Cachet\Bus\Commands\ComponentGroup\RemoveComponentGroupCommand;
-use CachetHQ\Cachet\Bus\Commands\ComponentGroup\UpdateComponentGroupCommand;
+use CachetHQ\Cachet\Bus\Commands\Tag\ApplyTagCommand;
+use CachetHQ\Cachet\Bus\Commands\Tag\CreateTagCommand;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
-use CachetHQ\Cachet\Models\Tag;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\View;
 
+/**
+ * This is the component controller class.
+ *
+ * @author James Brooks <james@alt-three.com>
+ */
 class ComponentController extends Controller
 {
     /**
@@ -57,8 +61,8 @@ class ComponentController extends Controller
         ];
 
         View::share([
-            'sub_menu'  => $this->subMenu,
-            'sub_title' => trans_choice('dashboard.components.components', 2),
+            'subMenu'  => $this->subMenu,
+            'subTitle' => trans_choice('dashboard.components.components', 2),
         ]);
     }
 
@@ -76,21 +80,6 @@ class ComponentController extends Controller
         return View::make('dashboard.components.index')
             ->withPageTitle(trans_choice('dashboard.components.components', 2).' - '.trans('dashboard.dashboard'))
             ->withComponents($components)
-            ->withSubMenu($this->subMenu);
-    }
-
-    /**
-     * Shows the component groups view.
-     *
-     * @return \Illuminate\View\View
-     */
-    public function showComponentGroups()
-    {
-        $this->subMenu['groups']['active'] = true;
-
-        return View::make('dashboard.components.groups.index')
-            ->withPageTitle(trans_choice('dashboard.components.groups.groups', 2).' - '.trans('dashboard.dashboard'))
-            ->withGroups(ComponentGroup::orderBy('order')->get())
             ->withSubMenu($this->subMenu);
     }
 
@@ -126,7 +115,7 @@ class ComponentController extends Controller
         $tags = array_pull($componentData, 'tags');
 
         try {
-            $component = dispatch(new UpdateComponentCommand(
+            $component = execute(new UpdateComponentCommand(
                 $component,
                 $componentData['name'],
                 $componentData['description'],
@@ -145,15 +134,16 @@ class ComponentController extends Controller
                 ->withErrors($e->getMessageBag());
         }
 
+        $component->tags()->delete();
+
         // The component was added successfully, so now let's deal with the tags.
-        $tags = preg_split('/ ?, ?/', $tags);
-
-        // For every tag, do we need to create it?
-        $componentTags = array_map(function ($taggable) {
-            return Tag::firstOrCreate(['name' => $taggable])->id;
-        }, $tags);
-
-        $component->tags()->sync($componentTags);
+        Collection::make(preg_split('/ ?, ?/', $tags))->map(function ($tag) {
+            return trim($tag);
+        })->map(function ($tag) {
+            return execute(new CreateTagCommand($tag));
+        })->each(function ($tag) use ($component) {
+            execute(new ApplyTagCommand($component, $tag));
+        });
 
         return cachet_redirect('dashboard.components.edit', [$component->id])
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.components.edit.success')));
@@ -182,7 +172,7 @@ class ComponentController extends Controller
         $tags = array_pull($componentData, 'tags');
 
         try {
-            $component = dispatch(new CreateComponentCommand(
+            $component = execute(new CreateComponentCommand(
                 $componentData['name'],
                 $componentData['description'],
                 $componentData['status'],
@@ -200,14 +190,13 @@ class ComponentController extends Controller
         }
 
         // The component was added successfully, so now let's deal with the tags.
-        $tags = preg_split('/ ?, ?/', $tags);
-
-        // For every tag, do we need to create it?
-        $componentTags = array_map(function ($taggable) {
-            return Tag::firstOrCreate(['name' => $taggable])->id;
-        }, $tags);
-
-        $component->tags()->sync($componentTags);
+        Collection::make(preg_split('/ ?, ?/', $tags))->map(function ($tag) {
+            return trim($tag);
+        })->map(function ($tag) {
+            return execute(new CreateTagCommand($tag));
+        })->each(function ($tag) use ($component) {
+            execute(new ApplyTagCommand($component, $tag));
+        });
 
         return cachet_redirect('dashboard.components')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.components.add.success')));
@@ -222,102 +211,9 @@ class ComponentController extends Controller
      */
     public function deleteComponentAction(Component $component)
     {
-        dispatch(new RemoveComponentCommand($component));
+        execute(new RemoveComponentCommand($component));
 
         return cachet_redirect('dashboard.components')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.components.delete.success')));
-    }
-
-    /**
-     * Deletes a given component group.
-     *
-     * @param \CachetHQ\Cachet\Models\ComponentGroup $group
-     *
-     * @return \Illuminate\Http\RedirectResponse
-     */
-    public function deleteComponentGroupAction(ComponentGroup $group)
-    {
-        dispatch(new RemoveComponentGroupCommand($group));
-
-        return cachet_redirect('dashboard.components.groups')
-            ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.components.delete.success')));
-    }
-
-    /**
-     * Shows the add component group view.
-     *
-     * @return \Illuminate\View\View
-     */
-    public function showAddComponentGroup()
-    {
-        return View::make('dashboard.components.groups.add')
-            ->withPageTitle(trans('dashboard.components.groups.add.title').' - '.trans('dashboard.dashboard'));
-    }
-
-    /**
-     * Shows the edit component group view.
-     *
-     * @param \CachetHQ\Cachet\Models\ComponentGroup $group
-     *
-     * @return \Illuminate\View\View
-     */
-    public function showEditComponentGroup(ComponentGroup $group)
-    {
-        return View::make('dashboard.components.groups.edit')
-            ->withPageTitle(trans('dashboard.components.groups.edit.title').' - '.trans('dashboard.dashboard'))
-            ->withGroup($group);
-    }
-
-    /**
-     * Creates a new component.
-     *
-     * @return \Illuminate\Http\RedirectResponse
-     */
-    public function postAddComponentGroup()
-    {
-        try {
-            $group = dispatch(new CreateComponentGroupCommand(
-                Binput::get('name'),
-                Binput::get('order', 0),
-                Binput::get('collapsed'),
-                Binput::get('visible')
-            ));
-        } catch (ValidationException $e) {
-            return cachet_redirect('dashboard.components.groups.create')
-                ->withInput(Binput::all())
-                ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.components.groups.add.failure')))
-                ->withErrors($e->getMessageBag());
-        }
-
-        return cachet_redirect('dashboard.components.groups')
-            ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.components.groups.add.success')));
-    }
-
-    /**
-     * Updates a component group.
-     *
-     * @param \CachetHQ\Cachet\Models\ComponentGroup $group
-     *
-     * @return \Illuminate\Http\RedirectResponse
-     */
-    public function updateComponentGroupAction(ComponentGroup $group)
-    {
-        try {
-            $group = dispatch(new UpdateComponentGroupCommand(
-                $group,
-                Binput::get('name'),
-                $group->order,
-                Binput::get('collapsed'),
-                Binput::get('visible')
-            ));
-        } catch (ValidationException $e) {
-            return cachet_redirect('dashboard.components.groups.edit', [$group->id])
-                ->withInput(Binput::all())
-                ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.components.groups.edit.failure')))
-                ->withErrors($e->getMessageBag());
-        }
-
-        return cachet_redirect('dashboard.components.groups.edit', [$group->id])
-            ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.components.groups.edit.success')));
     }
 }

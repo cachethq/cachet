@@ -12,7 +12,7 @@
 namespace CachetHQ\Tests\Cachet\Bus\Jobs;
 
 use AltThree\TestBench\ExistenceTrait;
-use PHPUnit_Framework_TestCase as TestCase;
+use PHPUnit\Framework\TestCase;
 
 /**
  * This is the job existence test class.

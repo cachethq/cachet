@@ -1,6 +1,6 @@
 @extends('layout.master')
 
-@section('title', trans('cachet.signup.title').' | '.$site_title)
+@section('title', trans('cachet.signup.title').' | '.$siteTitle)
 
 @section('content')
 <div class="pull-right">
@@ -9,19 +9,19 @@
 
 <div class="clearfix"></div>
 
-@if($app_banner)
+@if($appBanner)
 <div class="row app-banner">
     <div class="col-md-12 text-center">
-        @if($app_domain)
-        <a href="{{ $app_domain }}"><img src="data:{{ $app_banner_type }};base64, {{ $app_banner }}" class="banner-image img-responsive"></a>
+        @if($appDomain)
+        <a href="{{ $appDomain }}"><img src="data:{{ $appBannerType }};base64, {{ $appBanner }}" class="banner-image img-responsive"></a>
         @else
-        <img src="data:{{ $app_banner_type }};base64, {{ $app_banner }}" class="banner-image img-responsive">
+        <img src="data:{{ $appBannerType }};base64, {{ $appBanner }}" class="banner-image img-responsive">
         @endif
     </div>
 </div>
 @endif
 
-@include('dashboard.partials.errors')
+@include('partials.errors')
 
 <div class="panel panel-meassage">
     <div class="panel-heading">

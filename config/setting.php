@@ -111,4 +111,16 @@ return [
     */
 
     'only_disrupted_days' => false,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Always authenticate
+    |--------------------------------------------------------------------------
+    |
+    | Whether to lock down Cachet and only allow viewing pages
+    | when authenticated.
+    |
+    */
+
+    'always_authenticate' => false,
 ];

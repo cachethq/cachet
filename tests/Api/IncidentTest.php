@@ -11,6 +11,13 @@
 
 namespace CachetHQ\Tests\Cachet\Api;
 
+use CachetHQ\Cachet\Bus\Events\Incident\IncidentWasCreatedEvent;
+use CachetHQ\Cachet\Bus\Events\Incident\IncidentWasRemovedEvent;
+use CachetHQ\Cachet\Bus\Events\Incident\IncidentWasUpdatedEvent;
+use CachetHQ\Cachet\Models\Component;
+use CachetHQ\Cachet\Models\Incident;
+use CachetHQ\Cachet\Models\IncidentTemplate;
+
 /**
  * This is the incident test class.
  *
@@ -19,59 +26,73 @@ namespace CachetHQ\Tests\Cachet\Api;
  */
 class IncidentTest extends AbstractApiTestCase
 {
-    public function testGetIncidents()
+    public function test_can_get_all_incidents()
     {
-        $incidents = factory('CachetHQ\Cachet\Models\Incident', 3)->create();
+        $incidents = factory(Incident::class, 3)->create();
 
-        $this->get('/api/v1/incidents');
-        $this->seeJsonContains(['id' => $incidents[0]->id]);
-        $this->seeJsonContains(['id' => $incidents[1]->id]);
-        $this->seeJsonContains(['id' => $incidents[2]->id]);
-        $this->assertResponseOk();
+        $response = $this->json('GET', '/api/v1/incidents');
+
+        $response->assertStatus(200);
+
+        $response->assertJsonFragment(['id' => $incidents[0]->id]);
+        $response->assertJsonFragment(['id' => $incidents[1]->id]);
+        $response->assertJsonFragment(['id' => $incidents[2]->id]);
     }
 
-    public function testGetInvalidIncident()
+    public function test_cannot_get_invalid_component()
     {
-        $this->get('/api/v1/incidents/0');
-        $this->assertResponseStatus(404);
+        $response = $this->json('GET', '/api/v1/incidents/0');
+
+        $response->assertStatus(404);
     }
 
-    public function testPostIncidentUnauthorized()
+    public function test_cannot_create_incident_without_authorization()
     {
-        $this->post('/api/v1/incidents');
-        $this->assertResponseStatus(401);
+        $this->doesntExpectEvents(IncidentWasCreatedEvent::class);
+
+        $response = $this->json('POST', '/api/v1/incidents');
+
+        $response->assertStatus(401);
     }
 
-    public function testPostIncidentNoData()
+    public function test_cannot_create_incident_with_missing_data()
     {
         $this->beUser();
 
-        $this->post('/api/v1/incidents');
-        $this->assertResponseStatus(400);
+        $this->doesntExpectEvents(IncidentWasCreatedEvent::class);
+
+        $response = $this->json('POST', '/api/v1/incidents');
+
+        $response->assertStatus(400);
     }
 
-    public function testPostIncident()
+    public function test_can_create_incident()
     {
         $this->beUser();
 
-        $this->post('/api/v1/incidents', [
+        $this->expectsEvents(IncidentWasCreatedEvent::class);
+
+        $response = $this->json('POST', '/api/v1/incidents', [
             'name'     => 'Foo',
             'message'  => 'Lorem ipsum dolor sit amet',
             'status'   => 1,
             'visible'  => 1,
             'stickied' => false,
         ]);
-        $this->seeJsonContains(['name' => 'Foo']);
-        $this->assertResponseOk();
+
+        $response->assertStatus(200);
+        $response->assertJsonFragment(['name' => 'Foo']);
     }
 
-    public function testPostIncidentWithComponentStatus()
+    public function test_can_create_incident_with_component_status()
     {
-        $component = factory('CachetHQ\Cachet\Models\Component')->create();
+        $component = factory(Component::class)->create();
 
         $this->beUser();
 
-        $this->post('/api/v1/incidents', [
+        $this->expectsEvents(IncidentWasCreatedEvent::class);
+
+        $response = $this->json('POST', '/api/v1/incidents', [
             'name'             => 'Foo',
             'message'          => 'Lorem ipsum dolor sit amet',
             'status'           => 1,
@@ -80,16 +101,19 @@ class IncidentTest extends AbstractApiTestCase
             'visible'          => 1,
             'stickied'         => false,
         ]);
-        $this->seeJsonContains(['name' => 'Foo']);
-        $this->assertResponseOk();
+
+        $response->assertStatus(200);
+        $response->assertJsonFragment(['name' => 'Foo']);
     }
 
-    public function testCreateIncidentWithTemplate()
+    public function test_can_create_incident_with_template()
     {
-        $template = factory('CachetHQ\Cachet\Models\IncidentTemplate')->create();
+        $template = factory(IncidentTemplate::class)->create();
         $this->beUser();
 
-        $this->post('/api/v1/incidents', [
+        $this->expectsEvents(IncidentWasCreatedEvent::class);
+
+        $response = $this->json('POST', '/api/v1/incidents', [
             'name'     => 'Foo',
             'status'   => 1,
             'visible'  => 1,
@@ -100,66 +124,97 @@ class IncidentTest extends AbstractApiTestCase
                 'message' => 'Hello there this is a foo!',
             ],
         ]);
-        $this->seeJsonContains([
+
+        $response->assertStatus(200);
+        $response->assertJsonFragment([
             'name'    => 'Foo',
             'message' => "Name: Foo,\nMessage: Hello there this is a foo!",
         ]);
     }
 
-    public function testGetNewIncident()
+    public function test_can_get_newly_created_incident()
     {
-        $incident = factory('CachetHQ\Cachet\Models\Incident')->create();
+        $incident = factory(Incident::class)->create();
 
-        $this->get('/api/v1/incidents/1');
-        $this->seeJsonContains(['name' => $incident->name]);
-        $this->assertResponseOk();
+        $response = $this->json('GET', '/api/v1/incidents/1');
+
+        $response->assertStatus(200);
+        $response->assertJsonFragment(['name' => $incident->name]);
     }
 
-    public function testPutIncident()
+    public function test_can_update_incident()
     {
         $this->beUser();
-        $component = factory('CachetHQ\Cachet\Models\Incident')->create();
+        $incident = factory(Incident::class)->create();
 
-        $this->put('/api/v1/incidents/1', [
+        $this->expectsEvents(IncidentWasUpdatedEvent::class);
+
+        $response = $this->json('PUT', '/api/v1/incidents/1', [
             'name' => 'Foo',
         ]);
-        $this->seeJsonContains(['name' => 'Foo']);
-        $this->assertResponseOk();
+
+        $response->assertStatus(200);
+        $response->assertJsonFragment(['name' => 'Foo']);
     }
 
-    public function testPutIncidentWithTemplate()
+    public function test_can_update_incident_with_template()
     {
         $this->beUser();
-        $template = factory('CachetHQ\Cachet\Models\IncidentTemplate')->create([
+        $template = factory(IncidentTemplate::class)->create([
             'template' => 'Hello there this is a foo in my {{ incident.name }}!',
         ]);
-        $component = factory('CachetHQ\Cachet\Models\Incident')->create();
+        $incident = factory(Incident::class)->create();
 
-        $this->put('/api/v1/incidents/1', [
+        $this->expectsEvents(IncidentWasUpdatedEvent::class);
+
+        $response = $this->json('PUT', '/api/v1/incidents/1', [
             'name'     => 'Foo',
             'template' => $template->slug,
         ]);
-        $this->seeJsonContains([
+
+        $response->assertStatus(200);
+        $response->assertJsonFragment([
             'name'    => 'Foo',
             'message' => 'Hello there this is a foo in my Foo!',
         ]);
-        $this->assertResponseOk();
     }
 
-    public function testDeleteIncident()
+    public function test_can_update_incident_when_no_user_is_associated()
     {
+        $incident = factory(Incident::class)->create(['user_id' => null]);
         $this->beUser();
-        $component = factory('CachetHQ\Cachet\Models\Incident')->create();
+        $this->expectsEvents(IncidentWasUpdatedEvent::class);
 
-        $this->delete('/api/v1/incidents/1');
-        $this->assertResponseStatus(204);
+        $response = $this->json('PUT', '/api/v1/incidents/1', [
+            'name'     => 'Updated incident name',
+        ]);
+
+        $response->assertStatus(200);
+        $response->assertJsonFragment([
+            'name'    => 'Updated incident name',
+            'user_id' => null,
+        ]);
     }
 
-    public function testCreateIncidentWithMeta()
+    public function test_can_delete_incident()
+    {
+        $this->beUser();
+        $incident = factory(Incident::class)->create();
+
+        $this->expectsEvents(IncidentWasRemovedEvent::class);
+
+        $response = $this->json('DELETE', '/api/v1/incidents/1');
+
+        $response->assertStatus(204);
+    }
+
+    public function test_can_create_incident_with_meta_data()
     {
         $this->beUser();
 
-        $this->post('/api/v1/incidents', [
+        $this->expectsEvents(IncidentWasCreatedEvent::class);
+
+        $response = $this->json('POST', '/api/v1/incidents', [
             'name'    => 'Foo',
             'message' => 'Lorem ipsum dolor sit amet',
             'status'  => 1,
@@ -167,11 +222,12 @@ class IncidentTest extends AbstractApiTestCase
                 'id' => 123456789,
             ],
         ]);
-        $this->seeJsonContains([
+
+        $response->assertStatus(200);
+        $response->assertJsonFragment([
             'meta' => [
                 'id' => 123456789,
             ],
         ]);
-        $this->assertResponseOk();
     }
 }

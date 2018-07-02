@@ -12,12 +12,12 @@
   "devDependencies": {
     "animate-sass": "^0.8.2",
     "autosize": "^3.0.20",
-    "axios": "^0.15.2",
+    "axios": "^0.18",
     "bootstrap-sass": "^3.3.6",
     "chart.js": "^2.7.0",
-    "cross-env": "^5.0.1",
-    "eonasdan-bootstrap-datetimepicker": "^4.17.46",
+    "cross-env": "^5.1",
     "es5-shim": "^4.5.9",
+    "flatpickr": "^4.5.0",
     "github-markdown-css": "^2.3.0",
     "gulp": "^3.9.1",
     "ionicons": "~2.0",
@@ -25,7 +25,8 @@
     "jquery-minicolors": "^2.1.10",
     "jquery-serializeobject": "^1.0.0",
     "jquery-sparkline": "^2.4.0",
-    "laravel-mix": "^1.4",
+    "laravel-mix": "^2.1",
+    "laravel-mix-purgecss": "^2.2.0",
     "livestamp": "git+https://github.com/mattbradley/livestampjs.git#develop",
     "lodash": "^4.17.4",
     "messenger": "git+https://github.com/HubSpot/messenger.git",
@@ -33,7 +34,8 @@
     "promise": "^7.3.1",
     "sortablejs": "^1.6.1",
     "sweetalert2": "^6.8.0",
-    "vue": "^2.4.4"
+    "vue": "^2.5.16",
+    "vue-template-compiler": "^2.5.16"
   },
   "private": true
 }

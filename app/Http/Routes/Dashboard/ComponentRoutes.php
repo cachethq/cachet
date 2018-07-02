@@ -58,29 +58,29 @@ class ComponentRoutes
 
             $router->get('groups', [
                 'as'   => 'get:dashboard.components.groups',
-                'uses' => 'ComponentController@showComponentGroups',
+                'uses' => 'ComponentGroupController@showComponentGroups',
             ]);
 
             $router->get('groups/create', [
                 'as'   => 'get:dashboard.components.groups.create',
-                'uses' => 'ComponentController@showAddComponentGroup',
+                'uses' => 'ComponentGroupController@showAddComponentGroup',
             ]);
             $router->post('groups/create', [
                 'as'   => 'post:dashboard.components.groups.create',
-                'uses' => 'ComponentController@postAddComponentGroup',
+                'uses' => 'ComponentGroupController@postAddComponentGroup',
             ]);
 
             $router->get('groups/{component_group}', [
                 'as'   => 'get:dashboard.components.groups.edit',
-                'uses' => 'ComponentController@showEditComponentGroup',
+                'uses' => 'ComponentGroupController@showEditComponentGroup',
             ]);
             $router->post('groups/{component_group}', [
                 'as'   => 'post:dashboard.components.groups.edit',
-                'uses' => 'ComponentController@updateComponentGroupAction',
+                'uses' => 'ComponentGroupController@updateComponentGroupAction',
             ]);
             $router->delete('groups/{component_group}', [
                 'as'   => 'delete:dashboard.components.groups.delete',
-                'uses' => 'ComponentController@deleteComponentGroupAction',
+                'uses' => 'ComponentGroupController@deleteComponentGroupAction',
             ]);
 
             $router->get('{component}', [

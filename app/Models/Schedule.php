@@ -18,6 +18,7 @@ use CachetHQ\Cachet\Presenters\SchedulePresenter;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use McCool\LaravelAutoPresenter\HasPresenter;
 
 /**
@@ -27,7 +28,7 @@ use McCool\LaravelAutoPresenter\HasPresenter;
  */
 class Schedule extends Model implements HasPresenter
 {
-    use SearchableTrait, SortableTrait, ValidatingTrait;
+    use SearchableTrait, SoftDeletes, SortableTrait, ValidatingTrait;
 
     /**
      * The upcoming status.
@@ -143,7 +144,7 @@ class Schedule extends Model implements HasPresenter
     }
 
     /**
-     * Get all of the meta relation.
+     * Get the meta relation.
      *
      * @return \Illuminate\Database\Eloquent\Relations\MorphMany
      */
@@ -161,7 +162,7 @@ class Schedule extends Model implements HasPresenter
      */
     public function scopeInProgress(Builder $query)
     {
-        return $query->where('scheduled_at', '<=', Carbon::now())->where('status', '!=', self::COMPLETE)->where(function ($query) {
+        return $query->where('scheduled_at', '<=', Carbon::now())->where('status', '<>', self::COMPLETE)->where(function ($query) {
             $query->whereNull('completed_at')->orWhere('completed_at', '>', Carbon::now());
         });
     }

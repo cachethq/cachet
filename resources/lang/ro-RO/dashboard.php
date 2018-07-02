@@ -18,12 +18,12 @@ return [
     'incidents' => [
         'title'                    => 'Incidente &amp; Planificare',
         'incidents'                => 'Incidente',
-        'logged'                   => '{0} Nu sunt incidente, bravo! | Ai adăugat un incident. | Ai raportat <strong>:count</strong> incidente.',
+        'logged'                   => '{0}There are no incidents, good work.|[1]You have logged one incident.|[2,*]You have reported <strong>:count</strong> incidents.',
         'incident-create-template' => 'Crează şablon',
         'incident-templates'       => 'Şabloane incident',
         'updates'                  => [
             'title'   => 'Incident updates for :incident',
-            'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
+            'count'   => '{0}Zero Updates|[1]One Update|[2]Two Updates|[3,*]Several Updates',
             'add'     => [
                 'title'   => 'Adaugă o nouă actualizare a incidentului',
                 'success' => 'Your new incident update has been created.',
@@ -35,6 +35,7 @@ return [
                 'failure' => 'Something went wrong updating the incident update',
             ],
         ],
+        'reported_by'              => 'Reported by :user',
         'add'                      => [
             'title'   => 'Raportează un incident',
             'success' => 'Incidentul a fost adăugat.',
@@ -74,7 +75,7 @@ return [
     // Incident Maintenance
     'schedule' => [
         'schedule'     => 'Întreținere programată',
-        'logged'       => '{0} Nu există programări, bravo.|Ai o singură programare.|Ai <strong>:count</strong> programări.',
+        'logged'       => '{0}There has been no Maintenance, good work.|[1]You have logged one schedule.|[2,*]You have reported <strong>:count</strong> schedules.',
         'scheduled_at' => 'Programat la :timestamp',
         'add'          => [
             'title'   => 'Adăugaţi Programare Mentenanţă',

@@ -53,7 +53,7 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] Sistem çalışır durumda| [2, Inf] Tüm sistemler çalışır durumda',
+        'good'  => '[0,1]System operational|[2,*]All systems are operational',
         'bad'   => '[0,1] Sistemde şu anda sorunlar yaşanıyor [2, Inf] Bazı sistemlerde sorunlar yaşanıyor',
         'major' => '[0,1] Bu serviste büyük bir kesinti yaşıyoruz [2, Inf] Bazı sistemlerde büyük bir kesintisi yaşıyoruz',
     ],
@@ -75,12 +75,14 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'   => 'Güncellemeleri almak için abone olun',
-        'unsubscribe' => 'Adresindeki aboneliği iptal et :link',
-        'button'      => 'Abone ol',
-        'manage'      => [
+        'subscribe'           => 'Güncellemeleri almak için abone olun',
+        'unsubscribe'         => 'Unsubscribe',
+        'button'              => 'Abone ol',
+        'manage_subscription' => 'Manage subscription',
+        'manage'              => [
             'no_subscriptions' => 'Şu anda tüm güncellemeleri abone oldunuz.',
             'my_subscriptions' => 'Şu an aşağıdaki güncellemelere abone oldunuz.',
+            'manage_at_link'   => 'Manage your subscriptions at :link',
         ],
         'email' => [
             'subscribe'          => 'Güncellemeler için abone ol.',

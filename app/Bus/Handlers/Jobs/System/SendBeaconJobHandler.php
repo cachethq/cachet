@@ -44,7 +44,7 @@ class SendBeaconJobHandler
     /**
      * Handle the send beacon job.
      *
-     * @param \CachetHQ\Cachet\Bus\Jobs\SendBeaconJob $job
+     * @param \CachetHQ\Cachet\Bus\Jobs\System\SendBeaconJob $job
      *
      * @return void
      */

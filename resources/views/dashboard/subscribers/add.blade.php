@@ -12,7 +12,7 @@
 <div class="content-wrapper">
     <div class="row">
         <div class="col-sm-12">
-        @include('dashboard.partials.errors')
+        @include('partials.errors')
         <form name="SubscriberForm" class="form-vertical" role="form" action="{{ cachet_route('dashboard.subscribers.create', [], 'post') }}" method="POST">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <fieldset>

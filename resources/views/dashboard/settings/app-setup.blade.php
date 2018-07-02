@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="content-panel">
-    @includeWhen(isset($sub_menu), 'dashboard.partials.sub-sidebar')
+    @includeWhen(isset($subMenu), 'dashboard.partials.sub-sidebar')
     <div class="content-wrapper">
         <div class="header sub-header" id="application-setup">
             <span class="uppercase">
@@ -13,13 +13,13 @@
             <div class="col-sm-12">
                 <form id="settings-form" name="SettingsForm" class="form-vertical" role="form" action="{{ cachet_route('dashboard.settings', [], 'post') }}" method="POST">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    @include('dashboard.partials.errors')
+                    @include('partials.errors')
                     <fieldset>
                         <div class="row">
                             <div class="col-xs-12">
                                 <div class="form-group">
                                     <label>{{ trans('forms.settings.app-setup.site-name') }}</label>
-                                    <input type="text" class="form-control" name="app_name" value="{{ $app_name }}" required placeholder="{{ trans('forms.settings.app-setup.site-name') }}">
+                                    <input type="text" class="form-control" name="app_name" value="{{ $appName }}" required placeholder="{{ trans('forms.settings.app-setup.site-name') }}">
                                 </div>
                             </div>
                         </div>
@@ -27,7 +27,7 @@
                             <div class="col-xs-12">
                                 <div class="form-group">
                                     <label>{{ trans('forms.settings.app-setup.site-url') }}</label>
-                                    <input type="text" class="form-control" name="app_domain" value="{{ $app_domain }}" required placeholder="{{ trans('forms.settings.app-setup.site-url') }}">
+                                    <input type="text" class="form-control" name="app_domain" value="{{ $appDomain }}" required placeholder="{{ trans('forms.settings.app-setup.site-url') }}">
                                 </div>
                             </div>
                         </div>
@@ -36,7 +36,7 @@
                                 <div class="form-group">
                                     <label>{{ trans('forms.settings.app-setup.about-this-page') }}</label>
                                     <div class='markdown-control'>
-                                        <textarea name="app_about" class="form-control autosize" rows="4" placeholder="{{ trans('forms.settings.app-setup.about-this-page') }}">{{ $raw_app_about }}</textarea>
+                                        <textarea name="app_about" class="form-control autosize" rows="4" placeholder="{{ trans('forms.settings.app-setup.about-this-page') }}">{{ $rawAppAbout }}</textarea>
                                     </div>
                                 </div>
                             </div>
@@ -54,6 +54,14 @@
                                 <div class="form-group">
                                     <label>{{ trans('forms.settings.app-setup.time_before_refresh') }}</label>
                                     <input type="number" name="app_refresh_rate" class="form-control" value="{{ Config::get('setting.app_refresh_rate', 0) }}" placeholder="{{ trans('forms.settings.app-setup.time_before_refresh') }}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label>{{ trans('forms.settings.app-setup.major_outage_rate') }}</label>
+                                    <input type="number" name="major_outage_rate" class="form-control" value="{{ Config::get('setting.major_outage_rate', 50) }}" placeholder="{{ trans('forms.settings.app-setup.major_outage_rate') }}">
                                 </div>
                             </div>
                         </div>
@@ -95,7 +103,7 @@
                                 <div class="checkbox">
                                     <label>
                                         <input type="hidden" value="0" name="display_graphs">
-                                        <input type="checkbox" value="1" name="display_graphs" {{ $app_graphs ? 'checked' : null }}>
+                                        <input type="checkbox" value="1" name="display_graphs" {{ $appGraphs ? 'checked' : null }}>
                                         {{ trans('forms.settings.app-setup.display-graphs') }}
                                     </label>
                                 </div>
@@ -106,7 +114,7 @@
                                 <div class="checkbox">
                                     <label>
                                         <input type="hidden" value="0" name="show_support">
-                                        <input type="checkbox" value="1" name="show_support" {{ $show_support ? 'checked' : null }}>
+                                        <input type="checkbox" value="1" name="show_support" {{ $showSupport ? 'checked' : null }}>
                                         {{ trans('setup.show_support') }}
                                     </label>
                                 </div>
@@ -117,7 +125,7 @@
                                 <div class="checkbox">
                                     <label>
                                         <input type="hidden" value="0" name="enable_external_dependencies">
-                                        <input type="checkbox" value="1" name="enable_external_dependencies" {{ $enable_external_dependencies ? 'checked' : null }}>
+                                        <input type="checkbox" value="1" name="enable_external_dependencies" {{ $enableExternalDependencies ? 'checked' : null }}>
                                         {{ trans('forms.settings.app-setup.enable_external_dependencies') }}
                                     </label>
                                 </div>
@@ -128,7 +136,7 @@
                                 <div class="checkbox">
                                     <label>
                                         <input type="hidden" value="0" name="show_timezone">
-                                        <input type="checkbox" value="1" name="show_timezone" {{ $show_timezone ? 'checked' : null }}>
+                                        <input type="checkbox" value="1" name="show_timezone" {{ $showTimezone ? 'checked' : null }}>
                                         {{ trans('forms.settings.app-setup.show_timezone') }}
                                     </label>
                                 </div>
@@ -139,7 +147,7 @@
                                 <div class="checkbox">
                                     <label>
                                         <input type="hidden" value="0" name="only_disrupted_days">
-                                        <input type="checkbox" value="1" name="only_disrupted_days" {{ $only_disrupted_days ? 'checked' : null }}>
+                                        <input type="checkbox" value="1" name="only_disrupted_days" {{ $onlyDisruptedDays ? 'checked' : null }}>
                                         {{ trans('forms.settings.app-setup.only_disrupted_days') }}
                                     </label>
                                 </div>

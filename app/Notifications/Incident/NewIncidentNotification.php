@@ -75,11 +75,16 @@ class NewIncidentNotification extends Notification
 
         return (new MailMessage())
                     ->subject(trans('notifications.incident.new.mail.subject'))
-                    ->greeting(trans('notifications.incident.new.mail.greeting', ['app_name' => Config::get('setting.app_name')]))
-                    ->line($content)
-                    ->action(trans('notifications.incident.new.mail.action'), cachet_route('incident', [$this->incident]))
-                    ->markdown($this->incident->message)
-                    ->line(trans('cachet.subscriber.unsubscribe', ['link' => cachet_route('subscribe.unsubscribe', $notifiable->verify_code)]));
+                    ->markdown('notifications.incident.new', [
+                        'incident'               => $this->incident,
+                        'content'                => $content,
+                        'actionText'             => trans('notifications.incident.new.mail.action'),
+                        'actionUrl'              => cachet_route('incident', [$this->incident]),
+                        'unsubscribeText'        => trans('cachet.subscriber.unsubscribe'),
+                        'unsubscribeUrl'         => cachet_route('subscribe.unsubscribe', $notifiable->verify_code),
+                        'manageSubscriptionText' => trans('cachet.subscriber.manage_subscription'),
+                        'manageSubscriptionUrl'  => cachet_route('subscribe.manage', $notifiable->verify_code),
+                    ]);
     }
 
     /**

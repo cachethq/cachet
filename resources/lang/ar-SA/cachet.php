@@ -33,7 +33,7 @@ return [
         'scheduled'    => 'صيانة',
         'scheduled_at' => ', مجدولة :timestamp',
         'posted'       => 'تم الإرسال :timestamp',
-        'posted_at'    => 'Posted at :timestamp',
+        'posted_at'    => 'نُشِر على :timestamp',
         'status'       => [
             1 => 'عملية التحقق جارية',
             2 => 'تم التعرف عليه',
@@ -53,9 +53,9 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] النظام يعمل | [2,Inf] جميع الأنظمة تعمل',
-        'bad'   => '[0,1] النظام يواجه مشاكل | [2,Inf] بعض الأنظمة تواجه مشاكل',
-        'major' => '[0,1] النظام يواجه مشاكل أساسية | [2,Inf] بعض الأنظمة تواجه مشاكل أساسية',
+        'good'  => '[0,1]System operational|[2,*]All systems are operational',
+        'bad'   => '[0,1] النظام يواجه مشاكل|[2,Inf] بعض الأنظمة تواجه مشاكل',
+        'major' => '[0,1] النظام يواجه مشاكل أساسية|[2,Inf] بعض الأنظمة تواجه مشاكل أساسية',
     ],
 
     'api' => [
@@ -66,7 +66,7 @@ return [
     // Metrics
     'metrics' => [
         'filter' => [
-            'last_hour' => 'الساعة الأخيرة',
+            'last_hour' => 'آخِر ساعة',
             'hourly'    => 'آخر 12 ساعة',
             'weekly'    => 'أسبوع',
             'monthly'   => 'شهر',
@@ -75,12 +75,14 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'   => 'إشترك للحصول على التحديثات',
-        'unsubscribe' => 'إلغاء الإشتراك في :link',
-        'button'      => 'اشتراك',
-        'manage'      => [
+        'subscribe'           => 'إشترك للحصول على التحديثات',
+        'unsubscribe'         => 'Unsubscribe',
+        'button'              => 'اشتراك',
+        'manage_subscription' => 'Manage subscription',
+        'manage'              => [
             'no_subscriptions' => 'أنت الآن مشترك للحصول على جميع التحديثات.',
             'my_subscriptions' => 'إنك مشترك حاليا في التحديثات التالية.',
+            'manage_at_link'   => 'Manage your subscriptions at :link',
         ],
         'email' => [
             'subscribe'          => 'إشترك في تحديثات البريد الإلكتروني.',
@@ -128,10 +130,10 @@ return [
     ],
 
     // Other
-    'home'            => 'Home',
+    'home'            => 'الرئيسية',
     'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
     'timezone'        => 'Times are shown in :timezone.',
-    'about_this_site' => 'About This Site',
+    'about_this_site' => 'عن هذا الموقع',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',
     'feed'            => 'Status Feed',

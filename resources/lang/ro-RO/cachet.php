@@ -53,7 +53,7 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] Sistem operaţional|[2,Inf] Toate sistemele sunt operaţionale',
+        'good'  => '[0,1]System operational|[2,*]All systems are operational',
         'bad'   => '[0,1] Sistemul se confruntă cu probleme|[2,Inf] Unele sisteme se confruntă cu probleme',
         'major' => '[0,1] Serviciul se confruntă cu o întrerupere a funcționării majoră| [2, Inf] Unele sisteme se confruntă cu întreruperi de funcţionare majore',
     ],
@@ -75,12 +75,14 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'   => 'Abonează-te pentru a primi cele mai recente actualizări',
-        'unsubscribe' => 'Dezabonare de la :link',
-        'button'      => 'Abonează-te',
-        'manage'      => [
+        'subscribe'           => 'Abonează-te pentru a primi cele mai recente actualizări',
+        'unsubscribe'         => 'Unsubscribe',
+        'button'              => 'Abonează-te',
+        'manage_subscription' => 'Manage subscription',
+        'manage'              => [
             'no_subscriptions' => 'Acum eşti abonat la toate actualizările.',
             'my_subscriptions' => 'Acum eşti abonat la următoarele actualizări.',
+            'manage_at_link'   => 'Manage your subscriptions at :link',
         ],
         'email' => [
             'subscribe'          => 'Abonează-te la actualizări prin email.',

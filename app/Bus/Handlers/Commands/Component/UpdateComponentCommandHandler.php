@@ -50,7 +50,9 @@ class UpdateComponentCommandHandler
         $component = $command->component;
         $originalStatus = $component->status;
 
-        event(new ComponentStatusWasChangedEvent($this->auth->user(), $component, $originalStatus, $command->status, $command->silent));
+        if ($command->status && (int) $originalStatus !== (int) $command->status) {
+            event(new ComponentStatusWasChangedEvent($this->auth->user(), $component, $originalStatus, $command->status, $command->silent));
+        }
 
         $component->update($this->filter($command));
 
@@ -62,7 +64,7 @@ class UpdateComponentCommandHandler
     /**
      * Filter the command data.
      *
-     * @param \CachetHQ\Cachet\Bus\Commands\Incident\UpdateComponentCommand $command
+     * @param \CachetHQ\Cachet\Bus\Commands\Component\UpdateComponentCommand $command
      *
      * @return array
      */

@@ -1,7 +1,13 @@
 @extends('layout.master')
 
 @section('content')
-@modules
+@include('partials.modules.messages')
+@include('partials.modules.status')
+@include('partials.modules.components')
+@include('partials.modules.metrics')
+@include('partials.modules.stickied')
+@include('partials.modules.scheduled')
+@include('partials.modules.timeline')
 @stop
 
 @section('bottom-content')

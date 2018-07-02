@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="content-panel">
-    @includeWhen(isset($sub_menu), 'dashboard.partials.sub-sidebar')
+    @includeWhen(isset($subMenu), 'dashboard.partials.sub-sidebar')
     <div class="content-wrapper">
         <div class="header sub-header" id="security">
             <span class="uppercase">
@@ -13,8 +13,20 @@
             <div class="col-sm-12">
                 <form name="SettingsForm" class="form-vertical" role="form" action="{{ cachet_route('dashboard.settings', [], 'post') }}" method="POST">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    @include('dashboard.partials.errors')
+                    @include('partials.errors')
                     <fieldset>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <label>{{ trans('forms.settings.security.always-authenticate') }}</label>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="hidden" value="0" name="always_authenticate">
+                                        <input type="checkbox" value="1" name="always_authenticate" {{ Config::get('setting.always_authenticate') ? 'checked' : null }}>
+                                        {{ trans('forms.settings.security.always-authenticate-help') }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="col-xs-12">
                                 <div class="form-group">
@@ -36,13 +48,13 @@
                         </div>
                     </div>
 
-                    @if(!$unsecure_users->isEmpty())
+                    @if(!$unsecureUsers->isEmpty())
                     <hr>
 
                     <div class="panel panel-danger">
                         <div class="panel-heading">{{ trans('dashboard.settings.security.two-factor') }}</div>
                         <div class="list-group">
-                            @foreach($unsecure_users as $user)
+                            @foreach($unsecureUsers as $user)
                             <div class="list-group-item">
                                 <strong>{{ $user->username }}</strong>
                                 <span class="label label-danger pull-right"><i class="ion ion-ios-unlocked"></i></span>

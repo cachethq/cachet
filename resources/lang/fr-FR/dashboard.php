@@ -18,7 +18,7 @@ return [
     'incidents' => [
         'title'                    => 'Incidents &amp; Planification',
         'incidents'                => 'Incidents',
-        'logged'                   => '{0} Aucun incident, bon travail.|Vous avez un incident signalé.|Vous avez  <strong>:count</strong> incidents signalés.',
+        'logged'                   => '{0}Aucun incident, félicitations!.|[1]Vous avez signalé un incident|[2,*]Vous avez signalé <strong>:count</strong> incidents.',
         'incident-create-template' => 'Créer un modèle',
         'incident-templates'       => 'Modèles d\'incident',
         'updates'                  => [
@@ -35,6 +35,7 @@ return [
                 'failure' => 'Un problème est survenu lors de la mise à jour de l\'incident',
             ],
         ],
+        'reported_by'              => 'Signalé par :user',
         'add'                      => [
             'title'   => 'Ajouter un incident',
             'success' => 'Incident ajouté.',
@@ -74,7 +75,7 @@ return [
     // Incident Maintenance
     'schedule' => [
         'schedule'     => 'Maintenance Planifiée',
-        'logged'       => '{0} Aucune maintenance en cours, félicitations.|Vous avez une maintenance planifiée.|Vous avez <strong>:count</strong> maintenances planifiées.',
+        'logged'       => '{0} Aucune maintenance en cours, félicitations.|[1]Vous avez une maintenance planifiée.|[2,*]Vous avez <strong>:count</strong> maintenances de planifiées.',
         'scheduled_at' => 'Planifiée à :timestamp',
         'add'          => [
             'title'   => 'Ajouter une maintenance planifiée',

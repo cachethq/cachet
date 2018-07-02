@@ -18,12 +18,12 @@ return [
     'incidents' => [
         'title'                    => 'Hendelser &amp; Tidsplan',
         'incidents'                => 'Hendelser',
-        'logged'                   => '{0} Det er ingen hendelser, bra jobbet.|Du har en logget hendelse.|Du har rapportert <strong>:count</strong> hendelser.',
+        'logged'                   => '{0}There are no incidents, good work.|[1]You have logged one incident.|[2,*]You have reported <strong>:count</strong> incidents.',
         'incident-create-template' => 'Opprett mal',
         'incident-templates'       => 'Hendelsesmaler',
         'updates'                  => [
             'title'   => 'Incident updates for :incident',
-            'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
+            'count'   => '{0}Zero Updates|[1]One Update|[2]Two Updates|[3,*]Several Updates',
             'add'     => [
                 'title'   => 'Opprett ny hendelseoppdatering',
                 'success' => 'Your new incident update has been created.',
@@ -35,6 +35,7 @@ return [
                 'failure' => 'Something went wrong updating the incident update',
             ],
         ],
+        'reported_by'              => 'Reported by :user',
         'add'                      => [
             'title'   => 'Rapportere en hendelse',
             'success' => 'Hendelse lagt til.',
@@ -74,7 +75,7 @@ return [
     // Incident Maintenance
     'schedule' => [
         'schedule'     => 'Planlagt vedlikehold',
-        'logged'       => '{0} Det er ingen tidsplaner, bra jobbet. | Du har logget en hendelse. | Du har rapportert <strong>: antall</strong> tidsplaner.',
+        'logged'       => '{0}There has been no Maintenance, good work.|[1]You have logged one schedule.|[2,*]You have reported <strong>:count</strong> schedules.',
         'scheduled_at' => 'Planlagt til :timestamp',
         'add'          => [
             'title'   => 'Legg til planlagt vedlikehold',

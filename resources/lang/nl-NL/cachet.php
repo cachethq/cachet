@@ -53,9 +53,9 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] Systeem operationeel|[2,Inf] Alle systemen zijn operationeel',
+        'good'  => '[0,1]Systeem operationeel|[2,*]Alle systemen zijn operationeel',
         'bad'   => '[0,1] Het systeem ondervindt momenteel problemen |[2,Inf] Sommige systemen ondervinden momenteel problemen',
-        'major' => '[0,1] De service ondervindt momenteel een grote storing|[2,Inf] Sommige systemen ondervinden momenteel een grote storing',
+        'major' => '[0,1] Het systeem ondervindt momenteel een grote storing|[2,Inf] Sommige systemen ondervinden momenteel een grote storing',
     ],
 
     'api' => [
@@ -75,12 +75,14 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'   => 'Abonneer voor de meest recente updates',
-        'unsubscribe' => 'Meld je af via :link',
-        'button'      => 'Abonneren',
-        'manage'      => [
+        'subscribe'           => 'Abonneer voor de meest recente updates',
+        'unsubscribe'         => 'Unsubscribe',
+        'button'              => 'Abonneren',
+        'manage_subscription' => 'Manage subscription',
+        'manage'              => [
             'no_subscriptions' => 'Je bent momenteel geabonneerd op alle updates.',
             'my_subscriptions' => 'Je bent momenteel geabonneerd op de volgende updates.',
+            'manage_at_link'   => 'Beheer uw abonnementen op: link',
         ],
         'email' => [
             'subscribe'          => 'Abonneren op e-mail updates.',
@@ -120,9 +122,9 @@ return [
     // Meta descriptions
     'meta' => [
         'description' => [
-            'incident'  => 'Informatie betreffende het incident :name van :date',
-            'schedule'  => 'Informatie betreffende het onderhoud :name gepland op :startDate',
-            'subscribe' => 'Abonneer je op :app om updates te ontvangen van incidenten en gepland onderhoud',
+            'incident'  => 'Informatie en updates over het :name incident van :date',
+            'schedule'  => 'Informatie over het :name onderhoud gepland op :startDate',
+            'subscribe' => 'Abonneer je op :app om updates te ontvangen van incidenten en geplande onderhoudsperioden',
             'overview'  => 'Blijf op de hoogte van de laatste service updates over :app.',
         ],
     ],

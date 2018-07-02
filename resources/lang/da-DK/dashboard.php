@@ -23,7 +23,7 @@ return [
         'incident-templates'       => 'Incident Templates',
         'updates'                  => [
             'title'   => 'Hændelsesopdateringer til :hændelse',
-            'count'   => '{0} Nul opdateringer |[1] Én opdatering |[2] To opdateringer | [3, *] Flere opdateringer',
+            'count'   => '{0} Ingen opdateringer |[1] Én opdatering |[2] To opdateringer | [3,*] Flere opdateringer',
             'add'     => [
                 'title'   => 'Opret ny hændelsesopdatering',
                 'success' => 'Din nye hændelsesopdatering er oprettet.',
@@ -35,6 +35,7 @@ return [
                 'failure' => 'En fejl opstod under opdateringen af hændelsesopdateringen',
             ],
         ],
+        'reported_by'              => 'Anmeldt af bruger',
         'add'                      => [
             'title'   => 'Opret hændelse',
             'success' => 'Hændelse tilføjet.',
@@ -74,7 +75,7 @@ return [
     // Incident Maintenance
     'schedule' => [
         'schedule'     => 'Vedligeholdelse',
-        'logged'       => '{0} Der er intet planlagt.|Der er 1 planlagt.|Der er <strong>:count</strong> planlagte.',
+        'logged'       => '{0} Der er ingen tidsplanlager.|[1]Der er 1 tidsplan.|[2,*]Der er anmeldt <strong>:count</strong> tidsplaner.',
         'scheduled_at' => 'Planlagt til :timestamp',
         'add'          => [
             'title'   => 'Tilføj planlagt vedligeholdelse',

@@ -18,12 +18,12 @@ return [
     'incidents' => [
         'title'                    => 'Incidentes & Agendamentos',
         'incidents'                => 'Incidentes',
-        'logged'                   => '{0} Não existem incidentes, bom trabalho.|[1] Você registrou um incidente.|[2,*] Você reportou <strong>:count</strong> incidentes.',
+        'logged'                   => '{0}Não existem incidentes, bom trabalho.|[1]Você adicionou um incidente.|[2,*]Você reportou <strong>:count</strong> incidentes.',
         'incident-create-template' => 'Criar template',
         'incident-templates'       => 'Template de incidentes',
         'updates'                  => [
             'title'   => 'Atualizações para o incidente :incident',
-            'count'   => '{0} Zero Atualizações|[1] Uma Atualização|[2] Duas Atualizações|[3,*] Várias Atualizações',
+            'count'   => '{0}Zero atualizações|[1]Uma atualização|[2]Duas atualizações|[3,*]Várias atualizações',
             'add'     => [
                 'title'   => 'Crie uma nova atualização de incidente',
                 'success' => 'Seu novo incidente foi criado.',
@@ -35,6 +35,7 @@ return [
                 'failure' => 'Algo deu errado ao atualizar o incidente',
             ],
         ],
+        'reported_by'              => 'Reportado por :user',
         'add'                      => [
             'title'   => 'Relatar um incidente',
             'success' => 'Incidente adicionado.',
@@ -74,7 +75,7 @@ return [
     // Incident Maintenance
     'schedule' => [
         'schedule'     => 'Manutenção',
-        'logged'       => '{0} Não existem agendamentos, bom trabalho.|[1] Você introduziu um agendamento.|[2,*] Você reportou <strong>:count</strong> agendamentos.',
+        'logged'       => '{0}Ainda não ocorreu nenhuma manuteção, bom trabalho. |[1]Você agendou uma manuteção. | [2, *] Você adicionou <strong>:</strong> manutenções.',
         'scheduled_at' => 'Agendada em :timestamp',
         'add'          => [
             'title'   => 'Adicionar manutenção programada',

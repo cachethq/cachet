@@ -18,12 +18,12 @@ return [
     'incidents' => [
         'title'                    => 'الأعطال و الصيانة',
         'incidents'                => 'الأعطال',
-        'logged'                   => '{0} There are no incidents, good work.|You have logged one incident.|You have reported <strong>:count</strong> incidents.',
+        'logged'                   => '{0}There are no incidents, good work.|[1]You have logged one incident.|[2,*]You have reported <strong>:count</strong> incidents.',
         'incident-create-template' => 'إنشاء قالب',
         'incident-templates'       => 'قوالب الأعطال',
         'updates'                  => [
             'title'   => 'تحديثات حالة العَطَل :incident',
-            'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
+            'count'   => '{0}Zero Updates|[1]One Update|[2]Two Updates|[3,*]Several Updates',
             'add'     => [
                 'title'   => 'إنشاء تحديث حالة جديد للعَطَل',
                 'success' => 'تم إنشاء الحالة الجديدة المتعلقة بالعَطَل.',
@@ -35,6 +35,7 @@ return [
                 'failure' => 'طرأ هناك خطأ في تحديث حالة العَطل',
             ],
         ],
+        'reported_by'              => 'أبلَغَ عنه :user',
         'add'                      => [
             'title'   => 'الإبلاغ عن عَطَل',
             'success' => 'تم إضافة العَطَل.',
@@ -74,8 +75,8 @@ return [
     // Incident Maintenance
     'schedule' => [
         'schedule'     => 'صيانة',
-        'logged'       => '{0} There are no schedules, good work.|You have logged one schedule.|You have reported <strong>:count</strong> schedules.',
-        'scheduled_at' => 'Scheduled at :timestamp',
+        'logged'       => '{0}There has been no Maintenance, good work.|[1]You have logged one schedule.|[2,*]You have reported <strong>:count</strong> schedules.',
+        'scheduled_at' => 'مُبرمَجة على :timestamp',
         'add'          => [
             'title'   => 'إضافة إجراء صيانة',
             'success' => 'تم إضافة إجراء الصيانة.',
@@ -94,11 +95,11 @@ return [
 
     // Components
     'components' => [
-        'components'         => 'Components',
-        'component_statuses' => 'Component Statuses',
+        'components'         => 'المُكوّنات',
+        'component_statuses' => 'حالات المُكوّن',
         'listed_group'       => 'Grouped under :name',
         'add'                => [
-            'title'   => 'Add a component',
+            'title'   => 'إضافة مُكوّن',
             'message' => 'You should add a component.',
             'success' => 'Component created.',
             'failure' => 'Something went wrong with the component group, please try again.',
@@ -136,7 +137,7 @@ return [
 
     // Metrics
     'metrics' => [
-        'metrics' => 'Metrics',
+        'metrics' => 'المقاييس',
         'add'     => [
             'title'   => 'Create a metric',
             'message' => 'You should add a metric.',
@@ -159,7 +160,7 @@ return [
         'description'          => 'Subscribers will receive email updates when incidents are created or components are updated.',
         'description_disabled' => 'To use this feature, you need allow people to signup for notifications.',
         'verified'             => 'تم التحقق منه',
-        'not_verified'         => 'Not verified',
+        'not_verified'         => 'لم يتم التحقق منه',
         'subscriber'           => ':email, subscribed :date',
         'no_subscriptions'     => 'Subscribed to all updates',
         'global'               => 'Globally subscribed',
@@ -184,7 +185,7 @@ return [
         'description' => 'Team Members will be able to add, modify & edit components and incidents.',
         'add'         => [
             'title'   => 'Add a new team member',
-            'success' => 'Team member added.',
+            'success' => 'تمت إضافة عضو إلى الفريق.',
             'failure' => 'The team member could not be added, please try again.',
         ],
         'edit' => [
@@ -198,8 +199,8 @@ return [
         ],
         'invite' => [
             'title'   => 'Invite a new team member',
-            'success' => 'An invite has been sent',
-            'failure' => 'The invite could not be sent, please try again.',
+            'success' => 'تم إرسال الدعوة',
+            'failure' => 'تعذرت عملية إرسال الدعوة، يُرجى إعادة المحاولة ثانية.',
         ],
     ],
 
@@ -212,7 +213,7 @@ return [
             'too-big'     => 'The file you uploaded is too big. Upload an image smaller than :size',
         ],
         'analytics' => [
-            'analytics' => 'Analytics',
+            'analytics' => 'التحليلات',
         ],
         'log' => [
             'log' => 'السجل',
@@ -221,15 +222,15 @@ return [
             'localization' => 'الترجمة',
         ],
         'customization' => [
-            'customization' => 'Customization',
+            'customization' => 'التخصيص',
             'header'        => 'Custom Header HTML',
             'footer'        => 'Custom Footer HTML',
         ],
         'mail' => [
-            'mail'  => 'Mail',
-            'test'  => 'Test',
+            'mail'  => 'البريد الإلكتروني',
+            'test'  => 'تجريب',
             'email' => [
-                'subject' => 'Test notification from Cachet',
+                'subject' => 'إشعار تجريبي مِن كاشيه Cachet',
                 'body'    => 'This is a test notification from Cachet.',
             ],
         ],
@@ -249,7 +250,7 @@ return [
         ],
         'credits' => [
             'credits'       => 'Credits',
-            'contributors'  => 'Contributors',
+            'contributors'  => 'المساهمون',
             'license'       => 'Cachet is a BSD-3-licensed open source project, released by <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
             'backers-title' => 'Backers & Sponsors',
             'backers'       => 'If you\'d like to support future development, check out the <a href="https://patreon.com/jbrooksuk" target="_blank">Cachet Patreon</a> campaign.',
@@ -260,7 +261,7 @@ return [
     // Login
     'login' => [
         'login'      => 'تسجيل الدخول',
-        'logged_in'  => 'You\'re logged in.',
+        'logged_in'  => 'أنت مُتّصل.',
         'welcome'    => 'Welcome back!',
         'two-factor' => 'Please enter your token.',
     ],
@@ -296,7 +297,7 @@ return [
             'customize'  => 'Customize your page',
             'team'       => 'Add your team',
             'api'        => 'Generate an API token',
-            'two-factor' => 'Setup Two Factor Authentication',
+            'two-factor' => 'إعداد المصادقة بخطوتين',
         ],
     ],
 

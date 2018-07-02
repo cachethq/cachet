@@ -33,10 +33,10 @@ window.addEventListener("DOMContentLoaded", function(e) {
     <div class="content-wrapper">
         <div class="row">
             <div class="col-md-12">
-                @if($updated_template = Session::get('updated_template'))
-                <div class="alert alert-{{ ($template_errors = Session::get('template_errors')) ? 'danger' : 'success' }}">
-                    @if($template_errors)
-                    {{ sprintf("%s - %s", trans('dashboard.notifications.whoops'), trans('dashboard.incidents.templates.edit.failure').' '.$template_errors) }}
+                @if($updatedTemplate = Session::get('updated_template'))
+                <div class="alert alert-{{ ($templateErrors = Session::get('template_errors')) ? 'danger' : 'success' }}">
+                    @if($templateErrors)
+                    {{ sprintf("%s - %s", trans('dashboard.notifications.whoops'), trans('dashboard.incidents.templates.edit.failure').' '.$templateErrors) }}
                     @else
                     {{ sprintf("%s - %s", trans('dashboard.notifications.awesome'), trans('dashboard.incidents.templates.edit.success')) }}
                     @endif

@@ -25,49 +25,49 @@ final class UpdateComponentCommand
     /**
      * The component name.
      *
-     * @var string
+     * @var string|null
      */
     public $name;
 
     /**
      * The component description.
      *
-     * @var string
+     * @var string|null
      */
     public $description;
 
     /**
      * The component status.
      *
-     * @var int
+     * @var int|null
      */
     public $status;
 
     /**
      * The component link.
      *
-     * @var string
+     * @var string|null
      */
     public $link;
 
     /**
      * The component order.
      *
-     * @var int
+     * @var int|null
      */
     public $order;
 
     /**
      * The component group.
      *
-     * @var int
+     * @var int|null
      */
     public $group_id;
 
     /**
      * Is the component enabled?
      *
-     * @var bool
+     * @var bool|null
      */
     public $enabled;
 
@@ -106,19 +106,19 @@ final class UpdateComponentCommand
      * Create a new update component command instance.
      *
      * @param \CachetHQ\Cachet\Models\Component $component
-     * @param string                            $name
-     * @param string                            $description
-     * @param int                               $status
-     * @param string                            $link
-     * @param int                               $order
-     * @param int                               $group_id
-     * @param bool                              $enabled
+     * @param string|null                       $name
+     * @param string|null                       $description
+     * @param int|null                          $status
+     * @param string|null                       $link
+     * @param int|null                          $order
+     * @param int|null                          $group_id
+     * @param bool|null                         $enabled
      * @param array|null                        $meta
      * @param bool                              $silent
      *
      * @return void
      */
-    public function __construct(Component $component, $name, $description, $status, $link, $order, $group_id, $enabled, $meta, $silent)
+    public function __construct(Component $component, $name = null, $description = null, $status = null, $link = null, $order = null, $group_id = null, $enabled = null, $meta = null, $silent = null)
     {
         $this->component = $component;
         $this->name = $name;

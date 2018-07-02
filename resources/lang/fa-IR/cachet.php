@@ -53,7 +53,7 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] سامانه فعال است | [2,Inf] همه سامانه‌ها فعالند',
+        'good'  => '[0,1]System operational|[2,*]All systems are operational',
         'bad'   => '[0,1] سامانه در حال حاضر دچار اشکال است ‌| [2,Inf] برخی از سامانه‌ها دچار اشکال شده‌اند',
         'major' => '[0,1] The system is experiencing major issues|[2,Inf] Some systems are experiencing major issues',
     ],
@@ -75,12 +75,14 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'   => 'مشترک شوید تا از آخرین به‌روزرسانی‌ها آگاه شوید',
-        'unsubscribe' => 'لغو عضویت در :link',
-        'button'      => 'اشتراک اطلاع‌رسانی',
-        'manage'      => [
+        'subscribe'           => 'مشترک شوید تا از آخرین به‌روزرسانی‌ها آگاه شوید',
+        'unsubscribe'         => 'Unsubscribe',
+        'button'              => 'اشتراک اطلاع‌رسانی',
+        'manage_subscription' => 'Manage subscription',
+        'manage'              => [
             'no_subscriptions' => 'در حال حاضر شما برای همه به‌روزرسانی‌ها مشترک هستید.',
             'my_subscriptions' => 'در حال حاضر شما برای این به‌روزرسانی‌ها مشترک هستید.',
+            'manage_at_link'   => 'Manage your subscriptions at :link',
         ],
         'email' => [
             'subscribe'          => 'اشتراک در به‌روزرسانی‌های ایمیلی.',

@@ -79,12 +79,13 @@ class DemoSeederCommand extends Command
      *
      * @return void
      */
-    public function fire()
+    public function handle()
     {
         if (!$this->confirmToProceed()) {
             return;
         }
 
+        $this->seedUsers();
         $this->seedActions();
         $this->seedComponentGroups();
         $this->seedComponents();
@@ -95,7 +96,6 @@ class DemoSeederCommand extends Command
         $this->seedSchedules();
         $this->seedSettings();
         $this->seedSubscribers();
-        $this->seedUsers();
 
         $this->info('Database seeded with demo data successfully!');
     }
@@ -223,6 +223,7 @@ EINCIDENT;
                 'component_id' => 0,
                 'visible'      => 1,
                 'stickied'     => false,
+                'user_id'      => 1,
                 'occurred_at'  => Carbon::now(),
             ],
             [
@@ -232,6 +233,7 @@ EINCIDENT;
                 'component_id' => 0,
                 'visible'      => 1,
                 'stickied'     => false,
+                'user_id'      => 1,
                 'occurred_at'  => Carbon::now(),
             ],
         ];

@@ -64,7 +64,8 @@ class System implements SystemContract
 
         $totalComponents = Component::enabled()->authenticated($includePrivate)->count();
         $majorOutages = Component::enabled()->authenticated($includePrivate)->status(4)->count();
-        $isMajorOutage = $totalComponents ? ($majorOutages / $totalComponents) >= 0.5 : false;
+        $majorOutageRate = (int) $this->config->get('setting.major_outage_rate', '50');
+        $isMajorOutage = $totalComponents ? ($majorOutages / $totalComponents) * 100 >= $majorOutageRate : false;
 
         // Default data
         $status = [

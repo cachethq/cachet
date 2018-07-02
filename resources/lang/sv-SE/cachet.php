@@ -53,7 +53,7 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] Systemet fungerar |[2,Inf] Alla system fungerar',
+        'good'  => '[0,1]System operational|[2,*]All systems are operational',
         'bad'   => '[0,1] Systemet har för närvarande problem|[2,Inf] Vissa system har problem',
         'major' => '[0,1] Stora störningar på tjänsten [2,Inf] Stora störningar på vissa system',
     ],
@@ -75,12 +75,14 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'   => 'Prenumerera för att få de senaste uppdateringarna',
-        'unsubscribe' => 'Avsluta prenumerationen på: länk',
-        'button'      => 'Prenumerera',
-        'manage'      => [
+        'subscribe'           => 'Prenumerera för att få de senaste uppdateringarna',
+        'unsubscribe'         => 'Unsubscribe',
+        'button'              => 'Prenumerera',
+        'manage_subscription' => 'Manage subscription',
+        'manage'              => [
             'no_subscriptions' => 'Du prenumererar på alla uppdateringar.',
             'my_subscriptions' => 'Du prenumererar på följande uppdateringar.',
+            'manage_at_link'   => 'Manage your subscriptions at :link',
         ],
         'email' => [
             'subscribe'          => 'Prenumerera på epost-uppdateringar.',

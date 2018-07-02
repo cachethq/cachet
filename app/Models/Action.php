@@ -25,20 +25,6 @@ class Action extends Model
     use ValidatingTrait;
 
     /**
-     * A list of methods protected from mass assignment.
-     *
-     * @var string[]
-     */
-    protected $guarded = ['_token', '_method'];
-
-    /**
-     * The relations to eager load on every query.
-     *
-     * @var string[]
-     */
-    protected $with = ['user'];
-
-    /**
      * The attributes that should be casted to native types.
      *
      * @var string[]
@@ -53,6 +39,13 @@ class Action extends Model
     ];
 
     /**
+     * A list of methods protected from mass assignment.
+     *
+     * @var string[]
+     */
+    protected $guarded = ['_token', '_method'];
+
+    /**
      * The validation rules.
      *
      * @var string[]
@@ -65,6 +58,13 @@ class Action extends Model
         'information' => 'nullable|string',
         'description' => 'required|string',
     ];
+
+    /**
+     * The relations to eager load on every query.
+     *
+     * @var string[]
+     */
+    protected $with = ['user'];
 
     /**
      * Get the user relation.

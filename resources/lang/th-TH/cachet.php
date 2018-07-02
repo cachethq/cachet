@@ -53,7 +53,7 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1]System operational|[2,*] All systems are operational',
+        'good'  => '[0,1]System operational|[2,*]All systems are operational',
         'bad'   => '[0,1]The system is experiencing issues|[2,*]Some systems are experiencing issues',
         'major' => '[0,1]The system is experiencing major issues|[2,*]Some systems are experiencing major issues',
     ],
@@ -75,12 +75,14 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'   => 'สมัครเพื่อติดตามข่าวสาร',
-        'unsubscribe' => 'ยกเลิกการติดตาม :link',
-        'button'      => 'ติดตาม',
-        'manage'      => [
+        'subscribe'           => 'สมัครเพื่อติดตามข่าวสาร',
+        'unsubscribe'         => 'Unsubscribe',
+        'button'              => 'ติดตาม',
+        'manage_subscription' => 'Manage subscription',
+        'manage'              => [
             'no_subscriptions' => 'คุณติตตามทั้งหมดแล้ว',
             'my_subscriptions' => 'คุณติดตามข่าวสารเหล่านี้',
+            'manage_at_link'   => 'Manage your subscriptions at :link',
         ],
         'email' => [
             'subscribe'          => 'ติดตามข่าวสารทาง email',

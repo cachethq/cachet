@@ -18,23 +18,24 @@ return [
     'incidents' => [
         'title'                    => 'Incidenty &amp; Plán',
         'incidents'                => 'Incidenty',
-        'logged'                   => '{0} Nejsou hlášeny žádné incidenty, dobrá práce. | Zapsali jste jeden incident. | Nahlásili jste <strong>:count</strong> incident(y).',
+        'logged'                   => '{0}Nejsou hlášeny žádné incidenty, dobrá práce.|[1]Zapsali jste jeden incident.|[2,*]Nahlásili jste <strong>:count</strong> incidentů.',
         'incident-create-template' => 'Vytvořit šablonu',
         'incident-templates'       => 'Šablony incidentů',
         'updates'                  => [
-            'title'   => 'Incident updates for :incident',
-            'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
+            'title'   => 'Aktualizace incidentu :incident',
+            'count'   => '{0}žádné aktualizace |[1]jedna aktualizace |[2]dvě aktualizace | [3, *] Několik aktualizací',
             'add'     => [
                 'title'   => 'Vytvořit novou zprávu k události',
-                'success' => 'Your new incident update has been created.',
-                'failure' => 'Something went wrong with the incident update.',
+                'success' => 'Vaše aktualizace incidentu byla vytvořena.',
+                'failure' => 'Při aktualizaci incidentu se něco pokazilo.',
             ],
             'edit' => [
-                'title'   => 'Edit incident update',
-                'success' => 'The incident update has been updated.',
-                'failure' => 'Something went wrong updating the incident update',
+                'title'   => 'Editovat aktualizace incidentu',
+                'success' => 'Událost byla aktualizována.',
+                'failure' => 'Při aktualizaci incidentu se něco pokazilo',
             ],
         ],
+        'reported_by'              => 'Nahlásil :user',
         'add'                      => [
             'title'   => 'Nahlásit incident',
             'success' => 'Incident byl přidán.',
@@ -74,7 +75,7 @@ return [
     // Incident Maintenance
     'schedule' => [
         'schedule'     => 'Plánovaná odstávka',
-        'logged'       => '{0} Žádná údržba není v plánu, skvělá práce.|Je v plánu jedna údržba.|Je v plánu <strong>:count</strong> údržb.',
+        'logged'       => '{0}Žádná údržba není v plánu, dobrá práce.|[1]Naplánovali jste jednu údržbu.|[2,*]Jsou v plánu <strong>:count</strong> údržby.',
         'scheduled_at' => 'Naplánováno na :timestamp',
         'add'          => [
             'title'   => 'Přidat plánovanou údržbu',
@@ -157,12 +158,12 @@ return [
     'subscribers' => [
         'subscribers'          => 'Odběratelé',
         'description'          => 'Odběratelé obdrží aktualizace e-mailem, pokuď dojde ke vzniku incidentu.',
-        'description_disabled' => 'To use this feature, you need allow people to signup for notifications.',
+        'description_disabled' => 'Chcete-li použít tuto funkci, potřebujete povolit uživatelům registraci pro oznámení.',
         'verified'             => 'Ověřeno',
         'not_verified'         => 'Neověřeno',
         'subscriber'           => ': e-mail, přihlášen: datum',
         'no_subscriptions'     => 'Přihlášeno k zasílání všech aktualizací',
-        'global'               => 'Globally subscribed',
+        'global'               => 'Globálně odebírané',
         'add'                  => [
             'title'   => 'Přidat nového odběratele',
             'success' => 'Odběratel přidán.',

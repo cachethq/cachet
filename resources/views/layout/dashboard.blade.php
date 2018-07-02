@@ -20,16 +20,16 @@
     <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('/img/apple-touch-icon-144x144.png') }}">
     <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('/img/apple-touch-icon-152x152.png') }}">
 
-    <title>{{ $page_title or $site_title }}</title>
+    <title>{{ $pageTitle or $siteTitle }}</title>
 
     <script>
         window.Global = {}
-        Global.locale = '{{ $app_locale }}';
+        Global.locale = '{{ $appLocale }}';
         Global.csrfToken = '{{ csrf_token() }}';
     </script>
 
-    @if($enable_external_dependencies)
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&subset={{ $font_subset }}" rel="stylesheet" type="text/css">
+    @if($enableExternalDependencies)
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&subset={{ $fontSubset }}" rel="stylesheet" type="text/css">
     @endif
     <link rel="stylesheet" href="{{ mix('dist/css/dashboard/dashboard.css') }}">
     @yield('css')
@@ -44,7 +44,7 @@
     <div class="wrapper" id="app">
         @include('dashboard.partials.sidebar')
         <div class="page-content">
-            @if(!$is_writeable)
+            @if(!$isWriteable)
             <div class="content-wrapper">
                 <div class="row">
                     <div class="col-sm-12">

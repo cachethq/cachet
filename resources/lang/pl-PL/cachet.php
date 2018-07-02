@@ -53,9 +53,9 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] System działa poprawnie|[2,Inf] Wszystkie systemy działają poprawnie',
+        'good'  => '[0,1]System działa poprawnie|[2,*]Wszystkie systemy działają poprawnie',
         'bad'   => '[0,1] W systemie występują problemy|[2,Inf] W niektórych systemach występują problemy',
-        'major' => '[0,1] W system występują poważne problemy|[2,Inf] W niektórych systemach występują poważne problemy',
+        'major' => '[0,1] W systemie występują poważne problemy|[2,Inf] W niektórych systemach występują poważne problemy',
     ],
 
     'api' => [
@@ -75,12 +75,14 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'   => 'Abonnieren Sie um die neuesten Updates zu erhalten.',
-        'unsubscribe' => 'Wypisz się na :link',
-        'button'      => 'Abonnieren',
-        'manage'      => [
+        'subscribe'           => 'Abonnieren Sie um die neuesten Updates zu erhalten.',
+        'unsubscribe'         => 'Unsubscribe',
+        'button'              => 'Abonnieren',
+        'manage_subscription' => 'Manage subscription',
+        'manage'              => [
             'no_subscriptions' => 'Jesteś obecnie zapisany na wszystkie aktualizacje.',
             'my_subscriptions' => 'Jesteś obecnie zapisany na poniższe aktualizacje.',
+            'manage_at_link'   => 'Zarządzaj swoją subskrypcją na :link',
         ],
         'email' => [
             'subscribe'          => 'Aktualisierungen per E-Mail abonnieren.',

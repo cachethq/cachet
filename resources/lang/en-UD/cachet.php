@@ -53,7 +53,7 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => 'crwdns1397:0crwdne1397:0',
+        'good'  => 'crwdns1437:0crwdne1437:0',
         'bad'   => 'crwdns1398:0crwdne1398:0',
         'major' => 'crwdns1399:0crwdne1399:0',
     ],
@@ -81,6 +81,7 @@ return [
         'manage'      => [
             'no_subscriptions' => 'crwdns910:0crwdne910:0',
             'my_subscriptions' => 'crwdns911:0crwdne911:0',
+            'manage_at_link'   => 'crwdns1432:0crwdne1432:0',
         ],
         'email' => [
             'subscribe'          => 'crwdns912:0crwdne912:0',

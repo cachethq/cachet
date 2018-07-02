@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="content-panel">
-    @includeWhen(isset($sub_menu), 'dashboard.partials.sub-sidebar')
+    @includeWhen(isset($subMenu), 'dashboard.partials.sub-sidebar')
     <div class="content-wrapper">
         <div class="header sub-header">
             <span class="uppercase">
@@ -15,7 +15,7 @@
         </div>
         <div class="row">
             <div class="col-sm-12">
-                @include('dashboard.partials.errors')
+                @include('partials.errors')
                 <p class="lead">{!! trans_choice('dashboard.schedule.logged', $schedule->count(), ['count' => $schedule->count()]) !!}</p>
 
                 <div class="striped-list">

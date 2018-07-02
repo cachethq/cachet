@@ -33,7 +33,7 @@ return [
         'scheduled'    => 'Ütemezett karbantartás',
         'scheduled_at' => ', ütemezve: :timestamp',
         'posted'       => 'Közzétéve :timestamp',
-        'posted_at'    => 'Posted at :timestamp',
+        'posted_at'    => 'Közzétéve :timestamp',
         'status'       => [
             1 => 'Kivizsgálás alatt',
             2 => 'Azonosítva',
@@ -75,12 +75,14 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'   => 'Kérjük iratkozzon fel a legújabb frissítésekért',
-        'unsubscribe' => 'Unsubscribe at :link',
-        'button'      => 'Feliratkozás',
-        'manage'      => [
+        'subscribe'           => 'Kérjük iratkozzon fel a legújabb frissítésekért',
+        'unsubscribe'         => 'Leiratkozás',
+        'button'              => 'Feliratkozás',
+        'manage_subscription' => 'Feliratkozások kezelése',
+        'manage'              => [
             'no_subscriptions' => 'Minden frissítésre feliratkozva.',
             'my_subscriptions' => 'A következő frissítésekre feliratkozva.',
+            'manage_at_link'   => 'Manage your subscriptions at :link',
         ],
         'email' => [
             'subscribe'          => 'Feliratkozás e-mail értesítésekre.',

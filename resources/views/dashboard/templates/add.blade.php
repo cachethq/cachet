@@ -33,7 +33,7 @@ window.addEventListener("DOMContentLoaded", function(e) {
 <div class="content-wrapper">
     <div class="row">
         <div class="col-md-12">
-            @include('dashboard.partials.errors')
+            @include('partials.errors')
             <form class="form-vertical" name="IncidentForm" role="form" method="POST" autocomplete="off">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <fieldset>

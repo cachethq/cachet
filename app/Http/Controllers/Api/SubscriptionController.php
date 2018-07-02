@@ -30,7 +30,7 @@ class SubscriptionController extends AbstractApiController
      */
     public function destroy(Subscription $subscription)
     {
-        dispatch(new UnsubscribeSubscriptionCommand($subscription));
+        execute(new UnsubscribeSubscriptionCommand($subscription));
 
         return $this->noContent();
     }

@@ -51,7 +51,7 @@ return [
                 'action'  => 'View',
             ],
             'slack' => [
-                'title'   => ':name Updated',
+                'title'   => 'Frissítve',
                 'content' => ':name was updated to :new_status',
             ],
             'sms' => [
@@ -101,7 +101,7 @@ return [
                 'subject' => 'Your invitation is inside...',
                 'content' => 'You have been invited to join :app_name status page.',
                 'title'   => 'You\'re invited to join :app_name status page.',
-                'action'  => 'Accept',
+                'action'  => 'Elfogadás',
             ],
         ],
     ],

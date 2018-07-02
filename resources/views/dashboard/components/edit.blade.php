@@ -13,7 +13,7 @@
 <div class="content-wrapper">
     <div class="row">
         <div class="col-sm-12">
-            @include('dashboard.partials.errors')
+            @include('partials.errors')
             <form name="EditComponentForm" class="form-vertical" role="form" action="{{ cachet_route('dashboard.components.edit', [$component->id], 'post') }}" method="POST">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <fieldset>
@@ -53,7 +53,7 @@
                     </div>
                     <div class="form-group">
                         <label>{{ trans('forms.components.tags') }}</label>
-                        <input name="component[tags]" class="form-control" value="{{ $component->tagsList }}" placeholder="{{ trans('forms.components.tags') }}">
+                        <input name="component[tags]" class="form-control" value="{{ $component->tags->implode(', ') }}" placeholder="{{ trans('forms.components.tags') }}">
                         <span class="help-block">{{ trans('forms.components.tags-help') }}</span>
                     </div>
                     <div class="checkbox">
@@ -65,7 +65,7 @@
                     </div>
                 </fieldset>
 
-                <input type="hidden" name="component[user_id]" value="{{ $component->agent_id || $current_user->id }}">
+                <input type="hidden" name="component[user_id]" value="{{ $component->agent_id || $currentUser->id }}">
                 <input type="hidden" name="component[order]" value="{{ $component->order ?: 0 }}">
 
                 <div class="btn-group">

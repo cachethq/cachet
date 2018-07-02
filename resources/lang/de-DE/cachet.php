@@ -53,9 +53,9 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] System funktioniert einwandfrei|[2,Inf] Alle Systeme funktionieren einwandfrei',
-        'bad'   => '[0,1] Das System hat momentan Probleme|[2,Inf] Mehrere Systeme haben momentan Probleme',
-        'major' => '[0,1] Das System hat ein schwerwiegendes Problem|[2,Inf] Mehrere Systeme haben ein schwerwiegendes Problem',
+        'good'  => '[0,1]System funktioniert|[2,*]Alle Systeme funktionieren',
+        'bad'   => '[0,1] Das System hat momentan Probleme|[2,*] Mehrere Systeme haben momentan Probleme',
+        'major' => '[0,1] Das System hat ein schwerwiegendes Problem|[2,*] Mehrere Systeme haben ein schwerwiegendes Problem',
     ],
 
     'api' => [
@@ -75,12 +75,14 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'   => 'Abonnieren Sie um die neuesten Updates zu erhalten.',
-        'unsubscribe' => 'Unter :link abbestellen',
-        'button'      => 'Abonnieren',
-        'manage'      => [
+        'subscribe'           => 'Abonnieren Sie um die neuesten Updates zu erhalten.',
+        'unsubscribe'         => 'Abmelden',
+        'button'              => 'Abonnieren',
+        'manage_subscription' => 'Abos verwalten',
+        'manage'              => [
             'no_subscriptions' => 'Du hast im Augenblick alle Updates abonniert.',
             'my_subscriptions' => 'Du hast im Augenblick folgende Updates abonniert.',
+            'manage_at_link'   => 'Verwalte deine Abos unter :link',
         ],
         'email' => [
             'subscribe'          => 'Aktualisierungen per E-Mail abonnieren.',

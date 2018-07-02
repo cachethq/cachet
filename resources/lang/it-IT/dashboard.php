@@ -18,12 +18,12 @@ return [
     'incidents' => [
         'title'                    => 'Segnalazioni &amp; Pianificazione',
         'incidents'                => 'Incidenti',
-        'logged'                   => '{0} Non ci sono segnalazioni, ottimo lavoro.|Hai notificato una segnalazione.|Hai notificato <strong>:count</strong> segnalazioni.',
+        'logged'                   => '{0}There are no incidents, good work.|[1]You have logged one incident.|[2,*]You have reported <strong>:count</strong> incidents.',
         'incident-create-template' => 'Crea Modello',
         'incident-templates'       => 'Modelli di segnalazione',
         'updates'                  => [
             'title'   => 'Incident updates for :incident',
-            'count'   => '{0} Zero aggiornamenti |[1] Un aggiornamento |[2] Due aggiornamenti | [3, *] Diversi aggiornamenti',
+            'count'   => '{0}Zero Updates|[1]One Update|[2]Two Updates|[3,*]Several Updates',
             'add'     => [
                 'title'   => 'Crea nuovo aggiornamento incidente',
                 'success' => 'Your new incident update has been created.',
@@ -35,6 +35,7 @@ return [
                 'failure' => 'Something went wrong updating the incident update',
             ],
         ],
+        'reported_by'              => 'Reported by :user',
         'add'                      => [
             'title'   => 'Riporta un problema',
             'success' => 'Segnalazione aggiunta.',
@@ -74,7 +75,7 @@ return [
     // Incident Maintenance
     'schedule' => [
         'schedule'     => 'Manutenzione programmata',
-        'logged'       => '{0} non ci sono pianificazioni, buon lavoro. | Hai annotato una pianificazione. | Hai riportato <strong>:count</strong> pianificazioni.',
+        'logged'       => '{0}There has been no Maintenance, good work.|[1]You have logged one schedule.|[2,*]You have reported <strong>:count</strong> schedules.',
         'scheduled_at' => 'Pianificato alle :timestamp',
         'add'          => [
             'title'   => 'Aggiungi manutenzione programmata',

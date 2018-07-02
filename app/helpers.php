@@ -10,6 +10,7 @@
  */
 
 use CachetHQ\Cachet\Settings\Repository;
+use Illuminate\Contracts\Bus\Dispatcher;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Request;
 use Jenssegers\Date\Date;
@@ -122,30 +123,6 @@ if (!function_exists('color_contrast')) {
     }
 }
 
-if (!function_exists('array_numeric_sort')) {
-    /**
-     * Numerically sort an array based on a specific key.
-     *
-     * @param array  $array
-     * @param string $key
-     *
-     * @return array
-     */
-    function array_numeric_sort(array $array = [], $key = 'order')
-    {
-        uasort($array, function ($a, $b) use ($key) {
-            $a = array_get($a, $key, PHP_INT_MAX);
-            $b = array_get($b, $key, PHP_INT_MAX);
-
-            $default = PHP_MAJOR_VERSION < 7 ? 1 : 0;
-
-            return $a < $b ? -1 : ($a === $b ? $default : 1);
-        });
-
-        return $array;
-    }
-}
-
 if (!function_exists('cachet_route')) {
     /**
      * Generate a URL to a named route, which resides in a given domain.
@@ -181,5 +158,19 @@ if (!function_exists('cachet_redirect')) {
         $url = cachet_route($name, $parameters, $method, $domain);
 
         return app('redirect')->to($url, $status, $headers);
+    }
+}
+
+if (!function_exists('execute')) {
+    /**
+     * Send the given command to the dispatcher for execution.
+     *
+     * @param object $command
+     *
+     * @return void
+     */
+    function execute($command)
+    {
+        return app(Dispatcher::class)->dispatchNow($command);
     }
 }

@@ -13,12 +13,12 @@
 <div class="content-wrapper">
     <div class="row">
         <div class="col-md-12">
-            @if(!$notifications_enabled)
+            @if(!$notificationsEnabled)
                 <div class="alert alert-info" role="alert">
                     {{ trans('forms.incidents.notify_disabled') }}
                 </div>
             @endif
-            @include('dashboard.partials.errors')
+            @include('partials.errors')
             <form class="form-vertical" name="IncidentForm" role="form" method="POST" autocomplete="off">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <fieldset>
@@ -109,7 +109,7 @@
                     </div>
                     <div class="form-group">
                         <label>{{ trans('forms.incidents.occurred_at') }}</label> <small class="text-muted">{{ trans('forms.optional') }}</small>
-                        <input type="text" name="occurred_at" class="form-control" rel="datepicker-custom" data-date-format="YYYY-MM-DD HH:mm" value="{{ $incident->occurred_at_datetimepicker }}" placeholder="{{ trans('forms.optional') }}">
+                        <input type="text" name="occurred_at" class="form-control flatpickr-time" data-date-format="Y-m-d H:i" value="{{ $incident->occurred_at_datetimepicker }}" placeholder="{{ trans('forms.optional') }}">
                     </div>
                     <div class="form-group">
                         <label>{{ trans('forms.seo.title') }}</label> <small class="text-muted">{{ trans('forms.optional') }}</small>

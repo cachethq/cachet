@@ -27,7 +27,7 @@ class ApiFilter
      *
      * @return \GrahamCampbell\Exceptions\Displayers\DisplayerInterface[]
      */
-    public function filter(array $displayers, Request $request, Exception $original, Exception $transformed, $code)
+    public function filter(array $displayers, Request $request, Exception $original, Exception $transformed, int $code)
     {
         if ($request->is('api*')) {
             foreach ($displayers as $index => $displayer) {

@@ -53,7 +53,7 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] Το σύστημα βρίσκεται σε λειτουργία[2,Inf] Όλα τα συστήματα βρίσκονται σε λειτουργία',
+        'good'  => '[0,1]System operational|[2,*]All systems are operational',
         'bad'   => '[0,1] Το σύστημα αντιμετωπίζει προβλήματα|[2,Inf] Κάποια συστήματα αντιμετωπίζουν προβλήματα',
         'major' => '[0,1] Η υπηρεσία αντιμετωπίζει μία σημαντική διακοπή|[2,Inf] Κάποια συστήματα αντιμετωπίζουν μία σημαντική διακοπή',
     ],
@@ -75,12 +75,14 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'   => 'Εγγραφείτε για να λάβετε τις τελευταίες ενημερώσεις',
-        'unsubscribe' => 'Unsubscribe at :link',
-        'button'      => 'Εγγραφή',
-        'manage'      => [
+        'subscribe'           => 'Εγγραφείτε για να λάβετε τις τελευταίες ενημερώσεις',
+        'unsubscribe'         => 'Unsubscribe',
+        'button'              => 'Εγγραφή',
+        'manage_subscription' => 'Manage subscription',
+        'manage'              => [
             'no_subscriptions' => 'You\'re currently subscribed to all updates.',
             'my_subscriptions' => 'You\'re currently subscribed to the following updates.',
+            'manage_at_link'   => 'Manage your subscriptions at :link',
         ],
         'email' => [
             'subscribe'          => 'Εγγραφή στις ενημερώσεις μέσω email.',

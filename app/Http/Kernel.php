@@ -11,7 +11,19 @@
 
 namespace CachetHQ\Cachet\Http;
 
+use AltThree\Throttle\ThrottlingMiddleware;
+use CachetHQ\Cachet\Http\Middleware\Admin;
+use CachetHQ\Cachet\Http\Middleware\ApiAuthentication;
+use CachetHQ\Cachet\Http\Middleware\Authenticate;
+use CachetHQ\Cachet\Http\Middleware\Localize;
+use CachetHQ\Cachet\Http\Middleware\ReadyForUse;
+use CachetHQ\Cachet\Http\Middleware\RedirectIfAuthenticated;
+use CachetHQ\Cachet\Http\Middleware\SetupAlreadyCompleted;
+use CachetHQ\Cachet\Http\Middleware\SubscribersConfigured;
+use CachetHQ\Cachet\Http\Middleware\TrustProxies;
+use Illuminate\Auth\Middleware\Authorize;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
+use Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode;
 
 class Kernel extends HttpKernel
 {
@@ -21,8 +33,8 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $middleware = [
-        'Fideloper\Proxy\TrustProxies',
-        'Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode',
+        TrustProxies::class,
+        CheckForMaintenanceMode::class,
     ];
 
     /**
@@ -31,15 +43,15 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'admin'       => 'CachetHQ\Cachet\Http\Middleware\Admin',
-        'can'         => 'Illuminate\Auth\Middleware\Authorize',
-        'auth'        => 'CachetHQ\Cachet\Http\Middleware\Authenticate',
-        'auth.api'    => 'CachetHQ\Cachet\Http\Middleware\ApiAuthentication',
-        'guest'       => 'CachetHQ\Cachet\Http\Middleware\RedirectIfAuthenticated',
-        'localize'    => 'CachetHQ\Cachet\Http\Middleware\Localize',
-        'ready'       => 'CachetHQ\Cachet\Http\Middleware\ReadyForUse',
-        'setup'       => 'CachetHQ\Cachet\Http\Middleware\SetupAlreadyCompleted',
-        'subscribers' => 'CachetHQ\Cachet\Http\Middleware\SubscribersConfigured',
-        'throttle'    => 'AltThree\Throttle\ThrottlingMiddleware',
+        'admin'       => Admin::class,
+        'can'         => Authorize::class,
+        'auth'        => Authenticate::class,
+        'auth.api'    => ApiAuthentication::class,
+        'guest'       => RedirectIfAuthenticated::class,
+        'localize'    => Localize::class,
+        'ready'       => ReadyForUse::class,
+        'setup'       => SetupAlreadyCompleted::class,
+        'subscribers' => SubscribersConfigured::class,
+        'throttle'    => ThrottlingMiddleware::class,
     ];
 }

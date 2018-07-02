@@ -101,7 +101,7 @@ class DashboardController extends Controller
 
         $welcomeUser = !Auth::user()->welcomed;
         if ($welcomeUser) {
-            dispatch(new WelcomeUserCommand(Auth::user()));
+            execute(new WelcomeUserCommand(Auth::user()));
         }
 
         $entries = null;

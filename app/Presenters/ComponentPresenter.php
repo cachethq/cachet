@@ -53,7 +53,7 @@ class ComponentPresenter extends BasePresenter implements Arrayable
      */
     public function tags()
     {
-        return $this->wrappedObject->tags->pluck('name', 'slug');
+        return $this->wrappedObject->tags->pluck('tag.name', 'tag.slug');
     }
 
     /**

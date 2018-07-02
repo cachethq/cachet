@@ -18,23 +18,24 @@ return [
     'incidents' => [
         'title'                    => 'Инциденты и плановые работы',
         'incidents'                => 'Инциденты',
-        'logged'                   => '{0} Нет инцидентов, отличная работа!|У вас зарегистрирован <strong>:count</strong> инцидент.|У вас зарегистрировано <strong>:count</strong> инцидента.|У вас зарегистрировано <strong>:count</strong> инцидентов.',
+        'logged'                   => '{0} Нет инцидентов, отличная работа!|[1] У вас зарегистрирован один инцидент.| [2,*] У вас зарегистрировано <strong>:count</strong> инцидента (-ов).',
         'incident-create-template' => 'Создать шаблон',
         'incident-templates'       => 'Шаблоны инцидентов',
         'updates'                  => [
-            'title'   => 'Incident updates for :incident',
-            'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
+            'title'   => 'Обновления для инцидента :incident',
+            'count'   => '{0}Ноль обновлений|[1]Одно обновление|[2]Два обновления|[3, *]Несколько обновлений',
             'add'     => [
                 'title'   => 'Создать новое обновление инцидента',
-                'success' => 'Your new incident update has been created.',
-                'failure' => 'Something went wrong with the incident update.',
+                'success' => 'Обновление инцидента было создано.',
+                'failure' => 'Что-то пошло не так при изменении инцидента.',
             ],
             'edit' => [
-                'title'   => 'Edit incident update',
-                'success' => 'The incident update has been updated.',
-                'failure' => 'Something went wrong updating the incident update',
+                'title'   => 'Изменить обновление инцидента',
+                'success' => 'Инцидент был изменен.',
+                'failure' => 'Что-то пошло не так при изменении инцидента',
             ],
         ],
+        'reported_by'              => 'Сообщено пользователем :user',
         'add'                      => [
             'title'   => 'Добавить инцидент',
             'success' => 'Инцидент добавлен.',
@@ -74,7 +75,7 @@ return [
     // Incident Maintenance
     'schedule' => [
         'schedule'     => 'Плановые работы',
-        'logged'       => '{0} Ни одного планового обслуживания не зарегистрировано.|У вас зарегистрировано <strong>:count</strong> плановое обслуживание.|У вас зарегистрировано <strong>:count</strong> плановых обслуживания.|У вас зарегистрировано <strong>:count</strong> плановых обслуживаний.',
+        'logged'       => '{0} Ни одного планового обслуживания не зарегистрировано, хорошая работа!|[1]У вас зарегистрировано одно плановое обслуживание.|[2,*]У вас зарегистрировано <strong>:count</strong> плановых обслуживаний(-я).',
         'scheduled_at' => 'Запланировано на :timestamp',
         'add'          => [
             'title'   => 'Добавить плановые работы',
@@ -157,12 +158,12 @@ return [
     'subscribers' => [
         'subscribers'          => 'Подписчики',
         'description'          => 'Подписчики будут получать уведомления по электронной почте при добавлении инцидентов или изменении статусов компонентов.',
-        'description_disabled' => 'To use this feature, you need allow people to signup for notifications.',
+        'description_disabled' => 'Чтобы использовать эту функцию, нужно позволить людям подписаться на уведомления.',
         'verified'             => 'Подтверждён',
         'not_verified'         => 'Не подтверждён',
         'subscriber'           => ':email, подписан :date',
         'no_subscriptions'     => 'Подписан на все обновления',
-        'global'               => 'Globally subscribed',
+        'global'               => 'Подписан глобально',
         'add'                  => [
             'title'   => 'Добавить нового подписчика',
             'success' => 'Подписчик добавлен!',

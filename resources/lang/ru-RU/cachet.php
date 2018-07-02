@@ -33,7 +33,7 @@ return [
         'scheduled'    => 'Плановые работы',
         'scheduled_at' => ', запланированы :timestamp',
         'posted'       => 'Опубликовано :timestamp',
-        'posted_at'    => 'Posted at :timestamp',
+        'posted_at'    => 'Опубликовано в :timestamp',
         'status'       => [
             1 => 'Проводим анализ проблемы',
             2 => 'Причина определена',
@@ -53,7 +53,7 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] Система работает исправно|[2,Inf] Все системы работают исправно',
+        'good'  => '[0,1]Система работает в штатном режиме |[2,*]Все системы работают в штатном режиме',
         'bad'   => '[0,1] В системе есть неполадки|[2,Inf] В некоторых системах есть неполадки',
         'major' => '[0,1] Система не работает|[2,Inf] Некоторые системы не работают',
     ],
@@ -75,12 +75,14 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'   => 'Подпишитесь, чтобы получать информацию об изменениях',
-        'unsubscribe' => 'Отписаться от :link',
-        'button'      => 'Подписаться',
-        'manage'      => [
+        'subscribe'           => 'Подпишитесь, чтобы получать информацию об изменениях',
+        'unsubscribe'         => 'Unsubscribe',
+        'button'              => 'Подписаться',
+        'manage_subscription' => 'Manage subscription',
+        'manage'              => [
             'no_subscriptions' => 'Вы подписаны на все изменения.',
             'my_subscriptions' => 'Вы подписаны на следующие изменения.',
+            'manage_at_link'   => 'Управляйте своими подписками в :link',
         ],
         'email' => [
             'subscribe'          => 'Подписка на рассылку об изменениях.',
@@ -120,9 +122,9 @@ return [
     // Meta descriptions
     'meta' => [
         'description' => [
-            'incident'  => 'Details and updates about the :name incident that occurred on :date',
-            'schedule'  => 'Details about the scheduled maintenance period :name starting :startDate',
-            'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
+            'incident'  => 'Подробная информация и обновления о инциденте: :name, который произошел: :date',
+            'schedule'  => 'Подробная информация о запланированных технических работах: :name начинаются :startDate',
+            'subscribe' => 'Подписаться на :app для того, чтобы получать информацию о инцидентах и запланированных технических работах',
             'overview'  => 'Будьте в курсе последних новостей о состоянии сервиса от :app.',
         ],
     ],

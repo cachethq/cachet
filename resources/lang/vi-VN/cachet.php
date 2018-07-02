@@ -53,7 +53,7 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] System operational|[2,Inf] All systems are operational',
+        'good'  => '[0,1]System operational|[2,*]All systems are operational',
         'bad'   => '[0,1] The system is experiencing issues|[2,Inf] Some systems are experiencing issues',
         'major' => '[0,1] The system is experiencing major issues|[2,Inf] Some systems are experiencing major issues',
     ],
@@ -75,12 +75,14 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'   => 'Đăng ký để nhận các thông báo cập nhật',
-        'unsubscribe' => 'Unsubscribe at :link',
-        'button'      => 'Đăng ký',
-        'manage'      => [
+        'subscribe'           => 'Đăng ký để nhận các thông báo cập nhật',
+        'unsubscribe'         => 'Unsubscribe',
+        'button'              => 'Đăng ký',
+        'manage_subscription' => 'Manage subscription',
+        'manage'              => [
             'no_subscriptions' => 'Bạn hiện đã đăng ký nhận tất cả các thông báo cập nhật.',
             'my_subscriptions' => 'Bạn hiện đã đăng ký nhận các thông báo cập nhật sau.',
+            'manage_at_link'   => 'Manage your subscriptions at :link',
         ],
         'email' => [
             'subscribe'          => 'Đăng ký nhận thông báo cập nhật qua email.',

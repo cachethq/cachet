@@ -18,12 +18,12 @@ return [
     'incidents' => [
         'title'                    => 'Insiden &amp; Penjadwalan',
         'incidents'                => 'Insiden',
-        'logged'                   => '{0} Tidak ada insiden, bagus.|[1] Anda mencatat satu insiden.|[2,*] Anda melaporkan <strong>:count</strong> insiden.',
+        'logged'                   => '{0}There are no incidents, good work.|[1]You have logged one incident.|[2,*]You have reported <strong>:count</strong> incidents.',
         'incident-create-template' => 'Buat Template',
         'incident-templates'       => 'Template Insiden',
         'updates'                  => [
             'title'   => 'Update insiden untuk :incident',
-            'count'   => '{0} Nol Update|[1] Satu Update|[2] Dua Update|[3,*] Beberapa Update',
+            'count'   => '{0}Zero Updates|[1]One Update|[2]Two Updates|[3,*]Several Updates',
             'add'     => [
                 'title'   => 'Buat update insiden baru',
                 'success' => 'Update baru insiden anda berhasil dibuat.',
@@ -35,6 +35,7 @@ return [
                 'failure' => 'Ada masalah saat memperbarui update insiden',
             ],
         ],
+        'reported_by'              => 'Reported by :user',
         'add'                      => [
             'title'   => 'Tambahkan Insiden',
             'success' => 'Insiden sudah ditambahkan.',
@@ -74,7 +75,7 @@ return [
     // Incident Maintenance
     'schedule' => [
         'schedule'     => 'Pemeliharaan',
-        'logged'       => '{0} Tidak ada penjadwalan, mantap. | [1] Anda mencatat satu jadwal. | [2,*] Anda melaporkan <strong>:count</strong> jadwal.',
+        'logged'       => '{0}There has been no Maintenance, good work.|[1]You have logged one schedule.|[2,*]You have reported <strong>:count</strong> schedules.',
         'scheduled_at' => 'Dijadwalkan pada :timestamp',
         'add'          => [
             'title'   => 'Tambahkan Jadwal Pemeliharaan',

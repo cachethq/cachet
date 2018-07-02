@@ -39,7 +39,7 @@ class VersionCommand extends Command
      *
      * @return void
      */
-    public function fire()
+    public function handle()
     {
         $this->info('Cachet '.CACHET_VERSION.' is installed ⚡');
     }

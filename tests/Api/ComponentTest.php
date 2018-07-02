@@ -11,6 +11,12 @@
 
 namespace CachetHQ\Tests\Cachet\Api;
 
+use CachetHQ\Cachet\Bus\Events\Component\ComponentStatusWasChangedEvent;
+use CachetHQ\Cachet\Bus\Events\Component\ComponentWasCreatedEvent;
+use CachetHQ\Cachet\Bus\Events\Component\ComponentWasRemovedEvent;
+use CachetHQ\Cachet\Bus\Events\Component\ComponentWasUpdatedEvent;
+use CachetHQ\Cachet\Models\Component;
+
 /**
  * This is the component test class.
  *
@@ -19,43 +25,52 @@ namespace CachetHQ\Tests\Cachet\Api;
  */
 class ComponentTest extends AbstractApiTestCase
 {
-    public function testGetComponents()
+    public function test_can_get_all_components()
     {
-        $components = factory('CachetHQ\Cachet\Models\Component', 3)->create();
+        $components = factory(Component::class, 3)->create();
 
-        $this->get('/api/v1/components');
-        $this->seeJsonContains(['id' => $components[0]->id]);
-        $this->seeJsonContains(['id' => $components[1]->id]);
-        $this->seeJsonContains(['id' => $components[2]->id]);
-        $this->assertResponseOk();
+        $response = $this->json('GET', '/api/v1/components');
+
+        $response->assertStatus(200);
+        $response->assertJsonFragment(['id' => $components[0]->id]);
+        $response->assertJsonFragment(['id' => $components[1]->id]);
+        $response->assertJsonFragment(['id' => $components[2]->id]);
     }
 
-    public function testGetInvalidComponent()
+    public function test_cannot_get_invalid_component()
     {
-        $this->get('/api/v1/components/1');
-        $this->assertResponseStatus(404);
+        $response = $this->json('GET', '/api/v1/components/1');
+
+        $response->assertStatus(404);
     }
 
-    public function testPostComponentUnauthorized()
+    public function test_cannot_create_component_without_authorization()
     {
-        $this->post('/api/v1/components');
+        $this->doesntExpectEvents(ComponentWasCreatedEvent::class);
 
-        $this->assertResponseStatus(401);
+        $response = $this->json('POST', '/api/v1/components');
+
+        $response->assertStatus(401);
     }
 
-    public function testPostComponentNoData()
+    public function test_cannot_create_component_without_data()
     {
         $this->beUser();
 
-        $this->post('/api/v1/components');
-        $this->assertResponseStatus(400);
+        $this->doesntExpectEvents(ComponentWasCreatedEvent::class);
+
+        $response = $this->json('POST', '/api/v1/components');
+
+        $response->assertStatus(400);
     }
 
-    public function testPostComponent()
+    public function test_can_create_component()
     {
         $this->beUser();
 
-        $this->post('/api/v1/components', [
+        $this->expectsEvents(ComponentWasCreatedEvent::class);
+
+        $response = $this->json('POST', '/api/v1/components', [
             'name'        => 'Foo',
             'description' => 'Bar',
             'status'      => 1,
@@ -64,15 +79,18 @@ class ComponentTest extends AbstractApiTestCase
             'group_id'    => 1,
             'enabled'     => true,
         ]);
-        $this->seeJsonContains(['name' => 'Foo']);
-        $this->assertResponseOk();
+
+        $response->assertStatus(200);
+        $response->assertJsonFragment(['name' => 'Foo']);
     }
 
-    public function testPostComponentWithoutEnabledField()
+    public function test_can_create_component_without_enabled_field()
     {
         $this->beUser();
 
-        $this->post('/api/v1/components', [
+        $this->expectsEvents(ComponentWasCreatedEvent::class);
+
+        $response = $this->json('POST', '/api/v1/components', [
             'name'        => 'Foo',
             'description' => 'Bar',
             'status'      => 1,
@@ -80,15 +98,18 @@ class ComponentTest extends AbstractApiTestCase
             'order'       => 1,
             'group_id'    => 1,
         ]);
-        $this->seeJsonContains(['name' => 'Foo', 'enabled' => true]);
-        $this->assertResponseOk();
+
+        $response->assertStatus(200);
+        $response->assertJsonFragment(['name' => 'Foo', 'enabled' => true]);
     }
 
-    public function testPostComponentWithMetaData()
+    public function test_can_create_component_with_meta_data()
     {
         $this->beUser();
 
-        $this->post('/api/v1/components', [
+        $this->expectsEvents(ComponentWasCreatedEvent::class);
+
+        $response = $this->json('POST', '/api/v1/components', [
             'name'        => 'Foo',
             'description' => 'Bar',
             'status'      => 1,
@@ -101,19 +122,23 @@ class ComponentTest extends AbstractApiTestCase
             ],
         ]);
 
-        $this->seeJsonContains([
-            'meta' => [
+        $response->assertStatus(200);
+        $response->assertJsonFragment([
+            'name'   => 'Foo',
+            'status' => 1,
+            'meta'   => [
                 'uuid' => '172ff3fb-41f7-49d3-8bcd-f57b53627fa0',
             ],
         ]);
-        $this->assertResponseOk();
     }
 
-    public function testPostDisabledComponent()
+    public function test_can_create_disabled_component()
     {
         $this->beUser();
 
-        $this->post('/api/v1/components', [
+        $this->expectsEvents(ComponentWasCreatedEvent::class);
+
+        $response = $this->json('POST', '/api/v1/components', [
             'name'        => 'Foo',
             'description' => 'Bar',
             'status'      => 1,
@@ -122,62 +147,108 @@ class ComponentTest extends AbstractApiTestCase
             'group_id'    => 1,
             'enabled'     => 0,
         ]);
-        $this->seeJsonContains(['name' => 'Foo', 'enabled' => false]);
-        $this->assertResponseOk();
+
+        $response->assertStatus(200);
+        $response->assertJsonFragment(['name' => 'Foo', 'enabled' => false]);
     }
 
-    public function testGetNewComponent()
+    public function test_can_get_newly_created_component()
     {
-        $component = factory('CachetHQ\Cachet\Models\Component')->create();
+        $component = factory(Component::class)->create();
 
-        $this->get('/api/v1/components/1');
-        $this->seeJsonContains(['name' => $component->name]);
-        $this->assertResponseOk();
+        $response = $this->json('GET', '/api/v1/components/1');
+
+        $response->assertStatus(200);
+        $response->assertJsonFragment(['name' => $component->name]);
     }
 
-    public function testPutComponent()
+    public function test_can_update_component()
     {
         $this->beUser();
-        $component = factory('CachetHQ\Cachet\Models\Component')->create();
+        $component = factory(Component::class)->create();
 
-        $this->put('/api/v1/components/1', [
+        $this->expectsEvents(ComponentWasUpdatedEvent::class);
+
+        $response = $this->json('PUT', '/api/v1/components/1', [
             'name' => 'Foo',
         ]);
-        $this->seeJsonContains(['name' => 'Foo']);
-        $this->assertResponseOk();
+
+        $response->assertStatus(200);
+        $response->assertJsonFragment(['name' => 'Foo']);
     }
 
-    public function testPutComponentWithMetaData()
+    public function test_can_update_component_without_status_change()
     {
         $this->beUser();
-        $component = factory('CachetHQ\Cachet\Models\Component')->create([
+        $component = factory(Component::class)->create();
+
+        $this->expectsEvents(ComponentWasUpdatedEvent::class);
+        $this->doesntExpectEvents(ComponentStatusWasChangedEvent::class);
+
+        $response = $this->json('PUT', '/api/v1/components/1', [
+            'name' => 'Foo',
+        ]);
+
+        $response->assertStatus(200);
+        $response->assertJsonFragment(['name' => 'Foo']);
+    }
+
+    public function test_can_update_component_with_status_change()
+    {
+        $this->beUser();
+        $component = factory(Component::class)->create([
+            'status' => 1,
+        ]);
+
+        $this->expectsEvents([
+            ComponentWasUpdatedEvent::class,
+            ComponentStatusWasChangedEvent::class,
+        ]);
+
+        $response = $this->json('PUT', '/api/v1/components/1', [
+            'name'   => 'Foo',
+            'status' => 2,
+        ]);
+
+        $response->assertStatus(200);
+        $response->assertJsonFragment(['name' => 'Foo', 'status' => 2]);
+    }
+
+    public function test_can_update_component_with_meta_data()
+    {
+        $this->beUser();
+        $component = factory(Component::class)->create([
             'meta' => [
                 'uuid' => '172ff3fb-41f7-49d3-8bcd-f57b53627fa0',
             ],
         ]);
 
-        $this->put('/api/v1/components/1', [
+        $this->expectsEvents(ComponentWasUpdatedEvent::class);
+
+        $response = $this->json('PUT', '/api/v1/components/1', [
             'meta' => [
                 'uuid' => '172ff3fb-41f7-49d3-8bcd-f57b53627fa0',
                 'foo'  => 'bar',
             ],
         ]);
 
-        $this->seeJsonContains([
+        $response->assertStatus(200);
+        $response->assertJsonFragment([
             'meta' => [
                 'uuid' => '172ff3fb-41f7-49d3-8bcd-f57b53627fa0',
                 'foo'  => 'bar',
             ],
         ]);
-        $this->assertResponseOk();
     }
 
-    public function testDeleteComponent()
+    public function test_can_delete_component()
     {
         $this->beUser();
-        $component = factory('CachetHQ\Cachet\Models\Component')->create();
+        $component = factory(Component::class)->create();
 
-        $this->delete('/api/v1/components/1');
-        $this->assertResponseStatus(204);
+        $this->expectsEvents(ComponentWasRemovedEvent::class);
+
+        $response = $this->json('DELETE', '/api/v1/components/1');
+        $response->assertStatus(204);
     }
 }

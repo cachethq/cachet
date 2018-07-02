@@ -33,6 +33,8 @@ class AppServiceProvider extends ServiceProvider
      * Boot the service provider.
      *
      * @param \AltThree\Bus\Dispatcher $dispatcher
+     *
+     * @return void
      */
     public function boot(Dispatcher $dispatcher)
     {
@@ -54,6 +56,7 @@ class AppServiceProvider extends ServiceProvider
             'metrics'    => \CachetHQ\Cachet\Models\Metric::class,
             'schedules'  => \CachetHQ\Cachet\Models\Schedule::class,
             'subscriber' => \CachetHQ\Cachet\Models\Subscriber::class,
+            'tags'       => \CachetHQ\Cachet\Models\Tag::class,
         ]);
     }
 

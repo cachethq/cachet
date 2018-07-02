@@ -29,11 +29,11 @@ return [
     'incidents' => [
         'none'         => '아무 문제도 보고되지 않음',
         'past'         => '이전 문제',
-        'stickied'     => 'Stickied Incidents',
+        'stickied'     => '고정된 문제',
         'scheduled'    => '예정된 유지 보수',
         'scheduled_at' => ', :timestamp 에 예정됨',
         'posted'       => '게시 됨 :timestamp',
-        'posted_at'    => 'Posted at :timestamp',
+        'posted_at'    => ':timestamp에 게시됨',
         'status'       => [
             1 => '파악 중',
             2 => '확인됨',
@@ -45,15 +45,15 @@ return [
     // Schedule
     'schedules' => [
         'status' => [
-            0 => 'Upcoming',
-            1 => 'In Progress',
-            2 => 'Complete',
+            0 => '예정',
+            1 => '진행 중',
+            2 => '완료',
         ],
     ],
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] System operational|[2,Inf] All systems are operational',
+        'good'  => '[0,1]시스템 정상|[2,*]모든 시스템 정상',
         'bad'   => '[0,1] The system is experiencing issues|[2,Inf] Some systems are experiencing issues',
         'major' => '[0,1] The system is experiencing major issues|[2,Inf] Some systems are experiencing major issues',
     ],
@@ -75,12 +75,14 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'   => '최신 업데이트를 받아 보기 위한 구독신청.',
-        'unsubscribe' => '탈퇴하기 :링크',
-        'button'      => '구독',
-        'manage'      => [
+        'subscribe'           => '최신 업데이트를 받아 보기 위한 구독신청.',
+        'unsubscribe'         => 'Unsubscribe',
+        'button'              => '구독',
+        'manage_subscription' => 'Manage subscription',
+        'manage'              => [
             'no_subscriptions' => '당신은 모든 업데이트를 구독하고 있습니다',
             'my_subscriptions' => '당신은 다음 업데이트를 구독하고 있습니다',
+            'manage_at_link'   => ':link에서 구독을 관리할 수 있음',
         ],
         'email' => [
             'subscribe'          => '이메일 구독 신청.',
@@ -120,17 +122,17 @@ return [
     // Meta descriptions
     'meta' => [
         'description' => [
-            'incident'  => 'Details and updates about the :name incident that occurred on :date',
-            'schedule'  => 'Details about the scheduled maintenance period :name starting :startDate',
-            'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
-            'overview'  => 'Stay up to date with the latest service updates from :app.',
+            'incident'  => ':date에 발생한 :name에 대한 자세한 정보와 업데이트',
+            'schedule'  => ':startDate에 시작하는 계획된 :name 점검에 대한 자세한 정보',
+            'subscribe' => ':app을 구독해서 사고와 예정된 점검에 대해서 받아볼 수 있음',
+            'overview'  => ':app의 최신 상태 업데이트를 받아보세요.',
         ],
     ],
 
     // Other
     'home'            => '홈',
-    'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
-    'timezone'        => 'Times are shown in :timezone.',
+    'powered_by'      => '<a href="https://cachethq.io" class="links">Cachet</a>에 의해 제공됩니다.',
+    'timezone'        => '시간은 :timezone을 기준으로 표시됩니다.',
     'about_this_site' => '이 사이트에 대해',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',

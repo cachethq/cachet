@@ -18,12 +18,12 @@ return [
     'incidents' => [
         'title'                    => 'Olaylar &amp; Zamanlama',
         'incidents'                => 'Olaylar',
-        'logged'                   => '{0} Hiç olay yok, tebrikler. |Bir olay rapor ettiniz.|<strong>:count</strong> olay rapor ettiniz.',
+        'logged'                   => '{0}There are no incidents, good work.|[1]You have logged one incident.|[2,*]You have reported <strong>:count</strong> incidents.',
         'incident-create-template' => 'Şablon Oluştur',
         'incident-templates'       => 'Olay Şablonları',
         'updates'                  => [
             'title'   => 'Olay güncellemeleri için: olay',
-            'count'   => '{0} Sıfır güncelleştirmeleri |[1] Tek bir güncelleştirme |[2] İki güncelleştirme | [3, *] Birkaç güncelleştirme',
+            'count'   => '{0}Zero Updates|[1]One Update|[2]Two Updates|[3,*]Several Updates',
             'add'     => [
                 'title'   => 'Yeni olay güncellemesi oluştur',
                 'success' => 'Yeni olay güncelleştirmeniz oluşturuldu.',
@@ -35,6 +35,7 @@ return [
                 'failure' => 'Olay şablonu güncellenirken bir şeyler ters gitti',
             ],
         ],
+        'reported_by'              => 'Reported by :user',
         'add'                      => [
             'title'   => 'Olay Ekle',
             'success' => 'Olay eklendi.',
@@ -74,7 +75,7 @@ return [
     // Incident Maintenance
     'schedule' => [
         'schedule'     => 'Bakım',
-        'logged'       => '{0} Hiçbir olay yok, tebrikler. |Bir olayı raprladınız. | <strong>:count</strong> olayı raporladınız.',
+        'logged'       => '{0}There has been no Maintenance, good work.|[1]You have logged one schedule.|[2,*]You have reported <strong>:count</strong> schedules.',
         'scheduled_at' => ':timestamp zamanı için kaydedildi',
         'add'          => [
             'title'   => 'Zamanlanmış Bakım Ekle',

@@ -8,18 +8,18 @@
 
 <div class="clearfix"></div>
 
-@include('dashboard.partials.errors')
+@include('partials.errors')
 
 <div class="row">
     <div class="col-xs-12 col-lg-offset-2 col-lg-8">
         <div class="text-center margin-bottom">
-            <h1>{{ $app_name }} Notifications</h1>
+            <h1>{{ $appName }} Notifications</h1>
             <p>Manage notifications for <strong>{{ $subscriber->email }}</strong></p>
         </div>
         <form action="{{ cachet_route('subscribe.manage', [$subscriber->verify_code], 'post') }}" method="post">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            @if($component_groups->isNotEmpty() || $ungrouped_components->isNotEmpty())
-            @foreach($component_groups as $componentGroup)
+            @if($componentGroups->isNotEmpty() || $ungroupedComponents->isNotEmpty())
+            @foreach($componentGroups as $componentGroup)
             <div class="list-group components">
                 @if($componentGroup->enabled_components->count() > 0)
                 <div class="list-group-item group-name">
@@ -38,12 +38,12 @@
             </div>
             @endforeach
 
-            @if($ungrouped_components->isNotEmpty())
+            @if($ungroupedComponents->isNotEmpty())
             <ul class="list-group components">
                 <div class="list-group-item group-name">
                     <strong>{{ trans('cachet.components.group.other') }}</strong>
                 </div>
-                @foreach($ungrouped_components as $component)
+                @foreach($ungroupedComponents as $component)
                 @include('partials.component_input', compact($component))
                 @endforeach
             </ul>

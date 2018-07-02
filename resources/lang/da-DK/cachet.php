@@ -53,7 +53,7 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] Systemet virker|[2,Inf] Alle systemer virker',
+        'good'  => '[0,1] Systemet operationelt | [2, *] Alle systemer er operationelle',
         'bad'   => '[0,1] Systemet har i øjeblikket problemer|[2,*] Nogle systemer har i øjeblikket problemer',
         'major' => '[0,1] Systemet har i øjeblikket store problemer|[2,*] Nogle systemer har i øjeblikket store problemer',
     ],
@@ -75,12 +75,14 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'   => 'Tilmeld dig for at få de seneste opdateringer',
-        'unsubscribe' => 'Afmeld via: link',
-        'button'      => 'Abonner',
-        'manage'      => [
+        'subscribe'           => 'Tilmeld dig for at få de seneste opdateringer',
+        'unsubscribe'         => 'Opsige abonnement',
+        'button'              => 'Abonner',
+        'manage_subscription' => 'Administrer abonnement',
+        'manage'              => [
             'no_subscriptions' => 'Du abonner i øjeblikket på alle opdateringer.',
             'my_subscriptions' => 'Du abonnere i øjeblikket på følgende opdateringer.',
+            'manage_at_link'   => 'Håndtér dine abonnementer via :link',
         ],
         'email' => [
             'subscribe'          => 'Abonner på email opdateringer.',

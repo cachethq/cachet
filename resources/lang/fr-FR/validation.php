@@ -84,7 +84,7 @@ return [
         'string'  => 'L\'attribut ":attribute" doit faire :size caractères.',
         'array'   => ':attribute doit contenir :size éléments.',
     ],
-    'string'   => 'L\' :attribut doit être une chaîne de caractères.',
+    'string'   => ':attribut doit être une chaîne de caractères.',
     'timezone' => ':attribute doit être une zone valide.',
     'unique'   => ':attribute a déjà été pris.',
     'url'      => 'Le format de :attribute n\'est pas valide.',
