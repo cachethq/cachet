@@ -30,6 +30,15 @@ class MetricPoint extends Model implements HasPresenter
     use ValidatingTrait;
 
     /**
+     * The accessors to append to the model's array form.
+     *
+     * @var string[]
+     */
+    protected $appends = [
+        'calculated_value',
+    ];
+
+    /**
      * The model's attributes.
      *
      * @var string[]
@@ -79,6 +88,16 @@ class MetricPoint extends Model implements HasPresenter
     public function metric()
     {
         return $this->belongsTo(Metric::class);
+    }
+
+    /**
+     * Show the actual calculated value; as per (value * counter).
+     *
+     * @return int
+     */
+    public function getCalculatedValueAttribute()
+    {
+        return $this->value * $this->counter;
     }
 
     /**
