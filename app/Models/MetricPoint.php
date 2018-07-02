@@ -82,22 +82,6 @@ class MetricPoint extends Model implements HasPresenter
     }
 
     /**
-     * Override the value attribute.
-     *
-     * @param mixed $value
-     *
-     * @return float
-     */
-    public function getActiveValueAttribute($value)
-    {
-        if ($this->metric->calc_type === Metric::CALC_SUM) {
-            return round((float) $value * $this->counter, $this->metric->places);
-        }
-
-        return round((float) $value, $this->metric->places);
-    }
-
-    /**
      * Round the created at value into intervals of 30 seconds.
      *
      * @param string $createdAt
