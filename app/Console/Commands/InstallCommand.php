@@ -14,6 +14,7 @@ namespace CachetHQ\Cachet\Console\Commands;
 use Dotenv\Dotenv;
 use Dotenv\Exception\InvalidPathException;
 use Illuminate\Console\Command;
+use Illuminate\Contracts\Events\Dispatcher;
 
 /**
  * This is the install command class.
@@ -37,24 +38,53 @@ class InstallCommand extends Command
     protected $description = 'Install Cachet';
 
     /**
+     * The events instance.
+     *
+     * @var \Illuminate\Contracts\Events\Dispatcher
+     */
+    protected $events;
+
+    /**
+     * Create a new command instance.
+     *
+     * @param Dispatcher $events
+     */
+    public function __construct(Dispatcher $events)
+    {
+        $this->events = $events;
+
+        parent::__construct();
+    }
+
+    /**
      * Execute the console command.
      *
      * @return void
      */
     public function handle()
     {
-        if (!$this->confirm('Do you want to install Cachet?')) {
-            $this->line('Installation aborted. Goodbye!');
-
-            return;
+        if ($this->confirm('Do you want to configure Cachet before installing?')) {
+            $this->configureEnvironmentFile();
+            $this->configureKey();
+            $this->configureDatabase();
+            $this->configureDrivers();
+            $this->configureMail();
+            $this->configureCachet();
         }
 
-        $this->configureEnvironmentFile();
-        $this->configureKey();
-        $this->configureDatabase();
-        $this->configureDrivers();
-        $this->configureMail();
-        $this->configureCachet();
+        $this->line('Installing Cachet...');
+
+        $this->events->fire('command.installing', $this);
+        $this->events->fire('command.generatekey', $this);
+        $this->events->fire('command.cacheconfig', $this);
+        $this->events->fire('command.cacheroutes', $this);
+        $this->events->fire('command.publishvendors', $this);
+        $this->events->fire('command.runmigrations', $this);
+        $this->events->fire('command.runseeding', $this);
+        $this->events->fire('command.updatecache', $this);
+        $this->events->fire('command.linkstorage', $this);
+        $this->events->fire('command.extrastuff', $this);
+        $this->events->fire('command.installed', $this);
 
         $this->info('Cachet is installed ⚡');
     }
