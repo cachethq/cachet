@@ -81,10 +81,6 @@ class Beacon implements BeaconContract
             return;
         }
 
-        if (!($contactEmail = User::admins()->active()->first()->email)) {
-            $contactEmail = null;
-        }
-
         $setting = app(Setting::class);
 
         if (!$installId = $setting->get('install_id', null)) {
@@ -94,12 +90,11 @@ class Beacon implements BeaconContract
         }
 
         $payload = [
-            'install_id'    => $installId,
-            'version'       => CACHET_VERSION,
-            'docker'        => $this->config->get('cachet.is_docker'),
-            'database'      => $this->config->get('database.default'),
-            'contact_email' => $contactEmail,
-            'data'          => [
+            'install_id' => $installId,
+            'version'    => CACHET_VERSION,
+            'docker'     => $this->config->get('cachet.is_docker'),
+            'database'   => $this->config->get('database.default'),
+            'data'       => [
                 'components' => Component::all()->count(),
                 'incidents'  => Incident::all()->count(),
                 'metrics'    => Metric::all()->count(),
