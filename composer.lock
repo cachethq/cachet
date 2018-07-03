@@ -409,16 +409,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.62.5",
+            "version": "3.62.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "75113b0ba22fffd968c45f06ba20fa94509dc973"
+                "reference": "0be301c36a5c337b40e69ce3b4698cca5427e4b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/75113b0ba22fffd968c45f06ba20fa94509dc973",
-                "reference": "75113b0ba22fffd968c45f06ba20fa94509dc973",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/0be301c36a5c337b40e69ce3b4698cca5427e4b9",
+                "reference": "0be301c36a5c337b40e69ce3b4698cca5427e4b9",
                 "shasum": ""
             },
             "require": {
@@ -485,7 +485,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2018-06-28T21:12:53+00:00"
+            "time": "2018-06-29T22:12:11+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -3919,16 +3919,16 @@
         },
         {
             "name": "swiftmailer/swiftmailer",
-            "version": "v6.0.2",
+            "version": "v6.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "412333372fb6c8ffb65496a2bbd7321af75733fc"
+                "reference": "0ff595e1d9d7d1c929b2a5f7b774bbcfbbd81587"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/412333372fb6c8ffb65496a2bbd7321af75733fc",
-                "reference": "412333372fb6c8ffb65496a2bbd7321af75733fc",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/0ff595e1d9d7d1c929b2a5f7b774bbcfbbd81587",
+                "reference": "0ff595e1d9d7d1c929b2a5f7b774bbcfbbd81587",
                 "shasum": ""
             },
             "require": {
@@ -3939,10 +3939,14 @@
                 "mockery/mockery": "~0.9.1",
                 "symfony/phpunit-bridge": "~3.3@dev"
             },
+            "suggest": {
+                "ext-intl": "Needed to support internationalized email addresses",
+                "true/punycode": "Needed to support internationalized email addresses, if ext-intl is not installed"
+            },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "6.0-dev"
+                    "dev-master": "6.1-dev"
                 }
             },
             "autoload": {
@@ -3964,13 +3968,13 @@
                 }
             ],
             "description": "Swiftmailer, free feature-rich PHP mailer",
-            "homepage": "http://swiftmailer.symfony.com",
+            "homepage": "https://swiftmailer.symfony.com",
             "keywords": [
                 "email",
                 "mail",
                 "mailer"
             ],
-            "time": "2017-09-30T22:39:41+00:00"
+            "time": "2018-07-02T20:24:38+00:00"
         },
         {
             "name": "symfony/console",
@@ -4955,28 +4959,28 @@
         },
         {
             "name": "vlucas/phpdotenv",
-            "version": "v2.4.0",
+            "version": "v2.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vlucas/phpdotenv.git",
-                "reference": "3cc116adbe4b11be5ec557bf1d24dc5e3a21d18c"
+                "reference": "6ae3e2e6494bb5e58c2decadafc3de7f1453f70a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/3cc116adbe4b11be5ec557bf1d24dc5e3a21d18c",
-                "reference": "3cc116adbe4b11be5ec557bf1d24dc5e3a21d18c",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/6ae3e2e6494bb5e58c2decadafc3de7f1453f70a",
+                "reference": "6ae3e2e6494bb5e58c2decadafc3de7f1453f70a",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.9"
             },
             "require-dev": {
-                "phpunit/phpunit": "^4.8 || ^5.0"
+                "phpunit/phpunit": "^4.8.35 || ^5.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.4-dev"
+                    "dev-master": "2.5-dev"
                 }
             },
             "autoload": {
@@ -4986,7 +4990,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "BSD-3-Clause-Attribution"
+                "BSD-3-Clause"
             ],
             "authors": [
                 {
@@ -5001,7 +5005,7 @@
                 "env",
                 "environment"
             ],
-            "time": "2016-09-01T10:05:43+00:00"
+            "time": "2018-07-01T10:25:50+00:00"
         },
         {
             "name": "zendframework/zend-diactoros",

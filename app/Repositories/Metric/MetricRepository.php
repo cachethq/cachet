@@ -98,7 +98,7 @@ class MetricRepository
         $pointKey = $dateTime->format('Y-m-d H:00');
         $points = $this->repository->getPointsSinceHour($metric, $hours)->pluck('value', 'key');
 
-        for ($i = 0; $i <= $hours; $i++) {
+        for ($i = 0; $i < $hours; $i++) {
             if (!$points->has($pointKey)) {
                 $points->put($pointKey, $metric->default_value);
             }

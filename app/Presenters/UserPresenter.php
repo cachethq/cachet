@@ -18,7 +18,7 @@ use McCool\LaravelAutoPresenter\BasePresenter;
 /**
  * This is the user presenter class.
  *
- * @author James Brooks <james@bluebaytravel.co.uk>
+ * @author James Brooks <james@alt-three.com>
  */
 class UserPresenter extends BasePresenter implements Arrayable
 {

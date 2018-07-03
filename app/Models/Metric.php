@@ -182,7 +182,7 @@ class Metric extends Model implements HasPresenter
      */
     public function points()
     {
-        return $this->hasMany(MetricPoint::class, 'metric_id', 'id');
+        return $this->hasMany(MetricPoint::class, 'metric_id', 'id')->latest();
     }
 
     /**

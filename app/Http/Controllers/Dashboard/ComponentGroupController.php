@@ -24,7 +24,7 @@ use Illuminate\Support\Facades\View;
 /**
  * This is the component group controller class.
  *
- * @author James Brooks <james@bluebaytravel.co.uk>
+ * @author James Brooks <james@alt-three.com>
  */
 class ComponentGroupController extends Controller
 {

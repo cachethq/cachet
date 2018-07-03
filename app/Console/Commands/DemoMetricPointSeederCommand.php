@@ -12,8 +12,6 @@
 namespace CachetHQ\Cachet\Console\Commands;
 
 use CachetHQ\Cachet\Models\MetricPoint;
-use DateInterval;
-use DateTime;
 use Illuminate\Console\Command;
 use Illuminate\Console\ConfirmableTrait;
 use Symfony\Component\Console\Input\InputOption;
@@ -66,16 +64,26 @@ class DemoMetricPointSeederCommand extends Command
     {
         MetricPoint::truncate();
 
-        // Generate 11 hours of metric points
-        for ($i = 0; $i < 11; $i++) {
-            $metricTime = (new DateTime())->sub(new DateInterval('PT'.$i.'H'));
+        $points = [];
 
-            MetricPoint::create([
-                'metric_id'  => 1,
-                'value'      => random_int(1, 10),
-                'created_at' => $metricTime,
-                'updated_at' => $metricTime,
-            ]);
+        // Generate 24 hours of metric points
+        for ($i = 0; $i <= 23; $i++) {
+            for ($j = 0; $j <= 59; $j++) {
+                $this->info("{$i}:{$j}");
+
+                $pointTime = date("Y-m-d {$i}:{$j}:00");
+
+                $points[] = [
+                    'metric_id'  => 1,
+                    'value'      => random_int(1, 10),
+                    'created_at' => $pointTime,
+                    'updated_at' => $pointTime,
+                ];
+            }
+        }
+
+        foreach (array_chunk($points, 100) as $chunk) {
+            MetricPoint::insert($chunk);
         }
     }
 
