@@ -100,6 +100,9 @@ class MetricPointTest extends AbstractApiTestCase
     {
         $this->beUser();
 
+        // prevent tests breaking due to rolling into the next second
+        Carbon::setTestNow(Carbon::now());
+
         $metric = factory(Metric::class)->create();
         $createdAt = Carbon::now();
         $metricPoint = factory(MetricPoint::class)->make([
@@ -116,7 +119,7 @@ class MetricPointTest extends AbstractApiTestCase
         $response->assertStatus(200);
         $response->assertJsonFragment([
             'value'      => $metricPoint->value,
-            'created_at' => Carbon::createFromFormat('U', $timestamp)->setTimezone('Europe/London')->toDateTimeString(),
+            'created_at' => Carbon::createFromFormat('U', $timestamp)->setTimezone(config('cachet.timezone'))->toDateTimeString(),
         ]);
     }
 
