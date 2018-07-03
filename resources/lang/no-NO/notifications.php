@@ -13,34 +13,34 @@ return [
     'component' => [
         'status_update' => [
             'mail' => [
-                'subject'  => 'Component Status Updated',
-                'greeting' => 'A component\'s status was updated!',
-                'content'  => ':name status changed from :old_status to :new_status.',
+                'subject'  => 'Komponentstatus oppdatert',
+                'greeting' => 'En komponents status ble oppdatert!',
+                'content'  => ':name status endret fra :old_status til :new_status.',
                 'action'   => 'Vis',
             ],
             'slack' => [
-                'title'   => 'Component Status Updated',
-                'content' => ':name status changed from :old_status to :new_status.',
+                'title'   => 'Komponentstatus oppdatert',
+                'content' => ':name status endret fra :old_status til :new_status.',
             ],
             'sms' => [
-                'content' => ':name status changed from :old_status to :new_status.',
+                'content' => ':name status endret fra :old_status til :new_status.',
             ],
         ],
     ],
     'incident' => [
         'new' => [
             'mail' => [
-                'subject'  => 'New Incident Reported',
-                'greeting' => 'A new incident was reported at :app_name.',
-                'content'  => 'Incident :name was reported',
+                'subject'  => 'Ny hendelse rapportert',
+                'greeting' => 'En ny hendelse ble rapportert på :app_name.',
+                'content'  => 'Hendelsen :name ble rapportert',
                 'action'   => 'Vis',
             ],
             'slack' => [
-                'title'   => 'Incident :name Reported',
+                'title'   => 'Hendelse :name rapportert',
                 'content' => 'A new incident was reported at :app_name',
             ],
             'sms' => [
-                'content' => 'A new incident was reported at :app_name.',
+                'content' => 'En ny hendelse ble rapportert på :app_name.',
             ],
         ],
         'update' => [
