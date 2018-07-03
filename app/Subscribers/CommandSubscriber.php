@@ -15,7 +15,6 @@ use CachetHQ\Cachet\Bus\Events\System\SystemWasInstalledEvent;
 use CachetHQ\Cachet\Bus\Events\System\SystemWasResetEvent;
 use CachetHQ\Cachet\Bus\Events\System\SystemWasUpdatedEvent;
 use CachetHQ\Cachet\Settings\Cache;
-use Carbon\Carbon;
 use Exception;
 use Illuminate\Console\Command;
 use Illuminate\Contracts\Config\Repository;
@@ -153,11 +152,8 @@ class CommandSubscriber
         $command->line('Backing up database...');
 
         try {
-            $command->call('db:backup', [
-                '--compression'     => 'gzip',
-                '--database'        => $this->config->get('database.default'),
-                '--destination'     => 'local',
-                '--destinationPath' => Carbon::now()->format('Y-m-d H.i.s'),
+            $command->call('backup:run', [
+                '--only-db'         => true,
                 '--no-interaction'  => true,
             ]);
         } catch (Exception $e) {

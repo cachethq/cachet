@@ -11,7 +11,6 @@
 
 namespace CachetHQ\Cachet\Console;
 
-use CachetHQ\Cachet\Console\Commands\AppInstallCommand;
 use CachetHQ\Cachet\Console\Commands\AppResetCommand;
 use CachetHQ\Cachet\Console\Commands\AppUpdateCommand;
 use CachetHQ\Cachet\Console\Commands\BeaconCommand;
@@ -37,7 +36,6 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        AppInstallCommand::class,
         AppResetCommand::class,
         AppUpdateCommand::class,
         BeaconCommand::class,
