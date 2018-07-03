@@ -143,7 +143,7 @@ class MetricPointTest extends AbstractApiTestCase
 
         $response->assertStatus(200);
         $response->assertJsonFragment([
-            'value' => $metricPoint->value,
+            'value'      => $metricPoint->value,
             'created_at' => Carbon::createFromFormat('U', $timestamp)->setTimezone($timezone)->toDateTimeString(),
         ]);
     }
