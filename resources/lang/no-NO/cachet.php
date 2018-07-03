@@ -123,8 +123,8 @@ return [
     'meta' => [
         'description' => [
             'incident'  => 'Detaljer og oppdateringer om :name hendelse som skjedde den :date',
-            'schedule'  => 'Details about the scheduled maintenance period :name starting :startDate',
-            'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
+            'schedule'  => 'Detaljer om det planlagte vedlikeholdet :name som starter :startDate',
+            'subscribe' => 'Abonner på :app for å motta oppdateringer om hendelser og planlagt vedlikehold',
             'overview'  => 'Hold deg oppdatert med de nyeste service-oppdateringene fra :app.',
         ],
     ],
