@@ -43,17 +43,17 @@ class MetricPointTest extends AbstractApiTestCase
     {
         $metric = factory(Metric::class)->create();
         $metricPoint1 = factory(MetricPoint::class)->create([
-            'metric_id' => $metric->id,
+            'metric_id'  => $metric->id,
             'created_at' => Carbon::parse('2016-12-01 2:00pm'),
             'updated_at' => Carbon::parse('2016-12-01 2:00pm'),
         ]);
         $metricPoint2 = factory(MetricPoint::class)->create([
-            'metric_id' => $metric->id,
+            'metric_id'  => $metric->id,
             'created_at' => Carbon::parse('2016-12-01 1:00pm'),
             'updated_at' => Carbon::parse('2016-12-01 1:00pm'),
         ]);
         $metricPoint3 = factory(MetricPoint::class)->create([
-            'metric_id' => $metric->id,
+            'metric_id'  => $metric->id,
             'created_at' => Carbon::parse('2016-12-01 4:00pm'),
             'updated_at' => Carbon::parse('2016-12-01 4:00pm'),
         ]);
@@ -65,7 +65,7 @@ class MetricPointTest extends AbstractApiTestCase
                 ['id' => $metricPoint3->id],
                 ['id' => $metricPoint1->id],
                 ['id' => $metricPoint2->id],
-            ]
+            ],
         ]);
 
         $response->assertStatus(200);
