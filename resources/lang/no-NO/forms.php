@@ -241,7 +241,7 @@ return [
     'remove'         => 'Fjern',
     'invite'         => 'Inviter',
     'signup'         => 'Registerer deg',
-    'manage_updates' => 'Manage Updates',
+    'manage_updates' => 'Administrer oppdateringer',
 
     // Other
     'optional' => '* Valgfritt',
