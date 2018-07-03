@@ -39,6 +39,38 @@ class MetricPointTest extends AbstractApiTestCase
         $response->assertStatus(200);
     }
 
+    public function test_can_get_all_metric_points_in_order_by_latests()
+    {
+        $metric = factory(Metric::class)->create();
+        $metricPoint1 = factory(MetricPoint::class)->create([
+            'metric_id' => $metric->id,
+            'created_at' => Carbon::parse('2016-12-01 2:00pm'),
+            'updated_at' => Carbon::parse('2016-12-01 2:00pm'),
+        ]);
+        $metricPoint2 = factory(MetricPoint::class)->create([
+            'metric_id' => $metric->id,
+            'created_at' => Carbon::parse('2016-12-01 1:00pm'),
+            'updated_at' => Carbon::parse('2016-12-01 1:00pm'),
+        ]);
+        $metricPoint3 = factory(MetricPoint::class)->create([
+            'metric_id' => $metric->id,
+            'created_at' => Carbon::parse('2016-12-01 4:00pm'),
+            'updated_at' => Carbon::parse('2016-12-01 4:00pm'),
+        ]);
+
+        $response = $this->json('GET', "/api/v1/metrics/{$metric->id}/points");
+
+        $response->assertJson([
+            'data' => [
+                ['id' => $metricPoint3->id],
+                ['id' => $metricPoint1->id],
+                ['id' => $metricPoint2->id],
+            ]
+        ]);
+
+        $response->assertStatus(200);
+    }
+
     public function test_cannot_create_metric_point_without_authorization()
     {
         $metric = factory(Metric::class)->create();

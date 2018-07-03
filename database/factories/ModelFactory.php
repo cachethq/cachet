@@ -85,9 +85,11 @@ $factory->define(Metric::class, function ($faker) {
 
 $factory->define(MetricPoint::class, function ($faker) {
     return [
-        'metric_id' => factory(Metric::class)->create()->id,
-        'value'     => mt_rand(1, 100),
-        'counter'   => 1,
+        'metric_id'  => factory(Metric::class)->create()->id,
+        'value'      => mt_rand(1, 100),
+        'counter'    => 1,
+        'created_at' => Carbon::now(),
+        'updated_at' => Carbon::now(),
     ];
 });
 

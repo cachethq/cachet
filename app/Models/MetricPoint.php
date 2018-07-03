@@ -120,7 +120,11 @@ class MetricPoint extends Model implements HasPresenter
         $timestamp = $createdAt->format('U');
         $timestamp = 30 * round($timestamp / 30);
 
-        return Carbon::createFromFormat('U', $timestamp)->toDateTimeString();
+        $date = Carbon::createFromFormat('U', $timestamp)->toDateTimeString();
+
+        $this->attributes['created_at'] = $date;
+
+        return $date;
     }
 
     /**
