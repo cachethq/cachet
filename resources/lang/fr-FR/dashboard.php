@@ -231,7 +231,7 @@ return [
             'test'  => 'Test',
             'email' => [
                 'subject' => 'Tester la notification depuis Cachet',
-                'body'    => 'Voici un test de notification depuis Cachet.',
+                'body'    => 'Ceci est une notification de test depuis Cachet.',
             ],
         ],
         'security' => [
