@@ -34,8 +34,10 @@
                         <div class="list-group">
                             @foreach($incident->updates as $update)
                             <a class="list-group-item incident-update-item" href="{{ $update->permalink }}">
-                                <i class="{{ $update->icon }}" title="{{ $update->human_status }}" data-toggle="tooltip"></i>
-                                {!! $update->formatted_message !!}
+                                <div class="row incident-update-row">
+                                    <i class="{{ $update->icon }} col-sm-1" title="{{ $update->human_status }}" data-toggle="tooltip"></i>
+                                    <div class="col-sm-11">{!! $update->formatted_message !!}</div>
+                                </div>
                                 <small>
                                     <abbr class="timeago links" data-toggle="tooltip"
                                         data-placement="right" title="{{ $update->timestamp_formatted }}"

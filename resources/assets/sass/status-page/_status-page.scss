@@ -427,4 +427,9 @@ body.status-page {
     .incident-update-item > p {
         display: inline-block;
     }
+
+    .incident-update-row > i, .incident-update-row > div {
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
