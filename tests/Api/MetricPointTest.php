@@ -100,20 +100,26 @@ class MetricPointTest extends AbstractApiTestCase
     {
         $this->beUser();
 
+        // prevent tests breaking due to rolling into the next second
+        Carbon::setTestNow(Carbon::now());
+
         $metric = factory(Metric::class)->create();
-        $timestamp = strtotime('now');
+        $createdAt = Carbon::now();
         $metricPoint = factory(MetricPoint::class)->make([
             'metric_id' => $metric->id,
         ]);
         $postData = $metricPoint->toArray();
-        $postData['timestamp'] = $timestamp;
+        $postData['timestamp'] = $createdAt->timestamp;
 
         $response = $this->json('POST', "/api/v1/metrics/{$metric->id}/points", $postData);
+
+        // Round value to match ours
+        $timestamp = 30 * round($createdAt->timestamp / 30);
 
         $response->assertStatus(200);
         $response->assertJsonFragment([
             'value'      => $metricPoint->value,
-            'created_at' => date('Y-m-d H:i:s', $timestamp),
+            'created_at' => Carbon::createFromFormat('U', $timestamp)->setTimezone(config('cachet.timezone'))->toDateTimeString(),
         ]);
     }
 
@@ -126,17 +132,23 @@ class MetricPointTest extends AbstractApiTestCase
 
         $timezone = 'America/Mexico_City';
         $metric = factory(Metric::class)->create();
-        $datetime = Carbon::now()->timezone($timezone);
+        $createdAt = Carbon::now()->timezone($timezone);
         $metricPoint = factory(MetricPoint::class)->make([
             'metric_id' => $metric->id,
         ]);
         $postData = $metricPoint->toArray();
-        $postData['timestamp'] = $datetime->timestamp;
+        $postData['timestamp'] = $createdAt->timestamp;
 
         $response = $this->json('POST', "/api/v1/metrics/{$metric->id}/points", $postData, ['Time-Zone' => $timezone]);
 
+        // Round value to match ours
+        $timestamp = 30 * round($createdAt->timestamp / 30);
+
         $response->assertStatus(200);
-        $response->assertJsonFragment(['value' => $metricPoint->value, 'created_at' => $datetime->toDateTimeString()]);
+        $response->assertJsonFragment([
+            'value'      => $metricPoint->value,
+            'created_at' => Carbon::createFromFormat('U', $timestamp)->setTimezone($timezone)->toDateTimeString(),
+        ]);
     }
 
     public function test_can_update_metric_point()
