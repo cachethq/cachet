@@ -12,7 +12,7 @@
 return [
 
     'dashboard'          => 'Dashbord',
-    'writeable_settings' => 'The Cachet settings directory is not writeable. Please make sure that <code>./bootstrap/cachet</code> is writeable by the web server.',
+    'writeable_settings' => 'Mappen for Cachet instillinger er ikke skrivbar. Kontroller at <code>./bootstrap/cachet</code> er skrivbar av webserveren.',
 
     // Incidents
     'incidents' => [
@@ -230,8 +230,8 @@ return [
             'mail'  => 'E-post',
             'test'  => 'Test',
             'email' => [
-                'subject' => 'Test notification from Cachet',
-                'body'    => 'This is a test notification from Cachet.',
+                'subject' => 'Testnotifikasjon fra Cachet',
+                'body'    => 'Dette er en testnotifikasjon fra Cachet.',
             ],
         ],
         'security' => [
