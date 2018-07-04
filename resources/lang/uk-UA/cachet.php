@@ -33,7 +33,7 @@ return [
         'scheduled'    => 'Запланована перерва у роботі',
         'scheduled_at' => ', заплановано на :timestamp',
         'posted'       => 'Опубліковано :timestamp',
-        'posted_at'    => 'Posted at :timestamp',
+        'posted_at'    => 'Опубліковано в :timestamp',
         'status'       => [
             1 => 'Розслідування',
             2 => 'Ідентифікований',
@@ -53,7 +53,7 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1]System operational|[2,*]All systems are operational',
+        'good'  => '[0,1]Система працює в штатному режимі |[2,*]Всі системи працюють в штатному режимі',
         'bad'   => '[0,1] Система має проблеми | [2, Inf] Деякі системи мають проблеми',
         'major' => '[0,1] Система має значні проблеми |[2,Inf] Декілька систем мають значні проблеми',
     ],
@@ -76,13 +76,13 @@ return [
     // Subscriber
     'subscriber' => [
         'subscribe'           => 'Підписатись на оновлення',
-        'unsubscribe'         => 'Unsubscribe',
+        'unsubscribe'         => 'Відписатися',
         'button'              => 'Підписатись',
-        'manage_subscription' => 'Manage subscription',
+        'manage_subscription' => 'Управління підпискою',
         'manage'              => [
             'no_subscriptions' => 'Наразі, ви підписані на всі оновлення.',
             'my_subscriptions' => 'Ви уже підписані до цих оновлень.',
-            'manage_at_link'   => 'Manage your subscriptions at :link',
+            'manage_at_link'   => 'Управляйте своїми підписками в :link',
         ],
         'email' => [
             'subscribe'          => 'Підписатись на email оновлення.',
@@ -122,9 +122,9 @@ return [
     // Meta descriptions
     'meta' => [
         'description' => [
-            'incident'  => 'Details and updates about the :name incident that occurred on :date',
-            'schedule'  => 'Details about the scheduled maintenance period :name starting :startDate',
-            'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
+            'incident'  => 'Детальна інформація та оновлення по інциденту: :name, котрий стався: :date',
+            'schedule'  => 'Детальна інформація про заплановані технічні заходи: :name розпочинаються :startDate',
+            'subscribe' => 'Підписатися на :app для того, щоб отримувати інформацію про інциденти і заплановані технічні заходи',
             'overview'  => 'Залишатись в курсі останніх оновлень стану :app.',
         ],
     ],

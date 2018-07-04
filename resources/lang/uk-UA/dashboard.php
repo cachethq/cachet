@@ -18,11 +18,11 @@ return [
     'incidents' => [
         'title'                    => 'Інциденти & розклад',
         'incidents'                => 'Інциденти',
-        'logged'                   => '{0}There are no incidents, good work.|[1]You have logged one incident.|[2,*]You have reported <strong>:count</strong> incidents.',
+        'logged'                   => '{0} Інциденти відсутні, прекрасна робота!|[1] У вас зареєстровано один інцидент.| [2,*] У вас зареєстровано <strong>:count</strong> інцидент (-ів).',
         'incident-create-template' => 'Створити шаблон',
         'incident-templates'       => 'Шаблони Інцидентів',
         'updates'                  => [
-            'title'   => 'Incident updates for :incident',
+            'title'   => 'Оновлення для інциденту :incident',
             'count'   => '{0}Zero Updates|[1]One Update|[2]Two Updates|[3,*]Several Updates',
             'add'     => [
                 'title'   => 'Створити нове оновлення інциденту',
@@ -163,7 +163,7 @@ return [
         'not_verified'         => 'Не підтверджено',
         'subscriber'           => ': лист, підписаний: Дата',
         'no_subscriptions'     => 'Subscribed to all updates',
-        'global'               => 'Globally subscribed',
+        'global'               => 'Підписаний глобально',
         'add'                  => [
             'title'   => 'Add a new subscriber',
             'success' => 'Subscriber has been added!',

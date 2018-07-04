@@ -33,7 +33,7 @@ return [
         'scheduled'    => 'Planlagt vedlikehold',
         'scheduled_at' => ', planlagt :timestamp',
         'posted'       => 'Skrevet :timestamp',
-        'posted_at'    => 'Posted at :timestamp',
+        'posted_at'    => 'Postet den :timestamp',
         'status'       => [
             1 => 'Undersøkes',
             2 => 'Identifisert',
@@ -53,9 +53,9 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1]System operational|[2,*]All systems are operational',
-        'bad'   => '[0,1] Systemet har problemer| [2, Inf] Noen systemer har problemer',
-        'major' => '[0,1] Det er et større brudd i systemet| [2, Inf] Noen systemer har større brudd',
+        'good'  => '[0,1]Systemet er operativt|[2,*]Alle systemer er operative',
+        'bad'   => '[0,1]Systemet har problemer|[2,*]Noen systemer har problemer',
+        'major' => '[0,1]Det er et større brudd i systemet|[2,*]Noen systemer har større brudd',
     ],
 
     'api' => [
@@ -76,13 +76,13 @@ return [
     // Subscriber
     'subscriber' => [
         'subscribe'           => 'Abonner for å få de siste oppdateringene',
-        'unsubscribe'         => 'Unsubscribe',
+        'unsubscribe'         => 'Avslutt abonnement',
         'button'              => 'Abonner',
-        'manage_subscription' => 'Manage subscription',
+        'manage_subscription' => 'Administrer abonnement',
         'manage'              => [
             'no_subscriptions' => 'Du abonnerer for øyeblikket på alle oppdateringer.',
             'my_subscriptions' => 'Du abonnerer for øyeblikket på følgende oppdateringer.',
-            'manage_at_link'   => 'Manage your subscriptions at :link',
+            'manage_at_link'   => 'Administrer ditt abonnement på :link',
         ],
         'email' => [
             'subscribe'          => 'Abonner for å motta varslinger på e-post.',
@@ -122,9 +122,9 @@ return [
     // Meta descriptions
     'meta' => [
         'description' => [
-            'incident'  => 'Details and updates about the :name incident that occurred on :date',
-            'schedule'  => 'Details about the scheduled maintenance period :name starting :startDate',
-            'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
+            'incident'  => 'Detaljer og oppdateringer om :name hendelse som skjedde den :date',
+            'schedule'  => 'Detaljer om det planlagte vedlikeholdet :name som starter :startDate',
+            'subscribe' => 'Abonner på :app for å motta oppdateringer om hendelser og planlagt vedlikehold',
             'overview'  => 'Hold deg oppdatert med de nyeste service-oppdateringene fra :app.',
         ],
     ],
