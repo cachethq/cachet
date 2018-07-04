@@ -123,8 +123,8 @@ return [
     'meta' => [
         'description' => [
             'incident'  => 'Детальна інформація та оновлення по інциденту: :name, котрий стався: :date',
-            'schedule'  => 'Детальна інформація про заплановані технічні роботи: :name розпочинаються :startDate',
-            'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
+            'schedule'  => 'Детальна інформація про заплановані технічні заходи: :name розпочинаються :startDate',
+            'subscribe' => 'Підписатися на :app для того, щоб отримувати інформацію про інциденти і заплановані технічні заходи',
             'overview'  => 'Залишатись в курсі останніх оновлень стану :app.',
         ],
     ],
