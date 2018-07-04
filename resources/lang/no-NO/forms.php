@@ -22,7 +22,7 @@ return [
         'site_locale'      => 'Velg språk',
         'enable_google2fa' => 'Aktiver Google to-faktor autentisering',
         'cache_driver'     => 'Cache-Driver',
-        'queue_driver'     => 'Queue Driver',
+        'queue_driver'     => 'Kø driver',
         'session_driver'   => 'Økt Driver',
         'mail_driver'      => 'E-post driver',
         'mail_host'        => 'E-post tjener',
@@ -73,8 +73,8 @@ return [
         'status'       => 'Status',
         'message'      => 'Melding',
         'message-help' => 'Du kan også bruke Markdown.',
-        'scheduled_at' => 'When is this maintenance scheduled for?',
-        'completed_at' => 'When did this maintenance complete?',
+        'scheduled_at' => 'Når er dette vedlikeholdet planlagt for?',
+        'completed_at' => 'Når er dette vedlikeholdet fullført?',
         'templates'    => [
             'name'     => 'Navn',
             'template' => 'Mal',
@@ -135,7 +135,7 @@ return [
         'default_view'             => 'Standardvisning',
         'threshold'                => 'Hvor mange minutter på terskel mellom metriske punkter?',
         'visibility'               => 'Synlighet',
-        'visibility_authenticated' => 'Visible to authenticated users',
+        'visibility_authenticated' => 'Synlig for innloggede brukere',
         'visibility_public'        => 'Synlig for alle',
         'visibility_hidden'        => 'Alltid skjult',
 
