@@ -163,7 +163,7 @@ return [
         'not_verified'         => 'Не підтверджено',
         'subscriber'           => ': лист, підписаний: Дата',
         'no_subscriptions'     => 'Subscribed to all updates',
-        'global'               => 'Globally subscribed',
+        'global'               => 'Підписаний глобально',
         'add'                  => [
             'title'   => 'Add a new subscriber',
             'success' => 'Subscriber has been added!',
