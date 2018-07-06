@@ -18,6 +18,7 @@ use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Str;
 use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
+use Roumen\Feed\Feed;
 
 /**
  * This is the feed controller.
@@ -38,9 +39,9 @@ class FeedController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Feed $feed)
     {
-        $this->feed = app('feed');
+        $this->feed = $feed;
         $this->feed->title = Config::get('setting.app_name');
         $this->feed->description = trans('cachet.feed');
         $this->feed->link = Str::canonicalize(Config::get('setting.app_domain'));
@@ -82,9 +83,9 @@ class FeedController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    private function feedAction(ComponentGroup &$group, $isRss)
+    private function feedAction(ComponentGroup $group = null, $isRss = true)
     {
-        if ($group->exists) {
+        if ($group) {
             $group->components->map(function ($component) use ($isRss) {
                 $component->incidents()->visible()->orderBy('occurred_at', 'desc')->get()->map(function ($incident) use ($isRss) {
                     $this->feedAddItem($incident, $isRss);
@@ -114,7 +115,7 @@ class FeedController extends Controller
             Config::get('setting.app_name'),
             Str::canonicalize(cachet_route('incident', [$incident->id])),
             $isRss ? $incident->getWrappedObject()->occurred_at->toRssString() : $incident->getWrappedObject()->occurred_at->toAtomString(),
-            $isRss ? $incident->message : Markdown::convertToHtml($incident->message),
+            Markdown::convertToHtml($incident->message),
             null,
             [],
             $isRss ? $incident->human_status : null
