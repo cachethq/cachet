@@ -177,6 +177,7 @@ return [
         AltThree\Emoji\EmojiServiceProvider::class,
         AltThree\Twitter\TwitterServiceProvider::class,
         Barryvdh\Cors\ServiceProvider::class,
+        CachetHQ\Cocoon\CocoonServiceProvider::class,
         env('APP_DEBUG') ? Barryvdh\Debugbar\ServiceProvider::class : null,
         GrahamCampbell\Binput\BinputServiceProvider::class,
         GrahamCampbell\Exceptions\ExceptionsServiceProvider::class,
