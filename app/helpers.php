@@ -10,7 +10,7 @@
  */
 
 use CachetHQ\Cachet\Settings\Repository;
-use CachetHQ\Cachet\Theme\ThemeManager;
+use CachetHQ\Cocoon\ThemeManager;
 use Illuminate\Contracts\Bus\Dispatcher;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Request;

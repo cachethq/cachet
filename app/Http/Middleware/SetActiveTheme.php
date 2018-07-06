@@ -26,7 +26,7 @@ class SetActiveTheme
     /**
      * The theme manager instance.
      *
-     * @var \CachetHQ\Cachet\Theme\ThemeManager
+     * @var \CachetHQ\Cocoon\ThemeManager
      */
     protected $themeManager;
 
