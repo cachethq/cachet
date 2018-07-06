@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "12d855b337f541613b905d498637b782",
+    "content-hash": "d79a06afccdd1736999707c6d955e8ee",
     "packages": [
         {
             "name": "alt-three/badger",
@@ -598,6 +598,75 @@
                 "laravel"
             ],
             "time": "2018-09-06T13:20:53+00:00"
+        },
+        {
+            "name": "cachethq/cocoon",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/CachetHQ/Cocoon.git",
+                "reference": "62967509c0439b99da90958d37793ce9c55ada55"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/CachetHQ/Cocoon/zipball/62967509c0439b99da90958d37793ce9c55ada55",
+                "reference": "62967509c0439b99da90958d37793ce9c55ada55",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*|5.7.*",
+                "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*|5.7.*",
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "graham-campbell/analyzer": "^2.0",
+                "graham-campbell/markdown": "^10.0",
+                "graham-campbell/testbench": "^5.0",
+                "phpunit/phpunit": "^6.5|^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "CachetHQ\\Cocoon\\CocoonServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "CachetHQ\\Cocoon\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "James Brooks",
+                    "email": "james@alt-three.com"
+                },
+                {
+                    "name": "Graham Campbell",
+                    "email": "graham@alt-three.com"
+                },
+                {
+                    "name": "Joseph Cohen",
+                    "email": "joe@alt-three.com"
+                }
+            ],
+            "description": "A lightweight theming package for Laravel.",
+            "keywords": [
+                "CachetHQ",
+                "cachet",
+                "cocoon",
+                "laravel",
+                "theme"
+            ],
+            "time": "2019-01-01T17:38:52+00:00"
         },
         {
             "name": "christian-riesen/base32",
@@ -2528,7 +2597,7 @@
                 {
                     "name": "Luís Otávio Cobucci Oblonczyk",
                     "email": "lcobucci@gmail.com",
-                    "role": "developer"
+                    "role": "Developer"
                 }
             ],
             "description": "A simple library to work with JSON Web Token and JSON Web Signature",
@@ -7036,7 +7105,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "cachethq/cocoon": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

@@ -12,7 +12,7 @@
 namespace CachetHQ\Cachet\Http\Middleware;
 
 use CachetHQ\Cachet\Settings\Repository;
-use CachetHQ\Cachet\Theme\ThemeManager;
+use CachetHQ\Cocoon\ThemeManager;
 use Closure;
 use Illuminate\Http\Request;
 
@@ -40,7 +40,7 @@ class SetActiveTheme
     /**
      * Create a new set active theme middleware instance.
      *
-     * @param \CachetHQ\Cachet\Theme\ThemeManager  $themeManager
+     * @param \CachetHQ\Cocoon\ThemeManager        $themeManager
      * @param \CachetHQ\Cachet\Settings\Repository $settings
      *
      * @return void
@@ -62,7 +62,7 @@ class SetActiveTheme
      */
     public function handle(Request $request, Closure $next)
     {
-        if ($activeTheme = $this->settings->get('theme')) {
+        if ($activeTheme = $this->settings->get('theme', 'CachetHQ/Official-Theme')) {
             $this->themeManager->loadTheme($activeTheme);
         }
 
