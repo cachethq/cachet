@@ -23,6 +23,11 @@ return [
         'enable_google2fa' => 'Habilitar a autenticação de dois fatores do Google',
         'cache_driver'     => 'Driver de Cache',
         'session_driver'   => 'Driver de Sessão',
+        'mail_driver'      => 'Mail Driver',
+        'mail_host'        => 'Mail Host',
+        'mail_address'     => 'Mail From Address',
+        'mail_username'    => 'Mail Username',
+        'mail_password'    => 'Mail Password',
     ],
 
     // Login form fields
@@ -34,7 +39,7 @@ return [
         'invalid'       => 'Nome de utilizador ou palavra-passe inválidos',
         'invalid-token' => 'Token inválido',
         'cookies'       => 'Deverá activar cookies para efectuar autenticação.',
-        'rate-limit'    => 'Rate limit exceeded.',
+        'rate-limit'    => 'Limite de tentativas excedido.',
     ],
 
     // Incidents form fields
@@ -45,9 +50,9 @@ return [
         'message'            => 'Mensagem',
         'message-help'       => 'Você também pode usar o Markdown.',
         'scheduled_at'       => 'Para quando pretende agendar a manutenção?',
-        'incident_time'      => 'Quando é que este incidente ocorreu?',
+        'incident_time'      => 'When did this incident occur?',
         'notify_subscribers' => 'Notificar subscritores?',
-        'visibility'         => 'Incident Visibility',
+        'visibility'         => 'Visibilidade do Incidente',
         'public'             => 'Visível ao Publico',
         'logged_in_only'     => 'Apenas visível para users autenticados',
         'templates'          => [
@@ -71,9 +76,9 @@ return [
         'groups' => [
             'name'               => 'Nome',
             'collapsing'         => 'Choose visibility of the group',
-            'visible'            => 'Always expanded',
-            'collapsed'          => 'Collapse the group by default',
-            'collapsed_incident' => 'Collapse the group, but expand if there are issues',
+            'visible'            => 'Sempre expandido',
+            'collapsed'          => 'Esconder o grupo por omissão',
+            'collapsed_incident' => 'Esconder o grupo, mas expandir se existir algum problema',
         ],
     ],
 
@@ -90,7 +95,7 @@ return [
         'type_avg'         => 'Média',
         'places'           => 'Casas Decimais',
         'default_view'     => 'Vista por defeito',
-        'threshold'        => 'How many minutes of threshold between metric points?',
+        'threshold'        => 'Quantos minutos entre cada ponto de métrica?',
 
         'points' => [
             'value' => 'Valor',
@@ -106,10 +111,10 @@ return [
             'display-graphs'         => 'Mostrar gráficos na página de estado?',
             'about-this-page'        => 'Sobre esta página',
             'days-of-incidents'      => 'Quantos dias de incidentes para mostrar?',
-            'banner'                 => 'Banner Image',
-            'banner-help'            => 'É recomendável que você faça upload de arquivos menores que 930px .',
+            'banner'                 => 'Imagem de Banner',
+            'banner-help'            => "É recomendável que você faça upload de arquivos menores que 930px .",
             'subscribers'            => 'Permitir que as pessoas subscrevam as notificações?',
-            'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
+            'automatic_localization' => 'Mostrar automaticamente a tradução conforme a língua do browser do visitante?',
         ],
         'analytics' => [
             'analytics_google'       => 'Código do Google Analytics',
@@ -128,7 +133,7 @@ return [
             'allowed-domains-help' => 'Separados por vírgula. O domínio definido acima é permitido automaticamente por padrão.',
         ],
         'stylesheet' => [
-            'custom-css' => 'Custom Stylesheet',
+            'custom-css' => 'Folha de Estilo Personalizada',
         ],
         'theme' => [
             'background-color'        => 'Background Color',
