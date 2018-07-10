@@ -13,11 +13,11 @@ You'll need at least the following installed on your server:
 - A database driver for your DB, such as MySQL, PostgreSQL or SQLite.
 - Git
 
-> **SQLite**  
+> **SQLite**
 > Whilst we support SQLite, we advise not using it for status pages
 > with a high amount of traffic.
 
-> **MySQL Timezone Info**  
+> **MySQL Timezone Info**
 > Ensure your MySQL database has been updated with the correct timezone
 > information. This will ensure that metrics are shown
 > correctly: [https://dev.mysql.com/doc/refman/5.7/en/time-zone-support.html][2]

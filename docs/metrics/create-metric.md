@@ -1,6 +1,6 @@
 # Create a metric
 
-This documentation will guide you through the metric creation.  
+This documentation will guide you through the metric creation.
 You need to know [what is a metric][1].
 
 ## Filling the form
@@ -14,7 +14,7 @@ To access to the metrics creation, follow these steps:
 - Once on the Dashboard click `Metrics` in the sidebar.
 - Click the `Create a metric` button.
 
-And you are there! You should be able to see the metric form.  
+And you are there! You should be able to see the metric form.
 Let's explain the fields:
 
 - `Name`: The name of the metric as it will be shown on the status page.

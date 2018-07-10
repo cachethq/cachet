@@ -2,7 +2,7 @@
 
 Cross-original resource sharing
 
-> **External Access**  
+> **External Access**
 > By default Cachet can be accessed by any third-party server.
 
 You may configure your Cachet installation for CORS very easily. To blacklist everybody except one or more domains:

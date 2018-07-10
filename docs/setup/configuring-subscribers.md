@@ -6,7 +6,7 @@ One of the most powerful features of Cachet is the ability to automatically
 send notification emails to anybody who has subscribed to your status
 page whenever an incident is created.
 
-> **Hold up!**  
+> **Hold up!**
 > Before going any further, ensure that you've [configured
 > the mail][1] and the [queue][2].
 

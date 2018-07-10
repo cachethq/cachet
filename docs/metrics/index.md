@@ -14,11 +14,11 @@ about what you are monitoring to Cachet.
 
 ## What can do metrics for you
 
-Having good metrics to show may be great for customers or partners.  
+Having good metrics to show may be great for customers or partners.
 
 You have a big webservice that is under pressure? So it's important to have a
 short response time. A metric could show to your users that the webservice is
-responding fast!  
+responding fast!
 Imagine, you have a metric named "Response time". Every 10 seconds you call your
 webservice, and send the response time to the Cachet's API, in the metric. On
 your status page you'll be able to see the average response time for a minute

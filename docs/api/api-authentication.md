@@ -20,7 +20,7 @@ When making any request to the API which is not a `GET`, you'll need to use
 some kind of authentication. The simplest of the authorization methods offered
 by Cachet is [BasicAuth][1].
 
-> **This is not secure**  
+> **This is not secure**
 > For obvious reasons, sending your authentication details in plain text is not
 > secure. We do advise that you add SSL to your Cachet installation for added
 > security, but suggest using API tokens.

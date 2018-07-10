@@ -5,13 +5,13 @@ An incident is something that should not happen, but that happens anyway.
 ## What is exactly an incident
 
 In your status page you are showing the state of some components. It may be a
-server, a database, of whatever you want.  
+server, a database, of whatever you want.
 If your database server crashes, it is an incident.
 
 ## Why should I create an incident
 
 Having a status page is a good thing, being honest with the state of your
-components is better.  
+components is better.
 A status page is not only there to show a green light, it's also there to show
 why something bad is happening, and when it will be fixed.
 
@@ -21,7 +21,7 @@ incident.
 ## How to use the incidents
 
 When experiencing an incident, it's good to keep being up-to-date with what
-happens in the real world. That's why you can use _incident updates_.  
+happens in the real world. That's why you can use _incident updates_.
 
 How you manage your incidents is up to you, but if you have no idea you can do
 the following:

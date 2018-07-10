@@ -62,7 +62,7 @@ promise that your support request will be dealt with immediately.
 ### Why isn't the _Subscribe_ button enabled?
 
 Cachet checks some informations before displaying the _Subscribe_ button,
-because checking the "Enable subscribers" is not enough.  
+because checking the "Enable subscribers" is not enough.
 To see the _Subscribe_ button you need to:
 
 - Check the box "Enable subscribers" in the settings.
