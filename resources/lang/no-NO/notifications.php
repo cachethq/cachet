@@ -13,75 +13,75 @@ return [
     'component' => [
         'status_update' => [
             'mail' => [
-                'subject'  => 'Component Status Updated',
-                'greeting' => 'A component\'s status was updated!',
-                'content'  => ':name status changed from :old_status to :new_status.',
+                'subject'  => 'Komponentstatus oppdatert',
+                'greeting' => 'En komponents status ble oppdatert!',
+                'content'  => ':name status endret fra :old_status til :new_status.',
                 'action'   => 'Vis',
             ],
             'slack' => [
-                'title'   => 'Component Status Updated',
-                'content' => ':name status changed from :old_status to :new_status.',
+                'title'   => 'Komponentstatus oppdatert',
+                'content' => ':name status endret fra :old_status til :new_status.',
             ],
             'sms' => [
-                'content' => ':name status changed from :old_status to :new_status.',
+                'content' => ':name status endret fra :old_status til :new_status.',
             ],
         ],
     ],
     'incident' => [
         'new' => [
             'mail' => [
-                'subject'  => 'New Incident Reported',
-                'greeting' => 'A new incident was reported at :app_name.',
-                'content'  => 'Incident :name was reported',
+                'subject'  => 'Ny hendelse rapportert',
+                'greeting' => 'En ny hendelse ble rapportert på :app_name.',
+                'content'  => 'Hendelsen :name ble rapportert',
                 'action'   => 'Vis',
             ],
             'slack' => [
-                'title'   => 'Incident :name Reported',
-                'content' => 'A new incident was reported at :app_name',
+                'title'   => 'Hendelse :name rapportert',
+                'content' => 'En ny hendelse ble rapportert på :app_name',
             ],
             'sms' => [
-                'content' => 'A new incident was reported at :app_name.',
+                'content' => 'En ny hendelse ble rapportert på :app_name.',
             ],
         ],
         'update' => [
             'mail' => [
                 'subject' => 'Hendelse oppdatert',
-                'content' => ':name was updated',
-                'title'   => ':name was updated to :new_status',
+                'content' => ':name ble oppdatert',
+                'title'   => ':name ble oppdatert til :new_status',
                 'action'  => 'Vis',
             ],
             'slack' => [
                 'title'   => ':name oppdatert',
-                'content' => ':name was updated to :new_status',
+                'content' => ':name ble oppdatert til :new_status',
             ],
             'sms' => [
-                'content' => 'Incident :name was updated',
+                'content' => 'Hendelse :name ble oppdatert',
             ],
         ],
     ],
     'schedule' => [
         'new' => [
             'mail' => [
-                'subject' => 'New Schedule Created',
-                'content' => ':name was scheduled for :date',
-                'title'   => 'A new scheduled maintenance was created.',
+                'subject' => 'Ny tidsplan opprettet',
+                'content' => ':name ble planlagt for :dato',
+                'title'   => 'En ny planlagt vedlikehold ble opprettet.',
                 'action'  => 'Vis',
             ],
             'slack' => [
-                'title'   => 'New Schedule Created!',
-                'content' => ':name was scheduled for :date',
+                'title'   => 'Ny tidsplan opprettet!',
+                'content' => ':name ble planlagt for :dato',
             ],
             'sms' => [
-                'content' => ':name was scheduled for :date',
+                'content' => ':name ble planlagt for :dato',
             ],
         ],
     ],
     'subscriber' => [
         'verify' => [
             'mail' => [
-                'subject' => 'Verify Your Subscription',
-                'content' => 'Click to verify your subscription to :app_name status page.',
-                'title'   => 'Verify your subscription to :app_name status page.',
+                'subject' => 'Bekreft ditt abonnement',
+                'content' => 'Klikk for å bekrefte abonnementet til :app_name statussiden.',
+                'title'   => 'Bekreft abonnementet til :app_name statussiden.',
                 'action'  => 'Bekreft',
             ],
         ],
@@ -89,8 +89,8 @@ return [
     'system' => [
         'test' => [
             'mail' => [
-                'subject' => 'Ping from Cachet!',
-                'content' => 'This is a test notification from Cachet!',
+                'subject' => 'Ping fra Cachet!',
+                'content' => 'Dette er en testnotifikasjon fra Cachet!',
                 'title'   => '🔔',
             ],
         ],
@@ -98,9 +98,9 @@ return [
     'user' => [
         'invite' => [
             'mail' => [
-                'subject' => 'Your invitation is inside...',
-                'content' => 'You have been invited to join :app_name status page.',
-                'title'   => 'You\'re invited to join :app_name status page.',
+                'subject' => 'Din invitasjon er her...',
+                'content' => 'Du har blitt invitert til å ta del i :app_name statussiden.',
+                'title'   => 'Du er invitert til å ta del i :app_name statussiden.',
                 'action'  => 'Aksepter',
             ],
         ],
