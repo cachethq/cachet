@@ -22,7 +22,7 @@ return [
     |
     */
 
-    'previous' => '&laquo; 上一个',
-    'next'     => '下一个 &raquo;',
+    'previous' => '&laquo; 上一页',
+    'next'     => '下一页 &raquo;',
 
 ];
