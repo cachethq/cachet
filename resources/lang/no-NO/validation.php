@@ -32,8 +32,8 @@ return [
     'before'     => ':attribute må være en dato før :date.',
     'between'    => [
         'numeric' => 'Attributt :attribute må være mellom :min og :max.',
-        'file'    => ':attribute må være mellom :min og :max kilobytes.',
-        'string'  => ':atribute må være mellom :min og :max tegn.',
+        'file'    => ':attribute må være mellom :min og :max kilobyte.',
+        'string'  => ':attribute må være mellom :min og :max tegn.',
         'array'   => ':attribute må være mellom :min og :max elementer.',
     ],
     'boolean'        => ':attribute feltet må være true eller false.',
