@@ -110,7 +110,7 @@ return [
             'edit' => [
                 'title'   => 'Editar um grupo de componentes',
                 'success' => 'Grupo de componentes atualizado.',
-                'failure' => 'Algo deu errado com o grupo de componentes, por favor tente novamente.',
+                'failure' => 'Algo deu errado com o componente, por favor tente novamente.',
             ],
             'delete' => [
                 'success' => 'O grupo de componentes foi excluído!',
