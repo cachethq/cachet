@@ -156,7 +156,7 @@ return [
             'time_before_refresh'                   => '狀態頁更新頻率 （以秒為單位）',
             'major_outage_rate'                     => 'Major outage threshold (in %)',
             'banner'                                => 'Banner Image',
-            'banner-help'                           => '建議您上傳寬度小於930像素的圖片',
+            'banner-help'                           => "建議您上傳寬度小於930像素的圖片",
             'subscribers'                           => '允許用戶訂閱郵件通知嗎?',
             'suppress_notifications_in_maintenance' => '在維護期間發生事件時取消通知？',
             'skip_subscriber_verification'          => 'Skip verifying of users? (Be warned, you could be spammed)',
