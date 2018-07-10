@@ -11,5 +11,3 @@ Status|Name|Description
 2|Performance issues|The component is experiencing some slowness.
 3|Partial Outage|The component may not be working for everybody. This could be a geographical issue for example.
 4|Major outage|The component is not working for anybody.
-
-

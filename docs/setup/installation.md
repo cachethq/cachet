@@ -180,5 +180,3 @@ Start php5-fpm and nginx and you're done!
 [1]: https://getcomposer.org/download/
 [2]: https://www.digitalocean.com/community/tutorials/how-to-create-a-ssl-certificate-on-apache-for-ubuntu-14-04
 [3]: https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-on-ubuntu-12-04
-
-

@@ -28,4 +28,3 @@ We report the following information to our server:
 > **Support Contact Email**
 > The contact email is used for the sole purpose of security
 > announcements and will never be used for anything else.
-

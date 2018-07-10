@@ -26,5 +26,3 @@ Cachet-Monitor|[https://github.com/gaz492/cachet-monitor][10]|Monitors URL statu
 [8]: https://github.com/qk4l/zabbix-cachet
 [9]: https://checkiton.us/
 [10]: https://github.com/gaz492/cachet-monitor
-
-

@@ -51,5 +51,3 @@ $ curl -H "Content-Type: application/json;" -H "X-Cachet-Token: YOUR_KEY_HERE" \
 
 
 [1]: http://en.wikipedia.org/wiki/Basic_access_authentication
-
-
