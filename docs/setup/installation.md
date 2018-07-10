@@ -4,7 +4,7 @@ This guide will detail how to install Cachet on your server.
 
 ## Download the source code with Git
 
-> **Check out the latest version!**  
+> **Check out the latest version!**
 > The tags below are examples of what will be shown.
 > You should always run git checkout on the latest tag.
 
@@ -34,19 +34,19 @@ file to `.env` regardless of what environment you're working on.
 
 It's now just a case of editing this new .env file and setting the values of your setup.
 
-> **Environment Configuration Notice**  
+> **Environment Configuration Notice**
 > Any values with spaces in them should be contained within double quotes.
 
 The `.env` file set environment variables that will be used by the application.
 
-> **SQLite hosts**  
+> **SQLite hosts**
 > If you're using SQLite then your .env file should not contain a
 > `DB_HOST` key. You'll also need to touch ./database/database.sqlite
 > and give it the required permissions.
 
 ## Installing Composer
 
-Cachet uses dependencies, so it's required to have Composer installed.  
+Cachet uses dependencies, so it's required to have Composer installed.
 Composer can be installed following the [official guide][1]
 
 ## Installing dependencies
@@ -58,7 +58,7 @@ composer install --no-dev -o
 If you are installing Cachet as a contributor, you can forget the `--no-dev`
 option.
 
-> **Tip for Windows users**  
+> **Tip for Windows users**
 > If you're stuck at the Composer stage, you can run
 > `composer install --no-dev -o --no-scripts`
 > which usually fixes any issues on Windows servers.
@@ -77,7 +77,7 @@ php artisan app:install
 > Never change the `APP_KEY` after installation on production environment.
 > This will result in all of your encrypted/hashed data being lost.
 
-> **Getting a 500 - Internal Server Error?**  
+> **Getting a 500 - Internal Server Error?**
 > If you get a 500 error when visiting your status page, you may need to
 > run `chmod -R 777 storage/` for it to work or `rm -rf bootstrap/cache/*`
 
@@ -85,7 +85,7 @@ You can also try to give permissions to cache chmod -R 777 bootstrap/
 
 ## Running Cachet on Apache
 
-> **Required Apache Modules**  
+> **Required Apache Modules**
 > You need to enable `mod_rewrite` for Apache. On Debian-based systems you can do this by
 >
 > `sudo a2enmod rewrite`
@@ -95,13 +95,13 @@ new Virtual Host entry in the httpd-vhosts.conf file.
 
 ```
 <VirtualHost *:80>
-    ServerName cachet.dev 
+    ServerName cachet.dev
     # Or whatever you want to use
-    ServerAlias cachet.dev 
+    ServerAlias cachet.dev
     # Make this the same as ServerName
     DocumentRoot "/var/www/Cachet/public"
     <Directory "/var/www/Cachet/public">
-        Require all granted 
+        Require all granted
         # Used by Apache 2.4
         Options Indexes FollowSymLinks
         AllowOverride All
@@ -117,7 +117,7 @@ Restart Apache by running the following:
 
 
 If you also need HTTPS on apache you will need to get the ssl mod installed
-and the default ssl conf file enabled. See DigitalOcean's [documentation][2]. 
+and the default ssl conf file enabled. See DigitalOcean's [documentation][2].
 
 ## Running Cachet on nginx
 
@@ -180,5 +180,3 @@ Start php5-fpm and nginx and you're done!
 [1]: https://getcomposer.org/download/
 [2]: https://www.digitalocean.com/community/tutorials/how-to-create-a-ssl-certificate-on-apache-for-ubuntu-14-04
 [3]: https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-on-ubuntu-12-04
-
-

@@ -39,7 +39,7 @@ autorestart=true
 user=cachet
 ```
 
-> **Update to your configuration!**  
+> **Update to your configuration!**
 > Be sure to update the values in the example configuration above to match
 > your installation setup.
 
