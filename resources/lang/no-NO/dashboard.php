@@ -12,30 +12,30 @@
 return [
 
     'dashboard'          => 'Dashbord',
-    'writeable_settings' => 'The Cachet settings directory is not writeable. Please make sure that <code>./bootstrap/cachet</code> is writeable by the web server.',
+    'writeable_settings' => 'Mappen for Cachet instillinger er ikke skrivbar. Kontroller at <code>./bootstrap/cachet</code> er skrivbar av webserveren.',
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Hendelser &amp; Tidsplan',
+        'title'                    => 'Hendelser & vedlikehold',
         'incidents'                => 'Hendelser',
-        'logged'                   => '{0}There are no incidents, good work.|[1]You have logged one incident.|[2,*]You have reported <strong>:count</strong> incidents.',
+        'logged'                   => '{0}Det er ingen hendelser, godt jobbet.|[1]Du har logget en hendelse.|[2,*]Du har rapportert <strong>:count</strong> hendelser.',
         'incident-create-template' => 'Opprett mal',
         'incident-templates'       => 'Hendelsesmaler',
         'updates'                  => [
-            'title'   => 'Incident updates for :incident',
-            'count'   => '{0}Zero Updates|[1]One Update|[2]Two Updates|[3,*]Several Updates',
+            'title'   => 'Hendelseoppdateringer for :incident',
+            'count'   => '{0}Ingen Oppdateringer|[1]Èn Oppdatering|[2]To Oppdateringer|[3,*]Flere Oppdateringer',
             'add'     => [
                 'title'   => 'Opprett ny hendelseoppdatering',
-                'success' => 'Your new incident update has been created.',
-                'failure' => 'Something went wrong with the incident update.',
+                'success' => 'Din nye hendelsesoppdatering ble opprettet.',
+                'failure' => 'Noe gikk galt med hendelsesoppdateringen.',
             ],
             'edit' => [
-                'title'   => 'Edit incident update',
-                'success' => 'The incident update has been updated.',
-                'failure' => 'Something went wrong updating the incident update',
+                'title'   => 'Rediger hendelsesoppdatering',
+                'success' => 'Hendelsesoppdateringen har blitt oppdatert.',
+                'failure' => 'Noe gikk galt ved oppdatering av hendelsesoppdateringen',
             ],
         ],
-        'reported_by'              => 'Reported by :user',
+        'reported_by'              => 'Rapportert av :user',
         'add'                      => [
             'title'   => 'Rapportere en hendelse',
             'success' => 'Hendelse lagt til.',
@@ -56,7 +56,7 @@ return [
             'title' => 'Hendelsesmaler',
             'add'   => [
                 'title'   => 'Lag en hendelsesmal',
-                'message' => 'Du bør legge til en hendelsesmal.',
+                'message' => 'Opprett din første hendelsesmal.',
                 'success' => 'Din nye hendelsesmal er opprettet.',
                 'failure' => 'Noe gikk galt med hendelsesmalen.',
             ],
@@ -75,21 +75,21 @@ return [
     // Incident Maintenance
     'schedule' => [
         'schedule'     => 'Planlagt vedlikehold',
-        'logged'       => '{0}There has been no Maintenance, good work.|[1]You have logged one schedule.|[2,*]You have reported <strong>:count</strong> schedules.',
+        'logged'       => '{0}Det har ikke vært noe vedlikehold, godtjobbet.|[1]Du har logget èn tidsplan.|[2,*]Du har rapportert <strong>:count</strong> planlagte vedlikehold.',
         'scheduled_at' => 'Planlagt til :timestamp',
         'add'          => [
             'title'   => 'Legg til planlagt vedlikehold',
-            'success' => 'Tidsplan lagt til.',
-            'failure' => 'Noe gikk galt med å legge til tidsplanen, prøv igjen.',
+            'success' => 'Vedlikehold lagt til.',
+            'failure' => 'Noe gikk galt med å legge til vedlikeholdet, vennligst prøv igjen.',
         ],
         'edit' => [
-            'title'   => 'Redigere planlagt vedlikehold',
-            'success' => 'Tidsplanen er oppdatert!',
-            'failure' => 'Noe gikk galt med å redigere tidsplanen, prøv igjen.',
+            'title'   => 'Rediger planlagt vedlikehold',
+            'success' => 'Vedlikeholdet er oppdatert!',
+            'failure' => 'Noe gikk galt med å redigere vedlikeholdet, vennligst prøv igjen.',
         ],
         'delete' => [
-            'success' => 'Planlagt vedlikehold er slettet og vil ikke vises på statussiden din.',
-            'failure' => 'Planlagt vedlikehold kunne ikke slettes, prøv igjen.',
+            'success' => 'Det planlagte vedlikeholdet er slettet og vil ikke vises på statussiden din.',
+            'failure' => 'Det planlagte vedlikeholdet kunne ikke slettes, vennligst prøv igjen.',
         ],
     ],
 
@@ -158,12 +158,12 @@ return [
     'subscribers' => [
         'subscribers'          => 'Abonnenter',
         'description'          => 'Abonnenter mottar e-postoppdateringer når hendelser opprettes eller komponenter er oppdatert.',
-        'description_disabled' => 'To use this feature, you need allow people to signup for notifications.',
+        'description_disabled' => 'Hvis du vil bruke denne funksjonen, må du tillate folk å melde seg på for varsler.',
         'verified'             => 'Verifisert',
         'not_verified'         => 'Ikke verifisert',
         'subscriber'           => ': e-post, abonnert: dato',
         'no_subscriptions'     => 'Abonnerer på alle oppdateringer',
-        'global'               => 'Globally subscribed',
+        'global'               => 'Globalt abonnert',
         'add'                  => [
             'title'   => 'Legge til en ny abonnent',
             'success' => 'Abonnenten er lagt til!',
@@ -230,8 +230,8 @@ return [
             'mail'  => 'E-post',
             'test'  => 'Test',
             'email' => [
-                'subject' => 'Test notification from Cachet',
-                'body'    => 'This is a test notification from Cachet.',
+                'subject' => 'Testnotifikasjon fra Cachet',
+                'body'    => 'Dette er en testnotifikasjon fra Cachet.',
             ],
         ],
         'security' => [
