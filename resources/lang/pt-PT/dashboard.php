@@ -102,12 +102,12 @@ return [
             'title'   => 'Adicionar um Componente',
             'message' => 'Você deve adicionar um componente.',
             'success' => 'Componente criado.',
-            'failure' => 'Something went wrong with the component group, please try again.',
+            'failure' => 'Something went wrong with the component, please try again.',
         ],
         'edit' => [
             'title'   => 'Editar um Componente',
             'success' => 'Componente atualizado.',
-            'failure' => 'Something went wrong with the component group, please try again.',
+            'failure' => 'Something went wrong with the component, please try again.',
         ],
         'delete' => [
             'success' => 'O componente foi apagado!',
@@ -121,12 +121,12 @@ return [
             'add'           => [
                 'title'   => 'Adicionar um grupo de componentes',
                 'success' => 'Grupo de componentes adicionado.',
-                'failure' => 'Something went wrong with the component group, please try again.',
+                'failure' => 'Something went wrong with the component, please try again.',
             ],
             'edit' => [
                 'title'   => 'Editar um grupo de Componentes',
                 'success' => 'Grupo de componentes atualizado.',
-                'failure' => 'Something went wrong with the component group, please try again.',
+                'failure' => 'Something went wrong with the component, please try again.',
             ],
             'delete' => [
                 'success' => 'O grupo de componentes foi apagado!',
@@ -283,7 +283,7 @@ return [
         'support'          => 'Suporte o Cachet',
         'support_subtitle' => 'Verifique a nossa pagina no <strong><a href="https://patreon.com/jbrooksuk" target="_blank">Patreon</a></strong>!',
         'news'             => 'Últimas Notícias',
-        'news_subtitle'    => 'Obter uma actualização',
+        'news_subtitle'    => 'Get the latest updates',
     ],
 
     // Welcome modal
