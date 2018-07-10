@@ -102,12 +102,12 @@ return [
             'title'   => 'Lägg till en komponent',
             'message' => 'Du borde lägga till en komponent.',
             'success' => 'Komponent skapad.',
-            'failure' => 'Something went wrong with the component group, please try again.',
+            'failure' => 'Something went wrong with the component, please try again.',
         ],
         'edit' => [
             'title'   => 'Redigera komponent',
             'success' => 'Komponenten har uppdaterats.',
-            'failure' => 'Something went wrong with the component group, please try again.',
+            'failure' => 'Something went wrong with the component, please try again.',
         ],
         'delete' => [
             'success' => 'Komponenten har tagits bort!',
@@ -121,12 +121,12 @@ return [
             'add'           => [
                 'title'   => 'Lägg till en komponentgrupp',
                 'success' => 'Komponentgrupp tillagd.',
-                'failure' => 'Something went wrong with the component group, please try again.',
+                'failure' => 'Something went wrong with the component, please try again.',
             ],
             'edit' => [
                 'title'   => 'Redigera komponentgrupp',
                 'success' => 'Komponentgrupp uppdaterad.',
-                'failure' => 'Something went wrong with the component group, please try again.',
+                'failure' => 'Something went wrong with the component, please try again.',
             ],
             'delete' => [
                 'success' => 'Komponentgruppen har tagits bort!',
@@ -283,7 +283,7 @@ return [
         'support'          => 'Stöd Cachet',
         'support_subtitle' => 'Check out our <strong><a href="https://patreon.com/jbrooksuk" target="_blank">Patreon</a></strong> page!',
         'news'             => 'Senaste nytt',
-        'news_subtitle'    => 'Hämta senaste uppdateringen',
+        'news_subtitle'    => 'Get the latest updates',
     ],
 
     // Welcome modal
