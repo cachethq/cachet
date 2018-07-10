@@ -98,7 +98,7 @@ return [
     'user' => [
         'invite' => [
             'mail' => [
-                'subject' => 'Your invitation is inside...',
+                'subject' => 'Ваше запрошення знаходиться всередині...',
                 'content' => 'You have been invited to join :app_name status page.',
                 'title'   => 'You\'re invited to join :app_name status page.',
                 'action'  => 'Прийняти',
