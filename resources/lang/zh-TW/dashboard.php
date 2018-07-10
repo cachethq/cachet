@@ -102,12 +102,12 @@ return [
             'title'   => '添加組件',
             'message' => '你應該先新增一個組件。',
             'success' => 'Component created.',
-            'failure' => 'Something went wrong with the component group, please try again.',
+            'failure' => 'Something went wrong with the component, please try again.',
         ],
         'edit' => [
             'title'   => '編輯組件',
             'success' => 'Component updated.',
-            'failure' => 'Something went wrong with the component group, please try again.',
+            'failure' => 'Something went wrong with the component, please try again.',
         ],
         'delete' => [
             'success' => 'The component has been deleted!',
@@ -121,12 +121,12 @@ return [
             'add'           => [
                 'title'   => '添加組件分組',
                 'success' => 'Component group added.',
-                'failure' => 'Something went wrong with the component group, please try again.',
+                'failure' => 'Something went wrong with the component, please try again.',
             ],
             'edit' => [
                 'title'   => '編輯組件分組',
                 'success' => 'Component group updated.',
-                'failure' => 'Something went wrong with the component group, please try again.',
+                'failure' => 'Something went wrong with the component, please try again.',
             ],
             'delete' => [
                 'success' => 'Component group has been deleted!',
@@ -283,7 +283,7 @@ return [
         'support'          => 'Support Cachet',
         'support_subtitle' => 'Check out our <strong><a href="https://patreon.com/jbrooksuk" target="_blank">Patreon</a></strong> page!',
         'news'             => 'Latest News',
-        'news_subtitle'    => 'Get the latest update',
+        'news_subtitle'    => 'Get the latest updates',
     ],
 
     // Welcome modal
