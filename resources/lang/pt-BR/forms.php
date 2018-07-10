@@ -23,6 +23,11 @@ return [
         'enable_google2fa' => 'Habilitar a autenticação de dois fatores do Google',
         'cache_driver'     => 'Driver de Cache',
         'session_driver'   => 'Driver de Sessão',
+        'mail_driver'      => 'Driver de correio',
+        'mail_host'        => 'Host de correio',
+        'mail_address'     => 'Correio do endereço',
+        'mail_username'    => 'Nome de usuário de email',
+        'mail_password'    => 'Senha de email',
     ],
 
     // Login form fields
@@ -107,7 +112,7 @@ return [
             'about-this-page'        => 'Sobre esta página',
             'days-of-incidents'      => 'Quantos dias de incidentes para mostrar?',
             'banner'                 => 'Imagem do banner',
-            'banner-help'            => 'É recomendável que você faça upload de arquivos menores que 930px .',
+            'banner-help'            => "É recomendável que você faça upload de arquivos menores que 930px .",
             'subscribers'            => 'Permitir que outras pessoas se cadastrem para notificações via e-mail?',
             'automatic_localization' => 'Localizar sua página de status de acordo com o idioma do visitante automaticamente?',
         ],
