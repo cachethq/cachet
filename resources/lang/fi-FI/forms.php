@@ -112,7 +112,7 @@ return [
             'about-this-page'        => 'Tietoa tästä sivustosta',
             'days-of-incidents'      => 'Monenko päivän ajalta tapaukset näytetään?',
             'banner'                 => 'Bannerikuva',
-            'banner-help'            => "On suositeltavaa, ettet lataa yli 930px leveitä kuvia.",
+            'banner-help'            => 'On suositeltavaa, ettet lataa yli 930px leveitä kuvia.',
             'subscribers'            => 'Salli käyttäjien tilata sähköpostitilaukset?',
             'automatic_localization' => 'Lokalisoidaanko statussivu automaattisesti kävijän kielen mukaan?',
         ],

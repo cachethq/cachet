@@ -112,7 +112,7 @@ return [
             'about-this-page'        => 'Erről az oldalról',
             'days-of-incidents'      => 'Mennyi incidens legyen látható?',
             'banner'                 => 'Banner kép',
-            'banner-help'            => "Nem ajánlott 930 pixelnél szélesebb képet feltölteni.",
+            'banner-help'            => 'Nem ajánlott 930 pixelnél szélesebb képet feltölteni.',
             'subscribers'            => 'Emberek regisztrálhatnak email értesítésekre?',
             'automatic_localization' => 'Állapot oldal automatikus lokalizálása a látogató nyelvén?',
         ],

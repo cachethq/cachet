@@ -112,7 +112,7 @@ return [
             'about-this-page'        => 'Інформація про цю сторінку',
             'days-of-incidents'      => 'How many days of incidents to show?',
             'banner'                 => 'Зображення банеру',
-            'banner-help'            => "Радимо завантажувати файли не більше, ніж 930 пiкселей у ширину.",
+            'banner-help'            => 'Радимо завантажувати файли не більше, ніж 930 пiкселей у ширину.',
             'subscribers'            => 'Allow people to signup to email notifications?',
             'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
         ],

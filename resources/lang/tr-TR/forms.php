@@ -112,7 +112,7 @@ return [
             'about-this-page'        => 'Hakkında',
             'days-of-incidents'      => 'Kaç gün olay gösterebilirim?',
             'banner'                 => 'Afiş Resmi',
-            'banner-help'            => "930 pikselden daha büyük olmayan dosyaları yüklemeniz önerilir.",
+            'banner-help'            => '930 pikselden daha büyük olmayan dosyaları yüklemeniz önerilir.',
             'subscribers'            => 'Kullanıcıların e-posta bildirimlerine kaydolmasına izin verilsin mi?',
             'automatic_localization' => 'Durum sayfanızı otomatik olarak ziyaretçinin diline yerelleştirir misin?',
         ],
