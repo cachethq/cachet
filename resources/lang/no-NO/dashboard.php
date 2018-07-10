@@ -83,13 +83,13 @@ return [
             'failure' => 'Noe gikk galt med å legge til vedlikeholdet, vennligst prøv igjen.',
         ],
         'edit' => [
-            'title'   => 'Rediger planlagt vedlikehold',
-            'success' => 'Vedlikeholdet er oppdatert!',
+            'title'   => 'Rediger vedlikehold',
+            'success' => 'Vedlikeholdet ble oppdatert!',
             'failure' => 'Noe gikk galt med å redigere vedlikeholdet, vennligst prøv igjen.',
         ],
         'delete' => [
-            'success' => 'Det planlagte vedlikeholdet er slettet og vil ikke vises på statussiden din.',
-            'failure' => 'Det planlagte vedlikeholdet kunne ikke slettes, vennligst prøv igjen.',
+            'success' => 'Vedlikeholdet ble slettet og vil ikke vises på statussiden din.',
+            'failure' => 'Vedlikeholdet kunne ikke slettes, vennligst prøv igjen.',
         ],
     ],
 
@@ -182,7 +182,7 @@ return [
         'team'        => 'Team',
         'member'      => 'Bruker',
         'profile'     => 'Profil',
-        'description' => 'Gruppemedlemmer kan legge til, endre &amp; redigere komponenter og hendelser.',
+        'description' => 'Gruppemedlemmer kan legge til, endre & redigere komponenter og hendelser.',
         'add'         => [
             'title'   => 'Legge til nytt gruppemedlem',
             'success' => 'Gruppemedlem lagt til.',
@@ -253,7 +253,7 @@ return [
             'contributors'  => 'Bidragsytere',
             'license'       => 'Cachet er en BSD-3-lisensiert åpen kildekode-prosjekt, utgitt av <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank"> Alt tre Services Limited</a>.',
             'backers-title' => 'Støttespillere & sponsorer',
-            'backers'       => 'Hvis du ønsker å støtte fremtidig utvikling, sjekk ut <a href="https://patreon.com/jbrooksuk" target="_blank"> Cachet Patreon</a> kampanjen.',
+            'backers'       => 'Hvis du ønsker å støtte fremtidig utvikling, sjekk ut <a href="https://patreon.com/jbrooksuk" target="_blank">Cachet Patreon</a> kampanjen.',
             'thank-you'     => 'Takk til hver og en av de :count bidragsytere.',
         ],
     ],
