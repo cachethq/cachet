@@ -12,7 +12,7 @@
 return [
     // Components
     'components' => [
-        'last_updated' => 'Last updated :timestamp',
+        'last_updated' => 'Senast uppdaterad :timestamp',
         'status'       => [
             1 => 'Fungerar',
             2 => 'Prestandaproblem',
@@ -20,7 +20,7 @@ return [
             4 => 'Större avbrott',
         ],
         'group' => [
-            'other' => 'Other Components',
+            'other' => 'Andra komponenter',
         ],
     ],
 
@@ -68,28 +68,28 @@ return [
         'subscribe' => 'Prenumerera för att få de senaste uppdateringarna',
         'button'    => 'Prenumerera',
         'manage'    => [
-            'no_subscriptions' => 'You\'re currently subscribed to all updates.',
-            'my_subscriptions' => 'You\'re currently subscribed to the following updates.',
+            'no_subscriptions' => 'Du prenumererar på alla uppdateringar.',
+            'my_subscriptions' => 'Du prenumererar på följande uppdateringar.',
         ],
         'email' => [
             'subscribe'          => 'Prenumerera på epost-uppdateringar.',
             'subscribed'         => 'Du har börjat prenumerera på e-postmeddelanden, vänligen kontrollera din e-post för att bekräfta din prenumeration.',
             'verified'           => 'Din epost-prenumeration har bekräftats. Tack!',
-            'manage'             => 'Manage your subscription',
+            'manage'             => 'Hantera din prenumeration',
             'unsubscribe'        => 'Avbeställ epost-uppdateringar.',
             'unsubscribed'       => 'Din epost-prenumeration har avbrutits.',
             'failure'            => 'Något blev fel med prenumerationen.',
             'already-subscribed' => 'Kan inte skapa en prenumeration för :email eftersom den redan prenumererar.',
             'verify'             => [
-                'text'   => "Please confirm your email subscription to :app_name status updates.\n:link",
-                'html'   => '<p>Please confirm your email subscription to :app_name status updates.</p>',
-                'button' => 'Confirm Subscription',
+                'text'   => "Vänligen bekräfta din e-post prenumeration på :app_name status uppdateringar.\n:link",
+                'html'   => '<p>Vänligen bekräfta din e-post prenumeration :app_name statusuppdateringar.</p>',
+                'button' => 'Bekräfta prenumeration',
             ],
             'maintenance' => [
-                'subject' => '[Maintenance Scheduled] :name',
+                'subject' => '[Underhåll schemalagd] :name',
             ],
             'incident' => [
-                'subject' => '[New Incident] :status: :name',
+                'subject' => '[Ny Incident] :status: :name',
             ],
             'component' => [
                 'subject'       => 'Komponentstatusuppdatering',
@@ -133,8 +133,8 @@ return [
     ],
 
     // Other
-    'home'            => 'Home',
-    'description'     => 'Stay up to date with the latest service updates from :app.',
+    'home'            => 'Hem',
+    'description'     => 'Håll dig uppdaterad med de senaste service-uppdateringarna från :app.',
     'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
     'about_this_site' => 'Om sidan',
     'rss-feed'        => 'RSS',
