@@ -27,13 +27,13 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'         => 'Ingen hendelser å rapportere',
+        'none'         => 'Ingen hendelser rapportert',
         'past'         => 'Tidligere hendelser',
-        'stickied'     => 'Stickied hendelser',
+        'stickied'     => 'Festede hendelser',
         'scheduled'    => 'Planlagt vedlikehold',
         'scheduled_at' => ', planlagt :timestamp',
-        'posted'       => 'Skrevet :timestamp',
-        'posted_at'    => 'Posted at :timestamp',
+        'posted'       => 'Postet :timestamp',
+        'posted_at'    => 'Postet den :timestamp',
         'status'       => [
             1 => 'Undersøkes',
             2 => 'Identifisert',
@@ -53,9 +53,9 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1]System operational|[2,*]All systems are operational',
-        'bad'   => '[0,1] Systemet har problemer| [2, Inf] Noen systemer har problemer',
-        'major' => '[0,1] Det er et større brudd i systemet| [2, Inf] Noen systemer har større brudd',
+        'good'  => '[0,1]Systemet er operativt|[2,*]Alle systemer er operative',
+        'bad'   => '[0,1]Systemet har problemer|[2,*]Noen systemer har problemer',
+        'major' => '[0,1]Det er et større brudd i systemet|[2,*]Noen systemer har større brudd',
     ],
 
     'api' => [
@@ -75,22 +75,22 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'           => 'Abonner for å få de siste oppdateringene',
-        'unsubscribe'         => 'Unsubscribe',
+        'subscribe'           => 'Abonner for å få oppdateringene',
+        'unsubscribe'         => 'Avslutt abonnement',
         'button'              => 'Abonner',
-        'manage_subscription' => 'Manage subscription',
+        'manage_subscription' => 'Administrer abonnement',
         'manage'              => [
             'no_subscriptions' => 'Du abonnerer for øyeblikket på alle oppdateringer.',
             'my_subscriptions' => 'Du abonnerer for øyeblikket på følgende oppdateringer.',
-            'manage_at_link'   => 'Manage your subscriptions at :link',
+            'manage_at_link'   => 'Administrer ditt abonnement på :link',
         ],
         'email' => [
-            'subscribe'          => 'Abonner for å motta varslinger på e-post.',
-            'subscribed'         => 'Du har abbonerer nå på epostvarslinger, sjekk din e-post for å bekrefte abboneringen.',
+            'subscribe'          => 'Abonner på e-postoppdateringer.',
+            'subscribed'         => 'Du abonnerer nå på e-postvarslinger, sjekk din e-post for å bekrefte abonneringen.',
             'verified'           => 'Ditt epost abonnement er bekreftet!',
             'manage'             => 'Administrer ditt abonnement',
-            'unsubscribe'        => 'Meld av epostvarsling.',
-            'unsubscribed'       => 'Din epostvarsling har blitt kansellert.',
+            'unsubscribe'        => 'Meld av e-postvarsling.',
+            'unsubscribed'       => 'Ditt e-postabonnement har blitt kansellert.',
             'failure'            => 'Noe gikk galt med abonneringen.',
             'already-subscribed' => 'Kan ikke abonnere: email fordi de allerede er abonnenter.',
         ],
@@ -114,7 +114,7 @@ return [
         'close'     => 'Lukk',
         'subscribe' => [
             'title'  => 'Abonner for å motta varslinger for komponenten på e-post',
-            'body'   => 'Skriv inn epostadressen din for å abonnere på varslinger for denne komponenten. Hvis du allerede er abonnent vil alt fortsette som før.',
+            'body'   => 'Skriv inn e-postadressen din for å abonnere på varslinger for denne komponenten. Hvis du allerede er abonnent vil alt fortsette som før.',
             'button' => 'Abonner',
         ],
     ],
@@ -122,16 +122,16 @@ return [
     // Meta descriptions
     'meta' => [
         'description' => [
-            'incident'  => 'Details and updates about the :name incident that occurred on :date',
-            'schedule'  => 'Details about the scheduled maintenance period :name starting :startDate',
-            'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
+            'incident'  => 'Detaljer og oppdateringer om :name hendelse som skjedde den :date',
+            'schedule'  => 'Detaljer om det planlagte vedlikeholdet :name som starter :startDate',
+            'subscribe' => 'Abonner på :app for å motta oppdateringer om hendelser og planlagt vedlikehold',
             'overview'  => 'Hold deg oppdatert med de nyeste service-oppdateringene fra :app.',
         ],
     ],
 
     // Other
-    'home'            => 'Forsiden',
-    'powered_by'      => 'Drevet av <a href="https://cachethq.io" class="links"> Cachet</a>.',
+    'home'            => 'Forside',
+    'powered_by'      => 'Drevet av <a href="https://cachethq.io" class="links">Cachet</a>.',
     'timezone'        => 'Tider vises i :timezone.',
     'about_this_site' => 'Om denne siden',
     'rss-feed'        => 'RSS',
