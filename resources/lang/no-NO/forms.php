@@ -163,7 +163,7 @@ return [
             'automatic_localization'                => 'Automatisk lokaliser statussiden til besøkendes språk?',
             'enable_external_dependencies'          => 'Aktiver tredjeparts avhengigheter (Google Fonts, Trackers, etc...)',
             'show_timezone'                         => 'Vis tidssonen statussiden kjører med',
-            'only_disrupted_days'                   => 'Bare Vis dager som inneholder hendelser i tidslinjen?',
+            'only_disrupted_days'                   => 'Bare vis dager som inneholder hendelser i tidslinjen?',
         ],
         'analytics' => [
             'analytics_google'       => 'Google Analytics-koden',
