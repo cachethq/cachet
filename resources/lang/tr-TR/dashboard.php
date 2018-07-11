@@ -11,248 +11,248 @@
 
 return [
 
-    'dashboard' => 'Kontrol paneli',
+    'dashboard' => 'Dashboard',
 
     // Incidents
     'incidents' => [
         'title'                    => 'Incidents &amp; Schedule',
-        'incidents'                => 'Olaylar',
-        'logged'                   => '{0} Hiç olay yok, tebrikler. |Bir olay rapor ettiniz.|<strong>:count</strong> olay rapor ettiniz.',
-        'incident-create-template' => 'Şablon Oluştur',
-        'incident-templates'       => 'Olay Şablonları',
+        'incidents'                => 'Incidents',
+        'logged'                   => '{0} There are no incidents, good work.|You have logged one incident.|You have reported <strong>:count</strong> incidents.',
+        'incident-create-template' => 'Create Template',
+        'incident-templates'       => 'Incident Templates',
         'add'                      => [
-            'title'   => 'Olay Ekle',
-            'success' => 'Olay eklendi.',
-            'failure' => 'Olay eklenirken bir hata oluştu, lütfen tekrar deneyin.',
+            'title'   => 'Report an incident',
+            'success' => 'Incident added.',
+            'failure' => 'There was an error adding the incident, please try again.',
         ],
         'edit' => [
-            'title'   => 'Olay Düzenle',
-            'success' => 'Olay güncellendi.',
-            'failure' => 'Olay düzenlenirken bir hata oluştu, lütfen tekrar deneyin.',
+            'title'   => 'Edit an incident',
+            'success' => 'Incident updated.',
+            'failure' => 'There was an error editing the incident, please try again.',
         ],
         'delete' => [
-            'success' => 'Olay silindi ve durum sayfanızda bir daha gösterilmeyecek.',
-            'failure' => 'Olay silinemedi, lütfen tekrar deneyin.',
+            'success' => 'The incident has been deleted and will not show on your status page.',
+            'failure' => 'The incident could not be deleted, please try again.',
         ],
 
         // Incident templates
         'templates' => [
-            'title' => 'Olay Şablonları',
+            'title' => 'Incident Templates',
             'add'   => [
-                'title'   => 'Olay Şablonu Oluştur',
-                'message' => 'Bir olay şablonu eklemelisiniz.',
-                'success' => 'Yeni olay şablonunuz oluşturuldu.',
-                'failure' => 'Olay şablonu ile ilgili bir şeyler ters gitti.',
+                'title'   => 'Create an incident template',
+                'message' => 'You should add an incident template.',
+                'success' => 'Your new incident template has been created.',
+                'failure' => 'Something went wrong with the incident template.',
             ],
             'edit' => [
-                'title'   => 'Şablonu Düzenle',
-                'success' => 'Olay şablonu güncellendi.',
-                'failure' => 'Olay şablonunu güncellerken bir şeyler ters gitti',
+                'title'   => 'Edit Template',
+                'success' => 'The incident template has been updated.',
+                'failure' => 'Something went wrong updating the incident template',
             ],
             'delete' => [
-                'success' => 'Olay şablonu silindi.',
-                'failure' => 'Olay şablonu silinemedi, lütfen tekrar deneyin.',
+                'success' => 'The incident template has been deleted.',
+                'failure' => 'The incident template could not be deleted, please try again.',
             ],
         ],
     ],
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => 'Zamanlanmış bakım',
-        'logged'       => '{0} Hiçbir olay yok, tebrikler. |Bir olayı raprladınız. | <strong>:count</strong> olayı raporladınız.',
-        'scheduled_at' => ':timestamp zamanı için kaydedildi',
+        'schedule'     => 'Scheduled Maintenance',
+        'logged'       => '{0} There are no schedules, good work.|You have logged one schedule.|You have reported <strong>:count</strong> schedules.',
+        'scheduled_at' => 'Scheduled at :timestamp',
         'add'          => [
-            'title'   => 'Zamanlanmış Bakım Ekle',
-            'success' => 'Zamanlama eklendi.',
-            'failure' => 'Zamanlama eklerken bir şeyler yanlış gitti, lütfen yeniden deneyin.',
+            'title'   => 'Add Scheduled Maintenance',
+            'success' => 'Schedule added.',
+            'failure' => 'Something went wrong adding the schedule, please try again.',
         ],
         'edit' => [
-            'title'   => 'Zamanlanmış Bakımı Düzenle',
-            'success' => 'Zamanlama güncellendi!',
-            'failure' => 'Zamanlama düzeltilirken bir şeyler ters gitti, lütfen tekrar deneyin.',
+            'title'   => 'Edit Scheduled Maintenance',
+            'success' => 'Schedule has been updated!',
+            'failure' => 'Something went wrong editing the schedule, please try again.',
         ],
         'delete' => [
-            'success' => 'Zamanlanmış bakım silindi ve durum sayfanızda bir daha gösterilmeyecek.',
-            'failure' => 'Zamanlanmış bakım silinemez, lütfen tekrar deneyin.',
+            'success' => 'The scheduled maintenance has been deleted and will not show on your status page.',
+            'failure' => 'The scheduled maintenance could not be deleted, please try again.',
         ],
     ],
 
     // Components
     'components' => [
-        'components'         => 'Bileşenler',
-        'component_statuses' => 'Bileşen Durumları',
-        'listed_group'       => ':name altında toplandı',
+        'components'         => 'Components',
+        'component_statuses' => 'Component Statuses',
+        'listed_group'       => 'Grouped under :name',
         'add'                => [
-            'title'   => 'Bileşen ekle',
-            'message' => 'Bir bileşen eklemelisiniz.',
-            'success' => 'Bileşen oluşturuldu.',
-            'failure' => 'Bileşenlerle ilgili bir şeyler yanlış gitti, lütfen daha sonra tekrar deneyin.',
+            'title'   => 'Add a component',
+            'message' => 'You should add a component.',
+            'success' => 'Component created.',
+            'failure' => 'Something went wrong with the component group, please try again.',
         ],
         'edit' => [
-            'title'   => 'Bileşen düzenle',
-            'success' => 'Bileşen güncellendi.',
-            'failure' => 'Bileşenlerle ilgili bir şeyler yanlış gitti, lütfen daha sonra tekrar deneyin.',
+            'title'   => 'Edit a component',
+            'success' => 'Component updated.',
+            'failure' => 'Something went wrong with the component group, please try again.',
         ],
         'delete' => [
-            'success' => 'Bileşen silindi!',
-            'failure' => 'Bileşen silinemedi, lütfen tekrar deneyin.',
+            'success' => 'The component has been deleted!',
+            'failure' => 'The component could not be deleted, please try again.',
         ],
 
         // Component groups
         'groups' => [
-            'groups'        => 'Bileşen grubu|Bileşen grupları',
-            'no_components' => 'Bir bileşen grubu eklemeniz gerekir.',
+            'groups'        => 'Component group|Component groups',
+            'no_components' => 'You should add a component group.',
             'add'           => [
-                'title'   => 'Bir bileşen grubu ekle',
-                'success' => 'Bileşen grubu eklendi.',
-                'failure' => 'Bileşenlerle ilgili bir şeyler yanlış gitti, lütfen daha sonra tekrar deneyin.',
+                'title'   => 'Add a component group',
+                'success' => 'Component group added.',
+                'failure' => 'Something went wrong with the component group, please try again.',
             ],
             'edit' => [
-                'title'   => 'Bileşen grubunu düzenle',
-                'success' => 'Bileşen grubu güncellendi.',
-                'failure' => 'Bileşenlerle ilgili bir şeyler yanlış gitti, lütfen daha sonra tekrar deneyin.',
+                'title'   => 'Edit a component group',
+                'success' => 'Component group updated.',
+                'failure' => 'Something went wrong with the component group, please try again.',
             ],
             'delete' => [
-                'success' => 'Bileşen grubu silindi!',
-                'failure' => 'Bileşen grubu silinemedi, lütfen tekrar deneyin.',
+                'success' => 'Component group has been deleted!',
+                'failure' => 'The component group could not be deleted, please try again.',
             ],
         ],
     ],
 
     // Metrics
     'metrics' => [
-        'metrics' => 'Metrik',
+        'metrics' => 'Metrics',
         'add'     => [
-            'title'   => 'Bir ölçü oluştur',
-            'message' => 'Bir ölçü eklemelisiniz.',
-            'success' => 'Metrik oluşturuldu.',
+            'title'   => 'Create a metric',
+            'message' => 'You should add a metric.',
+            'success' => 'Metric created.',
             'failure' => 'Something went wrong with the metric, please try again.',
         ],
         'edit' => [
-            'title'   => 'Bir metrik düzenle',
-            'success' => 'Metrik güncellendi.',
+            'title'   => 'Edit a metric',
+            'success' => 'Metric updated.',
             'failure' => 'Something went wrong with the metric, please try again.',
         ],
         'delete' => [
-            'success' => 'Metrik silindi ve artık durum sayfanızda gösterilmeyecek.',
-            'failure' => 'Metrik silinemedi, lütfen tekrar deneyin.',
+            'success' => 'The metric has been deleted and will no longer display on your status page.',
+            'failure' => 'The metric could not be deleted, please try again.',
         ],
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'      => 'Aboneler',
-        'description'      => 'Aboneler, olaylar oluşturulduğunda veya bileşenler güncellendiğinde e-posta güncellemelerini alacaktır.',
-        'verified'         => 'Onaylanmış',
-        'not_verified'     => 'Doğrulanmadı',
-        'subscriber'       => ':email, abone oldu :date',
-        'no_subscriptions' => 'Güncellemeler için abone ol',
+        'subscribers'      => 'Subscribers',
+        'description'      => 'Subscribers will receive email updates when incidents are created or components are updated.',
+        'verified'         => 'Verified',
+        'not_verified'     => 'Not verified',
+        'subscriber'       => ':email, subscribed :date',
+        'no_subscriptions' => 'Subscribed to all updates',
         'add'              => [
-            'title'   => 'Yeni abone ekleme',
-            'success' => 'Abone eklendi!',
-            'failure' => 'Abone eklerken bir şeyler yanlış gitti, lütfen tekrar deneyin.',
-            'help'    => 'Her bir aboneyi yeni bir hatta girin.',
+            'title'   => 'Add a new subscriber',
+            'success' => 'Subscriber has been added!',
+            'failure' => 'Something went wrong adding the subscriber, please try again.',
+            'help'    => 'Enter each subscriber on a new line.',
         ],
         'edit' => [
-            'title'   => 'Aboneleri güncelle',
-            'success' => 'Aboneler güncellendi!',
-            'failure' => 'Abone eklerken bir şeyler yanlış gitti, lütfen tekrar deneyin.',
+            'title'   => 'Update subscriber',
+            'success' => 'Subscriber has been updated!',
+            'failure' => 'Something went wrong editing the subscriber, please try again.',
         ],
     ],
 
     // Team
     'team' => [
-        'team'        => 'Takım',
-        'member'      => 'Üye',
-        'profile'     => 'Profil',
+        'team'        => 'Team',
+        'member'      => 'Member',
+        'profile'     => 'Profile',
         'description' => 'Team Members will be able to add, modify &amp; edit components and incidents.',
         'add'         => [
-            'title'   => 'Yeni ekip üyesi ekle',
-            'success' => 'Ekip üyesi eklendi.',
-            'failure' => 'Ekip üyesi eklenemedi, lütfen tekrar deneyin.',
+            'title'   => 'Add a new team member',
+            'success' => 'Team member added.',
+            'failure' => 'The team member could not be added, please try again.',
         ],
         'edit' => [
-            'title'   => 'Profili Güncelle',
-            'success' => 'Profil güncellendi.',
-            'failure' => 'Profili güncelleme işlemi sırasında bir sorun oluştu, lütfen tekrar deneyin.',
+            'title'   => 'Update profile',
+            'success' => 'Profile updated.',
+            'failure' => 'Something went wrong updating the profile, please try again.',
         ],
         'delete' => [
-            'success' => 'Ekip üyesi silindi ve artık gösterge tablosuna erişimi yok!',
-            'failure' => 'Ekip üyesi eklenemedi, lütfen tekrar deneyin.',
+            'success' => 'Team member has been deleted and will no longer have access to the dashboard!',
+            'failure' => 'The team member could not be added, please try again.',
         ],
         'invite' => [
-            'title'   => 'Yeni bir ekip üyesi davet et',
-            'success' => 'Bir davet gönderildi',
-            'failure' => 'Davet gönderilemedi, lütfen tekrar deneyin.',
+            'title'   => 'Invite a new team member',
+            'success' => 'An invite has been sent',
+            'failure' => 'The invite could not be sent, please try again.',
         ],
     ],
 
     // Settings
     'settings' => [
-        'settings'  => 'Ayarlar',
+        'settings'  => 'Settings',
         'app-setup' => [
-            'app-setup'   => 'Uygulama kurulumu',
-            'images-only' => 'Yalnızca resimler yüklenebilir.',
-            'too-big'     => 'Yüklediğiniz dosya çok büyük. Boyutundan küçük bir resim yükleyin',
+            'app-setup'   => 'Application Setup',
+            'images-only' => 'Only images may be uploaded.',
+            'too-big'     => 'The file you uploaded is too big. Upload an image smaller than :size',
         ],
         'analytics' => [
-            'analytics' => 'Analitik',
+            'analytics' => 'Analytics',
         ],
         'localization' => [
-            'localization' => 'Yerelleştirme',
+            'localization' => 'Localization',
         ],
         'customization' => [
-            'customization' => 'Özelleştirme',
-            'header'        => 'Özel Başlık HTML',
-            'footer'        => 'Özel Altbilgi HTML',
+            'customization' => 'Customization',
+            'header'        => 'Custom Header HTML',
+            'footer'        => 'Custom Footer HTML',
         ],
         'security' => [
-            'security'   => 'Güvenlik',
-            'two-factor' => 'İki faktörlü kimlik doğrulaması olmayan kullanıcılar',
+            'security'   => 'Security',
+            'two-factor' => 'Users without two-factor authentication',
         ],
         'stylesheet' => [
-            'stylesheet' => 'Stil',
+            'stylesheet' => 'Stylesheet',
         ],
         'theme' => [
-            'theme' => 'Tema',
+            'theme' => 'Theme',
         ],
         'edit' => [
-            'success' => 'Ayarlar kaydedildi.',
-            'failure' => 'Ayarlar kaydedilemedi.',
+            'success' => 'Settings saved.',
+            'failure' => 'Settings could not be saved.',
         ],
         'credits' => [
-            'credits'       => 'Kredi',
-            'contributors'  => 'Katkıda bulunanlar',
-            'license'       => 'Cachet, <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank"> Alt Üç\'te yayınlanan BSD-3 lisanslı bir açık kaynak projesidir, tarafından yayımlı </a>.',
-            'backers-title' => 'Destekçiler ve Sponsorlar',
+            'credits'       => 'Credits',
+            'contributors'  => 'Contributors',
+            'license'       => 'Cachet is a BSD-3-licensed open source project, released by <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
+            'backers-title' => 'Backers & Sponsors',
             'backers'       => 'If you\'d like to support future development, check out the CrowdIn and GitHub.',
-            'thank-you'     => 'Her biri için teşekkür ederim: katılımcıları sayın.',
+            'thank-you'     => 'Thank you to each and every one of the :count contributors.',
         ],
     ],
 
     // Login
     'login' => [
-        'login'      => 'Oturum aç',
-        'logged_in'  => 'Giriş yaptın.',
+        'login'      => 'Login',
+        'logged_in'  => 'You\'re logged in.',
         'welcome'    => 'Welcome Back!',
-        'two-factor' => 'Lütfen tokeni giriniz.',
+        'two-factor' => 'Please enter your token.',
     ],
 
     // Sidebar footer
-    'help'        => 'Yardım',
-    'status_page' => 'Durum sayfası',
-    'logout'      => 'Çıkış yap',
+    'help'        => 'Help',
+    'status_page' => 'Status Page',
+    'logout'      => 'Logout',
 
     // Notifications
     'notifications' => [
-        'notifications' => 'Bildirimler',
-        'awesome'       => 'Harika.',
-        'whoops'        => 'Hay aksi.',
+        'notifications' => 'Notifications',
+        'awesome'       => 'Awesome.',
+        'whoops'        => 'Whoops.',
     ],
 
     // Widgets
     'widgets' => [
-        'news'             => 'Son Haberler',
-        'news_subtitle'    => 'En son güncellemeyi edinin',
+        'news'             => 'Latest News',
+        'news_subtitle'    => 'Get the latest update',
     ],
 
     // Welcome modal
