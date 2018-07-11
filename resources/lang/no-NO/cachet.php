@@ -28,12 +28,12 @@ return [
     'incidents' => [
         'none'          => 'Ingen hendelser rapportert',
         'past'          => 'Tidligere hendelser',
-        'previous_week' => 'Forrige Uke',
-        'next_week'     => 'Neste Uke',
+        'previous_week' => 'Previous Week',
+        'next_week'     => 'Next Week',
         'scheduled'     => 'Planlagt vedlikehold',
         'scheduled_at'  => ', planlagt :timestamp',
         'status'        => [
-            0 => 'Planlagt', // TODO: Hopefully remove this.
+            0 => 'Scheduled', // TODO: Hopefully remove this.
             1 => 'Undersøkes',
             2 => 'Identifisert',
             3 => 'Observerer',
@@ -44,8 +44,8 @@ return [
     // Service Status
     'service' => [
         'good'  => '[0,1] Systemet er operativt| [2, Inf] Alle systemer er operative',
-        'bad'   => '[0,1] Systemet opplever for øyeblikket problemer| [2,Inf] Noen systemer opplever problemer',
-        'major' => '[0,1] Det er for øyeblikket et større brudd i systemet|[2,Inf] Noen systemer opplever for øyeblikket større brudd',
+        'bad'   => '[0,1] The system is currently experiencing issues|[2,Inf] Some systems are experiencing issues',
+        'major' => '[0,1] The service experiencing a major outage|[2,Inf] Some systems are experiencing a major outage',
     ],
 
     'api' => [
@@ -65,7 +65,7 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe' => 'Abonner for å få de siste oppdateringene',
+        'subscribe' => 'Subscribe to get the most recent updates',
         'button'    => 'Abonner',
         'manage'    => [
             'no_subscriptions' => 'Du abonnerer for øyeblikket på alle oppdateringer.',
@@ -103,8 +103,8 @@ return [
     'users' => [
         'email' => [
             'invite' => [
-                'text' => "Du er invitert til :app_name sin statusside, for registrering, følg denne linken.\n:link\nTakk, :app_name",
-                'html' => '<p>Du er invitert til :app_name sin statusside, for å registrere deg følg denne koblingen.</p> <p><a href=":link">: link</a></p> <p>Takk, :app_name</p>',
+                'text' => "You have been invited to the team :app_name status page, to sign up follow the next link.\n:link\nThank you, :app_name",
+                'html' => '<p>You have been invited to the team :app_name status page, to sign up follow the next link.</p><p><a href=":link">:link</a></p><p>Thank you, :app_name</p>',
             ],
         ],
     ],
@@ -127,15 +127,15 @@ return [
         'close'     => 'Lukk',
         'subscribe' => [
             'title'  => 'Abonner for å motta varslinger for komponenten på e-post',
-            'body'   => 'Skriv inn e-postadressen din for å abonnere på varslinger for denne komponenten. Hvis du allerede er abonnent vil alt fortsette som før.',
+            'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll already receive emails for this component.',
             'button' => 'Abonner',
         ],
     ],
 
     // Other
-    'home'            => 'Forside',
+    'home'            => 'Home',
     'description'     => 'Hold deg oppdatert med de nyeste service-oppdateringene fra :app.',
-    'powered_by'      => 'Drevet av <a href="https://cachethq.io" class="links">Cachet</a>.',
+    'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
     'about_this_site' => 'Om denne siden',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',
