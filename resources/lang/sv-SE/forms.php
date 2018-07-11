@@ -14,7 +14,7 @@ return [
     // Setup form fields
     'setup' => [
         'email'            => 'E-post',
-        'username'         => 'Användarnamn',
+        'username'         => 'Username',
         'password'         => 'Lösenord',
         'site_name'        => 'Webbplatsens namn',
         'site_domain'      => 'Webbplatsens domän',
@@ -33,8 +33,8 @@ return [
     // Login form fields
     'login' => [
         'login'         => 'Användarnamn eller e-postadress',
-        'email'         => 'E-post',
-        'password'      => 'Lösenord',
+        'email'         => 'Email',
+        'password'      => 'Password',
         '2fauth'        => 'Autentiseringskod',
         'invalid'       => 'Ogiltigt användarnamn eller lösenord',
         'invalid-token' => 'Ogiltig nyckel',
@@ -49,7 +49,7 @@ return [
         'component'          => 'Komponent',
         'message'            => 'Meddelande',
         'message-help'       => 'Du kan även använda Markdown.',
-        'scheduled_at'       => 'När vill du schemalägga underhållet?',
+        'scheduled_at'       => 'When to schedule the maintenance for?',
         'incident_time'      => 'When did this incident occur?',
         'notify_subscribers' => 'Meddela prenumeranter?',
         'visibility'         => 'Incident Visibility',
@@ -76,7 +76,7 @@ return [
         'groups' => [
             'name'               => 'Namn',
             'collapsing'         => 'Choose visibility of the group',
-            'visible'            => 'Alltid expanderad',
+            'visible'            => 'Always expanded',
             'collapsed'          => 'Collapse the group by default',
             'collapsed_incident' => 'Collapse the group, but expand if there are issues',
         ],
@@ -111,8 +111,8 @@ return [
             'display-graphs'         => 'Visa grafer på statussidan?',
             'about-this-page'        => 'Om den här sidan',
             'days-of-incidents'      => 'Hur många dagar av händelser ska visas?',
-            'banner'                 => 'Bannerbild',
-            'banner-help'            => 'Vi rekommenderar att du inte laddar upp bilder som är bredare än 930 px.',
+            'banner'                 => 'Banner Image',
+            'banner-help'            => "Vi rekommenderar att du inte laddar upp bilder som är bredare än 930 px.",
             'subscribers'            => 'Tillåt att registrera sig för notifikationer via e-post?',
             'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
         ],
@@ -133,7 +133,7 @@ return [
             'allowed-domains-help' => 'Kommaseparerad. Domänerna ovan tillåts automatiskt som standard.',
         ],
         'stylesheet' => [
-            'custom-css' => 'Anpassad stilmall',
+            'custom-css' => 'Custom Stylesheet',
         ],
         'theme' => [
             'background-color'        => 'Background Color',
