@@ -15,7 +15,7 @@ return [
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Hændelser &amp; Tisplan',
+        'title'                    => 'Incidents &amp; Schedule',
         'incidents'                => 'Incidents',
         'logged'                   => '{0} Ingen åbne hændelser.|Der er en åben hændelse.|Der er <strong>:count</strong> åbne hændelser.',
         'incident-create-template' => 'Create Template',
@@ -150,7 +150,7 @@ return [
             'title'   => 'Tilføj abonnent',
             'success' => 'Subscriber added.',
             'failure' => 'Noget gik galt under forsøget på at tilføje en abonnent. Prøv venligst igen.',
-            'help'    => 'Angiv hver abonnent på en ny linje.',
+            'help'    => 'Enter each subscriber on a new line.',
         ],
         'edit' => [
             'title'   => 'Redigér abonnent',
@@ -164,7 +164,7 @@ return [
         'team'        => 'Brugere',
         'member'      => 'Bruger',
         'profile'     => 'Profile',
-        'description' => 'Teammedlemmer vil kunne oprette og ændre komponenter og hændelser.',
+        'description' => 'Team Members will be able to add, modify &amp; edit components and incidents.',
         'add'         => [
             'title'   => 'Tilføj bruger',
             'success' => 'Bruger tilføjet.',
@@ -220,12 +220,12 @@ return [
             'failure' => 'Indstillingerne kunne ikke gemmes.',
         ],
         'credits' => [
-            'credits'       => 'Anerkendelser',
-            'contributors'  => 'Bidragsydere',
-            'license'       => 'Cachet er et BSD-3 licenseret open source-projekt udgivet af <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
-            'backers-title' => 'Støtter og Sponsorer',
-            'backers'       => 'Kunne du tænke dig at støtte fremtidig udvikling, så tjek Crowdin og GitHub ud.',
-            'thank-you'     => 'Tak til hver og én af de :count bidragsydere.',
+            'credits'       => 'Credits',
+            'contributors'  => 'Contributors',
+            'license'       => 'Cachet is a BSD-3-licensed open source project, released by <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
+            'backers-title' => 'Backers & Sponsors',
+            'backers'       => 'If you\'d like to support future development, check out the CrowdIn and GitHub.',
+            'thank-you'     => 'Thank you to each and every one of the :count contributors.',
         ],
     ],
 
@@ -233,7 +233,7 @@ return [
     'login' => [
         'login'      => 'Log ind',
         'logged_in'  => 'Du er logget ind.',
-        'welcome'    => 'Velkommen tilbage!',
+        'welcome'    => 'Welcome Back!',
         'two-factor' => 'Indtast venligst din totrins bekræftelses nøgle.',
     ],
 
@@ -251,22 +251,22 @@ return [
 
     // Widgets
     'widgets' => [
-        'news'             => 'Seneste nyheder',
-        'news_subtitle'    => 'Få den nyeste opdatering',
+        'news'             => 'Latest News',
+        'news_subtitle'    => 'Get the latest update',
     ],
 
     // Welcome modal
     'welcome' => [
-        'welcome' => 'Velkommen til din Statusside!',
-        'message' => 'Din Statusside er næsten klar! Du ønsker måske at opsætte disse ekstra indstillinger',
-        'close'   => 'Tag mig direkte til betjeningspanelet',
+        'welcome' => 'Welcome to your new Status page!',
+        'message' => 'Your status page is almost ready! You might want to configure these extra settings',
+        'close'   => 'Take me straight to my dashboard',
         'steps'   => [
-            'component'  => 'Opret komponenter',
-            'incident'   => 'Opret hændelser',
-            'customize'  => 'Tilpas',
-            'team'       => 'Tilføj bruger',
-            'api'        => 'Generér API-token',
-            'two-factor' => 'Totrinsbekræftelse',
+            'component'  => 'Create components',
+            'incident'   => 'Create incidents',
+            'customize'  => 'Customize',
+            'team'       => 'Add users',
+            'api'        => 'Generate API token',
+            'two-factor' => 'Two Factor Authentication',
         ],
     ],
 
