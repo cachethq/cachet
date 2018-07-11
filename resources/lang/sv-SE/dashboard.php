@@ -15,14 +15,14 @@ return [
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Händelser &amp; Schema',
+        'title'                    => 'Incidents &amp; Schedule',
         'incidents'                => 'Händelser',
         'logged'                   => '{0} Det finns inga händelser, bra jobbat!|Du har skapat en händelse.|Du har skapat <strong>:count</strong> händelser.',
         'incident-create-template' => 'Skapa mall',
         'incident-templates'       => 'Händelsemallar',
         'add'                      => [
             'title'   => 'Lägg till händelse',
-            'success' => 'Incident skapad.',
+            'success' => 'Incident added.',
             'failure' => 'There was an error adding the incident, please try again.',
         ],
         'edit' => [
@@ -41,8 +41,8 @@ return [
             'add'   => [
                 'title'   => 'Skapa en händelsemall',
                 'message' => 'Du borde lägga till en händelsemall.',
-                'success' => 'Händelsemallen har skapats.',
-                'failure' => 'Något gick fel med uppdateringen av incidentmallen.',
+                'success' => 'Your new incident template has been created.',
+                'failure' => 'Something went wrong with the incident template.',
             ],
             'edit' => [
                 'title'   => 'Redigera mall',
@@ -62,13 +62,13 @@ return [
         'logged'       => '{0} Det finns inget schemalagt, bra jobbat!|Du har skapat ett schemalagt underhåll.|Du har skapat <strong>:count</strong> schemalagda underhåll.',
         'scheduled_at' => 'Schemalagd till: tidsstämpel',
         'add'          => [
-            'title'   => 'Lägg till planerat underhåll',
-            'success' => 'Schema tillagt.',
+            'title'   => 'Add Scheduled Maintenance',
+            'success' => 'Schedule added.',
             'failure' => 'Something went wrong adding the schedule, please try again.',
         ],
         'edit' => [
-            'title'   => 'Redigera schemalagt underhåll',
-            'success' => 'Schemat har uppdaterats!',
+            'title'   => 'Edit Scheduled Maintenance',
+            'success' => 'Schedule has been updated!',
             'failure' => 'Something went wrong editing the schedule, please try again.',
         ],
         'delete' => [
@@ -85,13 +85,13 @@ return [
         'add'                => [
             'title'   => 'Lägg till en komponent',
             'message' => 'Du borde lägga till en komponent.',
-            'success' => 'Komponent skapad.',
-            'failure' => 'Something went wrong with the component, please try again.',
+            'success' => 'Component created.',
+            'failure' => 'Something went wrong with the component group, please try again.',
         ],
         'edit' => [
             'title'   => 'Redigera komponent',
-            'success' => 'Komponenten har uppdaterats.',
-            'failure' => 'Something went wrong with the component, please try again.',
+            'success' => 'Component updated.',
+            'failure' => 'Something went wrong with the component group, please try again.',
         ],
         'delete' => [
             'success' => 'Komponenten har tagits bort!',
@@ -104,13 +104,13 @@ return [
             'no_components' => 'Du borde lägga till en komponentgrupp.',
             'add'           => [
                 'title'   => 'Lägg till en komponentgrupp',
-                'success' => 'Komponentgrupp tillagd.',
-                'failure' => 'Something went wrong with the component, please try again.',
+                'success' => 'Component group added.',
+                'failure' => 'Something went wrong with the component group, please try again.',
             ],
             'edit' => [
                 'title'   => 'Redigera komponentgrupp',
-                'success' => 'Komponentgrupp uppdaterad.',
-                'failure' => 'Something went wrong with the component, please try again.',
+                'success' => 'Component group updated.',
+                'failure' => 'Something went wrong with the component group, please try again.',
             ],
             'delete' => [
                 'success' => 'Komponentgruppen har tagits bort!',
@@ -145,7 +145,7 @@ return [
         'verified'         => 'Bekräftad',
         'not_verified'     => 'Inte bekräftad',
         'subscriber'       => ':email, subscribed :date',
-        'no_subscriptions' => 'Prenumererat på alla uppdateringar',
+        'no_subscriptions' => 'Subscribed to all updates',
         'add'              => [
             'title'   => 'Lägg till en prenumerant',
             'success' => 'Prenumerant tillagd!',
@@ -164,25 +164,25 @@ return [
         'team'        => 'Team',
         'member'      => 'Medlem',
         'profile'     => 'Profil',
-        'description' => 'Teammedlemmar kommer kunna lägga till, ändra &amp; redigera komponenter och händelser.',
+        'description' => 'Team Members will be able to add, modify &amp; edit components and incidents.',
         'add'         => [
             'title'   => 'Lägg till en ny teammedlem',
-            'success' => 'Gruppmedlem tilllagd.',
-            'failure' => 'Teammedlemmen kunde inte läggas till. Vänligen försök igen.',
+            'success' => 'Team member added.',
+            'failure' => 'The team member could not be added, please try again.',
         ],
         'edit' => [
             'title'   => 'Uppdatera profil',
-            'success' => 'Profil uppdaterad.',
+            'success' => 'Profile updated.',
             'failure' => 'Something went wrong updating the profile, please try again.',
         ],
         'delete' => [
             'success' => 'Teammedlemen har tagits bort och kommer inte längre ha tillgång till översiktspanelen!',
-            'failure' => 'Teammedlemmen kunde inte läggas till. Vänligen försök igen.',
+            'failure' => 'The team member could not be added, please try again.',
         ],
         'invite' => [
             'title'   => 'Bjud in en ny teammedlem',
             'success' => 'Inbjudan har skickats',
-            'failure' => 'Inbjudan kunde inte skickas. Vänligen försök igen.',
+            'failure' => 'The invite could not be sent, please try again.',
         ],
     ],
 
@@ -201,9 +201,9 @@ return [
             'localization' => 'Platsanpassning',
         ],
         'customization' => [
-            'customization' => 'Anpassning',
-            'header'        => 'Anpassat sidhuvud HTML',
-            'footer'        => 'Anpassad sidfot HTML',
+            'customization' => 'Customization',
+            'header'        => 'Custom Header HTML',
+            'footer'        => 'Custom Footer HTML',
         ],
         'security' => [
             'security'   => 'Säkerhet',
@@ -220,10 +220,10 @@ return [
             'failure' => 'Inställningarna kunde inte sparas.',
         ],
         'credits' => [
-            'credits'       => 'Tack till',
-            'contributors'  => 'Medverkande',
+            'credits'       => 'Credits',
+            'contributors'  => 'Contributors',
             'license'       => 'Cachet is a BSD-3-licensed open source project, released by <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
-            'backers-title' => 'Uppbackare & sponsorer',
+            'backers-title' => 'Backers & Sponsors',
             'backers'       => 'If you\'d like to support future development, check out the CrowdIn and GitHub.',
             'thank-you'     => 'Thank you to each and every one of the :count contributors.',
         ],
@@ -233,7 +233,7 @@ return [
     'login' => [
         'login'      => 'Logga in',
         'logged_in'  => 'Du är inloggad.',
-        'welcome'    => 'Välkommen tillbaka!',
+        'welcome'    => 'Welcome Back!',
         'two-factor' => 'Vänligen ange din kod.',
     ],
 
@@ -251,22 +251,22 @@ return [
 
     // Widgets
     'widgets' => [
-        'news'             => 'Senaste nytt',
-        'news_subtitle'    => 'Get the latest updates',
+        'news'             => 'Latest News',
+        'news_subtitle'    => 'Get the latest update',
     ],
 
     // Welcome modal
     'welcome' => [
-        'welcome' => 'Välkommen till din statussida!',
-        'message' => 'Din statussida är nästan redo. Du kan vilja konfigerara de här extra inställningarna',
+        'welcome' => 'Welcome to your new Status page!',
+        'message' => 'Your status page is almost ready! You might want to configure these extra settings',
         'close'   => 'Take me straight to my dashboard',
         'steps'   => [
-            'component'  => 'Skapa komponenter',
-            'incident'   => 'Skapa händelser',
-            'customize'  => 'Anpassa',
-            'team'       => 'Lägg till användare',
-            'api'        => 'Skapa API-nyckel',
-            'two-factor' => 'Tvåfaktorsautensiering',
+            'component'  => 'Create components',
+            'incident'   => 'Create incidents',
+            'customize'  => 'Customize',
+            'team'       => 'Add users',
+            'api'        => 'Generate API token',
+            'two-factor' => 'Two Factor Authentication',
         ],
     ],
 
