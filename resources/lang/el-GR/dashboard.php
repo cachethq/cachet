@@ -11,46 +11,46 @@
 
 return [
 
-    'dashboard' => 'Πίνακας Ελέγχου',
+    'dashboard' => 'Dashboard',
 
     // Incidents
     'incidents' => [
         'title'                    => 'Incidents &amp; Schedule',
-        'incidents'                => 'Περιστατικά',
-        'logged'                   => '{0} Δεν υπάρχουν περιστατικά, καλλή δουλειά.|Έχετε καταγράψει ένα περιστατικό.|Έχετε ανάφερει <strong>:count</strong> περιστατικά.',
-        'incident-create-template' => 'Δημιουργία προτύπου',
-        'incident-templates'       => 'Πρότυπα Περιστατικών',
+        'incidents'                => 'Incidents',
+        'logged'                   => '{0} There are no incidents, good work.|You have logged one incident.|You have reported <strong>:count</strong> incidents.',
+        'incident-create-template' => 'Create Template',
+        'incident-templates'       => 'Incident Templates',
         'add'                      => [
-            'title'   => 'Αναφορά περιστατικού',
+            'title'   => 'Report an incident',
             'success' => 'Incident added.',
             'failure' => 'There was an error adding the incident, please try again.',
         ],
         'edit' => [
-            'title'   => 'Επεξεργασία περιστατικού',
-            'success' => 'Επεξεργασία περιστατικού επιτυχής.',
+            'title'   => 'Edit an incident',
+            'success' => 'Incident updated.',
             'failure' => 'There was an error editing the incident, please try again.',
         ],
         'delete' => [
-            'success' => 'Αυτό το περιστατικό έχει διαγραφεί και δε θα εμφανιστή στη σελίδα κατάστασης.',
+            'success' => 'The incident has been deleted and will not show on your status page.',
             'failure' => 'The incident could not be deleted, please try again.',
         ],
 
         // Incident templates
         'templates' => [
-            'title' => 'Πρότυπα Περιστατικών',
+            'title' => 'Incident Templates',
             'add'   => [
-                'title'   => 'Δημιουργήστε ένα πρότυπο περιστατικό',
-                'message' => 'Σας προτείνουμε να προσθέσετε ένα πρότυπο περιστατικό.',
+                'title'   => 'Create an incident template',
+                'message' => 'You should add an incident template.',
                 'success' => 'Your new incident template has been created.',
                 'failure' => 'Something went wrong with the incident template.',
             ],
             'edit' => [
-                'title'   => 'Επεξεργασία προτύπου',
+                'title'   => 'Edit Template',
                 'success' => 'The incident template has been updated.',
                 'failure' => 'Something went wrong updating the incident template',
             ],
             'delete' => [
-                'success' => 'Το πρότυπο περιστατικό έχει διαγραφεί.',
+                'success' => 'The incident template has been deleted.',
                 'failure' => 'The incident template could not be deleted, please try again.',
             ],
         ],
@@ -58,9 +58,9 @@ return [
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => 'Προγραμματισμένη Συντήρηση',
+        'schedule'     => 'Scheduled Maintenance',
         'logged'       => '{0} There are no schedules, good work.|You have logged one schedule.|You have reported <strong>:count</strong> schedules.',
-        'scheduled_at' => 'Προγραμματισμένη στις :timestamp',
+        'scheduled_at' => 'Scheduled at :timestamp',
         'add'          => [
             'title'   => 'Add Scheduled Maintenance',
             'success' => 'Schedule added.',
@@ -161,7 +161,7 @@ return [
 
     // Team
     'team' => [
-        'team'        => 'Ομάδα',
+        'team'        => 'Team',
         'member'      => 'Member',
         'profile'     => 'Profile',
         'description' => 'Team Members will be able to add, modify &amp; edit components and incidents.',
@@ -188,7 +188,7 @@ return [
 
     // Settings
     'settings' => [
-        'settings'  => 'Ρυθμίσεις',
+        'settings'  => 'Settings',
         'app-setup' => [
             'app-setup'   => 'Application Setup',
             'images-only' => 'Only images may be uploaded.',
@@ -213,7 +213,7 @@ return [
             'stylesheet' => 'Stylesheet',
         ],
         'theme' => [
-            'theme' => 'Θέμα',
+            'theme' => 'Theme',
         ],
         'edit' => [
             'success' => 'Settings saved.',
@@ -231,22 +231,22 @@ return [
 
     // Login
     'login' => [
-        'login'      => 'Σύνδεση',
+        'login'      => 'Login',
         'logged_in'  => 'You\'re logged in.',
         'welcome'    => 'Welcome Back!',
         'two-factor' => 'Please enter your token.',
     ],
 
     // Sidebar footer
-    'help'        => 'Βοήθεια',
-    'status_page' => 'Σελίδα Κατάστασης',
-    'logout'      => 'Έξοδος',
+    'help'        => 'Help',
+    'status_page' => 'Status Page',
+    'logout'      => 'Logout',
 
     // Notifications
     'notifications' => [
-        'notifications' => 'Ειδοποιήσεις',
-        'awesome'       => 'Φανταστικό.',
-        'whoops'        => 'Ούπς.',
+        'notifications' => 'Notifications',
+        'awesome'       => 'Awesome.',
+        'whoops'        => 'Whoops.',
     ],
 
     // Widgets
