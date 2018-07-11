@@ -11,7 +11,7 @@
 
 return [
     'setup'             => 'Opsætning',
-    'title'             => 'Opsæt Cachet',
+    'title'             => 'Setup Cachet',
     'service_details'   => 'Tjenestesdetaljer',
     'env_setup'         => 'Opsætning af miljø',
     'status_page_setup' => 'Status side opsætning',
