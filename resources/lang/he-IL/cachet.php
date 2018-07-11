@@ -15,7 +15,7 @@ return [
         'last_updated' => 'Last updated :timestamp',
         'status'       => [
             1 => 'Operational',
-            2 => 'בעיות ביצועים',
+            2 => 'Performance Issues',
             3 => 'Partial Outage',
             4 => 'Major Outage',
         ],
@@ -30,14 +30,14 @@ return [
         'past'          => 'Past Incidents',
         'previous_week' => 'Previous Week',
         'next_week'     => 'Next Week',
-        'scheduled'     => 'תחזוקה מתוזמנת',
+        'scheduled'     => 'Scheduled Maintenance',
         'scheduled_at'  => ', scheduled :timestamp',
         'status'        => [
             0 => 'Scheduled', // TODO: Hopefully remove this.
             1 => 'Investigating',
-            2 => 'מזוהה',
-            3 => 'צופה',
-            4 => 'תוקן',
+            2 => 'Identified',
+            3 => 'Watching',
+            4 => 'Fixed',
         ],
     ],
 
@@ -49,8 +49,8 @@ return [
     ],
 
     'api' => [
-        'regenerate' => 'צור מפתח API',
-        'revoke'     => 'לבטל את מפתח ה-API',
+        'regenerate' => 'Regenerate API Key',
+        'revoke'     => 'Revoke API Key',
     ],
 
     // Metrics
@@ -112,8 +112,8 @@ return [
     'signup' => [
         'title'    => 'Sign Up',
         'username' => 'Username',
-        'email'    => 'כתובת דוא"ל',
-        'password' => 'סיסמא',
+        'email'    => 'Email',
+        'password' => 'Password',
         'success'  => 'Your account has been created.',
         'failure'  => 'Something went wrong with the signup.',
     ],
