@@ -11,41 +11,41 @@
 
 return [
 
-    'dashboard' => 'لوحة التحكم',
+    'dashboard' => 'Dashboard',
 
     // Incidents
     'incidents' => [
         'title'                    => 'Incidents &amp; Schedule',
-        'incidents'                => 'الأعطال',
+        'incidents'                => 'Incidents',
         'logged'                   => '{0} There are no incidents, good work.|You have logged one incident.|You have reported <strong>:count</strong> incidents.',
-        'incident-create-template' => 'إنشاء قالب',
-        'incident-templates'       => 'قوالب الأعطال',
+        'incident-create-template' => 'Create Template',
+        'incident-templates'       => 'Incident Templates',
         'add'                      => [
-            'title'   => 'الإبلاغ عن عَطَل',
-            'success' => 'تم إضافة العَطَل.',
-            'failure' => 'حدث خلل أثناء إضافة العَطَل، الرجاء إعادة المحاولة ثانية.',
+            'title'   => 'Report an incident',
+            'success' => 'Incident added.',
+            'failure' => 'There was an error adding the incident, please try again.',
         ],
         'edit' => [
-            'title'   => 'تعديل عَطَل',
-            'success' => 'تم تحديث حالة العَطَل.',
-            'failure' => 'حدث خلل أثناء تعديل حالة العَطَل، الرجاء إعادة المحاولة.',
+            'title'   => 'Edit an incident',
+            'success' => 'Incident updated.',
+            'failure' => 'There was an error editing the incident, please try again.',
         ],
         'delete' => [
-            'success' => 'تم حذف العَطَل و لن تظهر في صفحة الحالة الخاصة بك.',
-            'failure' => 'تعذرت عملية حذف العَطَل، يُرجى إعادة المحاولة ثانية.',
+            'success' => 'The incident has been deleted and will not show on your status page.',
+            'failure' => 'The incident could not be deleted, please try again.',
         ],
 
         // Incident templates
         'templates' => [
-            'title' => 'قوالب الأعطال',
+            'title' => 'Incident Templates',
             'add'   => [
-                'title'   => 'إنشاء قالب حالة عَطَل',
+                'title'   => 'Create an incident template',
                 'message' => 'You should add an incident template.',
                 'success' => 'Your new incident template has been created.',
                 'failure' => 'Something went wrong with the incident template.',
             ],
             'edit' => [
-                'title'   => 'تغيير النموذج',
+                'title'   => 'Edit Template',
                 'success' => 'The incident template has been updated.',
                 'failure' => 'Something went wrong updating the incident template',
             ],
@@ -58,12 +58,12 @@ return [
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => 'صيانة مجدولة',
+        'schedule'     => 'Scheduled Maintenance',
         'logged'       => '{0} There are no schedules, good work.|You have logged one schedule.|You have reported <strong>:count</strong> schedules.',
-        'scheduled_at' => 'مُبرمَجة على :timestamp',
+        'scheduled_at' => 'Scheduled at :timestamp',
         'add'          => [
-            'title'   => 'إضافة صيانة مُبَرمَجة',
-            'success' => 'تمت إضافة البرمجة.',
+            'title'   => 'Add Scheduled Maintenance',
+            'success' => 'Schedule added.',
             'failure' => 'Something went wrong adding the schedule, please try again.',
         ],
         'edit' => [
@@ -79,11 +79,11 @@ return [
 
     // Components
     'components' => [
-        'components'         => 'المُكوّنات',
-        'component_statuses' => 'حالات المُكوّن',
+        'components'         => 'Components',
+        'component_statuses' => 'Component Statuses',
         'listed_group'       => 'Grouped under :name',
         'add'                => [
-            'title'   => 'إضافة مُكوّن',
+            'title'   => 'Add a component',
             'message' => 'You should add a component.',
             'success' => 'Component created.',
             'failure' => 'Something went wrong with the component group, please try again.',
@@ -121,7 +121,7 @@ return [
 
     // Metrics
     'metrics' => [
-        'metrics' => 'المقاييس',
+        'metrics' => 'Metrics',
         'add'     => [
             'title'   => 'Create a metric',
             'message' => 'You should add a metric.',
@@ -140,10 +140,10 @@ return [
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'      => 'المشتركين',
+        'subscribers'      => 'Subscribers',
         'description'      => 'Subscribers will receive email updates when incidents are created or components are updated.',
-        'verified'         => 'تم التحقق منه',
-        'not_verified'     => 'لم يتم التحقق منه',
+        'verified'         => 'Verified',
+        'not_verified'     => 'Not verified',
         'subscriber'       => ':email, subscribed :date',
         'no_subscriptions' => 'Subscribed to all updates',
         'add'              => [
@@ -161,18 +161,18 @@ return [
 
     // Team
     'team' => [
-        'team'        => 'فريق',
-        'member'      => 'عضو',
-        'profile'     => 'الملف الشخصي',
+        'team'        => 'Team',
+        'member'      => 'Member',
+        'profile'     => 'Profile',
         'description' => 'Team Members will be able to add, modify &amp; edit components and incidents.',
         'add'         => [
             'title'   => 'Add a new team member',
-            'success' => 'تمت إضافة عضو إلى الفريق.',
+            'success' => 'Team member added.',
             'failure' => 'The team member could not be added, please try again.',
         ],
         'edit' => [
-            'title'   => 'تحديث الملف الشخصي',
-            'success' => 'تم تحديث الملف الشخصي.',
+            'title'   => 'Update profile',
+            'success' => 'Profile updated.',
             'failure' => 'Something went wrong updating the profile, please try again.',
         ],
         'delete' => [
@@ -181,27 +181,27 @@ return [
         ],
         'invite' => [
             'title'   => 'Invite a new team member',
-            'success' => 'تم إرسال الدعوة',
-            'failure' => 'تعذرت عملية إرسال الدعوة، يُرجى إعادة المحاولة ثانية.',
+            'success' => 'An invite has been sent',
+            'failure' => 'The invite could not be sent, please try again.',
         ],
     ],
 
     // Settings
     'settings' => [
-        'settings'  => 'الإعدادات',
+        'settings'  => 'Settings',
         'app-setup' => [
-            'app-setup'   => 'إعدادات البرنامج',
-            'images-only' => 'لا يمكن تحميل إلّا الصور.',
+            'app-setup'   => 'Application Setup',
+            'images-only' => 'Only images may be uploaded.',
             'too-big'     => 'The file you uploaded is too big. Upload an image smaller than :size',
         ],
         'analytics' => [
-            'analytics' => 'التحليلات',
+            'analytics' => 'Analytics',
         ],
         'localization' => [
-            'localization' => 'الترجمة',
+            'localization' => 'Localization',
         ],
         'customization' => [
-            'customization' => 'التخصيص',
+            'customization' => 'Customization',
             'header'        => 'Custom Header HTML',
             'footer'        => 'Custom Footer HTML',
         ],
@@ -213,15 +213,15 @@ return [
             'stylesheet' => 'Stylesheet',
         ],
         'theme' => [
-            'theme' => 'السمة',
+            'theme' => 'Theme',
         ],
         'edit' => [
-            'success' => 'تم حفظ الإعدادات.',
-            'failure' => 'تعذرت عملية حفظ الإعدادات.',
+            'success' => 'Settings saved.',
+            'failure' => 'Settings could not be saved.',
         ],
         'credits' => [
             'credits'       => 'Credits',
-            'contributors'  => 'المساهمون',
+            'contributors'  => 'Contributors',
             'license'       => 'Cachet is a BSD-3-licensed open source project, released by <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
             'backers-title' => 'Backers & Sponsors',
             'backers'       => 'If you\'d like to support future development, check out the CrowdIn and GitHub.',
@@ -231,28 +231,28 @@ return [
 
     // Login
     'login' => [
-        'login'      => 'تسجيل الدخول',
-        'logged_in'  => 'أنت مُتّصل.',
+        'login'      => 'Login',
+        'logged_in'  => 'You\'re logged in.',
         'welcome'    => 'Welcome Back!',
         'two-factor' => 'Please enter your token.',
     ],
 
     // Sidebar footer
-    'help'        => 'المساعدة',
+    'help'        => 'Help',
     'status_page' => 'Status Page',
-    'logout'      => 'الخروج',
+    'logout'      => 'Logout',
 
     // Notifications
     'notifications' => [
-        'notifications' => 'الإشعارات',
-        'awesome'       => 'رائع.',
-        'whoops'        => 'المعذرة.',
+        'notifications' => 'Notifications',
+        'awesome'       => 'Awesome.',
+        'whoops'        => 'Whoops.',
     ],
 
     // Widgets
     'widgets' => [
-        'news'             => 'آخر الأخبار',
-        'news_subtitle'    => 'الحصول على آخر تحديث',
+        'news'             => 'Latest News',
+        'news_subtitle'    => 'Get the latest update',
     ],
 
     // Welcome modal
