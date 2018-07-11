@@ -15,7 +15,7 @@ return [
 
     // Incidents
     'incidents' => [
-        'title'                    => '故障和维护计划',
+        'title'                    => 'Incidents &amp; Schedule',
         'incidents'                => '事件',
         'logged'                   => '{0} 当前没有故障信息|您已经记录了一个故障|您已经报告了 <strong>:count</strong> 个故障',
         'incident-create-template' => '创建模板',
@@ -164,7 +164,7 @@ return [
         'team'        => '团队',
         'member'      => '成员',
         'profile'     => '用户信息',
-        'description' => '团队成员可维护组件和故障信息。',
+        'description' => 'Team Members will be able to add, modify &amp; edit components and incidents.',
         'add'         => [
             'title'   => '添加团队成员',
             'success' => '团队成员已添加',
@@ -257,16 +257,16 @@ return [
 
     // Welcome modal
     'welcome' => [
-        'welcome' => '欢迎来到你的状态页！',
+        'welcome' => 'Welcome to your new Status page!',
         'message' => 'Your status page is almost ready! You might want to configure these extra settings',
-        'close'   => '带我直接进入控制台',
+        'close'   => 'Take me straight to my dashboard',
         'steps'   => [
-            'component'  => '添加组件',
-            'incident'   => '添加故障',
-            'customize'  => '主题设置',
+            'component'  => 'Create components',
+            'incident'   => 'Create incidents',
+            'customize'  => 'Customize',
             'team'       => 'Add users',
-            'api'        => '生成 API Token',
-            'two-factor' => '双因素身份验证',
+            'api'        => 'Generate API token',
+            'two-factor' => 'Two Factor Authentication',
         ],
     ],
 
