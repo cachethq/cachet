@@ -12,90 +12,90 @@
 return [
     // Components
     'components' => [
-        'last_updated' => 'Останнє оновлення :timestamp',
+        'last_updated' => 'Last updated :timestamp',
         'status'       => [
-            1 => 'Працює',
-            2 => 'Проблеми з продуктивністю',
-            3 => 'Частковий перебій у роботі',
-            4 => 'Перебій у роботі',
+            1 => 'Operational',
+            2 => 'Performance Issues',
+            3 => 'Partial Outage',
+            4 => 'Major Outage',
         ],
         'group' => [
-            'other' => 'Інші компоненти',
+            'other' => 'Other Components',
         ],
     ],
 
     // Incidents
     'incidents' => [
-        'none'          => 'Інцидентів не було',
-        'past'          => 'Минулі інциденти',
+        'none'          => 'No incidents reported',
+        'past'          => 'Past Incidents',
         'previous_week' => 'Previous Week',
         'next_week'     => 'Next Week',
-        'scheduled'     => 'Запланована перерва у роботі',
-        'scheduled_at'  => ', заплановано на :timestamp',
+        'scheduled'     => 'Scheduled Maintenance',
+        'scheduled_at'  => ', scheduled :timestamp',
         'status'        => [
             0 => 'Scheduled', // TODO: Hopefully remove this.
-            1 => 'Розслідування',
-            2 => 'Ідентифікований',
-            3 => 'Спостереження',
-            4 => 'Виправлено',
+            1 => 'Investigating',
+            2 => 'Identified',
+            3 => 'Watching',
+            4 => 'Fixed',
         ],
     ],
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] Система працює|[2,Inf] Всі системи працюють',
+        'good'  => '[0,1] System operational|[2,Inf] All systems are operational',
         'bad'   => '[0,1] The system is currently experiencing issues|[2,Inf] Some systems are experiencing issues',
         'major' => '[0,1] The service experiencing a major outage|[2,Inf] Some systems are experiencing a major outage',
     ],
 
     'api' => [
-        'regenerate' => 'Оновити ключ API',
-        'revoke'     => 'Відкликати ключ API',
+        'regenerate' => 'Regenerate API Key',
+        'revoke'     => 'Revoke API Key',
     ],
 
     // Metrics
     'metrics' => [
         'filter' => [
-            'last_hour' => 'Останню годину',
-            'hourly'    => 'Останні 12 годин',
-            'weekly'    => 'Тиждень',
-            'monthly'   => 'Місяць',
+            'last_hour' => 'Last Hour',
+            'hourly'    => 'Last 12 Hours',
+            'weekly'    => 'Week',
+            'monthly'   => 'Month',
         ],
     ],
 
     // Subscriber
     'subscriber' => [
         'subscribe' => 'Subscribe to get the most recent updates',
-        'button'    => 'Підписатись',
+        'button'    => 'Subscribe',
         'manage'    => [
-            'no_subscriptions' => 'Наразі, ви підписані на всі оновлення.',
-            'my_subscriptions' => 'Ви уже підписані до цих оновлень.',
+            'no_subscriptions' => 'You\'re currently subscribed to all updates.',
+            'my_subscriptions' => 'You\'re currently subscribed to the following updates.',
         ],
         'email' => [
-            'subscribe'          => 'Підписатись на email оновлення.',
-            'subscribed'         => 'Ви підписались на розсилку email оновлень. Перевірте вашу пошту, для підтвердження підписки.',
-            'verified'           => 'Ваша підписка підтверджена. Дякую!',
-            'manage'             => 'Керування підпискою',
-            'unsubscribe'        => 'Відписатись від розсилки.',
-            'unsubscribed'       => 'Ваша відписка видалена.',
-            'failure'            => 'Відбулась помилка при підписці на розсилку.',
-            'already-subscribed' => 'Неможливо підписатись на :email, тому що на нього вже оформлена підписка.',
+            'subscribe'          => 'Subscribe to email updates.',
+            'subscribed'         => 'You\'ve been subscribed to email notifications, please check your email to confirm your subscription.',
+            'verified'           => 'Your email subscription has been confirmed. Thank you!',
+            'manage'             => 'Manage your subscription',
+            'unsubscribe'        => 'Unsubscribe from email updates.',
+            'unsubscribed'       => 'Your email subscription has been cancelled.',
+            'failure'            => 'Something went wrong with the subscription.',
+            'already-subscribed' => 'Cannot subscribe :email because they\'re already subscribed.',
             'verify'             => [
-                'text'   => "Будь ласка, підтвердіть вашу підписку на оновлення стану :app_name.\n:link",
-                'html'   => '<p>Будь ласка, підтвердіть вашу підписку на оновлення стану :app_name.</p>',
-                'button' => 'Підтвердити підписку',
+                'text'   => "Please confirm your email subscription to :app_name status updates.\n:link",
+                'html'   => '<p>Please confirm your email subscription to :app_name status updates.</p>',
+                'button' => 'Confirm Subscription',
             ],
             'maintenance' => [
-                'subject' => '[Обслуговування за розкладом] :name',
+                'subject' => '[Maintenance Scheduled] :name',
             ],
             'incident' => [
-                'subject' => '[Новий інцидент] :status: :name',
+                'subject' => '[New Incident] :status: :name',
             ],
             'component' => [
-                'subject'       => 'Статус компонента змінився',
-                'text'          => 'Компонент: component_name змінив статус. Компонент зараз знаходиться на: component_human_status.\n Дякую,: app_name',
-                'html'          => '<p>Компонент: component_name змінив статус. Компонент зараз з статусом: component_human_status.</p> <p>Дякую,: app_name</p>',
-                'tooltip-title' => 'Підписатися на повідомлення для: component_name.',
+                'subject'       => 'Component Status Update',
+                'text'          => 'The component :component_name has seen a status change. The component is now at :component_human_status.\nThank you, :app_name',
+                'html'          => '<p>The component :component_name has seen a status change. The component is now at :component_human_status.</p><p>Thank you, :app_name</p>',
+                'tooltip-title' => 'Subscribe to notifications for :component_name.',
             ],
         ],
     ],
@@ -103,42 +103,42 @@ return [
     'users' => [
         'email' => [
             'invite' => [
-                'text' => "Ви були запрошені до команди :app_name, щоб зареєструватися слідуйте наступним link. \n:link\n Дякую,: app_name",
-                'html' => '<p>Вас запросили до команди :app_name, щоб зареєструватися перейдіть за посиланням.</p> <p><a href=":link">:link</a></p> <p>Дякую, : app_name</p>',
+                'text' => "You have been invited to the team :app_name status page, to sign up follow the next link.\n:link\nThank you, :app_name",
+                'html' => '<p>You have been invited to the team :app_name status page, to sign up follow the next link.</p><p><a href=":link">:link</a></p><p>Thank you, :app_name</p>',
             ],
         ],
     ],
 
     'signup' => [
-        'title'    => 'Зареєструйтесь',
-        'username' => 'Ім’я користувача',
-        'email'    => 'Електронна пошта',
-        'password' => 'Пароль',
-        'success'  => 'Ваш акаунт був створений.',
-        'failure'  => 'Щось пішло не так з реєстрацією.',
+        'title'    => 'Sign Up',
+        'username' => 'Username',
+        'email'    => 'Email',
+        'password' => 'Password',
+        'success'  => 'Your account has been created.',
+        'failure'  => 'Something went wrong with the signup.',
     ],
 
     'system' => [
-        'update' => 'Існує новіша версія Cachet. Ви можете дізнатися, як оновити систему <a href="https://docs.cachethq.io/docs/updating-cachet"> тут</a>!',
+        'update' => 'There is a newer version of Cachet available. You can learn how to update <a href="https://docs.cachethq.io/docs/updating-cachet">here</a>!',
     ],
 
     // Modal
     'modal' => [
-        'close'     => 'Закрити',
+        'close'     => 'Close',
         'subscribe' => [
-            'title'  => 'Підписатись на оновлення компонента',
-            'body'   => 'Введіть вашу адресу електронної пошти, щоб підписатися на оновлення для цього компонента. Якщо ви вже підписані, вам надійде електронною поштою повідомлення для цього компонента.',
-            'button' => 'Підписатись',
+            'title'  => 'Subscribe to component updates',
+            'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll already receive emails for this component.',
+            'button' => 'Subscribe',
         ],
     ],
 
     // Other
-    'home'            => 'Домашня сторінка',
-    'description'     => 'Залишатись в курсі останніх оновлень стану :app.',
-    'powered_by'      => 'Розроблено <a href="https://cachethq.io" class="links">Cachet</a>.',
-    'about_this_site' => 'Про сайт',
+    'home'            => 'Home',
+    'description'     => 'Stay up to date with the latest service updates from :app.',
+    'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
+    'about_this_site' => 'About This Site',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',
-    'feed'            => 'Новини стану',
+    'feed'            => 'Status Feed',
 
 ];
