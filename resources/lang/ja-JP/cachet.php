@@ -111,9 +111,9 @@ return [
 
     'signup' => [
         'title'    => '新規登録',
-        'username' => 'ユーザー名',
+        'username' => 'Username',
         'email'    => 'Email',
-        'password' => 'パスワード',
+        'password' => 'Password',
         'success'  => 'アカウントが作成されました。',
         'failure'  => '新規登録に失敗しました。',
     ],
