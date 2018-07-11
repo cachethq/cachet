@@ -14,10 +14,10 @@ return [
     'components' => [
         'last_updated' => 'Last updated :timestamp',
         'status'       => [
-            1 => 'Funksionim',
-            2 => 'Çështje të performancës',
-            3 => 'Ndërprerje e pjesshëm',
-            4 => 'Ndërprerje Kryesore',
+            1 => 'Operational',
+            2 => 'Performance Issues',
+            3 => 'Partial Outage',
+            4 => 'Major Outage',
         ],
         'group' => [
             'other' => 'Other Components',
@@ -30,14 +30,14 @@ return [
         'past'          => 'Past Incidents',
         'previous_week' => 'Previous Week',
         'next_week'     => 'Next Week',
-        'scheduled'     => 'Mirëmbajtje planifikuar',
-        'scheduled_at'  => ', planifiko :timestamp',
+        'scheduled'     => 'Scheduled Maintenance',
+        'scheduled_at'  => ', scheduled :timestamp',
         'status'        => [
             0 => 'Scheduled', // TODO: Hopefully remove this.
-            1 => 'Hetimin',
-            2 => 'Identifikohet',
-            3 => 'Shikim',
-            4 => 'Rregulluar',
+            1 => 'Investigating',
+            2 => 'Identified',
+            3 => 'Watching',
+            4 => 'Fixed',
         ],
     ],
 
@@ -49,8 +49,8 @@ return [
     ],
 
     'api' => [
-        'regenerate' => 'Rikrijo çelësin e API-t',
-        'revoke'     => 'Refuzo çelësin e API-t',
+        'regenerate' => 'Regenerate API Key',
+        'revoke'     => 'Revoke API Key',
     ],
 
     // Metrics
@@ -111,9 +111,9 @@ return [
 
     'signup' => [
         'title'    => 'Sign Up',
-        'username' => 'Emri i përdoruesit',
+        'username' => 'Username',
         'email'    => 'Email',
-        'password' => 'Fjalëkalimi',
+        'password' => 'Password',
         'success'  => 'Your account has been created.',
         'failure'  => 'Something went wrong with the signup.',
     ],
