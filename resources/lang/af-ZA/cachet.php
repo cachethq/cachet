@@ -12,30 +12,30 @@
 return [
     // Components
     'components' => [
-        'last_updated' => ':timestamp laas opgedateer',
+        'last_updated' => 'Last updated :timestamp',
         'status'       => [
-            1 => 'Operasioneel',
-            2 => 'Prestasieprobleme',
-            3 => 'Gedeeltelike Onderbreking',
-            4 => 'Groot Onderbreking',
+            1 => 'Operational',
+            2 => 'Performance Issues',
+            3 => 'Partial Outage',
+            4 => 'Major Outage',
         ],
         'group' => [
-            'other' => 'Ander komponente',
+            'other' => 'Other Components',
         ],
     ],
 
     // Incidents
     'incidents' => [
-        'none'          => 'Geen voorvalle aangemeld',
-        'past'          => 'Vorige Voorvalle',
+        'none'          => 'No incidents reported',
+        'past'          => 'Past Incidents',
         'previous_week' => 'Previous Week',
         'next_week'     => 'Next Week',
-        'scheduled'     => 'Geskeduleerde Instandhouding',
-        'scheduled_at'  => ', :timestamp geskeduleer',
+        'scheduled'     => 'Scheduled Maintenance',
+        'scheduled_at'  => ', scheduled :timestamp',
         'status'        => [
             0 => 'Scheduled', // TODO: Hopefully remove this.
-            1 => 'Onder die Loep',
-            2 => 'Geïdentifiseerd',
+            1 => 'Investigating',
+            2 => 'Identified',
             3 => 'Hou Dop',
             4 => 'Opgelos',
         ],
@@ -43,7 +43,7 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] Stelsel operasioneel | [2, Inf] Alle stelsels is operasioneel',
+        'good'  => '[0,1] System operational|[2,Inf] All systems are operational',
         'bad'   => '[0,1] The system is currently experiencing issues|[2,Inf] Some systems are experiencing issues',
         'major' => '[0,1] The service experiencing a major outage|[2,Inf] Some systems are experiencing a major outage',
     ],
@@ -56,7 +56,7 @@ return [
     // Metrics
     'metrics' => [
         'filter' => [
-            'last_hour' => 'Laaste uur',
+            'last_hour' => 'Last Hour',
             'hourly'    => 'Afgelope 12 Uur',
             'weekly'    => 'Weekliks',
             'monthly'   => 'Maandeliks',
