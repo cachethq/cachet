@@ -28,12 +28,12 @@ return [
     'incidents' => [
         'none'          => 'Ingen hændelser er rapporteret',
         'past'          => 'Tidligere hændelser',
-        'previous_week' => 'Previous Week',
-        'next_week'     => 'Next Week',
+        'previous_week' => 'Forgående uge',
+        'next_week'     => 'Næste uge',
         'scheduled'     => 'Planlagt vedligeholdelse',
         'scheduled_at'  => ', planlagt til :timestamp',
         'status'        => [
-            0 => 'Scheduled', // TODO: Hopefully remove this.
+            0 => 'Planlagt', // TODO: Hopefully remove this.
             1 => 'Undersøger',
             2 => 'Identificeret',
             3 => 'Overvåger',
@@ -44,8 +44,8 @@ return [
     // Service Status
     'service' => [
         'good'  => '[0,1] Systemet virker|[2,Inf] Alle systemer virker',
-        'bad'   => '[0,1] The system is currently experiencing issues|[2,Inf] Some systems are experiencing issues',
-        'major' => '[0,1] The service experiencing a major outage|[2,Inf] Some systems are experiencing a major outage',
+        'bad'   => '[0,1] Systemet har pt. problemer|[2,Inf] Visse systemer har pt. problemer',
+        'major' => '[0,1] Systemet har pt. store problemer|[2,Inf] Visse systemer har pt. store problemer',
     ],
 
     'api' => [
@@ -65,7 +65,7 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe' => 'Subscribe to get the most recent updates',
+        'subscribe' => 'Abonnér dig for at få de seneste opdateringer',
         'button'    => 'Abonner',
         'manage'    => [
             'no_subscriptions' => 'Du abonner i øjeblikket på alle opdateringer.',
