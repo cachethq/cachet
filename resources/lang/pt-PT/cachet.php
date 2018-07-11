@@ -12,7 +12,7 @@
 return [
     // Components
     'components' => [
-        'last_updated' => 'Ultima actualização :timestamp',
+        'last_updated' => 'Last updated :timestamp',
         'status'       => [
             1 => 'Operacional',
             2 => 'Problemas de performance',
@@ -20,7 +20,7 @@ return [
             4 => 'Indisponibilidade total',
         ],
         'group' => [
-            'other' => 'Outros Componentes',
+            'other' => 'Other Components',
         ],
     ],
 
@@ -28,12 +28,12 @@ return [
     'incidents' => [
         'none'          => 'Nenhum incidente reportado',
         'past'          => 'Incidentes anteriores',
-        'previous_week' => 'Semana anterior',
-        'next_week'     => 'Próxima semana',
+        'previous_week' => 'Previous Week',
+        'next_week'     => 'Next Week',
         'scheduled'     => 'Manutenção Agendada',
         'scheduled_at'  => ', agendada :timestamp',
         'status'        => [
-            0 => 'Agendada', // TODO: Hopefully remove this.
+            0 => 'Scheduled', // TODO: Hopefully remove this.
             1 => 'Investigando',
             2 => 'Identificado',
             3 => 'Observando',
@@ -44,8 +44,8 @@ return [
     // Service Status
     'service' => [
         'good'  => '[0,1] Sistema operacional|[2,Inf] Todos os sistemas estão operacionais',
-        'bad'   => '[0,1] O sistema encontra-se com alguns problemas|[2,Inf] Alguns sistemas estão com problemas',
-        'major' => '[0,1] O serviço encontra-se com uma falha geral.|[2,Inf] Alguns sistemas encontram-se com falhas gerais',
+        'bad'   => '[0,1] The system is currently experiencing issues|[2,Inf] Some systems are experiencing issues',
+        'major' => '[0,1] The service experiencing a major outage|[2,Inf] Some systems are experiencing a major outage',
     ],
 
     'api' => [
@@ -65,31 +65,31 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe' => 'Inscreva-se para obter as atualizações mais recentes',
+        'subscribe' => 'Subscribe to get the most recent updates',
         'button'    => 'Subscrever',
         'manage'    => [
-            'no_subscriptions' => 'Actualmente está subscrito para todas as actualizações.',
-            'my_subscriptions' => 'Actualmente está subscrito para as seguintes actualizações.',
+            'no_subscriptions' => 'You\'re currently subscribed to all updates.',
+            'my_subscriptions' => 'You\'re currently subscribed to the following updates.',
         ],
         'email' => [
             'subscribe'          => 'Subscrever actualizações via email.',
             'subscribed'         => 'Subscreveu as notificações por e-mail, por favor verifique o seu e-mail para confirmar a subscrição.',
             'verified'           => 'A sua subscrição por e-mail foi confirmada. Obrigado!',
-            'manage'             => 'Gerir as suas subscrições',
+            'manage'             => 'Manage your subscription',
             'unsubscribe'        => 'Remover subscrição de e-mail.',
             'unsubscribed'       => 'A sua subscrição de e-mail foi cancelada.',
             'failure'            => 'Algo correu mal com a sua subscrição.',
             'already-subscribed' => 'Não posso subscrever :email pois já se encontra subscrito.',
             'verify'             => [
-                'text'   => "Por favor confirme a sua subscrição de e-mail para as actualizações do :app_name\n:link",
-                'html'   => '<p>Por favor confirme a subscrição de e-mail para as actualizações de estado do :app_name.</p>',
-                'button' => 'Confirmar Subscrição',
+                'text'   => "Please confirm your email subscription to :app_name status updates.\n:link",
+                'html'   => '<p>Please confirm your email subscription to :app_name status updates.</p>',
+                'button' => 'Confirm Subscription',
             ],
             'maintenance' => [
-                'subject' => '[Manutenção Agendada] :name',
+                'subject' => '[Maintenance Scheduled] :name',
             ],
             'incident' => [
-                'subject' => '[Novo Incidente] :status: :name',
+                'subject' => '[New Incident] :status: :name',
             ],
             'component' => [
                 'subject'       => 'Atualização do Estado do Componente',
@@ -133,9 +133,9 @@ return [
     ],
 
     // Other
-    'home'            => 'Início',
-    'description'     => 'Mantenha-se actualizado relativamente às alterações de serviço do :app.',
-    'powered_by'      => 'Suportado por <a href="https://cachethq.io" class="links">Cachet</a>.',
+    'home'            => 'Home',
+    'description'     => 'Stay up to date with the latest service updates from :app.',
+    'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
     'about_this_site' => 'Sobre este Site',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',
