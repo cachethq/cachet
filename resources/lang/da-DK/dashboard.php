@@ -15,7 +15,7 @@ return [
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Incidents &amp; Schedule',
+        'title'                    => 'Hændelser &amp; Tisplan',
         'incidents'                => 'Incidents',
         'logged'                   => '{0} Ingen åbne hændelser.|Der er en åben hændelse.|Der er <strong>:count</strong> åbne hændelser.',
         'incident-create-template' => 'Create Template',
@@ -164,7 +164,7 @@ return [
         'team'        => 'Brugere',
         'member'      => 'Bruger',
         'profile'     => 'Profile',
-        'description' => 'Team Members will be able to add, modify &amp; edit components and incidents.',
+        'description' => 'Teammedlemmer vil kunne oprette og ændre komponenter og hændelser.',
         'add'         => [
             'title'   => 'Tilføj bruger',
             'success' => 'Bruger tilføjet.',
@@ -224,7 +224,7 @@ return [
             'contributors'  => 'Bidragsydere',
             'license'       => 'Cachet er et BSD-3 licenseret open source-projekt udgivet af <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
             'backers-title' => 'Støtter og Sponsorer',
-            'backers'       => 'If you\'d like to support future development, check out the CrowdIn and GitHub.',
+            'backers'       => 'Kunne du tænke dig at støtte fremtidig udvikling, så tjek Crowdin og GitHub ud.',
             'thank-you'     => 'Tak til hver og én af de :count bidragsydere.',
         ],
     ],
@@ -233,7 +233,7 @@ return [
     'login' => [
         'login'      => 'Log ind',
         'logged_in'  => 'Du er logget ind.',
-        'welcome'    => 'Welcome Back!',
+        'welcome'    => 'Velkommen tilbage!',
         'two-factor' => 'Indtast venligst din totrins bekræftelses nøgle.',
     ],
 
@@ -257,16 +257,16 @@ return [
 
     // Welcome modal
     'welcome' => [
-        'welcome' => 'Welcome to your new Status page!',
-        'message' => 'Your status page is almost ready! You might want to configure these extra settings',
-        'close'   => 'Take me straight to my dashboard',
+        'welcome' => 'Velkommen til din Statusside!',
+        'message' => 'Din Statusside er næsten klar! Du ønsker måske at opsætte disse ekstra indstillinger',
+        'close'   => 'Tag mig direkte til betjeningspanelet',
         'steps'   => [
-            'component'  => 'Create components',
-            'incident'   => 'Create incidents',
-            'customize'  => 'Customize',
-            'team'       => 'Add users',
-            'api'        => 'Generate API token',
-            'two-factor' => 'Two Factor Authentication',
+            'component'  => 'Opret komponenter',
+            'incident'   => 'Opret hændelser',
+            'customize'  => 'Tilpas',
+            'team'       => 'Tilføj bruger',
+            'api'        => 'Generér API-token',
+            'two-factor' => 'Totrinsbekræftelse',
         ],
     ],
 
