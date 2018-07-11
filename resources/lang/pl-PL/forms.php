@@ -14,7 +14,7 @@ return [
     // Setup form fields
     'setup' => [
         'email'            => 'E-Mail',
-        'username'         => 'Nazwa użytkownika',
+        'username'         => 'Username',
         'password'         => 'Hasło',
         'site_name'        => 'Nazwa strony',
         'site_domain'      => 'Domena',
@@ -50,7 +50,7 @@ return [
         'message'            => 'Nachricht',
         'message-help'       => 'Można użyć również języka znaczników.',
         'scheduled_at'       => 'When to schedule the maintenance for?',
-        'incident_time'      => 'Kiedy wystąpił incydent?',
+        'incident_time'      => 'When did this incident occur?',
         'notify_subscribers' => 'Powiadomić subskrybentów?',
         'visibility'         => 'Widoczność zdarzenia',
         'public'             => 'Widoczne publicznie',
@@ -112,7 +112,7 @@ return [
             'about-this-page'        => 'Informacje o tej stronie',
             'days-of-incidents'      => 'Z ilu ostatnich dni pokazywać incydenty?',
             'banner'                 => 'Baner',
-            'banner-help'            => 'Zaleca się, aby przesyłać pliki nie większe niż 930px szerokości.',
+            'banner-help'            => "Zaleca się, aby przesyłać pliki nie większe niż 930px szerokości.",
             'subscribers'            => 'Czy zezwolić użytkownikom na subskrypcje e-mail w celu otrzymywania powiadomień?',
             'automatic_localization' => 'Automatycznie tłumaczyć twoją stronę statusu na język odwiedzającego?',
         ],
