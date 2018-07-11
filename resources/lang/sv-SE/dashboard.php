@@ -22,7 +22,7 @@ return [
         'incident-templates'       => 'Händelsemallar',
         'add'                      => [
             'title'   => 'Lägg till händelse',
-            'success' => 'Incident added.',
+            'success' => 'Incident skapad.',
             'failure' => 'There was an error adding the incident, please try again.',
         ],
         'edit' => [
@@ -41,8 +41,8 @@ return [
             'add'   => [
                 'title'   => 'Skapa en händelsemall',
                 'message' => 'Du borde lägga till en händelsemall.',
-                'success' => 'Your new incident template has been created.',
-                'failure' => 'Something went wrong with the incident template.',
+                'success' => 'Händelsemallen har skapats.',
+                'failure' => 'Något gick fel med uppdateringen av incidentmallen.',
             ],
             'edit' => [
                 'title'   => 'Redigera mall',
@@ -62,13 +62,13 @@ return [
         'logged'       => '{0} Det finns inget schemalagt, bra jobbat!|Du har skapat ett schemalagt underhåll.|Du har skapat <strong>:count</strong> schemalagda underhåll.',
         'scheduled_at' => 'Schemalagd till: tidsstämpel',
         'add'          => [
-            'title'   => 'Add Scheduled Maintenance',
-            'success' => 'Schedule added.',
+            'title'   => 'Lägg till planerat underhåll',
+            'success' => 'Schema tillagt.',
             'failure' => 'Something went wrong adding the schedule, please try again.',
         ],
         'edit' => [
-            'title'   => 'Edit Scheduled Maintenance',
-            'success' => 'Schedule has been updated!',
+            'title'   => 'Redigera schemalagt underhåll',
+            'success' => 'Schemat har uppdaterats!',
             'failure' => 'Something went wrong editing the schedule, please try again.',
         ],
         'delete' => [
@@ -85,12 +85,12 @@ return [
         'add'                => [
             'title'   => 'Lägg till en komponent',
             'message' => 'Du borde lägga till en komponent.',
-            'success' => 'Component created.',
+            'success' => 'Komponent skapad.',
             'failure' => 'Something went wrong with the component, please try again.',
         ],
         'edit' => [
             'title'   => 'Redigera komponent',
-            'success' => 'Component updated.',
+            'success' => 'Komponenten har uppdaterats.',
             'failure' => 'Something went wrong with the component, please try again.',
         ],
         'delete' => [
@@ -104,13 +104,13 @@ return [
             'no_components' => 'Du borde lägga till en komponentgrupp.',
             'add'           => [
                 'title'   => 'Lägg till en komponentgrupp',
-                'success' => 'Component group added.',
-                'failure' => 'Something went wrong with the component group, please try again.',
+                'success' => 'Komponentgrupp tillagd.',
+                'failure' => 'Something went wrong with the component, please try again.',
             ],
             'edit' => [
                 'title'   => 'Redigera komponentgrupp',
-                'success' => 'Component group updated.',
-                'failure' => 'Something went wrong with the component group, please try again.',
+                'success' => 'Komponentgrupp uppdaterad.',
+                'failure' => 'Something went wrong with the component, please try again.',
             ],
             'delete' => [
                 'success' => 'Komponentgruppen har tagits bort!',
@@ -145,7 +145,7 @@ return [
         'verified'         => 'Bekräftad',
         'not_verified'     => 'Inte bekräftad',
         'subscriber'       => ':email, subscribed :date',
-        'no_subscriptions' => 'Subscribed to all updates',
+        'no_subscriptions' => 'Prenumererat på alla uppdateringar',
         'add'              => [
             'title'   => 'Lägg till en prenumerant',
             'success' => 'Prenumerant tillagd!',
@@ -167,22 +167,22 @@ return [
         'description' => 'Teammedlemmar kommer kunna lägga till, ändra &amp; redigera komponenter och händelser.',
         'add'         => [
             'title'   => 'Lägg till en ny teammedlem',
-            'success' => 'Team member added.',
-            'failure' => 'The team member could not be added, please try again.',
+            'success' => 'Gruppmedlem tilllagd.',
+            'failure' => 'Teammedlemmen kunde inte läggas till. Vänligen försök igen.',
         ],
         'edit' => [
             'title'   => 'Uppdatera profil',
-            'success' => 'Profile updated.',
+            'success' => 'Profil uppdaterad.',
             'failure' => 'Something went wrong updating the profile, please try again.',
         ],
         'delete' => [
             'success' => 'Teammedlemen har tagits bort och kommer inte längre ha tillgång till översiktspanelen!',
-            'failure' => 'The team member could not be added, please try again.',
+            'failure' => 'Teammedlemmen kunde inte läggas till. Vänligen försök igen.',
         ],
         'invite' => [
             'title'   => 'Bjud in en ny teammedlem',
             'success' => 'Inbjudan har skickats',
-            'failure' => 'The invite could not be sent, please try again.',
+            'failure' => 'Inbjudan kunde inte skickas. Vänligen försök igen.',
         ],
     ],
 
@@ -201,9 +201,9 @@ return [
             'localization' => 'Platsanpassning',
         ],
         'customization' => [
-            'customization' => 'Customization',
-            'header'        => 'Custom Header HTML',
-            'footer'        => 'Custom Footer HTML',
+            'customization' => 'Anpassning',
+            'header'        => 'Anpassat sidhuvud HTML',
+            'footer'        => 'Anpassad sidfot HTML',
         ],
         'security' => [
             'security'   => 'Säkerhet',
@@ -220,10 +220,10 @@ return [
             'failure' => 'Inställningarna kunde inte sparas.',
         ],
         'credits' => [
-            'credits'       => 'Credits',
-            'contributors'  => 'Contributors',
+            'credits'       => 'Tack till',
+            'contributors'  => 'Medverkande',
             'license'       => 'Cachet is a BSD-3-licensed open source project, released by <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
-            'backers-title' => 'Backers & Sponsors',
+            'backers-title' => 'Uppbackare & sponsorer',
             'backers'       => 'If you\'d like to support future development, check out the CrowdIn and GitHub.',
             'thank-you'     => 'Thank you to each and every one of the :count contributors.',
         ],
@@ -251,7 +251,7 @@ return [
 
     // Widgets
     'widgets' => [
-        'news'             => 'Latest News',
+        'news'             => 'Senaste nytt',
         'news_subtitle'    => 'Get the latest updates',
     ],
 

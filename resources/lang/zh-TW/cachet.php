@@ -12,7 +12,7 @@
 return [
     // Components
     'components' => [
-        'last_updated' => 'Last updated :timestamp',
+        'last_updated' => '最後更新： :timestamp',
         'status'       => [
             1 => '正常',
             2 => '效能問題',
@@ -20,14 +20,14 @@ return [
             4 => '停止運作',
         ],
         'group' => [
-            'other' => 'Other Components',
+            'other' => '其他元件',
         ],
     ],
 
     // Incidents
     'incidents' => [
-        'none'          => 'No incidents reported',
-        'past'          => '過去的事件',
+        'none'          => '沒有故障報告',
+        'past'          => '過往事件',
         'previous_week' => '上一週',
         'next_week'     => '下一週',
         'scheduled'     => '排程維護',
@@ -43,7 +43,7 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] System operational|[2,Inf] All systems are operational',
+        'good'  => '[0,1] 系統運作正常|[2,Inf] 所有系統運作正常',
         'bad'   => '[0,1] The system is currently experiencing issues|[2,Inf] Some systems are experiencing issues',
         'major' => '[0,1] The service experiencing a major outage|[2,Inf] Some systems are experiencing a major outage',
     ],
@@ -56,10 +56,10 @@ return [
     // Metrics
     'metrics' => [
         'filter' => [
-            'last_hour' => 'Last Hour',
+            'last_hour' => '一小時前',
             'hourly'    => '最近12小時',
             'weekly'    => '週',
-            'monthly'   => '月',
+            'monthly'   => '月份',
         ],
     ],
 
@@ -68,34 +68,34 @@ return [
         'subscribe' => '訂閱最新的狀態更新。',
         'button'    => '訂閱',
         'manage'    => [
-            'no_subscriptions' => 'You\'re currently subscribed to all updates.',
-            'my_subscriptions' => 'You\'re currently subscribed to the following updates.',
+            'no_subscriptions' => '您目前已訂閱所有的更新。',
+            'my_subscriptions' => '您目前已安裝下列更新',
         ],
         'email' => [
             'subscribe'          => '訂閱 電子郵件 系統狀態更新。',
             'subscribed'         => '您已經訂閱電子郵件通知，請檢查您的電子郵件，確認您的訂閱。',
             'verified'           => '您的電子郵件訂閱已確認。謝謝！',
-            'manage'             => 'Manage your subscription',
+            'manage'             => '管理您的訂閱',
             'unsubscribe'        => '取消電子郵件訂閱。',
             'unsubscribed'       => '您的電子郵件訂閱已取消。',
             'failure'            => '郵件訂閱失敗。',
-            'already-subscribed' => 'Cannot subscribe :email because they\'re already subscribed.',
+            'already-subscribed' => '無法訂閱，因为這個郵件地址 :email 已經在訂閱列表中了。',
             'verify'             => [
-                'text'   => "Please confirm your email subscription to :app_name status updates.\n:link",
-                'html'   => '<p>Please confirm your email subscription to :app_name status updates.</p>',
-                'button' => 'Confirm Subscription',
+                'text'   => "請確認您的 :app_name 狀態更新郵件訂閱。\n:link",
+                'html'   => '<p>請確認您的 :app_name 狀態更新郵件訂閱。</p>',
+                'button' => '確認訂閱',
             ],
             'maintenance' => [
-                'subject' => '[Maintenance Scheduled] :name',
+                'subject' => '[計畫維護] :name',
             ],
             'incident' => [
-                'subject' => '[New Incident] :status: :name',
+                'subject' => '[新事件] :status: :name',
             ],
             'component' => [
-                'subject'       => 'Component Status Update',
-                'text'          => 'The component :component_name has seen a status change. The component is now at :component_human_status.\nThank you, :app_name',
-                'html'          => '<p>The component :component_name has seen a status change. The component is now at :component_human_status.</p><p>Thank you, :app_name</p>',
-                'tooltip-title' => 'Subscribe to notifications for :component_name.',
+                'subject'       => '組件狀態更新',
+                'text'          => '組件 :component_name 的狀態已經更新。:component_name 現在的狀態為 :component_human_status。\n謝謝, :app_name',
+                'html'          => '<p>組件 :component_name 有狀態改變。:component_name 目前 :component_human_status。</p><p>謝謝, :app_name</p>',
+                'tooltip-title' => '訂閱來自 component_name 的更新',
             ],
         ],
     ],
@@ -119,23 +119,23 @@ return [
     ],
 
     'system' => [
-        'update' => 'There is a newer version of Cachet available. You can learn how to update <a href="https://docs.cachethq.io/docs/updating-cachet">here</a>!',
+        'update' => '有新版的Cachet可用，您可以<a href="https://docs.cachethq.io/docs/updating-cachet">點這裡</a>獲取更新諮詢',
     ],
 
     // Modal
     'modal' => [
-        'close'     => 'Close',
+        'close'     => '關閉',
         'subscribe' => [
-            'title'  => 'Subscribe to component updates',
-            'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll already receive emails for this component.',
+            'title'  => '訂閱組件狀態更新',
+            'body'   => '請輸入您用於接收訂閱該組件更新通知的電子信箱。如果您已經訂閱，您應該已收到關於這個組件的相關的電子郵件。',
             'button' => '訂閱',
         ],
     ],
 
     // Other
-    'home'            => 'Home',
-    'description'     => 'Stay up to date with the latest service updates from :app.',
-    'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
+    'home'            => '首頁',
+    'description'     => '始終保持對 :app 服務狀態的關注。',
+    'powered_by'      => '由 <a href="https://cachethq.io" class="links">Cachet</a> 提供。',
     'about_this_site' => '關於此站點',
     'rss-feed'        => 'RSS 訂閱',
     'atom-feed'       => 'Atom 訂閱',

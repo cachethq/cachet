@@ -23,6 +23,11 @@ return [
         'enable_google2fa' => 'Aktivera Google tvåfaktorsautentisering',
         'cache_driver'     => 'Cachedrivrutin',
         'session_driver'   => 'Sessionsdrivrutin',
+        'mail_driver'      => 'Mail Driver',
+        'mail_host'        => 'Mail Host',
+        'mail_address'     => 'Mail From Address',
+        'mail_username'    => 'Mail Username',
+        'mail_password'    => 'Mail Password',
     ],
 
     // Login form fields
@@ -45,7 +50,7 @@ return [
         'message'            => 'Meddelande',
         'message-help'       => 'Du kan även använda Markdown.',
         'scheduled_at'       => 'När vill du schemalägga underhållet?',
-        'incident_time'      => 'När inträffade händelsen?',
+        'incident_time'      => 'When did this incident occur?',
         'notify_subscribers' => 'Meddela prenumeranter?',
         'visibility'         => 'Incident Visibility',
         'public'             => 'Kan ses av allmänheten',
@@ -71,7 +76,7 @@ return [
         'groups' => [
             'name'               => 'Namn',
             'collapsing'         => 'Choose visibility of the group',
-            'visible'            => 'Always expanded',
+            'visible'            => 'Alltid expanderad',
             'collapsed'          => 'Collapse the group by default',
             'collapsed_incident' => 'Collapse the group, but expand if there are issues',
         ],
@@ -106,7 +111,7 @@ return [
             'display-graphs'         => 'Visa grafer på statussidan?',
             'about-this-page'        => 'Om den här sidan',
             'days-of-incidents'      => 'Hur många dagar av händelser ska visas?',
-            'banner'                 => 'Banner Image',
+            'banner'                 => 'Bannerbild',
             'banner-help'            => 'Vi rekommenderar att du inte laddar upp bilder som är bredare än 930 px.',
             'subscribers'            => 'Tillåt att registrera sig för notifikationer via e-post?',
             'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
@@ -128,7 +133,7 @@ return [
             'allowed-domains-help' => 'Kommaseparerad. Domänerna ovan tillåts automatiskt som standard.',
         ],
         'stylesheet' => [
-            'custom-css' => 'Custom Stylesheet',
+            'custom-css' => 'Anpassad stilmall',
         ],
         'theme' => [
             'background-color'        => 'Background Color',

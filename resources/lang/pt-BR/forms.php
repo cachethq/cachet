@@ -23,6 +23,11 @@ return [
         'enable_google2fa' => 'Habilitar a autenticação de dois fatores do Google',
         'cache_driver'     => 'Driver de Cache',
         'session_driver'   => 'Driver de Sessão',
+        'mail_driver'      => 'Driver de correio',
+        'mail_host'        => 'Host de correio',
+        'mail_address'     => 'Correio do endereço',
+        'mail_username'    => 'Nome de usuário de email',
+        'mail_password'    => 'Senha de email',
     ],
 
     // Login form fields

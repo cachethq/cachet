@@ -23,6 +23,11 @@ return [
         'enable_google2fa' => '啟用 Google 兩步驗證',
         'cache_driver'     => '緩存驅動',
         'session_driver'   => '會話驅動',
+        'mail_driver'      => 'Mail Driver',
+        'mail_host'        => 'Mail Host',
+        'mail_address'     => 'Mail From Address',
+        'mail_username'    => 'Mail Username',
+        'mail_password'    => 'Mail Password',
     ],
 
     // Login form fields
@@ -45,7 +50,7 @@ return [
         'message'            => '訊息',
         'message-help'       => '你可以使用 Markdown 。',
         'scheduled_at'       => '排期在什麼時候進行維護？',
-        'incident_time'      => '這次事件是什麽時候發生的？',
+        'incident_time'      => 'When did this incident occur?',
         'notify_subscribers' => '通知訂閱者',
         'visibility'         => 'Incident Visibility',
         'public'             => '公共可見',

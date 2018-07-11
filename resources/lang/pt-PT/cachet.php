@@ -12,7 +12,7 @@
 return [
     // Components
     'components' => [
-        'last_updated' => 'Last updated :timestamp',
+        'last_updated' => 'Ultima actualização :timestamp',
         'status'       => [
             1 => 'Operacional',
             2 => 'Problemas de performance',
@@ -20,7 +20,7 @@ return [
             4 => 'Indisponibilidade total',
         ],
         'group' => [
-            'other' => 'Other Components',
+            'other' => 'Outros Componentes',
         ],
     ],
 
@@ -68,28 +68,28 @@ return [
         'subscribe' => 'Inscreva-se para obter as atualizações mais recentes',
         'button'    => 'Subscrever',
         'manage'    => [
-            'no_subscriptions' => 'You\'re currently subscribed to all updates.',
-            'my_subscriptions' => 'You\'re currently subscribed to the following updates.',
+            'no_subscriptions' => 'Actualmente está subscrito para todas as actualizações.',
+            'my_subscriptions' => 'Actualmente está subscrito para as seguintes actualizações.',
         ],
         'email' => [
             'subscribe'          => 'Subscrever actualizações via email.',
             'subscribed'         => 'Subscreveu as notificações por e-mail, por favor verifique o seu e-mail para confirmar a subscrição.',
             'verified'           => 'A sua subscrição por e-mail foi confirmada. Obrigado!',
-            'manage'             => 'Manage your subscription',
+            'manage'             => 'Gerir as suas subscrições',
             'unsubscribe'        => 'Remover subscrição de e-mail.',
             'unsubscribed'       => 'A sua subscrição de e-mail foi cancelada.',
             'failure'            => 'Algo correu mal com a sua subscrição.',
             'already-subscribed' => 'Não posso subscrever :email pois já se encontra subscrito.',
             'verify'             => [
-                'text'   => "Please confirm your email subscription to :app_name status updates.\n:link",
-                'html'   => '<p>Please confirm your email subscription to :app_name status updates.</p>',
-                'button' => 'Confirm Subscription',
+                'text'   => "Por favor confirme a sua subscrição de e-mail para as actualizações do :app_name\n:link",
+                'html'   => '<p>Por favor confirme a subscrição de e-mail para as actualizações de estado do :app_name.</p>',
+                'button' => 'Confirmar Subscrição',
             ],
             'maintenance' => [
-                'subject' => '[Maintenance Scheduled] :name',
+                'subject' => '[Manutenção Agendada] :name',
             ],
             'incident' => [
-                'subject' => '[New Incident] :status: :name',
+                'subject' => '[Novo Incidente] :status: :name',
             ],
             'component' => [
                 'subject'       => 'Atualização do Estado do Componente',
@@ -133,9 +133,9 @@ return [
     ],
 
     // Other
-    'home'            => 'Home',
-    'description'     => 'Stay up to date with the latest service updates from :app.',
-    'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
+    'home'            => 'Início',
+    'description'     => 'Mantenha-se actualizado relativamente às alterações de serviço do :app.',
+    'powered_by'      => 'Suportado por <a href="https://cachethq.io" class="links">Cachet</a>.',
     'about_this_site' => 'Sobre este Site',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',

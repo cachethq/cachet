@@ -105,12 +105,12 @@ return [
             'add'           => [
                 'title'   => '添加組件分組',
                 'success' => 'Component group added.',
-                'failure' => 'Something went wrong with the component group, please try again.',
+                'failure' => 'Something went wrong with the component, please try again.',
             ],
             'edit' => [
                 'title'   => '編輯組件分組',
                 'success' => 'Component group updated.',
-                'failure' => 'Something went wrong with the component group, please try again.',
+                'failure' => 'Something went wrong with the component, please try again.',
             ],
             'delete' => [
                 'success' => 'Component group has been deleted!',
