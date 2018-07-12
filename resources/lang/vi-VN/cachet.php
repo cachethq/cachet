@@ -12,97 +12,97 @@
 return [
     // Components
     'components' => [
-        'last_updated' => 'Lần cập nhật cuối :timestamp',
+        'last_updated' => 'Last updated :timestamp',
         'status'       => [
-            0 => 'Không biết',
+            0 => 'Unknown',
             1 => 'Hoạt động',
-            2 => 'Vấn đề hiệu suất',
-            3 => 'Ngưng hoạt động một phần',
-            4 => 'Ngừng hoạt động toàn bộ',
+            2 => 'Performance Issues',
+            3 => 'Partial Outage',
+            4 => 'Major Outage',
         ],
         'group' => [
-            'other' => 'Các thành phần khác',
+            'other' => 'Other Components',
         ],
     ],
 
     // Incidents
     'incidents' => [
-        'none'         => 'Không có báo cáo về sự số nào',
-        'past'         => 'Các sự số trong quá khứ',
-        'stickied'     => 'Sự cố Stickied',
-        'scheduled'    => 'Bảo trì định kỳ',
-        'scheduled_at' => ', định kỳ :timestamp',
-        'posted'       => 'Đã đăng :timestamp',
+        'none'         => 'No incidents reported',
+        'past'         => 'Past Incidents',
+        'stickied'     => 'Stickied Incidents',
+        'scheduled'    => 'Maintenance',
+        'scheduled_at' => ', scheduled :timestamp',
+        'posted'       => 'Posted :timestamp',
         'posted_at'    => 'Posted at :timestamp',
         'status'       => [
-            1 => 'Đang điều tra',
-            2 => 'Xác định',
-            3 => 'Đang xem',
-            4 => 'Đã sửa',
+            1 => 'Investigating',
+            2 => 'Identified',
+            3 => 'Watching',
+            4 => 'Fixed',
         ],
     ],
 
     // Schedule
     'schedules' => [
         'status' => [
-            0 => 'Sắp tới',
-            1 => 'Đang xử lý',
-            2 => 'Hoàn thành',
+            0 => 'Upcoming',
+            1 => 'In Progress',
+            2 => 'Complete',
         ],
     ],
 
     // Service Status
     'service' => [
         'good'  => '[0,1]System operational|[2,*]All systems are operational',
-        'bad'   => '[0,1] The system is experiencing issues|[2,Inf] Some systems are experiencing issues',
-        'major' => '[0,1] The system is experiencing major issues|[2,Inf] Some systems are experiencing major issues',
+        'bad'   => '[0,1]The system is experiencing issues|[2,*]Some systems are experiencing issues',
+        'major' => '[0,1]The system is experiencing major issues|[2,*]Some systems are experiencing major issues',
     ],
 
     'api' => [
-        'regenerate' => 'Tạo lại Khóa API',
-        'revoke'     => 'Thu hồi Khóa API',
+        'regenerate' => 'Regenerate API Key',
+        'revoke'     => 'Revoke API Key',
     ],
 
     // Metrics
     'metrics' => [
         'filter' => [
-            'last_hour' => 'Giờ trước',
-            'hourly'    => '12 giờ trước',
-            'weekly'    => 'Tuần',
-            'monthly'   => 'Tháng',
+            'last_hour' => 'Last Hour',
+            'hourly'    => 'Last 12 Hours',
+            'weekly'    => 'Week',
+            'monthly'   => 'Month',
         ],
     ],
 
     // Subscriber
     'subscriber' => [
-        'subscribe'           => 'Đăng ký để nhận các thông báo cập nhật',
+        'subscribe'           => 'Subscribe to get the updates',
         'unsubscribe'         => 'Unsubscribe',
-        'button'              => 'Đăng ký',
+        'button'              => 'Subscribe',
         'manage_subscription' => 'Manage subscription',
         'manage'              => [
-            'no_subscriptions' => 'Bạn hiện đã đăng ký nhận tất cả các thông báo cập nhật.',
-            'my_subscriptions' => 'Bạn hiện đã đăng ký nhận các thông báo cập nhật sau.',
+            'no_subscriptions' => 'You\'re currently subscribed to all updates.',
+            'my_subscriptions' => 'You\'re currently subscribed to the following updates.',
             'manage_at_link'   => 'Manage your subscriptions at :link',
         ],
         'email' => [
-            'subscribe'          => 'Đăng ký nhận thông báo cập nhật qua email.',
-            'subscribed'         => 'Bạn đã đăng ký nhận email thông báo cập nhật, xin vui lòng kiểm tra email của bạn để xác nhận.',
-            'verified'           => 'Đăng ký email của bạn đã được xác nhận. Cảm ơn bạn!',
-            'manage'             => 'Quản lý đăng ký',
-            'unsubscribe'        => 'Hủy đăng ký thông báo cập nhật qua email.',
-            'unsubscribed'       => 'Đăng ký email của bạn đã bị hủy bỏ.',
-            'failure'            => 'Có lỗi xảy ra khi đăng ký nhận thông báo cập nhật.',
-            'already-subscribed' => 'Không thể đăng ký :email bởi vì họ đã đăng ký.',
+            'subscribe'          => 'Subscribe to email updates.',
+            'subscribed'         => 'You\'ve been subscribed to email notifications, please check your email to confirm your subscription.',
+            'verified'           => 'Your email subscription has been confirmed. Thank you!',
+            'manage'             => 'Manage your subscription',
+            'unsubscribe'        => 'Unsubscribe from email updates.',
+            'unsubscribed'       => 'Your email subscription has been cancelled.',
+            'failure'            => 'Something went wrong with the subscription.',
+            'already-subscribed' => 'Cannot subscribe :email because they\'re already subscribed.',
         ],
     ],
 
     'signup' => [
-        'title'    => 'Đăng ký',
-        'username' => 'Tên người dùng',
+        'title'    => 'Sign Up',
+        'username' => 'Username',
         'email'    => 'Email',
         'password' => 'Mật khẩu',
-        'success'  => 'Tài khoản của bạn đã được tạo.',
-        'failure'  => 'Có lỗi xảy ra khi đăng ký.',
+        'success'  => 'Your account has been created.',
+        'failure'  => 'Something went wrong with the signup.',
     ],
 
     'system' => [
@@ -115,7 +115,7 @@ return [
         'subscribe' => [
             'title'  => 'Subscribe to component updates',
             'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll already receive emails for this component.',
-            'button' => 'Đăng ký',
+            'button' => 'Subscribe',
         ],
     ],
 
@@ -133,7 +133,7 @@ return [
     'home'            => 'Home',
     'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
     'timezone'        => 'Times are shown in :timezone.',
-    'about_this_site' => 'Về trang web này',
+    'about_this_site' => 'About This Site',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',
     'feed'            => 'Status Feed',
