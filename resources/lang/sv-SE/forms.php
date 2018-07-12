@@ -41,7 +41,7 @@ return [
         'invalid-token' => 'Ogiltig nyckel',
         'cookies'       => 'Du måste aktivera cookies för att kunna logga in.',
         'rate-limit'    => 'Rate limit exceeded.',
-        'remember_me'   => 'Kom ihåg mig',
+        'remember_me'   => 'Remember me',
     ],
 
     // Incidents form fields
@@ -96,12 +96,12 @@ return [
         'groups' => [
             'name'                     => 'Namn',
             'collapsing'               => 'Expand/Collapse options',
-            'visible'                  => 'Alltid expanderad',
+            'visible'                  => 'Always expanded',
             'collapsed'                => 'Collapse the group by default',
             'collapsed_incident'       => 'Collapse the group, but expand if there are issues',
-            'visibility'               => 'Synlighet',
-            'visibility_public'        => 'Publikt synlig',
-            'visibility_authenticated' => 'Synlig endast för inloggade användare',
+            'visibility'               => 'Visibility',
+            'visibility_public'        => 'Visible to public',
+            'visibility_authenticated' => 'Visible only to logged in users',
         ],
     ],
 
@@ -110,13 +110,13 @@ return [
         'name'               => 'Namn',
         'description'        => 'Beskrivning',
         'start_at'           => 'Schedule start time',
-        'timezone'           => 'Tidszon',
+        'timezone'           => 'Timezone',
         'schedule_frequency' => 'Schedule frequency (in seconds)',
         'completion_latency' => 'Completion latency (in seconds)',
         'group'              => 'Grupp',
-        'active'             => 'Aktiv?',
+        'active'             => 'Active?',
         'groups'             => [
-            'name' => 'Gruppnamn',
+            'name' => 'Group Name',
         ],
     ],
 
@@ -134,10 +134,10 @@ return [
         'places'                   => 'Decimalplatser',
         'default_view'             => 'Standardvy',
         'threshold'                => 'How many minutes of threshold between metric points?',
-        'visibility'               => 'Synlighet',
-        'visibility_authenticated' => 'Synlig för autentiserade användare',
-        'visibility_public'        => 'Synlig för alla',
-        'visibility_hidden'        => 'Alltid dold',
+        'visibility'               => 'Visibility',
+        'visibility_authenticated' => 'Visible to authenticated users',
+        'visibility_public'        => 'Visible to everybody',
+        'visibility_hidden'        => 'Always hidden',
 
         'points' => [
             'value' => 'Värde',
@@ -155,7 +155,7 @@ return [
             'days-of-incidents'                     => 'Hur många dagar av händelser ska visas?',
             'time_before_refresh'                   => 'Status page refresh rate (in seconds)',
             'major_outage_rate'                     => 'Major outage threshold (in %)',
-            'banner'                                => 'Bannerbild',
+            'banner'                                => 'Banner Image',
             'banner-help'                           => "It's recommended that you upload files no bigger than 930px wide",
             'subscribers'                           => 'Tillåt att registrera sig för notifikationer via e-post?',
             'suppress_notifications_in_maintenance' => 'Suppress notifications when incident occurs during maintenance period?',
@@ -184,15 +184,15 @@ return [
             'always-authenticate-help'  => 'Require login to view any Cachet page',
         ],
         'stylesheet' => [
-            'custom-css' => 'Anpassad stilmall',
+            'custom-css' => 'Custom Stylesheet',
         ],
         'theme' => [
-            'background-color'        => 'Bakgrundsfärg',
+            'background-color'        => 'Background color',
             'background-fills'        => 'Bakgrundsfärg (komponenter, händelser, sidfot)',
             'banner-background-color' => 'Bakgrundsfärg för banner',
             'banner-padding'          => 'Bannerutfyllnad',
             'fullwidth-banner'        => 'Enable full width banner?',
-            'text-color'              => 'Textfärg',
+            'text-color'              => 'Text color',
             'dashboard-login'         => 'Visa länk till översiktspanelen i sidfoten?',
             'reds'                    => 'Röd (används för fel)',
             'blues'                   => 'Blå (används för information)',
@@ -221,12 +221,12 @@ return [
         ],
         'team' => [
             'description' => 'Bjud in dina teammedlemmar genom att fylla i deras epostadresser här.',
-            'email'       => 'Epostadress #:id',
+            'email'       => 'Your Team Members Email Address',
         ],
     ],
 
     'general' => [
-        'timezone' => 'Välj tidszon',
+        'timezone' => 'Select Timezone',
     ],
 
     // Buttons
