@@ -10,14 +10,14 @@
  */
 
 return [
-    'setup'             => 'セットアップ',
-    'title'             => 'Cachetのインストール',
-    'service_details'   => 'サービスの詳細情報',
-    'env_setup'         => '環境設定',
-    'status_page_setup' => 'ステータスページのセットアップ',
-    'show_support'      => 'Cachetのサポートを表示しますか？',
-    'admin_account'     => '管理者アカウント',
-    'complete_setup'    => 'セットアップの完了',
-    'completed'         => 'Cachetの設定が完了しました。',
-    'finish_setup'      => 'ダッシュボード画面に移動',
+    'setup'             => 'Setup',
+    'title'             => 'Install Cachet',
+    'service_details'   => 'Service Details',
+    'env_setup'         => 'Environment Setup',
+    'status_page_setup' => 'Status Page Setup',
+    'show_support'      => 'Show support for Cachet?',
+    'admin_account'     => 'Administrator Account',
+    'complete_setup'    => 'Complete Setup',
+    'completed'         => 'Cachet has been configured successfully!',
+    'finish_setup'      => 'Go to dashboard',
 ];
