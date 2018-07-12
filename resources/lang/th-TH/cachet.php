@@ -12,42 +12,42 @@
 return [
     // Components
     'components' => [
-        'last_updated' => 'ปรับปรุงล่าสุด :timestamp',
+        'last_updated' => 'Last updated :timestamp',
         'status'       => [
-            0 => 'ไม่ทราบสถานะ',
-            1 => 'สามารถใช้งานได้',
-            2 => 'ปัญหาด้านประสิทธิภาพ',
-            3 => 'มีปัญหาบางส่วน',
-            4 => 'ไม่สามารถทำงานได้',
+            0 => 'Unknown',
+            1 => 'Operational',
+            2 => 'Performance Issues',
+            3 => 'Partial Outage',
+            4 => 'Major Outage',
         ],
         'group' => [
-            'other' => 'ส่วนประกอบอื่นๆ',
+            'other' => 'Other Components',
         ],
     ],
 
     // Incidents
     'incidents' => [
-        'none'         => 'ไม่มีเหตุการณ์',
-        'past'         => 'เหตุการณ์ที่ผ่านมา',
-        'stickied'     => 'เหตุการณ์ที่ถูกปักหมุด',
+        'none'         => 'No incidents reported',
+        'past'         => 'Past Incidents',
+        'stickied'     => 'Stickied Incidents',
         'scheduled'    => 'Maintenance',
-        'scheduled_at' => ', กำหนดการ :timestamp',
-        'posted'       => 'ผ่านไปแล้ว :timestamp',
+        'scheduled_at' => ', scheduled :timestamp',
+        'posted'       => 'Posted :timestamp',
         'posted_at'    => 'Posted at :timestamp',
         'status'       => [
-            1 => 'กำลังตรวจสอบ',
-            2 => 'พบปัญหาแล้ว',
-            3 => 'เฝ้าระวัง',
-            4 => 'แก้ไขแล้ว',
+            1 => 'Investigating',
+            2 => 'Identified',
+            3 => 'Watching',
+            4 => 'Fixed',
         ],
     ],
 
     // Schedule
     'schedules' => [
         'status' => [
-            0 => 'เร็วๆ นี้',
-            1 => 'อยู่ระหว่างดำเนินการ',
-            2 => 'เสร็จสมบูรณ์',
+            0 => 'Upcoming',
+            1 => 'In Progress',
+            2 => 'Complete',
         ],
     ],
 
@@ -59,63 +59,63 @@ return [
     ],
 
     'api' => [
-        'regenerate' => 'สร้าง API Key ใหม่',
-        'revoke'     => 'เพิกถอน API Key',
+        'regenerate' => 'Regenerate API Key',
+        'revoke'     => 'Revoke API Key',
     ],
 
     // Metrics
     'metrics' => [
         'filter' => [
-            'last_hour' => 'ชั่วโมงที่แล้ว',
-            'hourly'    => '12 ชั่วโมงที่ผ่านมา',
-            'weekly'    => 'สัปดาห์',
-            'monthly'   => 'เดือน',
+            'last_hour' => 'Last Hour',
+            'hourly'    => 'Last 12 Hours',
+            'weekly'    => 'Week',
+            'monthly'   => 'Month',
         ],
     ],
 
     // Subscriber
     'subscriber' => [
-        'subscribe'           => 'สมัครเพื่อติดตามข่าวสาร',
+        'subscribe'           => 'Subscribe to get the updates',
         'unsubscribe'         => 'Unsubscribe',
-        'button'              => 'ติดตาม',
+        'button'              => 'Subscribe',
         'manage_subscription' => 'Manage subscription',
         'manage'              => [
-            'no_subscriptions' => 'คุณติตตามทั้งหมดแล้ว',
-            'my_subscriptions' => 'คุณติดตามข่าวสารเหล่านี้',
+            'no_subscriptions' => 'You\'re currently subscribed to all updates.',
+            'my_subscriptions' => 'You\'re currently subscribed to the following updates.',
             'manage_at_link'   => 'Manage your subscriptions at :link',
         ],
         'email' => [
-            'subscribe'          => 'ติดตามข่าวสารทาง email',
-            'subscribed'         => 'คุณได้สมัครรับการแจ้งเตือนทางอีเมล กรุณาตรวจอีเมลของคุณเพื่อยืนยันการสมัคร',
-            'verified'           => 'ได้ยืนยันการติดตามทางอีเมลของคุณแล้ว ขอบคุณ!',
-            'manage'             => 'จัดการการติดตามของคุณ',
-            'unsubscribe'        => 'ยกเลิกการแจ้งเตือนทางอีเมล',
-            'unsubscribed'       => 'ยกเลิกแจ้งเตือนทางอีเมลของคุณแล้ว',
-            'failure'            => 'เกิดข้อผิดพลาดในการสมัครรับข่าวสาร',
-            'already-subscribed' => 'ไม่สามารถสมัครด้วย :email เนื่องจากถูกใช้ไปแล้ว',
+            'subscribe'          => 'Subscribe to email updates.',
+            'subscribed'         => 'You\'ve been subscribed to email notifications, please check your email to confirm your subscription.',
+            'verified'           => 'Your email subscription has been confirmed. Thank you!',
+            'manage'             => 'Manage your subscription',
+            'unsubscribe'        => 'Unsubscribe from email updates.',
+            'unsubscribed'       => 'Your email subscription has been cancelled.',
+            'failure'            => 'Something went wrong with the subscription.',
+            'already-subscribed' => 'Cannot subscribe :email because they\'re already subscribed.',
         ],
     ],
 
     'signup' => [
-        'title'    => 'สมัครสมาชิก',
-        'username' => 'ชื่อผู้ใช้',
-        'email'    => 'อีเมล',
-        'password' => 'รหัสผ่าน',
-        'success'  => 'บัญชีของคุณได้สร้างเรียบร้อยแล้ว',
-        'failure'  => 'การลงทะเบียนมีบางอย่างผิดปกติ',
+        'title'    => 'Sign Up',
+        'username' => 'Username',
+        'email'    => 'Email',
+        'password' => 'Password',
+        'success'  => 'Your account has been created.',
+        'failure'  => 'Something went wrong with the signup.',
     ],
 
     'system' => [
-        'update' => 'Cachet มีเวอร์ชั่นใหม่แล้วนะ คุณสามารถศึกษาวิธีอัพเดทได้ <a href="https://docs.cachethq.io/docs/updating-cachet">ที่นี้</a>!',
+        'update' => 'There is a newer version of Cachet available. You can learn how to update <a href="https://docs.cachethq.io/docs/updating-cachet">here</a>!',
     ],
 
     // Modal
     'modal' => [
-        'close'     => 'ปิด',
+        'close'     => 'Close',
         'subscribe' => [
-            'title'  => 'ติดตามสถานะของส่วนประกอบ',
-            'body'   => 'กรอกอีเมลเพื่อเพื่อติดตามรับข่าวสารของส่วนประกอบ ถ้าคุณติดตามแล้ว คุณจะได้รับอีเมลจากส่วนประกอบนี้',
-            'button' => 'ติดตาม',
+            'title'  => 'Subscribe to component updates',
+            'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll already receive emails for this component.',
+            'button' => 'Subscribe',
         ],
     ],
 
@@ -125,17 +125,17 @@ return [
             'incident'  => 'Details and updates about the :name incident that occurred on :date',
             'schedule'  => 'Details about the scheduled maintenance period :name starting :startDate',
             'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
-            'overview'  => 'ติดตามความเคลื่อนไหวล่าสุดของ :app',
+            'overview'  => 'Stay up to date with the latest service updates from :app.',
         ],
     ],
 
     // Other
-    'home'            => 'หน้าหลัก',
+    'home'            => 'Home',
     'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
-    'timezone'        => 'โซนเวลา :timezone',
-    'about_this_site' => 'เกี่ยวกับเว็บไซต์นี้',
+    'timezone'        => 'Times are shown in :timezone.',
+    'about_this_site' => 'About This Site',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',
-    'feed'            => 'Feed สถานะ',
+    'feed'            => 'Status Feed',
 
 ];
