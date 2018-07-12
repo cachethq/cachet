@@ -29,11 +29,11 @@ return [
     'incidents' => [
         'none'         => 'Nessun incidente segnalato',
         'past'         => 'Problemi passati',
-        'stickied'     => 'Incidenti Fissati',
-        'scheduled'    => 'Manutenzione programmata',
+        'stickied'     => 'Stickied Incidents',
+        'scheduled'    => 'Maintenance',
         'scheduled_at' => ', programmata il :timestamp',
         'posted'       => 'Pubblicato :timestamp',
-        'posted_at'    => 'Pubblicato alle :timestamp',
+        'posted_at'    => 'Posted at :timestamp',
         'status'       => [
             1 => 'Analisi',
             2 => 'Identificato',
@@ -45,7 +45,7 @@ return [
     // Schedule
     'schedules' => [
         'status' => [
-            0 => 'In arrivo',
+            0 => 'Upcoming',
             1 => 'In corso',
             2 => 'Completato',
         ],
@@ -54,8 +54,8 @@ return [
     // Service Status
     'service' => [
         'good'  => '[0,1]System operational|[2,*]All systems are operational',
-        'bad'   => '[0,1] Il sistema al momento presenta problemi|[2,Inf] Alcuni sistemi presentano problemi',
-        'major' => '[0,1] Il servizio presenta presenta un grave problema|[2,Inf] Alcuni sistemi presentano un grave problema',
+        'bad'   => '[0,1]The system is experiencing issues|[2,*]Some systems are experiencing issues',
+        'major' => '[0,1]The system is experiencing major issues|[2,*]Some systems are experiencing major issues',
     ],
 
     'api' => [
@@ -132,7 +132,7 @@ return [
     // Other
     'home'            => 'Home',
     'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links"> Cachet</a>.',
-    'timezone'        => 'Le date sono mostrate in :timezone.',
+    'timezone'        => 'Times are shown in :timezone.',
     'about_this_site' => 'Informazioni sul sito',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',
