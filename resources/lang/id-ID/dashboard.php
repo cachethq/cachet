@@ -12,7 +12,7 @@
 return [
 
     'dashboard'          => 'Dashboard',
-    'writeable_settings' => 'Direktori pengaturan Cachet tidak dapat ditulisi. Pastikan bahwa <code>./bootstrap/cachet</code> dapat ditulisi oleh server web.',
+    'writeable_settings' => 'The Cachet settings directory is not writeable. Please make sure that <code>./bootstrap/cachet</code> is writeable by the web server.',
 
     // Incidents
     'incidents' => [
@@ -56,7 +56,7 @@ return [
             'title' => 'Template Insiden',
             'add'   => [
                 'title'   => 'Buat template insiden',
-                'message' => 'Anda harus menambahkan template insiden.',
+                'message' => 'Create your first incident template.',
                 'success' => 'Template insiden baru telah dibuat.',
                 'failure' => 'Ada masalah dengan template insiden ini.',
             ],
@@ -227,11 +227,11 @@ return [
             'footer'        => 'Footer HTML Kustom',
         ],
         'mail' => [
-            'mail'  => 'Email',
-            'test'  => 'Uji',
+            'mail'  => 'Mail',
+            'test'  => 'Test',
             'email' => [
-                'subject' => 'Notifikasi uji dari Cachet',
-                'body'    => 'Ini adalah notifikasi uji dari Cachet.',
+                'subject' => 'Test notification from Cachet',
+                'body'    => 'This is a test notification from Cachet.',
             ],
         ],
         'security' => [
