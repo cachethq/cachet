@@ -11,16 +11,16 @@
 
 return [
 
-    'dashboard'          => 'Πίνακας Ελέγχου',
+    'dashboard'          => 'Dashboard',
     'writeable_settings' => 'The Cachet settings directory is not writeable. Please make sure that <code>./bootstrap/cachet</code> is writeable by the web server.',
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Περιστατικά &amp; Πρόγραμμα',
-        'incidents'                => 'Περιστατικά',
+        'title'                    => 'Incidents & Maintenance',
+        'incidents'                => 'Incidents',
         'logged'                   => '{0}There are no incidents, good work.|[1]You have logged one incident.|[2,*]You have reported <strong>:count</strong> incidents.',
-        'incident-create-template' => 'Δημιουργία προτύπου',
-        'incident-templates'       => 'Πρότυπα Περιστατικών',
+        'incident-create-template' => 'Create Template',
+        'incident-templates'       => 'Incident Templates',
         'updates'                  => [
             'title'   => 'Incident updates for :incident',
             'count'   => '{0}Zero Updates|[1]One Update|[2]Two Updates|[3,*]Several Updates',
@@ -37,36 +37,36 @@ return [
         ],
         'reported_by'              => 'Reported by :user',
         'add'                      => [
-            'title'   => 'Αναφορά περιστατικού',
+            'title'   => 'Report an incident',
             'success' => 'Incident added.',
             'failure' => 'There was an error adding the incident, please try again.',
         ],
         'edit' => [
-            'title'   => 'Επεξεργασία περιστατικού',
-            'success' => 'Επεξεργασία περιστατικού επιτυχής.',
+            'title'   => 'Edit an incident',
+            'success' => 'Incident updated.',
             'failure' => 'There was an error editing the incident, please try again.',
         ],
         'delete' => [
-            'success' => 'Αυτό το περιστατικό έχει διαγραφεί και δε θα εμφανιστή στη σελίδα κατάστασης.',
+            'success' => 'The incident has been deleted and will not show on your status page.',
             'failure' => 'The incident could not be deleted, please try again.',
         ],
 
         // Incident templates
         'templates' => [
-            'title' => 'Πρότυπα Περιστατικών',
+            'title' => 'Incident Templates',
             'add'   => [
-                'title'   => 'Δημιουργήστε ένα πρότυπο περιστατικό',
-                'message' => 'Σας προτείνουμε να προσθέσετε ένα πρότυπο περιστατικό.',
+                'title'   => 'Create an incident template',
+                'message' => 'Create your first incident template.',
                 'success' => 'Your new incident template has been created.',
                 'failure' => 'Something went wrong with the incident template.',
             ],
             'edit' => [
-                'title'   => 'Επεξεργασία προτύπου',
+                'title'   => 'Edit Template',
                 'success' => 'The incident template has been updated.',
                 'failure' => 'Something went wrong updating the incident template',
             ],
             'delete' => [
-                'success' => 'Το πρότυπο περιστατικό έχει διαγραφεί.',
+                'success' => 'The incident template has been deleted.',
                 'failure' => 'The incident template could not be deleted, please try again.',
             ],
         ],
@@ -74,22 +74,22 @@ return [
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => 'Προγραμματισμένη Συντήρηση',
+        'schedule'     => 'Maintenance',
         'logged'       => '{0}There has been no Maintenance, good work.|[1]You have logged one schedule.|[2,*]You have reported <strong>:count</strong> schedules.',
-        'scheduled_at' => 'Προγραμματισμένη στις :timestamp',
+        'scheduled_at' => 'Scheduled at :timestamp',
         'add'          => [
-            'title'   => 'Add Scheduled Maintenance',
-            'success' => 'Schedule added.',
-            'failure' => 'Something went wrong adding the schedule, please try again.',
+            'title'   => 'Add Maintenance',
+            'success' => 'Maintenance added.',
+            'failure' => 'Something went wrong adding the Maintenance, please try again.',
         ],
         'edit' => [
-            'title'   => 'Edit Scheduled Maintenance',
-            'success' => 'Schedule has been updated!',
-            'failure' => 'Something went wrong editing the schedule, please try again.',
+            'title'   => 'Edit Maintenance',
+            'success' => 'Maintenance has been updated!',
+            'failure' => 'Something went wrong editing the Maintenance, please try again.',
         ],
         'delete' => [
-            'success' => 'The scheduled maintenance has been deleted and will not show on your status page.',
-            'failure' => 'The scheduled maintenance could not be deleted, please try again.',
+            'success' => 'The Maintenance has been deleted and will not show on your status page.',
+            'failure' => 'The Maintenance could not be deleted, please try again.',
         ],
     ],
 
@@ -179,7 +179,7 @@ return [
 
     // Team
     'team' => [
-        'team'        => 'Ομάδα',
+        'team'        => 'Team',
         'member'      => 'Member',
         'profile'     => 'Profile',
         'description' => 'Team Members will be able to add, modify & edit components and incidents.',
@@ -206,7 +206,7 @@ return [
 
     // Settings
     'settings' => [
-        'settings'  => 'Ρυθμίσεις',
+        'settings'  => 'Settings',
         'app-setup' => [
             'app-setup'   => 'Application Setup',
             'images-only' => 'Only images may be uploaded.',
@@ -242,7 +242,7 @@ return [
             'stylesheet' => 'Stylesheet',
         ],
         'theme' => [
-            'theme' => 'Θέμα',
+            'theme' => 'Theme',
         ],
         'edit' => [
             'success' => 'Settings saved.',
@@ -260,22 +260,22 @@ return [
 
     // Login
     'login' => [
-        'login'      => 'Σύνδεση',
+        'login'      => 'Login',
         'logged_in'  => 'You\'re logged in.',
         'welcome'    => 'Welcome back!',
         'two-factor' => 'Please enter your token.',
     ],
 
     // Sidebar footer
-    'help'        => 'Βοήθεια',
-    'status_page' => 'Σελίδα Κατάστασης',
-    'logout'      => 'Έξοδος',
+    'help'        => 'Help',
+    'status_page' => 'Status Page',
+    'logout'      => 'Logout',
 
     // Notifications
     'notifications' => [
-        'notifications' => 'Ειδοποιήσεις',
-        'awesome'       => 'Φανταστικό.',
-        'whoops'        => 'Ούπς.',
+        'notifications' => 'Notifications',
+        'awesome'       => 'Awesome.',
+        'whoops'        => 'Whoops.',
     ],
 
     // Widgets
@@ -289,14 +289,14 @@ return [
     // Welcome modal
     'welcome' => [
         'welcome' => 'Welcome to your new status page, :username!',
-        'message' => 'Η σελίδα κατάστασής σας είναι σχεδόν έτοιμη! Ίσως να θέλετε να κάνετε κάποιες παραμετροποιήσεις',
+        'message' => 'You\'re almost ready but you might want to configure these extra settings first...',
         'close'   => 'I\'m good thanks!',
         'steps'   => [
-            'component'  => 'Δημιουργία συστατικών',
-            'incident'   => 'Δημιουργία περιστατικών',
-            'customize'  => 'Προσαρμογή',
-            'team'       => 'Προσθήκη χρηστών',
-            'api'        => 'Δημιουργία κλειδιού API',
+            'component'  => 'Add your components',
+            'incident'   => 'Create an incident',
+            'customize'  => 'Customize your page',
+            'team'       => 'Add your team',
+            'api'        => 'Generate an API token',
             'two-factor' => 'Setup Two Factor Authentication',
         ],
     ],
