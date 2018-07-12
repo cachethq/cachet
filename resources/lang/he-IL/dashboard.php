@@ -11,13 +11,13 @@
 
 return [
 
-    'dashboard'          => 'לוח בקרה',
-    'writeable_settings' => 'תיקיית ההגדרות של Cachet איננה קיימת עם הגדרות כתיבה. נא לבדוק שליוזר השרת יש הרשאות לכתוב בתיקיית <code>./bootstrap/cachet</code>.',
+    'dashboard'          => 'Dashboard',
+    'writeable_settings' => 'The Cachet settings directory is not writeable. Please make sure that <code>./bootstrap/cachet</code> is writeable by the web server.',
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Incidents & Schedule',
-        'incidents'                => 'אירועים',
+        'title'                    => 'Incidents & Maintenance',
+        'incidents'                => 'Incidents',
         'logged'                   => '{0}There are no incidents, good work.|[1]You have logged one incident.|[2,*]You have reported <strong>:count</strong> incidents.',
         'incident-create-template' => 'Create Template',
         'incident-templates'       => 'Incident Templates',
@@ -56,7 +56,7 @@ return [
             'title' => 'Incident Templates',
             'add'   => [
                 'title'   => 'Create an incident template',
-                'message' => 'You should add an incident template.',
+                'message' => 'Create your first incident template.',
                 'success' => 'Your new incident template has been created.',
                 'failure' => 'Something went wrong with the incident template.',
             ],
@@ -74,29 +74,29 @@ return [
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => 'תחזוקה מתוזמנת',
+        'schedule'     => 'Maintenance',
         'logged'       => '{0}There has been no Maintenance, good work.|[1]You have logged one schedule.|[2,*]You have reported <strong>:count</strong> schedules.',
         'scheduled_at' => 'Scheduled at :timestamp',
         'add'          => [
-            'title'   => 'Add Scheduled Maintenance',
-            'success' => 'Schedule added.',
-            'failure' => 'Something went wrong adding the schedule, please try again.',
+            'title'   => 'Add Maintenance',
+            'success' => 'Maintenance added.',
+            'failure' => 'Something went wrong adding the Maintenance, please try again.',
         ],
         'edit' => [
-            'title'   => 'Edit Scheduled Maintenance',
-            'success' => 'Schedule has been updated!',
-            'failure' => 'Something went wrong editing the schedule, please try again.',
+            'title'   => 'Edit Maintenance',
+            'success' => 'Maintenance has been updated!',
+            'failure' => 'Something went wrong editing the Maintenance, please try again.',
         ],
         'delete' => [
-            'success' => 'The scheduled maintenance has been deleted and will not show on your status page.',
-            'failure' => 'The scheduled maintenance could not be deleted, please try again.',
+            'success' => 'The Maintenance has been deleted and will not show on your status page.',
+            'failure' => 'The Maintenance could not be deleted, please try again.',
         ],
     ],
 
     // Components
     'components' => [
-        'components'         => 'רכיבים',
-        'component_statuses' => 'רכיב סטטוסים',
+        'components'         => 'Components',
+        'component_statuses' => 'Component Statuses',
         'listed_group'       => 'Grouped under :name',
         'add'                => [
             'title'   => 'Add a component',
@@ -137,7 +137,7 @@ return [
 
     // Metrics
     'metrics' => [
-        'metrics' => 'מדדים',
+        'metrics' => 'Metrics',
         'add'     => [
             'title'   => 'Create a metric',
             'message' => 'You should add a metric.',
@@ -235,14 +235,14 @@ return [
             ],
         ],
         'security' => [
-            'security'   => 'אבטחה',
+            'security'   => 'Security',
             'two-factor' => 'Users without two-factor authentication',
         ],
         'stylesheet' => [
             'stylesheet' => 'Stylesheet',
         ],
         'theme' => [
-            'theme' => 'ערכת נושא',
+            'theme' => 'Theme',
         ],
         'edit' => [
             'success' => 'Settings saved.',
@@ -260,22 +260,22 @@ return [
 
     // Login
     'login' => [
-        'login'      => 'התחברות למערכת',
-        'logged_in'  => 'אתה מחובר.',
-        'welcome'    => 'ברוך הבא!',
+        'login'      => 'Login',
+        'logged_in'  => 'You\'re logged in.',
+        'welcome'    => 'Welcome back!',
         'two-factor' => 'Please enter your token.',
     ],
 
     // Sidebar footer
-    'help'        => 'עזרה',
+    'help'        => 'Help',
     'status_page' => 'Status Page',
-    'logout'      => 'יציאה',
+    'logout'      => 'Logout',
 
     // Notifications
     'notifications' => [
-        'notifications' => 'התראות',
-        'awesome'       => 'נהדר.',
-        'whoops'        => 'אופס.',
+        'notifications' => 'Notifications',
+        'awesome'       => 'Awesome.',
+        'whoops'        => 'Whoops.',
     ],
 
     // Widgets
@@ -295,7 +295,7 @@ return [
             'component'  => 'Add your components',
             'incident'   => 'Create an incident',
             'customize'  => 'Customize your page',
-            'team'       => 'הוסף משתמשים',
+            'team'       => 'Add your team',
             'api'        => 'Generate an API token',
             'two-factor' => 'Setup Two Factor Authentication',
         ],
