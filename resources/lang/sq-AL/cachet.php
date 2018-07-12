@@ -15,10 +15,10 @@ return [
         'last_updated' => 'Last updated :timestamp',
         'status'       => [
             0 => 'Unknown',
-            1 => 'Funksionim',
-            2 => 'Çështje të performancës',
-            3 => 'Ndërprerje e pjesshëm',
-            4 => 'Ndërprerje Kryesore',
+            1 => 'Operational',
+            2 => 'Performance Issues',
+            3 => 'Partial Outage',
+            4 => 'Major Outage',
         ],
         'group' => [
             'other' => 'Other Components',
@@ -30,15 +30,15 @@ return [
         'none'         => 'No incidents reported',
         'past'         => 'Past Incidents',
         'stickied'     => 'Stickied Incidents',
-        'scheduled'    => 'Mirëmbajtje planifikuar',
-        'scheduled_at' => ', planifiko :timestamp',
+        'scheduled'    => 'Maintenance',
+        'scheduled_at' => ', scheduled :timestamp',
         'posted'       => 'Posted :timestamp',
         'posted_at'    => 'Posted at :timestamp',
         'status'       => [
-            1 => 'Hetimin',
-            2 => 'Identifikohet',
-            3 => 'Shikim',
-            4 => 'Rregulluar',
+            1 => 'Investigating',
+            2 => 'Identified',
+            3 => 'Watching',
+            4 => 'Fixed',
         ],
     ],
 
@@ -54,13 +54,13 @@ return [
     // Service Status
     'service' => [
         'good'  => '[0,1]System operational|[2,*]All systems are operational',
-        'bad'   => '[0,1] The system is experiencing issues|[2,Inf] Some systems are experiencing issues',
-        'major' => '[0,1] The system is experiencing major issues|[2,Inf] Some systems are experiencing major issues',
+        'bad'   => '[0,1]The system is experiencing issues|[2,*]Some systems are experiencing issues',
+        'major' => '[0,1]The system is experiencing major issues|[2,*]Some systems are experiencing major issues',
     ],
 
     'api' => [
-        'regenerate' => 'Rikrijo çelësin e API-t',
-        'revoke'     => 'Refuzo çelësin e API-t',
+        'regenerate' => 'Regenerate API Key',
+        'revoke'     => 'Revoke API Key',
     ],
 
     // Metrics
@@ -98,9 +98,9 @@ return [
 
     'signup' => [
         'title'    => 'Sign Up',
-        'username' => 'Emri i përdoruesit',
+        'username' => 'Username',
         'email'    => 'Email',
-        'password' => 'Fjalëkalimi',
+        'password' => 'Password',
         'success'  => 'Your account has been created.',
         'failure'  => 'Something went wrong with the signup.',
     ],
