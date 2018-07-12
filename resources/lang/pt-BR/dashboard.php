@@ -15,7 +15,7 @@ return [
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Incidentes &amp; Agenda',
+        'title'                    => 'Incidents &amp; Schedule',
         'incidents'                => 'Incidentes',
         'logged'                   => '{0} Não existem incidentes, bom trabalho.|Você registrou um incidente.|Você reportou <strong>:count</strong> incidentes.',
         'incident-create-template' => 'Criar template',
@@ -164,7 +164,7 @@ return [
         'team'        => 'Equipe',
         'member'      => 'Membro',
         'profile'     => 'Perfil	',
-        'description' => 'Membros da equipe serão capazes de adicionar, modificar &amp; editar componentes e incidentes.',
+        'description' => 'Team Members will be able to add, modify &amp; edit components and incidents.',
         'add'         => [
             'title'   => 'Adicionar um novo membro da equipe',
             'success' => 'Membro da equipe adicionado.',
@@ -233,7 +233,7 @@ return [
     'login' => [
         'login'      => 'Login',
         'logged_in'  => 'Você está logado.',
-        'welcome'    => 'Bem-vindo de volta!',
+        'welcome'    => 'Welcome Back!',
         'two-factor' => 'Por favor insira o seu token.',
     ],
 
@@ -257,16 +257,16 @@ return [
 
     // Welcome modal
     'welcome' => [
-        'welcome' => 'Bem-vindo à sua nova página de status!',
-        'message' => 'Sua página de status está quase pronta! Tavez vocë queira checar essas configurações extras',
-        'close'   => 'Me leve direto para o meu painel de controle',
+        'welcome' => 'Welcome to your new Status page!',
+        'message' => 'Your status page is almost ready! You might want to configure these extra settings',
+        'close'   => 'Take me straight to my dashboard',
         'steps'   => [
-            'component'  => 'Criar componentes',
-            'incident'   => 'Criar incidentes',
-            'customize'  => 'Personalizar',
-            'team'       => 'Adicionar usuários',
-            'api'        => 'Gerar token de API',
-            'two-factor' => 'Autenticação em duas etapas',
+            'component'  => 'Create components',
+            'incident'   => 'Create incidents',
+            'customize'  => 'Customize',
+            'team'       => 'Add users',
+            'api'        => 'Generate API token',
+            'two-factor' => 'Two Factor Authentication',
         ],
     ],
 

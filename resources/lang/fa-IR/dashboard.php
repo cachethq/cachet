@@ -11,14 +11,14 @@
 
 return [
 
-    'dashboard' => 'داشبورد',
+    'dashboard' => 'Dashboard',
 
     // Incidents
     'incidents' => [
         'title'                    => 'Incidents &amp; Schedule',
         'incidents'                => 'Incidents',
         'logged'                   => '{0} There are no incidents, good work.|You have logged one incident.|You have reported <strong>:count</strong> incidents.',
-        'incident-create-template' => 'ایجاد قالب',
+        'incident-create-template' => 'Create Template',
         'incident-templates'       => 'Incident Templates',
         'add'                      => [
             'title'   => 'Report an incident',
@@ -45,8 +45,8 @@ return [
                 'failure' => 'Something went wrong with the incident template.',
             ],
             'edit' => [
-                'title'   => 'ویرایش قالب',
-                'success' => 'قالب رویداد به‌روزرسانی شده است.',
+                'title'   => 'Edit Template',
+                'success' => 'The incident template has been updated.',
                 'failure' => 'Something went wrong updating the incident template',
             ],
             'delete' => [
@@ -58,18 +58,18 @@ return [
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => 'تعمیرات زمان‌بندی شده',
+        'schedule'     => 'Scheduled Maintenance',
         'logged'       => '{0} There are no schedules, good work.|You have logged one schedule.|You have reported <strong>:count</strong> schedules.',
-        'scheduled_at' => 'زمان‌بندی شده در :timestamp',
+        'scheduled_at' => 'Scheduled at :timestamp',
         'add'          => [
-            'title'   => 'افزودن تعمیرات زمان‌بندی شده',
-            'success' => 'برنامه زمان‌بندی اضافه شد.',
-            'failure' => 'خطایی در هنگام اضافه کردن برنامه زمان‌بندی رخ داده است، لطفا دوباره تلاش نمایید.',
+            'title'   => 'Add Scheduled Maintenance',
+            'success' => 'Schedule added.',
+            'failure' => 'Something went wrong adding the schedule, please try again.',
         ],
         'edit' => [
-            'title'   => 'ویرایش برنامه زمان‌بندی تعمیرات',
-            'success' => 'برنامه زمان‌بندی به‌روزرسانی شد!',
-            'failure' => 'خطایی در هنگام ویرایش برنامه زمان‌بندی رخ داده است، لطفا دوباره تلاش نمایید.',
+            'title'   => 'Edit Scheduled Maintenance',
+            'success' => 'Schedule has been updated!',
+            'failure' => 'Something went wrong editing the schedule, please try again.',
         ],
         'delete' => [
             'success' => 'The scheduled maintenance has been deleted and will not show on your status page.',
@@ -79,38 +79,38 @@ return [
 
     // Components
     'components' => [
-        'components'         => 'کامپوننت ها',
-        'component_statuses' => 'وضعیت‌های کامپوننت',
-        'listed_group'       => 'دسته‌بندی شده تحت :name',
+        'components'         => 'Components',
+        'component_statuses' => 'Component Statuses',
+        'listed_group'       => 'Grouped under :name',
         'add'                => [
-            'title'   => 'افزودن یک کامپوننت',
-            'message' => 'شما باید یک کامپوننت اضافه نمایید.',
-            'success' => 'کامپوننت ایجاد شد.',
-            'failure' => 'خطایی در رابطه با کامپوننت رخ داده است، لطفا دوباره تلاش نمایید.',
+            'title'   => 'Add a component',
+            'message' => 'You should add a component.',
+            'success' => 'Component created.',
+            'failure' => 'Something went wrong with the component group, please try again.',
         ],
         'edit' => [
-            'title'   => 'ویرایش یک کامپوننت',
-            'success' => 'کامپوننت به‌روزرسانی شد.',
-            'failure' => 'خطایی در رابطه با کامپوننت رخ داده است، لطفا دوباره تلاش نمایید.',
+            'title'   => 'Edit a component',
+            'success' => 'Component updated.',
+            'failure' => 'Something went wrong with the component group, please try again.',
         ],
         'delete' => [
-            'success' => 'کامپوننت با موفقیت حذف شد!',
-            'failure' => 'کامپوننت نمی‌تواند حذف شود، لطفا دوباره تلاش نمایید.',
+            'success' => 'The component has been deleted!',
+            'failure' => 'The component could not be deleted, please try again.',
         ],
 
         // Component groups
         'groups' => [
-            'groups'        => 'گروه کامپوننت | گروه‌های کامپوننت',
-            'no_components' => 'شما باید یک گروه کامپوننت اضافه نمایید.',
+            'groups'        => 'Component group|Component groups',
+            'no_components' => 'You should add a component group.',
             'add'           => [
-                'title'   => 'افزودن یک گروه کامپوننت',
-                'success' => 'گروه کامپوننت اضافه شد.',
-                'failure' => 'خطایی در رابطه با گروه کامپوننت رخ داده است، لطفا دوباره تلاش نمایید.',
+                'title'   => 'Add a component group',
+                'success' => 'Component group added.',
+                'failure' => 'Something went wrong with the component group, please try again.',
             ],
             'edit' => [
-                'title'   => 'ویرایش یک گروه کامپوننت',
-                'success' => 'گروه کامپوننت به‌روزرسانی شد.',
-                'failure' => 'خطایی در رابطه با کامپوننت رخ داده است، لطفا دوباره تلاش نمایید.',
+                'title'   => 'Edit a component group',
+                'success' => 'Component group updated.',
+                'failure' => 'Something went wrong with the component group, please try again.',
             ],
             'delete' => [
                 'success' => 'Component group has been deleted!',
@@ -166,62 +166,62 @@ return [
         'profile'     => 'Profile',
         'description' => 'Team Members will be able to add, modify &amp; edit components and incidents.',
         'add'         => [
-            'title'   => 'اضافه کردن یک عضو به تیم',
-            'success' => 'عضو تیم اضافه شد.',
-            'failure' => 'عضو تیم اضافه نشد، لطفا دوباره تلاش نمایید.',
+            'title'   => 'Add a new team member',
+            'success' => 'Team member added.',
+            'failure' => 'The team member could not be added, please try again.',
         ],
         'edit' => [
-            'title'   => 'به‌روزرسانی پروفایل',
-            'success' => 'پروفایل به‌روزرسانی شد.',
-            'failure' => 'خطایی در هنگام به‌روزرسانی پروفایل رخ داده است، لطفا دوباره تلاش نمایید.',
+            'title'   => 'Update profile',
+            'success' => 'Profile updated.',
+            'failure' => 'Something went wrong updating the profile, please try again.',
         ],
         'delete' => [
-            'success' => 'عضو تیم حذف شده است و دیگر دسترسی به داشبورد را ندارد!',
-            'failure' => 'عضو تیم اضافه نشد، لطفا دوباره تلاش نمایید.',
+            'success' => 'Team member has been deleted and will no longer have access to the dashboard!',
+            'failure' => 'The team member could not be added, please try again.',
         ],
         'invite' => [
-            'title'   => 'دعوت یک عضو جدید تیم',
-            'success' => 'دعوت‌نامه ارسال شد',
-            'failure' => 'دعوت‌نامه ارسال نشد، لطفا دوباره تلاش نمایید.',
+            'title'   => 'Invite a new team member',
+            'success' => 'An invite has been sent',
+            'failure' => 'The invite could not be sent, please try again.',
         ],
     ],
 
     // Settings
     'settings' => [
-        'settings'  => 'تنظیمات',
+        'settings'  => 'Settings',
         'app-setup' => [
-            'app-setup'   => 'راه‌اندازی نرم‌افزار',
-            'images-only' => 'تنها تصاویر قابلیت آپلود دارند.',
-            'too-big'     => 'فایلی که شما آپلود کرده‌اید بسیار بزرگ است. تصویری کوچکتر از :size آپلود نمایید',
+            'app-setup'   => 'Application Setup',
+            'images-only' => 'Only images may be uploaded.',
+            'too-big'     => 'The file you uploaded is too big. Upload an image smaller than :size',
         ],
         'analytics' => [
-            'analytics' => 'تجزیه و تحلیل',
+            'analytics' => 'Analytics',
         ],
         'localization' => [
-            'localization' => 'بومی سازی',
+            'localization' => 'Localization',
         ],
         'customization' => [
-            'customization' => 'شخصی سازی',
-            'header'        => 'هدر (سر صفحه) سفارشی HTML',
-            'footer'        => 'فوتر (پاورقی) سفارشی HTML',
+            'customization' => 'Customization',
+            'header'        => 'Custom Header HTML',
+            'footer'        => 'Custom Footer HTML',
         ],
         'security' => [
-            'security'   => 'امنیت',
-            'two-factor' => 'کاربران بدون ورود دو مرحله‌ای',
+            'security'   => 'Security',
+            'two-factor' => 'Users without two-factor authentication',
         ],
         'stylesheet' => [
-            'stylesheet' => 'برگه استایل',
+            'stylesheet' => 'Stylesheet',
         ],
         'theme' => [
-            'theme' => 'پوسته',
+            'theme' => 'Theme',
         ],
         'edit' => [
-            'success' => 'تنظیمات ذخیره گردید.',
-            'failure' => 'تنظیمات ذخیره نشده‌اند.',
+            'success' => 'Settings saved.',
+            'failure' => 'Settings could not be saved.',
         ],
         'credits' => [
-            'credits'       => 'اعتبار',
-            'contributors'  => 'مشارکت کننده‌ها',
+            'credits'       => 'Credits',
+            'contributors'  => 'Contributors',
             'license'       => 'Cachet is a BSD-3-licensed open source project, released by <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
             'backers-title' => 'Backers & Sponsors',
             'backers'       => 'If you\'d like to support future development, check out the CrowdIn and GitHub.',
@@ -231,28 +231,28 @@ return [
 
     // Login
     'login' => [
-        'login'      => 'ورود به سیستم',
+        'login'      => 'Login',
         'logged_in'  => 'You\'re logged in.',
         'welcome'    => 'Welcome Back!',
-        'two-factor' => 'لطفا توکن خود را وارد نمایید.',
+        'two-factor' => 'Please enter your token.',
     ],
 
     // Sidebar footer
-    'help'        => 'راهنما',
-    'status_page' => 'صفحه وضعیت',
-    'logout'      => 'خروج',
+    'help'        => 'Help',
+    'status_page' => 'Status Page',
+    'logout'      => 'Logout',
 
     // Notifications
     'notifications' => [
-        'notifications' => 'اعلان‌ها',
-        'awesome'       => 'فوق العاده.',
-        'whoops'        => 'اوه.',
+        'notifications' => 'Notifications',
+        'awesome'       => 'Awesome.',
+        'whoops'        => 'Whoops.',
     ],
 
     // Widgets
     'widgets' => [
-        'news'             => 'آخرین اخبار',
-        'news_subtitle'    => 'دریافت آخرین به‌روزرسانی‌ها',
+        'news'             => 'Latest News',
+        'news_subtitle'    => 'Get the latest update',
     ],
 
     // Welcome modal

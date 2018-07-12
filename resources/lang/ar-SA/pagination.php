@@ -23,6 +23,6 @@ return [
     */
 
     'previous' => '&laquo; Previous',
-    'next'     => 'التالي &raquo;',
+    'next'     => 'Next &raquo;',
 
 ];

@@ -102,7 +102,7 @@ return [
 
     'custom' => [
         'attribute-name' => [
-            'rule-name' => 'رسالة مخصصة',
+            'rule-name' => 'custom-message',
         ],
     ],
 

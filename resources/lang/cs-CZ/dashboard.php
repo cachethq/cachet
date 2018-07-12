@@ -11,248 +11,248 @@
 
 return [
 
-    'dashboard' => 'Řídicí panel',
+    'dashboard' => 'Dashboard',
 
     // Incidents
     'incidents' => [
         'title'                    => 'Incidents &amp; Schedule',
-        'incidents'                => 'Incidenty',
-        'logged'                   => '{0} Nejsou hlášeny žádné incidenty, dobrá práce. | Zapsali jste jeden incident. | Nahlásili jste <strong>:count</strong> incident(y).',
-        'incident-create-template' => 'Vytvořit šablonu',
-        'incident-templates'       => 'Šablony incidentů',
+        'incidents'                => 'Incidents',
+        'logged'                   => '{0} There are no incidents, good work.|You have logged one incident.|You have reported <strong>:count</strong> incidents.',
+        'incident-create-template' => 'Create Template',
+        'incident-templates'       => 'Incident Templates',
         'add'                      => [
-            'title'   => 'Nahlásit incident',
-            'success' => 'Incident byl přidán.',
-            'failure' => 'Došlo k chybě při přidávání události, opakujte akci.',
+            'title'   => 'Report an incident',
+            'success' => 'Incident added.',
+            'failure' => 'There was an error adding the incident, please try again.',
         ],
         'edit' => [
-            'title'   => 'Upravit incident',
-            'success' => 'Incident aktualizován.',
-            'failure' => 'Došlo k chybě při editaci události, opakujte akci.',
+            'title'   => 'Edit an incident',
+            'success' => 'Incident updated.',
+            'failure' => 'There was an error editing the incident, please try again.',
         ],
         'delete' => [
-            'success' => 'Událost byla odstraněna a už se nebude zobrazovat na stavové stránce.',
-            'failure' => 'Událost se nepodařilo smazat, opakujte akci.',
+            'success' => 'The incident has been deleted and will not show on your status page.',
+            'failure' => 'The incident could not be deleted, please try again.',
         ],
 
         // Incident templates
         'templates' => [
-            'title' => 'Šablony incidentů',
+            'title' => 'Incident Templates',
             'add'   => [
-                'title'   => 'Vytvořit šablonu incidentu',
-                'message' => 'Měli byste přidat šablonu události.',
-                'success' => 'Byla vytvořena nová šablona události.',
-                'failure' => 'Se šablonou události se něco pokazilo.',
+                'title'   => 'Create an incident template',
+                'message' => 'You should add an incident template.',
+                'success' => 'Your new incident template has been created.',
+                'failure' => 'Something went wrong with the incident template.',
             ],
             'edit' => [
-                'title'   => 'Upravit šablonu',
-                'success' => 'Šablona události byla aktualizována.',
-                'failure' => 'Při aktualizaci šablony incidentu se něco pokazilo',
+                'title'   => 'Edit Template',
+                'success' => 'The incident template has been updated.',
+                'failure' => 'Something went wrong updating the incident template',
             ],
             'delete' => [
-                'success' => 'Šablona události byla smazána.',
-                'failure' => 'Šablonu události se nepodařilo smazat, opakujte akci.',
+                'success' => 'The incident template has been deleted.',
+                'failure' => 'The incident template could not be deleted, please try again.',
             ],
         ],
     ],
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => 'Plánovaná odstávka',
-        'logged'       => '{0} Žádná údržba není v plánu, skvělá práce.|Je v plánu jedna údržba.|Je v plánu <strong>:count</strong> údržb.',
-        'scheduled_at' => 'Naplánováno na :timestamp',
+        'schedule'     => 'Scheduled Maintenance',
+        'logged'       => '{0} There are no schedules, good work.|You have logged one schedule.|You have reported <strong>:count</strong> schedules.',
+        'scheduled_at' => 'Scheduled at :timestamp',
         'add'          => [
-            'title'   => 'Přidat plánovanou údržbu',
-            'success' => 'Údržba byla přidána.',
-            'failure' => 'Něco se pokazilo při přidávání údržby, zkus to znova.',
+            'title'   => 'Add Scheduled Maintenance',
+            'success' => 'Schedule added.',
+            'failure' => 'Something went wrong adding the schedule, please try again.',
         ],
         'edit' => [
-            'title'   => 'Upravit naplánovanou údržbu',
-            'success' => 'Údržba byla aktualizovaná!',
-            'failure' => 'Něco se pokazilo při úpravě údržby, zkus to znova.',
+            'title'   => 'Edit Scheduled Maintenance',
+            'success' => 'Schedule has been updated!',
+            'failure' => 'Something went wrong editing the schedule, please try again.',
         ],
         'delete' => [
-            'success' => 'Plánovaná údržba byla smazána a nebude se zobrazovat na hlavní stránce.',
-            'failure' => 'Plánovaná údržba nemohla být smazána, zkus to znova.',
+            'success' => 'The scheduled maintenance has been deleted and will not show on your status page.',
+            'failure' => 'The scheduled maintenance could not be deleted, please try again.',
         ],
     ],
 
     // Components
     'components' => [
-        'components'         => 'Služby',
-        'component_statuses' => 'Stavy služeb',
-        'listed_group'       => 'Seskupeno podle :name',
+        'components'         => 'Components',
+        'component_statuses' => 'Component Statuses',
+        'listed_group'       => 'Grouped under :name',
         'add'                => [
-            'title'   => 'Přidat službu',
-            'message' => 'Měli byste přidat službu.',
-            'success' => 'Služba vytvořena.',
-            'failure' => 'Něco se pokazilo se skupinou služby, zkus to znova.',
+            'title'   => 'Add a component',
+            'message' => 'You should add a component.',
+            'success' => 'Component created.',
+            'failure' => 'Something went wrong with the component group, please try again.',
         ],
         'edit' => [
-            'title'   => 'Upravit službu',
-            'success' => 'Služba byla aktualizována.',
-            'failure' => 'Něco se pokazilo se skupinou služby, zkus to znova.',
+            'title'   => 'Edit a component',
+            'success' => 'Component updated.',
+            'failure' => 'Something went wrong with the component group, please try again.',
         ],
         'delete' => [
-            'success' => 'Služba byla smazána!',
-            'failure' => 'Služba nemůže být odstraněna, opakujte akci.',
+            'success' => 'The component has been deleted!',
+            'failure' => 'The component could not be deleted, please try again.',
         ],
 
         // Component groups
         'groups' => [
-            'groups'        => 'Skupina služeb|Skupiny služeb',
-            'no_components' => 'Můžete přidat skupinu služeb.',
+            'groups'        => 'Component group|Component groups',
+            'no_components' => 'You should add a component group.',
             'add'           => [
-                'title'   => 'Přidat skupinu služeb',
-                'success' => 'Skupina služeb byla přidána.',
-                'failure' => 'Něco se pokazilo se skupinou služby, zkus to znova.',
+                'title'   => 'Add a component group',
+                'success' => 'Component group added.',
+                'failure' => 'Something went wrong with the component group, please try again.',
             ],
             'edit' => [
-                'title'   => 'Upravit skupinu komponent',
-                'success' => 'Skupina služeb byla aktualizována.',
-                'failure' => 'Něco se pokazilo se skupinou služby, zkus to znova.',
+                'title'   => 'Edit a component group',
+                'success' => 'Component group updated.',
+                'failure' => 'Something went wrong with the component group, please try again.',
             ],
             'delete' => [
-                'success' => 'Skupina služeb byla smazána!',
-                'failure' => 'Skupina komponent nemohla být smazána, zkus to znova.',
+                'success' => 'Component group has been deleted!',
+                'failure' => 'The component group could not be deleted, please try again.',
             ],
         ],
     ],
 
     // Metrics
     'metrics' => [
-        'metrics' => 'Metriky',
+        'metrics' => 'Metrics',
         'add'     => [
-            'title'   => 'Vytvořit metriku',
-            'message' => 'Měli byste přidat metriku.',
-            'success' => 'Metrika vytvořena.',
-            'failure' => 'Něco se pokazilo s metrikou, zkus to znova.',
+            'title'   => 'Create a metric',
+            'message' => 'You should add a metric.',
+            'success' => 'Metric created.',
+            'failure' => 'Something went wrong with the metric, please try again.',
         ],
         'edit' => [
-            'title'   => 'Upravit metriku',
-            'success' => 'Metrika aktualizována.',
-            'failure' => 'Něco se pokazilo s metrikou, zkus to znova.',
+            'title'   => 'Edit a metric',
+            'success' => 'Metric updated.',
+            'failure' => 'Something went wrong with the metric, please try again.',
         ],
         'delete' => [
-            'success' => 'Měření bylo smazáno a už se nebude zobrazovat na stavové stránce.',
-            'failure' => 'Měření nemohlo být odstraněno, opakujte akci.',
+            'success' => 'The metric has been deleted and will no longer display on your status page.',
+            'failure' => 'The metric could not be deleted, please try again.',
         ],
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'      => 'Odběratelé',
-        'description'      => 'Odběratelé obdrží aktualizace e-mailem, pokuď dojde ke vzniku incidentu.',
-        'verified'         => 'Ověřeno',
-        'not_verified'     => 'Neověřeno',
-        'subscriber'       => ': e-mail, přihlášen: datum',
-        'no_subscriptions' => 'Přihlášeno k zasílání všech aktualizací',
+        'subscribers'      => 'Subscribers',
+        'description'      => 'Subscribers will receive email updates when incidents are created or components are updated.',
+        'verified'         => 'Verified',
+        'not_verified'     => 'Not verified',
+        'subscriber'       => ':email, subscribed :date',
+        'no_subscriptions' => 'Subscribed to all updates',
         'add'              => [
-            'title'   => 'Přidat nového odběratele',
-            'success' => 'Odběratel přidán.',
-            'failure' => 'Něco se pokazilo při přidávání odběratele, opakujte akci.',
-            'help'    => 'Zadejte každého odběratele na nový řádek.',
+            'title'   => 'Add a new subscriber',
+            'success' => 'Subscriber has been added!',
+            'failure' => 'Something went wrong adding the subscriber, please try again.',
+            'help'    => 'Enter each subscriber on a new line.',
         ],
         'edit' => [
-            'title'   => 'Aktualizovat odeběratele',
-            'success' => 'Odběratel aktualizován.',
-            'failure' => 'Něco se pokazilo při úpravě odběratele, zkus to znova.',
+            'title'   => 'Update subscriber',
+            'success' => 'Subscriber has been updated!',
+            'failure' => 'Something went wrong editing the subscriber, please try again.',
         ],
     ],
 
     // Team
     'team' => [
-        'team'        => 'Tým',
-        'member'      => 'Člen',
-        'profile'     => 'Profil',
+        'team'        => 'Team',
+        'member'      => 'Member',
+        'profile'     => 'Profile',
         'description' => 'Team Members will be able to add, modify &amp; edit components and incidents.',
         'add'         => [
-            'title'   => 'Přidat nového člena týmu',
-            'success' => 'Nový člen týmu byl přidán.',
-            'failure' => 'Člena týmu se nezdařilo přidat, opakujte akci.',
+            'title'   => 'Add a new team member',
+            'success' => 'Team member added.',
+            'failure' => 'The team member could not be added, please try again.',
         ],
         'edit' => [
-            'title'   => 'Aktualizovat profil',
-            'success' => 'Profil byl aktualizován.',
-            'failure' => 'Něco se pokazilo při aktualizaci profilu, zkus to znova.',
+            'title'   => 'Update profile',
+            'success' => 'Profile updated.',
+            'failure' => 'Something went wrong updating the profile, please try again.',
         ],
         'delete' => [
-            'success' => 'Člen týmu byl smazán a již nebude mít přístup do řídícího panelu!',
-            'failure' => 'Člena týmu se nezdařilo přidat, opakujte akci.',
+            'success' => 'Team member has been deleted and will no longer have access to the dashboard!',
+            'failure' => 'The team member could not be added, please try again.',
         ],
         'invite' => [
-            'title'   => 'Pozvat nového člena týmu',
-            'success' => 'Pozvánka byla odeslána',
-            'failure' => 'Pozvánka nemohla být odeslána, zkus to znova.',
+            'title'   => 'Invite a new team member',
+            'success' => 'An invite has been sent',
+            'failure' => 'The invite could not be sent, please try again.',
         ],
     ],
 
     // Settings
     'settings' => [
-        'settings'  => 'Nastavení',
+        'settings'  => 'Settings',
         'app-setup' => [
-            'app-setup'   => 'Nastavení aplikace',
-            'images-only' => 'Nahrány mohou být pouze obrázky.',
-            'too-big'     => 'Soubor, který nahráváte, je příliš velký. Nahrajte obrázek menší než :velikost',
+            'app-setup'   => 'Application Setup',
+            'images-only' => 'Only images may be uploaded.',
+            'too-big'     => 'The file you uploaded is too big. Upload an image smaller than :size',
         ],
         'analytics' => [
-            'analytics' => 'Analytiky',
+            'analytics' => 'Analytics',
         ],
         'localization' => [
-            'localization' => 'Lokalizace',
+            'localization' => 'Localization',
         ],
         'customization' => [
-            'customization' => 'Vlastní nastavení',
-            'header'        => 'Vlastní hlavička HTML',
-            'footer'        => 'Vlastní zápatí HTML',
+            'customization' => 'Customization',
+            'header'        => 'Custom Header HTML',
+            'footer'        => 'Custom Footer HTML',
         ],
         'security' => [
-            'security'   => 'Zabezpečení',
-            'two-factor' => 'Uživatelé bez dvoufaktorového ověřování',
+            'security'   => 'Security',
+            'two-factor' => 'Users without two-factor authentication',
         ],
         'stylesheet' => [
-            'stylesheet' => 'Šablona stylů',
+            'stylesheet' => 'Stylesheet',
         ],
         'theme' => [
-            'theme' => 'Motiv vzhledu',
+            'theme' => 'Theme',
         ],
         'edit' => [
-            'success' => 'Nastavení uložena.',
-            'failure' => 'Nastavení nelze uložit.',
+            'success' => 'Settings saved.',
+            'failure' => 'Settings could not be saved.',
         ],
         'credits' => [
-            'credits'       => 'Autoři',
-            'contributors'  => 'Přispěvatelé',
-            'license'       => 'Cachet je open-sourcový projekt pod BSD-3-licencí, vydávaný <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
-            'backers-title' => 'Podporovatelé a sponzoři',
+            'credits'       => 'Credits',
+            'contributors'  => 'Contributors',
+            'license'       => 'Cachet is a BSD-3-licensed open source project, released by <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
+            'backers-title' => 'Backers & Sponsors',
             'backers'       => 'If you\'d like to support future development, check out the CrowdIn and GitHub.',
-            'thank-you'     => 'Děkujeme každému z :count přispěvatelů.',
+            'thank-you'     => 'Thank you to each and every one of the :count contributors.',
         ],
     ],
 
     // Login
     'login' => [
-        'login'      => 'Přihlášení',
-        'logged_in'  => 'Jste přihlášeni.',
+        'login'      => 'Login',
+        'logged_in'  => 'You\'re logged in.',
         'welcome'    => 'Welcome Back!',
-        'two-factor' => 'Zadejte prosím váš token.',
+        'two-factor' => 'Please enter your token.',
     ],
 
     // Sidebar footer
-    'help'        => 'Nápověda',
-    'status_page' => 'Stavová stránka',
-    'logout'      => 'Odhlásit',
+    'help'        => 'Help',
+    'status_page' => 'Status Page',
+    'logout'      => 'Logout',
 
     // Notifications
     'notifications' => [
-        'notifications' => 'Ozmámení',
-        'awesome'       => 'Vynikající.',
-        'whoops'        => 'Jejda.',
+        'notifications' => 'Notifications',
+        'awesome'       => 'Awesome.',
+        'whoops'        => 'Whoops.',
     ],
 
     // Widgets
     'widgets' => [
-        'news'             => 'Poslední novinky',
-        'news_subtitle'    => 'Získat nejnovější aktualizace',
+        'news'             => 'Latest News',
+        'news_subtitle'    => 'Get the latest update',
     ],
 
     // Welcome modal

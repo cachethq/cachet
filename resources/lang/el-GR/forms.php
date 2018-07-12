@@ -13,12 +13,12 @@ return [
 
     // Setup form fields
     'setup' => [
-        'email'            => 'E-mail',
+        'email'            => 'Email',
         'username'         => 'Username',
-        'password'         => 'Κωδικός πρόσβασης',
-        'site_name'        => 'Όνομα ιστοσελίδας',
+        'password'         => 'Password',
+        'site_name'        => 'Site Name',
         'site_domain'      => 'Site Domain',
-        'site_timezone'    => 'Επιλέξτε τη ζώνη ώρας σας',
+        'site_timezone'    => 'Select your timezone',
         'site_locale'      => 'Select your language',
         'enable_google2fa' => 'Enable Google Two Factor Authentication',
         'cache_driver'     => 'Cache Driver',
@@ -33,8 +33,8 @@ return [
     // Login form fields
     'login' => [
         'login'         => 'Username or Email',
-        'email'         => 'E-mail',
-        'password'      => 'Κωδικός πρόσβασης',
+        'email'         => 'Email',
+        'password'      => 'Password',
         '2fauth'        => 'Authentication Code',
         'invalid'       => 'Invalid username or password',
         'invalid-token' => 'Invalid token',
@@ -45,9 +45,9 @@ return [
     // Incidents form fields
     'incidents' => [
         'name'               => 'Name',
-        'status'             => 'Κατάσταση',
+        'status'             => 'Status',
         'component'          => 'Component',
-        'message'            => 'Μήνυμα',
+        'message'            => 'Message',
         'message-help'       => 'You may also use Markdown.',
         'scheduled_at'       => 'When to schedule the maintenance for?',
         'incident_time'      => 'When did this incident occur?',
@@ -65,10 +65,10 @@ return [
     // Components form fields
     'components' => [
         'name'        => 'Name',
-        'status'      => 'Κατάσταση',
-        'group'       => 'Ομάδα',
+        'status'      => 'Status',
+        'group'       => 'Group',
         'description' => 'Description',
-        'link'        => 'Σύνδεσμος',
+        'link'        => 'Link',
         'tags'        => 'Tags',
         'tags-help'   => 'Comma separated.',
         'enabled'     => 'Component enabled?',
@@ -92,7 +92,7 @@ return [
         'default-value'    => 'Default value',
         'calc_type'        => 'Calculation of metrics',
         'type_sum'         => 'Sum',
-        'type_avg'         => 'Μέσος όρος',
+        'type_avg'         => 'Average',
         'places'           => 'Decimal places',
         'default_view'     => 'Default view',
         'threshold'        => 'How many minutes of threshold between metric points?',
@@ -106,8 +106,8 @@ return [
     'settings' => [
         /// Application setup
         'app-setup' => [
-            'site-name'              => 'Όνομα ιστοσελίδας',
-            'site-url'               => 'Διεύθυνση URL ιστοσελίδας',
+            'site-name'              => 'Site Name',
+            'site-url'               => 'Site URL',
             'display-graphs'         => 'Display graphs on status page?',
             'about-this-page'        => 'About this page',
             'days-of-incidents'      => 'How many days of incidents to show?',
@@ -155,8 +155,8 @@ return [
 
     'user' => [
         'username'       => 'Username',
-        'email'          => 'E-mail',
-        'password'       => 'Κωδικός πρόσβασης',
+        'email'          => 'Email',
+        'password'       => 'Password',
         'api-token'      => 'API Token',
         'api-token-help' => 'Regenerating your API token will prevent existing applications from accessing Cachet.',
         'gravatar'       => 'Change your profile picture at Gravatar.',
@@ -185,7 +185,7 @@ return [
     'cancel' => 'Cancel',
     'remove' => 'Remove',
     'invite' => 'Invite',
-    'signup' => 'Εγγραφή',
+    'signup' => 'Sign Up',
 
     // Other
     'optional' => '* Optional',

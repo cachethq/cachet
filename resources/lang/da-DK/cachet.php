@@ -28,12 +28,12 @@ return [
     'incidents' => [
         'none'          => 'Ingen hændelser er rapporteret',
         'past'          => 'Tidligere hændelser',
-        'previous_week' => 'Forgående uge',
-        'next_week'     => 'Næste uge',
+        'previous_week' => 'Previous Week',
+        'next_week'     => 'Next Week',
         'scheduled'     => 'Planlagt vedligeholdelse',
         'scheduled_at'  => ', planlagt til :timestamp',
         'status'        => [
-            0 => 'Planlagt', // TODO: Hopefully remove this.
+            0 => 'Scheduled', // TODO: Hopefully remove this.
             1 => 'Undersøger',
             2 => 'Identificeret',
             3 => 'Overvåger',
@@ -44,8 +44,8 @@ return [
     // Service Status
     'service' => [
         'good'  => '[0,1] Systemet virker|[2,Inf] Alle systemer virker',
-        'bad'   => '[0,1] Systemet har pt. problemer|[2,Inf] Visse systemer har pt. problemer',
-        'major' => '[0,1] Systemet har pt. store problemer|[2,Inf] Visse systemer har pt. store problemer',
+        'bad'   => '[0,1] The system is currently experiencing issues|[2,Inf] Some systems are experiencing issues',
+        'major' => '[0,1] The service experiencing a major outage|[2,Inf] Some systems are experiencing a major outage',
     ],
 
     'api' => [
@@ -65,7 +65,7 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe' => 'Abonnér dig for at få de seneste opdateringer',
+        'subscribe' => 'Subscribe to get the most recent updates',
         'button'    => 'Abonner',
         'manage'    => [
             'no_subscriptions' => 'Du abonner i øjeblikket på alle opdateringer.',
@@ -75,22 +75,21 @@ return [
             'subscribe'          => 'Abonner på email opdateringer.',
             'subscribed'         => 'Du er blevet tilmeldt email notifikationer. Vi har sendt dig en bekræftelse på den indtastede email-adresse.',
             'verified'           => 'Din tilmelding er nu blevet bekræftet, tak.',
-            'manage'             => 'Administrer dit abonnement',
+            'manage'             => 'Manage your subscription',
             'unsubscribe'        => 'Afmeld email notifikationer.',
             'unsubscribed'       => 'Du er nu blevet frameldt vores emailnotifikationer.',
             'failure'            => 'Noget gik galt med bekræftelsen.',
             'already-subscribed' => 'Kan ikke abonnere da :email allerede er tilmeldt.',
             'verify'             => [
-                'text'   => "Bekræft venligst dit abonnement via e-mail på :app_name status-opdateringer.
-\n:link",
-                'html'   => '<p>Bekræft venligst din tilmelding til :app_name statusopdateringer via email.</p>',
-                'button' => 'Bekræft abonnement',
+                'text'   => "Please confirm your email subscription to :app_name status updates.\n:link",
+                'html'   => '<p>Please confirm your email subscription to :app_name status updates.</p>',
+                'button' => 'Confirm Subscription',
             ],
             'maintenance' => [
-                'subject' => '[Vedligeholdelse planlagt] :name',
+                'subject' => '[Maintenance Scheduled] :name',
             ],
             'incident' => [
-                'subject' => '[Ny hændelse] :status: :name',
+                'subject' => '[New Incident] :status: :name',
             ],
             'component' => [
                 'subject'       => 'Komponent status opdatering',
@@ -136,7 +135,7 @@ return [
     // Other
     'home'            => 'Hjem',
     'description'     => 'Hold dig opdateret med de seneste opdateringer fra :app.',
-    'powered_by'      => 'Drevet af <a href="https://cachethq.io" class="links"> Cachet</a>.',
+    'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
     'about_this_site' => 'Om denne side',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',

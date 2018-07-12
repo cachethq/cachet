@@ -11,7 +11,7 @@
 
 return [
 
-    'dashboard' => 'Paneli',
+    'dashboard' => 'Dashboard',
 
     // Incidents
     'incidents' => [
@@ -58,7 +58,7 @@ return [
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => 'Mirëmbajtje planifikuar',
+        'schedule'     => 'Scheduled Maintenance',
         'logged'       => '{0} There are no schedules, good work.|You have logged one schedule.|You have reported <strong>:count</strong> schedules.',
         'scheduled_at' => 'Scheduled at :timestamp',
         'add'          => [

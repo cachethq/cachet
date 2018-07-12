@@ -12,74 +12,74 @@
 return [
     // Components
     'components' => [
-        'last_updated' => 'آخرین بروز رسانی :timestamp',
+        'last_updated' => 'Last updated :timestamp',
         'status'       => [
-            1 => 'عملیاتی',
-            2 => 'مسائل مربوط به عملکرد',
-            3 => 'قطعی جزیی',
-            4 => 'قطعی بزرگ',
+            1 => 'Operational',
+            2 => 'Performance Issues',
+            3 => 'Partial Outage',
+            4 => 'Major Outage',
         ],
         'group' => [
-            'other' => 'کامپوننت‌های دیگر',
+            'other' => 'Other Components',
         ],
     ],
 
     // Incidents
     'incidents' => [
-        'none'          => 'هیچ حادثه ای گزارش نشده است',
-        'past'          => 'حوادث گذشته',
+        'none'          => 'No incidents reported',
+        'past'          => 'Past Incidents',
         'previous_week' => 'Previous Week',
         'next_week'     => 'Next Week',
-        'scheduled'     => 'تعمیرات زمان‌بندی شده',
-        'scheduled_at'  => '، برنامه ریزی شده :timestamp',
+        'scheduled'     => 'Scheduled Maintenance',
+        'scheduled_at'  => ', scheduled :timestamp',
         'status'        => [
             0 => 'Scheduled', // TODO: Hopefully remove this.
-            1 => 'در دست بررسی',
-            2 => 'شناسایی شده',
-            3 => 'در دست بررسی تغييرات',
-            4 => 'برطرف شده',
+            1 => 'Investigating',
+            2 => 'Identified',
+            3 => 'Watching',
+            4 => 'Fixed',
         ],
     ],
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] سامانه فعال است | [2,Inf] همه سامانه‌ها فعالند',
+        'good'  => '[0,1] System operational|[2,Inf] All systems are operational',
         'bad'   => '[0,1] The system is currently experiencing issues|[2,Inf] Some systems are experiencing issues',
         'major' => '[0,1] The service experiencing a major outage|[2,Inf] Some systems are experiencing a major outage',
     ],
 
     'api' => [
-        'regenerate' => 'ساخت مجدد کلید API',
-        'revoke'     => 'غیرفعال نمودن کلید API',
+        'regenerate' => 'Regenerate API Key',
+        'revoke'     => 'Revoke API Key',
     ],
 
     // Metrics
     'metrics' => [
         'filter' => [
-            'last_hour' => 'ساعت گذشته',
-            'hourly'    => '12 ساعت گذشته',
-            'weekly'    => 'هفته',
-            'monthly'   => 'ماه',
+            'last_hour' => 'Last Hour',
+            'hourly'    => 'Last 12 Hours',
+            'weekly'    => 'Week',
+            'monthly'   => 'Month',
         ],
     ],
 
     // Subscriber
     'subscriber' => [
         'subscribe' => 'Subscribe to get the most recent updates',
-        'button'    => 'اشتراک اطلاع‌رسانی',
+        'button'    => 'Subscribe',
         'manage'    => [
-            'no_subscriptions' => 'در حال حاضر شما برای همه به‌روزرسانی‌ها مشترک هستید.',
-            'my_subscriptions' => 'در حال حاضر شما برای این به‌روزرسانی‌ها مشترک هستید.',
+            'no_subscriptions' => 'You\'re currently subscribed to all updates.',
+            'my_subscriptions' => 'You\'re currently subscribed to the following updates.',
         ],
         'email' => [
-            'subscribe'          => 'اشتراک در به‌روزرسانی‌های ایمیلی.',
-            'subscribed'         => 'شما در اطلاع‌رسانی‌های ایمیلی مشترک هستید، لطفا ایمیل خود را جهت تایید اشتراک، کنترل نمایید.',
-            'verified'           => 'ایمیل اشتراک شما با موفقیت تایید شد. با تشکر!',
+            'subscribe'          => 'Subscribe to email updates.',
+            'subscribed'         => 'You\'ve been subscribed to email notifications, please check your email to confirm your subscription.',
+            'verified'           => 'Your email subscription has been confirmed. Thank you!',
             'manage'             => 'Manage your subscription',
-            'unsubscribe'        => 'لغو اشتراک ایمیلی برای به‌روزرسانی‌ها.',
-            'unsubscribed'       => 'اشتراک ایمیلی شما لغو گردید.',
-            'failure'            => 'هنگام عضویت اشتراک خطایی رخ داد.',
-            'already-subscribed' => 'امکان مشترک شدن :email وجود ندارد، زیرا در حال حاضر این ایمیل مشترک می‌باشد.',
+            'unsubscribe'        => 'Unsubscribe from email updates.',
+            'unsubscribed'       => 'Your email subscription has been cancelled.',
+            'failure'            => 'Something went wrong with the subscription.',
+            'already-subscribed' => 'Cannot subscribe :email because they\'re already subscribed.',
             'verify'             => [
                 'text'   => "Please confirm your email subscription to :app_name status updates.\n:link",
                 'html'   => '<p>Please confirm your email subscription to :app_name status updates.</p>',
@@ -92,10 +92,9 @@ return [
                 'subject' => '[New Incident] :status: :name',
             ],
             'component' => [
-                'subject'       => 'به‌روزرسانی وضعیت کامپوننت',
-                'text'          => 'کامپوننت :component یک تغییر وضعیت دارد. این کامپوننت هم‌اکنون در حالت :component_human_status قرار دارد.\n
-با تشکر، :app_name',
-                'html'          => '<p> کامپوننت با نام :component_name یک تغییر وضعیت دارد. کامپوننت هم‌اکنون در حالت :component_human_status قرار دارد. </p><p> با تشکر :app_name </p>',
+                'subject'       => 'Component Status Update',
+                'text'          => 'The component :component_name has seen a status change. The component is now at :component_human_status.\nThank you, :app_name',
+                'html'          => '<p>The component :component_name has seen a status change. The component is now at :component_human_status.</p><p>Thank you, :app_name</p>',
                 'tooltip-title' => 'Subscribe to notifications for :component_name.',
             ],
         ],
@@ -111,11 +110,11 @@ return [
     ],
 
     'signup' => [
-        'title'    => 'نام‌نویسی',
-        'username' => 'نام‌کاربری',
-        'email'    => 'ایمیل',
-        'password' => 'رمزعبور',
-        'success'  => 'حساب کاربری شما ایجاد گردید.',
+        'title'    => 'Sign Up',
+        'username' => 'Username',
+        'email'    => 'Email',
+        'password' => 'Password',
+        'success'  => 'Your account has been created.',
         'failure'  => 'Something went wrong with the signup.',
     ],
 
@@ -125,21 +124,21 @@ return [
 
     // Modal
     'modal' => [
-        'close'     => 'بستن',
+        'close'     => 'Close',
         'subscribe' => [
             'title'  => 'Subscribe to component updates',
             'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll already receive emails for this component.',
-            'button' => 'اشتراک اطلاع‌رسانی',
+            'button' => 'Subscribe',
         ],
     ],
 
     // Other
-    'home'            => 'خانه',
+    'home'            => 'Home',
     'description'     => 'Stay up to date with the latest service updates from :app.',
     'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
-    'about_this_site' => 'درباره این سایت',
-    'rss-feed'        => 'خوراک (RSS)',
-    'atom-feed'       => 'خوراک (Atom)',
-    'feed'            => 'فید (خوراک) وضعیت',
+    'about_this_site' => 'About This Site',
+    'rss-feed'        => 'RSS',
+    'atom-feed'       => 'Atom',
+    'feed'            => 'Status Feed',
 
 ];

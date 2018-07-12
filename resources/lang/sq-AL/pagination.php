@@ -22,7 +22,7 @@ return [
     |
     */
 
-    'previous' => '&laquo; Mbrapa',
-    'next'     => 'Para &raquo;',
+    'previous' => '&laquo; Previous',
+    'next'     => 'Next &raquo;',
 
 ];

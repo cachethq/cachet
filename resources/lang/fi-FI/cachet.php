@@ -12,90 +12,90 @@
 return [
     // Components
     'components' => [
-        'last_updated' => 'Viimeksi päivitetty :timestamp',
+        'last_updated' => 'Last updated :timestamp',
         'status'       => [
-            1 => 'Toiminnassa',
-            2 => 'Suorituskykyyn liittyviä ongelmia',
-            3 => 'Osittainen katkos',
-            4 => 'Merkittävä katkos',
+            1 => 'Operational',
+            2 => 'Performance Issues',
+            3 => 'Partial Outage',
+            4 => 'Major Outage',
         ],
         'group' => [
-            'other' => 'Muut komponentit',
+            'other' => 'Other Components',
         ],
     ],
 
     // Incidents
     'incidents' => [
-        'none'          => 'Ei raportoitavia tapauksia',
-        'past'          => 'Aikaisemmat tapahtumat',
+        'none'          => 'No incidents reported',
+        'past'          => 'Past Incidents',
         'previous_week' => 'Previous Week',
         'next_week'     => 'Next Week',
-        'scheduled'     => 'Ajastettu tapahtuma',
-        'scheduled_at'  => ', ajoitettu :timestamp',
+        'scheduled'     => 'Scheduled Maintenance',
+        'scheduled_at'  => ', scheduled :timestamp',
         'status'        => [
             0 => 'Scheduled', // TODO: Hopefully remove this.
-            1 => 'Tutkitaan',
-            2 => 'Tunnistettu',
-            3 => 'Valvotaan',
-            4 => 'Korjattu',
+            1 => 'Investigating',
+            2 => 'Identified',
+            3 => 'Watching',
+            4 => 'Fixed',
         ],
     ],
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] järjestelmät ovat toiminnassa| [2, Inf] Kaikki järjestelmät ovat toiminnassa',
+        'good'  => '[0,1] System operational|[2,Inf] All systems are operational',
         'bad'   => '[0,1] The system is currently experiencing issues|[2,Inf] Some systems are experiencing issues',
         'major' => '[0,1] The service experiencing a major outage|[2,Inf] Some systems are experiencing a major outage',
     ],
 
     'api' => [
-        'regenerate' => 'Luo API-avain',
-        'revoke'     => 'Peruuta API-avain',
+        'regenerate' => 'Regenerate API Key',
+        'revoke'     => 'Revoke API Key',
     ],
 
     // Metrics
     'metrics' => [
         'filter' => [
-            'last_hour' => 'Viimeisen tunnin',
-            'hourly'    => 'Viimeisen 12 tunnin',
-            'weekly'    => 'Viikko',
-            'monthly'   => 'Kuukausi',
+            'last_hour' => 'Last Hour',
+            'hourly'    => 'Last 12 Hours',
+            'weekly'    => 'Week',
+            'monthly'   => 'Month',
         ],
     ],
 
     // Subscriber
     'subscriber' => [
         'subscribe' => 'Subscribe to get the most recent updates',
-        'button'    => 'Tilaa',
+        'button'    => 'Subscribe',
         'manage'    => [
-            'no_subscriptions' => 'Olet tällä hetkellä tilannut kaikki ilmoitukset.',
-            'my_subscriptions' => 'Olet tällä hetkellä tilannut seuraavat ilmoitukset.',
+            'no_subscriptions' => 'You\'re currently subscribed to all updates.',
+            'my_subscriptions' => 'You\'re currently subscribed to the following updates.',
         ],
         'email' => [
-            'subscribe'          => 'Tilaa sähköpostiin päivitykset.',
-            'subscribed'         => 'Olet tilannut sähköposti-ilmoitukset, tarkista sähköpostisi vahvistaaksesi tilauksen.',
-            'verified'           => 'Sähköpostitilauksesi on vahvistettu. Kiitos!',
-            'manage'             => 'Hallinnoi tilaustasi',
-            'unsubscribe'        => 'Lopeta sähköpostitilaus.',
-            'unsubscribed'       => 'Sähköpostitilauksesi on peruutettu.',
-            'failure'            => 'Jokin meni vikaan sähköpostitilauksen käsittelyssä.',
-            'already-subscribed' => 'Ei voida tilata ilmoituksia sähköpostilla :email koska on jo tilattu.',
+            'subscribe'          => 'Subscribe to email updates.',
+            'subscribed'         => 'You\'ve been subscribed to email notifications, please check your email to confirm your subscription.',
+            'verified'           => 'Your email subscription has been confirmed. Thank you!',
+            'manage'             => 'Manage your subscription',
+            'unsubscribe'        => 'Unsubscribe from email updates.',
+            'unsubscribed'       => 'Your email subscription has been cancelled.',
+            'failure'            => 'Something went wrong with the subscription.',
+            'already-subscribed' => 'Cannot subscribe :email because they\'re already subscribed.',
             'verify'             => [
-                'text'   => "Ole hyvä ja varmista sähköpostitilauksesi :app_name tilanneraportteihin.\n:link",
-                'html'   => '<p>Ole hyvä ja varmista sähköpostitilauksesi :app_name tilanneraportteihin.</p>',
-                'button' => 'Vahvista tilaus',
+                'text'   => "Please confirm your email subscription to :app_name status updates.\n:link",
+                'html'   => '<p>Please confirm your email subscription to :app_name status updates.</p>',
+                'button' => 'Confirm Subscription',
             ],
             'maintenance' => [
-                'subject' => '[Määräaikaishuolto] :name',
+                'subject' => '[Maintenance Scheduled] :name',
             ],
             'incident' => [
-                'subject' => '[Uuden tapahtuman] :status:: nimi',
+                'subject' => '[New Incident] :status: :name',
             ],
             'component' => [
-                'subject'       => 'Komponentin tilan päivitys',
-                'text'          => 'Komponentin :component_name status on vaihtunut. Komponentin status on nyt :component_human_status.\nTerveisin, :app:name',
-                'html'          => '<p>Komponentin :component_name status on vaihtunut. Komponentin status on nyt :component_human_status.</p><p>Terveisin, :app:name</p>',
-                'tooltip-title' => 'Tilaa ilmoitukset :component_name.',
+                'subject'       => 'Component Status Update',
+                'text'          => 'The component :component_name has seen a status change. The component is now at :component_human_status.\nThank you, :app_name',
+                'html'          => '<p>The component :component_name has seen a status change. The component is now at :component_human_status.</p><p>Thank you, :app_name</p>',
+                'tooltip-title' => 'Subscribe to notifications for :component_name.',
             ],
         ],
     ],
@@ -103,42 +103,42 @@ return [
     'users' => [
         'email' => [
             'invite' => [
-                'text' => "Sinut on kutsuttu ryhmään :app_name tila sivulle, rekisteröi tästä: \n:link\n. Kiitos, :app_name",
-                'html' => '<p>Sinut on kutsttu ryhmään :app_name statussivulle. Rekisteröidy oheisesta linkistä.</p><p><a href=":link">:link</a></p><p>Terveisin, :app_name</p>',
+                'text' => "You have been invited to the team :app_name status page, to sign up follow the next link.\n:link\nThank you, :app_name",
+                'html' => '<p>You have been invited to the team :app_name status page, to sign up follow the next link.</p><p><a href=":link">:link</a></p><p>Thank you, :app_name</p>',
             ],
         ],
     ],
 
     'signup' => [
-        'title'    => 'Rekisteröidy',
-        'username' => 'Käyttäjätunnus',
-        'email'    => 'Sähköposti',
-        'password' => 'Salasana',
-        'success'  => 'Tilisi on luotu.',
-        'failure'  => 'Jokin meni vikaan sähköpostitilauksen käsittelyssä.',
+        'title'    => 'Sign Up',
+        'username' => 'Username',
+        'email'    => 'Email',
+        'password' => 'Password',
+        'success'  => 'Your account has been created.',
+        'failure'  => 'Something went wrong with the signup.',
     ],
 
     'system' => [
-        'update' => 'Cachetistä on saatavilla uudempi versio. Katso miten päivitetään uudempaan versioon <a href="https://docs.cachethq.io/docs/updating-cachet">täältä</a>!',
+        'update' => 'There is a newer version of Cachet available. You can learn how to update <a href="https://docs.cachethq.io/docs/updating-cachet">here</a>!',
     ],
 
     // Modal
     'modal' => [
-        'close'     => 'Sulje',
+        'close'     => 'Close',
         'subscribe' => [
-            'title'  => 'Tilaa sähköpostiin ilmoituksia komponenttien tilasta',
-            'body'   => 'Kirjoita sähköpostiosoitteesi tilaaksesi päivitykset tästä komponetista. Jos olet jo tilaaja, saat jo sähköposti ilmoituksia tästä komponetista.',
-            'button' => 'Tilaa',
+            'title'  => 'Subscribe to component updates',
+            'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll already receive emails for this component.',
+            'button' => 'Subscribe',
         ],
     ],
 
     // Other
-    'home'            => 'Etusivu',
-    'description'     => 'Pysy ajan tasalla tilaamalla uusimmat päivitykset :app.',
+    'home'            => 'Home',
+    'description'     => 'Stay up to date with the latest service updates from :app.',
     'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links"> Cachet</a>.',
-    'about_this_site' => 'Tietoa sivustosta',
+    'about_this_site' => 'About This Site',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',
-    'feed'            => 'Statussyöte',
+    'feed'            => 'Status Feed',
 
 ];

@@ -11,12 +11,12 @@
 
 return [
 
-    'dashboard' => 'לוח בקרה',
+    'dashboard' => 'Dashboard',
 
     // Incidents
     'incidents' => [
         'title'                    => 'Incidents &amp; Schedule',
-        'incidents'                => 'אירועים',
+        'incidents'                => 'Incidents',
         'logged'                   => '{0} There are no incidents, good work.|You have logged one incident.|You have reported <strong>:count</strong> incidents.',
         'incident-create-template' => 'Create Template',
         'incident-templates'       => 'Incident Templates',
@@ -58,7 +58,7 @@ return [
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => 'תחזוקה מתוזמנת',
+        'schedule'     => 'Scheduled Maintenance',
         'logged'       => '{0} There are no schedules, good work.|You have logged one schedule.|You have reported <strong>:count</strong> schedules.',
         'scheduled_at' => 'Scheduled at :timestamp',
         'add'          => [
@@ -79,8 +79,8 @@ return [
 
     // Components
     'components' => [
-        'components'         => 'רכיבים',
-        'component_statuses' => 'רכיב סטטוסים',
+        'components'         => 'Components',
+        'component_statuses' => 'Component Statuses',
         'listed_group'       => 'Grouped under :name',
         'add'                => [
             'title'   => 'Add a component',
@@ -121,7 +121,7 @@ return [
 
     // Metrics
     'metrics' => [
-        'metrics' => 'מדדים',
+        'metrics' => 'Metrics',
         'add'     => [
             'title'   => 'Create a metric',
             'message' => 'You should add a metric.',
@@ -206,14 +206,14 @@ return [
             'footer'        => 'Custom Footer HTML',
         ],
         'security' => [
-            'security'   => 'אבטחה',
+            'security'   => 'Security',
             'two-factor' => 'Users without two-factor authentication',
         ],
         'stylesheet' => [
             'stylesheet' => 'Stylesheet',
         ],
         'theme' => [
-            'theme' => 'ערכת נושא',
+            'theme' => 'Theme',
         ],
         'edit' => [
             'success' => 'Settings saved.',
@@ -231,22 +231,22 @@ return [
 
     // Login
     'login' => [
-        'login'      => 'התחברות למערכת',
-        'logged_in'  => 'אתה מחובר.',
+        'login'      => 'Login',
+        'logged_in'  => 'You\'re logged in.',
         'welcome'    => 'Welcome Back!',
         'two-factor' => 'Please enter your token.',
     ],
 
     // Sidebar footer
-    'help'        => 'עזרה',
+    'help'        => 'Help',
     'status_page' => 'Status Page',
-    'logout'      => 'יציאה',
+    'logout'      => 'Logout',
 
     // Notifications
     'notifications' => [
-        'notifications' => 'התראות',
-        'awesome'       => 'נהדר.',
-        'whoops'        => 'אופס.',
+        'notifications' => 'Notifications',
+        'awesome'       => 'Awesome.',
+        'whoops'        => 'Whoops.',
     ],
 
     // Widgets

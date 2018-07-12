@@ -13,13 +13,13 @@ return [
 
     // Setup form fields
     'setup' => [
-        'email'            => 'כתובת דוא"ל',
-        'username'         => 'שם משתמש',
-        'password'         => 'סיסמא',
-        'site_name'        => 'שם האתר',
+        'email'            => 'Email',
+        'username'         => 'Username',
+        'password'         => 'Password',
+        'site_name'        => 'Site Name',
         'site_domain'      => 'Site Domain',
-        'site_timezone'    => 'בחר איזור זמן',
-        'site_locale'      => 'בחר שפה',
+        'site_timezone'    => 'Select your timezone',
+        'site_locale'      => 'Select your language',
         'enable_google2fa' => 'Enable Google Two Factor Authentication',
         'cache_driver'     => 'Cache Driver',
         'session_driver'   => 'Session Driver',
@@ -33,8 +33,8 @@ return [
     // Login form fields
     'login' => [
         'login'         => 'Username or Email',
-        'email'         => 'כתובת דוא"ל',
-        'password'      => 'סיסמא',
+        'email'         => 'Email',
+        'password'      => 'Password',
         '2fauth'        => 'Authentication Code',
         'invalid'       => 'Invalid username or password',
         'invalid-token' => 'Invalid token',
@@ -44,10 +44,10 @@ return [
 
     // Incidents form fields
     'incidents' => [
-        'name'               => 'שם',
-        'status'             => 'סטטוס',
+        'name'               => 'Name',
+        'status'             => 'Status',
         'component'          => 'Component',
-        'message'            => 'הודעה',
+        'message'            => 'Message',
         'message-help'       => 'You may also use Markdown.',
         'scheduled_at'       => 'When to schedule the maintenance for?',
         'incident_time'      => 'When did this incident occur?',
@@ -56,25 +56,25 @@ return [
         'public'             => 'Viewable by public',
         'logged_in_only'     => 'Only visible to logged in users',
         'templates'          => [
-            'name'     => 'שם',
-            'template' => 'תבנית',
+            'name'     => 'Name',
+            'template' => 'Template',
             'twig'     => 'Incident Templates can make use of the <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a> templating language.',
         ],
     ],
 
     // Components form fields
     'components' => [
-        'name'        => 'שם',
-        'status'      => 'סטטוס',
-        'group'       => 'קבוצה',
-        'description' => 'הגדרה',
-        'link'        => 'קישור',
-        'tags'        => 'טאגים',
-        'tags-help'   => 'מופרד באמצעות פסיקים.',
+        'name'        => 'Name',
+        'status'      => 'Status',
+        'group'       => 'Group',
+        'description' => 'Description',
+        'link'        => 'Link',
+        'tags'        => 'Tags',
+        'tags-help'   => 'Comma separated.',
         'enabled'     => 'Component enabled?',
 
         'groups' => [
-            'name'               => 'שם',
+            'name'               => 'Name',
             'collapsing'         => 'Choose visibility of the group',
             'visible'            => 'Always expanded',
             'collapsed'          => 'Collapse the group by default',
@@ -84,9 +84,9 @@ return [
 
     // Metric form fields
     'metrics' => [
-        'name'             => 'שם',
-        'suffix'           => 'סיומת',
-        'description'      => 'הגדרה',
+        'name'             => 'Name',
+        'suffix'           => 'Suffix',
+        'description'      => 'Description',
         'description-help' => 'You may also use Markdown.',
         'display-chart'    => 'Display chart on status page?',
         'default-value'    => 'Default value',
@@ -98,7 +98,7 @@ return [
         'threshold'        => 'How many minutes of threshold between metric points?',
 
         'points' => [
-            'value' => 'ערך',
+            'value' => 'Value',
         ],
     ],
 
@@ -106,11 +106,11 @@ return [
     'settings' => [
         /// Application setup
         'app-setup' => [
-            'site-name'              => 'שם האתר',
-            'site-url'               => 'כתובת url של האתר',
-            'display-graphs'         => 'להציג גרפים בדף של סטטוס?',
+            'site-name'              => 'Site Name',
+            'site-url'               => 'Site URL',
+            'display-graphs'         => 'Display graphs on status page?',
             'about-this-page'        => 'About this page',
-            'days-of-incidents'      => 'כמה ימים של אירועים להראות?',
+            'days-of-incidents'      => 'How many days of incidents to show?',
             'banner'                 => 'Banner Image',
             'banner-help'            => "It's recommended that you upload files no bigger than 930px wide .",
             'subscribers'            => 'Allow people to signup to email notifications?',
@@ -155,8 +155,8 @@ return [
 
     'user' => [
         'username'       => 'Username',
-        'email'          => 'כתובת דוא"ל',
-        'password'       => 'סיסמא',
+        'email'          => 'Email',
+        'password'       => 'Password',
         'api-token'      => 'API Token',
         'api-token-help' => 'Regenerating your API token will prevent existing applications from accessing Cachet.',
         'gravatar'       => 'Change your profile picture at Gravatar.',

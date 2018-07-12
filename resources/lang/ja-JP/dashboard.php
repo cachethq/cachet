@@ -11,23 +11,23 @@
 
 return [
 
-    'dashboard' => 'ダッシュボード',
+    'dashboard' => 'Dashboard',
 
     // Incidents
     'incidents' => [
         'title'                    => 'Incidents &amp; Schedule',
-        'incidents'                => 'インシデント',
-        'logged'                   => '{0} 良いですね。インシデントはありません。|インシデントを1件登録しました。|あなたはインシデントを <strong>:count 件</strong> 報告しています。',
-        'incident-create-template' => 'テンプレートの作成',
-        'incident-templates'       => 'インシデント・テンプレート',
+        'incidents'                => 'Incidents',
+        'logged'                   => '{0} There are no incidents, good work.|You have logged one incident.|You have reported <strong>:count</strong> incidents.',
+        'incident-create-template' => 'Create Template',
+        'incident-templates'       => 'Incident Templates',
         'add'                      => [
-            'title'   => 'インシデントの報告',
-            'success' => 'インシデントが追加されました。',
+            'title'   => 'Report an incident',
+            'success' => 'Incident added.',
             'failure' => 'There was an error adding the incident, please try again.',
         ],
         'edit' => [
-            'title'   => 'インシデントの編集',
-            'success' => 'インシデントが更新されました。',
+            'title'   => 'Edit an incident',
+            'success' => 'Incident updated.',
             'failure' => 'There was an error editing the incident, please try again.',
         ],
         'delete' => [
@@ -37,15 +37,15 @@ return [
 
         // Incident templates
         'templates' => [
-            'title' => 'インシデント・テンプレート',
+            'title' => 'Incident Templates',
             'add'   => [
-                'title'   => 'インシデントテンプレートの作成',
+                'title'   => 'Create an incident template',
                 'message' => 'You should add an incident template.',
                 'success' => 'Your new incident template has been created.',
                 'failure' => 'Something went wrong with the incident template.',
             ],
             'edit' => [
-                'title'   => 'テンプレートの編集',
+                'title'   => 'Edit Template',
                 'success' => 'The incident template has been updated.',
                 'failure' => 'Something went wrong updating the incident template',
             ],
@@ -79,41 +79,41 @@ return [
 
     // Components
     'components' => [
-        'components'         => 'コンポーネント',
-        'component_statuses' => 'コンポーネントのステータス',
-        'listed_group'       => ':name グループに所属',
+        'components'         => 'Components',
+        'component_statuses' => 'Component Statuses',
+        'listed_group'       => 'Grouped under :name',
         'add'                => [
-            'title'   => 'コンポーネントの追加',
-            'message' => 'コンポーネントを追加してください。',
+            'title'   => 'Add a component',
+            'message' => 'You should add a component.',
             'success' => 'Component created.',
             'failure' => 'Something went wrong with the component group, please try again.',
         ],
         'edit' => [
-            'title'   => 'コンポーネントの編集',
+            'title'   => 'Edit a component',
             'success' => 'Component updated.',
             'failure' => 'Something went wrong with the component group, please try again.',
         ],
         'delete' => [
-            'success' => 'コンポーネントが削除されました！',
+            'success' => 'The component has been deleted!',
             'failure' => 'The component could not be deleted, please try again.',
         ],
 
         // Component groups
         'groups' => [
-            'groups'        => 'コンポーネントグループ',
-            'no_components' => 'コンポーネントグループを追加して下さい',
+            'groups'        => 'Component group|Component groups',
+            'no_components' => 'You should add a component group.',
             'add'           => [
-                'title'   => 'コンポーネントグループの追加',
+                'title'   => 'Add a component group',
                 'success' => 'Component group added.',
                 'failure' => 'Something went wrong with the component group, please try again.',
             ],
             'edit' => [
-                'title'   => 'コンポーネントグループの編集',
+                'title'   => 'Edit a component group',
                 'success' => 'Component group updated.',
                 'failure' => 'Something went wrong with the component group, please try again.',
             ],
             'delete' => [
-                'success' => 'コンポーネントグループが削除されました！',
+                'success' => 'Component group has been deleted!',
                 'failure' => 'The component group could not be deleted, please try again.',
             ],
         ],
@@ -121,15 +121,15 @@ return [
 
     // Metrics
     'metrics' => [
-        'metrics' => 'メトリクス',
+        'metrics' => 'Metrics',
         'add'     => [
-            'title'   => 'メトリクスの作成',
-            'message' => 'メトリクスを追加してください。',
+            'title'   => 'Create a metric',
+            'message' => 'You should add a metric.',
             'success' => 'Metric created.',
             'failure' => 'Something went wrong with the metric, please try again.',
         ],
         'edit' => [
-            'title'   => 'メトリクスの編集',
+            'title'   => 'Edit a metric',
             'success' => 'Metric updated.',
             'failure' => 'Something went wrong with the metric, please try again.',
         ],
@@ -140,20 +140,20 @@ return [
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'      => '購読者',
+        'subscribers'      => 'Subscribers',
         'description'      => 'Subscribers will receive email updates when incidents are created or components are updated.',
-        'verified'         => '認証済',
-        'not_verified'     => '未確認',
+        'verified'         => 'Verified',
+        'not_verified'     => 'Not verified',
         'subscriber'       => ':email, subscribed :date',
         'no_subscriptions' => 'Subscribed to all updates',
         'add'              => [
-            'title'   => '購読者の追加',
+            'title'   => 'Add a new subscriber',
             'success' => 'Subscriber has been added!',
             'failure' => 'Something went wrong adding the subscriber, please try again.',
             'help'    => 'Enter each subscriber on a new line.',
         ],
         'edit' => [
-            'title'   => '購読者の更新',
+            'title'   => 'Update subscriber',
             'success' => 'Subscriber has been updated!',
             'failure' => 'Something went wrong editing the subscriber, please try again.',
         ],
@@ -161,17 +161,17 @@ return [
 
     // Team
     'team' => [
-        'team'        => 'チーム',
-        'member'      => 'メンバー',
-        'profile'     => 'プロフィール',
+        'team'        => 'Team',
+        'member'      => 'Member',
+        'profile'     => 'Profile',
         'description' => 'Team Members will be able to add, modify &amp; edit components and incidents.',
         'add'         => [
-            'title'   => '新しいチームメンバーを追加する',
+            'title'   => 'Add a new team member',
             'success' => 'Team member added.',
             'failure' => 'The team member could not be added, please try again.',
         ],
         'edit' => [
-            'title'   => 'プロフィールの更新',
+            'title'   => 'Update profile',
             'success' => 'Profile updated.',
             'failure' => 'Something went wrong updating the profile, please try again.',
         ],
@@ -180,25 +180,25 @@ return [
             'failure' => 'The team member could not be added, please try again.',
         ],
         'invite' => [
-            'title'   => '新しいチームメンバーを招待する',
-            'success' => '招待メールが送信されました',
+            'title'   => 'Invite a new team member',
+            'success' => 'An invite has been sent',
             'failure' => 'The invite could not be sent, please try again.',
         ],
     ],
 
     // Settings
     'settings' => [
-        'settings'  => '設定',
+        'settings'  => 'Settings',
         'app-setup' => [
-            'app-setup'   => 'アプリケーションのセットアップ',
-            'images-only' => '画像のみアップロード可能です。',
-            'too-big'     => 'ファイルサイズが大きすぎます。:size 以下の画像をアップロードしてください。',
+            'app-setup'   => 'Application Setup',
+            'images-only' => 'Only images may be uploaded.',
+            'too-big'     => 'The file you uploaded is too big. Upload an image smaller than :size',
         ],
         'analytics' => [
-            'analytics' => 'アナリティクス',
+            'analytics' => 'Analytics',
         ],
         'localization' => [
-            'localization' => 'ローカライズ',
+            'localization' => 'Localization',
         ],
         'customization' => [
             'customization' => 'Customization',
@@ -206,18 +206,18 @@ return [
             'footer'        => 'Custom Footer HTML',
         ],
         'security' => [
-            'security'   => 'セキュリティ',
-            'two-factor' => '二要素認証が無効になっているユーザー',
+            'security'   => 'Security',
+            'two-factor' => 'Users without two-factor authentication',
         ],
         'stylesheet' => [
-            'stylesheet' => 'スタイルシート',
+            'stylesheet' => 'Stylesheet',
         ],
         'theme' => [
-            'theme' => 'テーマ',
+            'theme' => 'Theme',
         ],
         'edit' => [
-            'success' => '設定が保存されました。',
-            'failure' => '設定が保存できませんでした。',
+            'success' => 'Settings saved.',
+            'failure' => 'Settings could not be saved.',
         ],
         'credits' => [
             'credits'       => 'Credits',
@@ -231,22 +231,22 @@ return [
 
     // Login
     'login' => [
-        'login'      => 'ログイン',
-        'logged_in'  => 'ログインしました。',
+        'login'      => 'Login',
+        'logged_in'  => 'You\'re logged in.',
         'welcome'    => 'Welcome Back!',
-        'two-factor' => 'トークンを入力して下さい。',
+        'two-factor' => 'Please enter your token.',
     ],
 
     // Sidebar footer
-    'help'        => 'ヘルプ',
-    'status_page' => 'ステータスページ',
-    'logout'      => 'ログアウト',
+    'help'        => 'Help',
+    'status_page' => 'Status Page',
+    'logout'      => 'Logout',
 
     // Notifications
     'notifications' => [
-        'notifications' => '通知',
+        'notifications' => 'Notifications',
         'awesome'       => 'Awesome.',
-        'whoops'        => 'おおっと',
+        'whoops'        => 'Whoops.',
     ],
 
     // Widgets

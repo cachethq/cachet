@@ -28,16 +28,16 @@ return [
     'alpha'      => ':attribute kan kun inneholde bokstaver.',
     'alpha_dash' => ':attribute kan kun inneholde bokstaver, tall og bindestreker.',
     'alpha_num'  => ':attribute kan bare inneholde bokstaver og tall.',
-    'array'      => ':attribute må være en matrise.',
+    'array'      => 'The :attribute must be an array.',
     'before'     => ':attribute må være en dato før :date.',
     'between'    => [
         'numeric' => ':attribute må være en dato før :date.',
-        'file'    => ':attribute må være mellom :min og :max.',
-        'string'  => ':attribute må være mellom :min og :max kilobytes.',
-        'array'   => ':attribute må være mellom :min og :max elementer.',
+        'file'    => 'The :attribute must be between :min and :max.',
+        'string'  => ':attribute må være mellom :min og :max kilobyte.',
+        'array'   => 'The :attribute must have between :min and :max items.',
     ],
-    'boolean'        => ':attribute må være mellom :min og :max elementer.',
-    'confirmed'      => ':attribute feltet må være true eller false.',
+    'boolean'        => 'The :attribute must have between :min and :max items.',
+    'confirmed'      => 'The :attribute field must be true or false.',
     'date'           => ':attribute bekreftelsen samsvarer ikke.',
     'date_format'    => ':attribute er ikke en gyldig dato.',
     'different'      => ':attribute passer ikke med formatet :format.',
@@ -45,7 +45,7 @@ return [
     'digits_between' => ':attribute må være :digits sifre.',
     'email'          => ':attribute må være mellom :min og :max sifre.',
     'exists'         => ':attribute må være en gyldig e-postadresse.',
-    'distinct'       => ':attribute har en duplikat verdi.',
+    'distinct'       => 'The :attribute field has a duplicate value.',
     'filled'         => ':attribute formatet er ugyldig.',
     'image'          => ':attribute må være et bilde.',
     'in'             => ':attribute må være et bilde.',
@@ -62,8 +62,8 @@ return [
     'mimes' => ':attribute kan ikke har mer enn :max elementer.',
     'min'   => [
         'numeric' => ':attribute må være en fil av typen: :values.',
-        'file'    => ':attribute må være minst :min kilobyte.',
-        'string'  => ':attribute må være minst :min kilobyte.',
+        'file'    => 'The :attribute must be at least :min kilobytes.',
+        'string'  => 'The :attribute must be at least :min kilobytes.',
         'array'   => ':attribute må ha minst :min tegn.',
     ],
     'not_in'               => ':attribute må ha minst :min elementer.',
@@ -72,7 +72,7 @@ return [
     'regex'                => ':attribute må være et nummer.',
     'required'             => ':attribute formatet er ugyldig.',
     'required_if'          => 'Feltet :attribute er påkrevd.',
-    'required_unless'      => 'Feltet :attribute kreves med mindre :other er :values.',
+    'required_unless'      => 'The :attribute field is required unless :other is in :values.',
     'required_with'        => ':attribute er påkrevd når :other er :value.',
     'required_with_all'    => ':attribute feltet kreves når :values er til stede.',
     'required_without'     => ':attribute feltet kreves når :values er til stede.',
@@ -80,13 +80,13 @@ return [
     'same'                 => ':attribute kreves når ingen av :values er tilstede.',
     'size'                 => [
         'numeric' => ':attribute og :other må være like.',
-        'file'    => ':attribute må være :size kilobyte.',
+        'file'    => 'The :attribute must be :size kilobytes.',
         'string'  => ':attribute må være :size tegn.',
         'array'   => ':attribute må være :size tegn.',
     ],
     'string'   => ':attribute må inneholde :size elementer.',
-    'timezone' => ':attribute må være en gyldig tidssone.',
-    'unique'   => ':attribute er allerede tatt.',
+    'timezone' => 'The :attribute must be a valid zone.',
+    'unique'   => 'The :attribute has already been taken.',
     'url'      => ':attribute formatet er ugyldig.',
 
     /*
@@ -102,7 +102,7 @@ return [
 
     'custom' => [
         'attribute-name' => [
-            'rule-name' => 'tilpasset melding',
+            'rule-name' => 'custom-message',
         ],
     ],
 

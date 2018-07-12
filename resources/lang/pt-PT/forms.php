@@ -39,7 +39,7 @@ return [
         'invalid'       => 'Nome de utilizador ou palavra-passe inválidos',
         'invalid-token' => 'Token inválido',
         'cookies'       => 'Deverá activar cookies para efectuar autenticação.',
-        'rate-limit'    => 'Limite de tentativas excedido.',
+        'rate-limit'    => 'Rate limit exceeded.',
     ],
 
     // Incidents form fields
@@ -49,10 +49,10 @@ return [
         'component'          => 'Componente',
         'message'            => 'Mensagem',
         'message-help'       => 'Você também pode usar o Markdown.',
-        'scheduled_at'       => 'Para quando pretende agendar a manutenção?',
+        'scheduled_at'       => 'When to schedule the maintenance for?',
         'incident_time'      => 'When did this incident occur?',
         'notify_subscribers' => 'Notificar subscritores?',
-        'visibility'         => 'Visibilidade do Incidente',
+        'visibility'         => 'Incident Visibility',
         'public'             => 'Visível ao Publico',
         'logged_in_only'     => 'Apenas visível para users autenticados',
         'templates'          => [
@@ -76,9 +76,9 @@ return [
         'groups' => [
             'name'               => 'Nome',
             'collapsing'         => 'Choose visibility of the group',
-            'visible'            => 'Sempre expandido',
-            'collapsed'          => 'Esconder o grupo por omissão',
-            'collapsed_incident' => 'Esconder o grupo, mas expandir se existir algum problema',
+            'visible'            => 'Always expanded',
+            'collapsed'          => 'Collapse the group by default',
+            'collapsed_incident' => 'Collapse the group, but expand if there are issues',
         ],
     ],
 
@@ -95,7 +95,7 @@ return [
         'type_avg'         => 'Média',
         'places'           => 'Casas Decimais',
         'default_view'     => 'Vista por defeito',
-        'threshold'        => 'Quantos minutos entre cada ponto de métrica?',
+        'threshold'        => 'How many minutes of threshold between metric points?',
 
         'points' => [
             'value' => 'Valor',
@@ -111,10 +111,10 @@ return [
             'display-graphs'         => 'Mostrar gráficos na página de estado?',
             'about-this-page'        => 'Sobre esta página',
             'days-of-incidents'      => 'Quantos dias de incidentes para mostrar?',
-            'banner'                 => 'Imagem de Banner',
-            'banner-help'            => 'É recomendável que você faça upload de arquivos menores que 930px .',
+            'banner'                 => 'Banner Image',
+            'banner-help'            => "É recomendável que você faça upload de arquivos menores que 930px .",
             'subscribers'            => 'Permitir que as pessoas subscrevam as notificações?',
-            'automatic_localization' => 'Mostrar automaticamente a tradução conforme a língua do browser do visitante?',
+            'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
         ],
         'analytics' => [
             'analytics_google'       => 'Código do Google Analytics',
@@ -133,7 +133,7 @@ return [
             'allowed-domains-help' => 'Separados por vírgula. O domínio definido acima é permitido automaticamente por padrão.',
         ],
         'stylesheet' => [
-            'custom-css' => 'Folha de Estilo Personalizada',
+            'custom-css' => 'Custom Stylesheet',
         ],
         'theme' => [
             'background-color'        => 'Background Color',

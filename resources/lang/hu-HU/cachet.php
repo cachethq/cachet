@@ -12,90 +12,90 @@
 return [
     // Components
     'components' => [
-        'last_updated' => 'Utoljára frissítve: :timestamp',
+        'last_updated' => 'Last updated :timestamp',
         'status'       => [
-            1 => 'Működik',
-            2 => 'Teljesítmény problémák',
-            3 => 'Részleges leállás',
-            4 => 'Teljes leállás',
+            1 => 'Operational',
+            2 => 'Performance Issues',
+            3 => 'Partial Outage',
+            4 => 'Major Outage',
         ],
         'group' => [
-            'other' => 'Egyéb komponensek',
+            'other' => 'Other Components',
         ],
     ],
 
     // Incidents
     'incidents' => [
-        'none'          => 'Nincs incidens jelentve',
-        'past'          => 'Múltbeli incidensek',
+        'none'          => 'No incidents reported',
+        'past'          => 'Past Incidents',
         'previous_week' => 'Previous Week',
         'next_week'     => 'Next Week',
-        'scheduled'     => 'Ütemezett karbantartás',
-        'scheduled_at'  => ', ütemezve: :timestamp',
+        'scheduled'     => 'Scheduled Maintenance',
+        'scheduled_at'  => ', scheduled :timestamp',
         'status'        => [
             0 => 'Scheduled', // TODO: Hopefully remove this.
-            1 => 'Kivizsgálás alatt',
-            2 => 'Azonosítva',
-            3 => 'Megfigyelés alatt',
-            4 => 'Javítva',
+            1 => 'Investigating',
+            2 => 'Identified',
+            3 => 'Watching',
+            4 => 'Fixed',
         ],
     ],
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] Rendszer üzemképes|[2,Inf] Az összes rendszer üzemképes',
+        'good'  => '[0,1] System operational|[2,Inf] All systems are operational',
         'bad'   => '[0,1] The system is currently experiencing issues|[2,Inf] Some systems are experiencing issues',
         'major' => '[0,1] The service experiencing a major outage|[2,Inf] Some systems are experiencing a major outage',
     ],
 
     'api' => [
-        'regenerate' => 'API kulcs újragenerálása',
-        'revoke'     => 'API kulcs visszavonása',
+        'regenerate' => 'Regenerate API Key',
+        'revoke'     => 'Revoke API Key',
     ],
 
     // Metrics
     'metrics' => [
         'filter' => [
-            'last_hour' => 'Előző óra',
-            'hourly'    => 'Elmúlt 12 óra',
-            'weekly'    => 'Heti',
-            'monthly'   => 'Havi',
+            'last_hour' => 'Last Hour',
+            'hourly'    => 'Last 12 Hours',
+            'weekly'    => 'Week',
+            'monthly'   => 'Month',
         ],
     ],
 
     // Subscriber
     'subscriber' => [
         'subscribe' => 'Subscribe to get the most recent updates',
-        'button'    => 'Feliratkozás',
+        'button'    => 'Subscribe',
         'manage'    => [
-            'no_subscriptions' => 'Minden frissítésre feliratkozva.',
-            'my_subscriptions' => 'A következő frissítésekre feliratkozva.',
+            'no_subscriptions' => 'You\'re currently subscribed to all updates.',
+            'my_subscriptions' => 'You\'re currently subscribed to the following updates.',
         ],
         'email' => [
-            'subscribe'          => 'Feliratkozás e-mail értesítésekre.',
-            'subscribed'         => 'Ön feliratkozott e-mailen, kérjük ellenőrizze e-mail fiókját a véglegesítéshez.',
-            'verified'           => 'Feliratkozása megerősítve. Köszönjük!',
-            'manage'             => 'Feliratkozás kezelése',
-            'unsubscribe'        => 'Leiratkozás az e-mail értesítésekről.',
-            'unsubscribed'       => 'E-mail feliratkozás törölve.',
-            'failure'            => 'Hiba történt a feliratkozással.',
-            'already-subscribed' => ':email már fel van iratkozva.',
+            'subscribe'          => 'Subscribe to email updates.',
+            'subscribed'         => 'You\'ve been subscribed to email notifications, please check your email to confirm your subscription.',
+            'verified'           => 'Your email subscription has been confirmed. Thank you!',
+            'manage'             => 'Manage your subscription',
+            'unsubscribe'        => 'Unsubscribe from email updates.',
+            'unsubscribed'       => 'Your email subscription has been cancelled.',
+            'failure'            => 'Something went wrong with the subscription.',
+            'already-subscribed' => 'Cannot subscribe :email because they\'re already subscribed.',
             'verify'             => [
-                'text'   => "Kérjük erősítse meg az email feliratkozását ide: :app_name állapot frissítések.\n:link",
-                'html'   => '<p>Kérjük erősítse meg email feliratkozását ide: :app_name állapot frissítések.</p>',
-                'button' => 'Feliratkozás megerősítése',
+                'text'   => "Please confirm your email subscription to :app_name status updates.\n:link",
+                'html'   => '<p>Please confirm your email subscription to :app_name status updates.</p>',
+                'button' => 'Confirm Subscription',
             ],
             'maintenance' => [
-                'subject' => '[Karbantartás ütemezve] :name',
+                'subject' => '[Maintenance Scheduled] :name',
             ],
             'incident' => [
-                'subject' => '[Új incidens] :status: :name',
+                'subject' => '[New Incident] :status: :name',
             ],
             'component' => [
-                'subject'       => 'Komponens Állapot Frissítés',
-                'text'          => ':component_name nevű komponens állapota megváltozott. A komponens most már :component_human_status.\nKöszönjük, :app_name',
-                'html'          => '<p>:component_name nevő komponens állapota megváltozott. A komponens mostmár :component_human_status.</p><p>Köszönjük, :app_name</p>',
-                'tooltip-title' => 'Kérjük iratkozzon fel :component_name értesítéseire.',
+                'subject'       => 'Component Status Update',
+                'text'          => 'The component :component_name has seen a status change. The component is now at :component_human_status.\nThank you, :app_name',
+                'html'          => '<p>The component :component_name has seen a status change. The component is now at :component_human_status.</p><p>Thank you, :app_name</p>',
+                'tooltip-title' => 'Subscribe to notifications for :component_name.',
             ],
         ],
     ],
@@ -103,42 +103,42 @@ return [
     'users' => [
         'email' => [
             'invite' => [
-                'text' => "Ön meg lett hívva a(z) :app_name oldalára, feliratkozáshoz kérjük kattintson a linkre.\n:link\nKöszönjük, :app_name",
-                'html' => '<p>Ön meg lett hívva a(z) :app_name oldalára, feliratkozáshoz kérjük kattintson a linkre.</p><p><a href=":link">:link</a></p><p>Köszönjük, :app_name</p>',
+                'text' => "You have been invited to the team :app_name status page, to sign up follow the next link.\n:link\nThank you, :app_name",
+                'html' => '<p>You have been invited to the team :app_name status page, to sign up follow the next link.</p><p><a href=":link">:link</a></p><p>Thank you, :app_name</p>',
             ],
         ],
     ],
 
     'signup' => [
-        'title'    => 'Regisztráció',
-        'username' => 'Felhasználónév',
-        'email'    => 'E-mail cím',
-        'password' => 'Jelszó',
-        'success'  => 'Fiókja elkészült.',
-        'failure'  => 'Hiba történt regisztráció közben.',
+        'title'    => 'Sign Up',
+        'username' => 'Username',
+        'email'    => 'Email',
+        'password' => 'Password',
+        'success'  => 'Your account has been created.',
+        'failure'  => 'Something went wrong with the signup.',
     ],
 
     'system' => [
-        'update' => 'Elérhető egy újabb Cachet verzió! <a href="https://docs.cachethq.io/docs/updating-cachet">Itt</a> olvashat utána a frissítés menetének.',
+        'update' => 'There is a newer version of Cachet available. You can learn how to update <a href="https://docs.cachethq.io/docs/updating-cachet">here</a>!',
     ],
 
     // Modal
     'modal' => [
-        'close'     => 'Bezárás',
+        'close'     => 'Close',
         'subscribe' => [
-            'title'  => 'Feliratkozás komponens frissítésekre',
-            'body'   => 'Kérjük adja meg az e-mail címét hogy értesítéseket kapjon ezen komponens frissítéseire. Ha már feliratkozott, akkor nincs miért aggódnia.',
-            'button' => 'Feliratkozás',
+            'title'  => 'Subscribe to component updates',
+            'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll already receive emails for this component.',
+            'button' => 'Subscribe',
         ],
     ],
 
     // Other
-    'home'            => 'Kezdőoldal',
-    'description'     => 'Maradjon mindig naprakész :app legújabb frissítéseivel.',
-    'powered_by'      => 'A motorháztető alatt a <a href="https://cachethq.io" class="links">Cachet</a> dolgozik.',
-    'about_this_site' => 'A webhelyről',
+    'home'            => 'Home',
+    'description'     => 'Stay up to date with the latest service updates from :app.',
+    'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
+    'about_this_site' => 'About This Site',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',
-    'feed'            => 'Státusz Feed',
+    'feed'            => 'Status Feed',
 
 ];

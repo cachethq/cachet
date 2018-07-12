@@ -14,7 +14,7 @@ return [
     // Setup form fields
     'setup' => [
         'email'            => 'Email',
-        'username'         => 'Brugernavn',
+        'username'         => 'Username',
         'password'         => 'Adgangskode',
         'site_name'        => 'Sidenavn',
         'site_domain'      => 'Sidens domæne',
@@ -23,23 +23,23 @@ return [
         'enable_google2fa' => 'Aktiver Googles to-trins bekræftelse',
         'cache_driver'     => 'Cache Driver',
         'session_driver'   => 'Session Driver',
-        'mail_driver'      => 'Mail driver',
-        'mail_host'        => 'Mail server',
-        'mail_address'     => 'Mail afsender adresse',
-        'mail_username'    => 'Mail brugernavn',
-        'mail_password'    => 'Mail adgangskode',
+        'mail_driver'      => 'Mail Driver',
+        'mail_host'        => 'Mail Host',
+        'mail_address'     => 'Mail From Address',
+        'mail_username'    => 'Mail Username',
+        'mail_password'    => 'Mail Password',
     ],
 
     // Login form fields
     'login' => [
         'login'         => 'Brugernavn eller email',
         'email'         => 'Email',
-        'password'      => 'Adgangskode',
+        'password'      => 'Password',
         '2fauth'        => 'Bekræftelseskode',
         'invalid'       => 'Ugyldigt brugernavn eller adgangskode',
         'invalid-token' => 'Ugyldig token',
         'cookies'       => 'Du skal tillade cookies for at logge ind.',
-        'rate-limit'    => 'Grænsen er overskredet.',
+        'rate-limit'    => 'Rate limit exceeded.',
     ],
 
     // Incidents form fields
@@ -49,14 +49,14 @@ return [
         'component'          => 'Komponent',
         'message'            => 'Besked',
         'message-help'       => 'Du kan benytte Markdown.',
-        'scheduled_at'       => 'Hvornår skal vedligeholdelsen planlægges til?',
-        'incident_time'      => 'Hvornår skete hændelsen?',
+        'scheduled_at'       => 'When to schedule the maintenance for?',
+        'incident_time'      => 'When did this incident occur?',
         'notify_subscribers' => 'Underret abonnenter',
         'visibility'         => 'Hændelses synlighed',
         'public'             => 'Kan ses af alle',
         'logged_in_only'     => 'Kun synlig for brugere der er logget ind',
         'templates'          => [
-            'name'     => 'Navn',
+            'name'     => 'Name',
             'template' => 'Skabelon',
             'twig'     => 'Hændelse skabeloner kan gøre brug af <a href="http://twig.sensiolabs.org/" target="_blank"> Twigs</a> skabelon sprog.',
         ],
@@ -64,7 +64,7 @@ return [
 
     // Components form fields
     'components' => [
-        'name'        => 'Navn',
+        'name'        => 'Name',
         'status'      => 'Status',
         'group'       => 'Gruppe',
         'description' => 'Beskrivelse',
@@ -74,8 +74,8 @@ return [
         'enabled'     => 'Komponent er aktivt',
 
         'groups' => [
-            'name'               => 'Navn',
-            'collapsing'         => 'Vælg synlighed af gruppen',
+            'name'               => 'Name',
+            'collapsing'         => 'Choose visibility of the group',
             'visible'            => 'Altid åben',
             'collapsed'          => 'Minimer gruppen som standard',
             'collapsed_incident' => 'Minimer gruppen, men hold den åben hvis der er fejl',
@@ -84,10 +84,10 @@ return [
 
     // Metric form fields
     'metrics' => [
-        'name'             => 'Navn',
+        'name'             => 'Name',
         'suffix'           => 'Endelse',
-        'description'      => 'Beskrivelse',
-        'description-help' => 'Du kan også bruge Markdown.',
+        'description'      => 'Description',
+        'description-help' => 'You may also use Markdown.',
         'display-chart'    => 'Vis graf på statussiden?',
         'default-value'    => 'Standard værdi',
         'calc_type'        => 'Beregning af grafer',
@@ -95,7 +95,7 @@ return [
         'type_avg'         => 'Gennemsnit',
         'places'           => 'Antal decimaler',
         'default_view'     => 'Standardvisning',
-        'threshold'        => 'Hvor mange minutter på tærsklen mellem metriske point?',
+        'threshold'        => 'How many minutes of threshold between metric points?',
 
         'points' => [
             'value' => 'Værdi',
@@ -112,9 +112,9 @@ return [
             'about-this-page'        => 'Om',
             'days-of-incidents'      => 'Hvor mange dage skal der vises hændelser for?',
             'banner'                 => 'Banner billede',
-            'banner-help'            => 'Det anbefales ikke at uploade billeder bredere end 930px.',
+            'banner-help'            => "Det anbefales ikke at uploade billeder bredere end 930px.",
             'subscribers'            => 'Tillad folk at tilmelde sig email underretninger?',
-            'automatic_localization' => 'Sæt automatisk sproget på din statusside til den besøgendes sprog?',
+            'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
         ],
         'analytics' => [
             'analytics_google'       => 'Google Analytics kode',
@@ -136,12 +136,12 @@ return [
             'custom-css' => 'Tilpasset CSS',
         ],
         'theme' => [
-            'background-color'        => 'Baggrundsfarve',
+            'background-color'        => 'Background Color',
             'background-fills'        => 'Baggrundsfyld (Komponenter, hændelser og footer)',
             'banner-background-color' => 'Baggrundsfarve bag banneret',
             'banner-padding'          => 'Banner Padding',
             'fullwidth-banner'        => 'Slå fuldbrede bannere til?',
-            'text-color'              => 'Tekstfarve',
+            'text-color'              => 'Text Color',
             'dashboard-login'         => 'Vis oversigtsside ikon i bunden af siden?',
             'reds'                    => 'Rød (Brugt til fejl)',
             'blues'                   => 'Blå (Brugt til information)',
@@ -156,7 +156,7 @@ return [
     'user' => [
         'username'       => 'Brugernavn',
         'email'          => 'Email',
-        'password'       => 'Adgangskode',
+        'password'       => 'Password',
         'api-token'      => 'API nøgle',
         'api-token-help' => 'Hvis du regenerere din API nøgle vil eksisterende applikationer ikke kunne tilgå API\'et.',
         'gravatar'       => 'Ændre dit profilbillede hos Gravatar.',

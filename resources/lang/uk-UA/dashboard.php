@@ -11,59 +11,59 @@
 
 return [
 
-    'dashboard' => 'Панель управління',
+    'dashboard' => 'Dashboard',
 
     // Incidents
     'incidents' => [
         'title'                    => 'Incidents &amp; Schedule',
-        'incidents'                => 'Інциденти',
+        'incidents'                => 'Incidents',
         'logged'                   => '{0} There are no incidents, good work.|You have logged one incident.|You have reported <strong>:count</strong> incidents.',
-        'incident-create-template' => 'Створити шаблон',
-        'incident-templates'       => 'Шаблони Інцидентів',
+        'incident-create-template' => 'Create Template',
+        'incident-templates'       => 'Incident Templates',
         'add'                      => [
-            'title'   => 'Повідомити про інцидент',
-            'success' => 'Інцидент додано.',
-            'failure' => 'Виникла помилка при додаваннi інциденту, будь ласка, спробуйте ще раз.',
+            'title'   => 'Report an incident',
+            'success' => 'Incident added.',
+            'failure' => 'There was an error adding the incident, please try again.',
         ],
         'edit' => [
-            'title'   => 'Редагувати інцидент',
-            'success' => 'Інцидент оновлено.',
-            'failure' => 'Виникла помилка при редагуваннi інциденту, будь ласка, спробуйте ще раз.',
+            'title'   => 'Edit an incident',
+            'success' => 'Incident updated.',
+            'failure' => 'There was an error editing the incident, please try again.',
         ],
         'delete' => [
-            'success' => 'Цей інцидент був знищений і не буде з\'являтися на сторінці Вашого статусу.',
-            'failure' => 'Інцидент не може бути видалений, будь ласка, спробуйте ще раз.',
+            'success' => 'The incident has been deleted and will not show on your status page.',
+            'failure' => 'The incident could not be deleted, please try again.',
         ],
 
         // Incident templates
         'templates' => [
-            'title' => 'Шаблони Інцидентів',
+            'title' => 'Incident Templates',
             'add'   => [
-                'title'   => 'Створити інцидент-шаблон',
-                'message' => 'Ви повинні додати шаблон інциденту.',
-                'success' => 'Ваш новий шаблон інциденту створено.',
-                'failure' => 'Щось пішло не так з процесом оновлення iнцiдент-шаблону.',
+                'title'   => 'Create an incident template',
+                'message' => 'You should add an incident template.',
+                'success' => 'Your new incident template has been created.',
+                'failure' => 'Something went wrong with the incident template.',
             ],
             'edit' => [
-                'title'   => 'Редагувати шаблон',
-                'success' => 'Шаблон iнциденту оновлений.',
-                'failure' => 'Виникла помилка при оновленнi шаблону iнциденту',
+                'title'   => 'Edit Template',
+                'success' => 'The incident template has been updated.',
+                'failure' => 'Something went wrong updating the incident template',
             ],
             'delete' => [
-                'success' => 'Шаблон iнциденту видалено.',
-                'failure' => 'Інцидент-шаблон не може бути видалений, будь ласка, спробуйте ще раз.',
+                'success' => 'The incident template has been deleted.',
+                'failure' => 'The incident template could not be deleted, please try again.',
             ],
         ],
     ],
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => 'Запланована перерва у роботі',
+        'schedule'     => 'Scheduled Maintenance',
         'logged'       => '{0} There are no schedules, good work.|You have logged one schedule.|You have reported <strong>:count</strong> schedules.',
-        'scheduled_at' => 'Заплановано на :timestamp',
+        'scheduled_at' => 'Scheduled at :timestamp',
         'add'          => [
             'title'   => 'Add Scheduled Maintenance',
-            'success' => 'Розклад доданий.',
+            'success' => 'Schedule added.',
             'failure' => 'Something went wrong adding the schedule, please try again.',
         ],
         'edit' => [
@@ -79,17 +79,17 @@ return [
 
     // Components
     'components' => [
-        'components'         => 'Компоненти',
-        'component_statuses' => 'Компонент статуси',
-        'listed_group'       => 'Згруповані під: Назва',
+        'components'         => 'Components',
+        'component_statuses' => 'Component Statuses',
+        'listed_group'       => 'Grouped under :name',
         'add'                => [
-            'title'   => 'Додати компонент',
-            'message' => 'Ви повинні додати компонент.',
-            'success' => 'Компонент створено.',
+            'title'   => 'Add a component',
+            'message' => 'You should add a component.',
+            'success' => 'Component created.',
             'failure' => 'Something went wrong with the component group, please try again.',
         ],
         'edit' => [
-            'title'   => 'Редагувати компонент',
+            'title'   => 'Edit a component',
             'success' => 'Component updated.',
             'failure' => 'Something went wrong with the component group, please try again.',
         ],
@@ -108,13 +108,13 @@ return [
                 'failure' => 'Something went wrong with the component group, please try again.',
             ],
             'edit' => [
-                'title'   => 'Редагування компонент групи',
-                'success' => 'Группа компонентiв була оновлена.',
+                'title'   => 'Edit a component group',
+                'success' => 'Component group updated.',
                 'failure' => 'Something went wrong with the component group, please try again.',
             ],
             'delete' => [
-                'success' => 'Група компонентів була видалена!',
-                'failure' => 'Группа компонентiв не може бути видалена, будь ласка, спробуйте ще раз.',
+                'success' => 'Component group has been deleted!',
+                'failure' => 'The component group could not be deleted, please try again.',
             ],
         ],
     ],
@@ -140,11 +140,11 @@ return [
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'      => 'Підписники',
-        'description'      => 'Пiдписники отримуватимуть оновленя по електронній пошті, завжди коли інциденти або компоненти створюватимуся та оновлюватимуся.',
-        'verified'         => 'Підтверджено',
-        'not_verified'     => 'Не підтверджено',
-        'subscriber'       => ': лист, підписаний: Дата',
+        'subscribers'      => 'Subscribers',
+        'description'      => 'Subscribers will receive email updates when incidents are created or components are updated.',
+        'verified'         => 'Verified',
+        'not_verified'     => 'Not verified',
+        'subscriber'       => ':email, subscribed :date',
         'no_subscriptions' => 'Subscribed to all updates',
         'add'              => [
             'title'   => 'Add a new subscriber',
@@ -188,71 +188,71 @@ return [
 
     // Settings
     'settings' => [
-        'settings'  => 'Параметри',
+        'settings'  => 'Settings',
         'app-setup' => [
-            'app-setup'   => 'Налашування додатку',
-            'images-only' => 'Лише зображення можуть бути завантажені.',
-            'too-big'     => 'Завантажений файл завеликий. Завантажте зображення менше за: розмір',
+            'app-setup'   => 'Application Setup',
+            'images-only' => 'Only images may be uploaded.',
+            'too-big'     => 'The file you uploaded is too big. Upload an image smaller than :size',
         ],
         'analytics' => [
-            'analytics' => 'Аналітика',
+            'analytics' => 'Analytics',
         ],
         'localization' => [
-            'localization' => 'Регіональні налаштування',
+            'localization' => 'Localization',
         ],
         'customization' => [
-            'customization' => 'Налаштування',
-            'header'        => 'Користувальницький заголовок HTML',
+            'customization' => 'Customization',
+            'header'        => 'Custom Header HTML',
             'footer'        => 'Custom Footer HTML',
         ],
         'security' => [
-            'security'   => 'Безпека',
-            'two-factor' => 'Користувачi без двофакторної аутентифікації',
+            'security'   => 'Security',
+            'two-factor' => 'Users without two-factor authentication',
         ],
         'stylesheet' => [
-            'stylesheet' => 'Стилі',
+            'stylesheet' => 'Stylesheet',
         ],
         'theme' => [
-            'theme' => 'Тема',
+            'theme' => 'Theme',
         ],
         'edit' => [
-            'success' => 'Параметри збережено.',
-            'failure' => 'Налаштування не можуть бути збережені.',
+            'success' => 'Settings saved.',
+            'failure' => 'Settings could not be saved.',
         ],
         'credits' => [
             'credits'       => 'Credits',
-            'contributors'  => 'Контриб’ютори',
+            'contributors'  => 'Contributors',
             'license'       => 'Cachet is a BSD-3-licensed open source project, released by <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
-            'backers-title' => 'Помiчники i спонсори',
+            'backers-title' => 'Backers & Sponsors',
             'backers'       => 'If you\'d like to support future development, check out the CrowdIn and GitHub.',
-            'thank-you'     => 'Дякуемо кожному з : розраховувати вкладників.',
+            'thank-you'     => 'Thank you to each and every one of the :count contributors.',
         ],
     ],
 
     // Login
     'login' => [
-        'login'      => 'Вхід',
-        'logged_in'  => 'Ви ввійшли в систему.',
+        'login'      => 'Login',
+        'logged_in'  => 'You\'re logged in.',
         'welcome'    => 'Welcome Back!',
-        'two-factor' => 'Будь ласка, введіть своє ім\'я.',
+        'two-factor' => 'Please enter your token.',
     ],
 
     // Sidebar footer
-    'help'        => 'Допомога',
-    'status_page' => 'Сторінка повідомлень',
-    'logout'      => 'Вийти',
+    'help'        => 'Help',
+    'status_page' => 'Status Page',
+    'logout'      => 'Logout',
 
     // Notifications
     'notifications' => [
-        'notifications' => 'Повідомлення',
-        'awesome'       => 'Чудово.',
-        'whoops'        => 'Йой.',
+        'notifications' => 'Notifications',
+        'awesome'       => 'Awesome.',
+        'whoops'        => 'Whoops.',
     ],
 
     // Widgets
     'widgets' => [
-        'news'             => 'Останні новини',
-        'news_subtitle'    => 'Отримати останні оновлення',
+        'news'             => 'Latest News',
+        'news_subtitle'    => 'Get the latest update',
     ],
 
     // Welcome modal

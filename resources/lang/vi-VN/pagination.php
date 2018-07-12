@@ -23,6 +23,6 @@ return [
     */
 
     'previous' => '&laquo; Trước',
-    'next'     => 'Tiếp theo &raquo;',
+    'next'     => 'Next &raquo;',
 
 ];

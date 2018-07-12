@@ -11,23 +11,23 @@
 
 return [
 
-    'dashboard' => 'Taulell de control',
+    'dashboard' => 'Dashboard',
 
     // Incidents
     'incidents' => [
         'title'                    => 'Incidents &amp; Schedule',
-        'incidents'                => 'Incidències',
+        'incidents'                => 'Incidents',
         'logged'                   => '{0} There are no incidents, good work.|You have logged one incident.|You have reported <strong>:count</strong> incidents.',
-        'incident-create-template' => 'Crear plantilla',
+        'incident-create-template' => 'Create Template',
         'incident-templates'       => 'Incident Templates',
         'add'                      => [
-            'title'   => 'Informar d\'una incidència',
-            'success' => 'Incidència afegida.',
-            'failure' => 'Hi ha hagut un problema afegint l\'incidència, si us plau torni a provar-ho.',
+            'title'   => 'Report an incident',
+            'success' => 'Incident added.',
+            'failure' => 'There was an error adding the incident, please try again.',
         ],
         'edit' => [
-            'title'   => 'Modificar una incidència',
-            'success' => 'Incidència actualitzada.',
+            'title'   => 'Edit an incident',
+            'success' => 'Incident updated.',
             'failure' => 'There was an error editing the incident, please try again.',
         ],
         'delete' => [
@@ -45,7 +45,7 @@ return [
                 'failure' => 'Something went wrong with the incident template.',
             ],
             'edit' => [
-                'title'   => 'Modificar plantilla',
+                'title'   => 'Edit Template',
                 'success' => 'The incident template has been updated.',
                 'failure' => 'Something went wrong updating the incident template',
             ],
@@ -58,12 +58,12 @@ return [
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => 'Interrupció programada',
+        'schedule'     => 'Scheduled Maintenance',
         'logged'       => '{0} There are no schedules, good work.|You have logged one schedule.|You have reported <strong>:count</strong> schedules.',
         'scheduled_at' => 'Scheduled at :timestamp',
         'add'          => [
             'title'   => 'Add Scheduled Maintenance',
-            'success' => 'Manteniment afegit.',
+            'success' => 'Schedule added.',
             'failure' => 'Something went wrong adding the schedule, please try again.',
         ],
         'edit' => [
@@ -80,21 +80,21 @@ return [
     // Components
     'components' => [
         'components'         => 'Components',
-        'component_statuses' => 'Estats dels components',
+        'component_statuses' => 'Component Statuses',
         'listed_group'       => 'Grouped under :name',
         'add'                => [
-            'title'   => 'Afegir component',
+            'title'   => 'Add a component',
             'message' => 'You should add a component.',
-            'success' => 'Component creat.',
+            'success' => 'Component created.',
             'failure' => 'Something went wrong with the component group, please try again.',
         ],
         'edit' => [
-            'title'   => 'Modificar un component',
-            'success' => 'Component actualitzat.',
+            'title'   => 'Edit a component',
+            'success' => 'Component updated.',
             'failure' => 'Something went wrong with the component group, please try again.',
         ],
         'delete' => [
-            'success' => 'S\'ha eliminat el component!',
+            'success' => 'The component has been deleted!',
             'failure' => 'The component could not be deleted, please try again.',
         ],
 
@@ -103,7 +103,7 @@ return [
             'groups'        => 'Component group|Component groups',
             'no_components' => 'You should add a component group.',
             'add'           => [
-                'title'   => 'Afegir un grup de components',
+                'title'   => 'Add a component group',
                 'success' => 'Component group added.',
                 'failure' => 'Something went wrong with the component group, please try again.',
             ],
@@ -147,32 +147,32 @@ return [
         'subscriber'       => ':email, subscribed :date',
         'no_subscriptions' => 'Subscribed to all updates',
         'add'              => [
-            'title'   => 'Afegir un nou subscriptor',
-            'success' => 'Subscriptor afegit!',
+            'title'   => 'Add a new subscriber',
+            'success' => 'Subscriber has been added!',
             'failure' => 'Something went wrong adding the subscriber, please try again.',
-            'help'    => 'Afegeix únicament un subscriptor per a cada línia.',
+            'help'    => 'Enter each subscriber on a new line.',
         ],
         'edit' => [
-            'title'   => 'Modificar subscriptor',
-            'success' => 'El subscriptor ha estat actualitzat!',
+            'title'   => 'Update subscriber',
+            'success' => 'Subscriber has been updated!',
             'failure' => 'Something went wrong editing the subscriber, please try again.',
         ],
     ],
 
     // Team
     'team' => [
-        'team'        => 'Equip',
-        'member'      => 'Membre',
-        'profile'     => 'Perfil',
+        'team'        => 'Team',
+        'member'      => 'Member',
+        'profile'     => 'Profile',
         'description' => 'Team Members will be able to add, modify &amp; edit components and incidents.',
         'add'         => [
-            'title'   => 'Afegit un nou membre a l\'equip',
-            'success' => 'Membre de l\'equip afegit.',
+            'title'   => 'Add a new team member',
+            'success' => 'Team member added.',
             'failure' => 'The team member could not be added, please try again.',
         ],
         'edit' => [
-            'title'   => 'Actualitzar perfil',
-            'success' => 'Perfil actualitzat.',
+            'title'   => 'Update profile',
+            'success' => 'Profile updated.',
             'failure' => 'Something went wrong updating the profile, please try again.',
         ],
         'delete' => [
@@ -180,48 +180,48 @@ return [
             'failure' => 'The team member could not be added, please try again.',
         ],
         'invite' => [
-            'title'   => 'Convidar a un nou membre a l\'equip',
-            'success' => 'S\'ha enviat una invitació',
+            'title'   => 'Invite a new team member',
+            'success' => 'An invite has been sent',
             'failure' => 'The invite could not be sent, please try again.',
         ],
     ],
 
     // Settings
     'settings' => [
-        'settings'  => 'Configuracions',
+        'settings'  => 'Settings',
         'app-setup' => [
             'app-setup'   => 'Application Setup',
             'images-only' => 'Only images may be uploaded.',
             'too-big'     => 'The file you uploaded is too big. Upload an image smaller than :size',
         ],
         'analytics' => [
-            'analytics' => 'Analítiques',
+            'analytics' => 'Analytics',
         ],
         'localization' => [
             'localization' => 'Localization',
         ],
         'customization' => [
-            'customization' => 'Personalització',
+            'customization' => 'Customization',
             'header'        => 'Custom Header HTML',
             'footer'        => 'Custom Footer HTML',
         ],
         'security' => [
-            'security'   => 'Seguretat',
+            'security'   => 'Security',
             'two-factor' => 'Users without two-factor authentication',
         ],
         'stylesheet' => [
-            'stylesheet' => 'Full d\'estils',
+            'stylesheet' => 'Stylesheet',
         ],
         'theme' => [
-            'theme' => 'Tema',
+            'theme' => 'Theme',
         ],
         'edit' => [
-            'success' => 'Configuració desada.',
+            'success' => 'Settings saved.',
             'failure' => 'Settings could not be saved.',
         ],
         'credits' => [
-            'credits'       => 'Crèdits',
-            'contributors'  => 'Contribuïdors',
+            'credits'       => 'Credits',
+            'contributors'  => 'Contributors',
             'license'       => 'Cachet is a BSD-3-licensed open source project, released by <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
             'backers-title' => 'Backers & Sponsors',
             'backers'       => 'If you\'d like to support future development, check out the CrowdIn and GitHub.',
@@ -231,14 +231,14 @@ return [
 
     // Login
     'login' => [
-        'login'      => 'Iniciar Sessió',
+        'login'      => 'Login',
         'logged_in'  => 'You\'re logged in.',
         'welcome'    => 'Welcome Back!',
         'two-factor' => 'Please enter your token.',
     ],
 
     // Sidebar footer
-    'help'        => 'Ajuda',
+    'help'        => 'Help',
     'status_page' => 'Status Page',
     'logout'      => 'Logout',
 

@@ -11,15 +11,15 @@
 
 return [
 
-    'dashboard' => '대시보드',
+    'dashboard' => 'Dashboard',
 
     // Incidents
     'incidents' => [
         'title'                    => 'Incidents &amp; Schedule',
-        'incidents'                => '문제',
-        'logged'                   => '{0} 아무 문제가 없습니다, 잘하고 있어요.|하나의 문제에 대한 로깅이 있습니다.|<strong>:count</strong> 개의 문제가 리포트 되었습니다.',
-        'incident-create-template' => '템플릿 생성',
-        'incident-templates'       => '문제 템플릿',
+        'incidents'                => 'Incidents',
+        'logged'                   => '{0} There are no incidents, good work.|You have logged one incident.|You have reported <strong>:count</strong> incidents.',
+        'incident-create-template' => 'Create Template',
+        'incident-templates'       => 'Incident Templates',
         'add'                      => [
             'title'   => '문제 추가',
             'success' => 'Incident added.',
@@ -28,16 +28,16 @@ return [
         'edit' => [
             'title'   => '문제 수정',
             'success' => '문제가 수정되었습니다.',
-            'failure' => '문제 수정중에 에러가 발생했습니다. 다시 시도해 주세요.',
+            'failure' => 'There was an error editing the incident, please try again.',
         ],
         'delete' => [
-            'success' => '문제가 삭제되었습니다. 그리고 상태 페이지에 표시되지 않습니다.',
+            'success' => 'The incident has been deleted and will not show on your status page.',
             'failure' => 'The incident could not be deleted, please try again.',
         ],
 
         // Incident templates
         'templates' => [
-            'title' => '문제 템플릿',
+            'title' => 'Incident Templates',
             'add'   => [
                 'title'   => '문제 템플릿 생성하기',
                 'message' => 'You should add an incident template.',
@@ -58,17 +58,17 @@ return [
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => '예약 된 유지 관리',
+        'schedule'     => 'Scheduled Maintenance',
         'logged'       => '{0} There are no schedules, good work.|You have logged one schedule.|You have reported <strong>:count</strong> schedules.',
-        'scheduled_at' => ':timestamp 에 예정됨',
+        'scheduled_at' => 'Scheduled at :timestamp',
         'add'          => [
             'title'   => 'Add Scheduled Maintenance',
-            'success' => '일정이 추가되었습니다.',
+            'success' => 'Schedule added.',
             'failure' => 'Something went wrong adding the schedule, please try again.',
         ],
         'edit' => [
             'title'   => 'Edit Scheduled Maintenance',
-            'success' => '일정이 업데이트 되었습니다!',
+            'success' => 'Schedule has been updated!',
             'failure' => 'Something went wrong editing the schedule, please try again.',
         ],
         'delete' => [
@@ -79,18 +79,18 @@ return [
 
     // Components
     'components' => [
-        'components'         => '구성 요소',
-        'component_statuses' => '구성요소 상태',
-        'listed_group'       => ':name 그룹',
+        'components'         => 'Components',
+        'component_statuses' => 'Component Statuses',
+        'listed_group'       => 'Grouped under :name',
         'add'                => [
             'title'   => '구성요소 추가',
             'message' => '구성요소를 추가해야 합니다.',
-            'success' => '구성요소가 생성되었습니다.',
+            'success' => 'Component created.',
             'failure' => 'Something went wrong with the component group, please try again.',
         ],
         'edit' => [
             'title'   => '구성요소 수정',
-            'success' => '구성요소가 수정되었습니다.',
+            'success' => 'Component updated.',
             'failure' => 'Something went wrong with the component group, please try again.',
         ],
         'delete' => [
@@ -100,20 +100,20 @@ return [
 
         // Component groups
         'groups' => [
-            'groups'        => '구성요소 그룹|구성요소 그룹',
-            'no_components' => '구성 요소 그룹을 추가 해야 합니다.',
+            'groups'        => 'Component group|Component groups',
+            'no_components' => 'You should add a component group.',
             'add'           => [
                 'title'   => '구성요소 그룹 추가',
-                'success' => '구성요소 그룹이 추가되었습니다.',
+                'success' => 'Component group added.',
                 'failure' => 'Something went wrong with the component group, please try again.',
             ],
             'edit' => [
                 'title'   => '구성요소 그룹 수정',
-                'success' => '구성요소 그룹이 수정되었습니다.',
+                'success' => 'Component group updated.',
                 'failure' => 'Something went wrong with the component group, please try again.',
             ],
             'delete' => [
-                'success' => '구성 요소 그룹이 삭제 되었습니다!',
+                'success' => 'Component group has been deleted!',
                 'failure' => 'The component group could not be deleted, please try again.',
             ],
         ],
@@ -140,59 +140,59 @@ return [
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'      => '구독자',
+        'subscribers'      => 'Subscribers',
         'description'      => 'Subscribers will receive email updates when incidents are created or components are updated.',
-        'verified'         => '인증됨',
-        'not_verified'     => '인증되지 않음',
+        'verified'         => 'Verified',
+        'not_verified'     => 'Not verified',
         'subscriber'       => ':email, subscribed :date',
         'no_subscriptions' => 'Subscribed to all updates',
         'add'              => [
-            'title'   => '구독자 추가',
-            'success' => '구독자가 추가됨.',
+            'title'   => 'Add a new subscriber',
+            'success' => 'Subscriber has been added!',
             'failure' => 'Something went wrong adding the subscriber, please try again.',
             'help'    => 'Enter each subscriber on a new line.',
         ],
         'edit' => [
-            'title'   => '구독자 업데이트',
-            'success' => '구독자가 업데이트됨.',
+            'title'   => 'Update subscriber',
+            'success' => 'Subscriber has been updated!',
             'failure' => 'Something went wrong editing the subscriber, please try again.',
         ],
     ],
 
     // Team
     'team' => [
-        'team'        => '팀',
-        'member'      => '멤버',
-        'profile'     => '프로필',
+        'team'        => 'Team',
+        'member'      => 'Member',
+        'profile'     => 'Profile',
         'description' => 'Team Members will be able to add, modify &amp; edit components and incidents.',
         'add'         => [
             'title'   => '새 팀 멤버 추가',
-            'success' => '팀 멤버가 추가되었습니다',
+            'success' => 'Team member added.',
             'failure' => 'The team member could not be added, please try again.',
         ],
         'edit' => [
             'title'   => '프로필 수정',
-            'success' => '프로필이 수정되었습니다.',
+            'success' => 'Profile updated.',
             'failure' => 'Something went wrong updating the profile, please try again.',
         ],
         'delete' => [
-            'success' => '사용자 삭제',
+            'success' => 'Team member has been deleted and will no longer have access to the dashboard!',
             'failure' => 'The team member could not be added, please try again.',
         ],
         'invite' => [
-            'title'   => '새 팀 멤버 초대하기',
-            'success' => '사용자가 초대되었습니다.',
+            'title'   => 'Invite a new team member',
+            'success' => 'An invite has been sent',
             'failure' => 'The invite could not be sent, please try again.',
         ],
     ],
 
     // Settings
     'settings' => [
-        'settings'  => '설정',
+        'settings'  => 'Settings',
         'app-setup' => [
             'app-setup'   => '애플리케이션 설정',
-            'images-only' => '이미지만 업로드 할 수 있습니다.',
-            'too-big'     => '업로드 한 파일이 너무 큽니다. :size 보다 작은 이미지를 올려주세요.',
+            'images-only' => 'Only images may be uploaded.',
+            'too-big'     => 'The file you uploaded is too big. Upload an image smaller than :size',
         ],
         'analytics' => [
             'analytics' => 'Analytics',
@@ -201,27 +201,27 @@ return [
             'localization' => 'Localization',
         ],
         'customization' => [
-            'customization' => '사용자 설정',
-            'header'        => '사용자 지정 헤더 HTML',
-            'footer'        => '사용자 지정 바닥글 HTML',
+            'customization' => 'Customization',
+            'header'        => 'Custom Header HTML',
+            'footer'        => 'Custom Footer HTML',
         ],
         'security' => [
-            'security'   => '보안',
-            'two-factor' => '2단계 인증을 사용하지 않는 사용자',
+            'security'   => 'Security',
+            'two-factor' => 'Users without two-factor authentication',
         ],
         'stylesheet' => [
-            'stylesheet' => '스타일시트',
+            'stylesheet' => 'Stylesheet',
         ],
         'theme' => [
-            'theme' => '테마',
+            'theme' => 'Theme',
         ],
         'edit' => [
-            'success' => '설정이 저장되었습니다.',
-            'failure' => '설정을 저장할 수 없습니다.',
+            'success' => 'Settings saved.',
+            'failure' => 'Settings could not be saved.',
         ],
         'credits' => [
-            'credits'       => '제작진',
-            'contributors'  => '도움 주신 분들',
+            'credits'       => 'Credits',
+            'contributors'  => 'Contributors',
             'license'       => 'Cachet is a BSD-3-licensed open source project, released by <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
             'backers-title' => 'Backers & Sponsors',
             'backers'       => 'If you\'d like to support future development, check out the CrowdIn and GitHub.',
@@ -231,27 +231,27 @@ return [
 
     // Login
     'login' => [
-        'login'      => '로그인',
-        'logged_in'  => '로그인 되었습니다.',
+        'login'      => 'Login',
+        'logged_in'  => 'You\'re logged in.',
         'welcome'    => 'Welcome Back!',
-        'two-factor' => '토큰을 입력해주세요.',
+        'two-factor' => 'Please enter your token.',
     ],
 
     // Sidebar footer
-    'help'        => '도움말',
-    'status_page' => '상태 페이지',
-    'logout'      => '로그아웃',
+    'help'        => 'Help',
+    'status_page' => 'Status Page',
+    'logout'      => 'Logout',
 
     // Notifications
     'notifications' => [
-        'notifications' => '알림',
+        'notifications' => 'Notifications',
         'awesome'       => '좋아요.',
         'whoops'        => '이런...',
     ],
 
     // Widgets
     'widgets' => [
-        'news'             => '최신 뉴스',
+        'news'             => 'Latest News',
         'news_subtitle'    => 'Get the latest update',
     ],
 

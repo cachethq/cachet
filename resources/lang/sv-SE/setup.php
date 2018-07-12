@@ -11,7 +11,7 @@
 
 return [
     'setup'             => 'Installation',
-    'title'             => 'Installera Cachet',
+    'title'             => 'Setup Cachet',
     'service_details'   => 'Servicedetaljer',
     'env_setup'         => 'Miljöinställningar',
     'status_page_setup' => 'Inställningar för statussida',
