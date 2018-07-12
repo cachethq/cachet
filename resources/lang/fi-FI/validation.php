@@ -23,9 +23,9 @@ return [
     */
 
     'accepted'   => 'The :attribute must be accepted.',
-    'active_url' => ':attribute ei ole kelvollinen URL-osoite.',
+    'active_url' => 'The :attribute is not a valid URL.',
     'after'      => 'The :attribute must be a date after :date.',
-    'alpha'      => ':attribute voi sisältää vain kirjaimia.',
+    'alpha'      => 'The :attribute may only contain letters.',
     'alpha_dash' => 'The :attribute may only contain letters, numbers, and dashes.',
     'alpha_num'  => 'The :attribute may only contain letters and numbers.',
     'array'      => 'The :attribute must be an array.',
@@ -52,7 +52,7 @@ return [
     'in_array'       => 'The :attribute field does not exist in :other.',
     'integer'        => 'The :attribute must be an integer.',
     'ip'             => 'The :attribute must be a valid IP address.',
-    'json'           => 'Määritteen :attribute arvon on oltava kelvollinen JSON-merkkijono.',
+    'json'           => 'The :attribute must be a valid JSON string.',
     'max'            => [
         'numeric' => 'The :attribute may not be greater than :max.',
         'file'    => 'The :attribute may not be greater than :max kilobytes.',
@@ -69,7 +69,7 @@ return [
     'not_in'               => 'The selected :attribute is invalid.',
     'numeric'              => 'The :attribute must be a number.',
     'present'              => 'The :attribute field must be present.',
-    'regex'                => 'Määritteen :attribute muoto on virheellinen.',
+    'regex'                => 'The :attribute format is invalid.',
     'required'             => 'The :attribute field is required.',
     'required_if'          => 'The :attribute field is required when :other is :value.',
     'required_unless'      => 'The :attribute field is required unless :other is in :values.',
@@ -86,8 +86,8 @@ return [
     ],
     'string'   => 'The :attribute must be a string.',
     'timezone' => 'The :attribute must be a valid zone.',
-    'unique'   => 'Määrite :attribute on jo käytetty.',
-    'url'      => 'Määritteen :attribute muoto on virheellinen.',
+    'unique'   => 'The :attribute has already been taken.',
+    'url'      => 'The :attribute format is invalid.',
 
     /*
     |--------------------------------------------------------------------------
@@ -102,7 +102,7 @@ return [
 
     'custom' => [
         'attribute-name' => [
-            'rule-name' => 'mukautettu viesti',
+            'rule-name' => 'custom-message',
         ],
     ],
 
