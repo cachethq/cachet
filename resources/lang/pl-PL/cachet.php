@@ -14,7 +14,7 @@ return [
     'components' => [
         'last_updated' => 'Ostatnia aktualizacja :timestamp',
         'status'       => [
-            0 => 'Nieznany',
+            0 => 'Unknown',
             1 => 'Funktionsfähig',
             2 => 'Leistungsprobleme',
             3 => 'Teilweiser Ausfall',
@@ -29,11 +29,11 @@ return [
     'incidents' => [
         'none'         => 'Brak zgłoszonych incydentów',
         'past'         => 'Vergangene Vorfälle',
-        'stickied'     => 'Przyklejone zdarzenia',
-        'scheduled'    => 'Konserwacja',
+        'stickied'     => 'Stickied Incidents',
+        'scheduled'    => 'Maintenance',
         'scheduled_at' => ', geplant :timestamp',
-        'posted'       => 'Opublikowano :timestamp',
-        'posted_at'    => 'Opublikowano :timestamp',
+        'posted'       => 'Posted :timestamp',
+        'posted_at'    => 'Posted at :timestamp',
         'status'       => [
             1 => 'Untersuchungen laufen',
             2 => 'Identifiziert',
@@ -45,17 +45,17 @@ return [
     // Schedule
     'schedules' => [
         'status' => [
-            0 => 'Nadchodzące',
-            1 => 'W trakcie',
-            2 => 'Zakończone',
+            0 => 'Upcoming',
+            1 => 'In Progress',
+            2 => 'Complete',
         ],
     ],
 
     // Service Status
     'service' => [
-        'good'  => '[0,1]System działa poprawnie|[2,*]Wszystkie systemy działają poprawnie',
-        'bad'   => '[0,1] W systemie występują problemy|[2,Inf] W niektórych systemach występują problemy',
-        'major' => '[0,1] W systemie występują poważne problemy|[2,Inf] W niektórych systemach występują poważne problemy',
+        'good'  => '[0,1]System operational|[2,*]All systems are operational',
+        'bad'   => '[0,1]The system is experiencing issues|[2,*]Some systems are experiencing issues',
+        'major' => '[0,1]The system is experiencing major issues|[2,*]Some systems are experiencing major issues',
     ],
 
     'api' => [
@@ -82,7 +82,7 @@ return [
         'manage'              => [
             'no_subscriptions' => 'Jesteś obecnie zapisany na wszystkie aktualizacje.',
             'my_subscriptions' => 'Jesteś obecnie zapisany na poniższe aktualizacje.',
-            'manage_at_link'   => 'Zarządzaj swoją subskrypcją na :link',
+            'manage_at_link'   => 'Manage your subscriptions at :link',
         ],
         'email' => [
             'subscribe'          => 'Aktualisierungen per E-Mail abonnieren.',
@@ -122,9 +122,9 @@ return [
     // Meta descriptions
     'meta' => [
         'description' => [
-            'incident'  => 'Szczegóły i aktualizacje dotyczące zdarzenia :name, które wystąpiło :date',
-            'schedule'  => 'Szczegóły dotyczące zaplanowanej przerwy technicznej :name rozpoczynającej się :startDate',
-            'subscribe' => 'Zapisz się do :app, aby otrzymywać informacje i aktualizacje dotyczące zdarzeń i przerw technicznych',
+            'incident'  => 'Details and updates about the :name incident that occurred on :date',
+            'schedule'  => 'Details about the scheduled maintenance period :name starting :startDate',
+            'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
             'overview'  => 'Bądź na bieżąco z aktualizacjami z :app.',
         ],
     ],
@@ -132,7 +132,7 @@ return [
     // Other
     'home'            => 'Strona Główna',
     'powered_by'      => 'Obsługiwany przez <a href="https://cachethq.io" class="links">Cachet</a>.',
-    'timezone'        => 'Czas według strefy :timezone.',
+    'timezone'        => 'Times are shown in :timezone.',
     'about_this_site' => 'Über diese Seite',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',
