@@ -13,84 +13,84 @@ return [
     'component' => [
         'status_update' => [
             'mail' => [
-                'subject'  => 'สถานะของส่วนประกอบมีการเปลี่ยนแปลง',
-                'greeting' => 'สถานะของส่วนประกอบเปลี่ยนแปลง!',
-                'content'  => ':name เปลี่ยนสถานะจาก :old_status เป็น :new_status.',
-                'action'   => 'ดู',
+                'subject'  => 'Component Status Updated',
+                'greeting' => 'A component\'s status was updated!',
+                'content'  => ':name status changed from :old_status to :new_status.',
+                'action'   => 'View',
             ],
             'slack' => [
-                'title'   => 'สถานะของส่วนประกอบมีการเปลี่ยนแปลง',
-                'content' => ':name เปลี่ยนสถานะจาก :old_status เป็น :new_status.',
+                'title'   => 'Component Status Updated',
+                'content' => ':name status changed from :old_status to :new_status.',
             ],
             'sms' => [
-                'content' => ':name เปลี่ยนสถานะจาก :old_status เป็น :new_status.',
+                'content' => ':name status changed from :old_status to :new_status.',
             ],
         ],
     ],
     'incident' => [
         'new' => [
             'mail' => [
-                'subject'  => 'มีเหตุการณ์ใหม่ถูกรายงานเข้ามา',
-                'greeting' => 'มีเหตุการณ์ที่เกิดขึ้นกับ :app_name',
-                'content'  => 'เหตุการณ์ :name',
-                'action'   => 'ดู',
+                'subject'  => 'New Incident Reported',
+                'greeting' => 'A new incident was reported at :app_name.',
+                'content'  => 'Incident :name was reported',
+                'action'   => 'View',
             ],
             'slack' => [
-                'title'   => 'เหตุการณ์ :name เกิดขึ้น',
-                'content' => 'เหตุการณ์ใหม่เกิดขึ้นกับ :app_name',
+                'title'   => 'Incident :name Reported',
+                'content' => 'A new incident was reported at :app_name',
             ],
             'sms' => [
-                'content' => 'มีเหตุการณ์ที่เกิดขึ้นกับ :app_name',
+                'content' => 'A new incident was reported at :app_name.',
             ],
         ],
         'update' => [
             'mail' => [
-                'subject' => 'เหตุการณ์มีการเปลี่ยนแปลง',
-                'content' => ':name ถูกเปลี่ยนแปลง',
-                'title'   => ':name เปลี่ยนสถานะเป็น :new_status',
-                'action'  => 'ดู',
+                'subject' => 'Incident Updated',
+                'content' => ':name was updated',
+                'title'   => ':name was updated to :new_status',
+                'action'  => 'View',
             ],
             'slack' => [
-                'title'   => ':name ถูกเปลี่ยนแปลง',
-                'content' => ':name เปลี่ยนสถานะเป็น :new_status',
+                'title'   => ':name Updated',
+                'content' => ':name was updated to :new_status',
             ],
             'sms' => [
-                'content' => 'เหตุการณ์ :name ถูกเปลี่ยนแปลง',
+                'content' => 'Incident :name was updated',
             ],
         ],
     ],
     'schedule' => [
         'new' => [
             'mail' => [
-                'subject' => 'มีกำหนดการใหม่',
-                'content' => ':name ถูกกำหนดไว้วันที่ :date',
-                'title'   => 'มีการระบุกำหนดการซ่อมบำรุง',
-                'action'  => 'ดู',
+                'subject' => 'New Schedule Created',
+                'content' => ':name was scheduled for :date',
+                'title'   => 'A new scheduled maintenance was created.',
+                'action'  => 'View',
             ],
             'slack' => [
-                'title'   => 'มีกำหนดการใหม่!',
-                'content' => ':name ถูกกำหนดไว้วันที่ :date',
+                'title'   => 'New Schedule Created!',
+                'content' => ':name was scheduled for :date',
             ],
             'sms' => [
-                'content' => ':name ถูกกำหนดไว้วันที่ :date',
+                'content' => ':name was scheduled for :date',
             ],
         ],
     ],
     'subscriber' => [
         'verify' => [
             'mail' => [
-                'subject' => 'ยืนยันการติดตามของคุณ',
-                'content' => 'คลิกเพื่อยืนยันว่าคุณต้องการติดตามสถานะของ :app_name',
-                'title'   => 'ยืนยันการติดตามสถานะของ :app_name',
-                'action'  => 'ยืนยัน',
+                'subject' => 'Verify Your Subscription',
+                'content' => 'Click to verify your subscription to :app_name status page.',
+                'title'   => 'Verify your subscription to :app_name status page.',
+                'action'  => 'Verify',
             ],
         ],
     ],
     'system' => [
         'test' => [
             'mail' => [
-                'subject' => 'ทดสอบจาก Cachet!',
-                'content' => 'นี้คือทดสอบการแจ้งเตือนจาก Cachet!',
+                'subject' => 'Ping from Cachet!',
+                'content' => 'This is a test notification from Cachet!',
                 'title'   => '🔔',
             ],
         ],
@@ -98,10 +98,10 @@ return [
     'user' => [
         'invite' => [
             'mail' => [
-                'subject' => 'มีคำเชิญส่งถึงคุณ...',
-                'content' => 'คุณถูกเชิญให้เข้าร่วมหน้าสถานะของ :app_name',
-                'title'   => 'คุณได้รับคำเชิญให้เข้าร่วมหน้าสถานะของ :app_name',
-                'action'  => 'ตกลง',
+                'subject' => 'Your invitation is inside...',
+                'content' => 'You have been invited to join :app_name status page.',
+                'title'   => 'You\'re invited to join :app_name status page.',
+                'action'  => 'Accept',
             ],
         ],
     ],
