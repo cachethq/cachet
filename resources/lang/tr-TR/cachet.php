@@ -12,110 +12,110 @@
 return [
     // Components
     'components' => [
-        'last_updated' => 'Son Güncelleme: zaman tipi',
+        'last_updated' => 'Last updated :timestamp',
         'status'       => [
-            0 => 'Bilinmiyor',
-            1 => 'Çalışıyor',
-            2 => 'Performans Sorunları',
-            3 => 'Kısmi Kesinti',
-            4 => 'Ana Kesinti',
+            0 => 'Unknown',
+            1 => 'Operational',
+            2 => 'Performance Issues',
+            3 => 'Partial Outage',
+            4 => 'Major Outage',
         ],
         'group' => [
-            'other' => 'Diğer Bileşenler',
+            'other' => 'Other Components',
         ],
     ],
 
     // Incidents
     'incidents' => [
-        'none'         => 'Hiçbir olay raporlanmadı',
-        'past'         => 'Geçmiş Olaylar',
-        'stickied'     => 'Yapıştırılmış Olaylar',
-        'scheduled'    => 'Bakım',
-        'scheduled_at' => ',zamanlanmış :zamandilimi',
-        'posted'       => ':timestamp gönderildi',
-        'posted_at'    => 'Gönderim Zamanı :timestamp',
+        'none'         => 'No incidents reported',
+        'past'         => 'Past Incidents',
+        'stickied'     => 'Stickied Incidents',
+        'scheduled'    => 'Maintenance',
+        'scheduled_at' => ', scheduled :timestamp',
+        'posted'       => 'Posted :timestamp',
+        'posted_at'    => 'Posted at :timestamp',
         'status'       => [
-            1 => 'İnceleniyor',
-            2 => 'Tanımlandı',
-            3 => 'İzleniyor',
-            4 => 'Düzeltildi',
+            1 => 'Investigating',
+            2 => 'Identified',
+            3 => 'Watching',
+            4 => 'Fixed',
         ],
     ],
 
     // Schedule
     'schedules' => [
         'status' => [
-            0 => 'Yaklaşan',
-            1 => 'Devam Ediyor',
-            2 => 'Tamamla',
+            0 => 'Upcoming',
+            1 => 'In Progress',
+            2 => 'Complete',
         ],
     ],
 
     // Service Status
     'service' => [
         'good'  => '[0,1]System operational|[2,*]All systems are operational',
-        'bad'   => '[0,1] Sistemde şu anda sorunlar yaşanıyor [2, Inf] Bazı sistemlerde sorunlar yaşanıyor',
-        'major' => '[0,1] Bu serviste büyük bir kesinti yaşıyoruz [2, Inf] Bazı sistemlerde büyük bir kesintisi yaşıyoruz',
+        'bad'   => '[0,1]The system is experiencing issues|[2,*]Some systems are experiencing issues',
+        'major' => '[0,1]The system is experiencing major issues|[2,*]Some systems are experiencing major issues',
     ],
 
     'api' => [
-        'regenerate' => 'API Key\'i yeniden oluştur',
-        'revoke'     => 'API Anahtarı geçersiz kıl',
+        'regenerate' => 'Regenerate API Key',
+        'revoke'     => 'Revoke API Key',
     ],
 
     // Metrics
     'metrics' => [
         'filter' => [
-            'last_hour' => 'Son 1 saat',
-            'hourly'    => 'Son 12 saat',
-            'weekly'    => 'Hafta',
-            'monthly'   => 'Ay',
+            'last_hour' => 'Last Hour',
+            'hourly'    => 'Last 12 Hours',
+            'weekly'    => 'Week',
+            'monthly'   => 'Month',
         ],
     ],
 
     // Subscriber
     'subscriber' => [
-        'subscribe'           => 'Güncellemeleri almak için abone olun',
+        'subscribe'           => 'Subscribe to get the updates',
         'unsubscribe'         => 'Unsubscribe',
-        'button'              => 'Abone ol',
+        'button'              => 'Subscribe',
         'manage_subscription' => 'Manage subscription',
         'manage'              => [
-            'no_subscriptions' => 'Şu anda tüm güncellemeleri abone oldunuz.',
-            'my_subscriptions' => 'Şu an aşağıdaki güncellemelere abone oldunuz.',
+            'no_subscriptions' => 'You\'re currently subscribed to all updates.',
+            'my_subscriptions' => 'You\'re currently subscribed to the following updates.',
             'manage_at_link'   => 'Manage your subscriptions at :link',
         ],
         'email' => [
-            'subscribe'          => 'Güncellemeler için abone ol.',
-            'subscribed'         => 'Bir email bildirimi almış olmalısın, lütfen aboneliğini onaylamak için kontrol et.',
-            'verified'           => 'E mail aboneliğin kabul edildi. Teşekkürler!',
-            'manage'             => 'Aboneliklerini yönet',
-            'unsubscribe'        => 'E-posta aboneliğinden çık.',
-            'unsubscribed'       => 'Email aboneliğin iptal edildi.',
-            'failure'            => 'Bazı şeyler yanlış gitti.',
-            'already-subscribed' => ':email adresine abone olunamadı çünkü zaten abone.',
+            'subscribe'          => 'Subscribe to email updates.',
+            'subscribed'         => 'You\'ve been subscribed to email notifications, please check your email to confirm your subscription.',
+            'verified'           => 'Your email subscription has been confirmed. Thank you!',
+            'manage'             => 'Manage your subscription',
+            'unsubscribe'        => 'Unsubscribe from email updates.',
+            'unsubscribed'       => 'Your email subscription has been cancelled.',
+            'failure'            => 'Something went wrong with the subscription.',
+            'already-subscribed' => 'Cannot subscribe :email because they\'re already subscribed.',
         ],
     ],
 
     'signup' => [
-        'title'    => 'Kayıt Ol',
-        'username' => 'Kullanıcı adı',
-        'email'    => 'E-posta',
-        'password' => 'Parola',
-        'success'  => 'Hesabınız oluşturuldu.',
-        'failure'  => 'Kayıt esnasında bir sorun oluştu.',
+        'title'    => 'Sign Up',
+        'username' => 'Username',
+        'email'    => 'Email',
+        'password' => 'Password',
+        'success'  => 'Your account has been created.',
+        'failure'  => 'Something went wrong with the signup.',
     ],
 
     'system' => [
-        'update' => 'Cachet yeni sürümü kullanılabilir. Nasıl güncelleneceğini <a href="https://docs.cachethq.io/docs/updating-cachet">buradan</a> öğrenebilirsiniz!',
+        'update' => 'There is a newer version of Cachet available. You can learn how to update <a href="https://docs.cachethq.io/docs/updating-cachet">here</a>!',
     ],
 
     // Modal
     'modal' => [
-        'close'     => 'Kapat',
+        'close'     => 'Close',
         'subscribe' => [
-            'title'  => 'Bileşen güncellemelerine abone ol',
-            'body'   => 'Bu içeriğin güncellemelerine abone olmak için e-mail adresinizi giriniz. Eğer zaten aboneyseniz, bu içerikle ilgili zaten e-mailler alacaksınız.',
-            'button' => 'Abone ol',
+            'title'  => 'Subscribe to component updates',
+            'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll already receive emails for this component.',
+            'button' => 'Subscribe',
         ],
     ],
 
@@ -125,15 +125,15 @@ return [
             'incident'  => 'Details and updates about the :name incident that occurred on :date',
             'schedule'  => 'Details about the scheduled maintenance period :name starting :startDate',
             'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
-            'overview'  => 'Şu uygulamalardaki en son hizmet güncellemeleri ile güncel kalın.',
+            'overview'  => 'Stay up to date with the latest service updates from :app.',
         ],
     ],
 
     // Other
-    'home'            => 'Ana Sayfa',
-    'powered_by'      => '<a href="https://cachethq.io" class="links"> Önbellek </a> kaynaklı.',
-    'timezone'        => 'Saatler, saat diliminde gösterilir.',
-    'about_this_site' => 'Bu Site hakkında',
+    'home'            => 'Home',
+    'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
+    'timezone'        => 'Times are shown in :timezone.',
+    'about_this_site' => 'About This Site',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',
     'feed'            => 'Status Feed',
