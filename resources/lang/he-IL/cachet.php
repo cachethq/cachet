@@ -16,7 +16,7 @@ return [
         'status'       => [
             0 => 'Unknown',
             1 => 'Operational',
-            2 => 'בעיות ביצועים',
+            2 => 'Performance Issues',
             3 => 'Partial Outage',
             4 => 'Major Outage',
         ],
@@ -30,15 +30,15 @@ return [
         'none'         => 'No incidents reported',
         'past'         => 'Past Incidents',
         'stickied'     => 'Stickied Incidents',
-        'scheduled'    => 'תחזוקה מתוזמנת',
+        'scheduled'    => 'Maintenance',
         'scheduled_at' => ', scheduled :timestamp',
         'posted'       => 'Posted :timestamp',
         'posted_at'    => 'Posted at :timestamp',
         'status'       => [
             1 => 'Investigating',
-            2 => 'מזוהה',
-            3 => 'צופה',
-            4 => 'תוקן',
+            2 => 'Identified',
+            3 => 'Watching',
+            4 => 'Fixed',
         ],
     ],
 
@@ -54,13 +54,13 @@ return [
     // Service Status
     'service' => [
         'good'  => '[0,1]System operational|[2,*]All systems are operational',
-        'bad'   => '[0,1] The system is experiencing issues|[2,Inf] Some systems are experiencing issues',
-        'major' => '[0,1] The system is experiencing major issues|[2,Inf] Some systems are experiencing major issues',
+        'bad'   => '[0,1]The system is experiencing issues|[2,*]Some systems are experiencing issues',
+        'major' => '[0,1]The system is experiencing major issues|[2,*]Some systems are experiencing major issues',
     ],
 
     'api' => [
-        'regenerate' => 'צור מפתח API',
-        'revoke'     => 'לבטל את מפתח ה-API',
+        'regenerate' => 'Regenerate API Key',
+        'revoke'     => 'Revoke API Key',
     ],
 
     // Metrics
@@ -99,8 +99,8 @@ return [
     'signup' => [
         'title'    => 'Sign Up',
         'username' => 'Username',
-        'email'    => 'כתובת דוא"ל',
-        'password' => 'סיסמא',
+        'email'    => 'Email',
+        'password' => 'Password',
         'success'  => 'Your account has been created.',
         'failure'  => 'Something went wrong with the signup.',
     ],
