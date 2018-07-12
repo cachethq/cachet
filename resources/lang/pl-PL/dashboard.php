@@ -16,26 +16,26 @@ return [
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Incydenty i Konserwacja',
+        'title'                    => 'Incidents & Maintenance',
         'incidents'                => 'Vorfälle',
-        'logged'                   => '{0}Brak incydentów, dobra robota.|[1]Masz jeden incydent.|[2,4]Masz <strong>:count</strong> incydenty.|[5,*]Masz <strong>:count</strong> incydentów.',
+        'logged'                   => '{0}There are no incidents, good work.|[1]You have logged one incident.|[2,*]You have reported <strong>:count</strong> incidents.',
         'incident-create-template' => 'Vorlage erstellen',
         'incident-templates'       => 'Vorfall Vorlagen',
         'updates'                  => [
-            'title'   => 'Aktualizacje incydentu dla :incident',
-            'count'   => '{0}Zero Aktualizacji|[1] Jedna Aktualizacja|[2]Dwie Aktualizacje|[3,*]Kilka Aktualizacji',
+            'title'   => 'Incident updates for :incident',
+            'count'   => '{0}Zero Updates|[1]One Update|[2]Two Updates|[3,*]Several Updates',
             'add'     => [
                 'title'   => 'Utwórz nową aktualizację zdarzenia',
-                'success' => 'Twoja aktualizacja o nowym zdarzeniu została utworzona.',
-                'failure' => 'Coś poszło nie tak z aktualizacją incydentu.',
+                'success' => 'Your new incident update has been created.',
+                'failure' => 'Something went wrong with the incident update.',
             ],
             'edit' => [
-                'title'   => 'Edytuj aktualizację incydentu',
-                'success' => 'Aktualizacja incydentu została zaktualizowana.',
-                'failure' => 'Coś poszło nie tak z aktualizacją zdarzenia',
+                'title'   => 'Edit incident update',
+                'success' => 'The incident update has been updated.',
+                'failure' => 'Something went wrong updating the incident update',
             ],
         ],
-        'reported_by'              => 'Zgłoszone przez :user',
+        'reported_by'              => 'Reported by :user',
         'add'                      => [
             'title'   => 'Vorfall hinzufügen',
             'success' => 'Dodano zdarzenie.',
@@ -56,7 +56,7 @@ return [
             'title' => 'Vorfall Vorlagen',
             'add'   => [
                 'title'   => 'Vorfallvorlage erstellen',
-                'message' => 'Powinieneś dodać szablon wydarzenia.',
+                'message' => 'Create your first incident template.',
                 'success' => 'Twój nowy szablon wydarzenia został utworzony.',
                 'failure' => 'Coś poszło nie tak z szablonem wydarzenia.',
             ],
@@ -74,22 +74,22 @@ return [
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => 'Konserwacja',
-        'logged'       => '{0}Brak konserwacji, dobra robota.|[1]Masz zaplanowaną jedną.|[2,*]Masz zaplanowane <strong>:count</strong>.',
+        'schedule'     => 'Maintenance',
+        'logged'       => '{0}There has been no Maintenance, good work.|[1]You have logged one schedule.|[2,*]You have reported <strong>:count</strong> schedules.',
         'scheduled_at' => 'Geplant am :timestamp',
         'add'          => [
-            'title'   => 'Zaplanuj prace konserwatorskie',
-            'success' => 'Dodano harmonogram.',
-            'failure' => 'Coś poszło nie tak podczas planowania, proszę spróbować ponownie.',
+            'title'   => 'Add Maintenance',
+            'success' => 'Maintenance added.',
+            'failure' => 'Something went wrong adding the Maintenance, please try again.',
         ],
         'edit' => [
-            'title'   => 'Edytuj prace konserwatorskie',
-            'success' => 'Harmonogram został zaktualizowany!',
-            'failure' => 'Coś poszło nie tak podczas edytowania harmonogramu, proszę spróbować ponownie.',
+            'title'   => 'Edit Maintenance',
+            'success' => 'Maintenance has been updated!',
+            'failure' => 'Something went wrong editing the Maintenance, please try again.',
         ],
         'delete' => [
-            'success' => 'Zaplanowane prace konserwatorskie zostały usunięte i nie będą wyświetlane na stronie statusu.',
-            'failure' => 'Zaplanowane prace konserwatorskie nie mogły zostać usunięte, proszę spróbować ponownie.',
+            'success' => 'The Maintenance has been deleted and will not show on your status page.',
+            'failure' => 'The Maintenance could not be deleted, please try again.',
         ],
     ],
 
@@ -158,12 +158,12 @@ return [
     'subscribers' => [
         'subscribers'          => 'Abonnenten',
         'description'          => 'Subskrybenci będą otrzymywać powiadomienia, gdy wydarzenia zostaną utworzone lub komponenty zaktualizowane.',
-        'description_disabled' => 'Aby korzystać z tej funkcji, musisz pozwolić ludziom na rejestrację dla powiadomień.',
+        'description_disabled' => 'To use this feature, you need allow people to signup for notifications.',
         'verified'             => 'Verifiziert',
         'not_verified'         => 'Nicht verifiziert',
         'subscriber'           => ':email, subskrybowany :data',
         'no_subscriptions'     => 'Zapisano do wszystkich aktualizacji',
-        'global'               => 'Globalnie subskrybowane',
+        'global'               => 'Globally subscribed',
         'add'                  => [
             'title'   => 'Einen neuen Abonnenten hinzufügen',
             'success' => 'Abonnent hinzugefügt.',
@@ -227,11 +227,11 @@ return [
             'footer'        => 'Niestandardowa stopka HTML',
         ],
         'mail' => [
-            'mail'  => 'Poczta',
-            'test'  => 'Testuj',
+            'mail'  => 'Mail',
+            'test'  => 'Test',
             'email' => [
-                'subject' => 'Testuj powiadomienia z Cachet',
-                'body'    => 'To jest testowe powiadomienie z Cachet.',
+                'subject' => 'Test notification from Cachet',
+                'body'    => 'This is a test notification from Cachet.',
             ],
         ],
         'security' => [
