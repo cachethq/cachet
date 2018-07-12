@@ -22,7 +22,7 @@ return [
     |
     */
 
-    'previous' => 'Précédent',
-    'next'     => 'Suivant',
+    'previous' => 'Previous',
+    'next'     => 'Next',
 
 ];
