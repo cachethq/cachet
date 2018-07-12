@@ -22,7 +22,7 @@ return [
     |
     */
 
-    'previous' => '上一頁',
-    'next'     => '下一頁',
+    'previous' => 'Previous',
+    'next'     => 'Next',
 
 ];
