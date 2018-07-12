@@ -12,30 +12,30 @@
 return [
 
     'dashboard'          => 'Oversigt',
-    'writeable_settings' => 'Cachet-indstillingsmappen er ikke skrivbar. Sørg venligst for at webserveren kan skrive til <code>./bootstrap/cachet</code>.',
+    'writeable_settings' => 'The Cachet settings directory is not writeable. Please make sure that <code>./bootstrap/cachet</code> is writeable by the web server.',
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Hændelser og Vedligehold',
+        'title'                    => 'Incidents & Maintenance',
         'incidents'                => 'Incidents',
-        'logged'                   => '{0} Ingen åbne hændelser.|[1] Der er én åben hændelse.|[2.*] Der er <strong>:count</strong> åbne hændelser.',
+        'logged'                   => '{0}There are no incidents, good work.|[1]You have logged one incident.|[2,*]You have reported <strong>:count</strong> incidents.',
         'incident-create-template' => 'Create Template',
         'incident-templates'       => 'Incident Templates',
         'updates'                  => [
-            'title'   => 'Hændelsesopdateringer til :hændelse',
-            'count'   => '{0} Ingen opdateringer |[1] Én opdatering |[2] To opdateringer | [3,*] Flere opdateringer',
+            'title'   => 'Incident updates for :incident',
+            'count'   => '{0}Zero Updates|[1]One Update|[2]Two Updates|[3,*]Several Updates',
             'add'     => [
-                'title'   => 'Opret ny hændelsesopdatering',
-                'success' => 'Din nye hændelsesopdatering er oprettet.',
-                'failure' => 'En fejl opstod med hændelsesopdateringen.',
+                'title'   => 'Create new incident update',
+                'success' => 'Your new incident update has been created.',
+                'failure' => 'Something went wrong with the incident update.',
             ],
             'edit' => [
-                'title'   => 'Redigér hændelsesopdatering',
-                'success' => 'Hændelsesopdateringen er blevet opdateret.',
-                'failure' => 'En fejl opstod under opdateringen af hændelsesopdateringen',
+                'title'   => 'Edit incident update',
+                'success' => 'The incident update has been updated.',
+                'failure' => 'Something went wrong updating the incident update',
             ],
         ],
-        'reported_by'              => 'Anmeldt af bruger',
+        'reported_by'              => 'Reported by :user',
         'add'                      => [
             'title'   => 'Opret hændelse',
             'success' => 'Hændelse tilføjet.',
@@ -56,7 +56,7 @@ return [
             'title' => 'Incident Templates',
             'add'   => [
                 'title'   => 'Opret hændelses skabelon',
-                'message' => 'Du bør tilføje en hændelses skabelon.',
+                'message' => 'Create your first incident template.',
                 'success' => 'Din nye hændelses skabelon er blevet oprettet.',
                 'failure' => 'En fejl er opstået med hændelses skabelonen.',
             ],
@@ -74,22 +74,22 @@ return [
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => 'Vedligeholdelse',
-        'logged'       => '{0} Der er ingen tidsplanlager.|[1]Der er 1 tidsplan.|[2,*]Der er anmeldt <strong>:count</strong> tidsplaner.',
+        'schedule'     => 'Maintenance',
+        'logged'       => '{0}There has been no Maintenance, good work.|[1]You have logged one schedule.|[2,*]You have reported <strong>:count</strong> schedules.',
         'scheduled_at' => 'Planlagt til :timestamp',
         'add'          => [
-            'title'   => 'Tilføj planlagt vedligeholdelse',
-            'success' => 'Planlagt vedligeholdelse tilføjet.',
-            'failure' => 'Noget gik galt under forsøget på at tilføje planlagt vedligeholdelse. Prøv venligst igen.',
+            'title'   => 'Add Maintenance',
+            'success' => 'Maintenance added.',
+            'failure' => 'Something went wrong adding the Maintenance, please try again.',
         ],
         'edit' => [
-            'title'   => 'Rediger planlagt vedligeholdelse',
-            'success' => 'Planlagt vedligeholdelse er blevet opdateret!',
-            'failure' => 'Noget gik galt under forsøget på at opdatere planlagt vedligeholdelse. Prøv venligst igen.',
+            'title'   => 'Edit Maintenance',
+            'success' => 'Maintenance has been updated!',
+            'failure' => 'Something went wrong editing the Maintenance, please try again.',
         ],
         'delete' => [
-            'success' => 'Planlagt vedligeholdelse er blevet slette og vil ikke længere blive vist på din status side.',
-            'failure' => 'Den planlagt vedligeholdelse kunne ikke slettes. Prøv venligst igen.',
+            'success' => 'The Maintenance has been deleted and will not show on your status page.',
+            'failure' => 'The Maintenance could not be deleted, please try again.',
         ],
     ],
 
@@ -158,17 +158,17 @@ return [
     'subscribers' => [
         'subscribers'          => 'Subscribers',
         'description'          => 'Abonnenter vil modtage notifikationer når hændelser oprettes eller komponenter opdateres.',
-        'description_disabled' => 'For at bruge denne funktion skal du tillader folk at tilmelde sig notifikationer.',
+        'description_disabled' => 'To use this feature, you need allow people to signup for notifications.',
         'verified'             => 'Bekræftet',
         'not_verified'         => 'Ej bekræftet',
         'subscriber'           => ':email, abonnerede :date',
         'no_subscriptions'     => 'Abonnere på alle opdateringer',
-        'global'               => 'Globalt tilmeldt',
+        'global'               => 'Globally subscribed',
         'add'                  => [
             'title'   => 'Tilføj abonnent',
             'success' => 'Subscriber added.',
             'failure' => 'Noget gik galt under forsøget på at tilføje en abonnent. Prøv venligst igen.',
-            'help'    => 'Angiv hver abonnent på en ny linje.',
+            'help'    => 'Enter each subscriber on a new line.',
         ],
         'edit' => [
             'title'   => 'Redigér abonnent',
@@ -227,11 +227,11 @@ return [
             'footer'        => 'Brugerdefineret footer html',
         ],
         'mail' => [
-            'mail'  => 'E-mail',
+            'mail'  => 'Mail',
             'test'  => 'Test',
             'email' => [
-                'subject' => 'Testnotifikation fra Cachet',
-                'body'    => 'Dette er en testnotifikation fra Cachet.',
+                'subject' => 'Test notification from Cachet',
+                'body'    => 'This is a test notification from Cachet.',
             ],
         ],
         'security' => [
@@ -249,12 +249,12 @@ return [
             'failure' => 'Indstillingerne kunne ikke gemmes.',
         ],
         'credits' => [
-            'credits'       => 'Anerkendelser',
-            'contributors'  => 'Bidragsydere',
-            'license'       => 'Cachet er et BSD-3 licenseret open source-projekt udgivet af <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
-            'backers-title' => 'Støtter og Sponsorer',
-            'backers'       => 'Ønsker du at støtte fremtidig udvikling, så tjek venligst <a href="https://patreon.com/jbrooksuk" target="_blank"> Cachet Patreon</a>-kampagnen.',
-            'thank-you'     => 'Tak til hver og én af de :count bidragsydere.',
+            'credits'       => 'Credits',
+            'contributors'  => 'Contributors',
+            'license'       => 'Cachet is a BSD-3-licensed open source project, released by <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
+            'backers-title' => 'Backers & Sponsors',
+            'backers'       => 'If you\'d like to support future development, check out the <a href="https://patreon.com/jbrooksuk" target="_blank">Cachet Patreon</a> campaign.',
+            'thank-you'     => 'Thank you to each and every one of the :count contributors.',
         ],
     ],
 
@@ -280,10 +280,10 @@ return [
 
     // Widgets
     'widgets' => [
-        'support'          => 'Støt Cachet',
-        'support_subtitle' => 'Tjek vores <strong><a href="https://patreon.com/jbrooksuk" target="_blank">Patreon</a></strong>-side!',
-        'news'             => 'Seneste nyheder',
-        'news_subtitle'    => 'Få den nyeste opdatering',
+        'support'          => 'Support Cachet',
+        'support_subtitle' => 'Check out our <strong><a href="https://patreon.com/jbrooksuk" target="_blank">Patreon</a></strong> page!',
+        'news'             => 'Latest News',
+        'news_subtitle'    => 'Get the latest update',
     ],
 
     // Welcome modal
