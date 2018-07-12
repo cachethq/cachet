@@ -12,31 +12,31 @@
 return [
     // Components
     'components' => [
-        'last_updated' => ':timestamp laas opgedateer',
+        'last_updated' => 'Last updated :timestamp',
         'status'       => [
-            0 => 'Onbekend',
-            1 => 'Operasioneel',
-            2 => 'Prestasieprobleme',
-            3 => 'Gedeeltelike Onderbreking',
-            4 => 'Groot Onderbreking',
+            0 => 'Unknown',
+            1 => 'Operational',
+            2 => 'Performance Issues',
+            3 => 'Partial Outage',
+            4 => 'Major Outage',
         ],
         'group' => [
-            'other' => 'Ander komponente',
+            'other' => 'Other Components',
         ],
     ],
 
     // Incidents
     'incidents' => [
-        'none'         => 'Geen voorvalle aangemeld',
-        'past'         => 'Vorige Voorvalle',
+        'none'         => 'No incidents reported',
+        'past'         => 'Past Incidents',
         'stickied'     => 'Stickied Incidents',
-        'scheduled'    => 'Geskeduleerde Instandhouding',
-        'scheduled_at' => ', :timestamp geskeduleer',
-        'posted'       => ':timestamp gepos',
+        'scheduled'    => 'Maintenance',
+        'scheduled_at' => ', scheduled :timestamp',
+        'posted'       => 'Posted :timestamp',
         'posted_at'    => 'Posted at :timestamp',
         'status'       => [
-            1 => 'Onder die Loep',
-            2 => 'Geïdentifiseerd',
+            1 => 'Investigating',
+            2 => 'Identified',
             3 => 'Hou Dop',
             4 => 'Opgelos',
         ],
@@ -45,17 +45,17 @@ return [
     // Schedule
     'schedules' => [
         'status' => [
-            0 => 'Opkomend',
-            1 => 'Besig',
-            2 => 'Voltooid',
+            0 => 'Upcoming',
+            1 => 'In Progress',
+            2 => 'Complete',
         ],
     ],
 
     // Service Status
     'service' => [
         'good'  => '[0,1]System operational|[2,*]All systems are operational',
-        'bad'   => '[0,1] The system is experiencing issues|[2,Inf] Some systems are experiencing issues',
-        'major' => '[0,1] The system is experiencing major issues|[2,Inf] Some systems are experiencing major issues',
+        'bad'   => '[0,1]The system is experiencing issues|[2,*]Some systems are experiencing issues',
+        'major' => '[0,1]The system is experiencing major issues|[2,*]Some systems are experiencing major issues',
     ],
 
     'api' => [
@@ -66,7 +66,7 @@ return [
     // Metrics
     'metrics' => [
         'filter' => [
-            'last_hour' => 'Laaste uur',
+            'last_hour' => 'Last Hour',
             'hourly'    => 'Afgelope 12 Uur',
             'weekly'    => 'Weekliks',
             'monthly'   => 'Maandeliks',
@@ -75,7 +75,7 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'           => 'Teken in om opdaterings te kry',
+        'subscribe'           => 'Subscribe to get the updates',
         'unsubscribe'         => 'Unsubscribe',
         'button'              => 'Teken aan',
         'manage_subscription' => 'Manage subscription',
