@@ -12,30 +12,30 @@
 return [
 
     'dashboard'          => 'Dashboard',
-    'writeable_settings' => 'O diretório de configurações do Cachet não é gravável. Certifique-se de que<code>./bootstrap/cachet</code> é gravável pelo servidor web.',
+    'writeable_settings' => 'The Cachet settings directory is not writeable. Please make sure that <code>./bootstrap/cachet</code> is writeable by the web server.',
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Incidentes & Agendamentos',
+        'title'                    => 'Incidents & Maintenance',
         'incidents'                => 'Incidentes',
-        'logged'                   => '{0}Não existem incidentes, bom trabalho.|[1]Você adicionou um incidente.|[2,*]Você reportou <strong>:count</strong> incidentes.',
+        'logged'                   => '{0}There are no incidents, good work.|[1]You have logged one incident.|[2,*]You have reported <strong>:count</strong> incidents.',
         'incident-create-template' => 'Criar template',
         'incident-templates'       => 'Template de incidentes',
         'updates'                  => [
-            'title'   => 'Atualizações para o incidente :incident',
-            'count'   => '{0}Zero atualizações|[1]Uma atualização|[2]Duas atualizações|[3,*]Várias atualizações',
+            'title'   => 'Incident updates for :incident',
+            'count'   => '{0}Zero Updates|[1]One Update|[2]Two Updates|[3,*]Several Updates',
             'add'     => [
-                'title'   => 'Crie uma nova atualização de incidente',
-                'success' => 'Seu novo incidente foi criado.',
-                'failure' => 'Algo deu errado com a atualização do incidente.',
+                'title'   => 'Create new incident update',
+                'success' => 'Your new incident update has been created.',
+                'failure' => 'Something went wrong with the incident update.',
             ],
             'edit' => [
-                'title'   => 'Editar atualização do incidente',
-                'success' => 'O incidente foi atualizado.',
-                'failure' => 'Algo deu errado ao atualizar o incidente',
+                'title'   => 'Edit incident update',
+                'success' => 'The incident update has been updated.',
+                'failure' => 'Something went wrong updating the incident update',
             ],
         ],
-        'reported_by'              => 'Reportado por :user',
+        'reported_by'              => 'Reported by :user',
         'add'                      => [
             'title'   => 'Relatar um incidente',
             'success' => 'Incidente adicionado.',
@@ -56,7 +56,7 @@ return [
             'title' => 'Template de incidentes',
             'add'   => [
                 'title'   => 'Criar um modelo de incidente',
-                'message' => 'Você deve adicionar um modelo de incidente.',
+                'message' => 'Create your first incident template.',
                 'success' => 'Seu novo modelo de incidente foi criado.',
                 'failure' => 'Algo deu errado com o modelo de incidente.',
             ],
@@ -74,22 +74,22 @@ return [
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => 'Manutenção',
-        'logged'       => '{0}Ainda não ocorreu nenhuma manuteção, bom trabalho. |[1]Você agendou uma manuteção. | [2, *] Você adicionou <strong>:</strong> manutenções.',
+        'schedule'     => 'Maintenance',
+        'logged'       => '{0}There has been no Maintenance, good work.|[1]You have logged one schedule.|[2,*]You have reported <strong>:count</strong> schedules.',
         'scheduled_at' => 'Agendada em :timestamp',
         'add'          => [
-            'title'   => 'Adicionar manutenção programada',
-            'success' => 'Agendamento adicionado.',
-            'failure' => 'Ocorreu um problema ao adicionar a programação, por favor tente novamente.',
+            'title'   => 'Add Maintenance',
+            'success' => 'Maintenance added.',
+            'failure' => 'Something went wrong adding the Maintenance, please try again.',
         ],
         'edit' => [
-            'title'   => 'Edite a manutenção agendada',
-            'success' => 'A programação foi atualizada!',
-            'failure' => 'Ocorreu um problema ao editar a programação, por favor tente novamente.',
+            'title'   => 'Edit Maintenance',
+            'success' => 'Maintenance has been updated!',
+            'failure' => 'Something went wrong editing the Maintenance, please try again.',
         ],
         'delete' => [
-            'success' => 'A manutenção programada foi excluída e não aparecerá na sua página de status.',
-            'failure' => 'A manutenção programada não pode ser excluída, por favor tente novamente.',
+            'success' => 'The Maintenance has been deleted and will not show on your status page.',
+            'failure' => 'The Maintenance could not be deleted, please try again.',
         ],
     ],
 
@@ -158,12 +158,12 @@ return [
     'subscribers' => [
         'subscribers'          => 'Assinantes',
         'description'          => 'Assinantes vão receber atualizações de e-mail quando incidentes criados ou componentes atualizados.',
-        'description_disabled' => 'Para utilizar esse recurso, você precisa permitir que as pessoas se cadastrem para notificações.',
+        'description_disabled' => 'To use this feature, you need allow people to signup for notifications.',
         'verified'             => 'Verificado',
         'not_verified'         => 'Não verificado',
         'subscriber'           => ':email, inscreveu-se em :date',
         'no_subscriptions'     => 'Inscrito em todas as atualizações',
-        'global'               => 'Inscrito globalmente',
+        'global'               => 'Globally subscribed',
         'add'                  => [
             'title'   => 'Adicionar um novo assinante',
             'success' => 'Inscrito adicionado.',
@@ -227,11 +227,11 @@ return [
             'footer'        => 'HTML de rodapé personalizado',
         ],
         'mail' => [
-            'mail'  => 'E-Mail',
-            'test'  => 'Teste',
+            'mail'  => 'Mail',
+            'test'  => 'Test',
             'email' => [
-                'subject' => 'Notificação de teste do Cachet',
-                'body'    => 'Esta é uma notificação de teste do Cachet.',
+                'subject' => 'Test notification from Cachet',
+                'body'    => 'This is a test notification from Cachet.',
             ],
         ],
         'security' => [
