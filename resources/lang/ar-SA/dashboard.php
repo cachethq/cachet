@@ -11,57 +11,57 @@
 
 return [
 
-    'dashboard'          => 'لوحة التحكم',
+    'dashboard'          => 'Dashboard',
     'writeable_settings' => 'The Cachet settings directory is not writeable. Please make sure that <code>./bootstrap/cachet</code> is writeable by the web server.',
 
     // Incidents
     'incidents' => [
-        'title'                    => 'الأعطال و الصيانة',
-        'incidents'                => 'الأعطال',
+        'title'                    => 'Incidents & Maintenance',
+        'incidents'                => 'Incidents',
         'logged'                   => '{0}There are no incidents, good work.|[1]You have logged one incident.|[2,*]You have reported <strong>:count</strong> incidents.',
-        'incident-create-template' => 'إنشاء قالب',
-        'incident-templates'       => 'قوالب الأعطال',
+        'incident-create-template' => 'Create Template',
+        'incident-templates'       => 'Incident Templates',
         'updates'                  => [
-            'title'   => 'تحديثات حالة العَطَل :incident',
+            'title'   => 'Incident updates for :incident',
             'count'   => '{0}Zero Updates|[1]One Update|[2]Two Updates|[3,*]Several Updates',
             'add'     => [
-                'title'   => 'إنشاء تحديث حالة جديد للعَطَل',
-                'success' => 'تم إنشاء الحالة الجديدة المتعلقة بالعَطَل.',
-                'failure' => 'طرأ هناك خطأ في تحديث حالة العَطل.',
+                'title'   => 'Create new incident update',
+                'success' => 'Your new incident update has been created.',
+                'failure' => 'Something went wrong with the incident update.',
             ],
             'edit' => [
-                'title'   => 'تعديل تحديث العَطل',
-                'success' => 'تم إنشاء تحديث للحالة المتعلقة بالعَطَل.',
-                'failure' => 'طرأ هناك خطأ في تحديث حالة العَطل',
+                'title'   => 'Edit incident update',
+                'success' => 'The incident update has been updated.',
+                'failure' => 'Something went wrong updating the incident update',
             ],
         ],
-        'reported_by'              => 'أبلَغَ عنه :user',
+        'reported_by'              => 'Reported by :user',
         'add'                      => [
-            'title'   => 'الإبلاغ عن عَطَل',
-            'success' => 'تم إضافة العَطَل.',
-            'failure' => 'حدث خلل أثناء إضافة العَطَل، الرجاء إعادة المحاولة ثانية.',
+            'title'   => 'Report an incident',
+            'success' => 'Incident added.',
+            'failure' => 'There was an error adding the incident, please try again.',
         ],
         'edit' => [
-            'title'   => 'تعديل عَطَل',
-            'success' => 'تم تحديث حالة العَطَل.',
-            'failure' => 'حدث خلل أثناء تعديل حالة العَطَل، الرجاء إعادة المحاولة.',
+            'title'   => 'Edit an incident',
+            'success' => 'Incident updated.',
+            'failure' => 'There was an error editing the incident, please try again.',
         ],
         'delete' => [
-            'success' => 'تم حذف العَطَل و لن تظهر في صفحة الحالة الخاصة بك.',
-            'failure' => 'تعذرت عملية حذف العَطَل، يُرجى إعادة المحاولة ثانية.',
+            'success' => 'The incident has been deleted and will not show on your status page.',
+            'failure' => 'The incident could not be deleted, please try again.',
         ],
 
         // Incident templates
         'templates' => [
-            'title' => 'قوالب الأعطال',
+            'title' => 'Incident Templates',
             'add'   => [
-                'title'   => 'إنشاء قالب حالة عَطَل',
-                'message' => 'You should add an incident template.',
+                'title'   => 'Create an incident template',
+                'message' => 'Create your first incident template.',
                 'success' => 'Your new incident template has been created.',
                 'failure' => 'Something went wrong with the incident template.',
             ],
             'edit' => [
-                'title'   => 'تغيير النموذج',
+                'title'   => 'Edit Template',
                 'success' => 'The incident template has been updated.',
                 'failure' => 'Something went wrong updating the incident template',
             ],
@@ -74,32 +74,32 @@ return [
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => 'صيانة',
+        'schedule'     => 'Maintenance',
         'logged'       => '{0}There has been no Maintenance, good work.|[1]You have logged one schedule.|[2,*]You have reported <strong>:count</strong> schedules.',
-        'scheduled_at' => 'مُبرمَجة على :timestamp',
+        'scheduled_at' => 'Scheduled at :timestamp',
         'add'          => [
-            'title'   => 'إضافة إجراء صيانة',
-            'success' => 'تم إضافة إجراء الصيانة.',
-            'failure' => 'طرأ هناك خلل أثناء القيام بإضافة صيانة، يُرجى إعادة المحاولة.',
+            'title'   => 'Add Maintenance',
+            'success' => 'Maintenance added.',
+            'failure' => 'Something went wrong adding the Maintenance, please try again.',
         ],
         'edit' => [
-            'title'   => 'تعديل إجراء الصيانة المُبرمَجة',
-            'success' => 'تم تحديث الصيانة !',
-            'failure' => 'Something went wrong editing the schedule, please try again.',
+            'title'   => 'Edit Maintenance',
+            'success' => 'Maintenance has been updated!',
+            'failure' => 'Something went wrong editing the Maintenance, please try again.',
         ],
         'delete' => [
-            'success' => 'The scheduled maintenance has been deleted and will not show on your status page.',
-            'failure' => 'The scheduled maintenance could not be deleted, please try again.',
+            'success' => 'The Maintenance has been deleted and will not show on your status page.',
+            'failure' => 'The Maintenance could not be deleted, please try again.',
         ],
     ],
 
     // Components
     'components' => [
-        'components'         => 'المُكوّنات',
-        'component_statuses' => 'حالات المُكوّن',
+        'components'         => 'Components',
+        'component_statuses' => 'Component Statuses',
         'listed_group'       => 'Grouped under :name',
         'add'                => [
-            'title'   => 'إضافة مُكوّن',
+            'title'   => 'Add a component',
             'message' => 'You should add a component.',
             'success' => 'Component created.',
             'failure' => 'Something went wrong with the component group, please try again.',
@@ -137,7 +137,7 @@ return [
 
     // Metrics
     'metrics' => [
-        'metrics' => 'المقاييس',
+        'metrics' => 'Metrics',
         'add'     => [
             'title'   => 'Create a metric',
             'message' => 'You should add a metric.',
@@ -156,11 +156,11 @@ return [
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'          => 'المشتركين',
+        'subscribers'          => 'Subscribers',
         'description'          => 'Subscribers will receive email updates when incidents are created or components are updated.',
         'description_disabled' => 'To use this feature, you need allow people to signup for notifications.',
-        'verified'             => 'تم التحقق منه',
-        'not_verified'         => 'لم يتم التحقق منه',
+        'verified'             => 'Verified',
+        'not_verified'         => 'Not verified',
         'subscriber'           => ':email, subscribed :date',
         'no_subscriptions'     => 'Subscribed to all updates',
         'global'               => 'Globally subscribed',
@@ -179,18 +179,18 @@ return [
 
     // Team
     'team' => [
-        'team'        => 'فريق',
-        'member'      => 'عضو',
-        'profile'     => 'الملف الشخصي',
+        'team'        => 'Team',
+        'member'      => 'Member',
+        'profile'     => 'Profile',
         'description' => 'Team Members will be able to add, modify & edit components and incidents.',
         'add'         => [
             'title'   => 'Add a new team member',
-            'success' => 'تمت إضافة عضو إلى الفريق.',
+            'success' => 'Team member added.',
             'failure' => 'The team member could not be added, please try again.',
         ],
         'edit' => [
-            'title'   => 'تحديث الملف الشخصي',
-            'success' => 'تم تحديث الملف الشخصي.',
+            'title'   => 'Update profile',
+            'success' => 'Profile updated.',
             'failure' => 'Something went wrong updating the profile, please try again.',
         ],
         'delete' => [
@@ -199,38 +199,38 @@ return [
         ],
         'invite' => [
             'title'   => 'Invite a new team member',
-            'success' => 'تم إرسال الدعوة',
-            'failure' => 'تعذرت عملية إرسال الدعوة، يُرجى إعادة المحاولة ثانية.',
+            'success' => 'An invite has been sent',
+            'failure' => 'The invite could not be sent, please try again.',
         ],
     ],
 
     // Settings
     'settings' => [
-        'settings'  => 'الإعدادات',
+        'settings'  => 'Settings',
         'app-setup' => [
-            'app-setup'   => 'إعدادات البرنامج',
-            'images-only' => 'لا يمكن تحميل إلّا الصور.',
+            'app-setup'   => 'Application Setup',
+            'images-only' => 'Only images may be uploaded.',
             'too-big'     => 'The file you uploaded is too big. Upload an image smaller than :size',
         ],
         'analytics' => [
-            'analytics' => 'التحليلات',
+            'analytics' => 'Analytics',
         ],
         'log' => [
-            'log' => 'السجل',
+            'log' => 'Log',
         ],
         'localization' => [
-            'localization' => 'الترجمة',
+            'localization' => 'Localization',
         ],
         'customization' => [
-            'customization' => 'التخصيص',
+            'customization' => 'Customization',
             'header'        => 'Custom Header HTML',
             'footer'        => 'Custom Footer HTML',
         ],
         'mail' => [
-            'mail'  => 'البريد الإلكتروني',
-            'test'  => 'تجريب',
+            'mail'  => 'Mail',
+            'test'  => 'Test',
             'email' => [
-                'subject' => 'إشعار تجريبي مِن كاشيه Cachet',
+                'subject' => 'Test notification from Cachet',
                 'body'    => 'This is a test notification from Cachet.',
             ],
         ],
@@ -242,15 +242,15 @@ return [
             'stylesheet' => 'Stylesheet',
         ],
         'theme' => [
-            'theme' => 'السمة',
+            'theme' => 'Theme',
         ],
         'edit' => [
-            'success' => 'تم حفظ الإعدادات.',
-            'failure' => 'تعذرت عملية حفظ الإعدادات.',
+            'success' => 'Settings saved.',
+            'failure' => 'Settings could not be saved.',
         ],
         'credits' => [
             'credits'       => 'Credits',
-            'contributors'  => 'المساهمون',
+            'contributors'  => 'Contributors',
             'license'       => 'Cachet is a BSD-3-licensed open source project, released by <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
             'backers-title' => 'Backers & Sponsors',
             'backers'       => 'If you\'d like to support future development, check out the <a href="https://patreon.com/jbrooksuk" target="_blank">Cachet Patreon</a> campaign.',
@@ -260,30 +260,30 @@ return [
 
     // Login
     'login' => [
-        'login'      => 'تسجيل الدخول',
-        'logged_in'  => 'أنت مُتّصل.',
+        'login'      => 'Login',
+        'logged_in'  => 'You\'re logged in.',
         'welcome'    => 'Welcome back!',
         'two-factor' => 'Please enter your token.',
     ],
 
     // Sidebar footer
-    'help'        => 'المساعدة',
+    'help'        => 'Help',
     'status_page' => 'Status Page',
-    'logout'      => 'الخروج',
+    'logout'      => 'Logout',
 
     // Notifications
     'notifications' => [
-        'notifications' => 'الإشعارات',
-        'awesome'       => 'رائع.',
-        'whoops'        => 'المعذرة.',
+        'notifications' => 'Notifications',
+        'awesome'       => 'Awesome.',
+        'whoops'        => 'Whoops.',
     ],
 
     // Widgets
     'widgets' => [
         'support'          => 'Support Cachet',
         'support_subtitle' => 'Check out our <strong><a href="https://patreon.com/jbrooksuk" target="_blank">Patreon</a></strong> page!',
-        'news'             => 'آخر الأخبار',
-        'news_subtitle'    => 'الحصول على آخر تحديث',
+        'news'             => 'Latest News',
+        'news_subtitle'    => 'Get the latest update',
     ],
 
     // Welcome modal
@@ -297,7 +297,7 @@ return [
             'customize'  => 'Customize your page',
             'team'       => 'Add your team',
             'api'        => 'Generate an API token',
-            'two-factor' => 'إعداد المصادقة بخطوتين',
+            'two-factor' => 'Setup Two Factor Authentication',
         ],
     ],
 
