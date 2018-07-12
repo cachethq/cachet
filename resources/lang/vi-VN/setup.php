@@ -11,13 +11,13 @@
 
 return [
     'setup'             => 'Cài đặt',
-    'title'             => 'Cài đặt Cachet',
-    'service_details'   => 'Chi tiết DỊch vụ',
-    'env_setup'         => 'Thiết lập môi trường',
-    'status_page_setup' => 'Cài đặt Trang Trạng thái',
-    'show_support'      => 'Hiển thị hỗ trợ cho Cachet?',
-    'admin_account'     => 'Tài khoản người quản trị',
-    'complete_setup'    => 'Hoàn tất cài đặt',
-    'completed'         => 'Cachet đã được cấu hình thành công!',
-    'finish_setup'      => 'Đi đến bảng điều khiển',
+    'title'             => 'Install Cachet',
+    'service_details'   => 'Service Details',
+    'env_setup'         => 'Environment Setup',
+    'status_page_setup' => 'Status Page Setup',
+    'show_support'      => 'Show support for Cachet?',
+    'admin_account'     => 'Administrator Account',
+    'complete_setup'    => 'Complete Setup',
+    'completed'         => 'Cachet has been configured successfully!',
+    'finish_setup'      => 'Go to dashboard',
 ];
