@@ -12,33 +12,33 @@
 return [
     // Components
     'components' => [
-        'last_updated' => 'آخرین بروز رسانی :timestamp',
+        'last_updated' => 'Last updated :timestamp',
         'status'       => [
             0 => 'Unknown',
-            1 => 'عملیاتی',
-            2 => 'مسائل مربوط به عملکرد',
-            3 => 'قطعی جزیی',
-            4 => 'قطعی بزرگ',
+            1 => 'Operational',
+            2 => 'Performance Issues',
+            3 => 'Partial Outage',
+            4 => 'Major Outage',
         ],
         'group' => [
-            'other' => 'کامپوننت‌های دیگر',
+            'other' => 'Other Components',
         ],
     ],
 
     // Incidents
     'incidents' => [
-        'none'         => 'هیچ حادثه ای گزارش نشده است',
-        'past'         => 'حوادث گذشته',
+        'none'         => 'No incidents reported',
+        'past'         => 'Past Incidents',
         'stickied'     => 'Stickied Incidents',
-        'scheduled'    => 'تعمیرات زمان‌بندی شده',
-        'scheduled_at' => '، برنامه ریزی شده :timestamp',
+        'scheduled'    => 'Maintenance',
+        'scheduled_at' => ', scheduled :timestamp',
         'posted'       => 'Posted :timestamp',
         'posted_at'    => 'Posted at :timestamp',
         'status'       => [
-            1 => 'در دست بررسی',
-            2 => 'شناسایی شده',
-            3 => 'در دست بررسی تغييرات',
-            4 => 'برطرف شده',
+            1 => 'Investigating',
+            2 => 'Identified',
+            3 => 'Watching',
+            4 => 'Fixed',
         ],
     ],
 
@@ -54,54 +54,54 @@ return [
     // Service Status
     'service' => [
         'good'  => '[0,1]System operational|[2,*]All systems are operational',
-        'bad'   => '[0,1] سامانه در حال حاضر دچار اشکال است ‌| [2,Inf] برخی از سامانه‌ها دچار اشکال شده‌اند',
-        'major' => '[0,1] The system is experiencing major issues|[2,Inf] Some systems are experiencing major issues',
+        'bad'   => '[0,1]The system is experiencing issues|[2,*]Some systems are experiencing issues',
+        'major' => '[0,1]The system is experiencing major issues|[2,*]Some systems are experiencing major issues',
     ],
 
     'api' => [
-        'regenerate' => 'ساخت مجدد کلید API',
-        'revoke'     => 'غیرفعال نمودن کلید API',
+        'regenerate' => 'Regenerate API Key',
+        'revoke'     => 'Revoke API Key',
     ],
 
     // Metrics
     'metrics' => [
         'filter' => [
-            'last_hour' => 'ساعت گذشته',
-            'hourly'    => '12 ساعت گذشته',
-            'weekly'    => 'هفته',
-            'monthly'   => 'ماه',
+            'last_hour' => 'Last Hour',
+            'hourly'    => 'Last 12 Hours',
+            'weekly'    => 'Week',
+            'monthly'   => 'Month',
         ],
     ],
 
     // Subscriber
     'subscriber' => [
-        'subscribe'           => 'مشترک شوید تا از آخرین به‌روزرسانی‌ها آگاه شوید',
+        'subscribe'           => 'Subscribe to get the updates',
         'unsubscribe'         => 'Unsubscribe',
-        'button'              => 'اشتراک اطلاع‌رسانی',
+        'button'              => 'Subscribe',
         'manage_subscription' => 'Manage subscription',
         'manage'              => [
-            'no_subscriptions' => 'در حال حاضر شما برای همه به‌روزرسانی‌ها مشترک هستید.',
-            'my_subscriptions' => 'در حال حاضر شما برای این به‌روزرسانی‌ها مشترک هستید.',
+            'no_subscriptions' => 'You\'re currently subscribed to all updates.',
+            'my_subscriptions' => 'You\'re currently subscribed to the following updates.',
             'manage_at_link'   => 'Manage your subscriptions at :link',
         ],
         'email' => [
-            'subscribe'          => 'اشتراک در به‌روزرسانی‌های ایمیلی.',
-            'subscribed'         => 'شما در اطلاع‌رسانی‌های ایمیلی مشترک هستید، لطفا ایمیل خود را جهت تایید اشتراک، کنترل نمایید.',
-            'verified'           => 'ایمیل اشتراک شما با موفقیت تایید شد. با تشکر!',
+            'subscribe'          => 'Subscribe to email updates.',
+            'subscribed'         => 'You\'ve been subscribed to email notifications, please check your email to confirm your subscription.',
+            'verified'           => 'Your email subscription has been confirmed. Thank you!',
             'manage'             => 'Manage your subscription',
-            'unsubscribe'        => 'لغو اشتراک ایمیلی برای به‌روزرسانی‌ها.',
-            'unsubscribed'       => 'اشتراک ایمیلی شما لغو گردید.',
-            'failure'            => 'هنگام عضویت اشتراک خطایی رخ داد.',
-            'already-subscribed' => 'امکان مشترک شدن :email وجود ندارد، زیرا در حال حاضر این ایمیل مشترک می‌باشد.',
+            'unsubscribe'        => 'Unsubscribe from email updates.',
+            'unsubscribed'       => 'Your email subscription has been cancelled.',
+            'failure'            => 'Something went wrong with the subscription.',
+            'already-subscribed' => 'Cannot subscribe :email because they\'re already subscribed.',
         ],
     ],
 
     'signup' => [
-        'title'    => 'نام‌نویسی',
-        'username' => 'نام‌کاربری',
-        'email'    => 'ایمیل',
-        'password' => 'رمزعبور',
-        'success'  => 'حساب کاربری شما ایجاد گردید.',
+        'title'    => 'Sign Up',
+        'username' => 'Username',
+        'email'    => 'Email',
+        'password' => 'Password',
+        'success'  => 'Your account has been created.',
         'failure'  => 'Something went wrong with the signup.',
     ],
 
@@ -111,11 +111,11 @@ return [
 
     // Modal
     'modal' => [
-        'close'     => 'بستن',
+        'close'     => 'Close',
         'subscribe' => [
             'title'  => 'Subscribe to component updates',
             'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll already receive emails for this component.',
-            'button' => 'اشتراک اطلاع‌رسانی',
+            'button' => 'Subscribe',
         ],
     ],
 
@@ -130,12 +130,12 @@ return [
     ],
 
     // Other
-    'home'            => 'خانه',
+    'home'            => 'Home',
     'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
     'timezone'        => 'Times are shown in :timezone.',
-    'about_this_site' => 'درباره این سایت',
-    'rss-feed'        => 'خوراک (RSS)',
-    'atom-feed'       => 'خوراک (Atom)',
-    'feed'            => 'فید (خوراک) وضعیت',
+    'about_this_site' => 'About This Site',
+    'rss-feed'        => 'RSS',
+    'atom-feed'       => 'Atom',
+    'feed'            => 'Status Feed',
 
 ];
