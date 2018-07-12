@@ -28,15 +28,15 @@ return [
     'alpha'      => ':attribute kan kun inneholde bokstaver.',
     'alpha_dash' => ':attribute kan kun inneholde bokstaver, tall og bindestreker.',
     'alpha_num'  => ':attribute kan bare inneholde bokstaver og tall.',
-    'array'      => ':attribute må være en matrise.',
+    'array'      => 'The :attribute must be an array.',
     'before'     => ':attribute må være en dato før :date.',
     'between'    => [
-        'numeric' => 'Attributt :attribute må være mellom :min og :max.',
+        'numeric' => 'The :attribute must be between :min and :max.',
         'file'    => ':attribute må være mellom :min og :max kilobyte.',
-        'string'  => ':attribute må være mellom :min og :max tegn.',
-        'array'   => ':attribute må være mellom :min og :max elementer.',
+        'string'  => 'The :attribute must be between :min and :max characters.',
+        'array'   => 'The :attribute must have between :min and :max items.',
     ],
-    'boolean'        => ':attribute feltet må være true eller false.',
+    'boolean'        => 'The :attribute field must be true or false.',
     'confirmed'      => ':attribute bekreftelsen samsvarer ikke.',
     'date'           => ':attribute er ikke en gyldig dato.',
     'date_format'    => ':attribute passer ikke med formatet :format.',
@@ -45,7 +45,7 @@ return [
     'digits_between' => ':attribute må være mellom :min og :max sifre.',
     'email'          => ':attribute må være en gyldig e-postadresse.',
     'exists'         => 'Valgte :attribute er ugyldig.',
-    'distinct'       => ':attribute har en duplikat verdi.',
+    'distinct'       => 'The :attribute field has a duplicate value.',
     'filled'         => 'Feltet :attribute er påkrevd.',
     'image'          => ':attribute må være et bilde.',
     'in'             => 'Valgte :attribute er ugyldig.',
@@ -62,7 +62,7 @@ return [
     'mimes' => ':attribute må være en fil av typen: :values.',
     'min'   => [
         'numeric' => ':attribute må være minst :min.',
-        'file'    => ':attribute må være minst :min kilobyte.',
+        'file'    => 'The :attribute must be at least :min kilobytes.',
         'string'  => ':attribute må ha minst :min tegn.',
         'array'   => ':attribute må ha minst :min elementer.',
     ],
@@ -72,7 +72,7 @@ return [
     'regex'                => ':attribute formatet er ugyldig.',
     'required'             => 'Feltet :attribute er påkrevd.',
     'required_if'          => ':attribute er påkrevd når :other er :value.',
-    'required_unless'      => 'Feltet :attribute kreves med mindre :other er :values.',
+    'required_unless'      => 'The :attribute field is required unless :other is in :values.',
     'required_with'        => ':attribute feltet kreves når :values er til stede.',
     'required_with_all'    => ':attribute feltet kreves når :values er til stede.',
     'required_without'     => ':attribute er påkrevd når :values ikke er tilstede.',
@@ -80,13 +80,13 @@ return [
     'same'                 => ':attribute og :other må være like.',
     'size'                 => [
         'numeric' => ':attribute må være :size.',
-        'file'    => ':attribute må være :size kilobyte.',
+        'file'    => 'The :attribute must be :size kilobytes.',
         'string'  => ':attribute må være :size tegn.',
         'array'   => ':attribute må inneholde :size elementer.',
     ],
     'string'   => ':attribute må være en tekst.',
-    'timezone' => ':attribute må være en gyldig tidssone.',
-    'unique'   => ':attribute er allerede tatt.',
+    'timezone' => 'The :attribute must be a valid zone.',
+    'unique'   => 'The :attribute has already been taken.',
     'url'      => ':attribute formatet er ugyldig.',
 
     /*
@@ -102,7 +102,7 @@ return [
 
     'custom' => [
         'attribute-name' => [
-            'rule-name' => 'tilpasset melding',
+            'rule-name' => 'custom-message',
         ],
     ],
 
