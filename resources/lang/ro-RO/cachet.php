@@ -14,7 +14,7 @@ return [
     'components' => [
         'last_updated' => 'Ultima actualizare :timestamp',
         'status'       => [
-            0 => 'Necunoscut',
+            0 => 'Unknown',
             1 => 'Operaţional',
             2 => 'Probleme de performanţă',
             3 => 'Ȋntrerupere parțială',
@@ -29,10 +29,10 @@ return [
     'incidents' => [
         'none'         => 'Nici un incident raportat',
         'past'         => 'Incidente anterioare',
-        'stickied'     => 'Incidente fixate',
-        'scheduled'    => 'Întreținere programată',
+        'stickied'     => 'Stickied Incidents',
+        'scheduled'    => 'Maintenance',
         'scheduled_at' => ', programată: timestamp',
-        'posted'       => 'Publicat :timestamp',
+        'posted'       => 'Posted :timestamp',
         'posted_at'    => 'Posted at :timestamp',
         'status'       => [
             1 => 'Sub investigație',
@@ -45,17 +45,17 @@ return [
     // Schedule
     'schedules' => [
         'status' => [
-            0 => 'Urmează',
-            1 => 'În progres',
-            2 => 'Terminat',
+            0 => 'Upcoming',
+            1 => 'In Progress',
+            2 => 'Complete',
         ],
     ],
 
     // Service Status
     'service' => [
         'good'  => '[0,1]System operational|[2,*]All systems are operational',
-        'bad'   => '[0,1] Sistemul se confruntă cu probleme|[2,Inf] Unele sisteme se confruntă cu probleme',
-        'major' => '[0,1] Serviciul se confruntă cu o întrerupere a funcționării majoră| [2, Inf] Unele sisteme se confruntă cu întreruperi de funcţionare majore',
+        'bad'   => '[0,1]The system is experiencing issues|[2,*]Some systems are experiencing issues',
+        'major' => '[0,1]The system is experiencing major issues|[2,*]Some systems are experiencing major issues',
     ],
 
     'api' => [
@@ -132,7 +132,7 @@ return [
     // Other
     'home'            => 'Acasă',
     'powered_by'      => 'Cu sprijinul <a href="https://cachethq.io" class="links">Cachet</a>.',
-    'timezone'        => 'Orele sunt afișate după fusul orar :timezone.',
+    'timezone'        => 'Times are shown in :timezone.',
     'about_this_site' => 'Despre acest Site',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',
