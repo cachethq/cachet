@@ -1,7 +1,7 @@
 @if($metrics->count() > 0)
 <ul class="list-group">
     @foreach($metrics as $metric)
-    <li class="list-group-item metric" data-metric-id="{{ $metric->id }}">
+    <li class="list-group-item metric" data-metric-id="{{ $metric->id }}" id="data-metric-{{ $metric->id }}">
         <div class="row">
             <div class="col-xs-10">
                 <strong>
