@@ -156,7 +156,7 @@ return [
             'time_before_refresh'                   => 'crwdns1434:0crwdne1434:0',
             'major_outage_rate'                     => 'crwdns1444:0crwdne1444:0',
             'banner'                                => 'crwdns1195:0crwdne1195:0',
-            'banner-help'                           => "crwdns1435:0crwdne1435:0",
+            'banner-help'                           => 'crwdns1435:0crwdne1435:0',
             'subscribers'                           => 'crwdns1197:0crwdne1197:0',
             'suppress_notifications_in_maintenance' => 'crwdns1427:0crwdne1427:0',
             'skip_subscriber_verification'          => 'crwdns1198:0crwdne1198:0',
