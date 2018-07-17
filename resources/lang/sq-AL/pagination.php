@@ -22,7 +22,7 @@ return [
     |
     */
 
-    'previous' => 'I meparshem',
-    'next'     => 'Tjeter',
+    'previous' => 'Previous',
+    'next'     => 'Next',
 
 ];

@@ -16,26 +16,26 @@ return [
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Incidents &amp; Planification',
+        'title'                    => 'Incidents & Maintenance',
         'incidents'                => 'Incidents',
-        'logged'                   => '{0}Aucun incident, félicitations!.|[1]Vous avez signalé un incident|[2,*]Vous avez signalé <strong>:count</strong> incidents.',
+        'logged'                   => '{0}There are no incidents, good work.|[1]You have logged one incident.|[2,*]You have reported <strong>:count</strong> incidents.',
         'incident-create-template' => 'Créer un modèle',
         'incident-templates'       => 'Modèles d\'incident',
         'updates'                  => [
-            'title'   => 'Incident mis à jour pour : incident',
-            'count'   => '{0} Aucune mise à jour|[1] Une mise à jour|[2] Deux mises à jour|[3,*] Plusieurs mises à jour',
+            'title'   => 'Incident updates for :incident',
+            'count'   => '{0}Zero Updates|[1]One Update|[2]Two Updates|[3,*]Several Updates',
             'add'     => [
                 'title'   => 'Créer une mise à jour d\'incident',
-                'success' => 'Votre nouvelle mise à jour d\'incident a été créée.',
-                'failure' => 'Un problème est survenu lors de la mise à jour de l\'incident.',
+                'success' => 'Your new incident update has been created.',
+                'failure' => 'Something went wrong with the incident update.',
             ],
             'edit' => [
-                'title'   => 'Éditer la mise à jour de l\'incident',
-                'success' => 'La mise à jour de l\'incident a été mise à jour.',
-                'failure' => 'Un problème est survenu lors de la mise à jour de l\'incident',
+                'title'   => 'Edit incident update',
+                'success' => 'The incident update has been updated.',
+                'failure' => 'Something went wrong updating the incident update',
             ],
         ],
-        'reported_by'              => 'Signalé par :user',
+        'reported_by'              => 'Reported by :user',
         'add'                      => [
             'title'   => 'Ajouter un incident',
             'success' => 'Incident ajouté.',
@@ -56,7 +56,7 @@ return [
             'title' => 'Modèles d\'incident',
             'add'   => [
                 'title'   => 'Créer un modèle d\'incident',
-                'message' => 'Vous devriez ajouter un modèle d\'incident.',
+                'message' => 'Create your first incident template.',
                 'success' => 'Votre nouveau modèle d\'incident a été créé.',
                 'failure' => 'Une erreur est survenue avec le modèle d\'incident.',
             ],
@@ -74,22 +74,22 @@ return [
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => 'Maintenance Planifiée',
-        'logged'       => '{0} Aucune maintenance en cours, félicitations.|[1]Vous avez une maintenance planifiée.|[2,*]Vous avez <strong>:count</strong> maintenances de planifiées.',
+        'schedule'     => 'Maintenance',
+        'logged'       => '{0}There has been no Maintenance, good work.|[1]You have logged one schedule.|[2,*]You have reported <strong>:count</strong> schedules.',
         'scheduled_at' => 'Planifiée à :timestamp',
         'add'          => [
-            'title'   => 'Ajouter une maintenance planifiée',
-            'success' => 'Planification ajoutée.',
-            'failure' => 'Une erreur est survenue lors de l\'ajout de la planification, veuillez réessayer.',
+            'title'   => 'Add Maintenance',
+            'success' => 'Maintenance added.',
+            'failure' => 'Something went wrong adding the Maintenance, please try again.',
         ],
         'edit' => [
-            'title'   => 'Modifier la maintenance planifiée',
-            'success' => 'La planification a été mise à jour !',
-            'failure' => 'Une erreur est survenue lors de l\'édition de la planification.',
+            'title'   => 'Edit Maintenance',
+            'success' => 'Maintenance has been updated!',
+            'failure' => 'Something went wrong editing the Maintenance, please try again.',
         ],
         'delete' => [
-            'success' => 'La planification a été supprimée et ne sera pas affichée sur votre page de statut.',
-            'failure' => 'La maintenance planifiée n\'a pas pu être supprimée. Veuillez réessayer.',
+            'success' => 'The Maintenance has been deleted and will not show on your status page.',
+            'failure' => 'The Maintenance could not be deleted, please try again.',
         ],
     ],
 
@@ -158,12 +158,12 @@ return [
     'subscribers' => [
         'subscribers'          => 'Abonnés',
         'description'          => 'Les abonnés recevront des notifications par e-mail lorsque des incidents sont créés ou des composants sont mis à jour.',
-        'description_disabled' => 'Pour utiliser cette fonctionnalité, vous devez autoriser les utilisateurs de s\'abonner aux notifications.',
+        'description_disabled' => 'To use this feature, you need allow people to signup for notifications.',
         'verified'             => 'Vérifié',
         'not_verified'         => 'Non vérifié',
         'subscriber'           => ':email, abonné à :date',
         'no_subscriptions'     => 'Souscrire à toutes les mises à jour',
-        'global'               => 'Abonné globalement',
+        'global'               => 'Globally subscribed',
         'add'                  => [
             'title'   => 'Ajouter un abonné',
             'success' => 'L\'abonné a été ajouté !',
@@ -231,7 +231,7 @@ return [
             'test'  => 'Test',
             'email' => [
                 'subject' => 'Tester la notification depuis Cachet',
-                'body'    => 'Voici un test de notification depuis Cachet.',
+                'body'    => 'Ceci est une notification de test depuis Cachet.',
             ],
         ],
         'security' => [

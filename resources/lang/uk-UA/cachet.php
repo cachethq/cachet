@@ -12,110 +12,110 @@
 return [
     // Components
     'components' => [
-        'last_updated' => 'Останнє оновлення :timestamp',
+        'last_updated' => 'Last updated :timestamp',
         'status'       => [
-            0 => 'Невiдомий',
-            1 => 'Працює',
-            2 => 'Проблеми з продуктивністю',
-            3 => 'Частковий перебій у роботі',
-            4 => 'Перебій у роботі',
+            0 => 'Unknown',
+            1 => 'Operational',
+            2 => 'Performance Issues',
+            3 => 'Partial Outage',
+            4 => 'Major Outage',
         ],
         'group' => [
-            'other' => 'Інші компоненти',
+            'other' => 'Other Components',
         ],
     ],
 
     // Incidents
     'incidents' => [
-        'none'         => 'Інцидентів не було',
-        'past'         => 'Минулі інциденти',
-        'stickied'     => 'Stickied інциденти',
-        'scheduled'    => 'Запланована перерва у роботі',
-        'scheduled_at' => ', заплановано на :timestamp',
-        'posted'       => 'Опубліковано :timestamp',
+        'none'         => 'No incidents reported',
+        'past'         => 'Past Incidents',
+        'stickied'     => 'Stickied Incidents',
+        'scheduled'    => 'Maintenance',
+        'scheduled_at' => ', scheduled :timestamp',
+        'posted'       => 'Posted :timestamp',
         'posted_at'    => 'Posted at :timestamp',
         'status'       => [
-            1 => 'Розслідування',
-            2 => 'Ідентифікований',
-            3 => 'Спостереження',
-            4 => 'Виправлено',
+            1 => 'Investigating',
+            2 => 'Identified',
+            3 => 'Watching',
+            4 => 'Fixed',
         ],
     ],
 
     // Schedule
     'schedules' => [
         'status' => [
-            0 => 'Майбутні',
-            1 => 'Виконується',
-            2 => 'Завершено',
+            0 => 'Upcoming',
+            1 => 'In Progress',
+            2 => 'Complete',
         ],
     ],
 
     // Service Status
     'service' => [
         'good'  => '[0,1]System operational|[2,*]All systems are operational',
-        'bad'   => '[0,1] Система має проблеми | [2, Inf] Деякі системи мають проблеми',
-        'major' => '[0,1] Система має значні проблеми |[2,Inf] Декілька систем мають значні проблеми',
+        'bad'   => '[0,1]The system is experiencing issues|[2,*]Some systems are experiencing issues',
+        'major' => '[0,1]The system is experiencing major issues|[2,*]Some systems are experiencing major issues',
     ],
 
     'api' => [
-        'regenerate' => 'Оновити ключ API',
-        'revoke'     => 'Відкликати ключ API',
+        'regenerate' => 'Regenerate API Key',
+        'revoke'     => 'Revoke API Key',
     ],
 
     // Metrics
     'metrics' => [
         'filter' => [
-            'last_hour' => 'Останню годину',
-            'hourly'    => 'Останні 12 годин',
-            'weekly'    => 'Тиждень',
-            'monthly'   => 'Місяць',
+            'last_hour' => 'Last Hour',
+            'hourly'    => 'Last 12 Hours',
+            'weekly'    => 'Week',
+            'monthly'   => 'Month',
         ],
     ],
 
     // Subscriber
     'subscriber' => [
-        'subscribe'           => 'Підписатись на оновлення',
+        'subscribe'           => 'Subscribe to get the updates',
         'unsubscribe'         => 'Unsubscribe',
-        'button'              => 'Підписатись',
+        'button'              => 'Subscribe',
         'manage_subscription' => 'Manage subscription',
         'manage'              => [
-            'no_subscriptions' => 'Наразі, ви підписані на всі оновлення.',
-            'my_subscriptions' => 'Ви уже підписані до цих оновлень.',
+            'no_subscriptions' => 'You\'re currently subscribed to all updates.',
+            'my_subscriptions' => 'You\'re currently subscribed to the following updates.',
             'manage_at_link'   => 'Manage your subscriptions at :link',
         ],
         'email' => [
-            'subscribe'          => 'Підписатись на email оновлення.',
-            'subscribed'         => 'Ви підписались на розсилку email оновлень. Перевірте вашу пошту, для підтвердження підписки.',
-            'verified'           => 'Ваша підписка підтверджена. Дякую!',
-            'manage'             => 'Керування підпискою',
-            'unsubscribe'        => 'Відписатись від розсилки.',
-            'unsubscribed'       => 'Ваша відписка видалена.',
-            'failure'            => 'Відбулась помилка при підписці на розсилку.',
-            'already-subscribed' => 'Неможливо підписатись на :email, тому що на нього вже оформлена підписка.',
+            'subscribe'          => 'Subscribe to email updates.',
+            'subscribed'         => 'You\'ve been subscribed to email notifications, please check your email to confirm your subscription.',
+            'verified'           => 'Your email subscription has been confirmed. Thank you!',
+            'manage'             => 'Manage your subscription',
+            'unsubscribe'        => 'Unsubscribe from email updates.',
+            'unsubscribed'       => 'Your email subscription has been cancelled.',
+            'failure'            => 'Something went wrong with the subscription.',
+            'already-subscribed' => 'Cannot subscribe :email because they\'re already subscribed.',
         ],
     ],
 
     'signup' => [
-        'title'    => 'Зареєструйтесь',
-        'username' => 'Ім’я користувача',
-        'email'    => 'Електронна пошта',
-        'password' => 'Пароль',
-        'success'  => 'Ваш акаунт був створений.',
-        'failure'  => 'Щось пішло не так з реєстрацією.',
+        'title'    => 'Sign Up',
+        'username' => 'Username',
+        'email'    => 'Email',
+        'password' => 'Password',
+        'success'  => 'Your account has been created.',
+        'failure'  => 'Something went wrong with the signup.',
     ],
 
     'system' => [
-        'update' => 'Існує новіша версія Cachet. Ви можете дізнатися, як оновити систему <a href="https://docs.cachethq.io/docs/updating-cachet"> тут</a>!',
+        'update' => 'There is a newer version of Cachet available. You can learn how to update <a href="https://docs.cachethq.io/docs/updating-cachet">here</a>!',
     ],
 
     // Modal
     'modal' => [
-        'close'     => 'Закрити',
+        'close'     => 'Close',
         'subscribe' => [
-            'title'  => 'Підписатись на оновлення компонента',
-            'body'   => 'Введіть вашу адресу електронної пошти, щоб підписатися на оновлення для цього компонента. Якщо ви вже підписані, вам надійде електронною поштою повідомлення для цього компонента.',
-            'button' => 'Підписатись',
+            'title'  => 'Subscribe to component updates',
+            'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll already receive emails for this component.',
+            'button' => 'Subscribe',
         ],
     ],
 
@@ -125,17 +125,17 @@ return [
             'incident'  => 'Details and updates about the :name incident that occurred on :date',
             'schedule'  => 'Details about the scheduled maintenance period :name starting :startDate',
             'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
-            'overview'  => 'Залишатись в курсі останніх оновлень стану :app.',
+            'overview'  => 'Stay up to date with the latest service updates from :app.',
         ],
     ],
 
     // Other
-    'home'            => 'Домашня сторінка',
-    'powered_by'      => 'Розроблено <a href="https://cachethq.io" class="links">Cachet</a>.',
-    'timezone'        => 'Часовий пояс :timezone.',
-    'about_this_site' => 'Про сайт',
+    'home'            => 'Home',
+    'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
+    'timezone'        => 'Times are shown in :timezone.',
+    'about_this_site' => 'About This Site',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',
-    'feed'            => 'Новини стану',
+    'feed'            => 'Status Feed',
 
 ];

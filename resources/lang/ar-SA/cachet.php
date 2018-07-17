@@ -12,42 +12,42 @@
 return [
     // Components
     'components' => [
-        'last_updated' => 'آخر تحديث :timestamp',
+        'last_updated' => 'Last updated :timestamp',
         'status'       => [
-            0 => 'مجهول',
-            1 => 'تشغيل',
-            2 => 'مشاكل أداء',
-            3 => 'إنقطاع جزئي',
-            4 => 'إنقطاع أساسي',
+            0 => 'Unknown',
+            1 => 'Operational',
+            2 => 'Performance Issues',
+            3 => 'Partial Outage',
+            4 => 'Major Outage',
         ],
         'group' => [
-            'other' => 'مكونات أخرى',
+            'other' => 'Other Components',
         ],
     ],
 
     // Incidents
     'incidents' => [
-        'none'         => 'لا توجد حالات تم الإبلاغ عنها',
-        'past'         => 'الأعطال السابقة',
-        'stickied'     => 'أعطال مثبتة',
-        'scheduled'    => 'صيانة',
-        'scheduled_at' => ', مجدولة :timestamp',
-        'posted'       => 'تم الإرسال :timestamp',
-        'posted_at'    => 'نُشِر على :timestamp',
+        'none'         => 'No incidents reported',
+        'past'         => 'Past Incidents',
+        'stickied'     => 'Stickied Incidents',
+        'scheduled'    => 'Maintenance',
+        'scheduled_at' => ', scheduled :timestamp',
+        'posted'       => 'Posted :timestamp',
+        'posted_at'    => 'Posted at :timestamp',
         'status'       => [
-            1 => 'عملية التحقق جارية',
-            2 => 'تم التعرف عليه',
-            3 => 'تحت المراقبة',
-            4 => 'تمّ إصلاحه',
+            1 => 'Investigating',
+            2 => 'Identified',
+            3 => 'Watching',
+            4 => 'Fixed',
         ],
     ],
 
     // Schedule
     'schedules' => [
         'status' => [
-            0 => 'القادم',
-            1 => 'جار المعالجة',
-            2 => 'مكتملة',
+            0 => 'Upcoming',
+            1 => 'In Progress',
+            2 => 'Complete',
         ],
     ],
 
@@ -59,50 +59,50 @@ return [
     ],
 
     'api' => [
-        'regenerate' => 'إعادة إنشاء مفتاح الواجهة البرمجية',
-        'revoke'     => 'إزالة مفتاح الواجهة البرمجية',
+        'regenerate' => 'Regenerate API Key',
+        'revoke'     => 'Revoke API Key',
     ],
 
     // Metrics
     'metrics' => [
         'filter' => [
-            'last_hour' => 'آخِر ساعة',
-            'hourly'    => 'آخر 12 ساعة',
-            'weekly'    => 'أسبوع',
-            'monthly'   => 'شهر',
+            'last_hour' => 'Last Hour',
+            'hourly'    => 'Last 12 Hours',
+            'weekly'    => 'Week',
+            'monthly'   => 'Month',
         ],
     ],
 
     // Subscriber
     'subscriber' => [
-        'subscribe'           => 'إشترك للحصول على التحديثات',
+        'subscribe'           => 'Subscribe to get the updates',
         'unsubscribe'         => 'Unsubscribe',
-        'button'              => 'اشتراك',
+        'button'              => 'Subscribe',
         'manage_subscription' => 'Manage subscription',
         'manage'              => [
-            'no_subscriptions' => 'أنت الآن مشترك للحصول على جميع التحديثات.',
-            'my_subscriptions' => 'إنك مشترك حاليا في التحديثات التالية.',
+            'no_subscriptions' => 'You\'re currently subscribed to all updates.',
+            'my_subscriptions' => 'You\'re currently subscribed to the following updates.',
             'manage_at_link'   => 'Manage your subscriptions at :link',
         ],
         'email' => [
-            'subscribe'          => 'إشترك في تحديثات البريد الإلكتروني.',
-            'subscribed'         => 'تم تسجيلك في خدمة الإشعارات عبر البريد الإلكتروني، يُرجى تفقد بريدك الإلكتروني لتأكيد اشتراكك.',
-            'verified'           => 'تم تأكيد الإشتراك عبر بريدك الإلكتروني. شكراً لك !',
-            'manage'             => 'إدارة اشتراكاتك',
-            'unsubscribe'        => 'إلغاء الإشتراك من خدمة التحديثات عبر البريد الإلكتروني.',
-            'unsubscribed'       => 'تم إلغاء إشتراك بريدك الإلكتروني.',
-            'failure'            => 'حدث خلل أثناء الإشتراك.',
-            'already-subscribed' => 'لا يمكن الاشتراك عبر :emailلأنه مُشترك مِن قبل.',
+            'subscribe'          => 'Subscribe to email updates.',
+            'subscribed'         => 'You\'ve been subscribed to email notifications, please check your email to confirm your subscription.',
+            'verified'           => 'Your email subscription has been confirmed. Thank you!',
+            'manage'             => 'Manage your subscription',
+            'unsubscribe'        => 'Unsubscribe from email updates.',
+            'unsubscribed'       => 'Your email subscription has been cancelled.',
+            'failure'            => 'Something went wrong with the subscription.',
+            'already-subscribed' => 'Cannot subscribe :email because they\'re already subscribed.',
         ],
     ],
 
     'signup' => [
-        'title'    => 'تسجيل حساب',
-        'username' => 'إسم المستخدِم',
-        'email'    => 'بريد إلكتروني',
-        'password' => 'كلمة السر',
+        'title'    => 'Sign Up',
+        'username' => 'Username',
+        'email'    => 'Email',
+        'password' => 'Password',
         'success'  => 'Your account has been created.',
-        'failure'  => 'حدث خطأ أثناء عملية تسجيل الحساب.',
+        'failure'  => 'Something went wrong with the signup.',
     ],
 
     'system' => [
@@ -111,11 +111,11 @@ return [
 
     // Modal
     'modal' => [
-        'close'     => 'إغلاق',
+        'close'     => 'Close',
         'subscribe' => [
             'title'  => 'Subscribe to component updates',
             'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll already receive emails for this component.',
-            'button' => 'اشتراك',
+            'button' => 'Subscribe',
         ],
     ],
 
@@ -130,10 +130,10 @@ return [
     ],
 
     // Other
-    'home'            => 'الرئيسية',
+    'home'            => 'Home',
     'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
     'timezone'        => 'Times are shown in :timezone.',
-    'about_this_site' => 'عن هذا الموقع',
+    'about_this_site' => 'About This Site',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',
     'feed'            => 'Status Feed',

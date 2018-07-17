@@ -16,7 +16,7 @@ return [
                 'subject'  => 'Component Status Updated',
                 'greeting' => 'A component\'s status was updated!',
                 'content'  => ':name status changed from :old_status to :new_status.',
-                'action'   => 'Подання',
+                'action'   => 'View',
             ],
             'slack' => [
                 'title'   => 'Component Status Updated',
@@ -30,25 +30,25 @@ return [
     'incident' => [
         'new' => [
             'mail' => [
-                'subject'  => 'Нове повідомлення про інцидент',
-                'greeting' => 'Нове повідомлення про інцидент на сторінці :app_name.',
-                'content'  => 'Інцидент: ім\'я було повідомлено',
-                'action'   => 'Подання',
+                'subject'  => 'New Incident Reported',
+                'greeting' => 'A new incident was reported at :app_name.',
+                'content'  => 'Incident :name was reported',
+                'action'   => 'View',
             ],
             'slack' => [
-                'title'   => 'Інцидент: ім\'я повідомлено',
-                'content' => 'Нове повідомлення про інцидент на сторінці :app_name',
+                'title'   => 'Incident :name Reported',
+                'content' => 'A new incident was reported at :app_name',
             ],
             'sms' => [
-                'content' => 'Нове повідомлення про інцидент на сторінці :app_name.',
+                'content' => 'A new incident was reported at :app_name.',
             ],
         ],
         'update' => [
             'mail' => [
-                'subject' => 'Інцидент оновлено',
+                'subject' => 'Incident Updated',
                 'content' => ':name was updated',
                 'title'   => ':name was updated to :new_status',
-                'action'  => 'Подання',
+                'action'  => 'View',
             ],
             'slack' => [
                 'title'   => ':name Updated',
@@ -65,7 +65,7 @@ return [
                 'subject' => 'New Schedule Created',
                 'content' => ':name was scheduled for :date',
                 'title'   => 'A new scheduled maintenance was created.',
-                'action'  => 'Подання',
+                'action'  => 'View',
             ],
             'slack' => [
                 'title'   => 'New Schedule Created!',
@@ -101,7 +101,7 @@ return [
                 'subject' => 'Your invitation is inside...',
                 'content' => 'You have been invited to join :app_name status page.',
                 'title'   => 'You\'re invited to join :app_name status page.',
-                'action'  => 'Прийняти',
+                'action'  => 'Accept',
             ],
         ],
     ],

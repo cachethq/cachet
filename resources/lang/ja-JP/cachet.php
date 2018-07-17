@@ -29,7 +29,7 @@ return [
     'incidents' => [
         'none'         => 'インシデントはありません',
         'past'         => 'インシデント履歴',
-        'stickied'     => 'ピン留めインシデント',
+        'stickied'     => 'Stickied Incidents',
         'scheduled'    => '計画メンテナンス',
         'scheduled_at' => ', 予定日時 :timestamp',
         'posted'       => '掲載日時 :timestamp',
@@ -98,9 +98,9 @@ return [
 
     'signup' => [
         'title'    => '新規登録',
-        'username' => 'ユーザー名',
+        'username' => 'Username',
         'email'    => 'Email',
-        'password' => 'パスワード',
+        'password' => 'Password',
         'success'  => 'アカウントが作成されました。',
         'failure'  => '新規登録に失敗しました。',
     ],

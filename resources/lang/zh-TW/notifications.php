@@ -13,84 +13,84 @@ return [
     'component' => [
         'status_update' => [
             'mail' => [
-                'subject'  => '元件狀態已更新',
-                'greeting' => '一個元件的狀態已被更新！',
-                'content'  => ':name 狀態已從 :old_status 更改為 :new_status。',
-                'action'   => '檢視',
+                'subject'  => 'Component Status Updated',
+                'greeting' => 'A component\'s status was updated!',
+                'content'  => ':name status changed from :old_status to :new_status.',
+                'action'   => 'View',
             ],
             'slack' => [
-                'title'   => '元件狀態已更新',
-                'content' => ':name 狀態已從 :old_status 更改為 :new_status。',
+                'title'   => 'Component Status Updated',
+                'content' => ':name status changed from :old_status to :new_status.',
             ],
             'sms' => [
-                'content' => ':name 狀態已從 :old_status 更改為 :new_status。',
+                'content' => ':name status changed from :old_status to :new_status.',
             ],
         ],
     ],
     'incident' => [
         'new' => [
             'mail' => [
-                'subject'  => '已報告新的事件',
-                'greeting' => '在 :app_name 中有新的事件報告。',
-                'content'  => '事件 :name 已報告',
-                'action'   => '檢視',
+                'subject'  => 'New Incident Reported',
+                'greeting' => 'A new incident was reported at :app_name.',
+                'content'  => 'Incident :name was reported',
+                'action'   => 'View',
             ],
             'slack' => [
-                'title'   => '事件 :name 已報告',
-                'content' => '在 :app_name 中有新的事件報告。',
+                'title'   => 'Incident :name Reported',
+                'content' => 'A new incident was reported at :app_name',
             ],
             'sms' => [
-                'content' => '在 :app_name 中有新的事件報告。',
+                'content' => 'A new incident was reported at :app_name.',
             ],
         ],
         'update' => [
             'mail' => [
-                'subject' => '事件更新成功',
-                'content' => ':name 已更新',
-                'title'   => ':name 已更新為 :new_status',
-                'action'  => '檢視',
+                'subject' => 'Incident Updated',
+                'content' => ':name was updated',
+                'title'   => ':name was updated to :new_status',
+                'action'  => 'View',
             ],
             'slack' => [
-                'title'   => ':name 已更新',
-                'content' => ':name 已更新為 :new_status',
+                'title'   => ':name Updated',
+                'content' => ':name was updated to :new_status',
             ],
             'sms' => [
-                'content' => '事件 :name 已被更新',
+                'content' => 'Incident :name was updated',
             ],
         ],
     ],
     'schedule' => [
         'new' => [
             'mail' => [
-                'subject' => '創建了新的維護計畫',
-                'content' => ':name 已預定於 :date 執行',
-                'title'   => '創建了新的定時維護。',
-                'action'  => '檢視',
+                'subject' => 'New Schedule Created',
+                'content' => ':name was scheduled for :date',
+                'title'   => 'A new scheduled maintenance was created.',
+                'action'  => 'View',
             ],
             'slack' => [
-                'title'   => '創建了新的維護計畫！',
-                'content' => ':name 已預定於 :date 執行',
+                'title'   => 'New Schedule Created!',
+                'content' => ':name was scheduled for :date',
             ],
             'sms' => [
-                'content' => ':name 已預定於 :date 執行',
+                'content' => ':name was scheduled for :date',
             ],
         ],
     ],
     'subscriber' => [
         'verify' => [
             'mail' => [
-                'subject' => '驗證您的訂閱',
-                'content' => '按一下以驗證您在狀態頁 :app_name 的訂閱。',
-                'title'   => '驗證您在狀態頁 :app_name 的訂閱。',
-                'action'  => '驗證',
+                'subject' => 'Verify Your Subscription',
+                'content' => 'Click to verify your subscription to :app_name status page.',
+                'title'   => 'Verify your subscription to :app_name status page.',
+                'action'  => 'Verify',
             ],
         ],
     ],
     'system' => [
         'test' => [
             'mail' => [
-                'subject' => '這是來自 Cachet 的消息！',
-                'content' => '這是來自 Cachet 的測試郵件！',
+                'subject' => 'Ping from Cachet!',
+                'content' => 'This is a test notification from Cachet!',
                 'title'   => '🔔',
             ],
         ],
@@ -98,10 +98,10 @@ return [
     'user' => [
         'invite' => [
             'mail' => [
-                'subject' => '這是您的邀請函',
-                'content' => '您已被邀請加入 :app_name 狀態頁。',
-                'title'   => '您被邀請加入 :app_name 狀態頁。',
-                'action'  => '接受',
+                'subject' => 'Your invitation is inside...',
+                'content' => 'You have been invited to join :app_name status page.',
+                'title'   => 'You\'re invited to join :app_name status page.',
+                'action'  => 'Accept',
             ],
         ],
     ],

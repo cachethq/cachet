@@ -13,84 +13,84 @@ return [
     'component' => [
         'status_update' => [
             'mail' => [
-                'subject'  => 'Bileşen Durumu Güncellendi',
-                'greeting' => 'Bir bileşenin durumu güncellendi!',
-                'content'  => ':name status :old_status\'tan: new_status olarak değiştirildi.',
-                'action'   => 'Görüntüle',
+                'subject'  => 'Component Status Updated',
+                'greeting' => 'A component\'s status was updated!',
+                'content'  => ':name status changed from :old_status to :new_status.',
+                'action'   => 'View',
             ],
             'slack' => [
-                'title'   => 'Bileşen Durumu Güncellendi',
-                'content' => ':name status :old_status\'tan: new_status olarak değiştirildi.',
+                'title'   => 'Component Status Updated',
+                'content' => ':name status changed from :old_status to :new_status.',
             ],
             'sms' => [
-                'content' => ':name status :old_status\'tan: new_status olarak değiştirildi.',
+                'content' => ':name status changed from :old_status to :new_status.',
             ],
         ],
     ],
     'incident' => [
         'new' => [
             'mail' => [
-                'subject'  => 'Yeni Olay Bildirildi',
-                'greeting' => 'Şu adreste yeni bir olay bildirildi: app_name.',
-                'content'  => 'Olay: adı bildirildi',
-                'action'   => 'Görüntüle',
+                'subject'  => 'New Incident Reported',
+                'greeting' => 'A new incident was reported at :app_name.',
+                'content'  => 'Incident :name was reported',
+                'action'   => 'View',
             ],
             'slack' => [
-                'title'   => 'Olay :name Bildirildi',
-                'content' => 'Şu anda yeni bir olay bildirildi :app_name',
+                'title'   => 'Incident :name Reported',
+                'content' => 'A new incident was reported at :app_name',
             ],
             'sms' => [
-                'content' => 'Şu adreste yeni bir olay bildirildi: app_name.',
+                'content' => 'A new incident was reported at :app_name.',
             ],
         ],
         'update' => [
             'mail' => [
-                'subject' => 'Olay Güncellendi',
-                'content' => ':name güncellendi',
-                'title'   => ':ad güncellendi: new_status',
-                'action'  => 'Görüntüle',
+                'subject' => 'Incident Updated',
+                'content' => ':name was updated',
+                'title'   => ':name was updated to :new_status',
+                'action'  => 'View',
             ],
             'slack' => [
-                'title'   => ':name Güncellendi',
-                'content' => ':ad güncellendi: new_status',
+                'title'   => ':name Updated',
+                'content' => ':name was updated to :new_status',
             ],
             'sms' => [
-                'content' => 'Olay :name güncellendi',
+                'content' => 'Incident :name was updated',
             ],
         ],
     ],
     'schedule' => [
         'new' => [
             'mail' => [
-                'subject' => 'Yeni Program oluşturuldu',
-                'content' => ':name planlandı :tarih',
-                'title'   => 'Yeni bir zamanlanmış bakım yapılmıştır.',
-                'action'  => 'Görüntüle',
+                'subject' => 'New Schedule Created',
+                'content' => ':name was scheduled for :date',
+                'title'   => 'A new scheduled maintenance was created.',
+                'action'  => 'View',
             ],
             'slack' => [
-                'title'   => 'Yeni Program Oluşturuldu!',
-                'content' => ':name planlandı :tarih',
+                'title'   => 'New Schedule Created!',
+                'content' => ':name was scheduled for :date',
             ],
             'sms' => [
-                'content' => ':name planlandı :tarih',
+                'content' => ':name was scheduled for :date',
             ],
         ],
     ],
     'subscriber' => [
         'verify' => [
             'mail' => [
-                'subject' => 'Aboneliğinizi Doğrulayın',
-                'content' => 'Aboneliğinizi doğrulamak için tıklayın :app_name durum sayfası.',
-                'title'   => 'Abone olduğunuzu doğrulayın :app_name durum sayfası.',
-                'action'  => 'Doğrula',
+                'subject' => 'Verify Your Subscription',
+                'content' => 'Click to verify your subscription to :app_name status page.',
+                'title'   => 'Verify your subscription to :app_name status page.',
+                'action'  => 'Verify',
             ],
         ],
     ],
     'system' => [
         'test' => [
             'mail' => [
-                'subject' => 'Cachet\'den Ping!',
-                'content' => 'Bu, Cachet\'den gelen bir test bildirimidir!',
+                'subject' => 'Ping from Cachet!',
+                'content' => 'This is a test notification from Cachet!',
                 'title'   => '🔔',
             ],
         ],
@@ -98,10 +98,10 @@ return [
     'user' => [
         'invite' => [
             'mail' => [
-                'subject' => 'Davetiyen içeride...',
-                'content' => 'Şu adreste davet edildiniz :app_name durum sayfası.',
-                'title'   => 'Şu adreste davet edildiniz :app_name durum sayfası.',
-                'action'  => 'Kabul et',
+                'subject' => 'Your invitation is inside...',
+                'content' => 'You have been invited to join :app_name status page.',
+                'title'   => 'You\'re invited to join :app_name status page.',
+                'action'  => 'Accept',
             ],
         ],
     ],

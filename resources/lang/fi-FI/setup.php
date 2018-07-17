@@ -10,14 +10,14 @@
  */
 
 return [
-    'setup'             => 'Asetukset',
-    'title'             => 'Asenna Cachet',
+    'setup'             => 'Setup',
+    'title'             => 'Install Cachet',
     'service_details'   => 'Service Details',
     'env_setup'         => 'Environment Setup',
-    'status_page_setup' => 'Sivun asetukset',
+    'status_page_setup' => 'Status Page Setup',
     'show_support'      => 'Show support for Cachet?',
-    'admin_account'     => 'Järjestelmänvalvojantili',
+    'admin_account'     => 'Administrator Account',
     'complete_setup'    => 'Complete Setup',
-    'completed'         => 'Välimuisti on konfiguroitu onnistuneesti!',
-    'finish_setup'      => 'Siirry hallintapaneeliin',
+    'completed'         => 'Cachet has been configured successfully!',
+    'finish_setup'      => 'Go to dashboard',
 ];

@@ -13,84 +13,84 @@ return [
     'component' => [
         'status_update' => [
             'mail' => [
-                'subject'  => 'Status der Komponente aktualisiert',
-                'greeting' => 'Ein Komponentenstatus wurde aktualisiert!',
-                'content'  => ':name Status wurde von :old_status zu :new_status geändert.',
-                'action'   => 'Anzeigen',
+                'subject'  => 'Component Status Updated',
+                'greeting' => 'A component\'s status was updated!',
+                'content'  => ':name status changed from :old_status to :new_status.',
+                'action'   => 'View',
             ],
             'slack' => [
-                'title'   => 'Status der Komponente aktualisiert',
-                'content' => ':name Status wurde von :old_status zu :new_status geändert.',
+                'title'   => 'Component Status Updated',
+                'content' => ':name status changed from :old_status to :new_status.',
             ],
             'sms' => [
-                'content' => ':name Status wurde von :old_status zu :new_status geändert.',
+                'content' => ':name status changed from :old_status to :new_status.',
             ],
         ],
     ],
     'incident' => [
         'new' => [
             'mail' => [
-                'subject'  => 'Neuer Vorfall gemeldet',
-                'greeting' => 'Ein neuer Vorfall wurde auf der :app_name Status Seite gemeldet.',
-                'content'  => 'Vorfall :name wurde gemeldet',
-                'action'   => 'Anzeigen',
+                'subject'  => 'New Incident Reported',
+                'greeting' => 'A new incident was reported at :app_name.',
+                'content'  => 'Incident :name was reported',
+                'action'   => 'View',
             ],
             'slack' => [
-                'title'   => 'Vorfall :name wurde gemeldet',
-                'content' => 'Ein neuer Vorfall wurde auf der :app_name Status Seite gemeldet',
+                'title'   => 'Incident :name Reported',
+                'content' => 'A new incident was reported at :app_name',
             ],
             'sms' => [
-                'content' => 'Ein neuer Vorfall wurde auf der :app_name Status Seite gemeldet.',
+                'content' => 'A new incident was reported at :app_name.',
             ],
         ],
         'update' => [
             'mail' => [
-                'subject' => 'Vorfall aktualisiert',
-                'content' => ':name wurde aktualisiert',
-                'title'   => ':name wurde auf :new_status aktualisiert',
-                'action'  => 'Anzeigen',
+                'subject' => 'Incident Updated',
+                'content' => ':name was updated',
+                'title'   => ':name was updated to :new_status',
+                'action'  => 'View',
             ],
             'slack' => [
-                'title'   => ':name wurde aktualisiert',
-                'content' => ':name wurde auf :new_status aktualisiert',
+                'title'   => ':name Updated',
+                'content' => ':name was updated to :new_status',
             ],
             'sms' => [
-                'content' => 'Vorfall :name wurde aktualisiert',
+                'content' => 'Incident :name was updated',
             ],
         ],
     ],
     'schedule' => [
         'new' => [
             'mail' => [
-                'subject' => 'Neuer Zeitplan erstellt',
-                'content' => ':name wurde für :date geplant',
-                'title'   => 'Eine neue geplante Wartung wurde erstellt.',
-                'action'  => 'Anzeigen',
+                'subject' => 'New Schedule Created',
+                'content' => ':name was scheduled for :date',
+                'title'   => 'A new scheduled maintenance was created.',
+                'action'  => 'View',
             ],
             'slack' => [
-                'title'   => 'Neuer Zeitplan erstellt!',
-                'content' => ':name wurde für :date geplant',
+                'title'   => 'New Schedule Created!',
+                'content' => ':name was scheduled for :date',
             ],
             'sms' => [
-                'content' => ':name wurde für :date geplant',
+                'content' => ':name was scheduled for :date',
             ],
         ],
     ],
     'subscriber' => [
         'verify' => [
             'mail' => [
-                'subject' => 'Bitte bestätigen Sie Ihr Abonnement',
-                'content' => 'Klicken Sie, um Ihr Abonnement von :app_name Statusseite zu bestätigen.',
-                'title'   => 'Bestätigen Sie Ihr Abonnement für die :app_name Statusseite.',
-                'action'  => 'Bestätigen',
+                'subject' => 'Verify Your Subscription',
+                'content' => 'Click to verify your subscription to :app_name status page.',
+                'title'   => 'Verify your subscription to :app_name status page.',
+                'action'  => 'Verify',
             ],
         ],
     ],
     'system' => [
         'test' => [
             'mail' => [
-                'subject' => 'Ping von Cachet!',
-                'content' => 'Dies ist eine Test-Benachrichtigung von Cachet!',
+                'subject' => 'Ping from Cachet!',
+                'content' => 'This is a test notification from Cachet!',
                 'title'   => '🔔',
             ],
         ],
@@ -98,10 +98,10 @@ return [
     'user' => [
         'invite' => [
             'mail' => [
-                'subject' => 'Ihre Einladung wartet auf Sie...',
-                'content' => 'Sie wurden eingeladen um der :app_name Statusseite beizutreten.',
-                'title'   => 'Sie wurden eingeladen um der :app_name Statusseite beizutreten.',
-                'action'  => 'Akzeptieren',
+                'subject' => 'Your invitation is inside...',
+                'content' => 'You have been invited to join :app_name status page.',
+                'title'   => 'You\'re invited to join :app_name status page.',
+                'action'  => 'Accept',
             ],
         ],
     ],

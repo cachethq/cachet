@@ -22,7 +22,7 @@ return [
     |
     */
 
-    'previous' => 'السابق',
-    'next'     => 'التالي',
+    'previous' => 'Previous',
+    'next'     => 'Next',
 
 ];

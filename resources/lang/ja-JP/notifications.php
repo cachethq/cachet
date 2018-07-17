@@ -13,84 +13,84 @@ return [
     'component' => [
         'status_update' => [
             'mail' => [
-                'subject'  => 'コンポーネントの状況を更新しました',
-                'greeting' => 'コンポーネントの状況を更新しました!',
-                'content'  => ':nameの状況が:old_statusから:new_statusに変更しました。',
-                'action'   => '見て',
+                'subject'  => 'Component Status Updated',
+                'greeting' => 'A component\'s status was updated!',
+                'content'  => ':name status changed from :old_status to :new_status.',
+                'action'   => 'View',
             ],
             'slack' => [
-                'title'   => 'コンポーネントの状況を更新しました',
-                'content' => ':nameの状況が:old_statusから:new_statusに変更しました。',
+                'title'   => 'Component Status Updated',
+                'content' => ':name status changed from :old_status to :new_status.',
             ],
             'sms' => [
-                'content' => ':nameの状況が:old_statusから:new_statusに変更しました。',
+                'content' => ':name status changed from :old_status to :new_status.',
             ],
         ],
     ],
     'incident' => [
         'new' => [
             'mail' => [
-                'subject'  => '新しいインシデントが報告されました',
-                'greeting' => '新しいインシデントが:app_nameで報告されました。',
-                'content'  => 'インシデント :name が報告されました',
-                'action'   => '見て',
+                'subject'  => 'New Incident Reported',
+                'greeting' => 'A new incident was reported at :app_name.',
+                'content'  => 'Incident :name was reported',
+                'action'   => 'View',
             ],
             'slack' => [
-                'title'   => 'インシデント :name が報告されました',
-                'content' => '新しいインシデントが:app_nameで報告されました',
+                'title'   => 'Incident :name Reported',
+                'content' => 'A new incident was reported at :app_name',
             ],
             'sms' => [
-                'content' => '新しいインシデントが:app_nameで報告されました。',
+                'content' => 'A new incident was reported at :app_name.',
             ],
         ],
         'update' => [
             'mail' => [
-                'subject' => 'インシデントを更新しました',
-                'content' => ':name は更新されました',
-                'title'   => ':name は :new_status へ更新されました',
-                'action'  => '見て',
+                'subject' => 'Incident Updated',
+                'content' => ':name was updated',
+                'title'   => ':name was updated to :new_status',
+                'action'  => 'View',
             ],
             'slack' => [
-                'title'   => ':name を更新しました',
-                'content' => ':name は :new_status へ更新されました',
+                'title'   => ':name Updated',
+                'content' => ':name was updated to :new_status',
             ],
             'sms' => [
-                'content' => 'インシデント :name は更新されました',
+                'content' => 'Incident :name was updated',
             ],
         ],
     ],
     'schedule' => [
         'new' => [
             'mail' => [
-                'subject' => '新しいスケジュールが作成されました',
-                'content' => ':name は :date へスケジュールされました',
-                'title'   => '新しい計画メンテナンスを作成しました',
-                'action'  => '見て',
+                'subject' => 'New Schedule Created',
+                'content' => ':name was scheduled for :date',
+                'title'   => 'A new scheduled maintenance was created.',
+                'action'  => 'View',
             ],
             'slack' => [
-                'title'   => '新しいスケジュールが作成されました!',
-                'content' => ':name は :date へスケジュールされました',
+                'title'   => 'New Schedule Created!',
+                'content' => ':name was scheduled for :date',
             ],
             'sms' => [
-                'content' => ':name は :date へスケジュールされました',
+                'content' => ':name was scheduled for :date',
             ],
         ],
     ],
     'subscriber' => [
         'verify' => [
             'mail' => [
-                'subject' => 'サブスクリプションを確認してください',
-                'content' => ':app_nameの状況ページのサブスクリプションの確認の為にクリックしてください。',
-                'title'   => ':app_nameの状況ページのサブスクリプションを確認してください。',
-                'action'  => '確認',
+                'subject' => 'Verify Your Subscription',
+                'content' => 'Click to verify your subscription to :app_name status page.',
+                'title'   => 'Verify your subscription to :app_name status page.',
+                'action'  => 'Verify',
             ],
         ],
     ],
     'system' => [
         'test' => [
             'mail' => [
-                'subject' => 'Cachetからピング！',
-                'content' => 'これはCachetから試しにお知らせです!',
+                'subject' => 'Ping from Cachet!',
+                'content' => 'This is a test notification from Cachet!',
                 'title'   => '🔔',
             ],
         ],
@@ -98,10 +98,10 @@ return [
     'user' => [
         'invite' => [
             'mail' => [
-                'subject' => 'あなたの招待は中に。。。',
-                'content' => ':app_nameの状況ページに招待されました。',
-                'title'   => ':app_nameの状況ページに招待されています。',
-                'action'  => '同意',
+                'subject' => 'Your invitation is inside...',
+                'content' => 'You have been invited to join :app_name status page.',
+                'title'   => 'You\'re invited to join :app_name status page.',
+                'action'  => 'Accept',
             ],
         ],
     ],

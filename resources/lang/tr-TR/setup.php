@@ -10,14 +10,14 @@
  */
 
 return [
-    'setup'             => 'Kurulum',
-    'title'             => 'Cachet\'i Kur',
-    'service_details'   => 'Hizmet detayları',
-    'env_setup'         => 'Ortam kurulumu',
-    'status_page_setup' => 'Durum sayfası kurulumu',
-    'show_support'      => 'Cachet için destek ister misiniz?',
-    'admin_account'     => 'Yönetici Hesabı',
-    'complete_setup'    => 'Kurulumu tamamla',
-    'completed'         => 'Cachet başarı ile ayarlandı!',
-    'finish_setup'      => 'Gösterge paneline git',
+    'setup'             => 'Setup',
+    'title'             => 'Install Cachet',
+    'service_details'   => 'Service Details',
+    'env_setup'         => 'Environment Setup',
+    'status_page_setup' => 'Status Page Setup',
+    'show_support'      => 'Show support for Cachet?',
+    'admin_account'     => 'Administrator Account',
+    'complete_setup'    => 'Complete Setup',
+    'completed'         => 'Cachet has been configured successfully!',
+    'finish_setup'      => 'Go to dashboard',
 ];

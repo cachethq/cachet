@@ -10,14 +10,14 @@
  */
 
 return [
-    'setup'             => 'Інсталяція',
-    'title'             => 'Встановити Cachet',
-    'service_details'   => 'Сервісна інформація',
-    'env_setup'         => 'Налаштування середовища',
-    'status_page_setup' => 'Налаштування сторінки стану',
-    'show_support'      => 'Показати підтримку Cachet?',
-    'admin_account'     => 'Аккаунт адміністратора',
-    'complete_setup'    => 'Завершити інсталяцію',
-    'completed'         => 'Cachet успішно налаштований!',
-    'finish_setup'      => 'Перейти на робочий стіл',
+    'setup'             => 'Setup',
+    'title'             => 'Install Cachet',
+    'service_details'   => 'Service Details',
+    'env_setup'         => 'Environment Setup',
+    'status_page_setup' => 'Status Page Setup',
+    'show_support'      => 'Show support for Cachet?',
+    'admin_account'     => 'Administrator Account',
+    'complete_setup'    => 'Complete Setup',
+    'completed'         => 'Cachet has been configured successfully!',
+    'finish_setup'      => 'Go to dashboard',
 ];

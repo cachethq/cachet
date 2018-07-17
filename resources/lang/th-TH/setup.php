@@ -10,14 +10,14 @@
  */
 
 return [
-    'setup'             => 'ตั้งค่า',
-    'title'             => 'ติดตั้ง Cachet',
-    'service_details'   => 'รายละเอียดของ Services',
-    'env_setup'         => 'ตั้งค่าสภาพแวดล้อม',
-    'status_page_setup' => 'ตั้งค่าหน้าแสดงสถานะ',
-    'show_support'      => 'แสดงการสนับสนุน Cachet',
-    'admin_account'     => 'บัญชีผู้ดูแลระบบ',
-    'complete_setup'    => 'ติดตั้งเสร็จสมบูรณ์',
-    'completed'         => 'การปรับแต่ง Cachet สำเร็จ!',
-    'finish_setup'      => 'ไปที่หน้า Dashboard',
+    'setup'             => 'Setup',
+    'title'             => 'Install Cachet',
+    'service_details'   => 'Service Details',
+    'env_setup'         => 'Environment Setup',
+    'status_page_setup' => 'Status Page Setup',
+    'show_support'      => 'Show support for Cachet?',
+    'admin_account'     => 'Administrator Account',
+    'complete_setup'    => 'Complete Setup',
+    'completed'         => 'Cachet has been configured successfully!',
+    'finish_setup'      => 'Go to dashboard',
 ];

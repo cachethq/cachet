@@ -56,9 +56,9 @@ return [
         'notify_subscribers' => 'Notificaţi abonaţii?',
         'notify_disabled'    => 'Due to scheduled maintenance, notifications about this incident or its components will be suppressed.',
         'visibility'         => 'Vizibilitatea Incidentului',
-        'stick_status'       => 'Fixează Incident',
-        'stickied'           => 'Fixate',
-        'not_stickied'       => 'Nu sunt fixate',
+        'stick_status'       => 'Stick Incident',
+        'stickied'           => 'Stickied',
+        'not_stickied'       => 'Not Stickied',
         'public'             => 'Vizibilă public',
         'logged_in_only'     => 'Vizibilă numai pentru utilizatorii autentificaţi',
         'templates'          => [
@@ -95,13 +95,13 @@ return [
 
         'groups' => [
             'name'                     => 'Nume',
-            'collapsing'               => 'Extinde/restrânge setări',
+            'collapsing'               => 'Expand/Collapse options',
             'visible'                  => 'Întotdeauna extins',
             'collapsed'                => 'Restrânge grupul implicit',
             'collapsed_incident'       => 'Restrânge grupul, dar extinde în cazul în care sunt probleme',
-            'visibility'               => 'Vizibilitate',
-            'visibility_public'        => 'Vizibil pentru public',
-            'visibility_authenticated' => 'Vizibil doar pentru utilizatori înregistrați',
+            'visibility'               => 'Visibility',
+            'visibility_public'        => 'Visible to public',
+            'visibility_authenticated' => 'Visible only to logged in users',
         ],
     ],
 
@@ -109,14 +109,14 @@ return [
     'actions' => [
         'name'               => 'Nume',
         'description'        => 'Descriere',
-        'start_at'           => 'Programează oră de începere',
-        'timezone'           => 'Fus orar',
-        'schedule_frequency' => 'Frecvență programare (în secunde)',
-        'completion_latency' => 'Latență completare (în secunde)',
+        'start_at'           => 'Schedule start time',
+        'timezone'           => 'Timezone',
+        'schedule_frequency' => 'Schedule frequency (in seconds)',
+        'completion_latency' => 'Completion latency (in seconds)',
         'group'              => 'Grup',
-        'active'             => 'Activă?',
+        'active'             => 'Active?',
         'groups'             => [
-            'name' => 'Nume de Grup',
+            'name' => 'Group Name',
         ],
     ],
 
@@ -134,7 +134,7 @@ return [
         'places'                   => 'Zecimale',
         'default_view'             => 'Opţiunea implicită',
         'threshold'                => 'Ce interval de timp(în minute) doriţi între măsurători?',
-        'visibility'               => 'Vizibilitate',
+        'visibility'               => 'Visibility',
         'visibility_authenticated' => 'Visible to authenticated users',
         'visibility_public'        => 'Visible to everybody',
         'visibility_hidden'        => 'Always hidden',
@@ -159,11 +159,11 @@ return [
             'banner-help'                           => "It's recommended that you upload files no bigger than 930px wide",
             'subscribers'                           => 'Permiteţi vizitatorilor să se aboneze la notificări prin email?',
             'suppress_notifications_in_maintenance' => 'Suppress notifications when incident occurs during maintenance period?',
-            'skip_subscriber_verification'          => 'Omite verificarea utilizatorilor? (Avertizare, poți primi spam)',
+            'skip_subscriber_verification'          => 'Skip verifying of users? (Be warned, you could be spammed)',
             'automatic_localization'                => 'Schimbaţi automat limba pentru pagina de stare în funcţie de limba vizitatorului?',
-            'enable_external_dependencies'          => 'Activează dependențe terțe (Fonturi Google, Trackere, etc...)',
+            'enable_external_dependencies'          => 'Enable Third Party Dependencies (Google Fonts, Trackers, etc...)',
             'show_timezone'                         => 'Show the timezone the status page is running in',
-            'only_disrupted_days'                   => 'Afișează doar zile care conțin incidente în cronologie?',
+            'only_disrupted_days'                   => 'Only show days containing incidents in the timeline?',
         ],
         'analytics' => [
             'analytics_google'       => 'Cod Google Analytics',
@@ -221,12 +221,12 @@ return [
         ],
         'team' => [
             'description' => 'Invităţi membrii echipei introducând aici adresele lor de email.',
-            'email'       => 'Email #:id',
+            'email'       => 'Your Team Members Email Address',
         ],
     ],
 
     'general' => [
-        'timezone' => 'Alege Fusul Orar',
+        'timezone' => 'Select Timezone',
     ],
 
     // Buttons

@@ -11,13 +11,13 @@
 
 return [
     'setup'             => '설치',
-    'title'             => 'Cachet 설치',
-    'service_details'   => '서비스 상세정보',
-    'env_setup'         => '환경 설정',
-    'status_page_setup' => '상태 페이지 설정',
+    'title'             => 'Install Cachet',
+    'service_details'   => 'Service Details',
+    'env_setup'         => 'Environment Setup',
+    'status_page_setup' => 'Status Page Setup',
     'show_support'      => 'Cachet 에 대한 지원을 표시',
-    'admin_account'     => '관리자 계정',
-    'complete_setup'    => '설치 완료',
-    'completed'         => 'Cachet 이 성공적으로 설정되었습니다.',
-    'finish_setup'      => '대시보드로 이동',
+    'admin_account'     => 'Administrator Account',
+    'complete_setup'    => 'Complete Setup',
+    'completed'         => 'Cachet has been configured successfully!',
+    'finish_setup'      => 'Go to dashboard',
 ];

@@ -30,10 +30,10 @@ return [
         'none'         => 'No incidents reported',
         'past'         => 'Past Incidents',
         'stickied'     => 'Stickied Incidents',
-        'scheduled'    => 'Scheduled Maintenance',
+        'scheduled'    => 'Maintenance',
         'scheduled_at' => ', scheduled :timestamp',
         'posted'       => 'Posted :timestamp',
-        'posted_at'    => 'Posted :timestamp',
+        'posted_at'    => 'Posted at :timestamp',
         'status'       => [
             1 => 'Investigating',
             2 => 'Identified',
@@ -46,7 +46,7 @@ return [
     'schedules' => [
         'status' => [
             0 => 'Upcoming',
-            1 => 'In progress',
+            1 => 'In Progress',
             2 => 'Complete',
         ],
     ],
@@ -54,8 +54,8 @@ return [
     // Service Status
     'service' => [
         'good'  => '[0,1]System operational|[2,*]All systems are operational',
-        'bad'   => '[0,1] The system is currently experiencing issues|[2,Inf] Some systems are experiencing issues',
-        'major' => '[0,1] The service experiencing a major outage|[2,Inf] Some systems are experiencing a major outage',
+        'bad'   => '[0,1]The system is experiencing issues|[2,*]Some systems are experiencing issues',
+        'major' => '[0,1]The system is experiencing major issues|[2,*]Some systems are experiencing major issues',
     ],
 
     'api' => [

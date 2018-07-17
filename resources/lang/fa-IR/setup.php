@@ -10,14 +10,14 @@
  */
 
 return [
-    'setup'             => 'نصب',
-    'title'             => 'نصب Cachet',
-    'service_details'   => 'جزئیات سرویس',
-    'env_setup'         => 'نصب محیط برنامه',
-    'status_page_setup' => 'نصب صفحه وضعیت',
-    'show_support'      => 'پشتیبانی از Cachet نمایش داده شود؟',
-    'admin_account'     => 'حساب مدیر سیستم',
-    'complete_setup'    => 'تکمیل عملیات نصب',
-    'completed'         => 'Cachet با موفقیت تنظیم و راه‌اندازی شد!',
-    'finish_setup'      => 'رفتن به داشبورد',
+    'setup'             => 'Setup',
+    'title'             => 'Install Cachet',
+    'service_details'   => 'Service Details',
+    'env_setup'         => 'Environment Setup',
+    'status_page_setup' => 'Status Page Setup',
+    'show_support'      => 'Show support for Cachet?',
+    'admin_account'     => 'Administrator Account',
+    'complete_setup'    => 'Complete Setup',
+    'completed'         => 'Cachet has been configured successfully!',
+    'finish_setup'      => 'Go to dashboard',
 ];

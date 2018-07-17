@@ -12,11 +12,11 @@
 return [
 
     'dashboard'          => 'Översiktspanel',
-    'writeable_settings' => 'Cachets inställningskatalog är inte skrivbar. Kontrollera att <code>./bootstrap/cachet</code> är skrivbar av webbservern.',
+    'writeable_settings' => 'The Cachet settings directory is not writeable. Please make sure that <code>./bootstrap/cachet</code> is writeable by the web server.',
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Händelser &amp; Schema',
+        'title'                    => 'Incidents & Maintenance',
         'incidents'                => 'Händelser',
         'logged'                   => '{0}There are no incidents, good work.|[1]You have logged one incident.|[2,*]You have reported <strong>:count</strong> incidents.',
         'incident-create-template' => 'Skapa mall',
@@ -25,7 +25,7 @@ return [
             'title'   => 'Incident updates for :incident',
             'count'   => '{0}Zero Updates|[1]One Update|[2]Two Updates|[3,*]Several Updates',
             'add'     => [
-                'title'   => 'Skapa en ny incidentuppdatering',
+                'title'   => 'Create new incident update',
                 'success' => 'Your new incident update has been created.',
                 'failure' => 'Something went wrong with the incident update.',
             ],
@@ -38,7 +38,7 @@ return [
         'reported_by'              => 'Reported by :user',
         'add'                      => [
             'title'   => 'Lägg till händelse',
-            'success' => 'Incident skapad.',
+            'success' => 'Incident added.',
             'failure' => 'There was an error adding the incident, please try again.',
         ],
         'edit' => [
@@ -56,9 +56,9 @@ return [
             'title' => 'Händelsemallar',
             'add'   => [
                 'title'   => 'Skapa en händelsemall',
-                'message' => 'Du borde lägga till en händelsemall.',
-                'success' => 'Händelsemallen har skapats.',
-                'failure' => 'Något gick fel med uppdateringen av incidentmallen.',
+                'message' => 'Create your first incident template.',
+                'success' => 'Your new incident template has been created.',
+                'failure' => 'Something went wrong with the incident template.',
             ],
             'edit' => [
                 'title'   => 'Redigera mall',
@@ -74,22 +74,22 @@ return [
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => 'Planerat underhåll',
+        'schedule'     => 'Maintenance',
         'logged'       => '{0}There has been no Maintenance, good work.|[1]You have logged one schedule.|[2,*]You have reported <strong>:count</strong> schedules.',
         'scheduled_at' => 'Schemalagd till: tidsstämpel',
         'add'          => [
-            'title'   => 'Lägg till planerat underhåll',
-            'success' => 'Schema tillagt.',
-            'failure' => 'Something went wrong adding the schedule, please try again.',
+            'title'   => 'Add Maintenance',
+            'success' => 'Maintenance added.',
+            'failure' => 'Something went wrong adding the Maintenance, please try again.',
         ],
         'edit' => [
-            'title'   => 'Edit Scheduled Maintenance',
-            'success' => 'Schemat har uppdaterats!',
-            'failure' => 'Something went wrong editing the schedule, please try again.',
+            'title'   => 'Edit Maintenance',
+            'success' => 'Maintenance has been updated!',
+            'failure' => 'Something went wrong editing the Maintenance, please try again.',
         ],
         'delete' => [
-            'success' => 'The scheduled maintenance has been deleted and will not show on your status page.',
-            'failure' => 'The scheduled maintenance could not be deleted, please try again.',
+            'success' => 'The Maintenance has been deleted and will not show on your status page.',
+            'failure' => 'The Maintenance could not be deleted, please try again.',
         ],
     ],
 
@@ -101,12 +101,12 @@ return [
         'add'                => [
             'title'   => 'Lägg till en komponent',
             'message' => 'Du borde lägga till en komponent.',
-            'success' => 'Komponent skapad.',
+            'success' => 'Component created.',
             'failure' => 'Something went wrong with the component group, please try again.',
         ],
         'edit' => [
             'title'   => 'Redigera komponent',
-            'success' => 'Komponenten har uppdaterats.',
+            'success' => 'Component updated.',
             'failure' => 'Something went wrong with the component group, please try again.',
         ],
         'delete' => [
@@ -120,12 +120,12 @@ return [
             'no_components' => 'Du borde lägga till en komponentgrupp.',
             'add'           => [
                 'title'   => 'Lägg till en komponentgrupp',
-                'success' => 'Komponentgrupp tillagd.',
+                'success' => 'Component group added.',
                 'failure' => 'Something went wrong with the component group, please try again.',
             ],
             'edit' => [
                 'title'   => 'Redigera komponentgrupp',
-                'success' => 'Komponentgrupp uppdaterad.',
+                'success' => 'Component group updated.',
                 'failure' => 'Something went wrong with the component group, please try again.',
             ],
             'delete' => [
@@ -162,7 +162,7 @@ return [
         'verified'             => 'Bekräftad',
         'not_verified'         => 'Inte bekräftad',
         'subscriber'           => ':email, subscribed :date',
-        'no_subscriptions'     => 'Prenumererat på alla uppdateringar',
+        'no_subscriptions'     => 'Subscribed to all updates',
         'global'               => 'Globally subscribed',
         'add'                  => [
             'title'   => 'Lägg till en prenumerant',
@@ -185,22 +185,22 @@ return [
         'description' => 'Teammedlemmar kommer kunna lägga till, ändra &amp; redigera komponenter och händelser.',
         'add'         => [
             'title'   => 'Lägg till en ny teammedlem',
-            'success' => 'Gruppmedlem tilllagd.',
-            'failure' => 'Teammedlemmen kunde inte läggas till. Vänligen försök igen.',
+            'success' => 'Team member added.',
+            'failure' => 'The team member could not be added, please try again.',
         ],
         'edit' => [
             'title'   => 'Uppdatera profil',
-            'success' => 'Profil uppdaterad.',
+            'success' => 'Profile updated.',
             'failure' => 'Something went wrong updating the profile, please try again.',
         ],
         'delete' => [
             'success' => 'Teammedlemen har tagits bort och kommer inte längre ha tillgång till översiktspanelen!',
-            'failure' => 'Teammedlemmen kunde inte läggas till. Vänligen försök igen.',
+            'failure' => 'The team member could not be added, please try again.',
         ],
         'invite' => [
             'title'   => 'Bjud in en ny teammedlem',
             'success' => 'Inbjudan har skickats',
-            'failure' => 'Inbjudan kunde inte skickas. Vänligen försök igen.',
+            'failure' => 'The invite could not be sent, please try again.',
         ],
     ],
 
@@ -222,16 +222,16 @@ return [
             'localization' => 'Platsanpassning',
         ],
         'customization' => [
-            'customization' => 'Anpassning',
-            'header'        => 'Anpassat sidhuvud HTML',
-            'footer'        => 'Anpassad sidfot HTML',
+            'customization' => 'Customization',
+            'header'        => 'Custom Header HTML',
+            'footer'        => 'Custom Footer HTML',
         ],
         'mail' => [
             'mail'  => 'Mail',
             'test'  => 'Test',
             'email' => [
                 'subject' => 'Test notification from Cachet',
-                'body'    => 'Detta är ett testmeddelande från Cachet.',
+                'body'    => 'This is a test notification from Cachet.',
             ],
         ],
         'security' => [
@@ -249,10 +249,10 @@ return [
             'failure' => 'Inställningarna kunde inte sparas.',
         ],
         'credits' => [
-            'credits'       => 'Tack till',
-            'contributors'  => 'Medverkande',
+            'credits'       => 'Credits',
+            'contributors'  => 'Contributors',
             'license'       => 'Cachet is a BSD-3-licensed open source project, released by <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
-            'backers-title' => 'Uppbackare & sponsorer',
+            'backers-title' => 'Backers & Sponsors',
             'backers'       => 'If you\'d like to support future development, check out the <a href="https://patreon.com/jbrooksuk" target="_blank">Cachet Patreon</a> campaign.',
             'thank-you'     => 'Thank you to each and every one of the :count contributors.',
         ],
@@ -280,17 +280,17 @@ return [
 
     // Widgets
     'widgets' => [
-        'support'          => 'Stöd Cachet',
+        'support'          => 'Support Cachet',
         'support_subtitle' => 'Check out our <strong><a href="https://patreon.com/jbrooksuk" target="_blank">Patreon</a></strong> page!',
-        'news'             => 'Senaste nytt',
-        'news_subtitle'    => 'Hämta senaste uppdateringen',
+        'news'             => 'Latest News',
+        'news_subtitle'    => 'Get the latest update',
     ],
 
     // Welcome modal
     'welcome' => [
         'welcome' => 'Välkommen till din statussida!',
         'message' => 'Din statussida är nästan redo. Du kan vilja konfigerara de här extra inställningarna',
-        'close'   => 'Jag är nöjd, tack!',
+        'close'   => 'I\'m good thanks!',
         'steps'   => [
             'component'  => 'Skapa komponenter',
             'incident'   => 'Skapa händelser',

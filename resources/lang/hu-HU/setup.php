@@ -10,14 +10,14 @@
  */
 
 return [
-    'setup'             => 'Telepítés',
-    'title'             => 'Cachet telepítése',
-    'service_details'   => 'A szolgáltatás részletei',
-    'env_setup'         => 'Környezet beállítása',
-    'status_page_setup' => 'Állapotoldal beállítás',
-    'show_support'      => 'Cachet támogató link megjelenítése?',
-    'admin_account'     => 'Adminisztrátori fiók',
-    'complete_setup'    => 'Telepítés befejezése',
-    'completed'         => 'A Cachet telepítése sikeresen befejeződött!',
-    'finish_setup'      => 'Használat megkezdése',
+    'setup'             => 'Setup',
+    'title'             => 'Install Cachet',
+    'service_details'   => 'Service Details',
+    'env_setup'         => 'Environment Setup',
+    'status_page_setup' => 'Status Page Setup',
+    'show_support'      => 'Show support for Cachet?',
+    'admin_account'     => 'Administrator Account',
+    'complete_setup'    => 'Complete Setup',
+    'completed'         => 'Cachet has been configured successfully!',
+    'finish_setup'      => 'Go to dashboard',
 ];

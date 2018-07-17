@@ -13,84 +13,84 @@ return [
     'component' => [
         'status_update' => [
             'mail' => [
-                'subject'  => 'Статус компонента обновлён',
-                'greeting' => 'Статус компонента обновлен!',
-                'content'  => 'Статус :name изменен с :old_status на :new_status.',
-                'action'   => 'Просмотреть',
+                'subject'  => 'Component Status Updated',
+                'greeting' => 'A component\'s status was updated!',
+                'content'  => ':name status changed from :old_status to :new_status.',
+                'action'   => 'View',
             ],
             'slack' => [
-                'title'   => 'Статус компонента обновлён',
-                'content' => 'Статус :name изменен с :old_status на :new_status.',
+                'title'   => 'Component Status Updated',
+                'content' => ':name status changed from :old_status to :new_status.',
             ],
             'sms' => [
-                'content' => 'Статус :name изменен с :old_status на :new_status.',
+                'content' => ':name status changed from :old_status to :new_status.',
             ],
         ],
     ],
     'incident' => [
         'new' => [
             'mail' => [
-                'subject'  => 'Сообщение о новом инциденте',
-                'greeting' => 'На :app_name произошел новый инцидент.',
-                'content'  => 'Инцидент :name был обновлён',
-                'action'   => 'Просмотреть',
+                'subject'  => 'New Incident Reported',
+                'greeting' => 'A new incident was reported at :app_name.',
+                'content'  => 'Incident :name was reported',
+                'action'   => 'View',
             ],
             'slack' => [
-                'title'   => 'Инцидент :name был обновлён',
-                'content' => 'На :app_name произошел новый инцидент',
+                'title'   => 'Incident :name Reported',
+                'content' => 'A new incident was reported at :app_name',
             ],
             'sms' => [
-                'content' => 'На :app_name произошел новый инцидент.',
+                'content' => 'A new incident was reported at :app_name.',
             ],
         ],
         'update' => [
             'mail' => [
-                'subject' => 'Инцидент обновлён',
-                'content' => ':name обновлен',
-                'title'   => ':name \'у был присвоен статус :new_status',
-                'action'  => 'Просмотреть',
+                'subject' => 'Incident Updated',
+                'content' => ':name was updated',
+                'title'   => ':name was updated to :new_status',
+                'action'  => 'View',
             ],
             'slack' => [
-                'title'   => ':name обновлен',
-                'content' => ':name \'у был присвоен статус :new_status',
+                'title'   => ':name Updated',
+                'content' => ':name was updated to :new_status',
             ],
             'sms' => [
-                'content' => 'Инцидент :name был обновлён',
+                'content' => 'Incident :name was updated',
             ],
         ],
     ],
     'schedule' => [
         'new' => [
             'mail' => [
-                'subject' => 'Создано новое расписание',
-                'content' => ':name было запланировано :date',
-                'title'   => 'Было создано новое плановое обслуживание.',
-                'action'  => 'Просмотреть',
+                'subject' => 'New Schedule Created',
+                'content' => ':name was scheduled for :date',
+                'title'   => 'A new scheduled maintenance was created.',
+                'action'  => 'View',
             ],
             'slack' => [
-                'title'   => 'Новое расписание создано!',
-                'content' => ':name было запланировано :date',
+                'title'   => 'New Schedule Created!',
+                'content' => ':name was scheduled for :date',
             ],
             'sms' => [
-                'content' => ':name было запланировано :date',
+                'content' => ':name was scheduled for :date',
             ],
         ],
     ],
     'subscriber' => [
         'verify' => [
             'mail' => [
-                'subject' => 'Подтвердите свою подписку',
-                'content' => 'Нажмите для подтверждения своей подписки на страницу статуса :app_name.',
-                'title'   => 'Нажмите для подтверждения своей подписки на страницу статуса :app_name.',
-                'action'  => 'Подтвердить',
+                'subject' => 'Verify Your Subscription',
+                'content' => 'Click to verify your subscription to :app_name status page.',
+                'title'   => 'Verify your subscription to :app_name status page.',
+                'action'  => 'Verify',
             ],
         ],
     ],
     'system' => [
         'test' => [
             'mail' => [
-                'subject' => 'Проверка от статус страницы Cachet!',
-                'content' => 'Тестовое уведомление от Cachet!',
+                'subject' => 'Ping from Cachet!',
+                'content' => 'This is a test notification from Cachet!',
                 'title'   => '🔔',
             ],
         ],
@@ -98,10 +98,10 @@ return [
     'user' => [
         'invite' => [
             'mail' => [
-                'subject' => 'Ваше приглашение находится внутри...',
-                'content' => 'Вы были приглашены присоединиться к статус странице :app_name.',
-                'title'   => 'Вы приглашены в статус страницу :app_name.',
-                'action'  => 'Принять',
+                'subject' => 'Your invitation is inside...',
+                'content' => 'You have been invited to join :app_name status page.',
+                'title'   => 'You\'re invited to join :app_name status page.',
+                'action'  => 'Accept',
             ],
         ],
     ],

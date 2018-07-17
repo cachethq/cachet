@@ -16,7 +16,7 @@ return [
                 'subject'  => 'Component Status Updated',
                 'greeting' => 'A component\'s status was updated!',
                 'content'  => ':name status changed from :old_status to :new_status.',
-                'action'   => 'Visa',
+                'action'   => 'View',
             ],
             'slack' => [
                 'title'   => 'Component Status Updated',
@@ -30,10 +30,10 @@ return [
     'incident' => [
         'new' => [
             'mail' => [
-                'subject'  => 'Ny händelse rapporterad',
+                'subject'  => 'New Incident Reported',
                 'greeting' => 'A new incident was reported at :app_name.',
                 'content'  => 'Incident :name was reported',
-                'action'   => 'Visa',
+                'action'   => 'View',
             ],
             'slack' => [
                 'title'   => 'Incident :name Reported',
@@ -45,30 +45,30 @@ return [
         ],
         'update' => [
             'mail' => [
-                'subject' => 'Händelse uppdaterad',
-                'content' => ': namn uppdaterades',
-                'title'   => ':name uppdaterades till :new_status',
-                'action'  => 'Visa',
+                'subject' => 'Incident Updated',
+                'content' => ':name was updated',
+                'title'   => ':name was updated to :new_status',
+                'action'  => 'View',
             ],
             'slack' => [
-                'title'   => ':name uppdaterat',
-                'content' => ':name uppdaterades till :new_status',
+                'title'   => ':name Updated',
+                'content' => ':name was updated to :new_status',
             ],
             'sms' => [
-                'content' => 'Incident :name uppdaterades',
+                'content' => 'Incident :name was updated',
             ],
         ],
     ],
     'schedule' => [
         'new' => [
             'mail' => [
-                'subject' => 'Nytt schema skapat',
+                'subject' => 'New Schedule Created',
                 'content' => ':name was scheduled for :date',
                 'title'   => 'A new scheduled maintenance was created.',
-                'action'  => 'Visa',
+                'action'  => 'View',
             ],
             'slack' => [
-                'title'   => 'Nytt schema skapat!',
+                'title'   => 'New Schedule Created!',
                 'content' => ':name was scheduled for :date',
             ],
             'sms' => [
@@ -79,18 +79,18 @@ return [
     'subscriber' => [
         'verify' => [
             'mail' => [
-                'subject' => 'Bekräfta din prenumeration',
-                'content' => 'Klicka för att bekräfta din prenumeration på :app_name statussida.',
-                'title'   => 'Bekräfta din prenumeration för :app_name statussida.',
-                'action'  => 'Verifiera',
+                'subject' => 'Verify Your Subscription',
+                'content' => 'Click to verify your subscription to :app_name status page.',
+                'title'   => 'Verify your subscription to :app_name status page.',
+                'action'  => 'Verify',
             ],
         ],
     ],
     'system' => [
         'test' => [
             'mail' => [
-                'subject' => 'Ping från Cachet!',
-                'content' => 'Detta är ett testmeddelande från Cachet!',
+                'subject' => 'Ping from Cachet!',
+                'content' => 'This is a test notification from Cachet!',
                 'title'   => '🔔',
             ],
         ],
@@ -98,10 +98,10 @@ return [
     'user' => [
         'invite' => [
             'mail' => [
-                'subject' => 'Din inbjudan är inuti...',
+                'subject' => 'Your invitation is inside...',
                 'content' => 'You have been invited to join :app_name status page.',
                 'title'   => 'You\'re invited to join :app_name status page.',
-                'action'  => 'Godkänn',
+                'action'  => 'Accept',
             ],
         ],
     ],

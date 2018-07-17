@@ -12,11 +12,11 @@
 return [
 
     'dashboard'          => 'Dashboard',
-    'writeable_settings' => 'O diretório das configurações do Cachet não é gravável. Certifique-se de que<code>./bootstrap/cachet</code> é gravável pelo servidor web.',
+    'writeable_settings' => 'The Cachet settings directory is not writeable. Please make sure that <code>./bootstrap/cachet</code> is writeable by the web server.',
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Incidentes &amp; Agendamentos',
+        'title'                    => 'Incidents & Maintenance',
         'incidents'                => 'Ocorrências',
         'logged'                   => '{0}There are no incidents, good work.|[1]You have logged one incident.|[2,*]You have reported <strong>:count</strong> incidents.',
         'incident-create-template' => 'Criar template',
@@ -25,7 +25,7 @@ return [
             'title'   => 'Incident updates for :incident',
             'count'   => '{0}Zero Updates|[1]One Update|[2]Two Updates|[3,*]Several Updates',
             'add'     => [
-                'title'   => 'Crie uma nova atualização de incidente',
+                'title'   => 'Create new incident update',
                 'success' => 'Your new incident update has been created.',
                 'failure' => 'Something went wrong with the incident update.',
             ],
@@ -38,17 +38,17 @@ return [
         'reported_by'              => 'Reported by :user',
         'add'                      => [
             'title'   => 'Adicionar um incidente',
-            'success' => 'Incidente adicionado.',
-            'failure' => 'Houve um erro ao adicionar o incidente, por favor tente novamente.',
+            'success' => 'Incident added.',
+            'failure' => 'There was an error adding the incident, please try again.',
         ],
         'edit' => [
             'title'   => 'Editar um incidente',
             'success' => 'Incidente atualizado.',
-            'failure' => 'Houve um erro na edição do incidente, por favor tente novamente.',
+            'failure' => 'There was an error editing the incident, please try again.',
         ],
         'delete' => [
             'success' => 'O incidente foi apagado e não será mais mostrado na sua página de estado.',
-            'failure' => 'O incidente não pode ser apagado, por favor tente novamente.',
+            'failure' => 'The incident could not be deleted, please try again.',
         ],
 
         // Incident templates
@@ -56,40 +56,40 @@ return [
             'title' => 'Template de incidentes',
             'add'   => [
                 'title'   => 'Criar um modelo de incidente',
-                'message' => 'Adicione um esboço de incidente.',
-                'success' => 'O seu novo modelo de incidente foi criado.',
-                'failure' => 'Aconteceu algo de errado com o modelo de incidente.',
+                'message' => 'Create your first incident template.',
+                'success' => 'Your new incident template has been created.',
+                'failure' => 'Something went wrong with the incident template.',
             ],
             'edit' => [
                 'title'   => 'Editar Modelo',
-                'success' => 'O modelo de incidente foi atualizado.',
-                'failure' => 'Aconteceu algo dee errado ao atualizar o modelo de incidente',
+                'success' => 'The incident template has been updated.',
+                'failure' => 'Something went wrong updating the incident template',
             ],
             'delete' => [
                 'success' => 'O esboço de incidente foi apagado.',
-                'failure' => 'Aconteceu um erro ao tentar apagar o modelo de incidente, por favor tente novamente.',
+                'failure' => 'The incident template could not be deleted, please try again.',
             ],
         ],
     ],
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => 'Manutenção Agendada',
+        'schedule'     => 'Maintenance',
         'logged'       => '{0}There has been no Maintenance, good work.|[1]You have logged one schedule.|[2,*]You have reported <strong>:count</strong> schedules.',
         'scheduled_at' => 'Agendada em :timestamp',
         'add'          => [
-            'title'   => 'Adicionar Manutenção Agendada',
-            'success' => 'Agendamento adicionado.',
-            'failure' => 'Ocorreu um problema ao adicionar a programação, por favor tente novamente.',
+            'title'   => 'Add Maintenance',
+            'success' => 'Maintenance added.',
+            'failure' => 'Something went wrong adding the Maintenance, please try again.',
         ],
         'edit' => [
-            'title'   => 'Editar Manutenção Agendada',
-            'success' => 'Agendamento actualizado com sucesso!',
-            'failure' => 'Ocorreu um problema ao editar a programação, por favor tente novamente.',
+            'title'   => 'Edit Maintenance',
+            'success' => 'Maintenance has been updated!',
+            'failure' => 'Something went wrong editing the Maintenance, please try again.',
         ],
         'delete' => [
-            'success' => 'The scheduled maintenance has been deleted and will not show on your status page.',
-            'failure' => 'The scheduled maintenance could not be deleted, please try again.',
+            'success' => 'The Maintenance has been deleted and will not show on your status page.',
+            'failure' => 'The Maintenance could not be deleted, please try again.',
         ],
     ],
 
@@ -101,12 +101,12 @@ return [
         'add'                => [
             'title'   => 'Adicionar um Componente',
             'message' => 'Você deve adicionar um componente.',
-            'success' => 'Componente criado.',
+            'success' => 'Component created.',
             'failure' => 'Something went wrong with the component group, please try again.',
         ],
         'edit' => [
             'title'   => 'Editar um Componente',
-            'success' => 'Componente atualizado.',
+            'success' => 'Component updated.',
             'failure' => 'Something went wrong with the component group, please try again.',
         ],
         'delete' => [
@@ -120,17 +120,17 @@ return [
             'no_components' => 'Deverá adicionar um grupo de componente.',
             'add'           => [
                 'title'   => 'Adicionar um grupo de componentes',
-                'success' => 'Grupo de componentes adicionado.',
+                'success' => 'Component group added.',
                 'failure' => 'Something went wrong with the component group, please try again.',
             ],
             'edit' => [
                 'title'   => 'Editar um grupo de Componentes',
-                'success' => 'Grupo de componentes atualizado.',
+                'success' => 'Component group updated.',
                 'failure' => 'Something went wrong with the component group, please try again.',
             ],
             'delete' => [
                 'success' => 'O grupo de componentes foi apagado!',
-                'failure' => 'O grupo de componentes não pode ser apagado, por favor tente novamente.',
+                'failure' => 'The component group could not be deleted, please try again.',
             ],
         ],
     ],
@@ -141,17 +141,17 @@ return [
         'add'     => [
             'title'   => 'Criar uma métrica',
             'message' => 'Adicione uma métrica.',
-            'success' => 'Métrica criada.',
+            'success' => 'Metric created.',
             'failure' => 'Something went wrong with the metric, please try again.',
         ],
         'edit' => [
             'title'   => 'Editar uma métrica',
-            'success' => 'Métrica atualizada.',
+            'success' => 'Metric updated.',
             'failure' => 'Something went wrong with the metric, please try again.',
         ],
         'delete' => [
             'success' => 'A métrica foi apagada e não será mais mostrada na sua página de estado.',
-            'failure' => 'A métrica não pode ser apagada, por favor tente novamente.',
+            'failure' => 'The metric could not be deleted, please try again.',
         ],
     ],
     // Subscribers
@@ -161,14 +161,14 @@ return [
         'description_disabled' => 'To use this feature, you need allow people to signup for notifications.',
         'verified'             => 'Verificado',
         'not_verified'         => 'Não Verificado',
-        'subscriber'           => ':email, subscrito em :date',
-        'no_subscriptions'     => 'Subscrito em todas as atualizações',
+        'subscriber'           => ':email, subscribed :date',
+        'no_subscriptions'     => 'Subscribed to all updates',
         'global'               => 'Globally subscribed',
         'add'                  => [
             'title'   => 'Adicionar um novo assinante',
             'success' => 'Assinante adicionado.',
             'failure' => 'Something went wrong adding the subscriber, please try again.',
-            'help'    => 'Introduza cada subscritor numa linha nova.',
+            'help'    => 'Enter each subscriber on a new line.',
         ],
         'edit' => [
             'title'   => 'Actualizar Assinante',
@@ -185,22 +185,22 @@ return [
         'description' => 'Membros da equipe serão capazes de adicionar, modificar &amp; editar componentes e incidentes.',
         'add'         => [
             'title'   => 'Adicionar um novo membro de equipa',
-            'success' => 'Membro de equipa adicionado.',
-            'failure' => 'O membro da equipe não pôde ser adicionado, por favor tente novamente.',
+            'success' => 'Team member added.',
+            'failure' => 'The team member could not be added, please try again.',
         ],
         'edit' => [
             'title'   => 'Atualizar Perfil',
-            'success' => 'Perfil actualizado.',
+            'success' => 'Profile updated.',
             'failure' => 'Something went wrong updating the profile, please try again.',
         ],
         'delete' => [
             'success' => 'Utilizador apagado.',
-            'failure' => 'O membro da equipe não pôde ser adicionado, por favor tente novamente.',
+            'failure' => 'The team member could not be added, please try again.',
         ],
         'invite' => [
             'title'   => 'Convidar um novo membro de equipa',
             'success' => 'Os utilizadores convidados.',
-            'failure' => 'O convite não pôde ser enviado, por favor tente novamente.',
+            'failure' => 'The invite could not be sent, please try again.',
         ],
     ],
 
@@ -222,16 +222,16 @@ return [
             'localization' => 'Localização',
         ],
         'customization' => [
-            'customization' => 'Personalização',
-            'header'        => 'HTML do Header Personalizado',
-            'footer'        => 'HTML do Footer Personalizado',
+            'customization' => 'Customization',
+            'header'        => 'Custom Header HTML',
+            'footer'        => 'Custom Footer HTML',
         ],
         'mail' => [
-            'mail'  => 'E-Mail',
-            'test'  => 'Teste',
+            'mail'  => 'Mail',
+            'test'  => 'Test',
             'email' => [
-                'subject' => 'Notificação de teste do Cachet',
-                'body'    => 'Isto é uma notificação de teste do Cachet.',
+                'subject' => 'Test notification from Cachet',
+                'body'    => 'This is a test notification from Cachet.',
             ],
         ],
         'security' => [
@@ -249,12 +249,12 @@ return [
             'failure' => 'Não foi possível salvar as configurações.',
         ],
         'credits' => [
-            'credits'       => 'Créditos',
-            'contributors'  => 'Contribuidores',
-            'license'       => 'Cachet é um projecto open source licenciado com base no BSD-3, disponibilizado pela <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
-            'backers-title' => 'Apoios & Patrocinadores',
-            'backers'       => 'Se você quiser apoiar desenvolvimentos futuros, veja a campanha do <a href="https://patreon.com/jbrooksuk" target="_blank">Cachet no Pantreon</a>.',
-            'thank-you'     => 'Obrigado a cada um dos :count colaboradores.',
+            'credits'       => 'Credits',
+            'contributors'  => 'Contributors',
+            'license'       => 'Cachet is a BSD-3-licensed open source project, released by <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
+            'backers-title' => 'Backers & Sponsors',
+            'backers'       => 'If you\'d like to support future development, check out the <a href="https://patreon.com/jbrooksuk" target="_blank">Cachet Patreon</a> campaign.',
+            'thank-you'     => 'Thank you to each and every one of the :count contributors.',
         ],
     ],
 
@@ -280,17 +280,17 @@ return [
 
     // Widgets
     'widgets' => [
-        'support'          => 'Suporte o Cachet',
-        'support_subtitle' => 'Verifique a nossa pagina no <strong><a href="https://patreon.com/jbrooksuk" target="_blank">Patreon</a></strong>!',
-        'news'             => 'Últimas Notícias',
-        'news_subtitle'    => 'Obter uma actualização',
+        'support'          => 'Support Cachet',
+        'support_subtitle' => 'Check out our <strong><a href="https://patreon.com/jbrooksuk" target="_blank">Patreon</a></strong> page!',
+        'news'             => 'Latest News',
+        'news_subtitle'    => 'Get the latest update',
     ],
 
     // Welcome modal
     'welcome' => [
         'welcome' => 'Bem vindo à sua página de estado!',
         'message' => 'Sua página de status está quase pronta! Tavez vocë queira checar essas configurações extras',
-        'close'   => 'Voltar ao Dashboard',
+        'close'   => 'I\'m good thanks!',
         'steps'   => [
             'component'  => 'Criar componentes',
             'incident'   => 'Criar incidentes',

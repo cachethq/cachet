@@ -56,7 +56,7 @@ return [
             'title' => 'Incident Sjablonen',
             'add'   => [
                 'title'   => 'Creëer een incident template',
-                'message' => 'Voeg een incident template toe.',
+                'message' => 'Create your first incident template.',
                 'success' => 'Je nieuwe incident template is aangemaakt.',
                 'failure' => 'Er is iets misgegaan met de incident template.',
             ],
@@ -227,11 +227,11 @@ return [
             'footer'        => 'Aangepaste voettekst HTML',
         ],
         'mail' => [
-            'mail'  => 'E-mail',
+            'mail'  => 'Mail',
             'test'  => 'Test',
             'email' => [
-                'subject' => 'Test notificatie van Cachet',
-                'body'    => 'Dit is een test notificatie van Cachet.',
+                'subject' => 'Test notification from Cachet',
+                'body'    => 'This is a test notification from Cachet.',
             ],
         ],
         'security' => [

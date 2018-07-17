@@ -11,21 +11,21 @@
 
 return [
 
-    'dashboard'          => 'Hallintanäkymä',
+    'dashboard'          => 'Dashboard',
     'writeable_settings' => 'The Cachet settings directory is not writeable. Please make sure that <code>./bootstrap/cachet</code> is writeable by the web server.',
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Tapahtumat &amp; ajastaminen',
-        'incidents'                => 'Tapahtumat',
+        'title'                    => 'Incidents & Maintenance',
+        'incidents'                => 'Incidents',
         'logged'                   => '{0}There are no incidents, good work.|[1]You have logged one incident.|[2,*]You have reported <strong>:count</strong> incidents.',
-        'incident-create-template' => 'Luo mallipohja',
-        'incident-templates'       => 'Tapahtumamalli',
+        'incident-create-template' => 'Create Template',
+        'incident-templates'       => 'Incident Templates',
         'updates'                  => [
             'title'   => 'Incident updates for :incident',
             'count'   => '{0}Zero Updates|[1]One Update|[2]Two Updates|[3,*]Several Updates',
             'add'     => [
-                'title'   => 'Luo tapahtuma malli',
+                'title'   => 'Create new incident update',
                 'success' => 'Your new incident update has been created.',
                 'failure' => 'Something went wrong with the incident update.',
             ],
@@ -37,31 +37,31 @@ return [
         ],
         'reported_by'              => 'Reported by :user',
         'add'                      => [
-            'title'   => 'Ilmoita tapahtuma',
-            'success' => 'Tapahtuma lisätty.',
+            'title'   => 'Report an incident',
+            'success' => 'Incident added.',
             'failure' => 'There was an error adding the incident, please try again.',
         ],
         'edit' => [
-            'title'   => 'Muokkaa tapahtumaa',
-            'success' => 'Tapahtuma päivitetty.',
+            'title'   => 'Edit an incident',
+            'success' => 'Incident updated.',
             'failure' => 'There was an error editing the incident, please try again.',
         ],
         'delete' => [
-            'success' => 'Tapaus on poistettu ja ei näytetä tila-sivulla.',
+            'success' => 'The incident has been deleted and will not show on your status page.',
             'failure' => 'The incident could not be deleted, please try again.',
         ],
 
         // Incident templates
         'templates' => [
-            'title' => 'Tapahtumamalli',
+            'title' => 'Incident Templates',
             'add'   => [
-                'title'   => 'Luo uusi tapahtuma malli',
-                'message' => 'You should add an incident template.',
+                'title'   => 'Create an incident template',
+                'message' => 'Create your first incident template.',
                 'success' => 'Your new incident template has been created.',
                 'failure' => 'Something went wrong with the incident template.',
             ],
             'edit' => [
-                'title'   => 'Muokkaa sivupohjaa',
+                'title'   => 'Edit Template',
                 'success' => 'The incident template has been updated.',
                 'failure' => 'Something went wrong updating the incident template',
             ],
@@ -74,79 +74,79 @@ return [
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => 'Ajastettu tapahtuma',
+        'schedule'     => 'Maintenance',
         'logged'       => '{0}There has been no Maintenance, good work.|[1]You have logged one schedule.|[2,*]You have reported <strong>:count</strong> schedules.',
-        'scheduled_at' => 'Ajastettu :timestamp alkaen',
+        'scheduled_at' => 'Scheduled at :timestamp',
         'add'          => [
-            'title'   => 'Lisää ajastettu tapahtuma',
-            'success' => 'Ajastus lisätty.',
-            'failure' => 'Jokin meni pielen lisättäessä aikataulua, yritäthän uudelleen.',
+            'title'   => 'Add Maintenance',
+            'success' => 'Maintenance added.',
+            'failure' => 'Something went wrong adding the Maintenance, please try again.',
         ],
         'edit' => [
-            'title'   => 'Muokkaa ajastettua tapahtumaa',
-            'success' => 'Aikataulu päivitettiin!',
-            'failure' => 'Jokin meni pieleen muokattaessa aikataulua, yritäthän uudelleen.',
+            'title'   => 'Edit Maintenance',
+            'success' => 'Maintenance has been updated!',
+            'failure' => 'Something went wrong editing the Maintenance, please try again.',
         ],
         'delete' => [
-            'success' => 'The scheduled maintenance has been deleted and will not show on your status page.',
-            'failure' => 'The scheduled maintenance could not be deleted, please try again.',
+            'success' => 'The Maintenance has been deleted and will not show on your status page.',
+            'failure' => 'The Maintenance could not be deleted, please try again.',
         ],
     ],
 
     // Components
     'components' => [
-        'components'         => 'Komponentit',
-        'component_statuses' => 'Komponenttien tilat',
-        'listed_group'       => 'Ryhmitetään :name alle',
+        'components'         => 'Components',
+        'component_statuses' => 'Component Statuses',
+        'listed_group'       => 'Grouped under :name',
         'add'                => [
-            'title'   => 'Lisää komponentti',
-            'message' => 'Sinun tulisi lisätä uusi komponentti.',
-            'success' => 'Komponentti on luotu.',
-            'failure' => 'Jokin meni vikaa luodessa komponenttia, ole hyvä ja yritä uudelleen.',
+            'title'   => 'Add a component',
+            'message' => 'You should add a component.',
+            'success' => 'Component created.',
+            'failure' => 'Something went wrong with the component group, please try again.',
         ],
         'edit' => [
-            'title'   => 'Muokkaa komponenttia',
-            'success' => 'Komponentti päivitetty.',
-            'failure' => 'Jokin meni vikaa luodessa komponenttia, ole hyvä ja yritä uudelleen.',
+            'title'   => 'Edit a component',
+            'success' => 'Component updated.',
+            'failure' => 'Something went wrong with the component group, please try again.',
         ],
         'delete' => [
-            'success' => 'Komponentti on poistettu!',
-            'failure' => 'Komponenttia ei voitu poistaa, ole hyvä ja yritä uudelleen.',
+            'success' => 'The component has been deleted!',
+            'failure' => 'The component could not be deleted, please try again.',
         ],
 
         // Component groups
         'groups' => [
-            'groups'        => 'Komponenttiryhmä|Komponenttirymät',
-            'no_components' => 'Sinun tulisi lisätä komponentti ryhmä.',
+            'groups'        => 'Component group|Component groups',
+            'no_components' => 'You should add a component group.',
             'add'           => [
-                'title'   => 'Lisää komponentti-ryhmä',
-                'success' => 'Komponenti ryhmä lisätty.',
-                'failure' => 'Jokin meni vikaa luodessa komponenttia, ole hyvä ja yritä uudelleen.',
+                'title'   => 'Add a component group',
+                'success' => 'Component group added.',
+                'failure' => 'Something went wrong with the component group, please try again.',
             ],
             'edit' => [
-                'title'   => 'Muokkaa komponentti ryhmää',
-                'success' => 'Komponentti ryhmä päivitetty.',
-                'failure' => 'Jokin meni vikaa luodessa komponenttia, ole hyvä ja yritä uudelleen.',
+                'title'   => 'Edit a component group',
+                'success' => 'Component group updated.',
+                'failure' => 'Something went wrong with the component group, please try again.',
             ],
             'delete' => [
-                'success' => 'Komponentti ryhmä poistettu!',
-                'failure' => 'Komponenttiryhmää ei voitu poistaa, ole hyvä ja yritä uudelleen.',
+                'success' => 'Component group has been deleted!',
+                'failure' => 'The component group could not be deleted, please try again.',
             ],
         ],
     ],
 
     // Metrics
     'metrics' => [
-        'metrics' => 'Mittarit',
+        'metrics' => 'Metrics',
         'add'     => [
-            'title'   => 'Luo kaavio',
-            'message' => 'Sinun tulisi lisätä kaavio.',
-            'success' => 'Metriikka luotu.',
+            'title'   => 'Create a metric',
+            'message' => 'You should add a metric.',
+            'success' => 'Metric created.',
             'failure' => 'Something went wrong with the metric, please try again.',
         ],
         'edit' => [
-            'title'   => 'Muokkaa kaaviota',
-            'success' => 'Metriikka päivitetty.',
+            'title'   => 'Edit a metric',
+            'success' => 'Metric updated.',
             'failure' => 'Something went wrong with the metric, please try again.',
         ],
         'delete' => [
@@ -156,75 +156,75 @@ return [
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'          => 'Tilaajat',
-        'description'          => 'Tilaajat saavat sähköposti päivityksiä kun tapahtumia luodaan tai komponentteja päivitetään.',
+        'subscribers'          => 'Subscribers',
+        'description'          => 'Subscribers will receive email updates when incidents are created or components are updated.',
         'description_disabled' => 'To use this feature, you need allow people to signup for notifications.',
-        'verified'             => 'Vahvistettu',
-        'not_verified'         => 'Ei todennettu',
+        'verified'             => 'Verified',
+        'not_verified'         => 'Not verified',
         'subscriber'           => ':email, subscribed :date',
-        'no_subscriptions'     => 'Tilaa kaikki päivitykset',
+        'no_subscriptions'     => 'Subscribed to all updates',
         'global'               => 'Globally subscribed',
         'add'                  => [
-            'title'   => 'Lisää uusi tilaaja',
-            'success' => 'Tilaaja lisätty.',
-            'failure' => 'Jotakin meni vikaan lisäessä uutta tilaajaa, ole hyvä ja yritä uudelleen.',
-            'help'    => 'Syötä jokaisen tilajan sähköpostiosoite uudelle riville.',
+            'title'   => 'Add a new subscriber',
+            'success' => 'Subscriber has been added!',
+            'failure' => 'Something went wrong adding the subscriber, please try again.',
+            'help'    => 'Enter each subscriber on a new line.',
         ],
         'edit' => [
-            'title'   => 'Päivitä tilaaja',
-            'success' => 'Tilaajan tiedot on pävitetty!',
-            'failure' => 'Jotakin meni vikaan lisätessä uusia tilaajia, ole hyvä ja yritä uudelleen.',
+            'title'   => 'Update subscriber',
+            'success' => 'Subscriber has been updated!',
+            'failure' => 'Something went wrong editing the subscriber, please try again.',
         ],
     ],
 
     // Team
     'team' => [
-        'team'        => 'Ryhmä',
-        'member'      => 'Jäsen',
-        'profile'     => 'Profiili',
-        'description' => 'Käyttäjä voi luoda, muokata &amp; komponentteja ja tapahtumia.',
+        'team'        => 'Team',
+        'member'      => 'Member',
+        'profile'     => 'Profile',
+        'description' => 'Team Members will be able to add, modify & edit components and incidents.',
         'add'         => [
-            'title'   => 'Lisää uusi käyttäjä',
-            'success' => 'Käyttäjä on lisätty.',
-            'failure' => 'Käyttäjää ei voitu luoda, ole hyvä ja yritä uudelleen.',
+            'title'   => 'Add a new team member',
+            'success' => 'Team member added.',
+            'failure' => 'The team member could not be added, please try again.',
         ],
         'edit' => [
-            'title'   => 'Päivitä profiili',
-            'success' => 'Profiili on päivitetty.',
-            'failure' => 'Jokin meni vikaan päivittäessä profiilia, ole hyvä ja yritä uudelleen.',
+            'title'   => 'Update profile',
+            'success' => 'Profile updated.',
+            'failure' => 'Something went wrong updating the profile, please try again.',
         ],
         'delete' => [
-            'success' => 'Käyttäjä on poistettu ja ei ole enään pääsyä hallintapaneeliin!',
-            'failure' => 'Käyttäjää ei voitu luoda, ole hyvä ja yritä uudelleen.',
+            'success' => 'Team member has been deleted and will no longer have access to the dashboard!',
+            'failure' => 'The team member could not be added, please try again.',
         ],
         'invite' => [
-            'title'   => 'Kutsu uusi käyttäjä',
-            'success' => 'Kutsu on lähetetty',
-            'failure' => 'Kutsua ei voitu lähettää, ole hyvä ja yritä uudelleen.',
+            'title'   => 'Invite a new team member',
+            'success' => 'An invite has been sent',
+            'failure' => 'The invite could not be sent, please try again.',
         ],
     ],
 
     // Settings
     'settings' => [
-        'settings'  => 'Asetukset',
+        'settings'  => 'Settings',
         'app-setup' => [
-            'app-setup'   => 'Sovelluksen asetukset',
-            'images-only' => 'Vain kuvia voi lähettää.',
-            'too-big'     => 'Lähettämäsi tiedosto on liian suuri. Lähetä pienempi kuva kuin :size',
+            'app-setup'   => 'Application Setup',
+            'images-only' => 'Only images may be uploaded.',
+            'too-big'     => 'The file you uploaded is too big. Upload an image smaller than :size',
         ],
         'analytics' => [
-            'analytics' => 'Analytiikka',
+            'analytics' => 'Analytics',
         ],
         'log' => [
-            'log' => 'Loki',
+            'log' => 'Log',
         ],
         'localization' => [
-            'localization' => 'Sijainti',
+            'localization' => 'Localization',
         ],
         'customization' => [
-            'customization' => 'Mukauttaminen',
-            'header'        => 'Mukautettu ylätunniste HTML',
-            'footer'        => 'Mukautettu alatunniste HTML',
+            'customization' => 'Customization',
+            'header'        => 'Custom Header HTML',
+            'footer'        => 'Custom Footer HTML',
         ],
         'mail' => [
             'mail'  => 'Mail',
@@ -235,69 +235,69 @@ return [
             ],
         ],
         'security' => [
-            'security'   => 'Turvallisuus',
-            'two-factor' => 'Käyttäjät ilman kaksivaiheista todennusta',
+            'security'   => 'Security',
+            'two-factor' => 'Users without two-factor authentication',
         ],
         'stylesheet' => [
             'stylesheet' => 'Stylesheet',
         ],
         'theme' => [
-            'theme' => 'Teema',
+            'theme' => 'Theme',
         ],
         'edit' => [
-            'success' => 'Asetukset tallennettu.',
-            'failure' => 'Asetuksia ei voitu tallentaa.',
+            'success' => 'Settings saved.',
+            'failure' => 'Settings could not be saved.',
         ],
         'credits' => [
-            'credits'       => 'Tekijät',
-            'contributors'  => 'Kehittäjät',
-            'license'       => 'Cachet on BSD-3-lisenssillä varustettu avoimen lähdekoodin projekti, julkaustu <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank"> Alt Three Services Limited</a>.',
-            'backers-title' => 'Tukijoita & sponsorit',
-            'backers'       => 'Jos haluat tukea kehitystä, katso <a href="https://patreon.com/jbrooksuk" target="_blank">Cachet Patreon</a> kampanjaa.',
+            'credits'       => 'Credits',
+            'contributors'  => 'Contributors',
+            'license'       => 'Cachet is a BSD-3-licensed open source project, released by <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
+            'backers-title' => 'Backers & Sponsors',
+            'backers'       => 'If you\'d like to support future development, check out the <a href="https://patreon.com/jbrooksuk" target="_blank">Cachet Patreon</a> campaign.',
             'thank-you'     => 'Thank you to each and every one of the :count contributors.',
         ],
     ],
 
     // Login
     'login' => [
-        'login'      => 'Kirjaudu',
-        'logged_in'  => 'Olet kirjautunut sisään.',
-        'welcome'    => 'Tervetuloa takaisin!',
+        'login'      => 'Login',
+        'logged_in'  => 'You\'re logged in.',
+        'welcome'    => 'Welcome back!',
         'two-factor' => 'Please enter your token.',
     ],
 
     // Sidebar footer
-    'help'        => 'Tuki',
-    'status_page' => 'Tila-sivu',
-    'logout'      => 'Kirjaudu ulos',
+    'help'        => 'Help',
+    'status_page' => 'Status Page',
+    'logout'      => 'Logout',
 
     // Notifications
     'notifications' => [
-        'notifications' => 'Ilmoitukset',
-        'awesome'       => 'Mahtavaa.',
-        'whoops'        => 'Hupsis.',
+        'notifications' => 'Notifications',
+        'awesome'       => 'Awesome.',
+        'whoops'        => 'Whoops.',
     ],
 
     // Widgets
     'widgets' => [
-        'support'          => 'Tue Cachet:iä',
+        'support'          => 'Support Cachet',
         'support_subtitle' => 'Check out our <strong><a href="https://patreon.com/jbrooksuk" target="_blank">Patreon</a></strong> page!',
-        'news'             => 'Viimeisimmät uutiset',
-        'news_subtitle'    => 'Hanki uusin päivitys',
+        'news'             => 'Latest News',
+        'news_subtitle'    => 'Get the latest update',
     ],
 
     // Welcome modal
     'welcome' => [
-        'welcome' => 'Tervetuloa tila-sivulle!',
+        'welcome' => 'Welcome to your new status page, :username!',
         'message' => 'You\'re almost ready but you might want to configure these extra settings first...',
-        'close'   => 'Siirry suoraan hallintapaneeliin',
+        'close'   => 'I\'m good thanks!',
         'steps'   => [
-            'component'  => 'Luo uusi komponentti',
-            'incident'   => 'Luo uusi tapahtuma',
-            'customize'  => 'Muokkaa',
-            'team'       => 'Lisää käyttäjä',
-            'api'        => 'Luo API tunnus',
-            'two-factor' => 'Kaksivaiheinen todennus',
+            'component'  => 'Add your components',
+            'incident'   => 'Create an incident',
+            'customize'  => 'Customize your page',
+            'team'       => 'Add your team',
+            'api'        => 'Generate an API token',
+            'two-factor' => 'Setup Two Factor Authentication',
         ],
     ],
 

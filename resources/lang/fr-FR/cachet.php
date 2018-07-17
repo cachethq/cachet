@@ -30,10 +30,10 @@ return [
         'none'         => 'Aucun incident signalé',
         'past'         => 'Incidents antérieurs',
         'stickied'     => 'Incidents épinglés',
-        'scheduled'    => 'Maintenance Planifiée',
+        'scheduled'    => 'Maintenance',
         'scheduled_at' => ', planifé à :timestamp',
         'posted'       => 'Posté à :timestamp',
-        'posted_at'    => 'Posté à : timestamp',
+        'posted_at'    => 'Posted at :timestamp',
         'status'       => [
             1 => 'Enquête en cours',
             2 => 'Identifié',
@@ -53,9 +53,9 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] Système opérationnel|[2,*] Tous les systèmes sont opérationnels',
-        'bad'   => '[0,1] Le système rencontre actuellement des problèmes|[2,Inf] Certains systèmes rencontrent des problèmes',
-        'major' => '[0,1] Le service rencontre une panne majeure|[2,Inf] Certains systèmes rencontrent une panne majeure',
+        'good'  => '[0,1]System operational|[2,*]All systems are operational',
+        'bad'   => '[0,1]The system is experiencing issues|[2,*]Some systems are experiencing issues',
+        'major' => '[0,1]The system is experiencing major issues|[2,*]Some systems are experiencing major issues',
     ],
 
     'api' => [
@@ -76,13 +76,13 @@ return [
     // Subscriber
     'subscriber' => [
         'subscribe'           => 'Abonnez-vous pour obtenir les dernières mises à jour.',
-        'unsubscribe'         => 'Se désabonner',
+        'unsubscribe'         => 'Unsubscribe',
         'button'              => 'S\'abonner',
-        'manage_subscription' => 'Gérer l\'abonnement',
+        'manage_subscription' => 'Manage subscription',
         'manage'              => [
             'no_subscriptions' => 'Vous êtes actuellement abonné à toutes les mises à jour.',
             'my_subscriptions' => 'Vous êtes actuellement abonné aux mises à jour suivantes.',
-            'manage_at_link'   => 'Gérer vos abonnements à :link',
+            'manage_at_link'   => 'Manage your subscriptions at :link',
         ],
         'email' => [
             'subscribe'          => 'S\'abonner aux notifications par email.',
@@ -122,9 +122,9 @@ return [
     // Meta descriptions
     'meta' => [
         'description' => [
-            'incident'  => 'Détails et mises à jour sur l\'incident :name qui a eu lieu le :date',
-            'schedule'  => 'Détails sur la période de maintenance planifiée :name débutant le :startDate',
-            'subscribe' => 'S’abonner à :app afin de recevoir les mises à jour des incidents et des périodes de maintenance planifiée',
+            'incident'  => 'Details and updates about the :name incident that occurred on :date',
+            'schedule'  => 'Details about the scheduled maintenance period :name starting :startDate',
+            'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
             'overview'  => 'Restez à jour avec les dernières mises à jour de :app.',
         ],
     ],

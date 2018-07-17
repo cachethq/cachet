@@ -79,7 +79,7 @@ return [
     'required_without_all' => 'Le champ :attribute est requis lorsque aucune des :values sont présentes.',
     'same'                 => 'Le :attribute et :other doivent correspondre.',
     'size'                 => [
-        'numeric' => ':attribute doit être :size.',
+        'numeric' => ':attribute doit faire :size.',
         'file'    => 'attribute doit être de :size kilo-octets.',
         'string'  => 'L\'attribut ":attribute" doit faire :size caractères.',
         'array'   => ':attribute doit contenir :size éléments.',

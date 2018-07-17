@@ -73,7 +73,7 @@ return [
         'status'       => 'Status',
         'message'      => 'Message',
         'message-help' => 'You may also use Markdown.',
-        'scheduled_at' => 'When will this maintenance be scheduled?',
+        'scheduled_at' => 'When is this maintenance scheduled for?',
         'completed_at' => 'When did this maintenance complete?',
         'templates'    => [
             'name'     => 'Name',
@@ -109,7 +109,7 @@ return [
     'actions' => [
         'name'               => 'Name',
         'description'        => 'Description',
-        'start_at'           => 'Shedule start time',
+        'start_at'           => 'Schedule start time',
         'timezone'           => 'Timezone',
         'schedule_frequency' => 'Schedule frequency (in seconds)',
         'completion_latency' => 'Completion latency (in seconds)',
@@ -136,7 +136,7 @@ return [
         'threshold'                => 'How many minutes of threshold between metric points?',
         'visibility'               => 'Visibility',
         'visibility_authenticated' => 'Visible to authenticated users',
-        'visibility_public'        => 'Visible to everyone',
+        'visibility_public'        => 'Visible to everybody',
         'visibility_hidden'        => 'Always hidden',
 
         'points' => [
@@ -221,7 +221,7 @@ return [
         ],
         'team' => [
             'description' => 'Invite your team members by entering their email addresses here.',
-            'email'       => 'Email #:id',
+            'email'       => 'Your Team Members Email Address',
         ],
     ],
 
