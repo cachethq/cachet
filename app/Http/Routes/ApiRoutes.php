@@ -47,8 +47,11 @@ class ApiRoutes
                 $router->get('components/{component}', 'ComponentController@show');
 
                 $router->get('incidents', 'IncidentController@index');
-                $router->get('incidents/{incident}', 'IncidentController@show');
 
+                $router->get('incidents/templates', 'IncidentTemplateController@index');
+                $router->get('incidents/templates/{incident_template}', 'IncidentTemplateController@show');
+
+                $router->get('incidents/{incident}', 'IncidentController@show');
                 $router->get('incidents/{incident}/updates', 'IncidentUpdateController@index');
                 $router->get('incidents/{incident}/updates/{update}', 'IncidentUpdateController@show');
 
