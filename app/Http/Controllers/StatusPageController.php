@@ -18,6 +18,7 @@ use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\Schedule;
 use CachetHQ\Cachet\Repositories\Metric\MetricRepository;
+use CachetHQ\Cachet\Settings\Repository;
 use CachetHQ\Cachet\Services\Dates\DateFactory;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
@@ -44,8 +45,8 @@ class StatusPageController extends AbstractApiController
      */
     public function showIndex()
     {
-        $onlyDisruptedDays = Config::get('setting.only_disrupted_days');
-        $appIncidentDays = (int) Config::get('setting.app_incident_days', 1);
+        $onlyDisruptedDays = app(Repository::class)->get('only_disrupted_days');
+        $appIncidentDays = (int) app(Repository::class)->get('app_incident_days');
 
         $startDate = Date::createFromFormat('Y-m-d', Binput::get('start_date', Date::now()->toDateString()));
         $endDate = $startDate->copy()->subDays($appIncidentDays);
