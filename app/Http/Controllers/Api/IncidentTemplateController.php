@@ -19,14 +19,14 @@ class IncidentTemplateController extends AbstractApiController
 {
     /**
      * Get all incident templates.
+     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function index()
     {
         $templates = IncidentTemplate::query();
 
-        if ($sortBy = Binput::get('sort'))
-        {
+        if ($sortBy = Binput::get('sort')) {
             $direction = Binput::has('order') && Binput::get('order') == 'desc';
 
             $templates->sort($sortBy, $direction);

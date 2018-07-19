@@ -15,6 +15,7 @@ use CachetHQ\Cachet\Models\IncidentTemplate;
 
 /**
  * This is the incident template test class.
+ *
  * @author Marc Hagen <hello@marchagen.nl>
  */
 class IncidentTemplateTest extends AbstractApiTestCase
@@ -25,9 +26,9 @@ class IncidentTemplateTest extends AbstractApiTestCase
 
         $response = $this->json('GET', '/api/v1/incidents/templates');
 
-        $response->assertJsonFragment([ 'id' => $templates[0]->id ]);
-        $response->assertJsonFragment([ 'id' => $templates[1]->id ]);
-        $response->assertJsonFragment([ 'id' => $templates[2]->id ]);
+        $response->assertJsonFragment(['id' => $templates[0]->id]);
+        $response->assertJsonFragment(['id' => $templates[1]->id]);
+        $response->assertJsonFragment(['id' => $templates[2]->id]);
         $response->assertStatus(200);
     }
 
@@ -37,5 +38,4 @@ class IncidentTemplateTest extends AbstractApiTestCase
 
         $response->assertStatus(404);
     }
-
 }
