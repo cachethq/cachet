@@ -187,7 +187,6 @@ return [
         Laravolt\Avatar\ServiceProvider::class,
         McCool\LaravelAutoPresenter\AutoPresenterServiceProvider::class,
         PragmaRX\Google2FA\Vendor\Laravel\ServiceProvider::class,
-        Spatie\Backup\BackupServiceProvider::class,
         Roumen\Feed\FeedServiceProvider::class,
 
         /*
