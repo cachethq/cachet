@@ -15,7 +15,6 @@ use CachetHQ\Cachet\Bus\Events\System\SystemWasInstalledEvent;
 use CachetHQ\Cachet\Bus\Events\System\SystemWasResetEvent;
 use CachetHQ\Cachet\Bus\Events\System\SystemWasUpdatedEvent;
 use CachetHQ\Cachet\Settings\Cache;
-use Exception;
 use Illuminate\Console\Command;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Events\Dispatcher;
@@ -128,7 +127,7 @@ class CommandSubscriber
     }
 
     /**
-     * Handle the main bulk of the command, clear the settings
+     * Handle the main bulk of the command, clear the settings.
      *
      * @param \Illuminate\Console\Command $command
      *
