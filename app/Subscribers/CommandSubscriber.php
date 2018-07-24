@@ -15,7 +15,6 @@ use CachetHQ\Cachet\Bus\Events\System\SystemWasInstalledEvent;
 use CachetHQ\Cachet\Bus\Events\System\SystemWasResetEvent;
 use CachetHQ\Cachet\Bus\Events\System\SystemWasUpdatedEvent;
 use CachetHQ\Cachet\Settings\Cache;
-use Exception;
 use Illuminate\Console\Command;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Events\Dispatcher;
@@ -128,7 +127,7 @@ class CommandSubscriber
     }
 
     /**
-     * Handle the main bulk of the command, clear the settings and backup the database.
+     * Handle the main bulk of the command, clear the settings.
      *
      * @param \Illuminate\Console\Command $command
      *
@@ -141,27 +140,6 @@ class CommandSubscriber
         $this->cache->clear();
 
         $command->line('Settings cache cleared!');
-
-        // SQLite does not backup.
-        if ($this->config->get('database.default') === 'sqlite') {
-            $command->line('Backup skipped: SQLite is not supported.');
-
-            return;
-        }
-
-        $command->line('Backing up database...');
-
-        try {
-            $command->call('backup:run', [
-                '--only-db'         => true,
-                '--no-interaction'  => true,
-            ]);
-        } catch (Exception $e) {
-            $command->error($e->getMessage());
-            $command->line('Backup skipped!');
-        }
-
-        $command->line('Backup completed!');
     }
 
     /**
