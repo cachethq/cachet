@@ -254,6 +254,19 @@ body.status-page {
         padding-left: 0;
         // border-radius: 0;
 
+        .list-subgroup{
+            border-left: 1px solid $cachet_gray_light;
+            padding-left:50px;
+
+            .group-name {
+                background-color: #fff;
+            }
+
+            .list-group-item {
+                border: 1px solid $cachet_gray_light;
+            }
+        }
+
         .list-group-item {
             border-radius: 0;
             background-color: #ffffff;

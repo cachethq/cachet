@@ -25,6 +25,9 @@
                             @endif
                             {{ $group->name }}
                             <span class="label label-info">{{ $group->components->count() }}</span>
+                            @if($group->parent)
+                            <p><small>{{ trans('dashboard.components.listed_group', ['name' => $group->parent->name]) }}</small></p>
+                            @endif
                         </h4>
                     </div>
                     <div class="col-xs-6 text-right">

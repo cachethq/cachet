@@ -95,9 +95,9 @@ class DashboardController extends Controller
         $components = Component::orderBy('order')->get();
         $incidents = $this->getIncidents();
         $subscribers = $this->getSubscribers();
-
-        $componentGroups = $this->getVisibleGroupedComponents();
-        $ungroupedComponents = Component::ungrouped()->get();
+        $usedComponentGroups = Component::enabled()->where('group_id', '>', 0)->groupBy('group_id')->pluck('group_id');
+        $componentGroups = ComponentGroup::where('parent_id', '=', 0)->orderBy('order')->get();
+        $ungroupedComponents = Component::enabled()->where('group_id', 0)->orderBy('order')->orderBy('created_at')->get();
 
         $welcomeUser = !Auth::user()->welcomed;
         if ($welcomeUser) {

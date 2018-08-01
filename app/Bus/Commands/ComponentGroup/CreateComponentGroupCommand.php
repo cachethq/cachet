@@ -51,11 +51,20 @@ final class CreateComponentGroupCommand
      *
      * @var string[]
      */
+
+    /**
+     * The group this belongs to.
+     *
+     * @var int
+     */
+    public $parent_id;
+
     public $rules = [
         'name'      => 'required|string',
         'order'     => 'required|int',
         'collapsed' => 'required|int|between:0,4',
         'visible'   => 'required|bool',
+        'parent_id'  => 'int',
     ];
 
     /**
@@ -65,14 +74,16 @@ final class CreateComponentGroupCommand
      * @param int    $order
      * @param int    $collapsed
      * @param int    $visible
+     * @param int    $parent_id
      *
      * @return void
      */
-    public function __construct($name, $order, $collapsed, $visible)
+    public function __construct($name, $order, $collapsed, $visible, $parent_id)
     {
         $this->name = $name;
         $this->order = (int) $order;
         $this->collapsed = $collapsed;
         $this->visible = (int) $visible;
+        $this->parent_id = $parent_id;
     }
 }

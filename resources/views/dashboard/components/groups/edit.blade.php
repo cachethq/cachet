@@ -21,6 +21,19 @@
                         <label>{{ trans('forms.components.groups.name') }}</label>
                         <input type="text" class="form-control" name="name" id="group-name" value="{{ $group->name }}" required placeholder="{{ trans('forms.components.groups.name') }}">
                     </div>
+                    @if($groups->count() > 0)
+                    <div class="form-group">
+                        <label>{{ trans('forms.components.group') }}</label>
+                        <select name="parent_id" class="form-control">
+                            <option value="0" {{ $group->parent_id === null ? 'selected' : null }}></option>
+                            @foreach($groups as $parent_group)
+                            <option value="{{ $parent_group->id }}" {{ $group->parent_id === $parent_group->id ? 'selected' : null }}>{{ $parent_group->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    @else
+                    <input type="hidden" name="parent_id" value="0">
+                    @endif
                     <div class="form-group">
                         <label>{{ trans('forms.components.groups.collapsing') }}</label>
                         <select name="collapsed" class="form-control" required>

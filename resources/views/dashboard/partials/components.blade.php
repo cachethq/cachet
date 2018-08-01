@@ -1,20 +1,4 @@
-@if($componentGroups->count() > 0)
-@foreach($componentGroups as $componentGroup)
-@if($componentGroup->enabled_components->count() > 0)
-<ul class="list-group components">
-    <li class="list-group-item group-name">
-        <i class="{{ $componentGroup->collapse_class }} group-toggle"></i>
-        <span class="component-group-name">{{ $componentGroup->name }}</span>
-    </li>
-    <div class="group-items {{ $componentGroup->is_collapsed ? "hide" : null }}">
-        @foreach($componentGroup->enabled_components()->orderBy('order')->get() as $component)
-        @include('dashboard.partials.component', compact($component))
-        @endforeach
-    </div>
-</ul>
-@endif
-@endforeach
-@endif
+@each('dashboard.partials.component-group', $component_groups, 'componentGroup')
 
 @if($ungroupedComponents->count() > 0)
 <ul class="list-group components">

@@ -34,13 +34,15 @@ class CreateComponentGroupCommandTest extends AbstractTestCase
             'order'     => 0,
             'collapsed' => 1,
             'visible'   => ComponentGroup::VISIBLE_AUTHENTICATED,
+            'parent_id' => 0,
         ];
 
         $object = new CreateComponentGroupCommand(
             $params['name'],
             $params['order'],
             $params['collapsed'],
-            $params['visible']
+            $params['visible'],
+            $params['parent_id']
         );
 
         return compact('params', 'object');

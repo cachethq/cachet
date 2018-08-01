@@ -62,15 +62,23 @@ class UpdateComponentGroupCommandHandler
      */
     protected function filter(UpdateComponentGroupCommand $command)
     {
+        $group = $command->group;
+        $disallowed_parent_ids = $group->all_subgroups_ordered()->get()->pluck('id')->toArray();
+        array_push($disallowed_parent_ids, $group->id);
+
         $params = [
             'name'      => $command->name,
             'order'     => $command->order,
             'collapsed' => $command->collapsed,
             'visible'   => $command->visible,
+            'parent_id' => $command->parent_id,
         ];
 
-        return array_filter($params, function ($val) {
+        return array_filter($params, function ($val, $key) use ($disallowed_parent_ids) {
+            if($key === 'parent_id'){
+                return !in_array($val, $disallowed_parent_ids);
+            }
             return $val !== null;
-        });
+        }, ARRAY_FILTER_USE_BOTH);
     }
 }

@@ -56,6 +56,13 @@ final class UpdateComponentGroupCommand
     public $visible;
 
     /**
+     * The group this belongs to.
+     *
+     * @var int
+     */
+    public $parent_id;
+
+    /**
      * The validation rules.
      *
      * @var string[]
@@ -65,6 +72,7 @@ final class UpdateComponentGroupCommand
         'order'     => 'nullable|int',
         'collapsed' => 'nullable|int|between:0,4',
         'visible'   => 'nullable|bool',
+        'parent_id'  => 'int',
     ];
 
     /**
@@ -75,15 +83,17 @@ final class UpdateComponentGroupCommand
      * @param int                                    $order
      * @param int                                    $collapsed
      * @param int                                    $visible
+     * @param int                                    $parent_id
      *
      * @return void
      */
-    public function __construct(ComponentGroup $group, $name, $order, $collapsed, $visible)
+    public function __construct(ComponentGroup $group, $name, $order, $collapsed, $visible, $parent_id)
     {
         $this->group = $group;
         $this->name = $name;
         $this->order = (int) $order;
         $this->collapsed = $collapsed;
         $this->visible = (int) $visible;
+        $this->parent_id = $parent_id;
     }
 }

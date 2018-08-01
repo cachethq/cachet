@@ -51,6 +51,7 @@ class CreateComponentGroupCommandHandler
             'order'     => $command->order,
             'collapsed' => $command->collapsed,
             'visible'   => $command->visible,
+            'parent_id'  => $command->parent_id,
         ]);
 
         event(new ComponentGroupWasCreatedEvent($this->auth->user(), $group));

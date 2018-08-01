@@ -96,7 +96,8 @@ class ComponentGroupController extends AbstractApiController
                 Binput::get('name'),
                 Binput::get('order', 0),
                 Binput::get('collapsed', 0),
-                Binput::get('visible', ComponentGroup::VISIBLE_AUTHENTICATED)
+                Binput::get('visible', ComponentGroup::VISIBLE_AUTHENTICATED),
+                Binput::get('parent_id')
             ));
         } catch (QueryException $e) {
             throw new BadRequestHttpException();
@@ -120,7 +121,8 @@ class ComponentGroupController extends AbstractApiController
                 Binput::get('name'),
                 Binput::get('order'),
                 Binput::get('collapsed'),
-                Binput::get('visible')
+                Binput::get('visible'),
+                Binput::get('parent_id')
             ));
         } catch (QueryException $e) {
             throw new BadRequestHttpException();

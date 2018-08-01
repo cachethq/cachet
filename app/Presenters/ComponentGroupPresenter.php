@@ -27,31 +27,32 @@ class ComponentGroupPresenter extends BasePresenter implements Arrayable
      */
     public function lowest_status()
     {
-        if ($component = $this->wrappedObject->enabled_components_lowest()->first()) {
+        if ($component = $this->wrappedObject->all_enabled_components_lowest()->first()) {
             return AutoPresenter::decorate($component)->status;
         }
     }
 
+
     /**
-     * Returns the lowest component status, readable by humans.
+     * Returns the lowest nested component status, readable by humans.
      *
      * @return string|null
      */
     public function lowest_human_status()
     {
-        if ($component = $this->wrappedObject->enabled_components_lowest()->first()) {
+        if ($component = $this->wrappedObject->all_enabled_components_lowest()->first()) {
             return AutoPresenter::decorate($component)->human_status;
         }
     }
 
     /**
-     * Returns the lowest component status color.
+     * Returns the lowest nested component status color.
      *
      * @return string|null
      */
     public function lowest_status_color()
     {
-        if ($component = $this->wrappedObject->enabled_components_lowest()->first()) {
+        if ($component = $this->wrappedObject->all_enabled_components_lowest()->first()) {
             return AutoPresenter::decorate($component)->status_color;
         }
     }

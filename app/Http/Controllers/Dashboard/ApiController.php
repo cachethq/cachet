@@ -105,7 +105,8 @@ class ApiController extends AbstractApiController
                 $group->name,
                 $order + 1,
                 $group->collapsed,
-                $group->visible
+                $group->visible,
+                $group->parent_id
             ));
         }
 
