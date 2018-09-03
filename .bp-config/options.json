@@ -1,0 +1,7 @@
+{
+    "COMPOSER_INSTALL_OPTIONS_DEBUG": [ "--no-dev", "-o"],
+    "PHP_VERSION": "{PHP_71_LATEST}",
+    "COMPOSER_VENDOR_DIR": "vendor",
+    "WEBDIR": "public",
+    "PHP_EXTENSIONS": ["bz2", "pdo", "zlib", "curl", "mcrypt", "mbstring", "mysqli", "gd", "zip", "pdo_mysql", "pdo_sqlite","iconv",  "openssl" ]
+}

@@ -1,0 +1,9 @@
+applications:
+- path: .
+  name: cachet
+  memory: 256M
+  buildpack: https://github.com/cloudfoundry/php-buildpack
+  command: null
+  routes:
+  - route: cachet.mybluemix.net
+
