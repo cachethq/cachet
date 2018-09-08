@@ -154,7 +154,7 @@ return [
             'about-this-page'                       => 'このページについて',
             'days-of-incidents'                     => '表示する過去の障害(例:3と入力すると3日分表示します)',
             'time_before_refresh'                   => 'ステータスページの更新頻度(秒単位)',
-            'major_outage_rate'                     => 'Major outage threshold (in %)',
+            'major_outage_rate'                     => '停止と判断するしきい値 (in %)',
             'banner'                                => 'バナー画像',
             'banner-help'                           => '横幅が930px以内の画像をアップロードしてください。',
             'subscribers'                           => '更新情報の購読を許可する',
@@ -241,7 +241,6 @@ return [
     'remove' => '削除',
     'invite' => '招待',
     'signup' => '新規登録',
-    'save'           => 'Save',
     'manage_updates' => '更新の管理',
 
     // Other
