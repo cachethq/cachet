@@ -15,15 +15,15 @@ return [
             'mail' => [
                 'subject'  => 'サービスの稼働状況が更新されました',
                 'greeting' => 'サービスの稼働状況が更新されました。',
-                'content'  => ':nameの稼働状況が:old_statusから:new_statusになりました。',
+                'content'  => ':name の稼働状況が :old_status から :new_status になりました。',
                 'action'   => '詳しく見る',
             ],
             'slack' => [
                 'title'   => 'サービスの稼働状況が更新されました。',
-                'content' => ':nameの稼働状況が:old_statusから:new_statusになりました。',
+                'content' => ':name の稼働状況が :old_status から :new_status になりました。',
             ],
             'sms' => [
-                'content' => ':nameの稼働状況が:old_statusから:new_statusになりました。',
+                'content' => ':name の稼働状況が :old_status から :new_status になりました。',
             ],
         ],
     ],
@@ -31,31 +31,31 @@ return [
         'new' => [
             'mail' => [
                 'subject'  => '障害発生の報告',
-                'greeting' => ':app_nameで障害が発生したことが報告されました。',
-                'content'  => '障害は:nameによって報告されました。',
+                'greeting' => ':app_name で障害が発生したことが報告されました。',
+                'content'  => '障害は :name によって報告されました。',
                 'action'   => '詳しく見る',
             ],
             'slack' => [
-                'title'   => '障害は:nameによって報告されました。',
-                'content' => ':app_nameで障害が発生したことが報告されました。',
+                'title'   => '障害は :name によって報告されました。',
+                'content' => ':app_name で障害が発生したことが報告されました。',
             ],
             'sms' => [
-                'content' => ':app_nameで障害が発生したことが報告されました。',
+                'content' => ':app_name で障害が発生したことが報告されました。',
             ],
         ],
         'update' => [
             'mail' => [
                 'subject' => '障害情報が更新されました',
-                'content' => ':nameによって稼働状況が更新されました。',
-                'title'   => ':nameが稼働状況を:new_statusに更新しました。',
+                'content' => ':name によって稼働状況が更新されました。',
+                'title'   => ':name が稼働状況を :new_status に更新しました。',
                 'action'  => '詳しく見る',
             ],
             'slack' => [
-                'title'   => ':nameによって稼働状況が更新されました。',
-                'content' => ':nameが稼働状況を:new_statusに更新しました。',
+                'title'   => ':name によって稼働状況が更新されました。',
+                'content' => ':name が稼働状況を :new_status に更新しました。',
             ],
             'sms' => [
-                'content' => ':nameによって稼働状況が更新されました。',
+                'content' => ':name によって稼働状況が更新されました。',
             ],
         ],
     ],
@@ -63,16 +63,16 @@ return [
         'new' => [
             'mail' => [
                 'subject' => '新しいスケジュールが作成されました',
-                'content' => ':nameが:dateにスケジュールを設定しました。',
+                'content' => ':name が :date にスケジュールを設定しました。',
                 'title'   => '新しいメンテナンス計画が作成されました。',
                 'action'  => '詳しく見る',
             ],
             'slack' => [
                 'title'   => '新しいスケジュールが作成されました',
-                'content' => ':nameが:dateにスケジュールを設定しました。',
+                'content' => ':name が :date にスケジュールを設定しました。',
             ],
             'sms' => [
-                'content' => ':nameが:dateにスケジュールを設定しました。',
+                'content' => ':name が :date にスケジュールを設定しました。',
             ],
         ],
     ],
@@ -80,8 +80,8 @@ return [
         'verify' => [
             'mail' => [
                 'subject' => '購読処理を完了させてください',
-                'content' => ':app_nameの更新情報を受け取るには、メールアドレスの認証を完了させてください。',
-                'title'   => ':app_nameの更新情報を受け取るには、メールアドレスの認証を完了させてください。',
+                'content' => ':app_name の更新情報を受け取るには、メールアドレスの認証を完了させてください。',
+                'title'   => ':app_name の更新情報を受け取るには、メールアドレスの認証を完了させてください。',
                 'action'  => 'メールアドレスを認証する',
             ],
         ],
@@ -99,8 +99,8 @@ return [
         'invite' => [
             'mail' => [
                 'subject' => '[Cachet]チームに招待されました',
-                'content' => ':app_nameのチームに招待されました。招待を完了するには、以下から登録して下さい。',
-                'title'   => ':app_nameのチームに招待されました。招待を完了するには、以下から登録して下さい。',
+                'content' => ':app_name のチームに招待されました。招待を完了するには、以下から登録して下さい。',
+                'title'   => ':app_name のチームに招待されました。招待を完了するには、以下から登録して下さい。',
                 'action'  => '招待を受ける',
             ],
         ],
