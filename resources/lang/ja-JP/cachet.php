@@ -122,17 +122,17 @@ return [
     // Meta descriptions
     'meta' => [
         'description' => [
-            'incident'  => ':dateに発生した:nameの障害の詳細情報',
-            'schedule'  => ':startDateに予定している:nameのメンテナンスの詳細',
-            'subscribe' => ':appの障害情報とメンテナンス情報を購読する',
-            'overview'  => ':appからの最新の更新を得る',
+            'incident'  => ':date に発生した:nameの障害の詳細情報',
+            'schedule'  => ':startDate に予定している:name のメンテナンスの詳細',
+            'subscribe' => ':app の障害情報とメンテナンス情報を購読する',
+            'overview'  => ':app からの最新の更新を得る',
         ],
     ],
 
     // Other
     'home'            => 'ホーム',
     'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
-    'timezone'        => '表示しているタイムゾーンは:timezoneです。',
+    'timezone'        => '表示しているタイムゾーンは:timezone です。',
     'about_this_site' => 'このサイトについて',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',
