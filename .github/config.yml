@@ -4,7 +4,7 @@
 newIssueWelcomeComment: >
   :wave: Thank you for opening your first issue. I'm just an automated bot that's here to help you get the information you need quicker, so please ignore this message if it doesn't apply to your issue.
 
-  If you're looking for support, you should try the Slack group by registering your email address at https://cachethq-slack.herokuapp.com. Alternatively, email support@alt-three.com for our Professional support service (please note, this a paid service.
+  If you're looking for support, you should try the Slack group by registering your email address at https://cachethq-slack.herokuapp.com. Alternatively, email support@alt-three.com for our Professional support service (please note, this a paid service.)
 
   If you're issue is with documentation, you can suggest edits by clicking the **Suggest Edits** link on any page, or open an issue at https://github.com/CachetHQ/Docs
 
