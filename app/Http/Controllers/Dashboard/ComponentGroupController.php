@@ -74,7 +74,7 @@ class ComponentGroupController extends Controller
 
         return View::make('dashboard.components.groups.index')
             ->withPageTitle(trans_choice('dashboard.components.groups.groups', 2).' - '.trans('dashboard.dashboard'))
-            ->withGroups(ComponentGroup::orderBy('order')->get())
+            ->withGroups(ComponentGroup::where('parent_id', '=', 0)->orderBy('order')->get())
             ->withSubMenu($this->subMenu);
     }
 

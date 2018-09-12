@@ -39,6 +39,7 @@ $factory->define(ComponentGroup::class, function ($faker) {
         'order'     => 0,
         'collapsed' => mt_rand(0, 4),
         'visible'   => $faker->boolean(),
+        'parent_id' => 0,
     ];
 });
 

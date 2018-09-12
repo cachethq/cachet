@@ -1,4 +1,4 @@
-@each('dashboard.partials.component-group', $component_groups, 'componentGroup')
+@each('dashboard.partials.component-group', $componentGroups, 'componentGroup')
 
 @if($ungroupedComponents->count() > 0)
 <ul class="list-group components">

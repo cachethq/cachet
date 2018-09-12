@@ -72,7 +72,7 @@ final class UpdateComponentGroupCommand
         'order'     => 'nullable|int',
         'collapsed' => 'nullable|int|between:0,4',
         'visible'   => 'nullable|bool',
-        'parent_id'  => 'int',
+        'parent_id'  => 'nullable|int',
     ];
 
     /**
@@ -94,6 +94,6 @@ final class UpdateComponentGroupCommand
         $this->order = (int) $order;
         $this->collapsed = $collapsed;
         $this->visible = (int) $visible;
-        $this->parent_id = $parent_id;
+        $this->parent_id = (int)$parent_id;
     }
 }

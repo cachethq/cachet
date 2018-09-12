@@ -1,4 +1,4 @@
-@each('partials.component-group', $component_groups, 'componentGroup')
+@each('partials.component-group', $componentGroups, 'componentGroup')
 
 @if($ungroupedComponents->isNotEmpty())
 <ul class="list-group components">

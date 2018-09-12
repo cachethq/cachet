@@ -64,7 +64,7 @@ final class CreateComponentGroupCommand
         'order'     => 'required|int',
         'collapsed' => 'required|int|between:0,4',
         'visible'   => 'required|bool',
-        'parent_id'  => 'int',
+        'parent_id'  => 'nullable|int',
     ];
 
     /**

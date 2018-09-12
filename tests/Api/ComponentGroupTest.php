@@ -45,6 +45,8 @@ class ComponentGroupTest extends AbstractApiTestCase
                 'order'                     => $groups[0]->order,
                 'collapsed'                 => $groups[0]->collapsed,
                 'visible'                   => $groups[0]->visible,
+                'parent_id'                 => $groups[0]->parent_id,
+                'subgroups'                 => $groups[0]->subgroups,
                 'enabled_components'        => $groups[0]->enabled_components,
                 'enabled_components_lowest' => $groups[0]->enabled_components_lowest,
                 'lowest_human_status'       => $groups[0]->lowest_human_status,
@@ -59,6 +61,8 @@ class ComponentGroupTest extends AbstractApiTestCase
                 'order'                     => $groups[1]->order,
                 'collapsed'                 => $groups[1]->collapsed,
                 'visible'                   => $groups[1]->visible,
+                'parent_id'                 => $groups[0]->parent_id,
+                'subgroups'                 => $groups[0]->subgroups,
                 'enabled_components'        => $groups[1]->enabled_components,
                 'enabled_components_lowest' => $groups[1]->enabled_components_lowest,
                 'lowest_human_status'       => $groups[1]->lowest_human_status,
@@ -104,6 +108,7 @@ class ComponentGroupTest extends AbstractApiTestCase
             'order'     => 1,
             'collapsed' => 1,
             'visible'   => ComponentGroup::VISIBLE_GUEST,
+            'parent_id' => 0,
         ]);
 
         $response->assertStatus(200);
@@ -112,6 +117,7 @@ class ComponentGroupTest extends AbstractApiTestCase
             'order'     => 1,
             'collapsed' => 1,
             'visible'   => ComponentGroup::VISIBLE_GUEST,
+            'parent_id' => 0,
         ]);
     }
 
