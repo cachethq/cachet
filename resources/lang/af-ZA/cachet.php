@@ -14,10 +14,10 @@ return [
     'components' => [
         'last_updated' => 'Last updated :timestamp',
         'status'       => [
-            1 => 'Operational',
-            2 => 'Performance Issues',
-            3 => 'Partial Outage',
-            4 => 'Major Outage',
+            1 => 'Operasioneel',
+            2 => 'Prestasieprobleme',
+            3 => 'Gedeeltelike Onderbreking',
+            4 => 'Groot Onderbreking',
         ],
         'group' => [
             'other' => 'Other Components',
@@ -136,7 +136,7 @@ return [
     'home'            => 'Tuiste',
     'description'     => 'Stay up to date with the latest service updates from :app.',
     'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
-    'about_this_site' => 'About This Site',
+    'about_this_site' => 'Aangaande Hierdie Webwerf',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',
     'feed'            => 'Status Feed',
