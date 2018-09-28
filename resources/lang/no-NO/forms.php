@@ -112,7 +112,7 @@ return [
             'about-this-page'        => 'Om denne siden',
             'days-of-incidents'      => 'How many days of incidents to show?',
             'banner'                 => 'Bannerbilde',
-            'banner-help'            => 'Det anbefales at du ikke laster opp bilder bredere enn 930 piksler.',
+            'banner-help'            => "Det anbefales at du ikke laster opp bilder bredere enn 930 piksler.",
             'subscribers'            => 'Allow people to signup to email notifications?',
             'automatic_localization' => 'Automatically localise your status page to your visitor\'s language?',
         ],
