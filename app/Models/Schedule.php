@@ -176,7 +176,7 @@ class Schedule extends Model implements HasPresenter
      */
     public function scopeFutureSchedules($query)
     {
-        return $query->whereIn('status', [self::UPCOMING, self::IN_PROGRESS])->where('completed_at', '>=', Carbon::now());
+        return $query->whereIn('status', [self::UPCOMING, self::IN_PROGRESS])->where('scheduled_at', '>=', Carbon::now());
     }
 
     /**
