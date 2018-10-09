@@ -23,6 +23,8 @@ return [
         'group' => [
             'other' => 'Andere Komponenten',
         ],
+        'select_all'   => 'Select All',
+        'deselect_all' => 'Deselect All',
     ],
 
     // Incidents
@@ -80,9 +82,12 @@ return [
         'button'              => 'Abonnieren',
         'manage_subscription' => 'Manage subscription',
         'manage'              => [
-            'no_subscriptions' => 'Du hast im Augenblick alle Updates abonniert.',
-            'my_subscriptions' => 'Du hast im Augenblick folgende Updates abonniert.',
-            'manage_at_link'   => 'Manage your subscriptions at :link',
+            'notifications'       => 'Benachrichtigungen',
+            'notifications_for'   => 'Manage notifications for',
+            'no_subscriptions'    => 'Du hast im Augenblick alle Updates abonniert.',
+            'update_subscription' => 'Update Subscription',
+            'my_subscriptions'    => 'Du hast im Augenblick folgende Updates abonniert.',
+            'manage_at_link'      => 'Manage your subscriptions at :link',
         ],
         'email' => [
             'subscribe'          => 'Aktualisierungen per E-Mail abonnieren.',
