@@ -81,7 +81,7 @@ final class CreateComponentCommand
      */
     public $rules = [
         'name'        => 'required|string',
-        'description' => 'required|string',
+        'description' => 'nullable|string',
         'status'      => 'required|int|min:0|max:4',
         'link'        => 'nullable|url',
         'order'       => 'nullable|int',

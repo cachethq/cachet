@@ -84,6 +84,21 @@ class ComponentTest extends AbstractApiTestCase
         $response->assertJsonFragment(['name' => 'Foo']);
     }
 
+    public function test_can_create_minimal_component()
+    {
+        $this->beUser();
+
+        $this->expectsEvents(ComponentWasCreatedEvent::class);
+
+        $response = $this->json('POST', '/api/v1/components', [
+            'name'        => 'Foo',
+            'status'      => 1,
+        ]);
+
+        $response->assertStatus(200);
+        $response->assertJsonFragment(['name' => 'Foo']);
+    }
+
     public function test_can_create_component_without_enabled_field()
     {
         $this->beUser();
