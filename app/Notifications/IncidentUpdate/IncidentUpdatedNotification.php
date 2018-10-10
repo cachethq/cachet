@@ -73,7 +73,7 @@ class IncidentUpdatedNotification extends Notification
             'name'    => $this->update->incident->name,
             'time'    => $this->update->created_at_diff,
         ]);
-        
+
         return (new MailMessage())
             ->subject(trans('notifications.incident.update.mail.subject'))
             ->markdown('notifications.incident.update', [
