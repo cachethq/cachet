@@ -28,6 +28,7 @@ class ComponentsTableSeeder extends Seeder
             $component->description = $obj->description;
             $component->link = $obj->link;
             $component->status = $obj->status;
+            $component->group_id = $obj->group_id;
             $component->save();
         }
     }

@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call(ComponentGroupsTableSeeder::class);
         $this->call(ComponentsTableSeeder::class);
     }
 }
