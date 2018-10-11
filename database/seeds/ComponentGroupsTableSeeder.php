@@ -15,6 +15,7 @@ class ComponentGroupsTableSeeder extends Seeder
     {
         $json = File::get(database_path("data/componentGroups.json"));
         $data = json_decode($json);
+
         foreach ($data as $obj) {
             $componentGroup = ComponentGroup::firstOrNew(array(
                 'id' => $obj->id,
