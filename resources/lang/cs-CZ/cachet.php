@@ -23,6 +23,8 @@ return [
         'group' => [
             'other' => 'Other Components',
         ],
+        'select_all'   => 'Select All',
+        'deselect_all' => 'Deselect All',
     ],
 
     // Incidents
@@ -80,9 +82,12 @@ return [
         'button'              => 'Subscribe',
         'manage_subscription' => 'Manage subscription',
         'manage'              => [
-            'no_subscriptions' => 'Aktuálně jsi přihlášen(a) ke všem upozorněním.',
-            'my_subscriptions' => 'Aktuálně jsi přihlášen(a) k následujícím upozorněním.',
-            'manage_at_link'   => 'Manage your subscriptions at :link',
+            'notifications'       => 'Notifications',
+            'notifications_for'   => 'Manage notifications for',
+            'no_subscriptions'    => 'Aktuálně jsi přihlášen(a) ke všem upozorněním.',
+            'update_subscription' => 'Update Subscription',
+            'my_subscriptions'    => 'Aktuálně jsi přihlášen(a) k následujícím upozorněním.',
+            'manage_at_link'      => 'Manage your subscriptions at :link',
         ],
         'email' => [
             'subscribe'          => 'Subscribe to email updates.',

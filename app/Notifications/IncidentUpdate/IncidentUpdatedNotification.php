@@ -75,16 +75,19 @@ class IncidentUpdatedNotification extends Notification
         ]);
 
         return (new MailMessage())
-                    ->subject(trans('notifications.incident.update.mail.subject'))
-                    ->greeting(trans('notifications.incident.update.mail.title', [
-                        'name'       => $this->update->incident->name,
-                        'new_status' => $this->update->human_status,
-                    ]))
-                    ->line($content)
-                    ->action(trans('notifications.incident.update.mail.action'), cachet_route('incident', [$this->update->incident]))
-                    ->line($this->update->raw_message)
-                    ->line(trans('cachet.subscriber.unsubscribe', ['link' => cachet_route('subscribe.unsubscribe', $notifiable->verify_code)]))
-                    ->line(trans('cachet.subscriber.manage.manage_at_link', ['link' => cachet_route('subscribe.manage', $notifiable->verify_code)]));
+            ->subject(trans('notifications.incident.update.mail.subject'))
+            ->markdown('notifications.incident.update', [
+                'incident'               => $this->update->incident,
+                'content'                => $content,
+                'actionText'             => trans('notifications.incident.new.mail.action'),
+                'actionUrl'              => cachet_route('incident', [$this->update->incident]),
+                'incidentName'           => $this->update->incident->name,
+                'newStatus'              => $this->update->human_status,
+                'unsubscribeText'        => trans('cachet.subscriber.unsubscribe'),
+                'unsubscribeUrl'         => cachet_route('subscribe.unsubscribe', $notifiable->verify_code),
+                'manageSubscriptionText' => trans('cachet.subscriber.manage_subscription'),
+                'manageSubscriptionUrl'  => cachet_route('subscribe.manage', $notifiable->verify_code),
+        ]);
     }
 
     /**

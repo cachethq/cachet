@@ -23,6 +23,8 @@ return [
         'group' => [
             'other' => 'その他のコンポーネント',
         ],
+        'select_all'   => 'Select All',
+        'deselect_all' => 'Deselect All',
     ],
 
     // Incidents
@@ -80,9 +82,12 @@ return [
         'button'              => '購読',
         'manage_subscription' => '購読の管理',
         'manage'              => [
-            'no_subscriptions' => '現在、すべてのアップデートを購読しています。',
-            'my_subscriptions' => '現在、以下のアップデートを購読しています。',
-            'manage_at_link'   => '購読の管理',
+            'notifications'       => 'Notifications',
+            'notifications_for'   => 'Manage notifications for',
+            'no_subscriptions'    => '現在、すべてのアップデートを購読しています。',
+            'update_subscription' => 'Update Subscription',
+            'my_subscriptions'    => '現在、以下のアップデートを購読しています。',
+            'manage_at_link'      => '購読の管理',
         ],
         'email' => [
             'subscribe'          => 'メールによるアップデート情報の購読',

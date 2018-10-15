@@ -23,6 +23,8 @@ return [
         'group' => [
             'other' => 'crwdns883:0crwdne883:0',
         ],
+        'select_all'   => 'crwdns1510:0crwdne1510:0',
+        'deselect_all' => 'crwdns1512:0crwdne1512:0',
     ],
 
     // Incidents
@@ -80,9 +82,12 @@ return [
         'button'              => 'crwdns909:0crwdne909:0',
         'manage_subscription' => 'crwdns1448:0crwdne1448:0',
         'manage'              => [
-            'no_subscriptions' => 'crwdns910:0crwdne910:0',
-            'my_subscriptions' => 'crwdns911:0crwdne911:0',
-            'manage_at_link'   => 'crwdns1432:0crwdne1432:0',
+            'notifications'       => 'crwdns1514:0crwdne1514:0',
+            'notifications_for'   => 'crwdns1516:0crwdne1516:0',
+            'no_subscriptions'    => 'crwdns910:0crwdne910:0',
+            'update_subscription' => 'crwdns1518:0crwdne1518:0',
+            'my_subscriptions'    => 'crwdns911:0crwdne911:0',
+            'manage_at_link'      => 'crwdns1432:0crwdne1432:0',
         ],
         'email' => [
             'subscribe'          => 'crwdns912:0crwdne912:0',

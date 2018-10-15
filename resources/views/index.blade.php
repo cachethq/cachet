@@ -3,6 +3,7 @@
 @section('content')
 @include('partials.modules.messages')
 @include('partials.modules.status')
+@include('partials.about-app')
 @include('partials.modules.components')
 @include('partials.modules.metrics')
 @include('partials.modules.stickied')
