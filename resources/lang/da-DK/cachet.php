@@ -23,6 +23,8 @@ return [
         'group' => [
             'other' => 'Andre komponenter',
         ],
+        'select_all'   => 'Select All',
+        'deselect_all' => 'Deselect All',
     ],
 
     // Incidents
@@ -80,9 +82,12 @@ return [
         'button'              => 'Abonner',
         'manage_subscription' => 'Manage subscription',
         'manage'              => [
-            'no_subscriptions' => 'Du abonner i øjeblikket på alle opdateringer.',
-            'my_subscriptions' => 'Du abonnere i øjeblikket på følgende opdateringer.',
-            'manage_at_link'   => 'Manage your subscriptions at :link',
+            'notifications'       => 'Notifikationer',
+            'notifications_for'   => 'Manage notifications for',
+            'no_subscriptions'    => 'Du abonner i øjeblikket på alle opdateringer.',
+            'update_subscription' => 'Update Subscription',
+            'my_subscriptions'    => 'Du abonnere i øjeblikket på følgende opdateringer.',
+            'manage_at_link'      => 'Manage your subscriptions at :link',
         ],
         'email' => [
             'subscribe'          => 'Abonner på email opdateringer.',

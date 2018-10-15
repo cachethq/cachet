@@ -23,6 +23,8 @@ return [
         'group' => [
             'other' => 'Komponen Lain',
         ],
+        'select_all'   => 'Select All',
+        'deselect_all' => 'Deselect All',
     ],
 
     // Incidents
@@ -80,9 +82,12 @@ return [
         'button'              => 'Daftar',
         'manage_subscription' => 'Manage subscription',
         'manage'              => [
-            'no_subscriptions' => 'Anda saat ini terdaftar untuk semua update.',
-            'my_subscriptions' => 'Anda saat ini berlangganan update berikut.',
-            'manage_at_link'   => 'Manage your subscriptions at :link',
+            'notifications'       => 'Notifikasi',
+            'notifications_for'   => 'Manage notifications for',
+            'no_subscriptions'    => 'Anda saat ini terdaftar untuk semua update.',
+            'update_subscription' => 'Update Subscription',
+            'my_subscriptions'    => 'Anda saat ini berlangganan update berikut.',
+            'manage_at_link'      => 'Manage your subscriptions at :link',
         ],
         'email' => [
             'subscribe'          => 'Langganan update email.',
