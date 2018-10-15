@@ -74,7 +74,7 @@ class StatusPageController extends AbstractApiController
                                       ->values();
 
             $numIncidentDays = count($allIncidentDays);
-            $numPages = round($numIncidentDays / $appIncidentDays);
+            $numPages = round($numIncidentDays / max($appIncidentDays, 1));
 
             $selectedDays = $allIncidentDays->slice($page * $appIncidentDays, $appIncidentDays)->all();
 
