@@ -1,4 +1,5 @@
 [
+  {"id": 1, "name": "Test Component 1", "description": "Description of Test Component 1", "group_id": "", "link": "http://testcomponent1.com", "status": "Operational"},
   {"id": 2, "name": "Test Component 2", "description": "Description of Test Component 2", "group_id": "1", "link": "http://testcomponent2.com", "status": "Operational"},
   {"id": 3, "name": "Test Component 3", "description": "Description of Test Component 3", "group_id": "2", "link": "http://testcomponent3.com", "status": "Operational"},
   {"id": 4, "name": "Test Component 4", "description": "Description of Test Component 4", "group_id": "2", "link": "http://testcomponent4.com", "status": "Operational"},
