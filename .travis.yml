@@ -7,28 +7,30 @@ branches:
   except:
   - l10n_2.4
 
-php:
-  - 7.1
-  - 7.2
-
 before_install:
   - cp .env.example .env
   - phpenv config-rm xdebug.ini
 
+install:
+  - travis_retry composer install --no-interaction --no-suggest
+
 jobs:
   include:
-    - stage: install dependencies
-      install: travis_retry composer install --no-interaction --no-suggest
+    - stage: Security check
+      script:
+        - wget https://get.sensiolabs.org/security-checker.phar
+        - php security-checker.phar security:check ./composer.lock
       php: 7.2
-    - stage: test
+    - stage: tests and coverage
       script: vendor/bin/phpunit
       php: 7.2
-    - stage: test
+    - stage: tests and coverage
       script: vendor/bin/phpunit
       php: 7.1
-    - stage: coverage
+    - stage: tests and coverage
       script:
-        - vendor/bin/phpunit --coverage-clover build/logs/clover.xml;
+        - vendor/bin/phpunit --coverage-clover build/logs/clover.xml
         - wget https://scrutinizer-ci.com/ocular.phar
         - php ocular.phar code-coverage:upload --format=php-clover build/logs/clover.xml
       php: 7.1
+
