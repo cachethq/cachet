@@ -16,14 +16,17 @@ class ComponentsTableSeeder extends Seeder
     {
         $json = File::get(database_path("data/components.json"));
         $data = json_decode($json);
+        if ($data == null)
+            return;
 
         $componentsInDb = Component::all();
-        foreach ($componentsInDb as $component) {
+
+        //only run the foreach if there are components in the db to process
+        if ($componentsInDb) foreach ($componentsInDb as $component) {
             $exists = false;
             if ($data) {
                 foreach ($data as $key => $obj) {
                     if ($obj->id == $component->id) {
-                        echo $obj->id;
                         $exists = true;
 
                         if (!is_int($obj->status)) {
@@ -47,7 +50,8 @@ class ComponentsTableSeeder extends Seeder
 
             //This database object is not in the json file anymore, so we delete it
             if (!$exists) {
-                //TODO: Delete related items
+                $component->incidents()->forceDelete();
+                $component->meta()->forceDelete();
                 $component->forceDelete();
             }
         }

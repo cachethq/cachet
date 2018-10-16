@@ -43,37 +43,37 @@ return [
     'connections' => [
 
         'sqlite' => [
-            'driver'   => 'sqlite',
+            'driver' => 'sqlite',
             'database' => env('DB_DATABASE', database_path('database.sqlite')),
-            'prefix'   => '',
+            'prefix' => '',
         ],
 
         'mysql' => [
-            'driver'      => 'mysql',
-            'host'        => env('DB_HOST', '127.0.0.1'),
+            'driver' => 'mysql',
+            'host' => env('DB_HOST', '127.0.0.1'),
             'unix_socket' => env('DB_UNIX_SOCKET', null),
-            'port'        => env('DB_PORT', '3306'),
-            'database'    => env('DB_DATABASE', 'forge'),
-            'username'    => env('DB_USERNAME', 'forge'),
-            'password'    => env('DB_PASSWORD', ''),
-            'charset'     => 'utf8mb4',
-            'collation'   => 'utf8mb4_unicode_ci',
-            'prefix'      => env('DB_PREFIX', null),
-            'strict'      => false,
-            'engine'      => null,
-        ],
-
-        'pgsql' => [
-            'driver'   => 'pgsql',
-            'host'     => env('DB_HOST', '127.0.0.1'),
-            'port'     => env('DB_PORT', '5432'),
+            'port' => env('DB_PORT', '3306'),
             'database' => env('DB_DATABASE', 'forge'),
             'username' => env('DB_USERNAME', 'forge'),
             'password' => env('DB_PASSWORD', ''),
-            'charset'  => 'utf8',
-            'prefix'   => env('DB_PREFIX', null),
-            'schema'   => 'public',
-            'sslmode'  => 'prefer',
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => env('DB_PREFIX', null),
+            'strict' => false,
+            'engine' => null,
+        ],
+
+        'pgsql' => [
+            'driver' => 'pgsql',
+            'host' => env('DB_HOST', '127.0.0.1'),
+            'port' => env('DB_PORT', '5432'),
+            'database' => env('DB_DATABASE', 'forge'),
+            'username' => env('DB_USERNAME', 'forge'),
+            'password' => env('DB_PASSWORD', ''),
+            'charset' => 'utf8',
+            'prefix' => env('DB_PREFIX', null),
+            'schema' => 'public',
+            'sslmode' => 'prefer',
         ],
 
     ],
@@ -93,6 +93,20 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Load database values from json files
+    |--------------------------------------------------------------------------
+    |
+    | This setting enables the loading of data from json files to enable the use
+    | of infrastructure as code. See the infraAsCodeSeeder() function in
+    | database/seeds/DatabaseSeeder.php for info on what can currently be loaded
+    | as well as the example files in database/data
+    |
+    */
+
+    'loadFromJson' => env('LOAD_FROM_JSON', false),
+
+    /*
+    |--------------------------------------------------------------------------
     | Redis Databases
     |--------------------------------------------------------------------------
     |
@@ -107,9 +121,9 @@ return [
         'client' => 'predis',
 
         'default' => [
-            'host'     => env('REDIS_HOST', '127.0.0.1'),
+            'host' => env('REDIS_HOST', '127.0.0.1'),
             'password' => env('REDIS_PASSWORD', null),
-            'port'     => env('REDIS_PORT', 6379),
+            'port' => env('REDIS_PORT', 6379),
             'database' => env('REDIS_DATABASE', 0),
         ],
 

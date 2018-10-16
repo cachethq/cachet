@@ -20,7 +20,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(ComponentGroupsTableSeeder::class);
-        $this->call(ComponentsTableSeeder::class);
+        $this->infraAsCodeSeeder();
+    }
+
+    private function infraAsCodeSeeder() {
+        if (config('database.loadFromJson')) {
+            $this->call(ComponentGroupsTableSeeder::class);
+            $this->call(ComponentsTableSeeder::class);
+        }
     }
 }

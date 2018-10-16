@@ -21,6 +21,7 @@ class ComponentGroupsTableSeeder extends Seeder
                 'id' => $obj->id,
             ));
             $componentGroup->name = $obj->name;
+            $componentGroup->visible = $obj->visible;
             $componentGroup->save();
         }
     }

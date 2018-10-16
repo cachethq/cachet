@@ -1,6 +1,6 @@
 [
-  {"id": 1, "name": "Component Group 1"},
-  {"id": 2, "name": "Component Group 2"},
-  {"id": 3, "name": "Component Group 3"},
-  {"id": 4, "name": "Component Group 4"}
+  {"id": 1, "name": "Component Group 1", "visible": true},
+  {"id": 2, "name": "Component Group 2", "visible": true},
+  {"id": 3, "name": "Component Group 3", "visible": true},
+  {"id": 4, "name": "Component Group 4", "visible": true}
 ]
