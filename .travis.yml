@@ -1,7 +1,6 @@
 language: php
 dist: trusty
 sudo: false
-cache: bundler
 
 branches:
   except:
@@ -21,16 +20,15 @@ jobs:
         - wget https://get.sensiolabs.org/security-checker.phar
         - php security-checker.phar security:check ./composer.lock
       php: 7.2
-    - stage: Tests and Coverage
+    - stage: Unit Tests
       script: vendor/bin/phpunit
       php: 7.2
-    - stage: Tests and Coverage
+    - stage: Unit Tests
       script: vendor/bin/phpunit
       php: 7.1
-    - stage: Tests and Coverage
+    - stage: Code Coverage
       script:
-        - 'if [ "$TRAVIS_PULL_REQUEST" != "false" ]; exit; fi'
         - vendor/bin/phpunit --coverage-clover build/logs/clover.xml
-        - wget https://scrutinizer-ci.com/ocular.phar
-        - php ocular.phar code-coverage:upload --format=php-clover build/logs/clover.xml
+        - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; wget https://scrutinizer-ci.com/ocular.phar; fi'
+        - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; php ocular.phar code-coverage:upload --format=php-clover build/logs/clover.xml; fi'
       php: 7.1
