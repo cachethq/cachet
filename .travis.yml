@@ -29,6 +29,6 @@ jobs:
     - stage: Code Coverage
       script:
         - vendor/bin/phpunit --coverage-clover build/logs/clover.xml
-        - if [ "$TRAVIS_PULL_REQUEST" = "false" ]; wget https://scrutinizer-ci.com/ocular.phar; fi
-        - if [ "$TRAVIS_PULL_REQUEST" = "false" ]; php ocular.phar code-coverage:upload --format=php-clover build/logs/clover.xml; fi
+        - if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then wget https://scrutinizer-ci.com/ocular.phar; fi
+        - if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then php ocular.phar code-coverage:upload --format=php-clover build/logs/clover.xml; fi
       php: 7.1
