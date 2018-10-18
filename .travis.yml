@@ -22,10 +22,10 @@ jobs:
       php: 7.2
     - stage: Unit Tests
       script: vendor/bin/phpunit
-      php: 7.2
+      php: 7.1
     - stage: Unit Tests
       script: vendor/bin/phpunit
-      php: 7.1
+      php: 7.2
     - stage: Code Coverage
       script:
         - vendor/bin/phpunit --coverage-clover build/logs/clover.xml
