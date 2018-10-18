@@ -4,7 +4,8 @@ sudo: false
 
 branches:
   except:
-  - l10n_2.4
+    - l10n_2.3
+    - l10n_2.4
 
 php:
   - 7.1
