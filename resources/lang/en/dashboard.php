@@ -256,6 +256,7 @@ return [
             'backers'       => 'If you\'d like to support future development, check out the <a href="https://patreon.com/jbrooksuk" target="_blank">Cachet Patreon</a> campaign.',
             'thank-you'     => 'Thank you to each and every one of the :count contributors.',
         ],
+        'fileDriven' => 'Your Cachet Configuration is currently File-Driven; these changes are not permitted using the UI'
     ],
 
     // Login

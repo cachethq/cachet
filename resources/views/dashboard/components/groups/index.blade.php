@@ -27,10 +27,12 @@
                             <span class="label label-info">{{ $group->components->count() }}</span>
                         </h4>
                     </div>
+                    @if(!config('database.fileDriven'))
                     <div class="col-xs-6 text-right">
                         <a href="{{ cachet_route('dashboard.components.groups.edit', [$group->id]) }}" class="btn btn-default">{{ trans('forms.edit') }}</a>
                         <a href="{{ cachet_route('dashboard.components.groups.delete', [$group->id], 'delete') }}" class="btn btn-danger confirm-action" data-method="DELETE">{{ trans('forms.delete') }}</a>
                     </div>
+                    @endif
                 </div>
                 @empty
                 <div class="list-group-item text-danger">{{ trans('dashboard.components.groups.no_components') }}</div>

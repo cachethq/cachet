@@ -111,6 +111,12 @@ class ComponentController extends Controller
      */
     public function updateComponentAction(Component $component)
     {
+        if (config('database.fileDriven')) {
+            return cachet_redirect('dashboard.components.edit', [$component->id])
+                ->withInput(Binput::all())
+                ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.settings.fileDriven'))) //TODO: Translate fileDriven to other languages
+                ->withErrors("");
+        }
         $componentData = Binput::get('component');
         $tags = array_pull($componentData, 'tags');
 

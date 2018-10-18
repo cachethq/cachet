@@ -63,6 +63,7 @@
                     <span class="label label-info">{{ $subscriberCount }}</span>
                 </a>
             </li>
+            @if(!config('database.fileDriven'))
             <li {!! set_active('dashboard/team*') !!}>
                 <a href="{{ cachet_route('dashboard.team') }}">
                     <i class="ion ion-ios-people-outline"></i>
@@ -77,6 +78,7 @@
                     </span>
                 </a>
             </li>
+            @endif
             <li class="hidden-lg hidden-md">
                 <a href="{{ cachet_route('auth.logout') }}">
                     <i class="ion ion-log-out"></i>
