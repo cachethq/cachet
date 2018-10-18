@@ -1,0 +1,26 @@
+[
+  {
+    "name": "app_name",
+    "value": "Cachet Infra As Code Test"
+  },
+  {
+    "name": "app_domain",
+    "value": "http://cachet.test"
+  },
+  {
+    "name": "app_timezone",
+    "value": "America/New_York"
+  },
+  {
+    "name": "app_locale",
+    "value": "en"
+  },
+  {
+    "name": "app_incident_days",
+    "value": 7
+  },
+  {
+    "name": "app_refresh_rate",
+    "value": 0
+  }
+]
