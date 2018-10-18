@@ -47,7 +47,7 @@ Here are some useful quick links:
 
 To test out the demo, you may login to the [Dashboard](https://dev.cachethq.io/dashboard) with the following:
 
-- **Username:** `test` or `test@test.com`
+- **Username:** `test` or `test@example.com`
 - **Password:** `test123`
 
 > The demo resets every 30 minutes.
