@@ -1,6 +1,5 @@
 <?php
 
-use CachetHQ\Cachet\Bus\Commands\Component\RemoveComponentCommand;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\File;
 use CachetHQ\Cachet\Models\Component;
