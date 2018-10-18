@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
     }
 
     private function infraAsCodeSeeder() {
-        if (config('database.loadFromJson')) {
+        if (config('database.fileDriven')) {
             $this->call(UsersSeeder::class);
             $this->call(SettingsSeeder::class);
             $this->call(ComponentGroupsTableSeeder::class);

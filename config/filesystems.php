@@ -64,7 +64,7 @@ return [
 
         'database-data' =>[
             'driver' => 'local',
-            'root' => env('LOAD_FROM_JSON_DIR') ? env('LOAD_FROM_JSON_DIR') : base_path('database/data'),
+            'root' => env('FILE_DRIVEN_DIR') ? env('FILE_DRIVEN_DIR') : base_path('database/data'),
         ],
 
         'public' => [

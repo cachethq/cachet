@@ -93,17 +93,21 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Load database values from json files
+    | Use File-Driven Configuration
     |--------------------------------------------------------------------------
     |
-    | This setting enables the loading of data from json files to enable the use
-    | of infrastructure as code. See the infraAsCodeSeeder() function in
-    | database/seeds/DatabaseSeeder.php for info on what can currently be loaded
-    | as well as the example files in database/data
+    | This setting tells CachetHQ to use a file-driven configuration. Certain
+    | data will be loaded from configuration files and will not be editable
+    | in the UI. See the infraAsCodeSeeder() function in
+    | database/seeds/DatabaseSeeder.php for info on what is being loaded
+    | as well as the example files in database/data. By default, the files will
+    | be searched for in the database/data directory. This behaviour can be
+    | changed using the FILE_DRIVEN_DIR environment variable, and setting it to
+    | the FULL PATH of the directory where the JSON files to be used reside.
     |
     */
 
-    'loadFromJson' => env('LOAD_FROM_JSON', false),
+    'fileDriven' => env('FILE_DRIVEN', false),
 
     /*
     |--------------------------------------------------------------------------
