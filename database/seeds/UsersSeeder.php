@@ -33,7 +33,7 @@ class UsersSeeder extends Seeder
                     $exists = true;
 
                     $user->setPasswordAttribute($this->fromEnvOrVal($obj->password));
-                    $this->level = ($obj->isAdmin) ? User::LEVEL_ADMIN : User::LEVEL_USER;
+                    $user->level = ($obj->isAdmin) ? User::LEVEL_ADMIN : User::LEVEL_USER;
                     $user->email = $obj->email;
 
                     $user->save();
