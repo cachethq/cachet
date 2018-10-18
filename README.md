@@ -62,7 +62,7 @@ If you discover a security vulnerability within Cachet, please send an e-mail to
 
 ## Professional Installation Service
 
-A professional installation service is offered by Alt Three Services Limited. To find out more, email us at [support@alt-three.com](mailto:support@alt-three.com?Cachet%20Installation). *Note: this is a different email address to our security contact address.*
+A professional installation service is offered by Alt Three Services Limited. To find out more, contact [support@alt-three.com](mailto:support@alt-three.com?Cachet%20Installation). *Note: this is a different email address to our security contact address.*
 
 ## Sponsorship
 
