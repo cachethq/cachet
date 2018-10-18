@@ -18,9 +18,10 @@ class SettingsSeeder extends Seeder
         try {
             $json = Storage::disk('database-data')->get("settings.json");
         } catch (FileNotFoundException $e) {
-            Log::notice("Won't seed settings, Data file not found at path ".Storage::disk('database-data')->path("settings.json"));
+            Log::notice("Won't seed settings, Data file not found at path " . Storage::disk('database-data')->path("settings.json"));
             return;
-        }        $data = json_decode($json);
+        }
+        $data = json_decode($json);
         if ($data == null)
             return;
 

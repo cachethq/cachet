@@ -19,9 +19,10 @@ class ComponentsTableSeeder extends Seeder
         try {
             $json = Storage::disk('database-data')->get("components.json");
         } catch (FileNotFoundException $e) {
-            Log::notice("Won't seed components, Data file not found at path ".Storage::disk('database-data')->path("components.json"));
+            Log::notice("Won't seed components, Data file not found at path " . Storage::disk('database-data')->path("components.json"));
             return;
-        }        $data = json_decode($json);
+        }
+        $data = json_decode($json);
         if ($data == null)
             return;
 

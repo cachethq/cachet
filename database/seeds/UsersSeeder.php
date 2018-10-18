@@ -17,7 +17,7 @@ class UsersSeeder extends Seeder
         try {
             $json = Storage::disk('database-data')->get("users.json");
         } catch (\Illuminate\Contracts\Filesystem\FileNotFoundException $e) {
-            Log::notice("Won't seed users, Data file not found at path ".Storage::disk('database-data')->path("users.json"));
+            Log::notice("Won't seed users, Data file not found at path " . Storage::disk('database-data')->path("users.json"));
             return;
         }
         $data = json_decode($json);

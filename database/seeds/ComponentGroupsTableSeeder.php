@@ -18,7 +18,7 @@ class ComponentGroupsTableSeeder extends Seeder
         try {
             $json = Storage::disk('database-data')->get("componentGroups.json");
         } catch (FileNotFoundException $e) {
-            Log::notice("Won't seed component groups, Data file not found at path ".Storage::disk('database-data')->path("componentGroups.json"));
+            Log::notice("Won't seed component groups, Data file not found at path " . Storage::disk('database-data')->path("componentGroups.json"));
             return;
         }
         $data = json_decode($json);
