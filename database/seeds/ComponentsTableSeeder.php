@@ -1,8 +1,11 @@
 <?php
 
+use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\File;
 use CachetHQ\Cachet\Models\Component;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 
 class ComponentsTableSeeder extends Seeder
 {
@@ -13,8 +16,12 @@ class ComponentsTableSeeder extends Seeder
      */
     public function run()
     {
-        $json = File::get(database_path("data/components.json"));
-        $data = json_decode($json);
+        try {
+            $json = Storage::disk('database-data')->get("components.json");
+        } catch (FileNotFoundException $e) {
+            Log::notice("Won't seed components, Data file not found at path ".Storage::disk('database-data')->path("components.json"));
+            return;
+        }        $data = json_decode($json);
         if ($data == null)
             return;
 

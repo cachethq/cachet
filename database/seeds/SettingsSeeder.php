@@ -1,8 +1,10 @@
 <?php
 
 use CachetHQ\Cachet\Models\Setting;
+use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 
 class SettingsSeeder extends Seeder
 {
@@ -13,8 +15,12 @@ class SettingsSeeder extends Seeder
      */
     public function run()
     {
-        $json = File::get(database_path("data/settings.json"));
-        $data = json_decode($json);
+        try {
+            $json = Storage::disk('database-data')->get("settings.json");
+        } catch (FileNotFoundException $e) {
+            Log::notice("Won't seed settings, Data file not found at path ".Storage::disk('database-data')->path("settings.json"));
+            return;
+        }        $data = json_decode($json);
         if ($data == null)
             return;
 
@@ -27,6 +33,7 @@ class SettingsSeeder extends Seeder
                     $exists = true;
 
                     $setting->value = $obj->value;
+                    $setting->save();
 
                     unset($data[$key]);
                     break;

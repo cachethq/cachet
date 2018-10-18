@@ -62,6 +62,11 @@ return [
             'root'   => database_path('backups'),
         ],
 
+        'database-data' =>[
+            'driver' => 'local',
+            'root' => env('LOAD_FROM_JSON_DIR') ? env('LOAD_FROM_JSON_DIR') : base_path('database/data'),
+        ],
+
         'public' => [
             'driver'     => 'local',
             'root'       => storage_path('app/public'),
