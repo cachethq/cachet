@@ -36,14 +36,9 @@ class ComponentsTableSeeder extends Seeder
                     if ($obj->id == $component->id) {
                         $exists = true;
 
-                        if (!is_int($obj->status)) {
-                            $obj->status = array_search($obj->status, __('cachet.components.status'));
-                        }
-
                         $component->name = $obj->name;
                         $component->description = $obj->description;
                         $component->link = $obj->link;
-                        $component->status = $obj->status;
                         $component->group_id = $obj->group_id;
                         $component->save();
 
@@ -67,16 +62,13 @@ class ComponentsTableSeeder extends Seeder
             //Whatever is left in the $data array from the file must be new, so we create it
             foreach ($data as $obj) {
 
-                if (!is_int($obj->status)) {
-                    $obj->status = array_search($obj->status, __('cachet.components.status'));
-                }
 
                 $component = new Component;
                 $component->id = $obj->id;
                 $component->name = $obj->name;
                 $component->description = $obj->description;
                 $component->link = $obj->link;
-                $component->status = $obj->status;
+                $component->status = 1; //Set status to "operational" since its just been added
                 $component->group_id = $obj->group_id;
                 $component->save();
             }
