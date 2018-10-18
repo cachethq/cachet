@@ -14,7 +14,7 @@ return [
     'components' => [
         'last_updated' => 'Última atualização :timestamp',
         'status'       => [
-            0 => 'Unknown',
+            0 => 'Desconhecido',
             1 => 'Operacional',
             2 => 'Problemas de performance',
             3 => 'Indisponibilidade parcial',
@@ -23,19 +23,19 @@ return [
         'group' => [
             'other' => 'Outros componentes',
         ],
-        'select_all'   => 'Select All',
-        'deselect_all' => 'Deselect All',
+        'select_all'   => 'Selecione tudo',
+        'deselect_all' => 'Desmarque tudo',
     ],
 
     // Incidents
     'incidents' => [
         'none'         => 'Nenhum incidente reportado',
         'past'         => 'Incidentes anteriores',
-        'stickied'     => 'Stickied Incidents',
-        'scheduled'    => 'Maintenance',
+        'stickied'     => 'Incidentes destacados',
+        'scheduled'    => 'Manutenção',
         'scheduled_at' => ', agendada :timestamp',
-        'posted'       => 'Posted :timestamp',
-        'posted_at'    => 'Posted at :timestamp',
+        'posted'       => 'Postado :timestamp',
+        'posted_at'    => 'Postado at :timestamp',
         'status'       => [
             1 => 'Investigando',
             2 => 'Identificado',
@@ -47,17 +47,17 @@ return [
     // Schedule
     'schedules' => [
         'status' => [
-            0 => 'Upcoming',
-            1 => 'In Progress',
-            2 => 'Complete',
+            0 => 'Agendado',
+            1 => 'Em progresso',
+            2 => 'Completo',
         ],
     ],
 
     // Service Status
     'service' => [
-        'good'  => '[0,1]System operational|[2,*]All systems are operational',
-        'bad'   => '[0,1]The system is experiencing issues|[2,*]Some systems are experiencing issues',
-        'major' => '[0,1]The system is experiencing major issues|[2,*]Some systems are experiencing major issues',
+        'good'  => '[0,1]System operational|[2,*]Todos os sistemas estão operando normalmente',
+        'bad'   => '[0,1]The system is experiencing issues|[2,*]Alguns sistemas apresentam problemas',
+        'major' => '[0,1]The system is experiencing major issues|[2,*]Alguns sistemas apresentam problemas graves',
     ],
 
     'api' => [
@@ -78,16 +78,16 @@ return [
     // Subscriber
     'subscriber' => [
         'subscribe'           => 'Inscreva-se para obter as atualizações mais recentes',
-        'unsubscribe'         => 'Unsubscribe',
+        'unsubscribe'         => 'Sair',
         'button'              => 'Inscreva-se',
-        'manage_subscription' => 'Manage subscription',
+        'manage_subscription' => 'Gerenciar inscrição',
         'manage'              => [
             'notifications'       => 'Notificações',
-            'notifications_for'   => 'Manage notifications for',
+            'notifications_for'   => 'Gerenciar notificações para',
             'no_subscriptions'    => 'Você está atualmente inscrito a todas as atualizações.',
-            'update_subscription' => 'Update Subscription',
+            'update_subscription' => 'atualizar assinatura',
             'my_subscriptions'    => 'Você está atualmente inscrito para as seguintes atualizações.',
-            'manage_at_link'      => 'Manage your subscriptions at :link',
+            'manage_at_link'      => 'Gerencie sua assinatura em :link',
         ],
         'email' => [
             'subscribe'          => 'Inscreva-se para atualizações via e-mail.',
@@ -127,9 +127,9 @@ return [
     // Meta descriptions
     'meta' => [
         'description' => [
-            'incident'  => 'Details and updates about the :name incident that occurred on :date',
-            'schedule'  => 'Details about the scheduled maintenance period :name starting :startDate',
-            'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
+            'incident'  => 'Detalhes e atualizações sobre o incidente :name ocorrido em :date',
+            'schedule'  => 'Detalhes sobre o agendamento de manutenção :name agendado para :startDate',
+            'subscribe' => 'Assine para :app em ordem para receber as notificações e atualizações',
             'overview'  => 'Mantenha-se atualizado com as últimas atualizações de serviço de: app.',
         ],
     ],
@@ -137,7 +137,7 @@ return [
     // Other
     'home'            => 'Início',
     'powered_by'      => 'Desenvolvido por <a href="https://cachethq.io" class="links">Cachet</a>.',
-    'timezone'        => 'Times are shown in :timezone.',
+    'timezone'        => 'Horário em :timezone.',
     'about_this_site' => 'Sobre este Site',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',
