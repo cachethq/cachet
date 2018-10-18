@@ -4,7 +4,8 @@ sudo: false
 
 branches:
   except:
-  - l10n_2.4
+    - l10n_2.3
+    - l10n_2.4
 
 before_install:
   - cp .env.example .env
