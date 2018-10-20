@@ -194,7 +194,7 @@ class SetupController extends Controller
             return $input->env['mail_driver'] === 'smtp';
         });
 
-        $v->sometimes(['env.mail_address', 'env.mail_username', 'env.mail_password'], 'required', function ($input) {
+        $v->sometimes(['env.mail_address', 'env.mail_password'], 'required', function ($input) {
             return !in_array($input->env['mail_driver'], ['log', 'smtp']);
         });
 
