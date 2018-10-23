@@ -23,6 +23,7 @@ use Illuminate\Database\QueryException;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Request;
+use Symfony\Component\Finder\Exception\AccessDeniedException;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 class ComponentController extends AbstractApiController
@@ -76,6 +77,9 @@ class ComponentController extends AbstractApiController
      */
     public function store()
     {
+        if (config('database.fileDriven')) {
+            throw new AccessDeniedException("Cachet configuration is currently file-driven");
+        }
         try {
             $component = execute(new CreateComponentCommand(
                 Binput::get('name'),
@@ -161,6 +165,9 @@ class ComponentController extends AbstractApiController
      */
     public function destroy(Component $component)
     {
+        if (config('database.fileDriven')) {
+            throw new AccessDeniedException("Cachet configuration is currently file-driven");
+        }
         execute(new RemoveComponentCommand($component));
 
         return $this->noContent();

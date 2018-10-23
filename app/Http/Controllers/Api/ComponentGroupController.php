@@ -19,6 +19,7 @@ use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Request;
+use Symfony\Component\Finder\Exception\AccessDeniedException;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 /**
@@ -91,6 +92,9 @@ class ComponentGroupController extends AbstractApiController
      */
     public function store()
     {
+        if (config('database.fileDriven')) {
+            throw new AccessDeniedException("Cachet configuration is currently file-driven");
+        }
         try {
             $group = execute(new CreateComponentGroupCommand(
                 Binput::get('name'),
@@ -114,6 +118,9 @@ class ComponentGroupController extends AbstractApiController
      */
     public function update(ComponentGroup $group)
     {
+        if (config('database.fileDriven')) {
+            throw new AccessDeniedException("Cachet configuration is currently file-driven");
+        }
         try {
             $group = execute(new UpdateComponentGroupCommand(
                 $group,
@@ -138,6 +145,9 @@ class ComponentGroupController extends AbstractApiController
      */
     public function destroy(ComponentGroup $group)
     {
+        if (config('database.fileDriven')) {
+            throw new AccessDeniedException("Cachet configuration is currently file-driven");
+        }
         execute(new RemoveComponentGroupCommand($group));
 
         return $this->noContent();
