@@ -293,7 +293,7 @@ class ComponentTest extends AbstractApiTestCase
             $response->assertJsonFragment([
                 'meta' => [
                     'uuid' => '172ff3fb-41f7-49d3-8bcd-f57b53627fa0',
-                    'foo' => 'bar',
+                    'foo'  => 'bar',
                 ],
             ]);
         }

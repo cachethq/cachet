@@ -23,7 +23,8 @@ class DatabaseSeeder extends Seeder
         $this->infraAsCodeSeeder();
     }
 
-    private function infraAsCodeSeeder() {
+    private function infraAsCodeSeeder()
+    {
         if (config('database.fileDriven')) {
             $this->call(UsersSeeder::class);
             $this->call(SettingsSeeder::class);

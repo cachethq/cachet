@@ -115,7 +115,7 @@ class ComponentController extends Controller
             return cachet_redirect('dashboard.components.edit', [$component->id])
                 ->withInput(Binput::all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('dashboard.settings.fileDriven'))) //TODO: Translate fileDriven to other languages
-                ->withErrors("");
+                ->withErrors('');
         }
         $componentData = Binput::get('component');
         $tags = array_pull($componentData, 'tags');

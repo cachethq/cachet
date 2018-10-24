@@ -1,17 +1,17 @@
 <?php
 
-    /*
-     * This file is part of Cachet.
-     *
-     * (c) Alt Three Services Limited
-     *
-     * For the full copyright and license information, please view the LICENSE
-     * file that was distributed with this source code.
-     */
+/*
+ * This file is part of Cachet.
+ *
+ * (c) Alt Three Services Limited
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
-    namespace CachetHQ\Tests\Cachet\Api;
+namespace CachetHQ\Tests\Cachet\Api;
 
-    use CachetHQ\Cachet\Bus\Events\ComponentGroup\ComponentGroupWasCreatedEvent;
+use CachetHQ\Cachet\Bus\Events\ComponentGroup\ComponentGroupWasCreatedEvent;
     use CachetHQ\Cachet\Bus\Events\ComponentGroup\ComponentGroupWasRemovedEvent;
     use CachetHQ\Cachet\Bus\Events\ComponentGroup\ComponentGroupWasUpdatedEvent;
     use CachetHQ\Cachet\Models\Component;
@@ -40,8 +40,8 @@
                 [
                     'id'                        => $groups[0]->id,
                     'name'                      => $groups[0]->name,
-                    'created_at'                => (string)$groups[0]->created_at,
-                    'updated_at'                => (string)$groups[0]->updated_at,
+                    'created_at'                => (string) $groups[0]->created_at,
+                    'updated_at'                => (string) $groups[0]->updated_at,
                     'order'                     => $groups[0]->order,
                     'collapsed'                 => $groups[0]->collapsed,
                     'visible'                   => $groups[0]->visible,
@@ -54,8 +54,8 @@
                 [
                     'id'                        => $groups[1]->id,
                     'name'                      => $groups[1]->name,
-                    'created_at'                => (string)$groups[1]->created_at,
-                    'updated_at'                => (string)$groups[1]->updated_at,
+                    'created_at'                => (string) $groups[1]->created_at,
+                    'updated_at'                => (string) $groups[1]->updated_at,
                     'order'                     => $groups[1]->order,
                     'collapsed'                 => $groups[1]->collapsed,
                     'visible'                   => $groups[1]->visible,

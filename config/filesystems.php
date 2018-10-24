@@ -62,9 +62,9 @@ return [
             'root'   => database_path('backups'),
         ],
 
-        'database-data' =>[
+        'database-data' => [
             'driver' => 'local',
-            'root' => env('FILE_DRIVEN_DIR') ? env('FILE_DRIVEN_DIR') : base_path('database/data'),
+            'root'   => env('FILE_DRIVEN_DIR') ? env('FILE_DRIVEN_DIR') : base_path('database/data'),
         ],
 
         'public' => [
