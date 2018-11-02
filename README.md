@@ -60,9 +60,13 @@ If you'd like to contribute translations, please check out our [CrowdIn project]
 
 If you discover a security vulnerability within Cachet, please send an e-mail to [support@cachethq.io](mailto:support@cachethq.io?Cachet%20Security%20Vulnerability). All security vulnerabilities on a case-by-case basis.
 
+## Limited Support Contact
+
+We may be able to resolve **support queries** via email. Please send an e-mail to [support@cachethq.io](mailto:support@cachethq.io?Cachet%20Support). Please first check the GitHub [issue tracker](https://github.com/CachetHQ/Cachet/issues) before emailing.
+
 ## Professional Installation Service
 
-A professional installation service is offered by Alt Three Services Limited. To find out more, contact [support@alt-three.com](mailto:support@alt-three.com?Cachet%20Installation). *Note: this is a different email address to our security contact address.*
+A professional **installation service** is offered by Alt Three Services Limited. To find out more, contact [support@alt-three.com](mailto:support@alt-three.com?Cachet%20Installation). **Do not contact this email address for general support.**
 
 ## Sponsorship
 
