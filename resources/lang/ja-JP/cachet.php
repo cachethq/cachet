@@ -28,8 +28,8 @@ return [
     'incidents' => [
         'none'          => 'インシデントはありません',
         'past'          => 'インシデント履歴',
-        'previous_week' => 'Previous Week',
-        'next_week'     => 'Next Week',
+        'previous_week' => '前の週',
+        'next_week'     => '次の週',
         'scheduled'     => '計画メンテナンス',
         'scheduled_at'  => ', 予定日時 :timestamp',
         'status'        => [
