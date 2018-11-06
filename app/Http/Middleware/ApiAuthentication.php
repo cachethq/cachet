@@ -58,7 +58,7 @@ class ApiAuthentication
     public function handle(Request $request, Closure $next, $required = false)
     {
         if ($this->auth->guest()) {
-            if ($apiToken = $request->header('X-Cachet-Token')) {
+            if ($apiToken = $this->getApiToken($request)) {
                 try {
                     $this->auth->onceUsingId(User::findByApiToken($apiToken)->id);
                 } catch (ModelNotFoundException $e) {
@@ -72,5 +72,20 @@ class ApiAuthentication
         }
 
         return $next($request);
+    }
+
+    protected function getApiToken(Request $request)
+    {
+        if ($apiToken = $request->header('X-Cachet-Token')) {
+            return $apiToken;
+        }
+
+        $apiToken = $request->header('Authorization');
+
+        if (($apiToken = $request->header('Authorization')) && starts_with($apiToken, "Bearer ")) {
+            return mb_substr($apiToken, 7);
+        }
+
+        return null;
     }
 }
