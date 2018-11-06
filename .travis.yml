@@ -9,7 +9,7 @@ branches:
 
 before_install:
   - cp .env.example .env
-  - phpenv config-rm xdebug.ini
+  - phpenv config-rm xdebug.ini || true
 
 install:
   - travis_retry composer install --no-interaction --no-suggest
