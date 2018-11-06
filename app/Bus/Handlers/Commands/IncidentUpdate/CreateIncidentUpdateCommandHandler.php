@@ -11,9 +11,11 @@
 
 namespace CachetHQ\Cachet\Bus\Handlers\Commands\IncidentUpdate;
 
+use CachetHQ\Cachet\Bus\Commands\Component\UpdateComponentCommand;
 use CachetHQ\Cachet\Bus\Commands\Incident\UpdateIncidentCommand;
 use CachetHQ\Cachet\Bus\Commands\IncidentUpdate\CreateIncidentUpdateCommand;
 use CachetHQ\Cachet\Bus\Events\IncidentUpdate\IncidentUpdateWasReportedEvent;
+use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\IncidentUpdate;
 use Illuminate\Contracts\Auth\Guard;
 
@@ -77,6 +79,17 @@ class CreateIncidentUpdateCommandHandler
             null,
             []
         ));
+
+        if ($command->component_id) {
+            $component = Component::findOrFail($command->component_id);
+
+            execute(new UpdateComponentCommand(
+                $component,
+                null,
+                null,
+                $command->component_status
+            ));
+        }
 
         event(new IncidentUpdateWasReportedEvent($this->auth->user(), $update));
 
