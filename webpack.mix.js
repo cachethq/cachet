@@ -46,7 +46,6 @@ mix
         'node_modules/sweetalert2/dist/sweetalert2.min.js',
         'node_modules/livestamp/livestamp.js',
         'node_modules/jquery-serializeobject/jquery.serializeObject.js',
-        'resources/assets/js/password-strength.js',
         'resources/assets/js/cachet.js',
     ], 'public/dist/js/all.js')
 
