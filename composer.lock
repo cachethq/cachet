@@ -409,16 +409,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.69.6",
+            "version": "3.71.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "7772d90f021a160d8208e484513a41eaca848693"
+                "reference": "fa7f498cb41c7eb47e952355b8be2061816a9a60"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/7772d90f021a160d8208e484513a41eaca848693",
-                "reference": "7772d90f021a160d8208e484513a41eaca848693",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/fa7f498cb41c7eb47e952355b8be2061816a9a60",
+                "reference": "fa7f498cb41c7eb47e952355b8be2061816a9a60",
                 "shasum": ""
             },
             "require": {
@@ -426,7 +426,7 @@
                 "ext-pcre": "*",
                 "ext-simplexml": "*",
                 "ext-spl": "*",
-                "guzzlehttp/guzzle": "^5.3.1|^6.2.1",
+                "guzzlehttp/guzzle": "^5.3.3|^6.2.1",
                 "guzzlehttp/promises": "~1.0",
                 "guzzlehttp/psr7": "^1.4.1",
                 "mtdowling/jmespath.php": "~2.2",
@@ -488,7 +488,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2018-10-12T21:44:38+00:00"
+            "time": "2018-11-09T21:57:53+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -2462,7 +2462,7 @@
                 {
                     "name": "Luís Otávio Cobucci Oblonczyk",
                     "email": "lcobucci@gmail.com",
-                    "role": "developer"
+                    "role": "Developer"
                 }
             ],
             "description": "A simple library to work with JSON Web Token and JSON Web Signature",
