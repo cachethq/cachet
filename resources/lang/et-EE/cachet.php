@@ -12,84 +12,84 @@
 return [
     // Components
     'components' => [
-        'last_updated' => '最終更新 :timestamp',
+        'last_updated' => 'Last updated :timestamp',
         'status'       => [
-            1 => '稼働中',
-            2 => 'パフォーマンスに関する問題あり',
-            3 => '一部停止中',
-            4 => '大規模な停止中',
+            1 => 'Operational',
+            2 => 'Performance Issues',
+            3 => 'Partial Outage',
+            4 => 'Major Outage',
         ],
         'group' => [
-            'other' => 'その他のコンポーネント',
+            'other' => 'Other Components',
         ],
     ],
 
     // Incidents
     'incidents' => [
-        'none'          => 'インシデントはありません',
-        'past'          => 'インシデント履歴',
-        'previous_week' => '前の週',
-        'next_week'     => '次の週',
-        'scheduled'     => '計画メンテナンス',
-        'scheduled_at'  => ', 予定日時 :timestamp',
+        'none'          => 'No incidents reported',
+        'past'          => 'Past Incidents',
+        'previous_week' => 'Previous Week',
+        'next_week'     => 'Next Week',
+        'scheduled'     => 'Scheduled Maintenance',
+        'scheduled_at'  => ', scheduled :timestamp',
         'status'        => [
             0 => 'Scheduled', // TODO: Hopefully remove this.
-            1 => '調査中',
-            2 => '特定済み',
-            3 => '監視中',
-            4 => '修正済み',
+            1 => 'Investigating',
+            2 => 'Identified',
+            3 => 'Watching',
+            4 => 'Fixed',
         ],
     ],
 
     // Service Status
     'service' => [
-        'good'  => '全システムが正常に稼動しています',
+        'good'  => '[0,1] System operational|[2,Inf] All systems are operational',
         'bad'   => '[0,1] The system is currently experiencing issues|[2,Inf] Some systems are experiencing issues',
         'major' => '[0,1] The service experiencing a major outage|[2,Inf] Some systems are experiencing a major outage',
     ],
 
     'api' => [
-        'regenerate' => 'APIキーの再生成',
-        'revoke'     => 'APIキーの削除',
+        'regenerate' => 'Regenerate API Key',
+        'revoke'     => 'Revoke API Key',
     ],
 
     // Metrics
     'metrics' => [
         'filter' => [
-            'last_hour' => '過去1時間',
-            'hourly'    => '過去12時間',
-            'weekly'    => '週',
-            'monthly'   => '月',
+            'last_hour' => 'Last Hour',
+            'hourly'    => 'Last 12 Hours',
+            'weekly'    => 'Week',
+            'monthly'   => 'Month',
         ],
     ],
 
     // Subscriber
     'subscriber' => [
         'subscribe' => 'Subscribe to get the most recent updates',
-        'button'    => '購読',
+        'button'    => 'Subscribe',
         'manage'    => [
-            'no_subscriptions' => '現在、すべてのアップデートを購読しています。',
-            'my_subscriptions' => '現在、以下のアップデートを購読しています。',
+            'no_subscriptions' => 'You\'re currently subscribed to all updates.',
+            'my_subscriptions' => 'You\'re currently subscribed to the following updates.',
         ],
         'email' => [
-            'subscribe'          => 'メールによるアップデート情報の購読',
+            'subscribe'          => 'Subscribe to email updates.',
             'subscribed'         => 'You\'ve been subscribed to email notifications, please check your email to confirm your subscription.',
-            'verified'           => 'あなたのメール購読を確認しました。ありがとうございます！',
-            'manage'             => '購読の管理',
+            'verified'           => 'Your email subscription has been confirmed. Thank you!',
+            'manage'             => 'Manage your subscription',
             'unsubscribe'        => 'Unsubscribe from email updates.',
-            'unsubscribed'       => 'メールの購読が取り消されました。',
-            'failure'            => '購読に失敗しました。',
-            'already-subscribed' => '既に購読しているので :email の購読ができません。',
+            'unsubscribed'       => 'Your email subscription has been cancelled.',
+            'failure'            => 'Something went wrong with the subscription.',
+            'already-subscribed' => 'Cannot subscribe :email because they\'re already subscribed.',
             'verify'             => [
                 'text'   => "Please confirm your email subscription to :app_name status updates.\n:link",
                 'html'   => '<p>Please confirm your email subscription to :app_name status updates.</p>',
-                'button' => '購読の確認',
+                'button' => 'Confirm Subscription',
             ],
             'maintenance' => [
-                'subject' => '[計画メンテナンス] :name',
+                'subject' => '[Maintenance Scheduled] :name',
             ],
             'incident' => [
-                'subject' => '[新規インシデント] :status: :name',
+                'subject' => '[New Incident] :status: :name',
             ],
             'component' => [
                 'subject'       => 'Component Status Update',
@@ -110,35 +110,35 @@ return [
     ],
 
     'signup' => [
-        'title'    => '新規登録',
+        'title'    => 'Sign Up',
         'username' => 'Username',
         'email'    => 'Email',
         'password' => 'Password',
-        'success'  => 'アカウントが作成されました。',
-        'failure'  => '新規登録に失敗しました。',
+        'success'  => 'Your account has been created.',
+        'failure'  => 'Something went wrong with the signup.',
     ],
 
     'system' => [
-        'update' => 'Cachetの新しいバージョンがあります。アップデートの方法については<a href="https://docs.cachethq.io/docs/updating-cachet">こちら</a>を参照して下さい！',
+        'update' => 'There is a newer version of Cachet available. You can learn how to update <a href="https://docs.cachethq.io/docs/updating-cachet">here</a>!',
     ],
 
     // Modal
     'modal' => [
-        'close'     => '閉じる',
+        'close'     => 'Close',
         'subscribe' => [
-            'title'  => 'コンポーネントのアップデート情報を購読する',
+            'title'  => 'Subscribe to component updates',
             'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll already receive emails for this component.',
-            'button' => '購読',
+            'button' => 'Subscribe',
         ],
     ],
 
     // Other
-    'home'            => 'ホーム',
+    'home'            => 'Home',
     'description'     => 'Stay up to date with the latest service updates from :app.',
     'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
-    'about_this_site' => 'このサイトについて',
+    'about_this_site' => 'About This Site',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',
-    'feed'            => 'ステータスフィード',
+    'feed'            => 'Status Feed',
 
 ];
