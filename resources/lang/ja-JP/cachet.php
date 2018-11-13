@@ -23,15 +23,15 @@ return [
         'group' => [
             'other' => 'その他のコンポーネント',
         ],
-        'select_all'   => 'Select All',
-        'deselect_all' => 'Deselect All',
+        'select_all'   => '全て選択',
+        'deselect_all' => '全て選択解除',
     ],
 
     // Incidents
     'incidents' => [
         'none'         => 'インシデントはありません',
         'past'         => 'インシデント履歴',
-        'stickied'     => 'Stickied Incidents',
+        'stickied'     => '固定している障害情報',
         'scheduled'    => '計画メンテナンス',
         'scheduled_at' => ', 予定日時 :timestamp',
         'posted'       => '掲載日時 :timestamp',
@@ -83,9 +83,9 @@ return [
         'manage_subscription' => '購読の管理',
         'manage'              => [
             'notifications'       => 'Notifications',
-            'notifications_for'   => 'Manage notifications for',
+            'notifications_for'   => '通知の管理',
             'no_subscriptions'    => '現在、すべてのアップデートを購読しています。',
-            'update_subscription' => 'Update Subscription',
+            'update_subscription' => '購読の管理',
             'my_subscriptions'    => '現在、以下のアップデートを購読しています。',
             'manage_at_link'      => '購読の管理',
         ],
@@ -127,9 +127,9 @@ return [
     // Meta descriptions
     'meta' => [
         'description' => [
-            'incident'  => 'Details and updates about the :name incident that occurred on :date',
-            'schedule'  => 'Details about the scheduled maintenance period :name starting :startDate',
-            'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
+            'incident'  => ':date に発生した:nameの障害情報',
+            'schedule'  => ':startDate に予定している:name のメンテナンスの詳細',
+            'subscribe' => ':app の障害情報とメンテナンス情報を購読する',
             'overview'  => 'Stay up to date with the latest service updates from :app.',
         ],
     ],
