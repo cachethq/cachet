@@ -63,7 +63,7 @@
         "mockery/mockery": "^1.0",
         "phpunit/phpunit": "^7.0",
         "symfony/css-selector": "^3.1",
-        "symfony/dom-crawler": "^3.1",
+        "symfony/dom-crawler": "^4.1",
         "tightenco/mailthief": "^0.3.2"
     },
     "suggest": {
