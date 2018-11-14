@@ -2,6 +2,7 @@
 const Vue = require('vue');
 
 Vue.component('report-incident', require('./ReportIncident'));
+Vue.component('report-schedule', require('./ReportSchedule'));
 Vue.component('invite-team', require('./InviteTeam'));
 
 module.exports = {
