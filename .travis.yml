@@ -9,7 +9,6 @@ branches:
 
 before_install:
   - cp .env.example .env
-  - phpenv config-rm xdebug.ini || true
 
 install:
   - travis_retry composer install --no-interaction --no-suggest
@@ -18,21 +17,28 @@ jobs:
   include:
     - stage: Security check
       script:
+        - phpenv config-rm xdebug.ini || true
         - wget https://get.sensiolabs.org/security-checker.phar
         - php security-checker.phar security:check ./composer.lock
       php: 7.1
     - stage: Unit tests
-      script: vendor/bin/phpunit
+      script:
+        - phpenv config-rm xdebug.ini || true
+        - vendor/bin/phpunit
       php: 7.1
     - stage: Unit tests
-      script: vendor/bin/phpunit
+      script:
+        - phpenv config-rm xdebug.ini || true
+        - vendor/bin/phpunit
       php: 7.2
     - stage: Unit tests
-      script: vendor/bin/phpunit
+      script:
+        - phpenv config-rm xdebug.ini || true
+        - vendor/bin/phpunit
       php: 7.3
     - stage: Code coverage
       script:
-        - vendor/bin/phpunit --coverage-clover build/logs/clover.xml
+        - vendor/bin/phpunit --coverage-text --coverage-clover build/logs/clover.xml
         - if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then wget https://scrutinizer-ci.com/ocular.phar; fi
         - if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then php ocular.phar code-coverage:upload --format=php-clover build/logs/clover.xml; fi
       php: 7.1
