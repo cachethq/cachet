@@ -77,7 +77,7 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'           => 'Inscreva-se para obter as atualizações mais recentes',
+        'subscribe'           => 'Subscribe to status changes and incident updates',
         'unsubscribe'         => 'Unsubscribe',
         'button'              => 'Subscrever',
         'manage_subscription' => 'Manage subscription',
