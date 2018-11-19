@@ -77,7 +77,7 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'           => '最新のアップデート情報を購読する',
+        'subscribe'           => 'Subscribe to status changes and incident updates',
         'unsubscribe'         => '購読の解除',
         'button'              => '購読',
         'manage_subscription' => '購読の管理',
