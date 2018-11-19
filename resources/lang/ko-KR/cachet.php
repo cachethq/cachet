@@ -77,7 +77,7 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'           => '최신 업데이트를 받아 보기 위한 구독신청.',
+        'subscribe'           => 'Subscribe to status changes and incident updates',
         'unsubscribe'         => 'Unsubscribe',
         'button'              => '구독',
         'manage_subscription' => 'Manage subscription',
