@@ -77,7 +77,7 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'           => 'Tilmeld dig for at få de seneste opdateringer',
+        'subscribe'           => 'Subscribe to status changes and incident updates',
         'unsubscribe'         => 'Unsubscribe',
         'button'              => 'Abonner',
         'manage_subscription' => 'Manage subscription',
