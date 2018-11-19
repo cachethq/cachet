@@ -77,7 +77,7 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'           => 'crwdns908:0crwdne908:0',
+        'subscribe'           => 'crwdns1520:0crwdne1520:0',
         'unsubscribe'         => 'crwdns1447:0crwdne1447:0',
         'button'              => 'crwdns909:0crwdne909:0',
         'manage_subscription' => 'crwdns1448:0crwdne1448:0',
