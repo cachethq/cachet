@@ -1,6 +1,6 @@
 @extends('layout.master')
 
-@section('title',  trans('cachet.subscriber.subscribe'). " | ". $siteTitle))
+@section('title',  trans('cachet.subscriber.subscribe'). " | ". $siteTitle)
 
 @section('description', trans('cachet.meta.description.subscribe', ['app' => $siteTitle]))
 
