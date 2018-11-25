@@ -389,11 +389,12 @@ class InstallCommand extends Command
             $envKey = strtoupper($key);
             $envValue = env($envKey) ?: 'null';
 
-            file_put_contents($path, str_replace(
-                "{$envKey}={$envValue}",
-                "{$envKey}={$value}",
-                file_get_contents($path)
-            ));
+            $envFileContents = file_get_contents($path);
+            $envFileContents = str_replace("{$envKey}={$envValue}", "{$envKey}={$value}", $envFileContents, $count);
+            if ($count < 1 && $envValue === 'null') {
+                $envFileContents = str_replace("{$envKey}=", "{$envKey}={$value}", $envFileContents);
+            }
+            file_put_contents($path, $envFileContents);
         } catch (InvalidPathException $e) {
             throw $e;
         }
