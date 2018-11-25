@@ -140,7 +140,7 @@ class InstallCommand extends Command
 
         $config['DB_DRIVER'] = $this->choice('Which database driver do you want to use?', [
             'mysql'      => 'MySQL',
-            'postgresql' => 'PostgreSQL',
+            'pgsql'      => 'PostgreSQL',
             'sqlite'     => 'SQLite',
         ], $config['DB_DRIVER']);
 
