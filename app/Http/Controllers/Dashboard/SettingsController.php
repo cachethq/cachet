@@ -248,8 +248,8 @@ class SettingsController extends Controller
 
         $credits = app(Credits::class)->latest();
 
-        $backers = $credits['backers'];
-        $contributors = $credits['contributors'];
+        $backers = $credits['backers'] ?? [];
+        $contributors = $credits['contributors'] ?? [];
 
         shuffle($backers);
         shuffle($contributors);
