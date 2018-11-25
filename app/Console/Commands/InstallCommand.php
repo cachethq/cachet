@@ -155,6 +155,7 @@ class InstallCommand extends Command
 
             $config['DB_PASSWORD'] = $this->secret('What password should we connect with?', $config['DB_PASSWORD']);
 
+            $config['DB_PORT'] = $config['DB_DRIVER'] === 'mysql' ? 3306 : 5432;
             if ($this->confirm('Is your database listening on a non-standard port number?')) {
                 $config['DB_PORT'] = $this->anticipate('What port number is your database using?', [3306, 5432], $config['DB_PORT']);
             }
