@@ -140,7 +140,7 @@ class InstallCommand extends Command
 
         $config['DB_DRIVER'] = $this->choice('Which database driver do you want to use?', [
             'mysql'      => 'MySQL',
-            'postgresql' => 'PostgreSQL',
+            'pgsql'      => 'PostgreSQL',
             'sqlite'     => 'SQLite',
         ], $config['DB_DRIVER']);
 
@@ -148,6 +148,9 @@ class InstallCommand extends Command
             $config['DB_DATABASE'] = $this->ask('Please provide the full path to your SQLite file.', $config['DB_DATABASE']);
         } else {
             $config['DB_HOST'] = $this->ask("What is the host of your {$config['DB_DRIVER']} database?", $config['DB_HOST']);
+            if ($config['DB_HOST'] === 'localhost' && $config['DB_DRIVER'] === 'mysql') {
+                $this->warn("Using 'localhost' will result in the usage of a local unix socket. Use 127.0.0.1 if you want to connect over TCP");
+            }
 
             $config['DB_DATABASE'] = $this->ask('What is the name of the database that Cachet should use?', $config['DB_DATABASE']);
 
