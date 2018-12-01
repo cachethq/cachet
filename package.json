@@ -17,7 +17,7 @@
     "chart.js": "^2.7.0",
     "cross-env": "^5.1",
     "es5-shim": "^4.5.9",
-    "flatpickr": "^4.5.0",
+    "flatpickr": "^4.5.2",
     "github-markdown-css": "^2.3.0",
     "gulp": "^3.9.1",
     "ionicons": "~2.0",
