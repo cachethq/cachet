@@ -33,7 +33,7 @@
     "moment": "^2.17.1",
     "promise": "^7.3.1",
     "sortablejs": "^1.6.1",
-    "sweetalert2": "^6.8.0",
+    "sweetalert2": "^7.29.2",
     "vue": "^2.5.17",
     "vue-template-compiler": "^2.5.16"
   },
