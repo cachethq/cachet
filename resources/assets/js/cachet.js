@@ -19,10 +19,10 @@ $(function () {
         },
         statusCode: {
             401: function () {
-                window.location.href = '/auth/login';
+                window.location.href = 'auth/login';
             },
             403: function () {
-                window.location.href = '/';
+                window.location.href = '../';
             }
         }
     });
@@ -173,7 +173,7 @@ $(function () {
 
         $.ajax({
             async: true,
-            url: '/dashboard/api/components/' + formData.component_id,
+            url: 'dashboard/api/components/' + formData.component_id,
             type: 'POST',
             data: formData,
             success: function(component) {
@@ -197,7 +197,7 @@ $(function () {
                 data: {
                     slug: slug
                 },
-                url: '/dashboard/api/incidents/templates',
+                url: 'dashboard/api/incidents/templates',
                 success: function(tpl) {
                     var $form = $('form[role=form]');
                     $form.find('input[name=name]').val(tpl.name);
@@ -253,7 +253,7 @@ $(function () {
 
         // Only validate going forward. If current group is invalid, do not go further
         if (next > current) {
-            var url = '/setup/step' + current;
+            var url = 'setup/step' + current;
             $.post(url, $form.serializeObject())
                 .done(function(response) {
                     goToStep(current, next);
