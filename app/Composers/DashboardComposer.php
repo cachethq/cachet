@@ -37,9 +37,10 @@ class DashboardComposer
     private $subscriberCount;
 
     /**
-     * DashboardComposer constructor
+     * DashboardComposer constructor.
      */
-    public function __construct() {
+    public function __construct()
+    {
         if (is_null($this->componentCount)) {
             $this->componentCount = Component::count();
         }
