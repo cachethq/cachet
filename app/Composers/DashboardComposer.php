@@ -26,6 +26,41 @@ use Illuminate\Contracts\View\View;
  */
 class DashboardComposer
 {
+    private $componentCount;
+
+    private $incidentCount;
+
+    private $incidentTemplateCount;
+
+    private $scheduleCount;
+
+    private $subscriberCount;
+
+    /**
+     * DashboardComposer constructor
+     */
+    public function __construct() {
+        if (is_null($this->componentCount)) {
+            $this->componentCount = Component::count();
+        }
+
+        if (is_null($this->incidentCount)) {
+            $this->incidentCount = Incident::count();
+        }
+
+        if (is_null($this->incidentTemplateCount)) {
+            $this->incidentTemplateCount = IncidentTemplate::count();
+        }
+
+        if (is_null($this->scheduleCount)) {
+            $this->scheduleCount = Schedule::count();
+        }
+
+        if (is_null($this->subscriberCount)) {
+            $this->subscriberCount = Subscriber::isVerified()->count();
+        }
+    }
+
     /**
      * Bind data to the view.
      *
@@ -35,11 +70,11 @@ class DashboardComposer
      */
     public function compose(View $view)
     {
-        $view->withComponentCount(Component::count());
-        $view->withIncidentCount(Incident::count());
-        $view->withIncidentTemplateCount(IncidentTemplate::count());
-        $view->withScheduleCount(Schedule::count());
-        $view->withSubscriberCount(Subscriber::isVerified()->count());
+        $view->withComponentCount($this->componentCount);
+        $view->withIncidentCount($this->incidentCount);
+        $view->withIncidentTemplateCount($this->incidentTemplateCount);
+        $view->withScheduleCount($this->scheduleCount);
+        $view->withSubscriberCount($this->subscriberCount);
         $view->withIsWriteable(is_writable(app()->bootstrapPath().'/cachet'));
     }
 }
