@@ -20,6 +20,8 @@ class ComponentGroupPresenter extends BasePresenter implements Arrayable
 {
     use TimestampsTrait;
 
+    protected $enabledComponentsLowest = false;
+
     /**
      * Returns the lowest component status.
      *
@@ -27,7 +29,7 @@ class ComponentGroupPresenter extends BasePresenter implements Arrayable
      */
     public function lowest_status()
     {
-        if ($component = $this->wrappedObject->enabled_components_lowest()->first()) {
+        if ($component = $this->enabled_components_lowest()) {
             return AutoPresenter::decorate($component)->status;
         }
     }
@@ -39,7 +41,7 @@ class ComponentGroupPresenter extends BasePresenter implements Arrayable
      */
     public function lowest_human_status()
     {
-        if ($component = $this->wrappedObject->enabled_components_lowest()->first()) {
+        if ($component = $this->enabled_components_lowest()) {
             return AutoPresenter::decorate($component)->human_status;
         }
     }
@@ -51,9 +53,23 @@ class ComponentGroupPresenter extends BasePresenter implements Arrayable
      */
     public function lowest_status_color()
     {
-        if ($component = $this->wrappedObject->enabled_components_lowest()->first()) {
+        if ($component = $this->enabled_components_lowest()) {
             return AutoPresenter::decorate($component)->status_color;
         }
+    }
+
+    /**
+     * Return the enabled components from the wrapped object, and cache it if need be
+     *
+     * @return bool
+     */
+    public function enabled_components_lowest()
+    {
+        if (is_bool($this->enabledComponentsLowest)) {
+            $this->enabledComponentsLowest = $this->wrappedObject->enabled_components_lowest()->first();
+        }
+
+        return $this->enabledComponentsLowest;
     }
 
     /**

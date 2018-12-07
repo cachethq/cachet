@@ -29,6 +29,8 @@ class IncidentPresenter extends BasePresenter implements Arrayable
      */
     protected $dates;
 
+    protected $latest = false;
+
     /**
      * Incident icon lookup.
      *
@@ -248,9 +250,11 @@ class IncidentPresenter extends BasePresenter implements Arrayable
      */
     public function latest()
     {
-        if ($update = $this->wrappedObject->updates()->orderBy('created_at', 'desc')->first()) {
-            return $update;
+        if (is_bool($this->latest)) {
+            $this->latest = $this->wrappedObject->updates()->orderBy('created_at', 'desc')->first();
         }
+
+        return $this->latest;
     }
 
     /**
