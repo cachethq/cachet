@@ -59,7 +59,7 @@ class ComponentGroupPresenter extends BasePresenter implements Arrayable
     }
 
     /**
-     * Return the enabled components from the wrapped object, and cache it if need be
+     * Return the enabled components from the wrapped object, and cache it if need be.
      *
      * @return bool
      */
