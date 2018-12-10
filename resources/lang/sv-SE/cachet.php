@@ -134,8 +134,8 @@ return [
 
     // Other
     'home'            => 'Hem',
-    'description'     => 'Stay up to date with the latest service updates from :app.',
-    'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
+    'description'     => 'Håll dig uppdaterad med de senaste uppdateringarna från :app.',
+    'powered_by'      => 'Drivs av <a href="https://cachethq.io" class="links">Cachet</a>.',
     'about_this_site' => 'Om sidan',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',
