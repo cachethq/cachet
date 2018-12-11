@@ -77,7 +77,7 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'           => 'Subscribe to status changes and incident updates',
+        'subscribe'           => 'Subscribe to get the updates',
         'unsubscribe'         => 'Unsubscribe',
         'button'              => 'Subscribe',
         'manage_subscription' => 'Manage subscription',
