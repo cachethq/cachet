@@ -174,7 +174,7 @@ class ComponentTest extends AbstractApiTestCase
         ]);
 
         $response->assertStatus(200);
-        $response->assertJsonFragment(['name' => 'Foo']);
+        $response->assertJsonFragment(['name' => 'Foo', 'enabled' => $component->enabled]);
     }
 
     public function test_can_update_component_without_status_change()
@@ -190,7 +190,7 @@ class ComponentTest extends AbstractApiTestCase
         ]);
 
         $response->assertStatus(200);
-        $response->assertJsonFragment(['name' => 'Foo']);
+        $response->assertJsonFragment(['name' => 'Foo', 'enabled' => $component->enabled]);
     }
 
     public function test_can_update_component_with_status_change()
@@ -211,7 +211,7 @@ class ComponentTest extends AbstractApiTestCase
         ]);
 
         $response->assertStatus(200);
-        $response->assertJsonFragment(['name' => 'Foo', 'status' => 2]);
+        $response->assertJsonFragment(['name' => 'Foo', 'status' => 2, 'enabled' => $component->enabled]);
     }
 
     public function test_can_update_component_with_meta_data()
@@ -238,6 +238,7 @@ class ComponentTest extends AbstractApiTestCase
                 'uuid' => '172ff3fb-41f7-49d3-8bcd-f57b53627fa0',
                 'foo'  => 'bar',
             ],
+            'enabled' => $component->enabled,
         ]);
     }
 
