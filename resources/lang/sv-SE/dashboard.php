@@ -12,7 +12,7 @@
 return [
 
     'dashboard'          => 'Översiktspanel',
-    'writeable_settings' => 'The Cachet settings directory is not writeable. Please make sure that <code>./bootstrap/cachet</code> is writeable by the web server.',
+    'writeable_settings' => 'Cachets inställningskatalog är inte skrivbar. Kontrollera att <code>./bootstrap/cachet</code> är skrivbar av webbservern.',
 
     // Incidents
     'incidents' => [
@@ -22,20 +22,20 @@ return [
         'incident-create-template' => 'Skapa mall',
         'incident-templates'       => 'Händelsemallar',
         'updates'                  => [
-            'title'   => 'Incident updates for :incident',
-            'count'   => '{0}Zero Updates|[1]One Update|[2]Two Updates|[3,*]Several Updates',
+            'title'   => 'Uppdateringar för :incident',
+            'count'   => '{0}Inga uppdateringar|[1]En uppdatering|[2]Två uppdateringar|[3,*]Flera uppdateringar',
             'add'     => [
-                'title'   => 'Create new incident update',
-                'success' => 'Your new incident update has been created.',
-                'failure' => 'Something went wrong with the incident update.',
+                'title'   => 'Skapa en ny incidentuppdatering',
+                'success' => 'Din nya incidentuppdatering har skapats.',
+                'failure' => 'Något gick fel under uppdatering av incidenten.',
             ],
             'edit' => [
-                'title'   => 'Edit incident update',
-                'success' => 'The incident update has been updated.',
+                'title'   => 'Redigera incidentuppdatering',
+                'success' => 'Incidentuppdateringen har uppdaterats.',
                 'failure' => 'Something went wrong updating the incident update',
             ],
         ],
-        'reported_by'              => 'Reported by :user',
+        'reported_by'              => 'Rapporterad av :user',
         'add'                      => [
             'title'   => 'Lägg till händelse',
             'success' => 'Incident added.',
@@ -74,11 +74,11 @@ return [
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => 'Maintenance',
+        'schedule'     => 'Planerat underhåll',
         'logged'       => '{0}There has been no Maintenance, good work.|[1]You have logged one schedule.|[2,*]You have reported <strong>:count</strong> schedules.',
         'scheduled_at' => 'Schemalagd till: tidsstämpel',
         'add'          => [
-            'title'   => 'Add Maintenance',
+            'title'   => 'Lägg till planerat underhåll',
             'success' => 'Maintenance added.',
             'failure' => 'Something went wrong adding the Maintenance, please try again.',
         ],
