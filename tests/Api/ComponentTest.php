@@ -96,6 +96,21 @@ class ComponentTest extends AbstractApiTestCase
         }
     }
 
+    public function test_can_create_minimal_component()
+    {
+        $this->beUser();
+
+        $this->expectsEvents(ComponentWasCreatedEvent::class);
+
+        $response = $this->json('POST', '/api/v1/components', [
+            'name'        => 'Foo',
+            'status'      => 1,
+        ]);
+
+        $response->assertStatus(200);
+        $response->assertJsonFragment(['name' => 'Foo']);
+    }
+
     public function test_can_create_component_without_enabled_field()
     {
         $this->beUser();
@@ -213,7 +228,7 @@ class ComponentTest extends AbstractApiTestCase
             $response->assertStatus(500);
         } else {
             $response->assertStatus(200);
-            $response->assertJsonFragment(['name' => 'Foo']);
+            $response->assertJsonFragment(['name' => 'Foo', 'enabled' => $component->enabled]);
         }
     }
 
@@ -235,7 +250,7 @@ class ComponentTest extends AbstractApiTestCase
             $response->assertStatus(500);
         } else {
             $response->assertStatus(200);
-            $response->assertJsonFragment(['name' => 'Foo']);
+            $response->assertJsonFragment(['name' => 'Foo', 'enabled' => $component->enabled]);
         }
     }
 
@@ -262,7 +277,7 @@ class ComponentTest extends AbstractApiTestCase
             $response->assertStatus(500);
         } else {
             $response->assertStatus(200);
-            $response->assertJsonFragment(['name' => 'Foo', 'status' => 2]);
+            $response->assertJsonFragment(['name' => 'Foo', 'status' => 2, 'enabled' => $component->enabled]);
         }
     }
 
@@ -295,6 +310,7 @@ class ComponentTest extends AbstractApiTestCase
                     'uuid' => '172ff3fb-41f7-49d3-8bcd-f57b53627fa0',
                     'foo'  => 'bar',
                 ],
+                'enabled' => $component->enabled,
             ]);
         }
     }
