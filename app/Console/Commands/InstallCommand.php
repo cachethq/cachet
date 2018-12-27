@@ -158,6 +158,7 @@ class InstallCommand extends Command
 
             $config['DB_PASSWORD'] = $this->secret('What password should we connect with?', $config['DB_PASSWORD']);
 
+            $config['DB_PORT'] = $config['DB_DRIVER'] === 'mysql' ? 3306 : 5432;
             if ($this->confirm('Is your database listening on a non-standard port number?')) {
                 $config['DB_PORT'] = $this->anticipate('What port number is your database using?', [3306, 5432], $config['DB_PORT']);
             }
@@ -391,11 +392,12 @@ class InstallCommand extends Command
             $envKey = strtoupper($key);
             $envValue = env($envKey) ?: 'null';
 
-            file_put_contents($path, str_replace(
-                "{$envKey}={$envValue}",
-                "{$envKey}={$value}",
-                file_get_contents($path)
-            ));
+            $envFileContents = file_get_contents($path);
+            $envFileContents = str_replace("{$envKey}={$envValue}", "{$envKey}={$value}", $envFileContents, $count);
+            if ($count < 1 && $envValue === 'null') {
+                $envFileContents = str_replace("{$envKey}=", "{$envKey}={$value}", $envFileContents);
+            }
+            file_put_contents($path, $envFileContents);
         } catch (InvalidPathException $e) {
             throw $e;
         }
