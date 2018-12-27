@@ -16,7 +16,7 @@ Psy Shell v0.8.8 (PHP 7.1.6 — cli) by Justin Hileman
 => CachetHQ\Cachet\Models\User {#865
     id: 1,
     username: "test",
-    email: "test@test.com",
+    email: "test@example.com",
     api_key: "9yMHsdioQosnyVK4iCVR",
     active: 1,
     level: 1,

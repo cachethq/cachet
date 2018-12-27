@@ -444,7 +444,7 @@ EINCIDENT;
             [
                 'username' => 'test',
                 'password' => 'test123',
-                'email'    => 'test@test.com',
+                'email'    => 'test@example.com',
                 'level'    => User::LEVEL_ADMIN,
                 'api_key'  => '9yMHsdioQosnyVK4iCVR',
             ],
