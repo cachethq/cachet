@@ -38,7 +38,7 @@
                         </div>
                         <div class="form-group">
                             <label>{{ trans('forms.setup.mail_password') }}</label>
-                            <input type="password" class="form-control" name="config[mail_password]" value="{{ Binput::old('config.mail_password', $config['password']) }}" autocomplete="off" placeholder="{{ trans('forms.setup.mail_password') }}">
+                            <input type="password" class="form-control" name="config[mail_password]" value="{{ Binput::old('config.mail_password') }}" autocomplete="off" placeholder="{{ trans('forms.setup.mail_password') }}">
                         </div>
                     </fieldset>
 
