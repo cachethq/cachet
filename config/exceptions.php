@@ -47,10 +47,11 @@ return [
     */
 
     'displayers' => [
-        'CachetHQ\Cachet\Foundation\Exceptions\Displayers\JsonValidationDisplayer',
+        'CachetHQ\Cachet\Foundation\Exceptions\Displayers\MaintenanceDisplayer',
+        'CachetHQ\Cachet\Foundation\Exceptions\Displayers\SettingsDisplayer',
         'CachetHQ\Cachet\Foundation\Exceptions\Displayers\RedirectDisplayer',
         'CachetHQ\Cachet\Foundation\Exceptions\Displayers\ThrottleDisplayer',
-        'CachetHQ\Cachet\Foundation\Exceptions\Displayers\MaintenanceDisplayer',
+        'CachetHQ\Cachet\Foundation\Exceptions\Displayers\JsonValidationDisplayer',
         'GrahamCampbell\Exceptions\Displayers\DebugDisplayer',
         'GrahamCampbell\Exceptions\Displayers\HtmlDisplayer',
         'GrahamCampbell\Exceptions\Displayers\JsonDisplayer',

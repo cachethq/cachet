@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Cachet\Http\Middleware;
 
+use CachetHQ\Cachet\Settings\ReadException;
 use CachetHQ\Cachet\Settings\Repository;
 use Closure;
 use Illuminate\Http\Request;
@@ -53,8 +54,12 @@ class SetupAlreadyCompleted
      */
     public function handle(Request $request, Closure $next)
     {
-        if ($this->settings->get('app_name')) {
-            return cachet_redirect('dashboard');
+        try {
+            if ($this->settings->get('app_name')) {
+                return cachet_redirect('dashboard');
+            }
+        } catch (ReadException $e) {
+            // not setup then!
         }
 
         return $next($request);

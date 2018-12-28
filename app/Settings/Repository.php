@@ -12,6 +12,7 @@
 namespace CachetHQ\Cachet\Settings;
 
 use CachetHQ\Cachet\Models\Setting;
+use Exception;
 
 /**
  * This is the settings repository class.
@@ -59,13 +60,19 @@ class Repository
     /**
      * Returns a setting from the database.
      *
+     * @throws \CachetHQ\Cachet\Settings\ReadException
+     *
      * @return array
      */
     public function all()
     {
-        return $this->model->all(['name', 'value'])->pluck('value', 'name')->map(function ($value, $name) {
-            return $this->castSetting($name, $value);
-        })->toArray();
+        try {
+            return $this->model->all(['name', 'value'])->pluck('value', 'name')->map(function ($value, $name) {
+                return $this->castSetting($name, $value);
+            })->toArray();
+        } catch (Exception $e) {
+            throw new ReadException($e);
+        }
     }
 
     /**
@@ -74,16 +81,22 @@ class Repository
      * @param string      $name
      * @param string|null $value
      *
+     * @throws \CachetHQ\Cachet\Settings\WriteException
+     *
      * @return void
      */
     public function set($name, $value)
     {
         $this->stale = true;
 
-        if ($value === null) {
-            $this->model->where('name', '=', $name)->delete();
-        } else {
-            $this->model->updateOrCreate(compact('name'), compact('value'));
+        try {
+            if ($value === null) {
+                $this->model->where('name', '=', $name)->delete();
+            } else {
+                $this->model->updateOrCreate(compact('name'), compact('value'));
+            }
+        } catch (Exception $e) {
+            throw new WriteException($e);
         }
     }
 
@@ -93,15 +106,21 @@ class Repository
      * @param string $name
      * @param mixed  $default
      *
+     * @throws \CachetHQ\Cachet\Settings\ReadException
+     *
      * @return mixed
      */
     public function get($name, $default = null)
     {
-        if ($setting = $this->model->where('name', '=', $name)->first()) {
-            return $this->castSetting($name, $setting->value);
-        }
+        try {
+            if ($setting = $this->model->where('name', '=', $name)->first()) {
+                return $this->castSetting($name, $setting->value);
+            }
 
-        return $default;
+            return $default;
+        } catch (Exception $e) {
+            throw new ReadException($e);
+        }
     }
 
     /**
@@ -109,17 +128,25 @@ class Repository
      *
      * @param string $name
      *
+     * @throws \CachetHQ\Cachet\Settings\WriteException
+     *
      * @return void
      */
     public function delete($name)
     {
         $this->stale = true;
 
-        $this->model->where('name', '=', $name)->delete();
+        try {
+            $this->model->where('name', '=', $name)->delete();
+        } catch (Exception $e) {
+            throw new WriteException($e);
+        }
     }
 
     /**
      * Clear all settings.
+     *
+     * @throws \CachetHQ\Cachet\Settings\WriteException
      *
      * @return void
      */
@@ -127,7 +154,11 @@ class Repository
     {
         $this->stale = true;
 
-        $this->model->query()->delete();
+        try {
+            $this->model->query()->delete();
+        } catch (Exception $e) {
+            throw new WriteException($e);
+        }
     }
 
     /**
