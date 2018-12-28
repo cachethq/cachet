@@ -26,7 +26,7 @@
     "jquery-serializeobject": "^1.0.0",
     "jquery-sparkline": "^2.4.0",
     "laravel-mix": "^2.1",
-    "laravel-mix-purgecss": "^2.2.0",
+    "laravel-mix-purgecss": "^3.0.0",
     "livestamp": "git+https://github.com/mattbradley/livestampjs.git#develop",
     "lodash": "^4.17.11",
     "messenger": "git+https://github.com/HubSpot/messenger.git",
