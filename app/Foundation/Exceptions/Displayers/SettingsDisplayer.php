@@ -15,7 +15,6 @@ use CachetHQ\Cachet\Settings\ReadException;
 use Exception;
 use GrahamCampbell\Exceptions\Displayers\DisplayerInterface;
 use Illuminate\Http\Request;
-use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
 
 class SettingsDisplayer implements DisplayerInterface
 {
