@@ -53,7 +53,7 @@
         "laravolt/avatar": "^2.1",
         "mccool/laravel-auto-presenter": "^7.1",
         "nexmo/client": "^1.5",
-        "pragmarx/google2fa": "^0.7.1",
+        "pragmarx/google2fa": "^4.0.0",
         "predis/predis": "^1.1",
         "twig/twig": "^1.35"
     },
