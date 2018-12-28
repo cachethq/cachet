@@ -16,7 +16,6 @@ use CachetHQ\Cachet\Bus\Events\System\SystemWasResetEvent;
 use CachetHQ\Cachet\Bus\Events\System\SystemWasUpdatedEvent;
 use CachetHQ\Cachet\Settings\Cache;
 use Illuminate\Console\Command;
-use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Events\Dispatcher;
 
 /**
@@ -37,7 +36,7 @@ class CommandSubscriber
     /**
      * Create a new command subscriber instance.
      *
-     * @param \CachetHQ\Cachet\Settings\Cache         $cache
+     * @param \CachetHQ\Cachet\Settings\Cache $cache
      *
      * @return void
      */
