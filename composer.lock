@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7d4d0633a8ac2106de6f18f212de073f",
+    "content-hash": "308d1d432d962c06cdd2ae7df5544ca9",
     "packages": [
         {
             "name": "alt-three/badger",
@@ -655,20 +655,20 @@
         },
         {
             "name": "danielstjules/stringy",
-            "version": "2.4.0",
+            "version": "3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/danielstjules/Stringy.git",
-                "reference": "edbda419cbe4bcc3cb200b7c9811cb6597bf058b"
+                "reference": "df24ab62d2d8213bbbe88cc36fc35a4503b4bd7e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/danielstjules/Stringy/zipball/edbda419cbe4bcc3cb200b7c9811cb6597bf058b",
-                "reference": "edbda419cbe4bcc3cb200b7c9811cb6597bf058b",
+                "url": "https://api.github.com/repos/danielstjules/Stringy/zipball/df24ab62d2d8213bbbe88cc36fc35a4503b4bd7e",
+                "reference": "df24ab62d2d8213bbbe88cc36fc35a4503b4bd7e",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0",
+                "php": ">=5.4.0",
                 "symfony/polyfill-mbstring": "~1.1"
             },
             "require-dev": {
@@ -707,7 +707,7 @@
                 "utility",
                 "utils"
             ],
-            "time": "2017-03-02T20:43:29+00:00"
+            "time": "2017-06-12T01:10:27+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -2236,33 +2236,41 @@
         },
         {
             "name": "laravolt/avatar",
-            "version": "1.8.1",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravolt/avatar.git",
-                "reference": "7ab8f07333410ddc6f833bd8460fc9bdcab67fb3"
+                "reference": "68293c983d08caf11a668613a958325b94389fc8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravolt/avatar/zipball/7ab8f07333410ddc6f833bd8460fc9bdcab67fb3",
-                "reference": "7ab8f07333410ddc6f833bd8460fc9bdcab67fb3",
+                "url": "https://api.github.com/repos/laravolt/avatar/zipball/68293c983d08caf11a668613a958325b94389fc8",
+                "reference": "68293c983d08caf11a668613a958325b94389fc8",
                 "shasum": ""
             },
             "require": {
-                "danielstjules/stringy": "~2.2",
+                "danielstjules/stringy": "~3.1",
                 "illuminate/cache": "~5.2",
                 "illuminate/support": "~5.2",
                 "intervention/image": "^2.1",
-                "php": ">=5.5.0"
+                "php": ">=7.0"
             },
             "require-dev": {
-                "mockery/mockery": "0.9.*",
-                "phpunit/phpunit": "4.*"
+                "mockery/mockery": "^0.9.1",
+                "phpunit/phpunit": "~6.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0-dev"
+                    "dev-master": "2.0-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Laravolt\\Avatar\\ServiceProvider"
+                    ],
+                    "aliases": {
+                        "Avatar": "Laravolt\\Avatar\\Facade"
+                    }
                 }
             },
             "autoload": {
@@ -2282,14 +2290,14 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Display avatar as base64",
+            "description": "Turn name, email, and any other string into beautiful, initial-based avatar.",
             "homepage": "https://github.com/laravolt/avatar",
             "keywords": [
                 "avatar",
                 "laravel",
                 "laravolt"
             ],
-            "time": "2017-06-02T16:39:53+00:00"
+            "time": "2018-11-08T23:46:21+00:00"
         },
         {
             "name": "lcobucci/jwt",
