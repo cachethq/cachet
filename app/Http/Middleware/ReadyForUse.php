@@ -53,7 +53,7 @@ class ReadyForUse
      */
     public function handle(Request $request, Closure $next)
     {
-        if (!$this->settings->get('app_name')) {
+        if (!$request->is('setup*') && !$this->settings->get('app_name')) {
             return cachet_redirect('setup');
         }
 
