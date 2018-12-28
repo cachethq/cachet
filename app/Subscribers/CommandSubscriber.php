@@ -35,24 +35,15 @@ class CommandSubscriber
     protected $cache;
 
     /**
-     * The config repository instance.
-     *
-     * @var \Illuminate\Contracts\Config\Repository
-     */
-    protected $config;
-
-    /**
      * Create a new command subscriber instance.
      *
      * @param \CachetHQ\Cachet\Settings\Cache         $cache
-     * @param \Illuminate\Contracts\Config\Repository $config
      *
      * @return void
      */
-    public function __construct(Cache $cache, Repository $config)
+    public function __construct(Cache $cache)
     {
         $this->cache = $cache;
-        $this->config = $config;
     }
 
     /**
