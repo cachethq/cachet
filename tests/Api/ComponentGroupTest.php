@@ -40,8 +40,8 @@ class ComponentGroupTest extends AbstractApiTestCase
             [
                 'id'                        => $groups[0]->id,
                 'name'                      => $groups[0]->name,
-                'created_at'                => (string) $groups[0]->created_at,
-                'updated_at'                => (string) $groups[0]->updated_at,
+                'created_at'                => $groups[0]->created_at->toAtomString(),
+                'updated_at'                => $groups[0]->updated_at->toAtomString(),
                 'order'                     => $groups[0]->order,
                 'collapsed'                 => $groups[0]->collapsed,
                 'visible'                   => $groups[0]->visible,
@@ -54,8 +54,8 @@ class ComponentGroupTest extends AbstractApiTestCase
             [
                 'id'                        => $groups[1]->id,
                 'name'                      => $groups[1]->name,
-                'created_at'                => (string) $groups[1]->created_at,
-                'updated_at'                => (string) $groups[1]->updated_at,
+                'created_at'                => $groups[1]->created_at->toAtomString(),
+                'updated_at'                => $groups[1]->updated_at->toAtomString(),
                 'order'                     => $groups[1]->order,
                 'collapsed'                 => $groups[1]->collapsed,
                 'visible'                   => $groups[1]->visible,
