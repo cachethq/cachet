@@ -9,7 +9,7 @@
                 <p>
                     {!! trans('cachet.powered_by') !!}
                     @if($showTimezone)
-                    {{ trans('cachet.timezone', ['timezone' => $timezone]) }}
+                    <br/>{{ trans('cachet.timezone', ['timezone' => $timezone]) }}
                     @endif
                 </p>
                 @endif
