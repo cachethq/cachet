@@ -15,7 +15,7 @@ return [
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Incidents &amp; Schedule',
+        'title'                    => 'Vorfälle &amp; Termine',
         'incidents'                => 'Ereignisse',
         'logged'                   => '{0} Es gibt keine Ereignisse, gute Arbeit.|Du hast ein Ereignis gemeldet.|Du hast <strong>:count</strong> Ereignisse gemeldet.',
         'incident-create-template' => 'Vorlage erstellen',
@@ -224,7 +224,7 @@ return [
             'contributors'  => 'Unterstützer',
             'license'       => 'Cachet ist ein BSD-3-lizensiertes Open Source-Projekt, veröffentlicht von <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
             'backers-title' => 'Unterstützer & Sponsoren',
-            'backers'       => 'If you\'d like to support future development, check out the CrowdIn and GitHub.',
+            'backers'       => 'Wenn Du die weitere Entwicklung der Software unterstützen möchtest, kannst Du unter Cachet und GitHub einen Beitrag leisten.',
             'thank-you'     => 'Vielen Dank an jeden der :count Unterstützer.',
         ],
     ],
@@ -233,7 +233,7 @@ return [
     'login' => [
         'login'      => 'Einloggen',
         'logged_in'  => 'Sie sind eingeloggt.',
-        'welcome'    => 'Welcome Back!',
+        'welcome'    => 'Willkommen zurück!',
         'two-factor' => 'Bitte geben Sie Ihren Token ein.',
     ],
 
@@ -257,7 +257,7 @@ return [
 
     // Welcome modal
     'welcome' => [
-        'welcome' => 'Welcome to your new Status page!',
+        'welcome' => 'Willkommen zu Deiner neuen Status Seite!',
         'message' => 'Your status page is almost ready! You might want to configure these extra settings',
         'close'   => 'Take me straight to my dashboard',
         'steps'   => [
