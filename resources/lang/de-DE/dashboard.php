@@ -258,15 +258,15 @@ return [
     // Welcome modal
     'welcome' => [
         'welcome' => 'Willkommen zu Deiner neuen Status Seite!',
-        'message' => 'Your status page is almost ready! You might want to configure these extra settings',
-        'close'   => 'Take me straight to my dashboard',
+        'message' => 'Ihre Statusseite ist fast fertig! Vielleicht möchten Sie diese zusätlichen Einstellungen vornehmen',
+        'close'   => 'Bring mich direkt zu meinem Dashboard',
         'steps'   => [
-            'component'  => 'Create components',
-            'incident'   => 'Create incidents',
-            'customize'  => 'Customize',
-            'team'       => 'Add users',
-            'api'        => 'Generate API token',
-            'two-factor' => 'Two Factor Authentication',
+            'component'  => 'Komponenten erstellen',
+            'incident'   => 'Vorfälle erstellen',
+            'customize'  => 'Anpassen',
+            'team'       => 'Benutzer hinzufügen',
+            'api'        => 'API Token generieren',
+            'two-factor' => 'Zwei-Faktor-Authentifizierung',
         ],
     ],
 
