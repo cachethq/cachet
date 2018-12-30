@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1bd7ae2a0b16cd5d1f058e5499a8ed15",
+    "content-hash": "83d660ecdf213efabcd633c7a4dbcb7a",
     "packages": [
         {
             "name": "alt-three/badger",
@@ -1303,20 +1303,20 @@
         },
         {
             "name": "graham-campbell/binput",
-            "version": "v5.1.0",
+            "version": "v6.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Binput.git",
-                "reference": "073b59e18f3cd7a874a4b8bcd11ed03ca074e1a0"
+                "reference": "0fa8c850860adf5016d251b504024bc03a5cb742"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Binput/zipball/073b59e18f3cd7a874a4b8bcd11ed03ca074e1a0",
-                "reference": "073b59e18f3cd7a874a4b8bcd11ed03ca074e1a0",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Binput/zipball/0fa8c850860adf5016d251b504024bc03a5cb742",
+                "reference": "0fa8c850860adf5016d251b504024bc03a5cb742",
                 "shasum": ""
             },
             "require": {
-                "graham-campbell/security": "^5.1",
+                "graham-campbell/security": "^6.0",
                 "illuminate/contracts": "5.5.*|5.6.*|5.7.*",
                 "illuminate/http": "5.5.*|5.6.*|5.7.*",
                 "illuminate/support": "5.5.*|5.6.*|5.7.*",
@@ -1331,7 +1331,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "5.1-dev"
+                    "dev-master": "6.0-dev"
                 },
                 "laravel": {
                     "providers": [
@@ -1368,7 +1368,7 @@
                 "laravel",
                 "security"
             ],
-            "time": "2018-08-23T12:17:04+00:00"
+            "time": "2018-12-30T02:14:58+00:00"
         },
         {
             "name": "graham-campbell/exceptions",
@@ -1569,19 +1569,20 @@
         },
         {
             "name": "graham-campbell/security",
-            "version": "v5.1.0",
+            "version": "v6.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Security.git",
-                "reference": "4ac7f01fcd11ac542a355f3abe738fa0bbe4656a"
+                "reference": "fa9378a3897feba6da9b75c626ad00aa96c76263"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Security/zipball/4ac7f01fcd11ac542a355f3abe738fa0bbe4656a",
-                "reference": "4ac7f01fcd11ac542a355f3abe738fa0bbe4656a",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Security/zipball/fa9378a3897feba6da9b75c626ad00aa96c76263",
+                "reference": "fa9378a3897feba6da9b75c626ad00aa96c76263",
                 "shasum": ""
             },
             "require": {
+                "graham-campbell/security-core": "^1.0",
                 "illuminate/contracts": "5.5.*|5.6.*|5.7.*",
                 "illuminate/support": "5.5.*|5.6.*|5.7.*",
                 "php": "^7.1.3"
@@ -1594,7 +1595,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "5.1-dev"
+                    "dev-master": "6.0-dev"
                 },
                 "laravel": {
                     "providers": [
@@ -1628,7 +1629,62 @@
                 "laravel",
                 "security"
             ],
-            "time": "2018-08-23T12:16:30+00:00"
+            "time": "2018-12-30T02:00:46+00:00"
+        },
+        {
+            "name": "graham-campbell/security-core",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/GrahamCampbell/Security-Core.git",
+                "reference": "6873cee667e415d0b429adc807b8e1ee450e0f5f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/GrahamCampbell/Security-Core/zipball/6873cee667e415d0b429adc807b8e1ee450e0f5f",
+                "reference": "6873cee667e415d0b429adc807b8e1ee450e0f5f",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "graham-campbell/analyzer": "^2.1",
+                "phpunit/phpunit": "^6.5|^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GrahamCampbell\\SecurityCore\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Graham Campbell",
+                    "email": "graham@alt-three.com"
+                }
+            ],
+            "description": "Security Core Is A Port Of The Security Class From Codeigniter 3 For General Use",
+            "keywords": [
+                "Graham Campbell",
+                "GrahamCampbell",
+                "Security Core",
+                "Security-Core",
+                "codeigniter",
+                "framework",
+                "laravel",
+                "security"
+            ],
+            "time": "2018-12-30T01:50:43+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -2484,16 +2540,16 @@
         },
         {
             "name": "league/commonmark",
-            "version": "0.18.0",
+            "version": "0.18.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/commonmark.git",
-                "reference": "006af077d4b1b7eb1d9760964f9f984ba188632c"
+                "reference": "e5029f74ba39e043ce4b3ca6c05dc719d8aafd94"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/006af077d4b1b7eb1d9760964f9f984ba188632c",
-                "reference": "006af077d4b1b7eb1d9760964f9f984ba188632c",
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/e5029f74ba39e043ce4b3ca6c05dc719d8aafd94",
+                "reference": "e5029f74ba39e043ce4b3ca6c05dc719d8aafd94",
                 "shasum": ""
             },
             "require": {
@@ -2542,14 +2598,14 @@
                     "role": "Lead Developer"
                 }
             ],
-            "description": "Markdown parser for PHP based on the CommonMark spec",
+            "description": "PHP Markdown parser based on the CommonMark spec",
             "homepage": "https://github.com/thephpleague/commonmark",
             "keywords": [
                 "commonmark",
                 "markdown",
                 "parser"
             ],
-            "time": "2018-09-18T13:13:55+00:00"
+            "time": "2018-12-30T01:55:29+00:00"
         },
         {
             "name": "league/flysystem",
