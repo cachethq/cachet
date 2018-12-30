@@ -43,7 +43,7 @@
         "barryvdh/laravel-cors": "^0.11.0",
         "doctrine/dbal": "2.9.*",
         "fideloper/proxy": "^4.0",
-        "graham-campbell/binput": "^5.1",
+        "graham-campbell/binput": "^6.0",
         "graham-campbell/exceptions": "^11.1",
         "graham-campbell/markdown": "^10.2",
         "guzzlehttp/guzzle": "^6.3.3",
