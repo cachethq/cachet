@@ -14,7 +14,7 @@ return [
     // Setup form fields
     'setup' => [
         'email'            => 'EPos',
-        'username'         => 'Username',
+        'username'         => 'Gebruikersnaam',
         'password'         => 'Wagwoord',
         'site_name'        => 'Site Name',
         'site_domain'      => 'Site Domain',
