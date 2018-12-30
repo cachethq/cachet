@@ -32,7 +32,7 @@ return [
         'none'         => 'Es liegen keine Ereignisse vor',
         'past'         => 'Vergangene Ereignisse',
         'stickied'     => 'Angepinnte Vorfälle',
-        'scheduled'    => 'Maintenance',
+        'scheduled'    => 'Wartungsarbeiten',
         'scheduled_at' => ', geplant :timestamp',
         'posted'       => 'Veröffentlicht :timestamp',
         'posted_at'    => 'Veröffentlicht am :timestamp',
@@ -55,7 +55,7 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1]System operational|[2,*]All systems are operational',
+        'good'  => '[0,1]System funktioniert|[2,*]Alle Systeme funktionieren',
         'bad'   => '[0,1]The system is experiencing issues|[2,*]Some systems are experiencing issues',
         'major' => '[0,1]The system is experiencing major issues|[2,*]Some systems are experiencing major issues',
     ],
@@ -127,7 +127,7 @@ return [
     // Meta descriptions
     'meta' => [
         'description' => [
-            'incident'  => 'Details and updates about the :name incident that occurred on :date',
+            'incident'  => 'Details und Aktualisierung über den :name Vorfall, die am :date aufgetreten sind',
             'schedule'  => 'Details about the scheduled maintenance period :name starting :startDate',
             'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
             'overview'  => 'Bleiben sie auf dem Laufenden mit den neuesten Service-Updates von :app.',
