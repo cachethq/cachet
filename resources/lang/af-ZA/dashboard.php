@@ -161,13 +161,13 @@ return [
 
     // Team
     'team' => [
-        'team'        => 'Team',
-        'member'      => 'Member',
-        'profile'     => 'Profile',
+        'team'        => 'Span',
+        'member'      => 'Lid',
+        'profile'     => 'Profiel',
         'description' => 'Team Members will be able to add, modify &amp; edit components and incidents.',
         'add'         => [
             'title'   => 'Add a new team member',
-            'success' => 'Team member added.',
+            'success' => 'Spanlid bygevoeg.',
             'failure' => 'The team member could not be added, please try again.',
         ],
         'edit' => [
@@ -188,7 +188,7 @@ return [
 
     // Settings
     'settings' => [
-        'settings'  => 'Settings',
+        'settings'  => 'Instellings',
         'app-setup' => [
             'app-setup'   => 'Application Setup',
             'images-only' => 'Only images may be uploaded.',
@@ -213,7 +213,7 @@ return [
             'stylesheet' => 'Stylesheet',
         ],
         'theme' => [
-            'theme' => 'Theme',
+            'theme' => 'Tema',
         ],
         'edit' => [
             'success' => 'Settings saved.',
@@ -231,7 +231,7 @@ return [
 
     // Login
     'login' => [
-        'login'      => 'Login',
+        'login'      => 'Teken In',
         'logged_in'  => 'You\'re logged in.',
         'welcome'    => 'Welcome Back!',
         'two-factor' => 'Please enter your token.',
@@ -240,7 +240,7 @@ return [
     // Sidebar footer
     'help'        => 'Help',
     'status_page' => 'Status Page',
-    'logout'      => 'Logout',
+    'logout'      => 'Teken Uit',
 
     // Notifications
     'notifications' => [
@@ -264,7 +264,7 @@ return [
             'component'  => 'Create components',
             'incident'   => 'Create incidents',
             'customize'  => 'Customize',
-            'team'       => 'Add users',
+            'team'       => 'Voeg gebruikers by',
             'api'        => 'Generate API token',
             'two-factor' => 'Two Factor Authentication',
         ],
