@@ -31,7 +31,7 @@ return [
     'array'      => ':attribute moet een reeks zijn.',
     'before'     => ':attribute moet een datum vóór :date zijn.',
     'between'    => [
-        'numeric' => 'The :attribute must be between :min and :max.',
+        'numeric' => ':attribute moet tussen :min en de :max zijn.',
         'file'    => 'The :attribute must be between :min and :max kilobytes.',
         'string'  => 'The :attribute must be between :min and :max characters.',
         'array'   => ':attribute moet tussen :min en :max items hebben.',
