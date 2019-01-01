@@ -6,11 +6,10 @@ To start using Cachet, you'll need some prerequisites.
 
 You'll need at least the following installed on your server:
 
-- PHP 5.5.9, you'll also need `ext-gd`, `ext-simplexml`, `mcrypt`,
-  `ext-xml`, `ext-mbstring` and `ext-tokenizer` installed.
+- PHP 7.1.3, you'll also need `ext-gd`, `ext-simplexml`, `ext-xml`, `ext-mbstring` and `ext-tokenizer` installed.
 - [Composer][1]
 - APCu or Redis for caching.
-- A database driver for your DB, such as MySQL, PostgreSQL or SQLite.
+- A database driver for your DB such as; MySQL, PostgreSQL or SQLite.
 - Git
 
 > **SQLite**
@@ -30,11 +29,7 @@ appreciated! You may need some extra dependencies; depending on what you're look
 Our CSS is compiled from SCSS, so to compile this you will need the following:
 
 - Node.js
-- NPM
-- Bower
-- Gulp
-
-
+- NPM or Yarn
 
 [1]: https://getcomposer.org/
 [2]: https://dev.mysql.com/doc/refman/5.7/en/time-zone-support.html
