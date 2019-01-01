@@ -28,12 +28,12 @@ return [
     'incidents' => [
         'none'          => 'Geen incidenten gemeld',
         'past'          => 'Oude incidenten',
-        'previous_week' => 'Previous Week',
-        'next_week'     => 'Next Week',
+        'previous_week' => 'Vorige week',
+        'next_week'     => 'Volgende week',
         'scheduled'     => 'Gepland onderhoud',
         'scheduled_at'  => ', gepland :timestamp',
         'status'        => [
-            0 => 'Scheduled', // TODO: Hopefully remove this.
+            0 => 'Gepland', // TODO: Hopefully remove this.
             1 => 'In onderzoek',
             2 => 'Geïdentificeerd',
             3 => 'Aan het opvolgen',
