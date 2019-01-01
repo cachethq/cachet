@@ -20,8 +20,8 @@ use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentTemplate;
 use CachetHQ\Cachet\Services\Dates\DateFactory;
 use Illuminate\Contracts\Auth\Guard;
-use Twig_Environment;
-use Twig_Loader_Array;
+use Twig\Environment as Twig_Environment;
+use Twig\Loader\ArrayLoader as Twig_Loader_Array;
 
 /**
  * This is the update incident command handler.

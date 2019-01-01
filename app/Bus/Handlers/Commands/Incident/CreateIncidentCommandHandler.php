@@ -22,8 +22,8 @@ use CachetHQ\Cachet\Models\Meta;
 use CachetHQ\Cachet\Services\Dates\DateFactory;
 use Carbon\Carbon;
 use Illuminate\Contracts\Auth\Guard;
-use Twig_Environment;
-use Twig_Loader_Array;
+use Twig\Environment as Twig_Environment;
+use Twig\Loader\ArrayLoader as Twig_Loader_Array;
 
 /**
  * This is the create incident command handler.
