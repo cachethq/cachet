@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "83d660ecdf213efabcd633c7a4dbcb7a",
+    "content-hash": "12d855b337f541613b905d498637b782",
     "packages": [
         {
             "name": "alt-three/badger",
@@ -4818,21 +4818,22 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.36.0",
+            "version": "v2.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "730c9c4471b5152d23061feb02b03382264c8a15"
+                "reference": "a11dd39f5b6589e14f0ff3b36675d06047c589b1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/730c9c4471b5152d23061feb02b03382264c8a15",
-                "reference": "730c9c4471b5152d23061feb02b03382264c8a15",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/a11dd39f5b6589e14f0ff3b36675d06047c589b1",
+                "reference": "a11dd39f5b6589e14f0ff3b36675d06047c589b1",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3",
-                "symfony/polyfill-ctype": "^1.8"
+                "php": "^7.0",
+                "symfony/polyfill-ctype": "^1.8",
+                "symfony/polyfill-mbstring": "^1.3"
             },
             "require-dev": {
                 "psr/container": "^1.0",
@@ -4842,7 +4843,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.36-dev"
+                    "dev-master": "2.6-dev"
                 }
             },
             "autoload": {
@@ -4880,7 +4881,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2018-12-16T10:34:11+00:00"
+            "time": "2018-12-16T10:36:48+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
