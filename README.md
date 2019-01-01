@@ -72,4 +72,4 @@ A professional **installation service** is offered by Alt Three Services Limited
 
 Thank you to the following for [sponsoring](https://patreon.com/jbrooksuk) Cachet.
 
-![Exascale](/docs/images/sponsorships/exascale.jpg)
+[![Exascale](/docs/images/sponsorships/exascale.jpg)](https://www.exascale.co.uk/)
