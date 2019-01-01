@@ -10,10 +10,6 @@
 
 Cachet is a beautiful and powerful open source status page system.
 
-## Community
-
-You can now [join our Slack community!](http://cachethq-slack.herokuapp.com)
-
 ## Overview
 
 - List your service components
@@ -25,6 +21,10 @@ You can now [join our Slack community!](http://cachethq-slack.herokuapp.com)
 - Multi-lingual
 - Subscriber notifications via email
 - Two factor authentication
+
+## Community
+
+You can now [join our Slack community!](http://cachethq-slack.herokuapp.com)
 
 ## Requirements
 
