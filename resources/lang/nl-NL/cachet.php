@@ -44,7 +44,7 @@ return [
     // Service Status
     'service' => [
         'good'  => '[0,1] Systeem operationeel|[2,Inf] Alle systemen zijn operationeel',
-        'bad'   => '[0,1] The system is currently experiencing issues|[2,Inf] Some systems are experiencing issues',
+        'bad'   => '[0,1] Het systeem ondervindt momenteel problemen |[2,Inf] Sommige systemen ondervinden momenteel problemen',
         'major' => '[0,1] The service experiencing a major outage|[2,Inf] Some systems are experiencing a major outage',
     ],
 
