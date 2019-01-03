@@ -45,7 +45,7 @@ return [
     'service' => [
         'good'  => '[0,1] Systeem operationeel|[2,Inf] Alle systemen zijn operationeel',
         'bad'   => '[0,1] Het systeem ondervindt momenteel problemen |[2,Inf] Sommige systemen ondervinden momenteel problemen',
-        'major' => '[0,1] The service experiencing a major outage|[2,Inf] Some systems are experiencing a major outage',
+        'major' => '[0,1] Het systeem ondervindt momenteel een grote storing|[2,Inf] Sommige systemen ondervinden momenteel een grote storing',
     ],
 
     'api' => [
@@ -65,7 +65,7 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe' => 'Subscribe to get the most recent updates',
+        'subscribe' => 'Abonneer voor de meest recente updates',
         'button'    => 'Abonneren',
         'manage'    => [
             'no_subscriptions' => 'Je bent momenteel geabonneerd op alle updates.',
