@@ -18,13 +18,13 @@ use CachetHQ\Cachet\Http\Middleware\Authenticate;
 use CachetHQ\Cachet\Http\Middleware\Localize;
 use CachetHQ\Cachet\Http\Middleware\ReadyForUse;
 use CachetHQ\Cachet\Http\Middleware\RedirectIfAuthenticated;
+use CachetHQ\Cachet\Http\Middleware\RemoteUserAuthenticate;
 use CachetHQ\Cachet\Http\Middleware\SetupAlreadyCompleted;
 use CachetHQ\Cachet\Http\Middleware\SubscribersConfigured;
 use CachetHQ\Cachet\Http\Middleware\TrustProxies;
 use Illuminate\Auth\Middleware\Authorize;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 use Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode;
-use CachetHQ\Cachet\Http\Middleware\RemoteUserAuthenticate;
 
 class Kernel extends HttpKernel
 {

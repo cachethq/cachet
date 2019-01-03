@@ -14,6 +14,7 @@ namespace CachetHQ\Cachet\Foundation\Providers;
 use Barryvdh\Cors\HandleCors;
 use CachetHQ\Cachet\Http\Middleware\Acceptable;
 use CachetHQ\Cachet\Http\Middleware\Authenticate;
+use CachetHQ\Cachet\Http\Middleware\RemoteUserAuthenticate;
 use CachetHQ\Cachet\Http\Middleware\Timezone;
 use CachetHQ\Cachet\Http\Routes\ApiSystemRoutes;
 use CachetHQ\Cachet\Http\Routes\AuthRoutes;
@@ -28,7 +29,6 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Routing\Router;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
-use CachetHQ\Cachet\Http\Middleware\RemoteUserAuthenticate;
 
 /**
  * This is the route service provider.
@@ -150,7 +150,7 @@ class RouteServiceProvider extends ServiceProvider
             VerifyCsrfToken::class,
             SubstituteBindings::class,
         ];
-        
+
         if ($applyAlwaysAuthenticate && !$this->isWhiteListedAuthRoute($routes)) {
             $middleware[] = Authenticate::class;
             $middleware[] = RemoteUserAuthenticate::class;
