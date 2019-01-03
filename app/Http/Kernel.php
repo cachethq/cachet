@@ -24,6 +24,7 @@ use CachetHQ\Cachet\Http\Middleware\TrustProxies;
 use Illuminate\Auth\Middleware\Authorize;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 use Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode;
+use CachetHQ\Cachet\Http\Middleware\RemoteUserAuthenticate;
 
 class Kernel extends HttpKernel
 {
@@ -43,15 +44,16 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'admin'       => Admin::class,
-        'can'         => Authorize::class,
-        'auth'        => Authenticate::class,
-        'auth.api'    => ApiAuthentication::class,
-        'guest'       => RedirectIfAuthenticated::class,
-        'localize'    => Localize::class,
-        'ready'       => ReadyForUse::class,
-        'setup'       => SetupAlreadyCompleted::class,
-        'subscribers' => SubscribersConfigured::class,
-        'throttle'    => ThrottlingMiddleware::class,
+        'admin'           => Admin::class,
+        'can'             => Authorize::class,
+        'auth'            => Authenticate::class,
+        'auth.api'        => ApiAuthentication::class,
+        'auth.remoteuser' => RemoteUserAuthenticate::class,
+        'guest'           => RedirectIfAuthenticated::class,
+        'localize'        => Localize::class,
+        'ready'           => ReadyForUse::class,
+        'setup'           => SetupAlreadyCompleted::class,
+        'subscribers'     => SubscribersConfigured::class,
+        'throttle'        => ThrottlingMiddleware::class,
     ];
 }

@@ -28,6 +28,7 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Routing\Router;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use CachetHQ\Cachet\Http\Middleware\RemoteUserAuthenticate;
 
 /**
  * This is the route service provider.
@@ -149,9 +150,10 @@ class RouteServiceProvider extends ServiceProvider
             VerifyCsrfToken::class,
             SubstituteBindings::class,
         ];
-
+        
         if ($applyAlwaysAuthenticate && !$this->isWhiteListedAuthRoute($routes)) {
             $middleware[] = Authenticate::class;
+            $middleware[] = RemoteUserAuthenticate::class;
         }
 
         $router->group(['middleware' => $middleware], function (Router $router) use ($routes) {
