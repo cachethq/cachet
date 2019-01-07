@@ -63,6 +63,8 @@ class DashboardComposer
 
     /**
      * Create a new dashboard composer instance.
+     *
+     * @return void
      */
     public function __construct()
     {
