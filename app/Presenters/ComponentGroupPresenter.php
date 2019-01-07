@@ -21,7 +21,7 @@ class ComponentGroupPresenter extends BasePresenter implements Arrayable
     use TimestampsTrait;
 
     /**
-     * Flag for the enabled_components_lowest function.
+     * Flags for the enabled_components_lowest function.
      *
      * @var bool
      */
