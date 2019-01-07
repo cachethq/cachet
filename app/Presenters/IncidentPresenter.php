@@ -29,6 +29,11 @@ class IncidentPresenter extends BasePresenter implements Arrayable
      */
     protected $dates;
 
+    /**
+     * Flag for the latest function.
+     *
+     * @var bool
+     */
     protected $latest = false;
 
     /**

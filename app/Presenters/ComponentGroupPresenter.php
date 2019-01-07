@@ -20,6 +20,11 @@ class ComponentGroupPresenter extends BasePresenter implements Arrayable
 {
     use TimestampsTrait;
 
+    /**
+     * Flags for the enabled_components_lowest function.
+     *
+     * @var bool
+     */
     protected $enabledComponentsLowest = false;
 
     /**

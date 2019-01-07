@@ -26,18 +26,43 @@ use Illuminate\Contracts\View\View;
  */
 class DashboardComposer
 {
-    private $componentCount;
-
-    private $incidentCount;
-
-    private $incidentTemplateCount;
-
-    private $scheduleCount;
-
-    private $subscriberCount;
+    /**
+     * The component count.
+     *
+     * @var int
+     */
+    protected $componentCount;
 
     /**
-     * DashboardComposer constructor.
+     * The incident count.
+     *
+     * @var int
+     */
+    protected $incidentCount;
+
+    /**
+     * The incident template count.
+     *
+     * @var int
+     */
+    protected $incidentTemplateCount;
+
+    /**
+     * The schedule count.
+     *
+     * @var int
+     */
+    protected $scheduleCount;
+
+    /**
+     * The subscriber count.
+     *
+     * @var int
+     */
+    protected $subscriberCount;
+
+    /**
+     * Create a new dashboard composer instance.
      */
     public function __construct()
     {
