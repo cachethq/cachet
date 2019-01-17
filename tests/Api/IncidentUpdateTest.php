@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Tests\Cachet\Api;
 
+use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentUpdate;
 
@@ -100,5 +101,26 @@ class IncidentUpdateTest extends AbstractApiTestCase
         $response = $this->json('DELETE', "/api/v1/incidents/{$incident->id}/updates/{$update->id}");
 
         $response->assertStatus(204);
+    }
+
+    public function test_incident_update_with_component_update()
+    {
+        $this->beUser();
+        $incident = factory(Incident::class)->create();
+        $component = factory(Component::class)->create(["status" => 1]);
+
+        $response = $this->json('POST', "/api/v1/incidents/{$incident->id}/updates", [
+            'status'  => 1,
+            'message' => 'New incident!',
+            "component_id" => $component->id,
+            "component_status" => 2,
+        ]);
+
+        $response->assertStatus(200);
+
+        $response = $this->json("GET", "/api/v1/components/{$component->id}");
+
+        $response->assertStatus(200);
+        $response->assertJsonFragment(['status' => 2]);
     }
 }
