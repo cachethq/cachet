@@ -80,18 +80,18 @@ class IncidentController extends AbstractApiController
         }
 
         execute(new CreateIncidentCommand(
-            data_get($alert, "annotations.summary", "Störung"),
-            1 /*incident status */,
-            data_get($alert, "annotations.description", "Unsere Technik wurde informiert und untersucht das Problem bereits.") /* message */,
-            true /*visible*/,
+            data_get($alert, "annotations.summary", trans("prometheus.default-alert-name")),
+            config("prometheus.new_incident_status", 1) /*incident status */,
+            data_get($alert, "annotations.description", trans("prometheus.default-alert-message")) /* message */,
+            config("prometheus.new_incident_visible", true) /*visible*/,
             $componentId,
-            2 /* component status */,
-            true /* notify */,
-            false /*stickied*/,
+            config("prometheus.new_incident_component_status", 2) /* component status */,
+            config("prometheus.new_incident_notify", true) /* notify */,
+            config("prometheus.new_incident_stickied", false) /*stickied*/,
             $this->formatPrometheusDate(data_get($alert, "startsAt")) /* occurred_at */,
-            null /*template slug*/,
+            config("prometheus.new_incident_template", null) /*template slug*/,
             [] /*template vars */,
-            data_get($alert, "labels") /*meta*/
+            data_get($alert, config("prometheus.meta_key", "labels")) /*meta*/
         ));
     }
 
@@ -115,7 +115,7 @@ class IncidentController extends AbstractApiController
         $startsAt = $this->formatPrometheusDate(data_get($alert, "startsAt"));
 
         $incident = $component->incidents()
-            ->where("status", 1)
+            ->where("status", config("prometheus.new_incident_status", 1))
             ->where("occurred_at", $startsAt)->first();
         if (!$incident) {
             return;
@@ -123,10 +123,10 @@ class IncidentController extends AbstractApiController
 
         execute(new CreateIncidentUpdateCommand(
             $incident,
-            4 /* status */,
-            "Die Störung wurde behoben.",
+            config("prometheus.resolved_incident_status", 1) /* status */,
+            trans("prometheus.default-resolved-alert-message"),
             $componentId,
-            1 /* component status */,
+            config("prometheus.resolved_incident_component_status", 1) /* component status */,
             request()->user()
         ));
 
