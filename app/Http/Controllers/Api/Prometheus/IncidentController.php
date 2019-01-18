@@ -36,6 +36,9 @@ class IncidentController extends AbstractApiController
         Log::debug(__METHOD__." called ", Binput::all());
 
         $alerts = collect(Binput::get("alerts"));
+        if (!$alerts->count()) {
+            throw new BadRequestHttpException();
+        }
         $alerts->each(function ($alert) {
             switch ($alert["status"]) {
                 case "firing":
