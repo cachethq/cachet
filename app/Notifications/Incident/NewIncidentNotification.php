@@ -134,7 +134,6 @@ class NewIncidentNotification extends Notification
                                         'ID'   => "#{$this->incident->id}",
                                         'Link' => $this->incident->permalink,
                                     ]))
-                                   ->footer(trans('cachet.subscriber.unsubscribe', ['link' => cachet_route('subscribe.unsubscribe', $notifiable->verify_code)]));
                     });
     }
 }
