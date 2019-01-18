@@ -224,7 +224,7 @@ class PrometheusIncidentTest extends AbstractApiTestCase
                                 'code'                     => '200',
                                 'instance'                 => 'localhost:9090',
                                 'job'                      => 'prometheus',
-                                'status_page_component_id' => (string) $component->id, //commented intentionally
+                                'status_page_component_id' => (string) $component->id,
                             ],
                         'annotations' => [
                                 'description' => 'A Test-Message.',
@@ -241,7 +241,7 @@ class PrometheusIncidentTest extends AbstractApiTestCase
                     'code'                     => '200',
                     'instance'                 => 'localhost:9090',
                     'job'                      => 'prometheus',
-                    'status_page_component_id' => (string) $component->id, //commented intentionally
+                    'status_page_component_id' => (string) $component->id,
                 ],
             'commonAnnotations' => [
                     'description' => 'A Test-Message.',
