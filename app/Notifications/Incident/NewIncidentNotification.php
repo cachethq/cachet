@@ -133,7 +133,7 @@ class NewIncidentNotification extends Notification
                                    ->fields(array_filter([
                                         'ID'   => "#{$this->incident->id}",
                                         'Link' => $this->incident->permalink,
-                                    ]))
+                                    ]));
                     });
     }
 }
