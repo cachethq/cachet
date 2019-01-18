@@ -80,10 +80,8 @@ class ApiAuthentication
             return $apiToken;
         }
 
-        if (($apiToken = $request->header('Authorization')) && starts_with($apiToken, "Bearer ")) {
+        if (($apiToken = $request->header('Authorization')) && starts_with($apiToken, 'Bearer ')) {
             return mb_substr($apiToken, 7);
         }
-
-        return null;
     }
 }

@@ -107,18 +107,18 @@ class IncidentUpdateTest extends AbstractApiTestCase
     {
         $this->beUser();
         $incident = factory(Incident::class)->create();
-        $component = factory(Component::class)->create(["status" => 1]);
+        $component = factory(Component::class)->create(['status' => 1]);
 
         $response = $this->json('POST', "/api/v1/incidents/{$incident->id}/updates", [
-            'status'  => 1,
-            'message' => 'New incident!',
-            "component_id" => $component->id,
-            "component_status" => 2,
+            'status'           => 1,
+            'message'          => 'New incident!',
+            'component_id'     => $component->id,
+            'component_status' => 2,
         ]);
 
         $response->assertStatus(200);
 
-        $response = $this->json("GET", "/api/v1/components/{$component->id}");
+        $response = $this->json('GET', "/api/v1/components/{$component->id}");
 
         $response->assertStatus(200);
         $response->assertJsonFragment(['status' => 2]);

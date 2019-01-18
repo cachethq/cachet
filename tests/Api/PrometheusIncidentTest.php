@@ -12,11 +12,9 @@
 namespace CachetHQ\Tests\Cachet\Api;
 
 use CachetHQ\Cachet\Bus\Events\Incident\IncidentWasCreatedEvent;
-use CachetHQ\Cachet\Bus\Events\Incident\IncidentWasRemovedEvent;
 use CachetHQ\Cachet\Bus\Events\Incident\IncidentWasUpdatedEvent;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
-use CachetHQ\Cachet\Models\IncidentTemplate;
 
 /**
  * This is the promtheus incident test class.
@@ -53,47 +51,41 @@ class PrometheusIncidentTest extends AbstractApiTestCase
 
         $alertWithoutComponentId = [
             'receiver' => 'statuspage-receiver',
-            'status' => 'firing',
-            'alerts' =>
-                [
+            'status'   => 'firing',
+            'alerts'   => [
                     [
                         'status' => 'firing',
-                        'labels' =>
-                            [
+                        'labels' => [
                                 'alertname' => 'test-rule-metrics',
-                                'code' => '200',
-                                'instance' => 'localhost:9090',
-                                'job' => 'prometheus',
+                                'code'      => '200',
+                                'instance'  => 'localhost:9090',
+                                'job'       => 'prometheus',
                                 //'status_page_component_id' => '1', //commented intentionally
                             ],
-                        'annotations' =>
-                            [
+                        'annotations' => [
                                 'description' => 'A Test-Message.',
-                                'summary' => 'A Test-Summary.',
+                                'summary'     => 'A Test-Summary.',
                             ],
-                        'startsAt' => '2019-01-18T10:02:49.770506166Z',
-                        'endsAt' => '0001-01-01T00:00:00Z',
+                        'startsAt'     => '2019-01-18T10:02:49.770506166Z',
+                        'endsAt'       => '0001-01-01T00:00:00Z',
                         'generatorURL' => 'http://homestead:9090/graph?g0.expr=promhttp_metric_handler_requests_total+>+0&g0.tab=1',
                     ],
                 ],
-            'groupLabels' =>
-                [],
-            'commonLabels' =>
-                [
+            'groupLabels'  => [],
+            'commonLabels' => [
                     'alertname' => 'test-rule-metrics',
-                    'code' => '200',
-                    'instance' => 'localhost:9090',
-                    'job' => 'prometheus',
+                    'code'      => '200',
+                    'instance'  => 'localhost:9090',
+                    'job'       => 'prometheus',
                     //'status_page_component_id' => '1', //commented intentionally
                 ],
-            'commonAnnotations' =>
-                [
+            'commonAnnotations' => [
                     'description' => 'A Test-Message.',
-                    'summary' => 'A Test-Summary.',
+                    'summary'     => 'A Test-Summary.',
                 ],
             'externalURL' => 'http://homestead:9093',
-            'version' => '4',
-            'groupKey' => '{}:{}',
+            'version'     => '4',
+            'groupKey'    => '{}:{}',
         ];
 
         $response = $this->json('POST', '/api/v1/incidents/alertmanager', $alertWithoutComponentId);
@@ -109,67 +101,61 @@ class PrometheusIncidentTest extends AbstractApiTestCase
         $this->expectsEvents(IncidentWasCreatedEvent::class);
 
         $component = factory(Component::class)->create([
-            "status" => 1
+            'status' => 1,
         ]);
 
         $alert = [
             'receiver' => 'statuspage-receiver',
-            'status' => 'firing',
-            'alerts' =>
-                [
+            'status'   => 'firing',
+            'alerts'   => [
                     [
                         'status' => 'firing',
-                        'labels' =>
-                            [
-                                'alertname' => 'test-rule-metrics',
-                                'code' => '200',
-                                'instance' => 'localhost:9090',
-                                'job' => 'prometheus',
+                        'labels' => [
+                                'alertname'                => 'test-rule-metrics',
+                                'code'                     => '200',
+                                'instance'                 => 'localhost:9090',
+                                'job'                      => 'prometheus',
                                 'status_page_component_id' => (string) $component->id, //commented intentionally
                             ],
-                        'annotations' =>
-                            [
+                        'annotations' => [
                                 'description' => 'A Test-Message.',
-                                'summary' => 'A Test-Summary.',
+                                'summary'     => 'A Test-Summary.',
                             ],
-                        'startsAt' => '2019-01-18T10:02:49.770506166Z',
-                        'endsAt' => '0001-01-01T00:00:00Z',
+                        'startsAt'     => '2019-01-18T10:02:49.770506166Z',
+                        'endsAt'       => '0001-01-01T00:00:00Z',
                         'generatorURL' => 'http://homestead:9090/graph?g0.expr=promhttp_metric_handler_requests_total+>+0&g0.tab=1',
                     ],
                 ],
-            'groupLabels' =>
-                [],
-            'commonLabels' =>
-                [
-                    'alertname' => 'test-rule-metrics',
-                    'code' => '200',
-                    'instance' => 'localhost:9090',
-                    'job' => 'prometheus',
+            'groupLabels'  => [],
+            'commonLabels' => [
+                    'alertname'                => 'test-rule-metrics',
+                    'code'                     => '200',
+                    'instance'                 => 'localhost:9090',
+                    'job'                      => 'prometheus',
                     'status_page_component_id' => (string) $component->id, //commented intentionally
                 ],
-            'commonAnnotations' =>
-                [
+            'commonAnnotations' => [
                     'description' => 'A Test-Message.',
-                    'summary' => 'A Test-Summary.',
+                    'summary'     => 'A Test-Summary.',
                 ],
             'externalURL' => 'http://homestead:9093',
-            'version' => '4',
-            'groupKey' => '{}:{}',
+            'version'     => '4',
+            'groupKey'    => '{}:{}',
         ];
 
         $response = $this->json('POST', '/api/v1/incidents/alertmanager', $alert);
         $response->assertStatus(200);
-        $incident = Incident::where("name", "A Test-Summary.")->first();
+        $incident = Incident::where('name', 'A Test-Summary.')->first();
 
         $this->assertEquals($component->id, $incident->component->id);
 
         $this->assertEquals(
-            config("prometheus.new_incident_status", 1),
+            config('prometheus.new_incident_status', 1),
             $incident->status
         );
 
         $this->assertEquals(
-            config("prometheus.new_incident_component_status", 2),
+            config('prometheus.new_incident_component_status', 2),
             $incident->component->status
         );
     }
@@ -181,52 +167,46 @@ class PrometheusIncidentTest extends AbstractApiTestCase
         $this->expectsEvents(IncidentWasUpdatedEvent::class);
 
         $component = factory(Component::class)->create([
-            "status" => 1
+            'status' => 1,
         ]);
 
         $alert = [
             'receiver' => 'statuspage-receiver',
-            'status' => 'firing',
-            'alerts' =>
-                [
+            'status'   => 'firing',
+            'alerts'   => [
                     [
                         'status' => 'firing',
-                        'labels' =>
-                            [
-                                'alertname' => 'test-rule-metrics',
-                                'code' => '200',
-                                'instance' => 'localhost:9090',
-                                'job' => 'prometheus',
+                        'labels' => [
+                                'alertname'                => 'test-rule-metrics',
+                                'code'                     => '200',
+                                'instance'                 => 'localhost:9090',
+                                'job'                      => 'prometheus',
                                 'status_page_component_id' => (string) $component->id, //commented intentionally
                             ],
-                        'annotations' =>
-                            [
+                        'annotations' => [
                                 'description' => 'A Test-Message.',
-                                'summary' => 'A Test-Summary.',
+                                'summary'     => 'A Test-Summary.',
                             ],
-                        'startsAt' => '2019-01-18T10:02:49.770506166Z',
-                        'endsAt' => '0001-01-01T00:00:00Z',
+                        'startsAt'     => '2019-01-18T10:02:49.770506166Z',
+                        'endsAt'       => '0001-01-01T00:00:00Z',
                         'generatorURL' => 'http://homestead:9090/graph?g0.expr=promhttp_metric_handler_requests_total+>+0&g0.tab=1',
                     ],
                 ],
-            'groupLabels' =>
-                [],
-            'commonLabels' =>
-                [
-                    'alertname' => 'test-rule-metrics',
-                    'code' => '200',
-                    'instance' => 'localhost:9090',
-                    'job' => 'prometheus',
+            'groupLabels'  => [],
+            'commonLabels' => [
+                    'alertname'                => 'test-rule-metrics',
+                    'code'                     => '200',
+                    'instance'                 => 'localhost:9090',
+                    'job'                      => 'prometheus',
                     'status_page_component_id' => (string) $component->id, //commented intentionally
                 ],
-            'commonAnnotations' =>
-                [
+            'commonAnnotations' => [
                     'description' => 'A Test-Message.',
-                    'summary' => 'A Test-Summary.',
+                    'summary'     => 'A Test-Summary.',
                 ],
             'externalURL' => 'http://homestead:9093',
-            'version' => '4',
-            'groupKey' => '{}:{}',
+            'version'     => '4',
+            'groupKey'    => '{}:{}',
         ];
 
         $response = $this->json('POST', '/api/v1/incidents/alertmanager', $alert);
@@ -235,63 +215,56 @@ class PrometheusIncidentTest extends AbstractApiTestCase
         //now resolve the incident we just created
         $alert = [
             'receiver' => 'statuspage-receiver',
-            'status' => 'resolved',
-            'alerts' =>
-                [
+            'status'   => 'resolved',
+            'alerts'   => [
                     [
                         'status' => 'resolved',
-                        'labels' =>
-                            [
-                                'alertname' => 'test-rule-metrics',
-                                'code' => '200',
-                                'instance' => 'localhost:9090',
-                                'job' => 'prometheus',
+                        'labels' => [
+                                'alertname'                => 'test-rule-metrics',
+                                'code'                     => '200',
+                                'instance'                 => 'localhost:9090',
+                                'job'                      => 'prometheus',
                                 'status_page_component_id' => (string) $component->id, //commented intentionally
                             ],
-                        'annotations' =>
-                            [
+                        'annotations' => [
                                 'description' => 'A Test-Message.',
-                                'summary' => 'A Test-Summary.',
+                                'summary'     => 'A Test-Summary.',
                             ],
-                        'startsAt' => '2019-01-18T10:02:49.770506166Z',
-                        'endsAt' => '2019-01-18T11:02:49.770506166Z',
+                        'startsAt'     => '2019-01-18T10:02:49.770506166Z',
+                        'endsAt'       => '2019-01-18T11:02:49.770506166Z',
                         'generatorURL' => 'http://homestead:9090/graph?g0.expr=promhttp_metric_handler_requests_total+>+0&g0.tab=1',
                     ],
                 ],
-            'groupLabels' =>
-                [],
-            'commonLabels' =>
-                [
-                    'alertname' => 'test-rule-metrics',
-                    'code' => '200',
-                    'instance' => 'localhost:9090',
-                    'job' => 'prometheus',
+            'groupLabels'  => [],
+            'commonLabels' => [
+                    'alertname'                => 'test-rule-metrics',
+                    'code'                     => '200',
+                    'instance'                 => 'localhost:9090',
+                    'job'                      => 'prometheus',
                     'status_page_component_id' => (string) $component->id, //commented intentionally
                 ],
-            'commonAnnotations' =>
-                [
+            'commonAnnotations' => [
                     'description' => 'A Test-Message.',
-                    'summary' => 'A Test-Summary.',
+                    'summary'     => 'A Test-Summary.',
                 ],
             'externalURL' => 'http://homestead:9093',
-            'version' => '4',
-            'groupKey' => '{}:{}',
+            'version'     => '4',
+            'groupKey'    => '{}:{}',
         ];
 
         $response = $this->json('POST', '/api/v1/incidents/alertmanager', $alert);
         $response->assertStatus(200);
 
-        $incident = Incident::where("name", "A Test-Summary.")->first();
+        $incident = Incident::where('name', 'A Test-Summary.')->first();
 
         $this->assertEquals(
-            config("prometheus.resolved_incident_status", 4),
+            config('prometheus.resolved_incident_status', 4),
             $incident->status
         );
 
         $this->assertEquals(
-            config("prometheus.resolved_incident_component_status", 1),
+            config('prometheus.resolved_incident_component_status', 1),
             $incident->component->status
         );
-
     }
 }
