@@ -124,8 +124,7 @@ class NewScheduleNotification extends Notification implements ShouldQueue
                                    ->fields(array_filter([
                                         'ID'     => "#{$this->schedule->id}",
                                         'Status' => $this->schedule->human_status,
-                                    ]))
-                                   ->footer(trans('cachet.subscriber.unsubscribe', ['link' => cachet_route('subscribe.unsubscribe', $notifiable->verify_code)]));
+                                    ]));
                     });
     }
 }
