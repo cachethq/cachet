@@ -116,14 +116,15 @@ class IncidentController extends AbstractApiController
 
         $incident = $component->incidents()
             ->where("status", config("prometheus.new_incident_status", 1))
-            ->where("occurred_at", $startsAt)->first();
+            ->where("occurred_at", $startsAt.":00")->first();
+
         if (!$incident) {
             return;
         }
 
         execute(new CreateIncidentUpdateCommand(
             $incident,
-            config("prometheus.resolved_incident_status", 1) /* status */,
+            config("prometheus.resolved_incident_status", 4) /* status */,
             trans("prometheus.default-resolved-alert-message"),
             $componentId,
             config("prometheus.resolved_incident_component_status", 1) /* component status */,
