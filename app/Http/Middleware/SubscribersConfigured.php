@@ -52,10 +52,6 @@ class SubscribersConfigured
      */
     public function handle(Request $request, Closure $next)
     {
-        if (!$this->config->get('setting.enable_subscribers')) {
-            return cachet_redirect('status-page');
-        }
-
         return $next($request);
     }
 }
