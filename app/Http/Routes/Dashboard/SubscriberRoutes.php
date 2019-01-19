@@ -60,10 +60,6 @@ class SubscriberRoutes
                 'as'   => 'delete:dashboard.subscribers.delete',
                 'uses' => 'SubscriberController@deleteSubscriberAction',
             ]);
-            $router->post('{subscriber}/manage', [
-                'as'   => 'manage:dashboard.subscribers.manage',
-                'uses' => 'SubscriberController@manageSubscriberAction',
-            ]);
         });
     }
 }
