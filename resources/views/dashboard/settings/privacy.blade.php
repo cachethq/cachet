@@ -24,8 +24,8 @@
                                             name="privacy_statement"
                                             value="{{ Config::get('setting.privacy_statement') }}"
                                             help-text="{{ trans('forms.settings.privacy.privacy-statement-help') }}"
-                                            lang-markdown="{{ trans("common.markdown") }}"
-                                            lang-preview="{{ trans("common.preview") }}"
+                                            lang-markdown="{{ trans("dashboard.markdown") }}"
+                                            lang-preview="{{ trans("dashboard.preview") }}"
                                             preview-url="{{ cachet_route("dashboard.settings.markdown-preview", [], "get") }}"
                                     ></textarea-with-markdown-preview>
 
@@ -42,8 +42,8 @@
                                             name="imprint"
                                             value="{{ Config::get('setting.imprint') }}"
                                             help-text="{{ trans('forms.settings.privacy.imprint-help') }}"
-                                            lang-markdown="{{ trans("common.markdown") }}"
-                                            lang-preview="{{ trans("common.preview") }}"
+                                            lang-markdown="{{ trans("dashboard.markdown") }}"
+                                            lang-preview="{{ trans("dashboard.preview") }}"
                                             preview-url="{{ cachet_route("dashboard.settings.markdown-preview", [], "get") }}"
                                     ></textarea-with-markdown-preview>
 
