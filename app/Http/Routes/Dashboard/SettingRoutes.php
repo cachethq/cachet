@@ -58,6 +58,14 @@ class SettingRoutes
                 'as'   => 'get:dashboard.settings.security',
                 'uses' => 'SettingsController@showSecurityView',
             ]);
+            $router->get('privacy', [
+                'as'   => 'get:dashboard.settings.privacy',
+                'uses' => 'SettingsController@showPrivacyView',
+            ]);
+            $router->get('markdown/preview', [
+                'as'   => 'get:dashboard.settings.markdown-preview',
+                'uses' => 'SettingsController@getMarkdownPreview',
+            ]);
             $router->get('theme', [
                 'as'   => 'get:dashboard.settings.theme',
                 'uses' => 'SettingsController@showThemeView',
