@@ -32,6 +32,24 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label>{{ trans('forms.settings.privacy.imprint') }}</label>
+
+                                    <textarea-with-markdown-preview
+                                            name="imprint"
+                                            value="{{ Config::get('setting.imprint') }}"
+                                            help-text="{{ trans('forms.settings.privacy.imprint-help') }}"
+                                            lang-markdown="{{ trans("common.markdown") }}"
+                                            lang-preview="{{ trans("common.preview") }}"
+                                            preview-url="{{ cachet_route("dashboard.settings.markdown-preview", [], "get") }}"
+                                    ></textarea-with-markdown-preview>
+
+                                </div>
+                            </div>
+                        </div>
                     </fieldset>
 
                     <div class="row">

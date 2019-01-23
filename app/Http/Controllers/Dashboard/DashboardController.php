@@ -121,21 +121,6 @@ class DashboardController extends Controller
     }
 
     /**
-     * Show the privacy statement
-     *
-     * @return  \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
-     */
-    public function showPrivacyStatement()
-    {
-        $privacyStatement = trim(Config::get('setting.privacy_statement', ''));
-        if (starts_with($privacyStatement, "https://") && filter_var($privacyStatement, FILTER_VALIDATE_URL)) {
-            return redirect($privacyStatement);
-        }
-        return View::make("privacy")
-            ->withPrivacyStatement($privacyStatement);
-    }
-
-    /**
      * Fetches all of the incidents over the last 30 days.
      *
      * @return \Illuminate\Support\Collection

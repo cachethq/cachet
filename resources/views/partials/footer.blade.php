@@ -19,6 +19,9 @@
                     <li>
                         <a class="btn btn-link" href="{{ cachet_route("privacy") }}">{{ trans("forms.settings.privacy.privacy-statement") }}</a>
                     </li>
+                    <li>
+                        <a class="btn btn-link" href="{{ cachet_route("imprint") }}">{{ trans("forms.settings.privacy.imprint") }}</a>
+                    </li>
                     @if($currentUser || $dashboardLink)
                     <li>
                         <a class="btn btn-link" href="{{ cachet_route('dashboard') }}">{{ trans('dashboard.dashboard') }}</a>
