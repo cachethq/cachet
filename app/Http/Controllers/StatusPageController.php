@@ -211,32 +211,34 @@ class StatusPageController extends AbstractApiController
     }
 
     /**
-     * Show the privacy statement
+     * Show the privacy statement.
      *
-     * @return  \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
      */
     public function showPrivacyStatement()
     {
         $privacyStatement = trim(Config::get('setting.privacy_statement', ''));
-        if (starts_with($privacyStatement, "https://") && filter_var($privacyStatement, FILTER_VALIDATE_URL)) {
+        if (starts_with($privacyStatement, 'https://') && filter_var($privacyStatement, FILTER_VALIDATE_URL)) {
             return redirect($privacyStatement);
         }
-        return View::make("privacy")
+
+        return View::make('privacy')
             ->withPrivacyStatement($privacyStatement);
     }
 
     /**
-     * Show the imprint
+     * Show the imprint.
      *
-     * @return  \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
      */
     public function showImprint()
     {
         $imprint = trim(Config::get('setting.imprint', ''));
-        if (starts_with($imprint, "https://") && filter_var($imprint, FILTER_VALIDATE_URL)) {
+        if (starts_with($imprint, 'https://') && filter_var($imprint, FILTER_VALIDATE_URL)) {
             return redirect($imprint);
         }
-        return View::make("imprint")
+
+        return View::make('imprint')
             ->withImprint($imprint);
     }
 }
