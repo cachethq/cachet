@@ -246,7 +246,7 @@ class SettingsController extends Controller
 
     public function getMarkdownPreview(Request $request)
     {
-        return View::make("partials.markdown-preview")
+        return View::make('partials.markdown-preview')
             ->withMarkdown(
                 $request->markdown
             );
