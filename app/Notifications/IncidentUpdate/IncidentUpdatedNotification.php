@@ -87,6 +87,10 @@ class IncidentUpdatedNotification extends Notification
                 'unsubscribeUrl'         => cachet_route('subscribe.unsubscribe', $notifiable->verify_code),
                 'manageSubscriptionText' => trans('cachet.subscriber.manage_subscription'),
                 'manageSubscriptionUrl'  => cachet_route('subscribe.manage', $notifiable->verify_code),
+                'privacyText'            => trans('forms.settings.privacy.privacy-statement'),
+                'privacyUrl'             => cachet_route('privacy'),
+                'imprintText'            => trans('forms.settings.privacy.imprint'),
+                'imprintUrl'             => cachet_route('imprint'),
         ]);
     }
 
