@@ -209,4 +209,34 @@ class StatusPageController extends AbstractApiController
 
         return Response::make($badge, 200, ['Content-Type' => 'image/svg+xml']);
     }
+
+    /**
+     * Show the privacy statement
+     *
+     * @return  \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
+     */
+    public function showPrivacyStatement()
+    {
+        $privacyStatement = trim(Config::get('setting.privacy_statement', ''));
+        if (starts_with($privacyStatement, "https://") && filter_var($privacyStatement, FILTER_VALIDATE_URL)) {
+            return redirect($privacyStatement);
+        }
+        return View::make("privacy")
+            ->withPrivacyStatement($privacyStatement);
+    }
+
+    /**
+     * Show the imprint
+     *
+     * @return  \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
+     */
+    public function showImprint()
+    {
+        $imprint = trim(Config::get('setting.imprint', ''));
+        if (starts_with($imprint, "https://") && filter_var($imprint, FILTER_VALIDATE_URL)) {
+            return redirect($imprint);
+        }
+        return View::make("imprint")
+            ->withImprint($imprint);
+    }
 }

@@ -49,11 +49,6 @@ class BaseRoutes
                     'uses' => 'DashboardController@showDashboard',
                 ]);
             });
-
-            $router->get('/privacy', [
-                'as'   => 'get:privacy',
-                'uses' => 'DashboardController@showPrivacyStatement',
-            ]);
         });
     }
 }

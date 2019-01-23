@@ -178,6 +178,8 @@ return [
             'incident-date-format' => 'Incident timestamp format',
         ],
         'privacy' => [
+            'imprint'                => 'Imprint',
+            'imprint-help'           => 'Put your imprint here (markdown is allowed). If this is simply a URL starting with https://, this URL will be linked instead.',
             'privacy-statement'      => 'Privacy Statement',
             'privacy-statement-help' => 'Put your privacy statement here (markdown is allowed). If this is simply a URL starting with https://, this URL will be linked instead.',
         ],

@@ -63,6 +63,16 @@ class StatusPageRoutes
                 'as'   => 'get:component_shield',
                 'uses' => 'StatusPageController@showComponentBadge',
             ]);
+
+            $router->get('/imprint', [
+                'as'   => 'get:imprint',
+                'uses' => 'StatusPageController@showImprint',
+            ]);
+
+            $router->get('/privacy', [
+                'as'   => 'get:privacy',
+                'uses' => 'StatusPageController@showPrivacyStatement',
+            ]);
         });
     }
 }
