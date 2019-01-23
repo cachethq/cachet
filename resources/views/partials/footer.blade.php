@@ -16,6 +16,9 @@
             </div>
             <div class="col-sm-8">
                 <ul class="list-inline">
+                    <li>
+                        <a class="btn btn-link" href="{{ cachet_route("privacy") }}">{{ trans("forms.settings.privacy.privacy-statement") }}</a>
+                    </li>
                     @if($currentUser || $dashboardLink)
                     <li>
                         <a class="btn btn-link" href="{{ cachet_route('dashboard') }}">{{ trans('dashboard.dashboard') }}</a>

@@ -18,6 +18,7 @@ use CachetHQ\Cachet\Notifications\System\SystemTestNotification;
 use CachetHQ\Cachet\Settings\Repository;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
@@ -81,6 +82,12 @@ class SettingsController extends Controller
                 'title'  => trans('dashboard.settings.security.security'),
                 'url'    => cachet_route('dashboard.settings.security'),
                 'icon'   => 'ion-lock-combination',
+                'active' => false,
+            ],
+            'privacy' => [
+                'title'  => trans('dashboard.settings.privacy.privacy'),
+                'url'    => cachet_route('dashboard.settings.privacy'),
+                'icon'   => 'ion-ios-glasses',
                 'active' => false,
             ],
             'analytics' => [
@@ -219,6 +226,30 @@ class SettingsController extends Controller
             ->withPageTitle(trans('dashboard.settings.security.security').' - '.trans('dashboard.dashboard'))
             ->withSubMenu($this->subMenu)
             ->withUnsecureUsers($unsecureUsers);
+    }
+
+    /**
+     * Shows the settings privacy view.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function showPrivacyView()
+    {
+        $this->subMenu['privacy']['active'] = true;
+
+        Session::flash('redirect_to', $this->subMenu['privacy']['url']);
+
+        return View::make('dashboard.settings.privacy')
+            ->withPageTitle(trans('dashboard.settings.privacy.privacy').' - '.trans('dashboard.dashboard'))
+            ->withSubMenu($this->subMenu);
+    }
+
+    public function getMarkdownPreview(Request $request)
+    {
+        return View::make("partials.markdown-preview")
+            ->withMarkdown(
+                $request->markdown
+            );
     }
 
     /**

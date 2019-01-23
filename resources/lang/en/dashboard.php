@@ -234,6 +234,9 @@ return [
                 'body'    => 'This is a test notification from Cachet.',
             ],
         ],
+        'privacy' => [
+            'privacy' => 'Privacy',
+        ],
         'security' => [
             'security'   => 'Security',
             'two-factor' => 'Users without two-factor authentication',

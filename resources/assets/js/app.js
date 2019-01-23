@@ -20,6 +20,8 @@ window.axios.defaults.headers.common = {
     'X-Requested-With': 'XMLHttpRequest'
 };
 
+window.Vue.prototype.$http = window.axios;
+
 /**
  * Flatpickr.
  */
@@ -59,6 +61,7 @@ const Flatpickr = require('flatpickr');
             'setup': require('./components/Setup'),
             'dashboard': require('./components/dashboard/Dashboard'),
             'metric-chart': require('./components/status-page/Metric'),
+            'textarea-with-markdown-preview': require('./components/dashboard/settings/TextareaWithMarkdownPreview')
         }
     });
 })()

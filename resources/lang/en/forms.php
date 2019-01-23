@@ -177,6 +177,10 @@ return [
             'date-format'          => 'Date format',
             'incident-date-format' => 'Incident timestamp format',
         ],
+        'privacy' => [
+            'privacy-statement'      => 'Privacy Statement',
+            'privacy-statement-help' => 'Put your privacy statement here (markdown is allowed). If this is simply a URL starting with https://, this URL will be linked instead.',
+        ],
         'security' => [
             'allowed-domains'           => 'Allowed domains',
             'allowed-domains-help'      => 'Comma separated. The domain set above is automatically allowed by default.',
