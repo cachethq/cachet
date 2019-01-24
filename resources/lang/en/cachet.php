@@ -77,6 +77,7 @@ return [
 
     // Subscriber
     'subscriber' => [
+        'accept-privacy-statement' => 'Accept <a href=":url" target="_blank">privacy statement</a>',
         'subscribe'           => 'Subscribe to status changes and incident updates',
         'unsubscribe'         => 'Unsubscribe',
         'button'              => 'Subscribe',

@@ -21,7 +21,12 @@
                 <form action="{{ cachet_route('subscribe', [], 'post') }}" method="POST" class="form">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <div class="form-group">
-                        <input class="form-control" type="email" name="email" placeholder="email@example.com">
+                        <input class="form-control" type="email" name="email" value="{{ old("email") }}" placeholder="email@example.com">
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="acceptPrivacyStatement" value="1" /> {!! trans("cachet.subscriber.accept-privacy-statement", ["url" => cachet_route("privacy") ]) !!}
+                        </label>
                     </div>
                     <button type="submit" class="btn btn-success">{{ trans('cachet.subscriber.button') }}</button>
                 </form>
