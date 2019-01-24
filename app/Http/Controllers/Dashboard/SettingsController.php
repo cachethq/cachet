@@ -11,8 +11,10 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
+use CachetHQ\Cachet\Bus\Commands\Subscriber\UnsubscribeSubscriberCommand;
 use CachetHQ\Cachet\Bus\Commands\System\Config\UpdateConfigCommand;
 use CachetHQ\Cachet\Integrations\Contracts\Credits;
+use CachetHQ\Cachet\Models\Subscriber;
 use CachetHQ\Cachet\Models\User;
 use CachetHQ\Cachet\Notifications\System\SystemTestNotification;
 use CachetHQ\Cachet\Settings\Repository;
@@ -239,9 +241,25 @@ class SettingsController extends Controller
 
         Session::flash('redirect_to', $this->subMenu['privacy']['url']);
 
+        $cleanupInterval = Config::get("unverified_cleanup_interval");
+
         return View::make('dashboard.settings.privacy')
             ->withPageTitle(trans('dashboard.settings.privacy.privacy').' - '.trans('dashboard.dashboard'))
+            ->withCleanupInterval($cleanupInterval)
+            ->withUnverifiedSubscriberCount(Subscriber::notVerifiedFor($cleanupInterval)->count())
             ->withSubMenu($this->subMenu);
+    }
+
+    public function removeUnverifiedSubscribers()
+    {
+        $cleanupInterval = Config::get("unverified_cleanup_interval");
+
+        Subscriber::notVerifiedFor($cleanupInterval)->get()->each(function ($subscriber) {
+            execute(new UnsubscribeSubscriberCommand($subscriber));
+        });
+
+        return cachet_redirect('dashboard.settings.privacy')
+            ->withSuccess(trans('dashboard.notifications.awesome'));
     }
 
     public function getMarkdownPreview(Request $request)

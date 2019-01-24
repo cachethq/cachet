@@ -62,6 +62,10 @@ class SettingRoutes
                 'as'   => 'get:dashboard.settings.privacy',
                 'uses' => 'SettingsController@showPrivacyView',
             ]);
+            $router->post('privacy/clean-unverified-subscribers', [
+                'as'   => 'post:dashboard.settings.privacy.remove-unverified-subscribers',
+                'uses' => 'SettingsController@removeUnverifiedSubscribers',
+            ]);
             $router->get('markdown/preview', [
                 'as'   => 'get:dashboard.settings.markdown-preview',
                 'uses' => 'SettingsController@getMarkdownPreview',

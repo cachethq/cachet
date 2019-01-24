@@ -13,9 +13,11 @@ namespace CachetHQ\Cachet\Models;
 
 use AltThree\Validator\ValidatingTrait;
 use CachetHQ\Cachet\Presenters\SubscriberPresenter;
+use Carbon\CarbonInterval;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Carbon;
 use McCool\LaravelAutoPresenter\HasPresenter;
 
 /**
@@ -120,6 +122,21 @@ class Subscriber extends Model implements HasPresenter
     public function scopeIsVerified(Builder $query)
     {
         return $query->whereNotNull('verified_at');
+    }
+
+    /**
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @param string $interval an ISO8601 duration @see \DateInterval
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeNotVerifiedFor(Builder $query, string $interval = 'P1M')
+    {
+        $maxAge = Carbon::now()->subDays(
+            CarbonInterval::make($interval)->totalDayz
+        );
+
+        return $query->whereNull('verified_at')
+            ->where("created_at", "<", $maxAge);
     }
 
     /**

@@ -62,6 +62,29 @@
                 </form>
             </div>
         </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <form class="form-vertical" role="form" action="{{ cachet_route('dashboard.settings.privacy.remove-unverified-subscribers', [], 'post') }}" method="POST">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <fieldset>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <p>{{ trans_choice('forms.settings.privacy.current-unverified-subscribers', $unverifiedSubscriberCount, ["count" => $unverifiedSubscriberCount]) }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-danger">{{ trans('forms.settings.privacy.remove-unverified-subscribers') }}</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
 @stop

@@ -123,4 +123,15 @@ return [
     */
 
     'always_authenticate' => false,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Clean up unverified subscribers
+    |--------------------------------------------------------------------------
+    |
+    | Delete unverified subscribers after this \DateInterval
+    |
+    */
+
+    'unverified_cleanup_interval' => env("UNVERIFIED_CLEANUP_INTERVAL", "P1M"),
 ];
