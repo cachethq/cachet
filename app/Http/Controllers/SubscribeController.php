@@ -93,7 +93,7 @@ class SubscribeController extends Controller
             return cachet_redirect('status-page')->withSuccess(trans('cachet.subscriber.email.already-subscribed', ['email' => $email]));
         }
 
-        return cachet_redirect('subscribe.manage', $subscription->verify_code)
+        return cachet_redirect('status-page')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('cachet.subscriber.email.subscribed')));
     }
 
@@ -120,7 +120,7 @@ class SubscribeController extends Controller
             execute(new VerifySubscriberCommand($subscriber));
         }
 
-        return cachet_redirect('status-page')
+        return cachet_redirect('subscribe.manage', ['code' => $subscriber->verify_code])
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('cachet.subscriber.email.verified')));
     }
 
