@@ -21,6 +21,9 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
+        'Illuminate\Mail\Events\MessageSending' => [
+            'CachetHQ\Cachet\Bus\Handlers\Events\MessageSending',
+        ],
         'CachetHQ\Cachet\Bus\Events\ActionInterface' => [
             'CachetHQ\Cachet\Bus\Handlers\Events\ActionStorageHandler',
         ],
