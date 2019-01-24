@@ -40,12 +40,20 @@ final class SubscribeSubscriberCommand
     public $subscriptions;
 
     /**
+     * If the subscriber accepted the privacy statement
+     *
+     * @var bool
+     */
+    public $acceptPrivacyStatement;
+
+    /**
      * The validation rules.
      *
      * @var array
      */
     public $rules = [
         'email' => 'required|email',
+        'acceptPrivacyStatement' => 'accepted'
     ];
 
     /**
@@ -54,13 +62,15 @@ final class SubscribeSubscriberCommand
      * @param string     $email
      * @param bool       $verified
      * @param array|null $subscriptions
+     * @param bool       $acceptPrivacyStatement
      *
      * @return void
      */
-    public function __construct($email, $verified = false, $subscriptions = null)
+    public function __construct($email, $verified = false, $subscriptions = null, $acceptPrivacyStatement = null)
     {
         $this->email = $email;
         $this->verified = $verified;
         $this->subscriptions = $subscriptions;
+        $this->acceptPrivacyStatement = $acceptPrivacyStatement;
     }
 }

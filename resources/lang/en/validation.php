@@ -117,6 +117,8 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        "acceptPrivacyStatement" => "privacy statement"
+    ],
 
 ];
