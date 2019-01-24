@@ -18,6 +18,7 @@
         <div class="panel panel-default">
             <div class="panel-heading">{{ trans('cachet.subscriber.subscribe') }}</div>
             <div class="panel-body">
+                <p>{!! $aboutApp  !!}</p>
                 <form action="{{ cachet_route('subscribe', [], 'post') }}" method="POST" class="form">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <div class="form-group">
