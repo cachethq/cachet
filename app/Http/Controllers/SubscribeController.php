@@ -94,9 +94,8 @@ class SubscribeController extends Controller
         // Send the subscriber a link to manage their subscription.
         $subscription->notify(new ManageSubscriptionNotification());
 
-        return redirect()->back()->withSuccess(
-            sprintf('%s %s', trans('dashboard.notifications.awesome'),
-            trans('cachet.subscriber.email.manage_subscription')));
+        return cachet_redirect('status-page')
+            ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('cachet.subscriber.email.subscribed')));
     }
 
     /**
@@ -122,8 +121,8 @@ class SubscribeController extends Controller
             execute(new VerifySubscriberCommand($subscriber));
         }
 
-        return redirect()->to(URL::signedRoute(cachet_route_generator('subscribe.manage'), ['code' => $code]))
-            ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('cachet.subscriber.email.subscribed')));
+        return cachet_redirect('subscribe.manage', ['code' => $subscriber->verify_code])
+            ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('cachet.subscriber.email.verified')));
     }
 
     /**
