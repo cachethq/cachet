@@ -28,8 +28,8 @@ class SubscribeSubscriberCommandTest extends AbstractTestCase
 
     protected function getObjectAndParams()
     {
-        $params = ['email' => 'support@cachethq.io', 'verified' => true, 'subscriptions' => null];
-        $object = new SubscribeSubscriberCommand($params['email'], $params['verified'], $params['subscriptions']);
+        $params = ['email' => 'support@cachethq.io', 'verified' => true, 'subscriptions' => null, 'acceptPrivacyStatement' => true];
+        $object = new SubscribeSubscriberCommand($params['email'], $params['verified'], $params['subscriptions'], $params['acceptPrivacyStatement']);
 
         return compact('params', 'object');
     }

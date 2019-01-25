@@ -53,7 +53,7 @@ final class SubscribeSubscriberCommand
      */
     public $rules = [
         'email'                  => 'required|email',
-        'acceptPrivacyStatement' => 'accepted',
+        'acceptPrivacyStatement' => 'required|accepted',
     ];
 
     /**
