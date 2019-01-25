@@ -10,3 +10,9 @@ Homestead.yaml
 npm-debug.log
 .env
 package-lock.json
+.phpstorm.meta.php
+_ide_helper.php
+_ide_helper_models.php
+phpcs.xml
+phpunit.xml
+sftp-config.json
