@@ -78,11 +78,11 @@ return [
     // Subscriber
     'subscriber' => [
         'accept-privacy-statement' => 'Accept <a href=":url" target="_blank">privacy statement</a>',
-        'subscribe'           => 'Subscribe to status changes and incident updates',
-        'unsubscribe'         => 'Unsubscribe',
-        'button'              => 'Subscribe',
-        'manage_subscription' => 'Manage subscription',
-        'manage'              => [
+        'subscribe'                => 'Subscribe to status changes and incident updates',
+        'unsubscribe'              => 'Unsubscribe',
+        'button'                   => 'Subscribe',
+        'manage_subscription'      => 'Manage subscription',
+        'manage'                   => [
             'notifications'       => 'Notifications',
             'notifications_for'   => 'Manage notifications for',
             'no_subscriptions'    => 'You\'re currently subscribed to all updates.',

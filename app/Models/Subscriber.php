@@ -126,7 +126,8 @@ class Subscriber extends Model implements HasPresenter
 
     /**
      * @param \Illuminate\Database\Eloquent\Builder $query
-     * @param string $interval an ISO8601 duration @see \DateInterval
+     * @param string                                $interval an ISO8601 duration @see \DateInterval
+     *
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeNotVerifiedFor(Builder $query, string $interval = 'P1M')
@@ -136,7 +137,7 @@ class Subscriber extends Model implements HasPresenter
         );
 
         return $query->whereNull('verified_at')
-            ->where("created_at", "<", $maxAge);
+            ->where('created_at', '<', $maxAge);
     }
 
     /**

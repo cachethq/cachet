@@ -40,7 +40,7 @@ final class SubscribeSubscriberCommand
     public $subscriptions;
 
     /**
-     * If the subscriber accepted the privacy statement
+     * If the subscriber accepted the privacy statement.
      *
      * @var bool
      */
@@ -52,8 +52,8 @@ final class SubscribeSubscriberCommand
      * @var array
      */
     public $rules = [
-        'email' => 'required|email',
-        'acceptPrivacyStatement' => 'accepted'
+        'email'                  => 'required|email',
+        'acceptPrivacyStatement' => 'accepted',
     ];
 
     /**

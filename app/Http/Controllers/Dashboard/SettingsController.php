@@ -241,7 +241,7 @@ class SettingsController extends Controller
 
         Session::flash('redirect_to', $this->subMenu['privacy']['url']);
 
-        $cleanupInterval = Config::get("setting.unverified_cleanup_interval");
+        $cleanupInterval = Config::get('setting.unverified_cleanup_interval');
 
         return View::make('dashboard.settings.privacy')
             ->withPageTitle(trans('dashboard.settings.privacy.privacy').' - '.trans('dashboard.dashboard'))
@@ -252,7 +252,7 @@ class SettingsController extends Controller
 
     public function removeUnverifiedSubscribers()
     {
-        $cleanupInterval = Config::get("setting.unverified_cleanup_interval");
+        $cleanupInterval = Config::get('setting.unverified_cleanup_interval');
 
         Subscriber::notVerifiedFor($cleanupInterval)->get()->each(function ($subscriber) {
             execute(new UnsubscribeSubscriberCommand($subscriber));
