@@ -179,11 +179,11 @@ return [
         ],
         'privacy' => [
             'current-unverified-subscribers' => 'There is :count subscriber who has not verified his email-addresses.|There are :count subscribers who have not verified their email-addresses.',
-            'remove-unverified-subscribers' => 'Remove unverified subscribers',
-            'imprint'                => 'Imprint',
-            'imprint-help'           => 'Put your imprint here (markdown is allowed). If this is simply a URL starting with https://, this URL will be linked instead.',
-            'privacy-statement'      => 'Privacy Statement',
-            'privacy-statement-help' => 'Put your privacy statement here (markdown is allowed). If this is simply a URL starting with https://, this URL will be linked instead.',
+            'remove-unverified-subscribers'  => 'Remove unverified subscribers',
+            'imprint'                        => 'Imprint',
+            'imprint-help'                   => 'Put your imprint here (markdown is allowed). If this is simply a URL starting with https://, this URL will be linked instead.',
+            'privacy-statement'              => 'Privacy Statement',
+            'privacy-statement-help'         => 'Put your privacy statement here (markdown is allowed). If this is simply a URL starting with https://, this URL will be linked instead.',
         ],
         'security' => [
             'allowed-domains'           => 'Allowed domains',

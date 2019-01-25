@@ -133,5 +133,5 @@ return [
     |
     */
 
-    'unverified_cleanup_interval' => env("UNVERIFIED_CLEANUP_INTERVAL", "P1M"),
+    'unverified_cleanup_interval' => env('UNVERIFIED_CLEANUP_INTERVAL', 'P1M'),
 ];
