@@ -45,6 +45,21 @@ class SubscriberTest extends AbstractApiTestCase
         $response->assertHeader('Content-Type', 'application/json');
     }
 
+    public function test_cannot_create_subscriber_without_accepting_privacy_statement()
+    {
+        $this->beUser();
+
+        Notification::fake();
+
+        $this->doesntExpectEvents(SubscriberHasSubscribedEvent::class);
+
+        $response = $this->json('POST', '/api/v1/subscribers', [
+            'email' => 'support@alt-three.com',
+        ]);
+
+        $response->assertStatus(400);
+    }
+
     public function test_can_create_subscriber()
     {
         $this->beUser();
@@ -54,7 +69,8 @@ class SubscriberTest extends AbstractApiTestCase
         $this->expectsEvents(SubscriberHasSubscribedEvent::class);
 
         $response = $this->json('POST', '/api/v1/subscribers', [
-            'email' => 'support@alt-three.com',
+            'email'                  => 'support@alt-three.com',
+            'acceptPrivacyStatement' => true,
         ]);
 
         $response->assertStatus(200);
@@ -71,8 +87,9 @@ class SubscriberTest extends AbstractApiTestCase
         $this->expectsEvents(SubscriberHasSubscribedEvent::class);
 
         $response = $this->json('POST', '/api/v1/subscribers', [
-            'email'  => 'support@alt-three.com',
-            'verify' => true,
+            'email'                  => 'support@alt-three.com',
+            'acceptPrivacyStatement' => true,
+            'verify'                 => true,
         ]);
 
         $response->assertStatus(200);
@@ -87,9 +104,10 @@ class SubscriberTest extends AbstractApiTestCase
         factory(Component::class, 3)->create();
 
         $response = $this->json('POST', '/api/v1/subscribers', [
-            'email'      => 'support@alt-three.com',
-            'verify'     => true,
-            'components' => [
+            'email'                  => 'support@alt-three.com',
+            'verify'                 => true,
+            'acceptPrivacyStatement' => true,
+            'components'             => [
                 1,
                 3,
             ],
