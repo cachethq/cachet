@@ -35,7 +35,7 @@ return [
                 'failure' => 'Er is een fout opgetreden bij het wijzigen van de incident update',
             ],
         ],
-        'reported_by'              => 'Gemeld door: gebruiker',
+        'reported_by'              => 'Gemeld door :user',
         'add'                      => [
             'title'   => 'Meld een incident',
             'success' => 'Incident toegevoegd.',
@@ -56,7 +56,7 @@ return [
             'title' => 'Incident Sjablonen',
             'add'   => [
                 'title'   => 'Creëer een incident template',
-                'message' => 'Create your first incident template.',
+                'message' => 'Voeg een incident template toe.',
                 'success' => 'Je nieuwe incident template is aangemaakt.',
                 'failure' => 'Er is iets misgegaan met de incident template.',
             ],
@@ -227,11 +227,11 @@ return [
             'footer'        => 'Aangepaste voettekst HTML',
         ],
         'mail' => [
-            'mail'  => 'Mail',
+            'mail'  => 'E-mail',
             'test'  => 'Test',
             'email' => [
-                'subject' => 'Test notification from Cachet',
-                'body'    => 'This is a test notification from Cachet.',
+                'subject' => 'Test notificatie van Cachet',
+                'body'    => 'Dit is een test notificatie van Cachet.',
             ],
         ],
         'security' => [
