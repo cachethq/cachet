@@ -10,7 +10,7 @@
  */
 
 return [
-    
+
     /*
      |--------------------------------------------------------------------------
      | Laravel CORS
@@ -20,7 +20,7 @@ return [
      | to accept any value.
      |
      */
-    
+
     'supportsCredentials'    => false,
     'allowedOrigins'         => ['*'],
     'allowedOriginsPatterns' => [],

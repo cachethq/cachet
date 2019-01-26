@@ -14,6 +14,7 @@ namespace CachetHQ\Cachet\Foundation\Providers;
 use CachetHQ\Cachet\Http\Middleware\Acceptable;
 use CachetHQ\Cachet\Http\Middleware\Authenticate;
 use CachetHQ\Cachet\Http\Middleware\Timezone;
+use CachetHQ\Cachet\Http\Middleware\VerifyCsrfToken;
 use CachetHQ\Cachet\Http\Routes\ApiSystemRoutes;
 use CachetHQ\Cachet\Http\Routes\AuthRoutes;
 use CachetHQ\Cachet\Http\Routes\Setup\ApiRoutes as ApiSetupRoutes;
@@ -26,7 +27,6 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Routing\Router;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
-use CachetHQ\Cachet\Http\Middleware\VerifyCsrfToken;
 
 /**
  * This is the route service provider.

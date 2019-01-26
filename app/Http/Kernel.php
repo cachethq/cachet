@@ -12,6 +12,7 @@
 namespace CachetHQ\Cachet\Http;
 
 use AltThree\Throttle\ThrottlingMiddleware;
+use Barryvdh\Cors\HandleCors;
 use CachetHQ\Cachet\Http\Middleware\Admin;
 use CachetHQ\Cachet\Http\Middleware\ApiAuthentication;
 use CachetHQ\Cachet\Http\Middleware\Authenticate;
@@ -24,7 +25,6 @@ use CachetHQ\Cachet\Http\Middleware\TrustProxies;
 use Illuminate\Auth\Middleware\Authorize;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 use Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode;
-use Barryvdh\Cors\HandleCors;
 
 class Kernel extends HttpKernel
 {
