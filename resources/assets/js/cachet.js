@@ -327,9 +327,6 @@ $(function () {
             .addClass("active");
     }
 
-    // Password strength
-    $('.password-strength').strengthify();
-
     // Check for updates.
     if ($('#update-alert').length > 0) {
         $.ajax({

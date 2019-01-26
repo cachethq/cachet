@@ -205,8 +205,7 @@
                         </div>
                         <div class="form-group">
                             <label>{{ trans("forms.setup.password") }}</label>
-                            <input type="password" name="user[password]" class="form-control password-strength" placeholder="{{ trans('forms.setup.password') }}" value="{{ Binput::old('user.password', '') }}" required>
-                            <div class="strengthify-wrapper"></div>
+                            <input type="password" name="user[password]" class="form-control" placeholder="{{ trans('forms.setup.password') }}" value="{{ Binput::old('user.password', '') }}" required>
                             @if($errors->has('user.password'))
                             <span class="text-danger">{{ $errors->first('user.password') }}</span>
                             @endif
