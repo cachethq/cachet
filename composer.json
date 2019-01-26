@@ -28,6 +28,12 @@
         "paragonie/random_compat": "*",
         "symfony/polyfill-mbstring": "*"
     },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../Phoebe"
+        }
+    ],
     "require": {
         "php": "^7.1.3",
         "ext-mbstring": "*",
@@ -42,6 +48,7 @@
         "aws/aws-sdk-php": "^3.7",
         "barryvdh/laravel-cors": "^0.11.0",
         "cachethq/cocoon": "^1.0@dev",
+        "cachethq/phoebe": "*",
         "doctrine/dbal": "2.9.*",
         "fideloper/proxy": "^4.0",
         "graham-campbell/binput": "^6.0",
@@ -114,6 +121,11 @@
     "extra": {
         "branch-alias": {
             "dev-master": "2.4-dev"
+        },
+        "laravel": {
+            "dont-discover": [
+                "cachethq/cocoon"
+            ]
         }
     },
     "minimum-stability": "dev",
