@@ -15,7 +15,7 @@ return [
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Incidents &amp; Schedule',
+        'title'                    => 'Incidenten &amp; planning',
         'incidents'                => 'Incidenten',
         'logged'                   => '{0} Proficiat, er zijn geen incidenten.|Er heeft zich één incident voorgedaan.|Er zijn <strong>:count</strong> incidenten gerapporteerd.',
         'incident-create-template' => 'Maak template',
@@ -164,7 +164,7 @@ return [
         'team'        => 'Team',
         'member'      => 'Lid',
         'profile'     => 'Profiel',
-        'description' => 'Team Members will be able to add, modify &amp; edit components and incidents.',
+        'description' => 'Teamleden zullen onderdelen en incidenten kunnen aanpassen &amp; toevoegen.',
         'add'         => [
             'title'   => 'Voeg een nieuw teamlid toe',
             'success' => 'Teamlid toegevoegd.',
@@ -224,7 +224,7 @@ return [
             'contributors'  => 'Bijdragers',
             'license'       => 'Cachet is een open source product onder de BSD-3 licentie, uitgebracht door <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
             'backers-title' => 'Donateurs & Sponsoren',
-            'backers'       => 'If you\'d like to support future development, check out the CrowdIn and GitHub.',
+            'backers'       => 'Als u toekomstige ontwikkelingen wil ondersteunen, bezoek dan de CrowdIn en Github.',
             'thank-you'     => 'Onze dank gaat uit naar elk van de :count verschillende bijdragers.',
         ],
     ],
@@ -233,7 +233,7 @@ return [
     'login' => [
         'login'      => 'Login',
         'logged_in'  => 'U bent ingelogd.',
-        'welcome'    => 'Welcome Back!',
+        'welcome'    => 'Welkom terug!',
         'two-factor' => 'Voer uw token in.',
     ],
 
@@ -257,16 +257,16 @@ return [
 
     // Welcome modal
     'welcome' => [
-        'welcome' => 'Welcome to your new Status page!',
-        'message' => 'Your status page is almost ready! You might want to configure these extra settings',
-        'close'   => 'Take me straight to my dashboard',
+        'welcome' => 'Welkom bij uw nieuwe statuspagina!',
+        'message' => 'Uw statuspagina is bijna klaar! U zal deze extra instellingen nog willen configureren',
+        'close'   => 'Ga direct naar mijn dashboard',
         'steps'   => [
-            'component'  => 'Create components',
-            'incident'   => 'Create incidents',
-            'customize'  => 'Customize',
-            'team'       => 'Add users',
-            'api'        => 'Generate API token',
-            'two-factor' => 'Two Factor Authentication',
+            'component'  => 'Component aanmaken',
+            'incident'   => 'Incidenten aanmaken',
+            'customize'  => 'Aanpassen',
+            'team'       => 'Gebruikers toevoegen',
+            'api'        => 'API-token genereren',
+            'two-factor' => 'Authenticatie in twee stappen',
         ],
     ],
 

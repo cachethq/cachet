@@ -28,12 +28,12 @@ return [
     'incidents' => [
         'none'          => 'Es liegen keine Ereignisse vor',
         'past'          => 'Vergangene Ereignisse',
-        'previous_week' => 'Previous Week',
-        'next_week'     => 'Next Week',
+        'previous_week' => 'Vorherige Woche',
+        'next_week'     => 'Nächste Woche',
         'scheduled'     => 'Geplante Wartungen',
         'scheduled_at'  => ', geplant :timestamp',
         'status'        => [
-            0 => 'Scheduled', // TODO: Hopefully remove this.
+            0 => 'Geplant', // TODO: Hopefully remove this.
             1 => 'Untersuchungen laufen',
             2 => 'Identifiziert',
             3 => 'Unter Beobachtung',
@@ -44,8 +44,8 @@ return [
     // Service Status
     'service' => [
         'good'  => '[0,1] System funktioniert einwandfrei|[2,Inf] Alle Systeme funktionieren einwandfrei',
-        'bad'   => '[0,1] The system is currently experiencing issues|[2,Inf] Some systems are experiencing issues',
-        'major' => '[0,1] The service experiencing a major outage|[2,Inf] Some systems are experiencing a major outage',
+        'bad'   => '[0,1] Das System hat momentan Probleme|[2,Inf] Manche Systeme haben momentan Probleme',
+        'major' => '[0,1] Das System hat ein schwerwiegendes Problem|[2,Inf] Manche Systeme haben ein schwerwiegendes Problem',
     ],
 
     'api' => [
@@ -65,7 +65,7 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe' => 'Subscribe to get the most recent updates',
+        'subscribe' => 'Abonieren, um aktuelle Updates zu erhalten',
         'button'    => 'Abonnieren',
         'manage'    => [
             'no_subscriptions' => 'Du hast im Augenblick alle Updates abonniert.',
