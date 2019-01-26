@@ -24,6 +24,7 @@ use CachetHQ\Cachet\Http\Middleware\TrustProxies;
 use Illuminate\Auth\Middleware\Authorize;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 use Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode;
+use Barryvdh\Cors\HandleCors;
 
 class Kernel extends HttpKernel
 {
@@ -33,8 +34,8 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $middleware = [
-        TrustProxies::class,
-        CheckForMaintenanceMode::class,
+        // TrustProxies::class,
+        // CheckForMaintenanceMode::class,
     ];
 
     /**
@@ -45,6 +46,7 @@ class Kernel extends HttpKernel
     protected $routeMiddleware = [
         'admin'       => Admin::class,
         'can'         => Authorize::class,
+        'cors'        => HandleCors::class,
         'auth'        => Authenticate::class,
         'auth.api'    => ApiAuthentication::class,
         'guest'       => RedirectIfAuthenticated::class,

@@ -11,7 +11,6 @@
 
 namespace CachetHQ\Cachet\Foundation\Providers;
 
-use Barryvdh\Cors\HandleCors;
 use CachetHQ\Cachet\Http\Middleware\Acceptable;
 use CachetHQ\Cachet\Http\Middleware\Authenticate;
 use CachetHQ\Cachet\Http\Middleware\Timezone;
@@ -22,12 +21,12 @@ use CachetHQ\Cachet\Http\Routes\SetupRoutes;
 use CachetHQ\Cachet\Http\Routes\SignupRoutes;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
-use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Routing\Router;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use CachetHQ\Cachet\Http\Middleware\VerifyCsrfToken;
 
 /**
  * This is the route service provider.
@@ -171,7 +170,6 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapOtherwise(Router $router, $routes, $applyAlwaysAuthenticate)
     {
         $middleware = [
-            HandleCors::class,
             SubstituteBindings::class,
             Acceptable::class,
             Timezone::class,
