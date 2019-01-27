@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Presenters;
+namespace CachetHQ\Cachet\View\Presenters;
 
 use CachetHQ\Cachet\Models\Incident;
-use CachetHQ\Cachet\Presenters\Traits\TimestampsTrait;
 use CachetHQ\Cachet\Services\Dates\DateFactory;
+use CachetHQ\Cachet\View\Presenters\Traits\TimestampsTrait;
 use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Contracts\Support\Arrayable;
 use McCool\LaravelAutoPresenter\BasePresenter;

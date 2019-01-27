@@ -9,20 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Composers;
+namespace CachetHQ\Cachet\View\Composers;
 
+use CachetHQ\Cachet\Models\Schedule;
 use Illuminate\Contracts\View\View;
-use Illuminate\Support\Facades\Auth;
-use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
 
 /**
- * This is the current user composer class.
+ * This is the scheduled composer.
  *
- * @author Joseph Cohen <joe@alt-three.com>
  * @author James Brooks <james@alt-three.com>
- * @author Graham Campbell <graham@alt-three.com>
+ * @author Connor S. Parks <connor@connorvg.tv>
  */
-class CurrentUserComposer
+class ScheduledComposer
 {
     /**
      * Bind data to the view.
@@ -33,6 +31,8 @@ class CurrentUserComposer
      */
     public function compose(View $view)
     {
-        $view->withCurrentUser(AutoPresenter::decorate(Auth::user()));
+        $scheduledMaintenance = Schedule::futureSchedules()->orderBy('scheduled_at')->get();
+
+        $view->withScheduledMaintenance($scheduledMaintenance);
     }
 }

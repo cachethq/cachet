@@ -12,7 +12,7 @@
 namespace CachetHQ\Cachet\Models;
 
 use AltThree\Validator\ValidatingTrait;
-use CachetHQ\Cachet\Presenters\MetricPointPresenter;
+use CachetHQ\Cachet\View\Presenters\MetricPointPresenter;
 use Carbon\Carbon;
 use DateTime;
 use Illuminate\Database\Eloquent\Model;

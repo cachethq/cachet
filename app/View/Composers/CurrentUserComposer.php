@@ -9,17 +9,20 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Composers;
+namespace CachetHQ\Cachet\View\Composers;
 
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\Auth;
+use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
 
 /**
- * This is the timeline composer.
+ * This is the current user composer class.
  *
+ * @author Joseph Cohen <joe@alt-three.com>
  * @author James Brooks <james@alt-three.com>
- * @author Connor S. Parks <connor@connorvg.tv>
+ * @author Graham Campbell <graham@alt-three.com>
  */
-class TimelineComposer
+class CurrentUserComposer
 {
     /**
      * Bind data to the view.
@@ -30,6 +33,6 @@ class TimelineComposer
      */
     public function compose(View $view)
     {
-        // ...
+        $view->withCurrentUser(AutoPresenter::decorate(Auth::user()));
     }
 }

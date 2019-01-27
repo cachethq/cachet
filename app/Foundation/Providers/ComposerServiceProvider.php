@@ -11,18 +11,18 @@
 
 namespace CachetHQ\Cachet\Foundation\Providers;
 
-use CachetHQ\Cachet\Composers\AppComposer;
-use CachetHQ\Cachet\Composers\ComponentsComposer;
-use CachetHQ\Cachet\Composers\CurrentUserComposer;
-use CachetHQ\Cachet\Composers\DashboardComposer;
-use CachetHQ\Cachet\Composers\MetricsComposer;
-use CachetHQ\Cachet\Composers\ScheduledComposer;
-use CachetHQ\Cachet\Composers\SettingsComposer;
-use CachetHQ\Cachet\Composers\StatusComposer;
-use CachetHQ\Cachet\Composers\StickiedComposer;
-use CachetHQ\Cachet\Composers\ThemeComposer;
-use CachetHQ\Cachet\Composers\TimelineComposer;
-use CachetHQ\Cachet\Composers\TimezoneLocaleComposer;
+use CachetHQ\Cachet\View\Composers\AppComposer;
+use CachetHQ\Cachet\View\Composers\ComponentsComposer;
+use CachetHQ\Cachet\View\Composers\CurrentUserComposer;
+use CachetHQ\Cachet\View\Composers\DashboardComposer;
+use CachetHQ\Cachet\View\Composers\MetricsComposer;
+use CachetHQ\Cachet\View\Composers\ScheduledComposer;
+use CachetHQ\Cachet\View\Composers\SettingsComposer;
+use CachetHQ\Cachet\View\Composers\StatusComposer;
+use CachetHQ\Cachet\View\Composers\StickiedComposer;
+use CachetHQ\Cachet\View\Composers\ThemeComposer;
+use CachetHQ\Cachet\View\Composers\TimelineComposer;
+use CachetHQ\Cachet\View\Composers\TimezoneLocaleComposer;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Support\ServiceProvider;
 

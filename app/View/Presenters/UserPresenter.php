@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Presenters;
+namespace CachetHQ\Cachet\View\Presenters;
 
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Support\Facades\Config;

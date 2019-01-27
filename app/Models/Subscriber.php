@@ -12,7 +12,7 @@
 namespace CachetHQ\Cachet\Models;
 
 use AltThree\Validator\ValidatingTrait;
-use CachetHQ\Cachet\Presenters\SubscriberPresenter;
+use CachetHQ\Cachet\View\Presenters\SubscriberPresenter;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
