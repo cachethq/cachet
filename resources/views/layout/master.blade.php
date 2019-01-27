@@ -44,7 +44,7 @@
     <title>@yield('title', $siteTitle)</title>
 
     @if($enableExternalDependencies)
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&subset={{ $fontSubset }}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&amp;subset={{ $fontSubset }}" rel="stylesheet" type="text/css">
     @endif
     <link rel="stylesheet" href="{{ mix('dist/css/app.css') }}">
 
