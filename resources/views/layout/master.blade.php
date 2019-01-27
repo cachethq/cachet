@@ -15,7 +15,7 @@
     <meta name="description" content="@yield('description', trans('cachet.meta.description.overview', ['app' => $appName]))">
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="{{ $siteTitle }}">
+    <meta property="og:title" content="@yield('title', $siteTitle)">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="@yield('description', trans('cachet.meta.description.overview', ['app' => $appName]))">
 
