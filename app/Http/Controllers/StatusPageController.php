@@ -20,11 +20,11 @@ use CachetHQ\Cachet\Models\Schedule;
 use CachetHQ\Cachet\Repositories\Metric\MetricRepository;
 use CachetHQ\Cachet\Services\Dates\DateFactory;
 use GrahamCampbell\Binput\Facades\Binput;
-use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Str;
 use Jenssegers\Date\Date;
 use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
 
@@ -221,7 +221,7 @@ class StatusPageController extends AbstractApiController
         if (!$privacyStatement) {
             return abort(404);
         }
-        if (starts_with($privacyStatement, ['http://', 'https://']) && filter_var($privacyStatement, FILTER_VALIDATE_URL)) {
+        if (Str::startsWith($privacyStatement, ['http://', 'https://']) && filter_var($privacyStatement, FILTER_VALIDATE_URL)) {
             return redirect($privacyStatement);
         }
 
@@ -240,7 +240,7 @@ class StatusPageController extends AbstractApiController
         if (!$imprint) {
             return abort(404);
         }
-        if (starts_with($imprint, ['http://', 'https://']) && filter_var($imprint, FILTER_VALIDATE_URL)) {
+        if (Str::startsWith($imprint, ['http://', 'https://']) && filter_var($imprint, FILTER_VALIDATE_URL)) {
             return redirect($imprint);
         }
 
