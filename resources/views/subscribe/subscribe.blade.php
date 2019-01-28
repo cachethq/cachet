@@ -24,11 +24,13 @@
                     <div class="form-group">
                         <input class="form-control" type="email" name="email" value="{{ old("email") }}" placeholder="email@example.com">
                     </div>
+                    @if (!!Config::get("setting.privacy_statement"))
                     <div class="checkbox">
                         <label>
                             <input type="checkbox" name="acceptPrivacyStatement" value="1" /> {!! trans("cachet.subscriber.accept-privacy-statement", ["url" => cachet_route("privacy") ]) !!}
                         </label>
                     </div>
+                    @endif
                     <button type="submit" class="btn btn-success">{{ trans('cachet.subscriber.button') }}</button>
                 </form>
             </div>

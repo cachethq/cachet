@@ -16,12 +16,16 @@
             </div>
             <div class="col-sm-8">
                 <ul class="list-inline">
+                    @if(Config::get('setting.privacy_statement'))
                     <li>
                         <a class="btn btn-link" href="{{ cachet_route("privacy") }}">{{ trans("forms.settings.privacy.privacy-statement") }}</a>
                     </li>
+                    @endif
+                    @if(Config::get('setting.imprint'))
                     <li>
                         <a class="btn btn-link" href="{{ cachet_route("imprint") }}">{{ trans("forms.settings.privacy.imprint") }}</a>
                     </li>
+                    @endif
                     @if($currentUser || $dashboardLink)
                     <li>
                         <a class="btn btn-link" href="{{ cachet_route('dashboard') }}">{{ trans('dashboard.dashboard') }}</a>

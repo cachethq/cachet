@@ -21,7 +21,7 @@
     {{-- Footer --}}
     @slot('footer')
         @component('mail::footer')
-            © {{ date('Y') }} {{ setting('app_name', config('app.name')) }}. @lang('All rights reserved.') [{{ trans('forms.settings.privacy.privacy-statement') }}]({{ cachet_route('privacy') }}) &mdash; [{{ trans('forms.settings.privacy.imprint') }}]({{ cachet_route('imprint') }})
+            © {{ date('Y') }} {{ setting('app_name', config('app.name')) }}. @lang('All rights reserved.') @if(Config::get("setting.privacy_statement"))[{{ trans('forms.settings.privacy.privacy-statement') }}]({{ cachet_route('privacy') }}) &mdash;@endif @if(Config::get("setting.imprint"))[{{ trans('forms.settings.privacy.imprint') }}]({{ cachet_route('imprint') }})@endif
         @endcomponent
     @endslot
 @endcomponent
