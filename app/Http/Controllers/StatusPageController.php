@@ -218,7 +218,10 @@ class StatusPageController extends AbstractApiController
     public function showPrivacyStatement()
     {
         $privacyStatement = trim(Config::get('setting.privacy_statement', ''));
-        if (starts_with($privacyStatement, 'https://') && filter_var($privacyStatement, FILTER_VALIDATE_URL)) {
+        if (!$privacyStatement) {
+            return abort(404);
+        }
+        if (starts_with($privacyStatement, ['http://', 'https://']) && filter_var($privacyStatement, FILTER_VALIDATE_URL)) {
             return redirect($privacyStatement);
         }
 
@@ -234,7 +237,10 @@ class StatusPageController extends AbstractApiController
     public function showImprint()
     {
         $imprint = trim(Config::get('setting.imprint', ''));
-        if (starts_with($imprint, 'https://') && filter_var($imprint, FILTER_VALIDATE_URL)) {
+        if (!$imprint) {
+            return abort(404);
+        }
+        if (starts_with($imprint, ['http://', 'https://']) && filter_var($imprint, FILTER_VALIDATE_URL)) {
             return redirect($imprint);
         }
 
