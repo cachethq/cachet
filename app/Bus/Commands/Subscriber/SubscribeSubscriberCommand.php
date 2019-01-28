@@ -66,7 +66,7 @@ final class SubscribeSubscriberCommand
      *
      * @return void
      */
-    public function __construct($email, $verified = false, $subscriptions = null, $acceptPrivacyStatement = null)
+    public function __construct($email, $verified = false, $subscriptions = null, $acceptPrivacyStatement = false)
     {
         $this->email = $email;
         $this->verified = $verified;

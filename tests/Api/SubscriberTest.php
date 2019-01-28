@@ -15,6 +15,7 @@ use CachetHQ\Cachet\Bus\Events\Subscriber\SubscriberHasSubscribedEvent;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Subscriber;
 use CachetHQ\Cachet\Models\Subscription;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Notification;
 
 /**
@@ -51,6 +52,8 @@ class SubscriberTest extends AbstractApiTestCase
 
         Notification::fake();
 
+        Config::set('setting.privacy_statement', 'somevalue');
+
         $this->doesntExpectEvents(SubscriberHasSubscribedEvent::class);
 
         $response = $this->json('POST', '/api/v1/subscribers', [
@@ -58,6 +61,26 @@ class SubscriberTest extends AbstractApiTestCase
         ]);
 
         $response->assertStatus(400);
+    }
+
+    public function test_can_create_subscriber_with_accepting_privacy_statement()
+    {
+        $this->beUser();
+
+        Notification::fake();
+
+        Config::set('setting.privacy_statement', 'somevalue');
+
+        $this->expectsEvents(SubscriberHasSubscribedEvent::class);
+
+        $response = $this->json('POST', '/api/v1/subscribers', [
+            'email'                  => 'support@alt-three.com',
+            'acceptPrivacyStatement' => true
+        ]);
+
+        $response->assertStatus(200);
+        $response->assertHeader('Content-Type', 'application/json');
+        $response->assertJsonFragment(['email' => 'support@alt-three.com']);
     }
 
     public function test_can_create_subscriber()
@@ -70,7 +93,6 @@ class SubscriberTest extends AbstractApiTestCase
 
         $response = $this->json('POST', '/api/v1/subscribers', [
             'email'                  => 'support@alt-three.com',
-            'acceptPrivacyStatement' => true,
         ]);
 
         $response->assertStatus(200);
@@ -88,7 +110,6 @@ class SubscriberTest extends AbstractApiTestCase
 
         $response = $this->json('POST', '/api/v1/subscribers', [
             'email'                  => 'support@alt-three.com',
-            'acceptPrivacyStatement' => true,
             'verify'                 => true,
         ]);
 
