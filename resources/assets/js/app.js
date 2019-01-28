@@ -20,8 +20,6 @@ window.axios.defaults.headers.common = {
     'X-Requested-With': 'XMLHttpRequest'
 };
 
-window.Vue.prototype.$http = window.axios;
-
 /**
  * Flatpickr.
  */

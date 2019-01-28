@@ -21,6 +21,8 @@
     </div>
 </template>
 <script>
+    import axios from "axios";
+
     export default {
         props: {
             "label": String,
@@ -40,8 +42,7 @@
 
         methods: {
             renderMarkdown() {
-                this.$http
-                    .get(this.previewUrl, {params: {markdown: this.valueModel}})
+                axios.get(this.previewUrl, {params: {markdown: this.valueModel}})
                     .then((response) => {
                         this.renderedMarkdown = response.data;
                     })
