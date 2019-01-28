@@ -429,7 +429,7 @@ module.exports = function normalizeComponent (
 "use strict";
 
 
-var asap = __webpack_require__(14);
+var asap = __webpack_require__(15);
 
 function noop() {}
 
@@ -650,6 +650,12 @@ function doResolve(fn, promise) {
 /* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
+module.exports = __webpack_require__(165);
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
@@ -751,8 +757,8 @@ module.exports = defaults;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(19)))
 
 /***/ }),
-/* 13 */,
-/* 14 */
+/* 14 */,
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -983,7 +989,7 @@ rawAsap.makeRequestCallFromTimer = makeRequestCallFromTimer;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -18093,16 +18099,10 @@ rawAsap.makeRequestCallFromTimer = makeRequestCallFromTimer;
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8), __webpack_require__(16)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8), __webpack_require__(17)(module)))
 
 /***/ }),
-/* 16 */,
-/* 17 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(165);
-
-/***/ }),
+/* 17 */,
 /* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18525,16 +18525,14 @@ var Promise = __webpack_require__(154);
 
 __webpack_require__(162);
 
-window.Vue = __webpack_require__(13);
+window.Vue = __webpack_require__(14);
 
-window.axios = __webpack_require__(17);
+window.axios = __webpack_require__(12);
 
 window.axios.defaults.headers.common = {
     'X-CSRF-Token': window.Global.csrfToken,
     'X-Requested-With': 'XMLHttpRequest'
 };
-
-window.Vue.prototype.$http = window.axios;
 
 /**
  * Flatpickr.
@@ -18908,7 +18906,7 @@ Promise.prototype.nodeify = function (callback, ctx) {
 
 
 // rawAsap provides everything we need except exception management.
-var rawAsap = __webpack_require__(14);
+var rawAsap = __webpack_require__(15);
 // RawTasks are recycled to reduce GC churn.
 var freeTasks = [];
 // We queue errors to ensure they are thrown in right order (FIFO).
@@ -19046,7 +19044,7 @@ Promise.disableSynchronous = function() {
 /* 162 */
 /***/ (function(module, exports, __webpack_require__) {
 
-window._ = __webpack_require__(15);
+window._ = __webpack_require__(16);
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -19066,7 +19064,7 @@ try {
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-window.axios = __webpack_require__(17);
+window.axios = __webpack_require__(12);
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
@@ -31313,7 +31311,7 @@ if (typeof jQuery === 'undefined') {
 var utils = __webpack_require__(3);
 var bind = __webpack_require__(18);
 var Axios = __webpack_require__(167);
-var defaults = __webpack_require__(12);
+var defaults = __webpack_require__(13);
 
 /**
  * Create an instance of Axios
@@ -31396,7 +31394,7 @@ function isSlowBuffer (obj) {
 "use strict";
 
 
-var defaults = __webpack_require__(12);
+var defaults = __webpack_require__(13);
 var utils = __webpack_require__(3);
 var InterceptorManager = __webpack_require__(176);
 var dispatchRequest = __webpack_require__(177);
@@ -31935,7 +31933,7 @@ module.exports = InterceptorManager;
 var utils = __webpack_require__(3);
 var transformData = __webpack_require__(178);
 var isCancel = __webpack_require__(22);
-var defaults = __webpack_require__(12);
+var defaults = __webpack_require__(13);
 var isAbsoluteURL = __webpack_require__(179);
 var combineURLs = __webpack_require__(180);
 
@@ -34572,7 +34570,7 @@ module.exports = Component.exports
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var Vue = __webpack_require__(13);
+var Vue = __webpack_require__(14);
 
 Vue.component('report-incident', __webpack_require__(192));
 Vue.component('invite-team', __webpack_require__(194));
@@ -34857,7 +34855,7 @@ module.exports = Component.exports
 //
 
 var Chart = __webpack_require__(24);
-var _ = __webpack_require__(15);
+var _ = __webpack_require__(16);
 
 // Configure Chart.js
 Chart.defaults.global.elements.point.hitRadius = 10;
@@ -35241,6 +35239,10 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+//
+//
 //
 //
 //
@@ -35262,8 +35264,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: {
+        "label": String,
         "name": String,
         "value": String,
         "helpText": String,
@@ -35283,7 +35288,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         renderMarkdown: function renderMarkdown() {
             var _this = this;
 
-            this.$http.get(this.previewUrl, { params: { markdown: this.valueModel } }).then(function (response) {
+            __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get(this.previewUrl, { params: { markdown: this.valueModel } }).then(function (response) {
                 _this.renderedMarkdown = response.data;
             });
         }
@@ -35334,27 +35339,29 @@ var render = function() {
           attrs: { role: "tabpanel", id: _vm.name }
         },
         [
-          _c("textarea", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.valueModel,
-                expression: "valueModel"
-              }
-            ],
-            staticClass: "form-control",
-            attrs: { name: _vm.name, rows: "5" },
-            domProps: { value: _vm.valueModel },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
+          _c("div", { staticClass: "markdown-control" }, [
+            _c("textarea", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.valueModel,
+                  expression: "valueModel"
                 }
-                _vm.valueModel = $event.target.value
+              ],
+              staticClass: "form-control",
+              attrs: { name: _vm.name, rows: "5", "aria-label": _vm.label },
+              domProps: { value: _vm.valueModel },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.valueModel = $event.target.value
+                }
               }
-            }
-          }),
+            })
+          ]),
           _vm._v(" "),
           _c("div", { staticClass: "help-block" }, [
             _vm._v(
