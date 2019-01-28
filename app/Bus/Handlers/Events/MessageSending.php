@@ -14,8 +14,7 @@ namespace CachetHQ\Cachet\Bus\Handlers\Events;
 /**
  * This class is called immediately before sending a message into the mail channel.
  *
- * @author Graham Campbell <graham@alt-three.com>
- * @author James Brooks <james@alt-three.com>
+ * @author Erik Anders <erik.anders@securepoint.de>
  */
 class MessageSending
 {
