@@ -57,7 +57,7 @@ class SubscriberController extends AbstractApiController
                 Binput::get('components', null),
                 // set the privacy statement to "accepted" when it is not given in the input
                 // and the privacy_statement setting is empty
-                Binput::get('acceptPrivacyStatement', !Config::get("setting.privacy_statement"))
+                Binput::get('acceptPrivacyStatement', !Config::get('setting.privacy_statement'))
             ));
         } catch (QueryException $e) {
             throw new BadRequestHttpException();

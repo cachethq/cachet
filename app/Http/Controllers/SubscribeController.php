@@ -80,7 +80,7 @@ class SubscribeController extends Controller
         $verified = app(Repository::class)->get('setting.skip_subscriber_verification');
         // set the privacy statement to "accepted" when it is not given in the input
         // and the privacy_statement setting is empty
-        $acceptPrivacyStatement = Binput::get('acceptPrivacyStatement', !Config::get("setting.privacy_statement"));
+        $acceptPrivacyStatement = Binput::get('acceptPrivacyStatement', !Config::get('setting.privacy_statement'));
 
         try {
             $subscription = execute(new SubscribeSubscriberCommand($email, $verified, $subscriptions, $acceptPrivacyStatement));

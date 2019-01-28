@@ -75,7 +75,7 @@ class SubscriberTest extends AbstractApiTestCase
 
         $response = $this->json('POST', '/api/v1/subscribers', [
             'email'                  => 'support@alt-three.com',
-            'acceptPrivacyStatement' => true
+            'acceptPrivacyStatement' => true,
         ]);
 
         $response->assertStatus(200);
