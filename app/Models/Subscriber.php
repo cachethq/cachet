@@ -133,7 +133,7 @@ class Subscriber extends Model implements HasPresenter
     public function scopeNotVerifiedFor(Builder $query, string $interval = 'P1M')
     {
         $maxAge = Carbon::now()->subDays(
-            CarbonInterval::make($interval)->totalDayz
+            CarbonInterval::make($interval)->totalDays
         );
 
         return $query->whereNull('verified_at')
