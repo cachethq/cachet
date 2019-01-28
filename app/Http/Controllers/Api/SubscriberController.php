@@ -17,6 +17,7 @@ use CachetHQ\Cachet\Models\Subscriber;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Database\QueryException;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
@@ -54,7 +55,9 @@ class SubscriberController extends AbstractApiController
                 Binput::get('email'),
                 $verified,
                 Binput::get('components', null),
-                Binput::get('acceptPrivacyStatement', null)
+                // set the privacy statement to "accepted" when it is not given in the input
+                // and the privacy_statement setting is empty
+                Binput::get('acceptPrivacyStatement', !Config::get("setting.privacy_statement"))
             ));
         } catch (QueryException $e) {
             throw new BadRequestHttpException();
