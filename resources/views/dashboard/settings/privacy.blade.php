@@ -23,6 +23,7 @@
                                     <textarea-with-markdown-preview
                                             name="privacy_statement"
                                             value="{{ Config::get('setting.privacy_statement') }}"
+                                            label="{{ trans('forms.settings.privacy.privacy-statement') }}"
                                             help-text="{{ trans('forms.settings.privacy.privacy-statement-help') }}"
                                             lang-markdown="{{ trans("dashboard.markdown") }}"
                                             lang-preview="{{ trans("dashboard.preview") }}"
