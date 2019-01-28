@@ -7,7 +7,9 @@
 
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane active" :id="name">
-                <textarea class="form-control" :name="name" rows="5" v-model="valueModel"></textarea>
+                <div class="markdown-control">
+                    <textarea class="form-control" :name="name" rows="5" v-model="valueModel" :aria-label="label"></textarea>
+                </div>
                 <div class="help-block">
                     {{ helpText }}
                 </div>
@@ -21,6 +23,7 @@
 <script>
     export default {
         props: {
+            "label": String,
             "name": String,
             "value": String,
             "helpText": String,
