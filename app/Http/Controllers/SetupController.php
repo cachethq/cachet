@@ -199,7 +199,7 @@ class SetupController extends Controller
         });
 
         $v->sometimes(['env.mail_username'], 'required', function ($input) {
-            return !in_array($input->env['mail_username'], ['sendmail']);
+            return !in_array($input->env['mail_driver'], ['sendmail', 'log']);
         });
 
         if ($v->passes()) {
