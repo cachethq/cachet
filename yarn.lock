@@ -2789,10 +2789,10 @@ getpass@^0.1.1:
   dependencies:
     assert-plus "^1.0.0"
 
-github-markdown-css@^2.3.0:
-  version "2.10.0"
-  resolved "https://registry.yarnpkg.com/github-markdown-css/-/github-markdown-css-2.10.0.tgz#0612fed22816b33b282f37ef8def7a4ecabfe993"
-  integrity sha512-RX5VUC54uX6Lvrm226M9kMzsNeOa81MnKyxb3J0G5KLjyoOySOZgwyKFkUpv6iUhooiUZdogk+OTwQPJ4WttYg==
+github-markdown-css@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/github-markdown-css/-/github-markdown-css-3.0.0.tgz#e56ae4c7c4a3039452a15945080c3e8b7b009e62"
+  integrity sha512-n1KCzD24m9DLlThZYAmnSI5DVYP0DUo6e9JyZS4W71XpbqlL8Ich0c3mgaPG7EYt4Uuka9qulrguaPrLubTVHg==
 
 glob-all@^3.1.0:
   version "3.1.0"
