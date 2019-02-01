@@ -25,6 +25,7 @@ use CachetHQ\Cachet\Settings\Repository as Setting;
 use Exception;
 use GuzzleHttp\Client;
 use Illuminate\Contracts\Config\Repository;
+use Illuminate\Support\Str;
 
 /**
  * This is the beacon class.
@@ -84,7 +85,7 @@ class Beacon implements BeaconContract
         $setting = app(Setting::class);
 
         if (!$installId = $setting->get('install_id', null)) {
-            $installId = sha1(str_random(20));
+            $installId = sha1(Str::random(20));
 
             $setting->set('install_id', $installId);
         }

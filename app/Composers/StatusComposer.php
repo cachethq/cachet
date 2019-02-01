@@ -13,6 +13,7 @@ namespace CachetHQ\Cachet\Composers;
 
 use CachetHQ\Cachet\Integrations\Contracts\System;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Arr;
 
 /**
  * This is the status composer.
@@ -52,7 +53,7 @@ class StatusComposer
     {
         $status = $this->system->getStatus();
 
-        $view->withSystemStatus(array_get($status, 'system_status'));
-        $view->withSystemMessage(array_get($status, 'system_message'));
+        $view->withSystemStatus(Arr::get($status, 'system_status'));
+        $view->withSystemMessage(Arr::get($status, 'system_message'));
     }
 }
