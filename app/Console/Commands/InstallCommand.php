@@ -15,8 +15,8 @@ use CachetHQ\Cachet\Models\User;
 use Dotenv\Dotenv;
 use Dotenv\Exception\InvalidPathException;
 use Illuminate\Console\Command;
-use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Contracts\Console\Kernel;
+use Illuminate\Contracts\Events\Dispatcher;
 
 /**
  * This is the install command class.
@@ -315,7 +315,7 @@ class InstallCommand extends Command
 
     /**
      * Configure Cachet.
-     * 
+     *
      * @param array $config
      *
      * @return void
@@ -350,17 +350,17 @@ class InstallCommand extends Command
 
         // We need to refresh the config to get access to the newly connected database.
         $this->getFreshConfiguration();
-        
+
         // Now we need to install the application.
         // $this->call('cachet:install');
-        
+
         $user = [
             'username' => $this->ask('Please enter your username'),
             'email'    => $this->ask('Please enter your email'),
             'password' => $this->secret('Please enter your password'),
             'level'    => User::LEVEL_ADMIN,
         ];
-        
+
         User::create($user);
     }
 
@@ -412,7 +412,7 @@ class InstallCommand extends Command
     protected function getFreshConfiguration()
     {
         $app = require $this->laravel->bootstrapPath().'/app.php';
-         $app->make(Kernel::class)->bootstrap();
+        $app->make(Kernel::class)->bootstrap();
     }
 
     /**
