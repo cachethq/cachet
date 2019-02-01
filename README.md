@@ -25,7 +25,7 @@ Cachet is a beautiful and powerful open source status page system.
 
 ## Requirements
 
-- PHP 5.5.9+ or newer
+- PHP 5.5.9 or newer (not PHP 7.*)
 - Apache or Nginx server
 - [Composer](https://getcomposer.org)
 
