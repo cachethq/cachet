@@ -18,6 +18,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 use McCool\LaravelAutoPresenter\HasPresenter;
 
 /**
@@ -188,7 +189,7 @@ class User extends Authenticatable implements HasPresenter
      */
     public static function generateApiKey()
     {
-        return str_random(20);
+        return Str::random(20);
     }
 
     /**

@@ -55,7 +55,7 @@ class ScheduleTest extends AbstractApiTestCase
 
         $response = $this->json('POST', '/api/v1/schedules/', $schedule);
 
-        array_forget($schedule, 'scheduled_at');
+        Arr::forget($schedule, 'scheduled_at');
 
         $response->assertStatus(200);
         $response->assertJsonFragment($schedule);
