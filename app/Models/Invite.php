@@ -13,6 +13,7 @@ namespace CachetHQ\Cachet\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Str;
 
 /**
  * This is the invite class.
@@ -51,7 +52,7 @@ class Invite extends Model
 
         self::creating(function ($invite) {
             if (!$invite->code) {
-                $invite->code = str_random(20);
+                $invite->code = Str::random(20);
             }
         });
     }

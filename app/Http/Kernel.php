@@ -12,6 +12,7 @@
 namespace CachetHQ\Cachet\Http;
 
 use AltThree\Throttle\ThrottlingMiddleware;
+use Barryvdh\Cors\HandleCors;
 use CachetHQ\Cachet\Http\Middleware\Admin;
 use CachetHQ\Cachet\Http\Middleware\ApiAuthentication;
 use CachetHQ\Cachet\Http\Middleware\Authenticate;
@@ -33,8 +34,8 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $middleware = [
-        TrustProxies::class,
-        CheckForMaintenanceMode::class,
+        // TrustProxies::class,
+        // CheckForMaintenanceMode::class,
     ];
 
     /**
@@ -45,6 +46,7 @@ class Kernel extends HttpKernel
     protected $routeMiddleware = [
         'admin'       => Admin::class,
         'can'         => Authorize::class,
+        'cors'        => HandleCors::class,
         'auth'        => Authenticate::class,
         'auth.api'    => ApiAuthentication::class,
         'guest'       => RedirectIfAuthenticated::class,

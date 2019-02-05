@@ -12,7 +12,7 @@
     </li>
 
     <div class="group-items {{ $componentGroup->is_collapsed ? "hide" : null }}">
-        @each('partials.component', $componentGroup->enabled_components()->orderBy('order')->get(), 'component')
+        @each('partials.component', $componentGroup->enabled_components, 'component')
     </div>
     @endif
 </ul>
@@ -25,7 +25,7 @@
         <strong>{{ trans('cachet.components.group.other') }}</strong>
 
         <div class="pull-right">
-            <i class="ion ion-ios-circle-filled text-component-{{ $ungroupedComponents->max('status') }} {{ $ungroupedComponents->sortByDesc('status')->first()->status_color }}" data-toggle="tooltip" title="{{ $ungroupedComponents->sortByDesc('status')->first()->human_status }}"></i>
+            <i class="ion ion-ios-circle-filled text-component-{{ $ungroupedComponents->max('status') }} {{ $ungroupedComponents->first()->status_color }}" data-toggle="tooltip" title="{{ $ungroupedComponents->first()->human_status }}"></i>
         </div>
     </li>
 

@@ -1,10 +1,8 @@
 {
-    "/dist/js/vendor.js": "/dist/js/vendor.js",
-    "/dist/js/app.js": "/dist/js/app.js",
-    "/dist/css/dashboard/dashboard.css": "/dist/css/dashboard/dashboard.css",
-    "/dist/css/app.css": "/dist/css/app.css",
-    "/dist/js/manifest.js": "/dist/js/manifest.js",
-    "/resources/assets/sass/plugins/_jquery.minicolors.scss": "/resources/assets/sass/plugins/_jquery.minicolors.scss",
-    "/resources/assets/sass/plugins/_github-markdown.scss": "/resources/assets/sass/plugins/_github-markdown.scss",
-    "/dist/js/all.js": "/dist/js/all.js"
+    "/dist/js/vendor.js": "/dist/js/vendor.js?id=9da67b1a31baa894a861",
+    "/dist/js/app.js": "/dist/js/app.js?id=4f077fead7469fadfa2d",
+    "/dist/css/dashboard/dashboard.css": "/dist/css/dashboard/dashboard.css?id=51aba3fcf36f00c0f135",
+    "/dist/css/app.css": "/dist/css/app.css?id=68d1996a1cfa8b51f2c2",
+    "/dist/js/manifest.js": "/dist/js/manifest.js?id=40dcfff9d09d402daf38",
+    "/dist/js/all.js": "/dist/js/all.js?id=d24015f01499b9ec1276"
 }

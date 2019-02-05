@@ -18,6 +18,7 @@ use CachetHQ\Cachet\Bus\Events\User\UserRegeneratedApiTokenEvent;
 use CachetHQ\Cachet\Models\User;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
 use PragmaRX\Google2FA\Vendor\Laravel\Facade as Google2FA;
@@ -44,7 +45,7 @@ class UserController extends Controller
     {
         $userData = array_filter(Binput::only(['username', 'email', 'password', 'google2fa']));
 
-        $enable2FA = (bool) array_pull($userData, 'google2fa');
+        $enable2FA = (bool) Arr::pull($userData, 'google2fa');
 
         // Let's enable/disable auth
         if ($enable2FA && !Auth::user()->hasTwoFactor) {

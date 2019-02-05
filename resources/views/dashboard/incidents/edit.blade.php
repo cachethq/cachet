@@ -111,6 +111,14 @@
                         <label>{{ trans('forms.incidents.occurred_at') }}</label> <small class="text-muted">{{ trans('forms.optional') }}</small>
                         <input type="text" name="occurred_at" class="form-control flatpickr-time" data-date-format="Y-m-d H:i" value="{{ $incident->occurred_at_datetimepicker }}" placeholder="{{ trans('forms.optional') }}">
                     </div>
+                    <div class="form-group">
+                        <label>{{ trans('forms.seo.title') }}</label> <small class="text-muted">{{ trans('forms.optional') }}</small>
+                        <input type="text" name="seo[title]" class="form-control"  value="{{ array_get($incident->meta, 'seo.title', '')  }}">
+                    </div>
+                    <div class="form-group">
+                        <label>{{ trans('forms.seo.description') }}</label> <small class="text-muted">{{ trans('forms.optional') }}</small>
+                        <input type="text" name="seo[description]" class="form-control" value="{{ array_get($incident->meta, 'seo.description', '') }}">
+                    </div>
                 </fieldset>
 
                 <div class="form-group">

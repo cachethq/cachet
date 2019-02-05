@@ -10,6 +10,7 @@
  */
 
 return [
+
     /*
      |--------------------------------------------------------------------------
      | Laravel CORS
@@ -19,11 +20,13 @@ return [
      | to accept any value.
      |
      */
-    'supportsCredentials' => false,
-    'allowedOrigins'      => ['*'],
-    'allowedHeaders'      => ['X-Cachet-Token'],
-    'allowedMethods'      => ['*'],
-    'exposedHeaders'      => [],
-    'maxAge'              => 3600,
-    'hosts'               => [],
+
+    'supportsCredentials'    => false,
+    'allowedOrigins'         => ['*'],
+    'allowedOriginsPatterns' => [],
+    'allowedHeaders'         => ['X-Cachet-Token'],
+    'allowedMethods'         => ['*'],
+    'exposedHeaders'         => [],
+    'maxAge'                 => 3600,
+
 ];
