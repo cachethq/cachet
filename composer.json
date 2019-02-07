@@ -67,8 +67,6 @@
         "graham-campbell/testbench-core": "^3.0",
         "mockery/mockery": "^1.2",
         "phpunit/phpunit": "^7.4",
-        "symfony/css-selector": "^4.1",
-        "symfony/dom-crawler": "^4.1",
         "tightenco/mailthief": "^0.3.14"
     },
     "suggest": {
