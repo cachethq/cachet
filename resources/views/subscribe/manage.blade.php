@@ -20,22 +20,24 @@
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             @if($componentGroups->isNotEmpty() || $ungroupedComponents->isNotEmpty())
             @foreach($componentGroups as $componentGroup)
-            <div class="list-group components">
+            <ul class="list-group components">
                 @if($componentGroup->enabled_components->count() > 0)
-                <div class="list-group-item group-name">
-                    <i class="{{ $componentGroup->collapse_class_with_subscriptions($subscriptions) }} group-toggle"></i>
-                    <strong>{{ $componentGroup->name }}</strong>
-                    <div class="pull-right text-muted small">
-                        <a href="javascript: void(0);" class="select-group" id="select-all-{{$componentGroup->id}}">{{ trans('cachet.components.select_all') }}</a>
-                        &nbsp;|&nbsp;
-                        <a href="javascript: void(0);" class="deselect-group" id="deselect-all-{{$componentGroup->id}}">{{ trans('cachet.components.deselect_all') }}</a>
+                    <li class="list-group-item group-name">
+                        <i class="{{ $componentGroup->collapse_class_with_subscriptions($subscriptions) }} group-toggle"></i>
+                        <strong>{{ $componentGroup->name }}</strong>
+                        <div class="pull-right text-muted small">
+                            <a href="javascript: void(0);" class="select-group" id="select-all-{{$componentGroup->id}}">{{ trans('cachet.components.select_all') }}</a>
+                            &nbsp;|&nbsp;
+                            <a href="javascript: void(0);" class="deselect-group" id="deselect-all-{{$componentGroup->id}}">{{ trans('cachet.components.deselect_all') }}</a>
+                        </div>
+                    </li>
+                    <div class="form-group group-items {{ $componentGroup->has_subscriber($subscriptions) ? null : "hide" }}">
+                        @foreach($componentGroup->enabled_components()->orderBy('order')->get() as $component)
+                        @include('partials.component_input', compact($component))
+                        @endforeach
                     </div>
-                </div>
-                @foreach($componentGroup->enabled_components()->orderBy('order')->get() as $component)
-                @include('partials.component_input', compact($component))
-                @endforeach
                 @endif
-            </div>
+            </ul>
             @endforeach
 
             @if($ungroupedComponents->isNotEmpty())
