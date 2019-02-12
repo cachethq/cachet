@@ -22,7 +22,7 @@ use Symfony\Component\HttpKernel\Exception\HttpException;
  * This is the api authentication middleware class.
  *
  * @author Joseph Cohen <joe@alt-three.com>
- * @author Graham Campbell <james@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
  * @author James Brooks <james@alt-three.com>
  */
 class ApiAuthentication
