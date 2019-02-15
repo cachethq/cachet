@@ -11,7 +11,6 @@
 
 namespace CachetHQ\Cachet\Http;
 
-use AltThree\Throttle\ThrottlingMiddleware;
 use Barryvdh\Cors\HandleCors;
 use CachetHQ\Cachet\Http\Middleware\Admin;
 use CachetHQ\Cachet\Http\Middleware\ApiAuthentication;
@@ -21,6 +20,7 @@ use CachetHQ\Cachet\Http\Middleware\ReadyForUse;
 use CachetHQ\Cachet\Http\Middleware\RedirectIfAuthenticated;
 use CachetHQ\Cachet\Http\Middleware\SetupAlreadyCompleted;
 use CachetHQ\Cachet\Http\Middleware\SubscribersConfigured;
+use CachetHQ\Cachet\Http\Middleware\Throttler;
 use CachetHQ\Cachet\Http\Middleware\TrustProxies;
 use Illuminate\Auth\Middleware\Authorize;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
@@ -54,6 +54,6 @@ class Kernel extends HttpKernel
         'ready'       => ReadyForUse::class,
         'setup'       => SetupAlreadyCompleted::class,
         'subscribers' => SubscribersConfigured::class,
-        'throttle'    => ThrottlingMiddleware::class,
+        'throttle'    => Throttler::class,
     ];
 }

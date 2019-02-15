@@ -36,7 +36,6 @@
         "alt-three/badger": "^5.1",
         "alt-three/bus": "^4.1",
         "alt-three/emoji": "^7.0",
-        "alt-three/throttle": "^3.1",
         "alt-three/twitter": "^3.1",
         "alt-three/validator": "^4.1",
         "aws/aws-sdk-php": "^3.7",
