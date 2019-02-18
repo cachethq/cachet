@@ -21,6 +21,7 @@
             @if($componentGroups->isNotEmpty() || $ungroupedComponents->isNotEmpty())
             @foreach($componentGroups as $componentGroup)
             <ul class="list-group">
+                @if($componentGroup->enabled_components()->count() > 0)
                     <li class="list-group-item group-name">
                         <i class="{{ $componentGroup->collapse_class_with_subscriptions($subscriptions) }} group-toggle"></i>
                         <strong>{{ $componentGroup->name }}</strong>
