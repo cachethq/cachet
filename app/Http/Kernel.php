@@ -34,8 +34,8 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $middleware = [
-        // TrustProxies::class,
-        // CheckForMaintenanceMode::class,
+        TrustProxies::class,
+        CheckForMaintenanceMode::class,
     ];
 
     /**
