@@ -1445,36 +1445,36 @@
         },
         {
             "name": "graham-campbell/markdown",
-            "version": "v10.2.0",
+            "version": "v10.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Markdown.git",
-                "reference": "fdb55c7953c85c60f742294a9cd2b3b010bca0b6"
+                "reference": "e076ed4bc8e98f0444b996acdd6042f6f45fe7c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Markdown/zipball/fdb55c7953c85c60f742294a9cd2b3b010bca0b6",
-                "reference": "fdb55c7953c85c60f742294a9cd2b3b010bca0b6",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Markdown/zipball/e076ed4bc8e98f0444b996acdd6042f6f45fe7c2",
+                "reference": "e076ed4bc8e98f0444b996acdd6042f6f45fe7c2",
                 "shasum": ""
             },
             "require": {
-                "illuminate/contracts": "5.5.*|5.6.*|5.7.*",
-                "illuminate/support": "5.5.*|5.6.*|5.7.*",
-                "illuminate/view": "5.5.*|5.6.*|5.7.*",
+                "illuminate/contracts": "5.5.*|5.6.*|5.7.*|5.8.*",
+                "illuminate/support": "5.5.*|5.6.*|5.7.*|5.8.*",
+                "illuminate/view": "5.5.*|5.6.*|5.7.*|5.8.*",
                 "league/commonmark": "^0.18",
                 "php": "^7.1.3"
             },
             "require-dev": {
                 "graham-campbell/analyzer": "^2.1",
-                "graham-campbell/testbench": "^5.1",
+                "graham-campbell/testbench": "^5.2",
                 "league/commonmark-extras": "^0.1.5",
                 "mockery/mockery": "^1.0",
-                "phpunit/phpunit": "^6.5|^7.0"
+                "phpunit/phpunit": "^6.5|^7.0|^8.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "10.2-dev"
+                    "dev-master": "10.3-dev"
                 },
                 "laravel": {
                     "providers": [
@@ -1509,7 +1509,7 @@
                 "laravel",
                 "markdown"
             ],
-            "time": "2018-09-29T10:19:14+00:00"
+            "time": "2019-02-17T19:48:19+00:00"
         },
         {
             "name": "graham-campbell/security",
