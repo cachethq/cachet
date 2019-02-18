@@ -1247,35 +1247,35 @@
         },
         {
             "name": "graham-campbell/binput",
-            "version": "v6.0.0",
+            "version": "v6.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Binput.git",
-                "reference": "0fa8c850860adf5016d251b504024bc03a5cb742"
+                "reference": "986973e1a9697a903d9850d63ed60eb8658753a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Binput/zipball/0fa8c850860adf5016d251b504024bc03a5cb742",
-                "reference": "0fa8c850860adf5016d251b504024bc03a5cb742",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Binput/zipball/986973e1a9697a903d9850d63ed60eb8658753a2",
+                "reference": "986973e1a9697a903d9850d63ed60eb8658753a2",
                 "shasum": ""
             },
             "require": {
-                "graham-campbell/security": "^6.0",
-                "illuminate/contracts": "5.5.*|5.6.*|5.7.*",
-                "illuminate/http": "5.5.*|5.6.*|5.7.*",
-                "illuminate/support": "5.5.*|5.6.*|5.7.*",
+                "graham-campbell/security": "^6.1",
+                "illuminate/contracts": "5.5.*|5.6.*|5.7.*|5.8.*",
+                "illuminate/http": "5.5.*|5.6.*|5.7.*|5.8.*",
+                "illuminate/support": "5.5.*|5.6.*|5.7.*|5.8.*",
                 "php": "^7.1.3"
             },
             "require-dev": {
                 "graham-campbell/analyzer": "^2.1",
-                "graham-campbell/testbench": "^5.1",
+                "graham-campbell/testbench": "^5.2",
                 "mockery/mockery": "^1.0",
-                "phpunit/phpunit": "^6.5|^7.0"
+                "phpunit/phpunit": "^6.5|^7.0|^8.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "6.0-dev"
+                    "dev-master": "6.1-dev"
                 },
                 "laravel": {
                     "providers": [
@@ -1312,7 +1312,7 @@
                 "laravel",
                 "security"
             ],
-            "time": "2018-12-30T02:14:58+00:00"
+            "time": "2019-02-17T19:48:09+00:00"
         },
         {
             "name": "graham-campbell/exceptions",
@@ -1513,33 +1513,33 @@
         },
         {
             "name": "graham-campbell/security",
-            "version": "v6.0.0",
+            "version": "v6.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Security.git",
-                "reference": "fa9378a3897feba6da9b75c626ad00aa96c76263"
+                "reference": "c594fc141bf117c613cf718803e4a55fe4b7d55b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Security/zipball/fa9378a3897feba6da9b75c626ad00aa96c76263",
-                "reference": "fa9378a3897feba6da9b75c626ad00aa96c76263",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Security/zipball/c594fc141bf117c613cf718803e4a55fe4b7d55b",
+                "reference": "c594fc141bf117c613cf718803e4a55fe4b7d55b",
                 "shasum": ""
             },
             "require": {
                 "graham-campbell/security-core": "^1.0",
-                "illuminate/contracts": "5.5.*|5.6.*|5.7.*",
-                "illuminate/support": "5.5.*|5.6.*|5.7.*",
+                "illuminate/contracts": "5.5.*|5.6.*|5.7.*|5.8.*",
+                "illuminate/support": "5.5.*|5.6.*|5.7.*|5.8.*",
                 "php": "^7.1.3"
             },
             "require-dev": {
                 "graham-campbell/analyzer": "^2.1",
-                "graham-campbell/testbench": "^5.1",
-                "phpunit/phpunit": "^6.5|^7.0"
+                "graham-campbell/testbench": "^5.2",
+                "phpunit/phpunit": "^6.5|^7.0|^8.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "6.0-dev"
+                    "dev-master": "6.1-dev"
                 },
                 "laravel": {
                     "providers": [
@@ -1573,7 +1573,7 @@
                 "laravel",
                 "security"
             ],
-            "time": "2018-12-30T02:00:46+00:00"
+            "time": "2019-02-17T19:48:03+00:00"
         },
         {
             "name": "graham-campbell/security-core",
