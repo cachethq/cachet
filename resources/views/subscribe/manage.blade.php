@@ -20,8 +20,7 @@
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             @if($componentGroups->isNotEmpty() || $ungroupedComponents->isNotEmpty())
             @foreach($componentGroups as $componentGroup)
-            <ul class="list-group components">
-                @if($componentGroup->enabled_components->count() > 0)
+            <ul class="list-group">
                     <li class="list-group-item group-name">
                         <i class="{{ $componentGroup->collapse_class_with_subscriptions($subscriptions) }} group-toggle"></i>
                         <strong>{{ $componentGroup->name }}</strong>
