@@ -41,9 +41,14 @@
             @endforeach
 
             @if($ungroupedComponents->isNotEmpty())
-            <ul class="list-group components">
+            <ul class="list-group">
                 <div class="list-group-item group-name">
                     <strong>{{ trans('cachet.components.group.other') }}</strong>
+                    <div class="pull-right text-muted small">
+                        <a href="javascript: void(0);" class="select-group" id="select-all-{{$componentGroup->id}}">{{ trans('cachet.components.select_all') }}</a>
+                        &nbsp;|&nbsp;
+                        <a href="javascript: void(0);" class="deselect-group" id="deselect-all-{{$componentGroup->id}}">{{ trans('cachet.components.deselect_all') }}</a>
+                    </div>
                 </div>
                 @foreach($ungroupedComponents as $component)
                 @include('partials.component_input', compact($component))
