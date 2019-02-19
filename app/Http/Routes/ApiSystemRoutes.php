@@ -43,7 +43,7 @@ class ApiSystemRoutes
             $router->group(['middleware' => ['auth.api']], function (Registrar $router) {
                 $router->get('ping', 'GeneralController@ping');
                 $router->get('version', 'GeneralController@version');
-                $router->get('status', 'GeneralController@status');
+                $router->get('status', ['uses' => 'GeneralController@status', 'middleware' => ['cache']]);
             });
         });
     }
