@@ -12,6 +12,7 @@
 namespace CachetHQ\Cachet\Models;
 
 use AltThree\Validator\ValidatingTrait;
+use CachetHQ\Cachet\Models\Traits\HasMeta;
 use CachetHQ\Cachet\Models\Traits\HasTags;
 use CachetHQ\Cachet\Models\Traits\SearchableTrait;
 use CachetHQ\Cachet\Models\Traits\SortableTrait;
@@ -30,7 +31,12 @@ use McCool\LaravelAutoPresenter\HasPresenter;
  */
 class Incident extends Model implements HasPresenter
 {
-    use HasTags, SearchableTrait, SoftDeletes, SortableTrait, ValidatingTrait;
+    use HasMeta,
+        HasTags,
+        SearchableTrait,
+        SoftDeletes,
+        SortableTrait,
+        ValidatingTrait;
 
     /**
      * Status for incident being investigated.
@@ -179,16 +185,6 @@ class Incident extends Model implements HasPresenter
     public function component()
     {
         return $this->belongsTo(Component::class, 'component_id', 'id');
-    }
-
-    /**
-     * Get all of the meta relation.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
-     */
-    public function meta()
-    {
-        return $this->morphMany(Meta::class, 'meta');
     }
 
     /**

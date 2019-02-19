@@ -13,6 +13,7 @@ namespace CachetHQ\Cachet\Models;
 
 use AltThree\Validator\ValidatingTrait;
 use AltThree\Validator\ValidationException;
+use CachetHQ\Cachet\Models\Traits\HasMeta;
 use CachetHQ\Cachet\Models\Traits\SortableTrait;
 use CachetHQ\Cachet\Presenters\MetricPresenter;
 use Illuminate\Database\Eloquent\Builder;
@@ -22,7 +23,9 @@ use McCool\LaravelAutoPresenter\HasPresenter;
 
 class Metric extends Model implements HasPresenter
 {
-    use SortableTrait, ValidatingTrait;
+    use HasMeta,
+        SortableTrait,
+        ValidatingTrait;
 
     /**
      * The calculation type of sum.
@@ -163,16 +166,6 @@ class Metric extends Model implements HasPresenter
         self::deleting(function ($model) {
             $model->points()->delete();
         });
-    }
-
-    /**
-     * Get the meta relation.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
-     */
-    public function meta()
-    {
-        return $this->morphMany(Meta::class, 'meta');
     }
 
     /**
