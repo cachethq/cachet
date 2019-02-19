@@ -54,8 +54,8 @@ class GeneralTest extends AbstractApiTestCase
                  ->assertJsonFragment([
                      'data' => [
                          'status'  => 'success',
-                         'message' => 'System operational'
-                     ]
+                         'message' => 'System operational',
+                     ],
                  ]);
     }
 
@@ -72,8 +72,8 @@ class GeneralTest extends AbstractApiTestCase
                  ->assertJsonFragment([
                      'data' => [
                          'status'  => 'info',
-                         'message' => 'The system is experiencing issues'
-                     ]
+                         'message' => 'The system is experiencing issues',
+                     ],
                  ]);
     }
 }
