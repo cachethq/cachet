@@ -306,7 +306,7 @@ $(function () {
             });
         };
 
-        sparkLine(false);
+        sparkLine();
     }
 
     function goToStep(current, next) {
