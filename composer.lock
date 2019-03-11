@@ -2361,16 +2361,16 @@
         },
         {
             "name": "laravolt/avatar",
-            "version": "2.1.0",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravolt/avatar.git",
-                "reference": "68293c983d08caf11a668613a958325b94389fc8"
+                "reference": "0bd373ca7f19600b9b78316dffafba9247cdfbc2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravolt/avatar/zipball/68293c983d08caf11a668613a958325b94389fc8",
-                "reference": "68293c983d08caf11a668613a958325b94389fc8",
+                "url": "https://api.github.com/repos/laravolt/avatar/zipball/0bd373ca7f19600b9b78316dffafba9247cdfbc2",
+                "reference": "0bd373ca7f19600b9b78316dffafba9247cdfbc2",
                 "shasum": ""
             },
             "require": {
@@ -2415,14 +2415,15 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Turn name, email, and any other string into beautiful, initial-based avatar.",
+            "description": "Turn name, email, and any other string into initial-based avatar or gravatar.",
             "homepage": "https://github.com/laravolt/avatar",
             "keywords": [
                 "avatar",
+                "gravatar",
                 "laravel",
                 "laravolt"
             ],
-            "time": "2018-11-08T23:46:21+00:00"
+            "time": "2019-02-14T01:09:22+00:00"
         },
         {
             "name": "lcobucci/jwt",
