@@ -5420,24 +5420,24 @@
         },
         {
             "name": "graham-campbell/testbench-core",
-            "version": "v3.0.0",
+            "version": "v3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-TestBench-Core.git",
-                "reference": "2f1fcb1871aa490fd46efbfcfd25f715a371e800"
+                "reference": "138218735a65f4532d6c4242a44ffa6c591bca09"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-TestBench-Core/zipball/2f1fcb1871aa490fd46efbfcfd25f715a371e800",
-                "reference": "2f1fcb1871aa490fd46efbfcfd25f715a371e800",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-TestBench-Core/zipball/138218735a65f4532d6c4242a44ffa6c591bca09",
+                "reference": "138218735a65f4532d6c4242a44ffa6c591bca09",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.0"
             },
             "require-dev": {
-                "graham-campbell/analyzer": "^2.0",
-                "phpunit/phpunit": "^6.5"
+                "graham-campbell/analyzer": "^2.1",
+                "phpunit/phpunit": "^6.5|^7.0|^8.0"
             },
             "suggest": {
                 "illuminate/support": "Required to use the laravel trait.",
@@ -5477,7 +5477,7 @@
                 "testbench-core",
                 "testing"
             ],
-            "time": "2018-01-02T16:16:42+00:00"
+            "time": "2019-02-16T13:26:40+00:00"
         },
         {
             "name": "hamcrest/hamcrest-php",
