@@ -1316,21 +1316,21 @@
         },
         {
             "name": "graham-campbell/exceptions",
-            "version": "v11.1.0",
+            "version": "v11.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Exceptions.git",
-                "reference": "e13b615499ccbfb7f9772fe1552dcf099a39c4f3"
+                "reference": "75cf28f6358ea43cbc257694879849f34b8b408a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Exceptions/zipball/e13b615499ccbfb7f9772fe1552dcf099a39c4f3",
-                "reference": "e13b615499ccbfb7f9772fe1552dcf099a39c4f3",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Exceptions/zipball/75cf28f6358ea43cbc257694879849f34b8b408a",
+                "reference": "75cf28f6358ea43cbc257694879849f34b8b408a",
                 "shasum": ""
             },
             "require": {
-                "illuminate/contracts": "5.5.*|5.6.*|5.7.*",
-                "illuminate/support": "5.5.*|5.6.*|5.7.*",
+                "illuminate/contracts": "5.5.*|5.6.*|5.7.*|5.8.*",
+                "illuminate/support": "5.5.*|5.6.*|5.7.*|5.8.*",
                 "php": "^7.1.3",
                 "psr/log": "^1.0",
                 "symfony/console": "^3.3|^4.0",
@@ -1340,9 +1340,9 @@
             "require-dev": {
                 "filp/whoops": "^2.1.4",
                 "graham-campbell/analyzer": "^2.1",
-                "graham-campbell/testbench": "^5.1",
+                "graham-campbell/testbench": "^5.2",
                 "mockery/mockery": "^1.0",
-                "phpunit/phpunit": "^6.5|^7.0"
+                "phpunit/phpunit": "^6.5|^7.0|^8.0"
             },
             "suggest": {
                 "filp/whoops": "Enables use of the debug displayer."
@@ -1350,7 +1350,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "11.1-dev"
+                    "dev-master": "11.2-dev"
                 },
                 "laravel": {
                     "providers": [
@@ -1387,7 +1387,7 @@
                 "laravel",
                 "whoops"
             ],
-            "time": "2018-08-23T12:17:59+00:00"
+            "time": "2019-03-10T12:14:59+00:00"
         },
         {
             "name": "graham-campbell/guzzle-factory",
@@ -3826,16 +3826,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v4.2.3",
+            "version": "v4.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "1f0ad51dfde4da8a6070f06adc58b4e37cbb37a4"
+                "reference": "9dc2299a016497f9ee620be94524e6c0af0280a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/1f0ad51dfde4da8a6070f06adc58b4e37cbb37a4",
-                "reference": "1f0ad51dfde4da8a6070f06adc58b4e37cbb37a4",
+                "url": "https://api.github.com/repos/symfony/console/zipball/9dc2299a016497f9ee620be94524e6c0af0280a9",
+                "reference": "9dc2299a016497f9ee620be94524e6c0af0280a9",
                 "shasum": ""
             },
             "require": {
@@ -3894,7 +3894,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2019-01-25T14:35:16+00:00"
+            "time": "2019-02-23T15:17:42+00:00"
         },
         {
             "name": "symfony/contracts",
@@ -4019,16 +4019,16 @@
         },
         {
             "name": "symfony/debug",
-            "version": "v4.2.3",
+            "version": "v4.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/debug.git",
-                "reference": "cf9b2e33f757deb884ce474e06d2647c1c769b65"
+                "reference": "de73f48977b8eaf7ce22814d66e43a1662cc864f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/debug/zipball/cf9b2e33f757deb884ce474e06d2647c1c769b65",
-                "reference": "cf9b2e33f757deb884ce474e06d2647c1c769b65",
+                "url": "https://api.github.com/repos/symfony/debug/zipball/de73f48977b8eaf7ce22814d66e43a1662cc864f",
+                "reference": "de73f48977b8eaf7ce22814d66e43a1662cc864f",
                 "shasum": ""
             },
             "require": {
@@ -4071,7 +4071,7 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2019-01-25T14:35:16+00:00"
+            "time": "2019-03-03T18:11:24+00:00"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -4188,16 +4188,16 @@
         },
         {
             "name": "symfony/http-foundation",
-            "version": "v4.2.3",
+            "version": "v4.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-foundation.git",
-                "reference": "8d2318b73e0a1bc75baa699d00ebe2ae8b595a39"
+                "reference": "850a667d6254ccf6c61d853407b16f21c4579c77"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/8d2318b73e0a1bc75baa699d00ebe2ae8b595a39",
-                "reference": "8d2318b73e0a1bc75baa699d00ebe2ae8b595a39",
+                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/850a667d6254ccf6c61d853407b16f21c4579c77",
+                "reference": "850a667d6254ccf6c61d853407b16f21c4579c77",
                 "shasum": ""
             },
             "require": {
@@ -4238,7 +4238,7 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
-            "time": "2019-01-29T09:49:29+00:00"
+            "time": "2019-02-26T08:03:39+00:00"
         },
         {
             "name": "symfony/http-kernel",
@@ -4374,7 +4374,7 @@
                 },
                 {
                     "name": "Gert de Pagter",
-                    "email": "BackEndTea@gmail.com"
+                    "email": "backendtea@gmail.com"
                 }
             ],
             "description": "Symfony polyfill for ctype functions",
