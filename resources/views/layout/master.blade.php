@@ -25,6 +25,8 @@
     <meta name="msapplication-TileColor" content="{{ $themeGreens }}" />
     <meta name="msapplication-TileImage" content="{{ asset('/img/favicon.png') }}" />
 
+    <link href="{{ Request::fullUrl() }}" rel="canonical">
+
     @if (isset($favicon))
     <link rel="icon" href="{{ asset("/img/{$favicon}.ico") }}" type="image/x-icon">
     <link rel="shortcut icon" href="{{ asset("/img/{$favicon}.png") }}" type="image/png">
