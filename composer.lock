@@ -64,6 +64,7 @@
                 "shield",
                 "svg"
             ],
+            "abandoned": "cachethq/badger",
             "time": "2018-09-29T10:43:08+00:00"
         },
         {
@@ -185,6 +186,7 @@
                 "emoji",
                 "parser"
             ],
+            "abandoned": "cachethq/emoji",
             "time": "2018-12-28T16:34:12+00:00"
         },
         {
@@ -246,6 +248,7 @@
                 "parser",
                 "twitter"
             ],
+            "abandoned": "cachethq/twitter",
             "time": "2018-09-29T10:43:36+00:00"
         },
         {
@@ -1147,16 +1150,16 @@
         },
         {
             "name": "erusev/parsedown",
-            "version": "1.7.1",
+            "version": "1.7.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/erusev/parsedown.git",
-                "reference": "92e9c27ba0e74b8b028b111d1b6f956a15c01fc1"
+                "reference": "6d893938171a817f4e9bc9e86f2da1e370b7bcd7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/erusev/parsedown/zipball/92e9c27ba0e74b8b028b111d1b6f956a15c01fc1",
-                "reference": "92e9c27ba0e74b8b028b111d1b6f956a15c01fc1",
+                "url": "https://api.github.com/repos/erusev/parsedown/zipball/6d893938171a817f4e9bc9e86f2da1e370b7bcd7",
+                "reference": "6d893938171a817f4e9bc9e86f2da1e370b7bcd7",
                 "shasum": ""
             },
             "require": {
@@ -1189,7 +1192,7 @@
                 "markdown",
                 "parser"
             ],
-            "time": "2018-03-08T01:11:30+00:00"
+            "time": "2019-03-17T18:48:37+00:00"
         },
         {
             "name": "fideloper/proxy",
