@@ -78,6 +78,7 @@ class IncidentUpdatedNotification extends Notification
             ->subject(trans('notifications.incident.update.mail.subject'))
             ->markdown('notifications.incident.update', [
                 'incident'               => $this->update->incident,
+                'update'                 => $this->update,
                 'content'                => $content,
                 'actionText'             => trans('notifications.incident.new.mail.action'),
                 'actionUrl'              => cachet_route('incident', [$this->update->incident]),
