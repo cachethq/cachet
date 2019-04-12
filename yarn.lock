@@ -6132,10 +6132,10 @@ sort-keys@^1.0.0:
   dependencies:
     is-plain-obj "^1.0.0"
 
-sortablejs@^1.8.1:
-  version "1.8.1"
-  resolved "https://registry.yarnpkg.com/sortablejs/-/sortablejs-1.8.1.tgz#d19b66cf10aab9521a565b79766f2f3291c18278"
-  integrity sha512-r0bKxZYGUFgv/6DQSWW8TVJBBtupUn6TPnDABd4rlqNq+u94ct5+barZmYauPAQNCKwy56C1kg9Y9msAN7UPag==
+sortablejs@^1.8.4:
+  version "1.8.4"
+  resolved "https://registry.yarnpkg.com/sortablejs/-/sortablejs-1.8.4.tgz#1bbfeafa96d399b83f28e25d8e49d4fbfd867f30"
+  integrity sha512-Brqnzelu1AhFuc0Fn3N/qFex1tlIiuQIUsfu2J8luJ4cRgXYkWrByxa+y5mWEBlj8A0YoABukflIJwvHyrwJ6Q==
 
 source-list-map@^2.0.0:
   version "2.0.1"
