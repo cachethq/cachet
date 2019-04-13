@@ -106,7 +106,7 @@ class DashboardController extends Controller
 
         $entries = null;
         if ($feed = $this->feed->latest()) {
-            if ($feed !== 1) {
+            if (is_object($feed)) {
                 $entries = array_slice($feed->channel->item, 0, 5);
             }
         }
