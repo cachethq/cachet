@@ -106,7 +106,9 @@ class DashboardController extends Controller
 
         $entries = null;
         if ($feed = $this->feed->latest()) {
-            $entries = array_slice($feed->channel->item, 0, 5);
+            if ($feed !== 1) {
+                $entries = array_slice($feed->channel->item, 0, 5);
+            }
         }
 
         return View::make('dashboard.index')
