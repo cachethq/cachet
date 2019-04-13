@@ -60,6 +60,7 @@
         "ext-sqlite3": "*",
         "alt-three/testbench": "^4.0",
         "barryvdh/laravel-debugbar": "^3.2",
+        "bugsnag/bugsnag-laravel": "^2.15",
         "filp/whoops": "^2.3",
         "fzaninotto/faker": "^1.8",
         "graham-campbell/analyzer": "^2.1",
