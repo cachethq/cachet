@@ -91,9 +91,9 @@ return [
         ],
 
         'debug' => [
-            'driver' => 'stack',
+            'driver'   => 'stack',
             'channels' => ['bugsnag', 'single'],
-        ]
+        ],
     ],
 
 ];
