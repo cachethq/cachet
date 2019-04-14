@@ -23,6 +23,8 @@ return [
         'group' => [
             'other' => 'Alte Componente',
         ],
+        'select_all'   => 'Select All',
+        'deselect_all' => 'Deselect All',
     ],
 
     // Incidents
@@ -75,14 +77,17 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'           => 'Abonează-te pentru a primi cele mai recente actualizări',
+        'subscribe'           => 'Subscribe to status changes and incident updates',
         'unsubscribe'         => 'Unsubscribe',
         'button'              => 'Abonează-te',
         'manage_subscription' => 'Manage subscription',
         'manage'              => [
-            'no_subscriptions' => 'Acum eşti abonat la toate actualizările.',
-            'my_subscriptions' => 'Acum eşti abonat la următoarele actualizări.',
-            'manage_at_link'   => 'Manage your subscriptions at :link',
+            'notifications'       => 'Notificări',
+            'notifications_for'   => 'Manage notifications for',
+            'no_subscriptions'    => 'Acum eşti abonat la toate actualizările.',
+            'update_subscription' => 'Update Subscription',
+            'my_subscriptions'    => 'Acum eşti abonat la următoarele actualizări.',
+            'manage_at_link'      => 'Manage your subscriptions at :link',
         ],
         'email' => [
             'subscribe'          => 'Abonează-te la actualizări prin email.',

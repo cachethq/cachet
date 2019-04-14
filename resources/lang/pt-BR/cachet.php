@@ -23,6 +23,8 @@ return [
         'group' => [
             'other' => 'Outros componentes',
         ],
+        'select_all'   => 'Select All',
+        'deselect_all' => 'Deselect All',
     ],
 
     // Incidents
@@ -75,14 +77,17 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'           => 'Inscreva-se para obter as atualizações mais recentes',
+        'subscribe'           => 'Subscribe to status changes and incident updates',
         'unsubscribe'         => 'Unsubscribe',
         'button'              => 'Inscreva-se',
         'manage_subscription' => 'Manage subscription',
         'manage'              => [
-            'no_subscriptions' => 'Você está atualmente inscrito a todas as atualizações.',
-            'my_subscriptions' => 'Você está atualmente inscrito para as seguintes atualizações.',
-            'manage_at_link'   => 'Manage your subscriptions at :link',
+            'notifications'       => 'Notificações',
+            'notifications_for'   => 'Manage notifications for',
+            'no_subscriptions'    => 'Você está atualmente inscrito a todas as atualizações.',
+            'update_subscription' => 'Update Subscription',
+            'my_subscriptions'    => 'Você está atualmente inscrito para as seguintes atualizações.',
+            'manage_at_link'      => 'Manage your subscriptions at :link',
         ],
         'email' => [
             'subscribe'          => 'Inscreva-se para atualizações via e-mail.',

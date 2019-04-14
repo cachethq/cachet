@@ -13,6 +13,7 @@ namespace CachetHQ\Cachet\Notifications\Schedule;
 
 use CachetHQ\Cachet\Models\Schedule;
 use Illuminate\Bus\Queueable;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Messages\NexmoMessage;
 use Illuminate\Notifications\Messages\SlackMessage;
@@ -24,7 +25,7 @@ use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
  *
  * @author James Brooks <james@alt-three.com>
  */
-class NewScheduleNotification extends Notification
+class NewScheduleNotification extends Notification implements ShouldQueue
 {
     use Queueable;
 
@@ -74,11 +75,14 @@ class NewScheduleNotification extends Notification
         ]);
 
         return (new MailMessage())
-                    ->subject(trans('notifications.schedule.new.mail.subject'))
-                    ->greeting(trans('notifications.schedule.new.mail.title'))
-                    ->line($content)
-                    ->action(trans('notifications.schedule.new.mail.action'), cachet_route('schedule', [$this->schedule]))
-                    ->line(trans('cachet.subscriber.unsubscribe', ['link' => cachet_route('subscribe.unsubscribe', $notifiable->verify_code)]));
+            ->subject(trans('notifications.schedule.new.mail.subject'))
+            ->markdown('notifications.schedule.new', [
+                'content'                => $content,
+                'unsubscribeText'        => trans('cachet.subscriber.unsubscribe'),
+                'unsubscribeUrl'         => cachet_route('subscribe.unsubscribe', $notifiable->verify_code),
+                'manageSubscriptionText' => trans('cachet.subscriber.manage_subscription'),
+                'manageSubscriptionUrl'  => cachet_route('subscribe.manage', $notifiable->verify_code),
+        ]);
     }
 
     /**

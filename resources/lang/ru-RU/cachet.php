@@ -23,6 +23,8 @@ return [
         'group' => [
             'other' => 'Другие компоненты',
         ],
+        'select_all'   => 'Select All',
+        'deselect_all' => 'Deselect All',
     ],
 
     // Incidents
@@ -75,14 +77,17 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'           => 'Подпишитесь, чтобы получать информацию об изменениях',
+        'subscribe'           => 'Subscribe to status changes and incident updates',
         'unsubscribe'         => 'Unsubscribe',
         'button'              => 'Подписаться',
         'manage_subscription' => 'Manage subscription',
         'manage'              => [
-            'no_subscriptions' => 'Вы подписаны на все изменения.',
-            'my_subscriptions' => 'Вы подписаны на следующие изменения.',
-            'manage_at_link'   => 'Manage your subscriptions at :link',
+            'notifications'       => 'Уведомления',
+            'notifications_for'   => 'Manage notifications for',
+            'no_subscriptions'    => 'Вы подписаны на все изменения.',
+            'update_subscription' => 'Update Subscription',
+            'my_subscriptions'    => 'Вы подписаны на следующие изменения.',
+            'manage_at_link'      => 'Manage your subscriptions at :link',
         ],
         'email' => [
             'subscribe'          => 'Подписка на рассылку об изменениях.',

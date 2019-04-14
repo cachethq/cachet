@@ -15,6 +15,7 @@ use CachetHQ\Cachet\Bus\Commands\Component\UpdateComponentCommand;
 use CachetHQ\Cachet\Bus\Commands\Incident\CreateIncidentCommand;
 use CachetHQ\Cachet\Bus\Events\Incident\IncidentWasCreatedEvent;
 use CachetHQ\Cachet\Bus\Exceptions\Incident\InvalidIncidentTimestampException;
+use CachetHQ\Cachet\Bus\Handlers\Traits\StoresMeta;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentTemplate;
@@ -22,8 +23,8 @@ use CachetHQ\Cachet\Models\Meta;
 use CachetHQ\Cachet\Services\Dates\DateFactory;
 use Carbon\Carbon;
 use Illuminate\Contracts\Auth\Guard;
-use Twig_Environment;
-use Twig_Loader_Array;
+use Twig\Environment as Twig_Environment;
+use Twig\Loader\ArrayLoader as Twig_Loader_Array;
 
 /**
  * This is the create incident command handler.
@@ -32,6 +33,8 @@ use Twig_Loader_Array;
  */
 class CreateIncidentCommandHandler
 {
+    use StoresMeta;
+
     /**
      * The authentication guard instance.
      *
@@ -104,14 +107,7 @@ class CreateIncidentCommandHandler
 
         // Store any meta?
         if ($meta = $command->meta) {
-            foreach ($meta as $key => $value) {
-                Meta::create([
-                    'key'       => $key,
-                    'value'     => $value,
-                    'meta_type' => 'incidents',
-                    'meta_id'   => $incident->id,
-                ]);
-            }
+            $this->storeMeta($command->meta, 'incidents', $incident->id);
         }
 
         // Update the component.

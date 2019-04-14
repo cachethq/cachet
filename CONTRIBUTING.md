@@ -62,7 +62,7 @@ Of course bug reports, feature requests and [documentation](https://docs.cacheth
 
 As Cachet gains new features, the design and ideas that were once a perfect fit need updating and in some cases designing from scratch. This is where you come in! Fancy giving Cachet a lick of paint? Sweet!
 
-You'll need to install Node.js, Bower and Gulp.
+You'll need to install Node.js with NPM or Yarn.
 
 To get started you can do the following:
 
@@ -81,7 +81,8 @@ Built using [Laravel](https://laravel.com).
 We use these extra dependencies to develop Cachet:
 
 - Node.js
-- Gulp
+- NPM or Yarn
+- Composer
 - Git
 
 Once cloned to your local machine, you'll need some demo data! Run `php artisan cachet:seed` to get the demo installation ready for action.

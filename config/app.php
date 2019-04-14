@@ -47,7 +47,7 @@ return [
     |
     */
 
-    'debug' => env('APP_DEBUG', false),
+    'debug' => (bool) env('APP_DEBUG', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -173,6 +173,7 @@ return [
         /*
          * Packages Service Providers...
          */
+        env('APP_DEBUG') ? Bugsnag\BugsnagLaravel\BugsnagServiceProvider::class : null,
         AltThree\Badger\BadgerServiceProvider::class,
         AltThree\Emoji\EmojiServiceProvider::class,
         AltThree\Twitter\TwitterServiceProvider::class,
@@ -187,7 +188,6 @@ return [
         Laravolt\Avatar\ServiceProvider::class,
         McCool\LaravelAutoPresenter\AutoPresenterServiceProvider::class,
         PragmaRX\Google2FA\Vendor\Laravel\ServiceProvider::class,
-        Roumen\Feed\FeedServiceProvider::class,
 
         /*
          * Application Service Providers...

@@ -31,7 +31,7 @@ class CreateUserCommandTest extends AbstractTestCase
         $params = [
             'username' => 'Test',
             'password' => 'fooey',
-            'email'    => 'test@test.com',
+            'email'    => 'test@example.com',
             'level'    => 1,
         ];
 

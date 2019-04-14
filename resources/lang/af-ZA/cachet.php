@@ -15,14 +15,16 @@ return [
         'last_updated' => 'Last updated :timestamp',
         'status'       => [
             0 => 'Unknown',
-            1 => 'Operational',
-            2 => 'Performance Issues',
-            3 => 'Partial Outage',
-            4 => 'Major Outage',
+            1 => 'Operasioneel',
+            2 => 'Prestasieprobleme',
+            3 => 'Gedeeltelike Onderbreking',
+            4 => 'Groot Onderbreking',
         ],
         'group' => [
             'other' => 'Other Components',
         ],
+        'select_all'   => 'Select All',
+        'deselect_all' => 'Deselect All',
     ],
 
     // Incidents
@@ -75,14 +77,17 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'           => 'Subscribe to get the updates',
+        'subscribe'           => 'Subscribe to status changes and incident updates',
         'unsubscribe'         => 'Unsubscribe',
         'button'              => 'Teken aan',
         'manage_subscription' => 'Manage subscription',
         'manage'              => [
-            'no_subscriptions' => 'You\'re currently subscribed to all updates.',
-            'my_subscriptions' => 'You\'re currently subscribed to the following updates.',
-            'manage_at_link'   => 'Manage your subscriptions at :link',
+            'notifications'       => 'Notifications',
+            'notifications_for'   => 'Manage notifications for',
+            'no_subscriptions'    => 'You\'re currently subscribed to all updates.',
+            'update_subscription' => 'Update Subscription',
+            'my_subscriptions'    => 'You\'re currently subscribed to the following updates.',
+            'manage_at_link'      => 'Manage your subscriptions at :link',
         ],
         'email' => [
             'subscribe'          => 'Subscribe to email updates.',
@@ -133,7 +138,7 @@ return [
     'home'            => 'Tuiste',
     'powered_by'      => 'Powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
     'timezone'        => 'Times are shown in :timezone.',
-    'about_this_site' => 'About This Site',
+    'about_this_site' => 'Aangaande Hierdie Webwerf',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',
     'feed'            => 'Status Feed',

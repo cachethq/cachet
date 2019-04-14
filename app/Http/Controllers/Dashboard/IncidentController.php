@@ -75,7 +75,7 @@ class IncidentController extends Controller
      */
     public function showIncidents()
     {
-        $incidents = Incident::orderBy('created_at', 'desc')->get();
+        $incidents = Incident::with('user')->orderBy('created_at', 'desc')->get();
 
         return View::make('dashboard.incidents.index')
             ->withPageTitle(trans('dashboard.incidents.incidents').' - '.trans('dashboard.dashboard'))
@@ -128,7 +128,8 @@ class IncidentController extends Controller
                 Binput::get('stickied', false),
                 Binput::get('occurred_at'),
                 null,
-                []
+                [],
+                ['seo' => Binput::get('seo', [])]
             ));
         } catch (ValidationException $e) {
             return cachet_redirect('dashboard.incidents.create')
@@ -258,7 +259,8 @@ class IncidentController extends Controller
                 Binput::get('stickied', false),
                 Binput::get('occurred_at'),
                 null,
-                []
+                [],
+                ['seo' => Binput::get('seo', [])]
             ));
         } catch (ValidationException $e) {
             return cachet_redirect('dashboard.incidents.edit', ['id' => $incident->id])

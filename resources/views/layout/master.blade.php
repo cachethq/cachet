@@ -7,9 +7,6 @@
     <meta name="env" content="{{ app('env') }}">
     <meta name="token" content="{{ csrf_token() }}">
 
-    <link rel="alternate" type="application/atom+xml" href="{{ cachet_route('feed.atom') }}" title="{{ $siteTitle }} - Atom Feed">
-    <link rel="alternate" type="application/rss+xml" href="{{ cachet_route('feed.rss') }}" title="{{ $siteTitle }} - RSS Feed">
-
     <!-- Mobile friendliness -->
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
@@ -18,7 +15,7 @@
     <meta name="description" content="@yield('description', trans('cachet.meta.description.overview', ['app' => $appName]))">
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="{{ $siteTitle }}">
+    <meta property="og:title" content="@yield('title', $siteTitle)">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="@yield('description', trans('cachet.meta.description.overview', ['app' => $appName]))">
 
@@ -27,6 +24,8 @@
 
     <meta name="msapplication-TileColor" content="{{ $themeGreens }}" />
     <meta name="msapplication-TileImage" content="{{ asset('/img/favicon.png') }}" />
+
+    <link href="{{ Request::fullUrl() }}" rel="canonical">
 
     @if (isset($favicon))
     <link rel="icon" href="{{ asset("/img/{$favicon}.ico") }}" type="image/x-icon">
@@ -47,7 +46,7 @@
     <title>@yield('title', $siteTitle)</title>
 
     @if($enableExternalDependencies)
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&subset={{ $fontSubset }}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&amp;subset={{ $fontSubset }}" rel="stylesheet" type="text/css">
     @endif
     <link rel="stylesheet" href="{{ mix('dist/css/app.css') }}">
 

@@ -18,7 +18,7 @@ use Illuminate\Http\Request;
 /**
  * This is the ready for use middleware class.
  *
- * @author Graham Campbell <james@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
  * @author James Brooks <james@alt-three.com>
  * @author Joseph Cohen <joe@alt-three.com>
  */
@@ -53,7 +53,7 @@ class ReadyForUse
      */
     public function handle(Request $request, Closure $next)
     {
-        if (!$this->settings->get('app_name')) {
+        if (!$request->is('setup*') && !$this->settings->get('app_name')) {
             return cachet_redirect('setup');
         }
 

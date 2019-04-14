@@ -53,7 +53,7 @@ class ComponentsComposer
     public function compose(View $view)
     {
         $componentGroups = $this->getVisibleGroupedComponents();
-        $ungroupedComponents = Component::ungrouped()->get();
+        $ungroupedComponents = Component::ungrouped()->orderBy('status', 'desc')->get();
 
         $view->withComponentGroups($componentGroups)
             ->withUngroupedComponents($ungroupedComponents);

@@ -26,12 +26,6 @@
                         <a class="btn btn-link" href="{{ cachet_route('auth.logout') }}">{{ trans('dashboard.logout') }}</a>
                     </li>
                     @endif
-                    <li>
-                        <a class="btn btn-link" href="{{ cachet_route('feed.rss') }}">{{ trans('cachet.rss-feed') }}</a>
-                    </li>
-                    <li>
-                        <a class="btn btn-link" href="{{ cachet_route('feed.atom') }}">{{ trans('cachet.atom-feed') }}</a>
-                    </li>
                     @if($enableSubscribers)
                     <li>
                         <a class="btn btn-success btn-outline" href="{{ cachet_route('subscribe') }}">{{ trans('cachet.subscriber.button') }}</a>

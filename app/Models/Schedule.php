@@ -12,6 +12,7 @@
 namespace CachetHQ\Cachet\Models;
 
 use AltThree\Validator\ValidatingTrait;
+use CachetHQ\Cachet\Models\Traits\HasMeta;
 use CachetHQ\Cachet\Models\Traits\SearchableTrait;
 use CachetHQ\Cachet\Models\Traits\SortableTrait;
 use CachetHQ\Cachet\Presenters\SchedulePresenter;
@@ -28,7 +29,11 @@ use McCool\LaravelAutoPresenter\HasPresenter;
  */
 class Schedule extends Model implements HasPresenter
 {
-    use SearchableTrait, SoftDeletes, SortableTrait, ValidatingTrait;
+    use HasMeta,
+        SearchableTrait,
+        SoftDeletes,
+        SortableTrait,
+        ValidatingTrait;
 
     /**
      * The upcoming status.
@@ -144,16 +149,6 @@ class Schedule extends Model implements HasPresenter
     }
 
     /**
-     * Get the meta relation.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
-     */
-    public function meta()
-    {
-        return $this->morphMany(Meta::class, 'meta');
-    }
-
-    /**
      * Scope schedules that are in progress.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
@@ -176,7 +171,7 @@ class Schedule extends Model implements HasPresenter
      */
     public function scopeFutureSchedules($query)
     {
-        return $query->whereIn('status', [self::UPCOMING, self::IN_PROGRESS])->where('completed_at', '>=', Carbon::now());
+        return $query->whereIn('status', [self::UPCOMING, self::IN_PROGRESS])->where('scheduled_at', '>=', Carbon::now());
     }
 
     /**

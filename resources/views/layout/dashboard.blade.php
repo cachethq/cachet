@@ -20,7 +20,7 @@
     <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('/img/apple-touch-icon-144x144.png') }}">
     <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('/img/apple-touch-icon-152x152.png') }}">
 
-    <title>{{ $pageTitle or $siteTitle }}</title>
+    <title>{{ $pageTitle ?? $siteTitle }}</title>
 
     <script>
         window.Global = {}

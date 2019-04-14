@@ -23,6 +23,8 @@ return [
         'group' => [
             'other' => '其他组件',
         ],
+        'select_all'   => 'Select All',
+        'deselect_all' => 'Deselect All',
     ],
 
     // Incidents
@@ -75,14 +77,17 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'           => '订阅最新的更新。',
+        'subscribe'           => 'Subscribe to status changes and incident updates',
         'unsubscribe'         => 'Unsubscribe',
         'button'              => '订阅',
         'manage_subscription' => 'Manage subscription',
         'manage'              => [
-            'no_subscriptions' => '您当前已订阅所有更新。',
-            'my_subscriptions' => '您当前已订阅下列更新',
-            'manage_at_link'   => '在 :link 管理你的订阅',
+            'notifications'       => '通知',
+            'notifications_for'   => 'Manage notifications for',
+            'no_subscriptions'    => '您当前已订阅所有更新。',
+            'update_subscription' => 'Update Subscription',
+            'my_subscriptions'    => '您当前已订阅下列更新',
+            'manage_at_link'      => '在 :link 管理你的订阅',
         ],
         'email' => [
             'subscribe'          => '订阅电子邮件更新。',

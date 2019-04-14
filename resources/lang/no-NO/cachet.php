@@ -23,6 +23,8 @@ return [
         'group' => [
             'other' => 'Andre komponenter',
         ],
+        'select_all'   => 'Select All',
+        'deselect_all' => 'Deselect All',
     ],
 
     // Incidents
@@ -75,14 +77,17 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'           => 'Abonner for å få oppdateringene',
+        'subscribe'           => 'Subscribe to status changes and incident updates',
         'unsubscribe'         => 'Unsubscribe',
         'button'              => 'Abonner',
         'manage_subscription' => 'Manage subscription',
         'manage'              => [
-            'no_subscriptions' => 'Du abonnerer for øyeblikket på alle oppdateringer.',
-            'my_subscriptions' => 'Du abonnerer for øyeblikket på følgende oppdateringer.',
-            'manage_at_link'   => 'Manage your subscriptions at :link',
+            'notifications'       => 'Notifications',
+            'notifications_for'   => 'Manage notifications for',
+            'no_subscriptions'    => 'Du abonnerer for øyeblikket på alle oppdateringer.',
+            'update_subscription' => 'Update Subscription',
+            'my_subscriptions'    => 'Du abonnerer for øyeblikket på følgende oppdateringer.',
+            'manage_at_link'      => 'Manage your subscriptions at :link',
         ],
         'email' => [
             'subscribe'          => 'Abonner på e-postoppdateringer.',
