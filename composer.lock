@@ -2905,16 +2905,16 @@
         },
         {
             "name": "nexmo/client",
-            "version": "1.6.3",
+            "version": "1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Nexmo/nexmo-php.git",
-                "reference": "29f6856b4d918f3565bf56c26bc01dd664988b24"
+                "reference": "f8582d2361382e2b02352b1cb96c69ce2a2c7360"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Nexmo/nexmo-php/zipball/29f6856b4d918f3565bf56c26bc01dd664988b24",
-                "reference": "29f6856b4d918f3565bf56c26bc01dd664988b24",
+                "url": "https://api.github.com/repos/Nexmo/nexmo-php/zipball/f8582d2361382e2b02352b1cb96c69ce2a2c7360",
+                "reference": "f8582d2361382e2b02352b1cb96c69ce2a2c7360",
                 "shasum": ""
             },
             "require": {
@@ -2949,7 +2949,7 @@
                 }
             ],
             "description": "PHP Client for using Nexmo's API.",
-            "time": "2019-03-15T11:47:11+00:00"
+            "time": "2019-04-13T10:18:16+00:00"
         },
         {
             "name": "nikic/php-parser",
