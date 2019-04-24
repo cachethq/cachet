@@ -103,6 +103,7 @@ class Schedule extends Model implements HasPresenter
         'name'         => 'required|string',
         'message'      => 'nullable|string',
         'status'       => 'required|int|between:0,2',
+        'completed_at' => 'after_or_equal:scheduled_at'
     ];
 
     /**
