@@ -49,12 +49,12 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label>{{ trans('forms.schedules.scheduled_at') }}</label>
-                            <input type="text" name="scheduled_at" class="form-control flatpickr-time" data-date-format="Y-m-d H:i" required placeholder="{{ trans('forms.schedules.scheduled_at') }}">
+                            <label for="scheduled_at">{{ trans('forms.schedules.scheduled_at') }}</label>
+                            <input type="text" id="scheduled_at" name="scheduled_at" class="form-control flatpickr-time" data-date-format="Y-m-d H:i" required placeholder="{{ trans('forms.schedules.scheduled_at') }}">
                         </div>
                         <div class="form-group">
-                            <label>{{ trans('forms.schedules.completed_at') }}</label>
-                            <input type="text" name="completed_at" class="form-control flatpickr-time" data-date-format="Y-m-d H:i" required placeholder="{{ trans('forms.schedules.completed_at') }}">
+                            <label for="completed_at">{{ trans('forms.schedules.completed_at') }}</label>
+                            <input type="text" id="completed_at" name="completed_at" class="form-control flatpickr-time" data-date-format="Y-m-d H:i" required placeholder="{{ trans('forms.schedules.completed_at') }}">
                         </div>
                     </fieldset>
 
