@@ -70,7 +70,7 @@ final class CreateScheduleCommand
         'message'      => 'nullable|string',
         'status'       => 'required|int|min:0|max:2',
         'scheduled_at' => 'required|string',
-        'completed_at' => 'nullable|string',
+        'completed_at' => 'required|string',
         'components'   => 'nullable|array',
     ];
 

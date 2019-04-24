@@ -54,7 +54,7 @@
                         </div>
                         <div class="form-group">
                             <label>{{ trans('forms.schedules.completed_at') }}</label>
-                            <input type="text" name="completed_at" class="form-control flatpickr-time" data-date-format="Y-m-d H:i" placeholder="{{ trans('forms.schedules.completed_at') }}">
+                            <input type="text" name="completed_at" class="form-control flatpickr-time" data-date-format="Y-m-d H:i" required placeholder="{{ trans('forms.schedules.completed_at') }}">
                         </div>
                     </fieldset>
 
