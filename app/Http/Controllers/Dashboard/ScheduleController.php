@@ -43,7 +43,6 @@ class ScheduleController extends Controller
      */
     protected $system;
 
-
     /**
      * Creates a new schedule controller instance.
      *

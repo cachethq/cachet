@@ -36,7 +36,7 @@ final class ScheduleWasCreatedEvent implements ActionInterface, ScheduleEventInt
      */
     public $schedule;
 
-     /**
+    /**
      * Whether to notify that the incident was reported.
      *
      * @var bool
@@ -52,7 +52,7 @@ final class ScheduleWasCreatedEvent implements ActionInterface, ScheduleEventInt
      *
      * @return void
      */
-    public function __construct(User $user, Schedule $schedule,  $notify = false)
+    public function __construct(User $user, Schedule $schedule, $notify = false)
     {
         $this->user = $user;
         $this->schedule = $schedule;
