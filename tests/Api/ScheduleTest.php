@@ -52,6 +52,7 @@ class ScheduleTest extends AbstractApiTestCase
             'message'      => 'Foo bar, baz.',
             'status'       => 1,
             'scheduled_at' => date('Y-m-d H:i'),
+            'notify'       => 1,
         ];
 
         $response = $this->json('POST', '/api/v1/schedules/', $schedule);
