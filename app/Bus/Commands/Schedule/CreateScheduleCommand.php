@@ -91,7 +91,7 @@ final class CreateScheduleCommand
      * @param string $scheduled_at
      * @param string $completed_at
      * @param array  $components
-     * @param notify $notify
+     * @param bool $notify
      *
      * @return void
      */
