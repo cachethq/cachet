@@ -31,7 +31,7 @@ class ScheduledComposer
      */
     public function compose(View $view)
     {
-        $scheduledMaintenance = Schedule::futureSchedules()->orderBy('scheduled_at')->get();
+        $scheduledMaintenance = Schedule::uncompleted()->orderBy('scheduled_at')->get();
 
         $view->withScheduledMaintenance($scheduledMaintenance);
     }
