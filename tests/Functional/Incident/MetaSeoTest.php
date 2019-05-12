@@ -17,6 +17,7 @@ use CachetHQ\Cachet\Presenters\IncidentPresenter;
 use CachetHQ\Cachet\Settings\Repository as SettingsRepository;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Support\Str;
 
 /**
  * This is the create incident command test class.
@@ -37,6 +38,11 @@ class MetaSeoTest extends AbstractTestCase
      * @var string
      */
     protected $appName;
+
+    /**
+     * @var array[]|null
+     */
+    protected $incidents;
 
     /**
      * CreateIncidentCommandTest constructor.
@@ -60,6 +66,10 @@ class MetaSeoTest extends AbstractTestCase
         parent::setUp();
         $this->app->make(SettingsRepository::class)->set('app_name', $this->appName);
         $this->app->config->set('setting.app_name', $this->appName);
+        $this->incidents = [
+            ['title' => 'Foo '.Str::random(16), 'description' => 'Foo Bar Baz '.Str::random(32)],
+            ['title' => 'Foe '.Str::random(16), 'description' => 'Foe Baz Bar '.Str::random(32)],
+        ];
     }
 
     /**
@@ -68,9 +78,9 @@ class MetaSeoTest extends AbstractTestCase
      */
     public function testCustomSeoDescriptionOnIncidentPage()
     {
-        $expectedDescription = htmlspecialchars($this->fakerFactory->sentence);
+        $expectedDescription = $this->incidents[0]['description'];
 
-        $incident = $this->createIncidentWithMeta(['seo' => ['description' => $expectedDescription]]);
+        $incident = $this->createIncidentWithMeta($this->incidents[1], ['seo' => ['description' => $expectedDescription]]);
         $page = $this->get(sprintf('/incidents/%d', $incident->id));
 
         $this->assertContains(
@@ -89,9 +99,9 @@ class MetaSeoTest extends AbstractTestCase
      */
     public function testCustomSeoTitleOnIncidentPage()
     {
-        $title = htmlspecialchars($this->fakerFactory->title);
+        $title = $this->incidents[0]['title'];
 
-        $incident = $this->createIncidentWithMeta(['seo' => ['title' => $title]]);
+        $incident = $this->createIncidentWithMeta($this->incidents[1], ['seo' => ['title' => $title]]);
         $page = $this->get(sprintf('/incidents/%d', $incident->id));
 
         $this->assertContains(
@@ -110,13 +120,13 @@ class MetaSeoTest extends AbstractTestCase
      */
     public function testNoCustomSeoDescriptionOnIncidentPage()
     {
-        $incident = $this->createIncidentWithMeta([]);
+        $incident = $this->createIncidentWithMeta($this->incidents[1]);
         $presenter = $this->app->make(IncidentPresenter::class);
         $presenter->setWrappedObject($incident);
 
         $expectedDescription = sprintf(
             'Details and updates about the %s incident that occurred on %s',
-            htmlspecialchars($incident->name),
+            $incident->name,
             $presenter->occurred_at_formatted
         );
 
@@ -138,8 +148,8 @@ class MetaSeoTest extends AbstractTestCase
      */
     public function testNoCustomSeoTitleOnIncidentPage()
     {
-        $incident = $this->createIncidentWithMeta([]);
-        $expectedTitle = sprintf('%s | %s', htmlspecialchars($incident->name), $this->appName);
+        $incident = $this->createIncidentWithMeta($this->incidents[1]);
+        $expectedTitle = sprintf('%s | %s', $incident->name, $this->appName);
 
         $page = $this->get(sprintf('/incidents/%d', $incident->id));
 
@@ -151,15 +161,16 @@ class MetaSeoTest extends AbstractTestCase
     }
 
     /**
+     * @param array $incident
      * @param array $meta
      *
      * @return Incident
      */
-    protected function createIncidentWithMeta(array $meta)
+    protected function createIncidentWithMeta(array $incident, array $meta = [])
     {
         $this->signIn();
-        $name = $this->fakerFactory->name;
-        $message = $this->fakerFactory->sentence;
+        $name = $incident['title'];
+        $message = $incident['description'];
 
         dispatch(new CreateIncidentCommand(
             $name,
