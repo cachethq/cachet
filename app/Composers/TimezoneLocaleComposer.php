@@ -14,6 +14,7 @@ namespace CachetHQ\Cachet\Composers;
 use DateTime;
 use DateTimeZone;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Config;
 
 class TimezoneLocaleComposer
@@ -32,7 +33,7 @@ class TimezoneLocaleComposer
         $langs = array_map(function ($lang) use ($enabledLangs) {
             $locale = basename($lang);
 
-            return [$locale => $enabledLangs[$locale]];
+            return [$locale => Arr::get($enabledLangs, $locale)];
         }, glob(base_path('resources/lang').'/*'));
 
         $langs = call_user_func_array('array_merge', $langs);
@@ -46,7 +47,7 @@ class TimezoneLocaleComposer
             'Australia'  => DateTimeZone::AUSTRALIA,
             'Europe'     => DateTimeZone::EUROPE,
             'Indian'     => DateTimeZone::INDIAN,
-            'Pacific'    => DateTimeZone::PACIFIC,
+            'Pacific'     => DateTimeZone::PACIFIC,
             'UTC'        => DateTimeZone::UTC,
         ];
 
