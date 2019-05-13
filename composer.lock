@@ -253,32 +253,32 @@
         },
         {
             "name": "alt-three/validator",
-            "version": "v4.1.0",
+            "version": "v4.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/AltThree/Validator.git",
-                "reference": "08790e15af3464d9e9a3c759eab1138774c68b82"
+                "reference": "1ea2a482c69f1c568e77c62d19633c3c5b84cc91"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/AltThree/Validator/zipball/08790e15af3464d9e9a3c759eab1138774c68b82",
-                "reference": "08790e15af3464d9e9a3c759eab1138774c68b82",
+                "url": "https://api.github.com/repos/AltThree/Validator/zipball/1ea2a482c69f1c568e77c62d19633c3c5b84cc91",
+                "reference": "1ea2a482c69f1c568e77c62d19633c3c5b84cc91",
                 "shasum": ""
             },
             "require": {
-                "illuminate/contracts": "5.5.*|5.6.*|5.7.*",
-                "illuminate/support": "5.5.*|5.6.*|5.7.*",
+                "illuminate/contracts": "5.5.*|5.6.*|5.7.*|5.8.*",
+                "illuminate/support": "5.5.*|5.6.*|5.7.*|5.8.*",
                 "php": "^7.1.3",
                 "psr/log": "^1.0"
             },
             "require-dev": {
                 "graham-campbell/analyzer": "^2.1",
-                "phpunit/phpunit": "^6.5|^7.0"
+                "phpunit/phpunit": "^6.5|^7.0|^8.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.1-dev"
+                    "dev-master": "4.2-dev"
                 }
             },
             "autoload": {
@@ -302,7 +302,7 @@
                 "logging",
                 "validator"
             ],
-            "time": "2018-09-29T10:43:41+00:00"
+            "time": "2019-05-12T11:59:28+00:00"
         },
         {
             "name": "asm89/stack-cors",
