@@ -5085,16 +5085,16 @@
     "packages-dev": [
         {
             "name": "alt-three/testbench",
-            "version": "v4.0.1",
+            "version": "v4.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/AltThree/TestBench.git",
-                "reference": "38c964dea94cef18c6a8a3bf6f18c2d641ea2cca"
+                "reference": "d59f8207f0c444cb2c1c7e889aa8e2f5b334e704"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/AltThree/TestBench/zipball/38c964dea94cef18c6a8a3bf6f18c2d641ea2cca",
-                "reference": "38c964dea94cef18c6a8a3bf6f18c2d641ea2cca",
+                "url": "https://api.github.com/repos/AltThree/TestBench/zipball/d59f8207f0c444cb2c1c7e889aa8e2f5b334e704",
+                "reference": "d59f8207f0c444cb2c1c7e889aa8e2f5b334e704",
                 "shasum": ""
             },
             "require": {
@@ -5102,8 +5102,8 @@
                 "php": "^7.0"
             },
             "require-dev": {
-                "graham-campbell/analyzer": "^2.0",
-                "phpunit/phpunit": "^6.5|^7.0"
+                "graham-campbell/analyzer": "^2.1",
+                "phpunit/phpunit": "^6.5|^7.0|^8.0"
             },
             "suggest": {
                 "laravel/framework": "Enables the use of most traits."
@@ -5135,7 +5135,7 @@
                 "TestBench",
                 "app"
             ],
-            "time": "2018-04-21T17:21:30+00:00"
+            "time": "2019-05-12T11:36:21+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
