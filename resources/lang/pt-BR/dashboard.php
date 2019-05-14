@@ -15,7 +15,7 @@ return [
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Incidents &amp; Schedule',
+        'title'                    => 'Incidentes &amp; Agenda',
         'incidents'                => 'Incidentes',
         'logged'                   => '{0} Não existem incidentes, bom trabalho.|Você registrou um incidente.|Você reportou <strong>:count</strong> incidentes.',
         'incident-create-template' => 'Criar template',
@@ -164,7 +164,7 @@ return [
         'team'        => 'Equipe',
         'member'      => 'Membro',
         'profile'     => 'Perfil	',
-        'description' => 'Team Members will be able to add, modify &amp; edit components and incidents.',
+        'description' => 'Membros da equipe serão capazes de adicionar, modificar &amp; editar componentes e incidentes.',
         'add'         => [
             'title'   => 'Adicionar um novo membro da equipe',
             'success' => 'Membro da equipe adicionado.',
@@ -233,7 +233,7 @@ return [
     'login' => [
         'login'      => 'Login',
         'logged_in'  => 'Você está logado.',
-        'welcome'    => 'Welcome Back!',
+        'welcome'    => 'Bem-vindo de volta!',
         'two-factor' => 'Por favor insira o seu token.',
     ],
 
@@ -257,14 +257,14 @@ return [
 
     // Welcome modal
     'welcome' => [
-        'welcome' => 'Welcome to your new Status page!',
+        'welcome' => 'Bem-vindo à sua nova página de status!',
         'message' => 'Your status page is almost ready! You might want to configure these extra settings',
         'close'   => 'Take me straight to my dashboard',
         'steps'   => [
             'component'  => 'Create components',
             'incident'   => 'Create incidents',
             'customize'  => 'Customize',
-            'team'       => 'Add users',
+            'team'       => 'Adicionar usuários',
             'api'        => 'Generate API token',
             'two-factor' => 'Two Factor Authentication',
         ],
