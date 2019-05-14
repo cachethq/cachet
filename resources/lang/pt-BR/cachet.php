@@ -45,7 +45,7 @@ return [
     'service' => [
         'good'  => '[0,1] Sistema operacional|[2,Inf] Todos os sistemas estão operacionais',
         'bad'   => '[0,1] O sistema encontra-se com alguns problemas|[2,Inf] Alguns sistemas estão com problemas',
-        'major' => '[0,1] The service experiencing a major outage|[2,Inf] Some systems are experiencing a major outage',
+        'major' => '[0,1] O sistema encontra-se com uma indisponibilidade total.|[2,Inf] Alguns sistemas encontram-se totalmente indisponíveis',
     ],
 
     'api' => [
