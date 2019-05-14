@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-@include('dashboard.partials.head')
+@include('partials.head')
 
 <body class="dashboard">
     <div class="wrapper">
