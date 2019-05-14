@@ -265,8 +265,8 @@ return [
             'incident'   => 'Create incidents',
             'customize'  => 'Customize',
             'team'       => 'Adicionar usuários',
-            'api'        => 'Generate API token',
-            'two-factor' => 'Two Factor Authentication',
+            'api'        => 'Gerar token de API',
+            'two-factor' => 'Autenticação em duas etapas',
         ],
     ],
 
