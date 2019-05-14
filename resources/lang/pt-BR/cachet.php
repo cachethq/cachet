@@ -33,7 +33,7 @@ return [
         'scheduled'     => 'Manutenção Agendada',
         'scheduled_at'  => ', agendada :timestamp',
         'status'        => [
-            0 => 'Scheduled', // TODO: Hopefully remove this.
+            0 => 'Agendado', // TODO: Hopefully remove this.
             1 => 'Investigando',
             2 => 'Identificado',
             3 => 'Observando',
