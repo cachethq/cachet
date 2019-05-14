@@ -28,8 +28,8 @@ return [
     'incidents' => [
         'none'          => 'Nenhum incidente reportado',
         'past'          => 'Incidentes anteriores',
-        'previous_week' => 'Previous Week',
-        'next_week'     => 'Next Week',
+        'previous_week' => 'Semana anterior',
+        'next_week'     => 'Próxima semana',
         'scheduled'     => 'Manutenção Agendada',
         'scheduled_at'  => ', agendada :timestamp',
         'status'        => [
