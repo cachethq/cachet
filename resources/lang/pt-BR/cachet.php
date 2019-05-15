@@ -23,8 +23,8 @@ return [
         'group' => [
             'other' => 'Outros componentes',
         ],
-        'select_all'   => 'Select All',
-        'deselect_all' => 'Deselect All',
+        'select_all'   => 'Marcar todos',
+        'deselect_all' => 'Desmarcar todos',
     ],
 
     // Incidents
@@ -34,8 +34,8 @@ return [
         'stickied'     => 'Incidentes Fixados',
         'scheduled'    => 'Manutenção',
         'scheduled_at' => ', agendada :timestamp',
-        'posted'       => 'Posted :timestamp',
-        'posted_at'    => 'Posted at :timestamp',
+        'posted'       => 'Postado :timestamp',
+        'posted_at'    => 'Postado em :timestamp',
         'status'       => [
             1 => 'Investigando',
             2 => 'Identificado',
@@ -77,13 +77,13 @@ return [
 
     // Subscriber
     'subscriber' => [
-        'subscribe'           => 'Subscribe to status changes and incident updates',
+        'subscribe'           => 'Inscreva-se para mudanças de status e atualizações de incidentes',
         'unsubscribe'         => 'Cancelar inscrição',
         'button'              => 'Inscreva-se',
         'manage_subscription' => 'Manage subscription',
         'manage'              => [
             'notifications'       => 'Notificações',
-            'notifications_for'   => 'Manage notifications for',
+            'notifications_for'   => 'Gerenciar notificações',
             'no_subscriptions'    => 'Você está atualmente inscrito a todas as atualizações.',
             'update_subscription' => 'Update Subscription',
             'my_subscriptions'    => 'Você está atualmente inscrito para as seguintes atualizações.',
