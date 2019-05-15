@@ -14,7 +14,7 @@ return [
     'components' => [
         'last_updated' => 'Última atualização :timestamp',
         'status'       => [
-            0 => 'Unknown',
+            0 => 'Desconhecido',
             1 => 'Operacional',
             2 => 'Problemas de performance',
             3 => 'Indisponibilidade parcial',
@@ -31,8 +31,8 @@ return [
     'incidents' => [
         'none'         => 'Nenhum incidente reportado',
         'past'         => 'Incidentes anteriores',
-        'stickied'     => 'Stickied Incidents',
-        'scheduled'    => 'Maintenance',
+        'stickied'     => 'Incidentes Fixados',
+        'scheduled'    => 'Manutenção',
         'scheduled_at' => ', agendada :timestamp',
         'posted'       => 'Posted :timestamp',
         'posted_at'    => 'Posted at :timestamp',
@@ -47,9 +47,9 @@ return [
     // Schedule
     'schedules' => [
         'status' => [
-            0 => 'Upcoming',
-            1 => 'In Progress',
-            2 => 'Complete',
+            0 => 'Em breve',
+            1 => 'Em Progresso',
+            2 => 'Concluído',
         ],
     ],
 
@@ -78,7 +78,7 @@ return [
     // Subscriber
     'subscriber' => [
         'subscribe'           => 'Subscribe to status changes and incident updates',
-        'unsubscribe'         => 'Unsubscribe',
+        'unsubscribe'         => 'Cancelar inscrição',
         'button'              => 'Inscreva-se',
         'manage_subscription' => 'Manage subscription',
         'manage'              => [
@@ -137,7 +137,7 @@ return [
     // Other
     'home'            => 'Início',
     'powered_by'      => 'Desenvolvido por <a href="https://cachethq.io" class="links">Cachet</a>.',
-    'timezone'        => 'Times are shown in :timezone.',
+    'timezone'        => 'Horários são exibidos em :timezone.',
     'about_this_site' => 'Sobre este Site',
     'rss-feed'        => 'RSS',
     'atom-feed'       => 'Atom',
