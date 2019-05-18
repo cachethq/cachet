@@ -55,7 +55,7 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1]System operational|[2,*]All systems are operational',
+        'good'  => '[0,1] Sistema operacional | [2, *] Todos os sistemas estão operacionais',
         'bad'   => '[0,1]The system is experiencing issues|[2,*]Some systems are experiencing issues',
         'major' => '[0,1]The system is experiencing major issues|[2,*]Some systems are experiencing major issues',
     ],
@@ -80,14 +80,14 @@ return [
         'subscribe'           => 'Inscreva-se para mudanças de status e atualizações de incidentes',
         'unsubscribe'         => 'Cancelar inscrição',
         'button'              => 'Inscreva-se',
-        'manage_subscription' => 'Manage subscription',
+        'manage_subscription' => 'Gerenciar inscrição',
         'manage'              => [
             'notifications'       => 'Notificações',
             'notifications_for'   => 'Gerenciar notificações',
             'no_subscriptions'    => 'Você está atualmente inscrito a todas as atualizações.',
             'update_subscription' => 'Atualizar inscrição',
             'my_subscriptions'    => 'Você está atualmente inscrito para as seguintes atualizações.',
-            'manage_at_link'      => 'Manage your subscriptions at :link',
+            'manage_at_link'      => 'Gerencie suas inscrições aqui :link',
         ],
         'email' => [
             'subscribe'          => 'Inscreva-se para atualizações via e-mail.',
@@ -127,9 +127,9 @@ return [
     // Meta descriptions
     'meta' => [
         'description' => [
-            'incident'  => 'Details and updates about the :name incident that occurred on :date',
-            'schedule'  => 'Details about the scheduled maintenance period :name starting :startDate',
-            'subscribe' => 'Subscribe to :app in order to receive updates of incidents and scheduled maintenance periods',
+            'incident'  => 'Detalhes e atualizações sobre o ​​incidente :name ocorrido em :date',
+            'schedule'  => 'Detalhes sobre o período de manutenção agendada :name que começa em :startDate',
+            'subscribe' => 'Inscreva-se para o :app e receba atualizações de incidentes e períodos de manutenção agendada',
             'overview'  => 'Mantenha-se atualizado com as últimas atualizações de serviço de: app.',
         ],
     ],
