@@ -23,11 +23,11 @@ return [
         'incident-templates'       => 'Template de incidentes',
         'updates'                  => [
             'title'   => 'Atualizações para o incidente :incident',
-            'count'   => '{0}Zero Updates|[1]One Update|[2]Two Updates|[3,*]Several Updates',
+            'count'   => '{0}Nenhuma atualização|[1]Uma atualização|[2]Duas atualizações|[3,*]Várias atualizações',
             'add'     => [
                 'title'   => 'Crie uma nova atualização de incidente',
                 'success' => 'Your new incident update has been created.',
-                'failure' => 'Something went wrong with the incident update.',
+                'failure' => 'Algo deu errado com a atualização do incidente.',
             ],
             'edit' => [
                 'title'   => 'Edit incident update',
