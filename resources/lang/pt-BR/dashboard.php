@@ -12,20 +12,20 @@
 return [
 
     'dashboard'          => 'Dashboard',
-    'writeable_settings' => 'The Cachet settings directory is not writeable. Please make sure that <code>./bootstrap/cachet</code> is writeable by the web server.',
+    'writeable_settings' => 'O diretório de configurações do Cachet não é gravável. Certifique-se de que <code>./bootstrap/cachet</code> é gravável pelo servidor web.',
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Incidents & Maintenance',
+        'title'                    => 'Incidentes & Agendamentos',
         'incidents'                => 'Incidentes',
-        'logged'                   => '{0}There are no incidents, good work.|[1]You have logged one incident.|[2,*]You have reported <strong>:count</strong> incidents.',
+        'logged'                   => '{0}Não existem incidentes, bom trabalho.|[1]Você adicionou um incidente.|[2,*]Você reportou <strong>:count</strong> incidentes.',
         'incident-create-template' => 'Criar template',
         'incident-templates'       => 'Template de incidentes',
         'updates'                  => [
-            'title'   => 'Incident updates for :incident',
+            'title'   => 'Atualizações para o incidente :incident',
             'count'   => '{0}Zero Updates|[1]One Update|[2]Two Updates|[3,*]Several Updates',
             'add'     => [
-                'title'   => 'Create new incident update',
+                'title'   => 'Crie uma nova atualização de incidente',
                 'success' => 'Your new incident update has been created.',
                 'failure' => 'Something went wrong with the incident update.',
             ],
@@ -74,11 +74,11 @@ return [
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => 'Maintenance',
+        'schedule'     => 'Manutenção',
         'logged'       => '{0}There has been no Maintenance, good work.|[1]You have logged one schedule.|[2,*]You have reported <strong>:count</strong> schedules.',
         'scheduled_at' => 'Agendada em :timestamp',
         'add'          => [
-            'title'   => 'Add Maintenance',
+            'title'   => 'Adicionar manutenção agendada',
             'success' => 'Maintenance added.',
             'failure' => 'Something went wrong adding the Maintenance, please try again.',
         ],
@@ -227,11 +227,11 @@ return [
             'footer'        => 'HTML de rodapé personalizado',
         ],
         'mail' => [
-            'mail'  => 'Mail',
-            'test'  => 'Test',
+            'mail'  => 'E-Mail',
+            'test'  => 'Teste',
             'email' => [
-                'subject' => 'Test notification from Cachet',
-                'body'    => 'This is a test notification from Cachet.',
+                'subject' => 'Notificação de teste do Cachet',
+                'body'    => 'Esta é uma notificação de teste do Cachet.',
             ],
         ],
         'security' => [
