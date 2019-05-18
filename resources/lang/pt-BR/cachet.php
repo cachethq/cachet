@@ -85,7 +85,7 @@ return [
             'notifications'       => 'Notificações',
             'notifications_for'   => 'Gerenciar notificações',
             'no_subscriptions'    => 'Você está atualmente inscrito a todas as atualizações.',
-            'update_subscription' => 'Update Subscription',
+            'update_subscription' => 'Atualizar inscrição',
             'my_subscriptions'    => 'Você está atualmente inscrito para as seguintes atualizações.',
             'manage_at_link'      => 'Manage your subscriptions at :link',
         ],
