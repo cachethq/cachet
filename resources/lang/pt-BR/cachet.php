@@ -56,8 +56,8 @@ return [
     // Service Status
     'service' => [
         'good'  => '[0,1] Sistema operacional | [2, *] Todos os sistemas estão operacionais',
-        'bad'   => '[0,1]The system is experiencing issues|[2,*]Some systems are experiencing issues',
-        'major' => '[0,1]The system is experiencing major issues|[2,*]Some systems are experiencing major issues',
+        'bad'   => '[0,1] O sistema apresenta falhas|[2,*] Alguns sistemas apresentam falhas',
+        'major' => '[0,1] O sistema apresenta falhas críticas|[2,Inf] Alguns sistemas apresentam falhas críticas',
     ],
 
     'api' => [
