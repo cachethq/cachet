@@ -39,9 +39,10 @@ class UserController extends Controller
     /**
      * Updates the current user.
      *
-     * @return \Illuminate\View\View
      * @throws \PragmaRX\Google2FA\Exceptions\IncompatibleWithGoogleAuthenticatorException
      * @throws \PragmaRX\Google2FA\Exceptions\InvalidCharactersException
+     *
+     * @return \Illuminate\View\View
      */
     public function postUser()
     {

@@ -69,7 +69,7 @@
 
                                 $qrcode_image = base64_encode($writer->writeString($google2fa_url));
                                 ?>
-                                <img src="data:image/png;base64, {{ $qrcode_image }}" class="img-responsive"/>
+                                <img src="data:image/png;base64, {{ $qrcode_image }}" alt="qr code" class="img-responsive"/>
                                 <span class='help-block'>{!! trans('forms.user.2fa.help') !!}</span>
                             </div>
                             @endif

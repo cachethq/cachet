@@ -89,10 +89,11 @@ class AuthController extends Controller
      *
      * This feels very hacky, but we have to juggle authentication and codes.
      *
-     * @return \Illuminate\Http\RedirectResponse
      * @throws \PragmaRX\Google2FA\Exceptions\IncompatibleWithGoogleAuthenticatorException
      * @throws \PragmaRX\Google2FA\Exceptions\InvalidCharactersException
      * @throws \PragmaRX\Google2FA\Exceptions\SecretKeyTooShortException
+     *
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function postTwoFactor()
     {
