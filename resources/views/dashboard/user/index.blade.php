@@ -53,13 +53,23 @@
                             @if($currentUser->hasTwoFactor)
                             <div class="form-group">
                                 <?php
-                                $google2fa_url = PragmaRX\Google2FA\Vendor\Laravel\Facade::getQRCodeGoogleUrl(
+                                $google2fa = (new \PragmaRX\Google2FA\Google2FA());
+                                $google2fa_url = $google2fa->getQRCodeUrl(
                                     'Cachet',
                                     $currentUser->email,
                                     $currentUser->google_2fa_secret
                                 );
+
+                                $writer = new \BaconQrCode\Writer(
+                                    new \BaconQrCode\Renderer\ImageRenderer(
+                                        new \BaconQrCode\Renderer\RendererStyle\RendererStyle(200),
+                                        new \BaconQrCode\Renderer\Image\ImagickImageBackEnd()
+                                    )
+                                );
+
+                                $qrcode_image = base64_encode($writer->writeString($google2fa_url));
                                 ?>
-                                <img src="{{ $google2fa_url }}" class="img-responsive">
+                                <img src="data:image/png;base64, {{ $qrcode_image }}" class="img-responsive"/>
                                 <span class='help-block'>{!! trans('forms.user.2fa.help') !!}</span>
                             </div>
                             @endif

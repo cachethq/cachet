@@ -187,7 +187,6 @@ return [
         Laravel\Tinker\TinkerServiceProvider::class,
         Laravolt\Avatar\ServiceProvider::class,
         McCool\LaravelAutoPresenter\AutoPresenterServiceProvider::class,
-        PragmaRX\Google2FA\Vendor\Laravel\ServiceProvider::class,
 
         /*
          * Application Service Providers...
