@@ -45,7 +45,7 @@ Here are some useful quick links:
 
 ### Demo
 
-To test out the demo, you may login to the [Dashboard](https://dev.cachethq.io/dashboard) with the following:
+To test out the demo, you may login to the [Dashboard](https://demo.cachethq.io/dashboard) with the following:
 
 - **Username:** `test` or `test@example.com`
 - **Password:** `test123`
