@@ -153,16 +153,16 @@ return [
             'display-graphs'                        => 'Afficher les graphiques sur la page de statut ?',
             'about-this-page'                       => 'À propos de cette page',
             'days-of-incidents'                     => 'Combien de jours d\'incidents à montrer ?',
-            'time_before_refresh'                   => 'Status page refresh rate (in seconds)',
-            'major_outage_rate'                     => 'Major outage threshold (in %)',
+            'time_before_refresh'                   => 'Taux de rafraîchissement de la page d\'état (en secondes)',
+            'major_outage_rate'                     => 'Seuil de panne majeur (en %)',
             'banner'                                => 'Image d\'en-tête',
-            'banner-help'                           => "It's recommended that you upload files no bigger than 930px wide",
+            'banner-help'                           => "Il est recommandé de télécharger des fichiers ne dépassant pas 930 pixels de large.",
             'subscribers'                           => 'Permettre aux personnes de s\'inscrire aux notifications par e-mail ?',
-            'suppress_notifications_in_maintenance' => 'Suppress notifications when incident occurs during maintenance period?',
+            'suppress_notifications_in_maintenance' => 'Supprimer les notifications lorsqu\'un incident se produit pendant la période de maintenance ?',
             'skip_subscriber_verification'          => 'Ne pas vérifier les utilisateurs ? (Attention, vous pourriez être spammé)',
             'automatic_localization'                => 'Traduire automatiquement votre page de statut dans la langue du visiteur ?',
             'enable_external_dependencies'          => 'Activer les dépendances tierces (Google Fonts, Trackers, etc...)',
-            'show_timezone'                         => 'Show the timezone the status page is running in',
+            'show_timezone'                         => 'Afficher le fuseau horaire dans lequel la page d\'état est en cours d\'exécution',
             'only_disrupted_days'                   => 'Afficher uniquement les jours contenant des incidents dans la timeline ?',
         ],
         'analytics' => [
@@ -180,8 +180,8 @@ return [
         'security' => [
             'allowed-domains'           => 'Domaines autorisés',
             'allowed-domains-help'      => 'Séparés par des virgules. Le domaine défini ci-dessus est automatiquement autorisé par défaut.',
-            'always-authenticate'       => 'Always authenticate',
-            'always-authenticate-help'  => 'Require login to view any Cachet page',
+            'always-authenticate'       => 'Toujours authentifier',
+            'always-authenticate-help'  => 'Exiger la connexion pour voir une page Cachet',
         ],
         'stylesheet' => [
             'custom-css' => 'Feuille de style personnalisée',
@@ -191,7 +191,7 @@ return [
             'background-fills'        => 'Couleur de remplissage de l\'arrière-plan (composants, incidents, pied de page)',
             'banner-background-color' => 'Couleur d\'arrière-plan de l\'en-tête',
             'banner-padding'          => 'Marge de l\'en-tête',
-            'fullwidth-banner'        => 'Enable full width banner?',
+            'fullwidth-banner'        => 'Activer la bannière pleine largeur ?',
             'text-color'              => 'Couleur du texte',
             'dashboard-login'         => 'Afficher le bouton "Tableau de bord" dans le pied de page ?',
             'reds'                    => 'Rouge (utilisé pour les erreurs)',
@@ -210,7 +210,7 @@ return [
         'password'       => 'Mot de passe',
         'api-token'      => 'Jeton de l\'API',
         'api-token-help' => 'Régénérer votre jeton API empêchera les applications existantes d\'accéder à Cachet.',
-        'gravatar'       => 'Change your profile picture at Gravatar.',
+        'gravatar'       => 'Changez votre photo de profil sur Gravatar.',
         'user_level'     => 'Niveau de l\'utilisateur',
         'levels'         => [
             'admin' => 'Administrateur',
@@ -221,7 +221,7 @@ return [
         ],
         'team' => [
             'description' => 'Invitez les membres de votre équipe en entrant leurs adresses e-mail ici.',
-            'email'       => 'Your Team Members Email Address',
+            'email'       => 'Adresse électronique de votre équipe',
         ],
     ],
 
@@ -241,7 +241,7 @@ return [
     'remove'         => 'Enlever',
     'invite'         => 'Inviter',
     'signup'         => 'Inscription',
-    'manage_updates' => 'Manage Updates',
+    'manage_updates' => 'Gérer les mises à jour',
 
     // Other
     'optional' => '* Optionnel',
