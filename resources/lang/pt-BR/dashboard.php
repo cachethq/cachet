@@ -26,13 +26,13 @@ return [
             'count'   => '{0}Nenhuma atualização|[1]Uma atualização|[2]Duas atualizações|[3,*]Várias atualizações',
             'add'     => [
                 'title'   => 'Crie uma nova atualização de incidente',
-                'success' => 'Your new incident update has been created.',
+                'success' => 'Sua atualização de incidente foi criada.',
                 'failure' => 'Algo deu errado com a atualização do incidente.',
             ],
             'edit' => [
                 'title'   => 'Editar atualização do incidente',
-                'success' => 'The incident update has been updated.',
-                'failure' => 'Something went wrong updating the incident update',
+                'success' => 'Sua atualização de incidente foi atualizada.',
+                'failure' => 'Algo deu errado ao atualizar as informações do incidente',
             ],
         ],
         'reported_by'              => 'Reportado por :user',
@@ -56,7 +56,7 @@ return [
             'title' => 'Template de incidentes',
             'add'   => [
                 'title'   => 'Criar um modelo de incidente',
-                'message' => 'Create your first incident template.',
+                'message' => 'Crie seu primeiro template de incidente.',
                 'success' => 'Seu novo modelo de incidente foi criado.',
                 'failure' => 'Algo deu errado com o modelo de incidente.',
             ],
@@ -75,12 +75,12 @@ return [
     // Incident Maintenance
     'schedule' => [
         'schedule'     => 'Manutenção',
-        'logged'       => '{0}There has been no Maintenance, good work.|[1]You have logged one schedule.|[2,*]You have reported <strong>:count</strong> schedules.',
+        'logged'       => '{0}Ainda não ocorreu nenhuma manuteção, bom trabalho. |[1]Você agendou uma manuteção. | [2, *] Você adicionou <strong>:</strong> manutenções.',
         'scheduled_at' => 'Agendada em :timestamp',
         'add'          => [
             'title'   => 'Adicionar manutenção agendada',
-            'success' => 'Maintenance added.',
-            'failure' => 'Something went wrong adding the Maintenance, please try again.',
+            'success' => 'Manutenção adicionada.',
+            'failure' => 'Algo deu errado ao adicionar a Manutenção, por favor tente novamente.',
         ],
         'edit' => [
             'title'   => 'Editar Manutenção',
