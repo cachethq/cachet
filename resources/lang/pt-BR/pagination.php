@@ -23,6 +23,6 @@ return [
     */
 
     'previous' => 'Anterior',
-    'next'     => 'Avançar',
+    'next'     => 'Próxima',
 
 ];
