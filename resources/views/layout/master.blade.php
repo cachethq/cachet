@@ -16,7 +16,7 @@
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="@yield('title', $siteTitle)">
-    <meta property="og:image" content="/img/favicon.png">
+    <meta property="og:image" content=" {{ asset('/img/favicon.png') }}">
     <meta property="og:description" content="@yield('description', trans('cachet.meta.description.overview', ['app' => $appName]))">
 
     <!-- Mobile IE allows us to activate ClearType technology for smoothing fonts for easy reading -->
