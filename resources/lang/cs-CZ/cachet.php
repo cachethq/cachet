@@ -30,12 +30,12 @@ return [
         'past'          => 'Minulé incidenty',
         'previous_week' => 'Předchozí týden',
         'next_week'     => 'Následující týden',
-        'scheduled'     => 'Scheduled Maintenance',
-        'scheduled_at'  => ', scheduled :timestamp',
+        'scheduled'     => 'Plánovaná odstávka',
+        'scheduled_at'  => ', plánované na :timestamp',
         'status'        => [
-            0 => 'Scheduled', // TODO: Hopefully remove this.
-            1 => 'Investigating',
-            2 => 'Identified',
+            0 => 'Naplánováno', // TODO: Hopefully remove this.
+            1 => 'Zkoumání příčiny',
+            2 => 'Problém identifikován',
             3 => 'Watching',
             4 => 'Fixed',
         ],
@@ -43,37 +43,37 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1] System operational|[2,Inf] All systems are operational',
-        'bad'   => '[0,1] The system is currently experiencing issues|[2,Inf] Some systems are experiencing issues',
-        'major' => '[0,1] The service experiencing a major outage|[2,Inf] Some systems are experiencing a major outage',
+        'good'  => '[0,1] Služba je v provozu|[2,Inf] Všechny služby fungují bez problémů',
+        'bad'   => '[0,1] Služba má problémy|[2,Inf] Některá ze služeb má problémy',
+        'major' => '[0,1] Služba má celkový výpadek|[2,Inf] Některé služby mají celkový výpadek',
     ],
 
     'api' => [
-        'regenerate' => 'Regenerate API Key',
-        'revoke'     => 'Revoke API Key',
+        'regenerate' => 'Obnovit API klíč',
+        'revoke'     => 'Zrušit API klíč',
     ],
 
     // Metrics
     'metrics' => [
         'filter' => [
-            'last_hour' => 'Last Hour',
-            'hourly'    => 'Last 12 Hours',
-            'weekly'    => 'Week',
-            'monthly'   => 'Month',
+            'last_hour' => 'Během poslední hodiny',
+            'hourly'    => 'Posledních 12 hodin',
+            'weekly'    => 'Týden',
+            'monthly'   => 'Měsíc',
         ],
     ],
 
     // Subscriber
     'subscriber' => [
-        'subscribe' => 'Subscribe to get the most recent updates',
-        'button'    => 'Subscribe',
+        'subscribe' => 'Přihlásit se k odběru upozornění',
+        'button'    => 'Přihlásit',
         'manage'    => [
             'no_subscriptions' => 'Aktuálně jsi přihlášen(a) ke všem upozorněním.',
             'my_subscriptions' => 'Aktuálně jsi přihlášen(a) k následujícím upozorněním.',
         ],
         'email' => [
-            'subscribe'          => 'Subscribe to email updates.',
-            'subscribed'         => 'You\'ve been subscribed to email notifications, please check your email to confirm your subscription.',
+            'subscribe'          => 'Přihlásit se k zasílání upozornění e-mailem.',
+            'subscribed'         => 'Proběhlo přihlášení k e-mailovým upozorněním, potvrďte ho prosím na vašem e-mailu.',
             'verified'           => 'Your email subscription has been confirmed. Thank you!',
             'manage'             => 'Manage your subscription',
             'unsubscribe'        => 'Unsubscribe from email updates.',
@@ -128,7 +128,7 @@ return [
         'subscribe' => [
             'title'  => 'Subscribe to component updates',
             'body'   => 'Enter your email address to subscribe to updates for this component. If you\'re already subscribed, you\'ll already receive emails for this component.',
-            'button' => 'Subscribe',
+            'button' => 'Přihlásit',
         ],
     ],
 
