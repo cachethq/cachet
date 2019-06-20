@@ -13,9 +13,9 @@ return [
 
     // Setup form fields
     'setup' => [
-        'email'            => 'Email',
-        'username'         => 'Username',
-        'password'         => 'Password',
+        'email'            => 'E-mail',
+        'username'         => 'Uživatelské jméno',
+        'password'         => 'Heslo',
         'site_name'        => 'Site Name',
         'site_domain'      => 'Site Domain',
         'site_timezone'    => 'Select your timezone',
@@ -33,8 +33,8 @@ return [
     // Login form fields
     'login' => [
         'login'         => 'Username or Email',
-        'email'         => 'Email',
-        'password'      => 'Password',
+        'email'         => 'E-mail',
+        'password'      => 'Heslo',
         '2fauth'        => 'Authentication Code',
         'invalid'       => 'Invalid username or password',
         'invalid-token' => 'Invalid token',
@@ -154,9 +154,9 @@ return [
     ],
 
     'user' => [
-        'username'       => 'Username',
-        'email'          => 'Email',
-        'password'       => 'Password',
+        'username'       => 'Uživatelské jméno',
+        'email'          => 'E-mail',
+        'password'       => 'Heslo',
         'api-token'      => 'API Token',
         'api-token-help' => 'Regenerating your API token will prevent existing applications from accessing Cachet.',
         'gravatar'       => 'Change your profile picture at Gravatar.',
@@ -185,7 +185,7 @@ return [
     'cancel' => 'Cancel',
     'remove' => 'Remove',
     'invite' => 'Invite',
-    'signup' => 'Sign Up',
+    'signup' => 'Registrovat se',
 
     // Other
     'optional' => '* Optional',
