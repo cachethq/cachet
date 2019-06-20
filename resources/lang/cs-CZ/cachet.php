@@ -12,12 +12,12 @@
 return [
     // Components
     'components' => [
-        'last_updated' => 'Last updated :timestamp',
+        'last_updated' => 'Poslední aktualizace :timestamp',
         'status'       => [
-            1 => 'Operational',
-            2 => 'Performance Issues',
-            3 => 'Partial Outage',
-            4 => 'Major Outage',
+            1 => 'V provozu',
+            2 => 'Problémy s výkonem',
+            3 => 'Částečný výpadek',
+            4 => 'Závažný výpadek',
         ],
         'group' => [
             'other' => 'Other Components',
@@ -26,10 +26,10 @@ return [
 
     // Incidents
     'incidents' => [
-        'none'          => 'No incidents reported',
-        'past'          => 'Past Incidents',
-        'previous_week' => 'Previous Week',
-        'next_week'     => 'Next Week',
+        'none'          => 'Nejsou nahlášeny žádné incidenty',
+        'past'          => 'Minulé incidenty',
+        'previous_week' => 'Předchozí týden',
+        'next_week'     => 'Následující týden',
         'scheduled'     => 'Scheduled Maintenance',
         'scheduled_at'  => ', scheduled :timestamp',
         'status'        => [
