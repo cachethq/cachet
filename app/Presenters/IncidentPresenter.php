@@ -14,7 +14,6 @@ namespace CachetHQ\Cachet\Presenters;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Presenters\Traits\TimestampsTrait;
 use CachetHQ\Cachet\Services\Dates\DateFactory;
-use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Contracts\Support\Arrayable;
 use McCool\LaravelAutoPresenter\BasePresenter;
 
@@ -60,26 +59,6 @@ class IncidentPresenter extends BasePresenter implements Arrayable
     public function __construct(DateFactory $dates, Incident $resource)
     {
         $this->dates = $dates;
-    }
-
-    /**
-     * Renders the message from Markdown into HTML.
-     *
-     * @return string
-     */
-    public function formatted_message()
-    {
-        return Markdown::convertToHtml($this->wrappedObject->message);
-    }
-
-    /**
-     * Return the raw text of the message, even without Markdown.
-     *
-     * @return string
-     */
-    public function raw_message()
-    {
-        return strip_tags($this->formatted_message());
     }
 
     /**
@@ -260,16 +239,6 @@ class IncidentPresenter extends BasePresenter implements Arrayable
         }
 
         return $this->latest;
-    }
-
-    /**
-     * Get the incident permalink.
-     *
-     * @return string
-     */
-    public function permalink()
-    {
-        return cachet_route('incident', [$this->wrappedObject->id]);
     }
 
     /**

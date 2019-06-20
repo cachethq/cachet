@@ -54,6 +54,7 @@
         "nexmo/client": "^1.5",
         "pragmarx/google2fa": "^0.7.1",
         "predis/predis": "^1.1",
+        "spatie/laravel-feed": "^2.1",
         "twig/twig": "^2.6"
     },
     "require-dev": {

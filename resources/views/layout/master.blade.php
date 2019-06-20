@@ -25,6 +25,9 @@
     <meta name="msapplication-TileColor" content="{{ $themeGreens }}" />
     <meta name="msapplication-TileImage" content="{{ asset('/img/favicon.png') }}" />
 
+    <!-- RSS -->
+    @include('feed::links')
+
     <link href="{{ Request::fullUrl() }}" rel="canonical">
 
     @if (isset($favicon))
