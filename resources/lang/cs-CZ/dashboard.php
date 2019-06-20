@@ -201,16 +201,16 @@ return [
             'localization' => 'Lokalizace',
         ],
         'customization' => [
-            'customization' => 'Customization',
-            'header'        => 'Custom Header HTML',
-            'footer'        => 'Custom Footer HTML',
+            'customization' => 'Vlastní nastavení',
+            'header'        => 'Vlastní hlavička HTML',
+            'footer'        => 'Vlastní zápatí HTML',
         ],
         'security' => [
-            'security'   => 'Security',
-            'two-factor' => 'Users without two-factor authentication',
+            'security'   => 'Zabezpečení',
+            'two-factor' => 'Uživatelé bez dvoufaktorového ověřování',
         ],
         'stylesheet' => [
-            'stylesheet' => 'Stylesheet',
+            'stylesheet' => 'Šablona stylů',
         ],
         'theme' => [
             'theme' => 'Motiv vzhledu',
