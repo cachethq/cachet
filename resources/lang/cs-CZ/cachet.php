@@ -74,12 +74,12 @@ return [
         'email' => [
             'subscribe'          => 'Přihlásit se k zasílání upozornění e-mailem.',
             'subscribed'         => 'Proběhlo přihlášení k e-mailovým upozorněním, potvrďte ho prosím na vašem e-mailu.',
-            'verified'           => 'Your email subscription has been confirmed. Thank you!',
+            'verified'           => 'E-mail pro zasílání upozornění byl ověřen. Děkujeme!',
             'manage'             => 'Manage your subscription',
-            'unsubscribe'        => 'Unsubscribe from email updates.',
-            'unsubscribed'       => 'Your email subscription has been cancelled.',
-            'failure'            => 'Something went wrong with the subscription.',
-            'already-subscribed' => 'Cannot subscribe :email because they\'re already subscribed.',
+            'unsubscribe'        => 'Odhlásit z odběru e-mailových upozornění.',
+            'unsubscribed'       => 'Odběr e-mailových upozornění byl zrušen.',
+            'failure'            => 'Došlo k chybě při nastavení odběru e-mailů.',
+            'already-subscribed' => 'Nelze přihlásit k odběru :email, protože je již přihlášen.',
             'verify'             => [
                 'text'   => "Please confirm your email subscription to :app_name status updates.\n:link",
                 'html'   => '<p>Please confirm your email subscription to :app_name status updates.</p>',
