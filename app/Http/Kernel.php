@@ -15,6 +15,7 @@ use Barryvdh\Cors\HandleCors;
 use CachetHQ\Cachet\Http\Middleware\Admin;
 use CachetHQ\Cachet\Http\Middleware\ApiAuthentication;
 use CachetHQ\Cachet\Http\Middleware\Authenticate;
+use CachetHQ\Cachet\Http\Middleware\CacheControl;
 use CachetHQ\Cachet\Http\Middleware\Localize;
 use CachetHQ\Cachet\Http\Middleware\ReadyForUse;
 use CachetHQ\Cachet\Http\Middleware\RedirectIfAuthenticated;
@@ -47,6 +48,7 @@ class Kernel extends HttpKernel
         'admin'       => Admin::class,
         'can'         => Authorize::class,
         'cors'        => HandleCors::class,
+        'cache'       => CacheControl::class,
         'auth'        => Authenticate::class,
         'auth.api'    => ApiAuthentication::class,
         'guest'       => RedirectIfAuthenticated::class,
