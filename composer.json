@@ -49,7 +49,6 @@
         "jenssegers/date": "^3.4",
         "laravel/framework": "5.7.*",
         "laravel/tinker": "^1.0",
-        "laravolt/avatar": "^2.1",
         "mccool/laravel-auto-presenter": "^7.1",
         "nexmo/client": "^1.5",
         "pragmarx/google2fa": "^0.7.1",
