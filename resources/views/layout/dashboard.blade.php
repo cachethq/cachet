@@ -31,13 +31,13 @@
     @if($enableExternalDependencies)
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&subset={{ $fontSubset }}" rel="stylesheet" type="text/css">
     @endif
-    <link rel="stylesheet" href="{{ mix('dist/css/dashboard/dashboard.css') }}">
+    <link rel="stylesheet" href="{{ asset(mix('dist/css/dashboard/dashboard.css')) }}">
     @yield('css')
 
     @include('partials.crowdin')
 
-    <script src="{{ mix('dist/js/manifest.js') }}"></script>
-    <script src="{{ mix('dist/js/vendor.js') }}"></script>
+    <script src="{{ asset(mix('dist/js/manifest.js')) }}"></script>
+    <script src="{{ asset(mix('dist/js/vendor.js')) }}"></script>
 </head>
 
 <body class="dashboard">
@@ -61,5 +61,5 @@
     </div>
 </body>
 @yield('js')
-<script src="{{ mix('dist/js/all.js') }}"></script>
+<script src="{{ asset(mix('dist/js/all.js')) }}"></script>
 </html>

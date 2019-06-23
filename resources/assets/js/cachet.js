@@ -251,7 +251,8 @@ $(function () {
 
         // Only validate going forward. If current group is invalid, do not go further
         if (next > current) {
-            var url = '/setup/step' + current;
+            var currentUrl = window.location.href.replace(/step\d/, '');
+            var url = currentUrl + '/step' + current;
             $.post(url, $form.serializeObject())
                 .done(function(response) {
                     goToStep(current, next);
