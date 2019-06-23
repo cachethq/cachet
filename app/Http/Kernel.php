@@ -46,18 +46,18 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'admin'       => Admin::class,
-        'auth.api'    => ApiAuthentication::class,
+        'admin'           => Admin::class,
+        'auth.api'        => ApiAuthentication::class,
         'auth.remoteuser' => RemoteUserAuthenticate::class,
-        'auth'        => Authenticate::class,
-        'cache'       => CacheControl::class,
-        'can'         => Authorize::class,
-        'cors'        => HandleCors::class,
-        'guest'       => RedirectIfAuthenticated::class,
-        'localize'    => Localize::class,
-        'ready'       => ReadyForUse::class,
-        'setup'       => SetupAlreadyCompleted::class,
-        'subscribers' => SubscribersConfigured::class,
-        'throttle'    => Throttler::class,
+        'auth'            => Authenticate::class,
+        'cache'           => CacheControl::class,
+        'can'             => Authorize::class,
+        'cors'            => HandleCors::class,
+        'guest'           => RedirectIfAuthenticated::class,
+        'localize'        => Localize::class,
+        'ready'           => ReadyForUse::class,
+        'setup'           => SetupAlreadyCompleted::class,
+        'subscribers'     => SubscribersConfigured::class,
+        'throttle'        => Throttler::class,
     ];
 }
