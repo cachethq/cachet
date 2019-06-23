@@ -15,6 +15,7 @@ use AltThree\Validator\ValidationException;
 use CachetHQ\Cachet\Bus\Commands\Schedule\CreateScheduleCommand;
 use CachetHQ\Cachet\Bus\Commands\Schedule\DeleteScheduleCommand;
 use CachetHQ\Cachet\Bus\Commands\Schedule\UpdateScheduleCommand;
+use CachetHQ\Cachet\Integrations\Contracts\System;
 use CachetHQ\Cachet\Models\IncidentTemplate;
 use CachetHQ\Cachet\Models\Schedule;
 use GrahamCampbell\Binput\Facades\Binput;
@@ -36,12 +37,20 @@ class ScheduleController extends Controller
     protected $subMenu = [];
 
     /**
+     * The system instance.
+     *
+     * @var \CachetHQ\Cachet\Integrations\Contracts\System
+     */
+    protected $system;
+
+    /**
      * Creates a new schedule controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(System $system)
     {
+        $this->system = $system;
         View::share('subTitle', trans('dashboard.schedule.title'));
     }
 
@@ -70,7 +79,8 @@ class ScheduleController extends Controller
 
         return View::make('dashboard.maintenance.add')
             ->withPageTitle(trans('dashboard.schedule.add.title').' - '.trans('dashboard.dashboard'))
-            ->withIncidentTemplates($incidentTemplates);
+            ->withIncidentTemplates($incidentTemplates)
+            ->withNotificationsEnabled($this->system->canNotifySubscribers());
     }
 
     /**
@@ -87,7 +97,8 @@ class ScheduleController extends Controller
                 Binput::get('status', Schedule::UPCOMING),
                 Binput::get('scheduled_at'),
                 Binput::get('completed_at'),
-                Binput::get('components', [])
+                Binput::get('components', []),
+                Binput::get('notify', false)
             ));
         } catch (ValidationException $e) {
             return cachet_redirect('dashboard.schedule.create')
