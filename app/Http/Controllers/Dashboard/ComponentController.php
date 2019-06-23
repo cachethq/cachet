@@ -21,6 +21,7 @@ use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\View;
 
@@ -73,7 +74,7 @@ class ComponentController extends Controller
      */
     public function showComponents()
     {
-        $components = Component::orderBy('order')->orderBy('created_at')->get();
+        $components = Component::with('group')->orderBy('order')->orderBy('created_at')->get();
 
         $this->subMenu['components']['active'] = true;
 
@@ -112,7 +113,7 @@ class ComponentController extends Controller
     public function updateComponentAction(Component $component)
     {
         $componentData = Binput::get('component');
-        $tags = array_pull($componentData, 'tags');
+        $tags = Arr::pull($componentData, 'tags');
 
         try {
             $component = execute(new UpdateComponentCommand(
@@ -169,7 +170,7 @@ class ComponentController extends Controller
     public function createComponentAction()
     {
         $componentData = Binput::get('component');
-        $tags = array_pull($componentData, 'tags');
+        $tags = Arr::pull($componentData, 'tags');
 
         try {
             $component = execute(new CreateComponentCommand(

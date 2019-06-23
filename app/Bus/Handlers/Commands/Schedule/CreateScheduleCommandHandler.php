@@ -66,8 +66,7 @@ class CreateScheduleCommandHandler
     {
         try {
             $schedule = Schedule::create($this->filter($command));
-
-            event(new ScheduleWasCreatedEvent($this->auth->user(), $schedule));
+            event(new ScheduleWasCreatedEvent($this->auth->user(), $schedule, (bool) $command->notify));
         } catch (InvalidArgumentException $e) {
             throw new ValidationException(new MessageBag([$e->getMessage()]));
         }
@@ -96,6 +95,7 @@ class CreateScheduleCommandHandler
             'status'       => $command->status,
             'scheduled_at' => $scheduledAt,
             'completed_at' => $completedAt,
+            'notify'       => $command->notify,
         ];
 
         $availableParams = array_filter($params, function ($val) {

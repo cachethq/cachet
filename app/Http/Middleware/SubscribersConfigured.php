@@ -19,7 +19,7 @@ use Illuminate\Http\Request;
  * This is the subscribers configured middleware class.
  *
  * @author James Brooks <james@alt-three.com>
- * @author Graham Campbell <james@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
  */
 class SubscribersConfigured
 {

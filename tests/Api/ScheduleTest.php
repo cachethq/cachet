@@ -12,6 +12,7 @@
 namespace CachetHQ\Tests\Cachet\Api;
 
 use CachetHQ\Cachet\Models\Schedule;
+use Illuminate\Support\Arr;
 
 /**
  * This is the schedule test class.
@@ -55,7 +56,7 @@ class ScheduleTest extends AbstractApiTestCase
 
         $response = $this->json('POST', '/api/v1/schedules/', $schedule);
 
-        array_forget($schedule, 'scheduled_at');
+        Arr::forget($schedule, 'scheduled_at');
 
         $response->assertStatus(200);
         $response->assertJsonFragment($schedule);

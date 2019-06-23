@@ -173,6 +173,7 @@ return [
         /*
          * Packages Service Providers...
          */
+        env('APP_DEBUG') ? Bugsnag\BugsnagLaravel\BugsnagServiceProvider::class : null,
         AltThree\Badger\BadgerServiceProvider::class,
         AltThree\Emoji\EmojiServiceProvider::class,
         AltThree\Twitter\TwitterServiceProvider::class,

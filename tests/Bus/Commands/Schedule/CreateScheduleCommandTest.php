@@ -34,6 +34,7 @@ class CreateScheduleCommandTest extends AbstractTestCase
             'scheduled_at' => date('Y-m-d H:i'),
             'completed_at' => date('Y-m-d H:i'),
             'components'   => [],
+            'notify'       => 1,
         ];
         $object = new CreateScheduleCommand(
             $params['name'],
@@ -41,7 +42,8 @@ class CreateScheduleCommandTest extends AbstractTestCase
             $params['status'],
             $params['scheduled_at'],
             $params['completed_at'],
-            $params['components']
+            $params['components'],
+            $params['notify']
         );
 
         return compact('params', 'object');

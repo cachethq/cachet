@@ -1,5 +1,8 @@
 @import "vendors";
 
+// Vendors for sDshboard.
+@import "./node_modules/jquery-minicolors/jquery.minicolors";
+
 // Styles for partials
 @import "dashboard/partials/base";
 @import "dashboard/partials/wrapper";
@@ -16,10 +19,8 @@
 // Styles for plugins
 /*! purgecss start ignore */
 @import "plugins/jquery.minicolors";
-@import "plugins/github-markdown";
 @import "plugins/sweetalert";
 @import "plugins/messenger";
 @import "plugins/animate";
-@import "plugins/password-strength";
 @import "plugins/sortable";
 /*! purgecss end ignore */

@@ -7,7 +7,7 @@
         <span class="component-group-name">{{ $componentGroup->name }}</span>
     </li>
     <div class="group-items {{ $componentGroup->is_collapsed ? "hide" : null }}">
-        @foreach($componentGroup->enabled_components()->orderBy('order')->get() as $component)
+        @foreach($componentGroup->enabled_components()->get() as $component)
         @include('dashboard.partials.component', compact($component))
         @endforeach
     </div>

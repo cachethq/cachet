@@ -27,6 +27,69 @@ use Illuminate\Contracts\View\View;
 class DashboardComposer
 {
     /**
+     * The component count.
+     *
+     * @var int
+     */
+    protected $componentCount;
+
+    /**
+     * The incident count.
+     *
+     * @var int
+     */
+    protected $incidentCount;
+
+    /**
+     * The incident template count.
+     *
+     * @var int
+     */
+    protected $incidentTemplateCount;
+
+    /**
+     * The schedule count.
+     *
+     * @var int
+     */
+    protected $scheduleCount;
+
+    /**
+     * The subscriber count.
+     *
+     * @var int
+     */
+    protected $subscriberCount;
+
+    /**
+     * Create a new dashboard composer instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        if (is_null($this->componentCount)) {
+            $this->componentCount = Component::count();
+        }
+
+        if (is_null($this->incidentCount)) {
+            $this->incidentCount = Incident::count();
+        }
+
+        if (is_null($this->incidentTemplateCount)) {
+            $this->incidentTemplateCount = IncidentTemplate::count();
+        }
+
+        if (is_null($this->scheduleCount)) {
+            $this->scheduleCount = Schedule::count();
+        }
+
+        if (is_null($this->subscriberCount)) {
+            $this->subscriberCount = Subscriber::isVerified()->count();
+        }
+    }
+
+    /**
      * Bind data to the view.
      *
      * @param \Illuminate\Contracts\View\View $view
@@ -35,11 +98,11 @@ class DashboardComposer
      */
     public function compose(View $view)
     {
-        $view->withComponentCount(Component::count());
-        $view->withIncidentCount(Incident::count());
-        $view->withIncidentTemplateCount(IncidentTemplate::count());
-        $view->withScheduleCount(Schedule::count());
-        $view->withSubscriberCount(Subscriber::isVerified()->count());
+        $view->withComponentCount($this->componentCount);
+        $view->withIncidentCount($this->incidentCount);
+        $view->withIncidentTemplateCount($this->incidentTemplateCount);
+        $view->withScheduleCount($this->scheduleCount);
+        $view->withSubscriberCount($this->subscriberCount);
         $view->withIsWriteable(is_writable(app()->bootstrapPath().'/cachet'));
     }
 }

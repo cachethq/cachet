@@ -216,7 +216,9 @@ $(function () {
         $('input[name=remove_banner]').val('1');
     });
 
-    $('.group-name').on('click', function () {
+    $('.group-name').on('click', function (event) {
+        event.stopPropagation();
+
         var $this = $(this);
 
         $this.find('.group-toggle').toggleClass('ion-ios-minus-outline').toggleClass('ion-ios-plus-outline');
@@ -224,20 +226,16 @@ $(function () {
         $this.next('.group-items').toggleClass('hide');
     });
 
-    $('.select-group').on('click', function () {
+    $('.select-group').on('click', function (event) {
         var $parentGroup = $(this).closest('ul.list-group');
         $parentGroup.find('input[type=checkbox]').prop('checked', true);
-        $parentGroup.find('.group-items').removeClass('hide')
-        $parentGroup.find('.group-toggle').addClass('ion-ios-minus-outline').removeClass('ion-ios-plus-outline');
         event.stopPropagation();
         return false;
     });
 
-    $('.deselect-group').on('click', function () {
+    $('.deselect-group').on('click', function (event) {
         var $parentGroup = $(this).closest('ul.list-group');
         $parentGroup.find('input[type=checkbox]').prop('checked', false);
-        $parentGroup.find('.group-items').addClass('hide');
-        $parentGroup.find('.group-toggle').removeClass('ion-ios-minus-outline').addClass('ion-ios-plus-outline');
         event.stopPropagation();
         return false;
     });
@@ -253,7 +251,8 @@ $(function () {
 
         // Only validate going forward. If current group is invalid, do not go further
         if (next > current) {
-            var url = '/setup/step' + current;
+            var currentUrl = window.location.href.replace(/step\d/, '');
+            var url = currentUrl + '/step' + current;
             $.post(url, $form.serializeObject())
                 .done(function(response) {
                     goToStep(current, next);
@@ -308,7 +307,7 @@ $(function () {
             });
         };
 
-        sparkLine(false);
+        sparkLine();
     }
 
     function goToStep(current, next) {
@@ -326,9 +325,6 @@ $(function () {
             .filter(":lt(" + (next) + ")")
             .addClass("active");
     }
-
-    // Password strength
-    $('.password-strength').strengthify();
 
     // Check for updates.
     if ($('#update-alert').length > 0) {

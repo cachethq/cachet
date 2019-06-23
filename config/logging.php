@@ -85,6 +85,15 @@ return [
             'driver' => 'errorlog',
             'level'  => 'debug',
         ],
+
+        'bugsnag' => [
+            'driver' => 'bugsnag',
+        ],
+
+        'debug' => [
+            'driver'   => 'stack',
+            'channels' => ['bugsnag', 'single'],
+        ],
     ],
 
 ];
