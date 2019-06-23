@@ -11,7 +11,7 @@
 
 namespace CachetHQ\Cachet\Http\Controllers;
 
-use AltThree\Badger\Facades\Badger;
+use CachetHQ\Badger\Facades\Badger;
 use CachetHQ\Cachet\Http\Controllers\Api\AbstractApiController;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\Incident;
