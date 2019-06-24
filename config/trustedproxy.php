@@ -24,7 +24,7 @@ return [
      * of your proxy (e.g. if using ELB or similar).
      *
      */
-    'proxies' => null, // [<ip addresses>,], '*'
+    'proxies' => env('TRUSTED_PROXIES'), // [<ip addresses>,], '*'
 
     /*
      * To trust one or more specific proxies that connect
