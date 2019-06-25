@@ -15,7 +15,7 @@ return [
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Incidenty &amp; Odstávky',
+        'title'                    => 'Incidenty &amp; Plánovaná údržba',
         'incidents'                => 'Incidenty',
         'logged'                   => '{0} Nejsou hlášeny žádné incidenty, dobrá práce. | Zapsali jste jeden incident. | Nahlásili jste <strong>:count</strong> incidenty(ů).',
         'incident-create-template' => 'Vytvořit šablonu',
