@@ -58,7 +58,7 @@ return [
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => 'Plánovaná odstávka',
+        'schedule'     => 'Plánovaná údržba',
         'logged'       => '{0} Žádná údržba není v plánu, skvělá práce.|Je v plánu jedna údržba.|Je v plánu <strong>:count</strong> údržb.',
         'scheduled_at' => 'Naplánováno na :timestamp',
         'add'          => [
@@ -195,10 +195,10 @@ return [
             'too-big'     => 'Soubor, který nahráváte, je příliš velký. Nahrajte obrázek menší než :velikost',
         ],
         'analytics' => [
-            'analytics' => 'Analytiky',
+            'analytics' => 'Monitoring přístupů',
         ],
         'localization' => [
-            'localization' => 'Lokalizace',
+            'localization' => 'Lokální nastavení',
         ],
         'customization' => [
             'customization' => 'Vlastní nastavení',
@@ -213,7 +213,7 @@ return [
             'stylesheet' => 'Šablona stylů',
         ],
         'theme' => [
-            'theme' => 'Motiv vzhledu',
+            'theme' => 'Nastavení vzhledu',
         ],
         'edit' => [
             'success' => 'Nastavení uložena.',
