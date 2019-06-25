@@ -30,7 +30,7 @@ return [
         'past'          => 'Minulé incidenty',
         'previous_week' => 'Předchozí týden',
         'next_week'     => 'Následující týden',
-        'scheduled'     => 'Plánovaná odstávka',
+        'scheduled'     => 'Plánovaná údržba',
         'scheduled_at'  => ', plánované na :timestamp',
         'status'        => [
             0 => 'Naplánováno', // TODO: Hopefully remove this.
@@ -111,9 +111,9 @@ return [
 
     'signup' => [
         'title'    => 'Registrovat se',
-        'username' => 'Username',
-        'email'    => 'Email',
-        'password' => 'Password',
+        'username' => 'Uživatelské jméno',
+        'email'    => 'E-mail',
+        'password' => 'Heslo',
         'success'  => 'Tvůj účet byl vytvořen.',
         'failure'  => 'Něco je špatně, nelze se registrovat.',
     ],
