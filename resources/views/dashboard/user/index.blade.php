@@ -59,17 +59,8 @@
                                     $currentUser->email,
                                     $currentUser->google_2fa_secret
                                 );
-
-                                $writer = new \BaconQrCode\Writer(
-                                    new \BaconQrCode\Renderer\ImageRenderer(
-                                        new \BaconQrCode\Renderer\RendererStyle\RendererStyle(200),
-                                        new \BaconQrCode\Renderer\Image\ImagickImageBackEnd()
-                                    )
-                                );
-
-                                $qrcode_image = base64_encode($writer->writeString($google2fa_url));
                                 ?>
-                                <img src="data:image/png;base64, {{ $qrcode_image }}" alt="qr code" class="img-responsive"/>
+                                <img width="200" height="200" src="{{(new \chillerlan\QRCode\QRCode())->render($google2fa_url)}}"  alt="qr code"/>
                                 <span class='help-block'>{!! trans('forms.user.2fa.help') !!}</span>
                             </div>
                             @endif
