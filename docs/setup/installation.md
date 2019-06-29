@@ -71,7 +71,7 @@ Cachet comes with an installation command that will:
 - Run seeders (of which there are none)
 
 ```bash
-php artisan app:install
+php artisan cachet:install
 ```
 
 > Never change the `APP_KEY` after installation on production environment.
