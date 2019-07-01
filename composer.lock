@@ -5234,16 +5234,16 @@
     "packages-dev": [
         {
             "name": "alt-three/testbench",
-            "version": "v4.0.2",
+            "version": "v4.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/AltThree/TestBench.git",
-                "reference": "d59f8207f0c444cb2c1c7e889aa8e2f5b334e704"
+                "reference": "fa6ee363fff09aa3ce6446293d6ccd9738172c06"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/AltThree/TestBench/zipball/d59f8207f0c444cb2c1c7e889aa8e2f5b334e704",
-                "reference": "d59f8207f0c444cb2c1c7e889aa8e2f5b334e704",
+                "url": "https://api.github.com/repos/AltThree/TestBench/zipball/fa6ee363fff09aa3ce6446293d6ccd9738172c06",
+                "reference": "fa6ee363fff09aa3ce6446293d6ccd9738172c06",
                 "shasum": ""
             },
             "require": {
@@ -5278,13 +5278,13 @@
                     "email": "support@alt-three.com"
                 }
             ],
-            "description": "Provides Some Testing Traits For Apps",
+            "description": "Provides some testing traits for apps",
             "keywords": [
                 "Alt Three",
                 "TestBench",
                 "app"
             ],
-            "time": "2019-05-12T11:36:21+00:00"
+            "time": "2019-06-30T15:22:06+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
