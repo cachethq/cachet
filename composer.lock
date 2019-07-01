@@ -253,16 +253,16 @@
         },
         {
             "name": "alt-three/validator",
-            "version": "v4.2.0",
+            "version": "v4.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/AltThree/Validator.git",
-                "reference": "1ea2a482c69f1c568e77c62d19633c3c5b84cc91"
+                "reference": "651fb56c92e5ac80f4840f9596391f72b00f0282"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/AltThree/Validator/zipball/1ea2a482c69f1c568e77c62d19633c3c5b84cc91",
-                "reference": "1ea2a482c69f1c568e77c62d19633c3c5b84cc91",
+                "url": "https://api.github.com/repos/AltThree/Validator/zipball/651fb56c92e5ac80f4840f9596391f72b00f0282",
+                "reference": "651fb56c92e5ac80f4840f9596391f72b00f0282",
                 "shasum": ""
             },
             "require": {
@@ -296,13 +296,13 @@
                     "email": "support@alt-three.com"
                 }
             ],
-            "description": "A Validation Wrapper For Laravel 5",
+            "description": "A validation wrapper for Laravel 5",
             "keywords": [
                 "Alt Three",
-                "logging",
+                "validation",
                 "validator"
             ],
-            "time": "2019-05-12T11:59:28+00:00"
+            "time": "2019-06-30T15:22:35+00:00"
         },
         {
             "name": "asm89/stack-cors",
