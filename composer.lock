@@ -2503,16 +2503,16 @@
         },
         {
             "name": "mccool/laravel-auto-presenter",
-            "version": "7.2.0",
+            "version": "7.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-auto-presenter/laravel-auto-presenter.git",
-                "reference": "45270a0054b4d3ae0550cf826bbeeb5c540afac1"
+                "reference": "0afed6721bf8b8dbbf82803dcd84d2a49addf75d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-auto-presenter/laravel-auto-presenter/zipball/45270a0054b4d3ae0550cf826bbeeb5c540afac1",
-                "reference": "45270a0054b4d3ae0550cf826bbeeb5c540afac1",
+                "url": "https://api.github.com/repos/laravel-auto-presenter/laravel-auto-presenter/zipball/0afed6721bf8b8dbbf82803dcd84d2a49addf75d",
+                "reference": "0afed6721bf8b8dbbf82803dcd84d2a49addf75d",
                 "shasum": ""
             },
             "require": {
@@ -2528,7 +2528,7 @@
                 "graham-campbell/analyzer": "^2.1",
                 "graham-campbell/testbench": "^5.2",
                 "mockery/mockery": "^1.0",
-                "phpunit/phpunit": "^6.5|^7.0"
+                "phpunit/phpunit": "^6.5|^7.0|^8.0"
             },
             "type": "library",
             "extra": {
@@ -2567,7 +2567,7 @@
                 "lpm",
                 "presenter"
             ],
-            "time": "2019-01-27T21:47:32+00:00"
+            "time": "2019-06-28T09:09:41+00:00"
         },
         {
             "name": "monolog/monolog",
