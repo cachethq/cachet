@@ -16,13 +16,11 @@ use CachetHQ\Cachet\Models\Traits\HasMeta;
 use CachetHQ\Cachet\Models\Traits\HasTags;
 use CachetHQ\Cachet\Models\Traits\SearchableTrait;
 use CachetHQ\Cachet\Models\Traits\SortableTrait;
-use CachetHQ\Cachet\Presenters\ComponentPresenter;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use McCool\LaravelAutoPresenter\HasPresenter;
 
-class Component extends Model implements HasPresenter
+class Component extends Model
 {
     use HasTags,
         HasMeta,
@@ -234,15 +232,5 @@ class Component extends Model implements HasPresenter
         return $query->enabled()
             ->where('group_id', '>', 0)
             ->groupBy('group_id');
-    }
-
-    /**
-     * Get the presenter class.
-     *
-     * @return string
-     */
-    public function getPresenterClass()
-    {
-        return ComponentPresenter::class;
     }
 }

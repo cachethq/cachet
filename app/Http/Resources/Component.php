@@ -9,17 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace CachetHQ\Cachet\Presenters;
+namespace CachetHQ\Cachet\Http\Resources;
 
-use CachetHQ\Cachet\Presenters\Traits\TimestampsTrait;
 use CachetHQ\Cachet\Services\Dates\DateFactory;
-use Illuminate\Contracts\Support\Arrayable;
-use McCool\LaravelAutoPresenter\BasePresenter;
+use Illuminate\Http\Request;
 
-class ComponentPresenter extends BasePresenter implements Arrayable
+class Component extends AbstractResource
 {
-    use TimestampsTrait;
-
     /**
      * Returns the override class name for theming.
      *
@@ -27,7 +23,7 @@ class ComponentPresenter extends BasePresenter implements Arrayable
      */
     public function status_color()
     {
-        switch ($this->wrappedObject->status) {
+        switch ($this->resource->status) {
             case 0: return 'greys';
             case 1: return 'greens';
             case 2: return 'blues';
@@ -43,7 +39,7 @@ class ComponentPresenter extends BasePresenter implements Arrayable
      */
     public function human_status()
     {
-        return trans('cachet.components.status.'.$this->wrappedObject->status);
+        return trans('cachet.components.status.'.$this->resource->status);
     }
 
     /**
@@ -53,7 +49,7 @@ class ComponentPresenter extends BasePresenter implements Arrayable
      */
     public function tags()
     {
-        return $this->wrappedObject->tags->pluck('name', 'slug');
+        return $this->resource->tags->pluck('tag.name', 'tag.slug');
     }
 
     /**
@@ -63,17 +59,17 @@ class ComponentPresenter extends BasePresenter implements Arrayable
      */
     public function updated_at_formatted()
     {
-        return ucfirst(app(DateFactory::class)->make($this->wrappedObject->updated_at)->format($this->incidentDateFormat()));
+        return ucfirst(app(DateFactory::class)->make($this->resource->updated_at)->format($this->incidentDateFormat()));
     }
 
     /**
-     * Convert the presenter instance to an array.
+     * @param Request $request
      *
      * @return string[]
      */
-    public function toArray()
+    public function toArray($request)
     {
-        return array_merge($this->wrappedObject->toArray(), [
+        return array_merge($this->resource->toArray(), [
             'created_at'  => $this->created_at(),
             'updated_at'  => $this->updated_at(),
             'status_name' => $this->human_status(),
