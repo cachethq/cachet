@@ -20,12 +20,7 @@ use Illuminate\Notifications\Messages\SlackMessage;
 use Illuminate\Notifications\Notification;
 use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
 
-/**
- * This is the new schedule notification class.
- *
- * @author James Brooks <james@alt-three.com>
- */
-class NewScheduleNotification extends Notification implements ShouldQueue
+abstract class AbstractScheduleNotification extends Notification implements ShouldQueue
 {
     use Queueable;
 
@@ -69,13 +64,13 @@ class NewScheduleNotification extends Notification implements ShouldQueue
      */
     public function toMail($notifiable)
     {
-        $content = trans('notifications.schedule.new.mail.content', [
+        $content = trans($this->getPrefixedTranslationKey('mail.content'), [
             'name' => $this->schedule->name,
             'date' => $this->schedule->scheduled_at_formatted,
         ]);
 
         return (new MailMessage())
-            ->subject(trans('notifications.schedule.new.mail.subject'))
+            ->subject(trans($this->getPrefixedTranslationKey('mail.subject')))
             ->markdown('notifications.schedule.new', [
                 'content'                => $content,
                 'unsubscribeText'        => trans('cachet.subscriber.unsubscribe'),
@@ -94,7 +89,7 @@ class NewScheduleNotification extends Notification implements ShouldQueue
      */
     public function toNexmo($notifiable)
     {
-        $content = trans('notifications.schedule.new.sms.content', [
+        $content = trans($this->getPrefixedTranslationKey('sms.content'), [
             'name' => $this->schedule->name,
             'date' => $this->schedule->scheduled_at_formatted,
         ]);
@@ -111,14 +106,14 @@ class NewScheduleNotification extends Notification implements ShouldQueue
      */
     public function toSlack($notifiable)
     {
-        $content = trans('notifications.schedule.new.slack.content', [
+        $content = trans($this->getPrefixedTranslationKey('slack.content'), [
             'name' => $this->schedule->name,
             'date' => $this->schedule->scheduled_at_formatted,
         ]);
 
         return (new SlackMessage())
-                    ->content(trans('notifications.schedule.new.slack.title'))
-                    ->attachment(function ($attachment) use ($content) {
+                    ->content(trans($this->getPrefixedTranslationKey('slack.title')))
+                    ->attachment(function ($attachment) use ($content, $notifiable) {
                         $attachment->title($content)
                                    ->timestamp($this->schedule->getWrappedObject()->scheduled_at)
                                    ->fields(array_filter([
@@ -127,4 +122,19 @@ class NewScheduleNotification extends Notification implements ShouldQueue
                                     ]));
                     });
     }
+
+    /**
+     * @param string $key
+     *
+     * @return string
+     */
+    protected function getPrefixedTranslationKey($key)
+    {
+        return sprintf('%s.%s', $this->getTranslationPrefix(), $key);
+    }
+
+    /**
+     * @return string
+     */
+    abstract protected function getTranslationPrefix();
 }

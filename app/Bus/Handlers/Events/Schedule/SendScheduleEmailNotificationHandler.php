@@ -12,8 +12,14 @@
 namespace CachetHQ\Cachet\Bus\Handlers\Events\Schedule;
 
 use CachetHQ\Cachet\Bus\Events\Schedule\ScheduleEventInterface;
+use CachetHQ\Cachet\Bus\Events\Schedule\ScheduleWasCreatedEvent;
+use CachetHQ\Cachet\Bus\Events\Schedule\ScheduleWasRemovedEvent;
+use CachetHQ\Cachet\Bus\Events\Schedule\ScheduleWasUpdatedEvent;
+use CachetHQ\Cachet\Models\Schedule;
 use CachetHQ\Cachet\Models\Subscriber;
-use CachetHQ\Cachet\Notifications\Schedule\NewScheduleNotification;
+use CachetHQ\Cachet\Notifications\Schedule\ScheduleCreatedNotification;
+use CachetHQ\Cachet\Notifications\Schedule\ScheduleRemovedNotification;
+use CachetHQ\Cachet\Notifications\Schedule\ScheduleUpdatedNotification;
 
 /**
  * This is the send schedule event notification handler.
@@ -51,13 +57,31 @@ class SendScheduleEmailNotificationHandler
     public function handle(ScheduleEventInterface $event)
     {
         $schedule = $event->schedule;
+
         if (!$event->notify) {
-            return false;
+            return;
         }
 
-        // First notify all global subscribers.
-        $globalSubscribers = $this->subscriber->isVerified()->isGlobal()->get()->each(function ($subscriber) use ($schedule) {
-            $subscriber->notify(new NewScheduleNotification($schedule));
-        });
+        // Notify global subscribers
+
+        $globalSubscribers = $this->subscriber->isVerified()->isGlobal()->get();
+
+        if ($event instanceof ScheduleWasCreatedEvent) {
+            $globalSubscribers->each(function ($subscriber) use ($schedule) {
+                $subscriber->notify(new ScheduleCreatedNotification($schedule));
+            });
+        }
+
+        if ($event instanceof ScheduleWasUpdatedEvent) {
+            $globalSubscribers->each(function ($subscriber) use ($schedule) {
+                $subscriber->notify(new ScheduleUpdatedNotification($schedule));
+            });
+        }
+
+        if ($event instanceof ScheduleWasRemovedEvent) {
+            $globalSubscribers->each(function ($subscriber) use ($schedule) {
+                $subscriber->notify(new ScheduleRemovedNotification($schedule));
+            });
+        }
     }
 }

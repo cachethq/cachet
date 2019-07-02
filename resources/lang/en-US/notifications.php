@@ -75,6 +75,36 @@ return [
                 'content' => ':name was scheduled for :date',
             ],
         ],
+        'update' => [
+            'mail' => [
+                'subject' => 'Schedule Updated',
+                'content' => ':name is scheduled for :date',
+                'title'   => 'A scheduled maintenance was updated.',
+                'action'  => 'View',
+            ],
+            'slack' => [
+                'title'   => 'Schedule Updated!',
+                'content' => ':name is scheduled for :date',
+            ],
+            'sms' => [
+                'content' => ':name is scheduled for :date',
+            ],
+        ],
+        'remove' => [
+            'mail' => [
+                'subject' => 'Schedule Removed',
+                'content' => ':name schedule for :date was removed',
+                'title'   => 'A scheduled maintenance was removed.',
+                'action'  => 'View',
+            ],
+            'slack' => [
+                'title'   => 'Schedule Removed!',
+                'content' => ':name schedule for :date was removed',
+            ],
+            'sms' => [
+                'content' => ':name schedule for :date was removed',
+            ],
+        ],
     ],
     'subscriber' => [
         'verify' => [
