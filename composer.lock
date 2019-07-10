@@ -5818,16 +5818,16 @@
         },
         {
             "name": "graham-campbell/testbench-core",
-            "version": "v3.0.2",
+            "version": "v3.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-TestBench-Core.git",
-                "reference": "138218735a65f4532d6c4242a44ffa6c591bca09"
+                "reference": "436b97fe9327ba15b847ae2f5f1fb2bd5a28d400"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-TestBench-Core/zipball/138218735a65f4532d6c4242a44ffa6c591bca09",
-                "reference": "138218735a65f4532d6c4242a44ffa6c591bca09",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-TestBench-Core/zipball/436b97fe9327ba15b847ae2f5f1fb2bd5a28d400",
+                "reference": "436b97fe9327ba15b847ae2f5f1fb2bd5a28d400",
                 "shasum": ""
             },
             "require": {
@@ -5875,7 +5875,7 @@
                 "testbench-core",
                 "testing"
             ],
-            "time": "2019-02-16T13:26:40+00:00"
+            "time": "2019-06-30T23:05:29+00:00"
         },
         {
             "name": "hamcrest/hamcrest-php",
