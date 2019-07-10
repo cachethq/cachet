@@ -1206,16 +1206,16 @@
         },
         {
             "name": "graham-campbell/binput",
-            "version": "v6.1.0",
+            "version": "v6.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Binput.git",
-                "reference": "986973e1a9697a903d9850d63ed60eb8658753a2"
+                "reference": "99210ef689cfd2e32918db79f9b6115405cb4226"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Binput/zipball/986973e1a9697a903d9850d63ed60eb8658753a2",
-                "reference": "986973e1a9697a903d9850d63ed60eb8658753a2",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Binput/zipball/99210ef689cfd2e32918db79f9b6115405cb4226",
+                "reference": "99210ef689cfd2e32918db79f9b6115405cb4226",
                 "shasum": ""
             },
             "require": {
@@ -1271,7 +1271,7 @@
                 "laravel",
                 "security"
             ],
-            "time": "2019-02-17T19:48:09+00:00"
+            "time": "2019-06-30T14:24:05+00:00"
         },
         {
             "name": "graham-campbell/exceptions",
@@ -1536,16 +1536,16 @@
         },
         {
             "name": "graham-campbell/security-core",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Security-Core.git",
-                "reference": "6873cee667e415d0b429adc807b8e1ee450e0f5f"
+                "reference": "2dc183b6be8ef71b4db72849ceb0d2322d0e1ef8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Security-Core/zipball/6873cee667e415d0b429adc807b8e1ee450e0f5f",
-                "reference": "6873cee667e415d0b429adc807b8e1ee450e0f5f",
+                "url": "https://api.github.com/repos/GrahamCampbell/Security-Core/zipball/2dc183b6be8ef71b4db72849ceb0d2322d0e1ef8",
+                "reference": "2dc183b6be8ef71b4db72849ceb0d2322d0e1ef8",
                 "shasum": ""
             },
             "require": {
@@ -1553,7 +1553,7 @@
             },
             "require-dev": {
                 "graham-campbell/analyzer": "^2.1",
-                "phpunit/phpunit": "^6.5|^7.0"
+                "phpunit/phpunit": "^6.5|^7.0|^8.0"
             },
             "type": "library",
             "extra": {
@@ -1587,7 +1587,7 @@
                 "laravel",
                 "security"
             ],
-            "time": "2018-12-30T01:50:43+00:00"
+            "time": "2019-06-30T13:39:38+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
