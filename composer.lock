@@ -5760,16 +5760,16 @@
         },
         {
             "name": "graham-campbell/analyzer",
-            "version": "v2.2.0",
+            "version": "v2.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Analyzer.git",
-                "reference": "0ed700f993fc4b37f67a7aca9dcc2b6d0abe600c"
+                "reference": "e7ce54cf4761f5f1182af3a69bcf88e1ff82abb0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Analyzer/zipball/0ed700f993fc4b37f67a7aca9dcc2b6d0abe600c",
-                "reference": "0ed700f993fc4b37f67a7aca9dcc2b6d0abe600c",
+                "url": "https://api.github.com/repos/GrahamCampbell/Analyzer/zipball/e7ce54cf4761f5f1182af3a69bcf88e1ff82abb0",
+                "reference": "e7ce54cf4761f5f1182af3a69bcf88e1ff82abb0",
                 "shasum": ""
             },
             "require": {
@@ -5814,7 +5814,7 @@
                 "classes",
                 "testing"
             ],
-            "time": "2019-05-22T12:04:22+00:00"
+            "time": "2019-06-30T12:44:22+00:00"
         },
         {
             "name": "graham-campbell/testbench-core",
