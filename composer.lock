@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "256b508cf308e596a15b1e4625e3e932",
+    "content-hash": "0bb0a073b8972260345c7a83eebb9243",
     "packages": [
         {
             "name": "alt-three/badger",
