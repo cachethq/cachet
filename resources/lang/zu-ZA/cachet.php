@@ -92,6 +92,7 @@ return [
         'email' => [
             'subscribe'          => 'crwdns912:0crwdne912:0',
             'subscribed'         => 'crwdns913:0crwdne913:0',
+            'updated-subscribe'  => 'crwdns1522:0crwdne1522:0',
             'verified'           => 'crwdns914:0crwdne914:0',
             'manage'             => 'crwdns915:0crwdne915:0',
             'unsubscribe'        => 'crwdns916:0crwdne916:0',
