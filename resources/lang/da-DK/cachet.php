@@ -92,6 +92,7 @@ return [
         'email' => [
             'subscribe'          => 'Abonner på email opdateringer.',
             'subscribed'         => 'Du er blevet tilmeldt email notifikationer. Vi har sendt dig en bekræftelse på den indtastede email-adresse.',
+            'updated-subscribe'  => 'You\'ve succesfully updated your subscriptions.',
             'verified'           => 'Din tilmelding er nu blevet bekræftet, tak.',
             'manage'             => 'Manage your subscription',
             'unsubscribe'        => 'Afmeld email notifikationer.',
