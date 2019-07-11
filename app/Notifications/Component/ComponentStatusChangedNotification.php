@@ -140,7 +140,7 @@ class ComponentStatusChangedNotification extends Notification
 
         return (new SlackMessage())
                     ->$status()
-                    ->content(trans('notifications.component.status_update.slack.subject'))
+                    ->content(trans('notifications.component.status_update.slack.title'))
                     ->attachment(function ($attachment) use ($content, $notifiable) {
                         $attachment->title($content, cachet_route('status-page'))
                                    ->fields(array_filter([
