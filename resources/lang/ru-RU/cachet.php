@@ -92,6 +92,7 @@ return [
         'email' => [
             'subscribe'          => 'Подписка на рассылку об изменениях.',
             'subscribed'         => 'Вы подписались на рассылку email уведомлений. Проверьте вашу почту, чтобы подтвердить подписку.',
+            'updated-subscribe'  => 'You\'ve succesfully updated your subscriptions.',
             'verified'           => 'Ваша подписка подтверждена. Спасибо!',
             'manage'             => 'Управление подпиской',
             'unsubscribe'        => 'Отписаться от рассылки.',
