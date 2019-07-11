@@ -92,6 +92,7 @@ return [
         'email' => [
             'subscribe'          => 'メールによるアップデート情報の購読',
             'subscribed'         => 'You\'ve been subscribed to email notifications, please check your email to confirm your subscription.',
+            'updated-subscribe'  => 'You\'ve succesfully updated your subscriptions.',
             'verified'           => 'あなたのメール購読を確認しました。ありがとうございます！',
             'manage'             => '購読の管理',
             'unsubscribe'        => 'Unsubscribe from email updates.',
