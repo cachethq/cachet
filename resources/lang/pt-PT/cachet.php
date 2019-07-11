@@ -92,6 +92,7 @@ return [
         'email' => [
             'subscribe'          => 'Subscrever actualizações via email.',
             'subscribed'         => 'Subscreveu as notificações por e-mail, por favor verifique o seu e-mail para confirmar a subscrição.',
+            'updated-subscribe'  => 'You\'ve succesfully updated your subscriptions.',
             'verified'           => 'A sua subscrição por e-mail foi confirmada. Obrigado!',
             'manage'             => 'Manage your subscription',
             'unsubscribe'        => 'Remover subscrição de e-mail.',
