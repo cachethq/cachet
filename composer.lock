@@ -1404,16 +1404,16 @@
         },
         {
             "name": "graham-campbell/markdown",
-            "version": "v10.3.0",
+            "version": "v10.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Markdown.git",
-                "reference": "e076ed4bc8e98f0444b996acdd6042f6f45fe7c2"
+                "reference": "c9978137be1e6896d9a2ca39aa3d2c62d0700ca1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Markdown/zipball/e076ed4bc8e98f0444b996acdd6042f6f45fe7c2",
-                "reference": "e076ed4bc8e98f0444b996acdd6042f6f45fe7c2",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Markdown/zipball/c9978137be1e6896d9a2ca39aa3d2c62d0700ca1",
+                "reference": "c9978137be1e6896d9a2ca39aa3d2c62d0700ca1",
                 "shasum": ""
             },
             "require": {
@@ -1468,7 +1468,7 @@
                 "laravel",
                 "markdown"
             ],
-            "time": "2019-02-17T19:48:19+00:00"
+            "time": "2019-06-30T22:39:31+00:00"
         },
         {
             "name": "graham-campbell/security",
