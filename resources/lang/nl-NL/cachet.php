@@ -92,6 +92,7 @@ return [
         'email' => [
             'subscribe'          => 'Abonneren op e-mail updates.',
             'subscribed'         => 'U bent geabonneerd op e-mail notificaties, controleer uw e-mail om uw abonnement te bevestigen.',
+            'updated-subscribe'  => 'You\'ve succesfully updated your subscriptions.',
             'verified'           => 'Uw e-mail abonnement is bevestigd. Bedankt!',
             'manage'             => 'Beheer je abonnement',
             'unsubscribe'        => 'Afmelden voor e-mail updates.',
