@@ -156,7 +156,7 @@ return [
             'time_before_refresh'                   => 'Aktualisierungsrate der Statusseite (in Sekunden)',
             'major_outage_rate'                     => 'Grenzwert für schwerwiegende Ausfälle (in %)',
             'banner'                                => 'Banner Bild',
-            'banner-help'                           => 'Es wird empfohlen, dass Sie keine Dateien, die breiter als 930 Pixel sind, hochladen',
+            'banner-help'                           => "Es wird empfohlen, dass Sie keine Dateien, die breiter als 930 Pixel sind, hochladen",
             'subscribers'                           => 'Personen die Anmeldung für E-Mail-Benachrichtigung erlauben?',
             'suppress_notifications_in_maintenance' => 'Möchten Sie Benachrichtigungen über einen Vorfall während des Zeitraumes der Wartungsarbeiten unterdrücken?',
             'skip_subscriber_verification'          => 'Verifizierung der Nutzer überspringen? (Warnung, du könntest gespammt werden)',
@@ -168,7 +168,7 @@ return [
         'analytics' => [
             'analytics_google'       => 'Google Analytics Code',
             'analytics_gosquared'    => 'GoSquared Analytics Code',
-            'analytics_piwik_url'    => 'URL der Piwik-Instanz (ohne http(s)://)',
+            'analytics_piwik_url'    => 'URL of your Piwik instance',
             'analytics_piwik_siteid' => 'Piwik\'s Seiten-ID',
         ],
         'localization' => [
@@ -227,6 +227,11 @@ return [
 
     'general' => [
         'timezone' => 'Zeitzone wählen',
+    ],
+
+    'seo' => [
+        'title'        => 'SEO Title',
+        'description'  => 'SEO Description',
     ],
 
     // Buttons
