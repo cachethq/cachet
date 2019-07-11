@@ -92,6 +92,7 @@ return [
         'email' => [
             'subscribe'          => 'Prenumerera på epost-uppdateringar.',
             'subscribed'         => 'Du har börjat prenumerera på e-postmeddelanden, vänligen kontrollera din e-post för att bekräfta din prenumeration.',
+            'updated-subscribe'  => 'You\'ve succesfully updated your subscriptions.',
             'verified'           => 'Din epost-prenumeration har bekräftats. Tack!',
             'manage'             => 'Hantera din prenumeration',
             'unsubscribe'        => 'Avbeställ epost-uppdateringar.',
