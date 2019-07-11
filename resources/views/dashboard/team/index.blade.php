@@ -27,13 +27,12 @@
 
             <div class="user-grid">
                 @foreach($teamMembers as $member)
-                <div class="user col-sm-3 col-xs-6">
-                    <a href="@if($currentUser->id == $member->id) {{ url('dashboard/user') }} @else /dashboard/team/{{ $member->id }} @endif">
-                        <img src="{{ $member->avatar }}">
-                    </a>
-                    <div class="name">{{ $member->username }}</div>
-                    <div class="email">{{ $member->email }}</div>
-                </div>
+                <a href="@if($currentUser->id == $member->id) {{ cachet_route('dashboard.team.edit', $member) }} @else /dashboard/team/{{ $member->id }} @endif">
+                    <div class="user col-sm-3 col-xs-6">
+                        <div class="name">{{ $member->username }}</div>
+                        <div class="email">{{ $member->email }}</div>
+                    </div>
+                </a>
                 @endforeach
             </div>
         </div>

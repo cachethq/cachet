@@ -83,12 +83,12 @@
                                 @foreach($componentsInGroups as $group)
                                 <optgroup label="{{ $group->name }}">
                                     @foreach($group->components as $component)
-                                    <option value="{{ $component->id }}">{{ $component->name }}</option>
+                                    <option value="{{ $component->id }}">{!! $component->name !!}</option>
                                     @endforeach
                                 </optgroup>
                                 @endforeach
                                 @foreach($componentsOutGroups as $component)
-                                <option value="{{ $component->id }}">{{ $component->name }}</option>
+                                <option value="{{ $component->id }}">{!! $component->name !!}</option>
                                 @endforeach
                             </select>
                         </div>
