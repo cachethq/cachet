@@ -11,17 +11,11 @@
 
 namespace CachetHQ\Cachet\Notifications\Subscriber;
 
+use CachetHQ\Cachet\Notifications\AbstractSubscriberNotification;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
-use Illuminate\Notifications\Notification;
-use Illuminate\Support\Facades\Config;
 
-/**
- * This is the verify subscription notification class.
- *
- * @author James Brooks <james@alt-three.com>
- */
-class VerifySubscriptionNotification extends Notification
+class VerifySubscriptionNotification extends AbstractSubscriberNotification
 {
     use Queueable;
 
@@ -48,8 +42,8 @@ class VerifySubscriptionNotification extends Notification
     {
         return (new MailMessage())
                     ->subject(trans('notifications.subscriber.verify.mail.subject'))
-                    ->greeting(trans('notifications.subscriber.verify.mail.title', ['app_name' => Config::get('setting.app_name')]))
+                    ->greeting(trans('notifications.subscriber.verify.mail.title', ['app_name' => setting('app_name')]))
                     ->action(trans('notifications.subscriber.verify.mail.action'), cachet_route('subscribe.verify', ['code' => $notifiable->verify_code]))
-                    ->line(trans('notifications.subscriber.verify.mail.content', ['app_name' => Config::get('setting.app_name')]));
+                    ->line(trans('notifications.subscriber.verify.mail.content', ['app_name' => setting('app_name')]));
     }
 }

@@ -12,19 +12,14 @@
 namespace CachetHQ\Cachet\Notifications\Component;
 
 use CachetHQ\Cachet\Models\Component;
+use CachetHQ\Cachet\Notifications\AbstractSubscriberNotification;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Messages\NexmoMessage;
 use Illuminate\Notifications\Messages\SlackMessage;
-use Illuminate\Notifications\Notification;
 use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
 
-/**
- * This is the component status changed notification class.
- *
- * @author James Brooks <james@alt-three.com>
- */
-class ComponentStatusChangedNotification extends Notification
+class ComponentStatusChangedNotification extends AbstractSubscriberNotification
 {
     use Queueable;
 
@@ -54,18 +49,6 @@ class ComponentStatusChangedNotification extends Notification
     {
         $this->component = AutoPresenter::decorate($component);
         $this->status = $status;
-    }
-
-    /**
-     * Get the notification's delivery channels.
-     *
-     * @param mixed $notifiable
-     *
-     * @return string[]
-     */
-    public function via($notifiable)
-    {
-        return ['mail', 'nexmo', 'slack'];
     }
 
     /**

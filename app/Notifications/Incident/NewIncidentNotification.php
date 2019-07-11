@@ -16,16 +16,9 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Messages\NexmoMessage;
 use Illuminate\Notifications\Messages\SlackMessage;
-use Illuminate\Notifications\Notification;
-use Illuminate\Support\Facades\Config;
 use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
 
-/**
- * This is the new incident notification class.
- *
- * @author James Brooks <james@alt-three.com>
- */
-class NewIncidentNotification extends Notification
+class NewIncidentNotification extends AbstractSubscriberNotification
 {
     use Queueable;
 
@@ -46,18 +39,6 @@ class NewIncidentNotification extends Notification
     public function __construct(Incident $incident)
     {
         $this->incident = AutoPresenter::decorate($incident);
-    }
-
-    /**
-     * Get the notification's delivery channels.
-     *
-     * @param mixed $notifiable
-     *
-     * @return string[]
-     */
-    public function via($notifiable)
-    {
-        return ['mail', 'nexmo', 'slack'];
     }
 
     /**
@@ -111,7 +92,7 @@ class NewIncidentNotification extends Notification
     public function toSlack($notifiable)
     {
         $content = trans('notifications.incident.new.slack.content', [
-            'app_name' => Config::get('setting.app_name'),
+            'app_name' => setting('app_name'),
         ]);
 
         $status = 'info';

@@ -12,20 +12,14 @@
 namespace CachetHQ\Cachet\Notifications\Schedule;
 
 use CachetHQ\Cachet\Models\Schedule;
+use CachetHQ\Cachet\Notifications\AbstractSubscriberNotification;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Messages\NexmoMessage;
 use Illuminate\Notifications\Messages\SlackMessage;
-use Illuminate\Notifications\Notification;
 use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
 
-/**
- * This is the new schedule notification class.
- *
- * @author James Brooks <james@alt-three.com>
- */
-class NewScheduleNotification extends Notification implements ShouldQueue
+class NewScheduleNotification extends AbstractSubscriberNotification
 {
     use Queueable;
 

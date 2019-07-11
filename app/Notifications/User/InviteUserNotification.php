@@ -14,13 +14,7 @@ namespace CachetHQ\Cachet\Notifications\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
-use Illuminate\Support\Facades\Config;
 
-/**
- * This is the invite user notification class.
- *
- * @author James Brooks <james@alt-three.com>
- */
 class InviteUserNotification extends Notification
 {
     use Queueable;
@@ -48,8 +42,8 @@ class InviteUserNotification extends Notification
     {
         return (new MailMessage())
                     ->subject(trans('notifications.user.invite.mail.subject'))
-                    ->greeting(trans('notifications.user.invite.mail.title', ['app_name' => Config::get('setting.app_name')]))
+                    ->greeting(trans('notifications.user.invite.mail.title', ['app_name' => setting('app_name')]))
                     ->action(trans('notifications.user.invite.mail.action'), cachet_route('signup.invite', [$notifiable->code]))
-                    ->line(trans('notifications.user.invite.mail.content', ['app_name' => Config::get('setting.app_name')]));
+                    ->line(trans('notifications.user.invite.mail.content', ['app_name' => setting('app_name')]));
     }
 }

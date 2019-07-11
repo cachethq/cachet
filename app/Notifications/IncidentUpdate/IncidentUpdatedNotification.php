@@ -13,19 +13,14 @@ namespace CachetHQ\Cachet\Notifications\IncidentUpdate;
 
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentUpdate;
+use CachetHQ\Cachet\Notifications\AbstractSubscriberNotification;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Messages\NexmoMessage;
 use Illuminate\Notifications\Messages\SlackMessage;
-use Illuminate\Notifications\Notification;
 use McCool\LaravelAutoPresenter\Facades\AutoPresenter;
 
-/**
- * This is the incident updated notification class.
- *
- * @author James Brooks <james@alt-three.com>
- */
-class IncidentUpdatedNotification extends Notification
+class IncidentUpdatedNotification extends AbstractSubscriberNotification
 {
     use Queueable;
 
