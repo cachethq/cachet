@@ -69,16 +69,16 @@
         },
         {
             "name": "alt-three/bus",
-            "version": "v4.2.0",
+            "version": "v4.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/AltThree/Bus.git",
-                "reference": "90b43e1e48348dbd7687ca65152816bdb8ed033d"
+                "reference": "393907e8d6324ee1c9c296b762c668771c8906b1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/AltThree/Bus/zipball/90b43e1e48348dbd7687ca65152816bdb8ed033d",
-                "reference": "90b43e1e48348dbd7687ca65152816bdb8ed033d",
+                "url": "https://api.github.com/repos/AltThree/Bus/zipball/393907e8d6324ee1c9c296b762c668771c8906b1",
+                "reference": "393907e8d6324ee1c9c296b762c668771c8906b1",
                 "shasum": ""
             },
             "require": {
@@ -124,7 +124,7 @@
                 "command bus",
                 "job"
             ],
-            "time": "2019-05-12T11:37:17+00:00"
+            "time": "2019-06-30T15:18:27+00:00"
         },
         {
             "name": "alt-three/emoji",
