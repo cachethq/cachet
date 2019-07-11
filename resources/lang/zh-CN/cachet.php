@@ -92,6 +92,7 @@ return [
         'email' => [
             'subscribe'          => '订阅电子邮件更新。',
             'subscribed'         => '您已经订阅电子邮件通知，请检查您的电子邮件进行确认。',
+            'updated-subscribe'  => 'You\'ve succesfully updated your subscriptions.',
             'verified'           => '您的电子邮件订阅已确认。谢谢！',
             'manage'             => '管理您的订阅',
             'unsubscribe'        => '取消电子邮件订阅。',
