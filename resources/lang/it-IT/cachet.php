@@ -92,6 +92,7 @@ return [
         'email' => [
             'subscribe'          => 'Iscriviti agli aggiornamenti via email.',
             'subscribed'         => 'Ti sei appena iscritto agli aggiornamenti email, controlla la tua casella per confermare la sottoscrizione',
+            'updated-subscribe'  => 'You\'ve succesfully updated your subscriptions.',
             'verified'           => 'La tua iscrizione &egrave; stata confermata. Grazie!',
             'manage'             => 'Gestisci la tua iscrizione',
             'unsubscribe'        => 'Annulla l\'iscrizione agli aggiornamenti email.',
