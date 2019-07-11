@@ -92,6 +92,7 @@ return [
         'email' => [
             'subscribe'          => 'Inscreva-se para atualizações via e-mail.',
             'subscribed'         => 'Inscrição realizada com sucesso! Por favor verifique o e-mail que enviamos à você para confirmar sua inscrição.',
+            'updated-subscribe'  => 'You\'ve succesfully updated your subscriptions.',
             'verified'           => 'Sua inscrição foi confirmada! Obrigado!',
             'manage'             => 'Gerencie sua assinatura',
             'unsubscribe'        => 'Não desejo mais receber notificações via e-mail.',
