@@ -92,6 +92,7 @@ return [
         'email' => [
             'subscribe'          => 'Abonner på e-postoppdateringer.',
             'subscribed'         => 'Du abonnerer nå på e-postvarslinger, sjekk din e-post for å bekrefte abonneringen.',
+            'updated-subscribe'  => 'You\'ve succesfully updated your subscriptions.',
             'verified'           => 'Ditt epost abonnement er bekreftet!',
             'manage'             => 'Administrer ditt abonnement',
             'unsubscribe'        => 'Meld av e-postvarsling.',
