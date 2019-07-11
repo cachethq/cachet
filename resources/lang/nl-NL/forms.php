@@ -156,7 +156,7 @@ return [
             'time_before_refresh'                   => 'Statuspagina verversingssnelheid (in seconden)',
             'major_outage_rate'                     => 'Drempelwaarde voor grote onderbreking (in %)',
             'banner'                                => 'Banner afbeelding',
-            'banner-help'                           => 'Bij voorkeur geen afbeeldingen breder dan 930 pixels uploaden',
+            'banner-help'                           => "Bij voorkeur geen afbeeldingen breder dan 930 pixels uploaden",
             'subscribers'                           => 'Bezoekers toestaan om te abonneren op e-mail notificaties?',
             'suppress_notifications_in_maintenance' => 'Onderdruk meldingen wanneer incident tijdens de onderhoudingsperiode voordoet?',
             'skip_subscriber_verification'          => 'Verificatie van gebruikers overslaan? (Let op, je kunt gespamd worden)',
@@ -168,7 +168,7 @@ return [
         'analytics' => [
             'analytics_google'       => 'Google Analytics-code',
             'analytics_gosquared'    => 'GoSquared Analytics-code',
-            'analytics_piwik_url'    => 'URL van je Piwik installatie (zonder http(s)://)',
+            'analytics_piwik_url'    => 'URL of your Piwik instance',
             'analytics_piwik_siteid' => 'Site-id van Piwik',
         ],
         'localization' => [
@@ -227,6 +227,11 @@ return [
 
     'general' => [
         'timezone' => 'Selecteer Tijdzone',
+    ],
+
+    'seo' => [
+        'title'        => 'SEO Title',
+        'description'  => 'SEO Description',
     ],
 
     // Buttons
