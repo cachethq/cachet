@@ -92,6 +92,7 @@ return [
         'email' => [
             'subscribe'          => '이메일 구독 신청.',
             'subscribed'         => 'You\'ve been subscribed to email notifications, please check your email to confirm your subscription.',
+            'updated-subscribe'  => 'You\'ve succesfully updated your subscriptions.',
             'verified'           => 'Your email subscription has been confirmed. Thank you!',
             'manage'             => 'Manage your subscription',
             'unsubscribe'        => '이메일 구독 취소',
