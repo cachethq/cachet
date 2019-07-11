@@ -92,6 +92,7 @@ return [
         'email' => [
             'subscribe'          => 'Langganan update email.',
             'subscribed'         => 'Anda berhasil terdaftar pada notifikasi email, mohon periksa email anda untuk mengkonfirmasi pendaftaran ini.',
+            'updated-subscribe'  => 'You\'ve succesfully updated your subscriptions.',
             'verified'           => 'Pendaftaran newsletter anda berhasil dikonfirmasi. Terima kasih!',
             'manage'             => 'Mengelola langganan Anda',
             'unsubscribe'        => 'Hapus saya dari update email.',
