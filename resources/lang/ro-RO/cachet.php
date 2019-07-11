@@ -92,6 +92,7 @@ return [
         'email' => [
             'subscribe'          => 'Abonează-te la actualizări prin email.',
             'subscribed'         => 'Te-ai abonat la actualizări prin email, te rugăm să îți verifici adresa email și să confirmi abonarea.',
+            'updated-subscribe'  => 'You\'ve succesfully updated your subscriptions.',
             'verified'           => 'Abonarea prin email a fost confirmată. Mulțumim!',
             'manage'             => 'Gestionează-ţi abonările',
             'unsubscribe'        => 'Dezabonare de la actualizări prin email.',
