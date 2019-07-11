@@ -19,6 +19,7 @@ use CachetHQ\Cachet\Http\Middleware\CacheControl;
 use CachetHQ\Cachet\Http\Middleware\Localize;
 use CachetHQ\Cachet\Http\Middleware\ReadyForUse;
 use CachetHQ\Cachet\Http\Middleware\RedirectIfAuthenticated;
+use CachetHQ\Cachet\Http\Middleware\RemoteUserAuthenticate;
 use CachetHQ\Cachet\Http\Middleware\SetupAlreadyCompleted;
 use CachetHQ\Cachet\Http\Middleware\SubscribersConfigured;
 use CachetHQ\Cachet\Http\Middleware\Throttler;
@@ -45,17 +46,18 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'admin'       => Admin::class,
-        'can'         => Authorize::class,
-        'cors'        => HandleCors::class,
-        'cache'       => CacheControl::class,
-        'auth'        => Authenticate::class,
-        'auth.api'    => ApiAuthentication::class,
-        'guest'       => RedirectIfAuthenticated::class,
-        'localize'    => Localize::class,
-        'ready'       => ReadyForUse::class,
-        'setup'       => SetupAlreadyCompleted::class,
-        'subscribers' => SubscribersConfigured::class,
-        'throttle'    => Throttler::class,
+        'admin'           => Admin::class,
+        'auth.api'        => ApiAuthentication::class,
+        'auth.remoteuser' => RemoteUserAuthenticate::class,
+        'auth'            => Authenticate::class,
+        'cache'           => CacheControl::class,
+        'can'             => Authorize::class,
+        'cors'            => HandleCors::class,
+        'guest'           => RedirectIfAuthenticated::class,
+        'localize'        => Localize::class,
+        'ready'           => ReadyForUse::class,
+        'setup'           => SetupAlreadyCompleted::class,
+        'subscribers'     => SubscribersConfigured::class,
+        'throttle'        => Throttler::class,
     ];
 }
