@@ -6314,10 +6314,10 @@ svgo@^0.7.0:
     sax "~1.2.1"
     whet.extend "~0.9.9"
 
-sweetalert2@^6.8.0:
-  version "6.11.5"
-  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-6.11.5.tgz#a1ede34089225eb864898f4b613db4fec5dbe334"
-  integrity sha512-8Otu1SlWGS/u3e31cOg+uqrwyoQbByEScKp7UupmCfwEZE9St3coO1e6CXv83YzZtzdDgowdK1hBPKPW7SRp4Q==
+sweetalert2@^8.0.0:
+  version "8.13.4"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-8.13.4.tgz#66a07848b9ddc344cce3a078bf950b0d1bc8d0b4"
+  integrity sha512-9hW4GGj08D60bqDPF0paN/NJvsPIDrWSY2fPVmqS4M/XaEsZiNF7HNaObdnQJ0FeD8Q9gJgkkFgvyDdXednT3Q==
 
 tapable@^0.2.7:
   version "0.2.9"
