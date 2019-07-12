@@ -40,8 +40,8 @@ class ComponentTest extends AbstractApiTestCase
     public function test_can_get_all_components_with_tags()
     {
         $components = factory(Component::class, 2)->create();
-        $components[0]->attachTags(["Hello World"]);
-        $components[1]->attachTags(["Foo", "Bar"]);
+        $components[0]->attachTags(['Hello World']);
+        $components[1]->attachTags(['Foo', 'Bar']);
 
         $response = $this->json('GET', '/api/v1/components', ['tags' => ['foo']]);
 
@@ -235,13 +235,12 @@ class ComponentTest extends AbstractApiTestCase
 
         $response = $this->json('PUT', '/api/v1/components/1', [
             'name' => 'Foo',
-            'tags' => 'Hello'
+            'tags' => 'Hello',
         ]);
 
         $response->assertStatus(200);
         $response->assertJsonFragment(['name' => 'Foo', 'enabled' => $component->enabled, 'tags' => ['hello' => 'Hello']]);
     }
-
 
     public function test_can_update_component_without_status_change()
     {

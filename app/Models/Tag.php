@@ -64,13 +64,13 @@ class Tag extends Model
     public static function findOrCreate($values)
     {
         $tags = collect($values)->map(function ($value) {
-            if ($value instanceof Tag) {
+            if ($value instanceof self) {
                 return $value;
             }
 
             $tag = static::where('name', '=', $value)->first();
 
-            if (!$tag instanceof Tag) {
+            if (!$tag instanceof self) {
                 $tag = static::create([
                     'name' => $value,
                     'slug' => Str::slug($value),
