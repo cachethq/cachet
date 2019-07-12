@@ -12,21 +12,15 @@
 namespace CachetHQ\Cachet\Bus\Handlers\Events\Schedule;
 
 use CachetHQ\Cachet\Bus\Events\Schedule\ScheduleEventInterface;
-use CachetHQ\Cachet\Bus\Events\Schedule\ScheduleWasCreatedEvent;
-use CachetHQ\Cachet\Bus\Events\Schedule\ScheduleWasRemovedEvent;
-use CachetHQ\Cachet\Bus\Events\Schedule\ScheduleWasUpdatedEvent;
-use CachetHQ\Cachet\Models\Schedule;
 use CachetHQ\Cachet\Models\Subscriber;
-use CachetHQ\Cachet\Notifications\Schedule\ScheduleCreatedNotification;
-use CachetHQ\Cachet\Notifications\Schedule\ScheduleRemovedNotification;
 use CachetHQ\Cachet\Notifications\Schedule\ScheduleUpdatedNotification;
 
 /**
- * This is the send schedule event notification handler.
+ * Notification handler for schedule updates.
  *
  * @author James Brooks <james@alt-three.com>
  */
-class SendScheduleEmailNotificationHandler
+class SendScheduleUpdatedEmailNotificationHandler
 {
     /**
      * The subscriber instance.
@@ -63,25 +57,10 @@ class SendScheduleEmailNotificationHandler
         }
 
         // Notify global subscribers
-
         $globalSubscribers = $this->subscriber->isVerified()->isGlobal()->get();
 
-        if ($event instanceof ScheduleWasCreatedEvent) {
-            $globalSubscribers->each(function ($subscriber) use ($schedule) {
-                $subscriber->notify(new ScheduleCreatedNotification($schedule));
-            });
-        }
-
-        if ($event instanceof ScheduleWasUpdatedEvent) {
-            $globalSubscribers->each(function ($subscriber) use ($schedule) {
-                $subscriber->notify(new ScheduleUpdatedNotification($schedule));
-            });
-        }
-
-        if ($event instanceof ScheduleWasRemovedEvent) {
-            $globalSubscribers->each(function ($subscriber) use ($schedule) {
-                $subscriber->notify(new ScheduleRemovedNotification($schedule));
-            });
-        }
+        $globalSubscribers->each(function ($subscriber) use ($schedule) {
+            $subscriber->notify(new ScheduleUpdatedNotification($schedule));
+        });
     }
 }

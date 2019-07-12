@@ -91,13 +91,13 @@ class EventServiceProvider extends ServiceProvider
             //
         ],
         'CachetHQ\Cachet\Bus\Events\Schedule\ScheduleWasCreatedEvent' => [
-            'CachetHQ\Cachet\Bus\Handlers\Events\Schedule\SendScheduleEmailNotificationHandler',
+            'CachetHQ\Cachet\Bus\Handlers\Events\Schedule\SendScheduleCreatedEmailNotificationHandler',
         ],
         'CachetHQ\Cachet\Bus\Events\Schedule\ScheduleWasRemovedEvent' => [
-            //
+            'CachetHQ\Cachet\Bus\Handlers\Events\Schedule\SendScheduleRemovedEmailNotificationHandler',
         ],
         'CachetHQ\Cachet\Bus\Events\Schedule\ScheduleWasUpdatedEvent' => [
-            //
+            'CachetHQ\Cachet\Bus\Handlers\Events\Schedule\SendScheduleUpdatedEmailNotificationHandler',
         ],
         'CachetHQ\Cachet\Bus\Events\Subscriber\SubscriberHasSubscribedEvent' => [
             //
