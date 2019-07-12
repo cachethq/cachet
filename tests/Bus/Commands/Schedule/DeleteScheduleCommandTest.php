@@ -32,7 +32,8 @@ class DeleteScheduleCommandTest extends AbstractTestCase
             'schedule' => new Schedule(),
         ];
         $object = new DeleteScheduleCommand(
-            $params['schedule']
+            $params['schedule'],
+            false
         );
 
         return compact('params', 'object');

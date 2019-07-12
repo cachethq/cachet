@@ -37,17 +37,26 @@ final class ScheduleWasUpdatedEvent implements ActionInterface, ScheduleEventInt
     public $schedule;
 
     /**
+     * Whether to notify that the incident was updated.
+     *
+     * @var bool
+     */
+    public $notify;
+
+    /**
      * Create a new schedule was updated event instance.
      *
      * @param \CachetHQ\Cachet\Models\User     $user
      * @param \CachetHQ\Cachet\Models\Schedule $schedule
+     * @param bool                             $notify
      *
      * @return void
      */
-    public function __construct(User $user, Schedule $schedule)
+    public function __construct(User $user, Schedule $schedule, bool $notify = false)
     {
         $this->user = $user;
         $this->schedule = $schedule;
+        $this->notify = $notify;
     }
 
     /**

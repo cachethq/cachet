@@ -70,6 +70,13 @@ final class UpdateScheduleCommand
     public $components;
 
     /**
+     * Whether to notify that the incident was updated.
+     *
+     * @var bool
+     */
+    public $notify;
+
+    /**
      * The validation rules.
      *
      * @var string[]
@@ -82,6 +89,7 @@ final class UpdateScheduleCommand
         'scheduled_at' => 'nullable|string',
         'completed_at' => 'nullable|string',
         'components'   => 'nullable|array',
+        'notify'       => 'nullable|boolean',
     ];
 
     /**
@@ -94,11 +102,20 @@ final class UpdateScheduleCommand
      * @param string                           $scheduled_at
      * @param string                           $completed_at
      * @param array                            $components
+     * @param bool                             $notify
      *
      * @return void
      */
-    public function __construct(Schedule $schedule, $name, $message, $status, $scheduled_at, $completed_at, array $components = [])
-    {
+    public function __construct(
+        Schedule $schedule,
+        $name,
+        $message,
+        $status,
+        $scheduled_at,
+        $completed_at,
+        array $components = [],
+        bool $notify = false
+    ) {
         $this->schedule = $schedule;
         $this->name = $name;
         $this->message = $message;
@@ -106,5 +123,6 @@ final class UpdateScheduleCommand
         $this->scheduled_at = $scheduled_at;
         $this->completed_at = $completed_at;
         $this->components = $components;
+        $this->notify = $notify;
     }
 }

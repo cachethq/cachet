@@ -19,7 +19,7 @@ class ScheduleWasUpdatedEventTest extends AbstractScheduleEventTestCase
 {
     protected function objectHasHandlers()
     {
-        return false;
+        return true;
     }
 
     protected function getObjectAndParams()

@@ -125,6 +125,7 @@ class ScheduleController extends Controller
         return View::make('dashboard.maintenance.edit')
             ->withPageTitle(trans('dashboard.schedule.edit.title').' - '.trans('dashboard.dashboard'))
             ->withIncidentTemplates($incidentTemplates)
+            ->withNotificationsEnabled($this->system->canNotifySubscribers())
             ->withSchedule($schedule);
     }
 
@@ -145,7 +146,8 @@ class ScheduleController extends Controller
                 Binput::get('status', null),
                 Binput::get('scheduled_at', null),
                 Binput::get('completed_at', null),
-                Binput::get('components', [])
+                Binput::get('components', []),
+                Binput::get('notify', false)
             ));
         } catch (ValidationException $e) {
             return cachet_redirect('dashboard.schedule.edit', [$schedule->id])
@@ -167,7 +169,10 @@ class ScheduleController extends Controller
      */
     public function deleteScheduleAction(Schedule $schedule)
     {
-        execute(new DeleteScheduleCommand($schedule));
+        execute(new DeleteScheduleCommand(
+            $schedule,
+            Binput::get('notify', false)
+        ));
 
         return cachet_redirect('dashboard.schedule')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.schedule.delete.success')));

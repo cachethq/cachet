@@ -28,23 +28,33 @@ final class DeleteScheduleCommand
     public $schedule;
 
     /**
+     * Whether to notify that the incident was removed.
+     *
+     * @var bool
+     */
+    public $notify;
+
+    /**
      * The validation rules.
      *
      * @var string[]
      */
     public $rules = [
         'schedule' => 'required',
+        'notify'   => 'nullable|boolean',
     ];
 
     /**
      * Create a new delete schedule command instance.
      *
      * @param \CachetHQ\Cachet\Models\Schedule $schedule
+     * @param bool                             $notify
      *
      * @return void
      */
-    public function __construct(Schedule $schedule)
+    public function __construct(Schedule $schedule, bool $notify)
     {
         $this->schedule = $schedule;
+        $this->notify = $notify;
     }
 }

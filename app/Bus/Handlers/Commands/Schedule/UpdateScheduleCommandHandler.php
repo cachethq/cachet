@@ -65,7 +65,7 @@ class UpdateScheduleCommandHandler
 
         $schedule->update($this->filter($command));
 
-        event(new ScheduleWasUpdatedEvent($this->auth->user(), $schedule));
+        event(new ScheduleWasUpdatedEvent($this->auth->user(), $schedule, (bool) $command->notify));
 
         return $schedule;
     }

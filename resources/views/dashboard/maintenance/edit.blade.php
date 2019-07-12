@@ -56,6 +56,15 @@
                         <label>{{ trans('forms.schedules.completed_at') }}</label>
                         <input type="text" name="completed_at" class="form-control flatpickr-time" data-date-format="Y-m-d H:i" value="{{ $schedule->completed_at_datetimepicker }}" placeholder="{{ trans('forms.schedules.completed_at') }}">
                     </div>
+                    @if($notificationsEnabled)
+                    <input type="hidden" name="notify" value="0">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="notify" value="1" checked="{{ Binput::old('notify', 'checked') }}">
+                            {{ trans('forms.incidents.notify_subscribers') }}
+                        </label>
+                    </div>
+                    @endif
                 </fieldset>
 
                 <div class="form-group">

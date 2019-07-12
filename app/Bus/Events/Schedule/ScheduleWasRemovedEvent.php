@@ -37,17 +37,26 @@ final class ScheduleWasRemovedEvent implements ActionInterface, ScheduleEventInt
     public $schedule;
 
     /**
+     * Whether to notify that the incident was removed.
+     *
+     * @var bool
+     */
+    public $notify;
+
+    /**
      * Create a new schedule was removed event instance.
      *
      * @param \CachetHQ\Cachet\Models\User     $user
      * @param \CachetHQ\Cachet\Models\Schedule $schedule
+     * @param bool                             $notify
      *
      * @return void
      */
-    public function __construct(User $user, Schedule $schedule)
+    public function __construct(User $user, Schedule $schedule, $notify = false)
     {
         $this->user = $user;
         $this->schedule = $schedule;
+        $this->notify = $notify;
     }
 
     /**

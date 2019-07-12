@@ -100,7 +100,8 @@ class ScheduleController extends AbstractApiController
                 Binput::get('status'),
                 Binput::get('scheduled_at'),
                 Binput::get('completed_at'),
-                Binput::get('components', [])
+                Binput::get('components', []),
+                Binput::get('notify', false)
             ));
         } catch (QueryException $e) {
             throw new BadRequestHttpException();
@@ -119,7 +120,10 @@ class ScheduleController extends AbstractApiController
     public function destroy(Schedule $schedule)
     {
         try {
-            execute(new DeleteScheduleCommand($schedule));
+            execute(new DeleteScheduleCommand(
+                $schedule,
+                Binput::get('notify', false)
+            ));
         } catch (QueryException $e) {
             throw new BadRequestHttpException();
         }
