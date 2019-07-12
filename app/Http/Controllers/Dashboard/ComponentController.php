@@ -15,8 +15,6 @@ use AltThree\Validator\ValidationException;
 use CachetHQ\Cachet\Bus\Commands\Component\CreateComponentCommand;
 use CachetHQ\Cachet\Bus\Commands\Component\RemoveComponentCommand;
 use CachetHQ\Cachet\Bus\Commands\Component\UpdateComponentCommand;
-use CachetHQ\Cachet\Bus\Commands\Tag\ApplyTagCommand;
-use CachetHQ\Cachet\Bus\Commands\Tag\CreateTagCommand;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use GrahamCampbell\Binput\Facades\Binput;

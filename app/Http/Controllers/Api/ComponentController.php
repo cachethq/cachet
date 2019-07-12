@@ -14,8 +14,6 @@ namespace CachetHQ\Cachet\Http\Controllers\Api;
 use CachetHQ\Cachet\Bus\Commands\Component\CreateComponentCommand;
 use CachetHQ\Cachet\Bus\Commands\Component\RemoveComponentCommand;
 use CachetHQ\Cachet\Bus\Commands\Component\UpdateComponentCommand;
-use CachetHQ\Cachet\Bus\Commands\Tag\ApplyTagCommand;
-use CachetHQ\Cachet\Bus\Commands\Tag\CreateTagCommand;
 use CachetHQ\Cachet\Models\Component;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Contracts\Auth\Guard;
