@@ -37,6 +37,19 @@ class ComponentTest extends AbstractApiTestCase
         $response->assertJsonFragment(['id' => $components[2]->id]);
     }
 
+    public function test_can_get_all_components_with_tags()
+    {
+        $components = factory(Component::class, 2)->create();
+        $components[0]->attachTags(["Hello World"]);
+        $components[1]->attachTags(["Foo", "Bar"]);
+
+        $response = $this->json('GET', '/api/v1/components', ['tags' => ['foo']]);
+
+        $response->assertStatus(200);
+        $response->assertJsonMissing(['id' => $components[0]->id]);
+        $response->assertJsonFragment(['id' => $components[1]->id]);
+    }
+
     public function test_cannot_get_invalid_component()
     {
         $response = $this->json('GET', '/api/v1/components/1');
