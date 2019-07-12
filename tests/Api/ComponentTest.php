@@ -112,6 +112,27 @@ class ComponentTest extends AbstractApiTestCase
         $response->assertJsonFragment(['name' => 'Foo']);
     }
 
+    public function test_can_create_component_with_tags()
+    {
+        $this->beUser();
+
+        $this->expectsEvents(ComponentWasCreatedEvent::class);
+
+        $response = $this->json('POST', '/api/v1/components', [
+            'name'        => 'Foo',
+            'description' => 'Bar',
+            'status'      => 1,
+            'link'        => 'http://example.com',
+            'order'       => 1,
+            'group_id'    => 1,
+            'enabled'     => true,
+            'tags'        => 'Foo,Bar',
+        ]);
+
+        $response->assertStatus(200);
+        $response->assertJsonFragment(['name' => 'Foo', 'tags' => ['foo' => 'Foo', 'bar' => 'Bar']]);
+    }
+
     public function test_can_create_component_without_enabled_field()
     {
         $this->beUser();
@@ -204,6 +225,23 @@ class ComponentTest extends AbstractApiTestCase
         $response->assertStatus(200);
         $response->assertJsonFragment(['name' => 'Foo', 'enabled' => $component->enabled]);
     }
+
+    public function test_can_update_component_tags()
+    {
+        $this->beUser();
+        $component = factory(Component::class)->create();
+
+        $this->expectsEvents(ComponentWasUpdatedEvent::class);
+
+        $response = $this->json('PUT', '/api/v1/components/1', [
+            'name' => 'Foo',
+            'tags' => 'Hello'
+        ]);
+
+        $response->assertStatus(200);
+        $response->assertJsonFragment(['name' => 'Foo', 'enabled' => $component->enabled, 'tags' => ['hello' => 'Hello']]);
+    }
+
 
     public function test_can_update_component_without_status_change()
     {
