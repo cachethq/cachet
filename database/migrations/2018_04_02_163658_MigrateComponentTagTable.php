@@ -31,7 +31,7 @@ class MigrateComponentTagTable extends Migration
             ];
         });
 
-        DB::table('taggables')->insert($tags);
+        DB::table('taggables')->insert($tags->toArray());
 
         Schema::dropIfExists('component_tag');
     }
