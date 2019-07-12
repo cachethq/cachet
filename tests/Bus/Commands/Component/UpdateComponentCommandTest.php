@@ -39,6 +39,7 @@ class UpdateComponentCommandTest extends AbstractTestCase
             'group_id'    => 0,
             'enabled'     => true,
             'meta'        => null,
+            'tags'        => null,
             'silent'      => false,
         ];
 
@@ -52,6 +53,7 @@ class UpdateComponentCommandTest extends AbstractTestCase
             $params['group_id'],
             $params['enabled'],
             $params['meta'],
+            $params['tags'],
             $params['silent']
         );
 
