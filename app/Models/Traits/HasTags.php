@@ -85,7 +85,7 @@ trait HasTags
 
         $tags->each(function ($tag) use ($query) {
             $query->whereHas('tags', function (Builder $query) use ($tag) {
-                return $query->where('id', $tag ? $tag->id : 0);
+                return $query->where('tags.id', $tag ? $tag->id : 0);
             });
         });
 
