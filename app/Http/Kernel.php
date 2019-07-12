@@ -27,6 +27,7 @@ use CachetHQ\Cachet\Http\Middleware\TrustProxies;
 use Illuminate\Auth\Middleware\Authorize;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 use Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode;
+use Illuminate\Routing\Middleware\ValidateSignature;
 
 class Kernel extends HttpKernel
 {
@@ -57,6 +58,7 @@ class Kernel extends HttpKernel
         'localize'        => Localize::class,
         'ready'           => ReadyForUse::class,
         'setup'           => SetupAlreadyCompleted::class,
+        'signed'          => ValidateSignature::class,
         'subscribers'     => SubscribersConfigured::class,
         'throttle'        => Throttler::class,
     ];
