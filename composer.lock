@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2a5afdff4aefb79bd9eab43eabcb6cd0",
+    "content-hash": "6f0432ffc6ff62d0d13aba6cc74c4a87",
     "packages": [
         {
             "name": "alt-three/badger",
@@ -1277,16 +1277,16 @@
         },
         {
             "name": "graham-campbell/exceptions",
-            "version": "v11.3.0",
+            "version": "v12.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Exceptions.git",
-                "reference": "c33548417cf9903a049c7311ab57352a7e720b33"
+                "reference": "7642aa0efc725a5c18f5603f328e88030a01afb6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Exceptions/zipball/c33548417cf9903a049c7311ab57352a7e720b33",
-                "reference": "c33548417cf9903a049c7311ab57352a7e720b33",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Exceptions/zipball/7642aa0efc725a5c18f5603f328e88030a01afb6",
+                "reference": "7642aa0efc725a5c18f5603f328e88030a01afb6",
                 "shasum": ""
             },
             "require": {
@@ -1299,7 +1299,7 @@
                 "symfony/http-foundation": "^3.3|^4.0"
             },
             "require-dev": {
-                "filp/whoops": "^2.1.4",
+                "filp/whoops": "^2.4",
                 "graham-campbell/analyzer": "^2.1",
                 "graham-campbell/testbench": "^5.2",
                 "mockery/mockery": "^1.0",
@@ -1311,7 +1311,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "11.3-dev"
+                    "dev-master": "11.4-dev"
                 },
                 "laravel": {
                     "providers": [
@@ -1348,7 +1348,7 @@
                 "laravel",
                 "whoops"
             ],
-            "time": "2019-06-03T06:57:27+00:00"
+            "time": "2019-06-30T21:47:05+00:00"
         },
         {
             "name": "graham-campbell/guzzle-factory",
