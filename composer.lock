@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0bb0a073b8972260345c7a83eebb9243",
+    "content-hash": "2a5afdff4aefb79bd9eab43eabcb6cd0",
     "packages": [
         {
             "name": "alt-three/badger",
@@ -358,16 +358,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.107.0",
+            "version": "3.107.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "cf0c0968f93748cbe35d6a78e7babc7b7460945f"
+                "reference": "ccd3d13ae49a45bdf6a394d701f207c276dbf05a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/cf0c0968f93748cbe35d6a78e7babc7b7460945f",
-                "reference": "cf0c0968f93748cbe35d6a78e7babc7b7460945f",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/ccd3d13ae49a45bdf6a394d701f207c276dbf05a",
+                "reference": "ccd3d13ae49a45bdf6a394d701f207c276dbf05a",
                 "shasum": ""
             },
             "require": {
@@ -437,53 +437,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2019-07-11T15:05:32+00:00"
-        },
-        {
-            "name": "bacon/bacon-qr-code",
-            "version": "1.0.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Bacon/BaconQrCode.git",
-                "reference": "5a91b62b9d37cee635bbf8d553f4546057250bee"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Bacon/BaconQrCode/zipball/5a91b62b9d37cee635bbf8d553f4546057250bee",
-                "reference": "5a91b62b9d37cee635bbf8d553f4546057250bee",
-                "shasum": ""
-            },
-            "require": {
-                "ext-iconv": "*",
-                "php": "^5.4|^7.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.8"
-            },
-            "suggest": {
-                "ext-gd": "to generate QR code images"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "BaconQrCode": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-2-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Ben Scholzen 'DASPRiD'",
-                    "email": "mail@dasprids.de",
-                    "homepage": "http://www.dasprids.de",
-                    "role": "Developer"
-                }
-            ],
-            "description": "BaconQrCode is a QR code generator for PHP.",
-            "homepage": "https://github.com/Bacon/BaconQrCode",
-            "time": "2017-10-17T09:59:25+00:00"
+            "time": "2019-07-12T18:07:41+00:00"
         },
         {
             "name": "barryvdh/laravel-cors",
@@ -548,36 +502,36 @@
             "time": "2019-02-26T18:08:30+00:00"
         },
         {
-            "name": "christian-riesen/base32",
-            "version": "1.3.2",
+            "name": "chillerlan/php-qrcode",
+            "version": "2.0.6",
             "source": {
                 "type": "git",
-                "url": "https://github.com/ChristianRiesen/base32.git",
-                "reference": "80ff0e3b2124e61b4b39e2535709452f70bff367"
+                "url": "https://github.com/chillerlan/php-qrcode.git",
+                "reference": "45577426ab8e2199aa60e00f9bd7c242c1484c97"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ChristianRiesen/base32/zipball/80ff0e3b2124e61b4b39e2535709452f70bff367",
-                "reference": "80ff0e3b2124e61b4b39e2535709452f70bff367",
+                "url": "https://api.github.com/repos/chillerlan/php-qrcode/zipball/45577426ab8e2199aa60e00f9bd7c242c1484c97",
+                "reference": "45577426ab8e2199aa60e00f9bd7c242c1484c97",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3"
+                "chillerlan/php-traits": "^1.1",
+                "php": ">=7.0.3"
             },
             "require-dev": {
-                "php": ">=5.6",
-                "phpunit/phpunit": "^5.0",
-                "satooshi/php-coveralls": "^1.0"
+                "chillerlan/php-authenticator": "^2.0",
+                "phpunit/phpunit": "^6.5"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1.x-dev"
+                    "dev-v2.0.x-php5": "1.0.8-dev"
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "Base32\\": "src/"
+                    "chillerlan\\QRCode\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -586,21 +540,69 @@
             ],
             "authors": [
                 {
-                    "name": "Christian Riesen",
-                    "email": "chris.riesen@gmail.com",
-                    "homepage": "http://christianriesen.com",
-                    "role": "Developer"
+                    "name": "Kazuhiko Arase",
+                    "homepage": "https://github.com/kazuhikoarase"
+                },
+                {
+                    "name": "Smiley",
+                    "email": "smiley@chillerlan.net",
+                    "homepage": "https://github.com/codemasher"
                 }
             ],
-            "description": "Base32 encoder/decoder according to RFC 4648",
-            "homepage": "https://github.com/ChristianRiesen/base32",
+            "description": "A QR code generator. PHP 7+",
+            "homepage": "https://github.com/chillerlan/php-qrcode",
             "keywords": [
-                "base32",
-                "decode",
-                "encode",
-                "rfc4648"
+                "qr code"
             ],
-            "time": "2018-11-02T09:03:50+00:00"
+            "time": "2018-03-28T18:07:10+00:00"
+        },
+        {
+            "name": "chillerlan/php-traits",
+            "version": "1.1.13",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/chillerlan/php-traits.git",
+                "reference": "264759946b6aaeb427346b749fc9639b790b8e7f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/chillerlan/php-traits/zipball/264759946b6aaeb427346b749fc9639b790b8e7f",
+                "reference": "264759946b6aaeb427346b749fc9639b790b8e7f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "chillerlan\\Traits\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "smiley",
+                    "email": "smiley@chillerlan.net",
+                    "homepage": "https://github.com/codemasher"
+                }
+            ],
+            "description": "Some useful traits for PHP 7+",
+            "homepage": "https://github.com/chillerlan/php-traits",
+            "keywords": [
+                "PHP7",
+                "container",
+                "dotenv",
+                "helper",
+                "trait"
+            ],
+            "time": "2018-06-22T00:30:47+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -2928,6 +2930,68 @@
             "time": "2019-07-09T21:58:11+00:00"
         },
         {
+            "name": "paragonie/constant_time_encoding",
+            "version": "v2.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/paragonie/constant_time_encoding.git",
+                "reference": "55af0dc01992b4d0da7f6372e2eac097bbbaffdb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/paragonie/constant_time_encoding/zipball/55af0dc01992b4d0da7f6372e2eac097bbbaffdb",
+                "reference": "55af0dc01992b4d0da7f6372e2eac097bbbaffdb",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6|^7",
+                "vimeo/psalm": "^1|^2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ParagonIE\\ConstantTime\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Paragon Initiative Enterprises",
+                    "email": "security@paragonie.com",
+                    "homepage": "https://paragonie.com",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Steve 'Sc00bz' Thomas",
+                    "email": "steve@tobtu.com",
+                    "homepage": "https://www.tobtu.com",
+                    "role": "Original Developer"
+                }
+            ],
+            "description": "Constant-time Implementations of RFC 4648 Encoding (Base-64, Base-32, Base-16)",
+            "keywords": [
+                "base16",
+                "base32",
+                "base32_decode",
+                "base32_encode",
+                "base64",
+                "base64_decode",
+                "base64_encode",
+                "bin2hex",
+                "encoding",
+                "hex",
+                "hex2bin",
+                "rfc4648"
+            ],
+            "time": "2019-01-03T20:26:31+00:00"
+        },
+        {
             "name": "php-http/guzzle6-adapter",
             "version": "v1.1.1",
             "source": {
@@ -3095,41 +3159,43 @@
         },
         {
             "name": "pragmarx/google2fa",
-            "version": "v0.7.1",
+            "version": "v5.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/antonioribeiro/google2fa.git",
-                "reference": "908678ba9b26cf8ecd7ddca6bfd86afc5b4874df"
+                "reference": "17c969c82f427dd916afe4be50bafc6299aef1b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/antonioribeiro/google2fa/zipball/908678ba9b26cf8ecd7ddca6bfd86afc5b4874df",
-                "reference": "908678ba9b26cf8ecd7ddca6bfd86afc5b4874df",
+                "url": "https://api.github.com/repos/antonioribeiro/google2fa/zipball/17c969c82f427dd916afe4be50bafc6299aef1b4",
+                "reference": "17c969c82f427dd916afe4be50bafc6299aef1b4",
                 "shasum": ""
             },
             "require": {
-                "christian-riesen/base32": "~1.0",
-                "php": ">=5.3.7",
-                "simplesoftwareio/simple-qrcode": "1.3.*"
+                "paragonie/constant_time_encoding": "~1.0|~2.0",
+                "paragonie/random_compat": ">=1",
+                "php": ">=5.4",
+                "symfony/polyfill-php56": "~1.2"
             },
             "require-dev": {
-                "phpspec/phpspec": "~2.1"
+                "phpunit/phpunit": "~4|~5|~6"
             },
             "type": "library",
             "extra": {
                 "component": "package",
-                "frameworks": [
-                    "Laravel"
-                ]
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
             },
             "autoload": {
                 "psr-4": {
-                    "PragmaRX\\Google2FA\\": "src/"
+                    "PragmaRX\\Google2FA\\": "src/",
+                    "PragmaRX\\Google2FA\\Tests\\": "tests/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "BSD-3-Clause"
+                "MIT"
             ],
             "authors": [
                 {
@@ -3140,12 +3206,12 @@
             ],
             "description": "A One Time Password Authentication package, compatible with Google Authenticator.",
             "keywords": [
+                "2fa",
                 "Authentication",
                 "Two Factor Authentication",
-                "google2fa",
-                "laravel"
+                "google2fa"
             ],
-            "time": "2015-11-07T13:57:42+00:00"
+            "time": "2019-03-19T22:44:16+00:00"
         },
         {
             "name": "predis/predis",
@@ -3638,57 +3704,6 @@
                 "uuid"
             ],
             "time": "2018-07-19T23:38:55+00:00"
-        },
-        {
-            "name": "simplesoftwareio/simple-qrcode",
-            "version": "1.3.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/SimpleSoftwareIO/simple-qrcode.git",
-                "reference": "17c5e45c79c40f717d4bc08cf5e568f29ebf9333"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/SimpleSoftwareIO/simple-qrcode/zipball/17c5e45c79c40f717d4bc08cf5e568f29ebf9333",
-                "reference": "17c5e45c79c40f717d4bc08cf5e568f29ebf9333",
-                "shasum": ""
-            },
-            "require": {
-                "bacon/bacon-qr-code": "1.0.*",
-                "ext-gd": "*",
-                "illuminate/support": ">=4.2.0",
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "0.9.*",
-                "phpunit/phpunit": "4.7.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "SimpleSoftwareIO\\QrCode\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Simple Software LLC",
-                    "email": "support@simplesoftware.io"
-                }
-            ],
-            "description": "Simple QrCode is a QR code generator made for Laravel.",
-            "homepage": "http://www.simplesoftware.io",
-            "keywords": [
-                "Simple",
-                "generator",
-                "laravel",
-                "qrcode",
-                "wrapper"
-            ],
-            "time": "2016-01-31T02:09:25+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -4499,6 +4514,62 @@
             "time": "2019-03-04T13:44:35+00:00"
         },
         {
+            "name": "symfony/polyfill-php56",
+            "version": "v1.11.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-php56.git",
+                "reference": "f4dddbc5c3471e1b700a147a20ae17cdb72dbe42"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-php56/zipball/f4dddbc5c3471e1b700a147a20ae17cdb72dbe42",
+                "reference": "f4dddbc5c3471e1b700a147a20ae17cdb72dbe42",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "symfony/polyfill-util": "~1.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.11-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Polyfill\\Php56\\": ""
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill backporting some PHP 5.6+ features to lower PHP versions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "time": "2019-02-06T07:57:58+00:00"
+        },
+        {
             "name": "symfony/polyfill-php72",
             "version": "v1.11.0",
             "source": {
@@ -4610,6 +4681,58 @@
                 "shim"
             ],
             "time": "2019-02-06T07:57:58+00:00"
+        },
+        {
+            "name": "symfony/polyfill-util",
+            "version": "v1.11.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-util.git",
+                "reference": "b46c6cae28a3106735323f00a0c38eccf2328897"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-util/zipball/b46c6cae28a3106735323f00a0c38eccf2328897",
+                "reference": "b46c6cae28a3106735323f00a0c38eccf2328897",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.11-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Polyfill\\Util\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony utilities for portability of PHP codes",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compat",
+                "compatibility",
+                "polyfill",
+                "shim"
+            ],
+            "time": "2019-02-08T14:16:39+00:00"
         },
         {
             "name": "symfony/process",
