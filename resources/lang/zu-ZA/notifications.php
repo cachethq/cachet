@@ -85,6 +85,14 @@ return [
                 'action'  => 'crwdns1385:0crwdne1385:0',
             ],
         ],
+        'manage' => [
+            'mail' => [
+                'subject' => 'crwdns1532:0crwdne1532:0',
+                'content' => 'crwdns1534:0crwdne1534:0',
+                'title'   => 'crwdns1536:0crwdne1536:0',
+                'action'  => 'crwdns1538:0crwdne1538:0',
+            ],
+        ],
     ],
     'system' => [
         'test' => [
