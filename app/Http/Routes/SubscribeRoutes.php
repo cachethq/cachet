@@ -49,8 +49,9 @@ class SubscribeRoutes
             ]);
 
             $router->get('subscribe/manage/{code}', [
-                'as'   => 'get:subscribe.manage',
-                'uses' => 'SubscribeController@showManage',
+                'as'         => 'get:subscribe.manage',
+                'middleware' => ['signed'],
+                'uses'       => 'SubscribeController@showManage',
             ]);
             $router->post('subscribe/manage/{code}', [
                 'as'   => 'post:subscribe.manage',
@@ -58,8 +59,9 @@ class SubscribeRoutes
             ]);
 
             $router->get('subscribe/verify/{code}', [
-                'as'   => 'get:subscribe.verify',
-                'uses' => 'SubscribeController@getVerify',
+                'as'         => 'get:subscribe.verify',
+                'middleware' => ['signed'],
+                'uses'       => 'SubscribeController@getVerify',
             ]);
 
             $router->get('unsubscribe/{code}/{subscription?}', [

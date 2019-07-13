@@ -21,6 +21,7 @@ use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Subscriber;
 use CachetHQ\Cachet\Models\Subscription;
+use CachetHQ\Cachet\Notifications\Subscriber\ManageSubscriptionNotification;
 use GrahamCampbell\Binput\Facades\Binput;
 use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Contracts\Auth\Guard;
@@ -88,12 +89,12 @@ class SubscribeController extends Controller
                 ->withErrors($e->getMessageBag());
         }
 
-        if ($subscription->is_verified) {
-            return cachet_redirect('status-page')->withSuccess(trans('cachet.subscriber.email.already-subscribed', ['email' => $email]));
-        }
+        // Send the subscriber a link to manage their subscription.
+        $subscription->notify(new ManageSubscriptionNotification());
 
-        return cachet_redirect('subscribe.manage', $subscription->verify_code)
-            ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('cachet.subscriber.email.subscribed')));
+        return redirect()->back()->withSuccess(
+            sprintf('%s %s', trans('dashboard.notifications.awesome'),
+            trans('cachet.subscriber.email.manage_subscription')));
     }
 
     /**
@@ -119,8 +120,8 @@ class SubscribeController extends Controller
             execute(new VerifySubscriberCommand($subscriber));
         }
 
-        return cachet_redirect('status-page')
-            ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('cachet.subscriber.email.verified')));
+        return cachet_redirect('subscribe.manage', $code)
+            ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('cachet.subscriber.email.subscribed')));
     }
 
     /**

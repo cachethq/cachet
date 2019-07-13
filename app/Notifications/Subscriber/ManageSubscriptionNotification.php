@@ -14,15 +14,9 @@ namespace CachetHQ\Cachet\Notifications\Subscriber;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
-use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\URL;
 
-/**
- * This is the verify subscription notification class.
- *
- * @author James Brooks <james@alt-three.com>
- */
-class VerifySubscriptionNotification extends Notification
+class ManageSubscriptionNotification extends Notification
 {
     use Queueable;
 
@@ -31,7 +25,7 @@ class VerifySubscriptionNotification extends Notification
      *
      * @param mixed $notifiable
      *
-     * @return string[]
+     * @return array
      */
     public function via($notifiable)
     {
@@ -47,12 +41,12 @@ class VerifySubscriptionNotification extends Notification
      */
     public function toMail($notifiable)
     {
-        $route = URL::signedRoute(cachet_route_generator('subscribe.verify'), ['code' => $notifiable->verify_code]);
+        $route = URL::signedRoute(cachet_route_generator('subscribe.manage'), ['code' => $notifiable->verify_code]);
 
         return (new MailMessage())
-                    ->subject(trans('notifications.subscriber.verify.mail.subject'))
-                    ->greeting(trans('notifications.subscriber.verify.mail.title', ['app_name' => Config::get('setting.app_name')]))
-                    ->action(trans('notifications.subscriber.verify.mail.action'), $route)
-                    ->line(trans('notifications.subscriber.verify.mail.content', ['app_name' => Config::get('setting.app_name')]));
+                    ->subject(trans('notifications.subscriber.manage.mail.subject'))
+                    ->greeting(trans('notifications.subscriber.manage.mail.title', ['app_name' => setting('app_name')]))
+                    ->action(trans('notifications.subscriber.manage.mail.action'), $route)
+                    ->line(trans('notifications.subscriber.manage.mail.content', ['app_name' => setting('app_name')]));
     }
 }
