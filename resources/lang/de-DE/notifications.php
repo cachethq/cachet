@@ -85,6 +85,14 @@ return [
                 'action'  => 'Bestätigen',
             ],
         ],
+        'manage' => [
+            'mail' => [
+                'subject' => 'Manage Your Subscription',
+                'content' => 'Click to manage your subscription to :app_name status page.',
+                'title'   => 'Click to manage your subscription to :app_name status page.',
+                'action'  => 'Abonnements verwalten',
+            ],
+        ],
     ],
     'system' => [
         'test' => [
