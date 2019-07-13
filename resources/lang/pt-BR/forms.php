@@ -22,7 +22,7 @@ return [
         'site_locale'      => 'Selecione seu idioma',
         'enable_google2fa' => 'Habilitar a autenticação de dois fatores do Google',
         'cache_driver'     => 'Driver de Cache',
-        'queue_driver'     => 'Queue Driver',
+        'queue_driver'     => 'Driver na fila',
         'session_driver'   => 'Driver de Sessão',
         'mail_driver'      => 'Driver de correio',
         'mail_host'        => 'Host de correio',
@@ -230,8 +230,8 @@ return [
     ],
 
     'seo' => [
-        'title'        => 'SEO Title',
-        'description'  => 'SEO Description',
+        'title'        => 'Título para SEO',
+        'description'  => 'Descrição para SEO',
     ],
 
     // Buttons
