@@ -41,7 +41,7 @@ return [
         'invalid-token' => 'Token inválido',
         'cookies'       => 'Você deve habilitar os cookies do navegador para logar.',
         'rate-limit'    => 'Limite de acesso excedido.',
-        'remember_me'   => 'Remember me',
+        'remember_me'   => 'Lembrar-me',
     ],
 
     // Incidents form fields
@@ -73,7 +73,7 @@ return [
         'status'       => 'Status',
         'message'      => 'Mensagem',
         'message-help' => 'Você também pode usar o Markdown.',
-        'scheduled_at' => 'When is this maintenance scheduled for?',
+        'scheduled_at' => 'Esta manutenção foi programada para quando?',
         'completed_at' => 'Quando esta manutenção foi concluída?',
         'templates'    => [
             'name'     => 'Nome',
@@ -154,11 +154,11 @@ return [
             'about-this-page'                       => 'Sobre esta página',
             'days-of-incidents'                     => 'Quantos dias de incidentes para mostrar?',
             'time_before_refresh'                   => 'Frequência de atualização da página de status (em segundos)',
-            'major_outage_rate'                     => 'Major outage threshold (in %)',
+            'major_outage_rate'                     => 'Limite de indisponibilidade (em %)',
             'banner'                                => 'Imagem do banner',
             'banner-help'                           => "Recomenda-se que você envie arquivos com até 930 pixels de largura",
             'subscribers'                           => 'Permitir que outras pessoas se cadastrem para notificações via e-mail?',
-            'suppress_notifications_in_maintenance' => 'Suppress notifications when incident occurs during maintenance period?',
+            'suppress_notifications_in_maintenance' => 'Não enviar notificações quando o incidente ocorrer durante o período de manutenção?',
             'skip_subscriber_verification'          => 'Ignorar verificação de usuários? (Cuidado, você pode sofrer com spam)',
             'automatic_localization'                => 'Localizar sua página de status de acordo com o idioma do visitante automaticamente?',
             'enable_external_dependencies'          => 'Ativar dependências de terceiros (Google Fonts, Trackers, etc...)',
@@ -168,7 +168,7 @@ return [
         'analytics' => [
             'analytics_google'       => 'Código do Google Analytics',
             'analytics_gosquared'    => 'Código do GoSquared Analytics',
-            'analytics_piwik_url'    => 'URL of your Piwik instance',
+            'analytics_piwik_url'    => 'URL da sua instância Piwik',
             'analytics_piwik_siteid' => 'Id do site no Piwik',
         ],
         'localization' => [
@@ -180,8 +180,8 @@ return [
         'security' => [
             'allowed-domains'           => 'Domínios permitidos',
             'allowed-domains-help'      => 'Separados por vírgula. O domínio definido acima é permitido automaticamente por padrão.',
-            'always-authenticate'       => 'Always authenticate',
-            'always-authenticate-help'  => 'Require login to view any Cachet page',
+            'always-authenticate'       => 'Autenticar sempre',
+            'always-authenticate-help'  => 'Exigir login para ver qualquer página do sistema',
         ],
         'stylesheet' => [
             'custom-css' => 'Folha de estilos personalizada',
