@@ -13,42 +13,42 @@ return [
     'component' => [
         'status_update' => [
             'mail' => [
-                'subject'  => 'Component Status Updated',
-                'greeting' => 'A component\'s status was updated!',
-                'content'  => ':name status changed from :old_status to :new_status.',
-                'action'   => 'View',
+                'subject'  => 'Status do Componente Atualizado',
+                'greeting' => 'O status de um componente foi atualizado!',
+                'content'  => 'O status de :name mudou de :old_status para :new_status.',
+                'action'   => 'Visualizar',
             ],
             'slack' => [
-                'title'   => 'Component Status Updated',
-                'content' => ':name status changed from :old_status to :new_status.',
+                'title'   => 'Status do Componente Atualizado',
+                'content' => 'O status de :name mudou de :old_status para :new_status.',
             ],
             'sms' => [
-                'content' => ':name status changed from :old_status to :new_status.',
+                'content' => 'O status de :name mudou de :old_status para :new_status.',
             ],
         ],
     ],
     'incident' => [
         'new' => [
             'mail' => [
-                'subject'  => 'New Incident Reported',
-                'greeting' => 'A new incident was reported at :app_name.',
-                'content'  => 'Incident :name was reported',
-                'action'   => 'View',
+                'subject'  => 'Novo incidente reportado',
+                'greeting' => 'Um novo incidente foi reportado em :app_name.',
+                'content'  => 'O Incidente :name foi reportado',
+                'action'   => 'Visualizar',
             ],
             'slack' => [
-                'title'   => 'Incident :name Reported',
-                'content' => 'A new incident was reported at :app_name',
+                'title'   => 'Incidente :name reportado',
+                'content' => 'Um novo incidente foi relatado em :app_name',
             ],
             'sms' => [
-                'content' => 'A new incident was reported at :app_name.',
+                'content' => 'Um novo incidente foi reportado em :app_name.',
             ],
         ],
         'update' => [
             'mail' => [
-                'subject' => 'Incident Updated',
-                'content' => ':name was updated',
+                'subject' => 'Incidente Atualizado',
+                'content' => ':name foi atualizado',
                 'title'   => ':name was updated to :new_status',
-                'action'  => 'View',
+                'action'  => 'Visualizar',
             ],
             'slack' => [
                 'title'   => ':name Updated',
@@ -65,10 +65,10 @@ return [
                 'subject' => 'New Schedule Created',
                 'content' => ':name was scheduled for :date',
                 'title'   => 'A new scheduled maintenance was created.',
-                'action'  => 'View',
+                'action'  => 'Visualizar',
             ],
             'slack' => [
-                'title'   => 'New Schedule Created!',
+                'title'   => 'Novo Agendamento Criado!',
                 'content' => ':name was scheduled for :date',
             ],
             'sms' => [
@@ -79,17 +79,17 @@ return [
     'subscriber' => [
         'verify' => [
             'mail' => [
-                'subject' => 'Verify Your Subscription',
-                'content' => 'Click to verify your subscription to :app_name status page.',
-                'title'   => 'Verify your subscription to :app_name status page.',
-                'action'  => 'Verify',
+                'subject' => 'Verifique a sua inscrição',
+                'content' => 'Clique para verificar sua inscrição na página de status :app_name.',
+                'title'   => 'Verifique sua inscrição na página de status de :app_name.',
+                'action'  => 'Verifique',
             ],
         ],
         'manage' => [
             'mail' => [
-                'subject' => 'Manage Your Subscription',
-                'content' => 'Click to manage your subscription to :app_name status page.',
-                'title'   => 'Click to manage your subscription to :app_name status page.',
+                'subject' => 'Gerenciar inscrição',
+                'content' => 'Clique para gerenciar sua inscrição na página de status de :app_name.',
+                'title'   => 'Clique para gerenciar sua inscrição na página de status de :app_name.',
                 'action'  => 'Gerenciar inscrição',
             ],
         ],
@@ -97,8 +97,8 @@ return [
     'system' => [
         'test' => [
             'mail' => [
-                'subject' => 'Ping from Cachet!',
-                'content' => 'This is a test notification from Cachet!',
+                'subject' => 'Ping do Cachet!',
+                'content' => 'Esta é uma notificação de teste do Cachet!',
                 'title'   => '🔔',
             ],
         ],
@@ -106,10 +106,10 @@ return [
     'user' => [
         'invite' => [
             'mail' => [
-                'subject' => 'Your invitation is inside...',
-                'content' => 'You have been invited to join :app_name status page.',
-                'title'   => 'You\'re invited to join :app_name status page.',
-                'action'  => 'Accept',
+                'subject' => 'Seu convite está aqui dentro...',
+                'content' => 'Você foi convidado para fazer parte da página de status :app_name.',
+                'title'   => 'Você foi convidado para fazer parte da página de status :app_name.',
+                'action'  => 'Aceitar',
             ],
         ],
     ],
