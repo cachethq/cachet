@@ -17,7 +17,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * This is the has tags trait.
- * Code based on https://github.com/spatie/laravel-tags
+ * Code based on https://github.com/spatie/laravel-tags.
  *
  * @author James Brooks <james@alt-three.com>
  */
