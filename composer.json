@@ -40,6 +40,7 @@
         "alt-three/validator": "^4.1",
         "aws/aws-sdk-php": "^3.7",
         "barryvdh/laravel-cors": "^0.11.0",
+        "chillerlan/php-qrcode": "^2.0",
         "doctrine/dbal": "2.9.*",
         "fideloper/proxy": "^4.0",
         "graham-campbell/binput": "^6.0",
@@ -51,7 +52,7 @@
         "laravel/tinker": "^1.0",
         "mccool/laravel-auto-presenter": "^7.1",
         "nexmo/client": "^1.5",
-        "pragmarx/google2fa": "^0.7.1",
+        "pragmarx/google2fa": "^5.0",
         "predis/predis": "^1.1",
         "twig/twig": "^2.6"
     },
