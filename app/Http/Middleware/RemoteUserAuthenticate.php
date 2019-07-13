@@ -11,35 +11,23 @@
 
 namespace CachetHQ\Cachet\Http\Middleware;
 
+use CachetHQ\Cachet\Models\User;
 use Closure;
-use Illuminate\Contracts\Config\Repository;
+use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Http\Request;
 
-/**
- * This is the subscribers configured middleware class.
- *
- * @author James Brooks <james@alt-three.com>
- * @author Graham Campbell <graham@alt-three.com>
- */
-class SubscribersConfigured
+class RemoteUserAuthenticate
 {
     /**
-     * The config repository instance.
+     * Create a new remote user authenticate instance.
      *
-     * @var \Illuminate\Contracts\Config\Repository
-     */
-    protected $config;
-
-    /**
-     * Creates a subscribers configured middleware instance.
-     *
-     * @param \Illuminate\Contracts\Config\Repository $config
+     * @param \Illuminate\Contracts\Auth\Guard $auth
      *
      * @return void
      */
-    public function __construct(Repository $config)
+    public function __construct(Guard $auth)
     {
-        $this->config = $config;
+        $this->auth = $auth;
     }
 
     /**
@@ -52,6 +40,14 @@ class SubscribersConfigured
      */
     public function handle(Request $request, Closure $next)
     {
+        if ($remoteUser = $request->server('REMOTE_USER')) {
+            $user = User::where('email', '=', $remoteUser)->first();
+
+            if ($user instanceof User && $this->auth->guest()) {
+                $this->auth->login($user);
+            }
+        }
+
         return $next($request);
     }
 }

@@ -12,21 +12,19 @@
 namespace CachetHQ\Cachet\Models;
 
 use AltThree\Validator\ValidatingTrait;
-use CachetHQ\Cachet\Presenters\UserPresenter;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
-use McCool\LaravelAutoPresenter\HasPresenter;
 
 /**
  * This is the user model.
  *
  * @author James Brooks <james@alt-three.com>
  */
-class User extends Authenticatable implements HasPresenter
+class User extends Authenticatable
 {
     use Notifiable, ValidatingTrait;
 
@@ -210,15 +208,5 @@ class User extends Authenticatable implements HasPresenter
     public function getHasTwoFactorAttribute()
     {
         return trim($this->google_2fa_secret) !== '';
-    }
-
-    /**
-     * Get the presenter class.
-     *
-     * @return string
-     */
-    public function getPresenterClass()
-    {
-        return UserPresenter::class;
     }
 }

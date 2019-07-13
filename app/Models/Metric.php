@@ -63,13 +63,6 @@ class Metric extends Model implements HasPresenter
     const VISIBLE_HIDDEN = 2;
 
     /**
-     * Array of acceptable threshold minutes.
-     *
-     * @var int[]
-     */
-    const ACCEPTABLE_THRESHOLDS = [1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30, 60];
-
-    /**
      * The model's attributes.
      *
      * @var string[]
@@ -134,7 +127,6 @@ class Metric extends Model implements HasPresenter
         'default_value' => 'required|numeric',
         'places'        => 'required|numeric|between:0,4',
         'default_view'  => 'required|numeric|between:0,3',
-        'threshold'     => 'required|numeric|between:0,10',
         'visible'       => 'required|numeric|between:0,2',
     ];
 

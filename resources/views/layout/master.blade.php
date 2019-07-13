@@ -16,7 +16,7 @@
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="@yield('title', $siteTitle)">
-    <meta property="og:image" content="/img/favicon.png">
+    <meta property="og:image" content=" {{ asset('/img/favicon.png') }}">
     <meta property="og:description" content="@yield('description', trans('cachet.meta.description.overview', ['app' => $appName]))">
 
     <!-- Mobile IE allows us to activate ClearType technology for smoothing fonts for easy reading -->
@@ -48,7 +48,7 @@
     @if($enableExternalDependencies)
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&amp;subset={{ $fontSubset }}" rel="stylesheet" type="text/css">
     @endif
-    <link rel="stylesheet" href="{{ mix('dist/css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset(mix('dist/css/app.css')) }} ">
 
     @include('partials.stylesheet')
 
@@ -74,8 +74,8 @@
 
         Global.locale = '{{ $appLocale }}';
     </script>
-    <script src="{{ mix('dist/js/manifest.js') }}"></script>
-    <script src="{{ mix('dist/js/vendor.js') }}"></script>
+    <script src="{{ asset(mix('dist/js/manifest.js')) }}"></script>
+    <script src="{{ asset(mix('dist/js/vendor.js')) }}"></script>
 </head>
 <body class="status-page @yield('bodyClass')">
     @yield('outer-content')
@@ -88,5 +88,5 @@
 
     @yield('bottom-content')
 </body>
-<script src="{{ mix('dist/js/all.js') }}"></script>
+<script src="{{ asset(mix('dist/js/all.js')) }}"></script>
 </html>

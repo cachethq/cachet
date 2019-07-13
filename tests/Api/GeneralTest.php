@@ -11,6 +11,8 @@
 
 namespace CachetHQ\Tests\Cachet\Api;
 
+use CachetHQ\Cachet\Models\Component;
+
 /**
  * This is the general test class.
  *
@@ -41,5 +43,37 @@ class GeneralTest extends AbstractApiTestCase
         $response = $this->json('GET', '/api/v1/ping', [], ['HTTP_Accept' => 'text/html']);
 
         $response->assertStatus(406);
+    }
+
+    public function test_can_get_system_status()
+    {
+        $response = $this->json('GET', '/api/v1/status');
+
+        $response->assertStatus(200)
+                 ->assertHeader('Cache-Control')
+                 ->assertJsonFragment([
+                     'data' => [
+                         'status'  => 'success',
+                         'message' => 'System operational',
+                     ],
+                 ]);
+    }
+
+    public function test_can_get_system_status_not_success()
+    {
+        factory(Component::class)->create([
+            'status' => 3,
+        ]);
+
+        $response = $this->json('GET', '/api/v1/status');
+
+        $response->assertStatus(200)
+                 ->assertHeader('Cache-Control')
+                 ->assertJsonFragment([
+                     'data' => [
+                         'status'  => 'info',
+                         'message' => 'The system is experiencing issues',
+                     ],
+                 ]);
     }
 }
