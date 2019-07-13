@@ -47,32 +47,32 @@ return [
             'mail' => [
                 'subject' => 'Incidente Atualizado',
                 'content' => ':name foi atualizado',
-                'title'   => ':name was updated to :new_status',
+                'title'   => ':name foi atualizado para :new_status',
                 'action'  => 'Visualizar',
             ],
             'slack' => [
-                'title'   => ':name Updated',
-                'content' => ':name was updated to :new_status',
+                'title'   => ':name atualizado',
+                'content' => ':name foi atualizado para :new_status',
             ],
             'sms' => [
-                'content' => 'Incident :name was updated',
+                'content' => 'Incidente :name foi atualizado',
             ],
         ],
     ],
     'schedule' => [
         'new' => [
             'mail' => [
-                'subject' => 'New Schedule Created',
-                'content' => ':name was scheduled for :date',
-                'title'   => 'A new scheduled maintenance was created.',
+                'subject' => 'Novo Agendamento Criado',
+                'content' => ':name foi agendado para :date',
+                'title'   => 'Uma nova manutenção agendada foi criada.',
                 'action'  => 'Visualizar',
             ],
             'slack' => [
                 'title'   => 'Novo Agendamento Criado!',
-                'content' => ':name was scheduled for :date',
+                'content' => ':name foi agendado para :date',
             ],
             'sms' => [
-                'content' => ':name was scheduled for :date',
+                'content' => ':name foi agendado para :date',
             ],
         ],
     ],
