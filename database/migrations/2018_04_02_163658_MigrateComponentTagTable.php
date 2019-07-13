@@ -9,7 +9,6 @@
  * file that was distributed with this source code.
  */
 
-use CachetHQ\Cachet\Models\Taggable;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;
@@ -24,14 +23,15 @@ class MigrateComponentTagTable extends Migration
      */
     public function up()
     {
-        // Start by migrating the data into the new taggables field.
-        DB::table('component_tag')->get()->each(function ($tag) {
-            Taggable::create([
+        $tags = DB::table('component_tag')->get()->map(function ($tag) {
+            return [
                 'tag_id'        => $tag->tag_id,
                 'taggable_type' => 'components',
                 'taggable_id'   => $tag->component_id,
-            ]);
+            ];
         });
+
+        DB::table('taggables')->insert($tags->toArray());
 
         Schema::dropIfExists('component_tag');
     }

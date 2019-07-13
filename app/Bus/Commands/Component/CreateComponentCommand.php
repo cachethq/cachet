@@ -75,6 +75,13 @@ final class CreateComponentCommand
     public $meta;
 
     /**
+     * Tags string.
+     *
+     * @var string
+     */
+    public $tags;
+
+    /**
      * The validation rules.
      *
      * @var string[]
@@ -88,23 +95,25 @@ final class CreateComponentCommand
         'group_id'    => 'nullable|int',
         'enabled'     => 'nullable|bool',
         'meta'        => 'nullable|array',
+        'tags'        => 'nullable|string',
     ];
 
     /**
      * Create a new add component command instance.
      *
-     * @param string     $name
-     * @param string     $description
-     * @param int        $status
-     * @param string     $link
-     * @param int        $order
-     * @param int        $group_id
-     * @param bool       $enabled
-     * @param array|null $meta
+     * @param string      $name
+     * @param string      $description
+     * @param int         $status
+     * @param string      $link
+     * @param int         $order
+     * @param int         $group_id
+     * @param bool        $enabled
+     * @param array|null  $meta
+     * @param string|null $tags
      *
      * @return void
      */
-    public function __construct($name, $description, $status, $link, $order, $group_id, $enabled, $meta)
+    public function __construct($name, $description, $status, $link, $order, $group_id, $enabled, $meta, $tags = null)
     {
         $this->name = $name;
         $this->description = $description;
@@ -114,5 +123,6 @@ final class CreateComponentCommand
         $this->group_id = $group_id;
         $this->enabled = $enabled;
         $this->meta = $meta;
+        $this->tags = $tags;
     }
 }
