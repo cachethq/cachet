@@ -6,9 +6,9 @@
         <div class="row app-banner-padding  @if(!$appBannerStyleFullWidth) app-banner @endif">
             <div class="col-md-12 text-center">
                 @if($appDomain)
-                <a href="{{ $appDomain }}" class="links"><img src="{{ asset($appBannerUrl) ?? "data:{$appBannerType};base64, {$appBanner}" }}" class="banner-image img-responsive"></a>
+                <a href="{{ $appDomain }}" class="links"><img src="{{ asset($appBannerUrl) ?? "data:{$appBannerType};base64, {$appBanner}" }}" class="banner-image img-responsive" alt="{{ $siteTitle }}"></a>
                 @else
-                <img src="{{ asset($appBannerUrl) ?? "data:{$appBannerType};base64, {$appBanner}" }}" class="banner-image img-responsive">
+                <img src="{{ asset($appBannerUrl) ?? "data:{$appBannerType};base64, {$appBanner}" }}" class="banner-image img-responsive" alt="{{ $siteTitle }}">
                 @endif
             </div>
         </div>
