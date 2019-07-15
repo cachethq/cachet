@@ -112,9 +112,15 @@ class Repository
      */
     public function get($name, $default = null)
     {
+        static $settings = [];
+
+        if (empty($settings)) {
+            $settings = $this->all();
+        }
+
         try {
-            if ($setting = $this->model->where('name', '=', $name)->first()) {
-                return $this->castSetting($name, $setting->value);
+            if (array_key_exists($name, $settings)) {
+                return $this->castSetting($name, $settings[$name]);
             }
 
             return $default;

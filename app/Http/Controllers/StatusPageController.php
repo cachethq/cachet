@@ -44,8 +44,8 @@ class StatusPageController extends AbstractApiController
      */
     public function showIndex()
     {
-        $onlyDisruptedDays = Config::get('setting.only_disrupted_days');
-        $appIncidentDays = (int) Config::get('setting.app_incident_days', 1);
+        $onlyDisruptedDays = setting('only_disrupted_days');
+        $appIncidentDays = (int) setting('app_incident_days', 1);
 
         $startDate = Date::createFromFormat('Y-m-d', Binput::get('start_date', Date::now()->toDateString()));
         $endDate = $startDate->copy()->subDays($appIncidentDays);
