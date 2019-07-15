@@ -66,6 +66,7 @@ class AppComposer
         $view->withAppAnalyticsGoSquared($this->config->get('setting.app_analytics_gs'));
         $view->withAppAnalyticsPiwikUrl($this->config->get('setting.app_analytics_piwik_url'));
         $view->withAppAnalyticsPiwikSiteId($this->config->get('setting.app_analytics_piwik_site_id'));
+        $view->withAppBannerUrl($this->config->get('setting.app_banner_url'));
         $view->withAppBanner($this->config->get('setting.app_banner'));
         $view->withAppBannerStyleFullWidth($this->config->get('setting.style_fullwidth_header'));
         $view->withAppBannerType($this->config->get('setting.app_banner_type'));

@@ -18,6 +18,7 @@ use CachetHQ\Cachet\Notifications\System\SystemTestNotification;
 use CachetHQ\Cachet\Settings\Repository;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
@@ -329,9 +330,11 @@ class SettingsController extends Controller
     /**
      * Updates the status page settings.
      *
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\View\View
      */
-    public function postSettings()
+    public function postSettings(Request $request)
     {
         $setting = app(Repository::class);
 
@@ -366,7 +369,7 @@ class SettingsController extends Controller
         }
 
         if (Binput::hasFile('app_banner')) {
-            $this->handleUpdateBanner($setting);
+            $this->handleUpdateBanner($request, $setting);
         }
 
         $excludedParams = [
@@ -406,9 +409,9 @@ class SettingsController extends Controller
      *
      * @param \CachetHQ\Cachet\Settings\Repository $setting
      *
-     * @return void
+     * @return \Illuminate\Http\RedirectResponse|void
      */
-    protected function handleUpdateBanner(Repository $setting)
+    protected function handleUpdateBanner(Request $request, Repository $setting)
     {
         $file = Binput::file('app_banner');
         $redirectUrl = $this->subMenu['theme']['url'];
@@ -430,9 +433,8 @@ class SettingsController extends Controller
         }
 
         // Store the banner.
-        $setting->set('app_banner', base64_encode(file_get_contents($file->getRealPath())));
-
-        // Store the banner type.
-        $setting->set('app_banner_type', $file->getMimeType());
+        $logoFilename = $request->app_banner->getClientOriginalName();
+        $path = $request->app_banner->storeAs('uploads', $logoFilename, 'public');
+        $setting->set('app_banner_url', "uploads/{$logoFilename}");
     }
 }
