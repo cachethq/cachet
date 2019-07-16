@@ -15,7 +15,7 @@ return [
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Incidents &amp; Schedule',
+        'title'                    => '障害・メンテナンス',
         'incidents'                => 'Incidents',
         'logged'                   => '{0} There are no incidents, good work.|You have logged one incident.|You have reported <strong>:count</strong> incidents.',
         'incident-create-template' => 'Create Template',
@@ -164,7 +164,7 @@ return [
         'team'        => 'Team',
         'member'      => 'Member',
         'profile'     => 'Profile',
-        'description' => 'Team Members will be able to add, modify &amp; edit components and incidents.',
+        'description' => 'チームメンバーを追加すると、サービスや障害情報の追加、編集をチームで行うことができます。',
         'add'         => [
             'title'   => 'Add a new team member',
             'success' => 'Team member added.',
@@ -224,7 +224,7 @@ return [
             'contributors'  => 'Contributors',
             'license'       => 'Cachet is a BSD-3-licensed open source project, released by <a href="https://alt-three.com/?utm_source=cachet&utm_medium=credits&utm_campaign=Cachet%20Credit%20Dashboard" target="_blank">Alt Three Services Limited</a>.',
             'backers-title' => 'Backers & Sponsors',
-            'backers'       => 'If you\'d like to support future development, check out the CrowdIn and GitHub.',
+            'backers'       => '開発に興味をお持ちの場合は次をご確認ください。 <a href="https://patreon.com/jbrooksuk" target="_blank">Cachet Patreon</a> キャンペーン',
             'thank-you'     => 'Thank you to each and every one of the :count contributors.',
         ],
     ],
