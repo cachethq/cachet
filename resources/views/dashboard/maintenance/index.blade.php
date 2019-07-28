@@ -31,7 +31,14 @@
                         </div>
                         <div class="col-xs-6 text-right">
                             <a href="{{ cachet_route('dashboard.schedule.edit', [$incident->id]) }}" class="btn btn-default">{{ trans('forms.edit') }}</a>
-                            <a href="{{ cachet_route('dashboard.schedule.delete', [$incident->id], 'delete') }}" class="btn btn-danger confirm-action" data-method='DELETE'>{{ trans('forms.delete') }}</a>
+                            <a href="#" class="btn btn-danger delete-schedule">
+                                {{ trans('forms.delete') }}
+                                <form action='{{ cachet_route('dashboard.schedule.delete', [$incident->id], 'delete') }}' method='POST' style='display:none'>
+                                    <input type='hidden' name='_method' value='DELETE'>
+                                    <input type='hidden' name='_token' value='{{ csrf_token() }}'>
+                                    <input type="hidden" name="notify" value="0">
+                                </form>
+                            </a>
                         </div>
                     </div>
                     @endforeach

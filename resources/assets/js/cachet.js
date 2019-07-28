@@ -58,6 +58,34 @@ $(function () {
             }
         });
 
+    // Schedule deletion prompt
+    $('.delete-schedule').on('click', function () {
+        var form = $(this).find('form');
+
+        swal({
+            type: "warning",
+            title: "Confirm your action",
+            text: "Are you sure you want to delete this schedule?",
+            input: 'checkbox',
+            inputValue: 0,
+            inputPlaceholder: '&nbsp;Notify subscribers of schedule deletion',
+            buttonsStyling: false,
+            reverseButtons: true,
+            confirmButtonText: "Yes",
+            confirmButtonClass: "btn btn-lg btn-danger",
+            cancelButtonClass: "btn btn-lg btn-default",
+            showCancelButton: true,
+            focusCancel: true
+        }).then(function (notify) {
+            debugger;
+            if (notify) {
+                form.find('input[name=notify]').val(1);
+            }
+
+            form.submit();
+        });
+    })
+
     // Messenger config
     Messenger.options = {
         extraClasses: 'messenger-fixed messenger-on-top',
