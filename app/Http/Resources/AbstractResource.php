@@ -23,7 +23,7 @@ class AbstractResource extends JsonResource
      *
      * @param mixed $resource
      *
-     * @return ResourceCollection
+     * @return \CachetHQ\Cachet\Foundation\Http\Resources\ResourceCollection
      */
     public static function collection($resource)
     {

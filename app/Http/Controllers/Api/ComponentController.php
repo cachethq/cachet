@@ -14,16 +14,11 @@ namespace CachetHQ\Cachet\Http\Controllers\Api;
 use CachetHQ\Cachet\Bus\Commands\Component\CreateComponentCommand;
 use CachetHQ\Cachet\Bus\Commands\Component\RemoveComponentCommand;
 use CachetHQ\Cachet\Bus\Commands\Component\UpdateComponentCommand;
-use CachetHQ\Cachet\Bus\Commands\Tag\ApplyTagCommand;
-use CachetHQ\Cachet\Bus\Commands\Tag\CreateTagCommand;
 use CachetHQ\Cachet\Http\Resources\Component as ComponentResource;
 use CachetHQ\Cachet\Models\Component;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Database\QueryException;
-use Illuminate\Http\Resources\Json\JsonResource;
-use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 class ComponentController extends AbstractApiController
@@ -31,7 +26,7 @@ class ComponentController extends AbstractApiController
     /**
      * Get all components.
      *
-     * @return JsonResource
+     * @return \Illuminate\Http\JsonResponse
      */
     public function index()
     {
@@ -63,7 +58,7 @@ class ComponentController extends AbstractApiController
      *
      * @param \CachetHQ\Cachet\Models\Component $component
      *
-     * @return JsonResource
+     * @return \Illuminate\Http\JsonResponse
      */
     public function show(Component $component)
     {
@@ -73,7 +68,7 @@ class ComponentController extends AbstractApiController
     /**
      * Create a new component.
      *
-     * @return JsonResource
+     * @return \Illuminate\Http\JsonResponse
      */
     public function store()
     {
@@ -101,7 +96,7 @@ class ComponentController extends AbstractApiController
      *
      * @param \CachetHQ\Cachet\Models\Component $component
      *
-     * @return JsonResource
+     * @return \Illuminate\Http\JsonResponse
      */
     public function update(Component $component)
     {
