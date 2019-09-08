@@ -21,7 +21,7 @@ class RemoteUserAuthenticate
     /**
      * The auth guard instance.
      *
-     * @var \Illuminate\Contracts\Auth\Guard $auth
+     * @var \Illuminate\Contracts\Auth\Guard
      */
     protected $auth;
 

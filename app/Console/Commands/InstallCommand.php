@@ -140,14 +140,14 @@ class InstallCommand extends Command
             'DB_PORT'     => null,
             'DB_PREFIX'   => null,
         ], $default);
-        
-        do {    
+
+        do {
             $config['DB_DRIVER'] = $this->choice('Which database driver do you want to use?', [
                 'mysql'      => 'MySQL',
                 'pgsql'      => 'PostgreSQL',
                 'sqlite'     => 'SQLite',
             ], $config['DB_DRIVER']);
-    
+
             if ($config['DB_DRIVER'] === 'sqlite') {
                 $config['DB_DATABASE'] = $this->ask('Please provide the full path to your SQLite file.', $config['DB_DATABASE']);
             } else {
@@ -155,27 +155,26 @@ class InstallCommand extends Command
                 if ($config['DB_HOST'] === 'localhost' && $config['DB_DRIVER'] === 'mysql') {
                     $this->warn("Using 'localhost' will result in the usage of a local unix socket. Use 127.0.0.1 if you want to connect over TCP");
                 }
-    
+
                 $config['DB_DATABASE'] = $this->ask('What is the name of the database that Cachet should use?', $config['DB_DATABASE']);
-    
+
                 $config['DB_USERNAME'] = $this->ask('What username should we connect with?', $config['DB_USERNAME']);
-    
+
                 $config['DB_PASSWORD'] = $this->secret('What password should we connect with?', $config['DB_PASSWORD']);
-    
+
                 $config['DB_PORT'] = $config['DB_DRIVER'] === 'mysql' ? 3306 : 5432;
                 if ($this->confirm('Is your database listening on a non-standard port number?')) {
                     $config['DB_PORT'] = $this->anticipate('What port number is your database using?', [3306, 5432], $config['DB_PORT']);
                 }
             }
-    
+
             if ($this->confirm('Do you want to use a prefix on the table names?')) {
                 $config['DB_PREFIX'] = $this->ask('Please enter the prefix now...', $config['DB_PREFIX']);
             }
-    
+
             // Format the settings ready to display them in the table.
             $this->formatConfigsTable($config);
-    
-        } while (! $this->confirm('Are these settings correct?'));
+        } while (!$this->confirm('Are these settings correct?'));
 
         foreach ($config as $setting => $value) {
             $this->writeEnv($setting, $value);
@@ -245,8 +244,7 @@ class InstallCommand extends Command
 
             // Format the settings ready to display them in the table.
             $this->formatConfigsTable($config);
-
-        } while (! $this->confirm('Are these settings correct?'));
+        } while (!$this->confirm('Are these settings correct?'));
 
         foreach ($config as $setting => $value) {
             $this->writeEnv($setting, $value);
@@ -289,22 +287,21 @@ class InstallCommand extends Command
                 'sparkpost' => 'SparkPost',
                 'log'       => 'Log (Testing)',
             ]);
-    
+
             if (!$config['MAIL_DRIVER'] === 'log') {
                 if ($config['MAIL_DRIVER'] === 'smtp') {
                     $config['MAIL_HOST'] = $this->ask('Please supply your mail server host');
                 }
-    
+
                 $config['MAIL_ADDRESS'] = $this->ask('What email address should we send notifications from?');
                 $config['MAIL_USERNAME'] = $this->ask('What username should we connect as?');
                 $config['MAIL_PASSWORD'] = $this->secret('What password should we connect with?');
             }
-    
+
             // Format the settings ready to display them in the table.
             $this->formatConfigsTable($config);
-    
-        } while (! $this->confirm('Are these settings correct?'));
-        
+        } while (!$this->confirm('Are these settings correct?'));
+
         foreach ($config as $setting => $value) {
             $this->writeEnv($setting, $value);
         }
