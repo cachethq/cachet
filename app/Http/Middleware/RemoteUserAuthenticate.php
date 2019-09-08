@@ -19,6 +19,13 @@ use Illuminate\Http\Request;
 class RemoteUserAuthenticate
 {
     /**
+     * The auth guard instance.
+     *
+     * @var \Illuminate\Contracts\Auth\Guard $auth
+     */
+    protected $auth;
+
+    /**
      * Create a new remote user authenticate instance.
      *
      * @param \Illuminate\Contracts\Auth\Guard $auth

@@ -13,6 +13,7 @@ namespace CachetHQ\Cachet\Http\Middleware;
 
 use Fideloper\Proxy\TrustProxies as Middleware;
 use Illuminate\Http\Request;
+use Illuminate\Contracts\Config\Repository;
 use Illuminate\Support\Facades\Config;
 
 /**
@@ -41,8 +42,10 @@ class TrustProxies extends Middleware
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Repository $config)
     {
+        parent::__construct($config);
+        
         $proxies = Config::get('trustedproxies.proxies');
 
         $this->proxies = empty($proxies) ? '*' : explode(',', trim($proxies));

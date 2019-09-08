@@ -38,11 +38,10 @@ class SchedulePresenter extends BasePresenter implements Arrayable
      * Create a new presenter.
      *
      * @param \CachetHQ\Cachet\Services\Dates\DateFactory $dates
-     * @param \CachetHQ\Cachet\Models\Schedule            $resource
      *
      * @return void
      */
-    public function __construct(DateFactory $dates, Schedule $resource)
+    public function __construct(DateFactory $dates)
     {
         $this->dates = $dates;
     }

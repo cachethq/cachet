@@ -11,7 +11,6 @@
 
 namespace CachetHQ\Cachet\Presenters;
 
-use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Presenters\Traits\TimestampsTrait;
 use CachetHQ\Cachet\Services\Dates\DateFactory;
 use GrahamCampbell\Markdown\Facades\Markdown;
@@ -53,11 +52,10 @@ class IncidentPresenter extends BasePresenter implements Arrayable
      * Create a new presenter.
      *
      * @param \CachetHQ\Cachet\Services\Dates\DateFactory $dates
-     * @param \CachetHQ\Cachet\Models\Incident            $resource
      *
      * @return void
      */
-    public function __construct(DateFactory $dates, Incident $resource)
+    public function __construct(DateFactory $dates)
     {
         $this->dates = $dates;
     }

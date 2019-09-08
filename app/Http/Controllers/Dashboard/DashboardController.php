@@ -72,7 +72,7 @@ class DashboardController extends Controller
         $this->feed = $feed;
         $this->guard = $guard;
         $this->startDate = new Date();
-        $this->dateTimeZone = Config::get('cachet.timezone');
+        $this->timeZone = Config::get('cachet.timezone');
     }
 
     /**
@@ -134,12 +134,12 @@ class DashboardController extends Controller
             $this->startDate->format('Y-m-d').' 23:59:59',
         ])->orderBy('occurred_at', 'desc')->get()->groupBy(function (Incident $incident) {
             return (new Date($incident->occurred_at))
-                ->setTimezone($this->dateTimeZone)->toDateString();
+                ->setTimezone($this->timeZone)->toDateString();
         });
 
         // Add in days that have no incidents
         foreach (range(0, 30) as $i) {
-            $date = (new Date($this->startDate))->setTimezone($this->dateTimeZone)->subDays($i);
+            $date = (new Date($this->startDate))->setTimezone($this->timeZone)->subDays($i);
 
             if (!isset($allIncidents[$date->toDateString()])) {
                 $allIncidents[$date->toDateString()] = [];
@@ -166,12 +166,12 @@ class DashboardController extends Controller
             $this->startDate->format('Y-m-d').' 23:59:59',
         ])->orderBy('created_at', 'desc')->get()->groupBy(function (Subscriber $incident) {
             return (new Date($incident->created_at))
-                ->setTimezone($this->dateTimeZone)->toDateString();
+                ->setTimezone($this->timeZone)->toDateString();
         });
 
         // Add in days that have no incidents
         foreach (range(0, 30) as $i) {
-            $date = (new Date($this->startDate))->setTimezone($this->dateTimeZone)->subDays($i);
+            $date = (new Date($this->startDate))->setTimezone($this->timeZone)->subDays($i);
 
             if (!isset($allSubscribers[$date->toDateString()])) {
                 $allSubscribers[$date->toDateString()] = [];

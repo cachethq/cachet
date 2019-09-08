@@ -140,43 +140,42 @@ class InstallCommand extends Command
             'DB_PORT'     => null,
             'DB_PREFIX'   => null,
         ], $default);
-
-        $config['DB_DRIVER'] = $this->choice('Which database driver do you want to use?', [
-            'mysql'      => 'MySQL',
-            'pgsql'      => 'PostgreSQL',
-            'sqlite'     => 'SQLite',
-        ], $config['DB_DRIVER']);
-
-        if ($config['DB_DRIVER'] === 'sqlite') {
-            $config['DB_DATABASE'] = $this->ask('Please provide the full path to your SQLite file.', $config['DB_DATABASE']);
-        } else {
-            $config['DB_HOST'] = $this->ask("What is the host of your {$config['DB_DRIVER']} database?", $config['DB_HOST']);
-            if ($config['DB_HOST'] === 'localhost' && $config['DB_DRIVER'] === 'mysql') {
-                $this->warn("Using 'localhost' will result in the usage of a local unix socket. Use 127.0.0.1 if you want to connect over TCP");
+        
+        do {    
+            $config['DB_DRIVER'] = $this->choice('Which database driver do you want to use?', [
+                'mysql'      => 'MySQL',
+                'pgsql'      => 'PostgreSQL',
+                'sqlite'     => 'SQLite',
+            ], $config['DB_DRIVER']);
+    
+            if ($config['DB_DRIVER'] === 'sqlite') {
+                $config['DB_DATABASE'] = $this->ask('Please provide the full path to your SQLite file.', $config['DB_DATABASE']);
+            } else {
+                $config['DB_HOST'] = $this->ask("What is the host of your {$config['DB_DRIVER']} database?", $config['DB_HOST']);
+                if ($config['DB_HOST'] === 'localhost' && $config['DB_DRIVER'] === 'mysql') {
+                    $this->warn("Using 'localhost' will result in the usage of a local unix socket. Use 127.0.0.1 if you want to connect over TCP");
+                }
+    
+                $config['DB_DATABASE'] = $this->ask('What is the name of the database that Cachet should use?', $config['DB_DATABASE']);
+    
+                $config['DB_USERNAME'] = $this->ask('What username should we connect with?', $config['DB_USERNAME']);
+    
+                $config['DB_PASSWORD'] = $this->secret('What password should we connect with?', $config['DB_PASSWORD']);
+    
+                $config['DB_PORT'] = $config['DB_DRIVER'] === 'mysql' ? 3306 : 5432;
+                if ($this->confirm('Is your database listening on a non-standard port number?')) {
+                    $config['DB_PORT'] = $this->anticipate('What port number is your database using?', [3306, 5432], $config['DB_PORT']);
+                }
             }
-
-            $config['DB_DATABASE'] = $this->ask('What is the name of the database that Cachet should use?', $config['DB_DATABASE']);
-
-            $config['DB_USERNAME'] = $this->ask('What username should we connect with?', $config['DB_USERNAME']);
-
-            $config['DB_PASSWORD'] = $this->secret('What password should we connect with?', $config['DB_PASSWORD']);
-
-            $config['DB_PORT'] = $config['DB_DRIVER'] === 'mysql' ? 3306 : 5432;
-            if ($this->confirm('Is your database listening on a non-standard port number?')) {
-                $config['DB_PORT'] = $this->anticipate('What port number is your database using?', [3306, 5432], $config['DB_PORT']);
+    
+            if ($this->confirm('Do you want to use a prefix on the table names?')) {
+                $config['DB_PREFIX'] = $this->ask('Please enter the prefix now...', $config['DB_PREFIX']);
             }
-        }
-
-        if ($this->confirm('Do you want to use a prefix on the table names?')) {
-            $config['DB_PREFIX'] = $this->ask('Please enter the prefix now...', $config['DB_PREFIX']);
-        }
-
-        // Format the settings ready to display them in the table.
-        $this->formatConfigsTable($config);
-
-        if (!$this->confirm('Are these settings correct?')) {
-            return $this->configureDatabase($config);
-        }
+    
+            // Format the settings ready to display them in the table.
+            $this->formatConfigsTable($config);
+    
+        } while (! $this->confirm('Are these settings correct?'));
 
         foreach ($config as $setting => $value) {
             $this->writeEnv($setting, $value);
@@ -198,57 +197,56 @@ class InstallCommand extends Command
             'QUEUE_DRIVER'   => null,
         ], $default);
 
-        // Format the settings ready to display them in the table.
-        $this->formatConfigsTable($config);
+        do {
+            // Format the settings ready to display them in the table.
+            $this->formatConfigsTable($config);
 
-        $config['CACHE_DRIVER'] = $this->choice('Which cache driver do you want to use?', [
-            'apc'       => 'APC(u)',
-            'array'     => 'Array',
-            'database'  => 'Database',
-            'file'      => 'File',
-            'memcached' => 'Memcached',
-            'redis'     => 'Redis',
-        ], $config['CACHE_DRIVER']);
+            $config['CACHE_DRIVER'] = $this->choice('Which cache driver do you want to use?', [
+                'apc'       => 'APC(u)',
+                'array'     => 'Array',
+                'database'  => 'Database',
+                'file'      => 'File',
+                'memcached' => 'Memcached',
+                'redis'     => 'Redis',
+            ], $config['CACHE_DRIVER']);
 
-        // We need to configure Redis.
-        if ($config['CACHE_DRIVER'] === 'redis') {
-            $this->configureRedis();
-        }
+            // We need to configure Redis.
+            if ($config['CACHE_DRIVER'] === 'redis') {
+                $this->configureRedis();
+            }
 
-        $config['SESSION_DRIVER'] = $this->choice('Which session driver do you want to use?', [
-            'apc'       => 'APC(u)',
-            'array'     => 'Array',
-            'database'  => 'Database',
-            'file'      => 'File',
-            'memcached' => 'Memcached',
-            'redis'     => 'Redis',
-        ], $config['SESSION_DRIVER']);
+            $config['SESSION_DRIVER'] = $this->choice('Which session driver do you want to use?', [
+                'apc'       => 'APC(u)',
+                'array'     => 'Array',
+                'database'  => 'Database',
+                'file'      => 'File',
+                'memcached' => 'Memcached',
+                'redis'     => 'Redis',
+            ], $config['SESSION_DRIVER']);
 
-        // We need to configure Redis.
-        if ($config['SESSION_DRIVER'] === 'redis') {
-            $this->configureRedis();
-        }
+            // We need to configure Redis.
+            if ($config['SESSION_DRIVER'] === 'redis') {
+                $this->configureRedis();
+            }
 
-        $config['QUEUE_DRIVER'] = $this->choice('Which queue driver do you want to use?', [
-            'null'       => 'None',
-            'sync'       => 'Synchronous',
-            'database'   => 'Database',
-            'beanstalkd' => 'Beanstalk',
-            'sqs'        => 'Amazon SQS',
-            'redis'      => 'Redis',
-        ], $config['QUEUE_DRIVER']);
+            $config['QUEUE_DRIVER'] = $this->choice('Which queue driver do you want to use?', [
+                'null'       => 'None',
+                'sync'       => 'Synchronous',
+                'database'   => 'Database',
+                'beanstalkd' => 'Beanstalk',
+                'sqs'        => 'Amazon SQS',
+                'redis'      => 'Redis',
+            ], $config['QUEUE_DRIVER']);
 
-        // We need to configure Redis, but only if the cache driver wasn't redis.
-        if ($config['QUEUE_DRIVER'] === 'redis' && ($config['SESSION_DRIVER'] !== 'redis' || $config['CACHE_DRIVER'] !== 'redis')) {
-            $this->configureRedis();
-        }
+            // We need to configure Redis, but only if the cache driver wasn't redis.
+            if ($config['QUEUE_DRIVER'] === 'redis' && ($config['SESSION_DRIVER'] !== 'redis' || $config['CACHE_DRIVER'] !== 'redis')) {
+                $this->configureRedis();
+            }
 
-        // Format the settings ready to display them in the table.
-        $this->formatConfigsTable($config);
+            // Format the settings ready to display them in the table.
+            $this->formatConfigsTable($config);
 
-        if (!$this->confirm('Are these settings correct?')) {
-            return $this->configureDrivers($config);
-        }
+        } while (! $this->confirm('Are these settings correct?'));
 
         foreach ($config as $setting => $value) {
             $this->writeEnv($setting, $value);
@@ -280,34 +278,33 @@ class InstallCommand extends Command
             return;
         }
 
-        $config['MAIL_DRIVER'] = $this->choice('What driver do you want to use to send notifications?', [
-            'smtp'      => 'SMTP',
-            'mail'      => 'Mail',
-            'sendmail'  => 'Sendmail',
-            'mailgun'   => 'Mailgun',
-            'mandrill'  => 'Mandrill',
-            'ses'       => 'Amazon SES',
-            'sparkpost' => 'SparkPost',
-            'log'       => 'Log (Testing)',
-        ]);
-
-        if (!$config['MAIL_DRIVER'] === 'log') {
-            if ($config['MAIL_DRIVER'] === 'smtp') {
-                $config['MAIL_HOST'] = $this->ask('Please supply your mail server host');
+        do {
+            $config['MAIL_DRIVER'] = $this->choice('What driver do you want to use to send notifications?', [
+                'smtp'      => 'SMTP',
+                'mail'      => 'Mail',
+                'sendmail'  => 'Sendmail',
+                'mailgun'   => 'Mailgun',
+                'mandrill'  => 'Mandrill',
+                'ses'       => 'Amazon SES',
+                'sparkpost' => 'SparkPost',
+                'log'       => 'Log (Testing)',
+            ]);
+    
+            if (!$config['MAIL_DRIVER'] === 'log') {
+                if ($config['MAIL_DRIVER'] === 'smtp') {
+                    $config['MAIL_HOST'] = $this->ask('Please supply your mail server host');
+                }
+    
+                $config['MAIL_ADDRESS'] = $this->ask('What email address should we send notifications from?');
+                $config['MAIL_USERNAME'] = $this->ask('What username should we connect as?');
+                $config['MAIL_PASSWORD'] = $this->secret('What password should we connect with?');
             }
-
-            $config['MAIL_ADDRESS'] = $this->ask('What email address should we send notifications from?');
-            $config['MAIL_USERNAME'] = $this->ask('What username should we connect as?');
-            $config['MAIL_PASSWORD'] = $this->secret('What password should we connect with?');
-        }
-
-        // Format the settings ready to display them in the table.
-        $this->formatConfigsTable($config);
-
-        if (!$this->confirm('Are these settings correct?')) {
-            return $this->configureMail($config);
-        }
-
+    
+            // Format the settings ready to display them in the table.
+            $this->formatConfigsTable($config);
+    
+        } while (! $this->confirm('Are these settings correct?'));
+        
         foreach ($config as $setting => $value) {
             $this->writeEnv($setting, $value);
         }

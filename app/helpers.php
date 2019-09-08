@@ -187,7 +187,7 @@ if (!function_exists('execute')) {
      *
      * @param object $command
      *
-     * @return void
+     * @return mixed
      */
     function execute($command)
     {
