@@ -134,17 +134,20 @@ class SetupController extends Controller
      */
     public function getIndex()
     {
-        $supportedLanguages = Request::getLanguages();
+        $requestedLanguages = Request::getLanguages();
         $userLanguage = Config::get('app.locale');
+        $langs = Config::get('langs');
 
-        foreach ($supportedLanguages as $language) {
+        foreach ($requestedLanguages as $language) {
             $language = str_replace('_', '-', $language);
 
-            if (isset($this->langs[$language])) {
+            if (isset($langs[$language])) {
                 $userLanguage = $language;
                 break;
             }
         }
+
+        app('translator')->setLocale($userLanguage);
 
         // Since .env may already be configured, we should show that data!
         $cacheConfig = [
