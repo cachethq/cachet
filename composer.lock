@@ -253,21 +253,21 @@
         },
         {
             "name": "alt-three/validator",
-            "version": "v4.2.1",
+            "version": "v4.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/AltThree/Validator.git",
-                "reference": "651fb56c92e5ac80f4840f9596391f72b00f0282"
+                "reference": "cf9cce7ce39dfa038aad28a4b864d50ec1f8149c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/AltThree/Validator/zipball/651fb56c92e5ac80f4840f9596391f72b00f0282",
-                "reference": "651fb56c92e5ac80f4840f9596391f72b00f0282",
+                "url": "https://api.github.com/repos/AltThree/Validator/zipball/cf9cce7ce39dfa038aad28a4b864d50ec1f8149c",
+                "reference": "cf9cce7ce39dfa038aad28a4b864d50ec1f8149c",
                 "shasum": ""
             },
             "require": {
-                "illuminate/contracts": "5.5.*|5.6.*|5.7.*|5.8.*",
-                "illuminate/support": "5.5.*|5.6.*|5.7.*|5.8.*",
+                "illuminate/contracts": "^5.5|^6.0",
+                "illuminate/support": "^5.5|^6.0",
                 "php": "^7.1.3",
                 "psr/log": "^1.0"
             },
@@ -278,7 +278,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.2-dev"
+                    "dev-master": "4.3-dev"
                 }
             },
             "autoload": {
@@ -302,7 +302,7 @@
                 "validation",
                 "validator"
             ],
-            "time": "2019-06-30T15:22:35+00:00"
+            "time": "2019-08-26T15:58:48+00:00"
         },
         {
             "name": "asm89/stack-cors",
