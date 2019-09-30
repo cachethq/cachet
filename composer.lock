@@ -358,16 +358,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.112.5",
+            "version": "3.112.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "5c6f05d68576f845a8391b83020b480840eca759"
+                "reference": "d744986383812c6a9e52134adabbb5683e6750fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/5c6f05d68576f845a8391b83020b480840eca759",
-                "reference": "5c6f05d68576f845a8391b83020b480840eca759",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/d744986383812c6a9e52134adabbb5683e6750fe",
+                "reference": "d744986383812c6a9e52134adabbb5683e6750fe",
                 "shasum": ""
             },
             "require": {
@@ -437,7 +437,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2019-09-20T22:08:27+00:00"
+            "time": "2019-09-27T18:09:39+00:00"
         },
         {
             "name": "barryvdh/laravel-cors",
@@ -2409,9 +2409,9 @@
             "authors": [
                 {
                     "name": "Colin O'Dell",
-                    "role": "Lead Developer",
                     "email": "colinodell@gmail.com",
-                    "homepage": "https://www.colinodell.com"
+                    "homepage": "https://www.colinodell.com",
+                    "role": "Lead Developer"
                 }
             ],
             "description": "PHP Markdown parser based on the CommonMark spec",
