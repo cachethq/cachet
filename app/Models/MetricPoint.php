@@ -13,6 +13,7 @@ namespace CachetHQ\Cachet\Models;
 
 use AltThree\Validator\ValidatingTrait;
 use CachetHQ\Cachet\Presenters\MetricPointPresenter;
+use CachetHQ\Cachet\Services\Dates\DateFactory;
 use Carbon\Carbon;
 use DateTime;
 use Illuminate\Database\Eloquent\Model;
@@ -120,7 +121,7 @@ class MetricPoint extends Model implements HasPresenter
         $timestamp = $createdAt->format('U');
         $timestamp = 30 * round($timestamp / 30);
 
-        $date = Carbon::createFromFormat('U', $timestamp)->toDateTimeString();
+        $date = app(DateFactory::class)->create('U', $timestamp)->toDateTimeString();
 
         $this->attributes['created_at'] = $date;
 
