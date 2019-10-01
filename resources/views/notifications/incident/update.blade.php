@@ -10,6 +10,8 @@
 Thanks,<br>
 {{ Config::get('setting.app_name') }}
 
+@include('notifications.partials.status')
+
 @include('notifications.partials.subscription')
 
 @endcomponent

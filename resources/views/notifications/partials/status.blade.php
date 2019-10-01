@@ -1,0 +1,1 @@
+[System Status]({{ cachet_route('status-page') }})
