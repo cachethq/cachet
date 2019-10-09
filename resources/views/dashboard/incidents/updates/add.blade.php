@@ -25,7 +25,7 @@
                     <fieldset>
                         @if($incidentTemplates->count() > 0)
                             <div class="form-group">
-                                <label for="incident-template">{{ trans('forms.incidents.templates.template') }}</label>
+                                <label for="template">{{ trans('forms.incidents.templates.template') }}</label>
                                 <select class="form-control" name="template" v-model="template">
                                     <option selected></option>
                                     @foreach($incidentTemplates as $tpl)
@@ -96,7 +96,7 @@
                         </div>
                         @endif
                         <div class="form-group">
-                            <label>{{ trans('forms.incidents.message') }}</label>
+                            <label for="message">{{ trans('forms.incidents.message') }}</label>
                             <div class="markdown-control">
                                 <textarea name="message" class="form-control autosize" rows="5" required>{{ Binput::old('message') }}</textarea>
                             </div>
