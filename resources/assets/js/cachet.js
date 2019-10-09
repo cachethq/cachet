@@ -186,7 +186,7 @@ $(function () {
     });
 
     // Incident management
-    /*$('select[name=template]').on('change', function () {
+    $('select[name=template]').on('change', function () {
         var $this = $(this).find('option:selected'),
             slug   = $this.val();
 
@@ -208,7 +208,7 @@ $(function () {
                 }
             });
         }
-    });*/
+    });
 
     // Banner removal JS
     $('#remove-banner').on('click', function (){
