@@ -11,15 +11,15 @@
 
 namespace CachetHQ\Tests\Cachet\Functional\Notifications;
 
-use CachetHQ\Tests\Cachet\AbstractTestCase;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
-use CachetHQ\Cachet\Settings\Repository as SettingsRepository;
-use CachetHQ\Cachet\Bus\Commands\Subscriber\SubscribeSubscriberCommand;
 use CachetHQ\Cachet\Bus\Commands\Incident\CreateIncidentCommand;
+use CachetHQ\Cachet\Bus\Commands\Subscriber\SubscribeSubscriberCommand;
+use CachetHQ\Cachet\Models\Incident;
+use CachetHQ\Cachet\Models\Subscriber;
 use CachetHQ\Cachet\Notifications\Incident\NewIncidentNotification;
 use CachetHQ\Cachet\Notifications\IncidentUpdate\IncidentUpdatedNotification;
-use CachetHQ\Cachet\Models\Subscriber;
-use CachetHQ\Cachet\Models\Incident;
+use CachetHQ\Cachet\Settings\Repository as SettingsRepository;
+use CachetHQ\Tests\Cachet\AbstractTestCase;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Str;
 
@@ -99,6 +99,7 @@ class MailTest extends AbstractTestCase
         $name = $incident['title'];
         $message = $incident['description'];
         
+
         dispatch(new CreateIncidentCommand(
             $name,
             $this->fakerFactory->numberBetween(0, 3),
@@ -127,13 +128,14 @@ class MailTest extends AbstractTestCase
         $this->signIn();
 
         $subscriber = $this->createSubscriber($this->fakerFactory->safeEmail);
-        
+
+
         $response = $this->post('dashboard/incidents/create', [
-            'name' => $this->fakerFactory->word,
-            'status' => 1,
+            'name'    => $this->fakerFactory->word,
+            'status'  => 1,
             'visible' => 1,
             'message' => $this->fakerFactory->paragraph,
-            'notify' => 1
+            'notify'  => 1
         ]);
 
         Notification::assertSentTo(
@@ -153,11 +155,11 @@ class MailTest extends AbstractTestCase
         $subscriber = $this->createSubscriber($this->fakerFactory->safeEmail);
         
         $response = $this->post('dashboard/incidents/create', [
-            'name' => $this->fakerFactory->word,
-            'status' => 1,
+            'name'    => $this->fakerFactory->word,
+            'status'  => 1,
             'visible' => 1,
             'message' => $this->fakerFactory->paragraph,
-            'notify' => 0
+            'notify'  => 0
         ]);
 
         Notification::assertNotSentTo(
@@ -173,13 +175,15 @@ class MailTest extends AbstractTestCase
     {
         Notification::fake();
         
+
         $this->signIn();
 
         $incident = $this->createIncident($this->incidents[1]);
         $subscriber = $this->createSubscriber($this->fakerFactory->safeEmail);
         
+
         $response = $this->post('dashboard/incidents/'.$incident->id.'/updates/create', [
-            'status' => 1,
+            'status'  => 1,
             'message' => $this->fakerFactory->paragraph,
         ]);
 
