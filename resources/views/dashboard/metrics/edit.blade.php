@@ -56,8 +56,8 @@
                         <input type="number" min="0" max="4" class="form-control" name="places" id="metric-places" required value="{{ $metric->places }}" placeholder="{{ trans('forms.metrics.places') }}">
                     </div>
                     <div class="form-group">
-                        <label for="metric-places">{{ trans('forms.metrics.threshold') }}</label>
-                        <input type="number" min="0" max="10" name="threshold" value="{{ Binput::old('metric.threshold', $metric->threshold) }}" class="form-control" required>
+                        <label for="metric-threshold">{{ trans('forms.metrics.threshold') }}</label>
+                        <input type="number" min="0" max="10" name="threshold" id="metric-threshold" value="{{ Binput::old('metric.threshold', $metric->threshold) }}" class="form-control" required>
                     </div>
                     <div class="checkbox">
                         <label>
