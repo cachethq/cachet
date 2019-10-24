@@ -37,8 +37,8 @@ class PgSqlRepository extends AbstractMetricRepository implements MetricInterfac
             "WHERE {$this->getMetricsTable()}.id = :metricId ".
             "AND {$this->getMetricPointsTable()}.created_at >= (NOW() - INTERVAL '{$minutes}' MINUTE) ".
             "AND {$this->getMetricPointsTable()}.created_at <= NOW() ".
-            "GROUP BY to_char({$this->getMetricPointsTable()}.created_at, 'HH24:MI') ".
-            "ORDER BY {$this->getMetricPointsTable()}.created_at", [
+            "GROUP BY key ".
+            "ORDER BY key", [
             'metricId' => $metric->id,
         ]);
 
@@ -61,8 +61,8 @@ class PgSqlRepository extends AbstractMetricRepository implements MetricInterfac
             "WHERE {$this->getMetricsTable()}.id = :metricId ".
             "AND {$this->getMetricPointsTable()}.created_at >= (NOW() - INTERVAL '{$hour}' HOUR) ".
             "AND {$this->getMetricPointsTable()}.created_at <= NOW() ".
-            "GROUP BY to_char({$this->getMetricPointsTable()}.created_at, 'HH24:00') ".
-            "ORDER BY {$this->getMetricPointsTable()}.created_at", [
+            "GROUP BY key ".
+            "ORDER BY key", [
             'metricId' => $metric->id,
         ]);
 
@@ -85,8 +85,8 @@ class PgSqlRepository extends AbstractMetricRepository implements MetricInterfac
             "WHERE {$this->getMetricsTable()}.id = :metricId ".
             "AND {$this->getMetricPointsTable()}.created_at >= (DATE(NOW()) - INTERVAL '{$day}' DAY) ".
             "AND {$this->getMetricPointsTable()}.created_at <= DATE(NOW()) ".
-            "GROUP BY DATE({$this->getMetricPointsTable()}.created_at) ".
-            "ORDER BY DATE({$this->getMetricPointsTable()}.created_at)", [
+            "GROUP BY key ".
+            "ORDER BY key", [
             'metricId' => $metric->id,
         ]);
 
