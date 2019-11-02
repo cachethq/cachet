@@ -34,7 +34,7 @@ return [
         'stickied'     => '固定している障害情報',
         'scheduled'    => '計画メンテナンス',
         'scheduled_at' => ', 予定日時 :timestamp',
-        'posted'       => '掲載日時 :timestamp',
+        'posted'       => 'Posted :timestamp by :username',
         'posted_at'    => '掲載日時 :timestamp',
         'status'       => [
             1 => '調査中',
