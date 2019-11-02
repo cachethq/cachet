@@ -34,7 +34,7 @@ return [
         'stickied'     => 'Stickied Incidents',
         'scheduled'    => 'Maintenance',
         'scheduled_at' => ', :timestamp 에 예정됨',
-        'posted'       => 'Posted :timestamp',
+        'posted'       => 'Posted :timestamp by :username',
         'posted_at'    => 'Posted at :timestamp',
         'status'       => [
             1 => 'Investigating',
