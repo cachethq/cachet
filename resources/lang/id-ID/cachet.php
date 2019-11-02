@@ -34,7 +34,7 @@ return [
         'stickied'     => 'Insiden sticky',
         'scheduled'    => 'Pemeliharaan',
         'scheduled_at' => ', dijadwalkan pada :timestamp',
-        'posted'       => 'Dikirim: timestamp',
+        'posted'       => 'Posted :timestamp by :username',
         'posted_at'    => 'Dikirim: :timestamp',
         'status'       => [
             1 => 'Investigasi',
