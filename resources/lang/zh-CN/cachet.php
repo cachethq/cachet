@@ -34,7 +34,7 @@ return [
         'stickied'     => '已关注的故障',
         'scheduled'    => '计划维护',
         'scheduled_at' => '，计划于 :timestamp',
-        'posted'       => '发布于 :timestamp',
+        'posted'       => 'Posted :timestamp by :username',
         'posted_at'    => '发布于 :timestamp',
         'status'       => [
             1 => '确认中',
