@@ -50,7 +50,7 @@ return [
         'message'            => 'Mensagem',
         'message-help'       => 'Você também pode usar o Markdown.',
         'scheduled_at'       => 'Agendar a manutenção para quando?',
-        'incident_time'      => 'When did this incident occur?',
+        'incident_time'      => 'Quando este incidente ocorreu?',
         'notify_subscribers' => 'Notificar os assinantes?',
         'visibility'         => 'Visibilidade do incidente',
         'public'             => 'Visível para todos',
