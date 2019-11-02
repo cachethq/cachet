@@ -25,7 +25,7 @@
                     <fieldset>
                         @if($incidentTemplates->count() > 0)
                         <div class="form-group">
-                            <label for="incident-template">{{ trans('forms.incidents.templates.template') }}</label>
+                            <label for="template">{{ trans('forms.incidents.templates.template') }}</label>
                             <select class="form-control" name="template" v-model="template">
                                 <option selected></option>
                                 @foreach($incidentTemplates as $tpl)
