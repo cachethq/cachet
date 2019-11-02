@@ -34,7 +34,7 @@ return [
         'stickied'     => 'Incidents épinglés',
         'scheduled'    => 'Maintenance',
         'scheduled_at' => ', planifé à :timestamp',
-        'posted'       => 'Posté à :timestamp',
+        'posted'       => 'Posted :timestamp by :username',
         'posted_at'    => 'Posted at :timestamp',
         'status'       => [
             1 => 'Enquête en cours',
