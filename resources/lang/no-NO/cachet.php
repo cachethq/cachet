@@ -34,7 +34,7 @@ return [
         'stickied'     => 'Festede hendelser',
         'scheduled'    => 'Maintenance',
         'scheduled_at' => ', planlagt :timestamp',
-        'posted'       => 'Postet :timestamp',
+        'posted'       => 'Posted :timestamp by :username',
         'posted_at'    => 'Posted at :timestamp',
         'status'       => [
             1 => 'Undersøkes',
