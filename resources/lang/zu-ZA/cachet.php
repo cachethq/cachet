@@ -34,7 +34,7 @@ return [
         'stickied'     => 'crwdns888:0crwdne888:0',
         'scheduled'    => 'crwdns1395:0crwdne1395:0',
         'scheduled_at' => 'crwdns890:0crwdne890:0',
-        'posted'       => 'crwdns891:0crwdne891:0',
+        'posted'       => 'crwdns1540:0crwdne1540:0',
         'posted_at'    => 'crwdns1396:0crwdne1396:0',
         'status'       => [
             1 => 'crwdns892:0crwdne892:0',
