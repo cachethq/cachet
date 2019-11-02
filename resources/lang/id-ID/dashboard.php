@@ -35,7 +35,7 @@ return [
                 'failure' => 'Ada masalah saat memperbarui update insiden',
             ],
         ],
-        'reported_by'              => 'Reported by :user',
+        'reported_by'              => 'Reported :timestamp by :user',
         'add'                      => [
             'title'   => 'Tambahkan Insiden',
             'success' => 'Insiden sudah ditambahkan.',
