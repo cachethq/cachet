@@ -79,9 +79,9 @@ php artisan cachet:install
 
 > **Getting a 500 - Internal Server Error?**
 > If you get a 500 error when visiting your status page, you may need to
-> run `chmod -R 777 storage/` for it to work or `rm -rf bootstrap/cache/*`
-
-You can also try to give permissions to cache chmod -R 777 bootstrap/
+> run `chmod -R 755 .env bootstrap/cache storage`.
+> Also if you set value `file` for `CACHE_DRIVER` and `SESSION_DRIVER` parameters in `.env` file run `chmod -R 755 bootstrap/cachet`.
+> Finally run `rm -rf bootstrap/cache/*` for delete old cache.
 
 ## Running Cachet on Apache
 
