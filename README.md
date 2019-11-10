@@ -28,8 +28,8 @@ You can now [join our Slack community!](http://cachethq-slack.herokuapp.com)
 
 ## Requirements
 
-- PHP 7.1.3 - 7.3
-- HTTP server with PHP support (eg: Apache, Nginx, Caddy)
+- PHP 7.1.3 – 7.3
+- HTTP server with PHP support (e.g.: Apache, Nginx, Caddy)
 - [Composer](https://getcomposer.org)
 - A supported database: MySQL, PostgreSQL or SQLite
 
@@ -45,7 +45,7 @@ Here are some useful quick links:
 
 ### Demo
 
-To test out the demo, you may login to the [Dashboard](https://dev.cachethq.io/dashboard) with the following:
+To test out the demo, you can log in to the [Dashboard](https://dev.cachethq.io/dashboard) with the following credentials:
 
 - **Username:** `test` or `test@example.com`
 - **Password:** `test123`
@@ -54,15 +54,15 @@ To test out the demo, you may login to the [Dashboard](https://dev.cachethq.io/d
 
 ## Translate Cachet
 
-If you'd like to contribute translations, please check out our [CrowdIn project](https://crowdin.com/project/cachet).
+If you'd like to contribute translations, please check out our [Crowdin project](https://crowdin.com/project/cachet).
 
 ## Security Vulnerabilities
 
-If you discover a security vulnerability within Cachet, please send an e-mail to [support@cachethq.io](mailto:support@cachethq.io?Cachet%20Security%20Vulnerability). All security vulnerabilities on a case-by-case basis.
+If you discover a security vulnerability within Cachet, please send an e-mail to [support@cachethq.io](mailto:support@cachethq.io?Cachet%20Security%20Vulnerability). All security vulnerabilities are reviewed on a case-by-case basis.
 
 ## Limited Support Contact
 
-We may be able to resolve **support queries** via email. Please send an e-mail to [support@cachethq.io](mailto:support@cachethq.io?Cachet%20Support). Please first check the GitHub [issue tracker](https://github.com/CachetHQ/Cachet/issues) before emailing.
+We may be able to resolve **support queries** via email. Please send an email to [support@cachethq.io](mailto:support@cachethq.io?Cachet%20Support). Please check the GitHub [issue tracker](https://github.com/CachetHQ/Cachet/issues) first before emailing.
 
 ## Professional Installation Service
 

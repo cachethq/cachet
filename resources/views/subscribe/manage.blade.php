@@ -16,7 +16,7 @@
             <h1>{{ $appName }} {{ trans('cachet.subscriber.manage.notifications') }}</h1>
             <p>{{ trans('cachet.subscriber.manage.notifications_for') }} <strong>{{ $subscriber->email }}</strong></p>
         </div>
-        <form action="{{ cachet_route('subscribe.manage', [$subscriber->verify_code], 'post') }}" method="post">
+        <form action="{{ URL::signedRoute(cachet_route_generator('subscribe.manage'), ['code' => $subscriber->verify_code]) }}" method="post">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             @if($componentGroups->isNotEmpty() || $ungroupedComponents->isNotEmpty())
             @foreach($componentGroups as $componentGroup)

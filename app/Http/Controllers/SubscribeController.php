@@ -28,6 +28,7 @@ use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\View;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -120,7 +121,7 @@ class SubscribeController extends Controller
             execute(new VerifySubscriberCommand($subscriber));
         }
 
-        return cachet_redirect('subscribe.manage', $code)
+        return redirect()->to(URL::signedRoute(cachet_route_generator('subscribe.manage'), ['code' => $code]))
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('cachet.subscriber.email.subscribed')));
     }
 
@@ -207,13 +208,13 @@ class SubscribeController extends Controller
         try {
             execute(new UpdateSubscriberSubscriptionCommand($subscriber, Binput::get('subscriptions')));
         } catch (ValidationException $e) {
-            return cachet_redirect('subscribe.manage', $subscriber->verify_code)
+            return redirect()->to(URL::signedRoute(cachet_route_generator('subscribe.manage'), ['code' => $subscriber->verify_code]))
                 ->withInput(Binput::all())
                 ->withTitle(sprintf('%s %s', trans('dashboard.notifications.whoops'), trans('cachet.subscriber.email.failure')))
                 ->withErrors($e->getMessageBag());
         }
 
-        return cachet_redirect('subscribe.manage', $subscriber->verify_code)
+        return redirect()->to(URL::signedRoute(cachet_route_generator('subscribe.manage'), ['code' => $subscriber->verify_code]))
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('cachet.subscriber.email.updated-subscribe')));
     }
 }
