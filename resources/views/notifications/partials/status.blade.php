@@ -1,1 +1,1 @@
-[System Status]({{ cachet_route('status-page') }})
+[{{ Config::get('setting.app_name') }}]({{ cachet_route('status-page') }})
