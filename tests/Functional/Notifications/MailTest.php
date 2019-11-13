@@ -98,7 +98,6 @@ class MailTest extends AbstractTestCase
     {
         $name = $incident['title'];
         $message = $incident['description'];
-        
 
         dispatch(new CreateIncidentCommand(
             $name,
@@ -129,13 +128,12 @@ class MailTest extends AbstractTestCase
 
         $subscriber = $this->createSubscriber($this->fakerFactory->safeEmail);
 
-
         $response = $this->post('dashboard/incidents/create', [
             'name'    => $this->fakerFactory->word,
             'status'  => 1,
             'visible' => 1,
             'message' => $this->fakerFactory->paragraph,
-            'notify'  => 1
+            'notify'  => 1,
         ]);
 
         Notification::assertSentTo(
@@ -153,13 +151,13 @@ class MailTest extends AbstractTestCase
         $this->signIn();
 
         $subscriber = $this->createSubscriber($this->fakerFactory->safeEmail);
-        
+
         $response = $this->post('dashboard/incidents/create', [
             'name'    => $this->fakerFactory->word,
             'status'  => 1,
             'visible' => 1,
             'message' => $this->fakerFactory->paragraph,
-            'notify'  => 0
+            'notify'  => 0,
         ]);
 
         Notification::assertNotSentTo(
@@ -174,13 +172,11 @@ class MailTest extends AbstractTestCase
     public function testEmailNotificationSentForIncidentUpdate()
     {
         Notification::fake();
-        
 
         $this->signIn();
 
         $incident = $this->createIncident($this->incidents[1]);
         $subscriber = $this->createSubscriber($this->fakerFactory->safeEmail);
-        
 
         $response = $this->post('dashboard/incidents/'.$incident->id.'/updates/create', [
             'status'  => 1,
