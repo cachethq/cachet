@@ -72,7 +72,7 @@ class NewIncidentNotification extends Notification
         $content = trans('notifications.incident.new.mail.content', [
             'name' => $this->incident->name,
         ]);
-
+ 
         return (new MailMessage())
                     ->subject(trans('notifications.incident.new.mail.subject'))
                     ->markdown('notifications.incident.new', [
