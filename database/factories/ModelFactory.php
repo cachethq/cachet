@@ -22,6 +22,7 @@ use CachetHQ\Cachet\Models\Subscriber;
 use CachetHQ\Cachet\Models\Subscription;
 use CachetHQ\Cachet\Models\User;
 use Carbon\Carbon;
+use Illuminate\Support\Str;
 
 $factory->define(Component::class, function ($faker) {
     return [
@@ -135,9 +136,9 @@ $factory->define(User::class, function ($faker) {
     return [
         'username'       => $faker->userName,
         'email'          => $faker->safeEmail,
-        'password'       => str_random(10),
-        'remember_token' => str_random(10),
-        'api_key'        => str_random(20),
+        'password'       => Str::random(10),
+        'remember_token' => Str::random(10),
+        'api_key'        => Str::random(20),
         'active'         => true,
         'level'          => 1,
     ];
