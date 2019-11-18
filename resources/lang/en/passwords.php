@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of Cachet.
+ *
+ * (c) Alt Three Services Limited
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 return [
 
     /*
@@ -13,10 +22,10 @@ return [
     |
     */
 
-    'reset' => 'Your password has been reset!',
-    'sent' => 'We have e-mailed your password reset link!',
-    'token' => 'This password reset token is invalid.',
-    'user' => "We can't find a user with that e-mail address.",
+    'reset'     => 'Your password has been reset!',
+    'sent'      => 'We have e-mailed your password reset link!',
+    'token'     => 'This password reset token is invalid.',
+    'user'      => "We can't find a user with that e-mail address.",
     'throttled' => 'Please wait before retrying.',
 
 ];
