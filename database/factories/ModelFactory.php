@@ -9,6 +9,7 @@
  * file that was distributed with this source code.
  */
 
+use Illuminate\Support\Str;
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Incident;
@@ -135,9 +136,9 @@ $factory->define(User::class, function ($faker) {
     return [
         'username'       => $faker->userName,
         'email'          => $faker->safeEmail,
-        'password'       => str_random(10),
-        'remember_token' => str_random(10),
-        'api_key'        => str_random(20),
+        'password'       => Str::random(10),
+        'remember_token' => Str::random(10),
+        'api_key'        => Str::random(20),
         'active'         => true,
         'level'          => 1,
     ];
